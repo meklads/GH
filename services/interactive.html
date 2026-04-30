@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>العروض التفاعلية | Graphics House</title>
+<meta name="description" content="بيئات تفاعلية لمسية لاستعراض مشاريعك العقارية والمعمارية في الوقت الفعلي."/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "tertiary":"#cecece","inverse-on-surface":"#313030","surface-container-high":"#2a2a2a",
+          "on-primary-fixed-variant":"#574500","surface-container-low":"#1c1b1b","background":"#131313",
+          "error":"#ffb4ab","on-tertiary":"#2f3131","on-primary-container":"#554300","secondary":"#c9c6c5",
+          "on-primary-fixed":"#241a00","primary-fixed-dim":"#e9c349","on-tertiary-container":"#434546",
+          "on-error":"#690005","tertiary-container":"#b2b3b3","on-secondary-fixed":"#1c1b1b",
+          "surface-tint":"#e9c349","secondary-container":"#4a4949","on-tertiary-fixed":"#1a1c1c",
+          "outline-variant":"#4d4635","primary-container":"#d4af37","on-surface":"#e5e2e1",
+          "outline":"#99907c","secondary-fixed-dim":"#c9c6c5","on-surface-variant":"#d0c5af",
+          "error-container":"#93000a","primary":"#f2ca50","primary-fixed":"#ffe088",
+          "on-background":"#e5e2e1","inverse-primary":"#735c00","on-secondary-container":"#bab8b7",
+          "surface-container-lowest":"#0e0e0e","tertiary-fixed-dim":"#c6c6c7","surface-fixed":"#e2e2e2",
+          "on-error-container":"#ffdad6","surface":"#131313","surface-container-highest":"#353535",
+          "secondary-fixed":"#e5e2e1","on-primary":"#3c2f00","surface-container":"#20201f",
+          "on-tertiary-fixed-variant":"#454747","on-secondary":"#313030","on-secondary-fixed-variant":"#474646",
+          "inverse-surface":"#e5e2e1","surface-dim":"#131313","surface-bright":"#393939"
+        },
+        borderRadius: { "DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem" },
+        spacing: { "unit":"8px","gutter":"24px","section-gap":"120px","margin-edge":"64px","container-max":"1440px" },
+        fontFamily: {
+          "body-md":["Manrope"],"headline-lg":["Noto Serif"],"label-caps":["Manrope"],
+          "headline-xl":["Noto Serif"],"body-lg":["Manrope"],"headline-md":["Noto Serif"],
+          "ar-display":["Amiri","serif"],"ar-ui":["Cairo","sans-serif"]
+        },
+        fontSize: {
+          "body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],
+          "headline-lg":["32px",{"lineHeight":"1.3","fontWeight":"600"}],
+          "label-caps":["12px",{"lineHeight":"1.0","letterSpacing":"0.1em","fontWeight":"700"}],
+          "headline-xl":["48px",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"700"}],
+          "body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],
+          "headline-md":["24px",{"lineHeight":"1.4","fontWeight":"500"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  /* ── Material Symbols FILL ─────────────────── */
+  .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
+
+  /* ── Scrollbar ──────────────────────────────── */
+  ::-webkit-scrollbar { width:3px; }
+  ::-webkit-scrollbar-track { background:#0e0e0e; }
+  ::-webkit-scrollbar-thumb { background:#f2ca50; }
+
+  /* ── Custom Cursor ──────────────────────────── */
+  @media (pointer:fine) { *,*::before,*::after { cursor:none !important; } }
+  #cur-dot {
+    position:fixed; top:0; left:0; width:6px; height:6px; margin:-3px 0 0 -3px;
+    background:#f2ca50; border-radius:50%; pointer-events:none; z-index:99999;
+    will-change:transform; opacity:0; transition:opacity .3s ease,transform .05s linear;
+  }
+  #cur-ring {
+    position:fixed; top:0; left:0; width:36px; height:36px; margin:-18px 0 0 -18px;
+    border:1px solid rgba(242,202,80,.45); border-radius:50%;
+    pointer-events:none; z-index:99998; will-change:transform; opacity:0;
+    transition:opacity .3s ease,width .25s ease,height .25s ease,margin .25s ease,border-color .25s ease;
+  }
+  #cur-dot.visible,#cur-ring.visible { opacity:1; }
+  #cur-ring.hovered { width:60px; height:60px; margin:-30px 0 0 -30px; border-color:rgba(242,202,80,.8); }
+
+  /* ── Film grain ─────────────────────────────── */
+  body::after {
+    content:''; position:fixed; inset:0; pointer-events:none; z-index:9990;
+    opacity:.038; mix-blend-mode:screen;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation:grain 9s steps(8,end) infinite;
+  }
+  @keyframes grain {
+    0%{transform:translate(0,0)} 12%{transform:translate(-4%,-9%)} 25%{transform:translate(3%,-13%)}
+    37%{transform:translate(8%,6%)} 50%{transform:translate(-6%,11%)} 62%{transform:translate(10%,-4%)}
+    75%{transform:translate(-2%,8%)} 87%{transform:translate(5%,-7%)} 100%{transform:translate(0,0)}
+  }
+
+  /* ── Page Loader ────────────────────────────── */
+  #loader {
+    position:fixed; inset:0; z-index:99999; background:#0e0e0e;
+    display:flex; align-items:center; justify-content:center; flex-direction:column;
+    transition:opacity .6s ease,visibility .6s ease;
+  }
+  #loader.out { opacity:0; visibility:hidden; }
+  #loader-bar-track { width:180px; height:1px; background:rgba(242,202,80,.15); margin-top:20px; overflow:hidden; }
+  #loader-bar { height:100%; width:0; background:#f2ca50; transition:width 1s cubic-bezier(.4,0,.2,1); }
+
+  /* ── Scroll reveal ──────────────────────────── */
+  .reveal { transition:opacity .75s cubic-bezier(.4,0,.2,1),transform .75s cubic-bezier(.4,0,.2,1); }
+  .reveal.visible { opacity:1 !important; transform:none !important; }
+
+  /* ── Hero entrance ──────────────────────────── */
+  .hero-enter { opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1); }
+  .hero-enter.in { opacity:1; transform:none; }
+
+  /* ── Nav states ─────────────────────────────── */
+  #main-nav { transition:background-color .4s ease,box-shadow .4s ease; }
+  #main-nav.scrolled { background-color:rgba(0,0,0,.97) !important; box-shadow:0 4px 48px rgba(212,175,55,.09); }
+
+  /* ── Mobile nav ─────────────────────────────── */
+  #mob-nav {
+    position:fixed; inset:0; z-index:9999;
+    background:rgba(0,0,0,.97); backdrop-filter:blur(20px);
+    transform:translateX(100%); transition:transform .5s cubic-bezier(.4,0,.2,1);
+  }
+  #mob-nav.open { transform:translateX(0); }
+
+  /* ── Video modal ────────────────────────────── */
+  #vid-modal {
+    position:fixed; inset:0; z-index:99997;
+    background:rgba(0,0,0,.97); backdrop-filter:blur(16px);
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; visibility:hidden; transition:opacity .4s ease,visibility .4s ease;
+  }
+  #vid-modal.open { opacity:1; visibility:visible; }
+
+  /* ── Back to top ────────────────────────────── */
+  #back-top { transition:opacity .3s ease,transform .3s ease; opacity:0; pointer-events:none; transform:translateY(8px); }
+  #back-top.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
+
+  /* ── Process connector ──────────────────────── */
+  .step-connector { position:absolute; top:28px; inset-inline:14%; height:1px; background:linear-gradient(to left,transparent,rgba(242,202,80,.2),transparent); }
+
+  /* ══════════════════════════════════════════════
+     BILINGUAL SYSTEM
+     default = AR shown, EN hidden
+     body.is-en = EN shown, AR hidden
+  ══════════════════════════════════════════════ */
+  .en { display:none; }
+  .ar { display:contents; }
+
+  body.is-en .en { display:contents; }
+  body.is-en .ar { display:none; }
+
+  /* Block-level translations */
+  .en-block { display:none; }
+  .ar-block { display:block; }
+  body.is-en .en-block { display:block; }
+  body.is-en .ar-block { display:none; }
+
+  /* ── Arabic Typography ─────────────────────── */
+  /* Arabic: Amiri for display, Cairo for UI */
+  h1,h2,h3,h4 {
+    font-family:'Amiri','Noto Serif',serif;
+  }
+  body.is-en h1, body.is-en h2, body.is-en h3, body.is-en h4 {
+    font-family:'Noto Serif',serif;
+  }
+
+  /* Arabic letter-spacing & transform resets (Arabic doesn't use these) */
+  h1,h2,h3,h4,p,a,button,span,label,input,select,textarea {
+    font-family:'Cairo','Manrope',sans-serif;
+  }
+  h1,h2,h3,h4 {
+    font-family:'Amiri',serif;
+  }
+  body.is-en h1,body.is-en h2,body.is-en h3,body.is-en h4 {
+    font-family:'Noto Serif',serif;
+    letter-spacing:-0.02em;
+  }
+  body.is-en p,body.is-en a,body.is-en button,body.is-en span:not(.material-symbols-outlined),
+  body.is-en label,body.is-en input,body.is-en select,body.is-en textarea {
+    font-family:'Manrope',sans-serif;
+  }
+
+  /* Remove letter-spacing for Arabic (always — it harms Arabic calligraphy) */
+  h1,h2,h3,h4,p,a,button { letter-spacing:0 !important; }
+  body.is-en h1,body.is-en h2,body.is-en h3 { letter-spacing:-0.02em !important; }
+  body.is-en .tracking-widest,body.is-en .tracking-\[0\.3em\],body.is-en .tracking-\[0\.2em\] { letter-spacing:0.12em !important; }
+
+  /* Arabic text line-height — Arabic needs more breathing room */
+  body:not(.is-en) h1,body:not(.is-en) h2 { line-height:1.4 !important; }
+  body:not(.is-en) p { line-height:1.9 !important; }
+
+  /* Remove uppercase for Arabic (Arabic has no case) */
+  body:not(.is-en) .uppercase { text-transform:none !important; }
+  body:not(.is-en) [class*="tracking-"] { letter-spacing:0.03em !important; }
+
+  /* Arabic headline sizing — Amiri reads larger optically */
+  body:not(.is-en) h2.font-headline-xl { font-size:clamp(2rem,5vw,3.5rem); font-weight:700; }
+  body:not(.is-en) h3.font-headline-md { font-size:1.6rem; font-weight:600; }
+
+  /* Logo: remove black background — screen blend makes black transparent */
+  .logo-img { mix-blend-mode:screen; }
+
+  /* Language toggle button */
+  #lang-btn {
+    font-family:'Cairo','Manrope',sans-serif;
+    font-size:12px; font-weight:700;
+    letter-spacing:0.05em;
+    border:1px solid rgba(242,202,80,.4);
+    color:rgba(242,202,80,.85);
+    padding:6px 16px;
+    transition:all .25s ease;
+    background:transparent;
+  }
+  #lang-btn:hover { background:rgba(242,202,80,.1); border-color:rgba(242,202,80,.8); color:#f2ca50; }
+
+  /* ── Reduce motion ──────────────────────────── */
+  @media (prefers-reduced-motion:reduce) {
+    .reveal,.hero-enter { transition:none !important; opacity:1 !important; transform:none !important; }
+    body::after { animation:none !important; }
+    #cur-dot,#cur-ring { display:none !important; }
+  }
+
+  /* ── Portfolio Filter ───────────────────────── */
+  .filter-btn {
+    padding:8px 22px; border:1px solid rgba(242,202,80,.2); background:transparent;
+    color:rgba(242,202,80,.45); font-size:11px; font-weight:700; letter-spacing:.1em;
+    transition:all .25s ease; font-family:'Cairo','Manrope',sans-serif;
+  }
+  .filter-btn:hover { border-color:rgba(242,202,80,.55); color:rgba(242,202,80,.8); }
+  .filter-btn.active { background:rgba(242,202,80,.1); border-color:#f2ca50; color:#f2ca50; }
+  .portfolio-item.is-hidden { display:none !important; }
+  .portfolio-item { transition:opacity .35s ease; }
+
+  /* ── Service Feature Tag ────────────────────── */
+  .svc-tag {
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Cairo','Manrope',sans-serif; font-size:11px;
+    font-weight:700; letter-spacing:.14em; color:rgba(242,202,80,.65); text-transform:uppercase;
+  }
+  .svc-tag::before { content:''; display:block; width:28px; height:1px; background:rgba(242,202,80,.5); }
+
+  /* ── Feature list items ─────────────────────── */
+  .feat-row { display:flex; align-items:flex-start; gap:12px; margin-bottom:14px; }
+  .feat-row .material-symbols-outlined { flex-shrink:0; font-size:18px; color:#f2ca50; margin-top:2px; }
+
+  /* ── Client logos ───────────────────────────── */
+  .client-chip {
+    padding:16px 28px; border:1px solid rgba(255,255,255,.05);
+    font-family:'Noto Serif',serif; font-size:13px; letter-spacing:.12em;
+    color:rgba(255,255,255,.18); transition:all .35s ease; text-transform:uppercase;
+  }
+  .client-chip:hover { border-color:rgba(242,202,80,.25); color:rgba(242,202,80,.5); }
+
+  /* ── Service card image overlay ─────────────── */
+  .svc-card-img { position:absolute; inset:0; object-fit:cover; width:100%; height:100%; transition:transform .7s ease; }
+  .svc-card:hover .svc-card-img { transform:scale(1.07); }
+  .svc-card-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.3) 60%, transparent 100%); }
+
+  /* ══ Light Theme ═══════════════════════════════ */
+  #theme-btn {
+    display:flex;align-items:center;justify-content:center;
+    width:34px;height:34px;
+    border:1px solid rgba(242,202,80,.25);
+    color:#c9c6c5;background:transparent;
+    transition:all .3s ease;cursor:pointer;
+  }
+  #theme-btn:hover{border-color:#f2ca50;color:#f2ca50;background:rgba(242,202,80,.05);}
+  #theme-btn .icon-sun{display:none;}
+  #theme-btn .icon-moon{display:block;}
+  body.is-light #theme-btn{border-color:rgba(0,0,0,.2);color:#555;}
+  body.is-light #theme-btn:hover{border-color:#b8930a;color:#b8930a;}
+  body.is-light #theme-btn .icon-sun{display:block;}
+  body.is-light #theme-btn .icon-moon{display:none;}
+
+  body.is-light{background-color:#fafaf8!important;color:#1a1818!important;}
+  body.is-light ::-webkit-scrollbar-track{background:#eeecec;}
+  body.is-light::after{mix-blend-mode:multiply!important;opacity:.015!important;}
+  body.is-light .logo-img{mix-blend-mode:multiply!important;}
+  body.is-light #loader{background:#fafaf8!important;}
+  body.is-light #main-nav.scrolled{background-color:rgba(250,250,248,.97)!important;box-shadow:0 4px 48px rgba(0,0,0,.06)!important;}
+  body.is-light #mob-nav{background:rgba(250,250,248,.99)!important;}
+
+  body.is-light .bg-background,
+  body.is-light .bg-surface{background-color:#fafaf8!important;}
+  body.is-light .bg-surface-container-lowest{background-color:#f2f0ec!important;}
+  body.is-light .bg-surface-container-low{background-color:#eceae5!important;}
+  body.is-light .bg-surface-container{background-color:#e6e3dd!important;}
+  body.is-light .bg-surface-container-high{background-color:#dedad3!important;}
+  body.is-light .bg-surface-container-highest{background-color:#d5d1c9!important;}
+  body.is-light .bg-zinc-900{background-color:#e6e3dd!important;}
+  body.is-light .bg-zinc-800{background-color:#dedad3!important;}
+  body.is-light .bg-zinc-700{background-color:#d0cdc5!important;}
+
+  body.is-light .text-on-background,
+  body.is-light .text-on-surface{color:#1a1818!important;}
+  body.is-light .text-white{color:#1a1818!important;}
+  body.is-light .text-secondary,
+  body.is-light .text-zinc-400,
+  body.is-light .text-zinc-500{color:#6b6866!important;}
+  body.is-light .text-gray-400{color:#7a7775!important;}
+  body.is-light .text-on-surface-variant{color:#4a4540!important;}
+
+  body.is-light .border-white\/5{border-color:rgba(0,0,0,.07)!important;}
+  body.is-light .border-white\/10{border-color:rgba(0,0,0,.1)!important;}
+  body.is-light .border-white\/20{border-color:rgba(0,0,0,.18)!important;}
+  body.is-light .border-white\/30{border-color:rgba(0,0,0,.25)!important;}
+
+  body.is-light #lang-btn{border-color:rgba(0,0,0,.2);color:#1a1818;}
+  body.is-light #lang-btn:hover{background:rgba(184,147,10,.1);border-color:#b8930a;color:#b8930a;}
+  body.is-light .nav-link{color:#555!important;}
+  body.is-light .nav-link:hover,
+  body.is-light .nav-link.text-yellow-400{color:#b8930a!important;}
+  body.is-light .mob-link{color:#1a1818!important;}
+
+  body.is-light .svc-card-overlay{background:linear-gradient(to top,rgba(236,234,229,.93) 0%,rgba(236,234,229,.35) 60%,transparent 100%)!important;}
+  body.is-light .step-connector{background:linear-gradient(to left,transparent,rgba(184,147,10,.25),transparent)!important;}
+
+  body.is-light [class*="from-background"]{--tw-gradient-from:#fafaf8 var(--tw-gradient-from-position);}
+  body.is-light [class*="via-background"]{--tw-gradient-stops:var(--tw-gradient-from),#fafaf8 var(--tw-gradient-via-position),var(--tw-gradient-to);}
+  body.is-light [class*="to-background"]{--tw-gradient-to:#fafaf8 var(--tw-gradient-to-position);}
+
+</style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<div id="loader" aria-hidden="true"><img src="../assets/logo-dark.jpg" alt="Graphics House" class="logo-img w-64 h-auto"/><div id="loader-bar-track"><div id="loader-bar"></div></div></div>
+<div id="cur-dot" aria-hidden="true"></div><div id="cur-ring" aria-hidden="true"></div>
+<div id="mob-nav" role="dialog" aria-modal="true">
+  <button id="mob-close" class="absolute top-8 left-8 text-secondary hover:text-primary transition-colors" aria-label="Close menu"><span class="material-symbols-outlined text-3xl">close</span></button>
+  <div class="flex flex-col justify-center h-full px-12 gap-7">
+    <a href="../portfolio.html" class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">الأعمال</span><span class="en">Work</span></a>
+    <a href="../index.html#services" class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">الخدمات</span><span class="en">Services</span></a>
+    <a href="../case-studies.html" class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
+    <a href="../blog.html" class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">المدونة</span><span class="en">Insights</span></a>
+    <a href="../shop.html" class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">المتجر</span><span class="en">Shop</span></a>
+    <a href="../about.html" class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">من نحن</span><span class="en">Studio</span></a>
+    <a href="../contact.html" class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">تواصل</span><span class="en">Contact</span></a></div>
+</div>
+<nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/80 backdrop-blur-xl" role="navigation">
+  <div class="flex justify-between items-center px-6 md:px-10 h-32 md:h-40">
+    <a href="../index.html" class="shrink-0"><img src="../assets/logo-dark.jpg" alt="Graphics House" class="logo-img h-28 md:h-36 w-auto" style="object-fit:contain"/></a>
+    <div class="hidden md:flex gap-5 lg:gap-7" dir="rtl">
+      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="../portfolio.html"><span class="ar">الأعمال</span><span class="en">Work</span></a>
+      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="../index.html#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
+      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="../case-studies.html"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
+      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="../blog.html"><span class="ar">المدونة</span><span class="en">Insights</span></a>
+      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="../shop.html"><span class="ar">المتجر</span><span class="en">Shop</span></a>
+      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="../about.html"><span class="ar">من نحن</span><span class="en">Studio</span></a>
+      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="../contact.html"><span class="ar">تواصل</span><span class="en">Contact</span></a></div>
+    <div class="flex items-center gap-3 md:gap-4">
+      <button id="lang-btn" aria-label="Toggle language"><span class="ar">EN</span><span class="en">عربي</span></button>
+      <button id="theme-btn" aria-label="Toggle theme"><span class="material-symbols-outlined text-xl icon-moon">dark_mode</span><span class="material-symbols-outlined text-xl icon-sun">light_mode</span></button>
+      <a href="../contact.html" class="hidden md:block bg-primary text-on-primary px-5 py-3 font-label-caps text-[11px] uppercase tracking-widest transition-all"><span class="ar">ابدأ مشروعك</span><span class="en">Start a Project</span></a>
+      <button id="mob-open" class="md:hidden text-secondary hover:text-primary transition-colors" aria-label="Open menu"><span class="material-symbols-outlined text-3xl">menu</span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Service Hero ──────────────────────────────── -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+  <div id="hero-bg" class="absolute inset-x-0 -top-[10%] h-[120%] z-0">
+    <img class="w-full h-full object-cover" alt="Interactive Presentations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR3BZYxDerLX8ZSQT46YLXpsQ-vmcPk4TSHFfQvMKsVQQk4B-Jijc5OZaZomYUZO6ok4MxdkQB6qSbEi1xYV6vng0mA2e8Q_KZI5BHLMfsUdKsADNR6Qsml1-mdtW8zJtrKYcXXA4HKygm6lftlpLy-z7KRNrpRHq0MDPmSuyzxkBUCOrU5DDocpaykUXwmTQvN_iHi-Us4rYbb05T4KkOUfklfiCeprQwHW6plB9CHlF4CwmxD7ydeEB5duABuVK-4gAmwcXCvt0"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+    <div class="absolute inset-0 bg-black/30"></div>
+  </div>
+  <div class="relative z-10 text-center max-w-5xl px-6">
+    <span class="hero-enter font-label-caps text-label-caps text-primary tracking-[0.3em] mb-6 block" style="transition-delay:0ms"><span class="ar">الخدمة الرابعة</span><span class="en">Core Service</span></span>
+    <h1 class="hero-enter text-[52px] md:text-[82px] leading-tight mb-6" style="transition-delay:120ms">
+      <span class="text-on-background ar">العروض التفاعلية</span><span class="text-on-background en" style="font-family:'Noto Serif',serif;letter-spacing:-0.02em">Interactive Presentations</span>
+    </h1>
+    <p class="hero-enter font-body-lg text-secondary max-w-2xl mx-auto mb-12 opacity-80" style="transition-delay:240ms">
+      <span class="ar">نُطوّر بيئات تفاعلية بتقنية اللمس والـ Unreal Engine تتيح لعملائك التجوّل في المشروع، تغيير المواد والألوان، واختيار الوحدات في الوقت الفعلي.</span><span class="en">We develop interactive environments using touch technology and Unreal Engine that allow your clients to walk through the project, change materials and colors, and select units in real time.</span>
+    </p>
+    <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-6" style="transition-delay:360ms">
+      <a href="../contact.html" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(242,202,80,0.5)] shadow-[0_0_20px_rgba(242,202,80,0.3)]"><span class="ar">ابدأ مشروعك</span><span class="en">START YOUR PROJECT</span></a>
+      <a href="../portfolio.html" class="border border-primary text-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:bg-primary/10"><span class="ar">استعرض أعمالنا</span><span class="en">VIEW PORTFOLIO</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Service Overview ───────────────────────────── -->
+<section class="py-[120px] px-8 md:px-12">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
+    <div class="reveal w-full md:w-1/2" style="opacity:0;transform:translateY(24px)">
+      <span class="svc-tag mb-8 block"><span class="ar">الخدمة الرابعة</span><span class="en">Core Service</span></span>
+      <h2 class="font-headline-xl text-on-background mb-8"><span class="ar">العروض التفاعلية</span><span class="en">Interactive Presentations</span></h2>
+      <p class="font-body-lg text-secondary mb-10 opacity-80 leading-relaxed"><span class="ar">نُطوّر بيئات تفاعلية بتقنية اللمس والـ Unreal Engine تتيح لعملائك التجوّل في المشروع، تغيير المواد والألوان، واختيار الوحدات في الوقت الفعلي.</span><span class="en">We develop interactive environments using touch technology and Unreal Engine that allow your clients to walk through the project, change materials and colors, and select units in real time.</span></p>
+      <div class="space-y-1"><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">تفاعل لمسي على شاشات الجيل الرابع</span><span class="en">Touch interaction on fourth-generation screens</span></p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">تبديل المواد والألوان فورياً</span><span class="en">Instant material and color switching</span></p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">خريطة المشروع التفاعلية ثلاثية الأبعاد</span><span class="en">Interactive 3D project map</span></p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">ربط قاعدة بيانات الوحدات والأسعار</span><span class="en">Integration with unit and pricing database</span></p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">دعم متعدد اللغات والشاشات الكبيرة</span><span class="en">Multi-language and large-screen support</span></p></div></div></div>
+      <div class="mt-10 flex gap-6">
+        <a href="../contact.html" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-[11px] tracking-widest hover:shadow-[0_0_25px_rgba(242,202,80,0.5)] transition-all"><span class="ar">ابدأ مشروعك</span><span class="en">START YOUR PROJECT</span></a>
+      </div>
+    </div>
+    <div class="reveal w-full md:w-1/2 relative" style="opacity:0;transform:translateY(24px);transition-delay:.2s">
+      <div class="absolute -inset-4 border border-primary/20 translate-x-4 translate-y-4 pointer-events-none"></div>
+      <img class="relative z-10 w-full shadow-2xl" alt="Interactive Presentations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXmH9rX2A3d93SP_52atARfrZKSV303Ef4MNyijt31fiwe9mjVupXHCZOzGhP4glWhPi6hUbcDMjir5p20ucgHfLThbUfV3r8KYFN4yNDuTJ3fy09JMOzMBH9bCRP1EaiAv2bCcsRDQzBLhThr7C1ZVNCLDRRvVKG7xQL9rAfVBuNj7UQoNYheNmBtVRnhysu84iLQDetJ792zbSfq530PpUxvFgRJaH5gh9Q4DJY71wYnxW10mtsv8M25CPQGQlHPsP-JtFAC7BE"/>
+      <button class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-[0_0_30px_rgba(242,202,80,0.5)] hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined ms-filled text-background text-3xl">play_arrow</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ── Process ────────────────────────────────────── -->
+<section class="py-[100px] bg-surface-container border-t border-white/5">
+  <div class="px-8 md:px-12 max-w-container-max mx-auto">
+    <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
+      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block"><span class="ar">كيف نعمل</span><span class="en">How We Work</span></span>
+      <h2 class="font-headline-xl text-on-background"><span class="ar">المنهجية</span><span class="en">Our Process</span></h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 relative">
+      <div class="step-connector hidden md:block"></div>
+      <div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.00s">
+          <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">01</div>
+          <p class="font-body-md text-secondary opacity-80 text-sm"><span class="ar">تحليل المتطلبات وتصميم تجربة المستخدم</span><span class="en">Requirements analysis and UX design</span></p>
+        </div><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.12s">
+          <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">02</div>
+          <p class="font-body-md text-secondary opacity-80 text-sm"><span class="ar">بناء البيئة ثلاثية الأبعاد والتفاعل</span><span class="en">3D environment and interaction building</span></p>
+        </div><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.24s">
+          <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">03</div>
+          <p class="font-body-md text-secondary opacity-80 text-sm"><span class="ar">اختبار الأداء وتحسين السرعة</span><span class="en">Performance testing and optimization</span></p>
+        </div><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.36s">
+          <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">04</div>
+          <p class="font-body-md text-secondary opacity-80 text-sm"><span class="ar">التركيب والتدريب والدعم الفني</span><span class="en">Installation, training and technical support</span></p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Portfolio Samples ──────────────────────────── -->
+<section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto">
+  <div class="flex justify-between items-end mb-12 reveal" style="opacity:0;transform:translateY(24px)">
+    <div>
+      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block"><span class="ar">أعمالنا في هذه الخدمة</span><span class="en">Our Work In This Service</span></span>
+      <h2 class="font-headline-xl text-on-background"><span class="ar">أبرز المشاريع</span><span class="en">Featured Projects</span></h2>
+    </div>
+    <a href="../portfolio.html" class="border-b border-primary text-primary pb-1 font-label-caps text-[11px] tracking-widest hover:text-white hover:border-white transition-colors hidden md:block"><span class="ar">كل الأعمال</span><span class="en">ALL WORKS</span></a>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:.05s">
+      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR3BZYxDerLX8ZSQT46YLXpsQ-vmcPk4TSHFfQvMKsVQQk4B-Jijc5OZaZomYUZO6ok4MxdkQB6qSbEi1xYV6vng0mA2e8Q_KZI5BHLMfsUdKsADNR6Qsml1-mdtW8zJtrKYcXXA4HKygm6lftlpLy-z7KRNrpRHq0MDPmSuyzxkBUCOrU5DDocpaykUXwmTQvN_iHi-Us4rYbb05T4KkOUfklfiCeprQwHW6plB9CHlF4CwmxD7ydeEB5duABuVK-4gAmwcXCvt0" alt="Project 1"/></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <h3 class="font-headline-md text-white mb-1"><span class="ar">الجناح الذهبي</span><span class="en">The Golden Pavilion</span></h3>
+        <a href="../case-study-detail.html" class="text-primary text-xs tracking-widest"><span class="ar">كيس ستدي ←</span><span class="en">Case Study →</span></a>
+      </div>
+    </div>
+    <div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:.12s">
+      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXmH9rX2A3d93SP_52atARfrZKSV303Ef4MNyijt31fiwe9mjVupXHCZOzGhP4glWhPi6hUbcDMjir5p20ucgHfLThbUfV3r8KYFN4yNDuTJ3fy09JMOzMBH9bCRP1EaiAv2bCcsRDQzBLhThr7C1ZVNCLDRRvVKG7xQL9rAfVBuNj7UQoNYheNmBtVRnhysu84iLQDetJ792zbSfq530PpUxvFgRJaH5gh9Q4DJY71wYnxW10mtsv8M25CPQGQlHPsP-JtFAC7BE" alt="Project 2"/></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <h3 class="font-headline-md text-white mb-1"><span class="ar">واحة السلام</span><span class="en">Wahat Al-Salam</span></h3>
+        <a href="../case-study-detail.html" class="text-primary text-xs tracking-widest"><span class="ar">كيس ستدي ←</span><span class="en">Case Study →</span></a>
+      </div>
+    </div>
+    <div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:.2s">
+      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXmH9rX2A3d93SP_52atARfrZKSV303Ef4MNyijt31fiwe9mjVupXHCZOzGhP4glWhPi6hUbcDMjir5p20ucgHfLThbUfV3r8KYFN4yNDuTJ3fy09JMOzMBH9bCRP1EaiAv2bCcsRDQzBLhThr7C1ZVNCLDRRvVKG7xQL9rAfVBuNj7UQoNYheNmBtVRnhysu84iLQDetJ792zbSfq530PpUxvFgRJaH5gh9Q4DJY71wYnxW10mtsv8M25CPQGQlHPsP-JtFAC7BE" alt="Project 3"/></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <h3 class="font-headline-md text-white mb-1"><span class="ar">العلا الرؤيوية</span><span class="en">Aloula Vision</span></h3>
+        <a href="../case-study-detail.html" class="text-primary text-xs tracking-widest"><span class="ar">كيس ستدي ←</span><span class="en">Case Study →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────── -->
+<section class="py-[100px] bg-surface-container-lowest border-t border-white/5">
+  <div class="px-8 md:px-12 max-w-4xl mx-auto">
+    <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
+      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block"><span class="ar">الأسئلة الشائعة</span><span class="en">FAQ</span></span>
+      <h2 class="font-headline-xl text-on-background"><span class="ar">أجوبة عن استفساراتكم</span><span class="en">Answers to Your Questions</span></h2>
+    </div>
+    <div class="reveal" style="opacity:0;transform:translateY(24px)"><div class="border-b border-white/5 py-6">
+          <h4 class="font-headline-md text-on-background mb-3"><span class="ar">على أي أجهزة تعمل العروض التفاعلية؟</span><span class="en">What devices do interactive presentations run on?</span></h4>
+          <p class="font-body-md text-secondary opacity-70 leading-relaxed"><span class="ar">تعمل على شاشات اللمس، الكيوسك التفاعلي، وأجهزة الكمبيوتر عالية الأداء.</span><span class="en">They run on touch screens, interactive kiosks, and high-performance computers.</span></p>
+        </div><div class="border-b border-white/5 py-6">
+          <h4 class="font-headline-md text-on-background mb-3"><span class="ar">هل يمكن تحديث المحتوى بعد التسليم؟</span><span class="en">Can the content be updated after delivery?</span></h4>
+          <p class="font-body-md text-secondary opacity-70 leading-relaxed"><span class="ar">نعم، نقدم لوحة إدارة محتوى تتيح تحديث الأسعار والمعلومات بسهولة.</span><span class="en">Yes, we provide a content management panel to easily update prices and information.</span></p>
+        </div><div class="border-b border-white/5 py-6">
+          <h4 class="font-headline-md text-on-background mb-3"><span class="ar">هل يمكن استخدام العرض بدون إنترنت؟</span><span class="en">Can the presentation be used without internet?</span></h4>
+          <p class="font-body-md text-secondary opacity-70 leading-relaxed"><span class="ar">نعم، تعمل جميع عروضنا التفاعلية بشكل كامل بدون اتصال بالإنترنت.</span><span class="en">Yes, all our interactive presentations work fully offline.</span></p>
+        </div></div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────── -->
+<section class="py-24 text-center border-t border-white/5 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3"></div>
+  <div class="relative z-10 max-w-2xl mx-auto px-8">
+    <span class="material-symbols-outlined ms-filled text-primary text-4xl mb-6 block">touch_app</span>
+    <h2 class="font-headline-xl text-on-background mb-6"><span class="ar">جاهز لتحويل مشروعك إلى تجربة بصرية استثنائية؟</span><span class="en">Ready to turn your project into an exceptional visual experience?</span></h2>
+    <p class="font-body-lg text-secondary opacity-70 mb-10"><span class="ar">فريقنا متاح لمناقشة متطلباتك وتقديم عرض سعر مفصّل في أقل من ٤٨ ساعة.</span><span class="en">Our team is available to discuss your requirements and provide a detailed quote in less than 48 hours.</span></p>
+    <a href="../contact.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-label-caps tracking-[0.3em] hover:shadow-[0_0_30px_rgba(242,202,80,0.5)] transition-all inline-block"><span class="ar">ابدأ مشروعك الآن</span><span class="en">START YOUR PROJECT NOW</span></a>
+  </div>
+</section>
+
+<footer class="w-full border-t border-yellow-500/10 pt-16 pb-12 bg-zinc-950">
+  <div class="max-w-7xl mx-auto px-8 md:px-12 flex flex-col md:flex-row justify-between items-start gap-12">
+    <div class="max-w-xs"><a href="../index.html"><img src="../assets/logo-dark.jpg" alt="Graphics House" class="logo-img h-28 w-auto mb-4" style="object-fit:contain"/></a>
+    <p class="text-zinc-500 text-xs leading-relaxed" style="font-family:'Cairo','Manrope',sans-serif"><span class="ar">أفضل فكرة للعرض</span><span class="en">Best Idea For Presentation</span></p></div>
+    <div class="flex flex-col gap-3" style="font-family:'Cairo','Manrope',sans-serif">
+      <span class="text-yellow-500 text-xs tracking-widest mb-1"><span class="ar">الخدمات</span><span class="en">SERVICES</span></span>
+      <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="../services/rendering.html"><span class="ar">الإظهار المعماري</span><span class="en">Arch. Visualization</span></a>
+      <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="../services/animation.html"><span class="ar">التحريك 3D</span><span class="en">3D Animation</span></a>
+      <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="../services/maquettes.html"><span class="ar">المجسمات</span><span class="en">Maquettes</span></a>
+      <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="../services/interactive.html"><span class="ar">العروض التفاعلية</span><span class="en">Interactive</span></a>
+      <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="../services/vr-360.html">VR &amp; 360°</a>
+      <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="../services/production.html"><span class="ar">الإنتاج السينمائي</span><span class="en">Film Production</span></a>
+    </div>
+    <div class="flex flex-col gap-3" style="font-family:'Cairo','Manrope',sans-serif">
+      <span class="text-yellow-500 text-xs tracking-widest mb-1"><span class="ar">روابط</span><span class="en">NAVIGATE</span></span>
+      <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="../portfolio.html"><span class="ar">الأعمال</span><span class="en">Portfolio</span></a>
+      <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="../case-studies.html"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
+      <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="../about.html"><span class="ar">من نحن</span><span class="en">About</span></a>
+      <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="../contact.html"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+    </div>
+    <div style="font-family:'Cairo','Manrope',sans-serif"><p class="text-zinc-500 text-xs"><span class="ar">© ٢٠٢٥ جرافيكس هاوس</span><span class="en">© 2025 GRAPHICS HOUSE</span></p></div>
+  </div>
+</footer>
+<div id="vid-modal" role="dialog" aria-modal="true"><button id="vid-close" class="absolute top-6 right-6 text-white/50 hover:text-primary z-10"><span class="material-symbols-outlined text-4xl">close</span></button><div class="w-full max-w-5xl aspect-video bg-zinc-900 flex items-center justify-center mx-4 border border-white/10"><span class="material-symbols-outlined text-primary text-7xl">play_circle</span></div></div>
+<button id="back-top" class="fixed bottom-8 left-6 z-50 w-11 h-11 bg-surface-container-high border border-primary/30 text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" aria-label="Back to top"><span class="material-symbols-outlined text-xl">arrow_upward</span></button>
+<script>(function(){'use strict';
+  'use strict';
+
+  // ── Language System ────────────────────────────
+  const html      = document.documentElement;
+  const body      = document.body;
+  const langBtn   = document.getElementById('lang-btn');
+  let   currentLang = localStorage.getItem('gh-lang') || 'ar';
+
+  function setLang(lang) {
+    currentLang = lang;
+    if (lang === 'en') {
+      body.classList.add('is-en');
+      html.lang = 'en';
+      // Keep RTL for visual consistency (Arabic company), only content changes
+    } else {
+      body.classList.remove('is-en');
+      html.lang = 'ar';
+    }
+    localStorage.setItem('gh-lang', lang);
+  }
+
+
+  // ── Theme System ───────────────────────────────
+  const themeBtn = document.getElementById('theme-btn');
+  let isDark = localStorage.getItem('gh-theme') !== 'light';
+  function applyTheme(dark) {
+    isDark = dark;
+    document.body.classList.toggle('is-light', !dark);
+    localStorage.setItem('gh-theme', dark ? 'dark' : 'light');
+  }
+  applyTheme(isDark);
+  themeBtn.addEventListener('click', () => applyTheme(!isDark));
+  langBtn.addEventListener('click', () => {
+    setLang(currentLang === 'ar' ? 'en' : 'ar');
+  });
+
+  // Init language on load
+  setLang(currentLang);
+
+  // ── Page Loader ────────────────────────────────
+  const loader    = document.getElementById('loader');
+  const loaderBar = document.getElementById('loader-bar');
+
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => { loaderBar.style.width = '100%'; }, 80);
+  setTimeout(() => {
+    loader.classList.add('out');
+    document.body.style.overflow = '';
+    triggerHeroEntrance();
+  }, 1450);
+
+  function triggerHeroEntrance() {
+    document.querySelectorAll('.hero-enter').forEach(el => el.classList.add('in'));
+  }
+
+  // ── Custom Cursor ──────────────────────────────
+  const dot  = document.getElementById('cur-dot');
+  const ring = document.getElementById('cur-ring');
+
+  if (window.matchMedia('(pointer:fine)').matches) {
+    let mx=0, my=0, rx=0, ry=0, moved=false;
+
+    document.addEventListener('mousemove', e => {
+      mx=e.clientX; my=e.clientY;
+      dot.style.transform = `translate(${mx}px,${my}px)`;
+      if (!moved) { rx=mx; ry=my; moved=true; dot.classList.add('visible'); ring.classList.add('visible'); }
+    });
+
+    (function animRing() {
+      rx += (mx-rx)*.13; ry += (my-ry)*.13;
+      ring.style.transform = `translate(${rx}px,${ry}px)`;
+      requestAnimationFrame(animRing);
+    })();
+
+    document.querySelectorAll('a,button,[role="button"],input,select,textarea').forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+    });
+  }
+
+  // ── Scroll Reveal ──────────────────────────────
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); }
+    });
+  }, { threshold:.1, rootMargin:'0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+  // ── Counter Animation ──────────────────────────
+  const cntObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = parseInt(el.dataset.counter, 10), suffix = el.dataset.suffix||'';
+      const dur = 1800, start = performance.now();
+      (function tick(now) {
+        const p = Math.min((now-start)/dur, 1), v = Math.floor((1-Math.pow(1-p,3))*target);
+        el.textContent = v + suffix;
+        if (p < 1) requestAnimationFrame(tick); else el.textContent = target + suffix;
+      })(start);
+      cntObs.unobserve(el);
+    });
+  }, { threshold:.5 });
+
+  document.querySelectorAll('[data-counter]').forEach(el => cntObs.observe(el));
+
+  // ── ScrollSpy ──────────────────────────────────
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
+
+  function updateNav() {
+    let cur = '';
+    sections.forEach(s => { if (s.getBoundingClientRect().top <= 160) cur = s.id; });
+    navLinks.forEach(a => {
+      const match = a.getAttribute('href') === '#'+cur;
+      a.classList.toggle('text-yellow-500', match);
+      a.classList.toggle('border-b',         match);
+      a.classList.toggle('border-yellow-500', match);
+      a.classList.toggle('text-gray-400',    !match);
+    });
+  }
+  window.addEventListener('scroll', updateNav, {passive:true});
+
+  // ── Nav scroll state ───────────────────────────
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY>60), {passive:true});
+
+  // ── Hero Parallax ──────────────────────────────
+  const heroBg = document.getElementById('hero-bg');
+  window.addEventListener('scroll', () => {
+    if (scrollY < innerHeight) heroBg.style.transform = `translateY(${scrollY*.3}px)`;
+  }, {passive:true});
+
+  // ── Mobile Nav ─────────────────────────────────
+  const mobNav=document.getElementById('mob-nav'), mobOpen=document.getElementById('mob-open'), mobClose=document.getElementById('mob-close');
+  const openMob=()=>{mobNav.classList.add('open'); body.style.overflow='hidden';};
+  const closeMob=()=>{mobNav.classList.remove('open'); body.style.overflow='';};
+  mobOpen.addEventListener('click',openMob);
+  mobClose.addEventListener('click',closeMob);
+  document.querySelectorAll('.mob-link').forEach(a=>a.addEventListener('click',closeMob));
+
+  // ── Video Modal ────────────────────────────────
+  const vidModal=document.getElementById('vid-modal'), vidClose=document.getElementById('vid-close');
+  const closeVid=()=>{vidModal.classList.remove('open'); body.style.overflow='';};
+  document.querySelectorAll('.play-btn').forEach(b=>b.addEventListener('click',()=>{vidModal.classList.add('open'); body.style.overflow='hidden';}));
+  vidClose.addEventListener('click',closeVid);
+  vidModal.addEventListener('click',e=>{if(e.target===vidModal) closeVid();});
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeVid();closeMob();} });
+
+  // ── Back to Top ────────────────────────────────
+  const backTop=document.getElementById('back-top');
+  window.addEventListener('scroll',()=>backTop.classList.toggle('visible',scrollY>600),{passive:true});
+  backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+
+})();</script>
+</body></html>
