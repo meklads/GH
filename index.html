@@ -93,6 +93,35 @@
     75%{transform:translate(-2%,8%)} 87%{transform:translate(5%,-7%)} 100%{transform:translate(0,0)}
   }
 
+  /* ── Left Contact Strip ────────────────────── */
+  #contact-strip {
+    position:fixed; left:0; top:50%; transform:translateY(-50%);
+    z-index:45; display:flex; flex-direction:column; align-items:center;
+  }
+  #contact-strip a {
+    display:flex; flex-direction:column; align-items:center; gap:14px;
+    padding:22px 11px; text-decoration:none;
+    background:rgba(0,0,0,.55); backdrop-filter:blur(12px);
+    border-inline-end:1px solid rgba(242,202,80,.18);
+    transition:background .3s,border-color .3s;
+  }
+  #contact-strip a:hover { background:rgba(0,0,0,.72); border-color:rgba(242,202,80,.45); }
+  #contact-strip .cs-label {
+    writing-mode:vertical-rl; transform:rotate(180deg);
+    font-family:'Manrope',sans-serif; font-size:8.5px;
+    letter-spacing:.34em; text-transform:uppercase;
+    color:rgba(255,255,255,.42); transition:color .3s;
+  }
+  #contact-strip a:hover .cs-label { color:#f2ca50; }
+  #contact-strip .cs-icon {
+    font-size:16px; color:#f2ca50;
+  }
+  @media(max-width:767px){ #contact-strip{ display:none; } }
+  body.is-light #contact-strip a { background:rgba(255,255,255,.72); border-color:rgba(184,147,10,.2); }
+  body.is-light #contact-strip a:hover { background:rgba(255,255,255,.9); border-color:#b8930a; }
+  body.is-light #contact-strip .cs-label { color:rgba(0,0,0,.38); }
+  body.is-light #contact-strip a:hover .cs-label { color:#b8930a; }
+
   /* ── Page Loader ────────────────────────────── */
   #loader {
     position:fixed; inset:0; z-index:99999; background:#0e0e0e;
@@ -407,6 +436,14 @@
 <!-- ── Custom Cursor ───────────────────────────── -->
 <div id="cur-dot" aria-hidden="true"></div>
 <div id="cur-ring" aria-hidden="true"></div>
+
+<!-- ── Left Contact Strip ──────────────────────── -->
+<div id="contact-strip" aria-hidden="true">
+  <a href="contact.html" aria-label="Contact us">
+    <span class="cs-label"><span class="ar">تواصل معنا</span><span class="en">CONTACT US</span></span>
+    <span class="material-symbols-outlined cs-icon">phone_in_talk</span>
+  </a>
+</div>
 
 <!-- ── Mobile Nav ──────────────────────────────── -->
 <div id="mob-nav" role="dialog" aria-modal="true">
