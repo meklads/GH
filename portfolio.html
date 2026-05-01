@@ -78,7 +78,7 @@
   /* ── Film grain ─────────────────────────────── */
   body::after {
     content:''; position:fixed; inset:0; pointer-events:none; z-index:9990;
-    opacity:.018; mix-blend-mode:screen;
+    opacity:.018; mix-blend-mode:normal;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
     animation:grain 9s steps(8,end) infinite;
   }
@@ -117,7 +117,7 @@
   /* ── Nav links — Animatics style ────────────── */
   .nav-link {
     font-family:'Cairo',sans-serif; font-size:14px; font-weight:500;
-    color:rgba(255,255,255,.82); text-decoration:none;
+    color:rgba(255,255,255,.92); text-decoration:none;
     position:relative; padding-bottom:3px;
     transition:color .25s ease;
   }
@@ -137,7 +137,7 @@
 
 <!-- ── Page Loader ─────────────────────────────── -->
 <div id="loader" aria-hidden="true">
-  <img src="assets/logo-dark.jpg" alt="Graphics House" class="logo-img w-64 md:w-80 h-auto"/>
+  <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img w-64 md:w-80 h-auto"/>
   <div id="loader-bar-track"><div id="loader-bar"></div></div>
 </div>
 
@@ -177,12 +177,12 @@
 <!-- ── TopNavBar — Floating pill, centered links ── -->
 <nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50" role="navigation" style="padding:12px 20px">
   <div id="nav-pill" class="relative flex items-center"
-       style="background:rgba(10,10,10,.84);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:14px;border:1px solid rgba(255,255,255,.07);padding:0 20px;height:96px">
+       style="background:rgba(10,10,10,.84);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:16px;border:1px solid rgba(255,255,255,.07);padding:0 24px;height:148px">
 
     <!-- Logo: left -->
     <a href="index.html" class="shrink-0 relative z-10">
-      <img src="assets/logo-dark.jpg" alt="Graphics House"
-           class="logo-img" style="height:88px;width:auto;object-fit:contain"/>
+      <img src="assets/logo-gold.png" alt="Graphics House"
+           class="logo-img" style="height:140px;width:auto;object-fit:contain"/>
     </a>
 
     <!-- Links: absolutely centered in pill -->
@@ -374,7 +374,7 @@
 <footer class="w-full border-t border-yellow-500/10 pt-16 md:pt-20 pb-12 bg-zinc-950">
   <div class="max-w-7xl mx-auto px-8 md:px-12 flex flex-col md:flex-row justify-between items-start gap-12">
     <div class="max-w-sm">
-      <a href="index.html"><img src="assets/logo-dark.jpg" alt="Graphics House" class="logo-img h-28 md:h-36 w-auto mb-4" style="object-fit:contain"/></a>
+      <a href="index.html"><img src="assets/logo-gold.png" alt="Graphics House" class="logo-img h-28 md:h-36 w-auto mb-4" style="object-fit:contain"/></a>
       <p class="text-zinc-500 text-xs tracking-widest leading-relaxed mb-8" style="font-family:'Cairo','Manrope',sans-serif">
         <span class="ar">أفضل فكرة للعرض — نعيد تعريف المعايير السينمائية لرواية القصص المعمارية.</span>
         <span class="en">Best Idea For Presentation — Redefining cinematic standards for architectural storytelling.</span>

@@ -78,7 +78,7 @@
   /* ── Film grain ─────────────────────────────── */
   body::after {
     content:''; position:fixed; inset:0; pointer-events:none; z-index:9990;
-    opacity:.018; mix-blend-mode:screen;
+    opacity:.018; mix-blend-mode:normal;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
     animation:grain 9s steps(8,end) infinite;
   }
@@ -117,7 +117,7 @@
   /* ── Nav links — Animatics style ────────────── */
   .nav-link {
     font-family:'Cairo',sans-serif; font-size:14px; font-weight:500;
-    color:rgba(255,255,255,.82); text-decoration:none;
+    color:rgba(255,255,255,.92); text-decoration:none;
     position:relative; padding-bottom:3px;
     transition:color .25s ease;
   }
@@ -134,7 +134,7 @@
 </style>
 </head>
 <body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
-<div id="loader" aria-hidden="true"><img src="assets/logo-dark.jpg" alt="Graphics House" class="logo-img w-64 md:w-80 h-auto"/><div id="loader-bar-track"><div id="loader-bar"></div></div></div>
+<div id="loader" aria-hidden="true"><img src="assets/logo-gold.png" alt="Graphics House" class="logo-img w-64 md:w-80 h-auto"/><div id="loader-bar-track"><div id="loader-bar"></div></div></div>
 <div id="cur-dot" aria-hidden="true"></div>
 <div id="cur-ring" aria-hidden="true"></div>
 <!-- ── Left Contact Strip ──────────────────────── -->
@@ -161,7 +161,7 @@
 </div>
 <nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/80 backdrop-blur-xl" role="navigation">
   <div class="flex justify-between items-center px-6 md:px-10 h-32 md:h-40">
-    <a href="index.html" class="shrink-0"><img src="assets/logo-dark.jpg" alt="Graphics House" class="logo-img h-28 md:h-36 w-auto" style="object-fit:contain"/></a>
+    <a href="index.html" class="shrink-0"><img src="assets/logo-gold.png" alt="Graphics House" class="logo-img h-28 md:h-36 w-auto" style="object-fit:contain"/></a>
     <div class="hidden md:flex gap-5 lg:gap-7" dir="rtl">
       <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="portfolio.html"><span class="ar">الأعمال</span><span class="en">Work</span></a>
       <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="index.html#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
@@ -196,7 +196,7 @@
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
     <div class="reveal w-full md:w-1/2" style="opacity:0;transform:translateY(24px)">
       <div class="relative inline-block mb-12">
-        <img src="assets/logo-dark.jpg" alt="Graphics House" class="logo-img h-32 md:h-44 w-auto" style="object-fit:contain"/>
+        <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img h-32 md:h-44 w-auto" style="object-fit:contain"/>
       </div>
       <h2 class="font-headline-xl text-on-background mb-8"><span class="ar">قصتنا منذ ٢٠١٩</span><span class="en">Our Story Since 2019</span></h2>
       <p class="font-body-lg text-secondary mb-8 opacity-80 leading-relaxed">
@@ -313,7 +313,7 @@
 <footer class="w-full border-t border-yellow-500/10 pt-16 md:pt-20 pb-12 bg-zinc-950">
   <div class="max-w-7xl mx-auto px-8 md:px-12 flex flex-col md:flex-row justify-between items-start gap-12">
     <div class="max-w-sm">
-      <a href="index.html"><img src="assets/logo-dark.jpg" alt="Graphics House" class="logo-img h-28 md:h-36 w-auto mb-4" style="object-fit:contain"/></a>
+      <a href="index.html"><img src="assets/logo-gold.png" alt="Graphics House" class="logo-img h-28 md:h-36 w-auto mb-4" style="object-fit:contain"/></a>
       <p class="text-zinc-500 text-xs tracking-widest leading-relaxed mb-8" style="font-family:'Cairo','Manrope',sans-serif"><span class="ar">أفضل فكرة للعرض — نعيد تعريف المعايير السينمائية لرواية القصص المعمارية.</span><span class="en">Best Idea For Presentation — Redefining cinematic standards for architectural storytelling.</span></p>
       <div class="flex gap-5 flex-wrap">
         <a class="text-zinc-500 hover:text-yellow-500 transition-colors text-xs" href="#">Instagram</a>

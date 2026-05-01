@@ -248,8 +248,8 @@
   body:not(.is-en) h2.font-headline-xl { font-size:clamp(2rem,5vw,3.5rem); font-weight:700; }
   body:not(.is-en) h3.font-headline-md { font-size:1.6rem; font-weight:600; }
 
-  /* Logo: remove black background — screen blend makes black transparent */
-  .logo-img { mix-blend-mode:screen; }
+  /* Logo: gold PNG with transparent bg — no blend needed */
+  .logo-img { mix-blend-mode:normal; }
 
   /* Language toggle button */
   #lang-btn {
@@ -338,10 +338,10 @@
   @media(min-width:1024px){ .hero-slide{ padding:0 5rem 6.5rem 4rem; max-width:min(560px,80vw); } }
   .hero-slide.hs-active { opacity:1; transform:translateY(0); pointer-events:auto; }
 
-  /* ── Hero text: crisp white with sharp shadow ── */
+  /* ── Hero text: pure sharp colors, no shadow ── */
   .hero-card { border-inline-start:2px solid rgba(242,202,80,.5); padding-inline-start:.9rem; }
-  .hero-slide h1 { text-shadow:0 2px 12px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,.9); }
-  .hero-slide p  { text-shadow:0 1px 8px rgba(0,0,0,1); }
+  .hero-slide h1 { text-shadow:none; color:#ffffff; }
+  .hero-slide p  { text-shadow:none; color:rgba(255,255,255,.95); }
 
   /* ── Progress bars ───────────────────────────── */
   .hero-prog {
@@ -439,7 +439,7 @@
 
 <!-- ── Page Loader ─────────────────────────────── -->
 <div id="loader" aria-hidden="true">
-  <img src="assets/logo-dark.jpg" alt="Graphics House" class="logo-img w-64 md:w-80 h-auto"/>
+  <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img w-64 md:w-80 h-auto"/>
   <div id="loader-bar-track"><div id="loader-bar"></div></div>
 </div>
 
@@ -479,12 +479,12 @@
 <!-- ── TopNavBar — Floating pill, centered links ── -->
 <nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50" role="navigation" style="padding:12px 20px">
   <div id="nav-pill" class="relative flex items-center"
-       style="background:rgba(10,10,10,.84);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:14px;border:1px solid rgba(255,255,255,.07);padding:0 20px;height:96px">
+       style="background:rgba(10,10,10,.84);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:16px;border:1px solid rgba(255,255,255,.07);padding:0 24px;height:148px">
 
     <!-- Logo: left -->
     <a href="index.html" class="shrink-0 relative z-10">
-      <img src="assets/logo-dark.jpg" alt="Graphics House"
-           class="logo-img" style="height:88px;width:auto;object-fit:contain"/>
+      <img src="assets/logo-gold.png" alt="Graphics House"
+           class="logo-img" style="height:140px;width:auto;object-fit:contain"/>
     </a>
 
     <!-- Links: absolutely centered in pill -->
@@ -524,14 +524,14 @@
     </video>
   </div>
 
-  <!-- Spotlight vignette: intense corners, bright center — video as light source -->
+  <!-- Pure black corners: 100% black fading to transparent, small tight area -->
   <div class="absolute inset-0 z-[1] pointer-events-none" style="background:
-    radial-gradient(ellipse 40% 45% at 0%   0%,   #000 0%, rgba(0,0,0,.92) 30%, transparent 70%),
-    radial-gradient(ellipse 40% 45% at 100% 0%,   #000 0%, rgba(0,0,0,.92) 30%, transparent 70%),
-    radial-gradient(ellipse 40% 45% at 0%   100%, #000 0%, rgba(0,0,0,.92) 30%, transparent 70%),
-    radial-gradient(ellipse 40% 45% at 100% 100%, #000 0%, rgba(0,0,0,.92) 30%, transparent 70%)"></div>
-  <!-- Bottom fade for text readability -->
-  <div class="absolute inset-x-0 bottom-0 z-[2] pointer-events-none" style="height:55%;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,rgba(0,0,0,.3) 40%,transparent 100%)"></div>
+    radial-gradient(ellipse 26% 30% at 0%   0%,   #000 0%, transparent 100%),
+    radial-gradient(ellipse 26% 30% at 100% 0%,   #000 0%, transparent 100%),
+    radial-gradient(ellipse 26% 30% at 0%   100%, #000 0%, transparent 100%),
+    radial-gradient(ellipse 26% 30% at 100% 100%, #000 0%, transparent 100%)"></div>
+  <!-- Strong bottom dark zone — text lives here, no shadow needed -->
+  <div class="absolute inset-x-0 bottom-0 z-[2] pointer-events-none" style="height:62%;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 35%,rgba(0,0,0,.12) 70%,transparent 100%)"></div>
 
   <!-- Slides -->
   <!-- Slide 0: Architectural Visualization -->
@@ -543,7 +543,7 @@
       <h1 style="font-size:clamp(31px,3.6vw,57px);line-height:1.15;font-weight:800;color:#fff;margin-bottom:.9rem;font-family:'Almarai',sans-serif">
         صور تُقنع <span style="color:#f2ca50">المستثمر</span>
       </h1>
-      <p style="color:rgba(255,255,255,.72);font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
+      <p style="color:#fff;font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
         تصوير فوتوريالستي بدقة 8K لمشاريعك العقارية — نُحيل المخططات إلى صور تُباع بها الوحدات.
       </p>
       <div class="flex flex-wrap gap-3">
@@ -566,7 +566,7 @@
       <h1 style="font-size:clamp(31px,3.6vw,57px);line-height:1.15;font-weight:800;color:#fff;margin-bottom:.9rem;font-family:'Almarai',sans-serif">
         حركة تُحيي <span style="color:#f2ca50">المشروع</span>
       </h1>
-      <p style="color:rgba(255,255,255,.72);font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
+      <p style="color:#fff;font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
         جولات سينمائية بتقنية 4K تُحكي قصة مشروعك قبل أن يُبنى — كل تفصيلة تنبض بالحياة.
       </p>
       <div class="flex flex-wrap gap-3">
@@ -589,7 +589,7 @@
       <h1 style="font-size:clamp(31px,3.6vw,57px);line-height:1.15;font-weight:800;color:#fff;margin-bottom:.9rem;font-family:'Almarai',sans-serif">
         نماذج تُلمس <span style="color:#f2ca50">الفخامة</span>
       </h1>
-      <p style="color:rgba(255,255,255,.72);font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
+      <p style="color:#fff;font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
         مجسمات يدوية بمقاييس دقيقة مع إضاءة LED وإرسال دولي — الفخامة التي تُرى وتُلمس.
       </p>
       <div class="flex flex-wrap gap-3">
@@ -612,7 +612,7 @@
       <h1 style="font-size:clamp(31px,3.6vw,57px);line-height:1.15;font-weight:800;color:#fff;margin-bottom:.9rem;font-family:'Almarai',sans-serif">
         إنتاج يُذهل <span style="color:#f2ca50">الجمهور</span>
       </h1>
-      <p style="color:rgba(255,255,255,.72);font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
+      <p style="color:#fff;font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
         إنتاج سينمائي بكاميرات ARRI وRED Cinema — إعلانات وأفلام عقارية تُحدث الفرق.
       </p>
       <div class="flex flex-wrap gap-3">
