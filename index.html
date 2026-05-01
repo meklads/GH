@@ -324,9 +324,9 @@
   /* ── Hero overlays ───────────────────────────── */
   /* removed — replaced with inline style divs below */
 
-  /* ── Hero Slides — buttons pushed lower ─────── */
+  /* ── Hero Slides — above vignettes, buttons pushed lower ── */
   .hero-slide {
-    position:absolute; inset:0;
+    position:absolute; inset:0; z-index:10;
     display:flex; align-items:flex-end; justify-content:center;
     padding-bottom:160px;
     opacity:0; transform:scale(.97);
@@ -525,16 +525,14 @@
     </video>
   </div>
 
-  <!-- Pure black corners: 100% black fading to transparent, small tight area -->
-  <div class="absolute inset-0 z-[1] pointer-events-none" style="background:
-    radial-gradient(ellipse 26% 30% at 0%   0%,   #000 0%, transparent 100%),
-    radial-gradient(ellipse 26% 30% at 100% 0%,   #000 0%, transparent 100%),
-    radial-gradient(ellipse 26% 30% at 0%   100%, #000 0%, transparent 100%),
-    radial-gradient(ellipse 26% 30% at 100% 100%, #000 0%, transparent 100%)"></div>
-  <!-- Strong bottom dark zone — text lives here, no shadow needed -->
-  <div class="absolute inset-x-0 bottom-0 z-[2] pointer-events-none" style="height:62%;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 35%,rgba(0,0,0,.12) 70%,transparent 100%)"></div>
+  <!-- 4 corner vignettes: 100% black → transparent, 20% coverage each corner -->
+  <div class="absolute inset-0 z-[5] pointer-events-none" style="background:
+    radial-gradient(ellipse 22% 22% at 0%   0%,   #000000 0%, transparent 100%),
+    radial-gradient(ellipse 22% 22% at 100% 0%,   #000000 0%, transparent 100%),
+    radial-gradient(ellipse 22% 22% at 0%   100%, #000000 0%, transparent 100%),
+    radial-gradient(ellipse 22% 22% at 100% 100%, #000000 0%, transparent 100%)"></div>
 
-  <!-- Slides — buttons only, centered -->
+  <!-- Slides — buttons only, above vignettes -->
   <div class="hero-slide hs-active" id="hslide-0">
     <div class="flex flex-wrap gap-6 justify-center">
       <a href="services/rendering.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
