@@ -155,21 +155,32 @@
     <a href="contact.html"      class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">تواصل</span><span class="en">Contact</span></a></div>
   <div class="absolute bottom-12 left-12 flex gap-8"><a href="#" class="font-label-caps text-label-caps text-zinc-500 hover:text-primary transition-colors">IG</a><a href="#" class="font-label-caps text-label-caps text-zinc-500 hover:text-primary transition-colors">LN</a></div>
 </div>
-<nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/80 backdrop-blur-xl" role="navigation">
-  <div class="flex justify-between items-center px-6 md:px-10 h-32 md:h-40">
-    <a href="index.html" class="shrink-0"><img src="assets/logo-gold.png" alt="Graphics House" class="logo-img h-28 md:h-36 w-auto" style="object-fit:contain"/></a>
-    <div class="hidden md:flex gap-5 lg:gap-7" dir="rtl">
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="portfolio.html"><span class="ar">الأعمال</span><span class="en">Work</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="index.html#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="case-studies.html"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="blog.html"><span class="ar">المدونة</span><span class="en">Insights</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="about.html"><span class="ar">من نحن</span><span class="en">Studio</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="contact.html"><span class="ar">تواصل</span><span class="en">Contact</span></a></div>
-    <div class="flex items-center gap-3 md:gap-4">
-      <button id="lang-btn" aria-label="Toggle language"><span class="ar">EN</span><span class="en">عربي</span></button>
-      <button id="theme-btn" aria-label="Toggle theme"><span class="material-symbols-outlined text-xl icon-moon">dark_mode</span><span class="material-symbols-outlined text-xl icon-sun">light_mode</span></button>
-      <a href="contact.html" class="hidden md:block bg-primary text-on-primary px-5 lg:px-7 py-3 font-label-caps text-label-caps uppercase shadow-[0_0_15px_rgba(242,202,80,0.3)] hover:shadow-[0_0_25px_rgba(242,202,80,0.5)] active:scale-95 transition-all duration-300 text-[11px]"><span class="ar">ابدأ مشروعك</span><span class="en">Start a Project</span></a>
-      <button id="mob-open" class="md:hidden text-secondary hover:text-primary transition-colors" aria-label="Open menu"><span class="material-symbols-outlined text-3xl">menu</span></button>
+<!-- ── TopNavBar — Floating pill ── -->
+<nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50" role="navigation" style="padding:12px 20px">
+  <div id="nav-pill" class="relative flex items-center"
+       style="background:rgba(0,0,0,.96);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:16px;border:1px solid rgba(255,255,255,.06);padding:0 24px;height:132px">
+    <a href="index.html" class="shrink-0 relative z-10">
+      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" style="height:126px;width:auto;object-fit:contain"/>
+    </a>
+    <div class="hidden md:flex items-center gap-7 lg:gap-10 absolute inset-0 justify-center pointer-events-none" dir="rtl">
+      <a class="nav-link pointer-events-auto" href="portfolio.html"><span class="ar">الأعمال</span><span class="en">Work</span></a>
+      <a class="nav-link pointer-events-auto" href="index.html#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
+      <a class="nav-link pointer-events-auto" href="case-studies.html"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
+      <a class="nav-link pointer-events-auto" href="blog.html"><span class="ar">المدونة</span><span class="en">Insights</span></a>
+      <a class="nav-link pointer-events-auto" href="about.html"><span class="ar">من نحن</span><span class="en">Studio</span></a>
+      <a class="nav-link pointer-events-auto" href="contact.html"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+    </div>
+    <div class="flex items-center gap-3 relative z-10" style="margin-inline-start:auto">
+      <div class="hidden md:flex items-center gap-3" style="border-inline-start:1px solid rgba(255,255,255,.12);padding-inline-start:1rem">
+        <button id="lang-btn" aria-label="Toggle language"><span class="ar">EN</span><span class="en">عربي</span></button>
+        <button id="theme-btn" aria-label="Toggle theme">
+          <span class="material-symbols-outlined text-lg icon-moon">dark_mode</span>
+          <span class="material-symbols-outlined text-lg icon-sun">light_mode</span>
+        </button>
+      </div>
+      <button id="mob-open" class="md:hidden text-secondary hover:text-primary transition-colors" aria-label="Open menu">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
     </div>
   </div>
 </nav>
