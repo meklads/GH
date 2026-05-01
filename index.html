@@ -141,11 +141,21 @@
   .hero-enter.in { opacity:1; transform:none; }
 
   /* ── Nav states ─────────────────────────────── */
-  #main-nav { transition:padding .4s ease; }
-  #nav-pill { transition:background .4s ease, box-shadow .4s ease; }
+  #main-nav { transition:padding .45s cubic-bezier(.4,0,.2,1); }
+  #nav-pill {
+    transition:background .45s cubic-bezier(.4,0,.2,1),
+               border-radius .45s cubic-bezier(.4,0,.2,1),
+               border-color .45s cubic-bezier(.4,0,.2,1),
+               box-shadow .45s cubic-bezier(.4,0,.2,1),
+               height .45s cubic-bezier(.4,0,.2,1);
+  }
+  /* Scrolled: full-width solid bar, like Animatics */
+  #main-nav.scrolled { padding:0 !important; }
   #main-nav.scrolled #nav-pill {
-    background:rgba(0,0,0,.5) !important;
-    box-shadow:0 4px 40px rgba(0,0,0,.5);
+    background:rgba(8,8,8,.97) !important;
+    border-radius:0 !important;
+    border-color:transparent !important;
+    box-shadow:0 1px 0 rgba(255,255,255,.07), 0 4px 28px rgba(0,0,0,.7) !important;
   }
 
   /* ── Nav links — Animatics style ────────────── */
@@ -393,7 +403,7 @@
   body.is-light::after{mix-blend-mode:multiply!important;opacity:.015!important;}
   body.is-light .logo-img{mix-blend-mode:multiply!important;}
   body.is-light #loader{background:#fafaf8!important;}
-  body.is-light #main-nav.scrolled{background-color:rgba(250,250,248,.97)!important;box-shadow:0 4px 48px rgba(0,0,0,.06)!important;}
+  body.is-light #main-nav.scrolled #nav-pill{background:rgba(248,248,246,.97)!important;border-radius:0!important;border-color:transparent!important;box-shadow:0 1px 0 rgba(0,0,0,.08),0 4px 20px rgba(0,0,0,.08)!important;}
   body.is-light #mob-nav{background:rgba(250,250,248,.99)!important;}
 
   body.is-light .bg-background,
@@ -1460,7 +1470,7 @@
 
   // ── Nav scroll state ───────────────────────────
   const nav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY>60), {passive:true});
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY>10), {passive:true});
 
   // ── Hero Parallax ──────────────────────────────
   const heroBg = document.getElementById('hero-bg');
