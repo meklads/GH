@@ -259,16 +259,16 @@
 
 
   /* ── Hero Video BG ──────────────────────────── */
-  .hero-vid {
-    position:absolute; inset:0; opacity:0;
-    transition:opacity 1.5s ease; pointer-events:none; overflow:hidden;
+  /* ── Hero Video BG ──────────────────────────── */
+  #hero-video-wrap {
+    position:absolute; inset:0; overflow:hidden; pointer-events:none;
   }
-  .hero-vid.hv-active { opacity:1; }
-  .hero-vid iframe {
-    position:absolute; top:50%; left:50%; border:none; pointer-events:none;
+  #hero-video-wrap video {
+    position:absolute; top:50%; left:50%;
     width:max(100vw, calc(100vh * 1.7778));
     height:max(100vh, calc(100vw * 0.5625));
     transform:translate(-50%,-50%);
+    object-fit:cover;
   }
 
   /* ── Vignette ───────────────────────────────── */
@@ -462,16 +462,11 @@
 <!-- ── Hero ─────────────────────────────────────── -->
 <section id="hero" class="relative h-screen overflow-hidden">
 
-  <!-- Video Backgrounds -->
-  <div class="absolute inset-0 z-0">
-    <div class="hero-vid hv-active" id="hvid-0">
-      <iframe src="https://www.youtube.com/embed/H66KNP1sQCk?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&playlist=H66KNP1sQCk"
-        allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="hero-vid" id="hvid-1">
-      <iframe src="https://www.youtube.com/embed/DB1Tyzgpm4E?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&playlist=DB1Tyzgpm4E"
-        allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-    </div>
+  <!-- Video Background -->
+  <div id="hero-video-wrap" class="absolute inset-0 z-0">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="assets/GH demo reel.mp4" type="video/mp4">
+    </video>
   </div>
 
   <!-- Vignette: all 4 corners darkened -->
@@ -1461,20 +1456,13 @@
   // ── Hero Slider ────────────────────────────────
   (function(){
     var TOTAL = 4, DUR = 8000, cur = 0;
-    var vidMap = [0, 1, 0, 1]; // which video per slide
 
     function goTo(idx) {
-      var prev = cur; cur = idx;
+      cur = idx;
       // slides
       document.querySelectorAll('.hero-slide').forEach(function(el,i){
         el.classList.toggle('hs-active', i===idx);
       });
-      // videos (only switch if different)
-      if(vidMap[prev] !== vidMap[idx]){
-        document.querySelectorAll('.hero-vid').forEach(function(el,i){
-          el.classList.toggle('hv-active', i===vidMap[idx]);
-        });
-      }
       // progress bars
       document.querySelectorAll('.hero-prog').forEach(function(el,i){
         el.classList.remove('hp-active','hp-done');
