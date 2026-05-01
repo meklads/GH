@@ -78,7 +78,7 @@
   /* ── Film grain ─────────────────────────────── */
   body::after {
     content:''; position:fixed; inset:0; pointer-events:none; z-index:9990;
-    opacity:.038; mix-blend-mode:screen;
+    opacity:.018; mix-blend-mode:screen;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
     animation:grain 9s steps(8,end) infinite;
   }
@@ -117,7 +117,7 @@
   /* ── Nav links — Animatics style ────────────── */
   .nav-link {
     font-family:'Cairo',sans-serif; font-size:14px; font-weight:500;
-    color:rgba(255,255,255,.58); text-decoration:none;
+    color:rgba(255,255,255,.82); text-decoration:none;
     position:relative; padding-bottom:3px;
     transition:color .25s ease;
   }
