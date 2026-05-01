@@ -512,7 +512,7 @@
 
   <!-- Video Background -->
   <div id="hero-video-wrap" class="absolute inset-0 z-0">
-    <video autoplay muted loop playsinline preload="auto">
+    <video id="hero-vid" autoplay muted playsinline preload="auto">
       <source src="assets/GH demo reel.mp4" type="video/mp4">
     </video>
   </div>
@@ -1508,6 +1508,17 @@
   const backTop=document.getElementById('back-top');
   window.addEventListener('scroll',()=>backTop.classList.toggle('visible',scrollY>600),{passive:true});
   backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  // ── Hero Video loop 0–54s ──────────────────────
+  (function(){
+    var vid = document.getElementById('hero-vid');
+    if(vid){
+      vid.addEventListener('loadedmetadata', function(){ vid.currentTime = 0; });
+      vid.addEventListener('timeupdate', function(){
+        if(vid.currentTime >= 54){ vid.currentTime = 0; vid.play(); }
+      });
+    }
+  })();
 
   // ── Hero Slider ────────────────────────────────
   (function(){
