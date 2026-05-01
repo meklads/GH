@@ -324,24 +324,23 @@
   /* ── Hero overlays ───────────────────────────── */
   /* removed — replaced with inline style divs below */
 
-  /* ── Hero Slides — inward from edge ─────────── */
+  /* ── Hero Slides — centered on screen ───────── */
   .hero-slide {
-    position:absolute; bottom:0;
-    inset-inline-start:0;
-    padding:0 3rem 5rem 2rem;
-    max-width:min(500px,88vw);
-    opacity:0; transform:translateY(22px);
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; transform:scale(.97);
     transition:opacity .9s cubic-bezier(.4,0,.2,1), transform .9s cubic-bezier(.4,0,.2,1);
     pointer-events:none;
   }
-  @media(min-width:768px){ .hero-slide{ padding:0 4rem 5.5rem 3rem; max-width:min(520px,85vw); } }
-  @media(min-width:1024px){ .hero-slide{ padding:0 5rem 6.5rem 4rem; max-width:min(560px,80vw); } }
-  .hero-slide.hs-active { opacity:1; transform:translateY(0); pointer-events:auto; }
+  .hero-slide.hs-active { opacity:1; transform:scale(1); pointer-events:auto; }
 
-  /* ── Hero text: pure sharp colors, no shadow ── */
-  .hero-card { border-inline-start:2px solid rgba(242,202,80,.5); padding-inline-start:.9rem; }
-  .hero-slide h1 { text-shadow:none; color:#ffffff; }
-  .hero-slide p  { text-shadow:none; color:rgba(255,255,255,.95); }
+  /* ── Service icons strip ────────────────────── */
+  .hero-svc-strip { border-top:1px solid rgba(255,255,255,.08); padding-top:14px; }
+  .hero-svc-item span.label {
+    font-family:'Cairo',sans-serif; font-size:10px;
+    color:rgba(255,255,255,.62); letter-spacing:.06em;
+    display:block; text-align:center; margin-top:6px;
+  }
 
   /* ── Progress bars ───────────────────────────── */
   .hero-prog {
@@ -533,96 +532,48 @@
   <!-- Strong bottom dark zone — text lives here, no shadow needed -->
   <div class="absolute inset-x-0 bottom-0 z-[2] pointer-events-none" style="height:62%;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 35%,rgba(0,0,0,.12) 70%,transparent 100%)"></div>
 
-  <!-- Slides -->
-  <!-- Slide 0: Architectural Visualization -->
+  <!-- Slides — buttons only, centered -->
   <div class="hero-slide hs-active" id="hslide-0">
-    <div class="hero-card">
-      <span class="hero-tag">
-        <span class="ar">الإظهار المعماري</span><span class="en">Architectural Visualization</span>
-      </span>
-      <h1 style="font-size:clamp(31px,3.6vw,57px);line-height:1.15;font-weight:800;color:#fff;margin-bottom:.9rem;font-family:'Almarai',sans-serif">
-        صور تُقنع <span style="color:#f2ca50">المستثمر</span>
-      </h1>
-      <p style="color:#fff;font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
-        تصوير فوتوريالستي بدقة 8K لمشاريعك العقارية — نُحيل المخططات إلى صور تُباع بها الوحدات.
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <a href="services/rendering.html" class="bg-primary text-on-primary px-5 py-2.5 font-label-caps text-[10px] tracking-widest hover:scale-105 hover:shadow-[0_0_24px_rgba(242,202,80,.6)] shadow-[0_0_14px_rgba(242,202,80,.3)] transition-all">
-          <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
-        </a>
-        <a href="portfolio.html" class="border border-white/30 text-white px-5 py-2.5 font-label-caps text-[10px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
-          <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
-        </a>
-      </div>
+    <div class="flex flex-wrap gap-5 justify-center">
+      <a href="services/rendering.html" class="bg-primary text-on-primary px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:scale-105 hover:shadow-[0_0_28px_rgba(242,202,80,.7)] shadow-[0_0_18px_rgba(242,202,80,.35)] transition-all">
+        <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
+      </a>
+      <a href="portfolio.html" class="border border-white/40 text-white px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+        <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
+      </a>
     </div>
   </div>
 
-  <!-- Slide 1: 3D Animation -->
   <div class="hero-slide" id="hslide-1">
-    <div class="hero-card">
-      <span class="hero-tag">
-        <span class="ar">التحريك ثلاثي الأبعاد</span><span class="en">3D Animation</span>
-      </span>
-      <h1 style="font-size:clamp(31px,3.6vw,57px);line-height:1.15;font-weight:800;color:#fff;margin-bottom:.9rem;font-family:'Almarai',sans-serif">
-        حركة تُحيي <span style="color:#f2ca50">المشروع</span>
-      </h1>
-      <p style="color:#fff;font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
-        جولات سينمائية بتقنية 4K تُحكي قصة مشروعك قبل أن يُبنى — كل تفصيلة تنبض بالحياة.
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <a href="services/animation.html" class="bg-primary text-on-primary px-5 py-2.5 font-label-caps text-[10px] tracking-widest hover:scale-105 hover:shadow-[0_0_24px_rgba(242,202,80,.6)] shadow-[0_0_14px_rgba(242,202,80,.3)] transition-all">
-          <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
-        </a>
-        <a href="portfolio.html" class="border border-white/30 text-white px-5 py-2.5 font-label-caps text-[10px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
-          <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
-        </a>
-      </div>
+    <div class="flex flex-wrap gap-5 justify-center">
+      <a href="services/animation.html" class="bg-primary text-on-primary px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:scale-105 hover:shadow-[0_0_28px_rgba(242,202,80,.7)] shadow-[0_0_18px_rgba(242,202,80,.35)] transition-all">
+        <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
+      </a>
+      <a href="portfolio.html" class="border border-white/40 text-white px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+        <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
+      </a>
     </div>
   </div>
 
-  <!-- Slide 2: Maquettes -->
   <div class="hero-slide" id="hslide-2">
-    <div class="hero-card">
-      <span class="hero-tag">
-        <span class="ar">المجسمات المعمارية</span><span class="en">Architectural Maquettes</span>
-      </span>
-      <h1 style="font-size:clamp(31px,3.6vw,57px);line-height:1.15;font-weight:800;color:#fff;margin-bottom:.9rem;font-family:'Almarai',sans-serif">
-        نماذج تُلمس <span style="color:#f2ca50">الفخامة</span>
-      </h1>
-      <p style="color:#fff;font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
-        مجسمات يدوية بمقاييس دقيقة مع إضاءة LED وإرسال دولي — الفخامة التي تُرى وتُلمس.
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <a href="services/maquettes.html" class="bg-primary text-on-primary px-5 py-2.5 font-label-caps text-[10px] tracking-widest hover:scale-105 hover:shadow-[0_0_24px_rgba(242,202,80,.6)] shadow-[0_0_14px_rgba(242,202,80,.3)] transition-all">
-          <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
-        </a>
-        <a href="portfolio.html" class="border border-white/30 text-white px-5 py-2.5 font-label-caps text-[10px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
-          <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
-        </a>
-      </div>
+    <div class="flex flex-wrap gap-5 justify-center">
+      <a href="services/maquettes.html" class="bg-primary text-on-primary px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:scale-105 hover:shadow-[0_0_28px_rgba(242,202,80,.7)] shadow-[0_0_18px_rgba(242,202,80,.35)] transition-all">
+        <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
+      </a>
+      <a href="portfolio.html" class="border border-white/40 text-white px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+        <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
+      </a>
     </div>
   </div>
 
-  <!-- Slide 3: Cinematic Production -->
   <div class="hero-slide" id="hslide-3">
-    <div class="hero-card">
-      <span class="hero-tag">
-        <span class="ar">الإنتاج السينمائي</span><span class="en">Cinematic Production</span>
-      </span>
-      <h1 style="font-size:clamp(31px,3.6vw,57px);line-height:1.15;font-weight:800;color:#fff;margin-bottom:.9rem;font-family:'Almarai',sans-serif">
-        إنتاج يُذهل <span style="color:#f2ca50">الجمهور</span>
-      </h1>
-      <p style="color:#fff;font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
-        إنتاج سينمائي بكاميرات ARRI وRED Cinema — إعلانات وأفلام عقارية تُحدث الفرق.
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <a href="services/production.html" class="bg-primary text-on-primary px-5 py-2.5 font-label-caps text-[10px] tracking-widest hover:scale-105 hover:shadow-[0_0_24px_rgba(242,202,80,.6)] shadow-[0_0_14px_rgba(242,202,80,.3)] transition-all">
-          <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
-        </a>
-        <a href="portfolio.html" class="border border-white/30 text-white px-5 py-2.5 font-label-caps text-[10px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
-          <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
-        </a>
-      </div>
+    <div class="flex flex-wrap gap-5 justify-center">
+      <a href="services/production.html" class="bg-primary text-on-primary px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:scale-105 hover:shadow-[0_0_28px_rgba(242,202,80,.7)] shadow-[0_0_18px_rgba(242,202,80,.35)] transition-all">
+        <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
+      </a>
+      <a href="portfolio.html" class="border border-white/40 text-white px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+        <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
+      </a>
     </div>
   </div>
 
@@ -640,9 +591,21 @@
     <span id="hero-cur">01</span><span style="color:#f2ca50;margin:0 3px">/</span><span>04</span>
   </div>
 
-  <!-- Scroll hint -->
-  <div class="absolute bottom-7 left-1/2 -translate-x-1/2 animate-bounce z-20">
-    <span class="material-symbols-outlined text-primary" style="font-size:28px">keyboard_double_arrow_down</span>
+  <!-- Service categories strip -->
+  <div class="absolute z-20 hero-svc-strip flex gap-10 md:gap-20" dir="rtl"
+       style="bottom:2.2rem;left:50%;transform:translateX(-50%)">
+    <div class="hero-svc-item flex flex-col items-center">
+      <span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.85)">videocam</span>
+      <span class="label">الانتاج الفني التجاري</span>
+    </div>
+    <div class="hero-svc-item flex flex-col items-center">
+      <span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.85)">architecture</span>
+      <span class="label">الانتاج الفني المعماري</span>
+    </div>
+    <div class="hero-svc-item flex flex-col items-center">
+      <span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.85)">touch_app</span>
+      <span class="label">البرمجيات التفاعليه</span>
+    </div>
   </div>
 
 </section>
