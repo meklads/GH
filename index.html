@@ -257,6 +257,69 @@
   .svc-card:hover .svc-card-img { transform:scale(1.07); }
   .svc-card-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.3) 60%, transparent 100%); }
 
+
+  /* ── Hero Video BG ──────────────────────────── */
+  .hero-vid {
+    position:absolute; inset:0; opacity:0;
+    transition:opacity 1.5s ease; pointer-events:none; overflow:hidden;
+  }
+  .hero-vid.hv-active { opacity:1; }
+  .hero-vid iframe {
+    position:absolute; top:50%; left:50%; border:none; pointer-events:none;
+    width:max(100vw, calc(100vh * 1.7778));
+    height:max(100vh, calc(100vw * 0.5625));
+    transform:translate(-50%,-50%);
+  }
+
+  /* ── Vignette ───────────────────────────────── */
+  .hero-vignette {
+    background:radial-gradient(ellipse at 50% 50%,
+      transparent 20%,
+      rgba(0,0,0,.38) 52%,
+      rgba(0,0,0,.78) 78%,
+      rgba(0,0,0,.95) 100%);
+    pointer-events:none;
+  }
+
+  /* ── Hero Slides ─────────────────────────────── */
+  .hero-slide {
+    position:absolute; bottom:0; left:0; right:0;
+    padding:0 2rem 5rem;
+    opacity:0; transform:translateY(22px);
+    transition:opacity .9s cubic-bezier(.4,0,.2,1), transform .9s cubic-bezier(.4,0,.2,1);
+    pointer-events:none;
+  }
+  @media(min-width:768px){ .hero-slide{ padding:0 4rem 6rem; } }
+  @media(min-width:1024px){ .hero-slide{ padding:0 6rem 7rem; } }
+  .hero-slide.hs-active { opacity:1; transform:translateY(0); pointer-events:auto; }
+
+  /* ── Progress bars ───────────────────────────── */
+  .hero-prog {
+    flex:1; height:2px;
+    background:rgba(255,255,255,.15); position:relative; overflow:hidden;
+  }
+  .hero-prog + .hero-prog { margin-inline-start:3px; }
+  .hero-prog::after {
+    content:''; position:absolute;
+    inset-inline-start:0; top:0; bottom:0;
+    width:0%; background:#f2ca50;
+  }
+  .hero-prog.hp-active::after {
+    width:100%; transition:width 8s linear;
+  }
+  .hero-prog.hp-done::after { width:100%; }
+
+  /* ── Service tag pill ────────────────────────── */
+  .hero-tag {
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Manrope',sans-serif; font-size:10px;
+    letter-spacing:.35em; text-transform:uppercase;
+    color:#f2ca50; margin-bottom:1.25rem;
+  }
+  .hero-tag::before {
+    content:''; display:block; width:24px; height:1px; background:#f2ca50;
+  }
+
   /* ══ Light Theme ═══════════════════════════════ */
   #theme-btn {
     display:flex;align-items:center;justify-content:center;
@@ -397,40 +460,139 @@
 </nav>
 
 <!-- ── Hero ─────────────────────────────────────── -->
-<section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
-  <div id="hero-bg" class="absolute inset-x-0 -top-[10%] h-[120%] z-0">
-    <img class="w-full h-full object-cover"
-      alt="Cinematic production studio with high-end cameras and dramatic lighting"
-      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWWMrYZgVog9azH849lT2jMBCGSkdNr8yWLsoUTzMGb4VhoRknxZnQRqyaiKANPxDiHH9sGgAy9WdSMUGicZhcm48lVmA5O_iGdzq5pYhMirvT03zw5JPUG-TrYxbP3tZd_yeOmlMmYAFRFuWtHLhtDmDTbWn8ejr8cAuSY-tf-qTVrvTGa3Ta2tii70VpjuxSaIq-ibZKRH6co3ulD9K0b7Ael3hnePQXTZl0E4R7o66uDXzMgyBPGY_KkgtqfAxDHJ_cukIRjVg"/>
-    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
-    <div class="absolute inset-0 bg-black/40"></div>
+<section id="hero" class="relative h-screen overflow-hidden">
+
+  <!-- Video Backgrounds -->
+  <div class="absolute inset-0 z-0">
+    <div class="hero-vid hv-active" id="hvid-0">
+      <iframe src="https://www.youtube.com/embed/H66KNP1sQCk?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&playlist=H66KNP1sQCk"
+        allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="hero-vid" id="hvid-1">
+      <iframe src="https://www.youtube.com/embed/DB1Tyzgpm4E?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&playlist=DB1Tyzgpm4E"
+        allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    </div>
   </div>
-  <div class="relative z-10 text-center max-w-5xl px-6 md:px-gutter">
-    <span class="hero-enter font-label-caps text-label-caps text-primary tracking-[0.3em] mb-6 block" style="transition-delay:0ms">
-      <span class="ar">بيت الإنتاج المتميز</span>
-      <span class="en">Premium Production House</span>
+
+  <!-- Vignette: all 4 corners darkened -->
+  <div class="absolute inset-0 z-[1] hero-vignette"></div>
+  <!-- Bottom fade to site background -->
+  <div class="absolute inset-0 z-[2] bg-gradient-to-t from-[#131313] via-transparent to-transparent opacity-90"></div>
+  <!-- Top subtle fade -->
+  <div class="absolute inset-x-0 top-0 h-40 z-[2] bg-gradient-to-b from-black/60 to-transparent"></div>
+
+  <!-- Slides -->
+  <!-- Slide 0: Architectural Visualization -->
+  <div class="hero-slide hs-active" id="hslide-0">
+    <span class="hero-tag">
+      <span class="ar">الإظهار المعماري</span><span class="en">Architectural Visualization</span>
     </span>
-    <h1 class="hero-enter text-[52px] md:text-[82px] leading-tight mb-4 flex flex-col items-center" style="transition-delay:120ms">
-      <span class="text-on-background ar">التميّز السينمائي</span>
-      <span class="text-on-background en" style="font-family:'Noto Serif',serif;letter-spacing:-0.02em">Cinematic Excellence</span>
-      <span class="text-primary mt-1" style="font-family:'Amiri',serif;font-size:0.75em">جرافيكس هاوس</span>
+    <h1 style="font-size:clamp(38px,5.5vw,86px);line-height:1.08;font-weight:700;color:#fff;margin-bottom:1.5rem;font-family:'Noto Serif',serif">
+      <span class="ar block">صور تُقنع <span style="color:#f2ca50">المستثمر</span></span>
+      <span class="en block">Images That <span style="color:#f2ca50">Convince</span></span>
     </h1>
-    <p class="hero-enter font-body-lg text-secondary max-w-2xl mx-auto mb-12 opacity-80" style="transition-delay:240ms">
-      <span class="ar">نُبدع في تصوير المشاريع المعمارية الراقية وإنتاج الإعلانات السينمائية التي تُعيد رسم مستقبل الإنتاج الإعلامي في الشرق الأوسط.</span>
-      <span class="en">We craft high-tier architectural visualizations and cinematic commercials that define the future of media production in the Middle East.</span>
+    <p style="color:rgba(255,255,255,.65);font-size:16px;max-width:520px;margin-bottom:2rem;line-height:1.7;font-family:'Cairo',sans-serif">
+      <span class="ar">تصوير فوتوريالستي بدقة 8K لمشاريعك العقارية — نُحيل المخططات إلى صور تُباع بها الوحدات.</span>
+      <span class="en">8K photorealistic renders for your real-estate projects — turning blueprints into images that sell.</span>
     </p>
-    <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-6" style="transition-delay:360ms">
-      <a href="portfolio.html" class="bg-primary text-on-primary px-8 md:px-10 py-4 md:py-5 font-label-caps text-label-caps tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(242,202,80,0.5)] shadow-[0_0_20px_rgba(242,202,80,0.3)]">
-        <span class="ar">استعرض أعمالنا</span><span class="en">VIEW PORTFOLIO</span>
+    <div class="flex flex-wrap gap-4">
+      <a href="services/rendering.html" class="bg-primary text-on-primary px-7 py-4 font-label-caps text-[11px] tracking-widest hover:scale-105 hover:shadow-[0_0_30px_rgba(242,202,80,.6)] shadow-[0_0_20px_rgba(242,202,80,.3)] transition-all">
+        <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
       </a>
-      <a href="#process" class="border border-primary text-primary px-8 md:px-10 py-4 md:py-5 font-label-caps text-label-caps tracking-widest transition-all hover:bg-primary/10">
-        <span class="ar">آلية عملنا</span><span class="en">OUR PROCESS</span>
+      <a href="portfolio.html" class="border border-white/35 text-white px-7 py-4 font-label-caps text-[11px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+        <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
       </a>
     </div>
   </div>
-  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10">
-    <span class="material-symbols-outlined text-primary text-3xl">keyboard_double_arrow_down</span>
+
+  <!-- Slide 1: 3D Animation -->
+  <div class="hero-slide" id="hslide-1">
+    <span class="hero-tag">
+      <span class="ar">التحريك ثلاثي الأبعاد</span><span class="en">3D Animation</span>
+    </span>
+    <h1 style="font-size:clamp(38px,5.5vw,86px);line-height:1.08;font-weight:700;color:#fff;margin-bottom:1.5rem;font-family:'Noto Serif',serif">
+      <span class="ar block">حركة تُحيي <span style="color:#f2ca50">المشروع</span></span>
+      <span class="en block">Motion That <span style="color:#f2ca50">Brings Life</span></span>
+    </h1>
+    <p style="color:rgba(255,255,255,.65);font-size:16px;max-width:520px;margin-bottom:2rem;line-height:1.7;font-family:'Cairo',sans-serif">
+      <span class="ar">جولات سينمائية بتقنية 4K تُحكي قصة مشروعك قبل أن يُبنى — كل تفصيلة تنبض بالحياة.</span>
+      <span class="en">4K cinematic walkthroughs that tell your project's story before it's built — every detail alive.</span>
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a href="services/animation.html" class="bg-primary text-on-primary px-7 py-4 font-label-caps text-[11px] tracking-widest hover:scale-105 hover:shadow-[0_0_30px_rgba(242,202,80,.6)] shadow-[0_0_20px_rgba(242,202,80,.3)] transition-all">
+        <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
+      </a>
+      <a href="portfolio.html" class="border border-white/35 text-white px-7 py-4 font-label-caps text-[11px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+        <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
+      </a>
+    </div>
   </div>
+
+  <!-- Slide 2: Maquettes -->
+  <div class="hero-slide" id="hslide-2">
+    <span class="hero-tag">
+      <span class="ar">المجسمات المعمارية</span><span class="en">Architectural Maquettes</span>
+    </span>
+    <h1 style="font-size:clamp(38px,5.5vw,86px);line-height:1.08;font-weight:700;color:#fff;margin-bottom:1.5rem;font-family:'Noto Serif',serif">
+      <span class="ar block">نماذج تُلمس <span style="color:#f2ca50">الفخامة</span></span>
+      <span class="en block">Models You <span style="color:#f2ca50">Can Touch</span></span>
+    </h1>
+    <p style="color:rgba(255,255,255,.65);font-size:16px;max-width:520px;margin-bottom:2rem;line-height:1.7;font-family:'Cairo',sans-serif">
+      <span class="ar">مجسمات يدوية بمقاييس دقيقة مع إضاءة LED وإرسال دولي — الفخامة التي تُرى وتُلمس.</span>
+      <span class="en">Handcrafted scale models with LED lighting and worldwide shipping — luxury you can see and touch.</span>
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a href="services/maquettes.html" class="bg-primary text-on-primary px-7 py-4 font-label-caps text-[11px] tracking-widest hover:scale-105 hover:shadow-[0_0_30px_rgba(242,202,80,.6)] shadow-[0_0_20px_rgba(242,202,80,.3)] transition-all">
+        <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
+      </a>
+      <a href="portfolio.html" class="border border-white/35 text-white px-7 py-4 font-label-caps text-[11px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+        <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Slide 3: Cinematic Production -->
+  <div class="hero-slide" id="hslide-3">
+    <span class="hero-tag">
+      <span class="ar">الإنتاج السينمائي</span><span class="en">Cinematic Production</span>
+    </span>
+    <h1 style="font-size:clamp(38px,5.5vw,86px);line-height:1.08;font-weight:700;color:#fff;margin-bottom:1.5rem;font-family:'Noto Serif',serif">
+      <span class="ar block">إنتاج يُذهل <span style="color:#f2ca50">الجمهور</span></span>
+      <span class="en block">Production That <span style="color:#f2ca50">Stuns</span></span>
+    </h1>
+    <p style="color:rgba(255,255,255,.65);font-size:16px;max-width:520px;margin-bottom:2rem;line-height:1.7;font-family:'Cairo',sans-serif">
+      <span class="ar">إنتاج سينمائي بكاميرات ARRI وRED Cinema — إعلانات وأفلام عقارية تُحدث الفرق.</span>
+      <span class="en">Cinematic production with ARRI &amp; RED Cinema cameras — real-estate films that make an impact.</span>
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a href="services/production.html" class="bg-primary text-on-primary px-7 py-4 font-label-caps text-[11px] tracking-widest hover:scale-105 hover:shadow-[0_0_30px_rgba(242,202,80,.6)] shadow-[0_0_20px_rgba(242,202,80,.3)] transition-all">
+        <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
+      </a>
+      <a href="portfolio.html" class="border border-white/35 text-white px-7 py-4 font-label-caps text-[11px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+        <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Progress bars -->
+  <div class="absolute bottom-0 left-0 right-0 z-20 flex px-0" dir="ltr">
+    <div class="hero-prog hp-active" id="hprog-0"></div>
+    <div class="hero-prog" id="hprog-1"></div>
+    <div class="hero-prog" id="hprog-2"></div>
+    <div class="hero-prog" id="hprog-3"></div>
+  </div>
+
+  <!-- Slide counter -->
+  <div class="absolute bottom-6 right-6 md:right-10 z-20 tabular-nums" dir="ltr"
+       style="font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.45)">
+    <span id="hero-cur">01</span><span style="color:#f2ca50;margin:0 3px">/</span><span>04</span>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="absolute bottom-7 left-1/2 -translate-x-1/2 animate-bounce z-20">
+    <span class="material-symbols-outlined text-primary" style="font-size:28px">keyboard_double_arrow_down</span>
+  </div>
+
 </section>
 
 <!-- ── Services ──────────────────────────────────── -->
@@ -1295,6 +1457,42 @@
   const backTop=document.getElementById('back-top');
   window.addEventListener('scroll',()=>backTop.classList.toggle('visible',scrollY>600),{passive:true});
   backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  // ── Hero Slider ────────────────────────────────
+  (function(){
+    var TOTAL = 4, DUR = 8000, cur = 0;
+    var vidMap = [0, 1, 0, 1]; // which video per slide
+
+    function goTo(idx) {
+      var prev = cur; cur = idx;
+      // slides
+      document.querySelectorAll('.hero-slide').forEach(function(el,i){
+        el.classList.toggle('hs-active', i===idx);
+      });
+      // videos (only switch if different)
+      if(vidMap[prev] !== vidMap[idx]){
+        document.querySelectorAll('.hero-vid').forEach(function(el,i){
+          el.classList.toggle('hv-active', i===vidMap[idx]);
+        });
+      }
+      // progress bars
+      document.querySelectorAll('.hero-prog').forEach(function(el,i){
+        el.classList.remove('hp-active','hp-done');
+        if(i < idx) el.classList.add('hp-done');
+      });
+      // reset then activate current bar
+      var bar = document.getElementById('hprog-'+idx);
+      if(bar){ void bar.offsetWidth; bar.classList.add('hp-active'); }
+      // counter
+      var c = document.getElementById('hero-cur');
+      if(c) c.textContent = String(idx+1).padStart(2,'0');
+    }
+
+    setInterval(function(){ goTo((cur+1)%TOTAL); }, DUR);
+    // init first bar
+    var b0 = document.getElementById('hprog-0');
+    if(b0){ void b0.offsetWidth; b0.classList.add('hp-active'); }
+  })();
 
 })();
 </script>
