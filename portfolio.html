@@ -322,28 +322,50 @@
     z-index:45; display:flex; flex-direction:column; align-items:center;
   }
   #contact-strip a {
-    display:flex; flex-direction:column; align-items:center; gap:14px;
-    padding:22px 11px; text-decoration:none;
-    background:rgba(0,0,0,.55); backdrop-filter:blur(12px);
-    border-inline-end:1px solid rgba(242,202,80,.18);
+    display:flex; flex-direction:column; align-items:center; gap:18px;
+    padding:28px 14px; text-decoration:none;
+    background:rgba(0,0,0,.6); backdrop-filter:blur(12px);
+    border-inline-end:1px solid rgba(242,202,80,.22);
     transition:background .3s,border-color .3s;
   }
-  #contact-strip a:hover { background:rgba(0,0,0,.72); border-color:rgba(242,202,80,.45); }
+  #contact-strip a:hover { background:rgba(0,0,0,.8); border-color:rgba(242,202,80,.5); }
   #contact-strip .cs-label {
     writing-mode:vertical-rl; transform:rotate(180deg);
-    font-family:'Manrope',sans-serif; font-size:8.5px;
-    letter-spacing:.34em; text-transform:uppercase;
-    color:rgba(255,255,255,.42); transition:color .3s;
+    font-family:'Cairo',sans-serif; font-size:11px; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase;
+    color:rgba(255,255,255,.48); transition:color .3s;
   }
   #contact-strip a:hover .cs-label { color:#f2ca50; }
   #contact-strip .cs-icon {
-    font-size:16px; color:#f2ca50;
+    font-size:22px; color:#f2ca50;
   }
   @media(max-width:767px){ #contact-strip{ display:none; } }
   body.is-light #contact-strip a { background:rgba(255,255,255,.72); border-color:rgba(184,147,10,.2); }
   body.is-light #contact-strip a:hover { background:rgba(255,255,255,.9); border-color:#b8930a; }
   body.is-light #contact-strip .cs-label { color:rgba(0,0,0,.38); }
   body.is-light #contact-strip a:hover .cs-label { color:#b8930a; }
+
+
+  /* ── Nav states ─────────────────────────────── */
+  #main-nav { transition:background-color .4s ease,box-shadow .4s ease; }
+  #main-nav.scrolled { background-color:rgba(0,0,0,.98) !important; box-shadow:0 2px 32px rgba(0,0,0,.4); }
+
+  /* ── Nav links — Animatics style ────────────── */
+  .nav-link {
+    font-family:'Cairo',sans-serif; font-size:14px; font-weight:500;
+    color:rgba(255,255,255,.58); text-decoration:none;
+    position:relative; padding-bottom:3px;
+    transition:color .25s ease;
+  }
+  .nav-link::after {
+    content:''; position:absolute;
+    bottom:0; inset-inline-start:0; inset-inline-end:0;
+    height:1px; background:#f2ca50;
+    transform:scaleX(0); transform-origin:center;
+    transition:transform .28s ease;
+  }
+  .nav-link:hover { color:#fff; }
+  .nav-link:hover::after, .nav-link.nav-active::after { transform:scaleX(1); }
 
 </style>
 </head>
@@ -389,33 +411,43 @@
   </div>
 </div>
 
-<!-- ── TopNavBar ────────────────────────────────── -->
-<nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/80 backdrop-blur-xl" role="navigation">
-  <div class="flex justify-between items-center px-6 md:px-10 h-32 md:h-40">
-    <a href="index.html" class="shrink-0">
-      <img src="assets/logo-dark.jpg" alt="Graphics House" class="logo-img h-28 md:h-36 w-auto" style="object-fit:contain"/>
-    </a>
-    <div class="hidden md:flex gap-5 lg:gap-7" dir="rtl">
+<!-- ── TopNavBar — Minimal Animatics style ──────── -->
+<nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50 bg-black/85 backdrop-blur-xl" role="navigation">
+  <div class="flex items-center justify-between px-8 md:px-14" style="height:70px">
 
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="portfolio.html"><span class="ar">الأعمال</span><span class="en">Work</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="index.html#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="case-studies.html"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="blog.html"><span class="ar">المدونة</span><span class="en">Insights</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="shop.html"><span class="ar">المتجر</span><span class="en">Shop</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="about.html"><span class="ar">من نحن</span><span class="en">Studio</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="contact.html"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+    <!-- Logo -->
+    <a href="index.html" class="shrink-0">
+      <img src="assets/logo-dark.jpg" alt="Graphics House"
+           class="logo-img h-10 md:h-11 w-auto" style="object-fit:contain"/>
+    </a>
+
+    <!-- Desktop: links + controls (right side, Arabic order) -->
+    <div class="hidden md:flex items-center gap-7 lg:gap-9" dir="rtl">
+      <a class="nav-link" href="portfolio.html"><span class="ar">الأعمال</span><span class="en">Work</span></a>
+      <a class="nav-link" href="index.html#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
+      <a class="nav-link" href="case-studies.html"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
+      <a class="nav-link" href="blog.html"><span class="ar">المدونة</span><span class="en">Insights</span></a>
+      <a class="nav-link" href="shop.html"><span class="ar">المتجر</span><span class="en">Shop</span></a>
+      <a class="nav-link" href="about.html"><span class="ar">من نحن</span><span class="en">Studio</span></a>
+      <a class="nav-link" href="contact.html"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+      <!-- divider + controls -->
+      <div class="flex items-center gap-3" style="border-inline-start:1px solid rgba(255,255,255,.12);padding-inline-start:1.25rem">
+        <button id="lang-btn" aria-label="Toggle language"><span class="ar">EN</span><span class="en">عربي</span></button>
+        <button id="theme-btn" aria-label="Toggle theme">
+          <span class="material-symbols-outlined text-lg icon-moon">dark_mode</span>
+          <span class="material-symbols-outlined text-lg icon-sun">light_mode</span>
+        </button>
+      </div>
     </div>
-    <div class="flex items-center gap-3 md:gap-4">
-      <button id="lang-btn" aria-label="Toggle language"><span class="ar">EN</span><span class="en">عربي</span></button>
-      <button id="theme-btn" aria-label="Toggle theme"><span class="material-symbols-outlined text-xl icon-moon">dark_mode</span><span class="material-symbols-outlined text-xl icon-sun">light_mode</span></button>
-      <a href="contact.html" class="hidden md:block bg-primary text-on-primary px-5 lg:px-7 py-3 font-label-caps text-label-caps uppercase shadow-[0_0_15px_rgba(242,202,80,0.3)] hover:shadow-[0_0_25px_rgba(242,202,80,0.5)] active:scale-95 transition-all duration-300 text-[11px]">
-        <span class="ar">ابدأ مشروعك</span><span class="en">Start a Project</span>
-      </a>
-      <button id="mob-open" class="md:hidden text-secondary hover:text-primary transition-colors" aria-label="Open menu">
-        <span class="material-symbols-outlined text-3xl">menu</span>
-      </button>
-    </div>
+
+    <!-- Mobile: hamburger -->
+    <button id="mob-open" class="md:hidden text-secondary hover:text-primary transition-colors" aria-label="Open menu">
+      <span class="material-symbols-outlined text-2xl">menu</span>
+    </button>
+
   </div>
+  <!-- Gold accent line -->
+  <div style="height:1px;background:linear-gradient(to right,transparent,rgba(242,202,80,.25) 30%,rgba(242,202,80,.25) 70%,transparent)"></div>
 </nav>
 
 

@@ -322,28 +322,50 @@
     z-index:45; display:flex; flex-direction:column; align-items:center;
   }
   #contact-strip a {
-    display:flex; flex-direction:column; align-items:center; gap:14px;
-    padding:22px 11px; text-decoration:none;
-    background:rgba(0,0,0,.55); backdrop-filter:blur(12px);
-    border-inline-end:1px solid rgba(242,202,80,.18);
+    display:flex; flex-direction:column; align-items:center; gap:18px;
+    padding:28px 14px; text-decoration:none;
+    background:rgba(0,0,0,.6); backdrop-filter:blur(12px);
+    border-inline-end:1px solid rgba(242,202,80,.22);
     transition:background .3s,border-color .3s;
   }
-  #contact-strip a:hover { background:rgba(0,0,0,.72); border-color:rgba(242,202,80,.45); }
+  #contact-strip a:hover { background:rgba(0,0,0,.8); border-color:rgba(242,202,80,.5); }
   #contact-strip .cs-label {
     writing-mode:vertical-rl; transform:rotate(180deg);
-    font-family:'Manrope',sans-serif; font-size:8.5px;
-    letter-spacing:.34em; text-transform:uppercase;
-    color:rgba(255,255,255,.42); transition:color .3s;
+    font-family:'Cairo',sans-serif; font-size:11px; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase;
+    color:rgba(255,255,255,.48); transition:color .3s;
   }
   #contact-strip a:hover .cs-label { color:#f2ca50; }
   #contact-strip .cs-icon {
-    font-size:16px; color:#f2ca50;
+    font-size:22px; color:#f2ca50;
   }
   @media(max-width:767px){ #contact-strip{ display:none; } }
   body.is-light #contact-strip a { background:rgba(255,255,255,.72); border-color:rgba(184,147,10,.2); }
   body.is-light #contact-strip a:hover { background:rgba(255,255,255,.9); border-color:#b8930a; }
   body.is-light #contact-strip .cs-label { color:rgba(0,0,0,.38); }
   body.is-light #contact-strip a:hover .cs-label { color:#b8930a; }
+
+
+  /* ── Nav states ─────────────────────────────── */
+  #main-nav { transition:background-color .4s ease,box-shadow .4s ease; }
+  #main-nav.scrolled { background-color:rgba(0,0,0,.98) !important; box-shadow:0 2px 32px rgba(0,0,0,.4); }
+
+  /* ── Nav links — Animatics style ────────────── */
+  .nav-link {
+    font-family:'Cairo',sans-serif; font-size:14px; font-weight:500;
+    color:rgba(255,255,255,.58); text-decoration:none;
+    position:relative; padding-bottom:3px;
+    transition:color .25s ease;
+  }
+  .nav-link::after {
+    content:''; position:absolute;
+    bottom:0; inset-inline-start:0; inset-inline-end:0;
+    height:1px; background:#f2ca50;
+    transform:scaleX(0); transform-origin:center;
+    transition:transform .28s ease;
+  }
+  .nav-link:hover { color:#fff; }
+  .nav-link:hover::after, .nav-link.nav-active::after { transform:scaleX(1); }
 
 </style>
 </head>

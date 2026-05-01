@@ -8,8 +8,8 @@
 
 <!-- Fonts: English -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet"/>
-<!-- Fonts: Arabic luxury — Amiri (headlines) + Cairo (body/UI) -->
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<!-- Fonts: Arabic luxury — Almarai (bold headlines) + Cairo (body/UI) -->
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
 <!-- Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
@@ -99,22 +99,22 @@
     z-index:45; display:flex; flex-direction:column; align-items:center;
   }
   #contact-strip a {
-    display:flex; flex-direction:column; align-items:center; gap:14px;
-    padding:22px 11px; text-decoration:none;
-    background:rgba(0,0,0,.55); backdrop-filter:blur(12px);
-    border-inline-end:1px solid rgba(242,202,80,.18);
+    display:flex; flex-direction:column; align-items:center; gap:18px;
+    padding:28px 14px; text-decoration:none;
+    background:rgba(0,0,0,.6); backdrop-filter:blur(12px);
+    border-inline-end:1px solid rgba(242,202,80,.22);
     transition:background .3s,border-color .3s;
   }
-  #contact-strip a:hover { background:rgba(0,0,0,.72); border-color:rgba(242,202,80,.45); }
+  #contact-strip a:hover { background:rgba(0,0,0,.8); border-color:rgba(242,202,80,.5); }
   #contact-strip .cs-label {
     writing-mode:vertical-rl; transform:rotate(180deg);
-    font-family:'Manrope',sans-serif; font-size:8.5px;
-    letter-spacing:.34em; text-transform:uppercase;
-    color:rgba(255,255,255,.42); transition:color .3s;
+    font-family:'Cairo',sans-serif; font-size:11px; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase;
+    color:rgba(255,255,255,.48); transition:color .3s;
   }
   #contact-strip a:hover .cs-label { color:#f2ca50; }
   #contact-strip .cs-icon {
-    font-size:16px; color:#f2ca50;
+    font-size:22px; color:#f2ca50;
   }
   @media(max-width:767px){ #contact-strip{ display:none; } }
   body.is-light #contact-strip a { background:rgba(255,255,255,.72); border-color:rgba(184,147,10,.2); }
@@ -142,7 +142,24 @@
 
   /* ── Nav states ─────────────────────────────── */
   #main-nav { transition:background-color .4s ease,box-shadow .4s ease; }
-  #main-nav.scrolled { background-color:rgba(0,0,0,.97) !important; box-shadow:0 4px 48px rgba(212,175,55,.09); }
+  #main-nav.scrolled { background-color:rgba(0,0,0,.98) !important; box-shadow:0 2px 32px rgba(0,0,0,.4); }
+
+  /* ── Nav links — Animatics style ────────────── */
+  .nav-link {
+    font-family:'Cairo',sans-serif; font-size:14px; font-weight:500;
+    color:rgba(255,255,255,.58); text-decoration:none;
+    position:relative; padding-bottom:3px;
+    transition:color .25s ease;
+  }
+  .nav-link::after {
+    content:''; position:absolute;
+    bottom:0; inset-inline-start:0; inset-inline-end:0;
+    height:1px; background:#f2ca50;
+    transform:scaleX(0); transform-origin:center;
+    transition:transform .28s ease;
+  }
+  .nav-link:hover { color:#fff; }
+  .nav-link:hover::after, .nav-link.nav-active::after { transform:scaleX(1); }
 
   /* ── Mobile nav ─────────────────────────────── */
   #mob-nav {
@@ -324,13 +341,13 @@
   @media(min-width:1024px){ .hero-slide{ padding:0 0 6rem 4rem; max-width:min(480px,90vw); } }
   .hero-slide.hs-active { opacity:1; transform:translateY(0); pointer-events:auto; }
 
-  /* ── Hero Card — glass backdrop ─────────────── */
-  .hero-card {
-    background:rgba(0,0,0,.42);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-    border:1px solid rgba(255,255,255,.07);
-    padding:1.25rem 1.5rem 1.5rem;
+  /* ── Hero Card — transparent, text with shadow ── */
+  .hero-card { /* no background — vignette + text-shadow give contrast */ }
+  .hero-slide h1 {
+    text-shadow:0 2px 28px rgba(0,0,0,.95), 0 1px 6px rgba(0,0,0,1);
+  }
+  .hero-slide p {
+    text-shadow:0 1px 14px rgba(0,0,0,.85);
   }
 
   /* ── Progress bars ───────────────────────────── */
@@ -466,45 +483,43 @@
   </div>
 </div>
 
-<!-- ── TopNavBar ────────────────────────────────── -->
-<!-- dir="ltr" on nav keeps physical layout: logo left, links center, CTA right — always -->
-<nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/80 backdrop-blur-xl" role="navigation">
-  <div class="flex justify-between items-center px-6 md:px-10 h-32 md:h-40">
+<!-- ── TopNavBar — Minimal Animatics style ──────── -->
+<nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50 bg-black/85 backdrop-blur-xl" role="navigation">
+  <div class="flex items-center justify-between px-8 md:px-14" style="height:70px">
 
-    <!-- LEFT: Logo (doubled size, physically left via dir=ltr) -->
-    <a href="#" class="shrink-0">
-      <img src="assets/logo-dark.jpg" alt="Graphics House — Best Idea For Presentation"
-           class="logo-img h-28 md:h-36 w-auto" style="object-fit:contain"/>
+    <!-- Logo -->
+    <a href="index.html" class="shrink-0">
+      <img src="assets/logo-dark.jpg" alt="Graphics House"
+           class="logo-img h-10 md:h-11 w-auto" style="object-fit:contain"/>
     </a>
 
-    <!-- CENTER: Nav links -->
-    <div class="hidden md:flex gap-5 lg:gap-7" dir="rtl">
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="portfolio.html"><span class="ar">الأعمال</span><span class="en">Work</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="case-studies.html"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="blog.html"><span class="ar">المدونة</span><span class="en">Insights</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="shop.html"><span class="ar">المتجر</span><span class="en">Shop</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="about.html"><span class="ar">من نحن</span><span class="en">Studio</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="contact.html"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+    <!-- Desktop: links + controls (right side, Arabic order) -->
+    <div class="hidden md:flex items-center gap-7 lg:gap-9" dir="rtl">
+      <a class="nav-link" href="portfolio.html"><span class="ar">الأعمال</span><span class="en">Work</span></a>
+      <a class="nav-link" href="#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
+      <a class="nav-link" href="case-studies.html"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
+      <a class="nav-link" href="blog.html"><span class="ar">المدونة</span><span class="en">Insights</span></a>
+      <a class="nav-link" href="shop.html"><span class="ar">المتجر</span><span class="en">Shop</span></a>
+      <a class="nav-link" href="about.html"><span class="ar">من نحن</span><span class="en">Studio</span></a>
+      <a class="nav-link" href="contact.html"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+      <!-- divider + controls -->
+      <div class="flex items-center gap-3" style="border-inline-start:1px solid rgba(255,255,255,.12);padding-inline-start:1.25rem">
+        <button id="lang-btn" aria-label="Toggle language"><span class="ar">EN</span><span class="en">عربي</span></button>
+        <button id="theme-btn" aria-label="Toggle theme">
+          <span class="material-symbols-outlined text-lg icon-moon">dark_mode</span>
+          <span class="material-symbols-outlined text-lg icon-sun">light_mode</span>
+        </button>
+      </div>
     </div>
 
-    <!-- RIGHT: Language toggle + CTA + Hamburger -->
-    <div class="flex items-center gap-3 md:gap-4">
-      <button id="lang-btn" aria-label="Toggle language">
-        <span class="ar">EN</span>
-        <span class="en">عربي</span>
-      </button>
-      <button id="theme-btn" aria-label="Toggle theme"><span class="material-symbols-outlined text-xl icon-moon">dark_mode</span><span class="material-symbols-outlined text-xl icon-sun">light_mode</span></button>
-      <a href="contact.html" class="hidden md:block bg-primary text-on-primary px-5 lg:px-7 py-3 font-label-caps text-label-caps uppercase shadow-[0_0_15px_rgba(242,202,80,0.3)] hover:shadow-[0_0_25px_rgba(242,202,80,0.5)] active:scale-95 transition-all duration-300 text-[11px]">
-        <span class="ar">ابدأ مشروعك</span>
-        <span class="en">Start a Project</span>
-      </a>
-      <button id="mob-open" class="md:hidden text-secondary hover:text-primary transition-colors" aria-label="Open menu">
-        <span class="material-symbols-outlined text-3xl">menu</span>
-      </button>
-    </div>
+    <!-- Mobile: hamburger -->
+    <button id="mob-open" class="md:hidden text-secondary hover:text-primary transition-colors" aria-label="Open menu">
+      <span class="material-symbols-outlined text-2xl">menu</span>
+    </button>
 
   </div>
+  <!-- Gold accent line -->
+  <div style="height:1px;background:linear-gradient(to right,transparent,rgba(242,202,80,.25) 30%,rgba(242,202,80,.25) 70%,transparent)"></div>
 </nav>
 
 <!-- ── Hero ─────────────────────────────────────── -->
@@ -531,13 +546,11 @@
       <span class="hero-tag">
         <span class="ar">الإظهار المعماري</span><span class="en">Architectural Visualization</span>
       </span>
-      <h1 style="font-size:clamp(20px,2.4vw,36px);line-height:1.15;font-weight:700;color:#fff;margin-bottom:.9rem;font-family:'Noto Serif',serif">
-        <span class="ar block">صور تُقنع <span style="color:#f2ca50">المستثمر</span></span>
-        <span class="en block">Images That <span style="color:#f2ca50">Convince</span></span>
+      <h1 style="font-size:clamp(24px,2.8vw,44px);line-height:1.18;font-weight:800;color:#fff;margin-bottom:.9rem;font-family:'Almarai',sans-serif">
+        صور تُقنع <span style="color:#f2ca50">المستثمر</span>
       </h1>
-      <p style="color:rgba(255,255,255,.62);font-size:13px;max-width:360px;margin-bottom:1.25rem;line-height:1.7;font-family:'Cairo',sans-serif">
-        <span class="ar">تصوير فوتوريالستي بدقة 8K لمشاريعك العقارية — نُحيل المخططات إلى صور تُباع بها الوحدات.</span>
-        <span class="en">8K photorealistic renders for your real-estate projects — turning blueprints into images that sell.</span>
+      <p style="color:rgba(255,255,255,.72);font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
+        تصوير فوتوريالستي بدقة 8K لمشاريعك العقارية — نُحيل المخططات إلى صور تُباع بها الوحدات.
       </p>
       <div class="flex flex-wrap gap-3">
         <a href="services/rendering.html" class="bg-primary text-on-primary px-5 py-2.5 font-label-caps text-[10px] tracking-widest hover:scale-105 hover:shadow-[0_0_24px_rgba(242,202,80,.6)] shadow-[0_0_14px_rgba(242,202,80,.3)] transition-all">
@@ -556,13 +569,11 @@
       <span class="hero-tag">
         <span class="ar">التحريك ثلاثي الأبعاد</span><span class="en">3D Animation</span>
       </span>
-      <h1 style="font-size:clamp(20px,2.4vw,36px);line-height:1.15;font-weight:700;color:#fff;margin-bottom:.9rem;font-family:'Noto Serif',serif">
-        <span class="ar block">حركة تُحيي <span style="color:#f2ca50">المشروع</span></span>
-        <span class="en block">Motion That <span style="color:#f2ca50">Brings Life</span></span>
+      <h1 style="font-size:clamp(24px,2.8vw,44px);line-height:1.18;font-weight:800;color:#fff;margin-bottom:.9rem;font-family:'Almarai',sans-serif">
+        حركة تُحيي <span style="color:#f2ca50">المشروع</span>
       </h1>
-      <p style="color:rgba(255,255,255,.62);font-size:13px;max-width:360px;margin-bottom:1.25rem;line-height:1.7;font-family:'Cairo',sans-serif">
-        <span class="ar">جولات سينمائية بتقنية 4K تُحكي قصة مشروعك قبل أن يُبنى — كل تفصيلة تنبض بالحياة.</span>
-        <span class="en">4K cinematic walkthroughs that tell your project's story before it's built — every detail alive.</span>
+      <p style="color:rgba(255,255,255,.72);font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
+        جولات سينمائية بتقنية 4K تُحكي قصة مشروعك قبل أن يُبنى — كل تفصيلة تنبض بالحياة.
       </p>
       <div class="flex flex-wrap gap-3">
         <a href="services/animation.html" class="bg-primary text-on-primary px-5 py-2.5 font-label-caps text-[10px] tracking-widest hover:scale-105 hover:shadow-[0_0_24px_rgba(242,202,80,.6)] shadow-[0_0_14px_rgba(242,202,80,.3)] transition-all">
@@ -581,13 +592,11 @@
       <span class="hero-tag">
         <span class="ar">المجسمات المعمارية</span><span class="en">Architectural Maquettes</span>
       </span>
-      <h1 style="font-size:clamp(20px,2.4vw,36px);line-height:1.15;font-weight:700;color:#fff;margin-bottom:.9rem;font-family:'Noto Serif',serif">
-        <span class="ar block">نماذج تُلمس <span style="color:#f2ca50">الفخامة</span></span>
-        <span class="en block">Models You <span style="color:#f2ca50">Can Touch</span></span>
+      <h1 style="font-size:clamp(24px,2.8vw,44px);line-height:1.18;font-weight:800;color:#fff;margin-bottom:.9rem;font-family:'Almarai',sans-serif">
+        نماذج تُلمس <span style="color:#f2ca50">الفخامة</span>
       </h1>
-      <p style="color:rgba(255,255,255,.62);font-size:13px;max-width:360px;margin-bottom:1.25rem;line-height:1.7;font-family:'Cairo',sans-serif">
-        <span class="ar">مجسمات يدوية بمقاييس دقيقة مع إضاءة LED وإرسال دولي — الفخامة التي تُرى وتُلمس.</span>
-        <span class="en">Handcrafted scale models with LED lighting and worldwide shipping — luxury you can see and touch.</span>
+      <p style="color:rgba(255,255,255,.72);font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
+        مجسمات يدوية بمقاييس دقيقة مع إضاءة LED وإرسال دولي — الفخامة التي تُرى وتُلمس.
       </p>
       <div class="flex flex-wrap gap-3">
         <a href="services/maquettes.html" class="bg-primary text-on-primary px-5 py-2.5 font-label-caps text-[10px] tracking-widest hover:scale-105 hover:shadow-[0_0_24px_rgba(242,202,80,.6)] shadow-[0_0_14px_rgba(242,202,80,.3)] transition-all">
@@ -606,13 +615,11 @@
       <span class="hero-tag">
         <span class="ar">الإنتاج السينمائي</span><span class="en">Cinematic Production</span>
       </span>
-      <h1 style="font-size:clamp(20px,2.4vw,36px);line-height:1.15;font-weight:700;color:#fff;margin-bottom:.9rem;font-family:'Noto Serif',serif">
-        <span class="ar block">إنتاج يُذهل <span style="color:#f2ca50">الجمهور</span></span>
-        <span class="en block">Production That <span style="color:#f2ca50">Stuns</span></span>
+      <h1 style="font-size:clamp(24px,2.8vw,44px);line-height:1.18;font-weight:800;color:#fff;margin-bottom:.9rem;font-family:'Almarai',sans-serif">
+        إنتاج يُذهل <span style="color:#f2ca50">الجمهور</span>
       </h1>
-      <p style="color:rgba(255,255,255,.62);font-size:13px;max-width:360px;margin-bottom:1.25rem;line-height:1.7;font-family:'Cairo',sans-serif">
-        <span class="ar">إنتاج سينمائي بكاميرات ARRI وRED Cinema — إعلانات وأفلام عقارية تُحدث الفرق.</span>
-        <span class="en">Cinematic production with ARRI &amp; RED Cinema cameras — real-estate films that make an impact.</span>
+      <p style="color:rgba(255,255,255,.72);font-size:14px;max-width:360px;margin-bottom:1.25rem;line-height:1.75;font-family:'Cairo',sans-serif">
+        إنتاج سينمائي بكاميرات ARRI وRED Cinema — إعلانات وأفلام عقارية تُحدث الفرق.
       </p>
       <div class="flex flex-wrap gap-3">
         <a href="services/production.html" class="bg-primary text-on-primary px-5 py-2.5 font-label-caps text-[10px] tracking-widest hover:scale-105 hover:shadow-[0_0_24px_rgba(242,202,80,.6)] shadow-[0_0_14px_rgba(242,202,80,.3)] transition-all">
