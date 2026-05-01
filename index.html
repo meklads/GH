@@ -339,7 +339,7 @@
   .hero-svc-strip { border-top:1px solid rgba(255,255,255,.12); padding-top:18px; gap:3rem; }
   @media(min-width:768px){ .hero-svc-strip { gap:5rem; } }
   .hero-svc-item span.label {
-    font-family:'Cairo',sans-serif; font-size:13px; font-weight:500;
+    font-family:'Cairo',sans-serif; font-size:16px; font-weight:500;
     color:rgba(255,255,255,.75); letter-spacing:.04em;
     display:block; text-align:center; margin-top:8px; white-space:nowrap;
   }
@@ -532,17 +532,20 @@
     radial-gradient(ellipse 22% 22% at 0%   100%, #000000 0%, transparent 100%),
     radial-gradient(ellipse 22% 22% at 100% 100%, #000000 0%, transparent 100%)"></div>
 
-  <!-- Bottom gradient: 100% black at base → transparent -->
-  <div class="absolute inset-x-0 bottom-0 z-[6] pointer-events-none"
-       style="height:35%;background:linear-gradient(to top,#000 0%,rgba(0,0,0,.7) 40%,rgba(0,0,0,.2) 75%,transparent 100%)"></div>
+  <!-- Center-bottom gradient: 100% black for 5% then fades, center area only -->
+  <div class="absolute bottom-0 z-[6] pointer-events-none"
+       style="left:50%;transform:translateX(-50%);width:70%;height:40%;
+              background:linear-gradient(to top,#000 0%,#000 12.5%,rgba(0,0,0,.6) 45%,transparent 100%);
+              -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 18%,#000 82%,transparent 100%);
+              mask-image:linear-gradient(to right,transparent 0%,#000 18%,#000 82%,transparent 100%)"></div>
 
   <!-- Slides — buttons only, above vignettes -->
   <div class="hero-slide hs-active" id="hslide-0">
     <div class="flex flex-wrap gap-6 justify-center">
-      <a href="services/rendering.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
-        <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
+      <a href="services/rendering.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest rounded-full hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
+        <span class="ar">اكتشف خدماتنا</span><span class="en">EXPLORE OUR SERVICES</span>
       </a>
-      <a href="portfolio.html" class="border border-white/40 text-white px-12 py-5 font-label-caps text-[13px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+      <a href="portfolio.html" class="border border-white/40 text-white px-12 py-5 font-label-caps text-[13px] tracking-widest rounded-full hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
         <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
       </a>
     </div>
@@ -550,10 +553,10 @@
 
   <div class="hero-slide" id="hslide-1">
     <div class="flex flex-wrap gap-6 justify-center">
-      <a href="services/animation.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
-        <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
+      <a href="services/animation.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest rounded-full hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
+        <span class="ar">اكتشف خدماتنا</span><span class="en">EXPLORE OUR SERVICES</span>
       </a>
-      <a href="portfolio.html" class="border border-white/40 text-white px-12 py-5 font-label-caps text-[13px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+      <a href="portfolio.html" class="border border-white/40 text-white px-12 py-5 font-label-caps text-[13px] tracking-widest rounded-full hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
         <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
       </a>
     </div>
@@ -561,10 +564,10 @@
 
   <div class="hero-slide" id="hslide-2">
     <div class="flex flex-wrap gap-6 justify-center">
-      <a href="services/maquettes.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
-        <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
+      <a href="services/maquettes.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest rounded-full hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
+        <span class="ar">اكتشف خدماتنا</span><span class="en">EXPLORE OUR SERVICES</span>
       </a>
-      <a href="portfolio.html" class="border border-white/40 text-white px-12 py-5 font-label-caps text-[13px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+      <a href="portfolio.html" class="border border-white/40 text-white px-12 py-5 font-label-caps text-[13px] tracking-widest rounded-full hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
         <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
       </a>
     </div>
@@ -572,10 +575,10 @@
 
   <div class="hero-slide" id="hslide-3">
     <div class="flex flex-wrap gap-6 justify-center">
-      <a href="services/production.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
-        <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
+      <a href="services/production.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest rounded-full hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
+        <span class="ar">اكتشف خدماتنا</span><span class="en">EXPLORE OUR SERVICES</span>
       </a>
-      <a href="portfolio.html" class="border border-white/40 text-white px-12 py-5 font-label-caps text-[13px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+      <a href="portfolio.html" class="border border-white/40 text-white px-12 py-5 font-label-caps text-[13px] tracking-widest rounded-full hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
         <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
       </a>
     </div>
