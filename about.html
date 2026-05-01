@@ -106,249 +106,13 @@
   .hero-enter { opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1); }
   .hero-enter.in { opacity:1; transform:none; }
 
-  /* ── Nav states ─────────────────────────────── */
-  #main-nav { transition:background-color .4s ease,box-shadow .4s ease; }
-  #main-nav.scrolled { background-color:rgba(0,0,0,.97) !important; box-shadow:0 4px 48px rgba(212,175,55,.09); }
-
-  /* ── Mobile nav ─────────────────────────────── */
-  #mob-nav {
-    position:fixed; inset:0; z-index:9999;
-    background:rgba(0,0,0,.97); backdrop-filter:blur(20px);
-    transform:translateX(100%); transition:transform .5s cubic-bezier(.4,0,.2,1);
+    /* ── Nav states ─────────────────────────────── */
+  #main-nav { transition:padding .4s ease; }
+  #nav-pill { transition:background .4s ease, box-shadow .4s ease; }
+  #main-nav.scrolled #nav-pill {
+    background:rgba(0,0,0,.96) !important;
+    box-shadow:0 4px 40px rgba(0,0,0,.5);
   }
-  #mob-nav.open { transform:translateX(0); }
-
-  /* ── Video modal ────────────────────────────── */
-  #vid-modal {
-    position:fixed; inset:0; z-index:99997;
-    background:rgba(0,0,0,.97); backdrop-filter:blur(16px);
-    display:flex; align-items:center; justify-content:center;
-    opacity:0; visibility:hidden; transition:opacity .4s ease,visibility .4s ease;
-  }
-  #vid-modal.open { opacity:1; visibility:visible; }
-
-  /* ── Back to top ────────────────────────────── */
-  #back-top { transition:opacity .3s ease,transform .3s ease; opacity:0; pointer-events:none; transform:translateY(8px); }
-  #back-top.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
-
-  /* ── Process connector ──────────────────────── */
-  .step-connector { position:absolute; top:28px; inset-inline:14%; height:1px; background:linear-gradient(to left,transparent,rgba(242,202,80,.2),transparent); }
-
-  /* ══════════════════════════════════════════════
-     BILINGUAL SYSTEM
-     default = AR shown, EN hidden
-     body.is-en = EN shown, AR hidden
-  ══════════════════════════════════════════════ */
-  .en { display:none; }
-  .ar { display:contents; }
-
-  body.is-en .en { display:contents; }
-  body.is-en .ar { display:none; }
-
-  /* Block-level translations */
-  .en-block { display:none; }
-  .ar-block { display:block; }
-  body.is-en .en-block { display:block; }
-  body.is-en .ar-block { display:none; }
-
-  /* ── Arabic Typography ─────────────────────── */
-  /* Arabic: Amiri for display, Cairo for UI */
-  h1,h2,h3,h4 {
-    font-family:'Amiri','Noto Serif',serif;
-  }
-  body.is-en h1, body.is-en h2, body.is-en h3, body.is-en h4 {
-    font-family:'Noto Serif',serif;
-  }
-
-  /* Arabic letter-spacing & transform resets (Arabic doesn't use these) */
-  h1,h2,h3,h4,p,a,button,span,label,input,select,textarea {
-    font-family:'Cairo','Manrope',sans-serif;
-  }
-  h1,h2,h3,h4 {
-    font-family:'Amiri',serif;
-  }
-  body.is-en h1,body.is-en h2,body.is-en h3,body.is-en h4 {
-    font-family:'Noto Serif',serif;
-    letter-spacing:-0.02em;
-  }
-  body.is-en p,body.is-en a,body.is-en button,body.is-en span:not(.material-symbols-outlined),
-  body.is-en label,body.is-en input,body.is-en select,body.is-en textarea {
-    font-family:'Manrope',sans-serif;
-  }
-
-  /* Remove letter-spacing for Arabic (always — it harms Arabic calligraphy) */
-  h1,h2,h3,h4,p,a,button { letter-spacing:0 !important; }
-  body.is-en h1,body.is-en h2,body.is-en h3 { letter-spacing:-0.02em !important; }
-  body.is-en .tracking-widest,body.is-en .tracking-\[0\.3em\],body.is-en .tracking-\[0\.2em\] { letter-spacing:0.12em !important; }
-
-  /* Arabic text line-height — Arabic needs more breathing room */
-  body:not(.is-en) h1,body:not(.is-en) h2 { line-height:1.4 !important; }
-  body:not(.is-en) p { line-height:1.9 !important; }
-
-  /* Remove uppercase for Arabic (Arabic has no case) */
-  body:not(.is-en) .uppercase { text-transform:none !important; }
-  body:not(.is-en) [class*="tracking-"] { letter-spacing:0.03em !important; }
-
-  /* Arabic headline sizing — Amiri reads larger optically */
-  body:not(.is-en) h2.font-headline-xl { font-size:clamp(2rem,5vw,3.5rem); font-weight:700; }
-  body:not(.is-en) h3.font-headline-md { font-size:1.6rem; font-weight:600; }
-
-  /* Logo: remove black background — screen blend makes black transparent */
-  .logo-img { mix-blend-mode:screen; }
-
-  /* Language toggle button */
-  #lang-btn {
-    font-family:'Cairo','Manrope',sans-serif;
-    font-size:12px; font-weight:700;
-    letter-spacing:0.05em;
-    border:1px solid rgba(242,202,80,.4);
-    color:rgba(242,202,80,.85);
-    padding:6px 16px;
-    transition:all .25s ease;
-    background:transparent;
-  }
-  #lang-btn:hover { background:rgba(242,202,80,.1); border-color:rgba(242,202,80,.8); color:#f2ca50; }
-
-  /* ── Reduce motion ──────────────────────────── */
-  @media (prefers-reduced-motion:reduce) {
-    .reveal,.hero-enter { transition:none !important; opacity:1 !important; transform:none !important; }
-    body::after { animation:none !important; }
-    #cur-dot,#cur-ring { display:none !important; }
-  }
-
-  /* ── Portfolio Filter ───────────────────────── */
-  .filter-btn {
-    padding:8px 22px; border:1px solid rgba(242,202,80,.2); background:transparent;
-    color:rgba(242,202,80,.45); font-size:11px; font-weight:700; letter-spacing:.1em;
-    transition:all .25s ease; font-family:'Cairo','Manrope',sans-serif;
-  }
-  .filter-btn:hover { border-color:rgba(242,202,80,.55); color:rgba(242,202,80,.8); }
-  .filter-btn.active { background:rgba(242,202,80,.1); border-color:#f2ca50; color:#f2ca50; }
-  .portfolio-item.is-hidden { display:none !important; }
-  .portfolio-item { transition:opacity .35s ease; }
-
-  /* ── Service Feature Tag ────────────────────── */
-  .svc-tag {
-    display:inline-flex; align-items:center; gap:10px;
-    font-family:'Cairo','Manrope',sans-serif; font-size:11px;
-    font-weight:700; letter-spacing:.14em; color:rgba(242,202,80,.65); text-transform:uppercase;
-  }
-  .svc-tag::before { content:''; display:block; width:28px; height:1px; background:rgba(242,202,80,.5); }
-
-  /* ── Feature list items ─────────────────────── */
-  .feat-row { display:flex; align-items:flex-start; gap:12px; margin-bottom:14px; }
-  .feat-row .material-symbols-outlined { flex-shrink:0; font-size:18px; color:#f2ca50; margin-top:2px; }
-
-  /* ── Client logos ───────────────────────────── */
-  .client-chip {
-    padding:16px 28px; border:1px solid rgba(255,255,255,.05);
-    font-family:'Noto Serif',serif; font-size:13px; letter-spacing:.12em;
-    color:rgba(255,255,255,.18); transition:all .35s ease; text-transform:uppercase;
-  }
-  .client-chip:hover { border-color:rgba(242,202,80,.25); color:rgba(242,202,80,.5); }
-
-  /* ── Service card image overlay ─────────────── */
-  .svc-card-img { position:absolute; inset:0; object-fit:cover; width:100%; height:100%; transition:transform .7s ease; }
-  .svc-card:hover .svc-card-img { transform:scale(1.07); }
-  .svc-card-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.3) 60%, transparent 100%); }
-
-  /* ══ Light Theme ═══════════════════════════════ */
-  #theme-btn {
-    display:flex;align-items:center;justify-content:center;
-    width:34px;height:34px;
-    border:1px solid rgba(242,202,80,.25);
-    color:#c9c6c5;background:transparent;
-    transition:all .3s ease;cursor:pointer;
-  }
-  #theme-btn:hover{border-color:#f2ca50;color:#f2ca50;background:rgba(242,202,80,.05);}
-  #theme-btn .icon-sun{display:none;}
-  #theme-btn .icon-moon{display:block;}
-  body.is-light #theme-btn{border-color:rgba(0,0,0,.2);color:#555;}
-  body.is-light #theme-btn:hover{border-color:#b8930a;color:#b8930a;}
-  body.is-light #theme-btn .icon-sun{display:block;}
-  body.is-light #theme-btn .icon-moon{display:none;}
-
-  body.is-light{background-color:#fafaf8!important;color:#1a1818!important;}
-  body.is-light ::-webkit-scrollbar-track{background:#eeecec;}
-  body.is-light::after{mix-blend-mode:multiply!important;opacity:.015!important;}
-  body.is-light .logo-img{mix-blend-mode:multiply!important;}
-  body.is-light #loader{background:#fafaf8!important;}
-  body.is-light #main-nav.scrolled{background-color:rgba(250,250,248,.97)!important;box-shadow:0 4px 48px rgba(0,0,0,.06)!important;}
-  body.is-light #mob-nav{background:rgba(250,250,248,.99)!important;}
-
-  body.is-light .bg-background,
-  body.is-light .bg-surface{background-color:#fafaf8!important;}
-  body.is-light .bg-surface-container-lowest{background-color:#f2f0ec!important;}
-  body.is-light .bg-surface-container-low{background-color:#eceae5!important;}
-  body.is-light .bg-surface-container{background-color:#e6e3dd!important;}
-  body.is-light .bg-surface-container-high{background-color:#dedad3!important;}
-  body.is-light .bg-surface-container-highest{background-color:#d5d1c9!important;}
-  body.is-light .bg-zinc-900{background-color:#e6e3dd!important;}
-  body.is-light .bg-zinc-800{background-color:#dedad3!important;}
-  body.is-light .bg-zinc-700{background-color:#d0cdc5!important;}
-
-  body.is-light .text-on-background,
-  body.is-light .text-on-surface{color:#1a1818!important;}
-  body.is-light .text-white{color:#1a1818!important;}
-  body.is-light .text-secondary,
-  body.is-light .text-zinc-400,
-  body.is-light .text-zinc-500{color:#6b6866!important;}
-  body.is-light .text-gray-400{color:#7a7775!important;}
-  body.is-light .text-on-surface-variant{color:#4a4540!important;}
-
-  body.is-light .border-white\/5{border-color:rgba(0,0,0,.07)!important;}
-  body.is-light .border-white\/10{border-color:rgba(0,0,0,.1)!important;}
-  body.is-light .border-white\/20{border-color:rgba(0,0,0,.18)!important;}
-  body.is-light .border-white\/30{border-color:rgba(0,0,0,.25)!important;}
-
-  body.is-light #lang-btn{border-color:rgba(0,0,0,.2);color:#1a1818;}
-  body.is-light #lang-btn:hover{background:rgba(184,147,10,.1);border-color:#b8930a;color:#b8930a;}
-  body.is-light .nav-link{color:#555!important;}
-  body.is-light .nav-link:hover,
-  body.is-light .nav-link.text-yellow-400{color:#b8930a!important;}
-  body.is-light .mob-link{color:#1a1818!important;}
-
-  body.is-light .svc-card-overlay{background:linear-gradient(to top,rgba(236,234,229,.93) 0%,rgba(236,234,229,.35) 60%,transparent 100%)!important;}
-  body.is-light .step-connector{background:linear-gradient(to left,transparent,rgba(184,147,10,.25),transparent)!important;}
-
-  body.is-light [class*="from-background"]{--tw-gradient-from:#fafaf8 var(--tw-gradient-from-position);}
-  body.is-light [class*="via-background"]{--tw-gradient-stops:var(--tw-gradient-from),#fafaf8 var(--tw-gradient-via-position),var(--tw-gradient-to);}
-  body.is-light [class*="to-background"]{--tw-gradient-to:#fafaf8 var(--tw-gradient-to-position);}
-
-
-  /* ── Left Contact Strip ────────────────────── */
-  #contact-strip {
-    position:fixed; left:0; top:50%; transform:translateY(-50%);
-    z-index:45; display:flex; flex-direction:column; align-items:center;
-  }
-  #contact-strip a {
-    display:flex; flex-direction:column; align-items:center; gap:18px;
-    padding:28px 14px; text-decoration:none;
-    background:rgba(0,0,0,.6); backdrop-filter:blur(12px);
-    border-inline-end:1px solid rgba(242,202,80,.22);
-    transition:background .3s,border-color .3s;
-  }
-  #contact-strip a:hover { background:rgba(0,0,0,.8); border-color:rgba(242,202,80,.5); }
-  #contact-strip .cs-label {
-    writing-mode:vertical-rl; transform:rotate(180deg);
-    font-family:'Cairo',sans-serif; font-size:11px; font-weight:600;
-    letter-spacing:.22em; text-transform:uppercase;
-    color:rgba(255,255,255,.48); transition:color .3s;
-  }
-  #contact-strip a:hover .cs-label { color:#f2ca50; }
-  #contact-strip .cs-icon {
-    font-size:22px; color:#f2ca50;
-  }
-  @media(max-width:767px){ #contact-strip{ display:none; } }
-  body.is-light #contact-strip a { background:rgba(255,255,255,.72); border-color:rgba(184,147,10,.2); }
-  body.is-light #contact-strip a:hover { background:rgba(255,255,255,.9); border-color:#b8930a; }
-  body.is-light #contact-strip .cs-label { color:rgba(0,0,0,.38); }
-  body.is-light #contact-strip a:hover .cs-label { color:#b8930a; }
-
-
-  /* ── Nav states ─────────────────────────────── */
-  #main-nav { transition:background-color .4s ease,box-shadow .4s ease; }
-  #main-nav.scrolled { background-color:rgba(0,0,0,.98) !important; box-shadow:0 2px 32px rgba(0,0,0,.4); }
 
   /* ── Nav links — Animatics style ────────────── */
   .nav-link {
@@ -388,7 +152,6 @@
     <a href="index.html#services" class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">الخدمات</span><span class="en">Services</span></a>
     <a href="case-studies.html" class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
     <a href="blog.html"         class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">المدونة</span><span class="en">Insights</span></a>
-    <a href="shop.html"         class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">المتجر</span><span class="en">Shop</span></a>
     <a href="about.html"        class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">من نحن</span><span class="en">Studio</span></a>
     <a href="contact.html"      class="mob-link font-headline-lg text-on-background hover:text-primary transition-colors duration-300"><span class="ar">تواصل</span><span class="en">Contact</span></a></div>
   <div class="absolute bottom-12 left-12 flex gap-8">
@@ -404,7 +167,6 @@
       <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="index.html#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
       <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="case-studies.html"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
       <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="blog.html"><span class="ar">المدونة</span><span class="en">Insights</span></a>
-      <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="shop.html"><span class="ar">المتجر</span><span class="en">Shop</span></a>
       <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="about.html"><span class="ar">من نحن</span><span class="en">Studio</span></a>
       <a class="nav-link font-serif text-[11px] tracking-widest uppercase transition-all duration-400 ease-out text-gray-400 hover:text-yellow-400 pb-1" href="contact.html"><span class="ar">تواصل</span><span class="en">Contact</span></a></div>
     <div class="flex items-center gap-3 md:gap-4">
@@ -575,7 +337,6 @@
       <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="case-studies.html"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
       <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="about.html"><span class="ar">من نحن</span><span class="en">About</span></a>
       <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="blog.html"><span class="ar">المدونة</span><span class="en">Insights</span></a>
-      <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="shop.html"><span class="ar">المتجر</span><span class="en">Shop</span></a>
       <a class="text-zinc-500 hover:text-yellow-500 text-xs" href="contact.html"><span class="ar">تواصل</span><span class="en">Contact</span></a>
     </div>
     <div style="font-family:'Cairo','Manrope',sans-serif">
