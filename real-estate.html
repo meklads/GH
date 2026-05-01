@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>خدمات التصور العقاري | جرافيكس هاوس</title>
+<meta name="description" content="جرافيكس هاوس — خدمات التصور العقاري الاحترافية: المجسمات المعمارية، أفلام الأنيميشن، والعروض التفاعلية."/>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+  tailwind.config = {
+    darkMode:"class",
+    theme:{
+      extend:{
+        colors:{
+          "primary":"#f2ca50","on-primary":"#3c2f00",
+          "surface":"#131313","background":"#0a0a0a",
+          "on-surface":"#e5e2e1","on-background":"#e5e2e1",
+          "gh-green":"#0B2718","gh-green-card":"rgba(255,255,255,0.04)",
+          "gh-cream":"#F5F0E8","gh-cream-dark":"#EDE7DA",
+        },
+        fontFamily:{
+          "serif-en":["Cormorant Garamond","Noto Serif","serif"],
+          "serif-ar":["Amiri","Almarai","serif"],
+          "ui":["Cairo","Manrope","sans-serif"],
+          "label":["Manrope","Cairo","sans-serif"],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  /* ── Bilingual system ─────────────────────── */
+  .en          { display:none    !important; }
+  body.is-en .en { display:inline  !important; }
+  body.is-en .ar { display:none    !important; }
+  .en-block            { display:none  !important; }
+  .ar-block            { display:block; }
+  body.is-en .en-block { display:block !important; }
+  body.is-en .ar-block { display:none  !important; }
+
+  /* ── Base ─────────────────────────────────── */
+  *{box-sizing:border-box;}
+  body{font-family:'Cairo',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;}
+  ::-webkit-scrollbar{width:3px;}
+  ::-webkit-scrollbar-track{background:#0e0e0e;}
+  ::-webkit-scrollbar-thumb{background:#f2ca50;}
+
+  /* ── Nav ─────────────────────────────────── */
+  #main-nav{transition:padding .45s cubic-bezier(.4,0,.2,1);}
+  #nav-pill{
+    transition:background .45s cubic-bezier(.4,0,.2,1),
+               border-radius .45s cubic-bezier(.4,0,.2,1),
+               border-color .45s cubic-bezier(.4,0,.2,1),
+               box-shadow .45s cubic-bezier(.4,0,.2,1),
+               height .45s cubic-bezier(.4,0,.2,1);
+  }
+  #main-nav.scrolled{padding:0 !important;}
+  #main-nav.scrolled #nav-pill{
+    background:rgba(8,8,8,.97) !important;border-radius:0 !important;
+    border-color:transparent !important;
+    box-shadow:0 1px 0 rgba(255,255,255,.07),0 4px 28px rgba(0,0,0,.7) !important;
+  }
+  .nav-link{
+    font-family:'Cairo',sans-serif;font-size:16px;font-weight:700;
+    color:#fff;text-decoration:none;position:relative;padding-bottom:3px;
+    transition:color .25s ease;
+  }
+  .nav-link::after{
+    content:'';position:absolute;bottom:0;inset-inline-start:0;inset-inline-end:0;
+    height:1px;background:#f2ca50;transform:scaleX(0);transform-origin:center;
+    transition:transform .28s ease;
+  }
+  .nav-link:hover::after,.nav-link.nav-active::after{transform:scaleX(1);}
+  #lang-btn{
+    font-family:'Cairo','Manrope',sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.05em;border:1px solid rgba(242,202,80,.4);
+    color:rgba(242,202,80,.85);padding:6px 16px;transition:all .25s ease;background:transparent;
+  }
+  #lang-btn:hover{background:rgba(242,202,80,.1);border-color:rgba(242,202,80,.8);color:#f2ca50;}
+  #theme-btn{
+    display:flex;align-items:center;justify-content:center;width:34px;height:34px;
+    border:1px solid rgba(242,202,80,.25);color:#c9c6c5;background:transparent;transition:all .3s ease;
+  }
+  #theme-btn:hover{border-color:#f2ca50;color:#f2ca50;}
+  #theme-btn .icon-sun{display:none;}
+  #theme-btn .icon-moon{display:block;}
+  #mob-nav{
+    position:fixed;inset:0;z-index:9999;
+    background:rgba(0,0,0,.97);backdrop-filter:blur(20px);
+    transform:translateX(100%);transition:transform .5s cubic-bezier(.4,0,.2,1);
+  }
+  #mob-nav.open{transform:translateX(0);}
+  .mob-link{font-size:28px;color:#e5e2e1;text-decoration:none;transition:color .25s;}
+  .mob-link:hover{color:#f2ca50;}
+
+  /* ── Typography system ────────────────────── */
+  .serif-heading{
+    font-family:'Cormorant Garamond','Noto Serif',serif;
+    font-weight:400;text-transform:uppercase;letter-spacing:.1em;
+  }
+  body:not(.is-en) .serif-heading{
+    font-family:'Amiri','Almarai',serif;
+    letter-spacing:0 !important;text-transform:none !important;
+    line-height:1.4;
+  }
+  .label-caps{
+    font-family:'Manrope','Cairo',sans-serif;font-size:11px;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;
+  }
+  body:not(.is-en) .label-caps{letter-spacing:.04em !important;}
+  body:not(.is-en) .uppercase{text-transform:none !important;}
+
+  /* ── HERO ─────────────────────────────────── */
+  .hero-img-bg{
+    position:absolute;inset:0;
+    background:linear-gradient(135deg,#0d1e28 0%,#1a2e1a 35%,#0a1510 65%,#0a0a0a 100%);
+  }
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(to top,
+      rgba(10,10,10,1) 0%,rgba(10,10,10,.6) 30%,
+      rgba(10,10,10,.2) 60%,rgba(10,10,10,.1) 100%);
+  }
+
+  /* ── STAT CARDS ───────────────────────────── */
+  .stat-card{
+    border:1px solid rgba(255,255,255,.1);
+    padding:32px 24px;background:rgba(255,255,255,.03);
+  }
+  .stat-value{
+    font-family:'Cormorant Garamond','Noto Serif',serif;
+    font-size:clamp(32px,4vw,52px);font-weight:500;color:#fff;
+  }
+  body:not(.is-en) .stat-value{font-family:'Amiri',serif;font-weight:700;}
+  .stat-label{
+    font-family:'Manrope',sans-serif;font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(255,255,255,.5);margin-top:8px;
+  }
+  body:not(.is-en) .stat-label{letter-spacing:.03em;font-family:'Cairo',sans-serif;}
+
+  /* ── SERVICE CARDS ────────────────────────── */
+  .svc-card-re{
+    overflow:hidden;position:relative;
+    transition:transform .35s ease,box-shadow .35s ease;
+  }
+  .svc-card-re:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.5);}
+  .svc-card-re .thumb{
+    width:100%;aspect-ratio:5/4;overflow:hidden;position:relative;
+  }
+  .svc-card-re .thumb-inner{
+    position:absolute;inset:0;transition:transform .6s ease;
+  }
+  .svc-card-re:hover .thumb-inner{transform:scale(1.06);}
+  .svc-price{
+    font-family:'Cormorant Garamond','Noto Serif',serif;
+    font-size:22px;font-weight:500;color:#f2ca50;
+  }
+  body:not(.is-en) .svc-price{font-family:'Amiri',serif;}
+
+  /* ── PROJECT CARDS ────────────────────────── */
+  .proj-card{
+    overflow:hidden;border:1px solid rgba(255,255,255,.07);
+    background:#111;transition:transform .3s ease,border-color .3s ease;
+  }
+  .proj-card:hover{transform:translateY(-4px);border-color:rgba(242,202,80,.25);}
+  .proj-card .proj-thumb{aspect-ratio:16/10;overflow:hidden;position:relative;}
+  .proj-card .proj-thumb-inner{position:absolute;inset:0;transition:transform .5s ease;}
+  .proj-card:hover .proj-thumb-inner{transform:scale(1.05);}
+  .proj-enq{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7);
+    padding:8px 20px;font-size:11px;letter-spacing:.12em;
+    font-family:'Manrope','Cairo',sans-serif;font-weight:700;text-transform:uppercase;
+    transition:all .25s;text-decoration:none;
+  }
+  .proj-enq:hover{border-color:#f2ca50;color:#f2ca50;}
+
+  /* ── BUTTONS ──────────────────────────────── */
+  .btn-re-primary{
+    display:inline-flex;align-items:center;gap:10px;
+    background:#fff;color:#0a0a0a;padding:16px 40px;
+    font-family:'Manrope','Cairo',sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.15em;text-transform:uppercase;border-radius:999px;
+    transition:all .25s;text-decoration:none;
+  }
+  .btn-re-primary:hover{background:#f2ca50;transform:translateY(-2px);box-shadow:0 10px 28px rgba(242,202,80,.35);}
+  body:not(.is-en) .btn-re-primary{letter-spacing:.04em;}
+
+  .btn-re-outline{
+    display:inline-flex;align-items:center;gap:10px;
+    border:1px solid rgba(255,255,255,.4);color:#fff;padding:16px 40px;
+    font-family:'Manrope','Cairo',sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.15em;text-transform:uppercase;border-radius:999px;
+    transition:all .25s;text-decoration:none;backdrop-filter:blur(8px);
+  }
+  .btn-re-outline:hover{border-color:#f2ca50;color:#f2ca50;transform:translateY(-2px);}
+  body:not(.is-en) .btn-re-outline{letter-spacing:.04em;}
+
+  .btn-re-dark{
+    display:inline-flex;align-items:center;gap:10px;
+    border:1px solid rgba(255,255,255,.25);color:#fff;padding:14px 36px;
+    font-family:'Manrope','Cairo',sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.15em;text-transform:uppercase;border-radius:999px;
+    transition:all .25s;text-decoration:none;background:transparent;
+  }
+  .btn-re-dark:hover{border-color:#f2ca50;color:#f2ca50;}
+
+  /* ── WHY ITEMS ────────────────────────────── */
+  .why-item{text-align:center;padding:32px 16px;}
+  .why-icon{
+    width:72px;height:72px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.15);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 20px;
+    background:rgba(255,255,255,.03);transition:border-color .3s,background .3s;
+  }
+  .why-item:hover .why-icon{border-color:rgba(242,202,80,.5);background:rgba(242,202,80,.07);}
+  .why-item:hover .why-icon .material-symbols-outlined{color:#f2ca50;}
+
+  /* ── VIDEO PLACEHOLDER ────────────────────── */
+  .vid-placeholder{
+    width:100%;aspect-ratio:16/9;background:#0a0a0a;
+    display:flex;align-items:center;justify-content:center;position:relative;
+    border:1px solid rgba(255,255,255,.08);overflow:hidden;
+  }
+  .vid-play{
+    width:72px;height:72px;border-radius:50%;
+    background:rgba(242,202,80,.15);backdrop-filter:blur(8px);
+    border:1px solid rgba(242,202,80,.4);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:all .3s;
+  }
+  .vid-play:hover{background:rgba(242,202,80,.3);transform:scale(1.08);}
+
+  /* ── FORM ─────────────────────────────────── */
+  .re-input{
+    width:100%;background:transparent;border-bottom:1px solid rgba(255,255,255,.2);
+    padding:14px 0;color:#fff;font-family:'Cairo','Manrope',sans-serif;font-size:14px;
+    outline:none;transition:border-color .25s;
+  }
+  .re-input:focus{border-color:#f2ca50;}
+  .re-input::placeholder{color:rgba(255,255,255,.35);}
+  .re-select{
+    width:100%;background:transparent;border-bottom:1px solid rgba(255,255,255,.2);
+    padding:14px 0;color:rgba(255,255,255,.7);font-family:'Cairo','Manrope',sans-serif;
+    font-size:14px;outline:none;appearance:none;transition:border-color .25s;
+  }
+  .re-select:focus{border-color:#f2ca50;}
+  .re-select option{background:#1a1a1a;color:#fff;}
+
+  /* ── GRADIENT PLACEHOLDER IMAGES ─────────── */
+  .ph-maquette{background:linear-gradient(135deg,#1a2e24 0%,#0d1f18 40%,#0f1a22 80%,#0a0e14 100%);}
+  .ph-animation{background:linear-gradient(135deg,#0a0f1e 0%,#111828 40%,#1a1030 80%,#0a0a14 100%);}
+  .ph-interactive{background:linear-gradient(135deg,#1a1a10 0%,#241808 40%,#1a1214 80%,#0a0a0a 100%);}
+  .ph-proj-1{background:linear-gradient(135deg,#0d1e28 0%,#1a2e20 100%);}
+  .ph-proj-2{background:linear-gradient(135deg,#1a1028 0%,#0d1822 100%);}
+  .ph-proj-3{background:linear-gradient(135deg,#1e1a08 0%,#201410 100%);}
+  .ph-proj-4{background:linear-gradient(135deg,#0a1e1a 0%,#141e28 100%);}
+  .ph-proj-5{background:linear-gradient(135deg,#1a0e1e 0%,#0e1428 100%);}
+  .ph-proj-6{background:linear-gradient(135deg,#1e1208 0%,#0e1a14 100%);}
+  .ph-hero{background:linear-gradient(135deg,#0d1e28 0%,#112218 30%,#0a1a10 60%,#0a0a0a 100%);}
+  .ph-world{background:linear-gradient(to bottom right,#0a1a10 0%,#1a2a1a 50%,#0a0a0a 100%);}
+  .ph-vid{background:linear-gradient(135deg,#0a0f1e 0%,#0d1a28 100%);}
+
+  /* ── CINEMATIC WORLD SECTION ──────────────── */
+  .world-section{position:relative;min-height:70vh;display:flex;align-items:center;}
+  .world-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(to left,rgba(0,0,0,.3) 0%,rgba(0,0,0,.85) 60%,rgba(0,0,0,.95) 100%);
+  }
+
+  /* ── SLIDER DOTS ──────────────────────────── */
+  .sdot{
+    width:8px;height:8px;border-radius:50%;
+    background:rgba(255,255,255,.25);cursor:pointer;transition:all .3s;border:none;
+  }
+  .sdot.active,.sdot:hover{background:#fff;transform:scale(1.3);}
+
+  /* ── FLOATING WA ──────────────────────────── */
+  #wa-float{
+    position:fixed;bottom:28px;left:28px;z-index:900;
+    width:58px;height:58px;border-radius:50%;
+    background:#25D366;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .3s,box-shadow .3s;
+    text-decoration:none;
+  }
+  #wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.6);}
+
+  /* ── FILM GRAIN ───────────────────────────── */
+  body::after{
+    content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;
+    opacity:.018;mix-blend-mode:screen;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation:grain 9s steps(8,end) infinite;
+  }
+  @keyframes grain{
+    0%{transform:translate(0,0)} 12%{transform:translate(-4%,-9%)} 25%{transform:translate(3%,-13%)}
+    37%{transform:translate(8%,6%)} 50%{transform:translate(-6%,11%)} 62%{transform:translate(10%,-4%)}
+    75%{transform:translate(-2%,8%)} 87%{transform:translate(5%,-7%)} 100%{transform:translate(0,0)}
+  }
+
+  /* ── REVEAL ───────────────────────────────── */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1);}
+  .reveal.visible{opacity:1;transform:none;}
+
+  /* ── PAGE LOADER ──────────────────────────── */
+  #loader{
+    position:fixed;inset:0;z-index:99999;background:#0a0a0a;
+    display:flex;align-items:center;justify-content:center;flex-direction:column;
+    transition:opacity .6s ease,visibility .6s ease;
+  }
+  #loader.out{opacity:0;visibility:hidden;}
+  #loader-bar-track{width:180px;height:1px;background:rgba(242,202,80,.15);margin-top:20px;overflow:hidden;}
+  #loader-bar{height:100%;width:0;background:#f2ca50;transition:width 1s cubic-bezier(.4,0,.2,1);}
+
+  .logo-img{mix-blend-mode:normal;}
+
+  /* ── FOOTER ───────────────────────────────── */
+  .foot-office h4{
+    font-family:'Manrope','Cairo',sans-serif;font-size:11px;font-weight:700;
+    letter-spacing:.15em;text-transform:uppercase;color:#f2ca50;margin-bottom:12px;
+  }
+  body:not(.is-en) .foot-office h4{letter-spacing:.03em;}
+  .foot-office p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.8;}
+
+  /* ── CONTACT STRIP ────────────────────────── */
+  #contact-strip{
+    position:fixed;left:0;top:50%;transform:translateY(-50%);
+    z-index:45;display:flex;flex-direction:column;align-items:center;
+  }
+  #contact-strip a{
+    display:flex;flex-direction:column;align-items:center;gap:27px;
+    padding:42px 20px;text-decoration:none;
+    background:rgba(0,0,0,.6);backdrop-filter:blur(12px);
+    border-inline-end:1px solid rgba(242,202,80,.22);
+    transition:background .3s,border-color .3s;
+  }
+  #contact-strip a:hover{background:rgba(0,0,0,.8);border-color:rgba(242,202,80,.5);}
+  #contact-strip .cs-label{
+    writing-mode:vertical-rl;transform:rotate(180deg);
+    font-family:'Cairo',sans-serif;font-size:16px;font-weight:600;
+    letter-spacing:.2em;color:rgba(255,255,255,.55);transition:color .3s;
+  }
+  #contact-strip a:hover .cs-label{color:#f2ca50;}
+  #contact-strip .cs-icon{font-size:33px;color:#f2ca50;}
+  @media(max-width:767px){#contact-strip{display:none;}}
+</style>
+</head>
+<body class="bg-[#0a0a0a] text-white selection:bg-yellow-900 selection:text-yellow-100">
+
+<!-- ── LOADER ───────────────────────────────── -->
+<div id="loader" aria-hidden="true">
+  <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" style="width:200px;height:auto;"/>
+  <div id="loader-bar-track"><div id="loader-bar"></div></div>
+</div>
+
+<!-- ── CONTACT STRIP ────────────────────────── -->
+<div id="contact-strip" aria-hidden="true">
+  <a href="contact.html" aria-label="Contact us">
+    <span class="cs-label"><span class="ar">تواصل معنا</span><span class="en">CONTACT US</span></span>
+    <span class="material-symbols-outlined cs-icon">phone_in_talk</span>
+  </a>
+</div>
+
+<!-- ── MOBILE NAV ────────────────────────────── -->
+<div id="mob-nav" role="dialog" aria-modal="true">
+  <button id="mob-close" class="absolute top-8 left-8 text-gray-400 hover:text-yellow-400 transition-colors" aria-label="Close">
+    <span class="material-symbols-outlined text-3xl">close</span>
+  </button>
+  <div class="flex flex-col justify-center h-full px-12 gap-7">
+    <a href="portfolio.html"    class="mob-link"><span class="ar">الأعمال</span><span class="en">Work</span></a>
+    <a href="index.html#services" class="mob-link"><span class="ar">الخدمات</span><span class="en">Services</span></a>
+    <a href="case-studies.html" class="mob-link"><span class="ar">مشاريع ناجحة</span><span class="en">Case Studies</span></a>
+    <a href="blog.html"         class="mob-link"><span class="ar">المدونة</span><span class="en">Insights</span></a>
+    <a href="about.html"        class="mob-link"><span class="ar">من نحن</span><span class="en">Studio</span></a>
+    <a href="contact.html"      class="mob-link"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+  </div>
+  <div class="absolute bottom-12 left-12 flex gap-8">
+    <a href="#" class="text-gray-500 hover:text-yellow-400 text-xs font-bold tracking-widest transition-colors">IG</a>
+    <a href="#" class="text-gray-500 hover:text-yellow-400 text-xs font-bold tracking-widest transition-colors">LN</a>
+    <a href="#" class="text-gray-500 hover:text-yellow-400 text-xs font-bold tracking-widest transition-colors">YT</a>
+  </div>
+</div>
+
+<!-- ── NAVBAR ────────────────────────────────── -->
+<nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50" style="padding:12px 20px">
+  <div id="nav-pill" class="relative flex items-center"
+       style="background:rgba(0,0,0,.3);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:16px;border:1px solid rgba(255,255,255,.06);padding:0 24px;height:72px">
+    <a href="index.html" class="shrink-0 relative z-10">
+      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" style="height:71px;width:auto;object-fit:contain"/>
+    </a>
+    <div class="hidden md:flex items-center gap-7 lg:gap-10 absolute inset-0 justify-center pointer-events-none z-20" dir="rtl">
+      <a class="nav-link pointer-events-auto" href="portfolio.html"><span class="ar">الأعمال</span><span class="en">Work</span></a>
+      <a class="nav-link nav-active pointer-events-auto" href="real-estate.html"><span class="ar">خدمات عقارية</span><span class="en">Real Estate</span></a>
+      <a class="nav-link pointer-events-auto" href="case-studies.html"><span class="ar">مشاريع ناجحة</span><span class="en">Case Studies</span></a>
+      <a class="nav-link pointer-events-auto" href="about.html"><span class="ar">من نحن</span><span class="en">Studio</span></a>
+      <a class="nav-link pointer-events-auto" href="contact.html"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+    </div>
+    <div class="flex items-center gap-3 relative z-10" style="margin-inline-start:auto">
+      <div class="hidden md:flex items-center gap-3" style="border-inline-start:1px solid rgba(255,255,255,.12);padding-inline-start:1rem">
+        <button id="lang-btn" aria-label="Toggle language"><span class="ar">EN</span><span class="en">عربي</span></button>
+        <button id="theme-btn" aria-label="Toggle theme">
+          <span class="material-symbols-outlined text-lg icon-moon">dark_mode</span>
+          <span class="material-symbols-outlined text-lg icon-sun">light_mode</span>
+        </button>
+      </div>
+      <button id="mob-open" class="md:hidden text-gray-400 hover:text-yellow-400 transition-colors" aria-label="Open menu">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     1. HERO — Full viewport, cinematic
+════════════════════════════════════════════ -->
+<section class="relative overflow-hidden" style="height:100vh;min-height:600px;">
+
+  <!-- Background render placeholder — replace with real architectural render -->
+  <div class="ph-hero absolute inset-0 z-0">
+    <!-- Replace this div with: <img src="assets/re-hero.jpg" class="w-full h-full object-cover"> -->
+    <div class="absolute inset-0 flex items-center justify-center opacity-10">
+      <span class="material-symbols-outlined text-white" style="font-size:180px;">architecture</span>
+    </div>
+  </div>
+
+  <!-- Dark overlay -->
+  <div class="hero-overlay absolute inset-0 z-10"></div>
+
+  <!-- Corner vignettes -->
+  <div class="absolute inset-0 z-[11] pointer-events-none" style="background:
+    radial-gradient(ellipse 25% 25% at 0% 0%,   #000 0%,transparent 100%),
+    radial-gradient(ellipse 25% 25% at 100% 0%,  #000 0%,transparent 100%),
+    radial-gradient(ellipse 25% 25% at 0% 100%,  #000 0%,transparent 100%),
+    radial-gradient(ellipse 25% 25% at 100% 100%,#000 0%,transparent 100%)">
+  </div>
+
+  <!-- Hero content -->
+  <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-6" style="padding-top:80px;padding-bottom:140px;">
+
+    <!-- Badge -->
+    <div class="mb-8 flex items-center gap-3" style="opacity:0;animation:fadeInUp .8s .3s forwards;">
+      <div style="width:40px;height:1px;background:#f2ca50;"></div>
+      <span style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:rgba(242,202,80,.8);">
+        <span class="ar">جرافيكس هاوس — تصور عقاري</span>
+        <span class="en">Graphics House — Real Estate Visualization</span>
+      </span>
+      <div style="width:40px;height:1px;background:#f2ca50;"></div>
+    </div>
+
+    <!-- Main headline -->
+    <h1 class="serif-heading text-white mb-6 reveal visible"
+        style="font-size:clamp(2.4rem,6vw,5.5rem);line-height:1.12;max-width:900px;">
+      <span class="ar">حوّل رؤيتك إلى<br>واقع مُبهر</span>
+      <span class="en">TRANSFORM YOUR VISION<br>INTO BREATHTAKING REALITY</span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="mb-10 reveal visible" style="font-size:clamp(15px,2vw,19px);color:rgba(255,255,255,.65);max-width:600px;line-height:1.8;transition-delay:.15s;">
+      <span class="ar">خدمات التصور العقاري الاحترافية لمشاريعكم السكنية والتجارية — من المجسمات إلى الأنيميشن والعروض التفاعلية</span>
+      <span class="en">Professional architectural visualization for residential and commercial developments — from physical models to animation and interactive experiences</span>
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-wrap gap-5 justify-center reveal visible" style="transition-delay:.25s;">
+      <a href="#services-re" class="btn-re-primary">
+        <span class="material-symbols-outlined" style="font-size:17px;line-height:1;">arrow_downward</span>
+        <span class="ar">اكتشف خدماتنا</span>
+        <span class="en">EXPLORE SERVICES</span>
+      </a>
+      <a href="contact.html" class="btn-re-outline">
+        <span class="material-symbols-outlined" style="font-size:17px;line-height:1;">call</span>
+        <span class="ar">تواصل معنا الآن</span>
+        <span class="en">ENQUIRE NOW</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom service strip -->
+  <div class="absolute z-20 bottom-0 left-0 right-0 flex justify-center" style="padding-bottom:2rem;">
+    <div class="flex items-center gap-12 md:gap-20" style="border-top:1px solid rgba(255,255,255,.12);padding-top:18px;">
+      <div class="flex flex-col items-center gap-2">
+        <span class="material-symbols-outlined" style="font-size:30px;color:rgba(255,255,255,.8);">view_in_ar</span>
+        <span style="font-family:'Cairo',sans-serif;font-size:13px;color:rgba(255,255,255,.6);white-space:nowrap;">
+          <span class="ar">المجسمات المعمارية</span><span class="en">Architectural Models</span>
+        </span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <span class="material-symbols-outlined" style="font-size:30px;color:rgba(255,255,255,.8);">movie</span>
+        <span style="font-family:'Cairo',sans-serif;font-size:13px;color:rgba(255,255,255,.6);white-space:nowrap;">
+          <span class="ar">أفلام الأنيميشن</span><span class="en">Animation Films</span>
+        </span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <span class="material-symbols-outlined" style="font-size:30px;color:rgba(255,255,255,.8);">touch_app</span>
+        <span style="font-family:'Cairo',sans-serif;font-size:13px;color:rgba(255,255,255,.6);white-space:nowrap;">
+          <span class="ar">العروض التفاعلية</span><span class="en">Interactive Experiences</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════════════
+     2. LEGACY / STATS — Dark green DAMAC style
+════════════════════════════════════════════ -->
+<section style="background:#0B2718;padding:90px 0 80px;">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center mb-14 reveal">
+      <p class="label-caps mb-5" style="color:rgba(255,255,255,.4);">
+        <span class="ar">إرثنا وتميزنا</span><span class="en">OUR LEGACY</span>
+      </p>
+      <h2 class="serif-heading text-white" style="font-size:clamp(2rem,4vw,3.2rem);max-width:700px;margin:0 auto;">
+        <span class="ar">إرث من التميز في<br>خدمة القطاع العقاري</span>
+        <span class="en">A LEGACY OF EXCELLENCE IN<br>REAL ESTATE VISUALIZATION</span>
+      </h2>
+      <p class="mt-6" style="color:rgba(255,255,255,.55);max-width:600px;margin:24px auto 0;line-height:1.8;font-size:15px;">
+        <span class="ar">جرافيكس هاوس، الشريك الموثوق لكبرى شركات العقارات في المنطقة، نحوّل مشاريعكم إلى تجارب بصرية استثنائية تُقنع وتبيع</span>
+        <span class="en">Graphics House, the trusted partner for leading real estate developers across the region. We transform your projects into exceptional visual experiences that convince and sell.</span>
+      </p>
+    </div>
+
+    <!-- Stats grid 3×2 — exactly like DAMAC -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-px reveal" style="background:rgba(255,255,255,.08);">
+      <div class="stat-card">
+        <div class="stat-value">+١٥٠<span class="en" style="font-size:.6em;vertical-align:super;"> </span></div>
+        <div class="stat-value en" style="font-size:inherit;">150+</div>
+        <div class="stat-label"><span class="ar">مشروع عقاري مُنجز</span><span class="en">Real Estate Projects</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value"><span class="ar">٣ أسابيع</span><span class="en">3 Weeks</span></div>
+        <div class="stat-label"><span class="ar">متوسط وقت التسليم</span><span class="en">Average Delivery Time</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value"><span class="ar">+٤٠٪</span><span class="en">40%+</span></div>
+        <div class="stat-label"><span class="ar">زيادة في معدل البيع</span><span class="en">Sales Conversion Boost</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value"><span class="ar">٥ دول</span><span class="en">5 Countries</span></div>
+        <div class="stat-label"><span class="ar">تغطية إقليمية موسّعة</span><span class="en">Regional Coverage</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value"><span class="ar">٩٨٪</span><span class="en">98%</span></div>
+        <div class="stat-label"><span class="ar">رضا العملاء</span><span class="en">Client Satisfaction</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value"><span class="ar">١٠٠٪</span><span class="en">100%</span></div>
+        <div class="stat-label"><span class="ar">تسليم في الموعد</span><span class="en">On-Time Delivery</span></div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12 reveal">
+      <a href="about.html" class="btn-re-dark">
+        <span class="material-symbols-outlined" style="font-size:17px;line-height:1;">arrow_forward</span>
+        <span class="ar">اعرف المزيد عنّا</span><span class="en">KNOW MORE</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     3. SERVICES — Cream background, 3 cards
+════════════════════════════════════════════ -->
+<section id="services-re" style="background:#F5F0E8;padding:90px 0;">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14 reveal">
+      <p class="label-caps mb-5" style="color:rgba(0,0,0,.35);">
+        <span class="ar">خدماتنا</span><span class="en">OUR SERVICES</span>
+      </p>
+      <h2 class="serif-heading" style="font-size:clamp(2rem,4vw,3rem);color:#1a1a1a;">
+        <span class="ar">اختر الخدمة المثالية لمشروعك</span>
+        <span class="en">FIND YOUR PERFECT<br>VISUALIZATION SERVICE</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-0 reveal" style="border:1px solid rgba(0,0,0,.1);">
+
+      <!-- Service 1: Maquettes -->
+      <a href="services/maquettes.html" class="svc-card-re block" style="border-left:1px solid rgba(0,0,0,.1);border-right:1px solid rgba(0,0,0,.1);">
+        <div class="thumb" style="aspect-ratio:5/4;">
+          <div class="thumb-inner ph-maquette" style="position:absolute;inset:0;">
+            <!-- Replace with: <img src="assets/re-maquette.jpg" class="w-full h-full object-cover"> -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="material-symbols-outlined" style="font-size:80px;color:rgba(255,255,255,.15);">view_in_ar</span>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff;padding:28px 24px;">
+          <div class="svc-price mb-1"><span class="ar">المجسمات المعمارية</span><span class="en">Architectural Maquettes</span></div>
+          <p style="font-size:13px;color:rgba(0,0,0,.5);line-height:1.7;font-family:'Cairo',sans-serif;">
+            <span class="ar">مجسمات فيزيائية ثلاثية الأبعاد بدقة استثنائية تُجسّد مشروعك وتُبهر مستثمريك</span>
+            <span class="en">Precision physical 3D scale models that bring your project to life and impress your investors</span>
+          </p>
+          <div class="flex items-center gap-2 mt-5" style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#0B2718;">
+            <span class="ar">استفسر الآن</span><span class="en">ENQUIRE NOW</span>
+            <span class="material-symbols-outlined" style="font-size:15px;">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Service 2: Animation -->
+      <a href="services/animation.html" class="svc-card-re block">
+        <div class="thumb" style="aspect-ratio:5/4;">
+          <div class="thumb-inner ph-animation" style="position:absolute;inset:0;">
+            <!-- Replace with: <img src="assets/re-animation.jpg" class="w-full h-full object-cover"> -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="material-symbols-outlined" style="font-size:80px;color:rgba(255,255,255,.15);">movie</span>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff;padding:28px 24px;">
+          <div class="svc-price mb-1"><span class="ar">أفلام الأنيميشن</span><span class="en">Animation Films</span></div>
+          <p style="font-size:13px;color:rgba(0,0,0,.5);line-height:1.7;font-family:'Cairo',sans-serif;">
+            <span class="ar">أفلام تسويقية سينمائية مذهلة تُعرض مشروعك بأجمل صوره وتُقنع المشتري قبل أن يُبنى</span>
+            <span class="en">Cinematic marketing films showcasing your project in its finest form — convincing buyers before the first brick is laid</span>
+          </p>
+          <div class="flex items-center gap-2 mt-5" style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#0B2718;">
+            <span class="ar">استفسر الآن</span><span class="en">ENQUIRE NOW</span>
+            <span class="material-symbols-outlined" style="font-size:15px;">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Service 3: Interactive -->
+      <a href="services/interactive.html" class="svc-card-re block" style="border-left:1px solid rgba(0,0,0,.1);border-right:1px solid rgba(0,0,0,.1);">
+        <div class="thumb" style="aspect-ratio:5/4;">
+          <div class="thumb-inner ph-interactive" style="position:absolute;inset:0;">
+            <!-- Replace with: <img src="assets/re-interactive.jpg" class="w-full h-full object-cover"> -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="material-symbols-outlined" style="font-size:80px;color:rgba(255,255,255,.15);">touch_app</span>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff;padding:28px 24px;">
+          <div class="svc-price mb-1"><span class="ar">العروض التفاعلية</span><span class="en">Interactive Experiences</span></div>
+          <p style="font-size:13px;color:rgba(0,0,0,.5);line-height:1.7;font-family:'Cairo',sans-serif;">
+            <span class="ar">عروض تفاعلية لمس وإدارة ثلاثية الأبعاد تمنح المشتري تجربة استكشاف حقيقية لمشروعك</span>
+            <span class="en">Touch and interactive 3D experiences that give buyers a real exploration of your project from any angle</span>
+          </p>
+          <div class="flex items-center gap-2 mt-5" style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#0B2718;">
+            <span class="ar">استفسر الآن</span><span class="en">ENQUIRE NOW</span>
+            <span class="material-symbols-outlined" style="font-size:15px;">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- View more link -->
+    <div class="text-center mt-10 reveal">
+      <a href="portfolio.html" class="inline-flex items-center gap-2" style="font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.5);text-decoration:none;border-bottom:1px solid rgba(0,0,0,.2);padding-bottom:3px;transition:all .25s;">
+        <span class="ar">عرض جميع الأعمال</span><span class="en">VIEW ALL WORK</span>
+        <span class="material-symbols-outlined" style="font-size:15px;">arrow_forward</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     4. WHY GRAPHICS HOUSE — Stats + Video
+════════════════════════════════════════════ -->
+<section style="background:#0a0a0a;padding:90px 0;">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14 reveal">
+      <p class="label-caps mb-5" style="color:rgba(255,255,255,.3);">
+        <span class="ar">لماذا جرافيكس هاوس؟</span><span class="en">WHY GRAPHICS HOUSE?</span>
+      </p>
+      <h2 class="serif-heading text-white" style="font-size:clamp(1.8rem,3.5vw,2.8rem);">
+        <span class="ar">لماذا يثق بنا<br>كبار المطوّرين العقاريين؟</span>
+        <span class="en">WHY DO LEADING DEVELOPERS<br>TRUST GRAPHICS HOUSE?</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-16 items-center reveal">
+
+      <!-- Left: icon stats -->
+      <div class="grid grid-cols-2 gap-8">
+        <div class="why-item">
+          <div class="why-icon">
+            <span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.6);">high_quality</span>
+          </div>
+          <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">
+            <span class="ar">جودة سينمائية</span><span class="en">Cinematic Quality</span>
+          </h3>
+          <p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">
+            <span class="ar">تقنيات الجيل الجديد لإنتاج صور ومقاطع بمستوى السينما</span>
+            <span class="en">Next-gen rendering technology delivering film-grade visuals</span>
+          </p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.6);">speed</span>
+          </div>
+          <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">
+            <span class="ar">تسليم سريع</span><span class="en">Fast Delivery</span>
+          </h3>
+          <p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">
+            <span class="ar">مواعيد تسليم مضمونة لا تتجاوز ٣ أسابيع لمعظم المشاريع</span>
+            <span class="en">Guaranteed delivery within 3 weeks for most projects</span>
+          </p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.6);">diversity_3</span>
+          </div>
+          <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">
+            <span class="ar">فريق متخصص</span><span class="en">Expert Team</span>
+          </h3>
+          <p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">
+            <span class="ar">مصمّمون ومهندسون ومنتجون يفهمون القطاع العقاري</span>
+            <span class="en">Designers, engineers and producers who understand real estate</span>
+          </p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.6);">trending_up</span>
+          </div>
+          <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">
+            <span class="ar">نتائج مُثبتة</span><span class="en">Proven Results</span>
+          </h3>
+          <p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">
+            <span class="ar">عملاؤنا حققوا زيادة في المبيعات تصل إلى +٤٠٪</span>
+            <span class="en">Our clients achieved up to 40%+ increase in sales conversions</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: video placeholder -->
+      <div>
+        <div class="vid-placeholder">
+          <div class="ph-vid absolute inset-0"></div>
+          <!-- Replace with: <video src="assets/re-showreel.mp4" poster="assets/re-vid-thumb.jpg"> -->
+          <div class="relative z-10 text-center">
+            <div class="vid-play mx-auto mb-4">
+              <span class="material-symbols-outlined" style="font-size:32px;color:#f2ca50;margin-inline-start:4px;">play_arrow</span>
+            </div>
+            <p style="font-family:'Manrope',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);">
+              <span class="ar">شاهد شريل الأعمال</span><span class="en">WATCH OUR REEL</span>
+            </p>
+          </div>
+        </div>
+        <p class="mt-4 text-center" style="font-size:12px;color:rgba(255,255,255,.25);font-family:'Manrope',sans-serif;">
+          <span class="ar">مشاريع عقارية مُختارة 2022–2024</span>
+          <span class="en">Selected Real Estate Projects 2022–2024</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     5. EXPLORE PROJECTS — Grid cards
+════════════════════════════════════════════ -->
+<section style="background:#111;padding:90px 0;">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14 reveal">
+      <p class="label-caps mb-5" style="color:rgba(255,255,255,.3);">
+        <span class="ar">أعمالنا المتميزة</span><span class="en">FEATURED PROJECTS</span>
+      </p>
+      <h2 class="serif-heading text-white" style="font-size:clamp(1.8rem,3.5vw,2.8rem);">
+        <span class="ar">استكشف مشاريعنا العقارية المتميزة</span>
+        <span class="en">EXPLORE OUR ICONIC<br>REAL ESTATE PROJECTS</span>
+      </h2>
+      <p class="mt-4" style="font-size:15px;color:rgba(255,255,255,.45);max-width:550px;margin:16px auto 0;line-height:1.8;">
+        <span class="ar">من التطوير السكني إلى المجمعات التجارية الضخمة، نقدم تصوراً استثنائياً لكل مشروع</span>
+        <span class="en">From residential developments to large commercial complexes, we deliver outstanding visualization for every project</span>
+      </p>
+    </div>
+
+    <!-- Projects grid 3×2 -->
+    <div class="grid md:grid-cols-3 gap-4 reveal">
+
+      <!-- Project 1 -->
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <div class="proj-thumb-inner ph-proj-1 absolute inset-0">
+            <!-- Replace with <img src="..."> -->
+            <div class="absolute inset-0 flex items-end p-4">
+              <span class="material-symbols-outlined" style="font-size:40px;color:rgba(255,255,255,.1);">apartment</span>
+            </div>
+          </div>
+          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 50%);"></div>
+          <div class="absolute bottom-3 start-4">
+            <span style="font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(242,202,80,.8);">
+              <span class="ar">مجسم معماري</span><span class="en">MAQUETTE</span>
+            </span>
+          </div>
+        </div>
+        <div style="padding:20px;">
+          <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">
+            <span class="ar">برج الرياض السكني</span><span class="en">Riyadh Residential Tower</span>
+          </h3>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:4px;">
+            <span class="material-symbols-outlined" style="font-size:13px;vertical-align:middle;">location_on</span>
+            <span class="ar">الرياض، السعودية</span><span class="en">Riyadh, Saudi Arabia</span>
+          </p>
+          <p style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:16px;">
+            <span class="ar">من ٥٠٠,٠٠٠ ريال*</span><span class="en">FROM SAR 500,000*</span>
+          </p>
+          <a href="contact.html" class="proj-enq">
+            <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span>
+            <span class="ar">استفسار</span><span class="en">ENQUIRE NOW</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <div class="proj-thumb-inner ph-proj-2 absolute inset-0">
+            <div class="absolute inset-0 flex items-end p-4">
+              <span class="material-symbols-outlined" style="font-size:40px;color:rgba(255,255,255,.1);">movie</span>
+            </div>
+          </div>
+          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 50%);"></div>
+          <div class="absolute bottom-3 start-4">
+            <span style="font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(242,202,80,.8);">
+              <span class="ar">فيلم أنيميشن</span><span class="en">ANIMATION FILM</span>
+            </span>
+          </div>
+        </div>
+        <div style="padding:20px;">
+          <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">
+            <span class="ar">مشروع الفردوس الساحلي</span><span class="en">Coastal Paradise Development</span>
+          </h3>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:4px;">
+            <span class="material-symbols-outlined" style="font-size:13px;vertical-align:middle;">location_on</span>
+            <span class="ar">جدة، السعودية</span><span class="en">Jeddah, Saudi Arabia</span>
+          </p>
+          <p style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:16px;">
+            <span class="ar">فيلم ٣ دقائق</span><span class="en">3-MINUTE FILM</span>
+          </p>
+          <a href="contact.html" class="proj-enq">
+            <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span>
+            <span class="ar">استفسار</span><span class="en">ENQUIRE NOW</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <div class="proj-thumb-inner ph-proj-3 absolute inset-0">
+            <div class="absolute inset-0 flex items-end p-4">
+              <span class="material-symbols-outlined" style="font-size:40px;color:rgba(255,255,255,.1);">touch_app</span>
+            </div>
+          </div>
+          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 50%);"></div>
+          <div class="absolute bottom-3 start-4">
+            <span style="font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(242,202,80,.8);">
+              <span class="ar">عرض تفاعلي</span><span class="en">INTERACTIVE</span>
+            </span>
+          </div>
+        </div>
+        <div style="padding:20px;">
+          <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">
+            <span class="ar">مركز الفخر التجاري</span><span class="en">Al-Fakhr Commercial Center</span>
+          </h3>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:4px;">
+            <span class="material-symbols-outlined" style="font-size:13px;vertical-align:middle;">location_on</span>
+            <span class="ar">الدوحة، قطر</span><span class="en">Doha, Qatar</span>
+          </p>
+          <p style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:16px;">
+            <span class="ar">نظام عرض تفاعلي كامل</span><span class="en">FULL INTERACTIVE SYSTEM</span>
+          </p>
+          <a href="contact.html" class="proj-enq">
+            <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span>
+            <span class="ar">استفسار</span><span class="en">ENQUIRE NOW</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <div class="proj-thumb-inner ph-proj-4 absolute inset-0"></div>
+          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 50%);"></div>
+          <div class="absolute bottom-3 start-4">
+            <span style="font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(242,202,80,.8);">
+              <span class="ar">مجسم + أنيميشن</span><span class="en">MAQUETTE + ANIMATION</span>
+            </span>
+          </div>
+        </div>
+        <div style="padding:20px;">
+          <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">
+            <span class="ar">فلل نيوم الفاخرة</span><span class="en">NEOM Luxury Villas</span>
+          </h3>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:4px;">
+            <span class="material-symbols-outlined" style="font-size:13px;vertical-align:middle;">location_on</span>
+            <span class="ar">نيوم، السعودية</span><span class="en">NEOM, Saudi Arabia</span>
+          </p>
+          <p style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:16px;">
+            <span class="ar">من ٢,٠٠٠,٠٠٠ ريال*</span><span class="en">FROM SAR 2,000,000*</span>
+          </p>
+          <a href="contact.html" class="proj-enq">
+            <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span>
+            <span class="ar">استفسار</span><span class="en">ENQUIRE NOW</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <div class="proj-thumb-inner ph-proj-5 absolute inset-0"></div>
+          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 50%);"></div>
+          <div class="absolute bottom-3 start-4">
+            <span style="font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(242,202,80,.8);">
+              <span class="ar">عرض تفاعلي</span><span class="en">INTERACTIVE</span>
+            </span>
+          </div>
+        </div>
+        <div style="padding:20px;">
+          <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">
+            <span class="ar">مشروع دبي للتصميم</span><span class="en">Dubai Design Quarter</span>
+          </h3>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:4px;">
+            <span class="material-symbols-outlined" style="font-size:13px;vertical-align:middle;">location_on</span>
+            <span class="ar">دبي، الإمارات</span><span class="en">Dubai, UAE</span>
+          </p>
+          <p style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:16px;">
+            <span class="ar">تجربة متكاملة ٣٦٠°</span><span class="en">FULL 360° EXPERIENCE</span>
+          </p>
+          <a href="contact.html" class="proj-enq">
+            <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span>
+            <span class="ar">استفسار</span><span class="en">ENQUIRE NOW</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="proj-card">
+        <div class="proj-thumb">
+          <div class="proj-thumb-inner ph-proj-6 absolute inset-0"></div>
+          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 50%);"></div>
+          <div class="absolute bottom-3 start-4">
+            <span style="font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(242,202,80,.8);">
+              <span class="ar">فيلم أنيميشن</span><span class="en">ANIMATION FILM</span>
+            </span>
+          </div>
+        </div>
+        <div style="padding:20px;">
+          <h3 style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">
+            <span class="ar">واجهة الكويت البحرية</span><span class="en">Kuwait Marina Waterfront</span>
+          </h3>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:4px;">
+            <span class="material-symbols-outlined" style="font-size:13px;vertical-align:middle;">location_on</span>
+            <span class="ar">الكويت</span><span class="en">Kuwait City, Kuwait</span>
+          </p>
+          <p style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:16px;">
+            <span class="ar">فيلم تسويقي كامل</span><span class="en">FULL MARKETING FILM</span>
+          </p>
+          <a href="contact.html" class="proj-enq">
+            <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span>
+            <span class="ar">استفسار</span><span class="en">ENQUIRE NOW</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA below grid -->
+    <div class="text-center mt-10 reveal">
+      <p style="font-size:14px;color:rgba(255,255,255,.4);margin-bottom:20px;font-family:'Cairo',sans-serif;">
+        <span class="ar">استكشف مجمعات عقارية سكنية وتجارية بمعايير عالمية. مع جرافيكس هاوس، التصور العقاري لم يكن أسهل وأجمل</span>
+        <span class="en">Explore residential and commercial developments built to world-class standards. With Graphics House, real estate visualization has never been easier or more stunning.</span>
+      </p>
+      <a href="contact.html" class="btn-re-outline" style="margin-top:8px;">
+        <span class="material-symbols-outlined" style="font-size:17px;line-height:1;">arrow_forward</span>
+        <span class="ar">استفسر الآن</span><span class="en">ENQUIRE NOW</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     6. WORLD OF EXCELLENCE — Full-width cinematic
+════════════════════════════════════════════ -->
+<section class="world-section" style="min-height:75vh;">
+  <!-- Background render — replace with real atmospheric image -->
+  <div class="ph-world absolute inset-0 z-0">
+    <!-- Replace with: <img src="assets/re-world-bg.jpg" class="w-full h-full object-cover"> -->
+    <div class="absolute inset-0 flex items-center justify-center opacity-10">
+      <span class="material-symbols-outlined" style="font-size:250px;color:white;">domain</span>
+    </div>
+  </div>
+  <div class="world-overlay"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-3xl mx-auto px-8 py-20">
+    <p class="label-caps mb-6" style="color:rgba(255,255,255,.4);">
+      <span class="ar">عالم من التميز</span><span class="en">A WORLD OF EXCELLENCE</span>
+    </p>
+    <h2 class="serif-heading text-white mb-8" style="font-size:clamp(2.2rem,5vw,4rem);line-height:1.1;">
+      <span class="ar">اكتشف عالماً من التصور<br>المعماري الاستثنائي</span>
+      <span class="en">DISCOVER A WORLD OF EXCEPTIONAL<br>ARCHITECTURAL VISUALIZATION</span>
+    </h2>
+    <p style="font-size:16px;color:rgba(255,255,255,.6);line-height:1.9;max-width:540px;margin-bottom:36px;">
+      <span class="ar">من المجمعات السكنية الفاخرة إلى الأبراج التجارية الشاهقة، نقدم خدمات التصور التي تبيع مشروعك قبل أن يُبنى</span>
+      <span class="en">From luxury residential complexes to towering commercial skyscrapers, we provide visualization services that sell your project before it's built</span>
+    </p>
+    <a href="portfolio.html" class="btn-re-primary">
+      <span class="material-symbols-outlined" style="font-size:17px;line-height:1;">collections</span>
+      <span class="ar">معرض أعمالنا</span><span class="en">VIEW PORTFOLIO</span>
+    </a>
+
+    <!-- Slider dots -->
+    <div class="flex gap-3 mt-10">
+      <button class="sdot active" aria-label="Slide 1"></button>
+      <button class="sdot" aria-label="Slide 2"></button>
+      <button class="sdot" aria-label="Slide 3"></button>
+      <button class="sdot" aria-label="Slide 4"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     7. WHY CHOOSE OUR SERVICES — 8 icon grid
+════════════════════════════════════════════ -->
+<section style="background:#0B2718;padding:90px 0;">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14 reveal">
+      <p class="label-caps mb-5" style="color:rgba(255,255,255,.3);">
+        <span class="ar">مزايانا</span><span class="en">OUR ADVANTAGES</span>
+      </p>
+      <h2 class="serif-heading text-white" style="font-size:clamp(1.8rem,3.5vw,2.8rem);">
+        <span class="ar">لماذا تختار خدماتنا<br>لمشروعك العقاري؟</span>
+        <span class="en">WHY CHOOSE OUR SERVICES<br>FOR YOUR REAL ESTATE PROJECT?</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+
+      <div class="why-item">
+        <div class="why-icon"><span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.6);">precision_manufacturing</span></div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;"><span class="ar">دقة فائقة</span><span class="en">Precision Accuracy</span></h3>
+        <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.7;"><span class="ar">تفاصيل معمارية دقيقة تطابق المخططات الهندسية</span><span class="en">Architectural details matching engineering blueprints exactly</span></p>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon"><span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.6);">palette</span></div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;"><span class="ar">إبداع فريد</span><span class="en">Creative Excellence</span></h3>
+        <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.7;"><span class="ar">رؤية إبداعية تجعل مشروعك يتميز عن المنافسين</span><span class="en">Creative vision that makes your project stand out from competitors</span></p>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon"><span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.6);">local_hospital</span></div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;"><span class="ar">دعم متكامل</span><span class="en">Full Support</span></h3>
+        <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.7;"><span class="ar">فريق دعم متخصص يرافقك طوال مراحل المشروع</span><span class="en">Dedicated support team with you through all project stages</span></p>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon"><span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.6);">school</span></div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;"><span class="ar">خبرة متراكمة</span><span class="en">Deep Experience</span></h3>
+        <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.7;"><span class="ar">أكثر من ١٠ سنوات في القطاع العقاري والمعماري</span><span class="en">Over 10 years serving the real estate and architecture sector</span></p>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon"><span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.6);">attach_money</span></div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;"><span class="ar">عائد على الاستثمار</span><span class="en">High ROI</span></h3>
+        <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.7;"><span class="ar">استثمار في التصور يعود بأضعافه في زيادة مبيعاتك</span><span class="en">Visualization investment pays back multiples in sales growth</span></p>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon"><span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.6);">security</span></div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;"><span class="ar">سرية تامة</span><span class="en">Full Confidentiality</span></h3>
+        <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.7;"><span class="ar">حماية كاملة لمشاريعكم وبياناتكم قبل الإطلاق الرسمي</span><span class="en">Complete protection of your projects and data before official launch</span></p>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon"><span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.6);">public</span></div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;"><span class="ar">تغطية إقليمية</span><span class="en">Regional Reach</span></h3>
+        <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.7;"><span class="ar">نخدم عملاء في المملكة والإمارات وقطر والكويت وخارجها</span><span class="en">Serving clients across KSA, UAE, Qatar, Kuwait and beyond</span></p>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon"><span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.6);">devices</span></div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;"><span class="ar">متعدد المنصات</span><span class="en">Multi-Platform</span></h3>
+        <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.7;"><span class="ar">تجارب تعمل على الشاشات والأجهزة اللوحية وأنظمة المعرض</span><span class="en">Experiences running on screens, tablets, and exhibition systems</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     8. CONTACT FORM — Enquire section
+════════════════════════════════════════════ -->
+<section style="background:#0a0a0a;padding:90px 0;">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-start reveal">
+
+      <!-- Left: CTA copy -->
+      <div>
+        <p class="label-caps mb-5" style="color:rgba(255,255,255,.3);">
+          <span class="ar">احجز استشارتك</span><span class="en">BOOK YOUR CONSULTATION</span>
+        </p>
+        <h2 class="serif-heading text-white mb-6" style="font-size:clamp(2rem,4vw,3rem);">
+          <span class="ar">اكتشف عنواناً<br>بصرياً لمشروعك</span>
+          <span class="en">DISCOVER YOUR NEXT<br>VISUAL ADDRESS</span>
+        </h2>
+        <p style="font-size:15px;color:rgba(255,255,255,.5);line-height:1.9;margin-bottom:32px;">
+          <span class="ar">تواصل مع فريق جرافيكس هاوس اليوم واحصل على استشارة مجانية لتحديد أفضل حلول التصور لمشروعك العقاري</span>
+          <span class="en">Connect with the Graphics House team today for a free consultation to determine the best visualization solutions for your real estate project</span>
+        </p>
+
+        <!-- Feature bullets -->
+        <div class="flex flex-col gap-4">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined" style="font-size:20px;color:#f2ca50;margin-top:2px;flex-shrink:0;">check_circle</span>
+            <p style="font-size:14px;color:rgba(255,255,255,.6);">
+              <span class="ar">استشارة مجانية بدون التزام</span><span class="en">Free consultation with no obligation</span>
+            </p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined" style="font-size:20px;color:#f2ca50;margin-top:2px;flex-shrink:0;">check_circle</span>
+            <p style="font-size:14px;color:rgba(255,255,255,.6);">
+              <span class="ar">رد خلال ٢٤ ساعة</span><span class="en">Response within 24 hours</span>
+            </p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined" style="font-size:20px;color:#f2ca50;margin-top:2px;flex-shrink:0;">check_circle</span>
+            <p style="font-size:14px;color:rgba(255,255,255,.6);">
+              <span class="ar">عرض سعر مفصّل ومخصّص</span><span class="en">Detailed customized price proposal</span>
+            </p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined" style="font-size:20px;color:#f2ca50;margin-top:2px;flex-shrink:0;">check_circle</span>
+            <p style="font-size:14px;color:rgba(255,255,255,.6);">
+              <span class="ar">جميع الاستفسارات بسرية تامة</span><span class="en">All inquiries handled with full confidentiality</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Contact form -->
+      <div>
+        <form id="re-form" action="contact.html" method="get" class="flex flex-col gap-6">
+
+          <input type="text" class="re-input ar-block"  placeholder="الاسم الكامل*" required/>
+          <input type="text" class="re-input en-block"  placeholder="Full Name*" required/>
+
+          <input type="text" class="re-input ar-block"  placeholder="اسم الشركة / المطوّر"/>
+          <input type="text" class="re-input en-block"  placeholder="Company / Developer Name"/>
+
+          <input type="tel"  class="re-input ar-block"  placeholder="رقم الجوال*" required/>
+          <input type="tel"  class="re-input en-block"  placeholder="Phone Number*" required/>
+
+          <input type="email" class="re-input ar-block" placeholder="البريد الإلكتروني*" required/>
+          <input type="email" class="re-input en-block" placeholder="Email Address*" required/>
+
+          <!-- Service selector -->
+          <div class="ar-block">
+            <select class="re-select">
+              <option value="">الخدمة المطلوبة</option>
+              <option>المجسمات المعمارية</option>
+              <option>أفلام الأنيميشن</option>
+              <option>العروض التفاعلية</option>
+              <option>باقة متكاملة</option>
+            </select>
+          </div>
+          <div class="en-block">
+            <select class="re-select">
+              <option value="">Service Required</option>
+              <option>Architectural Maquettes</option>
+              <option>Animation Films</option>
+              <option>Interactive Experiences</option>
+              <option>Complete Package</option>
+            </select>
+          </div>
+
+          <input type="text" class="re-input ar-block"  placeholder="الدولة / المدينة"/>
+          <input type="text" class="re-input en-block"  placeholder="Country / City"/>
+
+          <button type="submit" class="btn-re-primary justify-center mt-2">
+            <span class="material-symbols-outlined" style="font-size:17px;line-height:1;">send</span>
+            <span class="ar">احصل على استشارة مجانية</span><span class="en">GET A FREE CONSULTATION</span>
+          </button>
+
+          <p style="font-size:11px;color:rgba(255,255,255,.25);text-align:center;font-family:'Manrope',sans-serif;">
+            <span class="ar">*تخضع الأسعار للشروط والأحكام</span><span class="en">*Terms and conditions apply</span>
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     9. FOOTER
+════════════════════════════════════════════ -->
+<footer style="background:#0B2718;border-top:1px solid rgba(255,255,255,.08);padding:64px 0 32px;">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Top: Logo + offices -->
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+
+      <!-- Logo + tagline -->
+      <div class="md:col-span-1">
+        <a href="index.html">
+          <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" style="height:52px;width:auto;margin-bottom:16px;"/>
+        </a>
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.8;max-width:200px;">
+          <span class="ar">شريك التصور العقاري الموثوق في المنطقة العربية</span>
+          <span class="en">Trusted real estate visualization partner across the Arab world</span>
+        </p>
+      </div>
+
+      <!-- Office 1 -->
+      <div class="foot-office">
+        <h4><span class="ar">المملكة العربية السعودية</span><span class="en">SAUDI ARABIA</span></h4>
+        <p>
+          <span class="ar">الرياض — حي العليا<br/>شارع العروبة، برج جرافيكس</span>
+          <span class="en">Riyadh — Al-Olaya District<br/>Al-Urubah St., Graphics Tower</span>
+        </p>
+      </div>
+
+      <!-- Office 2 -->
+      <div class="foot-office">
+        <h4><span class="ar">الإمارات العربية</span><span class="en">UNITED ARAB EMIRATES</span></h4>
+        <p>
+          <span class="ar">دبي — مركز دبي للتصميم<br/>مبنى ٤، الطابق الثاني</span>
+          <span class="en">Dubai — Dubai Design District<br/>Building 4, Floor 2</span>
+        </p>
+      </div>
+
+      <!-- Office 3 -->
+      <div class="foot-office">
+        <h4><span class="ar">الكويت / قطر</span><span class="en">KUWAIT / QATAR</span></h4>
+        <p>
+          <span class="ar">مكتب تمثيل — الكويت<br/>مكتب تمثيل — الدوحة</span>
+          <span class="en">Representative Office — Kuwait<br/>Representative Office — Doha</span>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div style="height:1px;background:rgba(255,255,255,.08);margin-bottom:28px;"></div>
+
+    <!-- Bottom bar -->
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <p style="font-size:12px;color:rgba(255,255,255,.3);font-family:'Manrope',sans-serif;">
+        <span class="ar">© ٢٠٢٤ جرافيكس هاوس. جميع الحقوق محفوظة. *الأسعار وفق عروض مؤقتة</span>
+        <span class="en">© 2024 Graphics House. All rights reserved. *Prices based on limited-time offers</span>
+      </p>
+      <div class="flex gap-6">
+        <a href="index.html" style="font-family:'Manrope',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .25s;" onmouseover="this.style.color='#f2ca50'" onmouseout="this.style.color='rgba(255,255,255,.3)'">
+          <span class="ar">الموقع الرئيسي</span><span class="en">MAIN SITE</span>
+        </a>
+        <a href="contact.html" style="font-family:'Manrope',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .25s;" onmouseover="this.style.color='#f2ca50'" onmouseout="this.style.color='rgba(255,255,255,.3)'">
+          <span class="ar">تواصل</span><span class="en">CONTACT</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ── FLOATING WHATSAPP ──────────────────────── -->
+<a id="wa-float" href="https://wa.me/966500000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════ -->
+<script>
+// ── Loader
+window.addEventListener('load', () => {
+  const bar = document.getElementById('loader-bar');
+  const loader = document.getElementById('loader');
+  bar.style.width = '100%';
+  setTimeout(() => { loader.classList.add('out'); }, 1100);
+});
+
+// ── Nav scroll
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', scrollY > 10);
+}, { passive: true });
+
+// ── Mobile nav
+document.getElementById('mob-open').addEventListener('click', () => {
+  document.getElementById('mob-nav').classList.add('open');
+});
+document.getElementById('mob-close').addEventListener('click', () => {
+  document.getElementById('mob-nav').classList.remove('open');
+});
+
+// ── Language toggle
+const langBtn = document.getElementById('lang-btn');
+const html = document.documentElement;
+const savedLang = localStorage.getItem('gh-lang');
+if (savedLang === 'en') {
+  document.body.classList.add('is-en');
+  html.setAttribute('lang', 'en');
+  html.setAttribute('dir', 'ltr');
+}
+langBtn.addEventListener('click', () => {
+  const isEn = document.body.classList.toggle('is-en');
+  html.setAttribute('lang', isEn ? 'en' : 'ar');
+  html.setAttribute('dir', isEn ? 'ltr' : 'rtl');
+  localStorage.setItem('gh-lang', isEn ? 'en' : 'ar');
+});
+
+// ── Theme toggle
+const themeBtn = document.getElementById('theme-btn');
+if (localStorage.getItem('gh-theme') === 'light') document.body.classList.add('is-light');
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('is-light');
+  localStorage.setItem('gh-theme', document.body.classList.contains('is-light') ? 'light' : 'dark');
+});
+
+// ── Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+reveals.forEach(el => revealObs.observe(el));
+
+// ── Hero badge fade animation
+const style = document.createElement('style');
+style.textContent = `@keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}`;
+document.head.appendChild(style);
+
+// ── Slider dots (decorative)
+document.querySelectorAll('.sdot').forEach((dot, i, all) => {
+  dot.addEventListener('click', () => {
+    all.forEach(d => d.classList.remove('active'));
+    dot.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
