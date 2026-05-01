@@ -324,10 +324,11 @@
   /* ── Hero overlays ───────────────────────────── */
   /* removed — replaced with inline style divs below */
 
-  /* ── Hero Slides — centered on screen ───────── */
+  /* ── Hero Slides — buttons pushed lower ─────── */
   .hero-slide {
     position:absolute; inset:0;
-    display:flex; align-items:center; justify-content:center;
+    display:flex; align-items:flex-end; justify-content:center;
+    padding-bottom:160px;
     opacity:0; transform:scale(.97);
     transition:opacity .9s cubic-bezier(.4,0,.2,1), transform .9s cubic-bezier(.4,0,.2,1);
     pointer-events:none;
@@ -335,11 +336,12 @@
   .hero-slide.hs-active { opacity:1; transform:scale(1); pointer-events:auto; }
 
   /* ── Service icons strip ────────────────────── */
-  .hero-svc-strip { border-top:1px solid rgba(255,255,255,.08); padding-top:14px; }
+  .hero-svc-strip { border-top:1px solid rgba(255,255,255,.12); padding-top:18px; gap:3rem; }
+  @media(min-width:768px){ .hero-svc-strip { gap:5rem; } }
   .hero-svc-item span.label {
-    font-family:'Cairo',sans-serif; font-size:10px;
-    color:rgba(255,255,255,.62); letter-spacing:.06em;
-    display:block; text-align:center; margin-top:6px;
+    font-family:'Cairo',sans-serif; font-size:13px; font-weight:500;
+    color:rgba(255,255,255,.75); letter-spacing:.04em;
+    display:block; text-align:center; margin-top:8px; white-space:nowrap;
   }
 
   /* ── Progress bars ───────────────────────────── */
@@ -534,44 +536,44 @@
 
   <!-- Slides — buttons only, centered -->
   <div class="hero-slide hs-active" id="hslide-0">
-    <div class="flex flex-wrap gap-5 justify-center">
-      <a href="services/rendering.html" class="bg-primary text-on-primary px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:scale-105 hover:shadow-[0_0_28px_rgba(242,202,80,.7)] shadow-[0_0_18px_rgba(242,202,80,.35)] transition-all">
+    <div class="flex flex-wrap gap-6 justify-center">
+      <a href="services/rendering.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
         <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
       </a>
-      <a href="portfolio.html" class="border border-white/40 text-white px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+      <a href="portfolio.html" class="border border-white/40 text-white px-12 py-5 font-label-caps text-[13px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
         <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
       </a>
     </div>
   </div>
 
   <div class="hero-slide" id="hslide-1">
-    <div class="flex flex-wrap gap-5 justify-center">
-      <a href="services/animation.html" class="bg-primary text-on-primary px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:scale-105 hover:shadow-[0_0_28px_rgba(242,202,80,.7)] shadow-[0_0_18px_rgba(242,202,80,.35)] transition-all">
+    <div class="flex flex-wrap gap-6 justify-center">
+      <a href="services/animation.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
         <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
       </a>
-      <a href="portfolio.html" class="border border-white/40 text-white px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+      <a href="portfolio.html" class="border border-white/40 text-white px-12 py-5 font-label-caps text-[13px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
         <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
       </a>
     </div>
   </div>
 
   <div class="hero-slide" id="hslide-2">
-    <div class="flex flex-wrap gap-5 justify-center">
-      <a href="services/maquettes.html" class="bg-primary text-on-primary px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:scale-105 hover:shadow-[0_0_28px_rgba(242,202,80,.7)] shadow-[0_0_18px_rgba(242,202,80,.35)] transition-all">
+    <div class="flex flex-wrap gap-6 justify-center">
+      <a href="services/maquettes.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
         <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
       </a>
-      <a href="portfolio.html" class="border border-white/40 text-white px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+      <a href="portfolio.html" class="border border-white/40 text-white px-12 py-5 font-label-caps text-[13px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
         <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
       </a>
     </div>
   </div>
 
   <div class="hero-slide" id="hslide-3">
-    <div class="flex flex-wrap gap-5 justify-center">
-      <a href="services/production.html" class="bg-primary text-on-primary px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:scale-105 hover:shadow-[0_0_28px_rgba(242,202,80,.7)] shadow-[0_0_18px_rgba(242,202,80,.35)] transition-all">
+    <div class="flex flex-wrap gap-6 justify-center">
+      <a href="services/production.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-[13px] tracking-widest hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
         <span class="ar">اكتشف الخدمة</span><span class="en">EXPLORE SERVICE</span>
       </a>
-      <a href="portfolio.html" class="border border-white/40 text-white px-8 py-3.5 font-label-caps text-[11px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
+      <a href="portfolio.html" class="border border-white/40 text-white px-12 py-5 font-label-caps text-[13px] tracking-widest hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
         <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
       </a>
     </div>
@@ -592,18 +594,18 @@
   </div>
 
   <!-- Service categories strip -->
-  <div class="absolute z-20 hero-svc-strip flex gap-10 md:gap-20" dir="rtl"
-       style="bottom:2.2rem;left:50%;transform:translateX(-50%)">
+  <div class="absolute z-20 hero-svc-strip flex" dir="rtl"
+       style="bottom:2.5rem;left:50%;transform:translateX(-50%)">
     <div class="hero-svc-item flex flex-col items-center">
-      <span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.85)">videocam</span>
+      <span class="material-symbols-outlined" style="font-size:42px;color:rgba(255,255,255,.9)">videocam</span>
       <span class="label">الانتاج الفني التجاري</span>
     </div>
     <div class="hero-svc-item flex flex-col items-center">
-      <span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.85)">architecture</span>
+      <span class="material-symbols-outlined" style="font-size:42px;color:rgba(255,255,255,.9)">architecture</span>
       <span class="label">الانتاج الفني المعماري</span>
     </div>
     <div class="hero-svc-item flex flex-col items-center">
-      <span class="material-symbols-outlined" style="font-size:28px;color:rgba(255,255,255,.85)">touch_app</span>
+      <span class="material-symbols-outlined" style="font-size:42px;color:rgba(255,255,255,.9)">touch_app</span>
       <span class="label">البرمجيات التفاعليه</span>
     </div>
   </div>
