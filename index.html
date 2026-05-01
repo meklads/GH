@@ -150,9 +150,10 @@
 
   /* ── Nav links — Animatics style ────────────── */
   .nav-link {
-    font-family:'Cairo',sans-serif; font-size:15px; font-weight:600;
-    color:rgba(255,255,255,.82); text-decoration:none;
+    font-family:'Cairo',sans-serif; font-size:15px; font-weight:700;
+    color:#ffffff; text-decoration:none;
     position:relative; padding-bottom:3px;
+    text-shadow:0 1px 14px rgba(0,0,0,.95),0 0 4px rgba(0,0,0,.7);
     transition:color .25s ease;
   }
   .nav-link::after {
@@ -485,11 +486,11 @@
     <!-- Logo: left -->
     <a href="index.html" class="shrink-0 relative z-10">
       <img src="assets/logo-gold.png" alt="Graphics House"
-           class="logo-img" style="height:62px;width:auto;object-fit:contain"/>
+           class="logo-img" style="height:68px;width:auto;object-fit:contain"/>
     </a>
 
     <!-- Links: absolutely centered in pill -->
-    <div class="hidden md:flex items-center gap-7 lg:gap-10 absolute inset-0 justify-center pointer-events-none" dir="rtl">
+    <div class="hidden md:flex items-center gap-7 lg:gap-10 absolute inset-0 justify-center pointer-events-none z-20" dir="rtl">
       <a class="nav-link pointer-events-auto" href="portfolio.html"><span class="ar">الأعمال</span><span class="en">Work</span></a>
       <a class="nav-link pointer-events-auto" href="#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
       <a class="nav-link pointer-events-auto" href="case-studies.html"><span class="ar">كيس ستدي</span><span class="en">Case Studies</span></a>
