@@ -204,17 +204,16 @@
      default = AR shown, EN hidden
      body.is-en = EN shown, AR hidden
   ══════════════════════════════════════════════ */
-  .en { display:none; }
-  .ar { display:contents; }
-
-  body.is-en .en { display:contents; }
-  body.is-en .ar { display:none; }
+  /* Bilingual visibility — !important prevents Tailwind/other overrides */
+  .en          { display:none    !important; }
+  body.is-en .en { display:inline  !important; }
+  body.is-en .ar { display:none    !important; }
 
   /* Block-level translations */
-  .en-block { display:none; }
-  .ar-block { display:block; }
-  body.is-en .en-block { display:block; }
-  body.is-en .ar-block { display:none; }
+  .en-block            { display:none  !important; }
+  .ar-block            { display:block; }
+  body.is-en .en-block { display:block !important; }
+  body.is-en .ar-block { display:none  !important; }
 
   /* ── Arabic Typography ─────────────────────── */
   /* Arabic: Amiri for display, Cairo for UI */
