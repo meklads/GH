@@ -51,6 +51,21 @@
   }
 </script>
 <style>
+  /* ══════════════════════════════════════════════
+     BILINGUAL — body.is-en = EN shown, AR hidden
+  ══════════════════════════════════════════════ */
+  .en { display:none; }
+  .ar { display:contents; }
+
+  body.is-en .en { display:contents; }
+  body.is-en .ar { display:none; }
+
+  /* Block-level translations */
+  .en-block { display:none; }
+  .ar-block { display:block; }
+  body.is-en .en-block { display:block; }
+  body.is-en .ar-block { display:none; }
+
   /* ── Material Symbols FILL ─────────────────── */
   .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
 
