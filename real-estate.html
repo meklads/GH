@@ -360,6 +360,21 @@ body:not(.is-en) .proj-d-tag{font-family:'Cairo',sans-serif;letter-spacing:.03em
 .gold-line{width:40px;height:1px;background:#C9A44A;display:inline-block;}
 .section-divider{height:1px;background:rgba(0,0,0,.08);}
 .img-cover{width:100%;height:100%;object-fit:cover;display:block;}
+
+  /* ── Mobile nav ─────────────────────────────── */
+  #mob-nav {
+    position:fixed; inset:0; z-index:9999;
+    background:#070605;
+    transform:translateX(100vw);
+    transition:transform .45s cubic-bezier(.4,0,.2,1);
+    overflow-y:auto;
+  }
+  #mob-nav.open { transform:translateX(0); }
+
+  /* ── Back to top ─────────────────────────────── */
+  #back-top { transition:opacity .3s ease,transform .3s ease; opacity:0; pointer-events:none; transform:translateY(8px); }
+  #back-top.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
+
 </style>
 </head>
 <body>
