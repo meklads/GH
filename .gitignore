@@ -2,3 +2,7 @@
 Thumbs.db
 *.log
 .claude/
+
+# Large backup files - kept locally, not deployed
+assets/videos/*.mp4
+assets/ghfolio.pdf
