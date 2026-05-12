@@ -170,6 +170,40 @@
   #back-top { transition:opacity .3s ease,transform .3s ease; opacity:0; pointer-events:none; transform:translateY(8px); }
   #back-top.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
 
+  /* ── Contact Strip ─────────────────────────────── */
+  #contact-strip {
+    position:fixed; left:0; top:50%; transform:translateY(-50%) rotate(-90deg);
+    transform-origin:left center; z-index:40;
+    background:rgba(242,202,80,.08); border:1px solid rgba(242,202,80,.18);
+    backdrop-filter:blur(8px); overflow:hidden;
+  }
+  #contact-strip a {
+    display:flex; align-items:center; gap:8px;
+    padding:8px 16px; text-decoration:none;
+    color:rgba(242,202,80,.7); transition:color .25s ease;
+  }
+  #contact-strip a:hover { color:#f2ca50; }
+  .cs-label { font-family:'Cairo',sans-serif; font-size:11px; font-weight:600; letter-spacing:.2em; }
+  .cs-icon { font-size:14px; }
+
+  /* ── Portfolio Filter Buttons ─────────────────────── */
+  .filter-btn {
+    font-family:'Cairo','Manrope',sans-serif; font-size:11px; font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; padding:8px 20px;
+    border:1px solid rgba(255,255,255,.12); color:rgba(255,255,255,.55);
+    background:transparent; cursor:pointer;
+    transition:all .25s ease; white-space:nowrap;
+  }
+  .filter-btn:hover { border-color:rgba(242,202,80,.5); color:rgba(242,202,80,.85); }
+  .filter-btn.active {
+    border-color:#f2ca50; color:#f2ca50;
+    background:rgba(242,202,80,.08);
+  }
+
+  /* ── Portfolio hidden state ───────────────────────── */
+  .portfolio-item { transition:opacity .3s ease, transform .3s ease; }
+  .portfolio-item.is-hidden { display:none !important; }
+
 </style>
 </head>
 <body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
@@ -202,7 +236,7 @@
   </div>
   <div class="flex flex-col px-8 pt-8 pb-6 gap-1">
     <a href="portfolio.html"    class="mob-link py-4 border-b border-white/5 text-white hover:text-primary transition-colors flex items-center justify-between group" style="font-family:'Cairo','Manrope',sans-serif;font-size:20px;font-weight:700"><span><span class="ar">الأعمال</span><span class="en">Work</span></span><span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors text-xl">arrow_back_ios</span></a>
-    <a href="index.html#services" class="mob-link py-4 border-b border-white/5 text-white hover:text-primary transition-colors flex items-center justify-between group" style="font-family:'Cairo','Manrope',sans-serif;font-size:20px;font-weight:700"><span><span class="ar">الخدمات</span><span class="en">Services</span></span><span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors text-xl">arrow_back_ios</span></a>
+    <a href="/#services" class="mob-link py-4 border-b border-white/5 text-white hover:text-primary transition-colors flex items-center justify-between group" style="font-family:'Cairo','Manrope',sans-serif;font-size:20px;font-weight:700"><span><span class="ar">الخدمات</span><span class="en">Services</span></span><span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors text-xl">arrow_back_ios</span></a>
     <a href="case-studies.html" class="mob-link py-4 border-b border-white/5 text-white hover:text-primary transition-colors flex items-center justify-between group" style="font-family:'Cairo','Manrope',sans-serif;font-size:20px;font-weight:700"><span><span class="ar">مشاريع ناجحة</span><span class="en">Case Studies</span></span><span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors text-xl">arrow_back_ios</span></a>
     <a href="blog.html"         class="mob-link py-4 border-b border-white/5 text-white hover:text-primary transition-colors flex items-center justify-between group" style="font-family:'Cairo','Manrope',sans-serif;font-size:20px;font-weight:700"><span><span class="ar">المدونة</span><span class="en">Insights</span></span><span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors text-xl">arrow_back_ios</span></a>
     <a href="about.html"        class="mob-link py-4 border-b border-white/5 text-white hover:text-primary transition-colors flex items-center justify-between group" style="font-family:'Cairo','Manrope',sans-serif;font-size:20px;font-weight:700"><span><span class="ar">من نحن</span><span class="en">Studio</span></span><span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors text-xl">arrow_back_ios</span></a>
@@ -224,12 +258,12 @@
 <nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50" role="navigation" style="padding:12px 20px">
   <div id="nav-pill" class="relative flex items-center"
        style="background:rgba(0,0,0,.3);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:16px;border:1px solid rgba(255,255,255,.06);padding:0 24px;height:72px">
-    <a href="index.html" class="shrink-0 relative z-10">
+    <a href="/" class="shrink-0 relative z-10">
       <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" style="height:71px;width:auto;object-fit:contain" loading="lazy"/>
     </a>
     <div class="hidden md:flex items-center gap-7 lg:gap-10 absolute inset-0 justify-center pointer-events-none z-20" dir="rtl">
       <a class="nav-link pointer-events-auto" href="portfolio.html"><span class="ar">الأعمال</span><span class="en">Work</span></a>
-      <a class="nav-link pointer-events-auto" href="index.html#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
+      <a class="nav-link pointer-events-auto" href="/#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
       <a class="nav-link pointer-events-auto" href="case-studies.html"><span class="ar">مشاريع ناجحة</span><span class="en">Case Studies</span></a>
       <a class="nav-link pointer-events-auto" href="blog.html"><span class="ar">المدونة</span><span class="en">Insights</span></a>
       <a class="nav-link pointer-events-auto" href="about.html"><span class="ar">من نحن</span><span class="en">Studio</span></a>
@@ -277,143 +311,383 @@
 </section>
 
 <!-- ── Portfolio Grid ─────────────────────────────── -->
-<section class="py-20 px-8 md:px-12 max-w-container-max mx-auto">
-  <!-- Filters -->
-  <div class="flex flex-wrap gap-2 mb-12 justify-center reveal" style="opacity:0;transform:translateY(24px)" dir="ltr">
-    <button class="filter-btn active" data-filter="all"><span class="ar">الكل</span><span class="en">ALL</span></button>
-    <button class="filter-btn" data-filter="rendering"><span class="ar">إظهار</span><span class="en">RENDERING</span></button>
-    <button class="filter-btn" data-filter="animation"><span class="ar">تحريك</span><span class="en">ANIMATION</span></button>
-    <button class="filter-btn" data-filter="maquettes"><span class="ar">مجسمات</span><span class="en">MAQUETTES</span></button>
-    <button class="filter-btn" data-filter="interactive"><span class="ar">تفاعلي</span><span class="en">INTERACTIVE</span></button>
-    <button class="filter-btn" data-filter="production"><span class="ar">إنتاج</span><span class="en">PRODUCTION</span></button>
-    <button class="filter-btn" data-filter="vr"><span class="ar">VR & 360°</span><span class="en">VR & 360°</span></button>
+<section class="py-20 px-6 md:px-12 max-w-container-max mx-auto">
+
+  <!-- ── Category Stats Bar ─────────────────────── -->
+  <div class="flex flex-wrap justify-center gap-8 mb-16 reveal" style="opacity:0;transform:translateY(24px)">
+    <div class="text-center"><div class="text-2xl font-bold text-primary">5</div><div class="text-[10px] text-zinc-500 tracking-widest mt-0.5 uppercase" style="font-family:'Manrope',sans-serif"><span class="ar">إظهار</span><span class="en">Rendering</span></div></div>
+    <div class="w-px h-8 bg-white/8 self-center"></div>
+    <div class="text-center"><div class="text-2xl font-bold text-primary">3</div><div class="text-[10px] text-zinc-500 tracking-widest mt-0.5 uppercase" style="font-family:'Manrope',sans-serif"><span class="ar">تحريك</span><span class="en">Animation</span></div></div>
+    <div class="w-px h-8 bg-white/8 self-center"></div>
+    <div class="text-center"><div class="text-2xl font-bold text-primary">4</div><div class="text-[10px] text-zinc-500 tracking-widest mt-0.5 uppercase" style="font-family:'Manrope',sans-serif"><span class="ar">مجسمات</span><span class="en">Maquettes</span></div></div>
+    <div class="w-px h-8 bg-white/8 self-center"></div>
+    <div class="text-center"><div class="text-2xl font-bold text-primary">3</div><div class="text-[10px] text-zinc-500 tracking-widest mt-0.5 uppercase" style="font-family:'Manrope',sans-serif"><span class="ar">تفاعلي</span><span class="en">Interactive</span></div></div>
+    <div class="w-px h-8 bg-white/8 self-center"></div>
+    <div class="text-center"><div class="text-2xl font-bold text-primary">3</div><div class="text-[10px] text-zinc-500 tracking-widest mt-0.5 uppercase" style="font-family:'Manrope',sans-serif"><span class="ar">إنتاج</span><span class="en">Production</span></div></div>
+    <div class="w-px h-8 bg-white/8 self-center"></div>
+    <div class="text-center"><div class="text-2xl font-bold text-primary">3</div><div class="text-[10px] text-zinc-500 tracking-widest mt-0.5 uppercase" style="font-family:'Manrope',sans-serif">VR & 360°</div></div>
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
-    <!-- 1 -->
-    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" data-category="rendering" style="opacity:0;transform:translateY(24px);transition-delay:.05s">
-      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="الجناح الذهبي" src="assets/projects/rendering/jeddah-forum.jpg" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-      <div class="absolute bottom-0 p-6 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block"><span class="ar">إظهار معماري</span><span class="en">RENDERING</span></span>
-        <h3 class="font-headline-md text-white"><span class="ar">الجناح الذهبي</span><span class="en">The Golden Pavilion</span></h3>
-        <p class="font-body-md text-tertiary text-sm mt-1"><span class="ar">جدة، المملكة العربية السعودية</span><span class="en">Jeddah, Saudi Arabia</span></p>
-        <a href="case-study-detail.html" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">مشروع ناجح</span><span class="en">Case Study</span> <span class="material-symbols-outlined text-sm">arrow_back_ios</span></a>
+  <!-- ── Filters ─────────────────────────────────── -->
+  <div class="flex flex-wrap gap-2 mb-10 justify-center reveal" style="opacity:0;transform:translateY(24px)" dir="ltr">
+    <button class="filter-btn active" data-filter="all"><span class="ar">الكل</span><span class="en">ALL</span></button>
+    <button class="filter-btn" data-filter="rendering"><span class="ar">إظهار معماري</span><span class="en">RENDERING</span></button>
+    <button class="filter-btn" data-filter="animation"><span class="ar">تحريك ثري دي</span><span class="en">ANIMATION</span></button>
+    <button class="filter-btn" data-filter="maquettes"><span class="ar">مجسمات</span><span class="en">MAQUETTES</span></button>
+    <button class="filter-btn" data-filter="interactive"><span class="ar">عروض تفاعلية</span><span class="en">INTERACTIVE</span></button>
+    <button class="filter-btn" data-filter="production"><span class="ar">إنتاج سينمائي</span><span class="en">PRODUCTION</span></button>
+    <button class="filter-btn" data-filter="vr">VR & 360°</button>
+  </div>
+
+  <!-- ── Grid ───────────────────────────────────── -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 relative" id="portfolio-grid">
+
+    <!-- ══ RENDERING ══════════════════════════════ -->
+
+    <!-- R1: Anan Escan Co -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="rendering" style="opacity:0;transform:translateY(24px);transition-delay:.04s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="أنان إسكان" src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" loading="lazy"/>
       </div>
-      <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">8K · HDR</span></div>
-    </div>
-    <!-- 2 -->
-    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" data-category="animation" style="opacity:0;transform:translateY(24px);transition-delay:.1s">
-      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="جدة فورم" src="assets/projects/maquettes/mq1.webp" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">3D ANIMATION</span>
-        <h3 class="font-headline-md text-white"><span class="ar">جدة فورم</span><span class="en">Jeddah Forum</span></h3>
-        <p class="font-body-md text-tertiary text-sm mt-1"><span class="ar">جدة، المملكة العربية السعودية</span><span class="en">Jeddah, Saudi Arabia</span></p>
-        <a href="case-study-detail.html" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">مشروع ناجح</span><span class="en">Case Study</span> <span class="material-symbols-outlined text-sm">arrow_back_ios</span></a>
-      </div>
-      <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">4K · CINEMATIC</span></div>
-    </div>
-    <!-- 3 -->
-    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" data-category="maquettes" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
-      <div class="aspect-[4/3] overflow-hidden bg-surface-container-high"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" alt="مجسم أنان إسكان" src="assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">MAQUETTE</span>
-        <h3 class="font-headline-md text-white"><span class="ar">مجسم أنان إسكان</span><span class="en">Anan Escan Model</span></h3>
-        <p class="font-body-md text-tertiary text-sm mt-1"><span class="ar">المنامة، البحرين</span><span class="en">Manama, Bahrain</span></p>
-        <a href="case-study-detail.html" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">مشروع ناجح</span><span class="en">Case Study</span> <span class="material-symbols-outlined text-sm">arrow_back_ios</span></a>
-      </div>
-      <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">1:100 SCALE</span></div>
-    </div>
-    <!-- 4 -->
-    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" data-category="rendering" style="opacity:0;transform:translateY(24px);transition-delay:.2s">
-      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="واحة السلام" src="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
         <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">RENDERING</span>
-        <h3 class="font-headline-md text-white"><span class="ar">واحة السلام</span><span class="en">Wahat Al-Salam</span></h3>
-        <p class="font-body-md text-tertiary text-sm mt-1"><span class="ar">الرياض، المملكة العربية السعودية</span><span class="en">Riyadh, Saudi Arabia</span></p>
-        <a href="case-study-detail.html" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">مشروع ناجح</span><span class="en">Case Study</span> <span class="material-symbols-outlined text-sm">arrow_back_ios</span></a>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">أنان إسكان</span><span class="en">Anan Escan</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">الرياض، المملكة العربية السعودية</span><span class="en">Riyadh, Saudi Arabia</span></p>
       </div>
-      <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">8K · EXTERIOR</span></div>
-    </div>
-    <!-- 5 -->
-    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" data-category="interactive" style="opacity:0;transform:translateY(24px);transition-delay:.25s">
-      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="بوابة المستقبل" src="assets/projects/rendering/uae-e1745147961286.jpeg" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">INTERACTIVE</span>
-        <h3 class="font-headline-md text-white"><span class="ar">بوابة المستقبل</span><span class="en">Gateway of the Future</span></h3>
-        <p class="font-body-md text-tertiary text-sm mt-1"><span class="ar">نيوم، المملكة العربية السعودية</span><span class="en">NEOM, Saudi Arabia</span></p>
-        <a href="case-study-detail.html" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">مشروع ناجح</span><span class="en">Case Study</span> <span class="material-symbols-outlined text-sm">arrow_back_ios</span></a>
-      </div>
-      <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">E-MAQUETTE</span></div>
-    </div>
-    <!-- 6 -->
-    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" data-category="production" style="opacity:0;transform:translateY(24px);transition-delay:.3s">
-      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="شريط الاستوديو" src="assets/projects/rendering/alrajhi2.jpeg" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">PRODUCTION</span>
-        <h3 class="font-headline-md text-white"><span class="ar">شريط الاستوديو ٢٠٢٥</span><span class="en">Studio Reel 2025</span></h3>
-        <p class="font-body-md text-tertiary text-sm mt-1"><span class="ar">الرياض، المملكة العربية السعودية</span><span class="en">Riyadh, Saudi Arabia</span></p>
-        <a href="case-study-detail.html" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">مشروع ناجح</span><span class="en">Case Study</span> <span class="material-symbols-outlined text-sm">arrow_back_ios</span></a>
-      </div>
-      <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">6K · ARRI</span></div>
-    </div>
-    <!-- 7 -->
-    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" data-category="animation" style="opacity:0;transform:translateY(24px);transition-delay:.35s">
-      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="العلا الرؤيوية" src="assets/projects/rendering/The-Meteorological-Building.jpeg" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">3D ANIMATION</span>
-        <h3 class="font-headline-md text-white"><span class="ar">العلا الرؤيوية</span><span class="en">Aloula Vision</span></h3>
-        <p class="font-body-md text-tertiary text-sm mt-1"><span class="ar">العُلا، المملكة العربية السعودية</span><span class="en">AlUla, Saudi Arabia</span></p>
-        <a href="case-study-detail.html" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">مشروع ناجح</span><span class="en">Case Study</span> <span class="material-symbols-outlined text-sm">arrow_back_ios</span></a>
-      </div>
-      <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">4K · AERIAL</span></div>
-    </div>
-    <!-- 8 -->
-    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" data-category="interactive" style="opacity:0;transform:translateY(24px);transition-delay:.4s">
-      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="الميناء المالي VR" src="assets/projects/maquettes/mq2-1.webp" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">VR TOUR</span>
-        <h3 class="font-headline-md text-white"><span class="ar">الميناء المالي</span><span class="en">Financial Harbour</span></h3>
-        <p class="font-body-md text-tertiary text-sm mt-1"><span class="ar">المنامة، البحرين</span><span class="en">Manama, Bahrain</span></p>
-        <a href="case-study-detail.html" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">مشروع ناجح</span><span class="en">Case Study</span> <span class="material-symbols-outlined text-sm">arrow_back_ios</span></a>
-      </div>
-      <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">360° · VR</span></div>
-    </div>
-    <!-- 9 -->
-    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" data-category="maquettes" style="opacity:0;transform:translateY(24px);transition-delay:.45s">
-      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="ميثاق مكة" src="assets/projects/vr360/360gh.png" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">MAQUETTE</span>
-        <h3 class="font-headline-md text-white"><span class="ar">احتفالية ميثاق مكة</span><span class="en">Makkah Charter Celebration</span></h3>
-        <p class="font-body-md text-tertiary text-sm mt-1"><span class="ar">مكة المكرمة، المملكة العربية السعودية</span><span class="en">Makkah, Saudi Arabia</span></p>
-        <a href="case-study-detail.html" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">مشروع ناجح</span><span class="en">Case Study</span> <span class="material-symbols-outlined text-sm">arrow_back_ios</span></a>
-      </div>
-      <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">1:50 · LED</span></div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">8K · HDR</span></div>
     </div>
 
-    <!-- VR & 360 item -->
-    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" data-category="vr" style="opacity:0;transform:translateY(24px);transition-delay:.5s">
-      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="VR 360 Tour" src="https://www.3dgraphicshouse.com/wp-content/uploads/2025/03/Anan-Escan-Co.01.jpeg" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+    <!-- R2: Al Khair Heights -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="rendering" style="opacity:0;transform:translateY(24px);transition-delay:.08s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="الخير هايتس مكة" src="assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">RENDERING</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">الخير هايتس مكة</span><span class="en">Al Khair Heights Makkah</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">مكة المكرمة، المملكة العربية السعودية</span><span class="en">Makkah, Saudi Arabia</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">8K · DUSK</span></div>
+    </div>
+
+    <!-- R3: Financial Center King Abdullah City -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="rendering" style="opacity:0;transform:translateY(24px);transition-delay:.12s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="المركز المالي مدينة الملك عبدالله" src="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">RENDERING</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">المركز المالي — مدينة الملك عبدالله</span><span class="en">Financial Center — King Abdullah City</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">الرياض، المملكة العربية السعودية</span><span class="en">Riyadh, Saudi Arabia</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">AERIAL · 8K</span></div>
+    </div>
+
+    <!-- R4: Kuday Makkah -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="rendering" style="opacity:0;transform:translateY(24px);transition-delay:.16s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="كدي مكة" src="assets/projects/rendering/kuday-makkah-e1745137682714.jpeg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">RENDERING</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">كدي مكة</span><span class="en">Kuday Makkah</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">مكة المكرمة، المملكة العربية السعودية</span><span class="en">Makkah, Saudi Arabia</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">NIGHT · 8K</span></div>
+    </div>
+
+    <!-- R5: Jeddah Forum Rendering -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="rendering" style="opacity:0;transform:translateY(24px);transition-delay:.20s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="جدة فورم" src="assets/projects/rendering/jeddah-forum.jpg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">RENDERING</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">جدة فورم</span><span class="en">Jeddah Forum</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">جدة، المملكة العربية السعودية</span><span class="en">Jeddah, Saudi Arabia</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">EXT · HDR</span></div>
+    </div>
+
+    <!-- ══ ANIMATION ═══════════════════════════════ -->
+
+    <!-- A1: Jeddah Forum Animation -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="animation" style="opacity:0;transform:translateY(24px);transition-delay:.24s">
+      <div class="aspect-[4/3] overflow-hidden relative">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="جدة فورم — فيلم 3D" src="https://img.youtube.com/vi/vYbn-9ramsI/hqdefault.jpg" loading="lazy"/>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-14 h-14 rounded-full bg-black/60 border-2 border-primary/60 flex items-center justify-center backdrop-blur-sm group-hover:bg-primary/20 transition-all duration-300">
+            <span class="material-symbols-outlined text-primary text-3xl ms-filled" style="margin-inline-start:3px">play_arrow</span>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">3D ANIMATION</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">جدة فورم — فيلم ثري دي</span><span class="en">Jeddah Forum — 3D Film</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">جدة، المملكة العربية السعودية</span><span class="en">Jeddah, Saudi Arabia</span></p>
+        <a href="https://www.youtube.com/watch?v=vYbn-9ramsI" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">شاهد الفيلم</span><span class="en">Watch Film</span> <span class="material-symbols-outlined text-sm">open_in_new</span></a>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">4K · CG</span></div>
+    </div>
+
+    <!-- A2: Pavilions VIP -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="animation" style="opacity:0;transform:translateY(24px);transition-delay:.28s">
+      <div class="aspect-[4/3] overflow-hidden relative">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="أجنحة كبار الضيوف" src="https://img.youtube.com/vi/ilWeCush3ew/hqdefault.jpg" loading="lazy"/>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-14 h-14 rounded-full bg-black/60 border-2 border-primary/60 flex items-center justify-center backdrop-blur-sm group-hover:bg-primary/20 transition-all duration-300">
+            <span class="material-symbols-outlined text-primary text-3xl ms-filled" style="margin-inline-start:3px">play_arrow</span>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">3D ANIMATION</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">أجنحة كبار الضيوف</span><span class="en">Pavilions VIP</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">المملكة العربية السعودية</span><span class="en">Saudi Arabia</span></p>
+        <a href="https://www.youtube.com/watch?v=ilWeCush3ew" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">شاهد الفيلم</span><span class="en">Watch Film</span> <span class="material-symbols-outlined text-sm">open_in_new</span></a>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">4K · ARCH VIZ</span></div>
+    </div>
+
+    <!-- A3: Makkah Market -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="animation" style="opacity:0;transform:translateY(24px);transition-delay:.32s">
+      <div class="aspect-[4/3] overflow-hidden relative">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="سوق مكة" src="https://img.youtube.com/vi/GlbvI0DRXE4/hqdefault.jpg" loading="lazy"/>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-14 h-14 rounded-full bg-black/60 border-2 border-primary/60 flex items-center justify-center backdrop-blur-sm group-hover:bg-primary/20 transition-all duration-300">
+            <span class="material-symbols-outlined text-primary text-3xl ms-filled" style="margin-inline-start:3px">play_arrow</span>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">3D ANIMATION</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">سوق مكة</span><span class="en">Makkah Market</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">مكة المكرمة، المملكة العربية السعودية</span><span class="en">Makkah, Saudi Arabia</span></p>
+        <a href="https://www.youtube.com/watch?v=GlbvI0DRXE4" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">شاهد الفيلم</span><span class="en">Watch Film</span> <span class="material-symbols-outlined text-sm">open_in_new</span></a>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">4K · CINEMATIC</span></div>
+    </div>
+
+    <!-- ══ MAQUETTES ════════════════════════════════ -->
+
+    <!-- M1: Architectural Maquette -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="maquettes" style="opacity:0;transform:translateY(24px);transition-delay:.36s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="مجسم معماري" src="assets/projects/maquettes/mq1.webp" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">MAQUETTE</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">مجسم معماري ذهبي</span><span class="en">Golden Architectural Maquette</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">الرياض، المملكة العربية السعودية</span><span class="en">Riyadh, Saudi Arabia</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">1:100 SCALE</span></div>
+    </div>
+
+    <!-- M2: Maquette Detail -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="maquettes" style="opacity:0;transform:translateY(24px);transition-delay:.40s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="تفاصيل المجسم" src="assets/projects/maquettes/mq1-1.webp" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">MAQUETTE</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">تفاصيل المجسم الدقيقة</span><span class="en">Maquette Fine Details</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">المملكة العربية السعودية</span><span class="en">Saudi Arabia</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">DETAIL · LED</span></div>
+    </div>
+
+    <!-- M3: Maquette Event -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="maquettes" style="opacity:0;transform:translateY(24px);transition-delay:.44s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="مجسم المعرض" src="assets/projects/maquettes/mq1-2.webp" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">MAQUETTE</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">مجسم المعرض</span><span class="en">Exhibition Maquette</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">المملكة العربية السعودية</span><span class="en">Saudi Arabia</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">EXHIBITION</span></div>
+    </div>
+
+    <!-- M4: Maquette Venue -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="maquettes" style="opacity:0;transform:translateY(24px);transition-delay:.48s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="مجسم الفعالية" src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.23.44.jpeg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">MAQUETTE</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">مجسم الفعالية الكبرى</span><span class="en">Grand Event Maquette</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">المملكة العربية السعودية</span><span class="en">Saudi Arabia</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">EVENT · 3D</span></div>
+    </div>
+
+    <!-- ══ INTERACTIVE ══════════════════════════════ -->
+
+    <!-- I1: UAE Interactive -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="interactive" style="opacity:0;transform:translateY(24px);transition-delay:.52s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="عرض تفاعلي الإمارات" src="assets/projects/rendering/uae-e1745147961286.jpeg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">INTERACTIVE</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">عرض تفاعلي — الإمارات</span><span class="en">Interactive Presentation — UAE</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">دبي، الإمارات العربية المتحدة</span><span class="en">Dubai, UAE</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">E-MAQUETTE</span></div>
+    </div>
+
+    <!-- I2: Meteorological Building Interactive -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="interactive" style="opacity:0;transform:translateY(24px);transition-delay:.56s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="المبنى الأرصادي التفاعلي" src="assets/projects/rendering/The-Meteorological-Building.jpeg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">INTERACTIVE</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">المبنى الأرصادي</span><span class="en">Meteorological Building</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">المملكة العربية السعودية</span><span class="en">Saudi Arabia</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">TOUCH SCREEN</span></div>
+    </div>
+
+    <!-- I3: Al Khair 2 Interactive -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="interactive" style="opacity:0;transform:translateY(24px);transition-delay:.60s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="الخير هايتس تفاعلي" src="assets/projects/rendering/Al-Khair-Heights-in-Makkah2-e1746262287150.jpeg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">INTERACTIVE</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">الخير هايتس — عرض تفاعلي</span><span class="en">Al Khair Heights — Interactive</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">مكة المكرمة، المملكة العربية السعودية</span><span class="en">Makkah, Saudi Arabia</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">REAL-TIME 3D</span></div>
+    </div>
+
+    <!-- ══ PRODUCTION ═══════════════════════════════ -->
+
+    <!-- P1: Alrajhi Naseem -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="production" style="opacity:0;transform:translateY(24px);transition-delay:.64s">
+      <div class="aspect-[4/3] overflow-hidden relative">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="الراجحي نسيم" src="https://img.youtube.com/vi/ALz6GdeITYc/hqdefault.jpg" loading="lazy"/>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-14 h-14 rounded-full bg-black/60 border-2 border-primary/60 flex items-center justify-center backdrop-blur-sm group-hover:bg-primary/20 transition-all duration-300">
+            <span class="material-symbols-outlined text-primary text-3xl ms-filled" style="margin-inline-start:3px">play_arrow</span>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">PRODUCTION</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">الراجحي نسيم</span><span class="en">Alrajhi Naseem</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">المملكة العربية السعودية</span><span class="en">Saudi Arabia</span></p>
+        <a href="https://www.youtube.com/watch?v=ALz6GdeITYc" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">شاهد الفيلم</span><span class="en">Watch Film</span> <span class="material-symbols-outlined text-sm">open_in_new</span></a>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">4K · PROMO</span></div>
+    </div>
+
+    <!-- P2: Studio Reel -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="production" style="opacity:0;transform:translateY(24px);transition-delay:.68s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="شريط الاستوديو" src="assets/projects/rendering/alrajhi2.jpeg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">PRODUCTION</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">شريط الأعمال ٢٠٢٥</span><span class="en">Studio Reel 2025</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">جرافيكس هاوس، المملكة العربية السعودية</span><span class="en">Graphics House, Saudi Arabia</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">REEL · 4K</span></div>
+    </div>
+
+    <!-- P3: Event Production -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="production" style="opacity:0;transform:translateY(24px);transition-delay:.72s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="إنتاج الفعاليات" src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.23.43.jpeg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">PRODUCTION</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">إنتاج الفعاليات الكبرى</span><span class="en">Grand Event Production</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">المملكة العربية السعودية</span><span class="en">Saudi Arabia</span></p>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">6K · LIVE</span></div>
+    </div>
+
+    <!-- ══ VR & 360° ════════════════════════════════ -->
+
+    <!-- V1: 360 GH Tour -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="vr" style="opacity:0;transform:translateY(24px);transition-delay:.76s">
+      <div class="aspect-[4/3] overflow-hidden relative bg-surface-container">
+        <img class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" alt="جولة VR 360" src="assets/projects/vr360/360gh.png" loading="lazy"/>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div class="w-16 h-16 rounded-full border-2 border-primary/50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+            <span class="material-symbols-outlined text-primary text-3xl">360</span>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
         <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">VR & 360°</span>
-        <h3 class="font-headline-md text-white"><span class="ar">جولة افتراضية 360°</span><span class="en">Virtual 360° Tour</span></h3>
-        <p class="font-body-md text-tertiary text-sm mt-1"><span class="ar">تجربة VR تفاعلية غامرة</span><span class="en">Immersive VR Interactive Experience</span></p>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">جولة افتراضية 360°</span><span class="en">Virtual 360° Tour</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">تجربة VR تفاعلية غامرة</span><span class="en">Immersive VR Experience</span></p>
         <a href="services/vr-360.html" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">اكتشف الخدمة</span><span class="en">Explore Service</span> <span class="material-symbols-outlined text-sm">arrow_back_ios</span></a>
       </div>
-      <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">VR · 360°</span></div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">VR · 360°</span></div>
     </div>
-  </div>
 
-  <!-- CTA -->
+    <!-- V2: Anan Escan VR -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="vr" style="opacity:0;transform:translateY(24px);transition-delay:.80s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="أنان إسكان VR" src="assets/projects/rendering/anan-escan2.jpeg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">VR & 360°</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">جولة أنان إسكان VR</span><span class="en">Anan Escan VR Tour</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">الرياض، المملكة العربية السعودية</span><span class="en">Riyadh, Saudi Arabia</span></p>
+        <a href="services/vr-360.html" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">اكتشف الخدمة</span><span class="en">Explore Service</span> <span class="material-symbols-outlined text-sm">arrow_back_ios</span></a>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">WALK-THROUGH</span></div>
+    </div>
+
+    <!-- V3: Kuday VR -->
+    <div class="portfolio-item reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 cursor-pointer" data-category="vr" style="opacity:0;transform:translateY(24px);transition-delay:.84s">
+      <div class="aspect-[4/3] overflow-hidden">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="كدي VR جولة" src="assets/projects/rendering/kuday-makkah1.jpeg" loading="lazy"/>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+      <div class="absolute bottom-0 p-5 w-full translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 text-[9px] font-bold tracking-widest uppercase mb-2 inline-block">VR & 360°</span>
+        <h3 class="font-headline-md text-white text-base"><span class="ar">كدي مكة — جولة افتراضية</span><span class="en">Kuday Makkah VR Tour</span></h3>
+        <p class="text-tertiary text-xs mt-0.5" style="font-family:'Cairo',sans-serif"><span class="ar">مكة المكرمة، المملكة العربية السعودية</span><span class="en">Makkah, Saudi Arabia</span></p>
+        <a href="services/vr-360.html" class="inline-flex items-center gap-2 text-primary text-xs tracking-widest mt-3 hover:gap-3 transition-all"><span class="ar">اكتشف الخدمة</span><span class="en">Explore Service</span> <span class="material-symbols-outlined text-sm">arrow_back_ios</span></a>
+      </div>
+      <div class="absolute top-3 end-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/10"><span class="font-label-caps text-[9px] text-white/60 tracking-widest">360° · VR</span></div>
+    </div>
+
+  </div><!-- end grid -->
+
+  <!-- ── Results count ───────────────────────────── -->
+  <p id="filter-count" class="text-center text-xs text-zinc-500 tracking-widest mt-8" style="font-family:'Manrope',sans-serif">
+    <span class="ar">عرض ٢١ مشروعاً</span><span class="en">Showing 21 projects</span>
+  </p>
+
+  <!-- ── CTA ─────────────────────────────────────── -->
   <div class="text-center mt-16 reveal" style="opacity:0;transform:translateY(24px)">
     <a href="contact.html" class="border border-primary text-primary px-10 py-4 font-label-caps text-label-caps tracking-widest hover:bg-primary/10 transition-all inline-flex items-center gap-3">
       <span class="ar">ناقش مشروعك معنا</span><span class="en">DISCUSS YOUR PROJECT</span>
@@ -426,7 +700,7 @@
 <footer class="w-full border-t border-yellow-500/10 pt-16 md:pt-20 pb-12 bg-zinc-950">
   <div class="max-w-7xl mx-auto px-8 md:px-12 flex flex-col md:flex-row justify-between items-start gap-12">
     <div class="max-w-sm">
-      <a href="index.html"><img src="assets/logo-gold.png" alt="Graphics House" class="logo-img h-28 md:h-36 w-auto mb-4" style="object-fit:contain" loading="lazy"/></a>
+      <a href="/"><img src="assets/logo-gold.png" alt="Graphics House" class="logo-img h-28 md:h-36 w-auto mb-4" style="object-fit:contain" loading="lazy"/></a>
       <p class="text-zinc-500 text-xs tracking-widest leading-relaxed mb-8" style="font-family:'Cairo','Manrope',sans-serif">
         <span class="ar">أفضل فكرة للعرض — نعيد تعريف المعايير السينمائية لرواية القصص المعمارية.</span>
         <span class="en">Best Idea For Presentation — Redefining cinematic standards for architectural storytelling.</span>
@@ -665,16 +939,44 @@
   backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
   // ── Portfolio Filter ───────────────────────────
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  const filterBtns    = document.querySelectorAll('.filter-btn');
   const portfolioItems = document.querySelectorAll('.portfolio-item');
+  const filterCount   = document.getElementById('filter-count');
+
+  const catLabels = {
+    ar: { all:'جميع المشاريع', rendering:'الإظهار المعماري', animation:'التحريك ثري دي',
+          maquettes:'المجسمات', interactive:'العروض التفاعلية', production:'الإنتاج السينمائي', vr:'VR & 360°' },
+    en: { all:'All Projects', rendering:'Rendering', animation:'3D Animation',
+          maquettes:'Maquettes', interactive:'Interactive', production:'Production', vr:'VR & 360°' }
+  };
+
+  function updateCount(visible, cat) {
+    if (!filterCount) return;
+    const isAr = !document.body.classList.contains('is-en');
+    const label = (isAr ? catLabels.ar : catLabels.en)[cat] || '';
+    if (cat === 'all') {
+      filterCount.innerHTML = isAr
+        ? `<span class="ar">عرض ${visible} مشروعاً</span><span class="en">Showing ${visible} projects</span>`
+        : `<span class="ar">عرض ${visible} مشروعاً</span><span class="en">Showing ${visible} projects</span>`;
+    } else {
+      filterCount.innerHTML = isAr
+        ? `<span class="ar">${label} — ${visible} مشروع</span><span class="en">${label} — ${visible} projects</span>`
+        : `<span class="ar">${label} — ${visible} مشروع</span><span class="en">${label} — ${visible} projects</span>`;
+    }
+  }
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const cat = btn.dataset.filter;
+      let visible = 0;
       portfolioItems.forEach(item => {
-        item.classList.toggle('is-hidden', cat !== 'all' && item.dataset.category !== cat);
+        const hide = cat !== 'all' && item.dataset.category !== cat;
+        item.classList.toggle('is-hidden', hide);
+        if (!hide) visible++;
       });
+      updateCount(visible, cat);
     });
   });
 
