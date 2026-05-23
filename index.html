@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Graphics House | Best Idea For Presentation</title>
-<meta name="description" content="Graphics House — Premium production studio specializing in architectural visualization, cinematic commercials, and 3D animation across the Middle East."/>
+<title>Graphics House | Architectural Branding &amp; AI Space Intelligence</title>
+<meta name="description" content="Graphics House — Premium Architectural Branding Agency. AI-powered space planning, photorealistic visualization, and cinematic production for elite real estate developers across the Gulf."/>
 
-<!-- Fonts: English -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet"/>
-<!-- Fonts: Arabic luxury — Almarai (bold headlines) + Cairo (body/UI) -->
-<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<!-- Fonts: English — Inter for clean architectural sans -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<!-- Fonts: Arabic — Tajawal (geometric) + Cairo (body) -->
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
 <!-- Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
@@ -20,84 +20,319 @@
     theme: {
       extend: {
         colors: {
-          "tertiary":"#cecece","inverse-on-surface":"#313030","surface-container-high":"#2a2a2a",
-          "on-primary-fixed-variant":"#574500","surface-container-low":"#1c1b1b","background":"#131313",
-          "error":"#ffb4ab","on-tertiary":"#2f3131","on-primary-container":"#554300","secondary":"#c9c6c5",
-          "on-primary-fixed":"#241a00","primary-fixed-dim":"#e9c349","on-tertiary-container":"#434546",
-          "on-error":"#690005","tertiary-container":"#b2b3b3","on-secondary-fixed":"#1c1b1b",
-          "surface-tint":"#e9c349","secondary-container":"#4a4949","on-tertiary-fixed":"#1a1c1c",
-          "outline-variant":"#4d4635","primary-container":"#d4af37","on-surface":"#e5e2e1",
-          "outline":"#99907c","secondary-fixed-dim":"#c9c6c5","on-surface-variant":"#d0c5af",
-          "error-container":"#93000a","primary":"#f2ca50","primary-fixed":"#ffe088",
-          "on-background":"#e5e2e1","inverse-primary":"#735c00","on-secondary-container":"#bab8b7",
-          "surface-container-lowest":"#0e0e0e","tertiary-fixed-dim":"#c6c6c7","surface-fixed":"#e2e2e2",
-          "on-error-container":"#ffdad6","surface":"#131313","surface-container-highest":"#353535",
-          "secondary-fixed":"#e5e2e1","on-primary":"#3c2f00","surface-container":"#20201f",
-          "on-tertiary-fixed-variant":"#454747","on-secondary":"#313030","on-secondary-fixed-variant":"#474646",
-          "inverse-surface":"#e5e2e1","surface-dim":"#131313","surface-bright":"#393939"
+          /* Monochromatic luxury — pure black & white */
+          background: "#FFFFFF",
+          "on-background": "#000000",
+          surface: "#FFFFFF",
+          "on-surface": "#000000",
+          "surface-dim": "#FAFAFA",
+          "surface-bright": "#FFFFFF",
+          "surface-container": "#F5F5F5",
+          "surface-container-low": "#F0F0F0",
+          "surface-container-high": "#E8E8E8",
+          "surface-container-lowest": "#FFFFFF",
+          secondary: "#666666",
+          "on-secondary": "#FFFFFF",
+          "secondary-container": "#E8E8E8",
+          "on-secondary-container": "#1A1A1A",
+          tertiary: "#999999",
+          outline: "#CCCCCC",
+          "outline-variant": "#E5E5E5",
+          /* Gold — 3% accent only */
+          primary: "#D4AF37",
+          "on-primary": "#FFFFFF",
+          "primary-container": "#F5F0E0",
+          "on-primary-container": "#3D3200",
+          "primary-fixed": "#F5EEC8",
+          "primary-fixed-dim": "#D4AF37",
+          "on-primary-fixed": "#1A1400",
+          "on-primary-fixed-variant": "#4A4200",
+          inverse: "#000000",
+          "inverse-surface": "#000000",
+          "on-inverse-surface": "#FFFFFF",
+          "inverse-primary": "#D4AF37",
         },
-        borderRadius: { "DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem" },
-        spacing: { "unit":"8px","gutter":"24px","section-gap":"120px","margin-edge":"64px","container-max":"1440px" },
+        borderRadius: {
+          "DEFAULT": "0px",
+          "none": "0px",
+          "sm": "0px",
+          "md": "0px",
+          "lg": "0px",
+          "xl": "0px",
+          "2xl": "0px",
+          "3xl": "0px",
+        },
+        spacing: {
+          "unit": "8px",
+          "gutter": "24px",
+          "section-gap": "120px",
+          "margin-edge": "64px",
+          "container-max": "1440px",
+        },
         fontFamily: {
-          "body-md":["Manrope"],"headline-lg":["Noto Serif"],"label-caps":["Manrope"],
-          "headline-xl":["Noto Serif"],"body-lg":["Manrope"],"headline-md":["Noto Serif"],
-          "ar-display":["Amiri","serif"],"ar-ui":["Cairo","sans-serif"]
+          "en": ["Inter", "sans-serif"],
+          "ar": ["Tajawal", "sans-serif"],
+          "ar-body": ["Cairo", "sans-serif"],
+          "display": ["Inter", "sans-serif"],
+          "body": ["Inter", "sans-serif"],
         },
         fontSize: {
-          "body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],
-          "headline-lg":["32px",{"lineHeight":"1.3","fontWeight":"600"}],
-          "label-caps":["12px",{"lineHeight":"1.0","letterSpacing":"0.1em","fontWeight":"700"}],
-          "headline-xl":["48px",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"700"}],
-          "body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],
-          "headline-md":["24px",{"lineHeight":"1.4","fontWeight":"500"}]
-        }
+          "display-xl": ["64px", {"lineHeight": "1.05", "fontWeight": "700", "letterSpacing": "-0.03em"}],
+          "display-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "700", "letterSpacing": "-0.02em"}],
+          "heading-xl": ["36px", {"lineHeight": "1.2", "fontWeight": "600", "letterSpacing": "-0.015em"}],
+          "heading-lg": ["28px", {"lineHeight": "1.25", "fontWeight": "600"}],
+          "heading-md": ["20px", {"lineHeight": "1.3", "fontWeight": "500"}],
+          "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+          "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+          "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+          "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "700"}],
+          "label-xs": ["10px", {"lineHeight": "1.0", "letterSpacing": "0.12em", "fontWeight": "800"}],
+        },
+        maxWidth: {
+          "container-max": "1440px",
+        },
       }
     }
   }
 </script>
 <style>
-  /* ── Material Symbols FILL ─────────────────── */
-  .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
+  /* ── Reset: 0px border-radius everywhere ──── */
+  *, *::before, *::after { border-radius: 0px !important; }
 
-  /* ── Scrollbar ──────────────────────────────── */
-  ::-webkit-scrollbar { width:3px; }
-  ::-webkit-scrollbar-track { background:#0e0e0e; }
-  ::-webkit-scrollbar-thumb { background:#f2ca50; }
+  /* ── Typography: Arabic overrides ──────────── */
+  html[dir="rtl"] body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+  }
+  html[dir="rtl"] .en-only { display: none; }
+  html[dir="ltr"] .ar-only { display: none; }
+  .ar-only { display: none; }
+  html[dir="rtl"] .ar-only { display: inline; }
 
-  /* ── Custom Cursor ──────────────────────────── */
-  @media (pointer:fine) { *,*::before,*::after { cursor:none !important; } }
+  /* ── Smooth scroll ────────────────────────── */
+  html { scroll-behavior: smooth; background: #FFFFFF; }
+
+  /* ── Selection ────────────────────────────── */
+  ::selection { background: #D4AF37; color: #000000; }
+
+  /* ── Scrollbar ────────────────────────────── */
+  ::-webkit-scrollbar { width: 1px; }
+  ::-webkit-scrollbar-track { background: #FFFFFF; }
+  ::-webkit-scrollbar-thumb { background: #000000; }
+
+  /* ── Custom Cursor ────────────────────────── */
+  @media (pointer:fine) { *, *::before, *::after { cursor: none !important; } }
   #cur-dot {
-    position:fixed; top:0; left:0; width:6px; height:6px; margin:-3px 0 0 -3px;
-    background:#f2ca50; border-radius:50%; pointer-events:none; z-index:99999;
-    will-change:transform; opacity:0; transition:opacity .3s ease,transform .05s linear;
+    position: fixed; top: 0; left: 0; width: 4px; height: 4px; margin: -2px 0 0 -2px;
+    background: #000000; pointer-events: none; z-index: 99999;
+    will-change: transform; opacity: 0; transition: opacity .3s ease;
   }
   #cur-ring {
-    position:fixed; top:0; left:0; width:36px; height:36px; margin:-18px 0 0 -18px;
-    border:1px solid rgba(242,202,80,.45); border-radius:50%;
-    pointer-events:none; z-index:99998; will-change:transform; opacity:0;
-    transition:opacity .3s ease,width .25s ease,height .25s ease,margin .25s ease,border-color .25s ease;
+    position: fixed; top: 0; left: 0; width: 32px; height: 32px; margin: -16px 0 0 -16px;
+    border: 1px solid rgba(212, 175, 55, .4); pointer-events: none; z-index: 99998;
+    will-change: transform; opacity: 0;
+    transition: opacity .3s ease, width .3s ease, height .3s ease, margin .3s ease;
   }
-  #cur-dot.visible,#cur-ring.visible { opacity:1; }
-  #cur-ring.hovered { width:60px; height:60px; margin:-30px 0 0 -30px; border-color:rgba(242,202,80,.8); }
+  #cur-dot.visible, #cur-ring.visible { opacity: 1; }
+  #cur-ring.hovered { width: 56px; height: 56px; margin: -28px 0 0 -28px; border-color: #D4AF37; }
 
-  /* ── Film grain ─────────────────────────────── */
-  body::after {
-    content:''; position:fixed; inset:0; pointer-events:none; z-index:9990;
-    opacity:.018; mix-blend-mode:screen;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-    animation:grain 9s steps(8,end) infinite;
+  /* ── Nav Pill ─────────────────────────────── */
+  #nav-pill {
+    background: rgba(255, 255, 255, .92);
+    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+    border: 1px solid #E5E5E5;
+    padding: 0 24px; height: 64px;
   }
-  @keyframes grain {
-    0%{transform:translate(0,0)} 12%{transform:translate(-4%,-9%)} 25%{transform:translate(3%,-13%)}
-    37%{transform:translate(8%,6%)} 50%{transform:translate(-6%,11%)} 62%{transform:translate(10%,-4%)}
-    75%{transform:translate(-2%,8%)} 87%{transform:translate(5%,-7%)} 100%{transform:translate(0,0)}
+  @media (prefers-color-scheme: dark) {
+    #nav-pill {
+      background: rgba(255, 255, 255, .95);
+    }
   }
+  .nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+    color: #000000; text-transform: uppercase;
+    transition: color .2s ease;
+    position: relative;
+    padding: 4px 0;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute; bottom: -2px; left: 0; right: 100%;
+    height: 1px; background: #D4AF37;
+    transition: right .3s ease;
+  }
+  .nav-link:hover::after { right: 0; }
+  .nav-link:hover { color: #D4AF37; }
+  html[dir="rtl"] .nav-link { font-family: 'Tajawal', sans-serif; letter-spacing: 0; }
+
+  /* ── Gold accent utilities ────────────────── */
+  .gold-border { border-color: #D4AF37; }
+  .gold-text { color: #D4AF37; }
+  .gold-bg { background: #D4AF37; color: #000000; }
+  .gold-hover:hover { color: #D4AF37; }
+  .gold-border-hover:hover { border-color: #D4AF37; }
+
+  /* ── Button base — sharp, architectural ──── */
+  .btn-arch {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 16px 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    border: 1px solid #000000;
+    background: transparent; color: #000000;
+    transition: all .3s ease;
+    text-decoration: none;
+  }
+  .btn-arch:hover { background: #000000; color: #FFFFFF; }
+  html[dir="rtl"] .btn-arch { font-family: 'Cairo', 'Tajawal', sans-serif; }
+  .btn-arch-gold {
+    border-color: #D4AF37; color: #000000; background: #D4AF37;
+  }
+  .btn-arch-gold:hover { background: #000000; color: #D4AF37; border-color: #000000; }
+  .btn-arch-outline { border-color: #000000; background: transparent; color: #000000; }
+  .btn-arch-outline:hover { background: #000000; color: #FFFFFF; }
+  .btn-arch-white { border-color: #000000; background: #000000; color: #FFFFFF; }
+  .btn-arch-white:hover { background: transparent; color: #000000; }
+
+  /* ── Section headers ──────────────────────── */
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #666666; display: block; margin-bottom: 16px;
+  }
+  html[dir="rtl"] .section-label { font-family: 'Tajawal', sans-serif; letter-spacing: 0.05em; }
+
+  /* ── Divider ──────────────────────────────── */
+  .divider { width: 40px; height: 1px; background: #000000; margin: 24px 0; }
+  .divider-center { margin-left: auto; margin-right: auto; }
+
+  /* ── Reveal animation ─────────────────────── */
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .8s cubic-bezier(0.16, 1, 0.3, 1), transform .8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.revealed { opacity: 1; transform: translateY(0); }
 
   /* ── Left Contact Strip ────────────────────── */
   #contact-strip {
-    position:fixed; left:0; top:50%; transform:translateY(-50%);
-    z-index:45; display:flex; flex-direction:column; align-items:center;
+    position: fixed; left: 0; top: 50%; transform: translateY(-50%);
+    z-index: 45; display: flex; flex-direction: column; align-items: center;
   }
+  #contact-strip a {
+    writing-mode: vertical-rl;
+    padding: 20px 12px;
+    font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    color: #666666; text-decoration: none; text-transform: uppercase;
+    transition: color .3s ease;
+  }
+  #contact-strip a:hover { color: #D4AF37; }
+  html[dir="rtl"] #contact-strip a { font-family: 'Tajawal', sans-serif; }
+
+  /* ── Service tag ──────────────────────────── */
+  .svc-tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #D4AF37; border-bottom: 1px solid #D4AF37; padding-bottom: 4px;
+  }
+  html[dir="rtl"] .svc-tag { font-family: 'Tajawal', sans-serif; letter-spacing: 0.05em; }
+
+  /* ── Hero ─────────────────────────────────── */
+  #hero { background: #FFFFFF; }
+  .hero-slide { opacity: 0; position: absolute; transition: opacity 1s ease; }
+  .hero-slide.hs-active { opacity: 1; position: relative; }
+  .hero-prog { height: 1px; background: #CCCCCC; transition: all .4s ease; cursor: pointer; }
+  .hero-prog.hp-active { background: #D4AF37; width: 100% !important; }
+
+  /* ── Service cards ────────────────────────── */
+  .svc-card { position: relative; overflow: hidden; min-height: 320px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .svc-card-img { position: absolute; inset: 0; object-fit: cover; width: 100%; height: 100%; transition: transform .8s cubic-bezier(0.16, 1, 0.3, 1); }
+  .svc-card:hover .svc-card-img { transform: scale(1.06); }
+  .svc-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.2) 60%, transparent 100%); }
+
+  /* ── Project overlay ──────────────────────── */
+  .project-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+    opacity: 0; transition: opacity .5s ease;
+  }
+  .project-card:hover .project-overlay { opacity: 1; }
+  .project-card img { transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1); }
+  .project-card:hover img { transform: scale(1.05); }
+
+  /* ── Process step connector ───────────────── */
+  .step-connector {
+    position: absolute; top: 28px; left: calc(12.5% + 28px); right: calc(12.5% + 28px);
+    height: 1px; background: #E5E5E5;
+  }
+
+  /* ── Back to top ──────────────────────────── */
+  #back-top {
+    position: fixed; bottom: 32px; left: 24px; z-index: 50;
+    width: 40px; height: 40px;
+    background: #FFFFFF; border: 1px solid #000000;
+    color: #000000; display: flex; align-items: center; justify-content: center;
+    transition: all .3s ease;
+  }
+  #back-top:hover { background: #000000; color: #FFFFFF; }
+
+  /* ── Mobile nav ───────────────────────────── */
+  #mob-nav {
+    position: fixed; inset: 0; z-index: 999;
+    background: #FFFFFF; transform: translateX(100%);
+    transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+  }
+  #mob-nav.open { transform: translateX(0); }
+  html[dir="rtl"] #mob-nav { transform: translateX(-100%); }
+  html[dir="rtl"] #mob-nav.open { transform: translateX(0); }
+
+  .mob-link {
+    font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600;
+    color: #000000; text-decoration: none; display: flex; align-items: center;
+    justify-content: space-between; padding: 16px 0;
+    border-bottom: 1px solid #E5E5E5;
+    transition: color .2s ease;
+  }
+  .mob-link:hover { color: #D4AF37; }
+  html[dir="rtl"] .mob-link { font-family: 'Tajawal', sans-serif; }
+
+  /* ── Mobile nav overrides ─────────────────── */
+  #mob-nav img.logo-img { filter: none; }
+  #mob-nav .border-white\/5 { border-color: #E5E5E5; }
+  #mob-nav .text-white { color: #000000; }
+  #mob-nav .text-secondary { color: #666666; }
+  #mob-nav .text-primary { color: #D4AF37; }
+  #mob-nav .text-primary\/30 { color: rgba(212, 175, 55, 0.3); }
+  #mob-nav .border-primary\/30 { border-color: rgba(212, 175, 55, 0.3); }
+
+  /* ── Stat counter ──────────────────────────── */
+  .stat-number { font-size: 48px; font-weight: 700; line-height: 1; color: #000000; }
+  html[dir="rtl"] .stat-number { font-family: 'Tajawal', sans-serif; }
+
+  /* ── Responsive ───────────────────────────── */
+  @media (max-width: 768px) {
+    :root { --section-gap: 80px; }
+    #contact-strip { display: none; }
+  }
+
+  /* ── Page loader ──────────────────────────── */
+  #loader {
+    position: fixed; inset: 0; z-index: 99999;
+    background: #FFFFFF; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    transition: opacity .6s ease, visibility .6s ease;
+  }
+  #loader.hidden { opacity: 0; visibility: hidden; }
+  #loader-bar-track {
+    width: 160px; height: 1px; background: #E5E5E5; margin-top: 24px; overflow: hidden;
+  }
+  #loader-bar {
+    width: 0%; height: 100%; background: #D4AF37;
+    transition: width .3s ease;
+  }
+  #loader img { height: 48px; width: auto; filter: brightness(0); }
+</style>
   #contact-strip a {
     display:flex; flex-direction:column; align-items:center; gap:27px;
     padding:42px 20px; text-decoration:none;
@@ -314,9 +549,7 @@
   .client-chip:hover { border-color:rgba(242,202,80,.25); color:rgba(242,202,80,.5); }
 
   /* ── Service card image overlay ─────────────── */
-  .svc-card-img { position:absolute; inset:0; object-fit:cover; width:100%; height:100%; transition:transform .7s ease; }
-  .svc-card:hover .svc-card-img { transform:scale(1.07); }
-  .svc-card-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.3) 60%, transparent 100%); }
+
 
 
   /* ── Hero Video BG ──────────────────────────── */
@@ -332,56 +565,6 @@
     transform:translate(-50%,-50%);
     object-fit:cover;
     will-change:opacity;
-  }
-
-  /* ── Hero overlays ───────────────────────────── */
-  /* removed — replaced with inline style divs below */
-
-  /* ── Hero Slides — above vignettes, buttons pushed lower ── */
-  .hero-slide {
-    position:absolute; inset:0; z-index:10;
-    display:flex; align-items:flex-end; justify-content:center;
-    padding-bottom:160px;
-    opacity:0; transform:scale(.97);
-    transition:opacity .9s cubic-bezier(.4,0,.2,1), transform .9s cubic-bezier(.4,0,.2,1);
-    pointer-events:none;
-  }
-  .hero-slide.hs-active { opacity:1; transform:scale(1); pointer-events:auto; }
-
-  /* ── Service icons strip ────────────────────── */
-  .hero-svc-strip { border-top:1px solid rgba(255,255,255,.12); padding-top:18px; gap:3rem; }
-  @media(min-width:768px){ .hero-svc-strip { gap:5rem; } }
-  .hero-svc-item span.label {
-    font-family:'Cairo',sans-serif; font-size:16px; font-weight:500;
-    color:rgba(255,255,255,.75); letter-spacing:.04em;
-    display:block; text-align:center; margin-top:8px; white-space:nowrap;
-  }
-
-  /* ── Progress bars ───────────────────────────── */
-  .hero-prog {
-    flex:1; height:2px;
-    background:rgba(255,255,255,.15); position:relative; overflow:hidden;
-  }
-  .hero-prog + .hero-prog { margin-inline-start:3px; }
-  .hero-prog::after {
-    content:''; position:absolute;
-    inset-inline-start:0; top:0; bottom:0;
-    width:0%; background:#f2ca50;
-  }
-  .hero-prog.hp-active::after {
-    width:100%; transition:width 8s linear;
-  }
-  .hero-prog.hp-done::after { width:100%; }
-
-  /* ── Service tag pill ────────────────────────── */
-  .hero-tag {
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'Manrope',sans-serif; font-size:10px;
-    letter-spacing:.35em; text-transform:uppercase;
-    color:#f2ca50; margin-bottom:1.25rem;
-  }
-  .hero-tag::before {
-    content:''; display:block; width:24px; height:1px; background:#f2ca50;
   }
 
   /* ══ Light Theme ═══════════════════════════════ */
@@ -453,7 +636,7 @@
 
 <!-- ── Page Loader ─────────────────────────────── -->
 <div id="loader" aria-hidden="true">
-  <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img w-64 md:w-80 h-auto"/>
+  <img src="assets/logo-dark.jpg" alt="Graphics House" style="height:48px;width:auto;filter:brightness(0)"/>
   <div id="loader-bar-track"><div id="loader-bar"></div></div>
 </div>
 
@@ -463,71 +646,67 @@
 
 <!-- ── Left Contact Strip ──────────────────────── -->
 <div id="contact-strip" aria-hidden="true">
-  <a href="contact.html" aria-label="Contact us">
-    <span class="cs-label"><span class="ar">تواصل معنا</span><span class="en">CONTACT US</span></span>
-    <span class="material-symbols-outlined cs-icon">phone_in_talk</span>
-  </a>
+  <a href="contact.html" aria-label="Contact us"><span class="ar">تواصل</span><span class="en">CONTACT</span></a>
 </div>
 
 <!-- ── Mobile Nav ──────────────────────────────── -->
 <div id="mob-nav" role="dialog" aria-modal="true" aria-label="Main navigation">
-  <div class="flex items-center justify-between px-8 py-6 border-b border-white/5">
-    <img src="assets/logo-gold.png" alt="Graphics House" class="h-12 w-auto logo-img" loading="lazy"/>
-    <button id="mob-close" class="w-10 h-10 flex items-center justify-center border border-white/10 text-secondary hover:text-primary hover:border-primary/40 transition-all" aria-label="Close menu">
+  <div class="flex items-center justify-between px-8 py-6" style="border-bottom:1px solid #E5E5E5">
+    <img src="assets/logo-dark.jpg" alt="Graphics House" style="height:40px;width:auto;filter:brightness(0)" loading="lazy"/>
+    <button id="mob-close" class="w-10 h-10 flex items-center justify-center" style="border:1px solid #E5E5E5;color:#666666" aria-label="Close menu">
       <span class="material-symbols-outlined text-2xl">close</span>
     </button>
   </div>
   <div class="flex flex-col px-8 pt-8 pb-6 gap-1">
-    <a href="portfolio.html"    class="mob-link py-4 border-b border-white/5 text-white hover:text-primary transition-colors flex items-center justify-between group" style="font-family:'Cairo','Manrope',sans-serif;font-size:20px;font-weight:700"><span><span class="ar">الأعمال</span><span class="en">Work</span></span><span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors text-xl">arrow_back_ios</span></a>
-    <a href="/#services" class="mob-link py-4 border-b border-white/5 text-white hover:text-primary transition-colors flex items-center justify-between group" style="font-family:'Cairo','Manrope',sans-serif;font-size:20px;font-weight:700"><span><span class="ar">الخدمات</span><span class="en">Services</span></span><span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors text-xl">arrow_back_ios</span></a>
-    <a href="case-studies.html" class="mob-link py-4 border-b border-white/5 text-white hover:text-primary transition-colors flex items-center justify-between group" style="font-family:'Cairo','Manrope',sans-serif;font-size:20px;font-weight:700"><span><span class="ar">مشاريع ناجحة</span><span class="en">Case Studies</span></span><span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors text-xl">arrow_back_ios</span></a>
-    <a href="blog.html"         class="mob-link py-4 border-b border-white/5 text-white hover:text-primary transition-colors flex items-center justify-between group" style="font-family:'Cairo','Manrope',sans-serif;font-size:20px;font-weight:700"><span><span class="ar">المدونة</span><span class="en">Insights</span></span><span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors text-xl">arrow_back_ios</span></a>
-    <a href="about.html"        class="mob-link py-4 border-b border-white/5 text-white hover:text-primary transition-colors flex items-center justify-between group" style="font-family:'Cairo','Manrope',sans-serif;font-size:20px;font-weight:700"><span><span class="ar">من نحن</span><span class="en">Studio</span></span><span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors text-xl">arrow_back_ios</span></a>
-    <a href="contact.html"      class="mob-link py-4 text-white hover:text-primary transition-colors flex items-center justify-between group" style="font-family:'Cairo','Manrope',sans-serif;font-size:20px;font-weight:700"><span><span class="ar">تواصل</span><span class="en">Contact</span></span><span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors text-xl">arrow_back_ios</span></a>
+    <a href="portfolio.html" class="mob-link"><span><span class="ar">الأعمال</span><span class="en">Work</span></span><span class="material-symbols-outlined" style="color:#D4AF37;font-size:18px">chevron_left</span></a>
+    <a href="/#services" class="mob-link"><span><span class="ar">الخدمات</span><span class="en">Services</span></span><span class="material-symbols-outlined" style="color:#D4AF37;font-size:18px">chevron_left</span></a>
+    <a href="case-studies.html" class="mob-link"><span><span class="ar">دراسات حالة</span><span class="en">Case Studies</span></span><span class="material-symbols-outlined" style="color:#D4AF37;font-size:18px">chevron_left</span></a>
+    <a href="blog.html" class="mob-link"><span><span class="ar">المدونة</span><span class="en">Insights</span></span><span class="material-symbols-outlined" style="color:#D4AF37;font-size:18px">chevron_left</span></a>
+    <a href="about.html" class="mob-link"><span><span class="ar">عن الاستوديو</span><span class="en">Studio</span></span><span class="material-symbols-outlined" style="color:#D4AF37;font-size:18px">chevron_left</span></a>
+    <a href="contact.html" class="mob-link" style="border-bottom:none"><span><span class="ar">تواصل</span><span class="en">Contact</span></span><span class="material-symbols-outlined" style="color:#D4AF37;font-size:18px">chevron_left</span></a>
   </div>
-  <div class="px-8 py-4 flex items-center gap-3 border-t border-white/5">
-    <button id="mob-lang-btn" class="flex-1 py-3 border border-primary/30 text-primary/80 hover:border-primary hover:text-primary transition-all text-xs font-bold tracking-widest" style="font-family:'Cairo','Manrope',sans-serif"><span class="ar">EN</span><span class="en">عربي</span></button>
-    <button id="mob-theme-btn" class="w-12 h-12 border border-white/10 text-secondary hover:text-primary hover:border-primary/40 transition-all flex items-center justify-center"><span class="material-symbols-outlined text-xl icon-moon">dark_mode</span><span class="material-symbols-outlined text-xl icon-sun" style="display:none">light_mode</span></button>
+  <div class="px-8 py-4 flex items-center gap-3" style="border-top:1px solid #E5E5E5">
+    <button id="mob-lang-btn" class="flex-1 py-3" style="font-family:'Tajawal','Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;border:1px solid #D4AF37;color:#D4AF37;background:transparent"><span class="ar">EN</span><span class="en">عربي</span></button>
+    <button id="mob-theme-btn" class="w-12 h-12" style="border:1px solid #E5E5E5;color:#666666;display:flex;align-items:center;justify-content:center"><span class="material-symbols-outlined text-xl icon-moon">dark_mode</span><span class="material-symbols-outlined text-xl icon-sun" style="display:none">light_mode</span></button>
   </div>
-  <div class="px-8 py-6 flex gap-4">
-    <a href="https://www.instagram.com/3dgraphicshouse" target="_blank" rel="noopener" class="text-zinc-500 hover:text-primary transition-colors text-xs tracking-widest" style="font-family:'Manrope',sans-serif">IG</a>
-    <a href="https://www.linkedin.com/in/meklad/" target="_blank" rel="noopener" class="text-zinc-500 hover:text-primary transition-colors text-xs tracking-widest" style="font-family:'Manrope',sans-serif">LN</a>
-    <a href="https://www.youtube.com/user/3dghouse" target="_blank" rel="noopener" class="text-zinc-500 hover:text-primary transition-colors text-xs tracking-widest" style="font-family:'Manrope',sans-serif">YT</a>
-    <a href="https://www.facebook.com/3dghouse" target="_blank" rel="noopener" class="text-zinc-500 hover:text-primary transition-colors text-xs tracking-widest" style="font-family:'Manrope',sans-serif">FB</a>
+  <div class="px-8 py-6 flex gap-6" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase">
+    <a href="https://www.instagram.com/3dgraphicshouse" target="_blank" rel="noopener" style="color:#999;transition:color .2s" class="hover-gold">IG</a>
+    <a href="https://www.linkedin.com/in/meklad/" target="_blank" rel="noopener" style="color:#999;transition:color .2s" class="hover-gold">LN</a>
+    <a href="https://www.youtube.com/user/3dghouse" target="_blank" rel="noopener" style="color:#999;transition:color .2s" class="hover-gold">YT</a>
+    <a href="https://www.facebook.com/3dghouse" target="_blank" rel="noopener" style="color:#999;transition:color .2s" class="hover-gold">FB</a>
   </div>
 </div>
 
-<!-- ── TopNavBar — Floating pill, centered links ── -->
-<nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50" role="navigation" style="padding:12px 20px">
-  <div id="nav-pill" class="relative flex items-center"
-       style="background:rgba(0,0,0,.3);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:16px;border:1px solid rgba(255,255,255,.06);padding:0 24px;height:72px">
+<!-- ── TopNavBar — Floating pill ── -->
+<nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50" role="navigation" style="padding:12px 24px">
+  <div id="nav-pill" class="relative flex items-center max-w-container-max mx-auto">
 
     <!-- Logo: left -->
     <a href="/" class="shrink-0 relative z-10">
-      <img src="assets/logo-gold.png" alt="Graphics House"
-           class="logo-img" style="height:71px;width:auto;object-fit:contain" loading="lazy"/>
+      <img src="assets/logo-dark.jpg" alt="Graphics House"
+           style="height:56px;width:auto;object-fit:contain;filter:brightness(0)" loading="lazy"/>
     </a>
 
-    <!-- Links: absolutely centered in pill -->
-    <div class="hidden md:flex items-center gap-7 lg:gap-10 absolute inset-0 justify-center pointer-events-none z-20" dir="rtl">
+    <!-- Links: centered -->
+    <div class="hidden md:flex items-center gap-8 lg:gap-12 absolute inset-0 justify-center pointer-events-none z-20" dir="rtl">
       <a class="nav-link pointer-events-auto" href="portfolio.html"><span class="ar">الأعمال</span><span class="en">Work</span></a>
       <a class="nav-link pointer-events-auto" href="#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
-      <a class="nav-link pointer-events-auto" href="case-studies.html"><span class="ar">مشاريع ناجحة</span><span class="en">Case Studies</span></a>
+      <a class="nav-link pointer-events-auto" href="case-studies.html"><span class="ar">دراسات حالة</span><span class="en">Case Studies</span></a>
       <a class="nav-link pointer-events-auto" href="blog.html"><span class="ar">المدونة</span><span class="en">Insights</span></a>
-      <a class="nav-link pointer-events-auto" href="about.html"><span class="ar">من نحن</span><span class="en">Studio</span></a>
+      <a class="nav-link pointer-events-auto" href="about.html"><span class="ar">الاستوديو</span><span class="en">Studio</span></a>
       <a class="nav-link pointer-events-auto" href="contact.html"><span class="ar">تواصل</span><span class="en">Contact</span></a>
     </div>
 
     <!-- Controls + mobile: right side -->
     <div class="flex items-center gap-3 relative z-10" style="margin-inline-start:auto">
-      <div class="hidden md:flex items-center gap-3" style="border-inline-start:1px solid rgba(255,255,255,.12);padding-inline-start:1rem">
-        <button id="lang-btn" aria-label="Toggle language"><span class="ar">EN</span><span class="en">عربي</span></button>
-        <button id="theme-btn" aria-label="Toggle theme">
+      <div class="hidden md:flex items-center gap-3" style="border-inline-start:1px solid #E5E5E5;padding-inline-start:1rem">
+        <button id="lang-btn" aria-label="Toggle language" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#666;transition:color .2s" class="hover-gold"><span class="ar">EN</span><span class="en">عربي</span></button>
+        <button id="theme-btn" aria-label="Toggle theme" style="color:#666;transition:color .2s" class="hover-gold">
           <span class="material-symbols-outlined text-lg icon-moon">dark_mode</span>
-          <span class="material-symbols-outlined text-lg icon-sun">light_mode</span>
+          <span class="material-symbols-outlined text-lg icon-sun" style="display:none">light_mode</span>
         </button>
       </div>
-      <button id="mob-open" class="md:hidden text-secondary hover:text-primary transition-colors" aria-label="Open menu">
+      <button id="mob-open" class="md:hidden" style="color:#000;transition:color .2s" aria-label="Open menu">
         <span class="material-symbols-outlined text-2xl">menu</span>
       </button>
     </div>
@@ -536,319 +715,187 @@
 </nav>
 
 <!-- ── Hero ─────────────────────────────────────── -->
-<section id="hero" class="relative h-screen overflow-hidden">
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
 
-  <!-- Video Background — dark cinematic poster prevents black flash -->
-  <div id="hero-video-wrap" class="absolute inset-0 z-0" style="background:linear-gradient(135deg,#0a0800 0%,#1a1200 40%,#0d0d0d 100%)">
-    <video id="hero-vid" autoplay muted playsinline preload="auto"
-           style="background:linear-gradient(135deg,#0a0800 0%,#1a1200 40%,#0d0d0d 100%)">
+  <!-- Video Background — subtle moving texture -->
+  <div id="hero-video-wrap" class="absolute inset-0 z-0" style="background:#FFFFFF">
+    <video id="hero-vid" autoplay muted playsinline preload="auto" class="w-full h-full object-cover opacity-30"
+           style="background:#FFFFFF">
       <source src="assets/GH demo reel.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- 4 corner vignettes: 100% black → transparent, 20% coverage each corner -->
-  <div class="absolute inset-0 z-[5] pointer-events-none" style="background:
-    radial-gradient(ellipse 22% 22% at 0%   0%,   #000000 0%, transparent 100%),
-    radial-gradient(ellipse 22% 22% at 100% 0%,   #000000 0%, transparent 100%),
-    radial-gradient(ellipse 22% 22% at 0%   100%, #000000 0%, transparent 100%),
-    radial-gradient(ellipse 22% 22% at 100% 100%, #000000 0%, transparent 100%)"></div>
+  <!-- Subtle gradient overlay -->
+  <div class="absolute inset-0 z-[1] pointer-events-none" style="background:linear-gradient(180deg, rgba(255,255,255,.15) 0%, #FFFFFF 100%)"></div>
 
-  <!-- Full-width cinematic bottom fade — cubic-ease easing curve, 42% height -->
-  <div class="absolute inset-x-0 bottom-0 z-[6] pointer-events-none"
-       style="height:42%;background:linear-gradient(to top,
-         #000000        0%,
-         rgba(0,0,0,.97) 4%,
-         rgba(0,0,0,.92) 9%,
-         rgba(0,0,0,.83) 16%,
-         rgba(0,0,0,.70) 25%,
-         rgba(0,0,0,.54) 36%,
-         rgba(0,0,0,.37) 50%,
-         rgba(0,0,0,.21) 65%,
-         rgba(0,0,0,.09) 80%,
-         rgba(0,0,0,.02) 92%,
-         transparent    100%)"></div>
-
-  <!-- Slides — buttons only, above vignettes -->
-  <div class="hero-slide hs-active" id="hslide-0">
-    <div class="flex flex-wrap gap-6 justify-center">
-      <a href="services/rendering.html" class="inline-flex items-center gap-2.5 bg-primary text-on-primary px-9 py-4 font-label-caps text-[13px] tracking-widest rounded-full hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
-        <span class="material-symbols-outlined ms-filled" style="font-size:17px;line-height:1">play_arrow</span>
-        <span class="ar">اكتشف خدماتنا</span><span class="en">EXPLORE OUR SERVICES</span>
-      </a>
-      <a href="portfolio.html" class="inline-flex items-center gap-2.5 border border-white/50 text-white px-9 py-4 font-label-caps text-[13px] tracking-widest rounded-full hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
-        <span class="material-symbols-outlined" style="font-size:17px;line-height:1">collections</span>
-        <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
-      </a>
+  <!-- Content -->
+  <div class="relative z-10 w-full max-w-container-max mx-auto px-8 md:px-12">
+    <div class="max-w-3xl reveal" style="opacity:0;transform:translateY(24px)">
+      <span class="svc-tag mb-8 block"><span class="ar">جرافيكس هاوس</span><span class="en">Graphics House</span></span>
+      <h1 class="text-display-xl text-[#000000] mb-6 leading-[1.05]">
+        <span class="ar">هوية بصرية<br>تسبق الحجر</span>
+        <span class="en">Architectural Branding<br>That Precedes the Build</span>
+      </h1>
+      <div class="divider"></div>
+      <p class="text-body-lg text-[#666666] max-w-xl mb-12 leading-relaxed">
+        <span class="ar">نحوّل رؤيتك العقارية إلى حضور بصري لا يُنسى — من التصور المعماري الفوتوريالستي إلى المجسمات اليدوية والتجارب التفاعلية.</span>
+        <span class="en">We transform your real estate vision into an unforgettable visual presence — from photorealistic arch viz to handcrafted maquettes and interactive experiences.</span>
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="services/rendering.html" class="btn-arch btn-arch-gold">
+          <span class="ar">استكشف خدماتنا</span><span class="en">EXPLORE SERVICES</span>
+          <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span>
+        </a>
+        <a href="portfolio.html" class="btn-arch">
+          <span class="ar">أعمالنا</span><span class="en">VIEW WORK</span>
+        </a>
+      </div>
     </div>
   </div>
 
-  <div class="hero-slide" id="hslide-1">
-    <div class="flex flex-wrap gap-6 justify-center">
-      <a href="services/animation.html" class="inline-flex items-center gap-2.5 bg-primary text-on-primary px-9 py-4 font-label-caps text-[13px] tracking-widest rounded-full hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
-        <span class="material-symbols-outlined ms-filled" style="font-size:17px;line-height:1">play_arrow</span>
-        <span class="ar">اكتشف خدماتنا</span><span class="en">EXPLORE OUR SERVICES</span>
-      </a>
-      <a href="portfolio.html" class="inline-flex items-center gap-2.5 border border-white/50 text-white px-9 py-4 font-label-caps text-[13px] tracking-widest rounded-full hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
-        <span class="material-symbols-outlined" style="font-size:17px;line-height:1">collections</span>
-        <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
-      </a>
-    </div>
-  </div>
-
-  <div class="hero-slide" id="hslide-2">
-    <div class="flex flex-wrap gap-6 justify-center">
-      <a href="services/maquettes.html" class="inline-flex items-center gap-2.5 bg-primary text-on-primary px-9 py-4 font-label-caps text-[13px] tracking-widest rounded-full hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
-        <span class="material-symbols-outlined ms-filled" style="font-size:17px;line-height:1">play_arrow</span>
-        <span class="ar">اكتشف خدماتنا</span><span class="en">EXPLORE OUR SERVICES</span>
-      </a>
-      <a href="portfolio.html" class="inline-flex items-center gap-2.5 border border-white/50 text-white px-9 py-4 font-label-caps text-[13px] tracking-widest rounded-full hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
-        <span class="material-symbols-outlined" style="font-size:17px;line-height:1">collections</span>
-        <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
-      </a>
-    </div>
-  </div>
-
-  <div class="hero-slide" id="hslide-3">
-    <div class="flex flex-wrap gap-6 justify-center">
-      <a href="services/production.html" class="inline-flex items-center gap-2.5 bg-primary text-on-primary px-9 py-4 font-label-caps text-[13px] tracking-widest rounded-full hover:scale-105 hover:shadow-[0_0_32px_rgba(242,202,80,.7)] shadow-[0_0_20px_rgba(242,202,80,.35)] transition-all">
-        <span class="material-symbols-outlined ms-filled" style="font-size:17px;line-height:1">play_arrow</span>
-        <span class="ar">اكتشف خدماتنا</span><span class="en">EXPLORE OUR SERVICES</span>
-      </a>
-      <a href="portfolio.html" class="inline-flex items-center gap-2.5 border border-white/50 text-white px-9 py-4 font-label-caps text-[13px] tracking-widest rounded-full hover:border-primary hover:text-primary transition-all backdrop-blur-sm">
-        <span class="material-symbols-outlined" style="font-size:17px;line-height:1">collections</span>
-        <span class="ar">معرض الأعمال</span><span class="en">VIEW PORTFOLIO</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Progress bars -->
-  <div class="absolute bottom-0 left-0 right-0 z-20 flex px-0" dir="ltr">
-    <div class="hero-prog hp-active" id="hprog-0"></div>
-    <div class="hero-prog" id="hprog-1"></div>
-    <div class="hero-prog" id="hprog-2"></div>
-    <div class="hero-prog" id="hprog-3"></div>
-  </div>
-
-  <!-- Slide counter -->
-  <div class="absolute bottom-6 right-6 md:right-10 z-20 tabular-nums" dir="ltr"
-       style="font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.45)">
-    <span id="hero-cur">01</span><span style="color:#f2ca50;margin:0 3px">/</span><span>04</span>
-  </div>
-
-  <!-- Service categories strip -->
-  <div class="absolute z-20 hero-svc-strip flex" dir="rtl"
-       style="bottom:2.5rem;left:50%;transform:translateX(-50%)">
-    <div class="hero-svc-item flex flex-col items-center">
-      <span class="material-symbols-outlined" style="font-size:42px;color:rgba(255,255,255,.9)">videocam</span>
-      <span class="label"><span class="ar">الإنتاج الفني</span><span class="en">Artistic Production</span></span>
-    </div>
-    <div class="hero-svc-item flex flex-col items-center">
-      <span class="material-symbols-outlined" style="font-size:42px;color:rgba(255,255,255,.9)">architecture</span>
-      <span class="label"><span class="ar">الهوية والإظهار المعماري</span><span class="en">Identity & Architectural Visualization</span></span>
-    </div>
-    <div class="hero-svc-item flex flex-col items-center">
-      <span class="material-symbols-outlined" style="font-size:42px;color:rgba(255,255,255,.9)">touch_app</span>
-      <span class="label"><span class="ar">العروض التفاعلية والبرمجيات</span><span class="en">Interactive Experiences & Software</span></span>
+  <!-- Progress + counter at bottom -->
+  <div class="absolute bottom-0 left-0 right-0 z-20" style="border-top:1px solid #E5E5E5">
+    <div class="max-w-container-max mx-auto px-8 md:px-12 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3 flex-1" dir="ltr">
+        <div class="hero-prog hp-active flex-1" id="hprog-0"></div>
+        <div class="hero-prog flex-1" id="hprog-1"></div>
+        <div class="hero-prog flex-1" id="hprog-2"></div>
+        <div class="hero-prog flex-1" id="hprog-3"></div>
+      </div>
+      <div class="tabular-nums mr-4" style="font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.1em;color:#999;white-space:nowrap">
+        <span id="hero-cur">01</span><span style="margin:0 4px">/</span><span>04</span>
+      </div>
     </div>
   </div>
 
 </section>
 
 <!-- ── Services ──────────────────────────────────── -->
-<section id="services" class="py-[120px] px-8 md:px-12 max-w-container-max mx-auto">
+<!-- ── Services ──────────────────────────────────── -->
+<section id="services" class="py-section-gap px-8 md:px-12 max-w-container-max mx-auto">
   <div class="mb-20 text-center reveal" style="opacity:0;transform:translateY(24px)">
-    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">
-      <span class="ar">ماذا نقدم</span><span class="en">What We Do</span>
-    </span>
-    <h2 class="font-headline-xl text-on-background mb-4">
-      <span class="ar">خدماتنا الستة</span><span class="en">Six Core Services</span>
+    <span class="section-label"><span class="ar">ماذا نقدم</span><span class="en">What We Do</span></span>
+    <h2 class="text-display-lg text-[#000000] mb-4">
+      <span class="ar">ست خدمات متكاملة<br>لهوية مشاريعك</span>
+      <span class="en">Six Integrated Services<br>For Your Project Identity</span>
     </h2>
-    <p class="font-body-lg text-secondary max-w-2xl mx-auto opacity-60 mt-4">
-      <span class="ar">من الإظهار الفوتوريالستي إلى المجسمات اليدوية والعروض التفاعلية — نغطي كل أبعاد التقديم الراقي.</span>
-      <span class="en">From photorealistic rendering to handcrafted models and interactive experiences — every dimension of premium presentation.</span>
+    <div class="divider divider-center"></div>
+    <p class="text-body-lg text-[#666666] max-w-2xl mx-auto mt-6">
+      <span class="ar">من الإظهار الفوتوريالستي إلى المجسمات اليدوية والعروض التفاعلية — نغطي كل أبعاد التقديم الراقي للمطورين العقاريين.</span>
+      <span class="en">From photorealistic rendering to handcrafted maquettes and interactive experiences — every dimension of premium presentation for real estate developers.</span>
     </p>
-    <div class="w-24 h-1 bg-primary mx-auto mt-6"></div>
   </div>
 
-  <!-- 6 Service Cards (2 rows × 3 cols) -->
+  <!-- 6 Service Cards -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
     <!-- 1. Arch Viz -->
-    <a href="services/rendering.html" class="svc-card reveal group relative overflow-hidden border border-white/5 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 min-h-[320px] flex flex-col justify-end bg-surface-container-low" style="opacity:0;transform:translateY(24px);transition-delay:.05s">
-      <img class="svc-card-img" alt="Architectural visualization render" src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" loading="lazy"/>
+    <a href="services/rendering.html" class="svc-card group" style="border:1px solid #E5E5E5;background:#F5F5F5;transition:all .4s ease">
+      <img class="svc-card-img" alt="Architectural visualization" src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" loading="lazy"/>
       <div class="svc-card-overlay"></div>
       <div class="relative z-10 p-8">
         <div class="flex items-center justify-between mb-3">
-          <span class="material-symbols-outlined ms-filled text-primary text-3xl">architecture</span>
-          <span class="text-primary/30 text-xs font-bold tracking-widest">01</span>
+          <span class="material-symbols-outlined" style="color:#D4AF37;font-size:28px">architecture</span>
+          <span style="color:#D4AF37;font-family:'Inter',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em">01</span>
         </div>
-        <h3 class="font-headline-md text-white mb-2"><span class="ar">الإظهار المعماري</span><span class="en">Identity & Architectural Visualization</span></h3>
-        <p class="font-body-md text-white/50 text-sm leading-relaxed"><span class="ar">صور فوتوريالستية 4K لمشاريعك العقارية والمعمارية.</span><span class="en">4K photorealistic images for real estate & architecture.</span></p>
-        <div class="flex items-center gap-2 text-primary font-label-caps text-[11px] mt-5 tracking-widest">
-          <span class="ar">اكتشف</span><span class="en">EXPLORE</span>
-          <span class="material-symbols-outlined text-sm">arrow_back_ios</span>
+        <h3 style="font-size:20px;font-weight:600;color:#FFFFFF;margin-bottom:8px"><span class="ar">الإظهار المعماري</span><span class="en">Architectural Visualization</span></h3>
+        <p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.5"><span class="ar">صور فوتوريالستية 4K/8K لمشاريعك العقارية قبل وضع حجر الأساس.</span><span class="en">Photorealistic 4K/8K stills for your real estate projects before ground breaks.</span></p>
+        <div class="flex items-center gap-2 mt-6" style="color:#D4AF37;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em">
+          <span class="ar">استكشف</span><span class="en">EXPLORE</span>
+          <span class="material-symbols-outlined" style="font-size:12px">arrow_back</span>
         </div>
       </div>
     </a>
 
     <!-- 2. 3D Animation -->
-    <a href="services/animation.html" class="svc-card reveal group relative overflow-hidden border border-white/5 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 min-h-[320px] flex flex-col justify-end bg-surface-container-low" style="opacity:0;transform:translateY(24px);transition-delay:.12s">
-      <img class="svc-card-img" alt="3D animation cinema" src="assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" loading="lazy"/>
+    <a href="services/animation.html" class="svc-card group" style="border:1px solid #E5E5E5;background:#F5F5F5;transition:all .4s ease">
+      <img class="svc-card-img" alt="3D animation" src="assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" loading="lazy"/>
       <div class="svc-card-overlay"></div>
       <div class="relative z-10 p-8">
         <div class="flex items-center justify-between mb-3">
-          <span class="material-symbols-outlined ms-filled text-primary text-3xl">animation</span>
-          <span class="text-primary/30 text-xs font-bold tracking-widest">02</span>
+          <span class="material-symbols-outlined" style="color:#D4AF37;font-size:28px">animation</span>
+          <span style="color:#D4AF37;font-family:'Inter',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em">02</span>
         </div>
-        <h3 class="font-headline-md text-white mb-2"><span class="ar">التحريك ثلاثي الأبعاد</span><span class="en">3D Animation</span></h3>
-        <p class="font-body-md text-white/50 text-sm leading-relaxed"><span class="ar">جولات سينمائية ثلاثية الأبعاد تُحيّي مشاريعك قبل البناء.</span><span class="en">Cinematic 3D walkthroughs that bring projects to life before construction.</span></p>
-        <div class="flex items-center gap-2 text-primary font-label-caps text-[11px] mt-5 tracking-widest">
-          <span class="ar">اكتشف</span><span class="en">EXPLORE</span>
-          <span class="material-symbols-outlined text-sm">arrow_back_ios</span>
+        <h3 style="font-size:20px;font-weight:600;color:#FFFFFF;margin-bottom:8px"><span class="ar">التحريك ثلاثي الأبعاد</span><span class="en">3D Animation</span></h3>
+        <p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.5"><span class="ar">جولات سينمائية ثلاثية الأبعاد تُحيّي مشاريعك قبل البناء.</span><span class="en">Cinematic 3D walkthroughs that bring projects to life before construction.</span></p>
+        <div class="flex items-center gap-2 mt-6" style="color:#D4AF37;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em">
+          <span class="ar">استكشف</span><span class="en">EXPLORE</span>
+          <span class="material-symbols-outlined" style="font-size:12px">arrow_back</span>
         </div>
       </div>
     </a>
 
     <!-- 3. Maquettes -->
-    <a href="services/maquettes.html" class="svc-card reveal group relative overflow-hidden border border-white/5 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 min-h-[320px] flex flex-col justify-end bg-surface-container-low" style="opacity:0;transform:translateY(24px);transition-delay:.19s">
-      <img class="svc-card-img" alt="Architectural scale model" src="assets/projects/rendering/kuday-makkah-e1745137682714.jpeg" loading="lazy"/>
+    <a href="services/maquettes.html" class="svc-card group" style="border:1px solid #E5E5E5;background:#F5F5F5;transition:all .4s ease">
+      <img class="svc-card-img" alt="Architectural maquette" src="assets/projects/rendering/kuday-makkah-e1745137682714.jpeg" loading="lazy"/>
       <div class="svc-card-overlay"></div>
       <div class="relative z-10 p-8">
         <div class="flex items-center justify-between mb-3">
-          <span class="material-symbols-outlined ms-filled text-primary text-3xl">view_in_ar</span>
-          <span class="text-primary/30 text-xs font-bold tracking-widest">03</span>
+          <span class="material-symbols-outlined" style="color:#D4AF37;font-size:28px">view_in_ar</span>
+          <span style="color:#D4AF37;font-family:'Inter',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em">03</span>
         </div>
-        <h3 class="font-headline-md text-white mb-2"><span class="ar">المجسمات المعمارية</span><span class="en">Architectural Maquettes</span></h3>
-        <p class="font-body-md text-white/50 text-sm leading-relaxed"><span class="ar">مجسمات يدوية دقيقة بمقاييس احترافية لمشاريع التطوير الراقية.</span><span class="en">Precision handcrafted scale models for premium development projects.</span></p>
-        <div class="flex items-center gap-2 text-primary font-label-caps text-[11px] mt-5 tracking-widest">
-          <span class="ar">اكتشف</span><span class="en">EXPLORE</span>
-          <span class="material-symbols-outlined text-sm">arrow_back_ios</span>
+        <h3 style="font-size:20px;font-weight:600;color:#FFFFFF;margin-bottom:8px"><span class="ar">المجسمات المعمارية</span><span class="en">Architectural Maquettes</span></h3>
+        <p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.5"><span class="ar">مجسمات يدوية دقيقة بمقاييس احترافية لمشاريع التطوير الراقية.</span><span class="en">Precision handcrafted scale models for premium development projects.</span></p>
+        <div class="flex items-center gap-2 mt-6" style="color:#D4AF37;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em">
+          <span class="ar">استكشف</span><span class="en">EXPLORE</span>
+          <span class="material-symbols-outlined" style="font-size:12px">arrow_back</span>
         </div>
       </div>
     </a>
 
     <!-- 4. Interactive Presentations -->
-    <a href="services/interactive.html" class="svc-card reveal group relative overflow-hidden border border-white/5 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 min-h-[320px] flex flex-col justify-end bg-surface-container-low" style="opacity:0;transform:translateY(24px);transition-delay:.26s">
-      <img class="svc-card-img" alt="Interactive presentation touch screen" src="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg" loading="lazy"/>
+    <a href="services/interactive.html" class="svc-card group" style="border:1px solid #E5E5E5;background:#F5F5F5;transition:all .4s ease">
+      <img class="svc-card-img" alt="Interactive presentation" src="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg" loading="lazy"/>
       <div class="svc-card-overlay"></div>
       <div class="relative z-10 p-8">
         <div class="flex items-center justify-between mb-3">
-          <span class="material-symbols-outlined ms-filled text-primary text-3xl">touch_app</span>
-          <span class="text-primary/30 text-xs font-bold tracking-widest">04</span>
+          <span class="material-symbols-outlined" style="color:#D4AF37;font-size:28px">touch_app</span>
+          <span style="color:#D4AF37;font-family:'Inter',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em">04</span>
         </div>
-        <h3 class="font-headline-md text-white mb-2"><span class="ar">العروض التفاعلية</span><span class="en">Interactive Presentations</span></h3>
-        <p class="font-body-md text-white/50 text-sm leading-relaxed"><span class="ar">بيئات لمسية تفاعلية تتيح استعراض المشروع بحرية تامة.</span><span class="en">Touch-screen environments for real-time project exploration.</span></p>
-        <div class="flex items-center gap-2 text-primary font-label-caps text-[11px] mt-5 tracking-widest">
-          <span class="ar">اكتشف</span><span class="en">EXPLORE</span>
-          <span class="material-symbols-outlined text-sm">arrow_back_ios</span>
+        <h3 style="font-size:20px;font-weight:600;color:#FFFFFF;margin-bottom:8px"><span class="ar">العروض التفاعلية</span><span class="en">Interactive Presentations</span></h3>
+        <p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.5"><span class="ar">تجارب عرض تفاعلية غامرة لعرض مشاريعك بأسلوب عصري.</span><span class="en">Immersive interactive presentation experiences for modern project showcasing.</span></p>
+        <div class="flex items-center gap-2 mt-6" style="color:#D4AF37;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em">
+          <span class="ar">استكشف</span><span class="en">EXPLORE</span>
+          <span class="material-symbols-outlined" style="font-size:12px">arrow_back</span>
         </div>
       </div>
     </a>
 
     <!-- 5. VR & 360 -->
-    <a href="services/vr-360.html" class="svc-card reveal group relative overflow-hidden border border-white/5 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 min-h-[320px] flex flex-col justify-end bg-surface-container-low" style="opacity:0;transform:translateY(24px);transition-delay:.33s">
-      <img class="svc-card-img" alt="VR architectural tour" src="assets/projects/rendering/alrajhi2.jpeg" loading="lazy"/>
+    <a href="services/vr-360.html" class="svc-card group" style="border:1px solid #E5E5E5;background:#F5F5F5;transition:all .4s ease">
+      <img class="svc-card-img" alt="VR tour" src="assets/projects/rendering/alrajhi2.jpeg" loading="lazy"/>
       <div class="svc-card-overlay"></div>
       <div class="relative z-10 p-8">
         <div class="flex items-center justify-between mb-3">
-          <span class="material-symbols-outlined ms-filled text-primary text-3xl">vrpano</span>
-          <span class="text-primary/30 text-xs font-bold tracking-widest">05</span>
+          <span class="material-symbols-outlined" style="color:#D4AF37;font-size:28px">view_in_ar</span>
+          <span style="color:#D4AF37;font-family:'Inter',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em">05</span>
         </div>
-        <h3 class="font-headline-md text-white mb-2"><span class="ar">جولات VR وبانورامية</span><span class="en">VR &amp; 360° Tours</span></h3>
-        <p class="font-body-md text-white/50 text-sm leading-relaxed"><span class="ar">تجارب غامرة بتقنية الواقع الافتراضي ومشاهدات بانورامية 360°.</span><span class="en">Fully immersive VR experiences and 360° panoramic walkthroughs.</span></p>
-        <div class="flex items-center gap-2 text-primary font-label-caps text-[11px] mt-5 tracking-widest">
-          <span class="ar">اكتشف</span><span class="en">EXPLORE</span>
-          <span class="material-symbols-outlined text-sm">arrow_back_ios</span>
+        <h3 style="font-size:20px;font-weight:600;color:#FFFFFF;margin-bottom:8px"><span class="ar">الواقع الافتراضي و 360</span><span class="en">VR & 360 Experiences</span></h3>
+        <p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.5"><span class="ar">جولات افتراضية غامرة 360° تنقل عميلك داخل المشروع.</span><span class="en">Immersive 360° virtual tours that place your client inside the project.</span></p>
+        <div class="flex items-center gap-2 mt-6" style="color:#D4AF37;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em">
+          <span class="ar">استكشف</span><span class="en">EXPLORE</span>
+          <span class="material-symbols-outlined" style="font-size:12px">arrow_back</span>
         </div>
       </div>
     </a>
 
     <!-- 6. Film Production -->
-    <a href="services/production.html" class="svc-card reveal group relative overflow-hidden border border-white/5 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 min-h-[320px] flex flex-col justify-end bg-surface-container-low" style="opacity:0;transform:translateY(24px);transition-delay:.4s">
-      <img class="svc-card-img" alt="Cinematic film production" src="assets/projects/rendering/alrajhi3.jpeg" loading="lazy"/>
+    <a href="services/production.html" class="svc-card group" style="border:1px solid #E5E5E5;background:#F5F5F5;transition:all .4s ease">
+      <img class="svc-card-img" alt="Film production" src="assets/projects/rendering/kuday-makkah-e1745137682714.jpeg" loading="lazy"/>
       <div class="svc-card-overlay"></div>
       <div class="relative z-10 p-8">
         <div class="flex items-center justify-between mb-3">
-          <span class="material-symbols-outlined ms-filled text-primary text-3xl">movie_creation</span>
-          <span class="text-primary/30 text-xs font-bold tracking-widest">06</span>
+          <span class="material-symbols-outlined" style="color:#D4AF37;font-size:28px">videocam</span>
+          <span style="color:#D4AF37;font-family:'Inter',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em">06</span>
         </div>
-        <h3 class="font-headline-md text-white mb-2"><span class="ar">الإنتاج السينمائي</span><span class="en">Cinematic Production</span></h3>
-        <p class="font-body-md text-white/50 text-sm leading-relaxed"><span class="ar">إعلانات وأفلام عقارية احترافية بأعلى معايير جودة الإنتاج.</span><span class="en">Professional real estate films and commercials at the highest production standards.</span></p>
-        <div class="flex items-center gap-2 text-primary font-label-caps text-[11px] mt-5 tracking-widest">
-          <span class="ar">اكتشف</span><span class="en">EXPLORE</span>
-          <span class="material-symbols-outlined text-sm">arrow_back_ios</span>
+        <h3 style="font-size:20px;font-weight:600;color:#FFFFFF;margin-bottom:8px"><span class="ar">الإنتاج السينمائي</span><span class="en">Cinematic Production</span></h3>
+        <p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.5"><span class="ar">إنتاج سينمائي وتجاري راقٍ للعلامات العقارية والفندقية.</span><span class="en">High-end commercial and cinematic production for real estate and hospitality brands.</span></p>
+        <div class="flex items-center gap-2 mt-6" style="color:#D4AF37;font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em">
+          <span class="ar">استكشف</span><span class="en">EXPLORE</span>
+          <span class="material-symbols-outlined" style="font-size:12px">arrow_back</span>
         </div>
       </div>
     </a>
-
-  </div>
-  <!-- legacy cards removed, replaced by 6-card grid above -->
-  <div class="hidden">
-
-    <div class="reveal group relative overflow-hidden bg-surface-container-low border border-white/5 transition-all duration-500 hover:border-primary/50 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:.1s">
-      <div class="aspect-[16/9] overflow-hidden">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          alt="High-end luxury commercial set"
-          src="assets/projects/maquettes/mq1.webp" loading="lazy"/>
-      </div>
-      <div class="p-8">
-        <h3 class="font-headline-md text-on-background mb-4">
-          <span class="ar">الإعلانات التجارية</span><span class="en">Commercials &amp; Ads</span>
-        </h3>
-        <p class="font-body-md text-secondary opacity-70 mb-6">
-          <span class="ar">رواية مرئية عالية التأثير صُممت لرفع مستوى العلامات التجارية الفاخرة في الأسواق العالمية.</span>
-          <span class="en">High-impact visual storytelling designed to elevate premium brands across global markets.</span>
-        </p>
-        <a class="text-primary font-label-caps text-label-caps inline-flex items-center gap-2 group-hover:-translate-x-2 transition-transform" href="contact.html">
-          <span class="ar">اكتشف</span><span class="en">EXPLORE</span>
-          <span class="material-symbols-outlined text-sm scale-x-[-1] inline-block">arrow_forward_ios</span>
-        </a>
-      </div>
-      <div class="absolute top-0 right-0 p-4 font-headline-lg opacity-10 text-primary pointer-events-none select-none">01</div>
-    </div>
-
-    <div class="reveal group relative overflow-hidden bg-surface-container-low border border-white/5 transition-all duration-500 hover:border-primary/50 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:.22s">
-      <div class="aspect-[16/9] overflow-hidden">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          alt="Cinema camera in professional studio setting"
-          src="assets/projects/maquettes/mq1-1.webp" loading="lazy"/>
-      </div>
-      <div class="p-8">
-        <h3 class="font-headline-md text-on-background mb-4">
-          <span class="ar">الإنتاج المرئي</span><span class="en">Video Production</span>
-        </h3>
-        <p class="font-body-md text-secondary opacity-70 mb-6">
-          <span class="ar">خدمات إنتاج سينمائية متكاملة من تطوير الفكرة حتى التصوير الاحترافي.</span>
-          <span class="en">Full-scale cinematic production services from concept development to principal photography.</span>
-        </p>
-        <a class="text-primary font-label-caps text-label-caps inline-flex items-center gap-2 group-hover:-translate-x-2 transition-transform" href="contact.html">
-          <span class="ar">اكتشف</span><span class="en">EXPLORE</span>
-          <span class="material-symbols-outlined text-sm scale-x-[-1] inline-block">arrow_forward_ios</span>
-        </a>
-      </div>
-      <div class="absolute top-0 right-0 p-4 font-headline-lg opacity-10 text-primary pointer-events-none select-none">02</div>
-    </div>
-
-    <div class="reveal group relative overflow-hidden bg-surface-container-low border border-white/5 transition-all duration-500 hover:border-primary/50 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:.34s">
-      <div class="aspect-[16/9] bg-surface-container-highest flex items-center justify-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-40 bg-gradient-to-br from-primary/20 to-transparent"></div>
-        <span class="material-symbols-outlined ms-filled text-primary text-6xl relative z-10 group-hover:scale-110 transition-transform duration-500">movie_edit</span>
-      </div>
-      <div class="p-8">
-        <h3 class="font-headline-md text-on-background mb-4">
-          <span class="ar">ما بعد الإنتاج</span><span class="en">Post-Production</span>
-        </h3>
-        <p class="font-body-md text-secondary opacity-70 mb-6">
-          <span class="ar">تصحيح ألوان احترافي ومؤثرات بصرية وتصميم صوتي يُحوّل المشاهد الخام إلى تحفة فنية.</span>
-          <span class="en">Expert color grading, visual effects, and sound design that brings raw footage to life.</span>
-        </p>
-        <a class="text-primary font-label-caps text-label-caps inline-flex items-center gap-2 group-hover:-translate-x-2 transition-transform" href="contact.html">
-          <span class="ar">اكتشف</span><span class="en">EXPLORE</span>
-          <span class="material-symbols-outlined text-sm scale-x-[-1] inline-block">arrow_forward_ios</span>
-        </a>
-      </div>
-      <div class="absolute top-0 right-0 p-4 font-headline-lg opacity-10 text-primary pointer-events-none select-none">03</div>
-    </div>
 
   </div>
 </section>
