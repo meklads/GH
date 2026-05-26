@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>اتصل بنا — Graphics House</title>
+<meta name="description" content="تواصل مع Graphics House — جدة، السعودية. هاتف: +966 50 278 6513. استشارات مجانية للإظهار المعماري والإنتاج السينمائي."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{gold:"#C9A84C"},borderRadius:{DEFAULT:"0px"}}}}
+</script>
+<style>
+*,*::before,*::after{border-radius:0!important}
+html{scroll-behavior:smooth;background:#FAFAF8;color:#1A1A1A}
+body{font-family:'Tajawal','Inter',sans-serif;background:#FAFAF8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:#C9A84C;color:#FAFAF8}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:#FAFAF8}
+::-webkit-scrollbar-thumb{background:#CCC}
+::-webkit-scrollbar-thumb:hover{background:#C9A84C}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1320px;margin:0 auto;padding:0 48px}
+@media(max-width:768px){.container{padding:0 20px}}
+
+.nav-link{font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#666;text-decoration:none;transition:color .3s;position:relative;padding-bottom:2px}
+html[dir="rtl"] .nav-link{font-size:17px;font-weight:700;letter-spacing:.03em;text-transform:none}
+.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#1A1A1A;transition:width .3s}
+.nav-link:hover{color:#1A1A1A!important}
+.nav-link:hover::after{width:100%}
+.nav-link::after{background:#C9A84C!important}
+
+/* Dropdown menu */
+.nav-item-drop{position:relative}
+.nav-item-drop .nav-link{cursor:pointer}
+.nav-dropdown{position:absolute;top:100%;right:-20px;background:#FFF;border:1px solid rgba(26,26,26,.06);box-shadow:0 20px 50px rgba(0,0,0,.08);min-width:220px;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .3s ease;z-index:100}
+.nav-item-drop:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown a{display:flex;align-items:center;gap:10px;padding:10px 20px;font-size:14px;font-weight:500;color:#555;text-decoration:none;transition:all .2s}
+.nav-dropdown a:hover{background:#FAFAF8;color:#1A1A1A}
+.nav-dropdown a .dd-icon{font-size:16px;color:#C9A84C}
+
+
+#loader{position:fixed;inset:0;z-index:99999;background:#0e0e0e;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s ease,visibility .6s ease}
+#loader.out{opacity:0;visibility:hidden}
+#loader-bar-track{width:180px;height:1px;background:rgba(201,168,76,.15);margin-top:20px;overflow:hidden}
+#loader-bar{height:100%;width:0;background:#C9A84C;transition:width 1s cubic-bezier(.4,0,.2,1)}
+.logo-img{mix-blend-mode:normal;display:inline-block}
+
+/* Hero */
+.page-hero{padding:160px 0 80px;text-align:center;position:relative}
+.page-hero::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80%;height:1px;background:rgba(26,26,26,.06)}
+.page-hero .gold-bar{width:48px;height:2px;background:#C9A84C;margin:0 auto 20px}
+.page-hero h1{font-size:clamp(34px,5vw,60px);font-weight:900;color:#1A1A1A;letter-spacing:-.03em;line-height:1.08}
+.page-hero h1 span{color:#C9A84C}
+.page-hero p{font-size:16px;color:#777;max-width:600px;margin:16px auto 0;line-height:1.8}
+
+/* Sections */
+section{padding:90px 0}
+.section-label{font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:12px}
+html[dir="rtl"] .section-label{letter-spacing:.08em;font-size:11px}
+.section-title{font-size:clamp(26px,4vw,48px);font-weight:800;line-height:1.2;color:#1A1A1A}
+.section-title span{color:#C9A84C}
+.section-text{font-size:15px;font-weight:300;color:#777;line-height:1.8;max-width:560px}
+
+/* About grid */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:40px}}
+
+/* Service cards */
+.svc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:rgba(26,26,26,.06);border:1px solid rgba(26,26,26,.06)}
+.svc-item{background:#FFF;padding:36px 28px;text-align:center;transition:all .3s}
+.svc-item:hover{background:#FAFAF8}
+.svc-item h3{font-size:13px;font-weight:700;color:#1A1A1A;margin-bottom:0}
+@media(max-width:768px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.svc-grid{grid-template-columns:1fr}}
+
+/* Clients grid */
+.cli-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(26,26,26,.06);border:1px solid rgba(26,26,26,.06)}
+.cli-item{background:#FFF;padding:28px 20px;text-align:center;transition:all .3s}
+.cli-item:hover{background:#FAFAF8}
+.cli-item h3{font-size:13px;font-weight:600;color:#999;margin-bottom:0}
+@media(max-width:768px){.cli-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Content card */
+.content-card{background:#FFF;border:1px solid rgba(26,26,26,.06);padding:48px 44px}
+.content-card h2{font-size:22px;font-weight:800;color:#1A1A1A;margin-bottom:16px}
+.content-card p{font-size:14px;color:#777;line-height:1.9;margin-bottom:14px}
+.content-card p:last-child{margin-bottom:0}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(26,26,26,.06);border:1px solid rgba(26,26,26,.06)}
+.stats-item{background:#FAFAF8;padding:40px 20px;text-align:center}
+.stats-item .num{font-size:clamp(32px,4vw,48px);font-weight:900;color:#C9A84C;line-height:1}
+.stats-item .label{font-size:13px;color:#999;margin-top:8px;font-weight:500}
+@media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Buttons */
+.btn-p{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:all .4s;text-decoration:none;background:#1A1A1A;color:#FAFAF8;border:1.5px solid #1A1A1A}
+.btn-p:hover{background:#C9A84C;border-color:#C9A84C;color:#FAFAF8}
+.btn-o{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:all .4s;text-decoration:none;background:transparent;color:#1A1A1A;border:1.5px solid rgba(26,26,26,.2)}
+.btn-o:hover{border-color:#C9A84C;color:#C9A84C}
+
+/* CTA */
+.cta{text-align:center;padding:100px 0;background:#FFF;border-top:1px solid rgba(26,26,26,.06)}
+.cta h2{font-size:clamp(24px,3vw,36px);font-weight:800;color:#1A1A1A;max-width:550px;margin:0 auto 12px;line-height:1.2}
+.cta p{font-size:14px;color:#777;max-width:420px;margin:0 auto 28px;line-height:1.7}
+.cta .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* Footer */
+.footer{background:#1A1A1A;color:rgba(255,255,255,.6);padding:60px 0 30px;margin-top:0}
+.footer-container{max-width:1280px;margin:0 auto;padding:0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px}}
+.footer h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.9);margin-bottom:16px}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.5);transition:color .3s;text-decoration:none}
+.footer-links a:hover{color:#C9A84C}
+.footer-desc{font-size:13px;line-height:1.8;color:rgba(255,255,255,.4);max-width:300px;margin-top:12px}
+.footer-social{display:flex;gap:12px;margin-top:20px}
+.footer-social a{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);transition:all .3s;text-decoration:none}
+.footer-social a:hover{border-color:#C9A84C;color:#C9A84C}
+.footer-contact{display:flex;flex-direction:column;gap:12px}
+.footer-contact-item{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s}
+.footer-contact-item:hover{color:#C9A84C}
+.footer-contact-item .material-symbols-outlined{font-size:16px;color:#C9A84C}
+.footer-registration
+.footer-registration{text-align:center;padding:16px 0;margin-top:10px;border-top:1px solid rgba(255,255,255,.04);font-size:11px;color:rgba(255,255,255,.3);display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}
+.footer-registration .reg-sep{color:rgba(255,255,255,.1)}
+@media(max-width:480px){.footer-registration{flex-direction:column;gap:4px}}
+
+.footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.3)}
+@media(max-width:768px){.footer-registration
+.footer-registration{text-align:center;padding:16px 0;margin-top:10px;border-top:1px solid rgba(255,255,255,.04);font-size:11px;color:rgba(255,255,255,.3);display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}
+.footer-registration .reg-sep{color:rgba(255,255,255,.1)}
+@media(max-width:480px){.footer-registration{flex-direction:column;gap:4px}}
+
+.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.1,.1,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.r1{transition-delay:.1s}.r2{transition-delay:.2s}.r3{transition-delay:.3s}
+
+/* Contact grid */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+
+/* Contact info list */
+.contact-info-list{display:flex;flex-direction:column;gap:24px}
+.contact-info-item{display:flex;align-items:flex-start;gap:16px;padding:20px;background:#FFF;border:1px solid rgba(26,26,26,.06)}
+.contact-info-item h4{font-size:13px;font-weight:700;color:#1A1A1A;margin:0 0 4px}
+.contact-info-item p{font-size:14px;color:#777;margin:0;line-height:1.5}
+.contact-icon{font-size:24px;color:#C9A84C;margin-top:2px}
+
+/* Branch items */
+.branch-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid rgba(26,26,26,.06)}
+.branch-item:last-child{border-bottom:none}
+.branch-item h4{font-size:14px;font-weight:700;color:#1A1A1A;margin:0 0 4px}
+.branch-item p{font-size:13px;color:#777;margin:0;line-height:1.5}
+.branch-phone{font-size:13px;color:#C9A84C;font-weight:600}
+.branch-icon{font-size:18px;color:#C9A84C;margin-top:2px}
+
+/* Form */
+.form-wrap{max-width:720px;margin:0 auto}
+.contact-form{background:#FFF;border:1px solid rgba(26,26,26,.06);padding:48px 44px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:12px;font-weight:600;color:#1A1A1A;margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em}
+html[dir="rtl"] .form-group label{letter-spacing:0;text-transform:none;font-size:13px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;background:#FAFAF8;border:1px solid rgba(26,26,26,.08);color:#1A1A1A;font-family:'Tajawal',sans-serif;font-size:14px;transition:border-color .3s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#C9A84C}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-group select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23777' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 16px center;padding-left:40px}
+
+/* Quick contact cards */
+.quick-contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(26,26,26,.06);border:1px solid rgba(26,26,26,.06)}
+.quick-contact-card{background:#FFF;padding:48px 32px;text-align:center;transition:all .3s}
+.quick-contact-card:hover{background:#FAFAF8}
+.quick-contact-card .qc-icon{font-size:36px;color:#C9A84C;display:block;margin-bottom:16px}
+.quick-contact-card h3{font-size:16px;font-weight:700;color:#1A1A1A;margin:0 0 8px}
+.quick-contact-card p{font-size:13px;color:#777;line-height:1.6;margin:0 0 20px}
+@media(max-width:768px){.quick-contact-grid{grid-template-columns:1fr}}
+
+
+/* Header scroll behavior - like homepage */
+#main-nav {
+  background: rgba(250,250,248,0.65) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transition: all 0.4s ease !important;
+}
+#main-nav.header-scrolled {
+  background: rgba(250,250,248,.95) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(26,26,26,.06) !important;
+  box-shadow: 0 1px 0 rgba(26,26,26,.08) !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+</style>
+</head>
+<body>
+
+<div id="loader" aria-hidden="true">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:20px"><img src="../assets/logo-gold.png" alt="Graphics House" style="height:112px;width:auto" class="logo-img"></div>
+  <div id="loader-bar-track"><div id="loader-bar"></div></div>
+</div>
+
+<div id="mob-nav" role="dialog" aria-modal="true" style="position:fixed;inset:0;z-index:999;background:rgba(10,10,10,.98);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);transform:translateX(100%);transition:transform .5s cubic-bezier(0.16,1,0.3,1);overflow-y:auto">
+  <div class="flex items-center justify-between px-6 py-5" style="border-bottom:1px solid rgba(255,255,255,.06)">
+    <img src="../assets/logo-gold.png" alt="Graphics House" style="height:24px;width:auto">
+    <button id="mob-close"><span class="material-symbols-outlined text-2xl" style="color:rgba(255,255,255,.5)">close</span></button>
+  </div>
+  <div class="flex flex-col px-6 pt-8 pb-8 gap-1">
+    <a href="../home-v2.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>الرئيسية</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
+    <a href="who-we-are.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>من نحن</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
+    <div class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer" onclick="toggleMobSub(this)">
+      <span>خدماتنا</span>
+      <span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">expand_more</span>
+    </div>
+    <div class="mob-sub" style="display:none;padding-right:16px">
+      <a href="3d-animation.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>سينمائي CGI</span></a>
+      <a href="smart-maquettes.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>مجسمات ذكية</span></a>
+      <a href="interactive-experiences.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>تجارب تفاعلية</span></a>
+      <a href="galleries-advertising.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>جاليريات وديكور إعلاني</span></a>
+      <a href="media-production.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>ميديا برودكشن</span></a>
+    </div>
+    <a href="../home-v2.html#projects" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>مشاريعنا</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
+	    <a href="contact-us.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>اتصل بنا</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
+  </div>
+</div>
+<!-- HEADER -->
+<header class="flex items-center justify-between px-6 lg:px-12 py-5 fixed top-0 left-0 right-0" id="main-nav" style="max-width:100%;z-index:1000">
+  <button id="mob-open" class="lg:hidden w-10 h-10 flex items-center justify-center bg-transparent border-0 cursor-pointer"><span class="material-symbols-outlined text-xl" style="color:#1A1A1A">menu</span></button>
+  <a href="../home-v2.html"><img src="../assets/logo-gold.png" alt="Graphics House" style="height:28px;width:auto"></a>
+  <nav class="hidden lg:flex items-center gap-8">
+    <a href="../home-v2.html" class="nav-link">الرئيسية</a>
+	    <a href="who-we-are.html" class="nav-link">من نحن</a>
+	    <a href="contact-us.html" class="nav-link" style="color:#1A1A1A">اتصل بنا</a>
+	    <div class="nav-item-drop">
+	      <a class="nav-link" style="cursor:pointer">خدماتنا <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
+	      <div class="nav-dropdown">
+	        <a href="3d-animation.html"><span class="material-symbols-outlined dd-icon">movie</span>سينمائي CGI</a>
+	        <a href="smart-maquettes.html"><span class="material-symbols-outlined dd-icon">view_in_ar</span>مجسمات ذكية</a>
+	        <a href="interactive-experiences.html"><span class="material-symbols-outlined dd-icon">touch_app</span>تجارب تفاعلية</a>
+	        <a href="galleries-advertising.html"><span class="material-symbols-outlined dd-icon">gallery_thumbnail</span>جاليريات وديكور إعلاني</a>
+	        <a href="media-production.html"><span class="material-symbols-outlined dd-icon">videocam</span>ميديا برودكشن</a>
+	      </div>
+	    </div>
+	    <a href="../home-v2.html#projects" class="nav-link">مشاريعنا</a>
+	    <a href="contact-us.html" class="nav-link">اتصل بنا</a>
+	    <div class="flex items-center gap-2" style="margin-right:16px">
+	      <span style="width:1px;height:16px;background:rgba(26,26,26,.1);display:inline-block"></span>
+	      <a href="../home-v2.html" class="nav-lang" style="font-size:12px;font-weight:700;letter-spacing:.1em;color:#999;text-decoration:none;padding:2px 6px;border:1px solid rgba(26,26,26,.1)">AR</a>
+	      <a href="../en.html" class="nav-lang" style="font-size:12px;font-weight:700;letter-spacing:.1em;color:#C9A84C;text-decoration:none;padding:2px 6px;border:1px solid rgba(201,168,76,.3)">EN</a>
+	    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="gold-bar reveal"></div>
+    <h1 class="reveal r1">اتصل <span>بنا</span></h1>
+    <p class="reveal r2">نحن هنا لمساعدتك. تواصل مع فريقنا للحصول على استشارة مجانية لمشروعك القادم.</p>
+  </div>
+</section>
+
+<!-- CONTACT INFO -->
+<section>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="section-label">تواصل معنا</span>
+        <h2 class="section-title">معلومات <span>الاتصال</span></h2>
+        <p class="section-text" style="margin-bottom:30px">نحن على بعد اتصال واحد. فريقنا جاهز للرد على استفساراتك وتقديم استشارة احترافية لمشروعك.</p>
+        
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <span class="material-symbols-outlined contact-icon">location_on</span>
+            <div>
+              <h4>المملكة العربية السعودية</h4>
+              <p>جدة — ص.ب 136972 | س.ت 4030502306</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="material-symbols-outlined contact-icon">call</span>
+            <div>
+              <h4>الهاتف</h4>
+              <p>+966 50 278 6513</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="material-symbols-outlined contact-icon">mail</span>
+            <div>
+              <h4>البريد الإلكتروني</h4>
+              <p>info@3dgraphicshouse.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal r1">
+        <div class="content-card gold-border-right">
+          <h2 style="margin-bottom:24px">فروعنا حول العالم</h2>
+          
+          <div class="branch-item">
+            <span class="material-symbols-outlined branch-icon">flag</span>
+            <div>
+              <h4>🇸🇦 السعودية — جدة</h4>
+              <p>ص.ب 136972، جدة، س.ت 4030502306</p>
+              <p class="branch-phone">+966 50 278 6513</p>
+            </div>
+          </div>
+          
+          <div class="branch-item">
+            <span class="material-symbols-outlined branch-icon">flag</span>
+            <div>
+              <h4>🇧🇭 البحرين — المنامة</h4>
+              <p>مجمع 316، المنامة، س.ت 15571301</p>
+              <p class="branch-phone">+973 3215 0369</p>
+            </div>
+          </div>
+          
+          <div class="branch-item">
+            <span class="material-symbols-outlined branch-icon">flag</span>
+            <div>
+              <h4>🇴🇲 عُمان — مسقط</h4>
+              <p>الخوض، السيب، مسقط، س.ت 1460078</p>
+              <p class="branch-phone">+968 9132 6735</p>
+            </div>
+          </div>
+          
+          <div class="branch-item">
+            <span class="material-symbols-outlined branch-icon">flag</span>
+            <div>
+              <h4>🇪🇬 مصر — الإسكندرية</h4>
+              <p>محمد عثمان، فيكتوريا، برج المدينة</p>
+              <p class="branch-phone">+20 103 295 5089</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section style="background:#F5F4F0">
+  <div class="container">
+    <div class="form-wrap reveal">
+      <div style="text-align:center;margin-bottom:40px">
+        <span class="section-label">أرسل لنا رسالة</span>
+        <h2 class="section-title">نحن نسمعك — <span>تواصل معنا</span></h2>
+      </div>
+      <form id="contactForm" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">الاسم الأول</label>
+            <input type="text" id="firstName" placeholder="الاسم الأول" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">اسم العائلة</label>
+            <input type="text" id="lastName" placeholder="اسم العائلة" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="formEmail">البريد الإلكتروني</label>
+            <input type="email" id="formEmail" placeholder="بريدك الإلكتروني" required>
+          </div>
+          <div class="form-group">
+            <label for="formPhone">رقم الهاتف</label>
+            <input type="tel" id="formPhone" placeholder="رقم هاتفك">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="formSubject">الموضوع</label>
+          <input type="text" id="formSubject" placeholder="عنوان الرسالة">
+        </div>
+        <div class="form-group">
+          <label for="formProjectType">نوع المشروع</label>
+          <select id="formProjectType">
+            <option value="">اختر نوع المشروع</option>
+            <option>أنيميشن ثلاثي الأبعاد</option>
+            <option>تصميم جرافيك</option>
+            <option>موشن جرافيك</option>
+            <option>هوية تجارية</option>
+            <option>تصوير ومونتاج</option>
+            <option>عرض تفاعلي (i-Maquette)</option>
+            <option>مجسمات ذكية</option>
+            <option>صور ثلاثية الأبعاد (داخلي / خارجي)</option>
+            <option>ديكور إعلاني وصالات عرض</option>
+            <option>أخرى</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="formMessage">الرسالة</label>
+          <textarea id="formMessage" rows="5" placeholder="تفاصيل مشروعك..." required></textarea>
+        </div>
+        <button type="submit" class="btn-p" style="width:100%;justify-content:center;font-size:12px">
+          إرسال الرسالة <span class="material-symbols-outlined" style="font-size:14px">send</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA CONTACT -->
+<section>
+  <div class="container">
+    <div class="quick-contact-grid reveal">
+      <div class="quick-contact-card">
+        <span class="material-symbols-outlined qc-icon">call</span>
+        <h3>اتصل بنا مباشرة</h3>
+        <p>فريقنا متاح للرد على اتصالك من السبت إلى الخميس</p>
+        <a href="tel:+966502786513" class="btn-o">+966 50 278 6513</a>
+      </div>
+      <div class="quick-contact-card">
+        <span class="material-symbols-outlined qc-icon">mail</span>
+        <h3>راسلنا عبر البريد</h3>
+        <p>نرد على جميع الاستفسارات خلال ٢٤ ساعة عمل</p>
+        <a href="mailto:info@3dgraphicshouse.com" class="btn-o">info@3dgraphicshouse.com</a>
+      </div>
+      <div class="quick-contact-card">
+        <span class="material-symbols-outlined qc-icon">calendar_month</span>
+        <h3>احجز استشارة</h3>
+        <p>استشارة مجانية لمشروعك مع أحد خبرائنا</p>
+        <a href="#" class="btn-o">احجز الآن</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:18px;font-weight:700;color:#FAFAF8"><span class="material-symbols-outlined" style="color:#C9A84C">diamond</span>جرافيكس هاوس</div>
+        <p class="footer-desc">شركة رائدة في مجال الإظهار المعماري والمجسمات الذكية والإنتاج السينمائي، نقدم حلولاً متكاملة للمشاريع الكبرى في الشرق الأوسط.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><span class="material-symbols-outlined">public</span></a>
+          <a href="#" aria-label="Instagram"><span class="material-symbols-outlined">photo_camera</span></a>
+          <a href="#" aria-label="YouTube"><span class="material-symbols-outlined">play_circle</span></a>
+          <a href="#" aria-label="LinkedIn"><span class="material-symbols-outlined">work</span></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <a href="../home-v2.html">الرئيسية</a>
+        <a href="who-we-are.html">من نحن</a>
+        <a href="contact-us.html" style="color:#C9A84C">اتصل بنا</a>
+        <a href="faq.html">الأسئلة الشائعة</a>
+        <a href="privacy-policy.html">سياسة الخصوصية</a>
+        <a href="3d-animation.html">أنيميشن ثلاثي الأبعاد</a>
+        <a href="../home-v2.html#services">خدماتنا</a>
+        <a href="../home-v2.html#projects">مشاريعنا</a>
+      </div>
+      <div class="footer-links">
+        <h4>خدماتنا</h4>
+        <a href="3d-animation.html">سينمائي CGI</a>
+        <a href="#">مجسمات ذكية</a>
+        <a href="interactive-experiences.html">تجارب تفاعلية</a>
+        <a href="galleries-advertising.html">جاليريات وديكور إعلاني</a>
+        <a href="media-production.html">ميديا برودكشن</a>
+      </div>
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <div class="footer-contact-item" style="align-items:flex-start"><span class="material-symbols-outlined">location_on</span><span style="line-height:1.6">جدة — المملكة العربية السعودية<br>ص.ب 136972 | س.ت 4030502306</span></div>
+        <a href="tel:+966502786513" class="footer-contact-item"><span class="material-symbols-outlined">call</span>+966 50 278 6513</a>
+        <a href="mailto:info@3dgraphicshouse.com" class="footer-contact-item"><span class="material-symbols-outlined">mail</span>info@3dgraphicshouse.com</a>
+      </div>
+    </div>
+        <div class="footer-registration">
+      <span>السجل التجاري: 7054412114</span>
+      <span class="reg-sep">|</span>
+      <span>الرقم الضريبي: 314808998900003</span>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Graphics House — جميع الحقوق محفوظة</span><span>تصميم وهوية بصرية حسب الطلب</span></div>
+  </div>
+</footer>
+
+<script>
+var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
+if(ld&&lb){setTimeout(function(){lb.style.width="100%";},100);setTimeout(function(){ld.classList.add("out");},1400);}
+var mn=document.getElementById("mob-nav"),mo=document.getElementById("mob-open"),mc=document.getElementById("mob-close");
+if(mn&&mo&&mc){mo.addEventListener("click",function(){mn.style.transform="translateX(0)";document.body.style.overflow="hidden";});mc.addEventListener("click",function(){mn.style.transform="translateX(100%)";document.body.style.overflow="";});document.querySelectorAll(".mob-link").forEach(function(a){a.addEventListener("click",function(){mn.style.transform="translateX(100%)";document.body.style.overflow="";});});}
+window.addEventListener("scroll",function(){var h=document.getElementById("main-nav");h.classList.toggle("header-scrolled",window.scrollY>80);});
+(function(){var els=document.querySelectorAll(".reveal");if(els.length){var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");ro.unobserve(e.target);}});},{threshold:0.1});els.forEach(function(el){ro.observe(el);});}})();
+</script>
+
+
+<script>
+// Form handler
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = this.querySelector('button[type="submit"]');
+  var orig = btn.innerHTML;
+  btn.innerHTML = 'جاري الإرسال <span class="material-symbols-outlined" style="font-size:14px">hourglass_top</span>';
+  btn.disabled = true;
+  setTimeout(function() {
+    btn.innerHTML = 'تم الإرسال ✓';
+    btn.style.background = '#1a8a1a';
+    btn.style.borderColor = '#1a8a1a';
+    setTimeout(function() {
+      btn.innerHTML = orig;
+      btn.disabled = false;
+      btn.style.background = '';
+      btn.style.borderColor = '';
+      document.getElementById('contactForm').reset();
+    }, 2500);
+  }, 1200);
+});
+</script>
+
+</body>
+</html>

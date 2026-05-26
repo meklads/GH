@@ -6,3 +6,9 @@ Thumbs.db
 # Large backup files - kept locally, not deployed
 assets/videos/*.mp4
 assets/ghfolio.pdf
+
+# Workspace / backup / temp files
+*backup*
+workspace*
+en-v2*
+home-v2-backup*
