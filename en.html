@@ -2641,17 +2641,6 @@ img { max-width: 100%; display: block; }
       <div class="portfolio-divider"></div>
     </div>
 
-    <!-- Filter Buttons -->
-    <div class="portfolio-filters s2-fade s2-d2" id="portfolioFilters">
-      <button class="pf-btn" data-filter="all">All</button>
-      <button class="pf-btn" data-filter="rendering">Arch Viz</button>
-      <button class="pf-btn active" data-filter="maquette">Maquettes</button>
-      <button class="pf-btn" data-filter="cinematic">Cinematic</button>
-      <button class="pf-btn" data-filter="animation">Animation</button>
-      <button class="pf-btn" data-filter="interactive">Interactive</button>
-      <button class="pf-btn" data-filter="exhibition">Exhibition</button>
-    </div>
-
     <!-- Grid -->
     <div class="portfolio-grid s2-fade s2-d3" id="portfolioGrid">
 
@@ -3137,29 +3126,12 @@ function swapImage(src, thumbEl) {
   thumbEl.classList.add('active');
 }
 
-// Portfolio filter — default to maquette
+// Portfolio — show all items
 (function() {
-  var btns = document.querySelectorAll('#portfolioFilters .pf-btn');
   var items = document.querySelectorAll('#portfolioGrid .pf-item');
-  function filterTo(f) {
-    btns.forEach(function(b) { b.classList.remove('active'); });
-    items.forEach(function(item) {
-      if (f === 'all' || item.getAttribute('data-category') === f) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
-  btns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      btns.forEach(function(b) { b.classList.remove('active'); });
-      this.classList.add('active');
-      filterTo(this.getAttribute('data-filter'));
-    });
+  items.forEach(function(item) {
+    item.style.display = 'block';
   });
-  // Set initial filter to maquette
-  filterTo('maquette');
 })();
 
 // Hero progress bars
