@@ -667,7 +667,7 @@ img { max-width: 100%; display: block; }
 
 /* ===== SECTION 2: BRAND POSITIONING ===== */
 .s2 {
-  background: transparent;
+  background: #FAFAF8;
   padding: 0;
   position: relative;
   overflow: hidden;
@@ -675,9 +675,8 @@ img { max-width: 100%; display: block; }
 }
 .s2-hero-wrap {
   position: relative;
-  width: 100%;
-  aspect-ratio: 21/9;
-  max-height: 600px;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
 }
 .s2-hero-bg {
@@ -699,9 +698,8 @@ img { max-width: 100%; display: block; }
 }
 .s2-hero-inner {
   position: absolute;
-  top: 50%;
+  top: 64%;
   left: 40px;
-  transform: translateY(-50%);
   z-index: 5;
   text-align: left;
   max-width: 620px;
@@ -744,7 +742,36 @@ img { max-width: 100%; display: block; }
   line-height: 1.7;
   font-weight: 400;
 }
-/* Scroll indicator removed - no longer full-screen */
+.s2-hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: rgba(255,255,255,0.4);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: color 0.3s;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.s2-hero-scroll:hover {
+  color: var(--gold);
+}
+.s2-hero-scroll .material-symbols-outlined {
+  font-size: 28px;
+  animation: s2-scroll-bounce 2s ease-in-out infinite;
+}
+@keyframes s2-scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
 
 /* Hotspots on hero - adjusted for fullscreen */
 .s2-hero-wrap .hotspot {
@@ -769,8 +796,9 @@ img { max-width: 100%; display: block; }
 /* Watch Video text button */
 .s2-watch-btn {
   position: absolute;
-  right: 40px;
-  bottom: 40px;
+  right: 60px;
+  top: 55%;
+  transform: translateY(-50%);
   z-index: 5;
   display: inline-flex;
   align-items: center;
@@ -817,10 +845,10 @@ img { max-width: 100%; display: block; }
 /* Thumbnail gallery on hero right side */
 .s2-hero-gallery {
   position: absolute;
-  right: 40px;
-  bottom: 100px;
+  right: 60px;
+  top: 68%;
   z-index: 5;
-  max-height: 200px;
+  max-height: 36vh;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
@@ -871,18 +899,23 @@ img { max-width: 100%; display: block; }
 }
 
 /* Content below the fold */
+.s2-content-wrap {
+  position: relative;
+  z-index: 1;
+  padding: 140px 0 120px;
+}
+.s2-content-wrap .s2-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
 
 /* Mobile */
 @media(max-width:768px) {
-  .s2-hero-wrap {
-    aspect-ratio: 4/3;
-    max-height: none;
-  }
   .s2-hero-inner {
-    top: 50%;
+    top: 64%;
     left: 16px;
     padding: 16px 16px 16px 24px;
-    transform: translateY(-50%);
   }
   .s2-hero-inner::before {
     width: 2px;
@@ -893,14 +926,18 @@ img { max-width: 100%; display: block; }
     font-size: clamp(18px, 4.5vw, 24px);
   }
   .s2-watch-btn {
-    right: 16px;
-    bottom: 16px;
-    padding: 10px 18px;
-    font-size: 13px;
+    right: 20px;
+    padding: 12px 22px;
+    font-size: 14px;
+    top: auto;
+    bottom: 80px;
+    transform: none;
     border-radius: 50px;
   }
   .s2-hero-gallery {
-    display: none;
+    right: 20px;
+    top: auto;
+    bottom: 148px;
   }
   .s2-hero-gallery-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -913,6 +950,12 @@ img { max-width: 100%; display: block; }
   }
   .s2-hero-scroll {
     bottom: 10px;
+  }
+  .s2-content-wrap {
+    padding: 80px 0 60px;
+  }
+  .s2-content-wrap .s2-container {
+    padding: 0 20px;
   }
 }
 .s2::before {
@@ -2719,9 +2762,15 @@ img { max-width: 100%; display: block; }
       <span>نصنع التجارب التي <em>تسبق بناء المدن</em></span>
     </div>
 
-    <!-- Scroll-down indicator (hidden, no longer full-screen) -->
-
+    <!-- Scroll-down indicator -->
+    <a href="#s2-content" class="s2-hero-scroll">
+      <span class="material-symbols-outlined">expand_more</span>
+    </a>
   </div>
+
+  <!-- Content below the fold -->
+  <div class="s2-content-wrap" id="s2-content">
+    
 
 </section>
 
