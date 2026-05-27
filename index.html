@@ -76,7 +76,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 14px;
-  padding-top: 24px;
+  padding-top: 4px;
 }
 .logo-icon {
   width: 52px;
@@ -551,7 +551,7 @@ img { max-width: 100%; display: block; }
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
-  .header { padding: 10px 0; }
+  .header { padding: 8px 0; }
   .logo img { height: 72px !important; }
   .hero-content { padding: 120px 0 380px; }
   .hero-text-block { max-width: 100%; }
@@ -898,7 +898,7 @@ img { max-width: 100%; display: block; }
   display: block;
 }
 
-
+/* Content below the fold */
 .s2-content-wrap {
   position: relative;
   z-index: 1;
@@ -2370,6 +2370,35 @@ img { max-width: 100%; display: block; }
     font-size: 18px;
   }
 }</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Graphics House — جرافيكس هاوس",
+  "description": "هوية بصرية، مجسمات ذكية، إعلانات، وتجارب تفاعلية للمشاريع التجارية والسكنية.",
+  "url": "https://3dgraphicshouse.com",
+  "logo": "https://3dgraphicshouse.com/assets/logo-gold.png",
+  "image": "https://3dgraphicshouse.com/assets/favicon/og-image.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "SA"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "السعودية"
+  },
+  "priceRange": "﷼﷼﷼",
+  "telephone": "+966500000000",
+  "email": "info@3dgraphicshouse.com",
+  "sameAs": [
+    "https://www.instagram.com/3dgraphicshouse",
+    "https://www.linkedin.com/in/meklad/",
+    "https://www.youtube.com/user/3dghouse",
+    "https://www.facebook.com/3dghouse"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -2616,6 +2645,48 @@ img { max-width: 100%; display: block; }
       شاهد الفيديو
     </button>
 
+    <!-- Thumbnail Gallery (right side) -->
+    <div class="s2-hero-gallery">
+      <div class="s2-hero-gallery-grid">
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-01.jpeg')">
+          <img src="assets/news/makkah-charter-01.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-02.jpeg')">
+          <img src="assets/news/makkah-charter-02.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-03.jpeg')">
+          <img src="assets/news/makkah-charter-03.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-04.jpeg')">
+          <img src="assets/news/makkah-charter-04.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-05.jpeg')">
+          <img src="assets/news/makkah-charter-05.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-06.jpeg')">
+          <img src="assets/news/makkah-charter-06.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-07.jpeg')">
+          <img src="assets/news/makkah-charter-07.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-08.jpeg')">
+          <img src="assets/news/makkah-charter-08.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-09.jpeg')">
+          <img src="assets/news/makkah-charter-09.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-10.jpeg')">
+          <img src="assets/news/makkah-charter-10.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-11.jpeg')">
+          <img src="assets/news/makkah-charter-11.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-12.jpeg')">
+          <img src="assets/news/makkah-charter-12.jpeg" alt="">
+        </div>
+      </div>
+    </div>
+
     <!-- Caption -->
     <div class="s2-feature-caption">
       <span>نصنع التجارب التي <em>تسبق بناء المدن</em></span>
@@ -2811,8 +2882,6 @@ img { max-width: 100%; display: block; }
       <div class="s2-clients-item">مجموعة بن زومة</div>
     </div>
   </div>
-</section>
-
 </section>
 
 <!-- ===== SECTION 3: PROJECT SHOWCASE — MAKKAH CHARTER ===== -->
@@ -3664,7 +3733,6 @@ function openHeroImage(src) {
   setTimeout(function() { modal.style.opacity = '1'; }, 10);
   document.body.style.overflow = 'hidden';
 }
-
 
 // Video modal popup
 function playVideo(videoId, startTime) {
