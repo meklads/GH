@@ -1959,7 +1959,13 @@ img { max-width: 100%; display: block; }
     height: 40px;
     font-size: 18px;
   }
-}</style>
+}
+/* === Fullscreen dark section override === */
+.s-turn-dev {
+  background: #000000 !important;
+  min-height: 100vh !important;
+}
+</style>
 </head>
 <body>
 
@@ -2127,9 +2133,9 @@ img { max-width: 100%; display: block; }
 
 
 
-    <!-- We turn developments section -->
-<section style="padding:100px 0;background:#000000;overflow:hidden;width:100%">
-  <div class="s2-container" style="max-width:1280px;margin:0 auto;padding:0 24px">
+<!-- We turn developments section -->
+<section class="s-turn-dev" style="padding:100px 0;background:#000000!important;overflow:hidden;width:100%;min-height:100vh;display:flex;align-items:center">
+  <div class="s2-container" style="max-width:1280px;margin:0 auto;padding:0 24px;width:100%">
     <div class="s2-row s2-fade s2-d4" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div class="s2-row-visual" id="s2VideoWrap3">
         <div class="s2-corner-tl"></div>
