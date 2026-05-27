@@ -677,9 +677,6 @@ img { max-width: 100%; display: block; }
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
   overflow: hidden;
 }
 .s2-hero-bg {
@@ -699,11 +696,14 @@ img { max-width: 100%; display: block; }
   z-index: 1;
 }
 .s2-hero-inner {
-  position: relative;
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 5;
   text-align: center;
   max-width: 700px;
-  padding: 40px 48px 48px;
+  padding: 20px 48px;
   pointer-events: none;
 }
 .s2-hero-inner * {
@@ -811,7 +811,8 @@ img { max-width: 100%; display: block; }
 /* Mobile */
 @media(max-width:768px) {
   .s2-hero-inner {
-    padding: 20px 24px 30px;
+    top: 34%;
+    padding: 16px 24px;
   }
   .s2-hero-title {
     font-size: clamp(18px, 4.5vw, 24px);
@@ -2411,12 +2412,11 @@ img { max-width: 100%; display: block; }
       <span>نصنع التجارب التي <em>تسبق بناء المدن</em></span>
     </div>
 
-    <!-- Scroll-down indicator
+    <!-- Scroll-down indicator -->
     <a href="#s2-content" class="s2-hero-scroll">
       <span>اكتشف المزيد</span>
       <span class="material-symbols-outlined">expand_more</span>
     </a>
-    -->
   </div>
 
   <!-- Content below the fold -->
