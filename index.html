@@ -3851,7 +3851,12 @@ function closeImageLightbox(e) {
 
 <!-- ===== CHAT BOT ===== -->
 <div id="ghChatBtn" onclick="toggleChat()">
-  <img id="ghChatIcon" src="assets/chatbot-motif.png" alt="AI">
+  <div class="gh-ripple-wrap">
+    <div class="gh-ripple"></div>
+    <div class="gh-ripple gh-ripple-2"></div>
+    <div class="gh-ripple gh-ripple-3"></div>
+    <img id="ghChatIcon" src="assets/chatbot-motif.png" alt="AI">
+  </div>
   <span class="material-symbols-outlined" id="ghChatClose" style="display:none;font-size:24px;color:#0e0e0e;">close</span>
 </div>
 
@@ -3894,7 +3899,33 @@ function closeImageLightbox(e) {
   transition:all .3s ease;
 }
 #ghChatBtn:hover { transform:scale(1.15); }
-#ghChatBtn img { width:60px; height:60px; object-fit:contain; display:block; }
+#ghChatBtn img { width:60px; height:60px; object-fit:contain; display:block; position:relative; z-index:2; }
+
+/* Ripple wrap holds the image + ripples together */
+.gh-ripple-wrap {
+  position:relative; display:inline-block; width:60px; height:60px;
+}
+
+/* Ripple / pulse animation */
+.gh-ripple {
+  position:absolute; top:0; left:0; z-index:1;
+  width:60px; height:60px; border-radius:50%;
+  border:2px solid #C9A84C;
+  animation: ghRipple 2.5s ease-out infinite;
+  pointer-events:none;
+  opacity:0;
+}
+.gh-ripple-2 { animation-delay:0.8s; }
+.gh-ripple-3 { animation-delay:1.6s; }
+
+@keyframes ghRipple {
+  0%   { transform:scale(0.8); opacity:0.7; }
+  50%  { transform:scale(1.6); opacity:0.3; }
+  100% { transform:scale(2.2); opacity:0; }
+}
+
+/* Stop ripple when panel is open */
+#ghChatBtn.open .gh-ripple { animation:none; opacity:0; }
 
 #ghChatPanel {
   position:fixed; bottom:92px; inset-inline-end:24px; z-index:99997;
@@ -3979,6 +4010,8 @@ function closeImageLightbox(e) {
   #ghChatPanel { width:calc(100vw - 32px); inset-inline-end:16px; bottom:84px; max-height:70vh; }
   #ghChatBtn { bottom:16px; inset-inline-end:16px; width:auto; height:auto; }
   #ghChatBtn img { width:50px; height:50px; }
+  .gh-ripple-wrap { width:50px; height:50px; }
+  .gh-ripple { width:50px; height:50px; }
   #ghChatBtn span { font-size:20px; }
 }
 
@@ -4242,7 +4275,9 @@ var ghQAs = ghLang === "ar" ? {
 
 function toggleChat() {
   var p = document.getElementById("ghChatPanel");
+  var btn = document.getElementById("ghChatBtn");
   p.classList.toggle("open");
+  btn.classList.toggle("open");
   var icon = document.getElementById("ghChatIcon");
   var close = document.getElementById("ghChatClose");
   if(p.classList.contains("open")) {
