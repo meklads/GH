@@ -2710,152 +2710,24 @@ img { max-width: 100%; display: block; }
 
 
 
-<!-- ===== SECTION 2: BRAND POSITIONING — FULL-SCREEN HERO ===== -->
+<!-- ===== SECTION 2: BRAND POSITIONING ===== -->
 <section class="s2" id="about">
-
-  <!-- Full-screen hero with image background + text overlay + hotspots -->
-  <div class="s2-hero-wrap">
-
-    <!-- Background Image -->
-    <div class="s2-hero-bg">
+  <div class="s2-container">
+    
+    <!-- Full-width Feature Image -->
+    <div class="s2-feature s2-fade s2-d2">
+      <div class="s2-feature-overlay"></div>
       <img src="assets/news/makkah-charter-04.jpeg" alt="Graphics House">
-      <div class="s2-hero-overlay"></div>
-    </div>
-
-    <!-- Centered Text Overlay — 3 lines + description -->
-    <div class="s2-hero-inner">
-      <h2 class="s2-hero-title">
-        نبني تجارب <em>تسبق بناء المدن</em>
-      </h2>
-      <p class="s2-hero-desc">
-        تجمع جرافيكس هاوس بين الإظهار السينمائي، الأنظمة التفاعلية، المجسمات الذكية، وتقنيات العرض الحديثة لصناعة تجارب معمارية واستثمارية ترفع قيمة المشروع وتعزز قرارات البيع والاستثمار.
-      </p>
-    </div>
-
-    <!-- Interactive Hotspots (on the background image) -->
-    <div class="hotspot hotspot-1 hotspot-left" style="top:56%;left:65%" data-title="المجسم التفاعلي">
-      <div class="hotspot-pulse"></div>
-      <div class="hotspot-dot">
-        <span class="material-symbols-outlined">touch_app</span>
+      <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="تشغيل الفيديو">
+        <span class="s2-play-icon">▶</span>
+      </button>
+      <div class="s2-feature-caption">
+        <span>نبني تجارب <em>تسبق بناء المدن</em></span>
       </div>
-      <div class="hotspot-tooltip">
-        <div class="hotspot-tooltip-arrow"></div>
-        <span class="hotspot-badge">مجسم ذكي</span>
-        <h4>مجسم تفاعلي لمشاريع الرابطة</h4>
-        <p>مجسم معماري تفاعلي ثلاثي الأبعاد لمشاريع رابطة العالم الإسلامي حول العالم، مع إضاءة ديناميكية تبرز تفاصيل كل مشروع.</p>
-      </div>
-    </div>
-
-    <div class="hotspot hotspot-2 hotspot-left" style="top:38%;left:84%" data-title="برنامج تشغيلي">
-      <div class="hotspot-pulse"></div>
-      <div class="hotspot-dot">
-        <span class="material-symbols-outlined">devices</span>
-      </div>
-      <div class="hotspot-tooltip">
-        <div class="hotspot-tooltip-arrow"></div>
-        <span class="hotspot-badge">برنامج تفاعلي</span>
-        <h4>برنامج تشغيلي للتحكم في المجسم</h4>
-        <p>برنامج تفاعلي يعرض تفاصيل المشاريع على شاشة اللمس ويتحكم في إضاءة المجسم وعرض المعلومات بشكل ديناميكي.</p>
-      </div>
-    </div>
-
-    <div class="hotspot hotspot-3 hotspot-below" style="top:32%;left:50%" data-title="أخبار الرابطة">
-      <div class="hotspot-pulse"></div>
-      <div class="hotspot-dot">
-        <span class="material-symbols-outlined">public</span>
-      </div>
-      <div class="hotspot-tooltip">
-        <div class="hotspot-tooltip-arrow"></div>
-        <span class="hotspot-badge">برنامج أخبار</span>
-        <h4>برنامج أخبار الرابطة حول العالم</h4>
-        <p>برنامج تفاعلي يعرض آخر أخبار وفعاليات ومبادرات رابطة العالم الإسلامي في مختلف قارات العالم.</p>
-      </div>
-    </div>
-
-    <div class="hotspot hotspot-4 hotspot-below" style="top:32%;left:28%" data-title="تصوير تذكاري">
-      <div class="hotspot-pulse"></div>
-      <div class="hotspot-dot">
-        <span class="material-symbols-outlined">photo_camera</span>
-      </div>
-      <div class="hotspot-tooltip">
-        <div class="hotspot-tooltip-arrow"></div>
-        <span class="hotspot-badge">تصوير تفاعلي</span>
-        <h4>برنامج تصوير تذكاري</h4>
-        <p>شاشة تفاعلية للتصوير التذكاري مع إطارات مخصصة للفعالية، تسمح للزوار بالتقاط صور تذكارية ومشاركتها فوراً.</p>
-      </div>
-    </div>
-
-    <!-- Play Button -->
-    <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="تشغيل الفيديو">
-      <span class="s2-play-icon">
-        <span class="material-symbols-outlined" style="font-size:38px;line-height:1">play_arrow</span>
-      </span>
-    </button>
-
-    <!-- Watch Video Button (right side) -->
-    <button class="s2-watch-btn" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="شاهد الفيديو">
-      <span class="material-symbols-outlined" style="font-size:20px">play_circle</span>
-      شاهد الفيديو
-    </button>
-
-    <!-- Thumbnail Gallery (right side) -->
-    <div class="s2-hero-gallery">
-      <div class="s2-hero-gallery-grid">
-        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-01.jpeg')">
-          <img src="assets/news/makkah-charter-01.jpeg" alt="">
-        </div>
-        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-02.jpeg')">
-          <img src="assets/news/makkah-charter-02.jpeg" alt="">
-        </div>
-        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-03.jpeg')">
-          <img src="assets/news/makkah-charter-03.jpeg" alt="">
-        </div>
-        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-04.jpeg')">
-          <img src="assets/news/makkah-charter-04.jpeg" alt="">
-        </div>
-        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-05.jpeg')">
-          <img src="assets/news/makkah-charter-05.jpeg" alt="">
-        </div>
-        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-06.jpeg')">
-          <img src="assets/news/makkah-charter-06.jpeg" alt="">
-        </div>
-        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-07.jpeg')">
-          <img src="assets/news/makkah-charter-07.jpeg" alt="">
-        </div>
-        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-08.jpeg')">
-          <img src="assets/news/makkah-charter-08.jpeg" alt="">
-        </div>
-        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-09.jpeg')">
-          <img src="assets/news/makkah-charter-09.jpeg" alt="">
-        </div>
-        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-10.jpeg')">
-          <img src="assets/news/makkah-charter-10.jpeg" alt="">
-        </div>
-        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-11.jpeg')">
-          <img src="assets/news/makkah-charter-11.jpeg" alt="">
-        </div>
-        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-12.jpeg')">
-          <img src="assets/news/makkah-charter-12.jpeg" alt="">
-        </div>
-      </div>
-    </div>
-
-    <!-- Caption -->
-    <div class="s2-feature-caption">
-      <span>نصنع التجارب التي <em>تسبق بناء المدن</em></span>
     </div>
 
   </div>
-
 </section>
-
-
-
-
-
-
-
-
 
 <!-- ===== SERVICES SECTION (like English: black bg, dark cards) ===== -->
 <section dir="rtl" style="padding:100px 0;background:#000000;overflow:hidden;position:relative">
@@ -2976,10 +2848,10 @@ img { max-width: 100%; display: block; }
         </div>
       </div>
       <div>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">الإظهار المعماري</span>
-        <h2 style="font-size:clamp(30px,3.5vw,50px);font-weight:900;color:#535353;margin:0 0 16px;line-height:1.1;letter-spacing:-.02em">الإظهار المعماري ثلاثي الأبعاد</h2>
-        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">صور فوتورياليستية تحيي الرؤى المعمارية بواقعية تأسر الخيال.</p>
-        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">صور ثابتة عالية الجودة تعرض المواد والإضاءة والأنسجة بدقة سينمائية. كل صورة تُصنع بعناية فائقة لتوصيل القصد التصميمي، والارتقاء بالعروض التقديمية، وتسريع اعتماد المشاريع العقارية الفاخرة.</p>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">الأنظمة الأساسية / 01</span>
+        <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px;line-height:1.3;letter-spacing:0">الإظهار المعماري</h2>
+        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">صور فوتورياليستية تحيي الرؤى المعمارية بواقعية فائقة.</p>
+        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">رسومات سينمائية فاخرة تعرض المواد والإضاءة والجودة المكانية لتوصيل القصد التصميمي وتسريع اعتماد المشاريع الفاخرة.</p>
         <div style="margin-top:28px">
           <a href="pages/3d-animation.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
@@ -2995,10 +2867,10 @@ img { max-width: 100%; display: block; }
   <div style="max-width:1280px;margin:0 auto;padding:0 24px">
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">الإنتاج السينمائي</span>
-        <h2 style="font-size:clamp(30px,3.5vw,50px);font-weight:900;color:#535353;margin:0 0 16px;line-height:1.1;letter-spacing:-.02em">الأنيميشن ثلاثي الأبعاد والإنتاج السينمائي</h2>
-        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">سرد سينمائي يحوّل المخططات هوم إلى حكايات بصرية عاطفية تأسر المشاهد.</p>
-        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">أفلام معمارية فائقة الدقة تحاكي تجربة المشروع بالكامل. من التحليقات البانورامية الواسعة إلى التجول الداخلي الحميمي، تترجم أعمال السينمائية المخططات المعقدة إلى رحلات بصرية مقنعة تأسر المستثمرين وأصحاب المصلحة.</p>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">الأنظمة الأساسية / 02</span>
+        <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px;line-height:1.3;letter-spacing:0">الإنتاج السينمائي ثلاثي الأبعاد</h2>
+        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">أفلام معمارية فائقة الدقة تحوّل المخططات الرئيسية إلى سرديات عاطفية.</p>
+        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">من التحليقات الجوية إلى التجوال الداخلي الغامر، نصنع تجارب سينمائية تنقل الحجم والرؤية والقيمة الاستثمارية.</p>
         <div style="margin-top:28px">
           <a href="pages/media-production.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
@@ -3094,10 +2966,10 @@ img { max-width: 100%; display: block; }
         </div>
       </div>
       <div>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">المجسمات المعمارية</span>
-        <h2 style="font-size:clamp(30px,3.5vw,50px);font-weight:900;color:#535353;margin:0 0 16px;line-height:1.1;letter-spacing:-.02em">المجسمات المعمارية الذكية</h2>
-        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">حيث تلتقي الحرفية التقليدية مع الابتكار الرقمي.</p>
-        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">نماذج هجينة تجمع بين الحرفية اليدوية المتقنة والإسقاط الضوئي والبيانات السحابية الحية والإضاءة التفاعلية. تم عرضها في احتفالية ميثاق مكة تحت رعاية رابطة العالم الإسلامي، لتقدّم تجربة بصرية ورقمية فريدة تعيد تعريف مفهوم المجسمات المعمارية.</p>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">الأنظمة الأساسية / 03</span>
+        <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px;line-height:1.3;letter-spacing:0">المجسمات المعمارية الذكية</h2>
+        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">حيث تلتقي الحرفية اليدوية مع الذكاء الرقمي.</p>
+        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">مجسمات هجينة تجمع بين التفاصيل الحرفية اليدوية والإسقاط الضوئي والبيانات الحية وأنظمة الإضاءة التفاعلية.</p>
         <div style="margin-top:28px">
           <a href="pages/smart-maquettes.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
@@ -3113,10 +2985,10 @@ img { max-width: 100%; display: block; }
   <div style="max-width:1280px;margin:0 auto;padding:0 24px">
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">المنصات التفاعلية</span>
-        <h2 style="font-size:clamp(30px,3.5vw,50px);font-weight:900;color:#535353;margin:0 0 16px;line-height:1.1;letter-spacing:-.02em">المجسم الإلكتروني وبرمجيات البيع</h2>
-        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">تجارب شاشات لمس تُعزز معدلات التحويل البيعي.</p>
-        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">منصات برمجية مخصصة لصالات البيع تضم جولات افتراضية، وفرز الوحدات آنياً، ومقارنات جانبية، وتكامل الحجز الفوري. صُممت لترتقي برحلة المشتري وتعزز معدلات التحويل في المشاريع الكبرى.</p>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">الأنظمة الأساسية / 04</span>
+        <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px;line-height:1.3;letter-spacing:0">المنصات التفاعلية للمبيعات (أنظمة المجسمات الإلكترونية)</h2>
+        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">تجارب شاشات لمس مصممة لتعزيز مبيعات العقارات.</p>
+        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">منصات مخصصة مع جولات افتراضية، أدوات مقارنة الوحدات، تصفية فورية، وتكامل الحجوزات لتحسين رحلة المشتري.</p>
         <div style="margin-top:28px">
           <a href="pages/interactive-experiences.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
@@ -3142,9 +3014,9 @@ img { max-width: 100%; display: block; }
         </div>
       </div>
       <div>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">صالات العرض والديكور الإعلاني</span>
-        <h2 style="font-size:clamp(30px,3.5vw,50px);font-weight:900;color:#535353;margin:0 0 16px;line-height:1.1;letter-spacing:-.02em">صالات عرض وديكور إعلاني فاخر</h2>
-        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">مساحات رائدة تروي قصة مشروعك بإبداع لا يُضاهى.</p>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">الأنظمة الأساسية / 05</span>
+        <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px;line-height:1.3;letter-spacing:0">صالات العرض والتصميم المكاني</h2>
+        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">بيئات رائدة تنقل هوية المشروع.</p>
         <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">تصميم وتنفيذ متكامل لمراكز بيع رئيسية تتحول إلى معارض فنية تفاعلية. كل صالة عرض تُصمم بعناية لتعكس مكانة العلامة التجارية، مع ديكور إعلاني احترافي يوجّه الزائر عبر سردية المشروع، ويخلق روابط عاطفية دائمة مع المشترين والمستثمرين.</p>
         <div style="margin-top:28px">
           <a href="pages/galleries-advertising.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
@@ -3161,9 +3033,9 @@ img { max-width: 100%; display: block; }
   <div style="max-width:1280px;margin:0 auto;padding:0 24px">
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">ميديا برودكشن</span>
-        <h2 style="font-size:clamp(30px,3.5vw,50px);font-weight:900;color:#535353;margin:0 0 16px;line-height:1.1;letter-spacing:-.02em">الإنتاج السينمائي والوسائط المتعددة</h2>
-        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">من التصوير الاحترافي إلى المونتاج — حكايات بصرية تأسر الجمهور.</p>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">الأنظمة الأساسية / 06</span>
+        <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px;line-height:1.3;letter-spacing:0">الإنتاج الميديا</h2>
+        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">إنتاج محتوى سينمائي للعقارات والمشاريع التطويرية.</p>
         <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">نقدم خدمات متكاملة في الإنتاج السينمائي والوسائط المتعددة، بدءاً من التصوير الاحترافي والمونتاج وصولاً إلى الرسوم المتحركة (أنيميشن) والموشن جرافيك. نصنع محتوى بصرياً يحوّل أفكارك إلى قصص سينمائية مؤثرة تترك أثراً في جمهورك وتعزز حضور علامتك التجارية.</p>
         <ul style="list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:10px">
           <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:#555;font-weight:500">
@@ -3180,7 +3052,7 @@ img { max-width: 100%; display: block; }
           </li>
           <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:#555;font-weight:500">
             <span style="width:6px;height:6px;border-radius:50%;background:#C9A84C;display:inline-block;flex-shrink:0"></span>
-            مونتاج وما بعد الإنتاج السينمائي
+            مونتاج وما بعد الإنتاج
           </li>
           <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:#555;font-weight:500">
             <span style="width:6px;height:6px;border-radius:50%;background:#C9A84C;display:inline-block;flex-shrink:0"></span>
