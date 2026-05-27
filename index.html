@@ -3852,12 +3852,8 @@ function closeImageLightbox(e) {
 <!-- ===== CHAT BOT ===== -->
 <div id="ghChatBtn" onclick="toggleChat()">
   <svg id="ghChatIcon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:26px;display:block">
-    <circle cx="12" cy="12" r="10.5" stroke="#C9A84C" stroke-width="1.8" fill="none"/>
-    <circle cx="12" cy="12" r="8" stroke="rgba(201,168,76,0.12)" stroke-width="1" fill="none"/>
-    <path d="M5.5 13A2.5 2.5 0 0 0 3 15.5v2a2.5 2.5 0 0 0 2.5 2.5h.5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-.5z" fill="#C9A84C"/>
-    <path d="M18.5 13a2.5 2.5 0 0 1 2.5 2.5v2a2.5 2.5 0 0 1-2.5 2.5H18a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h.5z" fill="#C9A84C"/>
-    <path d="M18.5 13.5V11a6.5 6.5 0 1 0-13 0v2.5" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <path d="M12 18v-1.5" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="12" cy="12" r="10.5" stroke="#C9A84C" stroke-width="2" fill="none"/>
+    <text x="12" y="16" text-anchor="middle" fill="#C9A84C" font-family="Tajawal, sans-serif" font-size="14" font-weight="700">ج</text>
   </svg>
   <span class="material-symbols-outlined" id="ghChatClose" style="display:none;font-size:24px;color:#0e0e0e;">close</span>
 </div>
@@ -3865,12 +3861,8 @@ function closeImageLightbox(e) {
 <div id="ghChatPanel" dir="rtl">
   <div id="ghChatHead">
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;vertical-align:middle;display:inline-block">
-  <circle cx="12" cy="12" r="10.5" stroke="#C9A84C" stroke-width="1.8" fill="none"/>
-  <circle cx="12" cy="12" r="8" stroke="rgba(201,168,76,0.12)" stroke-width="1" fill="none"/>
-  <path d="M5.5 13A2.5 2.5 0 0 0 3 15.5v2a2.5 2.5 0 0 0 2.5 2.5h.5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-.5z" fill="#C9A84C"/>
-  <path d="M18.5 13a2.5 2.5 0 0 1 2.5 2.5v2a2.5 2.5 0 0 1-2.5 2.5H18a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h.5z" fill="#C9A84C"/>
-  <path d="M18.5 13.5V11a6.5 6.5 0 1 0-13 0v2.5" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M12 18v-1.5" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="12" cy="12" r="10.5" stroke="#C9A84C" stroke-width="2" fill="none"/>
+  <text x="12" y="16" text-anchor="middle" fill="#C9A84C" font-family="Tajawal, sans-serif" font-size="12" font-weight="700">ج</text>
 </svg>
     <span>مساعد جرافيكس هاوس</span>
     <span style="flex:1"></span>
@@ -3879,11 +3871,8 @@ function closeImageLightbox(e) {
   <div id="ghChatMsgs">
     <div class="gh-msg gh-msg-bot">
       <div class="gh-msg-avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;vertical-align:middle;display:inline-block">
-  <circle cx="12" cy="12" r="10.5" stroke="#C9A84C" stroke-width="1.8" fill="none"/>
-  <path d="M5.5 13A2.5 2.5 0 0 0 3 15.5v2a2.5 2.5 0 0 0 2.5 2.5h.5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-.5z" fill="#C9A84C"/>
-  <path d="M18.5 13a2.5 2.5 0 0 1 2.5 2.5v2a2.5 2.5 0 0 1-2.5 2.5H18a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h.5z" fill="#C9A84C"/>
-  <path d="M18.5 13.5V11a6.5 6.5 0 1 0-13 0v2.5" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M12 18v-1.5" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="12" cy="12" r="10.5" stroke="#C9A84C" stroke-width="2" fill="none"/>
+  <text x="12" y="15.5" text-anchor="middle" fill="#C9A84C" font-family="Tajawal, sans-serif" font-size="10" font-weight="700">ج</text>
 </svg></div>
       <div class="gh-msg-bubble">مرحباً! 👋 كيف يمكنني مساعدتك؟ اختر أحد الخيارات أدناه:</div>
     </div>
@@ -3908,7 +3897,7 @@ function closeImageLightbox(e) {
 #ghChatBtn {
   position:fixed; bottom:24px; inset-inline-end:24px; z-index:99998;
   width:56px; height:56px; border-radius:50%;
-  background:linear-gradient(135deg, #C9A84C, #DAAD3D);
+  background:rgba(14,14,14,0.92); border:2px solid #C9A84C;
   display:flex; align-items:center; justify-content:center;
   cursor:pointer; box-shadow:0 4px 20px rgba(201,168,76,.4);
   transition:all .3s ease;
@@ -4278,7 +4267,7 @@ function addMsg(text, isUser) {
   var div = document.createElement("div");
   div.className = "gh-msg" + (isUser ? " gh-msg-user" : "");
   if(!isUser) {
-    div.innerHTML = '<div class="gh-msg-avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;vertical-align:middle;display:inline-block"><circle cx="12" cy="12" r="10.5" stroke="#C9A84C" stroke-width="1.8" fill="none"/><circle cx="12" cy="12" r="8" stroke="rgba(201,168,76,0.12)" stroke-width="1" fill="none"/><path d="M5.5 13A2.5 2.5 0 0 0 3 15.5v2a2.5 2.5 0 0 0 2.5 2.5h.5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-.5z" fill="#C9A84C"/><path d="M18.5 13a2.5 2.5 0 0 1 2.5 2.5v2a2.5 2.5 0 0 1-2.5 2.5H18a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h.5z" fill="#C9A84C"/><path d="M18.5 13.5V11a6.5 6.5 0 1 0-13 0v2.5" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M12 18v-1.5" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="gh-msg-bubble"></div>';
+    div.innerHTML = '<div class="gh-msg-avatar"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;vertical-align:middle;display:inline-block"><circle cx="12" cy="12" r="10.5" stroke="#C9A84C" stroke-width="2" fill="none"/><text x="12" y="15.5" text-anchor="middle" fill="#C9A84C" font-family="Tajawal, sans-serif" font-size="10" font-weight="700">ج</text></svg></div><div class="gh-msg-bubble"></div>';
   } else {
     div.innerHTML = '<div class="gh-msg-avatar"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C;">person</span></div><div class="gh-msg-bubble"></div>';
   }
