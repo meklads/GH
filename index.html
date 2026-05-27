@@ -3904,6 +3904,7 @@ function closeImageLightbox(e) {
 /* Ripple wrap holds the image + ripples together */
 .gh-ripple-wrap {
   position:relative; display:inline-block; width:60px; height:60px;
+  perspective:200px;
 }
 
 /* Ripple / pulse animation */
@@ -3927,15 +3928,17 @@ function closeImageLightbox(e) {
 /* Stop ripple when panel is open */
 #ghChatBtn.open .gh-ripple { animation:none; opacity:0; }
 
-/* Subtle 18° rotation every 30s */
+/* Vertical 180° flip every 15s */
 #ghChatBtn img {
-  animation: ghRotate 30s ease-in-out infinite;
+  animation: ghFlip 15s ease-in-out infinite;
+  backface-visibility: hidden;
 }
-@keyframes ghRotate {
-  0%   { transform: rotate(0deg); }
-  90%  { transform: rotate(0deg); }
-  95%  { transform: rotate(18deg); }
-  100% { transform: rotate(0deg); }
+@keyframes ghFlip {
+  0%   { transform: rotateY(0deg); }
+  45%  { transform: rotateY(0deg); }
+  50%  { transform: rotateY(180deg); }
+  95%  { transform: rotateY(180deg); }
+  100% { transform: rotateY(0deg); }
 }
 
 #ghChatPanel {
