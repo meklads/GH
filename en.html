@@ -1556,7 +1556,7 @@ img { max-width: 100%; display: block; }
 /* Projects Grid */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 .pf-item {
@@ -2879,6 +2879,12 @@ document.querySelectorAll(".nav a").forEach(link => {
 function playVideo(videoId, startTime) {
   var modal = document.getElementById('videoModal');
   var container = document.getElementById('videoModalPlayer');
+  var wrap = document.getElementById('videoModalWrap');
+
+  // Hide image mode, show video mode
+  wrap.style.display = 'block';
+  var imgEl = document.getElementById('imageModalImg');
+  if (imgEl) imgEl.style.display = 'none';
 
   var src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1';
   if (startTime) src += '&start=' + startTime;
@@ -2898,6 +2904,12 @@ function playVideo(videoId, startTime) {
 function playLocalVideo(src) {
   var modal = document.getElementById('videoModal');
   var container = document.getElementById('videoModalPlayer');
+  var wrap = document.getElementById('videoModalWrap');
+
+  // Hide image mode, show video mode
+  wrap.style.display = 'block';
+  var imgEl = document.getElementById('imageModalImg');
+  if (imgEl) imgEl.style.display = 'none';
 
   var video = document.createElement('video');
   video.setAttribute('controls', '');
@@ -2916,11 +2928,39 @@ function playLocalVideo(src) {
   document.body.style.overflow = 'hidden';
 }
 
+function openImage(imgSrc) {
+  var modal = document.getElementById('videoModal');
+  var wrap = document.getElementById('videoModalWrap');
+  var container = document.getElementById('videoModalPlayer');
+
+  // Hide video, clear it, and show image
+  wrap.style.display = 'none';
+  container.innerHTML = '';
+
+  var img = document.getElementById('imageModalImg');
+  if (!img) {
+    img = document.createElement('img');
+    img.id = 'imageModalImg';
+    img.style.cssText = 'width:100%;height:auto;display:block;border-radius:12px;max-height:85vh;object-fit:contain;background:#000';
+    container.parentNode.appendChild(img);
+  }
+  img.src = imgSrc;
+  img.style.display = 'block';
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
 function closeVideo() {
   var modal = document.getElementById('videoModal');
   var container = document.getElementById('videoModalPlayer');
+  var wrap = document.getElementById('videoModalWrap');
+  var imgEl = document.getElementById('imageModalImg');
+
   modal.classList.remove('active');
   container.innerHTML = '';
+  wrap.style.display = 'block';
+  if (imgEl) imgEl.style.display = 'none';
   document.body.style.overflow = '';
 }
 
@@ -2944,11 +2984,21 @@ function swapImage(src, thumbEl) {
   thumbEl.classList.add('active');
 }
 
-// Portfolio — show all items
+// Portfolio — show all items with click handlers
 (function() {
   var items = document.querySelectorAll('#portfolioGrid .pf-item');
   items.forEach(function(item) {
     item.style.display = 'block';
+    // If item has an onclick (video), keep it; otherwise add image lightbox
+    if (!item.hasAttribute('onclick')) {
+      var img = item.querySelector('img');
+      if (img) {
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', function() {
+          openImage(img.getAttribute('src'));
+        });
+      }
+    }
   });
 })();
 
@@ -2966,7 +3016,7 @@ function swapImage(src, thumbEl) {
 <div class="video-modal" id="videoModal">
   <button class="video-modal-close" onclick="closeVideo()">✕</button>
   <div class="video-modal-inner">
-    <div class="video-aspect">
+    <div class="video-aspect" id="videoModalWrap">
       <div id="videoModalPlayer"></div>
     </div>
   </div>
