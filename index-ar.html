@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" dir="ltr" lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3D Graphics House | Architectural Visualization &amp; Smart Showrooms</title>
-<meta property="og:title" content="3D Graphics House | Architectural Visualization &amp; Smart Showrooms">
-<meta property="og:description" content="Premium architectural visualization, smart maquettes, interactive experiences, and media production for real estate and commercial projects.">
+<title>Graphics House — الهوية البصرية والتجربة البيعية للمشاريع الكبرى</title>
+<meta property="og:title" content="Graphics House — الهوية البصرية والتجربة البيعية للمشاريع الكبرى">
+<meta property="og:description" content="Graphics House: هوية بصرية، مجسمات ذكية، إعلانات، وتجارب تفاعلية للمشاريع التجارية والسكنية في السعودية.">
 <meta property="og:image" content="https://3dgraphicshouse.com/assets/favicon/og-image.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
-<meta name="description" content="Premium architectural visualization, cinematic CGI, interactive sales platforms, smart maquettes, and AI spatial intelligence for mega developments across the GCC."/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -35,20 +34,12 @@ tailwind.config={theme:{extend:{colors:{gold:"#C9A84C"},borderRadius:{DEFAULT:"0
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Inter', 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
   background: #000;
   color: var(--text-primary);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
-html[dir="ltr"] .nav-link { font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;transition:color .3s;position:relative;padding-bottom:2px; }
-html[dir="ltr"] .nav-link:hover{color:#C9A84C!important;}
-html[dir="ltr"] .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#C9A84C;transition:width .3s}
-html[dir="ltr"] .nav-link:hover::after{width:100%}
-
-/* Dropdown menu */
-.nav-item-drop:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
-.nav-dropdown a:hover{background:rgba(255,255,255,.04);color:#C9A84C}
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 .container {
@@ -65,13 +56,13 @@ img { max-width: 100%; display: block; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 10px 0;
   transition: all 0.4s ease;
 }
 .header.scrolled {
   background: rgba(0,0,0,0.85);
   backdrop-filter: blur(20px);
-  padding: 10px 0;
+  padding: 4px 0;
   border-bottom: 1px solid var(--border-subtle);
 }
 .header-inner {
@@ -85,7 +76,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 14px;
-  padding-top: 24px;
+  padding-top: 4px;
 }
 .logo-icon {
   width: 52px;
@@ -157,6 +148,14 @@ img { max-width: 100%; display: block; }
 }
 .nav a:hover { color: var(--text-primary); }
 .nav a:hover::after { transform: scaleX(1); }
+.nav-item-drop{position:relative;display:inline-block}
+.nav-item-drop .nav-link{cursor:pointer}
+.nav-dropdown{position:absolute;top:100%;right:0;background:#1A1A1A;border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 50px rgba(0,0,0,.5);min-width:220px;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .3s ease;z-index:100}
+.nav-item-drop:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown a{display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif}
+.nav-dropdown a:hover{background:rgba(255,255,255,.04);color:#C9A84C}
+.nav-dropdown a .dd-icon{font-size:16px;color:#C9A84C}
+
 
 .nav-lang {
   padding: 5px 14px;
@@ -552,7 +551,7 @@ img { max-width: 100%; display: block; }
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
-  .header { padding: 10px 0; }
+  .header { padding: 8px 0; }
   .logo img { height: 72px !important; }
   .hero-content { padding: 120px 0 380px; }
   .hero-text-block { max-width: 100%; }
@@ -669,10 +668,295 @@ img { max-width: 100%; display: block; }
 /* ===== SECTION 2: BRAND POSITIONING ===== */
 .s2 {
   background: #FAFAF8;
-  padding: 140px 0 120px;
+  padding: 0;
   position: relative;
   overflow: hidden;
+  direction: rtl;
+}
+.s2-hero-wrap {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+.s2-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.s2-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.s2-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.65) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.s2-hero-inner {
+  position: absolute;
+  top: 64%;
+  left: 40px;
+  z-index: 5;
+  text-align: left;
+  max-width: 620px;
+  padding: 20px 48px 20px 60px;
+  pointer-events: none;
+}
+.s2-hero-inner::before {
+  content: '';
+  position: absolute;
+  right: auto;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 55%;
+  background: rgba(201,168,76,0.4);
+  border-radius: 1px;
+}
+.s2-hero-inner * {
+  pointer-events: auto;
+}
+.s2-hero-title {
+  font-size: clamp(20px, 2.5vw, 34px);
+  font-weight: 300;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+}
+.s2-hero-title em {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 500;
+}
+.s2-hero-desc {
+  font-size: clamp(13px, 1vw, 16px);
+  color: rgba(255,255,255,0.85);
+  max-width: 520px;
+  margin: 14px 0 0;
+  line-height: 1.7;
+  font-weight: 400;
+}
+.s2-hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: rgba(255,255,255,0.4);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: color 0.3s;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.s2-hero-scroll:hover {
+  color: var(--gold);
+}
+.s2-hero-scroll .material-symbols-outlined {
+  font-size: 28px;
+  animation: s2-scroll-bounce 2s ease-in-out infinite;
+}
+@keyframes s2-scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* Hotspots on hero - adjusted for fullscreen */
+.s2-hero-wrap .hotspot {
+  z-index: 4;
+}
+.s2-hero-wrap .hotspot-tooltip {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.75);
+  border-color: rgba(201,168,76,0.2);
+}
+.s2-hero-wrap .hotspot-tooltip h4 {
+  color: #fff;
+}
+.s2-hero-wrap .hotspot-tooltip p {
+  color: rgba(255,255,255,0.65);
+}
+.s2-hero-wrap .hotspot-tooltip-arrow {
+  background: rgba(0,0,0,0.75);
+}
+
+/* Watch Video text button */
+.s2-watch-btn {
+  position: absolute;
+  right: 60px;
+  top: 55%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 30px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50px;
+  color: #fff;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.s2-watch-btn:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: var(--gold);
+  box-shadow: 0 4px 30px rgba(201,168,76,0.2);
+}
+.s2-watch-btn .material-symbols-outlined {
+  color: var(--gold);
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Play button on hero */
+.s2-hero-wrap .s2-play-btn {
+  z-index: 5;
+}
+.s2-hero-wrap .s2-play-btn::before {
+  border-color: rgba(201,168,76,0.3);
+}
+.s2-hero-wrap .s2-play-icon {
+  background: rgba(201,168,76,0.2);
+  border-color: rgba(201,168,76,0.3);
+}
+.s2-hero-wrap .s2-feature-caption {
+  display: none;
+}
+
+/* Thumbnail gallery on hero right side */
+.s2-hero-gallery {
+  position: absolute;
+  right: 60px;
+  top: 68%;
+  z-index: 5;
+  max-height: 36vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201,168,76,0.3) transparent;
   direction: ltr;
+}
+.s2-hero-gallery::-webkit-scrollbar {
+  width: 3px;
+}
+.s2-hero-gallery::-webkit-scrollbar-track {
+  background: transparent;
+}
+.s2-hero-gallery::-webkit-scrollbar-thumb {
+  background: rgba(201,168,76,0.3);
+  border-radius: 2px;
+}
+.s2-hero-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  direction: rtl;
+}
+.s2-hero-gallery-grid .s2-hero-thumb {
+  width: 88px;
+  height: 88px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
+.s2-hero-gallery-grid .s2-hero-thumb:hover {
+  border-color: var(--gold);
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(201,168,76,0.25);
+  z-index: 2;
+}
+.s2-hero-gallery-grid .s2-hero-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content below the fold */
+.s2-content-wrap {
+  position: relative;
+  z-index: 1;
+  padding: 140px 0 120px;
+}
+.s2-content-wrap .s2-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* Mobile */
+@media(max-width:768px) {
+  .s2-hero-inner {
+    top: 64%;
+    left: 16px;
+    padding: 16px 16px 16px 24px;
+  }
+  .s2-hero-inner::before {
+    width: 2px;
+    height: 50%;
+    background: rgba(201,168,76,0.35);
+  }
+  .s2-hero-title {
+    font-size: clamp(18px, 4.5vw, 24px);
+  }
+  .s2-watch-btn {
+    right: 20px;
+    padding: 12px 22px;
+    font-size: 14px;
+    top: auto;
+    bottom: 80px;
+    transform: none;
+    border-radius: 50px;
+  }
+  .s2-hero-gallery {
+    right: 20px;
+    top: auto;
+    bottom: 148px;
+  }
+  .s2-hero-gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 6px;
+  }
+  .s2-hero-gallery-grid .s2-hero-thumb {
+    width: 65px;
+    height: 65px;
+  }
+  .s2-hero-scroll {
+    bottom: 10px;
+  }
+  .s2-content-wrap {
+    padding: 80px 0 60px;
+  }
+  .s2-content-wrap .s2-container {
+    padding: 0 20px;
+  }
 }
 .s2::before {
   content: '';
@@ -735,7 +1019,7 @@ img { max-width: 100%; display: block; }
   50% { box-shadow: 0 0 10px rgba(199,161,80,0.6); }
 }
 .s2-header-title {
-  font-size: clamp(24px, 2.4vw, 36px);
+  font-size: clamp(32px, 3.6vw, 56px);
   font-weight: 300;
   line-height: 1.2;
   color: #1A1A1A;
@@ -832,28 +1116,45 @@ img { max-width: 100%; display: block; }
   transition: opacity 0.4s ease;
 }
 .s2-feature .s2-play-icon {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.25);
   color: #fff;
-  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.4s ease;
-  backdrop-filter: blur(4px);
-  border: 2px solid rgba(255,255,255,0.3);
-  padding-right: 4px;
+  transition: all 0.5s cubic-bezier(0.25,0.1,0.1,1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 2px solid rgba(255,255,255,0.25);
   position: relative;
   z-index: 6;
 }
 .s2-feature .s2-play-btn:hover .s2-play-icon {
-  transform: scale(1.1);
+  transform: scale(1.08);
   background: var(--gold);
   border-color: var(--gold);
-  box-shadow: 0 0 60px rgba(199,161,80,0.4);
+  box-shadow: 0 0 80px rgba(199,161,80,0.5);
   color: #000;
+}
+.s2-feature .s2-play-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  height: 110px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  animation: s2-play-ring 3s ease-out infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+@keyframes s2-play-ring {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
 }
 .s2-feature .s2-play-btn.hidden {
   opacity: 0;
@@ -1056,14 +1357,13 @@ img { max-width: 100%; display: block; }
   border-radius: 50%;
   background: rgba(0,0,0,0.25);
   color: #fff;
-  font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 2px solid rgba(255,255,255,0.25);
-  padding-right: 3px;
 }
 .s2-row-visual .s2-play-btn:hover .s2-play-icon {
   transform: scale(1.1);
@@ -1174,7 +1474,7 @@ img { max-width: 100%; display: block; }
   padding: 120px 0;
   position: relative;
   overflow: hidden;
-  direction: ltr;
+  direction: rtl;
 }
 .s3::before {
   content: '';
@@ -1220,6 +1520,29 @@ img { max-width: 100%; display: block; }
 }
 .s3-image:hover img {
   transform: scale(1.04);
+}
+.s3-image-zoom-hint {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+  pointer-events: none;
+}
+.s3-image:hover .s3-image-zoom-hint {
+  opacity: 1;
 }
 /* Gold corner frames */
 .s3-image-corner-tl,
@@ -1365,7 +1688,7 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(6, 1fr);
   gap: 8px;
   margin-top: 18px;
-  direction: ltr;
+  direction: rtl;
 }
 .s3-thumb {
   width: 100%;
@@ -1443,7 +1766,7 @@ img { max-width: 100%; display: block; }
   padding: 100px 0;
   position: relative;
   overflow: hidden;
-  direction: ltr;
+  direction: rtl;
 }
 .portfolio::before {
   content: '';
@@ -1556,7 +1879,7 @@ img { max-width: 100%; display: block; }
 /* Projects Grid */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
 .pf-item {
@@ -1694,15 +2017,15 @@ img { max-width: 100%; display: block; }
 }
 
 /* Client Logo Cloud */
-.logo-cloud{display:flex;gap:40px;align-items:center;flex-wrap:wrap;justify-content:center;opacity:.4}
-.logo-cloud img{height:60px;width:auto;filter:grayscale(1);transition:all .4s}
-.logo-cloud img:hover{filter:grayscale(0);opacity:1}
+.logo-cloud{display:flex;gap:28px;align-items:center;flex-wrap:nowrap;justify-content:center}
+.logo-cloud img{height:85px;width:auto;opacity:.9;transition:all .3s}
+.logo-cloud img:hover{opacity:1;transform:scale(1.06);border-color:rgba(0,0,0,0.1)}
 
 /* ===== FOOTER ===== */
 .footer {
-  background: #FAFAF8;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  padding: 60px 0 0;
+  background: #0A0A0A;
+  border-top: 1px solid rgba(201,168,76,0.08);
+  padding: 70px 0 0;
   position: relative;
   overflow: hidden;
 }
@@ -1710,48 +2033,74 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1px;
-  height: 80px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  opacity: 0.3;
+  z-index: 2;
+}
+.footer-bg-motif {
+  position: absolute;
+  bottom: -120px;
+  right: -200px;
+  width: 1400px;
+  height: 1400px;
+  background: url('assets/chatbot-motif.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
 }
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
+  position: relative;
+  z-index: 1;
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-  gap: 40px;
+  grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+  gap: 50px;
+}
+.footer-brand {
+  position: relative;
 }
 .footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: 800;
-  color: #0A0A0A;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  display: inline-block;
 }
-.footer-logo .material-symbols-outlined {
-  color: var(--gold);
-  font-size: 24px;
-  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+.footer-logo img {
+  height: 116px;
+  width: auto;
+  display: block;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+.footer-logo:hover img {
+  opacity: 1;
 }
 .footer-desc {
-  color: rgba(0,0,0,0.45);
+  color: rgba(255,255,255,0.8);
   font-size: 13px;
-  line-height: 1.8;
-  margin-top: 14px;
-  max-width: 300px;
+  line-height: 1.9;
+  margin-top: 16px;
+  max-width: 320px;
+}
+.footer-tagline {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  font-weight: 500;
+  opacity: 0.85;
 }
 .footer h4 {
-  color: #0A0A0A;
+  color: #fff;
   font-size: 14px;
   font-weight: 700;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   position: relative;
   padding-bottom: 10px;
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
@@ -1761,7 +2110,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 24px;
+  width: 28px;
   height: 2px;
   background: var(--gold);
   border-radius: 2px;
@@ -1772,15 +2121,30 @@ img { max-width: 100%; display: block; }
   gap: 10px;
 }
 .footer-links a {
-  color: rgba(0,0,0,0.5);
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
   font-size: 13px;
   transition: color 0.3s ease, padding-right 0.3s ease;
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-links a::before {
+  content: '←';
+  color: var(--gold);
+  font-size: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(4px);
 }
 .footer-links a:hover {
   color: var(--gold);
   padding-right: 4px;
+}
+.footer-links a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
 }
 .footer-contact {
   display: flex;
@@ -1790,85 +2154,123 @@ img { max-width: 100%; display: block; }
 .footer-contact-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: rgba(0,0,0,0.5);
+  gap: 10px;
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
   font-size: 13px;
   transition: color 0.3s ease;
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  line-height: 1.5;
 }
 .footer-contact-item[style*="flex-start"] {
-  direction: ltr;
+  direction: rtl;
 }
 .footer-contact-item .material-symbols-outlined {
   font-size: 16px;
   color: var(--gold);
   font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+  flex-shrink: 0;
 }
 .footer-contact-item:hover {
-  color: var(--gold);
+  color: rgba(255,255,255,0.7);
 }
+.footer-contact-item a { color: inherit; text-decoration: none; }
+.footer-contact-item a:hover { color: var(--gold); }
 .footer-social {
   display: flex;
-  gap: 12px;
-  margin-top: 6px;
+  gap: 10px;
+  margin-top: 10px;
 }
 .footer-social a {
   width: 36px;
   height: 36px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(0,0,0,0.4);
+  color: rgba(255,255,255,0.6);
   transition: all 0.3s ease;
   text-decoration: none;
+  font-size: 16px;
 }
 .footer-social a:hover {
   border-color: var(--gold);
   color: var(--gold);
-  background: rgba(199,161,80,0.08);
-  transform: translateY(-2px);
+  background: rgba(201,168,76,0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(201,168,76,0.15);
 }
 
 .footer-registration {
-  text-align: center;
-  padding: 16px 24px;
-  margin: 0 auto;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  font-size: 11px;
-  color: rgba(0,0,0,0.3);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  max-width: 1320px;
+  padding: 20px 24px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
 }
-.footer-registration .reg-sep { color: rgba(0,0,0,0.1); }
+.footer-registration .reg-sep { color: rgba(255,255,255,0.06); }
 @media(max-width:480px) { .footer-registration { flex-direction: column; gap: 4px; } }
 
 .footer-bottom {
-  margin-top: 50px;
-  padding: 20px 0;
-  border-top: 1px solid rgba(0,0,0,0.05);
+  padding: 22px 0;
+  border-top: 1px solid rgba(255,255,255,0.03);
   text-align: center;
+  position: relative;
+}
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 .footer-bottom p {
-  color: rgba(0,0,0,0.35);
+  color: rgba(255,255,255,0.5);
   font-size: 12px;
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  margin: 0;
+}
+.footer-back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: 'Tajawal', sans-serif;
+}
+.footer-back-top:hover {
+  color: var(--gold);
+}
+.footer-back-top .material-symbols-outlined {
+  font-size: 16px;
 }
 @media (max-width: 768px) {
-  .footer { padding: 40px 0 0; }
-  .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+  .footer { padding: 50px 0 0; }
+  .footer-grid { grid-template-columns: 1fr; gap: 35px; }
   .footer-desc { max-width: 100%; }
   .footer h4::after { right: 50%; transform: translateX(50%); }
+  .footer-brand { text-align: center; }
+  .footer-logo img { margin: 0 auto; }
+  .footer-desc { margin-left: auto; margin-right: auto; }
+  .footer-tagline { text-align: center; }
+  .footer-links { align-items: center; }
+  .footer-links a::before { display: none; }
   .footer-links a:hover { padding-right: 0; }
   .footer-contact-item { justify-content: center; }
   .footer-social { justify-content: center; }
-  .footer-logo { justify-content: center; }
+  .footer-bottom-inner { flex-direction: column; gap: 8px; }
 }
 
 /* ===== VIDEO MODAL ===== */
@@ -1940,6 +2342,11 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
+
+/* Image Lightbox */
+.image-lightbox.active .image-lightbox-inner {
+  transform: scale(1);
+}
 .video-modal .video-modal-close:hover {
   background: var(--gold);
   border-color: var(--gold);
@@ -1960,6 +2367,35 @@ img { max-width: 100%; display: block; }
     font-size: 18px;
   }
 }</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Graphics House — جرافيكس هاوس",
+  "description": "هوية بصرية، مجسمات ذكية، إعلانات، وتجارب تفاعلية للمشاريع التجارية والسكنية.",
+  "url": "https://3dgraphicshouse.com",
+  "logo": "https://3dgraphicshouse.com/assets/logo-gold.png",
+  "image": "https://3dgraphicshouse.com/assets/favicon/og-image.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "SA"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "السعودية"
+  },
+  "priceRange": "﷼﷼﷼",
+  "telephone": "+966500000000",
+  "email": "info@3dgraphicshouse.com",
+  "sameAs": [
+    "https://www.instagram.com/3dgraphicshouse",
+    "https://www.linkedin.com/in/meklad/",
+    "https://www.youtube.com/user/3dghouse",
+    "https://www.facebook.com/3dghouse"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -1975,25 +2411,25 @@ img { max-width: 100%; display: block; }
       <span class="material-symbols-outlined">menu</span>
     </button>
     <nav class="nav" id="nav">
-      <a href="index-ar.html" class="nav-lang">AR</a>
-      <a href="/" class="nav-lang active">EN</a>
-      <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#vision">Vision</a>
-	      <a class="nav-link" href="pages/portfolio-en.html" style="color:#C9A84C">Our Work</a>
-      <div class="nav-item-drop" style="position:relative;display:inline-block">
-        <a class="nav-link" style="cursor:pointer">Services <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
-        <div class="nav-dropdown" style="position:absolute;top:100%;left:0;background:#1A1A1A;border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 50px rgba(0,0,0,.5);min-width:220px;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .3s ease;z-index:100">
-          <a href="pages/3d-animation-en.html" style="display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s;font-family:'Inter','Tajawal',sans-serif"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">movie</span>Cinematic CGI</a>
-          <a href="pages/smart-maquettes-en.html" style="display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s;font-family:'Inter','Tajawal',sans-serif"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">view_in_ar</span>Smart Maquettes</a>
-          <a href="pages/interactive-experiences-en.html" style="display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s;font-family:'Inter','Tajawal',sans-serif"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">touch_app</span>Interactive Experiences</a>
-          <a href="#" style="display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s;font-family:'Inter','Tajawal',sans-serif"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">gallery_thumbnail</span>Galleries &amp; Advertising Decor</a>
-          <a href="pages/media-production-en.html" style="display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s;font-family:'Inter','Tajawal',sans-serif"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">videocam</span>Media Production</a>
-        </div>
-      </div>
-      <a class="nav-link" href="#technology">Technology</a>
-      <a class="nav-link" href="pages/contact-us-en.html">Contact</a>
+      <a href="index-ar.html" class="nav-lang active">AR</a>
+      <a href="/" class="nav-lang">EN</a>
+      <a href="#about">نحن</a>
+      <a href="#vision">رؤية</a>
+      <a href="pages/portfolio.html" style="color:#C9A84C">أعمال</a>
+      <div class="nav-item-drop">
+	      <a class="nav-link" style="cursor:pointer">خدمات <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
+	      <div class="nav-dropdown">
+	        <a href="pages/3d-animation.html"><span class="material-symbols-outlined dd-icon">movie</span>سينمائي CGI</a>
+	        <a href="pages/smart-maquettes.html"><span class="material-symbols-outlined dd-icon">view_in_ar</span>مجسمات ذكية</a>
+	        <a href="pages/interactive-experiences.html"><span class="material-symbols-outlined dd-icon">touch_app</span>تجارب تفاعلية</a>
+	        <a href="pages/galleries-advertising.html"><span class="material-symbols-outlined dd-icon">gallery_thumbnail</span>جاليريات وديكور إعلاني</a>
+	        <a href="pages/media-production.html"><span class="material-symbols-outlined dd-icon">videocam</span>ميديا برودكشن</a>
+	      </div>
+	    </div>
+      <a href="#technology">تقنية</a>
+            <a href="pages/contact-us.html">تواصل</a>
     </nav>
-    <a href="#" class="logo">
+    <a href="/" class="logo">
       <img src="assets/logo-gold.png" alt="Graphics House" style="height:108px;width:auto;image-rendering:auto;filter:brightness(1.1) contrast(1.1);">
     </a>
   </div>
@@ -2004,7 +2440,7 @@ img { max-width: 100%; display: block; }
 
   <!-- Video Background -->
   <div class="hero-video-bg">
-    <video id="hero-vid" autoplay muted loop playsinline preload="auto"
+    <video id="hero-vid-ar" autoplay muted loop playsinline preload="auto"
            poster="https://3dgraphicshouse.com/wp-content/uploads/2024/04/Aloula-co-alnakheel-view06-e1746345746392.jpg"
            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;background:linear-gradient(135deg,#0a0800 0%,#1a1200 40%,#0d0d0d 100%)">
       <source src="assets/videos/GH-demo-reel-2025.mp4" type="video/mp4"/>
@@ -2022,10 +2458,10 @@ img { max-width: 100%; display: block; }
 
   <!-- Contact on the left -->
   <div class="absolute hidden lg:flex items-center z-20" style="left:0;top:50%;transform:translateY(-50%)">
-    <a href="pages/contact-us-en.html" style="display:flex;flex-direction:column;align-items:center;gap:27px;padding:42px 20px;text-decoration:none;background:rgba(0,0,0,.6);backdrop-filter:blur(12px);border-right:1px solid rgba(201,168,76,.22);transition:all .3s"
+    <a href="pages/contact-us.html" style="display:flex;flex-direction:column;align-items:center;gap:27px;padding:42px 20px;text-decoration:none;background:rgba(0,0,0,.6);backdrop-filter:blur(12px);border-right:1px solid rgba(201,168,76,.22);transition:all .3s"
        class="contact-strip">
       <span class="material-symbols-outlined" style="font-size:33px;color:#C9A84C;transition:color .3s">call</span>
-      <span style="writing-mode:vertical-lr;transform:rotate(180deg);font-size:16px;font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.55);transition:color .3s">Contact Us</span>
+      <span style="writing-mode:vertical-rl;font-size:16px;font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.55);transition:color .3s">تواصل</span>
     </a>
   </div>
 
@@ -2041,24 +2477,27 @@ img { max-width: 100%; display: block; }
 
       <!-- Title -->
       <h1 class="font-black text-center" style="margin:12px 0 0 0;font-size:clamp(24px,4.5vw,58px);color:#FAFAF8;letter-spacing:-.03em;line-height:1.2;text-shadow:0 4px 40px rgba(0,0,0,.6);font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif">
-        We design architectural identity systems and immersive sales experiences<br>
-        <span style="color:#C9A84C">for large-scale developments.</span>
+        نصنع الهوية البصرية<br>
+        والتجربة البيعية<br>
+        <span style="color:#C9A84C">للمشاريع الكبرى</span>
       </h1>
 
       <!-- Subtitle -->
       <p style="font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,.8);margin-top:12px;font-weight:400;max-width:640px;line-height:1.8;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.5);font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif">
-        We transform real estate projects into cinematic narratives, physical models, and interactive platforms that communicate value and accelerate pre-sales — before construction begins.
+        من الإظهار المعماري إلى التجربة العقارية المتكاملة.<br>
+        نحو جيل جديد من التجارب الذكية التي تقنع المستثمر.<br>
+        وتعظم قيمة المشروع.
       </p>
 
       <!-- Buttons -->
       <div class="flex flex-wrap gap-4 mt-6 justify-center">
         <a href="#services" class="inline-flex items-center gap-2.5 bg-[#C9A84C] text-[#1A1A1A] px-8 py-3.5 text-[12px] font-bold tracking-widest uppercase hover:scale-105 hover:shadow-[0_0_32px_rgba(201,168,76,.7)] shadow-[0_0_20px_rgba(201,168,76,.35)] transition-all no-underline" style="font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif">
           <span class="material-symbols-outlined" style="font-size:16px;line-height:1">play_arrow</span>
-          <span>Explore Our Services</span>
+          <span>استكشف خدمات</span>
         </a>
         <a href="#projects" class="inline-flex items-center gap-2.5 border border-white/50 text-white px-8 py-3.5 text-[12px] font-bold tracking-widest uppercase hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all no-underline backdrop-blur-sm" style="font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif">
           <span class="material-symbols-outlined" style="font-size:16px;line-height:1">collections</span>
-          <span>View Portfolio</span>
+          <span>مشاريع</span>
         </a>
       </div>
 
@@ -2066,27 +2505,27 @@ img { max-width: 100%; display: block; }
       <div class="hero-caps-bar" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:28px;padding:8px 0;width:100%">
         <div class="cap-bar-item">
           <img src="assets/icons/tech.png" alt="" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-          <span class="cap-bar-label">Media Production</span>
+          <span class="cap-bar-label">ميديا برودكشن</span>
         </div>
         <div class="cap-bar-dot"></div>
         <div class="cap-bar-item">
           <img src="assets/icons/gallery.png" alt="" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-          <span class="cap-bar-label">Galleries &amp; Decor</span>
+          <span class="cap-bar-label">جاليريات وديكور إعلاني</span>
         </div>
         <div class="cap-bar-dot"></div>
         <div class="cap-bar-item">
           <img src="assets/icons/models.png" alt="" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-          <span class="cap-bar-label">Smart Maquettes</span>
+          <span class="cap-bar-label">مجسمات ذكية</span>
         </div>
         <div class="cap-bar-dot"></div>
         <div class="cap-bar-item">
           <img src="assets/icons/interactive.png" alt="" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-          <span class="cap-bar-label">Interactive Experiences</span>
+          <span class="cap-bar-label">تجارب تفاعلية</span>
         </div>
         <div class="cap-bar-dot"></div>
         <div class="cap-bar-item">
           <img src="assets/icons/cinematic.png" alt="" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-          <span class="cap-bar-label">Cinematic CGI</span>
+          <span class="cap-bar-label">سينمائي CGI</span>
         </div>
       </div>
 
@@ -2103,49 +2542,73 @@ img { max-width: 100%; display: block; }
   </div>
 
   <!-- Slide counter -->
-  <div class="absolute bottom-6 right-6 md:right-10 z-20 tabular-nums" dir="ltr"
+  <div class="absolute bottom-6 left-6 md:left-10 z-20 tabular-nums" dir="ltr"
        style="font-family:monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.45)">
     <span id="hero-cur">01</span><span style="color:#C9A84C;margin:0 3px">/</span><span>05</span>
   </div>
 
 </section>
 
-  <!-- Intro Section -->
-  <section style="padding:100px 0;background:#FAFAF8;overflow:hidden">
-    <div style="max-width:1100px;margin:0 auto;padding:0 24px;text-align:center">
-      <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px 0;line-height:1.3;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif">
-        Graphics House (GH) is a visual production studio specialized in real estate marketing<br>
-        <span style="font-weight:700;color:#C9A84C">for large-scale developments.</span>
-      </h2>
-      <p style="font-size:clamp(15px,1.2vw,18px);color:#555;font-weight:400;line-height:1.7;margin:0;max-width:800px;margin:0 auto;letter-spacing:0.3px">
-        Cinematic CGI &bull; Architectural Visualization &bull; Interactive Experiences &bull; Smart Maquettes &bull; Media Production
-      </p>
-    </div>
-  </section>
 
 
 
 
 
-    <!-- Split Row 2: Image (right) | Text (left) -->
-    <div class="s2-row s2-fade s2-d4">
-      <!-- Image side (first = right in RTL) -->
-      <div class="s2-row-visual" id="s2VideoWrap3">
-        <div class="s2-corner-tl"></div>
-        <div class="s2-corner-br"></div>
-        <video autoplay loop muted playsinline poster="assets/news/makkah-charter-08.jpeg">
-          <source src="assets/videos/GH-Real-estate-services.mp4" type="video/mp4">
-        </video>
+
+
+
+<section style="background:#FAFAF8;padding:80px 0;overflow:hidden">
+  <div class="s2-container">
+
+      <!-- Split Row 1: Text (right) | Image (left) -->
+      <div class="s2-row s2-fade s2-d3">
+        <div class="s2-row-text">
+          <div class="s2-row-eyebrow">هوية معمارية موحّدة</div>
+          <h3 class="s2-row-title">
+            الهوية المعمارية ليست رفاهية بصرية<br>
+            <em>بل استثمار في قرار العميل</em>
+          </h3>
+          <p class="s2-row-desc">
+            عندما يتنقل المستثمر أو المشتري بين الإظهار السينمائي، المجسمات الذكية،
+            وصالة العرض — ويجد لغة بصرية واحدة، ونفس المستوى من الدقة والاتقان —
+            هنا تتشكل الثقة بالقرار.
+          </p>
+          <p class="s2-row-desc s2-row-tagline">
+            جرافيكس هاوس توحد الهوية المعمارية عبر كل أدواتك البيعية
+          </p>
+        </div>
+        <div class="s2-row-visual" id="s2VideoWrap2">
+          <div class="s2-corner-tl"></div>
+          <div class="s2-corner-br"></div>
+          <img src="assets/news/makkah-charter-06.jpeg" alt="Graphics House Branding">
+        </div>
       </div>
-      <!-- Text side (second = left in RTL) -->
-      <div class="s2-row-text">
-        <div style="font-size:clamp(24px,2.4vw,36px);font-weight:300;letter-spacing:0;text-transform:none;color:#0A0A0A;margin-bottom:24px;line-height:1.3;display:block">We turn developments into immersive <span style="font-weight:700;color:#C9A84C">visual sales systems.</span></div>
-        <p class="s2-row-desc" style="font-size:18px">
-          At Graphics House (GH), we transform architectural projects into complete visual ecosystems that combine cinematic storytelling, physical modeling, and interactive experiences.
-        </p>
-        <p class="s2-row-desc s2-row-tagline">
-          Our work is designed not just to visualize projects — but to help them communicate value, attract investors, and support pre-sales before construction begins.
-        </p>
+
+      <!-- Split Row 2: Image (right) | Text (left) -->
+      <div class="s2-row s2-fade s2-d4">
+        <div class="s2-row-visual" id="s2VideoWrap3">
+          <div class="s2-corner-tl"></div>
+          <div class="s2-corner-br"></div>
+          <video autoplay loop muted playsinline poster="assets/news/makkah-charter-08.jpeg">
+            <source src="assets/videos/GH-Real-estate-services.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="s2-row-text">
+          <div class="s2-row-eyebrow">تجارب استثنائية</div>
+          <h3 class="s2-row-title">
+            من الإظهار السينمائي إلى<br>
+            <em>التجربة العقارية المتكاملة</em>
+          </h3>
+          <p class="s2-row-desc">
+            نحو جيل جديد من التجارب الذكية التي تقنع المستثمر وتعظم قيمة المشروع.
+            نصنع تجارب معمارية واستثمارية ترفع قيمة المشروع وتعزز قرارات البيع والاستثمار.
+          </p>
+          <p class="s2-row-desc s2-row-tagline">
+            نصنع التجارب التي تسبق بناء المدن
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -2157,43 +2620,44 @@ img { max-width: 100%; display: block; }
 
     <!-- Section Heading -->
     <div style="text-align:center;margin-bottom:40px">
-      <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 12px 0;line-height:1.3;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif">Selected <span style="font-weight:700;color:#C9A84C">Developments</span></h2>
-      <p style="font-size:clamp(15px,1.1vw,17px);color:#666;font-weight:400;line-height:1.7;margin:0;max-width:680px;margin:0 auto">A selection of real estate projects where we built complete visual and immersive systems.</p>
+      <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 12px 0;line-height:1.3;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif">تطويرات <span style="font-weight:700;color:#C9A84C">مختارة</span></h2>
+      <p style="font-size:clamp(15px,1.1vw,17px);color:#666;font-weight:400;line-height:1.7;margin:0;max-width:680px;margin:0 auto">مجموعة من المشاريع التي حولنا فيها المفاهيم المعمارية إلى تجارب بصرية وبيعية immersive متكاملة.</p>
     </div>
 
     <div class="s3-grid s2-fade s2-d2">
       <!-- Text side — comes first in RTL (appears on right) -->
       <div class="s3-text">
-        <div class="s3-eyebrow">Makkah Charter Project</div>
+        <div class="s3-eyebrow">مشروع ميثاق مكة</div>
         <h2 class="s3-title">
-          Humanity Exhibition — Muslim World League, Jeddah<br>
-          <em>An integrated interactive experience from design to execution</em>
+          معرض الإنسانية لرابطة العالم الإسلامي — بهليتون جدة<br>
+          <em>تجربة تفاعلية متكاملة من التصميم إلى التنفيذ</em>
         </h2>
         <p class="s3-desc">
-          We designed and executed the complete visual identity and interactive experience for the Muslim World League headquarters
-          In Makkah, from interior design and execution to the latest smart interactive systems and custom software.
+          قمنا بتصميم وتنفيذ الهوية البصرية والتجربة التفاعلية الكاملة لمقر رابطة العالم الإسلامي
+          في مكة المكرمة، بدءاً من تصميم الديكور الداخلي وتنفيذه، وصولاً إلى أحدث أنظمة
+          التجارب التفاعلية الذكية والبرمجيات المخصصة.
         </p>
         <ul class="s3-list">
           <li>
             <span class="s3-list-icon"></span>
-            <span>Complete interior design and execution for the headquarters</span>
+            <span>تصميم وتنفيذ الديكور الداخلي للمقر بالكامل</span>
           </li>
           <li>
             <span class="s3-list-icon"></span>
-            <span>Smart interactive maquettes with an operational program displayed on interactive screens</span>
+            <span>إنتاج مجسمات تفاعلية ذكية مع برنامج تشغيلي يعرض على شاشات تفاعلية</span>
           </li>
           <li>
             <span class="s3-list-icon"></span>
-            <span>Interactive software for league news worldwide</span>
+            <span>برمجيات تفاعلية لأخبار الرابطة حول العالم</span>
           </li>
           <li>
             <span class="s3-list-icon"></span>
-            <span>Memorial photo program on interactive screen</span>
+            <span>برنامج تصوير تذكاري على شاشة تفاعلية</span>
           </li>
         </ul>
         <div class="s3-cta s2-fade s2-d3">
           <a href="#projects" class="s3-cta-btn">
-            More Successful Projects
+            مزيد من مشاريع
             <span class="s3-cta-arrow">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
             </span>
@@ -2202,12 +2666,15 @@ img { max-width: 100%; display: block; }
       </div>
       <!-- Image side — comes second in RTL (appears on left) -->
       <div class="s3-image-wrap">
-        <div class="s3-image" id="s3MainImage">
-          <img id="s3MainImg" src="assets/news/makkah-charter-01.jpeg" alt="Makkah Charter Project — Muslim World League">
+        <div class="s3-image" id="s3MainImage" onclick="openImageLightbox()" style="cursor:pointer">
+          <img id="s3MainImg" src="assets/news/makkah-charter-01.jpeg" alt="مشروع ميثاق مكة — رابطة العالم الإسلامي">
           <div class="s3-image-corner-tl"></div>
           <div class="s3-image-corner-br"></div>
           <div class="s3-image-corner-tr"></div>
           <div class="s3-image-corner-bl"></div>
+          <div class="s3-image-zoom-hint">
+            <span class="material-symbols-outlined">zoom_in</span>
+          </div>
         </div>
         <!-- Thumbnails below main image -->
         <div class="s3-thumbs" id="s3Thumbs">
@@ -2255,115 +2722,250 @@ img { max-width: 100%; display: block; }
 </section>
 
 
-<!-- ===== SECTION 2: BRAND POSITIONING ===== -->
+
+
+
+
+
+
+<!-- ===== SECTION 2: BRAND POSITIONING — FULL-SCREEN HERO ===== -->
 <section class="s2" id="about">
-  <div class="s2-container">
-    
-    <!-- Full-width Feature Image -->
-    <div class="s2-feature s2-fade s2-d2">
-      <div class="s2-feature-overlay"></div>
+
+  <!-- Full-screen hero with image background + text overlay + hotspots -->
+  <div class="s2-hero-wrap">
+
+    <!-- Background Image -->
+    <div class="s2-hero-bg">
       <img src="assets/news/makkah-charter-04.jpeg" alt="Graphics House">
-      <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="Play video">
-        <span class="s2-play-icon">▶</span>
-      </button>
-      <div class="s2-feature-caption">
-        <span>We build experiences that <em>precede the building of cities</em></span>
+      <div class="s2-hero-overlay"></div>
+    </div>
+
+    <!-- Centered Text Overlay — 3 lines + description -->
+    <div class="s2-hero-inner">
+      <h2 class="s2-hero-title">
+        نحن لسنا ستوديو ابداع فقط ، بل نبني<br>
+        <em>الهوية البصرية والتجربة البيعية</em><br>
+        للمشاريع الكبري
+      </h2>
+      <p class="s2-hero-desc">
+        تجمع جرافيكس هاوس بين الإظهار السينمائي، الأنظمة التفاعلية، المجسمات الذكية،
+        وتقنيات العرض الحديثة لصناعة تجارب معمارية واستثمارية ترفع قيمة المشروع وتعزز قرارات البيع والاستثمار.
+      </p>
+    </div>
+
+    <!-- Interactive Hotspots (on the background image) -->
+    <div class="hotspot hotspot-1 hotspot-left" style="top:56%;left:65%" data-title="المجسم التفاعلي">
+      <div class="hotspot-pulse"></div>
+      <div class="hotspot-dot">
+        <span class="material-symbols-outlined">touch_app</span>
+      </div>
+      <div class="hotspot-tooltip">
+        <div class="hotspot-tooltip-arrow"></div>
+        <span class="hotspot-badge">مجسم ذكي</span>
+        <h4>مجسم تفاعلي لمشاريع الرابطة</h4>
+        <p>مجسم معماري تفاعلي ثلاثي الأبعاد لمشاريع رابطة العالم الإسلامي حول العالم، مع إضاءة ديناميكية تبرز تفاصيل كل مشروع.</p>
       </div>
     </div>
 
+    <div class="hotspot hotspot-2 hotspot-left" style="top:38%;left:84%" data-title="برنامج تشغيلي">
+      <div class="hotspot-pulse"></div>
+      <div class="hotspot-dot">
+        <span class="material-symbols-outlined">devices</span>
+      </div>
+      <div class="hotspot-tooltip">
+        <div class="hotspot-tooltip-arrow"></div>
+        <span class="hotspot-badge">برنامج تفاعلي</span>
+        <h4>برنامج تشغيلي للتحكم في المجسم</h4>
+        <p>برنامج تفاعلي يعرض تفاصيل المشاريع على شاشة اللمس ويتحكم في إضاءة المجسم وعرض المعلومات بشكل ديناميكي.</p>
+      </div>
+    </div>
+
+    <div class="hotspot hotspot-3 hotspot-below" style="top:32%;left:50%" data-title="أخبار الرابطة">
+      <div class="hotspot-pulse"></div>
+      <div class="hotspot-dot">
+        <span class="material-symbols-outlined">public</span>
+      </div>
+      <div class="hotspot-tooltip">
+        <div class="hotspot-tooltip-arrow"></div>
+        <span class="hotspot-badge">برنامج أخبار</span>
+        <h4>برنامج أخبار الرابطة حول العالم</h4>
+        <p>برنامج تفاعلي يعرض آخر أخبار وفعاليات ومبادرات رابطة العالم الإسلامي في مختلف قارات العالم.</p>
+      </div>
+    </div>
+
+    <div class="hotspot hotspot-4 hotspot-below" style="top:32%;left:28%" data-title="تصوير تذكاري">
+      <div class="hotspot-pulse"></div>
+      <div class="hotspot-dot">
+        <span class="material-symbols-outlined">photo_camera</span>
+      </div>
+      <div class="hotspot-tooltip">
+        <div class="hotspot-tooltip-arrow"></div>
+        <span class="hotspot-badge">تصوير تفاعلي</span>
+        <h4>برنامج تصوير تذكاري</h4>
+        <p>شاشة تفاعلية للتصوير التذكاري مع إطارات مخصصة للفعالية، تسمح للزوار بالتقاط صور تذكارية ومشاركتها فوراً.</p>
+      </div>
+    </div>
+
+    <!-- Play Button -->
+    <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="تشغيل الفيديو">
+      <span class="s2-play-icon">
+        <span class="material-symbols-outlined" style="font-size:38px;line-height:1">play_arrow</span>
+      </span>
+    </button>
+
+    <!-- Watch Video Button (right side) -->
+    <button class="s2-watch-btn" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="شاهد الفيديو">
+      <span class="material-symbols-outlined" style="font-size:20px">play_circle</span>
+      شاهد الفيديو
+    </button>
+
+    <!-- Thumbnail Gallery (right side) -->
+    <div class="s2-hero-gallery">
+      <div class="s2-hero-gallery-grid">
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-01.jpeg')">
+          <img src="assets/news/makkah-charter-01.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-02.jpeg')">
+          <img src="assets/news/makkah-charter-02.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-03.jpeg')">
+          <img src="assets/news/makkah-charter-03.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-04.jpeg')">
+          <img src="assets/news/makkah-charter-04.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-05.jpeg')">
+          <img src="assets/news/makkah-charter-05.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-06.jpeg')">
+          <img src="assets/news/makkah-charter-06.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-07.jpeg')">
+          <img src="assets/news/makkah-charter-07.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-08.jpeg')">
+          <img src="assets/news/makkah-charter-08.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-09.jpeg')">
+          <img src="assets/news/makkah-charter-09.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-10.jpeg')">
+          <img src="assets/news/makkah-charter-10.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-11.jpeg')">
+          <img src="assets/news/makkah-charter-11.jpeg" alt="">
+        </div>
+        <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-12.jpeg')">
+          <img src="assets/news/makkah-charter-12.jpeg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- Caption -->
+    <div class="s2-feature-caption">
+      <span>نصنع التجارب التي <em>تسبق بناء المدن</em></span>
+    </div>
 
   </div>
+
 </section>
 
 
+
+
+
+
+
+
+
 <!-- ===== SERVICES SECTION (like English: black bg, dark cards) ===== -->
-<section dir="ltr" style="padding:100px 0;background:#000000;overflow:hidden;position:relative">
+<section dir="rtl" style="padding:100px 0;background:#000000;overflow:hidden;position:relative">
   <div style="max-width:1380px;margin:0 auto;padding:0 24px;position:relative;z-index:2">
 
     <!-- Section Heading -->
     <div class="reveal" style="text-align:center;margin-bottom:50px">
-      <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:200;color:#FAFAF8;margin:0;line-height:1.2;text-shadow:0 0 10px rgba(0,0,0,.3)">OUR SERVICES <span style="font-weight:900;color:#C9A84C">(Refined Version)</span></h2>
+      <h2 style="font-size:clamp(32px,4vw,45px);font-weight:200;color:#FAFAF8;margin:0;line-height:1;text-shadow:0 0 10px rgba(0,0,0,.3)">خدمات<span style="font-weight:900;color:#C9A84C">نا</span></h2>
     </div>
 
     <!-- Cards Grid -->
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:15px" id="svc-grid-ar">
 
-      <!-- S1: Cinematic CGI -->
-<a href="pages/3d-animation-en.html" style="text-decoration:none;display:block">
-      <div class="reveal svc-card-ar" style="display:block;background:#151515;padding:40px 34px 30px 34px;text-decoration:none;transition:all .4s ease;position:relative;overflow:hidden;border-style:solid;border-width:0 0 0 3px;border-color:#151515"
+      <!-- S1: سينمائي CGI -->
+      <a href="pages/3d-animation.html" style="text-decoration:none;display:block"><div class="reveal svc-card-ar" style="display:block;background:#151515;padding:40px 34px 30px 34px;text-decoration:none;transition:all .4s ease;position:relative;overflow:hidden;border-style:solid;border-width:0 3px 0 0;border-color:#151515"
         onmouseover="this.style.borderColor='#DAAD3D';this.style.boxShadow='0 15px 35px rgba(0,0,0,.4)'" onmouseout="this.style.borderColor='#151515';this.style.boxShadow='none'">
-        <img src="assets/icons/cinematic.png" alt="Cinematic CGI" style="width:45px;height:45px;display:block;margin-bottom:18px;text-align:left;object-fit:contain">
-        <h3 style="font-size:23px;font-weight:500;color:#FFFFFF;margin:0 0 10px 0;line-height:26px;text-align:left">Cinematic CGI</h3>
-        <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:left;opacity:0.85">Ultra-high-fidelity architectural films that simulate the full project experience, translating masterplans into emotional visual narratives that captivate investors and support pre-sales decision-making.</p>
-        <div style="margin-top:16px;text-align:left">
+        <img src="assets/icons/cinematic.png" alt="سينمائي CGI" style="width:45px;height:45px;display:block;margin-bottom:18px;text-align:right;object-fit:contain">
+        <h3 style="font-size:23px;font-weight:500;color:#FFFFFF;margin:0 0 10px 0;line-height:26px;text-align:right">سينمائي CGI</h3>
+        <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:right;opacity:0.85">إظهار معماري سينمائي فائق الجودة يحاكي تجربة المشروع بالكامل عبر أفلام تحوّل المخططات إلى سرديات بصرية عاطفية مقنعة للمستثمرين.</p>
+        <div style="margin-top:16px;text-align:right">
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#DAAD3D;transition:all .3s">
-            <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
-            Learn More
+            <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>
+            اعرف المزيد
           </span>
         </div>
       </div></a>
 
-      <!-- S2: Interactive Experiences -->
-<a href="pages/interactive-experiences-en.html" style="text-decoration:none;display:block">
-      <div class="reveal r2 svc-card-ar" style="display:block;background:#151515;padding:40px 34px 30px 34px;text-decoration:none;transition:all .4s ease;position:relative;overflow:hidden;border-style:solid;border-width:0 0 0 3px;border-color:#151515"
+      <!-- S2: مجسمات ذكية -->
+<a href="pages/smart-maquettes.html" style="text-decoration:none;display:block">
+      <div class="reveal r1 svc-card-ar" style="display:block;background:#151515;padding:40px 34px 30px 34px;text-decoration:none;transition:all .4s ease;position:relative;overflow:hidden;border-style:solid;border-width:0 3px 0 0;border-color:#151515"
         onmouseover="this.style.borderColor='#DAAD3D';this.style.boxShadow='0 15px 35px rgba(0,0,0,.4)'" onmouseout="this.style.borderColor='#151515';this.style.boxShadow='none'">
-        <img src="assets/icons/interactive.png" alt="Interactive Experiences" style="width:45px;height:45px;display:block;margin-bottom:18px;text-align:left;object-fit:contain">
-        <h3 style="font-size:23px;font-weight:500;color:#FFFFFF;margin:0 0 10px 0;line-height:26px;text-align:left">Interactive Experiences</h3>
-        <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:left;opacity:0.85">Advanced interactive systems that present real estate projects through touchscreens, virtual tours, unit comparisons, and real-time exploration — enhancing engagement and accelerating investment decisions.</p>
-        <div style="margin-top:16px;text-align:left">
+        <img src="assets/icons/models.png" alt="مجسمات ذكية" style="width:45px;height:45px;display:block;margin-bottom:18px;text-align:right;object-fit:contain">
+        <h3 style="font-size:23px;font-weight:500;color:#FFFFFF;margin:0 0 10px 0;line-height:26px;text-align:right">مجسمات ذكية</h3>
+        <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:right;opacity:0.85">مجسمات معمارية ذكية بتقنيات حديثة تجمع بين الحرفية اليدوية والإسقاط الضوئي والبيانات الحية، لتقديم تجربة بصرية ورقمية تفاعلية فريدة.</p>
+        <div style="margin-top:16px;text-align:right">
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#DAAD3D;transition:all .3s">
             <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>
-            Learn More
+            اعرف المزيد
+          </span>
+        </div>
+      </div>
+</a>
+
+      <!-- S3: تجارب تفاعلية -->
+<a href="pages/interactive-experiences.html" style="text-decoration:none;display:block">
+      <div class="reveal r2 svc-card-ar" style="display:block;background:#151515;padding:40px 34px 30px 34px;text-decoration:none;transition:all .4s ease;position:relative;overflow:hidden;border-style:solid;border-width:0 3px 0 0;border-color:#151515"
+        onmouseover="this.style.borderColor='#DAAD3D';this.style.boxShadow='0 15px 35px rgba(0,0,0,.4)'" onmouseout="this.style.borderColor='#151515';this.style.boxShadow='none'">
+        <img src="assets/icons/interactive.png" alt="تجارب تفاعلية" style="width:45px;height:45px;display:block;margin-bottom:18px;text-align:right;object-fit:contain">
+        <h3 style="font-size:23px;font-weight:500;color:#FFFFFF;margin:0 0 10px 0;line-height:26px;text-align:right">تجارب تفاعلية</h3>
+        <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:right;opacity:0.85">أنظمة تفاعلية متطورة تعرض المشاريع عبر شاشات لمس وجولات افتراضية ومقارنات وحجز فوري، لتعزيز قرارات البيع والاستثمار.</p>
+        <div style="margin-top:16px;text-align:right">
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#DAAD3D;transition:all .3s">
+            <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>
+            اعرف المزيد
           </span>
         </div>
       </div></a>
 
-      <!-- S3: Smart Maquettes -->
-<a href="pages/smart-maquettes-en.html" style="text-decoration:none;display:block">
-      <div class="reveal r1 svc-card-ar" style="display:block;background:#151515;padding:40px 34px 30px 34px;text-decoration:none;transition:all .4s ease;position:relative;overflow:hidden;border-style:solid;border-width:0 0 0 3px;border-color:#151515"
+      <!-- S4: جاليريات متكاملة -->
+<a href="pages/galleries-advertising.html" style="text-decoration:none;display:block">
+      <div class="reveal r1 svc-card-ar" style="display:block;background:#151515;padding:40px 34px 30px 34px;text-decoration:none;transition:all .4s ease;position:relative;overflow:hidden;border-style:solid;border-width:0 3px 0 0;border-color:#151515"
         onmouseover="this.style.borderColor='#DAAD3D';this.style.boxShadow='0 15px 35px rgba(0,0,0,.4)'" onmouseout="this.style.borderColor='#151515';this.style.boxShadow='none'">
-        <img src="assets/icons/models.png" alt="Smart Maquettes" style="width:45px;height:45px;display:block;margin-bottom:18px;text-align:left;object-fit:contain">
-        <h3 style="font-size:23px;font-weight:500;color:#FFFFFF;margin:0 0 10px 0;line-height:26px;text-align:left">Smart Maquettes</h3>
-        <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:left;opacity:0.85">Hybrid physical-digital models combining craftsmanship with projection mapping and live data integration, creating a unique interactive experience for high-level presentations and exhibitions.</p>
-        <div style="margin-top:16px;text-align:left">
+        <img src="assets/icons/gallery.png" alt="جاليريات متكاملة" style="width:45px;height:45px;display:block;margin-bottom:18px;text-align:right;object-fit:contain">
+        <h3 style="font-size:23px;font-weight:500;color:#FFFFFF;margin:0 0 10px 0;line-height:26px;text-align:right">جاليريات متكاملة وديكور إعلاني</h3>
+        <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:right;opacity:0.85">تصميم وتنفيذ صالات عرض فاخرة متكاملة مع ديكور إعلاني احترافي، تتحول إلى معارض فنية تفاعلية تروي قصة المشروع وتعزز مكانة العلامة التجارية.</p>
+        <div style="margin-top:16px;text-align:right">
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#DAAD3D;transition:all .3s">
             <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>
-            Learn More
+            اعرف المزيد
           </span>
         </div>
       </div></a>
 
-      <!-- S4: Media Production -->
-<a href="pages/media-production-en.html" style="text-decoration:none;display:block">
-      <div class="reveal r2 svc-card-ar" style="display:block;background:#151515;padding:40px 34px 30px 34px;text-decoration:none;transition:all .4s ease;position:relative;overflow:hidden;border-style:solid;border-width:0 0 0 3px;border-color:#151515"
+      <!-- S5: ميديا برودكشن -->
+      <a href="pages/media-production.html" style="text-decoration:none;display:block"><div class="reveal r2 svc-card-ar" style="display:block;background:#151515;padding:40px 34px 30px 34px;text-decoration:none;transition:all .4s ease;position:relative;overflow:hidden;border-style:solid;border-width:0 3px 0 0;border-color:#151515"
         onmouseover="this.style.borderColor='#DAAD3D';this.style.boxShadow='0 15px 35px rgba(0,0,0,.4)'" onmouseout="this.style.borderColor='#151515';this.style.boxShadow='none'">
-        <img src="assets/icons/tech.png" alt="Media Production" style="width:45px;height:45px;display:block;margin-bottom:18px;text-align:left;object-fit:contain">
-        <h3 style="font-size:23px;font-weight:500;color:#FFFFFF;margin:0 0 10px 0;line-height:26px;text-align:left">Media Production</h3>
-        <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:left;opacity:0.85">End-to-end cinematic and multimedia production — including filming, editing, animation, and motion graphics — designed to transform ideas into compelling visual stories.</p>
-        <div style="margin-top:16px;text-align:left">
+        <img src="assets/icons/tech.png" alt="ميديا برودكشن" style="width:45px;height:45px;display:block;margin-bottom:18px;text-align:right;object-fit:contain">
+        <h3 style="font-size:23px;font-weight:500;color:#FFFFFF;margin:0 0 10px 0;line-height:26px;text-align:right">ميديا برودكشن</h3>
+        <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:right;opacity:0.85">خدمات متكاملة في الإنتاج السينمائي والوسائط المتعددة، من التصوير والمونتاج إلى الأنيميشن والموشن جرافيك، نصنع محتوى بصرياً يحوّل الأفكار إلى قصص سينمائية.</p>
+        <div style="margin-top:16px;text-align:right">
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#DAAD3D;transition:all .3s">
             <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>
-            Learn More
-          </span>
-        </div>
-      </div></a>
-<!-- S5: Galleries &amp; Spatial Design -->
-<a href="pages/galleries-advertising-en.html" style="text-decoration:none;display:block">
-      <div class="reveal r1 svc-card-ar" style="display:block;background:#151515;padding:40px 34px 30px 34px;text-decoration:none;transition:all .4s ease;position:relative;overflow:hidden;border-style:solid;border-width:0 0 0 3px;border-color:#151515"
-        onmouseover="this.style.borderColor='#DAAD3D';this.style.boxShadow='0 15px 35px rgba(0,0,0,.4)'" onmouseout="this.style.borderColor='#151515';this.style.boxShadow='none'">
-        <img src="assets/icons/gallery.png" alt="Galleries &amp; Spatial Design" style="width:45px;height:45px;display:block;margin-bottom:18px;text-align:left;object-fit:contain">
-        <h3 style="font-size:23px;font-weight:500;color:#FFFFFF;margin:0 0 10px 0;line-height:26px;text-align:left">Galleries &amp; Spatial Design</h3>
-        <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:left;opacity:0.85">Design and execution of premium sales galleries and showrooms, transformed into immersive spatial experiences that communicate the project story and elevate brand perception.</p>
-        <div style="margin-top:16px;text-align:left">
-          <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#DAAD3D;transition:all .3s">
-            <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>
-            Learn More
+            اعرف المزيد
           </span>
         </div>
       </div></a>
 
-      
-    </div>  </div>
+    </div>
+  </div>
 
   <style>
     .svc-card-ar {
@@ -2381,165 +2983,235 @@ img { max-width: 100%; display: block; }
   </style>
 </section>
 
-<!-- ===== SERVICE DETAILS ===== -->
 
-<!-- Service Detail 1: Architectural Visualization -->
-<section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="ltr">
+
+<!-- ===== SERVICE DETAILS — بالعربية ===== -->
+
+<!-- Service Detail 1: Architectural Rendering — صورة يمين / نص يسار (عكس s3) -->
+<section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="rtl">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px">
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
         <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop&auto=format" alt="Architectural Visualization" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
+          <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop&auto=format" alt="الإظهار المعماري ثلاثي الأبعاد" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
         </div>
       </div>
       <div>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">CORE SYSTEMS / 01</span>
-        <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px;line-height:1.3;letter-spacing:0">Architectural Visualization</h2>
-        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">Photorealistic imagery that brings architectural visions to life.</p>
-        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">Premium cinematic renderings showcasing materials, lighting, and spatial quality to communicate design intent and accelerate approvals for luxury developments.</p>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">الإظهار المعماري</span>
+        <h2 style="font-size:clamp(30px,3.5vw,50px);font-weight:900;color:#535353;margin:0 0 16px;line-height:1.1;letter-spacing:-.02em">الإظهار المعماري ثلاثي الأبعاد</h2>
+        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">صور فوتورياليستية تحيي الرؤى المعمارية بواقعية تأسر الخيال.</p>
+        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">صور ثابتة عالية الجودة تعرض المواد والإضاءة والأنسجة بدقة سينمائية. كل صورة تُصنع بعناية فائقة لتوصيل القصد التصميمي، والارتقاء بالعروض التقديمية، وتسريع اعتماد المشاريع العقارية الفاخرة.</p>
         <div style="margin-top:28px">
-          <a href="pages/3d-animation-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
+          <a href="pages/3d-animation.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Service Detail 2: Cinematic CGI Production -->
-<section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="ltr">
+<!-- Service Detail 2: Cinematic CGI — نص يمين / فيديو يسار (عكس d1) -->
+<section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="rtl">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px">
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">CORE SYSTEMS / 02</span>
-        <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px;line-height:1.3;letter-spacing:0">Cinematic CGI Production</h2>
-        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">Ultra-high-fidelity architectural films that transform masterplans into emotional narratives.</p>
-        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">From aerial flyovers to immersive walkthroughs, we create cinematic experiences that communicate scale, vision, and investment value.</p>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">الإنتاج السينمائي</span>
+        <h2 style="font-size:clamp(30px,3.5vw,50px);font-weight:900;color:#535353;margin:0 0 16px;line-height:1.1;letter-spacing:-.02em">الأنيميشن ثلاثي الأبعاد والإنتاج السينمائي</h2>
+        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">سرد سينمائي يحوّل المخططات هوم إلى حكايات بصرية عاطفية تأسر المشاهد.</p>
+        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">أفلام معمارية فائقة الدقة تحاكي تجربة المشروع بالكامل. من التحليقات البانورامية الواسعة إلى التجول الداخلي الحميمي، تترجم أعمال السينمائية المخططات المعقدة إلى رحلات بصرية مقنعة تأسر المستثمرين وأصحاب المصلحة.</p>
         <div style="margin-top:28px">
-          <a href="pages/media-production-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
+          <a href="pages/media-production.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
         </div>
       </div>
       <div>
         <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=600&fit=crop&auto=format" style="width:100%;height:auto;aspect-ratio:4/3;min-height:320px;object-fit:cover;display:block">
+          <video id="s2VideoPlayer" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&auto=format" style="width:100%;height:auto;aspect-ratio:4/3;min-height:320px;object-fit:cover;display:block">
             <source src="assets/videos/3D-Architectural-visualisation.mp4" type="video/mp4">
           </video>
+          <!-- Sound toggle button -->
+          <div onclick="event.stopPropagation(); toggleS2Sound()" id="s2SoundBtn" style="position:absolute;bottom:16px;right:16px;z-index:5;cursor:pointer;pointer-events:auto;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.3);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;transition:all 0.3s ease" onmouseover="this.style.background='rgba(0,0,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.3)'">
+            <span id="s2SoundIcon" class="material-symbols-outlined" style="font-size:16px;color:#fff">volume_off</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Service Detail 3: Smart Architectural Maquettes -->
-<section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="ltr">
+<!-- Service Detail 3: Smart Maquettes — صورة يمين / نص يسار (عكس d2) -->
+<section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="rtl">
+  <div style="max-width:1280px;margin:0 auto;padding:0 24px">
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+      <div>
+        <div style="position:relative;overflow:visible;border:1px solid rgba(26,26,26,.04);background:#F0EFEA;cursor:pointer" onclick="openMaquetteLightbox()">
+          <img id="maquetteMainImg" src="https://3dgraphicshouse.com/wp-content/uploads/2026/03/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" alt="المجسمات المعمارية الذكية" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
+
+          <!-- Zoom hint -->
+          <div style="position:absolute;bottom:16px;left:16px;z-index:5;pointer-events:none;opacity:0.7;transition:opacity 0.3s">
+            <span class="material-symbols-outlined" style="font-size:20px;color:rgba(255,255,255,0.7);background:rgba(0,0,0,0.3);backdrop-filter:blur(4px);width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,0.1)">zoom_in</span>
+          </div>
+
+          <!-- Video play button (bottom-right, away from hotspots) -->
+          <div onclick="event.stopPropagation(); openMaquetteVideo()" style="position:absolute;bottom:16px;right:16px;z-index:6;cursor:pointer;pointer-events:auto;width:44px;height:44px;border-radius:50%;background:rgba(201,168,76,0.9);backdrop-filter:blur(4px);border:2px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;box-shadow:0 0 20px rgba(201,168,76,0.3)" onmouseover="this.style.transform='scale(1.15)';this.style.background='#C9A84C'" onmouseout="this.style.transform='scale(1)';this.style.background='rgba(201,168,76,0.9)'">
+            <span class="material-symbols-outlined" style="font-size:20px;color:#fff;margin-left:2px">play_arrow</span>
+          </div>
+
+          <!-- Interactive Hotspots -->
+          <div class="hotspot hotspot-1 hotspot-left" style="top:60%;left:50%" data-title="المجسم التفاعلي" onclick="event.stopPropagation()">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-dot">
+              <span class="material-symbols-outlined">touch_app</span>
+            </div>
+            <div class="hotspot-tooltip">
+              <div class="hotspot-tooltip-arrow"></div>
+              <span class="hotspot-badge">مجسم ذكي</span>
+              <h4 style="color:#fff;font-size:14px;margin:0 0 6px;font-weight:700">مجسم تفاعلي لمشاريع الرابطة</h4>
+              <p style="color:rgba(255,255,255,0.6);font-size:12px;line-height:1.6;margin:0">مجسم معماري تفاعلي ثلاثي الأبعاد يعرض مشاريع رابطة العالم الإسلامي حول العالم مع إضاءة ديناميكية.</p>
+            </div>
+          </div>
+
+          <div class="hotspot hotspot-2 hotspot-below hotspot-right" style="top:13%;left:90%" data-title="برنامج تشغيلي" onclick="event.stopPropagation()">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-dot">
+              <span class="material-symbols-outlined">devices</span>
+            </div>
+            <div class="hotspot-tooltip">
+              <div class="hotspot-tooltip-arrow"></div>
+              <span class="hotspot-badge">برنامج تفاعلي</span>
+              <h4 style="color:#fff;font-size:14px;margin:0 0 6px;font-weight:700">برنامج تشغيلي للتحكم</h4>
+              <p style="color:rgba(255,255,255,0.6);font-size:12px;line-height:1.6;margin:0">برنامج يعرض تفاصيل المشاريع ويتحكم في إضاءة المجسم مع عرض المعلومات بشكل ديناميكي.</p>
+            </div>
+          </div>
+
+          <div class="hotspot hotspot-4 hotspot-below" style="top:11%;left:34%" data-title="أخبار الرابطة" onclick="event.stopPropagation()">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-dot">
+              <span class="material-symbols-outlined">public</span>
+            </div>
+            <div class="hotspot-tooltip">
+              <div class="hotspot-tooltip-arrow"></div>
+              <span class="hotspot-badge">برنامج أخبار</span>
+              <h4 style="color:#fff;font-size:14px;margin:0 0 6px;font-weight:700">برنامج أخبار الرابطة</h4>
+              <p style="color:rgba(255,255,255,0.6);font-size:12px;line-height:1.6;margin:0">برنامج تفاعلي يعرض آخر أخبار وفعاليات ومبادرات رابطة العالم الإسلامي حول العالم.</p>
+            </div>
+          </div>
+
+          <div class="hotspot hotspot-3 hotspot-below" style="top:17%;left:62%" data-title="تصوير تذكاري" onclick="event.stopPropagation()">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-dot">
+              <span class="material-symbols-outlined">photo_camera</span>
+            </div>
+            <div class="hotspot-tooltip">
+              <div class="hotspot-tooltip-arrow"></div>
+              <span class="hotspot-badge">تصوير تفاعلي</span>
+              <h4 style="color:#fff;font-size:14px;margin:0 0 6px;font-weight:700">برنامج تصوير تذكاري</h4>
+              <p style="color:rgba(255,255,255,0.6);font-size:12px;line-height:1.6;margin:0">شاشة تفاعلية للتصوير التذكاري مع إطارات مخصصة تسمح للزوار بالتقاط الصور ومشاركتها فوراً.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">المجسمات المعمارية</span>
+        <h2 style="font-size:clamp(30px,3.5vw,50px);font-weight:900;color:#535353;margin:0 0 16px;line-height:1.1;letter-spacing:-.02em">المجسمات المعمارية الذكية</h2>
+        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">حيث تلتقي الحرفية التقليدية مع الابتكار الرقمي.</p>
+        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">نماذج هجينة تجمع بين الحرفية اليدوية المتقنة والإسقاط الضوئي والبيانات السحابية الحية والإضاءة التفاعلية. تم عرضها في احتفالية ميثاق مكة تحت رعاية رابطة العالم الإسلامي، لتقدّم تجربة بصرية ورقمية فريدة تعيد تعريف مفهوم المجسمات المعمارية.</p>
+        <div style="margin-top:28px">
+          <a href="pages/smart-maquettes.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
+             onmouseover="this.style.background='#C9A84C'"
+             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Detail 4: Interactive Platforms — نص يمين / صورة يسار (عكس d3) -->
+<section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="rtl">
+  <div style="max-width:1280px;margin:0 auto;padding:0 24px">
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+      <div>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">المنصات التفاعلية</span>
+        <h2 style="font-size:clamp(30px,3.5vw,50px);font-weight:900;color:#535353;margin:0 0 16px;line-height:1.1;letter-spacing:-.02em">المجسم الإلكتروني وبرمجيات البيع</h2>
+        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">تجارب شاشات لمس تُعزز معدلات التحويل البيعي.</p>
+        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">منصات برمجية مخصصة لصالات البيع تضم جولات افتراضية، وفرز الوحدات آنياً، ومقارنات جانبية، وتكامل الحجز الفوري. صُممت لترتقي برحلة المشتري وتعزز معدلات التحويل في المشاريع الكبرى.</p>
+        <div style="margin-top:28px">
+          <a href="pages/interactive-experiences.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
+             onmouseover="this.style.background='#C9A84C'"
+             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+        </div>
+      </div>
+      <div>
+        <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2026/03/WhatsApp-Image-1447-09-13-at-19.18.44-2.jpeg" alt="المجسم الإلكتروني وبرمجيات البيع" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Detail 5: Sales Galleries — صورة يمين / نص يسار (عكس d4) -->
+<section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="rtl">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px">
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
         <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <img src="https://3dgraphicshouse.com/wp-content/uploads/2026/03/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" alt="Smart Architectural Maquettes" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2025/01/alrajhi3.jpeg" alt="صالات عرض وبيع فاخرة" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
         </div>
       </div>
       <div>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">CORE SYSTEMS / 03</span>
-        <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px;line-height:1.3;letter-spacing:0">Smart Architectural Maquettes</h2>
-        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">Where craftsmanship meets digital intelligence.</p>
-        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">Hybrid physical-digital models combining handcrafted detailing with projection mapping, live data, and interactive lighting systems.</p>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">صالات العرض والديكور الإعلاني</span>
+        <h2 style="font-size:clamp(30px,3.5vw,50px);font-weight:900;color:#535353;margin:0 0 16px;line-height:1.1;letter-spacing:-.02em">صالات عرض وديكور إعلاني فاخر</h2>
+        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">مساحات رائدة تروي قصة مشروعك بإبداع لا يُضاهى.</p>
+        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">تصميم وتنفيذ متكامل لمراكز بيع رئيسية تتحول إلى معارض فنية تفاعلية. كل صالة عرض تُصمم بعناية لتعكس مكانة العلامة التجارية، مع ديكور إعلاني احترافي يوجّه الزائر عبر سردية المشروع، ويخلق روابط عاطفية دائمة مع المشترين والمستثمرين.</p>
         <div style="margin-top:28px">
-          <a href="pages/smart-maquettes-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
+          <a href="pages/galleries-advertising.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Service Detail 4: Interactive Sales Platforms -->
-<section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="ltr">
+<!-- Service Detail 6: Media Production — نص يمين / فيديو يسار (عكس d5) -->
+<section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="rtl">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px">
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">CORE SYSTEMS / 04</span>
-        <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px;line-height:1.3;letter-spacing:0">Interactive Sales Platforms (E-Maquette Systems)</h2>
-        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">Touch-screen experiences designed to enhance real estate sales.</p>
-        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">Custom platforms featuring virtual tours, unit comparison tools, real-time filtering, and booking integration to optimize the buyer journey.</p>
-        <div style="margin-top:28px">
-          <a href="pages/interactive-experiences-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
-             onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
-        </div>
-      </div>
-      <div>
-        <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <img src="https://3dgraphicshouse.com/wp-content/uploads/2026/03/WhatsApp-Image-1447-09-13-at-19.18.44-2.jpeg" alt="Interactive Sales Platforms" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Service Detail 5: Sales Galleries & Spatial Design -->
-<section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="ltr">
-  <div style="max-width:1280px;margin:0 auto;padding:0 24px">
-    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-      <div>
-        <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <img src="https://3dgraphicshouse.com/wp-content/uploads/2025/01/alrajhi3.jpeg" alt="Sales Galleries & Spatial Design" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
-        </div>
-      </div>
-      <div>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">CORE SYSTEMS / 05</span>
-        <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px;line-height:1.3;letter-spacing:0">Sales Galleries &amp; Spatial Design</h2>
-        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">Flagship environments that communicate project identity.</p>
-        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">End-to-end design of immersive sales centers and showrooms transformed into narrative-driven spaces that reflect brand prestige and guide visitors through the project story.</p>
-        <div style="margin-top:28px">
-          <a href="pages/galleries-advertising-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
-             onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Service Detail 6: Media Production -->
-<section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="ltr">
-  <div style="max-width:1280px;margin:0 auto;padding:0 24px">
-    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
-      <div>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">CORE SYSTEMS / 06</span>
-        <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px;line-height:1.3;letter-spacing:0">Media Production</h2>
-        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">Cinematic content creation for real estate and developments.</p>
-        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">Professional filming, editing, animation, motion graphics, and promotional storytelling designed to amplify project communication.</p>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#535353;display:block;margin-bottom:12px;font-family:monospace">ميديا برودكشن</span>
+        <h2 style="font-size:clamp(30px,3.5vw,50px);font-weight:900;color:#535353;margin:0 0 16px;line-height:1.1;letter-spacing:-.02em">الإنتاج السينمائي والوسائط المتعددة</h2>
+        <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">من التصوير الاحترافي إلى المونتاج — حكايات بصرية تأسر الجمهور.</p>
+        <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">نقدم خدمات متكاملة في الإنتاج السينمائي والوسائط المتعددة، بدءاً من التصوير الاحترافي والمونتاج وصولاً إلى الرسوم المتحركة (أنيميشن) والموشن جرافيك. نصنع محتوى بصرياً يحوّل أفكارك إلى قصص سينمائية مؤثرة تترك أثراً في جمهورك وتعزز حضور علامتك التجارية.</p>
         <ul style="list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:10px">
           <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:#555;font-weight:500">
             <span style="width:6px;height:6px;border-radius:50%;background:#C9A84C;display:inline-block;flex-shrink:0"></span>
-            Video Production
+            تصوير وإنتاج فيديو احترافي
           </li>
           <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:#555;font-weight:500">
             <span style="width:6px;height:6px;border-radius:50%;background:#C9A84C;display:inline-block;flex-shrink:0"></span>
-            2D &amp; 3D Animation
+            رسوم متحركة (أنيميشن) ثنائية وثلاثية الأبعاد
           </li>
           <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:#555;font-weight:500">
             <span style="width:6px;height:6px;border-radius:50%;background:#C9A84C;display:inline-block;flex-shrink:0"></span>
-            Motion Graphics
+            موشن جرافيك وإنفوجرافيك تفاعلي
           </li>
           <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:#555;font-weight:500">
             <span style="width:6px;height:6px;border-radius:50%;background:#C9A84C;display:inline-block;flex-shrink:0"></span>
-            Post-Production
+            مونتاج وما بعد الإنتاج السينمائي
           </li>
           <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:#555;font-weight:500">
             <span style="width:6px;height:6px;border-radius:50%;background:#C9A84C;display:inline-block;flex-shrink:0"></span>
-            Promotional &amp; Documentary Films
+            أفلام سينمائية دعائية وتوثيقية
           </li>
         </ul>
         <div style="margin-top:28px">
-          <a href="pages/media-production-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
+          <a href="pages/media-production.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
         </div>
       </div>
       <div>
@@ -2553,67 +3225,9 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- ===== HOW WE WORK ===== -->
-<section style="padding:100px 0;background:#000000;overflow:hidden;position:relative" dir="ltr">
-  <div style="max-width:1280px;margin:0 auto;padding:0 24px;position:relative;z-index:2">
-
-    <!-- Section Heading -->
-    <div class="reveal" style="text-align:center;margin-bottom:20px">
-      <h2 style="font-size:clamp(32px,3.2vw,48px);font-weight:200;color:#FAFAF8;margin:0 0 16px;line-height:1.2">How We Work</h2>
-      <p style="font-size:16px;font-weight:300;color:#999;line-height:1.6;max-width:640px;margin:0 auto">We follow a structured process to transform architectural concepts into complete visual and immersive sales systems.</p>
-    </div>
-
-    <!-- Steps Grid -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px">
-
-      <!-- Step 1 -->
-      <div class="reveal" style="background:#151515;padding:40px 30px;border-top:3px solid #C9A84C">
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#C9A84C;display:block;margin-bottom:16px;font-family:monospace">01 — Understand</span>
-        <p style="font-size:14px;font-weight:300;color:#BBB;line-height:1.8;margin:0">We begin by analyzing the project vision, architectural concept, target audience, and market positioning to define the communication strategy.</p>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="reveal" style="background:#151515;padding:40px 30px;border-top:3px solid #C9A84C">
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#C9A84C;display:block;margin-bottom:16px;font-family:monospace">02 — Design System</span>
-        <p style="font-size:14px;font-weight:300;color:#BBB;line-height:1.8;margin:0">We build a complete visual and narrative framework that defines how the project should be presented across all platforms.</p>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="reveal" style="background:#151515;padding:40px 30px;border-top:3px solid #C9A84C">
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#C9A84C;display:block;margin-bottom:16px;font-family:monospace">03 — Produce Assets</span>
-        <p style="font-size:14px;font-weight:300;color:#BBB;line-height:1.8;margin:0">We create cinematic CGI, architectural visuals, interactive systems, and physical-digital experiences tailored to the project.</p>
-      </div>
-
-      <!-- Step 4 -->
-      <div class="reveal" style="background:#151515;padding:40px 30px;border-top:3px solid #C9A84C">
-        <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#C9A84C;display:block;margin-bottom:16px;font-family:monospace">04 — Deploy Experience</span>
-        <p style="font-size:14px;font-weight:300;color:#BBB;line-height:1.8;margin:0">We deliver a fully integrated visual system designed for presentations, marketing campaigns, and real estate sales environments.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA SECTION ===== -->
-<section style="padding:80px 0;background:#FAFAF8;overflow:hidden;border-top:1px solid rgba(26,26,26,.06)" dir="ltr">
-  <div style="max-width:960px;margin:0 auto;padding:0 24px;text-align:center">
-    <div class="reveal">
-      <h2 style="font-size:clamp(28px,3vw,42px);font-weight:300;color:#0A0A0A;margin:0 0 20px;line-height:1.3;letter-spacing:-0.01em">Let's build your next development into a visual sales system.</h2>
-      <p style="font-size:16px;font-weight:300;color:#666;line-height:1.7;max-width:720px;margin:0 auto 32px">We work with real estate developers, architects, and investment groups to transform architectural projects into cinematic and immersive experiences that communicate value, attract investors, and support pre-sales.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center">
-        <a href="mailto:info@beestoon.com" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
-           onmouseover="this.style.background='#1A1A1A';this.style.color='#FAFAF8'"
-           onmouseout="this.style.background='#C9A84C';this.style.color='#0A0A0A'">▶ Start a Project</a>
-        <a href="pages/3d-animation-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;border:1px solid #1A1A1A;color:#1A1A1A;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s;background:transparent"
-           onmouseover="this.style.background='#1A1A1A';this.style.color='#FAFAF8'"
-           onmouseout="this.style.background='transparent';this.style.color='#1A1A1A'">▶ View Portfolio</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CLIENT LOGOS -->
-<section style="padding:60px 0;background:#FAFAF8;border-top:1px solid rgba(26,26,26,.04);border-bottom:1px solid rgba(26,26,26,.04)">
+<section style="padding:40px 0;background:#fff;border-top:1px solid rgba(26,26,26,.04);border-bottom:1px solid rgba(26,26,26,.04)">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px">
     <div class="logo-cloud">
       <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-owla.png" alt="Al Oula"/>
@@ -2630,143 +3244,70 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- ===== PORTFOLIO: PREVIOUS WORKS ===== -->
-<section class="portfolio" id="portfolio">
-  <div class="portfolio-container">
 
-    <!-- Section Header -->
-    <div class="portfolio-header s2-fade s2-d1">
-      <div class="portfolio-eyebrow">Our Portfolio</div>
-      <h2 class="portfolio-title">Successful <em>Projects</em></h2>
-      <div class="portfolio-divider"></div>
+
+
+
+<!-- Image Lightbox Modal -->
+<div class="image-lightbox" id="imageLightbox" onclick="closeImageLightbox(event)" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);align-items:center;justify-content:center;opacity:0;transition:opacity 0.35s ease">
+  <button class="image-lightbox-close" onclick="closeImageLightbox()" aria-label="إغلاق" style="position:absolute;top:24px;right:24px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;z-index:10;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)">
+    <span class="material-symbols-outlined" style="font-size:24px">close</span>
+  </button>
+  <div class="image-lightbox-inner" style="max-width:85vw;max-height:85vh;border-radius:8px;overflow:visible;box-shadow:0 40px 120px rgba(0,0,0,0.7);transform:scale(0.92);transition:transform 0.4s cubic-bezier(0.25,0.1,0.1,1);position:relative;display:flex;align-items:center;justify-content:center">
+    <div id="lightboxContentWrapper" style="position:relative;overflow:visible;display:inline-block;max-width:85vw;max-height:85vh;border-radius:8px">
+      <img id="imageLightboxImg" src="" alt="" style="width:auto;height:auto;max-width:85vw;max-height:85vh;display:block;border-radius:8px">
     </div>
+  </div>
+</div>
 
-    <!-- Grid -->
-    <div class="portfolio-grid s2-fade s2-d3" id="portfolioGrid">
-
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.45-2.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Makkah</span>
-          <span class="pf-item-title">Maquette — Makkah Charter</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/anan-escan3.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Riyadh</span>
-          <span class="pf-item-title">Anan Eskan — Maquette</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/Anan_Eskan_ryadh5-scaled-e1745137604161.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Riyadh</span>
-          <span class="pf-item-title">Anan Eskan — Riyadh</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/20-scaled-e1745147420120.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Maquette — Development Project</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/alrajhi3.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Al Rajhi — Maquette</span>
-        </div>
-      </div>
-      <div class="pf-item pf-video" data-category="cinematic" onclick="playVideo('AYStF0c4Hgk')">
-        <img src="assets/projects/cinematic/video-1.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Cinematic Film — GH Production</span>
-        </div>
-      </div>
-      <div class="pf-item pf-video" data-category="animation" onclick="playVideo('vYbn-9ramsI')">
-        <img src="assets/projects/animation/jeddah-forum.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Jeddah</span>
-          <span class="pf-item-title">Jeddah Forum — Cinematic Film</span>
-        </div>
-      </div>
-      <div class="pf-item pf-video" data-category="animation" onclick="playVideo('ilWeCush3ew')">
-        <img src="assets/projects/animation/rafal-pavilions.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Rafal Pavilions — Cinematic Film</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="exhibition">
-        <img src="assets/news/makkah-charter-02.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Makkah</span>
-          <span class="pf-item-title">Humanity Exhibition — Muslim World League</span>
-        </div>
-      </div>
-      <div class="pf-item pf-video" data-category="animation" onclick="playVideo('ALz6GdeITYc')">
-        <img src="assets/projects/animation/alrajhi.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Al Rajhi — Cinematic Film</span>
-        </div>
-      </div>
-
-      </div>
-
-      <div style="text-align:center;margin-top:40px">
-        <a href="pages/portfolio-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;border:1px solid #1A1A1A;color:#1A1A1A;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s;background:transparent"
-           onmouseover="this.style.background='#1A1A1A';this.style.color='#FAFAF8'"
-           onmouseout="this.style.background='transparent';this.style.color='#1A1A1A'">Browse Portfolio <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
-      </div>
-
-    </div>
-</section>
+<!-- Video Lightbox Modal -->
+<div class="image-lightbox" id="videoLightbox" onclick="closeMaquetteVideo(event)" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);align-items:center;justify-content:center;opacity:0;transition:opacity 0.35s ease">
+  <button class="image-lightbox-close" onclick="closeMaquetteVideo()" aria-label="إغلاق" style="position:absolute;top:24px;right:24px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;z-index:10;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)">
+    <span class="material-symbols-outlined" style="font-size:24px">close</span>
+  </button>
+  <div style="max-width:85vw;max-height:85vh;border-radius:8px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,0.7);transform:scale(0.92);transition:transform 0.4s cubic-bezier(0.25,0.1,0.1,1)">
+    <iframe id="maquetteVideoPlayer" width="100%" height="100%" style="width:85vw;max-width:1080px;aspect-ratio:16/9;display:block;border:none" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</div>
 
 <!-- ===== FOOTER ===== -->
-<footer class="footer" dir="ltr">
+<footer class="footer" dir="rtl">
+  <div class="footer-bg-motif"></div>
   <div class="footer-container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo">
-          <span class="material-symbols-outlined">diamond</span>
-          <span>Graphics House</span>
-        </div>
-        <p class="footer-desc">A leading company in architectural visualization, smart maquettes, cinematic production and multimedia, providing integrated solutions for mega developments across the Middle East.</p>
+        <a href="/" class="footer-logo">
+          <img src="assets/logo-gold.png" alt="Graphics House" style="height:116px;width:auto;display:block">
+        </a>
+        <p class="footer-desc">شركة سعودية رائدة في مجال الإظهار المعماري والمجسمات الذكية والإنتاج السينمائي والوسائط المتعددة، نقدم حلولاً متكاملة للمشاريع الكبرى في الشرق الأوسط.</p>
+        <div class="footer-tagline">Graphics House Co.</div>
       </div>
       <div class="footer-links">
-        <h4>Quick Links</h4>
-        <a href="#home">Home</a>
-        <a href="pages/who-we-are-en.html">Who We Are</a>
-        <a href="pages/contact-us-en.html">Contact Us</a>
-        <a href="pages/faq-en.html">FAQ</a>
-        <a href="pages/privacy-policy-en.html">Privacy Policy</a>
-        <a href="pages/3d-animation-en.html">3D Animation</a>
-        <a href="#services">Our Services</a>
-        <a href="#projects">Successful Projects</a>
-        <a href="pages/portfolio-en.html">Our Work</a>
-	        <a href="#portfolio">Portfolio</a>
+        <h4>روابط سريعة</h4>
+        <a href="#home">الرئيسية</a>
+        <a href="pages/who-we-are.html">من نحن</a>
+        <a href="pages/contact-us.html">اتصل بنا</a>
+        <a href="pages/faq.html">الأسئلة الشائعة</a>
+        <a href="pages/privacy-policy.html">سياسة الخصوصية</a>
+        <a href="pages/3d-animation.html">أنيميشن ثلاثي الأبعاد</a>
+        <a href="#services">خدمات</a>
+        <a href="#projects">مشاريع</a>
+        <a href="pages/portfolio.html">معرض أعمال</a>
+	        <a href="#portfolio">سابقة أعمال</a>
       </div>
       <div class="footer-links">
-        <h4>Our Services</h4>
-        <a href="pages/3d-animation-en.html">Cinematic CGI</a>
-        <a href="pages/interactive-experiences-en.html">Interactive Experiences</a>
-        <a href="pages/smart-maquettes-en.html">Smart Maquettes</a>
-        <a href="pages/media-production-en.html">Media Production</a>
-        <a href="pages/galleries-advertising-en.html">Galleries &amp; Spatial Design</a>
+        <h4>خدمات</h4>
+        <a href="pages/3d-animation.html">سينمائي CGI</a>
+        <a href="pages/smart-maquettes.html">مجسمات ذكية</a>
+        <a href="pages/interactive-experiences.html">تجارب تفاعلية</a>
+        <a href="pages/galleries-advertising.html">جاليريات متكاملة وديكور إعلاني</a>
+        <a href="pages/media-production.html">ميديا برودكشن</a>
       </div>
       <div class="footer-contact">
-        <h4>Contact Information</h4>
+        <h4>معلومات الاتصال</h4>
         <div class="footer-contact-item" style="align-items:flex-start">
           <span class="material-symbols-outlined">location_on</span>
-          <span style="font-size:13px;line-height:1.6">Saudi Arabia — Jeddah<br>P.O.Box 136972 | CR 4030502306</span>
+          <span style="font-size:13px;line-height:1.6">المملكة العربية السعودية — جدة<br>ص.ب 136972 | س.ت 4030502306</span>
         </div>
         <a href="tel:+966502786513" class="footer-contact-item">
           <span class="material-symbols-outlined">call</span>
@@ -2774,15 +3315,15 @@ img { max-width: 100%; display: block; }
         </a>
         <div class="footer-contact-item" style="align-items:flex-start;cursor:default">
           <span class="material-symbols-outlined">business</span>
-          <span style="font-size:13px;line-height:1.6">Bahrain — Manama<br>Block 316 | CR 15571301<br><span dir="ltr">+973 3215 0369</span></span>
+          <span style="font-size:13px;line-height:1.6">البحرين — المنامة<br>مجمع 316 | س.ت 15571301<br><span dir="ltr">+973 3215 0369</span></span>
         </div>
         <div class="footer-contact-item" style="align-items:flex-start;cursor:default">
           <span class="material-symbols-outlined">business</span>
-          <span style="font-size:13px;line-height:1.6">Oman — Muscat<br>Al Khod, Al Seeb | CR 1460078<br><span dir="ltr">+968 9132 6735</span></span>
+          <span style="font-size:13px;line-height:1.6">سلطنة عُمان — مسقط<br>الخوض، السيب | س.ت 1460078<br><span dir="ltr">+968 9132 6735</span></span>
         </div>
         <div class="footer-contact-item" style="align-items:flex-start;cursor:default">
           <span class="material-symbols-outlined">business</span>
-          <span style="font-size:13px;line-height:1.6">Egypt — Alexandria<br>Mohamed Othman St., Victoria City Tower<br><span dir="ltr">+20 103 295 5089</span></span>
+          <span style="font-size:13px;line-height:1.6">مصر — الإسكندرية<br>شارع محمد عثمان، برج فيكتوريا سيتي<br><span dir="ltr">+20 103 295 5089</span></span>
         </div>
         <a href="mailto:info@3dgraphicshouse.com" class="footer-contact-item">
           <span class="material-symbols-outlined">mail</span>
@@ -2808,11 +3349,17 @@ img { max-width: 100%; display: block; }
       </div>
     </div>
         <div class="footer-registration">
-      <span>CR: 7054412114</span>
+      <span>السجل التجاري: 7054412114</span>
       <span class="reg-sep">|</span>
-      <span>VAT: 314808998900003</span>
+      <span>الرقم الضريبي: 314808998900003</span>
     </div>    <div class="footer-bottom">
-      <p>© 2026 Graphics House Co. — All Rights Reserved</p>
+      <div class="footer-bottom-inner">
+        <p>© 2026 Graphics House Co. — جميع الحقوق محفوظة</p>
+        <a class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+          <span class="material-symbols-outlined">arrow_upward</span>
+          العودة للأعلى
+        </a>
+      </div>
     </div>
   </div>
 </footer>
@@ -2850,14 +3397,14 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll(".s2-fade").forEach(el => observer.observe(el));
 
   // Hero video: start at 0:04, loop 0:04→0:30 (same as English)
-  var heroVid = document.getElementById('hero-vid');
+  var heroVid = document.getElementById('hero-vid-ar');
   if (heroVid) {
     heroVid.addEventListener("loadedmetadata", function() {
-      if (heroVid.readyState > 0) { heroVid.currentTime = 4; }
-      else { heroVid.addEventListener("loadeddata", function() { heroVid.currentTime = 4; }, {once: true}); }
+      if (heroVid.readyState > 0) { heroVid.currentTime = 5; }
+      else { heroVid.addEventListener("loadeddata", function() { heroVid.currentTime = 5; }, {once: true}); }
     });
     heroVid.addEventListener("timeupdate", function() {
-      if (heroVid.currentTime >= 35) { heroVid.currentTime = 4; }
+      if (heroVid.currentTime >= 35) { heroVid.currentTime = 5; }
     });
     var pp = heroVid.play();
     if (pp !== undefined) { pp.catch(function() { console.log("Autoplay blocked"); }); }
@@ -2865,6 +3412,20 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Close menu on link click
+// Interactive hotspots - toggle tooltip on click for touch devices
+document.querySelectorAll(".hotspot").forEach(h => {
+  h.addEventListener("click", function(e) {
+    e.stopPropagation();
+    var wasOpen = this.classList.contains("active");
+    document.querySelectorAll(".hotspot.active").forEach(function(el) { el.classList.remove("active"); });
+    if (!wasOpen) this.classList.add("active");
+  });
+});
+document.addEventListener("click", function() {
+  document.querySelectorAll(".hotspot.active").forEach(function(el) { el.classList.remove("active"); });
+});
+
+// Existing: close menu on link click
 document.querySelectorAll(".nav a").forEach(link => {
   link.addEventListener("click", function() {
     const nav = document.getElementById("nav");
@@ -2875,19 +3436,23 @@ document.querySelectorAll(".nav a").forEach(link => {
   });
 });
 
+// Hero thumbnail gallery - open image in lightbox
+function openHeroImage(src) {
+  var modal = document.getElementById('imageLightbox');
+  var modalImg = document.getElementById('imageLightboxImg');
+  modalImg.src = src;
+  modal.style.display = 'flex';
+  setTimeout(function() { modal.style.opacity = '1'; }, 10);
+  document.body.style.overflow = 'hidden';
+}
+
 // Video modal popup
 function playVideo(videoId, startTime) {
   var modal = document.getElementById('videoModal');
   var container = document.getElementById('videoModalPlayer');
-  var wrap = document.getElementById('videoModalWrap');
 
-  // Hide image mode, show video mode
-  wrap.style.display = 'block';
-  var imgEl = document.getElementById('imageModalImg');
-  if (imgEl) imgEl.style.display = 'none';
-
-  var src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1';
-  if (startTime) src += '&start=' + startTime;
+  var src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1';
+  if (startTime !== undefined) src += '&start=' + startTime;
 
   var iframe = document.createElement('iframe');
   iframe.setAttribute('src', src);
@@ -2904,12 +3469,6 @@ function playVideo(videoId, startTime) {
 function playLocalVideo(src) {
   var modal = document.getElementById('videoModal');
   var container = document.getElementById('videoModalPlayer');
-  var wrap = document.getElementById('videoModalWrap');
-
-  // Hide image mode, show video mode
-  wrap.style.display = 'block';
-  var imgEl = document.getElementById('imageModalImg');
-  if (imgEl) imgEl.style.display = 'none';
 
   var video = document.createElement('video');
   video.setAttribute('controls', '');
@@ -2928,39 +3487,11 @@ function playLocalVideo(src) {
   document.body.style.overflow = 'hidden';
 }
 
-function openImage(imgSrc) {
-  var modal = document.getElementById('videoModal');
-  var wrap = document.getElementById('videoModalWrap');
-  var container = document.getElementById('videoModalPlayer');
-
-  // Hide video, clear it, and show image
-  wrap.style.display = 'none';
-  container.innerHTML = '';
-
-  var img = document.getElementById('imageModalImg');
-  if (!img) {
-    img = document.createElement('img');
-    img.id = 'imageModalImg';
-    img.style.cssText = 'width:100%;height:auto;display:block;border-radius:12px;max-height:85vh;object-fit:contain;background:#000';
-    container.parentNode.appendChild(img);
-  }
-  img.src = imgSrc;
-  img.style.display = 'block';
-
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
 function closeVideo() {
   var modal = document.getElementById('videoModal');
   var container = document.getElementById('videoModalPlayer');
-  var wrap = document.getElementById('videoModalWrap');
-  var imgEl = document.getElementById('imageModalImg');
-
   modal.classList.remove('active');
   container.innerHTML = '';
-  wrap.style.display = 'block';
-  if (imgEl) imgEl.style.display = 'none';
   document.body.style.overflow = '';
 }
 
@@ -2984,22 +3515,119 @@ function swapImage(src, thumbEl) {
   thumbEl.classList.add('active');
 }
 
-// Portfolio — show all items with click handlers
-(function() {
-  var items = document.querySelectorAll('#portfolioGrid .pf-item');
-  items.forEach(function(item) {
-    item.style.display = 'block';
-    // If item has an onclick (video), keep it; otherwise add image lightbox
-    if (!item.hasAttribute('onclick')) {
-      var img = item.querySelector('img');
-      if (img) {
-        item.style.cursor = 'pointer';
-        item.addEventListener('click', function() {
-          openImage(img.getAttribute('src'));
-        });
-      }
-    }
+// Image Lightbox
+function openImageLightbox() {
+  var img = document.getElementById('s3MainImg');
+  var modal = document.getElementById('imageLightbox');
+  var modalImg = document.getElementById('imageLightboxImg');
+  modalImg.src = img.src;
+  modal.style.display = 'flex';
+  setTimeout(function() { modal.style.opacity = '1'; }, 10);
+  document.body.style.overflow = 'hidden';
+}
+function openMaquetteLightbox() {
+  var img = document.getElementById('maquetteMainImg');
+  if (!img) return;
+  var modal = document.getElementById('imageLightbox');
+  var modalImg = document.getElementById('imageLightboxImg');
+  var wrapper = document.getElementById('lightboxContentWrapper');
+
+  modalImg.src = img.src;
+
+  // Remove any previously cloned hotspots from the lightbox
+  var oldHotspots = wrapper.querySelectorAll('.hotspot');
+  oldHotspots.forEach(function(h) { h.remove(); });
+
+  // Clone all hotspots from the inline maquette into the lightbox
+  var sourceHotspots = document.querySelectorAll('#maquetteMainImg ~ .hotspot');
+  sourceHotspots.forEach(function(hs) {
+    var clone = hs.cloneNode(true);
+    wrapper.appendChild(clone);
   });
+
+  modal.style.display = 'flex';
+  setTimeout(function() { modal.style.opacity = '1'; }, 10);
+  document.body.style.overflow = 'hidden';
+}
+
+// Video Lightbox for Maquette (YouTube)
+function openMaquetteVideo() {
+  var modal = document.getElementById('videoLightbox');
+  var iframe = document.getElementById('maquetteVideoPlayer');
+  if (!modal || !iframe) return;
+  iframe.src = 'https://www.youtube.com/embed/H66KNP1sQCk?autoplay=1&rel=0';
+  modal.style.display = 'flex';
+  setTimeout(function() {
+    modal.style.opacity = '1';
+  }, 10);
+  document.body.style.overflow = 'hidden';
+}
+function closeMaquetteVideo(e) {
+  if (e && e.target !== e.currentTarget) return;
+  var modal = document.getElementById('videoLightbox');
+  var iframe = document.getElementById('maquetteVideoPlayer');
+  if (iframe) { iframe.src = ''; }
+  modal.style.opacity = '0';
+  setTimeout(function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }, 350);
+}
+
+// Toggle sound for Service Detail 2 video
+function toggleS2Sound() {
+  var video = document.getElementById('s2VideoPlayer');
+  var icon = document.getElementById('s2SoundIcon');
+  if (!video || !icon) return;
+  if (video.muted) {
+    video.muted = false;
+    video.play();
+    icon.textContent = 'volume_up';
+  } else {
+    video.muted = true;
+    icon.textContent = 'volume_off';
+  }
+}
+
+function closeImageLightbox(e) {
+  if (e && e.target !== e.currentTarget) return;
+  var modal = document.getElementById('imageLightbox');
+  modal.style.opacity = '0';
+  setTimeout(function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+    // Clean up cloned hotspots from lightbox
+    var wrapper = document.getElementById('lightboxContentWrapper');
+    if (wrapper) {
+      var hotspots = wrapper.querySelectorAll('.hotspot');
+      hotspots.forEach(function(h) { h.remove(); });
+    }
+  }, 350);
+}
+
+// Portfolio filter — default to maquette
+(function() {
+  var btns = document.querySelectorAll('#portfolioFilters .pf-btn');
+  var items = document.querySelectorAll('#portfolioGrid .pf-item');
+  function filterTo(f) {
+    btns.forEach(function(b) { b.classList.remove('active'); });
+    items.forEach(function(item) {
+      if (f === 'all' || item.getAttribute('data-category') === f) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      filterTo(this.getAttribute('data-filter'));
+    });
+  });
+  // Set initial filter to maquette
+  filterTo('maquette');
 })();
 
 // Hero progress bars
@@ -3016,7 +3644,7 @@ function swapImage(src, thumbEl) {
 <div class="video-modal" id="videoModal">
   <button class="video-modal-close" onclick="closeVideo()">✕</button>
   <div class="video-modal-inner">
-    <div class="video-aspect" id="videoModalWrap">
+    <div class="video-aspect">
       <div id="videoModalPlayer"></div>
     </div>
   </div>
@@ -3025,32 +3653,41 @@ function swapImage(src, thumbEl) {
 
 <!-- ===== CHAT BOT ===== -->
 <div id="ghChatBtn" onclick="toggleChat()">
-  <span class="material-symbols-outlined" id="ghChatIcon">chat</span>
+  <div class="gh-ripple-wrap">
+    <div class="gh-ripple"></div>
+    <div class="gh-ripple gh-ripple-2"></div>
+    <div class="gh-ripple gh-ripple-3"></div>
+    <div class="gh-flip-inner">
+      <img id="ghChatIcon" class="gh-flip-front" src="assets/chatbot-motif.png" alt="AI">
+      <img class="gh-flip-back" src="assets/chatbot-motif.png" alt="AI">
+    </div>
+  </div>
+  <span class="material-symbols-outlined" id="ghChatClose" style="display:none;font-size:24px;color:#0e0e0e;">close</span>
 </div>
 
-<div id="ghChatPanel" dir="ltr">
+<div id="ghChatPanel" dir="rtl">
   <div id="ghChatHead">
-    <span class="material-symbols-outlined" style="font-size:20px;color:#C9A84C;">smart_toy</span>
-    <span>GH Assistant</span>
+    <img src="assets/chatbot-motif.png" alt="GH" style="width:22px;height:22px;object-fit:contain;border-radius:50%;vertical-align:middle;display:inline-block">
+    <span>مساعد جرافيكس هاوس</span>
     <span style="flex:1"></span>
     <span class="material-symbols-outlined" style="font-size:18px;cursor:pointer;color:rgba(255,255,255,.5)" onclick="toggleChat()">close</span>
   </div>
   <div id="ghChatMsgs">
     <div class="gh-msg gh-msg-bot">
-      <div class="gh-msg-avatar"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C;">smart_toy</span></div>
-      <div class="gh-msg-bubble">Hello! 👋 How can I help you? Choose an option below:</div>
+      <div class="gh-msg-avatar"><img src="assets/chatbot-motif.png" alt="GH" style="width:16px;height:16px;object-fit:contain;border-radius:50%;vertical-align:middle;display:inline-block"></div>
+      <div class="gh-msg-bubble">مرحباً! 👋 كيف يمكنني مساعدتك؟ اختر أحد الخيارات أدناه:</div>
     </div>
   </div>
   <div id="ghChatQuick">
-    <div class="gh-q-btn" data-q="services">Services</div>
-    <div class="gh-q-btn" data-q="quote">Get a Quote</div>
-    <div class="gh-q-btn" data-q="contact">Contact</div>
-    <div class="gh-q-btn" data-q="maquette">Smart Maquettes</div>
-    <div class="gh-q-btn" data-q="clients">Our Clients</div>
-    <div class="gh-q-btn" data-q="location">Branches</div>
+    <div class="gh-q-btn" data-q="services">خدمات</div>
+    <div class="gh-q-btn" data-q="quote">عرض سعر</div>
+    <div class="gh-q-btn" data-q="contact">اتصال</div>
+    <div class="gh-q-btn" data-q="maquette">المجسمات الذكية</div>
+    <div class="gh-q-btn" data-q="clients">عملائنا</div>
+    <div class="gh-q-btn" data-q="location">الفروع</div>
   </div>
   <div id="ghChatInput">
-    <input type="text" id="ghChatField" placeholder="Type your question..." autocomplete="off">
+    <input type="text" id="ghChatField" placeholder="اكتب سؤالك هنا..." autocomplete="off">
     <button id="ghChatSend" onclick="sendChatMsg()">
       <span class="material-symbols-outlined" style="font-size:18px;color:#0e0e0e;">send</span>
     </button>
@@ -3060,14 +3697,62 @@ function swapImage(src, thumbEl) {
 <style>
 #ghChatBtn {
   position:fixed; bottom:24px; inset-inline-end:24px; z-index:99998;
-  width:56px; height:56px; border-radius:50%;
-  background:linear-gradient(135deg, #C9A84C, #DAAD3D);
+  width:auto; height:auto; border-radius:0;
+  background:transparent; border:none;
   display:flex; align-items:center; justify-content:center;
-  cursor:pointer; box-shadow:0 4px 20px rgba(201,168,76,.4);
+  cursor:pointer; box-shadow:none;
   transition:all .3s ease;
 }
-#ghChatBtn:hover { transform:scale(1.1); box-shadow:0 6px 30px rgba(201,168,76,.6); }
-#ghChatBtn span { color:#0e0e0e; font-size:26px; }
+#ghChatBtn:hover { transform:scale(1.15); }
+#ghChatBtn .gh-flip-front { position:relative; z-index:2; }
+
+/* Ripple wrap holds the image + ripples together */
+.gh-ripple-wrap {
+  position:relative; display:inline-block; width:60px; height:60px;
+  perspective:200px;
+}
+
+/* Ripple / pulse animation */
+.gh-ripple {
+  position:absolute; top:0; left:0; z-index:1;
+  width:60px; height:60px; border-radius:50%;
+  border:2px solid #C9A84C;
+  animation: ghRipple 4s ease-out infinite;
+  pointer-events:none;
+  opacity:0;
+}
+.gh-ripple-2 { animation-delay:1.3s; }
+.gh-ripple-3 { animation-delay:2.6s; }
+
+@keyframes ghRipple {
+  0%   { transform:scale(1); opacity:0.6; }
+  40%  { transform:scale(1.3); opacity:0.25; }
+  100% { transform:scale(1.6); opacity:0; }
+}
+
+/* Stop ripple when panel is open */
+#ghChatBtn.open .gh-ripple { animation:none; opacity:0; }
+
+/* Vertical 180° flip every 15s */
+.gh-flip-inner {
+  position:relative; width:60px; height:60px;
+  animation: ghFlip 15s ease-in-out infinite;
+  transform-style:preserve-3d;
+}
+.gh-flip-front, .gh-flip-back {
+  position:absolute; top:0; left:0; width:60px; height:60px;
+  object-fit:contain; display:block;
+  backface-visibility:hidden;
+}
+.gh-flip-back { transform:rotateY(180deg); }
+
+@keyframes ghFlip {
+  0%   { transform: rotateY(0deg); }
+  45%  { transform: rotateY(0deg); }
+  50%  { transform: rotateY(180deg); }
+  95%  { transform: rotateY(180deg); }
+  100% { transform: rotateY(0deg); }
+}
 
 #ghChatPanel {
   position:fixed; bottom:92px; inset-inline-end:24px; z-index:99997;
@@ -3150,15 +3835,255 @@ function swapImage(src, thumbEl) {
 
 @media(max-width:480px){
   #ghChatPanel { width:calc(100vw - 32px); inset-inline-end:16px; bottom:84px; max-height:70vh; }
-  #ghChatBtn { bottom:16px; inset-inline-end:16px; width:50px; height:50px; }
-  #ghChatBtn span { font-size:22px; }
+  #ghChatBtn { bottom:16px; inset-inline-end:16px; width:auto; height:auto; }
+  #ghChatBtn img, .gh-flip-front, .gh-flip-back { width:50px; height:50px; }
+  .gh-ripple-wrap, .gh-flip-inner { width:50px; height:50px; }
+  .gh-ripple { width:50px; height:50px; }
+  #ghChatBtn span { font-size:20px; }
+}
+
+/* Interactive Hotspots */
+.hotspot {
+  position: absolute;
+  z-index: 8;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.hotspot-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.9);
+  box-shadow: 0 0 20px rgba(201,168,76,0.4), 0 0 0 4px rgba(201,168,76,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.25,0.1,0.1,1);
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(2px);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+.hotspot-dot .material-symbols-outlined {
+  font-size: 18px;
+  color: #fff;
+}
+.hotspot:hover .hotspot-dot {
+  transform: scale(1.25);
+  background: #C9A84C;
+  box-shadow: 0 0 40px rgba(201,168,76,0.6), 0 0 0 6px rgba(201,168,76,0.2);
+}
+.hotspot-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(201,168,76,0.7);
+  animation: hotspot-pulse 2.5s ease-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+.hotspot-pulse::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(201,168,76,0.4);
+  animation: hotspot-pulse 2.5s ease-out 0.4s infinite;
+}
+.hotspot-pulse::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(201,168,76,0.2);
+  animation: hotspot-pulse 2.5s ease-out 0.8s infinite;
+}
+.hotspot-2 .hotspot-pulse { animation-delay: 0.4s; }
+.hotspot-2 .hotspot-pulse::before { animation-delay: 0.8s; }
+.hotspot-2 .hotspot-pulse::after { animation-delay: 1.2s; }
+.hotspot-3 .hotspot-pulse { animation-delay: 0.8s; }
+.hotspot-3 .hotspot-pulse::before { animation-delay: 1.2s; }
+.hotspot-3 .hotspot-pulse::after { animation-delay: 1.6s; }
+.hotspot-4 .hotspot-pulse { animation-delay: 1.2s; }
+.hotspot-4 .hotspot-pulse::before { animation-delay: 1.6s; }
+.hotspot-4 .hotspot-pulse::after { animation-delay: 2.0s; }
+
+@keyframes hotspot-pulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(5); opacity: 0; }
+}
+
+/* Tooltip */
+.hotspot-tooltip {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 18px 22px;
+  min-width: 240px;
+  max-width: 300px;
+  border-radius: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.25,0.1,0.1,1);
+  pointer-events: none;
+  border: 1px solid rgba(201,168,76,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.hotspot:hover .hotspot-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+/* Tooltip above (default) */
+.hotspot-tooltip-arrow {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: rgba(10,10,10,0.92);
+  border-right: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+}
+/* Tooltip below for upper hotspots - so it stays inside the image */
+.hotspot-below .hotspot-tooltip {
+  bottom: auto;
+  top: calc(100% + 20px);
+}
+.hotspot-below .hotspot-tooltip-arrow {
+  bottom: auto;
+  top: -6px;
+  transform: translateX(-50%) rotate(45deg);
+  border-right: none;
+  border-bottom: none;
+  border-left: 1px solid rgba(201,168,76,0.15);
+  border-top: 1px solid rgba(201,168,76,0.15);
+}
+/* Tooltip right-align for hotspots near the right edge */
+.hotspot-right .hotspot-tooltip {
+  left: auto;
+  right: 0;
+  transform: translateY(8px);
+}
+/* Tooltip to the left for hotspots near the top edge */
+.hotspot-left .hotspot-tooltip {
+  bottom: auto;
+  top: 50%;
+  left: auto;
+  right: calc(100% + 20px);
+  transform: translateY(-50%) translateX(-8px);
+}
+.hotspot-left:hover .hotspot-tooltip {
+  transform: translateY(-50%) translateX(0);
+}
+.hotspot-left .hotspot-tooltip-arrow {
+  bottom: auto;
+  top: 50%;
+  left: auto;
+  right: -6px;
+  transform: translateY(-50%) rotate(45deg);
+  border-left: 1px solid rgba(201,168,76,0.15);
+  border-top: 1px solid rgba(201,168,76,0.15);
+  border-right: none;
+  border-bottom: none;
+}
+.hotspot-right:hover .hotspot-tooltip {
+  transform: translateY(0);
+}
+.hotspot-right .hotspot-tooltip-arrow {
+  left: auto;
+  right: 20px;
+}
+.hotspot-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #C9A84C;
+  background: rgba(201,168,76,0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+}
+.hotspot-tooltip h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+  line-height: 1.3;
+  font-family: 'Tajawal','IBM Plex Sans Arabic',sans-serif;
+}
+.hotspot-tooltip p {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+  line-height: 1.6;
+  font-family: 'Tajawal','IBM Plex Sans Arabic',sans-serif;
+}
+
+
+/* Active state for mobile click */
+.hotspot.active .hotspot-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.hotspot-below.active .hotspot-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.hotspot.active .hotspot-dot {
+  transform: scale(1.25);
+  background: #C9A84C;
+  box-shadow: 0 0 40px rgba(201,168,76,0.6), 0 0 0 6px rgba(201,168,76,0.2);
+}
+
+/* Responsive: hide dots on small screens, show tooltip on click instead */
+@media (max-width: 768px) {
+  .hotspot-dot {
+    width: 32px;
+    height: 32px;
+  }
+  .hotspot-dot .material-symbols-outlined {
+    font-size: 14px;
+  }
+  .hotspot-tooltip {
+    min-width: 180px;
+    padding: 14px 16px;
+    bottom: calc(100% + 12px);
+  }
+  .hotspot-tooltip h4 { font-size: 12px; }
+  .hotspot-tooltip p { font-size: 11px; }
 }
 </style>
 
 <script>
 var ghLang = document.documentElement.dir === "rtl" ? "ar" : "en";
 var ghQAs = ghLang === "ar" ? {
-  "services": "نغطي الهوية الكاملة للمشاريع الكبرى والصغرى — كل شيء تحت مظلة التصميم حسب الهوية:<br><br>1️⃣ <strong>سينمائي CGI</strong> — إظهار معماري سينمائي فائق الجودة يحوّل المخططات إلى سرديات بصرية عاطفية.<br><br>2️⃣ <strong>مجسمات ذكية</strong> — مجسمات معمارية بمقاييس مختلفة، للمباني بأنواعها (فيلا، تاور، قرية سياحية، مدينة سكنية، أرض مخطط).<br><br>3️⃣ <strong>تجارب تفاعلية</strong> — عروض تفاعلية للمشاريع العقارية، التعليمية، الصناعية والترفيهية — شاشات لمس وجولات افتراضية.<br><br>4️⃣ <strong>جاليريات وديكور إعلاني</strong> — تصميم وتنفيذ صالات عرض وديكور إعلاني احترافي حسب المساحة والموقع.<br><br>5️⃣ <strong>ميديا برودكشن</strong> — إنتاج سينمائي، مونتاج، أنيميشن وموشن جرافيك.<br><br>خدمات متوفرة مجتمعة أو منفردة، وننفذ في أي مكان حول العالم 🌍",
+  "services": "نغطي الهوية الكاملة للمشاريع الكبرى والصغرى — كل شيء تحت مظلة التصميم حسب الهوية:<br><br>1️⃣ <strong>سينمائي CGI</strong> — إظهار معماري سينمائي فائق الجودة يحوّل المخططات إلى سرديات بصرية عاطفية.<br><br>2️⃣ <strong>مجسمات ذكية</strong> — مجسمات معمارية بمقاييس مختلفة، للحقن بأنواعها (فيلا، تاور، قرية سياحية، مدينة سكنية، أرض مخطط).<br><br>3️⃣ <strong>تجارب تفاعلية</strong> — عروض تفاعلية للمشاريع العقارية، التعليمية، الصناعية والترفيهية — شاشات لمس وجولات افتراضية.<br><br>4️⃣ <strong>جاليريات وديكور إعلاني</strong> — تصميم وتنفيذ صالات عرض وديكور إعلاني احترافي حسب المساحة والموقع.<br><br>5️⃣ <strong>ميديا برودكشن</strong> — إنتاج سينمائي، مونتاج، أنيميشن وموشن جرافيك.<br><br>خدمات متوفرة مجتمعة أو منفردة، وننفذ في أي مكان حول العالم 🌍",
   "quote": "للحصول على عرض سعر دقيق، يرجى تجهيز المعلومات التالية:<br><br>📌 <strong>نوع المشروع:</strong><br>• مجسم معماري — المقاس ونوع المبنى<br>• فيلم انيميشن — فيلا، تاور، قرية سياحية، مدينة سكنية، أرض مخطط<br>• ديكور معرض — المساحة والموقع<br>• عرض تفاعلي — عقاري، تعليمي، صناعي، ترفيهي<br><br>📎 إن توفرت رسومات أولية، يُرجى رفعها.<br>📅 تاريخ استلام المشروع المطلوب.<br>💰 الميزانية التقريبية (إن وجدت).<br>📍 مكان المشروع.<br><br>⚠️ الأسعار لا يمكن تحديدها إلا بعد دراسة المشروع، عبر اجتماع هاتفي أو في المكتب.<br><br>📞 للتواصل المباشر: +966 50 278 6513<br><br>أو اضغط على زر <strong>اتصال</strong> — أحولك للتواصل المباشر مع فريقنا فوراً 😊",
   "contact": "يمكنك التواصل مباشرة عبر:<br><br>📞 <strong>اتصال / واتساب:</strong> +966 50 278 6513<br>📧 <strong>إيميل:</strong> info@3dgraphicshouse.com<br><br>📍 <strong>المركز الرئيسي:</strong> جدة، المملكة العربية السعودية<br><br>نفضل التواصل المباشر — اتصل واحنا نخدمك 😊",
   "maquette": "المجسمات الذكية تجمع بين الحرفية اليدوية والتقنيات الحديثة:<br><br>🏗️ <strong>الأنواع:</strong> مجسمات لجميع أنواع المباني — فلل، أبراج، مصانع، قرى سياحية، مدن سكنية، أراضي مخطط.<br><br>✨ <strong>التقنيات:</strong><br>• إسقاط ضوئي (Mapping)<br>• بيانات حية وتفاعلية<br>• تحكم ذكي بالإضاءة والصوت<br>• تجربة بصرية ورقمية فريدة<br><br>📐 نصنع المجسم بالمقاس المطلوب، مع التوصيل والتركيب والشحن لأي مكان في العالم.",
@@ -3177,12 +4102,17 @@ var ghQAs = ghLang === "ar" ? {
 
 function toggleChat() {
   var p = document.getElementById("ghChatPanel");
+  var btn = document.getElementById("ghChatBtn");
   p.classList.toggle("open");
+  btn.classList.toggle("open");
   var icon = document.getElementById("ghChatIcon");
+  var close = document.getElementById("ghChatClose");
   if(p.classList.contains("open")) {
-    icon.textContent = "close";
+    icon.style.display = "none";
+    close.style.display = "block";
   } else {
-    icon.textContent = "chat";
+    icon.style.display = "block";
+    close.style.display = "none";
   }
 }
 
@@ -3191,7 +4121,7 @@ function addMsg(text, isUser) {
   var div = document.createElement("div");
   div.className = "gh-msg" + (isUser ? " gh-msg-user" : "");
   if(!isUser) {
-    div.innerHTML = '<div class="gh-msg-avatar"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C;">smart_toy</span></div><div class="gh-msg-bubble"></div>';
+    div.innerHTML = '<div class="gh-msg-avatar"><img src="assets/chatbot-motif.png" alt="GH" style="width:16px;height:16px;object-fit:contain;border-radius:50%;vertical-align:middle;display:inline-block"></div><div class="gh-msg-bubble"></div>';
   } else {
     div.innerHTML = '<div class="gh-msg-avatar"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C;">person</span></div><div class="gh-msg-bubble"></div>';
   }
