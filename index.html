@@ -1423,78 +1423,6 @@ img { max-width: 100%; display: block; }
   .s2-row-visual .s2-play-icon { width: 50px; height: 50px; font-size: 20px; }
 }
 
-/* ===== CLIENTS / PARTNERS LOGOS ===== */
-.s2-clients {
-  position: relative;
-  z-index: 1;
-  padding: 80px 0 40px;
-  text-align: center;
-}
-.s2-clients-inner {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 48px;
-}
-.s2-clients-label {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--gold);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-  opacity: 0.6;
-}
-.s2-clients-title {
-  font-size: clamp(20px, 2vw, 28px);
-  font-weight: 300;
-  color: #fff;
-  margin: 0 0 40px;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-}
-.s2-clients-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
-  align-items: center;
-  justify-items: center;
-}
-.s2-clients-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 70px;
-  padding: 8px 16px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 8px;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.5);
-  text-align: center;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-.s2-clients-item:hover {
-  border-color: rgba(201,168,76,0.3);
-  background: rgba(201,168,76,0.05);
-  color: var(--gold);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(201,168,76,0.08);
-}
-@media(max-width:1024px) {
-  .s2-clients-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
-  .s2-clients-item { height: 60px; font-size: 12px; }
-}
-@media(max-width:640px) {
-  .s2-clients-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .s2-clients-item { height: 50px; font-size: 11px; padding: 6px 10px; }
-  .s2-clients-inner { padding: 0 20px; }
-  .s2-clients { padding: 60px 0 20px; }
-}
-
 /* ===== SECTION 3: PROJECT SHOWCASE ===== */
 
 /* Section header for s3 */
@@ -2972,27 +2900,6 @@ img { max-width: 100%; display: block; }
 </section>
 
 
-<!-- ===== CLIENTS / PARTNERS LOGOS ===== -->
-<section class="s2-clients s2-fade s2-d5">
-  <div class="s2-clients-inner">
-    <div class="s2-clients-label">عملاؤنا</div>
-    <h3 class="s2-clients-title">نفذنا مشاريع لكبرى الشركات في المنطقة</h3>
-    <div class="s2-clients-grid">
-      <div class="s2-clients-item">مصرف الراجحي</div>
-      <div class="s2-clients-item">رفال للتطوير</div>
-      <div class="s2-clients-item">عنان إسكان</div>
-      <div class="s2-clients-item">مكيون</div>
-      <div class="s2-clients-item">تويوتا</div>
-      <div class="s2-clients-item">المركز الطبي الدولي</div>
-      <div class="s2-clients-item">الأولى للتطوير</div>
-      <div class="s2-clients-item">عقارات العيسائي</div>
-      <div class="s2-clients-item">العيوني</div>
-      <div class="s2-clients-item">هيئة المدن الصناعية</div>
-      <div class="s2-clients-item">الخياط للطوب الأحمر</div>
-      <div class="s2-clients-item">مجموعة بن زومة</div>
-    </div>
-  </div>
-</section>
 
 <!-- ===== SERVICE DETAILS — بالعربية ===== -->
 
@@ -3013,9 +2920,28 @@ img { max-width: 100%; display: block; }
         <div style="margin-top:28px">
           <a href="pages/3d-animation.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
-        </div>
+             onmouseout="this.style.background='#1A1A1A'">        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== عملاؤنا ===== -->
+<section style="padding:40px 0 60px;background:#FAFAF8;overflow:hidden" dir="rtl">
+  <div style="max-width:1280px;margin:0 auto;padding:0 24px">
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:20px;align-items:center;justify-items:center">
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:70px;padding:8px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:8px;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);text-align:center;transition:all 0.3s ease;white-space:nowrap">مصرف الراجحي</div>
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:70px;padding:8px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:8px;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);text-align:center;transition:all 0.3s ease;white-space:nowrap">رفال للتطوير</div>
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:70px;padding:8px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:8px;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);text-align:center;transition:all 0.3s ease;white-space:nowrap">عنان إسكان</div>
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:70px;padding:8px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:8px;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);text-align:center;transition:all 0.3s ease;white-space:nowrap">مكيون</div>
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:70px;padding:8px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:8px;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);text-align:center;transition:all 0.3s ease;white-space:nowrap">تويوتا</div>
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:70px;padding:8px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:8px;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);text-align:center;transition:all 0.3s ease;white-space:nowrap">المركز الطبي الدولي</div>
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:70px;padding:8px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:8px;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);text-align:center;transition:all 0.3s ease;white-space:nowrap">الأولى للتطوير</div>
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:70px;padding:8px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:8px;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);text-align:center;transition:all 0.3s ease;white-space:nowrap">عقارات العيسائي</div>
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:70px;padding:8px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:8px;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);text-align:center;transition:all 0.3s ease;white-space:nowrap">العيوني</div>
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:70px;padding:8px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:8px;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);text-align:center;transition:all 0.3s ease;white-space:nowrap">هيئة المدن الصناعية</div>
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:70px;padding:8px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:8px;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);text-align:center;transition:all 0.3s ease;white-space:nowrap">الخياط للطوب الأحمر</div>
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:70px;padding:8px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.06);border-radius:8px;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);text-align:center;transition:all 0.3s ease;white-space:nowrap">مجموعة بن زومة</div>
     </div>
   </div>
 </section>
