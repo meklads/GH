@@ -4,7 +4,6 @@ Thumbs.db
 .claude/
 
 # Large backup files - kept locally, not deployed
-assets/videos/*.mp4
 assets/ghfolio.pdf
 
 # Workspace / backup / temp files
@@ -13,8 +12,13 @@ workspace*
 en-v2*
 home-v2-backup*
 
-*.mp4
 components/
 *.tsx
 الهيرو*.png
 أيقونات.png
+
+# Root-level duplicate videos (already in assets/videos/)
+/3D-Architectural-visualisation.mp4
+/GH-Real-estate-services.mp4
+/GH-demo-reel-2025.mp4
+/assets/GH\ demo\ reel.mp4
