@@ -3887,14 +3887,14 @@ function closeImageLightbox(e) {
 <style>
 #ghChatBtn {
   position:fixed; bottom:24px; inset-inline-end:24px; z-index:99998;
-  width:56px; height:56px; border-radius:50%;
-  background:rgba(14,14,14,0.92); border:2px solid #C9A84C;
+  width:auto; height:auto; border-radius:0;
+  background:transparent; border:none;
   display:flex; align-items:center; justify-content:center;
-  cursor:pointer; box-shadow:0 4px 20px rgba(201,168,76,.4);
+  cursor:pointer; box-shadow:none;
   transition:all .3s ease;
 }
-#ghChatBtn:hover { transform:scale(1.1); box-shadow:0 6px 30px rgba(201,168,76,.6); }
-#ghChatBtn img { width:32px; height:32px; object-fit:contain; display:block; }
+#ghChatBtn:hover { transform:scale(1.15); }
+#ghChatBtn img { width:60px; height:60px; object-fit:contain; display:block; }
 
 #ghChatPanel {
   position:fixed; bottom:92px; inset-inline-end:24px; z-index:99997;
@@ -3977,8 +3977,8 @@ function closeImageLightbox(e) {
 
 @media(max-width:480px){
   #ghChatPanel { width:calc(100vw - 32px); inset-inline-end:16px; bottom:84px; max-height:70vh; }
-  #ghChatBtn { bottom:16px; inset-inline-end:16px; width:50px; height:50px; }
-  #ghChatBtn img { width:28px; height:28px; }
+  #ghChatBtn { bottom:16px; inset-inline-end:16px; width:auto; height:auto; }
+  #ghChatBtn img { width:50px; height:50px; }
   #ghChatBtn span { font-size:20px; }
 }
 
