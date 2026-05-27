@@ -56,13 +56,13 @@ img { max-width: 100%; display: block; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 10px 0;
   transition: all 0.4s ease;
 }
 .header.scrolled {
   background: rgba(0,0,0,0.85);
   backdrop-filter: blur(20px);
-  padding: 10px 0;
+  padding: 4px 0;
   border-bottom: 1px solid var(--border-subtle);
 }
 .header-inner {
@@ -842,7 +842,65 @@ img { max-width: 100%; display: block; }
   display: none;
 }
 
-/* Content below the fold */
+/* Thumbnail gallery on hero right side */
+.s2-hero-gallery {
+  position: absolute;
+  right: 60px;
+  top: 68%;
+  z-index: 5;
+  max-height: 36vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201,168,76,0.3) transparent;
+  direction: ltr;
+}
+.s2-hero-gallery::-webkit-scrollbar {
+  width: 3px;
+}
+.s2-hero-gallery::-webkit-scrollbar-track {
+  background: transparent;
+}
+.s2-hero-gallery::-webkit-scrollbar-thumb {
+  background: rgba(201,168,76,0.3);
+  border-radius: 2px;
+}
+.s2-hero-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 10px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  direction: rtl;
+}
+.s2-hero-gallery-grid .s2-hero-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
+.s2-hero-gallery-grid .s2-hero-thumb:hover {
+  border-color: var(--gold);
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(201,168,76,0.25);
+  z-index: 2;
+}
+.s2-hero-gallery-grid .s2-hero-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
 .s2-content-wrap {
   position: relative;
   z-index: 1;
@@ -3488,6 +3546,17 @@ document.querySelectorAll(".nav a").forEach(link => {
     }
   });
 });
+
+// Hero thumbnail gallery - open image in lightbox
+function openHeroImage(src) {
+  var modal = document.getElementById('imageLightbox');
+  var modalImg = document.getElementById('imageLightboxImg');
+  modalImg.src = src;
+  modal.style.display = 'flex';
+  setTimeout(function() { modal.style.opacity = '1'; }, 10);
+  document.body.style.overflow = 'hidden';
+}
+
 
 // Video modal popup
 function playVideo(videoId, startTime) {
