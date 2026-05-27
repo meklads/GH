@@ -3927,6 +3927,17 @@ function closeImageLightbox(e) {
 /* Stop ripple when panel is open */
 #ghChatBtn.open .gh-ripple { animation:none; opacity:0; }
 
+/* Subtle 18° rotation every 30s */
+#ghChatBtn img {
+  animation: ghRotate 30s ease-in-out infinite;
+}
+@keyframes ghRotate {
+  0%   { transform: rotate(0deg); }
+  90%  { transform: rotate(0deg); }
+  95%  { transform: rotate(18deg); }
+  100% { transform: rotate(0deg); }
+}
+
 #ghChatPanel {
   position:fixed; bottom:92px; inset-inline-end:24px; z-index:99997;
   width:360px; max-height:520px;
