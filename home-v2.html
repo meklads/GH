@@ -668,10 +668,183 @@ img { max-width: 100%; display: block; }
 /* ===== SECTION 2: BRAND POSITIONING ===== */
 .s2 {
   background: #FAFAF8;
-  padding: 140px 0 120px;
+  padding: 0;
   position: relative;
   overflow: hidden;
   direction: rtl;
+}
+.s2-hero-wrap {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.s2-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.s2-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.s2-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.65) 100%);
+  z-index: 1;
+}
+.s2-hero-inner {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 900px;
+  padding: 40px 48px;
+  pointer-events: none;
+}
+.s2-hero-inner * {
+  pointer-events: auto;
+}
+.s2-hero-inner .s2-header-eyebrow {
+  font-size: clamp(14px, 1.2vw, 18px);
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.s2-hero-inner .s2-header-eyebrow::before {
+  width: 8px;
+  height: 8px;
+}
+.s2-hero-inner .s2-header-title {
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 300;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.3);
+}
+.s2-hero-inner .s2-header-title em {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 500;
+}
+.s2-hero-inner .s2-header-desc {
+  font-size: clamp(15px, 1.3vw, 19px);
+  color: rgba(255,255,255,0.7);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+.s2-hero-inner .s2-divider {
+  width: 80px;
+  height: 2px;
+  background: var(--gold);
+  margin: 28px auto 0;
+  opacity: 0.6;
+}
+.s2-hero-scroll {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: color 0.3s;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.s2-hero-scroll:hover {
+  color: var(--gold);
+}
+.s2-hero-scroll .material-symbols-outlined {
+  font-size: 24px;
+  animation: s2-scroll-bounce 2s ease-in-out infinite;
+}
+@keyframes s2-scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* Hotspots on hero - adjusted for fullscreen */
+.s2-hero-wrap .hotspot {
+  z-index: 4;
+}
+.s2-hero-wrap .hotspot-tooltip {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.75);
+  border-color: rgba(201,168,76,0.2);
+}
+.s2-hero-wrap .hotspot-tooltip h4 {
+  color: #fff;
+}
+.s2-hero-wrap .hotspot-tooltip p {
+  color: rgba(255,255,255,0.65);
+}
+.s2-hero-wrap .hotspot-tooltip-arrow {
+  background: rgba(0,0,0,0.75);
+}
+
+/* Play button on hero */
+.s2-hero-wrap .s2-play-btn {
+  z-index: 5;
+}
+.s2-hero-wrap .s2-play-btn::before {
+  border-color: rgba(201,168,76,0.3);
+}
+.s2-hero-wrap .s2-play-icon {
+  background: rgba(201,168,76,0.2);
+  border-color: rgba(201,168,76,0.3);
+}
+.s2-hero-wrap .s2-feature-caption {
+  z-index: 5;
+  bottom: 80px;
+}
+.s2-hero-wrap .s2-feature-caption span {
+  font-size: clamp(16px, 1.5vw, 24px);
+  color: rgba(255,255,255,0.6);
+}
+
+/* Content below the fold */
+.s2-content-wrap {
+  position: relative;
+  z-index: 1;
+  padding: 140px 0 120px;
+}
+.s2-content-wrap .s2-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* Mobile */
+@media(max-width:768px) {
+  .s2-hero-inner {
+    padding: 20px 24px;
+  }
+  .s2-hero-inner .s2-header-title {
+    font-size: clamp(28px, 7vw, 42px);
+  }
+  .s2-hero-wrap .s2-feature-caption {
+    display: none;
+  }
+  .s2-content-wrap {
+    padding: 80px 0 60px;
+  }
+  .s2-content-wrap .s2-container {
+    padding: 0 20px;
+  }
 }
 .s2::before {
   content: '';
@@ -2197,12 +2370,20 @@ img { max-width: 100%; display: block; }
 
 
 
-<!-- ===== SECTION 2: BRAND POSITIONING ===== -->
+<!-- ===== SECTION 2: BRAND POSITIONING — FULL-SCREEN HERO ===== -->
 <section class="s2" id="about">
-  <div class="s2-container">
-    
-    <!-- Section Header -->
-    <div class="s2-header s2-fade s2-d1">
+
+  <!-- Full-screen hero with image background + text overlay + hotspots -->
+  <div class="s2-hero-wrap">
+
+    <!-- Background Image -->
+    <div class="s2-hero-bg">
+      <img src="assets/news/makkah-charter-04.jpeg" alt="Graphics House">
+      <div class="s2-hero-overlay"></div>
+    </div>
+
+    <!-- Centered Text Overlay -->
+    <div class="s2-hero-inner">
       <div class="s2-header-eyebrow">شركة جرافيكس هاوس</div>
       <h2 class="s2-header-title">
         نحن لسنا ستوديو إبداع فقط، بل نبني<br>
@@ -2210,135 +2391,140 @@ img { max-width: 100%; display: block; }
         للمشاريع الكبرى
       </h2>
       <p class="s2-header-desc">
-        تجمع جرافيكس هاوس بين الإظهار السينمائي، الأنظمة التفاعلية، المجسمات الذكية، 
+        تجمع جرافيكس هاوس بين الإظهار السينمائي، الأنظمة التفاعلية، المجسمات الذكية،
         وتقنيات العرض الحديثة لصناعة تجارب معمارية واستثمارية ترفع قيمة المشروع وتعزز قرارات البيع والاستثمار.
       </p>
       <div class="s2-divider"></div>
     </div>
 
-    <!-- Full-width Feature Image with Interactive Hotspots -->
-    <div class="s2-feature s2-fade s2-d2" id="interactive-feature">
-      <div class="s2-feature-overlay"></div>
-      <img src="assets/news/makkah-charter-04.jpeg" alt="Graphics House">
-      
-      <!-- Interactive Hotspots -->
-      <div class="hotspot hotspot-1 hotspot-left" style="top:56%;left:65%" data-title="المجسم التفاعلي">
-        <div class="hotspot-pulse"></div>
-        <div class="hotspot-dot">
-          <span class="material-symbols-outlined">touch_app</span>
-        </div>
-        <div class="hotspot-tooltip">
-          <div class="hotspot-tooltip-arrow"></div>
-          <span class="hotspot-badge">مجسم ذكي</span>
-          <h4>مجسم تفاعلي لمشاريع الرابطة</h4>
-          <p>مجسم معماري تفاعلي ثلاثي الأبعاد لمشاريع رابطة العالم الإسلامي حول العالم، مع إضاءة ديناميكية تبرز تفاصيل كل مشروع.</p>
-        </div>
+    <!-- Interactive Hotspots (on the background image) -->
+    <div class="hotspot hotspot-1 hotspot-left" style="top:56%;left:65%" data-title="المجسم التفاعلي">
+      <div class="hotspot-pulse"></div>
+      <div class="hotspot-dot">
+        <span class="material-symbols-outlined">touch_app</span>
       </div>
-      
-      <div class="hotspot hotspot-2 hotspot-below" style="top:38%;left:84%" data-title="برنامج تشغيلي">
-        <div class="hotspot-pulse"></div>
-        <div class="hotspot-dot">
-          <span class="material-symbols-outlined">devices</span>
-        </div>
-        <div class="hotspot-tooltip">
-          <div class="hotspot-tooltip-arrow"></div>
-          <span class="hotspot-badge">برنامج تفاعلي</span>
-          <h4>برنامج تشغيلي للتحكم في المجسم</h4>
-          <p>برنامج تفاعلي يعرض تفاصيل المشاريع على شاشة اللمس ويتحكم في إضاءة المجسم وعرض المعلومات بشكل ديناميكي.</p>
-        </div>
-      </div>
-      
-      <div class="hotspot hotspot-3 hotspot-below" style="top:32%;left:50%" data-title="أخبار الرابطة">
-        <div class="hotspot-pulse"></div>
-        <div class="hotspot-dot">
-          <span class="material-symbols-outlined">public</span>
-        </div>
-        <div class="hotspot-tooltip">
-          <div class="hotspot-tooltip-arrow"></div>
-          <span class="hotspot-badge">برنامج أخبار</span>
-          <h4>برنامج أخبار الرابطة حول العالم</h4>
-          <p>برنامج تفاعلي يعرض آخر أخبار وفعاليات ومبادرات رابطة العالم الإسلامي في مختلف قارات العالم.</p>
-        </div>
-      </div>
-      
-      <div class="hotspot hotspot-4 hotspot-below" style="top:32%;left:28%" data-title="تصوير تذكاري">
-        <div class="hotspot-pulse"></div>
-        <div class="hotspot-dot">
-          <span class="material-symbols-outlined">photo_camera</span>
-        </div>
-        <div class="hotspot-tooltip">
-          <div class="hotspot-tooltip-arrow"></div>
-          <span class="hotspot-badge">تصوير تفاعلي</span>
-          <h4>برنامج تصوير تذكاري</h4>
-          <p>شاشة تفاعلية للتصوير التذكاري مع إطارات مخصصة للفعالية، تسمح للزوار بالتقاط صور تذكارية ومشاركتها فوراً.</p>
-        </div>
-      </div>
-      
-      <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 0)" aria-label="تشغيل الفيديو">
-        <span class="s2-play-icon">
-          <span class="material-symbols-outlined" style="font-size:38px;line-height:1">play_arrow</span>
-        </span>
-      </button>
-      <div class="s2-feature-caption">
-        <span>نصنع التجارب التي <em>تسبق بناء المدن</em></span>
+      <div class="hotspot-tooltip">
+        <div class="hotspot-tooltip-arrow"></div>
+        <span class="hotspot-badge">مجسم ذكي</span>
+        <h4>مجسم تفاعلي لمشاريع الرابطة</h4>
+        <p>مجسم معماري تفاعلي ثلاثي الأبعاد لمشاريع رابطة العالم الإسلامي حول العالم، مع إضاءة ديناميكية تبرز تفاصيل كل مشروع.</p>
       </div>
     </div>
 
-
-    <!-- Split Row 1: Text (right) | Image (left) -->
-    <div class="s2-row s2-fade s2-d3">
-      <!-- Text side -->
-      <div class="s2-row-text">
-        <div class="s2-row-eyebrow">هوية معمارية موحّدة</div>
-        <h3 class="s2-row-title">
-          الهوية المعمارية ليست رفاهية بصرية<br>
-          <em>بل استثمار في قرار العميل</em>
-        </h3>
-        <p class="s2-row-desc">
-          عندما يتنقل المستثمر أو المشتري بين الإظهار السينمائي، المجسمات الذكية، 
-          وصالة العرض — ويجد لغة بصرية واحدة، ونفس المستوى من الدقة والاتقان — 
-          هنا تتشكل الثقة بالقرار.
-        </p>
-        <p class="s2-row-desc s2-row-tagline">
-          جرافيكس هاوس توحد الهوية المعمارية عبر كل أدواتك البيعية
-        </p>
+    <div class="hotspot hotspot-2 hotspot-below" style="top:38%;left:84%" data-title="برنامج تشغيلي">
+      <div class="hotspot-pulse"></div>
+      <div class="hotspot-dot">
+        <span class="material-symbols-outlined">devices</span>
       </div>
-      <!-- Image side -->
-      <div class="s2-row-visual" id="s2VideoWrap2">
-        <div class="s2-corner-tl"></div>
-        <div class="s2-corner-br"></div>
-        <img src="assets/news/makkah-charter-06.jpeg" alt="Graphics House Branding">
+      <div class="hotspot-tooltip">
+        <div class="hotspot-tooltip-arrow"></div>
+        <span class="hotspot-badge">برنامج تفاعلي</span>
+        <h4>برنامج تشغيلي للتحكم في المجسم</h4>
+        <p>برنامج تفاعلي يعرض تفاصيل المشاريع على شاشة اللمس ويتحكم في إضاءة المجسم وعرض المعلومات بشكل ديناميكي.</p>
       </div>
     </div>
 
-    <!-- Split Row 2: Image (right) | Text (left) -->
-    <div class="s2-row s2-fade s2-d4">
-      <!-- Image side (first = right in RTL) -->
-      <div class="s2-row-visual" id="s2VideoWrap3">
-        <div class="s2-corner-tl"></div>
-        <div class="s2-corner-br"></div>
-        <video autoplay loop muted playsinline poster="assets/news/makkah-charter-08.jpeg">
-          <source src="assets/videos/GH-Real-estate-services.mp4" type="video/mp4">
-        </video>
+    <div class="hotspot hotspot-3 hotspot-below" style="top:32%;left:50%" data-title="أخبار الرابطة">
+      <div class="hotspot-pulse"></div>
+      <div class="hotspot-dot">
+        <span class="material-symbols-outlined">public</span>
       </div>
-      <!-- Text side (second = left in RTL) -->
-      <div class="s2-row-text">
-        <div class="s2-row-eyebrow">تجارب استثنائية</div>
-        <h3 class="s2-row-title">
-          من الإظهار السينمائي إلى<br>
-          <em>التجربة العقارية المتكاملة</em>
-        </h3>
-        <p class="s2-row-desc">
-          نحو جيل جديد من التجارب الذكية التي تقنع المستثمر وتعظم قيمة المشروع.
-          نصنع تجارب معمارية واستثمارية ترفع قيمة المشروع وتعزز قرارات البيع والاستثمار.
-        </p>
-        <p class="s2-row-desc s2-row-tagline">
-          نصنع التجارب التي تسبق بناء المدن
-        </p>
+      <div class="hotspot-tooltip">
+        <div class="hotspot-tooltip-arrow"></div>
+        <span class="hotspot-badge">برنامج أخبار</span>
+        <h4>برنامج أخبار الرابطة حول العالم</h4>
+        <p>برنامج تفاعلي يعرض آخر أخبار وفعاليات ومبادرات رابطة العالم الإسلامي في مختلف قارات العالم.</p>
       </div>
     </div>
 
+    <div class="hotspot hotspot-4 hotspot-below" style="top:32%;left:28%" data-title="تصوير تذكاري">
+      <div class="hotspot-pulse"></div>
+      <div class="hotspot-dot">
+        <span class="material-symbols-outlined">photo_camera</span>
+      </div>
+      <div class="hotspot-tooltip">
+        <div class="hotspot-tooltip-arrow"></div>
+        <span class="hotspot-badge">تصوير تفاعلي</span>
+        <h4>برنامج تصوير تذكاري</h4>
+        <p>شاشة تفاعلية للتصوير التذكاري مع إطارات مخصصة للفعالية، تسمح للزوار بالتقاط صور تذكارية ومشاركتها فوراً.</p>
+      </div>
+    </div>
+
+    <!-- Play Button -->
+    <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 0)" aria-label="تشغيل الفيديو">
+      <span class="s2-play-icon">
+        <span class="material-symbols-outlined" style="font-size:38px;line-height:1">play_arrow</span>
+      </span>
+    </button>
+
+    <!-- Caption -->
+    <div class="s2-feature-caption">
+      <span>نصنع التجارب التي <em>تسبق بناء المدن</em></span>
+    </div>
+
+    <!-- Scroll-down indicator -->
+    <a href="#s2-content" class="s2-hero-scroll">
+      <span>اكتشف المزيد</span>
+      <span class="material-symbols-outlined">expand_more</span>
+    </a>
   </div>
+
+  <!-- Content below the fold -->
+  <div class="s2-content-wrap" id="s2-content">
+    <div class="s2-container">
+
+      <!-- Split Row 1: Text (right) | Image (left) -->
+      <div class="s2-row s2-fade s2-d3">
+        <div class="s2-row-text">
+          <div class="s2-row-eyebrow">هوية معمارية موحّدة</div>
+          <h3 class="s2-row-title">
+            الهوية المعمارية ليست رفاهية بصرية<br>
+            <em>بل استثمار في قرار العميل</em>
+          </h3>
+          <p class="s2-row-desc">
+            عندما يتنقل المستثمر أو المشتري بين الإظهار السينمائي، المجسمات الذكية،
+            وصالة العرض — ويجد لغة بصرية واحدة، ونفس المستوى من الدقة والاتقان —
+            هنا تتشكل الثقة بالقرار.
+          </p>
+          <p class="s2-row-desc s2-row-tagline">
+            جرافيكس هاوس توحد الهوية المعمارية عبر كل أدواتك البيعية
+          </p>
+        </div>
+        <div class="s2-row-visual" id="s2VideoWrap2">
+          <div class="s2-corner-tl"></div>
+          <div class="s2-corner-br"></div>
+          <img src="assets/news/makkah-charter-06.jpeg" alt="Graphics House Branding">
+        </div>
+      </div>
+
+      <!-- Split Row 2: Image (right) | Text (left) -->
+      <div class="s2-row s2-fade s2-d4">
+        <div class="s2-row-visual" id="s2VideoWrap3">
+          <div class="s2-corner-tl"></div>
+          <div class="s2-corner-br"></div>
+          <video autoplay loop muted playsinline poster="assets/news/makkah-charter-08.jpeg">
+            <source src="assets/videos/GH-Real-estate-services.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="s2-row-text">
+          <div class="s2-row-eyebrow">تجارب استثنائية</div>
+          <h3 class="s2-row-title">
+            من الإظهار السينمائي إلى<br>
+            <em>التجربة العقارية المتكاملة</em>
+          </h3>
+          <p class="s2-row-desc">
+            نحو جيل جديد من التجارب الذكية التي تقنع المستثمر وتعظم قيمة المشروع.
+            نصنع تجارب معمارية واستثمارية ترفع قيمة المشروع وتعزز قرارات البيع والاستثمار.
+          </p>
+          <p class="s2-row-desc s2-row-tagline">
+            نصنع التجارب التي تسبق بناء المدن
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <!-- ===== SERVICES SECTION (like English: black bg, dark cards) ===== -->
