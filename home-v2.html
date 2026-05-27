@@ -784,29 +784,31 @@ img { max-width: 100%; display: block; }
 /* Watch Video text button */
 .s2-watch-btn {
   position: absolute;
-  right: 40px;
-  top: 50%;
+  right: 60px;
+  top: 55%;
   transform: translateY(-50%);
   z-index: 5;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 28px;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(201,168,76,0.3);
+  padding: 14px 30px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50px;
   color: #fff;
   font-family: 'Tajawal', sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 .s2-watch-btn:hover {
-  background: rgba(201,168,76,0.2);
+  background: rgba(255,255,255,0.15);
   border-color: var(--gold);
-  box-shadow: 0 0 30px rgba(201,168,76,0.15);
+  box-shadow: 0 4px 30px rgba(201,168,76,0.2);
 }
 .s2-watch-btn .material-symbols-outlined {
   color: var(--gold);
@@ -851,11 +853,12 @@ img { max-width: 100%; display: block; }
   }
   .s2-watch-btn {
     right: 20px;
-    padding: 12px 20px;
+    padding: 12px 22px;
     font-size: 14px;
     top: auto;
     bottom: 80px;
     transform: none;
+    border-radius: 50px;
   }
   .s2-hero-scroll {
     bottom: 10px;
