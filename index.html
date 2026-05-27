@@ -3851,7 +3851,15 @@ function closeImageLightbox(e) {
 
 <!-- ===== CHAT BOT ===== -->
 <div id="ghChatBtn" onclick="toggleChat()">
-  <span class="material-symbols-outlined" id="ghChatIcon">chat</span>
+  <svg id="ghChatIcon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:28px;height:28px;display:block">
+    <circle cx="12" cy="12" r="10.5" stroke="#0e0e0e" stroke-width="1.8" fill="none"/>
+    <circle cx="12" cy="12" r="8" stroke="rgba(14,14,14,0.12)" stroke-width="1" fill="none"/>
+    <path d="M5.5 13A2.5 2.5 0 0 0 3 15.5v2a2.5 2.5 0 0 0 2.5 2.5h.5a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-.5z" fill="#0e0e0e"/>
+    <path d="M18.5 13a2.5 2.5 0 0 1 2.5 2.5v2a2.5 2.5 0 0 1-2.5 2.5H18a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h.5z" fill="#0e0e0e"/>
+    <path d="M18.5 13.5V11a6.5 6.5 0 1 0-13 0v2.5" stroke="#0e0e0e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M12 18v-1.5" stroke="#0e0e0e" stroke-width="1.8" stroke-linecap="round"/>
+  </svg>
+  <span class="material-symbols-outlined" id="ghChatClose" style="display:none;font-size:26px;color:#0e0e0e;">close</span>
 </div>
 
 <div id="ghChatPanel" dir="rtl">
@@ -3900,13 +3908,13 @@ function closeImageLightbox(e) {
 #ghChatBtn {
   position:fixed; bottom:24px; inset-inline-end:24px; z-index:99998;
   width:56px; height:56px; border-radius:50%;
-  background:linear-gradient(135deg, #C9A84C, #DAAD3D);
+  background:rgba(14,14,14,0.9); border:2px solid #C9A84C;
   display:flex; align-items:center; justify-content:center;
   cursor:pointer; box-shadow:0 4px 20px rgba(201,168,76,.4);
   transition:all .3s ease;
 }
 #ghChatBtn:hover { transform:scale(1.1); box-shadow:0 6px 30px rgba(201,168,76,.6); }
-#ghChatBtn span { color:#0e0e0e; font-size:26px; }
+#ghChatBtn svg, #ghChatBtn span { color:#0e0e0e; }
 
 #ghChatPanel {
   position:fixed; bottom:92px; inset-inline-end:24px; z-index:99997;
@@ -3990,6 +3998,7 @@ function closeImageLightbox(e) {
 @media(max-width:480px){
   #ghChatPanel { width:calc(100vw - 32px); inset-inline-end:16px; bottom:84px; max-height:70vh; }
   #ghChatBtn { bottom:16px; inset-inline-end:16px; width:50px; height:50px; }
+  #ghChatBtn svg { width:22px; height:22px; }
   #ghChatBtn span { font-size:22px; }
 }
 
@@ -4255,10 +4264,13 @@ function toggleChat() {
   var p = document.getElementById("ghChatPanel");
   p.classList.toggle("open");
   var icon = document.getElementById("ghChatIcon");
+  var close = document.getElementById("ghChatClose");
   if(p.classList.contains("open")) {
-    icon.textContent = "close";
+    icon.style.display = "none";
+    close.style.display = "block";
   } else {
-    icon.textContent = "chat";
+    icon.style.display = "block";
+    close.style.display = "none";
   }
 }
 
