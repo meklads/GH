@@ -1187,16 +1187,6 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
   z-index: 0;
 }
-.s3::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 15%;
-  right: 15%;
-  height: 1px;
-  background: linear-gradient(to left, transparent, var(--gold), transparent);
-  opacity: 0.15;
-}
 .s3-container {
   position: relative;
   z-index: 1;
@@ -2124,38 +2114,9 @@ img { max-width: 100%; display: block; }
 
 
 
-<!-- ===== SECTION 2: BRAND POSITIONING ===== -->
-<section class="s2" id="about">
+
+<section style="background:#FAFAF8;padding:80px 0;overflow:hidden">
   <div class="s2-container">
-    
-    <!-- Section Header -->
-    <div class="s2-header s2-fade s2-d1">
-      <div class="s2-header-eyebrow">Graphics House Co.</div>
-      <h2 class="s2-header-title">
-        We're not just a creative studio — we build<br>
-        <em>Architectural Identity &amp; Sales Experience</em><br>
-        For Mega Developments
-      </h2>
-      <p class="s2-header-desc">
-        Graphics House combines cinematic production, interactive software, smart physical models,
-        and modern display technologies to create architectural and investment experiences that elevate project value and drive sales decisions.
-      </p>
-      <div class="s2-divider"></div>
-    </div>
-
-    <!-- Full-width Feature Image -->
-    <div class="s2-feature s2-fade s2-d2">
-      <div class="s2-feature-overlay"></div>
-      <img src="assets/news/makkah-charter-04.jpeg" alt="Graphics House">
-      <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 0)" aria-label="Play video">
-        <span class="s2-play-icon">▶</span>
-      </button>
-      <div class="s2-feature-caption">
-        <span>We build experiences that <em>precede the building of cities</em></span>
-      </div>
-    </div>
-
-
     <!-- Split Row 1: Text (right) | Image (left) -->
     <div class="s2-row s2-fade s2-d3">
       <!-- Text side -->
@@ -2206,11 +2167,145 @@ img { max-width: 100%; display: block; }
         <p class="s2-row-desc s2-row-tagline">
           We build the experiences that precede the building of cities
         </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== SECTION 3: PROJECT SHOWCASE — MAKKAH CHARTER ===== -->
+<section class="s3" id="projects">
+  <div class="s3-container">
+
+
+    <div class="s3-grid s2-fade s2-d2">
+      <!-- Text side — comes first in RTL (appears on right) -->
+      <div class="s3-text">
+        <div class="s3-eyebrow">Makkah Charter Project</div>
+        <h2 class="s3-title">
+          Humanity Exhibition — Muslim World League, Jeddah<br>
+          <em>An integrated interactive experience from design to execution</em>
+        </h2>
+        <p class="s3-desc">
+          We designed and executed the complete visual identity and interactive experience for the Muslim World League headquarters
+          In Makkah, from interior design and execution to the latest smart interactive systems and custom software.
+        </p>
+        <ul class="s3-list">
+          <li>
+            <span class="s3-list-icon"></span>
+            <span>Complete interior design and execution for the headquarters</span>
+          </li>
+          <li>
+            <span class="s3-list-icon"></span>
+            <span>Smart interactive maquettes with an operational program displayed on interactive screens</span>
+          </li>
+          <li>
+            <span class="s3-list-icon"></span>
+            <span>Interactive software for league news worldwide</span>
+          </li>
+          <li>
+            <span class="s3-list-icon"></span>
+            <span>Memorial photo program on interactive screen</span>
+          </li>
+        </ul>
+        <div class="s3-cta s2-fade s2-d3">
+          <a href="#projects" class="s3-cta-btn">
+            More Successful Projects
+            <span class="s3-cta-arrow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+      <!-- Image side — comes second in RTL (appears on left) -->
+      <div class="s3-image-wrap">
+        <div class="s3-image" id="s3MainImage">
+          <img id="s3MainImg" src="assets/news/makkah-charter-01.jpeg" alt="Makkah Charter Project — Muslim World League">
+          <div class="s3-image-corner-tl"></div>
+          <div class="s3-image-corner-br"></div>
+          <div class="s3-image-corner-tr"></div>
+          <div class="s3-image-corner-bl"></div>
+        </div>
+        <!-- Thumbnails below main image -->
+        <div class="s3-thumbs" id="s3Thumbs">
+          <div class="s3-thumb active" onclick="swapImage('assets/news/makkah-charter-01.jpeg', this)">
+            <img src="assets/news/makkah-charter-01.jpeg" alt="">
+          </div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-02.jpeg', this)">
+            <img src="assets/news/makkah-charter-02.jpeg" alt="">
+          </div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-03.jpeg', this)">
+            <img src="assets/news/makkah-charter-03.jpeg" alt="">
+          </div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-04.jpeg', this)">
+            <img src="assets/news/makkah-charter-04.jpeg" alt="">
+          </div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-05.jpeg', this)">
+            <img src="assets/news/makkah-charter-05.jpeg" alt="">
+          </div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-06.jpeg', this)">
+            <img src="assets/news/makkah-charter-06.jpeg" alt="">
+          </div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-07.jpeg', this)">
+            <img src="assets/news/makkah-charter-07.jpeg" alt="">
+          </div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-08.jpeg', this)">
+            <img src="assets/news/makkah-charter-08.jpeg" alt="">
+          </div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-09.jpeg', this)">
+            <img src="assets/news/makkah-charter-09.jpeg" alt="">
+          </div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-10.jpeg', this)">
+            <img src="assets/news/makkah-charter-10.jpeg" alt="">
+          </div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-11.jpeg', this)">
+            <img src="assets/news/makkah-charter-11.jpeg" alt="">
+          </div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-12.jpeg', this)">
+            <img src="assets/news/makkah-charter-12.jpeg" alt="">
+          </div>
+        </div>
       </div>
     </div>
 
   </div>
 </section>
+
+
+<!-- ===== SECTION 2: BRAND POSITIONING ===== -->
+<section class="s2" id="about">
+  <div class="s2-container">
+    
+    <!-- Section Header -->
+    <div class="s2-header s2-fade s2-d1">
+      <div class="s2-header-eyebrow">Graphics House Co.</div>
+      <h2 class="s2-header-title">
+        We're not just a creative studio — we build<br>
+        <em>Architectural Identity &amp; Sales Experience</em><br>
+        For Mega Developments
+      </h2>
+      <p class="s2-header-desc">
+        Graphics House combines cinematic production, interactive software, smart physical models,
+        and modern display technologies to create architectural and investment experiences that elevate project value and drive sales decisions.
+      </p>
+      <div class="s2-divider"></div>
+    </div>
+
+    <!-- Full-width Feature Image -->
+    <div class="s2-feature s2-fade s2-d2">
+      <div class="s2-feature-overlay"></div>
+      <img src="assets/news/makkah-charter-04.jpeg" alt="Graphics House">
+      <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="Play video">
+        <span class="s2-play-icon">▶</span>
+      </button>
+      <div class="s2-feature-caption">
+        <span>We build experiences that <em>precede the building of cities</em></span>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
 
 <!-- ===== SERVICES SECTION (like English: black bg, dark cards) ===== -->
 <section dir="ltr" style="padding:100px 0;background:#000000;overflow:hidden;position:relative">
@@ -2218,7 +2313,6 @@ img { max-width: 100%; display: block; }
 
     <!-- Section Heading -->
     <div class="reveal" style="text-align:center;margin-bottom:50px">
-      <h2 style="font-size:clamp(20px,2vw,25px);font-weight:900;color:rgba(255,255,255,.6);letter-spacing:.1em;margin:0 0 4px;line-height:1">OUR EXPERTISE</h2>
       <h2 style="font-size:clamp(32px,4vw,45px);font-weight:200;color:#FAFAF8;margin:0;line-height:1;text-shadow:0 0 10px rgba(0,0,0,.3)">Our <span style="font-weight:900;color:#C9A84C">Services</span></h2>
     </div>
 
@@ -2317,109 +2411,6 @@ img { max-width: 100%; display: block; }
       #svc-grid-ar { grid-template-columns:1fr 1fr !important; grid-template-rows:none !important; }
     }
   </style>
-</section>
-
-<!-- ===== SECTION 3: PROJECT SHOWCASE — MAKKAH CHARTER ===== -->
-<section class="s3" id="projects">
-  <div class="s3-container">
-
-    <!-- Section Heading -->
-    <div class="s3-heading s2-fade s2-d1">
-      <div class="s3-heading-title">Successful Projects</div>
-      <div class="s3-heading-divider"></div>
-    </div>
-
-    <div class="s3-grid s2-fade s2-d2">
-      <!-- Text side — comes first in RTL (appears on right) -->
-      <div class="s3-text">
-        <div class="s3-eyebrow">Makkah Charter Project</div>
-        <h2 class="s3-title">
-          Humanity Exhibition — Muslim World League, Jeddah<br>
-          <em>An integrated interactive experience from design to execution</em>
-        </h2>
-        <p class="s3-desc">
-          We designed and executed the complete visual identity and interactive experience for the Muslim World League headquarters
-          In Makkah, from interior design and execution to the latest smart interactive systems and custom software.
-        </p>
-        <ul class="s3-list">
-          <li>
-            <span class="s3-list-icon"></span>
-            <span>Complete interior design and execution for the headquarters</span>
-          </li>
-          <li>
-            <span class="s3-list-icon"></span>
-            <span>Smart interactive maquettes with an operational program displayed on interactive screens</span>
-          </li>
-          <li>
-            <span class="s3-list-icon"></span>
-            <span>Interactive software for league news worldwide</span>
-          </li>
-          <li>
-            <span class="s3-list-icon"></span>
-            <span>Memorial photo program on interactive screen</span>
-          </li>
-        </ul>
-        <div class="s3-cta s2-fade s2-d3">
-          <a href="#projects" class="s3-cta-btn">
-            More Successful Projects
-            <span class="s3-cta-arrow">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-            </span>
-          </a>
-        </div>
-      </div>
-      <!-- Image side — comes second in RTL (appears on left) -->
-      <div class="s3-image-wrap">
-        <div class="s3-image" id="s3MainImage">
-          <img id="s3MainImg" src="assets/news/makkah-charter-01.jpeg" alt="Makkah Charter Project — Muslim World League">
-          <div class="s3-image-corner-tl"></div>
-          <div class="s3-image-corner-br"></div>
-          <div class="s3-image-corner-tr"></div>
-          <div class="s3-image-corner-bl"></div>
-        </div>
-        <!-- Thumbnails below main image -->
-        <div class="s3-thumbs" id="s3Thumbs">
-          <div class="s3-thumb active" onclick="swapImage('assets/news/makkah-charter-01.jpeg', this)">
-            <img src="assets/news/makkah-charter-01.jpeg" alt="">
-          </div>
-          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-02.jpeg', this)">
-            <img src="assets/news/makkah-charter-02.jpeg" alt="">
-          </div>
-          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-03.jpeg', this)">
-            <img src="assets/news/makkah-charter-03.jpeg" alt="">
-          </div>
-          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-04.jpeg', this)">
-            <img src="assets/news/makkah-charter-04.jpeg" alt="">
-          </div>
-          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-05.jpeg', this)">
-            <img src="assets/news/makkah-charter-05.jpeg" alt="">
-          </div>
-          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-06.jpeg', this)">
-            <img src="assets/news/makkah-charter-06.jpeg" alt="">
-          </div>
-          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-07.jpeg', this)">
-            <img src="assets/news/makkah-charter-07.jpeg" alt="">
-          </div>
-          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-08.jpeg', this)">
-            <img src="assets/news/makkah-charter-08.jpeg" alt="">
-          </div>
-          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-09.jpeg', this)">
-            <img src="assets/news/makkah-charter-09.jpeg" alt="">
-          </div>
-          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-10.jpeg', this)">
-            <img src="assets/news/makkah-charter-10.jpeg" alt="">
-          </div>
-          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-11.jpeg', this)">
-            <img src="assets/news/makkah-charter-11.jpeg" alt="">
-          </div>
-          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-12.jpeg', this)">
-            <img src="assets/news/makkah-charter-12.jpeg" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
 </section>
 
 <!-- ===== SERVICE DETAILS ===== -->
