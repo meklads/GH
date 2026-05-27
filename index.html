@@ -2078,29 +2078,17 @@ img { max-width: 100%; display: block; }
   position: relative;
 }
 .footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 20px;
-  font-weight: 800;
-  color: #fff;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  display: inline-block;
 }
-.footer-logo-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+.footer-logo img {
+  height: 58px;
+  width: auto;
+  display: block;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
 }
-.footer-logo-icon span {
-  font-size: 18px;
-  color: var(--gold);
-  font-weight: 700;
-  font-family: 'Tajawal', sans-serif;
+.footer-logo:hover img {
+  opacity: 1;
 }
 .footer-desc {
   color: rgba(255,255,255,0.65);
@@ -2284,7 +2272,7 @@ img { max-width: 100%; display: block; }
   .footer-desc { max-width: 100%; }
   .footer h4::after { right: 50%; transform: translateX(50%); }
   .footer-brand { text-align: center; }
-  .footer-logo { justify-content: center; }
+  .footer-logo img { margin: 0 auto; }
   .footer-desc { margin-left: auto; margin-right: auto; }
   .footer-tagline { text-align: center; }
   .footer-links { align-items: center; }
@@ -3572,10 +3560,9 @@ img { max-width: 100%; display: block; }
   <div class="footer-container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo">
-          <div class="footer-logo-icon"><span>ج</span></div>
-          <span>جرافيكس هاوس</span>
-        </div>
+        <a href="/" class="footer-logo">
+          <img src="assets/logo-gold.png" alt="Graphics House" style="height:58px;width:auto;display:block">
+        </a>
         <p class="footer-desc">شركة رائدة في مجال الإظهار المعماري والمجسمات الذكية والإنتاج السينمائي والوسائط المتعددة، نقدم حلولاً متكاملة للمشاريع الكبرى في الشرق الأوسط.</p>
         <div class="footer-tagline">Graphics House Co.</div>
       </div>
