@@ -2027,12 +2027,10 @@ img { max-width: 100%; display: block; }
 }
 
 /* Client Logo Cloud */
-.logo-cloud-wrap{overflow:hidden;position:relative;width:100%;padding:10px 0}
-.logo-cloud-track{display:inline-flex;gap:40px;align-items:center;animation:logoScroll 40s linear infinite}
-.logo-cloud-track:hover{animation-play-state:paused}
+.logo-cloud-wrap{overflow-x:hidden;position:relative;width:100%;padding:10px 0}
+.logo-cloud-track{display:flex;gap:40px;align-items:center;overflow:visible}
 .logo-cloud-track img{height:75px;width:auto;opacity:.55;transition:all .4s;flex-shrink:0}
 .logo-cloud-track img:hover{opacity:1;transform:scale(1.08)}
-@keyframes logoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ===== FOOTER ===== */
 .footer {
@@ -2987,18 +2985,7 @@ img { max-width: 100%; display: block; }
 <section style="padding:40px 0;background:#FAFAF8;border-top:1px solid rgba(26,26,26,.04);border-bottom:1px solid rgba(26,26,26,.04)">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;overflow:hidden">
     <div class="logo-cloud-wrap">
-      <div class="logo-cloud-track">
-        <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-owla.png" alt="Al Oula"/>
-        <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-oyonypng.png" alt="Al Oyony"/>
-        <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/anan-eskan.png" alt="Anan Eskan"/>
-        <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/aqarat.png" alt="Aqarat"/>
-        <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/bn-zooma.png" alt="Bn Zooma"/>
-        <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/makyon.png" alt="Makyon"/>
-        <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/oteck.png" alt="Oteck"/>
-        <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/rafal.png" alt="Rafal"/>
-        <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/toyota.png" alt="Toyota"/>
-        <img src="https://3dgraphicshouse.com/wp-content/uploads/2025/04/imc.png" alt="IMC"/>
-        <!-- Duplicate for seamless loop -->
+      <div class="logo-cloud-track" id="logoCloudTrack">
         <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-owla.png" alt="Al Oula"/>
         <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-oyonypng.png" alt="Al Oyony"/>
         <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/anan-eskan.png" alt="Anan Eskan"/>
@@ -3013,6 +3000,30 @@ img { max-width: 100%; display: block; }
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var track = document.getElementById('logoCloudTrack');
+  if(!track) return;
+  // Clone all children for seamless loop
+  var clones = track.innerHTML;
+  track.innerHTML += clones;
+  var speed = 1.2; // px per frame
+  var paused = false;
+  track.addEventListener('mouseenter', function(){ paused = true; });
+  track.addEventListener('mouseleave', function(){ paused = false; });
+  function step(){
+    if(!paused){
+      track.scrollLeft += speed;
+      // If scrolled past half (one full set), reset to 0 seamlessly
+      if(track.scrollLeft >= track.scrollWidth / 2){
+        track.scrollLeft = 0;
+      }
+    }
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+})();
+</script>
 
 <!-- ===== SERVICE DETAILS — بالعربية ===== -->
 
