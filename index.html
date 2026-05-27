@@ -3855,7 +3855,10 @@ function closeImageLightbox(e) {
     <div class="gh-ripple"></div>
     <div class="gh-ripple gh-ripple-2"></div>
     <div class="gh-ripple gh-ripple-3"></div>
-    <img id="ghChatIcon" src="assets/chatbot-motif.png" alt="AI">
+    <div class="gh-flip-inner">
+      <img id="ghChatIcon" class="gh-flip-front" src="assets/chatbot-motif.png" alt="AI">
+      <img class="gh-flip-back" src="assets/chatbot-motif.png" alt="AI">
+    </div>
   </div>
   <span class="material-symbols-outlined" id="ghChatClose" style="display:none;font-size:24px;color:#0e0e0e;">close</span>
 </div>
@@ -3899,7 +3902,7 @@ function closeImageLightbox(e) {
   transition:all .3s ease;
 }
 #ghChatBtn:hover { transform:scale(1.15); }
-#ghChatBtn img { width:60px; height:60px; object-fit:contain; display:block; position:relative; z-index:2; }
+#ghChatBtn .gh-flip-front { position:relative; z-index:2; }
 
 /* Ripple wrap holds the image + ripples together */
 .gh-ripple-wrap {
@@ -3929,10 +3932,18 @@ function closeImageLightbox(e) {
 #ghChatBtn.open .gh-ripple { animation:none; opacity:0; }
 
 /* Vertical 180° flip every 15s */
-#ghChatBtn img {
+.gh-flip-inner {
+  position:relative; width:60px; height:60px;
   animation: ghFlip 15s ease-in-out infinite;
-  backface-visibility: hidden;
+  transform-style:preserve-3d;
 }
+.gh-flip-front, .gh-flip-back {
+  position:absolute; top:0; left:0; width:60px; height:60px;
+  object-fit:contain; display:block;
+  backface-visibility:hidden;
+}
+.gh-flip-back { transform:rotateY(180deg); }
+
 @keyframes ghFlip {
   0%   { transform: rotateY(0deg); }
   45%  { transform: rotateY(0deg); }
@@ -4023,8 +4034,8 @@ function closeImageLightbox(e) {
 @media(max-width:480px){
   #ghChatPanel { width:calc(100vw - 32px); inset-inline-end:16px; bottom:84px; max-height:70vh; }
   #ghChatBtn { bottom:16px; inset-inline-end:16px; width:auto; height:auto; }
-  #ghChatBtn img { width:50px; height:50px; }
-  .gh-ripple-wrap { width:50px; height:50px; }
+  #ghChatBtn img, .gh-flip-front, .gh-flip-back { width:50px; height:50px; }
+  .gh-ripple-wrap, .gh-flip-inner { width:50px; height:50px; }
   .gh-ripple { width:50px; height:50px; }
   #ghChatBtn span { font-size:20px; }
 }
