@@ -781,6 +781,38 @@ img { max-width: 100%; display: block; }
   background: rgba(0,0,0,0.75);
 }
 
+/* Watch Video text button */
+.s2-watch-btn {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: #fff;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.s2-watch-btn:hover {
+  background: rgba(201,168,76,0.2);
+  border-color: var(--gold);
+  box-shadow: 0 0 30px rgba(201,168,76,0.15);
+}
+.s2-watch-btn .material-symbols-outlined {
+  color: var(--gold);
+  font-variation-settings: 'FILL' 1;
+}
+
 /* Play button on hero */
 .s2-hero-wrap .s2-play-btn {
   z-index: 5;
@@ -816,6 +848,14 @@ img { max-width: 100%; display: block; }
   }
   .s2-hero-title {
     font-size: clamp(18px, 4.5vw, 24px);
+  }
+  .s2-watch-btn {
+    right: 20px;
+    padding: 12px 20px;
+    font-size: 14px;
+    top: auto;
+    bottom: 80px;
+    transform: none;
   }
   .s2-hero-scroll {
     bottom: 10px;
@@ -2405,6 +2445,12 @@ img { max-width: 100%; display: block; }
       <span class="s2-play-icon">
         <span class="material-symbols-outlined" style="font-size:38px;line-height:1">play_arrow</span>
       </span>
+    </button>
+
+    <!-- Watch Video Button (right side) -->
+    <button class="s2-watch-btn" onclick="playVideo('H66KNP1sQCk', 0)" aria-label="شاهد الفيديو">
+      <span class="material-symbols-outlined" style="font-size:20px">play_circle</span>
+      شاهد الفيديو
     </button>
 
     <!-- Caption -->
