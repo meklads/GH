@@ -705,7 +705,18 @@ img { max-width: 100%; display: block; }
   max-width: 620px;
   padding: 20px 48px 20px 60px;
   pointer-events: none;
-  border-left: 1px solid rgba(201,168,76,0.35);
+}
+.s2-hero-inner::before {
+  content: '';
+  position: absolute;
+  right: auto;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 55%;
+  background: rgba(201,168,76,0.4);
+  border-radius: 1px;
 }
 .s2-hero-inner * {
   pointer-events: auto;
@@ -849,7 +860,11 @@ img { max-width: 100%; display: block; }
     top: 64%;
     left: 16px;
     padding: 16px 16px 16px 24px;
-    border-left: 1px solid rgba(201,168,76,0.3);
+  }
+  .s2-hero-inner::before {
+    width: 2px;
+    height: 50%;
+    background: rgba(201,168,76,0.35);
   }
   .s2-hero-title {
     font-size: clamp(18px, 4.5vw, 24px);
