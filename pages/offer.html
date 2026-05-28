@@ -66,256 +66,686 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ===== HERO ===== */
-.hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  padding:140px 24px 80px;
-  background:#FFFFFF;
-  overflow:hidden;
+:root {
+  --gold: #C9A84C;
+  --gold-light: rgba(201,168,76,0.15);
+  --gold-glow: rgba(201,168,76,0.08);
+  --dark: #0A0A0A;
+  --dark-2: #111111;
+  --dark-3: #1A1A1A;
 }
-.hero-bg-wave{
-  position:absolute;
-  top:0;left:0;right:0;
-  height:100%;
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding: 120px 24px 80px;
+  background: var(--dark);
+  overflow: hidden;
+  direction: rtl;
+}
+/* ===== CINEMATIC BACKGROUND ===== */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-bg-gradient {
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(ellipse 120% 60% at 50% -10%, rgba(37,99,235,.06) 0%, transparent 70%),
-    radial-gradient(ellipse 80% 40% at 20% 20%, rgba(37,99,235,.04) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 30% at 80% 30%, rgba(37,99,235,.03) 0%, transparent 50%);
-  z-index:0;
+    radial-gradient(ellipse 100% 60% at 50% -10%, rgba(201,168,76,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 40% at 20% 80%, rgba(201,168,76,.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 30% at 80% 20%, rgba(201,168,76,.03) 0%, transparent 50%),
+    radial-gradient(ellipse 120% 40% at 50% 110%, rgba(201,168,76,.05) 0%, transparent 60%);
+  z-index: 1;
 }
-.hero::after{
-  content:'';
-  position:absolute;
-  bottom:0;left:0;right:0;
-  height:200px;
-  background:linear-gradient(to top,#FFFFFF,transparent);
-  z-index:1;
-  pointer-events:none;
+.hero-bg-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,.06) 0%, transparent 70%);
+  top: -10%;
+  right: -5%;
+  filter: blur(80px);
+  animation: heroGlowPulse 8s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
 }
-.hero-inner{
-  position:relative;
-  z-index:3;
-  width:100%;
-  max-width:1280px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
+.hero-bg-glow-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,.04) 0%, transparent 70%);
+  bottom: -5%;
+  left: -5%;
+  filter: blur(60px);
+  animation: heroGlowPulse 8s ease-in-out infinite 4s;
+  z-index: 1;
+  pointer-events: none;
 }
-.hero-left{
-  text-align:right;
+@keyframes heroGlowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
 }
-.hero-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 20px;
-  border:1px solid rgba(37,99,235,.15);
-  border-radius:100px;
-  font-size:12px;
-  font-weight:600;
-  color:#2563EB;
-  background:rgba(37,99,235,.05);
-  margin-bottom:24px;
-  letter-spacing:.05em;
+/* ===== NOISE OVERLAY ===== */
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  pointer-events: none;
 }
-.hero h1{
-  font-size:clamp(34px,5vw,72px);
-  font-weight:900;
-  line-height:1.05;
-  color:#0F172A;
-  margin-bottom:16px;
-  letter-spacing:-.02em;
+/* ===== HERO INNER ===== */
+.hero-inner {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
-.hero h1 .highlight{color:#2563EB}
-.hero h1 .light{font-weight:400;display:block;font-size:clamp(18px,1.8vw,30px);margin-top:10px;color:rgba(15,23,42,.5);letter-spacing:.02em}
-.hero p{
-  font-size:clamp(16px,1.2vw,20px);
-  color:rgba(15,23,42,.55);
-  max-width:580px;
-  margin:0 0 32px;
-  line-height:1.8;
-  font-weight:400;
+/* ===== LEFT SIDE ===== */
+.hero-left {
+  text-align: right;
 }
-.hero-actions{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
+/* ===== PREMIUM BADGE ===== */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(201,168,76,.15);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 28px;
+  letter-spacing: 0.05em;
+  font-family: 'Inter', 'Tajawal', sans-serif;
+  position: relative;
+  box-shadow: 0 0 30px rgba(201,168,76,.04);
 }
-.btn-primary{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:18px 44px;
-  background:#2563EB;
-  color:#FFFFFF;
-  font-size:15px;
-  font-weight:700;
-  font-family:'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  transition:all .35s cubic-bezier(.25,.1,.1,1);
-  text-decoration:none;
-  box-shadow:0 4px 14px rgba(37,99,235,.25);
+.hero-badge::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, rgba(201,168,76,.2), transparent, rgba(201,168,76,.1));
+  z-index: -1;
+  opacity: 0.5;
 }
-.btn-primary:hover{
-  background:#1D4ED8;
-  transform:translateY(-3px);
-  box-shadow:0 12px 40px rgba(37,99,235,.35);
+.hero-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 10px rgba(201,168,76,.5);
+  animation: badgePulse 2s ease-in-out infinite;
 }
-.btn-secondary{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:18px 44px;
-  background:transparent;
-  color:#0F172A;
-  font-size:15px;
-  font-weight:600;
-  font-family:'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
-  border:1.5px solid rgba(15,23,42,.08);
-  border-radius:8px;
-  cursor:pointer;
-  transition:all .35s ease;
-  text-decoration:none;
+@keyframes badgePulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(201,168,76,.5); }
+  50% { opacity: 0.5; box-shadow: 0 0 20px rgba(201,168,76,.2); }
 }
-.btn-secondary:hover{
-  border-color:#2563EB;
-  color:#2563EB;
-  transform:translateY(-3px);
+/* ===== MAIN HEADLINE ===== */
+.hero h1 {
+  margin: 0 0 20px;
+  line-height: 1.08;
 }
-.hero-strip{
-  display:flex;
-  align-items:center;
-  gap:24px;
-  margin-top:36px;
-  flex-wrap:wrap;
-  padding:14px 24px;
-  background:rgba(255,255,255,.7);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  border-radius:12px;
-  border:1px solid rgba(37,99,235,.06);
+.hero-h1-line {
+  display: block;
+  font-size: clamp(38px, 5.5vw, 80px);
+  font-weight: 300;
+  color: #FAFAF8;
+  letter-spacing: -0.02em;
 }
-.hero-strip-item{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:13px;
-  font-weight:500;
-  color:rgba(15,23,42,.5);
+.hero-h1-line strong {
+  font-weight: 800;
+  color: #FAFAF8;
 }
-.hero-strip-item .icon{color:#2563EB;font-size:18px}
-/* ===== HERO RIGHT VISUAL ===== */
-.hero-visual{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.hero-h1-line .gold {
+  color: var(--gold);
+  font-weight: 800;
 }
-.hero-visual-frame{
-  position:relative;
-  width:100%;
-  max-width:520px;
-  aspect-ratio:4/3;
-  border-radius:20px;
-  overflow:hidden;
-  background:linear-gradient(145deg,#EFF6FF,#DBEAFE);
-  box-shadow:0 20px 60px rgba(37,99,235,.12),0 8px 24px rgba(37,99,235,.08);
+.hero-h1-sub {
+  display: block;
+  font-size: clamp(20px, 1.6vw, 30px);
+  font-weight: 300;
+  color: rgba(255,255,255,.5);
+  margin-top: 12px;
+  letter-spacing: 0;
+  line-height: 1.4;
 }
-.hero-visual-frame img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  mix-blend-mode:multiply;
-  opacity:0.9;
+.hero-h1-sub strong {
+  color: rgba(255,255,255,.8);
+  font-weight: 500;
 }
-.hero-visual-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,rgba(37,99,235,.03),rgba(37,99,235,.12));
+/* ===== SUPPORTING PARAGRAPH ===== */
+.hero p {
+  font-size: clamp(15px, 1.1vw, 18px);
+  color: rgba(255,255,255,.5);
+  max-width: 540px;
+  margin: 0 0 36px auto;
+  line-height: 1.8;
+  font-weight: 300;
 }
-.hero-stat-card{
-  position:absolute;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:12px 20px;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
-  border-radius:12px;
-  box-shadow:0 8px 32px rgba(15,23,42,.08);
-  border:1px solid rgba(255,255,255,.8);
-  animation:heroFloat 6s ease-in-out infinite;
+.hero p strong {
+  color: rgba(255,255,255,.75);
+  font-weight: 500;
 }
-.hero-stat-card:nth-child(2){
-  top:8%;
-  left:-8%;
-  animation-delay:-2s;
+/* ===== CTA BUTTONS ===== */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
-.hero-stat-card:nth-child(3){
-  bottom:12%;
-  right:-6%;
-  animation-delay:-4s;
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 44px;
+  background: linear-gradient(135deg, #C9A84C, #B8952E);
+  color: #0A0A0A;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all .4s cubic-bezier(.25,.1,.1,1);
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(201,168,76,.25), 0 0 40px rgba(201,168,76,.08);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
 }
-.hero-stat-card .num{
-  font-size:24px;
-  font-weight:900;
-  color:#2563EB;
-  line-height:1;
-  font-family:'Inter',sans-serif;
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.15), transparent);
+  opacity: 0;
+  transition: opacity .4s ease;
 }
-.hero-stat-card .label{
-  font-size:11px;
-  font-weight:500;
-  color:rgba(15,23,42,.6);
-  line-height:1.3;
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 48px rgba(201,168,76,.35), 0 0 60px rgba(201,168,76,.12);
 }
-.hero-avatars{
-  display:flex;
-  align-items:center;
-  gap:4px;
-  margin-top:24px;
+.btn-primary:hover::before {
+  opacity: 1;
 }
-.hero-avatars .avatar{
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  border:2.5px solid #FFFFFF;
-  object-fit:cover;
-  margin-left:-10px;
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 44px;
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #FAFAF8;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all .4s cubic-bezier(.25,.1,.1,1);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
 }
-.hero-avatars .avatar:first-child{margin-left:0}
-.hero-avatars .more{
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  background:rgba(37,99,235,.08);
-  color:#2563EB;
-  font-size:11px;
-  font-weight:700;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:2.5px solid #FFFFFF;
-  font-family:'Inter',sans-serif;
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(201,168,76,.2), transparent, rgba(201,168,76,.1));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity .4s ease;
 }
-.hero-avatars-text{
-  font-size:13px;
-  color:rgba(15,23,42,.5);
-  font-weight:500;
-  margin-right:4px;
+.btn-secondary:hover {
+  border-color: rgba(201,168,76,.3);
+  transform: translateY(-3px);
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 8px 30px rgba(201,168,76,.08);
 }
-.hero-avatars-text strong{color:#0F172A}
-@keyframes heroFloat{
-  0%,100%{transform:translateY(0px)}
-  50%{transform:translateY(-8px)}
+.btn-secondary:hover::before {
+  opacity: 1;
+}
+/* ===== TRUST STRIP ===== */
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,.35);
+}
+.hero-trust-item .icon {
+  color: var(--gold);
+  font-size: 16px;
+  opacity: 0.7;
+}
+.hero-trust-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255,255,255,.08);
+}
+/* ===== RIGHT VISUAL ===== */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+/* ===== CINEMATIC COMPOSITION ===== */
+.hero-visual-scene {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 4/3;
+}
+/* Main display frame */
+.hero-frame-main {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 75%;
+  height: 80%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1A1A1A, #111);
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 20px 60px rgba(0,0,0,.4), 0 0 40px rgba(201,168,76,.04);
+  animation: frameFloat 7s ease-in-out infinite;
+}
+.hero-frame-main::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,.03), transparent 50%);
+  pointer-events: none;
+}
+.hero-frame-main .frame-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.frame-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: auto;
+}
+.frame-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.1);
+}
+.frame-dots {
+  display: flex;
+  gap: 6px;
+}
+.frame-line {
+  height: 2px;
+  width: 60%;
+  background: rgba(201,168,76,.12);
+  border-radius: 1px;
+}
+.frame-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frame-preview {
+  width: 70%;
+  aspect-ratio: 16/9;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(201,168,76,.06), rgba(201,168,76,.02));
+  border: 1px solid rgba(201,168,76,.08);
+  position: relative;
+  overflow: hidden;
+}
+.frame-preview::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,.04), transparent 60%);
+}
+.frame-preview::after {
+  content: '▶';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: rgba(201,168,76,.3);
+}
+.frame-bottom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 14px;
+}
+.frame-bar {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,.06);
+  flex: 1;
+}
+.frame-bar.active {
+  background: rgba(201,168,76,.2);
+  flex: 2;
+}
+/* ===== FLOATING UI PANELS ===== */
+.hero-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: rgba(17,17,17,.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  animation: panelFloat 6s ease-in-out infinite;
+}
+.hero-panel:nth-child(2) {
+  top: 2%;
+  right: 2%;
+  animation-delay: -1.5s;
+}
+.hero-panel:nth-child(3) {
+  bottom: 18%;
+  left: 0%;
+  animation-delay: -3s;
+}
+.hero-panel:nth-child(4) {
+  top: 40%;
+  right: -2%;
+  animation-delay: -4.5s;
+}
+@keyframes panelFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes frameFloat {
+  0%, 100% { transform: translateY(0px) rotate(-0.5deg); }
+  50% { transform: translateY(-4px) rotate(0.5deg); }
+}
+.panel-icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.panel-icon.gold { background: rgba(201,168,76,.12); color: var(--gold); }
+.panel-icon.green { background: rgba(16,185,129,.12); color: #10B981; }
+.panel-icon.blue { background: rgba(59,130,246,.12); color: #3B82F6; }
+.panel-icon.purple { background: rgba(139,92,246,.12); color: #8B5CF6; }
+.panel-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.panel-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,.4);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.03em;
+}
+.panel-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #FAFAF8;
+  font-family: 'Inter', sans-serif;
+}
+.panel-value.gold-text { color: var(--gold); }
+.panel-value.green-text { color: #10B981; }
+.panel-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 28px;
+}
+.panel-chart .bar {
+  width: 4px;
+  border-radius: 2px;
+  background: rgba(201,168,76,.3);
+  transition: height .3s;
+}
+.panel-chart .bar:nth-child(1) { height: 12px; }
+.panel-chart .bar:nth-child(2) { height: 20px; background: rgba(201,168,76,.5); }
+.panel-chart .bar:nth-child(3) { height: 8px; }
+.panel-chart .bar:nth-child(4) { height: 24px; background: var(--gold); }
+.panel-chart .bar:nth-child(5) { height: 16px; background: rgba(201,168,76,.4); }
+/* ===== ANALYTICS GRAPH PANEL ===== */
+.hero-graph {
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  padding: 14px 20px;
+  background: rgba(17,17,17,.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  animation: panelFloat 6s ease-in-out infinite;
+  animation-delay: -2s;
+}
+.hero-graph-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.hero-graph-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,.3);
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.hero-graph-percent {
+  font-size: 13px;
+  font-weight: 700;
+  color: #10B981;
+  font-family: 'Inter', sans-serif;
+}
+.hero-graph-line {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 32px;
+}
+.hero-graph-line .gbar {
+  width: 6px;
+  border-radius: 2px;
+  background: rgba(201,168,76,.2);
+  transition: height .3s;
+}
+.hero-graph-line .gbar:nth-child(1) { height: 8px; }
+.hero-graph-line .gbar:nth-child(2) { height: 14px; background: rgba(201,168,76,.3); }
+.hero-graph-line .gbar:nth-child(3) { height: 20px; background: rgba(201,168,76,.4); }
+.hero-graph-line .gbar:nth-child(4) { height: 12px; }
+.hero-graph-line .gbar:nth-child(5) { height: 24px; background: var(--gold); }
+.hero-graph-line .gbar:nth-child(6) { height: 28px; background: #10B981; }
+.hero-graph-line .gbar:nth-child(7) { height: 16px; background: rgba(201,168,76,.3); }
+.hero-graph-line .gbar:nth-child(8) { height: 22px; background: rgba(201,168,76,.5); }
+.hero-graph-line .gbar:nth-child(9) { height: 10px; }
+.hero-graph-line .gbar:nth-child(10) { height: 26px; background: var(--gold); }
+/* ===== SOCIAL PREVIEW CARD ===== */
+.hero-social {
+  position: absolute;
+  bottom: 5%;
+  right: 0%;
+  padding: 12px 16px;
+  background: rgba(17,17,17,.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  animation: panelFloat 6s ease-in-out infinite;
+  animation-delay: -1s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-social-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), #B8952E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.hero-social-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.hero-social-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,.7);
+}
+.hero-social-text {
+  font-size: 11px;
+  color: rgba(255,255,255,.35);
+  font-weight: 400;
+}
+.hero-social-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+}
+.hero-social-stat {
+  font-size: 10px;
+  color: rgba(255,255,255,.3);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.hero-social-stat .mat {
+  font-size: 12px;
+  color: rgba(255,255,255,.2);
+}
+/* ===== DECORATIVE RING ===== */
+.hero-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,.04);
+  z-index: 0;
+  pointer-events: none;
+  animation: ringRotate 30s linear infinite;
+}
+.hero-ring-2 {
+  width: 380px;
+  height: 380px;
+  border-color: rgba(201,168,76,.03);
+  animation-duration: 40s;
+  animation-direction: reverse;
+}
+@keyframes ringRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+/* ===== PARTICLES ===== */
+.hero-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(201,168,76,.3);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-particle:nth-child(1) { top: 15%; left: 10%; animation: particleDrift 12s linear infinite; }
+.hero-particle:nth-child(2) { top: 25%; right: 20%; animation: particleDrift 15s linear infinite 2s; width: 3px; height: 3px; }
+.hero-particle:nth-child(3) { top: 60%; left: 5%; animation: particleDrift 10s linear infinite 4s; }
+.hero-particle:nth-child(4) { top: 70%; right: 10%; animation: particleDrift 14s linear infinite 1s; width: 1px; height: 1px; }
+.hero-particle:nth-child(5) { top: 40%; left: 25%; animation: particleDrift 11s linear infinite 3s; }
+.hero-particle:nth-child(6) { top: 80%; left: 30%; animation: particleDrift 13s linear infinite 5s; width: 3px; height: 3px; }
+@keyframes particleDrift {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-120px) translateX(30px); opacity: 0; }
+}
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { order: -1; min-height: 400px; }
+  .hero-visual-scene { max-width: 100%; }
+  .hero-left { text-align: center; }
+  .hero p { margin: 0 auto 36px; }
+  .hero-actions { justify-content: center; }
+  .hero-trust { justify-content: center; }
+  .hero-ring, .hero-ring-2 { display: none; }
+}
+@media(max-width:768px) {
+  .hero { padding: 100px 20px 60px; min-height: auto; }
+  .hero-visual { min-height: 340px; }
+  .hero-frame-main { width: 85%; height: 75%; top: 8%; left: 8%; }
+  .hero-panel:nth-child(2) { top: 0; right: 0; }
+  .hero-panel:nth-child(3) { bottom: 10%; left: 2%; }
+  .hero-panel:nth-child(4) { display: none; }
+  .hero-graph { display: none; }
+  .hero-social { bottom: 2%; right: 5%; }
+  .hero-trust { gap: 16px; }
+  .hero-trust-divider { display: none; }
+  .btn-primary { padding: 16px 32px; font-size: 14px; }
+  .btn-secondary { padding: 16px 32px; font-size: 14px; }
+}
+@media(max-width:480px) {
+  .hero-visual { min-height: 280px; }
+  .hero-frame-main { width: 90%; height: 70%; }
+  .hero-panel { padding: 8px 12px; }
+  .panel-value { font-size: 12px; }
+  .hero-social { padding: 8px 12px; }
+  .hero-trust { flex-direction: column; gap: 8px; align-items: center; }
 }
 
 /* ===== PROBLEM ===== */
@@ -947,92 +1377,175 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="hero-bg-wave"></div>
-  <div class="hero-inner reveal">
+  <div class="hero-bg">
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-bg-glow"></div>
+    <div class="hero-bg-glow-2"></div>
+    <div class="hero-noise"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring hero-ring-2"></div>
+    <div class="hero-particle"></div>
+    <div class="hero-particle"></div>
+    <div class="hero-particle"></div>
+    <div class="hero-particle"></div>
+    <div class="hero-particle"></div>
+    <div class="hero-particle"></div>
+  </div>
+
+  <div class="hero-inner">
     <div class="hero-left">
-      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:20px">
-        <div class="hero-badge" style="margin:0">
-          <span class="material-symbols-outlined" style="font-size:14px">auto_awesome</span>
-          Graphics House — AI Creative Growth System
-        </div>
-        <div style="display:inline-flex;align-items:center;gap:4px;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;color:#DC2626;background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.1);font-family:'Inter',sans-serif">
-          <span class="material-symbols-outlined" style="font-size:12px">bolt</span>
-          متبقي 3 استشارات مجانية فقط هذا الأسبوع
-        </div>
+      <!-- Premium Badge -->
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span>نظام نمو رقمي مدعوم بالذكاء الاصطناعي</span>
       </div>
+
+      <!-- Main Headline — Staggered -->
       <h1>
-        <span class="highlight">حوّل براندك</span> إلى نظام<br>
-        يجلب عملاءً <span class="highlight">كل يوم</span>
-        <span class="light">توقف عن التسويق العشوائي. ابدأ بنظام يعمل لحظة بلحظة</span>
+        <span class="hero-h1-line">حوّل <strong>براندك</strong></span>
+        <span class="hero-h1-line">إلى <span class="gold">نظام نمو</span></span>
+        <span class="hero-h1-line">يعمل <strong>يوميًا</strong></span>
+        <span class="hero-h1-sub"><strong>محتوى + تسويق + أنظمة ذكية</strong> — في حل واحد متكامل</span>
       </h1>
+
+      <!-- Supporting Paragraph -->
       <p>
-        نظام AI Creative Growth هو نظام تسويقي متكامل: يدير سوشيالك، ينتج فيديوهات سينمائية،
-        ويصمم صفحات هبوط تحوّل الزوار إلى عملاء — كل ذلك في عرض واحد وبتكلفة أقل.
+        Graphics House يجمّع لك <strong>إدارة السوشيال ميديا</strong>، <strong>إنتاج الفيديو السينمائي</strong>،
+        <strong>صفحات الهبوط التحويلية</strong>، و<strong>أنظمة الذكاء الاصطناعي</strong>
+        في نظام نمو واحد — بجودة وكفاءة فريق متكامل، بتكلفة أقل، وبدون حاجة لتوظيف.
       </p>
+
+      <!-- CTA Buttons -->
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">
           <span class="material-symbols-outlined" style="font-size:18px">trending_flat</span>
-          احجز تحليل براندك المجاني
+          احجز تحليل مجاني لبراندك
         </a>
-        <a href="#pricing" class="btn-secondary">
-          <span class="material-symbols-outlined" style="font-size:18px">currency_ruble</span>
-          اكتشف كيف ينمو براندك
-        </a>
-        <a href="tel:+966500000000" style="display:inline-flex;align-items:center;gap:8px;padding:16px 28px;background:transparent;color:rgba(15,23,42,.6);font-size:14px;font-weight:500;font-family:'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;border:1.5px solid rgba(15,23,42,.06);border-radius:8px;text-decoration:none;transition:all .35s ease" onmouseover="this.style.borderColor='#2563EB';this.style.color='#2563EB'" onmouseout="this.style.borderColor='rgba(15,23,42,.06)';this.style.color='rgba(15,23,42,.6)'">
-          <span class="material-symbols-outlined" style="font-size:16px">call</span>
-          <span dir="ltr">+966 50 000 0000</span>
+        <a href="#how" class="btn-secondary">
+          <span class="material-symbols-outlined" style="font-size:18px">play_circle</span>
+          شاهد كيف يعمل النظام
         </a>
       </div>
-      <div class="hero-strip">
-        <div class="hero-strip-item">
+
+      <!-- Trust Layer -->
+      <div class="hero-trust">
+        <div class="hero-trust-item">
           <span class="material-symbols-outlined icon">verified</span>
-          تحليل براند مجاني
+          مناسب للبراندات الراقية
         </div>
-        <div class="hero-strip-item">
-          <span class="material-symbols-outlined icon">verified</span>
-          تحسينات واضحة في أول 30 يوم
+        <div class="hero-trust-divider"></div>
+        <div class="hero-trust-item">
+          <span class="material-symbols-outlined icon">trending_up</span>
+          مبني للنمو والتحويل
         </div>
-        <div class="hero-strip-item">
-          <span class="material-symbols-outlined icon">verified</span>
-          فريق متكامل بتكلفة أقل
+        <div class="hero-trust-divider"></div>
+        <div class="hero-trust-item">
+          <span class="material-symbols-outlined icon">layers</span>
+          محتوى + تسويق + أنظمة في حل واحد
         </div>
-        <div class="hero-strip-item">
-          <span class="material-symbols-outlined icon">verified</span>
-          نتائج قابلة للقياس
-        </div>
-      </div>
-      <!-- Social Proof: Avatars -->
-      <div class="hero-avatars">
-        <img class="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face&auto=format" alt="" loading="lazy"/>
-        <img class="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face&auto=format" alt="" loading="lazy"/>
-        <img class="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face&auto=format" alt="" loading="lazy"/>
-        <img class="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face&auto=format" alt="" loading="lazy"/>
-        <div class="more">+27</div>
-        <div class="hero-avatars-text">
-          <strong>31 عميلاً</strong> بدأوا الشهر الماضي
-        </div>
-      </div>
-      <!-- Brand bar -->
-      <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;margin-top:20px;opacity:.3">
-        <span style="font-size:12px;font-weight:600;color:#0F172A;font-family:'Inter',sans-serif;letter-spacing:.04em">علامة</span>
-        <span style="font-size:14px;font-weight:700;color:#0F172A">براند</span>
-        <span style="font-size:11px;font-weight:500;color:#0F172A;font-family:'Inter',sans-serif;letter-spacing:.06em">brand B</span>
-        <span style="font-size:13px;font-weight:600;color:#0F172A">براندك</span>
       </div>
     </div>
+
+    <!-- Right Visual — Cinematic Composition -->
     <div class="hero-visual">
-      <div class="hero-visual-frame">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=450&fit=crop&auto=format" alt="فريق إبداعي يعمل" loading="lazy"/>
-        <div class="hero-visual-overlay"></div>
-        <!-- Floating stat cards -->
-        <div class="hero-stat-card">
-          <span class="num">+150</span>
-          <span class="label">عميلاً<br>يثقون بنا</span>
+      <div class="hero-visual-scene">
+
+        <!-- Main Display Frame -->
+        <div class="hero-frame-main">
+          <div class="frame-content">
+            <div class="frame-top">
+              <div class="frame-dots">
+                <span class="frame-dot"></span>
+                <span class="frame-dot"></span>
+                <span class="frame-dot"></span>
+              </div>
+              <div class="frame-line"></div>
+            </div>
+            <div class="frame-center">
+              <div class="frame-preview"></div>
+            </div>
+            <div class="frame-bottom">
+              <span class="frame-bar active"></span>
+              <span class="frame-bar"></span>
+              <span class="frame-bar"></span>
+              <span class="frame-bar"></span>
+            </div>
+          </div>
         </div>
-        <div class="hero-stat-card">
-          <span class="num">98٪</span>
-          <span class="label">نسبة<br>رضا العملاء</span>
+
+        <!-- Floating Panel 1 — Social Growth -->
+        <div class="hero-panel">
+          <div class="panel-icon gold">
+            <span class="material-symbols-outlined" style="font-size:18px">alternate_share</span>
+          </div>
+          <div class="panel-text">
+            <span class="panel-label">نمو السوشيال ميديا</span>
+            <span class="panel-value gold-text">+185%</span>
+          </div>
         </div>
+
+        <!-- Floating Panel 2 — Content Produced -->
+        <div class="hero-panel">
+          <div class="panel-icon green">
+            <span class="material-symbols-outlined" style="font-size:18px">videocam</span>
+          </div>
+          <div class="panel-text">
+            <span class="panel-label">محتوى منتج شهرياً</span>
+            <span class="panel-value green-text">48+</span>
+          </div>
+        </div>
+
+        <!-- Floating Panel 3 — Analytics Graph -->
+        <div class="hero-graph">
+          <div class="hero-graph-top">
+            <span class="hero-graph-label">نمو التفاعل</span>
+            <span class="hero-graph-percent">+64%</span>
+          </div>
+          <div class="hero-graph-line">
+            <span class="gbar"></span>
+            <span class="gbar"></span>
+            <span class="gbar"></span>
+            <span class="gbar"></span>
+            <span class="gbar"></span>
+            <span class="gbar"></span>
+            <span class="gbar"></span>
+            <span class="gbar"></span>
+            <span class="gbar"></span>
+            <span class="gbar"></span>
+          </div>
+        </div>
+
+        <!-- Floating Panel 4 — AI Badge -->
+        <div class="hero-panel">
+          <div class="panel-icon purple">
+            <span class="material-symbols-outlined" style="font-size:18px">auto_awesome</span>
+          </div>
+          <div class="panel-text">
+            <span class="panel-label">تحليل بالذكاء الاصطناعي</span>
+            <span class="panel-value">نشط</span>
+          </div>
+        </div>
+
+        <!-- Social Preview Card -->
+        <div class="hero-social">
+          <div class="hero-social-avatar">غ</div>
+          <div class="hero-social-content">
+            <span class="hero-social-name">Graphics House</span>
+            <span class="hero-social-text">نظام نمو رقمي متكامل لبراندك ✦</span>
+            <div class="hero-social-stats">
+              <span class="hero-social-stat">
+                <span class="material-symbols-outlined mat">favorite</span> 2.4k
+              </span>
+              <span class="hero-social-stat">
+                <span class="material-symbols-outlined mat">chat</span> 186
+              </span>
+              <span class="hero-social-stat">
+                <span class="material-symbols-outlined mat">share</span> 94
+              </span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
