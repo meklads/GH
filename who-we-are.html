@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>الإنتاج الإعلامي — Graphics House | Media Production</title>
+<title>من نحن — Graphics House</title>
 <meta property="og:title" content="Graphics House — الهوية البصرية والتجربة البيعية للمشاريع الكبرى">
 <meta property="og:description" content="Graphics House: هوية بصرية، مجسمات ذكية، إعلانات، وتجارب تفاعلية للمشاريع التجارية والسكنية في السعودية.">
 <meta property="og:image" content="https://3dgraphicshouse.com/assets/favicon/og-image.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16.png">
-<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
-<meta name="description" content="خدمات الإنتاج الإعلامي المتكامل من Graphics House — تصوير فيديو، مونتاج، موشن جرافيك، وإنتاج محتوى بصري احترافي للمشاريع الكبرى في الشرق الأوسط."/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+<meta name="description" content="Graphics House استوديو إنتاج متخصص في الإظهار المعماري والتصميم البصري للمشاريع الكبرى."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
@@ -152,53 +152,6 @@ html[dir="rtl"] .section-label{letter-spacing:.08em;font-size:11px}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .r1{transition-delay:.1s}.r2{transition-delay:.2s}.r3{transition-delay:.3s}
 
-/* Service intro */
-.service-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-@media(max-width:768px){.service-intro-grid{grid-template-columns:1fr;gap:40px}}
-
-/* Why items */
-.why-item{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid rgba(26,26,26,.06)}
-.why-item:last-child{border-bottom:none;padding-bottom:0}
-.why-item .why-icon{font-size:22px;color:#C9A84C;margin-top:2px;flex-shrink:0}
-.why-item h4{font-size:14px;font-weight:700;color:#1A1A1A;margin:0 0 4px}
-.why-item p{font-size:13px;color:#777;line-height:1.6;margin:0}
-
-
-/* Video Modal */
-.video-modal{position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s ease;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.video-modal.active{opacity:1;visibility:visible}
-.video-modal-close{position:absolute;top:24px;right:24px;z-index:10;width:44px;height:44px;background:rgba(255,255,255,.08);border:none;color:#fff;font-size:20px;cursor:pointer;transition:background .3s;border-radius:50%}
-.video-modal-close:hover{background:rgba(255,255,255,.15)}
-.video-modal-inner{width:90%;max-width:1100px;max-height:85vh}
-.video-aspect{position:relative;padding-bottom:56.25%;background:#000;border-radius:4px;overflow:hidden}
-.video-aspect #videoModalPlayer{position:absolute;inset:0}
-.video-aspect iframe,.video-aspect video{width:100%;height:100%;border:0;background:#000}
-
-/* Portfolio grid for animation page */
-.animation-portfolio .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.animation-portfolio .pf-item{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;background:#eee;border:1px solid rgba(0,0,0,0.06);transition:all .5s ease}
-.animation-portfolio .pf-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.25,.1,.1,1)}
-.animation-portfolio .pf-item:hover{border-color:rgba(199,161,80,0.2);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
-.animation-portfolio .pf-item:hover img{transform:scale(1.05)}
-.animation-portfolio .pf-item-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.85));transform:translateY(8px);opacity:0;transition:all .4s ease}
-.animation-portfolio .pf-item:hover .pf-item-overlay{transform:translateY(0);opacity:1}
-.animation-portfolio .pf-item-location{font-size:10px;font-weight:600;color:#C9A84C;display:block;letter-spacing:1px;font-family:'Inter',sans-serif;text-transform:uppercase;margin-bottom:4px}
-html[dir="rtl"] .animation-portfolio .pf-item-location{letter-spacing:0;text-transform:none}
-.animation-portfolio .pf-item-title{font-size:14px;font-weight:500;color:#fff;display:block;font-family:'Tajawal',sans-serif}
-.animation-portfolio .pf-video-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none;opacity:0;transition:opacity .4s ease}
-.animation-portfolio .pf-video-play .material-symbols-outlined{font-size:56px;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.5);filter:drop-shadow(0 0 20px rgba(199,161,80,.3));transition:transform .4s ease,filter .4s ease;font-variation-settings:'FILL' 1,'wght' 300,'GRAD' 0,'opsz' 48}
-.animation-portfolio .pf-video:hover .pf-video-play{opacity:1}
-.animation-portfolio .pf-video:hover .pf-video-play .material-symbols-outlined{transform:scale(1.12);filter:drop-shadow(0 0 30px rgba(199,161,80,.5))}
-.animation-portfolio .pf-video img{filter:brightness(.7);transition:transform .8s cubic-bezier(.25,.1,.1,1),filter .5s ease}
-.animation-portfolio .pf-video:hover img{filter:brightness(.5)}
-.animation-portfolio .pf-item::before,.animation-portfolio .pf-item::after{content:'';position:absolute;z-index:2;pointer-events:none;width:16px;height:16px;opacity:0;transition:all .4s ease}
-.animation-portfolio .pf-item::before{top:8px;left:8px;border-top:1.5px solid #C9A84C;border-left:1.5px solid #C9A84C}
-.animation-portfolio .pf-item::after{bottom:8px;right:8px;border-bottom:1.5px solid #C9A84C;border-right:1.5px solid #C9A84C}
-.animation-portfolio .pf-item:hover::before,.animation-portfolio .pf-item:hover::after{opacity:.6}
-@media(max-width:1024px){.animation-portfolio .portfolio-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.animation-portfolio .portfolio-grid{grid-template-columns:1fr}}
-
-
 /* Header scroll behavior - like homepage */
 #main-nav {
   background: rgba(250,250,248,0.65) !important;
@@ -220,19 +173,19 @@ html[dir="rtl"] .animation-portfolio .pf-item-location{letter-spacing:0;text-tra
 <body>
 
 <div id="loader" aria-hidden="true">
-  <div style="display:flex;flex-direction:column;align-items:center;gap:20px"><img src="../assets/logo-gold.png" alt="Graphics House" style="height:112px;width:auto" class="logo-img"></div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:20px"><img src="assets/logo-gold.png" alt="Graphics House" style="height:112px;width:auto" class="logo-img"></div>
   <div id="loader-bar-track"><div id="loader-bar"></div></div>
 </div>
 
 <div id="mob-nav" role="dialog" aria-modal="true" style="position:fixed;inset:0;z-index:999;background:rgba(10,10,10,.98);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);transform:translateX(100%);transition:transform .5s cubic-bezier(0.16,1,0.3,1);overflow-y:auto">
   <div class="flex items-center justify-between px-6 py-5" style="border-bottom:1px solid rgba(255,255,255,.06)">
-    <img src="../assets/logo-gold.png" alt="Graphics House" style="height:24px;width:auto">
+    <img src="assets/logo-gold.png" alt="Graphics House" style="height:24px;width:auto">
     <button id="mob-close"><span class="material-symbols-outlined text-2xl" style="color:rgba(255,255,255,.5)">close</span></button>
   </div>
   <div class="flex flex-col px-6 pt-8 pb-8 gap-1">
-    <a href=".." class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>هوم</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
-    <a href="who-we-are.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>نحن</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
-        <div class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer" onclick="toggleMobSub(this)">
+    <a href="/" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>هوم</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
+    <a href="who-we-are.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:#C9A84C;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>نحن</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
+        	    <div class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer" onclick="toggleMobSub(this)">
 	      <span>خدمات</span>
 	      <span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">expand_more</span>
 	    </div>
@@ -241,9 +194,9 @@ html[dir="rtl"] .animation-portfolio .pf-item-location{letter-spacing:0;text-tra
 	      <a href="smart-maquettes.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>مجسمات ذكية</span></a>
 	      <a href="interactive-experiences.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>تجارب تفاعلية</span></a>
 	      <a href="galleries-advertising.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>جاليريات وديكور إعلاني</span></a>
-	      <a href="media-production.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:#C9A84C;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>ميديا برودكشن</span></a>
+	      <a href="media-production.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>ميديا برودكشن</span></a>
 	    </div>
-	    <a href="..#projects" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>مشاريع</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
+	    <a href="/#projects" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>مشاريع</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
 	    <a href="contact-us.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>اتصل</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
   </div>
 </div>
@@ -252,8 +205,8 @@ html[dir="rtl"] .animation-portfolio .pf-item-location{letter-spacing:0;text-tra
 <header class="flex items-center justify-between px-6 lg:px-12 py-5 fixed top-0 left-0 right-0" id="main-nav" style="max-width:100%;z-index:1000">
   <button id="mob-open" class="lg:hidden w-10 h-10 flex items-center justify-center bg-transparent border-0 cursor-pointer"><span class="material-symbols-outlined text-xl" style="color:#1A1A1A">menu</span></button>
   <nav class="hidden lg:flex items-center gap-8">
-    <a href=".." class="nav-link">هوم</a>
-    <a href="who-we-are.html" class="nav-link">نحن</a>
+    <a href="/" class="nav-link">هوم</a>
+    <a href="who-we-are.html" class="nav-link" style="color:#1A1A1A">نحن</a>
     	    <div class="nav-item-drop">
 	      <a class="nav-link" style="cursor:pointer">خدمات <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
 	      <div class="nav-dropdown">
@@ -261,147 +214,94 @@ html[dir="rtl"] .animation-portfolio .pf-item-location{letter-spacing:0;text-tra
 	        <a href="smart-maquettes.html"><span class="material-symbols-outlined dd-icon">view_in_ar</span>مجسمات ذكية</a>
 	        <a href="interactive-experiences.html"><span class="material-symbols-outlined dd-icon">touch_app</span>تجارب تفاعلية</a>
 	        <a href="galleries-advertising.html"><span class="material-symbols-outlined dd-icon">gallery_thumbnail</span>جاليريات وديكور إعلاني</a>
-	        <a href="media-production.html" style="color:#C9A84C"><span class="material-symbols-outlined dd-icon" style="color:#C9A84C">videocam</span>ميديا برودكشن</a>
+	        <a href="media-production.html"><span class="material-symbols-outlined dd-icon">videocam</span>ميديا برودكشن</a>
 	      </div>
 	    </div>
-    <a href="..#projects" class="nav-link">مشاريع</a>
-	    <a href="contact-us.html" class="nav-link">اتصل</a>
+    <a href="/#projects" class="nav-link">مشاريع</a>
+	    <a href="contact-us.html" class="nav-link">اتصل بنا</a>
 	    <div class="flex items-center gap-2" style="margin-right:16px">
 	      <span style="width:1px;height:16px;background:rgba(26,26,26,.1);display:inline-block"></span>
-	      <a href=".." class="nav-lang" style="font-size:12px;font-weight:700;letter-spacing:.1em;color:#999;text-decoration:none;padding:2px 6px;border:1px solid rgba(26,26,26,.1)">AR</a>
-	      <a href="../" class="nav-lang" style="font-size:12px;font-weight:700;letter-spacing:.1em;color:#C9A84C;text-decoration:none;padding:2px 6px;border:1px solid rgba(201,168,76,.3)">EN</a>
+	      <a href="/" class="nav-lang" style="font-size:12px;font-weight:700;letter-spacing:.1em;color:#999;text-decoration:none;padding:2px 6px;border:1px solid rgba(26,26,26,.1)">AR</a>
+	      <a href="/" class="nav-lang" style="font-size:12px;font-weight:700;letter-spacing:.1em;color:#C9A84C;text-decoration:none;padding:2px 6px;border:1px solid rgba(201,168,76,.3)">EN</a>
 	    </div>
   </nav>
-  <a href=".."><img src="../assets/logo-gold.png" alt="Graphics House" style="height:28px;width:auto"></a>
+  <a href="/"><img src="assets/logo-gold.png" alt="Graphics House" style="height:28px;width:auto"></a>
 </header>
 
 <!-- HERO -->
 <section class="page-hero">
   <div class="container">
     <div class="gold-bar reveal"></div>
-    <h1 class="reveal r1">الإنتاج الإعلامي <span>Media Production</span></h1>
-    <p class="reveal r2">خدمات إنتاج إعلامي متكاملة — من التصوير والمونتاج إلى الموشن جرافيك والأنيميشن — نصنع محتوى بصرياً يحوّل الأفكار إلى قصص سينمائية مؤثرة.</p>
+    <h1 class="reveal r1">من نحن — <span>Graphics House</span></h1>
+    <p class="reveal r2">استوديو إنتاج متخصص في الإظهار المعماري والتصميم البصري، نروي قصص المشاريع بأعلى مستوى من الإتقان.</p>
   </div>
 </section>
 
-<!-- SERVICE INTRO -->
+<!-- ABOUT -->
 <section>
   <div class="container">
-    <div class="service-intro-grid">
+    <div class="about-grid">
       <div class="reveal">
-        <span class="section-label">خدمتنا</span>
-        <h2 class="section-title">خدمات الإنتاج <span>الإعلامي المتكامل</span></h2>
-        <p class="section-text" style="margin-bottom:20px">نقدم خدمات إنتاج إعلامي متكاملة تشمل التصوير السينمائي والمونتاج الاحترافي والموشن جرافيك والأنيميشن. فريقنا المتخصص يستخدم أحدث التقنيات والمعدات لصناعة محتوى بصري يعكس هوية علامتك التجارية ويروي قصتك بأسلوب سينمائي آسر.</p>
-        <p class="section-text">من تصوير المشاريع العقارية إلى إنتاج الأفلام الترويجية والتغطية الإعلامية — نقدم لك محتوى بصرياً احترافياً يترك أثراً يدوم.</p>
+        <span class="section-label">قصتنا</span>
+        <h2 class="section-title">أكثر من ١٥ عاماً — <span>شغف بالتميز البصري</span></h2>
+        <p class="section-text" style="margin-bottom:20px">جرافيكس هاوس استوديو إنتاج متخصص يسعى إلى الكمال البصري. نحن لا نُصمّم فحسب — بل نروي. يعمل فريقنا من المخرجين وفناني الـ CGI ومتخصصي ما بعد الإنتاج بتناغم تام لصياغة تجارب تتخطى حدود الشاشة.</p>
+        <p class="section-text">نقدم استشارات إبداعية وحلول عرض عالية التأثير للمشاريع العقارية والتسويقية والتصميمية. انطلقنا من السعودية لنغطي منطقة الشرق الأوسط بأكملها.</p>
       </div>
       <div class="reveal r1">
         <div class="content-card gold-border-right">
-          <h2>لماذا جرافيكس هاوس للإنتاج الإعلامي؟</h2>
-          <div class="why-item">
-            <span class="material-symbols-outlined why-icon">precision_manufacturing</span>
-            <div>
-              <h4>دقة تقنية مع لمسة فنية</h4>
-              <p>فريقنا يمزج بين الخبرة المعمارية والكفاءة تقنية لتقديم مرئيات ثلاثية الأبعاد دقيقة وملهمة في آن واحد.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <span class="material-symbols-outlined why-icon">person_manage</span>
-            <div>
-              <h4>مدير مشروع مخصص</h4>
-              <p>نخصص لك قائد مشروع لضمان تواصل سلس وتنفيذ أمين لرؤيتك.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <span class="material-symbols-outlined why-icon">update</span>
-            <div>
-              <h4>تحديثات شفافة ومستمرة</h4>
-              <p>ابق على اطلاع في كل مرحلة مع اجتماعات افتراضية منتظمة وتحديثات تصميم واضحة.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <span class="material-symbols-outlined why-icon">price_check</span>
-            <div>
-              <h4>تسعير وجداول زمنية واضحة</h4>
-              <p>نقدم عروض أسعار دقيقة وجداول زمنية محددة لضمان أقصى قيمة لاستثمارك.</p>
-            </div>
-          </div>
+          <h2>نهجنا</h2>
+          <p>في التقاطع الإبداعي بين العمارة والسينما، نصنع هوية بصرية متكاملة للمشاريع — من الفكرة إلى التنفيذ — تحت مظلة التصميم حسب الهوية، سواء كانت موجودة أم نحن من نصنعها.</p>
+          <p>فريقنا يضم نخبة من المخرجين السينمائيين، مصممي الجرافيك، مهندسي العمارة، وخبراء الإنتاج الرقمي، يعملون معاً لتقديم تجارب بصرية لا تُنسى.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<div style="background:#F5F4F0;padding:60px 0">
+  <div class="container">
+    <div class="stats-grid reveal">
+      <div class="stats-item"><div class="num">١٥+</div><div class="label">عاماً من الخبرة</div></div>
+      <div class="stats-item"><div class="num">٢٠٠+</div><div class="label">مشروعاً منفذاً</div></div>
+      <div class="stats-item"><div class="num">٥٠+</div><div class="label">عميلاً من كبرى الشركات</div></div>
+      <div class="stats-item"><div class="num">٤</div><div class="label">فروع في المنطقة</div></div>
+    </div>
+  </div>
+</div>
 
+<!-- SERVICES WE PROVIDE -->
+<section>
+  <div class="container">
+    <div style="text-align:center;margin-bottom:50px">
+      <span class="section-label">خدمات</span>
+      <h2 class="section-title">ما <span>نقدمه</span></h2>
+    </div>
+    <div class="svc-grid reveal">
+      <div class="svc-item"><img src="assets/icons/cinematic.png" alt="سينمائي CGI" style="width:36px;height:36px;display:block;margin:0 auto 12px;object-fit:contain"><h3>سينمائي CGI</h3></div>
+      <div class="svc-item"><img src="assets/icons/models.png" alt="مجسمات ذكية" style="width:36px;height:36px;display:block;margin:0 auto 12px;object-fit:contain"><h3>مجسمات ذكية</h3></div>
+      <div class="svc-item"><img src="assets/icons/interactive.png" alt="تجارب تفاعلية" style="width:36px;height:36px;display:block;margin:0 auto 12px;object-fit:contain"><h3>تجارب تفاعلية</h3></div>
+      <div class="svc-item"><img src="assets/icons/gallery.png" alt="جاليريات وديكور إعلاني" style="width:36px;height:36px;display:block;margin:0 auto 12px;object-fit:contain"><h3>جاليريات وديكور إعلاني</h3></div>
+      <div class="svc-item"><img src="assets/icons/tech.png" alt="ميديا برودكشن" style="width:36px;height:36px;display:block;margin:0 auto 12px;object-fit:contain"><h3>ميديا برودكشن</h3></div>
+    </div>
+  </div>
+</section>
 
-
-
-
-
-<!-- ANIMATION PORTFOLIO -->
+<!-- CLIENTS -->
 <section style="background:#F5F4F0">
   <div class="container">
-    <div class="animation-portfolio">
-      <div style="text-align:center;margin-bottom:50px">
-        <span class="section-label">أعمال</span>
-        <h2 class="section-title">مشاريع <span>الأنيميشن</span></h2>
-      </div>
-      <div class="portfolio-grid reveal">
-        
-        <div class="pf-item pf-video" onclick="playVideo('vYbn-9ramsI')">
-          <img src="../assets/projects/animation/jeddah-forum.jpg" alt="" loading="lazy">
-          <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-          <div class="pf-item-overlay">
-            <span class="pf-item-location">جدة</span>
-            <span class="pf-item-title">منتدى جدة — فيلم ترويجي</span>
-          </div>
-        </div>
-        
-        <div class="pf-item pf-video" onclick="playVideo('ilWeCush3ew')">
-          <img src="../assets/projects/animation/rafal-pavilions.jpg" alt="" loading="lazy">
-          <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-          <div class="pf-item-overlay">
-            <span class="pf-item-location">السعودية</span>
-            <span class="pf-item-title">رفال بافيليونز — فيلم ترويجي</span>
-          </div>
-        </div>
-        
-        <div class="pf-item pf-video" onclick="playVideo('GlbvI0DRXE4')">
-          <img src="../assets/projects/animation/market-center.jpg" alt="" loading="lazy">
-          <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-          <div class="pf-item-overlay">
-            <span class="pf-item-location">مكة المكرمة</span>
-            <span class="pf-item-title">مركز مكة التجاري — فيلم ترويجي</span>
-          </div>
-        </div>
-        
-        <div class="pf-item pf-video" onclick="playVideo('ALz6GdeITYc')">
-          <img src="../assets/projects/animation/alrajhi.jpg" alt="" loading="lazy">
-          <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-          <div class="pf-item-overlay">
-            <span class="pf-item-location">السعودية</span>
-            <span class="pf-item-title">الراجحي — فيلم ترويجي</span>
-          </div>
-        </div>
-        
-        <div class="pf-item pf-video" onclick="playLocalVideo('../assets/videos/3D-Architectural-visualisation.mp4')">
-          <img src="../assets/projects/animation/architectural-visualisation.jpg" alt="" loading="lazy">
-          <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-          <div class="pf-item-overlay">
-            <span class="pf-item-location">السعودية</span>
-            <span class="pf-item-title">الإظهار المعماري — فيلم ترويجي</span>
-          </div>
-        </div>
-        
-        <div class="pf-item pf-video" onclick="playLocalVideo('../assets/videos/GH-Real-estate-services.mp4')">
-          <img src="../assets/projects/animation/real-estate-services.jpg" alt="" loading="lazy">
-          <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-          <div class="pf-item-overlay">
-            <span class="pf-item-location">السعودية</span>
-            <span class="pf-item-title">خدمات العقارية — فيلم ترويجي</span>
-          </div>
-        </div>
-        
-      </div>
+    <div style="text-align:center;margin-bottom:50px">
+      <span class="section-label">عملاؤنا</span>
+      <h2 class="section-title">نفذنا مشاريع <span>لكبرى الشركات</span></h2>
+    </div>
+    <div class="cli-grid reveal">
+      <div class="cli-item"><h3>مصرف الراجحي</h3></div>
+      <div class="cli-item"><h3>رفال للتطوير</h3></div>
+      <div class="cli-item"><h3>عنان إسكان</h3></div>
+      <div class="cli-item"><h3>مكيون</h3></div>
+      <div class="cli-item"><h3>تويوتا</h3></div>
+      <div class="cli-item"><h3>المركز الطبي الدولي</h3></div>
+      <div class="cli-item"><h3>الأولى للتطوير</h3></div>
+      <div class="cli-item"><h3>مجموعة بن زومة</h3></div>
     </div>
   </div>
 </section>
@@ -409,24 +309,14 @@ html[dir="rtl"] .animation-portfolio .pf-item-location{letter-spacing:0;text-tra
 <!-- CTA -->
 <section class="cta">
   <div class="container">
-    <h2 class="reveal">هل لديك مشروع تحتاج إنتاجاً إعلامياً احترافياً؟</h2>
-    <p class="reveal r1">تحدث مع فريقنا الإعلامي واحصل على استشارة مجانية لمشروعك القادم.</p>
+    <h2 class="reveal">هل لديك مشروع تريد تحويله إلى تجربة بصرية؟</h2>
+    <p class="reveal r1">تحدث مع فريقنا وابدأ رحلة الإبداع.</p>
     <div class="btns reveal r2">
-      <a href="contact-us.html" class="btn-p">تواصل <span class="material-symbols-outlined" style="font-size:14px">call</span></a>
-      <a href="mailto:info@3dgraphicshouse.com" class="btn-o">اطلب عرض سعر <span class="material-symbols-outlined" style="font-size:14px">request_quote</span></a>
+      <a href="tel:+966502786513" class="btn-p">اتصل <span class="material-symbols-outlined" style="font-size:14px">call</span></a>
+      <a href="mailto:info@3dgraphicshouse.com" class="btn-o">راسلنا <span class="material-symbols-outlined" style="font-size:14px">mail</span></a>
     </div>
   </div>
 </section>
-
-<!-- Video Modal -->
-<div class="video-modal" id="videoModal">
-  <button class="video-modal-close" onclick="closeVideo()">✕</button>
-  <div class="video-modal-inner">
-    <div class="video-aspect">
-      <div id="videoModalPlayer"></div>
-    </div>
-  </div>
-</div>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -444,18 +334,18 @@ html[dir="rtl"] .animation-portfolio .pf-item-location{letter-spacing:0;text-tra
       </div>
       <div class="footer-links">
         <h4>روابط سريعة</h4>
-        <a href="..">هوم</a>
-        <a href="who-we-are.html" style="color:#C9A84C">نحن</a>
-        <a href="contact-us.html">اتصل</a>
+        <a href="/">هوم</a>
+        <a href="who-we-are.html" style="color:#C9A84C">من نحن</a>
+        <a href="contact-us.html">اتصل بنا</a>
         <a href="faq.html">الأسئلة الشائعة</a>
         <a href="privacy-policy.html">سياسة الخصوصية</a>
-        <a href="3d-animation.html" style="color:#C9A84C">أنيميشن ثلاثي الأبعاد</a>
-        <a href="..#services">خدمات</a>
-        <a href="..#projects">مشاريع</a>
+        <a href="3d-animation.html">أنيميشن ثلاثي الأبعاد</a>
+        <a href="/#services">خدمات</a>
+        <a href="/#projects">مشاريع</a>
       </div>
       <div class="footer-links">
         <h4>خدمات</h4>
-        <a href="#">سينمائي CGI</a>
+        <a href="3d-animation.html">سينمائي CGI</a>
         <a href="#">مجسمات ذكية</a>
         <a href="interactive-experiences.html">تجارب تفاعلية</a>
         <a href="galleries-advertising.html">جاليريات وديكور إعلاني</a>
@@ -478,63 +368,9 @@ html[dir="rtl"] .animation-portfolio .pf-item-location{letter-spacing:0;text-tra
 </footer>
 
 <script>
-
-// Video modal popup
-function playVideo(videoId, startTime) {
-  var modal = document.getElementById('videoModal');
-  var container = document.getElementById('videoModalPlayer');
-  var src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1';
-  if (startTime) src += '&start=' + startTime;
-  var iframe = document.createElement('iframe');
-  iframe.setAttribute('src', src);
-  iframe.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
-  iframe.setAttribute('allowfullscreen', '');
-  iframe.style.cssText = 'width:100%;height:100%;border:0;';
-  container.innerHTML = '';
-  container.appendChild(iframe);
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function playLocalVideo(src) {
-  var modal = document.getElementById('videoModal');
-  var container = document.getElementById('videoModalPlayer');
-  var video = document.createElement('video');
-  video.setAttribute('controls', '');
-  video.setAttribute('autoplay', '');
-  video.setAttribute('playsinline', '');
-  video.style.cssText = 'width:100%;height:100%;border:0;background:#000;';
-  var source = document.createElement('source');
-  source.setAttribute('src', src);
-  source.setAttribute('type', 'video/mp4');
-  video.appendChild(source);
-  container.innerHTML = '';
-  container.appendChild(video);
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeVideo() {
-  var modal = document.getElementById('videoModal');
-  var container = document.getElementById('videoModalPlayer');
-  modal.classList.remove('active');
-  container.innerHTML = '';
-  document.body.style.overflow = '';
-}
-
-// Close modal on overlay click
-document.addEventListener('click', function(e) {
-  var modal = document.getElementById('videoModal');
-  if (e.target === modal) closeVideo();
-});
-
-// Close modal on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeVideo();
-});
-
 var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
 if(ld&&lb){setTimeout(function(){lb.style.width="100%";},100);setTimeout(function(){ld.classList.add("out");},1400);}
+function toggleMobSub(el){var sub=el.nextElementSibling;if(sub.style.display=="none"){sub.style.display="block";el.querySelector(".material-symbols-outlined").textContent="expand_less"}else{sub.style.display="none";el.querySelector(".material-symbols-outlined").textContent="expand_more"}}
 var mn=document.getElementById("mob-nav"),mo=document.getElementById("mob-open"),mc=document.getElementById("mob-close");
 if(mn&&mo&&mc){mo.addEventListener("click",function(){mn.style.transform="translateX(0)";document.body.style.overflow="hidden";});mc.addEventListener("click",function(){mn.style.transform="translateX(100%)";document.body.style.overflow="";});document.querySelectorAll(".mob-link").forEach(function(a){a.addEventListener("click",function(){mn.style.transform="translateX(100%)";document.body.style.overflow="";});});}
 window.addEventListener("scroll",function(){var h=document.getElementById("main-nav");h.classList.toggle("header-scrolled",window.scrollY>80);});

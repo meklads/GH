@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="ar">
+<html dir="ltr" lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مشروع ميثاق مكة — جرافيكس هاوس</title>
-<meta name="description" content="دراسة حالة: معرض الإنسانية لرابطة العالم الإسلامي — تجربة تفاعلية متكاملة من التصميم إلى التنفيذ">
+<title>Makkah Charter Project — Graphics House</title>
+<meta name="description" content="Case Study: Humanity Exhibition — Muslim World League, Jeddah. An integrated interactive experience from design to execution.">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
   background: #0A0A0A;
   color: #FAFAF8;
   overflow-x: hidden;
@@ -124,7 +124,7 @@ img { max-width: 100%; display: block; }
   min-height: 100vh;
   min-height: 100dvh;
   overflow: hidden;
-  direction: rtl;
+  direction: ltr;
 }
 .s2-hero-bg {
   position: absolute;
@@ -146,17 +146,17 @@ img { max-width: 100%; display: block; }
 .s2-hero-inner {
   position: absolute;
   top: 64%;
-  right: 40px;
+  left: 40px;
   z-index: 5;
-  text-align: right;
+  text-align: left;
   max-width: 620px;
-  padding: 20px 60px 20px 48px;
+  padding: 20px 48px 20px 60px;
   pointer-events: none;
 }
 .s2-hero-inner::before {
   content: '';
   position: absolute;
-  right: 0;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 2px;
@@ -336,7 +336,7 @@ img { max-width: 100%; display: block; }
 /* Watch Video button */
 .s2-watch-btn {
   position: absolute;
-  left: 60px;
+  right: 60px;
   top: 55%;
   transform: translateY(-50%);
   z-index: 5;
@@ -349,7 +349,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 50px;
   color: #fff;
-  font-family: 'Tajawal', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -381,7 +381,7 @@ img { max-width: 100%; display: block; }
 /* Thumbnail gallery */
 .s2-hero-gallery {
   position: absolute;
-  left: 60px;
+  right: 60px;
   top: 68%;
   z-index: 5;
   max-height: 36vh;
@@ -389,6 +389,7 @@ img { max-width: 100%; display: block; }
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: rgba(201,168,76,0.3) transparent;
+  direction: ltr;
 }
 .s2-hero-gallery::-webkit-scrollbar { width: 3px; }
 .s2-hero-gallery::-webkit-scrollbar-track { background: transparent; }
@@ -400,7 +401,6 @@ img { max-width: 100%; display: block; }
   padding: 8px;
   background: transparent;
   border: none;
-  direction: rtl;
 }
 .s2-hero-gallery-grid .s2-hero-thumb {
   width: 88px;
@@ -429,7 +429,6 @@ img { max-width: 100%; display: block; }
 .case-content {
   padding: 80px 0;
   background: #FAFAF8;
-  direction: rtl;
 }
 .case-content-inner {
   max-width: 1100px;
@@ -461,7 +460,7 @@ img { max-width: 100%; display: block; }
 .highlight-item {
   background: #F0EFEA;
   padding: 30px;
-  border-right: 3px solid var(--gold);
+  border-left: 3px solid var(--gold);
   display: flex;
   align-items: flex-start;
   gap: 16px;
@@ -590,22 +589,22 @@ img { max-width: 100%; display: block; }
   .case-hero { min-height: 80vh; padding: 100px 20px 60px; }
   .s2-hero-inner {
     top: 56%;
-    right: 16px;
+    left: 16px;
     padding: 16px 20px;
     max-width: 85%;
   }
   .s2-hero-inner::before { display: none; }
   .s2-watch-btn {
-    left: 50%;
+    right: 50%;
     top: auto;
     bottom: 100px;
-    transform: translateX(-50%);
+    transform: translateX(50%);
   }
   .s2-hero-gallery {
-    left: 50%;
+    right: 50%;
     top: auto;
     bottom: 160px;
-    transform: translateX(-50%);
+    transform: translateX(50%);
     max-height: 20vh;
   }
   .s2-hero-gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 4px; }
@@ -621,25 +620,25 @@ img { max-width: 100%; display: block; }
 <header class="header">
   <div class="header-inner">
     <a href="javascript:history.back()" class="back-link">
-      <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
-      العودة
+      <span class="material-symbols-outlined" style="font-size:18px">arrow_back</span>
+      Back
     </a>
-    <a href="../" class="logo">
-      <img src="../assets/logo-gold.png" alt="Graphics House" style="height:72px;width:auto">
+    <a href="/" class="logo">
+      <img src="assets/logo-gold.png" alt="Graphics House" style="height:72px;width:auto">
     </a>
   </div>
 </header>
 
 <!-- Hero Section -->
 <section class="case-hero">
-  <img class="case-hero-bg" src="../assets/news/makkah-charter-04.jpeg" alt="معرض الإنسانية">
+  <img class="case-hero-bg" src="assets/news/makkah-charter-04.jpeg" alt="Humanity Exhibition">
   <div class="case-hero-overlay"></div>
   <div class="case-hero-content">
-    <span class="eyebrow">دراسة حالة</span>
-    <h1>مشروع <em>ميثاق مكة</em></h1>
+    <span class="eyebrow">Case Study</span>
+    <h1><em>Makkah Charter</em> Project</h1>
     <p class="subtitle">
-      <strong>معرض الإنسانية لرابطة العالم الإسلامي — بهليتون جدة</strong><br>
-      تجربة تفاعلية متكاملة من التصميم إلى التنفيذ
+      <strong>Humanity Exhibition — Muslim World League, Jeddah</strong><br>
+      An integrated interactive experience from design to execution
     </p>
   </div>
 </section>
@@ -649,122 +648,122 @@ img { max-width: 100%; display: block; }
 
   <!-- Background Image -->
   <div class="s2-hero-bg">
-    <img src="../assets/news/makkah-charter-04.jpeg" alt="معرض الإنسانية">
+    <img src="assets/news/makkah-charter-04.jpeg" alt="Humanity Exhibition">
     <div class="s2-hero-overlay"></div>
   </div>
 
   <!-- Centered Text Overlay -->
   <div class="s2-hero-inner">
     <h2 class="s2-hero-title">
-      نبني تجارب <em>تسبق بناء المدن</em>
+      We build experiences <em>that precede cities</em>
     </h2>
     <p class="s2-hero-desc">
-      تجمع جرافيكس هاوس بين الإظهار السينمائي، الأنظمة التفاعلية، المجسمات الذكية، وتقنيات العرض الحديثة لصناعة تجارب معمارية واستثمارية ترفع قيمة المشروع وتعزز قرارات البيع والاستثمار.
+      Graphics House combines cinematic CGI, interactive systems, smart maquettes, and modern display technologies to create architectural and investment experiences that elevate project value and enhance sales and investment decisions.
     </p>
   </div>
 
   <!-- Interactive Hotspots -->
-  <div class="hotspot hotspot-1 hotspot-left" style="top:56%;left:65%" data-title="المجسم التفاعلي">
+  <div class="hotspot hotspot-1 hotspot-left" style="top:56%;left:65%" data-title="Interactive Maquette">
     <div class="hotspot-pulse"></div>
     <div class="hotspot-dot">
       <span class="material-symbols-outlined">touch_app</span>
     </div>
     <div class="hotspot-tooltip">
       <div class="hotspot-tooltip-arrow"></div>
-      <span class="hotspot-badge">مجسم ذكي</span>
-      <h4>مجسم تفاعلي لمشاريع الرابطة</h4>
-      <p>مجسم معماري تفاعلي ثلاثي الأبعاد لمشاريع رابطة العالم الإسلامي حول العالم، مع إضاءة ديناميكية تبرز تفاصيل كل مشروع.</p>
+      <span class="hotspot-badge">Smart Maquette</span>
+      <h4>Interactive Maquette for League Projects</h4>
+      <p>An interactive 3D architectural maquette showcasing Muslim World League projects worldwide with dynamic lighting.</p>
     </div>
   </div>
 
-  <div class="hotspot hotspot-2 hotspot-left" style="top:38%;left:84%" data-title="برنامج تشغيلي">
+  <div class="hotspot hotspot-2 hotspot-left" style="top:38%;left:84%" data-title="Operating System">
     <div class="hotspot-pulse"></div>
     <div class="hotspot-dot">
       <span class="material-symbols-outlined">devices</span>
     </div>
     <div class="hotspot-tooltip">
       <div class="hotspot-tooltip-arrow"></div>
-      <span class="hotspot-badge">برنامج تفاعلي</span>
-      <h4>برنامج تشغيلي للتحكم في المجسم</h4>
-      <p>برنامج تفاعلي يعرض تفاصيل المشاريع على شاشة اللمس ويتحكم في إضاءة المجسم وعرض المعلومات بشكل ديناميكي.</p>
+      <span class="hotspot-badge">Interactive Software</span>
+      <h4>Operating Program for Maquette Control</h4>
+      <p>Interactive software displaying project details on a touch screen, controlling maquette lighting and information dynamically.</p>
     </div>
   </div>
 
-  <div class="hotspot hotspot-3 hotspot-below" style="top:32%;left:50%" data-title="أخبار الرابطة">
+  <div class="hotspot hotspot-3 hotspot-below" style="top:32%;left:50%" data-title="League News">
     <div class="hotspot-pulse"></div>
     <div class="hotspot-dot">
       <span class="material-symbols-outlined">public</span>
     </div>
     <div class="hotspot-tooltip">
       <div class="hotspot-tooltip-arrow"></div>
-      <span class="hotspot-badge">برنامج أخبار</span>
-      <h4>برنامج أخبار الرابطة حول العالم</h4>
-      <p>برنامج تفاعلي يعرض آخر أخبار وفعاليات ومبادرات رابطة العالم الإسلامي في مختلف قارات العالم.</p>
+      <span class="hotspot-badge">News Program</span>
+      <h4>Worldwide League News Feed</h4>
+      <p>Interactive program displaying the latest Muslim World League news, events, and initiatives across continents.</p>
     </div>
   </div>
 
-  <div class="hotspot hotspot-4 hotspot-below" style="top:32%;left:28%" data-title="تصوير تذكاري">
+  <div class="hotspot hotspot-4 hotspot-below" style="top:32%;left:28%" data-title="Photo Booth">
     <div class="hotspot-pulse"></div>
     <div class="hotspot-dot">
       <span class="material-symbols-outlined">photo_camera</span>
     </div>
     <div class="hotspot-tooltip">
       <div class="hotspot-tooltip-arrow"></div>
-      <span class="hotspot-badge">تصوير تفاعلي</span>
-      <h4>برنامج تصوير تذكاري</h4>
-      <p>شاشة تفاعلية للتصوير التذكاري مع إطارات مخصصة للفعالية، تسمح للزوار بالتقاط صور تذكارية ومشاركتها فوراً.</p>
+      <span class="hotspot-badge">Interactive Photo</span>
+      <h4>Memorial Photo Booth</h4>
+      <p>Interactive photo screen with custom frames allowing visitors to take souvenir photos and share them instantly.</p>
     </div>
   </div>
 
   <!-- Play Button -->
-  <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="تشغيل الفيديو" style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:5;width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,0.15);border:2px solid rgba(201,168,76,0.3);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease">
+  <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="Play video" style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:5;width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,0.15);border:2px solid rgba(201,168,76,0.3);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease">
     <span class="material-symbols-outlined" style="font-size:42px;color:#C9A84C">play_arrow</span>
   </button>
 
   <!-- Watch Video Button -->
-  <button class="s2-watch-btn" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="شاهد الفيديو">
+  <button class="s2-watch-btn" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="Watch video">
     <span class="material-symbols-outlined" style="font-size:20px">play_circle</span>
-    شاهد الفيديو
+    Watch Video
   </button>
 
   <!-- Thumbnail Gallery -->
   <div class="s2-hero-gallery">
     <div class="s2-hero-gallery-grid">
-      <div class="s2-hero-thumb" onclick="openHeroImage('../assets/news/makkah-charter-01.jpeg')">
-        <img src="../assets/news/makkah-charter-01.jpeg" alt="">
+      <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-01.jpeg')">
+        <img src="assets/news/makkah-charter-01.jpeg" alt="">
       </div>
-      <div class="s2-hero-thumb" onclick="openHeroImage('../assets/news/makkah-charter-02.jpeg')">
-        <img src="../assets/news/makkah-charter-02.jpeg" alt="">
+      <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-02.jpeg')">
+        <img src="assets/news/makkah-charter-02.jpeg" alt="">
       </div>
-      <div class="s2-hero-thumb" onclick="openHeroImage('../assets/news/makkah-charter-03.jpeg')">
-        <img src="../assets/news/makkah-charter-03.jpeg" alt="">
+      <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-03.jpeg')">
+        <img src="assets/news/makkah-charter-03.jpeg" alt="">
       </div>
-      <div class="s2-hero-thumb" onclick="openHeroImage('../assets/news/makkah-charter-04.jpeg')">
-        <img src="../assets/news/makkah-charter-04.jpeg" alt="">
+      <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-04.jpeg')">
+        <img src="assets/news/makkah-charter-04.jpeg" alt="">
       </div>
-      <div class="s2-hero-thumb" onclick="openHeroImage('../assets/news/makkah-charter-05.jpeg')">
-        <img src="../assets/news/makkah-charter-05.jpeg" alt="">
+      <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-05.jpeg')">
+        <img src="assets/news/makkah-charter-05.jpeg" alt="">
       </div>
-      <div class="s2-hero-thumb" onclick="openHeroImage('../assets/news/makkah-charter-06.jpeg')">
-        <img src="../assets/news/makkah-charter-06.jpeg" alt="">
+      <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-06.jpeg')">
+        <img src="assets/news/makkah-charter-06.jpeg" alt="">
       </div>
-      <div class="s2-hero-thumb" onclick="openHeroImage('../assets/news/makkah-charter-07.jpeg')">
-        <img src="../assets/news/makkah-charter-07.jpeg" alt="">
+      <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-07.jpeg')">
+        <img src="assets/news/makkah-charter-07.jpeg" alt="">
       </div>
-      <div class="s2-hero-thumb" onclick="openHeroImage('../assets/news/makkah-charter-08.jpeg')">
-        <img src="../assets/news/makkah-charter-08.jpeg" alt="">
+      <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-08.jpeg')">
+        <img src="assets/news/makkah-charter-08.jpeg" alt="">
       </div>
-      <div class="s2-hero-thumb" onclick="openHeroImage('../assets/news/makkah-charter-09.jpeg')">
-        <img src="../assets/news/makkah-charter-09.jpeg" alt="">
+      <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-09.jpeg')">
+        <img src="assets/news/makkah-charter-09.jpeg" alt="">
       </div>
-      <div class="s2-hero-thumb" onclick="openHeroImage('../assets/news/makkah-charter-10.jpeg')">
-        <img src="../assets/news/makkah-charter-10.jpeg" alt="">
+      <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-10.jpeg')">
+        <img src="assets/news/makkah-charter-10.jpeg" alt="">
       </div>
-      <div class="s2-hero-thumb" onclick="openHeroImage('../assets/news/makkah-charter-11.jpeg')">
-        <img src="../assets/news/makkah-charter-11.jpeg" alt="">
+      <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-11.jpeg')">
+        <img src="assets/news/makkah-charter-11.jpeg" alt="">
       </div>
-      <div class="s2-hero-thumb" onclick="openHeroImage('../assets/news/makkah-charter-12.jpeg')">
-        <img src="../assets/news/makkah-charter-12.jpeg" alt="">
+      <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-12.jpeg')">
+        <img src="assets/news/makkah-charter-12.jpeg" alt="">
       </div>
     </div>
   </div>
@@ -776,31 +775,31 @@ img { max-width: 100%; display: block; }
   <div class="case-content-inner">
     
     <p>
-      قمنا بتصميم وتنفيذ الهوية البصرية والتجربة التفاعلية الكاملة لمقر رابطة العالم الإسلامي في مكة المكرمة، بدءاً من تصميم الديكور الداخلي وتنفيذه، وصولاً إلى أحدث أنظمة التجارب التفاعلية الذكية والبرمجيات المخصصة.
+      We designed and executed the complete visual identity and interactive experience for the Muslim World League headquarters in Makkah, from interior design and execution to the latest smart interactive systems and custom software.
     </p>
 
     <div class="highlights">
       <div class="highlight-item">
         <span class="material-symbols-outlined icon">design_services</span>
-        <span class="text">تصميم وتنفيذ الديكور الداخلي للمقر بالكامل</span>
+        <span class="text">Complete interior design and execution of the headquarters</span>
       </div>
       <div class="highlight-item">
         <span class="material-symbols-outlined icon">view_in_ar</span>
-        <span class="text">إنتاج مجسمات تفاعلية ذكية مع برنامج تشغيلي يعرض على شاشات تفاعلية</span>
+        <span class="text">Smart interactive maquettes with an operational program displayed on touch screens</span>
       </div>
       <div class="highlight-item">
         <span class="material-symbols-outlined icon">public</span>
-        <span class="text">برمجيات تفاعلية لأخبار الرابطة حول العالم</span>
+        <span class="text">Interactive software for the League's global news feed</span>
       </div>
       <div class="highlight-item">
         <span class="material-symbols-outlined icon">photo_camera</span>
-        <span class="text">برنامج تصوير تذكاري على شاشة تفاعلية</span>
+        <span class="text">Interactive photo booth on a touch screen</span>
       </div>
     </div>
 
     <!-- Full-screen image -->
     <div class="full-image-wrap">
-      <img src="../assets/news/makkah-charter-04.jpeg" alt="معرض الإنسانية — تجربة تفاعلية">
+      <img src="assets/news/makkah-charter-04.jpeg" alt="Humanity Exhibition — Interactive Experience">
     </div>
 
   </div>
@@ -824,7 +823,7 @@ img { max-width: 100%; display: block; }
 
 <!-- Footer -->
 <footer class="case-footer">
-  <p>© 2026 Graphics House Co. — جميع الحقوق محفوظة</p>
+  <p>© 2026 Graphics House Co. — All rights reserved</p>
 </footer>
 
 <script>
