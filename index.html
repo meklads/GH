@@ -2181,29 +2181,6 @@ img { max-width: 100%; display: block; }
       </p>
     </div>
   
-<!-- ===== STATS STRIP ===== -->
-<section style="padding:60px 0;background:#0A0A0A;overflow:hidden">
-  <div style="max-width:1280px;margin:0 auto;padding:0 40px">
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15)">
-      <div class="stat-item reveal" style="padding:40px 20px;text-align:center;border-right:1px solid rgba(201,168,76,.15)">
-        <div style="font-size:clamp(36px,4vw,56px);font-weight:800;color:#C9A84C;line-height:1;letter-spacing:-.02em;font-family:'Playfair Display',serif" data-count="15" data-suffix="+">0+</div>
-        <div style="font-size:12px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:10px">Years of Excellence</div>
-      </div>
-      <div class="stat-item reveal" style="padding:40px 20px;text-align:center;border-right:1px solid rgba(201,168,76,.15)">
-        <div style="font-size:clamp(36px,4vw,56px);font-weight:800;color:#C9A84C;line-height:1;letter-spacing:-.02em;font-family:'Playfair Display',serif" data-count="500" data-suffix="+">0+</div>
-        <div style="font-size:12px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:10px">Projects Delivered</div>
-      </div>
-      <div class="stat-item reveal" style="padding:40px 20px;text-align:center;border-right:1px solid rgba(201,168,76,.15)">
-        <div style="font-size:clamp(36px,4vw,56px);font-weight:800;color:#C9A84C;line-height:1;letter-spacing:-.02em;font-family:'Playfair Display',serif" data-count="120" data-suffix="+">0+</div>
-        <div style="font-size:12px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:10px">Clients Served</div>
-      </div>
-      <div class="stat-item reveal" style="padding:40px 20px;text-align:center">
-        <div style="font-size:clamp(36px,4vw,56px);font-weight:800;color:#C9A84C;line-height:1;letter-spacing:-.02em;font-family:'Playfair Display',serif" data-count="4" data-suffix="">0</div>
-        <div style="font-size:12px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:10px">Regional Offices</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- We turn developments section -->
 <section style="padding:100px 0;background:#FAFAF8;overflow:hidden" dir="ltr">
@@ -3448,6 +3425,11 @@ document.getElementById("ghChatField").addEventListener("keydown", function(e) {
   }
 });
 </script>
+<style>
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-track:hover{animation-play-state:paused}
+</style>
+
 <!-- ===== WHATSAPP DUAL FLOAT ===== -->
 <style>
 .wa-float{position:fixed;bottom:90px;right:24px;z-index:9000;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
