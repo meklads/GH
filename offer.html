@@ -54,7 +54,7 @@ a{text-decoration:none;color:inherit}
 
 /* ===== SECTION BASE ===== */
 .section{padding:120px 24px;position:relative;overflow:hidden}
-.section-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.section-inner{max-width:1360px;margin:0 auto;position:relative;z-index:2}
 .section-alt{background:var(--warm-light)}
 .section-dark{
   background:linear-gradient(135deg,#2C1810 0%,#3D2B1F 40%,#2C1810 100%);
@@ -173,10 +173,10 @@ a{text-decoration:none;color:inherit}
 }
 .hero-inner{
   position:relative;z-index:2;
-  width:100%;max-width:1200px;
+  width:100%;max-width:1360px;
   margin:0 auto;padding:0 48px;
   display:grid;
-  grid-template-columns:1.1fr 0.9fr;
+  grid-template-columns:0.9fr 1.1fr;
   gap:60px;
   align-items:center;
 }
@@ -243,6 +243,28 @@ a{text-decoration:none;color:inherit}
   box-shadow:0 4px 16px rgba(201,168,76,0.2);
 }
 .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,0.3)}
+.btn-white{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 36px;
+  background:#FFFFFF;color:var(--dark-text);
+  font-size:15px;font-weight:700;
+  font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;
+  border:none;border-radius:6px;
+  cursor:pointer;transition:all .3s ease;text-decoration:none;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+.btn-white:hover{background:var(--warm-cream);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+.btn-outline-white{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 36px;
+  background:transparent;color:#FFFFFF;
+  font-size:15px;font-weight:600;
+  font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;
+  border:1px solid rgba(255,255,255,0.3);
+  border-radius:6px;
+  cursor:pointer;transition:all .3s ease;text-decoration:none;
+}
+.btn-outline-white:hover{border-color:#FFFFFF;color:#FFFFFF;background:rgba(255,255,255,0.06);transform:translateY(-2px)}
 /* Trust */
 .hero-trust{
   margin-top:48px;
@@ -270,6 +292,8 @@ a{text-decoration:none;color:inherit}
 }
 .hero-visual-frame img{width:100%;height:auto;display:block;border-radius:12px}
 .hero-metric{
+  z-index:10;
+
   position:absolute;
   display:flex;align-items:center;gap:10px;
   padding:12px 18px;
@@ -294,6 +318,7 @@ a{text-decoration:none;color:inherit}
 .hero-metric-value.gold-text{color:var(--gold-dark)}
 .hero-visual-badge{
   position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);
+  z-index:20;
   display:inline-flex;align-items:center;gap:10px;
   padding:10px 22px;
   background:#FFFFFF;
@@ -434,6 +459,8 @@ a{text-decoration:none;color:inherit}
 .target-card:hover::before{width:60%}
 .target-card .emoji{font-size:36px;display:block;margin-bottom:12px;transition:var(--transition-smooth)}
 .target-card:hover .emoji{transform:scale(1.15)}
+.target-card .target-img{width:100%;height:110px;object-fit:cover;border-radius:8px;margin-bottom:14px;display:block;transition:transform .4s ease}
+.target-card:hover .target-img{transform:scale(1.08)}
 .target-card h4{font-size:15px;font-weight:800;color:var(--dark-text);margin-bottom:4px}
 .target-card p{font-size:13px;color:var(--muted-text);margin:0;line-height:1.5}
 
@@ -513,6 +540,13 @@ a{text-decoration:none;color:inherit}
 #pricing .section-header h2{color:#FFFFFF}
 #pricing .section-header p{color:rgba(255,255,255,0.6)}
 #pricing .section-header .label{background:rgba(201,168,76,0.15);color:var(--gold)}
+#services{
+  background:linear-gradient(135deg,#2C1810 0%,#3D2B1F 40%,#2C1810 100%);
+  color:#FFFFFF;
+}
+#services .section-header h2{color:#FFFFFF}
+#services .section-header p{color:rgba(255,255,255,0.7)}
+#services .section-header .label{background:rgba(201,168,76,0.15);color:var(--gold)}
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
 .pricing-card{
   overflow:visible;
@@ -580,7 +614,7 @@ a{text-decoration:none;color:inherit}
 .p-cta:hover{border-color:var(--gold);color:var(--gold)}
 .pricing-card.featured .p-cta{background:var(--gold);border-color:var(--gold);color:#2C1810}
 .pricing-card.featured .p-cta:hover{background:var(--gold-light);box-shadow:0 8px 30px rgba(201,168,76,0.3)}
-.pricing-note{max-width:720px;margin:-8px auto 36px;padding:16px 24px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;text-align:center}
+.pricing-note{max-width:720px;margin:16px auto 36px;padding:16px 24px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;text-align:center}
 .pricing-note p{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7;margin:0}
 
 /* ===== SOCIAL PROOF ===== */
@@ -761,7 +795,7 @@ a{text-decoration:none;color:inherit}
   position:relative;overflow:hidden;
 }
 .footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:80px;background:linear-gradient(to bottom,var(--gold),transparent)}
-.footer-container{max-width:1200px;margin:0 auto;padding:0 32px}
+.footer-container{max-width:1360px;margin:0 auto;padding:0 32px}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
 .footer-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:var(--dark-text);font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif}
 .footer-logo .mat{color:var(--gold-dark);font-size:24px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24}
@@ -891,12 +925,12 @@ a{text-decoration:none;color:inherit}
 <!-- ===== STICKY TOP BAR ===== -->
 <div class="top-bar" style="position:sticky;top:0;z-index:9999;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px">
   <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-    <a href="tel:+966500000000" style="display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);text-decoration:none;font-weight:500;transition:color .3s" onmouseover="this.style.color='#FFF'" onmouseout="this.style.color='var(--muted-text)'">
+    <a href="tel:+966502786513" style="display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);text-decoration:none;font-weight:500;transition:color .3s" onmouseover="this.style.color='#FFF'" onmouseout="this.style.color='var(--muted-text)'">
       <span class="material-symbols-outlined" style="font-size:16px">call</span>
-      <span dir="ltr">+966 50 000 0000</span>
+      <span dir="ltr">+966502786513</span>
     </a>
     <span style="color:rgba(255,255,255,.15)">|</span>
-    <a href="https://wa.me/966500000000?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9%20%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A8%D8%B1%D8%A7%D9%86%D8%AF%D9%8A" target="_blank" style="display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);text-decoration:none;font-weight:500;transition:color .3s" onmouseover="this.style.color='#FFF'" onmouseout="this.style.color='var(--muted-text)'">
+    <a href="https://wa.me/966502786513?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9%20%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A8%D8%B1%D8%A7%D9%86%D8%AF%D9%8A" target="_blank" style="display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);text-decoration:none;font-weight:500;transition:color .3s" onmouseover="this.style.color='#FFF'" onmouseout="this.style.color='var(--muted-text)'">
       <span class="material-symbols-outlined" style="font-size:16px">chat</span>
       واتساب: رد فوري
     </a>
@@ -972,7 +1006,7 @@ a{text-decoration:none;color:inherit}
 
     <!-- Right Visual — Clean Mockup -->
     <div class="hero-visual">
-      <div style="position:relative;width:100%;max-width:540px">
+      <div style="position:relative;width:100%;max-width:620px">
         <!-- Floating Metric 1 -->
         <div class="hero-metric">
           <div class="hero-metric-icon gold">
@@ -985,13 +1019,10 @@ a{text-decoration:none;color:inherit}
         </div>
 
         <!-- Main Visual Frame -->
-        <div class="hero-visual-frame">
-          <img
-            src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.45-2.jpeg"
-            alt="Graphics House platform preview"
-            loading="lazy"
-            style="width:100%;height:auto;display:block;border-radius:12px"
-          />
+        <div class="hero-visual-frame" style="background:#000;border:none;box-shadow:none">
+          <video autoplay muted loop playsinline style="width:100%;aspect-ratio:16/9;object-fit:contain;display:block;border-radius:12px;background:#000">
+            <source src="https://beestoon.com/assets/videos/GH-Marketing-Media-Production.mp4" type="video/mp4">
+          </video>
         </div>
 
         <!-- Badge Under Visual -->
@@ -1019,7 +1050,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== PROBLEM ===== -->
 <section class="section" id="problem" style="padding:80px 24px">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
     <div class="grid-2">
       <div class="problem-image-wrap">
         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&auto=format" alt="Business challenges" loading="lazy"/>
@@ -1062,7 +1093,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== SOLUTION ===== -->
 <section class="section" id="solution">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
     <div class="grid-2">
       <div>
         <div class="section-header">
@@ -1097,13 +1128,16 @@ a{text-decoration:none;color:inherit}
           </div>
         </div>
       </div>
-      <div class="solution-visual">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=800&fit=crop&auto=format" alt="AI Creative System" loading="lazy"/>
-        <div class="solution-visual-content">
-          <div class="big-icon"><span class="material-symbols-outlined" style="font-size:36px">auto_awesome</span></div>
-          <h3>AI Creative Growth System</h3>
-          <p>نظام واحد متكامل يدير حضورك الرقمي بالكامل</p>
+      <div>
+        <div style="position:relative;border-radius:12px;overflow:hidden;background:#000;aspect-ratio:1">
+          <iframe
+            src="https://www.youtube.com/embed/qhmdOad_0Dw?autoplay=1&mute=1&loop=1&playlist=qhmdOad_0Dw&controls=0&modestbranding=1&rel=0&showinfo=0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:150%;height:150%;border:none;pointer-events:none"
+          ></iframe>
         </div>
+        <p style="font-size:15px;color:var(--muted-text);line-height:1.8;margin-top:20px;text-align:center">نظام واحد متكامل يدير حضورك الرقمي بالكامل</p>
       </div>
     </div>
   </div>
@@ -1111,7 +1145,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== SERVICES ===== -->
 <section class="section" id="services">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
     <div class="section-header center" style="margin-bottom:48px">
       <div class="label">
         <span class="material-symbols-outlined" style="font-size:14px">widgets</span>
@@ -1181,10 +1215,9 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== TARGET AUDIENCE ===== -->
 <section class="section" id="audience">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
     <div class="section-header center" >
       <div class="label">
-        <span class="material-symbols-outlined" style="font-size:14px">crosshair</span>
         الجمهور المستهدف
       </div>
       <h2>لمن صمم هذا النظام؟</h2>
@@ -1192,27 +1225,27 @@ a{text-decoration:none;color:inherit}
     </div>
     <div class="grid-5">
       <div class="target-card">
-        <span class="emoji">☕</span>
+        <img class="target-img" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&h=250&fit=crop&auto=format" alt="كافيهات ومطاعم" loading="lazy"/>
         <h4>الكافيهات والمطاعم</h4>
         <p>الراقية والمتخصصة</p>
       </div>
       <div class="target-card">
-        <span class="emoji">🏥</span>
+        <img class="target-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=250&fit=crop&auto=format" alt="العيادات التجميلية" loading="lazy"/>
         <h4>العيادات التجميلية</h4>
         <p>والمراكز الطبية</p>
       </div>
       <div class="target-card">
-        <span class="emoji">🧴</span>
+        <img class="target-img" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=250&fit=crop&auto=format" alt="براندات العطور" loading="lazy"/>
         <h4>براندات العطور</h4>
         <p>والتجميل</p>
       </div>
       <div class="target-card">
-        <span class="emoji">🏗️</span>
+        <img class="target-img" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&auto=format" alt="العقارات" loading="lazy"/>
         <h4>العقارات</h4>
         <p>والمشاريع السكنية</p>
       </div>
       <div class="target-card">
-        <span class="emoji">🛍️</span>
+        <img class="target-img" src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&h=250&fit=crop&auto=format" alt="اللايف ستايل والتجارة الإلكترونية" loading="lazy"/>
         <h4>اللايف ستايل والتجارة الإلكترونية</h4>
         <p>وبراندات الأزياء</p>
       </div>
@@ -1222,7 +1255,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== BENEFITS ===== -->
 <section class="section" id="benefits">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
     <div class="section-header center" >
       <div class="label">
         <span class="material-symbols-outlined" style="font-size:14px">star</span>
@@ -1266,7 +1299,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== HOW IT WORKS ===== -->
 <section class="section" id="how">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
     <div class="section-header center" style="margin-bottom:48px">
       <div class="label">
         <span class="material-symbols-outlined" style="font-size:14px">route</span>
@@ -1306,10 +1339,11 @@ a{text-decoration:none;color:inherit}
 </section>
 
 <!-- ===== BOOK A CONSULTATION ===== -->
-<section class="booking-cta" id="booking">
-  <h2>احصل على <span style="color:var(--gold-dark)">تحليل براندك المجاني</span> اليوم</h2>
-  <p>استشارة 30 دقيقة بدون أي التزام — نحلل حضورك الرقمي الحالي، نحدد نقاط الضعف، ونقدم لك خطة واضحة للانطلاق.</p>
-  <div class="booking-features">
+<section class="booking-cta" id="booking" style="padding:80px 24px">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
+    <h2 style="font-size:clamp(28px,3.6vw,48px);font-weight:900;line-height:1.3;color:#FFFFFF;margin-bottom:20px">احصل على <span style="color:var(--gold-dark)">تحليل براندك المجاني</span> اليوم</h2>
+    <p style="font-size:clamp(16px,1.15vw,19px);color:rgba(255,255,255,0.75);max-width:600px;margin:0 0 40px;line-height:1.9">استشارة 30 دقيقة بدون أي التزام — نحلل حضورك الرقمي الحالي، نحدد نقاط الضعف، ونقدم لك خطة واضحة للانطلاق.</p>
+    <div class="booking-features">
     <div class="booking-feature">
       <span class="material-symbols-outlined mat">assignment_turned_in</span>
       تحليل مجاني — 30 دقيقة بدون التزام
@@ -1323,21 +1357,22 @@ a{text-decoration:none;color:inherit}
       بداية النمو — أول خطوة نحو حضور رقمي قوي
     </div>
   </div>
-  <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2">
+  <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;position:relative;z-index:2;margin-top:24px">
     <a href="#contact" class="btn-white">
       <span class="material-symbols-outlined" style="font-size:18px">arrow_back</span>
       احجز استشارتك المجانية الآن
     </a>
-    <a href="tel:+966500000000" class="btn-outline-white">
+    <a href="tel:+966502786513" class="btn-outline-white">
       <span class="material-symbols-outlined" style="font-size:18px">call</span>
       اتصل بنا الآن
     </a>
+  </div>
   </div>
 </section>
 
 <!-- ===== DIFFERENTIATION ===== -->
 <section class="section" id="different">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
     <div class="section-header center" >
       <div class="label">
         <span class="material-symbols-outlined" style="font-size:14px">star</span>
@@ -1381,7 +1416,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== PRICING ===== -->
 <section class="section" id="pricing">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
     <div class="section-header center" style="margin-bottom:8px">
       <div class="label">
         <span class="material-symbols-outlined" style="font-size:14px">currency_ruble</span>
@@ -1458,7 +1493,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== TESTIMONIALS ===== -->
 <section class="section" id="testimonials">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
     <div class="section-header center" style="margin-bottom:48px">
       <div class="label">
         <span class="material-symbols-outlined" style="font-size:14px">format_quote</span>
@@ -1525,7 +1560,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== WHY US ===== -->
 <section class="section" id="why">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
     <div class="section-header center" >
       <div class="label">
         <span class="material-symbols-outlined" style="font-size:14px">diamond</span>
@@ -1610,7 +1645,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== SOCIAL PROOF ===== -->
 <section class="section" id="proof">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
     <div class="section-header center" style="margin-bottom:48px">
       <div class="label">
         <span class="material-symbols-outlined" style="font-size:14px">groups</span>
@@ -1639,21 +1674,28 @@ a{text-decoration:none;color:inherit}
 </section>
 
 <!-- ===== FINAL CTA ===== -->
-<section class="cta-final" id="cta">
-  <h2>براندك يستحق <span style="color:var(--gold-dark)">نظام نمو حقيقي</span></h2>
-  <p>
-    لا تدع منافسيك يسبقونك. ابدأ مع AI Creative Growth System
-    ولاحظ الفرق في حضورك الرقمي ومبيعاتك خلال أول 30 يوم.
-  </p>
-  <a href="#contact" class="btn-white">
-    <span class="material-symbols-outlined" style="font-size:20px">trending_flat</span>
-    اكتشف كيف ينمو براندك في 14 يوم
-  </a>
+<section class="section final-cta" id="cta" style="padding:100px 24px;border-top:1px solid var(--border-light)">
+  <div class="section-inner final-cta-inner" style="max-width:700px;margin:0 auto;text-align:center">
+    <div class="accent-line" style="width:60px;height:3px;background:var(--gold-gradient);margin:0 auto 24px;border-radius:3px"></div>
+    <h2 style="font-size:clamp(26px,3.2vw,42px);font-weight:900;color:var(--dark-text);margin-bottom:16px;line-height:1.2">
+      براندك يستحق <em style="color:var(--gold-dark);font-style:normal">نظام نمو حقيقي</em>
+    </h2>
+    <p style="font-size:clamp(15px,1.05vw,18px);color:var(--muted-text);max-width:520px;margin:0 auto 32px;line-height:1.8">
+      لا تدع منافسيك يسبقونك. ابدأ مع AI Creative Growth System
+      ولاحظ الفرق في حضورك الرقمي ومبيعاتك خلال أول 30 يوم.
+    </p>
+    <div class="btns" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="#contact" class="btn-white" style="box-shadow:0 4px 16px rgba(201,168,76,0.2);border:1px solid var(--gold-light);color:var(--gold-dark)">
+        <span class="material-symbols-outlined" style="font-size:20px">trending_flat</span>
+        اكتشف كيف ينمو براندك في 14 يوم
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- ===== CONTACT ===== -->
 <section class="contact-section" id="contact">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+  <div class="section-inner" style="max-width:1360px;margin:0 auto">
     <div class="contact-grid">
       <div class="contact-info">
         <div class="section-header" style="margin-bottom:20px">
@@ -1673,14 +1715,14 @@ a{text-decoration:none;color:inherit}
         <div class="details">
           <div>
             <span class="material-symbols-outlined mat" style="color:var(--gold-dark)">call</span>
-            <span dir="ltr">+966 50 000 0000</span>
+            <span dir="ltr">+966502786513</span>
           </div>
           <div>
             <span class="material-symbols-outlined mat" style="color:var(--gold-dark)">mail</span>
             <span>hello@graphicshouse.com</span>
           </div>
           <div style="margin-top:16px">
-            <a href="https://wa.me/966500000000?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20AI%20Creative%20Growth%20System" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#25D366;color:#FFF;font-size:14px;font-weight:700;border:none;border-radius:6px;cursor:pointer;transition:all .3s ease;text-decoration:none;font-family:'Tajawal','IBM Plex Sans Arabic',-apple-system,sans-serif" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(37,211,102,.3)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+            <a href="https://wa.me/966502786513?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20AI%20Creative%20Growth%20System" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#25D366;color:#FFF;font-size:14px;font-weight:700;border:none;border-radius:6px;cursor:pointer;transition:all .3s ease;text-decoration:none;font-family:'Tajawal','IBM Plex Sans Arabic',-apple-system,sans-serif" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(37,211,102,.3)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
               <span class="material-symbols-outlined" style="font-size:18px">chat</span>
               تواصل واتساب — رد فوري
             </a>
@@ -1742,8 +1784,7 @@ a{text-decoration:none;color:inherit}
       <!-- Logo & Desc -->
       <div>
         <div class="footer-logo">
-          <span class="material-symbols-outlined mat">diamond</span>
-          Graphics House
+          <img src="/assets/logo-gold.png" alt="Graphics House" style="height:48px;width:auto;display:block"/>
         </div>
         <p class="footer-desc">
           الهوية البصرية والتجربة البيعية للمشاريع الكبرى — نظام AI Creative Growth System.
@@ -1775,24 +1816,32 @@ a{text-decoration:none;color:inherit}
       <div>
         <h4>تواصل معنا</h4>
         <div class="footer-contact">
-          <a href="tel:+966500000000" class="footer-contact-item" style="justify-content:flex-start" dir="ltr">
+          <a href="tel:+966502786513" class="footer-contact-item" style="justify-content:flex-start" dir="ltr">
             <span class="material-symbols-outlined mat">call</span>
-            +966 50 000 0000
+            +966502786513
           </a>
-          <a href="https://wa.me/966500000000" target="_blank" class="footer-contact-item" style="justify-content:flex-start">
+          <a href="https://wa.me/966502786513" target="_blank" class="footer-contact-item" style="justify-content:flex-start">
             <span class="material-symbols-outlined mat">chat</span>
             واتساب
           </a>
-          <a href="mailto:info@beestoon.com" class="footer-contact-item" style="justify-content:flex-start">
+          <a href="mailto:info@3dgraphicshouse.com" class="footer-contact-item" style="justify-content:flex-start">
             <span class="material-symbols-outlined mat">mail</span>
-            info@beestoon.com
+            info@3dgraphicshouse.com
           </a>
         </div>
         <div class="footer-social">
-          <a href="#" aria-label="X"><span class="material-symbols-outlined" style="font-size:16px">tribes</span></a>
-          <a href="#" aria-label="Instagram"><span class="material-symbols-outlined" style="font-size:16px">photo_camera</span></a>
-          <a href="#" aria-label="LinkedIn"><span class="material-symbols-outlined" style="font-size:16px">work</span></a>
-          <a href="#" aria-label="YouTube"><span class="material-symbols-outlined" style="font-size:16px">play_circle</span></a>
+          <a href="#" aria-label="X" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;border:1px solid var(--border-light);color:var(--muted-text);text-decoration:none;transition:all .3s ease" onmouseover="this.style.borderColor='var(--gold-light)';this.style.color='var(--gold-dark)';this.style.background='var(--gold-bg)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.color='';this.style.background='';this.style.transform=''">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;border:1px solid var(--border-light);color:var(--muted-text);text-decoration:none;transition:all .3s ease" onmouseover="this.style.borderColor='var(--gold-light)';this.style.color='var(--gold-dark)';this.style.background='var(--gold-bg)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.color='';this.style.background='';this.style.transform=''">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;border:1px solid var(--border-light);color:var(--muted-text);text-decoration:none;transition:all .3s ease" onmouseover="this.style.borderColor='var(--gold-light)';this.style.color='var(--gold-dark)';this.style.background='var(--gold-bg)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.color='';this.style.background='';this.style.transform=''">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:6px;border:1px solid var(--border-light);color:var(--muted-text);text-decoration:none;transition:all .3s ease" onmouseover="this.style.borderColor='var(--gold-light)';this.style.color='var(--gold-dark)';this.style.background='var(--gold-bg)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.color='';this.style.background='';this.style.transform=''">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -1807,10 +1856,10 @@ a{text-decoration:none;color:inherit}
   <a href="#booking" aria-label="احجز استشارة" style="background:var(--gold-dark);width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFF;font-size:24px;box-shadow:0 4px 24px rgba(0,0,0,.12);transition:all .35s ease;text-decoration:none" onmouseover="this.style.background='#C9A84C';this.style.transform='scale(1.1)'" onmouseout="this.style.background='var(--gold-dark)';this.style.transform='scale(1)'">
     <span class="material-symbols-outlined">calendar_month</span>
   </a>
-  <a href="https://wa.me/966500000000?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9%20%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A8%D8%B1%D8%A7%D9%86%D8%AF%D9%8A" target="_blank" class="whatsapp" aria-label="تواصل واتساب">
+  <a href="https://wa.me/966502786513?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9%20%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A8%D8%B1%D8%A7%D9%86%D8%AF%D9%8A" target="_blank" class="whatsapp" aria-label="تواصل واتساب">
     <span class="material-symbols-outlined">chat</span>
   </a>
-  <a href="tel:+966500000000" aria-label="اتصل بنا" style="background:var(--dark-text);width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFF;font-size:24px;box-shadow:0 4px 24px rgba(0,0,0,.12);transition:all .35s ease;text-decoration:none" onmouseover="this.style.background='var(--gold-dark)';this.style.transform='scale(1.1)'" onmouseout="this.style.background='rgba(10,10,10,0.8)';this.style.transform='scale(1)'">
+  <a href="tel:+966502786513" aria-label="اتصل بنا" style="background:var(--dark-text);width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFF;font-size:24px;box-shadow:0 4px 24px rgba(0,0,0,.12);transition:all .35s ease;text-decoration:none" onmouseover="this.style.background='var(--gold-dark)';this.style.transform='scale(1.1)'" onmouseout="this.style.background='rgba(10,10,10,0.8)';this.style.transform='scale(1)'">
     <span class="material-symbols-outlined">call</span>
   </a>
 </div>
