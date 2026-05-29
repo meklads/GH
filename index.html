@@ -1963,7 +1963,63 @@ img { max-width: 100%; display: block; }
     height: 40px;
     font-size: 18px;
   }
-}</style>
+}
+/* Stats strip */
+.stat-item { transition: all .3s; }
+.stat-item:hover { background: rgba(201,168,76,.03); }
+@media (max-width: 768px) {
+  .stat-item { border-right: none !important; border-bottom: 1px solid rgba(201,168,76,.15); }
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2,1fr) !important; }
+  [style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+}
+/* Services grid mobile */
+#svc-grid-ar { grid-template-columns: 1fr !important; }
+@media (min-width: 768px) { #svc-grid-ar { grid-template-columns: repeat(3,1fr) !important; } }
+
+/* Italic serif enhancement */
+.serif-italic { font-family: 'Playfair Display', serif; font-style: italic; }
+
+/* Why GH grid mobile */
+@media (max-width: 900px) {
+  [style*="grid-template-columns:repeat(3,1fr);gap:1px"] { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 600px) {
+  [style*="grid-template-columns:repeat(3,1fr);gap:1px"] { grid-template-columns: 1fr !important; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Graphics House",
+  "alternateName": "3D Graphics House",
+  "url": "https://3dgraphicshouse.com",
+  "logo": "https://3dgraphicshouse.com/assets/favicon/og-image.png",
+  "description": "Premium architectural visualization, cinematic CGI, smart maquettes, interactive sales platforms, and media production for mega developments across the Middle East.",
+  "email": "info@3dgraphicshouse.com",
+  "foundingDate": "2010",
+  "areaServed": ["Saudi Arabia", "Oman", "Bahrain", "Egypt", "GCC", "Middle East"],
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Jeddah",
+      "addressCountry": "SA",
+      "postalCode": "136972"
+    },
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Muscat",
+      "addressCountry": "OM"
+    }
+  ],
+  "telephone": "+966502786513",
+  "sameAs": [
+    "https://www.instagram.com/3dgraphicshouse/",
+    "https://www.youtube.com/user/3dghouse/videos",
+    "https://web.facebook.com/3dghouse"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -2008,7 +2064,7 @@ img { max-width: 100%; display: block; }
   <!-- Video Background -->
   <div class="hero-video-bg">
     <video id="hero-vid" autoplay muted loop playsinline preload="auto"
-           poster="https://3dgraphicshouse.com/wp-content/uploads/2024/04/Aloula-co-alnakheel-view06-e1746345746392.jpg"
+           poster=""
            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;background:linear-gradient(135deg,#0a0800 0%,#1a1200 40%,#0d0d0d 100%)">
       <source src="assets/videos/GH-demo-reel-2025.mp4" type="video/mp4"/>
     </video>
@@ -2124,11 +2180,30 @@ img { max-width: 100%; display: block; }
         Cinematic CGI &bull; Architectural Visualization &bull; Interactive Experiences &bull; Smart Maquettes &bull; Media Production
       </p>
     </div>
-  </section>
-
-
-
-
+  
+<!-- ===== STATS STRIP ===== -->
+<section style="padding:60px 0;background:#0A0A0A;overflow:hidden">
+  <div style="max-width:1280px;margin:0 auto;padding:0 40px">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15)">
+      <div class="stat-item reveal" style="padding:40px 20px;text-align:center;border-right:1px solid rgba(201,168,76,.15)">
+        <div style="font-size:clamp(36px,4vw,56px);font-weight:800;color:#C9A84C;line-height:1;letter-spacing:-.02em;font-family:'Playfair Display',serif" data-count="15" data-suffix="+">0+</div>
+        <div style="font-size:12px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:10px">Years of Excellence</div>
+      </div>
+      <div class="stat-item reveal" style="padding:40px 20px;text-align:center;border-right:1px solid rgba(201,168,76,.15)">
+        <div style="font-size:clamp(36px,4vw,56px);font-weight:800;color:#C9A84C;line-height:1;letter-spacing:-.02em;font-family:'Playfair Display',serif" data-count="500" data-suffix="+">0+</div>
+        <div style="font-size:12px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:10px">Projects Delivered</div>
+      </div>
+      <div class="stat-item reveal" style="padding:40px 20px;text-align:center;border-right:1px solid rgba(201,168,76,.15)">
+        <div style="font-size:clamp(36px,4vw,56px);font-weight:800;color:#C9A84C;line-height:1;letter-spacing:-.02em;font-family:'Playfair Display',serif" data-count="120" data-suffix="+">0+</div>
+        <div style="font-size:12px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:10px">Clients Served</div>
+      </div>
+      <div class="stat-item reveal" style="padding:40px 20px;text-align:center">
+        <div style="font-size:clamp(36px,4vw,56px);font-weight:800;color:#C9A84C;line-height:1;letter-spacing:-.02em;font-family:'Playfair Display',serif" data-count="4" data-suffix="">0</div>
+        <div style="font-size:12px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:10px">Regional Offices</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- We turn developments section -->
 <section style="padding:80px 0;background:#FAFAF8;overflow:hidden" dir="ltr">
@@ -2284,8 +2359,10 @@ img { max-width: 100%; display: block; }
   <div style="max-width:1380px;margin:0 auto;padding:0 24px;position:relative;z-index:2">
 
     <!-- Section Heading -->
-    <div class="reveal" style="text-align:center;margin-bottom:50px">
-      <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:200;color:#FAFAF8;margin:0;line-height:1.2;text-shadow:0 0 10px rgba(0,0,0,.3)">OUR SERVICES <span style="font-weight:900;color:#C9A84C">(Refined Version)</span></h2>
+    <div class="reveal" style="text-align:center;margin-bottom:64px">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:rgba(201,168,76,.7);display:block;margin-bottom:14px;font-family:monospace;text-transform:uppercase">What We Build</span>
+      <h2 style="font-size:clamp(28px,3.2vw,48px);font-weight:300;color:#FAFAF8;margin:0;line-height:1.2;letter-spacing:-.01em">Five disciplines. <em style="font-style:italic;font-family:'Playfair Display',serif;color:#C9A84C">One complete system.</em></h2>
+      <p style="font-size:16px;font-weight:300;color:rgba(255,255,255,.45);margin:18px auto 0;max-width:560px;line-height:1.7">Every service is designed to work together — creating a unified visual identity for your development.</p>
     </div>
 
     <!-- Cards Grid -->
@@ -2315,7 +2392,7 @@ img { max-width: 100%; display: block; }
         <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:left;opacity:0.85">Advanced interactive systems that present real estate projects through touchscreens, virtual tours, unit comparisons, and real-time exploration — enhancing engagement and accelerating investment decisions.</p>
         <div style="margin-top:16px;text-align:left">
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#DAAD3D;transition:all .3s">
-            <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>
+            <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
             Learn More
           </span>
         </div>
@@ -2330,7 +2407,7 @@ img { max-width: 100%; display: block; }
         <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:left;opacity:0.85">Hybrid physical-digital models combining craftsmanship with projection mapping and live data integration, creating a unique interactive experience for high-level presentations and exhibitions.</p>
         <div style="margin-top:16px;text-align:left">
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#DAAD3D;transition:all .3s">
-            <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>
+            <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
             Learn More
           </span>
         </div>
@@ -2345,7 +2422,7 @@ img { max-width: 100%; display: block; }
         <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:left;opacity:0.85">End-to-end cinematic and multimedia production — including filming, editing, animation, and motion graphics — designed to transform ideas into compelling visual stories.</p>
         <div style="margin-top:16px;text-align:left">
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#DAAD3D;transition:all .3s">
-            <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>
+            <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
             Learn More
           </span>
         </div>
@@ -2359,7 +2436,7 @@ img { max-width: 100%; display: block; }
         <p style="font-size:16px;font-weight:400;color:#FFFFFF;line-height:24px;margin:0;text-align:left;opacity:0.85">Design and execution of premium sales galleries and showrooms, transformed into immersive spatial experiences that communicate the project story and elevate brand perception.</p>
         <div style="margin-top:16px;text-align:left">
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#DAAD3D;transition:all .3s">
-            <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>
+            <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
             Learn More
           </span>
         </div>
@@ -2392,7 +2469,7 @@ img { max-width: 100%; display: block; }
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
         <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop&auto=format" alt="Architectural Visualization" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
+          <img src="assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="Architectural Visualization" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
         </div>
       </div>
       <div>
@@ -2403,7 +2480,7 @@ img { max-width: 100%; display: block; }
         <div style="margin-top:28px">
           <a href="3d-animation-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></a>
         </div>
       </div>
     </div>
@@ -2422,12 +2499,12 @@ img { max-width: 100%; display: block; }
         <div style="margin-top:28px">
           <a href="media-production-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></a>
         </div>
       </div>
       <div>
         <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=600&fit=crop&auto=format" style="width:100%;height:auto;aspect-ratio:4/3;min-height:320px;object-fit:cover;display:block">
+          <video autoplay loop muted playsinline poster="assets/projects/rendering/kuday-makkah1.jpeg" style="width:100%;height:auto;aspect-ratio:4/3;min-height:320px;object-fit:cover;display:block">
             <source src="assets/videos/3D-Architectural-visualisation.mp4" type="video/mp4">
           </video>
         </div>
@@ -2442,7 +2519,7 @@ img { max-width: 100%; display: block; }
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
         <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <img src="https://3dgraphicshouse.com/wp-content/uploads/2026/03/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" alt="Smart Architectural Maquettes" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
+          <img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" alt="Smart Architectural Maquettes" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
         </div>
       </div>
       <div>
@@ -2453,7 +2530,7 @@ img { max-width: 100%; display: block; }
         <div style="margin-top:28px">
           <a href="smart-maquettes-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></a>
         </div>
       </div>
     </div>
@@ -2472,12 +2549,12 @@ img { max-width: 100%; display: block; }
         <div style="margin-top:28px">
           <a href="interactive-experiences-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></a>
         </div>
       </div>
       <div>
         <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <img src="https://3dgraphicshouse.com/wp-content/uploads/2026/03/WhatsApp-Image-1447-09-13-at-19.18.44-2.jpeg" alt="Interactive Sales Platforms" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
+          <img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.44-2.jpeg" alt="Interactive Sales Platforms" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
         </div>
       </div>
     </div>
@@ -2490,7 +2567,7 @@ img { max-width: 100%; display: block; }
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
         <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <img src="https://3dgraphicshouse.com/wp-content/uploads/2025/01/alrajhi3.jpeg" alt="Sales Galleries & Spatial Design" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
+          <img src="assets/projects/rendering/alrajhi3.jpeg" alt="Sales Galleries & Spatial Design" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
         </div>
       </div>
       <div>
@@ -2501,7 +2578,7 @@ img { max-width: 100%; display: block; }
         <div style="margin-top:28px">
           <a href="galleries-advertising-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></a>
         </div>
       </div>
     </div>
@@ -2542,12 +2619,12 @@ img { max-width: 100%; display: block; }
         <div style="margin-top:28px">
           <a href="media-production-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
              onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+             onmouseout="this.style.background='#1A1A1A'">Learn More <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></a>
         </div>
       </div>
       <div>
         <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=600&fit=crop&auto=format" style="width:100%;height:auto;aspect-ratio:4/3;min-height:320px;object-fit:cover;display:block">
+          <video autoplay loop muted playsinline poster="assets/projects/cinematic/video-2.jpg" style="width:100%;height:auto;aspect-ratio:4/3;min-height:320px;object-fit:cover;display:block">
             <source src="assets/videos/GH-Marketing-Media-Production.mp4" type="video/mp4">
           </video>
         </div>
@@ -2619,16 +2696,67 @@ img { max-width: 100%; display: block; }
 <section style="padding:60px 0;background:#FAFAF8;border-top:1px solid rgba(26,26,26,.04);border-bottom:1px solid rgba(26,26,26,.04)">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px">
     <div class="logo-cloud">
-      <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-owla.png" alt="Al Oula"/>
-      <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-oyonypng.png" alt="Al Oyony"/>
-      <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/anan-eskan.png" alt="Anan Eskan"/>
-      <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/aqarat.png" alt="Aqarat"/>
-      <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/bn-zooma.png" alt="Bn Zooma"/>
-      <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/makyon.png" alt="Makyon"/>
-      <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/oteck.png" alt="Oteck"/>
-      <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/rafal.png" alt="Rafal"/>
-      <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/toyota.png" alt="Toyota"/>
-      <img src="https://3dgraphicshouse.com/wp-content/uploads/2025/04/imc.png" alt="IMC"/>
+      <img src="" alt="Al Oula"/>
+      <img src="" alt="Al Oyony"/>
+      <img src="" alt="Anan Eskan"/>
+      <img src="" alt="Aqarat"/>
+      <img src="" alt="Bn Zooma"/>
+      <img src="" alt="Makyon"/>
+      <img src="" alt="Oteck"/>
+      <img src="" alt="Rafal"/>
+      <img src="" alt="Toyota"/>
+      <img src="" alt="IMC"/>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== WHY GRAPHICS HOUSE ===== -->
+<section style="padding:100px 0;background:#0A0A0A;overflow:hidden" dir="ltr">
+  <div style="max-width:1280px;margin:0 auto;padding:0 40px">
+    <div class="reveal" style="text-align:center;margin-bottom:64px">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#C9A84C;display:block;margin-bottom:14px;font-family:monospace;text-transform:uppercase">Why Graphics House</span>
+      <h2 style="font-size:clamp(28px,3vw,44px);font-weight:300;color:#FAFAF8;margin:0;line-height:1.25;letter-spacing:-.01em">The studio that builds <em style="font-style:italic;font-family:'Playfair Display',serif;color:#C9A84C">complete visual systems</em><br>not just visuals</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.12)">
+      <div class="reveal" style="background:#0A0A0A;padding:44px 36px">
+        <div style="width:48px;height:2px;background:#C9A84C;margin-bottom:24px"></div>
+        <h3 style="font-size:20px;font-weight:600;color:#FAFAF8;margin:0 0 14px;line-height:1.3">End-to-End Ownership</h3>
+        <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75;margin:0">From concept to delivery, we handle CGI, maquettes, interactive platforms, and spatial design — one studio, zero fragmentation.</p>
+      </div>
+      <div class="reveal" style="background:#0A0A0A;padding:44px 36px">
+        <div style="width:48px;height:2px;background:#C9A84C;margin-bottom:24px"></div>
+        <h3 style="font-size:20px;font-weight:600;color:#FAFAF8;margin:0 0 14px;line-height:1.3">Pre-Sale Focus</h3>
+        <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75;margin:0">Our systems are engineered to accelerate decisions before construction begins — turning architectural concepts into investment catalysts.</p>
+      </div>
+      <div class="reveal" style="background:#0A0A0A;padding:44px 36px">
+        <div style="width:48px;height:2px;background:#C9A84C;margin-bottom:24px"></div>
+        <h3 style="font-size:20px;font-weight:600;color:#FAFAF8;margin:0 0 14px;line-height:1.3">Mega-Development Scale</h3>
+        <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75;margin:0">15+ years serving giga-projects across Saudi Arabia, Gulf, and MENA. We understand the complexity of large-scale masterplans.</p>
+      </div>
+      <div class="reveal" style="background:#0A0A0A;padding:44px 36px">
+        <div style="width:48px;height:2px;background:#C9A84C;margin-bottom:24px"></div>
+        <h3 style="font-size:20px;font-weight:600;color:#FAFAF8;margin:0 0 14px;line-height:1.3">Hybrid Physical + Digital</h3>
+        <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75;margin:0">We bridge the physical and digital: smart maquettes with live projection, interactive kiosks, and spatial storytelling at real-world scale.</p>
+      </div>
+      <div class="reveal" style="background:#0A0A0A;padding:44px 36px">
+        <div style="width:48px;height:2px;background:#C9A84C;margin-bottom:24px"></div>
+        <h3 style="font-size:20px;font-weight:600;color:#FAFAF8;margin:0 0 14px;line-height:1.3">Regional Presence</h3>
+        <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75;margin:0">Offices in Jeddah, Muscat, Manama, and Alexandria — with on-ground teams delivering in KSA, Oman, Bahrain, and Egypt.</p>
+      </div>
+      <div class="reveal" style="background:#0A0A0A;padding:44px 36px">
+        <div style="width:48px;height:2px;background:#C9A84C;margin-bottom:24px"></div>
+        <h3 style="font-size:20px;font-weight:600;color:#FAFAF8;margin:0 0 14px;line-height:1.3">Proven Track Record</h3>
+        <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75;margin:0">500+ delivered projects for leading developers, royal commissions, and government entities across the MENA region.</p>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:52px">
+      <a href="contact-us-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:16px 44px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:all .35s"
+         onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.03)'"
+         onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)'">
+        <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
+        Start a Project
+      </a>
     </div>
   </div>
 </section>
@@ -2891,6 +3019,31 @@ document.querySelectorAll(".nav a").forEach(link => {
     }
   });
 });
+
+
+// Animated counters
+(function(){
+  const items = document.querySelectorAll('[data-count]');
+  if(!items.length) return;
+  const cObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting && !e.target.dataset.counted){
+        e.target.dataset.counted='1';
+        const target=+e.target.dataset.count, suffix=e.target.dataset.suffix||'';
+        let start=0, dur=1800, startTime=null;
+        function step(ts){
+          if(!startTime) startTime=ts;
+          const prog=Math.min((ts-startTime)/dur,1);
+          const ease=1-Math.pow(1-prog,3);
+          e.target.textContent=Math.round(ease*target)+suffix;
+          if(prog<1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+    });
+  },{threshold:0.5});
+  items.forEach(el=>cObs.observe(el));
+})();
 
 // Video modal popup
 function playVideo(videoId, startTime) {
@@ -3274,4 +3427,27 @@ document.getElementById("ghChatField").addEventListener("keydown", function(e) {
     sendChatMsg();
   }
 });
-</script></body></html>
+</script>
+<!-- ===== WHATSAPP DUAL FLOAT ===== -->
+<style>
+.wa-float{position:fixed;bottom:90px;right:24px;z-index:9000;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.wa-btn{display:flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:50px;color:#fff;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.35);transition:transform .25s,box-shadow .25s;white-space:nowrap}
+.wa-btn:hover{transform:translateX(-4px) scale(1.04);box-shadow:0 8px 28px rgba(0,0,0,.45)}
+.wa-btn svg{flex-shrink:0}
+.wa-ksa{background:#25D366}
+.wa-omn{background:#0A7C68}
+.wa-label{font-size:11px;font-weight:700;letter-spacing:.1em;opacity:.85}
+@media(max-width:600px){.wa-btn span:not(svg){display:none}.wa-btn{padding:12px}}
+</style>
+<div class="wa-float">
+  <a class="wa-btn wa-omn" href="https://wa.me/96891326735" target="_blank" rel="noopener" title="WhatsApp — Oman Office">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    <span>+968 9132 6735 <span class="wa-label">| Oman</span></span>
+  </a>
+  <a class="wa-btn wa-ksa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="WhatsApp — Saudi Arabia">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    <span>+966 50 278 6513 <span class="wa-label">| KSA</span></span>
+  </a>
+</div>
+
+</body></html>
