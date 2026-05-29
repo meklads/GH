@@ -2761,6 +2761,95 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
+
+<!-- ===== TRUSTED BY / CLIENTS MARQUEE ===== -->
+<section style="padding:64px 0;background:#FAFAF8;overflow:hidden;border-top:1px solid rgba(26,26,26,.06);border-bottom:1px solid rgba(26,26,26,.06)">
+  <div style="max-width:1280px;margin:0 auto;padding:0 40px;text-align:center;margin-bottom:36px">
+    <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#888;text-transform:uppercase">Trusted By</span>
+  </div>
+  <!-- Marquee Track -->
+  <div style="overflow:hidden;position:relative">
+    <!-- Fade edges -->
+    <div style="position:absolute;left:0;top:0;bottom:0;width:120px;background:linear-gradient(to right,#FAFAF8,transparent);z-index:2"></div>
+    <div style="position:absolute;right:0;top:0;bottom:0;width:120px;background:linear-gradient(to left,#FAFAF8,transparent);z-index:2"></div>
+    <div class="marquee-track" style="display:flex;gap:0;width:max-content;animation:marquee 30s linear infinite">
+      <!-- Set 1 -->
+      <div class="cl-item">Al Rajhi</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Anan Iskan</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Rafal Real Estate</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Al Oula</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Al-Ayuni Group</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Bin Zoma Group</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Muslim World League</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Toyota Saudi Arabia</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Makklyoon</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">King Abdullah City</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Autek</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Jeddah Forum</div>
+      <div class="cl-dot">·</div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="cl-item">Al Rajhi</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Anan Iskan</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Rafal Real Estate</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Al Oula</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Al-Ayuni Group</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Bin Zoma Group</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Muslim World League</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Toyota Saudi Arabia</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Makklyoon</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">King Abdullah City</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Autek</div>
+      <div class="cl-dot">·</div>
+      <div class="cl-item">Jeddah Forum</div>
+      <div class="cl-dot">·</div>
+    </div>
+  </div>
+</section>
+<style>
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.marquee-track:hover { animation-play-state: paused; }
+.cl-item {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: #AAAAAA;
+  white-space: nowrap;
+  padding: 0 32px;
+  transition: color .3s;
+  cursor: default;
+  text-transform: uppercase;
+}
+.cl-item:hover { color: #C9A84C; }
+.cl-dot {
+  font-size: 20px;
+  color: rgba(201,168,76,.3);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+</style>
+
 <!-- ===== PORTFOLIO: PREVIOUS WORKS ===== -->
 <section class="portfolio" id="portfolio">
   <div class="portfolio-container">
