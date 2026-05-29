@@ -2001,6 +2001,20 @@ a{text-decoration:none;color:inherit}
 <!-- ===== REVEAL ON SCROLL ===== -->
 <script>
 document.addEventListener('DOMContentLoaded',function(){
+  // Loader: let it animate the bar for 1.5s then fade out
+  var loader=document.getElementById('loader');
+  var loaderBar=document.getElementById('loader-bar');
+  if(loader&&loaderBar){
+    // Fill the bar
+    loaderBar.style.width='100%';
+    // Then hide loader
+    setTimeout(function(){
+      loader.classList.add('out');
+      // After transition, set display:none so it doesnt block clicks
+      setTimeout(function(){loader.style.display='none'},700);
+    },800);
+  }
+  // Reveal animations
   var els=document.querySelectorAll('.reveal');
   if('IntersectionObserver'in window){
     var obs=new IntersectionObserver(function(entries){
