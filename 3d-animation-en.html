@@ -15,6 +15,7 @@
 <meta name="description" content="3D Animation &amp; CGI services by Graphics House — high-quality architectural cinematic films."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
@@ -239,6 +240,23 @@ html[dir="rtl"] .nav-item-drop .nav-dropdown{left:auto;right:0}
   .nav.open .nav-item-drop .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;background:transparent;border:none;box-shadow:none;padding:8px 0 0}
 }
 @media(max-width:768px){.header-inner{padding:0 20px}}
+
+/* EN heading font — Playfair Display (matches homepage) */
+html[dir="ltr"] h1,
+html[dir="ltr"] h2,
+html[dir="ltr"] .section-title,
+html[dir="ltr"] .page-hero h1,
+html[dir="ltr"] .content-card h2,
+html[dir="ltr"] .cta h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: -0.02em;
+}
+html[dir="ltr"] .page-hero h1 {
+  font-weight: 800;
+}
+html[dir="ltr"] .section-title {
+  font-weight: 700;
+}
 </style>
 </head>
 <body>
