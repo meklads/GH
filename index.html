@@ -2333,7 +2333,7 @@ img { max-width: 100%; display: block; }
           </li>
         </ul>
         <div class="s3-cta s2-fade s2-d3">
-          <a href="#projects" class="s3-cta-btn">
+          <a href="#projects" class="gh-damac-btn" style="border-color:var(--gold);color:var(--gold);background:transparent">
             More Successful Projects
             <span class="s3-cta-arrow">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
@@ -3451,6 +3451,15 @@ function swapImage(src, thumbEl) {
     t.classList.remove('active');
   });
   thumbEl.classList.add('active');
+  // Also open lightbox with the clicked image
+  var modal = document.getElementById('imageLightbox');
+  var modalImg = document.getElementById('imageLightboxImg');
+  if (modal && modalImg) {
+    modalImg.src = src;
+    modal.style.display = 'flex';
+    setTimeout(function() { modal.style.opacity = '1'; }, 10);
+    document.body.style.overflow = 'hidden';
+  }
 }
 
 // Portfolio — show all items with click handlers
