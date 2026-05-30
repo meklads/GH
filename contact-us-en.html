@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --gold:#C9A84C; --gold-light:#D9B860; --dark:#0A0A0A; --footer-bg:#071810; }
+    :root { --gold:#F8B810; --gold-light:#FAC830; --dark:#0A0A0A; --footer-bg:#071810; }
     body { font-family:'Inter','Tajawal',sans-serif; background:#FAFAF8; color:#1A1A1A; -webkit-font-smoothing:antialiased; }
 
     /* HEADER */
@@ -26,7 +26,7 @@
 
     /* HERO */
     .ch { background:var(--dark); padding:140px 0 80px; position:relative; overflow:hidden; }
-    .ch::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; }
+    .ch::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(248,184,16,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(248,184,16,.03) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; }
     .ch-inner { max-width:800px; margin:0 auto; padding:0 40px; text-align:center; position:relative; z-index:1; }
     .ch-eye { font-size:11px; font-weight:700; letter-spacing:.22em; color:var(--gold); text-transform:uppercase; display:block; margin-bottom:20px; }
     .ch h1 { font-size:clamp(36px,4vw,58px); font-weight:700; color:#fff; font-family:'Playfair Display',serif; line-height:1.15; margin-bottom:20px; }
@@ -51,19 +51,19 @@
     .fg { display:flex; flex-direction:column; gap:5px; }
     .fg label { font-size:11px; font-weight:700; color:#555; letter-spacing:.05em; text-transform:uppercase; }
     .fg input,.fg select,.fg textarea { padding:11px 14px; border:1.5px solid rgba(0,0,0,.1); border-radius:8px; font-size:14px; font-family:'Inter',sans-serif; color:#1A1A1A; background:#FAFAF8; outline:none; transition:border-color .3s,box-shadow .3s; }
-    .fg input:focus,.fg select:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,168,76,.12); }
+    .fg input:focus,.fg select:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(248,184,16,.12); }
     .fg textarea { min-height:120px; resize:vertical; }
     .fg select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23888'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; padding-right:32px; }
     .fn { font-size:11px; color:#999; margin-bottom:20px; }
     .fn a { color:var(--gold); text-decoration:none; }
     .bs { width:100%; padding:14px 32px; background:var(--gold); color:#0A0A0A; font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; border:none; border-radius:50px; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; font-family:'Inter',sans-serif; transition:all .3s; }
-    .bs:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 30px rgba(201,168,76,.3); }
+    .bs:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 30px rgba(248,184,16,.3); }
 
     /* SIDEBAR CARDS */
     .cs { display:flex; flex-direction:column; gap:20px; }
     .cc { background:#fff; border-radius:12px; padding:24px; border:1px solid rgba(0,0,0,.06); box-shadow:0 2px 16px rgba(0,0,0,.04); transition:box-shadow .3s; }
     .cc:hover { box-shadow:0 6px 32px rgba(0,0,0,.08); }
-    .cc-icon { width:40px; height:40px; background:rgba(201,168,76,.1); border-radius:9px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+    .cc-icon { width:40px; height:40px; background:rgba(248,184,16,.1); border-radius:9px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
     .cc-icon .material-symbols-outlined { color:var(--gold); font-size:20px; }
     .cc h3 { font-size:14px; font-weight:700; margin-bottom:5px; }
     .cc p { font-size:13px; color:#666; line-height:1.7; margin-bottom:8px; }
@@ -77,7 +77,7 @@
     .os { background:var(--dark); padding:64px 0; }
     .os-inner { max-width:1200px; margin:0 auto; padding:0 40px; }
     .os-lbl { font-size:10px; font-weight:700; letter-spacing:.2em; color:var(--gold); text-transform:uppercase; text-align:center; margin-bottom:40px; }
-    .og { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid rgba(201,168,76,.25); }
+    .og { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid rgba(248,184,16,.25); }
     .oi { padding:32px 24px; }
     .oi:not(:last-child) { border-right:1px solid rgba(255,255,255,.06); }
     .oc { font-size:10px; font-weight:700; letter-spacing:.1em; color:var(--gold); text-transform:uppercase; margin-bottom:8px; }
@@ -89,7 +89,7 @@
     @media(max-width:480px){ .og { grid-template-columns:1fr; } }
 
     /* FOOTER */
-    footer { background:var(--footer-bg); padding:32px 0; text-align:center; border-top:1px solid rgba(201,168,76,.15); }
+    footer { background:var(--footer-bg); padding:32px 0; text-align:center; border-top:1px solid rgba(248,184,16,.15); }
     footer p { font-size:12px; color:rgba(255,255,255,.5); margin:4px 0; }
     footer a { color:rgba(255,255,255,.5); text-decoration:none; margin:0 10px; font-size:12px; transition:color .3s; }
     footer a:hover { color:var(--gold); }
@@ -101,9 +101,9 @@
 <header class="header">
   <div class="header-inner">
     <nav class="nav">
-      <a href="index-ar.html" style="color:#fff;font-weight:700;font-size:12px" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">AR</a>
+      <a href="index-ar.html" style="color:#fff;font-weight:700;font-size:12px" onmouseover="this.style.color='#F8B810'" onmouseout="this.style.color='#fff'">AR</a>
       <span style="color:rgba(255,255,255,.3);font-size:12px">|</span>
-      <a href="/" style="color:#fff;font-weight:700;font-size:12px;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">EN</a>
+      <a href="/" style="color:#fff;font-weight:700;font-size:12px;border-bottom:1.5px solid #F8B810;padding-bottom:1px">EN</a>
       <a href="who-we-are-en.html">About Us</a>
       <a href="portfolio-en.html">Our Work</a>
       <a href="contact-us-en.html" style="color:var(--gold)">Contact Us</a>
@@ -215,11 +215,11 @@
         <span class="lbl">Friday</span><span class="val">Closed</span>
       </div>
     </div>
-    <div class="cc" style="background:#0A0A0A;border-color:rgba(201,168,76,.2)">
-      <div class="cc-icon" style="background:rgba(201,168,76,.15)"><span class="material-symbols-outlined" style="color:#C9A84C">chat</span></div>
+    <div class="cc" style="background:#0A0A0A;border-color:rgba(248,184,16,.2)">
+      <div class="cc-icon" style="background:rgba(248,184,16,.15)"><span class="material-symbols-outlined" style="color:#F8B810">chat</span></div>
       <h3 style="color:#fff">WhatsApp</h3>
       <p style="color:rgba(255,255,255,.6)">Quick response for urgent inquiries.</p>
-      <a href="https://wa.me/966502786513" target="_blank" style="color:#C9A84C">Message on WhatsApp <span class="material-symbols-outlined" style="font-size:13px">arrow_forward</span></a>
+      <a href="https://wa.me/966502786513" target="_blank" style="color:#F8B810">Message on WhatsApp <span class="material-symbols-outlined" style="font-size:13px">arrow_forward</span></a>
     </div>
   </div>
 
