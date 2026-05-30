@@ -3851,15 +3851,6 @@ function swapImage(src, thumbEl) {
     t.classList.remove('active');
   });
   thumbEl.classList.add('active');
-  // Also open lightbox with the clicked image
-  var modal = document.getElementById('imageLightbox');
-  var modalImg = document.getElementById('imageLightboxImg');
-  if (modal && modalImg) {
-    modalImg.src = src;
-    modal.style.display = 'flex';
-    setTimeout(function() { modal.style.opacity = '1'; }, 10);
-    document.body.style.overflow = 'hidden';
-  }
 }
 
 // Image Lightbox
