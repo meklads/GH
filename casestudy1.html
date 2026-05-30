@@ -613,6 +613,11 @@ img { max-width: 100%; display: block; }
   .highlights { grid-template-columns: 1fr; }
   .s2-hero-wrap { min-height: 100vh; }
 }
+
+/* nav dropdown fix */
+.nav-item-drop{position:relative;display:inline-block}
+.nav-item-drop .nav-dropdown{position:absolute;top:calc(100% + 8px);opacity:0;visibility:hidden;transform:translateY(6px);transition:all .3s ease;z-index:200;min-width:220px;background:#1A1A1A;border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 50px rgba(0,0,0,.5);padding:8px 0}
+.nav-item-drop:hover .nav-dropdown{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
 </style>
 </head>
 <body>
@@ -629,7 +634,7 @@ img { max-width: 100%; display: block; }
         تواصل معنا
       </a>
       <a href="who-we-are.html">من نحن</a>
-      <a href="case-study.html" style="color:#C9A84C">مشاريع ناجحة</a>
+      <a href="casestudy1.html" style="color:#C9A84C">مشاريع ناجحة</a>
       <a href="portfolio.html">أعمال</a>
       <div class="nav-item-drop">
         <a class="nav-link" style="cursor:pointer">خدمات<span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
