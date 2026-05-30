@@ -1,1649 +1,672 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" dir="ltr" lang="en">
+<html dir="ltr" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Portfolio — Graphics House | Our Work</title>
-<meta property="og:title" content="Graphics House — Portfolio | Our Work">
-<meta property="og:description" content="Graphics House: Architectural visualization, smart maquettes, cinematic production, and interactive experiences for major developments.">
-<meta property="og:image" content="https://3dgraphicshouse.com/assets/favicon/og-image.png">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
-<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
-<meta name="description" content="Graphics House portfolio — Architectural visualization, smart maquettes, cinematic production, interactive experiences, and sales galleries."/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" rel="stylesheet">
-
+<title>Our Work — Graphics House | Architectural Visualization Portfolio</title>
+<meta name="description" content="Explore Graphics House portfolio: architectural visualization, smart maquettes, cinematic CGI, 3D animation, and interactive experiences across Saudi Arabia, UAE, Oman, Bahrain and Egypt."/>
+<meta property="og:title" content="Our Work — Graphics House Portfolio"/>
+<meta property="og:description" content="Architectural visualization, smart maquettes, cinematic production and interactive experiences for landmark developments."/>
+<meta property="og:image" content="https://3dgraphicshouse.com/assets/favicon/og-image.png"/>
+<meta property="og:type" content="website"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png"/>
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" rel="stylesheet"/>
 <style>
-/* ===== RESET / BASE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;background:#0A0A0A;color:#FAFAF8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter','Tajawal',sans-serif;background:#080808;color:#FAFAF8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
+:root{--gold:#C9A84C;--gold-light:#E0C070;--dark:#080808;--surface:#111111;--surface2:#181818;--border:rgba(255,255,255,.07);--text-muted:rgba(255,255,255,.45)}
 
-/* ===== NAV (same as main site) ===== */
-.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 48px;height:120px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.04);transition:all .4s ease}
-.header .logo img{height:108px;width:auto;filter:brightness(1.1) contrast(1.1)}
+/* ======= SCROLLBAR ======= */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:#080808}
+::-webkit-scrollbar-thumb{background:#C9A84C;border-radius:2px}
+
+/* ======= HEADER ======= */
+.header{position:fixed;top:0;left:0;right:0;z-index:900;transition:background .4s,border-color .4s,backdrop-filter .4s}
+.header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.12)}
+.header-inner{max-width:1400px;margin:0 auto;padding:0 40px;height:80px;display:flex;align-items:center;gap:0}
+.logo{flex-shrink:0;margin-right:auto}
 .nav{display:flex;align-items:center;gap:8px}
-.nav a,.nav .nav-item-drop .nav-link{font-size:13px;font-weight:500;color:rgba(255,255,255,.65);padding:8px 16px;border-radius:6px;transition:all .25s;letter-spacing:.03em;text-decoration:none;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap}
-.nav a:hover,.nav .nav-item-drop:hover .nav-link{color:#C9A84C;background:rgba(201,168,76,.08)}
-.nav-lang{font-size:12px!important;font-weight:700!important;font-family:'Inter',sans-serif!important;letter-spacing:.08em!important;padding:6px 12px!important;border:1px solid rgba(255,255,255,.08);border-radius:4px!important}
-.nav-lang.active{color:#C9A84C!important;border-color:#C9A84C!important;background:rgba(201,168,76,.08)!important}
-.header-mobile-btn{display:none;background:none;border:none;color:#FAFAF8;font-size:28px;cursor:pointer;padding:8px}
-
-/* Dropdown */
+.nav-link{font-size:13px;font-weight:500;color:rgba(255,255,255,.6);padding:8px 14px;border-radius:6px;transition:color .25s,background .25s;white-space:nowrap;letter-spacing:.02em}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,.05)}
+.nav-link.active{color:#C9A84C}
 .nav-item-drop{position:relative}
-.nav-dropdown{position:absolute;top:100%;right:0;background:#1A1A1A;border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 50px rgba(0,0,0,.5);min-width:220px;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .3s ease;z-index:100;border-radius:8px}
 .nav-item-drop:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
-.nav-dropdown a{display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s}
-.nav-dropdown a:hover{background:rgba(255,255,255,.04);color:#C9A84C}
-.nav-dropdown a .dd-icon{font-size:16px;color:#C9A84C}
+.nav-dropdown{position:absolute;top:calc(100% + 12px);left:0;background:#141414;border:1px solid rgba(255,255,255,.08);box-shadow:0 24px 60px rgba(0,0,0,.7);min-width:230px;padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .3s;z-index:100;border-radius:12px}
+.nav-dropdown a{display:flex;align-items:center;gap:10px;padding:11px 14px;font-size:13px;color:rgba(255,255,255,.6);transition:all .2s;border-radius:8px}
+.nav-dropdown a:hover{color:#fff;background:rgba(255,255,255,.05)}
+.menu-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:8px}
 
-/* Mobile Nav */
-.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:2000;background:rgba(0,0,0,0.97);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);flex-direction:column;align-items:center;justify-content:center;gap:20px;opacity:0;visibility:hidden;transition:all .4s ease}
-.mobile-nav.open{opacity:1;visibility:visible}
-.mobile-nav a{font-size:22px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s;font-family:'Tajawal',sans-serif}
-.mobile-nav a:hover{color:#C9A84C}
-.mobile-close{position:absolute;top:24px;right:24px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer}
+/* ======= HERO ======= */
+.pf-hero{min-height:52vh;display:flex;align-items:flex-end;padding:120px 0 72px;position:relative;overflow:hidden;background:#080808}
+.pf-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(201,168,76,.06) 0%,transparent 70%)}
+.pf-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 70% at 50% 0%,black 30%,transparent 100%)}
+.pf-hero-inner{max-width:1400px;margin:0 auto;padding:0 40px;position:relative;z-index:2;width:100%}
+.pf-hero-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;color:#C9A84C;text-transform:uppercase;margin-bottom:24px}
+.pf-hero-label::before{content:'';width:24px;height:1px;background:#C9A84C}
+.pf-hero h1{font-size:clamp(48px,7vw,96px);font-weight:800;line-height:1;letter-spacing:-.04em;color:#FAFAF8}
+.pf-hero h1 span{color:#C9A84C}
+.pf-hero-sub{font-size:clamp(14px,1.2vw,17px);color:rgba(255,255,255,.5);margin-top:24px;max-width:560px;line-height:1.8}
+.pf-hero-stats{display:flex;gap:48px;margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,.07)}
+.pf-stat-num{font-size:clamp(32px,3vw,48px);font-weight:800;color:#C9A84C;letter-spacing:-.03em}
+.pf-stat-label{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
 
-/* ===== HERO ===== */
-.portfolio-hero{
-  position:relative;
-  min-height:70vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:180px 24px 100px;
-  background:linear-gradient(135deg,#0a0a0a 0%,#1a1200 40%,#0d0d0d 100%);
-  overflow:hidden;
-}
-.portfolio-hero::before{
-  content:'';
-  position:absolute;
-  top:-50%;
-  left:-50%;
-  width:200%;
-  height:200%;
-  background:radial-gradient(ellipse at 30% 50%,rgba(201,168,76,0.03) 0%,transparent 60%),
-             radial-gradient(ellipse at 70% 20%,rgba(255,255,255,0.02) 0%,transparent 50%);
-  pointer-events:none;
-}
-.portfolio-hero-glow{
-  position:absolute;
-  bottom:0;left:0;right:0;
-  height:200px;
-  background:linear-gradient(to top,rgba(201,168,76,0.06),transparent);
-  pointer-events:none;
-}
-.portfolio-hero h1{
-  font-size:clamp(42px,7vw,100px);
-  font-weight:900;
-  color:#FAFAF8;
-  line-height:1.05;
-  letter-spacing:-.03em;
-  margin-bottom:20px;
-  position:relative;
-  z-index:1;
-}
-.portfolio-hero h1 span{color:#C9A84C}
-.portfolio-hero p{
-  font-size:clamp(16px,1.4vw,22px);
-  color:rgba(255,255,255,.5);
-  max-width:600px;
-  margin:0 auto 40px;
-  line-height:1.7;
-  position:relative;
-  z-index:1;
-  font-weight:300;
-}
-.portfolio-hero-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 20px;
-  border:1px solid rgba(201,168,76,.15);
-  border-radius:100px;
-  font-size:12px;
-  font-weight:600;
-  color:#C9A84C;
-  background:rgba(201,168,76,.05);
-  margin-bottom:30px;
-  position:relative;
-  z-index:1;
-  letter-spacing:.1em;
-}
+/* ======= FILTER BAR ======= */
+.filter-bar{position:sticky;top:80px;z-index:800;background:rgba(8,8,8,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.filter-inner{max-width:1400px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none;height:60px}
+.filter-inner::-webkit-scrollbar{display:none}
+.filter-btn{flex-shrink:0;background:none;border:none;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);cursor:pointer;padding:8px 18px;border-radius:50px;transition:all .25s;white-space:nowrap}
+.filter-btn:hover{color:#fff;background:rgba(255,255,255,.06)}
+.filter-btn.active{color:#0A0A0A;background:#C9A84C}
+.filter-count{font-size:10px;margin-left:5px;opacity:.7}
 
-/* ===== STATS ===== */
-.stats-bar{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:1px;
-  background:rgba(255,255,255,.04);
-  max-width:1000px;
-  margin:-50px auto 60px;
-  position:relative;
-  z-index:2;
-  border-radius:12px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.04);
-}
-.stat-item{
-  background:#0E0E0E;
-  padding:36px 20px;
-  text-align:center;
-}
-.stat-number{
-  font-size:clamp(28px,3vw,48px);
-  font-weight:900;
-  color:#C9A84C;
-  line-height:1;
-  margin-bottom:6px;
-  font-family:'Inter',sans-serif;
-}
-.stat-label{
-  font-size:13px;
-  color:rgba(255,255,255,.4);
-  font-weight:500;
-}
+/* ======= GRID ======= */
+.pf-section{max-width:1400px;margin:0 auto;padding:60px 40px 100px}
+.pf-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}
 
-/* ===== FILTERS ===== */
-.portfolio-filters{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:8px;
-  padding:0 24px;
-  margin-bottom:48px;
-  position:relative;
-  z-index:2;
-}
-.pf-btn{
-  padding:10px 28px;
-  border-radius:100px;
-  border:1px solid rgba(255,255,255,.06);
-  background:transparent;
-  color:rgba(255,255,255,.5);
-  font-size:14px;
-  font-weight:600;
-  font-family:'Tajawal',sans-serif;
-  cursor:pointer;
-  transition:all .35s ease;
-  letter-spacing:.02em;
-}
-.pf-btn:hover{
-  border-color:rgba(201,168,76,.3);
-  color:rgba(255,255,255,.8);
-}
-.pf-btn.active{
-  background:rgba(201,168,76,.12);
-  border-color:#C9A84C;
-  color:#C9A84C;
-  box-shadow:0 0 30px rgba(201,168,76,.08);
-}
+/* Card sizes */
+.pf-card{position:relative;overflow:hidden;cursor:pointer;background:#111}
+.pf-card.col-8{grid-column:span 8}
+.pf-card.col-4{grid-column:span 4}
+.pf-card.col-6{grid-column:span 6}
+.pf-card.col-4{grid-column:span 4}
+.pf-card.col-3{grid-column:span 3}
+.pf-card.row-tall{aspect-ratio:4/3}
+.pf-card.row-short{aspect-ratio:16/9}
+.pf-card.row-square{aspect-ratio:1}
 
-/* ===== GRID ===== */
-.portfolio-grid{
-  max-width:1440px;
-  margin:0 auto;
-  padding:0 24px 80px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-.pf-item{
-  position:relative;
-  overflow:hidden;
-  border-radius:8px;
-  cursor:pointer;
-  background:#111;
-  aspect-ratio:4/3;
-}
-.pf-item.tall{aspect-ratio:3/4}
-.pf-item.wide{aspect-ratio:16/9}
-.pf-item.panorama{aspect-ratio:21/9;grid-column:span 2}
-.pf-item img,.pf-item video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .8s cubic-bezier(.25,.1,.1,1);
-}
-.pf-item:hover img,.pf-item:hover video{transform:scale(1.06)}
+.pf-card img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94),filter .5s}
+.pf-card:hover img{transform:scale(1.06);filter:brightness(1.08)}
 
-.pf-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.1) 50%,transparent 100%);
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  padding:28px;
-  opacity:0;
-  transition:all .45s ease;
-}
-.pf-item:hover .pf-overlay{opacity:1}
+.pf-card-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.4) 40%, transparent 70%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
+.pf-card:hover .pf-card-overlay{opacity:1}
+.pf-card-cat{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px}
+.pf-card-title{font-size:clamp(14px,1.2vw,18px);font-weight:700;color:#fff;line-height:1.3}
+.pf-card-view{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);transition:color .2s}
+.pf-card-view:hover{color:#C9A84C}
+.pf-card-view svg{transition:transform .2s}
+.pf-card-view:hover svg{transform:translateX(3px)}
 
-.pf-category{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  color:#C9A84C;
-  margin-bottom:8px;
-  font-family:'Inter',sans-serif;
-}
-.pf-title{
-  font-size:18px;
-  font-weight:700;
-  color:#fff;
-  margin-bottom:4px;
-  line-height:1.3;
-}
-.pf-subtitle{
-  font-size:13px;
-  color:rgba(255,255,255,.5);
-  font-weight:400;
-}
+/* Video card */
+.pf-card-video-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,.7);border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;transition:all .3s;backdrop-filter:blur(4px)}
+.pf-card:hover .pf-card-video-badge{background:rgba(201,168,76,.9);border-color:#C9A84C;transform:translate(-50%,-50%) scale(1.1)}
 
-/* ===== DETAIL MODAL ===== */
-.project-modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  background:rgba(0,0,0,0.93);
-  backdrop-filter:blur(40px);
-  -webkit-backdrop-filter:blur(40px);
-  align-items:center;
-  justify-content:center;
-  opacity:0;
-  transition:opacity .4s ease;
-  padding:24px;
-  overflow-y:auto;
-}
-.project-modal.open{display:flex;opacity:1}
-.project-modal-inner{
-  max-width:1100px;
-  width:100%;
-  background:#0E0E0E;
-  border-radius:16px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.04);
-  box-shadow:0 40px 120px rgba(0,0,0,.7);
-  transform:scale(0.92) translateY(20px);
-  transition:all .45s cubic-bezier(.25,.1,.1,1);
-}
-.project-modal.open .project-modal-inner{transform:scale(1) translateY(0)}
-.project-modal-close{
-  position:absolute;
-  top:24px;right:24px;
-  width:48px;height:48px;
-  border-radius:50%;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.08);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  transition:all .3s;
-  z-index:10;
-  backdrop-filter:blur(8px);
-}
-.project-modal-close:hover{background:rgba(201,168,76,.15);border-color:#C9A84C}
+/* Category label always visible */
+.pf-card-badge{position:absolute;top:16px;left:16px;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.12);padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8)}
 
-.pm-media{
-  width:100%;
-  max-height:60vh;
-  overflow:hidden;
-  background:#000;
-}
-.pm-media img,.pm-media video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-.pm-body{
-  padding:40px 48px;
-}
-.pm-category{
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.15em;
-  color:#C9A84C;
-  text-transform:uppercase;
-  font-family:'Inter',sans-serif;
-}
-.pm-title{
-  font-size:clamp(24px,3vw,36px);
-  font-weight:800;
-  color:#FAFAF8;
-  margin:8px 0 16px;
-  line-height:1.2;
-}
-.pm-description{
-  font-size:15px;
-  color:rgba(255,255,255,.55);
-  line-height:1.8;
-  max-width:700px;
-  margin-bottom:24px;
-}
-.pm-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:32px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.04);
-}
-.pm-meta-item{}
-.pm-meta-label{
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.25);
-  font-family:'Inter',sans-serif;
-  margin-bottom:4px;
-}
-.pm-meta-value{
-  font-size:14px;
-  font-weight:500;
-  color:rgba(255,255,255,.7);
-}
+/* Section divider */
+.pf-divider{display:flex;align-items:center;gap:20px;padding:48px 0 24px;color:rgba(255,255,255,.3);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.pf-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07)}
 
-/* ===== CTA ===== */
-.cta-section{
-  padding:100px 24px;
-  text-align:center;
-  background:linear-gradient(135deg,#0a0a0a,#1a1200);
-  position:relative;
-  overflow:hidden;
-}
-.cta-section::before{
-  content:'';
-  position:absolute;
-  top:0;left:0;right:0;bottom:0;
-  background:radial-gradient(ellipse at center, rgba(201,168,76,0.03) 0%, transparent 70%);
-}
-.cta-section h2{
-  font-size:clamp(30px,4vw,52px);
-  font-weight:900;
-  color:#FAFAF8;
-  margin-bottom:16px;
-  position:relative;
-}
-.cta-section p{
-  font-size:16px;
-  color:rgba(255,255,255,.45);
-  max-width:500px;
-  margin:0 auto 32px;
-  line-height:1.7;
-  position:relative;
-}
-.cta-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:16px 40px;
-  background:#C9A84C;
-  color:#0A0A0A;
-  font-size:13px;
-  font-weight:700;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  transition:all .3s;
-  text-decoration:none;
-  position:relative;
-  font-family:'Tajawal',sans-serif;
-}
-.cta-btn:hover{background:#DAAD3D;transform:translateY(-2px);box-shadow:0 10px 40px rgba(201,168,76,.2)}
+/* ======= CTA SECTION ======= */
+.pf-cta{background:linear-gradient(135deg,#0D0D0D 0%,#0A0800 50%,#0D0D0D 100%);border-top:1px solid rgba(201,168,76,.12);padding:100px 40px;text-align:center;position:relative;overflow:hidden}
+.pf-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);pointer-events:none}
+.pf-cta h2{font-size:clamp(32px,4vw,56px);font-weight:800;letter-spacing:-.03em;color:#FAFAF8;position:relative;z-index:1}
+.pf-cta h2 span{color:#C9A84C}
+.pf-cta p{font-size:16px;color:rgba(255,255,255,.5);margin-top:16px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.8;position:relative;z-index:1}
+.pf-cta-btn{display:inline-flex;align-items:center;gap:10px;margin-top:40px;padding:16px 40px;background:#C9A84C;color:#080808;font-family:'Inter',sans-serif;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border:none;border-radius:50px;cursor:pointer;transition:all .3s;position:relative;z-index:1}
+.pf-cta-btn:hover{background:#D9B860;transform:scale(1.04)}
 
-/* ===== FOOTER (improved) ===== */
-.footer {
-  background: #0A0A0A;
-  border-top: 1px solid rgba(201,168,76,0.08);
-  padding: 70px 0 0;
-  position: relative;
-  overflow: hidden;
-}
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(to right, transparent, #C9A84C, transparent);
-  opacity: 0.3;
-  z-index: 2;
-}
-.footer-bg-motif {
-  position: absolute;
-  bottom: -120px;
-  right: -200px;
-  width: 1400px;
-  height: 1400px;
-  background: url('assets/chatbot-motif.png') no-repeat center center;
-  background-size: contain;
-  opacity: 0.04;
-  pointer-events: none;
-  z-index: 0;
-}
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-  position: relative;
-  z-index: 1;
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
-  gap: 50px;
-}
-.footer-brand { position: relative; }
-.footer-logo { display: inline-block; }
-.footer-logo img {
-  height: 116px;
-  width: auto;
-  display: block;
-  opacity: 0.85;
-  transition: opacity 0.3s ease;
-}
-.footer-logo:hover img { opacity: 1; }
-.footer-desc {
-  color: rgba(255,255,255,0.8);
-  font-size: 13px;
-  line-height: 1.9;
-  margin-top: 16px;
-  max-width: 320px;
-}
-.footer-tagline {
-  color: #C9A84C;
-  font-size: 11px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin-top: 12px;
-  font-weight: 500;
-  opacity: 0.85;
-}
-.footer h4 {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  position: relative;
-  padding-bottom: 10px;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-}
-.footer h4::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 28px;
-  height: 2px;
-  background: #C9A84C;
-  border-radius: 2px;
-}
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.footer-links a {
-  color: rgba(255,255,255,0.75);
-  text-decoration: none;
-  font-size: 13px;
-  transition: color 0.3s ease, padding-right 0.3s ease;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.footer-links a::before {
-  content: '\2190';
-  color: #C9A84C;
-  font-size: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateX(4px);
-}
-.footer-links a:hover {
-  color: #C9A84C;
-  padding-right: 4px;
-}
-.footer-links a:hover::before {
-  opacity: 1;
-  transform: translateX(0);
-}
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.footer-contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: rgba(255,255,255,0.75);
-  text-decoration: none;
-  font-size: 13px;
-  transition: color 0.3s ease;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-  line-height: 1.5;
-}
-.footer-contact-item[style*="flex-start"] { direction: ltr; }
-.footer-contact-item .material-symbols-outlined {
-  font-size: 16px;
-  color: #C9A84C;
-  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
-  flex-shrink: 0;
-}
-.footer-contact-item:hover {
-  color: rgba(255,255,255,0.7);
-}
-.footer-contact-item a { color: inherit; text-decoration: none; }
-.footer-contact-item a:hover { color: #C9A84C; }
-.footer-social {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-.footer-social a {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.6);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  font-size: 16px;
-}
-.footer-social a:hover {
-  border-color: #C9A84C;
-  color: #C9A84C;
-  background: rgba(201,168,76,0.08);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(201,168,76,0.15);
-}
-.footer-registration {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  padding: 20px 24px;
-  margin-top: 40px;
-  border-top: 1px solid rgba(255,255,255,0.04);
-  font-size: 11px;
-  color: rgba(255,255,255,0.55);
-}
-.footer-registration .reg-sep { color: rgba(255,255,255,0.06); }
-@media(max-width:480px) { .footer-registration { flex-direction: column; gap: 4px; } }
-.footer-bottom {
-  padding: 22px 0;
-  border-top: 1px solid rgba(255,255,255,0.03);
-  text-align: center;
-  position: relative;
-}
-.footer-bottom-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-.footer-bottom p {
-  color: rgba(255,255,255,0.5);
-  font-size: 12px;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-  margin: 0;
-}
-.footer-back-top {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: rgba(255,255,255,0.55);
-  text-decoration: none;
-  font-size: 12px;
-  transition: color 0.3s ease;
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-family: 'Tajawal', sans-serif;
-}
-.footer-back-top:hover { color: #C9A84C; }
-.footer-back-top .material-symbols-outlined { font-size: 16px; }
+/* ======= LIGHTBOX ======= */
+#imgLB{display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:99999;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;padding:20px}
+#imgLB img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:2px;box-shadow:0 40px 120px rgba(0,0,0,.8)}
+.lb-close{position:absolute;top:20px;right:24px;background:none;border:none;color:rgba(255,255,255,.5);font-size:32px;cursor:pointer;transition:color .2s;line-height:1}
+.lb-close:hover{color:#fff}
+.lb-info{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);text-align:center}
+.lb-info-cat{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;margin-bottom:6px}
+.lb-info-title{font-size:14px;font-weight:600;color:rgba(255,255,255,.8)}
 
-/* ===== ANIMATIONS ===== *//* ===== ANIMATIONS ===== */
-.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.25,.1,.1,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
+/* ======= VIDEO MODAL ======= */
+#vidModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.97);z-index:99999;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.vid-wrap{position:relative;width:100%;max-width:1280px;aspect-ratio:16/9}
+.vid-wrap iframe{width:100%;height:100%;border:none;border-radius:4px}
+.vid-close{position:absolute;top:-48px;right:0;background:none;border:none;color:rgba(255,255,255,.5);font-size:32px;cursor:pointer;transition:color .2s}
+.vid-close:hover{color:#fff}
 
-/* ===== RESPONSIVE ===== */
+/* ======= MOBILE ======= */
 @media(max-width:1024px){
-  .portfolio-grid{grid-template-columns:repeat(2,1fr)}
-  .pf-item.panorama{grid-column:span 2}
-  .stats-bar{grid-template-columns:repeat(2,1fr);margin:-30px 24px 40px}
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .header-inner{padding:0 24px}
+  .pf-hero-inner,.pf-section{padding-left:24px;padding-right:24px}
+  .filter-inner{padding:0 24px}
+  .pf-cta{padding:80px 24px}
 }
 @media(max-width:768px){
-  .header{padding:0 20px;height:80px}
-  .header .logo img{height:64px}
-  .nav{display:none}
-  .header-mobile-btn{display:flex!important}
-  .portfolio-hero{padding:140px 20px 60px;min-height:60vh}
-  .portfolio-grid{grid-template-columns:1fr;gap:8px;padding:0 16px 60px}
-  .pf-item.panorama{grid-column:span 1}
-  .stats-bar{grid-template-columns:1fr 1fr;margin:-30px 16px 30px;border-radius:8px}
-  .pm-body{padding:24px 20px}
-  .project-modal-inner{border-radius:8px}
-  .footer {
-    padding: 50px 0 0;
-  }
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-  .footer-desc { max-width: 100%; }
-  .footer h4::after { right: 50%; transform: translateX(50%); }
-  .footer-brand { text-align: center; }
-  .footer-logo img { margin: 0 auto; }
-  .footer-desc { margin-left: auto; margin-right: auto; }
-  .footer-tagline { text-align: center; }
-  .footer-links { align-items: center; }
-  .footer-links a::before { display: none; }
-  .footer-links a:hover { padding-right: 0; }
-  .footer-contact-item { justify-content: center; }
-  .footer-social { justify-content: center; }
-  .footer-bottom-inner { flex-direction: column; gap: 8px; }}
-  .pf-btn{font-size:13px;padding:8px 20px}
+  .nav{display:none;position:fixed;top:80px;left:0;right:0;background:#0D0D0D;flex-direction:column;align-items:flex-start;padding:20px;border-bottom:1px solid rgba(255,255,255,.07);gap:4px}
+  .nav.open{display:flex}
+  .nav-link{width:100%;padding:12px 16px}
+  .menu-toggle{display:flex}
+  .pf-hero{padding:100px 0 60px}
+  .pf-hero-stats{gap:28px;flex-wrap:wrap}
+  .pf-grid{grid-template-columns:1fr 1fr;gap:2px}
+  .pf-card.col-8,.pf-card.col-6,.pf-card.col-4,.pf-card.col-3{grid-column:span 2}
+  .pf-card.col-8{grid-column:span 2}
+  .pf-card-overlay{opacity:1;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,transparent 50%)}
 }
 @media(max-width:480px){
-  .stats-bar{grid-template-columns:1fr}
-  .portfolio-hero h1{font-size:32px}
-}
-
-/* ===== PORTFOLIO SECTION (from home page) ===== */
-.portfolio {
-  background: #fafafa;
-  padding: 100px 0;
-  position: relative;
-  overflow: hidden;
-  direction: ltr;
-}
-.portfolio::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(199,161,80,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(199,161,80,0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-  z-index: 0;
-}
-.portfolio::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 15%;
-  right: 15%;
-  height: 1px;
-  background: linear-gradient(to left, transparent, #C9A84C, transparent);
-  opacity: 0.25;
-}
-.portfolio-container {
-  position: relative;
-  z-index: 1;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 48px;
-}
-.portfolio-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-.portfolio-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #C9A84C;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-}
-.portfolio-eyebrow::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: #C9A84C;
-  border-radius: 50%;
-  display: inline-block;
-  flex-shrink: 0;
-  animation: s2-glow-dot 2s ease-in-out infinite;
-}
-.portfolio-title {
-  font-size: clamp(30px, 3.4vw, 48px);
-  font-weight: 300;
-  line-height: 1.2;
-  color: #0A0A0A;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-  letter-spacing: -0.5px;
-  margin-bottom: 16px;
-}
-.portfolio-title em {
-  color: #C9A84C;
-  font-style: normal;
-  font-weight: 500;
-}
-.portfolio-divider {
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(to left, #C9A84C, transparent);
-  margin: 0 auto;
-  opacity: 0.5;
-}
-.portfolio-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  margin-bottom: 50px;
-}
-.pf-btn {
-  padding: 10px 24px;
-  font-size: 13px;
-  font-weight: 500;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-  border: 1.5px solid rgba(0,0,0,0.1);
-  background: transparent;
-  color: rgba(0,0,0,0.55);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 50px;
-}
-.pf-btn:hover {
-  border-color: #C9A84C;
-  color: #C9A84C;
-}
-.pf-btn.active {
-  border-color: #C9A84C;
-  background: #C9A84C;
-  color: #fff;
-}
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-.pf-item {
-  position: relative;
-  aspect-ratio: 4/3;
-  overflow: hidden;
-  cursor: pointer;
-  background: #eee;
-  border: 1px solid rgba(0,0,0,0.06);
-  transition: all 0.5s ease;
-  border-radius: 4px;
-}
-.pf-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.1, 1);
-}
-.pf-item:hover {
-  border-color: rgba(199,161,80,0.2);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-}
-.pf-item:hover img {
-  transform: scale(1.05);
-}
-.pf-item-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 24px 18px 16px;
-  background: linear-gradient(transparent, rgba(0,0,0,0.85));
-  transform: translateY(8px);
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-.pf-item:hover .pf-item-overlay {
-  transform: translateY(0);
-  opacity: 1;
-}
-.pf-item-location {
-  font-size: 10px;
-  font-weight: 600;
-  color: #C9A84C;
-  display: block;
-  letter-spacing: 1px;
-  font-family: 'Inter', sans-serif;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.pf-item-title {
-  font-size: 14px;
-  font-weight: 500;
-  color: #fff;
-  display: block;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-}
-.pf-video { cursor: pointer; }
-.pf-video-play {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-.pf-video-play .material-symbols-outlined {
-  font-size: 56px;
-  color: #fff;
-  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
-  filter: drop-shadow(0 0 20px rgba(199,161,80,0.3));
-  transition: transform 0.4s ease, filter 0.4s ease;
-  font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 48;
-}
-.pf-video:hover .pf-video-play { opacity: 1; }
-.pf-video:hover .pf-video-play .material-symbols-outlined {
-  transform: scale(1.12);
-  filter: drop-shadow(0 0 30px rgba(199,161,80,0.5));
-}
-.pf-video img {
-  filter: brightness(0.7);
-  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.1, 1), filter 0.5s ease;
-}
-.pf-video:hover img { filter: brightness(0.5); }
-.pf-item::before,
-.pf-item::after {
-  content: '';
-  position: absolute;
-  z-index: 2;
-  pointer-events: none;
-  width: 16px;
-  height: 16px;
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-.pf-item::before {
-  top: 8px;
-  left: 8px;
-  border-top: 1.5px solid #C9A84C;
-  border-left: 1.5px solid #C9A84C;
-}
-.pf-item::after {
-  bottom: 8px;
-  right: 8px;
-  border-bottom: 1.5px solid #C9A84C;
-  border-right: 1.5px solid #C9A84C;
-}
-.pf-item:hover::before,
-.pf-item:hover::after { opacity: 0.6; }
-
-/* Video Modal */
-.video-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(0,0,0,0.9);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-  padding: 80px;
-}
-.video-modal.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-.video-modal-inner {
-  position: relative;
-  width: 100%;
-  max-width: 1100px;
-  background: #000;
-  border-radius: 12px;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.7);
-  transform: scale(0.9);
-  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.1, 1);
-  overflow: hidden;
-}
-.video-modal-inner .video-aspect {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-}
-.video-aspect iframe,
-.video-aspect video {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-.video-modal.active .video-modal-inner { transform: scale(1); }
-.video-modal .video-modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.5);
-  border: 2px solid rgba(255,255,255,0.2);
-  color: #fff;
-  font-size: 22px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  z-index: 10;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-.video-modal .video-modal-close:hover {
-  background: #C9A84C;
-  border-color: #C9A84C;
-  color: #000;
-  transform: scale(1.12);
-}
-.video-modal .video-modal-close:active { transform: scale(0.92); }
-
-@media (max-width: 1024px) {
-  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 768px) {
-  .portfolio { padding: 60px 0; }
-  .portfolio-container { padding: 0 24px; }
-  .portfolio-grid { grid-template-columns: 1fr; gap: 10px; }
-  .portfolio-filters { gap: 6px; }
-  .pf-btn { padding: 8px 18px; font-size: 12px; }
-  .video-modal { padding: 16px; }
-  .video-modal-inner { border-radius: 8px; }
-  .video-modal .video-modal-close {
-    top: 12px;
-    right: 12px;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
+  .pf-grid{grid-template-columns:1fr;gap:2px}
+  .pf-card.col-8,.pf-card.col-6,.pf-card.col-4,.pf-card.col-3{grid-column:span 1}
+  .pf-hero-stats{gap:20px}
 }
 </style>
 </head>
 <body>
 
 <!-- ===== HEADER ===== -->
-<header class="header">
-  <button class="header-mobile-btn" onclick="toggleMobileNav()" aria-label="القائمة">
-    <span class="material-symbols-outlined">menu</span>
-  </button>
-  <nav class="nav">
-    <a href="index-ar.html" class="nav-lang active">AR</a>
-    <a href="/" class="nav-lang">EN</a>
-    <a href="who-we-are-en.html">About Us</a>
-    <a href="/#vision">Vision</a>
-    <div class="nav-item-drop">
-      <a class="nav-link" style="cursor:pointer">Services <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
-      <div class="nav-dropdown">
-        <a href="3d-animation-en.html"><span class="material-symbols-outlined dd-icon">movie</span>Cinematic CGI</a>
-        <a href="smart-maquettes-en.html"><span class="material-symbols-outlined dd-icon">view_in_ar</span>Smart Maquettes</a>
-        <a href="interactive-experiences-en.html"><span class="material-symbols-outlined dd-icon">touch_app</span>Interactive Experiences</a>
-        <a href="galleries-advertising-en.html"><span class="material-symbols-outlined dd-icon">gallery_thumbnail</span>Galleries & Advertising Decor</a>
-        <a href="media-production-en.html"><span class="material-symbols-outlined dd-icon">videocam</span>Media Production</a>
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <img src="assets/logo-gold.png" alt="Graphics House" style="height:86px;width:auto;image-rendering:-webkit-optimize-contrast;">
+    </a>
+    <nav class="nav" id="nav">
+      <a class="nav-link" href="who-we-are-en.html">About Us</a>
+      <a class="nav-link" href="case-study-en.html">Case Study</a>
+      <a class="nav-link active" href="portfolio-en.html">Our Work</a>
+      <div class="nav-item-drop">
+        <a class="nav-link" style="cursor:pointer">Services <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
+        <div class="nav-dropdown">
+          <a href="3d-animation-en.html"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">movie</span>Cinematic CGI</a>
+          <a href="smart-maquettes-en.html"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">view_in_ar</span>Smart Maquettes</a>
+          <a href="interactive-experiences-en.html"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">touch_app</span>Interactive Experiences</a>
+          <a href="galleries-advertising-en.html"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">gallery_thumbnail</span>Galleries &amp; Advertising Decor</a>
+          <a href="media-production-en.html"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">videocam</span>Media Production</a>
+        </div>
       </div>
-    </div>
-    <a href="portfolio-en.html" style="color:#C9A84C">Our Work</a>
-    <a href="contact-us-en.html">Contact Us</a>
-  </nav>
-  <a href="/" class="logo">
-    <img src="assets/logo-gold.png" alt="Graphics House" style="height:108px;width:auto;image-rendering:auto;filter:brightness(1.1) contrast(1.1);">
-  </a>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35)">
+        <a href="portfolio.html" style="color:#fff;text-decoration:none;font-weight:700;transition:color .3s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">AR</a>
+        <span style="color:rgba(255,255,255,.3)"> | </span>
+        <a href="portfolio-en.html" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">EN</a>
+      </span>
+      <a href="contact-us-en.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:50px;transition:all .3s;white-space:nowrap" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)'" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)'">Get in touch</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" onclick="document.getElementById('nav').classList.toggle('open')">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
 </header>
 
-<!-- Mobile Nav -->
-<div class="mobile-nav" id="mobileNav">
-  <button class="mobile-close" onclick="toggleMobileNav()"><span class="material-symbols-outlined">close</span></button>
-  <a href="/" onclick="toggleMobileNav()">Home</a>
-  <a href="who-we-are-en.html" onclick="toggleMobileNav()">About Us</a>
-  <a href="portfolio-en.html" onclick="toggleMobileNav()" style="color:#C9A84C">Our Work</a>
-  <a href="3d-animation-en.html" onclick="toggleMobileNav()">Services</a>
-  <a href="contact-us-en.html" onclick="toggleMobileNav()">Contact Us</a>
-</div>
-
 <!-- ===== HERO ===== -->
-<section class="portfolio-hero">
-  <div class="portfolio-hero-glow"></div>
-  <div style="position:relative;z-index:1">
-    <div class="portfolio-hero-badge">
-      <span class="material-symbols-outlined" style="font-size:14px">grid_view</span>
-      Digital Architectural Visualization Studio
-    </div>
-    <h1><span>Our Work</span></h1>
-    <p>From blueprints to visual reality — we tell the stories of major developments through architectural visualization, smart maquettes, cinematic production, and interactive experiences.</p>
-  </div>
-</section>
-
-<!-- ===== STATS ===== -->
-<div class="stats-bar reveal">
-  <div class="stat-item">
-    <div class="stat-number" data-count="25">0</div>
-    <div class="stat-label">Completed Projects</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number" data-count="300">0</div>
-    <div class="stat-label">Renders & Images</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number" data-count="12">0</div>
-    <div class="stat-label">International Clients</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number" data-count="8">0</div>
-    <div class="stat-label">Years of Experience</div>
-  </div>
-</div>
-
-<!-- ===== PORTFOLIO: PREVIOUS WORKS ===== -->
-<section class="portfolio" id="portfolio">
-  <div class="portfolio-container">
-
-    <!-- Section Header -->
-    <div class="portfolio-header s2-fade s2-d1">
-      <div class="portfolio-eyebrow">سابقة Our Work</div>
-      <h2 class="portfolio-title"><em>Successful Projects</em></h2>
-      <div class="portfolio-divider"></div>
-    </div>
-
-    <!-- Filter Buttons -->
-    <div class="portfolio-filters s2-fade s2-d2" id="portfolioFilters">
-      <button class="pf-btn" data-filter="all">All</button>
-      <button class="pf-btn" data-filter="rendering">Arch Viz</button>
-      <button class="pf-btn active" data-filter="maquette">Maquettes</button>
-      <button class="pf-btn" data-filter="cinematic">Cinematic</button>
-      <button class="pf-btn" data-filter="animation">Animation</button>
-      <button class="pf-btn" data-filter="interactive">Interactive</button>
-      <button class="pf-btn" data-filter="exhibition">Exhibition</button>
-    </div>
-
-    <!-- Grid -->
-    <div class="portfolio-grid s2-fade s2-d3" id="portfolioGrid">
-
-      <!-- Rendering — 3D Still Images -->
-	      <a href="casestudy1-en.html" style="text-decoration:none;display:block">
-	      <div class="pf-item" data-category="maquette">
-	        <img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.45-2.jpeg" alt="" loading="lazy">
-	        <div class="pf-item-overlay">
-	          <span class="pf-item-location">Makkah</span>
-	          <span class="pf-item-title">Makkah Charter — Humanity Exhibition</span>
-	        </div>
-	      </div>
-	    </a>
-      <div class="pf-item" data-category="rendering">
-        <img src="assets/projects/rendering/0.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">مشروع — Arch Viz</span>
-        </div>
+<section class="pf-hero">
+  <div class="pf-hero-bg"></div>
+  <div class="pf-hero-grid"></div>
+  <div class="pf-hero-inner">
+    <div class="pf-hero-label">Portfolio</div>
+    <h1>Our<br><span>Work</span></h1>
+    <p class="pf-hero-sub">Over a decade crafting architectural narratives — from photorealistic visualization to physical smart maquettes and cinematic CGI — for landmark developments across the Middle East.</p>
+    <div class="pf-hero-stats">
+      <div>
+        <div class="pf-stat-num" data-count="200">0</div>
+        <div class="pf-stat-label">Projects Delivered</div>
       </div>
-      <div class="pf-item" data-category="rendering">
-        <img src="assets/projects/rendering/bird.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Project — Aerial View</span>
-        </div>
+      <div>
+        <div class="pf-stat-num" data-count="14">0</div>
+        <div class="pf-stat-label">Years of Experience</div>
       </div>
-      <div class="pf-item" data-category="rendering">
-        <img src="assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">AlUla — Al Nakheel</span>
-        </div>
+      <div>
+        <div class="pf-stat-num" data-count="4">0</div>
+        <div class="pf-stat-label">Countries</div>
       </div>
-      <div class="pf-item" data-category="rendering">
-        <img src="assets/projects/rendering/c2.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">مشروع — Arch Viz</span>
-        </div>
+      <div>
+        <div class="pf-stat-num" data-count="60">0</div>
+        <div class="pf-stat-label">Clients Served</div>
       </div>
-      <div class="pf-item" data-category="rendering">
-        <img src="assets/projects/rendering/c3.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">مشروع — Arch Viz</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="rendering">
-        <img src="assets/projects/rendering/wahat-alsalam9-scaled.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">واحة السلام — Arch Viz</span>
-        </div>
-      </div>
-      <!-- Maquettes — All Images from Scale Models Gallery -->
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.45-2.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Makkah</span>
-          <span class="pf-item-title">مجسم — ميثاق مكة</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.23.23.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Makkah</span>
-          <span class="pf-item-title">Arch Maquette — Makkah Charter</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/anan-escan3.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Riyadh</span>
-          <span class="pf-item-title">Anan Eskan — Maquette</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/anan-escan4.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Riyadh</span>
-          <span class="pf-item-title">Anan Eskan — Maquette معماري</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/Anan_Eskan_ryadh5-scaled-e1745137604161.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Riyadh</span>
-          <span class="pf-item-title">عنان إسكان — Riyadh</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/20-scaled-e1745147420120.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Maquette — Development Project</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/18-scaled-e1745148123932.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Maquette — Architectural Plan</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/16-scaled-e1745148168180.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Maquette — Residential Project</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/alrajhi3.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Al Rajhi — Maquette</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/alrajhi2.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Al Rajhi — Maquette معماري</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Makkah</span>
-          <span class="pf-item-title">Al Khair Heights — Maquette</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="maquette">
-        <img src="assets/projects/maquettes/uae-e1745147961286.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">UAE</span>
-          <span class="pf-item-title">International Project — Maquette</span>
-        </div>
-      </div>
-
-      <!-- Cinematic -->
-      <div class="pf-item pf-video" data-category="cinematic" onclick="playVideo('AYStF0c4Hgk')">
-        <img src="assets/projects/cinematic/video-1.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Cinematic Film — GH Production</span>
-        </div>
-      </div>
-      <div class="pf-item pf-video" data-category="cinematic" onclick="playVideo('e766WAUYgGQ')">
-        <img src="assets/projects/cinematic/video-2.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Cinematic Film — GH Production</span>
-        </div>
-      </div>
-      <div class="pf-item pf-video" data-category="cinematic" onclick="playVideo('NM60mClJNwg')">
-        <img src="assets/projects/cinematic/video-3.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Cinematic Film — GH Production</span>
-        </div>
-      </div>
-
-      <!-- Animation — 3D Animation Videos -->
-      <div class="pf-item pf-video" data-category="animation" onclick="playVideo('vYbn-9ramsI')">
-        <img src="assets/projects/animation/jeddah-forum.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">جدة</span>
-          <span class="pf-item-title">Jeddah Forum — Cinematic Film</span>
-        </div>
-      </div>
-      <div class="pf-item pf-video" data-category="animation" onclick="playVideo('ilWeCush3ew')">
-        <img src="assets/projects/animation/rafal-pavilions.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Rafal Pavilions — Cinematic Film</span>
-        </div>
-      </div>
-      <div class="pf-item pf-video" data-category="animation" onclick="playVideo('GlbvI0DRXE4')">
-        <img src="assets/projects/animation/market-center.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Makkah</span>
-          <span class="pf-item-title">Makkah Mall — Cinematic Film</span>
-        </div>
-      </div>
-      <div class="pf-item pf-video" data-category="animation" onclick="playVideo('ALz6GdeITYc')">
-        <img src="assets/projects/animation/alrajhi.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Al Rajhi — Cinematic Film</span>
-        </div>
-      </div>
-      <div class="pf-item pf-video" data-category="animation" onclick="playLocalVideo('assets/videos/3D-Architectural-visualisation.mp4')">
-        <img src="assets/projects/animation/architectural-visualisation.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">الإظهار المعماري — Animation</span>
-        </div>
-      </div>
-      <div class="pf-item pf-video" data-category="animation" onclick="playLocalVideo('assets/videos/GH-Real-estate-services.mp4')">
-        <img src="assets/projects/animation/real-estate-services.jpg" alt="" loading="lazy">
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Services العقارية — Animation</span>
-        </div>
-      </div>
-      <!-- Interactive -->
-      <div class="pf-item" data-category="interactive">
-        <img src="assets/projects/interactive-01.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Interactive Platform — Touch Screens</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="interactive">
-        <img src="assets/projects/vr360/360gh.png" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">360° Tour — Virtual Reality</span>
-        </div>
-      </div>
-
-      <!-- Exhibition -->
-      <div class="pf-item" data-category="exhibition">
-        <img src="assets/projects/pavilion1.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">جناح — مشروع سكني</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="exhibition">
-        <img src="assets/projects/pavilion2.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">Sales Gallery — Luxury Project</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="exhibition">
-        <img src="assets/projects/pavilion3.jpg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Saudi Arabia</span>
-          <span class="pf-item-title">جناح — دولي</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="exhibition">
-        <img src="assets/news/makkah-charter-02.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Makkah</span>
-          <span class="pf-item-title">الإنسانية — رابطة العالم الإسلامي</span>
-        </div>
-      </div>
-      <div class="pf-item" data-category="exhibition">
-        <img src="assets/news/makkah-charter-05.jpeg" alt="" loading="lazy">
-        <div class="pf-item-overlay">
-          <span class="pf-item-location">Makkah</span>
-          <span class="pf-item-title">الإنسانية — رابطة العالم الإسلامي</span>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- Image Lightbox Modal -->
-<div class="image-lightbox" id="imageLightbox" onclick="closeImageLightbox(event)" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);align-items:center;justify-content:center;opacity:0;transition:opacity 0.35s ease">
-  <button class="image-lightbox-close" onclick="closeImageLightbox()" aria-label="إغلاق" style="position:absolute;top:24px;right:24px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;z-index:10;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)">
-    <span class="material-symbols-outlined" style="font-size:24px">close</span>
-  </button>
-  <div class="image-lightbox-inner" style="max-width:85vw;max-height:85vh;border-radius:8px;overflow:visible;box-shadow:0 40px 120px rgba(0,0,0,0.7);transform:scale(0.92);transition:transform 0.4s cubic-bezier(0.25,0.1,0.1,1);position:relative;display:flex;align-items:center;justify-content:center">
-    <div id="lightboxContentWrapper" style="position:relative;overflow:visible;display:inline-block;max-width:85vw;max-height:85vh;border-radius:8px">
-      <img id="imageLightboxImg" src="" alt="" style="width:auto;height:auto;max-width:85vw;max-height:85vh;display:block;border-radius:8px">
-    </div>
+<!-- ===== FILTER BAR ===== -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" data-filter="all">All Work</button>
+    <button class="filter-btn" data-filter="visualization">Visualization</button>
+    <button class="filter-btn" data-filter="maquettes">Smart Maquettes</button>
+    <button class="filter-btn" data-filter="cinematic">Cinematic CGI</button>
+    <button class="filter-btn" data-filter="animation">3D Animation</button>
+    <button class="filter-btn" data-filter="vr">VR &amp; 360°</button>
+    <button class="filter-btn" data-filter="pavilion">Pavilions</button>
   </div>
 </div>
 
-<!-- Video Lightbox Modal -->
-<div class="image-lightbox" id="videoLightbox" onclick="closeMaquetteVideo(event)" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);align-items:center;justify-content:center;opacity:0;transition:opacity 0.35s ease">
-  <button class="image-lightbox-close" onclick="closeMaquetteVideo()" aria-label="إغلاق" style="position:absolute;top:24px;right:24px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;z-index:10;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)">
-    <span class="material-symbols-outlined" style="font-size:24px">close</span>
-  </button>
-  <div style="max-width:85vw;max-height:85vh;border-radius:8px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,0.7);transform:scale(0.92);transition:transform 0.4s cubic-bezier(0.25,0.1,0.1,1)">
-    <iframe id="maquetteVideoPlayer" width="100%" height="100%" style="width:85vw;max-width:1080px;aspect-ratio:16/9;display:block;border:none" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
+<!-- ===== PORTFOLIO GRID ===== -->
+<div class="pf-section">
+
+  <!-- ── FEATURED ROW ── -->
+  <div class="pf-grid" id="pfGrid">
+
+    <!-- 1. FEATURED LARGE — Al Khair Heights -->
+    <div class="pf-card col-8 row-tall" data-cat="visualization" onclick="openImg('assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg','Visualization','Al Khair Heights — Makkah')">
+      <img src="assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" alt="Al Khair Heights Makkah" loading="lazy"/>
+      <div class="pf-card-badge">Visualization</div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Architectural Visualization</div>
+        <div class="pf-card-title">Al Khair Heights — Makkah</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 2. Smart Maquette 01 -->
+    <div class="pf-card col-4 row-tall" data-cat="maquettes" onclick="openImg('assets/projects/maquettes/mq1.webp','Smart Maquettes','Intelligent Scale Model 01')">
+      <img src="assets/projects/maquettes/mq1.webp" alt="Smart Maquette 01" loading="lazy"/>
+      <div class="pf-card-badge">Smart Maquettes</div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Smart Maquettes</div>
+        <div class="pf-card-title">Intelligent Scale Model 01</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 3. Aloula Co. Al Nakheel -->
+    <div class="pf-card col-4 row-short" data-cat="visualization" onclick="openImg('assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg','Visualization','Aloula Co. — Al Nakheel')">
+      <img src="assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="Aloula Co Al Nakheel" loading="lazy"/>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Architectural Visualization</div>
+        <div class="pf-card-title">Aloula Co. — Al Nakheel</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 4. Cinematic Video 1 -->
+    <div class="pf-card col-4 row-short" data-cat="cinematic" onclick="openVid('https://www.youtube.com/embed/videoseries?list=PLtest&autoplay=1&vq=hd1080')">
+      <img src="assets/projects/cinematic/video-1.jpg" alt="Cinematic Production" loading="lazy"/>
+      <div class="pf-card-video-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Cinematic CGI</div>
+        <div class="pf-card-title">Cinematic Reel — Landmark Towers</div>
+        <div class="pf-card-view">Watch Film <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 5. The Financial Center -->
+    <div class="pf-card col-4 row-short" data-cat="visualization" onclick="openImg('assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg','Visualization','Financial Center — King Abdullah City')">
+      <img src="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg" alt="Financial Center King Abdullah City" loading="lazy"/>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Architectural Visualization</div>
+        <div class="pf-card-title">Financial Center — King Abdullah City</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 6. Smart Maquette 02 -->
+    <div class="pf-card col-4 row-short" data-cat="maquettes" onclick="openImg('assets/projects/maquettes/mq2-1.webp','Smart Maquettes','Intelligent Scale Model 02')">
+      <img src="assets/projects/maquettes/mq2-1.webp" alt="Smart Maquette 02" loading="lazy"/>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Smart Maquettes</div>
+        <div class="pf-card-title">Intelligent Scale Model 02</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 7. Anan Escan -->
+    <div class="pf-card col-6 row-tall" data-cat="visualization" onclick="openImg('assets/projects/rendering/Anan-Escan-Co.01.jpeg','Visualization','Anan Escan Co. — Riyadh')">
+      <img src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Anan Escan Co" loading="lazy"/>
+      <div class="pf-card-badge">Visualization</div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Architectural Visualization</div>
+        <div class="pf-card-title">Anan Escan Co. — Riyadh</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 8. VR 360 -->
+    <div class="pf-card col-6 row-tall" data-cat="vr" onclick="openImg('assets/projects/vr360/360gh.png','VR &amp; 360°','Immersive VR Experience')">
+      <img src="assets/projects/vr360/360gh.png" alt="VR 360 Experience" loading="lazy"/>
+      <div class="pf-card-badge">VR &amp; 360°</div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">VR &amp; 360° Experience</div>
+        <div class="pf-card-title">Immersive VR Walkthrough</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 9. Wahat Al Salam -->
+    <div class="pf-card col-4 row-short" data-cat="visualization" onclick="openImg('assets/projects/rendering/wahat-alsalam9-scaled.jpg','Visualization','Wahat Al Salam')">
+      <img src="assets/projects/rendering/wahat-alsalam9-scaled.jpg" alt="Wahat Al Salam" loading="lazy"/>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Architectural Visualization</div>
+        <div class="pf-card-title">Wahat Al Salam</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 10. Meteorological Building -->
+    <div class="pf-card col-4 row-short" data-cat="visualization" onclick="openImg('assets/projects/rendering/The-Meteorological-Building.jpeg','Visualization','The Meteorological Building')">
+      <img src="assets/projects/rendering/The-Meteorological-Building.jpeg" alt="Meteorological Building" loading="lazy"/>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Architectural Visualization</div>
+        <div class="pf-card-title">The Meteorological Building</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 11. Cinematic Video 2 -->
+    <div class="pf-card col-4 row-short" data-cat="cinematic" onclick="openVid('https://www.youtube.com/embed/videoseries?autoplay=1&vq=hd1080')">
+      <img src="assets/projects/cinematic/video-2.jpg" alt="Cinematic CGI" loading="lazy"/>
+      <div class="pf-card-video-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Cinematic CGI</div>
+        <div class="pf-card-title">Residential Tower — Aerial View</div>
+        <div class="pf-card-view">Watch Film <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 12. UAE Project — FEATURED -->
+    <div class="pf-card col-8 row-tall" data-cat="visualization" onclick="openImg('assets/projects/rendering/uae-e1745147961286.jpeg','Visualization','Mixed-Use Tower — UAE')">
+      <img src="assets/projects/rendering/uae-e1745147961286.jpeg" alt="UAE Project" loading="lazy"/>
+      <div class="pf-card-badge">Visualization</div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Architectural Visualization</div>
+        <div class="pf-card-title">Mixed-Use Tower — UAE</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 13. Smart Maquette Detail -->
+    <div class="pf-card col-4 row-tall" data-cat="maquettes" onclick="openImg('assets/projects/maquettes/mq1-1.webp','Smart Maquettes','Interactive LED Maquette — Detail')">
+      <img src="assets/projects/maquettes/mq1-1.webp" alt="Smart Maquette Detail" loading="lazy"/>
+      <div class="pf-card-badge">Smart Maquettes</div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Smart Maquettes</div>
+        <div class="pf-card-title">Interactive LED Maquette — Detail</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 14. Al Rajhi -->
+    <div class="pf-card col-3 row-short" data-cat="visualization" onclick="openImg('assets/projects/rendering/alrajhi2.jpeg','Visualization','Al Rajhi Development')">
+      <img src="assets/projects/rendering/alrajhi2.jpeg" alt="Al Rajhi Development" loading="lazy"/>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Visualization</div>
+        <div class="pf-card-title">Al Rajhi Development</div>
+        <div class="pf-card-view">View <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 15. Kuday Makkah -->
+    <div class="pf-card col-3 row-short" data-cat="visualization" onclick="openImg('assets/projects/rendering/kuday-makkah-e1745137682714.jpeg','Visualization','Kuday Development — Makkah')">
+      <img src="assets/projects/rendering/kuday-makkah-e1745137682714.jpeg" alt="Kuday Makkah" loading="lazy"/>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Visualization</div>
+        <div class="pf-card-title">Kuday — Makkah</div>
+        <div class="pf-card-view">View <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 16. Animation: Rafal Pavilions -->
+    <div class="pf-card col-3 row-short" data-cat="animation" onclick="openImg('assets/projects/animation/rafal-pavilions.jpg','3D Animation','Rafal Pavilions — Animation')">
+      <img src="assets/projects/animation/rafal-pavilions.jpg" alt="Rafal Pavilions" loading="lazy"/>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">3D Animation</div>
+        <div class="pf-card-title">Rafal Pavilions</div>
+        <div class="pf-card-view">View <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 17. Animation: Market Center -->
+    <div class="pf-card col-3 row-short" data-cat="animation" onclick="openImg('assets/projects/animation/market-center.jpg','3D Animation','Market Center — Animation')">
+      <img src="assets/projects/animation/market-center.jpg" alt="Market Center" loading="lazy"/>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">3D Animation</div>
+        <div class="pf-card-title">Market Center</div>
+        <div class="pf-card-view">View <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 18. Pavilion 1 — LARGE -->
+    <div class="pf-card col-6 row-tall" data-cat="pavilion" onclick="openImg('assets/projects/pavilion1.jpg','Pavilions','Exhibition Pavilion — Design')">
+      <img src="assets/projects/pavilion1.jpg" alt="Pavilion Design" loading="lazy"/>
+      <div class="pf-card-badge">Pavilion</div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Pavilions &amp; Exhibitions</div>
+        <div class="pf-card-title">Exhibition Pavilion — Design</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 19. Pavilion 2 -->
+    <div class="pf-card col-3 row-tall" data-cat="pavilion" onclick="openImg('assets/projects/pavilion2.jpg','Pavilions','Interactive Sales Pavilion')">
+      <img src="assets/projects/pavilion2.jpg" alt="Sales Pavilion" loading="lazy"/>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Pavilions</div>
+        <div class="pf-card-title">Interactive Sales Pavilion</div>
+        <div class="pf-card-view">View <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 20. Pavilion 3 -->
+    <div class="pf-card col-3 row-tall" data-cat="pavilion" onclick="openImg('assets/projects/pavilion3.jpg','Pavilions','Brand Experience Pavilion')">
+      <img src="assets/projects/pavilion3.jpg" alt="Brand Pavilion" loading="lazy"/>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Pavilions</div>
+        <div class="pf-card-title">Brand Experience Pavilion</div>
+        <div class="pf-card-view">View <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 21. Interactive Experience -->
+    <div class="pf-card col-4 row-short" data-cat="vr" onclick="openImg('assets/projects/interactive-01.jpg','VR &amp; Interactive','Sales Gallery — Interactive Screen')">
+      <img src="assets/projects/interactive-01.jpg" alt="Interactive Experience" loading="lazy"/>
+      <div class="pf-card-badge">Interactive</div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Interactive Experiences</div>
+        <div class="pf-card-title">Sales Gallery — Interactive Screen</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 22. Cinematic Video 3 -->
+    <div class="pf-card col-4 row-short" data-cat="cinematic" onclick="openVid('https://www.youtube.com/embed/videoseries?autoplay=1&vq=hd1080')">
+      <img src="assets/projects/cinematic/video-3.jpg" alt="Cinematic Production" loading="lazy"/>
+      <div class="pf-card-video-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Cinematic CGI</div>
+        <div class="pf-card-title">Villa Estate — Sunset Sequence</div>
+        <div class="pf-card-view">Watch Film <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 23. Animation: Al Rajhi -->
+    <div class="pf-card col-4 row-short" data-cat="animation" onclick="openImg('assets/projects/animation/alrajhi.jpg','3D Animation','Al Rajhi — Flythrough Animation')">
+      <img src="assets/projects/animation/alrajhi.jpg" alt="Al Rajhi Animation" loading="lazy"/>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">3D Animation</div>
+        <div class="pf-card-title">Al Rajhi — Flythrough</div>
+        <div class="pf-card-view">View <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 24. Al Khair Heights 2 -->
+    <div class="pf-card col-6 row-tall" data-cat="visualization" onclick="openImg('assets/projects/rendering/Al-Khair-Heights-in-Makkah2-e1746262287150.jpeg','Visualization','Al Khair Heights — Aerial View')">
+      <img src="assets/projects/rendering/Al-Khair-Heights-in-Makkah2-e1746262287150.jpeg" alt="Al Khair Heights Aerial" loading="lazy"/>
+      <div class="pf-card-badge">Visualization</div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Architectural Visualization</div>
+        <div class="pf-card-title">Al Khair Heights — Aerial View</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- 25. Maquette Detail 2 -->
+    <div class="pf-card col-6 row-tall" data-cat="maquettes" onclick="openImg('assets/projects/maquettes/mq2-2.webp','Smart Maquettes','Illuminated Master Plan Model')">
+      <img src="assets/projects/maquettes/mq2-2.webp" alt="Illuminated Master Plan Model" loading="lazy"/>
+      <div class="pf-card-badge">Smart Maquettes</div>
+      <div class="pf-card-overlay">
+        <div class="pf-card-cat">Smart Maquettes</div>
+        <div class="pf-card-title">Illuminated Master Plan Model</div>
+        <div class="pf-card-view">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+
+  </div><!-- /pfGrid -->
 </div>
 
-<!-- Video Modal -->
-<div class="video-modal" id="videoModal">
-  <button class="video-modal-close" onclick="closeVideo()">✕</button>
-  <div class="video-modal-inner">
-    <div class="video-aspect">
-      <div id="videoModalPlayer"></div>
-    </div>
-  </div>
-</div>
+<!-- ===== CTA ===== -->
+<section class="pf-cta">
+  <h2>Ready to visualize your<br><span>next development?</span></h2>
+  <p>Tell us about your project. We'll show you how it can look before a single brick is laid.</p>
+  <a href="contact-us-en.html" class="pf-cta-btn">Start Your Project <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</section>
 
 <!-- ===== FOOTER ===== -->
-<footer class="footer" dir="ltr">
-  <div class="footer-bg-motif"></div>
-  <div class="footer-container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="/" class="footer-logo">
-          <img src="assets/logo-gold.png" alt="Graphics House" style="height:116px;width:auto;display:block">
-        </a>
-        <p class="footer-desc">شركة سعودية رائدة في مجال الإظهار المعماري والMaquettes الذكية والإنتاج السينمائي والوسائط المتعددة، نقدم حلولاً متكاملة للالكبرى في الشرق الأوسط.</p>
-        <div class="footer-tagline">Graphics House Co.</div>
+<footer dir="ltr" style="background:#071810;color:#fff;font-family:'Inter','Tajawal',sans-serif;position:relative;overflow:hidden">
+  <div style="max-width:1320px;margin:0 auto;padding:56px 48px 0">
+    <img src="assets/chatbot-motif.png" aria-hidden="true" style="position:absolute;bottom:-80px;right:-60px;width:1560px;height:auto;opacity:0.05;pointer-events:none;z-index:0;filter:brightness(1.2) saturate(0)"/>
+    <div style="position:relative;z-index:1;padding-bottom:40px;border-bottom:1px solid rgba(201,168,76,.35)">
+      <img src="assets/logo-gold.png" alt="Graphics House" style="height:86px;width:auto"/>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid rgba(201,168,76,.35)">
+      <div style="padding:36px 28px 36px 0">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#FAFAF8;text-transform:uppercase;margin-bottom:10px">SAUDI ARABIA — JEDDAH</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:2;margin-bottom:22px">P.O.Box 136972<br>CR 4030502306 — HQ</div>
+        <a href="tel:+966502786513" style="display:inline-flex;align-items:center;gap:7px;padding:9px 22px;border:1px solid rgba(255,255,255,.3);border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#fff;text-decoration:none;text-transform:uppercase;transition:all .3s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(255,255,255,.3)';this.style.color='#fff'"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>CALL NOW</a>
       </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <a href="/">Home</a>
-        <a href="who-we-are-en.html">About</a>
-        <a href="contact-us-en.html">Contact Us</a>
-        <a href="faq-en.html">FAQ</a>
-        <a href="privacy-policy-en.html">Privacy Policy</a>
-        <a href="3d-animation-en.html">3D Animation</a>
+      <div style="padding:36px 28px">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#FAFAF8;text-transform:uppercase;margin-bottom:10px">OMAN — MUSCAT</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:2;margin-bottom:22px">Al Khod, Al Seeb<br>CR 1460078</div>
+        <a href="tel:+96891326735" style="display:inline-flex;align-items:center;gap:7px;padding:9px 22px;border:1px solid rgba(255,255,255,.3);border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#fff;text-decoration:none;text-transform:uppercase;transition:all .3s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(255,255,255,.3)';this.style.color='#fff'"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>CALL NOW</a>
       </div>
-      <div class="footer-links">
-        <h4>Services</h4>
-        <a href="3d-animation-en.html">Arch Viz ثلاثي الأبعاد</a>
-        <a href="media-production-en.html">Cinematic ووسائط متعددة</a>
-        <a href="smart-maquettes-en.html">Maquettes معمارية ذكية</a>
-        <a href="interactive-experiences-en.html">Interactive وبيع</a>
-        <a href="galleries-advertising-en.html">Exhibition وديكور إعلاني</a>
+      <div style="padding:36px 28px">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#FAFAF8;text-transform:uppercase;margin-bottom:10px">BAHRAIN — MANAMA</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:2;margin-bottom:22px">Block 316<br>CR 15571301</div>
+        <a href="tel:+97332150369" style="display:inline-flex;align-items:center;gap:7px;padding:9px 22px;border:1px solid rgba(255,255,255,.3);border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#fff;text-decoration:none;text-transform:uppercase;transition:all .3s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(255,255,255,.3)';this.style.color='#fff'"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>CALL NOW</a>
       </div>
-      <div class="footer-contact">
-        <h4>Contact Information</h4>
-        <div class="footer-contact-item" style="align-items:flex-start">
-          <span class="material-symbols-outlined">location_on</span>
-          <span style="font-size:13px;line-height:1.6">المملكة العربية Saudi Arabia — جدة<br>P.O.Box 136972 | CR 4030502306</span>
-        </div>
-        <a href="tel:+966502786513" class="footer-contact-item">
-          <span class="material-symbols-outlined">call</span>
-          <span dir="ltr" style="font-size:13px">+966 50 278 6513</span>
-        </a>
-        <div class="footer-contact-item" style="align-items:flex-start;cursor:default">
-          <span class="material-symbols-outlined">business</span>
-          <span style="font-size:13px;line-height:1.6">Bahrain — Manama<br>Block 316 | CR 15571301<br><span dir="ltr">+973 3215 0369</span></span>
-        </div>
-        <div class="footer-contact-item" style="align-items:flex-start;cursor:default">
-          <span class="material-symbols-outlined">business</span>
-          <span style="font-size:13px;line-height:1.6">Oman — Muscat<br>Al Khod, Al Seeb | CR 1460078<br><span dir="ltr">+968 9132 6735</span></span>
-        </div>
-        <div class="footer-contact-item" style="align-items:flex-start;cursor:default">
-          <span class="material-symbols-outlined">business</span>
-          <span style="font-size:13px;line-height:1.6">Egypt — Alexandria<br>Mohamed Othman St., Victoria City Tower<br><span dir="ltr">+20 103 295 5089</span></span>
-        </div>
-        <a href="mailto:info@3dgraphicshouse.com" class="footer-contact-item">
-          <span class="material-symbols-outlined">mail</span>
-          info@3dgraphicshouse.com
-        </a>
-        <div class="footer-social">
-          <a href="https://twitter.com/GraphicsHouse2" target="_blank" aria-label="Twitter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/3dgraphicshouse/" target="_blank" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/user/3dghouse/videos" target="_blank" aria-label="YouTube">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
-          <a href="https://web.facebook.com/3dghouse" target="_blank" aria-label="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/meklad/" target="_blank" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-        </div>
+      <div style="padding:36px 0 36px 28px">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#FAFAF8;text-transform:uppercase;margin-bottom:10px">EGYPT</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:2;margin-bottom:22px">Mohamed Othman St.<br>Victoria City Tower</div>
+        <a href="tel:+201032955089" style="display:inline-flex;align-items:center;gap:7px;padding:9px 22px;border:1px solid rgba(255,255,255,.3);border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#fff;text-decoration:none;text-transform:uppercase;transition:all .3s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(255,255,255,.3)';this.style.color='#fff'"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>CALL NOW</a>
       </div>
     </div>
-    <div class="footer-registration">
-      <span>CR: 7054412114</span>
-      <span class="reg-sep">|</span>
-      <span>VAT: 314808998900003</span>
+    <div style="padding:28px 0;border-bottom:1px solid rgba(201,168,76,.35);display:flex;align-items:center;gap:16px">
+      <span style="font-size:12px;color:rgba(255,255,255,.6);letter-spacing:.05em;white-space:nowrap;font-weight:600">Follow Us On:</span>
+      <a href="https://web.facebook.com/3dghouse" target="_blank" style="width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://twitter.com/GraphicsHouse2" target="_blank" style="width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="15" height="15" viewBox="0 0 24 24" fill="#C9A84C"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/3dgraphicshouse/" target="_blank" style="width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+      <a href="https://www.linkedin.com/company/graphics-house-gh/" target="_blank" style="width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://www.youtube.com/user/3dghouse/videos" target="_blank" style="width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <p>&copy; 2026 Graphics House Co. — All Rights Reserved</p>
-        <a class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-          <span class="material-symbols-outlined">arrow_upward</span>
-          Back to Top
-        </a>
+    <div style="padding:20px 0 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <p style="font-size:11px;color:rgba(255,255,255,.85)">© 2026 Graphics House Co. — All Rights Reserved &nbsp;|&nbsp; CR: 7054412114 &nbsp;|&nbsp; VAT: 314808998900003</p>
+      <div style="display:flex;gap:20px">
+        <a href="privacy-policy-en.html" style="font-size:11px;color:rgba(255,255,255,.65);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.25)'">Privacy Policy</a>
+        <a href="faq-en.html" style="font-size:11px;color:rgba(255,255,255,.65);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.25)'">FAQ</a>
+        <a href="portfolio.html" style="font-size:11px;color:rgba(255,255,255,.65);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.25)'">عربي</a>
       </div>
     </div>
   </div>
 </footer>
 
+<!-- ===== IMAGE LIGHTBOX ===== -->
+<div id="imgLB" onclick="closeLB(event)">
+  <button class="lb-close" onclick="closeLB()">✕</button>
+  <img id="imgLBsrc" src="" alt=""/>
+  <div class="lb-info">
+    <div class="lb-info-cat" id="lbCat"></div>
+    <div class="lb-info-title" id="lbTitle"></div>
+  </div>
+</div>
+
+<!-- ===== VIDEO MODAL ===== -->
+<div id="vidModal" onclick="closeVid(event)">
+  <div class="vid-wrap">
+    <button class="vid-close" onclick="closeVid()">✕</button>
+    <iframe id="vidFrame" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
+
 <script>
-// ===== MOBILE NAV =====
-function toggleMobileNav(){
-  var n=document.getElementById('mobileNav');
-  if(n.classList.contains('open')){n.classList.remove('open');document.body.style.overflow=''}
-  else{n.classList.add('open');document.body.style.overflow='hidden'}
-}
-
-
-// Stub functions for lightbox modals (included from home page)
-function closeImageLightbox(e) {
-  if (e && e.target !== e.currentTarget) return;
-  var modal = document.getElementById('imageLightbox');
-  modal.style.opacity = '0';
-  setTimeout(function() { modal.style.display = 'none'; document.body.style.overflow = ''; }, 350);
-}
-function closeMaquetteVideo(e) {
-  if (e && e.target !== e.currentTarget) return;
-  var modal = document.getElementById('videoLightbox');
-  var iframe = document.getElementById('maquetteVideoPlayer');
-  if (iframe) { iframe.src = ''; }
-  modal.style.opacity = '0';
-  setTimeout(function() { modal.style.display = 'none'; document.body.style.overflow = ''; }, 350);
-}
-
-// ===== PORTFOLIO VIDEO MODAL =====
-function playVideo(videoId, startTime) {
-  var modal = document.getElementById('videoModal');
-  var container = document.getElementById('videoModalPlayer');
-
-  var src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1';
-  if (startTime !== undefined) src += '&start=' + startTime;
-
-  var iframe = document.createElement('iframe');
-  iframe.setAttribute('src', src);
-  iframe.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
-  iframe.setAttribute('allowfullscreen', '');
-  iframe.style.cssText = 'width:100%;height:100%;border:0;';
-
-  container.innerHTML = '';
-  container.appendChild(iframe);
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function playLocalVideo(src) {
-  var modal = document.getElementById('videoModal');
-  var container = document.getElementById('videoModalPlayer');
-
-  var video = document.createElement('video');
-  video.setAttribute('controls', '');
-  video.setAttribute('autoplay', '');
-  video.setAttribute('playsinline', '');
-  video.style.cssText = 'width:100%;height:100%;border:0;background:#000;';
-
-  var source = document.createElement('source');
-  source.setAttribute('src', src);
-  source.setAttribute('type', 'video/mp4');
-  video.appendChild(source);
-
-  container.innerHTML = '';
-  container.appendChild(video);
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeVideo() {
-  var modal = document.getElementById('videoModal');
-  var container = document.getElementById('videoModalPlayer');
-  modal.classList.remove('active');
-  container.innerHTML = '';
-  document.body.style.overflow = '';
-}
-
-// Close modal on overlay click
-document.addEventListener('click', function(e) {
-  var modal = document.getElementById('videoModal');
-  if (e.target === modal) closeVideo();
+// ── HEADER SCROLL ──
+window.addEventListener('scroll',function(){
+  document.getElementById('header').classList.toggle('scrolled',window.scrollY>40);
 });
 
-// Close modal on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeVideo();
-});
-
-// Portfolio filter — default to maquette
-(function() {
-  var btns = document.querySelectorAll('#portfolioFilters .pf-btn');
-  var items = document.querySelectorAll('#portfolioGrid .pf-item');
-  function filterTo(f) {
-    btns.forEach(function(b) { b.classList.remove('active'); });
-    items.forEach(function(item) {
-      if (f === 'all' || item.getAttribute('data-category') === f) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
+// ── COUNTER ANIMATION ──
+function animateCounter(el,target){
+  var start=0,dur=2000,step=dur/target;
+  var t=setInterval(function(){
+    start++;
+    el.textContent=start+(target>=100?'+':'');
+    if(start>=target)clearInterval(t);
+  },step<16?16:step);
+}
+var observed=false;
+var io=new IntersectionObserver(function(entries){
+  if(entries[0].isIntersecting&&!observed){
+    observed=true;
+    document.querySelectorAll('[data-count]').forEach(function(el){
+      animateCounter(el,parseInt(el.dataset.count));
     });
   }
-  btns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      btns.forEach(function(b) { b.classList.remove('active'); });
-      this.classList.add('active');
-      filterTo(this.getAttribute('data-filter'));
+});
+io.observe(document.querySelector('.pf-hero-stats'));
+
+// ── FILTER ──
+document.querySelectorAll('.filter-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
+    btn.classList.add('active');
+    var f=btn.dataset.filter;
+    document.querySelectorAll('.pf-card').forEach(function(card){
+      if(f==='all'||card.dataset.cat===f){
+        card.style.display='';
+        card.style.opacity='0';
+        card.style.transform='scale(.97)';
+        setTimeout(function(){card.style.transition='opacity .4s,transform .4s';card.style.opacity='1';card.style.transform='scale(1)'},10);
+      } else {
+        card.style.transition='opacity .25s';
+        card.style.opacity='0';
+        setTimeout(function(){card.style.display='none'},250);
+      }
     });
   });
-  // Set initial filter to maquette
-  filterTo('maquette');
-})();
+});
 
-// ===== SCROLL REVEAL =====
-(function(){
-  var els=document.querySelectorAll('.reveal');
-  function check(){
-    var h=window.innerHeight;
-    els.forEach(function(el){
-      var r=el.getBoundingClientRect();
-      if(r.top<h-80&&!el.classList.contains('visible')){
-        el.classList.add('visible');
-      }
-    });
+// ── IMAGE LIGHTBOX ──
+function openImg(src,cat,title){
+  var m=document.getElementById('imgLB');
+  document.getElementById('imgLBsrc').src=src;
+  document.getElementById('lbCat').textContent=cat||'';
+  document.getElementById('lbTitle').textContent=title||'';
+  m.style.display='flex';
+  setTimeout(function(){m.style.opacity='1'},10);
+  document.body.style.overflow='hidden';
+}
+function closeLB(e){
+  var m=document.getElementById('imgLB');
+  if(!e||e.target===m||e.target.classList.contains('lb-close')){
+    m.style.opacity='0';
+    setTimeout(function(){m.style.display='none';document.body.style.overflow=''},300);
   }
-  window.addEventListener('scroll',check);
-  window.addEventListener('resize',check);
-  setTimeout(check,100);
-})();
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeLB();closeVid();}});
 
-// ===== COUNTER ANIMATION =====
-(function(){
-  var counted=false;
-  function countUp(){
-    if(counted)return;
-    var stats=document.querySelector('.stats-bar');
-    if(!stats)return;
-    var r=stats.getBoundingClientRect();
-    if(r.top<window.innerHeight-60){
-      counted=true;
-      document.querySelectorAll('.stat-number[data-count]').forEach(function(el){
-        var target=parseInt(el.getAttribute('data-count'));
-        var current=0;
-        var inc=Math.ceil(target/40);
-        var t=setInterval(function(){
-          current+=inc;
-          if(current>=target){current=target;clearInterval(t)}
-          el.textContent=current+(target>=100?'+':'');
-        },40);
-      });
-    }
+// ── VIDEO MODAL ──
+function openVid(src){
+  var m=document.getElementById('vidModal');
+  document.getElementById('vidFrame').src=src;
+  m.style.display='flex';
+  setTimeout(function(){m.style.opacity='1'},10);
+  document.body.style.overflow='hidden';
+}
+function closeVid(e){
+  var m=document.getElementById('vidModal');
+  if(!e||e.target===m||e.target.classList.contains('vid-close')){
+    m.style.opacity='0';
+    document.getElementById('vidFrame').src='';
+    setTimeout(function(){m.style.display='none';document.body.style.overflow=''},300);
   }
-  window.addEventListener('scroll',countUp);
-  window.addEventListener('load',countUp);
-  setTimeout(countUp,500);
-})();
+}
 </script>
 </body>
 </html>
