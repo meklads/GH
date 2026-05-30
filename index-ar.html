@@ -1096,11 +1096,13 @@ img { max-width: 100%; display: block; }
 .s2-feature-caption {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 220px;
+  left: 0 !important;
+  right: 220px !important;
   padding: 40px;
   z-index: 3;
   pointer-events: none;
+  direction: ltr;
+  text-align: left;
 }
 .s2-feature-caption span {
   display: inline-block;
@@ -2785,7 +2787,7 @@ img { max-width: 100%; display: block; }
       </div>
 
       <div class="s2-feature-caption">
-        <span>نبني تجارب <span style="color:#C9A84C">تسبق بناء المدن</span></span>
+        <span style="direction:rtl;display:block">نبني تجارب <span style="color:#C9A84C">تسبق بناء المدن</span></span>
       </div>
     </div>
 
