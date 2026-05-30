@@ -35,7 +35,7 @@ tailwind.config={theme:{extend:{colors:{gold:"#C9A84C"},borderRadius:{DEFAULT:"0
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #071810;
+  background: #0A0A0A;
   color: var(--text-primary);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -586,7 +586,7 @@ img { max-width: 100%; display: block; }
 
 /* ===== PAGE LOADER ===== */
 #loader {
-  position:fixed; inset:0; z-index:99999; background:#071810;
+  position:fixed; inset:0; z-index:99999; background:#0A0A0A;
   display:flex; align-items:center; justify-content:center; flex-direction:column;
   transition:opacity .6s ease,visibility .6s ease;
 }
@@ -2451,7 +2451,7 @@ img { max-width: 100%; display: block; }
 </header>
 
 <!-- ===== HERO ===== -->
-<section class="hero motif-bg" id="hero" style="background:#071810">
+<section class="hero motif-bg" id="hero" style="background:#0A0A0A">
 
   <!-- Video Background -->
   <div class="hero-video-bg">
@@ -2742,7 +2742,7 @@ img { max-width: 100%; display: block; }
 </section>
 
 <!-- ===== SERVICES SECTION (like English: black bg, dark cards) ===== -->
-<section dir="rtl" style="padding:100px 0;background:#071810;overflow:hidden;position:relative">
+<section dir="rtl" style="padding:100px 0;background:#0A0A0A;overflow:hidden;position:relative">
   <div style="max-width:1380px;margin:0 auto;padding:0 24px;position:relative;z-index:2">
 
     <!-- Section Heading -->
@@ -2867,9 +2867,8 @@ img { max-width: 100%; display: block; }
         <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">صور فوتورياليستية تحيي الرؤى المعمارية بواقعية فائقة.</p>
         <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">رسومات سينمائية فاخرة تعرض المواد والإضاءة والجودة المكانية لتوصيل القصد التصميمي وتسريع اعتماد المشاريع الفاخرة.</p>
         <div style="margin-top:28px">
-          <a href="3d-animation.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
-             onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+          <a href="3d-animation.html" style="display:inline-flex;align-items:center;gap:10px;padding:12px 32px;background:transparent;color:#1A1A1A;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(26,26,26,.5);border-radius:50px;transition:all .3s"
+             onmouseover="this.style.background='#1A1A1A';this.style.color='#FAFAF8';this.style.borderColor='#1A1A1A'" onmouseout="this.style.background='transparent';this.style.color='#1A1A1A';this.style.borderColor='rgba(26,26,26,.5)'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
         </div>
       </div>
     </div>
@@ -2886,9 +2885,8 @@ img { max-width: 100%; display: block; }
         <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">أفلام معمارية فائقة الدقة تحوّل المخططات الرئيسية إلى سرديات عاطفية.</p>
         <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">من التحليقات الجوية إلى التجوال الداخلي الغامر، نصنع تجارب سينمائية تنقل الحجم والرؤية والقيمة الاستثمارية.</p>
         <div style="margin-top:28px">
-          <a href="media-production.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
-             onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+          <a href="media-production.html" style="display:inline-flex;align-items:center;gap:10px;padding:12px 32px;background:transparent;color:#1A1A1A;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(26,26,26,.5);border-radius:50px;transition:all .3s"
+             onmouseover="this.style.background='#1A1A1A';this.style.color='#FAFAF8';this.style.borderColor='#1A1A1A'" onmouseout="this.style.background='transparent';this.style.color='#1A1A1A';this.style.borderColor='rgba(26,26,26,.5)'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
         </div>
       </div>
       <div>
@@ -2912,7 +2910,7 @@ img { max-width: 100%; display: block; }
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
         <div style="position:relative;overflow:visible;border:1px solid rgba(26,26,26,.04);background:#F0EFEA;cursor:pointer" onclick="openMaquetteLightbox()">
-          <img id="maquetteMainImg" src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" alt="المجسمات المعمارية الذكية" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
+          <img id="maquetteMainImg" src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg">
 
           <!-- Zoom hint -->
           <div style="position:absolute;bottom:16px;left:16px;z-index:5;pointer-events:none;opacity:0.7;transition:opacity 0.3s">
@@ -2985,9 +2983,8 @@ img { max-width: 100%; display: block; }
         <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">حيث تلتقي الحرفية اليدوية مع الذكاء الرقمي.</p>
         <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">مجسمات هجينة تجمع بين التفاصيل الحرفية اليدوية والإسقاط الضوئي والبيانات الحية وأنظمة الإضاءة التفاعلية.</p>
         <div style="margin-top:28px">
-          <a href="smart-maquettes.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
-             onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+          <a href="smart-maquettes.html" style="display:inline-flex;align-items:center;gap:10px;padding:12px 32px;background:transparent;color:#1A1A1A;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(26,26,26,.5);border-radius:50px;transition:all .3s"
+             onmouseover="this.style.background='#1A1A1A';this.style.color='#FAFAF8';this.style.borderColor='#1A1A1A'" onmouseout="this.style.background='transparent';this.style.color='#1A1A1A';this.style.borderColor='rgba(26,26,26,.5)'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
         </div>
       </div>
     </div>
@@ -3004,14 +3001,13 @@ img { max-width: 100%; display: block; }
         <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">تجارب شاشات لمس مصممة لتعزيز مبيعات العقارات.</p>
         <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">منصات مخصصة مع جولات افتراضية، أدوات مقارنة الوحدات، تصفية فورية، وتكامل الحجوزات لتحسين رحلة المشتري.</p>
         <div style="margin-top:28px">
-          <a href="interactive-experiences.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
-             onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+          <a href="interactive-experiences.html" style="display:inline-flex;align-items:center;gap:10px;padding:12px 32px;background:transparent;color:#1A1A1A;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(26,26,26,.5);border-radius:50px;transition:all .3s"
+             onmouseover="this.style.background='#1A1A1A';this.style.color='#FAFAF8';this.style.borderColor='#1A1A1A'" onmouseout="this.style.background='transparent';this.style.color='#1A1A1A';this.style.borderColor='rgba(26,26,26,.5)'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
         </div>
       </div>
       <div>
         <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.44-2.jpeg" alt="المجسم الإلكتروني وبرمجيات البيع" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block" loading="lazy"/>
+          <img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.44-2.jpeg">
         </div>
       </div>
     </div>
@@ -3033,9 +3029,8 @@ img { max-width: 100%; display: block; }
         <p style="font-size:16px;font-weight:500;color:#888;margin:0 0 16px;line-height:1.5">بيئات رائدة تنقل هوية المشروع.</p>
         <p style="font-size:14px;font-weight:300;color:#777;line-height:1.8;margin:0">تصميم وتنفيذ متكامل لمراكز بيع رئيسية تتحول إلى معارض فنية تفاعلية. كل صالة عرض تُصمم بعناية لتعكس مكانة العلامة التجارية، مع ديكور إعلاني احترافي يوجّه الزائر عبر سردية المشروع، ويخلق روابط عاطفية دائمة مع المشترين والمستثمرين.</p>
         <div style="margin-top:28px">
-          <a href="galleries-advertising.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
-             onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+          <a href="galleries-advertising.html" style="display:inline-flex;align-items:center;gap:10px;padding:12px 32px;background:transparent;color:#1A1A1A;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(26,26,26,.5);border-radius:50px;transition:all .3s"
+             onmouseover="this.style.background='#1A1A1A';this.style.color='#FAFAF8';this.style.borderColor='#1A1A1A'" onmouseout="this.style.background='transparent';this.style.color='#1A1A1A';this.style.borderColor='rgba(26,26,26,.5)'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
         </div>
       </div>
     </div>
@@ -3074,9 +3069,8 @@ img { max-width: 100%; display: block; }
           </li>
         </ul>
         <div style="margin-top:28px">
-          <a href="media-production.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#1A1A1A;color:#FAFAF8;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s"
-             onmouseover="this.style.background='#C9A84C'"
-             onmouseout="this.style.background='#1A1A1A'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
+          <a href="media-production.html" style="display:inline-flex;align-items:center;gap:10px;padding:12px 32px;background:transparent;color:#1A1A1A;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(26,26,26,.5);border-radius:50px;transition:all .3s"
+             onmouseover="this.style.background='#1A1A1A';this.style.color='#FAFAF8';this.style.borderColor='#1A1A1A'" onmouseout="this.style.background='transparent';this.style.color='#1A1A1A';this.style.borderColor='rgba(26,26,26,.5)'">اعرف المزيد <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></a>
         </div>
       </div>
       <div>
@@ -3099,7 +3093,7 @@ img { max-width: 100%; display: block; }
 
 
 <!-- ===== HOW WE WORK ===== -->
-<section style="padding:100px 0;background:#071810;overflow:hidden;position:relative" dir="rtl">
+<section style="padding:100px 0;background:#0A0A0A;overflow:hidden;position:relative" dir="rtl">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;position:relative;z-index:2">
 
     <div class="reveal" style="text-align:center;margin-bottom:20px">
