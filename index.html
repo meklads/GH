@@ -803,7 +803,7 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 21/9;
   min-height: 420px;
   border-radius: 6px;
-  overflow: hidden;
+  overflow: visible;
   margin-bottom: 80px;
   background: #ddd;
 }
@@ -812,6 +812,7 @@ img { max-width: 100%; display: block; }
   height: 100%;
   object-fit: cover;
   transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.1, 1);
+  border-radius: 6px;
 }
 .s2-feature:hover img {
   transform: scale(1.03);
@@ -2341,12 +2342,62 @@ img { max-width: 100%; display: block; }
   <div class="s2-container">
     
     <!-- Full-width Feature Image -->
-    <div class="s2-feature s2-fade s2-d2">
+    <div class="s2-feature s2-fade s2-d2" style="overflow:visible">
       <div class="s2-feature-overlay"></div>
       <img src="assets/news/makkah-charter-04.jpeg" alt="Graphics House">
-      <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="Play video">
-        <span class="s2-play-icon">▶</span>
+
+      <!-- Better Video Button -->
+      <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="Play video" style="pointer-events:none;background:none;border:none;position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;z-index:5">
+        <span style="pointer-events:auto;display:inline-flex;align-items:center;gap:14px;padding:16px 32px;background:rgba(0,0,0,0.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,0.25);border-radius:50px;color:#fff;font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-family:'Inter',sans-serif;cursor:pointer;transition:all .3s ease;box-shadow:0 8px 32px rgba(0,0,0,0.3)"
+          onmouseover="this.style.background='rgba(201,168,76,0.85)';this.style.borderColor='#C9A84C';this.style.color='#0A0A0A'"
+          onmouseout="this.style.background='rgba(0,0,0,0.45)';this.style.borderColor='rgba(255,255,255,0.25)';this.style.color='#fff'">
+          <span style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:14px;padding-left:2px">▶</span>
+          Watch the Video
+        </span>
       </button>
+
+      <!-- Interactive Hotspots -->
+      <div class="hotspot hotspot-1 hotspot-left" style="top:60%;left:50%" onclick="event.stopPropagation()">
+        <div class="hotspot-pulse"></div>
+        <div class="hotspot-dot"><span class="material-symbols-outlined">touch_app</span></div>
+        <div class="hotspot-tooltip">
+          <div class="hotspot-tooltip-arrow"></div>
+          <span class="hotspot-badge">Smart Maquette</span>
+          <h4>Interactive Architectural Model</h4>
+          <p>A 3D interactive maquette showcasing projects with dynamic lighting and real-time data integration.</p>
+        </div>
+      </div>
+      <div class="hotspot hotspot-2 hotspot-below hotspot-right" style="top:13%;left:90%" onclick="event.stopPropagation()">
+        <div class="hotspot-pulse"></div>
+        <div class="hotspot-dot"><span class="material-symbols-outlined">devices</span></div>
+        <div class="hotspot-tooltip">
+          <div class="hotspot-tooltip-arrow"></div>
+          <span class="hotspot-badge">Control System</span>
+          <h4>Interactive Control Software</h4>
+          <p>Software displaying project details and controlling maquette lighting with real-time information panels.</p>
+        </div>
+      </div>
+      <div class="hotspot hotspot-4 hotspot-below" style="top:11%;left:34%" onclick="event.stopPropagation()">
+        <div class="hotspot-pulse"></div>
+        <div class="hotspot-dot"><span class="material-symbols-outlined">public</span></div>
+        <div class="hotspot-tooltip">
+          <div class="hotspot-tooltip-arrow"></div>
+          <span class="hotspot-badge">Live Feed</span>
+          <h4>Live News & Updates</h4>
+          <p>An interactive display showing latest news, events, and global initiatives in real time.</p>
+        </div>
+      </div>
+      <div class="hotspot hotspot-3 hotspot-below" style="top:17%;left:62%" onclick="event.stopPropagation()">
+        <div class="hotspot-pulse"></div>
+        <div class="hotspot-dot"><span class="material-symbols-outlined">photo_camera</span></div>
+        <div class="hotspot-tooltip">
+          <div class="hotspot-tooltip-arrow"></div>
+          <span class="hotspot-badge">Photo Experience</span>
+          <h4>Interactive Photo Station</h4>
+          <p>Touch-screen photo booth with custom branded frames for visitors to capture and instantly share moments.</p>
+        </div>
+      </div>
+
       <div class="s2-feature-caption">
         <span>We build experiences that <span style="color:#C9A84C">precede the building of cities</span></span>
       </div>
@@ -2519,59 +2570,8 @@ img { max-width: 100%; display: block; }
   <div style="max-width:1280px;margin:0 auto;padding:0 24px">
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
-        <div style="position:relative;overflow:visible;border:1px solid rgba(26,26,26,.04);background:#F0EFEA;cursor:pointer">
-          <img id="maquetteMainImgEN" src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block">
-
-          <!-- Zoom hint -->
-          <div style="position:absolute;bottom:16px;left:16px;z-index:5;pointer-events:none;opacity:0.7">
-            <span class="material-symbols-outlined" style="font-size:20px;color:rgba(255,255,255,0.7);background:rgba(0,0,0,0.3);backdrop-filter:blur(4px);width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,0.1)">zoom_in</span>
-          </div>
-
-          <!-- Interactive Hotspots -->
-          <div class="hotspot hotspot-1 hotspot-left" style="top:60%;left:50%" onclick="event.stopPropagation()">
-            <div class="hotspot-pulse"></div>
-            <div class="hotspot-dot"><span class="material-symbols-outlined">touch_app</span></div>
-            <div class="hotspot-tooltip">
-              <div class="hotspot-tooltip-arrow"></div>
-              <span class="hotspot-badge">Smart Maquette</span>
-              <h4>Interactive Architectural Model</h4>
-              <p>A 3D interactive architectural maquette showcasing global projects with dynamic lighting and real-time data integration.</p>
-            </div>
-          </div>
-
-          <div class="hotspot hotspot-2 hotspot-below hotspot-right" style="top:13%;left:90%" onclick="event.stopPropagation()">
-            <div class="hotspot-pulse"></div>
-            <div class="hotspot-dot"><span class="material-symbols-outlined">devices</span></div>
-            <div class="hotspot-tooltip">
-              <div class="hotspot-tooltip-arrow"></div>
-              <span class="hotspot-badge">Control System</span>
-              <h4>Interactive Control Software</h4>
-              <p>Software displaying project details and controlling maquette lighting with dynamic, real-time information panels.</p>
-            </div>
-          </div>
-
-          <div class="hotspot hotspot-4 hotspot-below" style="top:11%;left:34%" onclick="event.stopPropagation()">
-            <div class="hotspot-pulse"></div>
-            <div class="hotspot-dot"><span class="material-symbols-outlined">public</span></div>
-            <div class="hotspot-tooltip">
-              <div class="hotspot-tooltip-arrow"></div>
-              <span class="hotspot-badge">Live Feed</span>
-              <h4>Live News & Updates</h4>
-              <p>An interactive display showing latest news, events, and global initiatives in real time.</p>
-            </div>
-          </div>
-
-          <div class="hotspot hotspot-3 hotspot-below" style="top:17%;left:62%" onclick="event.stopPropagation()">
-            <div class="hotspot-pulse"></div>
-            <div class="hotspot-dot"><span class="material-symbols-outlined">photo_camera</span></div>
-            <div class="hotspot-tooltip">
-              <div class="hotspot-tooltip-arrow"></div>
-              <span class="hotspot-badge">Photo Experience</span>
-              <h4>Interactive Photo Station</h4>
-              <p>Touch-screen photo booth with custom branded frames, allowing visitors to capture and instantly share moments.</p>
-            </div>
-          </div>
-
+        <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
+          <img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" alt="Smart Architectural Maquettes" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block">
         </div>
       </div>
       <div>
