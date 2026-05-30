@@ -2519,8 +2519,59 @@ img { max-width: 100%; display: block; }
   <div style="max-width:1280px;margin:0 auto;padding:0 24px">
     <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
-        <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
-          <img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" alt="Smart Architectural Maquettes" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block"/>
+        <div style="position:relative;overflow:visible;border:1px solid rgba(26,26,26,.04);background:#F0EFEA;cursor:pointer">
+          <img id="maquetteMainImgEN" src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block">
+
+          <!-- Zoom hint -->
+          <div style="position:absolute;bottom:16px;left:16px;z-index:5;pointer-events:none;opacity:0.7">
+            <span class="material-symbols-outlined" style="font-size:20px;color:rgba(255,255,255,0.7);background:rgba(0,0,0,0.3);backdrop-filter:blur(4px);width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,0.1)">zoom_in</span>
+          </div>
+
+          <!-- Interactive Hotspots -->
+          <div class="hotspot hotspot-1 hotspot-left" style="top:60%;left:50%" onclick="event.stopPropagation()">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-dot"><span class="material-symbols-outlined">touch_app</span></div>
+            <div class="hotspot-tooltip">
+              <div class="hotspot-tooltip-arrow"></div>
+              <span class="hotspot-badge">Smart Maquette</span>
+              <h4>Interactive Architectural Model</h4>
+              <p>A 3D interactive architectural maquette showcasing global projects with dynamic lighting and real-time data integration.</p>
+            </div>
+          </div>
+
+          <div class="hotspot hotspot-2 hotspot-below hotspot-right" style="top:13%;left:90%" onclick="event.stopPropagation()">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-dot"><span class="material-symbols-outlined">devices</span></div>
+            <div class="hotspot-tooltip">
+              <div class="hotspot-tooltip-arrow"></div>
+              <span class="hotspot-badge">Control System</span>
+              <h4>Interactive Control Software</h4>
+              <p>Software displaying project details and controlling maquette lighting with dynamic, real-time information panels.</p>
+            </div>
+          </div>
+
+          <div class="hotspot hotspot-4 hotspot-below" style="top:11%;left:34%" onclick="event.stopPropagation()">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-dot"><span class="material-symbols-outlined">public</span></div>
+            <div class="hotspot-tooltip">
+              <div class="hotspot-tooltip-arrow"></div>
+              <span class="hotspot-badge">Live Feed</span>
+              <h4>Live News & Updates</h4>
+              <p>An interactive display showing latest news, events, and global initiatives in real time.</p>
+            </div>
+          </div>
+
+          <div class="hotspot hotspot-3 hotspot-below" style="top:17%;left:62%" onclick="event.stopPropagation()">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-dot"><span class="material-symbols-outlined">photo_camera</span></div>
+            <div class="hotspot-tooltip">
+              <div class="hotspot-tooltip-arrow"></div>
+              <span class="hotspot-badge">Photo Experience</span>
+              <h4>Interactive Photo Station</h4>
+              <p>Touch-screen photo booth with custom branded frames, allowing visitors to capture and instantly share moments.</p>
+            </div>
+          </div>
+
         </div>
       </div>
       <div>
@@ -3461,6 +3512,156 @@ document.getElementById("ghChatField").addEventListener("keydown", function(e) {
 .gh-submit{width:100%;padding:15px;background:#C9A84C;color:#0A0A0A;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:background .3s;font-family:'Inter',sans-serif;border-radius:50px;margin-top:4px}
 .gh-submit:hover{background:#A8883A}
 @media(max-width:600px){.gh-popup-box{padding:28px 20px 24px}}
+
+/* ── Hotspot Interactive Circles ── */
+.hotspot {
+  position: absolute;
+  z-index: 8;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.hotspot-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.9);
+  box-shadow: 0 0 20px rgba(201,168,76,0.4), 0 0 0 4px rgba(201,168,76,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.25,0.1,0.1,1);
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(2px);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+.hotspot-dot .material-symbols-outlined { font-size: 18px; color: #fff; }
+.hotspot:hover .hotspot-dot {
+  transform: scale(1.25);
+  background: #C9A84C;
+  box-shadow: 0 0 40px rgba(201,168,76,0.6), 0 0 0 6px rgba(201,168,76,0.2);
+}
+.hotspot-pulse {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 12px; height: 12px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(201,168,76,0.7);
+  animation: hotspot-pulse 2.5s ease-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+.hotspot-pulse::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 12px; height: 12px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(201,168,76,0.4);
+  animation: hotspot-pulse 2.5s ease-out 0.4s infinite;
+}
+.hotspot-pulse::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 12px; height: 12px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(201,168,76,0.2);
+  animation: hotspot-pulse 2.5s ease-out 0.8s infinite;
+}
+.hotspot-2 .hotspot-pulse { animation-delay: 0.4s; }
+.hotspot-2 .hotspot-pulse::before { animation-delay: 0.8s; }
+.hotspot-2 .hotspot-pulse::after { animation-delay: 1.2s; }
+.hotspot-3 .hotspot-pulse { animation-delay: 0.8s; }
+.hotspot-3 .hotspot-pulse::before { animation-delay: 1.2s; }
+.hotspot-3 .hotspot-pulse::after { animation-delay: 1.6s; }
+.hotspot-4 .hotspot-pulse { animation-delay: 1.2s; }
+.hotspot-4 .hotspot-pulse::before { animation-delay: 1.6s; }
+.hotspot-4 .hotspot-pulse::after { animation-delay: 2.0s; }
+@keyframes hotspot-pulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(5); opacity: 0; }
+}
+.hotspot-tooltip {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 18px 22px;
+  min-width: 240px;
+  max-width: 300px;
+  border-radius: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.25,0.1,0.1,1);
+  pointer-events: none;
+  border: 1px solid rgba(201,168,76,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.hotspot:hover .hotspot-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.hotspot-tooltip-arrow {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px; height: 12px;
+  background: rgba(10,10,10,0.92);
+  border-right: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+}
+.hotspot-below .hotspot-tooltip { bottom: auto; top: calc(100% + 20px); }
+.hotspot-below .hotspot-tooltip-arrow {
+  bottom: auto; top: -6px;
+  transform: translateX(-50%) rotate(45deg);
+  border-right: none; border-bottom: none;
+  border-left: 1px solid rgba(201,168,76,0.15);
+  border-top: 1px solid rgba(201,168,76,0.15);
+}
+.hotspot-right .hotspot-tooltip { left: auto; right: 0; transform: translateY(8px); }
+.hotspot-right:hover .hotspot-tooltip { transform: translateY(0); }
+.hotspot-right .hotspot-tooltip-arrow { left: auto; right: 20px; }
+.hotspot-left .hotspot-tooltip {
+  bottom: auto; top: 50%;
+  left: auto; right: calc(100% + 20px);
+  transform: translateY(-50%) translateX(-8px);
+}
+.hotspot-left:hover .hotspot-tooltip { transform: translateY(-50%) translateX(0); }
+.hotspot-left .hotspot-tooltip-arrow {
+  bottom: auto; top: 50%; left: auto; right: -6px;
+  transform: translateY(-50%) rotate(45deg);
+  border-left: 1px solid rgba(201,168,76,0.15);
+  border-top: 1px solid rgba(201,168,76,0.15);
+  border-right: none; border-bottom: none;
+}
+.hotspot-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #C9A84C;
+  background: rgba(201,168,76,0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+}
+.hotspot-tooltip h4 { font-size: 14px; font-weight: 700; color: #fff; margin: 0 0 6px; line-height: 1.3; }
+.hotspot-tooltip p { font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.6; }
+.hotspot.active .hotspot-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.hotspot-below.active .hotspot-tooltip { transform: translateY(0); }
 </style>
 
 <!-- Floating Buttons -->
