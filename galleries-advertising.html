@@ -215,6 +215,28 @@ html[dir="rtl"] .animation-portfolio .pf-item-location{letter-spacing:0;text-tra
   padding-top: 12px !important;
   padding-bottom: 12px !important;
 }
+
+/* ===== STANDARD HEADER (injected) ===== */
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:10px 0;transition:all .4s ease}
+.header.scrolled{background:rgba(7,24,16,.92);backdrop-filter:blur(20px);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.header-inner{max-width:1280px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center}
+.nav{display:flex;align-items:center;justify-content:center;gap:28px}
+.nav a{color:rgba(255,255,255,.85);text-decoration:none}
+.nav-link{font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;transition:color .3s;position:relative;padding-bottom:2px}
+.nav-link:hover{color:#C9A84C!important}
+.nav-item-drop:hover .nav-dropdown{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
+.header .nav-dropdown{position:absolute;top:100%;left:0;background:#1A1A1A;border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 50px rgba(0,0,0,.5);min-width:220px;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .3s ease;z-index:100}
+.header .nav-dropdown a{display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s}
+.header .nav-dropdown a:hover{background:rgba(255,255,255,.04);color:#C9A84C}
+.menu-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer}
+.menu-toggle span{font-size:28px}
+@media(max-width:900px){
+  .header .nav{display:none}.menu-toggle{display:flex;z-index:1001}
+  .header .nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.97);backdrop-filter:blur(30px);justify-content:center;gap:32px;z-index:1000}
+  .header .nav.open a{font-size:20px}
+}
+@media(max-width:768px){.header-inner{padding:0 20px}}
 </style>
 </head>
 <body>
@@ -249,30 +271,34 @@ html[dir="rtl"] .animation-portfolio .pf-item-location{letter-spacing:0;text-tra
 </div>
 
 <!-- HEADER -->
-<header class="flex items-center justify-between px-6 lg:px-12 py-5 fixed top-0 left-0 right-0" id="main-nav" style="max-width:100%;z-index:1000">
-  <button id="mob-open" class="lg:hidden w-10 h-10 flex items-center justify-center bg-transparent border-0 cursor-pointer"><span class="material-symbols-outlined text-xl" style="color:#1A1A1A">menu</span></button>
-  <nav class="hidden lg:flex items-center gap-8">
-    <a href="/" class="nav-link">هوم</a>
-    <a href="who-we-are.html" class="nav-link">نحن</a>
-    	    <div class="nav-item-drop">
-	      <a class="nav-link" style="cursor:pointer">خدمات <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
-	      <div class="nav-dropdown">
-	        <a href="3d-animation.html"><span class="material-symbols-outlined dd-icon">movie</span>سينمائي CGI</a>
-	        <a href="smart-maquettes.html"><span class="material-symbols-outlined dd-icon">view_in_ar</span>مجسمات ذكية</a>
-	        <a href="interactive-experiences.html"><span class="material-symbols-outlined dd-icon">touch_app</span>تجارب تفاعلية</a>
-	        <a href="galleries-advertising.html" style="color:#C9A84C"><span class="material-symbols-outlined dd-icon" style="color:#C9A84C">gallery_thumbnail</span>جاليريات وديكور إعلاني</a>
-	        <a href="media-production.html" style="color:#C9A84C"><span class="material-symbols-outlined dd-icon" style="color:#C9A84C">videocam</span>ميديا برودكشن</a>
-	      </div>
-	    </div>
-    <a href="/#projects" class="nav-link">مشاريع</a>
-	    <a href="contact-us.html" class="nav-link">اتصل</a>
-	    <div class="flex items-center gap-2" style="margin-right:16px">
-	      <span style="width:1px;height:16px;background:rgba(26,26,26,.1);display:inline-block"></span>
-	      <a href="/" class="nav-lang" style="font-size:12px;font-weight:700;letter-spacing:.1em;color:#999;text-decoration:none;padding:2px 6px;border:1px solid rgba(26,26,26,.1)">AR</a>
-	      <a href="/" class="nav-lang" style="font-size:12px;font-weight:700;letter-spacing:.1em;color:#C9A84C;text-decoration:none;padding:2px 6px;border:1px solid rgba(201,168,76,.3)">EN</a>
-	    </div>
-  </nav>
-  <a href="/"><img src="assets/logo-gold.png" alt="Graphics House" style="height:28px;width:auto"></a>
+<header class="header" id="header">
+  <div class="header-inner">
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <nav class="nav" id="nav">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35)"><a href="#" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">AR</a> <span style="color:rgba(255,255,255,.3)">|</span> <a href="galleries-advertising-en.html" style="color:#fff;text-decoration:none;font-weight:700;transition:color .3s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">EN</a></span>
+      <a href="contact-us.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.08em;text-decoration:none;border-radius:50px;transition:all .3s;white-space:nowrap;font-family:'Tajawal',sans-serif" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)'" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)'">
+        تواصل معنا
+      </a>
+      <a href="who-we-are.html">من نحن</a>
+      <a href="case-study.html">مشاريع ناجحة</a>
+      <a href="portfolio.html">أعمال</a>
+      <div class="nav-item-drop" style="position:relative;display:inline-block">
+        <a class="nav-link" style="cursor:pointer">خدمات<span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
+        <div class="nav-dropdown" style="position:absolute;top:100%;right:0;background:#1A1A1A;border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 50px rgba(0,0,0,.5);min-width:220px;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .3s ease;z-index:100">
+          <a href="3d-animation.html" style="display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">movie</span>سينمائي CGI</a>
+          <a href="smart-maquettes.html" style="display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">view_in_ar</span>مجسمات ذكية</a>
+          <a href="interactive-experiences.html" style="display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">touch_app</span>تجارب تفاعلية</a>
+          <a href="galleries-advertising.html" style="display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">gallery_thumbnail</span>جاليريات وديكور إعلاني</a>
+          <a href="media-production.html" style="display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">videocam</span>ميديا برودكشن</a>
+        </div>
+      </div>
+    </nav>
+    <a href="/" class="logo">
+      <img src="assets/logo-gold.png" alt="Graphics House" style="height:86px;width:auto;image-rendering:-webkit-optimize-contrast;">
+    </a>
+  </div>
 </header>
 
 <!-- HERO -->
@@ -558,9 +584,9 @@ var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar"
 if(ld&&lb){setTimeout(function(){lb.style.width="100%";},100);setTimeout(function(){ld.classList.add("out");},1400);}
 var mn=document.getElementById("mob-nav"),mo=document.getElementById("mob-open"),mc=document.getElementById("mob-close");
 if(mn&&mo&&mc){mo.addEventListener("click",function(){mn.style.transform="translateX(0)";document.body.style.overflow="hidden";});mc.addEventListener("click",function(){mn.style.transform="translateX(100%)";document.body.style.overflow="";});document.querySelectorAll(".mob-link").forEach(function(a){a.addEventListener("click",function(){mn.style.transform="translateX(100%)";document.body.style.overflow="";});});}
-window.addEventListener("scroll",function(){var h=document.getElementById("main-nav");h.classList.toggle("header-scrolled",window.scrollY>80);});
+window.addEventListener("scroll",function(){var h=document.getElementById("header");if(h)h.classList.toggle("scrolled",window.scrollY>60);});
 (function(){var els=document.querySelectorAll(".reveal");if(els.length){var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");ro.unobserve(e.target);}});},{threshold:0.1});els.forEach(function(el){ro.observe(el);});}})();
 </script>
 
-</body>
+<script>function toggleMenu(){var n=document.getElementById("nav");n.classList.toggle("open")}</script></body>
 </html>

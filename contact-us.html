@@ -99,21 +99,33 @@
 </head>
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <nav class="nav">
-      <a href="index-ar.html" style="color:#fff;font-weight:700;font-size:13px;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">AR</a>
-      <span style="color:rgba(255,255,255,.3);font-size:12px">|</span>
-      <a href="/" style="color:#fff;font-weight:700;font-size:13px" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">EN</a>
-      <a href="who-we-are.html">من نحن</a>
-      <a href="portfolio.html">أعمالنا</a>
-      <a href="contact-us.html" style="color:var(--gold)">تواصل معنا</a>
-      <a href="contact-us.html" class="nav-cta">
-        <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span>
-        ابدأ مشروعك
+<header class="header" id="header">
+  <div class="container header-inner">
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <nav class="nav" id="nav">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35)"><a href="#" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">AR</a> <span style="color:rgba(255,255,255,.3)">|</span> <a href="contact-us-en.html" style="color:#fff;text-decoration:none;font-weight:700;transition:color .3s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">EN</a></span>
+      <a href="contact-us.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.08em;text-decoration:none;border-radius:50px;border:none;transition:all .3s;white-space:nowrap;font-family:'Tajawal',sans-serif" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)'" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)'">
+        تواصل معنا
       </a>
+      <a href="who-we-are.html">من نحن</a>
+      <a href="case-study.html">مشاريع ناجحة</a>
+      <a href="portfolio.html">أعمال</a>
+      <div class="nav-item-drop">
+        <a class="nav-link" style="cursor:pointer">خدمات<span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
+        <div class="nav-dropdown">
+          <a href="3d-animation.html"><span class="material-symbols-outlined dd-icon">movie</span>سينمائي CGI</a>
+          <a href="smart-maquettes.html"><span class="material-symbols-outlined dd-icon">view_in_ar</span>مجسمات ذكية</a>
+          <a href="interactive-experiences.html"><span class="material-symbols-outlined dd-icon">touch_app</span>تجارب تفاعلية</a>
+          <a href="galleries-advertising.html"><span class="material-symbols-outlined dd-icon">gallery_thumbnail</span>جاليريات وديكور إعلاني</a>
+          <a href="media-production.html"><span class="material-symbols-outlined dd-icon">videocam</span>ميديا برودكشن</a>
+        </div>
+      </div>
     </nav>
-    <a href="index-ar.html"><img src="assets/logo-gold.png" alt="Graphics House" style="height:64px;width:auto"></a>
+    <a href="/" class="logo">
+      <img src="assets/logo-gold.png" alt="Graphics House" style="height:86px;width:auto;image-rendering:-webkit-optimize-contrast;">
+    </a>
   </div>
 </header>
 
