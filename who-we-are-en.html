@@ -566,11 +566,37 @@ html[dir="rtl"] .nav-item-drop .nav-dropdown{left:auto;right:0}
 <script>
 function ghSubmit(e){
   e.preventDefault();
-  var msg='New Enquiry from Graphics House Website\n\nName: '+document.getElementById('ghName').value+'\nCompany: '+document.getElementById('ghCompany').value+'\nProject Type: '+document.getElementById('ghProject').value+'\nPhone: '+document.getElementById('ghPhone').value+'\nBrief: '+document.getElementById('ghBrief').value;
-  window.open('https://wa.me/966502786513?text='+encodeURIComponent(msg),'_blank');
-  document.querySelector('#ghPopup form').style.display='none';
-  document.getElementById('ghThanks').style.display='block';
-  setTimeout(function(){document.getElementById('ghPopup').classList.remove('open');document.querySelector('#ghPopup form').style.display='block';document.getElementById('ghThanks').style.display='none';},3000);
+  var btn = document.querySelector('#ghPopup .gh-submit');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  var name    = document.getElementById('ghName').value;
+  var company = document.getElementById('ghCompany').value;
+  var project = document.getElementById('ghProject').value;
+  var phone   = document.getElementById('ghPhone').value;
+  var brief   = document.getElementById('ghBrief').value;
+  fetch('https://api.web3forms.com/submit',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      access_key:'cd3e4509-7942-4ad3-a888-2af2910f5f6d',
+      subject:'New Enquiry — Graphics House Website',
+      from_name:'Graphics House Website',
+      name:name, company:company, project_type:project, phone:phone, brief:brief,
+      botcheck:''
+    })
+  }).then(function(r){return r.json();}).then(function(res){
+    btn.disabled=false; btn.textContent='Submit Enquiry →';
+    if(res.success){
+      document.querySelector('#ghPopup form').style.display='none';
+      document.getElementById('ghThanks').style.display='block';
+      setTimeout(function(){document.getElementById('ghPopup').classList.remove('open');document.querySelector('#ghPopup form').style.display='block';document.getElementById('ghThanks').style.display='none';},3000);
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  }).catch(function(){
+    btn.disabled=false; btn.textContent='Submit Enquiry →';
+    alert('Connection error. Please try again.');
+  });
 }
 </script>
 
