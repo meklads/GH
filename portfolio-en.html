@@ -194,6 +194,13 @@ html[dir="ltr"] .page-hero h1 {
 html[dir="ltr"] .section-title {
   font-weight: 700;
 }
+
+/* Float buttons */
+.gh-float{position:fixed;bottom:32px;left:28px;z-index:9000;display:flex;flex-direction:column;align-items:center;gap:12px}
+.gh-float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.45);transition:transform .25s,box-shadow .25s;text-decoration:none;flex-shrink:0;border:none;cursor:pointer}
+.gh-float-btn:hover{transform:scale(1.12);box-shadow:0 8px 32px rgba(0,0,0,.55)}
+.gh-float-wa{background:#25D366}
+.gh-float-mail{background:#C9A84C}
 </style>
 </head>
 <body>
@@ -547,5 +554,48 @@ function openVid(s){var m=document.getElementById('vidModal');document.getElemen
 function closeVid(e){var m=document.getElementById('vidModal');if(!e||e.target===m||e.target.classList.contains('vid-x')){m.style.opacity='0';document.getElementById('vidFrame').src='';setTimeout(function(){m.style.display='none';document.body.style.overflow=''},300);}}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeLB();closeVid();}});
 </script>
+<div id="ghPopup" style="display:none;position:fixed;inset:0;z-index:99000;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px" onclick="if(event.target===this)this.classList.remove('open')" style="display:none;position:fixed;inset:0;z-index:99000;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px">
+  <div style="background:#fff;width:100%;max-width:480px;padding:40px 36px 32px;position:relative">
+    <button onclick="document.getElementById('ghPopup').classList.remove('open')" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:#999">✕</button>
+    <div style="font-size:20px;font-weight:700;color:#1A1A1A;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px;text-align:center">Register Your Interest</div>
+    <div style="font-size:13px;color:#888;text-align:center;margin-bottom:28px">Tell us about your project and we'll get in touch within 24 hours.</div>
+    <form onsubmit="ghSubmit(event)">
+      <input style="width:100%;padding:12px 16px;border:1px solid rgba(26,26,26,.12);background:#FAFAF8;font-size:14px;margin-bottom:12px;box-sizing:border-box;font-family:inherit" type="text" id="ghName" placeholder="Full Name *" required>
+      <input style="width:100%;padding:12px 16px;border:1px solid rgba(26,26,26,.12);background:#FAFAF8;font-size:14px;margin-bottom:12px;box-sizing:border-box;font-family:inherit" type="text" id="ghCompany" placeholder="Company / Developer">
+      <select style="width:100%;padding:12px 16px;border:1px solid rgba(26,26,26,.12);background:#FAFAF8;font-size:14px;margin-bottom:12px;box-sizing:border-box;font-family:inherit;color:#555" id="ghProject" required>
+        <option value="" disabled selected>Project Type *</option>
+        <option>Residential Development</option>
+        <option>Commercial Project</option>
+        <option>Hospitality / Hotel</option>
+        <option>Mixed-Use Development</option>
+        <option>Government / Public</option>
+        <option>Other</option>
+      </select>
+      <input style="width:100%;padding:12px 16px;border:1px solid rgba(26,26,26,.12);background:#FAFAF8;font-size:14px;margin-bottom:12px;box-sizing:border-box;font-family:inherit" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required>
+      <textarea style="width:100%;padding:12px 16px;border:1px solid rgba(26,26,26,.12);background:#FAFAF8;font-size:14px;margin-bottom:12px;box-sizing:border-box;font-family:inherit;resize:none" id="ghBrief" rows="3" placeholder="Brief about your project..."></textarea>
+      <button type="submit" style="width:100%;padding:15px;background:#C9A84C;color:#0A0A0A;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;font-family:inherit;border-radius:50px">Submit Enquiry →</button>
+    </form>
+    <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
+      <div style="font-size:36px;margin-bottom:12px">✓</div>
+      <div style="font-size:17px;font-weight:700;color:#1A1A1A;margin-bottom:8px">Thank you!</div>
+      <div style="font-size:14px;color:#888">We'll get in touch with you shortly.</div>
+    </div>
+  </div>
+</div>
+<script>
+function ghSubmit(e){
+  e.preventDefault();
+  var btn=e.target.querySelector('button[type="submit"]');
+  btn.disabled=true; btn.textContent='Sending…';
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({access_key:'cd3e4509-7942-4ad3-a888-2af2910f5f6d',subject:'New Enquiry — Graphics House Website',from_name:'Graphics House Website',name:document.getElementById('ghName').value,company:document.getElementById('ghCompany').value,project_type:document.getElementById('ghProject').value,phone:document.getElementById('ghPhone').value,brief:document.getElementById('ghBrief').value,botcheck:''})}).then(function(r){return r.json();}).then(function(res){btn.disabled=false;btn.textContent='Submit Enquiry →';if(res.success){document.querySelector('#ghPopup form').style.display='none';document.getElementById('ghThanks').style.display='block';setTimeout(function(){document.getElementById('ghPopup').classList.remove('open');document.querySelector('#ghPopup form').style.display='block';document.getElementById('ghThanks').style.display='none';},3000);}else{alert('Something went wrong. Please try again.');}}).catch(function(){btn.disabled=false;btn.textContent='Submit Enquiry →';alert('Connection error.');});
+}
+</script>
+
+<!-- FLOAT BUTTONS -->
+<div class="gh-float">
+  <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
+  <button class="gh-float-btn gh-float-mail" onclick="document.getElementById('ghPopup').classList.add('open')" title="Register Your Interest"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></button>
+</div>
+
 </body>
 </html>
