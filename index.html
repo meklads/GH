@@ -2828,38 +2828,220 @@ img { max-width: 100%; display: block; }
 </section>
 
 
-<!-- ===== TRUSTED BY / CLIENTS MARQUEE ===== -->
-<section style="padding:64px 0;background:#FAFAF8;overflow:hidden;border-top:1px solid rgba(26,26,26,.06);border-bottom:1px solid rgba(26,26,26,.06)">
-  <div style="text-align:center;margin-bottom:36px">
-    <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#888;text-transform:uppercase">Trusted By</span>
+<!-- ===== TRUSTED BY / CLIENTS — ZEROLIGHT STYLE ===== -->
+<section class="zl-clients-section">
+
+  <style>
+  /* ── ZeroLight-style client strip ── */
+  .zl-clients-section {
+    padding: 72px 0 80px;
+    background: #F8F7F5;
+    overflow: hidden;
+    border-top: 1px solid rgba(26,26,26,.06);
+    border-bottom: 1px solid rgba(26,26,26,.06);
+    position: relative;
+  }
+  .zl-clients-label {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .zl-clients-label span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .22em;
+    color: #999;
+    text-transform: uppercase;
+    font-family: 'Inter', 'Tajawal', sans-serif;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .zl-clients-label span::before,
+  .zl-clients-label span::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: rgba(0,0,0,.15);
+    display: inline-block;
+  }
+  /* Track wrapper */
+  .zl-track-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  /* Fade masks — wider than before */
+  .zl-track-wrap::before,
+  .zl-track-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 180px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .zl-track-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, #F8F7F5 0%, transparent 100%);
+  }
+  .zl-track-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, #F8F7F5 0%, transparent 100%);
+  }
+  /* The scrolling track */
+  .zl-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: zlScroll 45s linear infinite;
+    will-change: transform;
+  }
+  .zl-track:hover {
+    animation-play-state: paused;
+  }
+  @keyframes zlScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+  }
+  /* Individual logo item */
+  .zl-logo-item {
+    padding: 0 56px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88px;
+    position: relative;
+  }
+  /* Vertical separator between logos */
+  .zl-logo-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 32px;
+    background: rgba(0,0,0,.1);
+  }
+  .zl-logo-item img {
+    height: 88px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    filter: grayscale(1) contrast(0.6) brightness(1.1);
+    opacity: 0.55;
+    transition: filter .5s ease, opacity .5s ease, transform .4s ease;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  .zl-logo-item:hover img {
+    filter: grayscale(0) contrast(1) brightness(1);
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  </style>
+
+  <div class="zl-clients-label">
+    <span>Trusted By</span>
   </div>
-  <div style="overflow:hidden;position:relative">
-    <div style="position:absolute;left:0;top:0;bottom:0;width:120px;background:linear-gradient(to right,#FAFAF8,transparent);z-index:2"></div>
-    <div style="position:absolute;right:0;top:0;bottom:0;width:120px;background:linear-gradient(to left,#FAFAF8,transparent);z-index:2"></div>
-    <div class="marquee-track" style="display:flex;align-items:center;gap:0;width:max-content;animation:marquee 35s linear infinite">
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-owla.png" alt="Al Oula" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-oyonypng.png" alt="Al-Ayuni" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/anan-eskan.png" alt="Anan Iskan" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/aqarat.png" alt="Aqarat" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/bn-zooma.png" alt="Bin Zoma" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/makyon.png" alt="Makklyoon" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/oteck.png" alt="Autek" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/rafal.png" alt="Rafal" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/toyota.png" alt="Toyota" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2025/04/imc.png" alt="IMC" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <!-- Duplicate for seamless loop -->
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-owla.png" alt="Al Oula" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-oyonypng.png" alt="Al-Ayuni" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/anan-eskan.png" alt="Anan Iskan" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/aqarat.png" alt="Aqarat" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/bn-zooma.png" alt="Bin Zoma" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/makyon.png" alt="Makklyoon" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/oteck.png" alt="Autek" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/rafal.png" alt="Rafal" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/toyota.png" alt="Toyota" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
-      <div style="padding:0 40px;flex-shrink:0"><img src="https://3dgraphicshouse.com/wp-content/uploads/2025/04/imc.png" alt="IMC" style="height:66px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"/></div>
+
+  <div class="zl-track-wrap">
+    <div class="zl-track">
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-owla.png" alt="Al Oula" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-oyonypng.png" alt="Al-Ayuni" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/anan-eskan.png" alt="Anan Iskan" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/aqarat.png" alt="Aqarat" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/bn-zooma.png" alt="Bin Zoma" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/makyon.png" alt="Makyon" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/oteck.png" alt="Autek" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/rafal.png" alt="Rafal" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/toyota.png" alt="Toyota" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2025/04/imc.png" alt="IMC" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-owla.png" alt="Al Oula" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-oyonypng.png" alt="Al-Ayuni" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/anan-eskan.png" alt="Anan Iskan" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/aqarat.png" alt="Aqarat" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/bn-zooma.png" alt="Bin Zoma" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/makyon.png" alt="Makyon" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/oteck.png" alt="Autek" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/rafal.png" alt="Rafal" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/toyota.png" alt="Toyota" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2025/04/imc.png" alt="IMC" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-owla.png" alt="Al Oula" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/al-oyonypng.png" alt="Al-Ayuni" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/anan-eskan.png" alt="Anan Iskan" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/aqarat.png" alt="Aqarat" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/bn-zooma.png" alt="Bin Zoma" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/makyon.png" alt="Makyon" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/oteck.png" alt="Autek" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/rafal.png" alt="Rafal" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2024/04/toyota.png" alt="Toyota" loading="lazy">
+        </div>
+        <div class="zl-logo-item">
+          <img src="https://3dgraphicshouse.com/wp-content/uploads/2025/04/imc.png" alt="IMC" loading="lazy">
+        </div>
     </div>
   </div>
+
 </section>
 
 <!-- ===== PORTFOLIO: PREVIOUS WORKS ===== -->
