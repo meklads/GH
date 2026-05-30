@@ -443,11 +443,12 @@ html[dir="rtl"] .nav-link:hover::after{width:100%}
 
 <!-- ===== FLOATING CONTACT BUTTONS (AR — LEFT) ===== -->
 <style>
-.gh-float{position:fixed;bottom:32px;left:28px;z-index:9000;display:flex;flex-direction:column;align-items:center;gap:10px}
-.gh-float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.4);transition:transform .25s,box-shadow .25s;text-decoration:none;flex-shrink:0}
-.gh-float-btn:hover{transform:scale(1.12);box-shadow:0 8px 30px rgba(0,0,0,.5)}
+.gh-float{position:fixed;bottom:32px;left:28px;z-index:9000;display:flex;flex-direction:column;align-items:center;gap:12px}
+.gh-float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.45);transition:transform .25s,box-shadow .25s;text-decoration:none;flex-shrink:0}
+.gh-float-btn:hover{transform:scale(1.12);box-shadow:0 8px 32px rgba(0,0,0,.55)}
 .gh-float-wa{background:#25D366}
 .gh-float-mail{background:#C9A84C;cursor:pointer;border:none}
+.gh-float-bot{background:#1A1A1A;cursor:pointer;border:none}
 #ghPopup{display:none;position:fixed;inset:0;z-index:99000;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px}
 #ghPopup.open{display:flex}
 .gh-popup-box{background:#fff;width:100%;max-width:480px;padding:40px 36px 32px;position:relative;animation:popIn .3s ease;direction:rtl;text-align:right}
