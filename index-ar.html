@@ -1747,16 +1747,17 @@ img { max-width: 100%; display: block; }
   gap: 12px;
   padding: 14px 36px;
   border-radius: 50px;
-  border: 1.5px solid var(--gold);
+  border: 2px solid var(--gold);
   color: #0A0A0A;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 700;
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
   background: transparent;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 .s3-cta-btn:hover {
   background: var(--gold);
@@ -2385,7 +2386,59 @@ img { max-width: 100%; display: block; }
     height: 40px;
     font-size: 18px;
   }
-}</style>
+}
+/* ===== DAMAC-STYLE CTA BUTTONS ===== */
+.gh-damac-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  white-space: nowrap;
+  border: 2px solid transparent;
+}
+/* White / solid */
+.gh-damac-btn-white {
+  background: #FFFFFF;
+  color: #1A1A1A;
+  border-color: #FFFFFF;
+}
+.gh-damac-btn-white:hover {
+  background: #F0F0F0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255,255,255,0.25);
+  color: #1A1A1A;
+}
+/* Outline / transparent */
+.gh-damac-btn-outline {
+  background: transparent;
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.6);
+}
+.gh-damac-btn-outline:hover {
+  border-color: #FFFFFF;
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+/* Global pill-style buttons (s3, s4, who-we-are, etc.) */
+.s3-cta-btn, .btn-pill, .gh-cta-pill {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  padding: 13px 34px !important;
+  border-radius: 50px !important;
+}
+/* ===== END DAMAC BUTTONS ===== */
+</style>
 
 <script type="application/ld+json">
 {
@@ -2507,12 +2560,12 @@ img { max-width: 100%; display: block; }
 
       <!-- Buttons -->
       <div class="flex flex-wrap gap-4 mt-6 justify-center">
-        <a href="#services" class="inline-flex items-center gap-2.5 bg-[#C9A84C] text-[#1A1A1A] px-8 py-3.5 text-[12px] font-bold tracking-widest uppercase hover:scale-105 hover:shadow-[0_0_32px_rgba(201,168,76,.7)] shadow-[0_0_20px_rgba(201,168,76,.35)] transition-all no-underline" style="border-radius:50px" style="font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif">
-          <span class="material-symbols-outlined" style="font-size:16px;line-height:1">play_arrow</span>
+        <a href="#services" class="gh-damac-btn gh-damac-btn-white">
+          <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">play_arrow</span>
           <span>استكشف خدمات</span>
         </a>
-        <a href="#projects" class="inline-flex items-center gap-2.5 border border-white/50 text-white px-8 py-3.5 text-[12px] font-bold tracking-widest uppercase hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all no-underline backdrop-blur-sm" style="border-radius:50px" style="font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif">
-          <span class="material-symbols-outlined" style="font-size:16px;line-height:1">collections</span>
+        <a href="#projects" class="gh-damac-btn gh-damac-btn-outline">
+          <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">collections</span>
           <span>مشاريع</span>
         </a>
       </div>
