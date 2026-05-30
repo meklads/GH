@@ -345,15 +345,63 @@ html[dir="rtl"] .nav-item-drop .nav-dropdown{left:auto;right:0}
 </footer>
 
 <script>
+var W3F_KEY = 'YOUR_WEB3FORMS_KEY'; // ← ضع مفتاحك هنا من web3forms.com
+
 function submitForm(e) {
   e.preventDefault();
-  var btn = document.getElementById('submitBtn');
-  btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px;animation:spin 1s linear infinite">progress_activity</span> جارٍ الإرسال…';
+  var form = document.getElementById('contactForm');
+  var btn  = document.getElementById('submitBtn');
+
+  var email = form.querySelector('[name="email"]').value.trim();
+  var first = form.querySelector('[name="first_name"]').value.trim();
+  if (!email || !first) {
+    alert('يرجى تعبئة الحقول المطلوبة (الاسم الأول والبريد الإلكتروني).');
+    return;
+  }
+
   btn.disabled = true;
-  setTimeout(function(){
-    btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px">check_circle</span> تم الإرسال! سنتواصل معك خلال 24 ساعة.';
-    btn.style.background = '#2D7D46'; btn.style.color = '#fff';
-  }, 1800);
+  btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px;animation:spin 1s linear infinite">progress_activity</span> جارٍ الإرسال…';
+
+  var data = {
+    access_key: W3F_KEY,
+    subject: 'استفسار جديد — موقع جرافيكس هاوس',
+    from_name: 'Graphics House Website',
+    name: first + ' ' + form.querySelector('[name="last_name"]').value.trim(),
+    email: email,
+    phone: form.querySelector('[name="phone"]').value.trim(),
+    company: form.querySelector('[name="company"]').value.trim(),
+    job_title: form.querySelector('[name="job_title"]').value.trim(),
+    service: form.querySelector('[name="service"]').value,
+    interest: form.querySelector('[name="interest"]').value,
+    message: form.querySelector('[name="message"]').value.trim(),
+    botcheck: ''
+  };
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(res){
+    if (res.success) {
+      btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px">check_circle</span> تم الإرسال! سنتواصل معك خلال 24 ساعة.';
+      btn.style.background = '#2D7D46';
+      btn.style.color = '#fff';
+      form.reset();
+    } else {
+      btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px">error</span> خطأ — يرجى المحاولة مجدداً';
+      btn.style.background = '#C0392B';
+      btn.style.color = '#fff';
+      btn.disabled = false;
+    }
+  })
+  .catch(function(){
+    btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px">error</span> خطأ في الاتصال — راسلنا مباشرة على الإيميل';
+    btn.style.background = '#C0392B';
+    btn.style.color = '#fff';
+    btn.disabled = false;
+  });
 }
 </script>
 </body>
