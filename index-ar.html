@@ -4773,4 +4773,12 @@ function ghSubmit(e){
 }
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var v=document.getElementById('hero-vid');
+  if(!v) return;
+  v.addEventListener('loadedmetadata',function(){ v.currentTime=4; });
+  v.addEventListener('timeupdate',function(){ if(v.currentTime>=35){ v.currentTime=4; v.play(); } });
+});
+</script>
 </body></html>
