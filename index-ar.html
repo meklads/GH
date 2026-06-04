@@ -3418,149 +3418,36 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- ===== TRUSTED BY / CLIENTS — ZEROLIGHT STYLE ===== -->
-<section class="zl-clients-section">
-
-  <style>
-  /* ── Client logo strip — constrained to content width ── */
-  .zl-clients-section {
-    padding: 72px 0 80px;
-    background: #F8F7F5;
-    border-top: 1px solid rgba(26,26,26,.06);
-    border-bottom: 1px solid rgba(26,26,26,.06);
-    position: relative;
-  }
-  .zl-clients-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 60px;
-    position: relative;
-  }
-  .zl-clients-label {
-    text-align: center;
-    margin-bottom: 48px;
-  }
-  .zl-clients-label span {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: .22em;
-    color: #999;
-    text-transform: uppercase;
-    font-family: 'Tajawal', 'Inter', sans-serif;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .zl-clients-label span::before,
-  .zl-clients-label span::after {
-    content: '';
-    width: 40px;
-    height: 1px;
-    background: rgba(0,0,0,.15);
-    display: inline-block;
-  }
-  /* Track wrapper — clips scroll within content bounds */
-  .zl-track-wrap {
-    position: relative;
-    overflow: hidden;
-    border-radius: 4px;
-  }
-  /* Fade masks at content boundary edges */
-  .zl-track-wrap::before,
-  .zl-track-wrap::after {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 120px;
-    z-index: 2;
-    pointer-events: none;
-  }
-  .zl-track-wrap::before {
-    left: 0;
-    background: linear-gradient(to right, #F8F7F5 0%, rgba(248,247,245,0) 100%);
-  }
-  .zl-track-wrap::after {
-    right: 0;
-    background: linear-gradient(to left, #F8F7F5 0%, rgba(248,247,245,0) 100%);
-  }
-
-  .zl-track {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    width: max-content;
-    animation: marquee-ltr 30s linear infinite;
-    will-change: transform;
-  }
-  .zl-track:hover { animation-play-state: paused; }
-  @keyframes marquee-ltr {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .zl-logo-item {
-    padding: 0 48px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
-    position: relative;
-  }
-  .zl-logo-item::after {
-    content: ''; position: absolute; right: 0; top: 50%;
-    transform: translateY(-50%); width: 1px; height: 32px;
-    background: rgba(0,0,0,.12);
-  }
-  .zl-logo-item img {
-    height: 58px;
-    width: auto;
-    max-width: 160px;
-    object-fit: contain;
-    filter: grayscale(1) contrast(0.8) brightness(1.1);
-    opacity: 0.65;
-    transition: filter .4s ease, opacity .4s ease, transform .3s ease;
-    display: block;
-  }
-  .zl-logo-item:hover img {
-    filter: grayscale(0) contrast(1) brightness(1);
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  </style>
-
-    <div class="zl-clients-inner">
-    <div class="zl-clients-label">
-      <span>Trusted By</span>
-    </div>
-    <div class="zl-track-wrap">
-      <div class="zl-track" id="zl-track">
-        <div class="zl-logo-item"><img src="assets/clients-logo/al-oyonypng.png" alt="العيون"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/anan-eskan.png" alt="أنان إسكان"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/toyota.png" alt="تويوتا"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/imc-150x150.png" alt="IMC"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/rafal.png" alt="رافال"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/al-owla.png" alt="الأولى"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/makyon.png" alt="ماكيون"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/bn-zooma.png" alt="بن زومة"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/aqarat.png" alt="عقارات"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/oteck.png" alt="أوتك"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/al-oyonypng.png" alt="العيون"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/anan-eskan.png" alt="أنان إسكان"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/toyota.png" alt="تويوتا"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/imc-150x150.png" alt="IMC"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/rafal.png" alt="رافال"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/al-owla.png" alt="الأولى"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/makyon.png" alt="ماكيون"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/bn-zooma.png" alt="بن زومة"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/aqarat.png" alt="عقارات"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/oteck.png" alt="أوتك"/></div>
-        <div class="zl-logo-item"><img src="assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"/></div>
-      </div>
+<!-- ===== TRUSTED BY / CLIENTS ===== -->
+<section style="padding:50px 0;background:#f5f4ef;overflow:hidden;border-top:1px solid rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.06)">
+  <div style="text-align:center;font-size:11px;font-weight:700;letter-spacing:3px;color:#aaa;margin-bottom:30px">TRUSTED BY</div>
+  <div style="overflow:hidden;width:100%;position:relative">
+    <div style="position:absolute;top:0;left:0;bottom:0;width:100px;background:linear-gradient(to right,#f5f4ef,transparent);z-index:2;pointer-events:none"></div>
+    <div style="position:absolute;top:0;right:0;bottom:0;width:100px;background:linear-gradient(to left,#f5f4ef,transparent);z-index:2;pointer-events:none"></div>
+    <div id="cli-track" style="display:flex;align-items:center;width:max-content;gap:0">
+      <div class="cli-item"><img src="assets/clients-logo/al-oyonypng.png" alt="العيون"></div><div class="cli-item"><img src="assets/clients-logo/anan-eskan.png" alt="أنان إسكان"></div><div class="cli-item"><img src="assets/clients-logo/toyota.png" alt="تويوتا"></div><div class="cli-item"><img src="assets/clients-logo/imc-150x150.png" alt="IMC"></div><div class="cli-item"><img src="assets/clients-logo/rafal.png" alt="رافال"></div><div class="cli-item"><img src="assets/clients-logo/al-owla.png" alt="الأولى"></div><div class="cli-item"><img src="assets/clients-logo/makyon.png" alt="ماكيون"></div><div class="cli-item"><img src="assets/clients-logo/bn-zooma.png" alt="بن زومة"></div><div class="cli-item"><img src="assets/clients-logo/aqarat.png" alt="عقارات"></div><div class="cli-item"><img src="assets/clients-logo/oteck.png" alt="أوتك"></div><div class="cli-item"><img src="assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"></div><div class="cli-item"><img src="assets/clients-logo/al-oyonypng.png" alt="العيون"></div><div class="cli-item"><img src="assets/clients-logo/anan-eskan.png" alt="أنان إسكان"></div><div class="cli-item"><img src="assets/clients-logo/toyota.png" alt="تويوتا"></div><div class="cli-item"><img src="assets/clients-logo/imc-150x150.png" alt="IMC"></div><div class="cli-item"><img src="assets/clients-logo/rafal.png" alt="رافال"></div><div class="cli-item"><img src="assets/clients-logo/al-owla.png" alt="الأولى"></div><div class="cli-item"><img src="assets/clients-logo/makyon.png" alt="ماكيون"></div><div class="cli-item"><img src="assets/clients-logo/bn-zooma.png" alt="بن زومة"></div><div class="cli-item"><img src="assets/clients-logo/aqarat.png" alt="عقارات"></div><div class="cli-item"><img src="assets/clients-logo/oteck.png" alt="أوتك"></div><div class="cli-item"><img src="assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"></div><div class="cli-item"><img src="assets/clients-logo/al-oyonypng.png" alt="العيون"></div><div class="cli-item"><img src="assets/clients-logo/anan-eskan.png" alt="أنان إسكان"></div><div class="cli-item"><img src="assets/clients-logo/toyota.png" alt="تويوتا"></div><div class="cli-item"><img src="assets/clients-logo/imc-150x150.png" alt="IMC"></div><div class="cli-item"><img src="assets/clients-logo/rafal.png" alt="رافال"></div><div class="cli-item"><img src="assets/clients-logo/al-owla.png" alt="الأولى"></div><div class="cli-item"><img src="assets/clients-logo/makyon.png" alt="ماكيون"></div><div class="cli-item"><img src="assets/clients-logo/bn-zooma.png" alt="بن زومة"></div><div class="cli-item"><img src="assets/clients-logo/aqarat.png" alt="عقارات"></div><div class="cli-item"><img src="assets/clients-logo/oteck.png" alt="أوتك"></div><div class="cli-item"><img src="assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"></div>
     </div>
   </div>
-
+  <style>
+    .cli-item { padding:0 50px; flex-shrink:0; display:flex; align-items:center; justify-content:center; height:90px; border-right:1px solid rgba(0,0,0,.1); }
+    .cli-item img { height:52px; width:auto; max-width:140px; object-fit:contain; filter:grayscale(1) brightness(1.1); opacity:.6; transition:all .3s; }
+    .cli-item img:hover { filter:grayscale(0); opacity:1; transform:scale(1.08); }
+  </style>
+  <script>
+  (function(){
+    var t=document.getElementById('cli-track');
+    if(!t)return;
+    var oneSet = t.scrollWidth/3;
+    var pos=0, speed=0.7, paused=false;
+    function run(){
+      if(!paused){ pos-=speed; if(pos<=-oneSet) pos+=oneSet; t.style.transform='translateX('+pos+'px)'; }
+      requestAnimationFrame(run);
+    }
+    t.addEventListener('mouseenter',function(){paused=true});
+    t.addEventListener('mouseleave',function(){paused=false});
+    run();
+  })();
+  </script>
 </section>
 
 <!-- ===== PORTFOLIO: PREVIOUS WORKS ===== -->
