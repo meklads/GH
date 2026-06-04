@@ -105,7 +105,7 @@
       border-radius: 100px; padding: 6px 14px; font-size: 13px;
       color: var(--gold-light); margin-bottom: 16px;
     }
-    .section-title { font-size: clamp(26px, 4vw, 42px); font-weight: 800; line-height: 1.2; }
+    .section-title { font-size: clamp(26px, 4vw, 42px); font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; }
     .gold { color: var(--gold); }
 
     .btn-primary {
@@ -169,7 +169,7 @@
       border-radius: 100px; padding: 6px 14px; font-size: 13px; color: var(--gold-light);
       margin-bottom: 20px;
     }
-    h1 { font-size: clamp(30px, 4.5vw, 52px); font-weight: 900; line-height: 1.15; margin-bottom: 18px; }
+    h1 { font-size: clamp(30px, 4.5vw, 52px); font-weight: 900; line-height: 1.15; margin-bottom: 18px; letter-spacing: -1px; }
     h1 em { font-style: normal; color: var(--gold); }
     .hero-sub { font-size: 17px; color: var(--white-80); line-height: 1.7; margin-bottom: 28px; max-width: 520px; }
     .hero-ctas { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
@@ -221,7 +221,8 @@
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
     /* ── STATS STRIP ── */
-    .stats-strip {
+    .stats-strip { backdrop-filter: blur(8px); }
+    .stats-strip-x {
       background: var(--dark2); border-top: 1px solid var(--white-10);
       border-bottom: 1px solid var(--white-10); padding: 24px 0;
     }
@@ -240,6 +241,7 @@
     .pkg-card {
       background: var(--card-bg); border: 1px solid var(--white-10);
       border-radius: var(--radius); padding: 30px; position: relative;
+      box-shadow: var(--shadow);
       overflow: hidden; transition: transform 0.25s;
     }
     .pkg-card:hover { transform: translateY(-4px); }
@@ -372,9 +374,11 @@
     #difference { padding: 80px 0; }
     .diff-header { text-align: center; margin-bottom: 50px; }
     .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .diff-card:hover { transform: translateY(-3px); }
     .diff-card {
       background: var(--card-bg); border: 1px solid var(--white-10);
       border-radius: var(--radius); padding: 28px; display: flex; gap: 18px; align-items: flex-start;
+      box-shadow: var(--shadow); transition: transform 0.25s;
     }
     .diff-icon {
       width: 52px; height: 52px; border-radius: 12px; font-size: 24px;
@@ -413,8 +417,8 @@
     .final-ctas { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
     .guarantee-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
-      border-radius: 100px; padding: 8px 18px; font-size: 14px; color: #86EFAC;
+      background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 100px; padding: 8px 18px; font-size: 14px; color: var(--gold-light);
       margin-bottom: 30px;
     }
 
@@ -470,8 +474,8 @@
 
     .form-success {
       display: none; text-align: center; padding: 20px;
-      background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
-      border-radius: var(--radius-sm); color: #86EFAC; font-weight: 700;
+      background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.4);
+      border-radius: var(--radius-sm); color: var(--gold-light); font-weight: 700;
     }
     .section-divider { height: 1px; background: var(--white-10); }
 
@@ -500,7 +504,7 @@
 <!-- ── URGENCY BAR ── -->
 <div id="urgency-bar">
   <span>⚡</span>
-  <span>عرض يونيو الحصري: خصم ٢٠٪ على باقة البداية — ينتهي خلال</span>
+  <span>عرض يونيو الحصري: خصم 20٪ على باقة البداية — ينتهي خلال</span>
   <span class="timer" id="countdown">00:00:00</span>
   <a href="#contact" style="background:#FFD700;color:#000;border-radius:100px;padding:4px 14px;font-size:12px;font-weight:800;text-decoration:none;margin-right:8px">احجز الآن</a>
 </div>
@@ -539,8 +543,8 @@
           <a href="#packages" class="btn-outline">👁 شاهد الباقات</a>
         </div>
         <div class="trust-bar">
-          <div class="trust-item"><span class="stars">★★★★★</span><span>4.9 (٤٢+ تقييم)</span></div>
-          <div class="trust-item">✅ +١٥ براند موثوق</div>
+          <div class="trust-item"><span class="stars">★★★★★</span><span>4.9 (42+ تقييم)</span></div>
+          <div class="trust-item">✅ +15 براند موثوق</div>
           <div class="trust-item">🌐 السعودية والخليج</div>
         </div>
         <!-- Mobile form -->
@@ -548,10 +552,10 @@
           <div class="quick-form-card">
             <div class="spots-left">
               <span class="pulse" style="color:#EF4444;font-size:10px">●</span>
-              متبقي <strong id="spots-mobile">٣</strong> استشارات مجانية هذا الأسبوع
+              متبقي <strong id="spots-mobile">3</strong> استشارات مجانية هذا الأسبوع
             </div>
             <h3>احجز استشارتك المجانية</h3>
-            <p>٣٠ دقيقة — بدون أي التزام</p>
+            <p>30 دقيقة — بدون أي التزام</p>
             <form onsubmit="submitHeroForm(event,'mobile')">
               <div class="form-row">
                 <input type="text" placeholder="اسمك الكريم" required />
@@ -569,10 +573,10 @@
       <div class="quick-form-card quick-form-desktop">
         <div class="spots-left">
           <span class="pulse" style="color:#EF4444;font-size:10px">●</span>
-          متبقي <strong id="spots-desktop">٣</strong> استشارات مجانية هذا الأسبوع
+          متبقي <strong id="spots-desktop">3</strong> استشارات مجانية هذا الأسبوع
         </div>
         <h3>احجز استشارتك المجانية</h3>
-        <p>٣٠ دقيقة — بدون أي التزام</p>
+        <p>30 دقيقة — بدون أي التزام</p>
         <form id="heroFormDesktop" onsubmit="submitHeroForm(event,'desktop')">
           <div class="form-row">
             <input type="text" placeholder="اسمك الكريم" required />
@@ -592,10 +596,10 @@
 <div class="stats-strip">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item"><div class="stat-num">+١٨٥٪</div><div class="stat-label">نمو التفاعل على السوشيال</div></div>
-      <div class="stat-item"><div class="stat-num">+١٥</div><div class="stat-label">براند نشط يستخدم النظام</div></div>
-      <div class="stat-item"><div class="stat-num">٤٨+</div><div class="stat-label">مادة إعلامية شهرياً</div></div>
-      <div class="stat-item"><div class="stat-num">٣٠ يوم</div><div class="stat-label">أول نتائج ملموسة</div></div>
+      <div class="stat-item"><div class="stat-num">+185٪</div><div class="stat-label">نمو التفاعل على السوشيال</div></div>
+      <div class="stat-item"><div class="stat-num">+15</div><div class="stat-label">براند نشط يستخدم النظام</div></div>
+      <div class="stat-item"><div class="stat-num">48+</div><div class="stat-label">مادة إعلامية شهرياً</div></div>
+      <div class="stat-item"><div class="stat-num">30 يوم</div><div class="stat-label">أول نتائج ملموسة</div></div>
     </div>
   </div>
 </div>
@@ -615,13 +619,13 @@
         <p class="pkg-desc">للمشاريع الناشئة والبراندات في بداية رحلتها الرقمية</p>
         <div class="pkg-price">
           <span class="from">يبدأ من</span>
-          <span class="original">١٥٠٠</span>
-          <span class="amount">١٢٠٠</span>
+          <span class="original">1500</span>
+          <span class="amount">1200</span>
           <span class="period">ريال/شهر</span>
         </div>
         <ul class="pkg-features">
           <li><span class="chk">✓</span> محتوى سوشيال ميديا أسبوعي</li>
-          <li><span class="chk">✓</span> ٤–٦ فيديوهات قصيرة شهرياً</li>
+          <li><span class="chk">✓</span> 4–6 فيديوهات قصيرة شهرياً</li>
           <li><span class="chk">✓</span> تصاميم احترافية للبوستات</li>
           <li><span class="chk">✓</span> تقرير أداء شهري</li>
         </ul>
@@ -634,13 +638,13 @@
         <p class="pkg-desc">للبراندات التي تريد نمواً متسارعاً وحضوراً قوياً</p>
         <div class="pkg-price">
           <span class="from">يبدأ من</span>
-          <span class="amount">٣٬٠٠٠</span>
+          <span class="amount">3٬000</span>
           <span class="period">ريال/شهر</span>
         </div>
         <ul class="pkg-features">
           <li><span class="chk">✓</span> استراتيجية تسويق متكاملة</li>
-          <li><span class="chk">✓</span> ٦–١٠ فيديوهات احترافية شهرياً</li>
-          <li><span class="chk">✓</span> ١٠–١٢ تصميم شهرياً</li>
+          <li><span class="chk">✓</span> 6–10 فيديوهات احترافية شهرياً</li>
+          <li><span class="chk">✓</span> 10–12 تصميم شهرياً</li>
           <li><span class="chk">✓</span> إدارة شهرية كاملة للسوشيال</li>
           <li><span class="chk">✓</span> تقارير أداء أسبوعية + جلسة استراتيجية</li>
         </ul>
@@ -652,7 +656,7 @@
         <p class="pkg-desc">للهيمنة على السوق وبناء براند لا ينسى</p>
         <div class="pkg-price">
           <span class="from">يبدأ من</span>
-          <span class="amount">٧٬٠٠٠</span>
+          <span class="amount">7٬000</span>
           <span class="period">ريال/شهر</span>
         </div>
         <ul class="pkg-features">
@@ -722,7 +726,7 @@
       <div class="svc-card">
         <div class="svc-img"><img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=600&h=400&fit=crop&auto=format" alt="السوشيال ميديا" /></div>
         <div class="svc-body">
-          <div class="svc-num">الخدمة ١</div>
+          <div class="svc-num">الخدمة 1</div>
           <h3>إدارة السوشيال ميديا</h3>
           <p>خط تحريري احترافي وهوية بصرية موحدة عبر جميع المنصات.</p>
           <ul class="svc-list">
@@ -736,7 +740,7 @@
       <div class="svc-card">
         <div class="svc-img"><img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=600&h=400&fit=crop&auto=format" alt="إنتاج فيديو" /></div>
         <div class="svc-body">
-          <div class="svc-num">الخدمة ٢</div>
+          <div class="svc-num">الخدمة 2</div>
           <h3>إنتاج فيديوهات سينمائية</h3>
           <p>فيديوهات قصيرة بتقنيات سينمائية احترافية تنقل براندك لمستوى عالمي.</p>
           <ul class="svc-list">
@@ -750,7 +754,7 @@
       <div class="svc-card">
         <div class="svc-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format" alt="صفحات هبوط" /></div>
         <div class="svc-body">
-          <div class="svc-num">الخدمة ٣</div>
+          <div class="svc-num">الخدمة 3</div>
           <h3>صفحات هبوط تحويلية</h3>
           <p>صفحات مصممة للحملات الإعلانية — تجربة فاخرة ونسبة تحويل مضاعفة.</p>
           <ul class="svc-list">
@@ -785,11 +789,11 @@
       <h2 class="section-title">خمس خطوات لانطلاقة <span class="gold">رقمية</span></h2>
     </div>
     <div class="steps-grid">
-      <div class="step-item"><div class="step-num">١</div><h4>تحليل البراند</h4><p>ندرس هويتك، جمهورك، ومنافسيك</p></div>
-      <div class="step-item"><div class="step-num">٢</div><h4>وضع الاستراتيجية</h4><p>نبني خطة تسويقية بأهداف واضحة</p></div>
-      <div class="step-item"><div class="step-num">٣</div><h4>إنتاج المحتوى</h4><p>ننفذ التصاميم والفيديوهات والنصوص</p></div>
-      <div class="step-item"><div class="step-num">٤</div><h4>تشغيل الحملات</h4><p>ننشر وندير ونتفاعل يومياً</p></div>
-      <div class="step-item"><div class="step-num">٥</div><h4>قياس وتحسين</h4><p>نحلل النتائج ونطور الأداء</p></div>
+      <div class="step-item"><div class="step-num">1</div><h4>تحليل البراند</h4><p>ندرس هويتك، جمهورك، ومنافسيك</p></div>
+      <div class="step-item"><div class="step-num">2</div><h4>وضع الاستراتيجية</h4><p>نبني خطة تسويقية بأهداف واضحة</p></div>
+      <div class="step-item"><div class="step-num">3</div><h4>إنتاج المحتوى</h4><p>ننفذ التصاميم والفيديوهات والنصوص</p></div>
+      <div class="step-item"><div class="step-num">4</div><h4>تشغيل الحملات</h4><p>ننشر وندير ونتفاعل يومياً</p></div>
+      <div class="step-item"><div class="step-num">5</div><h4>قياس وتحسين</h4><p>نحلل النتائج ونطور الأداء</p></div>
     </div>
   </div>
 </section>
@@ -864,7 +868,7 @@
       </div>
       <div class="diff-card">
         <div class="diff-icon">👥</div>
-        <div><h4>يقلل الحاجة لفريق داخلي كامل</h4><p>بدلاً من توظيف ٣–٥ أشخاص، تحصل على فريق متكامل بنظام واحد بتكلفة أقل.</p></div>
+        <div><h4>يقلل الحاجة لفريق داخلي كامل</h4><p>بدلاً من توظيف 3–5 أشخاص، تحصل على فريق متكامل بنظام واحد بتكلفة أقل.</p></div>
       </div>
     </div>
   </div>
@@ -875,7 +879,7 @@
   <div class="container">
     <div class="guarantee-badge">🛡️ ضمان الرضا الكامل — لا عقود طويلة · قابل للإلغاء في أي وقت</div>
     <h2>براندك يستحق <em style="color:var(--gold);font-style:normal">نظام نمو حقيقي</em></h2>
-    <p>لا تدع منافسيك يسبقونك. ابدأ مع نظام النمو الرقمي الذكي ولاحظ الفرق في ٣٠ يوم.</p>
+    <p>لا تدع منافسيك يسبقونك. ابدأ مع نظام النمو الرقمي الذكي ولاحظ الفرق في 30 يوم.</p>
     <div class="final-ctas">
       <a href="#contact" class="btn-primary" style="font-size:16px;padding:16px 32px">🚀 ابدأ رحلة النمو الآن</a>
       <a href="https://wa.me/966502786513?text=أريد استشارة مجانية" class="btn-outline" style="font-size:16px;padding:16px 32px" target="_blank">
@@ -900,7 +904,7 @@
       </details>
       <details>
         <summary>كم يستغرق رؤية النتائج الأولى؟ <span class="faq-arrow">▾</span></summary>
-        <div class="faq-body">معظم عملائنا يشاهدون تحسناً ملحوظاً في التفاعل خلال أول ٣٠ يوم. النتائج التراكمية تبدأ بالظهور بوضوح من الشهر الثالث.</div>
+        <div class="faq-body">معظم عملائنا يشاهدون تحسناً ملحوظاً في التفاعل خلال أول 30 يوم. النتائج التراكمية تبدأ بالظهور بوضوح من الشهر الثالث.</div>
       </details>
       <details>
         <summary>هل يمكنني تغيير الباقة لاحقاً؟ <span class="faq-arrow">▾</span></summary>
@@ -925,7 +929,7 @@
       <div class="contact-info">
         <div class="tag">📞 تواصل معنا</div>
         <h2>احجز تحليل براندك <span class="gold">المجاني</span></h2>
-        <p>٣٠ دقيقة بدون أي التزام — نحلل حضورك الرقمي الحالي، نحدد نقاط الضعف، ونقدم لك خطة واضحة للانطلاق.</p>
+        <p>30 دقيقة بدون أي التزام — نحلل حضورك الرقمي الحالي، نحدد نقاط الضعف، ونقدم لك خطة واضحة للانطلاق.</p>
         <div class="contact-methods">
           <a href="https://wa.me/966502786513?text=أريد الاستفسار عن نظام النمو الرقمي" class="contact-method" target="_blank">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.526 5.845L.057 23.272a.75.75 0 00.92.92l5.427-1.469A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.946 9.946 0 01-5.077-1.39l-.364-.214-3.776 1.022 1.022-3.776-.214-.364A9.946 9.946 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
@@ -937,7 +941,7 @@
           </a>
           <a href="mailto:info@3dgraphicshouse.com" class="contact-method">
             <span style="font-size:22px">✉️</span>
-            <div class="contact-method-text"><strong>info@3dgraphicshouse.com</strong><span>رد خلال ٢٤ ساعة</span></div>
+            <div class="contact-method-text"><strong>info@3dgraphicshouse.com</strong><span>رد خلال 24 ساعة</span></div>
           </a>
         </div>
       </div>
@@ -954,13 +958,13 @@
             <select required><option value="" disabled selected>نشاطك التجاري</option><option>مقهى / مطعم</option><option>عيادة تجميلية</option><option>عطور ومستحضرات تجميل</option><option>عقارات</option><option>متجر إلكتروني</option><option>أخرى</option></select>
           </div>
           <div class="form-full">
-            <select><option value="" disabled selected>الباقة المهتم بها</option><option>الباقة المبتدئة (يبدأ من ١٢٠٠ ريال)</option><option>باقة النمو (يبدأ من ٣٬٠٠٠ ريال)</option><option>الباقة المتميزة (يبدأ من ٧٬٠٠٠ ريال)</option><option>غير متأكد — أريد استشارة</option></select>
+            <select><option value="" disabled selected>الباقة المهتم بها</option><option>الباقة المبتدئة (يبدأ من 1200 ريال)</option><option>باقة النمو (يبدأ من 3٬000 ريال)</option><option>الباقة المتميزة (يبدأ من 7٬000 ريال)</option><option>غير متأكد — أريد استشارة</option></select>
           </div>
           <div class="form-full"><textarea placeholder="أخبرنا عن براندك واحتياجاتك (اختياري)"></textarea></div>
           <button type="submit" class="btn-form">🚀 أبدأ رحلة النمو الرقمي الآن</button>
         </form>
-        <div class="form-success" id="mainSuccess">✅<br/>تم استلام طلبك! سنتواصل معك خلال ٢٤ ساعة 🎉</div>
-        <p class="form-note" style="margin-top:12px">✓ لا كروت ائتمان · لا التزامات · رد خلال ٢٤ ساعة</p>
+        <div class="form-success" id="mainSuccess">✅<br/>تم استلام طلبك! سنتواصل معك خلال 24 ساعة 🎉</div>
+        <p class="form-note" style="margin-top:12px">✓ لا كروت ائتمان · لا التزامات · رد خلال 24 ساعة</p>
       </div>
     </div>
   </div>
@@ -969,7 +973,7 @@
 <!-- ── FOOTER ── -->
 <footer>
   <div class="container">
-    <p>© ٢٠٢٦ جرافيكس هاوس — نظام النمو الرقمي الذكي. جميع الحقوق محفوظة.</p>
+    <p>© 2026 جرافيكس هاوس — نظام النمو الرقمي الذكي. جميع الحقوق محفوظة.</p>
   </div>
 </footer>
 
@@ -1005,7 +1009,7 @@
   /* ── SPOTS ── */
   (function(){
     let s = localStorage.getItem('gh_spots');
-    if(!s){ s = Math.random() < 0.5 ? '٢' : '٣'; localStorage.setItem('gh_spots',s); }
+    if(!s){ s = Math.random() < 0.5 ? '2' : '3'; localStorage.setItem('gh_spots',s); }
     document.querySelectorAll('#spots-desktop,#spots-mobile').forEach(el=>{ if(el) el.textContent=s; });
   })();
 
@@ -1045,4 +1049,3 @@
 </script>
 </body>
 </html>
- 
