@@ -3564,22 +3564,34 @@ img { max-width: 100%; display: block; }
     (function(){
       var track = document.getElementById('zl-track');
       if(!track) return;
-      // نسخ مرتين لضمان الاستمرارية
-      track.innerHTML = track.innerHTML + track.innerHTML;
-      var pos = 0;
-      var speed = 0.5; // بكسل في كل frame
-      function step(){
-        pos -= speed;
-        var halfWidth = track.scrollWidth / 2;
-        if(Math.abs(pos) >= halfWidth) pos = 0;
-        track.style.transform = 'translateX(' + pos + 'px)';
-        requestAnimationFrame(step);
-      }
-      // أوقف CSS animation وابدأ JS
       track.style.animation = 'none';
-      requestAnimationFrame(step);
-      track.addEventListener('mouseenter', function(){ speed = 0; });
-      track.addEventListener('mouseleave', function(){ speed = 0.5; });
+      track.style.transform = 'translateX(0)';
+
+      // كرر الشعارات 4 مرات لضمان ملء الشاشة دائماً
+      var original = track.innerHTML;
+      track.innerHTML = original + original + original + original;
+
+      // انتظر الـ render لمعرفة عرض مجموعة واحدة
+      requestAnimationFrame(function(){
+        var oneSetWidth = track.scrollWidth / 4;
+        var pos = 0;
+        var speed = 0.6;
+        var paused = false;
+
+        function loop(){
+          if(!paused) {
+            pos -= speed;
+            // عندما نتحرك بمقدار مجموعة واحدة، ارجع للصفر بشكل غير مرئي
+            if(pos <= -oneSetWidth) pos += oneSetWidth;
+            track.style.transform = 'translateX(' + pos + 'px)';
+          }
+          requestAnimationFrame(loop);
+        }
+
+        track.addEventListener('mouseenter', function(){ paused = true; });
+        track.addEventListener('mouseleave', function(){ paused = false; });
+        loop();
+      });
     })();
     </script>
   </div>
