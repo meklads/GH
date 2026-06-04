@@ -497,6 +497,24 @@
       .steps-grid { grid-template-columns: repeat(2, 1fr); }
     }
     .hero-quick-mobile { display: none; margin-top: 30px; }
+
+    /* ── CLIENTS ── */
+    #clients { padding: 50px 0; background: var(--card-bg); border-top: 1px solid var(--white-10); border-bottom: 1px solid var(--white-10); overflow: hidden; }
+    .clients-label { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 3px; color: var(--white-50); text-transform: uppercase; margin-bottom: 28px; }
+    .clients-track-wrap { overflow: hidden; position: relative; }
+    .clients-track-wrap::before, .clients-track-wrap::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2;
+    }
+    .clients-track-wrap::before { right: 0; background: linear-gradient(to left, var(--card-bg), transparent); }
+    .clients-track-wrap::after { left: 0; background: linear-gradient(to right, var(--card-bg), transparent); }
+    .clients-track {
+      display: flex; align-items: center; gap: 48px;
+      width: max-content; animation: scroll-logos 28s linear infinite;
+    }
+    .clients-track:hover { animation-play-state: paused; }
+    @keyframes scroll-logos { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .clients-track img { height: 38px; width: auto; object-fit: contain; opacity: 0.55; filter: grayscale(1); transition: all 0.3s; }
+    .clients-track img:hover { opacity: 1; filter: grayscale(0); transform: scale(1.08); }
   </style>
 </head>
 <body>
@@ -603,6 +621,37 @@
     </div>
   </div>
 </div>
+
+
+<!-- ── CLIENTS ── -->
+<section id="clients">
+  <div class="clients-label">موثوق من قِبَل كبار العلامات التجارية</div>
+  <div class="clients-track-wrap">
+    <div class="clients-track">
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/aqarat.png" alt="عقارات" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/imc-150x150.png" alt="IMC" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/oteck.png" alt="أوتك" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/makyon.png" alt="ماكيون" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/anan-eskan.png" alt="أنان إسكان" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/rafal.png" alt="رافال" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/al-owla.png" alt="الأولى" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/toyota.png" alt="تويوتا" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/al-oyonypng.png" alt="العيون" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/bn-zooma.png" alt="بن زومة" />
+      <!-- نسخة ثانية للـ loop -->
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/aqarat.png" alt="عقارات" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/imc-150x150.png" alt="IMC" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/oteck.png" alt="أوتك" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/makyon.png" alt="ماكيون" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/anan-eskan.png" alt="أنان إسكان" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/rafal.png" alt="رافال" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/al-owla.png" alt="الأولى" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/toyota.png" alt="تويوتا" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/al-oyonypng.png" alt="العيون" />
+      <img src="https://beesmotion.com/wp-content/uploads/2025/05/bn-zooma.png" alt="بن زومة" />
+    </div>
+  </div>
+</section>
 
 <!-- ── PACKAGES ── -->
 <section id="packages">
