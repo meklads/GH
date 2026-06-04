@@ -3572,6 +3572,16 @@ img { max-width: 100%; display: block; }
     </div>
   </div>
 
+<script>
+(function(){
+  var track = document.querySelector('.zl-track');
+  if(!track) return;
+  var clone = track.innerHTML;
+  track.innerHTML = clone + clone;
+  var total = track.scrollWidth / 2;
+  track.style.width = 'max-content';
+})();
+</script>
 </section>
 
 <!-- ===== PORTFOLIO: PREVIOUS WORKS ===== -->
