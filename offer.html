@@ -322,7 +322,7 @@
     /* ── SHOWREEL ── */
     #showreel { padding: 60px 0; background: var(--section-alt); }
     .video-wrapper { border-radius: var(--radius); overflow: hidden; aspect-ratio: 16/9; max-width: 800px; margin: 0 auto; }
-    .video-wrapper iframe { width: 100%; height: 100%; border: none; }
+    .video-wrapper iframe, .video-wrapper video { width: 100%; height: 100%; border: none; display: block; }
     .showreel-label { text-align: center; margin-bottom: 30px; }
 
     /* ── PROCESS ── */
@@ -776,7 +776,9 @@
       <div class="tag" style="justify-content:center">▶️ شاهد النظام في العمل</div>
     </div>
     <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/qhmdOad_0Dw?autoplay=1&mute=1&loop=1&playlist=qhmdOad_0Dw&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen title="عرض جرافيكس هاوس"></iframe>
+      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover">
+        <source src="https://3dgraphicshouse.com/assets/videos/GH-Marketing-Media-Production.mp4" type="video/mp4" />
+      </video>
     </div>
   </div>
 </section>
