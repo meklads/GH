@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
+    /* ── DARK THEME (default) ── */
     :root {
       --gold: #C9A84C;
       --gold-light: #E8C97A;
@@ -31,11 +32,66 @@
       --white-10: rgba(255,255,255,0.1);
       --radius: 16px;
       --radius-sm: 10px;
+      --body-bg: #0A0A0A;
+      --nav-bg: rgba(10,10,10,0.95);
+      --card-bg: #1A1A1A;
+      --card-bg2: #222222;
+      --section-alt: #111111;
+      --input-bg: #222222;
+      --text: #FFFFFF;
+      --text-muted: rgba(255,255,255,0.8);
+      --border: rgba(255,255,255,0.1);
+      --border2: rgba(255,255,255,0.2);
+      --shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    /* ── LIGHT THEME ── */
+    [data-theme="light"] {
+      --gold: #B8860B;
+      --gold-light: #D4A017;
+      --gold-dark: #8B6508;
+      --black: #1A1A2E;
+      --dark: #F5F5F0;
+      --dark2: #FFFFFF;
+      --dark3: #F0EFE8;
+      --white: #1A1A2E;
+      --white-80: rgba(26,26,46,0.75);
+      --white-50: rgba(26,26,46,0.5);
+      --white-20: rgba(26,26,46,0.15);
+      --white-10: rgba(26,26,46,0.08);
+      --body-bg: #F7F6F1;
+      --nav-bg: rgba(255,255,255,0.97);
+      --card-bg: #FFFFFF;
+      --card-bg2: #F8F7F2;
+      --section-alt: #EEEEE8;
+      --input-bg: #F8F7F2;
+      --text: #1A1A2E;
+      --text-muted: rgba(26,26,46,0.75);
+      --border: rgba(26,26,46,0.08);
+      --border2: rgba(26,26,46,0.15);
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Tajawal', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; line-height: 1.6; }
+    body { font-family: 'Tajawal', sans-serif; background: var(--body-bg); color: var(--text); overflow-x: hidden; line-height: 1.6; transition: background 0.3s, color 0.3s; }
+
+    /* ── THEME TOGGLE ── */
+    .theme-toggle {
+      display: flex; align-items: center;
+      background: var(--white-10); border-radius: 100px;
+      padding: 3px; border: 1px solid var(--white-20);
+    }
+    .theme-btn {
+      display: flex; align-items: center; gap: 5px;
+      padding: 5px 12px; border-radius: 100px; border: none;
+      font-family: 'Tajawal', sans-serif; font-size: 12px; font-weight: 700;
+      cursor: pointer; transition: all 0.25s; background: transparent;
+      color: var(--white-50);
+    }
+    .theme-btn.active { background: var(--gold); color: #000; }
+    [data-theme="light"] .theme-btn { color: rgba(26,26,46,0.5); }
+    [data-theme="light"] .theme-btn.active { background: var(--gold); color: #000; }
 
     /* ── ICONS (SVG inline helper) ── */
     .ic { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -83,8 +139,9 @@
 
     /* ── NAVBAR ── */
     nav {
-      padding: 14px 0; background: rgba(10,10,10,0.95);
+      padding: 14px 0; background: var(--nav-bg);
       backdrop-filter: blur(12px); border-bottom: 1px solid var(--white-10);
+      transition: background 0.3s;
     }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; }
     nav img { height: 38px; }
@@ -122,7 +179,7 @@
 
     /* ── QUICK FORM ── */
     .quick-form-card {
-      background: var(--dark2); border: 1px solid var(--white-10);
+      background: var(--card-bg); border: 1px solid var(--white-10);
       border-radius: var(--radius); padding: 28px; position: relative; overflow: hidden;
     }
     .quick-form-card::before {
@@ -135,14 +192,14 @@
     .form-row input, .form-row select,
     .form-full input, .form-full select, .form-full textarea,
     .form-grid input, .form-grid select {
-      background: var(--dark3); border: 1px solid var(--white-20);
+      background: var(--input-bg); border: 1px solid var(--white-20);
       border-radius: var(--radius-sm); padding: 12px 14px;
       color: var(--white); font-family: 'Tajawal', sans-serif; font-size: 14px;
       outline: none; transition: border-color 0.2s; width: 100%;
     }
     input::placeholder, textarea::placeholder { color: var(--white-50); }
     input:focus, select:focus, textarea:focus { border-color: var(--gold); }
-    select option { background: var(--dark3); }
+    select option { background: var(--input-bg); }
 
     .btn-form {
       width: 100%; background: var(--gold); color: var(--black);
@@ -181,7 +238,7 @@
     .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
     .pkg-card {
-      background: var(--dark2); border: 1px solid var(--white-10);
+      background: var(--card-bg); border: 1px solid var(--white-10);
       border-radius: var(--radius); padding: 30px; position: relative;
       overflow: hidden; transition: transform 0.25s;
     }
@@ -212,12 +269,12 @@
     .pkg-cta { width: 100%; text-align: center; justify-content: center; }
 
     /* ── PROBLEM ── */
-    #problem { padding: 80px 0; background: var(--dark); }
+    #problem { padding: 80px 0; background: var(--section-alt); }
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
     .problems-list { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
     .problem-item {
       display: flex; gap: 14px; align-items: flex-start;
-      background: var(--dark2); border: 1px solid var(--white-10);
+      background: var(--card-bg); border: 1px solid var(--white-10);
       border-radius: var(--radius-sm); padding: 16px;
     }
     .problem-icon {
@@ -245,7 +302,7 @@
     .solution-header p { color: var(--white-80); font-size: 17px; margin-top: 12px; }
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .svc-card {
-      background: var(--dark2); border: 1px solid var(--white-10);
+      background: var(--card-bg); border: 1px solid var(--white-10);
       border-radius: var(--radius); overflow: hidden; transition: transform 0.25s;
     }
     .svc-card:hover { transform: translateY(-4px); }
@@ -261,7 +318,7 @@
     .svc-list li .chk { color: var(--gold); font-weight: 900; }
 
     /* ── SHOWREEL ── */
-    #showreel { padding: 60px 0; background: var(--dark); }
+    #showreel { padding: 60px 0; background: var(--section-alt); }
     .video-wrapper { border-radius: var(--radius); overflow: hidden; aspect-ratio: 16/9; max-width: 800px; margin: 0 auto; }
     .video-wrapper iframe { width: 100%; height: 100%; border: none; }
     .showreel-label { text-align: center; margin-bottom: 30px; }
@@ -287,11 +344,11 @@
     .step-item p { font-size: 12px; color: var(--white-80); }
 
     /* ── TESTIMONIALS ── */
-    #testimonials { padding: 80px 0; background: var(--dark); }
+    #testimonials { padding: 80px 0; background: var(--section-alt); }
     .testi-header { text-align: center; margin-bottom: 50px; }
     .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .testi-card {
-      background: var(--dark2); border: 1px solid var(--white-10);
+      background: var(--card-bg); border: 1px solid var(--white-10);
       border-radius: var(--radius); padding: 28px; position: relative;
     }
     .testi-card::before {
@@ -316,7 +373,7 @@
     .diff-header { text-align: center; margin-bottom: 50px; }
     .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .diff-card {
-      background: var(--dark2); border: 1px solid var(--white-10);
+      background: var(--card-bg); border: 1px solid var(--white-10);
       border-radius: var(--radius); padding: 28px; display: flex; gap: 18px; align-items: flex-start;
     }
     .diff-icon {
@@ -328,11 +385,11 @@
     .diff-card p { font-size: 14px; color: var(--white-80); line-height: 1.6; }
 
     /* ── FAQ ── */
-    #faq { padding: 80px 0; background: var(--dark); }
+    #faq { padding: 80px 0; background: var(--section-alt); }
     .faq-header { text-align: center; max-width: 600px; margin: 0 auto 50px; }
     .faq-list { max-width: 750px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
     details {
-      background: var(--dark2); border: 1px solid var(--white-10);
+      background: var(--card-bg); border: 1px solid var(--white-10);
       border-radius: var(--radius-sm); overflow: hidden;
     }
     details[open] { border-color: var(--gold); }
@@ -369,7 +426,7 @@
     .contact-methods { display: flex; flex-direction: column; gap: 12px; }
     .contact-method {
       display: flex; align-items: center; gap: 12px;
-      background: var(--dark2); border: 1px solid var(--white-10);
+      background: var(--card-bg); border: 1px solid var(--white-10);
       border-radius: var(--radius-sm); padding: 14px 18px; text-decoration: none; color: var(--white);
       transition: border-color 0.2s;
     }
@@ -378,7 +435,7 @@
     .contact-method-text span { font-size: 13px; color: var(--white-80); }
 
     .contact-form {
-      background: var(--dark2); border: 1px solid var(--white-10);
+      background: var(--card-bg); border: 1px solid var(--white-10);
       border-radius: var(--radius); padding: 32px; position: relative; overflow: hidden;
     }
     .contact-form::before {
@@ -454,6 +511,11 @@
     <div class="nav-inner">
       <img src="https://3dgraphicshouse.com/assets/logo-gold.png" alt="جرافيكس هاوس" />
       <div class="nav-ctas">
+        <!-- THEME TOGGLE -->
+        <div class="theme-toggle">
+          <button class="theme-btn active" id="btn-dark" onclick="setTheme('dark')">🌙 داكن</button>
+          <button class="theme-btn" id="btn-light" onclick="setTheme('light')">☀️ فاتح</button>
+        </div>
         <a href="tel:+966502786513" class="nav-call">📞 +966 50 278 6513</a>
         <a href="https://wa.me/966502786513?text=أريد استشارة مجانية لتحليل براندي" class="nav-wa" target="_blank">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.526 5.845L.057 23.272a.75.75 0 00.92.92l5.427-1.469A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.946 9.946 0 01-5.077-1.39l-.364-.214-3.776 1.022 1.022-3.776-.214-.364A9.946 9.946 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
@@ -917,6 +979,15 @@
 </a>
 
 <script>
+  /* ── THEME TOGGLE ── */
+  function setTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    localStorage.setItem('gh_theme', t);
+    document.getElementById('btn-dark').classList.toggle('active', t === 'dark');
+    document.getElementById('btn-light').classList.toggle('active', t === 'light');
+  }
+  (function(){ setTheme(localStorage.getItem('gh_theme') || 'dark'); })();
+
   /* ── COUNTDOWN (48h) ── */
   (function(){
     const key = 'gh_deadline';
