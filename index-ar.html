@@ -3545,43 +3545,30 @@ img { max-width: 100%; display: block; }
     <div class="zl-clients-label">
       <span>Trusted By</span>
     </div>
-    <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;width:100%">
-      
-      <div class="zl-logo-item"><img src="assets/clients-logo/al-oyonypng.png" alt="العيون"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/anan-eskan.png" alt="أنان إسكان"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/toyota.png" alt="تويوتا"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/imc-150x150.png" alt="IMC"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/rafal.png" alt="رافال"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/al-owla.png" alt="الأولى"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/makyon.png" alt="ماكيون"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/bn-zooma.png" alt="بن زومة"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/aqarat.png" alt="عقارات"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/oteck.png" alt="أوتك"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/al-oyonypng.png" alt="العيون"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/anan-eskan.png" alt="أنان إسكان"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/toyota.png" alt="تويوتا"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/imc-150x150.png" alt="IMC"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/rafal.png" alt="رافال"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/al-owla.png" alt="الأولى"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/makyon.png" alt="ماكيون"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/bn-zooma.png" alt="بن زومة"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/aqarat.png" alt="عقارات"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/oteck.png" alt="أوتك"/></div>
-<div class="zl-logo-item"><img src="assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"/></div>
+    <div class="zl-track-wrap">
+      <div class="zl-track" id="zl-track">
+        <div class="zl-logo-item"><img src="assets/clients-logo/al-oyonypng.png" alt="العيون"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/anan-eskan.png" alt="أنان إسكان"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/toyota.png" alt="تويوتا"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/imc-150x150.png" alt="IMC"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/rafal.png" alt="رافال"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/al-owla.png" alt="الأولى"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/makyon.png" alt="ماكيون"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/bn-zooma.png" alt="بن زومة"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/aqarat.png" alt="عقارات"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/oteck.png" alt="أوتك"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"/></div>
+      </div>
     </div>
+    <script>
+    (function(){
+      var t=document.getElementById('zl-track');
+      if(!t)return;
+      t.innerHTML+=t.innerHTML;
+    })();
+    </script>
   </div>
 
-<script>
-(function(){
-  var track = document.querySelector('.zl-track');
-  if(!track) return;
-  var clone = track.innerHTML;
-  track.innerHTML = clone + clone;
-  var total = track.scrollWidth / 2;
-  track.style.width = 'max-content';
-})();
-</script>
 </section>
 
 <!-- ===== PORTFOLIO: PREVIOUS WORKS ===== -->
