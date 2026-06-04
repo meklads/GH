@@ -3484,29 +3484,17 @@ img { max-width: 100%; display: block; }
     right: 0;
     background: linear-gradient(to left, #F8F7F5 0%, rgba(248,247,245,0) 100%);
   }
-  /* The scrolling track — 2 identical sets for seamless -50% loop */
-  .zl-track-wrap {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-  }
-  .zl-track-wrap::before,
-  .zl-track-wrap::after {
-    content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none;
-  }
-  .zl-track-wrap::before { right: 0; background: linear-gradient(to left, #f5f4ef, transparent); }
-  .zl-track-wrap::after  { left: 0;  background: linear-gradient(to right, #f5f4ef, transparent); }
+
   .zl-track {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     width: max-content;
-    white-space: nowrap;
-    animation: zlScroll 35s linear infinite;
+    animation: marquee-ltr 30s linear infinite;
     will-change: transform;
   }
   .zl-track:hover { animation-play-state: paused; }
-  @keyframes zlScroll {
+  @keyframes marquee-ltr {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
@@ -3558,42 +3546,19 @@ img { max-width: 100%; display: block; }
         <div class="zl-logo-item"><img src="assets/clients-logo/aqarat.png" alt="عقارات"/></div>
         <div class="zl-logo-item"><img src="assets/clients-logo/oteck.png" alt="أوتك"/></div>
         <div class="zl-logo-item"><img src="assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/al-oyonypng.png" alt="العيون"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/anan-eskan.png" alt="أنان إسكان"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/toyota.png" alt="تويوتا"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/imc-150x150.png" alt="IMC"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/rafal.png" alt="رافال"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/al-owla.png" alt="الأولى"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/makyon.png" alt="ماكيون"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/bn-zooma.png" alt="بن زومة"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/aqarat.png" alt="عقارات"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/oteck.png" alt="أوتك"/></div>
+        <div class="zl-logo-item"><img src="assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"/></div>
       </div>
     </div>
-    <script>
-    (function(){
-      var track = document.getElementById('zl-track');
-      if(!track) return;
-      track.style.animation = 'none';
-      track.style.transform = 'translateX(0)';
-
-      // كرر الشعارات 4 مرات لضمان ملء الشاشة دائماً
-      var original = track.innerHTML;
-      track.innerHTML = original + original + original + original;
-
-      // انتظر الـ render لمعرفة عرض مجموعة واحدة
-      requestAnimationFrame(function(){
-        var oneSetWidth = track.scrollWidth / 4;
-        var pos = 0;
-        var speed = 0.6;
-        var paused = false;
-
-        function loop(){
-          if(!paused) {
-            pos -= speed;
-            // عندما نتحرك بمقدار مجموعة واحدة، ارجع للصفر بشكل غير مرئي
-            if(pos <= -oneSetWidth) pos += oneSetWidth;
-            track.style.transform = 'translateX(' + pos + 'px)';
-          }
-          requestAnimationFrame(loop);
-        }
-
-        track.addEventListener('mouseenter', function(){ paused = true; });
-        track.addEventListener('mouseleave', function(){ paused = false; });
-        loop();
-      });
-    })();
-    </script>
   </div>
 
 </section>
