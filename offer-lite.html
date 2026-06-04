@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نظام النمو الرقمي الذكي — جرافيكس هاوس</title>
+  <meta name="description" content="حوّل براندك إلى نظام يجلب عملاء كل يوم. باقات تبدأ من ١٢٠٠ ريال." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dark: #9A7A30;
+      --black: #0A0A0A;
+      --dark: #111111;
+      --dark2: #1A1A1A;
+      --dark3: #222222;
+      --white: #fff;
+      --w80: rgba(255,255,255,0.8);
+      --w20: rgba(255,255,255,0.2);
+      --w10: rgba(255,255,255,0.1);
+      --r: 14px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Tajawal',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.6}
+
+    .wrap{max-width:860px;margin:0 auto;padding:0 18px}
+
+    /* ── URGENCY BAR ── */
+    #ubar{
+      background:linear-gradient(90deg,#7f0000,#b71c1c,#7f0000);
+      padding:9px 16px;text-align:center;font-size:13px;font-weight:700;
+      position:sticky;top:0;z-index:999;
+      display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
+    }
+    #ubar .t{color:#FFD700;font-size:15px;font-weight:900}
+    #ubar a{background:#FFD700;color:#000;border-radius:100px;padding:3px 12px;font-size:12px;font-weight:800;text-decoration:none}
+
+    /* ── NAV ── */
+    nav{
+      background:rgba(10,10,10,0.97);border-bottom:1px solid var(--w10);
+      padding:12px 18px;display:flex;align-items:center;justify-content:space-between;
+    }
+    nav img{height:34px}
+    .nwa{
+      background:#25D366;color:#fff;border-radius:100px;
+      padding:8px 16px;font-size:13px;font-weight:700;font-family:'Tajawal',sans-serif;
+      text-decoration:none;display:flex;align-items:center;gap:6px;
+    }
+
+    /* ── HERO ── */
+    #hero{
+      padding:50px 0 40px;
+      background:radial-gradient(ellipse 90% 60% at 50% 0%,rgba(201,168,76,0.13) 0%,transparent 70%);
+      text-align:center;
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:6px;
+      background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);
+      border-radius:100px;padding:5px 14px;font-size:13px;color:var(--gold-light);
+      margin-bottom:18px;
+    }
+    h1{font-size:clamp(26px,5vw,46px);font-weight:900;line-height:1.15;margin-bottom:14px}
+    h1 em{font-style:normal;color:var(--gold)}
+    .sub{font-size:16px;color:var(--w80);max-width:580px;margin:0 auto 28px;line-height:1.7}
+    .stars-row{color:var(--gold);font-size:16px;letter-spacing:3px;margin-bottom:6px}
+    .trust{font-size:13px;color:var(--w80);margin-bottom:32px}
+
+    /* ── QUICK FORM ── */
+    .qform{
+      background:var(--dark2);border:1px solid var(--w10);border-radius:var(--r);
+      padding:28px;max-width:480px;margin:0 auto;position:relative;overflow:hidden;
+    }
+    .qform::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-dark))}
+    .qform h3{font-size:17px;font-weight:800;margin-bottom:5px}
+    .qform p{font-size:13px;color:var(--w80);margin-bottom:16px}
+    .spots{
+      display:flex;align-items:center;gap:6px;justify-content:center;
+      background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);
+      border-radius:8px;padding:7px 12px;font-size:13px;color:var(--gold-light);margin-bottom:14px;
+    }
+    .dot{color:#ef4444;animation:blink 1.4s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+    .fi{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+    .fi input,.fi select{
+      background:var(--dark3);border:1px solid var(--w20);border-radius:10px;
+      padding:12px 14px;color:var(--white);font-family:'Tajawal',sans-serif;font-size:14px;
+      outline:none;transition:border-color .2s;width:100%;
+    }
+    .fi input::placeholder{color:rgba(255,255,255,0.4)}
+    .fi input:focus,.fi select:focus{border-color:var(--gold)}
+    .fi select option{background:var(--dark3)}
+    .bsub{
+      width:100%;background:var(--gold);color:var(--black);padding:14px;
+      border-radius:10px;font-size:15px;font-weight:800;font-family:'Tajawal',sans-serif;
+      border:none;cursor:pointer;transition:all .25s;
+      display:flex;align-items:center;justify-content:center;gap:8px;
+    }
+    .bsub:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.35)}
+    .fnote{text-align:center;font-size:12px;color:rgba(255,255,255,.4);margin-top:9px}
+    .fsuccess{
+      display:none;text-align:center;padding:20px;
+      background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);
+      border-radius:10px;color:#86efac;font-weight:700;
+    }
+
+    /* ── PACKAGES ── */
+    #pkgs{padding:60px 0}
+    .sec-head{text-align:center;margin-bottom:36px}
+    .sec-head h2{font-size:clamp(22px,4vw,34px);font-weight:900}
+    .sec-head h2 span{color:var(--gold)}
+    .sec-head p{color:var(--w80);font-size:15px;margin-top:8px}
+    .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .pc{
+      background:var(--dark2);border:1px solid var(--w10);border-radius:var(--r);
+      padding:24px;position:relative;overflow:hidden;transition:transform .25s;
+    }
+    .pc:hover{transform:translateY(-3px)}
+    .pc.feat{border-color:var(--gold);background:linear-gradient(160deg,rgba(201,168,76,.08),var(--dark2))}
+    .pc.feat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light),var(--gold-dark))}
+    .pbadge{position:absolute;top:12px;left:12px;background:var(--gold);color:#000;font-size:10px;font-weight:800;padding:3px 9px;border-radius:100px}
+    .pname{font-size:18px;font-weight:800;margin-bottom:4px}
+    .pfeat{margin-top:14px;list-style:none;display:flex;flex-direction:column;gap:8px}
+    .pfeat li{font-size:13px;color:var(--w80);display:flex;align-items:flex-start;gap:7px}
+    .chk{color:var(--gold);font-weight:900;flex-shrink:0}
+    .pprice{margin:12px 0}
+    .pprice .fr{font-size:12px;color:rgba(255,255,255,.45);display:block}
+    .pprice .am{font-size:30px;font-weight:900;color:var(--gold)}
+    .pprice .pr{font-size:13px;color:var(--w80)}
+    .pprice .og{font-size:13px;color:rgba(255,255,255,.4);text-decoration:line-through;margin-right:6px}
+    .pdesc{font-size:13px;color:var(--w80);margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--w10)}
+    .pcta{
+      width:100%;margin-top:16px;padding:12px;border-radius:10px;
+      font-size:14px;font-weight:700;font-family:'Tajawal',sans-serif;
+      text-decoration:none;text-align:center;display:flex;align-items:center;justify-content:center;
+      transition:all .2s;cursor:pointer;border:none;
+    }
+    .pcta-g{background:var(--gold);color:#000}
+    .pcta-g:hover{background:var(--gold-light)}
+    .pcta-o{background:transparent;color:var(--white);border:2px solid var(--w20)}
+    .pcta-o:hover{border-color:var(--gold);color:var(--gold)}
+
+    /* ── SOCIAL PROOF ── */
+    #proof{padding:50px 0;background:var(--dark)}
+    .tgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .tc{
+      background:var(--dark2);border:1px solid var(--w10);border-radius:var(--r);
+      padding:22px;position:relative;
+    }
+    .tc::before{content:'"';position:absolute;top:12px;left:16px;font-size:50px;color:var(--gold);opacity:.15;font-family:Georgia,serif;line-height:1}
+    .tstars{color:var(--gold);font-size:15px;margin-bottom:10px;letter-spacing:2px}
+    .ttxt{font-size:13px;color:var(--w80);line-height:1.7;margin-bottom:16px}
+    .tau{display:flex;align-items:center;gap:10px}
+    .tav{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#000;flex-shrink:0}
+    .tn{font-size:13px;font-weight:700}
+    .tr{font-size:11px;color:rgba(255,255,255,.45)}
+    .tv{font-size:11px;color:#22c55e;margin-top:2px}
+
+    /* ── STATS ── */
+    #stats{padding:36px 0;border-top:1px solid var(--w10);border-bottom:1px solid var(--w10)}
+    .sgrid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .si{text-align:center;padding:0 10px;border-left:1px solid var(--w10)}
+    .si:last-child{border:none}
+    .sn{font-size:28px;font-weight:900;color:var(--gold)}
+    .sl{font-size:12px;color:var(--w80);margin-top:2px}
+
+    /* ── BOTTOM CTA ── */
+    #bcta{
+      padding:60px 0;
+      background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(201,168,76,.1),transparent 70%);
+      text-align:center;
+    }
+    #bcta h2{font-size:clamp(22px,4vw,36px);font-weight:900;margin-bottom:12px}
+    #bcta h2 span{color:var(--gold)}
+    .guar{
+      display:inline-flex;align-items:center;gap:7px;
+      background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);
+      border-radius:100px;padding:7px 16px;font-size:13px;color:#86efac;margin-bottom:24px;
+    }
+    .bform{background:var(--dark2);border:1px solid var(--w10);border-radius:var(--r);padding:28px;max-width:480px;margin:0 auto;position:relative;overflow:hidden}
+    .bform::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-dark))}
+    .urg{
+      display:flex;align-items:center;gap:7px;
+      background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);
+      border-radius:8px;padding:9px 13px;font-size:13px;color:var(--gold-light);margin-bottom:14px;
+    }
+    .bfgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+    .bfgrid input,.bffull input,.bffull select{
+      background:var(--dark3);border:1px solid var(--w20);border-radius:10px;
+      padding:11px 13px;color:var(--white);font-family:'Tajawal',sans-serif;font-size:14px;
+      outline:none;transition:border-color .2s;width:100%;
+    }
+    input::placeholder{color:rgba(255,255,255,.4)}
+    input:focus,select:focus{border-color:var(--gold)}
+    select option{background:var(--dark3)}
+    .bffull{margin-bottom:10px}
+
+    /* ── FOOTER ── */
+    footer{background:var(--dark2);border-top:1px solid var(--w10);padding:22px;text-align:center;font-size:12px;color:rgba(255,255,255,.4)}
+
+    /* ── FLOATING WA ── */
+    #fwa{
+      position:fixed;bottom:24px;left:24px;z-index:998;
+      background:#25D366;width:56px;height:56px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 4px 18px rgba(37,211,102,.45);text-decoration:none;
+      transition:transform .25s;
+    }
+    #fwa:hover{transform:scale(1.1)}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:700px){
+      .pgrid,.tgrid{grid-template-columns:1fr}
+      .sgrid{grid-template-columns:repeat(2,1fr);gap:16px}
+      .si{border:none}
+      .bfgrid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div id="ubar">
+  <span>⚡</span>
+  <span>عرض يونيو: خصم ٢٠٪ على الباقة المبتدئة — ينتهي خلال</span>
+  <span class="t" id="cd">00:00:00</span>
+  <a href="#bcta">احجز الآن</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <img src="https://3dgraphicshouse.com/assets/logo-gold.png" alt="جرافيكس هاوس" />
+  <a href="https://wa.me/966502786513?text=أريد استشارة مجانية" class="nwa" target="_blank">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.526 5.845L.057 23.272a.75.75 0 00.92.92l5.427-1.469A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.946 9.946 0 01-5.077-1.39l-.364-.214-3.776 1.022 1.022-3.776-.214-.364A9.946 9.946 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    واتساب
+  </a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="badge">✨ نظام النمو الرقمي الذكي</div>
+    <h1>حوّل براندك إلى<br/><em>نظام يجلب عملاء كل يوم</em></h1>
+    <p class="sub">إدارة السوشيال ميديا + فيديو سينمائي + صفحات هبوط — نظام واحد متكامل بتكلفة أقل من موظف واحد.</p>
+    <div class="stars-row">★★★★★</div>
+    <div class="trust">٤.٩ من ٤٢+ تقييم · +١٥ براند في السعودية والخليج</div>
+
+    <div class="qform">
+      <div class="spots">
+        <span class="dot">●</span>
+        متبقي <strong id="sp">٣</strong> استشارات مجانية هذا الأسبوع
+      </div>
+      <h3>احجز استشارتك المجانية</h3>
+      <p>٣٠ دقيقة — بدون أي التزام</p>
+      <form id="hf" onsubmit="sub(event,'h')">
+        <div class="fi">
+          <input type="text" placeholder="اسمك الكريم" required />
+          <input type="tel" placeholder="رقم الجوال (واتساب)" required />
+          <select required>
+            <option value="" disabled selected>نشاطك التجاري</option>
+            <option>مقهى / مطعم</option><option>عيادة تجميلية</option>
+            <option>عطور ومستحضرات تجميل</option><option>عقارات</option>
+            <option>متجر إلكتروني</option><option>أخرى</option>
+          </select>
+          <button type="submit" class="bsub">🚀 أبدأ رحلة النمو الآن</button>
+        </div>
+      </form>
+      <div class="fsuccess" id="hs">✅<br/>تم الاستلام! سنتواصل معك خلال ساعة 🎉</div>
+      <p class="fnote">✓ لا التزامات · لا كروت ائتمان · رد خلال ساعة</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="wrap">
+    <div class="sgrid">
+      <div class="si"><div class="sn">+١٨٥٪</div><div class="sl">نمو التفاعل</div></div>
+      <div class="si"><div class="sn">+١٥</div><div class="sl">براند نشط</div></div>
+      <div class="si"><div class="sn">٤٨+</div><div class="sl">مادة شهرياً</div></div>
+      <div class="si"><div class="sn">٣٠ يوم</div><div class="sl">أول نتائج</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PACKAGES -->
+<section id="pkgs">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>اختر باقتك — <span>ابدأ اليوم</span></h2>
+      <p>كل باقة تعمل كنظام تسويقي متكامل. لا عقود طويلة.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pc">
+        <p class="pname">الباقة المبتدئة</p>
+        <div class="pprice">
+          <span class="fr">يبدأ من</span>
+          <span class="og">١٥٠٠</span><span class="am">١٢٠٠</span><span class="pr"> ريال/شهر</span>
+        </div>
+        <p class="pdesc">للمشاريع الناشئة في بداية رحلتها</p>
+        <ul class="pfeat">
+          <li><span class="chk">✓</span> محتوى سوشيال أسبوعي</li>
+          <li><span class="chk">✓</span> ٤–٦ فيديوهات قصيرة</li>
+          <li><span class="chk">✓</span> تصاميم احترافية</li>
+          <li><span class="chk">✓</span> تقرير أداء شهري</li>
+        </ul>
+        <a href="https://wa.me/966502786513?text=أريد الباقة المبتدئة" class="pcta pcta-o" target="_blank">ابدأ مع المبتدئة</a>
+      </div>
+
+      <div class="pc feat">
+        <span class="pbadge">🔥 الأكثر طلباً</span>
+        <p class="pname" style="margin-top:22px">باقة النمو</p>
+        <div class="pprice">
+          <span class="fr">يبدأ من</span>
+          <span class="am">٣٬٠٠٠</span><span class="pr"> ريال/شهر</span>
+        </div>
+        <p class="pdesc">للنمو المتسارع والحضور القوي</p>
+        <ul class="pfeat">
+          <li><span class="chk">✓</span> استراتيجية تسويق متكاملة</li>
+          <li><span class="chk">✓</span> ٦–١٠ فيديوهات شهرياً</li>
+          <li><span class="chk">✓</span> ١٢ تصميم شهرياً</li>
+          <li><span class="chk">✓</span> إدارة كاملة للسوشيال</li>
+          <li><span class="chk">✓</span> تقارير أسبوعية + جلسة استراتيجية</li>
+        </ul>
+        <a href="https://wa.me/966502786513?text=أريد باقة النمو" class="pcta pcta-g" target="_blank">🚀 أطلق نموك الآن</a>
+      </div>
+
+      <div class="pc">
+        <p class="pname">الباقة المتميزة</p>
+        <div class="pprice">
+          <span class="fr">يبدأ من</span>
+          <span class="am">٧٬٠٠٠</span><span class="pr"> ريال/شهر</span>
+        </div>
+        <p class="pdesc">للهيمنة على السوق بالكامل</p>
+        <ul class="pfeat">
+          <li><span class="chk">✓</span> كل شيء في باقة النمو +</li>
+          <li><span class="chk">✓</span> فيديوهات سينمائية</li>
+          <li><span class="chk">✓</span> صفحة هبوط احترافية</li>
+          <li><span class="chk">✓</span> حملة فيسبوك + جوجل</li>
+          <li><span class="chk">✓</span> مدير حساب مخصص</li>
+        </ul>
+        <a href="https://wa.me/966502786513?text=أريد الباقة المتميزة" class="pcta pcta-o" target="_blank">احجز المتميزة</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-size:13px;color:rgba(255,255,255,.5)">🛡️ ضمان الرضا — باقات شهرية قابلة للإلغاء في أي وقت</p>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section id="proof">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>ماذا يقول <span style="color:var(--gold)">عملاؤنا؟</span></h2>
+    </div>
+    <div class="tgrid">
+      <div class="tc">
+        <div class="tstars">★★★★★</div>
+        <p class="ttxt">"من أول شهر لاحظنا فرق كبير في التفاعل. النظام وفّر علينا توظيف فريق كامل."</p>
+        <div class="tau">
+          <div class="tav">م</div>
+          <div><div class="tn">محمد العتيبي</div><div class="tr">صاحب مقهى — الرياض</div><div class="tv">✅ عميل موثّق</div></div>
+        </div>
+      </div>
+      <div class="tc">
+        <div class="tstars">★★★★★</div>
+        <p class="ttxt">"صفحة الهبوط حققت أكثر من ضعف المبيعات مقارنة بأي حملة سابقة."</p>
+        <div class="tau">
+          <div class="tav">ف</div>
+          <div><div class="tn">فيصل الدوسري</div><div class="tr">مطور عقاري — الخبر</div><div class="tv">✅ عميل موثّق</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section id="bcta">
+  <div class="wrap">
+    <div class="guar">🛡️ لا عقود طويلة · قابل للإلغاء في أي وقت</div>
+    <h2>براندك يستحق <span>نظام نمو حقيقي</span></h2>
+    <p style="color:var(--w80);margin-bottom:28px;font-size:15px">لاحظ الفرق في حضورك الرقمي خلال ٣٠ يوماً فقط.</p>
+    <div class="bform">
+      <div class="urg">⚡ متبقي استشارتان فقط هذا الأسبوع</div>
+      <form id="mf" onsubmit="sub(event,'m')">
+        <div class="bfgrid">
+          <input type="text" placeholder="الاسم الكريم" required />
+          <input type="tel" placeholder="رقم الجوال" required />
+        </div>
+        <div class="bffull">
+          <select required>
+            <option value="" disabled selected>نشاطك التجاري</option>
+            <option>مقهى / مطعم</option><option>عيادة تجميلية</option>
+            <option>عطور ومستحضرات تجميل</option><option>عقارات</option>
+            <option>متجر إلكتروني</option><option>أخرى</option>
+          </select>
+        </div>
+        <div class="bffull">
+          <select>
+            <option value="" disabled selected>الباقة المهتم بها (اختياري)</option>
+            <option>الباقة المبتدئة — ١٢٠٠ ريال</option>
+            <option>باقة النمو — ٣٬٠٠٠ ريال</option>
+            <option>الباقة المتميزة — ٧٬٠٠٠ ريال</option>
+            <option>غير متأكد — أريد استشارة</option>
+          </select>
+        </div>
+        <button type="submit" class="bsub">🚀 احجز استشارتي المجانية الآن</button>
+      </form>
+      <div class="fsuccess" id="ms">✅<br/>تم الاستلام! سنتواصل معك خلال ٢٤ ساعة 🎉</div>
+      <p class="fnote" style="margin-top:10px">✓ لا كروت ائتمان · لا التزامات</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>© ٢٠٢٦ جرافيكس هاوس — جميع الحقوق محفوظة · <a href="tel:+966502786513" style="color:var(--gold);text-decoration:none">📞 +966 50 278 6513</a></footer>
+
+<!-- FLOATING WA -->
+<a id="fwa" href="https://wa.me/966502786513?text=أريد استشارة مجانية" target="_blank">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.526 5.845L.057 23.272a.75.75 0 00.92.92l5.427-1.469A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.946 9.946 0 01-5.077-1.39l-.364-.214-3.776 1.022 1.022-3.776-.214-.364A9.946 9.946 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script>
+(function(){
+  const k='gh_dl2';let d=localStorage.getItem(k);
+  if(!d){d=Date.now()+172800000;localStorage.setItem(k,d);}
+  function t(){
+    const diff=parseInt(d)-Date.now();
+    if(diff<=0){document.getElementById('cd').textContent='انتهى';return;}
+    const h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+    document.getElementById('cd').textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  }
+  t();setInterval(t,1000);
+})();
+
+(function(){
+  let s=localStorage.getItem('gh_sp2');
+  if(!s){s=Math.random()<.5?'٢':'٣';localStorage.setItem('gh_sp2',s);}
+  const el=document.getElementById('sp');if(el)el.textContent=s;
+})();
+
+function sub(e,t){
+  e.preventDefault();
+  const f=e.target,inputs=f.querySelectorAll('input,select');
+  const name=inputs[0].value,phone=inputs[1].value,biz=inputs[2]?inputs[2].value:'',pkg=inputs[3]?inputs[3].value:'';
+  const msg=encodeURIComponent('مرحباً، أنا '+name+'\nالنشاط: '+biz+(pkg?'\nالباقة: '+pkg:'')+'\nالجوال: '+phone);
+  window.open('https://wa.me/966502786513?text='+msg,'_blank');
+  f.style.display='none';
+  document.getElementById(t==='h'?'hs':'ms').style.display='block';
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>
