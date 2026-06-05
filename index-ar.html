@@ -3233,85 +3233,137 @@ img { max-width: 100%; display: block; }
 
 
 <!-- ===== PREMIUM PROJECT SHOWCASE ===== -->
-<section id="g10-ar" class="gh10s" dir="rtl">
-
-<div class="gh10s-gold"></div>
-
-<div style="text-align:center;padding:0 24px 0;margin-bottom:6px;position:relative;z-index:5">
+<section id="g10-ar" class="csr" dir="rtl">
+<style>
+.csr{position:relative;background:#000;overflow:hidden}
+.csr-gold{position:absolute;top:0;right:0;width:212px;height:195px;
+  background:linear-gradient(150deg,#C9A84C 20%,#7a4f0d 100%);z-index:1;pointer-events:none}
+.csr-top{text-align:center;padding:30px 24px 0;position:relative;z-index:4}
+.csr-nav{display:flex;justify-content:center;align-items:center;
+  padding:16px 24px 18px;position:relative;z-index:4}
+.csr-nums{display:flex;align-items:center}
+.csr-num{font:700 11px/1 'Inter',monospace;letter-spacing:.06em;
+  color:rgba(255,255,255,.2);background:none;border:none;
+  cursor:pointer;padding:4px 8px;transition:all .2s}
+.csr-num:hover{color:rgba(255,255,255,.55)}
+.csr-num.on{color:#C9A84C;font-size:16px}
+.csr-line{width:52px;height:1px;background:rgba(255,255,255,.14);
+  margin:0 6px;align-self:center;flex-shrink:0;display:inline-block}
+.csr-arrs{display:flex;align-items:center;margin-left:14px}
+.csr-arr{font:300 28px/1 sans-serif;color:rgba(255,255,255,.38);
+  background:none;border:none;cursor:pointer;padding:2px 8px;transition:color .2s}
+.csr-arr:hover{color:#C9A84C}
+.csr-body{display:flex;flex-direction:row;align-items:flex-end;
+  position:relative;z-index:2;padding-bottom:40px}
+.csr-txt{width:38%;flex-shrink:0;padding:0 24px 0 60px}
+.csr-svc{font:700 9px/1 'Inter',sans-serif;letter-spacing:.24em;
+  text-transform:uppercase;color:#C9A84C;margin-bottom:12px;display:block}
+.csr-nm{font:800 clamp(20px,2.5vw,44px)/1.05 'Playfair Display',Georgia,serif;
+  color:#fff;text-transform:uppercase;margin:0 0 20px}
+.csr-br{width:56px;height:56px;border-left:2px solid rgba(255,255,255,.35);
+  border-bottom:2px solid rgba(255,255,255,.35);margin-bottom:16px}
+.csr-lnk{font:700 9px/1 'Inter',sans-serif;letter-spacing:.18em;
+  text-transform:uppercase;color:#C9A84C;text-decoration:none;
+  display:inline-block;transition:opacity .2s}
+.csr-lnk:hover{opacity:.6}
+.csr-lnk-soon{opacity:.22;pointer-events:none}
+.csr-imgs{flex:1;display:flex;flex-direction:row;gap:5px;height:295px;overflow:hidden}
+.csr-main{flex:1;position:relative;overflow:hidden}
+.csr-sec{width:168px;flex-shrink:0;position:relative;overflow:hidden}
+.csr-main img,.csr-sec img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;transition:opacity .5s ease}
+.csr-foot{text-align:center;padding:14px 0 22px;position:relative;z-index:3}
+/* RTL */
+[dir=rtl] .csr-gold{right:auto;left:0;
+  background:linear-gradient(210deg,#C9A84C 20%,#7a4f0d 100%)}
+[dir=rtl] .csr-body{flex-direction:row-reverse}
+[dir=rtl] .csr-txt{padding:0 60px 0 24px}
+[dir=rtl] .csr-br{border-left:none;border-right:2px solid rgba(255,255,255,.35);
+  border-bottom:2px solid rgba(255,255,255,.35)}
+[dir=rtl] .csr-arrs{margin-left:0;margin-right:14px}
+/* Responsive */
+@media(max-width:900px){
+  .csr-body{flex-direction:column!important;align-items:stretch;padding-bottom:20px}
+  .csr-imgs{height:50vw}
+  .csr-sec{width:100px}
+  .csr-txt{width:auto;padding:18px 20px 0!important}
+}
+@media(max-width:540px){
+  .csr-nm{font-size:20px}
+  .csr-nav{flex-wrap:wrap;gap:6px}
+  .csr-arrs{margin-left:6px!important;margin-right:6px!important}
+  .csr-sec{display:none}
+  .csr-imgs{height:58vw}
+  .csr-br{width:40px;height:40px}
+}
+</style>
+<div class="csr-gold"></div>
+<div class="csr-top">
   <span style="font:700 8px/1 'Inter',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:10px">قصص النجاح</span>
-  <h2 style="font:700 clamp(20px,2.6vw,34px)/1.1 'Playfair Display',Georgia,serif;color:#fff;margin:0 0 8px">دراسات <span style="color:#C9A84C">الحالة</span></h2>
-  <p style="font:300 11px/1.65 'Inter',sans-serif;color:rgba(255,255,255,.33);max-width:480px;margin:0 auto">مشاريع حقيقية. نتائج حقيقية. كيف ساعدنا مطوري المشاريع على تعزيز المبيعات قبل بدء التنفيذ.</p>
+  <h2 style="font:700 clamp(20px,2.4vw,32px)/1.1 'Tajawal',sans-serif;color:#fff;margin:0">دراسات <span style="color:#C9A84C">الحالة</span></h2>
 </div>
-
-<div class="gh10s-nav">
-  <div class="gh10s-nums" id="gh10Numsar"></div>
-  <div class="gh10s-arrs">
-    <button class="gh10s-arr" onclick="GH10sar.prev()">&#8250;</button>
-    <button class="gh10s-arr" onclick="GH10sar.next()">&#8249;</button>
+<div class="csr-nav">
+  <div class="csr-nums" id="csrNumsar"></div>
+  <div class="csr-arrs">
+    <button class="csr-arr" onclick="CSRar.prev()">&#8250;</button>
+    <button class="csr-arr" onclick="CSRar.next()">&#8249;</button>
   </div>
 </div>
-
-<div class="gh10s-body">
-  <div class="gh10s-left">
-    <span id="gh10sSvar" class="gh10s-psvc"></span>
-    <div id="gh10sNar" class="gh10s-pname"></div>
-    <div class="gh10s-bracket"></div>
-    <a id="gh10Caar" href="#" style="font:700 9px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#C9A84C;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.6'" onmouseout="this.style.opacity='1'"></a>
+<div class="csr-body">
+  <div class="csr-txt">
+    <span id="csrSvar" class="csr-svc"></span>
+    <div  id="csrNmar" class="csr-nm"></div>
+    <div class="csr-br"></div>
+    <a id="csrLnkar" href="#" class="csr-lnk"></a>
   </div>
-  <div class="gh10s-right">
-    <div class="gh10s-img-main"><img id="gh10sMar" src="" alt="" loading="lazy"></div>
-    <div class="gh10s-img-sec"><img id="gh10sSar" src="" alt="" loading="lazy"></div>
+  <div class="csr-imgs">
+    <div class="csr-main"><img id="csrMar" src="" alt="" loading="lazy"></div>
+    <div class="csr-sec" ><img id="csrSar" src="" alt="" loading="lazy"></div>
   </div>
 </div>
-
-<div class="gh10s-foot">
-  <a href="portfolio.html" style="font:700 8px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.3)'">← عرض البورتفوليو</a>
+<div class="csr-foot">
+  <a href="portfolio.html" style="font:700 8px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.28)'">← عرض البورتفوليو</a>
 </div>
-
 <script>
 (function(){
 var P=[["01","ميثاق مكة","مجسم ذكي وتجربة تفاعلية","assets/news/makkah-charter-01.jpeg","assets/news/makkah-charter-04.jpeg","case-study-mwl-en.html"],["02","منتدى جدة","إنتاج سينمائي","assets/projects/animation/jeddah-forum.jpg","assets/projects/animation/rafal-pavilions.jpg","#"],["03","بافيليونات رافال","أنيميشن ثلاثي الأبعاد","assets/projects/animation/rafal-pavilions.jpg","assets/projects/animation/market-center.jpg","#"],["04","مركز السوق","أنيميشن ثلاثي الأبعاد","assets/projects/animation/market-center.jpg","assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg","#"],["05","الأولى — النخيل","تصوير فوتوغرافي واقعي","assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg","assets/projects/maquettes/anan-escan3.jpeg","#"],["06","أنان إسكان","مجسم معماري ذكي","assets/projects/maquettes/anan-escan3.jpeg","assets/projects/maquettes/alrajhi3.jpeg","case-study-anan-eskan-en.html"],["07","مدينة الراجحي المالية","CGI سينمائي وتفاعلي","assets/projects/maquettes/alrajhi3.jpeg","assets/news/makkah-charter-01.jpeg","case-study-alrajhi-en.html"]];
 var idx=0,tmr=null;
 function q(id){return document.getElementById(id)}
-function nums(){
-  var el=q('gh10Numsar'),h='';
+function buildNums(){
+  var el=q('csrNumsar'),h='';
   for(var i=0;i<P.length;i++){
-    if(i===3)h+='<div class="gh10s-sep"></div>';
-    h+='<button class="gh10s-n'+(i===0?' on':'')+'" onclick="GH10sar.go('+i+')">'+P[i][0]+'</button>';
+    if(i===3)h+='<span class="csr-line"></span>';
+    h+='<button class="csr-num'+(i===0?' on':'')+'" onclick="CSRar.go('+i+')">'+P[i][0]+'</button>';
   }
   el.innerHTML=h;
 }
-function render(n,fast){
+function show(n,fast){
   var p=P[n];
-  var m=q('gh10sMar'),s=q('gh10sSar');
-  if(!fast){m.style.opacity='0';s.style.opacity='0';}
+  var m=q('csrMar'),s=q('csrSar');
+  if(!fast){m.style.opacity='0';if(s)s.style.opacity='0';}
   setTimeout(function(){
-    q('gh10sNar').textContent=p[1];
-    q('gh10sSvar').textContent=p[2];
+    q('csrNmar').textContent=p[1];
+    q('csrSvar').textContent=p[2];
     m.src=p[3];m.alt=p[1];
-    s.src=p[4];s.alt=p[1];
+    if(s){s.src=p[4];s.alt=p[1];}
     var soon=p[5]==='#';
-    var ca=q('gh10Caar');
-    ca.href=soon?'#':p[5];
-    ca.textContent=soon?"قريباً":"← اقرأ القصة";
-    ca.style.opacity=soon?'0.28':'1';
-    ca.style.pointerEvents=soon?'none':'auto';
+    var a=q('csrLnkar');
+    a.href=soon?'#':p[5];
+    a.textContent=soon?"قريباً":"← اقرأ القصة";
+    a.className='csr-lnk'+(soon?' csr-lnk-soon':'');
     m.style.transition='opacity .5s';m.style.opacity='1';
-    s.style.transition='opacity .5s';s.style.opacity='1';
-  },fast?0:240);
-  document.querySelectorAll('#gh10Numsar .gh10s-n').forEach(function(el,i){
+    if(s){s.style.transition='opacity .5s';s.style.opacity='1';}
+  },fast?0:230);
+  document.querySelectorAll('#csrNumsar .csr-num').forEach(function(el,i){
     el.classList.toggle('on',i===n);
   });
 }
-function go(n){
-  idx=((n%P.length)+P.length)%P.length;
-  render(idx,false);
-  stop();setTimeout(start,1500);
-}
+function go(n){idx=((n%P.length)+P.length)%P.length;show(idx,false);stop();setTimeout(start,1500);}
 function start(){tmr=setInterval(function(){go(idx+1);},6000);}
 function stop(){if(tmr){clearInterval(tmr);tmr=null;}}
 function init(){
-  nums();render(0,true);start();
+  buildNums();show(0,true);start();
   var sec=document.getElementById('g10-ar');
   if(!sec)return;
   sec.addEventListener('mouseenter',stop);
@@ -3323,12 +3375,13 @@ function init(){
     if(Math.abs(d)>50){d>0?go(idx+1):go(idx-1);}
   },{passive:true});
 }
-window.GH10sar={go:go,prev:function(){go(idx-1);},next:function(){go(idx+1);}};
+window.CSRar={go:go,prev:function(){go(idx-1);},next:function(){go(idx+1);}};
 document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
 })();
 </script>
 </section>
 <!-- ===== نهاية دراسات الحالة ===== -->
+
 
 
 
