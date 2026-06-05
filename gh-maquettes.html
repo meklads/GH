@@ -279,13 +279,24 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
   transition: flex 0.6s cubic-bezier(0.25, 0.1, 0.1, 1), opacity 0.4s ease;
   min-width: 0;
 }
-.gallery-strip-item img {
+.gallery-strip-item img,
+.gallery-strip-item video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.1, 1);
   position: absolute;
   inset: 0;
+}
+.gallery-strip-item video {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.gallery-strip-item:hover video {
+  opacity: 1;
+}
+.gallery-strip-item:hover img + video {
+  opacity: 1;
 }
 .gallery-strip-item:hover {
   flex: 4;
@@ -981,6 +992,35 @@ html[dir="rtl"] .gallery-strip-label span {
 <!-- GALLERY STRIP HERO -->
 <section style="background:#0A0A0A;overflow:hidden;margin-top:-72px">
     <div class="gallery-strip reveal r1" dir="ltr">
+      <!-- 1. فيلم CGI -->
+      <div class="gallery-strip-item gallery-video" data-video="assets/videos/3D-Architectural-visualisation.mp4">
+        <img src="assets/projects/rendering/c3.jpg" alt="فيلم CGI">
+        <video preload="none" muted loop playsinline poster="assets/projects/rendering/c3.jpg"></video>
+        <div class="gallery-strip-overlay"></div>
+        <div class="gallery-strip-label">
+          <span>🎬 فيلم CGI</span>
+          <h4>إظهار معماري سينمائي — ثلاثي الأبعاد</h4>
+        </div>
+      </div>
+      <!-- 2. إظهار معماري -->
+      <div class="gallery-strip-item">
+        <img src="assets/projects/rendering/c2.jpg" alt="إظهار معماري">
+        <div class="gallery-strip-overlay"></div>
+        <div class="gallery-strip-label">
+          <span>إظهار معماري</span>
+          <h4>ريندر احترافي — جودة سينمائية</h4>
+        </div>
+      </div>
+      <!-- 3. مجسم ذكي -->
+      <div class="gallery-strip-item">
+        <img src="assets/news/makkah-charter-04.jpeg" alt="مجسم ذكي">
+        <div class="gallery-strip-overlay"></div>
+        <div class="gallery-strip-label">
+          <span>مجسم ذكي</span>
+          <h4>مجسم تفاعلي — معرض الإنسانية</h4>
+        </div>
+      </div>
+      <!-- 4. ميثاق مكة -->
       <div class="gallery-strip-item">
         <img src="assets/news/makkah-charter-02.jpeg" alt="معرض الإنسانية">
         <div class="gallery-strip-overlay"></div>
@@ -989,6 +1029,7 @@ html[dir="rtl"] .gallery-strip-label span {
           <h4>معرض الإنسانية — رابطة العالم الإسلامي</h4>
         </div>
       </div>
+      <!-- 5. الراجحي -->
       <div class="gallery-strip-item">
         <img src="assets/projects/rendering/alrajhi3.jpeg" alt="مشروع الراجحي">
         <div class="gallery-strip-overlay"></div>
@@ -997,6 +1038,7 @@ html[dir="rtl"] .gallery-strip-label span {
           <h4>مشروع الراجحي — الرياض</h4>
         </div>
       </div>
+      <!-- 6. عنان إسكان -->
       <div class="gallery-strip-item">
         <img src="assets/projects/maquettes/anan-escan3.jpeg" alt="عنان إسكان">
         <div class="gallery-strip-overlay"></div>
@@ -1630,6 +1672,32 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
 });
 
 // Lightbox
+// ===== GALLERY VIDEO HOVER =====
+document.querySelectorAll('.gallery-video').forEach(function(item){
+  var video = item.querySelector('video');
+  if(!video) return;
+
+  // Load source dynamically
+  var src = item.getAttribute('data-video');
+  if(src) {
+    var source = document.createElement('source');
+    source.setAttribute('src', src);
+    source.setAttribute('type', 'video/mp4');
+    video.appendChild(source);
+  }
+
+  item.addEventListener('mouseenter', function(){
+    video.setAttribute('preload', 'auto');
+    video.currentTime = 0;
+    video.play().catch(function(){});
+  });
+
+  item.addEventListener('mouseleave', function(){
+    video.pause();
+    video.removeAttribute('poster');
+  });
+});
+
 function openLightbox(el){
   var img=el.querySelector('img');
   document.getElementById('lightbox-img').src=img.src;
