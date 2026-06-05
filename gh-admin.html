@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel — Graphics House</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{gold:"#C9A84C"},borderRadius:{DEFAULT:"0px"}}}}</script>
+<style>
+:root {
+  --gold: #C7A150; --gold-light: #D9B860; --gold-dark: #A8883A;
+  --text-primary: #1A1A1A; --text-secondary: rgba(26,26,26,0.65);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Tajawal', 'Inter', sans-serif;
+  background: #FAFAF8; color: var(--text-primary);
+  overflow-x: hidden; -webkit-font-smoothing: antialiased;
+}
+.login-screen {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  background: #0A0A0A;
+}
+.login-box {
+  background: #1A1A1A; padding: 48px; border: 1px solid rgba(201,168,76,0.15);
+  max-width: 400px; width: 100%; text-align: center;
+}
+.login-box img { height: 64px; margin: 0 auto 24px; }
+.login-box h2 { color: #FAFAF8; font-size: 22px; font-weight: 500; margin-bottom: 8px; }
+.login-box p { color: rgba(255,255,255,0.4); font-size: 13px; margin-bottom: 24px; }
+.login-box input {
+  width: 100%; padding: 14px 16px; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1); color: #FAFAF8;
+  font-size: 14px; font-family: 'Tajawal', sans-serif; outline: none; margin-bottom: 16px;
+  text-align: center;
+}
+.login-box input:focus { border-color: var(--gold); }
+.login-box .login-error { color: #ef4444; font-size: 13px; margin-bottom: 12px; display: none; }
+.login-box button {
+  width: 100%; padding: 14px; background: var(--gold); color: #1A1A1A;
+  font-size: 15px; font-weight: 700; font-family: 'Tajawal', sans-serif;
+  border: none; cursor: pointer; transition: all 0.3s;
+}
+.login-box button:hover { background: var(--gold-light); }
+.dashboard { display: none; padding: 40px 24px; max-width: 1100px; margin: 0 auto; }
+.dashboard h1 { font-size: 28px; font-weight: 500; margin-bottom: 6px; }
+.dashboard .sub { color: var(--text-secondary); font-size: 14px; margin-bottom: 32px; }
+.pages-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.page-card {
+  background: #fff; border: 1px solid rgba(26,26,26,0.06); padding: 24px;
+  transition: all 0.3s; text-decoration: none; color: inherit; display: block;
+}
+.page-card:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+.page-card .title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.page-card .title .status { font-size: 11px; font-weight: 400; color: var(--gold); margin-right: 8px; }
+.page-card .url { font-size: 12px; color: var(--text-secondary); font-family: 'Inter', monospace; direction: ltr; text-align: left; }
+.page-card .desc { font-size: 13px; color: var(--text-secondary); margin-top: 8px; line-height: 1.5; }
+.status-badge {
+  display: inline-block; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px; margin-right: 8px;
+}
+.badge-done { background: rgba(76,175,80,0.1); color: #4CAF50; }
+.badge-next { background: rgba(255,193,7,0.1); color: #FFC107; }
+.badge-soon { background: rgba(158,158,158,0.1); color: #9E9E9E; }
+.admin-section { margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(26,26,26,0.06); }
+.admin-section h2 { font-size: 18px; font-weight: 500; margin-bottom: 16px; }
+.admin-notes { background: #fff; border: 1px solid rgba(26,26,26,0.06); padding: 24px; min-height: 120px; }
+.admin-notes textarea {
+  width: 100%; min-height: 100px; border: none; outline: none;
+  font-family: 'Tajawal', sans-serif; font-size: 14px; color: var(--text-primary);
+  resize: vertical; line-height: 1.8;
+}
+.admin-notes textarea::placeholder { color: var(--text-secondary); }
+.header-bar {
+  background: #0A0A0A; border-bottom: 1px solid rgba(201,168,76,0.12);
+  padding: 12px 24px; display: none; align-items: center; justify-content: space-between;
+}
+.header-bar img { height: 40px; }
+.header-bar a { color: rgba(255,255,255,0.5); font-size: 13px; text-decoration: none; transition: color 0.3s; }
+.header-bar a:hover { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <img src="assets/logo-gold.png" alt="Graphics House">
+    <h2>Admin Panel</h2>
+    <p>دخل كلمة المرور للوصول</p>
+    <div class="login-error" id="loginError">❌ كلمة المرور غير صحيحة</div>
+    <input type="password" id="passwordInput" placeholder="كلمة المرور" onkeydown="if(event.key==='Enter')checkPassword()" autocomplete="off">
+    <button onclick="checkPassword()">دخول</button>
+  </div>
+</div>
+
+<!-- HEADER BAR -->
+<div class="header-bar" id="headerBar">
+  <a href="/" style="display:flex;align-items:center;gap:10px">
+    <img src="assets/logo-gold.png" alt="Graphics House"> <span style="font-size:11px;color:rgba(255,255,255,0.3)">Admin</span>
+  </a>
+  <div style="display:flex;gap:16px;align-items:center">
+    <a href="gh-photography.html" target="_blank">الصفحات</a>
+    <a href="/">الموقع</a>
+    <a href="#" onclick="logout()" style="color:rgba(255,255,255,0.3)">خروج</a>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+  <h1>📋 لوحة التحكم</h1>
+  <div class="sub">صفحات الهبوط — Graphics House Landing Pages</div>
+
+  <div class="pages-grid">
+
+    <a href="gh-photography.html" target="_blank" class="page-card">
+      <div class="title">
+        <span class="status-badge badge-done">✔️</span>
+        gh-photography
+        <span class="status">منشور</span>
+      </div>
+      <div class="url">gh-photography.html</div>
+      <div class="desc">التصوير والإنتاج البصري — Photography & Media Production</div>
+    </a>
+
+    <a href="#" class="page-card" style="opacity:0.6">
+      <div class="title">
+        <span class="status-badge badge-next">⏳</span>
+        gh-exhibitions
+        <span class="status">قريباً</span>
+      </div>
+      <div class="url">gh-exhibitions.html</div>
+      <div class="desc">تصميم أجنحة المعارض — Exhibition Booth Design</div>
+    </a>
+
+    <a href="#" class="page-card" style="opacity:0.6">
+      <div class="title">
+        <span class="status-badge badge-next">⏳</span>
+        gh-visualization
+        <span class="status">قريباً</span>
+      </div>
+      <div class="url">gh-visualization.html</div>
+      <div class="desc">الإظهار المعماري ثلاثي الأبعاد — 3D Visualization</div>
+    </a>
+
+    <a href="#" class="page-card" style="opacity:0.6">
+      <div class="title">
+        <span class="status-badge badge-soon">🔲</span>
+        gh-maquettes
+        <span class="status">قريباً</span>
+      </div>
+      <div class="url">gh-maquettes.html</div>
+      <div class="desc">المجسمات المعمارية الذكية — Smart Maquettes</div>
+    </a>
+
+    <a href="#" class="page-card" style="opacity:0.6">
+      <div class="title">
+        <span class="status-badge badge-soon">🔲</span>
+        gh-interactive
+        <span class="status">قريباً</span>
+      </div>
+      <div class="url">gh-interactive.html</div>
+      <div class="desc">التجارب التفاعلية ومراكز البيع — Interactive Experiences</div>
+    </a>
+
+    <a href="#" class="page-card" style="opacity:0.6">
+      <div class="title">
+        <span class="status-badge badge-soon">🔲</span>
+        gh-subscriptions
+        <span class="status">قريباً</span>
+      </div>
+      <div class="url">gh-subscriptions.html</div>
+      <div class="desc">باقات الاشتراك الشهري — Monthly Subscriptions</div>
+    </a>
+
+  </div>
+
+  <!-- NOTAS PRIVADAS -->
+  <div class="admin-section">
+    <h2>📝 ملاحظات خاصة</h2>
+    <div class="admin-notes">
+      <textarea id="adminNotes" placeholder="اكتب هنا أي ملاحظات خاصة..."></textarea>
+    </div>
+  </div>
+</div>
+
+<script>
+function checkPassword(){
+  var pw = document.getElementById('passwordInput').value;
+  if(pw === 'hghgj123'){
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+    document.getElementById('headerBar').style.display = 'flex';
+    loadNotes();
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+    document.getElementById('passwordInput').value = '';
+    document.getElementById('passwordInput').focus();
+  }
+}
+
+function logout(){
+  document.getElementById('dashboard').style.display = 'none';
+  document.getElementById('headerBar').style.display = 'none';
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('passwordInput').value = '';
+  document.getElementById('loginError').style.display = 'none';
+}
+
+// Save/load notes using localStorage
+function loadNotes(){
+  var saved = localStorage.getItem('gh_admin_notes');
+  if(saved) document.getElementById('adminNotes').value = saved;
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var ta = document.getElementById('adminNotes');
+  if(ta){
+    ta.addEventListener('input', function(){
+      localStorage.setItem('gh_admin_notes', this.value);
+    });
+  }
+});
+
+// Logout on Escape
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' && document.getElementById('dashboard').style.display === 'block'){
+    logout();
+  }
+});
+</script>
+</body>
+</html>
