@@ -359,6 +359,46 @@ html[dir="rtl"] .gallery-strip-label span {
   margin: 0;
   line-height: 1.3;
 }
+
+/* Vertical category label */
+.gallery-vert-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  padding: 16px 10px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(to top, rgba(199,161,80,0.85) 0%, rgba(199,161,80,0.3) 100%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  letter-spacing: 0.15em;
+  font-family: 'Tajawal', sans-serif;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 4px;
+}
+.gallery-strip-item:hover .gallery-vert-label {
+  opacity: 1;
+}
+.gallery-strip-item:not(:hover) .gallery-vert-label {
+  opacity: 0.6;
+}
+@media (max-width: 768px) {
+  .gallery-vert-label {
+    font-size: 11px;
+    padding: 10px 6px;
+    min-height: 80px;
+  }
+}
 @media (max-width: 768px) {
   .gallery-strip {
     height: 60vh;
@@ -992,46 +1032,51 @@ html[dir="rtl"] .gallery-strip-label span {
 <!-- GALLERY STRIP HERO -->
 <section style="background:#0A0A0A;overflow:hidden;margin-top:-72px">
     <div class="gallery-strip reveal r1" dir="ltr">
-      <!-- 1. فيلم CGI -->
+      <!-- 1. فيلم CGI + إظهار معماري -->
       <div class="gallery-strip-item gallery-video" data-video="assets/videos/3D-Architectural-visualisation.mp4">
-        <img src="assets/projects/rendering/c3.jpg" alt="فيلم CGI">
-        <video preload="none" muted loop playsinline poster="assets/projects/rendering/c3.jpg"></video>
+        <img src="assets/projects/rendering/bird.jpg" alt="فيلم CGI">
+        <video preload="none" muted loop playsinline poster="assets/projects/rendering/bird.jpg"></video>
+        <div class="gallery-vert-label">🎬 الإظهار المعماري</div>
         <div class="gallery-strip-overlay"></div>
         <div class="gallery-strip-label">
-          <span>🎬 فيلم CGI</span>
-          <h4>إظهار معماري سينمائي — ثلاثي الأبعاد</h4>
+          <span>فيلم CGI سينمائي</span>
+          <h4>إظهار معماري ثلاثي الأبعاد</h4>
         </div>
       </div>
-      <!-- 2. إظهار معماري -->
-      <div class="gallery-strip-item">
-        <img src="assets/projects/rendering/c2.jpg" alt="إظهار معماري">
-        <div class="gallery-strip-overlay"></div>
-        <div class="gallery-strip-label">
-          <span>إظهار معماري</span>
-          <h4>ريندر احترافي — جودة سينمائية</h4>
-        </div>
-      </div>
-      <!-- 3. مجسم ذكي -->
+      <!-- 2. المجسمات المعمارية -->
       <div class="gallery-strip-item">
         <img src="assets/news/makkah-charter-04.jpeg" alt="مجسم ذكي">
+        <div class="gallery-vert-label">🏛 المجسمات المعمارية</div>
         <div class="gallery-strip-overlay"></div>
         <div class="gallery-strip-label">
-          <span>مجسم ذكي</span>
-          <h4>مجسم تفاعلي — معرض الإنسانية</h4>
+          <span>مجسم تفاعلي ذكي</span>
+          <h4>مجسم معماري — معرض الإنسانية</h4>
         </div>
       </div>
-      <!-- 4. ميثاق مكة -->
+      <!-- 3. العروض التفاعلية -->
       <div class="gallery-strip-item">
-        <img src="assets/news/makkah-charter-02.jpeg" alt="معرض الإنسانية">
+        <img src="assets/projects/interactive-01.jpg" alt="عروض تفاعلية">
+        <div class="gallery-vert-label">📺 العروض التفاعلية</div>
         <div class="gallery-strip-overlay"></div>
         <div class="gallery-strip-label">
-          <span>مشروع ميثاق مكة</span>
-          <h4>معرض الإنسانية — رابطة العالم الإسلامي</h4>
+          <span>شاشات وتجارب تفاعلية</span>
+          <h4>صالات بيع ذكية — جولات افتراضية</h4>
         </div>
       </div>
-      <!-- 5. الراجحي -->
+      <!-- 4. صالات العرض والديكور -->
+      <div class="gallery-strip-item">
+        <img src="assets/news/makkah-charter-03.jpeg" alt="ديكور إعلاني">
+        <div class="gallery-vert-label">🎨 صالات العرض والديكور</div>
+        <div class="gallery-strip-overlay"></div>
+        <div class="gallery-strip-label">
+          <span>ديكور إعلاني وجاليريات</span>
+          <h4>هوية بصرية متكاملة لصالات العرض</h4>
+        </div>
+      </div>
+      <!-- 5. مشاريع سكنية -->
       <div class="gallery-strip-item">
         <img src="assets/projects/rendering/alrajhi3.jpeg" alt="مشروع الراجحي">
+        <div class="gallery-vert-label">🏗 مجسمات سكنية وتجارية</div>
         <div class="gallery-strip-overlay"></div>
         <div class="gallery-strip-label">
           <span>مجسم سكني تجاري</span>
@@ -1041,6 +1086,7 @@ html[dir="rtl"] .gallery-strip-label span {
       <!-- 6. عنان إسكان -->
       <div class="gallery-strip-item">
         <img src="assets/projects/maquettes/anan-escan3.jpeg" alt="عنان إسكان">
+        <div class="gallery-vert-label">🏠 مجسمات سكنية</div>
         <div class="gallery-strip-overlay"></div>
         <div class="gallery-strip-label">
           <span>مجسم سكني</span>
