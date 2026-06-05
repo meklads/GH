@@ -32,6 +32,22 @@ body {
 }
 ::selection { background: var(--gold); color: #FAFAF8; }
 a { text-decoration: none; color: inherit; }
+/* Body Text Defaults */
+body p, body li, body .text-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+body .text-sm {
+  font-size: 14px;
+  line-height: 1.7;
+}
+body .text-lg {
+  font-size: 18px;
+  line-height: 1.9;
+}
+
 img { max-width: 100%; display: block; }
 
 /* DARK HEADER */
@@ -169,8 +185,8 @@ html[dir="rtl"] .section-label {
 }
 .section-title .gold { color: var(--gold); }
 .section-sub {
-  font-size: 15px; font-weight: 300; color: var(--text-secondary);
-  line-height: 1.8; max-width: 600px; margin-bottom: 48px;
+  font-size: 16px; font-weight: 400; color: var(--text-secondary);
+  line-height: 1.8; max-width: 620px; margin-bottom: 48px;
 }
 
 /* GRID SECTIONS */
@@ -195,8 +211,8 @@ html[dir="rtl"] .section-label {
   background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.4);
   transform: translateY(-4px);
 }
-.feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-.feature-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; font-weight: 300; }
+.feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 400; }
 @media (max-width: 768px) { .feature-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .feature-grid { grid-template-columns: 1fr; } }
 
@@ -209,7 +225,7 @@ html[dir="rtl"] .section-label {
   background: var(--bg-white); padding: 40px 20px; text-align: center;
 }
 .stat-item .num { font-size: clamp(32px, 4vw, 48px); font-weight: 900; color: var(--gold); line-height: 1; }
-.stat-item .label { font-size: 13px; color: var(--text-secondary); margin-top: 8px; font-weight: 500; }
+.stat-item .label { font-size: 14px; color: var(--text-secondary); margin-top: 10px; font-weight: 600; }
 @media (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* PORTFOLIO GRID */
@@ -431,8 +447,8 @@ html[dir="rtl"] .gallery-strip-label span {
 }
 .diff-card:hover { border-color: rgba(201,168,76,0.2); transform: translateY(-4px); }
 .diff-card .material-symbols-outlined { font-size: 36px; color: var(--gold); margin-bottom: 16px; }
-.diff-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
-.diff-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+.diff-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.diff-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 400; }
 @media (max-width: 768px) { .diff-grid { grid-template-columns: 1fr; } }
 
 /* CTA DIVIDERS */
@@ -454,11 +470,11 @@ html[dir="rtl"] .gallery-strip-label span {
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
 .contact-info h3 { font-size: 22px; font-weight: 500; margin-bottom: 12px; }
-.contact-info p { font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
+.contact-info p { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
 .contact-info-item {
   display: flex; align-items: center; gap: 12px;
-  padding: 12px 0; border-bottom: 1px solid rgba(26,26,26,0.04);
-  font-size: 14px; color: var(--text-secondary);
+  padding: 14px 0; border-bottom: 1px solid rgba(26,26,26,0.04);
+  font-size: 16px; color: var(--text-secondary);
 }
 .contact-info-item .material-symbols-outlined { color: var(--gold); font-size: 20px; }
 .form-card { background: var(--bg-white); border: 1px solid rgba(26,26,26,0.08); padding: 40px; }
@@ -492,9 +508,9 @@ html[dir="rtl"] .gallery-strip-label span {
 @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
 .footer h4 { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.9); margin-bottom: 16px; letter-spacing: 0.05em; }
 .footer-links { display: flex; flex-direction: column; gap: 10px; }
-.footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); transition: color 0.3s; }
+.footer-links a { font-size: 14px; color: rgba(255,255,255,0.5); transition: color 0.3s; }
 .footer-links a:hover { color: var(--gold); }
-.footer-desc { font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.4); max-width: 300px; margin-top: 12px; }
+.footer-desc { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.45); max-width: 300px; margin-top: 12px; }
 .footer-social { display: flex; gap: 12px; margin-top: 20px; }
 .footer-social a { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); transition: all 0.3s; }
 .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
@@ -784,16 +800,16 @@ html[dir="rtl"] .gallery-strip-label span {
 }
 .s3-title em { color: var(--gold); font-style: normal; font-weight: 500; }
 .s3-desc {
-  font-size: clamp(15px, 1.05vw, 16px); font-weight: 300;
-  line-height: 1.9; color: #555; max-width: 500px;
+  font-size: clamp(15px, 1.05vw, 16px); font-weight: 400;
+  line-height: 1.8; color: var(--text-secondary); max-width: 520px;
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
   margin-bottom: 24px;
 }
 .s3-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
 .s3-list li {
   display: flex; align-items: flex-start; gap: 14px;
-  font-size: 15px; font-weight: 300; color: #444;
-  line-height: 1.6; font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-size: 16px; font-weight: 400; color: var(--text-secondary);
+  line-height: 1.7; font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
 }
 .s3-list-icon { width: 8px; height: 8px; min-width: 8px; background: var(--gold); border-radius: 50%; margin-top: 8px; box-shadow: 0 0 6px rgba(201,168,76,0.3); display: inline-block; }
 
@@ -1045,7 +1061,7 @@ html[dir="rtl"] .gallery-strip-label span {
       <div class="gallery-strip-item gallery-video" data-video="assets/videos/3D-Architectural-visualisation.mp4">
         <img src="assets/projects/rendering/bird.jpg" alt="فيلم CGI">
         <video preload="none" muted loop playsinline poster="assets/projects/rendering/bird.jpg"></video>
-        <div class="gallery-vert-label">أفلام سينمائية 3D<br><span class="vert-en">3D Cinema Films</span></div>
+        <div class="gallery-vert-label">افلام سينمائة ثري دي<br><span class="vert-en">3D Cinema Films</span></div>
         <div class="gallery-strip-overlay"></div>
         <div class="gallery-strip-label">
           <span>فيلم CGI سينمائي</span>
