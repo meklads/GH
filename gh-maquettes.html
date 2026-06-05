@@ -533,6 +533,184 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 /* S2 Fade Animation */
 .s2-fade { opacity: 1; }
 .s2-d2 { transition-delay: 0s; }
+.s2-d3 { transition-delay: 0s; }
+
+/* ===== S3: PROJECT SHOWCASE ===== */
+.s3 {
+  background: #FAFAF8;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  direction: rtl;
+}
+.s3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(201,168,76,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+.s3-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.s3-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.s3-image-wrap { position: relative; }
+.s3-image {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+.s3-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.1, 1);
+}
+.s3-image:hover img { transform: scale(1.04); }
+.s3-image-zoom-hint {
+  position: absolute; bottom: 16px; left: 16px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(0,0,0,0.25); backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; opacity: 0; transition: opacity 0.3s ease;
+  z-index: 5; pointer-events: none;
+}
+.s3-image:hover .s3-image-zoom-hint { opacity: 1; }
+.s3-image-corner-tl, .s3-image-corner-tr, .s3-image-corner-bl, .s3-image-corner-br {
+  position: absolute; z-index: 3; pointer-events: none;
+  width: 22px; height: 22px; opacity: 0.5; transition: all 0.4s ease;
+}
+.s3-image-corner-tl { top: 10px; left: 10px; border-top: 1.5px solid var(--gold); border-left: 1.5px solid var(--gold); }
+.s3-image-corner-tr { top: 10px; right: 10px; border-top: 1.5px solid var(--gold); border-right: 1.5px solid var(--gold); }
+.s3-image-corner-bl { bottom: 10px; left: 10px; border-bottom: 1.5px solid var(--gold); border-left: 1.5px solid var(--gold); }
+.s3-image-corner-br { bottom: 10px; right: 10px; border-bottom: 1.5px solid var(--gold); border-right: 1.5px solid var(--gold); }
+.s3-image:hover .s3-image-corner-tl, .s3-image:hover .s3-image-corner-tr, .s3-image:hover .s3-image-corner-bl, .s3-image:hover .s3-image-corner-br {
+  opacity: 0.9; width: 28px; height: 28px;
+}
+.s3-text { display: flex; flex-direction: column; justify-content: center; }
+.s3-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12px; font-weight: 500; color: var(--gold);
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+.s3-eyebrow::before {
+  content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%;
+  display: inline-block; flex-shrink: 0; animation: s2-glow-dot 2s ease-in-out infinite;
+}
+.s3-title {
+  font-size: clamp(24px, 2.4vw, 36px); font-weight: 400;
+  line-height: 1.3; color: #0A0A0A;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  letter-spacing: -0.3px; margin-bottom: 16px;
+}
+.s3-title em { color: var(--gold); font-style: normal; font-weight: 500; }
+.s3-desc {
+  font-size: clamp(15px, 1.05vw, 16px); font-weight: 300;
+  line-height: 1.9; color: #555; max-width: 500px;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  margin-bottom: 24px;
+}
+.s3-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.s3-list li {
+  display: flex; align-items: flex-start; gap: 14px;
+  font-size: 15px; font-weight: 300; color: #444;
+  line-height: 1.6; font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+.s3-list-icon { width: 8px; height: 8px; min-width: 8px; background: var(--gold); border-radius: 50%; margin-top: 8px; box-shadow: 0 0 6px rgba(201,168,76,0.3); display: inline-block; }
+
+/* Thumbnails */
+.s3-thumbs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-top: 18px;
+  direction: rtl;
+}
+.s3-thumb {
+  width: 100%; aspect-ratio: 1; border-radius: 4px; overflow: hidden;
+  cursor: pointer; border: 2px solid rgba(0,0,0,0.08);
+  transition: all 0.3s ease; background: #1A1A1A;
+}
+.s3-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.s3-thumb:hover { border-color: var(--gold); transform: translateY(-2px); }
+.s3-thumb:hover img { transform: scale(1.08); }
+.s3-thumb.active { border-color: var(--gold); box-shadow: 0 0 12px rgba(201,168,76,0.25); }
+.s3-cta { margin-top: 30px; }
+.s3-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 36px;
+  border-radius: 50px;
+  border: 2px solid var(--gold);
+  color: #0A0A0A;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  background: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.s3-cta-btn:hover {
+  background: var(--gold);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.25);
+}
+.s3-cta-arrow {
+  display: inline-flex;
+  transition: transform 0.3s ease;
+}
+.s3-cta-btn:hover .s3-cta-arrow {
+  transform: translateX(-4px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .s3-grid { grid-template-columns: 1fr; gap: 40px; }
+  .s3-image { max-width: 600px; margin: 0 auto; }
+  .s3-thumbs { grid-template-columns: repeat(6, 1fr); gap: 6px; }
+}
+@media (max-width: 768px) {
+  .s3 { padding: 60px 0; }
+  .s3-container { padding: 0 24px; }
+  .s3-grid { gap: 30px; }
+  .s3-list li { font-size: 14px; }
+  .s3-thumbs { grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 12px; }
+}
+
+/* Image Lightbox */
+#imageLightbox {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.92); z-index: 99998;
+  align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.3s ease; padding: 20px;
+  cursor: zoom-out;
+}
+#imageLightbox img {
+  max-width: 92vw; max-height: 88vh;
+  object-fit: contain; border-radius: 4px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6); display: block;
+}
 
 /* Feature Image */
 .s2-feature {
@@ -640,6 +818,10 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 @keyframes s2-play-ring {
   0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
   100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
+}
+@keyframes s2-glow-dot {
+  0%, 100% { box-shadow: 0 0 4px rgba(201,168,76,0.3); }
+  50% { box-shadow: 0 0 10px rgba(201,168,76,0.6); }
 }
 
 /* FLOATING */
@@ -751,6 +933,82 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
         <span style="direction:rtl;display:block">نبني تجارب <span style="color:#C9A84C">تسبق بناء المدن</span></span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: PROJECT SHOWCASE — MAKKAH CHARTER ===== -->
+<section class="s3" id="projects">
+  <div class="s3-container">
+
+    <!-- Section Heading — Client Quote -->
+    <div style="text-align:center;margin-bottom:48px;padding:48px 40px;background:#000;position:relative;overflow:hidden;width:100vw;margin-left:calc(-50vw + 50%);margin-right:calc(-50vw + 50%)">
+      <div style="position:absolute;top:12px;right:40px;font-size:96px;font-family:'Playfair Display',Georgia,serif;color:rgba(201,168,76,.1);line-height:1;pointer-events:none">"</div>
+      <div style="max-width:720px;margin:0 auto;position:relative;z-index:1">
+        <p style="font-family:'Tajawal',sans-serif;font-size:clamp(17px,2vw,22px);color:rgba(255,255,255,.85);line-height:1.9;font-style:normal;font-weight:500;margin-bottom:24px">"قدّمت جرافيكس هاوس تجربة عالمية المستوى تعكس المكانة الرفيعة لرابطة العالم الإسلامي — من المجسم الذكي إلى البيئة التفاعلية المتكاملة."</p>
+        <div style="width:40px;height:1px;background:#C9A84C;margin:0 auto 16px"></div>
+        <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;font-family:'Tajawal',sans-serif">مسؤول رفيع، رابطة العالم الإسلامي</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.4);font-family:'Tajawal',sans-serif">مكة المكرمة — معرض الإنسانية</div>
+      </div>
+    </div>
+
+    <div class="s3-grid s2-fade s2-d2">
+      <!-- Text side -->
+      <div class="s3-text">
+        <div class="s3-eyebrow">مشروع ميثاق مكة</div>
+        <h2 class="s3-title">
+          معرض الإنسانية لرابطة العالم الإسلامي — بهليتون جدة<br>
+          <span style="color:#C9A84C">تجربة تفاعلية متكاملة من التصميم إلى التنفيذ</span>
+        </h2>
+        <p class="s3-desc">
+          قمنا بتصميم وتنفيذ الهوية البصرية والتجربة التفاعلية الكاملة لمقر رابطة العالم الإسلامي
+          في مكة المكرمة، بدءاً من تصميم الديكور الداخلي وتنفيذه، وصولاً إلى أحدث أنظمة
+          التجارب التفاعلية الذكية والبرمجيات المخصصة.
+        </p>
+        <ul class="s3-list">
+          <li><span class="s3-list-icon"></span><span>تصميم وتنفيذ الديكور الداخلي للمقر بالكامل</span></li>
+          <li><span class="s3-list-icon"></span><span>إنتاج مجسمات تفاعلية ذكية مع برنامج تشغيلي يعرض على شاشات تفاعلية</span></li>
+          <li><span class="s3-list-icon"></span><span>برمجيات تفاعلية لأخبار الرابطة حول العالم</span></li>
+          <li><span class="s3-list-icon"></span><span>برنامج تصوير تذكاري على شاشة تفاعلية</span></li>
+        </ul>
+        <div class="s3-cta s2-fade s2-d3">
+          <a href="contact-us.html" class="s3-cta-btn">
+            مزيد من مشاريع
+            <span class="s3-cta-arrow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+      <!-- Image side -->
+      <div class="s3-image-wrap">
+        <div class="s3-image" id="s3MainImage" onclick="openImageLightbox()" style="cursor:pointer">
+          <img id="s3MainImg" src="assets/news/makkah-charter-01.jpeg" alt="مشروع ميثاق مكة — رابطة العالم الإسلامي">
+          <div class="s3-image-corner-tl"></div>
+          <div class="s3-image-corner-br"></div>
+          <div class="s3-image-corner-tr"></div>
+          <div class="s3-image-corner-bl"></div>
+          <div class="s3-image-zoom-hint">
+            <span class="material-symbols-outlined">zoom_in</span>
+          </div>
+        </div>
+        <!-- Thumbnails -->
+        <div class="s3-thumbs" id="s3Thumbs">
+          <div class="s3-thumb active" onclick="swapImage('assets/news/makkah-charter-01.jpeg', this)"><img src="assets/news/makkah-charter-01.jpeg" alt=""></div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-02.jpeg', this)"><img src="assets/news/makkah-charter-02.jpeg" alt=""></div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-03.jpeg', this)"><img src="assets/news/makkah-charter-03.jpeg" alt=""></div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-04.jpeg', this)"><img src="assets/news/makkah-charter-04.jpeg" alt=""></div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-05.jpeg', this)"><img src="assets/news/makkah-charter-05.jpeg" alt=""></div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-06.jpeg', this)"><img src="assets/news/makkah-charter-06.jpeg" alt=""></div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-07.jpeg', this)"><img src="assets/news/makkah-charter-07.jpeg" alt=""></div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-08.jpeg', this)"><img src="assets/news/makkah-charter-08.jpeg" alt=""></div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-09.jpeg', this)"><img src="assets/news/makkah-charter-09.jpeg" alt=""></div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-10.jpeg', this)"><img src="assets/news/makkah-charter-10.jpeg" alt=""></div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-11.jpeg', this)"><img src="assets/news/makkah-charter-11.jpeg" alt=""></div>
+          <div class="s3-thumb" onclick="swapImage('assets/news/makkah-charter-12.jpeg', this)"><img src="assets/news/makkah-charter-12.jpeg" alt=""></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1062,6 +1320,11 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
   </div>
 </footer>
 
+<!-- IMAGE LIGHTBOX -->
+<div id="imageLightbox" onclick="closeImageLightbox(event)" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:99998;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease;padding:20px">
+  <img id="imageLightboxImg" src="" alt="" style="max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.6);display:block">
+</div>
+
 <!-- VIDEO MODAL -->
 <div class="video-modal" id="videoModal">
   <button class="vm-close" onclick="closeVideo()">✕</button>
@@ -1116,6 +1379,37 @@ function closeLightbox(){
 }
 document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+
+// ===== IMAGE LIGHTBOX (for s3 section) =====
+function swapImage(src, thumbEl){
+  document.getElementById('s3MainImg').setAttribute('src', src);
+  document.querySelectorAll('.s3-thumb').forEach(function(t){t.classList.remove('active')});
+  thumbEl.classList.add('active');
+}
+function openImageLightbox(){
+  var img = document.getElementById('s3MainImg');
+  var modal = document.getElementById('imageLightbox');
+  var modalImg = document.getElementById('imageLightboxImg');
+  modalImg.src = img.src;
+  modal.style.display = 'flex';
+  setTimeout(function(){modal.style.opacity='1'}, 10);
+  document.body.style.overflow = 'hidden';
+}
+function closeImageLightbox(e){
+  if(e && e.target !== e.currentTarget) return;
+  var modal = document.getElementById('imageLightbox');
+  modal.style.opacity = '0';
+  setTimeout(function(){
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }, 350);
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var m = document.getElementById('imageLightbox');
+    if(m && m.style.display === 'flex') closeImageLightbox();
+  }
+});
 
 // ===== VIDEO MODAL =====
 function playVideo(videoId, startTime){
