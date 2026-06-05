@@ -3267,12 +3267,10 @@ img { max-width: 100%; display: block; }
   display:inline-block;transition:opacity .2s}
 .csr-lnk:hover{opacity:.6}
 .csr-lnk-soon{opacity:.22;pointer-events:none}
-.csr-imgs{flex:1;display:flex;flex-direction:row;gap:5px;height:295px;overflow:hidden}
-.csr-main{flex:1;position:relative;overflow:hidden}
-.csr-sec{width:168px;flex-shrink:0;position:relative;overflow:hidden}
-.csr-main img,.csr-sec img{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;transition:opacity .5s ease}
+/* ONE image only */
+.csr-imgs{flex:1;height:295px;overflow:hidden;position:relative}
+.csr-imgs img{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;transition:opacity 1.4s ease}
 .csr-foot{text-align:center;padding:14px 0 22px;position:relative;z-index:3}
 /* RTL */
 [dir=rtl] .csr-gold{right:auto;left:0;
@@ -3282,26 +3280,23 @@ img { max-width: 100%; display: block; }
 [dir=rtl] .csr-br{border-left:none;border-right:2px solid rgba(255,255,255,.35);
   border-bottom:2px solid rgba(255,255,255,.35)}
 [dir=rtl] .csr-arrs{margin-left:0;margin-right:14px}
-/* Responsive */
 @media(max-width:900px){
   .csr-body{flex-direction:column!important;align-items:stretch;padding-bottom:20px}
   .csr-imgs{height:50vw}
-  .csr-sec{width:100px}
   .csr-txt{width:auto;padding:18px 20px 0!important}
 }
 @media(max-width:540px){
   .csr-nm{font-size:20px}
   .csr-nav{flex-wrap:wrap;gap:6px}
   .csr-arrs{margin-left:6px!important;margin-right:6px!important}
-  .csr-sec{display:none}
   .csr-imgs{height:58vw}
   .csr-br{width:40px;height:40px}
 }
 </style>
 <div class="csr-gold"></div>
 <div class="csr-top">
-  <span style="font:700 8px/1 'Inter',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:10px">قصص النجاح</span>
-  <h2 style="font:700 clamp(20px,2.4vw,32px)/1.1 'Tajawal',sans-serif;color:#fff;margin:0">دراسات <span style="color:#C9A84C">الحالة</span></h2>
+  <span style="font:700 8px/1 'Inter',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:10px">دراسة حالة</span>
+  <h2 style="font:700 clamp(20px,2.4vw,32px)/1.1 'Tajawal',sans-serif;color:#fff;margin:0">مشاريع <span style="color:#C9A84C">مختارة</span></h2>
 </div>
 <div class="csr-nav">
   <div class="csr-nums" id="csrNumsar"></div>
@@ -3318,8 +3313,7 @@ img { max-width: 100%; display: block; }
     <a id="csrLnkar" href="#" class="csr-lnk"></a>
   </div>
   <div class="csr-imgs">
-    <div class="csr-main"><img id="csrMar" src="" alt="" loading="lazy"></div>
-    <div class="csr-sec" ><img id="csrSar" src="" alt="" loading="lazy"></div>
+    <img id="csrMar" src="" alt="" loading="lazy">
   </div>
 </div>
 <div class="csr-foot">
@@ -3327,7 +3321,7 @@ img { max-width: 100%; display: block; }
 </div>
 <script>
 (function(){
-var P=[["01","ميثاق مكة","مجسم ذكي وتجربة تفاعلية","assets/news/makkah-charter-01.jpeg","assets/news/makkah-charter-04.jpeg","case-study-mwl-en.html"],["02","منتدى جدة","إنتاج سينمائي","assets/projects/animation/jeddah-forum.jpg","assets/projects/animation/rafal-pavilions.jpg","#"],["03","بافيليونات رافال","أنيميشن ثلاثي الأبعاد","assets/projects/animation/rafal-pavilions.jpg","assets/projects/animation/market-center.jpg","#"],["04","مركز السوق","أنيميشن ثلاثي الأبعاد","assets/projects/animation/market-center.jpg","assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg","#"],["05","الأولى — النخيل","تصوير فوتوغرافي واقعي","assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg","assets/projects/maquettes/anan-escan3.jpeg","#"],["06","أنان إسكان","مجسم معماري ذكي","assets/projects/maquettes/anan-escan3.jpeg","assets/projects/maquettes/alrajhi3.jpeg","case-study-anan-eskan-en.html"],["07","مدينة الراجحي المالية","CGI سينمائي وتفاعلي","assets/projects/maquettes/alrajhi3.jpeg","assets/news/makkah-charter-01.jpeg","case-study-alrajhi-en.html"]];
+var P=[["01","ميثاق مكة","مجسم ذكي وتجربة تفاعلية","assets/news/makkah-charter-01.jpeg","case-study-mwl-en.html"],["02","منتدى جدة","إنتاج سينمائي","assets/projects/animation/jeddah-forum.jpg","#"],["03","بافيليونات رافال","أنيميشن ثلاثي الأبعاد","assets/projects/animation/rafal-pavilions.jpg","#"],["04","مركز السوق","أنيميشن ثلاثي الأبعاد","assets/projects/animation/market-center.jpg","#"],["05","الأولى — النخيل","تصوير فوتوغرافي واقعي","assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg","#"],["06","أنان إسكان","مجسم معماري ذكي","assets/projects/maquettes/anan-escan3.jpeg","case-study-anan-eskan-en.html"],["07","مدينة الراجحي المالية","CGI سينمائي وتفاعلي","assets/projects/maquettes/alrajhi3.jpeg","case-study-alrajhi-en.html"]];
 var idx=0,tmr=null;
 function q(id){return document.getElementById(id)}
 function buildNums(){
@@ -3340,30 +3334,30 @@ function buildNums(){
 }
 function show(n,fast){
   var p=P[n];
-  var m=q('csrMar'),s=q('csrSar');
-  if(!fast){m.style.opacity='0';if(s)s.style.opacity='0';}
+  var m=q('csrMar');
+  /* slow fade out */
+  if(!fast){ m.style.transition='opacity 0.6s ease'; m.style.opacity='0'; }
   setTimeout(function(){
     q('csrNmar').textContent=p[1];
     q('csrSvar').textContent=p[2];
-    m.src=p[3];m.alt=p[1];
-    if(s){s.src=p[4];s.alt=p[1];}
-    var soon=p[5]==='#';
+    m.src=p[3]; m.alt=p[1];
+    var soon=p[4]==='#';
     var a=q('csrLnkar');
-    a.href=soon?'#':p[5];
+    a.href=soon?'#':p[4];
     a.textContent=soon?"قريباً":"← اقرأ القصة";
     a.className='csr-lnk'+(soon?' csr-lnk-soon':'');
-    m.style.transition='opacity .5s';m.style.opacity='1';
-    if(s){s.style.transition='opacity .5s';s.style.opacity='1';}
-  },fast?0:230);
+    /* slow fade in */
+    m.style.transition='opacity 1.4s ease'; m.style.opacity='1';
+  },fast?0:650);
   document.querySelectorAll('#csrNumsar .csr-num').forEach(function(el,i){
     el.classList.toggle('on',i===n);
   });
 }
 function go(n){idx=((n%P.length)+P.length)%P.length;show(idx,false);stop();setTimeout(start,1500);}
-function start(){tmr=setInterval(function(){go(idx+1);},6000);}
+function start(){tmr=setInterval(function(){go(idx+1);},7000);}
 function stop(){if(tmr){clearInterval(tmr);tmr=null;}}
 function init(){
-  buildNums();show(0,true);start();
+  buildNums(); show(0,true); start();
   var sec=document.getElementById('g10-ar');
   if(!sec)return;
   sec.addEventListener('mouseenter',stop);
@@ -3381,6 +3375,7 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
 </script>
 </section>
 <!-- ===== نهاية دراسات الحالة ===== -->
+
 
 
 
