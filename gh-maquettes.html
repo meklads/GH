@@ -340,6 +340,308 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 .footer-bottom a:hover { color: var(--gold); }
 @media (max-width: 768px) { .footer-bottom { flex-direction: column; text-align: center; } }
 
+/* ===== INTERACTIVE HOTSPOTS ===== */
+.hotspot {
+  position: absolute;
+  z-index: 8;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.hotspot-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.9);
+  box-shadow: 0 0 20px rgba(201,168,76,0.4), 0 0 0 4px rgba(201,168,76,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.25,0.1,0.1,1);
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(2px);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+.hotspot-dot .material-symbols-outlined {
+  font-size: 18px;
+  color: #fff;
+}
+.hotspot:hover .hotspot-dot {
+  transform: scale(1.25);
+  background: #C9A84C;
+  box-shadow: 0 0 40px rgba(201,168,76,0.6), 0 0 0 6px rgba(201,168,76,0.2);
+}
+.hotspot-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(201,168,76,0.7);
+  animation: hotspot-pulse 2.5s ease-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+.hotspot-pulse::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(201,168,76,0.4);
+  animation: hotspot-pulse 2.5s ease-out 0.4s infinite;
+}
+.hotspot-pulse::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(201,168,76,0.2);
+  animation: hotspot-pulse 2.5s ease-out 0.8s infinite;
+}
+.hotspot-2 .hotspot-pulse { animation-delay: 0.4s; }
+.hotspot-2 .hotspot-pulse::before { animation-delay: 0.8s; }
+.hotspot-2 .hotspot-pulse::after { animation-delay: 1.2s; }
+.hotspot-3 .hotspot-pulse { animation-delay: 0.8s; }
+.hotspot-3 .hotspot-pulse::before { animation-delay: 1.2s; }
+.hotspot-3 .hotspot-pulse::after { animation-delay: 1.6s; }
+.hotspot-4 .hotspot-pulse { animation-delay: 1.2s; }
+.hotspot-4 .hotspot-pulse::before { animation-delay: 1.6s; }
+.hotspot-4 .hotspot-pulse::after { animation-delay: 2.0s; }
+@keyframes hotspot-pulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(5); opacity: 0; }
+}
+.hotspot-tooltip {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 18px 22px;
+  min-width: 240px;
+  max-width: 300px;
+  border-radius: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.25,0.1,0.1,1);
+  pointer-events: none;
+  border: 1px solid rgba(201,168,76,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.hotspot:hover .hotspot-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.hotspot-tooltip-arrow {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: rgba(10,10,10,0.92);
+  border-right: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+}
+.hotspot-below .hotspot-tooltip {
+  bottom: auto;
+  top: calc(100% + 20px);
+}
+.hotspot-below .hotspot-tooltip-arrow {
+  bottom: auto;
+  top: -6px;
+  transform: translateX(-50%) rotate(45deg);
+  border-right: none;
+  border-bottom: none;
+  border-left: 1px solid rgba(201,168,76,0.15);
+  border-top: 1px solid rgba(201,168,76,0.15);
+}
+.hotspot-right .hotspot-tooltip {
+  left: auto;
+  right: 0;
+  transform: translateY(8px);
+}
+.hotspot-right:hover .hotspot-tooltip {
+  transform: translateY(0);
+}
+.hotspot-right .hotspot-tooltip-arrow {
+  left: auto;
+  right: 20px;
+}
+.hotspot-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #C9A84C;
+  background: rgba(201,168,76,0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+}
+.hotspot-tooltip h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+  line-height: 1.3;
+  font-family: 'Tajawal','IBM Plex Sans Arabic',sans-serif;
+}
+.hotspot-tooltip p {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+  line-height: 1.6;
+  font-family: 'Tajawal','IBM Plex Sans Arabic',sans-serif;
+}
+.hotspot.active .hotspot-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.hotspot.active .hotspot-dot {
+  transform: scale(1.25);
+  background: #C9A84C;
+  box-shadow: 0 0 40px rgba(201,168,76,0.6), 0 0 0 6px rgba(201,168,76,0.2);
+}
+@media (max-width: 768px) {
+  .hotspot-dot { width: 32px; height: 32px; }
+  .hotspot-dot .material-symbols-outlined { font-size: 14px; }
+  .hotspot-tooltip { min-width: 180px; padding: 14px 16px; bottom: calc(100% + 12px); }
+  .hotspot-tooltip h4 { font-size: 12px; }
+  .hotspot-tooltip p { font-size: 11px; }
+}
+
+/* S2 Fade Animation */
+.s2-fade { opacity: 1; }
+.s2-d2 { transition-delay: 0s; }
+
+/* Feature Image */
+.s2-feature {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21/9;
+  min-height: 420px;
+  overflow: visible;
+  background: #ddd;
+}
+.s2-feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.1, 1);
+}
+.s2-feature:hover img {
+  transform: scale(1.03);
+}
+.s2-feature-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+@media (max-width: 768px) {
+  .s2-feature { aspect-ratio: 4/3; min-height: 240px; }
+}
+
+/* Video Modal */
+.video-modal {
+  position: fixed; inset: 0; z-index: 99998;
+  background: rgba(0,0,0,.92);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity .4s ease, visibility .4s ease;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.video-modal.active { opacity: 1; visibility: visible; }
+.vm-close {
+  position: absolute; top: 24px; right: 24px; z-index: 10;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,.08); border: none;
+  color: #fff; font-size: 20px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+}
+.vm-close:hover { background: rgba(255,255,255,.15); }
+.vm-inner { width: 90%; max-width: 1100px; max-height: 85vh; }
+.vm-aspect { position: relative; padding-bottom: 56.25%; background: #000; overflow: hidden; border-radius: 4px; }
+.vm-aspect iframe,
+.vm-aspect video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
+
+/* S2 Play Button (copy from main site) */
+.s2-play-btn {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  left: auto;
+  z-index: 5;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  transition: opacity 0.4s ease;
+}
+.s2-play-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.25);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.25,0.1,0.1,1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 2px solid rgba(255,255,255,0.25);
+  position: relative;
+  z-index: 6;
+}
+.s2-play-btn:hover .s2-play-icon {
+  transform: scale(1.08);
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 80px rgba(201,168,76,0.5);
+  color: #000;
+}
+.s2-play-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  height: 110px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  animation: s2-play-ring 3s ease-out infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+@keyframes s2-play-ring {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
+}
+
 /* FLOATING */
 .gh-float { position: fixed; bottom: 32px; left: 28px; z-index: 9000; display: flex; flex-direction: column; gap: 12px; }
 .gh-float-btn { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.25s; border: none; cursor: pointer; text-decoration: none; }
@@ -391,22 +693,62 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
   </div>
 </section>
 
-<!-- HERO -->
-<section class="hero-sec">
-  <div class="hero-inner">
-    <div class="hero-image-wrap">
-      <img src="assets/projects/maquettes/c2.jpg" alt="Smart Maquettes" loading="eager">
-    </div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="material-symbols-outlined" style="font-size:14px">view_in_ar</span>
-        المجسمات المعمارية الذكية
+<!-- HERO - Feature Image with Hotspots (EXACT copy from main site) -->
+<section style="padding:24px 0 0;background:#0A0A0A">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="s2-feature s2-fade" style="overflow:visible;aspect-ratio:21/9;min-height:420px">
+      <div class="s2-feature-overlay"></div>
+      <img src="assets/news/makkah-charter-04.jpeg" alt="Graphics House">
+
+      <!-- زر فيديو -->
+      <button class="s2-play-btn" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="تشغيل الفيديو">
+        <span class="s2-play-icon"><span class="material-symbols-outlined" style="font-size:36px">play_arrow</span></span>
+      </button>
+
+      <!-- الدوائر التفاعلية -->
+      <div class="hotspot hotspot-1" style="top:63%;left:65%" onclick="event.stopPropagation()">
+        <div class="hotspot-pulse"></div>
+        <div class="hotspot-dot"><span class="material-symbols-outlined">touch_app</span></div>
+        <div class="hotspot-tooltip">
+          <div class="hotspot-tooltip-arrow"></div>
+          <span class="hotspot-badge">مجسم ذكي</span>
+          <h4>مجسم تفاعلي لمشاريع الرابطة</h4>
+          <p>مجسم معماري تفاعلي ثلاثي الأبعاد يعرض مشاريع رابطة العالم الإسلامي حول العالم مع إضاءة ديناميكية.</p>
+        </div>
       </div>
-      <h1>لمسة تنهض <span class="gold">بالمشروع</span><br>كأنه على أرض الواقع</h1>
-      <p>مجسمات معمارية هجينة تجمع بين الحرفية اليدوية والإسقاط الضوئي والبيانات الحية — لأكبر المطورين والهيئات الحكومية في السعودية والخليج.</p>
-      <div class="hero-btns">
-        <a href="#booking" class="btn-p">اطلب عرض سعر <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
-        <a href="#projects" class="btn-o-light">شاهد مشاريعنا <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span></a>
+      <div class="hotspot hotspot-2 hotspot-below hotspot-right" style="top:38%;left:92%" onclick="event.stopPropagation()">
+        <div class="hotspot-pulse"></div>
+        <div class="hotspot-dot"><span class="material-symbols-outlined">devices</span></div>
+        <div class="hotspot-tooltip">
+          <div class="hotspot-tooltip-arrow"></div>
+          <span class="hotspot-badge">برنامج تفاعلي</span>
+          <h4>برنامج تشغيلي للتحكم</h4>
+          <p>برنامج يعرض تفاصيل المشاريع ويتحكم في إضاءة المجسم مع عرض المعلومات بشكل ديناميكي.</p>
+        </div>
+      </div>
+      <div class="hotspot hotspot-4 hotspot-below" style="top:33%;left:22%" onclick="event.stopPropagation()">
+        <div class="hotspot-pulse"></div>
+        <div class="hotspot-dot"><span class="material-symbols-outlined">public</span></div>
+        <div class="hotspot-tooltip">
+          <div class="hotspot-tooltip-arrow"></div>
+          <span class="hotspot-badge">برنامج أخبار</span>
+          <h4>برنامج أخبار الرابطة</h4>
+          <p>برنامج تفاعلي يعرض آخر أخبار وفعاليات ومبادرات رابطة العالم الإسلامي حول العالم.</p>
+        </div>
+      </div>
+      <div class="hotspot hotspot-3 hotspot-below" style="top:31%;left:52%" onclick="event.stopPropagation()">
+        <div class="hotspot-pulse"></div>
+        <div class="hotspot-dot"><span class="material-symbols-outlined">photo_camera</span></div>
+        <div class="hotspot-tooltip">
+          <div class="hotspot-tooltip-arrow"></div>
+          <span class="hotspot-badge">تصوير تفاعلي</span>
+          <h4>برنامج تصوير تذكاري</h4>
+          <p>شاشة تفاعلية للتصوير التذكاري مع إطارات مخصصة تسمح للزوار بالتقاط الصور ومشاركتها فوراً.</p>
+        </div>
+      </div>
+
+      <div class="s2-feature-caption" style="display:block!important;right:220px!important;left:0!important">
+        <span style="direction:rtl;display:block">نبني تجارب <span style="color:#C9A84C">تسبق بناء المدن</span></span>
       </div>
     </div>
   </div>
@@ -720,6 +1062,16 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
   </div>
 </footer>
 
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+  <button class="vm-close" onclick="closeVideo()">✕</button>
+  <div class="vm-inner">
+    <div class="vm-aspect">
+      <div id="vmPlayer"></div>
+    </div>
+  </div>
+</div>
+
 <!-- FLOATING -->
 <div class="gh-float">
   <a href="https://wa.me/966502786513" target="_blank" class="gh-float-btn gh-float-wa" aria-label="واتساب">
@@ -764,6 +1116,38 @@ function closeLightbox(){
 }
 document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+
+// ===== VIDEO MODAL =====
+function playVideo(videoId, startTime){
+  var modal=document.getElementById('videoModal');
+  var player=document.getElementById('vmPlayer');
+  if(!modal) return;
+  var src='https://www.youtube.com/embed/'+videoId+'?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1';
+  if(startTime) src+='&start='+startTime;
+  var iframe=document.createElement('iframe');
+  iframe.setAttribute('src',src);
+  iframe.setAttribute('allow','autoplay; encrypted-media; fullscreen');
+  iframe.setAttribute('allowfullscreen','');
+  iframe.style.cssText='width:100%;height:100%;border:0;';
+  player.innerHTML='';
+  player.appendChild(iframe);
+  modal.classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeVideo(){
+  var modal=document.getElementById('videoModal');
+  var player=document.getElementById('vmPlayer');
+  if(!modal) return;
+  modal.classList.remove('active');
+  player.innerHTML='';
+  document.body.style.overflow='';
+}
+document.addEventListener('click',function(e){
+  if(e.target===document.getElementById('videoModal')) closeVideo();
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeVideo();
+});
 </script>
 </body>
 </html>
