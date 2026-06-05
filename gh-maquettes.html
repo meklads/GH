@@ -366,25 +366,36 @@ html[dir="rtl"] .gallery-strip-label span {
   bottom: 0;
   left: 0;
   z-index: 4;
-  padding: 16px 10px;
+  padding: 20px 14px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 700;
   color: #fff;
-  background: linear-gradient(to top, rgba(199,161,80,0.85) 0%, rgba(199,161,80,0.3) 100%);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  letter-spacing: 0.15em;
+  background: linear-gradient(to top, rgba(199,161,80,0.9) 0%, rgba(199,161,80,0.25) 100%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  letter-spacing: 0.08em;
   font-family: 'Tajawal', sans-serif;
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
-  min-height: 120px;
+  min-height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top-right-radius: 4px;
+  border-top-right-radius: 6px;
+  gap: 4px;
+  line-height: 1.4;
+}
+.gallery-vert-label .vert-en {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-top: 4px;
 }
 .gallery-strip-item:hover .gallery-vert-label {
   opacity: 1;
@@ -394,9 +405,12 @@ html[dir="rtl"] .gallery-strip-label span {
 }
 @media (max-width: 768px) {
   .gallery-vert-label {
-    font-size: 11px;
-    padding: 10px 6px;
-    min-height: 80px;
+    font-size: 13px;
+    padding: 12px 8px;
+    min-height: 100px;
+  }
+  .gallery-vert-label .vert-en {
+    font-size: 10px;
   }
 }
 @media (max-width: 768px) {
@@ -1036,7 +1050,7 @@ html[dir="rtl"] .gallery-strip-label span {
       <div class="gallery-strip-item gallery-video" data-video="assets/videos/3D-Architectural-visualisation.mp4">
         <img src="assets/projects/rendering/bird.jpg" alt="فيلم CGI">
         <video preload="none" muted loop playsinline poster="assets/projects/rendering/bird.jpg"></video>
-        <div class="gallery-vert-label">🎬 أفلام سينمائية 3D</div>
+        <div class="gallery-vert-label">أفلام سينمائية 3D<br><span class="vert-en">3D Cinema Films</span></div>
         <div class="gallery-strip-overlay"></div>
         <div class="gallery-strip-label">
           <span>فيلم CGI سينمائي</span>
@@ -1046,7 +1060,7 @@ html[dir="rtl"] .gallery-strip-label span {
       <!-- 2. المجسمات المعمارية -->
       <div class="gallery-strip-item">
         <img src="assets/news/makkah-charter-04.jpeg" alt="مجسم ذكي">
-        <div class="gallery-vert-label">🎨 الديكور الاعلاني وشاشات العرض التفاعلية</div>
+        <div class="gallery-vert-label">الديكور الاعلاني وشاشات العرض<br><span class="vert-en">Advertising Decor &amp; Screens</span></div>
         <div class="gallery-strip-overlay"></div>
         <div class="gallery-strip-label">
           <span>مجسم تفاعلي ذكي</span>
@@ -1056,7 +1070,7 @@ html[dir="rtl"] .gallery-strip-label span {
       <!-- 3. العروض التفاعلية -->
       <div class="gallery-strip-item">
         <img src="assets/projects/interactive-01.jpg" alt="عروض تفاعلية">
-        <div class="gallery-vert-label">🖼 الاظهار المعماري</div>
+        <div class="gallery-vert-label">الاظهار المعماري<br><span class="vert-en">Architectural Visualization</span></div>
         <div class="gallery-strip-overlay"></div>
         <div class="gallery-strip-label">
           <span>شاشات وتجارب تفاعلية</span>
@@ -1066,7 +1080,7 @@ html[dir="rtl"] .gallery-strip-label span {
       <!-- 4. صالات العرض والديكور -->
       <div class="gallery-strip-item">
         <img src="assets/news/makkah-charter-03.jpeg" alt="ديكور إعلاني">
-        <div class="gallery-vert-label">📺 العروض التفاعليه</div>
+        <div class="gallery-vert-label">العروض التفاعليه<br><span class="vert-en">Interactive Experiences</span></div>
         <div class="gallery-strip-overlay"></div>
         <div class="gallery-strip-label">
           <span>ديكور إعلاني وجاليريات</span>
@@ -1076,7 +1090,7 @@ html[dir="rtl"] .gallery-strip-label span {
       <!-- 5. مشاريع سكنية -->
       <div class="gallery-strip-item">
         <img src="assets/projects/rendering/alrajhi3.jpeg" alt="مشروع الراجحي">
-        <div class="gallery-vert-label">🏗 مجسمات سكنية وتجارية</div>
+        <div class="gallery-vert-label">مجسمات سكنية وتجارية<br><span class="vert-en">Residential &amp; Commercial Models</span></div>
         <div class="gallery-strip-overlay"></div>
         <div class="gallery-strip-label">
           <span>مجسم سكني تجاري</span>
@@ -1086,7 +1100,7 @@ html[dir="rtl"] .gallery-strip-label span {
       <!-- 6. عنان إسكان -->
       <div class="gallery-strip-item">
         <img src="assets/projects/maquettes/anan-escan3.jpeg" alt="عنان إسكان">
-        <div class="gallery-vert-label">🏛 المجسمات المعماريه</div>
+        <div class="gallery-vert-label">المجسمات المعماريه<br><span class="vert-en">Architectural Maquettes</span></div>
         <div class="gallery-strip-overlay"></div>
         <div class="gallery-strip-label">
           <span>مجسم سكني</span>
