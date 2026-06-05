@@ -2787,7 +2787,7 @@ img { max-width: 100%; display: block; }
 <style>
 .csr{position:relative;background:#000;overflow:hidden}
 .csr-gold{position:absolute;top:0;right:0;width:200px;height:170px;
-  background:linear-gradient(150deg,#C9A84C 20%,#7a4f0d 100%);z-index:3;pointer-events:none}
+  background:linear-gradient(150deg,#C9A84C 20%,#7a4f0d 100%);z-index:1;pointer-events:none}
 .csr-top{text-align:center;padding:30px 24px 0;position:relative;z-index:4}
 .csr-nav{display:flex;justify-content:center;align-items:center;
   padding:16px 24px 18px;position:relative;z-index:4}
@@ -2818,13 +2818,13 @@ img { max-width: 100%; display: block; }
 .csr-lnk:hover{opacity:.6}
 .csr-lnk-soon{opacity:.22;pointer-events:none}
 /* ONE image only */
-.csr-imgs{flex:1;height:445px;overflow:hidden;position:relative}
+.csr-imgs{flex:1;height:534px;overflow:hidden;position:relative;margin-right:20px}
 .csr-imgs img{position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;transition:opacity 1.4s ease}
+  object-fit:cover;transition:opacity 2.2s ease}
 .csr-foot{text-align:center;padding:14px 0 22px;position:relative;z-index:3}
 /* RTL */
 [dir=rtl] .csr-gold{right:auto;left:0;
-  background:linear-gradient(210deg,#C9A84C 20%,#7a4f0d 100%);z-index:3}
+  background:linear-gradient(210deg,#C9A84C 20%,#7a4f0d 100%);z-index:1}
 [dir=rtl] .csr-body{flex-direction:row-reverse}
 [dir=rtl] .csr-txt{padding:0 60px 0 24px}
 [dir=rtl] .csr-br{border-left:none;border-right:2px solid rgba(255,255,255,.35);
@@ -2886,7 +2886,7 @@ function show(n,fast){
   var p=P[n];
   var m=q('csrMen');
   /* slow fade out */
-  if(!fast){ m.style.transition='opacity 0.6s ease'; m.style.opacity='0'; }
+  if(!fast){ m.style.transition='opacity 1.2s ease'; m.style.opacity='0'; }
   setTimeout(function(){
     q('csrNmen').textContent=p[1];
     q('csrSven').textContent=p[2];
@@ -2897,8 +2897,8 @@ function show(n,fast){
     a.textContent=soon?"Coming Soon":"Read The Story →";
     a.className='csr-lnk'+(soon?' csr-lnk-soon':'');
     /* slow fade in */
-    m.style.transition='opacity 1.4s ease'; m.style.opacity='1';
-  },fast?0:650);
+    m.style.transition='opacity 2.2s ease'; m.style.opacity='1';
+  },fast?0:1300);
   document.querySelectorAll('#csrNumsen .csr-num').forEach(function(el,i){
     el.classList.toggle('on',i===n);
   });
