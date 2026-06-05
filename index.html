@@ -2783,304 +2783,143 @@ img { max-width: 100%; display: block; }
 </section>
 
 <!-- ===== PREMIUM PROJECT SHOWCASE ===== -->
-<section id="g10-en" class="gh10" dir="ltr">
-
-<style id="gh10-styles">
-/* ====== GH10 Case Studies — Compact Premium ====== */
-.gh10{background:#080808;overflow:hidden;position:relative}
-.gh10-main{display:grid;grid-template-columns:42% 58%;height:660px;max-height:660px}
-/* Left panel */
-.gh10-left{display:flex;flex-direction:column;background:#080808;overflow:hidden}
-.gh10-hdr{padding:22px 36px 16px 0;padding-inline-start:0;padding-inline-end:36px;border-bottom:1px solid rgba(201,168,76,.1);flex-shrink:0;margin-inline-start:48px}
-.gh10-lbl{display:block;font:700 8px/1 'Inter',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px}
-.gh10-ttl{font:700 clamp(18px,2vw,28px)/1.15 'Playfair Display',Georgia,serif;color:#FAFAF8;margin:0 0 8px}
-.gh10-sub{font:300 11px/1.65 'Inter',sans-serif;color:rgba(255,255,255,.36);max-width:340px;margin:0 0 12px}
-.gh10-div{width:36px;height:1.5px;background:#C9A84C}
-/* body = nums column + info */
-.gh10-body{display:flex;flex:1;min-height:0;overflow:hidden}
-/* Number nav */
-.gh10-nums{width:48px;flex-shrink:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:0;border-inline-end:1px solid rgba(255,255,255,.05)}
-.gh10-num{display:flex;flex-direction:column;align-items:center;padding:7px 0;cursor:pointer;width:100%;transition:all .2s;background:none;border:none}
-.gh10-num span.t{font:700 9px/1 'Inter',monospace;letter-spacing:.06em;color:rgba(255,255,255,.18);transition:all .2s}
-.gh10-num span.d{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.1);margin-top:3px;transition:all .2s;display:block}
-.gh10-num.on span.t{color:#C9A84C;font-size:11px}
-.gh10-num.on span.d{background:#C9A84C}
-.gh10-num:hover span.t{color:rgba(255,255,255,.5)}
-/* Info area */
-.gh10-info{flex:1;padding:14px 28px 14px 16px;overflow-y:auto;display:flex;flex-direction:column;gap:0;scrollbar-width:thin;scrollbar-color:rgba(201,168,76,.15) transparent}
-.gh10-info::-webkit-scrollbar{width:2px}
-.gh10-info::-webkit-scrollbar-thumb{background:rgba(201,168,76,.2);border-radius:2px}
-/* Project header */
-.gh10-pnum{font:800 32px/1 'Playfair Display',Georgia,serif;color:rgba(201,168,76,.08);margin:0 0 1px}
-.gh10-pname{font:700 clamp(16px,1.6vw,22px)/1.2 'Playfair Display',Georgia,serif;color:#FAFAF8;margin:0 0 4px}
-.gh10-psvc{font:700 8px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px}
-/* Client block */
-.gh10-cli{display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(255,255,255,.025);border-inline-start:2px solid rgba(201,168,76,.28);margin-bottom:12px}
-.gh10-cli-logo{height:22px;width:auto;max-width:60px;object-fit:contain;filter:brightness(0) invert(1);opacity:.65;flex-shrink:0}
-.gh10-cli-box{display:flex;flex-direction:column;gap:2px}
-.gh10-cli-lbl{font:700 6px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.26)}
-.gh10-cli-en{font:600 11px/1.2 'Inter',sans-serif;color:rgba(255,255,255,.78)}
-.gh10-cli-ar{font:400 10px/1 'Tajawal',sans-serif;color:rgba(255,255,255,.38)}
-.gh10-cli-ico{width:24px;height:24px;border:1px solid rgba(201,168,76,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.gh10-cli-ico .material-symbols-outlined{font-size:12px;color:#C9A84C}
-/* Three columns */
-.gh10-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
-.gh10-clbl{font:700 6px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#C9A84C;margin-bottom:5px}
-.gh10-ctxt{font:300 9.5px/1.55 'Inter',sans-serif;color:rgba(255,255,255,.4)}
-.gh10-cdl{list-style:none;margin:0;padding:0}
-.gh10-cdl li{font:300 9.5px/1.55 'Inter',sans-serif;color:rgba(255,255,255,.4);padding-inline-start:9px;position:relative}
-.gh10-cdl li::before{content:'·';position:absolute;inset-inline-start:0;color:#C9A84C}
-/* Results */
-.gh10-res{margin-bottom:12px}
-.gh10-rlbl{font:700 6px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#C9A84C;margin-bottom:6px}
-.gh10-rlist{display:flex;gap:10px;flex-wrap:wrap}
-.gh10-ri{display:flex;align-items:flex-start;gap:4px}
-.gh10-ri .material-symbols-outlined{font-size:11px;color:#C9A84C;flex-shrink:0;margin-top:1px}
-.gh10-rtxt{font:400 9.5px/1.4 'Inter',sans-serif;color:rgba(255,255,255,.5)}
-/* CTA */
-.gh10-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:#C9A84C;color:#0A0A0A;font:700 8px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:background .25s;border:none;cursor:pointer;align-self:flex-start;margin-top:2px}
-.gh10-cta:hover{background:#D9B860}
-.gh10-cta-soon{background:rgba(201,168,76,.1);color:rgba(201,168,76,.45);pointer-events:none}
-/* Arrows */
-.gh10-arrows{display:flex;gap:8px;padding:10px 36px 12px 0;padding-inline-start:48px;flex-shrink:0;border-top:1px solid rgba(255,255,255,.04)}
-.gh10-arr{width:34px;height:34px;border:1px solid rgba(255,255,255,.14);background:none;color:rgba(255,255,255,.42);border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .25s;padding:0;line-height:1}
-.gh10-arr:hover{border-color:#C9A84C;color:#C9A84C}
-/* Right image panel */
-.gh10-right{position:relative;overflow:hidden}
-.gh10-img-wrap{position:absolute;inset:0}
-.gh10-img-wrap img{width:100%;height:100%;object-fit:cover;transition:opacity .5s ease}
-.gh10-img-grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,8,.5) 0%,rgba(8,8,8,.08) 28%,transparent 52%);pointer-events:none;z-index:1}
-/* Metadata bar */
-.gh10-meta{position:absolute;bottom:0;left:0;right:0;z-index:2;background:rgba(0,0,0,.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex}
-.gh10-mi{flex:1;padding:11px 14px;border-inline-end:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px}
-.gh10-mi:last-child{border-inline-end:none}
-.gh10-mi .material-symbols-outlined{font-size:15px;color:rgba(201,168,76,.55);flex-shrink:0}
-.gh10-mi-lbl{font:700 6px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.26);margin-bottom:3px}
-.gh10-mi-val{font:600 11px/1 'Inter',sans-serif;color:rgba(255,255,255,.78)}
-/* Bottom strip */
-.gh10-strip{background:#040404;border-top:1px solid rgba(255,255,255,.05);overflow-x:auto;scrollbar-width:none}
-.gh10-strip::-webkit-scrollbar{display:none}
-.gh10-thumbs{display:flex}
-.gh10-th{flex-shrink:0;width:calc(100% / 7);min-width:140px;position:relative;cursor:pointer;border:2px solid transparent;transition:border-color .25s;box-sizing:border-box}
-.gh10-th.on{border-color:#C9A84C}
-.gh10-th-img{width:100%;aspect-ratio:16/9;overflow:hidden;position:relative}
-.gh10-th-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.4);transition:filter .3s;display:block}
-.gh10-th:hover .gh10-th-img img{filter:brightness(.6)}
-.gh10-th.on .gh10-th-img img{filter:brightness(.72)}
-.gh10-th-num{position:absolute;top:5px;left:6px;font:700 9px/1 'Inter',monospace;color:rgba(255,255,255,.55);z-index:1}
-.gh10-th-body{padding:6px 8px;background:#060606}
-.gh10-th-nm{font:700 9px/1.3 'Inter',sans-serif;color:rgba(255,255,255,.72);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gh10-th-sv{font:400 8px/1 'Inter',sans-serif;color:rgba(255,255,255,.26);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-/* Pagination dots */
-.gh10-dots{display:flex;justify-content:center;gap:5px;padding:8px 0 12px;background:#040404}
-.gh10-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.14);cursor:pointer;transition:all .25s;border:none;padding:0}
-.gh10-dot.on{background:#C9A84C;width:20px;border-radius:3px}
-/* Responsive */
-@media(max-width:1100px){
-  .gh10-main{grid-template-columns:46% 54%;height:600px;max-height:600px}
-  .gh10-hdr{margin-inline-start:42px}
-  .gh10-info{padding:12px 22px 12px 14px}
+<section id="g10-en" class="gh10s" dir="ltr">
+<style id="gh10s">
+.gh10s{background:#000;overflow:hidden;position:relative;padding:0}
+.gh10s-nav{display:flex;align-items:center;justify-content:center;padding:24px 40px 0;position:relative;z-index:5}
+.gh10s-nums{display:flex;align-items:center;gap:0}
+.gh10s-n{font:700 11px/1 'Inter',monospace;letter-spacing:.06em;color:rgba(255,255,255,.2);background:none;border:none;cursor:pointer;padding:5px 7px;transition:all .2s}
+.gh10s-n:hover{color:rgba(255,255,255,.55)}
+.gh10s-n.on{color:#C9A84C;font-size:16px}
+.gh10s-sep{width:48px;height:1px;background:rgba(255,255,255,.12);margin:0 6px;flex-shrink:0}
+.gh10s-arrows{display:flex;gap:6px;margin-left:18px}
+.gh10s-arr{width:32px;height:32px;border:1px solid rgba(255,255,255,.16);background:none;color:rgba(255,255,255,.45);border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .22s;padding:0;line-height:1}
+.gh10s-arr:hover{border-color:#C9A84C;color:#C9A84C}
+.gh10s-body{display:grid;grid-template-columns:36% 64%;height:460px}
+.gh10s-left{display:flex;flex-direction:column;justify-content:center;padding:0 32px 0 56px;position:relative;overflow:hidden}
+.gh10s-num-bg{font:800 110px/1 'Playfair Display',Georgia,serif;color:rgba(255,255,255,.035);position:absolute;top:50%;transform:translateY(-52%);pointer-events:none;user-select:none;letter-spacing:-.02em;left:20px}
+.gh10s-svc{font:700 9px/1 'Inter',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#C9A84C;margin-bottom:14px;position:relative;z-index:1}
+.gh10s-name{font:700 clamp(22px,2.8vw,44px)/1.1 'Playfair Display',Georgia,serif;color:#fff;margin:0 0 22px;text-transform:uppercase;letter-spacing:.02em;position:relative;z-index:1}
+.gh10s-bracket{width:60px;height:60px;border-left:2px solid rgba(255,255,255,.3);border-bottom:2px solid rgba(255,255,255,.3);margin-bottom:20px;position:relative;z-index:1}
+.gh10s-cta{display:inline-flex;align-items:center;gap:8px;color:#C9A84C;font:700 9px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:opacity .2s;background:none;border:none;cursor:pointer;position:relative;z-index:1}
+.gh10s-cta:hover{opacity:.65}
+.gh10s-cta-soon{opacity:.25;pointer-events:none}
+.gh10s-right{position:relative;overflow:hidden}
+.gh10s-img{position:absolute;inset:0}
+.gh10s-img img{width:100%;height:100%;object-fit:cover;transition:opacity .55s ease}
+.gh10s-gold{position:absolute;top:0;right:0;width:72px;height:72px;background:#C9A84C;opacity:.5;z-index:2;pointer-events:none}
+.gh10s-foot{padding:18px 0 24px;text-align:center;background:#000}
+@media(max-width:900px){
+  .gh10s-body{grid-template-columns:1fr;height:auto}
+  .gh10s-right{height:52vw}
+  .gh10s-left{padding:24px 24px 24px 24px;border-top:1px solid rgba(201,168,76,.12)}
+  .gh10s-num-bg{font-size:80px}
 }
-@media(max-width:768px){
-  .gh10-main{grid-template-columns:1fr;height:auto;max-height:none}
-  .gh10-right{height:52vw;flex-shrink:0}
-  .gh10-left{flex:1}
-  .gh10-img-grad{background:linear-gradient(180deg,rgba(8,8,8,.5) 0%,transparent 40%)}
-  .gh10-hdr{margin-inline-start:42px;padding:18px 16px 12px 0}
-  .gh10-nums{width:42px}
-  .gh10-info{padding:12px 16px 12px 12px;flex:1}
-  .gh10-cols{grid-template-columns:1fr;gap:6px}
-  .gh10-arrows{padding:8px 16px 10px 0;margin-inline-start:42px}
-  .gh10-th{min-width:130px}
-  .gh10-meta{position:relative;display:grid;grid-template-columns:1fr 1fr}
-  .gh10-mi{border-inline-end:1px solid rgba(255,255,255,.07)}
+@media(max-width:540px){
+  .gh10s-nav{padding:18px 14px 0;flex-wrap:wrap;gap:8px}
+  .gh10s-arrows{margin-left:10px}
+  .gh10s-name{font-size:20px}
+  .gh10s-bracket{width:40px;height:40px}
 }
-@media(max-width:480px){
-  .gh10-ttl{font-size:18px}
-  .gh10-nums{width:36px}
-  .gh10-pnum{font-size:26px}
-  .gh10-pname{font-size:16px}
-  .gh10-th{min-width:120px}
-}
-/* RTL */
-[dir=rtl] .gh10-img-grad{background:linear-gradient(270deg,rgba(8,8,8,.5) 0%,rgba(8,8,8,.08) 28%,transparent 52%)}
-[dir=rtl] .gh10-info{padding:14px 16px 14px 28px}
-[dir=rtl] .gh10-th-num{left:auto;right:6px}
+[dir=rtl] .gh10s-left{padding:0 56px 0 32px}
+[dir=rtl] .gh10s-num-bg{left:auto;right:20px}
+[dir=rtl] .gh10s-bracket{border-left:none;border-right:2px solid rgba(255,255,255,.3);border-bottom:2px solid rgba(255,255,255,.3)}
+[dir=rtl] .gh10s-arrows{margin-left:0;margin-right:18px}
+[dir=rtl] .gh10s-gold{right:auto;left:0}
 </style>
-
-<div class="gh10-main">
-  <!-- Left panel -->
-  <div class="gh10-left">
-    <div class="gh10-hdr">
-      <span class="gh10-lbl">SUCCESS STORIES</span>
-      <h2 class="gh10-ttl">Selected <span style="color:#C9A84C">Case Studies</span></h2>
-      <p class="gh10-sub">Real projects. Real results. How we've helped GCC developers close more sales before groundbreaking.</p>
-      <div class="gh10-div"></div>
-    </div>
-    <div class="gh10-body">
-      <div class="gh10-nums" id="gh10Numsen"></div>
-      <div class="gh10-info" id="gh10Infoen"></div>
-    </div>
-    <div class="gh10-arrows">
-      <button class="gh10-arr" onclick="GH10en.prev()" aria-label="prev">&#8249;</button>
-      <button class="gh10-arr" onclick="GH10en.next()" aria-label="next">&#8250;</button>
+  <div style="text-align:center;padding:32px 24px 4px">
+    <span style="font:700 9px/1 'Inter',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:12px">SUCCESS STORIES</span>
+    <h2 style="font:700 clamp(22px,3vw,36px)/1.1 'Playfair Display',Georgia,serif;color:#fff;margin:0 0 10px">Selected <span style="color:#C9A84C">Case Studies</span></h2>
+    <p style="font:300 12px/1.7 'Inter',sans-serif;color:rgba(255,255,255,.35);max-width:500px;margin:0 auto">Real projects. Real results. How we've helped GCC developers close more sales before groundbreaking.</p>
+  </div>
+  <div class="gh10s-nav">
+    <div class="gh10s-nums" id="gh10sNumsen"></div>
+    <div class="gh10s-arrows">
+      <button class="gh10s-arr" onclick="GH10sen.prev()">&#8249;</button>
+      <button class="gh10s-arr" onclick="GH10sen.next()">&#8250;</button>
     </div>
   </div>
-  <!-- Right image panel -->
-  <div class="gh10-right">
-    <div class="gh10-img-wrap" id="gh10ImgWrapen">
-      <img id="gh10Imgen" src="" alt="" loading="lazy">
+  <div class="gh10s-body">
+    <div class="gh10s-left">
+      <span id="gh10sBgen" class="gh10s-num-bg"></span>
+      <div id="gh10sSvcen" class="gh10s-svc"></div>
+      <div id="gh10sNameen" class="gh10s-name"></div>
+      <div class="gh10s-bracket"></div>
+      <a id="gh10sCtaen" href="#" class="gh10s-cta"></a>
     </div>
-    <div class="gh10-img-grad"></div>
-    <div class="gh10-meta" id="gh10Metaen"></div>
+    <div class="gh10s-right">
+      <div class="gh10s-img"><img id="gh10sImgen" src="" alt="" loading="lazy"></div>
+      <div class="gh10s-gold"></div>
+    </div>
   </div>
-</div>
-<!-- Bottom strip -->
-<div class="gh10-strip"><div class="gh10-thumbs" id="gh10Thumbsen"></div></div>
-<div class="gh10-dots" id="gh10Dotsen"></div>
-<div style="text-align:center;padding:12px 0 20px;background:#040404">
-  <a href="portfolio-en.html" style="display:inline-flex;align-items:center;gap:8px;padding:11px 28px;border:1px solid rgba(255,255,255,.13);color:rgba(255,255,255,.45);font:700 9px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:border-color .25s,color .25s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(255,255,255,.13)';this.style.color='rgba(255,255,255,.45)'">View Full Portfolio →</a>
-</div>
+  <div class="gh10s-foot">
+    <a href="portfolio-en.html" style="font:700 9px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.32)'">View Full Portfolio →</a>
+  </div>
 <script>
 (function(){
-var GH10P=[{id:"01",name:"Makkah Charter",service:"Smart Maquette &amp; Interactive Experience",client:"Muslim World League",clientAr:"رابطة العالم الإسلامي",logo:"assets/clients-logo/رابطة العالم الاسلامي.png",challenge:"Present a mega spiritual &amp; cultural development to global stakeholders with the highest level of clarity and emotional connection.",solution:"We built a smart maquette combined with interactive technology and immersive environments to bring the vision to life.",deliverables:["Smart Architectural Maquette", "Interactive Presentation Platform", "Cinematic Video", "Virtual Reality Experience"],results:["High-impact official presentations", "Strengthened investor confidence", "Accelerated pre-sales strategy"],resIcons:["star", "groups", "trending_up"],scale:"3.2M m²",location:"Makkah, KSA",year:"2023",scope:"Masterplan Presentation",image:"assets/news/makkah-charter-01.jpeg",href:"case-study-mwl-en.html"},
-{id:"02",name:"Jeddah Forum",service:"Cinematic Production",client:"Jeddah Forum",clientAr:"منتدى جدة",logo:"",challenge:"Create a cinematic visual narrative for a landmark commercial and cultural destination in Jeddah.",solution:"Produced a full-scale cinematic CGI film capturing the scale, atmosphere, and design vision of the development.",deliverables:["Cinematic CGI Film", "Motion Graphics Package", "Color Grading &amp; Sound"],results:["Investor presentation package", "Pre-launch campaign material"],resIcons:["movie", "business"],scale:"—",location:"Jeddah, KSA",year:"2024",scope:"Cinematic Production",image:"assets/projects/animation/jeddah-forum.jpg",href:"#"},
-{id:"03",name:"Rafal Pavilions",service:"3D Animation",client:"Rafal",clientAr:"رفال للتطوير",logo:"assets/clients-logo/rafal.png",challenge:"Translate a distinctive pavilion concept into an animated experience communicating lifestyle and exclusivity.",solution:"Delivered a high-quality 3D animation showcasing materials, spatial quality, and the residential lifestyle.",deliverables:["3D Architectural Animation", "Lifestyle Rendering", "Pre-sales Video Material"],results:["Digital campaign asset ready", "Pre-sales visuals secured"],resIcons:["animation", "check_circle"],scale:"—",location:"Saudi Arabia",year:"2024",scope:"3D Animation",image:"assets/projects/animation/rafal-pavilions.jpg",href:"#"},
-{id:"04",name:"Market Center",service:"3D Animation",client:"Market Center",clientAr:"مركز السوق",logo:"",challenge:"Communicate the scale and commercial concept of a major retail and business hub to investors.",solution:"Produced an architectural animation highlighting circulation, design features, and commercial identity.",deliverables:["3D Architectural Animation", "Aerial Perspective Sequence", "Walkthrough Animation"],results:["Compelling investor presentation", "Pre-launch marketing asset"],resIcons:["storefront", "trending_up"],scale:"—",location:"Saudi Arabia",year:"2024",scope:"3D Animation",image:"assets/projects/animation/market-center.jpg",href:"#"},
-{id:"05",name:"AlUla Co.",service:"Photorealistic Rendering",client:"Al-Oula",clientAr:"الأولى للتطوير",logo:"assets/clients-logo/al-owla.png",challenge:"Showcase the premium residential character of Al-Nakheel with photorealistic precision.",solution:"Crafted ultra-high-fidelity renderings emphasising landscaping, materiality, and lifestyle quality.",deliverables:["Photorealistic Exterior Renderings", "Interior Visualization", "Print-ready Assets"],results:["Investor-grade assets delivered", "Marketing materials complete"],resIcons:["photo_camera", "check_circle"],scale:"—",location:"Saudi Arabia",year:"2024",scope:"Photorealistic Rendering",image:"assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg",href:"#"},
-{id:"06",name:"Anan Eskan",service:"Smart Architectural Maquette",client:"Anan Eskan",clientAr:"أنان إسكان",logo:"assets/clients-logo/anan-eskan.png",challenge:"Present a large-scale residential development to investors before construction, creating pre-sales momentum.",solution:"Delivered a smart maquette integrated with cinematic CGI for an immersive sales experience.",deliverables:["Smart Architectural Maquette", "Cinematic CGI Production", "Interactive Sales Zones"],results:["Pre-sales program activated", "Investor confidence built", "On-schedule Riyadh delivery"],resIcons:["apartment", "groups", "schedule"],scale:"—",location:"Riyadh, KSA",year:"2023",scope:"Smart Maquette",image:"assets/projects/maquettes/anan-escan3.jpeg",href:"case-study-anan-eskan-en.html"},
-{id:"07",name:"Alrajhi Financial City",service:"Cinematic CGI &amp; Interactive",client:"Al Rajhi Group",clientAr:"مجموعة الراجحي",logo:"",challenge:"Build an immersive sales ecosystem for a prestigious mixed-use financial development.",solution:"Created a full cinematic production and interactive sales gallery delivering a premium buyer journey.",deliverables:["Smart Architectural Maquette", "Cinematic CGI Film", "Interactive Sales Gallery"],results:["Full sales system deployed", "Premium buyer experience", "Sales centre operational"],resIcons:["star", "apartment", "business_center"],scale:"—",location:"Saudi Arabia",year:"2023",scope:"Cinematic &amp; Interactive",image:"assets/projects/maquettes/alrajhi3.jpeg",href:"case-study-alrajhi-en.html"}];
-var CFG={
-  ctaText:"Read The Story →",
-  ctaSoon:"Coming Soon",
-  clientLbl:"Client",
-  chLbl:"The Challenge",
-  solLbl:"Our Solution",
-  dlLbl:"Deliverables",
-  resLbl:"Results",
-  sectionId:"g10-en",
-  sfx:"en"
-};
-var idx=0,timer=null,busy=false;
-function byId(id){return document.getElementById(id);}
+var P=[["01","Makkah Charter","Smart Maquette & Interactive","assets/news/makkah-charter-01.jpeg","case-study-mwl-en.html"],["02","Jeddah Forum","Cinematic Production","assets/projects/animation/jeddah-forum.jpg","#"],["03","Rafal Pavilions","3D Animation","assets/projects/animation/rafal-pavilions.jpg","#"],["04","Market Center","3D Animation","assets/projects/animation/market-center.jpg","#"],["05","AlUla Co.","Photorealistic Rendering","assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg","#"],["06","Anan Eskan","Smart Architectural Maquette","assets/projects/maquettes/anan-escan3.jpeg","case-study-anan-eskan-en.html"],["07","Alrajhi Financial City","Cinematic CGI & Interactive","assets/projects/maquettes/alrajhi3.jpeg","case-study-alrajhi-en.html"]];
+var idx=0,timer=null;
+function byId(id){return document.getElementById(id)}
 function buildNums(){
-  var el=byId('gh10Nums'+CFG.sfx),h='';
-  for(var i=0;i<GH10P.length;i++){
-    h+='<button class="gh10-num'+(i===0?' on':'')+'" onclick="GH10'+CFG.sfx+'.goTo('+i+')"><span class="t">'+GH10P[i].id+'</span><span class="d"></span></button>';
+  var el=byId('gh10sNumsen'),h='';
+  for(var i=0;i<P.length;i++){
+    if(i===3)h+='<div class="gh10s-sep"></div>';
+    h+='<button class="gh10s-n'+(i===0?' on':'')+'" onclick="GH10sen.go('+i+')">'+P[i][0]+'</button>';
   }
   el.innerHTML=h;
 }
-function buildThumbs(){
-  var el=byId('gh10Thumbs'+CFG.sfx),h='';
-  for(var i=0;i<GH10P.length;i++){
-    var p=GH10P[i];
-    h+='<div class="gh10-th'+(i===0?' on':'')+'" onclick="GH10'+CFG.sfx+'.goTo('+i+')">'+
-      '<div class="gh10-th-img"><img src="'+p.image+'" alt="'+p.name+'" loading="lazy"></div>'+
-      '<span class="gh10-th-num">'+p.id+'</span>'+
-      '<div class="gh10-th-body"><div class="gh10-th-nm">'+p.name+'</div><div class="gh10-th-sv">'+p.service+'</div></div>'+
-    '</div>';
-  }
-  el.innerHTML=h;
-}
-function buildDots(){
-  var el=byId('gh10Dots'+CFG.sfx),h='';
-  for(var i=0;i<GH10P.length;i++){
-    h+='<button class="gh10-dot'+(i===0?' on':'')+'" onclick="GH10'+CFG.sfx+'.goTo('+i+')" aria-label="'+GH10P[i].name+'"></button>';
-  }
-  el.innerHTML=h;
-}
-function updateActive(n){
-  document.querySelectorAll('#gh10Nums'+CFG.sfx+' .gh10-num').forEach(function(el,i){el.classList.toggle('on',i===n);});
-  var ths=document.querySelectorAll('#gh10Thumbs'+CFG.sfx+' .gh10-th');
-  ths.forEach(function(el,i){el.classList.toggle('on',i===n);});
-  if(ths[n])ths[n].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
-  document.querySelectorAll('#gh10Dots'+CFG.sfx+' .gh10-dot').forEach(function(el,i){el.classList.toggle('on',i===n);});
-}
-function renderContent(p){
-  var dl='<ul class="gh10-cdl">';
-  for(var i=0;i<p.deliverables.length;i++)dl+='<li>'+p.deliverables[i]+'</li>';
-  dl+='</ul>';
-  var res='';
-  for(var i=0;i<p.results.length;i++){
-    res+='<div class="gh10-ri"><span class="material-symbols-outlined">'+(p.resIcons[i]||'check_circle')+'</span><span class="gh10-rtxt">'+p.results[i]+'</span></div>';
-  }
-  var logoHtml=p.logo
-    ?'<img class="gh10-cli-logo" src="'+p.logo+'" alt="'+p.client+'">'
-    :'<div class="gh10-cli-ico"><span class="material-symbols-outlined">business</span></div>';
-  var isSoon=(!p.href||p.href==='#');
-  var ctaHtml=isSoon
-    ?'<span class="gh10-cta gh10-cta-soon">'+CFG.ctaSoon+'</span>'
-    :'<a href="'+p.href+'" class="gh10-cta">'+CFG.ctaText+'</a>';
-  byId('gh10Info'+CFG.sfx).innerHTML=
-    '<div class="gh10-pnum">'+p.id+'</div>'+
-    '<div class="gh10-pname">'+p.name+'</div>'+
-    '<div class="gh10-psvc">'+p.service+'</div>'+
-    '<div class="gh10-cli">'+logoHtml+
-      '<div class="gh10-cli-box">'+
-        '<span class="gh10-cli-lbl">'+CFG.clientLbl+'</span>'+
-        '<span class="gh10-cli-en">'+p.client+'</span>'+
-        (p.clientAr?'<span class="gh10-cli-ar">'+p.clientAr+'</span>':'')+
-      '</div>'+
-    '</div>'+
-    '<div class="gh10-cols">'+
-      '<div><div class="gh10-clbl">'+CFG.chLbl+'</div><div class="gh10-ctxt">'+p.challenge+'</div></div>'+
-      '<div><div class="gh10-clbl">'+CFG.solLbl+'</div><div class="gh10-ctxt">'+p.solution+'</div></div>'+
-      '<div><div class="gh10-clbl">'+CFG.dlLbl+'</div>'+dl+'</div>'+
-    '</div>'+
-    '<div class="gh10-res"><div class="gh10-rlbl">'+CFG.resLbl+'</div><div class="gh10-rlist">'+res+'</div></div>'+
-    ctaHtml;
-  byId('gh10Img'+CFG.sfx).src=p.image;
-  byId('gh10Img'+CFG.sfx).alt=p.name;
-  byId('gh10Meta'+CFG.sfx).innerHTML=
-    '<div class="gh10-mi"><span class="material-symbols-outlined">straighten</span><div><div class="gh10-mi-lbl">Scale</div><div class="gh10-mi-val">'+p.scale+'</div></div></div>'+
-    '<div class="gh10-mi"><span class="material-symbols-outlined">location_on</span><div><div class="gh10-mi-lbl">Location</div><div class="gh10-mi-val">'+p.location+'</div></div></div>'+
-    '<div class="gh10-mi"><span class="material-symbols-outlined">calendar_today</span><div><div class="gh10-mi-lbl">Year</div><div class="gh10-mi-val">'+p.year+'</div></div></div>'+
-    '<div class="gh10-mi"><span class="material-symbols-outlined">architecture</span><div><div class="gh10-mi-lbl">Scope</div><div class="gh10-mi-val">'+p.scope+'</div></div></div>';
-}
-function goTo(n){
-  if(busy)return;
-  busy=true;
-  var infoEl=byId('gh10Info'+CFG.sfx);
-  var imgEl=byId('gh10Img'+CFG.sfx);
-  infoEl.style.transition='opacity 0.22s';
-  infoEl.style.opacity='0';
-  imgEl.style.transition='opacity 0.28s';
-  imgEl.style.opacity='0';
-  idx=((n%GH10P.length)+GH10P.length)%GH10P.length;
-  updateActive(idx);
+function render(n,instant){
+  var p=P[n];
+  var nameEl=byId('gh10sNameen');
+  var svcEl =byId('gh10sSvcen');
+  var imgEl =byId('gh10sImgen');
+  var ctaEl =byId('gh10sCtaen');
+  var bgEl  =byId('gh10sBgen');
+  if(!instant){nameEl.style.opacity='0';imgEl.style.opacity='0';}
   setTimeout(function(){
-    renderContent(GH10P[idx]);
-    infoEl.style.transition='opacity 0.45s';
-    infoEl.style.opacity='1';
-    imgEl.style.transition='opacity 0.5s';
-    imgEl.style.opacity='1';
-    busy=false;
-  },250);
+    bgEl.textContent=p[0];
+    nameEl.textContent=p[1];
+    svcEl.textContent=p[2];
+    imgEl.src=p[3];imgEl.alt=p[1];
+    var isSoon=p[4]==='#';
+    ctaEl.href=isSoon?'#':p[4];
+    ctaEl.textContent=isSoon?"Coming Soon":"Read The Story →";
+    ctaEl.className='gh10s-cta'+(isSoon?' gh10s-cta-soon':'');
+    nameEl.style.transition='opacity .4s';nameEl.style.opacity='1';
+    imgEl.style.transition='opacity .5s';imgEl.style.opacity='1';
+  },instant?0:230);
+  document.querySelectorAll('#gh10sNumsen .gh10s-n').forEach(function(el,i){
+    el.classList.toggle('on',i===n);
+  });
 }
-function startAuto(){timer=setInterval(function(){goTo(idx+1);},6000);}
+function go(n){
+  idx=((n%P.length)+P.length)%P.length;
+  render(idx,false);
+  stopAuto();setTimeout(startAuto,1500);
+}
+function startAuto(){timer=setInterval(function(){go(idx+1);},6000);}
 function stopAuto(){if(timer){clearInterval(timer);timer=null;}}
 function init(){
-  buildNums();buildThumbs();buildDots();
-  renderContent(GH10P[0]);
-  startAuto();
-  var sec=byId(CFG.sectionId);
+  buildNums();render(0,true);startAuto();
+  var sec=byId('g10-en');
   if(sec){
     sec.addEventListener('mouseenter',stopAuto);
-    sec.addEventListener('mouseleave',function(){setTimeout(startAuto,1500);});
+    sec.addEventListener('mouseleave',function(){setTimeout(startAuto,1200);});
     var tx=0;
     sec.addEventListener('touchstart',function(e){tx=e.changedTouches[0].screenX;},{passive:true});
     sec.addEventListener('touchend',function(e){
       var d=tx-e.changedTouches[0].screenX;
-      if(Math.abs(d)>50){d>0?goTo(idx+1):goTo(idx-1);stopAuto();setTimeout(startAuto,1500);}
+      if(Math.abs(d)>50){d>0?go(idx+1):go(idx-1);}
     },{passive:true});
   }
 }
-window.GH10en={goTo:goTo,prev:function(){stopAuto();goTo(idx-1);setTimeout(startAuto,1500);},next:function(){stopAuto();goTo(idx+1);setTimeout(startAuto,1500);}};
+window.GH10sen={go:go,prev:function(){go(idx-1);},next:function(){go(idx+1);}};
 document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
 })();
 </script>
 </section>
 <!-- ===== END CASE STUDIES ===== -->
+
 
 
 <!-- ===== HOW WE WORK ===== -->

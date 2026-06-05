@@ -3233,303 +3233,101 @@ img { max-width: 100%; display: block; }
 
 
 <!-- ===== PREMIUM PROJECT SHOWCASE ===== -->
-<section id="g10-ar" class="gh10" dir="rtl">
-<style id="gh10-styles">
-/* ====== GH10 Case Studies — Compact Premium ====== */
-.gh10{background:#080808;overflow:hidden;position:relative}
-.gh10-main{display:grid;grid-template-columns:42% 58%;height:660px;max-height:660px}
-/* Left panel */
-.gh10-left{display:flex;flex-direction:column;background:#080808;overflow:hidden}
-.gh10-hdr{padding:22px 36px 16px 0;padding-inline-start:0;padding-inline-end:36px;border-bottom:1px solid rgba(201,168,76,.1);flex-shrink:0;margin-inline-start:48px}
-.gh10-lbl{display:block;font:700 8px/1 'Inter',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px}
-.gh10-ttl{font:700 clamp(18px,2vw,28px)/1.15 'Playfair Display',Georgia,serif;color:#FAFAF8;margin:0 0 8px}
-.gh10-sub{font:300 11px/1.65 'Inter',sans-serif;color:rgba(255,255,255,.36);max-width:340px;margin:0 0 12px}
-.gh10-div{width:36px;height:1.5px;background:#C9A84C}
-/* body = nums column + info */
-.gh10-body{display:flex;flex:1;min-height:0;overflow:hidden}
-/* Number nav */
-.gh10-nums{width:48px;flex-shrink:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:0;border-inline-end:1px solid rgba(255,255,255,.05)}
-.gh10-num{display:flex;flex-direction:column;align-items:center;padding:7px 0;cursor:pointer;width:100%;transition:all .2s;background:none;border:none}
-.gh10-num span.t{font:700 9px/1 'Inter',monospace;letter-spacing:.06em;color:rgba(255,255,255,.18);transition:all .2s}
-.gh10-num span.d{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.1);margin-top:3px;transition:all .2s;display:block}
-.gh10-num.on span.t{color:#C9A84C;font-size:11px}
-.gh10-num.on span.d{background:#C9A84C}
-.gh10-num:hover span.t{color:rgba(255,255,255,.5)}
-/* Info area */
-.gh10-info{flex:1;padding:14px 28px 14px 16px;overflow-y:auto;display:flex;flex-direction:column;gap:0;scrollbar-width:thin;scrollbar-color:rgba(201,168,76,.15) transparent}
-.gh10-info::-webkit-scrollbar{width:2px}
-.gh10-info::-webkit-scrollbar-thumb{background:rgba(201,168,76,.2);border-radius:2px}
-/* Project header */
-.gh10-pnum{font:800 32px/1 'Playfair Display',Georgia,serif;color:rgba(201,168,76,.08);margin:0 0 1px}
-.gh10-pname{font:700 clamp(16px,1.6vw,22px)/1.2 'Playfair Display',Georgia,serif;color:#FAFAF8;margin:0 0 4px}
-.gh10-psvc{font:700 8px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px}
-/* Client block */
-.gh10-cli{display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(255,255,255,.025);border-inline-start:2px solid rgba(201,168,76,.28);margin-bottom:12px}
-.gh10-cli-logo{height:22px;width:auto;max-width:60px;object-fit:contain;filter:brightness(0) invert(1);opacity:.65;flex-shrink:0}
-.gh10-cli-box{display:flex;flex-direction:column;gap:2px}
-.gh10-cli-lbl{font:700 6px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.26)}
-.gh10-cli-en{font:600 11px/1.2 'Inter',sans-serif;color:rgba(255,255,255,.78)}
-.gh10-cli-ar{font:400 10px/1 'Tajawal',sans-serif;color:rgba(255,255,255,.38)}
-.gh10-cli-ico{width:24px;height:24px;border:1px solid rgba(201,168,76,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.gh10-cli-ico .material-symbols-outlined{font-size:12px;color:#C9A84C}
-/* Three columns */
-.gh10-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
-.gh10-clbl{font:700 6px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#C9A84C;margin-bottom:5px}
-.gh10-ctxt{font:300 9.5px/1.55 'Inter',sans-serif;color:rgba(255,255,255,.4)}
-.gh10-cdl{list-style:none;margin:0;padding:0}
-.gh10-cdl li{font:300 9.5px/1.55 'Inter',sans-serif;color:rgba(255,255,255,.4);padding-inline-start:9px;position:relative}
-.gh10-cdl li::before{content:'·';position:absolute;inset-inline-start:0;color:#C9A84C}
-/* Results */
-.gh10-res{margin-bottom:12px}
-.gh10-rlbl{font:700 6px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#C9A84C;margin-bottom:6px}
-.gh10-rlist{display:flex;gap:10px;flex-wrap:wrap}
-.gh10-ri{display:flex;align-items:flex-start;gap:4px}
-.gh10-ri .material-symbols-outlined{font-size:11px;color:#C9A84C;flex-shrink:0;margin-top:1px}
-.gh10-rtxt{font:400 9.5px/1.4 'Inter',sans-serif;color:rgba(255,255,255,.5)}
-/* CTA */
-.gh10-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:#C9A84C;color:#0A0A0A;font:700 8px/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:background .25s;border:none;cursor:pointer;align-self:flex-start;margin-top:2px}
-.gh10-cta:hover{background:#D9B860}
-.gh10-cta-soon{background:rgba(201,168,76,.1);color:rgba(201,168,76,.45);pointer-events:none}
-/* Arrows */
-.gh10-arrows{display:flex;gap:8px;padding:10px 36px 12px 0;padding-inline-start:48px;flex-shrink:0;border-top:1px solid rgba(255,255,255,.04)}
-.gh10-arr{width:34px;height:34px;border:1px solid rgba(255,255,255,.14);background:none;color:rgba(255,255,255,.42);border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .25s;padding:0;line-height:1}
-.gh10-arr:hover{border-color:#C9A84C;color:#C9A84C}
-/* Right image panel */
-.gh10-right{position:relative;overflow:hidden}
-.gh10-img-wrap{position:absolute;inset:0}
-.gh10-img-wrap img{width:100%;height:100%;object-fit:cover;transition:opacity .5s ease}
-.gh10-img-grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,8,.5) 0%,rgba(8,8,8,.08) 28%,transparent 52%);pointer-events:none;z-index:1}
-/* Metadata bar */
-.gh10-meta{position:absolute;bottom:0;left:0;right:0;z-index:2;background:rgba(0,0,0,.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex}
-.gh10-mi{flex:1;padding:11px 14px;border-inline-end:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px}
-.gh10-mi:last-child{border-inline-end:none}
-.gh10-mi .material-symbols-outlined{font-size:15px;color:rgba(201,168,76,.55);flex-shrink:0}
-.gh10-mi-lbl{font:700 6px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.26);margin-bottom:3px}
-.gh10-mi-val{font:600 11px/1 'Inter',sans-serif;color:rgba(255,255,255,.78)}
-/* Bottom strip */
-.gh10-strip{background:#040404;border-top:1px solid rgba(255,255,255,.05);overflow-x:auto;scrollbar-width:none}
-.gh10-strip::-webkit-scrollbar{display:none}
-.gh10-thumbs{display:flex}
-.gh10-th{flex-shrink:0;width:calc(100% / 7);min-width:140px;position:relative;cursor:pointer;border:2px solid transparent;transition:border-color .25s;box-sizing:border-box}
-.gh10-th.on{border-color:#C9A84C}
-.gh10-th-img{width:100%;aspect-ratio:16/9;overflow:hidden;position:relative}
-.gh10-th-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.4);transition:filter .3s;display:block}
-.gh10-th:hover .gh10-th-img img{filter:brightness(.6)}
-.gh10-th.on .gh10-th-img img{filter:brightness(.72)}
-.gh10-th-num{position:absolute;top:5px;left:6px;font:700 9px/1 'Inter',monospace;color:rgba(255,255,255,.55);z-index:1}
-.gh10-th-body{padding:6px 8px;background:#060606}
-.gh10-th-nm{font:700 9px/1.3 'Inter',sans-serif;color:rgba(255,255,255,.72);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gh10-th-sv{font:400 8px/1 'Inter',sans-serif;color:rgba(255,255,255,.26);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-/* Pagination dots */
-.gh10-dots{display:flex;justify-content:center;gap:5px;padding:8px 0 12px;background:#040404}
-.gh10-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.14);cursor:pointer;transition:all .25s;border:none;padding:0}
-.gh10-dot.on{background:#C9A84C;width:20px;border-radius:3px}
-/* Responsive */
-@media(max-width:1100px){
-  .gh10-main{grid-template-columns:46% 54%;height:600px;max-height:600px}
-  .gh10-hdr{margin-inline-start:42px}
-  .gh10-info{padding:12px 22px 12px 14px}
-}
-@media(max-width:768px){
-  .gh10-main{grid-template-columns:1fr;height:auto;max-height:none}
-  .gh10-right{height:52vw;flex-shrink:0}
-  .gh10-left{flex:1}
-  .gh10-img-grad{background:linear-gradient(180deg,rgba(8,8,8,.5) 0%,transparent 40%)}
-  .gh10-hdr{margin-inline-start:42px;padding:18px 16px 12px 0}
-  .gh10-nums{width:42px}
-  .gh10-info{padding:12px 16px 12px 12px;flex:1}
-  .gh10-cols{grid-template-columns:1fr;gap:6px}
-  .gh10-arrows{padding:8px 16px 10px 0;margin-inline-start:42px}
-  .gh10-th{min-width:130px}
-  .gh10-meta{position:relative;display:grid;grid-template-columns:1fr 1fr}
-  .gh10-mi{border-inline-end:1px solid rgba(255,255,255,.07)}
-}
-@media(max-width:480px){
-  .gh10-ttl{font-size:18px}
-  .gh10-nums{width:36px}
-  .gh10-pnum{font-size:26px}
-  .gh10-pname{font-size:16px}
-  .gh10-th{min-width:120px}
-}
-/* RTL */
-[dir=rtl] .gh10-img-grad{background:linear-gradient(270deg,rgba(8,8,8,.5) 0%,rgba(8,8,8,.08) 28%,transparent 52%)}
-[dir=rtl] .gh10-info{padding:14px 16px 14px 28px}
-[dir=rtl] .gh10-th-num{left:auto;right:6px}
-</style>
+<section id="g10-ar" class="gh10s" dir="rtl">
 
-<div class="gh10-main">
-  <!-- Left panel -->
-  <div class="gh10-left">
-    <div class="gh10-hdr">
-      <span class="gh10-lbl">قصص النجاح</span>
-      <h2 class="gh10-ttl">دراسات <span style="color:#C9A84C">الحالة</span></h2>
-      <p class="gh10-sub">مشاريع حقيقية. نتائج حقيقية. كيف ساعدنا مطوري المشاريع في الخليج على تعزيز المبيعات قبل بدء التنفيذ.</p>
-      <div class="gh10-div"></div>
-    </div>
-    <div class="gh10-body">
-      <div class="gh10-nums" id="gh10Numsar"></div>
-      <div class="gh10-info" id="gh10Infoar"></div>
-    </div>
-    <div class="gh10-arrows">
-      <button class="gh10-arr" onclick="GH10ar.prev()" aria-label="prev">&#8250;</button>
-      <button class="gh10-arr" onclick="GH10ar.next()" aria-label="next">&#8249;</button>
+  <div style="text-align:center;padding:32px 24px 4px">
+    <span style="font:700 9px/1 'Inter',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:12px">قصص النجاح</span>
+    <h2 style="font:700 clamp(22px,3vw,36px)/1.1 'Playfair Display',Georgia,serif;color:#fff;margin:0 0 10px">دراسات <span style="color:#C9A84C">الحالة</span></h2>
+    <p style="font:300 12px/1.7 'Inter',sans-serif;color:rgba(255,255,255,.35);max-width:500px;margin:0 auto">مشاريع حقيقية. نتائج حقيقية. كيف ساعدنا مطوري المشاريع على تعزيز المبيعات قبل بدء التنفيذ.</p>
+  </div>
+  <div class="gh10s-nav">
+    <div class="gh10s-nums" id="gh10sNumsar"></div>
+    <div class="gh10s-arrows">
+      <button class="gh10s-arr" onclick="GH10sar.prev()">&#8250;</button>
+      <button class="gh10s-arr" onclick="GH10sar.next()">&#8249;</button>
     </div>
   </div>
-  <!-- Right image panel -->
-  <div class="gh10-right">
-    <div class="gh10-img-wrap" id="gh10ImgWrapar">
-      <img id="gh10Imgar" src="" alt="" loading="lazy">
+  <div class="gh10s-body">
+    <div class="gh10s-left">
+      <span id="gh10sBgar" class="gh10s-num-bg"></span>
+      <div id="gh10sSvcar" class="gh10s-svc"></div>
+      <div id="gh10sNamear" class="gh10s-name"></div>
+      <div class="gh10s-bracket"></div>
+      <a id="gh10sCtaar" href="#" class="gh10s-cta"></a>
     </div>
-    <div class="gh10-img-grad"></div>
-    <div class="gh10-meta" id="gh10Metaar"></div>
+    <div class="gh10s-right">
+      <div class="gh10s-img"><img id="gh10sImgar" src="" alt="" loading="lazy"></div>
+      <div class="gh10s-gold"></div>
+    </div>
   </div>
-</div>
-<!-- Bottom strip -->
-<div class="gh10-strip"><div class="gh10-thumbs" id="gh10Thumbsar"></div></div>
-<div class="gh10-dots" id="gh10Dotsar"></div>
-<div style="text-align:center;padding:12px 0 20px;background:#040404">
-  <a href="portfolio.html" style="display:inline-flex;align-items:center;gap:8px;padding:11px 28px;border:1px solid rgba(255,255,255,.13);color:rgba(255,255,255,.45);font:700 9px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:border-color .25s,color .25s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(255,255,255,.13)';this.style.color='rgba(255,255,255,.45)'">← عرض كامل البورتفوليو</a>
-</div>
+  <div class="gh10s-foot">
+    <a href="portfolio.html" style="font:700 9px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.32)'">← عرض البورتفوليو</a>
+  </div>
 <script>
 (function(){
-var GH10P=[{id:"01",name:"ميثاق مكة",service:"مجسم ذكي وتجربة تفاعلية",client:"رابطة العالم الإسلامي",clientAr:"",logo:"assets/clients-logo/رابطة العالم الاسلامي.png",challenge:"تقديم مشروع حضاري وروحي ضخم لأصحاب المصلحة عالمياً بأعلى مستوى من الوضوح والتواصل.",solution:"بنينا مجسماً ذكياً مدمجاً بتقنية تفاعلية وبيئات غامرة لإحياء رؤية المشروع.",deliverables:["مجسم معماري ذكي", "منصة عرض تفاعلية", "فيديو سينمائي", "تجربة واقع افتراضي"],results:["عروض رسمية عالية التأثير", "تعزيز ثقة المستثمرين", "تسريع المبيعات المسبقة"],resIcons:["star", "groups", "trending_up"],scale:"3.2M m²",location:"مكة المكرمة",year:"2023",scope:"عرض مخطط رئيسي",image:"assets/news/makkah-charter-01.jpeg",href:"case-study-mwl-en.html"},
-{id:"02",name:"منتدى جدة",service:"إنتاج سينمائي",client:"منتدى جدة",clientAr:"",logo:"",challenge:"إنشاء سرد بصري سينمائي لوجهة تجارية وثقافية بارزة في جدة.",solution:"أنتجنا فيلم CGI سينمائي متكامل يلتقط حجم التطوير وأجواءه ورؤيته التصميمية.",deliverables:["فيلم CGI سينمائي", "حزمة موشن جرافيك", "تدريج اللون والصوت"],results:["حزمة عرض للمستثمرين جاهزة", "مواد حملة الإطلاق مكتملة"],resIcons:["movie", "business"],scale:"—",location:"جدة، السعودية",year:"2024",scope:"إنتاج سينمائي",image:"assets/projects/animation/jeddah-forum.jpg",href:"#"},
-{id:"03",name:"بافيليونات رافال",service:"أنيميشن ثلاثي الأبعاد",client:"رفال للتطوير",clientAr:"",logo:"assets/clients-logo/rafal.png",challenge:"ترجمة مفهوم البافيليون المميز إلى تجربة متحركة تعبّر عن التميز وأسلوب الحياة.",solution:"قدمنا أنيميشن ثلاثي الأبعاد عالي الجودة يعرض المواد وجودة المساحة والطابع السكني.",deliverables:["أنيميشن معماري ثلاثي الأبعاد", "رندرينج لأسلوب الحياة", "مواد فيديو قبل البيع"],results:["أصل رقمي جاهز للإطلاق", "مواد بصرية ما قبل البيع مؤمّنة"],resIcons:["animation", "check_circle"],scale:"—",location:"المملكة العربية السعودية",year:"2024",scope:"أنيميشن ثلاثي الأبعاد",image:"assets/projects/animation/rafal-pavilions.jpg",href:"#"},
-{id:"04",name:"مركز السوق",service:"أنيميشن ثلاثي الأبعاد",client:"مركز السوق",clientAr:"",logo:"",challenge:"إيصال حجم ومفهوم مركز تجاري ضخم بوضوح للمستثمرين.",solution:"أنتجنا أنيميشن معماري يبرز الحركة والسمات التصميمية والهوية التجارية.",deliverables:["أنيميشن معماري ثلاثي الأبعاد", "تسلسل منظور جوي", "أنيميشن جولة افتراضية"],results:["عرض مقنع للمستثمرين", "أصول تسويقية قبل الإطلاق"],resIcons:["storefront", "trending_up"],scale:"—",location:"المملكة العربية السعودية",year:"2024",scope:"أنيميشن ثلاثي الأبعاد",image:"assets/projects/animation/market-center.jpg",href:"#"},
-{id:"05",name:"الأولى — النخيل",service:"تصوير فوتوغرافي واقعي",client:"الأولى للتطوير",clientAr:"",logo:"assets/clients-logo/al-owla.png",challenge:"إبراز الطابع السكني الراقي للنخيل بدقة واقعية لاستقطاب المشترين.",solution:"أبدعنا رندرينج فائق الجودة يبرز المناظر والمواد وتجربة الحياة الفاخرة.",deliverables:["رندرينج خارجي واقعي", "تصور داخلي", "أصول تسويقية جاهزة للطباعة"],results:["أصول عرض بمستوى المستثمرين", "مواد تسويقية مسلّمة"],resIcons:["photo_camera", "check_circle"],scale:"—",location:"المملكة العربية السعودية",year:"2024",scope:"تصوير واقعي",image:"assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg",href:"#"},
-{id:"06",name:"أنان إسكان",service:"مجسم معماري ذكي",client:"أنان إسكان",clientAr:"",logo:"assets/clients-logo/anan-eskan.png",challenge:"تقديم مشروع سكني كبير للمشترين والمستثمرين قبل البناء لخلق زخم مبيعات.",solution:"قدمنا مجسماً معمارياً ذكياً مدمجاً بـ CGI سينمائي لتجربة مبيعات غامرة.",deliverables:["مجسم معماري ذكي", "إنتاج CGI سينمائي", "مناطق مبيعات تفاعلية"],results:["تفعيل البيع المسبق", "تعزيز ثقة المستثمرين", "تسليم الرياض في الموعد"],resIcons:["apartment", "groups", "schedule"],scale:"—",location:"الرياض، السعودية",year:"2023",scope:"مجسم ذكي",image:"assets/projects/maquettes/anan-escan3.jpeg",href:"case-study-anan-eskan-en.html"},
-{id:"07",name:"مدينة الراجحي المالية",service:"CGI سينمائي وتفاعلي",client:"مجموعة الراجحي",clientAr:"",logo:"",challenge:"بناء منظومة مبيعات وعرض غامرة لمشروع مالي متعدد الاستخدامات.",solution:"أبدعنا إنتاجاً سينمائياً متكاملاً وجاليري مبيعات تفاعلي لتجربة مشتري راقية.",deliverables:["مجسم معماري ذكي", "فيلم CGI سينمائي", "جاليري مبيعات تفاعلي"],results:["نشر منظومة مبيعات متكاملة", "تجربة مشتري راقية", "مركز المبيعات في الخدمة"],resIcons:["star", "apartment", "business_center"],scale:"—",location:"المملكة العربية السعودية",year:"2023",scope:"سينمائي وتفاعلي",image:"assets/projects/maquettes/alrajhi3.jpeg",href:"case-study-alrajhi-en.html"}];
-var CFG={
-  ctaText:"← اقرأ القصة",
-  ctaSoon:"قريباً",
-  clientLbl:"العميل",
-  chLbl:"التحدي",
-  solLbl:"الحل",
-  dlLbl:"المخرجات",
-  resLbl:"النتائج",
-  sectionId:"g10-ar",
-  sfx:"ar"
-};
-var idx=0,timer=null,busy=false;
-function byId(id){return document.getElementById(id);}
+var P=[["01","ميثاق مكة","مجسم ذكي وتجربة تفاعلية","assets/news/makkah-charter-01.jpeg","case-study-mwl-en.html"],["02","منتدى جدة","إنتاج سينمائي","assets/projects/animation/jeddah-forum.jpg","#"],["03","بافيليونات رافال","أنيميشن ثلاثي الأبعاد","assets/projects/animation/rafal-pavilions.jpg","#"],["04","مركز السوق","أنيميشن ثلاثي الأبعاد","assets/projects/animation/market-center.jpg","#"],["05","الأولى — النخيل","تصوير فوتوغرافي واقعي","assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg","#"],["06","أنان إسكان","مجسم معماري ذكي","assets/projects/maquettes/anan-escan3.jpeg","case-study-anan-eskan-en.html"],["07","مدينة الراجحي المالية","CGI سينمائي وتفاعلي","assets/projects/maquettes/alrajhi3.jpeg","case-study-alrajhi-en.html"]];
+var idx=0,timer=null;
+function byId(id){return document.getElementById(id)}
 function buildNums(){
-  var el=byId('gh10Nums'+CFG.sfx),h='';
-  for(var i=0;i<GH10P.length;i++){
-    h+='<button class="gh10-num'+(i===0?' on':'')+'" onclick="GH10'+CFG.sfx+'.goTo('+i+')"><span class="t">'+GH10P[i].id+'</span><span class="d"></span></button>';
+  var el=byId('gh10sNumsar'),h='';
+  for(var i=0;i<P.length;i++){
+    if(i===3)h+='<div class="gh10s-sep"></div>';
+    h+='<button class="gh10s-n'+(i===0?' on':'')+'" onclick="GH10sar.go('+i+')">'+P[i][0]+'</button>';
   }
   el.innerHTML=h;
 }
-function buildThumbs(){
-  var el=byId('gh10Thumbs'+CFG.sfx),h='';
-  for(var i=0;i<GH10P.length;i++){
-    var p=GH10P[i];
-    h+='<div class="gh10-th'+(i===0?' on':'')+'" onclick="GH10'+CFG.sfx+'.goTo('+i+')">'+
-      '<div class="gh10-th-img"><img src="'+p.image+'" alt="'+p.name+'" loading="lazy"></div>'+
-      '<span class="gh10-th-num">'+p.id+'</span>'+
-      '<div class="gh10-th-body"><div class="gh10-th-nm">'+p.name+'</div><div class="gh10-th-sv">'+p.service+'</div></div>'+
-    '</div>';
-  }
-  el.innerHTML=h;
-}
-function buildDots(){
-  var el=byId('gh10Dots'+CFG.sfx),h='';
-  for(var i=0;i<GH10P.length;i++){
-    h+='<button class="gh10-dot'+(i===0?' on':'')+'" onclick="GH10'+CFG.sfx+'.goTo('+i+')" aria-label="'+GH10P[i].name+'"></button>';
-  }
-  el.innerHTML=h;
-}
-function updateActive(n){
-  document.querySelectorAll('#gh10Nums'+CFG.sfx+' .gh10-num').forEach(function(el,i){el.classList.toggle('on',i===n);});
-  var ths=document.querySelectorAll('#gh10Thumbs'+CFG.sfx+' .gh10-th');
-  ths.forEach(function(el,i){el.classList.toggle('on',i===n);});
-  if(ths[n])ths[n].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
-  document.querySelectorAll('#gh10Dots'+CFG.sfx+' .gh10-dot').forEach(function(el,i){el.classList.toggle('on',i===n);});
-}
-function renderContent(p){
-  var dl='<ul class="gh10-cdl">';
-  for(var i=0;i<p.deliverables.length;i++)dl+='<li>'+p.deliverables[i]+'</li>';
-  dl+='</ul>';
-  var res='';
-  for(var i=0;i<p.results.length;i++){
-    res+='<div class="gh10-ri"><span class="material-symbols-outlined">'+(p.resIcons[i]||'check_circle')+'</span><span class="gh10-rtxt">'+p.results[i]+'</span></div>';
-  }
-  var logoHtml=p.logo
-    ?'<img class="gh10-cli-logo" src="'+p.logo+'" alt="'+p.client+'">'
-    :'<div class="gh10-cli-ico"><span class="material-symbols-outlined">business</span></div>';
-  var isSoon=(!p.href||p.href==='#');
-  var ctaHtml=isSoon
-    ?'<span class="gh10-cta gh10-cta-soon">'+CFG.ctaSoon+'</span>'
-    :'<a href="'+p.href+'" class="gh10-cta">'+CFG.ctaText+'</a>';
-  byId('gh10Info'+CFG.sfx).innerHTML=
-    '<div class="gh10-pnum">'+p.id+'</div>'+
-    '<div class="gh10-pname">'+p.name+'</div>'+
-    '<div class="gh10-psvc">'+p.service+'</div>'+
-    '<div class="gh10-cli">'+logoHtml+
-      '<div class="gh10-cli-box">'+
-        '<span class="gh10-cli-lbl">'+CFG.clientLbl+'</span>'+
-        '<span class="gh10-cli-en">'+p.client+'</span>'+
-        (p.clientAr?'<span class="gh10-cli-ar">'+p.clientAr+'</span>':'')+
-      '</div>'+
-    '</div>'+
-    '<div class="gh10-cols">'+
-      '<div><div class="gh10-clbl">'+CFG.chLbl+'</div><div class="gh10-ctxt">'+p.challenge+'</div></div>'+
-      '<div><div class="gh10-clbl">'+CFG.solLbl+'</div><div class="gh10-ctxt">'+p.solution+'</div></div>'+
-      '<div><div class="gh10-clbl">'+CFG.dlLbl+'</div>'+dl+'</div>'+
-    '</div>'+
-    '<div class="gh10-res"><div class="gh10-rlbl">'+CFG.resLbl+'</div><div class="gh10-rlist">'+res+'</div></div>'+
-    ctaHtml;
-  byId('gh10Img'+CFG.sfx).src=p.image;
-  byId('gh10Img'+CFG.sfx).alt=p.name;
-  byId('gh10Meta'+CFG.sfx).innerHTML=
-    '<div class="gh10-mi"><span class="material-symbols-outlined">straighten</span><div><div class="gh10-mi-lbl">Scale</div><div class="gh10-mi-val">'+p.scale+'</div></div></div>'+
-    '<div class="gh10-mi"><span class="material-symbols-outlined">location_on</span><div><div class="gh10-mi-lbl">Location</div><div class="gh10-mi-val">'+p.location+'</div></div></div>'+
-    '<div class="gh10-mi"><span class="material-symbols-outlined">calendar_today</span><div><div class="gh10-mi-lbl">Year</div><div class="gh10-mi-val">'+p.year+'</div></div></div>'+
-    '<div class="gh10-mi"><span class="material-symbols-outlined">architecture</span><div><div class="gh10-mi-lbl">Scope</div><div class="gh10-mi-val">'+p.scope+'</div></div></div>';
-}
-function goTo(n){
-  if(busy)return;
-  busy=true;
-  var infoEl=byId('gh10Info'+CFG.sfx);
-  var imgEl=byId('gh10Img'+CFG.sfx);
-  infoEl.style.transition='opacity 0.22s';
-  infoEl.style.opacity='0';
-  imgEl.style.transition='opacity 0.28s';
-  imgEl.style.opacity='0';
-  idx=((n%GH10P.length)+GH10P.length)%GH10P.length;
-  updateActive(idx);
+function render(n,instant){
+  var p=P[n];
+  var nameEl=byId('gh10sNamear');
+  var svcEl =byId('gh10sSvcar');
+  var imgEl =byId('gh10sImgar');
+  var ctaEl =byId('gh10sCtaar');
+  var bgEl  =byId('gh10sBgar');
+  if(!instant){nameEl.style.opacity='0';imgEl.style.opacity='0';}
   setTimeout(function(){
-    renderContent(GH10P[idx]);
-    infoEl.style.transition='opacity 0.45s';
-    infoEl.style.opacity='1';
-    imgEl.style.transition='opacity 0.5s';
-    imgEl.style.opacity='1';
-    busy=false;
-  },250);
+    bgEl.textContent=p[0];
+    nameEl.textContent=p[1];
+    svcEl.textContent=p[2];
+    imgEl.src=p[3];imgEl.alt=p[1];
+    var isSoon=p[4]==='#';
+    ctaEl.href=isSoon?'#':p[4];
+    ctaEl.textContent=isSoon?"قريباً":"← اقرأ القصة";
+    ctaEl.className='gh10s-cta'+(isSoon?' gh10s-cta-soon':'');
+    nameEl.style.transition='opacity .4s';nameEl.style.opacity='1';
+    imgEl.style.transition='opacity .5s';imgEl.style.opacity='1';
+  },instant?0:230);
+  document.querySelectorAll('#gh10sNumsar .gh10s-n').forEach(function(el,i){
+    el.classList.toggle('on',i===n);
+  });
 }
-function startAuto(){timer=setInterval(function(){goTo(idx+1);},6000);}
+function go(n){
+  idx=((n%P.length)+P.length)%P.length;
+  render(idx,false);
+  stopAuto();setTimeout(startAuto,1500);
+}
+function startAuto(){timer=setInterval(function(){go(idx+1);},6000);}
 function stopAuto(){if(timer){clearInterval(timer);timer=null;}}
 function init(){
-  buildNums();buildThumbs();buildDots();
-  renderContent(GH10P[0]);
-  startAuto();
-  var sec=byId(CFG.sectionId);
+  buildNums();render(0,true);startAuto();
+  var sec=byId('g10-ar');
   if(sec){
     sec.addEventListener('mouseenter',stopAuto);
-    sec.addEventListener('mouseleave',function(){setTimeout(startAuto,1500);});
+    sec.addEventListener('mouseleave',function(){setTimeout(startAuto,1200);});
     var tx=0;
     sec.addEventListener('touchstart',function(e){tx=e.changedTouches[0].screenX;},{passive:true});
     sec.addEventListener('touchend',function(e){
       var d=tx-e.changedTouches[0].screenX;
-      if(Math.abs(d)>50){d>0?goTo(idx+1):goTo(idx-1);stopAuto();setTimeout(startAuto,1500);}
+      if(Math.abs(d)>50){d>0?go(idx+1):go(idx-1);}
     },{passive:true});
   }
 }
-window.GH10ar={goTo:goTo,prev:function(){stopAuto();goTo(idx-1);setTimeout(startAuto,1500);},next:function(){stopAuto();goTo(idx+1);setTimeout(startAuto,1500);}};
+window.GH10sar={go:go,prev:function(){go(idx-1);},next:function(){go(idx+1);}};
 document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
 })();
 </script>
 </section>
 <!-- ===== نهاية دراسات الحالة ===== -->
+
 
 
 <!-- ===== HOW WE WORK ===== -->
