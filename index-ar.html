@@ -3232,141 +3232,231 @@ img { max-width: 100%; display: block; }
 
 
 
-<!-- ===== قصص النجاح / دراسات الحالة ===== -->
-<section style="padding:100px 0;background:#F7F6F2;overflow:hidden" dir="rtl">
-  <div style="max-width:1280px;margin:0 auto;padding:0 48px">
-    <div style="text-align:center;margin-bottom:56px">
-      <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:14px;font-family:'Tajawal',sans-serif">قصص النجاح</span>
-      <h2 style="font-family:'Tajawal',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;color:#1A1A1A;line-height:1.2;margin-bottom:14px">دراسات <span style="color:#C9A84C">الحالة</span></h2>
-      <p style="font-size:16px;color:#777;max-width:560px;margin:0 auto;line-height:1.9;font-family:'Tajawal',sans-serif">مشاريع حقيقية. نتائج حقيقية. كيف ساعدنا مطوري الخليج على إغلاق المبيعات قبل بدء البناء.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px">
+<!-- ===== PREMIUM PROJECT SHOWCASE ===== -->
+<section id="case-studies-ar" dir="rtl" style="background:#0A0A0A;position:relative;overflow:hidden">
+<style>
+#case-studies-ar { display:flex; flex-direction:column; }
+#case-studies-ar .cs-header { display:flex; align-items:center; justify-content:space-between; padding:44px 60px 0; position:relative; z-index:10; flex-direction:row-reverse; }
+#case-studies-ar .cs-section-label { font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:#C9A84C; font-family:'Tajawal',sans-serif; }
+#case-studies-ar .cs-nav-row { display:flex; align-items:center; gap:0; flex-direction:row-reverse; }
+#case-studies-ar .cs-num-btn { font-family:'Inter',monospace; font-size:11px; font-weight:700; letter-spacing:.06em; color:rgba(255,255,255,.2); background:none; border:none; cursor:pointer; padding:6px 8px; transition:color .25s; line-height:1; }
+#case-studies-ar .cs-num-btn:hover { color:rgba(255,255,255,.55); }
+#case-studies-ar .cs-num-btn.cs-active { color:#C9A84C; font-size:16px; }
+#case-studies-ar .cs-nav-line { width:52px; height:1px; background:rgba(255,255,255,.1); margin:0 8px; flex-shrink:0; }
+#case-studies-ar .cs-arrows { display:flex; gap:8px; margin-right:20px; }
+#case-studies-ar .cs-arrow-btn { width:34px; height:34px; border:1px solid rgba(255,255,255,.16); background:none; color:rgba(255,255,255,.45); border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:18px; line-height:1; transition:all .25s; padding:0; }
+#case-studies-ar .cs-arrow-btn:hover { border-color:#C9A84C; color:#C9A84C; }
+#case-studies-ar .cs-stage { position:relative; min-height:74vh; }
+#case-studies-ar .cs-slide { position:absolute; inset:0; display:grid; grid-template-columns:64% 36%; opacity:0; transition:opacity .6s ease; pointer-events:none; }
+#case-studies-ar .cs-slide.cs-active { opacity:1; pointer-events:auto; }
+#case-studies-ar .cs-panel-image { position:relative; overflow:hidden; }
+#case-studies-ar .cs-img-main { position:absolute; inset:0; }
+#case-studies-ar .cs-img-main img { width:100%; height:100%; object-fit:cover; transition:transform .9s ease; transform:scale(1.06); will-change:transform; }
+#case-studies-ar .cs-slide.cs-active .cs-img-main img { transform:scale(1); }
+#case-studies-ar .cs-img-gold { position:absolute; top:28px; left:28px; width:66px; height:66px; background:#C9A84C; opacity:.55; z-index:2; pointer-events:none; }
+#case-studies-ar .cs-proj-num { position:absolute; bottom:16px; right:28px; font-family:'Playfair Display',Georgia,serif; font-size:110px; font-weight:800; color:rgba(255,255,255,.035); line-height:1; z-index:1; pointer-events:none; user-select:none; }
+#case-studies-ar .cs-img-overlay { position:absolute; inset:0; background:linear-gradient(270deg,rgba(10,10,10,.22) 0%,transparent 40%); z-index:1; pointer-events:none; }
+#case-studies-ar .cs-panel-text { display:flex; flex-direction:column; justify-content:center; padding:56px 56px 72px; border-inline-start:3px solid rgba(201,168,76,.3); border-inline-end:1px solid rgba(201,168,76,.12); position:relative; }
+#case-studies-ar .cs-eyebrow { font-size:10px; font-weight:700; letter-spacing:.1em; color:#C9A84C; margin-bottom:20px; font-family:'Tajawal',sans-serif; }
+#case-studies-ar .cs-slide-title { font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif; font-size:clamp(24px,2.8vw,44px); font-weight:800; color:#FAFAF8; line-height:1.3; margin:0 0 22px; }
+#case-studies-ar .cs-slide-desc { font-size:15px; font-weight:300; color:rgba(255,255,255,.46); line-height:1.9; margin:0 0 40px; max-width:360px; font-family:'Tajawal',sans-serif; }
+#case-studies-ar .cs-slide-cta { display:inline-flex; align-items:center; gap:10px; padding:12px 26px; border:1px solid rgba(201,168,76,.4); color:#C9A84C; font-size:10px; font-weight:700; letter-spacing:.12em; text-decoration:none; align-self:flex-start; transition:background .25s, color .25s, border-color .25s; font-family:'Tajawal',sans-serif; }
+#case-studies-ar .cs-slide-cta:hover { background:#C9A84C; color:#0A0A0A; border-color:#C9A84C; }
+#case-studies-ar .cs-cta-soon { opacity:.32; pointer-events:none; cursor:default; }
+#case-studies-ar .cs-footer { text-align:center; padding:28px 48px 52px; border-top:1px solid rgba(255,255,255,.05); position:relative; z-index:5; }
+@media(max-width:960px){
+  #case-studies-ar .cs-stage { min-height:auto; }
+  #case-studies-ar .cs-slide { position:relative; inset:auto; grid-template-columns:1fr; grid-template-rows:auto 1fr; }
+  #case-studies-ar .cs-slide:not(.cs-active) { display:none; }
+  #case-studies-ar .cs-slide.cs-active { display:grid; }
+  #case-studies-ar .cs-panel-image { min-height:56vw; order:-1; }
+  #case-studies-ar .cs-panel-text { border-inline-start:none; border-top:3px solid rgba(201,168,76,.3); padding:36px 32px 48px; }
+  #case-studies-ar .cs-header { padding:28px 32px 0; }
+}
+@media(max-width:600px){
+  #case-studies-ar .cs-header { flex-wrap:wrap; gap:10px; padding:20px 16px 0; }
+  #case-studies-ar .cs-slide-title { font-size:22px; }
+  #case-studies-ar .cs-panel-text { padding:24px 20px 36px; }
+  #case-studies-ar .cs-panel-image { min-height:62vw; }
+  #case-studies-ar .cs-footer { padding:20px 16px 36px; }
+}
+</style>
 
-      <!-- بطاقة 1: رابطة العالم الإسلامي -->
-      <a href="case-study-mwl-en.html" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" alt="رابطة العالم الإسلامي" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;right:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;left:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.1em;font-family:'Tajawal',sans-serif;padding:5px 12px">دراسة حالة</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:11px;font-weight:700;color:#C9A84C;margin-bottom:8px;font-family:'Tajawal',sans-serif">مكة المكرمة · المملكة العربية السعودية</div>
-          <h3 style="font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;color:#fff;line-height:1.4;margin-bottom:6px">معرض الإنسانية — رابطة العالم الإسلامي</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px;font-family:'Tajawal',sans-serif">مجسم ذكي + تجربة تفاعلية + تصميم داخلي</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">في الموعد</span>
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">4+ أنظمة</span>
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">+4,000 زائر/سنة</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:#C9A84C;font-family:'Tajawal',sans-serif">اقرأ القصة كاملة ←</div>
-        </div>
-      </a>
-
-      <!-- بطاقة 2: أنان إسكان -->
-      <a href="case-study-anan-eskan-en.html" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/maquettes/anan-escan3.jpeg" alt="أنان إسكان" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;right:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;left:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.1em;font-family:'Tajawal',sans-serif;padding:5px 12px">دراسة حالة</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:11px;font-weight:700;color:#C9A84C;margin-bottom:8px;font-family:'Tajawal',sans-serif">الرياض · المملكة العربية السعودية</div>
-          <h3 style="font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;color:#fff;line-height:1.4;margin-bottom:6px">مشروع أنان إسكان السكني</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px;font-family:'Tajawal',sans-serif">مجسم ذكي + سينمائي CGI</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">مبيعات مسبقة</span>
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">مناطق تفاعلية</span>
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">تسليم الرياض</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:#C9A84C;font-family:'Tajawal',sans-serif">اقرأ القصة كاملة ←</div>
-        </div>
-      </a>
-
-      <!-- بطاقة 3: الراجحي -->
-      <a href="case-study-alrajhi-en.html" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/maquettes/alrajhi3.jpeg" alt="الراجحي" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;right:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;left:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.1em;font-family:'Tajawal',sans-serif;padding:5px 12px">دراسة حالة</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:11px;font-weight:700;color:#C9A84C;margin-bottom:8px;font-family:'Tajawal',sans-serif">المملكة العربية السعودية</div>
-          <h3 style="font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;color:#fff;line-height:1.4;margin-bottom:6px">مشروع الراجحي السكني</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px;font-family:'Tajawal',sans-serif">مجسم ذكي + فيلم سينمائي + تصميم معرض</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">نظام متكامل</span>
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">سينمائي CGI</span>
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">صالة مبيعات</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:#C9A84C;font-family:'Tajawal',sans-serif">اقرأ القصة كاملة ←</div>
-        </div>
-      </a>
-
-      <!-- بطاقة 4: إنتاج سينمائي CGI -->
-      <a href="#" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/cinematic/video-1.jpg" alt="إنتاج سينمائي CGI" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;right:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;left:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.1em;font-family:'Tajawal',sans-serif;padding:5px 12px">دراسة حالة</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:11px;font-weight:700;color:#C9A84C;margin-bottom:8px;font-family:'Tajawal',sans-serif">المملكة العربية السعودية</div>
-          <h3 style="font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;color:#fff;line-height:1.4;margin-bottom:6px">إنتاج سينمائي CGI</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px;font-family:'Tajawal',sans-serif">فيلم سينمائي — إنتاج استوديو GH</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">سينمائي CGI</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:rgba(201,168,76,.5);font-family:'Tajawal',sans-serif">قريباً</div>
-        </div>
-      </a>
-
-      <!-- بطاقة 5: بافيليونات رافال -->
-      <a href="#" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/animation/rafal-pavilions.jpg" alt="بافيليونات رافال" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;right:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;left:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.1em;font-family:'Tajawal',sans-serif;padding:5px 12px">دراسة حالة</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:11px;font-weight:700;color:#C9A84C;margin-bottom:8px;font-family:'Tajawal',sans-serif">المملكة العربية السعودية</div>
-          <h3 style="font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;color:#fff;line-height:1.4;margin-bottom:6px">بافيليونات رافال</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px;font-family:'Tajawal',sans-serif">أنيميشن سينمائي</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">أنيميشن</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:rgba(201,168,76,.5);font-family:'Tajawal',sans-serif">قريباً</div>
-        </div>
-      </a>
-
-      <!-- بطاقة 6: مركز السوق -->
-      <a href="#" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/animation/market-center.jpg" alt="مركز السوق" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;right:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;left:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.1em;font-family:'Tajawal',sans-serif;padding:5px 12px">دراسة حالة</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:11px;font-weight:700;color:#C9A84C;margin-bottom:8px;font-family:'Tajawal',sans-serif">المملكة العربية السعودية</div>
-          <h3 style="font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;color:#fff;line-height:1.4;margin-bottom:6px">مركز السوق</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px;font-family:'Tajawal',sans-serif">أنيميشن معماري</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">أنيميشن</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:rgba(201,168,76,.5);font-family:'Tajawal',sans-serif">قريباً</div>
-        </div>
-      </a>
-
-      <!-- بطاقة 7: الأولى — النخيل -->
-      <a href="#" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="الأولى — النخيل" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;right:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;left:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.1em;font-family:'Tajawal',sans-serif;padding:5px 12px">دراسة حالة</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:11px;font-weight:700;color:#C9A84C;margin-bottom:8px;font-family:'Tajawal',sans-serif">المملكة العربية السعودية</div>
-          <h3 style="font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;color:#fff;line-height:1.4;margin-bottom:6px">الأولى — النخيل</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px;font-family:'Tajawal',sans-serif">تصوير معماري</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;font-family:'Tajawal',sans-serif">رندرينج</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:rgba(201,168,76,.5);font-family:'Tajawal',sans-serif">قريباً</div>
-        </div>
-      </a>
-
-    </div>
-    <div style="text-align:center;margin-top:40px">
-      <a href="portfolio.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border:1.5px solid rgba(26,26,26,.2);color:#1A1A1A;font-size:13px;font-weight:700;font-family:'Tajawal',sans-serif;border-radius:50px;transition:all .3s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(26,26,26,.2)';this.style.color='#1A1A1A'">← عرض كامل البورتفوليو</a>
+  <!-- Header -->
+  <div class="cs-header">
+    <span class="cs-section-label">مشاريع مختارة</span>
+    <div style="display:flex;align-items:center;flex-direction:row-reverse">
+      <div class="cs-nav-row" id="csArNavRow">
+        <button class="cs-num-btn cs-active" onclick="csArGoTo(0)">01</button>
+        <button class="cs-num-btn" onclick="csArGoTo(1)">02</button>
+        <button class="cs-num-btn" onclick="csArGoTo(2)">03</button>
+        <div class="cs-nav-line"></div>
+        <button class="cs-num-btn" onclick="csArGoTo(3)">04</button>
+        <button class="cs-num-btn" onclick="csArGoTo(4)">05</button>
+        <button class="cs-num-btn" onclick="csArGoTo(5)">06</button>
+        <button class="cs-num-btn" onclick="csArGoTo(6)">07</button>
+      </div>
+      <div class="cs-arrows">
+        <button class="cs-arrow-btn" onclick="csArNext()" aria-label="السابق">&#8250;</button>
+        <button class="cs-arrow-btn" onclick="csArPrev()" aria-label="التالي">&#8249;</button>
+      </div>
     </div>
   </div>
+
+  <!-- Stage -->
+  <div class="cs-stage" id="csArStage">
+
+    <!-- 01 -->
+    <div class="cs-slide cs-active" data-href="case-study-mwl-en.html">
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" alt="معرض الإنسانية" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">01</div>
+      </div>
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">مجسم ذكي · تجربة تفاعلية · تصميم داخلي</span>
+        <h2 class="cs-slide-title">معرض الإنسانية — رابطة العالم الإسلامي</h2>
+        <p class="cs-slide-desc">هوية بصرية متكاملة ومنظومة تفاعلية لمقر رابطة العالم الإسلامي — مجسمات ذكية وبرمجيات مخصصة وتصميم مكاني سينمائي.</p>
+        <a href="case-study-mwl-en.html" class="cs-slide-cta">← اقرأ دراسة الحالة</a>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="cs-slide" data-href="case-study-anan-eskan-en.html">
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/maquettes/anan-escan3.jpeg" alt="أنان إسكان" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">02</div>
+      </div>
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">مجسم ذكي · سينمائي CGI</span>
+        <h2 class="cs-slide-title">مشروع أنان إسكان السكني</h2>
+        <p class="cs-slide-desc">منظومة بصرية متكاملة تجمع بين المجسم المعماري الذكي والإنتاج السينمائي لأحد أبرز المشاريع السكنية في الرياض.</p>
+        <a href="case-study-anan-eskan-en.html" class="cs-slide-cta">← اقرأ دراسة الحالة</a>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="cs-slide" data-href="case-study-alrajhi-en.html">
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/maquettes/alrajhi3.jpeg" alt="الراجحي" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">03</div>
+      </div>
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">مجسم ذكي · فيلم سينمائي · صالة مبيعات</span>
+        <h2 class="cs-slide-title">مشروع الراجحي السكني</h2>
+        <p class="cs-slide-desc">حل بصري متكامل — مجسم ذكي وفيلم سينمائي وصالة مبيعات مخصصة — لأحد أبرز المجموعات العقارية في المملكة.</p>
+        <a href="case-study-alrajhi-en.html" class="cs-slide-cta">← اقرأ دراسة الحالة</a>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="cs-slide" data-href="#">
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/cinematic/video-1.jpg" alt="إنتاج سينمائي CGI" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">04</div>
+      </div>
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">سينمائي CGI · إنتاج احترافي</span>
+        <h2 class="cs-slide-title">إنتاج سينمائي CGI</h2>
+        <p class="cs-slide-desc">إنتاج سينمائي CGI من استوديو GH يعرض القدرات الإنتاجية الكاملة — مصمم للتسويق العقاري الراقي.</p>
+        <a href="#" class="cs-slide-cta cs-cta-soon">قريباً</a>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="cs-slide" data-href="#">
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/animation/rafal-pavilions.jpg" alt="بافيليونات رافال" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">05</div>
+      </div>
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">أنيميشن سينمائي · عرض المشروع</span>
+        <h2 class="cs-slide-title">بافيليونات رافال</h2>
+        <p class="cs-slide-desc">إنتاج أنيميشن سينمائي لبافيليونات رافال — تحويل الرؤية المعمارية إلى سرد بصري مقنع لمرحلة ما قبل البيع.</p>
+        <a href="#" class="cs-slide-cta cs-cta-soon">قريباً</a>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="cs-slide" data-href="#">
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/animation/market-center.jpg" alt="مركز السوق" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">06</div>
+      </div>
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">أنيميشن معماري</span>
+        <h2 class="cs-slide-title">مركز السوق</h2>
+        <p class="cs-slide-desc">أنيميشن معماري يُجسّد تطوير تجارياً — منظومة بصرية دقيقة تنقل الحجم والقيمة التصميمية بأعلى مستوى.</p>
+        <a href="#" class="cs-slide-cta cs-cta-soon">قريباً</a>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="cs-slide" data-href="#">
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="الأولى النخيل" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">07</div>
+      </div>
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">تصوير معماري · رندرينج فائق الجودة</span>
+        <h2 class="cs-slide-title">الأولى — النخيل</h2>
+        <p class="cs-slide-desc">تصوير معماري عالي الدقة لمشروع النخيل للأولى — رندرينج فائق الجودة مصمم لعروض المستثمرين.</p>
+        <a href="#" class="cs-slide-cta cs-cta-soon">قريباً</a>
+      </div>
+    </div>
+
+  </div><!-- /cs-stage -->
+
+  <!-- Footer CTA -->
+  <div class="cs-footer">
+    <a href="portfolio.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 32px;border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.5);font-size:10px;font-weight:700;letter-spacing:.12em;text-decoration:none;transition:border-color .25s,color .25s;font-family:'Tajawal',sans-serif" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(255,255,255,.14)';this.style.color='rgba(255,255,255,.5)'">← عرض كامل البورتفوليو</a>
+  </div>
+
+<script>
+(function(){
+  var arIdx = 0;
+  var arSlides, arNums;
+  function arInit(){
+    arSlides = document.querySelectorAll('#csArStage .cs-slide');
+    arNums   = document.querySelectorAll('#csArNavRow .cs-num-btn');
+  }
+  window.csArGoTo = function(n){
+    arInit();
+    arSlides[arIdx].classList.remove('cs-active');
+    arNums[arIdx].classList.remove('cs-active');
+    arIdx = ((n % arSlides.length) + arSlides.length) % arSlides.length;
+    arSlides[arIdx].classList.add('cs-active');
+    arNums[arIdx].classList.add('cs-active');
+  };
+  window.csArPrev = function(){ window.csArGoTo(arIdx - 1); };
+  window.csArNext = function(){ window.csArGoTo(arIdx + 1); };
+  var tx = 0;
+  var stage = document.getElementById('csArStage');
+  if(stage){
+    stage.addEventListener('touchstart', function(e){ tx = e.changedTouches[0].screenX; }, {passive:true});
+    stage.addEventListener('touchend',   function(e){
+      var d = tx - e.changedTouches[0].screenX;
+      if(Math.abs(d) > 48){ d > 0 ? window.csArNext() : window.csArPrev(); }
+    }, {passive:true});
+  }
+})();
+</script>
 </section>
 <!-- ===== نهاية دراسات الحالة ===== -->
+
 
 <!-- ===== HOW WE WORK ===== -->
 <section style="padding:100px 0;background:#0A0A0A;overflow:hidden;position:relative" dir="rtl">

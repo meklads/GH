@@ -2782,141 +2782,239 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- ===== SUCCESS STORIES / CASE STUDIES ===== -->
-<section style="padding:100px 0;background:#F7F6F2;overflow:hidden" dir="ltr">
-  <div style="max-width:1280px;margin:0 auto;padding:0 48px">
-    <div style="text-align:center;margin-bottom:56px">
-      <span style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:14px">Success Stories</span>
-      <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,4vw,48px);font-weight:800;color:#1A1A1A;line-height:1.1;letter-spacing:-.02em;margin-bottom:14px">Selected <span style="color:#C9A84C">Case Studies</span></h2>
-      <p style="font-size:16px;color:#777;max-width:560px;margin:0 auto;line-height:1.8">Real projects. Real results. How we've helped GCC developers close more sales before groundbreaking.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px">
+<!-- ===== PREMIUM PROJECT SHOWCASE ===== -->
+<section id="case-studies" dir="ltr" style="background:#0A0A0A;position:relative;overflow:hidden">
+<style>
+#case-studies { display:flex; flex-direction:column; }
+.cs-header { display:flex; align-items:center; justify-content:space-between; padding:44px 60px 0; position:relative; z-index:10; }
+.cs-section-label { font-size:10px; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:#C9A84C; font-family:'Inter',sans-serif; }
+.cs-nav-row { display:flex; align-items:center; gap:0; }
+.cs-num-btn { font-family:'Inter',monospace; font-size:11px; font-weight:700; letter-spacing:.06em; color:rgba(255,255,255,.2); background:none; border:none; cursor:pointer; padding:6px 8px; transition:color .25s; line-height:1; }
+.cs-num-btn:hover { color:rgba(255,255,255,.55); }
+.cs-num-btn.cs-active { color:#C9A84C; font-size:16px; }
+.cs-nav-line { width:52px; height:1px; background:rgba(255,255,255,.1); margin:0 8px; flex-shrink:0; }
+.cs-arrows { display:flex; gap:8px; margin-left:20px; }
+.cs-arrow-btn { width:34px; height:34px; border:1px solid rgba(255,255,255,.16); background:none; color:rgba(255,255,255,.45); border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:18px; line-height:1; transition:all .25s; padding:0; }
+.cs-arrow-btn:hover { border-color:#C9A84C; color:#C9A84C; }
+.cs-stage { position:relative; min-height:74vh; }
+.cs-slide { position:absolute; inset:0; display:grid; grid-template-columns:36% 64%; opacity:0; transition:opacity .6s ease; pointer-events:none; }
+.cs-slide.cs-active { opacity:1; pointer-events:auto; }
+.cs-panel-text { display:flex; flex-direction:column; justify-content:center; padding:56px 56px 72px; border-inline-end:1px solid rgba(201,168,76,.12); border-inline-start:3px solid rgba(201,168,76,.3); position:relative; }
+.cs-eyebrow { font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#C9A84C; margin-bottom:20px; font-family:'Inter',sans-serif; }
+.cs-slide-title { font-family:'Playfair Display',Georgia,serif; font-size:clamp(24px,2.8vw,44px); font-weight:700; color:#FAFAF8; line-height:1.2; margin:0 0 22px; }
+.cs-slide-desc { font-size:14px; font-weight:300; color:rgba(255,255,255,.46); line-height:1.85; margin:0 0 40px; max-width:360px; font-family:'Inter',sans-serif; }
+.cs-slide-cta { display:inline-flex; align-items:center; gap:10px; padding:12px 26px; border:1px solid rgba(201,168,76,.4); color:#C9A84C; font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; align-self:flex-start; transition:background .25s, color .25s, border-color .25s; font-family:'Inter',sans-serif; }
+.cs-slide-cta:hover { background:#C9A84C; color:#0A0A0A; border-color:#C9A84C; }
+.cs-cta-soon { opacity:.32; pointer-events:none; cursor:default; }
+.cs-panel-image { position:relative; overflow:hidden; }
+.cs-img-main { position:absolute; inset:0; }
+.cs-img-main img { width:100%; height:100%; object-fit:cover; transition:transform .9s ease; transform:scale(1.06); will-change:transform; }
+.cs-slide.cs-active .cs-img-main img { transform:scale(1); }
+.cs-img-gold { position:absolute; top:28px; right:28px; width:66px; height:66px; background:#C9A84C; opacity:.55; z-index:2; pointer-events:none; }
+.cs-proj-num { position:absolute; bottom:16px; left:28px; font-family:'Playfair Display',Georgia,serif; font-size:110px; font-weight:800; color:rgba(255,255,255,.035); line-height:1; z-index:1; pointer-events:none; user-select:none; }
+.cs-img-overlay { position:absolute; inset:0; background:linear-gradient(90deg,rgba(10,10,10,.22) 0%,transparent 40%); z-index:1; pointer-events:none; }
+.cs-footer { text-align:center; padding:28px 48px 52px; border-top:1px solid rgba(255,255,255,.05); position:relative; z-index:5; }
+@media(max-width:960px){
+  .cs-stage { min-height:auto; }
+  .cs-slide { position:relative; inset:auto; grid-template-columns:1fr; grid-template-rows:auto 1fr; }
+  .cs-slide:not(.cs-active) { display:none; opacity:0; }
+  .cs-slide.cs-active { display:grid; }
+  .cs-panel-image { min-height:56vw; order:-1; }
+  .cs-panel-text { border-inline-start:none; border-top:3px solid rgba(201,168,76,.3); padding:36px 32px 48px; }
+  .cs-header { padding:28px 32px 0; }
+}
+@media(max-width:600px){
+  .cs-header { flex-wrap:wrap; gap:10px; padding:20px 16px 0; }
+  .cs-nav-row { flex-wrap:nowrap; overflow-x:auto; gap:0; }
+  .cs-slide-title { font-size:22px; }
+  .cs-panel-text { padding:24px 20px 36px; }
+  .cs-panel-image { min-height:62vw; }
+  .cs-img-gold { width:44px; height:44px; }
+  .cs-footer { padding:20px 16px 36px; }
+}
+</style>
 
-      <!-- Card 1: Muslim World League -->
-      <a href="case-study-mwl-en.html" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" alt="Muslim World League" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;left:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;right:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px">Case Study</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px">Makkah · Saudi Arabia</div>
-          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px">Humanity Exhibition — Muslim World League</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px">Smart Maquette + Interactive Experience + Interior Design</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">On Schedule</span>
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">4+ Systems</span>
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">4,000+ Visitors/yr</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:#C9A84C;letter-spacing:.06em">Read Full Story →</div>
-        </div>
-      </a>
-
-      <!-- Card 2: Anan Eskan -->
-      <a href="case-study-anan-eskan-en.html" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/maquettes/anan-escan3.jpeg" alt="Anan Eskan" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;left:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;right:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px">Case Study</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px">Riyadh · Saudi Arabia</div>
-          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px">Anan Eskan Residential Development</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px">Smart Maquette + Cinematic CGI</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">Pre-Sales Enabled</span>
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">Interactive Zones</span>
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">Riyadh Delivery</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:#C9A84C;letter-spacing:.06em">Read Full Story →</div>
-        </div>
-      </a>
-
-      <!-- Card 3: Al Rajhi -->
-      <a href="case-study-alrajhi-en.html" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/maquettes/alrajhi3.jpeg" alt="Al Rajhi" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;left:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;right:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px">Case Study</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px">Saudi Arabia</div>
-          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px">Al Rajhi Residential Development</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px">Smart Maquette + Cinematic Film + Exhibition</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">Full System</span>
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">Cinematic CGI</span>
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">Sales Center</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:#C9A84C;letter-spacing:.06em">Read Full Story →</div>
-        </div>
-      </a>
-
-      <!-- Card 4: Cinematic CGI Production -->
-      <a href="#" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/cinematic/video-1.jpg" alt="Cinematic CGI Production" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;left:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;right:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px">Case Study</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px">Saudi Arabia</div>
-          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px">Cinematic CGI Production</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px">Cinematic Film — GH Studio Production</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">Cinematic CGI</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:rgba(201,168,76,.5);letter-spacing:.06em">Coming Soon</div>
-        </div>
-      </a>
-
-      <!-- Card 5: Rafal Pavilions -->
-      <a href="#" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/animation/rafal-pavilions.jpg" alt="Rafal Pavilions" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;left:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;right:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px">Case Study</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px">Saudi Arabia</div>
-          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px">Rafal Pavilions</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px">Cinematic Animation</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">Animation</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:rgba(201,168,76,.5);letter-spacing:.06em">Coming Soon</div>
-        </div>
-      </a>
-
-      <!-- Card 6: Market Center -->
-      <a href="#" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/animation/market-center.jpg" alt="Market Center" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;left:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;right:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px">Case Study</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px">Saudi Arabia</div>
-          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px">Market Center</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px">Architectural Animation</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">Animation</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:rgba(201,168,76,.5);letter-spacing:.06em">Coming Soon</div>
-        </div>
-      </a>
-
-      <!-- Card 7: Al-Oula — Al-Nakheel -->
-      <a href="#" style="position:relative;display:block;aspect-ratio:3/4;overflow:hidden;text-decoration:none;background:#111;transition:transform .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.querySelector('img').style.transform='scale(1.06)'" onmouseout="this.style.transform='translateY(0)';this.querySelector('img').style.transform='scale(1)'">
-        <img src="assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="Al-Oula — Al-Nakheel" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)">
-        <div style="position:absolute;top:0;left:0;bottom:0;width:3px;background:#C9A84C"></div>
-        <div style="position:absolute;top:20px;right:20px;background:rgba(201,168,76,.9);color:#000;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px">Case Study</div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.92))">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px">Saudi Arabia</div>
-          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px">Al-Oula — Al-Nakheel</h3>
-          <p style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:14px">Architectural Visualization</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-            <span style="background:#C9A84C;color:#000;font-size:10px;font-weight:700;padding:3px 10px;letter-spacing:.06em">Rendering</span>
-          </div>
-          <div style="font-size:12px;font-weight:700;color:rgba(201,168,76,.5);letter-spacing:.06em">Coming Soon</div>
-        </div>
-      </a>
-
-    </div>
-    <div style="text-align:center;margin-top:40px">
-      <a href="portfolio-en.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border:1.5px solid rgba(26,26,26,.2);color:#1A1A1A;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:50px;transition:all .3s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(26,26,26,.2)';this.style.color='#1A1A1A'">View Full Portfolio <span style="font-size:14px">→</span></a>
+  <!-- Header -->
+  <div class="cs-header">
+    <span class="cs-section-label">Selected Projects</span>
+    <div style="display:flex;align-items:center">
+      <div class="cs-nav-row" id="csNavRow">
+        <button class="cs-num-btn cs-active" onclick="csGoTo(0)">01</button>
+        <button class="cs-num-btn" onclick="csGoTo(1)">02</button>
+        <button class="cs-num-btn" onclick="csGoTo(2)">03</button>
+        <div class="cs-nav-line"></div>
+        <button class="cs-num-btn" onclick="csGoTo(3)">04</button>
+        <button class="cs-num-btn" onclick="csGoTo(4)">05</button>
+        <button class="cs-num-btn" onclick="csGoTo(5)">06</button>
+        <button class="cs-num-btn" onclick="csGoTo(6)">07</button>
+      </div>
+      <div class="cs-arrows">
+        <button class="cs-arrow-btn" onclick="csPrev()" aria-label="Previous project">&#8249;</button>
+        <button class="cs-arrow-btn" onclick="csNext()" aria-label="Next project">&#8250;</button>
+      </div>
     </div>
   </div>
+
+  <!-- Stage -->
+  <div class="cs-stage" id="csStage">
+
+    <!-- 01 -->
+    <div class="cs-slide cs-active" data-href="case-study-mwl-en.html">
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">Smart Maquette · Interactive Experience · Interior Design</span>
+        <h2 class="cs-slide-title">Humanity Exhibition — Muslim World League</h2>
+        <p class="cs-slide-desc">Complete visual identity and interactive system for the Muslim World League headquarters — smart maquettes, custom interactive software, and cinematic spatial design.</p>
+        <a href="case-study-mwl-en.html" class="cs-slide-cta">View Case Study →</a>
+      </div>
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.51-1.jpeg" alt="Humanity Exhibition" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">01</div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="cs-slide" data-href="case-study-anan-eskan-en.html">
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">Smart Maquette · Cinematic CGI</span>
+        <h2 class="cs-slide-title">Anan Eskan Residential Development</h2>
+        <p class="cs-slide-desc">Integrated visual system delivering smart architectural maquettes and cinematic CGI for one of Riyadh's leading residential developments.</p>
+        <a href="case-study-anan-eskan-en.html" class="cs-slide-cta">View Case Study →</a>
+      </div>
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/maquettes/anan-escan3.jpeg" alt="Anan Eskan" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">02</div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="cs-slide" data-href="case-study-alrajhi-en.html">
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">Smart Maquette · Cinematic Film · Sales Gallery</span>
+        <h2 class="cs-slide-title">Al Rajhi Residential Development</h2>
+        <p class="cs-slide-desc">A full-system visual solution — smart maquette, cinematic film, and bespoke sales gallery — built for one of Saudi Arabia's most recognised real-estate groups.</p>
+        <a href="case-study-alrajhi-en.html" class="cs-slide-cta">View Case Study →</a>
+      </div>
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/maquettes/alrajhi3.jpeg" alt="Al Rajhi" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">03</div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="cs-slide" data-href="#">
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">Cinematic CGI · Film Production</span>
+        <h2 class="cs-slide-title">Cinematic CGI Production</h2>
+        <p class="cs-slide-desc">Studio-produced cinematic CGI showcasing the full range of Graphics House high-end film production — crafted for premium real estate marketing.</p>
+        <a href="#" class="cs-slide-cta cs-cta-soon">Coming Soon</a>
+      </div>
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/cinematic/video-1.jpg" alt="Cinematic CGI" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">04</div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="cs-slide" data-href="#">
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">Cinematic Animation · Development Showcase</span>
+        <h2 class="cs-slide-title">Rafal Pavilions</h2>
+        <p class="cs-slide-desc">Cinematic animation production for Rafal Pavilions — translating an architectural vision into a compelling pre-sales narrative.</p>
+        <a href="#" class="cs-slide-cta cs-cta-soon">Coming Soon</a>
+      </div>
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/animation/rafal-pavilions.jpg" alt="Rafal Pavilions" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">05</div>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="cs-slide" data-href="#">
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">Architectural Animation</span>
+        <h2 class="cs-slide-title">Market Center</h2>
+        <p class="cs-slide-desc">Architectural animation bringing a commercial development to life — precision visual craft communicating scale and design intent.</p>
+        <a href="#" class="cs-slide-cta cs-cta-soon">Coming Soon</a>
+      </div>
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/animation/market-center.jpg" alt="Market Center" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">06</div>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="cs-slide" data-href="#">
+      <div class="cs-panel-text">
+        <span class="cs-eyebrow">Architectural Visualization · Rendering</span>
+        <h2 class="cs-slide-title">Al-Oula — Al-Nakheel</h2>
+        <p class="cs-slide-desc">High-fidelity architectural visualization for Al-Oula's Al-Nakheel project — ultra-premium rendering crafted for investor-level presentations.</p>
+        <a href="#" class="cs-slide-cta cs-cta-soon">Coming Soon</a>
+      </div>
+      <div class="cs-panel-image">
+        <div class="cs-img-main"><img src="assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="Al-Oula Al-Nakheel" loading="lazy"></div>
+        <div class="cs-img-overlay"></div>
+        <div class="cs-img-gold"></div>
+        <div class="cs-proj-num">07</div>
+      </div>
+    </div>
+
+  </div><!-- /cs-stage -->
+
+  <!-- Footer CTA -->
+  <div class="cs-footer">
+    <a href="portfolio-en.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 32px;border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.5);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:border-color .25s,color .25s;font-family:'Inter',sans-serif" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(255,255,255,.14)';this.style.color='rgba(255,255,255,.5)'">View Full Portfolio →</a>
+  </div>
+
+<script>
+(function(){
+  var csIdx = 0;
+  var slides, nums;
+  function init(){
+    slides = document.querySelectorAll('#csStage .cs-slide');
+    nums   = document.querySelectorAll('#csNavRow .cs-num-btn');
+  }
+  window.csGoTo = function(n){
+    init();
+    slides[csIdx].classList.remove('cs-active');
+    nums[csIdx].classList.remove('cs-active');
+    csIdx = ((n % slides.length) + slides.length) % slides.length;
+    slides[csIdx].classList.add('cs-active');
+    nums[csIdx].classList.add('cs-active');
+  };
+  window.csPrev = function(){ window.csGoTo(csIdx - 1); };
+  window.csNext = function(){ window.csGoTo(csIdx + 1); };
+  // Touch swipe
+  var tx = 0;
+  var stage = document.getElementById('csStage');
+  if(stage){
+    stage.addEventListener('touchstart', function(e){ tx = e.changedTouches[0].screenX; }, {passive:true});
+    stage.addEventListener('touchend',   function(e){
+      var d = tx - e.changedTouches[0].screenX;
+      if(Math.abs(d) > 48){ d > 0 ? window.csNext() : window.csPrev(); }
+    }, {passive:true});
+  }
+  // Keyboard
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight') window.csNext();
+    if(e.key==='ArrowLeft')  window.csPrev();
+  });
+})();
+</script>
 </section>
 <!-- ===== END CASE STUDIES ===== -->
+
 
 <!-- ===== HOW WE WORK ===== -->
 <section style="padding:100px 0;background:#0A0A0A;overflow:hidden;position:relative" dir="ltr">
