@@ -2785,133 +2785,174 @@ img { max-width: 100%; display: block; }
 <!-- ===== PREMIUM PROJECT SHOWCASE ===== -->
 <section id="g10-en" class="gh10s" dir="ltr">
 <style id="gh10s">
-.gh10s{background:#000;overflow:hidden;position:relative;padding:0}
-.gh10s-nav{display:flex;align-items:center;justify-content:center;padding:24px 40px 0;position:relative;z-index:5}
+/* ===== Case Studies — Reference-Exact Layout ===== */
+.gh10s{position:relative;background:#000;padding:44px 0 52px;overflow:hidden}
+
+/* Gold accent block — top right corner */
+.gh10s-gold{position:absolute;top:0;right:0;width:205px;height:86px;
+  background:linear-gradient(135deg,#C9A84C 0%,#9B7420 100%);z-index:1;pointer-events:none}
+
+/* Navigation row — centered full width */
+.gh10s-nav{display:flex;align-items:center;justify-content:center;
+  margin-bottom:30px;position:relative;z-index:5}
 .gh10s-nums{display:flex;align-items:center;gap:0}
-.gh10s-n{font:700 11px/1 'Inter',monospace;letter-spacing:.06em;color:rgba(255,255,255,.2);background:none;border:none;cursor:pointer;padding:5px 7px;transition:all .2s}
-.gh10s-n:hover{color:rgba(255,255,255,.55)}
+.gh10s-n{font:700 11px/1 'Inter',monospace;letter-spacing:.06em;
+  color:rgba(255,255,255,.22);background:none;border:none;cursor:pointer;
+  padding:4px 8px;transition:all .2s;text-decoration:none}
+.gh10s-n:hover{color:rgba(255,255,255,.6)}
 .gh10s-n.on{color:#C9A84C;font-size:16px}
-.gh10s-sep{width:48px;height:1px;background:rgba(255,255,255,.12);margin:0 6px;flex-shrink:0}
-.gh10s-arrows{display:flex;gap:6px;margin-left:18px}
-.gh10s-arr{width:32px;height:32px;border:1px solid rgba(255,255,255,.16);background:none;color:rgba(255,255,255,.45);border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .22s;padding:0;line-height:1}
-.gh10s-arr:hover{border-color:#C9A84C;color:#C9A84C}
-.gh10s-body{display:grid;grid-template-columns:36% 64%;height:460px}
-.gh10s-left{display:flex;flex-direction:column;justify-content:center;padding:0 32px 0 56px;position:relative;overflow:hidden}
-.gh10s-num-bg{font:800 110px/1 'Playfair Display',Georgia,serif;color:rgba(255,255,255,.035);position:absolute;top:50%;transform:translateY(-52%);pointer-events:none;user-select:none;letter-spacing:-.02em;left:20px}
-.gh10s-svc{font:700 9px/1 'Inter',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#C9A84C;margin-bottom:14px;position:relative;z-index:1}
-.gh10s-name{font:700 clamp(22px,2.8vw,44px)/1.1 'Playfair Display',Georgia,serif;color:#fff;margin:0 0 22px;text-transform:uppercase;letter-spacing:.02em;position:relative;z-index:1}
-.gh10s-bracket{width:60px;height:60px;border-left:2px solid rgba(255,255,255,.3);border-bottom:2px solid rgba(255,255,255,.3);margin-bottom:20px;position:relative;z-index:1}
-.gh10s-cta{display:inline-flex;align-items:center;gap:8px;color:#C9A84C;font:700 9px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:opacity .2s;background:none;border:none;cursor:pointer;position:relative;z-index:1}
-.gh10s-cta:hover{opacity:.65}
-.gh10s-cta-soon{opacity:.25;pointer-events:none}
-.gh10s-right{position:relative;overflow:hidden}
-.gh10s-img{position:absolute;inset:0}
-.gh10s-img img{width:100%;height:100%;object-fit:cover;transition:opacity .55s ease}
-.gh10s-gold{position:absolute;top:0;right:0;width:72px;height:72px;background:#C9A84C;opacity:.5;z-index:2;pointer-events:none}
-.gh10s-foot{padding:18px 0 24px;text-align:center;background:#000}
-@media(max-width:900px){
-  .gh10s-body{grid-template-columns:1fr;height:auto}
-  .gh10s-right{height:52vw}
-  .gh10s-left{padding:24px 24px 24px 24px;border-top:1px solid rgba(201,168,76,.12)}
-  .gh10s-num-bg{font-size:80px}
+.gh10s-sep{width:54px;height:1px;background:rgba(255,255,255,.15);
+  margin:0 6px;flex-shrink:0;align-self:center}
+.gh10s-arrs{display:flex;align-items:center;gap:2px;margin-left:16px}
+.gh10s-arr{font:300 28px/1 'Inter',sans-serif;color:rgba(255,255,255,.4);
+  background:none;border:none;cursor:pointer;padding:2px 8px;
+  transition:color .2s;letter-spacing:0}
+.gh10s-arr:hover{color:#C9A84C}
+
+/* Body: LEFT text panel + RIGHT image composition */
+.gh10s-body{display:flex;align-items:flex-end;position:relative;z-index:2}
+
+/* Left text panel */
+.gh10s-left{width:36%;flex-shrink:0;padding:0 28px 20px 60px}
+.gh10s-psvc{font:700 9px/1 'Inter',sans-serif;letter-spacing:.24em;
+  text-transform:uppercase;color:#C9A84C;margin-bottom:13px;display:block}
+.gh10s-pname{font:800 clamp(20px,2.5vw,42px)/1.05 'Playfair Display',Georgia,serif;
+  color:#fff;text-transform:uppercase;margin:0 0 22px;letter-spacing:.01em}
+.gh10s-bracket{width:58px;height:58px;
+  border-left:2px solid rgba(255,255,255,.35);
+  border-bottom:2px solid rgba(255,255,255,.35)}
+
+/* Right image composition */
+.gh10s-right{flex:1;display:flex;gap:4px;height:322px;position:relative;z-index:2}
+.gh10s-img-main{flex:1;overflow:hidden;position:relative}
+.gh10s-img-main img{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;transition:opacity .55s ease}
+.gh10s-img-sec{width:174px;flex-shrink:0;overflow:hidden;position:relative}
+.gh10s-img-sec img{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:right center;transition:opacity .55s ease}
+
+/* Footer CTA */
+.gh10s-foot{text-align:center;padding:20px 0 0;position:relative;z-index:3}
+
+/* Responsive */
+@media(max-width:920px){
+  .gh10s-body{flex-direction:column-reverse;align-items:stretch}
+  .gh10s-right{height:50vw}
+  .gh10s-img-sec{width:120px}
+  .gh10s-left{width:auto;padding:18px 20px 14px 20px}
+  .gh10s-gold{width:120px;height:55px}
 }
-@media(max-width:540px){
-  .gh10s-nav{padding:18px 14px 0;flex-wrap:wrap;gap:8px}
-  .gh10s-arrows{margin-left:10px}
-  .gh10s-name{font-size:20px}
+@media(max-width:560px){
+  .gh10s{padding:28px 0 36px}
+  .gh10s-nav{flex-wrap:wrap;gap:6px;padding:0 12px}
+  .gh10s-arrs{margin-left:8px}
+  .gh10s-pname{font-size:20px}
+  .gh10s-right{height:58vw}
+  .gh10s-img-sec{display:none}
   .gh10s-bracket{width:40px;height:40px}
 }
-[dir=rtl] .gh10s-left{padding:0 56px 0 32px}
-[dir=rtl] .gh10s-num-bg{left:auto;right:20px}
-[dir=rtl] .gh10s-bracket{border-left:none;border-right:2px solid rgba(255,255,255,.3);border-bottom:2px solid rgba(255,255,255,.3)}
-[dir=rtl] .gh10s-arrows{margin-left:0;margin-right:18px}
-[dir=rtl] .gh10s-gold{right:auto;left:0}
+
+/* RTL */
+[dir=rtl] .gh10s-left{padding:0 60px 20px 28px}
+[dir=rtl] .gh10s-body{flex-direction:row-reverse}
+[dir=rtl] .gh10s-gold{right:auto;left:0;
+  background:linear-gradient(225deg,#C9A84C 0%,#9B7420 100%)}
+[dir=rtl] .gh10s-arrs{margin-left:0;margin-right:16px;flex-direction:row-reverse}
+[dir=rtl] .gh10s-bracket{border-left:none;
+  border-right:2px solid rgba(255,255,255,.35);
+  border-bottom:2px solid rgba(255,255,255,.35)}
+[dir=rtl] .gh10s-right{flex-direction:row-reverse}
+@media(max-width:920px){
+  [dir=rtl] .gh10s-body{flex-direction:column-reverse}
+}
 </style>
-  <div style="text-align:center;padding:32px 24px 4px">
-    <span style="font:700 9px/1 'Inter',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:12px">SUCCESS STORIES</span>
-    <h2 style="font:700 clamp(22px,3vw,36px)/1.1 'Playfair Display',Georgia,serif;color:#fff;margin:0 0 10px">Selected <span style="color:#C9A84C">Case Studies</span></h2>
-    <p style="font:300 12px/1.7 'Inter',sans-serif;color:rgba(255,255,255,.35);max-width:500px;margin:0 auto">Real projects. Real results. How we've helped GCC developers close more sales before groundbreaking.</p>
+<div class="gh10s-gold"></div>
+
+<div style="text-align:center;padding:0 24px 0;margin-bottom:6px;position:relative;z-index:5">
+  <span style="font:700 8px/1 'Inter',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:10px">SUCCESS STORIES</span>
+  <h2 style="font:700 clamp(20px,2.6vw,34px)/1.1 'Playfair Display',Georgia,serif;color:#fff;margin:0 0 8px">Selected <span style="color:#C9A84C">Case Studies</span></h2>
+  <p style="font:300 11px/1.65 'Inter',sans-serif;color:rgba(255,255,255,.33);max-width:480px;margin:0 auto">Real projects. Real results. How we've helped GCC developers close more sales before groundbreaking.</p>
+</div>
+
+<div class="gh10s-nav">
+  <div class="gh10s-nums" id="gh10Numsen"></div>
+  <div class="gh10s-arrs">
+    <button class="gh10s-arr" onclick="GH10sen.prev()">&#8249;</button>
+    <button class="gh10s-arr" onclick="GH10sen.next()">&#8250;</button>
   </div>
-  <div class="gh10s-nav">
-    <div class="gh10s-nums" id="gh10sNumsen"></div>
-    <div class="gh10s-arrows">
-      <button class="gh10s-arr" onclick="GH10sen.prev()">&#8249;</button>
-      <button class="gh10s-arr" onclick="GH10sen.next()">&#8250;</button>
-    </div>
+</div>
+
+<div class="gh10s-body">
+  <div class="gh10s-left">
+    <span id="gh10sSven" class="gh10s-psvc"></span>
+    <div id="gh10sNen" class="gh10s-pname"></div>
+    <div class="gh10s-bracket"></div>
+    <a id="gh10Caen" href="#" style="font:700 9px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#C9A84C;text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.6'" onmouseout="this.style.opacity='1'"></a>
   </div>
-  <div class="gh10s-body">
-    <div class="gh10s-left">
-      <span id="gh10sBgen" class="gh10s-num-bg"></span>
-      <div id="gh10sSvcen" class="gh10s-svc"></div>
-      <div id="gh10sNameen" class="gh10s-name"></div>
-      <div class="gh10s-bracket"></div>
-      <a id="gh10sCtaen" href="#" class="gh10s-cta"></a>
-    </div>
-    <div class="gh10s-right">
-      <div class="gh10s-img"><img id="gh10sImgen" src="" alt="" loading="lazy"></div>
-      <div class="gh10s-gold"></div>
-    </div>
+  <div class="gh10s-right">
+    <div class="gh10s-img-main"><img id="gh10sMen" src="" alt="" loading="lazy"></div>
+    <div class="gh10s-img-sec"><img id="gh10sSen" src="" alt="" loading="lazy"></div>
   </div>
-  <div class="gh10s-foot">
-    <a href="portfolio-en.html" style="font:700 9px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.32)'">View Full Portfolio →</a>
-  </div>
+</div>
+
+<div class="gh10s-foot">
+  <a href="portfolio-en.html" style="font:700 8px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.3)'">View Full Portfolio →</a>
+</div>
+
 <script>
 (function(){
-var P=[["01","Makkah Charter","Smart Maquette & Interactive","assets/news/makkah-charter-01.jpeg","case-study-mwl-en.html"],["02","Jeddah Forum","Cinematic Production","assets/projects/animation/jeddah-forum.jpg","#"],["03","Rafal Pavilions","3D Animation","assets/projects/animation/rafal-pavilions.jpg","#"],["04","Market Center","3D Animation","assets/projects/animation/market-center.jpg","#"],["05","AlUla Co.","Photorealistic Rendering","assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg","#"],["06","Anan Eskan","Smart Architectural Maquette","assets/projects/maquettes/anan-escan3.jpeg","case-study-anan-eskan-en.html"],["07","Alrajhi Financial City","Cinematic CGI & Interactive","assets/projects/maquettes/alrajhi3.jpeg","case-study-alrajhi-en.html"]];
-var idx=0,timer=null;
-function byId(id){return document.getElementById(id)}
-function buildNums(){
-  var el=byId('gh10sNumsen'),h='';
+var P=[["01","Makkah Charter","Smart Maquette & Interactive","assets/news/makkah-charter-01.jpeg","assets/news/makkah-charter-04.jpeg","case-study-mwl-en.html"],["02","Jeddah Forum","Cinematic Production","assets/projects/animation/jeddah-forum.jpg","assets/projects/animation/rafal-pavilions.jpg","#"],["03","Rafal Pavilions","3D Animation","assets/projects/animation/rafal-pavilions.jpg","assets/projects/animation/market-center.jpg","#"],["04","Market Center","3D Animation","assets/projects/animation/market-center.jpg","assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg","#"],["05","AlUla Co.","Photorealistic Rendering","assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg","assets/projects/maquettes/anan-escan3.jpeg","#"],["06","Anan Eskan","Smart Architectural Maquette","assets/projects/maquettes/anan-escan3.jpeg","assets/projects/maquettes/alrajhi3.jpeg","case-study-anan-eskan-en.html"],["07","Alrajhi Financial City","Cinematic CGI & Interactive","assets/projects/maquettes/alrajhi3.jpeg","assets/news/makkah-charter-01.jpeg","case-study-alrajhi-en.html"]];
+var idx=0,tmr=null;
+function q(id){return document.getElementById(id)}
+function nums(){
+  var el=q('gh10Numsen'),h='';
   for(var i=0;i<P.length;i++){
     if(i===3)h+='<div class="gh10s-sep"></div>';
     h+='<button class="gh10s-n'+(i===0?' on':'')+'" onclick="GH10sen.go('+i+')">'+P[i][0]+'</button>';
   }
   el.innerHTML=h;
 }
-function render(n,instant){
+function render(n,fast){
   var p=P[n];
-  var nameEl=byId('gh10sNameen');
-  var svcEl =byId('gh10sSvcen');
-  var imgEl =byId('gh10sImgen');
-  var ctaEl =byId('gh10sCtaen');
-  var bgEl  =byId('gh10sBgen');
-  if(!instant){nameEl.style.opacity='0';imgEl.style.opacity='0';}
+  var m=q('gh10sMen'),s=q('gh10sSen');
+  if(!fast){m.style.opacity='0';s.style.opacity='0';}
   setTimeout(function(){
-    bgEl.textContent=p[0];
-    nameEl.textContent=p[1];
-    svcEl.textContent=p[2];
-    imgEl.src=p[3];imgEl.alt=p[1];
-    var isSoon=p[4]==='#';
-    ctaEl.href=isSoon?'#':p[4];
-    ctaEl.textContent=isSoon?"Coming Soon":"Read The Story →";
-    ctaEl.className='gh10s-cta'+(isSoon?' gh10s-cta-soon':'');
-    nameEl.style.transition='opacity .4s';nameEl.style.opacity='1';
-    imgEl.style.transition='opacity .5s';imgEl.style.opacity='1';
-  },instant?0:230);
-  document.querySelectorAll('#gh10sNumsen .gh10s-n').forEach(function(el,i){
+    q('gh10sNen').textContent=p[1];
+    q('gh10sSven').textContent=p[2];
+    m.src=p[3];m.alt=p[1];
+    s.src=p[4];s.alt=p[1];
+    var soon=p[5]==='#';
+    var ca=q('gh10Caen');
+    ca.href=soon?'#':p[5];
+    ca.textContent=soon?"Coming Soon":"Read The Story →";
+    ca.style.opacity=soon?'0.28':'1';
+    ca.style.pointerEvents=soon?'none':'auto';
+    m.style.transition='opacity .5s';m.style.opacity='1';
+    s.style.transition='opacity .5s';s.style.opacity='1';
+  },fast?0:240);
+  document.querySelectorAll('#gh10Numsen .gh10s-n').forEach(function(el,i){
     el.classList.toggle('on',i===n);
   });
 }
 function go(n){
   idx=((n%P.length)+P.length)%P.length;
   render(idx,false);
-  stopAuto();setTimeout(startAuto,1500);
+  stop();setTimeout(start,1500);
 }
-function startAuto(){timer=setInterval(function(){go(idx+1);},6000);}
-function stopAuto(){if(timer){clearInterval(timer);timer=null;}}
+function start(){tmr=setInterval(function(){go(idx+1);},6000);}
+function stop(){if(tmr){clearInterval(tmr);tmr=null;}}
 function init(){
-  buildNums();render(0,true);startAuto();
-  var sec=byId('g10-en');
-  if(sec){
-    sec.addEventListener('mouseenter',stopAuto);
-    sec.addEventListener('mouseleave',function(){setTimeout(startAuto,1200);});
-    var tx=0;
-    sec.addEventListener('touchstart',function(e){tx=e.changedTouches[0].screenX;},{passive:true});
-    sec.addEventListener('touchend',function(e){
-      var d=tx-e.changedTouches[0].screenX;
-      if(Math.abs(d)>50){d>0?go(idx+1):go(idx-1);}
-    },{passive:true});
-  }
+  nums();render(0,true);start();
+  var sec=document.getElementById('g10-en');
+  if(!sec)return;
+  sec.addEventListener('mouseenter',stop);
+  sec.addEventListener('mouseleave',function(){setTimeout(start,1200);});
+  var tx=0;
+  sec.addEventListener('touchstart',function(e){tx=e.changedTouches[0].screenX;},{passive:true});
+  sec.addEventListener('touchend',function(e){
+    var d=tx-e.changedTouches[0].screenX;
+    if(Math.abs(d)>50){d>0?go(idx+1):go(idx-1);}
+  },{passive:true});
 }
 window.GH10sen={go:go,prev:function(){go(idx-1);},next:function(){go(idx+1);}};
 document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
