@@ -365,24 +365,24 @@ html[dir="rtl"] .gallery-strip-label span {
   position: absolute;
   bottom: 0;
   left: 0;
+  right: 0;
   z-index: 4;
-  padding: 24px 10px 24px 24px;
+  padding: 16px 16px;
   writing-mode: horizontal-tb;
   font-size: 18px;
   font-weight: 800;
   color: #fff;
-  background: transparent;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
   letter-spacing: 0.08em;
   font-family: 'Tajawal', sans-serif;
   pointer-events: none;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   gap: 3px;
   line-height: 1.2;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.7), 2px 2px 4px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3);
-  text-align: right;
+  text-align: center;
 }
 .gallery-vert-label .vert-en {
   font-size: 12px;
@@ -402,7 +402,7 @@ html[dir="rtl"] .gallery-strip-label span {
 @media (max-width: 768px) {
   .gallery-vert-label {
     font-size: 14px;
-    padding: 16px 8px 16px 16px;
+    padding: 12px;
   }
   .gallery-vert-label .vert-en {
     font-size: 10px;
