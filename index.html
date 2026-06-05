@@ -2871,13 +2871,13 @@ img { max-width: 100%; display: block; }
 </div>
 <script>
 (function(){
-var P=[["01","Makkah Charter","Smart Maquette & Interactive","assets/news/makkah-charter-01.jpeg","case-study-mwl-en.html"],["02","Jeddah Forum","Cinematic Production","assets/projects/animation/jeddah-forum.jpg","#"],["03","Rafal Pavilions","3D Animation","assets/projects/animation/rafal-pavilions.jpg","#"],["04","Market Center","3D Animation","assets/projects/animation/market-center.jpg","#"],["05","AlUla Co.","Photorealistic Rendering","assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg","#"],["06","Anan Eskan","Smart Architectural Maquette","assets/projects/maquettes/anan-escan3.jpeg","case-study-anan-eskan-en.html"],["07","Alrajhi Financial City","Cinematic CGI & Interactive","assets/projects/maquettes/alrajhi3.jpeg","case-study-alrajhi-en.html"]];
+var P=[["01","Makkah Charter","Smart Maquette & Interactive","assets/news/makkah-charter-01.jpeg","case-study-mwl-en.html"],["02","Jeddah Forum","Cinematic Production","assets/projects/animation/jeddah-forum.jpg","#"],["03","Rafal Pavilions","3D Animation","assets/projects/animation/rafal-pavilions.jpg","#"],["04","Market Center","3D Animation","assets/projects/animation/market-center.jpg","#"],["05","AlUla Co.","Photorealistic Rendering","assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg","#"],["06","Anan Eskan","Smart Architectural Maquette","assets/projects/maquettes/anan-escan3.jpeg","case-study-anan-eskan-en.html"],["07","Alrajhi Financial City","Cinematic CGI & Interactive","assets/projects/maquettes/alrajhi3.jpeg","case-study-alrajhi-en.html"],["08","Makkah Charter — Maquette","Smart Architectural Maquette","assets/projects/maquettes/WhatsApp-Image-1447-09-13-at-19.18.45-2.jpeg","case-study-mwl-en.html"],["09","Anan Eskan — Riyadh","Smart Architectural Maquette","assets/projects/maquettes/Anan_Eskan_ryadh5-scaled-e1745137604161.jpg","case-study-anan-eskan-en.html"],["10","Development Project","Smart Architectural Maquette","assets/projects/maquettes/20-scaled-e1745147420120.jpg","#"],["11","Cinematic CGI","Cinematic Production","assets/projects/cinematic/video-1.jpg","#"],["12","Humanity Exhibition","Interactive Experience","assets/news/makkah-charter-02.jpeg","case-study-mwl-en.html"],["13","Al Rajhi — Cinematic","Cinematic Production","assets/projects/animation/alrajhi.jpg","case-study-alrajhi-en.html"],["14","Al Khair Heights","Smart Architectural Maquette","assets/projects/maquettes/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg","#"],["15","Financial Center","Smart Architectural Maquette","assets/projects/maquettes/The-Financial-Center-of-King-Abdullah-City.jpeg","#"]];
 var idx=0,tmr=null;
 function q(id){return document.getElementById(id)}
 function buildNums(){
   var el=q('csrNumsen'),h='';
   for(var i=0;i<P.length;i++){
-    if(i===3)h+='<span class="csr-line"></span>';
+    if(i===7)h+='<span class="csr-line"></span>';
     h+='<button class="csr-num'+(i===0?' on':'')+'" onclick="CSRen.go('+i+')">'+P[i][0]+'</button>';
   }
   el.innerHTML=h;
