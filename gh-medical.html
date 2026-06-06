@@ -191,6 +191,45 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 .footer-bottom a:hover { color: var(--gold); }
 @media (max-width:768px){.footer-bottom{flex-direction:column;text-align:center}}
 
+.video-modal {
+  position: fixed; inset: 0; z-index: 99998;
+  background: rgba(0,0,0,.92);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity .4s ease, visibility .4s ease;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.video-modal.active { opacity: 1; visibility: visible; }
+.vm-close {
+  position: absolute; top: 24px; right: 24px; z-index: 10;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,.08); border: none;
+  color: #fff; font-size: 20px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+}
+.vm-close:hover { background: rgba(255,255,255,.15); }
+.vm-inner { width: 90%; max-width: 1100px; max-height: 85vh; }
+.vm-aspect { position: relative; padding-bottom: 56.25%; background: #000; overflow: hidden; border-radius: 4px; }
+.vm-aspect iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
+
+.yt-play-btn {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  z-index: 3; pointer-events: none;
+  opacity: 0; transition: opacity 0.4s ease;
+}
+.portfolio-item:hover .yt-play-btn { opacity: 1; }
+.yt-play-btn-inner {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(201,168,76,0.9);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  padding-right: 2px;
+}
+.portfolio-item:hover .yt-play-btn-inner { transform: scale(1.12); }
+.yt-play-btn-inner span { font-size: 28px; color: #0A0A0A; }
+
 .gh-float { position: fixed; bottom: 32px; left: 28px; z-index: 9000; display: flex; flex-direction: column; gap: 12px; }
 .gh-float-btn { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.25s; border: none; cursor: pointer; text-decoration: none; }
 .gh-float-btn:hover { transform: scale(1.12); }
@@ -349,17 +388,125 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
       <h2 class="section-title">أكثر من <span class="gold">١٠٠ فيلم</span> موشن جرافيك وكارتون</h2>
       <p class="section-sub" style="margin:0 auto">نفخر بثقة المركز الطبي الدولي IMC، بأكثر من 100 فيلم موشن جرافيك وكارتون تعليمي وعروض تفاعلية.</p>
     </div>
-    <div class="portfolio-grid reveal r1">
-      <div class="portfolio-item" style="cursor:default;background:#1a1a2e">
-        <div style="position:relative;width:100%;height:100%;overflow:hidden">
-          <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#1a1a2e">
-            <source src="assets/videos/GH-Marketing-Media-Production.mp4" type="video/mp4">
-          </video>
+        <div class="portfolio-grid reveal r1">
+      <div class="portfolio-item" onclick="playVideo('5xDNWFXKMrQ')" style="cursor:pointer;background:#1a1a2e">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a1a2e 0%,#0f0f23 100%)"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2">
+          <span class="material-symbols-outlined" style="font-size:42px;color:var(--gold);opacity:0.3">play_circle</span>
+        </div>
+        <div class="yt-play-btn">
+          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
         </div>
         <div class="portfolio-item-overlay">
           <span class="portfolio-item-category">موشن جرافيك</span>
-          <span class="portfolio-item-title">فيلم توعوي صحي، المركز الطبي الدولي</span>
+          <span class="portfolio-item-title">فيلم توعوي صحي، 9</span>
         </div>
+      </div>
+      <div class="portfolio-item" onclick="playVideo('CtjHnqYOX3I')" style="cursor:pointer;background:#16213e">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#16213e 0%,#0f0f23 100%)"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2">
+          <span class="material-symbols-outlined" style="font-size:42px;color:var(--gold);opacity:0.3">play_circle</span>
+        </div>
+        <div class="yt-play-btn">
+          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
+        </div>
+        <div class="portfolio-item-overlay">
+          <span class="portfolio-item-category">موشن جرافيك</span>
+          <span class="portfolio-item-title">موشن جرافيك طبي، 10</span>
+        </div>
+      </div>
+      <div class="portfolio-item" onclick="playVideo('R4QYhIguc84')" style="cursor:pointer;background:#1a1a2e">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a1a2e 0%,#0f0f23 100%)"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2">
+          <span class="material-symbols-outlined" style="font-size:42px;color:var(--gold);opacity:0.3">play_circle</span>
+        </div>
+        <div class="yt-play-btn">
+          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
+        </div>
+        <div class="portfolio-item-overlay">
+          <span class="portfolio-item-category">كارتون</span>
+          <span class="portfolio-item-title">كارتون تعليمي، 11</span>
+        </div>
+      </div>
+      <div class="portfolio-item" onclick="playVideo('VG2ns_U2ICk')" style="cursor:pointer;background:#16213e">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#16213e 0%,#0f0f23 100%)"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2">
+          <span class="material-symbols-outlined" style="font-size:42px;color:var(--gold);opacity:0.3">play_circle</span>
+        </div>
+        <div class="yt-play-btn">
+          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
+        </div>
+        <div class="portfolio-item-overlay">
+          <span class="portfolio-item-category">كارتون</span>
+          <span class="portfolio-item-title">رسوم متحركة صحية، 12</span>
+        </div>
+      </div>
+      <div class="portfolio-item" onclick="playVideo('f-Y4J1Z_G9M')" style="cursor:pointer;background:#1a1a2e">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a1a2e 0%,#0f0f23 100%)"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2">
+          <span class="material-symbols-outlined" style="font-size:42px;color:var(--gold);opacity:0.3">play_circle</span>
+        </div>
+        <div class="yt-play-btn">
+          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
+        </div>
+        <div class="portfolio-item-overlay">
+          <span class="portfolio-item-category">موشن جرافيك</span>
+          <span class="portfolio-item-title">فيلم تثقيفي طبي، 13</span>
+        </div>
+      </div>
+      <div class="portfolio-item" onclick="playVideo('glKO_84lwZo')" style="cursor:pointer;background:#16213e">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#16213e 0%,#0f0f23 100%)"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2">
+          <span class="material-symbols-outlined" style="font-size:42px;color:var(--gold);opacity:0.3">play_circle</span>
+        </div>
+        <div class="yt-play-btn">
+          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
+        </div>
+        <div class="portfolio-item-overlay">
+          <span class="portfolio-item-category">عرض تفاعلي</span>
+          <span class="portfolio-item-title">عرض تفاعلي، 14</span>
+        </div>
+      </div>
+      <div class="portfolio-item" onclick="playVideo('heeNhPdB25E')" style="cursor:pointer;background:#1a1a2e">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a1a2e 0%,#0f0f23 100%)"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2">
+          <span class="material-symbols-outlined" style="font-size:42px;color:var(--gold);opacity:0.3">play_circle</span>
+        </div>
+        <div class="yt-play-btn">
+          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
+        </div>
+        <div class="portfolio-item-overlay">
+          <span class="portfolio-item-category">تصوير فيديو</span>
+          <span class="portfolio-item-title">تصوير فيديو طبي، 15</span>
+        </div>
+      </div>
+      <div class="portfolio-item" onclick="playVideo('hz3TtUd5-eo')" style="cursor:pointer;background:#16213e">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#16213e 0%,#0f0f23 100%)"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2">
+          <span class="material-symbols-outlined" style="font-size:42px;color:var(--gold);opacity:0.3">play_circle</span>
+        </div>
+        <div class="yt-play-btn">
+          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
+        </div>
+        <div class="portfolio-item-overlay">
+          <span class="portfolio-item-category">هوية بصرية</span>
+          <span class="portfolio-item-title">هوية بصرية صحية، 16</span>
+        </div>
+      </div>
+      <div class="portfolio-item" onclick="playVideo('itnIGf-22zE')" style="cursor:pointer;background:#1a1a2e">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a1a2e 0%,#0f0f23 100%)"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2">
+          <span class="material-symbols-outlined" style="font-size:42px;color:var(--gold);opacity:0.3">play_circle</span>
+        </div>
+        <div class="yt-play-btn">
+          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
+        </div>
+        <div class="portfolio-item-overlay">
+          <span class="portfolio-item-category">هوية بصرية</span>
+          <span class="portfolio-item-title">براند طبي، 17</span>
+        </div>
+      </div>
+    </div>v>
       </div>
       <div class="portfolio-item" onclick="openLightbox(this)">
         <img src="assets/projects/animation/rafal-pavilions.jpg" alt="كارتون تعليمي" loading="lazy" style="background:#1a1a2e">
@@ -535,6 +682,33 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 <div id="lightbox"><button onclick="closeLightbox()" style="position:absolute;top:24px;right:24px;width:44px;height:44px;background:rgba(255,255,255,.08);border:none;color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%">✕</button><img id="lightbox-img" src="" alt=""></div>
 
 <script>
+function playVideo(videoId){
+  var modal=document.getElementById('videoModal');
+  var player=document.getElementById('vmPlayer');
+  if(!modal||!player) return;
+  var src='https://www.youtube.com/embed/'+videoId+'?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1';
+  var iframe=document.createElement('iframe');
+  iframe.setAttribute('src',src);
+  iframe.setAttribute('allow','autoplay; encrypted-media; fullscreen');
+  iframe.setAttribute('allowfullscreen','');
+  iframe.style.cssText='width:100%;height:100%;border:0;';
+  player.innerHTML='';
+  player.appendChild(iframe);
+  modal.classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeVideo(){
+  document.getElementById('videoModal').classList.remove('active');
+  document.getElementById('vmPlayer').innerHTML='';
+  document.body.style.overflow='';
+}
+document.addEventListener('click',function(e){
+  if(e.target===document.getElementById('videoModal')) closeVideo();
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeVideo();
+});
+
 function closeMobNav(){document.getElementById('mob-nav').classList.remove('open')}
 document.getElementById('mob-close').addEventListener('click',closeMobNav);
 document.querySelectorAll('#mob-nav a').forEach(function(a){a.addEventListener('click',function(){setTimeout(closeMobNav,200)})});
