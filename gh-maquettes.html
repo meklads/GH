@@ -499,6 +499,27 @@ html[dir="rtl"] .gallery-strip-label span {
 }
 .form-submit:hover { background: #f0f0f0; }
 
+
+/* RELATED SERVICES */
+.rel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.rel-card {
+  background: var(--bg-white); border: 1px solid rgba(26,26,26,0.06); padding: 32px 24px; text-align: center;
+  transition: all 0.4s ease; text-decoration: none; color: inherit; display: block;
+}
+.rel-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+.rel-card .icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+  transition: all 0.4s ease;
+}
+.rel-card .icon .material-symbols-outlined { font-size: 24px; color: var(--gold); }
+.rel-card:hover .icon { background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
+.rel-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.rel-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; font-weight: 400; }
+@media (max-width: 1024px) { .rel-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .rel-grid { grid-template-columns: 1fr; } }
+
 /* FOOTER */
 .footer { background: #1A1A1A; color: rgba(255,255,255,0.6); padding: 60px 0 30px; }
 .footer-inner { max-width: 1320px; margin: 0 auto; padding: 0 48px; }
@@ -1568,6 +1589,40 @@ html[dir="rtl"] .gallery-strip-label span {
     <div class="btns">
       <a href="#booking" class="btn-p">اطلب استشارة <span class="material-symbols-outlined" style="font-size:16px">calendar_month</span></a>
       <a href="https://wa.me/966502786513" target="_blank" class="btn-o-light">واتساب <span class="material-symbols-outlined" style="font-size:16px">chat</span></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- RELATED SERVICES -->
+<section style="background:#F5F4F0;padding:90px 0">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">خدمات إضافية</span>
+      <h2 class="section-title">كل ما تحتاجه <span class="gold">لمشروعك</span> في مكان واحد</h2>
+      <p class="section-sub" style="margin:0 auto">نقدم مجموعة متكاملة من الخدمات البصرية والتسويقية — اختر ما يناسب مشروعك.</p>
+    </div>
+    <div class="rel-grid reveal r1">
+      <a href="gh-visualization.html" class="rel-card">
+        <div class="icon"><span class="material-symbols-outlined">landscape</span></div>
+        <h4>الإظهار المعماري والهوية</h4>
+        <p>صور ثري دي، كتالوجات عقارية، وهوية بصرية للمشاريع الكبرى.</p>
+      </a>
+      <a href="gh-maquettes.html" class="rel-card">
+        <div class="icon"><span class="material-symbols-outlined">view_in_ar</span></div>
+        <h4>المجسمات الذكية</h4>
+        <p>مجسمات معمارية هجينة بتقنيات الإضاءة التفاعلية والبيانات الحية.</p>
+      </a>
+      <a href="marketing.html" class="rel-card">
+        <div class="icon"><span class="material-symbols-outlined">trending_up</span></div>
+        <h4>التسويق والنمو الرقمي</h4>
+        <p>باقات تسويقية متكاملة تبدأ من ١٢٠٠ ريال — حوّل براندك لنظام.</p>
+      </a>
+      <a href="interactive-experiences.html" class="rel-card">
+        <div class="icon"><span class="material-symbols-outlined">touch_app</span></div>
+        <h4>التجارب التفاعلية</h4>
+        <p>شاشات تفاعلية، VR، جولات افتراضية — لصالات البيع ومراكز العرض.</p>
+      </a>
     </div>
   </div>
 </section>
