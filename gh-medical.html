@@ -230,6 +230,12 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 .portfolio-item:hover .yt-play-btn-inner { transform: scale(1.12); }
 .yt-play-btn-inner span { font-size: 28px; color: #0A0A0A; }
 
+/* Video slider */
+#vidSlider::-webkit-scrollbar { display: none; }
+#vidSlider { -ms-overflow-style: none; scrollbar-width: none; }
+.vid-slide { transition: border-color 0.3s ease, box-shadow 0.3s ease; flex-shrink: 0; }
+.vid-slide:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+
 .gh-float { position: fixed; bottom: 32px; left: 28px; z-index: 9000; display: flex; flex-direction: column; gap: 12px; }
 .gh-float-btn { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.25s; border: none; cursor: pointer; text-decoration: none; }
 .gh-float-btn:hover { transform: scale(1.12); }
@@ -380,133 +386,6 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
   </div>
 </section>
 
-<!-- PORTFOLIO / CASE STUDIES -->
-<section style="background:var(--bg-white);padding:90px 0">
-  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
-    <div class="reveal" style="text-align:center;margin-bottom:48px">
-      <span class="section-label">سابقة أعمالنا</span>
-      <h2 class="section-title">أكثر من <span class="gold">١٠٠ فيلم</span> موشن جرافيك وكارتون</h2>
-      <p class="section-sub" style="margin:0 auto">نفخر بثقة المركز الطبي الدولي IMC، بأكثر من 100 فيلم موشن جرافيك وكارتون تعليمي وعروض تفاعلية.</p>
-    </div>
-        <div class="portfolio-grid reveal r1">
-      <div class="portfolio-item" onclick="playVideo('R4QYhIguc84')" style="cursor:pointer;background:#1a1a2e">
-        <img src="https://img.youtube.com/vi/R4QYhIguc84/hqdefault.jpg" alt="كارتون تعليمي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.25,0.1,0.1,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);z-index:1;pointer-events:none"></div>
-        <div class="yt-play-btn">
-          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
-        </div>
-        <div class="portfolio-item-overlay">
-          <span class="portfolio-item-category">كارتون</span>
-          <span class="portfolio-item-title">كارتون تعليمي</span>
-        </div>
-      </div>
-      <div class="portfolio-item" onclick="playVideo('hz3TtUd5-eo')" style="cursor:pointer;background:#1a1a2e">
-        <img src="https://img.youtube.com/vi/hz3TtUd5-eo/hqdefault.jpg" alt="هوية بصرية صحية" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.25,0.1,0.1,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);z-index:1;pointer-events:none"></div>
-        <div class="yt-play-btn">
-          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
-        </div>
-        <div class="portfolio-item-overlay">
-          <span class="portfolio-item-category">هوية بصرية</span>
-          <span class="portfolio-item-title">هوية بصرية صحية</span>
-        </div>
-      </div>
-      <div class="portfolio-item" onclick="playVideo('jNYuQoRHNfg')" style="cursor:pointer;background:#1a1a2e">
-        <img src="https://img.youtube.com/vi/jNYuQoRHNfg/hqdefault.jpg" alt="موشن جرافيك طبي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.25,0.1,0.1,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);z-index:1;pointer-events:none"></div>
-        <div class="yt-play-btn">
-          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
-        </div>
-        <div class="portfolio-item-overlay">
-          <span class="portfolio-item-category">موشن جرافيك</span>
-          <span class="portfolio-item-title">موشن جرافيك طبي</span>
-        </div>
-      </div>
-      <div class="portfolio-item" onclick="playVideo('qhmdOad_0Dw')" style="cursor:pointer;background:#1a1a2e">
-        <img src="https://img.youtube.com/vi/qhmdOad_0Dw/hqdefault.jpg" alt="تصوير فيديو طبي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.25,0.1,0.1,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);z-index:1;pointer-events:none"></div>
-        <div class="yt-play-btn">
-          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
-        </div>
-        <div class="portfolio-item-overlay">
-          <span class="portfolio-item-category">تصوير فيديو</span>
-          <span class="portfolio-item-title">تصوير فيديو طبي</span>
-        </div>
-      </div>
-      <div class="portfolio-item" onclick="playVideo('f-Y4J1Z_G9M')" style="cursor:pointer;background:#1a1a2e">
-        <img src="https://img.youtube.com/vi/f-Y4J1Z_G9M/hqdefault.jpg" alt="فيلم تثقيفي طبي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.25,0.1,0.1,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);z-index:1;pointer-events:none"></div>
-        <div class="yt-play-btn">
-          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
-        </div>
-        <div class="portfolio-item-overlay">
-          <span class="portfolio-item-category">موشن جرافيك</span>
-          <span class="portfolio-item-title">فيلم تثقيفي طبي</span>
-        </div>
-      </div>
-      <div class="portfolio-item" onclick="playVideo('VG2ns_U2ICk')" style="cursor:pointer;background:#1a1a2e">
-        <img src="https://img.youtube.com/vi/VG2ns_U2ICk/hqdefault.jpg" alt="رسوم متحركة صحية" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.25,0.1,0.1,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);z-index:1;pointer-events:none"></div>
-        <div class="yt-play-btn">
-          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
-        </div>
-        <div class="portfolio-item-overlay">
-          <span class="portfolio-item-category">كارتون</span>
-          <span class="portfolio-item-title">رسوم متحركة صحية</span>
-        </div>
-      </div>
-      <div class="portfolio-item" onclick="playVideo('glKO_84lwZo')" style="cursor:pointer;background:#1a1a2e">
-        <img src="https://img.youtube.com/vi/glKO_84lwZo/hqdefault.jpg" alt="عرض تفاعلي طبي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.25,0.1,0.1,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);z-index:1;pointer-events:none"></div>
-        <div class="yt-play-btn">
-          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
-        </div>
-        <div class="portfolio-item-overlay">
-          <span class="portfolio-item-category">عرض تفاعلي</span>
-          <span class="portfolio-item-title">عرض تفاعلي طبي</span>
-        </div>
-      </div>
-      <div class="portfolio-item" onclick="playVideo('5xDNWFXKMrQ')" style="cursor:pointer;background:#1a1a2e">
-        <img src="https://img.youtube.com/vi/5xDNWFXKMrQ/hqdefault.jpg" alt="فيلم توعوي صحي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.25,0.1,0.1,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);z-index:1;pointer-events:none"></div>
-        <div class="yt-play-btn">
-          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
-        </div>
-        <div class="portfolio-item-overlay">
-          <span class="portfolio-item-category">موشن جرافيك</span>
-          <span class="portfolio-item-title">فيلم توعوي صحي</span>
-        </div>
-      </div>
-      <div class="portfolio-item" onclick="playVideo('CtjHnqYOX3I')" style="cursor:pointer;background:#1a1a2e">
-        <img src="https://img.youtube.com/vi/CtjHnqYOX3I/hqdefault.jpg" alt="موشن جرافيك تعليمي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.25,0.1,0.1,1)">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);z-index:1;pointer-events:none"></div>
-        <div class="yt-play-btn">
-          <div class="yt-play-btn-inner"><span class="material-symbols-outlined">play_arrow</span></div>
-        </div>
-        <div class="portfolio-item-overlay">
-          <span class="portfolio-item-category">موشن جرافيك</span>
-          <span class="portfolio-item-title">موشن جرافيك تعليمي</span>
-        </div>
-      </div>
-    </div>
-
-<!-- WHY GH -->
-<section style="background:#F5F4F0">
-  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
-    <div class="reveal" style="text-align:center;margin-bottom:48px">
-      <span class="section-label">لماذا جرافيكس هاوس</span>
-      <h2 class="section-title">15 سنة في <span class="gold">خدمة القطاع الصحي</span></h2>
-      <p class="section-sub" style="margin:0 auto">خبرة، ثقة، وإبداع، نصنع محتوى بصرياً يخدم رسالتك الصحية.</p>
-    </div>
-    <div class="why-grid reveal r1">
-      <div class="why-card"><div class="num">15</div><h4>سنوات خبرة</h4><p>في السوق السعودي، نتفهم خصوصية القطاع الطبي ومتطلباته.</p></div>
-      <div class="why-card"><div class="num">50+</div><h4>عميل صحي</h4><p>مستشفيات، مراكز طبية، وهيئات صحية تثق في خدماتنا البصرية.</p></div>
-      <div class="why-card"><div class="num">500+</div><h4>مشروع مكتمل</h4><p>محفظة أعمال ضخمة متنوعة بين القطاعين العام والخاص.</p></div>
-      <div class="why-card"><div class="num">4</div><h4>مكاتب إقليمية</h4><p>السعودية، عُمان، البحرين، مصر، نغطي احتياجاتك أينما كنت.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- SOCIAL MEDIA LEADS GENERATION -->
 <section style="background:var(--bg-white);padding:90px 0">
   <div style="max-width:1320px;margin:0 auto;padding:0 48px">
@@ -587,6 +466,155 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
       </div>
     </div>
 
+  </div>
+</section>
+
+
+
+<!-- PORTFOLIO / CASE STUDIES -->
+<section style="background:var(--bg-white);padding:90px 0">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">سابقة أعمالنا</span>
+      <h2 class="section-title">أكثر من <span class="gold">١٠٠ فيلم</span> موشن جرافيك وكارتون</h2>
+      <p class="section-sub" style="margin:0 auto">نفخر بثقة المركز الطبي الدولي IMC، بأكثر من 100 فيلم موشن جرافيك وكارتون تعليمي وعروض تفاعلية.</p>
+    </div>
+    <div style="position:relative">
+      <button onclick="slideVid(-1)" style="position:absolute;top:50%;left:-6px;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:#fff;border:none;box-shadow:0 4px 20px rgba(0,0,0,0.15);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-primary);transition:all 0.3s" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='#fff'">
+        <span class="material-symbols-outlined" style="font-size:22px">chevron_right</span>
+      </button>
+      <div id="vidSlider" style="display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 4px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none">
+        <div class="vid-slide" onclick="playVideo('R4QYhIguc84')" style="flex:0 0 320px;height:220px;position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:#1a1a2e;flex-shrink:0;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.06);transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.1),rgba(0,0,0,0.4));z-index:1;pointer-events:none"></div>
+          <img src="https://img.youtube.com/vi/R4QYhIguc84/hqdefault.jpg" alt="كارتون تعليمي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+          <div class="yt-play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;opacity:0;transition:opacity 0.4s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+            <div style="width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 30px rgba(0,0,0,0.3);padding-right:2px">
+              <span class="material-symbols-outlined" style="font-size:26px;color:#0A0A0A">play_arrow</span>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;z-index:2;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,0.85))">
+            <span style="font-size:10px;font-weight:600;color:var(--gold-light);display:block;margin-bottom:3px">كارتون</span>
+            <span style="font-size:13px;font-weight:500;color:#fff">كارتون تعليمي</span>
+          </div>
+        </div>        <div class="vid-slide" onclick="playVideo('hz3TtUd5-eo')" style="flex:0 0 320px;height:220px;position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:#1a1a2e;flex-shrink:0;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.06);transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.1),rgba(0,0,0,0.4));z-index:1;pointer-events:none"></div>
+          <img src="https://img.youtube.com/vi/hz3TtUd5-eo/hqdefault.jpg" alt="هوية بصرية صحية" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+          <div class="yt-play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;opacity:0;transition:opacity 0.4s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+            <div style="width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 30px rgba(0,0,0,0.3);padding-right:2px">
+              <span class="material-symbols-outlined" style="font-size:26px;color:#0A0A0A">play_arrow</span>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;z-index:2;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,0.85))">
+            <span style="font-size:10px;font-weight:600;color:var(--gold-light);display:block;margin-bottom:3px">هوية بصرية</span>
+            <span style="font-size:13px;font-weight:500;color:#fff">هوية بصرية صحية</span>
+          </div>
+        </div>        <div class="vid-slide" onclick="playVideo('jNYuQoRHNfg')" style="flex:0 0 320px;height:220px;position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:#1a1a2e;flex-shrink:0;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.06);transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.1),rgba(0,0,0,0.4));z-index:1;pointer-events:none"></div>
+          <img src="https://img.youtube.com/vi/jNYuQoRHNfg/hqdefault.jpg" alt="موشن جرافيك طبي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+          <div class="yt-play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;opacity:0;transition:opacity 0.4s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+            <div style="width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 30px rgba(0,0,0,0.3);padding-right:2px">
+              <span class="material-symbols-outlined" style="font-size:26px;color:#0A0A0A">play_arrow</span>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;z-index:2;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,0.85))">
+            <span style="font-size:10px;font-weight:600;color:var(--gold-light);display:block;margin-bottom:3px">موشن جرافيك</span>
+            <span style="font-size:13px;font-weight:500;color:#fff">موشن جرافيك طبي</span>
+          </div>
+        </div>        <div class="vid-slide" onclick="playVideo('qhmdOad_0Dw')" style="flex:0 0 320px;height:220px;position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:#1a1a2e;flex-shrink:0;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.06);transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.1),rgba(0,0,0,0.4));z-index:1;pointer-events:none"></div>
+          <img src="https://img.youtube.com/vi/qhmdOad_0Dw/hqdefault.jpg" alt="تصوير فيديو طبي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+          <div class="yt-play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;opacity:0;transition:opacity 0.4s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+            <div style="width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 30px rgba(0,0,0,0.3);padding-right:2px">
+              <span class="material-symbols-outlined" style="font-size:26px;color:#0A0A0A">play_arrow</span>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;z-index:2;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,0.85))">
+            <span style="font-size:10px;font-weight:600;color:var(--gold-light);display:block;margin-bottom:3px">تصوير فيديو</span>
+            <span style="font-size:13px;font-weight:500;color:#fff">تصوير فيديو طبي</span>
+          </div>
+        </div>        <div class="vid-slide" onclick="playVideo('f-Y4J1Z_G9M')" style="flex:0 0 320px;height:220px;position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:#1a1a2e;flex-shrink:0;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.06);transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.1),rgba(0,0,0,0.4));z-index:1;pointer-events:none"></div>
+          <img src="https://img.youtube.com/vi/f-Y4J1Z_G9M/hqdefault.jpg" alt="فيلم تثقيفي طبي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+          <div class="yt-play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;opacity:0;transition:opacity 0.4s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+            <div style="width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 30px rgba(0,0,0,0.3);padding-right:2px">
+              <span class="material-symbols-outlined" style="font-size:26px;color:#0A0A0A">play_arrow</span>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;z-index:2;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,0.85))">
+            <span style="font-size:10px;font-weight:600;color:var(--gold-light);display:block;margin-bottom:3px">موشن جرافيك</span>
+            <span style="font-size:13px;font-weight:500;color:#fff">فيلم تثقيفي طبي</span>
+          </div>
+        </div>        <div class="vid-slide" onclick="playVideo('VG2ns_U2ICk')" style="flex:0 0 320px;height:220px;position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:#1a1a2e;flex-shrink:0;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.06);transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.1),rgba(0,0,0,0.4));z-index:1;pointer-events:none"></div>
+          <img src="https://img.youtube.com/vi/VG2ns_U2ICk/hqdefault.jpg" alt="رسوم متحركة صحية" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+          <div class="yt-play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;opacity:0;transition:opacity 0.4s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+            <div style="width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 30px rgba(0,0,0,0.3);padding-right:2px">
+              <span class="material-symbols-outlined" style="font-size:26px;color:#0A0A0A">play_arrow</span>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;z-index:2;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,0.85))">
+            <span style="font-size:10px;font-weight:600;color:var(--gold-light);display:block;margin-bottom:3px">كارتون</span>
+            <span style="font-size:13px;font-weight:500;color:#fff">رسوم متحركة صحية</span>
+          </div>
+        </div>        <div class="vid-slide" onclick="playVideo('glKO_84lwZo')" style="flex:0 0 320px;height:220px;position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:#1a1a2e;flex-shrink:0;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.06);transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.1),rgba(0,0,0,0.4));z-index:1;pointer-events:none"></div>
+          <img src="https://img.youtube.com/vi/glKO_84lwZo/hqdefault.jpg" alt="عرض تفاعلي طبي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+          <div class="yt-play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;opacity:0;transition:opacity 0.4s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+            <div style="width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 30px rgba(0,0,0,0.3);padding-right:2px">
+              <span class="material-symbols-outlined" style="font-size:26px;color:#0A0A0A">play_arrow</span>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;z-index:2;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,0.85))">
+            <span style="font-size:10px;font-weight:600;color:var(--gold-light);display:block;margin-bottom:3px">عرض تفاعلي</span>
+            <span style="font-size:13px;font-weight:500;color:#fff">عرض تفاعلي طبي</span>
+          </div>
+        </div>        <div class="vid-slide" onclick="playVideo('5xDNWFXKMrQ')" style="flex:0 0 320px;height:220px;position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:#1a1a2e;flex-shrink:0;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.06);transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.1),rgba(0,0,0,0.4));z-index:1;pointer-events:none"></div>
+          <img src="https://img.youtube.com/vi/5xDNWFXKMrQ/hqdefault.jpg" alt="فيلم توعوي صحي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+          <div class="yt-play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;opacity:0;transition:opacity 0.4s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+            <div style="width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 30px rgba(0,0,0,0.3);padding-right:2px">
+              <span class="material-symbols-outlined" style="font-size:26px;color:#0A0A0A">play_arrow</span>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;z-index:2;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,0.85))">
+            <span style="font-size:10px;font-weight:600;color:var(--gold-light);display:block;margin-bottom:3px">موشن جرافيك</span>
+            <span style="font-size:13px;font-weight:500;color:#fff">فيلم توعوي صحي</span>
+          </div>
+        </div>        <div class="vid-slide" onclick="playVideo('CtjHnqYOX3I')" style="flex:0 0 320px;height:220px;position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:#1a1a2e;flex-shrink:0;scroll-snap-align:start;border:1px solid rgba(255,255,255,0.06);transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.1),rgba(0,0,0,0.4));z-index:1;pointer-events:none"></div>
+          <img src="https://img.youtube.com/vi/CtjHnqYOX3I/hqdefault.jpg" alt="موشن جرافيك تعليمي" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+          <div class="yt-play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;opacity:0;transition:opacity 0.4s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+            <div style="width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 30px rgba(0,0,0,0.3);padding-right:2px">
+              <span class="material-symbols-outlined" style="font-size:26px;color:#0A0A0A">play_arrow</span>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;z-index:2;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,0.85))">
+            <span style="font-size:10px;font-weight:600;color:var(--gold-light);display:block;margin-bottom:3px">موشن جرافيك</span>
+            <span style="font-size:13px;font-weight:500;color:#fff">موشن جرافيك تعليمي</span>
+          </div>
+        </div>
+      </div>
+      <button onclick="slideVid(1)" style="position:absolute;top:50%;right:-6px;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:#fff;border:none;box-shadow:0 4px 20px rgba(0,0,0,0.15);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-primary);transition:all 0.3s" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='#fff'">
+        <span class="material-symbols-outlined" style="font-size:22px">chevron_left</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GH -->
+<section style="background:#F5F4F0">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">لماذا جرافيكس هاوس</span>
+      <h2 class="section-title">15 سنة في <span class="gold">خدمة القطاع الصحي</span></h2>
+      <p class="section-sub" style="margin:0 auto">خبرة، ثقة، وإبداع، نصنع محتوى بصرياً يخدم رسالتك الصحية.</p>
+    </div>
+    <div class="why-grid reveal r1">
+      <div class="why-card"><div class="num">15</div><h4>سنوات خبرة</h4><p>في السوق السعودي، نتفهم خصوصية القطاع الطبي ومتطلباته.</p></div>
+      <div class="why-card"><div class="num">50+</div><h4>عميل صحي</h4><p>مستشفيات، مراكز طبية، وهيئات صحية تثق في خدماتنا البصرية.</p></div>
+      <div class="why-card"><div class="num">500+</div><h4>مشروع مكتمل</h4><p>محفظة أعمال ضخمة متنوعة بين القطاعين العام والخاص.</p></div>
+      <div class="why-card"><div class="num">4</div><h4>مكاتب إقليمية</h4><p>السعودية، عُمان، البحرين، مصر، نغطي احتياجاتك أينما كنت.</p></div>
+    </div>
   </div>
 </section>
 
@@ -739,6 +767,12 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 <div id="lightbox"><button onclick="closeLightbox()" style="position:absolute;top:24px;right:24px;width:44px;height:44px;background:rgba(255,255,255,.08);border:none;color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%">✕</button><img id="lightbox-img" src="" alt=""></div>
 
 <script>
+function slideVid(dir){
+  var slider=document.getElementById('vidSlider');
+  if(!slider) return;
+  var scrollAmount=340;
+  slider.scrollBy({left:dir*scrollAmount,behavior:'smooth'});
+}
 function playVideo(videoId){
   var modal=document.getElementById('videoModal');
   var player=document.getElementById('vmPlayer');
