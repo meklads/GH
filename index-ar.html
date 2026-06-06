@@ -3269,14 +3269,14 @@ img { max-width: 100%; display: block; }
 .csr-lnk-soon{opacity:.22;pointer-events:none}
 /* image wrapper + gold box */
 .csr-imgs-wrap{flex:1;position:relative;margin-right:40px}
-.csr-gold{position:absolute;top:-32px;right:0;width:130px;height:130px;
+.csr-gold{position:absolute;top:96px;right:0;width:150px;height:150px;
   background:linear-gradient(150deg,#C9A84C 20%,#7a4f0d 100%);z-index:5;pointer-events:none}
 .csr-imgs{height:534px;overflow:hidden;position:relative}
 .csr-imgs img{position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;transition:opacity 2.2s ease}
 .csr-foot{text-align:center;padding:14px 0 22px;position:relative;z-index:3}
 /* RTL */
-[dir=rtl] .csr-gold{right:auto;left:0;top:-32px;
+[dir=rtl] .csr-gold{right:auto;left:0;top:96px;
   background:linear-gradient(210deg,#C9A84C 20%,#7a4f0d 100%);z-index:5}
 [dir=rtl] .csr-imgs-wrap{margin-right:0;margin-left:40px}
 [dir=rtl] .csr-body{flex-direction:row-reverse}
@@ -3298,6 +3298,7 @@ img { max-width: 100%; display: block; }
   .csr-br{width:40px;height:40px}
 }
 </style>
+<div class="csr-gold"></div>
 <div class="csr-top">
   <span style="font:700 8px/1 'Inter',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:10px">دراسة حالة</span>
   <h2 style="font:700 clamp(20px,2.4vw,32px)/1.1 'Tajawal',sans-serif;color:#fff;margin:0">مشاريع <span style="color:#C9A84C">مختارة</span></h2>
@@ -3317,7 +3318,6 @@ img { max-width: 100%; display: block; }
     <a id="csrLnkar" href="#" class="csr-lnk"></a>
   </div>
   <div class="csr-imgs-wrap">
-    <div class="csr-gold"></div>
     <div class="csr-imgs">
       <img id="csrMar" src="" alt="" loading="lazy">
     </div>
