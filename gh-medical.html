@@ -643,6 +643,16 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
   <a href="mailto:info@3dgraphicshouse.com" class="gh-float-btn gh-float-mail"><span class="material-symbols-outlined" style="font-size:22px">mail</span></a>
 </div>
 
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+  <button class="vm-close" onclick="closeVideo()">✕</button>
+  <div class="vm-inner">
+    <div class="vm-aspect">
+      <div id="vmPlayer"></div>
+    </div>
+  </div>
+</div>
+
 <div id="lightbox"><button onclick="closeLightbox()" style="position:absolute;top:24px;right:24px;width:44px;height:44px;background:rgba(255,255,255,.08);border:none;color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%">✕</button><img id="lightbox-img" src="" alt=""></div>
 
 <script>
