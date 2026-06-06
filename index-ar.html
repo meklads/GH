@@ -3267,14 +3267,18 @@ img { max-width: 100%; display: block; }
   display:inline-block;transition:opacity .2s}
 .csr-lnk:hover{opacity:.6}
 .csr-lnk-soon{opacity:.22;pointer-events:none}
-/* ONE image only */
-.csr-imgs{flex:1;height:534px;overflow:hidden;position:relative;margin-right:40px}
+/* image wrapper + gold box */
+.csr-imgs-wrap{flex:1;position:relative;margin-right:40px}
+.csr-gold{position:absolute;top:-32px;right:0;width:130px;height:130px;
+  background:linear-gradient(150deg,#C9A84C 20%,#7a4f0d 100%);z-index:5;pointer-events:none}
+.csr-imgs{height:534px;overflow:hidden;position:relative}
 .csr-imgs img{position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;transition:opacity 2.2s ease}
 .csr-foot{text-align:center;padding:14px 0 22px;position:relative;z-index:3}
 /* RTL */
-[dir=rtl] .csr-gold{right:auto;left:20px;bottom:20px;
-  background:linear-gradient(210deg,#C9A84C 20%,#7a4f0d 100%);z-index:1}
+[dir=rtl] .csr-gold{right:auto;left:0;top:-32px;
+  background:linear-gradient(210deg,#C9A84C 20%,#7a4f0d 100%);z-index:5}
+[dir=rtl] .csr-imgs-wrap{margin-right:0;margin-left:40px}
 [dir=rtl] .csr-body{flex-direction:row-reverse}
 [dir=rtl] .csr-txt{padding:0 60px 0 24px}
 [dir=rtl] .csr-br{border-left:none;border-right:2px solid rgba(255,255,255,.35);
@@ -3282,6 +3286,7 @@ img { max-width: 100%; display: block; }
 [dir=rtl] .csr-arrs{margin-left:0;margin-right:14px}
 @media(max-width:900px){
   .csr-body{flex-direction:column!important;align-items:stretch;padding-bottom:20px}
+  .csr-imgs-wrap{margin-right:20px!important;margin-left:20px!important;margin-top:32px}
   .csr-imgs{height:50vw}
   .csr-txt{width:auto;padding:18px 20px 0!important}
 }
@@ -3293,7 +3298,6 @@ img { max-width: 100%; display: block; }
   .csr-br{width:40px;height:40px}
 }
 </style>
-<div class="csr-gold"></div>
 <div class="csr-top">
   <span style="font:700 8px/1 'Inter',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:10px">دراسة حالة</span>
   <h2 style="font:700 clamp(20px,2.4vw,32px)/1.1 'Tajawal',sans-serif;color:#fff;margin:0">مشاريع <span style="color:#C9A84C">مختارة</span></h2>
@@ -3312,8 +3316,11 @@ img { max-width: 100%; display: block; }
     <div class="csr-br"></div>
     <a id="csrLnkar" href="#" class="csr-lnk"></a>
   </div>
-  <div class="csr-imgs">
-    <img id="csrMar" src="" alt="" loading="lazy">
+  <div class="csr-imgs-wrap">
+    <div class="csr-gold"></div>
+    <div class="csr-imgs">
+      <img id="csrMar" src="" alt="" loading="lazy">
+    </div>
   </div>
 </div>
 <div class="csr-foot">
@@ -3354,7 +3361,7 @@ function show(n,fast){
   });
 }
 function go(n){idx=((n%P.length)+P.length)%P.length;show(idx,false);stop();setTimeout(start,1500);}
-function start(){tmr=setInterval(function(){go(idx+1);},7000);}
+function start(){tmr=setInterval(function(){go(idx+1);},10000);}
 function stop(){if(tmr){clearInterval(tmr);tmr=null;}}
 function init(){
   buildNums(); show(0,true); start();
