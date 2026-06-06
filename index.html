@@ -2786,8 +2786,8 @@ img { max-width: 100%; display: block; }
 <section id="g10-en" class="csr" dir="ltr">
 <style>
 .csr{position:relative;background:#000;overflow:hidden}
-.csr-gold{position:absolute;bottom:20px;right:20px;width:130px;height:130px;
-  background:linear-gradient(150deg,#C9A84C 20%,#7a4f0d 100%);z-index:1;pointer-events:none}
+.csr-gold{position:absolute;bottom:0;right:0;width:130px;height:130px;
+  background:linear-gradient(150deg,#C9A84C 20%,#7a4f0d 100%);z-index:3;pointer-events:none}
 .csr-top{text-align:center;padding:30px 24px 0;position:relative;z-index:4}
 .csr-nav{display:flex;justify-content:center;align-items:center;
   padding:16px 24px 18px;position:relative;z-index:4}
@@ -2823,8 +2823,8 @@ img { max-width: 100%; display: block; }
   object-fit:cover;transition:opacity 2.2s ease}
 .csr-foot{text-align:center;padding:14px 0 22px;position:relative;z-index:3}
 /* RTL */
-[dir=rtl] .csr-gold{right:auto;left:20px;bottom:20px;
-  background:linear-gradient(210deg,#C9A84C 20%,#7a4f0d 100%);z-index:1}
+[dir=rtl] .csr-gold{right:auto;left:0;bottom:0;
+  background:linear-gradient(210deg,#C9A84C 20%,#7a4f0d 100%);z-index:3}
 [dir=rtl] .csr-body{flex-direction:row-reverse}
 [dir=rtl] .csr-txt{padding:0 60px 0 24px}
 [dir=rtl] .csr-br{border-left:none;border-right:2px solid rgba(255,255,255,.35);
@@ -2843,7 +2843,6 @@ img { max-width: 100%; display: block; }
   .csr-br{width:40px;height:40px}
 }
 </style>
-<div class="csr-gold"></div>
 <div class="csr-top">
   <span style="font:700 8px/1 'Inter',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:10px">CASE STUDY</span>
   <h2 style="font:700 clamp(20px,2.4vw,32px)/1.1 'Playfair Display',Georgia,serif;color:#fff;margin:0">Selected <span style="color:#C9A84C">Case Studies</span></h2>
@@ -2864,6 +2863,7 @@ img { max-width: 100%; display: block; }
   </div>
   <div class="csr-imgs">
     <img id="csrMen" src="" alt="" loading="lazy">
+    <div class="csr-gold"></div>
   </div>
 </div>
 <div class="csr-foot">
@@ -2904,7 +2904,7 @@ function show(n,fast){
   });
 }
 function go(n){idx=((n%P.length)+P.length)%P.length;show(idx,false);stop();setTimeout(start,1500);}
-function start(){tmr=setInterval(function(){go(idx+1);},7000);}
+function start(){tmr=setInterval(function(){go(idx+1);},10000);}
 function stop(){if(tmr){clearInterval(tmr);tmr=null;}}
 function init(){
   buildNums(); show(0,true); start();
