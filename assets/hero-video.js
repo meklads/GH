@@ -4,66 +4,92 @@
 
   function init(id) {
     var v = document.getElementById(id);
-    if (!v || v.dataset.heroInit === '1') return;
-    v.dataset.heroInit = '1';
+    if (!v || v.dataset.heroReady === '1') return;
+    v.dataset.heroReady = '1';
 
     var wrap = v.closest('.hero-video-bg');
+    var isPlaying = false;
+    var isStarting = false;
+
     v.muted = true;
+    v.defaultMuted = true;
     v.playsInline = true;
+    v.setAttribute('playsinline', '');
+    v.setAttribute('webkit-playsinline', '');
     v.removeAttribute('autoplay');
     v.removeAttribute('loop');
+    v.pause();
 
     function markPlaying() {
+      isPlaying = true;
       if (wrap) wrap.classList.add('is-playing');
     }
 
-    function jumpToStart(done) {
-      function seekAndContinue() {
-        if (Math.abs(v.currentTime - START) < 0.05) {
-          if (done) done();
-          return;
-        }
-        v.addEventListener(
-          'seeked',
-          function () {
-            if (done) done();
-          },
-          { once: true }
-        );
-        v.currentTime = START;
+    function seekToStart(done) {
+      if (Math.abs(v.currentTime - START) < 0.05) {
+        if (done) done();
+        return;
       }
-
-      if (v.readyState >= 1) {
-        seekAndContinue();
-      } else {
-        v.addEventListener('loadedmetadata', seekAndContinue, { once: true });
+      v.addEventListener(
+        'seeked',
+        function () {
+          if (done) done();
+        },
+        { once: true }
+      );
+      try {
+        v.currentTime = START;
+      } catch (e) {
+        if (done) done();
       }
     }
 
-    function startPlayback() {
-      jumpToStart(function () {
+    function startClip() {
+      if (isPlaying || isStarting || v.readyState < 2) return;
+      isStarting = true;
+
+      seekToStart(function () {
         var playPromise = v.play();
         if (playPromise && playPromise.then) {
-          playPromise.then(markPlaying).catch(function () {});
+          playPromise
+            .then(function () {
+              isStarting = false;
+              markPlaying();
+            })
+            .catch(function () {
+              isStarting = false;
+            });
         } else {
+          isStarting = false;
           markPlaying();
         }
       });
     }
 
     v.addEventListener('playing', markPlaying);
-
     v.addEventListener('timeupdate', function () {
+      if (v.currentTime > START + 0.12) {
+        markPlaying();
+      }
       if (v.currentTime >= END) {
-        v.currentTime = START;
+        seekToStart(function () {
+          if (v.paused) {
+            v.play().catch(function () {});
+          }
+        });
       }
     });
 
+    v.addEventListener('loadeddata', startClip, { once: true });
+    v.addEventListener('canplay', startClip, { once: true });
+    v.addEventListener('canplaythrough', startClip, { once: true });
+
     if (v.readyState >= 2) {
-      startPlayback();
-    } else {
-      v.addEventListener('canplay', startPlayback, { once: true });
+      startClip();
     }
+
+    setTimeout(startClip, 2000);
+    setTimeout(startClip, 5000);
   }
 
   function boot() {
