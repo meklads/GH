@@ -145,51 +145,7 @@ html[dir="ltr"] .nav-link:hover::after{width:100%}
 .nav-item-drop{position:relative;display:inline-block}
 .nav-item-drop .nav-dropdown{position:absolute;top:calc(100% + 8px);opacity:0;visibility:hidden;transform:translateY(6px);transition:all .3s ease;z-index:200;min-width:220px;background:#1A1A1A;border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 50px rgba(0,0,0,.5);padding:8px 0}
 .nav-item-drop:hover .nav-dropdown{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
-<style>
-/* ===== STANDARD HEADER ===== */
-.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:10px 0;background:rgba(7,24,16,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.15);transition:all .4s ease}
-.header-inner{max-width:1280px;margin:0 auto;padding:0 48px;display:flex;align-items:center;}
-.logo{display:flex;align-items:center}
-.nav{display:flex;align-items:center;gap:28px}
-.nav a{color:rgba(255,255,255,.85);text-decoration:none}
-.nav-link{font-size:15px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,.85);text-decoration:none;transition:color .3s;position:relative;cursor:pointer}
-.nav-link:hover{color:#C9A84C!important}
-.nav-item-drop{position:relative;display:inline-block}
-.nav-item-drop .nav-dropdown{position:absolute;top:calc(100% + 10px);left:0;background:#111;border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 50px rgba(0,0,0,.7);min-width:240px;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .3s ease;z-index:500}
-html[dir="rtl"] .nav-item-drop .nav-dropdown{left:auto;right:0}
-.nav-item-drop:hover .nav-dropdown{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
-.nav-item-drop .nav-dropdown a{display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;color:rgba(255,255,255,.65);text-decoration:none;transition:all .2s;font-weight:400}
-.nav-item-drop .nav-dropdown a:hover{background:rgba(255,255,255,.04);color:#C9A84C}
-.menu-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:0}
-.menu-toggle span{font-size:28px}
-@media(max-width:960px){
-  .nav{display:none}.menu-toggle{display:flex;z-index:1001}
-  .nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.97);backdrop-filter:blur(30px);justify-content:center;align-items:center;gap:28px;z-index:1000}
-  .nav.open a,.nav.open .nav-link{font-size:20px}
-  .nav.open .nav-item-drop .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;background:transparent;border:none;box-shadow:none;padding:8px 0 0}
-}
-@media(max-width:768px){.header-inner{padding:0 20px}}
 
-/* EN heading font، Playfair Display (matches homepage) */
-html[dir="ltr"] h1,
-html[dir="ltr"] h2,
-html[dir="ltr"] .section-title,
-html[dir="ltr"] .page-hero h1,
-html[dir="ltr"] .content-card h2,
-html[dir="ltr"] .cta h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  letter-spacing: -0.02em;
-}
-html[dir="ltr"] .page-hero h1 {
-  font-weight: 800;
-}
-html[dir="ltr"] .section-title {
-  font-weight: 700;
-}
-
-}
-
-(function(){var els=document.querySelectorAll(".reveal");if(els.length){var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");ro.unobserve(e.target)}})},{threshold:0.1});els.forEach(function(el){ro.observe(el)})}}
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKD9QVYNWF"></script>
@@ -199,6 +155,10 @@ html[dir="ltr"] .section-title {
   gtag('js', new Date());
   gtag('config', 'G-MKD9QVYNWF');
 </script>
+
+
+<link rel="stylesheet" href="assets/site-header.css">
+<script defer src="assets/site-header.js"></script>
 </head>
 <body>
 
@@ -279,6 +239,10 @@ html[dir="ltr"] .section-title {
     </button>
   </div>
 </header>
+
+
+
+
 
 <!-- ===== HERO ===== -->
 <section style="position:relative;min-height:72vh;background:#0A0A0A;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:80px">
@@ -1002,8 +966,6 @@ function ghSubmit(e){
 var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
 if(ld&&lb){setTimeout(function(){lb.style.width="100%"},100);setTimeout(function(){ld.classList.add("out")},1400)}
 window.addEventListener("scroll",function(){document.getElementById("header").classList.toggle("scrolled",window.scrollY>80)});
-function toggleMenu(){var n=document.getElementById("nav");n.classList.toggle("open")}
-)();
 </script>
 
 <script>

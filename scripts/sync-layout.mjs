@@ -79,13 +79,15 @@ function buildPartials() {
   fs.writeFileSync(path.join(PARTIALS, 'footer-ar.html'), toPartial(arFooter));
 }
 
-function renderPartial(name, depth) {
+function renderPartial(name, depth, isEn) {
   const prefix = depth > 0 ? '../'.repeat(depth) : '';
-  const home = depth > 0 ? '../'.repeat(depth) : '/';
+  const home = isEn
+    ? (depth > 0 ? `${prefix}index.html` : '/')
+    : (depth > 0 ? `${prefix}index-ar.html` : '/index-ar.html');
   return fs
     .readFileSync(path.join(PARTIALS, name), 'utf8')
     .replaceAll('{{PREFIX}}', prefix)
-    .replaceAll('{{HOME}}', home === '' ? '/' : home.replace(/\/$/, '') || '/');
+    .replaceAll('{{HOME}}', home);
 }
 
 function fixCorruption(html) {
@@ -144,8 +146,8 @@ function syncFile(rel) {
 
   const en = isEnglishPage(rel, html);
   const depth = depthOf(rel);
-  const header = renderPartial(en ? 'header-en.html' : 'header-ar.html', depth);
-  const footer = renderPartial(en ? 'footer-en.html' : 'footer-ar.html', depth);
+  const header = renderPartial(en ? 'header-en.html' : 'header-ar.html', depth, en);
+  const footer = renderPartial(en ? 'footer-en.html' : 'footer-ar.html', depth, en);
 
   html = fixCorruption(html);
   html = fixLogoCss(html);

@@ -415,6 +415,9 @@ document.querySelectorAll('.gh-float-mail').forEach(function(b){b.addEventListen
 }
 
 </style>
+
+<link rel="stylesheet" href="assets/site-header.css">
+<script defer src="assets/site-header.js"></script>
 </head>
 <body>
 
@@ -495,6 +498,10 @@ document.querySelectorAll('.gh-float-mail').forEach(function(b){b.addEventListen
     </button>
   </div>
 </header>
+
+
+
+
 
 <!-- HERO -->
 <section class="page-hero">
@@ -845,7 +852,6 @@ var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar"
 if(ld&&lb){setTimeout(function(){lb.style.width="100%"},100);setTimeout(function(){ld.classList.add("out")},1400)}
 window.addEventListener("scroll",function(){var h=document.getElementById("header");if(h)h.classList.toggle("scrolled",window.scrollY>60)});
 (function(){var els=document.querySelectorAll(".reveal");if(els.length){var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");ro.unobserve(e.target)}})},{threshold:0.1});els.forEach(function(el){ro.observe(el)})}})();
-function toggleMenu(){var n=document.getElementById("nav");n.classList.toggle("open")}
 function ghSubmit(e){
   e.preventDefault();
   var btn=e.target.querySelector('button[type="submit"]');
