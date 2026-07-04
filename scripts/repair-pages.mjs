@@ -14,12 +14,31 @@ const BROKEN_STYLE = /<style>\s*\/\* ===== STANDARD HEADER ===== \*\/[\s\S]*?<\/
 const REVEAL_IN_STYLE = /(\n\}\s*\n)(\(function\(\)\{var els=document\.querySelectorAll\("\.reveal"\)[\s\S]*?\}\)\(\)\s*)/;
 
 const LEGACY_MOB = /<!-- ── Left Contact Strip[\s\S]*?<nav id="main-nav"[\s\S]*?<\/nav>\s*/;
-const LEGACY_AFTER_HEADER = /<\/header>(?:<img[\s\S]*?<\/div>\s*)?(?:<div id="cur-dot"[\s\S]*?<nav id="main-nav"[\s\S]*?<\/nav>\s*)?/;
+const LEGACY_AFTER_HEADER = /<\/header>(?=<img[\s\S]*?<\/div>\s*(?:<div id="cur-dot"|<nav id="main-nav"))|<\/header>\s*<div id="cur-dot"[\s\S]*?<nav id="main-nav"[\s\S]*?<\/nav>\s*/;
 
 const HEADER_ASSETS = (depth) => {
   const p = depth > 0 ? '../'.repeat(depth) : '';
   return `\n<link rel="stylesheet" href="${p}assets/site-header.css">\n<script defer src="${p}assets/site-header.js"></script>\n`;
 };
+
+const REVEAL_ASSETS = (depth) => {
+  const p = depth > 0 ? '../'.repeat(depth) : '';
+  return `<script defer src="${p}assets/site-reveal.js"></script>\n`;
+};
+
+function hasRevealObserver(html) {
+  return html.includes('site-reveal.js') || html.includes('IntersectionObserver');
+}
+
+function injectRevealAssets(html, depth) {
+  if (!html.includes('class="reveal"') && !html.includes("class='reveal'")) return html;
+  if (hasRevealObserver(html)) return html;
+  const tag = REVEAL_ASSETS(depth);
+  if (html.includes('</head>')) {
+    return html.replace('</head>', `${tag}</head>`);
+  }
+  return html;
+}
 
 function depthOf(rel) {
   return rel.split('/').length - 1;
@@ -123,6 +142,7 @@ for (const rel of collectHtmlFiles(ROOT)) {
   html = removeLegacyNav(html);
   html = fixHomeLinks(html, depth);
   html = injectHeaderAssets(html, depth);
+  html = injectRevealAssets(html, depth);
 
   if (html !== before) {
     fs.writeFileSync(full, html, 'utf8');
