@@ -1,0 +1,15 @@
+---
+description: Always commit and push GH site changes to GitHub after implementation
+alwaysApply: true
+---
+
+# Git push policy (Graphics House / beestoon-live)
+
+After completing any implementation work (features, fixes, UI, i18n, config):
+
+1. Commit with a clear message focused on why the change was made.
+2. **Push to GitHub (`origin main`) without waiting for the user to ask.**
+3. Do not push secrets (`.env`, credentials). Never force-push to `main`.
+4. Only skip push if the user explicitly says not to push in that turn.
+
+Repository: https://github.com/meklads/GH
