@@ -2181,7 +2181,7 @@ img { max-width: 100%; display: block; }
         </div>
       </div>
       </div>
-      <a class="nav-link" href="portfolio-en.html" style="color:#C9A84C">Portfolio</a>
+      <a class="nav-link" href="portfolio-en.html" style="color:#C9A84C">Our Work</a>
       <a class="nav-link" href="case-study-mwl-en.html">Case Studies</a>
       <div class="nav-item-drop" style="position:relative;display:inline-block">
         <a class="nav-link" style="cursor:pointer">Insights <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
@@ -2190,9 +2190,9 @@ img { max-width: 100%; display: block; }
           <a href="insights/news.html" style="display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s;font-family:'Inter','Tajawal',sans-serif"><span class="material-symbols-outlined" style="font-size:16px;color:#C9A84C">newspaper</span>News</a>
         </div>
       </div>
-      <a class="nav-link" href="who-we-are-en.html">About</a>
+      <a class="nav-link" href="who-we-are-en.html">About Us</a>
       <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35)"><a href="who-we-are.html" style="color:#fff;text-decoration:none;font-weight:700;transition:color .3s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">AR</a> <span style="color:rgba(255,255,255,.3)">|</span> <a href="#" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">EN</a></span>
-      <a href="contact-us-en.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:50px;border:none;transition:all .3s;white-space:nowrap;font-family:'Inter','Tajawal',sans-serif" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)';" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)';">Book Strategy Session</a>
+      <a href="contact-us-en.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:50px;border:none;transition:all .3s;white-space:nowrap;font-family:'Inter','Tajawal',sans-serif" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)';" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)';">Book a Strategy Session</a>
     </nav>
     <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
       <span class="material-symbols-outlined">menu</span>
@@ -4489,6 +4489,46 @@ document.addEventListener('DOMContentLoaded', function(){
         }
       }
     });
+  });
+});
+</script>
+
+<script>
+// Smart language switcher - preserve current page when switching languages
+document.addEventListener('DOMContentLoaded', function() {
+  var spans = document.querySelectorAll('.nav span[style*="font-size:12px"][style*="letter-spacing"]');
+  spans.forEach(function(span) {
+    var links = span.querySelectorAll('a');
+    if (links.length < 2) return;
+    var currentPath = window.location.pathname;
+    var fileName = currentPath.split('/').pop() || 'index.html';
+    var dirPath = currentPath.substring(0, currentPath.length - fileName.length);
+    
+    // Compute alternate language filename
+    var altFile = fileName;
+    if (fileName === 'index.html') {
+      altFile = 'index-ar.html';
+    } else if (fileName === 'index-ar.html') {
+      altFile = 'index.html';
+    } else if (fileName === 'en.html') {
+      altFile = 'index-ar.html';
+    } else if (fileName.endsWith('-en.html')) {
+      altFile = fileName.replace('-en.html', '.html');
+    } else if (fileName.endsWith('.html') && !fileName.endsWith('-ar.html') && fileName !== 'index.html') {
+      altFile = fileName.replace('.html', '-en.html');
+    }
+    
+    // Update links: first link is current language, second is alternate
+    var isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+    if (isRTL) {
+      // AR page: first link (AR) = # or current, second link (EN) = alternate
+      if (links[0]) links[0].href = '#';
+      if (links[1]) links[1].href = dirPath + altFile;
+    } else {
+      // EN page: first link (AR) = alternate, second link (EN) = #
+      if (links[0]) links[0].href = dirPath + altFile;
+      if (links[1]) links[1].href = '#';
+    }
   });
 });
 </script>
