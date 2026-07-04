@@ -172,8 +172,6 @@
   .nav-dropdown a:hover{background:rgba(255,255,255,.04);color:#C9A84C}
   .nav-dropdown a .dd-icon{font-size:16px;color:#C9A84C}
 
-
-
   /* ── Mobile nav ─────────────────────────────── */
   #mob-nav {
     position:fixed; inset:0; z-index:9999;
@@ -187,7 +185,6 @@
   /* ── Back to top ─────────────────────────────── */
   #back-top { transition:opacity .3s ease,transform .3s ease; opacity:0; pointer-events:none; transform:translateY(8px); }
   #back-top.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
-
 
 .nav-actions {
   display: flex;
@@ -275,6 +272,7 @@
       </div></div>
       <a class="nav-link" href="portfolio.html" style="color:#C9A84C">أعمالنا</a>
       <a class="nav-link" href="casestudy1.html">مشاريع ناجحة</a>
+      <a class="nav-link" href="contact-us.html">تواصل معنا</a>
     </nav>
     <a href="index-ar.html" class="logo">
       <img src="assets/logo-gold.png" alt="Graphics House" style="height:86px;width:auto;image-rendering:-webkit-optimize-contrast;">
@@ -327,7 +325,6 @@
     <a href="https://www.facebook.com/3dghouse" target="_blank" rel="noopener" class="text-zinc-500 hover:text-primary transition-colors text-xs tracking-widest" style="font-family:'Manrope',sans-serif">FB</a>
   </div>
 </div>
-
 
 <!-- ── TopNavBar، Floating pill ── -->
 <nav id="main-nav" dir="ltr" class="fixed top-0 w-full z-50" role="navigation" style="padding:12px 20px">
@@ -570,7 +567,6 @@
     localStorage.setItem('gh-lang', lang);
   }
 
-
   // ── Theme System ───────────────────────────────
   const themeBtn = document.getElementById('theme-btn');
   let isDark = localStorage.getItem('gh-theme') !== 'light';
@@ -724,7 +720,6 @@
   const backTop=document.getElementById('back-top');
   window.addEventListener('scroll',()=>backTop.classList.toggle('visible',scrollY>600),{passive:true});
   backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
 
 })();</script>
 
