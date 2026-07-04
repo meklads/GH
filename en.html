@@ -1960,202 +1960,7 @@ img { max-width: 100%; display: block; }
     font-size: 18px;
   }
 }
-/* Mega Menu */
-.mega-menu {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(12px);
-  background: #1A1A1A;
-  border: 1px solid rgba(255,255,255,.06);
-  box-shadow: 0 30px 80px rgba(0,0,0,.6);
-  opacity: 0;
-  visibility: hidden;
-  transition: all .3s cubic-bezier(.25,.1,.1,1);
-  z-index: 100;
-  border-radius: 12px;
-  overflow: hidden;
-  min-width: 200px;
-}
-.nav-mega-item:hover .mega-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(4px);
-}
-.mega-menu::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid #1A1A1A;
-}
-.mega-menu-solutions {
-  width: 700px;
-  padding: 24px;
-}
-.mega-menu-solutions .mm-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
-}
-.mega-menu-solutions .mm-card {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 20px 18px;
-  border-radius: 10px;
-  border: 1px solid transparent;
-  transition: all .3s ease;
-  text-decoration: none;
-}
-.mega-menu-solutions .mm-card:hover {
-  background: rgba(201,168,76,.04);
-  border-color: rgba(201,168,76,.15);
-}
-.mega-menu-solutions .mm-card .mm-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(201,168,76,.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 4px;
-}
-.mega-menu-solutions .mm-card .mm-icon span {
-  font-size: 20px;
-  color: #C9A84C;
-}
-.mega-menu-solutions .mm-card .mm-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #FAFAF8;
-  font-family: 'Inter','Tajawal',sans-serif;
-}
-.mega-menu-solutions .mm-card .mm-sub {
-  font-size: 11px;
-  font-weight: 600;
-  color: rgba(201,168,76,.7);
-  text-transform: uppercase;
-  letter-spacing: .06em;
-}
-.mega-menu-solutions .mm-card .mm-desc {
-  font-size: 12px;
-  color: rgba(255,255,255,.45);
-  line-height: 1.5;
-  margin-top: 2px;
-}
-/* SERVICES MEGA MENU */
-.mega-menu-services {
-  width: 680px;
-  padding: 24px 0;
-}
-.mega-menu-services .mm-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0;
-}
-.mega-menu-services .mm-col {
-  padding: 0 24px;
-  border-right: 1px solid rgba(255,255,255,.06);
-}
-.mega-menu-services .mm-col:last-child {
-  border-right: none;
-}
-.mega-menu-services .mm-col-header {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  color: #C9A84C;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(201,168,76,.15);
-}
-.mega-menu-services .mm-col a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255,255,255,.55);
-  text-decoration: none;
-  transition: all .2s;
-  border-radius: 6px;
-  font-family: 'Inter','Tajawal',sans-serif;
-}
-.mega-menu-services .mm-col a:hover {
-  background: rgba(201,168,76,.06);
-  color: #FAFAF8;
-}
-.mega-menu-services .mm-col a .mm-svc-icon {
-  font-size: 16px;
-  color: #C9A84C;
-  flex-shrink: 0;
-}
-/* Mobile accordion */
-.mm-mobile-trigger {
-  display: none;
-}
-@media (max-width: 900px) {
-  .nav-mega-item { position: relative !important; }
-  .mega-menu {
-    position: static !important;
-    transform: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    border-radius: 0;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .4s ease;
-    width: 100% !important;
-  }
-  .mega-menu.open {
-    max-height: 2000px;
-  }
-  .mega-menu::before { display: none; }
-  .mega-menu-solutions { padding: 8px 0; }
-  .mega-menu-solutions .mm-grid {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-  .mega-menu-solutions .mm-card {
-    padding: 14px 16px;
-    border-color: rgba(255,255,255,.04);
-  }
-  .mega-menu-services { padding: 8px 0; }
-  .mega-menu-services .mm-grid {
-    grid-template-columns: 1fr;
-  }
-  .mega-menu-services .mm-col {
-    padding: 0 16px;
-    border-right: none;
-    margin-bottom: 16px;
-  }
-  .mega-menu-services .mm-col-header {
-    margin-bottom: 8px;
-  }
-  .mm-mobile-trigger {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    margin-left: auto;
-  }
-  .nav.open .nav-mega-item > a.nav-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 8px 24px;
-    cursor: pointer;
-  }
+
 }
 
 }
@@ -2179,50 +1984,67 @@ img { max-width: 100%; display: block; }
             <div class="nav-mega-item" style="position:relative;display:inline-block">
         <a class="nav-link" style="cursor:pointer">Solutions <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
       <div class="mega-menu mega-menu-solutions">
-        <div class="mm-grid">
-          <a href="solutions/growth-launch.html" class="mm-card">
-            <div class="mm-icon"><span class="material-symbols-outlined">trending_up</span></div>
-            <div class="mm-title">GrowthLaunch&#8482;</div>
-            <div class="mm-sub">Lead Generation &amp; Sales System</div>
-            <div class="mm-desc">Generate qualified leads, automate follow-up and improve sales conversion.</div>
-          </a>
-          <a href="solutions/project-launch.html" class="mm-card">
-            <div class="mm-icon"><span class="material-symbols-outlined">apartment</span></div>
-            <div class="mm-title">ProjectLaunch&#8482;</div>
-            <div class="mm-sub">Real Estate Project Launch System</div>
-            <div class="mm-desc">Complete launch solution for real estate projects including visualization, branding, marketing and sales support.</div>
-          </a>
-          <a href="solutions/brand-scale.html" class="mm-card">
-            <div class="mm-icon"><span class="material-symbols-outlined">auto_awesome</span></div>
-            <div class="mm-title">BrandScale&#8482;</div>
-            <div class="mm-sub">Brand Growth System</div>
-            <div class="mm-desc">Build, strengthen and grow your brand through integrated creative and marketing solutions.</div>
-          </a>
+        <div class="mm-main">
+          <div class="mm-heading">Business Solutions</div>
+          <div class="mm-subheading">Choose the solution that best matches your business growth stage.</div>
+          <div class="mm-grid">
+            <a href="solutions/growth-launch.html" class="mm-card" data-solution="growth">
+              <div class="mm-icon"><span class="material-symbols-outlined">trending_up</span></div>
+              <div class="mm-title">GrowthLaunch&#8482;</div>
+              <div class="mm-sub">Lead Generation &amp; Sales System</div>
+              <div class="mm-desc">Generate qualified leads, automate follow-up and improve sales conversion.</div>
+              <div class="mm-cta">Explore Solution <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></div>
+            </a>
+            <a href="solutions/project-launch.html" class="mm-card" data-solution="project">
+              <div class="mm-icon"><span class="material-symbols-outlined">apartment</span></div>
+              <div class="mm-title">ProjectLaunch&#8482;</div>
+              <div class="mm-sub">Real Estate Project Launch System</div>
+              <div class="mm-desc">Complete launch solution for real estate projects including visualization, branding, marketing and sales support.</div>
+              <div class="mm-cta">Explore Solution <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></div>
+            </a>
+            <a href="solutions/brand-scale.html" class="mm-card" data-solution="brand">
+              <div class="mm-icon"><span class="material-symbols-outlined">auto_awesome</span></div>
+              <div class="mm-title">BrandScale&#8482;</div>
+              <div class="mm-sub">Brand Growth System</div>
+              <div class="mm-desc">Build, strengthen and grow your brand through integrated creative and marketing solutions.</div>
+              <div class="mm-cta">Explore Solution <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></div>
+            </a>
+          </div>
+        </div>
+        <div class="mm-visual-panel" id="mmVisualPanel">
+          <div class="mm-img-overlay"></div>
+          <img class="mm-img active" src="assets/mm-growth.jpg" alt="GrowthLaunch" data-solution="growth" style="opacity:1">
+          <img class="mm-img" src="assets/mm-project.jpg" alt="ProjectLaunch" data-solution="project">
+          <img class="mm-img" src="assets/mm-brand.jpg" alt="BrandScale" data-solution="brand">
         </div>
       </div>
       </div>
             <div class="nav-mega-item" style="position:relative;display:inline-block">
         <a class="nav-link" style="cursor:pointer">Services <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
       <div class="mega-menu mega-menu-services">
-        <div class="mm-grid">
-          <div class="mm-col">
-            <div class="mm-col-header">Creative</div>
-            <a href="services/branding.html"><span class="material-symbols-outlined mm-svc-icon">brush</span>Branding</a>
-            <a href="services/smart-visualization.html"><span class="material-symbols-outlined mm-svc-icon">view_in_ar</span>Smart Visualization</a>
-            <a href="services/cinematic-cgi.html"><span class="material-symbols-outlined mm-svc-icon">movie</span>Cinematic CGI</a>
+        <div class="mm-main">
+          <div class="mm-grid">
+            <div class="mm-col">
+              <div class="mm-col-header">Creative</div>
+              <a href="services/branding.html"><span class="material-symbols-outlined mm-svc-icon">brush</span>Branding</a>
+              <a href="services/rendering.html"><span class="material-symbols-outlined mm-svc-icon">view_in_ar</span>Smart Visualization</a>
+              <a href="services/animation.html"><span class="material-symbols-outlined mm-svc-icon">movie</span>Cinematic CGI</a>
+            </div>
+            <div class="mm-col">
+              <div class="mm-col-header">Architectural Solutions</div>
+              <a href="services/maquettes.html"><span class="material-symbols-outlined mm-svc-icon">architecture</span>Architectural Scale Models</a>
+              <a href="services/interactive.html"><span class="material-symbols-outlined mm-svc-icon">touch_app</span>Interactive Experiences</a>
+              <a href="services/production.html"><span class="material-symbols-outlined mm-svc-icon">camera</span>Photography &amp; Media Production</a>
+            </div>
           </div>
-          <div class="mm-col">
-            <div class="mm-col-header">Architecture</div>
-            <a href="services/scale-models.html"><span class="material-symbols-outlined mm-svc-icon">architecture</span>Architectural Scale Models</a>
-            <a href="services/interactive-experiences.html"><span class="material-symbols-outlined mm-svc-icon">touch_app</span>Interactive Experiences</a>
-            <a href="services/photography-media.html"><span class="material-symbols-outlined mm-svc-icon">camera</span>Photography &amp; Media Production</a>
-          </div>
-          <div class="mm-col">
-            <div class="mm-col-header">Digital</div>
-            <a href="services/digital-marketing.html"><span class="material-symbols-outlined mm-svc-icon">campaign</span>Digital Marketing</a>
-            <a href="services/web-solutions.html"><span class="material-symbols-outlined mm-svc-icon">web</span>Web Solutions</a>
-            <a href="services/ai-solutions.html"><span class="material-symbols-outlined mm-svc-icon">smart_toy</span>AI Solutions</a>
-          </div>
+        </div>
+        <div class="mm-services-side">
+          <div class="mm-side-heading">Why Graphics House?</div>
+          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>Saudi Market Specialists</div>
+          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>End-to-End Business Solutions</div>
+          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>Creative + Technology</div>
+          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>Trusted by Leading Clients</div>
+          <a href="contact-us-en.html" class="mm-side-cta">Book Strategy Session <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></a>
         </div>
       </div>
       </div>
@@ -3405,6 +3227,351 @@ function swapImage(src, thumbEl) {
   #ghChatBtn { bottom:16px; inset-inline-end:16px; width:50px; height:50px; }
   #ghChatBtn span { font-size:22px; }
 }
+
+
+/* Mega Menu */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: #1A1A1A;
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s cubic-bezier(.25,.1,.1,1);
+  z-index: 100;
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 200px;
+}
+.nav-mega-item:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(4px);
+}
+.mega-menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #1A1A1A;
+}
+.mega-menu-solutions {
+  width: 770px;
+  padding: 0;
+  display: flex;
+}
+.mega-menu-solutions .mm-main {
+  flex: 1;
+  padding: 24px;
+}
+.mega-menu-solutions .mm-heading {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,.35);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  margin-bottom: 4px;
+}
+.mega-menu-solutions .mm-subheading {
+  font-size: 13px;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.mega-menu-solutions .mm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+.mega-menu-solutions .mm-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 18px 16px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all .3s ease;
+  text-decoration: none;
+  position: relative;
+}
+.mega-menu-solutions .mm-card:hover {
+  background: rgba(201,168,76,.04);
+  border-color: rgba(201,168,76,.15);
+}
+.mega-menu-solutions .mm-card .mm-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(201,168,76,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+.mega-menu-solutions .mm-card .mm-icon span {
+  font-size: 20px;
+  color: #C9A84C;
+}
+.mega-menu-solutions .mm-card .mm-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #FAFAF8;
+  font-family: 'Inter','Tajawal',sans-serif;
+}
+.mega-menu-solutions .mm-card .mm-sub {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(201,168,76,.7);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.mega-menu-solutions .mm-card .mm-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.5;
+  margin-top: 2px;
+}
+.mega-menu-solutions .mm-card .mm-cta {
+  font-size: 11px;
+  font-weight: 600;
+  color: #C9A84C;
+  margin-top: auto;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all .3s ease;
+}
+.mega-menu-solutions .mm-card:hover .mm-cta {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Solutions image panel */
+.mm-visual-panel {
+  width: 200px;
+  position: relative;
+  overflow: hidden;
+  border-left: 1px solid rgba(255,255,255,.06);
+  flex-shrink: 0;
+}
+.mm-visual-panel .mm-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+.mm-visual-panel .mm-img.active {
+  opacity: 1;
+}
+.mm-visual-panel .mm-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26,26,26,0.3) 0%, rgba(26,26,26,0.1) 40%, rgba(26,26,26,0.4) 100%);
+  pointer-events: none;
+}
+
+/* SERVICES MEGA MENU */
+.mega-menu-services {
+  width: 750px;
+  padding: 24px 0;
+  display: flex;
+}
+.mega-menu-services .mm-main {
+  flex: 1;
+  display: flex;
+}
+.mega-menu-services .mm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  flex: 1;
+}
+.mega-menu-services .mm-col {
+  padding: 0 24px;
+  border-right: 1px solid rgba(255,255,255,.06);
+}
+.mega-menu-services .mm-col:last-child {
+  border-right: none;
+}
+.mega-menu-services .mm-col-header {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #C9A84C;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(201,168,76,.15);
+}
+.mega-menu-services .mm-col a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,.55);
+  text-decoration: none;
+  transition: all .2s;
+  border-radius: 6px;
+  font-family: 'Inter','Tajawal',sans-serif;
+}
+.mega-menu-services .mm-col a:hover {
+  background: rgba(201,168,76,.06);
+  color: #FAFAF8;
+}
+.mega-menu-services .mm-col a .mm-svc-icon {
+  font-size: 16px;
+  color: #C9A84C;
+  flex-shrink: 0;
+}
+/* Services side panel */
+.mm-services-side {
+  width: 200px;
+  padding: 0 24px 0 0;
+  border-left: 1px solid rgba(255,255,255,.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.mm-services-side .mm-side-heading {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: rgba(201,168,76,.8);
+  margin-bottom: 12px;
+}
+.mm-services-side .mm-side-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+  padding: 4px 0;
+  line-height: 1.4;
+}
+.mm-services-side .mm-side-item .mm-check {
+  color: #C9A84C;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.mm-services-side .mm-side-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 8px 20px;
+  background: #C9A84C;
+  color: #0A0A0A;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all .3s;
+  align-self: flex-start;
+}
+.mm-services-side .mm-side-cta:hover {
+  background: #D9B860;
+  transform: scale(1.04);
+}
+
+/* Mobile accordion */
+.mm-mobile-trigger {
+  display: none;
+}
+@media (max-width: 900px) {
+  .nav-mega-item { position: relative !important; }
+  .mega-menu {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+    width: 100% !important;
+  }
+  .mega-menu.open {
+    max-height: 2000px;
+  }
+  .mega-menu::before { display: none; }
+  .mega-menu-solutions {
+    flex-direction: column;
+    padding: 0;
+  }
+  .mega-menu-solutions .mm-main {
+    padding: 8px 0;
+  }
+  .mega-menu-solutions .mm-grid {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .mega-menu-solutions .mm-card {
+    padding: 14px 16px;
+    border-color: rgba(255,255,255,.04);
+  }
+  .mega-menu-solutions .mm-card .mm-cta {
+    opacity: 1;
+    transform: none;
+  }
+  .mm-visual-panel { display: none; }
+  .mega-menu-services {
+    flex-direction: column;
+    padding: 8px 0;
+  }
+  .mega-menu-services .mm-main { flex-direction: column; }
+  .mega-menu-services .mm-grid {
+    grid-template-columns: 1fr;
+  }
+  .mega-menu-services .mm-col {
+    padding: 0 16px;
+    border-right: none;
+    margin-bottom: 16px;
+  }
+  .mega-menu-services .mm-col-header {
+    margin-bottom: 8px;
+  }
+  .mm-services-side {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,.06);
+    padding: 16px;
+  }
+  .mm-mobile-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+  }
+  .nav.open .nav-mega-item > a.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 24px;
+    cursor: pointer;
+  }
+}
+
 </style>
 
 <script>
@@ -3510,6 +3677,35 @@ document.getElementById("ghChatField").addEventListener("keydown", function(e) {
   }
 );
 </script>
+
+
+<script>
+// Mega menu hover image swap
+document.addEventListener('DOMContentLoaded', function(){
+  var panel = document.getElementById('mmVisualPanel');
+  if(!panel) return;
+  var cards = document.querySelectorAll('.mega-menu-solutions .mm-card[data-solution]');
+  var images = panel.querySelectorAll('.mm-img');
+  cards.forEach(function(card){
+    card.addEventListener('mouseenter', function(){
+      var sol = this.getAttribute('data-solution');
+      images.forEach(function(img){
+        img.classList.toggle('active', img.getAttribute('data-solution') === sol);
+      });
+    });
+  });
+  // Reset to first on leave
+  var mm = panel.closest('.mega-menu');
+  if(mm){
+    mm.addEventListener('mouseleave', function(){
+      images.forEach(function(img){
+        img.classList.toggle('active', img.getAttribute('data-solution') === 'growth');
+      });
+    });
+  }
+});
+</script>
+
 <script>
 // Mega menu mobile accordion
 document.addEventListener('DOMContentLoaded', function(){

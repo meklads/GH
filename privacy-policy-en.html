@@ -239,6 +239,12 @@ html[dir="ltr"] .section-title {
 .gh-float-wa{background:#25D366}
 .gh-float-mail{background:#C9A84C}
 
+
+}
+
+}
+
+
 /* Mega Menu */
 .mega-menu {
   position: absolute;
@@ -272,23 +278,43 @@ html[dir="ltr"] .section-title {
   border-bottom: 8px solid #1A1A1A;
 }
 .mega-menu-solutions {
-  width: 700px;
+  width: 770px;
+  padding: 0;
+  display: flex;
+}
+.mega-menu-solutions .mm-main {
+  flex: 1;
   padding: 24px;
+}
+.mega-menu-solutions .mm-heading {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,.35);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  margin-bottom: 4px;
+}
+.mega-menu-solutions .mm-subheading {
+  font-size: 13px;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 .mega-menu-solutions .mm-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
+  gap: 12px;
 }
 .mega-menu-solutions .mm-card {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 20px 18px;
+  padding: 20px 18px 16px;
   border-radius: 10px;
   border: 1px solid transparent;
   transition: all .3s ease;
   text-decoration: none;
+  position: relative;
 }
 .mega-menu-solutions .mm-card:hover {
   background: rgba(201,168,76,.04);
@@ -327,15 +353,65 @@ html[dir="ltr"] .section-title {
   line-height: 1.5;
   margin-top: 2px;
 }
+.mega-menu-solutions .mm-card .mm-cta {
+  font-size: 11px;
+  font-weight: 600;
+  color: #C9A84C;
+  margin-top: auto;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all .3s ease;
+}
+.mega-menu-solutions .mm-card:hover .mm-cta {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Solutions image panel */
+.mm-visual-panel {
+  width: 200px;
+  position: relative;
+  overflow: hidden;
+  border-left: 1px solid rgba(255,255,255,.06);
+  flex-shrink: 0;
+}
+.mm-visual-panel .mm-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+.mm-visual-panel .mm-img.active {
+  opacity: 1;
+}
+.mm-visual-panel .mm-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26,26,26,0.3) 0%, rgba(26,26,26,0.1) 40%, rgba(26,26,26,0.4) 100%);
+  pointer-events: none;
+}
+
 /* SERVICES MEGA MENU */
 .mega-menu-services {
-  width: 680px;
+  width: 750px;
   padding: 24px 0;
+  display: flex;
+}
+.mega-menu-services .mm-main {
+  flex: 1;
+  display: flex;
 }
 .mega-menu-services .mm-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 0;
+  flex: 1;
 }
 .mega-menu-services .mm-col {
   padding: 0 24px;
@@ -376,6 +452,60 @@ html[dir="ltr"] .section-title {
   color: #C9A84C;
   flex-shrink: 0;
 }
+/* Services side panel */
+.mm-services-side {
+  width: 200px;
+  padding: 0 24px 0 0;
+  border-left: 1px solid rgba(255,255,255,.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.mm-services-side .mm-side-heading {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: rgba(201,168,76,.8);
+  margin-bottom: 12px;
+}
+.mm-services-side .mm-side-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+  padding: 4px 0;
+  line-height: 1.4;
+}
+.mm-services-side .mm-side-item .mm-check {
+  color: #C9A84C;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.mm-services-side .mm-side-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 8px 20px;
+  background: #C9A84C;
+  color: #0A0A0A;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all .3s;
+  align-self: flex-start;
+}
+.mm-services-side .mm-side-cta:hover {
+  background: #D9B860;
+  transform: scale(1.04);
+}
+
 /* Mobile accordion */
 .mm-mobile-trigger {
   display: none;
@@ -400,7 +530,13 @@ html[dir="ltr"] .section-title {
     max-height: 2000px;
   }
   .mega-menu::before { display: none; }
-  .mega-menu-solutions { padding: 8px 0; }
+  .mega-menu-solutions {
+    flex-direction: column;
+    padding: 0;
+  }
+  .mega-menu-solutions .mm-main {
+    padding: 8px 0;
+  }
   .mega-menu-solutions .mm-grid {
     grid-template-columns: 1fr;
     gap: 4px;
@@ -409,7 +545,16 @@ html[dir="ltr"] .section-title {
     padding: 14px 16px;
     border-color: rgba(255,255,255,.04);
   }
-  .mega-menu-services { padding: 8px 0; }
+  .mega-menu-solutions .mm-card .mm-cta {
+    opacity: 1;
+    transform: none;
+  }
+  .mm-visual-panel { display: none; }
+  .mega-menu-services {
+    flex-direction: column;
+    padding: 8px 0;
+  }
+  .mega-menu-services .mm-main { flex-direction: column; }
   .mega-menu-services .mm-grid {
     grid-template-columns: 1fr;
   }
@@ -420,6 +565,12 @@ html[dir="ltr"] .section-title {
   }
   .mega-menu-services .mm-col-header {
     margin-bottom: 8px;
+  }
+  .mm-services-side {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,.06);
+    padding: 16px;
   }
   .mm-mobile-trigger {
     display: inline-flex;
@@ -437,7 +588,6 @@ html[dir="ltr"] .section-title {
   }
 }
 
-}
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKD9QVYNWF"></script>
@@ -489,50 +639,67 @@ html[dir="ltr"] .section-title {
             <div class="nav-mega-item" style="position:relative;display:inline-block">
         <a class="nav-link" style="cursor:pointer">Solutions <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
       <div class="mega-menu mega-menu-solutions">
-        <div class="mm-grid">
-          <a href="solutions/growth-launch.html" class="mm-card">
-            <div class="mm-icon"><span class="material-symbols-outlined">trending_up</span></div>
-            <div class="mm-title">GrowthLaunch&#8482;</div>
-            <div class="mm-sub">Lead Generation &amp; Sales System</div>
-            <div class="mm-desc">Generate qualified leads, automate follow-up and improve sales conversion.</div>
-          </a>
-          <a href="solutions/project-launch.html" class="mm-card">
-            <div class="mm-icon"><span class="material-symbols-outlined">apartment</span></div>
-            <div class="mm-title">ProjectLaunch&#8482;</div>
-            <div class="mm-sub">Real Estate Project Launch System</div>
-            <div class="mm-desc">Complete launch solution for real estate projects including visualization, branding, marketing and sales support.</div>
-          </a>
-          <a href="solutions/brand-scale.html" class="mm-card">
-            <div class="mm-icon"><span class="material-symbols-outlined">auto_awesome</span></div>
-            <div class="mm-title">BrandScale&#8482;</div>
-            <div class="mm-sub">Brand Growth System</div>
-            <div class="mm-desc">Build, strengthen and grow your brand through integrated creative and marketing solutions.</div>
-          </a>
+        <div class="mm-main">
+          <div class="mm-heading">Business Solutions</div>
+          <div class="mm-subheading">Choose the solution that best matches your business growth stage.</div>
+          <div class="mm-grid">
+            <a href="solutions/growth-launch.html" class="mm-card" data-solution="growth">
+              <div class="mm-icon"><span class="material-symbols-outlined">trending_up</span></div>
+              <div class="mm-title">GrowthLaunch&#8482;</div>
+              <div class="mm-sub">Lead Generation &amp; Sales System</div>
+              <div class="mm-desc">Generate qualified leads, automate follow-up and improve sales conversion.</div>
+              <div class="mm-cta">Explore Solution <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></div>
+            </a>
+            <a href="solutions/project-launch.html" class="mm-card" data-solution="project">
+              <div class="mm-icon"><span class="material-symbols-outlined">apartment</span></div>
+              <div class="mm-title">ProjectLaunch&#8482;</div>
+              <div class="mm-sub">Real Estate Project Launch System</div>
+              <div class="mm-desc">Complete launch solution for real estate projects including visualization, branding, marketing and sales support.</div>
+              <div class="mm-cta">Explore Solution <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></div>
+            </a>
+            <a href="solutions/brand-scale.html" class="mm-card" data-solution="brand">
+              <div class="mm-icon"><span class="material-symbols-outlined">auto_awesome</span></div>
+              <div class="mm-title">BrandScale&#8482;</div>
+              <div class="mm-sub">Brand Growth System</div>
+              <div class="mm-desc">Build, strengthen and grow your brand through integrated creative and marketing solutions.</div>
+              <div class="mm-cta">Explore Solution <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></div>
+            </a>
+          </div>
+        </div>
+        <div class="mm-visual-panel" id="mmVisualPanel">
+          <div class="mm-img-overlay"></div>
+          <img class="mm-img active" src="assets/mm-growth.jpg" alt="GrowthLaunch" data-solution="growth" style="opacity:1">
+          <img class="mm-img" src="assets/mm-project.jpg" alt="ProjectLaunch" data-solution="project">
+          <img class="mm-img" src="assets/mm-brand.jpg" alt="BrandScale" data-solution="brand">
         </div>
       </div>
       </div>
             <div class="nav-mega-item" style="position:relative;display:inline-block">
         <a class="nav-link" style="cursor:pointer">Services <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
       <div class="mega-menu mega-menu-services">
-        <div class="mm-grid">
-          <div class="mm-col">
-            <div class="mm-col-header">Creative</div>
-            <a href="services/branding.html"><span class="material-symbols-outlined mm-svc-icon">brush</span>Branding</a>
-            <a href="services/smart-visualization.html"><span class="material-symbols-outlined mm-svc-icon">view_in_ar</span>Smart Visualization</a>
-            <a href="services/cinematic-cgi.html"><span class="material-symbols-outlined mm-svc-icon">movie</span>Cinematic CGI</a>
+        <div class="mm-main">
+          <div class="mm-grid">
+            <div class="mm-col">
+              <div class="mm-col-header">Creative</div>
+              <a href="services/branding.html"><span class="material-symbols-outlined mm-svc-icon">brush</span>Branding</a>
+              <a href="services/rendering.html"><span class="material-symbols-outlined mm-svc-icon">view_in_ar</span>Smart Visualization</a>
+              <a href="services/animation.html"><span class="material-symbols-outlined mm-svc-icon">movie</span>Cinematic CGI</a>
+            </div>
+            <div class="mm-col">
+              <div class="mm-col-header">Architectural Solutions</div>
+              <a href="services/maquettes.html"><span class="material-symbols-outlined mm-svc-icon">architecture</span>Architectural Scale Models</a>
+              <a href="services/interactive.html"><span class="material-symbols-outlined mm-svc-icon">touch_app</span>Interactive Experiences</a>
+              <a href="services/production.html"><span class="material-symbols-outlined mm-svc-icon">camera</span>Photography &amp; Media Production</a>
+            </div>
           </div>
-          <div class="mm-col">
-            <div class="mm-col-header">Architecture</div>
-            <a href="services/scale-models.html"><span class="material-symbols-outlined mm-svc-icon">architecture</span>Architectural Scale Models</a>
-            <a href="services/interactive-experiences.html"><span class="material-symbols-outlined mm-svc-icon">touch_app</span>Interactive Experiences</a>
-            <a href="services/photography-media.html"><span class="material-symbols-outlined mm-svc-icon">camera</span>Photography &amp; Media Production</a>
-          </div>
-          <div class="mm-col">
-            <div class="mm-col-header">Digital</div>
-            <a href="services/digital-marketing.html"><span class="material-symbols-outlined mm-svc-icon">campaign</span>Digital Marketing</a>
-            <a href="services/web-solutions.html"><span class="material-symbols-outlined mm-svc-icon">web</span>Web Solutions</a>
-            <a href="services/ai-solutions.html"><span class="material-symbols-outlined mm-svc-icon">smart_toy</span>AI Solutions</a>
-          </div>
+        </div>
+        <div class="mm-services-side">
+          <div class="mm-side-heading">Why Graphics House?</div>
+          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>Saudi Market Specialists</div>
+          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>End-to-End Business Solutions</div>
+          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>Creative + Technology</div>
+          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>Trusted by Leading Clients</div>
+          <a href="contact-us-en.html" class="mm-side-cta">Book Strategy Session <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></a>
         </div>
       </div>
       </div>
@@ -754,6 +921,35 @@ function ghSubmit(e){
   <button class="gh-float-btn gh-float-mail" onclick="document.getElementById('ghPopup').classList.add('open')" title="Register Your Interest"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></button>
 </div>
 
+
+
+
+<script>
+// Mega menu hover image swap
+document.addEventListener('DOMContentLoaded', function(){
+  var panel = document.getElementById('mmVisualPanel');
+  if(!panel) return;
+  var cards = document.querySelectorAll('.mega-menu-solutions .mm-card[data-solution]');
+  var images = panel.querySelectorAll('.mm-img');
+  cards.forEach(function(card){
+    card.addEventListener('mouseenter', function(){
+      var sol = this.getAttribute('data-solution');
+      images.forEach(function(img){
+        img.classList.toggle('active', img.getAttribute('data-solution') === sol);
+      });
+    });
+  });
+  // Reset to first on leave
+  var mm = panel.closest('.mega-menu');
+  if(mm){
+    mm.addEventListener('mouseleave', function(){
+      images.forEach(function(img){
+        img.classList.toggle('active', img.getAttribute('data-solution') === 'growth');
+      });
+    });
+  }
+});
+</script>
 
 <script>
 // Mega menu mobile accordion
