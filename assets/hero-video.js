@@ -7,57 +7,63 @@
     if (!v || v.dataset.heroInit === '1') return;
     v.dataset.heroInit = '1';
 
+    var wrap = v.closest('.hero-video-bg');
+    v.muted = true;
+    v.playsInline = true;
     v.removeAttribute('autoplay');
     v.removeAttribute('loop');
-    v.style.opacity = '0';
 
-    function seekStart() {
-      if (Math.abs(v.currentTime - START) > 0.05) {
+    function markPlaying() {
+      if (wrap) wrap.classList.add('is-playing');
+    }
+
+    function jumpToStart(done) {
+      function seekAndContinue() {
+        if (Math.abs(v.currentTime - START) < 0.05) {
+          if (done) done();
+          return;
+        }
+        v.addEventListener(
+          'seeked',
+          function () {
+            if (done) done();
+          },
+          { once: true }
+        );
         v.currentTime = START;
       }
-    }
 
-    function revealAndPlay() {
-      seekStart();
-      var playPromise = v.play();
-      if (playPromise && playPromise.then) {
-        playPromise
-          .then(function () {
-            v.style.opacity = '1';
-          })
-          .catch(function () {
-            v.style.opacity = '1';
-          });
+      if (v.readyState >= 1) {
+        seekAndContinue();
       } else {
-        v.style.opacity = '1';
+        v.addEventListener('loadedmetadata', seekAndContinue, { once: true });
       }
     }
 
-    function onReady() {
-      seekStart();
-      revealAndPlay();
+    function startPlayback() {
+      jumpToStart(function () {
+        var playPromise = v.play();
+        if (playPromise && playPromise.then) {
+          playPromise.then(markPlaying).catch(function () {});
+        } else {
+          markPlaying();
+        }
+      });
     }
 
-    if (v.readyState >= 1) {
-      onReady();
-    } else {
-      v.addEventListener('loadedmetadata', onReady, { once: true });
-    }
+    v.addEventListener('playing', markPlaying);
 
     v.addEventListener('timeupdate', function () {
       if (v.currentTime >= END) {
-        seekStart();
-        v.play();
-      } else if (v.currentTime > 0 && v.currentTime < START - 0.05) {
-        seekStart();
+        v.currentTime = START;
       }
     });
 
-    v.addEventListener('seeked', function () {
-      if (v.currentTime < START - 0.05) {
-        seekStart();
-      }
-    });
+    if (v.readyState >= 2) {
+      startPlayback();
+    } else {
+      v.addEventListener('canplay', startPlayback, { once: true });
+    }
   }
 
   function boot() {
