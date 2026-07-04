@@ -9,6 +9,7 @@
 
     var wrap = v.closest('.hero-video-bg');
     var started = false;
+    var revealed = false;
 
     v.muted = true;
     v.defaultMuted = true;
@@ -19,6 +20,9 @@
     v.removeAttribute('loop');
 
     function markPlaying() {
+      if (revealed) return;
+      if (v.currentTime < START - 0.1) return;
+      revealed = true;
       if (wrap) wrap.classList.add('is-playing');
     }
 
@@ -35,9 +39,21 @@
         { once: true }
       );
       try {
-        v.currentTime = START;
+        if (typeof v.fastSeek === 'function') {
+          v.fastSeek(START);
+        } else {
+          v.currentTime = START;
+        }
       } catch (e) {
         if (done) done();
+      }
+    }
+
+    function enforceStart() {
+      if (v.currentTime > 0 && v.currentTime < START - 0.05) {
+        try {
+          v.currentTime = START;
+        } catch (e) {}
       }
     }
 
@@ -46,21 +62,33 @@
       started = true;
 
       seekToStart(function () {
-        markPlaying();
-        v.play().catch(function () {
-          started = false;
-        });
+        enforceStart();
+        v.play()
+          .then(function () {
+            markPlaying();
+          })
+          .catch(function () {
+            started = false;
+          });
       });
     }
 
     v.addEventListener('timeupdate', function () {
-      if (v.currentTime >= END) {
+      enforceStart();
+
+      if (v.currentTime >= END - 0.15) {
         seekToStart(function () {
           if (v.paused) v.play().catch(function () {});
         });
+        return;
+      }
+
+      if (v.currentTime >= START - 0.05 && !v.paused) {
+        markPlaying();
       }
     });
 
+    v.addEventListener('playing', markPlaying);
     v.addEventListener('loadedmetadata', startFromSecondEight, { once: true });
     v.addEventListener('canplay', startFromSecondEight, { once: true });
 
