@@ -3480,15 +3480,15 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
   document.querySelectorAll(".s2-fade").forEach(el => observer.observe(el));
 
-  // Hero video: start at 0:07, loop 0:07→0:35
+  // Hero video: start at 0:08, loop 0:08→0:35
   var heroVid = document.getElementById('hero-vid');
   if (heroVid) {
     heroVid.addEventListener("loadedmetadata", function() {
-      if (heroVid.readyState > 0) { heroVid.currentTime = 7; }
-      else { heroVid.addEventListener("loadeddata", function() { heroVid.currentTime = 7; }, {once: true}); }
+      if (heroVid.readyState > 0) { heroVid.currentTime = 8; }
+      else { heroVid.addEventListener("loadeddata", function() { heroVid.currentTime = 8; }, {once: true}); }
     });
     heroVid.addEventListener("timeupdate", function() {
-      if (heroVid.currentTime >= 35) { heroVid.currentTime = 7; }
+      if (heroVid.currentTime >= 35) { heroVid.currentTime = 8; }
     });
     var pp = heroVid.play();
     if (pp !== undefined) { pp.catch(function() { console.log("Autoplay blocked"); }); }
