@@ -10,11 +10,12 @@
     var wrap = v.closest('.hero-video-bg');
     v.muted = true;
     v.defaultMuted = true;
-    v.playsInline = true;
     v.setAttribute('muted', '');
     v.setAttribute('playsinline', '');
     v.setAttribute('webkit-playsinline', '');
-    v.setAttribute('autoplay', '');
+    v.removeAttribute('autoplay');
+    v.removeAttribute('loop');
+    v.pause();
 
     function markPlaying() {
       if (wrap) wrap.classList.add('is-playing');
@@ -28,16 +29,28 @@
       } catch (e) {}
     }
 
-    v.addEventListener('loadedmetadata', jumpToStart);
-    v.addEventListener('loadeddata', jumpToStart);
-    v.addEventListener('playing', markPlaying);
+    function begin() {
+      jumpToStart();
+      v.play().catch(function () {});
+    }
+
     v.addEventListener('timeupdate', function () {
-      if (v.currentTime > START + 0.1) markPlaying();
-      if (v.currentTime >= END) jumpToStart();
+      if (v.currentTime >= START + 0.12) {
+        markPlaying();
+      } else if (v.currentTime > 0 && v.currentTime < START - 0.05) {
+        jumpToStart();
+      }
+      if (v.currentTime >= END) {
+        jumpToStart();
+      }
     });
 
-    jumpToStart();
-    v.play().catch(function () {});
+    v.addEventListener('loadedmetadata', begin, { once: true });
+    v.addEventListener('canplay', begin, { once: true });
+
+    if (v.readyState >= 1) {
+      begin();
+    }
   }
 
   init('hero-vid');
