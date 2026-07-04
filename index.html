@@ -3480,15 +3480,15 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
   document.querySelectorAll(".s2-fade").forEach(el => observer.observe(el));
 
-  // Hero video: start at 0:05, loop 0:05→0:35
+  // Hero video: start at 0:06, loop 0:06→0:35
   var heroVid = document.getElementById('hero-vid');
   if (heroVid) {
     heroVid.addEventListener("loadedmetadata", function() {
-      if (heroVid.readyState > 0) { heroVid.currentTime = 5; }
-      else { heroVid.addEventListener("loadeddata", function() { heroVid.currentTime = 5; }, {once: true}); }
+      if (heroVid.readyState > 0) { heroVid.currentTime = 6; }
+      else { heroVid.addEventListener("loadeddata", function() { heroVid.currentTime = 6; }, {once: true}); }
     });
     heroVid.addEventListener("timeupdate", function() {
-      if (heroVid.currentTime >= 35) { heroVid.currentTime = 5; }
+      if (heroVid.currentTime >= 35) { heroVid.currentTime = 6; }
     });
     var pp = heroVid.play();
     if (pp !== undefined) { pp.catch(function() { console.log("Autoplay blocked"); }); }
@@ -4476,9 +4476,10 @@ function ghSubmit(e){
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   var v=document.getElementById('hero-vid');
-  v.addEventListener('loadedmetadata',function(){ v.currentTime=5; });
-  v.addEventListener('timeupdate',function(){ if(v.currentTime>=35){ v.currentTime=5; v.play(); } });
-);
+  if(!v) return;
+  v.addEventListener('loadedmetadata',function(){ v.currentTime=6; });
+  v.addEventListener('timeupdate',function(){ if(v.currentTime>=35){ v.currentTime=6; v.play(); } });
+});
 </script>
 
 <script>
