@@ -1,0 +1,107 @@
+.solution-soon {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 24px 80px;
+  min-height: 60vh;
+}
+.solution-soon-card {
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+  padding: 56px 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+}
+.solution-soon-icon {
+  font-size: 64px;
+  color: #c9a84c;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+.solution-soon-title {
+  font-family: "Playfair Display", "Tajawal", serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.solution-soon-text {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+}
+.solution-soon-text-ar {
+  font-family: "Tajawal", sans-serif;
+  direction: rtl;
+}
+.solution-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 10px 24px;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #c9a84c;
+  letter-spacing: 0.06em;
+}
+.solution-soon-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c9a84c;
+  animation: solution-soon-pulse 2s ease-in-out infinite;
+}
+@keyframes solution-soon-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+.solution-soon-actions {
+  margin-top: 36px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.solution-soon-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.solution-soon-actions .outline {
+  color: #fafaf8;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+.solution-soon-actions .outline:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+}
+.solution-soon-actions .gold {
+  background: #c9a84c;
+  color: #0a0a0a;
+  border: 2px solid #c9a84c;
+}
+.solution-soon-actions .gold:hover {
+  background: #a8883a;
+  border-color: #a8883a;
+}
