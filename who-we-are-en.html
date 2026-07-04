@@ -185,7 +185,6 @@ html[dir="ltr"] .section-title {
   font-weight: 700;
 }
 
-
 }
 
 (function(){var els=document.querySelectorAll(".reveal");if(els.length){var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");ro.unobserve(e.target)}})},{threshold:0.1});els.forEach(function(el){ro.observe(el)})}}
@@ -218,8 +217,6 @@ html[dir="ltr"] .section-title {
         <a class="nav-link" style="cursor:pointer">Solutions <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
       <div class="mega-menu mega-menu-solutions">
         <div class="mm-main">
-          <div class="mm-heading">Business Solutions</div>
-          <div class="mm-subheading">Choose the solution that best matches your business growth stage.</div>
           <div class="mm-grid">
             <a href="solutions/growth-launch.html" class="mm-card" data-solution="growth">
               <div class="mm-icon"><span class="material-symbols-outlined">trending_up</span></div>
@@ -244,12 +241,6 @@ html[dir="ltr"] .section-title {
             </a>
           </div>
         </div>
-        <div class="mm-visual-panel" id="mmVisualPanel">
-          <div class="mm-img-overlay"></div>
-          <img class="mm-img active" src="assets/mm-growth.jpg" alt="GrowthLaunch" data-solution="growth" style="opacity:1">
-          <img class="mm-img" src="assets/mm-project.jpg" alt="ProjectLaunch" data-solution="project">
-          <img class="mm-img" src="assets/mm-brand.jpg" alt="BrandScale" data-solution="brand">
-        </div>
       </div>
       </div>
             <div class="nav-mega-item" style="position:relative;display:inline-block">
@@ -270,14 +261,6 @@ html[dir="ltr"] .section-title {
               <a href="services/production.html"><span class="material-symbols-outlined mm-svc-icon">camera</span>Photography &amp; Media Production</a>
             </div>
           </div>
-        </div>
-        <div class="mm-services-side">
-          <div class="mm-side-heading">Why Graphics House?</div>
-          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>Saudi Market Specialists</div>
-          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>End-to-End Business Solutions</div>
-          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>Creative + Technology</div>
-          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>Trusted by Leading Clients</div>
-          <a href="contact-us-en.html" class="mm-side-cta">Book Strategy Session <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></a>
         </div>
       </div>
       </div>
@@ -660,7 +643,6 @@ html[dir="ltr"] .section-title {
 .gh-submit:hover{background:#A8883A}
 @media(max-width:600px){.gh-popup-box{padding:28px 20px 24px}}
 
-
 /* Mega Menu */
 .mega-menu {
   position: absolute;
@@ -701,21 +683,7 @@ html[dir="ltr"] .section-title {
 .mega-menu-solutions .mm-main {
   flex: 1;
   padding: 24px;
-}
-.mega-menu-solutions .mm-heading {
-  font-size: 12px;
-  font-weight: 700;
-  color: rgba(255,255,255,.35);
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  margin-bottom: 4px;
-}
-.mega-menu-solutions .mm-subheading {
-  font-size: 13px;
-  color: rgba(255,255,255,.5);
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
+}}}
 .mega-menu-solutions .mm-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -786,32 +754,7 @@ html[dir="ltr"] .section-title {
   opacity: 1;
   transform: translateX(0);
 }
-/* Solutions image panel */
-.mm-visual-panel {
-  width: 200px;
-  position: relative;
-  overflow: hidden;
-  border-left: 1px solid rgba(255,255,255,.06);
-  flex-shrink: 0;
-}
-.mm-visual-panel .mm-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity .4s ease;
-}
-.mm-visual-panel .mm-img.active {
-  opacity: 1;
-}
-.mm-visual-panel .mm-img-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(26,26,26,0.3) 0%, rgba(26,26,26,0.1) 40%, rgba(26,26,26,0.4) 100%);
-  pointer-events: none;
-}
+/* Solutions image panel */}}}}
 
 /* SERVICES MEGA MENU */
 .mega-menu-services {
@@ -868,59 +811,7 @@ html[dir="ltr"] .section-title {
   color: #C9A84C;
   flex-shrink: 0;
 }
-/* Services side panel */
-.mm-services-side {
-  width: 200px;
-  padding: 0 24px 0 0;
-  border-left: 1px solid rgba(255,255,255,.06);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.mm-services-side .mm-side-heading {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: rgba(201,168,76,.8);
-  margin-bottom: 12px;
-}
-.mm-services-side .mm-side-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  color: rgba(255,255,255,.45);
-  padding: 4px 0;
-  line-height: 1.4;
-}
-.mm-services-side .mm-side-item .mm-check {
-  color: #C9A84C;
-  font-size: 14px;
-  flex-shrink: 0;
-}
-.mm-services-side .mm-side-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 16px;
-  padding: 8px 20px;
-  background: #C9A84C;
-  color: #0A0A0A;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: all .3s;
-  align-self: flex-start;
-}
-.mm-services-side .mm-side-cta:hover {
-  background: #D9B860;
-  transform: scale(1.04);
-}
+/* Services side panel */}}}}}}
 
 /* Mobile accordion */
 .mm-mobile-trigger {
@@ -965,7 +856,7 @@ html[dir="ltr"] .section-title {
     opacity: 1;
     transform: none;
   }
-  .mm-visual-panel { display: none; }
+
   .mega-menu-services {
     flex-direction: column;
     padding: 8px 0;
@@ -982,7 +873,7 @@ html[dir="ltr"] .section-title {
   .mega-menu-services .mm-col-header {
     margin-bottom: 8px;
   }
-  .mm-services-side {
+
     width: 100%;
     border-left: none;
     border-top: 1px solid rgba(255,255,255,.06);
@@ -1084,35 +975,6 @@ if(ld&&lb){setTimeout(function(){lb.style.width="100%"},100);setTimeout(function
 window.addEventListener("scroll",function(){document.getElementById("header").classList.toggle("scrolled",window.scrollY>80)});
 function toggleMenu(){var n=document.getElementById("nav");n.classList.toggle("open")}
 )();
-</script>
-
-
-
-<script>
-// Mega menu hover image swap
-document.addEventListener('DOMContentLoaded', function(){
-  var panel = document.getElementById('mmVisualPanel');
-  if(!panel) return;
-  var cards = document.querySelectorAll('.mega-menu-solutions .mm-card[data-solution]');
-  var images = panel.querySelectorAll('.mm-img');
-  cards.forEach(function(card){
-    card.addEventListener('mouseenter', function(){
-      var sol = this.getAttribute('data-solution');
-      images.forEach(function(img){
-        img.classList.toggle('active', img.getAttribute('data-solution') === sol);
-      });
-    });
-  });
-  // Reset to first on leave
-  var mm = panel.closest('.mega-menu');
-  if(mm){
-    mm.addEventListener('mouseleave', function(){
-      images.forEach(function(img){
-        img.classList.toggle('active', img.getAttribute('data-solution') === 'growth');
-      });
-    });
-  }
-});
 </script>
 
 <script>

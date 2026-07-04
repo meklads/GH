@@ -148,11 +148,9 @@ html[dir="ltr"] .section-title {
 .gh-float-wa{background:#25D366}
 .gh-float-mail{background:#C9A84C}
 
-
 }
 
 }
-
 
 /* Mega Menu */
 .mega-menu {
@@ -194,21 +192,7 @@ html[dir="ltr"] .section-title {
 .mega-menu-solutions .mm-main {
   flex: 1;
   padding: 24px;
-}
-.mega-menu-solutions .mm-heading {
-  font-size: 12px;
-  font-weight: 700;
-  color: rgba(255,255,255,.35);
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  margin-bottom: 4px;
-}
-.mega-menu-solutions .mm-subheading {
-  font-size: 13px;
-  color: rgba(255,255,255,.5);
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
+}}}
 .mega-menu-solutions .mm-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -279,32 +263,7 @@ html[dir="ltr"] .section-title {
   opacity: 1;
   transform: translateX(0);
 }
-/* Solutions image panel */
-.mm-visual-panel {
-  width: 200px;
-  position: relative;
-  overflow: hidden;
-  border-left: 1px solid rgba(255,255,255,.06);
-  flex-shrink: 0;
-}
-.mm-visual-panel .mm-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity .4s ease;
-}
-.mm-visual-panel .mm-img.active {
-  opacity: 1;
-}
-.mm-visual-panel .mm-img-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(26,26,26,0.3) 0%, rgba(26,26,26,0.1) 40%, rgba(26,26,26,0.4) 100%);
-  pointer-events: none;
-}
+/* Solutions image panel */}}}}
 
 /* SERVICES MEGA MENU */
 .mega-menu-services {
@@ -361,59 +320,7 @@ html[dir="ltr"] .section-title {
   color: #C9A84C;
   flex-shrink: 0;
 }
-/* Services side panel */
-.mm-services-side {
-  width: 200px;
-  padding: 0 24px 0 0;
-  border-left: 1px solid rgba(255,255,255,.06);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.mm-services-side .mm-side-heading {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: rgba(201,168,76,.8);
-  margin-bottom: 12px;
-}
-.mm-services-side .mm-side-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  color: rgba(255,255,255,.45);
-  padding: 4px 0;
-  line-height: 1.4;
-}
-.mm-services-side .mm-side-item .mm-check {
-  color: #C9A84C;
-  font-size: 14px;
-  flex-shrink: 0;
-}
-.mm-services-side .mm-side-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 16px;
-  padding: 8px 20px;
-  background: #C9A84C;
-  color: #0A0A0A;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: all .3s;
-  align-self: flex-start;
-}
-.mm-services-side .mm-side-cta:hover {
-  background: #D9B860;
-  transform: scale(1.04);
-}
+/* Services side panel */}}}}}}
 
 /* Mobile accordion */
 .mm-mobile-trigger {
@@ -458,7 +365,7 @@ html[dir="ltr"] .section-title {
     opacity: 1;
     transform: none;
   }
-  .mm-visual-panel { display: none; }
+
   .mega-menu-services {
     flex-direction: column;
     padding: 8px 0;
@@ -475,7 +382,7 @@ html[dir="ltr"] .section-title {
   .mega-menu-services .mm-col-header {
     margin-bottom: 8px;
   }
-  .mm-services-side {
+
     width: 100%;
     border-left: none;
     border-top: 1px solid rgba(255,255,255,.06);
@@ -520,8 +427,6 @@ html[dir="ltr"] .section-title {
         <a class="nav-link" style="cursor:pointer">Solutions <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
       <div class="mega-menu mega-menu-solutions">
         <div class="mm-main">
-          <div class="mm-heading">Business Solutions</div>
-          <div class="mm-subheading">Choose the solution that best matches your business growth stage.</div>
           <div class="mm-grid">
             <a href="solutions/growth-launch.html" class="mm-card" data-solution="growth">
               <div class="mm-icon"><span class="material-symbols-outlined">trending_up</span></div>
@@ -546,12 +451,6 @@ html[dir="ltr"] .section-title {
             </a>
           </div>
         </div>
-        <div class="mm-visual-panel" id="mmVisualPanel">
-          <div class="mm-img-overlay"></div>
-          <img class="mm-img active" src="assets/mm-growth.jpg" alt="GrowthLaunch" data-solution="growth" style="opacity:1">
-          <img class="mm-img" src="assets/mm-project.jpg" alt="ProjectLaunch" data-solution="project">
-          <img class="mm-img" src="assets/mm-brand.jpg" alt="BrandScale" data-solution="brand">
-        </div>
       </div>
       </div>
             <div class="nav-mega-item" style="position:relative;display:inline-block">
@@ -572,14 +471,6 @@ html[dir="ltr"] .section-title {
               <a href="services/production.html"><span class="material-symbols-outlined mm-svc-icon">camera</span>Photography &amp; Media Production</a>
             </div>
           </div>
-        </div>
-        <div class="mm-services-side">
-          <div class="mm-side-heading">Why Graphics House?</div>
-          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>Saudi Market Specialists</div>
-          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>End-to-End Business Solutions</div>
-          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>Creative + Technology</div>
-          <div class="mm-side-item"><span class="material-symbols-outlined mm-check">check_circle</span>Trusted by Leading Clients</div>
-          <a href="contact-us-en.html" class="mm-side-cta">Book Strategy Session <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></a>
         </div>
       </div>
       </div>
@@ -902,36 +793,6 @@ function ghSubmit(e){
   <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
   <button class="gh-float-btn gh-float-mail" onclick="document.getElementById('ghPopup').classList.add('open')" title="Register Your Interest"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></button>
 </div>
-
-
-
-
-<script>
-// Mega menu hover image swap
-document.addEventListener('DOMContentLoaded', function(){
-  var panel = document.getElementById('mmVisualPanel');
-  if(!panel) return;
-  var cards = document.querySelectorAll('.mega-menu-solutions .mm-card[data-solution]');
-  var images = panel.querySelectorAll('.mm-img');
-  cards.forEach(function(card){
-    card.addEventListener('mouseenter', function(){
-      var sol = this.getAttribute('data-solution');
-      images.forEach(function(img){
-        img.classList.toggle('active', img.getAttribute('data-solution') === sol);
-      });
-    });
-  });
-  // Reset to first on leave
-  var mm = panel.closest('.mega-menu');
-  if(mm){
-    mm.addEventListener('mouseleave', function(){
-      images.forEach(function(img){
-        img.classList.toggle('active', img.getAttribute('data-solution') === 'growth');
-      });
-    });
-  }
-});
-</script>
 
 <script>
 // Mega menu mobile accordion
