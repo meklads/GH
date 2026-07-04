@@ -108,8 +108,7 @@ img { max-width: 100%; display: block; }
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
+  }
 
 /* LOGO */
 .logo {
@@ -161,12 +160,26 @@ img { max-width: 100%; display: block; }
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
 }
 
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+[dir="rtl"] .logo { margin-inline-start: auto; }
+[dir="ltr"] .logo { margin-inline-end: auto; }
+@media (max-width: 900px) {
+  .nav-actions { position: relative; z-index: 1002; }
+}
+
 /* NAV */
 .nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 28px;
+  gap: 28px;;
+  flex: 1;
 }
 .nav a {
   font-size: 17px;
@@ -2183,10 +2196,12 @@ img { max-width: 100%; display: block; }
       </div>
       <a class="nav-link" href="portfolio-en.html" style="color:#C9A84C">Our Work</a>
       <a class="nav-link" href="case-study-mwl-en.html">Case Studies</a>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35)"><a href="who-we-are.html" style="color:#fff;text-decoration:none;font-weight:700;transition:color .3s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">AR</a> <span style="color:rgba(255,255,255,.3)">|</span> <a href="#" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">EN</a></span>
-      <a href="contact-us-en.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:50px;border:none;transition:all .3s;white-space:nowrap;font-family:'Inter','Tajawal',sans-serif" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)';" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)';">Book a Strategy Session</a>
       <a class="nav-link" href="contact-us-en.html">Contact Us</a>
     </nav>
+    <div class="nav-actions">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35)"><a href="who-we-are.html" style="color:#fff;text-decoration:none;font-weight:700;transition:color .3s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">AR</a> <span style="color:rgba(255,255,255,.3)">|</span> <a href="#" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">EN</a></span>
+      <a href="contact-us-en.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:50px;border:none;transition:all .3s;white-space:nowrap;font-family:'Inter','Tajawal',sans-serif" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)';" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)';">Book a Strategy Session</a>
+    </div>
     <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
       <span class="material-symbols-outlined">menu</span>
     </button>
@@ -4490,7 +4505,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <script>
 // Smart language switcher - preserve current page when switching languages
 document.addEventListener('DOMContentLoaded', function() {
-  var spans = document.querySelectorAll('.nav span[style*="font-size:12px"][style*="letter-spacing"]');
+  var spans = document.querySelectorAll('span[style*="font-size:12px"][style*="letter-spacing"]');
   spans.forEach(function(span) {
     var links = span.querySelectorAll('a');
     if (links.length < 2) return;

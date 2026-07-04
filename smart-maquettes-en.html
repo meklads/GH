@@ -34,9 +34,11 @@ img{max-width:100%;display:block}
 
 /* HEADER */
 .header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:10px 0;background:rgba(7,24,16,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.15)}
-.header-inner{max-width:1280px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between}
+.header-inner{max-width:1280px;margin:0 auto;padding:0 48px;display:flex;align-items:center;}
 @media(max-width:768px){.header-inner{padding:0 20px}}
-.nav{display:flex;align-items:center;gap:28px}
+.nav{display:flex;align-items:center;gap:28px;
+  flex: 1;
+}
 .nav-link{font-size:15px;font-weight:600;color:rgba(255,255,255,.85);transition:color .3s;cursor:pointer}
 .nav-link:hover{color:#C9A84C}
 .nav-item-drop{position:relative;display:inline-block}
@@ -471,10 +473,12 @@ img{max-width:100%;display:block}
       </div>
       <a class="nav-link" href="portfolio-en.html" style="color:#C9A84C">Our Work</a>
       <a class="nav-link" href="case-study-mwl-en.html">Case Studies</a>
-      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35)"><a href="who-we-are.html" style="color:#fff;text-decoration:none;font-weight:700;transition:color .3s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">AR</a> <span style="color:rgba(255,255,255,.3)">|</span> <a href="#" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">EN</a></span>
-      <a href="contact-us-en.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:50px;border:none;transition:all .3s;white-space:nowrap;font-family:'Inter','Tajawal',sans-serif" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)';" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)';">Book a Strategy Session</a>
       <a class="nav-link" href="contact-us-en.html">Contact Us</a>
     </nav>
+    <div class="nav-actions">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35)"><a href="who-we-are.html" style="color:#fff;text-decoration:none;font-weight:700;transition:color .3s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">AR</a> <span style="color:rgba(255,255,255,.3)">|</span> <a href="#" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">EN</a></span>
+      <a href="contact-us-en.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:50px;border:none;transition:all .3s;white-space:nowrap;font-family:'Inter','Tajawal',sans-serif" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)';" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)';">Book a Strategy Session</a>
+    </div>
     <button class="menu-toggle" onclick="toggleMenu()"><span class="material-symbols-outlined">menu</span></button>
   </div>
 </header>
@@ -881,7 +885,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <script>
 // Smart language switcher - preserve current page when switching languages
 document.addEventListener('DOMContentLoaded', function() {
-  var spans = document.querySelectorAll('.nav span[style*="font-size:12px"][style*="letter-spacing"]');
+  var spans = document.querySelectorAll('span[style*="font-size:12px"][style*="letter-spacing"]');
   spans.forEach(function(span) {
     var links = span.querySelectorAll('a');
     if (links.length < 2) return;
