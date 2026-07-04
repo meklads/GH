@@ -250,17 +250,7 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .r1 { transition-delay: .1s; } .r2 { transition-delay: .2s; } .r3 { transition-delay: .3s; }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-shrink: 0;
-}
-[dir="rtl"] .logo { margin-inline-start: auto; }
-[dir="ltr"] .logo { margin-inline-end: auto; }
-@media (max-width: 900px) {
-  .nav-actions { position: relative; z-index: 1002; }
-}
+
 
 </style>
 </head>
@@ -268,13 +258,9 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 
 <header class="header" id="header">
   <div class="container header-inner">
-    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-    <div class="nav-actions">
-      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35)"><a href="#" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">AR</a> <span style="color:rgba(255,255,255,.3)">|</span> <a href="who-we-are-en.html" style="color:#fff;text-decoration:none;font-weight:700;transition:color .3s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">EN</a></span>
-      <a href="contact-us.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:50px;border:none;transition:all .3s;white-space:nowrap;font-family:'Inter','Tajawal',sans-serif" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)';" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)';">احجز جلسة استراتيجية</a>
-    </div>
+    <a href="/" class="logo">
+      <img src="assets/logo-gold.png" alt="Graphics House" style="height:86px;width:auto;image-rendering:-webkit-optimize-contrast;">
+    </a>
     <nav class="nav" id="nav">
       <a class="nav-link" href="who-we-are.html">من نحن</a>
             <div class="nav-mega-item" style="position:relative;display:inline-block">
@@ -331,9 +317,13 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
       <a class="nav-link" href="casestudy1.html">مشاريع ناجحة</a>
       <a class="nav-link" href="contact-us.html">تواصل معنا</a>
     </nav>
-    <a href="index-ar.html" class="logo">
-      <img src="assets/logo-gold.png" alt="Graphics House" style="height:86px;width:auto;image-rendering:-webkit-optimize-contrast;">
-    </a>
+    <div class="nav-actions">
+      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35)"><a href="index-ar.html" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">AR</a> <span style="color:rgba(255,255,255,.3)">|</span> <a href="/" style="color:#fff;text-decoration:none;font-weight:700;transition:color .3s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">EN</a></span>
+      <a href="contact-us.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:50px;border:none;transition:all .3s;white-space:nowrap;font-family:'Inter','Tajawal',sans-serif" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)';" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)';">احجز جلسة استراتيجية</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
   </div>
 </header>
   <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,.06)">
@@ -894,7 +884,6 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
         <a href="privacy-policy.html" style="font-size:11px;color:rgba(255,255,255,.85);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.75)'">سياسة الخصوصية</a>
         <a href="faq.html" style="font-size:11px;color:rgba(255,255,255,.85);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.75)'">الأسئلة الشائعة</a>
         <a href="/" style="font-size:11px;color:rgba(255,255,255,.85);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.75)'">English</a>
-	        <a href="gh-admin.html" style="font-size:9px;color:rgba(255,255,255,0.15);transition:color .3s;text-decoration:none" onmouseover="this.style.color='rgba(255,255,255,0.4)'" onmouseout="this.style.color='rgba(255,255,255,0.15)'">Private</a>
       </div>
     </div>
   </div>
