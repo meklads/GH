@@ -82,7 +82,7 @@ function headBlock(lang, meta) {
 <link rel="stylesheet" href="${p}assets/site-header.css?v=10">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=6">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=1">
-<link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=1">
+<link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
 <script defer src="${p}assets/lang-switch.js?v=1"></script>
