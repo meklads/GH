@@ -8,7 +8,7 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const HEADER_BLOCK =
   /\/\* ===== HEADER ===== \*\/[\s\S]*?(?=\/\* ===== HERO ===== \*\/)/;
 
-const CACHE_VER = '4';
+const CACHE_VER = '5';
 
 function walk(dir, base = '') {
   const out = [];
