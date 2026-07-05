@@ -171,11 +171,11 @@
     resultEl.style.display = 'block';
     resultEl.innerHTML =
       '<h3>' + r.title + '</h3>' +
-      '<p style="margin-bottom:20px;line-height:1.7;color:rgba(255,255,255,.75)">' + r.desc + '</p>' +
-      '<a href="' + r.href + '" class="btn-pill btn-pill-gold" style="display:inline-flex">' +
+      '<p style="margin-bottom:20px;line-height:1.7;color:#555">' + r.desc + '</p>' +
+      '<a href="' + r.href + '" class="gh-btn-editorial">' +
       (isEn ? 'Explore Solution' : 'اكتشف الحل') +
       ' <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></a> ' +
-      '<a href="../contact-us' + (isEn ? '-en' : '') + '.html" class="btn-pill btn-pill-outline" style="display:inline-flex;margin-inline-start:12px">' +
+      '<a href="../contact-us' + (isEn ? '-en' : '') + '.html" class="gh-btn-editorial gh-btn-editorial--outline" style="margin-inline-start:12px">' +
       (isEn ? 'Book a Session' : 'احجز جلسة') + '</a>';
   }
 

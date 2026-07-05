@@ -36,6 +36,18 @@ body.gh-contact .ch {
   margin-top: 0;
 }
 
+/* ===== Insights / blog — light editorial pages ===== */
+body.gh-insights {
+  background: #f7f5f0;
+  color: #1a1a1a;
+}
+
+body.gh-insights .header,
+body.gh-insights .header.scrolled {
+  background: rgba(8, 12, 10, 0.97) !important;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.14) !important;
+}
+
 /* ===== Homepage hero stack (AR + EN) ===== */
 body.gh-home #hero.hero {
   position: relative;
