@@ -8,7 +8,7 @@
 }
 
 body {
-  padding-top: 84px;
+  padding-top: 76px;
 }
 body.nav-open {
   overflow: hidden;
@@ -48,27 +48,38 @@ body.nav-open {
 
 @media (min-width: 901px) {
   .header-inner {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: space-between;
+    position: relative;
+    min-height: 58px;
+    gap: 20px;
   }
   .logo {
-    grid-column: 1;
-    justify-self: start;
+    flex: 0 0 auto;
+    z-index: 4;
     margin-inline-end: 0 !important;
-  }
-  [dir="rtl"] .logo { justify-self: end; }
-  .nav {
-    grid-column: 2;
-    flex: unset;
-    justify-self: center;
+    max-width: 120px;
   }
   .nav-actions {
-    grid-column: 3;
-    justify-self: end;
+    flex: 0 0 auto;
+    z-index: 4;
+    margin-inline-start: auto;
   }
-  [dir="rtl"] .nav-actions { justify-self: start; }
+  .nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    flex: none;
+    width: max-content;
+    max-width: min(74vw, 920px);
+    z-index: 3;
+    justify-content: center;
+    gap: 12px;
+  }
+  html[dir="rtl"] .nav { gap: 10px; }
+  .menu-toggle { display: none !important; }
 }
 
 @media (max-width: 900px) {
@@ -86,19 +97,20 @@ body.nav-open {
   flex-shrink: 0;
   z-index: 1002;
 }
-[dir="rtl"] .logo { margin-inline-end: auto; }
-[dir="ltr"] .logo { margin-inline-end: auto; }
 
-.logo-img {
-  height: 62px;
-  width: auto;
+.header .logo-img {
+  height: 50px !important;
+  width: auto !important;
+  max-width: 120px;
   image-rendering: -webkit-optimize-contrast;
   transition: height 0.35s ease, opacity 0.3s ease;
+  object-fit: contain;
+  object-position: center top;
 }
-.header .logo-img { height: 62px !important; }
-.header.scrolled .logo-img { height: 52px !important; }
+.header.scrolled .logo-img { height: 44px !important; }
 @media (max-width: 768px) {
-  .header .logo-img { height: 56px !important; }
+  .header .logo-img { height: 48px !important; }
+  .header .logo { max-width: 100px; }
 }
 
 /* ----- Primary nav ----- */
@@ -148,6 +160,14 @@ html[dir="rtl"] .nav-link {
 .nav-mega-item.is-open > .nav-mega-trigger {
   color: var(--header-gold) !important;
   background: rgba(201, 168, 76, 0.07);
+}
+
+/* Override legacy inline nav underlines on index pages */
+.header .nav a::after,
+.header .nav-link::after,
+.header button.nav-link::after {
+  display: none !important;
+  content: none !important;
 }
 
 .nav-link-accent {

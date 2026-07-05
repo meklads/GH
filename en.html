@@ -60,151 +60,7 @@ img { max-width: 100%; display: block; }
   .container { padding: 0 20px; }
 }
 
-/* ===== HEADER ===== */
-.header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  padding: 10px 0;
-  transition: all 0.4s ease;
-}
-.header.scrolled {
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(20px);
-  padding: 4px 0;
-  border-bottom: 1px solid var(--border-subtle);
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-  }
-
-/* LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding-top: 4px;
-}
-.logo-icon {
-  width: 52px;
-  height: 52px;
-  border: 2px solid var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.logo-icon::after {
-  content: "";
-  position: absolute;
-  inset: 5px;
-  border-radius: 50%;
-  border: 1px solid rgba(212,175,55,0.25);
-}
-.logo-icon span {
-  font-size: 22px;
-  color: var(--gold);
-  font-weight: 700;
-  letter-spacing: -1px;
-}
-.logo-text {
-  display: flex;
-  flex-direction: column;
-}
-.logo-text .ar {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.2;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-.logo-text .en {
-  font-size: 11px;
-  font-weight: 300;
-  color: var(--text-muted);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-}
-
-
-
-
-/* NAV */
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;;
-  flex: 1;
-}
-.nav a {
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--text-primary);
-  transition: color 0.3s;
-  position: relative;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-.nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  right: 0; left: 0;
-  height: 1px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-.nav a:hover { color: var(--text-primary); }
-.nav a:hover::after { transform: scaleX(1); }
-
-.nav-lang {
-  padding: 5px 14px;
-  border: 1px solid var(--border-medium);
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  transition: all 0.3s;
-}
-.nav-lang:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-.nav-lang.active {
-  background: var(--gold);
-  color: #000;
-  border-color: var(--gold);
-}
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  cursor: pointer;
-}
-.menu-toggle span { font-size: 28px; }
-
-@media (max-width: 900px) {
-  .nav { display: none; }
-  .menu-toggle { display: flex; z-index: 1001; }
-  .nav.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.97);
-    backdrop-filter: blur(30px);
-    justify-content: center;
-    gap: 32px;
-    z-index: 1000;
-  }
-  .nav.open a { font-size: 20px; }
-}
+/* Header: assets/site-header.css */
 
 /* ===== HERO ===== */
 .hero {
@@ -1969,8 +1825,8 @@ img { max-width: 100%; display: block; }
 }
 </style>
 
-<link rel="stylesheet" href="assets/site-header.css">
-<script defer src="assets/site-header.js"></script>
+<link rel="stylesheet" href="assets/site-header.css?v=4">
+<script defer src="assets/site-header.js?v=4"></script>
 </head>
 <body>
 
@@ -1983,7 +1839,7 @@ img { max-width: 100%; display: block; }
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="/" class="logo">
-      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="62">
+      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="50">
     </a>
     <nav class="nav" id="nav" aria-label="Main navigation">
       <a class="nav-link" href="who-we-are-en.html">About Us</a>

@@ -12,7 +12,7 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const AR_HEADER = `<header class="header" id="header">
   <div class="container header-inner">
     <a href="/index-ar.html" class="logo">
-      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="62">
+      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="50">
     </a>
     <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
       <a class="nav-link" href="who-we-are.html">من نحن</a>
@@ -136,7 +136,7 @@ const AR_HEADER = `<header class="header" id="header">
 const EN_HEADER = `<header class="header" id="header">
   <div class="container header-inner">
     <a href="/" class="logo">
-      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="62">
+      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="50">
     </a>
     <nav class="nav" id="nav" aria-label="Main navigation">
       <a class="nav-link" href="who-we-are-en.html">About Us</a>

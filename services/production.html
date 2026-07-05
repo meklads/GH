@@ -40,72 +40,7 @@ body {
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 
-/* ===== HEADER ===== */
-/* ===== DARK HEADER ===== */
-.dark-header {
-  width: 100%;
-  background: #0A0A0A;
-  border-bottom: 1px solid rgba(201,168,76,0.12);
-}
-.dark-header-inner {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-@media (max-width: 768px) { .dark-header-inner { padding: 0 20px; } }
-.dark-logo img { height: 72px; width: auto; }
-@media (max-width: 768px) { .dark-logo img { height: 56px; } }
-.dark-nav { display: flex; align-items: center; gap: 28px; }
-.dark-nav a {
-  font-size: 16px; font-weight: 500;
-  color: rgba(255,255,255,0.75);
-  text-decoration: none;
-  transition: color 0.3s;
-  position: relative;
-}
-.dark-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0; right: 0;
-  height: 1px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-.dark-nav a:hover { color: #fff; }
-.dark-nav a:hover::after { transform: scaleX(1); }
-.dark-nav .nav-cta {
-  padding: 10px 24px;
-  background: #fff;
-  color: #0A0A0A !important;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 700;
-  transition: all 0.3s;
-}
-.dark-nav .nav-cta::after { display: none; }
-.dark-nav .nav-cta:hover { background: #f0f0f0; transform: scale(1.04); color: #0A0A0A !important; }
-.dark-menu-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; }
-.dark-menu-toggle span { font-size: 28px; }
-@media (max-width: 960px) {
-  .dark-nav { display: none; }
-  .dark-menu-toggle { display: flex; z-index: 1001; }
-}
-
-/* MOBILE NAV */
-#mob-nav {
-  position: fixed; inset: 0; z-index: 999;
-  background: rgba(10,10,10,.98);
-  backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
-  transform: translateX(100%);
-  transition: transform .5s cubic-bezier(0.16,1,0.3,1);
-  overflow-y: auto;
-}
-#mob-nav.open { transform: translateX(0); }
+/* Header: assets/site-header.css */
 
 /* ===== HERO ===== */
 .hero-sec {
@@ -622,15 +557,15 @@ html[dir="rtl"] .hero-kicker { letter-spacing: 0.06em; text-transform: none; fon
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKD9QVYNWF"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MKD9QVYNWF');</script>
-<link rel="stylesheet" href="../assets/site-header.css">
-<script defer src="../assets/site-header.js"></script>
+<link rel="stylesheet" href="../assets/site-header.css?v=4">
+<script defer src="../assets/site-header.js?v=4"></script>
 </head>
 <body>
 
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="/index-ar.html" class="logo">
-      <img src="../assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="62">
+      <img src="../assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="50">
     </a>
     <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
       <a class="nav-link" href="../who-we-are.html">من نحن</a>

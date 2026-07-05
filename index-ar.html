@@ -59,164 +59,7 @@ img { max-width: 100%; display: block; }
   .container { padding: 0 20px; }
 }
 
-/* ===== HEADER ===== */
-.header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  padding: 10px 0;
-  transition: all 0.4s ease;
-}
-.header.scrolled {
-  background: rgba(7,24,16,0.92);
-  backdrop-filter: blur(20px);
-  padding: 4px 0;
-  border-bottom: 1px solid rgba(201,168,76,.12);
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-}
-
-
-/* LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding-top: 4px;
-}
-.logo-icon {
-  width: 52px;
-  height: 52px;
-  border: 2px solid var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.logo-icon::after {
-  content: "";
-  position: absolute;
-  inset: 5px;
-  border-radius: 50%;
-  border: 1px solid rgba(201,168,76,0.25);
-}
-.logo-icon span {
-  font-size: 22px;
-  color: var(--gold);
-  font-weight: 700;
-  letter-spacing: -1px;
-}
-.logo-text {
-  display: flex;
-  flex-direction: column;
-}
-.logo-text .ar {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.2;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-.logo-text .en {
-  font-size: 11px;
-  font-weight: 300;
-  color: var(--text-muted);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-}
-
-/* NAV */
-.nav {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
-}
-.nav a {
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--text-primary);
-  transition: color 0.3s;
-  position: relative;
-  font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-.nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  right: 0; left: 0;
-  height: 1px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-.nav a:hover { color: var(--text-primary); }
-.nav a:hover::after { transform: scaleX(1); }
-.nav-item-drop{position:relative;display:inline-block}
-.nav-item-drop .nav-link{cursor:pointer}
-.nav-dropdown{position:absolute;top:100%;right:0;background:#1A1A1A;border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 50px rgba(0,0,0,.5);min-width:220px;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .3s ease;z-index:100}
-.nav-item-drop:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
-.nav-dropdown a{display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif}
-.nav-dropdown a:hover{background:rgba(255,255,255,.04);color:#C9A84C}
-.nav-dropdown a .dd-icon{font-size:16px;color:#C9A84C}
-/* DAMAC-style pill buttons */
-.btn-pill{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:.04em;text-decoration:none;transition:all .35s;cursor:pointer;border:none;font-family:'Tajawal',sans-serif}
-.btn-pill-gold{background:#C9A84C;color:#0A0A0A;border:2px solid #C9A84C}
-.btn-pill-gold:hover{background:#A8883A;border-color:#A8883A;color:#0A0A0A}
-.btn-pill-outline{background:transparent;color:#FAFAF8;border:2px solid rgba(255,255,255,.5)}
-.btn-pill-outline:hover{border-color:#C9A84C;color:#C9A84C}
-.btn-pill-outline-dark{background:transparent;color:#1A1A1A;border:2px solid #1A1A1A}
-.btn-pill-outline-dark:hover{background:#1A1A1A;color:#FAFAF8}
-
-.nav-lang {
-  padding: 5px 14px;
-  border: 1px solid var(--border-medium);
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  transition: all 0.3s;
-}
-.nav-lang:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-.nav-lang.active {
-  background: var(--gold);
-  color: #000;
-  border-color: var(--gold);
-}
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  cursor: pointer;
-}
-.menu-toggle span { font-size: 28px; }
-
-@media (max-width: 900px) {
-  .nav { display: none; }
-  .menu-toggle { display: flex; z-index: 1001; }
-  .nav.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.97);
-    backdrop-filter: blur(30px);
-    justify-content: center;
-    gap: 32px;
-    z-index: 1000;
-  }
-  .nav.open a { font-size: 20px; }
-}
+/* Header: assets/site-header.css */
 
 /* ===== HERO ===== */
 .hero {
@@ -2482,8 +2325,8 @@ img { max-width: 100%; display: block; }
   gtag('config', 'G-MKD9QVYNWF');
 </script>
 
-<link rel="stylesheet" href="assets/site-header.css">
-<script defer src="assets/site-header.js"></script>
+<link rel="stylesheet" href="assets/site-header.css?v=4">
+<script defer src="assets/site-header.js?v=4"></script>
 </head>
 <body>
 
@@ -2496,7 +2339,7 @@ img { max-width: 100%; display: block; }
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="/index-ar.html" class="logo">
-      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="62">
+      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="50">
     </a>
     <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
       <a class="nav-link" href="who-we-are.html">من نحن</a>
