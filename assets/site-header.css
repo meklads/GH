@@ -56,10 +56,10 @@ body.nav-open {
     gap: 20px;
   }
   html[dir="ltr"] .header-inner {
-    padding-inline-end: 300px;
+    padding-inline-end: 330px;
   }
   html[dir="rtl"] .header-inner {
-    padding-inline-start: 300px;
+    padding-inline-start: 330px;
   }
   .logo {
     flex: 0 0 auto;
@@ -86,13 +86,13 @@ body.nav-open {
   }
   html[dir="rtl"] .nav { gap: 10px; }
   html[dir="ltr"] .nav {
-    max-width: min(56vw, 760px);
-    gap: 6px;
+    max-width: min(54vw, 740px);
+    gap: 5px;
   }
   html[dir="ltr"] .nav-link {
-    font-size: 12px;
-    padding: 8px 8px;
-    letter-spacing: 0.04em;
+    font-size: 11.5px;
+    padding: 8px 7px;
+    letter-spacing: 0.03em;
   }
   .menu-toggle { display: none !important; }
 }
