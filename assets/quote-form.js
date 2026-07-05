@@ -36,9 +36,10 @@
     var action = form.getAttribute('action') || '';
     if (!action.includes('formsubmit.co')) return;
 
-    if (!action.includes('/ajax/')) {
-      form.setAttribute('action', action.replace('formsubmit.co/', 'formsubmit.co/ajax/'));
-    }
+    var ajaxAction = action.includes('/ajax/')
+      ? action
+      : action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+
     form.removeAttribute('target');
 
     if (!form.querySelector('input[name="_captcha"]')) {
@@ -60,9 +61,12 @@
         btn.innerHTML = 'جاري الإرسال…';
       }
 
-      fetch(form.action, {
+      var data = new FormData(form);
+      data.set('_captcha', 'false');
+
+      fetch(ajaxAction, {
         method: 'POST',
-        body: new FormData(form),
+        body: data,
         headers: { Accept: 'application/json' }
       })
         .then(function (res) {
@@ -113,4 +117,19 @@
   }
 
   document.querySelectorAll('form[action*="formsubmit.co"]').forEach(wireForm);
+
+  if (/[?&]sent=1/.test(location.search)) {
+    document.querySelectorAll('form[action*="formsubmit.co"]').forEach(function (form) {
+      var feedback = ensureFeedback(form);
+      showFeedback(
+        feedback,
+        'success',
+        '<strong>تم إرسال طلبك بنجاح.</strong><br>سيتواصل معك فريقنا خلال 24 ساعة عمل.'
+      );
+      if (form.closest('#booking')) {
+        form.closest('#booking').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      history.replaceState(null, '', location.pathname + location.hash);
+    });
+  }
 })();
