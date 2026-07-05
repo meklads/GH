@@ -115,7 +115,7 @@
         payload['cf-turnstile-response'] = token(turnstileBox);
       }
 
-      fetch(FORMS.subscribeEndpoint || FORMS.formEndpoint || 'https://3dgraphicshouse.com/api/subscribe', {
+      fetch(FORMS.subscribeEndpoint || 'https://3dgraphicshouse.com/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(payload)

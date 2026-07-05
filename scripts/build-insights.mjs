@@ -120,7 +120,7 @@ function headBlock(lang, meta) {
   return `<!DOCTYPE html>
 <html class="scroll-smooth" dir="${isEn ? 'ltr' : 'rtl'}" lang="${isEn ? 'en' : 'ar'}">
 <head>
-<script src="${p}assets/gh-forms-config.js"></script>
+<script src="${p}assets/gh-forms-config.js?v=2"></script>
 <script src="${p}assets/quote-form-config.js"></script>
 <link rel="canonical" href="${canonical}">
 <link rel="alternate" hreflang="en" href="${altEn}">
@@ -253,7 +253,7 @@ function sidebarBlock(lang, depth, activeTool) {
     <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial gh-btn-editorial--light">${isEn ? 'Get in Touch' : 'تواصل معنا'}</a>
   </div>
 </aside>
-<script defer src="${p}assets/gh-newsletter.js?v=3"></script>`;
+<script defer src="${p}assets/gh-newsletter.js?v=4"></script>`;
 }
 
 function buildHub(lang) {

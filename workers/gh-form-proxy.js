@@ -144,7 +144,24 @@ async function handleSubscribe(body, env, cors, request) {
   const { ok, data } = await forwardWeb3Forms(w3Body, key);
   const notifyOk = ok && data.success;
 
-  if (brevoOk || notifyOk) {
+  const brevoConfigured = !!(env.BREVO_API_KEY && parseInt(env.BREVO_LIST_ID || '0', 10));
+  if (brevoConfigured) {
+    if (brevoOk) {
+      return json({ success: true, message: 'Subscribed' }, 200, cors);
+    }
+    return json(
+      {
+        success: false,
+        message: notifyOk
+          ? 'Notification sent but mailing list sync failed. Please try again.'
+          : 'Mailing list sync failed. Please try again.',
+      },
+      502,
+      cors
+    );
+  }
+
+  if (notifyOk) {
     return json({ success: true, message: 'Subscribed' }, 200, cors);
   }
 
