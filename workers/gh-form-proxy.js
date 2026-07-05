@@ -61,7 +61,7 @@ async function addBrevoContact(env, email, lang) {
   const listId = parseInt(env.BREVO_LIST_ID || '0', 10);
   if (!apiKey || !listId) return;
 
-  await fetch('https://api.brevo.com/v3/contacts', {
+  const res = await fetch('https://api.brevo.com/v3/contacts', {
     method: 'POST',
     headers: {
       'api-key': apiKey,
@@ -75,6 +75,11 @@ async function addBrevoContact(env, email, lang) {
       attributes: { LANGUAGE: lang || 'en', SOURCE: 'gh-website' },
     }),
   });
+
+  if (!res.ok && res.status !== 204) {
+    const detail = await res.text();
+    console.error('Brevo contact error', res.status, detail);
+  }
 }
 
 async function handleSubscribe(body, env, cors) {

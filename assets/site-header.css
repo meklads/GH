@@ -102,17 +102,55 @@ body.nav-open {
 }
 
 @media (min-width: 901px) and (max-width: 1280px) {
+  html[dir="ltr"] .header-inner {
+    grid-template-columns: minmax(100px, 150px) minmax(0, 1fr) auto;
+    gap: 8px 10px;
+  }
+  html[dir="ltr"] .nav {
+    gap: 2px;
+    min-width: 0;
+    overflow: hidden;
+    padding-inline-end: 8px;
+  }
   html[dir="ltr"] .nav-link {
-    font-size: 10.5px;
-    padding: 8px 5px;
+    font-size: 10px;
+    padding: 8px 4px;
+    letter-spacing: 0.02em;
   }
   html[dir="ltr"] .nav-cta {
-    padding: 8px 14px !important;
-    font-size: 10px !important;
+    padding: 8px 12px !important;
+    font-size: 9px !important;
+    letter-spacing: 0.04em !important;
+  }
+  .nav-actions {
+    gap: 10px;
+    padding-inline-start: 10px;
+    margin-inline-start: 4px;
+    border-inline-start: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(90deg, rgba(8, 12, 10, 0) 0%, rgba(8, 12, 10, 0.92) 18%);
+  }
+  html[dir="rtl"] .nav-actions {
+    border-inline-start: none;
+    border-inline-end: 1px solid rgba(255, 255, 255, 0.12);
+    padding-inline-start: 0;
+    padding-inline-end: 10px;
+    background: linear-gradient(270deg, rgba(8, 12, 10, 0) 0%, rgba(8, 12, 10, 0.92) 18%);
   }
   .lang-switch {
+    font-size: 10px;
+    gap: 5px;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1440px) {
+  html[dir="ltr"] .nav-link {
     font-size: 11px;
-    gap: 6px;
+    padding: 8px 5px;
+  }
+  .nav-actions {
+    gap: 12px;
+    padding-inline-start: 12px;
+    border-inline-start: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
 
