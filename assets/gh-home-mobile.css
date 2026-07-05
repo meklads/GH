@@ -1,0 +1,195 @@
+/* Homepage mobile / responsive fixes (AR + EN) */
+
+html:has(body.gh-home) {
+  overflow-x: clip;
+}
+
+body.gh-home {
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Full-bleed quote band — avoid 100vw horizontal scroll on mobile */
+body.gh-home .gh-full-bleed {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  body.gh-home .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  body.gh-home .portfolio-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  body.gh-home .portfolio {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  /* Trust band */
+  body.gh-home #trust-band > div {
+    padding: 28px 20px !important;
+  }
+
+  body.gh-home #trust-band img {
+    height: 36px !important;
+  }
+
+  body.gh-home #trust-band [style*="padding:48px"] {
+    padding: 32px 20px !important;
+  }
+
+  /* Inline two-column grids (inline styles beat class rules) */
+  body.gh-home .s2-row[style*="grid-template-columns"],
+  body.gh-home .reveal[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Process / stats / why-GH / offices grids */
+  body.gh-home [style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  body.gh-home [style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.gh-home #svc-grid-ar {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: none !important;
+  }
+
+  /* Section vertical rhythm */
+  body.gh-home section[style*="padding:100px"] {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  body.gh-home section[style*="padding:0 40px"] > div,
+  body.gh-home section [style*="padding:0 40px"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  body.gh-home .gh-full-bleed {
+    padding: 32px 20px !important;
+  }
+
+  body.gh-home .gh-full-bleed [style*="font-size:96px"] {
+    font-size: 56px !important;
+    right: 16px !important;
+    left: auto !important;
+  }
+
+  html[dir="ltr"] body.gh-home .gh-full-bleed [style*="font-size:96px"] {
+    left: 16px !important;
+    right: auto !important;
+  }
+
+  /* Hero */
+  body.gh-home #hero .hero-bottom-panel {
+    padding-bottom: 40px;
+  }
+
+  body.gh-home #hero h1 br {
+    display: none;
+  }
+
+  body.gh-home #hero p br {
+    display: none;
+  }
+
+  body.gh-home .gh-damac-btn {
+    white-space: normal;
+    text-align: center;
+    padding: 12px 22px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  /* Footer offices — stack on small screens */
+  body.gh-home footer [style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.gh-home footer [style*="padding:36px"] {
+    padding: 24px 0 !important;
+  }
+
+  body.gh-home footer [style*="justify-content:space-between"] {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 12px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body.gh-home #svc-grid-ar {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: none !important;
+  }
+
+  body.gh-home [style*="grid-template-columns:repeat(3,1fr);gap:1px"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body.gh-home [style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.gh-home [style*="grid-template-columns:repeat(3,1fr);gap:1px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.gh-home #trust-band img {
+    height: 32px !important;
+  }
+
+  body.gh-home .reveal[style*="padding:44px"] {
+    padding: 28px 20px !important;
+  }
+
+  body.gh-home .reveal[style*="padding:40px 30px"] {
+    padding: 28px 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body.gh-home .cap-bar-dot {
+    display: none;
+  }
+
+  body.gh-home .hero-caps-bar {
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  /* Case-study number strip — scroll instead of clipping */
+  body.gh-home .csr-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+  }
+
+  body.gh-home .csr-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.gh-home .csr-nums {
+    flex-wrap: nowrap;
+  }
+}
