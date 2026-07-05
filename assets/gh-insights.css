@@ -1,0 +1,179 @@
+/* Graphics House — Knowledge Hub */
+.gh-insights-page { padding-top: 120px; min-height: 60vh; }
+.gh-insights-hero { padding: 48px 0 56px; text-align: center; }
+.gh-insights-hero .gh-kicker {
+  font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gold, #C9A84C); margin-bottom: 14px; display: block;
+}
+.gh-insights-hero h1 {
+  font-family: "Playfair Display", "Tajawal", serif;
+  font-size: clamp(32px, 4.5vw, 52px); font-weight: 700; margin-bottom: 16px;
+}
+.gh-insights-hero p {
+  color: var(--text-secondary, rgba(255,255,255,.7)); max-width: 640px; margin: 0 auto;
+  line-height: 1.75; font-size: 17px;
+}
+
+.gh-insights-section { padding: 40px 0 64px; }
+.gh-insights-section h2 {
+  font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--gold, #C9A84C); margin-bottom: 28px;
+}
+
+.gh-tools-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;
+}
+.gh-tool-card {
+  display: flex; flex-direction: column; gap: 12px; padding: 28px 24px;
+  background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px; transition: border-color .3s, transform .3s;
+}
+.gh-tool-card:hover { border-color: rgba(201,168,76,.35); transform: translateY(-3px); }
+.gh-tool-card .material-symbols-outlined { font-size: 32px; color: var(--gold, #C9A84C); }
+.gh-tool-card h3 { font-size: 18px; font-weight: 700; }
+.gh-tool-card p { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.65; flex: 1; }
+.gh-tool-link {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--gold, #C9A84C);
+}
+
+.gh-articles-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px;
+}
+.gh-article-card {
+  border: 1px solid rgba(255,255,255,.08); border-radius: 16px; overflow: hidden;
+  background: rgba(255,255,255,.02); transition: border-color .3s;
+}
+.gh-article-card:hover { border-color: rgba(201,168,76,.3); }
+.gh-article-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.gh-article-body { padding: 22px 24px 26px; }
+.gh-article-meta {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;
+}
+.gh-tag {
+  font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 4px;
+  background: rgba(201,168,76,.12); color: var(--gold, #C9A84C); border: 1px solid rgba(201,168,76,.25);
+}
+.gh-date { font-size: 12px; color: rgba(255,255,255,.4); }
+.gh-article-card h3 { font-size: 18px; font-weight: 700; line-height: 1.45; margin-bottom: 10px; }
+.gh-article-card p { font-size: 14px; color: rgba(255,255,255,.55); line-height: 1.65; margin-bottom: 16px; }
+
+.gh-featured {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-bottom: 48px;
+  border: 1px solid rgba(255,255,255,.1); border-radius: 20px; overflow: hidden;
+}
+@media (max-width: 768px) { .gh-featured { grid-template-columns: 1fr; } }
+.gh-featured-img { position: relative; min-height: 280px; }
+.gh-featured-img img { width: 100%; height: 100%; object-fit: cover; }
+.gh-featured-badge {
+  position: absolute; top: 16px; inset-inline-start: 16px;
+  background: var(--gold, #C9A84C); color: #0A0A0A; font-size: 9px; font-weight: 700;
+  letter-spacing: .12em; padding: 6px 12px; border-radius: 4px;
+}
+.gh-featured-content {
+  padding: 40px 36px; display: flex; flex-direction: column; justify-content: center;
+  background: rgba(255,255,255,.03);
+}
+
+.gh-newsletter {
+  margin: 0 0 80px; padding: 56px 32px; text-align: center;
+  background: rgba(201,168,76,.06); border: 1px solid rgba(201,168,76,.2); border-radius: 20px;
+}
+.gh-newsletter .material-symbols-outlined { font-size: 40px; color: var(--gold, #C9A84C); margin-bottom: 12px; }
+.gh-newsletter h2 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 10px; }
+.gh-newsletter > p { color: rgba(255,255,255,.65); margin-bottom: 28px; max-width: 480px; margin-inline: auto; }
+.gh-newsletter-form {
+  display: flex; max-width: 440px; margin: 0 auto; gap: 0; flex-wrap: wrap; justify-content: center;
+}
+.gh-newsletter-form input[type="email"] {
+  flex: 1; min-width: 200px; padding: 14px 18px; border: 1px solid rgba(255,255,255,.15);
+  background: rgba(0,0,0,.35); color: #fff; font-size: 14px; border-radius: 50px 0 0 50px;
+  outline: none;
+}
+html[dir="rtl"] .gh-newsletter-form input[type="email"] { border-radius: 0 50px 50px 0; }
+.gh-newsletter-form button {
+  padding: 14px 28px; background: var(--gold, #C9A84C); color: #0A0A0A; border: none;
+  font-size: 12px; font-weight: 700; letter-spacing: .1em; cursor: pointer;
+  border-radius: 0 50px 50px 0; transition: background .3s;
+}
+html[dir="rtl"] .gh-newsletter-form button { border-radius: 50px 0 0 50px; }
+.gh-newsletter-form button:hover { background: #A8883A; }
+.gh-newsletter-form button:disabled { opacity: .6; cursor: not-allowed; }
+.gh-newsletter .gh-turnstile { margin: 16px auto 0; display: flex; justify-content: center; }
+.gh-newsletter-msg { margin-top: 14px; font-size: 14px; min-height: 20px; }
+.gh-newsletter-msg.ok { color: #5cb87a; }
+.gh-newsletter-msg.err { color: #e07070; }
+
+/* Article page */
+.gh-article-page { padding: 130px 0 80px; max-width: 760px; margin: 0 auto; }
+.gh-article-page h1 {
+  font-family: "Playfair Display", "Tajawal", serif;
+  font-size: clamp(28px, 4vw, 42px); line-height: 1.25; margin-bottom: 20px;
+}
+.gh-article-page .gh-article-hero-img {
+  width: 100%; border-radius: 16px; margin: 28px 0 36px; aspect-ratio: 16/9; object-fit: cover;
+}
+.gh-article-page p {
+  font-size: 17px; line-height: 1.85; color: rgba(255,255,255,.78); margin-bottom: 20px;
+}
+.gh-back-link {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+  color: var(--gold, #C9A84C); margin-bottom: 24px;
+}
+
+/* Tools */
+.gh-tool-page { padding: 120px 0 80px; }
+.gh-tool-page h1 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 12px; }
+.gh-tool-page .gh-tool-intro { color: rgba(255,255,255,.65); max-width: 640px; margin-bottom: 36px; line-height: 1.7; }
+
+.gh-checklist { list-style: none; padding: 0; margin: 0 0 32px; }
+.gh-checklist li {
+  display: flex; align-items: flex-start; gap: 14px; padding: 16px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.06); cursor: pointer; transition: background .2s;
+}
+.gh-checklist li:hover { background: rgba(255,255,255,.02); }
+.gh-checklist input { width: 20px; height: 20px; margin-top: 2px; accent-color: #C9A84C; flex-shrink: 0; }
+.gh-checklist label { font-size: 15px; line-height: 1.55; cursor: pointer; flex: 1; }
+.gh-checklist li.done label { color: rgba(255,255,255,.45); text-decoration: line-through; }
+.gh-progress-bar {
+  height: 6px; background: rgba(255,255,255,.08); border-radius: 3px; margin-bottom: 28px; overflow: hidden;
+}
+.gh-progress-bar span {
+  display: block; height: 100%; background: var(--gold, #C9A84C); width: 0; transition: width .4s;
+}
+
+.gh-quiz-step { display: none; }
+.gh-quiz-step.active { display: block; }
+.gh-quiz-options { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+.gh-quiz-opt {
+  padding: 16px 20px; border: 1px solid rgba(255,255,255,.12); border-radius: 12px;
+  background: rgba(255,255,255,.02); cursor: pointer; text-align: start; font-size: 15px;
+  transition: border-color .25s, background .25s;
+}
+.gh-quiz-opt:hover, .gh-quiz-opt.selected { border-color: rgba(201,168,76,.5); background: rgba(201,168,76,.08); }
+.gh-quiz-result {
+  padding: 32px; border: 1px solid rgba(201,168,76,.3); border-radius: 16px;
+  background: rgba(201,168,76,.06); margin-top: 24px;
+}
+.gh-quiz-result h3 { font-size: 22px; color: var(--gold, #C9A84C); margin-bottom: 12px; }
+
+.gh-brief-form .gh-field {
+  margin-bottom: 20px;
+}
+.gh-brief-form label {
+  display: block; font-size: 12px; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 8px;
+}
+.gh-brief-form input, .gh-brief-form textarea, .gh-brief-form select {
+  width: 100%; padding: 12px 16px; background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.12); border-radius: 8px; color: #fff; font-size: 15px;
+  font-family: inherit;
+}
+.gh-brief-form textarea { min-height: 100px; resize: vertical; }
+
+@media print {
+  .header, .gh-float, #ghPopup, .gh-newsletter, footer, .gh-no-print { display: none !important; }
+  body { background: #fff; color: #000; }
+  .gh-tool-page { padding-top: 20px; }
+}

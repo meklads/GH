@@ -10,7 +10,8 @@
     "tailwind": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.min.css --minify",
     "videos": "node scripts/compress-videos.mjs",
     "services:ar": "node scripts/localize-service-stubs.mjs",
-    "build": "npm run tailwind && node scripts/build-solution-pages.mjs && node scripts/localize-service-stubs.mjs && node scripts/site-hardening.mjs && node scripts/sync-layout.mjs && node scripts/inject-float-widgets.mjs",
+    "insights": "node scripts/build-insights.mjs",
+    "build": "npm run tailwind && node scripts/build-solution-pages.mjs && node scripts/localize-service-stubs.mjs && node scripts/site-hardening.mjs && node scripts/build-insights.mjs && node scripts/sync-layout.mjs && node scripts/inject-float-widgets.mjs",
     "float": "node scripts/inject-float-widgets.mjs"
   },
   "devDependencies": {

@@ -1,382 +1,21 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" dir="ltr" lang="en">
-<head>
+<html><head>
 <script src="../assets/gh-forms-config.js"></script>
-<!-- GH SEO -->
-<link rel="canonical" href="https://3dgraphicshouse.com/insights/articles.html">
-<link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/">
-<link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/index-ar.html">
-<link rel="alternate" hreflang="x-default" href="https://3dgraphicshouse.com/">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Articles | Graphics House (GH)</title>
-<meta property="og:title" content="Articles | Graphics House (GH)">
-<meta property="og:description" content="Industry insights, trends, and thought leadership.">
-<meta property="og:image" content="/assets/favicon/og-image.png">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16.png">
-<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
-<meta name="description" content="Industry insights, trends, and thought leadership."/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
-<link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
-<style>
-:root{--gold:#C9A84C;--gold-light:#D9B860;--gold-dark:#A8883A;--text-primary:#FFFFFF;--text-secondary:rgba(255,255,255,0.7);--text-muted:rgba(255,255,255,0.35);--border-subtle:rgba(255,255,255,0.06);--border-medium:rgba(255,255,255,0.12);--heading-dark:#1A1A1A;--body-dark:#555555;--body-muted:#888888}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:"Inter","Tajawal",-apple-system,BlinkMacSystemFont,sans-serif;background:#0A0A0A;color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-.container{max-width:1280px;margin:0 auto;padding:0 48px}
-@media(max-width:768px){.container{padding:0 20px}}
-.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:10px 0;transition:all .4s ease;background:rgba(10,10,10,0.98);border-bottom:1px solid var(--border-subtle)}
-.header-inner{display:flex;align-items:center;}
-.logo{display:flex;align-items:center;gap:14px;padding-top:4px}
-.nav{display:flex;align-items:center;justify-content:center;gap:28px;
-  flex: 1;
-}
-html[dir="ltr"] .nav-link{font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;transition:color .3s;position:relative;padding-bottom:2px}
-html[dir="ltr"] .nav-link:hover{color:#C9A84C!important}
-html[dir="ltr"] .nav-link::after{content:"";position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#C9A84C;transition:width .3s}
-html[dir="ltr"] .nav-link:hover::after{width:100%}
-.nav-item-drop:hover .nav-dropdown{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
-.nav-dropdown a:hover{background:rgba(255,255,255,.04);color:#C9A84C}
-.menu-toggle{display:none;background:none;border:none;color:var(--text-primary);cursor:pointer}
-.menu-toggle span{font-size:28px}
-@media(max-width:900px){.nav{display:none}.menu-toggle{display:flex;z-index:1001}.nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.97);backdrop-filter:blur(30px);justify-content:center;gap:32px;z-index:1000}.nav.open a{font-size:20px}}
-.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.1,.1,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* Under Development section */
-.ud-section{flex:1;display:flex;align-items:center;justify-content:center;padding:140px 24px 80px}
-.ud-card{max-width:720px;width:100%;text-align:center;padding:60px 40px;background:rgba(255,255,255,.02);border:1px solid var(--border-medium);border-radius:24px;position:relative;overflow:hidden}
-.ud-card::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,rgba(201,168,76,.03) 0%,transparent 50%);pointer-events:none}
-.ud-icon{font-size:64px;color:var(--gold);margin-bottom:28px;display:inline-block}
-.ud-title{font-family:"Playfair Display","Tajawal",serif;font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--text-primary);margin-bottom:16px;letter-spacing:-.02em}
-.ud-subtitle{font-size:clamp(16px,1.4vw,19px);color:var(--text-secondary);line-height:1.7;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto}
-.ud-status{display:inline-flex;align-items:center;gap:10px;padding:10px 24px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:50px;font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.06em}
-.ud-status .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse-dot 2s ease-in-out infinite}
-@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.3}}
-.ud-cta{margin-top:40px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.btn-pill{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:all .35s;cursor:pointer;border:none;font-family:"Inter","Tajawal",sans-serif}
-.btn-pill-gold{background:#C9A84C;color:#0A0A0A;border:2px solid #C9A84C}
-.btn-pill-gold:hover{background:#A8883A;border-color:#A8883A;color:#0A0A0A;transform:translateY(-2px)}
-.btn-pill-outline{background:transparent;color:#FAFAF8;border:2px solid rgba(255,255,255,.5)}
-.btn-pill-outline:hover{border-color:#C9A84C;color:#C9A84C;transform:translateY(-2px)}
-
-.footer{background:#0A0A0A;padding:60px 0 0;border-top:1px solid rgba(255,255,255,.04);margin-top:auto}
-.footer-container{max-width:1280px;margin:0 auto;padding:0 24px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;padding-bottom:40px}
-@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px}}
-.footer-brand .footer-logo{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:700;color:#FAFAF8;margin-bottom:16px}
-.footer-desc{font-size:13px;line-height:1.8;color:rgba(255,255,255,.4);max-width:300px}
-.footer-links{display:flex;flex-direction:column;gap:2px}
-.footer-links h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.9);margin-bottom:16px}
-.footer-links a{font-size:13px;color:rgba(255,255,255,.45);transition:color .3s;padding:4px 0}
-.footer-links a:hover{color:#C9A84C}
-.footer-bottom{padding:16px 0;border-top:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.25)}
-@media(max-width:768px){.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
-
-}
-
-document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".reveal").forEach(function(el){observer.observe(el)})}
-
-/* Mega menu: assets/site-header.css */
-</style>
-
-<link rel="stylesheet" href="../assets/site-header.css?v=7">
-<script defer src="../assets/site-header.js?v=7"></script>
-<script defer src="../assets/gh-performance.js?v=1"></script>
-<script defer src="../assets/lang-switch.js?v=1"></script>
-<link rel="stylesheet" href="../assets/gh-site-enhancements.css">
+<meta http-equiv="refresh" content="0;url=index.html">
+<link rel="canonical" href="https://3dgraphicshouse.com/insights/index.html">
+<script>location.replace('index.html');</script>
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=1">
-</head>
-<body>
-<div id="loader" style="position:fixed;inset:0;z-index:99999;background:#0A0A0A;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s ease,visibility .6s ease">
-  <svg width="42" height="42" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-  <div style="width:180px;height:1px;background:rgba(201,168,76,.15);margin-top:20px;overflow:hidden">
-    <div id="loader-bar" style="height:100%;width:0;background:#C9A84C;transition:width 1s cubic-bezier(.4,0,.2,1)"></div>
-  </div>
-</div>
-
-<header class="header" id="header">
-  <div class="container header-inner">
-    <a href="../index.html" class="logo">
-      <img src="../assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="75">
-    </a>
-    <nav class="nav" id="nav" aria-label="Main navigation">
-      <a class="nav-link" href="../who-we-are-en.html">About Us</a>
-      <div class="nav-mega-item" data-mega="solutions">
-        <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
-          Solutions
-          <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
-        </button>
-        <div class="mega-menu mega-menu-solutions">
-          <div class="mm-panel">
-            <div class="mm-panel-head">
-              <span class="mm-panel-label">Integrated Business Systems</span>
-              <p class="mm-panel-desc">Ready-made solutions for developers and engineering firms</p>
-            </div>
-            <div class="mm-main">
-              <div class="mm-grid">
-                <a href="../solutions/growth-launch-en.html" class="mm-card" data-solution="growth">
-                  <div class="mm-icon"><span class="material-symbols-outlined">query_stats</span></div>
-                  <div class="mm-title">GrowthLaunch&#8482;</div>
-                  <div class="mm-sub">Lead Generation & Sales System</div>
-                  <div class="mm-desc">Generate qualified leads, automate follow-up and improve sales conversion.</div>
-                  <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
-                </a>
-                <a href="../solutions/project-launch-en.html" class="mm-card" data-solution="project">
-                  <div class="mm-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
-                  <div class="mm-title">ProjectLaunch&#8482;</div>
-                  <div class="mm-sub">Real Estate Project Launch System</div>
-                  <div class="mm-desc">Complete launch solution for real estate projects including visualization, branding, marketing and sales support.</div>
-                  <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
-                </a>
-                <a href="../solutions/brand-scale-en.html" class="mm-card" data-solution="brand">
-                  <div class="mm-icon"><span class="material-symbols-outlined">workspace_premium</span></div>
-                  <div class="mm-title">BrandScale&#8482;</div>
-                  <div class="mm-sub">Brand Growth System</div>
-                  <div class="mm-desc">Build, strengthen and grow your brand through integrated creative and marketing solutions.</div>
-                  <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="nav-mega-item" data-mega="services">
-        <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
-          Services
-          <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
-        </button>
-        <div class="mega-menu mega-menu-services">
-          <div class="mm-panel">
-            <div class="mm-panel-head">
-              <span class="mm-panel-label">Creative Services</span>
-              <p class="mm-panel-desc">From architectural visualization to full media production</p>
-            </div>
-            <div class="mm-main">
-              <div class="mm-grid">
-                <div class="mm-col mm-col-core">
-                  <div class="mm-col-header">Core Services</div>
-                  <a href="../services/maquettes.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">home_work</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Architectural Scale Models</span>
-                      <span class="mm-svc-desc">Precision project models</span>
-                    </span>
-                  </a>
-                  <a href="../services/animation.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Cinematic CGI</span>
-                      <span class="mm-svc-desc">Professional CGI films</span>
-                    </span>
-                  </a>
-                  <a href="../services/interactive.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Interactive Experiences</span>
-                      <span class="mm-svc-desc">Immersive digital showcases</span>
-                    </span>
-                  </a>
-                </div>
-                <div class="mm-col">
-                  <div class="mm-col-header">Creative & Production</div>
-                  <a href="../services/rendering.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Smart Visualization</span>
-                      <span class="mm-svc-desc">Cinematic 3D renders</span>
-                    </span>
-                  </a>
-                  <a href="../services/production.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">videocam</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Photography & Media Production</span>
-                      <span class="mm-svc-desc">Full photo & video production</span>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="nav-link nav-link-accent" href="../portfolio-en.html">Our Work</a>
-      <a class="nav-link" href="../case-study-mwl-en.html">Case Studies</a>
-      <a class="nav-link" href="../contact-us-en.html">Contact Us</a>
-    </nav>
-    <div class="nav-actions">
-      <div class="lang-switch" role="group" aria-label="Language">
-        <a href="../index-ar.html" class="lang-switch-link" hreflang="ar">AR</a>
-        <span class="lang-switch-sep" aria-hidden="true">|</span>
-        <a href="../index.html" class="lang-switch-link is-active" hreflang="en">EN</a>
-      </div>
-      <a href="../contact-us-en.html" class="nav-cta btn-pill btn-pill-gold">Book a Strategy Session</a>
-    </div>
-    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-  </div>
-  <div class="nav-backdrop" id="navBackdrop" hidden></div>
-</header>
-
-
-
-
-
-<section class="ud-section">
-  <div class="ud-card reveal">
-    <span class="material-symbols-outlined ud-icon">article</span>
-    <h1 class="ud-title">Articles</h1>
-    <p class="ud-subtitle">Expert articles on real estate marketing, architectural visualization, and business growth in the GCC. Content library coming soon.</p>
-    <div class="ud-status">
-      <span class="dot"></span>
-      Coming Soon
-    </div>
-    <div class="ud-cta">
-      <a href="/" class="btn-pill btn-pill-outline">
-        <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>
-        Back to Home
-      </a>
-      <a href="../contact-us-en.html" class="btn-pill btn-pill-gold">
-        Get in Touch
-        <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer dir="ltr" style="background:#071810;color:#fff;font-family:'Inter','Tajawal',sans-serif;position:relative;overflow:hidden">
-  <div style="max-width:1320px;margin:0 auto;padding:56px 48px 0">
-    <!-- Footer motif background -->
-    <img loading="lazy" src="../assets/chatbot-motif.png" aria-hidden="true" style="position:absolute;bottom:-80px;right:-60px;width:1560px;height:auto;opacity:0.05;pointer-events:none;z-index:0;filter:brightness(1.2) saturate(0)">
-
-    <!-- Logo -->
-    <div style="position:relative;z-index:1;padding-bottom:40px;border-bottom:1px solid rgba(201,168,76,.35)">
-      <img src="../assets/logo-gold.png" alt="Graphics House" style="height:86px;width:auto">
-    </div>
-
-    <!-- Offices Grid -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid rgba(201,168,76,.35)">
-      <div style="padding:36px 28px 36px 0">
-        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#FAFAF8;text-transform:uppercase;margin-bottom:10px">SAUDI ARABIA، JEDDAH</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:2;margin-bottom:22px">P.O.Box 136972<br>CR 4030502306، HQ</div>
-        <a href="tel:+966502786513" style="display:inline-flex;align-items:center;gap:7px;padding:9px 22px;border:1px solid rgba(255,255,255,.3);border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#fff;text-decoration:none;text-transform:uppercase;transition:all .3s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(255,255,255,.3)';this.style.color='#fff'">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          CALL NOW
-        </a>
-      </div>
-      <div style="padding:36px 28px">
-        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#FAFAF8;text-transform:uppercase;margin-bottom:10px">OMAN، MUSCAT</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:2;margin-bottom:22px">Al Khod, Al Seeb<br>CR 1460078</div>
-        <a href="tel:+96891326735" style="display:inline-flex;align-items:center;gap:7px;padding:9px 22px;border:1px solid rgba(255,255,255,.3);border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#fff;text-decoration:none;text-transform:uppercase;transition:all .3s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(255,255,255,.3)';this.style.color='#fff'">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          CALL NOW
-        </a>
-      </div>
-      <div style="padding:36px 28px">
-        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#FAFAF8;text-transform:uppercase;margin-bottom:10px">BAHRAIN، MANAMA</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:2;margin-bottom:22px">Block 316<br>CR 15571301</div>
-        <a href="tel:+97332150369" style="display:inline-flex;align-items:center;gap:7px;padding:9px 22px;border:1px solid rgba(255,255,255,.3);border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#fff;text-decoration:none;text-transform:uppercase;transition:all .3s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(255,255,255,.3)';this.style.color='#fff'">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          CALL NOW
-        </a>
-      </div>
-      <div style="padding:36px 0 36px 28px">
-        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#FAFAF8;text-transform:uppercase;margin-bottom:10px">EGYPT</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:2;margin-bottom:22px">Mohamed Othman St.<br>Victoria City Tower</div>
-        <a href="tel:+201032955089" style="display:inline-flex;align-items:center;gap:7px;padding:9px 22px;border:1px solid rgba(255,255,255,.3);border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#fff;text-decoration:none;text-transform:uppercase;transition:all .3s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(255,255,255,.3)';this.style.color='#fff'">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          CALL NOW
-        </a>
-      </div>
-    </div>
-
-    <!-- Social + Bottom -->
-    <div style="padding:24px 0;border-bottom:1px solid rgba(201,168,76,.35);display:flex;align-items:center;gap:32px;flex-wrap:wrap">
-      <div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.7);text-transform:uppercase;margin-bottom:8px">Our Companies</div>
-        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-          <a href="../index.html" style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid rgba(201,168,76,.25);border-radius:50px;font-size:11px;font-weight:600;letter-spacing:.08em;color:#fff;text-decoration:none;text-transform:uppercase;transition:all .3s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(201,168,76,.25)';this.style.color='#fff'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Graphics House</a>
-          <a href="https://ruwaq.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid rgba(201,168,76,.25);border-radius:50px;font-size:11px;font-weight:600;letter-spacing:.08em;color:#fff;text-decoration:none;text-transform:uppercase;transition:all .3s" onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C'" onmouseout="this.style.borderColor='rgba(201,168,76,.25)';this.style.color='#fff'"><svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>RUWAQ</a>
-        </div>
-      </div>
-    </div>
-    <div style="padding:28px 0;border-bottom:1px solid rgba(201,168,76,.35);display:flex;align-items:center;gap:16px">
-      <span style="font-size:12px;color:rgba(255,255,255,.6);letter-spacing:.05em;white-space:nowrap;font-weight:600">Follow Us On:</span>
-      <a href="https://web.facebook.com/3dghouse" target="_blank" style="width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0" title="Facebook">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
-      <a href="https://twitter.com/GraphicsHouse2" target="_blank" style="width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0" title="X / Twitter">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="#C9A84C"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/3dgraphicshouse/" target="_blank" style="width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0" title="Instagram">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/company/graphics-house-gh/" target="_blank" style="width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0" title="LinkedIn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/user/3dghouse/videos" target="_blank" style="width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0" title="YouTube">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      </a>
-    </div>
-
-    <!-- Copyright -->
-    <div style="padding:20px 0 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
-      <p style="font-size:11px;color:rgba(255,255,255,.85)">© 2026 Graphics House Co.، All Rights Reserved &nbsp;|&nbsp; CR: 7054412114 &nbsp;|&nbsp; VAT: 314808998900003</p>
-      <div style="display:flex;gap:20px">
-        <a href="../privacy-policy-en.html" style="font-size:11px;color:rgba(255,255,255,.65);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.25)'">Privacy Policy</a>
-        <a href="../faq-en.html" style="font-size:11px;color:rgba(255,255,255,.65);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.25)'">FAQ</a>
-        <a href="#" class="gh-lang-alt" style="font-size:11px;color:rgba(255,255,255,.65);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.25)'">عربي</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
-if(ld&&lb){setTimeout(function(){lb.style.width="100%";},100);setTimeout(function(){ld.classList.add("out");ld.style.opacity="0";ld.style.visibility="hidden";},1400);}
-window.addEventListener("scroll",function(){document.getElementById("header").classList.toggle("scrolled",window.scrollY>80)});
-function toggleMenu(){var n=document.getElementById("nav"),t=document.getElementById("menuToggle");n.classList.toggle("open");t.innerHTML=n.classList.contains("open")?'<span class="material-symbols-outlined">close</span>':'<span class="material-symbols-outlined">menu</span>';}
-var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add("visible")})},{threshold:0.15});
-);
-</script>
-
-<script>
-// Mega menu mobile accordion
-document.addEventListener('DOMContentLoaded', function(){
-  var mmTriggers = document.querySelectorAll('.nav-mega-item > a.nav-link');
-  mmTriggers.forEach(function(trigger){
-    trigger.addEventListener('click', function(e){
-      if(window.innerWidth <= 900) {
-        e.preventDefault();
-        var menu = this.parentElement.querySelector('.mega-menu');
-        if(menu) {
-          menu.classList.toggle('open');
-        }
-      }
-    });
-  });
-});
-</script>
-
-<script defer src="../assets/gh-float-widgets.js?v=1"></script>
+</head><body><p><a href="index.html">مركز المعرفة / Knowledge Hub</a></p><script defer src="../assets/gh-float-widgets.js?v=1"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">
-  <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="WhatsApp">
+  <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="واتساب">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
   </a>
-  <button type="button" class="gh-float-btn gh-float-mail" data-gh-popup-open title="Register Your Interest">
+  <button type="button" class="gh-float-btn gh-float-mail" data-gh-popup-open title="سجّل اهتمامك">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
   </button>
-  <button type="button" class="gh-float-btn gh-float-brand" data-gh-brand-action data-contact-href="../contact-us-en.html" title="Contact Us">
+  <button type="button" class="gh-float-btn gh-float-brand" data-gh-brand-action data-contact-href="../contact-us.html" title="تواصل معنا">
     <span class="gh-float-brand-inner">
       <span class="gh-motif-ring"></span>
       <span class="gh-motif-ring" style="animation-delay:1.2s"></span>
@@ -387,33 +26,32 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 <div id="ghPopup">
   <div class="gh-popup-box">
-    <button type="button" class="gh-popup-close" data-gh-popup-close aria-label="Close">✕</button>
-    <div class="gh-popup-title">Register Your Interest</div>
-    <div class="gh-popup-sub">Tell us about your project and we'll get in touch within 24 hours.</div>
+    <button type="button" class="gh-popup-close" data-gh-popup-close aria-label="إغلاق">✕</button>
+    <div class="gh-popup-title">سجّل اهتمامك بمشروعك</div>
+    <div class="gh-popup-sub">أخبرنا عن مشروعك وسنتواصل معك خلال 24 ساعة.</div>
     <form onsubmit="ghSubmit(event)">
-      <input class="gh-field" type="text" id="ghName" placeholder="Full Name *" required>
-      <input class="gh-field" type="text" id="ghCompany" placeholder="Company / Developer">
+      <input class="gh-field" type="text" id="ghName" placeholder="الاسم الكامل *" required>
+      <input class="gh-field" type="text" id="ghCompany" placeholder="الشركة / المطوّر العقاري">
       <select class="gh-field" id="ghProject" required>
-        <option value="" disabled selected>Project Type *</option>
-        <option>Residential Development</option>
-        <option>Commercial Project</option>
-        <option>Hospitality / Hotel</option>
-        <option>Mixed-Use Development</option>
-        <option>Government / Public</option>
-        <option>Other</option>
+        <option value="" disabled selected>نوع المشروع *</option>
+        <option>مشروع سكني</option>
+        <option>مشروع تجاري</option>
+        <option>فندقي / ضيافة</option>
+        <option>متعدد الاستخدامات</option>
+        <option>حكومي / خدمي</option>
+        <option>أخرى</option>
       </select>
-      <input class="gh-field" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required>
-      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Brief about your project..." style="resize:none"></textarea>
-      <button type="submit" class="gh-submit">Submit Enquiry →</button>
+      <input class="gh-field" type="tel" id="ghPhone" placeholder="الجوال / واتساب *" required dir="ltr">
+      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="نبذة مختصرة عن مشروعك..." style="resize:none"></textarea>
+      <button type="submit" class="gh-submit">إرسال الطلب ←</button>
     </form>
     <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
       <div style="font-size:36px;margin-bottom:12px">✓</div>
-      <div style="font-size:17px;font-weight:700;color:#1A1A1A;margin-bottom:8px">Thank you!</div>
-      <div style="font-size:14px;color:#888">We'll be in touch soon.</div>
+      <div style="font-size:17px;font-weight:700;color:#1A1A1A;margin-bottom:8px">شكراً لك!</div>
+      <div style="font-size:14px;color:#888">سنتواصل معك قريباً.</div>
     </div>
   </div>
 </div>
 <!-- GH FLOAT END -->
 
-</body>
-</html>
+</body></html>

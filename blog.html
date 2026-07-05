@@ -2,6 +2,8 @@
 <html class="dark scroll-smooth" dir="rtl" lang="ar">
 <head>
 <script src="assets/gh-forms-config.js"></script>
+<script src="assets/quote-form-config.js"></script>
+<link rel="stylesheet" href="assets/gh-insights.css?v=1">
 <!-- GH SEO -->
 <link rel="canonical" href="https://3dgraphicshouse.com/blog.html">
 <link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/">
@@ -379,9 +381,14 @@
     <span class="material-symbols-outlined ms-filled text-primary text-4xl mb-4 block">mail</span>
     <h2 class="font-headline-xl text-on-background mb-4"><span class="ar">اشترك في النشرة البريدية</span><span class="en">Subscribe to Newsletter</span></h2>
     <p class="font-body-lg text-secondary opacity-70 mb-8"><span class="ar">احصل على أحدث المقالات والأفكار مباشرة في بريدك.</span><span class="en">Get the latest articles and insights directly in your inbox.</span></p>
-    <form class="flex gap-0 max-w-sm mx-auto" novalidate>
-      <input type="email" placeholder="بريدك الإلكتروني / Your email" class="flex-1 bg-surface-container-high border border-white/10 border-l-0 px-5 py-4 font-label-caps text-[11px] tracking-widest outline-none focus:border-primary transition-all text-on-background placeholder:text-zinc-600"/>
-      <button type="submit" class="bg-primary text-on-primary px-6 py-4 font-label-caps text-[11px] tracking-widest hover:bg-white hover:text-black transition-all shrink-0"><span class="ar">اشترك</span><span class="en">JOIN</span></button>
+    <form class="gh-newsletter-form flex gap-0 max-w-sm mx-auto" data-gh-newsletter novalidate style="flex-direction:column;align-items:center;gap:12px">
+      <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <div class="flex gap-0 w-full max-w-sm">
+        <input type="email" name="email" placeholder="بريدك الإلكتروني / Your email" required class="flex-1 bg-surface-container-high border border-white/10 px-5 py-4 font-label-caps text-[11px] tracking-widest outline-none focus:border-primary transition-all text-on-background placeholder:text-zinc-600"/>
+        <button type="submit" class="bg-primary text-on-primary px-6 py-4 font-label-caps text-[11px] tracking-widest hover:bg-white hover:text-black transition-all shrink-0"><span class="ar">اشترك</span><span class="en">JOIN</span></button>
+      </div>
+      <div class="gh-turnstile"></div>
+      <div class="gh-newsletter-msg" role="status"></div>
     </form>
   </div>
 </section>
@@ -653,6 +660,7 @@
 })();</script>
 
 <script defer src="assets/gh-float-widgets.js?v=1"></script>
+<script defer src="assets/gh-newsletter.js?v=1"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">
   <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="واتساب">
