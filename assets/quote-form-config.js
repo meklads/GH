@@ -4,5 +4,5 @@
  * Widget type: Managed (recommended)
  */
 window.GH_QUOTE_FORM = {
-  turnstileSiteKey: ''
+  turnstileSiteKey: '0x4AAAAAADv7uKaQhHuTHq7h'
 };
