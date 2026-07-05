@@ -40,6 +40,28 @@ body.gh-contact .ch {
 body.gh-insights {
   background: #f7f5f0;
   color: #1a1a1a;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+}
+
+html:has(body.gh-insights) {
+  overflow-x: clip;
+}
+
+/* Footer decorative motif — keep inside viewport (was 1560px fixed, caused horizontal scroll) */
+.gh-footer-motif {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1560px, 110vw);
+  max-width: 110vw;
+  height: auto;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+  filter: brightness(1.2) saturate(0);
 }
 
 body.gh-insights .header,

@@ -4,6 +4,13 @@ body.gh-insights {
   background: #f7f5f0;
   color: #1a1a1a;
   font-family: "Tajawal", "Inter", sans-serif;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+}
+
+html:has(body.gh-insights) {
+  overflow-x: clip;
 }
 
 html[dir="ltr"] body.gh-insights {
@@ -19,6 +26,9 @@ body.gh-insights .gh-insights-page {
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 24px 80px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* Masthead — AD-style editorial header */
@@ -81,6 +91,8 @@ body.gh-insights .gh-insights-page {
 .gh-blog-sidebar {
   position: sticky;
   top: 108px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 @media (max-width: 960px) {
@@ -95,6 +107,10 @@ body.gh-insights .gh-insights-page {
   border: 1px solid #e8e4dc;
   padding: 24px 22px;
   margin-bottom: 24px;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .gh-sidebar-block h3 {
@@ -372,12 +388,18 @@ body.gh-insights .gh-insights-page {
   min-height: 70px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .gh-sidebar-newsletter .gh-turnstile > div {
-  max-width: 100%;
+  max-width: 100% !important;
+  transform-origin: top center;
+}
+
+.gh-sidebar-newsletter .gh-turnstile iframe {
+  max-width: 100% !important;
 }
 
 .gh-newsletter-msg {
@@ -450,6 +472,10 @@ body.gh-insights .gh-insights-page {
 .gh-article-page-wrap {
   padding-top: 108px;
   padding-bottom: 80px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
 }
 
 .gh-article-header {
@@ -475,6 +501,7 @@ body.gh-insights .gh-insights-page {
 
 .gh-article-hero-img {
   width: 100%;
+  max-width: 100%;
   max-height: 520px;
   object-fit: cover;
   margin-bottom: 0;
@@ -486,6 +513,12 @@ body.gh-insights .gh-insights-page {
   border: 1px solid #e8e4dc;
   padding: 40px 48px 48px;
   margin-top: -1px;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
 @media (max-width: 640px) {

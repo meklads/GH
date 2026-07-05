@@ -144,8 +144,8 @@ function headBlock(lang, meta) {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=10">
-<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=7">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=4">
+<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=8">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=5">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
