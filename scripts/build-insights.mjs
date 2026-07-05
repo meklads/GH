@@ -10,6 +10,18 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const DATA = JSON.parse(fs.readFileSync(path.join(ROOT, 'insights/data/content.json'), 'utf8'));
+const ARTICLES_DIR = path.join(ROOT, 'insights/data/articles');
+
+function loadArticles() {
+  if (!fs.existsSync(ARTICLES_DIR)) return DATA.articles || [];
+  const files = fs.readdirSync(ARTICLES_DIR).filter((f) => f.endsWith('.json'));
+  if (!files.length) return DATA.articles || [];
+  return files
+    .map((f) => JSON.parse(fs.readFileSync(path.join(ARTICLES_DIR, f), 'utf8')))
+    .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+}
+
+const ARTICLES = loadArticles();
 
 function extract(html, pattern) {
   const m = html.match(pattern);
@@ -35,6 +47,58 @@ function esc(s) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+function renderBodyBlock(block) {
+  if (typeof block === 'string') return `<p>${esc(block)}</p>`;
+  const text = block.text || '';
+  switch (block.type) {
+    case 'p':
+      return `<p>${esc(text)}</p>`;
+    case 'h2':
+      return `<h2>${esc(text)}</h2>`;
+    case 'h3':
+      return `<h3>${esc(text)}</h3>`;
+    case 'ul':
+      return `<ul>${(block.items || []).map((i) => `<li>${esc(i)}</li>`).join('')}</ul>`;
+    case 'ol':
+      return `<ol>${(block.items || []).map((i) => `<li>${esc(i)}</li>`).join('')}</ol>`;
+    default:
+      return text ? `<p>${esc(text)}</p>` : '';
+  }
+}
+
+function renderBody(body) {
+  return (body || []).map(renderBodyBlock).join('\n');
+}
+
+function articleDescription(article, lang) {
+  const isEn = lang === 'en';
+  const meta = article.metaDescription;
+  if (meta) return isEn ? meta.en : meta.ar;
+  return isEn ? article.excerpt.en : article.excerpt.ar;
+}
+
+function articleSchema(article, lang) {
+  const isEn = lang === 'en';
+  const L = (key) => (isEn ? key.en : key.ar);
+  const slug = `${article.slug}${isEn ? '-en' : ''}.html`;
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: L(article.title),
+    description: articleDescription(article, lang),
+    image: `https://3dgraphicshouse.com/${article.image}`,
+    datePublished: `${article.date}-01`,
+    author: { '@type': 'Organization', name: 'Graphics House' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Graphics House',
+      logo: { '@type': 'ImageObject', url: 'https://3dgraphicshouse.com/assets/favicon/og-image.png' },
+    },
+    mainEntityOfPage: `https://3dgraphicshouse.com/insights/articles/${slug}`,
+    inLanguage: isEn ? 'en' : 'ar',
+  });
 }
 
 function prefixPaths(html, depth) {
@@ -81,7 +145,7 @@ function headBlock(lang, meta) {
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=10">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=7">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=2">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=3">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -165,8 +229,8 @@ function buildHub(lang) {
   const isEn = lang === 'en';
   const L = (key) => (isEn ? key.en : key.ar);
   const { header, footer } = getLayout(lang);
-  const featured = DATA.articles.find((a) => a.featured) || DATA.articles[0];
-  const rest = DATA.articles.filter((a) => a.slug !== featured.slug);
+  const featured = ARTICLES.find((a) => a.featured) || ARTICLES[0];
+  const rest = ARTICLES.filter((a) => a.slug !== featured.slug);
   const p = '../';
 
   const featuredHtml = `
@@ -247,21 +311,21 @@ function buildArticle(article, lang) {
   const depth = 2;
   const p = '../../';
   const slug = `${article.slug}${isEn ? '-en' : ''}.html`;
-  const bodyHtml = L(article.body)
-    .map((para) => `<p>${esc(para)}</p>`)
-    .join('\n');
+  const bodyHtml = renderBody(L(article.body));
+  const description = articleDescription(article, lang);
 
   const sidebar = sidebarBlock(lang, 2, null);
 
   const html = `${headBlock(lang, {
     depth: 2,
     title: L(article.title),
-    description: L(article.excerpt),
+    description,
     canonical: `https://3dgraphicshouse.com/insights/articles/${slug}`,
     altEn: `https://3dgraphicshouse.com/insights/articles/${article.slug}-en.html`,
     altAr: `https://3dgraphicshouse.com/insights/articles/${article.slug}.html`,
     ogType: 'article',
   })}
+<script type="application/ld+json">${articleSchema(article, lang)}</script>
 ${prefixPaths(header, depth)}
 <main class="gh-article-page-wrap">
   <div class="gh-blog-wrap">
@@ -537,7 +601,7 @@ function updateSitemap() {
     'https://3dgraphicshouse.com/insights/index.html',
     'https://3dgraphicshouse.com/insights/index-en.html',
   ];
-  for (const a of DATA.articles) {
+  for (const a of ARTICLES) {
     urls.push(`https://3dgraphicshouse.com/insights/articles/${a.slug}.html`);
     urls.push(`https://3dgraphicshouse.com/insights/articles/${a.slug}-en.html`);
   }
@@ -563,7 +627,7 @@ function updateSitemap() {
 console.log('Building Knowledge Hub…');
 fs.mkdirSync(path.join(ROOT, 'insights/articles'), { recursive: true });
 ['ar', 'en'].forEach((lang) => buildHub(lang));
-DATA.articles.forEach((a) => {
+ARTICLES.forEach((a) => {
   buildArticle(a, 'ar');
   buildArticle(a, 'en');
 });

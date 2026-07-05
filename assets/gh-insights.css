@@ -491,6 +491,41 @@ body.gh-insights .gh-insights-page {
   margin: 0 0 22px;
 }
 
+.gh-article-body-wrap h2 {
+  font-family: "Playfair Display", "Tajawal", serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 42px 0 18px;
+  line-height: 1.35;
+}
+
+.gh-article-body-wrap h3 {
+  font-family: "Tajawal", "Inter", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #444;
+  margin: 28px 0 12px;
+  line-height: 1.4;
+}
+
+.gh-article-body-wrap ul,
+.gh-article-body-wrap ol {
+  margin: 0 0 24px;
+  padding-inline-start: 1.4em;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.gh-article-body-wrap li {
+  margin-bottom: 10px;
+}
+
+.gh-article-body-wrap li::marker {
+  color: #a8883a;
+}
+
 .gh-article-body-wrap p:first-child::first-letter {
   font-family: "Playfair Display", "Tajawal", serif;
   font-size: 3.2em;
