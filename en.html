@@ -318,12 +318,18 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  margin-top: 28px;
-  padding: 8px 0;
+  margin-top: 24px;
+  padding: 10px 8px 4px;
   width: 100%;
+  position: relative;
+  z-index: 25;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.hero-caps-bar::-webkit-scrollbar { display: none; }
 .cap-bar-item {
   display: flex;
   align-items: center;
@@ -1825,8 +1831,8 @@ img { max-width: 100%; display: block; }
 }
 </style>
 
-<link rel="stylesheet" href="assets/site-header.css?v=5">
-<script defer src="assets/site-header.js?v=5"></script>
+<link rel="stylesheet" href="assets/site-header.css?v=6">
+<script defer src="assets/site-header.js?v=6"></script>
 </head>
 <body>
 
@@ -1995,8 +2001,8 @@ img { max-width: 100%; display: block; }
   </div>
 
   <!-- Content -->
-  <div class="absolute z-10 flex flex-col items-center px-6"
-       style="bottom:0;left:50%;transform:translateX(-50%);padding-top:16px;padding-bottom:16px;width:100%">
+  <div class="absolute z-30 flex flex-col items-center px-6"
+       style="bottom:0;left:50%;transform:translateX(-50%);padding-top:16px;padding-bottom:60px;width:100%">
 
     <!-- Radial gradient background -->
     <div class="absolute pointer-events-none" style="inset:-300px;background:radial-gradient(ellipse farthest-side at 50% 50%, rgba(0,0,0,.85) 0%, rgba(0,0,0,.5) 18%, rgba(0,0,0,.2) 28%, transparent 35%)"></div>
@@ -2028,7 +2034,7 @@ img { max-width: 100%; display: block; }
       </div>
 
       <!-- Capabilities Bar -->
-      <div class="hero-caps-bar" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:28px;padding:8px 0;width:100%">
+      <div class="hero-caps-bar">
         <div class="cap-bar-item">
           <img src="assets/icons/tech.png" alt="" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
           <span class="cap-bar-label">Media Production</span>
@@ -2059,7 +2065,7 @@ img { max-width: 100%; display: block; }
   </div>
 
   <!-- Progress bars -->
-  <div class="absolute bottom-0 left-0 right-0 z-20 flex px-0" dir="ltr">
+  <div class="absolute bottom-0 left-0 right-0 flex px-0" dir="ltr" style="z-index:12">
     <div class="hero-prog hp-active" id="hprog-0"></div>
     <div class="hero-prog" id="hprog-1"></div>
     <div class="hero-prog" id="hprog-2"></div>
