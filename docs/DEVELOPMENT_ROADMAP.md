@@ -10,10 +10,12 @@
 | البند | الوصف | الحالة |
 |-------|--------|--------|
 | مركز المعرفة | مقالات + أدوات عملية (checklist، محدد الحل، نموذج Brief) | 🟢 10 مقالات |
-| النشرة البريدية | اشتراك عبر Web3Forms + Turnstile | 🟢 |
+| النشرة البريدية | اشتراك + `/api/subscribe` + Brevo/KV اختياري | 🟢 |
 | SEO أساسي | صفحات مقالات، sitemap، canonical | 🟢 |
 
 **العائد:** ثقة B2B، SEO طويل المدى، material للمبيعات وLinkedIn.
+
+**Mailing list:** `POST /api/subscribe` يخزّن المشتركين (KV اختياري) ويرسل إشعار Web3Forms. لربط Brevo: `wrangler secret put BREVO_API_KEY` و `BREVO_LIST_ID`.
 
 ---
 

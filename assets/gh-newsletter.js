@@ -103,6 +103,9 @@
         subject: isEn() ? 'Newsletter subscription — Graphics House' : 'اشتراك في النشرة — جرافيكس هاوس',
         from_name: 'Graphics House Newsletter',
         email: email,
+        language: isEn() ? 'en' : 'ar',
+        source: 'insights-newsletter',
+        list: (FORMS.mailingListName || 'gh-journal'),
         message: isEn()
           ? 'New newsletter subscriber from Knowledge Hub.'
           : 'مشترك جديد في النشرة من مركز المعرفة.',
@@ -112,7 +115,7 @@
         payload['cf-turnstile-response'] = token(turnstileBox);
       }
 
-      fetch(FORMS.formEndpoint || 'https://3dgraphicshouse.com/api/form', {
+      fetch(FORMS.subscribeEndpoint || FORMS.formEndpoint || 'https://3dgraphicshouse.com/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(payload)

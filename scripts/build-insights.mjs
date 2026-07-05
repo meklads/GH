@@ -187,6 +187,17 @@ function newsletterBlock(lang, compact) {
   return newsletterBlock(lang, true);
 }
 
+function hubExcerpt(article, lang) {
+  const L = (key) => (lang === 'en' ? key.en : key.ar);
+  const ex = L(article.excerpt) || '';
+  if (ex.length >= 90) return ex;
+  const meta = article.metaDescription ? L(article.metaDescription) : '';
+  if (meta.length > ex.length) {
+    return meta.length > 220 ? `${meta.slice(0, 217)}…` : meta;
+  }
+  return ex;
+}
+
 function sidebarBlock(lang, depth, activeTool) {
   const isEn = lang === 'en';
   const L = (key) => (isEn ? key.en : key.ar);
@@ -207,6 +218,25 @@ function sidebarBlock(lang, depth, activeTool) {
     })
     .join('');
 
+  const resources = DATA.resources || [];
+  const resourcesHtml = resources.length
+    ? `<div class="gh-sidebar-block">
+    <h3>${isEn ? 'Free Resources' : 'موارد مجانية'}</h3>
+    <ul class="gh-sidebar-tools">${resources
+      .map((r) => {
+        const href = `${p}${r.path}${isEn ? '-en' : ''}.html`;
+        return `<li><a href="${href}">
+        <span class="material-symbols-outlined">${r.icon}</span>
+        <span>
+          <span class="gh-st-title">${L(r.title)}</span>
+          <span class="gh-st-desc">${L(r.description)}</span>
+        </span>
+      </a></li>`;
+      })
+      .join('')}</ul>
+  </div>`
+    : '';
+
   const nl = newsletterBlock(lang, true);
 
   return `
@@ -215,6 +245,7 @@ function sidebarBlock(lang, depth, activeTool) {
     <h3>${isEn ? 'Practical Tools' : 'أدوات عملية'}</h3>
     <ul class="gh-sidebar-tools">${toolsHtml}</ul>
   </div>
+  ${resourcesHtml}
   ${nl}
   <div class="gh-sidebar-block gh-sidebar-cta">
     <h3>${isEn ? 'Your Project' : 'مشروعك'}</h3>
@@ -222,7 +253,7 @@ function sidebarBlock(lang, depth, activeTool) {
     <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial gh-btn-editorial--light">${isEn ? 'Get in Touch' : 'تواصل معنا'}</a>
   </div>
 </aside>
-<script defer src="${p}assets/gh-newsletter.js?v=2"></script>`;
+<script defer src="${p}assets/gh-newsletter.js?v=3"></script>`;
 }
 
 function buildHub(lang) {
@@ -240,7 +271,7 @@ function buildHub(lang) {
     <div class="gh-featured-copy">
       <span class="gh-eyebrow">${L(featured.category)} · ${isEn ? 'Featured' : 'مقال مميز'}</span>
       <h2>${L(featured.title)}</h2>
-      <p class="gh-dek">${L(featured.excerpt)}</p>
+      <p class="gh-dek">${hubExcerpt(featured, lang)}</p>
       <span class="gh-byline">${L(featured.dateLabel)}</span>
       <span class="gh-read-link">${isEn ? 'Read Story' : 'اقرأ المقال'} <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></span>
     </div>
@@ -256,7 +287,7 @@ function buildHub(lang) {
     <div>
       <span class="gh-eyebrow">${L(a.category)}</span>
       <h3>${L(a.title)}</h3>
-      <p>${L(a.excerpt)}</p>
+      <p>${hubExcerpt(a, lang)}</p>
       <time datetime="${a.date}">${L(a.dateLabel)}</time>
     </div>
   </a>

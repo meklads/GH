@@ -36,5 +36,31 @@
         "en": "Ready-to-fill template before your first meeting — saves time and improves delivery."
       }
     }
+  ],
+  "resources": [
+    {
+      "icon": "download",
+      "path": "downloads/visual-launch-checklist",
+      "title": {
+        "ar": "تحميل قائمة الإطلاق PDF",
+        "en": "Download Launch Checklist PDF"
+      },
+      "description": {
+        "ar": "12 بنداً مجاناً — أدخل بريدك وحمّل الملف فوراً.",
+        "en": "12 essentials free — enter your email for instant download."
+      }
+    },
+    {
+      "icon": "location_on",
+      "path": "locations/jeddah",
+      "title": {
+        "ar": "إظهار معماري في جدة",
+        "en": "Archviz in Jeddah"
+      },
+      "description": {
+        "ar": "خدماتنا من المقر الرئيسي للمشاريع في المنطقة الغربية.",
+        "en": "HQ services for Western Region developments."
+      }
+    }
   ]
 }

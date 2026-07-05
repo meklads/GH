@@ -113,6 +113,9 @@
         subject: isEn() ? 'Checklist PDF download — Graphics House' : 'تحميل قائمة الإطلاق PDF — جرافيكس هاوس',
         from_name: 'Graphics House Lead Magnet',
         email: email,
+        language: isEn() ? 'en' : 'ar',
+        source: 'checklist-pdf',
+        list: (FORMS.mailingListName || 'gh-journal'),
         message: isEn()
           ? 'User requested Visual Launch Readiness Checklist PDF.'
           : 'طلب المستخدم تحميل قائمة جاهزية الإطلاق البصري PDF.',
@@ -122,7 +125,7 @@
         payload['cf-turnstile-response'] = token(turnstileBox);
       }
 
-      fetch(FORMS.formEndpoint || 'https://3dgraphicshouse.com/api/form', {
+      fetch(FORMS.subscribeEndpoint || FORMS.formEndpoint || 'https://3dgraphicshouse.com/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(payload)
