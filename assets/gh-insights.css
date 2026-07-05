@@ -368,6 +368,16 @@ body.gh-insights .gh-insights-page {
 
 .gh-sidebar-newsletter .gh-turnstile {
   margin-top: 12px;
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.gh-sidebar-newsletter .gh-turnstile > div {
+  max-width: 100%;
 }
 
 .gh-newsletter-msg {

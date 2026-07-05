@@ -40,13 +40,16 @@
 
   function renderTurnstile(box) {
     if (!TURNSTILE_KEY || !box || box.dataset.rendered === '1') return;
+    var isSidebar = box.closest('.gh-sidebar-newsletter');
     loadTurnstile(function () {
       if (!window.turnstile || box.dataset.rendered === '1') return;
-      var id = window.turnstile.render(box, {
+      var opts = {
         sitekey: TURNSTILE_KEY,
         theme: document.body.classList.contains('gh-insights') ? 'light' : 'dark',
         language: isEn() ? 'en' : 'ar'
-      });
+      };
+      if (isSidebar) opts.size = 'compact';
+      var id = window.turnstile.render(box, opts);
       box.dataset.rendered = '1';
       box.dataset.widgetId = id;
     });

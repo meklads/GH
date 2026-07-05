@@ -41,8 +41,20 @@
     return { fileName: fileName, dirPath: dirPath };
   }
 
-  function alternateFileName(fileName) {
-    if (EXPLICIT[fileName]) return EXPLICIT[fileName];
+  function isInsightsPath(dirPath) {
+    return /\/insights(\/|$)/.test(dirPath);
+  }
+
+  function alternateFileName(fileName, dirPath) {
+    if (EXPLICIT[fileName] && !isInsightsPath(dirPath)) return EXPLICIT[fileName];
+
+    if (isInsightsPath(dirPath)) {
+      if (fileName === 'index.html') return 'index-en.html';
+      if (fileName === 'index-en.html') return 'index.html';
+      if (fileName.endsWith('-en.html')) return fileName.replace(/-en\.html$/, '.html');
+      if (fileName.endsWith('.html')) return fileName.replace(/\.html$/, '-en.html');
+    }
+
     if (fileName.endsWith('-en.html')) return fileName.replace(/-en\.html$/, '.html');
     if (HAS_EN[fileName]) return fileName.replace(/\.html$/, '-en.html');
     return null;
@@ -50,7 +62,7 @@
 
   function alternateHref() {
     var p = parts();
-    var altFile = alternateFileName(p.fileName);
+    var altFile = alternateFileName(p.fileName, p.dirPath);
     if (altFile) return p.dirPath + altFile;
     var isRtl = document.documentElement.getAttribute('dir') === 'rtl';
     return p.dirPath + (isRtl ? 'index.html' : 'index-ar.html');
