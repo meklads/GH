@@ -15,7 +15,13 @@ const FILES = [
   'gh-maquettes.html',
 ];
 
-const CAPTCHA = '<input type="hidden" name="_captcha" value="false">';
+const SECURITY = `          <div class="gh-form-security">
+            <div class="gh-honeypot" aria-hidden="true">
+              <label>لا تملأ</label>
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="gh-turnstile"></div>
+          </div>`;
 
 for (const rel of FILES) {
   const file = path.join(ROOT, rel);
@@ -23,36 +29,22 @@ for (const rel of FILES) {
   let html = fs.readFileSync(file, 'utf8');
   if (!html.includes('formsubmit.co')) continue;
 
-  html = html.replace(
-    /<form class="gh-quote-form" action="https:\/\/formsubmit\.co\/ajax\/([^"]+)" method="POST">/g,
-    '<form class="gh-quote-form" action="https://formsubmit.co/$1" method="POST">'
-  );
-  html = html.replace(
-    /<form action="https:\/\/formsubmit\.co\/ajax\/([^"]+)" method="POST">/g,
-    '<form class="gh-quote-form" action="https://formsubmit.co/$1" method="POST">'
-  );
+  html = html.replace(/\s*<input type="hidden" name="_captcha" value="false">\s*/g, '\n');
 
-  if (!html.includes('name="_captcha"')) {
+  if (!html.includes('gh-form-security')) {
     html = html.replace(
-      /(<form class="gh-quote-form"[^>]*>\s*)/,
-      `$1${CAPTCHA}\n          `
+      /(\s*<div class="form-feedback"[^>]*><\/div>)/,
+      `\n${SECURITY}\n$1`
     );
   }
 
-  html = html.replace(
-    /name="_next" value="https:\/\/3dgraphicshouse\.com\/([^"#]+)(?:#booking)?"/g,
-    'name="_next" value="https://3dgraphicshouse.com/$1?sent=1#booking"'
-  );
-
   const depth = rel.split('/').length - 1;
   const prefix = depth ? '../'.repeat(depth) : '';
-  const scriptTag = `<script defer src="${prefix}assets/quote-form.js?v=2"></script>`;
-  html = html.replace(/<script defer src="[^"]*quote-form\.js[^"]*"><\/script>\n?/g, '');
-  if (!html.includes('quote-form.js')) {
-    html = html.replace('</body>', scriptTag + '\n</body>');
-  } else {
-    html = html.replace('</body>', scriptTag + '\n</body>');
-  }
+  html = html.replace(/<script defer src="[^"]*quote-form[^"]*"><\/script>\n?/g, '');
+  const scripts =
+    `<script defer src="${prefix}assets/quote-form-config.js"></script>\n` +
+    `<script defer src="${prefix}assets/quote-form.js?v=3"></script>\n`;
+  html = html.replace('</body>', scripts + '</body>');
 
   fs.writeFileSync(file, html, 'utf8');
   console.log('Patched:', rel);

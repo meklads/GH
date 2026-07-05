@@ -631,8 +631,7 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
       <div class="form-card">
         <h3>طلب عرض سعر</h3>
         <form class="gh-quote-form" action="https://formsubmit.co/dot4life.team@gmail.com" method="POST">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="طلب عرض سعر - gh-visualization">
+<input type="hidden" name="_subject" value="طلب عرض سعر - gh-visualization">
           <input type="hidden" name="_next" value="https://3dgraphicshouse.com/gh-visualization.html?sent=1#booking">
           <div class="form-group"><label>الاسم الكامل</label><input type="text" name="name" required placeholder="أدخل اسمك"></div>
           <div class="form-group"><label>الجهة / الشركة</label><input type="text" name="company" placeholder="اسم الشركة"></div>
@@ -660,6 +659,14 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
             </select>
           </div>
           <div class="form-group"><label>تفاصيل الطلب</label><textarea name="message" placeholder="حدثنا عن مشروعك، نوع المشروع، الميزانية التقريبية، الموعد المطلوب..."></textarea></div>
+          <div class="gh-form-security">
+            <div class="gh-honeypot" aria-hidden="true">
+              <label>لا تملأ</label>
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="gh-turnstile"></div>
+          </div>
+
           <div class="form-feedback" aria-live="polite"></div>
           <button type="submit" class="form-submit">إرسال الطلب <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">send</span></button>
         </form>
@@ -827,6 +834,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-<script defer src="assets/quote-form.js?v=2"></script>
+<script defer src="assets/quote-form-config.js"></script>
+<script defer src="assets/quote-form.js?v=3"></script>
 </body>
 </html>

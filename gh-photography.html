@@ -749,8 +749,7 @@ img { max-width: 100%; display: block; }
       <div class="form-card">
         <h3>طلب جلسة تصوير</h3>
         <form class="gh-quote-form" action="https://formsubmit.co/dot4life.team@gmail.com" method="POST">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="طلب جلسة تصوير - gh-photography">
+<input type="hidden" name="_subject" value="طلب جلسة تصوير - gh-photography">
           <input type="hidden" name="_next" value="https://3dgraphicshouse.com/gh-photography.html?sent=1#booking">
           <div class="form-group">
             <label>الاسم الكامل</label>
@@ -792,6 +791,14 @@ img { max-width: 100%; display: block; }
             <label>تفاصيل الطلب</label>
             <textarea name="message" placeholder="حدثنا عن مشروعك، نوع التصوير، الموقع، الميزانية التقريبية..."></textarea>
           </div>
+          <div class="gh-form-security">
+            <div class="gh-honeypot" aria-hidden="true">
+              <label>لا تملأ</label>
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="gh-turnstile"></div>
+          </div>
+
           <div class="form-feedback" aria-live="polite"></div>
           <button type="submit" class="form-submit">إرسال الطلب <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">send</span></button>
         </form>
@@ -1053,6 +1060,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-<script defer src="assets/quote-form.js?v=2"></script>
+<script defer src="assets/quote-form-config.js"></script>
+<script defer src="assets/quote-form.js?v=3"></script>
 </body>
 </html>

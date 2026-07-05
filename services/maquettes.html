@@ -1688,8 +1688,7 @@ body { padding-top: 0 !important; }
       <div class="form-card">
         <h3>طلب عرض سعر مجسم ذكي</h3>
         <form class="gh-quote-form" action="https://formsubmit.co/dot4life.team@gmail.com" method="POST">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="طلب عرض سعر مجسم ذكي - gh-maquettes">
+<input type="hidden" name="_subject" value="طلب عرض سعر مجسم ذكي - gh-maquettes">
           <input type="hidden" name="_next" value="https://3dgraphicshouse.com/gh-maquettes.html?sent=1#booking">
           <div class="form-group">
             <label>الاسم الكامل</label>
@@ -1734,6 +1733,14 @@ body { padding-top: 0 !important; }
             <label>تفاصيل الطلب</label>
             <textarea name="message" placeholder="حدثنا عن مشروعك، المساحة التقريبية، الميزانية، الموعد المطلوب..."></textarea>
           </div>
+          <div class="gh-form-security">
+            <div class="gh-honeypot" aria-hidden="true">
+              <label>لا تملأ</label>
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="gh-turnstile"></div>
+          </div>
+
           <div class="form-feedback" aria-live="polite"></div>
           <button type="submit" class="form-submit">إرسال الطلب <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">send</span></button>
         </form>
@@ -2015,6 +2022,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-<script defer src="../assets/quote-form.js?v=2"></script>
+<script defer src="../assets/quote-form-config.js"></script>
+<script defer src="../assets/quote-form.js?v=3"></script>
 </body>
 </html>
