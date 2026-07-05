@@ -748,7 +748,7 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="form-card">
         <h3>طلب جلسة تصوير</h3>
-        <form action="https://formsubmit.co/dot4life.team@gmail.com" method="POST" target="_blank">
+        <form class="gh-quote-form" action="https://formsubmit.co/ajax/dot4life.team@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="طلب جلسة تصوير - gh-photography">
           <input type="hidden" name="_next" value="https://3dgraphicshouse.com/gh-photography.html#booking">
           <div class="form-group">
@@ -761,7 +761,7 @@ img { max-width: 100%; display: block; }
           </div>
           <div class="form-group">
             <label>البريد الإلكتروني</label>
-            <input type="email" name="email" placeholder="example@domain.com">
+            <input type="email" name="email" required placeholder="example@domain.com">
           </div>
           <div class="form-group">
             <label>الخدمة المطلوبة</label>
@@ -791,6 +791,7 @@ img { max-width: 100%; display: block; }
             <label>تفاصيل الطلب</label>
             <textarea name="message" placeholder="حدثنا عن مشروعك، نوع التصوير، الموقع، الميزانية التقريبية..."></textarea>
           </div>
+          <div class="form-feedback" aria-live="polite"></div>
           <button type="submit" class="form-submit">إرسال الطلب <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">send</span></button>
         </form>
       </div>
@@ -1051,5 +1052,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+<script defer src="assets/quote-form.js"></script>
 </body>
 </html>

@@ -605,13 +605,13 @@ body { padding-top: 0 !important; }
       </div>
       <div class="form-card">
         <h3>طلب عرض سعر</h3>
-        <form action="https://formsubmit.co/dot4life.team@gmail.com" method="POST" target="_blank">
+        <form class="gh-quote-form" action="https://formsubmit.co/ajax/dot4life.team@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="طلب عرض سعر - gh-visualization">
           <input type="hidden" name="_next" value="https://3dgraphicshouse.com/gh-visualization.html#booking">
           <div class="form-group"><label>الاسم الكامل</label><input type="text" name="name" required placeholder="أدخل اسمك"></div>
           <div class="form-group"><label>الجهة / الشركة</label><input type="text" name="company" placeholder="اسم الشركة"></div>
           <div class="form-group"><label>رقم الجوال</label><input type="tel" name="phone" required placeholder="05xxxxxxxx"></div>
-          <div class="form-group"><label>البريد الإلكتروني</label><input type="email" name="email" placeholder="example@domain.com"></div>
+          <div class="form-group"><label>البريد الإلكتروني</label><input type="email" name="email" required placeholder="example@domain.com"></div>
           <div class="form-group"><label>الخدمة المطلوبة</label>
             <select name="service" required>
               <option value="">اختر الخدمة</option>
@@ -634,6 +634,7 @@ body { padding-top: 0 !important; }
             </select>
           </div>
           <div class="form-group"><label>تفاصيل الطلب</label><textarea name="message" placeholder="حدثنا عن مشروعك، نوع المشروع، الميزانية التقريبية، الموعد المطلوب..."></textarea></div>
+          <div class="form-feedback" aria-live="polite"></div>
           <button type="submit" class="form-submit">إرسال الطلب <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">send</span></button>
         </form>
       </div>
@@ -797,5 +798,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+<script defer src="../assets/quote-form.js"></script>
 </body>
 </html>
