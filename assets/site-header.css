@@ -8,7 +8,7 @@
 }
 
 body {
-  padding-top: 96px;
+  padding-top: 84px;
 }
 body.nav-open {
   overflow: hidden;
@@ -33,23 +33,50 @@ body.nav-open {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 12px 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%);
+  padding: 8px 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.08) 100%);
   transition: background 0.35s ease, padding 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 .header.scrolled {
   background: var(--header-bg);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
-  padding: 6px 0;
+  padding: 5px 0;
   border-bottom: 1px solid var(--header-border);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+@media (min-width: 901px) {
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo {
+    grid-column: 1;
+    justify-self: start;
+    margin-inline-end: 0 !important;
+  }
+  [dir="rtl"] .logo { justify-self: end; }
+  .nav {
+    grid-column: 2;
+    flex: unset;
+    justify-self: center;
+  }
+  .nav-actions {
+    grid-column: 3;
+    justify-self: end;
+  }
+  [dir="rtl"] .nav-actions { justify-self: start; }
+}
+
+@media (max-width: 900px) {
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 }
 
 /* ----- Logo ----- */
@@ -63,14 +90,15 @@ body.nav-open {
 [dir="ltr"] .logo { margin-inline-end: auto; }
 
 .logo-img {
-  height: 76px;
+  height: 62px;
   width: auto;
   image-rendering: -webkit-optimize-contrast;
   transition: height 0.35s ease, opacity 0.3s ease;
 }
-.header.scrolled .logo-img { height: 62px; }
+.header .logo-img { height: 62px !important; }
+.header.scrolled .logo-img { height: 52px !important; }
 @media (max-width: 768px) {
-  .logo-img { height: 64px !important; }
+  .header .logo-img { height: 56px !important; }
 }
 
 /* ----- Primary nav ----- */
@@ -79,9 +107,10 @@ body.nav-open {
   flex: 1;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: nowrap;
 }
+html[dir="rtl"] .nav { gap: 14px; }
 
 .nav-link,
 button.nav-link {
@@ -108,10 +137,11 @@ html[dir="ltr"] .nav-link {
   color: rgba(255, 255, 255, 0.82);
 }
 html[dir="rtl"] .nav-link {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.82);
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.88);
+  padding: 8px 10px;
 }
 
 .nav-link:hover,
@@ -197,8 +227,9 @@ html[dir="rtl"] .nav-link {
 }
 html[dir="rtl"] .nav-cta {
   text-transform: none;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   font-size: 13px !important;
+  padding: 9px 18px !important;
 }
 .nav-cta:hover {
   transform: translateY(-1px);
