@@ -272,13 +272,13 @@ ${EXTRA}
         <h3>لنصنع معاً محتواك البصري</h3>
         <p>سواء كنت تريد جلسة تصوير لمنتجاتك، تغطية فعالية، أو فيديو ترويجي — فريق الإنتاج جاهز لخدمتك.</p>
         <div class="contact-info-item"><span class="material-symbols-outlined">phone_in_talk</span> +966 50 278 6513</div>
-        <div class="contact-info-item"><span class="material-symbols-outlined">mail</span> info@3dgraphicshouse.com</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">mail</span> dot4life.team@gmail.com</div>
         <div class="contact-info-item"><span class="material-symbols-outlined">location_on</span> جدة، السعودية — مكاتبنا في 4 دول</div>
         <div class="contact-info-item"><span class="material-symbols-outlined">schedule</span> نرد خلال 24 ساعة عمل</div>
       </div>
       <div class="form-card">
         <h3>طلب جلسة تصوير / إنتاج</h3>
-        <form action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST" target="_blank">
+        <form action="https://formsubmit.co/dot4life.team@gmail.com" method="POST" target="_blank">
           <input type="hidden" name="_subject" value="طلب إنتاج إعلامي - services/production">
           <input type="hidden" name="_next" value="https://3dgraphicshouse.com/services/production.html#booking">
           <div class="form-group"><label>الاسم الكامل</label><input type="text" name="name" required placeholder="أدخل اسمك"></div>
