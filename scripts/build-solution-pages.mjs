@@ -41,6 +41,7 @@ function head({ title, desc, ogTitle, css, dir, lang }) {
 <link rel="stylesheet" href="../assets/${css}.css">
 <link rel="stylesheet" href="../assets/solution-before-after.css">
 <script defer src="../assets/site-header.js?v=7"></script>
+<script defer src="../assets/lang-switch.js?v=1"></script>
 </head>
 <body class="${BODY_CLASSES[css] || 'gl-page'}" style="margin:0">
 `;

@@ -160,6 +160,15 @@ function syncFile(rel) {
     html = html.replace(/<footer dir="(?:ltr|rtl)"[\s\S]*?<\/footer>/, footer);
   }
 
+  const prefix = depth > 0 ? '../'.repeat(depth) + 'assets/' : 'assets/';
+  const langTag = `<script defer src="${prefix}lang-switch.js?v=1"></script>`;
+  if (html.includes('site-header.js') && !html.includes('lang-switch.js')) {
+    html = html.replace(
+      /(<script defer src="[^"]*site-header\.js[^"]*"><\/script>)/,
+      `$1\n${langTag}`
+    );
+  }
+
   fs.writeFileSync(full, html, 'utf8');
   return rel;
 }

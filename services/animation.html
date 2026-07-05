@@ -383,6 +383,7 @@ body { padding-top: 0 !important; }
 
 <link rel="stylesheet" href="../assets/site-header.css?v=7">
 <script defer src="../assets/site-header.js?v=7"></script>
+<script defer src="../assets/lang-switch.js?v=1"></script>
 </head>
 <body>
 
@@ -880,7 +881,7 @@ body { padding-top: 0 !important; }
       <div style="display:flex;gap:20px">
         <a href="../privacy-policy.html" style="font-size:11px;color:rgba(255,255,255,.85);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.75)'">سياسة الخصوصية</a>
         <a href="../faq.html" style="font-size:11px;color:rgba(255,255,255,.85);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.75)'">الأسئلة الشائعة</a>
-        <a href="/index-ar.html" style="font-size:11px;color:rgba(255,255,255,.85);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.75)'">English</a>
+        <a href="#" class="gh-lang-alt" style="font-size:11px;color:rgba(255,255,255,.85);transition:color .3s;text-decoration:none" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,.75)'">English</a>
       </div>
     </div>
   </div>
@@ -959,45 +960,6 @@ document.querySelectorAll('.gallery-video').forEach(function(item){
 });
 </script>
 
-<script>
-// Smart language switcher - preserve current page when switching languages
-document.addEventListener('DOMContentLoaded', function() {
-  var spans = document.querySelectorAll('span[style*="font-size:12px"][style*="letter-spacing"]');
-  spans.forEach(function(span) {
-    var links = span.querySelectorAll('a');
-    if (links.length < 2) return;
-    var currentPath = window.location.pathname;
-    var fileName = currentPath.split('/').pop() || 'index.html';
-    var dirPath = currentPath.substring(0, currentPath.length - fileName.length);
-    
-    // Compute alternate language filename
-    var altFile = fileName;
-    if (fileName === 'index.html') {
-      altFile = 'index-ar.html';
-    } else if (fileName === 'index-ar.html') {
-      altFile = 'index.html';
-    } else if (fileName === 'en.html') {
-      altFile = 'index-ar.html';
-    } else if (fileName.endsWith('-en.html')) {
-      altFile = fileName.replace('-en.html', '.html');
-    } else if (fileName.endsWith('.html') && !fileName.endsWith('-ar.html') && fileName !== 'index.html') {
-      altFile = fileName.replace('.html', '-en.html');
-    }
-    
-    // Update links: first link is current language, second is alternate
-    var isRTL = document.documentElement.getAttribute('dir') === 'rtl';
-    if (isRTL) {
-      // AR page: first link (AR) = # or current, second link (EN) = alternate
-      if (links[0]) links[0].href = '#';
-      if (links[1]) links[1].href = dirPath + altFile;
-    } else {
-      // EN page: first link (AR) = alternate, second link (EN) = #
-      if (links[0]) links[0].href = dirPath + altFile;
-      if (links[1]) links[1].href = '#';
-    }
-  });
-});
-</script>
 <script defer src="../assets/quote-form-config.js"></script>
 <script defer src="../assets/quote-form.js?v=3"></script>
 </body>
