@@ -68,25 +68,8 @@ const AR_HEADER = `<header class="header" id="header">
             </div>
             <div class="mm-main">
               <div class="mm-grid">
-                <div class="mm-col">
-                  <div class="mm-col-header">الإبداع</div>
-                  <a href="services/rendering.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">الإظهار المعماري</span>
-                      <span class="mm-svc-desc">صور ثلاثية الأبعاد سينمائية</span>
-                    </span>
-                  </a>
-                  <a href="services/animation.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">التحريك ثلاثي الأبعاد</span>
-                      <span class="mm-svc-desc">فيديوهات CGI احترافية</span>
-                    </span>
-                  </a>
-                </div>
-                <div class="mm-col">
-                  <div class="mm-col-header">الحلول المعمارية</div>
+                <div class="mm-col mm-col-core">
+                  <div class="mm-col-header">الخدمات الأساسية</div>
                   <a href="services/maquettes.html" class="mm-svc-link">
                     <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">home_work</span></span>
                     <span class="mm-svc-body">
@@ -94,11 +77,28 @@ const AR_HEADER = `<header class="header" id="header">
                       <span class="mm-svc-desc">مجسمات دقيقة للمشاريع</span>
                     </span>
                   </a>
+                  <a href="services/rendering.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">الإظهار المعماري</span>
+                      <span class="mm-svc-desc">صور ثلاثية الأبعاد سينمائية</span>
+                    </span>
+                  </a>
                   <a href="services/interactive.html" class="mm-svc-link">
                     <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span>
                     <span class="mm-svc-body">
                       <span class="mm-svc-text">العروض التفاعلية</span>
                       <span class="mm-svc-desc">تجارب رقمية غامرة</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="mm-col">
+                  <div class="mm-col-header">الإبداع والإنتاج</div>
+                  <a href="services/animation.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">التحريك ثلاثي الأبعاد</span>
+                      <span class="mm-svc-desc">فيديوهات CGI احترافية</span>
                     </span>
                   </a>
                   <a href="services/production.html" class="mm-svc-link">
@@ -192,25 +192,8 @@ const EN_HEADER = `<header class="header" id="header">
             </div>
             <div class="mm-main">
               <div class="mm-grid">
-                <div class="mm-col">
-                  <div class="mm-col-header">Creative</div>
-                  <a href="services/rendering.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Smart Visualization</span>
-                      <span class="mm-svc-desc">Cinematic 3D renders</span>
-                    </span>
-                  </a>
-                  <a href="services/animation.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Cinematic CGI</span>
-                      <span class="mm-svc-desc">Professional CGI films</span>
-                    </span>
-                  </a>
-                </div>
-                <div class="mm-col">
-                  <div class="mm-col-header">Architectural Solutions</div>
+                <div class="mm-col mm-col-core">
+                  <div class="mm-col-header">Core Services</div>
                   <a href="services/maquettes.html" class="mm-svc-link">
                     <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">home_work</span></span>
                     <span class="mm-svc-body">
@@ -218,11 +201,28 @@ const EN_HEADER = `<header class="header" id="header">
                       <span class="mm-svc-desc">Precision project models</span>
                     </span>
                   </a>
+                  <a href="services/rendering.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">Smart Visualization</span>
+                      <span class="mm-svc-desc">Cinematic 3D renders</span>
+                    </span>
+                  </a>
                   <a href="services/interactive.html" class="mm-svc-link">
                     <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span>
                     <span class="mm-svc-body">
                       <span class="mm-svc-text">Interactive Experiences</span>
                       <span class="mm-svc-desc">Immersive digital showcases</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="mm-col">
+                  <div class="mm-col-header">Creative & Production</div>
+                  <a href="services/animation.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">Cinematic CGI</span>
+                      <span class="mm-svc-desc">Professional CGI films</span>
                     </span>
                   </a>
                   <a href="services/production.html" class="mm-svc-link">
