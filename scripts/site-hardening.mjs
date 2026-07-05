@@ -177,6 +177,19 @@ function replaceTailwindCdn(html, prefix) {
   return html;
 }
 
+function secureFormSubmits(html) {
+  html = html.replace(/var W3F_KEY = '[^']+';[^\n]*\n/g, '');
+  html = html.replace(/access_key: W3F_KEY,\s*/g, '');
+  html = html.replace(
+    /fetch\(['"]https:\/\/api\.web3forms\.com\/submit['"]/g,
+    "fetch((window.GH_FORMS&&window.GH_FORMS.formEndpoint)||'https://3dgraphicshouse.com/api/form'"
+  );
+  html = html.replace(/access_key:\(window\.GH_FORMS&&window\.GH_FORMS\.web3formsAccessKey\)\|\|['"]{2},?\s*/g, '');
+  html = html.replace(/access_key:\(window\.GH_FORMS&&window\.GH_FORMS\.web3formsAccessKey\)\|\|""?,?\s*/g, '');
+  html = html.replace(/access_key:'cd3e4509-7942-4ad3-a888-2af2910f5f6d',?\s*/g, '');
+  return html;
+}
+
 function injectPerformanceScript(html, prefix) {
   const tag = `<script defer src="${prefix}assets/gh-performance.js?v=1"></script>`;
   if (html.includes('gh-performance.js')) return html;
@@ -203,6 +216,7 @@ function patchHtml(html, rel) {
   html = replaceTailwindCdn(html, prefix);
   html = injectJsonLd(html, rel);
   html = injectPerformanceScript(html, prefix);
+  html = secureFormSubmits(html);
 
   if (rel === 'index-ar.html' && !html.includes('<meta name="description"')) {
     html = html.replace(
@@ -213,8 +227,6 @@ function patchHtml(html, rel) {
 
   html = html.replace(/preload="auto"/g, 'preload="metadata"');
 
-  html = html.replace(/access_key:'cd3e4509-7942-4ad3-a888-2af2910f5f6d'/g, "access_key:(window.GH_FORMS&&window.GH_FORMS.web3formsAccessKey)||''");
-  html = html.replace(/access_key:"cd3e4509-7942-4ad3-a888-2af2910f5f6d"/g, 'access_key:(window.GH_FORMS&&window.GH_FORMS.web3formsAccessKey)||""');
   html = html.replace(/dot4life\.team@gmail\.com/g, 'info@3dgraphicshouse.com');
 
   if (html.includes('web3forms.com') && !html.includes('gh-forms-config.js')) {

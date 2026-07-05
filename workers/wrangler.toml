@@ -1,0 +1,8 @@
+name = "gh-form-proxy"
+main = "gh-form-proxy.js"
+compatibility_date = "2024-01-01"
+
+routes = [
+  { pattern = "3dgraphicshouse.com/api/form", zone_name = "3dgraphicshouse.com" },
+  { pattern = "www.3dgraphicshouse.com/api/form", zone_name = "3dgraphicshouse.com" },
+]
