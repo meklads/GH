@@ -267,6 +267,7 @@ html[dir="rtl"] .nav-item-drop .nav-dropdown{left:auto;right:0}
 <script defer src="assets/gh-performance.js?v=1"></script>
 <script defer src="assets/lang-switch.js?v=1"></script>
 <link rel="stylesheet" href="assets/gh-site-enhancements.css">
+<link rel="stylesheet" href="assets/gh-float-widgets.css?v=1">
 </head>
 <body>
 
@@ -748,35 +749,7 @@ window.addEventListener("scroll",function(){var h=document.getElementById("heade
 (function(){var els=document.querySelectorAll(".reveal");if(els.length){var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");ro.unobserve(e.target);}});},{threshold:0.1});els.forEach(function(el){ro.observe(el);});}})();
 </script>
 
-<script>function toggleMenu(){var n=document.getElementById("nav");n.classList.toggle("open")}</script><div id="ghPopup" style="display:none;position:fixed;inset:0;z-index:99000;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px" onclick="if(event.target===this)this.classList.remove('open')" style="display:none;position:fixed;inset:0;z-index:99000;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px">
-  <div style="background:#fff;width:100%;max-width:480px;padding:40px 36px 32px;position:relative;direction:rtl">
-    <button onclick="document.getElementById('ghPopup').classList.remove('open')" style="position:absolute;top:16px;left:16px;background:none;border:none;font-size:22px;cursor:pointer;color:#999">✕</button>
-    <div style="font-size:20px;font-weight:800;color:#1A1A1A;margin-bottom:6px;text-align:center;font-family:'Tajawal',sans-serif">سجّل اهتمامك بمشروعك</div>
-    <div style="font-size:13px;color:#888;text-align:center;margin-bottom:28px;font-family:'Tajawal',sans-serif">أخبرنا عن مشروعك وسنتواصل معك خلال 24 ساعة.</div>
-    <form onsubmit="ghSubmit(event)">
-      <input style="width:100%;padding:12px 16px;border:1px solid rgba(26,26,26,.12);background:#FAFAF8;font-size:14px;margin-bottom:12px;box-sizing:border-box;font-family:'Tajawal',sans-serif;text-align:right" type="text" id="ghName" placeholder="الاسم الكامل *" required>
-      <input style="width:100%;padding:12px 16px;border:1px solid rgba(26,26,26,.12);background:#FAFAF8;font-size:14px;margin-bottom:12px;box-sizing:border-box;font-family:'Tajawal',sans-serif;text-align:right" type="text" id="ghCompany" placeholder="الشركة / المطور">
-      <select style="width:100%;padding:12px 16px;border:1px solid rgba(26,26,26,.12);background:#FAFAF8;font-size:14px;margin-bottom:12px;box-sizing:border-box;font-family:'Tajawal',sans-serif;color:#555;text-align:right" id="ghProject" required>
-        <option value="" disabled selected>نوع المشروع *</option>
-        <option>مشروع سكني</option>
-        <option>مشروع تجاري</option>
-        <option>فندق / ضيافة</option>
-        <option>مشروع متعدد الاستخدامات</option>
-        <option>حكومي / عام</option>
-        <option>أخرى</option>
-      </select>
-      <input style="width:100%;padding:12px 16px;border:1px solid rgba(26,26,26,.12);background:#FAFAF8;font-size:14px;margin-bottom:12px;box-sizing:border-box;font-family:'Tajawal',sans-serif;text-align:right" type="tel" id="ghPhone" placeholder="الجوال / واتساب *" required>
-      <textarea style="width:100%;padding:12px 16px;border:1px solid rgba(26,26,26,.12);background:#FAFAF8;font-size:14px;margin-bottom:12px;box-sizing:border-box;font-family:'Tajawal',sans-serif;resize:none;text-align:right" id="ghBrief" rows="3" placeholder="نبذة عن مشروعك..."></textarea>
-      <button type="submit" style="width:100%;padding:15px;background:#C9A84C;color:#0A0A0A;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'Tajawal',sans-serif;border-radius:50px">إرسال الطلب ←</button>
-    </form>
-    <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
-      <div style="font-size:36px;margin-bottom:12px">✓</div>
-      <div style="font-size:17px;font-weight:700;color:#1A1A1A;margin-bottom:8px;font-family:'Tajawal',sans-serif">شكراً لك!</div>
-      <div style="font-size:14px;color:#888;font-family:'Tajawal',sans-serif">سنتواصل معك قريباً.</div>
-    </div>
-  </div>
-</div>
-<script>
+<script>function toggleMenu(){var n=document.getElementById("nav");n.classList.toggle("open")}</script><script>
 function ghSubmit(e){
   e.preventDefault();
   var btn=e.target.querySelector('button[type="submit"]');
@@ -808,6 +781,54 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 });
 </script>
+
+<script defer src="assets/gh-float-widgets.js?v=1"></script>
+<!-- GH FLOAT START -->
+<div class="gh-float" data-gh-float="1">
+  <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="واتساب">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  </a>
+  <button type="button" class="gh-float-btn gh-float-mail" data-gh-popup-open title="سجّل اهتمامك">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+  </button>
+  <button type="button" class="gh-float-btn gh-float-brand" data-gh-brand-action data-contact-href="contact-us.html" title="تواصل معنا">
+    <span class="gh-float-brand-inner">
+      <span class="gh-motif-ring"></span>
+      <span class="gh-motif-ring" style="animation-delay:1.2s"></span>
+      <span class="gh-motif-ring" style="animation-delay:2.4s"></span>
+      <img src="assets/chatbot-motif.png" alt="" width="52" height="52" style="width:52px;height:52px;object-fit:contain;position:relative;z-index:2">
+    </span>
+  </button>
+</div>
+<div id="ghPopup">
+  <div class="gh-popup-box">
+    <button type="button" class="gh-popup-close" data-gh-popup-close aria-label="إغلاق">✕</button>
+    <div class="gh-popup-title">سجّل اهتمامك بمشروعك</div>
+    <div class="gh-popup-sub">أخبرنا عن مشروعك وسنتواصل معك خلال 24 ساعة.</div>
+    <form onsubmit="ghSubmit(event)">
+      <input class="gh-field" type="text" id="ghName" placeholder="الاسم الكامل *" required>
+      <input class="gh-field" type="text" id="ghCompany" placeholder="الشركة / المطوّر العقاري">
+      <select class="gh-field" id="ghProject" required>
+        <option value="" disabled selected>نوع المشروع *</option>
+        <option>مشروع سكني</option>
+        <option>مشروع تجاري</option>
+        <option>فندقي / ضيافة</option>
+        <option>متعدد الاستخدامات</option>
+        <option>حكومي / خدمي</option>
+        <option>أخرى</option>
+      </select>
+      <input class="gh-field" type="tel" id="ghPhone" placeholder="الجوال / واتساب *" required dir="ltr">
+      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="نبذة مختصرة عن مشروعك..." style="resize:none"></textarea>
+      <button type="submit" class="gh-submit">إرسال الطلب ←</button>
+    </form>
+    <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
+      <div style="font-size:36px;margin-bottom:12px">✓</div>
+      <div style="font-size:17px;font-weight:700;color:#1A1A1A;margin-bottom:8px">شكراً لك!</div>
+      <div style="font-size:14px;color:#888">سنتواصل معك قريباً.</div>
+    </div>
+  </div>
+</div>
+<!-- GH FLOAT END -->
 
 </body>
 </html>

@@ -135,14 +135,14 @@ body.gh-home #hero .hero-slide-counter {
   pointer-events: none;
 }
 
+html[dir="rtl"] body.gh-home #hero .hero-slide-counter {
+  left: auto !important;
+  right: 24px !important;
+}
+
 html[dir="ltr"] body.gh-home #hero .hero-slide-counter {
   right: 24px !important;
   left: auto !important;
-}
-
-html[dir="rtl"] body.gh-home #hero .hero-slide-counter {
-  left: 24px !important;
-  right: auto !important;
 }
 
 body.gh-home #hero .hero-contact-strip {
