@@ -20,16 +20,6 @@
     :root { --gold:#C9A84C; --gold-light:#D9B860; --dark:#0A0A0A; --footer-bg:#071810; }
     body { font-family:'Inter','Tajawal',sans-serif; background:#FAFAF8; color:#1A1A1A; -webkit-font-smoothing:antialiased; }
 
-    /* HEADER */
-    .header { position:fixed; top:0; left:0; right:0; z-index:9000; background:rgba(10,10,10,.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(255,255,255,.06); }
-    .header-inner { max-width:1320px; margin:0 auto; padding:0 40px; display:flex; align-items:center; height:72px; }
-    .logo img { height:64px; width:auto; }
-    .nav { display:flex; align-items:center; gap:24px; ;flex:1}
-    .nav a { color:rgba(255,255,255,.75); text-decoration:none; font-size:13px; font-weight:500; transition:color .3s; }
-    .nav a:hover { color:var(--gold); }
-    .nav .nav-cta { padding:10px 24px; background:var(--gold); color:#0A0A0A; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; border-radius:50px; }
-    .nav .nav-cta:hover { background:var(--gold-light); transform:scale(1.04); color:#0A0A0A; }
-
     /* HERO */
     .ch { background:var(--dark); padding:140px 0 80px; position:relative; overflow:hidden; }
     .ch::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; }
@@ -100,37 +90,6 @@
     footer a { color:rgba(255,255,255,.5); text-decoration:none; margin:0 10px; font-size:12px; transition:color .3s; }
     footer a:hover { color:var(--gold); }
     @keyframes spin { to { transform:rotate(360deg); } }
-  
-/* nav dropdown fix */
-.nav-item-drop{position:relative;display:inline-block}
-.nav-item-drop .nav-dropdown{position:absolute;top:calc(100% + 8px);opacity:0;visibility:hidden;transform:translateY(6px);transition:all .3s ease;z-index:200;min-width:220px;background:#1A1A1A;border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 50px rgba(0,0,0,.5);padding:8px 0}
-.nav-item-drop:hover .nav-dropdown{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
-
-/* ===== STANDARD HEADER ===== */
-.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:10px 0;background:rgba(7,24,16,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.15);transition:all .4s ease}
-.header-inner{max-width:1280px;margin:0 auto;padding:0 48px;display:flex;align-items:center;}
-.logo{display:flex;align-items:center}
-.nav{display:flex;align-items:center;gap:28px;flex:1}
-.nav a{color:rgba(255,255,255,.85);text-decoration:none}
-.nav-link{font-size:15px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,.85);text-decoration:none;transition:color .3s;position:relative;cursor:pointer}
-.nav-link:hover{color:#C9A84C!important}
-.nav-item-drop{position:relative;display:inline-block}
-.nav-item-drop .nav-dropdown{position:absolute;top:calc(100% + 10px);left:0;background:#111;border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 50px rgba(0,0,0,.7);min-width:240px;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .3s ease;z-index:500}
-html[dir="rtl"] .nav-item-drop .nav-dropdown{left:auto;right:0}
-.nav-item-drop:hover .nav-dropdown{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
-.nav-item-drop .nav-dropdown a{display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;color:rgba(255,255,255,.65);text-decoration:none;transition:all .2s;font-weight:400}
-.nav-item-drop .nav-dropdown a:hover{background:rgba(255,255,255,.04);color:#C9A84C}
-
-
-.menu-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:0}
-.menu-toggle span{font-size:28px}
-@media(max-width:960px){
-  .nav{display:none;flex:1}.menu-toggle{display:flex;z-index:1001}
-  .nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.97);backdrop-filter:blur(30px);justify-content:center;align-items:center;gap:28px;z-index:1000}
-  .nav.open a,.nav.open .nav-link{font-size:20px}
-  .nav.open .nav-item-drop .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;background:transparent;border:none;box-shadow:none;padding:8px 0 0}
-}
-@media(max-width:768px){.header-inner{padding:0 20px}}
 
 /* EN heading font، Playfair Display (matches homepage) */
 html[dir="ltr"] h1,
@@ -156,10 +115,6 @@ html[dir="ltr"] .section-title {
 .gh-float-wa{background:#25D366}
 .gh-float-mail{background:#C9A84C}
 
-}
-
-}
-
 /* Mega menu: assets/site-header.css */
 </style>
 <!-- Google Analytics -->
@@ -171,14 +126,16 @@ html[dir="ltr"] .section-title {
   gtag('config', 'G-MKD9QVYNWF');
 </script>
 
-<link rel="stylesheet" href="assets/site-header.css?v=7">
+<link rel="stylesheet" href="assets/site-header.css?v=10">
 <script defer src="assets/site-header.js?v=7"></script>
 <script defer src="assets/gh-performance.js?v=1"></script>
 <script defer src="assets/lang-switch.js?v=1"></script>
-<link rel="stylesheet" href="assets/gh-site-enhancements.css">
+<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=5">
+<script src="assets/quote-form-config.js"></script>
+<script defer src="assets/contact-form.js?v=1"></script>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 </head>
-<body>
+<body class="gh-contact">
 
 <header class="header" id="header">
   <div class="container header-inner">
@@ -330,7 +287,7 @@ html[dir="ltr"] .section-title {
       <li>Your constraints and challenges</li>
       <li>Your procurement steps and timeline</li>
     </ul>
-    <form id="contactForm" onsubmit="submitForm(event)" novalidate>
+    <form id="contactForm" novalidate>
       <div class="fr">
         <div class="fg"><label>First name *</label><input type="text" name="first_name" placeholder="Ahmed" required></div>
         <div class="fg"><label>Last name</label><input type="text" name="last_name" placeholder="Al-Rashidi"></div>
@@ -534,67 +491,6 @@ html[dir="ltr"] .section-title {
   </div>
 </footer>
 
-<script>
-
-function submitForm(e) {
-  e.preventDefault();
-  var form = document.getElementById('contactForm');
-  var btn  = document.getElementById('submitBtn');
-
-  // Basic validation
-  var email = form.querySelector('[name="email"]').value.trim();
-  var first = form.querySelector('[name="first_name"]').value.trim();
-  if (!email || !first) {
-    alert('Please fill in the required fields (First name & Email).');
-    return;
-  }
-
-  // Loading state
-  btn.disabled = true;
-  btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px;animation:spin 1s linear infinite">progress_activity</span> Sending…';
-
-  // Collect form data
-  var data = {
-    subject: 'New Inquiry، Graphics House Website',
-    from_name: 'Graphics House Website',
-    name: first + ' ' + form.querySelector('[name="last_name"]').value.trim(),
-    email: email,
-    phone: form.querySelector('[name="phone"]').value.trim(),
-    company: form.querySelector('[name="company"]').value.trim(),
-    job_title: form.querySelector('[name="job_title"]').value.trim(),
-    service: form.querySelector('[name="service"]').value,
-    interest: form.querySelector('[name="interest"]').value,
-    message: form.querySelector('[name="message"]').value.trim(),
-    botcheck: ''
-  };
-
-  fetch((window.GH_FORMS&&window.GH_FORMS.formEndpoint)||'https://3dgraphicshouse.com/api/form', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify(data)
-  })
-  .then(function(r){ return r.json(); })
-  .then(function(res){
-    if (res.success) {
-      btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px">check_circle</span> Sent! We\'ll be in touch within 24h.';
-      btn.style.background = '#2D7D46';
-      btn.style.color = '#fff';
-      form.reset();
-    } else {
-      btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px">error</span> Error، please try again';
-      btn.style.background = '#C0392B';
-      btn.style.color = '#fff';
-      btn.disabled = false;
-    }
-  })
-  .catch(function(){
-    btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px">error</span> Connection error، please email us directly';
-    btn.style.background = '#C0392B';
-    btn.style.color = '#fff';
-    btn.disabled = false;
-  });
-}
-</script>
 <div id="ghPopup" style="display:none;position:fixed;inset:0;z-index:99000;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px" onclick="if(event.target===this)this.classList.remove('open')" style="display:none;position:fixed;inset:0;z-index:99000;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px">
   <div style="background:#fff;width:100%;max-width:480px;padding:40px 36px 32px;position:relative">
     <button onclick="document.getElementById('ghPopup').classList.remove('open')" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:#999">✕</button>

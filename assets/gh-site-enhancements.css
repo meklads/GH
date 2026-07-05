@@ -24,8 +24,16 @@
   }
 }
 
-img[loading="lazy"] {
-  content-visibility: auto;
+/* ===== Contact page (light body) — solid dark header ===== */
+body.gh-contact .header,
+body.gh-contact .header.scrolled {
+  background: rgba(8, 12, 10, 0.97) !important;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.14) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
+}
+
+body.gh-contact .ch {
+  margin-top: 0;
 }
 
 /* ===== Homepage hero stack (AR + EN) ===== */
