@@ -48,53 +48,72 @@ body.nav-open {
 
 @media (min-width: 901px) {
   .header-inner {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(130px, 190px) minmax(0, 1fr) auto;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
+    gap: 12px 20px;
     min-height: 72px;
-    gap: 20px;
-  }
-  html[dir="ltr"] .header-inner {
-    padding-inline-end: 330px;
-  }
-  html[dir="rtl"] .header-inner {
-    padding-inline-start: 330px;
+    position: relative;
   }
   .logo {
-    flex: 0 0 auto;
+    grid-column: 1;
+    justify-self: start;
     z-index: 4;
     margin-inline-end: 0 !important;
     max-width: 180px;
   }
-  .nav-actions {
-    flex: 0 0 auto;
-    z-index: 4;
-    margin-inline-start: auto;
+  html[dir="rtl"] .logo {
+    justify-self: end;
   }
   .nav {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    grid-column: 2;
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
     flex: none;
-    width: max-content;
-    max-width: min(74vw, 920px);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     z-index: 3;
     justify-content: center;
-    gap: 12px;
+    justify-self: center;
+    gap: 8px;
   }
-  html[dir="rtl"] .nav { gap: 10px; }
-  html[dir="ltr"] .nav {
-    max-width: min(54vw, 740px);
-    gap: 5px;
-  }
+  html[dir="rtl"] .nav { gap: 8px; }
+  html[dir="ltr"] .nav { gap: 4px; }
   html[dir="ltr"] .nav-link {
-    font-size: 11.5px;
-    padding: 8px 7px;
+    font-size: 11px;
+    padding: 8px 6px;
     letter-spacing: 0.03em;
   }
+  .nav-actions {
+    grid-column: 3;
+    justify-self: end;
+    flex: 0 0 auto;
+    z-index: 4;
+    margin-inline-start: 0;
+    gap: 10px;
+  }
+  html[dir="rtl"] .nav-actions {
+    justify-self: start;
+  }
   .menu-toggle { display: none !important; }
+}
+
+@media (min-width: 901px) and (max-width: 1280px) {
+  html[dir="ltr"] .nav-link {
+    font-size: 10.5px;
+    padding: 8px 5px;
+  }
+  html[dir="ltr"] .nav-cta {
+    padding: 8px 14px !important;
+    font-size: 10px !important;
+  }
+  .lang-switch {
+    font-size: 11px;
+    gap: 6px;
+  }
 }
 
 @media (max-width: 900px) {

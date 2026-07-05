@@ -51,7 +51,7 @@ body {
   background:url('assets/motif-circle.png') center/contain no-repeat;
   opacity:0.04;pointer-events:none;z-index:0;
 }
-.motif-bg > :not(.hero-video-bg):not(.hero-vignette):not(.hero-glow-accent):not(.hero-glow):not(.hero-bottom-glow):not(.hero-bottom-panel) {
+.motif-bg > :not(.hero-video-bg):not(.hero-vignette):not(.hero-glow-accent):not(.hero-glow):not(.hero-bottom-glow):not(.hero-bottom-panel):not(.hero-prog-track):not(.hero-slide-counter):not(.hero-contact-strip) {
   position:relative;
   z-index:1;
 }
@@ -2338,11 +2338,11 @@ img { max-width: 100%; display: block; }
   gtag('config', 'G-MKD9QVYNWF');
 </script>
 
-<link rel="stylesheet" href="assets/site-header.css?v=9">
+<link rel="stylesheet" href="assets/site-header.css?v=10">
 <script defer src="assets/site-header.js?v=7"></script>
 <script defer src="assets/gh-performance.js?v=1"></script>
 <script defer src="assets/lang-switch.js?v=2"></script>
-<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=3">
+<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=4">
 </head>
 <body class="gh-home">
 
@@ -2501,7 +2501,7 @@ img { max-width: 100%; display: block; }
   <div class="hero-bottom-glow"></div>
 
   <!-- Contact on the left -->
-  <div class="absolute hidden lg:flex items-center z-20" style="left:0;top:50%;transform:translateY(-50%)">
+  <div class="hero-contact-strip absolute hidden lg:flex items-center z-20" style="left:0;top:50%;transform:translateY(-50%)">
     <a href="contact-us.html" style="display:flex;flex-direction:column;align-items:center;gap:27px;padding:42px 20px;text-decoration:none;background:rgba(0,0,0,.6);backdrop-filter:blur(12px);border-right:1px solid rgba(201,168,76,.22);transition:all .3s"
        class="contact-strip">
       <span class="material-symbols-outlined" style="font-size:33px;color:#C9A84C;transition:color .3s">call</span>
@@ -2570,7 +2570,7 @@ img { max-width: 100%; display: block; }
   </div>
 
   <!-- Progress bars -->
-  <div class="absolute bottom-0 left-0 right-0 flex px-0" dir="ltr" style="z-index:12">
+  <div class="hero-prog-track absolute bottom-0 left-0 right-0 flex px-0" dir="ltr">
     <div class="hero-prog hp-active" id="hprog-0"></div>
     <div class="hero-prog" id="hprog-1"></div>
     <div class="hero-prog" id="hprog-2"></div>
@@ -2579,7 +2579,7 @@ img { max-width: 100%; display: block; }
   </div>
 
   <!-- Slide counter -->
-  <div class="absolute bottom-6 left-6 md:left-10 z-20 tabular-nums" dir="ltr"
+  <div class="hero-slide-counter absolute bottom-6 left-6 md:left-10 z-20 tabular-nums" dir="ltr"
        style="font-family:monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.45)">
     <span id="hero-cur">01</span><span style="color:#C9A84C;margin:0 3px">/</span><span>05</span>
   </div>
