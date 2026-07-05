@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Generate solution product pages (EN GrowthLaunch, AR/EN ProjectLaunch)
+ * Generate GH solution product pages (GrowthLaunch, ProjectLaunch, BrandScale)
  */
 import fs from 'fs';
 import path from 'path';
@@ -9,8 +9,19 @@ import { fileURLToPath } from 'url';
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SOLUTIONS = path.join(ROOT, 'solutions');
 
+const OG_IMAGES = {
+  'growth-launch': 'mm-growth',
+  'project-launch': 'mm-project',
+  'brand-scale': 'mm-brand',
+};
+
+const BODY_CLASSES = {
+  'growth-launch': 'gl-page',
+  'project-launch': 'pl-page',
+  'brand-scale': 'bs-page',
+};
+
 function head({ title, desc, ogTitle, css, dir, lang }) {
-  const isEn = lang === 'en';
   return `<!DOCTYPE html>
 <html class="scroll-smooth" dir="${dir}" lang="${lang}">
 <head>
@@ -20,7 +31,7 @@ function head({ title, desc, ogTitle, css, dir, lang }) {
 <meta name="description" content="${desc}"/>
 <meta property="og:title" content="${ogTitle}">
 <meta property="og:description" content="${desc}">
-<meta property="og:image" content="https://3dgraphicshouse.com/assets/${css === 'growth-launch' ? 'mm-growth' : 'mm-project'}.jpg">
+<meta property="og:image" content="https://3dgraphicshouse.com/assets/${OG_IMAGES[css] || 'mm-growth'}.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
@@ -28,10 +39,109 @@ function head({ title, desc, ogTitle, css, dir, lang }) {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="../assets/site-header.css?v=7">
 <link rel="stylesheet" href="../assets/${css}.css">
+<link rel="stylesheet" href="../assets/solution-before-after.css">
 <script defer src="../assets/site-header.js?v=7"></script>
 </head>
-<body class="${css === 'growth-launch' ? 'gl' : 'pl'}-page" style="margin:0">
+<body class="${BODY_CLASSES[css] || 'gl-page'}" style="margin:0">
 `;
+}
+
+function beforeAfterSection(product, lang) {
+  const isEn = lang === 'en';
+  const data = {
+    growth: {
+      name: 'GrowthLaunch™',
+      lead: isEn
+        ? 'Not just tools — a shift in how you capture and convert leads.'
+        : 'ليس أدوات فقط — بل تحول في طريقة استقبال العملاء وتحويلهم.',
+      rows: isEn
+        ? [
+            ['Ads without follow-up', 'Complete lead journey from click to call'],
+            ['Slow manual responses', 'Instant WhatsApp & AI responses'],
+            ['Leads lost between staff', 'Organized CRM pipeline'],
+            ['No conversion visibility', 'Full analytics & tracking'],
+            ['Scattered marketing tools', 'One integrated sales system'],
+          ]
+        : [
+            ['إعلانات بلا متابعة', 'رحلة عميل متكاملة من النقرة إلى الاتصال'],
+            ['ردود يدوية بطيئة', 'رد فوري عبر WhatsApp والذكاء الاصطناعي'],
+            ['عملاء يضيعون بين الموظفين', 'مسار منظم عبر CRM'],
+            ['لا رؤية لمعدلات التحويل', 'تحليلات وتتبع كامل'],
+            ['أدوات تسويق متفرقة', 'نظام مبيعات متكامل واحد'],
+          ],
+    },
+    project: {
+      name: 'ProjectLaunch™',
+      lead: isEn
+        ? 'From fragmented efforts to a unified launch that sells.'
+        : 'من جهود متفرقة إلى إطلاق موحّد يبيع المشروع.',
+      rows: isEn
+        ? [
+            ['Multiple vendors to manage', 'One launch partner — end to end'],
+            ['Concept without marketing assets', 'Sales-ready launch package'],
+            ['Weak visual presentation', 'Cinematic CGI & scale models'],
+            ['No structured launch plan', 'Clear 6-phase launch system'],
+            ['Slow market confidence', 'Accelerated investor & buyer trust'],
+          ]
+        : [
+            ['التعامل مع عدة مورّدين', 'شريك إطلاق واحد — من البداية للنهاية'],
+            ['فكرة بلا مواد تسويقية', 'حزمة إطلاق جاهزة للمبيعات'],
+            ['عرض بصري ضعيف', 'CGI سينمائي ومجسمات'],
+            ['لا خطة إطلاق واضحة', 'نظام إطلاق من 6 مراحل'],
+            ['بطء في ثقة السوق', 'تسريع ثقة المستثمرين والمشترين'],
+          ],
+    },
+    brand: {
+      name: 'BrandScale™',
+      lead: isEn
+        ? 'The shift from looking small to commanding market trust.'
+        : 'التحول من حضور ضعيف إلى ثقة سوقية قوية.',
+      rows: isEn
+        ? [
+            ['Inconsistent identity', 'Unified professional brand identity'],
+            ['Outdated website', 'Modern conversion-focused website'],
+            ['Weak presentations', 'Investor-grade professional decks'],
+            ['Modest digital presence', 'Strong presence reflecting company value'],
+            ['Scattered marketing materials', 'Integrated marketing system'],
+          ]
+        : [
+            ['هوية غير متسقة', 'هوية احترافية موحدة'],
+            ['موقع قديم', 'موقع حديث يركز على التحويل'],
+            ['عروض تقديمية ضعيفة', 'عروض احترافية تقنع المستثمرين'],
+            ['حضور رقمي متواضع', 'حضور قوي يعكس قيمة الشركة'],
+            ['مواد تسويقية متفرقة', 'نظام تسويقي متكامل'],
+          ],
+    },
+  };
+  const d = data[product];
+  const beforeLbl = isEn ? `Before ${d.name}` : `قبل ${d.name}`;
+  const afterLbl = isEn ? `After ${d.name}` : `بعد ${d.name}`;
+  const title = isEn ? 'Before & After' : 'قبل وبعد';
+  const rowsHtml = d.rows
+    .map(
+      ([b, a]) => `<div class="sol-baf-row">
+        <div class="sol-baf-before">${b}</div>
+        <div class="sol-baf-mid"><span class="material-symbols-outlined">arrow_forward</span></div>
+        <div class="sol-baf-after">${a}</div>
+      </div>`
+    )
+    .join('\n');
+  return `<section class="sol-baf">
+    <div class="sol-baf-inner">
+      <div class="sol-baf-head">
+        <div class="sol-baf-eyebrow">${title}</div>
+        <h2 class="sol-baf-title">${isEn ? 'Your situation — transformed' : 'وضعك الحالي — بعد التحول'}</h2>
+        <p class="sol-baf-lead">${d.lead}</p>
+      </div>
+      <div class="sol-baf-table">
+        <div class="sol-baf-cols">
+          <div class="sol-baf-col-head before">${beforeLbl}</div>
+          <div class="sol-baf-col-head after">${afterLbl}</div>
+        </div>
+        ${rowsHtml}
+      </div>
+    </div>
+  </section>`;
 }
 
 function headerPlaceholder(isEn) {
@@ -275,6 +385,8 @@ function growthLaunchEnMain() {
       </div>
     </div>
   </section>
+
+  ${beforeAfterSection('growth', 'en')}
 
   <section class="gl-cta" id="book">
     <div class="gl-container">
@@ -650,6 +762,8 @@ function projectLaunchMain(lang) {
     </div>
   </section>
 
+  ${beforeAfterSection('project', lang)}
+
   <section class="pl-cta">
     <div class="pl-container">
       <div class="pl-cta-box">
@@ -712,4 +826,368 @@ const plEn = head({
 
 fs.writeFileSync(path.join(SOLUTIONS, 'project-launch-en.html'), plEn);
 
-console.log('Generated: growth-launch-en.html, project-launch.html (AR), project-launch-en.html');
+function brandScaleMain(lang) {
+  const isEn = lang === 'en';
+  const contact = isEn ? '../contact-us-en.html' : '../contact-us.html';
+  const portfolio = isEn ? '../portfolio-en.html' : '../portfolio.html';
+  const glLink = isEn ? 'growth-launch-en.html' : 'growth-launch.html';
+  const plLink = isEn ? 'project-launch-en.html' : 'project-launch.html';
+
+  const t = isEn
+    ? {
+        tag: 'Business Growth System',
+        sub: 'BrandScale™ is a complete branding and digital growth system that helps companies build a premium identity, strengthen market positioning, and create a consistent customer experience across every touchpoint.',
+        cta1: 'Book Strategy Session',
+        cta2: 'View Our Work',
+        whyTitle: 'Why BrandScale™?',
+        whyQ1: 'Most companies buy a logo.',
+        whyQ2: 'They don\'t build a brand.',
+        whyQ3: 'We build a complete system.',
+        getTitle: 'What You Get',
+        processTitle: 'How We Work',
+        indTitle: 'Industries',
+        credTitle: 'Why Graphics House?',
+        credLead: 'Beyond numbers — a track record of trust.',
+        workTitle: 'Selected Work',
+        idealTitle: 'Ideal For',
+        faqTitle: 'Frequently Asked Questions',
+        journeyTitle: 'Continue Your Growth Journey',
+        journeyLead: 'After building your brand — how do you start attracting clients?',
+        ctaH: 'Ready to Scale Your Brand?',
+        ctaP: "Let's turn your brand into a strategic asset that supports business growth for years.",
+        eyebrow: '03 · GRAPHICS HOUSE · Business Solutions',
+      }
+    : {
+        tag: 'نظام نمو العلامة التجارية',
+        sub: 'BrandScale™ هو نظام متكامل لبناء العلامة التجارية والنمو الرقمي، يساعد الشركات على تأسيس حضور احترافي، وتعزيز الثقة، وتحقيق نمو مستدام من خلال هوية قوية وتجربة متسقة.',
+        cta1: 'احجز جلسة استراتيجية',
+        cta2: 'شاهد نماذج الأعمال',
+        whyTitle: 'لماذا BrandScale™؟',
+        whyQ1: 'معظم الشركات تشتري شعارًا.',
+        whyQ2: 'لكنها لا تبني علامة.',
+        whyQ3: 'ونحن نبني نظامًا كاملاً.',
+        getTitle: 'ماذا ستحصل؟',
+        processTitle: 'كيف نعمل؟',
+        indTitle: 'الصناعات',
+        credTitle: 'لماذا نحن؟',
+        credLead: 'بدلاً من أرقام فقط... قصة نجاح متواصلة.',
+        workTitle: 'أعمال مختارة',
+        idealTitle: 'مناسب لـ',
+        faqTitle: 'الأسئلة الشائعة',
+        journeyTitle: 'واصل رحلة النمو',
+        journeyLead: 'بعد بناء العلامة... كيف تبدأ في جذب العملاء؟',
+        ctaH: 'هل أنت مستعد لتوسيع علامتك؟',
+        ctaP: 'لنحوّل علامتك التجارية إلى أصل استراتيجي يدعم نمو أعمالك لسنوات.',
+        eyebrow: '03 · GRAPHICS HOUSE · حلول الأعمال',
+      };
+
+  const whyCards = isEn
+    ? [
+        ['🎯', 'Brand Strategy', 'Positioning, messaging & market differentiation.'],
+        ['🎨', 'Visual Identity', 'Logo system, colors, typography & brand language.'],
+        ['🌐', 'Corporate Website', 'Professional, conversion-focused web presence.'],
+        ['📄', 'Company Profile', 'Investor-ready company documentation.'],
+        ['📱', 'Social Media System', 'Content framework & visual templates.'],
+        ['📈', 'Marketing Assets', 'All collateral for sales and marketing teams.'],
+      ]
+    : [
+        ['🎯', 'Brand Strategy', 'استراتيجية العلامة والتموضع في السوق.'],
+        ['🎨', 'Visual Identity', 'الهوية البصرية الكاملة.'],
+        ['🌐', 'Corporate Website', 'الموقع الاحترافي للشركة.'],
+        ['📄', 'Company Profile', 'بروفايل الشركة الاحترافي.'],
+        ['📱', 'Social Media System', 'نظام المحتوى والقوالب البصرية.'],
+        ['📈', 'Marketing Assets', 'جميع المواد التسويقية.'],
+      ];
+
+  const deliverables = [
+    ['strategy', 'Brand Strategy'],
+    ['token', 'Logo System'],
+    ['palette', 'Visual Identity'],
+    ['menu_book', 'Brand Guidelines'],
+    ['language', 'Corporate Website'],
+    ['description', 'Company Profile'],
+    ['slideshow', 'Presentation Template'],
+    ['mail', 'Email Signature'],
+    ['badge', 'Business Cards'],
+    ['share', 'Social Media Kit'],
+    ['print', 'Marketing Collateral'],
+    ['sell', 'Sales Materials'],
+  ];
+
+  const process = isEn
+    ? ['Discovery', 'Research', 'Strategy', 'Identity', 'Digital Assets', 'Launch']
+    : ['اكتشاف', 'بحث', 'استراتيجية', 'هوية', 'أصول رقمية', 'إطلاق'];
+
+  const industries = isEn
+    ? ['Real Estate', 'Healthcare', 'Engineering', 'Construction', 'Corporate', 'Government', 'Hospitality', 'Education']
+    : ['عقاري', 'صحي', 'هندسي', 'مقاولات', 'شركات', 'حكومي', 'ضيافة', 'تعليم'];
+
+  const credSteps = isEn
+    ? [
+        ['12+ Years', 'Creative & branding expertise'],
+        ['Hundreds of Brands', 'Built across the region'],
+        ['Millions', 'Audience reach generated'],
+        ['Regional Experience', 'Saudi, GCC & beyond'],
+        ['Long-Term Partnerships', 'Clients who grow with us'],
+      ]
+    : [
+        ['12+ سنة', 'خبرة في العلامة والإبداع'],
+        ['مئات العلامات', 'في المنطقة'],
+        ['ملايين', 'وصول للجمهور'],
+        ['خبرة إقليمية', 'السعودية والخليج وخارجها'],
+        ['شراكات طويلة', 'عملاء ينمون معنا'],
+      ];
+
+  const workSlides = [
+    {
+      before: '../assets/projects/rendering/alrajhi3.jpeg',
+      after: '../assets/projects/rendering/Anan-Escan-Co.01.jpeg',
+      title: isEn ? 'Corporate Rebrand' : 'إعادة بناء هوية',
+      desc: isEn ? 'Project → Brand → Market confidence' : 'مشروع → علامة → ثقة السوق',
+    },
+    {
+      before: '../assets/projects/rendering/The-Meteorological-Building.jpeg',
+      after: '../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg',
+      title: isEn ? 'Developer Identity' : 'هوية مطور عقاري',
+      desc: isEn ? 'Weak presence → Premium positioning' : 'حضور ضعيف → تموضع فاخر',
+    },
+    {
+      before: '../assets/mm-brand.jpg',
+      after: '../assets/projects/rendering/uae-e1745147961286.jpeg',
+      title: isEn ? 'Launch Brand System' : 'نظام علامة للإطلاق',
+      desc: isEn ? 'Concept → Brand → Sales traction' : 'فكرة → علامة → زخم مبيعات',
+    },
+  ];
+
+  const ideal = isEn
+    ? ['New company', 'Brand rebuild', 'Entering Saudi market', 'New service launch', 'Digital transformation', 'Regional expansion']
+    : ['شركة جديدة', 'إعادة بناء الهوية', 'دخول السوق السعودي', 'إطلاق خدمة جديدة', 'التحول الرقمي', 'التوسع الإقليمي'];
+
+  const faqs = isEn
+    ? [
+        ['Can you evolve our existing identity?', 'Yes. We audit your current brand, keep what works, and elevate the system without losing recognition.'],
+        ['Can the website be built later?', 'Absolutely. BrandScale is modular — start with strategy & identity, add website and digital assets when ready.'],
+        ['How long does the process take?', 'Typically 4–8 weeks depending on scope. We provide a clear timeline in the proposal.'],
+        ['Do you include Brand Strategy?', 'Yes. Strategy is the foundation — positioning, audience, messaging, and competitive differentiation.'],
+        ['Is a brand guidelines manual included?', 'Yes. Every package includes brand guidelines for consistent application across all touchpoints.'],
+      ]
+    : [
+        ['هل يمكن تطوير الهوية الحالية؟', 'نعم. نراجع علامتك الحالية، نحتفظ بما يعمل، ونرتقي بالنظام دون فقدان التعرّف.'],
+        ['هل يمكن تنفيذ الموقع لاحقًا؟', 'بالتأكيد. BrandScale مرن — ابدأ بالاستراتيجية والهوية وأضف الموقع عند الجاهزية.'],
+        ['كم تستغرق العملية؟', 'عادة 4–8 أسابيع حسب النطاق. نحدد جدولاً واضحاً في العرض.'],
+        ['هل تقدمون Brand Strategy؟', 'نعم. الاستراتيجية هي الأساس — التموضع والجمهور والرسائل والتمييز.'],
+        ['هل تشمل الخدمة دليل الهوية؟', 'نعم. كل حزمة تتضمن دليل هوية لضمان الاتساق في كل نقاط التواصل.'],
+      ];
+
+  const whyHtml = whyCards
+    .map(([icon, title, desc]) => `<div class="bs-why-card"><div class="bs-why-icon">${icon}</div><h3>${title}</h3><p>${desc}</p></div>`)
+    .join('\n');
+
+  const getHtml = deliverables
+    .map(([icon, label]) => `<div class="bs-get-item"><span class="material-symbols-outlined">${icon}</span>${label}</div>`)
+    .join('\n');
+
+  const flowHtml = process
+    .map((step, i) => {
+      const arrow = i < process.length - 1 ? '<span class="bs-flow-arrow">↓</span>' : '';
+      return `<span class="bs-flow-step">${step}</span>${arrow}`;
+    })
+    .join('\n');
+
+  const indHtml = industries.map((i) => `<div class="bs-ind-item">${i}</div>`).join('\n');
+
+  const credHtml = credSteps
+    .map(([strong, span], i) => {
+      const arrow = i < credSteps.length - 1 ? '<span class="bs-cred-arrow">↓</span>' : '';
+      return `<div class="bs-cred-step"><strong>${strong}</strong><span>${span}</span></div>${arrow}`;
+    })
+    .join('\n');
+
+  const slidesHtml = workSlides
+    .map(
+      (s) => `<article class="bs-slide">
+        <div class="bs-slide-visual">
+          <div class="bs-slide-side"><img src="${s.before}" alt="" loading="lazy"><label>${isEn ? 'Before' : 'قبل'}</label></div>
+          <div class="bs-slide-mid"><span class="material-symbols-outlined">arrow_forward</span></div>
+          <div class="bs-slide-side"><img src="${s.after}" alt="" loading="lazy"><label>${isEn ? 'After' : 'بعد'}</label></div>
+        </div>
+        <div class="bs-slide-body"><h3>${s.title}</h3><p>${s.desc}</p></div>
+      </article>`
+    )
+    .join('\n');
+
+  const idealHtml = ideal
+    .map((item, i) => {
+      const arrow = i < ideal.length - 1 ? '<span class="bs-ideal-arrow">↓</span>' : '';
+      return `<span class="bs-ideal-card">${item}</span>${arrow}`;
+    })
+    .join('\n');
+
+  const faqHtml = faqs
+    .map(([q, a]) => `<details class="bs-faq-item"><summary>${q}</summary><p>${a}</p></details>`)
+    .join('\n');
+
+  const heroEn = isEn ? 'Build a Brand That Inspires Trust and Drives Growth.' : '';
+  const heroH1 = isEn
+    ? 'BrandScale<span class="tm">™</span>'
+    : 'ابنِ علامة تجارية تترك انطباعًا...<br><span style="font-size:0.55em;font-weight:600;color:rgba(255,255,255,.75)">وتحقق نموًا مستدامًا.</span>';
+
+  return `<main>
+  <section class="bs-hero">
+    <div class="bs-hero-bg">
+      <video autoplay muted loop playsinline poster="../assets/mm-brand.jpg">
+        <source src="../assets/videos/GH-Marketing-Media-Production.mp4" type="video/mp4">
+      </video>
+      <img src="../assets/mm-brand.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;object-fit:cover;width:100%;height:100%">
+    </div>
+    <div class="bs-hero-overlay"></div>
+    <div class="bs-container bs-hero-inner">
+      <div class="bs-eyebrow"><span class="num">03</span> ${t.eyebrow}</div>
+      ${isEn ? `<p class="bs-hero-en">${heroEn}</p><h1>${heroH1}</h1>` : `<h1>${heroH1}</h1><p style="font-size:14px;color:var(--bs-gold);font-weight:700;margin:12px 0 0">BrandScale<span class="tm">™</span></p>`}
+      <p class="bs-hero-tag">${t.tag}</p>
+      <p class="bs-hero-sub">${t.sub}</p>
+      <div class="bs-btn-row">
+        <a href="${contact}" class="bs-btn bs-btn-gold"><span class="material-symbols-outlined">calendar_month</span> ${t.cta1}</a>
+        <a href="${portfolio}" class="bs-btn bs-btn-outline"><span class="material-symbols-outlined">collections</span> ${t.cta2}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bs-why">
+    <div class="bs-container">
+      <div class="bs-why-intro">
+        <h2 class="bs-section-title">${t.whyTitle}</h2>
+      </div>
+      <p class="bs-why-quote">${t.whyQ1}<br>${t.whyQ2}<br><em>${t.whyQ3}</em></p>
+      <div class="bs-why-grid">${whyHtml}</div>
+    </div>
+  </section>
+
+  <section class="bs-get">
+    <div class="bs-container">
+      <h2 class="bs-section-title">${t.getTitle}</h2>
+      <div class="bs-get-grid">${getHtml}</div>
+    </div>
+  </section>
+
+  <section class="bs-process">
+    <div class="bs-container">
+      <h2 class="bs-section-title">${t.processTitle}</h2>
+      <div class="bs-flow">${flowHtml}</div>
+    </div>
+  </section>
+
+  <section class="bs-ind">
+    <div class="bs-container">
+      <h2 class="bs-section-title">${t.indTitle}</h2>
+      <div class="bs-ind-grid">${indHtml}</div>
+    </div>
+  </section>
+
+  <section class="bs-cred">
+    <div class="bs-container">
+      <h2 class="bs-section-title" style="text-align:center">${t.credTitle}</h2>
+      <p class="bs-cred-intro">${t.credLead}</p>
+      <div class="bs-cred-chain">${credHtml}</div>
+    </div>
+  </section>
+
+  <section class="bs-work">
+    <div class="bs-container">
+      <div class="bs-slider-head">
+        <h2 class="bs-section-title" style="margin:0">${t.workTitle}</h2>
+        <div class="bs-slider-nav">
+          <button type="button" class="bs-slider-btn" id="bsPrev" aria-label="Previous"><span class="material-symbols-outlined">chevron_left</span></button>
+          <button type="button" class="bs-slider-btn" id="bsNext" aria-label="Next"><span class="material-symbols-outlined">chevron_right</span></button>
+        </div>
+      </div>
+      <div class="bs-slider-track" id="bsTrack">${slidesHtml}</div>
+    </div>
+  </section>
+
+  <section class="bs-ideal">
+    <div class="bs-container">
+      <h2 class="bs-section-title">${t.idealTitle}</h2>
+      <div class="bs-ideal-grid">${idealHtml}</div>
+    </div>
+  </section>
+
+  <section class="bs-faq">
+    <div class="bs-container">
+      <h2 class="bs-section-title" style="text-align:center">${t.faqTitle}</h2>
+      <div class="bs-faq-list">${faqHtml}</div>
+    </div>
+  </section>
+
+  ${beforeAfterSection('brand', lang)}
+
+  <section class="bs-journey">
+    <div class="bs-container">
+      <h2 class="bs-section-title">${t.journeyTitle}</h2>
+      <p class="bs-section-lead" style="margin:0 auto;text-align:center">${t.journeyLead}</p>
+      <div class="bs-journey-cards">
+        <a href="${glLink}" class="bs-journey-card">
+          <div class="icon">🚀</div>
+          <h3>GrowthLaunch™</h3>
+          <p>${isEn ? 'Generate Qualified Leads' : 'توليد عملاء مؤهلين'}</p>
+        </a>
+        <a href="${plLink}" class="bs-journey-card">
+          <div class="icon">🏗</div>
+          <h3>ProjectLaunch™</h3>
+          <p>${isEn ? 'Launch Real Estate Projects' : 'إطلاق المشاريع العقارية'}</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bs-cta">
+    <div class="bs-container">
+      <div class="bs-cta-box">
+        <h2>${t.ctaH}</h2>
+        <p>${t.ctaP}</p>
+        <a href="${contact}" class="bs-btn bs-btn-gold" style="font-size:15px;padding:16px 36px">
+          ${t.cta1}
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+(function(){
+  var track=document.getElementById('bsTrack');
+  var prev=document.getElementById('bsPrev');
+  var next=document.getElementById('bsNext');
+  if(!track||!prev||!next) return;
+  var step=function(dir){track.scrollBy({left:dir*360,behavior:'smooth'});};
+  prev.addEventListener('click',function(){step(-1);});
+  next.addEventListener('click',function(){step(1);});
+})();
+</script>`;
+}
+
+// BrandScale AR
+const bsAr = head({
+  title: 'BrandScale™ | نظام نمو العلامة التجارية | Graphics House',
+  desc: 'BrandScale™ — نظام متكامل لبناء العلامة التجارية والنمو الرقمي.',
+  ogTitle: 'BrandScale™ | Graphics House',
+  css: 'brand-scale',
+  dir: 'rtl',
+  lang: 'ar',
+}) + headerPlaceholder(false) + brandScaleMain('ar') + footerPlaceholder(false) + '\n</body>\n</html>\n';
+
+fs.writeFileSync(path.join(SOLUTIONS, 'brand-scale.html'), bsAr);
+
+// BrandScale EN
+const bsEn = head({
+  title: 'BrandScale™ | Brand Growth System | Graphics House',
+  desc: 'BrandScale™ — complete branding and digital growth system for premium market positioning.',
+  ogTitle: 'BrandScale™ | Graphics House',
+  css: 'brand-scale',
+  dir: 'ltr',
+  lang: 'en',
+}) + headerPlaceholder(true) + brandScaleMain('en') + footerPlaceholder(true) + '\n</body>\n</html>\n';
+
+fs.writeFileSync(path.join(SOLUTIONS, 'brand-scale-en.html'), bsEn);
+
+console.log('Generated: growth-launch-en, project-launch (AR/EN), brand-scale (AR/EN)');
