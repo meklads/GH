@@ -330,7 +330,12 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .r1 { transition-delay: .1s; } .r2 { transition-delay: .2s; } .r3 { transition-delay: .3s; } .r4 { transition-delay: .4s; }
 
-
+/* Solid site header on light landing body */
+.header {
+  background: rgba(10, 10, 10, 0.98);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+}
+body { padding-top: 0 !important; }
 
 </style>
 
@@ -411,39 +416,8 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
   </div>
 </header>
 
-
-
-
-<div id="mob-nav">
-  <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,.06)">
-    <img src="../assets/logo-gold.png" alt="Graphics House" style="height:24px;width:auto">
-    <button id="mob-close" style="background:none;border:none;cursor:pointer;color:#fff"><span class="material-symbols-outlined" style="font-size:24px">close</span></button>
-  </div>
-  <div style="display:flex;flex-direction:column;padding:16px 24px;gap:4px">
-    <a href="#booking" onclick="closeMobNav()" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:700;color:var(--gold);border-bottom:1px solid rgba(255,255,255,.06)">اطلب عرض سعر <span class="material-symbols-outlined" style="color:var(--gold)">calendar_month</span></a>
-    <a href="../contact-us.html" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;color:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.06)">اتصل بنا <span class="material-symbols-outlined" style="color:var(--gold)">chevron_left</span></a>
-    <a href="https://wa.me/966502786513" target="_blank" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;color:rgba(255,255,255,.7)">واتساب <span class="material-symbols-outlined" style="color:var(--gold)">chevron_left</span></a>
-  </div>
-</div>
-
-<!-- DARK HEADER -->
-<section class="dark-header">
-  <div class="dark-header-inner">
-    <nav class="dark-nav">
-      <a href="#booking">اطلب عرض سعر</a>
-      <a href="../contact-us.html">اتصل</a>
-      <a href="https://wa.me/966502786513" target="_blank" class="nav-cta">واتساب</a>
-      <a class="nav-link" href="../contact-us.html">تواصل معنا</a>
-    </nav>
-    <button class="dark-menu-toggle" id="menuToggle" onclick="document.getElementById('mob-nav').classList.toggle('open')">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-    <a href="../index-ar.html" class="dark-logo"><img src="../assets/logo-gold.png" alt="Graphics House"></a>
-  </div>
-</section>
-
 <!-- GALLERY STRIP HERO -->
-<section style="background:#0A0A0A;overflow:hidden">
+<section style="background:#0A0A0A;overflow:hidden;padding-top:96px">
   <div class="gallery-strip">
     <div class="gallery-strip-item gallery-video" data-video="../assets/videos/3D-Architectural-visualisation.mp4">
       <img src="../assets/projects/rendering/jeddah-forum.jpg" alt="إظهار معماري">
@@ -766,9 +740,6 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 <div id="lightbox"><button onclick="closeLightbox()" style="position:absolute;top:24px;right:24px;width:44px;height:44px;background:rgba(255,255,255,.08);border:none;color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%">✕</button><img id="lightbox-img" src="" alt=""></div>
 
 <script>
-function closeMobNav(){document.getElementById('mob-nav').classList.remove('open')}
-document.getElementById('mob-close').addEventListener('click',closeMobNav);
-document.querySelectorAll('#mob-nav a').forEach(function(a){a.addEventListener('click',function(){setTimeout(closeMobNav,200)})});
 var ro=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:0.15});
 document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});

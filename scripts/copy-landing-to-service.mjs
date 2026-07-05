@@ -23,14 +23,6 @@ const prefix = depth > 0 ? '../'.repeat(depth) : '';
 
 let html = fs.readFileSync(src, 'utf8');
 
-// Fix missing mob-nav wrapper in gh-visualization
-if (!html.includes('id="mob-nav"') && html.includes('id="mob-close"')) {
-  html = html.replace(
-    /(<\/header>\s*\n\s*\n\s*\n\s*\n)(\s*<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 24px)/,
-    '$1<div id="mob-nav">\n$2'
-  );
-}
-
 html = html.replace(/href="assets\//g, `href="${prefix}assets/`);
 html = html.replace(/src="assets\//g, `src="${prefix}assets/`);
 html = html.replace(/data-video="assets\//g, `data-video="${prefix}assets/`);
@@ -52,13 +44,37 @@ for (const page of rootPages) {
 html = html.replace(/href="\/index-ar\.html"/g, `href="${prefix}index-ar.html"`);
 html = html.replace(/href="\/"/g, `href="${prefix}index-ar.html"`);
 
-// Same-folder service links (e.g. services/rendering.html -> maquettes.html)
 const destDir = path.dirname(destRel);
 if (destDir.startsWith('services')) {
-  html = html.replace(new RegExp(`href="${prefix}services/([^"]+)"`, 'g'), (m, file) => {
-    return `href="${file}"`;
-  });
+  html = html.replace(new RegExp(`href="${prefix}services/([^"]+)"`, 'g'), (m, file) => `href="${file}"`);
 }
+
+// Remove duplicate landing mini-header (main site header is synced separately)
+html = html.replace(
+  /<div id="mob-nav">[\s\S]*?<\/div>\s*\n\s*<!-- DARK HEADER -->[\s\S]*?<\/section>\s*\n\s*/m,
+  ''
+);
+html = html.replace(
+  /function closeMobNav\(\)[^;]+;\}\s*\ndocument\.getElementById\('mob-close'\)[^;]+;\s*\ndocument\.querySelectorAll\('#mob-nav a'\)[^;]+;\}\)\);\s*\n/m,
+  ''
+);
+
+if (!html.includes('Solid site header on light landing body')) {
+  html = html.replace(
+    '</style>',
+    `\n/* Solid site header on light landing body */
+.header {
+  background: rgba(10, 10, 10, 0.98);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+}
+body { padding-top: 0 !important; }
+</style>`
+  );
+}
+html = html.replace(
+  '<section style="background:#0A0A0A;overflow:hidden">',
+  '<section style="background:#0A0A0A;overflow:hidden;padding-top:96px">'
+);
 
 fs.writeFileSync(dest, html, 'utf8');
 console.log(`Copied ${srcRel} -> ${destRel} (prefix: "${prefix}")`);
