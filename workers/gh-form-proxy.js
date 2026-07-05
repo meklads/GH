@@ -5,8 +5,10 @@
  *   npx wrangler secret put WEB3FORMS_ACCESS_KEY
  *   npx wrangler secret put BREVO_API_KEY        (optional)
  *   npx wrangler secret put BREVO_LIST_ID        (optional, numeric)
+ *   npx wrangler secret put TURNSTILE_SECRET_KEY  (optional, Cloudflare Turnstile secret)
  *
  * KV (optional): create namespace "gh-subscribers" and bind as SUBSCRIBERS
+ * Note: Web3Forms free plan does not accept cf-turnstile-response — verify in Worker instead.
  */
 const ALLOWED_ORIGINS = [
   'https://3dgraphicshouse.com',
@@ -35,6 +37,8 @@ function validEmail(email) {
 async function forwardWeb3Forms(body, key) {
   const payload = { ...body };
   delete payload.access_key;
+  /* Web3Forms Turnstile is Pro-only — never forward the token */
+  delete payload['cf-turnstile-response'];
   const res = await fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
@@ -56,10 +60,25 @@ async function storeSubscriber(env, record) {
   await env.SUBSCRIBERS.put(key, JSON.stringify(record));
 }
 
+async function verifyTurnstile(token, secret, ip) {
+  if (!secret) return true;
+  if (!token) return false;
+  const form = new URLSearchParams();
+  form.set('secret', secret);
+  form.set('response', token);
+  if (ip) form.set('remoteip', ip);
+  const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    body: form,
+  });
+  const data = await res.json();
+  return data.success === true;
+}
+
 async function addBrevoContact(env, email, lang) {
   const apiKey = env.BREVO_API_KEY;
   const listId = parseInt(env.BREVO_LIST_ID || '0', 10);
-  if (!apiKey || !listId) return;
+  if (!apiKey || !listId) return false;
 
   const res = await fetch('https://api.brevo.com/v3/contacts', {
     method: 'POST',
@@ -76,18 +95,29 @@ async function addBrevoContact(env, email, lang) {
     }),
   });
 
-  if (!res.ok && res.status !== 204) {
-    const detail = await res.text();
-    console.error('Brevo contact error', res.status, detail);
-  }
+  if (res.ok || res.status === 204) return true;
+
+  const detail = await res.text();
+  console.error('Brevo contact error', res.status, detail);
+  return false;
 }
 
-async function handleSubscribe(body, env, cors) {
+async function handleSubscribe(body, env, cors, request) {
   const key = env.WEB3FORMS_ACCESS_KEY;
   if (!key) return json({ success: false, message: 'Form proxy not configured' }, 503, cors);
 
   const email = (body.email || '').trim().toLowerCase();
   if (!validEmail(email)) return json({ success: false, message: 'Invalid email' }, 400, cors);
+
+  const turnstileToken = body['cf-turnstile-response'] || '';
+  const turnstileOk = await verifyTurnstile(
+    turnstileToken,
+    env.TURNSTILE_SECRET_KEY,
+    request.headers.get('CF-Connecting-IP') || ''
+  );
+  if (env.TURNSTILE_SECRET_KEY && !turnstileOk) {
+    return json({ success: false, message: 'Captcha verification failed' }, 403, cors);
+  }
 
   const lang = body.language || body.lang || 'en';
   const source = body.source || 'newsletter';
@@ -95,28 +125,34 @@ async function handleSubscribe(body, env, cors) {
 
   const record = { email, lang, source, subscribedAt: now };
 
+  let brevoOk = false;
+  try {
+    await storeSubscriber(env, record);
+    brevoOk = await addBrevoContact(env, email, lang);
+  } catch (e) {
+    console.error('Mailing list storage error', e);
+  }
+
   const w3Body = {
     subject: `Newsletter subscribe — ${email}`,
     from_name: 'Graphics House Mailing List',
     email,
     message: `New subscriber\nEmail: ${email}\nLanguage: ${lang}\nSource: ${source}\nList: gh-journal`,
     botcheck: body.botcheck || '',
-    'cf-turnstile-response': body['cf-turnstile-response'] || '',
   };
 
   const { ok, data } = await forwardWeb3Forms(w3Body, key);
-  if (!ok || !data.success) {
-    return json(data, 502, cors);
+  const notifyOk = ok && data.success;
+
+  if (brevoOk || notifyOk) {
+    return json({ success: true, message: 'Subscribed' }, 200, cors);
   }
 
-  try {
-    await storeSubscriber(env, record);
-    await addBrevoContact(env, email, lang);
-  } catch (e) {
-    console.error('Mailing list storage error', e);
-  }
-
-  return json({ success: true, message: 'Subscribed' }, 200, cors);
+  return json(
+    { success: false, message: data.message || 'Subscription failed' },
+    502,
+    cors
+  );
 }
 
 async function handleForm(body, env, cors) {
@@ -153,7 +189,7 @@ export default {
     }
 
     if (url.pathname === '/api/subscribe') {
-      return handleSubscribe(body, env, cors);
+      return handleSubscribe(body, env, cors, request);
     }
 
     if (url.pathname === '/api/form') {
