@@ -27,3 +27,41 @@
 img[loading="lazy"] {
   content-visibility: auto;
 }
+
+/* Homepage hero — anchor copy + caps bar to bottom (both AR/EN) */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+.hero-bottom-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0 24px 50px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+.hero-bottom-panel > * {
+  pointer-events: auto;
+}
+.hero-bottom-panel .hero-caps-bar {
+  margin-top: 14px;
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .hero-bottom-panel {
+    padding: 0 16px 44px;
+  }
+  .hero-bottom-panel .hero-caps-bar {
+    justify-content: flex-start;
+    padding-bottom: 0;
+  }
+}

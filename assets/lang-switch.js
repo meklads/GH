@@ -35,7 +35,8 @@
 
   function parts() {
     var pathname = window.location.pathname || '/';
-    var fileName = pathname.split('/').pop() || 'index.html';
+    var fileName = pathname.split('/').pop() || '';
+    if (!fileName || fileName === '') fileName = 'index.html';
     var dirPath = pathname.substring(0, pathname.length - fileName.length);
     return { fileName: fileName, dirPath: dirPath };
   }
@@ -62,13 +63,25 @@
 
   function initLangSwitch() {
     var isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+    var p = parts();
     var alt = alternateHref();
 
     document.querySelectorAll('.lang-switch').forEach(function (group) {
       var links = group.querySelectorAll('a.lang-switch-link');
       if (links.length < 2) return;
-      if (isRtl) links[1].href = alt;
-      else links[0].href = alt;
+      var arLink = group.querySelector('a[hreflang="ar"]');
+      var enLink = group.querySelector('a[hreflang="en"]');
+      if (!arLink || !enLink) return;
+      if (isRtl) {
+        arLink.href = p.dirPath + p.fileName;
+        enLink.href = alt;
+      } else {
+        arLink.href = alt;
+        enLink.href = p.dirPath + p.fileName;
+      }
+      links.forEach(function (a) { a.classList.remove('is-active'); });
+      if (isRtl) arLink.classList.add('is-active');
+      else enLink.classList.add('is-active');
     });
 
     document.querySelectorAll('footer a').forEach(function (a) {
