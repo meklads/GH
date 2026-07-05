@@ -41,7 +41,7 @@ function buildPartials() {
   let arFooter = extract(arPage, /(<footer dir="rtl"[\s\S]*?<\/footer>)/);
 
   // Reorder AR header: logo | nav | nav-actions | menu-toggle
-  const logo = extract(arHeader, /(<a href="\/" class="logo">[\s\S]*?<\/a>)/);
+  const logo = extract(arHeader, /(<a href="(?:\/|\/index-ar\.html)" class="logo">[\s\S]*?<\/a>)/);
   const nav = extract(arHeader, /(<nav class="nav" id="nav">[\s\S]*?<\/nav>)/);
   const actions = extract(arHeader, /(<div class="nav-actions">[\s\S]*?<\/div>)/);
   const toggle = extract(arHeader, /(<button class="menu-toggle"[\s\S]*?<\/button>)/);
@@ -59,8 +59,8 @@ function buildPartials() {
   enHeader = enHeader.replace(/href="who-we-are\.html"/g, 'href="index-ar.html"');
   arHeader = arHeader
     .replace(
-      '<a href="#" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">AR</a>',
-      '<a href="index-ar.html" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">AR</a>'
+      /(<a href=")(?:#|index-ar\.html)(" class="lang-switch-link is-active" hreflang="ar">AR<\/a>)/,
+      '$1index-ar.html$2'
     )
     .replace(/href="who-we-are-en\.html"/g, 'href="/"');
 

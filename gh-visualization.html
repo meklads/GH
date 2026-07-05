@@ -343,71 +343,125 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="/index-ar.html" class="logo">
-      <img src="assets/logo-gold.png" alt="Graphics House" style="height:86px;width:auto;image-rendering:-webkit-optimize-contrast;">
+      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="86">
     </a>
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
       <a class="nav-link" href="who-we-are.html">من نحن</a>
-            <div class="nav-mega-item" style="position:relative;display:inline-block">
-        <a class="nav-link" style="cursor:pointer">حلولنا <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
-      <div class="mega-menu mega-menu-solutions" dir="rtl">
-        <div class="mm-main">
-          <div class="mm-grid">
-            <a href="solutions/growth-launch.html" class="mm-card" data-solution="growth">
-              <div class="mm-icon"><span class="material-symbols-outlined">query_stats</span></div>
-              <div class="mm-title">GrowthLaunch&#8482;</div>
-              <div class="mm-sub">نظام توليد العملاء والمبيعات</div>
-              <div class="mm-desc">توليد عملاء مؤهلين، أتمتة المتابعة، وتحسين معدلات التحويل.</div>
-              <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></div>
-            </a>
-            <a href="solutions/project-launch.html" class="mm-card" data-solution="project">
-              <div class="mm-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
-              <div class="mm-title">ProjectLaunch&#8482;</div>
-              <div class="mm-sub">نظام إطلاق المشاريع العقارية</div>
-              <div class="mm-desc">حل متكامل لإطلاق المشاريع العقارية يشمل التصور، العلامة التجارية، التسويق ودعم المبيعات.</div>
-              <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></div>
-            </a>
-            <a href="solutions/brand-scale.html" class="mm-card" data-solution="brand">
-              <div class="mm-icon"><span class="material-symbols-outlined">workspace_premium</span></div>
-              <div class="mm-title">BrandScale&#8482;</div>
-              <div class="mm-sub">نظام نمو العلامات التجارية</div>
-              <div class="mm-desc">بناء وتقوية وتنمية علامتك التجارية من خلال حلول إبداعية وتسويقية متكاملة.</div>
-              <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></div>
-            </a>
-          </div>
-        </div>
-      </div>
-      </div>
-            <div class="nav-mega-item" style="position:relative;display:inline-block">
-        <a class="nav-link" style="cursor:pointer">خدماتنا <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
-            <div class="mega-menu mega-menu-services" dir="rtl">
-        <div class="mm-main">
-          <div class="mm-grid">
-            <div class="mm-col">
-              <div class="mm-col-header">الإبداع</div>
-              <a href="services/rendering.html" class="mm-svc-link"><span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span><span class="mm-svc-text">الإظهار المعماري</span></a>
-              <a href="services/animation.html" class="mm-svc-link"><span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span><span class="mm-svc-text">التحريك ثلاثي الأبعاد</span></a>
+      <div class="nav-mega-item" data-mega="solutions">
+        <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
+          حلولنا
+          <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="mega-menu mega-menu-solutions" dir="rtl">
+          <div class="mm-panel">
+            <div class="mm-panel-head">
+              <span class="mm-panel-label">أنظمتنا المتكاملة</span>
+              <p class="mm-panel-desc">حلول أعمال جاهزة للمطورين والمكاتب الهندسية</p>
             </div>
-            <div class="mm-col">
-              <div class="mm-col-header">الحلول المعمارية</div>
-              <a href="services/maquettes.html" class="mm-svc-link"><span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">home_work</span></span><span class="mm-svc-text">المجسمات المعمارية</span></a>
-              <a href="services/interactive.html" class="mm-svc-link"><span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span><span class="mm-svc-text">العروض التفاعلية</span></a>
-              <a href="services/production.html" class="mm-svc-link"><span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">videocam</span></span><span class="mm-svc-text">التصوير والإنتاج الإعلامي</span></a>
+            <div class="mm-main">
+              <div class="mm-grid">
+                <a href="solutions/growth-launch.html" class="mm-card" data-solution="growth">
+                  <div class="mm-icon"><span class="material-symbols-outlined">query_stats</span></div>
+                  <div class="mm-title">GrowthLaunch&#8482;</div>
+                  <div class="mm-sub">نظام توليد العملاء والمبيعات</div>
+                  <div class="mm-desc">توليد عملاء مؤهلين، أتمتة المتابعة، وتحسين معدلات التحويل.</div>
+                  <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
+                </a>
+                <a href="solutions/project-launch.html" class="mm-card" data-solution="project">
+                  <div class="mm-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+                  <div class="mm-title">ProjectLaunch&#8482;</div>
+                  <div class="mm-sub">نظام إطلاق المشاريع العقارية</div>
+                  <div class="mm-desc">حل متكامل لإطلاق المشاريع العقارية يشمل التصور، العلامة التجارية، التسويق ودعم المبيعات.</div>
+                  <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
+                </a>
+                <a href="solutions/brand-scale.html" class="mm-card" data-solution="brand">
+                  <div class="mm-icon"><span class="material-symbols-outlined">workspace_premium</span></div>
+                  <div class="mm-title">BrandScale&#8482;</div>
+                  <div class="mm-sub">نظام نمو العلامات التجارية</div>
+                  <div class="mm-desc">بناء وتقوية وتنمية علامتك التجارية من خلال حلول إبداعية وتسويقية متكاملة.</div>
+                  <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div></div>
-      <a class="nav-link" href="portfolio.html" style="color:#C9A84C">أعمالنا</a>
+      </div>
+      <div class="nav-mega-item" data-mega="services">
+        <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
+          خدماتنا
+          <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="mega-menu mega-menu-services" dir="rtl">
+          <div class="mm-panel">
+            <div class="mm-panel-head">
+              <span class="mm-panel-label">خدماتنا الإبداعية</span>
+              <p class="mm-panel-desc">من التصور المعماري إلى الإنتاج الإعلامي المتكامل</p>
+            </div>
+            <div class="mm-main">
+              <div class="mm-grid">
+                <div class="mm-col">
+                  <div class="mm-col-header">الإبداع</div>
+                  <a href="services/rendering.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">الإظهار المعماري</span>
+                      <span class="mm-svc-desc">صور ثلاثية الأبعاد سينمائية</span>
+                    </span>
+                  </a>
+                  <a href="services/animation.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">التحريك ثلاثي الأبعاد</span>
+                      <span class="mm-svc-desc">فيديوهات CGI احترافية</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="mm-col">
+                  <div class="mm-col-header">الحلول المعمارية</div>
+                  <a href="services/maquettes.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">home_work</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">المجسمات المعمارية</span>
+                      <span class="mm-svc-desc">مجسمات دقيقة للمشاريع</span>
+                    </span>
+                  </a>
+                  <a href="services/interactive.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">العروض التفاعلية</span>
+                      <span class="mm-svc-desc">تجارب رقمية غامرة</span>
+                    </span>
+                  </a>
+                  <a href="services/production.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">videocam</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">التصوير والإنتاج الإعلامي</span>
+                      <span class="mm-svc-desc">تصوير وإنتاج متكامل</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="nav-link nav-link-accent" href="portfolio.html">أعمالنا</a>
       <a class="nav-link" href="casestudy1.html">مشاريع ناجحة</a>
       <a class="nav-link" href="contact-us.html">تواصل معنا</a>
     </nav>
     <div class="nav-actions">
-      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35)"><a href="index-ar.html" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">AR</a> <span style="color:rgba(255,255,255,.3)">|</span> <a href="/index-ar.html" style="color:#fff;text-decoration:none;font-weight:700;transition:color .3s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">EN</a></span>
-      <a href="contact-us.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:50px;border:none;transition:all .3s;white-space:nowrap;font-family:'Inter','Tajawal',sans-serif" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)';" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)';">احجز جلسة استراتيجية</a>
+      <div class="lang-switch" role="group" aria-label="اختيار اللغة">
+        <a href="index-ar.html" class="lang-switch-link is-active" hreflang="ar">AR</a>
+        <span class="lang-switch-sep" aria-hidden="true">|</span>
+        <a href="index.html" class="lang-switch-link" hreflang="en">EN</a>
+      </div>
+      <a href="contact-us.html" class="nav-cta btn-pill btn-pill-gold">احجز جلسة استراتيجية</a>
     </div>
-    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav">
       <span class="material-symbols-outlined">menu</span>
     </button>
   </div>
+  <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
 
 

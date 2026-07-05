@@ -172,72 +172,125 @@ html[dir="ltr"] .nav-link:hover::after{width:100%}
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="/" class="logo">
-      <img src="assets/logo-gold.png" alt="Graphics House" style="height:86px;width:auto;image-rendering:-webkit-optimize-contrast;">
+      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="86">
     </a>
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="Main navigation">
       <a class="nav-link" href="who-we-are-en.html">About Us</a>
-            <div class="nav-mega-item" style="position:relative;display:inline-block">
-        <a class="nav-link" style="cursor:pointer">Solutions <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
-      <div class="mega-menu mega-menu-solutions">
-        <div class="mm-main">
-          <div class="mm-grid">
-            <a href="solutions/growth-launch.html" class="mm-card" data-solution="growth">
-              <div class="mm-icon"><span class="material-symbols-outlined">query_stats</span></div>
-              <div class="mm-title">GrowthLaunch&#8482;</div>
-              <div class="mm-sub">Lead Generation & Sales System</div>
-              <div class="mm-desc">Generate qualified leads, automate follow-up and improve sales conversion.</div>
-              <div class="mm-cta">Explore Solution <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></div>
-            </a>
-            <a href="solutions/project-launch.html" class="mm-card" data-solution="project">
-              <div class="mm-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
-              <div class="mm-title">ProjectLaunch&#8482;</div>
-              <div class="mm-sub">Real Estate Project Launch System</div>
-              <div class="mm-desc">Complete launch solution for real estate projects including visualization, branding, marketing and sales support.</div>
-              <div class="mm-cta">Explore Solution <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></div>
-            </a>
-            <a href="solutions/brand-scale.html" class="mm-card" data-solution="brand">
-              <div class="mm-icon"><span class="material-symbols-outlined">workspace_premium</span></div>
-              <div class="mm-title">BrandScale&#8482;</div>
-              <div class="mm-sub">Brand Growth System</div>
-              <div class="mm-desc">Build, strengthen and grow your brand through integrated creative and marketing solutions.</div>
-              <div class="mm-cta">Explore Solution <span class="material-symbols-outlined" style="font-size:12px">arrow_forward</span></div>
-            </a>
-          </div>
-        </div>
-      </div>
-      </div>
-            <div class="nav-mega-item" style="position:relative;display:inline-block">
-        <a class="nav-link" style="cursor:pointer">Services <span class="material-symbols-outlined" style="font-size:14px;vertical-align:middle">expand_more</span></a>
-      <div class="mega-menu mega-menu-services">
-        <div class="mm-main">
-          <div class="mm-grid">
-            <div class="mm-col">
-              <div class="mm-col-header">Creative</div>
-              <a href="services/rendering.html" class="mm-svc-link"><span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span><span class="mm-svc-text">Smart Visualization</span></a>
-              <a href="services/animation.html" class="mm-svc-link"><span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span><span class="mm-svc-text">Cinematic CGI</span></a>
+      <div class="nav-mega-item" data-mega="solutions">
+        <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
+          Solutions
+          <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="mega-menu mega-menu-solutions">
+          <div class="mm-panel">
+            <div class="mm-panel-head">
+              <span class="mm-panel-label">Integrated Business Systems</span>
+              <p class="mm-panel-desc">Ready-made solutions for developers and engineering firms</p>
             </div>
-            <div class="mm-col">
-              <div class="mm-col-header">Architectural Solutions</div>
-              <a href="services/maquettes.html" class="mm-svc-link"><span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">home_work</span></span><span class="mm-svc-text">Architectural Scale Models</span></a>
-              <a href="services/interactive.html" class="mm-svc-link"><span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span><span class="mm-svc-text">Interactive Experiences</span></a>
-              <a href="services/production.html" class="mm-svc-link"><span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">videocam</span></span><span class="mm-svc-text">Photography & Media Production</span></a>
+            <div class="mm-main">
+              <div class="mm-grid">
+                <a href="solutions/growth-launch.html" class="mm-card" data-solution="growth">
+                  <div class="mm-icon"><span class="material-symbols-outlined">query_stats</span></div>
+                  <div class="mm-title">GrowthLaunch&#8482;</div>
+                  <div class="mm-sub">Lead Generation & Sales System</div>
+                  <div class="mm-desc">Generate qualified leads, automate follow-up and improve sales conversion.</div>
+                  <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
+                </a>
+                <a href="solutions/project-launch.html" class="mm-card" data-solution="project">
+                  <div class="mm-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+                  <div class="mm-title">ProjectLaunch&#8482;</div>
+                  <div class="mm-sub">Real Estate Project Launch System</div>
+                  <div class="mm-desc">Complete launch solution for real estate projects including visualization, branding, marketing and sales support.</div>
+                  <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
+                </a>
+                <a href="solutions/brand-scale.html" class="mm-card" data-solution="brand">
+                  <div class="mm-icon"><span class="material-symbols-outlined">workspace_premium</span></div>
+                  <div class="mm-title">BrandScale&#8482;</div>
+                  <div class="mm-sub">Brand Growth System</div>
+                  <div class="mm-desc">Build, strengthen and grow your brand through integrated creative and marketing solutions.</div>
+                  <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="nav-mega-item" data-mega="services">
+        <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
+          Services
+          <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="mega-menu mega-menu-services">
+          <div class="mm-panel">
+            <div class="mm-panel-head">
+              <span class="mm-panel-label">Creative Services</span>
+              <p class="mm-panel-desc">From architectural visualization to full media production</p>
+            </div>
+            <div class="mm-main">
+              <div class="mm-grid">
+                <div class="mm-col">
+                  <div class="mm-col-header">Creative</div>
+                  <a href="services/rendering.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">Smart Visualization</span>
+                      <span class="mm-svc-desc">Cinematic 3D renders</span>
+                    </span>
+                  </a>
+                  <a href="services/animation.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">Cinematic CGI</span>
+                      <span class="mm-svc-desc">Professional CGI films</span>
+                    </span>
+                  </a>
+                </div>
+                <div class="mm-col">
+                  <div class="mm-col-header">Architectural Solutions</div>
+                  <a href="services/maquettes.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">home_work</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">Architectural Scale Models</span>
+                      <span class="mm-svc-desc">Precision project models</span>
+                    </span>
+                  </a>
+                  <a href="services/interactive.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">Interactive Experiences</span>
+                      <span class="mm-svc-desc">Immersive digital showcases</span>
+                    </span>
+                  </a>
+                  <a href="services/production.html" class="mm-svc-link">
+                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">videocam</span></span>
+                    <span class="mm-svc-body">
+                      <span class="mm-svc-text">Photography & Media Production</span>
+                      <span class="mm-svc-desc">Full photo & video production</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <a class="nav-link" href="portfolio-en.html" style="color:#C9A84C">Our Work</a>
+      <a class="nav-link nav-link-accent" href="portfolio-en.html">Our Work</a>
       <a class="nav-link" href="case-study-mwl-en.html">Case Studies</a>
       <a class="nav-link" href="contact-us-en.html">Contact Us</a>
     </nav>
     <div class="nav-actions">
-      <span style="font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35)"><a href="index-ar.html" style="color:#fff;text-decoration:none;font-weight:700;transition:color .3s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='#fff'">AR</a> <span style="color:rgba(255,255,255,.3)">|</span> <a href="#" style="color:#fff;text-decoration:none;font-weight:700;border-bottom:1.5px solid #C9A84C;padding-bottom:1px">EN</a></span>
-      <a href="contact-us-en.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#C9A84C;color:#0A0A0A;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:50px;border:none;transition:all .3s;white-space:nowrap;font-family:'Inter','Tajawal',sans-serif" onmouseover="this.style.background='#D9B860';this.style.transform='scale(1.04)';" onmouseout="this.style.background='#C9A84C';this.style.transform='scale(1)';">Book a Strategy Session</a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="index-ar.html" class="lang-switch-link" hreflang="ar">AR</a>
+        <span class="lang-switch-sep" aria-hidden="true">|</span>
+        <a href="/" class="lang-switch-link is-active" hreflang="en">EN</a>
+      </div>
+      <a href="contact-us-en.html" class="nav-cta btn-pill btn-pill-gold">Book a Strategy Session</a>
     </div>
-    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <span class="material-symbols-outlined">menu</span>
     </button>
   </div>
+  <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
 
 
