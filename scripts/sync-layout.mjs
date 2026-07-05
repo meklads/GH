@@ -152,6 +152,10 @@ function syncFile(rel) {
   html = fixCorruption(html);
   html = fixLogoCss(html);
   html = html.replace(/<header class="header"[\s\S]*?<\/header>/, header);
+  html = html.replace(
+    /(<\/header>)\s*<div class="mm-main">[\s\S]*?<\/header>/,
+    '$1'
+  );
   if (html.match(/<footer dir="(?:ltr|rtl)"[\s\S]*?<\/footer>/)) {
     html = html.replace(/<footer dir="(?:ltr|rtl)"[\s\S]*?<\/footer>/, footer);
   }
