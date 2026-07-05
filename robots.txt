@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /gh-admin.html
+Disallow: /home-v2-backup.html
+Disallow: /en-backup.html
+Disallow: /en-v2.html
+Disallow: /offer-lite.html
 
 Sitemap: https://3dgraphicshouse.com/sitemap.xml

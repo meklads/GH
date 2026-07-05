@@ -1,0 +1,29 @@
+/* Site-wide a11y + performance enhancements */
+:focus-visible {
+  outline: 2px solid #C9A84C;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  video[autoplay] {
+    display: none;
+  }
+  .gl-hero-bg video,
+  .pl-hero-bg video,
+  .bs-hero-bg video,
+  .hero-video-wrap video {
+    display: none;
+  }
+}
+
+img[loading="lazy"] {
+  content-visibility: auto;
+}

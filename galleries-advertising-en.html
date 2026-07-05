@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" dir="ltr" lang="en">
 <head>
+<script src="assets/gh-forms-config.js"></script>
+<!-- GH SEO -->
+<link rel="canonical" href="https://3dgraphicshouse.com/galleries-advertising-en.html">
+<link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/galleries-advertising-en.html">
+<link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/galleries-advertising.html">
+<link rel="alternate" hreflang="x-default" href="https://3dgraphicshouse.com/galleries-advertising-en.html">
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Galleries & Advertising Decor، Graphics House | Galleries &amp; Advertising Decor</title>
@@ -18,10 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config={theme:{extend:{colors:{gold:"#C9A84C"},borderRadius:{DEFAULT:"0px"}}}}
-</script>
+<link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <style>
 *,*::before,*::after{border-radius:0!important}
 html{scroll-behavior:smooth;background:#FAFAF8;color:#1A1A1A}
@@ -281,7 +284,9 @@ html[dir="ltr"] .section-title {
 
 <link rel="stylesheet" href="assets/site-header.css?v=7">
 <script defer src="assets/site-header.js?v=7"></script>
+<script defer src="assets/gh-performance.js?v=1"></script>
 <script defer src="assets/lang-switch.js?v=1"></script>
+<link rel="stylesheet" href="assets/gh-site-enhancements.css">
 </head>
 <body>
 
@@ -588,7 +593,7 @@ html[dir="ltr"] .section-title {
 <div id="portfolioLightbox" class="video-modal" style="z-index:99997;cursor:zoom-out" onclick="closePortfolioLightbox(event)">
   <button class="video-modal-close" onclick="closePortfolioLightbox()" style="z-index:99998">✕</button>
   <div style="max-width:90vw;max-height:90vh;display:flex;align-items:center;justify-content:center">
-    <img id="portfolioLightboxImg" src="" alt="" style="max-width:100%;max-height:90vh;object-fit:contain;border-radius:0;box-shadow:0 20px 80px rgba(0,0,0,.5)">
+    <img loading="lazy" id="portfolioLightboxImg" src="" alt="" style="max-width:100%;max-height:90vh;object-fit:contain;border-radius:0;box-shadow:0 20px 80px rgba(0,0,0,.5)">
   </div>
 </div>
 
@@ -596,7 +601,7 @@ html[dir="ltr"] .section-title {
 <footer dir="ltr" style="background:#071810;color:#fff;font-family:'Inter','Tajawal',sans-serif;position:relative;overflow:hidden">
   <div style="max-width:1320px;margin:0 auto;padding:56px 48px 0">
     <!-- Footer motif background -->
-    <img src="assets/chatbot-motif.png" aria-hidden="true" style="position:absolute;bottom:-80px;right:-60px;width:1560px;height:auto;opacity:0.05;pointer-events:none;z-index:0;filter:brightness(1.2) saturate(0)">
+    <img loading="lazy" src="assets/chatbot-motif.png" aria-hidden="true" style="position:absolute;bottom:-80px;right:-60px;width:1560px;height:auto;opacity:0.05;pointer-events:none;z-index:0;filter:brightness(1.2) saturate(0)">
 
     <!-- Logo -->
     <div style="position:relative;z-index:1;padding-bottom:40px;border-bottom:1px solid rgba(201,168,76,.35)">
@@ -796,7 +801,7 @@ function ghSubmit(e){
   e.preventDefault();
   var btn=e.target.querySelector('button[type="submit"]');
   btn.disabled=true; btn.textContent='Sending…';
-  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({access_key:'cd3e4509-7942-4ad3-a888-2af2910f5f6d',subject:'New Enquiry، Graphics House Website',from_name:'Graphics House Website',name:document.getElementById('ghName').value,company:document.getElementById('ghCompany').value,project_type:document.getElementById('ghProject').value,phone:document.getElementById('ghPhone').value,brief:document.getElementById('ghBrief').value,botcheck:''})}).then(function(r){return r.json();}).then(function(res){btn.disabled=false;btn.textContent='Submit Enquiry →';if(res.success){document.querySelector('#ghPopup form').style.display='none';document.getElementById('ghThanks').style.display='block';setTimeout(function(){document.getElementById('ghPopup').classList.remove('open');document.querySelector('#ghPopup form').style.display='block';document.getElementById('ghThanks').style.display='none';},3000);}else{alert('Something went wrong. Please try again.');}}).catch(function(){btn.disabled=false;btn.textContent='Submit Enquiry →';alert('Connection error.');});
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({access_key:(window.GH_FORMS&&window.GH_FORMS.web3formsAccessKey)||'',subject:'New Enquiry، Graphics House Website',from_name:'Graphics House Website',name:document.getElementById('ghName').value,company:document.getElementById('ghCompany').value,project_type:document.getElementById('ghProject').value,phone:document.getElementById('ghPhone').value,brief:document.getElementById('ghBrief').value,botcheck:''})}).then(function(r){return r.json();}).then(function(res){btn.disabled=false;btn.textContent='Submit Enquiry →';if(res.success){document.querySelector('#ghPopup form').style.display='none';document.getElementById('ghThanks').style.display='block';setTimeout(function(){document.getElementById('ghPopup').classList.remove('open');document.querySelector('#ghPopup form').style.display='block';document.getElementById('ghThanks').style.display='none';},3000);}else{alert('Something went wrong. Please try again.');}}).catch(function(){btn.disabled=false;btn.textContent='Submit Enquiry →';alert('Connection error.');});
 
 </script>
 

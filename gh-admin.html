@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Panel، Graphics House</title>
@@ -289,7 +290,7 @@ body {
 <script>
 function checkPassword(){
   var pw = document.getElementById('passwordInput').value;
-  if(pw === 'hghgj123'){
+  if(false /* disabled — use server-side auth */){
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('dashboard').style.display = 'block';
     document.getElementById('headerBar').style.display = 'flex';

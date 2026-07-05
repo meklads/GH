@@ -1,0 +1,18 @@
+{
+  "name": "graphics-house-site",
+  "private": true,
+  "description": "Graphics House static site tooling",
+  "scripts": {
+    "sync": "node scripts/sync-layout.mjs",
+    "harden": "node scripts/site-hardening.mjs",
+    "solutions": "node scripts/build-solution-pages.mjs",
+    "lang": "node scripts/fix-lang-links.mjs",
+    "tailwind": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.min.css --minify",
+    "build": "npm run tailwind && node scripts/build-solution-pages.mjs && node scripts/site-hardening.mjs && node scripts/sync-layout.mjs"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.2",
+    "postcss": "^8.5.16",
+    "tailwindcss": "^3.4.19"
+  }
+}

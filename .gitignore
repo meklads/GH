@@ -2,6 +2,7 @@
 Thumbs.db
 *.log
 .claude/
+node_modules/
 
 # Large backup files - kept locally, not deployed
 assets/ghfolio.pdf

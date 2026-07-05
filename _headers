@@ -1,0 +1,24 @@
+# Cloudflare Pages / compatible static hosts
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/videos/*
+  Cache-Control: public, max-age=604800
+
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+/gh-admin.html
+  X-Robots-Tag: noindex, nofollow

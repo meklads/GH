@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+<script src="assets/gh-forms-config.js"></script>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>The Complete Visual Sales System، Graphics House</title>
@@ -209,7 +210,10 @@ img{max-width:100%;display:block}
 
 <link rel="stylesheet" href="assets/site-header.css?v=7">
 <script defer src="assets/site-header.js?v=7"></script>
+<script defer src="assets/gh-performance.js?v=1"></script>
 <script defer src="assets/lang-switch.js?v=1"></script>
+<link rel="stylesheet" href="assets/gh-site-enhancements.css">
+<link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 </head>
 <body>
 
@@ -858,7 +862,7 @@ img{max-width:100%;display:block}
 <footer dir="ltr" style="background:#071810;color:#fff;font-family:'Inter','Tajawal',sans-serif;position:relative;overflow:hidden">
   <div style="max-width:1320px;margin:0 auto;padding:56px 48px 0">
     <!-- Footer motif background -->
-    <img src="assets/chatbot-motif.png" aria-hidden="true" style="position:absolute;bottom:-80px;right:-60px;width:1560px;height:auto;opacity:0.05;pointer-events:none;z-index:0;filter:brightness(1.2) saturate(0)">
+    <img loading="lazy" src="assets/chatbot-motif.png" aria-hidden="true" style="position:absolute;bottom:-80px;right:-60px;width:1560px;height:auto;opacity:0.05;pointer-events:none;z-index:0;filter:brightness(1.2) saturate(0)">
 
     <!-- Logo -->
     <div style="position:relative;z-index:1;padding-bottom:40px;border-bottom:1px solid rgba(201,168,76,.35)">
@@ -982,7 +986,7 @@ function submitOffer(e){
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
     body:JSON.stringify({
-      access_key:'cd3e4509-7942-4ad3-a888-2af2910f5f6d',
+      access_key:(window.GH_FORMS&&window.GH_FORMS.web3formsAccessKey)||'',
       subject:'Project Assessment Request، Graphics House Website',
       from_name:'Graphics House Website',
       name:name, project:project, phone:phone, botcheck:''
