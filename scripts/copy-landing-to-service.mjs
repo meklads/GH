@@ -49,13 +49,17 @@ if (destDir.startsWith('services')) {
   html = html.replace(new RegExp(`href="${prefix}services/([^"]+)"`, 'g'), (m, file) => `href="${file}"`);
 }
 
-// Remove duplicate landing mini-header (main site header is synced separately)
+// Remove duplicate landing mini-header (keep synced site header only)
+if (/<div id="mob-nav">[\s\S]*?<!-- DARK HEADER -->[\s\S]*?<\/section>/m.test(html)) {
+  html = html.replace(
+    /<div id="mob-nav">[\s\S]*?<!-- DARK HEADER -->[\s\S]*?<\/section>\s*\n\s*/m,
+    ''
+  );
+} else {
+  html = html.replace(/<\/header>\s*[\s\S]*?(?=<!-- GALLERY STRIP HERO -->)/, '</header>\n\n');
+}
 html = html.replace(
-  /<div id="mob-nav">[\s\S]*?<\/div>\s*\n\s*<!-- DARK HEADER -->[\s\S]*?<\/section>\s*\n\s*/m,
-  ''
-);
-html = html.replace(
-  /function closeMobNav\(\)[^;]+;\}\s*\ndocument\.getElementById\('mob-close'\)[^;]+;\s*\ndocument\.querySelectorAll\('#mob-nav a'\)[^;]+;\}\)\);\s*\n/m,
+  /function closeMobNav\(\)\{[\s\S]*?document\.querySelectorAll\('#mob-nav a'\)[\s\S]*?\}\);\s*\n/m,
   ''
 );
 
@@ -72,7 +76,7 @@ body { padding-top: 0 !important; }
   );
 }
 html = html.replace(
-  '<section style="background:#0A0A0A;overflow:hidden">',
+  /<section style="background:#0A0A0A;overflow:hidden[^"]*">/,
   '<section style="background:#0A0A0A;overflow:hidden;padding-top:96px">'
 );
 
