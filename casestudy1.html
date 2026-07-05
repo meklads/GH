@@ -418,6 +418,7 @@ img { max-width: 100%; display: block; }
   border: 1.5px solid rgba(255,255,255,0.08);
   transition: all 0.3s ease;
   position: relative;
+  pointer-events: auto;
 }
 .s2-hero-gallery-grid .s2-hero-thumb:hover {
   border-color: var(--gold);
@@ -996,7 +997,7 @@ html[dir="rtl"] .nav-item-drop .nav-dropdown{left:auto;right:0}
 
 <!-- Image Lightbox -->
 <div class="image-lightbox" id="imageLightbox" onclick="closeImageLightbox(event)">
-  <div class="image-lightbox-inner">
+  <div class="image-lightbox-inner" onclick="event.stopPropagation()">
     <button class="image-lightbox-close" onclick="closeImageLightbox(event)">✕</button>
     <img loading="lazy" id="imageLightboxImg" src="" alt="">
   </div>
@@ -1099,8 +1100,9 @@ function playVideo(videoId, startTime) {
   if (startTime !== undefined) src += '&start=' + startTime;
   var iframe = document.createElement('iframe');
   iframe.setAttribute('src', src);
-  iframe.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
+  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
   iframe.setAttribute('allowfullscreen', '');
+  iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
   iframe.style.cssText = 'width:100%;height:100%;border:0;';
   container.innerHTML = '';
   container.appendChild(iframe);
@@ -1117,14 +1119,8 @@ function closeVideo() {
 }
 
 // Close modal on overlay click
-document.addEventListener('click', function(e) {
-  var modal = document.getElementById('videoModal');
-  if (e.target === modal) closeVideo();
-});
-
-// Close modal on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeVideo();
+document.getElementById('videoModal').addEventListener('click', function(e) {
+  if (e.target === this) closeVideo();
 });
 
 // Hero thumbnail gallery - open image in lightbox
@@ -1133,30 +1129,31 @@ function openHeroImage(src) {
   var modalImg = document.getElementById('imageLightboxImg');
   modalImg.src = src;
   modal.style.display = 'flex';
-  setTimeout(function() { modal.style.opacity = '1'; }, 10);
+  requestAnimationFrame(function() { modal.style.opacity = '1'; });
   document.body.style.overflow = 'hidden';
 }
 
 function closeImageLightbox(e) {
   var modal = document.getElementById('imageLightbox');
-  if (e.target === modal || e.target.closest('.image-lightbox-close')) {
-    modal.style.opacity = '0';
-    setTimeout(function() { modal.style.display = 'none'; }, 300);
-    document.body.style.overflow = '';
-  }
+  if (e && e.target !== modal && !e.target.closest('.image-lightbox-close')) return;
+  modal.style.opacity = '0';
+  setTimeout(function() {
+    modal.style.display = 'none';
+    document.getElementById('imageLightboxImg').removeAttribute('src');
+  }, 300);
+  document.body.style.overflow = '';
 }
 
-// Close lightbox on Escape
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    var lightbox = document.getElementById('imageLightbox');
-    if (lightbox.style.display === 'flex') {
-      lightbox.style.opacity = '0';
-      setTimeout(function() { lightbox.style.display = 'none'; }, 300);
-      document.body.style.overflow = '';
-    }
+  if (e.key !== 'Escape') return;
+  var lightbox = document.getElementById('imageLightbox');
+  var videoModal = document.getElementById('videoModal');
+  if (lightbox && lightbox.style.display === 'flex') {
+    closeImageLightbox();
+    return;
   }
-);
+  if (videoModal && videoModal.style.display === 'flex') closeVideo();
+});
 </script>
 
 </body>
