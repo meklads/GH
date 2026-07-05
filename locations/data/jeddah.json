@@ -1,0 +1,86 @@
+{
+  "slug": "jeddah",
+  "city": { "ar": "جدة", "en": "Jeddah" },
+  "heroImage": "assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg",
+  "title": {
+    "ar": "إظهار معماري وأنظمة إطلاق بصرية للمطورين في جدة",
+    "en": "Architectural Visualization & Visual Launch Systems in Jeddah"
+  },
+  "subtitle": {
+    "ar": "من المقر الرئيسي في جدة — نبني أنظمة مبيعات بصرية متكاملة للمشاريع السكنية والمختلطة والضيافة في المنطقة الغربية ومشاريع البحر الأحمر.",
+    "en": "From our Jeddah headquarters — we build integrated visual sales systems for residential, mixed-use, and hospitality developments across the Western Region and Red Sea projects."
+  },
+  "metaDescription": {
+    "ar": "استوديو إظهار معماري في جدة: رندر فوتوريالستي، مجسمات ذكية، أفلام CGI، ومنصات تفاعلية للمطورين العقاريين — Graphics House المقر الرئيسي.",
+    "en": "Archviz studio in Jeddah: photorealistic renders, smart maquettes, CGI films & interactive sales platforms for real estate developers — Graphics House HQ."
+  },
+  "stats": [
+    { "value": "500+", "label": { "ar": "مشروع في الخليج", "en": "GCC projects" } },
+    { "value": "20+", "label": { "ar": "سنة خبرة", "en": "Years experience" } },
+    { "value": "4", "label": { "ar": "مكاتب إقليمية", "en": "Regional offices" } }
+  ],
+  "services": [
+    {
+      "icon": "imagesmode",
+      "title": { "ar": "إظهار معماري فوتوريالستي", "en": "Photorealistic Archviz" },
+      "desc": { "ar": "رندرات خارجية وداخلية للمشاريع off-plan والمراحل الأولى.", "en": "Exterior & interior renders for off-plan and early-phase sales." },
+      "href": "services/rendering.html"
+    },
+    {
+      "icon": "home_work",
+      "title": { "ar": "مجسمات ذكية", "en": "Smart Maquettes" },
+      "desc": { "ar": "مجسمات فيزيائية تفاعلية لصالات البيع والمعارض.", "en": "Interactive physical models for sales galleries & exhibitions." },
+      "href": "smart-maquettes.html"
+    },
+    {
+      "icon": "slow_motion_video",
+      "title": { "ar": "إنتاج سينمائي CGI", "en": "Cinematic CGI" },
+      "desc": { "ar": "أفلام إطلاق قصيرة ومتوسطة للحملات والتلفزيون.", "en": "Short & mid-form launch films for campaigns and broadcast." },
+      "href": "services/animation.html"
+    },
+    {
+      "icon": "smart_display",
+      "title": { "ar": "تجارب تفاعلية", "en": "Interactive Experiences" },
+      "desc": { "ar": "شاشات لمس وتطبيقات مبيعات للوحدات والإطلالات.", "en": "Touch walls & sales apps for units and views." },
+      "href": "services/interactive.html"
+    },
+    {
+      "icon": "rocket_launch",
+      "title": { "ar": "ProjectLaunch™", "en": "ProjectLaunch™" },
+      "desc": { "ar": "نظام إطلاق متكامل: بصري + تسويق + صالة بيع.", "en": "Integrated launch system: visual + marketing + sales gallery." },
+      "href": "solutions/project-launch.html"
+    },
+    {
+      "icon": "checklist",
+      "title": { "ar": "قائمة جاهزية الإطلاق", "en": "Launch Readiness Checklist" },
+      "desc": { "ar": "PDF مجاني — 12 بنداً قبل إطلاق المبيعات.", "en": "Free PDF — 12 essentials before your sales launch." },
+      "href": "insights/downloads/visual-launch-checklist.html"
+    }
+  ],
+  "why": {
+    "title": { "ar": "لماذا Graphics House في جدة؟", "en": "Why Graphics House in Jeddah?" },
+    "items": [
+      {
+        "title": { "ar": "المقر الرئيسي في جدة", "en": "Jeddah headquarters" },
+        "desc": { "ar": "فريق إنتاج واستراتيجية بصري في قلب السوق الغربي — اجتماعات ميدانية وورش اعتماد سريعة.", "en": "Production & visual strategy team at the heart of the Western market — fast on-site reviews and workshops." }
+      },
+      {
+        "title": { "ar": "خبرة المشاريع الكبرى", "en": "Major project experience" },
+        "desc": { "ar": "مشاريع سكنية ضخمة، مختلطة، وضيافة — من الإطلاق حتى صالة البيع.", "en": "Large residential, mixed-use & hospitality — from launch through sales gallery." }
+      },
+      {
+        "title": { "ar": "نظام متكامل لا قطع منفصلة", "en": "Integrated system, not fragments" },
+        "desc": { "ar": "رندر + فيلم + مجسم + منصة من استوديو واحد باتساق بصري كامل.", "en": "Render + film + maquette + platform from one studio with full visual consistency." }
+      },
+      {
+        "title": { "ar": "لغة المبيعات العقارية", "en": "Real estate sales language" },
+        "desc": { "ar": "نفهم off-plan، الوسطاء، وصالات البيع في السوق السعودي.", "en": "We understand off-plan, brokers, and sales galleries in the Saudi market." }
+      }
+    ]
+  },
+  "office": {
+    "address": { "ar": "جدة، المملكة العربية السعودية — ص.ب 136972", "en": "Jeddah, Saudi Arabia — P.O. Box 136972" },
+    "cr": "4030502306",
+    "phone": "+966502786513"
+  }
+}

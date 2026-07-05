@@ -45,10 +45,18 @@
     return /\/insights(\/|$)/.test(dirPath);
   }
 
-  function alternateFileName(fileName, dirPath) {
-    if (EXPLICIT[fileName] && !isInsightsPath(dirPath)) return EXPLICIT[fileName];
+  function isLocationsPath(dirPath) {
+    return /\/locations(\/|$)/.test(dirPath);
+  }
 
-    if (isInsightsPath(dirPath)) {
+  function isBilingualSection(dirPath) {
+    return isInsightsPath(dirPath) || isLocationsPath(dirPath);
+  }
+
+  function alternateFileName(fileName, dirPath) {
+    if (EXPLICIT[fileName] && !isBilingualSection(dirPath)) return EXPLICIT[fileName];
+
+    if (isBilingualSection(dirPath)) {
       if (fileName === 'index.html') return 'index-en.html';
       if (fileName === 'index-en.html') return 'index.html';
       if (fileName.endsWith('-en.html')) return fileName.replace(/-en\.html$/, '.html');

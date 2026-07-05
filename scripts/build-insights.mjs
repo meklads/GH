@@ -149,7 +149,7 @@ function headBlock(lang, meta) {
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
-<script defer src="${p}assets/lang-switch.js?v=2"></script>
+<script defer src="${p}assets/lang-switch.js?v=3"></script>
 <style>
 body.gh-insights{min-height:100vh;display:flex;flex-direction:column}
 .gh-blog-wrap,.gh-article-page-wrap .gh-blog-wrap,.gh-tool-page-wrap .gh-blog-wrap{max-width:1180px;margin:0 auto;padding:0 24px}
@@ -428,6 +428,7 @@ ${prefixPaths(header, depth)}
         <ul class="gh-checklist" id="ghLaunchChecklist">${listHtml}</ul>
         <div class="gh-tool-actions gh-no-print">
           <button type="button" id="ghPrintChecklist" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'Print' : 'طباعة'}</button>
+          <a href="../downloads/visual-launch-checklist${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Download PDF' : 'تحميل PDF'}</a>
         </div>
       </div>
       ${sidebar}
