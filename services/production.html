@@ -1,182 +1,632 @@
 <!DOCTYPE html>
-<html class="dark scroll-smooth" dir="rtl" lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>الإنتاج السينمائي | Graphics House</title>
-<meta name="description" content="أفلام عقارية وإعلانات سينمائية احترافية بأعلى معايير الإنتاج الإعلامي."/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "tertiary":"#cecece","inverse-on-surface":"#313030","surface-container-high":"#2a2a2a",
-          "on-primary-fixed-variant":"#574500","surface-container-low":"#1c1b1b","background":"#131313",
-          "error":"#ffb4ab","on-tertiary":"#2f3131","on-primary-container":"#554300","secondary":"#c9c6c5",
-          "on-primary-fixed":"#241a00","primary-fixed-dim":"#e9c349","on-tertiary-container":"#434546",
-          "on-error":"#690005","tertiary-container":"#b2b3b3","on-secondary-fixed":"#1c1b1b",
-          "surface-tint":"#e9c349","secondary-container":"#4a4949","on-tertiary-fixed":"#1a1c1c",
-          "outline-variant":"#4d4635","primary-container":"#d4af37","on-surface":"#e5e2e1",
-          "outline":"#99907c","secondary-fixed-dim":"#c9c6c5","on-surface-variant":"#d0c5af",
-          "error-container":"#93000a","primary":"#f2ca50","primary-fixed":"#ffe088",
-          "on-background":"#e5e2e1","inverse-primary":"#735c00","on-secondary-container":"#bab8b7",
-          "surface-container-lowest":"#0e0e0e","tertiary-fixed-dim":"#c6c6c7","surface-fixed":"#e2e2e2",
-          "on-error-container":"#ffdad6","surface":"#131313","surface-container-highest":"#353535",
-          "secondary-fixed":"#e5e2e1","on-primary":"#3c2f00","surface-container":"#20201f",
-          "on-tertiary-fixed-variant":"#454747","on-secondary":"#313030","on-secondary-fixed-variant":"#474646",
-          "inverse-surface":"#e5e2e1","surface-dim":"#131313","surface-bright":"#393939"
-        },
-        borderRadius: { "DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem" },
-        spacing: { "unit":"8px","gutter":"24px","section-gap":"120px","margin-edge":"64px","container-max":"1440px" },
-        fontFamily: {
-          "body-md":["Manrope"],"headline-lg":["Noto Serif"],"label-caps":["Manrope"],
-          "headline-xl":["Noto Serif"],"body-lg":["Manrope"],"headline-md":["Noto Serif"],
-          "ar-display":["Amiri","serif"],"ar-ui":["Cairo","sans-serif"]
-        },
-        fontSize: {
-          "body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],
-          "headline-lg":["32px",{"lineHeight":"1.3","fontWeight":"600"}],
-          "label-caps":["12px",{"lineHeight":"1.0","letterSpacing":"0.1em","fontWeight":"700"}],
-          "headline-xl":["48px",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"700"}],
-          "body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],
-          "headline-md":["24px",{"lineHeight":"1.4","fontWeight":"500"}]
-        }
-      }
-    }
-  }
-</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>التصوير والإنتاج الإعلامي | Graphics House</title>
+<meta name="description" content="تصوير احترافي، أفلام ترويجية، وتغطية فعاليات للمطورين العقاريين والعلامات التجارية في السعودية والخليج.">
+<meta property="og:title" content="التصوير والإنتاج الإعلامي | Graphics House">
+<meta property="og:description" content="إنتاج فني متكامل: تصوير، فيديو، ومحتوى بصري بجودة سينمائية.">
+<meta property="og:image" content="https://3dgraphicshouse.com/assets/favicon/og-image.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{gold:"#C9A84C"},borderRadius:{DEFAULT:"0px"}}}}</script>
 <style>
-  /* ══════════════════════════════════════════════
-     BILINGUAL، body.is-en = EN shown, AR hidden
-  ══════════════════════════════════════════════ */
-  /* Bilingual visibility، !important prevents Tailwind/other overrides */
-  .en          { display:none    !important; }
-  body.is-en .en { display:inline  !important; }
-  body.is-en .ar { display:none    !important; }
 
-  /* Block-level translations */
-  .en-block            { display:none  !important; }
-  .ar-block            { display:block; }
-  body.is-en .en-block { display:block !important; }
-  body.is-en .ar-block { display:none  !important; }
+:root {
+  --gold: #C7A150;
+  --gold-light: #D9B860;
+  --gold-dark: #A8883A;
+  --text-primary: #1A1A1A;
+  --text-secondary: rgba(26,26,26,0.65);
+  --text-muted: rgba(26,26,26,0.4);
+  --bg-white: #FFFFFF;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Tajawal', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #FAFAF8;
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--gold); color: #FAFAF8; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
 
-  /* ── Material Symbols FILL ─────────────────── */
-  .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
+/* ===== HEADER ===== */
+/* ===== DARK HEADER ===== */
+.dark-header {
+  width: 100%;
+  background: #0A0A0A;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+}
+.dark-header-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 768px) { .dark-header-inner { padding: 0 20px; } }
+.dark-logo img { height: 72px; width: auto; }
+@media (max-width: 768px) { .dark-logo img { height: 56px; } }
+.dark-nav { display: flex; align-items: center; gap: 28px; }
+.dark-nav a {
+  font-size: 16px; font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+.dark-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.dark-nav a:hover { color: #fff; }
+.dark-nav a:hover::after { transform: scaleX(1); }
+.dark-nav .nav-cta {
+  padding: 10px 24px;
+  background: #fff;
+  color: #0A0A0A !important;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+.dark-nav .nav-cta::after { display: none; }
+.dark-nav .nav-cta:hover { background: #f0f0f0; transform: scale(1.04); color: #0A0A0A !important; }
+.dark-menu-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; }
+.dark-menu-toggle span { font-size: 28px; }
+@media (max-width: 960px) {
+  .dark-nav { display: none; }
+  .dark-menu-toggle { display: flex; z-index: 1001; }
+}
 
-  /* ── Scrollbar ──────────────────────────────── */
-  ::-webkit-scrollbar { width:3px; }
-  ::-webkit-scrollbar-track { background:#0e0e0e; }
-  ::-webkit-scrollbar-thumb { background:#f2ca50; }
+/* MOBILE NAV */
+#mob-nav {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(10,10,10,.98);
+  backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
+  transform: translateX(100%);
+  transition: transform .5s cubic-bezier(0.16,1,0.3,1);
+  overflow-y: auto;
+}
+#mob-nav.open { transform: translateX(0); }
 
-  /* ── Custom Cursor ──────────────────────────── */
-  @media (pointer:fine) { *,*::before,*::after { cursor:none !important; } }
-  #cur-dot {
-    position:fixed; top:0; left:0; width:6px; height:6px; margin:-3px 0 0 -3px;
-    background:#f2ca50; border-radius:50%; pointer-events:none; z-index:99999;
-    will-change:transform; opacity:0; transition:opacity .3s ease,transform .05s linear;
+/* ===== HERO ===== */
+.hero-sec {
+  width: 100%;
+  padding: 32px 0 0;
+  background: #0A0A0A;
+}
+.hero-inner {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-image {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1672/780;
+  max-width: 100%;
+}
+.hero-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 32px 48px;
+  background: #0A0A0A;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .hero-btns { padding: 20px; }
+}
+
+/* ===== SLIDE SECTION ===== */
+.slide-sec {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide-sec-inner {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .slide-sec-inner { padding: 0 20px; }
+}
+.slide-sec img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== SLIDE FRAME ===== */
+.slide-frame {
+  width: 100%;
+  border-radius: 42px;
+  overflow: hidden;
+  padding: 0;
+  background: transparent;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.04), 0 1px 6px rgba(0,0,0,0.02);
+  transition: box-shadow 0.3s ease;
+}
+.slide-frame:hover {
+  box-shadow: 0 8px 50px rgba(0,0,0,0.08), 0 2px 12px rgba(0,0,0,0.04);
+}
+.slide-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 768px) {
+  .slide-frame {
+    border-radius: 28px;
   }
-  #cur-ring {
-    position:fixed; top:0; left:0; width:36px; height:36px; margin:-18px 0 0 -18px;
-    border:1px solid rgba(242,202,80,.45); border-radius:50%;
-    pointer-events:none; z-index:99998; will-change:transform; opacity:0;
-    transition:opacity .3s ease,width .25s ease,height .25s ease,margin .25s ease,border-color .25s ease;
-  }
-  #cur-dot.visible,#cur-ring.visible { opacity:1; }
-  #cur-ring.hovered { width:60px; height:60px; margin:-30px 0 0 -30px; border-color:rgba(242,202,80,.8); }
+}
 
-  /* ── Film grain ─────────────────────────────── */
-  body::after {
-    content:''; position:fixed; inset:0; pointer-events:none; z-index:9990;
-    opacity:.018; mix-blend-mode:normal;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-    animation:grain 9s steps(8,end) infinite;
-  }
-  @keyframes grain {
-    0%{transform:translate(0,0)} 12%{transform:translate(-4%,-9%)} 25%{transform:translate(3%,-13%)}
-    37%{transform:translate(8%,6%)} 50%{transform:translate(-6%,11%)} 62%{transform:translate(10%,-4%)}
-    75%{transform:translate(-2%,8%)} 87%{transform:translate(5%,-7%)} 100%{transform:translate(0,0)}
-  }
+/* WATCH BUTTON */
+.btn-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 36px;
+  background: #fff;
+  color: #1A1A1A;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Tajawal', sans-serif;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.btn-watch:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+.btn-watch .play-icon {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.08);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+}
+.btn-watch:hover .play-icon { background: rgba(0,0,0,0.04); transform: scale(1.1); }
+.btn-watch .play-icon span { font-size: 18px; color: #1A1A1A; }
 
-  /* ── Page Loader ────────────────────────────── */
-  #loader {
-    position:fixed; inset:0; z-index:99999; background:#0e0e0e;
-    display:flex; align-items:center; justify-content:center; flex-direction:column;
-    transition:opacity .6s ease,visibility .6s ease;
-  }
-  #loader.out { opacity:0; visibility:hidden; }
-  #loader-bar-track { width:180px; height:1px; background:rgba(242,202,80,.15); margin-top:20px; overflow:hidden; }
-  #loader-bar { height:100%; width:0; background:#f2ca50; transition:width 1s cubic-bezier(.4,0,.2,1); }
+/* ===== CTA DIVIDERS ===== */
+.cta-d {
+  padding: 80px 0;
+  text-align: center;
+}
+.cta-d-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+@media (max-width: 768px) {
+  .cta-d { padding: 48px 0; }
+  .cta-d-inner { padding: 0 20px; }
+}
+.cta-d h2 {
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 500;
+  margin-bottom: 12px;
+  line-height: 1.15;
+}
+.cta-d h2 .gold { color: var(--gold); }
+.cta-d p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-p {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px;
+  background: #fff; color: #1A1A1A;
+  font-size: 14px; font-weight: 700; border: none;
+  border-radius: 50px; cursor: pointer; transition: all 0.3s;
+  font-family: 'Tajawal', sans-serif;
+}
+.btn-p:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+.btn-o {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px;
+  background: transparent; color: var(--text-primary);
+  font-size: 14px; font-weight: 600;
+  border: 1.5px solid rgba(26,26,26,0.15);
+  border-radius: 50px; cursor: pointer; transition: all 0.3s;
+  font-family: 'Tajawal', sans-serif;
+}
+.btn-o:hover { border-color: var(--gold); color: var(--gold-dark); transform: translateY(-2px); }
+.btn-o-light {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px;
+  background: transparent; color: #FAFAF8;
+  font-size: 14px; font-weight: 600;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 50px; cursor: pointer; transition: all 0.3s;
+  font-family: 'Tajawal', sans-serif;
+}
+.btn-o-light:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
-  /* ── Scroll reveal ──────────────────────────── */
-  .reveal { transition:opacity .75s cubic-bezier(.4,0,.2,1),transform .75s cubic-bezier(.4,0,.2,1); }
-  .reveal.visible { opacity:1 !important; transform:none !important; }
+/* ===== VIDEO MODAL ===== */
+.video-modal {
+  position: fixed; inset: 0; z-index: 99998;
+  background: rgba(0,0,0,.92);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity .4s ease, visibility .4s ease;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.video-modal.active { opacity: 1; visibility: visible; }
+.vm-close {
+  position: absolute; top: 24px; right: 24px; z-index: 10;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,.08); border: none;
+  color: #fff; font-size: 20px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+}
+.vm-close:hover { background: rgba(255,255,255,.15); }
+.vm-inner { width: 90%; max-width: 1100px; max-height: 85vh; }
+.vm-aspect { position: relative; padding-bottom: 56.25%; background: #000; overflow: hidden; border-radius: 4px; }
+.vm-aspect iframe,
+.vm-aspect video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
 
-  /* ── Hero entrance ──────────────────────────── */
-  .hero-enter { opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1); }
-  .hero-enter.in { opacity:1; transform:none; }
+/* ===== CONTACT ===== */
+.contact-s {
+  padding: 80px 0;
+  background: #F5F4F0;
+}
+.contact-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+@media (max-width: 768px) {
+  .contact-s { padding: 48px 0; }
+  .contact-inner { padding: 0 20px; }
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+.contact-info h3 { font-size: 22px; font-weight: 500; margin-bottom: 12px; }
+.contact-info p { font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
+.contact-info-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 0; border-bottom: 1px solid rgba(26,26,26,0.04);
+  font-size: 14px; color: var(--text-secondary);
+}
+.contact-info-item .material-symbols-outlined { color: var(--gold); font-size: 20px; }
+.form-card {
+  background: var(--bg-white);
+  border: 1px solid rgba(26,26,26,0.08);
+  padding: 40px;
+}
+@media (max-width: 768px) { .form-card { padding: 24px; } }
+.form-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 20px; }
+.form-group { margin-bottom: 14px; }
+.form-group label {
+  display: block; font-size: 12px; font-weight: 600;
+  color: var(--text-secondary); margin-bottom: 5px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; padding: 12px 16px;
+  background: rgba(26,26,26,0.03);
+  border: 1px solid rgba(26,26,26,0.1);
+  color: var(--text-primary);
+  font-size: 14px; font-family: 'Tajawal', sans-serif;
+  outline: none; transition: border-color 0.3s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--gold); }
+.form-group select { appearance: none; -webkit-appearance: none; cursor: pointer; }
+.form-group select option { background: #FAFAF8; color: var(--text-primary); }
+.form-group textarea { min-height: 90px; resize: vertical; }
+.form-submit {
+  width: 100%; padding: 15px;
+  background: #fff; color: #1A1A1A;
+  font-size: 15px; font-weight: 700; font-family: 'Tajawal', sans-serif;
+  border: 1px solid rgba(26,26,26,0.1); cursor: pointer; transition: all 0.3s;
+}
+.form-submit:hover { background: #f0f0f0; }
 
-    /* ── Nav states ─────────────────────────────── */
-  #main-nav { transition:padding .45s cubic-bezier(.4,0,.2,1); }
-  #nav-pill {
-    transition:background .45s cubic-bezier(.4,0,.2,1),
-               border-radius .45s cubic-bezier(.4,0,.2,1),
-               border-color .45s cubic-bezier(.4,0,.2,1),
-               box-shadow .45s cubic-bezier(.4,0,.2,1),
-               height .45s cubic-bezier(.4,0,.2,1);
-  }
-  /* Scrolled: full-width solid bar, like Animatics */
-  #main-nav.scrolled { padding:0 !important; }
-  #main-nav.scrolled #nav-pill {
-    background:rgba(8,8,8,.97) !important;
-    border-radius:0 !important;
-    border-color:transparent !important;
-    box-shadow:0 1px 0 rgba(255,255,255,.07), 0 4px 28px rgba(0,0,0,.7) !important;
-  }
+/* ===== FOOTER ===== */
+.footer {
+  background: #1A1A1A; color: rgba(255,255,255,0.6);
+  padding: 60px 0 30px;
+}
+.footer-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+@media (max-width: 768px) { .footer-inner { padding: 0 20px; } }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 24px;
+}
+@media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer h4 {
+  font-size: 13px; font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-desc { font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.4); max-width: 300px; margin-top: 12px; }
+.footer-social { display: flex; gap: 12px; margin-top: 20px; }
+.footer-social a {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.4); transition: all 0.3s;
+}
+.footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+}
+.footer-bottom a { color: rgba(255,255,255,0.5); transition: color 0.3s; }
+.footer-bottom a:hover { color: var(--gold); }
+@media (max-width: 768px) { .footer-bottom { flex-direction: column; text-align: center; } }
 
-  /* ── Nav links، Animatics style ────────────── */
-  .nav-link {
-    font-family:'Cairo',sans-serif; font-size:14px; font-weight:500;
-    color:rgba(255,255,255,.92); text-decoration:none;
-    position:relative; padding-bottom:3px;
-    transition:color .25s ease;
-  }
-  .nav-link::after {
-    content:''; position:absolute;
-    bottom:0; inset-inline-start:0; inset-inline-end:0;
-    height:1px; background:#f2ca50;
-    transform:scaleX(0); transform-origin:center;
-    transition:transform .28s ease;
-  }
-  .nav-link:hover { color:#fff; }
-  .nav-link:hover::after, .nav-link.nav-active::after { transform:scaleX(1); }
+/* ===== FLOATING ===== */
+.gh-float {
+  position: fixed; bottom: 32px; left: 28px; z-index: 9000;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.gh-float-btn {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.25s; border: none; cursor: pointer; text-decoration: none;
+}
+.gh-float-btn:hover { transform: scale(1.12); }
+.gh-float-wa { background: #25D366; }
+.gh-float-mail { background: var(--gold); }
+.gh-float-mail span { color: #1A1A1A; }
 
-  /* ── Mobile nav ─────────────────────────────── */
-  #mob-nav {
-    position:fixed; inset:0; z-index:9999;
-    background:#070605;
-    transform:translateX(100vw);
-    transition:transform .45s cubic-bezier(.4,0,.2,1);
-    overflow-y:auto;
-  }
-  #mob-nav.open { transform:translateX(0); }
+/* ===== SLIDER ===== */
+.slider-track { display:flex; flex-wrap:nowrap; }
+.slider-item { flex:0 0 100%; width:100%; }
 
-  /* ── Back to top ─────────────────────────────── */
-  #back-top { transition:opacity .3s ease,transform .3s ease; opacity:0; pointer-events:none; transform:translateY(8px); }
-  #back-top.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
+/* ===== REVEAL ===== */
+.reveal { opacity: 0; transform: translateY(24px); transition: all .7s cubic-bezier(.25,.1,.1,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.r1 { transition-delay: .1s; }
+.r2 { transition-delay: .2s; }
 
 
+
+
+/* SECTIONS */
+section { padding: 90px 0; }
+@media (max-width: 768px) { section { padding: 56px 0; } }
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+  color: var(--gold); display: block; margin-bottom: 12px;
+  font-family: 'Inter', sans-serif; text-transform: uppercase;
+}
+html[dir="rtl"] .section-label {
+  letter-spacing: 0.06em; text-transform: none; font-family: 'Tajawal', sans-serif; font-size: 12px;
+}
+.section-title {
+  font-size: clamp(28px, 3.8vw, 48px);
+  font-weight: 500; line-height: 1.15;
+  margin-bottom: 16px;
+}
+.section-title .gold { color: var(--gold); }
+.section-sub {
+  font-size: 16px; font-weight: 400; color: var(--text-secondary);
+  line-height: 1.8; max-width: 620px; margin-bottom: 48px;
+}
+
+/* FEATURE GRID */
+.feature-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+  background: rgba(26,26,26,0.06); border: 1px solid rgba(26,26,26,0.06);
+}
+.feature-card {
+  background: var(--bg-white); padding: 40px 28px; text-align: center;
+  transition: all 0.4s ease;
+}
+.feature-card:hover { background: #FAFAF8; }
+.feature-card .icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px; transition: all 0.4s ease;
+}
+.feature-card .icon .material-symbols-outlined { font-size: 24px; color: var(--gold); }
+.feature-card:hover .icon {
+  background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.4);
+  transform: translateY(-4px);
+}
+.feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 400; }
+@media (max-width: 1024px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .feature-grid { grid-template-columns: 1fr; } }
+
+/* PORTFOLIO GRID */
+.portfolio-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+.portfolio-item {
+  position: relative; aspect-ratio: 4/3; overflow: hidden;
+  background: #EEE; border: 1px solid rgba(26,26,26,0.06);
+  transition: all 0.5s ease; cursor: pointer;
+}
+.portfolio-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25,0.1,0.1,1);
+}
+.portfolio-item:hover { border-color: rgba(201,168,76,0.2); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+.portfolio-item:hover img { transform: scale(1.06); }
+.portfolio-item-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 24px 18px 16px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  transform: translateY(8px); opacity: 0; transition: all 0.4s ease;
+}
+.portfolio-item:hover .portfolio-item-overlay { transform: translateY(0); opacity: 1; }
+.portfolio-item-category {
+  font-size: 10px; font-weight: 600; color: var(--gold);
+  display: block; letter-spacing: 1px; font-family: 'Inter', sans-serif;
+  text-transform: uppercase; margin-bottom: 4px;
+}
+html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: none; }
+.portfolio-item-title { font-size: 14px; font-weight: 500; color: #fff; display: block; }
+.portfolio-item::before, .portfolio-item::after {
+  content: ''; position: absolute; z-index: 2; pointer-events: none;
+  width: 16px; height: 16px; opacity: 0; transition: all 0.4s ease;
+}
+.portfolio-item::before { top: 8px; left: 8px; border-top: 1.5px solid var(--gold); border-left: 1.5px solid var(--gold); }
+.portfolio-item::after { bottom: 8px; right: 8px; border-bottom: 1.5px solid var(--gold); border-right: 1.5px solid var(--gold); }
+.portfolio-item:hover::before, .portfolio-item:hover::after { opacity: 0.6; }
+@media (max-width: 768px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .portfolio-grid { grid-template-columns: 1fr; } }
+
+/* WHY GRID */
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.why-card { background: var(--bg-white); border: 1px solid rgba(26,26,26,0.06); padding: 32px 24px; text-align: center; transition: all 0.4s ease; }
+.why-card:hover { border-color: rgba(201,168,76,0.2); background: rgba(201,168,76,0.04); transform: translateY(-4px); }
+.why-card .num { font-size: 36px; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 8px; font-family: 'Inter', sans-serif; }
+.why-card h4 { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+.why-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 400; }
+@media (max-width: 1024px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .why-grid { grid-template-columns: 1fr; } }
+
+/* RELATED SERVICES */
+.rel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.rel-card {
+  background: var(--bg-white); border: 1px solid rgba(26,26,26,0.06); padding: 32px 24px; text-align: center;
+  transition: all 0.4s ease; text-decoration: none; color: inherit; display: block;
+}
+.rel-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+.rel-card .icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+  transition: all 0.4s ease;
+}
+.rel-card .icon .material-symbols-outlined { font-size: 24px; color: var(--gold); }
+.rel-card:hover .icon { background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
+.rel-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.rel-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; font-weight: 400; }
+@media (max-width: 1024px) { .rel-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .rel-grid { grid-template-columns: 1fr; } }
+
+/* CTA DIVIDERS */
+
+/* Solid site header on light landing body */
+.header {
+  background: rgba(10, 10, 10, 0.98);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+}
+body { padding-top: 0 !important; }
+.hero-sec { padding-top: 96px; }
+.hero-image { position: relative; }
+.hero-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+  text-align: center; padding: 48px 32px 56px;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.2) 100%);
+  color: #fff;
+}
+.hero-kicker {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
+  color: var(--gold); margin-bottom: 12px;
+  font-family: 'Inter', sans-serif; text-transform: uppercase;
+}
+html[dir="rtl"] .hero-kicker { letter-spacing: 0.06em; text-transform: none; font-family: 'Tajawal', sans-serif; font-size: 13px; }
+.hero-overlay h1 {
+  font-size: clamp(30px, 4.2vw, 54px); font-weight: 500; line-height: 1.15;
+  margin-bottom: 14px; max-width: 900px;
+}
+.hero-overlay p {
+  font-size: clamp(16px, 1.6vw, 19px); line-height: 1.75;
+  color: rgba(255,255,255,0.88); max-width: 680px; margin-bottom: 0;
+}
+.production-section { padding: 90px 0; }
+@media (max-width: 768px) { .production-section { padding: 56px 0; } }
+.reveal { opacity: 0; transform: translateY(24px); transition: all .7s cubic-bezier(.25,.1,.1,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.r1 { transition-delay: .1s; } .r2 { transition-delay: .2s; } .r3 { transition-delay: .3s; }
 
 </style>
-
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKD9QVYNWF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MKD9QVYNWF');</script>
 <link rel="stylesheet" href="../assets/site-header.css">
 <script defer src="../assets/site-header.js"></script>
 </head>
-<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<body>
+
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="/index-ar.html" class="logo">
@@ -248,213 +698,226 @@
   </div>
 </header>
 
-<!-- ── Service Hero ──────────────────────────────── -->
-<section class="relative h-screen flex items-center justify-center overflow-hidden">
-  <div id="hero-bg" class="absolute inset-x-0 -top-[10%] h-[120%] z-0">
-    <img class="w-full h-full object-cover" alt="Cinematic Production" src="../assets/projects/rendering/jeddah-forum.jpg" loading="lazy"/>
-    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
-    <div class="absolute inset-0 bg-black/30"></div>
+<div class="video-modal" id="videoModal">
+  <button class="vm-close" onclick="closeVideo()">✕</button>
+  <div class="vm-inner">
+    <div class="vm-aspect"><div id="vmPlayer"></div></div>
   </div>
-  <div class="relative z-10 text-center max-w-5xl px-6">
-    <span class="hero-enter font-label-caps text-label-caps text-primary tracking-[0.3em] mb-6 block" style="transition-delay:0ms"><span class="ar">الخدمة السادسة</span><span class="en">Core Service</span></span>
-    <h1 class="hero-enter text-[52px] md:text-[82px] leading-tight mb-6" style="transition-delay:120ms">
-      <span class="text-on-background ar">الإنتاج السينمائي</span><span class="text-on-background en" style="font-family:'Noto Serif',serif;letter-spacing:-0.02em">Cinematic Production</span>
-    </h1>
-    <p class="hero-enter font-body-lg text-secondary max-w-2xl mx-auto mb-12 opacity-80" style="transition-delay:240ms">
-      <span class="ar">نُنتج أفلاماً عقارية وإعلانات تجارية بمستوى سينمائي عالمي، تُحرّك المشاعر وتحقق المبيعات. من الفكرة إلى التوزيع، كل شيء تحت سقف واحد.</span><span class="en">We produce real estate films and commercials at a world-class cinematic level that move emotions and drive sales. From concept to distribution، everything under one roof.</span>
-    </p>
-    <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-6" style="transition-delay:360ms">
-      <a href="../contact-us.html" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(242,202,80,0.5)] shadow-[0_0_20px_rgba(242,202,80,0.3)]"><span class="ar">ابدأ مشروعك</span><span class="en">START YOUR PROJECT</span></a>
-      <a href="../portfolio.html" class="border border-primary text-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:bg-primary/10"><span class="ar">استعرض أعمالنا</span><span class="en">VIEW PORTFOLIO</span></a>
+</div>
+
+<!-- HERO -->
+<section class="hero-sec">
+  <div class="hero-inner">
+    <div class="hero-image">
+      <img src="../assets/photography/slide_image_12.png" alt="التصوير والإنتاج الإعلامي — Graphics House" loading="eager">
+      <div class="hero-overlay reveal">
+        <span class="hero-kicker">Photography &amp; Media Production</span>
+        <h1>التصوير والإنتاج الإعلامي<br><span style="color:var(--gold)">بجودة سينمائية</span></h1>
+        <p>نصنع محتوى بصرياً يبيع مشروعك — من جلسات التصوير الاحترافية إلى الأفلام الترويجية وتغطية الفعاليات، بفريق إنتاج يفهم السوق السعودي والخليجي.</p>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-p">احجز جلسة تصوير <span class="material-symbols-outlined" style="font-size:16px">calendar_month</span></a>
+      <a href="../portfolio.html" class="btn-o-light">استعرض أعمالنا <span class="material-symbols-outlined" style="font-size:16px">photo_library</span></a>
+      <a href="https://wa.me/966502786513" target="_blank" rel="noopener" class="btn-o-light">تواصل واتساب <span class="material-symbols-outlined" style="font-size:16px">phone_in_talk</span></a>
     </div>
   </div>
 </section>
 
-<!-- ── Service Overview ───────────────────────────── -->
-<section class="py-[120px] px-8 md:px-12">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
-    <div class="reveal w-full md:w-1/2" style="opacity:0;transform:translateY(24px)">
-      <span class="svc-tag mb-8 block"><span class="ar">الخدمة السادسة</span><span class="en">Core Service</span></span>
-      <h2 class="font-headline-xl text-on-background mb-8"><span class="ar">الإنتاج السينمائي</span><span class="en">Cinematic Production</span></h2>
-      <p class="font-body-lg text-secondary mb-10 opacity-80 leading-relaxed"><span class="ar">نُنتج أفلاماً عقارية وإعلانات تجارية بمستوى سينمائي عالمي، تُحرّك المشاعر وتحقق المبيعات. من الفكرة إلى التوزيع، كل شيء تحت سقف واحد.</span><span class="en">We produce real estate films and commercials at a world-class cinematic level that move emotions and drive sales. From concept to distribution، everything under one roof.</span></p>
-      <div class="space-y-1"><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">تصوير بكاميرات ARRI وRED Cinema بدقة 6K+</span><span class="en">Filming with ARRI and RED Cinema cameras at 6K+</span></p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">إخراج سينمائي احترافي مع مدير تصوير متخصص</span><span class="en">Professional cinematic direction with specialized DP</span></p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">موسيقى تصويرية حصرية وتأثيرات صوتية</span><span class="en">Exclusive soundtrack and sound effects</span></p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">تصحيح لوني متقدم ومؤثرات بصرية VFX</span><span class="en">Advanced color grading and VFX effects</span></p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">توزيع رقمي على جميع المنصات</span><span class="en">Digital distribution across all platforms</span></p></div></div></div>
-      <div class="mt-10 flex gap-6">
-        <a href="../contact-us.html" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-[11px] tracking-widest hover:shadow-[0_0_25px_rgba(242,202,80,0.5)] transition-all"><span class="ar">ابدأ مشروعك</span><span class="en">START YOUR PROJECT</span></a>
+<!-- SERVICES -->
+<section class="production-section" style="background:#FAFAF8">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">خدمات الإنتاج</span>
+      <h2 class="section-title">كل ما تحتاجه <span class="gold">لإنتاجك البصري</span></h2>
+      <p class="section-sub" style="margin:0 auto">حلول متكاملة للتصوير والفيديو — من الفكرة إلى التسليم النهائي، بمعايير احترافية تناسب العقار والضيافة والعلامات التجارية.</p>
+    </div>
+    <div class="feature-grid reveal r1">
+      <div class="feature-card">
+        <div class="icon"><span class="material-symbols-outlined">photo_camera</span></div>
+        <h3>تصوير تجاري وعقاري</h3>
+        <p>جلسات تصوير للمنتجات، المشاريع العقارية، الفنادق والمطاعم — بإضاءة واحترافية تعكس قيمة العلامة.</p>
       </div>
-    </div>
-    <div class="reveal w-full md:w-1/2 relative" style="opacity:0;transform:translateY(24px);transition-delay:.2s">
-      <div class="absolute -inset-4 border border-primary/20 translate-x-4 translate-y-4 pointer-events-none"></div>
-      <img class="relative z-10 w-full shadow-2xl" alt="Cinematic Production" src="../assets/projects/rendering/uae-e1745147961286.jpeg" loading="lazy"/>
-      <button class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-[0_0_30px_rgba(242,202,80,0.5)] hover:scale-110 transition-transform">
-        <span class="material-symbols-outlined ms-filled text-background text-3xl">play_arrow</span>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- ── Process ────────────────────────────────────── -->
-<section class="py-[100px] bg-surface-container border-t border-white/5">
-  <div class="px-8 md:px-12 max-w-container-max mx-auto">
-    <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
-      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block"><span class="ar">كيف نعمل</span><span class="en">How We Work</span></span>
-      <h2 class="font-headline-xl text-on-background"><span class="ar">المنهجية</span><span class="en">Our Process</span></h2>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 relative">
-      <div class="step-connector hidden md:block"></div>
-      <div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.00s">
-          <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">01</div>
-          <p class="font-body-md text-secondary opacity-80 text-sm"><span class="ar">تطوير الفكرة والسيناريو والستوري بورد</span><span class="en">Concept, script and storyboard development</span></p>
-        </div><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.12s">
-          <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">02</div>
-          <p class="font-body-md text-secondary opacity-80 text-sm"><span class="ar">الإنتاج: التصوير والإضاءة</span><span class="en">Production: filming and lighting</span></p>
-        </div><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.24s">
-          <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">03</div>
-          <p class="font-body-md text-secondary opacity-80 text-sm"><span class="ar">المونتاج والمؤثرات وتصحيح اللون</span><span class="en">Editing, effects and color correction</span></p>
-        </div><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.36s">
-          <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">04</div>
-          <p class="font-body-md text-secondary opacity-80 text-sm"><span class="ar">التصدير والتوزيع وتسليم الملفات</span><span class="en">Export, distribution and file delivery</span></p>
-        </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Portfolio Samples ──────────────────────────── -->
-<section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto">
-  <div class="flex justify-between items-end mb-12 reveal" style="opacity:0;transform:translateY(24px)">
-    <div>
-      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block"><span class="ar">أعمالنا في هذه الخدمة</span><span class="en">Our Work In This Service</span></span>
-      <h2 class="font-headline-xl text-on-background"><span class="ar">أبرز المشاريع</span><span class="en">Featured Projects</span></h2>
-    </div>
-    <a href="../portfolio.html" class="border-b border-primary text-primary pb-1 font-label-caps text-[11px] tracking-widest hover:text-white hover:border-white transition-colors hidden md:block"><span class="ar">كل الأعمال</span><span class="en">ALL WORKS</span></a>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:.05s">
-      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/projects/rendering/alrajhi3.jpeg" alt="Project 1" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <h3 class="font-headline-md text-white mb-1"><span class="ar">الجناح الذهبي</span><span class="en">The Golden Pavilion</span></h3>
-        <a href="../case-study-detail.html" class="text-primary text-xs tracking-widest"><span class="ar">تفاصيل المشروع ←</span><span class="en">Case Study →</span></a>
+      <div class="feature-card">
+        <div class="icon"><span class="material-symbols-outlined">movie</span></div>
+        <h3>أفلام ترويجية</h3>
+        <p>فيديوهات سينمائية للحملات الإعلانية وإطلاق المشاريع — سرد بصري يجذب المستثمرين ويشجّع على الشراء.</p>
       </div>
-    </div>
-    <div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:.12s">
-      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/projects/rendering/jeddah-forum.jpg" alt="Project 2" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <h3 class="font-headline-md text-white mb-1"><span class="ar">واحة السلام</span><span class="en">Wahat Al-Salam</span></h3>
-        <a href="../case-study-detail.html" class="text-primary text-xs tracking-widest"><span class="ar">تفاصيل المشروع ←</span><span class="en">Case Study →</span></a>
+      <div class="feature-card">
+        <div class="icon"><span class="material-symbols-outlined">event</span></div>
+        <h3>تغطية فعاليات</h3>
+        <p>تصوير وإنتاج فوري للمعارض، المؤتمرات، وافتتاح المشاريع — محتوى جاهز للنشر على المنصات.</p>
       </div>
-    </div>
-    <div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:.2s">
-      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/projects/rendering/uae-e1745147961286.jpeg" alt="Project 3" loading="lazy"/></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <h3 class="font-headline-md text-white mb-1"><span class="ar">العلا الرؤيوية</span><span class="en">Aloula Vision</span></h3>
-        <a href="../case-study-detail.html" class="text-primary text-xs tracking-widest"><span class="ar">تفاصيل المشروع ←</span><span class="en">Case Study →</span></a>
+      <div class="feature-card">
+        <div class="icon"><span class="material-symbols-outlined">slideshow</span></div>
+        <h3>عروض تقديمية</h3>
+        <p>عروض بصرية احترافية لاجتماعات العملاء والمستثمرين — تصميم وتصوير وإخراج متكامل.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── YouTube Videos ────────────────────────────── -->
-<section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto border-t border-white/5">
-  <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
-    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block"><span class="ar">أعمال على يوتيوب</span><span class="en">On YouTube</span></span>
-    <h2 class="font-headline-xl text-on-background"><span class="ar">أفلام إنتاجنا السينمائي</span><span class="en">Our Cinematic Productions</span></h2>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <!-- GH Marketing & Media Production -->
-    <a href="https://www.youtube.com/watch?v=u_rZiifgBWo" target="_blank" rel="noopener" class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:.05s">
-      <div class="aspect-video overflow-hidden relative">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://img.youtube.com/vi/u_rZiifgBWo/hqdefault.jpg" alt="GH Marketing & Media Production" loading="lazy"/>
-        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-          <div class="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform"><span class="material-symbols-outlined ms-filled text-black text-3xl">play_arrow</span></div>
-        </div>
-      </div>
-      <div class="p-5 bg-surface-container">
-        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">MEDIA PRODUCTION</span>
-        <h3 class="font-headline-md text-on-background mb-1"><span class="ar">التسويق والإنتاج الإعلامي</span><span class="en">GH Marketing &amp; Media Production</span></h3>
-        <p class="text-secondary text-sm opacity-70"><span class="ar">شريط أعمال الإنتاج الإعلامي</span><span class="en">Full media production reel</span></p>
-      </div>
-    </a>
-    <!-- GH Real Estate Services -->
-    <a href="https://www.youtube.com/watch?v=WoYMS7Xs7cY" target="_blank" rel="noopener" class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:.1s">
-      <div class="aspect-video overflow-hidden relative">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://img.youtube.com/vi/WoYMS7Xs7cY/hqdefault.jpg" alt="GH Real Estate Services" loading="lazy"/>
-        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-          <div class="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform"><span class="material-symbols-outlined ms-filled text-black text-3xl">play_arrow</span></div>
-        </div>
-      </div>
-      <div class="p-5 bg-surface-container">
-        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">REAL ESTATE FILM</span>
-        <h3 class="font-headline-md text-on-background mb-1"><span class="ar">خدمات العقارات السينمائية</span><span class="en">GH Real Estate Services</span></h3>
-        <p class="text-secondary text-sm opacity-70"><span class="ar">إنتاج أفلام العقارات والتسويق العقاري</span><span class="en">Real estate film &amp; marketing production</span></p>
-      </div>
-    </a>
-    <!-- Graphics House 2020 Reel -->
-    <a href="https://www.youtube.com/watch?v=DB1Tyzgpm4E" target="_blank" rel="noopener" class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
-      <div class="aspect-video overflow-hidden relative">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://img.youtube.com/vi/DB1Tyzgpm4E/hqdefault.jpg" alt="Graphics House 2020" loading="lazy"/>
-        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-          <div class="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform"><span class="material-symbols-outlined ms-filled text-black text-3xl">play_arrow</span></div>
-        </div>
-      </div>
-      <div class="p-5 bg-surface-container">
-        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">STUDIO REEL</span>
-        <h3 class="font-headline-md text-on-background mb-1"><span class="ar">جرافيكس هاوس ٢٠٢٠</span><span class="en">Graphics House 2020</span></h3>
-        <p class="text-secondary text-sm opacity-70"><span class="ar">شريط أعمال الاستوديو</span><span class="en">Studio production reel</span></p>
-      </div>
-    </a>
-    <!-- Islamic World League Exhibition -->
-    <a href="https://www.youtube.com/watch?v=H66KNP1sQCk" target="_blank" rel="noopener" class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:.2s">
-      <div class="aspect-video overflow-hidden relative">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://img.youtube.com/vi/H66KNP1sQCk/hqdefault.jpg" alt="Islamic World League Exhibition" loading="lazy"/>
-        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-          <div class="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform"><span class="material-symbols-outlined ms-filled text-black text-3xl">play_arrow</span></div>
-        </div>
-      </div>
-      <div class="p-5 bg-surface-container">
-        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">EVENT PRODUCTION</span>
-        <h3 class="font-headline-md text-on-background mb-1"><span class="ar">مشاريع رابطة العالم الإسلامي</span><span class="en">Islamic World League Exhibition</span></h3>
-        <p class="text-secondary text-sm opacity-70"><span class="ar">المعرض الرمضاني، إنتاج الفعاليات</span><span class="en">Ramadan Exhibition، Event production</span></p>
-      </div>
-    </a>
-  </div>
-  <div class="text-center mt-10 reveal" style="opacity:0;transform:translateY(24px)">
-    <a href="https://www.youtube.com/@GraphicsHouse2" target="_blank" rel="noopener" class="border border-primary text-primary px-8 py-3 font-label-caps text-label-caps tracking-widest hover:bg-primary/10 transition-all inline-flex items-center gap-3">
-      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.38.55A3.02 3.02 0 00.5 6.19C0 8.03 0 12 0 12s0 3.97.5 5.81a3.02 3.02 0 002.12 2.14C4.45 20.5 12 20.5 12 20.5s7.55 0 9.38-.55a3.02 3.02 0 002.12-2.14C24 15.97 24 12 24 12s0-3.97-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
-      <span class="ar">كل الفيديوهات على يوتيوب</span><span class="en">All Videos on YouTube</span>
-    </a>
-  </div>
-</section>
-
-<!-- ── FAQ ────────────────────────────────────────── -->
-<section class="py-[100px] bg-surface-container-lowest border-t border-white/5">
-  <div class="px-8 md:px-12 max-w-4xl mx-auto">
-    <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
-      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block"><span class="ar">الأسئلة الشائعة</span><span class="en">FAQ</span></span>
-      <h2 class="font-headline-xl text-on-background"><span class="ar">أجوبة عن استفساراتكم</span><span class="en">Answers to Your Questions</span></h2>
+<!-- TRUST -->
+<section class="cta-d reveal" style="background:#1A1A1A">
+  <div class="cta-d-inner">
+    <h2 style="color:#FAFAF8">أكثر من <span class="gold">15 سنة</span> في السوق السعودي</h2>
+    <p style="color:rgba(255,255,255,0.6)">نفهم السوق المحلي ونساعدك توصل لجمهورك المستهدف بمحتوى بصري احترافي يبني الثقة ويُسرّع قرار الشراء.</p>
+    <div class="btns">
+      <a href="#booking" class="btn-p">اطلب عرض سعر <span class="material-symbols-outlined">request_quote</span></a>
     </div>
-    <div class="reveal" style="opacity:0;transform:translateY(24px)"><div class="border-b border-white/5 py-6">
-          <h4 class="font-headline-md text-on-background mb-3"><span class="ar">ما طول الفيلم المعتاد؟</span><span class="en">What is the typical film length?</span></h4>
-          <p class="font-body-md text-secondary opacity-70 leading-relaxed"><span class="ar">أفلام العقارات عادةً من ٩٠ ثانية إلى ٣ دقائق. الإعلانات من ١٥ إلى ٦٠ ثانية.</span><span class="en">Real estate films are typically 90 seconds to 3 minutes. Commercials from 15 to 60 seconds.</span></p>
-        </div><div class="border-b border-white/5 py-6">
-          <h4 class="font-headline-md text-on-background mb-3"><span class="ar">هل تُنتجون بنسختين عربية وإنجليزية؟</span><span class="en">Do you produce in both Arabic and English versions?</span></h4>
-          <p class="font-body-md text-secondary opacity-70 leading-relaxed"><span class="ar">نعم، نقدم النسختين العربية والإنجليزية ضمن السعر الواحد.</span><span class="en">Yes, we deliver both Arabic and English versions within the single price.</span></p>
-        </div><div class="border-b border-white/5 py-6">
-          <h4 class="font-headline-md text-on-background mb-3"><span class="ar">هل يمكن استخدام مقاطع CGI ضمن الفيلم؟</span><span class="en">Can CGI footage be used within the film?</span></h4>
-          <p class="font-body-md text-secondary opacity-70 leading-relaxed"><span class="ar">نعم، نمزج تصوير حقيقي مع مقاطع CGI بشكل سلس ولا يُمكن ملاحظته.</span><span class="en">Yes, we blend real footage with CGI clips seamlessly and imperceptibly.</span></p>
-        </div></div>
   </div>
 </section>
 
-<!-- ── CTA ────────────────────────────────────────── -->
-<section class="py-24 text-center border-t border-white/5 relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3"></div>
-  <div class="relative z-10 max-w-2xl mx-auto px-8">
-    <span class="material-symbols-outlined ms-filled text-primary text-4xl mb-6 block">movie_creation</span>
-    <h2 class="font-headline-xl text-on-background mb-6"><span class="ar">جاهز لتحويل مشروعك إلى تجربة بصرية استثنائية؟</span><span class="en">Ready to turn your project into an exceptional visual experience?</span></h2>
-    <p class="font-body-lg text-secondary opacity-70 mb-10"><span class="ar">فريقنا متاح لمناقشة متطلباتك وتقديم عرض سعر مفصّل في أقل من ٤٨ ساعة.</span><span class="en">Our team is available to discuss your requirements and provide a detailed quote in less than 48 hours.</span></p>
-    <a href="../contact-us.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-label-caps tracking-[0.3em] hover:shadow-[0_0_30px_rgba(242,202,80,0.5)] transition-all inline-block"><span class="ar">ابدأ مشروعك الآن</span><span class="en">START YOUR PROJECT NOW</span></a>
+<!-- PORTFOLIO SLIDER -->
+<div class="slider-section reveal" style="padding:90px 0;background:#FAFAF8">
+  <div class="slider-container" style="max-width:1320px;margin:0 auto;padding:0 48px;position:relative">
+    <div style="text-align:center;margin-bottom:36px">
+      <span class="section-label">أعمالنا</span>
+      <h2 class="section-title">مشاريع <span class="gold">الإنتاج البصري</span></h2>
+      <p class="section-sub" style="margin:0 auto">نماذج من أعمال التصوير والإنتاج الفني لعملائنا في العقار والضيافة والعلامات التجارية.</p>
+    </div>
+    <div style="position:relative;overflow:hidden;border-radius:4px" dir="ltr">
+      <div class="slider-track" id="projectSlider" style="display:flex;transition:transform 0.7s cubic-bezier(0.25,0.1,0.1,1)">
+        <div class="slider-item" style="flex:0 0 100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:10px 0"><img src="../assets/photography/slide_image_2.png" alt="مشروع تصوير" loading="lazy"></div>
+        <div class="slider-item" style="flex:0 0 100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:10px 0"><img src="../assets/photography/slide_image_7.png" alt="مشروع تصوير" loading="lazy"></div>
+        <div class="slider-item" style="flex:0 0 100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:10px 0"><img src="../assets/photography/slide_image_8.png" alt="مشروع تصوير" loading="lazy"></div>
+        <div class="slider-item" style="flex:0 0 100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:10px 0"><img src="../assets/photography/slide_image_3.png" alt="مشروع تصوير" loading="lazy"></div>
+        <div class="slider-item" style="flex:0 0 100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:10px 0"><img src="../assets/photography/slide_image_6.png" alt="مشروع تصوير" loading="lazy"></div>
+        <div class="slider-item" style="flex:0 0 100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:10px 0"><img src="../assets/photography/slide_image_9.png" alt="مشروع تصوير" loading="lazy"></div>
+      </div>
+    </div>
+    <button onclick="slideProject(-1)" style="position:absolute;top:55%;right:-6px;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.95);border:none;box-shadow:0 4px 20px rgba(0,0,0,0.12);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;color:var(--text-primary);transition:all 0.3s" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.95)'" aria-label="السابق">
+      <span class="material-symbols-outlined" style="font-size:24px">chevron_left</span>
+    </button>
+    <button onclick="slideProject(1)" style="position:absolute;top:55%;left:-6px;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.95);border:none;box-shadow:0 4px 20px rgba(0,0,0,0.12);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;color:var(--text-primary);transition:all 0.3s" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.95)'" aria-label="التالي">
+      <span class="material-symbols-outlined" style="font-size:24px">chevron_right</span>
+    </button>
+    <div style="display:flex;justify-content:center;gap:10px;margin-top:24px;direction:ltr" id="projectDots"></div>
+    <div style="text-align:center;margin-top:28px">
+      <a href="../portfolio.html" class="btn-o">شاهد جميع الأعمال <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED SHOWCASE -->
+<div class="slide-sec reveal" style="background:#d0d0d0;padding:48px 0">
+  <div class="slide-sec-inner">
+    <div style="text-align:center;margin-bottom:28px;padding:0 20px">
+      <span class="section-label">إنتاج مميز</span>
+      <h2 class="section-title" style="margin-bottom:8px">محتوى <span class="gold">يُبرز مشروعك</span></h2>
+    </div>
+    <img src="../assets/photography/slide_image_11.png" alt="مشروع إنتاج بصري" loading="lazy">
+  </div>
+</div>
+
+<!-- PRESENTATIONS CTA -->
+<section class="cta-d reveal" style="background:#FAFAF8">
+  <div class="cta-d-inner">
+    <h2>عروض تقديمية <span class="gold">تبهر عملاءك</span></h2>
+    <p>نصمم عروضاً تقديمية احترافية تناسب اجتماعاتك مع العملاء والمستثمرين — تصوير، مونتاج، وإخراج بصري متكامل.</p>
+    <div class="btns">
+      <a href="#booking" class="btn-p">اطلب عرضاً <span class="material-symbols-outlined">slideshow</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-d reveal" style="background:#1A1A1A">
+  <div class="cta-d-inner">
+    <h2 style="color:#FAFAF8">الآن دورك</h2>
+    <p style="color:rgba(255,255,255,0.6)">املأ النموذج وسنتواصل معك خلال 24 ساعة لمناقشة احتياجك البصري وتقديم عرض سعر مناسب.</p>
+    <div class="btns">
+      <a href="#booking" class="btn-p">احجز جلسة تصوير <span class="material-symbols-outlined">calendar_month</span></a>
+      <a href="https://wa.me/966502786513" target="_blank" rel="noopener" class="btn-o" style="border-color:rgba(255,255,255,0.25);color:#FAFAF8">واتساب <span class="material-symbols-outlined">chat</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED SERVICES -->
+<section class="production-section" style="background:#F5F4F0">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">خدمات إضافية</span>
+      <h2 class="section-title">كل ما تحتاجه <span class="gold">لمشروعك</span> في مكان واحد</h2>
+      <p class="section-sub" style="margin:0 auto">نقدم مجموعة متكاملة من الخدمات البصرية والتسويقية، اختر ما يناسب مشروعك.</p>
+    </div>
+    <div class="rel-grid reveal r1">
+      <a href="rendering.html" class="rel-card">
+        <div class="icon"><span class="material-symbols-outlined">landscape</span></div>
+        <h4>الإظهار المعماري</h4>
+        <p>صور ثري دي، كتالوجات عقارية، وهوية بصرية للمشاريع الكبرى.</p>
+      </a>
+      <a href="maquettes.html" class="rel-card">
+        <div class="icon"><span class="material-symbols-outlined">view_in_ar</span></div>
+        <h4>المجسمات الذكية</h4>
+        <p>مجسمات معمارية هجينة بتقنيات الإضاءة التفاعلية والبيانات الحية.</p>
+      </a>
+      <a href="animation.html" class="rel-card">
+        <div class="icon"><span class="material-symbols-outlined">movie</span></div>
+        <h4>التحريك ثلاثي الأبعاد</h4>
+        <p>جولات سينمائية CGI تُحيّي مشاريعك قبل البناء.</p>
+      </a>
+      <a href="interactive.html" class="rel-card">
+        <div class="icon"><span class="material-symbols-outlined">touch_app</span></div>
+        <h4>التجارب التفاعلية</h4>
+        <p>شاشات تفاعلية، VR، وجولات افتراضية لصالات البيع.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="booking" class="contact-s">
+  <div class="contact-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">تواصل معنا</span>
+      <h2 class="section-title">احجز جلسة <span class="gold">إنتاج</span></h2>
+      <p class="section-sub" style="margin:0 auto">املأ النموذج وسنتواصل معك خلال 24 ساعة لمناقشة احتياجك البصري.</p>
+    </div>
+    <div class="contact-grid reveal r1">
+      <div class="contact-info">
+        <h3>لنصنع معاً محتواك البصري</h3>
+        <p>سواء كنت تريد جلسة تصوير لمنتجاتك، تغطية فعالية، أو فيديو ترويجي — فريق الإنتاج جاهز لخدمتك.</p>
+        <div class="contact-info-item"><span class="material-symbols-outlined">phone_in_talk</span> +966 50 278 6513</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">mail</span> info@3dgraphicshouse.com</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">location_on</span> جدة، السعودية — مكاتبنا في 4 دول</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">schedule</span> نرد خلال 24 ساعة عمل</div>
+      </div>
+      <div class="form-card">
+        <h3>طلب جلسة تصوير / إنتاج</h3>
+        <form action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST" target="_blank">
+          <input type="hidden" name="_subject" value="طلب إنتاج إعلامي - services/production">
+          <input type="hidden" name="_next" value="https://3dgraphicshouse.com/services/production.html#booking">
+          <div class="form-group"><label>الاسم الكامل</label><input type="text" name="name" required placeholder="أدخل اسمك"></div>
+          <div class="form-group"><label>رقم الجوال</label><input type="tel" name="phone" required placeholder="05xxxxxxxx"></div>
+          <div class="form-group"><label>البريد الإلكتروني</label><input type="email" name="email" placeholder="example@domain.com"></div>
+          <div class="form-group"><label>الخدمة المطلوبة</label>
+            <select name="service" required>
+              <option value="">اختر الخدمة</option>
+              <option value="product-photography">تصوير منتجات</option>
+              <option value="real-estate-photography">تصوير عقاري</option>
+              <option value="event-coverage">تغطية فعاليات</option>
+              <option value="promotional-video">فيديو ترويجي</option>
+              <option value="commercial-shoot">تصوير تجاري</option>
+              <option value="other">أخرى</option>
+            </select>
+          </div>
+          <div class="form-group"><label>المدينة</label>
+            <select name="city">
+              <option value="">اختر المدينة</option>
+              <option value="riyadh">الرياض</option>
+              <option value="jeddah">جدة</option>
+              <option value="dammam">الدمام</option>
+              <option value="mecca">مكة المكرمة</option>
+              <option value="madinah">المدينة المنورة</option>
+              <option value="other">أخرى</option>
+            </select>
+          </div>
+          <div class="form-group"><label>تفاصيل الطلب</label><textarea name="message" placeholder="حدثنا عن مشروعك، نوع التصوير، الموقع، الميزانية التقريبية..."></textarea></div>
+          <button type="submit" class="form-submit">إرسال الطلب <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">send</span></button>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -544,7 +1007,71 @@
     </div>
   </div>
 </footer>
-<div id="vid-modal" role="dialog" aria-modal="true"><button id="vid-close" class="absolute top-6 right-6 text-white/50 hover:text-primary z-10"><span class="material-symbols-outlined text-4xl">close</span></button><div class="w-full max-w-5xl aspect-video bg-zinc-900 flex items-center justify-center mx-4 border border-white/10"><span class="material-symbols-outlined text-primary text-7xl">play_circle</span></div></div>
-<button id="back-top" class="fixed bottom-8 left-6 z-50 w-11 h-11 bg-surface-container-high border border-primary/30 text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" aria-label="Back to top"><span class="material-symbols-outlined text-xl">arrow_upward</span></button>
-<script defer src="../assets/service-page.js"></script>
-</body></html>
+
+<div class="gh-float">
+  <a href="https://wa.me/966502786513" target="_blank" rel="noopener" class="gh-float-btn gh-float-wa" aria-label="واتساب">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a href="mailto:info@3dgraphicshouse.com" class="gh-float-btn gh-float-mail" aria-label="بريد">
+    <span class="material-symbols-outlined" style="font-size:22px">mail</span>
+  </a>
+</div>
+
+<script>
+var ro=new IntersectionObserver(function(e){
+  e.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible')}});
+},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(this.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+  });
+});
+var projectIndex=0;
+var projectItems=document.querySelectorAll('#projectSlider .slider-item');
+var projectTotal=projectItems.length;
+var projectTimer;
+var dotsContainer=document.getElementById('projectDots');
+if(dotsContainer){
+  for(var i=0;i<projectTotal;i++){
+    var d=document.createElement('button');
+    d.className='project-dot';
+    d.style.cssText='width:10px;height:10px;border-radius:50%;border:none;background:'+(i===0?'var(--gold)':'rgba(26,26,26,0.15)')+';cursor:pointer;transition:all 0.3s;padding:0';
+    d.setAttribute('aria-label','مشروع '+(i+1));
+    d.onclick=function(idx){return function(){goToProject(idx)}}(i);
+    dotsContainer.appendChild(d);
+  }
+}
+function goToProject(idx){
+  projectIndex=idx;
+  var track=document.getElementById('projectSlider');
+  if(track){track.style.transform='translateX(-'+(projectIndex*100)+'%)'}
+  document.querySelectorAll('.project-dot').forEach(function(d,i){
+    d.style.background=(i===projectIndex?'var(--gold)':'rgba(26,26,26,0.15)');
+  });
+  resetProjectTimer();
+}
+function slideProject(dir){goToProject((projectIndex+dir+projectTotal)%projectTotal)}
+function resetProjectTimer(){
+  clearInterval(projectTimer);
+  projectTimer=setInterval(function(){slideProject(1)},4000);
+}
+resetProjectTimer();
+var sliderTrack=document.getElementById('projectSlider');
+if(sliderTrack){
+  sliderTrack.parentElement.addEventListener('mouseenter',function(){clearInterval(projectTimer)});
+  sliderTrack.parentElement.addEventListener('mouseleave',function(){resetProjectTimer()});
+}
+function closeVideo(){
+  document.getElementById('videoModal').classList.remove('active');
+  document.getElementById('vmPlayer').innerHTML='';
+  document.body.style.overflow='';
+}
+document.addEventListener('click',function(e){
+  if(e.target===document.getElementById('videoModal')) closeVideo();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape') closeVideo()});
+</script>
+</body>
+</html>
