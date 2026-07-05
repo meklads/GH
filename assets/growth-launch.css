@@ -625,3 +625,7 @@
   .gl-timeline { grid-template-columns: 1fr; }
   .gl-cta-box { padding: 40px 24px; }
 }
+
+[dir="ltr"] .gl-pain-item::before { left: 0; right: auto; }
+[dir="ltr"] .gl-solution-badge { left: 20px; right: auto; }
+[dir="ltr"] .gl-page { font-family: 'Inter', 'Tajawal', sans-serif; }
