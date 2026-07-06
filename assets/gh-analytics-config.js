@@ -5,7 +5,7 @@
  */
 window.GH_ANALYTICS = {
   enabled: true,
-  ga4MeasurementId: 'G-MKD9QVYNWF',
+  ga4MeasurementId: 'G-Y67JVE898Z',
   /** Paste GSC meta content= value when verifying 3dgraphicshouse.com */
   googleSiteVerification: ''
 };

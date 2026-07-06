@@ -1,7 +1,7 @@
 # التحليلات — Google Analytics 4 و Search Console
 
 > Graphics House · `3dgraphicshouse.com`  
-> Measurement ID الحالي: **G-MKD9QVYNWF**
+> Measurement ID الحالي: **G-Y67JVE898Z**
 
 ---
 

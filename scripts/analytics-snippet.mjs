@@ -4,7 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const CONFIG_PATH = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'assets', 'gh-analytics-config.js');
-const VERSION = 1;
+const VERSION = 2;
 
 let cached = null;
 
