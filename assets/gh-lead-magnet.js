@@ -134,6 +134,7 @@
         .then(function (res) {
           if (res.success) {
             if (msgEl) { msgEl.className = 'gh-lead-msg ok'; msgEl.textContent = MSG.success; }
+            if (window.ghTrack) window.ghTrack('lead_magnet_download', { content: form.dataset.magnet || 'checklist' });
             showUnlock(downloadUrl);
           } else {
             if (msgEl) { msgEl.className = 'gh-lead-msg err'; msgEl.textContent = MSG.error; }

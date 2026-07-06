@@ -6,6 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { stripLegacyGa, injectAnalytics } from './analytics-snippet.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PARTIALS = path.join(ROOT, 'partials');
@@ -85,6 +86,8 @@ function patchPage(rel) {
   const prefix = depth > 0 ? '../'.repeat(depth) : '';
 
   html = injectAssets(html, prefix);
+  html = stripLegacyGa(html);
+  html = injectAnalytics(html, prefix);
 
   if (!HOMEPAGE_SKIP_REPLACE.has(rel)) {
     html = stripLegacyFloat(html);

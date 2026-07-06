@@ -2,6 +2,8 @@
 <html class="scroll-smooth" dir="rtl" lang="ar">
 <head>
 <script src="../assets/gh-forms-config.js?v=2"></script>
+<script src="../assets/gh-analytics-config.js?v=1"></script>
+<script src="../assets/gh-analytics.js?v=1"></script>
 <!-- GH SEO -->
 <link rel="canonical" href="https://3dgraphicshouse.com/services/ai-solutions.html">
 <link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/services/ai-solutions.html">
@@ -25,6 +27,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <style>
+
+  .en, .en-block { display: none !important; }
+  body.is-en .en { display: inline !important; }
+  body.is-en .ar, body.is-en .ar-block { display: none !important; }
+  body.is-en .en-block { display: block !important; }
+  .ar-block { display: block; }
+
 
   .en, .en-block { display: none !important; }
   body.is-en .en { display: inline !important; }
@@ -490,6 +499,20 @@ document.addEventListener('DOMContentLoaded', function(){
 })();
 </script>
 <script defer src="../assets/gh-float-widgets.js?v=1"></script>
+<script>
+(function(){
+  var key='gh-svc-lang';
+  function apply(en){document.body.classList.toggle('is-en',en);localStorage.setItem(key,en?'en':'ar');}
+  var saved=localStorage.getItem(key);
+  if(saved==='en')apply(true);
+  document.querySelectorAll('.lang-switch-link').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(a.getAttribute('hreflang')==='en'){e.preventDefault();apply(true);}
+      if(a.getAttribute('hreflang')==='ar'){e.preventDefault();apply(false);}
+    });
+  });
+})();
+</script>
 <script>
 (function(){
   var key='gh-svc-lang';

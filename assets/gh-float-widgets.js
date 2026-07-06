@@ -63,6 +63,7 @@
         btn.disabled = false;
         btn.textContent = isEn ? 'Submit Enquiry →' : 'إرسال الطلب ←';
         if (res.success) {
+          if (window.ghTrack) window.ghTrack('generate_lead', { form_name: 'float_popup' });
           form.style.display = 'none';
           if (thanks) thanks.style.display = 'block';
           setTimeout(function () {

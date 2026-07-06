@@ -6,6 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
+import { analyticsHeadTags } from './analytics-snippet.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -56,6 +57,7 @@ html[dir="rtl"] .hero-kicker { letter-spacing: 0.06em; text-transform: none; fon
 const html = `<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+${analyticsHeadTags(P)}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>التصوير والإنتاج الإعلامي | Graphics House</title>
@@ -76,8 +78,6 @@ ${styleMatch[1]}
 ${extraStyles}
 ${EXTRA}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKD9QVYNWF"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MKD9QVYNWF');</script>
 <link rel="stylesheet" href="${P}assets/site-header.css">
 <script defer src="${P}assets/site-header.js"></script>
 </head>

@@ -5,6 +5,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { analyticsHeadTags } from './analytics-snippet.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SOLUTIONS = path.join(ROOT, 'solutions');
@@ -25,6 +26,7 @@ function head({ title, desc, ogTitle, css, dir, lang }) {
   return `<!DOCTYPE html>
 <html class="scroll-smooth" dir="${dir}" lang="${lang}">
 <head>
+${analyticsHeadTags('../')}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${title}</title>

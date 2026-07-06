@@ -124,6 +124,7 @@
         .then(function (res) {
           if (res.success) {
             if (msgEl) { msgEl.className = 'gh-newsletter-msg ok'; msgEl.textContent = MSG.success; }
+            if (window.ghTrack) window.ghTrack('newsletter_signup', { source: 'insights-newsletter' });
             form.reset();
             reset(turnstileBox);
           } else {

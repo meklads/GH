@@ -6,6 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { stripLegacyGa, injectAnalytics } from './analytics-snippet.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://3dgraphicshouse.com';
@@ -215,6 +216,8 @@ function patchHtml(html, rel) {
   html = injectSeo(html, rel);
   html = replaceTailwindCdn(html, prefix);
   html = injectJsonLd(html, rel);
+  html = stripLegacyGa(html);
+  html = injectAnalytics(html, prefix);
   html = injectPerformanceScript(html, prefix);
   html = secureFormSubmits(html);
 

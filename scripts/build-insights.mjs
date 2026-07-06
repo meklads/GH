@@ -6,6 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { analyticsHeadTags } from './analytics-snippet.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -121,6 +122,7 @@ function headBlock(lang, meta) {
 <html class="scroll-smooth" dir="${isEn ? 'ltr' : 'rtl'}" lang="${isEn ? 'en' : 'ar'}">
 <head>
 <script src="${p}assets/gh-forms-config.js?v=2"></script>
+${analyticsHeadTags(p)}
 <script src="${p}assets/quote-form-config.js"></script>
 <link rel="canonical" href="${canonical}">
 <link rel="alternate" hreflang="en" href="${altEn}">
