@@ -26,8 +26,8 @@
 | صفحة هبوط جدة | `locations/jeddah.html` + EN | 🟢 |
 | PDF Checklist | تحميل مجاني ببوابة إيميل | 🟢 |
 | صفحات مدن أخرى | الرياض، مكة، المدينة | 🟡 الرياض ✅ |
-| PDF Brief | نموذج Brief قابل للتحميل | ⬜ |
-| حاسبة موسّعة | توسيع solution-finder | ⬜ |
+| PDF Brief | نموذج Brief قابل للتحميل | 🟢 |
+| حاسبة موسّعة | توسيع solution-finder | 🟢 |
 
 ---
 

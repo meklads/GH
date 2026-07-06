@@ -147,7 +147,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=14">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=12">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=17">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=18">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=9"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -554,8 +554,8 @@ function buildSolutionFinder(lang) {
     depth: 2,
     title: isEn ? 'Which Solution Fits Your Project?' : 'أي حل يناسب مشروعك؟',
     description: isEn
-      ? '5 quick questions to recommend GrowthLaunch, ProjectLaunch, or BrandScale.'
-      : '5 أسئلة سريعة للتوصية بين GrowthLaunch وProjectLaunch وBrandScale.',
+      ? '7 questions to recommend GrowthLaunch, ProjectLaunch, or BrandScale — with service links.'
+      : '7 أسئلة للتوصية بين GrowthLaunch وProjectLaunch وBrandScale — مع روابط للخدمات.',
     canonical: `https://3dgraphicshouse.com/insights/tools/solution-finder${isEn ? '-en' : ''}.html`,
   })}
 ${prefixPaths(header, 2)}
@@ -568,8 +568,8 @@ ${prefixPaths(header, 2)}
     <div class="gh-tool-main">
         <h1>${isEn ? 'Which Solution Fits Your Project?' : 'أي حل يناسب مشروعك؟'}</h1>
         <p class="gh-tool-intro">${isEn
-    ? 'Answer 5 quick questions. We will recommend the Graphics House solution that best matches your stage and goals.'
-    : 'أجب على 5 أسئلة سريعة. سنقترح حل Graphics House الأنسب لمرحلتك وأهدافك.'}</p>
+    ? 'Answer 7 quick questions. We will recommend the Graphics House solution that best matches your stage, goals, and visual needs.'
+    : 'أجب على 7 أسئلة سريعة. سنقترح حل Graphics House الأنسب لمرحلتك وأهدافك واحتياجاتك البصرية.'}</p>
         <div id="ghSolutionFinder">
           <p class="gh-quiz-progress"></p>
           <div class="gh-quiz-steps"></div>
@@ -579,7 +579,7 @@ ${prefixPaths(header, 2)}
   </div>
 </main>
 ${prefixPaths(footer, 2)}
-<script defer src="../../assets/gh-solution-finder.js?v=1"></script>
+<script defer src="../../assets/gh-solution-finder.js?v=2"></script>
 ${tailScripts(2)}`;
 
   const out = `insights/tools/solution-finder${isEn ? '-en' : ''}.html`;
@@ -653,6 +653,7 @@ ${prefixPaths(header, 2)}
         </form>
         <div class="gh-tool-actions gh-no-print">
           <button type="button" onclick="window.print()" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'Print' : 'طباعة'}</button>
+          <a href="../downloads/visual-project-brief${isEn ? '-en' : ''}.html" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'Download PDF' : 'تحميل PDF'}</a>
           <a href="../../contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Submit enquiry' : 'أرسل استفساراً'}</a>
         </div>
     </div>

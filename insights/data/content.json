@@ -20,8 +20,8 @@
         "en": "Which Solution Fits Your Project?"
       },
       "description": {
-        "ar": "5 أسئلة سريعة → توصية بين GrowthLaunch وProjectLaunch وBrandScale.",
-        "en": "5 quick questions → recommendation between GrowthLaunch, ProjectLaunch, and BrandScale."
+        "ar": "7 أسئلة → توصية رئيسية وبديل مع روابط للحلول والخدمات.",
+        "en": "7 questions → primary and secondary match with solution and service links."
       }
     },
     {
@@ -122,6 +122,38 @@
       "description": {
         "ar": "12 بنداً أساسياً قبل إطلاق صالة البيع والمواد البصرية.",
         "en": "12 essentials before launching your sales gallery and visual assets."
+      }
+    },
+    {
+      "slug": "visual-launch-checklist-pdf",
+      "fileType": { "ar": "PDF · قائمة", "en": "PDF · Checklist" },
+      "icon": "download",
+      "href": "downloads/visual-launch-checklist",
+      "comingSoon": false,
+      "emailGate": true,
+      "title": {
+        "ar": "قائمة الإطلاق البصري (PDF)",
+        "en": "Visual Launch Checklist (PDF)"
+      },
+      "description": {
+        "ar": "12 بنداً للتحقق قبل إعلان مبيعات المخطط — تحميل مجاني ببوابة إيميل.",
+        "en": "12 checkpoints before off-plan launch — free download via email gate."
+      }
+    },
+    {
+      "slug": "visual-project-brief-pdf",
+      "fileType": { "ar": "PDF · نموذج", "en": "PDF · Template" },
+      "icon": "description",
+      "href": "downloads/visual-project-brief",
+      "comingSoon": false,
+      "emailGate": true,
+      "title": {
+        "ar": "نموذج Brief للمشروع (PDF)",
+        "en": "Visual Project Brief (PDF)"
+      },
+      "description": {
+        "ar": "نموذج قابل للطباعة قبل أول اجتماع — 10 حقول أساسية للمشروع والمخرجات.",
+        "en": "Printable template before your first meeting — 10 essential project fields."
       }
     },
     {
