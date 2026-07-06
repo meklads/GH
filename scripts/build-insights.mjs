@@ -147,7 +147,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=12">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=8">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=10">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=11">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -286,7 +286,7 @@ function downloadsSection(lang) {
 }
 
 function backToInsights(isEn) {
-  return isEn ? 'Back to Insights' : 'العودة إلى الرؤى';
+  return isEn ? 'Back to Insights' : 'العودة إلى Insights';
 }
 
 function hubExcerpt(article, lang) {
@@ -323,8 +323,8 @@ function buildHub(lang) {
 ${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 1)}
 <main class="gh-insights-page">
   <header class="gh-ins-hero">
-    <span class="gh-kicker">Graphics House · ${isEn ? 'Insights' : 'رؤى ومعرفة'}</span>
-    <h1>${isEn ? 'Insights' : 'رؤى Graphics House'}</h1>
+    <span class="gh-kicker">Graphics House · Insights</span>
+    <h1>Insights</h1>
     <p>${isEn
     ? 'Strategic knowledge for developers shaping major projects — architectural visualization, immersive sales systems, and digital transformation across Saudi Arabia and the GCC.'
     : 'معرفة استراتيجية للمطورين في المشاريع الكبرى — الإظهار المعماري، أنظمة المبيعات الغامرة، والتحول الرقمي في السعودية والخليج.'}</p>

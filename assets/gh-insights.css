@@ -1,8 +1,8 @@
-/* Graphics House — Insights (premium knowledge hub, dark) */
+/* Graphics House — Insights (premium knowledge hub, light) */
 
 body.gh-insights {
-  background: #0a0f0d;
-  color: #f0f0eb;
+  background: #f7f5f0;
+  color: #1a1a1a;
   font-family: "Tajawal", "Inter", sans-serif;
   overflow-x: clip;
   min-height: 100vh;
@@ -72,7 +72,7 @@ html[dir="rtl"] .gh-ins-hero .gh-kicker {
   font-size: clamp(2.5rem, 5.5vw, 3.75rem);
   font-weight: 700;
   line-height: 1.1;
-  color: #fafaf8;
+  color: #0a0a0a;
   margin: 0 0 20px;
   letter-spacing: -0.02em;
 }
@@ -80,7 +80,7 @@ html[dir="rtl"] .gh-ins-hero .gh-kicker {
 .gh-ins-hero p {
   font-size: 18px;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.62);
+  color: #555555;
   margin: 0;
 }
 
@@ -103,14 +103,14 @@ html[dir="rtl"] .gh-ins-hero .gh-kicker {
   font-family: "Playfair Display", "Tajawal", serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
-  color: #fafaf8;
+  color: #0a0a0a;
   margin: 0;
   line-height: 1.2;
 }
 
 .gh-ins-section-head p {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
+  color: #888888;
   margin: 0;
   max-width: 420px;
   line-height: 1.6;
@@ -148,8 +148,8 @@ html[dir="rtl"] .gh-ins-hero .gh-kicker {
 }
 
 .gh-ins-card {
-  background: #111916;
-  border: 1px solid rgba(201, 168, 76, 0.12);
+  background: #ffffff;
+  border: 1px solid rgba(201, 168, 76, 0.22);
   border-radius: 4px;
   overflow: hidden;
   transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
@@ -165,7 +165,7 @@ html[dir="rtl"] .gh-ins-hero .gh-kicker {
 .gh-ins-card:hover {
   border-color: rgba(201, 168, 76, 0.4);
   transform: translateY(-4px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
 }
 
 .gh-ins-card--featured {
@@ -200,7 +200,7 @@ html[dir="rtl"] .gh-ins-hero .gh-kicker {
   margin: 0;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: #0d1411;
+  background: #f0eeea;
 }
 
 .gh-ins-card--featured .gh-ins-card-media {
@@ -264,7 +264,7 @@ html[dir="rtl"] .gh-ins-cat {
 
 .gh-ins-read-time {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.45);
+  color: #999999;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -280,7 +280,7 @@ html[dir="rtl"] .gh-ins-cat {
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.35;
-  color: #fafaf8;
+  color: #0a0a0a;
   margin: 0 0 12px;
 }
 
@@ -291,7 +291,7 @@ html[dir="rtl"] .gh-ins-cat {
 .gh-ins-card-excerpt {
   font-size: 14px;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.58);
+  color: #666666;
   margin: 0 0 20px;
   flex: 1;
 }
@@ -339,7 +339,7 @@ html[dir="rtl"] .gh-ins-read-more {
 }
 
 .gh-ins-tool-card {
-  background: linear-gradient(160deg, #141c18 0%, #0d1411 100%);
+  background: #ffffff;
   border: 1px solid rgba(201, 168, 76, 0.15);
   border-radius: 4px;
   padding: 32px 26px 28px;
@@ -363,7 +363,7 @@ html[dir="rtl"] .gh-ins-read-more {
 .gh-ins-tool-card h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: #fafaf8;
+  color: #0a0a0a;
   margin: 0 0 10px;
   line-height: 1.35;
 }
@@ -371,7 +371,7 @@ html[dir="rtl"] .gh-ins-read-more {
 .gh-ins-tool-card p {
   font-size: 13px;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.55);
+  color: #666666;
   margin: 0 0 20px;
   flex: 1;
 }
@@ -382,7 +382,7 @@ html[dir="rtl"] .gh-ins-read-more {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #666666;
   background: rgba(201, 168, 76, 0.15);
   border: 1px solid rgba(201, 168, 76, 0.3);
   padding: 5px 12px;
@@ -453,8 +453,8 @@ html[dir="rtl"] .gh-ins-btn {
 }
 
 .gh-ins-dl-card {
-  background: #111916;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid #eeebe4;
   border-radius: 4px;
   padding: 32px 28px;
   display: flex;
@@ -494,7 +494,7 @@ html[dir="rtl"] .gh-ins-btn {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: #aaaaaa;
   margin-bottom: 8px;
   display: block;
 }
@@ -502,20 +502,20 @@ html[dir="rtl"] .gh-ins-btn {
 .gh-ins-dl-card h3 {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #fafaf8;
+  color: #0a0a0a;
   margin: 0 0 8px;
 }
 
 .gh-ins-dl-card p {
   font-size: 13px;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.55);
+  color: #666666;
   margin: 0 0 18px;
 }
 
 /* ----- Newsletter CTA ----- */
 .gh-ins-newsletter {
-  background: linear-gradient(135deg, #1a2420 0%, #111916 50%, #0d1411 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #f0eeea 100%);
   border: 1px solid rgba(201, 168, 76, 0.25);
   border-radius: 6px;
   padding: 64px 48px;
@@ -543,7 +543,7 @@ html[dir="rtl"] .gh-ins-btn {
   font-family: "Playfair Display", "Tajawal", serif;
   font-size: clamp(1.75rem, 3.5vw, 2.25rem);
   font-weight: 700;
-  color: #fafaf8;
+  color: #0a0a0a;
   margin: 0 0 16px;
   line-height: 1.2;
 }
@@ -552,7 +552,7 @@ html[dir="rtl"] .gh-ins-btn {
 .gh-ins-newsletter-desc {
   font-size: 16px;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.62);
+  color: #555555;
   margin: 0 0 32px;
 }
 
@@ -579,16 +579,16 @@ html[dir="rtl"] .gh-ins-btn {
   padding: 14px 18px;
   font-size: 15px;
   font-family: inherit;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #fff;
+  border: 1px solid #ddd8ce;
   border-radius: 4px;
-  color: #fff;
+  color: #1a1a1a;
   outline: none;
   transition: border-color 0.25s;
 }
 
 .gh-ins-newsletter-form input[type="email"]::placeholder {
-  color: rgba(255, 255, 255, 0.35);
+  color: #bbbbbb;
 }
 
 .gh-ins-newsletter-form input[type="email"]:focus {
@@ -647,7 +647,7 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
   gap: 8px;
   font-size: 12px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.55);
+  color: #666666;
   text-decoration: none;
   margin-bottom: 32px;
   transition: color 0.2s;
@@ -671,20 +671,20 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
   line-height: 1.15;
-  color: #fafaf8;
+  color: #0a0a0a;
   margin: 0 0 16px;
 }
 
 .gh-article-header .gh-dek {
   font-size: 18px;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.62);
+  color: #555555;
   margin: 0 0 12px;
 }
 
 .gh-article-header .gh-byline {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.4);
+  color: #aaaaaa;
 }
 
 .gh-article-hero-img {
@@ -704,7 +704,7 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
 .gh-article-body-wrap p {
   font-size: 17px;
   line-height: 1.85;
-  color: rgba(255, 255, 255, 0.78);
+  color: #444444;
   margin: 0 0 1.4em;
 }
 
@@ -712,7 +712,7 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
   font-family: "Playfair Display", "Tajawal", serif;
   font-size: 1.6rem;
   font-weight: 700;
-  color: #fafaf8;
+  color: #0a0a0a;
   margin: 2.2em 0 0.8em;
 }
 
@@ -727,7 +727,7 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
 .gh-article-body-wrap ol {
   margin: 0 0 1.4em;
   padding-inline-start: 1.4em;
-  color: rgba(255, 255, 255, 0.75);
+  color: #555555;
   line-height: 1.8;
 }
 
@@ -751,14 +751,14 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
 .gh-tool-main h1 {
   font-family: "Playfair Display", "Tajawal", serif;
   font-size: clamp(1.75rem, 3.5vw, 2.25rem);
-  color: #fafaf8;
+  color: #0a0a0a;
   margin: 0 0 16px;
 }
 
 .gh-tool-intro {
   font-size: 16px;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.6);
+  color: #555555;
   margin: 0 0 32px;
 }
 
@@ -773,9 +773,9 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
   align-items: flex-start;
   gap: 14px;
   padding: 14px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid #f0ece4;
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.78);
+  color: #444444;
 }
 
 .gh-checklist input[type="checkbox"] {
@@ -788,7 +788,7 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
 
 .gh-progress-bar {
   height: 3px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #eeebe4;
   border-radius: 2px;
   margin-bottom: 24px;
   overflow: hidden;
@@ -838,7 +838,7 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
 }
 
 .gh-btn-editorial--outline:hover {
-  background: rgba(201, 168, 76, 0.12);
+  background: rgba(201, 168, 76, 0.22);
 }
 
 .gh-field {
@@ -849,7 +849,7 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
   display: block;
   font-size: 12px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.55);
+  color: #666666;
   margin-bottom: 8px;
   letter-spacing: 0.04em;
 }
@@ -861,10 +861,10 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
   padding: 12px 14px;
   font-size: 15px;
   font-family: inherit;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #fff;
+  border: 1px solid #ddd8ce;
   border-radius: 4px;
-  color: #fff;
+  color: #1a1a1a;
   box-sizing: border-box;
 }
 
@@ -887,13 +887,13 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
 
 .gh-quiz-progress {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.45);
+  color: #999999;
   margin-bottom: 20px;
 }
 
 .gh-quiz-step h3 {
   font-size: 1.15rem;
-  color: #fafaf8;
+  color: #0a0a0a;
   margin: 0 0 20px;
   line-height: 1.4;
 }
@@ -907,9 +907,9 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
 .gh-quiz-opt {
   padding: 14px 18px;
   text-align: start;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.85);
+  background: #faf9f6;
+  border: 1px solid #e8e4dc;
+  color: #1a1a1a;
   font-size: 15px;
   font-family: inherit;
   cursor: pointer;
@@ -936,7 +936,7 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
 }
 
 .gh-quiz-result p {
-  color: rgba(255, 255, 255, 0.75);
+  color: #555555;
   line-height: 1.7;
   margin: 0 0 16px;
 }
@@ -955,4 +955,27 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
     background: #fff;
     color: #000;
   }
+}
+
+
+/* RTL featured card parity with EN */
+html[dir="rtl"] .gh-ins-card--featured .gh-ins-card-link {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] .gh-ins-card--featured .gh-ins-card-link {
+    flex-direction: column;
+  }
+}
+
+/* Insights hub — stable header on light pages */
+body.gh-insights .header,
+body.gh-insights .header.scrolled {
+  background: var(--header-bg) !important;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--header-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
