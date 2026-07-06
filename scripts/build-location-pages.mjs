@@ -81,7 +81,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=12">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=8">
-<link rel="stylesheet" href="${p}assets/gh-location.css?v=5">
+<link rel="stylesheet" href="${p}assets/gh-location.css?v=6">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -247,7 +247,7 @@ function buildPage(data, lang) {
     city: L(data.city, lang),
     phone: data.office.phone,
   })}
-${prefixPaths(header, depth)}
+${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), depth)}
 <main>
   <section class="gh-loc-hero">
     <div class="gh-loc-hero-inner">
