@@ -81,7 +81,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=12">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=8">
-<link rel="stylesheet" href="${p}assets/gh-location.css?v=2">
+<link rel="stylesheet" href="${p}assets/gh-location.css?v=3">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -121,9 +121,34 @@ function L(obj, lang) {
   return lang === 'en' ? obj.en : obj.ar;
 }
 
+function lightFooter(lang, depth) {
+  const isEn = lang === 'en';
+  const p = depth > 0 ? '../'.repeat(depth) : '';
+  const dir = isEn ? 'ltr' : 'rtl';
+  const year = new Date().getFullYear();
+  const contact = `${p}contact-us${isEn ? '-en' : ''}.html`;
+  const portfolio = `${p}portfolio${isEn ? '-en' : ''}.html`;
+  const jeddah = `${p}locations/jeddah${isEn ? '-en' : ''}.html`;
+  const riyadh = `${p}locations/riyadh${isEn ? '-en' : ''}.html`;
+
+  return `<footer class="gh-loc-footer" dir="${dir}">
+  <div class="gh-loc-footer-inner">
+    <img src="${p}assets/logo-gold.png" alt="Graphics House" class="gh-loc-footer-logo" loading="lazy">
+    <nav class="gh-loc-footer-nav" aria-label="${isEn ? 'Footer navigation' : 'روابط التذييل'}">
+      <a href="${contact}">${isEn ? 'Contact' : 'تواصل معنا'}</a>
+      <a href="${portfolio}">${isEn ? 'Portfolio' : 'معرض الأعمال'}</a>
+      <a href="${jeddah}">${isEn ? 'Jeddah' : 'جدة'}</a>
+      <a href="${riyadh}">${isEn ? 'Riyadh' : 'الرياض'}</a>
+    </nav>
+    <p class="gh-loc-footer-contact"><a href="tel:+966502786513">+966 50 278 6513</a> · <a href="mailto:info@3dgraphicshouse.com">info@3dgraphicshouse.com</a></p>
+    <p class="gh-loc-footer-copy">© ${year} Graphics House. ${isEn ? 'All rights reserved.' : 'جميع الحقوق محفوظة.'}</p>
+  </div>
+</footer>`;
+}
+
 function buildPage(data, lang) {
   const isEn = lang === 'en';
-  const { header, footer } = getLayout(lang);
+  const { header } = getLayout(lang);
   const depth = 1;
   const p = '../';
   const slug = data.slug;
@@ -179,17 +204,19 @@ function buildPage(data, lang) {
 ${prefixPaths(header, depth)}
 <main>
   <section class="gh-loc-hero">
-    <div class="gh-loc-hero-bg">
-      <img src="${p}${data.heroImage}" alt="${esc(L(data.city, lang))}" loading="eager">
-    </div>
     <div class="gh-loc-hero-inner">
-      <span class="gh-loc-kicker">${isEn ? 'Graphics House · Saudi Arabia' : 'جرافيكس هاوس · المملكة العربية السعودية'}</span>
-      <h1>${esc(L(data.title, lang))}</h1>
-      <p>${esc(L(data.subtitle, lang))}</p>
-      <div class="gh-loc-hero-cta">
-        <a href="${contactHref}" class="gh-loc-btn gh-loc-btn--gold">${isEn ? 'Book Strategy Session' : 'احجز جلسة استراتيجية'}</a>
-        <a href="${checklistHref}" class="gh-loc-btn gh-loc-btn--outline">${isEn ? 'Free Launch Checklist PDF' : 'تحميل قائمة الإطلاق مجاناً'}</a>
+      <div class="gh-loc-hero-copy">
+        <span class="gh-loc-kicker">${isEn ? 'Graphics House · Saudi Arabia' : 'جرافيكس هاوس · المملكة العربية السعودية'}</span>
+        <h1>${esc(L(data.title, lang))}</h1>
+        <p>${esc(L(data.subtitle, lang))}</p>
+        <div class="gh-loc-hero-cta">
+          <a href="${contactHref}" class="gh-loc-btn gh-loc-btn--gold">${isEn ? 'Book Strategy Session' : 'احجز جلسة استراتيجية'}</a>
+          <a href="${checklistHref}" class="gh-loc-btn gh-loc-btn--outline">${isEn ? 'Free Launch Checklist PDF' : 'تحميل قائمة الإطلاق مجاناً'}</a>
+        </div>
       </div>
+      <figure class="gh-loc-hero-media">
+        <img src="${p}${data.heroImage}" alt="${esc(L(data.city, lang))}" loading="eager">
+      </figure>
     </div>
   </section>
   <div class="gh-loc-stats">${statsHtml}</div>
@@ -218,7 +245,7 @@ ${prefixPaths(header, depth)}
     </div>
   </section>
 </main>
-${prefixPaths(footer, depth)}
+${lightFooter(lang, depth)}
 ${tailScripts()}`;
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
