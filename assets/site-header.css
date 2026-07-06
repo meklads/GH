@@ -49,9 +49,9 @@ body.nav-open {
 @media (min-width: 901px) {
   .header-inner {
     display: grid;
-    grid-template-columns: minmax(130px, 190px) minmax(0, 1fr) auto;
+    grid-template-columns: minmax(130px, 190px) minmax(0, 1fr) minmax(200px, max-content);
     align-items: center;
-    gap: 12px 20px;
+    gap: 12px 16px;
     min-height: 72px;
     position: relative;
   }
@@ -79,6 +79,7 @@ body.nav-open {
     justify-content: center;
     justify-self: center;
     gap: 8px;
+    overflow: hidden;
   }
   html[dir="rtl"] .nav { gap: 8px; }
   html[dir="ltr"] .nav { gap: 4px; }
@@ -91,19 +92,33 @@ body.nav-open {
     grid-column: 3;
     justify-self: end;
     flex: 0 0 auto;
-    z-index: 4;
+    z-index: 5;
     margin-inline-start: 0;
     gap: 10px;
+    min-width: max-content;
+    padding-inline-start: 14px;
+    border-inline-start: 1px solid rgba(255, 255, 255, 0.14);
+    background: linear-gradient(90deg, rgba(8, 12, 10, 0) 0%, rgba(8, 12, 10, 0.94) 22%, rgba(8, 12, 10, 0.98) 100%);
   }
   html[dir="rtl"] .nav-actions {
     justify-self: start;
+    border-inline-start: none;
+    border-inline-end: 1px solid rgba(255, 255, 255, 0.14);
+    padding-inline-start: 0;
+    padding-inline-end: 14px;
+    background: linear-gradient(270deg, rgba(8, 12, 10, 0) 0%, rgba(8, 12, 10, 0.94) 22%, rgba(8, 12, 10, 0.98) 100%);
+  }
+  /* Contact link duplicated by nav-cta — hide on desktop to free header space */
+  html[dir="ltr"] .nav > a.nav-link[href*="contact"],
+  html[dir="rtl"] .nav > a.nav-link[href*="contact"] {
+    display: none;
   }
   .menu-toggle { display: none !important; }
 }
 
 @media (min-width: 901px) and (max-width: 1280px) {
   html[dir="ltr"] .header-inner {
-    grid-template-columns: minmax(100px, 150px) minmax(0, 1fr) auto;
+    grid-template-columns: minmax(100px, 150px) minmax(0, 1fr) minmax(190px, max-content);
     gap: 8px 10px;
   }
   html[dir="ltr"] .nav {
@@ -122,24 +137,6 @@ body.nav-open {
     font-size: 9px !important;
     letter-spacing: 0.04em !important;
   }
-  .nav-actions {
-    gap: 10px;
-    padding-inline-start: 10px;
-    margin-inline-start: 4px;
-    border-inline-start: 1px solid rgba(255, 255, 255, 0.12);
-    background: linear-gradient(90deg, rgba(8, 12, 10, 0) 0%, rgba(8, 12, 10, 0.92) 18%);
-  }
-  html[dir="rtl"] .nav-actions {
-    border-inline-start: none;
-    border-inline-end: 1px solid rgba(255, 255, 255, 0.12);
-    padding-inline-start: 0;
-    padding-inline-end: 10px;
-    background: linear-gradient(270deg, rgba(8, 12, 10, 0) 0%, rgba(8, 12, 10, 0.92) 18%);
-  }
-  .lang-switch {
-    font-size: 10px;
-    gap: 5px;
-  }
 }
 
 @media (min-width: 1281px) and (max-width: 1440px) {
@@ -147,10 +144,9 @@ body.nav-open {
     font-size: 11px;
     padding: 8px 5px;
   }
-  .nav-actions {
-    gap: 12px;
-    padding-inline-start: 12px;
-    border-inline-start: 1px solid rgba(255, 255, 255, 0.1);
+  html[dir="ltr"] .nav-cta {
+    padding: 9px 14px !important;
+    font-size: 10px !important;
   }
 }
 
@@ -287,12 +283,17 @@ html[dir="rtl"] .nav-link {
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
+  gap: 6px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   flex-shrink: 0;
   white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.45);
+  line-height: 1;
 }
 .lang-switch-sep {
   color: rgba(255, 255, 255, 0.28);
@@ -302,8 +303,10 @@ html[dir="rtl"] .nav-link {
   color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
   transition: color 0.25s ease;
-  padding-bottom: 2px;
+  padding: 2px 0;
   border-bottom: 1.5px solid transparent;
+  min-width: 1.4em;
+  text-align: center;
 }
 .lang-switch-link:hover { color: var(--header-gold); }
 .lang-switch-link.is-active {
