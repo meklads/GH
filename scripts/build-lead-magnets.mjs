@@ -67,33 +67,6 @@ function getLayout(lang) {
   return { header, footer };
 }
 
-function lightFooter(lang, depth) {
-  const isEn = lang === 'en';
-  const p = depth > 0 ? '../'.repeat(depth) : '';
-  const dir = isEn ? 'ltr' : 'rtl';
-  const year = new Date().getFullYear();
-  const contact = `${p}contact-us${isEn ? '-en' : ''}.html`;
-  const portfolio = `${p}portfolio${isEn ? '-en' : ''}.html`;
-  const insights = `${p}insights/${isEn ? 'index-en' : 'index'}.html`;
-  const jeddah = `${p}locations/jeddah${isEn ? '-en' : ''}.html`;
-  const riyadh = `${p}locations/riyadh${isEn ? '-en' : ''}.html`;
-
-  return `<footer class="gh-loc-footer" dir="${dir}">
-  <div class="gh-loc-footer-inner">
-    <img src="${p}assets/logo-gold.png" alt="Graphics House" class="gh-loc-footer-logo" loading="lazy">
-    <nav class="gh-loc-footer-nav" aria-label="${isEn ? 'Footer navigation' : 'روابط التذييل'}">
-      <a href="${insights}">${isEn ? 'Insights' : 'رؤى'}</a>
-      <a href="${contact}">${isEn ? 'Contact' : 'اتصل بنا'}</a>
-      <a href="${portfolio}">${isEn ? 'Portfolio' : 'معرض الأعمال'}</a>
-      <a href="${jeddah}">${isEn ? 'Jeddah' : 'جدة'}</a>
-      <a href="${riyadh}">${isEn ? 'Riyadh' : 'الرياض'}</a>
-    </nav>
-    <p class="gh-loc-footer-contact"><a href="tel:+966502786513">+966 50 278 6513</a> · <a href="mailto:info@3dgraphicshouse.com">info@3dgraphicshouse.com</a></p>
-    <p class="gh-loc-footer-copy">© ${year} Graphics House. ${isEn ? 'All rights reserved.' : 'جميع الحقوق محفوظة.'}</p>
-  </div>
-</footer>`;
-}
-
 function prefixPaths(html, depth) {
   const p = depth > 0 ? '../'.repeat(depth) : '';
   return html
@@ -205,7 +178,7 @@ li {
 
 function buildGatePage(lang, downloadPath) {
   const isEn = lang === 'en';
-  const { header } = getLayout(lang);
+  const { header, footer } = getLayout(lang);
   const depth = 2;
   const p = '../../';
   const outName = `visual-launch-checklist${isEn ? '-en' : ''}.html`;
@@ -228,7 +201,7 @@ function buildGatePage(lang, downloadPath) {
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=12">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=10">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=14">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=15">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/lang-switch.js?v=3"></script>
@@ -287,7 +260,7 @@ ${prefixPaths(header, depth)}
     </div>
   </div>
 </main>
-${lightFooter(lang, depth)}
+${prefixPaths(footer, depth)}
 <script defer src="${p}assets/gh-lead-magnet.js?v=1"></script>
 <script defer src="${p}assets/gh-float-widgets.js?v=1"></script>
 </body></html>`;

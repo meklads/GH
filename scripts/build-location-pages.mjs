@@ -164,31 +164,6 @@ function L(obj, lang) {
   return lang === 'en' ? obj.en : obj.ar;
 }
 
-function lightFooter(lang, depth) {
-  const isEn = lang === 'en';
-  const p = depth > 0 ? '../'.repeat(depth) : '';
-  const dir = isEn ? 'ltr' : 'rtl';
-  const year = new Date().getFullYear();
-  const contact = `${p}contact-us${isEn ? '-en' : ''}.html`;
-  const portfolio = `${p}portfolio${isEn ? '-en' : ''}.html`;
-  const jeddah = `${p}locations/jeddah${isEn ? '-en' : ''}.html`;
-  const riyadh = `${p}locations/riyadh${isEn ? '-en' : ''}.html`;
-
-  return `<footer class="gh-loc-footer" dir="${dir}">
-  <div class="gh-loc-footer-inner">
-    <img src="${p}assets/logo-gold.png" alt="Graphics House" class="gh-loc-footer-logo" loading="lazy">
-    <nav class="gh-loc-footer-nav" aria-label="${isEn ? 'Footer navigation' : 'روابط التذييل'}">
-      <a href="${contact}">${isEn ? 'Contact' : 'تواصل معنا'}</a>
-      <a href="${portfolio}">${isEn ? 'Portfolio' : 'معرض الأعمال'}</a>
-      <a href="${jeddah}">${isEn ? 'Jeddah' : 'جدة'}</a>
-      <a href="${riyadh}">${isEn ? 'Riyadh' : 'الرياض'}</a>
-    </nav>
-    <p class="gh-loc-footer-contact"><a href="tel:+966502786513">+966 50 278 6513</a> · <a href="mailto:info@3dgraphicshouse.com">info@3dgraphicshouse.com</a></p>
-    <p class="gh-loc-footer-copy">© ${year} Graphics House. ${isEn ? 'All rights reserved.' : 'جميع الحقوق محفوظة.'}</p>
-  </div>
-</footer>`;
-}
-
 function cardsHtml(items, p, lang) {
   return items
     .map((s) => {
@@ -204,7 +179,7 @@ function cardsHtml(items, p, lang) {
 
 function buildPage(data, lang) {
   const isEn = lang === 'en';
-  const { header } = getLayout(lang);
+  const { header, footer } = getLayout(lang);
   const depth = 1;
   const p = '../';
   const slug = data.slug;
@@ -294,7 +269,7 @@ ${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), depth
     </div>
   </section>
 </main>
-${lightFooter(lang, depth)}
+${prefixPaths(footer, depth)}
 ${tailScripts()}`;
 
   fs.mkdirSync(OUT_DIR, { recursive: true });

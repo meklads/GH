@@ -147,7 +147,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=12">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=10">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=14">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=15">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -210,7 +210,7 @@ function hubTabScript() {
   if(!nav)return;
   var links=nav.querySelectorAll("[data-gh-ins-tab]");
   var panels=document.querySelectorAll("[data-gh-ins-panel]");
-  function show(id){
+  function show(id,updateHash){
     links.forEach(function(l){
       var on=l.getAttribute("data-gh-ins-tab")===id;
       l.classList.toggle("is-active",on);
@@ -219,46 +219,26 @@ function hubTabScript() {
     panels.forEach(function(p){
       p.classList.toggle("is-active",p.getAttribute("data-gh-ins-panel")===id);
     });
-    if(history.replaceState)history.replaceState(null,"","#"+id);
+    if(updateHash!==false&&history.replaceState)history.replaceState(null,"","#"+id);
   }
   links.forEach(function(l){
     l.addEventListener("click",function(e){e.preventDefault();show(l.getAttribute("data-gh-ins-tab"));});
   });
   var h=(location.hash||"").slice(1);
-  if(h&&document.querySelector('[data-gh-ins-panel="'+h+'"]'))show(h);
+  if(h&&document.querySelector('[data-gh-ins-panel="'+h+'"]')){show(h);}else{
+    show("articles",false);
+    if(history.replaceState)history.replaceState(null,"",location.pathname+location.search);
+    requestAnimationFrame(function(){
+      var target=document.querySelector(".gh-ins-subnav-wrap");
+      if(target)target.scrollIntoView({block:"start"});
+    });
+  }
   window.addEventListener("hashchange",function(){
     var id=(location.hash||"").slice(1);
     if(id&&document.querySelector('[data-gh-ins-panel="'+id+'"]'))show(id);
   });
 })();
 </script>`;
-}
-
-function lightFooter(lang, depth) {
-  const isEn = lang === 'en';
-  const p = depth > 0 ? '../'.repeat(depth) : '';
-  const dir = isEn ? 'ltr' : 'rtl';
-  const year = new Date().getFullYear();
-  const contact = `${p}contact-us${isEn ? '-en' : ''}.html`;
-  const portfolio = `${p}portfolio${isEn ? '-en' : ''}.html`;
-  const insights = `${p}insights/${isEn ? 'index-en' : 'index'}.html`;
-  const jeddah = `${p}locations/jeddah${isEn ? '-en' : ''}.html`;
-  const riyadh = `${p}locations/riyadh${isEn ? '-en' : ''}.html`;
-
-  return `<footer class="gh-loc-footer" dir="${dir}">
-  <div class="gh-loc-footer-inner">
-    <img src="${p}assets/logo-gold.png" alt="Graphics House" class="gh-loc-footer-logo" loading="lazy">
-    <nav class="gh-loc-footer-nav" aria-label="${isEn ? 'Footer navigation' : 'روابط التذييل'}">
-      <a href="${insights}">${isEn ? 'Insights' : 'رؤى'}</a>
-      <a href="${contact}">${isEn ? 'Contact' : 'اتصل بنا'}</a>
-      <a href="${portfolio}">${isEn ? 'Portfolio' : 'معرض الأعمال'}</a>
-      <a href="${jeddah}">${isEn ? 'Jeddah' : 'جدة'}</a>
-      <a href="${riyadh}">${isEn ? 'Riyadh' : 'الرياض'}</a>
-    </nav>
-    <p class="gh-loc-footer-contact"><a href="tel:+966502786513">+966 50 278 6513</a> · <a href="mailto:info@3dgraphicshouse.com">info@3dgraphicshouse.com</a></p>
-    <p class="gh-loc-footer-copy">© ${year} Graphics House. ${isEn ? 'All rights reserved.' : 'جميع الحقوق محفوظة.'}</p>
-  </div>
-</footer>`;
 }
 
 function newsletterSection(lang) {
@@ -385,7 +365,7 @@ function hubExcerpt(article, lang) {
 
 function buildHub(lang) {
   const isEn = lang === 'en';
-  const { header } = getLayout(lang);
+  const { header, footer } = getLayout(lang);
   const featured = ARTICLES.find((a) => a.featured) || ARTICLES[0];
   const rest = ARTICLES.filter((a) => a.slug !== featured.slug);
   const p = '../';
@@ -406,8 +386,8 @@ function buildHub(lang) {
 ${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 1)}
 <main class="gh-insights-page">
   <header class="gh-ins-hero">
-    <span class="gh-kicker">Graphics House · ${isEn ? 'Insights' : 'رؤى'}</span>
-    <h1>${isEn ? 'Insights' : 'رؤى'}</h1>
+    <span class="gh-kicker">Graphics House · Insights</span>
+    <h1>Insights</h1>
     <p>${isEn
     ? 'Strategic knowledge for developers shaping major projects — architectural visualization, immersive sales systems, and digital transformation across Saudi Arabia and the GCC.'
     : 'معرفة استراتيجية للمطورين في المشاريع الكبرى — الإظهار المعماري، أنظمة المبيعات الغامرة، والتحول الرقمي في السعودية والخليج.'}</p>
@@ -430,7 +410,7 @@ ${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 1)}
     </div>
   </div>
 </main>
-${lightFooter(lang, 1)}
+${prefixPaths(footer, 1)}
 ${hubTabScript()}
 ${tailScripts(1)}`;
 
@@ -442,7 +422,7 @@ ${tailScripts(1)}`;
 function buildArticle(article, lang) {
   const isEn = lang === 'en';
   const L = (key) => (isEn ? key.en : key.ar);
-  const { header } = getLayout(lang);
+  const { header, footer } = getLayout(lang);
   const depth = 2;
   const p = '../../';
   const slug = `${article.slug}${isEn ? '-en' : ''}.html`;
@@ -486,7 +466,7 @@ ${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), depth
     </article>
   </div>
 </main>
-${lightFooter(lang, depth)}
+${prefixPaths(footer, depth)}
 ${tailScripts(depth)}`;
 
   fs.writeFileSync(path.join(ROOT, 'insights/articles', slug), html, 'utf8');
@@ -495,7 +475,7 @@ ${tailScripts(depth)}`;
 
 function buildLaunchChecklist(lang) {
   const isEn = lang === 'en';
-  const { header } = getLayout(lang);
+  const { header, footer } = getLayout(lang);
   const depth = 2;
   const items = isEn
     ? [
@@ -563,7 +543,7 @@ ${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), depth
     </div>
   </div>
 </main>
-${lightFooter(lang, depth)}
+${prefixPaths(footer, depth)}
 <script defer src="../../assets/gh-launch-checklist.js?v=1"></script>
 ${tailScripts(depth)}`;
 
@@ -575,7 +555,7 @@ ${tailScripts(depth)}`;
 
 function buildSolutionFinder(lang) {
   const isEn = lang === 'en';
-  const { header } = getLayout(lang);
+  const { header, footer } = getLayout(lang);
 
   const html = `${headBlock(lang, {
     depth: 2,
@@ -605,7 +585,7 @@ ${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 2)}
     </div>
   </div>
 </main>
-${lightFooter(lang, 2)}
+${prefixPaths(footer, 2)}
 <script defer src="../../assets/gh-solution-finder.js?v=1"></script>
 ${tailScripts(2)}`;
 
@@ -616,7 +596,7 @@ ${tailScripts(2)}`;
 
 function buildBriefTemplate(lang) {
   const isEn = lang === 'en';
-  const { header } = getLayout(lang);
+  const { header, footer } = getLayout(lang);
   const fields = isEn
     ? [
         ['Project name', 'text', 'project_name'],
@@ -685,7 +665,7 @@ ${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 2)}
     </div>
   </div>
 </main>
-${lightFooter(lang, 2)}
+${prefixPaths(footer, 2)}
 ${tailScripts(2)}`;
 
   const out = `insights/tools/project-brief${isEn ? '-en' : ''}.html`;
