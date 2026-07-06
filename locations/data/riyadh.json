@@ -1,0 +1,94 @@
+{
+  "slug": "riyadh",
+  "city": { "ar": "الرياض", "en": "Riyadh" },
+  "heroImage": "assets/projects/rendering/alrajhi3.jpeg",
+  "title": {
+    "ar": "إظهار معماري وأنظمة إطلاق بصرية للمطورين في الرياض",
+    "en": "Architectural Visualization & Visual Launch Systems in Riyadh"
+  },
+  "subtitle": {
+    "ar": "نخدم مطوري العاصمة والمشاريع الضخمة في الرياض — رندر فوتوريالستي، مجسمات ذكية، أفلام CGI، ومنصات مبيعات تفاعلية من استوديو واحد متكامل.",
+    "en": "We serve capital-region developers and mega-projects in Riyadh — photorealistic archviz, smart maquettes, CGI films, and interactive sales platforms from one integrated studio."
+  },
+  "metaDescription": {
+    "ar": "استوديو إظهار معماري للمطورين في الرياض: رندرات، مجسمات ذكية، أفلام CGI، GrowthLaunch وProjectLaunch — Graphics House.",
+    "en": "Archviz studio for Riyadh developers: renders, smart maquettes, CGI films, GrowthLaunch & ProjectLaunch — Graphics House."
+  },
+  "servicesLead": {
+    "ar": "إنتاج بصري متكامل لمشاريع الأبراج السكنية، المجمعات السكنية، والوجهات المختلطة في العاصمة ومنطقة الرياض.",
+    "en": "End-to-end visual production for residential towers, gated communities, and mixed-use destinations across Riyadh and the capital region."
+  },
+  "stats": [
+    { "value": "500+", "label": { "ar": "مشروع في الخليج", "en": "GCC projects" } },
+    { "value": "20+", "label": { "ar": "سنة خبرة", "en": "Years experience" } },
+    { "value": "50+", "label": { "ar": "مشروع في الرياض", "en": "Riyadh-region projects" } }
+  ],
+  "services": [
+    {
+      "icon": "imagesmode",
+      "title": { "ar": "إظهار معماري فوتوريالستي", "en": "Photorealistic Archviz" },
+      "desc": { "ar": "رندرات خارجية وداخلية للأبراج والمجمعات off-plan في الرياض.", "en": "Exterior & interior renders for off-plan towers and compounds in Riyadh." },
+      "href": "services/rendering.html"
+    },
+    {
+      "icon": "home_work",
+      "title": { "ar": "مجسمات ذكية", "en": "Smart Maquettes" },
+      "desc": { "ar": "مجسمات تفاعلية لصالات البيع في شمال الرياض والمركز.", "en": "Interactive models for sales galleries across north Riyadh and the CBD." },
+      "href": "smart-maquettes.html"
+    },
+    {
+      "icon": "slow_motion_video",
+      "title": { "ar": "إنتاج سينمائي CGI", "en": "Cinematic CGI" },
+      "desc": { "ar": "أفلام إطلاق للمشاريع الكبرى والحملات الإعلامية.", "en": "Launch films for major developments and media campaigns." },
+      "href": "services/animation.html"
+    },
+    {
+      "icon": "query_stats",
+      "title": { "ar": "GrowthLaunch™", "en": "GrowthLaunch™" },
+      "desc": { "ar": "نظام توليد العملاء والمبيعات للمشاريع قيد الإطلاق.", "en": "Lead generation & sales system for projects going to market." },
+      "href": "solutions/growth-launch.html"
+    },
+    {
+      "icon": "rocket_launch",
+      "title": { "ar": "ProjectLaunch™", "en": "ProjectLaunch™" },
+      "desc": { "ar": "إطلاق متكامل: بصري + تسويق + صالة بيع للمطورين.", "en": "Integrated launch: visual + marketing + sales gallery." },
+      "href": "solutions/project-launch.html"
+    },
+    {
+      "icon": "workspace_premium",
+      "title": { "ar": "BrandScale™", "en": "BrandScale™" },
+      "desc": { "ar": "بناء وتقوية العلامة التجارية للمطورين والمجموعات العقارية.", "en": "Build and scale the developer brand across touchpoints." },
+      "href": "solutions/brand-scale.html"
+    }
+  ],
+  "why": {
+    "title": { "ar": "لماذا Graphics House في الرياض؟", "en": "Why Graphics House for Riyadh?" },
+    "items": [
+      {
+        "title": { "ar": "خبرة مشاريع العاصمة", "en": "Capital-region project experience" },
+        "desc": { "ar": "مشاريع سكنية وتجارية كبرى في الرياض — من الرندر حتى صالة البيع.", "en": "Major residential & commercial work in Riyadh — from renders through sales gallery." }
+      },
+      {
+        "title": { "ar": "فرق ميدانية في الرياض", "en": "On-the-ground in Riyadh" },
+        "desc": { "ar": "زيارات ميدانية، ورش اعتماد، ودعم صالات البيع في العاصمة.", "en": "Site visits, approval workshops, and sales-gallery support in the capital." }
+      },
+      {
+        "title": { "ar": "المنتجات الثلاثة من استوديو واحد", "en": "All three systems, one studio" },
+        "desc": { "ar": "GrowthLaunch وProjectLaunch وBrandScale — حسب مرحلة مشروعك.", "en": "GrowthLaunch, ProjectLaunch & BrandScale — matched to your project stage." }
+      },
+      {
+        "title": { "ar": "لغة السوق السعودي", "en": "Saudi market fluency" },
+        "desc": { "ar": "نفهم off-plan، الوسطاء، ومعدلات التحويل في سوق الرياض.", "en": "We understand off-plan, brokers, and conversion dynamics in the Riyadh market." }
+      }
+    ]
+  },
+  "office": {
+    "heading": { "ar": "خدماتنا في الرياض", "en": "Serving Riyadh" },
+    "address": {
+      "ar": "تغطية مشاريع الرياض والعاصمة — فرق ميدانية + إنتاج من مقر جدة",
+      "en": "Riyadh & capital-region coverage — field teams + production from Jeddah HQ"
+    },
+    "cr": "4030502306",
+    "phone": "+966502786513"
+  }
+}

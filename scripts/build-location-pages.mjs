@@ -159,6 +159,16 @@ function buildPage(data, lang) {
   const contactHref = `${p}contact-us${isEn ? '-en' : ''}.html`;
   const portfolioHref = `${p}portfolio${isEn ? '-en' : ''}.html`;
 
+  const cityName = L(data.city, lang);
+  const servicesLead = data.servicesLead
+    ? L(data.servicesLead, lang)
+    : (isEn
+      ? 'End-to-end visual production for developers launching residential towers, gated communities, and mixed-use destinations.'
+      : 'إنتاج بصري متكامل للمطورين الذين يطلقون أبراجاً سكنية ومجمعات ومشاريع مختلطة.');
+  const officeHeading = data.office.heading
+    ? L(data.office.heading, lang)
+    : (isEn ? `${cityName} office` : `مكتب ${cityName}`);
+
   const html = `${headBlock(lang, {
     slug,
     title: L(data.title, lang),
@@ -184,10 +194,8 @@ ${prefixPaths(header, depth)}
   </section>
   <div class="gh-loc-stats">${statsHtml}</div>
   <section class="gh-loc-section">
-    <h2>${isEn ? 'What we deliver in Jeddah' : 'ماذا نقدّم في جدة'}</h2>
-    <p class="gh-loc-section-lead">${isEn
-    ? 'End-to-end visual production for developers launching residential towers, gated communities, and mixed-use destinations.'
-    : 'إنتاج بصري متكامل للمطورين الذين يطلقون أبراجاً سكنية ومجمعات ومشاريع مختلطة.'}</p>
+    <h2>${isEn ? `What we deliver in ${cityName}` : `ماذا نقدّم في ${cityName}`}</h2>
+    <p class="gh-loc-section-lead">${esc(servicesLead)}</p>
     <div class="gh-loc-grid">${servicesHtml}</div>
   </section>
   <section class="gh-loc-section" style="padding-top:0">
@@ -202,7 +210,7 @@ ${prefixPaths(header, depth)}
     <a href="${portfolioHref}" class="gh-loc-btn gh-loc-btn--outline">${isEn ? 'View Portfolio' : 'معرض الأعمال'}</a>
   </section>
   <section class="gh-loc-section">
-    <h2>${isEn ? 'Jeddah office' : 'مكتب جدة'}</h2>
+    <h2>${esc(officeHeading)}</h2>
     <div class="gh-loc-office">
       <span>${esc(L(data.office.address, lang))}</span>
       <span>${isEn ? 'CR' : 'س.ت'}: ${esc(data.office.cr)}</span>
