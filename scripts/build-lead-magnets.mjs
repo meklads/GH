@@ -203,7 +203,7 @@ function buildGatePage(lang, downloadPath) {
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=10">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=15">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
-<script defer src="${p}assets/site-header.js?v=7"></script>
+<script defer src="${p}assets/site-header.js?v=8"></script>
 <script defer src="${p}assets/lang-switch.js?v=3"></script>
 <style>
 body.gh-insights{min-height:100vh;display:flex;flex-direction:column;background:#f7f5f0}
