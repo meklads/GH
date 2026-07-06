@@ -46,7 +46,7 @@ body.gh-insights .gh-tool-page-wrap {
 /* ----- Hero masthead ----- */
 .gh-ins-hero {
   text-align: center;
-  padding: 56px 24px 72px;
+  padding: 56px 24px 40px;
   max-width: 820px;
   margin: 0 auto;
 }
@@ -84,9 +84,135 @@ html[dir="rtl"] .gh-ins-hero .gh-kicker {
   margin: 0;
 }
 
+/* ----- Hub sub-navigation (tabs under hero) ----- */
+.gh-ins-subnav-wrap {
+  position: sticky;
+  top: 72px;
+  z-index: 40;
+  background: rgba(247, 245, 240, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e8e4dc;
+  margin-bottom: 48px;
+}
+
+.gh-ins-subnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 32px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gh-ins-subnav::-webkit-scrollbar {
+  display: none;
+}
+
+.gh-ins-subnav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 11px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #555555;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  transition: color 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.gh-ins-subnav-link .material-symbols-outlined {
+  font-size: 18px;
+  color: #c9a84c;
+  transition: color 0.2s;
+}
+
+.gh-ins-subnav-link:hover {
+  color: #0a0a0a;
+  background: #ffffff;
+  border-color: #e8e4dc;
+}
+
+.gh-ins-subnav-link.is-active {
+  color: #ffffff;
+  background: #0a0a0a;
+  border-color: #0a0a0a;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.gh-ins-subnav-link.is-active .material-symbols-outlined {
+  color: #c9a84c;
+}
+
+html[dir="rtl"] .gh-ins-subnav-link {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .gh-ins-subnav-wrap {
+    top: 64px;
+    margin-bottom: 32px;
+  }
+
+  .gh-ins-subnav {
+    justify-content: flex-start;
+    padding: 12px 20px;
+    gap: 6px;
+  }
+
+  .gh-ins-subnav-link {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .gh-ins-subnav-link .material-symbols-outlined {
+    font-size: 16px;
+  }
+}
+
+/* ----- Tab panels ----- */
+.gh-ins-panels {
+  min-height: 420px;
+}
+
+.gh-ins-panels .gh-ins-panel {
+  display: none;
+  margin-bottom: 0;
+  animation: gh-ins-panel-in 0.32s ease;
+}
+
+.gh-ins-panels .gh-ins-panel.is-active {
+  display: block;
+}
+
+@keyframes gh-ins-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ----- Section headers ----- */
 .gh-ins-section {
   margin-bottom: 88px;
+}
+
+.gh-ins-panels .gh-ins-section {
+  margin-bottom: 0;
 }
 
 .gh-ins-section-head {
@@ -947,8 +1073,13 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
   #ghPopup,
   footer,
   .gh-no-print,
-  .gh-ins-newsletter {
+  .gh-ins-newsletter,
+  .gh-ins-subnav-wrap {
     display: none !important;
+  }
+
+  .gh-ins-panels .gh-ins-panel {
+    display: block !important;
   }
 
   body.gh-insights {

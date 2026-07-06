@@ -147,7 +147,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=12">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=8">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=11">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=12">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -178,10 +178,66 @@ function readingMinutes(article, lang) {
   return isEn ? `${mins} min read` : `${mins} دقائق`;
 }
 
+function hubSubNav(lang) {
+  const isEn = lang === 'en';
+  const items = [
+    { id: 'articles', label: isEn ? 'Featured Articles' : 'مقالات مميزة', icon: 'article' },
+    { id: 'ai-tools', label: isEn ? 'AI Tools' : 'أدوات الذكاء الاصطناعي', icon: 'smart_toy' },
+    { id: 'downloads', label: isEn ? 'Downloads' : 'التحميلات', icon: 'download' },
+    { id: 'newsletter', label: isEn ? 'Newsletter' : 'النشرة', icon: 'mail' },
+  ];
+  const links = items
+    .map(
+      (item, i) => `
+    <a href="#${item.id}" class="gh-ins-subnav-link${i === 0 ? ' is-active' : ''}" data-gh-ins-tab="${item.id}" role="tab" aria-selected="${i === 0 ? 'true' : 'false'}">
+      <span class="material-symbols-outlined" aria-hidden="true">${item.icon}</span>
+      ${item.label}
+    </a>`
+    )
+    .join('');
+  return `
+<div class="gh-ins-subnav-wrap">
+  <nav class="gh-ins-subnav" aria-label="${isEn ? 'Insights sections' : 'أقسام Insights'}" role="tablist">
+    ${links}
+  </nav>
+</div>`;
+}
+
+function hubTabScript() {
+  return `<script>
+(function(){
+  var nav=document.querySelector(".gh-ins-subnav");
+  if(!nav)return;
+  var links=nav.querySelectorAll("[data-gh-ins-tab]");
+  var panels=document.querySelectorAll("[data-gh-ins-panel]");
+  function show(id){
+    links.forEach(function(l){
+      var on=l.getAttribute("data-gh-ins-tab")===id;
+      l.classList.toggle("is-active",on);
+      l.setAttribute("aria-selected",on?"true":"false");
+    });
+    panels.forEach(function(p){
+      p.classList.toggle("is-active",p.getAttribute("data-gh-ins-panel")===id);
+    });
+    if(history.replaceState)history.replaceState(null,"","#"+id);
+  }
+  links.forEach(function(l){
+    l.addEventListener("click",function(e){e.preventDefault();show(l.getAttribute("data-gh-ins-tab"));});
+  });
+  var h=(location.hash||"").slice(1);
+  if(h&&document.querySelector('[data-gh-ins-panel="'+h+'"]'))show(h);
+  window.addEventListener("hashchange",function(){
+    var id=(location.hash||"").slice(1);
+    if(id&&document.querySelector('[data-gh-ins-panel="'+id+'"]'))show(id);
+  });
+})();
+</script>`;
+}
+
 function newsletterSection(lang) {
   const isEn = lang === 'en';
   return `
-<section class="gh-ins-section gh-ins-newsletter" id="newsletter">
+<section class="gh-ins-section gh-ins-panel gh-ins-newsletter" id="newsletter" data-gh-ins-panel="newsletter">
   <div class="gh-ins-newsletter-inner">
     <h2>${isEn ? 'Stay Ahead in Architectural Visualization' : 'ابقَ في الصدارة في الإظهار المعماري'}</h2>
     <p class="gh-ins-newsletter-desc">${isEn
@@ -239,7 +295,7 @@ function aiToolsSection(lang) {
     )
     .join('');
   return `
-<section class="gh-ins-section" id="ai-tools">
+<section class="gh-ins-section gh-ins-panel" id="ai-tools" data-gh-ins-panel="ai-tools">
   <div class="gh-ins-section-head">
     <h2>${isEn ? 'AI Tools' : 'أدوات الذكاء الاصطناعي'}</h2>
     <p>${isEn
@@ -274,7 +330,7 @@ function downloadsSection(lang) {
     })
     .join('');
   return `
-<section class="gh-ins-section" id="downloads">
+<section class="gh-ins-section gh-ins-panel" id="downloads" data-gh-ins-panel="downloads">
   <div class="gh-ins-section-head">
     <h2>${isEn ? 'Downloads' : 'التحميلات'}</h2>
     <p>${isEn
@@ -329,8 +385,10 @@ ${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 1)}
     ? 'Strategic knowledge for developers shaping major projects — architectural visualization, immersive sales systems, and digital transformation across Saudi Arabia and the GCC.'
     : 'معرفة استراتيجية للمطورين في المشاريع الكبرى — الإظهار المعماري، أنظمة المبيعات الغامرة، والتحول الرقمي في السعودية والخليج.'}</p>
   </header>
+  ${hubSubNav(lang)}
   <div class="gh-ins-wrap">
-    <section class="gh-ins-section" id="articles">
+    <div class="gh-ins-panels">
+    <section class="gh-ins-section gh-ins-panel is-active" id="articles" data-gh-ins-panel="articles">
       <div class="gh-ins-section-head">
         <h2>${isEn ? 'Featured Articles' : 'مقالات مميزة'}</h2>
         <p>${isEn
@@ -342,9 +400,11 @@ ${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 1)}
     ${aiToolsSection(lang)}
     ${downloadsSection(lang)}
     ${newsletterSection(lang)}
+    </div>
   </div>
 </main>
 ${prefixPaths(footer, 1)}
+${hubTabScript()}
 ${tailScripts(1)}`;
 
   const out = isEn ? 'insights/index-en.html' : 'insights/index.html';
