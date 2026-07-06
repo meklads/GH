@@ -23,12 +23,12 @@
     { "value": "20+", "label": { "ar": "سنة خبرة", "en": "Years experience" } },
     { "value": "50+", "label": { "ar": "مشروع في الرياض", "en": "Riyadh-region projects" } }
   ],
-  "services": [
+  "coreServices": [
     {
-      "icon": "imagesmode",
-      "title": { "ar": "إظهار معماري فوتوريالستي", "en": "Photorealistic Archviz" },
-      "desc": { "ar": "رندرات خارجية وداخلية للأبراج والمجمعات off-plan في الرياض.", "en": "Exterior & interior renders for off-plan towers and compounds in Riyadh." },
-      "href": "services/rendering.html"
+      "icon": "smart_display",
+      "title": { "ar": "العروض التفاعلية والبرمجيات الخاصة", "en": "Interactive Presentations & Custom Software" },
+      "desc": { "ar": "منصات تفاعلية وبرمجيات مخصصة لصالات البيع في الرياض — جولات افتراضية وتطبيقات مبيعات.", "en": "Custom interactive platforms & sales software for Riyadh galleries — virtual tours and sales apps." },
+      "href": "interactive-experiences.html"
     },
     {
       "icon": "home_work",
@@ -41,7 +41,9 @@
       "title": { "ar": "إنتاج سينمائي CGI", "en": "Cinematic CGI" },
       "desc": { "ar": "أفلام إطلاق للمشاريع الكبرى والحملات الإعلامية.", "en": "Launch films for major developments and media campaigns." },
       "href": "services/animation.html"
-    },
+    }
+  ],
+  "products": [
     {
       "icon": "query_stats",
       "title": { "ar": "GrowthLaunch™", "en": "GrowthLaunch™" },

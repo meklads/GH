@@ -81,7 +81,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=12">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=8">
-<link rel="stylesheet" href="${p}assets/gh-location.css?v=3">
+<link rel="stylesheet" href="${p}assets/gh-location.css?v=4">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -146,21 +146,8 @@ function lightFooter(lang, depth) {
 </footer>`;
 }
 
-function buildPage(data, lang) {
-  const isEn = lang === 'en';
-  const { header } = getLayout(lang);
-  const depth = 1;
-  const p = '../';
-  const slug = data.slug;
-  const outName = `${slug}${isEn ? '-en' : ''}.html`;
-
-  const statsHtml = data.stats
-    .map(
-      (s) => `<div class="gh-loc-stat"><strong>${esc(s.value)}</strong><span>${esc(L(s.label, lang))}</span></div>`
-    )
-    .join('');
-
-  const servicesHtml = data.services
+function cardsHtml(items, p, lang) {
+  return items
     .map((s) => {
       const href = s.href.startsWith('http') ? s.href : `${p}${s.href}`;
       return `<a href="${href}" class="gh-loc-card">
@@ -170,6 +157,27 @@ function buildPage(data, lang) {
       </a>`;
     })
     .join('');
+}
+
+function buildPage(data, lang) {
+  const isEn = lang === 'en';
+  const { header } = getLayout(lang);
+  const depth = 1;
+  const p = '../';
+  const slug = data.slug;
+  const outName = `${slug}${isEn ? '-en' : ''}.html`;
+
+  const coreServices = data.coreServices || (data.services || []).slice(0, 3);
+  const products = data.products || (data.services || []).slice(3, 6);
+
+  const statsHtml = data.stats
+    .map(
+      (s) => `<div class="gh-loc-stat"><strong>${esc(s.value)}</strong><span>${esc(L(s.label, lang))}</span></div>`
+    )
+    .join('');
+
+  const coreServicesHtml = cardsHtml(coreServices, p, lang);
+  const productsHtml = cardsHtml(products, p, lang);
 
   const whyHtml = data.why.items
     .map(
@@ -223,7 +231,10 @@ ${prefixPaths(header, depth)}
   <section class="gh-loc-section">
     <h2>${isEn ? `What we deliver in ${cityName}` : `ماذا نقدّم في ${cityName}`}</h2>
     <p class="gh-loc-section-lead">${esc(servicesLead)}</p>
-    <div class="gh-loc-grid">${servicesHtml}</div>
+    <h3 class="gh-loc-subhead">${isEn ? 'Core Services' : 'الخدمات الرئيسية'}</h3>
+    <div class="gh-loc-grid gh-loc-grid--3">${coreServicesHtml}</div>
+    <h3 class="gh-loc-subhead">${isEn ? 'Main Products' : 'المنتجات الرئيسية'}</h3>
+    <div class="gh-loc-grid gh-loc-grid--3">${productsHtml}</div>
   </section>
   <section class="gh-loc-section" style="padding-top:0">
     <h2>${esc(L(data.why.title, lang))}</h2>

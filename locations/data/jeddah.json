@@ -19,12 +19,12 @@
     { "value": "20+", "label": { "ar": "سنة خبرة", "en": "Years experience" } },
     { "value": "4", "label": { "ar": "مكاتب إقليمية", "en": "Regional offices" } }
   ],
-  "services": [
+  "coreServices": [
     {
-      "icon": "imagesmode",
-      "title": { "ar": "إظهار معماري فوتوريالستي", "en": "Photorealistic Archviz" },
-      "desc": { "ar": "رندرات خارجية وداخلية للمشاريع off-plan والمراحل الأولى.", "en": "Exterior & interior renders for off-plan and early-phase sales." },
-      "href": "services/rendering.html"
+      "icon": "smart_display",
+      "title": { "ar": "العروض التفاعلية والبرمجيات الخاصة", "en": "Interactive Presentations & Custom Software" },
+      "desc": { "ar": "منصات تفاعلية وبرمجيات مخصصة لصالات البيع — شاشات لمس، جولات افتراضية، وتطبيقات مبيعات.", "en": "Custom interactive platforms & software for sales galleries — touch walls, virtual tours, and sales apps." },
+      "href": "interactive-experiences.html"
     },
     {
       "icon": "home_work",
@@ -37,24 +37,26 @@
       "title": { "ar": "إنتاج سينمائي CGI", "en": "Cinematic CGI" },
       "desc": { "ar": "أفلام إطلاق قصيرة ومتوسطة للحملات والتلفزيون.", "en": "Short & mid-form launch films for campaigns and broadcast." },
       "href": "services/animation.html"
-    },
+    }
+  ],
+  "products": [
     {
-      "icon": "smart_display",
-      "title": { "ar": "تجارب تفاعلية", "en": "Interactive Experiences" },
-      "desc": { "ar": "شاشات لمس وتطبيقات مبيعات للوحدات والإطلالات.", "en": "Touch walls & sales apps for units and views." },
-      "href": "services/interactive.html"
+      "icon": "query_stats",
+      "title": { "ar": "GrowthLaunch™", "en": "GrowthLaunch™" },
+      "desc": { "ar": "نظام توليد العملاء والمبيعات للمشاريع قيد الإطلاق.", "en": "Lead generation & sales system for projects going to market." },
+      "href": "solutions/growth-launch.html"
     },
     {
       "icon": "rocket_launch",
       "title": { "ar": "ProjectLaunch™", "en": "ProjectLaunch™" },
-      "desc": { "ar": "نظام إطلاق متكامل: بصري + تسويق + صالة بيع.", "en": "Integrated launch system: visual + marketing + sales gallery." },
+      "desc": { "ar": "إطلاق متكامل: بصري + تسويق + صالة بيع.", "en": "Integrated launch: visual + marketing + sales gallery." },
       "href": "solutions/project-launch.html"
     },
     {
-      "icon": "checklist",
-      "title": { "ar": "قائمة جاهزية الإطلاق", "en": "Launch Readiness Checklist" },
-      "desc": { "ar": "PDF مجاني — 12 بنداً قبل إطلاق المبيعات.", "en": "Free PDF — 12 essentials before your sales launch." },
-      "href": "insights/downloads/visual-launch-checklist.html"
+      "icon": "workspace_premium",
+      "title": { "ar": "BrandScale™", "en": "BrandScale™" },
+      "desc": { "ar": "بناء وتقوية العلامة التجارية للمطورين والمجموعات العقارية.", "en": "Build and scale the developer brand across touchpoints." },
+      "href": "solutions/brand-scale.html"
     }
   ],
   "why": {
