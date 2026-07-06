@@ -239,6 +239,25 @@ function sidebarBlock(lang, depth, activeTool) {
   </div>`
     : '';
 
+  const cities = DATA.cities || [];
+  const citiesHtml = cities.length
+    ? `<div class="gh-sidebar-block">
+    <h3>${isEn ? 'Saudi Cities' : 'المدن السعودية'}</h3>
+    <ul class="gh-sidebar-tools">${cities
+      .map((c) => {
+        const href = `${p}locations/${c.slug}${isEn ? '-en' : ''}.html`;
+        return `<li><a href="${href}">
+        <span class="material-symbols-outlined">${c.icon}</span>
+        <span>
+          <span class="gh-st-title">${L(c.title)}</span>
+          <span class="gh-st-desc">${L(c.description)}</span>
+        </span>
+      </a></li>`;
+      })
+      .join('')}</ul>
+  </div>`
+    : '';
+
   const nl = newsletterBlock(lang, true);
 
   return `
@@ -247,6 +266,7 @@ function sidebarBlock(lang, depth, activeTool) {
     <h3>${isEn ? 'Practical Tools' : 'أدوات عملية'}</h3>
     <ul class="gh-sidebar-tools">${toolsHtml}</ul>
   </div>
+  ${citiesHtml}
   ${resourcesHtml}
   ${nl}
   <div class="gh-sidebar-block gh-sidebar-cta">

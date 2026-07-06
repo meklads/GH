@@ -49,17 +49,31 @@
         "ar": "12 بنداً مجاناً — أدخل بريدك وحمّل الملف فوراً.",
         "en": "12 essentials free — enter your email for instant download."
       }
-    },
+    }
+  ],
+  "cities": [
     {
+      "slug": "jeddah",
       "icon": "location_on",
-      "path": "locations/jeddah",
       "title": {
         "ar": "إظهار معماري في جدة",
         "en": "Archviz in Jeddah"
       },
       "description": {
-        "ar": "خدماتنا من المقر الرئيسي للمشاريع في المنطقة الغربية.",
-        "en": "HQ services for Western Region developments."
+        "ar": "المقر الرئيسي — مشاريع المنطقة الغربية والبحر الأحمر.",
+        "en": "Head office — Western Region & Red Sea projects."
+      }
+    },
+    {
+      "slug": "riyadh",
+      "icon": "location_city",
+      "title": {
+        "ar": "إظهار معماري في الرياض",
+        "en": "Archviz in Riyadh"
+      },
+      "description": {
+        "ar": "مشاريع العاصمة والمطورين في منطقة الرياض.",
+        "en": "Capital-region developers & mega-projects."
       }
     }
   ]
