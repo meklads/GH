@@ -211,6 +211,30 @@
         "ar": "مشاريع العاصمة والمطورين في منطقة الرياض.",
         "en": "Capital-region developers & mega-projects."
       }
+    },
+    {
+      "slug": "makkah",
+      "icon": "mosque",
+      "title": {
+        "ar": "إظهار معماري في مكة المكرمة",
+        "en": "Archviz in Makkah"
+      },
+      "description": {
+        "ar": "أبراج الخير، ميثاق مكة، ومشاريع سكنية وضيافة.",
+        "en": "Al Khair Heights, Makkah Charter & hospitality work."
+      }
+    },
+    {
+      "slug": "madinah",
+      "icon": "night_shelter",
+      "title": {
+        "ar": "إظهار معماري في المدينة المنورة",
+        "en": "Archviz in Madinah"
+      },
+      "description": {
+        "ar": "مخططات سكنية، ضيافة، ومنصات مبيعات للمطورين.",
+        "en": "Master plans, hospitality & sales platforms for developers."
+      }
     }
   ]
 }

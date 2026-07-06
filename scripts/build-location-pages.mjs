@@ -69,7 +69,7 @@ ${analyticsHeadTags(p)}
 <meta name="description" content="${esc(meta.description)}"/>
 <meta property="og:title" content="${esc(meta.title)} | Graphics House">
 <meta property="og:description" content="${esc(meta.description)}">
-<meta property="og:image" content="${base}/assets/favicon/og-image.png">
+<meta property="og:image" content="${base}/${meta.ogImage || meta.heroImage || 'assets/favicon/og-image.png'}">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="${p}assets/favicon/favicon-32.png">
@@ -79,11 +79,11 @@ ${analyticsHeadTags(p)}
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="${p}assets/site-header.css?v=12">
-<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=8">
-<link rel="stylesheet" href="${p}assets/gh-location.css?v=7">
+<link rel="stylesheet" href="${p}assets/site-header.css?v=19">
+<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=13">
+<link rel="stylesheet" href="${p}assets/gh-location.css?v=8">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
-<script defer src="${p}assets/site-header.js?v=7"></script>
+<script defer src="${p}assets/site-header.js?v=12"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
 <script defer src="${p}assets/lang-switch.js?v=3"></script>
 <script type="application/ld+json">${JSON.stringify({
@@ -156,6 +156,19 @@ window.addEventListener("scroll",function(){var h=document.getElementById("heade
   t.addEventListener("mouseleave",function(){paused=false});
   run();
 })();
+(function(){
+  var main=document.querySelector(".gh-loc-spot-main img");
+  if(!main)return;
+  document.querySelectorAll(".gh-loc-spot-thumb").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var src=btn.getAttribute("data-src");
+      if(!src)return;
+      main.src=src;
+      document.querySelectorAll(".gh-loc-spot-thumb").forEach(function(b){b.classList.remove("is-active");});
+      btn.classList.add("is-active");
+    });
+  });
+})();
 </script>
 </body></html>`;
 }
@@ -175,6 +188,116 @@ function cardsHtml(items, p, lang) {
       </a>`;
     })
     .join('');
+}
+
+function narrativeSection(data, lang) {
+  if (!data.narrative) return '';
+  const n = data.narrative;
+  const paragraphs = (n.paragraphs || [])
+    .map((p) => `<p>${esc(L(p, lang))}</p>`)
+    .join('');
+  const quote = n.quote
+    ? `<blockquote class="gh-loc-quote">
+        <p>${esc(L(n.quote.text, lang))}</p>
+        <cite>${esc(L(n.quote.attribution, lang))}</cite>
+      </blockquote>`
+    : '';
+  return `<section class="gh-loc-narrative">
+  <div class="gh-loc-narrative-inner">
+    <div class="gh-loc-narrative-copy">
+      <h2>${esc(L(n.title, lang))}</h2>
+      ${paragraphs}
+    </div>
+    ${quote}
+  </div>
+</section>`;
+}
+
+function statsSection(data, lang) {
+  if (!data.stats?.length) return '';
+  const items = data.stats
+    .map(
+      (s) => `<div class="gh-loc-stat">
+        <span class="gh-loc-stat-value">${esc(s.value)}</span>
+        <span class="gh-loc-stat-label">${esc(L(s.label, lang))}</span>
+      </div>`
+    )
+    .join('');
+  return `<section class="gh-loc-stats" aria-label="${lang === 'en' ? 'Key figures' : 'أرقام أساسية'}">
+  <div class="gh-loc-stats-inner">${items}</div>
+</section>`;
+}
+
+function spotlightSection(data, lang, p) {
+  if (!data.spotlight) return '';
+  const s = data.spotlight;
+  const thumbs = (s.gallery || [])
+    .map(
+      (g, i) =>
+        `<button type="button" class="gh-loc-spot-thumb${i === 0 ? ' is-active' : ''}" data-src="${p}${g.src}" aria-label="${esc(L(g.caption, lang))}">
+          <img src="${p}${g.src}" alt="" loading="lazy">
+        </button>`
+    )
+    .join('');
+  const href = s.href ? `${p}${s.href}` : '';
+  const cta = s.cta && href
+    ? `<a href="${href}" class="gh-loc-btn gh-loc-btn--gold">${esc(L(s.cta, lang))}</a>`
+    : '';
+  return `<section class="gh-loc-spotlight">
+  <div class="gh-loc-spotlight-inner">
+    <div class="gh-loc-spot-copy">
+      <span class="gh-loc-kicker">${esc(L(s.kicker, lang))}</span>
+      <h2>${esc(L(s.title, lang))}</h2>
+      <p class="gh-loc-spot-sub">${esc(L(s.subtitle, lang))}</p>
+      <p class="gh-loc-spot-body">${esc(L(s.body, lang))}</p>
+      ${cta}
+    </div>
+    <div class="gh-loc-spot-media">
+      <figure class="gh-loc-spot-main">
+        <img id="ghLocSpotMain" src="${p}${s.image}" alt="${esc(L(s.title, lang))}" loading="lazy">
+      </figure>
+      ${thumbs ? `<div class="gh-loc-spot-thumbs">${thumbs}</div>` : ''}
+    </div>
+  </div>
+</section>`;
+}
+
+function projectTypesSection(data, lang) {
+  if (!data.projectTypes) return '';
+  const pt = data.projectTypes;
+  const items = (pt.items || [])
+    .map(
+      (item) => `<div class="gh-loc-type">
+        <span class="material-symbols-outlined">${esc(item.icon)}</span>
+        <h3>${esc(L(item.title, lang))}</h3>
+        <p>${esc(L(item.desc, lang))}</p>
+      </div>`
+    )
+    .join('');
+  return `<section class="gh-loc-section gh-loc-types">
+    <h2>${esc(L(pt.title, lang))}</h2>
+    <div class="gh-loc-types-grid">${items}</div>
+  </section>`;
+}
+
+function gallerySection(data, lang, p) {
+  if (!data.gallery?.items?.length) return '';
+  const g = data.gallery;
+  const items = g.items
+    .map(
+      (item) => `<figure class="gh-loc-gal-item">
+        <img src="${p}${item.src}" alt="${esc(L(item.caption, lang))}" loading="lazy">
+        <figcaption>
+          <span class="gh-loc-gal-tag">${esc(L(item.tag, lang))}</span>
+          <span class="gh-loc-gal-cap">${esc(L(item.caption, lang))}</span>
+        </figcaption>
+      </figure>`
+    )
+    .join('');
+  return `<section class="gh-loc-section gh-loc-gallery-wrap">
+    <h2>${esc(L(g.title, lang))}</h2>
+    <div class="gh-loc-gallery">${items}</div>
+  </section>`;
 }
 
 function buildPage(data, lang) {
@@ -221,10 +344,11 @@ function buildPage(data, lang) {
     description: L(data.metaDescription, lang),
     city: L(data.city, lang),
     phone: data.office.phone,
+    heroImage: data.heroImage,
   })}
 ${prefixPaths(header, depth)}
 <main>
-  <section class="gh-loc-hero">
+  <section class="gh-loc-hero${data.narrative ? ' gh-loc-hero--rich' : ''}">
     <div class="gh-loc-hero-inner">
       <div class="gh-loc-hero-copy">
         <span class="gh-loc-kicker">${isEn ? 'Graphics House · Saudi Arabia' : 'جرافيكس هاوس · المملكة العربية السعودية'}</span>
@@ -236,11 +360,15 @@ ${prefixPaths(header, depth)}
         </div>
       </div>
       <figure class="gh-loc-hero-media">
-        <img src="${p}${data.heroImage}" alt="${esc(L(data.city, lang))}" loading="eager">
+        <img src="${p}${data.heroImage}" alt="${esc(data.heroCaption ? L(data.heroCaption, lang) : L(data.city, lang))}" loading="eager">
+        ${data.heroCaption ? `<figcaption class="gh-loc-hero-cap">${esc(L(data.heroCaption, lang))}</figcaption>` : ''}
       </figure>
     </div>
   </section>
   ${clientsHtml}
+  ${narrativeSection(data, lang)}
+  ${statsSection(data, lang)}
+  ${projectTypesSection(data, lang)}
   <section class="gh-loc-section">
     <h2>${isEn ? `What we deliver in ${cityName}` : `ماذا نقدّم في ${cityName}`}</h2>
     <p class="gh-loc-section-lead">${esc(servicesLead)}</p>
@@ -249,6 +377,8 @@ ${prefixPaths(header, depth)}
     <h3 class="gh-loc-subhead">${isEn ? 'Main Products' : 'المنتجات الرئيسية'}</h3>
     <div class="gh-loc-grid gh-loc-grid--3">${productsHtml}</div>
   </section>
+  ${spotlightSection(data, lang, p)}
+  ${gallerySection(data, lang, p)}
   <section class="gh-loc-section" style="padding-top:0">
     <h2>${esc(L(data.why.title, lang))}</h2>
     <div class="gh-loc-why-grid">${whyHtml}</div>
