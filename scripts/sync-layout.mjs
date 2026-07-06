@@ -106,7 +106,7 @@ function fixCorruption(html) {
 
 function normalizeNavTail(header, isEn) {
   const insightsLabel = isEn ? 'Insights' : 'رؤى';
-  const contactLabel = isEn ? 'Contact Us' : 'تواصل معنا';
+  const contactLabel = isEn ? 'Contact Us' : 'للاتصال بنا';
   const insightsFile = isEn ? 'insights/index-en.html' : 'insights/index.html';
   const contactFile = isEn ? 'contact-us-en.html' : 'contact-us.html';
 
@@ -189,9 +189,9 @@ function syncFile(rel) {
     );
   }
 
-  html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=10');
-  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=15');
-  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=12');
+  html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=11');
+  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=16');
+  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=13');
   html = html.replace(/gh-insights\.css\?v=\d+/g, 'gh-insights.css?v=17');
 
   fs.writeFileSync(full, html, 'utf8');

@@ -24,10 +24,12 @@
   }
 }
 
-/* ===== Contact page (light body) — solid dark header ===== */
+/* ===== Homepage + contact — solid dark header (readable nav on light sections) ===== */
+body.gh-home .header,
+body.gh-home .header.scrolled,
 body.gh-contact .header,
 body.gh-contact .header.scrolled {
-  background: rgba(8, 12, 10, 0.97) !important;
+  background: #080c0a !important;
   border-bottom: 1px solid rgba(201, 168, 76, 0.14) !important;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
 }
