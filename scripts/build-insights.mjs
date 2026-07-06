@@ -146,10 +146,10 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=13">
-<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=10">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=15">
+<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=11">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=16">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
-<script defer src="${p}assets/site-header.js?v=8"></script>
+<script defer src="${p}assets/site-header.js?v=9"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
 <script defer src="${p}assets/lang-switch.js?v=3"></script>
 </head>
@@ -160,9 +160,6 @@ function tailScripts(depth) {
   const p = depth > 0 ? '../'.repeat(depth) : '';
   return `
 <script defer src="${p}assets/gh-float-widgets.js?v=1"></script>
-<script>
-window.addEventListener("scroll",function(){var h=document.getElementById("header");if(h)h.classList.toggle("scrolled",window.scrollY>80)});
-</script>
 </body></html>`;
 }
 
@@ -383,7 +380,7 @@ function buildHub(lang) {
       : 'مركز معرفة متميز للإظهار المعماري، الـ CGI السينمائي، التجارب التفاعلية، وتسويق العقار — من Graphics House.',
     canonical: `https://3dgraphicshouse.com/insights/${isEn ? 'index-en.html' : 'index.html'}`,
   })}
-${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 1)}
+${prefixPaths(header, 1)}
 <main class="gh-insights-page">
   <header class="gh-ins-hero">
     <span class="gh-kicker">Graphics House · Insights</span>
@@ -439,7 +436,7 @@ function buildArticle(article, lang) {
     ogType: 'article',
   })}
 <script type="application/ld+json">${articleSchema(article, lang)}</script>
-${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), depth)}
+${prefixPaths(header, depth)}
 <main class="gh-article-page-wrap">
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">
@@ -522,7 +519,7 @@ function buildLaunchChecklist(lang) {
       : '12 بنداً أساسياً قبل الإطلاق البصري لمشروعك العقاري.',
     canonical: `https://3dgraphicshouse.com/insights/tools/launch-checklist${isEn ? '-en' : ''}.html`,
   })}
-${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), depth)}
+${prefixPaths(header, depth)}
 <main class="gh-tool-page-wrap">
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">
@@ -565,7 +562,7 @@ function buildSolutionFinder(lang) {
       : '5 أسئلة سريعة للتوصية بين GrowthLaunch وProjectLaunch وBrandScale.',
     canonical: `https://3dgraphicshouse.com/insights/tools/solution-finder${isEn ? '-en' : ''}.html`,
   })}
-${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 2)}
+${prefixPaths(header, 2)}
 <main class="gh-tool-page-wrap">
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">
@@ -643,7 +640,7 @@ function buildBriefTemplate(lang) {
       : 'عبّئ هذا النموذج قبل أول اجتماع مع فريق جرافيكس هاوس.',
     canonical: `https://3dgraphicshouse.com/insights/tools/project-brief${isEn ? '-en' : ''}.html`,
   })}
-${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 2)}
+${prefixPaths(header, 2)}
 <main class="gh-tool-page-wrap">
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">

@@ -110,27 +110,12 @@
     });
   }
 
-  function pinStableHeader() {
-    var header = document.getElementById('header');
-    var body = document.body;
-    if (!header || !body) return;
-    if (body.classList.contains('gh-insights') || body.classList.contains('gh-location')) {
-      header.classList.add('scrolled');
-    }
-  }
-
   window.addEventListener('scroll', function () {
     var header = document.getElementById('header');
-    if (!header) return;
-    if (document.body.classList.contains('gh-insights') || document.body.classList.contains('gh-location')) {
-      header.classList.add('scrolled');
-      return;
-    }
-    header.classList.toggle('scrolled', window.scrollY > 40);
+    if (header) header.classList.toggle('scrolled', window.scrollY > 40);
   });
 
   document.addEventListener('DOMContentLoaded', function () {
-    pinStableHeader();
     initMegaItems();
 
     var backdrop = getBackdrop();

@@ -1099,14 +1099,3 @@ html[dir="rtl"] .gh-ins-card--featured .gh-ins-card-link {
     flex-direction: column;
   }
 }
-
-/* Insights hub — header matches homepage scrolled state */
-body.gh-insights .header,
-body.gh-insights .header.scrolled {
-  background: var(--header-bg) !important;
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  padding: 5px 0;
-  border-bottom: 1px solid var(--header-border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-}

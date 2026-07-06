@@ -147,9 +147,6 @@ function syncFile(rel) {
   const en = isEnglishPage(rel, html);
   const depth = depthOf(rel);
   let header = renderPartial(en ? 'header-en.html' : 'header-ar.html', depth, en);
-  if (/\bbody class="[^"]*\bgh-(?:insights|location)\b/.test(html)) {
-    header = header.replace('class="header"', 'class="header scrolled"');
-  }
   const footer = renderPartial(en ? 'footer-en.html' : 'footer-ar.html', depth, en);
 
   html = fixCorruption(html);
@@ -172,8 +169,9 @@ function syncFile(rel) {
     );
   }
 
-  html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=8');
+  html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=9');
   html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=13');
+  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=11');
 
   fs.writeFileSync(full, html, 'utf8');
   return rel;

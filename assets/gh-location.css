@@ -457,14 +457,3 @@ html[dir="ltr"] .gh-loc-footer {
   color: #999;
   margin: 0;
 }
-
-/* ----- Header: stable dark style like homepage (scrolled state) ----- */
-body.gh-location .header,
-body.gh-location .header.scrolled {
-  background: var(--header-bg) !important;
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  padding: 5px 0;
-  border-bottom: 1px solid var(--header-border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-}
