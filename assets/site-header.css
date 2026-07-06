@@ -86,9 +86,13 @@ body.nav-open {
   html[dir="rtl"] .nav { gap: 8px; }
   html[dir="ltr"] .nav { gap: 4px; }
   html[dir="ltr"] .nav-link {
-    font-size: 11px;
+    font-size: 10px;
     padding: 8px 6px;
     letter-spacing: 0.03em;
+  }
+  html[dir="rtl"] .nav-link {
+    font-size: 12.5px;
+    padding: 8px 9px;
   }
   .nav-actions {
     grid-column: 3;
@@ -139,41 +143,41 @@ body.nav-open {
     padding-inline-start: 14px;
   }
   html[dir="ltr"] .nav-link {
-    font-size: 10px;
+    font-size: 9px;
     padding: 8px 4px;
     letter-spacing: 0.02em;
   }
   html[dir="rtl"] .nav-link {
-    font-size: 12px;
+    font-size: 11px;
     padding: 8px 6px;
   }
   html[dir="ltr"] .nav-cta {
     padding: 8px 12px !important;
-    font-size: 9px !important;
+    font-size: 8px !important;
     letter-spacing: 0.04em !important;
   }
   html[dir="rtl"] .nav-cta {
     padding: 8px 12px !important;
-    font-size: 11px !important;
+    font-size: 10px !important;
   }
 }
 
 @media (min-width: 1281px) and (max-width: 1440px) {
   html[dir="ltr"] .nav-link {
-    font-size: 11px;
+    font-size: 10px;
     padding: 8px 5px;
   }
   html[dir="rtl"] .nav-link {
-    font-size: 13px;
+    font-size: 12px;
     padding: 8px 7px;
   }
   html[dir="ltr"] .nav-cta {
     padding: 9px 14px !important;
-    font-size: 10px !important;
+    font-size: 9px !important;
   }
   html[dir="rtl"] .nav-cta {
     padding: 9px 14px !important;
-    font-size: 12px !important;
+    font-size: 11px !important;
   }
 }
 
@@ -237,14 +241,14 @@ button.nav-link {
 }
 
 html[dir="ltr"] .nav-link {
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.82);
 }
 html[dir="rtl"] .nav-link {
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 0;
   color: rgba(255, 255, 255, 0.88);
@@ -273,7 +277,7 @@ html[dir="rtl"] .nav-link {
 }
 
 .nav-chevron {
-  font-size: 18px !important;
+  font-size: 16px !important;
   opacity: 0.7;
   transition: transform 0.28s ease, opacity 0.28s ease;
 }
@@ -347,7 +351,7 @@ html[dir="rtl"] .nav-link {
 
 .nav-cta {
   padding: 10px 22px !important;
-  font-size: 12px !important;
+  font-size: 11px !important;
   font-weight: 700 !important;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -356,7 +360,7 @@ html[dir="rtl"] .nav-link {
 html[dir="rtl"] .nav-cta {
   text-transform: none;
   letter-spacing: 0;
-  font-size: 13px !important;
+  font-size: 12px !important;
   padding: 9px 18px !important;
 }
 .nav-cta:hover {
@@ -430,9 +434,9 @@ html[dir="rtl"] .nav-cta {
 @media (max-width: 1100px) {
   .nav { gap: 2px; }
   .nav-link, button.nav-link { padding: 8px 10px; }
-  html[dir="ltr"] .nav-link { font-size: 13px; }
-  html[dir="rtl"] .nav-link { font-size: 14px; }
-  .nav-cta { padding: 9px 16px !important; font-size: 11px !important; }
+  html[dir="ltr"] .nav-link { font-size: 12px; }
+  html[dir="rtl"] .nav-link { font-size: 12.5px; }
+  .nav-cta { padding: 9px 16px !important; font-size: 10px !important; }
 }
 
 @media (max-width: 900px) {

@@ -190,7 +190,7 @@ function syncFile(rel) {
   }
 
   html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=11');
-  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=16');
+  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=17');
   html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=13');
   html = html.replace(/gh-insights\.css\?v=\d+/g, 'gh-insights.css?v=17');
 
