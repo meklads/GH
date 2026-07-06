@@ -81,7 +81,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=12">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=8">
-<link rel="stylesheet" href="${p}assets/gh-location.css?v=4">
+<link rel="stylesheet" href="${p}assets/gh-location.css?v=5">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -108,11 +108,54 @@ ${analyticsHeadTags(p)}
 <body class="gh-location">`;
 }
 
+const CLIENT_LOGOS = [
+  { file: 'al-oyonypng.png', alt: { ar: 'العيوني', en: 'Al-Oyony' } },
+  { file: 'anan-eskan.png', alt: { ar: 'أنان إسكان', en: 'Anan Eskan' } },
+  { file: 'toyota.png', alt: { ar: 'تويوتا', en: 'Toyota' } },
+  { file: 'imc-150x150.png', alt: { ar: 'المركز الطبي الدولي', en: 'IMC' } },
+  { file: 'rafal.png', alt: { ar: 'رفال', en: 'Rafal' } },
+  { file: 'al-owla.png', alt: { ar: 'الأولى', en: 'Al-Owla' } },
+  { file: 'makyon.png', alt: { ar: 'مكيون', en: 'Makyon' } },
+  { file: 'bn-zooma.png', alt: { ar: 'بن زومة', en: 'Bn Zooma' } },
+  { file: 'aqarat.png', alt: { ar: 'عقارات', en: 'Aqarat' } },
+  { file: 'oteck.png', alt: { ar: 'أوتك', en: 'Oteck' } },
+  { file: 'رابطة العالم الاسلامي.png', alt: { ar: 'رابطة العالم الإسلامي', en: 'Muslim World League' } },
+];
+
+function clientLogosStrip(lang, depth) {
+  const isEn = lang === 'en';
+  const p = depth > 0 ? '../'.repeat(depth) : '';
+  const items = [];
+  for (let set = 0; set < 3; set += 1) {
+    for (const logo of CLIENT_LOGOS) {
+      const src = `${p}assets/clients-logo/${encodeURIComponent(logo.file)}`;
+      items.push(
+        `<div class="gh-loc-cli-item"><img src="${src}" alt="${esc(L(logo.alt, lang))}" loading="lazy"></div>`
+      );
+    }
+  }
+  return `<section class="gh-loc-clients" aria-label="${isEn ? 'Trusted clients' : 'عملاؤنا'}">
+  <p class="gh-loc-clients-label">${isEn ? 'Trusted By' : 'يثق بنا'}</p>
+  <div class="gh-loc-cli-wrap">
+    <div class="gh-loc-cli-track">${items.join('')}</div>
+  </div>
+</section>`;
+}
+
 function tailScripts() {
   return `
 <script defer src="../assets/gh-float-widgets.js?v=1"></script>
 <script>
 window.addEventListener("scroll",function(){var h=document.getElementById("header");if(h)h.classList.toggle("scrolled",window.scrollY>80)});
+(function(){
+  var t=document.querySelector(".gh-loc-cli-track");
+  if(!t)return;
+  var oneSet=t.scrollWidth/3,pos=0,speed=0.7,paused=false;
+  function run(){if(!paused){pos-=speed;if(pos<=-oneSet)pos+=oneSet;t.style.transform="translateX("+pos+"px)";}requestAnimationFrame(run);}
+  t.addEventListener("mouseenter",function(){paused=true});
+  t.addEventListener("mouseleave",function(){paused=false});
+  run();
+})();
 </script>
 </body></html>`;
 }
@@ -170,14 +213,9 @@ function buildPage(data, lang) {
   const coreServices = data.coreServices || (data.services || []).slice(0, 3);
   const products = data.products || (data.services || []).slice(3, 6);
 
-  const statsHtml = data.stats
-    .map(
-      (s) => `<div class="gh-loc-stat"><strong>${esc(s.value)}</strong><span>${esc(L(s.label, lang))}</span></div>`
-    )
-    .join('');
-
   const coreServicesHtml = cardsHtml(coreServices, p, lang);
   const productsHtml = cardsHtml(products, p, lang);
+  const clientsHtml = clientLogosStrip(lang, depth);
 
   const whyHtml = data.why.items
     .map(
@@ -227,7 +265,7 @@ ${prefixPaths(header, depth)}
       </figure>
     </div>
   </section>
-  <div class="gh-loc-stats">${statsHtml}</div>
+  ${clientsHtml}
   <section class="gh-loc-section">
     <h2>${isEn ? `What we deliver in ${cityName}` : `ماذا نقدّم في ${cityName}`}</h2>
     <p class="gh-loc-section-lead">${esc(servicesLead)}</p>

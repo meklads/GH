@@ -133,56 +133,89 @@ body.gh-location main {
   color: #0a0a0a;
 }
 
-/* ----- Stats ----- */
-.gh-loc-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  background: #fff;
+/* ----- Client logos (homepage-style marquee) ----- */
+.gh-loc-clients {
+  padding: 48px 0 52px;
+  background: #f5f4ef;
   border-bottom: 1px solid #e8e4dc;
+  overflow: hidden;
 }
 
-@media (max-width: 640px) {
-  .gh-loc-stats {
-    grid-template-columns: 1fr;
-  }
-}
-
-.gh-loc-stat {
-  background: #fff;
-  padding: 28px 24px;
+.gh-loc-clients-label {
   text-align: center;
-  border-inline-end: 1px solid #e8e4dc;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin: 0 0 28px;
 }
 
-.gh-loc-stat:last-child {
-  border-inline-end: none;
+html[dir="rtl"] .gh-loc-clients-label {
+  letter-spacing: 0.08em;
+  text-transform: none;
+  font-size: 12px;
 }
 
-@media (max-width: 640px) {
-  .gh-loc-stat {
-    border-inline-end: none;
-    border-bottom: 1px solid #e8e4dc;
-  }
-
-  .gh-loc-stat:last-child {
-    border-bottom: none;
-  }
+.gh-loc-cli-wrap {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
-.gh-loc-stat strong {
-  display: block;
-  font-size: 2rem;
-  font-weight: 800;
-  color: #a8883a;
-  line-height: 1;
-  margin-bottom: 8px;
+.gh-loc-cli-wrap::before,
+.gh-loc-cli-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
 }
 
-.gh-loc-stat span {
-  font-size: 13px;
-  color: #666;
-  letter-spacing: 0.04em;
+.gh-loc-cli-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #f5f4ef, transparent);
+}
+
+.gh-loc-cli-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #f5f4ef, transparent);
+}
+
+.gh-loc-cli-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 0;
+  will-change: transform;
+}
+
+.gh-loc-cli-item {
+  padding: 0 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  border-inline-end: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.gh-loc-cli-item img {
+  height: 52px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.1);
+  opacity: 0.6;
+  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+.gh-loc-cli-item img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.08);
 }
 
 /* ----- Sections ----- */
