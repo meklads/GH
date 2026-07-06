@@ -11,7 +11,8 @@
     "videos": "node scripts/compress-videos.mjs",
     "services:ar": "node scripts/localize-service-stubs.mjs",
     "insights": "node scripts/build-insights.mjs",
-    "build": "npm run tailwind && node scripts/build-solution-pages.mjs && node scripts/localize-service-stubs.mjs && node scripts/site-hardening.mjs && node scripts/build-insights.mjs && node scripts/build-location-pages.mjs && node scripts/build-lead-magnets.mjs && node scripts/sync-layout.mjs && node scripts/inject-float-widgets.mjs",
+    "build": "npm run tailwind && node scripts/build-solution-pages.mjs && node scripts/localize-service-stubs.mjs && node scripts/site-hardening.mjs && node scripts/build-insights.mjs && node scripts/build-location-pages.mjs && node scripts/build-lead-magnets.mjs && node scripts/sync-layout.mjs && node scripts/inject-float-widgets.mjs && node scripts/qa-site-nav.mjs",
+    "qa:nav": "node scripts/qa-site-nav.mjs",
     "float": "node scripts/inject-float-widgets.mjs"
   },
   "devDependencies": {
