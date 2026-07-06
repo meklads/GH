@@ -144,10 +144,10 @@ html[dir="rtl"] .gh-ins-hero .gh-kicker {
 }
 
 .gh-ins-subnav-link.is-active {
-  color: #ffffff;
-  background: #0a0a0a;
-  border-color: #0a0a0a;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  color: #5c4a1a;
+  background: #ffffff;
+  border-color: #c9a84c;
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.18);
 }
 
 .gh-ins-subnav-link.is-active .material-symbols-outlined {
@@ -1100,13 +1100,205 @@ html[dir="rtl"] .gh-ins-card--featured .gh-ins-card-link {
   }
 }
 
-/* Insights hub — stable header on light pages */
+/* Insights — fully light (header, nav, footer; no dark surfaces) */
 body.gh-insights .header,
 body.gh-insights .header.scrolled {
-  background: var(--header-bg) !important;
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 5px 0;
-  border-bottom: 1px solid var(--header-border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid #e8e4dc !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+body.gh-insights .nav-link,
+body.gh-insights button.nav-link {
+  color: #333333 !important;
+}
+
+body.gh-insights .nav-link:hover,
+body.gh-insights button.nav-link:hover,
+body.gh-insights .nav-mega-trigger:hover {
+  color: #a8883a !important;
+}
+
+body.gh-insights .nav-link-accent {
+  color: #a8883a !important;
+}
+
+body.gh-insights .nav-actions {
+  background: transparent !important;
+  border-inline-start-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.gh-insights .lang-switch-link {
+  color: #888888 !important;
+}
+
+body.gh-insights .lang-switch-link.is-active {
+  color: #1a1a1a !important;
+  border-bottom-color: #c9a84c !important;
+}
+
+body.gh-insights .lang-switch-sep {
+  color: #cccccc !important;
+}
+
+body.gh-insights .menu-toggle {
+  color: #1a1a1a !important;
+  border-color: #e8e4dc !important;
+  background: #ffffff !important;
+}
+
+body.gh-insights .menu-toggle:hover {
+  border-color: #c9a84c !important;
+  color: #a8883a !important;
+}
+
+body.gh-insights .mega-menu {
+  background: #ffffff !important;
+  border: 1px solid #e8e4dc !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.gh-insights .mega-menu::before {
+  border-bottom-color: #ffffff !important;
+}
+
+body.gh-insights .mm-panel-head {
+  border-bottom-color: #f0ece4 !important;
+}
+
+body.gh-insights .mm-panel-desc {
+  color: #888888 !important;
+}
+
+body.gh-insights .mega-menu-solutions .mm-card {
+  background: #faf9f6 !important;
+  border-color: #e8e4dc !important;
+}
+
+body.gh-insights .mega-menu-solutions .mm-card:hover {
+  background: #ffffff !important;
+  border-color: rgba(201, 168, 76, 0.35) !important;
+}
+
+body.gh-insights .mega-menu-solutions .mm-card .mm-title {
+  color: #0a0a0a !important;
+}
+
+body.gh-insights .mega-menu-solutions .mm-card .mm-desc {
+  color: #666666 !important;
+}
+
+body.gh-insights .mm-col-header {
+  color: #999999 !important;
+}
+
+body.gh-insights .mm-link {
+  color: #333333 !important;
+}
+
+body.gh-insights .mm-link:hover {
+  color: #a8883a !important;
+  background: rgba(201, 168, 76, 0.08) !important;
+}
+
+@media (max-width: 900px) {
+  body.gh-insights .nav {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-inline-start-color: #e8e4dc !important;
+    border-inline-end-color: #e8e4dc !important;
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  [dir="rtl"] body.gh-insights .nav {
+    box-shadow: 20px 0 60px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  body.gh-insights .nav > .nav-link,
+  body.gh-insights .nav > .nav-mega-item > .nav-mega-trigger {
+    color: #1a1a1a !important;
+    border-bottom-color: #f0ece4 !important;
+  }
+
+  body.gh-insights .nav > .nav-link:hover,
+  body.gh-insights .nav > .nav-mega-item > .nav-mega-trigger:hover {
+    background: rgba(201, 168, 76, 0.08) !important;
+  }
+
+  body.gh-insights .mega-menu {
+    background: #faf9f6 !important;
+    border-color: #e8e4dc !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Light footer on Insights pages */
+body.gh-insights .gh-loc-footer {
+  background: #ffffff;
+  border-top: 1px solid #e8e4dc;
+  color: #1a1a1a;
+  font-family: "Tajawal", "Inter", sans-serif;
+  margin-top: auto;
+}
+
+html[dir="ltr"] body.gh-insights .gh-loc-footer {
+  font-family: "Inter", "Tajawal", sans-serif;
+}
+
+body.gh-insights .gh-loc-footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 48px 24px 40px;
+  text-align: center;
+}
+
+body.gh-insights .gh-loc-footer-logo {
+  height: 64px;
+  width: auto;
+  margin-bottom: 28px;
+}
+
+body.gh-insights .gh-loc-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 20px;
+  margin-bottom: 20px;
+}
+
+body.gh-insights .gh-loc-footer-nav a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+body.gh-insights .gh-loc-footer-nav a:hover {
+  color: #a8883a;
+}
+
+body.gh-insights .gh-loc-footer-contact {
+  font-size: 14px;
+  color: #666666;
+  margin: 0 0 16px;
+}
+
+body.gh-insights .gh-loc-footer-contact a {
+  color: #a8883a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+body.gh-insights .gh-loc-footer-contact a:hover {
+  text-decoration: underline;
+}
+
+body.gh-insights .gh-loc-footer-copy {
+  font-size: 12px;
+  color: #999999;
+  margin: 0;
 }
