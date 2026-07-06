@@ -102,16 +102,15 @@ body.nav-open {
     margin-inline-start: 0;
     gap: 10px;
     min-width: max-content;
-    padding-inline-start: 14px;
-    border-inline-start: 1px solid rgba(255, 255, 255, 0.14);
+    padding-inline-start: 0;
+    border: none;
     background: transparent;
   }
   html[dir="rtl"] .nav-actions {
     justify-self: start;
-    border-inline-start: none;
-    border-inline-end: 1px solid rgba(255, 255, 255, 0.14);
     padding-inline-start: 0;
-    padding-inline-end: 14px;
+    padding-inline-end: 0;
+    border: none;
     background: transparent;
   }
   html[dir="rtl"] .nav {
@@ -326,8 +325,8 @@ html[dir="rtl"] .nav-link {
   white-space: nowrap;
   padding: 5px 10px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: transparent;
   line-height: 1;
 }
 .lang-switch-sep {
