@@ -201,35 +201,35 @@ function buildGatePage(lang, downloadPath) {
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=12">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=8">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=6">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=10">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/lang-switch.js?v=3"></script>
 <style>
-body.gh-insights{min-height:100vh;display:flex;flex-direction:column;background:#f7f5f0}
+body.gh-insights{min-height:100vh;display:flex;flex-direction:column;background:#0a0f0d}
 .gh-lead-page{flex:1;padding:120px 24px 80px;max-width:560px;margin:0 auto;width:100%}
-.gh-lead-card{background:#fff;border:1px solid #e8e4dc;padding:40px 36px}
-.gh-lead-card h1{font-family:"Playfair Display","Tajawal",serif;font-size:1.75rem;margin:0 0 12px;line-height:1.25}
-.gh-lead-card .lead{font-size:16px;color:#555;line-height:1.7;margin:0 0 24px}
-.gh-lead-form input[type=email]{width:100%;padding:12px 14px;border:1px solid #ddd;border-radius:6px;font-size:15px;margin-bottom:10px}
-.gh-lead-form button{width:100%;padding:14px;background:#c9a84c;color:#0a0a0a;border:none;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:6px}
-.gh-lead-form button:hover{background:#a8883a}
+.gh-lead-card{background:#111916;border:1px solid rgba(201,168,76,0.2);padding:40px 36px}
+.gh-lead-card h1{font-family:"Playfair Display","Tajawal",serif;font-size:1.75rem;margin:0 0 12px;line-height:1.25;color:#fafaf8}
+.gh-lead-card .lead{font-size:16px;color:rgba(255,255,255,0.62);line-height:1.7;margin:0 0 24px}
+.gh-lead-form input[type=email]{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,0.12);border-radius:4px;font-size:15px;margin-bottom:10px;background:rgba(255,255,255,0.06);color:#fff}
+.gh-lead-form button{width:100%;padding:14px;background:#c9a84c;color:#0a0a0a;border:none;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:4px}
+.gh-lead-form button:hover{background:#d9b860}
 .gh-lead-form .gh-turnstile{margin:12px 0;display:flex;justify-content:center;overflow:hidden}
 .gh-lead-msg{font-size:13px;margin-top:10px}
-.gh-lead-msg.ok{color:#2d7d46}.gh-lead-msg.err{color:#c0392b}
+.gh-lead-msg.ok{color:#8bc98b}.gh-lead-msg.err{color:#e88}
 .gh-lead-unlock{text-align:center;padding:20px 0}
-.gh-lead-unlock .material-symbols-outlined{font-size:48px;color:#2d7d46;margin-bottom:12px}
-.gh-lead-features{margin:20px 0 0;padding:0;list-style:none;font-size:14px;color:#666}
-.gh-lead-features li{padding:6px 0;border-bottom:1px solid #f0ece4}
+.gh-lead-unlock .material-symbols-outlined{font-size:48px;color:#8bc98b;margin-bottom:12px}
+.gh-lead-features{margin:20px 0 0;padding:0;list-style:none;font-size:14px;color:rgba(255,255,255,0.55)}
+.gh-lead-features li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
 .gh-lead-features li::before{content:"✓ ";color:#c9a84c;font-weight:700}
 </style>
 </head>
 <body class="gh-insights">
 ${prefixPaths(header, depth)}
 <main class="gh-lead-page">
-  <a href="../${isEn ? 'index-en' : 'index'}.html" style="font-size:12px;color:#888;text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-bottom:20px">
+  <a href="../${isEn ? 'index-en' : 'index'}.html" style="font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-bottom:20px">
     <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_back' : 'arrow_forward'}</span>
-    ${isEn ? 'Back to Journal' : 'العودة للمدونة'}
+    ${isEn ? 'Back to Insights' : 'العودة إلى الرؤى'}
   </a>
   <div class="gh-lead-card">
     <div id="ghLeadGate">

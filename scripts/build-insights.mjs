@@ -147,15 +147,11 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=12">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=8">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=5">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=10">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
 <script defer src="${p}assets/lang-switch.js?v=3"></script>
-<style>
-body.gh-insights{min-height:100vh;display:flex;flex-direction:column}
-.gh-blog-wrap,.gh-article-page-wrap .gh-blog-wrap,.gh-tool-page-wrap .gh-blog-wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-</style>
 </head>
 <body class="gh-insights">`;
 }
@@ -170,23 +166,127 @@ window.addEventListener("scroll",function(){var h=document.getElementById("heade
 </body></html>`;
 }
 
-function newsletterBlock(lang, compact) {
+function readingMinutes(article, lang) {
   const isEn = lang === 'en';
-  if (compact) {
-    return `
-<div class="gh-sidebar-block gh-sidebar-newsletter gh-no-print">
-  <h3>${isEn ? 'Newsletter' : 'النشرة البريدية'}</h3>
-  <p>${isEn ? 'Articles and tools in your inbox.' : 'مقالات وأدوات في بريدك.'}</p>
-  <form class="gh-newsletter-form" data-gh-newsletter novalidate>
-    <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
-    <input type="email" name="email" placeholder="${isEn ? 'Email address' : 'البريد الإلكتروني'}" required autocomplete="email">
-    <button type="submit">${isEn ? 'Subscribe' : 'اشترك'}</button>
-    <div class="gh-turnstile"></div>
-    <div class="gh-newsletter-msg" role="status"></div>
-  </form>
-</div>`;
+  const body = article.body?.[isEn ? 'en' : 'ar'] || article.body?.en || [];
+  let words = 0;
+  for (const block of body) {
+    if (block.text) words += block.text.split(/\s+/).filter(Boolean).length;
+    if (block.items) words += block.items.join(' ').split(/\s+/).filter(Boolean).length;
   }
-  return newsletterBlock(lang, true);
+  const mins = Math.max(4, Math.ceil(words / 200));
+  return isEn ? `${mins} min read` : `${mins} دقائق`;
+}
+
+function newsletterSection(lang) {
+  const isEn = lang === 'en';
+  return `
+<section class="gh-ins-section gh-ins-newsletter" id="newsletter">
+  <div class="gh-ins-newsletter-inner">
+    <h2>${isEn ? 'Stay Ahead in Architectural Visualization' : 'ابقَ في الصدارة في الإظهار المعماري'}</h2>
+    <p class="gh-ins-newsletter-desc">${isEn
+    ? 'Receive exclusive insights, AI resources, presentation strategies, and industry knowledge designed for real estate developers.'
+    : 'احصل على رؤى حصرية، موارد الذكاء الاصطناعي، استراتيجيات العروض، ومعرفة صناعية مصممة لمطوري العقار.'}</p>
+    <form class="gh-ins-newsletter-form" data-gh-newsletter novalidate>
+      <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <input type="email" name="email" placeholder="${isEn ? 'Your email address' : 'بريدك الإلكتروني'}" required autocomplete="email">
+      <button type="submit">${isEn ? 'Subscribe' : 'اشترك'}</button>
+      <div class="gh-turnstile"></div>
+    </form>
+    <div class="gh-ins-newsletter-msg gh-newsletter-msg" role="status"></div>
+  </div>
+</section>
+<script defer src="../assets/gh-newsletter.js?v=4"></script>`;
+}
+
+function articleCard(article, lang, p, featured) {
+  const isEn = lang === 'en';
+  const L = (key) => (isEn ? key.en : key.ar);
+  const href = `articles/${article.slug}${isEn ? '-en' : ''}.html`;
+  const readLabel = isEn ? 'Read More' : 'اقرأ المزيد';
+  const arrow = isEn ? 'arrow_forward' : 'arrow_back';
+  return `
+<article class="gh-ins-card${featured ? ' gh-ins-card--featured' : ''}">
+  <a href="${href}" class="gh-ins-card-link">
+    <figure class="gh-ins-card-media"><img src="${p}${article.image}" alt="${esc(L(article.title))}" loading="lazy"></figure>
+    <div class="gh-ins-card-body">
+      <div class="gh-ins-card-meta">
+        <span class="gh-ins-cat">${esc(L(article.category))}</span>
+        <span class="gh-ins-read-time">${readingMinutes(article, lang)}</span>
+      </div>
+      <h3>${esc(L(article.title))}</h3>
+      <p class="gh-ins-card-excerpt">${esc(hubExcerpt(article, lang))}</p>
+      <span class="gh-ins-read-more">${readLabel} <span class="material-symbols-outlined" style="font-size:14px">${arrow}</span></span>
+    </div>
+  </a>
+</article>`;
+}
+
+function aiToolsSection(lang) {
+  const isEn = lang === 'en';
+  const L = (key) => (isEn ? key.en : key.ar);
+  const tools = DATA.aiTools || [];
+  const cards = tools
+    .map(
+      (t) => `
+<article class="gh-ins-tool-card">
+  ${t.comingSoon ? `<span class="gh-ins-badge">${isEn ? 'Coming Soon' : 'قريباً'}</span>` : ''}
+  <span class="material-symbols-outlined">${esc(t.icon)}</span>
+  <h3>${esc(L(t.title))}</h3>
+  <p>${esc(L(t.description))}</p>
+  <button type="button" class="gh-ins-btn" disabled>${isEn ? 'Explore' : 'استكشف'}</button>
+</article>`
+    )
+    .join('');
+  return `
+<section class="gh-ins-section" id="ai-tools">
+  <div class="gh-ins-section-head">
+    <h2>${isEn ? 'AI Tools' : 'أدوات الذكاء الاصطناعي'}</h2>
+    <p>${isEn
+    ? 'Intelligent assistants for developers — more tools launching soon.'
+    : 'مساعدات ذكية للمطورين — المزيد من الأدوات قريباً.'}</p>
+  </div>
+  <div class="gh-ins-tools-grid">${cards}</div>
+</section>`;
+}
+
+function downloadsSection(lang) {
+  const isEn = lang === 'en';
+  const L = (key) => (isEn ? key.en : key.ar);
+  const p = '../';
+  const items = DATA.downloads || [];
+  const cards = items
+    .map((d) => {
+      const href = d.href ? `${p}${d.href}${isEn ? '-en' : ''}.html` : '#';
+      const btn = d.comingSoon
+        ? `<button type="button" class="gh-ins-btn gh-ins-btn--muted" disabled>${isEn ? 'Coming Soon' : 'قريباً'}</button>`
+        : `<a href="${href}" class="gh-ins-btn">${isEn ? 'Download' : 'تحميل'}</a>`;
+      return `
+<article class="gh-ins-dl-card">
+  <div class="gh-ins-dl-icon"><span class="material-symbols-outlined">${esc(d.icon)}</span></div>
+  <div class="gh-ins-dl-body">
+    <span class="gh-ins-dl-type">${esc(L(d.fileType))}</span>
+    <h3>${esc(L(d.title))}</h3>
+    <p>${esc(L(d.description))}</p>
+    ${btn}
+  </div>
+</article>`;
+    })
+    .join('');
+  return `
+<section class="gh-ins-section" id="downloads">
+  <div class="gh-ins-section-head">
+    <h2>${isEn ? 'Downloads' : 'التحميلات'}</h2>
+    <p>${isEn
+    ? 'Premium resource library for project planning and visual launch readiness.'
+    : 'مكتبة موارد متميزة لتخطيط المشاريع وجاهزية الإطلاق البصري.'}</p>
+  </div>
+  <div class="gh-ins-downloads-grid">${cards}</div>
+</section>`;
+}
+
+function backToInsights(isEn) {
+  return isEn ? 'Back to Insights' : 'العودة إلى الرؤى';
 }
 
 function hubExcerpt(article, lang) {
@@ -200,153 +300,48 @@ function hubExcerpt(article, lang) {
   return ex;
 }
 
-function sidebarBlock(lang, depth, activeTool) {
-  const isEn = lang === 'en';
-  const L = (key) => (isEn ? key.en : key.ar);
-  const p = depth > 0 ? '../'.repeat(depth) : '';
-  const prefix = depth === 2 ? '../' : '';
-
-  const toolsHtml = DATA.tools
-    .map((t) => {
-      const href = `${prefix}tools/${t.slug}${isEn ? '-en' : ''}.html`;
-      const active = activeTool === t.slug ? ' is-active' : '';
-      return `<li><a href="${href}"${active ? ' class="is-active"' : ''}>
-        <span class="material-symbols-outlined">${t.icon}</span>
-        <span>
-          <span class="gh-st-title">${L(t.title)}</span>
-          <span class="gh-st-desc">${L(t.description)}</span>
-        </span>
-      </a></li>`;
-    })
-    .join('');
-
-  const resources = DATA.resources || [];
-  const resourcesHtml = resources.length
-    ? `<div class="gh-sidebar-block">
-    <h3>${isEn ? 'Free Resources' : 'موارد مجانية'}</h3>
-    <ul class="gh-sidebar-tools">${resources
-      .map((r) => {
-        const href = `${p}${r.path}${isEn ? '-en' : ''}.html`;
-        return `<li><a href="${href}">
-        <span class="material-symbols-outlined">${r.icon}</span>
-        <span>
-          <span class="gh-st-title">${L(r.title)}</span>
-          <span class="gh-st-desc">${L(r.description)}</span>
-        </span>
-      </a></li>`;
-      })
-      .join('')}</ul>
-  </div>`
-    : '';
-
-  const cities = DATA.cities || [];
-  const citiesHtml = cities.length
-    ? `<div class="gh-sidebar-block">
-    <h3>${isEn ? 'Saudi Cities' : 'المدن السعودية'}</h3>
-    <ul class="gh-sidebar-tools">${cities
-      .map((c) => {
-        const href = `${p}locations/${c.slug}${isEn ? '-en' : ''}.html`;
-        return `<li><a href="${href}">
-        <span class="material-symbols-outlined">${c.icon}</span>
-        <span>
-          <span class="gh-st-title">${L(c.title)}</span>
-          <span class="gh-st-desc">${L(c.description)}</span>
-        </span>
-      </a></li>`;
-      })
-      .join('')}</ul>
-  </div>`
-    : '';
-
-  const nl = newsletterBlock(lang, true);
-
-  return `
-<aside class="gh-blog-sidebar gh-no-print">
-  <div class="gh-sidebar-block">
-    <h3>${isEn ? 'Practical Tools' : 'أدوات عملية'}</h3>
-    <ul class="gh-sidebar-tools">${toolsHtml}</ul>
-  </div>
-  ${citiesHtml}
-  ${resourcesHtml}
-  ${nl}
-  <div class="gh-sidebar-block gh-sidebar-cta">
-    <h3>${isEn ? 'Your Project' : 'مشروعك'}</h3>
-    <p>${isEn ? 'Book a strategy session with our team.' : 'احجز جلسة استراتيجية مع فريقنا.'}</p>
-    <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial gh-btn-editorial--light">${isEn ? 'Get in Touch' : 'تواصل معنا'}</a>
-  </div>
-</aside>
-<script defer src="${p}assets/gh-newsletter.js?v=4"></script>`;
-}
-
 function buildHub(lang) {
   const isEn = lang === 'en';
-  const L = (key) => (isEn ? key.en : key.ar);
   const { header, footer } = getLayout(lang);
   const featured = ARTICLES.find((a) => a.featured) || ARTICLES[0];
   const rest = ARTICLES.filter((a) => a.slug !== featured.slug);
   const p = '../';
 
-  const featuredHtml = `
-<article class="gh-editorial-featured">
-  <a href="articles/${featured.slug}${isEn ? '-en' : ''}.html">
-    <figure><img src="${p}${featured.image}" alt="${esc(L(featured.title))}" loading="lazy"></figure>
-    <div class="gh-featured-copy">
-      <span class="gh-eyebrow">${L(featured.category)} · ${isEn ? 'Featured' : 'مقال مميز'}</span>
-      <h2>${L(featured.title)}</h2>
-      <p class="gh-dek">${hubExcerpt(featured, lang)}</p>
-      <span class="gh-byline">${L(featured.dateLabel)}</span>
-      <span class="gh-read-link">${isEn ? 'Read Story' : 'اقرأ المقال'} <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></span>
-    </div>
-  </a>
-</article>`;
-
-  const articlesHtml = rest
-    .map(
-      (a) => `
-<article class="gh-post-row">
-  <a href="articles/${a.slug}${isEn ? '-en' : ''}.html" class="gh-post-row-link">
-    <img class="gh-post-thumb" src="${p}${a.image}" alt="${esc(L(a.title))}" loading="lazy">
-    <div>
-      <span class="gh-eyebrow">${L(a.category)}</span>
-      <h3>${L(a.title)}</h3>
-      <p>${hubExcerpt(a, lang)}</p>
-      <time datetime="${a.date}">${L(a.dateLabel)}</time>
-    </div>
-  </a>
-</article>`
-    )
-    .join('');
-
-  const sidebar = sidebarBlock(lang, 1, null);
+  const articlesHtml = [
+    articleCard(featured, lang, p, true),
+    ...rest.map((a) => articleCard(a, lang, p, false)),
+  ].join('');
 
   const html = `${headBlock(lang, {
     depth: 1,
-    title: isEn ? 'Journal' : 'مدونة',
+    title: 'Insights',
     description: isEn
-      ? 'Editorial articles on architectural visualization and real estate marketing in the GCC.'
-      : 'مقالات تحريرية في الإظهار المعماري وتسويق المشاريع العقارية في الخليج.',
+      ? 'Premium knowledge hub for architectural visualization, cinematic CGI, interactive experiences, and real estate marketing — by Graphics House.'
+      : 'مركز معرفة متميز للإظهار المعماري، الـ CGI السينمائي، التجارب التفاعلية، وتسويق العقار — من Graphics House.',
     canonical: `https://3dgraphicshouse.com/insights/${isEn ? 'index-en.html' : 'index.html'}`,
   })}
-${prefixPaths(header, 1)}
+${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 1)}
 <main class="gh-insights-page">
-  <header class="gh-masthead">
+  <header class="gh-ins-hero">
     <span class="gh-kicker">Graphics House · ${isEn ? 'Insights' : 'رؤى ومعرفة'}</span>
-    <h1>${isEn ? 'The GH Journal' : 'مدونة جرافيكس هاوس'}</h1>
+    <h1>${isEn ? 'Insights' : 'رؤى Graphics House'}</h1>
     <p>${isEn
-    ? 'Stories, guides, and practical tools for developers and marketing teams shaping major projects across Saudi Arabia and the GCC.'
-    : 'قصص وأدلة وأدوات عملية للمطورين وفرق التسويق في المشاريع الكبرى بالسعودية والخليج.'}</p>
+    ? 'Strategic knowledge for developers shaping major projects — architectural visualization, immersive sales systems, and digital transformation across Saudi Arabia and the GCC.'
+    : 'معرفة استراتيجية للمطورين في المشاريع الكبرى — الإظهار المعماري، أنظمة المبيعات الغامرة، والتحول الرقمي في السعودية والخليج.'}</p>
   </header>
-  <div class="gh-blog-wrap">
-    <div class="gh-blog-layout">
-      <div class="gh-blog-main">
-        ${featuredHtml}
-        <section class="gh-latest">
-          <h2 class="gh-section-label">${isEn ? 'Latest Articles' : 'أحدث المقالات'}</h2>
-          ${articlesHtml}
-        </section>
+  <div class="gh-ins-wrap">
+    <section class="gh-ins-section" id="articles">
+      <div class="gh-ins-section-head">
+        <h2>${isEn ? 'Featured Articles' : 'مقالات مميزة'}</h2>
+        <p>${isEn
+    ? 'Expert guides on archviz, CGI, smart maquettes, and visual launch strategy.'
+    : 'أدلة متخصصة في الإظهار المعماري والمجسمات الذكية واستراتيجية الإطلاق البصري.'}</p>
       </div>
-      ${sidebar}
-    </div>
+      <div class="gh-ins-articles-grid">${articlesHtml}</div>
+    </section>
+    ${aiToolsSection(lang)}
+    ${downloadsSection(lang)}
+    ${newsletterSection(lang)}
   </div>
 </main>
 ${prefixPaths(footer, 1)}
@@ -367,8 +362,6 @@ function buildArticle(article, lang) {
   const bodyHtml = renderBody(L(article.body));
   const description = articleDescription(article, lang);
 
-  const sidebar = sidebarBlock(lang, 2, null);
-
   const html = `${headBlock(lang, {
     depth: 2,
     title: L(article.title),
@@ -379,31 +372,31 @@ function buildArticle(article, lang) {
     ogType: 'article',
   })}
 <script type="application/ld+json">${articleSchema(article, lang)}</script>
-${prefixPaths(header, depth)}
+${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), depth)}
 <main class="gh-article-page-wrap">
-  <div class="gh-blog-wrap">
+  <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">
       <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_back' : 'arrow_forward'}</span>
-      ${isEn ? 'Back to Journal' : 'العودة للمدونة'}
+      ${backToInsights(isEn)}
     </a>
-    <div class="gh-blog-layout">
-      <article class="gh-blog-main">
-        <header class="gh-article-header" style="padding:0;text-align:${isEn ? 'left' : 'right'};margin:0 0 28px">
-          <span class="gh-eyebrow">${L(article.category)}</span>
-          <h1>${L(article.title)}</h1>
-          <p class="gh-dek" style="text-align:${isEn ? 'left' : 'right'}">${L(article.excerpt)}</p>
+    <article>
+      <header class="gh-article-header">
+        <span class="gh-ins-cat">${L(article.category)}</span>
+        <h1>${L(article.title)}</h1>
+        <p class="gh-dek">${L(article.excerpt)}</p>
+        <div class="gh-ins-card-meta" style="margin:0">
           <time class="gh-byline" datetime="${article.date}">${L(article.dateLabel)}</time>
-        </header>
-        <img class="gh-article-hero-img" src="${p}${article.image}" alt="${esc(L(article.title))}" loading="lazy">
-        <div class="gh-article-body-wrap">
-          ${bodyHtml}
-          <div class="gh-article-footer-cta">
-            <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Discuss Your Project' : 'ناقش مشروعك'}</a>
-          </div>
+          <span class="gh-ins-read-time">${readingMinutes(article, lang)}</span>
         </div>
-      </article>
-      ${sidebar}
-    </div>
+      </header>
+      <img class="gh-article-hero-img" src="${p}${article.image}" alt="${esc(L(article.title))}" loading="lazy">
+      <div class="gh-article-body-wrap">
+        ${bodyHtml}
+        <div class="gh-article-footer-cta">
+          <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Discuss Your Project' : 'ناقش مشروعك'}</a>
+        </div>
+      </div>
+    </article>
   </div>
 </main>
 ${prefixPaths(footer, depth)}
@@ -454,8 +447,6 @@ function buildLaunchChecklist(lang) {
     )
     .join('');
 
-  const sidebar = sidebarBlock(lang, 2, 'launch-checklist');
-
   const html = `${headBlock(lang, {
     depth: 2,
     title: isEn ? 'Visual Launch Readiness Checklist' : 'قائمة جاهزية الإطلاق البصري',
@@ -464,15 +455,14 @@ function buildLaunchChecklist(lang) {
       : '12 بنداً أساسياً قبل الإطلاق البصري لمشروعك العقاري.',
     canonical: `https://3dgraphicshouse.com/insights/tools/launch-checklist${isEn ? '-en' : ''}.html`,
   })}
-${prefixPaths(header, depth)}
+${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), depth)}
 <main class="gh-tool-page-wrap">
-  <div class="gh-blog-wrap">
+  <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">
       <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_back' : 'arrow_forward'}</span>
-      ${isEn ? 'Back to Journal' : 'العودة للمدونة'}
+      ${backToInsights(isEn)}
     </a>
-    <div class="gh-blog-layout">
-      <div class="gh-blog-main gh-tool-main">
+    <div class="gh-tool-main">
         <h1>${isEn ? 'Visual Launch Readiness Checklist' : 'قائمة جاهزية الإطلاق البصري'}</h1>
         <p class="gh-tool-intro">${isEn
     ? 'Use this checklist before your launch. Track progress, then print or share with your team.'
@@ -483,8 +473,6 @@ ${prefixPaths(header, depth)}
           <button type="button" id="ghPrintChecklist" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'Print' : 'طباعة'}</button>
           <a href="../downloads/visual-launch-checklist${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Download PDF' : 'تحميل PDF'}</a>
         </div>
-      </div>
-      ${sidebar}
     </div>
   </div>
 </main>
@@ -502,8 +490,6 @@ function buildSolutionFinder(lang) {
   const isEn = lang === 'en';
   const { header, footer } = getLayout(lang);
 
-  const sidebar = sidebarBlock(lang, 2, 'solution-finder');
-
   const html = `${headBlock(lang, {
     depth: 2,
     title: isEn ? 'Which Solution Fits Your Project?' : 'أي حل يناسب مشروعك؟',
@@ -512,15 +498,14 @@ function buildSolutionFinder(lang) {
       : '5 أسئلة سريعة للتوصية بين GrowthLaunch وProjectLaunch وBrandScale.',
     canonical: `https://3dgraphicshouse.com/insights/tools/solution-finder${isEn ? '-en' : ''}.html`,
   })}
-${prefixPaths(header, 2)}
+${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 2)}
 <main class="gh-tool-page-wrap">
-  <div class="gh-blog-wrap">
+  <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">
       <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_back' : 'arrow_forward'}</span>
-      ${isEn ? 'Back to Journal' : 'العودة للمدونة'}
+      ${backToInsights(isEn)}
     </a>
-    <div class="gh-blog-layout">
-      <div class="gh-blog-main gh-tool-main">
+    <div class="gh-tool-main">
         <h1>${isEn ? 'Which Solution Fits Your Project?' : 'أي حل يناسب مشروعك؟'}</h1>
         <p class="gh-tool-intro">${isEn
     ? 'Answer 5 quick questions. We will recommend the Graphics House solution that best matches your stage and goals.'
@@ -530,8 +515,6 @@ ${prefixPaths(header, 2)}
           <div class="gh-quiz-steps"></div>
           <div class="gh-quiz-result" style="display:none"></div>
         </div>
-      </div>
-      ${sidebar}
     </div>
   </div>
 </main>
@@ -585,8 +568,6 @@ function buildBriefTemplate(lang) {
     })
     .join('');
 
-  const sidebar = sidebarBlock(lang, 2, 'project-brief');
-
   const html = `${headBlock(lang, {
     depth: 2,
     title: isEn ? 'Visual Project Brief Template' : 'نموذج Brief للمشروع البصري',
@@ -595,15 +576,14 @@ function buildBriefTemplate(lang) {
       : 'عبّئ هذا النموذج قبل أول اجتماع مع فريق جرافيكس هاوس.',
     canonical: `https://3dgraphicshouse.com/insights/tools/project-brief${isEn ? '-en' : ''}.html`,
   })}
-${prefixPaths(header, 2)}
+${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 2)}
 <main class="gh-tool-page-wrap">
-  <div class="gh-blog-wrap">
+  <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">
       <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_back' : 'arrow_forward'}</span>
-      ${isEn ? 'Back to Journal' : 'العودة للمدونة'}
+      ${backToInsights(isEn)}
     </a>
-    <div class="gh-blog-layout">
-      <div class="gh-blog-main gh-tool-main">
+    <div class="gh-tool-main">
         <h1>${isEn ? 'Visual Project Brief Template' : 'نموذج Brief للمشروع البصري'}</h1>
         <p class="gh-tool-intro">${isEn
     ? 'Complete this form before your strategy session. Print it or copy the details into your enquiry.'
@@ -615,8 +595,6 @@ ${prefixPaths(header, 2)}
           <button type="button" onclick="window.print()" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'Print' : 'طباعة'}</button>
           <a href="../../contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Submit enquiry' : 'أرسل استفساراً'}</a>
         </div>
-      </div>
-      ${sidebar}
     </div>
   </div>
 </main>
@@ -641,7 +619,7 @@ function buildRedirects() {
 <meta http-equiv="refresh" content="0;url=${target}">
 <link rel="canonical" href="https://3dgraphicshouse.com/insights/${target}">
 <script>location.replace('${target}');</script>
-</head><body><p><a href="${target}">مركز المعرفة / Knowledge Hub</a></p></body></html>`;
+</head><body><p><a href="${target}">Insights / رؤى</a></p></body></html>`;
     fs.writeFileSync(path.join(ROOT, file), html, 'utf8');
     console.log('  redirect:', file, '→', target);
   }
@@ -678,7 +656,7 @@ function updateSitemap() {
   console.log('  sitemap updated');
 }
 
-console.log('Building Knowledge Hub…');
+console.log('Building Insights…');
 fs.mkdirSync(path.join(ROOT, 'insights/articles'), { recursive: true });
 ['ar', 'en'].forEach((lang) => buildHub(lang));
 ARTICLES.forEach((a) => {

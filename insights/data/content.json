@@ -37,17 +37,121 @@
       }
     }
   ],
-  "resources": [
+  "aiTools": [
     {
-      "icon": "download",
-      "path": "downloads/visual-launch-checklist",
+      "slug": "presentation-planner",
+      "icon": "slideshow",
+      "comingSoon": true,
       "title": {
-        "ar": "تحميل قائمة الإطلاق PDF",
-        "en": "Download Launch Checklist PDF"
+        "ar": "مخطط العروض التقديمية",
+        "en": "Presentation Planner"
       },
       "description": {
-        "ar": "12 بنداً مجاناً — أدخل بريدك وحمّل الملف فوراً.",
-        "en": "12 essentials free — enter your email for instant download."
+        "ar": "خطّط هيكل العرض البصري لمشروعك — من الرندر إلى الفيلم والتجربة التفاعلية.",
+        "en": "Plan your project's visual presentation structure — from renders to film and interactive layers."
+      }
+    },
+    {
+      "slug": "viz-advisor",
+      "icon": "architecture",
+      "comingSoon": true,
+      "title": {
+        "ar": "مستشار التصور البصري للمشروع",
+        "en": "Project Visualization Advisor"
+      },
+      "description": {
+        "ar": "إرشادات ذكية لاختيار مزيج الإظهار المعماري والمجسمات والـ CGI المناسب لمرحلة مشروعك.",
+        "en": "AI-guided recommendations for the right archviz, maquette, and CGI mix for your project stage."
+      }
+    },
+    {
+      "slug": "copy-generator",
+      "icon": "edit_note",
+      "comingSoon": true,
+      "title": {
+        "ar": "مولّد النصوص التسويقية",
+        "en": "Marketing Copy Generator"
+      },
+      "description": {
+        "ar": "نصوص إطلاق وصالات بيع متسقة مع هوية مشروعك العقاري.",
+        "en": "Launch and sales-gallery copy aligned with your development brand."
+      }
+    },
+    {
+      "slug": "naming-assistant",
+      "icon": "badge",
+      "comingSoon": true,
+      "title": {
+        "ar": "مساعد تسمية المشاريع",
+        "en": "Project Naming Assistant"
+      },
+      "description": {
+        "ar": "اقتراحات أسماء ومفاهيم تموضع للمشاريع السكنية والمختلطة في السوق السعودي.",
+        "en": "Naming and positioning concepts for residential and mixed-use projects in Saudi Arabia."
+      }
+    }
+  ],
+  "downloads": [
+    {
+      "slug": "project-brief",
+      "fileType": { "ar": "نموذج تفاعلي", "en": "Interactive" },
+      "icon": "description",
+      "href": "tools/project-brief",
+      "comingSoon": false,
+      "emailGate": false,
+      "title": {
+        "ar": "نموذج Brief للمشروع",
+        "en": "Project Brief Template"
+      },
+      "description": {
+        "ar": "نموذج جاهز لتعبئته قبل أول اجتماع مع فريق الإنتاج البصري.",
+        "en": "Ready-to-fill brief before your first visual production meeting."
+      }
+    },
+    {
+      "slug": "sales-gallery-checklist",
+      "fileType": { "ar": "PDF · قائمة", "en": "PDF · Checklist" },
+      "icon": "checklist",
+      "href": "tools/launch-checklist",
+      "comingSoon": false,
+      "emailGate": false,
+      "title": {
+        "ar": "قائمة جاهزية صالة البيع",
+        "en": "Sales Gallery Checklist"
+      },
+      "description": {
+        "ar": "12 بنداً أساسياً قبل إطلاق صالة البيع والمواد البصرية.",
+        "en": "12 essentials before launching your sales gallery and visual assets."
+      }
+    },
+    {
+      "slug": "cgi-planning-guide",
+      "fileType": { "ar": "PDF · دليل", "en": "PDF · Guide" },
+      "icon": "movie",
+      "comingSoon": true,
+      "emailGate": false,
+      "title": {
+        "ar": "دليل تخطيط الـ CGI",
+        "en": "CGI Planning Guide"
+      },
+      "description": {
+        "ar": "إطار عمل لتخطيط أفلام الإطلاق السينمائية والجدول الزمني للإنتاج.",
+        "en": "Framework for planning cinematic launch films and production timelines."
+      }
+    },
+    {
+      "slug": "presentation-strategy",
+      "fileType": { "ar": "PDF · دليل", "en": "PDF · Guide" },
+      "icon": "present_to_all",
+      "comingSoon": true,
+      "emailGate": false,
+      "title": {
+        "ar": "دليل استراتيجية العروض",
+        "en": "Presentation Strategy Guide"
+      },
+      "description": {
+        "ar": "كيف تبني نظام عرض بصري متكامل من الرندر إلى المنصة التفاعلية.",
+        "en": "How to build an integrated visual presentation system from render to interactive platform."
       }
     }
   ],
