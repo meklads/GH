@@ -79,10 +79,6 @@ body {
   position: relative;
   z-index: 1;
 }
-html[dir="ltr"] .nav-link { font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;transition:color .3s;position:relative;padding-bottom:2px; }
-html[dir="ltr"] .nav-link:hover{color:#C9A84C!important;}
-html[dir="ltr"] .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#C9A84C;transition:width .3s}
-html[dir="ltr"] .nav-link:hover::after{width:100%}
 
 /* Dropdown menu */
 .nav-item-drop:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
@@ -486,7 +482,7 @@ img { max-width: 100%; display: block; }
   display:flex; align-items:center; justify-content:center; flex-direction:column;
   transition:opacity .6s ease,visibility .6s ease;
 }
-#loader.out { opacity:0; visibility:hidden; }
+#loader.out { opacity:0; visibility:hidden; pointer-events:none; }
 #loader-bar-track { width:180px; height:1px; background:rgba(201,168,76,.15); margin-top:20px; overflow:hidden; }
 #loader-bar { height:100%; width:0; background:#C9A84C; transition:width 1s cubic-bezier(.4,0,.2,1); }
 .logo-img { mix-blend-mode:normal; display:inline-block; }
@@ -1982,8 +1978,8 @@ img { max-width: 100%; display: block; }
   ]
 }
 </script>
-<link rel="stylesheet" href="assets/site-header.css?v=14">
-<script defer src="assets/site-header.js?v=9"></script>
+<link rel="stylesheet" href="assets/site-header.css?v=15">
+<script defer src="assets/site-header.js?v=10"></script>
 <script defer src="assets/gh-performance.js?v=1"></script>
 <script defer src="assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=12">
@@ -3378,22 +3374,6 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
 var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
 if(ld&&lb){setTimeout(function(){lb.style.width="100%";},100);setTimeout(function(){ld.classList.add("out");},1400);}
 
-// Header scroll
-window.addEventListener("scroll", function() {
-  const header = document.getElementById("header");
-  header.classList.toggle("scrolled", window.scrollY > 80);
-});
-
-// Mobile menu
-function toggleMenu() {
-  const nav = document.getElementById("nav");
-  const toggle = document.getElementById("menuToggle");
-  nav.classList.toggle("open");
-  toggle.innerHTML = nav.classList.contains("open")
-    ? '<span class="material-symbols-outlined">close</span>'
-    : '<span class="material-symbols-outlined">menu</span>';
-}
-
 // Reveal animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -4129,24 +4109,6 @@ function ghSubmit(e){
     alert('Connection error. Please try again.');
   });
 }
-</script>
-
-<script>
-// Mega menu mobile accordion
-document.addEventListener('DOMContentLoaded', function(){
-  var mmTriggers = document.querySelectorAll('.nav-mega-item > a.nav-link');
-  mmTriggers.forEach(function(trigger){
-    trigger.addEventListener('click', function(e){
-      if(window.innerWidth <= 900) {
-        e.preventDefault();
-        var menu = this.parentElement.querySelector('.mega-menu');
-        if(menu) {
-          menu.classList.toggle('open');
-        }
-      }
-    });
-  });
-});
 </script>
 
 <script defer src="assets/hero-video.js"></script>

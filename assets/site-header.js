@@ -96,11 +96,17 @@
         clearTimeout(closeTimer);
       });
 
+      menu.addEventListener('mouseleave', function () {
+        if (isMobile()) return;
+        var self = item;
+        var trig = trigger;
+        closeTimer = setTimeout(function () {
+          self.classList.remove('is-open');
+          trig.setAttribute('aria-expanded', 'false');
+        }, HOVER_DELAY);
+      });
+
       trigger.addEventListener('click', function (e) {
-        if (!isMobile()) {
-          e.preventDefault();
-          return;
-        }
         e.preventDefault();
         e.stopPropagation();
         var wasOpen = item.classList.contains('is-open');
@@ -110,12 +116,15 @@
     });
   }
 
-  window.addEventListener('scroll', function () {
+  function updateHeaderScroll() {
     var header = document.getElementById('header');
     if (header) header.classList.toggle('scrolled', window.scrollY > 40);
-  });
+  }
+
+  window.addEventListener('scroll', updateHeaderScroll);
 
   document.addEventListener('DOMContentLoaded', function () {
+    updateHeaderScroll();
     initMegaItems();
 
     var backdrop = getBackdrop();
@@ -139,6 +148,10 @@
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') setMenuOpen(false);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-mega-item')) closeAllMega();
     });
 
     window.addEventListener('resize', function () {

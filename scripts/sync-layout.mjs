@@ -189,8 +189,8 @@ function syncFile(rel) {
     );
   }
 
-  html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=9');
-  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=14');
+  html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=10');
+  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=15');
   html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=12');
   html = html.replace(/gh-insights\.css\?v=\d+/g, 'gh-insights.css?v=17');
 

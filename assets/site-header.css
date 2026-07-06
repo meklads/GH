@@ -35,15 +35,15 @@ body.nav-open {
   z-index: 1000;
   padding: 8px 0;
   overflow: visible;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.08) 100%);
-  transition: background 0.35s ease, padding 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-}
-.header.scrolled {
   background: var(--header-bg);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
+  border-bottom: 1px solid transparent;
+  transition: background 0.35s ease, padding 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.header.scrolled {
   padding: 5px 0;
-  border-bottom: 1px solid var(--header-border);
+  border-bottom-color: var(--header-border);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
