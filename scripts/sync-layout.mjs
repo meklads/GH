@@ -173,6 +173,7 @@ function syncFile(rel) {
   }
 
   html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=8');
+  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=13');
 
   fs.writeFileSync(full, html, 'utf8');
   return rel;

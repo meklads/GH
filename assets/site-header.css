@@ -34,6 +34,7 @@ body.nav-open {
   right: 0;
   z-index: 1000;
   padding: 8px 0;
+  overflow: visible;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.08) 100%);
   transition: background 0.35s ease, padding 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
@@ -54,6 +55,7 @@ body.nav-open {
     gap: 12px 16px;
     min-height: 72px;
     position: relative;
+    overflow: visible;
   }
   .logo {
     grid-column: 1;
@@ -79,7 +81,7 @@ body.nav-open {
     justify-content: center;
     justify-self: center;
     gap: 8px;
-    overflow: hidden;
+    overflow: visible;
   }
   html[dir="rtl"] .nav { gap: 8px; }
   html[dir="ltr"] .nav { gap: 4px; }
@@ -124,7 +126,7 @@ body.nav-open {
   html[dir="ltr"] .nav {
     gap: 2px;
     min-width: 0;
-    overflow: hidden;
+    overflow: visible;
     padding-inline-end: 8px;
   }
   html[dir="ltr"] .nav-link {
@@ -261,6 +263,10 @@ html[dir="rtl"] .nav-link {
   position: relative;
   display: inline-flex;
   vertical-align: middle;
+}
+.nav-mega-item:hover,
+.nav-mega-item.is-open {
+  z-index: 1101;
 }
 .nav-mega-item::after {
   content: '';
@@ -493,7 +499,7 @@ html[dir="rtl"] .nav-cta {
   transition: opacity 0.28s cubic-bezier(0.25, 0.1, 0.1, 1),
     transform 0.28s cubic-bezier(0.25, 0.1, 0.1, 1),
     visibility 0.28s;
-  z-index: 100;
+  z-index: 1100;
   border-radius: 16px;
   overflow: hidden;
   min-width: 200px;
