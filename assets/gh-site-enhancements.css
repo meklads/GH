@@ -66,9 +66,9 @@ html:has(body.gh-insights) {
 
 body.gh-insights .header,
 body.gh-insights .header.scrolled {
-  background: rgba(255, 255, 255, 0.96) !important;
-  border-bottom: 1px solid #e8e4dc !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+  background: rgba(8, 12, 10, 0.97) !important;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.14) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
 /* ===== Homepage hero stack (AR + EN) ===== */

@@ -82,8 +82,8 @@ function lightFooter(lang, depth) {
   <div class="gh-loc-footer-inner">
     <img src="${p}assets/logo-gold.png" alt="Graphics House" class="gh-loc-footer-logo" loading="lazy">
     <nav class="gh-loc-footer-nav" aria-label="${isEn ? 'Footer navigation' : 'روابط التذييل'}">
-      <a href="${insights}">Insights</a>
-      <a href="${contact}">${isEn ? 'Contact' : 'تواصل معنا'}</a>
+      <a href="${insights}">${isEn ? 'Insights' : 'رؤى'}</a>
+      <a href="${contact}">${isEn ? 'Contact' : 'اتصل بنا'}</a>
       <a href="${portfolio}">${isEn ? 'Portfolio' : 'معرض الأعمال'}</a>
       <a href="${jeddah}">${isEn ? 'Jeddah' : 'جدة'}</a>
       <a href="${riyadh}">${isEn ? 'Riyadh' : 'الرياض'}</a>
@@ -227,8 +227,8 @@ function buildGatePage(lang, downloadPath) {
 <link rel="icon" type="image/png" sizes="32x32" href="${p}assets/favicon/favicon-32.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=12">
-<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=9">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=13">
+<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=10">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=14">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/lang-switch.js?v=3"></script>
@@ -256,7 +256,7 @@ ${prefixPaths(header, depth)}
 <main class="gh-lead-page">
   <a href="../${isEn ? 'index-en' : 'index'}.html" style="font-size:12px;color:#888888;text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-bottom:20px">
     <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_back' : 'arrow_forward'}</span>
-    ${isEn ? 'Back to Insights' : 'العودة إلى Insights'}
+    ${isEn ? 'Back to Insights' : 'العودة إلى الرؤى'}
   </a>
   <div class="gh-lead-card">
     <div id="ghLeadGate">

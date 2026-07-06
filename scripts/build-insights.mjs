@@ -146,8 +146,8 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=12">
-<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=9">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=13">
+<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=10">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=14">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=7"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -197,7 +197,7 @@ function hubSubNav(lang) {
     .join('');
   return `
 <div class="gh-ins-subnav-wrap">
-  <nav class="gh-ins-subnav" aria-label="${isEn ? 'Insights sections' : 'أقسام Insights'}" role="tablist">
+  <nav class="gh-ins-subnav" aria-label="${isEn ? 'Insights sections' : 'أقسام الرؤى'}" role="tablist">
     ${links}
   </nav>
 </div>`;
@@ -249,8 +249,8 @@ function lightFooter(lang, depth) {
   <div class="gh-loc-footer-inner">
     <img src="${p}assets/logo-gold.png" alt="Graphics House" class="gh-loc-footer-logo" loading="lazy">
     <nav class="gh-loc-footer-nav" aria-label="${isEn ? 'Footer navigation' : 'روابط التذييل'}">
-      <a href="${insights}">Insights</a>
-      <a href="${contact}">${isEn ? 'Contact' : 'تواصل معنا'}</a>
+      <a href="${insights}">${isEn ? 'Insights' : 'رؤى'}</a>
+      <a href="${contact}">${isEn ? 'Contact' : 'اتصل بنا'}</a>
       <a href="${portfolio}">${isEn ? 'Portfolio' : 'معرض الأعمال'}</a>
       <a href="${jeddah}">${isEn ? 'Jeddah' : 'جدة'}</a>
       <a href="${riyadh}">${isEn ? 'Riyadh' : 'الرياض'}</a>
@@ -369,7 +369,7 @@ function downloadsSection(lang) {
 }
 
 function backToInsights(isEn) {
-  return isEn ? 'Back to Insights' : 'العودة إلى Insights';
+  return isEn ? 'Back to Insights' : 'العودة إلى الرؤى';
 }
 
 function hubExcerpt(article, lang) {
@@ -397,7 +397,7 @@ function buildHub(lang) {
 
   const html = `${headBlock(lang, {
     depth: 1,
-    title: 'Insights',
+    title: isEn ? 'Insights' : 'رؤى',
     description: isEn
       ? 'Premium knowledge hub for architectural visualization, cinematic CGI, interactive experiences, and real estate marketing — by Graphics House.'
       : 'مركز معرفة متميز للإظهار المعماري، الـ CGI السينمائي، التجارب التفاعلية، وتسويق العقار — من Graphics House.',
@@ -406,8 +406,8 @@ function buildHub(lang) {
 ${prefixPaths(header.replace('class="header"', 'class="header scrolled"'), 1)}
 <main class="gh-insights-page">
   <header class="gh-ins-hero">
-    <span class="gh-kicker">Graphics House · Insights</span>
-    <h1>Insights</h1>
+    <span class="gh-kicker">Graphics House · ${isEn ? 'Insights' : 'رؤى'}</span>
+    <h1>${isEn ? 'Insights' : 'رؤى'}</h1>
     <p>${isEn
     ? 'Strategic knowledge for developers shaping major projects — architectural visualization, immersive sales systems, and digital transformation across Saudi Arabia and the GCC.'
     : 'معرفة استراتيجية للمطورين في المشاريع الكبرى — الإظهار المعماري، أنظمة المبيعات الغامرة، والتحول الرقمي في السعودية والخليج.'}</p>
