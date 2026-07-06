@@ -110,11 +110,7 @@ body.nav-open {
     padding-inline-end: 14px;
     background: linear-gradient(270deg, rgba(8, 12, 10, 0) 0%, rgba(8, 12, 10, 0.94) 22%, rgba(8, 12, 10, 0.98) 100%);
   }
-  /* Contact link duplicated by nav-cta — hide on desktop to free header space */
-  html[dir="ltr"] .nav > a.nav-link[href*="contact"],
-  html[dir="rtl"] .nav > a.nav-link[href*="contact"] {
-    display: none;
-  }
+  /* Insights + Contact stay visible after portfolio / case studies */
   .menu-toggle { display: none !important; }
 }
 

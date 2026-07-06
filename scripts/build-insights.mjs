@@ -145,9 +145,9 @@ ${analyticsHeadTags(p)}
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="${p}assets/site-header.css?v=13">
-<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=11">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=16">
+<link rel="stylesheet" href="${p}assets/site-header.css?v=14">
+<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=12">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=17">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=9"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -225,10 +225,6 @@ function hubTabScript() {
   if(h&&document.querySelector('[data-gh-ins-panel="'+h+'"]')){show(h);}else{
     show("articles",false);
     if(history.replaceState)history.replaceState(null,"",location.pathname+location.search);
-    requestAnimationFrame(function(){
-      var target=document.querySelector(".gh-ins-subnav-wrap");
-      if(target)target.scrollIntoView({block:"start"});
-    });
   }
   window.addEventListener("hashchange",function(){
     var id=(location.hash||"").slice(1);

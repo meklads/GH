@@ -199,9 +199,9 @@ function buildGatePage(lang, downloadPath) {
     : 'حمّل مجاناً قائمة جاهزية الإطلاق البصري — 12 بنداً للمطورين العقاريين من جرافيكس هاوس.'}"/>
 <link rel="icon" type="image/png" sizes="32x32" href="${p}assets/favicon/favicon-32.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${p}assets/site-header.css?v=13">
-<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=10">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=15">
+<link rel="stylesheet" href="${p}assets/site-header.css?v=14">
+<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=12">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=17">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=9"></script>
 <script defer src="${p}assets/lang-switch.js?v=3"></script>

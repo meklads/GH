@@ -104,6 +104,26 @@ function fixCorruption(html) {
   return out;
 }
 
+function normalizeNavTail(header, isEn) {
+  const insightsLabel = isEn ? 'Insights' : 'رؤى';
+  const contactLabel = isEn ? 'Contact Us' : 'تواصل معنا';
+  const insightsFile = isEn ? 'insights/index-en.html' : 'insights/index.html';
+  const contactFile = isEn ? 'contact-us-en.html' : 'contact-us.html';
+
+  let h = header.replace(/<a class="nav-link" href="[^"]*insights\/index[^"]*">[^<]*<\/a>\s*/gi, '');
+  h = h.replace(/<a class="nav-link" href="[^"]*contact-us[^"]*">[^<]*<\/a>\s*/gi, '');
+
+  const prefixMatch =
+    h.match(/href="((?:\.\.\/)+)portfolio/) ||
+    h.match(/href="((?:\.\.\/)+)casestudy/) ||
+    h.match(/href="((?:\.\.\/)+)case-study/) ||
+    h.match(/href="((?:\.\.\/)+)who-we-are/);
+  const prefix = prefixMatch ? prefixMatch[1] : '';
+
+  const insert = `      <a class="nav-link" href="${prefix}${insightsFile}">${insightsLabel}</a>\n      <a class="nav-link" href="${prefix}${contactFile}">${contactLabel}</a>\n    `;
+  return h.replace(/\s*<\/nav>/, `\n${insert}</nav>`);
+}
+
 function fixLogoCss(html) {
   return html.replace(LOGO_CSS_FIX, LOGO_CSS_NEW);
 }
@@ -146,7 +166,7 @@ function syncFile(rel) {
 
   const en = isEnglishPage(rel, html);
   const depth = depthOf(rel);
-  let header = renderPartial(en ? 'header-en.html' : 'header-ar.html', depth, en);
+  let header = normalizeNavTail(renderPartial(en ? 'header-en.html' : 'header-ar.html', depth, en), en);
   const footer = renderPartial(en ? 'footer-en.html' : 'footer-ar.html', depth, en);
 
   html = fixCorruption(html);
@@ -170,8 +190,9 @@ function syncFile(rel) {
   }
 
   html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=9');
-  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=13');
-  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=11');
+  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=14');
+  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=12');
+  html = html.replace(/gh-insights\.css\?v=\d+/g, 'gh-insights.css?v=17');
 
   fs.writeFileSync(full, html, 'utf8');
   return rel;

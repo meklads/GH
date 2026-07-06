@@ -40,12 +40,13 @@ body.gh-contact .ch {
 body.gh-insights {
   background: #f7f5f0;
   color: #1a1a1a;
-  overflow-x: clip;
   width: 100%;
   max-width: 100%;
 }
 
-html:has(body.gh-insights) {
+body.gh-insights .gh-insights-page,
+body.gh-insights .gh-article-page-wrap,
+body.gh-insights .gh-tool-page-wrap {
   overflow-x: clip;
 }
 

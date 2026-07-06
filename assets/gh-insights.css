@@ -4,14 +4,19 @@ body.gh-insights {
   background: #f7f5f0;
   color: #1a1a1a;
   font-family: "Tajawal", "Inter", sans-serif;
-  overflow-x: clip;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-html:has(body.gh-insights) {
-  overflow-x: clip;
+body.gh-insights .header,
+body.gh-insights .header-inner,
+body.gh-insights .nav {
+  overflow: visible !important;
+}
+
+body.gh-insights .mega-menu {
+  z-index: 1200;
 }
 
 html[dir="ltr"] body.gh-insights {
@@ -88,7 +93,7 @@ html[dir="rtl"] .gh-ins-hero .gh-kicker {
 .gh-ins-subnav-wrap {
   position: sticky;
   top: 72px;
-  z-index: 40;
+  z-index: 30;
   background: rgba(247, 245, 240, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
