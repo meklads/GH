@@ -147,7 +147,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=14">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=12">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=18">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=19">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=9"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -179,6 +179,7 @@ function hubSubNav(lang) {
   const isEn = lang === 'en';
   const items = [
     { id: 'articles', label: isEn ? 'Featured Articles' : 'مقالات مميزة', icon: 'article' },
+    { id: 'cities', label: isEn ? 'Cities' : 'المدن', icon: 'location_city' },
     { id: 'ai-tools', label: isEn ? 'AI Tools' : 'أدوات الذكاء الاصطناعي', icon: 'smart_toy' },
     { id: 'downloads', label: isEn ? 'Downloads' : 'التحميلات', icon: 'download' },
     { id: 'newsletter', label: isEn ? 'Newsletter' : 'النشرة', icon: 'mail' },
@@ -306,6 +307,43 @@ function aiToolsSection(lang) {
 </section>`;
 }
 
+function citiesSection(lang) {
+  const isEn = lang === 'en';
+  const L = (key) => (isEn ? key.en : key.ar);
+  const p = '../';
+  const items = DATA.cities || [];
+  const cards = items
+    .map((c) => {
+      const href = `${p}locations/${c.slug}${isEn ? '-en' : ''}.html`;
+      const img = c.image ? `${p}${c.image}` : '';
+      const explore = isEn ? 'Explore' : 'استكشف';
+      const arrow = isEn ? 'arrow_forward' : 'arrow_back';
+      return `
+<article class="gh-ins-city-card">
+  <a href="${href}" class="gh-ins-city-link">
+    ${img ? `<figure class="gh-ins-city-media"><img src="${img}" alt="${esc(L(c.title))}" loading="lazy"></figure>` : ''}
+    <div class="gh-ins-city-body">
+      <span class="material-symbols-outlined gh-ins-city-icon">${esc(c.icon || 'location_on')}</span>
+      <h3>${esc(L(c.title))}</h3>
+      <p>${esc(L(c.description))}</p>
+      <span class="gh-ins-read-more">${explore} <span class="material-symbols-outlined" style="font-size:14px">${arrow}</span></span>
+    </div>
+  </a>
+</article>`;
+    })
+    .join('');
+  return `
+<section class="gh-ins-section gh-ins-panel" id="cities" data-gh-ins-panel="cities">
+  <div class="gh-ins-section-head">
+    <h2>${isEn ? 'Archviz by City' : 'الإظهار المعماري حسب المدينة'}</h2>
+    <p>${isEn
+    ? 'Landing pages for developers in Jeddah, Riyadh, Makkah, and Madinah — services, portfolio highlights, and local expertise.'
+    : 'صفحات مخصصة للمطورين في جدة والرياض ومكة والمدينة — خدمات، أعمال مميزة، وخبرة محلية.'}</p>
+  </div>
+  <div class="gh-ins-cities-grid">${cards}</div>
+</section>`;
+}
+
 function downloadsSection(lang) {
   const isEn = lang === 'en';
   const L = (key) => (isEn ? key.en : key.ar);
@@ -397,6 +435,7 @@ ${prefixPaths(header, 1)}
       </div>
       <div class="gh-ins-articles-grid">${articlesHtml}</div>
     </section>
+    ${citiesSection(lang)}
     ${aiToolsSection(lang)}
     ${downloadsSection(lang)}
     ${newsletterSection(lang)}

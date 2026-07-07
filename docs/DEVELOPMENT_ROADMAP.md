@@ -37,7 +37,7 @@
 |-------|--------|--------|
 | GA4 موحّد | `gh-analytics.js` على كل الصفحات | 🟢 |
 | أحداث تحويل | نشرة، PDF، نموذج عائم | 🟢 |
-| Search Console | تحقق الملكية + sitemap | 🟡 يحتاج `googleSiteVerification` |
+| Search Console | تحقق الملكية + sitemap | 🟡 جاهز — `npm run gsc:apply` |
 | ربط GA4 ↔ GSC | من لوحة Admin | ⬜ بعد التحقق |
 
 **الدليل:** `docs/ANALYTICS_SETUP.md`

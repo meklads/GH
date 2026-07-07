@@ -47,7 +47,13 @@
 
 1. [search.google.com/search-console](https://search.google.com/search-console) → **Add property** → `https://3dgraphicshouse.com`.
 2. اختر **HTML tag** وانسخ قيمة `content=` فقط (مثال: `abc123XYZ...`).
-3. الصقها في `assets/gh-analytics-config.js`:
+3. الصقها عبر الأمر:
+
+```bash
+npm run gsc:apply -- abc123XYZ...
+```
+
+أو عدّل `assets/gh-analytics-config.js` يدوياً:
 
 ```js
 googleSiteVerification: 'abc123XYZ...'
@@ -55,6 +61,7 @@ googleSiteVerification: 'abc123XYZ...'
 
 4. `npm run build` ثم نشر الموقع (Coolify Redeploy + Purge Cache في Cloudflare).
 5. ارجع لـ GSC واضغط **Verify**.
+6. تحقق محلياً: `npm run qa:analytics`
 
 ### ب) التحقق عبر DNS (بديل)
 
