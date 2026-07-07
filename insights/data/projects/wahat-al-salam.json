@@ -1,0 +1,40 @@
+{
+  "slug": "wahat-al-salam",
+  "date": "2023-09",
+  "image": "assets/projects/rendering/wahat-alsalam9-scaled.jpg",
+  "developer": { "ar": "واحة السلام", "en": "Wahat Al Salam" },
+  "projectName": { "ar": "المخطط الرئيسي السكني", "en": "Residential Master Plan" },
+  "city": { "ar": "المملكة العربية السعودية", "en": "Saudi Arabia" },
+  "category": { "ar": "مخطط رئيسي · فيلم CGI", "en": "Master plan · CGI film" },
+  "title": {
+    "ar": "واحة السلام — قصة بصرية لمخطط سكني متكامل",
+    "en": "Wahat Al Salam — visual narrative for an integrated residential master plan"
+  },
+  "excerpt": {
+    "ar": "مشاهد جوية وتقسيم مراحل لفيلم إطلاق مخطط سكني واسع — مواد جاهزة لفرق المبيعات.",
+    "en": "Aerial views and phasing sequences for a master-plan launch film — sales-team ready assets."
+  },
+  "metaDescription": {
+    "ar": "واحة السلام — تصور مخطط رئيسي وفيلم CGI من Graphics House.",
+    "en": "Wahat Al Salam — master plan visualization and CGI film by Graphics House."
+  },
+  "services": {
+    "ar": ["مخطط رئيسي", "فيلم CGI", "مشاهد جوية"],
+    "en": ["Master plan", "CGI film", "Aerial views"]
+  },
+  "gallery": [
+    "assets/projects/rendering/bird.jpg",
+    "assets/projects/rendering/wahat-alsalam9-scaled.jpg"
+  ],
+  "portfolioHref": "portfolio.html",
+  "body": {
+    "ar": [
+      { "type": "p", "text": "المخططات السكنية الكبرى تحتاج قصة بصرية تشرح التقسيم والكثافة والمساحات الخضراء قبل أن يفهم المشتري قائمة الوحدات. واحة السلام نموذج على فيلم ومشاهد رندر تخدم الإطلاق والمستثمرين." },
+      { "type": "p", "text": "المواد مصممة للعرض في اجتماعات المستثمرين، المعارض، وصالات البيع — بنفس الجودة السينمائية." }
+    ],
+    "en": [
+      { "type": "p", "text": "Large residential master plans need a visual story explaining phasing, density, and green space before buyers parse unit lists. Wahat Al Salam shows how launch films and render sequences serve investors and sales." },
+      { "type": "p", "text": "Assets are built for investor meetings, exhibitions, and sales galleries — with consistent cinematic quality." }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "al-rajhi-riyadh",
+  "date": "2023-11",
+  "image": "assets/projects/rendering/alrajhi3.jpeg",
+  "developer": { "ar": "الراجحي", "en": "Al Rajhi" },
+  "projectName": { "ar": "مشروع سكني — الرياض", "en": "Residential Development — Riyadh" },
+  "city": { "ar": "الرياض", "en": "Riyadh" },
+  "category": { "ar": "مجسم ذكي · فيلم CGI · معرض", "en": "Smart maquette · CGI film · Gallery" },
+  "title": {
+    "ar": "الراجحي — مجسم ذكي وفيلم سينمائي لإطلاق سكني في الرياض",
+    "en": "Al Rajhi — smart maquette & cinematic film for a Riyadh residential launch"
+  },
+  "excerpt": {
+    "ar": "حزمة إطلاق متكاملة: مجسم تفاعلي، فيلم CGI، وتصميم بيئة عرض لأحد أبرز المطورين في العاصمة.",
+    "en": "Integrated launch package: interactive maquette, CGI film, and gallery environment for a leading capital-region developer."
+  },
+  "metaDescription": {
+    "ar": "مشروع الراجحي السكني في الرياض — مجسم ذكي وأفلام CGI ومعرض مبيعات من Graphics House.",
+    "en": "Al Rajhi residential project in Riyadh — smart maquette, CGI films & sales gallery by Graphics House."
+  },
+  "services": {
+    "ar": ["مجسم ذكي", "فيلم CGI", "إظهار معماري", "ديكور صالة بيع"],
+    "en": ["Smart maquette", "CGI film", "Archviz", "Sales gallery design"]
+  },
+  "gallery": [
+    "assets/projects/maquettes/alrajhi3.jpeg",
+    "assets/projects/rendering/alrajhi2.jpeg",
+    "assets/projects/maquettes/16-scaled-e1745148168180.jpg"
+  ],
+  "portfolioHref": "case-study-alrajhi-en.html",
+  "body": {
+    "ar": [
+      { "type": "p", "text": "مشاريع الراجحي العقارية تحتاج مواد بصرية تليق بحجم العلامة وثقة المشتري في سوق الرياض. دمجنا المجسم الذكي مع فيلم إطلاق سينمائي وبيئة عرض متسقة — حتى يقرأ الزائر قصة واحدة من المدخل حتى اختيار الوحدة." },
+      { "type": "p", "text": "النتيجة: نظام مبيعات بصري يخدم فرق المبيعات والوسطاء بمواد جاهزة للعرض أمام المستثمرين المحليين والدوليين." }
+    ],
+    "en": [
+      { "type": "p", "text": "Al Rajhi real estate projects demand visual assets matching brand scale and buyer trust in the Riyadh market. We combined a smart maquette with a cinematic launch film and a coherent gallery environment — one story from entrance to unit selection." },
+      { "type": "p", "text": "The result: a visual sales system ready for consultants and brokers presenting to local and international investors." }
+    ]
+  }
+}

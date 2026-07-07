@@ -1,0 +1,41 @@
+{
+  "slug": "anan-eskan-riyadh",
+  "date": "2024-02",
+  "image": "assets/projects/rendering/Anan-Escan-Co.01.jpeg",
+  "developer": { "ar": "أنان إسكان", "en": "Anan Eskan" },
+  "projectName": { "ar": "مجمع سكني — الرياض", "en": "Residential Community — Riyadh" },
+  "city": { "ar": "الرياض", "en": "Riyadh" },
+  "category": { "ar": "CGI سينمائي · مجسم", "en": "Cinematic CGI · Maquette" },
+  "title": {
+    "ar": "أنان إسكان — إظهار معماري ومجسم لمجمع سكني في الرياض",
+    "en": "Anan Eskan — archviz & maquette for a Riyadh residential community"
+  },
+  "excerpt": {
+    "ar": "رندر فوتوريالستي، أفلام CGI، ومجسم معماري لإطلاق مجمع سكني كبير في العاصمة.",
+    "en": "Photorealistic renders, CGI films, and architectural maquette for a major capital-region community launch."
+  },
+  "metaDescription": {
+    "ar": "مشروع أنان إسكان في الرياض — إظهار معماري سينمائي ومجسمات من Graphics House.",
+    "en": "Anan Eskan project in Riyadh — cinematic archviz and maquettes by Graphics House."
+  },
+  "services": {
+    "ar": ["رندر خارجي", "فيلم CGI", "مجسم معماري"],
+    "en": ["Exterior renders", "CGI film", "Architectural maquette"]
+  },
+  "gallery": [
+    "assets/projects/rendering/anan-escan2.jpeg",
+    "assets/projects/rendering/anan-escan3.jpeg",
+    "assets/projects/maquettes/anan-escan3.jpeg"
+  ],
+  "portfolioHref": "case-study-anan-eskan-en.html",
+  "body": {
+    "ar": [
+      { "type": "p", "text": "أنان إسكان من المطورين النشطين في سوق الرياض السكني. المشروع يحتاج مواد بصرية توضّح الكثافة، المساحات الخضراء، وتنوع الوحدات — قبل أول يوم مبيعات." },
+      { "type": "p", "text": "قدّمنا حزمة CGI ومجسمات تخدم الحملة الإعلامية وصالة البيع معاً، باتساق في الإضاءة والزوايا عبر كل المخرجات." }
+    ],
+    "en": [
+      { "type": "p", "text": "Anan Eskan is among the active developers in Riyadh's residential market. The project needed visuals clarifying density, green space, and unit variety — before day one of sales." },
+      { "type": "p", "text": "We delivered CGI and maquette assets serving both the media campaign and sales gallery with consistent lighting and angles across deliverables." }
+    ]
+  }
+}

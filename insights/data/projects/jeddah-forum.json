@@ -1,0 +1,39 @@
+{
+  "slug": "jeddah-forum",
+  "date": "2023-06",
+  "image": "assets/projects/rendering/jeddah-forum.jpg",
+  "developer": { "ar": "منتدى جدة الاقتصادي", "en": "Jeddah Economic Forum" },
+  "projectName": { "ar": "المركز المؤتمرات — جدة", "en": "Convention Center — Jeddah" },
+  "city": { "ar": "جدة", "en": "Jeddah" },
+  "category": { "ar": "إظهار معماري · مؤسسي", "en": "Archviz · Institutional" },
+  "title": {
+    "ar": "منتدى جدة — إظهار معماري لمركز مؤتمرات بارز",
+    "en": "Jeddah Forum — archviz for a landmark convention center"
+  },
+  "excerpt": {
+    "ar": "تصور معماري لمشروع مؤسسي في قلب المنطقة الغربية — من مقر Graphics House في جدة.",
+    "en": "Architectural visualization for an institutional landmark in the Western Region — from Graphics House Jeddah HQ."
+  },
+  "metaDescription": {
+    "ar": "منتدى جدة الاقتصادي — إظهار معماري من Graphics House المقر الرئيسي.",
+    "en": "Jeddah Economic Forum — archviz from Graphics House headquarters."
+  },
+  "services": {
+    "ar": ["رندر خارجي", "مشاهد بطل", "عرض مؤسسي"],
+    "en": ["Exterior renders", "Hero views", "Institutional presentation"]
+  },
+  "gallery": [
+    "assets/projects/rendering/jeddah-forum.jpg"
+  ],
+  "portfolioHref": "portfolio.html",
+  "body": {
+    "ar": [
+      { "type": "p", "text": "جدة — مقر Graphics House — تستضيف مشاريع مؤسسية واقتصادية بارزة. منتدى جدة مثال على إظهار معماري يخدم عروض الجهات الرسمية والمستثمرين قبل التنفيذ." },
+      { "type": "p", "text": "نخدم المطورين والجهات في المنطقة الغربية بفريق إنتاج محلي وورش اعتماد سريعة." }
+    ],
+    "en": [
+      { "type": "p", "text": "Jeddah — Graphics House headquarters — hosts landmark institutional and economic projects. Jeddah Forum exemplifies archviz serving official and investor presentations before construction." },
+      { "type": "p", "text": "We serve Western Region developers and institutions with local production and fast approval workshops." }
+    ]
+  }
+}
