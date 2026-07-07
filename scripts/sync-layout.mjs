@@ -176,7 +176,7 @@ function syncFile(rel) {
 
   html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=12');
   html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=19');
-  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=13');
+  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=14');
   html = html.replace(/gh-insights\.css\?v=\d+/g, 'gh-insights.css?v=23');
 
   fs.writeFileSync(full, html, 'utf8');
