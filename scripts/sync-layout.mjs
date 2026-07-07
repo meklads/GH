@@ -36,9 +36,7 @@ function buildPartials() {
   const arPage = fs.readFileSync(path.join(ROOT, 'index-ar.html'), 'utf8');
 
   let enHeader = extract(idx, /(<header class="header" id="header">[\s\S]*?<\/header>)/);
-  let enFooter = extract(idx, /(<footer dir="ltr"[\s\S]*?<\/footer>)/);
   let arHeader = extract(arPage, /(<header class="header" id="header">[\s\S]*?<\/header>)/);
-  let arFooter = extract(arPage, /(<footer dir="rtl"[\s\S]*?<\/footer>)/);
 
   // Reorder AR header: logo | nav | nav-actions | menu-toggle
   const logo = extract(arHeader, /(<a href="(?:\/|\/index-ar\.html)" class="logo">[\s\S]*?<\/a>)/);
@@ -64,8 +62,6 @@ function buildPartials() {
     )
     .replace(/href="who-we-are-en\.html"/g, 'href="/"');
 
-  arFooter = arFooter.replace(/\s*<a href="gh-admin\.html"[^>]*>Private<\/a>/, '');
-
   const toPartial = (s) =>
     s
       .replace(/src="assets\//g, 'src="{{PREFIX}}assets/')
@@ -75,8 +71,7 @@ function buildPartials() {
   fs.mkdirSync(PARTIALS, { recursive: true });
   fs.writeFileSync(path.join(PARTIALS, 'header-en.html'), toPartial(enHeader));
   fs.writeFileSync(path.join(PARTIALS, 'header-ar.html'), toPartial(arHeader));
-  fs.writeFileSync(path.join(PARTIALS, 'footer-en.html'), toPartial(enFooter));
-  fs.writeFileSync(path.join(PARTIALS, 'footer-ar.html'), toPartial(arFooter));
+  // Footer partials are edited directly in partials/footer-*.html (not extracted from index pages).
 }
 
 function renderPartial(name, depth, isEn) {
