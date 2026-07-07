@@ -1,0 +1,42 @@
+{
+  "kind": "industry",
+  "slug": "makkiyoon-ain-makkah",
+  "date": "2024-01",
+  "image": "assets/projects/rendering/kuday-makkah-e1745137682714.jpeg",
+  "developer": { "ar": "مكيون", "en": "Makyon" },
+  "developerUrl": "https://makyon.sa/",
+  "projectName": { "ar": "عين مكة", "en": "Ain Makkah" },
+  "city": { "ar": "مكة المكرمة", "en": "Makkah" },
+  "category": { "ar": "أبراج سكنية · ضيافة", "en": "Residential towers · Hospitality" },
+  "title": {
+    "ar": "عين مكة — وجهة سكنية قرب الحرم من مكيون",
+    "en": "Ain Makkah — residential destination near the Haram by Makyon"
+  },
+  "excerpt": {
+    "ar": "مشروع سكني وضيافة في مكة المكرمة يستهدف الزوار والمقيمين الباحثين عن قرب من المنطقة المركزية.",
+    "en": "A residential and hospitality project in Makkah targeting visitors and residents seeking proximity to the central district."
+  },
+  "metaDescription": {
+    "ar": "تعريف بمشروع عين مكة من مكيون — تطوير سكني في مكة المكرمة.",
+    "en": "Overview of Ain Makkah by Makyon — residential development in Makkah."
+  },
+  "services": {
+    "ar": ["شقق فندقية", "سكني", "خدمات", "مواقف"],
+    "en": ["Serviced apartments", "Residential", "Amenities", "Parking"]
+  },
+  "highlights": [
+    { "label": { "ar": "المدينة", "en": "City" }, "value": { "ar": "مكة المكرمة", "en": "Makkah" } },
+    { "label": { "ar": "المطور", "en": "Developer" }, "value": { "ar": "مكيون", "en": "Makyon" } },
+    { "label": { "ar": "النوع", "en": "Type" }, "value": { "ar": "سكني وضيافة", "en": "Residential & hospitality" } }
+  ],
+  "body": {
+    "ar": [
+      { "type": "p", "text": "عين مكة من مشاريع مكيون في مكة المكرمة، ويقدّم وحدات سكنية وضيافة مصممة لتلبية احتياجات الزوار والمقيمين في مدينة مقدسة ذات طلب عقاري مرتفع." },
+      { "type": "p", "text": "يركّز المشروع على جودة التشطيب، سهولة الوصول، وتجربة معيشية عملية — وهو نموذج على محفظة مكيون في المدن الكبرى والوجهات الدينية." }
+    ],
+    "en": [
+      { "type": "p", "text": "Ain Makkah is a Makyon development in Makkah offering residential and hospitality units tailored to visitors and residents in one of the Kingdom's highest-demand real-estate markets." },
+      { "type": "p", "text": "The project emphasizes finish quality, accessibility, and practical liveability — representative of Makyon's portfolio across major cities and religious destinations." }
+    ]
+  }
+}

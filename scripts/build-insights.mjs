@@ -26,12 +26,20 @@ function loadArticles() {
 const ARTICLES = loadArticles();
 
 function loadProjects() {
-  if (!fs.existsSync(PROJECTS_DIR)) return [];
-  return fs
-    .readdirSync(PROJECTS_DIR)
-    .filter((f) => f.endsWith('.json'))
-    .map((f) => JSON.parse(fs.readFileSync(path.join(PROJECTS_DIR, f), 'utf8')))
-    .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  const roots = [
+    path.join(ROOT, 'insights/data/projects'),
+    path.join(ROOT, 'insights/data/projects/industry'),
+  ];
+  const items = [];
+  for (const dir of roots) {
+    if (!fs.existsSync(dir)) continue;
+    for (const f of fs.readdirSync(dir).filter((name) => name.endsWith('.json'))) {
+      const data = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+      if (!data.kind) data.kind = 'gh';
+      items.push(data);
+    }
+  }
+  return items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 }
 
 const PROJECTS = loadProjects();
@@ -159,7 +167,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=14">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=12">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=20">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=21">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=9"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -355,10 +363,18 @@ function projectCard(project, lang, p) {
   const href = `projects/${project.slug}${isEn ? '-en' : ''}.html`;
   const readLabel = isEn ? 'View Project' : 'عرض المشروع';
   const arrow = isEn ? 'arrow_forward' : 'arrow_back';
+  const isIndustry = project.kind === 'industry';
+  const badge = isIndustry
+    ? (isEn ? 'Landmark project' : 'مشروع بارز')
+    : (isEn ? 'GH work' : 'من أعمالنا');
+  const badgeClass = isIndustry ? 'gh-ins-proj-badge--industry' : 'gh-ins-proj-badge--gh';
   return `
 <article class="gh-ins-proj-card" data-gh-proj-card>
   <a href="${href}" class="gh-ins-proj-link">
-    <figure class="gh-ins-proj-media"><img src="${p}${project.image}" alt="${esc(L(project.projectName))}" loading="lazy"></figure>
+    <figure class="gh-ins-proj-media">
+      <span class="gh-ins-proj-badge ${badgeClass}">${badge}</span>
+      <img src="${p}${project.image}" alt="${esc(L(project.projectName))}" loading="lazy">
+    </figure>
     <div class="gh-ins-proj-body">
       <div class="gh-ins-proj-meta">
         <span class="gh-ins-proj-dev">${esc(L(project.developer))}</span>
@@ -382,8 +398,8 @@ function featuredProjectsSection(lang) {
   <div class="gh-ins-section-head">
     <h2>${isEn ? 'Featured Projects' : 'مشاريع مميزة'}</h2>
     <p>${isEn
-    ? 'Major developers and landmark launches across the Kingdom — archviz, smart maquettes, CGI films, and interactive sales systems. Order refreshes on each visit.'
-    : 'مطورون كبار ومشاريع بارزة في المملكة — إظهار معماري، مجسمات ذكية، أفلام CGI، ومنصات مبيعات. الترتيب يتغيّر عند كل زيارة.'}</p>
+    ? 'Landmark developments across the Kingdom — plus selected Graphics House deliverables. Cards shuffle on each visit. Industry entries are general information for discovery.'
+    : 'مشاريع بارزة في المملكة — إلى جانب نماذج من أعمال Graphics House. الترتيب يتغيّر عند كل زيارة. بطاقات «مشروع بارز» محتوى تعريفي عام لجذب الزوار.'}</p>
   </div>
   <div class="gh-ins-proj-grid" id="ghInsProjGrid">${cards}</div>
 </section>
@@ -611,6 +627,29 @@ function buildProject(project, lang) {
   const portfolioHref = project.portfolioHref
     ? `${p}${project.portfolioHref}`
     : `${p}portfolio${isEn ? '-en' : ''}.html`;
+  const isIndustry = project.kind === 'industry';
+  const disclaimer = isIndustry
+    ? `<div class="gh-ins-proj-disclaimer" role="note">
+        <p>${isEn
+    ? 'General information for visitors exploring major Saudi developments. This project is by the developer named above — not a Graphics House case study unless the card is marked «GH work». Image is illustrative.'
+    : 'محتوى تعريفي للزوار المهتمين بالمشاريع العقارية الكبرى في المملكة. المشروع من تطوير الجهة المذكورة — وليس دراسة حالة لـ Graphics House ما لم تكن البطاقة «من أعمالنا». الصورة للتوضيح.'}</p>
+      </div>`
+    : '';
+  const footerCta = isIndustry
+    ? `<div class="gh-article-footer-cta">
+          ${project.developerUrl ? `<a href="${esc(project.developerUrl)}" class="gh-btn-editorial gh-btn-editorial--outline" target="_blank" rel="noopener noreferrer">${isEn ? 'Developer website' : 'الموقع الرسمي للمطور'}</a>` : ''}
+          <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Plan Your Visual Launch' : 'خطّط إطلاقك البصري'}</a>
+        </div>`
+    : `<div class="gh-article-footer-cta">
+          <a href="${portfolioHref}" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'View in Portfolio' : 'في معرض الأعمال'}</a>
+          <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Discuss Your Project' : 'ناقش مشروعك'}</a>
+        </div>`;
+  const highlights = (project.highlights || [])
+    .map((h) => `<li><strong>${esc(L(h.label))}</strong> ${esc(L(h.value))}</li>`)
+    .join('');
+  const highlightsHtml = highlights
+    ? `<ul class="gh-ins-proj-highlights">${highlights}</ul>`
+    : '';
 
   const html = `${headBlock(lang, {
     depth: 2,
@@ -640,15 +679,14 @@ ${prefixPaths(header, depth)}
         <p class="gh-dek">${L(project.excerpt)}</p>
         <p class="gh-ins-proj-name"><strong>${isEn ? 'Project' : 'المشروع'}:</strong> ${esc(L(project.projectName))}</p>
       </header>
+      ${disclaimer}
       <img class="gh-article-hero-img" src="${p}${project.image}" alt="${esc(L(project.projectName))}" loading="lazy">
       ${services ? `<div class="gh-ins-proj-tags">${services}</div>` : ''}
       <div class="gh-article-body-wrap">
+        ${highlightsHtml}
         ${bodyHtml}
         ${gallery ? `<div class="gh-ins-proj-gallery">${gallery}</div>` : ''}
-        <div class="gh-article-footer-cta">
-          <a href="${portfolioHref}" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'View in Portfolio' : 'في معرض الأعمال'}</a>
-          <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Discuss Your Project' : 'ناقش مشروعك'}</a>
-        </div>
+        ${footerCta}
       </div>
     </article>
   </div>

@@ -1,0 +1,42 @@
+{
+  "kind": "industry",
+  "slug": "aloula-wadi-dammam",
+  "date": "2023-02",
+  "image": "insights/images/when-to-use-smart-maquette.jpg",
+  "developer": { "ar": "الأولى للتطوير", "en": "Al-Oula Development" },
+  "developerUrl": "https://aloula.sa/",
+  "projectName": { "ar": "وادي الدمام", "en": "Wadi Dammam" },
+  "city": { "ar": "الدمام", "en": "Dammam" },
+  "category": { "ar": "مجتمع سكني · المنطقة الشرقية", "en": "Residential community · Eastern Province" },
+  "title": {
+    "ar": "وادي الدمام — توسع الأولى للتطوير في الشرقية",
+    "en": "Wadi Dammam — Al-Oula Development's Eastern Province expansion"
+  },
+  "excerpt": {
+    "ar": "مشروع سكني في الدمام يعكس توجه الأولى للتطوير نحو تنويع المحفظة خارج جدة والرياض.",
+    "en": "A Dammam residential project reflecting Al-Oula's strategy to diversify beyond Jeddah and Riyadh."
+  },
+  "metaDescription": {
+    "ar": "تعريف بمشروع وادي الدمام من الأولى للتطوير في المنطقة الشرقية.",
+    "en": "Overview of Wadi Dammam by Al-Oula Development in the Eastern Province."
+  },
+  "services": {
+    "ar": ["سكني", "مرافق", "بنية تحتية", "مجتمع متكامل"],
+    "en": ["Residential", "Amenities", "Infrastructure", "Master-planned community"]
+  },
+  "highlights": [
+    { "label": { "ar": "المدينة", "en": "City" }, "value": { "ar": "الدمام", "en": "Dammam" } },
+    { "label": { "ar": "المنطقة", "en": "Region" }, "value": { "ar": "المنطقة الشرقية", "en": "Eastern Province" } },
+    { "label": { "ar": "المطور", "en": "Developer" }, "value": { "ar": "الأولى للتطوير", "en": "Al-Oula Development" } }
+  ],
+  "body": {
+    "ar": [
+      { "type": "p", "text": "وادي الدمام من مشاريع الأولى للتطوير في المنطقة الشرقية، ويمثّل خطوة في توسيع حضور الشركة في أسواق الخليج الشرقي. يركّز المشروع على تقديم خيارات سكنية للعائلات في بيئة مخططة بعناية." },
+      { "type": "p", "text": "يأتي المشروع في إطار نمو الطلب السكني في الدمام والخبر، مع تركيز المطور على الجودة والالتزام بمعايير التطوير السعودية." }
+    ],
+    "en": [
+      { "type": "p", "text": "Wadi Dammam is an Al-Oula Development project in the Eastern Province, extending the company's footprint into the Gulf coast market. It focuses on family housing within a carefully master-planned environment." },
+      { "type": "p", "text": "The development aligns with rising housing demand in Dammam and Khobar, with the developer emphasizing quality and Saudi development standards." }
+    ]
+  }
+}

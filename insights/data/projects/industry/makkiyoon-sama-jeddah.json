@@ -1,0 +1,42 @@
+{
+  "kind": "industry",
+  "slug": "makkiyoon-sama-jeddah",
+  "date": "2023-04",
+  "image": "insights/images/cinematic-cgi-vs-static-renders.jpg",
+  "developer": { "ar": "مكيون", "en": "Makyon" },
+  "developerUrl": "https://makyon.sa/",
+  "projectName": { "ar": "سما جدة", "en": "Sama Jeddah" },
+  "city": { "ar": "جدة", "en": "Jeddah" },
+  "category": { "ar": "أبراج سكنية · واجهة بحرية", "en": "Residential towers · Coastal corridor" },
+  "title": {
+    "ar": "سما جدة — أبراج سكنية على كورنيش جدة",
+    "en": "Sama Jeddah — residential towers on Jeddah's waterfront corridor"
+  },
+  "excerpt": {
+    "ar": "تطوير سكني في جدة يقدّم وحدات بإطلالات حضرية وبحرية في أحد أكثر أسواق العقار طلباً على الساحل الغربي.",
+    "en": "A Jeddah residential development offering units with urban and coastal views in one of the west coast's strongest property markets."
+  },
+  "metaDescription": {
+    "ar": "تعريف بمشروع سما جدة من مكيون — أبراج سكنية في جدة.",
+    "en": "Overview of Sama Jeddah by Makyon — residential towers in Jeddah."
+  },
+  "services": {
+    "ar": ["شقق", "إطلالات", "مرافق", "مواقف"],
+    "en": ["Apartments", "Views", "Amenities", "Parking"]
+  },
+  "highlights": [
+    { "label": { "ar": "المدينة", "en": "City" }, "value": { "ar": "جدة", "en": "Jeddah" } },
+    { "label": { "ar": "النوع", "en": "Type" }, "value": { "ar": "أبراج سكنية", "en": "Residential towers" } },
+    { "label": { "ar": "المطور", "en": "Developer" }, "value": { "ar": "مكيون", "en": "Makyon" } }
+  ],
+  "body": {
+    "ar": [
+      { "type": "p", "text": "سما جدة من مشاريع مكيون البارزة في مدينة جدة، ويقدّم وحدات سكنية في أبراج مصممة للعائلات والمستثمرين الراغبين في موقع قريب من الكورنيش ومراكز الخدمات." },
+      { "type": "p", "text": "يمثل المشروع أحد محاور نمو مكيون على الساحل الغربي، إلى جانب محفظة واسعة في الرياض ومكة والمدن الأخرى." }
+    ],
+    "en": [
+      { "type": "p", "text": "Sama Jeddah is a flagship Makyon project in Jeddah, offering residential units in towers designed for families and investors seeking proximity to the corniche and urban services." },
+      { "type": "p", "text": "It represents one pillar of Makyon's west-coast growth, alongside a broad portfolio in Riyadh, Makkah, and other cities." }
+    ]
+  }
+}

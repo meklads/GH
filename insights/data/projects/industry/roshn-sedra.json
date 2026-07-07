@@ -1,0 +1,42 @@
+{
+  "kind": "industry",
+  "slug": "roshn-sedra",
+  "date": "2023-12",
+  "image": "insights/images/roi-architectural-visualization.jpg",
+  "developer": { "ar": "روشن", "en": "ROSHN" },
+  "developerUrl": "https://www.roshn.sa/",
+  "projectName": { "ar": "سِدرا", "en": "SEDRA" },
+  "city": { "ar": "الرياض", "en": "Riyadh" },
+  "category": { "ar": "مجتمع سكني وطني · PIF", "en": "National residential community · PIF" },
+  "title": {
+    "ar": "سِدرا — أول مجتمعات روشن السكنية في الرياض",
+    "en": "SEDRA — ROSHN's flagship residential community in Riyadh"
+  },
+  "excerpt": {
+    "ar": "أحد أكبر المجتمعات السكنية في المملكة: مشروع روشن الرائد في شمال الرياض بعشرات آلاف الوحدات.",
+    "en": "One of the Kingdom's largest residential communities: ROSHN's flagship north-Riyadh development with tens of thousands of homes."
+  },
+  "metaDescription": {
+    "ar": "تعريف بمجتمع سِدرا من روشن — مشروع سكني ضخم في شمال الرياض.",
+    "en": "Overview of ROSHN SEDRA — a major residential community in north Riyadh."
+  },
+  "services": {
+    "ar": ["فلل", "تاون هاوس", "مدارس", "مرافق مجتمعية"],
+    "en": ["Villas", "Townhouses", "Schools", "Community amenities"]
+  },
+  "highlights": [
+    { "label": { "ar": "المساحة التقريبية", "en": "Approx. area" }, "value": { "ar": "نحو 20 مليون م²", "en": "~20 million sqm" } },
+    { "label": { "ar": "الوحدات المستهدفة", "en": "Target homes" }, "value": { "ar": "نحو 30 ألف منزل", "en": "~30,000 homes" } },
+    { "label": { "ar": "الموقع", "en": "Location" }, "value": { "ar": "شمال الرياض", "en": "North Riyadh" } }
+  ],
+  "body": {
+    "ar": [
+      { "type": "p", "text": "سِدرا هو المجتمع السكني الرائد لشركة روشن — الذراع العقاري لصندوق الاستثمارات العامة — في شمال الرياض. يُعد من أكبر المخططات السكنية المتكاملة في المنطقة، ويجمع الفلل والتاون هاوس والمرافق التعليمية والتجارية." },
+      { "type": "p", "text": "يمثل المشروع ركيزة رؤية روشن لرفع ملكية السكن في المملكة، مع معايير تصميم واستدامة عالية وشراكات مع مطورين ومقاولين محليين ودوليين." }
+    ],
+    "en": [
+      { "type": "p", "text": "SEDRA is ROSHN's — the Public Investment Fund's real-estate arm — flagship residential community in north Riyadh. It is among the region's largest integrated housing masterplans, combining villas, townhouses, schools, and retail." },
+      { "type": "p", "text": "The project anchors ROSHN's mission to raise home ownership in the Kingdom, with high design and sustainability standards and partnerships across local and international delivery teams." }
+    ]
+  }
+}
