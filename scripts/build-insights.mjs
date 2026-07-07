@@ -13,9 +13,6 @@ const ROOT = path.join(__dirname, '..');
 const DATA = JSON.parse(fs.readFileSync(path.join(ROOT, 'insights/data/content.json'), 'utf8'));
 const ARTICLES_DIR = path.join(ROOT, 'insights/data/articles');
 const PROJECTS_DIR = path.join(ROOT, 'insights/data/projects');
-const LANDMARKS_DATA = JSON.parse(
-  fs.readFileSync(path.join(ROOT, 'insights/data/saudi-landmarks.json'), 'utf8')
-);
 
 function loadProjects() {
   if (!fs.existsSync(PROJECTS_DIR)) return [];
@@ -194,7 +191,7 @@ function hubSubNav(lang) {
   const items = [
     { id: 'articles', label: isEn ? 'Featured Articles' : 'مقالات مميزة', icon: 'article' },
     { id: 'cities', label: isEn ? 'Cities' : 'المدن', icon: 'location_city' },
-    { id: 'projects', label: isEn ? 'Our Projects' : 'مشاريعنا', icon: 'apartment' },
+    { id: 'projects', label: isEn ? 'Featured Projects' : 'مشاريع مميزة', icon: 'apartment' },
     { id: 'ai-tools', label: isEn ? 'AI Tools' : 'أدوات الذكاء الاصطناعي', icon: 'smart_toy' },
     { id: 'downloads', label: isEn ? 'Downloads' : 'التحميلات', icon: 'download' },
     { id: 'newsletter', label: isEn ? 'Newsletter' : 'النشرة', icon: 'mail' },
@@ -377,52 +374,21 @@ function projectCard(project, lang, p) {
 </article>`;
 }
 
-function landmarkCard(item, lang, p) {
-  const isEn = lang === 'en';
-  const L = (key) => (isEn ? key.en : key.ar);
-  return `
-<article class="gh-ins-landmark-card">
-  <figure class="gh-ins-landmark-media">
-    <img src="${p}${item.image}" alt="${esc(L(item.name))}" loading="lazy">
-  </figure>
-  <div class="gh-ins-landmark-body">
-    <div class="gh-ins-landmark-meta">
-      <span class="gh-ins-landmark-region">${esc(L(item.region))}</span>
-    </div>
-    <h3>${esc(L(item.name))}</h3>
-    <p class="gh-ins-landmark-brief">${esc(L(item.brief))}</p>
-  </div>
-</article>`;
-}
-
 function featuredProjectsSection(lang) {
   const isEn = lang === 'en';
-  const L = (key) => (isEn ? key.en : key.ar);
   const p = '../';
-  const ghCards = PROJECTS.map((proj) => projectCard(proj, lang, p)).join('');
-  const landmarkCards = (LANDMARKS_DATA.items || [])
-    .map((item) => landmarkCard(item, lang, p))
-    .join('');
+  const cards = PROJECTS.map((proj) => projectCard(proj, lang, p)).join('');
   return `
 <section class="gh-ins-section gh-ins-panel" id="projects" data-gh-ins-panel="projects">
-  <div class="gh-ins-proj-block">
-    <div class="gh-ins-section-head">
-      <h2>${isEn ? 'Our Projects' : 'مشاريعنا'}</h2>
-      <p>${isEn
-    ? 'Selected Graphics House deliverables — archviz, smart maquettes, CGI films, and interactive sales systems. Order refreshes on each visit.'
-    : 'نماذج من أعمال Graphics House — إظهار معماري، مجسمات ذكية، أفلام CGI، ومنصات مبيعات. الترتيب يتغيّر عند كل زيارة.'}</p>
-    </div>
-    <div class="gh-ins-proj-grid" id="ghInsGhProjGrid">${ghCards}</div>
+  <div class="gh-ins-section-head">
+    <h2>${isEn ? 'Featured Projects' : 'مشاريع مميزة'}</h2>
+    <p>${isEn
+    ? 'Selected Graphics House deliverables across the GCC — archviz, smart maquettes, CGI films, and interactive sales systems. Order refreshes on each visit.'
+    : 'نماذج من أعمال Graphics House في الخليج — إظهار معماري، مجسمات ذكية، أفلام CGI، ومنصات مبيعات. الترتيب يتغيّر عند كل زيارة.'}</p>
   </div>
-  <div class="gh-ins-landmarks-block">
-    <div class="gh-ins-section-head gh-ins-section-head--sub">
-      <h2>${isEn ? "Saudi Arabia's Largest Developments" : 'أكبر مشاريع المملكة'}</h2>
-      <p>${L(LANDMARKS_DATA.disclaimer)}</p>
-    </div>
-    <div class="gh-ins-landmarks-grid">${landmarkCards}</div>
-  </div>
+  <div class="gh-ins-proj-grid" id="ghInsProjGrid">${cards}</div>
 </section>
-<script defer src="../assets/gh-insights-projects.js?v=2"></script>`;
+<script defer src="../assets/gh-insights-projects.js?v=1"></script>`;
 }
 
 function citiesSection(lang) {
@@ -662,7 +628,7 @@ ${prefixPaths(header, depth)}
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html#projects" class="gh-back-link">
       <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_back' : 'arrow_forward'}</span>
-      ${isEn ? 'Back to Our Projects' : 'العودة إلى مشاريعنا'}
+      ${isEn ? 'Back to Featured Projects' : 'العودة إلى المشاريع المميزة'}
     </a>
     <article>
       <header class="gh-article-header">
