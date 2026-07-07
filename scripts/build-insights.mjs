@@ -7,6 +7,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { analyticsHeadTags } from './analytics-snippet.mjs';
+import { getLayout } from './layout-partials.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -38,19 +39,6 @@ const PROJECTS = loadProjects();
 function extract(html, pattern) {
   const m = html.match(pattern);
   return m ? m[1] : '';
-}
-
-function getLayout(lang) {
-  const file = lang === 'en' ? 'index.html' : 'index-ar.html';
-  const html = fs.readFileSync(path.join(ROOT, file), 'utf8');
-  const header = extract(html, /(<header class="header" id="header">[\s\S]*?<\/header>)/);
-  const footer = extract(
-    html,
-    lang === 'en'
-      ? /(<footer dir="ltr"[\s\S]*?<\/footer>)/
-      : /(<footer dir="rtl"[\s\S]*?<\/footer>)/
-  );
-  return { header, footer };
 }
 
 function esc(s) {
@@ -482,7 +470,7 @@ function hubExcerpt(article, lang) {
 
 function buildHub(lang) {
   const isEn = lang === 'en';
-  const { header, footer } = getLayout(lang);
+  const { header, footer } = getLayout(lang, 1);
   const featured = ARTICLES.find((a) => a.featured) || ARTICLES[0];
   const rest = ARTICLES.filter((a) => a.slug !== featured.slug);
   const p = '../';
@@ -500,7 +488,7 @@ function buildHub(lang) {
       : 'مركز معرفة متميز للإظهار المعماري، الـ CGI السينمائي، التجارب التفاعلية، وتسويق العقار — من Graphics House.',
     canonical: `https://3dgraphicshouse.com/insights/${isEn ? 'index-en.html' : 'index.html'}`,
   })}
-${prefixPaths(header, 1)}
+${header}
 <main class="gh-insights-page">
   <header class="gh-ins-hero">
     <span class="gh-kicker">Graphics House · Insights</span>
@@ -529,7 +517,7 @@ ${prefixPaths(header, 1)}
     </div>
   </div>
 </main>
-${prefixPaths(footer, 1)}
+${footer}
 ${hubTabScript()}
 ${tailScripts(1)}`;
 
@@ -541,8 +529,8 @@ ${tailScripts(1)}`;
 function buildArticle(article, lang) {
   const isEn = lang === 'en';
   const L = (key) => (isEn ? key.en : key.ar);
-  const { header, footer } = getLayout(lang);
   const depth = 2;
+  const { header, footer } = getLayout(lang, depth);
   const p = '../../';
   const slug = `${article.slug}${isEn ? '-en' : ''}.html`;
   const bodyHtml = renderBody(L(article.body));
@@ -558,7 +546,7 @@ function buildArticle(article, lang) {
     ogType: 'article',
   })}
 <script type="application/ld+json">${articleSchema(article, lang)}</script>
-${prefixPaths(header, depth)}
+${header}
 <main class="gh-article-page-wrap">
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">
@@ -585,7 +573,7 @@ ${prefixPaths(header, depth)}
     </article>
   </div>
 </main>
-${prefixPaths(footer, depth)}
+${footer}
 ${tailScripts(depth)}`;
 
   fs.writeFileSync(path.join(ROOT, 'insights/articles', slug), html, 'utf8');
@@ -595,8 +583,8 @@ ${tailScripts(depth)}`;
 function buildProject(project, lang) {
   const isEn = lang === 'en';
   const L = (key) => (isEn ? key.en : key.ar);
-  const { header, footer } = getLayout(lang);
   const depth = 2;
+  const { header, footer } = getLayout(lang, depth);
   const p = '../../';
   const slug = `${project.slug}${isEn ? '-en' : ''}.html`;
   const body = project.body?.[isEn ? 'en' : 'ar'] || project.body?.en || [];
@@ -625,7 +613,7 @@ function buildProject(project, lang) {
     ogType: 'article',
   })}
 <script type="application/ld+json">${projectSchema(project, lang)}</script>
-${prefixPaths(header, depth)}
+${header}
 <main class="gh-article-page-wrap">
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html#projects" class="gh-back-link">
@@ -656,7 +644,7 @@ ${prefixPaths(header, depth)}
     </article>
   </div>
 </main>
-${prefixPaths(footer, depth)}
+${footer}
 ${tailScripts(depth)}`;
 
   fs.mkdirSync(path.join(ROOT, 'insights/projects'), { recursive: true });
@@ -666,8 +654,8 @@ ${tailScripts(depth)}`;
 
 function buildLaunchChecklist(lang) {
   const isEn = lang === 'en';
-  const { header, footer } = getLayout(lang);
   const depth = 2;
+  const { header, footer } = getLayout(lang, depth);
   const items = isEn
     ? [
         'Project positioning and target buyer persona defined',
@@ -713,7 +701,7 @@ function buildLaunchChecklist(lang) {
       : '12 بنداً أساسياً قبل الإطلاق البصري لمشروعك العقاري.',
     canonical: `https://3dgraphicshouse.com/insights/tools/launch-checklist${isEn ? '-en' : ''}.html`,
   })}
-${prefixPaths(header, depth)}
+${header}
 <main class="gh-tool-page-wrap">
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">
@@ -734,7 +722,7 @@ ${prefixPaths(header, depth)}
     </div>
   </div>
 </main>
-${prefixPaths(footer, depth)}
+${footer}
 <script defer src="../../assets/gh-launch-checklist.js?v=1"></script>
 ${tailScripts(depth)}`;
 
@@ -746,7 +734,7 @@ ${tailScripts(depth)}`;
 
 function buildSolutionFinder(lang) {
   const isEn = lang === 'en';
-  const { header, footer } = getLayout(lang);
+  const { header, footer } = getLayout(lang, 2);
 
   const html = `${headBlock(lang, {
     depth: 2,
@@ -756,7 +744,7 @@ function buildSolutionFinder(lang) {
       : '7 أسئلة للتوصية بين GrowthLaunch وProjectLaunch وBrandScale — مع روابط للخدمات.',
     canonical: `https://3dgraphicshouse.com/insights/tools/solution-finder${isEn ? '-en' : ''}.html`,
   })}
-${prefixPaths(header, 2)}
+${header}
 <main class="gh-tool-page-wrap">
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">
@@ -776,7 +764,7 @@ ${prefixPaths(header, 2)}
     </div>
   </div>
 </main>
-${prefixPaths(footer, 2)}
+${footer}
 <script defer src="../../assets/gh-solution-finder.js?v=2"></script>
 ${tailScripts(2)}`;
 
@@ -787,7 +775,7 @@ ${tailScripts(2)}`;
 
 function buildBriefTemplate(lang) {
   const isEn = lang === 'en';
-  const { header, footer } = getLayout(lang);
+  const { header, footer } = getLayout(lang, 2);
   const fields = isEn
     ? [
         ['Project name', 'text', 'project_name'],
@@ -834,7 +822,7 @@ function buildBriefTemplate(lang) {
       : 'عبّئ هذا النموذج قبل أول اجتماع مع فريق جرافيكس هاوس.',
     canonical: `https://3dgraphicshouse.com/insights/tools/project-brief${isEn ? '-en' : ''}.html`,
   })}
-${prefixPaths(header, 2)}
+${header}
 <main class="gh-tool-page-wrap">
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">
@@ -857,7 +845,7 @@ ${prefixPaths(header, 2)}
     </div>
   </div>
 </main>
-${prefixPaths(footer, 2)}
+${footer}
 ${tailScripts(2)}`;
 
   const out = `insights/tools/project-brief${isEn ? '-en' : ''}.html`;

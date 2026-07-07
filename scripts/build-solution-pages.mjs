@@ -6,6 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { analyticsHeadTags } from './analytics-snippet.mjs';
+import { renderFooter } from './layout-partials.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SOLUTIONS = path.join(ROOT, 'solutions');
@@ -176,12 +177,6 @@ function headerPlaceholder(isEn) {
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
 `;
-}
-
-function footerPlaceholder(isEn) {
-  return isEn
-    ? `<footer dir="ltr" style="background:#071810;color:#fff;font-family:'Inter','Tajawal',sans-serif"><div style="padding:40px;text-align:center;font-size:12px">© Graphics House</div></footer>`
-    : `<footer dir="rtl" style="background:#071810;color:#fff;font-family:'Tajawal','Inter',sans-serif"><div style="padding:40px;text-align:center;font-size:12px">© Graphics House</div></footer>`;
 }
 
 function growthLaunchEnMain() {
@@ -801,7 +796,7 @@ const glEn = head({
   css: 'growth-launch',
   dir: 'ltr',
   lang: 'en',
-}) + headerPlaceholder(true) + growthLaunchEnMain() + footerPlaceholder(true) + '\n</body>\n</html>\n';
+}) + headerPlaceholder(true) + growthLaunchEnMain() + renderFooter(1, true) + '\n</body>\n</html>\n';
 
 fs.writeFileSync(path.join(SOLUTIONS, 'growth-launch-en.html'), glEn);
 
@@ -813,7 +808,7 @@ const plAr = head({
   css: 'project-launch',
   dir: 'rtl',
   lang: 'ar',
-}) + headerPlaceholder(false) + projectLaunchMain('ar') + footerPlaceholder(false) + '\n</body>\n</html>\n';
+}) + headerPlaceholder(false) + projectLaunchMain('ar') + renderFooter(1, false) + '\n</body>\n</html>\n';
 
 fs.writeFileSync(path.join(SOLUTIONS, 'project-launch.html'), plAr);
 
@@ -825,7 +820,7 @@ const plEn = head({
   css: 'project-launch',
   dir: 'ltr',
   lang: 'en',
-}) + headerPlaceholder(true) + projectLaunchMain('en') + footerPlaceholder(true) + '\n</body>\n</html>\n';
+}) + headerPlaceholder(true) + projectLaunchMain('en') + renderFooter(1, true) + '\n</body>\n</html>\n';
 
 fs.writeFileSync(path.join(SOLUTIONS, 'project-launch-en.html'), plEn);
 
@@ -1177,7 +1172,7 @@ const bsAr = head({
   css: 'brand-scale',
   dir: 'rtl',
   lang: 'ar',
-}) + headerPlaceholder(false) + brandScaleMain('ar') + footerPlaceholder(false) + '\n</body>\n</html>\n';
+}) + headerPlaceholder(false) + brandScaleMain('ar') + renderFooter(1, false) + '\n</body>\n</html>\n';
 
 fs.writeFileSync(path.join(SOLUTIONS, 'brand-scale.html'), bsAr);
 
@@ -1189,7 +1184,7 @@ const bsEn = head({
   css: 'brand-scale',
   dir: 'ltr',
   lang: 'en',
-}) + headerPlaceholder(true) + brandScaleMain('en') + footerPlaceholder(true) + '\n</body>\n</html>\n';
+}) + headerPlaceholder(true) + brandScaleMain('en') + renderFooter(1, true) + '\n</body>\n</html>\n';
 
 fs.writeFileSync(path.join(SOLUTIONS, 'brand-scale-en.html'), bsEn);
 

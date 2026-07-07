@@ -6,6 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { analyticsHeadTags } from './analytics-snippet.mjs';
+import { getLayout } from './layout-partials.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -15,19 +16,6 @@ const OUT_DIR = path.join(ROOT, 'locations');
 function extract(html, pattern) {
   const m = html.match(pattern);
   return m ? m[1] : '';
-}
-
-function getLayout(lang) {
-  const file = lang === 'en' ? 'index.html' : 'index-ar.html';
-  const html = fs.readFileSync(path.join(ROOT, file), 'utf8');
-  const header = extract(html, /(<header class="header" id="header">[\s\S]*?<\/header>)/);
-  const footer = extract(
-    html,
-    lang === 'en'
-      ? /(<footer dir="ltr"[\s\S]*?<\/footer>)/
-      : /(<footer dir="rtl"[\s\S]*?<\/footer>)/
-  );
-  return { header, footer };
 }
 
 function esc(s) {
@@ -302,8 +290,8 @@ function gallerySection(data, lang, p) {
 
 function buildPage(data, lang) {
   const isEn = lang === 'en';
-  const { header, footer } = getLayout(lang);
   const depth = 1;
+  const { header, footer } = getLayout(lang, depth);
   const p = '../';
   const slug = data.slug;
   const outName = `${slug}${isEn ? '-en' : ''}.html`;
@@ -346,7 +334,7 @@ function buildPage(data, lang) {
     phone: data.office.phone,
     heroImage: data.heroImage,
   })}
-${prefixPaths(header, depth)}
+${header}
 <main>
   <section class="gh-loc-hero${data.narrative ? ' gh-loc-hero--rich' : ''}">
     <div class="gh-loc-hero-inner">
@@ -399,7 +387,7 @@ ${prefixPaths(header, depth)}
     </div>
   </section>
 </main>
-${prefixPaths(footer, depth)}
+${footer}
 ${tailScripts()}`;
 
   fs.mkdirSync(OUT_DIR, { recursive: true });

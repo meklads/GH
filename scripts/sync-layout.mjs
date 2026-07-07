@@ -6,6 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { renderPartial } from './layout-partials.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -72,17 +73,6 @@ function buildPartials() {
   fs.writeFileSync(path.join(PARTIALS, 'header-en.html'), toPartial(enHeader));
   fs.writeFileSync(path.join(PARTIALS, 'header-ar.html'), toPartial(arHeader));
   // Footer partials are edited directly in partials/footer-*.html (not extracted from index pages).
-}
-
-function renderPartial(name, depth, isEn) {
-  const prefix = depth > 0 ? '../'.repeat(depth) : '';
-  const home = isEn
-    ? (depth > 0 ? `${prefix}index.html` : '/')
-    : (depth > 0 ? `${prefix}index-ar.html` : '/index-ar.html');
-  return fs
-    .readFileSync(path.join(PARTIALS, name), 'utf8')
-    .replaceAll('{{PREFIX}}', prefix)
-    .replaceAll('{{HOME}}', home);
 }
 
 function fixCorruption(html) {
@@ -193,6 +183,21 @@ function syncFile(rel) {
   return rel;
 }
 
+function syncFooterOnly(rel) {
+  const full = path.join(ROOT, rel);
+  let html = fs.readFileSync(full, 'utf8');
+  if (!html.match(/<footer dir="(?:ltr|rtl)"/)) return null;
+
+  const en = isEnglishPage(rel, html);
+  const depth = depthOf(rel);
+  const footer = renderPartial(en ? 'footer-en.html' : 'footer-ar.html', depth, en);
+  html = html.replace(/<footer dir="(?:ltr|rtl)"[\s\S]*?<\/footer>/, footer);
+  fs.writeFileSync(full, html, 'utf8');
+  return rel;
+}
+
 buildPartials();
 const updated = collectHtmlFiles(ROOT).map(syncFile).filter(Boolean);
+const footerOnly = ['gh-admin.html'].map(syncFooterOnly).filter(Boolean);
 console.log(`Synced ${updated.length} pages`);
+if (footerOnly.length) console.log(`Footer-only sync: ${footerOnly.join(', ')}`);

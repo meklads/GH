@@ -72,6 +72,25 @@ for (const rel of collectHtml(ROOT)) {
   if (!insightsPattern.test(html)) {
     issues.push(`${rel}: missing Insights / رؤى nav link`);
   }
+
+  if (html.includes('<footer dir=')) {
+    const footerOk = en
+      ? html.includes('Quick Links') && !html.includes('Saudi Cities') && !html.includes('gh-lang-alt')
+      : html.includes('روابط مهمة') && !html.includes('المدن السعودية') && !html.includes('gh-lang-alt');
+    if (!footerOk) issues.push(`${rel}: outdated footer layout`);
+  }
+}
+
+for (const rel of collectHtml(ROOT)) {
+  if (SKIP.has(rel)) continue;
+  const html = fs.readFileSync(path.join(ROOT, rel), 'utf8');
+  if (!html.includes('<footer dir=')) continue;
+
+  const en = isEnglishPage(rel, html);
+  const footerOk = en
+    ? html.includes('Quick Links') && !html.includes('Saudi Cities') && !html.includes('gh-lang-alt')
+    : html.includes('روابط مهمة') && !html.includes('المدن السعودية') && !html.includes('gh-lang-alt');
+  if (!footerOk) issues.push(`${rel}: outdated footer layout`);
 }
 
 console.log(`Checked ${checked} pages with site header.`);
@@ -82,4 +101,4 @@ if (issues.length) {
   process.exit(1);
 }
 
-console.log('All header/nav checks passed.');
+console.log('All header/nav/footer checks passed.');
