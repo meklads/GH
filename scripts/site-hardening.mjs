@@ -321,6 +321,34 @@ if (fs.existsSync(enPath)) {
   );
 }
 
+function writeDirRedirect(fromDir, toPath) {
+  const dirPath = path.join(ROOT, fromDir);
+  fs.mkdirSync(dirPath, { recursive: true });
+  fs.writeFileSync(
+    path.join(dirPath, 'index.html'),
+    `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0;url=/${toPath}">
+  <link rel="canonical" href="${BASE}/${toPath}">
+  <meta name="robots" content="noindex,follow">
+  <title>Redirecting…</title>
+  <script>location.replace('/${toPath}');</script>
+</head>
+<body><p><a href="/${toPath}">Continue</a></p></body>
+</html>
+`,
+    'utf8'
+  );
+}
+
+// Legacy trailing-slash URLs seen in GSC → current pages
+writeDirRedirect('privacy-policy', 'privacy-policy.html');
+writeDirRedirect('folio', 'portfolio.html');
+writeDirRedirect('interactive-presentation', 'services/interactive.html');
+writeDirRedirect('contact', 'contact-us.html');
+
 // Disable gh-admin client password
 const adminPath = path.join(ROOT, 'gh-admin.html');
 if (fs.existsSync(adminPath)) {
