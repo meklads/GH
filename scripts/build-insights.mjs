@@ -158,7 +158,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=14">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=12">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=22">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=23">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=9"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
@@ -258,9 +258,11 @@ function newsletterSection(lang) {
     : 'احصل على رؤى حصرية، موارد الذكاء الاصطناعي، استراتيجيات العروض، ومعرفة صناعية مصممة لمطوري العقار.'}</p>
     <form class="gh-ins-newsletter-form" data-gh-newsletter novalidate>
       <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
-      <input type="email" name="email" placeholder="${isEn ? 'Your email address' : 'بريدك الإلكتروني'}" required autocomplete="email">
-      <button type="submit">${isEn ? 'Subscribe' : 'اشترك'}</button>
-      <div class="gh-turnstile"></div>
+      <div class="gh-ins-newsletter-row">
+        <input type="email" name="email" placeholder="${isEn ? 'Your email address' : 'بريدك الإلكتروني'}" required autocomplete="email">
+        <button type="submit">${isEn ? 'Subscribe' : 'اشترك'}</button>
+      </div>
+      <div class="gh-turnstile" aria-label="${isEn ? 'Anti-spam verification' : 'التحقق من عدم الإزعاج'}"></div>
     </form>
     <div class="gh-ins-newsletter-msg gh-newsletter-msg" role="status"></div>
   </div>
