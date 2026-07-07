@@ -637,7 +637,7 @@ function buildProject(project, lang) {
     : '';
   const footerCta = isIndustry
     ? `<div class="gh-article-footer-cta">
-          ${project.developerUrl ? `<a href="${esc(project.developerUrl)}" class="gh-btn-editorial gh-btn-editorial--outline" target="_blank" rel="noopener noreferrer">${isEn ? 'Developer website' : 'الموقع الرسمي للمطور'}</a>` : ''}
+          <a href="../${isEn ? 'index-en' : 'index'}.html#projects" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'More Featured Projects' : 'مزيد من المشاريع المميزة'}</a>
           <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Plan Your Visual Launch' : 'خطّط إطلاقك البصري'}</a>
         </div>`
     : `<div class="gh-article-footer-cta">
