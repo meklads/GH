@@ -290,6 +290,20 @@ fs.writeFileSync(
   path.join(ROOT, 'robots.txt'),
   `User-agent: *
 Allow: /
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-admin/
+Disallow: /wp-*.php
+Disallow: /goods/
+Disallow: /shopdetail/
+Disallow: /product/
+Disallow: /pcmypage
+Disallow: /us-store_
+Disallow: /search
+Disallow: /recruit
+Disallow: /events/
+Disallow: /feature/
+Disallow: /lander
 Disallow: /gh-admin.html
 Disallow: /home-v2-backup.html
 Disallow: /en-backup.html
@@ -343,11 +357,45 @@ function writeDirRedirect(fromDir, toPath) {
   );
 }
 
+function writeFileRedirect(fromFile, toPath) {
+  fs.writeFileSync(
+    path.join(ROOT, fromFile),
+    `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0;url=/${toPath}">
+  <link rel="canonical" href="${BASE}/${toPath}">
+  <meta name="robots" content="noindex,follow">
+  <title>Redirecting…</title>
+  <script>location.replace('/${toPath}');</script>
+</head>
+<body><p><a href="/${toPath}">Continue</a></p></body>
+</html>
+`,
+    'utf8'
+  );
+}
+
 // Legacy trailing-slash URLs seen in GSC → current pages
 writeDirRedirect('privacy-policy', 'privacy-policy.html');
 writeDirRedirect('folio', 'portfolio.html');
 writeDirRedirect('interactive-presentation', 'services/interactive.html');
 writeDirRedirect('contact', 'contact-us.html');
+writeDirRedirect('portfolio', 'portfolio.html');
+writeDirRedirect('who-we-are', 'who-we-are.html');
+writeDirRedirect('faq', 'faq.html');
+writeDirRedirect('media-production', 'media-production.html');
+writeDirRedirect('blog', 'insights/index.html');
+writeDirRedirect('scale-models', 'services/maquettes.html');
+writeDirRedirect('3d-animation', 'services/animation.html');
+writeDirRedirect('motion-graphic', 'services/animation.html');
+writeDirRedirect('clients', 'who-we-are.html');
+writeDirRedirect('career', 'index-ar.html');
+writeDirRedirect('contact-us-2', 'contact-us.html');
+
+// One-off spam slug
+writeFileRedirect('boyslove.html', 'index-ar.html');
 
 // Disable gh-admin client password
 const adminPath = path.join(ROOT, 'gh-admin.html');
