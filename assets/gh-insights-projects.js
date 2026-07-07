@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  var grid = document.getElementById('ghInsProjGrid');
+  var grid = document.getElementById('ghInsGhProjGrid');
   if (!grid) return;
   var cards = Array.prototype.slice.call(grid.querySelectorAll('[data-gh-proj-card]'));
   if (cards.length < 2) return;

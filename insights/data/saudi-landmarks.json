@@ -1,0 +1,108 @@
+{
+  "disclaimer": {
+    "ar": "محتوى تعريفي عام عن أبرز المشاريع الوطنية — للاطلاع فقط. الصور توضيحية وليست بالضرورة من المشروع نفسه.",
+    "en": "General information about major national developments — for discovery only. Images are illustrative and may not depict the actual project."
+  },
+  "items": [
+    {
+      "id": "neom",
+      "image": "insights/images/ai-archviz-future.jpg",
+      "name": { "ar": "نيوم", "en": "NEOM" },
+      "region": { "ar": "منطقة تبوك", "en": "Tabuk Region" },
+      "brief": {
+        "ar": "أضخم مشروع تنموي في المملكة — مدن مستقبلية وتقنيات متقدمة على مساحة تتجاوز 26 ألف كم²، ضمن رؤية 2030.",
+        "en": "The Kingdom's largest development programme — future cities and advanced technologies across more than 26,000 km², aligned with Vision 2030."
+      }
+    },
+    {
+      "id": "red-sea",
+      "image": "insights/images/cinematic-cgi-vs-static-renders.jpg",
+      "name": { "ar": "مشروع البحر الأحمر", "en": "Red Sea Global" },
+      "region": { "ar": "ساحل البحر الأحمر", "en": "Red Sea Coast" },
+      "brief": {
+        "ar": "وجهة سياحية فاخرة تمتد على آلاف الكيلومترات من السواحل والجزر، تركز على السياحة المستدامة والفخامة.",
+        "en": "A luxury tourism destination spanning thousands of kilometres of coastline and islands, focused on regenerative tourism."
+      }
+    },
+    {
+      "id": "qiddiya",
+      "image": "insights/images/roi-architectural-visualization.jpg",
+      "name": { "ar": "القدية", "en": "Qiddiya" },
+      "region": { "ar": "جنوب غرب الرياض", "en": "Southwest of Riyadh" },
+      "brief": {
+        "ar": "عاصمة الترفيه والرياضة والثقافة — مدينة ضخمة للتجارب العالمية والحدائق الترفيهية والفعاليات.",
+        "en": "Capital of Entertainment, Sports and Culture — a mega-city for world-class experiences, theme parks, and live events."
+      }
+    },
+    {
+      "id": "diriyah",
+      "image": "insights/images/choosing-archviz-studio-gcc.jpg",
+      "name": { "ar": "بوابة الدرعية", "en": "Diriyah Gate" },
+      "region": { "ar": "الدرعية — الرياض", "en": "Diriyah — Riyadh" },
+      "brief": {
+        "ar": "وجهة تراثية وثقافية عالمية تعيد إحياء التاريخ السعودي مع فنادق ومطاعم ومتاحف ومساحات عامة.",
+        "en": "A global heritage and culture destination reviving Saudi history with hotels, dining, museums, and public realm."
+      }
+    },
+    {
+      "id": "roshn",
+      "image": "assets/projects/rendering/alrajhi3.jpeg",
+      "name": { "ar": "روشن", "en": "ROSHN" },
+      "region": { "ar": "عدة مدن في المملكة", "en": "Multiple cities nationwide" },
+      "brief": {
+        "ar": "المطور الوطني للمجتمعات السكنية المتكاملة — ملايين الأمتار المربعة من الوحدات في الرياض وجدة ومكة وغيرها.",
+        "en": "The national developer of integrated residential communities — millions of square metres of homes across Riyadh, Jeddah, Makkah, and beyond."
+      }
+    },
+    {
+      "id": "murabba",
+      "image": "insights/images/visualization-brief-guide.jpg",
+      "name": { "ar": "المربع الجديد", "en": "New Murabba" },
+      "region": { "ar": "وسط الرياض", "en": "Central Riyadh" },
+      "brief": {
+        "ar": "أحد أكبر التطويرات الحضرية في قلب الرياض — أبراج ومكاتب وتجزئة ووجهات عامة على مساحة شاسعة.",
+        "en": "One of the largest urban developments in central Riyadh — towers, offices, retail, and public destinations at massive scale."
+      }
+    },
+    {
+      "id": "jeddah-central",
+      "image": "assets/projects/rendering/jeddah-forum.jpg",
+      "name": { "ar": "وسط جدة", "en": "Jeddah Central" },
+      "region": { "ar": "جدة", "en": "Jeddah" },
+      "brief": {
+        "ar": "إعادة تطوير المنطقة المركزية والواجهة البحرية في جدة — وجهة حضرية متعددة الاستخدامات.",
+        "en": "Redevelopment of Jeddah's central district and waterfront — a mixed-use urban destination on the Red Sea."
+      }
+    },
+    {
+      "id": "king-salman-park",
+      "image": "insights/images/smart-maquette-evolution.jpg",
+      "name": { "ar": "حديقة الملك سلمان", "en": "King Salman Park" },
+      "region": { "ar": "الرياض", "en": "Riyadh" },
+      "brief": {
+        "ar": "من أكبر حدائق المدن في العالم — مساحات خضراء ورياضة وثقافة ومجتمع في قلب العاصمة.",
+        "en": "Among the world's largest urban parks — green space, sport, culture, and community at the heart of the capital."
+      }
+    },
+    {
+      "id": "sports-boulevard",
+      "image": "insights/images/interactive-sales-gallery.jpg",
+      "name": { "ar": "المسار الرياضي", "en": "Sports Boulevard" },
+      "region": { "ar": "الرياض", "en": "Riyadh" },
+      "brief": {
+        "ar": "ممر حضري طولي يربط أحياء الرياض بمسارات للمشي والدراجات والرياضة والفعاليات المجتمعية.",
+        "en": "A linear urban corridor linking Riyadh districts with walking and cycling paths, sport, and community events."
+      }
+    },
+    {
+      "id": "masar",
+      "image": "assets/projects/rendering/kuday-makkah-e1745137682714.jpeg",
+      "name": { "ar": "وجهة مسار", "en": "Masar Destination" },
+      "region": { "ar": "مكة المكرمة", "en": "Makkah" },
+      "brief": {
+        "ar": "مشروع تطوير عمراني وسياحي في مكة المكرمة — بنية تحتية ووجهات وخدمات تدعم الحج والعمرة والإقامة.",
+        "en": "An urban and hospitality development in Makkah — infrastructure and destinations supporting pilgrimage and city life."
+      }
+    }
+  ]
+}
