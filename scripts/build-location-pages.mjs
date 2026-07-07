@@ -110,7 +110,7 @@ ${analyticsHeadTags(p)}
 
 const CLIENT_LOGOS = [
   { file: 'al-oyonypng.png', alt: { ar: 'العيوني', en: 'Al-Oyony' } },
-  { file: 'anan-eskan.png', alt: { ar: 'أنان إسكان', en: 'Anan Eskan' } },
+  { file: 'anan-eskan.png', alt: { ar: 'عنان إسكان للتطوير', en: 'Anan Eskan' } },
   { file: 'toyota.png', alt: { ar: 'تويوتا', en: 'Toyota' } },
   { file: 'imc-150x150.png', alt: { ar: 'المركز الطبي الدولي', en: 'IMC' } },
   { file: 'rafal.png', alt: { ar: 'رفال', en: 'Rafal' } },

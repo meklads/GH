@@ -554,7 +554,7 @@ function projectLaunchMain(lang) {
     },
     {
       img: 'Anan-Escan-Co.01.jpeg',
-      name: isEn ? 'Anan Eskan' : 'أنان إسكان',
+      name: isEn ? 'Anan Eskan' : 'عنان إسكان للتطوير',
       country: isEn ? 'Saudi Arabia' : 'السعودية',
       svc: isEn ? 'Visualization' : 'إظهار معماري',
     },
