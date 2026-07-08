@@ -22,6 +22,18 @@ const ROOT_EN_COPY = {
 
 const BILINGUAL_CLONE = ['interactive.html', 'vr-360.html'];
 
+const RICH_EN_PAGES = new Set([
+  'ai-solutions-en.html',
+  'branding-en.html',
+  'cinematic-cgi-en.html',
+  'digital-marketing-en.html',
+  'interactive-experiences-en.html',
+  'photography-media-en.html',
+  'smart-visualization-en.html',
+  'web-solutions-en.html',
+  'scale-models-en.html',
+]);
+
 const EN_STUBS = {
   'ai-solutions-en.html': {
     icon: 'psychology',
@@ -310,7 +322,7 @@ for (const arFile of BILINGUAL_CLONE) {
 }
 
 for (const [enFile, data] of Object.entries(EN_STUBS)) {
-  if (ROOT_EN_COPY[enFile] || enFile === 'rendering-en.html') continue;
+  if (ROOT_EN_COPY[enFile] || enFile === 'rendering-en.html' || RICH_EN_PAGES.has(enFile)) continue;
   buildEnStub(enFile, data);
 }
 

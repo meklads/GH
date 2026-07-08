@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" dir="ltr" lang="en">
+<html lang="en" dir="ltr">
 <head>
 <script src="../assets/gh-forms-config.js?v=2"></script>
 <!-- Google tag (gtag.js) -->
@@ -23,40 +23,345 @@ gtag('config','G-Y67JVE898Z');
 <link rel="alternate" hreflang="x-default" href="https://3dgraphicshouse.com/services/digital-marketing-en.html">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Digital Marketing | Graphics House</title>
-<meta name="description" content="Digital marketing and lead generation for the GCC real estate sector."/>
+<title>Digital Marketing for Real Estate Developers | Graphics House</title>
+<meta name="description" content="Performance marketing, content, and lead generation for real estate launches across Saudi Arabia and the GCC."/>
 <meta property="og:title" content="Digital Marketing | Graphics House">
-<meta property="og:description" content="Digital marketing and lead generation for the GCC real estate sector.">
+<meta property="og:description" content="Paid media, content, and funnel strategy for property developers.">
 <meta property="og:image" content="https://3dgraphicshouse.com/assets/favicon/og-image.png">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" rel="stylesheet" />
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
 <link rel="stylesheet" href="../assets/site-header.css?v=26">
 <style>
-:root{--gold:#C9A84C;--text-primary:#FAFAF8;--text-secondary:rgba(255,255,255,.7);--border-medium:rgba(255,255,255,.12)}
-body{font-family:'Inter',sans-serif;background:#0A0A0A;color:var(--text-primary);min-height:100vh;display:flex;flex-direction:column}
-.svc-en-hero{flex:1;display:flex;align-items:center;justify-content:center;padding:140px 24px 80px}
-.svc-en-card{max-width:760px;width:100%;text-align:center;padding:56px 40px;background:rgba(255,255,255,.02);border:1px solid var(--border-medium);border-radius:20px}
-.svc-en-icon{font-size:56px;color:var(--gold);margin-bottom:24px}
-.svc-en-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;margin-bottom:16px}
-.svc-en-sub{font-size:clamp(16px,1.4vw,19px);color:var(--text-secondary);line-height:1.75;margin-bottom:32px}
-.svc-en-cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:32px}
-.svc-en-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;transition:all .3s}
-.svc-en-btn-gold{background:#C9A84C;color:#0A0A0A}
-.svc-en-btn-gold:hover{background:#A8883A}
-.svc-en-btn-outline{border:1px solid rgba(255,255,255,.35);color:#FAFAF8}
-.svc-en-btn-outline:hover{border-color:#C9A84C;color:#C9A84C}
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+:root {
+  --gold: #C7A150; --gold-light: #D9B860; --gold-dark: #A8883A;
+  --text-primary: #1A1A1A; --text-secondary: rgba(26,26,26,0.65);
+  --text-muted: rgba(26,26,26,0.4); --bg-white: #FFFFFF;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Tajawal', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #FAFAF8; color: var(--text-primary);
+  overflow-x: hidden; -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--gold); color: #FAFAF8; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+body p, body li, .text-body {
+  font-size: 16px; font-weight: 400;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+body .text-sm { font-size: 14px; line-height: 1.7; }
+body .text-lg { font-size: 18px; line-height: 1.9; }
+
+/* DARK HEADER */
+.dark-header {
+  width: 100%; background: #0A0A0A;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  padding: 18px 0;
+}
+.dark-header-inner {
+  max-width: 1320px; margin: 0 auto; padding: 0 48px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+@media (max-width: 768px) { .dark-header-inner { padding: 0 20px; } }
+.dark-logo img { height: 68px; width: auto; }
+@media (max-width: 768px) { .dark-logo img { height: 52px; } }
+.dark-nav { display: flex; align-items: center; gap: 28px; }
+.dark-nav a {
+  font-size: 16px; font-weight: 500; color: rgba(255,255,255,0.75);
+  text-decoration: none; transition: color 0.3s; position: relative;
+}
+.dark-nav a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 1px; background: var(--gold);
+  transform: scaleX(0); transition: transform 0.3s ease;
+}
+.dark-nav a:hover { color: #fff; }
+.dark-nav a:hover::after { transform: scaleX(1); }
+.dark-nav .nav-cta {
+  padding: 10px 24px; background: #fff; color: #0A0A0A !important;
+  border-radius: 50px; font-size: 13px; font-weight: 700; transition: all 0.3s;
+}
+.dark-nav .nav-cta::after { display: none; }
+.dark-nav .nav-cta:hover { background: #f0f0f0; transform: scale(1.04); color: #0A0A0A !important; }
+.dark-menu-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; }
+.dark-menu-toggle span { font-size: 28px; }
+@media (max-width: 960px) {
+  .dark-nav { display: none; }
+  .dark-menu-toggle { display: flex; z-index: 1001; }
+}
+#mob-nav {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(10,10,10,.98);
+  backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
+  transform: translateX(100%);
+  transition: transform .5s cubic-bezier(0.16,1,0.3,1);
+  overflow-y: auto;
+}
+#mob-nav.open { transform: translateX(0); }
+
+/* GALLERY STRIP */
+.gallery-strip {
+  display: flex; width: 100%; height: 80vh;
+  gap: 0; overflow: hidden; direction: ltr;
+  border-top: 2px solid rgba(201,168,76,0.15);
+  border-bottom: 2px solid rgba(201,168,76,0.15);
+  box-shadow: inset 0 0 60px rgba(0,0,0,0.3), 0 4px 30px rgba(0,0,0,0.15);
+}
+.gallery-strip-item {
+  flex: 1; position: relative; overflow: hidden; cursor: pointer;
+  transition: flex 0.6s cubic-bezier(0.25, 0.1, 0.1, 1), opacity 0.4s ease;
+  min-width: 0;
+}
+.gallery-strip-item img, .gallery-strip-item video {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.1, 1);
+  position: absolute; inset: 0;
+}
+.gallery-strip-item video { opacity: 0; transition: opacity 0.5s ease; }
+.gallery-strip-item:hover video { opacity: 1; }
+.gallery-strip-item:hover { flex: 4; }
+.gallery-strip-item:hover img { transform: scale(1.05); }
+.gallery-strip-item:not(:hover) { flex: 0.7; opacity: 0.7; }
+.gallery-strip-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+  opacity: 0; transition: opacity 0.4s ease; z-index: 2; pointer-events: none;
+}
+.gallery-strip-item:hover .gallery-strip-overlay { opacity: 1; }
+.gallery-strip-label {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 3;
+  padding: 16px; color: #fff;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  opacity: 0; transform: translateY(12px);
+  transition: all 0.4s ease 0.1s; pointer-events: none;
+  font-size: 18px; font-weight: 800; font-family: 'Tajawal', sans-serif;
+  text-align: center; line-height: 1.2;
+}
+.gallery-strip-item:hover .gallery-strip-label { opacity: 1; transform: translateY(0); }
+.gallery-strip-label .vert-en {
+  font-size: 12px; font-weight: 500; font-family: 'Inter', sans-serif;
+  letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85;
+  display: block; margin-top: 4px;
+}
+@media (max-width: 768px) {
+  .gallery-strip { height: 60vh; flex-direction: column; }
+  .gallery-strip-item:not(:hover) { flex: 0.5; opacity: 0.5; }
+  .gallery-strip-item:hover { flex: 4; }
+}
+
+/* SECTIONS */
+section { padding: 90px 0; }
+@media (max-width: 768px) { section { padding: 56px 0; } }
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+  color: var(--gold); display: block; margin-bottom: 12px;
+  font-family: 'Inter', sans-serif; text-transform: uppercase;
+}
+html[dir="rtl"] .section-label {
+  letter-spacing: 0.06em; text-transform: none; font-family: 'Tajawal', sans-serif; font-size: 12px;
+}
+.section-title {
+  font-size: clamp(28px, 3.8vw, 48px);
+  font-weight: 500; line-height: 1.15;
+  margin-bottom: 16px;
+}
+.section-title .gold { color: var(--gold); }
+.section-sub {
+  font-size: 16px; font-weight: 400; color: var(--text-secondary);
+  line-height: 1.8; max-width: 620px; margin-bottom: 48px;
+}
+
+/* FEATURE GRID */
+.feature-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+  background: rgba(26,26,26,0.06); border: 1px solid rgba(26,26,26,0.06);
+}
+.feature-card {
+  background: var(--bg-white); padding: 40px 28px; text-align: center;
+  transition: all 0.4s ease;
+}
+.feature-card:hover { background: #FAFAF8; }
+.feature-card .icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px; transition: all 0.4s ease;
+}
+.feature-card .icon .material-symbols-outlined { font-size: 24px; color: var(--gold); }
+.feature-card:hover .icon {
+  background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.4);
+  transform: translateY(-4px);
+}
+.feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 400; }
+@media (max-width: 1024px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .feature-grid { grid-template-columns: 1fr; } }
+
+/* PORTFOLIO GRID */
+.portfolio-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+.portfolio-item {
+  position: relative; aspect-ratio: 4/3; overflow: hidden;
+  background: #EEE; border: 1px solid rgba(26,26,26,0.06);
+  transition: all 0.5s ease; cursor: pointer;
+}
+.portfolio-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25,0.1,0.1,1);
+}
+.portfolio-item:hover { border-color: rgba(201,168,76,0.2); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+.portfolio-item:hover img { transform: scale(1.06); }
+.portfolio-item-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 24px 18px 16px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  transform: translateY(8px); opacity: 0; transition: all 0.4s ease;
+}
+.portfolio-item:hover .portfolio-item-overlay { transform: translateY(0); opacity: 1; }
+.portfolio-item-category {
+  font-size: 10px; font-weight: 600; color: var(--gold);
+  display: block; letter-spacing: 1px; font-family: 'Inter', sans-serif;
+  text-transform: uppercase; margin-bottom: 4px;
+}
+html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: none; }
+.portfolio-item-title { font-size: 14px; font-weight: 500; color: #fff; display: block; }
+.portfolio-item::before, .portfolio-item::after {
+  content: ''; position: absolute; z-index: 2; pointer-events: none;
+  width: 16px; height: 16px; opacity: 0; transition: all 0.4s ease;
+}
+.portfolio-item::before { top: 8px; left: 8px; border-top: 1.5px solid var(--gold); border-left: 1.5px solid var(--gold); }
+.portfolio-item::after { bottom: 8px; right: 8px; border-bottom: 1.5px solid var(--gold); border-right: 1.5px solid var(--gold); }
+.portfolio-item:hover::before, .portfolio-item:hover::after { opacity: 0.6; }
+@media (max-width: 768px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .portfolio-grid { grid-template-columns: 1fr; } }
+
+/* WHY GRID */
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.why-card { background: var(--bg-white); border: 1px solid rgba(26,26,26,0.06); padding: 32px 24px; text-align: center; transition: all 0.4s ease; }
+.why-card:hover { border-color: rgba(201,168,76,0.2); background: rgba(201,168,76,0.04); transform: translateY(-4px); }
+.why-card .num { font-size: 36px; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 8px; font-family: 'Inter', sans-serif; }
+.why-card h4 { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+.why-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 400; }
+@media (max-width: 1024px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .why-grid { grid-template-columns: 1fr; } }
+
+/* RELATED SERVICES */
+.rel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.rel-card {
+  background: var(--bg-white); border: 1px solid rgba(26,26,26,0.06); padding: 32px 24px; text-align: center;
+  transition: all 0.4s ease; text-decoration: none; color: inherit; display: block;
+}
+.rel-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+.rel-card .icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+  transition: all 0.4s ease;
+}
+.rel-card .icon .material-symbols-outlined { font-size: 24px; color: var(--gold); }
+.rel-card:hover .icon { background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
+.rel-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.rel-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; font-weight: 400; }
+@media (max-width: 1024px) { .rel-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .rel-grid { grid-template-columns: 1fr; } }
+
+/* CTA DIVIDERS */
+.cta-d { padding: 80px 0; text-align: center; }
+.cta-d-inner { max-width: 720px; margin: 0 auto; padding: 0 48px; }
+@media (max-width: 768px) { .cta-d { padding: 48px 0; } .cta-d-inner { padding: 0 20px; } }
+.cta-d h2 { font-size: clamp(26px, 3.2vw, 38px); font-weight: 500; margin-bottom: 12px; line-height: 1.15; }
+.cta-d h2 .gold { color: var(--gold); }
+.cta-d p { font-size: 16px; font-weight: 400; color: var(--text-secondary); margin-bottom: 28px; line-height: 1.7; max-width: 520px; margin-left: auto; margin-right: auto; }
+.btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-p { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: #fff; color: #1A1A1A; font-size: 14px; font-weight: 700; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s; font-family: 'Tajawal', sans-serif; }
+.btn-p:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+.btn-o { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: transparent; color: var(--text-primary); font-size: 14px; font-weight: 600; border: 1.5px solid rgba(26,26,26,0.15); border-radius: 50px; cursor: pointer; transition: all 0.3s; font-family: 'Tajawal', sans-serif; }
+.btn-o:hover { border-color: var(--gold); color: var(--gold-dark); transform: translateY(-2px); }
+.btn-o-light { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: transparent; color: #FAFAF8; font-size: 14px; font-weight: 600; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 50px; cursor: pointer; transition: all 0.3s; font-family: 'Tajawal', sans-serif; }
+.btn-o-light:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+/* CONTACT */
+.contact-s { padding: 80px 0; background: #F5F4F0; }
+.contact-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+@media (max-width: 768px) { .contact-s { padding: 48px 0; } .contact-inner { padding: 0 20px; } }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+.contact-info h3 { font-size: 22px; font-weight: 500; margin-bottom: 12px; }
+.contact-info p { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
+.contact-info-item { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(26,26,26,0.04); font-size: 16px; color: var(--text-secondary); }
+.contact-info-item .material-symbols-outlined { color: var(--gold); font-size: 20px; }
+.form-card { background: var(--bg-white); border: 1px solid rgba(26,26,26,0.08); padding: 40px; }
+@media (max-width: 768px) { .form-card { padding: 24px; } }
+.form-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 20px; }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 5px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 16px; background: rgba(26,26,26,0.03); border: 1px solid rgba(26,26,26,0.1); color: var(--text-primary); font-size: 14px; font-family: 'Tajawal', sans-serif; outline: none; transition: border-color 0.3s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+.form-group select { appearance: none; -webkit-appearance: none; cursor: pointer; }
+.form-group select option { background: #FAFAF8; color: var(--text-primary); }
+.form-group textarea { min-height: 90px; resize: vertical; }
+.form-submit { width: 100%; padding: 15px; background: #fff; color: #1A1A1A; font-size: 15px; font-weight: 700; font-family: 'Tajawal', sans-serif; border: 1px solid rgba(26,26,26,0.1); cursor: pointer; transition: all 0.3s; }
+.form-submit:hover { background: #f0f0f0; }
+
+/* FOOTER */
+.footer { background: #1A1A1A; color: rgba(255,255,255,0.6); padding: 60px 0 30px; }
+.footer-inner { max-width: 1320px; margin: 0 auto; padding: 0 48px; }
+@media (max-width: 768px) { .footer-inner { padding: 0 20px; } }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 24px; }
+@media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer h4 { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.9); margin-bottom: 16px; letter-spacing: 0.05em; }
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { font-size: 14px; color: rgba(255,255,255,0.5); transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-desc { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.45); max-width: 300px; margin-top: 12px; }
+.footer-social { display: flex; gap: 12px; margin-top: 20px; }
+.footer-social a { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); transition: all 0.3s; }
+.footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 11px; color: rgba(255,255,255,0.3); }
+.footer-bottom a { color: rgba(255,255,255,0.5); transition: color 0.3s; }
+.footer-bottom a:hover { color: var(--gold); }
+@media (max-width: 768px) { .footer-bottom { flex-direction: column; text-align: center; } }
+
+/* FLOATING */
+.gh-float { position: fixed; bottom: 32px; left: 28px; z-index: 9000; display: flex; flex-direction: column; gap: 12px; }
+.gh-float-btn { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.25s; border: none; cursor: pointer; text-decoration: none; }
+.gh-float-btn:hover { transform: scale(1.12); }
+.gh-float-wa { background: #25D366; }
+.gh-float-mail { background: var(--gold); }
+.gh-float-mail span { color: #1A1A1A; }
+
+/* LIGHTBOX */
+#lightbox { display:none;position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.95);align-items:center;justify-content:center;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);cursor:zoom-out }
+#lightbox img { max-width:90%;max-height:85vh;object-fit:contain;box-shadow:0 20px 80px rgba(0,0,0,.8) }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(24px); transition: all .7s cubic-bezier(.25,.1,.1,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.r1 { transition-delay: .1s; } .r2 { transition-delay: .2s; } .r3 { transition-delay: .3s; } .r4 { transition-delay: .4s; }
+
+/* Solid site header on light landing body */
+.header {
+  background: rgba(10, 10, 10, 0.98);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+}
 </style>
 <script defer src="../assets/site-header.js?v=14"></script>
 <script defer src="../assets/gh-performance.js?v=2"></script>
 <script defer src="../assets/lang-switch.js?v=1"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Digital Marketing","description":"Digital marketing and lead generation for the GCC real estate sector.","url":"https://3dgraphicshouse.com/services/digital-marketing-en.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Digital Marketing for Real Estate Developers","description":"Performance marketing, content, and lead generation for real estate launches across Saudi Arabia and the GCC.","url":"https://3dgraphicshouse.com/services/digital-marketing-en.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=2">
 </head>
 <body>
@@ -186,17 +491,209 @@ body{font-family:'Inter',sans-serif;background:#0A0A0A;color:var(--text-primary)
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
-<section class="svc-en-hero">
-  <div class="svc-en-card">
-    <span class="material-symbols-outlined svc-en-icon">campaign</span>
-    <h1 class="svc-en-title">Digital Marketing</h1>
-    <p class="svc-en-sub">Performance marketing, content, and lead generation for developers and engineering firms in Saudi Arabia and the GCC.</p>
-    <div class="svc-en-cta">
-      <a href="../portfolio-en.html" class="svc-en-btn svc-en-btn-outline">View Portfolio</a>
-      <a href="../contact-us-en.html" class="svc-en-btn svc-en-btn-gold">Book a Session</a>
+<!-- GALLERY STRIP HERO -->
+<section style="background:#0A0A0A;overflow:hidden;padding-top:96px">
+  <div class="gallery-strip">
+    <div class="gallery-strip-item">
+      <img loading="lazy" src="../assets/projects/rendering/alrajhi2.jpeg" alt="Launch Campaigns">
+      <div class="gallery-strip-label">Launch Campaigns</div>
+    </div>
+    <div class="gallery-strip-item">
+      <img loading="lazy" src="../assets/projects/animation/jeddah-forum.jpg" alt="Video Ads">
+      <div class="gallery-strip-label">Video Ads</div>
+    </div>
+    <div class="gallery-strip-item">
+      <img loading="lazy" src="../assets/projects/rendering/jeddah-forum.jpg" alt="Social Content">
+      <div class="gallery-strip-label">Social Content</div>
+    </div>
+    <div class="gallery-strip-item">
+      <img loading="lazy" src="../assets/projects/rendering/0.jpg" alt="Landing Pages">
+      <div class="gallery-strip-label">Landing Pages</div>
+    </div>
+    <div class="gallery-strip-item">
+      <img loading="lazy" src="../assets/projects/maquettes/anan-escan3.jpeg" alt="Lead Funnels">
+      <div class="gallery-strip-label">Lead Funnels</div>
     </div>
   </div>
 </section>
+
+<section style="background:var(--bg-white)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">Our Services</span>
+      <h2 class="section-title">Digital Marketing for <span class="gold">Property Launches</span></h2>
+      <p class="section-sub" style="margin:0 auto">We connect cinematic visuals with performance campaigns — driving qualified leads for pre-sales and launch phases.</p>
+    </div>
+    <div class="feature-grid reveal r1">
+      <div class="feature-card">
+        <div class="icon"><span class="material-symbols-outlined">ads_click</span></div>
+        <h3>Performance Ads</h3>
+        <p>Meta, Google, and programmatic campaigns optimized for qualified property leads.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><span class="material-symbols-outlined">edit_note</span></div>
+        <h3>Content Production</h3>
+        <p>Short-form video, carousels, and launch copy aligned to your visual identity.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><span class="material-symbols-outlined">filter_alt</span></div>
+        <h3>Funnel Strategy</h3>
+        <p>Landing pages, CRM integration, and nurture flows for sales teams.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><span class="material-symbols-outlined">monitoring</span></div>
+        <h3>Analytics &amp; ROI</h3>
+        <p>Dashboards and reporting tied to cost-per-lead and sales conversion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-d" style="background:#1A1A1A">
+  <div class="cta-d-inner">
+    <h2 style="color:#FAFAF8">Turn Visuals Into <span class="gold">Qualified Leads</span></h2>
+    <p style="color:rgba(255,255,255,0.6)">Campaigns powered by studio-grade creative — not stock templates.</p>
+    <div class="btns">
+      <a href="#booking" class="btn-p">Request a Quote <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
+      
+    </div>
+  </div>
+</section>
+
+<section style="background:#F5F4F0">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">Portfolio</span>
+      <h2 class="section-title">Selected <span class="gold">Work</span></h2>
+      <p class="section-sub" style="margin:0 auto">Campaign creative and launch marketing for developers across the Gulf.</p>
+    </div>
+    <div class="portfolio-grid reveal r1">
+      <div class="portfolio-item" onclick="openLightbox(this)"><img loading="lazy" src="../assets/projects/rendering/alrajhi2.jpeg" alt="Al Rajhi Launch Creative"><div class="portfolio-item-overlay"><span class="portfolio-item-category">Campaign</span><span class="portfolio-item-title">Al Rajhi Launch Creative</span></div></div>
+      <div class="portfolio-item" onclick="openLightbox(this)"><img loading="lazy" src="../assets/projects/animation/jeddah-forum.jpg" alt="Jeddah Forum Campaign"><div class="portfolio-item-overlay"><span class="portfolio-item-category">Video Ads</span><span class="portfolio-item-title">Jeddah Forum Campaign</span></div></div>
+      <div class="portfolio-item" onclick="openLightbox(this)"><img loading="lazy" src="../assets/projects/rendering/jeddah-forum.jpg" alt="Exhibition Launch Content"><div class="portfolio-item-overlay"><span class="portfolio-item-category">Social</span><span class="portfolio-item-title">Exhibition Launch Content</span></div></div>
+      <div class="portfolio-item" onclick="openLightbox(this)"><img loading="lazy" src="../assets/projects/maquettes/alrajhi3.jpeg" alt="Maquette Launch Funnel"><div class="portfolio-item-overlay"><span class="portfolio-item-category">Lead Gen</span><span class="portfolio-item-title">Maquette Launch Funnel</span></div></div>
+      <div class="portfolio-item" onclick="openLightbox(this)"><img loading="lazy" src="../assets/projects/rendering/anan-escan3.jpeg" alt="Anan Eskan Pre-Sales"><div class="portfolio-item-overlay"><span class="portfolio-item-category">Campaign</span><span class="portfolio-item-title">Anan Eskan Pre-Sales</span></div></div>
+      <div class="portfolio-item" onclick="openLightbox(this)"><img loading="lazy" src="../assets/projects/rendering/uae-e1745147961286.jpeg" alt="Regional Rollout"><div class="portfolio-item-overlay"><span class="portfolio-item-category">Campaign</span><span class="portfolio-item-title">Regional Rollout</span></div></div>
+    </div>
+    <div class="reveal r2" style="text-align:center;margin-top:36px">
+      <a href="../portfolio-en.html" class="btn-o">View Full Portfolio <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg-white)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">Why Graphics House</span>
+      <h2 class="section-title">Marketing That <span class="gold">Converts</span></h2>
+      <p class="section-sub" style="margin:0 auto">Creative and media strategy built around real estate sales cycles.</p>
+    </div>
+    <div class="why-grid reveal r1">
+      <div class="why-card"><div class="num">15</div><h4>Years of Experience</h4><p>Deep GCC market knowledge serving developers and engineering firms.</p></div>
+      <div class="why-card"><div class="num">500+</div><h4>Projects Delivered</h4><p>Residential, commercial, hospitality, and government mega-developments.</p></div>
+      <div class="why-card"><div class="num">4</div><h4>Regional Offices</h4><p>Saudi Arabia, Oman, Bahrain, and Egypt — teams where you need them.</p></div>
+      <div class="why-card"><div class="num">1</div><h4>Integrated Studio</h4><p>Creative, technical, and production talent under one roof.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-d" style="background:#1A1A1A">
+  <div class="cta-d-inner">
+    <h2 style="color:#FAFAF8">Packages From <span class="gold">SAR 1,200</span></h2>
+    <p style="color:rgba(255,255,255,0.6)">Flexible retainers and launch bursts for developers at every scale.</p>
+    <div class="btns">
+      <a href="#booking" class="btn-p">Request a Quote <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
+      
+    </div>
+  </div>
+</section>
+
+<section style="background:#F5F4F0;padding:90px 0">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">Related Services</span>
+      <h2 class="section-title">Everything Your <span class="gold">Project</span> Needs</h2>
+      <p class="section-sub" style="margin:0 auto">Integrated visual and marketing systems from a single studio.</p>
+    </div>
+    <div class="rel-grid reveal r1">
+      <a href="branding-en.html" class="rel-card"><div class="icon"><span class="material-symbols-outlined">brush</span></div><h4>Branding</h4><p>Identity systems and positioning for mega developments.</p></a>
+      <a href="web-solutions-en.html" class="rel-card"><div class="icon"><span class="material-symbols-outlined">language</span></div><h4>Web Solutions</h4><p>Project websites, landing pages, and digital sales funnels.</p></a>
+      <a href="production-en.html" class="rel-card"><div class="icon"><span class="material-symbols-outlined">photo_camera</span></div><h4>Media Production</h4><p>Filming, editing, and multimedia content for real estate.</p></a>
+      <a href="rendering-en.html" class="rel-card"><div class="icon"><span class="material-symbols-outlined">landscape</span></div><h4>Architectural Visualization</h4><p>Photorealistic renders, catalogs, and project brand identity.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-d" style="background:#1A1A1A">
+  <div class="cta-d-inner">
+    <h2 style="color:#FAFAF8">Grow Your <span class="gold">Pipeline</span></h2>
+    <p style="color:rgba(255,255,255,0.6)">Request a marketing audit and launch plan for your next project.</p>
+    <div class="btns">
+      <a href="#booking" class="btn-p">Request a Quote <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
+      <a href="https://wa.me/966502786513" target="_blank" rel="noopener" class="btn-o-light">WhatsApp Us <span class="material-symbols-outlined" style="font-size:16px">phone_in_talk</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="contact-s">
+  <div class="contact-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.2em;color:var(--gold);margin-bottom:12px;text-transform:uppercase">Contact Us</span>
+      <h2 style="font-size:clamp(26px,3.8vw,42px);font-weight:500;margin-bottom:12px">Request a Quote for <span style="color:var(--gold)">Digital Marketing</span></h2>
+      <p style="font-size:16px;color:var(--text-secondary);max-width:500px;margin:0 auto">Fill in the form and our team will contact you within 24 hours.</p>
+    </div>
+    <div class="contact-grid reveal r1">
+      <div class="contact-info">
+        <h3>Build a Launch Marketing System</h3>
+        <p>Paid media, content, and landing experiences — integrated with your visual assets.</p>
+        <div class="contact-info-item"><span class="material-symbols-outlined">phone_in_talk</span> +966 50 278 6513</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">mail</span> info@3dgraphicshouse.com</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">location_on</span> Jeddah, Saudi Arabia — 4 regional offices</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">schedule</span> Response within 24 business hours</div>
+      </div>
+      <div class="form-card">
+        <h3>Quote Request</h3>
+        <form class="gh-quote-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
+          <input type="hidden" name="_subject" value="Quote request - Digital Marketing EN">
+          <input type="hidden" name="_next" value="https://3dgraphicshouse.com/services/digital-marketing-en.html?sent=1#booking">
+          <div class="form-group"><label>Full Name</label><input type="text" name="name" required placeholder="Your name"></div>
+          <div class="form-group"><label>Company</label><input type="text" name="company" placeholder="Company name"></div>
+          <div class="form-group"><label>Phone</label><input type="tel" name="phone" required placeholder="+966..."></div>
+          <div class="form-group"><label>Email</label><input type="email" name="email" required placeholder="you@company.com"></div>
+          <div class="form-group"><label>Service Type</label>
+            <select name="service" required>
+              <option value="">Select service</option>
+              <option value="performance-ad-campaign">Performance Ad Campaign</option>
+              <option value="content-retainer">Content Retainer</option>
+              <option value="launch-funnel-setup">Launch Funnel Setup</option>
+              <option value="marketing-audit">Marketing Audit</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>City</label>
+            <select name="city">
+              <option value="">Select city</option>
+              <option value="riyadh">Riyadh</option>
+              <option value="jeddah">Jeddah</option>
+              <option value="dammam">Dammam</option>
+              <option value="mecca">Makkah</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Project Details</label><textarea name="message" placeholder="Tell us about your project, timeline, and scope..."></textarea></div>
+          <div class="gh-form-security">
+            <div class="gh-honeypot" aria-hidden="true"><label>Leave blank</label><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+            <div class="gh-turnstile"></div>
+          </div>
+          <div class="form-feedback" aria-live="polite"></div>
+          <button type="submit" class="form-submit">Send Request <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">send</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="lightbox"><button type="button" onclick="closeLightbox()" aria-label="Close" style="position:absolute;top:24px;right:24px;width:44px;height:44px;background:rgba(255,255,255,.08);border:none;color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%">✕</button><img loading="lazy" id="lightbox-img" src="" alt=""></div>
 <footer dir="ltr" class="gh-footer">
   <div class="gh-footer__inner">
     <img loading="lazy" src="../assets/chatbot-motif.png" aria-hidden="true" class="gh-footer-motif">
@@ -298,6 +795,25 @@ body{font-family:'Inter',sans-serif;background:#0A0A0A;color:var(--text-primary)
 </footer>
 
 
+<script>
+var ro=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
+function openLightbox(el){var img=el.querySelector('img');document.getElementById('lightbox-img').src=img.src;document.getElementById('lightbox').style.display='flex';document.body.style.overflow='hidden'}
+function closeLightbox(){document.getElementById('lightbox').style.display='none';document.body.style.overflow=''}
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+document.querySelectorAll('.gallery-video').forEach(function(item){
+  var video = item.querySelector('video');
+  if(!video) return;
+  var src = item.getAttribute('data-video');
+  if(src) { var source = document.createElement('source'); source.setAttribute('src', src); source.setAttribute('type', 'video/mp4'); video.appendChild(source); }
+  item.addEventListener('mouseenter', function(){ video.setAttribute('preload', 'auto'); video.currentTime = 0; video.play().catch(function(){}); });
+  item.addEventListener('mouseleave', function(){ video.pause(); });
+});
+</script>
+<script defer src="../assets/quote-form-config.js"></script>
+<script defer src="../assets/quote-form.js?v=3"></script>
 <script defer src="../assets/gh-float-widgets.js?v=2"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">
