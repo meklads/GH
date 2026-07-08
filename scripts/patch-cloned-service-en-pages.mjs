@@ -11,13 +11,11 @@ import { fileURLToPath } from 'url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const TARGETS = [
-  'services/maquettes-en.html',
   'services/animation-en.html',
   'services/production-en.html',
 ];
 
 const SOURCE_MAP = {
-  'services/maquettes-en.html': 'scripts/service-en-sources/smart-maquettes-en.html',
   'services/animation-en.html': 'scripts/service-en-sources/3d-animation-en.html',
   'services/production-en.html': 'scripts/service-en-sources/media-production-en.html',
 };

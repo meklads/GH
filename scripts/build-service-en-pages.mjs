@@ -15,7 +15,6 @@ const DEPTH = 1;
 const PREFIX = '../';
 
 const ROOT_EN_COPY = {
-  'maquettes-en.html': 'smart-maquettes-en.html',
   'animation-en.html': '3d-animation-en.html',
   'production-en.html': 'media-production-en.html',
 };
