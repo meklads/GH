@@ -80,8 +80,18 @@ html[dir="ltr"] .nav-link:hover::after{width:100%}
 .reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.1,.1,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* MARQUEE */
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* CLIENTS MARQUEE */
+.clients-marquee-section{padding:64px 0;background:#FAFAF8;overflow:hidden;border-top:1px solid rgba(26,26,26,.06);border-bottom:1px solid rgba(26,26,26,.06)}
+.clients-marquee-eyebrow{text-align:center;margin-bottom:36px;font-size:11px;font-weight:700;letter-spacing:.15em;color:#888;text-transform:uppercase}
+.clients-marquee{overflow:hidden;width:100%}
+.clients-marquee__track{display:flex;width:max-content;align-items:center;direction:ltr;animation:clients-marquee-scroll 42s linear infinite;will-change:transform}
+.clients-marquee__set{display:flex;align-items:center;flex-shrink:0}
+.clients-marquee__item{padding:0 40px;flex-shrink:0}
+.clients-marquee__item img{height:44px;width:auto;display:block;filter:grayscale(1);opacity:.55;transition:filter .3s ease,opacity .3s ease}
+.clients-marquee__item:hover img{filter:grayscale(0);opacity:1}
+@keyframes clients-marquee-scroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.clients-marquee:hover .clients-marquee__track{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.clients-marquee__track{animation:none;transform:none}}
 
 /* FOOTER */
 .footer{background:#0A0A0A;padding:80px 0 0;border-top:1px solid rgba(255,255,255,.04)}
@@ -508,35 +518,34 @@ html[dir="ltr"] .nav-link:hover::after{width:100%}
 </section>
 
 <!-- ===== CLIENTS MARQUEE ===== -->
-<section style="padding:64px 0;background:#FAFAF8;overflow:hidden;border-top:1px solid rgba(26,26,26,.06);border-bottom:1px solid rgba(26,26,26,.06)">
-  <div style="text-align:center;margin-bottom:36px">
-    <span style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#888;text-transform:uppercase">Trusted By</span>
-  </div>
-  <div style="overflow:hidden;position:relative">
-    <div style="position:absolute;left:0;top:0;bottom:0;width:120px;background:linear-gradient(to right,#FAFAF8,transparent);z-index:2"></div>
-    <div style="position:absolute;right:0;top:0;bottom:0;width:120px;background:linear-gradient(to left,#FAFAF8,transparent);z-index:2"></div>
-    <div class="marquee-track" style="display:flex;align-items:center;gap:0;width:max-content;animation:marquee 35s linear infinite">
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/al-owla.png" alt="Al Oula" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/al-oyonypng.png" alt="Al-Ayuni" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/anan-eskan.png" alt="Anan Iskan" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/aqarat.png" alt="Aqarat" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/bn-zooma.png" alt="Bin Zoma" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/makyon.png" alt="Makklyoon" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/oteck.png" alt="Autek" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/rafal.png" alt="Rafal" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/toyota.png" alt="Toyota" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/imc-150x150.png" alt="IMC" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <!-- Duplicate for seamless loop -->
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/al-owla.png" alt="Al Oula" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/al-oyonypng.png" alt="Al-Ayuni" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/anan-eskan.png" alt="Anan Iskan" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/aqarat.png" alt="Aqarat" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/bn-zooma.png" alt="Bin Zoma" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/makyon.png" alt="Makklyoon" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/oteck.png" alt="Autek" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/rafal.png" alt="Rafal" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/toyota.png" alt="Toyota" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
-      <div style="padding:0 40px;flex-shrink:0"><img loading="lazy" src="assets/clients-logo/imc-150x150.png" alt="IMC" style="height:44px;width:auto;filter:grayscale(1);opacity:.55;transition:all .3s" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='.55'"></div>
+<section class="clients-marquee-section">
+  <div class="clients-marquee-eyebrow">Trusted By</div>
+  <div class="clients-marquee" aria-label="Trusted By">
+    <div class="clients-marquee__track">
+      <div class="clients-marquee__set">
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/al-owla.png" alt="Al Oula"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/al-oyonypng.png" alt="Al-Ayuni"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/anan-eskan.png" alt="Anan Iskan"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/aqarat.png" alt="Aqarat"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/bn-zooma.png" alt="Bin Zoma"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/makyon.png" alt="Makklyoon"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/oteck.png" alt="Autek"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/rafal.png" alt="Rafal"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/toyota.png" alt="Toyota"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/imc-150x150.png" alt="IMC"></div>
+      </div>
+      <div class="clients-marquee__set" aria-hidden="true">
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/al-owla.png" alt="Al Oula"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/al-oyonypng.png" alt="Al-Ayuni"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/anan-eskan.png" alt="Anan Iskan"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/aqarat.png" alt="Aqarat"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/bn-zooma.png" alt="Bin Zoma"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/makyon.png" alt="Makklyoon"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/oteck.png" alt="Autek"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/rafal.png" alt="Rafal"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/toyota.png" alt="Toyota"></div>
+        <div class="clients-marquee__item"><img loading="lazy" src="assets/clients-logo/imc-150x150.png" alt="IMC"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -687,6 +696,7 @@ html[dir="ltr"] .nav-link:hover::after{width:100%}
     </div>
   </div>
 </footer>
+
 
 
 
