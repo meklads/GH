@@ -787,17 +787,9 @@ if(ld&&lb){setTimeout(function(){lb.style.width="100%";},100);setTimeout(functio
 var mn=document.getElementById("mob-nav"),mo=document.getElementById("mob-open"),mc=document.getElementById("mob-close");
 if(mn&&mo&&mc){mo.addEventListener("click",function(){mn.style.transform="translateX(0)";document.body.style.overflow="hidden";});mc.addEventListener("click",function(){mn.style.transform="translateX(100%)";document.body.style.overflow="";});document.querySelectorAll(".mob-link").forEach(function(a){a.addEventListener("click",function(){mn.style.transform="translateX(100%)";document.body.style.overflow="";});});}
 window.addEventListener("scroll",function(){var h=document.getElementById("header");if(h)h.classList.toggle("scrolled",window.scrollY>60);});
-(function(){var els=document.querySelectorAll(".reveal");if(els.length){var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");ro.unobserve(e.target);}});},{threshold:0.1});els.forEach(function(el){ro.observe(el);});}})();
 </script>
 
-<script>function toggleMenu(){var n=document.getElementById("nav");n.classList.toggle("open")}</script><script>
-function ghSubmit(e){
-  e.preventDefault();
-  var btn=e.target.querySelector('button[type="submit"]');
-  btn.disabled=true; btn.textContent='Sending…';
-  fetch((window.GH_FORMS&&window.GH_FORMS.formEndpoint)||'https://3dgraphicshouse.com/api/form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({subject:'New Enquiry، Graphics House Website',from_name:'Graphics House Website',name:document.getElementById('ghName').value,company:document.getElementById('ghCompany').value,project_type:document.getElementById('ghProject').value,phone:document.getElementById('ghPhone').value,brief:document.getElementById('ghBrief').value,botcheck:''})}).then(function(r){return r.json();}).then(function(res){btn.disabled=false;btn.textContent='Submit Enquiry →';if(res.success){document.querySelector('#ghPopup form').style.display='none';document.getElementById('ghThanks').style.display='block';setTimeout(function(){document.getElementById('ghPopup').classList.remove('open');document.querySelector('#ghPopup form').style.display='block';document.getElementById('ghThanks').style.display='none';},3000);}else{alert('Something went wrong. Please try again.');}}).catch(function(){btn.disabled=false;btn.textContent='Submit Enquiry →';alert('Connection error.');});
-
-</script>
+<script>function toggleMenu(){var n=document.getElementById("nav");n.classList.toggle("open")}</script><script></script>
 
 <!-- FLOAT BUTTONS -->
 <div class="gh-float">
@@ -871,5 +863,6 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 <!-- GH FLOAT END -->
 
+<script defer src="assets/site-reveal.js"></script>
 </body>
 </html>

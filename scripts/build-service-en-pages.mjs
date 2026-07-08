@@ -140,6 +140,8 @@ function rewriteRootHtmlToServices(html, enFileName) {
   html = html.replace(/href="services\/rendering\.html"/g, 'href="rendering.html"');
   html = html.replace(/href="services\/production\.html"/g, 'href="production.html"');
   html = html.replace(/href="services\/interactive\.html"/g, 'href="interactive.html"');
+  html = html.replace(/url\((['"])assets\//g, `url($1../assets/`);
+  html = html.replace(/src="assets\//g, 'src="../assets/');
 
   const arFile = enFileName.replace('-en.html', '.html');
   const canonical = `${BASE}/services/${enFileName}`;

@@ -71,7 +71,7 @@ img{max-width:100%;display:block}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
-.hero-bg-img{position:absolute;inset:0;background:url('assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg') center/cover no-repeat;opacity:.22}
+.hero-bg-img{position:absolute;inset:0;background:url('../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg') center/cover no-repeat;opacity:.22}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(7,24,16,.98) 45%,rgba(7,24,16,.6) 100%)}
 .hero-content{position:relative;z-index:2;max-width:720px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);padding:6px 16px;margin-bottom:28px}
@@ -710,16 +710,8 @@ img{max-width:100%;display:block}
 
 <!-- POPUP -->
 <script>
-(function(){var els=document.querySelectorAll(".reveal");if(!els.length)return;var ro=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");ro.unobserve(e.target)}})},{threshold:0.1});els.forEach(function(el){ro.observe(el)})})();
 ;
-function toggleMenu(){document.getElementById("nav").classList.toggle("open")}
-function ghSubmit(e){
-  e.preventDefault();
-  var btn=e.target.querySelector('button[type="submit"]');
-  btn.disabled=true;btn.textContent='Sending…';
-  fetch((window.GH_FORMS&&window.GH_FORMS.formEndpoint)||'https://3dgraphicshouse.com/api/form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({subject:'Smart Maquette Inquiry، Graphics House',from_name:'Graphics House Website',name:document.getElementById('ghName').value,company:document.getElementById('ghCompany').value,phone:document.getElementById('ghPhone').value,brief:document.getElementById('ghBrief').value,botcheck:''})}).then(function(r){return r.json()}).then(function(res){btn.disabled=false;btn.textContent='Submit →';if(res.success){document.querySelector('#ghPopup form').style.display='none';document.getElementById('ghThanks').style.display='block';setTimeout(function(){document.getElementById('ghPopup').style.display='none';document.querySelector('#ghPopup form').style.display='block';document.getElementById('ghThanks').style.display='none'},3000)}else{alert('Something went wrong. Please WhatsApp us.')}}).catch(function(){btn.disabled=false;btn.textContent='Submit →';alert('Error. WhatsApp: +966502786513')});
-
-</script>
+function toggleMenu(){document.getElementById("nav").classList.toggle("open")}</script>
 
 <script>
 // Mega menu mobile accordion
@@ -740,6 +732,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 
 <script defer src="../assets/gh-float-widgets.js?v=1"></script>
+<script defer src="../assets/site-reveal.js"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">
   <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="WhatsApp">
