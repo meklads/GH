@@ -68,6 +68,11 @@ const EXPLICIT_PAIRS = {
   'careers-en.html': 'index-ar.html',
 };
 
+/** services/foo.html ↔ services/foo-en.html */
+function isServicesRel(rel) {
+  return rel.startsWith('services/');
+}
+
 const HAS_EN = new Set([
   'who-we-are.html', 'workspace.html', 'smart-maquettes.html', 'privacy-policy.html',
   'portfolio.html', 'offer.html', 'media-production.html', 'interactive-experiences.html',
@@ -89,8 +94,12 @@ function collectHtmlFiles(dir, base = '') {
   return out;
 }
 
-function alternateFile(fileName) {
+function alternateFile(fileName, rel = '') {
   if (EXPLICIT_PAIRS[fileName]) return EXPLICIT_PAIRS[fileName];
+  if (isServicesRel(rel)) {
+    if (fileName.endsWith('-en.html')) return fileName.replace(/-en\.html$/, '.html');
+    if (fileName.endsWith('.html')) return fileName.replace(/\.html$/, '-en.html');
+  }
   if (fileName.endsWith('-en.html')) return fileName.replace(/-en\.html$/, '.html');
   if (HAS_EN.has(fileName)) return fileName.replace(/\.html$/, '-en.html');
   return null;
@@ -100,7 +109,7 @@ function seoTags(rel) {
   const fileName = path.basename(rel);
   const urlPath = rel === 'index.html' ? '' : rel;
   const canonical = `${BASE}/${urlPath}`.replace(/\/$/, '') || BASE + '/';
-  const altFile = alternateFile(fileName);
+  const altFile = alternateFile(fileName, rel);
   const dir = path.posix.dirname(rel);
   const altRel = altFile ? (dir === '.' ? altFile : `${dir}/${altFile}`) : null;
   const isEn = fileName.endsWith('-en.html') || fileName === 'index.html' || (fileName.endsWith('.html') && !fileName.includes('-ar') && fileName !== 'index-ar.html' && dir.startsWith('services'));
@@ -108,8 +117,19 @@ function seoTags(rel) {
   let enUrl = canonical;
   let arUrl = `${BASE}/index-ar.html`;
 
-  if (rel.startsWith('services/') && !fileName.endsWith('-en.html')) {
-    return { canonical, enUrl: `${BASE}/`, arUrl: canonical };
+  if (rel.startsWith('services/')) {
+    const enFile = fileName.endsWith('-en.html')
+      ? fileName
+      : fileName.replace(/\.html$/, '-en.html');
+    const arFile = fileName.endsWith('-en.html')
+      ? fileName.replace(/-en\.html$/, '.html')
+      : fileName;
+    const enUrl = `${BASE}/services/${enFile}`;
+    const arUrl = `${BASE}/services/${arFile}`;
+    if (fileName.endsWith('-en.html')) {
+      return { canonical, enUrl: canonical, arUrl };
+    }
+    return { canonical, arUrl: canonical, enUrl };
   }
 
   if (altRel) {

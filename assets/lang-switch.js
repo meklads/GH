@@ -12,6 +12,10 @@
     'case-study-anan-eskan-en.html': 'casestudy1.html',
     'case-study-mwl-en.html': 'casestudy1.html',
     'careers-en.html': 'index-ar.html',
+    'smart-maquettes-en.html': 'services/maquettes.html',
+    '3d-animation-en.html': 'services/animation.html',
+    'media-production-en.html': 'services/production.html',
+    'interactive-experiences-en.html': 'services/interactive-experiences.html',
   };
 
   var HAS_EN = {
@@ -49,8 +53,12 @@
     return /\/locations(\/|$)/.test(dirPath);
   }
 
+  function isServicesPath(dirPath) {
+    return /\/services(\/|$)/.test(dirPath);
+  }
+
   function isBilingualSection(dirPath) {
-    return isInsightsPath(dirPath) || isLocationsPath(dirPath);
+    return isInsightsPath(dirPath) || isLocationsPath(dirPath) || isServicesPath(dirPath);
   }
 
   function alternateFileName(fileName, dirPath) {
