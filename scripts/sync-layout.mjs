@@ -33,46 +33,9 @@ function extract(html, pattern) {
 }
 
 function buildPartials() {
-  const idx = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-  const arPage = fs.readFileSync(path.join(ROOT, 'index-ar.html'), 'utf8');
-
-  let enHeader = extract(idx, /(<header class="header" id="header">[\s\S]*?<\/header>)/);
-  let arHeader = extract(arPage, /(<header class="header" id="header">[\s\S]*?<\/header>)/);
-
-  // Reorder AR header: logo | nav | nav-actions | menu-toggle
-  const logo = extract(arHeader, /(<a href="(?:\/|\/index-ar\.html)" class="logo">[\s\S]*?<\/a>)/);
-  const nav = extract(arHeader, /(<nav class="nav" id="nav">[\s\S]*?<\/nav>)/);
-  const actions = extract(arHeader, /(<div class="nav-actions">[\s\S]*?<\/div>)/);
-  const toggle = extract(arHeader, /(<button class="menu-toggle"[\s\S]*?<\/button>)/);
-  if (logo && nav && actions && toggle) {
-    arHeader = `<header class="header" id="header">
-  <div class="container header-inner">
-    ${logo}
-    ${nav}
-    ${actions}
-    ${toggle}
-  </div>
-</header>`;
-  }
-
-  enHeader = enHeader.replace(/href="who-we-are\.html"/g, 'href="index-ar.html"');
-  arHeader = arHeader
-    .replace(
-      /(<a href=")(?:#|index-ar\.html)(" class="lang-switch-link is-active" hreflang="ar">AR<\/a>)/,
-      '$1index-ar.html$2'
-    )
-    .replace(/href="who-we-are-en\.html"/g, 'href="/"');
-
-  const toPartial = (s) =>
-    s
-      .replace(/src="assets\//g, 'src="{{PREFIX}}assets/')
-      .replace(/href="(?!https?:|\/|#|mailto:|tel:)([^"]*)"/g, 'href="{{PREFIX}}$1"')
-      .replace(/href="\/"/g, 'href="{{HOME}}"');
-
-  fs.mkdirSync(PARTIALS, { recursive: true });
-  fs.writeFileSync(path.join(PARTIALS, 'header-en.html'), toPartial(enHeader));
-  fs.writeFileSync(path.join(PARTIALS, 'header-ar.html'), toPartial(arHeader));
+  // Header partials are edited directly in partials/header-*.html (not extracted from index pages).
   // Footer partials are edited directly in partials/footer-*.html (not extracted from index pages).
+  fs.mkdirSync(PARTIALS, { recursive: true });
 }
 
 function fixCorruption(html) {
