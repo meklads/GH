@@ -114,7 +114,7 @@ body.nav-open {
     justify-self: stretch;
     align-self: center;
     gap: 8px;
-    overflow: hidden;
+    overflow: visible;
   }
   html[dir="rtl"] .nav { gap: 8px; }
   html[dir="ltr"] .nav {

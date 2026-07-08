@@ -163,12 +163,12 @@ function syncFile(rel) {
   }
 
   html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=13');
-  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=22');
+  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=23');
   html = html.replace(/gh-insights\.css\?v=\d+/g, 'gh-insights.css?v=23');
 
   // Ensure footer layout CSS is always present, versioned, and after Tailwind
   // (unversioned or pre-Tailwind links caused a collapsed narrow footer on many pages).
-  const enhHref = `${prefix}gh-site-enhancements.css?v=18`;
+  const enhHref = `${prefix}gh-site-enhancements.css?v=19`;
   const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
   html = html.replace(
     /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,
