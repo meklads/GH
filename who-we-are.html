@@ -33,7 +33,7 @@ gtag('config','G-Y67JVE898Z');
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=17">
+<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=18">
 <style>
 :root{--gold:#C9A84C;--gold-light:#D9B860;--gold-dark:#A8883A;--text-primary:#FFFFFF;--text-secondary:rgba(255,255,255,0.7);--text-muted:rgba(255,255,255,0.35);--border-subtle:rgba(255,255,255,0.06);--border-medium:rgba(255,255,255,0.12);--heading-dark:#1A1A1A;--body-dark:#555555;--body-muted:#888888}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -52,8 +52,8 @@ img{max-width:100%;display:block}
 
 /* HEADER */
 .header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:10px 0;transition:all .4s ease}
-.header.scrolled{background:rgba(7,24,16,.92);backdrop-filter:blur(20px);padding:4px 0;border-bottom:1px solid var(--border-subtle)}
-.header-inner{display:flex;align-items:center;}
+
+
 .logo{display:flex;align-items:center;gap:14px;padding-top:4px}
 .nav{display:flex;align-items:center;justify-content:center;gap:28px;flex:1}
 html[dir="rtl"] .nav-link{font-size:15px;font-weight:700;letter-spacing:.01em;color:rgba(255,255,255,.85);text-decoration:none;transition:color .3s;position:relative;padding-bottom:2px}
@@ -160,8 +160,8 @@ html[dir="rtl"] .nav-link:hover::after{width:100%}
 .nav-item-drop:hover .nav-dropdown{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
 
 </style>
-<link rel="stylesheet" href="assets/site-header.css?v=21">
-<script defer src="assets/site-header.js?v=12"></script>
+<link rel="stylesheet" href="assets/site-header.css?v=22">
+<script defer src="assets/site-header.js?v=13"></script>
 <script defer src="assets/gh-performance.js?v=2"></script>
 <script defer src="assets/lang-switch.js?v=1"></script>
 <script defer src="assets/site-reveal.js"></script>
@@ -695,6 +695,7 @@ html[dir="rtl"] .nav-link:hover::after{width:100%}
 
 
 
+
 <!-- ===== FLOATING CONTACT BUTTONS (AR، LEFT) ===== -->
 <style>
 .gh-float{position:fixed;bottom:32px;left:28px;z-index:9000;display:flex;flex-direction:column;align-items:center;gap:12px}
@@ -758,7 +759,7 @@ function ghSubmit(e){
 <script>
 var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
 if(ld&&lb){setTimeout(function(){lb.style.width="100%"},100);setTimeout(function(){ld.classList.add("out")},1400)}
-window.addEventListener("scroll",function(){document.getElementById("header").classList.toggle("scrolled",window.scrollY>80)});
+;
 </script>
 
 <script>

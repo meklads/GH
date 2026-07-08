@@ -161,5 +161,14 @@
         });
       }
     });
+
+    var header = document.getElementById('header');
+    if (header) {
+      function onHeaderScroll() {
+        header.classList.toggle('scrolled', window.scrollY > 12);
+      }
+      onHeaderScroll();
+      window.addEventListener('scroll', onHeaderScroll, { passive: true });
+    }
   });
 })();

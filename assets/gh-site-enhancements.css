@@ -627,11 +627,11 @@ body.gh-home #hero .hero-contact-strip {
 
 /* Sitewide sticky header — wins over page-local body/header resets */
 body:has(.header) {
-  padding-top: 92px !important;
+  padding-top: var(--gh-header-height, 92px) !important;
 }
 @media (max-width: 768px) {
   body:has(.header) {
-    padding-top: 72px !important;
+    padding-top: var(--gh-header-height-mobile, 72px) !important;
   }
 }
 .header {
@@ -640,4 +640,31 @@ body:has(.header) {
   left: 0 !important;
   right: 0 !important;
   z-index: 1000 !important;
+  height: var(--gh-header-height, 92px) !important;
+  padding: var(--gh-header-pad-y, 8px) 0 !important;
+  box-sizing: border-box !important;
+}
+.header.scrolled {
+  padding: var(--gh-header-pad-y, 8px) 0 !important;
+}
+@media (max-width: 768px) {
+  .header {
+    height: var(--gh-header-height-mobile, 72px) !important;
+  }
+}
+@media (min-width: 901px) {
+  .header .container.header-inner {
+    display: grid !important;
+    grid-template-areas: "logo nav actions" !important;
+    align-items: center !important;
+  }
+  .header .logo { grid-area: logo !important; }
+  .header .nav { grid-area: nav !important; }
+  .header .nav-actions { grid-area: actions !important; }
+}
+.header .logo-img {
+  height: var(--gh-logo-height, 68px) !important;
+}
+.header.scrolled .logo-img {
+  height: var(--gh-logo-height, 68px) !important;
 }

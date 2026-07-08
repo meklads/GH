@@ -211,6 +211,16 @@ function injectPerformanceScript(html, prefix) {
 
 function stripConflictingHeaderStyles(html) {
   html = html.replace(/body\s*\{\s*padding-top:\s*0\s*!important;\s*\}/g, '');
+  html = html.replace(/\.header-inner\s*\{[^}]*display\s*:\s*flex[^}]*\}/gi, '');
+  html = html.replace(/\.header\.scrolled\s*\{[^}]*padding\s*:[^}]*\}/gi, '');
+  html = html.replace(
+    /window\.addEventListener\(["']scroll["'],\s*function\s*\(\)\s*\{document\.getElementById\(["']header["']\)\.classList\.toggle\(["']scrolled["'],\s*window\.scrollY>\d+\)\};?\)/g,
+    ''
+  );
+  html = html.replace(
+    /window\.addEventListener\(["']scroll["'],\s*function\s*\(\)\s*\{var\s+h=document\.getElementById\(["']header["']\);if\(h\)h\.classList\.toggle\(["']scrolled["'],\s*window\.scrollY>\d+\)\};?\)/g,
+    ''
+  );
   return html;
 }
 
@@ -245,13 +255,13 @@ function patchHtml(html, rel) {
     html = html.replace(/<head>/i, `<head>\n<script src="${prefix}assets/gh-forms-config.js"></script>`);
   }
 
-  const enhanceCss = `<link rel="stylesheet" href="${prefix}assets/gh-site-enhancements.css?v=17">`;
+  const enhanceCss = `<link rel="stylesheet" href="${prefix}assets/gh-site-enhancements.css?v=18">`;
   if (!html.includes('gh-site-enhancements.css')) {
     html = html.replace(/<\/head>/i, `${enhanceCss}\n</head>`);
   } else {
     html = html.replace(
       /gh-site-enhancements\.css(?:\?v=\d+)?/g,
-      'gh-site-enhancements.css?v=17'
+      'gh-site-enhancements.css?v=18'
     );
   }
 
