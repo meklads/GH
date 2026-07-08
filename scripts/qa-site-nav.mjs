@@ -25,7 +25,7 @@ function collectHtml(dir, base = '') {
   for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
     const rel = base ? `${base}/${ent.name}` : ent.name;
     if (ent.isDirectory()) {
-      if (['.git', 'node_modules', 'assets', 'partials'].includes(ent.name)) continue;
+      if (['.git', 'node_modules', 'assets', 'partials', 'scripts'].includes(ent.name)) continue;
       out.push(...collectHtml(path.join(dir, ent.name), rel));
     } else if (ent.name.endsWith('.html')) out.push(rel);
   }
@@ -81,6 +81,10 @@ for (const rel of collectHtml(ROOT)) {
     if (!/gh-site-enhancements\.css\?v=21/.test(html)) {
       issues.push(`${rel}: missing versioned footer CSS (gh-site-enhancements.css?v=21)`);
     }
+  }
+
+  if (/services\/[^/]+-en\.html$/.test(rel) && /http-equiv="refresh"/i.test(html)) {
+    issues.push(`${rel}: redirect stub — rebuild service EN pages`);
   }
 }
 

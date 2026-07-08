@@ -74,6 +74,28 @@ for (const [oldName, newName] of Object.entries(RENAME_MAP)) {
   }
 }
 
+const EXTRA_WEBP = [
+  'anan-escan3.jpeg',
+  'alrajhi3.jpeg',
+  'Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg',
+];
+
+// Ensure WebP exists for all renamed aliases (idempotent)
+const ALIAS_WEBP = [...new Set([...Object.values(RENAME_MAP), ...EXTRA_WEBP])];
+for (const file of ALIAS_WEBP) {
+  const jpegPath = path.join(MAQ_DIR, file);
+  if (!fs.existsSync(jpegPath) || !useWebp) continue;
+  const webpPath = jpegPath.replace(/\.jpe?g$/i, '.webp');
+  if (!fs.existsSync(webpPath)) {
+    try {
+      execSync(`cwebp -q 82 "${jpegPath}" -o "${webpPath}"`, { stdio: 'ignore' });
+      webp++;
+    } catch {
+      /* skip */
+    }
+  }
+}
+
 let filesPatched = 0;
 for (const rel of collectTextFiles(ROOT)) {
   const full = path.join(ROOT, rel);

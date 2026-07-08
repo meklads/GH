@@ -166,6 +166,7 @@ function syncFile(rel) {
   html = fixCorruption(html);
   html = fixLogoCss(html);
   html = ensureFontDisplaySwap(html);
+  html = html.replace(/<a class="gh-skip-link"[\s\S]*?<\/a>\s*/g, '');
   html = html.replace(/<header class="header"[\s\S]*?<\/header>/, header);
   html = html.replace(
     /(<\/header>)\s*<div class="mm-main">[\s\S]*?<\/header>/,

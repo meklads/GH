@@ -9,6 +9,7 @@ import { renderHeader, renderFooter } from './layout-partials.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SERVICES = path.join(ROOT, 'services');
+const SOURCES_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), 'service-en-sources');
 const BASE = 'https://3dgraphicshouse.com';
 const DEPTH = 1;
 const PREFIX = '../';
@@ -294,23 +295,14 @@ console.log('Building English service pages…');
 
 for (const [enFile, source] of Object.entries(ROOT_EN_COPY)) {
   const dest = path.join(SERVICES, enFile);
-  const srcPath = path.join(ROOT, source);
+  const srcPath = path.join(SOURCES_DIR, source);
   if (!fs.existsSync(srcPath)) {
-    console.warn('  skip missing source:', source);
+    console.warn('  skip missing canonical source:', source);
     continue;
   }
-  const srcHtml = fs.readFileSync(srcPath, 'utf8');
-  if (/location\.replace|http-equiv="refresh"/i.test(srcHtml)) {
-    if (fs.existsSync(dest)) {
-      console.log('  keep EN:', enFile, '(source is redirect)');
-      continue;
-    }
-    console.warn('  missing EN page and redirect source:', enFile);
-    continue;
-  }
-  let html = rewriteRootHtmlToServices(srcHtml, enFile);
+  let html = rewriteRootHtmlToServices(fs.readFileSync(srcPath, 'utf8'), enFile);
   fs.writeFileSync(dest, html, 'utf8');
-  console.log('  copied EN:', enFile, '←', source);
+  console.log('  copied EN:', enFile, '←', `service-en-sources/${source}`);
 }
 
 for (const arFile of BILINGUAL_CLONE) {
