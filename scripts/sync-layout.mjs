@@ -58,8 +58,8 @@ function normalizeNavTail(header, isEn) {
   const insightsFile = isEn ? 'insights/index-en.html' : 'insights/index.html';
   const contactFile = isEn ? 'contact-us-en.html' : 'contact-us.html';
 
-  let h = header.replace(/<a class="nav-link" href="[^"]*insights\/index[^"]*">[^<]*<\/a>\s*/gi, '');
-  h = h.replace(/<a class="nav-link" href="[^"]*contact-us[^"]*">[^<]*<\/a>\s*/gi, '');
+  let h = header.replace(/<a class="nav-link[^"]*" href="[^"]*insights\/index[^"]*">[^<]*<\/a>\s*/gi, '');
+  h = h.replace(/<a class="nav-link[^"]*" href="[^"]*contact-us[^"]*">[^<]*<\/a>\s*/gi, '');
 
   const prefixMatch =
     h.match(/href="((?:\.\.\/)+)portfolio/) ||
@@ -68,7 +68,7 @@ function normalizeNavTail(header, isEn) {
     h.match(/href="((?:\.\.\/)+)who-we-are/);
   const prefix = prefixMatch ? prefixMatch[1] : '';
 
-  const insert = `      <a class="nav-link" href="${prefix}${insightsFile}">${insightsLabel}</a>\n      <a class="nav-link" href="${prefix}${contactFile}">${contactLabel}</a>\n    `;
+  const insert = `      <a class="nav-link nav-link-accent" href="${prefix}${insightsFile}">${insightsLabel}</a>\n      <a class="nav-link" href="${prefix}${contactFile}">${contactLabel}</a>\n    `;
   return h.replace(/\s*<\/nav>/, `\n${insert}</nav>`);
 }
 
@@ -163,7 +163,7 @@ function syncFile(rel) {
   }
 
   html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=12');
-  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=20');
+  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=21');
   html = html.replace(/gh-insights\.css\?v=\d+/g, 'gh-insights.css?v=23');
 
   // Ensure footer layout CSS is always present, versioned, and after Tailwind

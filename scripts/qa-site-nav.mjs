@@ -17,7 +17,7 @@ const SKIP = new Set([
   'offer-lite.html',
 ]);
 
-const EXPECT_CSS = 'site-header.css?v=20';
+const EXPECT_CSS = 'site-header.css?v=21';
 const EXPECT_JS = 'site-header.js?v=12';
 
 function collectHtml(dir, base = '') {
