@@ -627,11 +627,11 @@ body.gh-home #hero .hero-contact-strip {
 
 /* Sitewide sticky header — wins over page-local body/header resets */
 body:has(.header) {
-  padding-top: var(--gh-header-height, 92px) !important;
+  padding-top: var(--gh-header-height, 98px) !important;
 }
 @media (max-width: 768px) {
   body:has(.header) {
-    padding-top: var(--gh-header-height-mobile, 72px) !important;
+    padding-top: var(--gh-header-height-mobile, 78px) !important;
   }
 }
 .header {
@@ -640,7 +640,7 @@ body:has(.header) {
   left: 0 !important;
   right: 0 !important;
   z-index: 1000 !important;
-  height: var(--gh-header-height, 92px) !important;
+  height: var(--gh-header-height, 98px) !important;
   padding: var(--gh-header-pad-y, 8px) 0 !important;
   box-sizing: border-box !important;
   overflow: visible !important;
@@ -650,7 +650,7 @@ body:has(.header) {
 }
 @media (max-width: 768px) {
   .header {
-    height: var(--gh-header-height-mobile, 72px) !important;
+    height: var(--gh-header-height-mobile, 78px) !important;
   }
 }
 @media (min-width: 901px) {
@@ -667,9 +667,9 @@ body:has(.header) {
     box-sizing: border-box !important;
   }
   html[dir="ltr"] .header .container.header-inner {
-    grid-template-columns: auto minmax(0, 1fr) minmax(230px, auto) !important;
+    grid-template-columns: auto minmax(0, 1fr) minmax(280px, auto) !important;
   }
-  .header .logo { grid-area: logo !important; max-width: 120px !important; }
+  .header .logo { grid-area: logo !important; max-width: 144px !important; }
   .header .nav {
     grid-area: nav !important;
     overflow: visible !important;
@@ -677,8 +677,8 @@ body:has(.header) {
   .header .nav-actions { grid-area: actions !important; }
 }
 .header .logo-img {
-  height: var(--gh-logo-height, 68px) !important;
+  height: var(--gh-logo-height, 82px) !important;
 }
 .header.scrolled .logo-img {
-  height: var(--gh-logo-height, 68px) !important;
+  height: var(--gh-logo-height, 82px) !important;
 }

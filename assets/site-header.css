@@ -5,11 +5,11 @@
   --header-gold-light: #D9B860;
   --header-bg: #080c0a;
   --header-border: rgba(201, 168, 76, 0.14);
-  --gh-header-height: 92px;
-  --gh-header-height-mobile: 72px;
+  --gh-header-height: 98px;
+  --gh-header-height-mobile: 78px;
   --gh-header-pad-y: 8px;
-  --gh-logo-height: 68px;
-  --gh-logo-height-mobile: 58px;
+  --gh-logo-height: 82px;
+  --gh-logo-height-mobile: 70px;
 }
 
 body {
@@ -89,7 +89,7 @@ body.nav-open {
     overflow: visible;
   }
   html[dir="ltr"] .header .container.header-inner {
-    grid-template-columns: auto minmax(0, 1fr) minmax(230px, auto);
+    grid-template-columns: auto minmax(0, 1fr) minmax(280px, auto);
     gap: 8px 16px;
   }
   html[dir="rtl"] .header .container.header-inner {
@@ -102,7 +102,7 @@ body.nav-open {
     justify-self: start;
     z-index: 4;
     margin-inline-end: 0 !important;
-    max-width: 120px;
+    max-width: 144px;
     width: auto;
     align-self: center;
     flex-shrink: 0;
@@ -183,7 +183,7 @@ body.nav-open {
 
 @media (min-width: 901px) and (max-width: 1280px) {
   html[dir="ltr"] .header .container.header-inner {
-    grid-template-columns: auto minmax(0, 1fr) minmax(220px, auto);
+    grid-template-columns: auto minmax(0, 1fr) minmax(260px, auto);
     gap: 6px 12px;
   }
   html[dir="rtl"] .header .container.header-inner {
@@ -212,9 +212,11 @@ body.nav-open {
     padding: 8px 6px;
   }
   html[dir="ltr"] .nav-cta {
-    padding: 8px 12px !important;
-    font-size: 8px !important;
-    letter-spacing: 0.04em !important;
+    padding: 10px 24px !important;
+    font-size: 9px !important;
+    letter-spacing: 0.06em !important;
+    min-width: 148px !important;
+    min-height: 38px !important;
   }
   html[dir="rtl"] .nav-cta {
     padding: 8px 12px !important;
@@ -232,8 +234,10 @@ body.nav-open {
     padding: 8px 7px;
   }
   html[dir="ltr"] .nav-cta {
-    padding: 9px 14px !important;
-    font-size: 9px !important;
+    padding: 12px 30px !important;
+    font-size: 10px !important;
+    min-width: 160px !important;
+    min-height: 40px !important;
   }
   html[dir="rtl"] .nav-cta {
     padding: 9px 14px !important;
@@ -274,7 +278,7 @@ body.nav-open {
 .header .logo-img {
   height: var(--gh-logo-height) !important;
   width: auto !important;
-  max-width: 120px;
+  max-width: 144px;
   image-rendering: -webkit-optimize-contrast;
   transition: opacity 0.3s ease;
   object-fit: contain;
@@ -285,7 +289,7 @@ body.nav-open {
 }
 @media (max-width: 768px) {
   .header .logo-img { height: var(--gh-logo-height-mobile) !important; }
-  .header .logo { max-width: 140px; }
+  .header .logo { max-width: 168px; }
 }
 
 /* ----- Primary nav ----- */
@@ -433,17 +437,24 @@ html[dir="rtl"] .nav-link {
 }
 
 .nav-cta {
-  padding: 10px 20px !important;
-  font-size: 10px !important;
+  padding: 13px 36px !important;
+  font-size: 11px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
-  min-height: 36px;
+  min-height: 42px;
+  min-width: 168px;
   box-sizing: border-box;
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
+}
+html[dir="ltr"] .nav-cta {
+  padding: 13px 38px !important;
+  font-size: 11px !important;
+  min-width: 172px;
+  letter-spacing: 0.11em;
 }
 html[dir="rtl"] .nav-cta {
   text-transform: none;
