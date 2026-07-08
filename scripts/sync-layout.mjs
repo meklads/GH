@@ -113,6 +113,30 @@ function fixLogoCss(html) {
   return html.replace(LOGO_CSS_FIX, LOGO_CSS_NEW);
 }
 
+function ensurePerformanceScript(html, prefix) {
+  const tag = `<script defer src="${prefix}gh-performance.js?v=2"></script>`;
+  if (html.includes('gh-performance.js')) {
+    return html.replace(/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=2');
+  }
+  if (html.includes('site-header.js')) {
+    return html.replace(
+      /(<script defer src="[^"]*site-header\.js[^"]*"><\/script>)/,
+      `$1\n${tag}`
+    );
+  }
+  return html;
+}
+
+function ensureFontDisplaySwap(html) {
+  return html.replace(
+    /fonts\.googleapis\.com\/css2\?([^"']+)/g,
+    (match, query) => {
+      if (query.includes('display=swap')) return match;
+      return `fonts.googleapis.com/css2?display=swap&${query}`;
+    }
+  );
+}
+
 function isEnglishPage(rel, html) {
   const dirMatch = html.match(/<html[^>]*\sdir="(ltr|rtl)"/i);
   if (dirMatch) return dirMatch[1].toLowerCase() === 'ltr';
@@ -156,6 +180,7 @@ function syncFile(rel) {
 
   html = fixCorruption(html);
   html = fixLogoCss(html);
+  html = ensureFontDisplaySwap(html);
   html = html.replace(/<header class="header"[\s\S]*?<\/header>/, header);
   html = html.replace(
     /(<\/header>)\s*<div class="mm-main">[\s\S]*?<\/header>/,
@@ -180,7 +205,7 @@ function syncFile(rel) {
 
   // Ensure footer layout CSS is always present, versioned, and after Tailwind
   // (unversioned or pre-Tailwind links caused a collapsed narrow footer on many pages).
-  const enhHref = `${prefix}gh-site-enhancements.css?v=15`;
+  const enhHref = `${prefix}gh-site-enhancements.css?v=16`;
   const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
   html = html.replace(
     /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,
@@ -194,6 +219,8 @@ function syncFile(rel) {
   } else if (/<\/head>/i.test(html)) {
     html = html.replace(/<\/head>/i, `${enhTag}\n</head>`);
   }
+
+  html = ensurePerformanceScript(html, prefix);
 
   fs.writeFileSync(full, html, 'utf8');
   return rel;
@@ -210,7 +237,7 @@ function syncFooterOnly(rel) {
   html = html.replace(/<footer dir="(?:ltr|rtl)"[\s\S]*?<\/footer>/, footer);
 
   const prefix = depth > 0 ? '../'.repeat(depth) + 'assets/' : 'assets/';
-  const enhHref = `${prefix}gh-site-enhancements.css?v=15`;
+  const enhHref = `${prefix}gh-site-enhancements.css?v=16`;
   const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
   html = html.replace(
     /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,

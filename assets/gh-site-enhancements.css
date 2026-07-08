@@ -479,3 +479,148 @@ body.gh-home #hero .hero-contact-strip {
     align-items: flex-start;
   }
 }
+
+/* ===== Homepage insights promo strip ===== */
+.gh-insights-strip {
+  background: linear-gradient(135deg, #071810 0%, #0d2419 55%, #071810 100%);
+  border-top: 1px solid rgba(201, 168, 76, 0.22);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.22);
+  padding: 56px 24px;
+}
+
+.gh-insights-strip__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px 40px;
+  flex-wrap: wrap;
+}
+
+.gh-insights-strip__eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c9a84c;
+}
+
+.gh-insights-strip__title {
+  margin: 0 0 10px;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #fafaf8;
+}
+
+.gh-insights-strip__lead {
+  margin: 0;
+  max-width: 520px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.gh-insights-strip__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gh-insights-strip__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.gh-insights-strip__btn:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+}
+
+.gh-insights-strip__btn--gold {
+  background: #c9a84c;
+  border-color: #c9a84c;
+  color: #0a0a0a;
+}
+
+.gh-insights-strip__btn--gold:hover {
+  background: #d9b860;
+  border-color: #d9b860;
+  color: #0a0a0a;
+}
+
+/* ===== Homepage — compact service links (replaces repeated detail blocks) ===== */
+.gh-svc-more {
+  padding: 48px 24px 64px;
+  background: #fafaf8;
+  border-top: 1px solid rgba(26, 26, 26, 0.06);
+}
+
+.gh-svc-more__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.gh-svc-more__label {
+  margin: 0 0 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.gh-svc-more__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.gh-svc-more__links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 22px;
+  border: 1px solid rgba(26, 26, 26, 0.18);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.gh-svc-more__links a:hover {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #fafaf8;
+}
+
+@media (max-width: 768px) {
+  .gh-insights-strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gh-insights-strip__actions {
+    width: 100%;
+  }
+
+  .gh-insights-strip__btn {
+    flex: 1 1 auto;
+    min-width: 140px;
+  }
+}

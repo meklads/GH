@@ -14,7 +14,7 @@ const FILES = path.join(OUT, 'files');
 const ASSETS = {
   siteHeaderCss: 19,
   siteHeaderJs: 12,
-  ghSiteEnhancements: 15,
+  ghSiteEnhancements: 16,
   ghInsights: 20,
   ghFloatWidgets: 2,
   langSwitch: 3,
