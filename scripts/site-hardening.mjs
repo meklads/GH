@@ -21,6 +21,41 @@ const SKIP = new Set([
 
 const SITEMAP_SKIP = new Set([...SKIP, 'en.html']);
 
+/** Folder index.html stubs that only redirect — exclude from sitemap */
+const SITEMAP_REDIRECT_STUBS = new Set([
+  'who-we-are/index.html',
+  'folio/index.html',
+  'privacy-policy/index.html',
+  'portfolio/index.html',
+  'motion-graphic/index.html',
+  'media-production/index.html',
+  'interactive-presentation/index.html',
+  'contact/index.html',
+  'contact-us-2/index.html',
+  'clients/index.html',
+  'career/index.html',
+  'blog/index.html',
+  '3d-animation/index.html',
+  'scale-models/index.html',
+  'faq/index.html',
+]);
+
+/** Legacy landings superseded by current IA — keep URLs but de-index */
+const LEGACY_NOINDEX = new Set([
+  'about.html',
+  'gh-visualization.html',
+  'gh-maquettes.html',
+  'gh-medical.html',
+  'gh-photography.html',
+  'offer.html',
+  'offer-lite.html',
+  'marketing.html',
+  'real-estate.html',
+  'shop.html',
+  'boyslove.html',
+  'en.html',
+]);
+
 const EXPLICIT_PAIRS = {
   'index.html': 'index-ar.html',
   'index-ar.html': 'index.html',
@@ -73,6 +108,10 @@ function seoTags(rel) {
   let enUrl = canonical;
   let arUrl = `${BASE}/index-ar.html`;
 
+  if (rel.startsWith('services/') && !fileName.endsWith('-en.html')) {
+    return { canonical, enUrl: `${BASE}/`, arUrl: canonical };
+  }
+
   if (altRel) {
     const altUrl = `${BASE}/${altRel}`;
     if (fileName.endsWith('-en.html') || fileName === 'index.html') {
@@ -108,6 +147,46 @@ function injectSeo(html, rel) {
     return html;
   }
   return html.replace(/<head>/i, `<head>\n${block}`);
+}
+
+const PERF_HINTS = `<!-- GH perf -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">`;
+
+function injectPerformanceHints(html) {
+  if (html.includes('<!-- GH perf -->')) {
+    return html.replace(/<!-- GH perf -->[\s\S]*?<link rel="dns-prefetch" href="https:\/\/www\.googletagmanager\.com">/, PERF_HINTS);
+  }
+  if (html.includes('<!-- GH SEO -->')) {
+    return html.replace(/<!-- GH SEO -->/, `${PERF_HINTS}\n<!-- GH SEO -->`);
+  }
+  return html.replace(/<head>/i, `<head>\n${PERF_HINTS}`);
+}
+
+function injectMainContentAnchor(html) {
+  if (!html.includes('<header class="header"') || html.includes('id="main-content"')) {
+    return html;
+  }
+  return html.replace(
+    /<\/header>/i,
+    '</header>\n<div id="main-content" tabindex="-1" class="gh-main-anchor"></div>'
+  );
+}
+
+function injectNoindex(html, rel) {
+  if (!LEGACY_NOINDEX.has(rel)) return html;
+  if (/name="robots"[^>]*noindex/i.test(html)) return html;
+  return html.replace(/<head>/i, '<head>\n<meta name="robots" content="noindex,follow">');
+}
+
+function injectHomeLcpPreload(html, rel) {
+  if (rel !== 'index.html' && rel !== 'index-ar.html') return html;
+  const tag = '<link rel="preload" as="image" href="assets/hero-demo-poster.jpg" fetchpriority="high">';
+  if (html.includes('hero-demo-poster.jpg') && html.includes('rel="preload" as="image"')) return html;
+  return html.replace(/<head>/i, `<head>\n${tag}`);
 }
 
 function jsonLdForPage(rel, html) {
@@ -210,7 +289,7 @@ function injectPerformanceScript(html, prefix) {
 }
 
 function ensureHeaderCssOrder(html, assetsPrefix) {
-  const headerHref = `${assetsPrefix}site-header.css?v=25`;
+  const headerHref = `${assetsPrefix}site-header.css?v=26`;
   const headerTag = `<link rel="stylesheet" href="${headerHref}">`;
   html = html.replace(/<link[^>]*href="[^"]*site-header\.css[^"]*"[^>]*>\s*/gi, '');
   if (/gh-site-enhancements\.css/i.test(html)) {
@@ -254,6 +333,10 @@ function patchHtml(html, rel) {
   const prefix = depth > 0 ? '../'.repeat(depth) : '';
 
   html = injectSeo(html, rel);
+  html = injectPerformanceHints(html);
+  html = injectHomeLcpPreload(html, rel);
+  html = injectNoindex(html, rel);
+  html = injectMainContentAnchor(html);
   html = replaceTailwindCdn(html, prefix);
   html = injectJsonLd(html, rel);
   html = stripLegacyGa(html);
@@ -272,6 +355,13 @@ function patchHtml(html, rel) {
       /<meta name="viewport"[^>]*>/,
       `$&\n<meta name="description" content="Graphics House: هوية بصرية، مجسمات ذكية، إعلانات، وتجارب تفاعلية للمشاريع التجارية والسكنية في السعودية والخليج.">`
     );
+  }
+
+  if ((rel === 'workspace.html' || rel === 'workspace-en.html') && !html.includes('<meta name="description"')) {
+    const desc = rel.endsWith('-en.html')
+      ? 'Interactive project workspace demo — explore Graphics House visualization deliverables.'
+      : 'مساحة عمل تفاعلية لعرض مخرجات التصور المعماري من Graphics House.';
+    html = html.replace(/<meta name="viewport"[^>]*>/, `$&\n<meta name="description" content="${desc}">`);
   }
 
   html = html.replace(/preload="auto"/g, 'preload="metadata"');
@@ -305,7 +395,7 @@ function patchHtml(html, rel) {
 
 function buildSitemap(files) {
   const urls = files
-    .filter((f) => !SITEMAP_SKIP.has(f))
+    .filter((f) => !SITEMAP_SKIP.has(f) && !SITEMAP_REDIRECT_STUBS.has(f) && !LEGACY_NOINDEX.has(f))
     .map((f) => {
       const loc = f === 'index.html' ? `${BASE}/` : `${BASE}/${f}`;
       let priority = '0.6';

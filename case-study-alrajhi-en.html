@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+<!-- GH perf -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <script src="assets/gh-forms-config.js?v=2"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y67JVE898Z"></script>
@@ -70,11 +76,12 @@ img{max-width:100%;display:block}
 <script defer src="assets/lang-switch.js?v=1"></script>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=21">
-<link rel="stylesheet" href="assets/site-header.css?v=25">
+<link rel="stylesheet" href="assets/site-header.css?v=26">
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=2">
 </head>
 <body>
 
+<a class="gh-skip-link" href="#main-content">Skip to main content</a>
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="/" class="logo">
@@ -199,6 +206,7 @@ img{max-width:100%;display:block}
   </div>
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
+<div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 
 
 
@@ -442,6 +450,8 @@ img{max-width:100%;display:block}
 
 
 
+
+
 <script>
 (function(){var els=document.querySelectorAll(".reveal");if(!els.length)return;var ro=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");ro.unobserve(e.target)}});},{threshold:0.1});els.forEach(function(el){ro.observe(el)});})();
 ;
@@ -486,7 +496,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <span class="gh-motif-ring"></span>
       <span class="gh-motif-ring" style="animation-delay:1.2s"></span>
       <span class="gh-motif-ring" style="animation-delay:2.4s"></span>
-      <img src="assets/chatbot-motif.png" alt="" width="52" height="52" style="width:52px;height:52px;object-fit:contain;position:relative;z-index:2">
+      <img loading="lazy" src="assets/chatbot-motif.png" alt="" width="52" height="52" style="width:52px;height:52px;object-fit:contain;position:relative;z-index:2">
     </span>
   </button>
 </div>
