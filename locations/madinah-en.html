@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" dir="ltr" lang="en">
 <head>
-<!-- GH perf -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <script src="../assets/gh-forms-config.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y67JVE898Z"></script>
@@ -42,14 +36,12 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="../assets/site-header.css?v=26">
 <link rel="stylesheet" href="../assets/gh-location.css?v=8">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=2">
-<script defer src="../assets/site-header.js?v=13"></script>
+<script defer src="../assets/site-header.js?v=14"></script>
 <script defer src="../assets/gh-performance.js?v=2"></script>
 <script defer src="../assets/lang-switch.js?v=3"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Graphics House — Madinah","description":"Archviz studio for Madinah developers: master plans, photorealistic renders, CGI films & sales platforms — Graphics House from Jeddah HQ.","url":"https://3dgraphicshouse.com/locations/madinah-en.html","telephone":"+966502786513","address":{"@type":"PostalAddress","addressLocality":"Madinah","addressCountry":"SA"},"parentOrganization":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com"}}</script>
 </head>
 <body class="gh-location">
-<a class="gh-skip-link" href="#main-content">Skip to main content</a>
-<a class="gh-skip-link" href="#main-content">Skip to main content</a>
 <a class="gh-skip-link" href="#main-content">Skip to main content</a>
 <a class="gh-skip-link" href="#main-content">Skip to main content</a>
 <header class="header" id="header">
@@ -176,7 +168,6 @@ gtag('config','G-Y67JVE898Z');
   </div>
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
-<div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 <main>
   <section class="gh-loc-hero gh-loc-hero--rich">
     <div class="gh-loc-hero-inner">
@@ -463,11 +454,9 @@ gtag('config','G-Y67JVE898Z');
 
 
 
-
-
 <script defer src="../assets/gh-float-widgets.js?v=1"></script>
 <script>
-;
+window.addEventListener("scroll",function(){var h=document.getElementById("header");if(h)h.classList.toggle("scrolled",window.scrollY>80)});
 (function(){
   var t=document.querySelector(".gh-loc-cli-track");
   if(!t)return;

@@ -64,14 +64,7 @@ const EN_STUBS = {
       'Architectural photography, aerial filming, and content production for real estate marketing campaigns.',
     meta: 'Photography and media production for real estate and commercial projects.',
   },
-  'rendering-en.html': {
-    icon: 'view_in_ar',
-    title: 'Architectural Visualization',
-    subtitle:
-      'Photorealistic 3D renders, animated walkthroughs, project catalogs, and visual identity systems for mega developments across the GCC.',
-    meta: 'Premium architectural visualization and 3D rendering for developers and architects in Saudi Arabia and the GCC.',
-  },
-  'scale-models-en.html': {
+  'photography-media-en.html': {
     icon: 'domain',
     title: 'Scale Models',
     subtitle:
@@ -234,7 +227,7 @@ body{font-family:'Inter',sans-serif;background:#0A0A0A;color:var(--text-primary)
 .svc-en-btn-outline{border:1px solid rgba(255,255,255,.35);color:#FAFAF8}
 .svc-en-btn-outline:hover{border-color:#C9A84C;color:#C9A84C}
 </style>
-<script defer src="${PREFIX}assets/site-header.js?v=13"></script>
+<script defer src="${PREFIX}assets/site-header.js?v=14"></script>
 <script defer src="${PREFIX}assets/gh-performance.js?v=2"></script>
 <script defer src="${PREFIX}assets/lang-switch.js?v=1"></script>
 <script type="application/ld+json">${JSON.stringify({
@@ -325,7 +318,7 @@ for (const arFile of BILINGUAL_CLONE) {
 }
 
 for (const [enFile, data] of Object.entries(EN_STUBS)) {
-  if (ROOT_EN_COPY[enFile]) continue;
+  if (ROOT_EN_COPY[enFile] || enFile === 'rendering-en.html') continue;
   buildEnStub(enFile, data);
 }
 

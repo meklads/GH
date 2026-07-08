@@ -184,7 +184,7 @@ function syncFile(rel) {
     );
   }
 
-  html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=13');
+  html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=14');
   html = html.replace(/gh-insights\.css\?v=\d+/g, 'gh-insights.css?v=23');
 
   // Ensure footer layout CSS is always present, versioned, and after Tailwind

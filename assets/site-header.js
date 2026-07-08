@@ -1,6 +1,7 @@
 (function () {
   var HOVER_DELAY = 180;
   var closeTimer = null;
+  var menuLastFocused = null;
 
   function getNav() {
     return document.getElementById('nav');
@@ -22,6 +23,36 @@
     return document.documentElement.getAttribute('dir') === 'rtl';
   }
 
+  function getMenuFocusables() {
+    var nav = getNav();
+    var toggle = getToggle();
+    if (!nav) return [];
+    var nodes = Array.from(
+      nav.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    ).filter(function (el) {
+      return !el.disabled && el.getAttribute('aria-hidden') !== 'true';
+    });
+    if (toggle && nodes.indexOf(toggle) === -1) nodes.unshift(toggle);
+    return nodes;
+  }
+
+  function trapMobileMenuTab(e) {
+    if (!isMobile() || e.key !== 'Tab') return;
+    var nav = getNav();
+    if (!nav || !nav.classList.contains('open')) return;
+    var nodes = getMenuFocusables();
+    if (nodes.length < 2) return;
+    var first = nodes[0];
+    var last = nodes[nodes.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
   function setMenuOpen(open) {
     var nav = getNav();
     var toggle = getToggle();
@@ -38,8 +69,23 @@
       ? '<span class="material-symbols-outlined">close</span>'
       : '<span class="material-symbols-outlined">menu</span>';
 
+    if (isMobile()) {
+      nav.setAttribute('aria-modal', open ? 'true' : 'false');
+    }
+
     if (backdrop) backdrop.hidden = !open;
     if (!open) closeAllMega();
+
+    if (open) {
+      menuLastFocused = document.activeElement;
+      var nodes = getMenuFocusables();
+      window.requestAnimationFrame(function () {
+        (nodes[0] || toggle).focus();
+      });
+    } else if (menuLastFocused && typeof menuLastFocused.focus === 'function') {
+      menuLastFocused.focus();
+      menuLastFocused = null;
+    }
   }
 
   function toggleMenu() {
@@ -148,6 +194,7 @@
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') setMenuOpen(false);
+      trapMobileMenuTab(e);
     });
 
     document.addEventListener('click', function (e) {
