@@ -126,6 +126,28 @@ function collectHtmlFiles(dir, base = '') {
   return out;
 }
 
+function ensureHeaderCssOrder(html, prefix) {
+  const headerHref = `${prefix}site-header.css?v=24`;
+  const headerTag = `<link rel="stylesheet" href="${headerHref}">`;
+  html = html.replace(/<link[^>]*href="[^"]*site-header\.css[^"]*"[^>]*>\s*/gi, '');
+  if (/gh-site-enhancements\.css/i.test(html)) {
+    return html.replace(
+      /(<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>)/i,
+      `$1\n${headerTag}`
+    );
+  }
+  if (/tailwind\.min\.css/i.test(html)) {
+    return html.replace(
+      /(<link[^>]*href="[^"]*tailwind\.min\.css[^"]*"[^>]*>)/i,
+      `$1\n${headerTag}`
+    );
+  }
+  if (/<\/head>/i.test(html)) {
+    return html.replace(/<\/head>/i, `${headerTag}\n</head>`);
+  }
+  return html;
+}
+
 const SKIP = new Set([
   'home-v2-backup.html', 'en-backup.html', 'en-v2.html', 'offer-lite.html', 'gh-admin.html',
 ]);
@@ -163,12 +185,11 @@ function syncFile(rel) {
   }
 
   html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=13');
-  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=23');
   html = html.replace(/gh-insights\.css\?v=\d+/g, 'gh-insights.css?v=23');
 
   // Ensure footer layout CSS is always present, versioned, and after Tailwind
   // (unversioned or pre-Tailwind links caused a collapsed narrow footer on many pages).
-  const enhHref = `${prefix}gh-site-enhancements.css?v=19`;
+  const enhHref = `${prefix}gh-site-enhancements.css?v=20`;
   const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
   html = html.replace(
     /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,
@@ -182,6 +203,8 @@ function syncFile(rel) {
   } else if (/<\/head>/i.test(html)) {
     html = html.replace(/<\/head>/i, `${enhTag}\n</head>`);
   }
+
+  html = ensureHeaderCssOrder(html, prefix);
 
   html = ensurePerformanceScript(html, prefix);
 
@@ -200,7 +223,7 @@ function syncFooterOnly(rel) {
   html = html.replace(/<footer dir="(?:ltr|rtl)"[\s\S]*?<\/footer>/, footer);
 
   const prefix = depth > 0 ? '../'.repeat(depth) + 'assets/' : 'assets/';
-  const enhHref = `${prefix}gh-site-enhancements.css?v=16`;
+  const enhHref = `${prefix}gh-site-enhancements.css?v=20`;
   const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
   html = html.replace(
     /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,

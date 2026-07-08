@@ -33,8 +33,18 @@ body.nav-open {
   margin: 0 auto;
   padding: 0 48px;
 }
+/* Beat Tailwind's .container utility on the site header bar */
+.header > .container.header-inner {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-inline: auto !important;
+  padding-inline: 48px !important;
+  padding-block: 0 !important;
+  box-sizing: border-box !important;
+}
 @media (max-width: 768px) {
   .container { padding: 0 20px; }
+  .header > .container.header-inner { padding-inline: 20px !important; }
 }
 
 /* ----- Header shell ----- */
@@ -68,10 +78,10 @@ body.nav-open {
 @media (min-width: 901px) {
   .header .container.header-inner {
     display: grid !important;
-    grid-template-columns: 155px minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas: "logo nav actions";
     align-items: center;
-    gap: 12px 16px;
+    gap: 8px 20px;
     height: calc(var(--gh-header-height) - (var(--gh-header-pad-y) * 2));
     min-height: 0;
     max-height: calc(var(--gh-header-height) - (var(--gh-header-pad-y) * 2));
@@ -79,12 +89,12 @@ body.nav-open {
     overflow: visible;
   }
   html[dir="ltr"] .header .container.header-inner {
-    grid-template-columns: 150px minmax(0, 1fr) minmax(240px, auto);
-    gap: 10px 14px;
+    grid-template-columns: auto minmax(0, 1fr) minmax(230px, auto);
+    gap: 8px 16px;
   }
   html[dir="rtl"] .header .container.header-inner {
-    grid-template-columns: 150px minmax(0, 1fr) minmax(220px, auto);
-    gap: 10px 14px;
+    grid-template-columns: auto minmax(0, 1fr) minmax(210px, auto);
+    gap: 8px 16px;
   }
   .logo {
     grid-area: logo;
@@ -92,8 +102,10 @@ body.nav-open {
     justify-self: start;
     z-index: 4;
     margin-inline-end: 0 !important;
-    max-width: 150px;
+    max-width: 120px;
+    width: auto;
     align-self: center;
+    flex-shrink: 0;
   }
   html[dir="rtl"] .logo {
     justify-self: end;
@@ -171,12 +183,12 @@ body.nav-open {
 
 @media (min-width: 901px) and (max-width: 1280px) {
   html[dir="ltr"] .header .container.header-inner {
-    grid-template-columns: 130px minmax(0, 1fr) minmax(230px, auto);
-    gap: 8px 10px;
+    grid-template-columns: auto minmax(0, 1fr) minmax(220px, auto);
+    gap: 6px 12px;
   }
   html[dir="rtl"] .header .container.header-inner {
-    grid-template-columns: 130px minmax(0, 1fr) minmax(210px, auto);
-    gap: 8px 10px;
+    grid-template-columns: auto minmax(0, 1fr) minmax(200px, auto);
+    gap: 6px 12px;
   }
   html[dir="ltr"] .nav {
     gap: 2px;
@@ -262,7 +274,7 @@ body.nav-open {
 .header .logo-img {
   height: var(--gh-logo-height) !important;
   width: auto !important;
-  max-width: 150px;
+  max-width: 120px;
   image-rendering: -webkit-optimize-contrast;
   transition: opacity 0.3s ease;
   object-fit: contain;

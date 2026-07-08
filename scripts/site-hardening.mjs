@@ -209,10 +209,35 @@ function injectPerformanceScript(html, prefix) {
   return html.replace(/<\/body>/i, `${tag}\n</body>`);
 }
 
+function ensureHeaderCssOrder(html, assetsPrefix) {
+  const headerHref = `${assetsPrefix}site-header.css?v=24`;
+  const headerTag = `<link rel="stylesheet" href="${headerHref}">`;
+  html = html.replace(/<link[^>]*href="[^"]*site-header\.css[^"]*"[^>]*>\s*/gi, '');
+  if (/gh-site-enhancements\.css/i.test(html)) {
+    return html.replace(
+      /(<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>)/i,
+      `$1\n${headerTag}`
+    );
+  }
+  if (/tailwind\.min\.css/i.test(html)) {
+    return html.replace(
+      /(<link[^>]*href="[^"]*tailwind\.min\.css[^"]*"[^>]*>)/i,
+      `$1\n${headerTag}`
+    );
+  }
+  if (/<\/head>/i.test(html)) {
+    return html.replace(/<\/head>/i, `${headerTag}\n</head>`);
+  }
+  return html;
+}
+
 function stripConflictingHeaderStyles(html) {
   html = html.replace(/body\s*\{\s*padding-top:\s*0\s*!important;\s*\}/g, '');
   html = html.replace(/\.header-inner\s*\{[^}]*display\s*:\s*flex[^}]*\}/gi, '');
   html = html.replace(/\.header\.scrolled\s*\{[^}]*padding\s*:[^}]*\}/gi, '');
+  html = html.replace(/\.header\s*\{[^}]*position\s*:\s*fixed[^}]*\}/gi, '');
+  html = html.replace(/html\[dir="ltr"\]\s*\.nav-link\s*\{[^}]*\}/gi, '');
+  html = html.replace(/\.nav a\{[^}]*font-size[^}]*\}/gi, '');
   html = html.replace(
     /window\.addEventListener\(["']scroll["'],\s*function\s*\(\)\s*\{document\.getElementById\(["']header["']\)\.classList\.toggle\(["']scrolled["'],\s*window\.scrollY>\d+\)\};?\)/g,
     ''
@@ -237,6 +262,11 @@ function patchHtml(html, rel) {
   html = secureFormSubmits(html);
   html = stripConflictingHeaderStyles(html);
 
+  const assetsPrefix = depth > 0 ? '../'.repeat(depth) + 'assets/' : 'assets/';
+  if (html.includes('site-header.css') || html.includes('<header class="header"')) {
+    html = ensureHeaderCssOrder(html, assetsPrefix);
+  }
+
   if (rel === 'index-ar.html' && !html.includes('<meta name="description"')) {
     html = html.replace(
       /<meta name="viewport"[^>]*>/,
@@ -255,13 +285,13 @@ function patchHtml(html, rel) {
     html = html.replace(/<head>/i, `<head>\n<script src="${prefix}assets/gh-forms-config.js"></script>`);
   }
 
-  const enhanceCss = `<link rel="stylesheet" href="${prefix}assets/gh-site-enhancements.css?v=19">`;
+  const enhanceCss = `<link rel="stylesheet" href="${prefix}assets/gh-site-enhancements.css?v=20">`;
   if (!html.includes('gh-site-enhancements.css')) {
     html = html.replace(/<\/head>/i, `${enhanceCss}\n</head>`);
   } else {
     html = html.replace(
       /gh-site-enhancements\.css(?:\?v=\d+)?/g,
-      'gh-site-enhancements.css?v=19'
+      'gh-site-enhancements.css?v=20'
     );
   }
 
