@@ -17,7 +17,7 @@ const SKIP = new Set([
   'offer-lite.html',
 ]);
 
-const EXPECT_CSS = 'site-header.css?v=19';
+const EXPECT_CSS = 'site-header.css?v=20';
 const EXPECT_JS = 'site-header.js?v=12';
 
 function collectHtml(dir, base = '') {
@@ -78,8 +78,8 @@ for (const rel of collectHtml(ROOT)) {
       ? html.includes('Quick Links') && html.includes('gh-footer__top') && !html.includes('Saudi Cities') && !html.includes('gh-lang-alt')
       : html.includes('روابط مهمة') && html.includes('gh-footer__top') && !html.includes('المدن السعودية') && !html.includes('gh-lang-alt');
     if (!footerOk) issues.push(`${rel}: outdated footer layout`);
-    if (!/gh-site-enhancements\.css\?v=16/.test(html)) {
-      issues.push(`${rel}: missing versioned footer CSS (gh-site-enhancements.css?v=16)`);
+    if (!/gh-site-enhancements\.css\?v=17/.test(html)) {
+      issues.push(`${rel}: missing versioned footer CSS (gh-site-enhancements.css?v=17)`);
     }
   }
 }

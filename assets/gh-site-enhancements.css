@@ -624,3 +624,20 @@ body.gh-home #hero .hero-contact-strip {
     min-width: 140px;
   }
 }
+
+/* Sitewide sticky header — wins over page-local body/header resets */
+body:has(.header) {
+  padding-top: 92px !important;
+}
+@media (max-width: 768px) {
+  body:has(.header) {
+    padding-top: 72px !important;
+  }
+}
+.header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+}

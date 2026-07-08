@@ -209,6 +209,11 @@ function injectPerformanceScript(html, prefix) {
   return html.replace(/<\/body>/i, `${tag}\n</body>`);
 }
 
+function stripConflictingHeaderStyles(html) {
+  html = html.replace(/body\s*\{\s*padding-top:\s*0\s*!important;\s*\}/g, '');
+  return html;
+}
+
 function patchHtml(html, rel) {
   const depth = rel.split('/').length - 1;
   const prefix = depth > 0 ? '../'.repeat(depth) : '';
@@ -220,6 +225,7 @@ function patchHtml(html, rel) {
   html = injectAnalytics(html, prefix);
   html = injectPerformanceScript(html, prefix);
   html = secureFormSubmits(html);
+  html = stripConflictingHeaderStyles(html);
 
   if (rel === 'index-ar.html' && !html.includes('<meta name="description"')) {
     html = html.replace(
@@ -239,13 +245,13 @@ function patchHtml(html, rel) {
     html = html.replace(/<head>/i, `<head>\n<script src="${prefix}assets/gh-forms-config.js"></script>`);
   }
 
-  const enhanceCss = `<link rel="stylesheet" href="${prefix}assets/gh-site-enhancements.css?v=16">`;
+  const enhanceCss = `<link rel="stylesheet" href="${prefix}assets/gh-site-enhancements.css?v=17">`;
   if (!html.includes('gh-site-enhancements.css')) {
     html = html.replace(/<\/head>/i, `${enhanceCss}\n</head>`);
   } else {
     html = html.replace(
       /gh-site-enhancements\.css(?:\?v=\d+)?/g,
-      'gh-site-enhancements.css?v=16'
+      'gh-site-enhancements.css?v=17'
     );
   }
 

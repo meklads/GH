@@ -10,11 +10,17 @@
 body {
   padding-top: 92px;
 }
+body:has(.header) {
+  padding-top: 92px !important;
+}
 body.nav-open {
   overflow: hidden;
 }
 @media (max-width: 768px) {
-  body { padding-top: 72px; }
+  body,
+  body:has(.header) {
+    padding-top: 72px !important;
+  }
 }
 
 .container {
@@ -28,11 +34,11 @@ body.nav-open {
 
 /* ----- Header shell ----- */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
   padding: 8px 0;
   overflow: visible;
   background: var(--header-bg);
@@ -56,6 +62,10 @@ body.nav-open {
     min-height: 72px;
     position: relative;
     overflow: visible;
+  }
+  html[dir="ltr"] .header-inner {
+    grid-template-columns: minmax(120px, 170px) minmax(0, 1fr) minmax(270px, max-content);
+    gap: 10px 12px;
   }
   .logo {
     grid-column: 1;
@@ -84,7 +94,11 @@ body.nav-open {
     overflow: visible;
   }
   html[dir="rtl"] .nav { gap: 8px; }
-  html[dir="ltr"] .nav { gap: 4px; }
+  html[dir="ltr"] .nav {
+    gap: 4px;
+    justify-content: flex-end;
+    padding-inline-end: 8px;
+  }
   html[dir="ltr"] .nav-link {
     font-size: 10px;
     padding: 8px 6px;
@@ -106,6 +120,12 @@ body.nav-open {
     border: none;
     background: transparent;
   }
+  html[dir="ltr"] .nav-actions {
+    padding-inline-start: 14px;
+    border-inline-start: 1px solid rgba(255, 255, 255, 0.14);
+    background: var(--header-bg);
+    gap: 12px;
+  }
   html[dir="rtl"] .nav-actions {
     justify-self: start;
     padding-inline-start: 0;
@@ -122,7 +142,7 @@ body.nav-open {
 
 @media (min-width: 901px) and (max-width: 1280px) {
   html[dir="ltr"] .header-inner {
-    grid-template-columns: minmax(100px, 150px) minmax(0, 1fr) minmax(190px, max-content);
+    grid-template-columns: minmax(100px, 150px) minmax(0, 1fr) minmax(250px, max-content);
     gap: 8px 10px;
   }
   html[dir="rtl"] .header-inner {

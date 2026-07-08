@@ -23,7 +23,6 @@ const EXTRA = `
   background: rgba(10, 10, 10, 0.98);
   border-bottom: 1px solid rgba(201, 168, 76, 0.12);
 }
-body { padding-top: 0 !important; }
 .hero-sec { padding-top: 96px; }
 .hero-image { position: relative; }
 .hero-overlay {
