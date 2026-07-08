@@ -3,15 +3,54 @@
 
   var isEn = (document.documentElement.lang || '').toLowerCase() === 'en'
     || document.documentElement.dir === 'ltr';
+  var lastFocus = null;
+
+  function getFocusable(popup) {
+    return popup.querySelectorAll(
+      'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+  }
 
   function openPopup() {
     var popup = document.getElementById('ghPopup');
-    if (popup) popup.classList.add('open');
+    if (!popup) return;
+    lastFocus = document.activeElement;
+    popup.classList.add('open');
+    popup.setAttribute('aria-hidden', 'false');
+    var closeBtn = popup.querySelector('[data-gh-popup-close]');
+    if (closeBtn) closeBtn.focus();
   }
 
   function closePopup() {
     var popup = document.getElementById('ghPopup');
-    if (popup) popup.classList.remove('open');
+    if (!popup) return;
+    popup.classList.remove('open');
+    popup.setAttribute('aria-hidden', 'true');
+    if (lastFocus && typeof lastFocus.focus === 'function') {
+      lastFocus.focus();
+    }
+  }
+
+  function onPopupKeydown(e) {
+    var popup = document.getElementById('ghPopup');
+    if (!popup || !popup.classList.contains('open')) return;
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closePopup();
+      return;
+    }
+    if (e.key !== 'Tab') return;
+    var nodes = getFocusable(popup);
+    if (!nodes.length) return;
+    var first = nodes[0];
+    var last = nodes[nodes.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 
   function brandAction() {
@@ -88,7 +127,13 @@
     if (popup && e.target === popup) closePopup();
   });
 
+  document.addEventListener('keydown', onPopupKeydown);
+
   document.addEventListener('DOMContentLoaded', function () {
+    var popup = document.getElementById('ghPopup');
+    if (popup && !popup.hasAttribute('aria-hidden')) {
+      popup.setAttribute('aria-hidden', popup.classList.contains('open') ? 'false' : 'true');
+    }
     document.querySelectorAll('[data-gh-popup-open]').forEach(function (el) {
       el.addEventListener('click', openPopup);
     });

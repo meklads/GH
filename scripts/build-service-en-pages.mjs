@@ -65,7 +65,7 @@ const EN_STUBS = {
       'Architectural photography, aerial filming, and content production for real estate marketing campaigns.',
     meta: 'Photography and media production for real estate and commercial projects.',
   },
-  'photography-media-en.html': {
+  'scale-models-en.html': {
     icon: 'domain',
     title: 'Scale Models',
     subtitle:

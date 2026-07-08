@@ -19,7 +19,18 @@ const SKIP = new Set([
   'offer-lite.html',
 ]);
 
-const SITEMAP_SKIP = new Set([...SKIP, 'en.html']);
+const SITEMAP_SKIP = new Set([
+  ...SKIP,
+  'en.html',
+  'blog.html',
+  '3d-animation-en.html',
+  'media-production-en.html',
+  'smart-maquettes-en.html',
+  'interactive-experiences-en.html',
+  'insights/news.html',
+  'insights/articles.html',
+  'insights/case-studies.html',
+]);
 
 /** Folder index.html stubs that only redirect — exclude from sitemap */
 const SITEMAP_REDIRECT_STUBS = new Set([
@@ -62,9 +73,9 @@ const EXPLICIT_PAIRS = {
   'en.html': 'index-ar.html',
   'contact.html': 'contact-us-en.html',
   'contact-us-en.html': 'contact-us.html',
-  'case-study-alrajhi-en.html': 'casestudy1.html',
-  'case-study-anan-eskan-en.html': 'casestudy1.html',
-  'case-study-mwl-en.html': 'casestudy1.html',
+  'case-study-alrajhi-en.html': 'insights/projects/al-rajhi-riyadh.html',
+  'case-study-anan-eskan-en.html': 'insights/projects/anan-eskan-riyadh.html',
+  'case-study-mwl-en.html': 'insights/projects/makkah-charter-mwl.html',
   'careers-en.html': 'index-ar.html',
 };
 

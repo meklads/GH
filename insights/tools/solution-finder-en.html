@@ -305,15 +305,18 @@ gtag('config','G-Y67JVE898Z');
     </span>
   </button>
 </div>
-<div id="ghPopup">
+<div id="ghPopup" role="dialog" aria-modal="true" aria-labelledby="ghPopupTitle" aria-hidden="true">
   <div class="gh-popup-box">
     <button type="button" class="gh-popup-close" data-gh-popup-close aria-label="Close">✕</button>
-    <div class="gh-popup-title">Register Your Interest</div>
+    <div class="gh-popup-title" id="ghPopupTitle">Register Your Interest</div>
     <div class="gh-popup-sub">Tell us about your project and we'll get in touch within 24 hours.</div>
     <form onsubmit="ghSubmit(event)">
-      <input class="gh-field" type="text" id="ghName" placeholder="Full Name *" required>
-      <input class="gh-field" type="text" id="ghCompany" placeholder="Company / Developer">
-      <select class="gh-field" id="ghProject" required>
+      <label class="gh-sr-only" for="ghName">Full Name</label>
+      <input class="gh-field" type="text" id="ghName" placeholder="Full Name *" required aria-label="Full Name">
+      <label class="gh-sr-only" for="ghCompany">Company / Developer</label>
+      <input class="gh-field" type="text" id="ghCompany" placeholder="Company / Developer" aria-label="Company or Developer">
+      <label class="gh-sr-only" for="ghProject">Project Type</label>
+      <select class="gh-field" id="ghProject" required aria-label="Project Type">
         <option value="" disabled selected>Project Type *</option>
         <option>Residential Development</option>
         <option>Commercial Project</option>
@@ -322,8 +325,10 @@ gtag('config','G-Y67JVE898Z');
         <option>Government / Public</option>
         <option>Other</option>
       </select>
-      <input class="gh-field" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required>
-      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Brief about your project..." style="resize:none"></textarea>
+      <label class="gh-sr-only" for="ghPhone">Phone / WhatsApp</label>
+      <input class="gh-field" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required aria-label="Phone or WhatsApp">
+      <label class="gh-sr-only" for="ghBrief">Project brief</label>
+      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Brief about your project..." style="resize:none" aria-label="Brief about your project"></textarea>
       <button type="submit" class="gh-submit">Submit Enquiry →</button>
     </form>
     <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">

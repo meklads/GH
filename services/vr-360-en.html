@@ -550,6 +550,7 @@ gtag('config','G-Y67JVE898Z');
 
 
 
+
 <div id="vid-modal" role="dialog" aria-modal="true"><button id="vid-close" class="absolute top-6 right-6 text-white/50 hover:text-primary z-10"><span class="material-symbols-outlined text-4xl">close</span></button><div class="w-full max-w-5xl aspect-video bg-zinc-900 flex items-center justify-center mx-4 border border-white/10"><span class="material-symbols-outlined text-primary text-7xl">play_circle</span></div></div>
 <button id="back-top" class="fixed bottom-8 left-6 z-50 w-11 h-11 bg-surface-container-high border border-primary/30 text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" aria-label="Back to top"><span class="material-symbols-outlined text-xl">arrow_upward</span></button>
 <script>(function(){'use strict';
@@ -748,15 +749,18 @@ gtag('config','G-Y67JVE898Z');
     </span>
   </button>
 </div>
-<div id="ghPopup">
+<div id="ghPopup" role="dialog" aria-modal="true" aria-labelledby="ghPopupTitle" aria-hidden="true">
   <div class="gh-popup-box">
     <button type="button" class="gh-popup-close" data-gh-popup-close aria-label="Close">✕</button>
-    <div class="gh-popup-title">Register Your Interest</div>
+    <div class="gh-popup-title" id="ghPopupTitle">Register Your Interest</div>
     <div class="gh-popup-sub">Tell us about your project and we'll get in touch within 24 hours.</div>
     <form onsubmit="ghSubmit(event)">
-      <input class="gh-field" type="text" id="ghName" placeholder="Full Name *" required>
-      <input class="gh-field" type="text" id="ghCompany" placeholder="Company / Developer">
-      <select class="gh-field" id="ghProject" required>
+      <label class="gh-sr-only" for="ghName">Full Name</label>
+      <input class="gh-field" type="text" id="ghName" placeholder="Full Name *" required aria-label="Full Name">
+      <label class="gh-sr-only" for="ghCompany">Company / Developer</label>
+      <input class="gh-field" type="text" id="ghCompany" placeholder="Company / Developer" aria-label="Company or Developer">
+      <label class="gh-sr-only" for="ghProject">Project Type</label>
+      <select class="gh-field" id="ghProject" required aria-label="Project Type">
         <option value="" disabled selected>Project Type *</option>
         <option>Residential Development</option>
         <option>Commercial Project</option>
@@ -765,8 +769,10 @@ gtag('config','G-Y67JVE898Z');
         <option>Government / Public</option>
         <option>Other</option>
       </select>
-      <input class="gh-field" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required>
-      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Brief about your project..." style="resize:none"></textarea>
+      <label class="gh-sr-only" for="ghPhone">Phone / WhatsApp</label>
+      <input class="gh-field" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required aria-label="Phone or WhatsApp">
+      <label class="gh-sr-only" for="ghBrief">Project brief</label>
+      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Brief about your project..." style="resize:none" aria-label="Brief about your project"></textarea>
       <button type="submit" class="gh-submit">Submit Enquiry →</button>
     </form>
     <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">

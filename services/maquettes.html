@@ -1952,6 +1952,7 @@ html[dir="rtl"] .gallery-strip-label span {
 
 
 
+
 <!-- IMAGE LIGHTBOX -->
 <div id="imageLightbox" onclick="closeImageLightbox(event)" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:99998;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease;padding:20px">
   <img loading="lazy" id="imageLightboxImg" src="" alt="" style="max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.6);display:block">
@@ -2118,15 +2119,18 @@ document.addEventListener('keydown',function(e){
     </span>
   </button>
 </div>
-<div id="ghPopup">
+<div id="ghPopup" role="dialog" aria-modal="true" aria-labelledby="ghPopupTitle" aria-hidden="true">
   <div class="gh-popup-box">
     <button type="button" class="gh-popup-close" data-gh-popup-close aria-label="إغلاق">✕</button>
-    <div class="gh-popup-title">سجّل اهتمامك بمشروعك</div>
+    <div class="gh-popup-title" id="ghPopupTitle">سجّل اهتمامك بمشروعك</div>
     <div class="gh-popup-sub">أخبرنا عن مشروعك وسنتواصل معك خلال 24 ساعة.</div>
     <form onsubmit="ghSubmit(event)">
-      <input class="gh-field" type="text" id="ghName" placeholder="الاسم الكامل *" required>
-      <input class="gh-field" type="text" id="ghCompany" placeholder="الشركة / المطوّر العقاري">
-      <select class="gh-field" id="ghProject" required>
+      <label class="gh-sr-only" for="ghName">الاسم الكامل</label>
+      <input class="gh-field" type="text" id="ghName" placeholder="الاسم الكامل *" required aria-label="الاسم الكامل">
+      <label class="gh-sr-only" for="ghCompany">الشركة / المطوّر العقاري</label>
+      <input class="gh-field" type="text" id="ghCompany" placeholder="الشركة / المطوّر العقاري" aria-label="الشركة أو المطوّر العقاري">
+      <label class="gh-sr-only" for="ghProject">نوع المشروع</label>
+      <select class="gh-field" id="ghProject" required aria-label="نوع المشروع">
         <option value="" disabled selected>نوع المشروع *</option>
         <option>مشروع سكني</option>
         <option>مشروع تجاري</option>
@@ -2135,8 +2139,10 @@ document.addEventListener('keydown',function(e){
         <option>حكومي / خدمي</option>
         <option>أخرى</option>
       </select>
-      <input class="gh-field" type="tel" id="ghPhone" placeholder="الجوال / واتساب *" required dir="ltr">
-      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="نبذة مختصرة عن مشروعك..." style="resize:none"></textarea>
+      <label class="gh-sr-only" for="ghPhone">الجوال / واتساب</label>
+      <input class="gh-field" type="tel" id="ghPhone" placeholder="الجوال / واتساب *" required dir="ltr" aria-label="الجوال أو واتساب">
+      <label class="gh-sr-only" for="ghBrief">نبذة عن المشروع</label>
+      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="نبذة مختصرة عن مشروعك..." style="resize:none" aria-label="نبذة مختصرة عن مشروعك"></textarea>
       <button type="submit" class="gh-submit">إرسال الطلب ←</button>
     </form>
     <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">

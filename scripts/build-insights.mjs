@@ -893,7 +893,7 @@ function updateSitemap() {
     urls.push(`https://3dgraphicshouse.com/insights/tools/${t.slug}-en.html`);
   }
   for (const loc of urls) {
-    if (xml.includes(loc)) continue;
+    if (xml.includes(`<loc>${loc}</loc>`)) continue;
     xml = xml.replace(
       '</urlset>',
       `  <url><loc>${loc}</loc><lastmod>${today}</lastmod><priority>0.7</priority></url>\n</urlset>`
