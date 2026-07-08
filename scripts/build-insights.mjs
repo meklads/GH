@@ -145,7 +145,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=14">
-<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=14">
+<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=15">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=23">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=9"></script>

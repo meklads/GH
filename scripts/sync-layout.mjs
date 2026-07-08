@@ -176,8 +176,24 @@ function syncFile(rel) {
 
   html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=12');
   html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=19');
-  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=14');
   html = html.replace(/gh-insights\.css\?v=\d+/g, 'gh-insights.css?v=23');
+
+  // Ensure footer layout CSS is always present, versioned, and after Tailwind
+  // (unversioned or pre-Tailwind links caused a collapsed narrow footer on many pages).
+  const enhHref = `${prefix}gh-site-enhancements.css?v=15`;
+  const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
+  html = html.replace(
+    /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,
+    ''
+  );
+  if (/tailwind\.min\.css/i.test(html)) {
+    html = html.replace(
+      /(<link[^>]*href="[^"]*tailwind\.min\.css[^"]*"[^>]*>)/i,
+      `$1\n${enhTag}`
+    );
+  } else if (/<\/head>/i.test(html)) {
+    html = html.replace(/<\/head>/i, `${enhTag}\n</head>`);
+  }
 
   fs.writeFileSync(full, html, 'utf8');
   return rel;
@@ -192,6 +208,18 @@ function syncFooterOnly(rel) {
   const depth = depthOf(rel);
   const footer = renderPartial(en ? 'footer-en.html' : 'footer-ar.html', depth, en);
   html = html.replace(/<footer dir="(?:ltr|rtl)"[\s\S]*?<\/footer>/, footer);
+
+  const prefix = depth > 0 ? '../'.repeat(depth) + 'assets/' : 'assets/';
+  const enhHref = `${prefix}gh-site-enhancements.css?v=15`;
+  const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
+  html = html.replace(
+    /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,
+    ''
+  );
+  if (/<\/head>/i.test(html)) {
+    html = html.replace(/<\/head>/i, `${enhTag}\n</head>`);
+  }
+
   fs.writeFileSync(full, html, 'utf8');
   return rel;
 }

@@ -75,9 +75,12 @@ for (const rel of collectHtml(ROOT)) {
 
   if (html.includes('<footer dir=')) {
     const footerOk = en
-      ? html.includes('Quick Links') && !html.includes('Saudi Cities') && !html.includes('gh-lang-alt')
-      : html.includes('روابط مهمة') && !html.includes('المدن السعودية') && !html.includes('gh-lang-alt');
+      ? html.includes('Quick Links') && html.includes('gh-footer__top') && !html.includes('Saudi Cities') && !html.includes('gh-lang-alt')
+      : html.includes('روابط مهمة') && html.includes('gh-footer__top') && !html.includes('المدن السعودية') && !html.includes('gh-lang-alt');
     if (!footerOk) issues.push(`${rel}: outdated footer layout`);
+    if (!/gh-site-enhancements\.css\?v=15/.test(html)) {
+      issues.push(`${rel}: missing versioned footer CSS (gh-site-enhancements.css?v=15)`);
+    }
   }
 }
 
@@ -88,8 +91,8 @@ for (const rel of collectHtml(ROOT)) {
 
   const en = isEnglishPage(rel, html);
   const footerOk = en
-    ? html.includes('Quick Links') && !html.includes('Saudi Cities') && !html.includes('gh-lang-alt')
-    : html.includes('روابط مهمة') && !html.includes('المدن السعودية') && !html.includes('gh-lang-alt');
+    ? html.includes('Quick Links') && html.includes('gh-footer__top') && !html.includes('Saudi Cities') && !html.includes('gh-lang-alt')
+    : html.includes('روابط مهمة') && html.includes('gh-footer__top') && !html.includes('المدن السعودية') && !html.includes('gh-lang-alt');
   if (!footerOk) issues.push(`${rel}: outdated footer layout`);
 }
 

@@ -33,7 +33,15 @@ gtag('config','G-Y67JVE898Z');
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
+<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=15">
 <style>
+
+  .en, .en-block { display: none !important; }
+  body.is-en .en { display: inline !important; }
+  body.is-en .ar, body.is-en .ar-block { display: none !important; }
+  body.is-en .en-block { display: block !important; }
+  .ar-block { display: block; }
+
 
   .en, .en-block { display: none !important; }
   body.is-en .en { display: inline !important; }
@@ -458,7 +466,6 @@ document.addEventListener("DOMContentLoaded",function(){document.querySelectorAl
 <script defer src="../assets/site-header.js?v=12"></script>
 <script defer src="../assets/gh-performance.js?v=1"></script>
 <script defer src="../assets/lang-switch.js?v=1"></script>
-<link rel="stylesheet" href="../assets/gh-site-enhancements.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"الحلول الرقمية والمواقع","description":"مواقع ومنصات رقمية لإطلاق المشاريع العقارية.","url":"https://3dgraphicshouse.com/services/web-solutions.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=2">
 </head>
@@ -733,6 +740,7 @@ document.addEventListener("DOMContentLoaded",function(){document.querySelectorAl
 
 
 
+
 <script>
 var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
 if(ld&&lb){setTimeout(function(){lb.style.width="100%";},100);setTimeout(function(){ld.classList.add("out");ld.style.opacity="0";ld.style.visibility="hidden";},1400);}
@@ -789,6 +797,20 @@ document.addEventListener('DOMContentLoaded', function(){
 })();
 </script>
 <script defer src="../assets/gh-float-widgets.js?v=1"></script>
+<script>
+(function(){
+  var key='gh-svc-lang';
+  function apply(en){document.body.classList.toggle('is-en',en);localStorage.setItem(key,en?'en':'ar');}
+  var saved=localStorage.getItem(key);
+  if(saved==='en')apply(true);
+  document.querySelectorAll('.lang-switch-link').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(a.getAttribute('hreflang')==='en'){e.preventDefault();apply(true);}
+      if(a.getAttribute('hreflang')==='ar'){e.preventDefault();apply(false);}
+    });
+  });
+})();
+</script>
 <script>
 (function(){
   var key='gh-svc-lang';
