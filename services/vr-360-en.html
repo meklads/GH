@@ -34,7 +34,7 @@ gtag('config','G-Y67JVE898Z');
 <!-- /GH brand fonts -->
 
 <style>
-  /* Bilingual visibility: see assets/gh-legacy-service-theme.css?v=4 */
+  /* Bilingual visibility: see assets/gh-legacy-service-theme.css?v=5 */
 /* ── Material Symbols FILL ─────────────────── */
   .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
 
@@ -169,7 +169,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
 <link rel="stylesheet" href="../assets/site-header.css?v=26">
-<link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=4">
+<link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=5">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"VR & 360° Tours","description":"Immersive VR and panoramic 360° tours for real estate projects across Saudi Arabia and the GCC.","url":"https://3dgraphicshouse.com/services/vr-360-en.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=2">
@@ -306,8 +306,7 @@ gtag('config','G-Y67JVE898Z');
 <section class="relative h-screen flex items-center justify-center overflow-hidden">
   <div id="hero-bg" class="absolute inset-x-0 -top-[10%] h-[120%] z-0">
     <picture><source srcset="../assets/projects/vr360/360gh.webp" type="image/webp"><img class="w-full h-full object-cover" alt="VR & 360° Tours" src="../assets/projects/vr360/360gh.png" loading="lazy"/></picture>
-    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40"></div>
-    <div class="absolute inset-0 bg-black/55"></div>
+        <div class="svc-hero-scrim absolute inset-0"></div>
   </div>
   <div class="relative z-10 text-center max-w-5xl px-6">
     <span class="hero-enter font-label-caps text-label-caps text-primary tracking-[0.3em] mb-6 block" style="transition-delay:0ms">Core Service</span>
@@ -353,8 +352,7 @@ gtag('config','G-Y67JVE898Z');
       <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">How We Work</span>
       <h2 class="font-headline-xl text-on-background">Our Process</h2>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 relative">
-      <div class="step-connector hidden md:block"></div>
+    <div class="svc-process-grid grid grid-cols-2 md:grid-cols-4 gap-8 relative">
       <div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.00s">
           <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">01</div>
           <p class="font-body-md text-secondary opacity-80 text-sm">Capture panoramic photos or build VR environment</p>

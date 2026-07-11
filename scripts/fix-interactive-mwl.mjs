@@ -75,8 +75,7 @@ function fix(html, cfg) {
     /<div id="hero-bg"[\s\S]*?<\/div>\s*(?=<div class="relative z-10)/,
     `<div id="hero-bg" class="absolute inset-x-0 -top-[10%] h-[120%] z-0">
     ${pic(heroSrc, cfg.titles.heroAlt, 'w-full h-full object-cover')}
-    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40"></div>
-    <div class="absolute inset-0 bg-black/55"></div>
+    <div class="svc-hero-scrim absolute inset-0"></div>
   </div>
   `
   );
