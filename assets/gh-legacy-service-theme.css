@@ -1,78 +1,130 @@
-/* Theme tokens for legacy bilingual service pages (interactive, vr-360, shop).
-   These pages were authored against a custom Tailwind theme that never shipped
-   in assets/tailwind.min.css — without this file, text is near-invisible. */
+/* Brand theme for legacy service pages (interactive, vr-360, shop).
+   Matches homepage: light #FAFAF8, gold #C9A84C, Inter/Playfair (EN), Tajawal (AR). */
 :root {
-  --gh-bg: #0e0e0e;
-  --gh-surface: #161616;
-  --gh-surface-high: #1c1c1c;
-  --gh-surface-lowest: #0a0a0a;
-  --gh-on-bg: #f5f5f0;
-  --gh-secondary: rgba(245, 245, 240, 0.72);
-  --gh-primary: #f2ca50;
-  --gh-on-primary: #1a1400;
-  --gh-primary-container: rgba(242, 202, 80, 0.18);
+  --gh-bg: #fafaf8;
+  --gh-surface: #ffffff;
+  --gh-surface-high: #f5f2ec;
+  --gh-surface-lowest: #ffffff;
+  --gh-on-bg: #1a1a1a;
+  --gh-secondary: #555555;
+  --gh-primary: #c9a84c;
+  --gh-on-primary: #0a0a0a;
+  --gh-primary-container: rgba(201, 168, 76, 0.16);
+  --gh-border: rgba(26, 26, 26, 0.08);
+}
+
+html {
+  background: var(--gh-bg);
+  color: var(--gh-on-bg);
+}
+
+body {
+  font-family: 'Inter', 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--gh-bg) !important;
+  color: var(--gh-on-bg) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+html[dir='rtl'] body {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .bg-background { background-color: var(--gh-bg) !important; }
-.from-background { --tw-gradient-from: var(--gh-bg) var(--tw-gradient-from-position); --tw-gradient-to: rgb(14 14 14 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
-.via-background\/50 { --tw-gradient-to: rgb(14 14 14 / 0)  var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), rgb(14 14 14 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to); }
+.from-background {
+  --tw-gradient-from: var(--gh-bg) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(250 250 248 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.via-background\/50 {
+  --tw-gradient-to: rgb(250 250 248 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(250 250 248 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+.via-background\/80 {
+  --tw-gradient-to: rgb(250 250 248 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(250 250 248 / 0.8) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+.to-background\/40 {
+  --tw-gradient-to: rgb(250 250 248 / 0.4) var(--tw-gradient-to-position);
+}
 .text-on-background { color: var(--gh-on-bg) !important; }
 .text-background { color: var(--gh-bg) !important; }
 .text-secondary { color: var(--gh-secondary) !important; }
 
 .bg-primary { background-color: var(--gh-primary) !important; }
-.bg-primary\/90 { background-color: rgba(242, 202, 80, 0.9) !important; }
-.bg-primary\/10 { background-color: rgba(242, 202, 80, 0.1) !important; }
+.bg-primary\/90 { background-color: rgba(201, 168, 76, 0.9) !important; }
+.bg-primary\/10 { background-color: rgba(201, 168, 76, 0.1) !important; }
 .text-primary { color: var(--gh-primary) !important; }
 .text-on-primary { color: var(--gh-on-primary) !important; }
 .border-primary { border-color: var(--gh-primary) !important; }
-.border-primary\/20 { border-color: rgba(242, 202, 80, 0.2) !important; }
-.border-primary\/30 { border-color: rgba(242, 202, 80, 0.3) !important; }
-.border-primary\/40 { border-color: rgba(242, 202, 80, 0.4) !important; }
+.border-primary\/20 { border-color: rgba(201, 168, 76, 0.2) !important; }
+.border-primary\/30 { border-color: rgba(201, 168, 76, 0.3) !important; }
+.border-primary\/40 { border-color: rgba(201, 168, 76, 0.4) !important; }
 .hover\:bg-primary:hover { background-color: var(--gh-primary) !important; }
-.hover\:bg-primary\/10:hover { background-color: rgba(242, 202, 80, 0.1) !important; }
+.hover\:bg-primary\/10:hover { background-color: rgba(201, 168, 76, 0.1) !important; }
 .hover\:text-primary:hover { color: var(--gh-primary) !important; }
 .hover\:text-on-primary:hover { color: var(--gh-on-primary) !important; }
-.hover\:border-primary\/40:hover { border-color: rgba(242, 202, 80, 0.4) !important; }
+.hover\:border-primary\/40:hover { border-color: rgba(201, 168, 76, 0.4) !important; }
 
 .bg-surface-container { background-color: var(--gh-surface) !important; }
 .bg-surface-container-high { background-color: var(--gh-surface-high) !important; }
 .bg-surface-container-lowest { background-color: var(--gh-surface-lowest) !important; }
+
+.border-white\/5 { border-color: var(--gh-border) !important; }
+.border-white\/10 { border-color: rgba(26, 26, 26, 0.1) !important; }
 
 .selection\:bg-primary-container ::selection,
 .selection\:bg-primary-container::selection { background: var(--gh-primary-container); }
 .selection\:text-on-primary-container ::selection,
 .selection\:text-on-primary-container::selection { color: var(--gh-on-bg); }
 
-.from-primary\/5 { --tw-gradient-from: rgba(242, 202, 80, 0.05) var(--tw-gradient-from-position); --tw-gradient-to: rgb(242 202 80 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
-.to-primary\/3 { --tw-gradient-to: rgba(242, 202, 80, 0.03) var(--tw-gradient-to-position); }
+.from-primary\/5 {
+  --tw-gradient-from: rgba(201, 168, 76, 0.05) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(201 168 76 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.to-primary\/3 { --tw-gradient-to: rgba(201, 168, 76, 0.03) var(--tw-gradient-to-position); }
 
 .font-headline-xl {
-  font-family: 'Noto Serif', 'Amiri', Georgia, serif;
+  font-family: 'Playfair Display', 'Tajawal', Georgia, serif;
   font-size: clamp(2rem, 4.5vw, 3.5rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
+html[dir='rtl'] .font-headline-xl {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
 .font-headline-md {
-  font-family: 'Noto Serif', 'Amiri', Georgia, serif;
+  font-family: 'Playfair Display', 'Tajawal', Georgia, serif;
   font-size: clamp(1.25rem, 2vw, 1.6rem);
   font-weight: 600;
   line-height: 1.3;
 }
+html[dir='rtl'] .font-headline-md {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 700;
+}
 .font-body-lg {
-  font-family: 'Manrope', 'Cairo', sans-serif;
+  font-family: 'Inter', 'Tajawal', sans-serif;
   font-size: 1.125rem;
   line-height: 1.75;
 }
+html[dir='rtl'] .font-body-lg {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
 .font-body-md {
-  font-family: 'Manrope', 'Cairo', sans-serif;
+  font-family: 'Inter', 'Tajawal', sans-serif;
   font-size: 1rem;
   line-height: 1.7;
 }
+html[dir='rtl'] .font-body-md {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
 .font-label-caps,
 .text-label-caps {
-  font-family: 'Manrope', 'Cairo', sans-serif;
+  font-family: 'Inter', 'Tajawal', sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -80,23 +132,29 @@
 }
 html[dir='rtl'] .font-label-caps,
 html[dir='rtl'] .text-label-caps {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
   letter-spacing: 0.08em;
 }
 
 .svc-tag {
-  font-family: 'Manrope', 'Cairo', sans-serif;
+  font-family: 'Inter', 'Tajawal', sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gh-primary);
 }
+html[dir='rtl'] .svc-tag {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  letter-spacing: 0.08em;
+}
+
 .feat-row {
   display: flex;
   align-items: flex-start;
   gap: 12px;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--gh-border);
 }
 .feat-row .material-symbols-outlined {
   color: var(--gh-primary);
@@ -108,18 +166,46 @@ html[dir='rtl'] .text-label-caps {
   font-size: 36px;
 }
 
-/* Bilingual visibility — contents keeps heading layout intact */
-.ar, .en { display: none !important; }
-body:not(.is-en) .ar { display: inline !important; }
-body:not(.is-en) .ar-block { display: block !important; }
-body.is-en .en { display: inline !important; }
-body.is-en .en-block { display: block !important; }
-body.is-en .ar,
-body.is-en .ar-block { display: none !important; }
-body:not(.is-en) .en,
-body:not(.is-en) .en-block { display: none !important; }
+/* Full-bleed photo heroes keep light text for contrast */
+section.relative.h-screen .text-on-background,
+section.relative.min-h-screen .text-on-background {
+  color: #fafaf8 !important;
+}
+section.relative.h-screen .text-secondary,
+section.relative.min-h-screen .text-secondary {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+section.relative.h-screen .font-headline-xl,
+section.relative.min-h-screen .font-headline-xl,
+section.relative.h-screen h1,
+section.relative.min-h-screen h1 {
+  color: #fafaf8 !important;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+  font-family: 'Playfair Display', 'Tajawal', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+html[dir='rtl'] section.relative.h-screen h1,
+html[dir='rtl'] section.relative.min-h-screen h1 {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 800;
+}
 
-/* Hero readability */
 .svc-hero-overlay {
-  background: linear-gradient(180deg, rgba(8, 8, 8, 0.55) 0%, rgba(8, 8, 8, 0.82) 55%, rgba(8, 8, 8, 0.95) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.35) 0%,
+    rgba(10, 10, 10, 0.55) 45%,
+    rgba(10, 10, 10, 0.78) 100%
+  );
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #fafaf8; }
+::-webkit-scrollbar-thumb { background: #ccc; }
+::-webkit-scrollbar-thumb:hover { background: #c9a84c; }
+
+::selection {
+  background: #c9a84c;
+  color: #fafaf8;
 }

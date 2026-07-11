@@ -32,8 +32,8 @@ const EN_META = {
   },
 };
 
-const THEME_LINK_ROOT = '<link rel="stylesheet" href="assets/gh-legacy-service-theme.css?v=1">\n';
-const THEME_LINK_NESTED = '<link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=1">\n';
+const THEME_LINK_ROOT = '<link rel="stylesheet" href="assets/gh-legacy-service-theme.css?v=3">\n';
+const THEME_LINK_NESTED = '<link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">\n';
 
 function patch(html, rel) {
   const depth = rel.includes('/') ? 1 : 0;

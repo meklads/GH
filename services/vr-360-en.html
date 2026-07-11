@@ -26,34 +26,38 @@ gtag('config','G-Y67JVE898Z');
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>VR & 360° Tours | Graphics House</title>
 <meta name="description" content="Immersive VR and panoramic 360° tours for real estate projects across Saudi Arabia and the GCC."/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<!-- GH brand fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- /GH brand fonts -->
+
 <style>
-  /* Bilingual visibility: see assets/gh-legacy-service-theme.css */
+  /* Bilingual visibility: see assets/gh-legacy-service-theme.css?v=3 */
 /* ── Material Symbols FILL ─────────────────── */
   .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
 
   /* ── Scrollbar ──────────────────────────────── */
   ::-webkit-scrollbar { width:3px; }
-  ::-webkit-scrollbar-track { background:#0e0e0e; }
-  ::-webkit-scrollbar-thumb { background:#f2ca50; }
+  ::-webkit-scrollbar-track { background:#FAFAF8; }
+  ::-webkit-scrollbar-thumb { background:#C9A84C; }
 
   /* ── Custom Cursor ──────────────────────────── */
   /* custom cursor disabled — site-wide pointer restored */
   #cur-dot {
     position:fixed; top:0; left:0; width:6px; height:6px; margin:-3px 0 0 -3px;
-    background:#f2ca50; border-radius:50%; pointer-events:none; z-index:99999;
+    background:#C9A84C; border-radius:50%; pointer-events:none; z-index:99999;
     will-change:transform; opacity:0; transition:opacity .3s ease,transform .05s linear;
   }
   #cur-ring {
     position:fixed; top:0; left:0; width:36px; height:36px; margin:-18px 0 0 -18px;
-    border:1px solid rgba(242,202,80,.45); border-radius:50%;
+    border:1px solid rgba(201,168,76,.45); border-radius:50%;
     pointer-events:none; z-index:99998; will-change:transform; opacity:0;
     transition:opacity .3s ease,width .25s ease,height .25s ease,margin .25s ease,border-color .25s ease;
   }
   #cur-dot.visible,#cur-ring.visible { opacity:1; }
-  #cur-ring.hovered { width:60px; height:60px; margin:-30px 0 0 -30px; border-color:rgba(242,202,80,.8); }
+  #cur-ring.hovered { width:60px; height:60px; margin:-30px 0 0 -30px; border-color:rgba(201,168,76,.8); }
 
   /* ── Film grain ─────────────────────────────── */
   body::after {
@@ -70,13 +74,13 @@ gtag('config','G-Y67JVE898Z');
 
   /* ── Page Loader ────────────────────────────── */
   #loader {
-    position:fixed; inset:0; z-index:99999; background:#0e0e0e;
+    position:fixed; inset:0; z-index:99999; background:#FAFAF8;
     display:flex; align-items:center; justify-content:center; flex-direction:column;
     transition:opacity .6s ease,visibility .6s ease;
   }
   #loader.out { opacity:0; visibility:hidden; }
-  #loader-bar-track { width:180px; height:1px; background:rgba(242,202,80,.15); margin-top:20px; overflow:hidden; }
-  #loader-bar { height:100%; width:0; background:#f2ca50; transition:width 1s cubic-bezier(.4,0,.2,1); }
+  #loader-bar-track { width:180px; height:1px; background:rgba(201,168,76,.15); margin-top:20px; overflow:hidden; }
+  #loader-bar { height:100%; width:0; background:#C9A84C; transition:width 1s cubic-bezier(.4,0,.2,1); }
 
   /* ── Scroll reveal ──────────────────────────── */
   .reveal { transition:opacity .75s cubic-bezier(.4,0,.2,1),transform .75s cubic-bezier(.4,0,.2,1); }
@@ -98,7 +102,7 @@ gtag('config','G-Y67JVE898Z');
   /* Scrolled: full-width solid bar, like Animatics */
   #main-nav.scrolled { padding:0 !important; }
   #main-nav.scrolled #nav-pill {
-    background:rgba(8,8,8,.97) !important;
+    background:rgba(250,250,248,.97) !important;
     border-radius:0 !important;
     border-color:transparent !important;
     box-shadow:0 1px 0 rgba(255,255,255,.07), 0 4px 28px rgba(0,0,0,.7) !important;
@@ -106,7 +110,7 @@ gtag('config','G-Y67JVE898Z');
 
   /* ── Nav links، Animatics style ────────────── */
   .nav-link {
-    font-family:'Cairo',sans-serif; font-size:14px; font-weight:500;
+    font-family:'Inter','Tajawal',sans-serif; font-size:14px; font-weight:500;
     color:rgba(255,255,255,.92); text-decoration:none;
     position:relative; padding-bottom:3px;
     transition:color .25s ease;
@@ -114,7 +118,7 @@ gtag('config','G-Y67JVE898Z');
   .nav-link::after {
     content:''; position:absolute;
     bottom:0; inset-inline-start:0; inset-inline-end:0;
-    height:1px; background:#f2ca50;
+    height:1px; background:#C9A84C;
     transform:scaleX(0); transform-origin:center;
     transition:transform .28s ease;
   }
@@ -124,7 +128,7 @@ gtag('config','G-Y67JVE898Z');
   /* ── Mobile nav ─────────────────────────────── */
   #mob-nav {
     position:fixed; inset:0; z-index:9999;
-    background:#070605;
+    background:#FAFAF8;
     transform:translateX(100vw);
     transition:transform .45s cubic-bezier(.4,0,.2,1);
     overflow-y:auto;
@@ -137,6 +141,26 @@ gtag('config','G-Y67JVE898Z');
 
 
 
+
+  /* Brand light page chrome (homepage tokens) */
+  ::-webkit-scrollbar { width:3px; }
+  ::-webkit-scrollbar-track { background:#FAFAF8; }
+  ::-webkit-scrollbar-thumb { background:#CCC; }
+  ::-webkit-scrollbar-thumb:hover { background:#C9A84C; }
+  #loader { background:#FAFAF8 !important; }
+  #loader-bar-track { background:rgba(201,168,76,.18) !important; }
+  #loader-bar { background:#C9A84C !important; }
+  body::after { display:none !important; }
+  .nav-link { font-family:'Inter','Tajawal',sans-serif !important; color:#555 !important; }
+  html[dir="rtl"] .nav-link { font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif !important; }
+  .nav-link::after { background:#C9A84C !important; }
+  .nav-link:hover { color:#1A1A1A !important; }
+  #main-nav.scrolled #nav-pill {
+    background:rgba(250,250,248,.97) !important;
+    box-shadow:0 1px 0 rgba(26,26,26,.06), 0 8px 28px rgba(0,0,0,.06) !important;
+  }
+  #mob-nav { background:#FAFAF8 !important; }
+
 </style>
 
 <script defer src="../assets/site-header.js?v=14"></script>
@@ -145,12 +169,12 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
 <link rel="stylesheet" href="../assets/site-header.css?v=26">
-<link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=1">
+<link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"VR & 360° Tours","description":"Immersive VR and panoramic 360° tours for real estate projects across Saudi Arabia and the GCC.","url":"https://3dgraphicshouse.com/services/vr-360-en.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=2">
 </head>
-<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden is-en">
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
 <a class="gh-skip-link" href="#main-content">Skip to main content</a>
 <header class="header" id="header">
   <div class="container header-inner">
@@ -286,16 +310,16 @@ gtag('config','G-Y67JVE898Z');
     <div class="absolute inset-0 bg-black/55"></div>
   </div>
   <div class="relative z-10 text-center max-w-5xl px-6">
-    <span class="hero-enter font-label-caps text-label-caps text-primary tracking-[0.3em] mb-6 block" style="transition-delay:0ms"><span class="ar">الخدمة الخامسة</span><span class="en">Core Service</span></span>
+    <span class="hero-enter font-label-caps text-label-caps text-primary tracking-[0.3em] mb-6 block" style="transition-delay:0ms">Core Service</span>
     <h1 class="hero-enter text-[52px] md:text-[82px] leading-tight mb-6" style="transition-delay:120ms">
-      <span class="text-on-background ar">جولات VR وبانورامية</span><span class="text-on-background en" style="font-family:'Noto Serif',serif;letter-spacing:-0.02em">VR & 360° Tours</span>
+      VR & 360° Tours
     </h1>
     <p class="hero-enter font-body-lg text-secondary max-w-2xl mx-auto mb-12 opacity-80" style="transition-delay:240ms">
-      <span class="ar">نُنتج تجارب غامرة بتقنية الواقع الافتراضي ومشاهدات بانورامية 360° تضع عملاءك في قلب المشروع من أي مكان في العالم.</span><span class="en">We produce fully immersive VR experiences and 360° panoramic walkthroughs that place your clients at the heart of the project from anywhere in the world.</span>
+      We produce fully immersive VR experiences and 360° panoramic walkthroughs that place your clients at the heart of the project from anywhere in the world.
     </p>
     <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-6" style="transition-delay:360ms">
-      <a href="../contact.html" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(242,202,80,0.5)] shadow-[0_0_20px_rgba(242,202,80,0.3)]"><span class="ar">ابدأ مشروعك</span><span class="en">START YOUR PROJECT</span></a>
-      <a href="../portfolio-en.html" class="border border-primary text-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:bg-primary/10"><span class="ar">استعرض أعمالنا</span><span class="en">VIEW PORTFOLIO</span></a>
+      <a href="../contact.html" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] shadow-[0_0_20px_rgba(201,168,76,0.3)]">START YOUR PROJECT</a>
+      <a href="../portfolio-en.html" class="border border-primary text-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:bg-primary/10">VIEW PORTFOLIO</a>
     </div>
   </div>
 </section>
@@ -304,18 +328,18 @@ gtag('config','G-Y67JVE898Z');
 <section class="py-[120px] px-8 md:px-12">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
     <div class="reveal w-full md:w-1/2" style="opacity:0;transform:translateY(24px)">
-      <span class="svc-tag mb-8 block"><span class="ar">الخدمة الخامسة</span><span class="en">Core Service</span></span>
-      <h2 class="font-headline-xl text-on-background mb-8"><span class="ar">جولات VR وبانورامية</span><span class="en">VR & 360° Tours</span></h2>
-      <p class="font-body-lg text-secondary mb-10 opacity-80 leading-relaxed"><span class="ar">نُنتج تجارب غامرة بتقنية الواقع الافتراضي ومشاهدات بانورامية 360° تضع عملاءك في قلب المشروع من أي مكان في العالم.</span><span class="en">We produce fully immersive VR experiences and 360° panoramic walkthroughs that place your clients at the heart of the project from anywhere in the world.</span></p>
-      <div class="space-y-1"><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">جولات VR كاملة لنظارات Oculus وMeta Quest</span><span class="en">Full VR tours for Oculus and Meta Quest headsets</span></p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">صور بانورامية 360° عالية الدقة</span><span class="en">High-resolution 360° panoramic images</span></p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">نشر فوري على الويب والجوال</span><span class="en">Instant publishing to web and mobile</span></p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">تكامل مع منصات العقارات الكبرى</span><span class="en">Integration with major real estate platforms</span></p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary"><span class="ar">حرية التجوّل في المشروع بزاوية كاملة</span><span class="en">Free exploration of the project at full angles</span></p></div></div></div>
+      <span class="svc-tag mb-8 block">Core Service</span>
+      <h2 class="font-headline-xl text-on-background mb-8">VR & 360° Tours</h2>
+      <p class="font-body-lg text-secondary mb-10 opacity-80 leading-relaxed">We produce fully immersive VR experiences and 360° panoramic walkthroughs that place your clients at the heart of the project from anywhere in the world.</p>
+      <div class="space-y-1"><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary">Full VR tours for Oculus and Meta Quest headsets</p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary">High-resolution 360° panoramic images</p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary">Instant publishing to web and mobile</p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary">Integration with major real estate platforms</p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary">Free exploration of the project at full angles</p></div></div></div>
       <div class="mt-10 flex gap-6">
-        <a href="../contact.html" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-[11px] tracking-widest hover:shadow-[0_0_25px_rgba(242,202,80,0.5)] transition-all"><span class="ar">ابدأ مشروعك</span><span class="en">START YOUR PROJECT</span></a>
+        <a href="../contact.html" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-[11px] tracking-widest hover:shadow-[0_0_25px_rgba(201,168,76,0.5)] transition-all">START YOUR PROJECT</a>
       </div>
     </div>
     <div class="reveal w-full md:w-1/2 relative" style="opacity:0;transform:translateY(24px);transition-delay:.2s">
       <div class="absolute -inset-4 border border-primary/20 translate-x-4 translate-y-4 pointer-events-none"></div>
-      <picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><img class="relative z-10 w-full shadow-2xl" alt="VR & 360° Tours" src="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" loading="lazy"/></picture></picture></picture></picture></picture>
-      <button class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-[0_0_30px_rgba(242,202,80,0.5)] hover:scale-110 transition-transform">
+      <picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><img class="relative z-10 w-full shadow-2xl" alt="VR & 360° Tours" src="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" loading="lazy"/></picture></picture></picture></picture></picture></picture>
+      <button class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-[0_0_30px_rgba(201,168,76,0.5)] hover:scale-110 transition-transform">
         <span class="material-symbols-outlined ms-filled text-background text-3xl">play_arrow</span>
       </button>
     </div>
@@ -326,23 +350,23 @@ gtag('config','G-Y67JVE898Z');
 <section class="py-[100px] bg-surface-container border-t border-white/5">
   <div class="px-8 md:px-12 max-w-container-max mx-auto">
     <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
-      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block"><span class="ar">كيف نعمل</span><span class="en">How We Work</span></span>
-      <h2 class="font-headline-xl text-on-background"><span class="ar">المنهجية</span><span class="en">Our Process</span></h2>
+      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">How We Work</span>
+      <h2 class="font-headline-xl text-on-background">Our Process</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 relative">
       <div class="step-connector hidden md:block"></div>
       <div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.00s">
           <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">01</div>
-          <p class="font-body-md text-secondary opacity-80 text-sm"><span class="ar">التقاط الصور البانورامية أو بناء البيئة VR</span><span class="en">Capture panoramic photos or build VR environment</span></p>
+          <p class="font-body-md text-secondary opacity-80 text-sm">Capture panoramic photos or build VR environment</p>
         </div><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.12s">
           <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">02</div>
-          <p class="font-body-md text-secondary opacity-80 text-sm"><span class="ar">معالجة وتجميع الصور 360°</span><span class="en">Processing and stitching 360° images</span></p>
+          <p class="font-body-md text-secondary opacity-80 text-sm">Processing and stitching 360° images</p>
         </div><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.24s">
           <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">03</div>
-          <p class="font-body-md text-secondary opacity-80 text-sm"><span class="ar">برمجة التنقل والعناصر التفاعلية</span><span class="en">Programming navigation and interactive elements</span></p>
+          <p class="font-body-md text-secondary opacity-80 text-sm">Programming navigation and interactive elements</p>
         </div><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.36s">
           <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">04</div>
-          <p class="font-body-md text-secondary opacity-80 text-sm"><span class="ar">نشر ومشاركة الرابط أو الملف</span><span class="en">Publishing and sharing link or file</span></p>
+          <p class="font-body-md text-secondary opacity-80 text-sm">Publishing and sharing link or file</p>
         </div>
     </div>
   </div>
@@ -352,34 +376,34 @@ gtag('config','G-Y67JVE898Z');
 <section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto">
   <div class="flex justify-between items-end mb-12 reveal" style="opacity:0;transform:translateY(24px)">
     <div>
-      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block"><span class="ar">أعمالنا في هذه الخدمة</span><span class="en">Our Work In This Service</span></span>
-      <h2 class="font-headline-xl text-on-background"><span class="ar">أبرز المشاريع</span><span class="en">Featured Projects</span></h2>
+      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">Our Work In This Service</span>
+      <h2 class="font-headline-xl text-on-background">Featured Projects</h2>
     </div>
-    <a href="../portfolio-en.html" class="border-b border-primary text-primary pb-1 font-label-caps text-[11px] tracking-widest hover:text-white hover:border-white transition-colors hidden md:block"><span class="ar">كل الأعمال</span><span class="en">ALL WORKS</span></a>
+    <a href="../portfolio-en.html" class="border-b border-primary text-primary pb-1 font-label-caps text-[11px] tracking-widest hover:text-white hover:border-white transition-colors hidden md:block">ALL WORKS</a>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:.05s">
-      <div class="aspect-[4/3] overflow-hidden"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Project 1" loading="lazy"/></picture></picture></picture></picture></picture></div>
+      <div class="aspect-[4/3] overflow-hidden"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Project 1" loading="lazy"/></picture></picture></picture></picture></picture></picture></div>
       <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
       <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <h3 class="font-headline-md text-white mb-1"><span class="ar">الجناح الذهبي</span><span class="en">The Golden Pavilion</span></h3>
-        <a href="../case-study-detail.html" class="text-primary text-xs tracking-widest"><span class="ar">تفاصيل المشروع ←</span><span class="en">Case Study →</span></a>
+        <h3 class="font-headline-md text-white mb-1">The Golden Pavilion</h3>
+        <a href="../case-study-detail.html" class="text-primary text-xs tracking-widest">Case Study →</a>
       </div>
     </div>
     <div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:.12s">
       <div class="aspect-[4/3] overflow-hidden"><picture><source srcset="../assets/projects/vr360/360gh.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/projects/vr360/360gh.png" alt="Project 2" loading="lazy"/></picture></div>
       <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
       <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <h3 class="font-headline-md text-white mb-1"><span class="ar">واحة السلام</span><span class="en">Wahat Al-Salam</span></h3>
-        <a href="../case-study-detail.html" class="text-primary text-xs tracking-widest"><span class="ar">تفاصيل المشروع ←</span><span class="en">Case Study →</span></a>
+        <h3 class="font-headline-md text-white mb-1">Wahat Al-Salam</h3>
+        <a href="../case-study-detail.html" class="text-primary text-xs tracking-widest">Case Study →</a>
       </div>
     </div>
     <div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:.2s">
-      <div class="aspect-[4/3] overflow-hidden"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" alt="Project 3" loading="lazy"/></picture></picture></picture></picture></picture></div>
+      <div class="aspect-[4/3] overflow-hidden"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" alt="Project 3" loading="lazy"/></picture></picture></picture></picture></picture></picture></div>
       <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
       <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
-        <h3 class="font-headline-md text-white mb-1"><span class="ar">العلا الرؤيوية</span><span class="en">Aloula Vision</span></h3>
-        <a href="../case-study-detail.html" class="text-primary text-xs tracking-widest"><span class="ar">تفاصيل المشروع ←</span><span class="en">Case Study →</span></a>
+        <h3 class="font-headline-md text-white mb-1">Aloula Vision</h3>
+        <a href="../case-study-detail.html" class="text-primary text-xs tracking-widest">Case Study →</a>
       </div>
     </div>
   </div>
@@ -389,18 +413,18 @@ gtag('config','G-Y67JVE898Z');
 <section class="py-[100px] bg-surface-container-lowest border-t border-white/5">
   <div class="px-8 md:px-12 max-w-4xl mx-auto">
     <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
-      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block"><span class="ar">الأسئلة الشائعة</span><span class="en">FAQ</span></span>
-      <h2 class="font-headline-xl text-on-background"><span class="ar">أجوبة عن استفساراتكم</span><span class="en">Answers to Your Questions</span></h2>
+      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">FAQ</span>
+      <h2 class="font-headline-xl text-on-background">Answers to Your Questions</h2>
     </div>
     <div class="reveal" style="opacity:0;transform:translateY(24px)"><div class="border-b border-white/5 py-6">
-          <h4 class="font-headline-md text-on-background mb-3"><span class="ar">هل يحتاج الزبون لنظارة VR لتجربة الجولة؟</span><span class="en">Does the customer need a VR headset to experience the tour?</span></h4>
-          <p class="font-body-md text-secondary opacity-70 leading-relaxed"><span class="ar">لا، الجولات تعمل على الهاتف والكمبيوتر. النظارة تُعزز التجربة لكنها ليست ضرورية.</span><span class="en">No, tours work on phones and computers. The headset enhances the experience but is not required.</span></p>
+          <h4 class="font-headline-md text-on-background mb-3">Does the customer need a VR headset to experience the tour?</h4>
+          <p class="font-body-md text-secondary opacity-70 leading-relaxed">No, tours work on phones and computers. The headset enhances the experience but is not required.</p>
         </div><div class="border-b border-white/5 py-6">
-          <h4 class="font-headline-md text-on-background mb-3"><span class="ar">هل يمكن مشاركة الجولة مع العملاء مباشرة؟</span><span class="en">Can the tour be shared directly with clients?</span></h4>
-          <p class="font-body-md text-secondary opacity-70 leading-relaxed"><span class="ar">نعم، نوفر رابطاً قابلاً للمشاركة يعمل على جميع المتصفحات دون تثبيت.</span><span class="en">Yes, we provide a shareable link that works on all browsers without installation.</span></p>
+          <h4 class="font-headline-md text-on-background mb-3">Can the tour be shared directly with clients?</h4>
+          <p class="font-body-md text-secondary opacity-70 leading-relaxed">Yes, we provide a shareable link that works on all browsers without installation.</p>
         </div><div class="border-b border-white/5 py-6">
-          <h4 class="font-headline-md text-on-background mb-3"><span class="ar">كم صورة 360° يمكن دمجها في جولة واحدة؟</span><span class="en">How many 360° images can be combined in one tour?</span></h4>
-          <p class="font-body-md text-secondary opacity-70 leading-relaxed"><span class="ar">لا حدود تقنية، نقدم جولات من ١٠ حتى ١٠٠+ نقطة عرض بانورامية.</span><span class="en">No technical limits، we deliver tours from 10 to 100+ panoramic viewpoints.</span></p>
+          <h4 class="font-headline-md text-on-background mb-3">How many 360° images can be combined in one tour?</h4>
+          <p class="font-body-md text-secondary opacity-70 leading-relaxed">No technical limits، we deliver tours from 10 to 100+ panoramic viewpoints.</p>
         </div></div>
   </div>
 </section>
@@ -410,9 +434,9 @@ gtag('config','G-Y67JVE898Z');
   <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3"></div>
   <div class="relative z-10 max-w-2xl mx-auto px-8">
     <span class="material-symbols-outlined ms-filled text-primary text-4xl mb-6 block">vrpano</span>
-    <h2 class="font-headline-xl text-on-background mb-6"><span class="ar">جاهز لتحويل مشروعك إلى تجربة بصرية استثنائية؟</span><span class="en">Ready to turn your project into an exceptional visual experience?</span></h2>
-    <p class="font-body-lg text-secondary opacity-70 mb-10"><span class="ar">فريقنا متاح لمناقشة متطلباتك وتقديم عرض سعر مفصّل في أقل من ٤٨ ساعة.</span><span class="en">Our team is available to discuss your requirements and provide a detailed quote in less than 48 hours.</span></p>
-    <a href="../contact.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-label-caps tracking-[0.3em] hover:shadow-[0_0_30px_rgba(242,202,80,0.5)] transition-all inline-block"><span class="ar">ابدأ مشروعك الآن</span><span class="en">START YOUR PROJECT NOW</span></a>
+    <h2 class="font-headline-xl text-on-background mb-6">Ready to turn your project into an exceptional visual experience?</h2>
+    <p class="font-body-lg text-secondary opacity-70 mb-10">Our team is available to discuss your requirements and provide a detailed quote in less than 48 hours.</p>
+    <a href="../contact.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-label-caps tracking-[0.3em] hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] transition-all inline-block">START YOUR PROJECT NOW</a>
   </div>
 </section>
 
@@ -515,6 +539,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </div>
 </footer>
+
 
 
 

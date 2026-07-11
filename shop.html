@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark scroll-smooth" dir="rtl" lang="ar">
+<html class="scroll-smooth" dir="rtl" lang="ar">
 <head>
 <meta name="robots" content="noindex,follow">
 <script src="assets/gh-forms-config.js?v=2"></script>
@@ -35,34 +35,37 @@ gtag('config','G-Y67JVE898Z');
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
 <meta name="description" content="قوالب وأدوات ودورات تدريبية في الإنتاج البصري من جرافيكس هاوس."/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<!-- GH brand fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- /GH brand fonts -->
+
 <style>
-  /* Bilingual visibility: see assets/gh-legacy-service-theme.css */
+  /* Bilingual visibility: see assets/gh-legacy-service-theme.css?v=3 */
 /* ── Material Symbols FILL ─────────────────── */
   .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
 
   /* ── Scrollbar ──────────────────────────────── */
   ::-webkit-scrollbar { width:3px; }
-  ::-webkit-scrollbar-track { background:#0e0e0e; }
-  ::-webkit-scrollbar-thumb { background:#f2ca50; }
+  ::-webkit-scrollbar-track { background:#FAFAF8; }
+  ::-webkit-scrollbar-thumb { background:#C9A84C; }
 
   /* ── Custom Cursor ──────────────────────────── */
   /* custom cursor disabled — site-wide pointer restored */
   #cur-dot {
     position:fixed; top:0; left:0; width:6px; height:6px; margin:-3px 0 0 -3px;
-    background:#f2ca50; border-radius:50%; pointer-events:none; z-index:99999;
+    background:#C9A84C; border-radius:50%; pointer-events:none; z-index:99999;
     will-change:transform; opacity:0; transition:opacity .3s ease,transform .05s linear;
   }
   #cur-ring {
     position:fixed; top:0; left:0; width:36px; height:36px; margin:-18px 0 0 -18px;
-    border:1px solid rgba(242,202,80,.45); border-radius:50%;
+    border:1px solid rgba(201,168,76,.45); border-radius:50%;
     pointer-events:none; z-index:99998; will-change:transform; opacity:0;
     transition:opacity .3s ease,width .25s ease,height .25s ease,margin .25s ease,border-color .25s ease;
   }
   #cur-dot.visible,#cur-ring.visible { opacity:1; }
-  #cur-ring.hovered { width:60px; height:60px; margin:-30px 0 0 -30px; border-color:rgba(242,202,80,.8); }
+  #cur-ring.hovered { width:60px; height:60px; margin:-30px 0 0 -30px; border-color:rgba(201,168,76,.8); }
 
   /* ── Film grain ─────────────────────────────── */
   body::after {
@@ -79,13 +82,13 @@ gtag('config','G-Y67JVE898Z');
 
   /* ── Page Loader ────────────────────────────── */
   #loader {
-    position:fixed; inset:0; z-index:99999; background:#0e0e0e;
+    position:fixed; inset:0; z-index:99999; background:#FAFAF8;
     display:flex; align-items:center; justify-content:center; flex-direction:column;
     transition:opacity .6s ease,visibility .6s ease;
   }
   #loader.out { opacity:0; visibility:hidden; }
-  #loader-bar-track { width:180px; height:1px; background:rgba(242,202,80,.15); margin-top:20px; overflow:hidden; }
-  #loader-bar { height:100%; width:0; background:#f2ca50; transition:width 1s cubic-bezier(.4,0,.2,1); }
+  #loader-bar-track { width:180px; height:1px; background:rgba(201,168,76,.15); margin-top:20px; overflow:hidden; }
+  #loader-bar { height:100%; width:0; background:#C9A84C; transition:width 1s cubic-bezier(.4,0,.2,1); }
 
   /* ── Scroll reveal ──────────────────────────── */
   .reveal { transition:opacity .75s cubic-bezier(.4,0,.2,1),transform .75s cubic-bezier(.4,0,.2,1); }
@@ -107,7 +110,7 @@ gtag('config','G-Y67JVE898Z');
   /* Scrolled: full-width solid bar, like Animatics */
   #main-nav.scrolled { padding:0 !important; }
   #main-nav.scrolled #nav-pill {
-    background:rgba(8,8,8,.97) !important;
+    background:rgba(250,250,248,.97) !important;
     border-radius:0 !important;
     border-color:transparent !important;
     box-shadow:0 1px 0 rgba(255,255,255,.07), 0 4px 28px rgba(0,0,0,.7) !important;
@@ -115,7 +118,7 @@ gtag('config','G-Y67JVE898Z');
 
   /* ── Nav links، Animatics style ────────────── */
   .nav-link {
-    font-family:'Cairo',sans-serif; font-size:14px; font-weight:500;
+    font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif; font-size:14px; font-weight:500;
     color:rgba(255,255,255,.92); text-decoration:none;
     position:relative; padding-bottom:3px;
     transition:color .25s ease;
@@ -123,7 +126,7 @@ gtag('config','G-Y67JVE898Z');
   .nav-link::after {
     content:''; position:absolute;
     bottom:0; inset-inline-start:0; inset-inline-end:0;
-    height:1px; background:#f2ca50;
+    height:1px; background:#C9A84C;
     transform:scaleX(0); transform-origin:center;
     transition:transform .28s ease;
   }
@@ -133,7 +136,7 @@ gtag('config','G-Y67JVE898Z');
   /* ── Mobile nav ─────────────────────────────── */
   #mob-nav {
     position:fixed; inset:0; z-index:9999;
-    background:#070605;
+    background:#FAFAF8;
     transform:translateX(100vw);
     transition:transform .45s cubic-bezier(.4,0,.2,1);
     overflow-y:auto;
@@ -146,6 +149,26 @@ gtag('config','G-Y67JVE898Z');
 
 
 
+
+  /* Brand light page chrome (homepage tokens) */
+  ::-webkit-scrollbar { width:3px; }
+  ::-webkit-scrollbar-track { background:#FAFAF8; }
+  ::-webkit-scrollbar-thumb { background:#CCC; }
+  ::-webkit-scrollbar-thumb:hover { background:#C9A84C; }
+  #loader { background:#FAFAF8 !important; }
+  #loader-bar-track { background:rgba(201,168,76,.18) !important; }
+  #loader-bar { background:#C9A84C !important; }
+  body::after { display:none !important; }
+  .nav-link { font-family:'Inter','Tajawal',sans-serif !important; color:#555 !important; }
+  html[dir="rtl"] .nav-link { font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif !important; }
+  .nav-link::after { background:#C9A84C !important; }
+  .nav-link:hover { color:#1A1A1A !important; }
+  #main-nav.scrolled #nav-pill {
+    background:rgba(250,250,248,.97) !important;
+    box-shadow:0 1px 0 rgba(26,26,26,.06), 0 8px 28px rgba(0,0,0,.06) !important;
+  }
+  #mob-nav { background:#FAFAF8 !important; }
+
 </style>
 <script defer src="assets/site-header.js?v=14"></script>
 <script defer src="assets/gh-performance.js?v=2"></script>
@@ -153,7 +176,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=21">
 <link rel="stylesheet" href="assets/site-header.css?v=26">
-<link rel="stylesheet" href="assets/gh-legacy-service-theme.css?v=1">
+<link rel="stylesheet" href="assets/gh-legacy-service-theme.css?v=3">
 
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=2">
 </head>
@@ -289,20 +312,20 @@ gtag('config','G-Y67JVE898Z');
 <section class="relative pt-40 pb-20 text-center px-8">
   <div class="absolute inset-0 z-0 bg-gradient-to-b from-surface-container/20 to-background"></div>
   <div class="relative z-10">
-    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block"><span class="ar">منتجات رقمية وتدريب</span><span class="en">Digital Products & Training</span></span>
-    <h1 class="text-[56px] md:text-[80px] leading-tight text-on-background mb-6"><span class="ar">المتجر</span><span class="en">Shop</span></h1>
-    <p class="font-body-lg text-secondary opacity-70 max-w-xl mx-auto"><span class="ar">قوالب وأدوات ودورات تدريبية متخصصة في الإنتاج البصري من فريق جرافيكس هاوس.</span><span class="en">Templates, tools, and training courses specialized in visual production from the Graphics House team.</span></p>
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">منتجات رقمية وتدريب</span>
+    <h1 class="text-[56px] md:text-[80px] leading-tight text-on-background mb-6">المتجر</h1>
+    <p class="font-body-lg text-secondary opacity-70 max-w-xl mx-auto">قوالب وأدوات ودورات تدريبية متخصصة في الإنتاج البصري من فريق جرافيكس هاوس.</p>
   </div>
 </section>
 
 <!-- ── Categories ─────────────────────────────── -->
 <section class="px-8 md:px-12 max-w-container-max mx-auto pb-6">
   <div class="flex flex-wrap gap-2 justify-center" dir="ltr">
-    <button class="filter-btn active" data-filter="all"><span class="ar">الكل</span><span class="en">ALL</span></button>
-    <button class="filter-btn" data-filter="templates"><span class="ar">قوالب</span><span class="en">TEMPLATES</span></button>
-    <button class="filter-btn" data-filter="courses"><span class="ar">دورات</span><span class="en">COURSES</span></button>
-    <button class="filter-btn" data-filter="tools"><span class="ar">أدوات</span><span class="en">TOOLS</span></button>
-    <button class="filter-btn" data-filter="consult"><span class="ar">استشارات</span><span class="en">CONSULTING</span></button>
+    <button class="filter-btn active" data-filter="all">الكل</button>
+    <button class="filter-btn" data-filter="templates">قوالب</button>
+    <button class="filter-btn" data-filter="courses">دورات</button>
+    <button class="filter-btn" data-filter="tools">أدوات</button>
+    <button class="filter-btn" data-filter="consult">استشارات</button>
   </div>
 </section>
 
@@ -311,7 +334,7 @@ gtag('config','G-Y67JVE898Z');
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     <div class="reveal group border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 flex flex-col" style="opacity:0;transform:translateY(24px);transition-delay:0.00s">
       <div class="relative overflow-hidden aspect-[4/3]">
-        <picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Premium Architectural Design Templates Bundle" loading="lazy"/></picture></picture></picture></picture></picture>
+        <picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Premium Architectural Design Templates Bundle" loading="lazy"/></picture></picture></picture></picture></picture></picture>
         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
         <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-3 py-1 border border-white/10 flex items-center gap-2">
           <span class="material-symbols-outlined ms-filled text-primary text-sm">architecture</span>
@@ -319,12 +342,12 @@ gtag('config','G-Y67JVE898Z');
         </div>
       </div>
       <div class="p-7 flex flex-col flex-1 bg-surface-container-low">
-        <h3 class="font-headline-md text-on-background mb-3 group-hover:text-primary transition-colors"><span class="ar">حزمة قوالب التصميم المعماري المتميز</span><span class="en">Premium Architectural Design Templates Bundle</span></h3>
-        <p class="font-body-md text-secondary opacity-60 text-sm leading-relaxed mb-6 flex-1"><span class="ar">١٢ قالب Photoshop وLightroom جاهزة لتعزيز صورك المعمارية بمستوى استوديو جرافيكس هاوس.</span><span class="en">12 Photoshop and Lightroom templates ready to enhance your architectural images at Graphics House studio level.</span></p>
+        <h3 class="font-headline-md text-on-background mb-3 group-hover:text-primary transition-colors">حزمة قوالب التصميم المعماري المتميز</h3>
+        <p class="font-body-md text-secondary opacity-60 text-sm leading-relaxed mb-6 flex-1">١٢ قالب Photoshop وLightroom جاهزة لتعزيز صورك المعمارية بمستوى استوديو جرافيكس هاوس.</p>
         <div class="flex items-center justify-between mt-auto">
           <span class="text-primary text-2xl font-bold">SAR 349</span>
           <button class="bg-primary text-on-primary px-5 py-3 font-label-caps text-[10px] tracking-widest hover:bg-white hover:text-black transition-all active:scale-95">
-            <span class="ar">أضف للسلة</span><span class="en">ADD TO CART</span>
+            أضف للسلة
           </button>
         </div>
       </div>
@@ -339,12 +362,12 @@ gtag('config','G-Y67JVE898Z');
         </div>
       </div>
       <div class="p-7 flex flex-col flex-1 bg-surface-container-low">
-        <h3 class="font-headline-md text-on-background mb-3 group-hover:text-primary transition-colors"><span class="ar">دورة الإضاءة الاحترافية للـ V-Ray</span><span class="en">Professional V-Ray Lighting Masterclass</span></h3>
-        <p class="font-body-md text-secondary opacity-60 text-sm leading-relaxed mb-6 flex-1"><span class="ar">٦ ساعات من التدريب المكثف على أسرار الإضاءة الاحترافية في V-Ray بأسلوب جرافيكس هاوس.</span><span class="en">6 hours of intensive training on professional lighting secrets in V-Ray, in the Graphics House style.</span></p>
+        <h3 class="font-headline-md text-on-background mb-3 group-hover:text-primary transition-colors">دورة الإضاءة الاحترافية للـ V-Ray</h3>
+        <p class="font-body-md text-secondary opacity-60 text-sm leading-relaxed mb-6 flex-1">٦ ساعات من التدريب المكثف على أسرار الإضاءة الاحترافية في V-Ray بأسلوب جرافيكس هاوس.</p>
         <div class="flex items-center justify-between mt-auto">
           <span class="text-primary text-2xl font-bold">SAR 749</span>
           <button class="bg-primary text-on-primary px-5 py-3 font-label-caps text-[10px] tracking-widest hover:bg-white hover:text-black transition-all active:scale-95">
-            <span class="ar">أضف للسلة</span><span class="en">ADD TO CART</span>
+            أضف للسلة
           </button>
         </div>
       </div>
@@ -359,19 +382,19 @@ gtag('config','G-Y67JVE898Z');
         </div>
       </div>
       <div class="p-7 flex flex-col flex-1 bg-surface-container-low">
-        <h3 class="font-headline-md text-on-background mb-3 group-hover:text-primary transition-colors"><span class="ar">مكتبة المواد والملمس الذهبية</span><span class="en">Golden Materials & Textures Library</span></h3>
-        <p class="font-body-md text-secondary opacity-60 text-sm leading-relaxed mb-6 flex-1"><span class="ar">أكثر من ٥٠٠ مادة وملمس عالي الدقة مُحسّنة للاستخدام في مشاريع الإظهار المعماري الراقية.</span><span class="en">Over 500 high-resolution materials and textures optimized for use in premium architectural visualization projects.</span></p>
+        <h3 class="font-headline-md text-on-background mb-3 group-hover:text-primary transition-colors">مكتبة المواد والملمس الذهبية</h3>
+        <p class="font-body-md text-secondary opacity-60 text-sm leading-relaxed mb-6 flex-1">أكثر من ٥٠٠ مادة وملمس عالي الدقة مُحسّنة للاستخدام في مشاريع الإظهار المعماري الراقية.</p>
         <div class="flex items-center justify-between mt-auto">
           <span class="text-primary text-2xl font-bold">SAR 549</span>
           <button class="bg-primary text-on-primary px-5 py-3 font-label-caps text-[10px] tracking-widest hover:bg-white hover:text-black transition-all active:scale-95">
-            <span class="ar">أضف للسلة</span><span class="en">ADD TO CART</span>
+            أضف للسلة
           </button>
         </div>
       </div>
     </div>
     <div class="reveal group border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 flex flex-col" style="opacity:0;transform:translateY(24px);transition-delay:0.24s">
       <div class="relative overflow-hidden aspect-[4/3]">
-        <picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg" alt="Professional Rendering Book، Digital Edition" loading="lazy"/></picture></picture></picture></picture></picture>
+        <picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg" alt="Professional Rendering Book، Digital Edition" loading="lazy"/></picture></picture></picture></picture></picture></picture>
         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
         <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-3 py-1 border border-white/10 flex items-center gap-2">
           <span class="material-symbols-outlined ms-filled text-primary text-sm">menu_book</span>
@@ -379,19 +402,19 @@ gtag('config','G-Y67JVE898Z');
         </div>
       </div>
       <div class="p-7 flex flex-col flex-1 bg-surface-container-low">
-        <h3 class="font-headline-md text-on-background mb-3 group-hover:text-primary transition-colors"><span class="ar">كتاب الرندر الاحترافي، النسخة الرقمية</span><span class="en">Professional Rendering Book، Digital Edition</span></h3>
-        <p class="font-body-md text-secondary opacity-60 text-sm leading-relaxed mb-6 flex-1"><span class="ar">٢٤٠ صفحة من الخبرة المُكثّفة في عالم الإظهار المعماري السينمائي من مؤسسي جرافيكس هاوس.</span><span class="en">240 pages of condensed expertise in the world of cinematic architectural visualization from Graphics House founders.</span></p>
+        <h3 class="font-headline-md text-on-background mb-3 group-hover:text-primary transition-colors">كتاب الرندر الاحترافي، النسخة الرقمية</h3>
+        <p class="font-body-md text-secondary opacity-60 text-sm leading-relaxed mb-6 flex-1">٢٤٠ صفحة من الخبرة المُكثّفة في عالم الإظهار المعماري السينمائي من مؤسسي جرافيكس هاوس.</p>
         <div class="flex items-center justify-between mt-auto">
           <span class="text-primary text-2xl font-bold">SAR 199</span>
           <button class="bg-primary text-on-primary px-5 py-3 font-label-caps text-[10px] tracking-widest hover:bg-white hover:text-black transition-all active:scale-95">
-            <span class="ar">أضف للسلة</span><span class="en">ADD TO CART</span>
+            أضف للسلة
           </button>
         </div>
       </div>
     </div>
     <div class="reveal group border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 flex flex-col" style="opacity:0;transform:translateY(24px);transition-delay:0.32s">
       <div class="relative overflow-hidden aspect-[4/3]">
-        <picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Smart Lighting Plugin for 3ds Max" loading="lazy"/></picture></picture></picture></picture></picture>
+        <picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Smart Lighting Plugin for 3ds Max" loading="lazy"/></picture></picture></picture></picture></picture></picture>
         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
         <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-3 py-1 border border-white/10 flex items-center gap-2">
           <span class="material-symbols-outlined ms-filled text-primary text-sm">extension</span>
@@ -399,12 +422,12 @@ gtag('config','G-Y67JVE898Z');
         </div>
       </div>
       <div class="p-7 flex flex-col flex-1 bg-surface-container-low">
-        <h3 class="font-headline-md text-on-background mb-3 group-hover:text-primary transition-colors"><span class="ar">إضافة إضاءة ذكية لـ 3ds Max</span><span class="en">Smart Lighting Plugin for 3ds Max</span></h3>
-        <p class="font-body-md text-secondary opacity-60 text-sm leading-relaxed mb-6 flex-1"><span class="ar">إضافة حصرية تُحسّن الإضاءة الطبيعية تلقائياً في مشاريع 3ds Max وتوفّر ساعات من العمل.</span><span class="en">Exclusive plugin that automatically optimizes natural lighting in 3ds Max projects and saves hours of work.</span></p>
+        <h3 class="font-headline-md text-on-background mb-3 group-hover:text-primary transition-colors">إضافة إضاءة ذكية لـ 3ds Max</h3>
+        <p class="font-body-md text-secondary opacity-60 text-sm leading-relaxed mb-6 flex-1">إضافة حصرية تُحسّن الإضاءة الطبيعية تلقائياً في مشاريع 3ds Max وتوفّر ساعات من العمل.</p>
         <div class="flex items-center justify-between mt-auto">
           <span class="text-primary text-2xl font-bold">SAR 449</span>
           <button class="bg-primary text-on-primary px-5 py-3 font-label-caps text-[10px] tracking-widest hover:bg-white hover:text-black transition-all active:scale-95">
-            <span class="ar">أضف للسلة</span><span class="en">ADD TO CART</span>
+            أضف للسلة
           </button>
         </div>
       </div>
@@ -419,12 +442,12 @@ gtag('config','G-Y67JVE898Z');
         </div>
       </div>
       <div class="p-7 flex flex-col flex-1 bg-surface-container-low">
-        <h3 class="font-headline-md text-on-background mb-3 group-hover:text-primary transition-colors"><span class="ar">استشارة مشروع شخصية، ساعة</span><span class="en">Personal Project Consultation، 1 Hour</span></h3>
-        <p class="font-body-md text-secondary opacity-60 text-sm leading-relaxed mb-6 flex-1"><span class="ar">جلسة استشارية مباشرة مع أحد خبراء جرافيكس هاوس لمراجعة مشروعك وتقديم توجيهات متخصصة.</span><span class="en">A direct consultation session with one of Graphics House experts to review your project and provide specialized guidance.</span></p>
+        <h3 class="font-headline-md text-on-background mb-3 group-hover:text-primary transition-colors">استشارة مشروع شخصية، ساعة</h3>
+        <p class="font-body-md text-secondary opacity-60 text-sm leading-relaxed mb-6 flex-1">جلسة استشارية مباشرة مع أحد خبراء جرافيكس هاوس لمراجعة مشروعك وتقديم توجيهات متخصصة.</p>
         <div class="flex items-center justify-between mt-auto">
           <span class="text-primary text-2xl font-bold">SAR 999</span>
           <button class="bg-primary text-on-primary px-5 py-3 font-label-caps text-[10px] tracking-widest hover:bg-white hover:text-black transition-all active:scale-95">
-            <span class="ar">أضف للسلة</span><span class="en">ADD TO CART</span>
+            أضف للسلة
           </button>
         </div>
       </div>
@@ -434,10 +457,10 @@ gtag('config','G-Y67JVE898Z');
 <!-- ── Trust Badges ───────────────────────────── -->
 <section class="py-20 bg-surface-container border-t border-white/5">
   <div class="px-8 md:px-12 max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-    <div class="reveal" style="opacity:0;transform:translateY(24px)"><span class="material-symbols-outlined ms-filled text-primary text-3xl mb-3 block">verified</span><h4 class="font-label-caps text-label-caps text-on-background mb-1"><span class="ar">منتجات موثّقة</span><span class="en">VERIFIED PRODUCTS</span></h4><p class="text-zinc-500 text-xs"><span class="ar">من فريق جرافيكس هاوس</span><span class="en">From Graphics House team</span></p></div>
-    <div class="reveal" style="opacity:0;transform:translateY(24px);transition-delay:.1s"><span class="material-symbols-outlined ms-filled text-primary text-3xl mb-3 block">download</span><h4 class="font-label-caps text-label-caps text-on-background mb-1"><span class="ar">تحميل فوري</span><span class="en">INSTANT DOWNLOAD</span></h4><p class="text-zinc-500 text-xs"><span class="ar">بعد إتمام الدفع مباشرة</span><span class="en">Immediately after payment</span></p></div>
-    <div class="reveal" style="opacity:0;transform:translateY(24px);transition-delay:.2s"><span class="material-symbols-outlined ms-filled text-primary text-3xl mb-3 block">support_agent</span><h4 class="font-label-caps text-label-caps text-on-background mb-1"><span class="ar">دعم فني مستمر</span><span class="en">ONGOING SUPPORT</span></h4><p class="text-zinc-500 text-xs"><span class="ar">عبر البريد والواتساب</span><span class="en">Via email and WhatsApp</span></p></div>
-    <div class="reveal" style="opacity:0;transform:translateY(24px);transition-delay:.3s"><span class="material-symbols-outlined ms-filled text-primary text-3xl mb-3 block">autorenew</span><h4 class="font-label-caps text-label-caps text-on-background mb-1"><span class="ar">تحديثات مجانية</span><span class="en">FREE UPDATES</span></h4><p class="text-zinc-500 text-xs"><span class="ar">لمدة سنة كاملة</span><span class="en">For a full year</span></p></div>
+    <div class="reveal" style="opacity:0;transform:translateY(24px)"><span class="material-symbols-outlined ms-filled text-primary text-3xl mb-3 block">verified</span><h4 class="font-label-caps text-label-caps text-on-background mb-1">منتجات موثّقة</h4><p class="text-zinc-500 text-xs">من فريق جرافيكس هاوس</p></div>
+    <div class="reveal" style="opacity:0;transform:translateY(24px);transition-delay:.1s"><span class="material-symbols-outlined ms-filled text-primary text-3xl mb-3 block">download</span><h4 class="font-label-caps text-label-caps text-on-background mb-1">تحميل فوري</h4><p class="text-zinc-500 text-xs">بعد إتمام الدفع مباشرة</p></div>
+    <div class="reveal" style="opacity:0;transform:translateY(24px);transition-delay:.2s"><span class="material-symbols-outlined ms-filled text-primary text-3xl mb-3 block">support_agent</span><h4 class="font-label-caps text-label-caps text-on-background mb-1">دعم فني مستمر</h4><p class="text-zinc-500 text-xs">عبر البريد والواتساب</p></div>
+    <div class="reveal" style="opacity:0;transform:translateY(24px);transition-delay:.3s"><span class="material-symbols-outlined ms-filled text-primary text-3xl mb-3 block">autorenew</span><h4 class="font-label-caps text-label-caps text-on-background mb-1">تحديثات مجانية</h4><p class="text-zinc-500 text-xs">لمدة سنة كاملة</p></div>
   </div>
 </section>
 
@@ -540,6 +563,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </div>
 </footer>
+
 
 
 

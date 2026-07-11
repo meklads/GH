@@ -18,71 +18,16 @@
     return null;
   }
 
-  // Dedicated -en / -ar URLs win over localStorage (fixes interactive-en showing Arabic)
+  // Dedicated AR/EN URLs are monolingual — never toggle content language in-page.
   var pageLang = detectPageLang();
   var currentLang = pageLang || localStorage.getItem('gh-lang') || 'ar';
+  if (pageLang) localStorage.setItem('gh-lang', pageLang);
 
-  function setLang(lang) {
-    currentLang = lang;
-    if (lang === 'en') {
-      body.classList.add('is-en');
-      html.lang = 'en';
-    } else {
-      body.classList.remove('is-en');
-      html.lang = 'ar';
-    }
-    localStorage.setItem('gh-lang', lang);
-    updateHeaderLangStyles();
-  }
-
-  function updateHeaderLangStyles() {
-    document.querySelectorAll('.nav-actions span[style*="letter-spacing"]').forEach(function (span) {
-      var links = span.querySelectorAll('a');
-      if (links.length < 2) return;
-      var arLink = links[0];
-      var enLink = links[1];
-      if (currentLang === 'ar') {
-        arLink.style.borderBottom = '1.5px solid #C9A84C';
-        arLink.style.paddingBottom = '1px';
-        enLink.style.borderBottom = '';
-        enLink.style.paddingBottom = '';
-      } else {
-        enLink.style.borderBottom = '1.5px solid #C9A84C';
-        enLink.style.paddingBottom = '1px';
-        arLink.style.borderBottom = '';
-        arLink.style.paddingBottom = '';
-      }
-    });
-  }
-
-  function wireHeaderLangToggle() {
-    document.querySelectorAll('.nav-actions span[style*="letter-spacing"]').forEach(function (span) {
-      var links = span.querySelectorAll('a');
-      if (links.length < 2) return;
-      links[0].addEventListener('click', function (e) {
-        e.preventDefault();
-        setLang('ar');
-      });
-      links[1].addEventListener('click', function (e) {
-        e.preventDefault();
-        setLang('en');
-      });
-    });
-  }
-
-  var isDark = localStorage.getItem('gh-theme') !== 'light';
-  function applyTheme(dark) {
-    isDark = dark;
-    body.classList.toggle('is-light', !dark);
-    localStorage.setItem('gh-theme', dark ? 'dark' : 'light');
-  }
-
-  applyTheme(isDark);
-  if (themeBtn) themeBtn.addEventListener('click', function () { applyTheme(!isDark); });
-  if (langBtn) langBtn.addEventListener('click', function () { setLang(currentLang === 'ar' ? 'en' : 'ar'); });
-
-  setLang(currentLang);
-  wireHeaderLangToggle();
+  // Always light brand theme (homepage #FAFAF8) — no dark mode on these pages.
+  body.classList.remove('is-light');
+  localStorage.setItem('gh-theme', 'light');
+  if (themeBtn) themeBtn.style.display = 'none';
+  if (langBtn) langBtn.style.display = 'none';
 
   function triggerHeroEntrance() {
     document.querySelectorAll('.hero-enter').forEach(function (el) { el.classList.add('in'); });

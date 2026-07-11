@@ -160,64 +160,15 @@ function rewriteRootHtmlToServices(html, enFileName) {
 }
 
 function cloneBilingualEn(arFile, enFile) {
-  const arPath = path.join(SERVICES, arFile);
-  let html = fs.readFileSync(arPath, 'utf8');
-  html = html.replace(/<html[^>]*>/i, '<html class="scroll-smooth" dir="ltr" lang="en">');
-  html = html.replace(/<body([^>]*)>/i, (m, attrs) => {
-    if (/class=/.test(attrs)) {
-      return m.replace(/class="([^"]*)"/, 'class="$1 is-en"');
-    }
-    return '<body class="is-en">';
-  });
-  html = html.replace(/href="\.\.\/contact-us\.html"/g, 'href="../contact-us-en.html"');
-  html = html.replace(/href="\.\.\/who-we-are\.html"/g, 'href="../who-we-are-en.html"');
-  html = html.replace(/href="\.\.\/portfolio\.html"/g, 'href="../portfolio-en.html"');
-  html = html.replace(/href="\.\.\/casestudy1\.html"/g, 'href="../casestudy1-en.html"');
-
-  const enName = enFile;
-  const canonical = `${BASE}/services/${enName}`;
-  const arUrl = `${BASE}/services/${arFile}`;
-  const seo = `<!-- GH SEO -->
-<link rel="canonical" href="${canonical}">
-<link rel="alternate" hreflang="en" href="${canonical}">
-<link rel="alternate" hreflang="ar" href="${arUrl}">
-<link rel="alternate" hreflang="x-default" href="${canonical}">`;
-  html = html.replace(/<!-- GH SEO -->[\s\S]*?<link rel="alternate" hreflang="x-default"[^>]*>/, seo);
-
-  const EN_META = {
-    'interactive-en.html': {
-      title: 'Interactive Presentations | Graphics House',
-      description:
-        'Touch-enabled interactive environments with Unreal Engine — walkthroughs, material switching, and unit selection in real time.',
-      name: 'Interactive Presentations',
-    },
-    'vr-360-en.html': {
-      title: 'VR & 360° Tours | Graphics House',
-      description:
-        'Immersive VR and panoramic 360° tours for real estate projects across Saudi Arabia and the GCC.',
-      name: 'VR & 360° Tours',
-    },
-  };
-  const meta = EN_META[enName];
-  if (meta) {
-    html = html.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);
-    html = html.replace(
-      /<meta name="description" content="[^"]*"\/>/,
-      `<meta name="description" content="${meta.description}"/>`
-    );
-    html = html.replace(/("name":")[^"]+(")/, `$1${meta.name}$2`);
-    html = html.replace(
-      /("description":")[^"]+(")/,
-      `$1${meta.description.replace(/"/g, '\\"')}$2`
-    );
-    html = html.replace(
-      /("url":")https:\/\/3dgraphicshouse\.com\/services\/[^"]+(")/,
-      `$1${canonical}$2`
-    );
+  // EN pages are maintained as dedicated monolingual brand pages
+  // (see scripts/brand-legacy-service-pages.mjs). Do not overwrite them
+  // with bilingual AR clones.
+  const enPath = path.join(SERVICES, enFile);
+  if (fs.existsSync(enPath)) {
+    console.log('  keep monolingual EN:', enFile);
+    return;
   }
-
-  fs.writeFileSync(path.join(SERVICES, enName), html, 'utf8');
-  console.log('  bilingual EN:', enName);
+  console.warn('  missing EN page (skipped clone):', enFile);
 }
 
 function buildEnStub(enFileName, data) {
