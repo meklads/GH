@@ -97,7 +97,7 @@
       "fileType": { "ar": "نموذج تفاعلي", "en": "Interactive" },
       "icon": "description",
       "href": "tools/project-brief",
-      "comingSoon": false,
+      "comingSoon": true,
       "emailGate": false,
       "title": {
         "ar": "نموذج Brief للمشروع",
@@ -113,7 +113,7 @@
       "fileType": { "ar": "PDF · قائمة", "en": "PDF · Checklist" },
       "icon": "checklist",
       "href": "tools/launch-checklist",
-      "comingSoon": false,
+      "comingSoon": true,
       "emailGate": false,
       "title": {
         "ar": "قائمة جاهزية صالة البيع",
@@ -129,7 +129,7 @@
       "fileType": { "ar": "PDF · قائمة", "en": "PDF · Checklist" },
       "icon": "download",
       "href": "downloads/visual-launch-checklist",
-      "comingSoon": false,
+      "comingSoon": true,
       "emailGate": true,
       "title": {
         "ar": "قائمة الإطلاق البصري (PDF)",
@@ -145,7 +145,7 @@
       "fileType": { "ar": "PDF · نموذج", "en": "PDF · Template" },
       "icon": "description",
       "href": "downloads/visual-project-brief",
-      "comingSoon": false,
+      "comingSoon": true,
       "emailGate": true,
       "title": {
         "ar": "نموذج Brief للمشروع (PDF)",
