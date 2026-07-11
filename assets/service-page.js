@@ -159,16 +159,11 @@
   var mobLangBtn = document.getElementById('mob-lang-btn');
   var mobThemeBtn = document.getElementById('mob-theme-btn');
   if (mobLangBtn) {
-    mobLangBtn.addEventListener('click', function () { setLang(currentLang === 'ar' ? 'en' : 'ar'); });
+    // Dedicated AR/EN pages — language changes via real navigation, not in-page toggle
+    mobLangBtn.style.display = 'none';
   }
   if (mobThemeBtn) {
-    mobThemeBtn.addEventListener('click', function () {
-      applyTheme(!isDark);
-      var ms = mobThemeBtn.querySelectorAll('.material-symbols-outlined');
-      ms.forEach(function (el) {
-        el.style.display = el.classList.contains('icon-moon') ? (isDark ? 'block' : 'none') : (isDark ? 'none' : 'block');
-      });
-    });
+    mobThemeBtn.style.display = 'none';
   }
 
   var mobNav = document.getElementById('mob-nav');

@@ -177,13 +177,14 @@ function syncFile(rel) {
   }
 
   const prefix = depth > 0 ? '../'.repeat(depth) + 'assets/' : 'assets/';
-  const langTag = `<script defer src="${prefix}lang-switch.js?v=1"></script>`;
+  const langTag = `<script defer src="${prefix}lang-switch.js?v=2"></script>`;
   if (html.includes('site-header.js') && !html.includes('lang-switch.js')) {
     html = html.replace(
       /(<script defer src="[^"]*site-header\.js[^"]*"><\/script>)/,
       `$1\n${langTag}`
     );
   }
+  html = html.replace(/lang-switch\.js(\?v=\d+)?/g, 'lang-switch.js?v=2');
 
   html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=14');
   html = html.replace(/gh-insights\.css\?v=\d+/g, 'gh-insights.css?v=23');

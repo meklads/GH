@@ -1,5 +1,6 @@
 /**
  * GH bilingual link resolver — header lang-switch + footer English/عربي
+ * Prefers <link rel="alternate" hreflang> when present, then path pairing.
  */
 (function () {
   var EXPLICIT = {
@@ -35,38 +36,47 @@
     'growth-launch.html': true,
     'project-launch.html': true,
     'brand-scale.html': true,
+    'interactive.html': true,
+    'vr-360.html': true,
+    'maquettes.html': true,
+    'animation.html': true,
+    'production.html': true,
+    'rendering.html': true,
   };
 
   function parts() {
     var pathname = window.location.pathname || '/';
-    var fileName = pathname.split('/').pop() || '';
-    if (!fileName || fileName === '') fileName = 'index.html';
-    var dirPath = pathname.substring(0, pathname.length - fileName.length);
+    if (pathname.length > 1 && pathname.endsWith('/')) {
+      pathname = pathname.slice(0, -1);
+    }
+    var segments = pathname.split('/');
+    var fileName = segments.pop() || '';
+    if (!fileName) fileName = 'index.html';
+    // nginx try_files serves /services/foo → foo.html
+    if (fileName !== 'index.html' && fileName.indexOf('.') === -1) {
+      fileName += '.html';
+    }
+    var dirPath = segments.join('/') + '/';
+    if (dirPath.charAt(0) !== '/') dirPath = '/' + dirPath;
     return { fileName: fileName, dirPath: dirPath };
   }
 
-  function isInsightsPath(dirPath) {
-    return /\/insights(\/|$)/.test(dirPath);
-  }
-
-  function isLocationsPath(dirPath) {
-    return /\/locations(\/|$)/.test(dirPath);
-  }
-
-  function isServicesPath(dirPath) {
-    return /\/services(\/|$)/.test(dirPath);
-  }
-
-  function isBilingualSection(dirPath) {
-    return isInsightsPath(dirPath) || isLocationsPath(dirPath) || isServicesPath(dirPath);
+  function isPairedSection(dirPath) {
+    return (
+      /\/insights(\/|$)/.test(dirPath) ||
+      /\/locations(\/|$)/.test(dirPath) ||
+      /\/services(\/|$)/.test(dirPath) ||
+      /\/solutions(\/|$)/.test(dirPath)
+    );
   }
 
   function alternateFileName(fileName, dirPath) {
-    if (EXPLICIT[fileName] && !isBilingualSection(dirPath)) return EXPLICIT[fileName];
+    if (EXPLICIT[fileName] && !isPairedSection(dirPath)) return EXPLICIT[fileName];
 
-    if (isBilingualSection(dirPath)) {
+    if (isPairedSection(dirPath)) {
       if (fileName === 'index.html') return 'index-en.html';
       if (fileName === 'index-en.html') return 'index.html';
+      if (fileName === 'index-ar.html') return 'index.html';
       if (fileName.endsWith('-en.html')) return fileName.replace(/-en\.html$/, '.html');
       if (fileName.endsWith('.html')) return fileName.replace(/\.html$/, '-en.html');
     }
@@ -76,12 +86,43 @@
     return null;
   }
 
+  function fromAlternateLink(wantLang) {
+    var link = document.querySelector('link[rel="alternate"][hreflang="' + wantLang + '"]');
+    if (!link) return null;
+    var href = link.getAttribute('href');
+    if (!href) return null;
+    try {
+      var u = new URL(href, window.location.origin);
+      if (u.origin === window.location.origin) {
+        return u.pathname + u.search + u.hash;
+      }
+    } catch (e) {}
+    return href;
+  }
+
   function alternateHref() {
+    var isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+    var want = isRtl ? 'en' : 'ar';
+    var fromLink = fromAlternateLink(want);
+    if (fromLink) return fromLink;
+
     var p = parts();
     var altFile = alternateFileName(p.fileName, p.dirPath);
-    if (altFile) return p.dirPath + altFile;
+    if (altFile) {
+      if (altFile.indexOf('/') === 0 || altFile.indexOf('services/') === 0) {
+        return altFile.charAt(0) === '/' ? altFile : '/' + altFile;
+      }
+      return p.dirPath + altFile;
+    }
+    return isRtl ? '/index.html' : '/index-ar.html';
+  }
+
+  function currentHref() {
     var isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-    return p.dirPath + (isRtl ? 'index.html' : 'index-ar.html');
+    var fromLink = fromAlternateLink(isRtl ? 'ar' : 'en');
+    if (fromLink) return fromLink;
+    var p = parts();
+    return p.dirPath + p.fileName;
   }
 
   function isAltLink(el) {
@@ -91,8 +132,8 @@
 
   function initLangSwitch() {
     var isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-    var p = parts();
     var alt = alternateHref();
+    var cur = currentHref();
 
     document.querySelectorAll('.lang-switch').forEach(function (group) {
       var links = group.querySelectorAll('a.lang-switch-link');
@@ -101,13 +142,15 @@
       var enLink = group.querySelector('a[hreflang="en"]');
       if (!arLink || !enLink) return;
       if (isRtl) {
-        arLink.href = p.dirPath + p.fileName;
+        arLink.href = cur;
         enLink.href = alt;
       } else {
         arLink.href = alt;
-        enLink.href = p.dirPath + p.fileName;
+        enLink.href = cur;
       }
-      links.forEach(function (a) { a.classList.remove('is-active'); });
+      links.forEach(function (a) {
+        a.classList.remove('is-active');
+      });
       if (isRtl) arLink.classList.add('is-active');
       else enLink.classList.add('is-active');
     });
