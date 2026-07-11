@@ -68,7 +68,7 @@ function normalizeNavTail(header, isEn) {
     h.match(/href="((?:\.\.\/)+)who-we-are/);
   const prefix = prefixMatch ? prefixMatch[1] : '';
 
-  const insert = `      <a class="nav-link nav-link-accent" href="${prefix}${insightsFile}">${insightsLabel}</a>\n      <a class="nav-link" href="${prefix}${contactFile}">${contactLabel}</a>\n    `;
+  const insert = `      <a class="nav-link" href="${prefix}${contactFile}">${contactLabel}</a>\n      <a class="nav-link nav-link-accent" href="${prefix}${insightsFile}">${insightsLabel}</a>\n    `;
   return h.replace(/\s*<\/nav>/, `\n${insert}</nav>`);
 }
 
