@@ -5,7 +5,22 @@
   var body = document.body;
   var langBtn = document.getElementById('lang-btn');
   var themeBtn = document.getElementById('theme-btn');
-  var currentLang = localStorage.getItem('gh-lang') || 'ar';
+
+  function detectPageLang() {
+    var file = (location.pathname.split('/').pop() || '').split('?')[0];
+    if (/-en\.html$/i.test(file)) return 'en';
+    if (file === 'index.html' || file === '' || file === '/') {
+      if ((html.getAttribute('lang') || '') === 'en') return 'en';
+    }
+    if ((html.getAttribute('lang') || '') === 'en' && html.getAttribute('dir') === 'ltr') return 'en';
+    if (body.classList.contains('is-en')) return 'en';
+    if ((html.getAttribute('lang') || '') === 'ar' || html.getAttribute('dir') === 'rtl') return 'ar';
+    return null;
+  }
+
+  // Dedicated -en / -ar URLs win over localStorage (fixes interactive-en showing Arabic)
+  var pageLang = detectPageLang();
+  var currentLang = pageLang || localStorage.getItem('gh-lang') || 'ar';
 
   function setLang(lang) {
     currentLang = lang;
