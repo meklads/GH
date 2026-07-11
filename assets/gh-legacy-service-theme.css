@@ -200,6 +200,11 @@ html[dir='rtl'] section.relative.min-h-screen h1 {
   );
 }
 
+/* Broken legacy video modal — must never sit in document flow under the footer */
+#vid-modal {
+  display: none !important;
+}
+
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: #fafaf8; }
 ::-webkit-scrollbar-thumb { background: #ccc; }

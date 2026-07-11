@@ -195,15 +195,23 @@
     vidModal.classList.remove('open');
     body.style.overflow = '';
   }
+  // Legacy pages may still have a stub #vid-modal with no overlay CSS.
+  // Never lock scroll for a non-functional modal — that freezes the page.
   if (vidModal) {
+    vidModal.setAttribute('hidden', '');
+    vidModal.style.display = 'none';
     document.querySelectorAll('.play-btn').forEach(function (b) {
-      b.addEventListener('click', function () {
-        vidModal.classList.add('open');
-        body.style.overflow = 'hidden';
+      b.addEventListener('click', function (e) {
+        e.preventDefault();
+        // Prefer real YouTube links nearby; otherwise no-op
+        var card = b.closest('a[href*="youtube.com"]');
+        if (card && card.href) {
+          window.open(card.href, '_blank', 'noopener');
+          return;
+        }
       });
     });
     if (vidClose) vidClose.addEventListener('click', closeVid);
-    vidModal.addEventListener('click', function (e) { if (e.target === vidModal) closeVid(); });
   }
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
