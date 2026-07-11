@@ -90,14 +90,19 @@ a{text-decoration:none;color:inherit}
 .pf-meta-item{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
 .pf-meta-item span{display:block;font-size:22px;font-weight:800;color:#C9A84C;letter-spacing:-.02em;margin-bottom:4px}
 
-/* ══════ FILTER BAR ══════ */
-.filter-wrap{position:sticky;top:0;z-index:800;background:#FFFFFF;border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 2px 20px rgba(0,0,0,.06)}
-.filter-inner{display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none;height:56px;padding:0 48px}
+/* ══════ FILTER BAR — full-bleed strip, items align to .container ══════ */
+.filter-wrap{position:sticky;top:var(--gh-header-height,98px);z-index:800;background:#FFFFFF;border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 2px 20px rgba(0,0,0,.06)}
+.filter-inner{display:flex;align-items:center;justify-content:flex-start;gap:0;overflow-x:auto;scrollbar-width:none;height:56px;flex-direction:row}
 .filter-inner::-webkit-scrollbar{display:none}
 .filter-btn{flex-shrink:0;background:none;border:none;border-bottom:3px solid transparent;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9B9B9B;cursor:pointer;padding:0 20px;height:100%;transition:all .25s;white-space:nowrap}
+.filter-btn:first-child{padding-inline-start:0}
 .filter-btn:hover{color:#1A1A1A}
 .filter-btn.active{color:#C9A84C;border-bottom-color:#C9A84C}
-@media(max-width:768px){.filter-inner{padding:0 20px}}
+@media(max-width:768px){
+  .filter-wrap{top:var(--gh-header-height-mobile,78px)}
+  .filter-btn{padding:0 14px}
+  .filter-btn:first-child{padding-inline-start:0}
+}
 
 /* ══════ SECTION ══════ */
 .pf-section{padding:72px 0}
@@ -340,7 +345,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- ══════ FILTER BAR ══════ -->
 <div class="filter-wrap" id="filterBar">
-  <div class="filter-inner">
+  <div class="container filter-inner">
     <button class="filter-btn active" data-filter="all">All Work</button>
     <button class="filter-btn" data-filter="cinematic">Cinematic CGI</button>
     <button class="filter-btn" data-filter="maquettes">Smart Maquettes</button>
