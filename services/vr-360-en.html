@@ -34,7 +34,7 @@ gtag('config','G-Y67JVE898Z');
 <!-- /GH brand fonts -->
 
 <style>
-  /* Bilingual visibility: see assets/gh-legacy-service-theme.css?v=5 */
+  /* Bilingual visibility: see assets/gh-legacy-service-theme.css?v=6 */
 /* ── Material Symbols FILL ─────────────────── */
   .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
 
@@ -89,43 +89,7 @@ gtag('config','G-Y67JVE898Z');
   /* ── Hero entrance ──────────────────────────── */
   .hero-enter { opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1); }
   .hero-enter.in { opacity:1; transform:none; }
-
-    /* ── Nav states ─────────────────────────────── */
-  #main-nav { transition:padding .45s cubic-bezier(.4,0,.2,1); }
-  #nav-pill {
-    transition:background .45s cubic-bezier(.4,0,.2,1),
-               border-radius .45s cubic-bezier(.4,0,.2,1),
-               border-color .45s cubic-bezier(.4,0,.2,1),
-               box-shadow .45s cubic-bezier(.4,0,.2,1),
-               height .45s cubic-bezier(.4,0,.2,1);
-  }
-  /* Scrolled: full-width solid bar, like Animatics */
-  #main-nav.scrolled { padding:0 !important; }
-  #main-nav.scrolled #nav-pill {
-    background:rgba(250,250,248,.97) !important;
-    border-radius:0 !important;
-    border-color:transparent !important;
-    box-shadow:0 1px 0 rgba(255,255,255,.07), 0 4px 28px rgba(0,0,0,.7) !important;
-  }
-
-  /* ── Nav links، Animatics style ────────────── */
-  .nav-link {
-    font-family:'Inter','Tajawal',sans-serif; font-size:14px; font-weight:500;
-    color:rgba(255,255,255,.92); text-decoration:none;
-    position:relative; padding-bottom:3px;
-    transition:color .25s ease;
-  }
-  .nav-link::after {
-    content:''; position:absolute;
-    bottom:0; inset-inline-start:0; inset-inline-end:0;
-    height:1px; background:#C9A84C;
-    transform:scaleX(0); transform-origin:center;
-    transition:transform .28s ease;
-  }
-  .nav-link:hover { color:#fff; }
-  .nav-link:hover::after, .nav-link.nav-active::after { transform:scaleX(1); }
-
-  /* ── Mobile nav ─────────────────────────────── */
+/* ── Mobile nav ─────────────────────────────── */
   #mob-nav {
     position:fixed; inset:0; z-index:9999;
     background:#FAFAF8;
@@ -142,7 +106,7 @@ gtag('config','G-Y67JVE898Z');
 
 
 
-  /* Brand light page chrome (homepage tokens) */
+  /* Brand light page chrome — header owned by site-header.css */
   ::-webkit-scrollbar { width:3px; }
   ::-webkit-scrollbar-track { background:#FAFAF8; }
   ::-webkit-scrollbar-thumb { background:#CCC; }
@@ -151,15 +115,6 @@ gtag('config','G-Y67JVE898Z');
   #loader-bar-track { background:rgba(201,168,76,.18) !important; }
   #loader-bar { background:#C9A84C !important; }
   body::after { display:none !important; }
-  .nav-link { font-family:'Inter','Tajawal',sans-serif !important; color:#555 !important; }
-  html[dir="rtl"] .nav-link { font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif !important; }
-  .nav-link::after { background:#C9A84C !important; }
-  .nav-link:hover { color:#1A1A1A !important; }
-  #main-nav.scrolled #nav-pill {
-    background:rgba(250,250,248,.97) !important;
-    box-shadow:0 1px 0 rgba(26,26,26,.06), 0 8px 28px rgba(0,0,0,.06) !important;
-  }
-  #mob-nav { background:#FAFAF8 !important; }
 
 </style>
 
@@ -168,13 +123,13 @@ gtag('config','G-Y67JVE898Z');
 <script defer src="../assets/lang-switch.js?v=1"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
-<link rel="stylesheet" href="../assets/site-header.css?v=26">
-<link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=5">
+<link rel="stylesheet" href="../assets/site-header.css?v=27">
+<link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=6">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"VR & 360° Tours","description":"Immersive VR and panoramic 360° tours for real estate projects across Saudi Arabia and the GCC.","url":"https://3dgraphicshouse.com/services/vr-360-en.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=2">
 </head>
-<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<body class="bg-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
 <a class="gh-skip-link" href="#main-content">Skip to main content</a>
 <header class="header" id="header">
   <div class="container header-inner">

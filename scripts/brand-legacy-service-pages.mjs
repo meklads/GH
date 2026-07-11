@@ -29,7 +29,7 @@ const FONTS_AR = `<link href="https://fonts.googleapis.com/css2?family=Tajawal:w
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>`;
 
 const LIGHT_PAGE_CSS = `
-  /* Brand light page chrome (homepage tokens) */
+  /* Brand light page chrome — do NOT override .header / .nav-link (site-header.css owns those) */
   ::-webkit-scrollbar { width:3px; }
   ::-webkit-scrollbar-track { background:#FAFAF8; }
   ::-webkit-scrollbar-thumb { background:#CCC; }
@@ -38,16 +38,56 @@ const LIGHT_PAGE_CSS = `
   #loader-bar-track { background:rgba(201,168,76,.18) !important; }
   #loader-bar { background:#C9A84C !important; }
   body::after { display:none !important; }
-  .nav-link { font-family:'Inter','Tajawal',sans-serif !important; color:#555 !important; }
-  html[dir="rtl"] .nav-link { font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif !important; }
-  .nav-link::after { background:#C9A84C !important; }
-  .nav-link:hover { color:#1A1A1A !important; }
-  #main-nav.scrolled #nav-pill {
-    background:rgba(250,250,248,.97) !important;
-    box-shadow:0 1px 0 rgba(26,26,26,.06), 0 8px 28px rgba(0,0,0,.06) !important;
-  }
-  #mob-nav { background:#FAFAF8 !important; }
 `;
+
+function stripHeaderNavOverrides(html) {
+  // Remove legacy Animatics nav rules that fight the shared fixed header
+  html = html.replace(
+    /\s*\/\* ── Nav states[\s\S]*?#main-nav\.scrolled #nav-pill \{[\s\S]*?\}\s*/g,
+    '\n'
+  );
+  html = html.replace(
+    /\s*\/\* ── Nav links[\s\S]*?\.nav-link\.nav-active::after \{ transform:scaleX\(1\); \}\s*/g,
+    '\n'
+  );
+  // Remove bad brand chrome that forced black/grey menu text
+  html = html.replace(
+    /\s*\.nav-link \{ font-family:'Inter','Tajawal',sans-serif !important; color:#555 !important; \}[\s\S]*?#mob-nav \{ background:#FAFAF8 !important; \}\s*/g,
+    '\n'
+  );
+  html = html.replace(
+    /\s*html\[dir="rtl"\] \.nav-link \{ font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif !important; \}[\s\S]*?#mob-nav \{ background:#FAFAF8 !important; \}\s*/g,
+    '\n'
+  );
+  // Narrow leftover single-rule nav overrides
+  html = html.replace(/\s*\.nav-link \{[^}]*color:#555[^}]*\}\s*/gi, '\n');
+  html = html.replace(/\s*\.nav-link:hover \{ color:#1A1A1A !important; \}\s*/gi, '\n');
+  html = html.replace(/\s*\.nav-link::after \{ background:#C9A84C !important; \}\s*/gi, '\n');
+  html = html.replace(
+    /\s*html\[dir="rtl"\] \.nav-link \{ font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif !important; \}\s*/gi,
+    '\n'
+  );
+  html = html.replace(
+    /\s*#main-nav\.scrolled #nav-pill \{[\s\S]*?\}\s*/g,
+    '\n'
+  );
+  // Ensure brand chrome comment still accurate if block remains
+  if (html.includes('Brand light page chrome') && html.includes('color:#555 !important')) {
+    html = html.replace(
+      /\/\* Brand light page chrome[\s\S]*?#mob-nav \{ background:#FAFAF8 !important; \}/,
+      `/* Brand light page chrome — do NOT override .header / .nav-link (site-header.css owns those) */
+  ::-webkit-scrollbar { width:3px; }
+  ::-webkit-scrollbar-track { background:#FAFAF8; }
+  ::-webkit-scrollbar-thumb { background:#CCC; }
+  ::-webkit-scrollbar-thumb:hover { background:#C9A84C; }
+  #loader { background:#FAFAF8 !important; }
+  #loader-bar-track { background:rgba(201,168,76,.18) !important; }
+  #loader-bar { background:#C9A84C !important; }
+  body::after { display:none !important; }`
+    );
+  }
+  return html;
+}
 
 function stripOppositeLang(html, keep) {
   const drop = keep === 'en' ? 'ar' : 'en';
@@ -177,6 +217,7 @@ function patchPage({ file, lang }) {
   html = stripOppositeLang(html, lang);
   html = replaceFonts(html, lang);
   html = injectLightChrome(html);
+  html = stripHeaderNavOverrides(html);
   html = bumpThemeLink(html);
   html = cleanBodyClasses(html, lang);
   html = fixInlineFontFamilies(html, lang);

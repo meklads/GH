@@ -21,12 +21,35 @@ html {
 body {
   font-family: 'Inter', 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--gh-bg) !important;
-  color: var(--gh-on-bg) !important;
+  color: var(--gh-on-bg);
   -webkit-font-smoothing: antialiased;
 }
 
 html[dir='rtl'] body {
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Shared fixed header must match homepage — never inherit page body text color */
+.header .nav-link,
+.header button.nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+html[dir='ltr'] .header .nav-link,
+html[dir='ltr'] .header button.nav-link {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+.header .nav-link:hover,
+.header button.nav-link:hover,
+.header .nav-link-accent,
+.header .nav-link-accent:hover {
+  color: #c9a84c !important;
+}
+.header .lang-switch-link {
+  color: rgba(255, 255, 255, 0.62) !important;
+}
+.header .lang-switch-link.is-active,
+.header .lang-switch-link:hover {
+  color: #fff !important;
 }
 
 .bg-background { background-color: var(--gh-bg) !important; }
