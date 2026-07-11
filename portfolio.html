@@ -82,13 +82,10 @@ a{text-decoration:none;color:inherit}
 .pf-hero h1{font-size:clamp(40px,6vw,80px);font-weight:900;line-height:1.1;color:#FAFAF8}
 .pf-hero h1 em{font-style:normal;color:#C9A84C}
 .pf-hero p{font-size:17px;color:rgba(255,255,255,.55);margin-top:20px;max-width:560px;line-height:2}
-.pf-hero-meta{display:flex;align-items:center;gap:32px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
-.pf-meta-item{font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.4)}
-.pf-meta-item span{display:block;font-size:22px;font-weight:800;color:#C9A84C;letter-spacing:-.02em;margin-bottom:4px;font-family:'Inter',sans-serif}
-
 /* ══ FILTER ══ */
 .filter-wrap{position:sticky;top:0;z-index:800;background:#FFFFFF;border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 2px 20px rgba(0,0,0,.06)}
-.filter-inner{display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none;height:56px;padding:0 48px;flex-direction:row-reverse}
+/* RTL: pack filters to the right (inline-start) */
+.filter-inner{display:flex;align-items:center;justify-content:flex-start;gap:0;overflow-x:auto;scrollbar-width:none;height:56px;padding:0 48px;flex-direction:row;direction:rtl}
 .filter-inner::-webkit-scrollbar{display:none}
 .filter-btn{flex-shrink:0;background:none;border:none;border-bottom:3px solid transparent;font-family:'Tajawal',sans-serif;font-size:13px;font-weight:700;color:#9B9B9B;cursor:pointer;padding:0 18px;height:100%;transition:all .25s;white-space:nowrap}
 .filter-btn:hover{color:#1A1A1A}
@@ -322,15 +319,6 @@ a{text-decoration:none;color:inherit}
     <div class="pf-eyebrow">بورتفوليو</div>
     <h1>أعمال تتحدث<br><em>بصوت عالٍ</em></h1>
     <p>من التصور الفوتوواقعي إلى الماكيتات الذكية والإنتاج السينمائي CGI وجاليريات المبيعات التفاعلية، مصممة لمشاريع التطوير الكبرى في الشرق الأوسط.</p>
-    <div class="pf-hero-meta">
-      <div class="pf-meta-item"><span>+200</span>مشروع منجز</div>
-      <div class="pf-meta-item" style="color:rgba(255,255,255,.1);font-size:24px;font-weight:100">|</div>
-      <div class="pf-meta-item"><span>14</span>سنة خبرة</div>
-      <div class="pf-meta-item" style="color:rgba(255,255,255,.1);font-size:24px;font-weight:100">|</div>
-      <div class="pf-meta-item"><span>4</span>دول</div>
-      <div class="pf-meta-item" style="color:rgba(255,255,255,.1);font-size:24px;font-weight:100">|</div>
-      <div class="pf-meta-item"><span>+60</span>عميل</div>
-    </div>
   </div>
 </section>
 
