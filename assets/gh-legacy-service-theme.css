@@ -1,0 +1,125 @@
+/* Theme tokens for legacy bilingual service pages (interactive, vr-360, shop).
+   These pages were authored against a custom Tailwind theme that never shipped
+   in assets/tailwind.min.css — without this file, text is near-invisible. */
+:root {
+  --gh-bg: #0e0e0e;
+  --gh-surface: #161616;
+  --gh-surface-high: #1c1c1c;
+  --gh-surface-lowest: #0a0a0a;
+  --gh-on-bg: #f5f5f0;
+  --gh-secondary: rgba(245, 245, 240, 0.72);
+  --gh-primary: #f2ca50;
+  --gh-on-primary: #1a1400;
+  --gh-primary-container: rgba(242, 202, 80, 0.18);
+}
+
+.bg-background { background-color: var(--gh-bg) !important; }
+.from-background { --tw-gradient-from: var(--gh-bg) var(--tw-gradient-from-position); --tw-gradient-to: rgb(14 14 14 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.via-background\/50 { --tw-gradient-to: rgb(14 14 14 / 0)  var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), rgb(14 14 14 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to); }
+.text-on-background { color: var(--gh-on-bg) !important; }
+.text-background { color: var(--gh-bg) !important; }
+.text-secondary { color: var(--gh-secondary) !important; }
+
+.bg-primary { background-color: var(--gh-primary) !important; }
+.bg-primary\/90 { background-color: rgba(242, 202, 80, 0.9) !important; }
+.bg-primary\/10 { background-color: rgba(242, 202, 80, 0.1) !important; }
+.text-primary { color: var(--gh-primary) !important; }
+.text-on-primary { color: var(--gh-on-primary) !important; }
+.border-primary { border-color: var(--gh-primary) !important; }
+.border-primary\/20 { border-color: rgba(242, 202, 80, 0.2) !important; }
+.border-primary\/30 { border-color: rgba(242, 202, 80, 0.3) !important; }
+.border-primary\/40 { border-color: rgba(242, 202, 80, 0.4) !important; }
+.hover\:bg-primary:hover { background-color: var(--gh-primary) !important; }
+.hover\:bg-primary\/10:hover { background-color: rgba(242, 202, 80, 0.1) !important; }
+.hover\:text-primary:hover { color: var(--gh-primary) !important; }
+.hover\:text-on-primary:hover { color: var(--gh-on-primary) !important; }
+.hover\:border-primary\/40:hover { border-color: rgba(242, 202, 80, 0.4) !important; }
+
+.bg-surface-container { background-color: var(--gh-surface) !important; }
+.bg-surface-container-high { background-color: var(--gh-surface-high) !important; }
+.bg-surface-container-lowest { background-color: var(--gh-surface-lowest) !important; }
+
+.selection\:bg-primary-container ::selection,
+.selection\:bg-primary-container::selection { background: var(--gh-primary-container); }
+.selection\:text-on-primary-container ::selection,
+.selection\:text-on-primary-container::selection { color: var(--gh-on-bg); }
+
+.from-primary\/5 { --tw-gradient-from: rgba(242, 202, 80, 0.05) var(--tw-gradient-from-position); --tw-gradient-to: rgb(242 202 80 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.to-primary\/3 { --tw-gradient-to: rgba(242, 202, 80, 0.03) var(--tw-gradient-to-position); }
+
+.font-headline-xl {
+  font-family: 'Noto Serif', 'Amiri', Georgia, serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.font-headline-md {
+  font-family: 'Noto Serif', 'Amiri', Georgia, serif;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+.font-body-lg {
+  font-family: 'Manrope', 'Cairo', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+.font-body-md {
+  font-family: 'Manrope', 'Cairo', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.font-label-caps,
+.text-label-caps {
+  font-family: 'Manrope', 'Cairo', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+html[dir='rtl'] .font-label-caps,
+html[dir='rtl'] .text-label-caps {
+  letter-spacing: 0.08em;
+}
+
+.svc-tag {
+  font-family: 'Manrope', 'Cairo', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gh-primary);
+}
+.feat-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.feat-row .material-symbols-outlined {
+  color: var(--gh-primary);
+  font-size: 22px;
+  margin-top: 2px;
+}
+.play-btn .material-symbols-outlined {
+  color: var(--gh-on-primary);
+  font-size: 36px;
+}
+
+/* Bilingual visibility — contents keeps heading layout intact */
+.ar, .en { display: none !important; }
+body:not(.is-en) .ar { display: inline !important; }
+body:not(.is-en) .ar-block { display: block !important; }
+body.is-en .en { display: inline !important; }
+body.is-en .en-block { display: block !important; }
+body.is-en .ar,
+body.is-en .ar-block { display: none !important; }
+body:not(.is-en) .en,
+body:not(.is-en) .en-block { display: none !important; }
+
+/* Hero readability */
+.svc-hero-overlay {
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.55) 0%, rgba(8, 8, 8, 0.82) 55%, rgba(8, 8, 8, 0.95) 100%);
+}

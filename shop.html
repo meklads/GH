@@ -39,21 +39,8 @@ gtag('config','G-Y67JVE898Z');
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
-  /* ══════════════════════════════════════════════
-     BILINGUAL، body.is-en = EN shown, AR hidden
-  ══════════════════════════════════════════════ */
-  /* Bilingual visibility، !important prevents Tailwind/other overrides */
-  .en          { display:none    !important; }
-  body.is-en .en { display:inline  !important; }
-  body.is-en .ar { display:none    !important; }
-
-  /* Block-level translations */
-  .en-block            { display:none  !important; }
-  .ar-block            { display:block; }
-  body.is-en .en-block { display:block !important; }
-  body.is-en .ar-block { display:none  !important; }
-
-  /* ── Material Symbols FILL ─────────────────── */
+  /* Bilingual visibility: see assets/gh-legacy-service-theme.css */
+/* ── Material Symbols FILL ─────────────────── */
   .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
 
   /* ── Scrollbar ──────────────────────────────── */
@@ -62,7 +49,7 @@ gtag('config','G-Y67JVE898Z');
   ::-webkit-scrollbar-thumb { background:#f2ca50; }
 
   /* ── Custom Cursor ──────────────────────────── */
-  @media (pointer:fine) { *,*::before,*::after { cursor:none !important; } }
+  /* custom cursor disabled — site-wide pointer restored */
   #cur-dot {
     position:fixed; top:0; left:0; width:6px; height:6px; margin:-3px 0 0 -3px;
     background:#f2ca50; border-radius:50%; pointer-events:none; z-index:99999;
@@ -166,6 +153,8 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=21">
 <link rel="stylesheet" href="assets/site-header.css?v=26">
+<link rel="stylesheet" href="assets/gh-legacy-service-theme.css?v=1">
+
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=2">
 </head>
 <body class="bg-background text-on-background overflow-x-hidden">
@@ -322,7 +311,7 @@ gtag('config','G-Y67JVE898Z');
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     <div class="reveal group border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 flex flex-col" style="opacity:0;transform:translateY(24px);transition-delay:0.00s">
       <div class="relative overflow-hidden aspect-[4/3]">
-        <picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Premium Architectural Design Templates Bundle" loading="lazy"/></picture></picture>
+        <picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Premium Architectural Design Templates Bundle" loading="lazy"/></picture></picture></picture></picture></picture>
         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
         <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-3 py-1 border border-white/10 flex items-center gap-2">
           <span class="material-symbols-outlined ms-filled text-primary text-sm">architecture</span>
@@ -382,7 +371,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
     <div class="reveal group border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 flex flex-col" style="opacity:0;transform:translateY(24px);transition-delay:0.24s">
       <div class="relative overflow-hidden aspect-[4/3]">
-        <picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg" alt="Professional Rendering Book، Digital Edition" loading="lazy"/></picture></picture>
+        <picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg" alt="Professional Rendering Book، Digital Edition" loading="lazy"/></picture></picture></picture></picture></picture>
         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
         <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-3 py-1 border border-white/10 flex items-center gap-2">
           <span class="material-symbols-outlined ms-filled text-primary text-sm">menu_book</span>
@@ -402,7 +391,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
     <div class="reveal group border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 flex flex-col" style="opacity:0;transform:translateY(24px);transition-delay:0.32s">
       <div class="relative overflow-hidden aspect-[4/3]">
-        <picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Smart Lighting Plugin for 3ds Max" loading="lazy"/></picture></picture>
+        <picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Smart Lighting Plugin for 3ds Max" loading="lazy"/></picture></picture></picture></picture></picture>
         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
         <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-3 py-1 border border-white/10 flex items-center gap-2">
           <span class="material-symbols-outlined ms-filled text-primary text-sm">extension</span>
@@ -551,6 +540,10 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </div>
 </footer>
+
+
+
+
 
 
 

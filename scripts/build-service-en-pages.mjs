@@ -184,6 +184,38 @@ function cloneBilingualEn(arFile, enFile) {
 <link rel="alternate" hreflang="x-default" href="${canonical}">`;
   html = html.replace(/<!-- GH SEO -->[\s\S]*?<link rel="alternate" hreflang="x-default"[^>]*>/, seo);
 
+  const EN_META = {
+    'interactive-en.html': {
+      title: 'Interactive Presentations | Graphics House',
+      description:
+        'Touch-enabled interactive environments with Unreal Engine — walkthroughs, material switching, and unit selection in real time.',
+      name: 'Interactive Presentations',
+    },
+    'vr-360-en.html': {
+      title: 'VR & 360° Tours | Graphics House',
+      description:
+        'Immersive VR and panoramic 360° tours for real estate projects across Saudi Arabia and the GCC.',
+      name: 'VR & 360° Tours',
+    },
+  };
+  const meta = EN_META[enName];
+  if (meta) {
+    html = html.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);
+    html = html.replace(
+      /<meta name="description" content="[^"]*"\/>/,
+      `<meta name="description" content="${meta.description}"/>`
+    );
+    html = html.replace(/("name":")[^"]+(")/, `$1${meta.name}$2`);
+    html = html.replace(
+      /("description":")[^"]+(")/,
+      `$1${meta.description.replace(/"/g, '\\"')}$2`
+    );
+    html = html.replace(
+      /("url":")https:\/\/3dgraphicshouse\.com\/services\/[^"]+(")/,
+      `$1${canonical}$2`
+    );
+  }
+
   fs.writeFileSync(path.join(SERVICES, enName), html, 'utf8');
   console.log('  bilingual EN:', enName);
 }
