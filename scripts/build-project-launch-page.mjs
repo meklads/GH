@@ -49,11 +49,9 @@ const PAGE_CSS = `
   #loader-bar-track { width:180px; height:1px; background:rgba(201,168,76,.18); margin-top:20px; overflow:hidden; }
   #loader-bar { height:100%; width:0; background:#C9A84C; transition:width 1s cubic-bezier(.4,0,.2,1); }
 
-  /* Hero readability on bright exhibition photos */
+  /* Hero: no full-bleed scrim — panel only under copy */
   .pl-hero .svc-hero-scrim {
-    background:
-      linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.55) 45%, rgba(0,0,0,.78) 100%),
-      radial-gradient(ellipse 75% 55% at 50% 48%, rgba(0,0,0,.4) 0%, transparent 72%) !important;
+    display: none !important;
   }
   .pl-hero .pl-hero-copy {
     position: relative;
@@ -62,32 +60,30 @@ const PAGE_CSS = `
     margin-inline: auto;
     padding: 28px 24px 32px;
     border-radius: 2px;
-    background: rgba(8, 8, 8, 0.28);
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.08);
   }
   .pl-hero h1 {
     color: #fff !important;
-    text-shadow: 0 2px 28px rgba(0,0,0,.55);
+    text-shadow: 0 2px 20px rgba(0,0,0,.35);
   }
   .pl-hero .pl-hero-lead {
-    color: rgba(255,255,255,.9) !important;
+    color: rgba(255,255,255,.92) !important;
     opacity: 1 !important;
-    text-shadow: 0 1px 16px rgba(0,0,0,.45);
   }
   .pl-hero .pl-hero-eyebrow {
     color: #C9A84C !important;
-    text-shadow: 0 1px 10px rgba(0,0,0,.5);
   }
   .pl-hero .pl-btn-ghost {
-    background: rgba(0,0,0,.4) !important;
-    border-color: rgba(201,168,76,.85) !important;
+    background: rgba(0,0,0,.25) !important;
+    border-color: rgba(255,255,255,.55) !important;
     color: #fff !important;
-    backdrop-filter: blur(6px);
   }
   .pl-hero .pl-btn-ghost:hover {
     background: rgba(201,168,76,.15) !important;
+    border-color: rgba(201,168,76,.85) !important;
   }
 `;
 
