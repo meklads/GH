@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Premium light solution product pages — GrowthLaunch / ProjectLaunch / BrandScale
- * Three-stage narrative + curated site media. AR + EN.
+ * Split hero + three-stage narrative + curated real site media. AR + EN.
  */
 import fs from 'fs';
 import path from 'path';
@@ -23,13 +23,63 @@ const LOGOS = [
   'رابطة العالم الاسلامي.png',
 ].map((f) => `../assets/clients-logo/${f}`);
 
+const A = {
+  marketingVid: '../assets/videos/GH-Marketing-Media-Production.mp4',
+  reVid: '../assets/videos/GH-Real-estate-services.mp4',
+  archVid: '../assets/videos/3D-Architectural-visualisation.mp4',
+  demoVid: '../assets/videos/GH-demo-reel-2025.mp4',
+  interactive: '../assets/projects/interactive-01.jpg',
+  interactiveW: '../assets/projects/interactive-01.webp',
+  aloula: '../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg',
+  aloulaW: '../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp',
+  anan: '../assets/projects/rendering/Anan-Escan-Co.01.jpeg',
+  ananW: '../assets/projects/rendering/Anan-Escan-Co.01.webp',
+  anan2: '../assets/projects/rendering/anan-escan2.jpeg',
+  anan2W: '../assets/projects/rendering/anan-escan2.webp',
+  alrajhi: '../assets/projects/rendering/alrajhi3.jpeg',
+  alrajhiW: '../assets/projects/rendering/alrajhi3.webp',
+  alKhair: '../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg',
+  alKhairW: '../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp',
+  wahat: '../assets/projects/rendering/wahat-alsalam9-scaled.webp',
+  uae: '../assets/projects/rendering/uae-e1745147961286.jpeg',
+  uaeW: '../assets/projects/rendering/uae-e1745147961286.webp',
+  financial: '../assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg',
+  financialW: '../assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp',
+  jeddah: '../assets/projects/rendering/jeddah-forum.jpg',
+  jeddahW: '../assets/projects/rendering/jeddah-forum.webp',
+  pavilion1: '../assets/projects/pavilion1.jpg',
+  pavilion1W: '../assets/projects/pavilion1.webp',
+  pavilion2: '../assets/projects/pavilion2.jpg',
+  pavilion2W: '../assets/projects/pavilion2.webp',
+  booth: '../assets/projects/animation/real-estate-services.jpg',
+  boothW: '../assets/projects/animation/real-estate-services.webp',
+  maqAnan: '../assets/projects/maquettes/anan-eskan-maquette-01.jpeg',
+  maqAlrajhi: '../assets/projects/maquettes/alrajhi-maquette-01.jpeg',
+  maqMwl: '../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg',
+  maqMwlW: '../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp',
+  mc01: '../assets/news/makkah-charter-01.jpeg',
+  mc02: '../assets/news/makkah-charter-02.jpeg',
+  mc03: '../assets/news/makkah-charter-03.jpeg',
+  mc04: '../assets/news/makkah-charter-04.jpeg',
+  mc05: '../assets/news/makkah-charter-05.jpeg',
+  mc07: '../assets/news/makkah-charter-07.jpeg',
+  mc08: '../assets/news/makkah-charter-08.jpeg',
+  mc10: '../assets/news/makkah-charter-10.jpeg',
+};
+
 const PRODUCTS = {
   growth: {
     slug: 'growth-launch',
     cssKey: 'growth',
-    og: 'mm-growth.jpg',
-    heroVideo: '../assets/videos/GH-Marketing-Media-Production.mp4',
-    heroPoster: '../assets/mm-growth.jpg',
+    og: 'projects/interactive-01.jpg',
+    heroType: 'image',
+    heroSrc: A.interactive,
+    heroPoster: A.interactive,
+    heroLabelEn: 'Demand-ready visualization',
+    heroLabelAr: 'تصور جاهز لتحفيز الطلب',
+    showcaseType: 'video',
+    showcaseSrc: A.marketingVid,
+    showcasePoster: A.interactive,
     en: {
       name: 'GrowthLaunch™',
       tag: 'Lead Generation & Sales System',
@@ -37,8 +87,9 @@ const PRODUCTS = {
       desc: 'A complete sales system — attract, convert, and scale qualified leads with tracking, CRM, and response automation.',
       headline: 'Stop buying campaigns.<br><em>Build a sales system.</em>',
       sub: 'From first click to closed deal — one integrated pipeline for developers and B2B teams across the GCC.',
-      cardTitle: 'In 7 days',
-      cardBody: 'A measurable lead journey: capture, qualify, respond, and convert — with visibility at every step.',
+      promiseTitle: 'In 7 days',
+      promiseBody:
+        'A measurable lead journey: capture, qualify, respond, and convert — with visibility at every step.',
       stagesNav: [
         { id: 'stage-1', num: '01', label: 'Attract' },
         { id: 'stage-2', num: '02', label: 'Convert' },
@@ -56,10 +107,12 @@ const PRODUCTS = {
             'Creative systems built for real estate & B2B',
           ],
           media: {
-            type: 'video',
-            src: '../assets/videos/GH-Marketing-Media-Production.mp4',
-            poster: '../assets/mm-growth.jpg',
-            caption: 'Marketing & media production — Graphics House',
+            type: 'grid',
+            images: [
+              { src: A.interactive, webp: A.interactiveW, className: 'tall' },
+              { src: A.anan, webp: A.ananW },
+              { src: A.jeddah, webp: A.jeddahW },
+            ],
           },
         },
         {
@@ -73,10 +126,12 @@ const PRODUCTS = {
             'Qualification scripts your team can run',
           ],
           media: {
-            type: 'image',
-            src: '../assets/projects/rendering/alrajhi3.jpeg',
-            webp: '../assets/projects/rendering/alrajhi3.webp',
-            caption: 'Sales-ready presentation environments',
+            type: 'grid',
+            images: [
+              { src: A.pavilion1, webp: A.pavilion1W, className: 'tall' },
+              { src: A.mc05 },
+              { src: A.booth, webp: A.boothW },
+            ],
           },
           flip: true,
         },
@@ -91,15 +146,26 @@ const PRODUCTS = {
             'Continuous optimization cycles',
           ],
           media: {
-            type: 'image',
-            src: '../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg',
-            webp: '../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp',
-            caption: 'Systems built for landmark developments',
+            type: 'video',
+            src: A.marketingVid,
+            poster: A.interactive,
+            caption: 'Creative systems that earn attention',
           },
         },
       ],
+      showcaseEyebrow: 'In market',
+      showcaseTitle: 'Where demand meets a sales-ready experience',
+      showcaseLead:
+        'GrowthLaunch connects campaigns to the environments buyers actually walk into — galleries, booths, and digital journeys.',
       proofEyebrow: 'Trusted by leading teams',
       proofLead: 'Client brands that rely on Graphics House for launch and growth systems.',
+      gallery: [
+        { src: A.interactive, webp: A.interactiveW },
+        { src: A.anan, webp: A.ananW },
+        { src: A.pavilion2, webp: A.pavilion2W },
+        { src: A.jeddah, webp: A.jeddahW },
+        { src: A.alrajhi, webp: A.alrajhiW },
+      ],
       bafTitle: 'Your situation — transformed',
       bafLead: 'Not just tools — a shift in how you capture and convert leads.',
       baf: [
@@ -109,7 +175,8 @@ const PRODUCTS = {
         ['No conversion visibility', 'Full analytics & tracking'],
       ],
       ctaTitle: 'Ready to build a predictable pipeline?',
-      ctaLead: 'Book a strategy session — we map your offer, channels, and conversion path in one workshop.',
+      ctaLead:
+        'Book a strategy session — we map your offer, channels, and conversion path in one workshop.',
       ctaPrimary: 'Book strategy session',
       ctaSecondary: 'View our work',
       crossTitle: 'Continue the system',
@@ -133,8 +200,9 @@ const PRODUCTS = {
       desc: 'نظام مبيعات متكامل — جذب، تحويل، وتوسيع العملاء المؤهلين مع التتبع وCRM وأتمتة الرد.',
       headline: 'توقف عن شراء الحملات.<br><em>وابنِ نظام مبيعات.</em>',
       sub: 'من أول نقرة إلى إغلاق الصفقة — مسار متكامل للمطورين وفرق B2B في الخليج.',
-      cardTitle: 'خلال 7 أيام',
-      cardBody: 'رحلة عميل قابلة للقياس: جذب، تأهيل، رد، وتحويل — مع رؤية واضحة في كل خطوة.',
+      promiseTitle: 'خلال 7 أيام',
+      promiseBody:
+        'رحلة عميل قابلة للقياس: جذب، تأهيل، رد، وتحويل — مع رؤية واضحة في كل خطوة.',
       stagesNav: [
         { id: 'stage-1', num: '01', label: 'الجذب' },
         { id: 'stage-2', num: '02', label: 'التحويل' },
@@ -152,10 +220,12 @@ const PRODUCTS = {
             'منظومة إبداعية للعقار وB2B',
           ],
           media: {
-            type: 'video',
-            src: '../assets/videos/GH-Marketing-Media-Production.mp4',
-            poster: '../assets/mm-growth.jpg',
-            caption: 'إنتاج تسويقي وإعلامي — جرافيكس هاوس',
+            type: 'grid',
+            images: [
+              { src: A.interactive, webp: A.interactiveW, className: 'tall' },
+              { src: A.anan, webp: A.ananW },
+              { src: A.jeddah, webp: A.jeddahW },
+            ],
           },
         },
         {
@@ -169,10 +239,12 @@ const PRODUCTS = {
             'سكربتات تأهيل يطبقها فريقك',
           ],
           media: {
-            type: 'image',
-            src: '../assets/projects/rendering/alrajhi3.jpeg',
-            webp: '../assets/projects/rendering/alrajhi3.webp',
-            caption: 'بيئات عرض جاهزة للمبيعات',
+            type: 'grid',
+            images: [
+              { src: A.pavilion1, webp: A.pavilion1W, className: 'tall' },
+              { src: A.mc05 },
+              { src: A.booth, webp: A.boothW },
+            ],
           },
           flip: true,
         },
@@ -187,15 +259,26 @@ const PRODUCTS = {
             'دورات تحسين مستمرة',
           ],
           media: {
-            type: 'image',
-            src: '../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg',
-            webp: '../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp',
-            caption: 'أنظمة مبنية لمشاريع كبرى',
+            type: 'video',
+            src: A.marketingVid,
+            poster: A.interactive,
+            caption: 'منظومات إبداعية تكتسب الانتباه',
           },
         },
       ],
+      showcaseEyebrow: 'في السوق',
+      showcaseTitle: 'حيث يلتقي الطلب بتجربة جاهزة للبيع',
+      showcaseLead:
+        'GrowthLaunch يربط الحملات بالبيئات التي يدخلها المشتري فعلياً — صالات، أجنحة، ومسارات رقمية.',
       proofEyebrow: 'يثق بنا قادة السوق',
       proofLead: 'علامات تعتمد على جرافيكس هاوس في أنظمة الإطلاق والنمو.',
+      gallery: [
+        { src: A.interactive, webp: A.interactiveW },
+        { src: A.anan, webp: A.ananW },
+        { src: A.pavilion2, webp: A.pavilion2W },
+        { src: A.jeddah, webp: A.jeddahW },
+        { src: A.alrajhi, webp: A.alrajhiW },
+      ],
       bafTitle: 'وضعك الحالي — بعد التحول',
       bafLead: 'ليس أدوات فقط — بل تحول في طريقة استقبال العملاء وتحويلهم.',
       baf: [
@@ -227,9 +310,15 @@ const PRODUCTS = {
   project: {
     slug: 'project-launch',
     cssKey: 'project',
-    og: 'mm-project.jpg',
-    heroVideo: '../assets/videos/GH-Real-estate-services.mp4',
-    heroPoster: '../assets/mm-project.jpg',
+    og: 'projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg',
+    heroType: 'image',
+    heroSrc: A.aloula,
+    heroPoster: A.aloula,
+    heroLabelEn: 'Photoreal architectural CGI',
+    heroLabelAr: 'تصور معماري فوتورياليستي',
+    showcaseType: 'video',
+    showcaseSrc: A.archVid,
+    showcasePoster: A.aloula,
     en: {
       name: 'ProjectLaunch™',
       tag: 'Real Estate Project Launch System',
@@ -237,8 +326,9 @@ const PRODUCTS = {
       desc: 'Launch with confidence — cinematic CGI, smart maquettes, interactive experiences, and sales-ready collateral in one system.',
       headline: 'Launch the development<br><em>before it is built.</em>',
       sub: 'One studio for visualization, physical models, interactive sales tools, and launch collateral — aligned from day one.',
-      cardTitle: 'One partner',
-      cardBody: 'CGI film, maquettes, interactive screens, and booth systems — delivered as one coherent launch.',
+      promiseTitle: 'One partner',
+      promiseBody:
+        'CGI film, maquettes, interactive screens, and booth systems — delivered as one coherent launch.',
       stagesNav: [
         { id: 'stage-1', num: '01', label: 'Visualize' },
         { id: 'stage-2', num: '02', label: 'Materialize' },
@@ -258,19 +348,9 @@ const PRODUCTS = {
           media: {
             type: 'grid',
             images: [
-              {
-                src: '../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg',
-                webp: '../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp',
-                className: 'tall',
-              },
-              {
-                src: '../assets/projects/rendering/Anan-Escan-Co.01.jpeg',
-                webp: '../assets/projects/rendering/Anan-Escan-Co.01.webp',
-              },
-              {
-                src: '../assets/projects/rendering/uae-e1745147961286.jpeg',
-                webp: '../assets/projects/rendering/uae-e1745147961286.webp',
-              },
+              { src: A.aloula, webp: A.aloulaW, className: 'tall' },
+              { src: A.anan, webp: A.ananW },
+              { src: A.financial, webp: A.financialW },
             ],
           },
         },
@@ -287,12 +367,9 @@ const PRODUCTS = {
           media: {
             type: 'grid',
             images: [
-              {
-                src: '../assets/projects/maquettes/anan-eskan-maquette-01.jpeg',
-                className: 'tall',
-              },
-              { src: '../assets/projects/maquettes/alrajhi-maquette-01.jpeg' },
-              { src: '../assets/news/makkah-charter-01.jpeg' },
+              { src: A.maqAnan, className: 'tall' },
+              { src: A.maqAlrajhi },
+              { src: A.alKhair, webp: A.alKhairW },
             ],
           },
           flip: true,
@@ -308,20 +385,27 @@ const PRODUCTS = {
             'On-site installation support',
           ],
           media: {
-            type: 'video',
-            src: '../assets/videos/3D-Architectural-visualisation.mp4',
-            poster: '../assets/mm-project.jpg',
-            caption: 'Architectural visualization reel — Graphics House',
+            type: 'grid',
+            images: [
+              { src: A.booth, webp: A.boothW, className: 'tall' },
+              { src: A.pavilion1, webp: A.pavilion1W },
+              { src: A.maqMwl, webp: A.maqMwlW },
+            ],
           },
         },
       ],
+      showcaseEyebrow: 'Launch film',
+      showcaseTitle: 'Cinematic proof before concrete',
+      showcaseLead:
+        'ProjectLaunch packages visualization, models, and market presence so the story buyers see is one system — not three vendors.',
       proofEyebrow: 'Selected launch work',
       proofLead: 'From masterplans to sales galleries — assets that accelerate buyer confidence.',
       gallery: [
-        '../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg',
-        '../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg',
-        '../assets/projects/pavilion1.jpg',
-        '../assets/projects/rendering/wahat-alsalam9-scaled.webp',
+        { src: A.aloula, webp: A.aloulaW },
+        { src: A.maqAnan },
+        { src: A.uae, webp: A.uaeW },
+        { src: A.wahat },
+        { src: A.anan2, webp: A.anan2W },
       ],
       bafTitle: 'Your situation — transformed',
       bafLead: 'From fragmented vendors to one launch system that sells.',
@@ -332,7 +416,8 @@ const PRODUCTS = {
         ['No structured launch plan', 'Clear three-stage launch system'],
       ],
       ctaTitle: 'Ready to launch with confidence?',
-      ctaLead: 'We scope visualization, maquettes, interactive, and collateral as one coherent system.',
+      ctaLead:
+        'We scope visualization, maquettes, interactive, and collateral as one coherent system.',
       ctaPrimary: 'Book strategy session',
       ctaSecondary: 'View portfolio',
       crossTitle: 'Complete the stack',
@@ -356,8 +441,8 @@ const PRODUCTS = {
       desc: 'أطلق بثقة — CGI سينمائي، مجسمات ذكية، تجارب تفاعلية، ومواد بيعية في منظومة واحدةحدة.',
       headline: 'أطلق المشروع<br><em>قبل أن يُبنى.</em>',
       sub: 'استوديو واحد للتصور والمجسمات والأدوات التفاعلية ومواد الإطلاق — متناسقة من اليوم الأول.',
-      cardTitle: 'شريك واحد',
-      cardBody: 'فيلم CGI، مجسمات، شاشات تفاعلية، وأنظمة جناح — كإطلاق متماسك واحد.',
+      promiseTitle: 'شريك واحد',
+      promiseBody: 'فيلم CGI، مجسمات، شاشات تفاعلية، وأنظمة جناح — كإطلاق متماسك واحد.',
       stagesNav: [
         { id: 'stage-1', num: '01', label: 'التصور' },
         { id: 'stage-2', num: '02', label: 'التجسيد' },
@@ -377,19 +462,9 @@ const PRODUCTS = {
           media: {
             type: 'grid',
             images: [
-              {
-                src: '../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg',
-                webp: '../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp',
-                className: 'tall',
-              },
-              {
-                src: '../assets/projects/rendering/Anan-Escan-Co.01.jpeg',
-                webp: '../assets/projects/rendering/Anan-Escan-Co.01.webp',
-              },
-              {
-                src: '../assets/projects/rendering/uae-e1745147961286.jpeg',
-                webp: '../assets/projects/rendering/uae-e1745147961286.webp',
-              },
+              { src: A.aloula, webp: A.aloulaW, className: 'tall' },
+              { src: A.anan, webp: A.ananW },
+              { src: A.financial, webp: A.financialW },
             ],
           },
         },
@@ -406,12 +481,9 @@ const PRODUCTS = {
           media: {
             type: 'grid',
             images: [
-              {
-                src: '../assets/projects/maquettes/anan-eskan-maquette-01.jpeg',
-                className: 'tall',
-              },
-              { src: '../assets/projects/maquettes/alrajhi-maquette-01.jpeg' },
-              { src: '../assets/news/makkah-charter-01.jpeg' },
+              { src: A.maqAnan, className: 'tall' },
+              { src: A.maqAlrajhi },
+              { src: A.alKhair, webp: A.alKhairW },
             ],
           },
           flip: true,
@@ -427,20 +499,27 @@ const PRODUCTS = {
             'دعم التركيب في الموقع',
           ],
           media: {
-            type: 'video',
-            src: '../assets/videos/3D-Architectural-visualisation.mp4',
-            poster: '../assets/mm-project.jpg',
-            caption: 'ريل التصور المعماري — جرافيكس هاوس',
+            type: 'grid',
+            images: [
+              { src: A.booth, webp: A.boothW, className: 'tall' },
+              { src: A.pavilion1, webp: A.pavilion1W },
+              { src: A.maqMwl, webp: A.maqMwlW },
+            ],
           },
         },
       ],
+      showcaseEyebrow: 'فيلم الإطلاق',
+      showcaseTitle: 'إثبات سينمائي قبل الخرسانة',
+      showcaseLead:
+        'ProjectLaunch يجمع التصور والمجسمات والحضور السوقي في قصة واحدة — لا ثلاثة مورّدين.',
       proofEyebrow: 'أعمال إطلاق مختارة',
       proofLead: 'من المخططات إلى صالات البيع — أصول تسرّع ثقة المشتري.',
       gallery: [
-        '../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg',
-        '../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg',
-        '../assets/projects/pavilion1.jpg',
-        '../assets/projects/rendering/wahat-alsalam9-scaled.webp',
+        { src: A.aloula, webp: A.aloulaW },
+        { src: A.maqAnan },
+        { src: A.uae, webp: A.uaeW },
+        { src: A.wahat },
+        { src: A.anan2, webp: A.anan2W },
       ],
       bafTitle: 'وضعك الحالي — بعد التحول',
       bafLead: 'من مورّدين متفرقين إلى منظومة إطلاق واحدة تبيع.',
@@ -473,9 +552,15 @@ const PRODUCTS = {
   brand: {
     slug: 'brand-scale',
     cssKey: 'brand',
-    og: 'mm-brand.jpg',
-    heroVideo: '../assets/videos/GH-Marketing-Media-Production.mp4',
-    heroPoster: '../assets/mm-brand.jpg',
+    og: 'news/makkah-charter-01.jpeg',
+    heroType: 'image',
+    heroSrc: A.mc01,
+    heroPoster: A.mc01,
+    heroLabelEn: 'Institutional brand environments',
+    heroLabelAr: 'بيئات علامة مؤسسية',
+    showcaseType: 'image',
+    showcaseSrc: A.mc05,
+    showcasePoster: A.mc05,
     en: {
       name: 'BrandScale™',
       tag: 'Brand Growth System',
@@ -483,8 +568,9 @@ const PRODUCTS = {
       desc: 'Build a brand that inspires trust — strategy, identity, and presence designed for developers and institutions.',
       headline: 'A brand that<br><em>commands trust.</em>',
       sub: 'From positioning to identity systems and market presence — built to scale across projects and channels.',
-      cardTitle: 'Identity → Presence',
-      cardBody: 'Strategy, visual system, guidelines, and digital presence — coherent enough to sell the next project.',
+      promiseTitle: 'Identity → Presence',
+      promiseBody:
+        'Strategy, visual system, guidelines, and digital presence — coherent enough to sell the next project.',
       stagesNav: [
         { id: 'stage-1', num: '01', label: 'Strategy' },
         { id: 'stage-2', num: '02', label: 'Identity' },
@@ -503,8 +589,8 @@ const PRODUCTS = {
           ],
           media: {
             type: 'image',
-            src: '../assets/news/makkah-charter-04.jpeg',
-            caption: 'Institutional environments — Muslim World League',
+            src: A.mc04,
+            caption: 'Muslim World League — strategic environments',
           },
         },
         {
@@ -520,9 +606,9 @@ const PRODUCTS = {
           media: {
             type: 'grid',
             images: [
-              { src: '../assets/news/makkah-charter-01.jpeg', className: 'tall' },
-              { src: '../assets/news/makkah-charter-02.jpeg' },
-              { src: '../assets/news/makkah-charter-07.jpeg' },
+              { src: A.mc02, className: 'tall' },
+              { src: A.mc07 },
+              { src: A.mc10 },
             ],
           },
           flip: true,
@@ -538,20 +624,27 @@ const PRODUCTS = {
             'Collateral aligned with ProjectLaunch & GrowthLaunch',
           ],
           media: {
-            type: 'video',
-            src: '../assets/videos/GH-Marketing-Media-Production.mp4',
-            poster: '../assets/mm-brand.jpg',
-            caption: 'Brand & media production — Graphics House',
+            type: 'grid',
+            images: [
+              { src: A.mc08, className: 'tall' },
+              { src: A.mc03 },
+              { src: A.pavilion1, webp: A.pavilion1W },
+            ],
           },
         },
       ],
+      showcaseEyebrow: 'Case in point',
+      showcaseTitle: 'Identity you can walk through',
+      showcaseLead:
+        'BrandScale turns positioning into spaces, screens, and systems — so trust is felt before a word is spoken.',
       proofEyebrow: 'Brand environments we shape',
       proofLead: 'Identity work delivered alongside visualization and interactive — one studio language.',
       gallery: [
-        '../assets/news/makkah-charter-01.jpeg',
-        '../assets/news/makkah-charter-03.jpeg',
-        '../assets/news/makkah-charter-04.jpeg',
-        '../assets/news/makkah-charter-08.jpeg',
+        { src: A.mc01 },
+        { src: A.mc03 },
+        { src: A.mc04 },
+        { src: A.mc08 },
+        { src: A.mc05 },
       ],
       bafTitle: 'Your situation — transformed',
       bafLead: 'From looking small to commanding market trust.',
@@ -586,8 +679,9 @@ const PRODUCTS = {
       desc: 'ابنِ علامة تلهم الثقة — استراتيجية، هوية، وحضور مصمم للمطورين والمؤسسات.',
       headline: 'علامة<br><em>تفرض الثقة.</em>',
       sub: 'من التموضع إلى أنظمة الهوية والحضور السوقي — مصممة لتتوسع عبر المشاريع والقنوات.',
-      cardTitle: 'هوية ← حضور',
-      cardBody: 'استراتيجية، نظام بصري، أدلة إرشادية، وحضور رقمي — متماسك بما يكفي لبيع المشروع التالي.',
+      promiseTitle: 'هوية ← حضور',
+      promiseBody:
+        'استراتيجية، نظام بصري، أدلة إرشادية، وحضور رقمي — متماسك بما يكفي لبيع المشروع التالي.',
       stagesNav: [
         { id: 'stage-1', num: '01', label: 'الاستراتيجية' },
         { id: 'stage-2', num: '02', label: 'الهوية' },
@@ -606,8 +700,8 @@ const PRODUCTS = {
           ],
           media: {
             type: 'image',
-            src: '../assets/news/makkah-charter-04.jpeg',
-            caption: 'بيئات مؤسسية — رابطة العالم الإسلامي',
+            src: A.mc04,
+            caption: 'رابطة العالم الإسلامي — بيئات استراتيجية',
           },
         },
         {
@@ -623,9 +717,9 @@ const PRODUCTS = {
           media: {
             type: 'grid',
             images: [
-              { src: '../assets/news/makkah-charter-01.jpeg', className: 'tall' },
-              { src: '../assets/news/makkah-charter-02.jpeg' },
-              { src: '../assets/news/makkah-charter-07.jpeg' },
+              { src: A.mc02, className: 'tall' },
+              { src: A.mc07 },
+              { src: A.mc10 },
             ],
           },
           flip: true,
@@ -641,20 +735,27 @@ const PRODUCTS = {
             'مواد متوافقة مع ProjectLaunch وGrowthLaunch',
           ],
           media: {
-            type: 'video',
-            src: '../assets/videos/GH-Marketing-Media-Production.mp4',
-            poster: '../assets/mm-brand.jpg',
-            caption: 'إنتاج العلامة والإعلام — جرافيكس هاوس',
+            type: 'grid',
+            images: [
+              { src: A.mc08, className: 'tall' },
+              { src: A.mc03 },
+              { src: A.pavilion1, webp: A.pavilion1W },
+            ],
           },
         },
       ],
+      showcaseEyebrow: 'نموذج حي',
+      showcaseTitle: 'هوية تمشي فيها',
+      showcaseLead:
+        'BrandScale يحوّل التموضع إلى فضاءات وشاشات وأنظمة — فتُشعر بالثقة قبل أن تُقال كلمة.',
       proofEyebrow: 'بيئات علامة نُشكّلها',
       proofLead: 'هوية تُسلَّم مع التصور والتفاعلي — لغة استوديو واحدة.',
       gallery: [
-        '../assets/news/makkah-charter-01.jpeg',
-        '../assets/news/makkah-charter-03.jpeg',
-        '../assets/news/makkah-charter-04.jpeg',
-        '../assets/news/makkah-charter-08.jpeg',
+        { src: A.mc01 },
+        { src: A.mc03 },
+        { src: A.mc04 },
+        { src: A.mc08 },
+        { src: A.mc05 },
       ],
       bafTitle: 'وضعك الحالي — بعد التحول',
       bafLead: 'من حضور ضعيف إلى ثقة سوقية قوية.',
@@ -685,12 +786,13 @@ const PRODUCTS = {
   },
 };
 
-function pic(src, webp, alt, className) {
+function pic(src, webp, alt, className, eager = false) {
   const cls = className ? ` class="${className}"` : '';
+  const load = eager ? ' fetchpriority="high"' : ' loading="lazy"';
   if (webp) {
-    return `<picture><source srcset="${webp}" type="image/webp"><img${cls} src="${src}" alt="${alt}" loading="lazy"></picture>`;
+    return `<picture><source srcset="${webp}" type="image/webp"><img${cls} src="${src}" alt="${alt}"${load}></picture>`;
   }
-  return `<img${cls} src="${src}" alt="${alt}" loading="lazy">`;
+  return `<img${cls} src="${src}" alt="${alt}"${load}>`;
 }
 
 function renderMedia(media, alt) {
@@ -715,6 +817,45 @@ function renderMedia(media, alt) {
   </div>`;
 }
 
+function renderHeroVisual(product, isEn) {
+  const label = isEn ? product.heroLabelEn : product.heroLabelAr;
+  if (product.heroType === 'image') {
+    let webpPath = null;
+    if (product.heroSrc.includes('interactive-01')) webpPath = A.interactiveW;
+    else if (product.heroSrc.includes('Aloula')) webpPath = A.aloulaW;
+    return `<div class="sol-hero-visual">
+      ${pic(product.heroSrc, webpPath, product.en.name, '', true)}
+      <div class="sol-hero-media-label">${label}</div>
+    </div>`;
+  }
+  return `<div class="sol-hero-visual">
+    <video autoplay muted loop playsinline poster="${product.heroPoster}">
+      <source src="${product.heroSrc}" type="video/mp4">
+    </video>
+    <div class="sol-hero-media-label">${label}</div>
+  </div>`;
+}
+
+function renderShowcase(product, t) {
+  const media =
+    product.showcaseType === 'video'
+      ? `<video autoplay muted loop playsinline poster="${product.showcasePoster}">
+        <source src="${product.showcaseSrc}" type="video/mp4">
+      </video>`
+      : `<img src="${product.showcaseSrc}" alt="" loading="lazy">`;
+  return `<section class="sol-showcase">
+  <div class="sol-showcase-media">${media}</div>
+  <div class="sol-showcase-scrim"></div>
+  <div class="sol-wrap">
+    <div class="sol-showcase-copy">
+      <div class="sol-eyebrow">${t.showcaseEyebrow}</div>
+      <h2>${t.showcaseTitle}</h2>
+      <p>${t.showcaseLead}</p>
+    </div>
+  </div>
+</section>`;
+}
+
 function buildPage(productKey, lang) {
   const product = PRODUCTS[productKey];
   const isEn = lang === 'en';
@@ -723,8 +864,7 @@ function buildPage(productKey, lang) {
   const contact = isEn ? '../contact-us-en.html' : '../contact-us.html';
   const portfolio = isEn ? '../portfolio-en.html' : '../portfolio.html';
   const caseStudy = isEn ? '../case-study-mwl-en.html' : '../casestudy1.html';
-  const secondaryHref =
-    productKey === 'brand' ? caseStudy : portfolio;
+  const secondaryHref = productKey === 'brand' ? caseStudy : portfolio;
   const canonical = `${BASE}/solutions/${file}`;
   const arUrl = `${BASE}/solutions/${product.slug}.html`;
   const enUrl = `${BASE}/solutions/${product.slug}-en.html`;
@@ -733,12 +873,13 @@ function buildPage(productKey, lang) {
 
   const stagesNav = t.stagesNav
     .map(
-      (s) => `<a class="sol-stage-tab" href="#${s.id}"><span class="num">${s.num}</span><span class="label">${s.label}</span></a>`
+      (s) =>
+        `<a class="sol-stage-tab" href="#${s.id}"><span class="num">${s.num}</span><span class="label">${s.label}</span></a>`
     )
     .join('\n');
 
   const stagesHtml = t.stages
-    .map((stage, i) => {
+    .map((stage) => {
       const flip = stage.flip ? ' is-flip' : '';
       return `<section class="sol-stage" id="${stage.id}">
   <div class="sol-wrap">
@@ -748,7 +889,12 @@ function buildPage(productKey, lang) {
         <h2 class="sol-title">${stage.title}</h2>
         <p class="sol-lead">${stage.lead}</p>
         <ul class="sol-points">
-          ${stage.points.map((p) => `<li><span class="material-symbols-outlined">check_circle</span><span>${p}</span></li>`).join('\n')}
+          ${stage.points
+            .map(
+              (p) =>
+                `<li><span class="material-symbols-outlined">check_circle</span><span>${p}</span></li>`
+            )
+            .join('\n')}
         </ul>
       </div>
       ${renderMedia(stage.media, t.name)}
@@ -761,7 +907,10 @@ function buildPage(productKey, lang) {
   const logos = LOGOS.map((src) => `<img src="${src}" alt="" loading="lazy">`).join('\n');
 
   const gallery = (t.gallery || [])
-    .map((src) => `<img src="${src}" alt="${t.name}" loading="lazy">`)
+    .map(
+      (item) =>
+        `<figure>${pic(item.src, item.webp, t.name)}</figure>`
+    )
     .join('\n');
 
   const bafRows = t.baf
@@ -809,7 +958,7 @@ ${analyticsHeadTags('../')}
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
 <link rel="stylesheet" href="../assets/site-header.css?v=27">
-<link rel="stylesheet" href="../assets/gh-solution-light.css?v=1">
+<link rel="stylesheet" href="../assets/gh-solution-light.css?v=2">
 <script defer src="../assets/site-header.js?v=14"></script>
 <script defer src="../assets/gh-performance.js?v=2"></script>
 <script defer src="../assets/lang-switch.js?v=2"></script>
@@ -833,30 +982,24 @@ ${header}
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 
 <section class="sol-hero">
-  <div class="sol-hero-media">
-    <video autoplay muted loop playsinline poster="${product.heroPoster}">
-      <source src="${product.heroVideo}" type="video/mp4">
-    </video>
-  </div>
-  <div class="sol-hero-scrim"></div>
-  <div class="sol-hero-inner">
-    <div class="sol-wrap sol-hero-grid">
-      <div>
-        <div class="sol-eyebrow">${isEn ? 'Graphics House · Solutions' : 'جرافيكس هاوس · الحلول'}</div>
-        <h1>${t.name.replace('™', '<span class="tm">™</span>')}</h1>
-        <p class="sol-hero-tag">${t.tag}</p>
-        <h2 class="sol-hero-headline">${t.headline}</h2>
-        <p class="sol-hero-sub">${t.sub}</p>
-        <div class="sol-actions">
-          <a class="sol-btn sol-btn-gold" href="${contact}">${t.ctaPrimary}</a>
-          <a class="sol-btn sol-btn-ghost" href="${secondaryHref}">${t.ctaSecondary}</a>
-        </div>
-      </div>
-      <div class="sol-hero-card">
-        <strong>${t.cardTitle}</strong>
-        <p>${t.cardBody}</p>
-      </div>
+  <div class="sol-hero-copy">
+    <div class="sol-eyebrow">${isEn ? 'Graphics House · Solutions' : 'جرافيكس هاوس · الحلول'}</div>
+    <h1>${t.name.replace('™', '<span class="tm">™</span>')}</h1>
+    <p class="sol-hero-tag">${t.tag}</p>
+    <h2 class="sol-hero-headline">${t.headline}</h2>
+    <p class="sol-hero-sub">${t.sub}</p>
+    <div class="sol-actions">
+      <a class="sol-btn sol-btn-gold" href="${contact}">${t.ctaPrimary}</a>
+      <a class="sol-btn sol-btn-outline" href="${secondaryHref}">${t.ctaSecondary}</a>
     </div>
+  </div>
+  ${renderHeroVisual(product, isEn)}
+</section>
+
+<section class="sol-promise">
+  <div class="sol-wrap sol-promise-inner">
+    <div class="sol-promise-kicker">${t.promiseTitle}</div>
+    <p>${t.promiseBody}</p>
   </div>
 </section>
 
@@ -868,10 +1011,15 @@ ${header}
 
 ${stagesHtml}
 
+${renderShowcase(product, t)}
+
 <section class="sol-proof">
   <div class="sol-wrap">
     <div class="sol-proof-head">
-      <div class="sol-eyebrow">${t.proofEyebrow}</div>
+      <div>
+        <div class="sol-eyebrow">${t.proofEyebrow}</div>
+        <h2 class="sol-title" style="margin:0">${isEn ? 'Proof in the portfolio' : 'الدليل في الأعمال'}</h2>
+      </div>
       <p class="sol-lead">${t.proofLead}</p>
     </div>
     <div class="sol-logos">${logos}</div>
@@ -881,9 +1029,11 @@ ${stagesHtml}
 
 <section class="sol-baf-light">
   <div class="sol-wrap">
-    <div class="sol-eyebrow">${isEn ? 'Before & After' : 'قبل وبعد'}</div>
-    <h2 class="sol-title">${t.bafTitle}</h2>
-    <p class="sol-lead">${t.bafLead}</p>
+    <div class="sol-baf-head">
+      <div class="sol-eyebrow">${isEn ? 'Before & After' : 'قبل وبعد'}</div>
+      <h2 class="sol-title">${t.bafTitle}</h2>
+      <p class="sol-lead">${t.bafLead}</p>
+    </div>
     <div class="sol-baf-table">
       <div class="sol-baf-cols">
         <div class="sol-baf-col-head before">${isEn ? `Before ${t.name}` : `قبل ${t.name}`}</div>
@@ -922,7 +1072,7 @@ ${footer}
   console.log('  wrote', file);
 }
 
-console.log('Building light solution product pages…');
+console.log('Building premium light solution pages…');
 for (const key of Object.keys(PRODUCTS)) {
   buildPage(key, 'en');
   buildPage(key, 'ar');
