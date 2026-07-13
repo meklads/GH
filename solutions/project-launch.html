@@ -40,6 +40,47 @@ gtag('config','G-Y67JVE898Z');
   #loader.out { opacity:0; visibility:hidden; }
   #loader-bar-track { width:180px; height:1px; background:rgba(201,168,76,.18); margin-top:20px; overflow:hidden; }
   #loader-bar { height:100%; width:0; background:#C9A84C; transition:width 1s cubic-bezier(.4,0,.2,1); }
+
+  /* Hero readability on bright exhibition photos */
+  .pl-hero .svc-hero-scrim {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.55) 45%, rgba(0,0,0,.78) 100%),
+      radial-gradient(ellipse 75% 55% at 50% 48%, rgba(0,0,0,.4) 0%, transparent 72%) !important;
+  }
+  .pl-hero .pl-hero-copy {
+    position: relative;
+    z-index: 2;
+    max-width: 52rem;
+    margin-inline: auto;
+    padding: 28px 24px 32px;
+    border-radius: 2px;
+    background: rgba(8, 8, 8, 0.28);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .pl-hero h1 {
+    color: #fff !important;
+    text-shadow: 0 2px 28px rgba(0,0,0,.55);
+  }
+  .pl-hero .pl-hero-lead {
+    color: rgba(255,255,255,.9) !important;
+    opacity: 1 !important;
+    text-shadow: 0 1px 16px rgba(0,0,0,.45);
+  }
+  .pl-hero .pl-hero-eyebrow {
+    color: #C9A84C !important;
+    text-shadow: 0 1px 10px rgba(0,0,0,.5);
+  }
+  .pl-hero .pl-btn-ghost {
+    background: rgba(0,0,0,.4) !important;
+    border-color: rgba(201,168,76,.85) !important;
+    color: #fff !important;
+    backdrop-filter: blur(6px);
+  }
+  .pl-hero .pl-btn-ghost:hover {
+    background: rgba(201,168,76,.15) !important;
+  }
 </style>
 <script defer src="../assets/site-header.js?v=14"></script>
 <script defer src="../assets/gh-performance.js?v=2"></script>
@@ -182,18 +223,20 @@ gtag('config','G-Y67JVE898Z');
 </header>
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 
-<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<section class="pl-hero relative h-screen flex items-center justify-center overflow-hidden">
   <div id="hero-bg" class="absolute inset-x-0 -top-[10%] h-[120%] z-0">
     <picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img class="w-full h-full object-cover" src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="بيئة إطلاق متكاملة — رابطة العالم الإسلامي" loading="lazy"/></picture>
     <div class="svc-hero-scrim absolute inset-0"></div>
   </div>
   <div class="relative z-10 text-center max-w-5xl px-6">
-    <span class="hero-enter font-label-caps text-label-caps text-primary tracking-[0.3em] mb-6 block" style="transition-delay:0ms">الحل الرئيسي</span>
-    <h1 class="hero-enter text-[52px] md:text-[82px] leading-tight mb-6" style="transition-delay:120ms">ProjectLaunch™</h1>
-    <p class="hero-enter font-body-lg text-secondary max-w-2xl mx-auto mb-12 opacity-80" style="transition-delay:240ms">من الهوية المعمارية إلى صالة تُغلق الصفقة — تصور، سينما، مجسمات، تفاعلي، ديكور، تصوير وإخراج في منظومة بصرية واحدةحدة.</p>
-    <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-6" style="transition-delay:360ms">
-      <a href="../contact-us.html" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] shadow-[0_0_20px_rgba(201,168,76,0.3)]">ابدأ مشروعك</a>
-      <a href="../portfolio.html" class="border border-primary text-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:bg-primary/10">استعرض أعمالنا</a>
+    <div class="pl-hero-copy">
+      <span class="pl-hero-eyebrow hero-enter font-label-caps text-label-caps tracking-[0.3em] mb-6 block" style="transition-delay:0ms">الحل الرئيسي</span>
+      <h1 class="hero-enter text-[52px] md:text-[82px] leading-tight mb-6" style="transition-delay:120ms">ProjectLaunch™</h1>
+      <p class="pl-hero-lead hero-enter font-body-lg max-w-2xl mx-auto mb-12" style="transition-delay:240ms">من الهوية المعمارية إلى صالة تُغلق الصفقة — تصور، سينما، مجسمات، تفاعلي، ديكور، تصوير وإخراج في منظومة بصرية واحدةحدة.</p>
+      <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-6" style="transition-delay:360ms">
+        <a href="../contact-us.html" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] shadow-[0_0_20px_rgba(201,168,76,0.3)]">ابدأ مشروعك</a>
+        <a href="../portfolio.html" class="pl-btn-ghost border border-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all">استعرض أعمالنا</a>
+      </div>
     </div>
   </div>
 </section>
