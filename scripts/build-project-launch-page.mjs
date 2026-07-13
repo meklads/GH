@@ -68,6 +68,15 @@ const PAGE_CSS = `
   .pl-hero h1 {
     color: #fff !important;
     text-shadow: 0 2px 20px rgba(0,0,0,.35);
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+  .pl-hero .pl-hero-ar {
+    color: #C9A84C !important;
+    font-size: clamp(18px, 2.4vw, 26px);
+    font-weight: 700;
+    margin: -8px 0 18px;
+    line-height: 1.4;
   }
   .pl-hero .pl-hero-lead {
     color: rgba(255,255,255,.92) !important;
@@ -94,6 +103,7 @@ function copy(isEn) {
       desc: 'Everything a development launch needs — architectural identity, CGI films, smart maquettes, interactive experiences, sales-gallery décor, photography and direction — one studio.',
       eyebrow: 'Flagship Solution',
       h1: 'ProjectLaunch™',
+      h1Ar: '',
       heroLead:
         'From architectural identity to the sales hall that closes — visualization, cinema, maquettes, interactive tools, décor, photography and direction in one coherent system.',
       ctaPrimary: 'START YOUR PROJECT',
@@ -201,9 +211,10 @@ function copy(isEn) {
   return {
     title: 'ProjectLaunch™ | المنظومة الكاملة لإطلاق المشاريع العقارية | Graphics House',
     desc: 'كل ما يحتاجه إطلاق المشروع — هوية معمارية، أفلام CGI، مجسمات ذكية، عروض تفاعلية، ديكور صالة البيع، تصوير وإخراج — استوديو واحد.',
-    eyebrow: 'الحل الرئيسي',
-    h1: 'ProjectLaunch™',
-    heroLead:
+      eyebrow: 'الحل الرئيسي',
+      h1: 'ProjectLaunch™',
+      h1Ar: 'نظام إطلاق المشاريع العقارية',
+      heroLead:
       'من الهوية المعمارية إلى صالة تُغلق الصفقة — تصور، سينما، مجسمات، تفاعلي، ديكور، تصوير وإخراج في منظومة بصرية واحدةحدة.',
     ctaPrimary: 'ابدأ مشروعك',
     ctaSecondary: 'استعرض أعمالنا',
@@ -458,7 +469,8 @@ ${header}
   <div class="relative z-10 text-center max-w-5xl px-6">
     <div class="pl-hero-copy">
       <span class="pl-hero-eyebrow hero-enter font-label-caps text-label-caps tracking-[0.3em] mb-6 block" style="transition-delay:0ms">${t.eyebrow}</span>
-      <h1 class="hero-enter text-[52px] md:text-[82px] leading-tight mb-6" style="transition-delay:120ms">${t.h1}</h1>
+      <h1 class="hero-enter text-[52px] md:text-[82px] leading-tight mb-6" style="transition-delay:120ms" dir="ltr">ProjectLaunch<span class="tm">™</span></h1>
+      ${t.h1Ar ? `<p class="pl-hero-ar hero-enter" style="transition-delay:160ms">${t.h1Ar}</p>` : ''}
       <p class="pl-hero-lead hero-enter font-body-lg max-w-2xl mx-auto mb-12" style="transition-delay:240ms">${t.heroLead}</p>
       <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-6" style="transition-delay:360ms">
         <a href="${t.contact}" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] shadow-[0_0_20px_rgba(201,168,76,0.3)]">${t.ctaPrimary}</a>
