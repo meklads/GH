@@ -319,19 +319,24 @@ function build(isEn) {
 
   const yt = t.yt
     .map(
-      (v, i) => `<a href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener" class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:${(0.05 + i * 0.05).toFixed(2)}s">
-      <div class="aspect-video overflow-hidden relative">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg" alt="${v.title}" loading="lazy"/>
-        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-          <div class="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform"><span class="material-symbols-outlined ms-filled text-black text-3xl">play_arrow</span></div>
-        </div>
+      (v, i) => `<div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:${(0.05 + i * 0.05).toFixed(2)}s">
+      <div class="aspect-video overflow-hidden relative bg-black">
+        <iframe
+          class="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/${v.id}?autoplay=1&mute=1&loop=1&playlist=${v.id}&playsinline=1&controls=0&modestbranding=1&rel=0&enablejsapi=1"
+          title="${v.title}"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
       </div>
       <div class="p-5 bg-surface-container">
         <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">${v.tag}</span>
         <h3 class="font-headline-md text-on-background mb-1">${v.title}</h3>
         <p class="text-secondary text-sm opacity-70">${v.lead}</p>
       </div>
-    </a>`
+    </div>`
     )
     .join('\n');
 
