@@ -310,38 +310,62 @@ const PRODUCTS = {
   project: {
     slug: 'project-launch',
     cssKey: 'project',
+    flagship: true,
     og: 'projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg',
-    heroType: 'image',
-    heroSrc: A.aloula,
+    heroType: 'video',
+    heroSrc: A.reVid,
     heroPoster: A.aloula,
-    heroLabelEn: 'Photoreal architectural CGI',
-    heroLabelAr: 'تصور معماري فوتورياليستي',
+    heroLabelEn: 'Complete real-estate launch system',
+    heroLabelAr: 'منظومة الإطلاق العقاري الكاملة',
     showcaseType: 'video',
     showcaseSrc: A.archVid,
     showcasePoster: A.aloula,
+    roomType: 'grid',
+    roomImages: [
+      { src: A.mc01, className: 'wide' },
+      { src: A.booth, webp: A.boothW },
+      { src: A.maqMwl, webp: A.maqMwlW },
+      { src: A.pavilion1, webp: A.pavilion1W },
+      { src: A.mc05, className: 'wide' },
+    ],
     en: {
       name: 'ProjectLaunch™',
-      tag: 'Real Estate Project Launch System',
-      title: 'ProjectLaunch™ | Real Estate Project Launch | Graphics House',
-      desc: 'Launch with confidence — cinematic CGI, smart maquettes, interactive experiences, and sales-ready collateral in one system.',
-      headline: 'Launch the development<br><em>before it is built.</em>',
-      sub: 'One studio for visualization, physical models, interactive sales tools, and launch collateral — aligned from day one.',
-      promiseTitle: 'One partner',
+      tag: 'The Complete Real Estate Launch System',
+      title: 'ProjectLaunch™ | Complete Real Estate Launch System | Graphics House',
+      desc: 'Everything a development launch needs — architectural identity, CGI films, smart maquettes, interactive experiences, sales-gallery décor, photography and direction — one studio, one system.',
+      eyebrow: 'Flagship Solution',
+      headline: 'From architectural identity<br><em>to a hall that sells.</em>',
+      sub: 'ProjectLaunch™ is the full stack: visualization, cinema, scale models, interactive tools, showroom décor, and production — designed so every asset speaks one language.',
+      promiseTitle: 'One system',
       promiseBody:
-        'CGI film, maquettes, interactive screens, and booth systems — delivered as one coherent launch.',
+        'Identity → CGI & films → maquettes → interactive → gallery décor → photography & direction. Not vendors. One launch.',
+      stackEyebrow: 'What is inside',
+      stackTitle: 'Every capability the launch needs',
+      stackLead: 'Eight disciplines. One creative command. Built to open sales before concrete.',
+      stack: [
+        { icon: 'architecture', title: 'Architectural identity', desc: 'Positioning and visual language for the development itself.', href: '../services/branding-en.html' },
+        { icon: 'apartment', title: 'Architectural CGI', desc: 'Photoreal stills and sequences that sell the unbuilt.', href: '../services/rendering-en.html' },
+        { icon: 'movie', title: 'Cinematic films', desc: 'Launch films and investor-day cinema.', href: '../services/cinematic-cgi-en.html' },
+        { icon: 'view_in_ar', title: 'Smart maquettes', desc: 'Precision models with lighting and digital layers.', href: '../services/maquettes-en.html' },
+        { icon: 'touch_app', title: 'Interactive experiences', desc: 'Touch journeys for unit selection and storytelling.', href: '../services/interactive-en.html' },
+        { icon: 'storefront', title: 'Sales gallery décor', desc: 'The room that gathers models, screens, and brand.', href: '../services/interactive-experiences-en.html' },
+        { icon: 'photo_camera', title: 'Photography & media', desc: 'Still and motion coverage of the launch environment.', href: '../services/photography-media-en.html' },
+        { icon: 'movie_edit', title: 'Direction & production', desc: 'End-to-end creative direction for the launch moment.', href: '../services/production-en.html' },
+      ],
       stagesNav: [
-        { id: 'stage-1', num: '01', label: 'Visualize' },
-        { id: 'stage-2', num: '02', label: 'Materialize' },
-        { id: 'stage-3', num: '03', label: 'Launch' },
+        { id: 'stage-1', num: '01', label: 'Identity & Vision' },
+        { id: 'stage-2', num: '02', label: 'Tools & Experience' },
+        { id: 'stage-3', num: '03', label: 'Sales Hall' },
       ],
       stages: [
         {
           id: 'stage-1',
           num: 'Stage 01',
-          title: 'Visualize the future',
-          lead: 'Photoreal CGI and cinematic film that make investors feel the project before groundbreaking.',
+          title: 'Identity & vision that lead',
+          lead: 'We define how the project looks, feels, and speaks — then prove it with photoreal CGI and cinematic film before groundbreaking.',
           points: [
-            'Architectural visualization & aerial sequences',
+            'Architectural identity for the development',
+            'Photoreal visualization & aerial sequences',
             'Cinematic CGI for launches and investor days',
             'Asset library ready for ads and sales centers',
           ],
@@ -357,12 +381,13 @@ const PRODUCTS = {
         {
           id: 'stage-2',
           num: 'Stage 02',
-          title: 'Materialize the experience',
-          lead: 'Precision maquettes and interactive environments that turn the showroom into a closing room.',
+          title: 'Tools that make it tangible',
+          lead: 'Maquettes, interactive layers, and production craft turn the concept into something buyers can walk around, touch, and believe.',
           points: [
             'Handcrafted architectural scale models',
-            'Interactive lighting & digital layers',
-            'Touch experiences for unit selection',
+            'Interactive lighting, maps, and unit selection',
+            'VR / 360 experiences where the brief needs depth',
+            'Photography and media that document the system',
           ],
           media: {
             type: 'grid',
@@ -377,50 +402,56 @@ const PRODUCTS = {
         {
           id: 'stage-3',
           num: 'Stage 03',
-          title: 'Launch to market',
-          lead: 'Booths, galleries, and sales collateral that carry the same visual system to the floor.',
+          title: 'A sales hall that closes',
+          lead: 'The climax: décor, booth systems, screens, and models composed as one room — where identity, film, and tools finally meet the buyer.',
           points: [
-            'Exhibition & sales-center environments',
-            'Print & digital launch kits',
-            'On-site installation support',
+            'Sales-gallery and exhibition environments',
+            'Spatial design that stages every asset',
+            'Print & digital launch kits on-brand',
+            'On-site installation and creative direction',
           ],
           media: {
             type: 'grid',
             images: [
-              { src: A.booth, webp: A.boothW, className: 'tall' },
+              { src: A.mc01, className: 'tall' },
+              { src: A.booth, webp: A.boothW },
               { src: A.pavilion1, webp: A.pavilion1W },
-              { src: A.maqMwl, webp: A.maqMwlW },
             ],
           },
         },
       ],
-      showcaseEyebrow: 'Launch film',
-      showcaseTitle: 'Cinematic proof before concrete',
+      roomEyebrow: 'The sales hall',
+      roomTitle: 'Where every tool becomes one experience',
+      roomLead:
+        'Models under glass. Screens that respond. Identity on the walls. Film in the air. ProjectLaunch designs the room that makes the development inevitable.',
+      showcaseEyebrow: 'Launch cinema',
+      showcaseTitle: 'Proof before concrete',
       showcaseLead:
-        'ProjectLaunch packages visualization, models, and market presence so the story buyers see is one system — not three vendors.',
+        'Cinematic visualization that carries the same identity into investor days, digital campaigns, and the sales floor.',
       proofEyebrow: 'Selected launch work',
-      proofLead: 'From masterplans to sales galleries — assets that accelerate buyer confidence.',
+      proofLead: 'From masterplans to sales galleries — one language across every surface.',
       gallery: [
         { src: A.aloula, webp: A.aloulaW },
         { src: A.maqAnan },
+        { src: A.mc08 },
         { src: A.uae, webp: A.uaeW },
         { src: A.wahat },
         { src: A.anan2, webp: A.anan2W },
       ],
-      bafTitle: 'Your situation — transformed',
-      bafLead: 'From fragmented vendors to one launch system that sells.',
+      bafTitle: 'Fragmented vendors → one launch command',
+      bafLead: 'Stop coordinating seven studios. Start launching as one system.',
       baf: [
-        ['Multiple vendors to manage', 'One launch partner — end to end'],
-        ['Concept without marketing assets', 'Sales-ready launch package'],
-        ['Weak visual presentation', 'Cinematic CGI & scale models'],
-        ['No structured launch plan', 'Clear three-stage launch system'],
+        ['Separate vendors for CGI, models, décor', 'One ProjectLaunch™ system — end to end'],
+        ['Identity that never reaches the showroom', 'Identity built into the sales hall'],
+        ['Assets that look unrelated', 'One visual language across film, model, and space'],
+        ['A room that displays — but does not sell', 'A composed experience designed to close'],
       ],
-      ctaTitle: 'Ready to launch with confidence?',
+      ctaTitle: 'Ready to launch the complete system?',
       ctaLead:
-        'We scope visualization, maquettes, interactive, and collateral as one coherent system.',
+        'We scope identity, visualization, maquettes, interactive, gallery décor, and production as one coherent ProjectLaunch™.',
       ctaPrimary: 'Book strategy session',
       ctaSecondary: 'View portfolio',
-      crossTitle: 'Complete the stack',
+      crossTitle: 'Extend the launch',
       cross: [
         {
           href: 'growth-launch-en.html',
@@ -430,32 +461,48 @@ const PRODUCTS = {
         {
           href: 'brand-scale-en.html',
           name: 'BrandScale™',
-          desc: 'Anchor the project in a brand buyers trust.',
+          desc: 'Scale the developer brand beyond a single project.',
         },
       ],
     },
     ar: {
       name: 'ProjectLaunch™',
-      tag: 'نظام إطلاق المشاريع العقارية',
-      title: 'ProjectLaunch™ | نظام إطلاق المشاريع العقارية | Graphics House',
-      desc: 'أطلق بثقة — CGI سينمائي، مجسمات ذكية، تجارب تفاعلية، ومواد بيعية في منظومة واحدةحدة.',
-      headline: 'أطلق المشروع<br><em>قبل أن يُبنى.</em>',
-      sub: 'استوديو واحد للتصور والمجسمات والأدوات التفاعلية ومواد الإطلاق — متناسقة من اليوم الأول.',
-      promiseTitle: 'شريك واحد',
-      promiseBody: 'فيلم CGI، مجسمات، شاشات تفاعلية، وأنظمة جناح — كإطلاق متماسك واحد.',
+      tag: 'المنظومة الكاملة لإطلاق المشاريع العقارية',
+      title: 'ProjectLaunch™ | المنظومة الكاملة لإطلاق المشاريع العقارية | Graphics House',
+      desc: 'كل ما يحتاجه إطلاق المشروع — هوية معمارية، أفلام CGI، مجسمات ذكية، عروض تفاعلية، ديكور صالة البيع، تصوير وإخراج — استوديو واحد ومنظومة واحدةحدة.',
+      eyebrow: 'الحل الرئيسي',
+      headline: 'من الهوية المعمارية<br><em>إلى صالة تبيع.</em>',
+      sub: 'ProjectLaunch™ هي المنظومة الكاملة: تصور، سينما، مجسمات، أدوات تفاعلية، ديكور صالة العرض، وتصوير وإخراج — بلغة بصرية واحدة من أول يوم.',
+      promiseTitle: 'منظومة واحدةحدة',
+      promiseBody:
+        'هوية ← CGI وأفلام ← مجسمات ← تفاعلي ← ديكور الصالة ← تصوير وإخراج. ليس مورّدين. إطلاق واحد.',
+      stackEyebrow: 'ماذا تضم؟',
+      stackTitle: 'كل القدرات التي يحتاجها الإطلاق',
+      stackLead: 'ثماني تخصصات. قيادة إبداعية واحدة. مصممة لتفتح المبيعات قبل الخرسانة.',
+      stack: [
+        { icon: 'architecture', title: 'الهوية المعمارية', desc: 'تموضع ولغة بصرية للمشروع نفسه.', href: '../services/branding.html' },
+        { icon: 'apartment', title: 'الإظهار المعماري', desc: 'صور ومشاهد فوتورياليستية تبيع ما لم يُبنَ بعد.', href: '../services/rendering.html' },
+        { icon: 'movie', title: 'أفلام سينمائية', desc: 'أفلام إطلاق وعروض للمستثمرين.', href: '../services/cinematic-cgi.html' },
+        { icon: 'view_in_ar', title: 'مجسمات ذكية', desc: 'نماذج دقيقة بإضاءة وطبقات رقمية.', href: '../services/maquettes.html' },
+        { icon: 'touch_app', title: 'عروض تفاعلية', desc: 'رحلات لمس لاختيار الوحدات والسرد.', href: '../services/interactive.html' },
+        { icon: 'storefront', title: 'ديكور صالة البيع', desc: 'الصالة التي تجمع المجسمات والشاشات والهوية.', href: '../services/interactive-experiences.html' },
+        { icon: 'photo_camera', title: 'تصوير وإعلام', desc: 'تغطية ثابتة ومتحركة لبيئة الإطلاق.', href: '../services/photography-media.html' },
+        { icon: 'movie_edit', title: 'إخراج وإنتاج', desc: 'قيادة إبداعية متكاملة للحظة الإطلاق.', href: '../services/production.html' },
+      ],
       stagesNav: [
-        { id: 'stage-1', num: '01', label: 'التصور' },
-        { id: 'stage-2', num: '02', label: 'التجسيد' },
-        { id: 'stage-3', num: '03', label: 'الإطلاق' },
+        { id: 'stage-1', num: '01', label: 'الهوية والتصور' },
+        { id: 'stage-2', num: '02', label: 'الأدوات والتجسيد' },
+        { id: 'stage-3', num: '03', label: 'صالة الإطلاق' },
       ],
       stages: [
         {
           id: 'stage-1',
           num: 'المرحلة 01',
-          title: 'تصوّر المستقبل',
-          lead: 'CGI فوتورياليستي وأفلام سينمائية تجعل المستثمر يعيش المشروع قبل وضع الحجر.',
+          title: 'هوية وتصور يقودان',
+          lead: 'نحدد كيف يبدو المشروع ويُشعر ويُقال — ثم نُثبته بـ CGI فوتورياليستي وفيلم سينمائي قبل وضع الحجر.',
           points: [
-            'تصور معماري ومشاهد جوية',
+            'هوية معمارية للمشروع',
+            'تصور فوتورياليستي ومشاهد جوية',
             'أفلام CGI للإطلاق وأيام المستثمرين',
             'مكتبة أصول جاهزة للإعلان ومراكز البيع',
           ],
@@ -471,12 +518,13 @@ const PRODUCTS = {
         {
           id: 'stage-2',
           num: 'المرحلة 02',
-          title: 'جسّد التجربة',
-          lead: 'مجسمات دقيقة وبيئات تفاعلية تحول صالة العرض إلى غرفة إغلاق.',
+          title: 'أدوات تجعلها ملموسة',
+          lead: 'مجسمات وطبقات تفاعلية وحِرفة إنتاج تحول الفكرة إلى شيء يدور حوله المشتري ويلمسه ويصدّقه.',
           points: [
             'مجسمات معمارية حرفية',
-            'إضاءة تفاعلية وطبقات رقمية',
-            'تجارب لمس لاختيار الوحدات',
+            'إضاءة تفاعلية وخرائط واختيار وحدات',
+            'تجارب VR / 360 عند الحاجة للعمق',
+            'تصوير وإعلام يوثّق المنظومة',
           ],
           media: {
             type: 'grid',
@@ -491,49 +539,56 @@ const PRODUCTS = {
         {
           id: 'stage-3',
           num: 'المرحلة 03',
-          title: 'أطلق إلى السوق',
-          lead: 'أجنحة ومعارض ومواد بيعية تحمل نفس النظام البصري إلى أرض الواقع.',
+          title: 'صالة بيع تُغلق الصفقة',
+          lead: 'الذروة: ديكور، أنظمة جناح، شاشات، ومجسمات في غرفة واحدة — حيث تلتقي الهوية والفيلم والأدوات بالمشتري.',
           points: [
-            'بيئات معارض ومراكز بيع',
-            'حزم إطلاق مطبوعة ورقمية',
-            'دعم التركيب في الموقع',
+            'بيئات صالات بيع ومعارض',
+            'تصميم فراغي يُخرج كل أصل',
+            'حزم إطلاق مطبوعة ورقمية متوافقة',
+            'تركيب في الموقع وقيادة إبداعية',
           ],
           media: {
             type: 'grid',
             images: [
-              { src: A.booth, webp: A.boothW, className: 'tall' },
+              { src: A.mc01, className: 'tall' },
+              { src: A.booth, webp: A.boothW },
               { src: A.pavilion1, webp: A.pavilion1W },
-              { src: A.maqMwl, webp: A.maqMwlW },
             ],
           },
         },
       ],
-      showcaseEyebrow: 'فيلم الإطلاق',
-      showcaseTitle: 'إثبات سينمائي قبل الخرسانة',
+      roomEyebrow: 'صالة الإطلاق',
+      roomTitle: 'حيث تتحول كل أداة إلى تجربة واحدة',
+      roomLead:
+        'مجسمات تحت الزجاج. شاشات تستجيب. هوية على الجدران. فيلم في الأجواء. ProjectLaunch يصمم الصالة التي تجعل المشروع حتمياً.',
+      showcaseEyebrow: 'سينما الإطلاق',
+      showcaseTitle: 'إثبات قبل الخرسانة',
       showcaseLead:
-        'ProjectLaunch يجمع التصور والمجسمات والحضور السوقي في قصة واحدة — لا ثلاثة مورّدين.',
+        'تصور سينمائي يحمل نفس الهوية إلى أيام المستثمرين والحملات الرقمية وأرضية المبيعات.',
       proofEyebrow: 'أعمال إطلاق مختارة',
-      proofLead: 'من المخططات إلى صالات البيع — أصول تسرّع ثقة المشتري.',
+      proofLead: 'من المخططات إلى صالات البيع — لغة واحدة عبر كل سطح.',
       gallery: [
         { src: A.aloula, webp: A.aloulaW },
         { src: A.maqAnan },
+        { src: A.mc08 },
         { src: A.uae, webp: A.uaeW },
         { src: A.wahat },
         { src: A.anan2, webp: A.anan2W },
       ],
-      bafTitle: 'وضعك الحالي — بعد التحول',
-      bafLead: 'من مورّدين متفرقين إلى منظومة إطلاق واحدة تبيع.',
+      bafTitle: 'مورّدون متفرقون ← قيادة إطلاق واحدة',
+      bafLead: 'توقف عن تنسيق سبعة استوديوهات. ابدأ الإطلاق كمنظومة واحدةحدة.',
       baf: [
-        ['التعامل مع عدة مورّدين', 'شريك إطلاق واحد من البداية للنهاية'],
-        ['فكرة بلا مواد تسويقية', 'حزمة إطلاق جاهزة للمبيعات'],
-        ['عرض بصري ضعيف', 'CGI سينمائي ومجسمات'],
-        ['لا خطة إطلاق واضحة', 'نظام إطلاق من ثلاث مراحل'],
+        ['مورّدون منفصلون للـ CGI والمجسمات والديكور', 'منظومة ProjectLaunch™ واحدةحدة من البداية للنهاية'],
+        ['هوية لا تصل إلى صالة العرض', 'هوية مبنية داخل صالة البيع'],
+        ['أصول تبدو غير مترابطة', 'لغة بصرية واحدة عبر الفيلم والمجسم والفضاء'],
+        ['غرفة تعرض ولا تبيع', 'تجربة مركّبة مصممة للإغلاق'],
       ],
-      ctaTitle: 'جاهز للإطلاق بثقة؟',
-      ctaLead: 'نحدد نطاق التصور والمجسمات والتفاعلي والمواد كمنظومة واحدةحدة.',
+      ctaTitle: 'جاهز لإطلاق المنظومة الكاملة؟',
+      ctaLead:
+        'نحدد نطاق الهوية والتصور والمجسمات والتفاعلي وديكور الصالة والإنتاج كـ ProjectLaunch™ واحد متماسك.',
       ctaPrimary: 'احجز جلسة استراتيجية',
       ctaSecondary: 'استعرض الأعمال',
-      crossTitle: 'أكمل المنظومة',
+      crossTitle: 'وسّع الإطلاق',
       cross: [
         {
           href: 'growth-launch.html',
@@ -543,7 +598,7 @@ const PRODUCTS = {
         {
           href: 'brand-scale.html',
           name: 'BrandScale™',
-          desc: 'اربط المشروع بهوية يثق بها المشتري.',
+          desc: 'وسّع علامة المطوّر أبعد من مشروع واحد.',
         },
       ],
     },
@@ -856,6 +911,52 @@ function renderShowcase(product, t) {
 </section>`;
 }
 
+function renderStack(t) {
+  if (!t.stack || !t.stack.length) return '';
+  const cards = t.stack
+    .map(
+      (s) => `<a class="sol-stack-card" href="${s.href}">
+      <span class="material-symbols-outlined">${s.icon}</span>
+      <h3>${s.title}</h3>
+      <p>${s.desc}</p>
+    </a>`
+    )
+    .join('\n');
+  return `<section class="sol-stack" id="stack">
+  <div class="sol-wrap">
+    <div class="sol-stack-head">
+      <div class="sol-eyebrow">${t.stackEyebrow}</div>
+      <h2 class="sol-title">${t.stackTitle}</h2>
+      <p class="sol-lead">${t.stackLead}</p>
+    </div>
+    <div class="sol-stack-grid">${cards}</div>
+  </div>
+</section>`;
+}
+
+function renderRoom(product, t) {
+  if (!t.roomTitle || !product.roomImages) return '';
+  const imgs = product.roomImages
+    .map((img) => {
+      const cls = img.className ? ` class="${img.className}"` : '';
+      if (img.webp) {
+        return `<figure${cls}><picture><source srcset="${img.webp}" type="image/webp"><img src="${img.src}" alt="" loading="lazy"></picture></figure>`;
+      }
+      return `<figure${cls}><img src="${img.src}" alt="" loading="lazy"></figure>`;
+    })
+    .join('\n');
+  return `<section class="sol-room" id="sales-hall">
+  <div class="sol-wrap">
+    <div class="sol-room-head">
+      <div class="sol-eyebrow">${t.roomEyebrow}</div>
+      <h2 class="sol-title">${t.roomTitle}</h2>
+      <p class="sol-lead">${t.roomLead}</p>
+    </div>
+    <div class="sol-room-mosaic">${imgs}</div>
+  </div>
+</section>`;
+}
+
 function buildPage(productKey, lang) {
   const product = PRODUCTS[productKey];
   const isEn = lang === 'en';
@@ -870,6 +971,9 @@ function buildPage(productKey, lang) {
   const enUrl = `${BASE}/solutions/${product.slug}-en.html`;
   const header = renderHeader(DEPTH, isEn);
   const footer = renderFooter(DEPTH, isEn);
+  const flagshipClass = product.flagship ? ' sol-flagship' : '';
+  const eyebrow =
+    t.eyebrow || (isEn ? 'Graphics House · Solutions' : 'جرافيكس هاوس · الحلول');
 
   const stagesNav = t.stagesNav
     .map(
@@ -907,10 +1011,7 @@ function buildPage(productKey, lang) {
   const logos = LOGOS.map((src) => `<img src="${src}" alt="" loading="lazy">`).join('\n');
 
   const gallery = (t.gallery || [])
-    .map(
-      (item) =>
-        `<figure>${pic(item.src, item.webp, t.name)}</figure>`
-    )
+    .map((item) => `<figure>${pic(item.src, item.webp, t.name)}</figure>`)
     .join('\n');
 
   const bafRows = t.baf
@@ -958,7 +1059,7 @@ ${analyticsHeadTags('../')}
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
 <link rel="stylesheet" href="../assets/site-header.css?v=27">
-<link rel="stylesheet" href="../assets/gh-solution-light.css?v=2">
+<link rel="stylesheet" href="../assets/gh-solution-light.css?v=3">
 <script defer src="../assets/site-header.js?v=14"></script>
 <script defer src="../assets/gh-performance.js?v=2"></script>
 <script defer src="../assets/lang-switch.js?v=2"></script>
@@ -977,13 +1078,13 @@ ${analyticsHeadTags('../')}
     areaServed: ['SA', 'AE', 'OM', 'BH', 'EG'],
   })}</script>
 </head>
-<body class="sol-page sol-${product.cssKey}">
+<body class="sol-page sol-${product.cssKey}${flagshipClass}">
 ${header}
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 
 <section class="sol-hero">
   <div class="sol-hero-copy">
-    <div class="sol-eyebrow">${isEn ? 'Graphics House · Solutions' : 'جرافيكس هاوس · الحلول'}</div>
+    <div class="sol-eyebrow">${eyebrow}</div>
     <h1>${t.name.replace('™', '<span class="tm">™</span>')}</h1>
     <p class="sol-hero-tag">${t.tag}</p>
     <h2 class="sol-hero-headline">${t.headline}</h2>
@@ -1003,6 +1104,8 @@ ${header}
   </div>
 </section>
 
+${renderStack(t)}
+
 <nav class="sol-stages-nav" aria-label="${isEn ? 'Three stages' : 'ثلاث مراحل'}">
   <div class="sol-wrap sol-stages-nav-inner">
     ${stagesNav}
@@ -1010,6 +1113,8 @@ ${header}
 </nav>
 
 ${stagesHtml}
+
+${renderRoom(product, t)}
 
 ${renderShowcase(product, t)}
 

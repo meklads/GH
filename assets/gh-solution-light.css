@@ -845,3 +845,162 @@ html[dir='rtl'] .sol-cta h2 {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* ── ProjectLaunch flagship ─────────────────────── */
+.sol-flagship.sol-project .sol-hero {
+  min-height: min(90vh, 880px);
+  background:
+    radial-gradient(ellipse 70% 55% at 10% 90%, rgba(201, 168, 76, 0.18), transparent 55%),
+    linear-gradient(165deg, #fafaf8 0%, #f4efe6 45%, #ebe4d6 100%);
+}
+.sol-flagship .sol-hero-copy h1 {
+  font-size: clamp(46px, 6.2vw, 76px);
+}
+.sol-flagship .sol-hero-tag {
+  font-size: 14px;
+  max-width: 34em;
+  line-height: 1.55;
+}
+.sol-flagship .sol-promise {
+  background: #141414;
+  border-bottom: 0;
+}
+.sol-flagship .sol-promise-kicker {
+  color: var(--sol-gold);
+  border-inline-end-color: rgba(255, 255, 255, 0.14);
+}
+.sol-flagship .sol-promise p {
+  color: rgba(250, 250, 248, 0.82);
+}
+
+.sol-stack {
+  padding: clamp(72px, 9vw, 110px) 0;
+  background: var(--sol-white);
+  border-bottom: 1px solid var(--sol-border);
+}
+.sol-stack-head {
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+.sol-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+@media (max-width: 1100px) {
+  .sol-stack-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .sol-stack-grid { grid-template-columns: 1fr; }
+}
+.sol-stack-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 26px 22px;
+  background: var(--sol-bg);
+  border: 1px solid var(--sol-border);
+  text-decoration: none;
+  color: inherit;
+  min-height: 180px;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s, background 0.25s;
+  position: relative;
+}
+.sol-stack-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  transition: background 0.25s;
+}
+.sol-stack-card:hover {
+  border-color: rgba(201, 168, 76, 0.45);
+  transform: translateY(-3px);
+  box-shadow: var(--sol-shadow-soft);
+  background: var(--sol-white);
+}
+.sol-stack-card:hover::after { background: var(--sol-gold); }
+.sol-stack-card .material-symbols-outlined {
+  font-size: 28px;
+  color: var(--sol-gold);
+}
+.sol-stack-card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.sol-stack-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--sol-muted);
+}
+
+.sol-room {
+  padding: clamp(72px, 9vw, 110px) 0;
+  background:
+    linear-gradient(180deg, #1a1610 0%, #0e0e0e 100%);
+  color: #fafaf8;
+}
+.sol-room .sol-eyebrow { color: var(--sol-gold); }
+.sol-room .sol-eyebrow::before { background: var(--sol-gold); }
+.sol-room .sol-title { color: #fafaf8; }
+.sol-room .sol-lead { color: rgba(255, 255, 255, 0.72); max-width: 640px; }
+.sol-room-head { margin-bottom: 40px; }
+.sol-room-mosaic {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: 220px 220px;
+  gap: 12px;
+}
+.sol-room-mosaic figure {
+  margin: 0;
+  overflow: hidden;
+  background: #222;
+}
+.sol-room-mosaic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s ease;
+}
+.sol-room-mosaic figure:hover img { transform: scale(1.04); }
+.sol-room-mosaic .wide {
+  grid-column: span 1;
+}
+.sol-room-mosaic figure:first-child {
+  grid-row: span 2;
+}
+.sol-room-mosaic figure:nth-child(5) {
+  grid-column: 2 / -1;
+}
+@media (max-width: 900px) {
+  .sol-room-mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .sol-room-mosaic figure:first-child {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 240px;
+  }
+  .sol-room-mosaic figure:nth-child(5) {
+    grid-column: 1 / -1;
+    min-height: 200px;
+  }
+}
+
+.sol-flagship .sol-gallery {
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: 240px 240px;
+}
+.sol-flagship .sol-cta {
+  background:
+    radial-gradient(ellipse 60% 70% at 20% 80%, rgba(201, 168, 76, 0.22), transparent 55%),
+    linear-gradient(155deg, #12180f 0%, #0a0a0a 50%, #1a1408 100%);
+}
