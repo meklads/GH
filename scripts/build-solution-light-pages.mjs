@@ -1093,6 +1093,7 @@ ${footer}
 
 console.log('Building premium light solution pages…');
 for (const key of Object.keys(PRODUCTS)) {
+  if (key === 'project') continue; // built by build-project-launch-page.mjs
   buildPage(key, 'en');
   buildPage(key, 'ar');
 }
