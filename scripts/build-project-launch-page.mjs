@@ -66,66 +66,46 @@ const PAGE_CSS = `
   }
 `;
 
-const YT_SHARED = [
-  {
-    id: 'e766WAUYgGQ',
-    tagEn: 'i-MAQUETTE',
-    tagAr: 'i-MAQUETTE',
-    titleEn: 'Smart interactive maquette',
-    titleAr: 'المجسم التفاعلي الذكي',
-    leadEn: 'Architectural model fused with interactive display technology',
-    leadAr: 'مجسم معماري مدمج مع تقنية العرض التفاعلي',
-  },
-  {
-    id: 'SPz2Lh2H2FM',
-    tagEn: 'SCALE MODEL',
-    tagAr: 'SCALE MODEL',
-    titleEn: 'Architectural scale model',
-    titleAr: 'مجسم معماري',
-    leadEn: 'Precision model with integrated LED lighting',
-    leadAr: 'مجسم معماري دقيق بإضاءة LED مدمجة',
-  },
-];
-
 const PRODUCTS = [
   {
     key: 'growth',
     slug: 'growth-launch',
     brandEn: 'GrowthLaunch',
     icon: 'query_stats',
-    og: 'projects/interactive-01.jpg',
+    og: 'projects/animation/rafal-pavilions.jpg',
     hero: {
-      src: '../assets/projects/interactive-01.jpg',
-      webp: '../assets/projects/interactive-01.webp',
-      altAr: 'تصور جاهز لتحفيز الطلب',
-      altEn: 'Demand-ready visualization',
+      src: '../assets/projects/animation/rafal-pavilions.jpg',
+      webp: '../assets/projects/animation/rafal-pavilions.webp',
+      altAr: 'جناح عرض يحفّز الطلب والمبيعات',
+      altEn: 'Pavilion experience built to drive demand',
     },
-    overviewImg: '../assets/projects/pavilion1.jpg',
+    overviewImg: '../assets/projects/pavilion2.jpg',
     cards: [
-      { img: '../assets/projects/interactive-01.jpg', titleAr: 'تصور يحرّك الطلب', titleEn: 'Visualization that drives demand' },
       { img: '../assets/projects/pavilion1.jpg', titleAr: 'بيئة عرض للمبيعات', titleEn: 'Sales presentation environment' },
-      { img: '../assets/news/makkah-charter-05.jpeg', titleAr: 'رحلة عميل متصلة', titleEn: 'Connected buyer journey' },
+      { img: '../assets/projects/animation/market-center.jpg', titleAr: 'مواد حملة عالية النية', titleEn: 'High-intent campaign creative' },
+      { img: '../assets/projects/cinematic/video-2.jpg', titleAr: 'محتوى يفتح مسار التحويل', titleEn: 'Content that opens conversion' },
     ],
+    youtube: [],
     videos: [
       {
         src: '../assets/videos/GH-Marketing-Media-Production.mp4',
-        poster: '../assets/projects/interactive-01.jpg',
+        poster: '../assets/projects/cinematic/video-1.jpg',
         tagAr: 'تسويق',
         tagEn: 'MARKETING',
         titleAr: 'إنتاج تسويقي وإعلامي',
         titleEn: 'Marketing & media production',
-        leadAr: 'محتوى يفتح مسار التحويل',
-        leadEn: 'Creative that opens the conversion path',
+        leadAr: 'محتوى يفتح مسار التحويل من أول نقرة',
+        leadEn: 'Creative that opens the path from first click',
       },
       {
         src: '../assets/videos/GH-Real-estate-services.mp4',
         poster: '../assets/projects/animation/real-estate-services.jpg',
-        tagAr: 'عقاري',
-        tagEn: 'REAL ESTATE',
-        titleAr: 'فيلم خدمات عقارية',
-        titleEn: 'Real-estate services film',
-        leadAr: 'سرد يربط العرض بالصفقة',
-        leadEn: 'Storytelling that links offer to deal',
+        tagAr: 'مبيعات',
+        tagEn: 'SALES',
+        titleAr: 'فيلم يربط العرض بالصفقة',
+        titleEn: 'Film that links offer to deal',
+        leadAr: 'سرد يحوّل الاهتمام إلى فرصة مبيعات',
+        leadEn: 'Storytelling that turns interest into a sales opportunity',
       },
     ],
     ar: {
@@ -149,12 +129,12 @@ const PRODUCTS = [
       processEyebrow: 'كيف نعمل',
       processTitle: 'المنهجية',
       portEyebrow: 'أعمال ذات صلة',
-      portTitle: 'بيئات تدعم التحويل',
-      ytEyebrow: 'تفاعلي ومجسمات',
-      ytTitle: 'أدوات تسرّع قرار المشتري',
+      portTitle: 'بيئات ومواد تدعم التحويل',
+      ytEyebrow: '',
+      ytTitle: '',
       vidEyebrow: 'أفلام وتسويق',
       vidTitle: 'محتوى يفتح المسار',
-      vidLead: 'أفلام ومواد تدعم الجذب والتحويل ضمن نفس المنظومة.',
+      vidLead: 'أفلام ومواد تسويقية تدعم الجذب والتحويل — لا مجسمات ولا إطلاق مشروع.',
       faq: [
         ['ماذا يشمل GrowthLaunch™؟', 'هيكلة العرض، الحملات، التتبع، الرد الآلي، ومسار CRM قابل للقياس.'],
         ['هل يناسب المطوّرين العقاريين؟', 'نعم — مصمم للمطورين وفرق B2B في الخليج.'],
@@ -184,12 +164,12 @@ const PRODUCTS = [
       processEyebrow: 'How we work',
       processTitle: 'Methodology',
       portEyebrow: 'Related work',
-      portTitle: 'Environments that support conversion',
-      ytEyebrow: 'Interactive & models',
-      ytTitle: 'Tools that speed buyer decisions',
+      portTitle: 'Assets and spaces that support conversion',
+      ytEyebrow: '',
+      ytTitle: '',
       vidEyebrow: 'Films & marketing',
       vidTitle: 'Content that opens the path',
-      vidLead: 'Films and assets that support demand and conversion in one system.',
+      vidLead: 'Marketing films and assets for demand and conversion — not launch models or exhibition systems.',
       faq: [
         ['What does GrowthLaunch™ include?', 'Offer architecture, campaigns, tracking, automated response, and a measurable CRM path.'],
         ['Is it built for real-estate developers?', 'Yes — designed for developers and B2B teams across the GCC.'],
@@ -216,6 +196,26 @@ const PRODUCTS = [
       { img: '../assets/news/makkah-charter-04.jpeg', titleAr: 'بيئة معرض تفاعلية', titleEn: 'Interactive exhibition environment' },
       { img: '../assets/news/makkah-charter-02.jpeg', titleAr: 'هوية وتجارب لمس', titleEn: 'Identity & touch experiences' },
       { img: '../assets/news/makkah-charter-07.jpeg', titleAr: 'صالة بيع وإخراج فراغي', titleEn: 'Sales hall & spatial staging' },
+    ],
+    youtube: [
+      {
+        id: 'e766WAUYgGQ',
+        tagEn: 'i-MAQUETTE',
+        tagAr: 'i-MAQUETTE',
+        titleEn: 'Smart interactive maquette',
+        titleAr: 'المجسم التفاعلي الذكي',
+        leadEn: 'Architectural model fused with interactive display technology',
+        leadAr: 'مجسم معماري مدمج مع تقنية العرض التفاعلي',
+      },
+      {
+        id: 'SPz2Lh2H2FM',
+        tagEn: 'SCALE MODEL',
+        tagAr: 'SCALE MODEL',
+        titleEn: 'Architectural scale model',
+        titleAr: 'مجسم معماري',
+        leadEn: 'Precision model with integrated LED lighting',
+        leadAr: 'مجسم معماري دقيق بإضاءة LED مدمجة',
+      },
     ],
     videos: [
       {
@@ -327,29 +327,40 @@ const PRODUCTS = [
     slug: 'brand-scale',
     brandEn: 'BrandScale',
     icon: 'workspace_premium',
-    og: 'news/makkah-charter-01.jpeg',
+    og: 'projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg',
     hero: {
-      src: '../assets/news/makkah-charter-01.jpeg',
-      webp: null,
-      altAr: 'بيئة علامة مؤسسية',
-      altEn: 'Institutional brand environment',
+      src: '../assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg',
+      webp: '../assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp',
+      altAr: 'حضور مؤسسي يفرض الثقة',
+      altEn: 'Institutional presence that commands trust',
     },
-    overviewImg: '../assets/news/makkah-charter-04.jpeg',
+    overviewImg: '../assets/projects/rendering/The-Meteorological-Building.jpeg',
     cards: [
-      { img: '../assets/news/makkah-charter-02.jpeg', titleAr: 'هوية في الفضاء', titleEn: 'Identity in space' },
-      { img: '../assets/news/makkah-charter-08.jpeg', titleAr: 'حضور مؤسسي', titleEn: 'Institutional presence' },
-      { img: '../assets/news/makkah-charter-03.jpeg', titleAr: 'تجربة علامة متكاملة', titleEn: 'Integrated brand experience' },
+      { img: '../assets/news/makkah-charter-08.jpeg', titleAr: 'هوية في الفضاء', titleEn: 'Identity in space' },
+      { img: '../assets/news/makkah-charter-10.jpeg', titleAr: 'لغة علامة متسقة', titleEn: 'Consistent brand language' },
+      { img: '../assets/projects/rendering/jeddah-forum.jpg', titleAr: 'حضور يُشعر قبل أن يُقال', titleEn: 'Presence felt before it is spoken' },
     ],
+    youtube: [],
     videos: [
       {
         src: '../assets/videos/GH-Marketing-Media-Production.mp4',
-        poster: '../assets/news/makkah-charter-05.jpeg',
+        poster: '../assets/projects/cinematic/video-3.jpg',
         tagAr: 'هوية وإعلام',
         tagEn: 'BRAND & MEDIA',
-        titleAr: 'إنتاج يحمل الهوية',
-        titleEn: 'Production that carries the brand',
-        leadAr: 'محتوى يحافظ على لغة العلامة عبر القنوات',
-        leadEn: 'Content that keeps brand language across channels',
+        titleAr: 'إنتاج يحمل نظام العلامة',
+        titleEn: 'Production that carries the brand system',
+        leadAr: 'محتوى يحافظ على لغة الهوية عبر القنوات',
+        leadEn: 'Content that keeps identity language across channels',
+      },
+      {
+        src: '../assets/videos/GH-demo-reel-2025.mp4',
+        poster: '../assets/news/makkah-charter-05.jpeg',
+        tagAr: 'حضور',
+        tagEn: 'PRESENCE',
+        titleAr: 'ريل يعكس حرفة الهوية',
+        titleEn: 'Reel reflecting brand craft',
+        leadAr: 'مقطع يظهر كيف تُترجم الهوية إلى تجارب بصرية',
+        leadEn: 'How identity translates into visual experiences',
       },
     ],
     ar: {
@@ -374,11 +385,11 @@ const PRODUCTS = [
       processTitle: 'المنهجية',
       portEyebrow: 'بيئات علامة',
       portTitle: 'حضور يُشعر قبل أن يُقال',
-      ytEyebrow: 'تفاعلي ومجسمات',
-      ytTitle: 'حيث تظهر الهوية',
+      ytEyebrow: '',
+      ytTitle: '',
       vidEyebrow: 'هوية في الحركة',
       vidTitle: 'محتوى يحافظ على اللغة',
-      vidLead: 'إنتاج إعلامي يحمل نفس نظام العلامة عبر القنوات.',
+      vidLead: 'إنتاج يحمل نظام العلامة — لا مجسمات إطلاق ولا مسار مبيعات.',
       faq: [
         ['ماذا يشمل BrandScale™؟', 'تموضع، نظام هوية، أدلة استخدام، وحضور رقمي متماسك.'],
         ['هل يناسب المطوّرين والمؤسسات؟', 'نعم — مصمم للعلامات التي تحتاج ثقة السوق والاستمرارية.'],
@@ -409,11 +420,11 @@ const PRODUCTS = [
       processTitle: 'Methodology',
       portEyebrow: 'Brand environments',
       portTitle: 'Presence felt before it is spoken',
-      ytEyebrow: 'Interactive & models',
-      ytTitle: 'Where identity shows up',
+      ytEyebrow: '',
+      ytTitle: '',
       vidEyebrow: 'Brand in motion',
       vidTitle: 'Content that keeps the language',
-      vidLead: 'Media production that carries the same brand system across channels.',
+      vidLead: 'Media that carries the brand system — not launch maquettes or sales funnels.',
       faq: [
         ['What does BrandScale™ include?', 'Positioning, identity system, guidelines, and a coherent digital presence.'],
         ['Is it for developers and institutions?', 'Yes — built for brands that need market trust and continuity.'],
@@ -442,7 +453,8 @@ function buildPage(product, isEn) {
   const footer = renderFooter(DEPTH, isEn);
   const contact = isEn ? '../contact-us-en.html' : '../contact-us.html';
   const portfolio = isEn ? '../portfolio-en.html' : '../portfolio.html';
-  const caseStudy = isEn ? '../case-study-mwl-en.html' : '../casestudy1.html';
+  const cardLink = portfolio;
+  const cardLinkLabel = isEn ? 'View portfolio →' : 'استعرض الأعمال ←';
   const skip = isEn ? 'Skip to main content' : 'تخطي إلى المحتوى الرئيسي';
   const ctaPrimary = isEn ? 'START YOUR PROJECT' : 'ابدأ مشروعك';
   const ctaSecondary = isEn ? 'VIEW PORTFOLIO' : 'استعرض أعمالنا';
@@ -452,6 +464,7 @@ function buildPage(product, isEn) {
   const faqTitle = isEn ? 'Answers to common questions' : 'أجوبة عن استفساراتكم';
   const heroAlt = isEn ? product.hero.altEn : product.hero.altAr;
   const brandName = product.brandEn;
+  const youtubeItems = product.youtube || [];
 
   const features = t.features
     .map(
@@ -476,14 +489,15 @@ function buildPage(product, isEn) {
       <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
       <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
         <h3 class="font-headline-md text-white mb-1">${isEn ? c.titleEn : c.titleAr}</h3>
-        <a href="${caseStudy}" class="text-primary text-xs tracking-widest">Case Study →</a>
+        <a href="${cardLink}" class="text-primary text-xs tracking-widest">${cardLinkLabel}</a>
       </div>
     </div>`
     )
     .join('\n');
 
-  const yt = YT_SHARED.map(
-    (v, i) => `<div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:${(0.05 + i * 0.05).toFixed(2)}s">
+  const yt = youtubeItems
+    .map(
+      (v, i) => `<div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:${(0.05 + i * 0.05).toFixed(2)}s">
       <div class="aspect-video overflow-hidden relative bg-black">
         <iframe
           class="absolute inset-0 w-full h-full"
@@ -501,8 +515,26 @@ function buildPage(product, isEn) {
         <p class="text-secondary text-sm opacity-70">${isEn ? v.leadEn : v.leadAr}</p>
       </div>
     </div>`
-  ).join('\n');
+    )
+    .join('\n');
 
+  const ytSection =
+    youtubeItems.length === 0
+      ? ''
+      : `
+<section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto border-t border-white/5">
+  <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${t.ytEyebrow}</span>
+    <h2 class="font-headline-xl text-on-background">${t.ytTitle}</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">${yt}</div>
+  <div class="text-center mt-10 reveal" style="opacity:0;transform:translateY(24px)">
+    <a href="https://www.youtube.com/@GraphicsHouse2" target="_blank" rel="noopener" class="border border-primary text-primary px-8 py-3 font-label-caps text-label-caps tracking-widest hover:bg-primary/10 transition-all inline-flex items-center gap-3">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.38.55A3.02 3.02 0 00.5 6.19C0 8.03 0 12 0 12s0 3.97.5 5.81a3.02 3.02 0 002.12 2.14C4.45 20.5 12 20.5 12 20.5s7.55 0 9.38-.55a3.02 3.02 0 002.12-2.14C24 15.97 24 12 24 12s0-3.97-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+      ${ytMore}
+    </a>
+  </div>
+</section>`;
   const vidGrid =
     product.videos.length === 1
       ? 'grid-cols-1 md:grid-cols-1 max-w-3xl mx-auto'
@@ -642,19 +674,7 @@ ${header}
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${cards}</div>
 </section>
 
-<section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto border-t border-white/5">
-  <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
-    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${t.ytEyebrow}</span>
-    <h2 class="font-headline-xl text-on-background">${t.ytTitle}</h2>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">${yt}</div>
-  <div class="text-center mt-10 reveal" style="opacity:0;transform:translateY(24px)">
-    <a href="https://www.youtube.com/@GraphicsHouse2" target="_blank" rel="noopener" class="border border-primary text-primary px-8 py-3 font-label-caps text-label-caps tracking-widest hover:bg-primary/10 transition-all inline-flex items-center gap-3">
-      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.38.55A3.02 3.02 0 00.5 6.19C0 8.03 0 12 0 12s0 3.97.5 5.81a3.02 3.02 0 002.12 2.14C4.45 20.5 12 20.5 12 20.5s7.55 0 9.38-.55a3.02 3.02 0 002.12-2.14C24 15.97 24 12 24 12s0-3.97-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
-      ${ytMore}
-    </a>
-  </div>
-</section>
+${ytSection}
 
 <section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto border-t border-white/5 bg-surface-container">
   <div class="text-center mb-6 reveal" style="opacity:0;transform:translateY(24px)">
