@@ -107,12 +107,10 @@ const PRODUCTS = {
             'Creative systems built for real estate & B2B',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.interactive, webp: A.interactiveW, className: 'tall' },
-              { src: A.anan, webp: A.ananW },
-              { src: A.jeddah, webp: A.jeddahW },
-            ],
+            type: 'image',
+            src: A.interactive,
+            webp: A.interactiveW,
+            caption: '',
           },
         },
         {
@@ -126,12 +124,10 @@ const PRODUCTS = {
             'Qualification scripts your team can run',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.pavilion1, webp: A.pavilion1W, className: 'tall' },
-              { src: A.mc05 },
-              { src: A.booth, webp: A.boothW },
-            ],
+            type: 'image',
+            src: A.pavilion1,
+            webp: A.pavilion1W,
+            caption: '',
           },
           flip: true,
         },
@@ -159,13 +155,7 @@ const PRODUCTS = {
         'GrowthLaunch connects campaigns to the environments buyers actually walk into — galleries, booths, and digital journeys.',
       proofEyebrow: 'Trusted by leading teams',
       proofLead: 'Client brands that rely on Graphics House for launch and growth systems.',
-      gallery: [
-        { src: A.interactive, webp: A.interactiveW },
-        { src: A.anan, webp: A.ananW },
-        { src: A.pavilion2, webp: A.pavilion2W },
-        { src: A.jeddah, webp: A.jeddahW },
-        { src: A.alrajhi, webp: A.alrajhiW },
-      ],
+      gallery: [],
       bafTitle: 'Your situation — transformed',
       bafLead: 'Not just tools — a shift in how you capture and convert leads.',
       baf: [
@@ -220,12 +210,9 @@ const PRODUCTS = {
             'منظومة إبداعية للعقار وB2B',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.interactive, webp: A.interactiveW, className: 'tall' },
-              { src: A.anan, webp: A.ananW },
-              { src: A.jeddah, webp: A.jeddahW },
-            ],
+            type: 'image',
+            src: A.interactive,
+            webp: A.interactiveW,
           },
         },
         {
@@ -239,12 +226,9 @@ const PRODUCTS = {
             'سكربتات تأهيل يطبقها فريقك',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.pavilion1, webp: A.pavilion1W, className: 'tall' },
-              { src: A.mc05 },
-              { src: A.booth, webp: A.boothW },
-            ],
+            type: 'image',
+            src: A.pavilion1,
+            webp: A.pavilion1W,
           },
           flip: true,
         },
@@ -272,13 +256,7 @@ const PRODUCTS = {
         'GrowthLaunch يربط الحملات بالبيئات التي يدخلها المشتري فعلياً — صالات، أجنحة، ومسارات رقمية.',
       proofEyebrow: 'يثق بنا قادة السوق',
       proofLead: 'علامات تعتمد على جرافيكس هاوس في أنظمة الإطلاق والنمو.',
-      gallery: [
-        { src: A.interactive, webp: A.interactiveW },
-        { src: A.anan, webp: A.ananW },
-        { src: A.pavilion2, webp: A.pavilion2W },
-        { src: A.jeddah, webp: A.jeddahW },
-        { src: A.alrajhi, webp: A.alrajhiW },
-      ],
+      gallery: [],
       bafTitle: 'وضعك الحالي — بعد التحول',
       bafLead: 'ليس أدوات فقط — بل تحول في طريقة استقبال العملاء وتحويلهم.',
       baf: [
@@ -312,22 +290,16 @@ const PRODUCTS = {
     cssKey: 'project',
     flagship: true,
     og: 'projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg',
-    heroType: 'video',
-    heroSrc: A.reVid,
+    heroType: 'image',
+    heroSrc: A.aloula,
     heroPoster: A.aloula,
     heroLabelEn: 'Complete real-estate launch system',
     heroLabelAr: 'منظومة الإطلاق العقاري الكاملة',
     showcaseType: 'video',
     showcaseSrc: A.archVid,
     showcasePoster: A.aloula,
-    roomType: 'grid',
-    roomImages: [
-      { src: A.mc01, className: 'wide' },
-      { src: A.booth, webp: A.boothW },
-      { src: A.maqMwl, webp: A.maqMwlW },
-      { src: A.pavilion1, webp: A.pavilion1W },
-      { src: A.mc05, className: 'wide' },
-    ],
+    roomSrc: A.mc01,
+    roomWebp: null,
     en: {
       name: 'ProjectLaunch™',
       tag: 'The Complete Real Estate Launch System',
@@ -370,12 +342,10 @@ const PRODUCTS = {
             'Asset library ready for ads and sales centers',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.aloula, webp: A.aloulaW, className: 'tall' },
-              { src: A.anan, webp: A.ananW },
-              { src: A.financial, webp: A.financialW },
-            ],
+            type: 'image',
+            src: A.aloula,
+            webp: A.aloulaW,
+            caption: 'Photoreal CGI — Al-Owla / Al Nakheel',
           },
         },
         {
@@ -390,12 +360,9 @@ const PRODUCTS = {
             'Photography and media that document the system',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.maqAnan, className: 'tall' },
-              { src: A.maqAlrajhi },
-              { src: A.alKhair, webp: A.alKhairW },
-            ],
+            type: 'image',
+            src: A.maqAnan,
+            caption: 'Precision scale model — Anan Eskan',
           },
           flip: true,
         },
@@ -411,12 +378,10 @@ const PRODUCTS = {
             'On-site installation and creative direction',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.mc01, className: 'tall' },
-              { src: A.booth, webp: A.boothW },
-              { src: A.pavilion1, webp: A.pavilion1W },
-            ],
+            type: 'image',
+            src: A.booth,
+            webp: A.boothW,
+            caption: 'Sales environment — models, lighting, brand',
           },
         },
       ],
@@ -424,20 +389,14 @@ const PRODUCTS = {
       roomTitle: 'Where every tool becomes one experience',
       roomLead:
         'Models under glass. Screens that respond. Identity on the walls. Film in the air. ProjectLaunch designs the room that makes the development inevitable.',
+      roomCaption: 'Muslim World League — integrated launch environment',
       showcaseEyebrow: 'Launch cinema',
       showcaseTitle: 'Proof before concrete',
       showcaseLead:
         'Cinematic visualization that carries the same identity into investor days, digital campaigns, and the sales floor.',
-      proofEyebrow: 'Selected launch work',
-      proofLead: 'From masterplans to sales galleries — one language across every surface.',
-      gallery: [
-        { src: A.aloula, webp: A.aloulaW },
-        { src: A.maqAnan },
-        { src: A.mc08 },
-        { src: A.uae, webp: A.uaeW },
-        { src: A.wahat },
-        { src: A.anan2, webp: A.anan2W },
-      ],
+      proofEyebrow: 'Trusted for landmark launches',
+      proofLead: 'One visual language — from masterplan to the room where buyers decide.',
+      gallery: [],
       bafTitle: 'Fragmented vendors → one launch command',
       bafLead: 'Stop coordinating seven studios. Start launching as one system.',
       baf: [
@@ -507,12 +466,10 @@ const PRODUCTS = {
             'مكتبة أصول جاهزة للإعلان ومراكز البيع',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.aloula, webp: A.aloulaW, className: 'tall' },
-              { src: A.anan, webp: A.ananW },
-              { src: A.financial, webp: A.financialW },
-            ],
+            type: 'image',
+            src: A.aloula,
+            webp: A.aloulaW,
+            caption: 'تصور فوتورياليستي — الأولى / النخيل',
           },
         },
         {
@@ -527,12 +484,9 @@ const PRODUCTS = {
             'تصوير وإعلام يوثّق المنظومة',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.maqAnan, className: 'tall' },
-              { src: A.maqAlrajhi },
-              { src: A.alKhair, webp: A.alKhairW },
-            ],
+            type: 'image',
+            src: A.maqAnan,
+            caption: 'مجسم دقيق — أنان إسكان',
           },
           flip: true,
         },
@@ -548,12 +502,10 @@ const PRODUCTS = {
             'تركيب في الموقع وقيادة إبداعية',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.mc01, className: 'tall' },
-              { src: A.booth, webp: A.boothW },
-              { src: A.pavilion1, webp: A.pavilion1W },
-            ],
+            type: 'image',
+            src: A.booth,
+            webp: A.boothW,
+            caption: 'بيئة بيع — مجسمات، إضاءة، هوية',
           },
         },
       ],
@@ -561,20 +513,14 @@ const PRODUCTS = {
       roomTitle: 'حيث تتحول كل أداة إلى تجربة واحدة',
       roomLead:
         'مجسمات تحت الزجاج. شاشات تستجيب. هوية على الجدران. فيلم في الأجواء. ProjectLaunch يصمم الصالة التي تجعل المشروع حتمياً.',
+      roomCaption: 'رابطة العالم الإسلامي — بيئة إطلاق متكاملة',
       showcaseEyebrow: 'سينما الإطلاق',
       showcaseTitle: 'إثبات قبل الخرسانة',
       showcaseLead:
         'تصور سينمائي يحمل نفس الهوية إلى أيام المستثمرين والحملات الرقمية وأرضية المبيعات.',
-      proofEyebrow: 'أعمال إطلاق مختارة',
-      proofLead: 'من المخططات إلى صالات البيع — لغة واحدة عبر كل سطح.',
-      gallery: [
-        { src: A.aloula, webp: A.aloulaW },
-        { src: A.maqAnan },
-        { src: A.mc08 },
-        { src: A.uae, webp: A.uaeW },
-        { src: A.wahat },
-        { src: A.anan2, webp: A.anan2W },
-      ],
+      proofEyebrow: 'يثق بنا لإطلاقات كبرى',
+      proofLead: 'لغة بصرية واحدة — من المخطط إلى الصالة التي يقرر فيها المشتري.',
+      gallery: [],
       bafTitle: 'مورّدون متفرقون ← قيادة إطلاق واحدة',
       bafLead: 'توقف عن تنسيق سبعة استوديوهات. ابدأ الإطلاق كمنظومة واحدةحدة.',
       baf: [
@@ -659,12 +605,9 @@ const PRODUCTS = {
             'Presentation & profile templates',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.mc02, className: 'tall' },
-              { src: A.mc07 },
-              { src: A.mc10 },
-            ],
+            type: 'image',
+            src: A.mc02,
+            caption: '',
           },
           flip: true,
         },
@@ -679,12 +622,9 @@ const PRODUCTS = {
             'Collateral aligned with ProjectLaunch & GrowthLaunch',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.mc08, className: 'tall' },
-              { src: A.mc03 },
-              { src: A.pavilion1, webp: A.pavilion1W },
-            ],
+            type: 'image',
+            src: A.mc08,
+            caption: '',
           },
         },
       ],
@@ -694,13 +634,7 @@ const PRODUCTS = {
         'BrandScale turns positioning into spaces, screens, and systems — so trust is felt before a word is spoken.',
       proofEyebrow: 'Brand environments we shape',
       proofLead: 'Identity work delivered alongside visualization and interactive — one studio language.',
-      gallery: [
-        { src: A.mc01 },
-        { src: A.mc03 },
-        { src: A.mc04 },
-        { src: A.mc08 },
-        { src: A.mc05 },
-      ],
+      gallery: [],
       bafTitle: 'Your situation — transformed',
       bafLead: 'From looking small to commanding market trust.',
       baf: [
@@ -770,12 +704,8 @@ const PRODUCTS = {
             'قوالب عروض وملفات تعريف',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.mc02, className: 'tall' },
-              { src: A.mc07 },
-              { src: A.mc10 },
-            ],
+            type: 'image',
+            src: A.mc02,
           },
           flip: true,
         },
@@ -790,12 +720,8 @@ const PRODUCTS = {
             'مواد متوافقة مع ProjectLaunch وGrowthLaunch',
           ],
           media: {
-            type: 'grid',
-            images: [
-              { src: A.mc08, className: 'tall' },
-              { src: A.mc03 },
-              { src: A.pavilion1, webp: A.pavilion1W },
-            ],
+            type: 'image',
+            src: A.mc08,
           },
         },
       ],
@@ -805,13 +731,7 @@ const PRODUCTS = {
         'BrandScale يحوّل التموضع إلى فضاءات وشاشات وأنظمة — فتُشعر بالثقة قبل أن تُقال كلمة.',
       proofEyebrow: 'بيئات علامة نُشكّلها',
       proofLead: 'هوية تُسلَّم مع التصور والتفاعلي — لغة استوديو واحدة.',
-      gallery: [
-        { src: A.mc01 },
-        { src: A.mc03 },
-        { src: A.mc04 },
-        { src: A.mc08 },
-        { src: A.mc05 },
-      ],
+      gallery: [],
       bafTitle: 'وضعك الحالي — بعد التحول',
       bafLead: 'من حضور ضعيف إلى ثقة سوقية قوية.',
       baf: [
@@ -935,16 +855,7 @@ function renderStack(t) {
 }
 
 function renderRoom(product, t) {
-  if (!t.roomTitle || !product.roomImages) return '';
-  const imgs = product.roomImages
-    .map((img) => {
-      const cls = img.className ? ` class="${img.className}"` : '';
-      if (img.webp) {
-        return `<figure${cls}><picture><source srcset="${img.webp}" type="image/webp"><img src="${img.src}" alt="" loading="lazy"></picture></figure>`;
-      }
-      return `<figure${cls}><img src="${img.src}" alt="" loading="lazy"></figure>`;
-    })
-    .join('\n');
+  if (!t.roomTitle || !product.roomSrc) return '';
   return `<section class="sol-room" id="sales-hall">
   <div class="sol-wrap">
     <div class="sol-room-head">
@@ -952,7 +863,10 @@ function renderRoom(product, t) {
       <h2 class="sol-title">${t.roomTitle}</h2>
       <p class="sol-lead">${t.roomLead}</p>
     </div>
-    <div class="sol-room-mosaic">${imgs}</div>
+    <div class="sol-room-single">
+      ${pic(product.roomSrc, product.roomWebp || null, t.name)}
+      ${t.roomCaption ? `<div class="sol-media-caption">${t.roomCaption}</div>` : ''}
+    </div>
   </div>
 </section>`;
 }
@@ -1059,7 +973,7 @@ ${analyticsHeadTags('../')}
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
 <link rel="stylesheet" href="../assets/site-header.css?v=27">
-<link rel="stylesheet" href="../assets/gh-solution-light.css?v=3">
+<link rel="stylesheet" href="../assets/gh-solution-light.css?v=4">
 <script defer src="../assets/site-header.js?v=14"></script>
 <script defer src="../assets/gh-performance.js?v=2"></script>
 <script defer src="../assets/lang-switch.js?v=2"></script>
