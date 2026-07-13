@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" dir="rtl" lang="ar">
 <head>
+<!-- GH perf -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <script src="../assets/gh-forms-config.js?v=2"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y67JVE898Z"></script>
@@ -11,40 +17,85 @@ gtag('js',new Date());
 gtag('config','G-Y67JVE898Z');
 </script>
 <script src="../assets/gh-analytics.js?v=3"></script>
-<!-- GH perf -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<!-- GH SEO -->
 <link rel="canonical" href="https://3dgraphicshouse.com/solutions/growth-launch.html">
 <link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/solutions/growth-launch-en.html">
 <link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/solutions/growth-launch.html">
 <link rel="alternate" hreflang="x-default" href="https://3dgraphicshouse.com/solutions/growth-launch-en.html">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>GrowthLaunch™ | نظام توليد العملاء والمبيعات | Graphics House</title>
 <meta name="description" content="نظام مبيعات متكامل — جذب، تحويل، وتوسيع العملاء المؤهلين مع التتبع وCRM وأتمتة الرد."/>
 <meta property="og:title" content="GrowthLaunch™ | Graphics House">
 <meta property="og:description" content="نظام مبيعات متكامل — جذب، تحويل، وتوسيع العملاء المؤهلين مع التتبع وCRM وأتمتة الرد.">
 <meta property="og:image" content="https://3dgraphicshouse.com/assets/projects/interactive-01.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16.png">
-<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
-<link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
-<link rel="stylesheet" href="../assets/site-header.css?v=26">
-<link rel="stylesheet" href="../assets/gh-solution-light.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
+  ::-webkit-scrollbar { width:3px; }
+  ::-webkit-scrollbar-track { background:#FAFAF8; }
+  ::-webkit-scrollbar-thumb { background:#C9A84C; }
+  .reveal { transition:opacity .75s cubic-bezier(.4,0,.2,1),transform .75s cubic-bezier(.4,0,.2,1); }
+  .reveal.visible { opacity:1 !important; transform:none !important; }
+  .hero-enter { opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1); }
+  .hero-enter.in { opacity:1; transform:none; }
+  #back-top { transition:opacity .3s ease,transform .3s ease; opacity:0; pointer-events:none; transform:translateY(8px); }
+  #back-top.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
+  #loader { position:fixed; inset:0; z-index:99999; background:#FAFAF8; display:flex; align-items:center; justify-content:center; flex-direction:column; transition:opacity .6s ease,visibility .6s ease; }
+  #loader.out { opacity:0; visibility:hidden; }
+  #loader-bar-track { width:180px; height:1px; background:rgba(201,168,76,.18); margin-top:20px; overflow:hidden; }
+  #loader-bar { height:100%; width:0; background:#C9A84C; transition:width 1s cubic-bezier(.4,0,.2,1); }
+  .pl-hero .svc-hero-scrim { display: none !important; }
+  .pl-hero .pl-hero-copy {
+    position: relative; z-index: 2; max-width: 52rem; margin-inline: auto;
+    padding: 28px 24px 32px; border-radius: 2px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .pl-hero h1 {
+    color: #fff !important; text-shadow: 0 2px 20px rgba(0,0,0,.35);
+    direction: ltr; unicode-bidi: isolate;
+  }
+  .pl-hero .pl-hero-ar {
+    color: #C9A84C !important; font-size: clamp(18px, 2.4vw, 26px);
+    font-weight: 700; margin: -8px 0 14px; line-height: 1.4;
+  }
+  .pl-hero .pl-hero-headline {
+    color: #fff !important; font-size: clamp(20px, 2.6vw, 30px);
+    font-weight: 700; line-height: 1.45; max-width: 36em;
+    margin: 0 auto 14px; text-shadow: 0 2px 16px rgba(0,0,0,.35);
+  }
+  .pl-hero .pl-hero-lead {
+    color: rgba(255,255,255,.92) !important; opacity: 1 !important;
+    margin-bottom: 28px !important;
+  }
+  .pl-hero .pl-hero-eyebrow { color: #C9A84C !important; }
+  .pl-hero .pl-btn-ghost {
+    background: rgba(0,0,0,.25) !important;
+    border-color: rgba(255,255,255,.55) !important; color: #fff !important;
+  }
+  .pl-hero .pl-btn-ghost:hover {
+    background: rgba(201,168,76,.15) !important;
+    border-color: rgba(201,168,76,.85) !important;
+  }
+</style>
 <script defer src="../assets/site-header.js?v=14"></script>
 <script defer src="../assets/gh-performance.js?v=2"></script>
 <script defer src="../assets/lang-switch.js?v=2"></script>
+<link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
+<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
+<link rel="stylesheet" href="../assets/site-header.css?v=26">
+<link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"GrowthLaunch™","description":"نظام مبيعات متكامل — جذب، تحويل، وتوسيع العملاء المؤهلين مع التتبع وCRM وأتمتة الرد.","url":"https://3dgraphicshouse.com/solutions/growth-launch.html","brand":{"@type":"Brand","name":"Graphics House"},"provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=2">
 </head>
-<body class="sol-page sol-growth">
+<body class="bg-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<div id="loader" aria-hidden="true">
+  <img src="../assets/logo-gold.png" alt="" width="120" height="40" style="height:40px;width:auto">
+  <div id="loader-bar-track"><div id="loader-bar"></div></div>
+</div>
 <a class="gh-skip-link" href="#main-content">تخطي إلى المحتوى الرئيسي</a>
 <header class="header" id="header">
   <div class="container header-inner">
@@ -172,200 +223,207 @@ gtag('config','G-Y67JVE898Z');
 </header>
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 
-<section class="sol-hero">
-  <div class="sol-hero-copy">
-    <div class="sol-eyebrow">جرافيكس هاوس · الحلول</div>
-    <h1>GrowthLaunch<span class="tm">™</span></h1>
-    <p class="sol-hero-tag">نظام توليد العملاء والمبيعات</p>
-    <h2 class="sol-hero-headline">توقف عن شراء الحملات.<br><em>وابنِ نظام مبيعات.</em></h2>
-    <p class="sol-hero-sub">من أول نقرة إلى إغلاق الصفقة — مسار متكامل للمطورين وفرق B2B في الخليج.</p>
-    <div class="sol-actions">
-      <a class="sol-btn sol-btn-gold" href="../contact-us.html">احجز جلسة استراتيجية</a>
-      <a class="sol-btn sol-btn-outline" href="../portfolio.html">استعرض أعمالنا</a>
-    </div>
+<section class="pl-hero relative h-screen flex items-center justify-center overflow-hidden">
+  <div id="hero-bg" class="absolute inset-x-0 -top-[10%] h-[120%] z-0">
+    <picture><source srcset="../assets/projects/interactive-01.webp" type="image/webp"><picture><source srcset="../assets/projects/interactive-01.webp" type="image/webp"><img class="w-full h-full object-cover" src="../assets/projects/interactive-01.jpg" alt="تصور جاهز لتحفيز الطلب" loading="lazy"/></picture></picture>
+    <div class="svc-hero-scrim absolute inset-0"></div>
   </div>
-  <div class="sol-hero-visual">
-      <picture><source srcset="../assets/projects/interactive-01.webp" type="image/webp"><picture><source srcset="../assets/projects/interactive-01.webp" type="image/webp"><img loading="lazy" src="../assets/projects/interactive-01.jpg" alt="GrowthLaunch™" fetchpriority="high"></picture></picture>
-      <div class="sol-hero-media-label">تصور جاهز لتحفيز الطلب</div>
-    </div>
-</section>
-
-<section class="sol-promise">
-  <div class="sol-wrap sol-promise-inner">
-    <div class="sol-promise-kicker">خلال 7 أيام</div>
-    <p>رحلة عميل قابلة للقياس: جذب، تأهيل، رد، وتحويل — مع رؤية واضحة في كل خطوة.</p>
-  </div>
-</section>
-
-
-
-<nav class="sol-stages-nav" aria-label="ثلاث مراحل">
-  <div class="sol-wrap sol-stages-nav-inner">
-    <a class="sol-stage-tab" href="#stage-1"><span class="num">01</span><span class="label">الجذب</span></a>
-<a class="sol-stage-tab" href="#stage-2"><span class="num">02</span><span class="label">التحويل</span></a>
-<a class="sol-stage-tab" href="#stage-3"><span class="num">03</span><span class="label">التوسع</span></a>
-  </div>
-</nav>
-
-<section class="sol-stage" id="stage-1">
-  <div class="sol-wrap">
-    <div class="sol-stage-grid">
-      <div>
-        <div class="sol-stage-num">المرحلة 01</div>
-        <h2 class="sol-title">اجذب الطلب الصحيح</h2>
-        <p class="sol-lead">حملات وصفحات هبوط وتتبع يجلب اهتماماً مؤهلاً — لا ضوضاء.</p>
-        <ul class="sol-points">
-          <li><span class="material-symbols-outlined">check_circle</span><span>هيكلة العرض وصفحات هبوط عالية النية</span></li>
-<li><span class="material-symbols-outlined">check_circle</span><span>تتبع Pixel / GA4 / GTM من اليوم الأول</span></li>
-<li><span class="material-symbols-outlined">check_circle</span><span>منظومة إبداعية للعقار وB2B</span></li>
-        </ul>
+  <div class="relative z-10 text-center max-w-5xl px-6">
+    <div class="pl-hero-copy">
+      <span class="pl-hero-eyebrow hero-enter font-label-caps text-label-caps tracking-[0.3em] mb-6 block" style="transition-delay:0ms">الحل</span>
+      <h1 class="hero-enter text-[52px] md:text-[82px] leading-tight mb-6" style="transition-delay:120ms" dir="ltr">GrowthLaunch<span class="tm">™</span></h1>
+      <p class="pl-hero-ar hero-enter" style="transition-delay:160ms">نظام توليد العملاء والمبيعات</p>
+      <p class="pl-hero-headline hero-enter" style="transition-delay:200ms">من أول نقرة إلى صفقة مغلقة — ابنِ نظام مبيعات لا حملة فقط</p>
+      <p class="pl-hero-lead hero-enter font-body-lg max-w-2xl mx-auto mb-12" style="transition-delay:240ms">جذب مؤهل، تحويل سريع، ومتابعة آلية في منظومة واحدةحدة.</p>
+      <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-6" style="transition-delay:360ms">
+        <a href="../contact-us.html" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] shadow-[0_0_20px_rgba(201,168,76,0.3)]">ابدأ مشروعك</a>
+        <a href="../portfolio.html" class="pl-btn-ghost border border-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all">استعرض أعمالنا</a>
       </div>
-      <div class="sol-media">
-    <picture><source srcset="../assets/projects/interactive-01.webp" type="image/webp"><picture><source srcset="../assets/projects/interactive-01.webp" type="image/webp"><img src="../assets/projects/interactive-01.jpg" alt="GrowthLaunch™" loading="lazy"></picture></picture>
-    
-  </div>
     </div>
   </div>
 </section>
-<section class="sol-stage" id="stage-2">
-  <div class="sol-wrap">
-    <div class="sol-stage-grid is-flip">
-      <div>
-        <div class="sol-stage-num">المرحلة 02</div>
-        <h2 class="sol-title">حوّل بسرعة</h2>
-        <p class="sol-lead">رد فوري، تأهيل منظم، ومسار CRM لا يُسقط أي عميل.</p>
-        <ul class="sol-points">
-          <li><span class="material-symbols-outlined">check_circle</span><span>رد أولي عبر واتساب والذكاء الاصطناعي</span></li>
-<li><span class="material-symbols-outlined">check_circle</span><span>مسار CRM بملكية واضحة</span></li>
-<li><span class="material-symbols-outlined">check_circle</span><span>سكربتات تأهيل يطبقها فريقك</span></li>
-        </ul>
+
+<section class="py-[120px] px-8 md:px-12">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
+    <div class="reveal w-full md:w-1/2" style="opacity:0;transform:translateY(24px)">
+      <span class="svc-tag mb-8 block">الحل</span>
+      <h2 class="font-headline-xl text-on-background mb-8">مسار مبيعات قابل للقياس</h2>
+      <p class="font-body-lg text-secondary mb-10 opacity-80 leading-relaxed">GrowthLaunch™ يربط الحملات بالرد والمتابعة والتحويل — حتى لا تضيع الفرص بين القنوات والفريق.</p>
+      <div class="space-y-1"><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary">صفحات هبوط وعروض عالية النية</p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary">تتبع وتحليلات من اليوم الأول</p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary">رد فوري عبر واتساب والذكاء الاصطناعي</p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary">مسار CRM بملكية واضحة</p></div></div><div class="feat-row"><span class="material-symbols-outlined ms-filled">check_circle</span><div><p class="font-body-md text-secondary">تحسين مستمر للأداء</p></div></div></div>
+      <div class="mt-10 flex gap-6">
+        <a href="../contact-us.html" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-[11px] tracking-widest hover:shadow-[0_0_25px_rgba(201,168,76,0.5)] transition-all">ابدأ مشروعك</a>
       </div>
-      <div class="sol-media">
-    <picture><source srcset="../assets/projects/pavilion1.webp" type="image/webp"><img src="../assets/projects/pavilion1.jpg" alt="GrowthLaunch™" loading="lazy"></picture>
-    
-  </div>
+    </div>
+    <div class="reveal w-full md:w-1/2 relative" style="opacity:0;transform:translateY(24px);transition-delay:.2s">
+      <div class="absolute -inset-4 border border-primary/20 translate-x-4 translate-y-4 pointer-events-none"></div>
+      <picture><source srcset="../assets/projects/pavilion1.webp" type="image/webp"><img class="relative z-10 w-full shadow-2xl" src="../assets/projects/pavilion1.jpg" alt="" loading="lazy"/></picture>
     </div>
   </div>
 </section>
-<section class="sol-stage" id="stage-3">
-  <div class="sol-wrap">
-    <div class="sol-stage-grid">
-      <div>
-        <div class="sol-stage-num">المرحلة 03</div>
-        <h2 class="sol-title">وسّع ما ينجح</h2>
-        <p class="sol-lead">لوحات قياس، تدريب، وتحسين مستمر — لينمو الأداء بعد أسبوع الإطلاق.</p>
-        <ul class="sol-points">
-          <li><span class="material-symbols-outlined">check_circle</span><span>لوحات أداء مباشرة</span></li>
-<li><span class="material-symbols-outlined">check_circle</span><span>تمكين الفريق وخطط عمل</span></li>
-<li><span class="material-symbols-outlined">check_circle</span><span>دورات تحسين مستمرة</span></li>
-        </ul>
+
+<section class="py-[100px] bg-surface-container border-t border-white/5">
+  <div class="px-8 md:px-12 max-w-container-max mx-auto">
+    <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
+      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">كيف نعمل</span>
+      <h2 class="font-headline-xl text-on-background">المنهجية</h2>
+    </div>
+    <div class="svc-process-grid grid grid-cols-2 md:grid-cols-4 gap-8 relative"><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.00s">
+          <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">01</div>
+          <p class="font-body-md text-secondary opacity-80 text-sm">تصميم العرض والقنوات</p>
+        </div><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.12s">
+          <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">02</div>
+          <p class="font-body-md text-secondary opacity-80 text-sm">تفعيل التتبع والجذب</p>
+        </div><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.24s">
+          <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">03</div>
+          <p class="font-body-md text-secondary opacity-80 text-sm">أتمتة الرد والتأهيل</p>
+        </div><div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.36s">
+          <div class="w-12 h-12 border border-primary/40 flex items-center justify-center mx-auto mb-4 text-primary font-bold text-sm tracking-widest">04</div>
+          <p class="font-body-md text-secondary opacity-80 text-sm">قياس وتحسين التحويل</p>
+        </div></div>
+  </div>
+</section>
+
+<section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto">
+  <div class="flex justify-between items-end mb-12 reveal" style="opacity:0;transform:translateY(24px)">
+    <div>
+      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">أعمال ذات صلة</span>
+      <h2 class="font-headline-xl text-on-background">بيئات تدعم التحويل</h2>
+    </div>
+    <a href="../portfolio.html" class="border-b border-primary text-primary pb-1 font-label-caps text-[11px] tracking-widest hover:text-white hover:border-white transition-colors hidden md:block">كل الأعمال</a>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
+      <div class="aspect-[4/3] overflow-hidden"><picture><source srcset="../assets/projects/interactive-01.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/projects/interactive-01.jpg" alt="تصور يحرّك الطلب" loading="lazy"/></picture></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <h3 class="font-headline-md text-white mb-1">تصور يحرّك الطلب</h3>
+        <a href="../casestudy1.html" class="text-primary text-xs tracking-widest">Case Study →</a>
       </div>
-      <div class="sol-media">
-      <video autoplay muted loop playsinline poster="../assets/projects/interactive-01.jpg">
-        <source src="../assets/videos/GH-Marketing-Media-Production.mp4" type="video/mp4">
-      </video>
-      <div class="sol-media-caption">منظومات إبداعية تكتسب الانتباه</div>
     </div>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="sol-showcase">
-  <div class="sol-showcase-media"><video autoplay muted loop playsinline poster="../assets/projects/interactive-01.jpg">
-        <source src="../assets/videos/GH-Marketing-Media-Production.mp4" type="video/mp4">
-      </video></div>
-  <div class="sol-showcase-scrim"></div>
-  <div class="sol-wrap">
-    <div class="sol-showcase-copy">
-      <div class="sol-eyebrow">في السوق</div>
-      <h2>حيث يلتقي الطلب بتجربة جاهزة للبيع</h2>
-      <p>GrowthLaunch يربط الحملات بالبيئات التي يدخلها المشتري فعلياً — صالات، أجنحة، ومسارات رقمية.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sol-proof">
-  <div class="sol-wrap">
-    <div class="sol-proof-head">
-      <div>
-        <div class="sol-eyebrow">يثق بنا قادة السوق</div>
-        <h2 class="sol-title" style="margin:0">الدليل في الأعمال</h2>
+<div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:0.12s">
+      <div class="aspect-[4/3] overflow-hidden"><picture><source srcset="../assets/projects/pavilion1.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/projects/pavilion1.jpg" alt="بيئة عرض للمبيعات" loading="lazy"/></picture></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <h3 class="font-headline-md text-white mb-1">بيئة عرض للمبيعات</h3>
+        <a href="../casestudy1.html" class="text-primary text-xs tracking-widest">Case Study →</a>
       </div>
-      <p class="sol-lead">علامات تعتمد على جرافيكس هاوس في أنظمة الإطلاق والنمو.</p>
     </div>
-    <div class="sol-logos"><img src="../assets/clients-logo/rafal.png" alt="" loading="lazy">
-<img src="../assets/clients-logo/anan-eskan.png" alt="" loading="lazy">
-<img src="../assets/clients-logo/al-owla.png" alt="" loading="lazy">
-<img src="../assets/clients-logo/toyota.png" alt="" loading="lazy">
-<img src="../assets/clients-logo/imc-150x150.png" alt="" loading="lazy">
-<img src="../assets/clients-logo/رابطة العالم الاسلامي.png" alt="" loading="lazy"></div>
-    
-  </div>
-</section>
-
-<section class="sol-baf-light">
-  <div class="sol-wrap">
-    <div class="sol-baf-head">
-      <div class="sol-eyebrow">قبل وبعد</div>
-      <h2 class="sol-title">وضعك الحالي — بعد التحول</h2>
-      <p class="sol-lead">ليس أدوات فقط — بل تحول في طريقة استقبال العملاء وتحويلهم.</p>
-    </div>
-    <div class="sol-baf-table">
-      <div class="sol-baf-cols">
-        <div class="sol-baf-col-head before">قبل GrowthLaunch™</div>
-        <div></div>
-        <div class="sol-baf-col-head after">بعد GrowthLaunch™</div>
+<div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1" style="opacity:0;transform:translateY(24px);transition-delay:0.19s">
+      <div class="aspect-[4/3] overflow-hidden"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-05.jpeg" alt="رحلة عميل متصلة" loading="lazy"/></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div class="absolute bottom-0 p-6 opacity-0 group-hover:opacity-100 transition-all duration-400">
+        <h3 class="font-headline-md text-white mb-1">رحلة عميل متصلة</h3>
+        <a href="../casestudy1.html" class="text-primary text-xs tracking-widest">Case Study →</a>
       </div>
-      <div class="sol-baf-row">
-      <div class="sol-baf-before">إعلانات بلا متابعة</div>
-      <div class="sol-baf-mid"><span class="material-symbols-outlined">arrow_forward</span></div>
-      <div class="sol-baf-after">رحلة كاملة من النقرة إلى الاتصال</div>
-    </div>
-<div class="sol-baf-row">
-      <div class="sol-baf-before">ردود يدوية بطيئة</div>
-      <div class="sol-baf-mid"><span class="material-symbols-outlined">arrow_forward</span></div>
-      <div class="sol-baf-after">رد فوري عبر واتساب والذكاء الاصطناعي</div>
-    </div>
-<div class="sol-baf-row">
-      <div class="sol-baf-before">عملاء يضيعون بين الموظفين</div>
-      <div class="sol-baf-mid"><span class="material-symbols-outlined">arrow_forward</span></div>
-      <div class="sol-baf-after">مسار منظم عبر CRM</div>
-    </div>
-<div class="sol-baf-row">
-      <div class="sol-baf-before">لا رؤية للتحويل</div>
-      <div class="sol-baf-mid"><span class="material-symbols-outlined">arrow_forward</span></div>
-      <div class="sol-baf-after">تحليلات وتتبع كامل</div>
-    </div>
-    </div>
-  </div>
+    </div></div>
 </section>
 
-<section class="sol-cross">
-  <div class="sol-wrap">
-    <div class="sol-eyebrow">أكمل المنظومة</div>
-    <div class="sol-cross-grid"><a class="sol-cross-card" href="project-launch.html">
-      <h3>ProjectLaunch™</h3>
-      <p>أطلق المشروع بـ CGI والمجسمات وأصول جاهزة للمبيعات.</p>
-      <span>استكشف <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></span>
+<section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto border-t border-white/5">
+  <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">تفاعلي ومجسمات</span>
+    <h2 class="font-headline-xl text-on-background">أدوات تسرّع قرار المشتري</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
+      <div class="aspect-video overflow-hidden relative bg-black">
+        <iframe
+          class="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/e766WAUYgGQ?autoplay=1&mute=1&loop=1&playlist=e766WAUYgGQ&playsinline=1&controls=0&modestbranding=1&rel=0&enablejsapi=1"
+          title="المجسم التفاعلي الذكي"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+      <div class="p-5 bg-surface-container">
+        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">i-MAQUETTE</span>
+        <h3 class="font-headline-md text-on-background mb-1">المجسم التفاعلي الذكي</h3>
+        <p class="text-secondary text-sm opacity-70">مجسم معماري مدمج مع تقنية العرض التفاعلي</p>
+      </div>
+    </div>
+<div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:0.10s">
+      <div class="aspect-video overflow-hidden relative bg-black">
+        <iframe
+          class="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/SPz2Lh2H2FM?autoplay=1&mute=1&loop=1&playlist=SPz2Lh2H2FM&playsinline=1&controls=0&modestbranding=1&rel=0&enablejsapi=1"
+          title="مجسم معماري"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+      <div class="p-5 bg-surface-container">
+        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">SCALE MODEL</span>
+        <h3 class="font-headline-md text-on-background mb-1">مجسم معماري</h3>
+        <p class="text-secondary text-sm opacity-70">مجسم معماري دقيق بإضاءة LED مدمجة</p>
+      </div>
+    </div></div>
+  <div class="text-center mt-10 reveal" style="opacity:0;transform:translateY(24px)">
+    <a href="https://www.youtube.com/@GraphicsHouse2" target="_blank" rel="noopener" class="border border-primary text-primary px-8 py-3 font-label-caps text-label-caps tracking-widest hover:bg-primary/10 transition-all inline-flex items-center gap-3">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.38.55A3.02 3.02 0 00.5 6.19C0 8.03 0 12 0 12s0 3.97.5 5.81a3.02 3.02 0 002.12 2.14C4.45 20.5 12 20.5 12 20.5s7.55 0 9.38-.55a3.02 3.02 0 002.12-2.14C24 15.97 24 12 24 12s0-3.97-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+      كل الفيديوهات على يوتيوب
     </a>
-<a class="sol-cross-card" href="brand-scale.html">
-      <h3>BrandScale™</h3>
-      <p>قوّي الهوية حتى تتراكم الثقة مع كل حملة.</p>
-      <span>استكشف <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></span>
-    </a></div>
   </div>
 </section>
 
-<section class="sol-cta">
-  <div class="sol-wrap">
-    <h2>جاهز لبناء مسار مبيعات متوقع؟</h2>
-    <p>احجز جلسة استراتيجية — نرسم العرض والقنوات ومسار التحويل في ورشة واحدة.</p>
-    <div class="sol-actions">
-      <a class="sol-btn sol-btn-gold" href="../contact-us.html">احجز جلسة استراتيجية</a>
-      <a class="sol-btn sol-btn-ghost" href="../portfolio.html">استعرض أعمالنا</a>
+<section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto border-t border-white/5 bg-surface-container">
+  <div class="text-center mb-6 reveal" style="opacity:0;transform:translateY(24px)">
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">أفلام وتسويق</span>
+    <h2 class="font-headline-xl text-on-background mb-4">محتوى يفتح المسار</h2>
+    <p class="font-body-lg text-secondary opacity-70 max-w-2xl mx-auto">أفلام ومواد تدعم الجذب والتحويل ضمن نفس المنظومة.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12"><div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
+      <div class="aspect-video overflow-hidden relative bg-black">
+        <video class="w-full h-full object-cover" controls playsinline preload="metadata" poster="../assets/projects/interactive-01.jpg">
+          <source src="../assets/videos/GH-Marketing-Media-Production.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="p-5 bg-surface-container">
+        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">تسويق</span>
+        <h3 class="font-headline-md text-on-background mb-1">إنتاج تسويقي وإعلامي</h3>
+        <p class="text-secondary text-sm opacity-70">محتوى يفتح مسار التحويل</p>
+      </div>
     </div>
+<div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:0.10s">
+      <div class="aspect-video overflow-hidden relative bg-black">
+        <video class="w-full h-full object-cover" controls playsinline preload="metadata" poster="../assets/projects/animation/real-estate-services.jpg">
+          <source src="../assets/videos/GH-Real-estate-services.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="p-5 bg-surface-container">
+        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">عقاري</span>
+        <h3 class="font-headline-md text-on-background mb-1">فيلم خدمات عقارية</h3>
+        <p class="text-secondary text-sm opacity-70">سرد يربط العرض بالصفقة</p>
+      </div>
+    </div></div>
+</section>
+
+<section class="py-[100px] bg-surface-container-lowest border-t border-white/5">
+  <div class="px-8 md:px-12 max-w-4xl mx-auto">
+    <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
+      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">الأسئلة الشائعة</span>
+      <h2 class="font-headline-xl text-on-background">أجوبة عن استفساراتكم</h2>
+    </div>
+    <div class="reveal" style="opacity:0;transform:translateY(24px)"><div class="border-b border-white/5 py-6">
+          <h4 class="font-headline-md text-on-background mb-3">ماذا يشمل GrowthLaunch™؟</h4>
+          <p class="font-body-md text-secondary opacity-70 leading-relaxed">هيكلة العرض، الحملات، التتبع، الرد الآلي، ومسار CRM قابل للقياس.</p>
+        </div><div class="border-b border-white/5 py-6">
+          <h4 class="font-headline-md text-on-background mb-3">هل يناسب المطوّرين العقاريين؟</h4>
+          <p class="font-body-md text-secondary opacity-70 leading-relaxed">نعم — مصمم للمطورين وفرق B2B في الخليج.</p>
+        </div><div class="border-b border-white/5 py-6">
+          <h4 class="font-headline-md text-on-background mb-3">كم يستغرق الإطلاق؟</h4>
+          <p class="font-body-md text-secondary opacity-70 leading-relaxed">نحدد نطاقاً واضحاً ونبدأ بمسار قابل للقياس خلال أيام عمل قليلة.</p>
+        </div></div>
+  </div>
+</section>
+
+<section class="py-24 text-center border-t border-white/5 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3"></div>
+  <div class="relative z-10 max-w-2xl mx-auto px-8">
+    <span class="material-symbols-outlined ms-filled text-primary text-4xl mb-6 block">query_stats</span>
+    <h2 class="font-headline-xl text-on-background mb-6">جاهز لبناء مسار مبيعات متوقع؟</h2>
+    <p class="font-body-lg text-secondary opacity-70 mb-10">نرسم العرض والقنوات ومسار التحويل في جلسة واحدة.</p>
+    <a href="../contact-us.html" class="bg-primary text-on-primary px-12 py-5 font-label-caps text-label-caps tracking-[0.3em] hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] transition-all inline-block">ابدأ مشروعك الآن</a>
   </div>
 </section>
 
@@ -470,7 +528,8 @@ gtag('config','G-Y67JVE898Z');
 </footer>
 
 
-
+<button id="back-top" class="fixed bottom-8 left-6 z-50 w-11 h-11 bg-surface-container-high border border-primary/30 text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" aria-label="Back to top"><span class="material-symbols-outlined text-xl">arrow_upward</span></button>
+<script defer src="../assets/service-page.js?v=4"></script>
 <script defer src="../assets/gh-float-widgets.js?v=2"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">
