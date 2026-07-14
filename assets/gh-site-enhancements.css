@@ -441,8 +441,9 @@ body.gh-home #hero .hero-contact-strip {
 
 @media (max-width: 1024px) {
   .gh-footer__inner {
-    /* Keep content clear of fixed float widgets on physical left (≈52px + gutter) */
-    padding-left: 96px !important;
+    /* Keep content clear of fixed float widgets on physical right (≈52px + gutter) */
+    padding-right: 96px !important;
+    padding-left: 0 !important;
   }
 
   .gh-footer__top {

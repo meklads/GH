@@ -14,9 +14,9 @@
 .gh-float {
   position: fixed;
   bottom: 32px;
-  /* Physical left for AR + EN (do not flip with RTL) */
-  left: 28px !important;
-  right: auto !important;
+  /* Physical right for AR + EN (do not flip with RTL) */
+  right: 28px !important;
+  left: auto !important;
   inset-inline-start: auto !important;
   inset-inline-end: auto !important;
   z-index: 9000;
@@ -185,6 +185,6 @@ html[dir="rtl"] .gh-popup-box {
 .gh-submit:hover { background: #A8883A; }
 
 @media (max-width: 600px) {
-  .gh-float { bottom: 20px; left: 16px !important; right: auto !important; }
+  .gh-float { bottom: 20px; right: 16px !important; left: auto !important; }
   .gh-popup-box { padding: 28px 20px 24px; }
 }

@@ -61,7 +61,7 @@ function stripLegacyFloat(html) {
 }
 
 function injectAssets(html, prefix) {
-  const css = `<link rel="stylesheet" href="${prefix}assets/gh-float-widgets.css?v=3">`;
+  const css = `<link rel="stylesheet" href="${prefix}assets/gh-float-widgets.css?v=4">`;
   const js = `<script defer src="${prefix}assets/gh-float-widgets.js?v=2"></script>`;
   const forms = `<script src="${prefix}assets/gh-forms-config.js"></script>`;
 

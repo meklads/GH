@@ -630,6 +630,13 @@ gtag('config','G-Y67JVE898Z');
   body.is-en .en-block { display: block !important; }
   .ar-block { display: block; }
 
+
+  .en, .en-block { display: none !important; }
+  body.is-en .en { display: inline !important; }
+  body.is-en .ar, body.is-en .ar-block { display: none !important; }
+  body.is-en .en-block { display: block !important; }
+  .ar-block { display: block; }
+
 :root{--gold:#C9A84C;--gold-light:#D9B860;--gold-dark:#A8883A;--text-primary:#FFFFFF;--text-secondary:rgba(255,255,255,0.7);--text-muted:rgba(255,255,255,0.35);--border-subtle:rgba(255,255,255,0.06);--border-medium:rgba(255,255,255,0.12);--heading-dark:#1A1A1A;--body-dark:#555555;--body-muted:#888888}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -697,7 +704,7 @@ document.addEventListener("DOMContentLoaded",function(){document.querySelectorAl
 <script defer src="../assets/gh-performance.js?v=2"></script>
 <script defer src="../assets/lang-switch.js?v=2"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"التجارب التفاعلية","description":"تجارب تفاعلية وكيوسك لعروض المشاريع العقارية.","url":"https://3dgraphicshouse.com/services/interactive-experiences.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
-<link rel="stylesheet" href="../assets/gh-float-widgets.css?v=3">
+<link rel="stylesheet" href="../assets/gh-float-widgets.css?v=4">
 </head>
 <body>
 <div id="loader" style="position:fixed;inset:0;z-index:99999;background:#0A0A0A;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s ease,visibility .6s ease">
@@ -1026,6 +1033,7 @@ document.addEventListener("DOMContentLoaded",function(){document.querySelectorAl
 
 
 
+
 <script>
 var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
 if(ld&&lb){setTimeout(function(){lb.style.width="100%";},100);setTimeout(function(){ld.classList.add("out");ld.style.opacity="0";ld.style.visibility="hidden";},1400);}
@@ -1082,6 +1090,20 @@ document.addEventListener('DOMContentLoaded', function(){
 })();
 </script>
 <script defer src="../assets/gh-float-widgets.js?v=1"></script>
+<script>
+(function(){
+  var key='gh-svc-lang';
+  function apply(en){document.body.classList.toggle('is-en',en);localStorage.setItem(key,en?'en':'ar');}
+  var saved=localStorage.getItem(key);
+  if(saved==='en')apply(true);
+  document.querySelectorAll('.lang-switch-link').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(a.getAttribute('hreflang')==='en'){e.preventDefault();apply(true);}
+      if(a.getAttribute('hreflang')==='ar'){e.preventDefault();apply(false);}
+    });
+  });
+})();
+</script>
 <script>
 (function(){
   var key='gh-svc-lang';
