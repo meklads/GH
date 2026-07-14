@@ -14,11 +14,10 @@
 .gh-float {
   position: fixed;
   bottom: 32px;
-  /* Physical right for AR + EN (do not flip with RTL) */
-  right: 28px !important;
-  left: auto !important;
-  inset-inline-start: auto !important;
-  inset-inline-end: auto !important;
+  /* Physical left only — same corner for English and Arabic */
+  left: 28px !important;
+  right: auto !important;
+  inset-inline: unset !important;
   z-index: 9000;
   display: flex;
   flex-direction: column;
@@ -27,6 +26,13 @@
   width: 52px;
   margin: 0;
   padding: 0;
+}
+
+html[dir="rtl"] .gh-float,
+html[dir="ltr"] .gh-float {
+  left: 28px !important;
+  right: auto !important;
+  inset-inline: unset !important;
 }
 
 .gh-float-btn {
@@ -185,6 +191,13 @@ html[dir="rtl"] .gh-popup-box {
 .gh-submit:hover { background: #A8883A; }
 
 @media (max-width: 600px) {
-  .gh-float { bottom: 20px; right: 16px !important; left: auto !important; }
+  .gh-float,
+  html[dir="rtl"] .gh-float,
+  html[dir="ltr"] .gh-float {
+    bottom: 20px;
+    left: 16px !important;
+    right: auto !important;
+    inset-inline: unset !important;
+  }
   .gh-popup-box { padding: 28px 20px 24px; }
 }
