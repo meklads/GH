@@ -683,7 +683,7 @@ function buildPage(cfg, css) {
 <link href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" rel="stylesheet" />
 <link rel="stylesheet" href="${P}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=21">
-<link rel="stylesheet" href="${P}assets/site-header.css?v=26">
+<link rel="stylesheet" href="${P}assets/site-header.css?v=28">
 <style>
 body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 ${css}

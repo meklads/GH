@@ -593,7 +593,7 @@ ${analyticsHeadTags('../')}
 <script defer src="../assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
-<link rel="stylesheet" href="../assets/site-header.css?v=27">
+<link rel="stylesheet" href="../assets/site-header.css?v=28">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',

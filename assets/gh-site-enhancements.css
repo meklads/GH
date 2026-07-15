@@ -630,7 +630,7 @@ body.gh-home #hero .hero-contact-strip {
 body:has(.header) {
   padding-top: var(--gh-header-height, 98px) !important;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   body:has(.header) {
     padding-top: var(--gh-header-height-mobile, 78px) !important;
   }
@@ -649,7 +649,7 @@ body:has(.header) {
 .header.scrolled {
   padding: var(--gh-header-pad-y, 8px) 0 !important;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .header {
     height: var(--gh-header-height-mobile, 78px) !important;
   }

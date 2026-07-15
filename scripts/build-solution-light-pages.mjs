@@ -972,7 +972,7 @@ ${analyticsHeadTags('../')}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
-<link rel="stylesheet" href="../assets/site-header.css?v=27">
+<link rel="stylesheet" href="../assets/site-header.css?v=28">
 <link rel="stylesheet" href="../assets/gh-solution-light.css?v=4">
 <script defer src="../assets/site-header.js?v=14"></script>
 <script defer src="../assets/gh-performance.js?v=2"></script>

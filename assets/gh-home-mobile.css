@@ -96,9 +96,29 @@ body.gh-home .gh-full-bleed {
     right: auto !important;
   }
 
-  /* Hero */
+  /* Hero — keep copy clear of floating contact stack */
+  body.gh-home #hero .hero-content,
   body.gh-home #hero .hero-bottom-panel {
-    padding-bottom: 40px;
+    padding-inline-end: 20px;
+    padding-inline-start: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  body.gh-home #hero .hero-ctas,
+  body.gh-home #hero .gh-hero-ctas {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.gh-home #hero .gh-damac-btn {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
   }
 
   body.gh-home #hero h1 br {

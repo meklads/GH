@@ -61,7 +61,16 @@ body:has(.header) {
 body.nav-open {
   overflow: hidden;
 }
-@media (max-width: 768px) {
+body.nav-open .header {
+  z-index: 10060 !important;
+}
+/* Keep float widgets below open mobile menu */
+body.nav-open .gh-float {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+@media (max-width: 900px) {
   body,
   body:has(.header) {
     padding-top: var(--gh-header-height-mobile) !important;
@@ -109,7 +118,7 @@ body.nav-open {
   border-bottom-color: var(--header-border);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .header {
     height: var(--gh-header-height-mobile);
   }
@@ -547,7 +556,7 @@ html[dir="rtl"] .nav-cta {
   width: 44px;
   height: 44px;
   padding: 0;
-  z-index: 1003;
+  z-index: 10052;
   transition: background 0.25s ease, border-color 0.25s ease;
 }
 .menu-toggle:hover {
@@ -560,7 +569,7 @@ html[dir="rtl"] .nav-cta {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
-  z-index: 999;
+  z-index: 10050;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
@@ -580,10 +589,46 @@ html[dir="rtl"] .nav-cta {
 
 @media (max-width: 900px) {
   .header-inner {
-    gap: 12px;
+    gap: 10px;
   }
-  .nav-actions .nav-cta { display: none; }
-  .menu-toggle { display: flex; }
+  .header .container.header-inner {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    overflow: hidden;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .header .logo {
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: min(148px, 42vw);
+  }
+  .header .logo-img {
+    height: var(--gh-logo-height-mobile) !important;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .nav-actions {
+    margin-inline-start: auto;
+    flex: 0 1 auto;
+    min-width: 0;
+    gap: 8px !important;
+  }
+  /* Must beat .nav-cta { display: inline-flex !important } */
+  .nav-actions .nav-cta { display: none !important; }
+  .menu-toggle {
+    display: flex !important;
+    flex: 0 0 44px;
+    width: 44px !important;
+    min-width: 44px !important;
+    height: 44px !important;
+    margin: 0;
+    z-index: 1003;
+  }
 
   .nav {
     display: none;
@@ -600,7 +645,7 @@ html[dir="rtl"] .nav-cta {
     border-inline-start: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5);
     overflow-y: auto;
-    z-index: 1001;
+    z-index: 10051;
     align-items: stretch;
     justify-content: flex-start;
   }
