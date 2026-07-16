@@ -63,6 +63,7 @@ body.nav-open {
 }
 body.nav-open .header {
   z-index: 10060 !important;
+  background: #080c0a !important;
 }
 /* Keep float widgets below open mobile menu */
 body.nav-open .gh-float {
@@ -631,38 +632,36 @@ html[dir="rtl"] .nav-cta {
     min-width: 44px !important;
     height: 44px !important;
     margin: 0;
-    z-index: 10052 !important;
+    z-index: 10062 !important;
     position: relative;
   }
 
-  /* Full-screen mobile drawer — escapes header clipping */
+  /*
+   * Full-screen mobile menu — opaque sheet above the hero.
+   * Primary links are compact so the whole menu fits without scrolling.
+   * Only expanded Solutions/Services accordion content can scroll.
+   */
   .nav {
     display: none;
     flex-direction: column;
     position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
+    inset: 0 !important;
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 100vw !important;
     height: 100vh !important;
     height: 100dvh !important;
     max-height: 100vh !important;
     max-height: 100dvh !important;
     margin: 0 !important;
-    padding: calc(var(--gh-header-height-mobile) + 12px) 0 40px !important;
+    padding: 0 !important;
     gap: 0;
-    background: #0a0a0a !important;
+    background: #080c0a !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     border: none !important;
     box-shadow: none !important;
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    z-index: 10051 !important;
+    overflow: hidden !important;
+    z-index: 10050 !important;
     align-items: stretch;
     justify-content: flex-start;
     transform: none !important;
@@ -670,32 +669,100 @@ html[dir="rtl"] .nav-cta {
 
   .nav.open {
     display: flex !important;
-    animation: navFadeIn 0.28s ease;
+    animation: navFadeIn 0.22s ease;
   }
   @keyframes navFadeIn {
-    from { opacity: 0.4; }
+    from { opacity: 0; }
     to { opacity: 1; }
   }
 
-  .nav > .nav-link,
-  .nav > .nav-mega-item > .nav-mega-trigger {
+  /* Scrollable body under the fixed header strip */
+  .nav.open::before {
+    content: '';
+    flex: 0 0 var(--gh-header-height-mobile);
     width: 100%;
-    justify-content: space-between;
-    padding: 16px 24px;
-    font-size: 17px !important;
-    border-radius: 0;
-    text-transform: none;
-    letter-spacing: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    color: #fff !important;
-  }
-  .nav > .nav-link:hover,
-  .nav > .nav-mega-item > .nav-mega-trigger:hover {
-    background: rgba(201, 168, 76, 0.06);
+    pointer-events: none;
   }
 
-  .nav-mega-item { display: block; width: 100%; }
+  .nav-mobile-scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding: 8px 0 calc(24px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* When JS hasn't wrapped yet, still pad top for header */
+  body.nav-open .nav.open > .nav-link:first-child,
+  body.nav-open .nav.open > .nav-mega-item:first-child {
+    margin-top: 0;
+  }
+
+  .nav > .nav-link,
+  .nav > .nav-mega-item > .nav-mega-trigger,
+  .nav-mobile-scroll > .nav-link,
+  .nav-mobile-scroll > .nav-mega-item > .nav-mega-trigger {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 52px;
+    padding: 12px 22px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 0;
+    text-transform: none;
+    letter-spacing: 0.01em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: #fff !important;
+    background: transparent;
+  }
+  html[dir="ltr"] .nav > .nav-link,
+  html[dir="ltr"] .nav > .nav-mega-item > .nav-mega-trigger,
+  html[dir="ltr"] .nav-mobile-scroll > .nav-link,
+  html[dir="ltr"] .nav-mobile-scroll > .nav-mega-item > .nav-mega-trigger {
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 14px !important;
+  }
+  .nav > .nav-link:hover,
+  .nav > .nav-mega-item > .nav-mega-trigger:hover,
+  .nav-mobile-scroll > .nav-link:active,
+  .nav-mobile-scroll > .nav-mega-item > .nav-mega-trigger:active {
+    background: rgba(201, 168, 76, 0.08);
+  }
+
+  .nav-mega-item { display: block; width: 100%; flex-shrink: 0; }
   .nav-mega-item::after { display: none; }
+  .nav-mega-item.is-open > .nav-mega-trigger .nav-chevron {
+    transform: rotate(180deg);
+  }
+  .nav-chevron {
+    transition: transform 0.25s ease;
+    color: var(--header-gold);
+  }
+
+  .nav-mobile-cta {
+    display: flex !important;
+    margin: 20px 22px 8px;
+    width: auto !important;
+    min-height: 48px !important;
+    justify-content: center !important;
+    border-radius: 50px !important;
+    border: none !important;
+    background: var(--header-gold) !important;
+    color: #0a0a0a !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+  }
+  .nav-mobile-cta:hover,
+  .nav-mobile-cta:active {
+    background: #A8883A !important;
+  }
 }
 
 /* ===== Mega menu ===== */
@@ -961,7 +1028,9 @@ html[dir="ltr"] .mega-menu-services .mm-svc-link:hover { transform: translateX(2
 
 /* ----- Mobile mega accordion ----- */
 @media (max-width: 900px) {
+  /* Fully remove closed panels from layout so primary links fit without scroll */
   .mega-menu {
+    display: none !important;
     position: static !important;
     transform: none !important;
     opacity: 1 !important;
@@ -970,41 +1039,91 @@ html[dir="ltr"] .mega-menu-services .mm-svc-link:hover { transform: translateX(2
     border-radius: 0;
     box-shadow: none;
     border: none;
-    background: rgba(255, 255, 255, 0.02);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.38s ease;
+    background: rgba(255, 255, 255, 0.03);
+    max-height: none !important;
+    overflow: visible;
     width: 100% !important;
+    min-width: 0 !important;
   }
-  .nav-mega-item.is-open .mega-menu,
-  .mega-menu.open { max-height: 2000px; }
+  .nav-mega-item.is-open > .mega-menu,
+  .mega-menu.open {
+    display: block !important;
+  }
   .mega-menu::before { display: none; }
 
   .mm-panel-head {
-    padding: 12px 24px 0;
+    padding: 10px 22px 4px;
     border-bottom: none;
     margin-bottom: 0;
   }
-  .mm-panel-desc { display: none; }
+  .mm-panel-label {
+    font-size: 10px;
+    margin-bottom: 0;
+  }
+  .mm-panel-desc,
+  .mega-menu-solutions .mm-card .mm-desc,
+  .mega-menu-solutions .mm-card .mm-sub,
+  .mega-menu-solutions .mm-card .mm-cta,
+  .mega-menu-services .mm-svc-desc {
+    display: none !important;
+  }
 
-  .mega-menu-solutions .mm-main { padding: 8px 16px 16px; }
-  .mega-menu-solutions .mm-grid { grid-template-columns: 1fr; gap: 8px; }
+  .mega-menu-solutions .mm-main,
+  .mega-menu-services .mm-main {
+    padding: 4px 14px 14px;
+  }
+  .mega-menu-solutions .mm-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
   .mega-menu-solutions .mm-card {
     min-height: auto;
-    padding: 16px 18px;
-    border-color: rgba(255, 255, 255, 0.05);
+    padding: 12px 14px;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    border-color: rgba(255, 255, 255, 0.06);
   }
-  .mega-menu-solutions .mm-card .mm-cta { opacity: 1; transform: none; }
+  .mega-menu-solutions .mm-card .mm-icon {
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  .mega-menu-solutions .mm-card .mm-icon span { font-size: 18px; }
+  .mega-menu-solutions .mm-card .mm-title {
+    font-size: 14px;
+    margin: 0;
+  }
 
-  .mega-menu-services .mm-main { padding: 8px 16px 16px; }
   .mega-menu-services .mm-grid { grid-template-columns: 1fr; }
   .mega-menu-services .mm-col {
-    padding: 0 8px;
+    padding: 0 4px;
     border-inline-end: none;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
-  .mega-menu-services .mm-col-header { margin-bottom: 6px; }
-  .mega-menu-services .mm-svc-desc { display: block; }
+  .mega-menu-services .mm-col-header {
+    margin-bottom: 4px;
+    font-size: 10px;
+  }
+  .mega-menu-services .mm-svc-link {
+    padding: 10px 8px;
+  }
+  .mega-menu-services .mm-svc-icon-wrap {
+    width: 32px;
+    height: 32px;
+  }
+  .mega-menu-services .mm-svc-text {
+    font-size: 13px;
+  }
+
+  /* Desktop-only CTA stays hidden; mobile CTA in nav */
+  .nav-mobile-cta { display: flex; }
+}
+
+@media (min-width: 901px) {
+  .nav-mobile-cta { display: none !important; }
 }
 
 @media (max-width: 600px) {

@@ -82,6 +82,29 @@
     }
   }
 
+  function ensureMobileNavShell(nav) {
+    if (!nav) return null;
+    var scroll = nav.querySelector(':scope > .nav-mobile-scroll');
+    if (scroll) return scroll;
+    scroll = document.createElement('div');
+    scroll.className = 'nav-mobile-scroll';
+    while (nav.firstChild) {
+      scroll.appendChild(nav.firstChild);
+    }
+    nav.appendChild(scroll);
+    return scroll;
+  }
+
+  function unwrapMobileNavShell(nav) {
+    if (!nav) return;
+    var scroll = nav.querySelector(':scope > .nav-mobile-scroll');
+    if (!scroll) return;
+    while (scroll.firstChild) {
+      nav.insertBefore(scroll.firstChild, scroll);
+    }
+    scroll.remove();
+  }
+
   function setMenuOpen(open) {
     var nav = getNav();
     var toggle = getToggle();
@@ -90,6 +113,8 @@
 
     if (open && isMobile()) {
       parkNavInBody(nav);
+      ensureMobileNavShell(nav);
+      closeAllMega();
     }
 
     nav.classList.toggle('open', open);
@@ -110,13 +135,18 @@
     if (!open) closeAllMega();
 
     if (open) {
+      var scroll = nav.querySelector('.nav-mobile-scroll');
+      if (scroll) scroll.scrollTop = 0;
       menuLastFocused = document.activeElement;
       var nodes = getMenuFocusables();
       window.requestAnimationFrame(function () {
         (nodes[0] || toggle).focus();
       });
     } else {
-      if (isMobile()) restoreNavHome(nav);
+      if (isMobile()) {
+        unwrapMobileNavShell(nav);
+        restoreNavHome(nav);
+      }
       if (menuLastFocused && typeof menuLastFocused.focus === 'function') {
         menuLastFocused.focus();
         menuLastFocused = null;
