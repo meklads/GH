@@ -12,7 +12,7 @@ const OUT = path.join(ROOT, 'insights/downloads');
 const FILES = path.join(OUT, 'files');
 
 const ASSETS = {
-  siteHeaderCss: 30,
+  siteHeaderCss: 31,
   siteHeaderJs: 16,
   ghSiteEnhancements: 16,
   ghInsights: 20,

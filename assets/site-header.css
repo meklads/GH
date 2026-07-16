@@ -1097,11 +1097,41 @@ html[dir="ltr"] .mega-menu-services .mm-svc-link:hover { transform: translateX(2
     margin: 0;
   }
 
-  .mega-menu-services .mm-grid { grid-template-columns: 1fr; }
-  .mega-menu-services .mm-col {
-    padding: 0 4px;
-    border-inline-end: none;
-    margin-bottom: 10px;
+  .mega-menu-services {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden;
+  }
+  .mega-menu-services .mm-main {
+    padding: 4px 14px 14px;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  /* Beat desktop LTR 2-col rule: html[dir=ltr] .mega-menu-services .mm-grid */
+  .mega-menu-services .mm-grid,
+  html[dir="ltr"] .mega-menu-services .mm-grid,
+  html[dir="rtl"] .mega-menu-services .mm-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .mega-menu-services .mm-col,
+  .mega-menu-services .mm-col-core {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 0 4px 12px !important;
+    border-inline-end: none !important;
+    margin-bottom: 4px;
+    box-sizing: border-box;
   }
   .mega-menu-services .mm-col-header {
     margin-bottom: 4px;
@@ -1109,13 +1139,20 @@ html[dir="ltr"] .mega-menu-services .mm-svc-link:hover { transform: translateX(2
   }
   .mega-menu-services .mm-svc-link {
     padding: 10px 8px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .mega-menu-services .mm-svc-icon-wrap {
     width: 32px;
     height: 32px;
+    flex-shrink: 0;
   }
   .mega-menu-services .mm-svc-text {
     font-size: 13px;
+  }
+  .mega-menu-services .mm-svc-body {
+    min-width: 0;
+    flex: 1;
   }
 
   /* Desktop-only CTA stays hidden; mobile CTA in nav */

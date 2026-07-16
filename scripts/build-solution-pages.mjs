@@ -40,7 +40,7 @@ ${analyticsHeadTags('../')}
 <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
-<link rel="stylesheet" href="../assets/site-header.css?v=30">
+<link rel="stylesheet" href="../assets/site-header.css?v=31">
 <link rel="stylesheet" href="../assets/${css}.css">
 <link rel="stylesheet" href="../assets/solution-before-after.css">
 <script defer src="../assets/site-header.js?v=16"></script>
