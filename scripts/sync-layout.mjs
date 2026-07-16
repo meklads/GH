@@ -55,6 +55,7 @@ function fixCorruption(html) {
 function normalizeNavTail(header, isEn) {
   const insightsLabel = isEn ? 'Insights' : 'رؤى';
   const contactLabel = isEn ? 'Contact Us' : 'للاتصال بنا';
+  const ctaLabel = isEn ? 'Book Session' : 'احجز جلسة استراتيجية';
   const insightsFile = isEn ? 'insights/index-en.html' : 'insights/index.html';
   const contactFile = isEn ? 'contact-us-en.html' : 'contact-us.html';
 
@@ -68,7 +69,7 @@ function normalizeNavTail(header, isEn) {
     h.match(/href="((?:\.\.\/)+)who-we-are/);
   const prefix = prefixMatch ? prefixMatch[1] : '';
 
-  const insert = `      <a class="nav-link" href="${prefix}${contactFile}">${contactLabel}</a>\n      <a class="nav-link nav-link-accent" href="${prefix}${insightsFile}">${insightsLabel}</a>\n    `;
+  const insert = `      <a class="nav-link" href="${prefix}${contactFile}">${contactLabel}</a>\n      <a class="nav-link nav-link-accent" href="${prefix}${insightsFile}">${insightsLabel}</a>\n      <a class="nav-link nav-mobile-cta" href="${prefix}${contactFile}">${ctaLabel}</a>\n    `;
   return h.replace(/\s*<\/nav>/, `\n${insert}</nav>`);
 }
 
