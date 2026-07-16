@@ -121,6 +121,10 @@ body.nav-open .gh-float {
 @media (max-width: 900px) {
   .header {
     height: var(--gh-header-height-mobile);
+    /* backdrop-filter creates a fixed containing block and clips the drawer */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    overflow: visible !important;
   }
 }
 
@@ -596,7 +600,7 @@ html[dir="rtl"] .nav-cta {
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-    overflow: hidden;
+    overflow: visible !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
@@ -627,66 +631,63 @@ html[dir="rtl"] .nav-cta {
     min-width: 44px !important;
     height: 44px !important;
     margin: 0;
-    z-index: 1003;
+    z-index: 10052 !important;
+    position: relative;
   }
 
+  /* Full-screen mobile drawer — escapes header clipping */
   .nav {
     display: none;
     flex-direction: column;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: min(340px, 88vw);
-    padding: 88px 0 32px;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100vh !important;
+    max-height: 100dvh !important;
+    margin: 0 !important;
+    padding: calc(var(--gh-header-height-mobile) + 12px) 0 40px !important;
     gap: 0;
-    background: rgba(10, 10, 10, 0.98);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border-inline-start: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5);
-    overflow-y: auto;
-    z-index: 10051;
+    background: #0a0a0a !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    z-index: 10051 !important;
     align-items: stretch;
     justify-content: flex-start;
-  }
-  [dir="rtl"] .nav {
-    right: 0;
-    left: auto;
-    border-inline-start: none;
-    border-inline-end: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 20px 0 60px rgba(0, 0, 0, 0.5);
-  }
-  [dir="ltr"] .nav {
-    right: auto;
-    left: 0;
+    transform: none !important;
   }
 
   .nav.open {
-    display: flex;
-    animation: navSlideIn 0.32s cubic-bezier(0.25, 0.1, 0.1, 1);
+    display: flex !important;
+    animation: navFadeIn 0.28s ease;
   }
-  @keyframes navSlideIn {
-    from { transform: translateX(100%); opacity: 0.6; }
-    to { transform: translateX(0); opacity: 1; }
-  }
-  [dir="ltr"] .nav.open {
-    animation-name: navSlideInLtr;
-  }
-  @keyframes navSlideInLtr {
-    from { transform: translateX(-100%); opacity: 0.6; }
-    to { transform: translateX(0); opacity: 1; }
+  @keyframes navFadeIn {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
   }
 
   .nav > .nav-link,
   .nav > .nav-mega-item > .nav-mega-trigger {
     width: 100%;
     justify-content: space-between;
-    padding: 14px 24px;
+    padding: 16px 24px;
     font-size: 17px !important;
     border-radius: 0;
     text-transform: none;
     letter-spacing: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #fff !important;
   }
   .nav > .nav-link:hover,
   .nav > .nav-mega-item > .nav-mega-trigger:hover {

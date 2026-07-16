@@ -588,12 +588,12 @@ ${analyticsHeadTags('../')}
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>${PAGE_CSS}</style>
-<script defer src="../assets/site-header.js?v=14"></script>
+<script defer src="../assets/site-header.js?v=15"></script>
 <script defer src="../assets/gh-performance.js?v=2"></script>
 <script defer src="../assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
-<link rel="stylesheet" href="../assets/site-header.css?v=28">
+<link rel="stylesheet" href="../assets/site-header.css?v=29">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',

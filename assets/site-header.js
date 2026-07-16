@@ -2,6 +2,8 @@
   var HOVER_DELAY = 180;
   var closeTimer = null;
   var menuLastFocused = null;
+  var navHomeParent = null;
+  var navHomeNext = null;
 
   function getNav() {
     return document.getElementById('nav');
@@ -21,6 +23,33 @@
 
   function isRtl() {
     return document.documentElement.getAttribute('dir') === 'rtl';
+  }
+
+  function parkNavInBody(nav) {
+    if (!nav || nav.parentElement === document.body) return;
+    navHomeParent = nav.parentElement;
+    navHomeNext = nav.nextSibling;
+    document.body.appendChild(nav);
+    var backdrop = getBackdrop();
+    if (backdrop && backdrop.parentElement !== document.body) {
+      document.body.appendChild(backdrop);
+    }
+  }
+
+  function restoreNavHome(nav) {
+    if (!nav || !navHomeParent) return;
+    if (navHomeNext && navHomeNext.parentElement === navHomeParent) {
+      navHomeParent.insertBefore(nav, navHomeNext);
+    } else {
+      navHomeParent.appendChild(nav);
+    }
+    var backdrop = getBackdrop();
+    var header = document.getElementById('header');
+    if (backdrop && header && backdrop.parentElement === document.body) {
+      header.insertAdjacentElement('afterend', backdrop);
+    }
+    navHomeParent = null;
+    navHomeNext = null;
   }
 
   function getMenuFocusables() {
@@ -59,6 +88,10 @@
     var backdrop = getBackdrop();
     if (!nav || !toggle) return;
 
+    if (open && isMobile()) {
+      parkNavInBody(nav);
+    }
+
     nav.classList.toggle('open', open);
     document.body.classList.toggle('nav-open', open);
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -82,9 +115,12 @@
       window.requestAnimationFrame(function () {
         (nodes[0] || toggle).focus();
       });
-    } else if (menuLastFocused && typeof menuLastFocused.focus === 'function') {
-      menuLastFocused.focus();
-      menuLastFocused = null;
+    } else {
+      if (isMobile()) restoreNavHome(nav);
+      if (menuLastFocused && typeof menuLastFocused.focus === 'function') {
+        menuLastFocused.focus();
+        menuLastFocused = null;
+      }
     }
   }
 
@@ -206,6 +242,9 @@
         document.querySelectorAll('.mega-menu.open').forEach(function (m) {
           m.classList.remove('open');
         });
+        var nav = getNav();
+        if (nav && nav.classList.contains('open')) setMenuOpen(false);
+        else if (nav && nav.parentElement === document.body) restoreNavHome(nav);
       }
     });
 

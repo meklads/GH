@@ -144,11 +144,11 @@ ${analyticsHeadTags(p)}
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="${p}assets/site-header.css?v=28">
+<link rel="stylesheet" href="${p}assets/site-header.css?v=29">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=16">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=23">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
-<script defer src="${p}assets/site-header.js?v=9"></script>
+<script defer src="${p}assets/site-header.js?v=15"></script>
 <script defer src="${p}assets/gh-performance.js?v=1"></script>
 <script defer src="${p}assets/lang-switch.js?v=3"></script>
 </head>

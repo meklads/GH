@@ -119,12 +119,12 @@ function build() {
 <link href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" rel="stylesheet" />
 <link rel="stylesheet" href="${P}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=21">
-<link rel="stylesheet" href="${P}assets/site-header.css?v=28">
+<link rel="stylesheet" href="${P}assets/site-header.css?v=29">
 <style>
 body { font-family: 'Inter', 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif; }
 ${css}
 </style>
-<script defer src="${P}assets/site-header.js?v=14"></script>
+<script defer src="${P}assets/site-header.js?v=15"></script>
 <script defer src="${P}assets/gh-performance.js?v=2"></script>
 <script defer src="${P}assets/lang-switch.js?v=1"></script>
 <script type="application/ld+json">${JSON.stringify({

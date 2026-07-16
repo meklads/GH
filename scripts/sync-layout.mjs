@@ -127,7 +127,7 @@ function collectHtmlFiles(dir, base = '') {
 }
 
 function ensureHeaderCssOrder(html, prefix) {
-  const headerHref = `${prefix}site-header.css?v=28`;
+  const headerHref = `${prefix}site-header.css?v=29`;
   const headerTag = `<link rel="stylesheet" href="${headerHref}">`;
   html = html.replace(/<link[^>]*href="[^"]*site-header\.css[^"]*"[^>]*>\s*/gi, '');
   if (/gh-site-enhancements\.css/i.test(html)) {
@@ -186,7 +186,7 @@ function syncFile(rel) {
   }
   html = html.replace(/lang-switch\.js(\?v=\d+)?/g, 'lang-switch.js?v=2');
 
-  html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=14');
+  html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=15');
   html = html.replace(/gh-insights\.css\?v=\d+/g, 'gh-insights.css?v=23');
 
   // Ensure footer layout CSS is always present, versioned, and after Tailwind

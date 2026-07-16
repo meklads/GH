@@ -208,7 +208,7 @@ function buildEnStub(enFileName, data) {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${PREFIX}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${PREFIX}assets/gh-site-enhancements.css?v=21">
-<link rel="stylesheet" href="${PREFIX}assets/site-header.css?v=28">
+<link rel="stylesheet" href="${PREFIX}assets/site-header.css?v=29">
 <style>
 :root{--gold:#C9A84C;--text-primary:#FAFAF8;--text-secondary:rgba(255,255,255,.7);--border-medium:rgba(255,255,255,.12)}
 body{font-family:'Inter',sans-serif;background:#0A0A0A;color:var(--text-primary);min-height:100vh;display:flex;flex-direction:column}
@@ -224,7 +224,7 @@ body{font-family:'Inter',sans-serif;background:#0A0A0A;color:var(--text-primary)
 .svc-en-btn-outline{border:1px solid rgba(255,255,255,.35);color:#FAFAF8}
 .svc-en-btn-outline:hover{border-color:#C9A84C;color:#C9A84C}
 </style>
-<script defer src="${PREFIX}assets/site-header.js?v=14"></script>
+<script defer src="${PREFIX}assets/site-header.js?v=15"></script>
 <script defer src="${PREFIX}assets/gh-performance.js?v=2"></script>
 <script defer src="${PREFIX}assets/lang-switch.js?v=1"></script>
 <script type="application/ld+json">${JSON.stringify({
