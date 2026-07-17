@@ -546,7 +546,7 @@ function buildPage(product, isEn) {
     .map(
       (v, i) => `<div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:${(0.05 + i * 0.05).toFixed(2)}s">
       <div class="aspect-video overflow-hidden relative bg-black">
-        <video class="w-full h-full object-cover" controls playsinline preload="metadata" poster="${v.poster}">
+        <video class="w-full h-full object-cover gh-autoplay" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="${v.poster}">
           <source src="${v.src}" type="video/mp4">
         </video>
       </div>

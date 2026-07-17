@@ -395,7 +395,15 @@ function patchHtml(html, rel) {
     html = html.replace(/<meta name="viewport"[^>]*>/, `$&\n<meta name="description" content="${desc}">`);
   }
 
-  html = html.replace(/preload="auto"/g, 'preload="metadata"');
+  html = html.replace(/preload="auto"/g, (match, offset, str) => {
+    const start = Math.max(0, offset - 400);
+    const chunk = str.slice(start, offset + 80);
+    const videoIdx = chunk.lastIndexOf('<video');
+    if (videoIdx === -1) return 'preload="metadata"';
+    const tag = chunk.slice(videoIdx);
+    if (/\b(autoplay|gh-autoplay)\b/i.test(tag)) return match;
+    return 'preload="metadata"';
+  });
 
   html = html.replace(/dot4life\.team@gmail\.com/g, 'info@3dgraphicshouse.com');
 
