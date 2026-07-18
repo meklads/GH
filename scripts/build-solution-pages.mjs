@@ -572,7 +572,7 @@ function projectLaunchMain(lang) {
       svc: isEn ? 'Visualization' : 'إظهار معماري',
     },
     {
-      img: 'anan-eskan-maquette-01.jpeg',
+      img: 'anan-eskan-maquette-01.jpeg?v=2',
       path: 'maquettes',
       name: isEn ? 'Architectural Scale Model' : 'مجسم معماري',
       country: isEn ? 'GCC' : 'الخليج',

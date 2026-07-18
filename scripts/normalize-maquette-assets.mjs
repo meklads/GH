@@ -14,7 +14,7 @@ const MAQ_DIR = path.join(ROOT, 'assets/projects/maquettes');
 const RENAME_MAP = {
   'mwl-humanity-exhibition-hero.jpeg': 'mwl-humanity-exhibition-hero.jpeg',
   'interactive-showroom-01.jpeg': 'interactive-showroom-01.jpeg',
-  'anan-eskan-maquette-01.jpeg': 'anan-eskan-maquette-01.jpeg',
+  'anan-eskan-maquette-01.jpeg?v=2': 'anan-eskan-maquette-01.jpeg?v=2',
   'maquette-detail-02.jpeg': 'maquette-detail-02.jpeg',
   'maquette-detail-03.jpeg': 'maquette-detail-03.jpeg',
   'maquette-detail-04.jpeg': 'maquette-detail-04.jpeg',
@@ -28,7 +28,7 @@ const RENAME_MAP = {
 
 /** Real JPEG sources for aliases that were previously saved as HTML 404 pages. */
 const REPAIR_FROM = {
-  'anan-eskan-maquette-01.jpeg': 'anan-escan3.jpeg',
+  'anan-eskan-maquette-01.jpeg?v=2': 'anan-escan3.jpeg',
   'anan-eskan-maquette-02.jpeg': 'anan-escan4.jpeg',
   'anan-eskan-maquette-03.jpeg': 'Anan_Eskan_ryadh5-scaled-e1745137604161.jpg',
   'anan-eskan-maquette-04.jpeg': 'anan-escan3.jpeg',

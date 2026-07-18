@@ -444,7 +444,10 @@ ${analyticsHeadTags('../')}
           </video>
         </div>
         <div class="pl-media-frame" style="aspect-ratio:16/10">
-          <img src="../assets/projects/maquettes/anan-eskan-maquette-01.jpeg" alt="مجسم معماري لمشروع عقاري" loading="lazy" width="800" height="500">
+          <picture>
+            <source srcset="../assets/projects/maquettes/anan-eskan-maquette-01.webp" type="image/webp">
+            <img src="../assets/projects/maquettes/anan-eskan-maquette-01.jpeg?v=2" alt="مجسم معماري لمشروع عقاري" loading="lazy" width="800" height="500">
+          </picture>
         </div>
       </div>
     </div>

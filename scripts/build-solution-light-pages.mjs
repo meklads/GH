@@ -53,7 +53,7 @@ const A = {
   pavilion2W: '../assets/projects/pavilion2.webp',
   booth: '../assets/projects/animation/real-estate-services.jpg',
   boothW: '../assets/projects/animation/real-estate-services.webp',
-  maqAnan: '../assets/projects/maquettes/anan-eskan-maquette-01.jpeg',
+  maqAnan: '../assets/projects/maquettes/anan-eskan-maquette-01.jpeg?v=2',
   maqAlrajhi: '../assets/projects/maquettes/alrajhi-maquette-01.jpeg',
   maqMwl: '../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg',
   maqMwlW: '../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp',
