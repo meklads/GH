@@ -1,6 +1,8 @@
 /**
  * ProjectLaunch™ AR — paid-ads conversion landing page (nav-free).
- * Writes solutions/project-launch.html
+ * Writes:
+ *   - solutions/project-launch.html
+ *   - solutions/project-launch-ads.html  (Meta/Google ads destination)
  * Run: node scripts/build-project-launch-lp-ar.mjs
  */
 import fs from 'fs';
@@ -9,7 +11,8 @@ import { fileURLToPath } from 'url';
 import { analyticsHeadTags } from './analytics-snippet.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const OUT = path.join(ROOT, 'solutions', 'project-launch.html');
+const OUT_MAIN = path.join(ROOT, 'solutions', 'project-launch.html');
+const OUT_ADS = path.join(ROOT, 'solutions', 'project-launch-ads.html');
 const BASE = 'https://3dgraphicshouse.com';
 const PHONE = '+966502786513';
 const PHONE_DISPLAY = '+966 50 278 6513';
@@ -444,22 +447,31 @@ function ctaWa(label = 'واتساب', extra = '') {
   return `<a class="pl-btn-wa ${extra}" href="${WA}" target="_blank" rel="noopener" data-cta="whatsapp">${label}</a>`;
 }
 
-const html = `<!DOCTYPE html>
+function buildHtml({ pagePath, noindex = false }) {
+  const pageUrl = `${BASE}${pagePath}`;
+  const robots = noindex
+    ? '<meta name="robots" content="noindex,nofollow"/>\n'
+    : '';
+  const hreflang = noindex
+    ? ''
+    : `<link rel="alternate" hreflang="en" href="${BASE}/solutions/project-launch-en.html">
+<link rel="alternate" hreflang="ar" href="${BASE}/solutions/project-launch.html">
+<link rel="alternate" hreflang="x-default" href="${BASE}/solutions/project-launch-en.html">
+`;
+  return `<!DOCTYPE html>
 <html class="scroll-smooth" dir="rtl" lang="ar">
 <head>
 <script src="../assets/gh-forms-config.js?v=2"></script>
 <script src="../assets/quote-form-config.js"></script>
 ${analyticsHeadTags('../')}
-<link rel="canonical" href="${BASE}/solutions/project-launch.html">
-<link rel="alternate" hreflang="en" href="${BASE}/solutions/project-launch-en.html">
-<link rel="alternate" hreflang="ar" href="${BASE}/solutions/project-launch.html">
-<link rel="alternate" hreflang="x-default" href="${BASE}/solutions/project-launch-en.html">
-<meta charset="utf-8"/>
+<link rel="canonical" href="${pageUrl}">
+${hreflang}${robots}<meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ProjectLaunch™ | منظومة إطلاق المشاريع العقارية | Graphics House</title>
 <meta name="description" content="تخيّل أن يرى المستثمر مشروعك قبل أن يُبنى — وأن يفهمه العميل في دقائق داخل صالة البيع. ProjectLaunch™ منظومة إطلاق متكاملة من Graphics House."/>
 <meta property="og:title" content="ProjectLaunch™ | Graphics House">
 <meta property="og:description" content="منظومة إطلاق تجعل مشروعك جاهزًا للسوق: إقناع المستثمر، تجربة البيع، وحضور قوي يوم الإطلاق.">
+<meta property="og:url" content="${pageUrl}">
 <meta property="og:image" content="${BASE}/assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -472,7 +484,7 @@ ${analyticsHeadTags('../')}
   '@type': 'Product',
   name: 'ProjectLaunch™',
   description: 'منظومة متكاملة لإطلاق المشاريع العقارية — من إقناع المستثمر إلى تجربة صالة البيع.',
-  url: `${BASE}/solutions/project-launch.html`,
+  url: pageUrl,
   brand: { '@type': 'Brand', name: 'Graphics House' },
   provider: { '@type': 'Organization', name: 'Graphics House', url: BASE, telephone: PHONE },
   areaServed: ['SA', 'AE', 'OM', 'BH', 'EG'],
@@ -905,6 +917,11 @@ ${analyticsHeadTags('../')}
 </body>
 </html>
 `;
+}
 
-fs.writeFileSync(OUT, html, 'utf8');
-console.log('Wrote solutions/project-launch.html (dark ad LP redesign)');
+const htmlMain = buildHtml({ pagePath: '/solutions/project-launch.html', noindex: false });
+const htmlAds = buildHtml({ pagePath: '/solutions/project-launch-ads.html', noindex: true });
+
+fs.writeFileSync(OUT_MAIN, htmlMain, 'utf8');
+fs.writeFileSync(OUT_ADS, htmlAds, 'utf8');
+console.log('Wrote solutions/project-launch.html + solutions/project-launch-ads.html (dark ad LP)');

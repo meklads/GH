@@ -20,6 +20,7 @@ const SKIP = new Set([
   'en.html',
   // Landing page has phone/WA/CTA in header — skip float chrome
   'solutions/project-launch.html',
+  'solutions/project-launch-ads.html',
 ]);
 
 const HOMEPAGE_SKIP_REPLACE = new Set(['index.html', 'index-ar.html']);
