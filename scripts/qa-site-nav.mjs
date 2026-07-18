@@ -15,7 +15,6 @@ const SKIP = new Set([
   'home-v2-backup.html',
   'gh-admin.html',
   'offer-lite.html',
-  'solutions/project-launch.html',
   'solutions/project-launch-ads.html',
 ]);
 
