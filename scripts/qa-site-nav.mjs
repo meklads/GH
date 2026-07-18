@@ -15,6 +15,7 @@ const SKIP = new Set([
   'home-v2-backup.html',
   'gh-admin.html',
   'offer-lite.html',
+  'solutions/project-launch.html',
 ]);
 
 const EXPECT_CSS = 'site-header.css?v=31';

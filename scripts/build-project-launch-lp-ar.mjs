@@ -1,36 +1,23 @@
-<!DOCTYPE html>
-<html class="scroll-smooth" dir="rtl" lang="ar">
-<head>
-<script src="../assets/gh-forms-config.js?v=2"></script>
-<script src="../assets/quote-form-config.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y67JVE898Z"></script>
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-window.gtag=gtag;
-gtag('js',new Date());
-gtag('config','G-Y67JVE898Z');
-</script>
-<script src="../assets/gh-analytics.js?v=3"></script>
-<link rel="canonical" href="https://3dgraphicshouse.com/solutions/project-launch.html">
-<link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/solutions/project-launch-en.html">
-<link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/solutions/project-launch.html">
-<link rel="alternate" hreflang="x-default" href="https://3dgraphicshouse.com/solutions/project-launch-en.html">
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ProjectLaunch™ | منظومة إطلاق المشاريع العقارية | Graphics House</title>
-<meta name="description" content="تخيّل أن يرى المستثمر مشروعك قبل أن يُبنى — وأن يفهمه العميل في دقائق داخل صالة البيع. ProjectLaunch™ منظومة إطلاق متكاملة من Graphics House."/>
-<meta property="og:title" content="ProjectLaunch™ | Graphics House">
-<meta property="og:description" content="منظومة إطلاق تجعل مشروعك جاهزًا للسوق: إقناع المستثمر، تجربة البيع، وحضور قوي يوم الإطلاق.">
-<meta property="og:image" content="https://3dgraphicshouse.com/assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
-<link rel="stylesheet" href="../assets/gh-float-widgets.css?v=5">
-<style>
+/**
+ * ProjectLaunch™ AR conversion landing page.
+ * Writes solutions/project-launch.html — sales LP (not a service brochure).
+ * Run: node scripts/build-project-launch-lp-ar.mjs
+ */
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { analyticsHeadTags } from './analytics-snippet.mjs';
+
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+const OUT = path.join(ROOT, 'solutions', 'project-launch.html');
+const BASE = 'https://3dgraphicshouse.com';
+const PHONE = '+966502786513';
+const PHONE_DISPLAY = '+966 50 278 6513';
+const WA = 'https://wa.me/966502786513';
+const CTA = 'احجز جلسة إطلاق مشروعك';
+const FORM_CTA = 'احصل على تقييم جاهزية إطلاق مشروعك';
+
+const css = `
   :root {
     --pl-gold: #C9A84C;
     --pl-ink: #0A0A0A;
@@ -265,8 +252,53 @@ gtag('config','G-Y67JVE898Z');
   .pl-lp-footer a:hover { color: var(--pl-gold); }
 
   .pl-cta-row { margin-top: 28px; }
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ProjectLaunch™","description":"منظومة متكاملة لإطلاق المشاريع العقارية — من إقناع المستثمر إلى تجربة صالة البيع.","url":"https://3dgraphicshouse.com/solutions/project-launch.html","brand":{"@type":"Brand","name":"Graphics House"},"provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","telephone":"+966502786513"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
+`;
+
+function btn(href = '#lead-form', label = CTA, extraClass = '') {
+  return `<a class="pl-btn ${extraClass}" href="${href}">${label}</a>`;
+}
+
+const html = `<!DOCTYPE html>
+<html class="scroll-smooth" dir="rtl" lang="ar">
+<head>
+<script src="../assets/gh-forms-config.js?v=2"></script>
+<script src="../assets/quote-form-config.js"></script>
+${analyticsHeadTags('../')}
+<link rel="canonical" href="${BASE}/solutions/project-launch.html">
+<link rel="alternate" hreflang="en" href="${BASE}/solutions/project-launch-en.html">
+<link rel="alternate" hreflang="ar" href="${BASE}/solutions/project-launch.html">
+<link rel="alternate" hreflang="x-default" href="${BASE}/solutions/project-launch-en.html">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProjectLaunch™ | منظومة إطلاق المشاريع العقارية | Graphics House</title>
+<meta name="description" content="تخيّل أن يرى المستثمر مشروعك قبل أن يُبنى — وأن يفهمه العميل في دقائق داخل صالة البيع. ProjectLaunch™ منظومة إطلاق متكاملة من Graphics House."/>
+<meta property="og:title" content="ProjectLaunch™ | Graphics House">
+<meta property="og:description" content="منظومة إطلاق تجعل مشروعك جاهزًا للسوق: إقناع المستثمر، تجربة البيع، وحضور قوي يوم الإطلاق.">
+<meta property="og:image" content="${BASE}/assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
+<link rel="stylesheet" href="../assets/gh-float-widgets.css?v=5">
+<style>${css}</style>
+<script type="application/ld+json">${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'ProjectLaunch™',
+  description:
+    'منظومة متكاملة لإطلاق المشاريع العقارية — من إقناع المستثمر إلى تجربة صالة البيع.',
+  url: `${BASE}/solutions/project-launch.html`,
+  brand: { '@type': 'Brand', name: 'Graphics House' },
+  provider: {
+    '@type': 'Organization',
+    name: 'Graphics House',
+    url: BASE,
+    telephone: PHONE,
+  },
+  areaServed: ['SA', 'AE', 'OM', 'BH', 'EG'],
+})}</script>
 </head>
 <body class="pl-lp">
 <a class="gh-skip-link" href="#main-content">تخطي إلى المحتوى الرئيسي</a>
@@ -277,13 +309,13 @@ gtag('config','G-Y67JVE898Z');
       <img src="../assets/logo-gold.png" alt="Graphics House" width="140" height="48">
     </a>
     <div class="pl-lp-actions">
-      <a class="pl-lp-icon" href="tel:+966502786513" aria-label="اتصال" title="+966 50 278 6513">
+      <a class="pl-lp-icon" href="tel:${PHONE}" aria-label="اتصال" title="${PHONE_DISPLAY}">
         <span class="material-symbols-outlined" style="font-size:20px">call</span>
       </a>
-      <a class="pl-lp-icon" href="https://wa.me/966502786513" target="_blank" rel="noopener" aria-label="واتساب" title="واتساب">
+      <a class="pl-lp-icon" href="${WA}" target="_blank" rel="noopener" aria-label="واتساب" title="واتساب">
         <span class="material-symbols-outlined" style="font-size:20px">chat</span>
       </a>
-      <a class="pl-btn" href="#lead-form"><span class="pl-btn-label">احجز جلسة إطلاق مشروعك</span><span class="material-symbols-outlined" style="font-size:18px">arrow_downward</span></a>
+      <a class="pl-btn" href="#lead-form"><span class="pl-btn-label">${CTA}</span><span class="material-symbols-outlined" style="font-size:18px">arrow_downward</span></a>
     </div>
   </div>
 </header>
@@ -305,7 +337,7 @@ gtag('config','G-Y67JVE898Z');
 
 هذه ليست أحلامًا…
 بل نتيجة منظومة إطلاق احترافية.</p>
-      <a class="pl-btn " href="#lead-form">احجز جلسة إطلاق مشروعك</a>
+      ${btn()}
     </div>
   </section>
 
@@ -317,7 +349,7 @@ gtag('config','G-Y67JVE898Z');
         <h2 class="pl-h2">المخططات جاهزة. الرخص تمضي. والبيع ما زال بطيئًا.</h2>
         <p class="pl-lead">كثير من المشاريع تصل لمرحلة الإطلاق وهي قوية على الورق… ثم تتعثر في إقناع المستثمر أو العميل لأنها تُقدَّم كقطع منفصلة: رندر هنا، فيلم هناك، مجسم في زاوية، وصالة بيع بلا قصة.</p>
         <p class="pl-lead" style="margin-top:16px">النتيجة ليست «نقص إبداع». النتيجة تأخير في الإغلاق، وضعف في الثقة، وفرص تُترك على الطاولة.</p>
-        <div class="pl-cta-row"><a class="pl-btn " href="#lead-form">احجز جلسة إطلاق مشروعك</a></div>
+        <div class="pl-cta-row">${btn()}</div>
       </div>
       <div class="pl-media-frame pl-reveal">
         <img src="../assets/news/makkah-charter-07.jpeg" alt="بيئة عرض وإطلاق مشروع" loading="lazy" width="800" height="600">
@@ -340,7 +372,7 @@ gtag('config','G-Y67JVE898Z');
         <li><strong>غياب تجربة المستثمر:</strong> العرض يشرح المواصفات… ولا يبني الثقة.</li>
       </ul>
       <p class="pl-punch pl-reveal">المشكلة ليست في المشروع…<br>بل في طريقة تقديمه للسوق.</p>
-      <div class="pl-cta-row pl-reveal"><a class="pl-btn " href="#lead-form">احجز جلسة إطلاق مشروعك</a></div>
+      <div class="pl-cta-row pl-reveal">${btn()}</div>
     </div>
   </section>
 
@@ -382,7 +414,7 @@ gtag('config','G-Y67JVE898Z');
         <p class="pl-lead">ليست قائمة خدمات. ليست «رندر + أنيميشن + موقع».</p>
         <p class="pl-lead" style="margin-top:14px">هي منهجية متكاملة تحوّل مشروعك إلى قصة قابلة للبيع: هوية واضحة، أصول بصرية تُقنع، وأدوات إغلاق داخل بيئة البيع — بلغة واحدة.</p>
         <p class="pl-lead" style="margin-top:14px">الهدف بسيط: أن يخرج زائر جلسة الإطلاق وهو يعرف ماذا يحتاج — وأن يخرج عميلك من صالة البيع وهو أقرب للقرار.</p>
-        <div class="pl-cta-row"><a class="pl-btn " href="#lead-form">احجز جلسة إطلاق مشروعك</a></div>
+        <div class="pl-cta-row">${btn()}</div>
       </div>
     </div>
   </section>
@@ -403,7 +435,7 @@ gtag('config','G-Y67JVE898Z');
           <li><span class="ck material-symbols-outlined">check_circle</span> تجربة تفاعلية للمبيعات</li>
           <li><span class="ck material-symbols-outlined">check_circle</span> مواد تسويقية جاهزة للاستخدام</li>
         </ul>
-        <div class="pl-cta-row"><a class="pl-btn " href="#lead-form">احجز جلسة إطلاق مشروعك</a></div>
+        <div class="pl-cta-row">${btn()}</div>
       </div>
       <div class="pl-reveal">
         <div class="pl-media-frame" style="margin-bottom:14px">
@@ -452,7 +484,7 @@ gtag('config','G-Y67JVE898Z');
           <div class="pl-tl-body"><h3>الإطلاق</h3><p>مشروعك يُقدَّم للسوق كمنتج مكتمل — لا كمجموعة ملفات.</p></div>
         </div>
       </div>
-      <div class="pl-cta-row pl-reveal"><a class="pl-btn " href="#lead-form">احجز جلسة إطلاق مشروعك</a></div>
+      <div class="pl-cta-row pl-reveal">${btn()}</div>
     </div>
   </section>
 
@@ -505,7 +537,7 @@ gtag('config','G-Y67JVE898Z');
           <div class="pl-strip-cap">حضور بصري يرفع ثقة الإطلاق</div>
         </div>
       </div>
-      <div class="pl-cta-row pl-reveal" style="margin-top:28px"><a class="pl-btn " href="#lead-form">احجز جلسة إطلاق مشروعك</a></div>
+      <div class="pl-cta-row pl-reveal" style="margin-top:28px">${btn()}</div>
     </div>
   </section>
 
@@ -573,7 +605,7 @@ gtag('config','G-Y67JVE898Z');
           </ul>
         </div>
       </div>
-      <div class="pl-cta-row pl-reveal"><a class="pl-btn " href="#lead-form">احجز جلسة إطلاق مشروعك</a></div>
+      <div class="pl-cta-row pl-reveal">${btn()}</div>
     </div>
   </section>
 
@@ -620,7 +652,7 @@ gtag('config','G-Y67JVE898Z');
         </div>
         <div class="pl-span-2 pl-form-feedback" id="plFormFeedback" aria-live="polite"></div>
         <div class="pl-span-2">
-          <button class="pl-btn" type="submit" id="plSubmitBtn">احصل على تقييم جاهزية إطلاق مشروعك</button>
+          <button class="pl-btn" type="submit" id="plSubmitBtn">${FORM_CTA}</button>
           <p class="pl-form-note">رد واضح بعد استلام طلبك — بدون التزام شراء في الجلسة الأولى.</p>
         </div>
       </form>
@@ -633,9 +665,9 @@ gtag('config','G-Y67JVE898Z');
   <div class="pl-lp-footer-inner">
     <span>© Graphics House · ProjectLaunch™</span>
     <span>
-      <a href="tel:+966502786513">+966 50 278 6513</a>
+      <a href="tel:${PHONE}">${PHONE_DISPLAY}</a>
       ·
-      <a href="https://wa.me/966502786513" target="_blank" rel="noopener">واتساب</a>
+      <a href="${WA}" target="_blank" rel="noopener">واتساب</a>
       ·
       <a href="../solutions/project-launch-en.html">English</a>
     </span>
@@ -664,3 +696,7 @@ gtag('config','G-Y67JVE898Z');
 </script>
 </body>
 </html>
+`;
+
+fs.writeFileSync(OUT, html, 'utf8');
+console.log('Wrote solutions/project-launch.html (AR conversion LP)');

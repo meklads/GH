@@ -151,6 +151,8 @@ function ensureHeaderCssOrder(html, prefix) {
 
 const SKIP = new Set([
   'home-v2-backup.html', 'en-backup.html', 'en-v2.html', 'offer-lite.html', 'gh-admin.html',
+  // Conversion LP with landing header (not site mega-nav)
+  'solutions/project-launch.html',
 ]);
 
 function syncFile(rel) {

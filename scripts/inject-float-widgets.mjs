@@ -18,6 +18,8 @@ const SKIP = new Set([
   'en-v2.html',
   'offer-lite.html',
   'en.html',
+  // Landing page has phone/WA/CTA in header — skip float chrome
+  'solutions/project-launch.html',
 ]);
 
 const HOMEPAGE_SKIP_REPLACE = new Set(['index.html', 'index-ar.html']);
