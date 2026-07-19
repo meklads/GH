@@ -29,23 +29,23 @@ const AR_HEADER = `<header class="header" id="header">
             </div>
             <div class="mm-main">
               <div class="mm-grid">
-                <a href="solutions/growth-launch.html" class="mm-card" data-solution="growth">
-                  <div class="mm-icon"><span class="material-symbols-outlined">query_stats</span></div>
-                  <div class="mm-title">GrowthLaunch&#8482;</div>
-                  <div class="mm-sub">نظام توليد العملاء والمبيعات</div>
-                  <div class="mm-desc">توليد عملاء مؤهلين، أتمتة المتابعة، وتحسين معدلات التحويل.</div>
-                  <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
-                </a>
                 <a href="solutions/project-launch.html" class="mm-card" data-solution="project">
-                  <div class="mm-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
-                  <div class="mm-title">ProjectLaunch&#8482;</div>
+                  <div class="mm-icon"><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span></div>
+                  <div class="mm-title" dir="ltr">ProjectLaunch<span class="tm">&#8482;</span></div>
                   <div class="mm-sub">نظام إطلاق المشاريع العقارية</div>
                   <div class="mm-desc">حل متكامل لإطلاق المشاريع العقارية يشمل التصور، العلامة التجارية، التسويق ودعم المبيعات.</div>
                   <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
                 </a>
+                <a href="solutions/growth-launch.html" class="mm-card" data-solution="growth">
+                  <div class="mm-icon"><span class="material-symbols-outlined" aria-hidden="true">campaign</span></div>
+                  <div class="mm-title" dir="ltr">GrowthLaunch<span class="tm">&#8482;</span></div>
+                  <div class="mm-sub">نظام توليد العملاء والمبيعات</div>
+                  <div class="mm-desc">توليد عملاء مؤهلين، أتمتة المتابعة، وتحسين معدلات التحويل.</div>
+                  <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
+                </a>
                 <a href="solutions/brand-scale.html" class="mm-card" data-solution="brand">
-                  <div class="mm-icon"><span class="material-symbols-outlined">workspace_premium</span></div>
-                  <div class="mm-title">BrandScale&#8482;</div>
+                  <div class="mm-icon"><span class="material-symbols-outlined" aria-hidden="true">diamond</span></div>
+                  <div class="mm-title" dir="ltr">BrandScale<span class="tm">&#8482;</span></div>
                   <div class="mm-sub">نظام نمو العلامات التجارية</div>
                   <div class="mm-desc">بناء وتقوية وتنمية علامتك التجارية من خلال حلول إبداعية وتسويقية متكاملة.</div>
                   <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
@@ -153,26 +153,26 @@ const EN_HEADER = `<header class="header" id="header">
             </div>
             <div class="mm-main">
               <div class="mm-grid">
-                <a href="solutions/growth-launch.html" class="mm-card" data-solution="growth">
-                  <div class="mm-icon"><span class="material-symbols-outlined">query_stats</span></div>
-                  <div class="mm-title">GrowthLaunch&#8482;</div>
-                  <div class="mm-sub">Lead Generation & Sales System</div>
-                  <div class="mm-desc">Generate qualified leads, automate follow-up and improve sales conversion.</div>
-                  <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
-                </a>
                 <a href="solutions/project-launch.html" class="mm-card" data-solution="project">
-                  <div class="mm-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
-                  <div class="mm-title">ProjectLaunch&#8482;</div>
-                  <div class="mm-sub">Real Estate Project Launch System</div>
-                  <div class="mm-desc">Complete launch solution for real estate projects including visualization, branding, marketing and sales support.</div>
-                  <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
+                  <div class="mm-icon"><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span></div>
+                  <div class="mm-title" dir="ltr">ProjectLaunch<span class="tm">&#8482;</span></div>
+                  <div class="mm-sub">نظام إطلاق المشاريع العقارية</div>
+                  <div class="mm-desc">حل متكامل لإطلاق المشاريع العقارية يشمل التصور، العلامة التجارية، التسويق ودعم المبيعات.</div>
+                  <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
+                </a>
+                <a href="solutions/growth-launch.html" class="mm-card" data-solution="growth">
+                  <div class="mm-icon"><span class="material-symbols-outlined" aria-hidden="true">campaign</span></div>
+                  <div class="mm-title" dir="ltr">GrowthLaunch<span class="tm">&#8482;</span></div>
+                  <div class="mm-sub">نظام توليد العملاء والمبيعات</div>
+                  <div class="mm-desc">توليد عملاء مؤهلين، أتمتة المتابعة، وتحسين معدلات التحويل.</div>
+                  <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
                 </a>
                 <a href="solutions/brand-scale.html" class="mm-card" data-solution="brand">
-                  <div class="mm-icon"><span class="material-symbols-outlined">workspace_premium</span></div>
-                  <div class="mm-title">BrandScale&#8482;</div>
-                  <div class="mm-sub">Brand Growth System</div>
-                  <div class="mm-desc">Build, strengthen and grow your brand through integrated creative and marketing solutions.</div>
-                  <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
+                  <div class="mm-icon"><span class="material-symbols-outlined" aria-hidden="true">diamond</span></div>
+                  <div class="mm-title" dir="ltr">BrandScale<span class="tm">&#8482;</span></div>
+                  <div class="mm-sub">نظام نمو العلامات التجارية</div>
+                  <div class="mm-desc">بناء وتقوية وتنمية علامتك التجارية من خلال حلول إبداعية وتسويقية متكاملة.</div>
+                  <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
                 </a>
               </div>
             </div>

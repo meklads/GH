@@ -890,6 +890,17 @@ html[dir="rtl"] .mm-panel-label {
   color: #FAFAF8;
   font-family: 'Inter', 'Tajawal', sans-serif;
   line-height: 1.3;
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: start;
+}
+.mega-menu-solutions .mm-card .mm-title .tm {
+  font-size: 0.55em;
+  font-weight: 500;
+  vertical-align: super;
+  line-height: 0;
+  margin-inline-start: 1px;
+  opacity: 0.9;
 }
 .mega-menu-solutions .mm-card .mm-sub {
   font-size: 12px;
