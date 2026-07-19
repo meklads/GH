@@ -764,10 +764,11 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     color:#666; font-weight:300;
   }
   .ar-outcomes-media {
-    position:relative; border-radius:22px; overflow:visible;
-    background:transparent; width:100%;
-    aspect-ratio:auto; min-height:0;
-    box-shadow:none;
+    position:relative; border-radius:22px; overflow:hidden;
+    background:#111; width:100%;
+    aspect-ratio:16 / 9;
+    min-height:0;
+    box-shadow:0 16px 44px rgba(10,10,10,.12);
   }
   .ar-outcomes-media > video,
   .ar-outcomes-media > iframe {
@@ -775,21 +776,6 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     width:100%; height:100%;
     border:0; object-fit:cover;
     border-radius:22px;
-  }
-  .ar-outcomes-media > video {
-    position:relative; inset:auto;
-    width:100%; height:auto;
-    display:block; object-fit:unset;
-    border-radius:4px;
-    box-shadow:0 20px 60px rgba(0,0,0,.08);
-  }
-  .ar-outcomes-media:has(iframe) {
-    aspect-ratio:16 / 9; overflow:hidden; background:#111;
-    box-shadow:0 16px 44px rgba(10,10,10,.12);
-  }
-  .ar-outcomes-media:has(video) {
-    aspect-ratio:auto; overflow:visible; background:transparent;
-    box-shadow:none;
   }
 
   /* Homepage MWL gallery (s3) — scoped for ProjectLaunch */
