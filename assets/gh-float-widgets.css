@@ -14,11 +14,13 @@
 .gh-float {
   position: fixed;
   bottom: 32px;
-  /* Physical LEFT — same corner as English (LTR) pages */
+  /* Always physical LEFT — match English on Arabic (RTL) pages too */
+  direction: ltr;
   left: 28px !important;
   right: auto !important;
-  inset-inline-start: auto !important;
-  inset-inline-end: auto !important;
+  inset-inline-start: unset !important;
+  inset-inline-end: unset !important;
+  inset: auto auto 32px 28px !important; /* top right bottom left */
   z-index: 9000;
   display: flex;
   flex-direction: column;
@@ -32,11 +34,15 @@
 html[dir="rtl"] .gh-float,
 html[dir="ltr"] .gh-float,
 html[lang="ar"] .gh-float,
-html[lang="en"] .gh-float {
+html[lang="en"] .gh-float,
+html[dir="rtl"] .gh-float[data-gh-float],
+body .gh-float[data-gh-float="1"] {
+  direction: ltr;
   left: 28px !important;
   right: auto !important;
-  inset-inline-start: auto !important;
-  inset-inline-end: auto !important;
+  inset-inline-start: unset !important;
+  inset-inline-end: unset !important;
+  inset: auto auto 32px 28px !important;
 }
 
 .gh-float-btn {
@@ -199,12 +205,15 @@ html[dir="rtl"] .gh-popup-box {
   html[dir="rtl"] .gh-float,
   html[dir="ltr"] .gh-float,
   html[lang="ar"] .gh-float,
-  html[lang="en"] .gh-float {
+  html[lang="en"] .gh-float,
+  html[dir="rtl"] .gh-float[data-gh-float],
+  body .gh-float[data-gh-float="1"] {
     bottom: 20px;
     left: 16px !important;
     right: auto !important;
-    inset-inline-start: auto !important;
-    inset-inline-end: auto !important;
+    inset-inline-start: unset !important;
+    inset-inline-end: unset !important;
+    inset: auto auto 20px 16px !important;
   }
   .gh-popup-box { padding: 28px 20px 24px; }
 }
