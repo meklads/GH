@@ -73,24 +73,27 @@ img{max-width:100%;display:block}
 .cs-section{padding:72px 0}
 .cs-overview-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,320px);gap:48px;align-items:start}
 .cs-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(201,168,76,.12)}
-.cs-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;max-width:100%}
-.cs-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s}
+.cs-projects{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.cs-project{position:relative;display:block;overflow:hidden;background:#111;isolation:isolate;text-decoration:none;color:#fff}
+.cs-project picture,.cs-project img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .55s ease}
+.cs-project:hover img{transform:scale(1.04)}
+.cs-project-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.15) 55%,transparent 100%);pointer-events:none;z-index:1}
+.cs-project-name{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 16px;font-family:'Playfair Display',Georgia,serif;font-size:clamp(15px,1.3vw,20px);font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.cs-project-name small{display:block;margin-top:6px;font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,168,76,.85)}
+@media(max-width:1100px){.cs-projects{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:900px){
   .cs-overview-grid{grid-template-columns:1fr;gap:24px}
   .cs-stats{grid-template-columns:1fr}
-  .cs-gallery{grid-template-columns:1fr 1fr}
   .cs-hero{min-height:min(52vh,560px)}
   .cs-hero-copy{padding:72px 0 36px}
   .cs-section{padding:48px 0}
 }
-@media(max-width:560px){
-  .cs-gallery{grid-template-columns:1fr}
-}
+@media(max-width:700px){.cs-projects{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.cs-project-name{padding:14px 12px}}
+@media(max-width:420px){.cs-projects{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
 }
 
-}
 
 /* Mega menu: assets/site-header.css */
 </style>
@@ -324,15 +327,40 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- GALLERY -->
-<section style="padding:4px 0;background:#0A0A0A">
-  <div class="cs-gallery">
-    <picture><source srcset="assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></picture>
-<picture><source srcset="assets/projects/maquettes/interactive-showroom-01.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/interactive-showroom-01.jpeg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></picture>
-<picture><source srcset="assets/projects/maquettes/maquette-detail-02.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/maquette-detail-02.jpeg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></picture>
-<picture><source srcset="assets/projects/maquettes/maquette-detail-03.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/maquette-detail-03.jpeg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></picture>
-<picture><source srcset="assets/projects/maquettes/maquette-detail-04.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/maquette-detail-04.jpeg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></picture>
-<img loading="lazy" src="assets/projects/maquettes/anan-eskan-maquette-01.jpeg?v=2" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+<!-- PROJECTS -->
+<section class="cs-section" style="background:#0A0A0A;padding-bottom:48px">
+  <div class="wrap" style="padding-bottom:8px">
+    <div class="reveal" style="margin-bottom:28px">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:12px">Selected Work</span>
+      <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:#fff;line-height:1.2">Projects</h2>
+    </div>
+    <div class="cs-projects">
+    <a class="cs-project" href="project-al-rajhi-en.html">
+      <picture><source srcset="assets/projects/maquettes/alrajhi-maquette-01.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/alrajhi-maquette-01.jpeg" alt="Al Rajhi"></picture>
+      <span class="cs-project-veil" aria-hidden="true"></span>
+      <span class="cs-project-name">Al Rajhi<small>الراجحي</small></span>
+    </a>
+    <a class="cs-project" href="project-rafal-en.html">
+      <picture><source srcset="assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/rafal-pavilions.jpg" alt="Rafal"></picture>
+      <span class="cs-project-veil" aria-hidden="true"></span>
+      <span class="cs-project-name">Rafal<small>رفال</small></span>
+    </a>
+    <a class="cs-project" href="project-alissa-en.html">
+      <picture><source srcset="assets/projects/rendering/pavilion3-1.webp" type="image/webp"><img loading="lazy" src="assets/projects/rendering/pavilion3-1.jpg" alt="Alissa"></picture>
+      <span class="cs-project-veil" aria-hidden="true"></span>
+      <span class="cs-project-name">Alissa<small>العيسائي</small></span>
+    </a>
+    <a class="cs-project" href="project-anan-eskan-en.html">
+      <picture><source srcset="assets/projects/maquettes/anan-eskan-maquette-01.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/anan-eskan-maquette-01.jpeg" alt="Anan Eskan"></picture>
+      <span class="cs-project-veil" aria-hidden="true"></span>
+      <span class="cs-project-name">Anan Eskan<small>عنان إسكان</small></span>
+    </a>
+    <a class="cs-project" href="project-mwl-en.html">
+      <picture><source srcset="assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="Muslim World League"></picture>
+      <span class="cs-project-veil" aria-hidden="true"></span>
+      <span class="cs-project-name">Muslim World League<small>رابطة العالم الإسلامي</small></span>
+    </a>
+    </div>
   </div>
 </section>
 
@@ -456,6 +484,7 @@ img{max-width:100%;display:block}
     </div>
   </div>
 </footer>
+
 
 
 
