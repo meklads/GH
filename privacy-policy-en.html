@@ -693,6 +693,8 @@ html[dir="ltr"] .section-title {
 
 
 
+
+
 <script>
 var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
 if(ld&&lb){setTimeout(function(){lb.style.width="100%";},100);setTimeout(function(){ld.classList.add("out");},1400);}
@@ -709,6 +711,7 @@ function ghSubmit(e){
   btn.disabled=true; btn.textContent='Sending…';
   fetch((window.GH_FORMS&&window.GH_FORMS.formEndpoint)||'https://3dgraphicshouse.com/api/form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({subject:'New Enquiry، Graphics House Website',from_name:'Graphics House Website',name:document.getElementById('ghName').value,company:document.getElementById('ghCompany').value,project_type:document.getElementById('ghProject').value,phone:document.getElementById('ghPhone').value,brief:document.getElementById('ghBrief').value,botcheck:''})}).then(function(r){return r.json();}).then(function(res){btn.disabled=false;btn.textContent='Submit Enquiry →';if(res.success){document.querySelector('#ghPopup form').style.display='none';document.getElementById('ghThanks').style.display='block';setTimeout(function(){document.getElementById('ghPopup').classList.remove('open');document.querySelector('#ghPopup form').style.display='block';document.getElementById('ghThanks').style.display='none';},3000);}else{alert('Something went wrong. Please try again.');}}).catch(function(){btn.disabled=false;btn.textContent='Submit Enquiry →';alert('Connection error.');});
 
+}
 </script>
 
 <!-- FLOAT BUTTONS -->

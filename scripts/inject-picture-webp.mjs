@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * Wrap <img> tags with <picture> when a matching .webp exists under assets/projects/.
+ * Also flattens accidental nested <picture> wrappers from prior buggy runs.
  */
 import fs from 'fs';
 import path from 'path';
@@ -8,6 +9,8 @@ import { fileURLToPath } from 'url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const IMG_RE = /<img([^>]*?)src="((?:\.\.\/)*assets\/projects\/[^"]+\.(?:jpe?g|png))"([^>]*)>/gi;
+const NESTED_PICTURE_RE =
+  /(?:<picture>\s*<source\b[^>]*>\s*)+(<img\b[^>]*>)(?:\s*<\/picture>)+/gi;
 
 const SKIP_DIRS = new Set(['.git', 'node_modules', 'assets', 'partials', 'scripts', '.trash']);
 
@@ -39,26 +42,52 @@ function webpForSrc(src, htmlFile) {
   return clean.replace(/\.(jpe?g|png)$/i, '.webp');
 }
 
+/** Collapse nested picture>source>picture…img…/picture chains into one picture. */
+function flattenNestedPictures(html) {
+  return html.replace(NESTED_PICTURE_RE, (match, imgTag) => {
+    const srcset = match.match(/srcset="([^"]+)"/i);
+    const src = imgTag.match(/\ssrc="([^"]+)"/i);
+    const webp =
+      (srcset && srcset[1]) ||
+      (src ? src[1].replace(/\.(jpe?g|png)(\?[^"]*)?$/i, '.webp$2') : null);
+    if (!webp) return imgTag;
+    return `<picture><source srcset="${webp}" type="image/webp">${imgTag}</picture>`;
+  });
+}
+
+function alreadyInsidePicture(html, offset) {
+  const before = html.slice(0, offset);
+  const open = before.lastIndexOf('<picture');
+  const close = before.lastIndexOf('</picture>');
+  return open > close;
+}
+
 function wrapProjectImages(html, rel) {
   return html.replace(IMG_RE, (full, pre, src, post, offset) => {
-    const before = html.slice(Math.max(0, offset - 80), offset);
-    if (before.includes('<picture>')) return full;
+    if (alreadyInsidePicture(html, offset)) return full;
     const webp = webpForSrc(src, rel);
     if (!webp) return full;
     return `<picture><source srcset="${webp}" type="image/webp"><img${pre}src="${src}"${post}></picture>`;
   });
 }
 
+let flattened = 0;
 let patched = 0;
 for (const rel of collectHtml(ROOT)) {
   const full = path.join(ROOT, rel);
-  const before = fs.readFileSync(full, 'utf8');
-  const after = wrapProjectImages(before, rel);
-  if (after !== before) {
-    fs.writeFileSync(full, after, 'utf8');
+  let html = fs.readFileSync(full, 'utf8');
+  const before = html;
+  html = flattenNestedPictures(html);
+  if (html !== before) flattened++;
+  const wrapped = wrapProjectImages(html, rel);
+  if (wrapped !== html) {
+    html = wrapped;
     patched++;
     console.log('  picture webp:', rel);
+  } else if (html !== before) {
+    console.log('  picture flatten:', rel);
   }
+  if (html !== before) fs.writeFileSync(full, html, 'utf8');
 }
 
-console.log(`Done — picture/webp on ${patched} pages.`);
+console.log(`Done — flattened ${flattened} pages, picture/webp on ${patched} pages.`);
