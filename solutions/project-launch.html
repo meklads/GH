@@ -550,9 +550,10 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   .ar-media-card:hover { transform:translateY(-3px); box-shadow:0 16px 40px rgba(10,10,10,.08); }
   .ar-media-card .ar-media-body { padding:20px 22px 22px; background:#fff; }
 
-  /* Crop baked-in YouTube letterboxing / black bars */
+  /* Crop letterbox by shortening height only — width stays 100%, no zoom/scale */
   .ar-media-frame {
     position:relative;
+    width:100%;
     aspect-ratio:16 / 9;
     overflow:hidden;
     background:#111;
@@ -560,20 +561,42 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   .ar-media-frame iframe,
   .ar-media-frame video {
     position:absolute;
-    top:50%; left:50%;
-    width:100%; height:100%;
+    left:0;
+    width:100%;
+    height:100%;
+    top:0;
     border:0;
-    transform:translate(-50%,-50%) scale(1.28);
-    transform-origin:center center;
+    object-fit:cover;
   }
-  /* Interactive demos with heavy top/bottom black */
-  .ar-media-frame--fill iframe,
-  .ar-media-frame--fill video {
-    transform:translate(-50%,-50%) scale(1.58);
+  /* Mild top/bottom black: shorter frame, iframe keeps full width at true 16:9 */
+  .ar-media-frame--soft {
+    aspect-ratio:1.95 / 1;
   }
-  .ar-media-frame--soft iframe,
+  .ar-media-frame--soft iframe {
+    top:50%;
+    height:auto;
+    aspect-ratio:16 / 9;
+    transform:translateY(-50%);
+  }
   .ar-media-frame--soft video {
-    transform:translate(-50%,-50%) scale(1.18);
+    top:0; height:100%;
+    object-fit:cover;
+    transform:none;
+  }
+  /* Heavy letterbox (interactive demos): shorter still, same full-width 16:9 */
+  .ar-media-frame--fill {
+    aspect-ratio:2.4 / 1;
+  }
+  .ar-media-frame--fill iframe {
+    top:50%;
+    height:auto;
+    aspect-ratio:16 / 9;
+    transform:translateY(-50%);
+  }
+  .ar-media-frame--fill video {
+    top:0; height:100%;
+    object-fit:cover;
+    transform:none;
   }
   .ar-env-card {
     border-radius:20px; overflow:hidden;
@@ -720,16 +743,17 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   }
   .ar-outcomes-media {
     position:relative; border-radius:22px; overflow:hidden;
-    background:#111; min-height:320px;
+    background:#111; width:100%;
+    aspect-ratio:2.4 / 1;
+    min-height:0;
     box-shadow:0 16px 44px rgba(10,10,10,.12);
   }
   .ar-outcomes-media iframe,
   .ar-outcomes-media video {
-    position:absolute; top:50%; left:50%;
-    width:100%; height:100%;
+    position:absolute; left:0; top:50%;
+    width:100%; height:auto; aspect-ratio:16 / 9;
     border:0; object-fit:cover;
-    transform:translate(-50%,-50%) scale(1.58);
-    transform-origin:center center;
+    transform:translateY(-50%);
   }
   .ar-outcomes-note {
     margin-top:14px; font-size:12px; color:#888; font-family:'Tajawal',sans-serif;
