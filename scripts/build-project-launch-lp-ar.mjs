@@ -175,6 +175,20 @@ function buildAdsLp({ srcRel, outRel, pageUrl, lang, homeHref, ghostCtaFrom, gho
     html = html.replace(subjectFrom, subjectTo);
   }
 
+  /* Ads: personal email welcome (paid traffic often uses Gmail) */
+  html = html.replace(
+    /placeholder="you@yourcompany\.com"/g,
+    'placeholder="you@email.com"'
+  );
+  html = html.replace(
+    /placeholder="name@company\.com"/g,
+    'placeholder="you@email.com"'
+  );
+  html = html.replace(
+    /placeholder="name@company\.sa"/g,
+    'placeholder="you@email.com"'
+  );
+
   /* Secondary hero CTA: keep users on LP */
   if (ghostCtaFrom && ghostCtaTo) {
     html = html.replace(ghostCtaFrom, ghostCtaTo);

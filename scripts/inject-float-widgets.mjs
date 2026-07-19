@@ -65,8 +65,11 @@ function stripLegacyFloat(html) {
 
 function injectAssets(html, prefix) {
   const css = `<link rel="stylesheet" href="${prefix}assets/gh-float-widgets.css?v=8">`;
-  const js = `<script defer src="${prefix}assets/gh-float-widgets.js?v=7"></script>`;
+  const js = `<script defer src="${prefix}assets/gh-float-widgets.js?v=8"></script>`;
   const forms = `<script src="${prefix}assets/gh-forms-config.js"></script>`;
+
+  html = html.replace(/gh-float-widgets\.css\?v=\d+/g, 'gh-float-widgets.css?v=8');
+  html = html.replace(/gh-float-widgets\.js\?v=\d+/g, 'gh-float-widgets.js?v=8');
 
   if (!html.includes('gh-float-widgets.css')) {
     html = html.replace(/<\/head>/i, `${css}\n</head>`);

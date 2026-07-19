@@ -1794,7 +1794,7 @@ gtag('config','G-Y67JVE898Z');
           </div>
           <div>
             <label for="pl-email">Email</label>
-            <input id="pl-email" name="email" type="email" autocomplete="email" required placeholder="you@yourcompany.com" dir="ltr">
+            <input id="pl-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com" dir="ltr">
           </div>
           <div>
             <label for="pl-type">Project type</label>
@@ -1961,6 +1961,7 @@ gtag('config','G-Y67JVE898Z');
 
 
 
+
 <!-- Back to top -->
 <button id="back-top" class="fixed bottom-8 right-6 z-50 w-11 h-11 bg-surface-container-high border border-primary/30 text-primary flex items-center justify-content-center hover:bg-primary hover:text-on-primary transition-all" aria-label="Back to top">
   <span class="material-symbols-outlined text-xl">arrow_upward</span>
@@ -1983,7 +1984,7 @@ gtag('config','G-Y67JVE898Z');
 </div>
 
 <!-- Float widgets -->
-<script defer src="../assets/gh-float-widgets.js?v=7"></script>
+<script defer src="../assets/gh-float-widgets.js?v=8"></script>
 <script defer src="../assets/service-page.js?v=4"></script>
 <script>
 (function () {
@@ -2090,6 +2091,8 @@ gtag('config','G-Y67JVE898Z');
   var form     = document.getElementById('plLeadForm');
   var feedback = document.getElementById('plFormFeedback');
   var submitBtn= document.getElementById('plSubmitBtn');
+  var isAdsLp = document.body.getAttribute('data-pl-ads') === '1' ||
+    /project-launch-ads/i.test(location.pathname || '');
   var FREE_EMAIL_DOMAINS = {
     'gmail.com':1,'googlemail.com':1,'yahoo.com':1,'yahoo.co.uk':1,'yahoo.fr':1,
     'hotmail.com':1,'hotmail.co.uk':1,'outlook.com':1,'live.com':1,'msn.com':1,
@@ -2099,6 +2102,10 @@ gtag('config','G-Y67JVE898Z');
     'qq.com':1,'163.com':1,'126.com':1,'rediffmail.com':1,
     'outlook.sa':1,'hotmail.sa':1,'live.sa':1
   };
+
+  function plIsValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email || '').trim());
+  }
 
   function plIsCompanyEmail(email) {
     var m = String(email || '').trim().toLowerCase().match(/^[^@\s]+@([^@\s]+\.[^@\s]+)$/);
@@ -2133,10 +2140,18 @@ gtag('config','G-Y67JVE898Z');
       var cityVal = (form.querySelector('[name=city]').value || '').trim();
 
       if (!nameVal || !phoneVal || !emailVal) {
-        plShowFormError('Please enter your full name, mobile number, and company email.');
+        plShowFormError(isAdsLp
+          ? 'Please enter your full name, mobile number, and email.'
+          : 'Please enter your full name, mobile number, and company email.');
         return;
       }
-      if (!plIsCompanyEmail(emailVal)) {
+      if (!plIsValidEmail(emailVal)) {
+        plShowFormError('Please enter a valid email address.');
+        form.querySelector('[name=email]').focus();
+        return;
+      }
+      /* Ads LPs accept personal email (Gmail/Hotmail); main site still requires company domain */
+      if (!isAdsLp && !plIsCompanyEmail(emailVal)) {
         plShowFormError('Please use a company email (not Gmail, Hotmail, or similar), along with your full name and mobile number.');
         form.querySelector('[name=email]').focus();
         return;
@@ -2146,7 +2161,9 @@ gtag('config','G-Y67JVE898Z');
         return;
       }
       if (phoneVal.replace(/\D/g, '').length < 8) {
-        plShowFormError('Please enter a valid mobile number with your name and company email.');
+        plShowFormError(isAdsLp
+          ? 'Please enter a valid mobile number with your name and email.'
+          : 'Please enter a valid mobile number with your name and company email.');
         form.querySelector('[name=phone]').focus();
         return;
       }
@@ -2160,6 +2177,16 @@ gtag('config','G-Y67JVE898Z');
         email:        emailVal,
         project_type: typeVal,
         city:         cityVal,
+        source:       isAdsLp ? 'ads' : 'project-launch',
+        page:         location.href,
+        message:
+          'Name: ' + nameVal + '\n' +
+          'Company: ' + companyVal + '\n' +
+          'Phone: ' + phoneVal + '\n' +
+          'Email: ' + emailVal + '\n' +
+          'Project type: ' + typeVal + '\n' +
+          'City: ' + cityVal + '\n' +
+          'Page: ' + location.href,
         botcheck:     ''
       };
       submitBtn.disabled = true;
@@ -2234,6 +2261,8 @@ gtag('config','G-Y67JVE898Z');
       </select>
       <label class="gh-sr-only" for="ghPhone">Phone / WhatsApp</label>
       <input class="gh-field" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required aria-label="Phone or WhatsApp">
+      <label class="gh-sr-only" for="ghEmail">Email</label>
+      <input class="gh-field" type="email" id="ghEmail" placeholder="Email *" required aria-label="Email" dir="ltr">
       <label class="gh-sr-only" for="ghBrief">Project brief</label>
       <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Brief about your project..." style="resize:none" aria-label="Brief about your project"></textarea>
       <button type="submit" class="gh-submit">Submit Enquiry →</button>

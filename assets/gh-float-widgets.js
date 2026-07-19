@@ -78,17 +78,50 @@
     var thanks = document.getElementById('ghThanks');
     if (!btn || !form) return;
 
+    var nameEl = document.getElementById('ghName');
+    var companyEl = document.getElementById('ghCompany');
+    var projectEl = document.getElementById('ghProject');
+    var phoneEl = document.getElementById('ghPhone');
+    var emailEl = document.getElementById('ghEmail');
+    var briefEl = document.getElementById('ghBrief');
+
+    var name = nameEl ? String(nameEl.value || '').trim() : '';
+    var phone = phoneEl ? String(phoneEl.value || '').trim() : '';
+    var email = emailEl ? String(emailEl.value || '').trim() : '';
+    var company = companyEl ? String(companyEl.value || '').trim() : '';
+    var projectType = projectEl ? String(projectEl.value || '').trim() : '';
+    var brief = briefEl ? String(briefEl.value || '').trim() : '';
+
+    if (!name || phone.replace(/\D/g, '').length < 8) {
+      alert(isEn ? 'Please enter your full name and a valid phone number.' : 'يرجى إدخال الاسم الكامل ورقم جوال صحيح.');
+      return;
+    }
+    if (!email || email.indexOf('@') < 1) {
+      alert(isEn ? 'Please enter a valid email address.' : 'يرجى إدخال بريد إلكتروني صحيح.');
+      if (emailEl) emailEl.focus();
+      return;
+    }
+
     btn.disabled = true;
     btn.textContent = isEn ? 'Sending…' : 'جارٍ الإرسال…';
 
     var payload = {
       subject: isEn ? 'New enquiry — Graphics House website' : 'استفسار جديد، موقع جرافيكس هاوس',
       from_name: 'Graphics House Website',
-      name: document.getElementById('ghName').value,
-      company: document.getElementById('ghCompany').value,
-      project_type: document.getElementById('ghProject').value,
-      phone: document.getElementById('ghPhone').value,
-      brief: document.getElementById('ghBrief').value,
+      name: name,
+      company: company,
+      project_type: projectType,
+      phone: phone,
+      email: email,
+      brief: brief,
+      source: 'float',
+      page: typeof location !== 'undefined' ? location.href : '',
+      message:
+        (brief ? brief + '\n\n' : '') +
+        'Company: ' + (company || '—') + '\n' +
+        'Project type: ' + (projectType || '—') + '\n' +
+        'Phone: ' + phone + '\n' +
+        'Email: ' + email,
       botcheck: ''
     };
 
@@ -112,7 +145,7 @@
             if (thanks) thanks.style.display = 'none';
           }, 3000);
         } else {
-          alert(isEn ? 'Something went wrong. Please try again.' : 'حدث خطأ، يرجى المحاولة مرة أخرى.');
+          alert((res && res.message) || (isEn ? 'Something went wrong. Please try again.' : 'حدث خطأ، يرجى المحاولة مرة أخرى.'));
         }
       })
       .catch(function () {

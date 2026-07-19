@@ -1985,7 +1985,7 @@ gtag('config','G-Y67JVE898Z');
 </div>
 
 <!-- Float widgets -->
-<script defer src="../assets/gh-float-widgets.js?v=7"></script>
+<script defer src="../assets/gh-float-widgets.js?v=8"></script>
 <script defer src="../assets/service-page.js?v=4"></script>
 <script>
 (function () {
@@ -2092,6 +2092,8 @@ gtag('config','G-Y67JVE898Z');
   var form     = document.getElementById('plLeadForm');
   var feedback = document.getElementById('plFormFeedback');
   var submitBtn= document.getElementById('plSubmitBtn');
+  var isAdsLp = document.body.getAttribute('data-pl-ads') === '1' ||
+    /project-launch-ads/i.test(location.pathname || '');
   var FREE_EMAIL_DOMAINS = {
     'gmail.com':1,'googlemail.com':1,'yahoo.com':1,'yahoo.co.uk':1,'yahoo.fr':1,
     'hotmail.com':1,'hotmail.co.uk':1,'outlook.com':1,'live.com':1,'msn.com':1,
@@ -2101,6 +2103,10 @@ gtag('config','G-Y67JVE898Z');
     'qq.com':1,'163.com':1,'126.com':1,'rediffmail.com':1,
     'outlook.sa':1,'hotmail.sa':1,'live.sa':1
   };
+
+  function plIsValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email || '').trim());
+  }
 
   function plIsCompanyEmail(email) {
     var m = String(email || '').trim().toLowerCase().match(/^[^@\s]+@([^@\s]+\.[^@\s]+)$/);
@@ -2135,10 +2141,18 @@ gtag('config','G-Y67JVE898Z');
       var cityVal = (form.querySelector('[name=city]').value || '').trim();
 
       if (!nameVal || !phoneVal || !emailVal) {
-        plShowFormError('يرجى إدخال الاسم الكامل ورقم الجوال وبريد الشركة.');
+        plShowFormError(isAdsLp
+          ? 'يرجى إدخال الاسم الكامل ورقم الجوال والبريد الإلكتروني.'
+          : 'يرجى إدخال الاسم الكامل ورقم الجوال وبريد الشركة.');
         return;
       }
-      if (!plIsCompanyEmail(emailVal)) {
+      if (!plIsValidEmail(emailVal)) {
+        plShowFormError('يرجى إدخال بريد إلكتروني صحيح.');
+        form.querySelector('[name=email]').focus();
+        return;
+      }
+      /* صفحات الإعلانات تقبل البريد الشخصي؛ الموقع الرئيسي يطلب بريد الشركة */
+      if (!isAdsLp && !plIsCompanyEmail(emailVal)) {
         plShowFormError('يرجى استخدام بريد الشركة (وليس Gmail أو Hotmail أو ما شابه)، مع الاسم الكامل ورقم الجوال.');
         form.querySelector('[name=email]').focus();
         return;
@@ -2148,7 +2162,9 @@ gtag('config','G-Y67JVE898Z');
         return;
       }
       if (phoneVal.replace(/\D/g, '').length < 8) {
-        plShowFormError('يرجى إدخال رقم جوال صحيح مع الاسم وبريد الشركة.');
+        plShowFormError(isAdsLp
+          ? 'يرجى إدخال رقم جوال صحيح مع الاسم والبريد الإلكتروني.'
+          : 'يرجى إدخال رقم جوال صحيح مع الاسم وبريد الشركة.');
         form.querySelector('[name=phone]').focus();
         return;
       }
@@ -2162,6 +2178,16 @@ gtag('config','G-Y67JVE898Z');
         email:        emailVal,
         project_type: typeVal,
         city:         cityVal,
+        source:       isAdsLp ? 'ads' : 'project-launch',
+        page:         location.href,
+        message:
+          'Name: ' + nameVal + '\n' +
+          'Company: ' + companyVal + '\n' +
+          'Phone: ' + phoneVal + '\n' +
+          'Email: ' + emailVal + '\n' +
+          'Project type: ' + typeVal + '\n' +
+          'City: ' + cityVal + '\n' +
+          'Page: ' + location.href,
         botcheck:     ''
       };
       submitBtn.disabled = true;
@@ -2236,6 +2262,8 @@ gtag('config','G-Y67JVE898Z');
       </select>
       <label class="gh-sr-only" for="ghPhone">الجوال / واتساب</label>
       <input class="gh-field" type="tel" id="ghPhone" placeholder="الجوال / واتساب *" required dir="ltr" aria-label="الجوال أو واتساب">
+      <label class="gh-sr-only" for="ghEmail">البريد الإلكتروني</label>
+      <input class="gh-field" type="email" id="ghEmail" placeholder="البريد الإلكتروني *" required dir="ltr" aria-label="البريد الإلكتروني">
       <label class="gh-sr-only" for="ghBrief">نبذة عن المشروع</label>
       <textarea class="gh-field" id="ghBrief" rows="3" placeholder="نبذة مختصرة عن مشروعك..." style="resize:none" aria-label="نبذة مختصرة عن مشروعك"></textarea>
       <button type="submit" class="gh-submit">إرسال الطلب ←</button>

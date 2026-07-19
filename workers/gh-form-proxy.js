@@ -199,10 +199,18 @@ async function handleForm(body, env, cors) {
   const key = env.WEB3FORMS_ACCESS_KEY;
   if (!key) return json({ success: false, message: 'Form proxy not configured' }, 503, cors);
 
-  /* Lead forms that include email must use a company domain */
+  const allowPersonalEmail =
+    body?.source === 'ads' ||
+    body?.source === 'float' ||
+    /Ads/i.test(String(body?.subject || ''));
+
+  /* Lead forms that include email: prefer company domain, except ads/float leads */
   if (body && typeof body.email === 'string' && body.email.trim()) {
     const email = body.email.trim();
-    if (!validEmail(email) || !isCompanyEmail(email)) {
+    if (!validEmail(email)) {
+      return json({ success: false, message: 'Invalid email address.' }, 400, cors);
+    }
+    if (!allowPersonalEmail && !isCompanyEmail(email)) {
       return json(
         {
           success: false,
@@ -227,6 +235,21 @@ async function handleForm(body, env, cors) {
         cors
       );
     }
+  }
+
+  /* Ensure Web3Forms gets a readable message body */
+  if (body && !body.message) {
+    const lines = [
+      body.company && `Company: ${body.company}`,
+      body.project_type && `Project type: ${body.project_type}`,
+      body.city && `City: ${body.city}`,
+      body.phone && `Phone: ${body.phone}`,
+      body.email && `Email: ${body.email}`,
+      body.brief && `Brief: ${body.brief}`,
+      body.page && `Page: ${body.page}`,
+      body.source && `Source: ${body.source}`,
+    ].filter(Boolean);
+    if (lines.length) body.message = lines.join('\n');
   }
 
   const { ok, data } = await forwardWeb3Forms(body, key);
