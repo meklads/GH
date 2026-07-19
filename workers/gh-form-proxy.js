@@ -34,6 +34,29 @@ function validEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+const FREE_EMAIL_DOMAINS = new Set([
+  'gmail.com', 'googlemail.com', 'yahoo.com', 'yahoo.co.uk', 'yahoo.fr',
+  'hotmail.com', 'hotmail.co.uk', 'outlook.com', 'live.com', 'msn.com',
+  'icloud.com', 'me.com', 'mac.com', 'aol.com', 'protonmail.com', 'proton.me',
+  'mail.com', 'gmx.com', 'gmx.net', 'yandex.com', 'yandex.ru', 'zoho.com',
+  'mail.ru', 'inbox.com', 'fastmail.com', 'tutanota.com', 'hey.com',
+  'qq.com', '163.com', '126.com', 'rediffmail.com',
+  'outlook.sa', 'hotmail.sa', 'live.sa',
+]);
+
+function isCompanyEmail(email) {
+  const m = String(email || '').trim().toLowerCase().match(/^[^@\s]+@([^@\s]+\.[^@\s]+)$/);
+  if (!m) return false;
+  const domain = m[1];
+  if (FREE_EMAIL_DOMAINS.has(domain)) return false;
+  const parts = domain.split('.');
+  if (parts.length >= 3) {
+    const base = parts.slice(-2).join('.');
+    if (FREE_EMAIL_DOMAINS.has(base)) return false;
+  }
+  return true;
+}
+
 async function forwardWeb3Forms(body, key) {
   const payload = { ...body };
   delete payload.access_key;
@@ -175,6 +198,36 @@ async function handleSubscribe(body, env, cors, request) {
 async function handleForm(body, env, cors) {
   const key = env.WEB3FORMS_ACCESS_KEY;
   if (!key) return json({ success: false, message: 'Form proxy not configured' }, 503, cors);
+
+  /* Lead forms that include email must use a company domain */
+  if (body && typeof body.email === 'string' && body.email.trim()) {
+    const email = body.email.trim();
+    if (!validEmail(email) || !isCompanyEmail(email)) {
+      return json(
+        {
+          success: false,
+          message:
+            'يرجى استخدام بريد الشركة (وليس Gmail أو Hotmail أو ما شابه)، مع الاسم الكامل ورقم الجوال.',
+        },
+        400,
+        cors
+      );
+    }
+  }
+  if (body && (body.name !== undefined || body.phone !== undefined)) {
+    const name = String(body.name || '').trim();
+    const phone = String(body.phone || '').replace(/\D/g, '');
+    if (!name || phone.length < 8) {
+      return json(
+        {
+          success: false,
+          message: 'يرجى إدخال الاسم الكامل ورقم الجوال وبريد الشركة.',
+        },
+        400,
+        cors
+      );
+    }
+  }
 
   const { ok, data } = await forwardWeb3Forms(body, key);
   return json(data, ok ? 200 : 502, cors);

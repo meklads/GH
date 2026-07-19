@@ -1511,7 +1511,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
           </div>
           <div>
             <label for="pl-email">البريد الإلكتروني</label>
-            <input id="pl-email" name="email" type="email" autocomplete="email" required placeholder="name@company.com" dir="ltr">
+            <input id="pl-email" name="email" type="email" autocomplete="email" required placeholder="you@yourcompany.com" dir="ltr">
           </div>
           <div>
             <label for="pl-type">نوع المشروع</label>
@@ -1852,20 +1852,76 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   var form     = document.getElementById('plLeadForm');
   var feedback = document.getElementById('plFormFeedback');
   var submitBtn= document.getElementById('plSubmitBtn');
+  var FREE_EMAIL_DOMAINS = {
+    'gmail.com':1,'googlemail.com':1,'yahoo.com':1,'yahoo.co.uk':1,'yahoo.fr':1,
+    'hotmail.com':1,'hotmail.co.uk':1,'outlook.com':1,'live.com':1,'msn.com':1,
+    'icloud.com':1,'me.com':1,'mac.com':1,'aol.com':1,'protonmail.com':1,'proton.me':1,
+    'mail.com':1,'gmx.com':1,'gmx.net':1,'yandex.com':1,'yandex.ru':1,'zoho.com':1,
+    'mail.ru':1,'inbox.com':1,'fastmail.com':1,'tutanota.com':1,'hey.com':1,
+    'qq.com':1,'163.com':1,'126.com':1,'rediffmail.com':1,
+    'outlook.sa':1,'hotmail.sa':1,'live.sa':1
+  };
+
+  function plIsCompanyEmail(email) {
+    var m = String(email || '').trim().toLowerCase().match(/^[^@\s]+@([^@\s]+\.[^@\s]+)$/);
+    if (!m) return false;
+    var domain = m[1];
+    if (FREE_EMAIL_DOMAINS[domain]) return false;
+    /* block common free subdomains like mail.yahoo.com */
+    var parts = domain.split('.');
+    if (parts.length >= 3) {
+      var base = parts.slice(-2).join('.');
+      if (FREE_EMAIL_DOMAINS[base]) return false;
+    }
+    return true;
+  }
+
+  function plShowFormError(msg) {
+    feedback.textContent = msg;
+    feedback.className = 'ar-form-full ar-form-feedback error';
+  }
+
   if (form && feedback && submitBtn) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var bot = form.querySelector('[name=botcheck]');
       if (bot && bot.value) return;
+
+      var nameVal = (form.querySelector('[name=name]').value || '').trim();
+      var phoneVal = (form.querySelector('[name=phone]').value || '').trim();
+      var emailVal = (form.querySelector('[name=email]').value || '').trim();
+      var companyVal = (form.querySelector('[name=company]').value || '').trim();
+      var typeVal = form.querySelector('[name=project_type]').value;
+      var cityVal = (form.querySelector('[name=city]').value || '').trim();
+
+      if (!nameVal || !phoneVal || !emailVal) {
+        plShowFormError('يرجى إدخال الاسم الكامل ورقم الجوال وبريد الشركة.');
+        return;
+      }
+      if (!plIsCompanyEmail(emailVal)) {
+        plShowFormError('يرجى استخدام بريد الشركة (وليس Gmail أو Hotmail أو ما شابه)، مع الاسم الكامل ورقم الجوال.');
+        form.querySelector('[name=email]').focus();
+        return;
+      }
+      if (!companyVal || !typeVal || !cityVal) {
+        plShowFormError('يرجى إكمال بيانات الشركة ونوع المشروع والمدينة.');
+        return;
+      }
+      if (phoneVal.replace(/\D/g, '').length < 8) {
+        plShowFormError('يرجى إدخال رقم جوال صحيح مع الاسم وبريد الشركة.');
+        form.querySelector('[name=phone]').focus();
+        return;
+      }
+
       var data = {
         subject:      'ProjectLaunch\u2122: طلب جلسة إطلاق',
         from_name:    'Graphics House Site',
-        name:         form.querySelector('[name=name]').value,
-        company:      form.querySelector('[name=company]').value,
-        phone:        form.querySelector('[name=phone]').value,
-        email:        form.querySelector('[name=email]').value,
-        project_type: form.querySelector('[name=project_type]').value,
-        city:         form.querySelector('[name=city]').value,
+        name:         nameVal,
+        company:      companyVal,
+        phone:        phoneVal,
+        email:        emailVal,
+        project_type: typeVal,
+        city:         cityVal,
         botcheck:     ''
       };
       submitBtn.disabled = true;
@@ -1886,11 +1942,12 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
           feedback.classList.add('success');
           form.reset();
           if (window.gtag) gtag('event', 'form_submit', { event_category: 'lead', event_label: 'project-launch' });
-        } else { throw new Error('submission failed'); }
+        } else {
+          plShowFormError(res.message || 'حدث خطأ. يرجى المحاولة مرة أخرى أو التواصل عبر واتساب.');
+        }
       })
       .catch(function () {
-        feedback.textContent = 'حدث خطأ. يرجى المحاولة مرة أخرى أو التواصل عبر واتساب.';
-        feedback.classList.add('error');
+        plShowFormError('حدث خطأ. يرجى المحاولة مرة أخرى أو التواصل عبر واتساب.');
       })
       .finally(function () {
         submitBtn.disabled = false;
