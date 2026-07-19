@@ -93,7 +93,7 @@ if (!html.includes('Ads LP — no site header')) {
 /* Corner brand logo inside hero (like DAMAC promotions — not a nav) */
 if (!html.includes('class="pl-ads-brand"')) {
   html = html.replace(
-    /(<section class="pl-hero relative h-screen flex items-center justify-center overflow-hidden(?: overflow-x-clip)?">)/,
+    /(<section class="pl-hero relative h-screen[^"]*">)/,
     `$1\n  <a class="pl-ads-brand" href="../index-ar.html" aria-label="Graphics House">\n    <img src="../assets/logo-gold.png" alt="Graphics House" width="160" height="44">\n  </a>`
   );
 }

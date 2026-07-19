@@ -160,12 +160,46 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   #loader-bar-track { width:180px; height:1px; background:rgba(201,168,76,.18); margin-top:20px; overflow:hidden; }
   #loader-bar { height:100%; width:0; background:#C9A84C; transition:width 1s cubic-bezier(.4,0,.2,1); }
 
-  /* ---- Hero (DAMAC-inspired: airy, white type, pill CTAs) ---- */
+  /* ---- Hero (DAMAC/home-inspired: vignette sides + bottom caps) ---- */
   .pl-hero .svc-hero-scrim { display:none !important; }
+  .pl-hero {
+    position:relative;
+    isolation:isolate;
+    background:#0A0A0A;
+  }
+  .pl-hero-media {
+    position:absolute; inset:0; z-index:0; overflow:hidden;
+  }
+  .pl-hero-media img {
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  /* Homepage-style side black vignette */
+  .pl-hero-vignette {
+    position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:radial-gradient(ellipse 75% 55% at 50% 50%, transparent 30%, rgba(0,0,0,.5) 55%, rgba(0,0,0,.8) 75%, #000 100%);
+  }
+  .pl-hero-bottom-glow {
+    position:absolute; left:0; right:0; bottom:0; height:55%;
+    z-index:2; pointer-events:none;
+    background:linear-gradient(to top, rgba(8,8,8,.88) 0%, rgba(8,8,8,.42) 42%, transparent 100%);
+  }
+  /* Bottom stack like homepage: copy + caps at foot of hero */
+  .pl-hero-bottom-panel {
+    position:absolute; left:0; right:0; bottom:0; top:auto;
+    z-index:10; display:flex; flex-direction:column; align-items:center;
+    justify-content:flex-end; width:100%;
+    padding:0 clamp(16px,4vw,32px) clamp(28px,4vw,52px);
+    box-sizing:border-box; pointer-events:none;
+  }
+  .pl-hero-bottom-panel__inner {
+    position:relative; z-index:2; width:100%; max-width:1280px;
+    display:flex; flex-direction:column; align-items:center;
+    pointer-events:auto;
+  }
   .pl-hero-copy-card {
     position:relative; z-index:2; max-width:52rem; margin-inline:auto;
     padding:8px 12px 12px; background:transparent; border:none;
-    text-align:center;
+    text-align:center; width:100%;
   }
   .pl-hero-copy-card, .pl-hero-copy-card * { text-align:center !important; }
   .pl-hero-eyebrow-ar {
@@ -193,10 +227,10 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     font-weight:300 !important; line-height:1.85; margin:0 auto 28px !important;
     opacity:1 !important; max-width:34em;
   }
-  /* Hero capabilities bar — same pattern as homepage */
+  /* Hero capabilities bar — pinned at bottom like homepage */
   .pl-hero .hero-caps-bar {
     display:flex; align-items:center; gap:8px; flex-wrap:nowrap;
-    justify-content:center; margin-top:28px; padding:10px 4px 4px;
+    justify-content:center; margin-top:18px; margin-bottom:4px; padding:10px 4px 4px;
     width:100%; position:relative; z-index:25;
     overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
   }
@@ -927,15 +961,13 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   @media (max-width:768px) {
     html, body { overflow-x:clip; }
 
-    /* Hero: breathe + fit content without clipping caps */
+    /* Hero: bottom-panel stack like homepage */
     .pl-hero {
       min-height:100svh !important;
-      height:auto !important;
-      padding:calc(88px + env(safe-area-inset-top)) 0 calc(28px + env(safe-area-inset-bottom));
-      align-items:flex-end !important;
+      height:100svh !important;
     }
-    .pl-hero .relative.z-10 {
-      padding-bottom:8px;
+    .pl-hero-bottom-panel {
+      padding:0 16px calc(22px + env(safe-area-inset-bottom));
     }
     .pl-hero-copy-card {
       max-width:100%;
@@ -965,7 +997,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
       -webkit-box-orient:vertical;
       overflow:hidden;
     }
-    .pl-hero .flex.flex-wrap {
+    .pl-hero-copy-card .flex.flex-wrap {
       flex-direction:column;
       align-items:stretch;
       gap:10px !important;
@@ -980,8 +1012,8 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 
     /* Caps bar: scrollable with edge fade + snap */
     .pl-hero .hero-caps-bar {
-      margin-top:18px;
-      padding:8px 16px 6px;
+      margin-top:14px;
+      padding:8px 4px 2px;
       justify-content:flex-start;
       gap:6px;
       scroll-snap-type:x mandatory;
@@ -1080,7 +1112,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   }
 
   @media (max-width:480px) {
-    .pl-hero { padding-top:calc(76px + env(safe-area-inset-top)); }
+    .pl-hero-bottom-panel { padding-bottom:calc(16px + env(safe-area-inset-bottom)); }
     .pl-hero-sub { -webkit-line-clamp:2; }
     .ar-steps { grid-template-columns:1fr 1fr !important; }
     .ar-step { padding:16px 10px 14px; }
@@ -1219,50 +1251,52 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 
 <!-- ===== 01. HERO — Full-screen MWL environment image ===== -->
-<section class="pl-hero relative h-screen flex items-center justify-center overflow-hidden overflow-x-clip">
-  <div class="absolute inset-x-0 -top-[10%] h-[120%] z-0">
+<section class="pl-hero relative h-screen overflow-hidden overflow-x-clip">
+  <div class="pl-hero-media">
     <picture>
       <source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp">
-      <img class="w-full h-full object-cover" src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="بيئة إطلاق متكاملة، رابطة العالم الإسلامي" loading="eager">
+      <img src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="بيئة إطلاق متكاملة، رابطة العالم الإسلامي" loading="eager">
     </picture>
-    <div class="svc-hero-scrim absolute inset-0"></div>
-    <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(0,0,0,.28) 0%,rgba(0,0,0,.12) 35%,rgba(0,0,0,.45) 68%,rgba(0,0,0,.72) 100%)"></div>
   </div>
-  <div class="relative z-10 text-center max-w-7xl px-4 sm:px-6 w-full">
-    <div class="pl-hero-copy-card">
-      <span class="pl-hero-eyebrow-ar hero-enter" style="transition-delay:0ms">الحل الرائد</span>
-      <h1 class="hero-enter" style="transition-delay:120ms"><span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span></h1>
-      <p class="pl-hero-tagline hero-enter" style="transition-delay:200ms">من الهوية المعمارية إلى صالة بيع تُغلق الصفقات</p>
-      <p class="pl-hero-sub hero-enter" style="transition-delay:240ms">مجسمات ذكية، أفلام سينمائية، تجارب تفاعلية، ديكور، تصوير وإخراج في منظومة بصرية واحدة.</p>
-      <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-5" style="transition-delay:360ms">
-        <a href="#lead-form" class="pl-btn-pill pl-btn-pill-white" data-cta="hero-book">احجز جلسة إطلاق مشروعك</a>
-        <a href="../portfolio.html" class="pl-btn-pill pl-btn-pill-ghost">مشاهدة أعمالنا</a>
+  <div class="pl-hero-vignette" aria-hidden="true"></div>
+  <div class="pl-hero-bottom-glow" aria-hidden="true"></div>
+  <div class="pl-hero-bottom-panel">
+    <div class="pl-hero-bottom-panel__inner">
+      <div class="pl-hero-copy-card">
+        <span class="pl-hero-eyebrow-ar hero-enter" style="transition-delay:0ms">الحل الرائد</span>
+        <h1 class="hero-enter" style="transition-delay:120ms"><span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span></h1>
+        <p class="pl-hero-tagline hero-enter" style="transition-delay:200ms">من الهوية المعمارية إلى صالة بيع تُغلق الصفقات</p>
+        <p class="pl-hero-sub hero-enter" style="transition-delay:240ms">مجسمات ذكية، أفلام سينمائية، تجارب تفاعلية، ديكور، تصوير وإخراج في منظومة بصرية واحدة.</p>
+        <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-5" style="transition-delay:360ms">
+          <a href="#lead-form" class="pl-btn-pill pl-btn-pill-white" data-cta="hero-book">احجز جلسة إطلاق مشروعك</a>
+          <a href="../portfolio.html" class="pl-btn-pill pl-btn-pill-ghost">مشاهدة أعمالنا</a>
+        </div>
       </div>
-    </div>
-    <div class="hero-caps-bar hero-enter" style="transition-delay:480ms" aria-label="قدرات المنظومة">
-      <div class="cap-bar-item">
-        <img loading="lazy" src="../assets/icons/tech.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-        <span class="cap-bar-label">ميديا برودكشن</span>
-      </div>
-      <div class="cap-bar-dot" aria-hidden="true"></div>
-      <div class="cap-bar-item">
-        <img loading="lazy" src="../assets/icons/gallery.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-        <span class="cap-bar-label">جاليريات وديكور إعلاني</span>
-      </div>
-      <div class="cap-bar-dot" aria-hidden="true"></div>
-      <div class="cap-bar-item">
-        <img loading="lazy" src="../assets/icons/models.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-        <span class="cap-bar-label">مجسمات ذكية</span>
-      </div>
-      <div class="cap-bar-dot" aria-hidden="true"></div>
-      <div class="cap-bar-item">
-        <img loading="lazy" src="../assets/icons/interactive.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-        <span class="cap-bar-label">تجارب تفاعلية</span>
-      </div>
-      <div class="cap-bar-dot" aria-hidden="true"></div>
-      <div class="cap-bar-item">
-        <img loading="lazy" src="../assets/icons/cinematic.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-        <span class="cap-bar-label">سينمائي CGI</span>
+      <div class="hero-caps-bar hero-enter" style="transition-delay:480ms" aria-label="قدرات المنظومة">
+        <div class="cap-bar-item">
+          <img loading="lazy" src="../assets/icons/tech.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+          <span class="cap-bar-label">ميديا برودكشن</span>
+        </div>
+        <div class="cap-bar-dot" aria-hidden="true"></div>
+        <div class="cap-bar-item">
+          <img loading="lazy" src="../assets/icons/gallery.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+          <span class="cap-bar-label">جاليريات وديكور إعلاني</span>
+        </div>
+        <div class="cap-bar-dot" aria-hidden="true"></div>
+        <div class="cap-bar-item">
+          <img loading="lazy" src="../assets/icons/models.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+          <span class="cap-bar-label">مجسمات ذكية</span>
+        </div>
+        <div class="cap-bar-dot" aria-hidden="true"></div>
+        <div class="cap-bar-item">
+          <img loading="lazy" src="../assets/icons/interactive.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+          <span class="cap-bar-label">تجارب تفاعلية</span>
+        </div>
+        <div class="cap-bar-dot" aria-hidden="true"></div>
+        <div class="cap-bar-item">
+          <img loading="lazy" src="../assets/icons/cinematic.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+          <span class="cap-bar-label">سينمائي CGI</span>
+        </div>
       </div>
     </div>
   </div>
