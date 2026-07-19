@@ -718,7 +718,8 @@ ${footer}
 
 console.log('Building solution flagship pages…');
 for (const product of PRODUCTS) {
-  // Arabic ProjectLaunch is a dedicated conversion LP (build-project-launch-lp-ar.mjs)
+  // Arabic ProjectLaunch site page is hand-crafted (EN visuals + AR conversion);
+  // EN still built here. Ads LP: build-project-launch-lp-ar.mjs
   if (product.slug === 'project-launch') {
     buildPage(product, true);
     continue;

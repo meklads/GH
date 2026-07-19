@@ -386,7 +386,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
       <a class="nav-link" href="../casestudy1.html">مشاريع ناجحة</a>
       <a class="nav-link" href="../contact-us.html">للاتصال بنا</a>
       <a class="nav-link nav-link-accent" href="../insights/index.html">رؤى</a>
-      <a class="nav-link nav-mobile-cta" href="#lead-form">احجز جلسة استراتيجية</a>
+      <a class="nav-link nav-mobile-cta" href="#lead-form">احجز جلسة إطلاق مشروعك</a>
     </nav>
     <div class="nav-actions">
       <div class="lang-switch" role="group" aria-label="اختيار اللغة">
@@ -394,7 +394,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
         <span class="lang-switch-sep" aria-hidden="true">|</span>
         <a href="../index.html" class="lang-switch-link" hreflang="en">EN</a>
       </div>
-      <a href="#lead-form" class="nav-cta btn-pill btn-pill-gold">احجز جلسة استراتيجية</a>
+      <a href="#lead-form" class="nav-cta btn-pill btn-pill-gold">احجز جلسة إطلاق مشروعك</a>
     </div>
     <button type="button" class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav">
       <span class="material-symbols-outlined">menu</span>
@@ -459,8 +459,8 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <section class="py-[100px] bg-surface-container border-t border-white/5">
   <div class="px-8 md:px-12 max-w-container-max mx-auto">
     <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
-      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">المنهجية</span>
-      <h2 class="font-headline-xl text-on-background">كيف نعمل</h2>
+      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">كيف نعمل</span>
+      <h2 class="font-headline-xl text-on-background">المنهجية</h2>
     </div>
     <div class="svc-process-grid grid grid-cols-2 md:grid-cols-4 gap-8 relative">
       <div class="reveal text-center" style="opacity:0;transform:translateY(24px);transition-delay:0.00s">
@@ -768,6 +768,10 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
             <input id="pl-city" name="city" type="text" required placeholder="الرياض، جدة، …">
           </div>
           <div class="ar-form-full ar-form-feedback" id="plFormFeedback" aria-live="polite"></div>
+          <div class="gh-honeypot" aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0">
+            <label for="pl-botcheck">Leave blank</label>
+            <input id="pl-botcheck" type="text" name="botcheck" tabindex="-1" autocomplete="off">
+          </div>
           <div class="ar-form-full">
             <button class="ar-submit" type="submit" id="plSubmitBtn" data-cta="form-submit">احصل على تقييم جاهزية إطلاق مشروعك ←</button>
             <p class="ar-form-note">رد واضح خلال 24 ساعة — بدون التزام شراء في الجلسة الأولى</p>
@@ -982,15 +986,16 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     }, { threshold: 0.1 }).observe(formSec);
   }
 
-  /* ---- Lead form submission ---- */
+  /* ---- Lead form → GH form proxy ---- */
   var form     = document.getElementById('plLeadForm');
   var feedback = document.getElementById('plFormFeedback');
   var submitBtn= document.getElementById('plSubmitBtn');
   if (form && feedback && submitBtn) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      var bot = form.querySelector('[name=botcheck]');
+      if (bot && bot.value) return;
       var data = {
-        access_key:   'cd3e4509-7942-4ad3-a888-2af2910f5f6d',
         subject:      'ProjectLaunch™ — طلب جلسة إطلاق',
         from_name:    'Graphics House Site',
         name:         form.querySelector('[name=name]').value,
@@ -998,14 +1003,16 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
         phone:        form.querySelector('[name=phone]').value,
         email:        form.querySelector('[name=email]').value,
         project_type: form.querySelector('[name=project_type]').value,
-        city:         form.querySelector('[name=city]').value
+        city:         form.querySelector('[name=city]').value,
+        botcheck:     ''
       };
       submitBtn.disabled = true;
       submitBtn.textContent = 'جارٍ الإرسال…';
       feedback.textContent = '';
       feedback.className = 'ar-form-full ar-form-feedback';
 
-      fetch('https://api.web3forms.com/submit', {
+      var endpoint = (window.GH_FORMS && window.GH_FORMS.formEndpoint) || 'https://3dgraphicshouse.com/api/form';
+      fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)

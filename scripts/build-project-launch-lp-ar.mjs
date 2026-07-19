@@ -1,18 +1,18 @@
 /**
- * ProjectLaunch™ AR — light conversion pages.
- * Writes:
- *   - solutions/project-launch.html     (permanent site page + normal mega-nav header)
- *   - solutions/project-launch-ads.html (nav-free Meta/Google ads LP)
+ * ProjectLaunch™ AR — nav-free light ads landing page only.
+ * Writes: solutions/project-launch-ads.html
+ *
+ * Permanent site page (solutions/project-launch.html) is maintained separately
+ * (EN visual design + Arabic conversion sections) and must NOT be overwritten here.
+ *
  * Run: node scripts/build-project-launch-lp-ar.mjs
  */
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { analyticsHeadTags } from './analytics-snippet.mjs';
-import { renderHeader, renderFooter } from './layout-partials.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const OUT_SITE = path.join(ROOT, 'solutions', 'project-launch.html');
 const OUT_ADS = path.join(ROOT, 'solutions', 'project-launch-ads.html');
 const BASE = 'https://3dgraphicshouse.com';
 const PHONE = '+966502786513';
@@ -826,27 +826,16 @@ const MAIN = `<main id="main-content">
 
 </main>`;
 
-function buildHtml({ variant }) {
-  const isAds = variant === 'ads';
-  const pagePath = isAds ? '/solutions/project-launch-ads.html' : '/solutions/project-launch.html';
+function buildHtml() {
+  const pagePath = '/solutions/project-launch-ads.html';
   const pageUrl = `${BASE}${pagePath}`;
-  const bodyClass = isAds ? 'pl-lp' : 'pl-lp pl-site';
-  const robots = isAds ? '<meta name="robots" content="noindex,nofollow"/>\n' : '';
-  const hreflang = isAds
-    ? ''
-    : `<link rel="alternate" hreflang="en" href="${BASE}/solutions/project-launch-en.html">
-<link rel="alternate" hreflang="ar" href="${BASE}/solutions/project-launch.html">
-<link rel="alternate" hreflang="x-default" href="${BASE}/solutions/project-launch-en.html">
-`;
-  const siteAssets = isAds
-    ? ''
-    : `<script defer src="../assets/site-header.js?v=16"></script>
-<script defer src="../assets/lang-switch.js?v=2"></script>
-<link rel="stylesheet" href="../assets/site-header.css?v=31">
-`;
-  const chromeHeader = isAds ? adsHeader() : renderHeader(1, false);
-  const chromeFooter = isAds ? adsFooter() : renderFooter(1, false);
-  const floatWa = isAds ? adsFloatWa() : '';
+  const bodyClass = 'pl-lp';
+  const robots = '<meta name="robots" content="noindex,nofollow"/>\n';
+  const hreflang = '';
+  const siteAssets = '';
+  const chromeHeader = adsHeader();
+  const chromeFooter = adsFooter();
+  const floatWa = adsFloatWa();
 
   return `<!DOCTYPE html>
 <html class="scroll-smooth" dir="rtl" lang="ar">
@@ -959,6 +948,5 @@ ${floatWa}
 </html>`;
 }
 
-fs.writeFileSync(OUT_SITE, buildHtml({ variant: 'site' }), 'utf8');
-fs.writeFileSync(OUT_ADS, buildHtml({ variant: 'ads' }), 'utf8');
-console.log('Wrote solutions/project-launch.html (site + light) + solutions/project-launch-ads.html (ads LP + light)');
+fs.writeFileSync(OUT_ADS, buildHtml(), 'utf8');
+console.log('Wrote solutions/project-launch-ads.html (nav-free light ads LP)');

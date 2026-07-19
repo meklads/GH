@@ -151,7 +151,9 @@ function ensureHeaderCssOrder(html, prefix) {
 
 const SKIP = new Set([
   'home-v2-backup.html', 'en-backup.html', 'en-v2.html', 'offer-lite.html', 'gh-admin.html',
-  // Ads LP only — permanent AR ProjectLaunch uses normal site header
+  // ProjectLaunch AR site page keeps custom #lead-form header CTAs (not contact-us)
+  'solutions/project-launch.html',
+  // Ads LP — nav-free landing header
   'solutions/project-launch-ads.html',
 ]);
 
