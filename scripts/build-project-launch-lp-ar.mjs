@@ -84,6 +84,16 @@ const adsCss = `
     body.pl-ads-lp { padding-bottom: 84px; }
     body.pl-ads-lp .pl-ads-brand img { height: 36px; }
   }
+  /* Ads: full viewport hero (no site header offset) */
+  body.pl-ads-lp .pl-hero {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+  }
+  body.pl-ads-lp .pl-hero-bottom-panel {
+    padding-bottom: calc(36px + env(safe-area-inset-bottom));
+  }
+  body.pl-ads-lp .pl-ads-brand { z-index: 25; }
 `;
 
 if (!html.includes('Ads LP — no site header')) {
@@ -93,7 +103,7 @@ if (!html.includes('Ads LP — no site header')) {
 /* Corner brand logo inside hero (like DAMAC promotions — not a nav) */
 if (!html.includes('class="pl-ads-brand"')) {
   html = html.replace(
-    /(<section class="pl-hero relative h-screen[^"]*">)/,
+    /(<section class="pl-hero relative[^"]*">)/,
     `$1\n  <a class="pl-ads-brand" href="../index-ar.html" aria-label="Graphics House">\n    <img src="../assets/logo-gold.png" alt="Graphics House" width="160" height="44">\n  </a>`
   );
 }
