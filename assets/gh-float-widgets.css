@@ -14,7 +14,7 @@
 .gh-float {
   position: fixed;
   bottom: 32px;
-  /* Physical left only — same corner for English and Arabic */
+  /* Physical left — moved from the right side per request */
   left: 28px !important;
   right: auto !important;
   inset-inline: unset !important;
