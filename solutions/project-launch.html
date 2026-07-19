@@ -310,6 +310,78 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   .ar-feat-row:last-child { border-bottom:none; }
   .ar-feat-row .ms { color:#C9A84C; font-size:22px; flex-shrink:0; margin-top:2px; }
   .ar-feat-row p { margin:0; font-size:15px; color:#1A1A1A; line-height:1.6; }
+
+  /* ---- Curated collaborations (DAMAC-style grid) ---- */
+  .ar-collab {
+    background:#FAFAF8;
+    padding:clamp(72px,10vw,120px) 0;
+  }
+  .ar-collab-inner {
+    max-width:1180px; margin:0 auto; padding:0 clamp(20px,4vw,48px);
+  }
+  .ar-collab-head { text-align:center; max-width:42rem; margin:0 auto 48px; }
+  .ar-collab-head h2 {
+    font-family:'Playfair Display', 'Tajawal', serif;
+    font-size:clamp(26px,3.5vw,40px); font-weight:700;
+    color:#0A0A0A; letter-spacing:.04em; margin:0 0 16px; line-height:1.3;
+  }
+  .ar-collab-head p {
+    font-family:'Tajawal',sans-serif; font-size:15px; line-height:1.85;
+    color:#555; margin:0;
+  }
+  .ar-collab-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+  @media(max-width:900px){ .ar-collab-grid { grid-template-columns:repeat(2,1fr); gap:14px; } }
+  @media(max-width:560px){ .ar-collab-grid { grid-template-columns:1fr; gap:14px; } }
+  .ar-collab-card {
+    position:relative; display:flex; flex-direction:column; justify-content:space-between;
+    aspect-ratio:3/4; border-radius:18px; overflow:hidden;
+    text-decoration:none; color:#fff;
+    isolation:isolate;
+  }
+  .ar-collab-card img.ar-collab-bg {
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; z-index:0;
+    transition:transform .7s cubic-bezier(.4,0,.2,1);
+  }
+  .ar-collab-card:hover img.ar-collab-bg { transform:scale(1.06); }
+  .ar-collab-card::after {
+    content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,transparent 38%,transparent 52%,rgba(0,0,0,.78) 100%);
+  }
+  .ar-collab-logo {
+    position:relative; z-index:2;
+    display:flex; align-items:center; justify-content:center;
+    padding:28px 20px 0; min-height:88px;
+  }
+  .ar-collab-logo img {
+    max-height:52px; width:auto; max-width:70%;
+    object-fit:contain;
+    filter:brightness(0) invert(1);
+    opacity:.95;
+  }
+  .ar-collab-logo .ar-collab-brand {
+    font-family:'Tajawal',sans-serif; font-size:15px; font-weight:800;
+    color:#fff; letter-spacing:.06em; text-align:center;
+    text-shadow:0 1px 12px rgba(0,0,0,.45);
+  }
+  .ar-collab-copy {
+    position:relative; z-index:2;
+    padding:0 18px 24px; text-align:center;
+  }
+  .ar-collab-copy strong {
+    display:block; font-family:'Tajawal',sans-serif;
+    font-size:clamp(15px,1.4vw,17px); font-weight:800;
+    margin:0 0 8px; line-height:1.35; color:#fff;
+  }
+  .ar-collab-copy span {
+    display:block; font-family:'Tajawal',sans-serif;
+    font-size:13px; line-height:1.65; color:rgba(255,255,255,.88);
+    font-weight:500;
+  }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ProjectLaunch&#8482;","description":"منظومة متكاملة لإطلاق المشاريع العقارية، من إقناع المستثمر إلى تجربة صالة البيع.","url":"https://3dgraphicshouse.com/solutions/project-launch.html","brand":{"@type":"Brand","name":"Graphics House"},"provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","telephone":"+966502786513"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
 </head>
@@ -749,6 +821,66 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
         <h4 class="font-headline-md text-on-background mb-3">هل تخدمون مشاريع خارج الرياض؟</h4>
         <p class="font-body-md text-secondary opacity-70 leading-relaxed">نعم، نخدم مشاريع في جميع مدن المملكة والخليج (الإمارات، عُمان، البحرين، مصر)، مع إنتاج وتركيب ميداني.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CURATED COLLABORATIONS ===== -->
+<section class="ar-collab" id="collaborations" aria-label="شراكات ومشاريع مختارة">
+  <div class="ar-collab-inner">
+    <div class="ar-collab-head reveal" style="opacity:0;transform:translateY(24px)">
+      <h2>شراكات ومشاريع مختارة</h2>
+      <p>نعمل مع مطورين ومؤسسات رائدة في المملكة لتحويل المشاريع إلى تجارب إطلاق تُقنع المستثمر وتُغلق البيع.</p>
+    </div>
+    <div class="ar-collab-grid">
+      <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.00s">
+        <img class="ar-collab-bg" src="../assets/projects/rendering/alrajhi2.jpeg" alt="مشروع الراجحي بمكة" loading="lazy">
+        <div class="ar-collab-logo"><span class="ar-collab-brand">مصرف الراجحي</span></div>
+        <div class="ar-collab-copy">
+          <strong>مشروع الراجحي بمكة</strong>
+          <span>تصور معماري ومجسمات لإطلاق مشروع حضري بجوار المشاعر المقدسة</span>
+        </div>
+      </a>
+      <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.05s">
+        <img class="ar-collab-bg" src="../assets/projects/rendering/kuday-makkah1.jpeg" alt="مشروع مكيون برج التلال" loading="lazy">
+        <div class="ar-collab-logo"><img src="../assets/clients-logo/makyon.png" alt="مكيون"></div>
+        <div class="ar-collab-copy">
+          <strong>مكيون · برج التلال</strong>
+          <span>إظهار سينمائي وهوية بصرية لبرج سكني بمعايير إطلاق راقية</span>
+        </div>
+      </a>
+      <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.10s">
+        <img class="ar-collab-bg" src="../assets/projects/animation/rafal-pavilions.jpg" alt="مشروع رفال بافيليونز" loading="lazy">
+        <div class="ar-collab-logo"><img src="../assets/clients-logo/rafal.png" alt="رفال"></div>
+        <div class="ar-collab-copy">
+          <strong>رفال بافيليونز</strong>
+          <span>أفلام إطلاق وتجارب عرض تبني حضور المشروع في السوق</span>
+        </div>
+      </a>
+      <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
+        <img class="ar-collab-bg" src="../assets/projects/animation/market-center.jpg" alt="مشروع السوق المركزي" loading="lazy">
+        <div class="ar-collab-logo"><span class="ar-collab-brand">السوق المركزي</span></div>
+        <div class="ar-collab-copy">
+          <strong>السوق المركزي</strong>
+          <span>منظومة بصرية متكاملة لبيئة تجارية قابلة للبيع قبل الافتتاح</span>
+        </div>
+      </a>
+      <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.20s">
+        <img class="ar-collab-bg" src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="مشروع عنان إسكان" loading="lazy">
+        <div class="ar-collab-logo"><img src="../assets/clients-logo/anan-eskan.png" alt="عنان إسكان"></div>
+        <div class="ar-collab-copy">
+          <strong>عنان إسكان</strong>
+          <span>تصور ومجسمات ذكية حوّلت عرض المشروع إلى تجربة إقناع</span>
+        </div>
+      </a>
+      <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.25s">
+        <img class="ar-collab-bg" src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="مشروع رابطة العالم الإسلامي" loading="lazy">
+        <div class="ar-collab-logo"><img src="../assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"></div>
+        <div class="ar-collab-copy">
+          <strong>رابطة العالم الإسلامي</strong>
+          <span>بيئة إطلاق تفاعلية بمعايير مؤسسية عالمية المستوى</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
