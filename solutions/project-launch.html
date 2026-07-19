@@ -79,9 +79,16 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif !important;
     color: #0A0A0A !important;
   }
-  /* Overlay titles on dark photos stay white */
+  /* Overlay titles on dark photos stay white (beat rtl headline !important) */
   .ar-env-card h3,
+  .ar-env-card .font-headline-md,
+  html[dir='rtl'] .ar-env-card h3,
+  html[dir='rtl'] .ar-env-card .font-headline-md,
   .ar-collab-copy strong { color: #fff !important; }
+  .ar-env-card a {
+    color: #fff !important;
+  }
+  .ar-env-card a:hover { opacity: .85; }
 
 
   /* Trademark glyph (TM) — LTR mark, correct superscript seat */
