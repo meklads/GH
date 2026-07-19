@@ -941,6 +941,178 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   }
   html[dir='ltr'] .pl-hero-tagline { color: #fff !important; }
 
+  /* ==========================================
+     MOBILE RESPONSIVE POLISH
+     ========================================== */
+  @media (max-width:768px) {
+    html, body { overflow-x:clip; }
+
+    /* Hero: breathe + fit content without clipping caps */
+    .pl-hero {
+      min-height:100svh !important;
+      height:auto !important;
+      padding:calc(88px + env(safe-area-inset-top)) 0 calc(28px + env(safe-area-inset-bottom));
+      align-items:flex-end !important;
+    }
+    .pl-hero .relative.z-10 {
+      padding-bottom:8px;
+    }
+    .pl-hero-copy-card {
+      max-width:100%;
+      padding:0 2px 4px;
+    }
+    .pl-hero-eyebrow-ar {
+      font-size:10px; letter-spacing:.2em; margin-bottom:12px;
+      padding:6px 14px;
+    }
+    .pl-hero h1 {
+      font-size:clamp(30px,9vw,42px) !important;
+      margin-bottom:10px !important;
+      line-height:1.15 !important;
+    }
+    .pl-hero-tagline {
+      font-size:clamp(15px,4.2vw,18px) !important;
+      margin-bottom:10px !important;
+      max-width:20em;
+    }
+    .pl-hero-sub {
+      font-size:14px !important;
+      line-height:1.7 !important;
+      margin:0 auto 18px !important;
+      max-width:28em;
+      display:-webkit-box;
+      -webkit-line-clamp:3;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+    .pl-hero .flex.flex-wrap {
+      flex-direction:column;
+      align-items:stretch;
+      gap:10px !important;
+      max-width:320px;
+      margin-inline:auto;
+    }
+    .pl-hero .pl-btn-pill {
+      width:100%;
+      padding:14px 22px !important;
+      font-size:14px !important;
+    }
+
+    /* Caps bar: scrollable with edge fade + snap */
+    .pl-hero .hero-caps-bar {
+      margin-top:18px;
+      padding:8px 16px 6px;
+      justify-content:flex-start;
+      gap:6px;
+      scroll-snap-type:x mandatory;
+      mask-image:linear-gradient(90deg,transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
+      -webkit-mask-image:linear-gradient(90deg,transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
+    }
+    .pl-hero .cap-bar-item {
+      scroll-snap-align:start;
+      padding:8px 12px;
+      gap:8px;
+    }
+    .pl-hero .cap-bar-item img { height:24px !important; }
+    .pl-hero .cap-bar-label { font-size:11px; font-family:Inter,'Helvetica Neue',Arial,sans-serif; }
+
+    /* Sections: tighter vertical rhythm */
+    .py-\[100px\] { padding-top:64px !important; padding-bottom:64px !important; }
+    .px-8 { padding-left:20px !important; padding-right:20px !important; }
+
+    .ar-system { gap:28px; }
+    .ar-system-media .ar-img-frame {
+      border-radius:18px;
+      aspect-ratio:16/10;
+    }
+    .ar-feat-row { padding:10px 0; gap:10px; }
+    .ar-feat-row .ms { width:32px; height:32px; font-size:16px !important; }
+    .ar-feat-row p { font-size:13px; }
+
+    .ar-steps { gap:12px; }
+    .ar-step { padding:20px 14px 18px; border-radius:18px; }
+    .ar-step-num { font-size:22px; margin-bottom:8px; }
+    .ar-step p { font-size:13px; }
+
+    .ar-metrics { padding:48px 0; }
+    .ar-metric { padding:20px 16px; }
+    .ar-metric strong { font-size:clamp(32px,10vw,44px); margin-bottom:8px; }
+
+    .ar-outcomes { padding:64px 0 !important; }
+    .ar-outcomes-head { margin-bottom:32px; }
+    .ar-outcomes-head p { font-size:14px; }
+    .ar-outcomes-media { border-radius:16px; }
+    .ar-outcome-card { padding:16px; }
+
+    .ar-story { border-radius:18px; }
+    .ar-story-img { min-height:220px; aspect-ratio:16/10; }
+    .ar-story-badge {
+      font-size:10px; padding:6px 12px;
+      max-width:calc(100% - 32px);
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .ar-story-body { padding:22px 18px; }
+    .ar-story-brand img { height:36px; }
+    .ar-story-steps div { padding:12px 14px; border-radius:12px; }
+    .ar-story-steps p { font-size:13px; line-height:1.7; }
+
+    .ar-assess li { padding:14px 0; font-size:14px; gap:12px; }
+    .ar-assess .q { width:28px; height:28px; font-size:12px; }
+    .ar-assess-note { font-size:14px; padding:16px; }
+
+    .ar-form-sec { padding:64px 0 !important; }
+    .ar-form-box { padding:24px 18px; border-radius:18px; }
+    .ar-form-box h2 { font-size:clamp(22px,6vw,28px); }
+    .ar-urgency {
+      font-size:13px; padding:12px 14px; gap:8px;
+      flex-wrap:wrap; justify-content:center; text-align:center;
+    }
+    .ar-reassure { padding:20px 16px; border-radius:18px; }
+    .ar-submit { font-size:14px; padding:16px 18px; }
+
+    .ar-collab { padding:64px 0 !important; }
+    .ar-collab-head { margin-bottom:28px; }
+    .ar-collab-copy strong { font-size:14px; }
+    .ar-collab-copy span { font-size:12px; }
+
+    .ar-media-card { border-radius:16px; overflow:hidden; }
+    .ar-media-frame { border-radius:16px; }
+    .ar-media-body { padding:14px 4px 4px; }
+
+    .pl-s3-thumbs { grid-template-columns:repeat(4,1fr) !important; gap:6px; }
+    .pl-btn-pill { padding:14px 24px !important; font-size:14px !important; }
+
+    /* Sticky CTA clears float widgets + back-to-top */
+    .ar-sticky {
+      padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+      box-shadow:0 -8px 28px rgba(10,10,10,.08);
+    }
+    .ar-sticky .ar-submit { font-size:14px; padding:14px 16px; border-radius:14px; }
+    body:has(.ar-sticky) .gh-float {
+      bottom:calc(72px + env(safe-area-inset-bottom)) !important;
+    }
+    body:has(.ar-sticky) #back-top {
+      bottom:calc(72px + env(safe-area-inset-bottom)) !important;
+    }
+    body:has(.ar-sticky) .gh-footer {
+      padding-bottom:calc(96px + env(safe-area-inset-bottom));
+    }
+  }
+
+  @media (max-width:480px) {
+    .pl-hero { padding-top:calc(76px + env(safe-area-inset-top)); }
+    .pl-hero-sub { -webkit-line-clamp:2; }
+    .ar-steps { grid-template-columns:1fr 1fr !important; }
+    .ar-step { padding:16px 10px 14px; }
+    .ar-step p { font-size:12px; line-height:1.45; }
+    .pl-s3-thumbs { grid-template-columns:repeat(3,1fr) !important; }
+    .font-headline-xl { font-size:clamp(24px,7vw,32px) !important; line-height:1.3 !important; }
+  }
+
+  @media (max-width:360px) {
+    .pl-hero .cap-bar-label { font-size:10px; }
+    .ar-steps { grid-template-columns:1fr !important; }
+  }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ProjectLaunch&#8482;","description":"An integrated system for real estate project launches — from investor persuasion to the sales gallery experience.","url":"https://3dgraphicshouse.com/solutions/project-launch-en.html","brand":{"@type":"Brand","name":"Graphics House"},"provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","telephone":"+966502786513"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
 </head>
@@ -1081,7 +1253,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 
 <!-- ===== 01. HERO — Full-screen MWL environment image ===== -->
-<section class="pl-hero relative h-screen flex items-center justify-center overflow-hidden">
+<section class="pl-hero relative h-screen flex items-center justify-center overflow-hidden overflow-x-clip">
   <div class="absolute inset-x-0 -top-[10%] h-[120%] z-0">
     <picture>
       <source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp">

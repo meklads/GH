@@ -93,8 +93,16 @@ if (!html.includes('Ads LP — no site header')) {
 /* Corner brand logo inside hero (like DAMAC promotions — not a nav) */
 if (!html.includes('class="pl-ads-brand"')) {
   html = html.replace(
-    /(<section class="pl-hero relative h-screen flex items-center justify-center overflow-hidden">)/,
+    /(<section class="pl-hero relative h-screen flex items-center justify-center overflow-hidden(?: overflow-x-clip)?">)/,
     `$1\n  <a class="pl-ads-brand" href="../index-ar.html" aria-label="Graphics House">\n    <img src="../assets/logo-gold.png" alt="Graphics House" width="160" height="44">\n  </a>`
+  );
+}
+
+/* Ads mobile: less top pad (no site header) */
+if (!html.includes('Ads mobile hero pad')) {
+  html = html.replace(
+    '</style>',
+    `  /* Ads mobile hero pad */\n  @media (max-width:768px) {\n    body.pl-ads-lp .pl-hero {\n      padding-top: calc(72px + env(safe-area-inset-top)) !important;\n    }\n  }\n</style>`
   );
 }
 
