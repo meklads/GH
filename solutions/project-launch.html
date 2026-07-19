@@ -460,25 +460,59 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     background:linear-gradient(90deg,transparent,#C9A84C,transparent);
   }
 
-  /* ---- Featured row: oval check icons ---- */
-  .ar-feat-row {
-    display:flex; align-items:center; gap:14px;
-    padding:10px 0; border-bottom:1px solid rgba(10,10,10,.06);
+  /* ---- Featured services: 2 vertical columns ---- */
+  .ar-system {
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:clamp(28px,4vw,56px);
+    align-items:center;
   }
-  .ar-feat-row:last-child { border-bottom:none; }
+  @media(max-width:900px){
+    .ar-system { grid-template-columns:1fr; gap:36px; }
+    .ar-system-media { order:-1; }
+  }
+  .ar-feat-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:repeat(3, auto);
+    grid-auto-flow:column;
+    gap:4px 28px;
+    margin:8px 0 0;
+  }
+  @media(max-width:560px){
+    .ar-feat-grid {
+      grid-template-columns:1fr;
+      grid-template-rows:none;
+      grid-auto-flow:row;
+    }
+  }
+  .ar-feat-row {
+    display:flex; align-items:center; gap:12px;
+    padding:12px 0; border-bottom:1px solid rgba(10,10,10,.06);
+  }
+  .ar-feat-row:nth-child(3),
+  .ar-feat-row:nth-child(6) { border-bottom:none; }
+  @media(max-width:560px){
+    .ar-feat-row:nth-child(3) { border-bottom:1px solid rgba(10,10,10,.06); }
+    .ar-feat-row:last-child { border-bottom:none; }
+  }
   .ar-feat-row .ms {
-    width:38px; height:38px; border-radius:999px; flex-shrink:0;
+    width:36px; height:36px; border-radius:999px; flex-shrink:0;
     display:inline-flex; align-items:center; justify-content:center;
     background:rgba(201,168,76,.12); color:#8B7330 !important;
-    font-size:20px !important; margin-top:0;
+    font-size:18px !important; margin-top:0;
   }
-  .ar-feat-row p { margin:0; font-size:15px; color:#1A1A1A; line-height:1.7; font-weight:300; }
-  .ar-metric span { font-size:14px; color:rgba(255,255,255,.72); font-weight:300; letter-spacing:.04em; }
-  .ar-assess li {
-    font-weight:300;
+  .ar-feat-row p {
+    margin:0; font-size:14px; color:#1A1A1A !important;
+    line-height:1.55; font-weight:300;
   }
-  .ar-reassure li {
-    font-weight:300;
+  .ar-system-media .ar-img-frame {
+    border-radius:24px; overflow:hidden;
+    box-shadow:0 24px 56px rgba(10,10,10,.14);
+    aspect-ratio:5/4;
+  }
+  .ar-system-media .ar-img-frame img {
+    display:block; width:100%; height:100%; object-fit:cover;
   }
 
   /* ---- Methodology oval steps ---- */
@@ -865,12 +899,12 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 
 <!-- ===== 02. THE COMPLETE SYSTEM ===== -->
 <section class="py-[100px] px-8 md:px-12">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
-    <div class="reveal w-full md:w-1/2" style="opacity:0;transform:translateY(24px)">
-      <span class="svc-tag mb-8 block">الحل الرائد</span>
-      <h2 class="font-headline-xl text-on-background mb-8">المنظومة الكاملة لإطلاق مشروعك</h2>
-      <p class="font-body-lg text-secondary mb-10 opacity-80 leading-relaxed"><span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> تجمع كل قدرة تحتاجها لفتح المبيعات قبل الخرسانة، لغة بصرية واحدة.</p>
-      <div class="space-y-1">
+  <div class="max-w-7xl mx-auto ar-system">
+    <div class="reveal ar-system-copy" style="opacity:0;transform:translateY(24px)">
+      <span class="svc-tag mb-6 block">الحل الرائد</span>
+      <h2 class="font-headline-xl text-on-background mb-6">المنظومة الكاملة لإطلاق مشروعك</h2>
+      <p class="font-body-lg text-secondary mb-8 opacity-80 leading-relaxed"><span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> تجمع كل قدرة تحتاجها لفتح المبيعات قبل الخرسانة، لغة بصرية واحدة.</p>
+      <div class="ar-feat-grid">
         <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>هوية بصرية متكاملة للمشروع العقاري</p></div>
         <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>رندرات فوتوريالستك وأفلام CGI سينمائية</p></div>
         <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>مجسمات ذكية بطبقات إضاءة وإظهار رقمي</p></div>
@@ -878,13 +912,13 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
         <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>ديكور صالة البيع وتأثيث كل أصل بصري</p></div>
         <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>تصوير وإخراج وتركيب في الموقع</p></div>
       </div>
-      <div class="mt-10 flex gap-6">
+      <div class="mt-10">
         <a href="#lead-form" class="pl-btn-pill pl-btn-on-light" data-cta="system-book">احجز جلسة إطلاق مشروعك</a>
       </div>
     </div>
-    <div class="reveal w-full md:w-1/2 relative" style="opacity:0;transform:translateY(24px);transition-delay:.2s">
+    <div class="reveal ar-system-media" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
       <div class="ar-img-frame">
-        <img class="w-full" src="../assets/news/makkah-charter-01.jpeg" alt="بيئة إطلاق متكاملة" loading="lazy"/>
+        <img src="../assets/news/makkah-charter-02.jpeg" alt="منظومة إطلاق متكاملة: مجسم ذكي وتجارب تفاعلية" loading="lazy" width="1200" height="960"/>
       </div>
     </div>
   </div>
