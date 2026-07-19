@@ -155,6 +155,7 @@ const SKIP = new Set([
   'solutions/project-launch.html',
   // Ads LP — nav-free landing header
   'solutions/project-launch-ads.html',
+  'solutions/project-launch-ads-en.html',
 ]);
 
 function syncFile(rel) {

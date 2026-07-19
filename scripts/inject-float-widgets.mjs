@@ -20,6 +20,7 @@ const SKIP = new Set([
   'en.html',
   // Ads LP has its own WA float — skip site float chrome
   'solutions/project-launch-ads.html',
+  'solutions/project-launch-ads-en.html',
 ]);
 
 const HOMEPAGE_SKIP_REPLACE = new Set(['index.html', 'index-ar.html']);
