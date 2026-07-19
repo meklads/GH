@@ -193,16 +193,50 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     font-weight:300 !important; line-height:1.85; margin:0 auto 28px !important;
     opacity:1 !important; max-width:34em;
   }
-  .pl-hero-trust {
-    display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
-    margin-top:28px;
+  /* Hero capabilities bar — same pattern as homepage */
+  .pl-hero .hero-caps-bar {
+    display:flex; align-items:center; gap:8px; flex-wrap:nowrap;
+    justify-content:center; margin-top:28px; padding:10px 4px 4px;
+    width:100%; position:relative; z-index:25;
+    overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
   }
-  .pl-hero-trust span {
-    font-family:'Tajawal',sans-serif; font-size:12px; font-weight:500;
-    color:rgba(255,255,255,.9); padding:8px 16px; border-radius:999px;
-    border:1px solid rgba(255,255,255,.28); background:rgba(255,255,255,.08);
+  .pl-hero .hero-caps-bar::-webkit-scrollbar { display:none; }
+  .pl-hero .cap-bar-item {
+    display:flex; align-items:center; gap:10px; padding:10px 18px;
+    background:rgba(8,12,10,.72); border:1px solid rgba(201,168,76,.22);
+    border-radius:8px; transition:all .3s ease; cursor:default;
     backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
-    letter-spacing:.02em;
+    flex-shrink:0;
+  }
+  .pl-hero .cap-bar-item:hover {
+    background:rgba(201,168,76,.08); border-color:rgba(201,168,76,.4);
+    transform:translateY(-2px);
+  }
+  .pl-hero .cap-bar-item img {
+    height:32px; width:auto; filter:brightness(.85) saturate(.7); transition:filter .3s;
+  }
+  .pl-hero .cap-bar-item:hover img { filter:brightness(1) saturate(.9); }
+  .pl-hero .cap-bar-label {
+    font-size:13px; font-weight:600; color:rgba(255,255,255,.8);
+    white-space:nowrap; font-family:Inter,'Helvetica Neue',Arial,sans-serif;
+    transition:color .3s; letter-spacing:.01em;
+  }
+  .pl-hero .cap-bar-item:hover .cap-bar-label { color:#C9A84C; }
+  .pl-hero .cap-bar-dot {
+    width:4px; height:4px; border-radius:50%;
+    background:rgba(201,168,76,.35); flex-shrink:0;
+  }
+  @media (max-width:768px) {
+    .pl-hero .cap-bar-item { padding:8px 12px; }
+    .pl-hero .cap-bar-item img { height:26px; }
+    .pl-hero .cap-bar-label { font-size:11px; }
+  }
+  @media (max-width:480px) {
+    .pl-hero .cap-bar-dot { display:none; }
+    .pl-hero .hero-caps-bar { justify-content:flex-start; gap:6px; }
+    .pl-hero .cap-bar-item { padding:6px 10px; }
+    .pl-hero .cap-bar-item img { height:22px; }
+    .pl-hero .cap-bar-label { font-size:10px; }
   }
   /* DAMAC white pill CTAs — larger readable Arabic */
   .pl-btn-pill {
@@ -1056,7 +1090,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     <div class="svc-hero-scrim absolute inset-0"></div>
     <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(0,0,0,.28) 0%,rgba(0,0,0,.12) 35%,rgba(0,0,0,.45) 68%,rgba(0,0,0,.72) 100%)"></div>
   </div>
-  <div class="relative z-10 text-center max-w-5xl px-6 w-full">
+  <div class="relative z-10 text-center max-w-7xl px-4 sm:px-6 w-full">
     <div class="pl-hero-copy-card">
       <span class="pl-hero-eyebrow-ar hero-enter" style="transition-delay:0ms">Flagship solution</span>
       <h1 class="hero-enter" style="transition-delay:120ms"><span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span></h1>
@@ -1066,11 +1100,31 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
         <a href="#lead-form" class="pl-btn-pill pl-btn-pill-white" data-cta="hero-book">Book a launch session</a>
         <a href="../portfolio-en.html" class="pl-btn-pill pl-btn-pill-ghost">View our work</a>
       </div>
-      <div class="pl-hero-trust hero-enter" style="transition-delay:480ms">
-        <span>Visual identity</span>
-        <span>CGI films</span>
-        <span>Smart maquettes</span>
-        <span>Sales gallery</span>
+    </div>
+    <div class="hero-caps-bar hero-enter" style="transition-delay:480ms" aria-label="System capabilities">
+      <div class="cap-bar-item">
+        <img loading="lazy" src="../assets/icons/tech.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+        <span class="cap-bar-label">Media Production</span>
+      </div>
+      <div class="cap-bar-dot" aria-hidden="true"></div>
+      <div class="cap-bar-item">
+        <img loading="lazy" src="../assets/icons/gallery.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+        <span class="cap-bar-label">Galleries &amp; Decor</span>
+      </div>
+      <div class="cap-bar-dot" aria-hidden="true"></div>
+      <div class="cap-bar-item">
+        <img loading="lazy" src="../assets/icons/models.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+        <span class="cap-bar-label">Smart Maquettes</span>
+      </div>
+      <div class="cap-bar-dot" aria-hidden="true"></div>
+      <div class="cap-bar-item">
+        <img loading="lazy" src="../assets/icons/interactive.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+        <span class="cap-bar-label">Interactive Experiences</span>
+      </div>
+      <div class="cap-bar-dot" aria-hidden="true"></div>
+      <div class="cap-bar-item">
+        <img loading="lazy" src="../assets/icons/cinematic.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+        <span class="cap-bar-label">Cinematic CGI</span>
       </div>
     </div>
   </div>
