@@ -771,10 +771,20 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     border:0; object-fit:cover;
     border-radius:22px;
   }
-  .ar-outcomes-media:has(video),
+  .ar-outcomes-media > video {
+    position:relative; inset:auto;
+    width:100%; height:auto;
+    display:block; object-fit:unset;
+    border-radius:4px;
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+  }
   .ar-outcomes-media:has(iframe) {
     aspect-ratio:16 / 9; overflow:hidden; background:#111;
     box-shadow:0 16px 44px rgba(10,10,10,.12);
+  }
+  .ar-outcomes-media:has(video) {
+    aspect-ratio:auto; overflow:visible; background:transparent;
+    box-shadow:none;
   }
 
   /* Homepage MWL gallery (s3) — scoped for ProjectLaunch */
@@ -1090,16 +1100,9 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
         <p class="ar-outcomes-note">* تُحدَّد الأولويات حسب مرحلة مشروعك وميزانية الإطلاق</p>
       </div>
       <div class="ar-outcomes-media reveal" style="opacity:0;transform:translateY(24px);transition-delay:.1s">
-        <div class="pl-s3-wrap" data-pl-gallery data-main-id="plGalOutcomesImg">
-          <div class="pl-s3-image" data-pl-lightbox>
-            <img loading="lazy" id="plGalOutcomesImg" src="../assets/news/makkah-charter-01.jpeg" alt="مشروع ميثاق مكة، رابطة العالم الإسلامي">
-            <div class="pl-s3-corner tl"></div>
-            <div class="pl-s3-corner tr"></div>
-            <div class="pl-s3-corner bl"></div>
-            <div class="pl-s3-corner br"></div>
-          </div>
-          <div class="pl-s3-thumbs" data-pl-thumbs></div>
-        </div>
+        <video class="gh-autoplay" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="../assets/projects/animation/real-estate-services.jpg" title="خدمات العقارات — Graphics House">
+          <source src="../assets/videos/GH-Real-estate-services.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
