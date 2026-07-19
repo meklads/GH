@@ -609,6 +609,12 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     object-fit:cover;
     transform:none;
   }
+  .ar-media-frame--gallery {
+    aspect-ratio:auto;
+    overflow:visible;
+    background:transparent;
+    padding:14px 14px 4px;
+  }
   .ar-env-card {
     border-radius:20px; overflow:hidden;
     border:1px solid rgba(10,10,10,.06);
@@ -753,17 +759,73 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     color:#666; font-weight:300;
   }
   .ar-outcomes-media {
-    position:relative; border-radius:22px; overflow:hidden;
-    background:#111; width:100%;
-    aspect-ratio:16 / 9;
-    min-height:0;
-    box-shadow:0 16px 44px rgba(10,10,10,.12);
+    position:relative; border-radius:22px; overflow:visible;
+    background:transparent; width:100%;
+    aspect-ratio:auto; min-height:0;
+    box-shadow:none;
   }
-  .ar-outcomes-media iframe,
-  .ar-outcomes-media video {
+  .ar-outcomes-media > video,
+  .ar-outcomes-media > iframe {
     position:absolute; inset:0;
     width:100%; height:100%;
     border:0; object-fit:cover;
+    border-radius:22px;
+  }
+  .ar-outcomes-media:has(video),
+  .ar-outcomes-media:has(iframe) {
+    aspect-ratio:16 / 9; overflow:hidden; background:#111;
+    box-shadow:0 16px 44px rgba(10,10,10,.12);
+  }
+
+  /* Homepage MWL gallery (s3) — scoped for ProjectLaunch */
+  .pl-s3-wrap { position:relative; width:100%; }
+  .pl-s3-image {
+    position:relative; width:100%; border-radius:4px; overflow:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,.08); cursor:pointer; background:#111;
+  }
+  .pl-s3-image img {
+    width:100%; height:auto; display:block;
+    transition:transform 1.2s cubic-bezier(.25,.1,.1,1);
+  }
+  .pl-s3-image:hover img { transform:scale(1.04); }
+  .pl-s3-corner {
+    position:absolute; z-index:3; pointer-events:none;
+    width:22px; height:22px; opacity:.5; transition:all .4s ease;
+  }
+  .pl-s3-corner.tl { top:10px; left:10px; border-top:1.5px solid #C9A84C; border-left:1.5px solid #C9A84C; }
+  .pl-s3-corner.tr { top:10px; right:10px; border-top:1.5px solid #C9A84C; border-right:1.5px solid #C9A84C; }
+  .pl-s3-corner.bl { bottom:10px; left:10px; border-bottom:1.5px solid #C9A84C; border-left:1.5px solid #C9A84C; }
+  .pl-s3-corner.br { bottom:10px; right:10px; border-bottom:1.5px solid #C9A84C; border-right:1.5px solid #C9A84C; }
+  .pl-s3-image:hover .pl-s3-corner { opacity:.9; width:28px; height:28px; }
+  .pl-s3-thumbs {
+    display:grid; grid-template-columns:repeat(6,1fr); gap:8px;
+    margin-top:14px; direction:rtl;
+  }
+  @media(max-width:560px){ .pl-s3-thumbs { grid-template-columns:repeat(3,1fr); gap:6px; } }
+  .pl-s3-thumb {
+    width:100%; aspect-ratio:1; border-radius:4px; overflow:hidden; cursor:pointer;
+    border:2px solid rgba(0,0,0,.08); transition:all .3s ease; background:#1A1A1A;
+  }
+  .pl-s3-thumb img { width:100%; height:100%; object-fit:cover; transition:transform .3s ease; }
+  .pl-s3-thumb:hover { border-color:#C9A84C; transform:translateY(-2px); }
+  .pl-s3-thumb:hover img { transform:scale(1.08); }
+  .pl-s3-thumb.active {
+    border-color:#C9A84C; box-shadow:0 0 12px rgba(201,168,76,.25);
+  }
+  .pl-s3-lightbox {
+    display:none; position:fixed; inset:0; z-index:100000;
+    background:rgba(0,0,0,.88); align-items:center; justify-content:center;
+    padding:24px; opacity:0; transition:opacity .25s ease;
+  }
+  .pl-s3-lightbox.open { display:flex; opacity:1; }
+  .pl-s3-lightbox img {
+    max-width:min(1100px,96vw); max-height:90vh; object-fit:contain;
+    border-radius:4px; box-shadow:0 20px 60px rgba(0,0,0,.45);
+  }
+  .pl-s3-lightbox-close {
+    position:absolute; top:18px; inset-inline-end:18px;
+    width:44px; height:44px; border-radius:50%; border:none;
+    background:rgba(255,255,255,.12); color:#fff; font-size:22px; cursor:pointer;
   }
   .ar-outcomes-note {
     margin-top:14px; font-size:12px; color:#888; font-family:'Tajawal',sans-serif;
@@ -1028,9 +1090,16 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
         <p class="ar-outcomes-note">* تُحدَّد الأولويات حسب مرحلة مشروعك وميزانية الإطلاق</p>
       </div>
       <div class="ar-outcomes-media reveal" style="opacity:0;transform:translateY(24px);transition-delay:.1s">
-        <video class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="../assets/videos/interactive-touch-screen-poster.jpg" title="ماذا ستحصل عليه مع ProjectLaunch">
-          <source src="../assets/videos/interactive-touch-screen.mp4" type="video/mp4">
-        </video>
+        <div class="pl-s3-wrap" data-pl-gallery data-main-id="plGalOutcomesImg">
+          <div class="pl-s3-image" data-pl-lightbox>
+            <img loading="lazy" id="plGalOutcomesImg" src="../assets/news/makkah-charter-01.jpeg" alt="مشروع ميثاق مكة، رابطة العالم الإسلامي">
+            <div class="pl-s3-corner tl"></div>
+            <div class="pl-s3-corner tr"></div>
+            <div class="pl-s3-corner bl"></div>
+            <div class="pl-s3-corner br"></div>
+          </div>
+          <div class="pl-s3-thumbs" data-pl-thumbs></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1095,11 +1164,18 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     <h2 class="font-headline-xl text-on-background">نماذج ذكية وعروض تفاعلية</h2>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="reveal ar-media-card" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
-      <div class="ar-media-frame">
-        <video class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="../assets/videos/interactive-touch-screen-poster.jpg" title="مجسم تفاعلي ذكي">
-          <source src="../assets/videos/interactive-touch-screen.mp4" type="video/mp4">
-        </video>
+    <div class="reveal ar-media-card md:col-span-2" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
+      <div class="ar-media-frame ar-media-frame--gallery">
+        <div class="pl-s3-wrap" data-pl-gallery data-main-id="plGalMaquetteImg">
+          <div class="pl-s3-image" data-pl-lightbox>
+            <img loading="lazy" id="plGalMaquetteImg" src="../assets/news/makkah-charter-01.jpeg" alt="مشروع ميثاق مكة، رابطة العالم الإسلامي">
+            <div class="pl-s3-corner tl"></div>
+            <div class="pl-s3-corner tr"></div>
+            <div class="pl-s3-corner bl"></div>
+            <div class="pl-s3-corner br"></div>
+          </div>
+          <div class="pl-s3-thumbs" data-pl-thumbs></div>
+        </div>
       </div>
       <div class="ar-media-body">
         <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">i-MAQUETTE</span>
@@ -1566,6 +1642,12 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   <button class="ar-submit" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})" data-cta="sticky-book">احجز جلسة إطلاق مشروعك</button>
 </div>
 
+<!-- MWL gallery lightbox -->
+<div class="pl-s3-lightbox" id="plS3Lightbox" role="dialog" aria-modal="true" aria-label="عرض الصورة">
+  <button type="button" class="pl-s3-lightbox-close" id="plS3LightboxClose" aria-label="إغلاق">&times;</button>
+  <img id="plS3LightboxImg" src="" alt="">
+</div>
+
 <!-- Float widgets -->
 <script defer src="../assets/gh-float-widgets.js?v=6"></script>
 <!-- GH FLOAT START -->
@@ -1629,6 +1711,96 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     var ldr = document.getElementById('loader');
     if (bar) bar.style.width = '100%';
     setTimeout(function () { if (ldr) ldr.classList.add('out'); }, 400);
+  });
+
+  /* ---- Homepage-style MWL gallery (replaces interactive-touch-screen.mp4) ---- */
+  var PL_S3_IMGS = [
+    '../assets/news/makkah-charter-01.jpeg',
+    '../assets/news/makkah-charter-02.jpeg',
+    '../assets/news/makkah-charter-03.jpeg',
+    '../assets/news/makkah-charter-04.jpeg',
+    '../assets/news/makkah-charter-05.jpeg',
+    '../assets/news/makkah-charter-06.jpeg',
+    '../assets/news/makkah-charter-07.jpeg',
+    '../assets/news/makkah-charter-08.jpeg',
+    '../assets/news/makkah-charter-09.jpeg',
+    '../assets/news/makkah-charter-10.jpeg',
+    '../assets/news/makkah-charter-11.jpeg',
+    '../assets/news/makkah-charter-12.jpeg'
+  ];
+
+  function plInitGalleries() {
+    document.querySelectorAll('[data-pl-gallery]').forEach(function (wrap) {
+      var mainId = wrap.getAttribute('data-main-id');
+      var mainImg = document.getElementById(mainId);
+      var thumbs = wrap.querySelector('[data-pl-thumbs]');
+      var lightEl = wrap.querySelector('[data-pl-lightbox]');
+      if (!mainImg || !thumbs) return;
+
+      thumbs.innerHTML = '';
+      PL_S3_IMGS.forEach(function (src, i) {
+        var thumb = document.createElement('div');
+        thumb.className = 'pl-s3-thumb' + (i === 0 ? ' active' : '');
+        thumb.setAttribute('role', 'button');
+        thumb.setAttribute('tabindex', '0');
+        thumb.setAttribute('aria-label', 'معرض ميثاق مكة ' + (i + 1));
+        var img = document.createElement('img');
+        img.loading = 'lazy';
+        img.src = src;
+        img.alt = 'معرض ميثاق مكة ' + (i + 1);
+        thumb.appendChild(img);
+        function activate() {
+          mainImg.setAttribute('src', src);
+          thumbs.querySelectorAll('.pl-s3-thumb').forEach(function (t) {
+            t.classList.remove('active');
+          });
+          thumb.classList.add('active');
+        }
+        thumb.addEventListener('click', activate);
+        thumb.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            activate();
+          }
+        });
+        thumbs.appendChild(thumb);
+      });
+
+      if (lightEl) {
+        lightEl.addEventListener('click', function () {
+          plOpenLightbox(mainImg.getAttribute('src'));
+        });
+      }
+    });
+  }
+
+  function plOpenLightbox(src) {
+    var box = document.getElementById('plS3Lightbox');
+    var img = document.getElementById('plS3LightboxImg');
+    if (!box || !img || !src) return;
+    img.src = src;
+    box.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function plCloseLightbox() {
+    var box = document.getElementById('plS3Lightbox');
+    if (!box) return;
+    box.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  plInitGalleries();
+  var lb = document.getElementById('plS3Lightbox');
+  var lbClose = document.getElementById('plS3LightboxClose');
+  if (lb) {
+    lb.addEventListener('click', function (e) {
+      if (e.target === lb) plCloseLightbox();
+    });
+  }
+  if (lbClose) lbClose.addEventListener('click', plCloseLightbox);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') plCloseLightbox();
   });
 
   /* ---- Hero enter animations ---- */
