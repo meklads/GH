@@ -81,7 +81,7 @@ function underConstructionHtml(project) {
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/site-header.css?v=32">
+<link rel="stylesheet" href="assets/site-header.css?v=33">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=21">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
