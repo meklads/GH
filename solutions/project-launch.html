@@ -56,11 +56,13 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     font-weight: 300 !important;
     letter-spacing: -0.01em;
     line-height: 1.4 !important;
+    color: #0A0A0A !important;
   }
   .font-headline-md,
   html[dir='rtl'] .font-headline-md {
     font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif !important;
     font-weight: 500 !important;
+    color: #0A0A0A !important;
   }
   .font-body-lg,
   .font-body-md,
@@ -69,7 +71,17 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif !important;
     font-weight: 300 !important;
   }
-  .gh-accent { font-weight: 700 !important; color: #C9A84C !important; }
+  h2, h3, h4,
+  .ar-collab-head h2,
+  .ar-outcomes-head h2,
+  .ar-form-box h2,
+  .ar-story-body h3 {
+    font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif !important;
+    color: #0A0A0A !important;
+  }
+  /* Overlay titles on dark photos stay white */
+  .ar-env-card h3,
+  .ar-collab-copy strong { color: #fff !important; }
 
 
   /* Trademark glyph (TM) — force Latin rendering */
@@ -149,9 +161,10 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     max-width:16em; letter-spacing:.02em;
   }
   .pl-hero-tagline {
-    color:#C9A84C !important; font-size:clamp(17px,2.2vw,26px);
+    color:#fff !important; font-size:clamp(17px,2.2vw,26px);
     font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif !important;
-    font-weight:300 !important; margin:0 auto 14px; line-height:1.5; max-width:22em;
+    font-weight:700 !important; margin:0 auto 14px; line-height:1.5; max-width:22em;
+    text-shadow:0 2px 18px rgba(0,0,0,.45);
   }
   .pl-hero-sub {
     color:rgba(255,255,255,.88) !important; font-size:clamp(15px,1.7vw,18px);
@@ -752,7 +765,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
     <div class="reveal w-full md:w-1/2" style="opacity:0;transform:translateY(24px)">
       <span class="svc-tag mb-8 block">الحل الرائد</span>
-      <h2 class="font-headline-xl text-on-background mb-8">المنظومة الكاملة لإطلاق <span class="gh-accent">مشروعك</span></h2>
+      <h2 class="font-headline-xl text-on-background mb-8">المنظومة الكاملة لإطلاق مشروعك</h2>
       <p class="font-body-lg text-secondary mb-10 opacity-80 leading-relaxed">ProjectLaunch&#8482; تجمع كل قدرة تحتاجها لفتح المبيعات قبل الخرسانة، لغة بصرية واحدة.</p>
       <div class="space-y-1">
         <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>هوية بصرية متكاملة للمشروع العقاري</p></div>
@@ -806,7 +819,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <section class="ar-outcomes" id="outcomes" aria-label="ما سيحصل عليه العميل">
   <div class="ar-outcomes-inner">
     <div class="ar-outcomes-head reveal" style="opacity:0;transform:translateY(24px)">
-      <h2>ماذا سيحصل عليه <span class="gh-accent">مشروعك؟</span></h2>
+      <h2>ماذا سيحصل عليه مشروعك؟</h2>
       <p>أصول إطلاق جاهزة للسوق… هوية، أفلام، مجسمات، وتجربة بيع في منظومة واحدةحدة تجعل المستثمر يفهم المشروع خلال دقائق.</p>
     </div>
     <div class="ar-outcomes-layout">
@@ -870,7 +883,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   <div class="flex justify-between items-end mb-12 reveal" style="opacity:0;transform:translateY(24px)">
     <div>
       <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">ما يثبت المنظومة</span>
-      <h2 class="font-headline-xl text-on-background">بيئات <span class="gh-accent">مختارة</span></h2>
+      <h2 class="font-headline-xl text-on-background">بيئات مختارة</h2>
     </div>
     <a href="../portfolio.html" class="border-b border-primary text-primary pb-1 font-label-caps text-[11px] tracking-widest hover:opacity-70 transition-opacity hidden md:block">كامل الأعمال</a>
   </div>
@@ -912,7 +925,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto ar-band-cream">
   <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
     <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">المجسمات والتفاعلي</span>
-    <h2 class="font-headline-xl text-on-background">نماذج ذكية وعروض <span class="gh-accent">تفاعلية</span></h2>
+    <h2 class="font-headline-xl text-on-background">نماذج ذكية وعروض تفاعلية</h2>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <div class="reveal ar-media-card" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
@@ -956,7 +969,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto">
   <div class="text-center mb-6 reveal" style="opacity:0;transform:translateY(24px)">
     <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">الأنيميشن وأفلام CGI</span>
-    <h2 class="font-headline-xl text-on-background mb-4">أفلام الإطلاق <span class="gh-accent">السينمائية</span></h2>
+    <h2 class="font-headline-xl text-on-background mb-4">أفلام الإطلاق السينمائية</h2>
     <p class="font-body-lg text-secondary opacity-70 max-w-2xl mx-auto">أفلام سينمائية تحمل نفس الهوية إلى أيام المستثمرين والحملات.</p>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
@@ -1003,7 +1016,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto ar-band-cream" id="stories">
   <div class="mb-12 reveal" style="opacity:0;transform:translateY(24px)">
     <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">قصص نجاح</span>
-    <h2 class="font-headline-xl text-on-background">كيف حوّلنا عرض المشروع إلى <span class="gh-accent">تجربة إقناع</span></h2>
+    <h2 class="font-headline-xl text-on-background">كيف حوّلنا عرض المشروع إلى تجربة إقناع</h2>
   </div>
 
   <!-- MWL Exhibition -->
@@ -1070,7 +1083,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   <div class="max-w-4xl mx-auto">
     <div class="reveal" style="opacity:0;transform:translateY(24px)">
       <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">تقييم سريع</span>
-      <h2 class="font-headline-xl text-on-background mb-4">هل مشروعك جاهز <span class="gh-accent">للإطلاق؟</span></h2>
+      <h2 class="font-headline-xl text-on-background mb-4">هل مشروعك جاهز للإطلاق؟</h2>
       <p class="font-body-lg text-secondary opacity-70">أجب بصراحة، هذه الأسئلة تكشف فجوة الجاهزية قبل يوم الإطلاق.</p>
     </div>
     <ul class="ar-assess reveal" style="opacity:0;transform:translateY(24px)">
@@ -1094,7 +1107,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   <div class="px-8 md:px-12 max-w-4xl mx-auto">
     <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
       <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">الأسئلة الشائعة</span>
-      <h2 class="font-headline-xl text-on-background">أسئلة يطرحها صنّاع القرار <span class="gh-accent">قبل الحجز</span></h2>
+      <h2 class="font-headline-xl text-on-background">أسئلة يطرحها صنّاع القرار قبل الحجز</h2>
     </div>
     <div class="reveal" style="opacity:0;transform:translateY(24px)">
       <div class="border-b border-black/5 py-7">
@@ -1125,7 +1138,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <section class="ar-collab" id="collaborations" aria-label="شراكات ومشاريع مختارة">
   <div class="ar-collab-inner">
     <div class="ar-collab-head reveal" style="opacity:0;transform:translateY(24px)">
-      <h2>شراكات ومشاريع <span class="gh-accent">مختارة</span></h2>
+      <h2>شراكات ومشاريع مختارة</h2>
       <p>نعمل مع مطورين ومؤسسات رائدة في المملكة لتحويل المشاريع إلى تجارب إطلاق تُقنع المستثمر وتُغلق البيع.</p>
     </div>
     <div class="ar-collab-grid">
@@ -1190,7 +1203,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     </div>
     <div class="ar-form-grid">
       <div class="ar-form-box reveal" style="opacity:0;transform:translateY(24px)">
-        <h2>هل مشروعك جاهز فعلاً <span class="gh-accent">للإطلاق؟</span></h2>
+        <h2>هل مشروعك جاهز فعلاً للإطلاق؟</h2>
         <p>أخبرنا عن مشروعك، جلسة التقييم مجانية بالكامل</p>
         <form class="ar-form" id="plLeadForm" novalidate>
           <div>
@@ -1259,7 +1272,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     <span class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-8" style="background:rgba(201,168,76,.14);color:#C9A84C">
       <span class="material-symbols-outlined ms-filled text-3xl">rocket_launch</span>
     </span>
-    <h2 class="font-headline-xl text-on-background mb-6">جاهز لإطلاق <span class="gh-accent">المنظومة الكاملة؟</span></h2>
+    <h2 class="font-headline-xl text-on-background mb-6">جاهز لإطلاق المنظومة الكاملة؟</h2>
     <p class="font-body-lg text-secondary opacity-70 mb-10">فريقنا يستطيع تحديد نطاق ProjectLaunch&#8482; ومشاركتك عرضًا واضحًا خلال 48 ساعة.</p>
     <a href="#lead-form" class="pl-btn-pill pl-btn-pill-gold font-label-caps text-label-caps inline-flex" data-cta="final-cta">احجز جلسة إطلاق مشروعك الآن</a>
   </div>
