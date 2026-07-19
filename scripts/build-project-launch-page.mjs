@@ -718,10 +718,11 @@ ${footer}
 
 console.log('Building solution flagship pages…');
 for (const product of PRODUCTS) {
-  // Arabic ProjectLaunch site page is hand-crafted (EN visuals + AR conversion);
-  // EN still built here. Ads LP: build-project-launch-lp-ar.mjs
+  // ProjectLaunch AR + EN are hand-crafted peers (same design, bilingual copy).
+  // Do not regenerate them here. Ads LP: build-project-launch-lp-ar.mjs
+  // EN rebuild from AR (optional): build-project-launch-en-from-ar.mjs
   if (product.slug === 'project-launch') {
-    buildPage(product, true);
+    console.log('  skip project-launch (hand-crafted AR + EN)');
     continue;
   }
   buildPage(product, false);
