@@ -21,7 +21,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ProjectLaunch™ | منظومة إطلاق المشاريع العقارية | Graphics House</title>
-<meta name="description" content="تخيّل أن يرى المستثمر مشروعك قبل أن يُبنى — وأن يفهمه العميل في دقائق داخل صالة البيع. ProjectLaunch™ منظومة إطلاق متكاملة من Graphics House."/>
+<meta name="description" content="تخيّل أن يرى المستثمر مشروعك قبل أن يُبنى، وأن يفهمه العميل في دقائق داخل صالة البيع. ProjectLaunch™ منظومة إطلاق متكاملة من Graphics House."/>
 <meta property="og:title" content="ProjectLaunch™ | Graphics House">
 <meta property="og:description" content="منظومة إطلاق تجعل مشروعك جاهزًا للسوق: إقناع المستثمر، تجربة البيع، وحضور قوي يوم الإطلاق.">
 <meta property="og:url" content="https://3dgraphicshouse.com/solutions/project-launch.html">
@@ -44,6 +44,14 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   /* ==========================================
      ARABIC-SPECIFIC OVERRIDES & ADDITIONS
      ========================================== */
+
+  /* Warm cream text instead of harsh pure white */
+  .font-headline-xl, .font-headline-md, .text-on-background {
+    color: #F3EDE2 !important;
+  }
+  .font-body-lg, .font-body-md, .text-secondary {
+    color: #C9C2B4 !important;
+  }
   .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
   ::-webkit-scrollbar { width:3px; }
   ::-webkit-scrollbar-track { background:#0A0A0A; }
@@ -64,30 +72,31 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   .pl-hero-copy-card {
     position:relative; z-index:2; max-width:54rem; margin-inline:auto;
     padding:32px 28px 36px; border-radius:2px;
-    background:rgba(0,0,0,.22); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
-    border:1px solid rgba(255,255,255,.08); text-align:center;
+    background:rgba(0,0,0,.28); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    border:1px solid rgba(201,168,76,.18); text-align:center;
   }
+  .pl-hero-copy-card, .pl-hero-copy-card * { text-align:center !important; }
   .pl-hero-eyebrow-ar {
     display:block; color:#C9A84C; font-size:11px; font-weight:800;
-    letter-spacing:.22em; text-transform:uppercase; margin-bottom:14px;
-    direction:ltr; unicode-bidi:isolate;
+    letter-spacing:.18em; margin-bottom:14px;
   }
   .pl-hero h1 {
-    color:#fff !important; text-shadow:0 2px 20px rgba(0,0,0,.4);
-    font-size:clamp(32px,5vw,64px); font-weight:800; line-height:1.22; margin:0 0 14px;
+    color:#F3EDE2 !important; text-shadow:0 2px 20px rgba(0,0,0,.45);
+    font-size:clamp(32px,5vw,64px); font-weight:800; line-height:1.22; margin:0 auto 14px;
+    max-width:16em;
   }
   .pl-hero-tagline {
     color:#C9A84C !important; font-size:clamp(17px,2.2vw,24px);
-    font-weight:700; margin:0 0 14px; line-height:1.4;
+    font-weight:700; margin:0 auto 14px; line-height:1.45; max-width:22em;
   }
   .pl-hero-sub {
-    color:rgba(255,255,255,.88) !important; font-size:clamp(15px,1.7vw,18px);
-    font-weight:400; line-height:1.75; margin:0 0 28px !important;
-    opacity:1 !important; max-width:38em; margin-inline:auto;
+    color:#D9D2C5 !important; font-size:clamp(15px,1.7vw,18px);
+    font-weight:400; line-height:1.75; margin:0 auto 28px !important;
+    opacity:1 !important; max-width:36em;
   }
   .pl-hero-btn-ghost {
     background:rgba(0,0,0,.25) !important;
-    border-color:rgba(255,255,255,.55) !important; color:#fff !important;
+    border-color:rgba(243,237,226,.55) !important; color:#F3EDE2 !important;
   }
   .pl-hero-btn-ghost:hover {
     background:rgba(201,168,76,.15) !important;
@@ -115,7 +124,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     display:block; font-size:clamp(40px,6vw,64px); font-weight:900;
     color:#C9A84C; line-height:1; margin-bottom:10px; direction:ltr;
   }
-  .ar-metric span { font-size:14px; color:rgba(255,255,255,.55); font-weight:700; }
+  .ar-metric span { font-size:14px; color:#C9C2B4; font-weight:700; }
 
   /* ---- Arabic: case study ---- */
   .ar-story {
@@ -140,13 +149,13 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   }
   .ar-story-body h3 {
     font-size:16px; font-weight:800; line-height:1.55;
-    color:#fff; margin:0 0 18px; padding-bottom:16px;
+    color:#F3EDE2; margin:0 0 18px; padding-bottom:16px;
     border-bottom:2px solid #C9A84C;
   }
   .ar-story-steps { display:grid; gap:10px; }
   .ar-story-steps div { padding:12px 14px; background:rgba(255,255,255,.03); border-radius:2px; }
   .ar-story-steps strong { font-size:11px; color:#C9A84C; font-weight:800; display:block; margin-bottom:4px; letter-spacing:.06em; }
-  .ar-story-steps p { font-size:13px; color:rgba(255,255,255,.65); line-height:1.65; margin:0; }
+  .ar-story-steps p { font-size:13px; color:#C9C2B4; line-height:1.65; margin:0; }
   .ar-pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
   .ar-pill {
     padding:5px 12px; border:1px solid rgba(201,168,76,.3);
@@ -167,7 +176,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   .ar-assess li {
     display:flex; gap:14px; align-items:flex-start;
     padding:16px 4px; border-bottom:1px solid rgba(255,255,255,.06);
-    font-size:16px; line-height:1.55; font-weight:600; color:rgba(255,255,255,.8);
+    font-size:16px; line-height:1.55; font-weight:600; color:#E4DDD0;
   }
   .ar-assess .q {
     color:#C9A84C; font-weight:900; flex-shrink:0; width:1.4em;
@@ -175,7 +184,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   .ar-assess-note {
     margin-top:24px; padding:22px 24px; background:rgba(201,168,76,.08);
     border:1px solid rgba(201,168,76,.2);
-    font-size:15px; font-weight:700; line-height:1.6; color:rgba(255,255,255,.8);
+    font-size:15px; font-weight:700; line-height:1.6; color:#E4DDD0;
     border-inline-start:3px solid #C9A84C;
   }
   .ar-assess-note span { color:#C9A84C; }
@@ -189,7 +198,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   .ar-urgency {
     background:rgba(201,168,76,.08); border:1px solid rgba(201,168,76,.22);
     padding:14px 20px; display:flex; align-items:center; gap:10px;
-    font-size:13px; font-weight:700; color:#fff; margin-bottom:28px;
+    font-size:13px; font-weight:700; color:#F3EDE2; margin-bottom:28px;
   }
   .ar-urgency .ico { color:#C9A84C; font-size:20px; }
   .ar-form-grid {
@@ -200,15 +209,15 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     background:#111; border:1px solid rgba(255,255,255,.06);
     padding:36px 28px;
   }
-  .ar-form-box h2 { font-size:clamp(22px,3vw,30px); font-weight:800; color:#fff; margin:0 0 10px; }
-  .ar-form-box p { font-size:15px; color:rgba(255,255,255,.6); margin:0 0 24px; }
+  .ar-form-box h2 { font-size:clamp(22px,3vw,30px); font-weight:800; color:#F3EDE2; margin:0 0 10px; }
+  .ar-form-box p { font-size:15px; color:#C9C2B4; margin:0 0 24px; }
   .ar-form { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
   @media(max-width:560px){ .ar-form { grid-template-columns:1fr; } }
   .ar-form label { display:none; }
   .ar-form input, .ar-form select {
     width:100%; padding:13px 14px;
     background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1);
-    color:#fff; font-family:'Tajawal',sans-serif; font-size:15px;
+    color:#F3EDE2; font-family:'Tajawal',sans-serif; font-size:15px;
     transition:border-color .2s;
     -webkit-appearance:none;
   }
@@ -237,7 +246,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   }
   .ar-reassure ul { list-style:none; padding:0; margin:0; display:grid; gap:12px; }
   .ar-reassure li {
-    display:flex; gap:10px; font-size:14px; font-weight:700; color:#fff; align-items:flex-start;
+    display:flex; gap:10px; font-size:14px; font-weight:700; color:#F3EDE2; align-items:flex-start;
   }
   .ar-reassure li::before { content:'✓'; color:#C9A84C; font-weight:900; flex-shrink:0; margin-top:2px; }
   .ar-quote {
@@ -279,9 +288,9 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   }
   .ar-feat-row:last-child { border-bottom:none; }
   .ar-feat-row .ms { color:#C9A84C; font-size:22px; flex-shrink:0; margin-top:2px; }
-  .ar-feat-row p { margin:0; font-size:15px; color:rgba(255,255,255,.75); line-height:1.6; }
+  .ar-feat-row p { margin:0; font-size:15px; color:#D9D2C5; line-height:1.6; }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ProjectLaunch™","description":"منظومة متكاملة لإطلاق المشاريع العقارية — من إقناع المستثمر إلى تجربة صالة البيع.","url":"https://3dgraphicshouse.com/solutions/project-launch.html","brand":{"@type":"Brand","name":"Graphics House"},"provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","telephone":"+966502786513"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ProjectLaunch™","description":"منظومة متكاملة لإطلاق المشاريع العقارية، من إقناع المستثمر إلى تجربة صالة البيع.","url":"https://3dgraphicshouse.com/solutions/project-launch.html","brand":{"@type":"Brand","name":"Graphics House"},"provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","telephone":"+966502786513"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
 </head>
 
 <body class="bg-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
@@ -410,7 +419,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   <div class="absolute inset-x-0 -top-[10%] h-[120%] z-0">
     <picture>
       <source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp">
-      <img class="w-full h-full object-cover" src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="بيئة إطلاق متكاملة — رابطة العالم الإسلامي" loading="eager">
+      <img class="w-full h-full object-cover" src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="بيئة إطلاق متكاملة، رابطة العالم الإسلامي" loading="eager">
     </picture>
     <div class="svc-hero-scrim absolute inset-0"></div>
     <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.18) 30%,rgba(0,0,0,.55) 70%,rgba(0,0,0,.8) 100%)"></div>
@@ -418,9 +427,9 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   <div class="relative z-10 text-center max-w-5xl px-6 w-full">
     <div class="pl-hero-copy-card">
       <span class="pl-hero-eyebrow-ar hero-enter" style="transition-delay:0ms">الحل الرائد</span>
-      <h1 class="hero-enter" style="transition-delay:120ms" dir="ltr">ProjectLaunch<span class="tm">™</span></h1>
+      <h1 class="hero-enter" style="transition-delay:120ms">ProjectLaunch<span class="tm">™</span></h1>
       <p class="pl-hero-tagline hero-enter" style="transition-delay:200ms">من الهوية المعمارية إلى صالة بيع تُغلق الصفقات</p>
-      <p class="pl-hero-sub hero-enter" style="transition-delay:240ms">مجسمات ذكية، أفلام سينمائية، تجارب تفاعلية، ديكور، تصوير وإخراج — منظومة بصرية واحدة.</p>
+      <p class="pl-hero-sub hero-enter" style="transition-delay:240ms">مجسمات ذكية، أفلام سينمائية، تجارب تفاعلية، ديكور، تصوير وإخراج في منظومة بصرية واحدة.</p>
       <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-6" style="transition-delay:360ms">
         <a href="#lead-form" class="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] shadow-[0_0_20px_rgba(201,168,76,0.3)]" data-cta="hero-book">احجز جلسة إطلاق مشروعك</a>
         <a href="../portfolio.html" class="pl-hero-btn-ghost border border-primary px-8 py-4 font-label-caps text-label-caps tracking-widest transition-all">مشاهدة أعمالنا</a>
@@ -435,7 +444,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     <div class="reveal w-full md:w-1/2" style="opacity:0;transform:translateY(24px)">
       <span class="svc-tag mb-8 block">الحل الرائد</span>
       <h2 class="font-headline-xl text-on-background mb-8">المنظومة الكاملة لإطلاق مشروعك</h2>
-      <p class="font-body-lg text-secondary mb-10 opacity-80 leading-relaxed">ProjectLaunch™ تجمع كل قدرة تحتاجها لفتح المبيعات قبل الخرسانة — لغة بصرية واحدة.</p>
+      <p class="font-body-lg text-secondary mb-10 opacity-80 leading-relaxed">ProjectLaunch™ تجمع كل قدرة تحتاجها لفتح المبيعات قبل الخرسانة، لغة بصرية واحدة.</p>
       <div class="space-y-1">
         <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled ms">check_circle</span><p>هوية بصرية متكاملة للمشروع العقاري</p></div>
         <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check_circle</span><p>رندرات فوتوريالستك وأفلام CGI سينمائية</p></div>
@@ -640,9 +649,9 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     <div class="ar-story-body">
       <h3>عندما أراد مطوّر عنان إسكان إطلاق مشروعه السكني… كان يواجه فجوة بين جاهزية المخططات وجاهزية البيع.</h3>
       <div class="ar-story-steps">
-        <div><strong>التحدي</strong><p>إقناع العملاء وصنّاع القرار قبل اكتمال التنفيذ — دون الاعتماد على صور متفرقة لا تبني قصة.</p></div>
+        <div><strong>التحدي</strong><p>إقناع العملاء وصنّاع القرار قبل اكتمال التنفيذ، دون الاعتماد على صور متفرقة لا تبني قصة.</p></div>
         <div><strong>كيف تعاملنا معه</strong><p>وضعنا هدفًا واحدًا: أن يُفهم المشروع خلال دقائق، وأن يبدو كمنتج جاهز للسوق.</p></div>
-        <div><strong>ما الذي قمنا بتنفيذه</strong><p>منظومة إظهار مترابطة: تصور معماري سينمائي + مجسم يرسّخ الحضور داخل غرفة العرض — بلغة بصرية واحدة.</p></div>
+        <div><strong>ما الذي قمنا بتنفيذه</strong><p>منظومة إظهار مترابطة: تصور معماري سينمائي + مجسم يرسّخ الحضور داخل غرفة العرض، بلغة بصرية واحدة.</p></div>
         <div><strong>النتيجة</strong><p>أصبح المشروع أسهل في الشرح، أوضح في الانطباع الأول، وأقرب لقرار الشراء أو الشراكة.</p></div>
       </div>
       <div class="ar-pills">
@@ -655,11 +664,11 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   <div class="ar-mini-grid reveal" style="opacity:0;transform:translateY(24px)">
     <div class="ar-mini">
       <img src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="رابطة العالم الإسلامي" loading="lazy">
-      <span>رابطة العالم الإسلامي — بيئة إطلاق مكتملة</span>
+      <span>رابطة العالم الإسلامي، بيئة إطلاق مكتملة</span>
     </div>
     <div class="ar-mini">
       <img src="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="الأولى النخيل" loading="lazy">
-      <span>الأولى النخيل — إظهار يبيع ما لم يُبنَ</span>
+      <span>الأولى النخيل، إظهار يبيع ما لم يُبنَ</span>
     </div>
   </div>
   <div class="mt-10 reveal" style="opacity:0;transform:translateY(24px)">
@@ -673,7 +682,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     <div class="reveal" style="opacity:0;transform:translateY(24px)">
       <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">تقييم سريع</span>
       <h2 class="font-headline-xl text-on-background mb-4">هل مشروعك جاهز للإطلاق؟</h2>
-      <p class="font-body-lg text-secondary opacity-70">أجب بصراحة — هذه الأسئلة تكشف فجوة الجاهزية قبل يوم الإطلاق.</p>
+      <p class="font-body-lg text-secondary opacity-70">أجب بصراحة، هذه الأسئلة تكشف فجوة الجاهزية قبل يوم الإطلاق.</p>
     </div>
     <ul class="ar-assess reveal" style="opacity:0;transform:translateY(24px)">
       <li><span class="q">١</span>هل لديك هوية بصرية متكاملة للمشروع؟</li>
@@ -701,7 +710,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     <div class="reveal" style="opacity:0;transform:translateY(24px)">
       <div class="border-b border-white/5 py-6">
         <h4 class="font-headline-md text-on-background mb-3">ماذا تشمل منظومة ProjectLaunch™؟</h4>
-        <p class="font-body-md text-secondary opacity-70 leading-relaxed">هوية بصرية، رندرات وأفلام CGI، مجسمات ذكية، تجارب تفاعلية، ديكور صالة البيع، تصوير وإخراج — منظومة واحدة.</p>
+        <p class="font-body-md text-secondary opacity-70 leading-relaxed">هوية بصرية، رندرات وأفلام CGI، مجسمات ذكية، تجارب تفاعلية، ديكور صالة البيع، تصوير وإخراج، منظومة واحدة.</p>
       </div>
       <div class="border-b border-white/5 py-6">
         <h4 class="font-headline-md text-on-background mb-3">هل يجب تنفيذ جميع العناصر دفعة واحدة؟</h4>
@@ -709,15 +718,15 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
       </div>
       <div class="border-b border-white/5 py-6">
         <h4 class="font-headline-md text-on-background mb-3">لدينا وكالة تسويق، هل نحتاج ProjectLaunch™؟</h4>
-        <p class="font-body-md text-secondary opacity-70 leading-relaxed">غالبًا نعم. الوكالة تُحرّك الرسالة. ProjectLaunch™ يجهّز «منتج الإطلاق» نفسه — اللغة البصرية، أصول الإقناع، وتجربة البيع. كثير من الحملات تضعف لأن المنتج البصري غير جاهز.</p>
+        <p class="font-body-md text-secondary opacity-70 leading-relaxed">غالبًا نعم. الوكالة تُحرّك الرسالة. ProjectLaunch™ يجهّز «منتج الإطلاق» نفسه، اللغة البصرية، أصول الإقناع، وتجربة البيع. كثير من الحملات تضعف لأن المنتج البصري غير جاهز.</p>
       </div>
       <div class="border-b border-white/5 py-6">
         <h4 class="font-headline-md text-on-background mb-3">هل تنفذون التركيب في الموقع؟</h4>
-        <p class="font-body-md text-secondary opacity-70 leading-relaxed">نعم — الديكور، الشاشات، المجسمات، والأنظمة التفاعلية تُنفَّذ وتُسلَّم مع تدريب الفريق على الاستخدام.</p>
+        <p class="font-body-md text-secondary opacity-70 leading-relaxed">نعم، الديكور، الشاشات، المجسمات، والأنظمة التفاعلية تُنفَّذ وتُسلَّم مع تدريب الفريق على الاستخدام.</p>
       </div>
       <div class="py-6">
         <h4 class="font-headline-md text-on-background mb-3">هل تخدمون مشاريع خارج الرياض؟</h4>
-        <p class="font-body-md text-secondary opacity-70 leading-relaxed">نعم — نخدم مشاريع في جميع مدن المملكة والخليج (الإمارات، عُمان، البحرين، مصر)، مع إنتاج وتركيب ميداني.</p>
+        <p class="font-body-md text-secondary opacity-70 leading-relaxed">نعم، نخدم مشاريع في جميع مدن المملكة والخليج (الإمارات، عُمان، البحرين، مصر)، مع إنتاج وتركيب ميداني.</p>
       </div>
     </div>
   </div>
@@ -728,12 +737,12 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   <div class="ar-form-max">
     <div class="ar-urgency reveal" style="opacity:0;transform:translateY(24px)">
       <span class="ico material-symbols-outlined">schedule</span>
-      <span>الجلسات المتاحة هذا الشهر: 4 جلسات فقط — احجز مكانك قبل اكتمالها</span>
+      <span>الجلسات المتاحة هذا الشهر: 4 جلسات فقط، احجز مكانك قبل اكتمالها</span>
     </div>
     <div class="ar-form-grid">
       <div class="ar-form-box reveal" style="opacity:0;transform:translateY(24px)">
         <h2>هل مشروعك جاهز فعلاً للإطلاق؟</h2>
-        <p>أخبرنا عن مشروعك — جلسة التقييم مجانية بالكامل</p>
+        <p>أخبرنا عن مشروعك، جلسة التقييم مجانية بالكامل</p>
         <form class="ar-form" id="plLeadForm" novalidate>
           <div>
             <label for="pl-name">الاسم</label>
@@ -774,7 +783,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
           </div>
           <div class="ar-form-full">
             <button class="ar-submit" type="submit" id="plSubmitBtn" data-cta="form-submit">احصل على تقييم جاهزية إطلاق مشروعك ←</button>
-            <p class="ar-form-note">رد واضح خلال 24 ساعة — بدون التزام شراء في الجلسة الأولى</p>
+            <p class="ar-form-note">رد واضح خلال 24 ساعة، بدون التزام شراء في الجلسة الأولى</p>
           </div>
         </form>
       </div>
@@ -787,7 +796,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
         </ul>
         <blockquote class="ar-quote">
           "قدّمت جرافيكس هاوس تجربة عالمية المستوى تعكس المكانة الرفيعة لرابطة العالم الإسلامي"
-          <cite>— مسؤول رفيع، رابطة العالم الإسلامي</cite>
+          <cite>مسؤول رفيع، رابطة العالم الإسلامي</cite>
         </blockquote>
       </aside>
     </div>
@@ -845,7 +854,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     <div class="gh-footer__offices">
       <div class="gh-footer__office">
         <h4 class="gh-footer__office-title">السعودية</h4>
-        <p class="gh-footer__office-meta">ص.ب 136972<br>س.ت 4030502306 — المقر الرئيسي</p>
+        <p class="gh-footer__office-meta">ص.ب 136972<br>س.ت 4030502306، المقر الرئيسي</p>
         <a href="tel:+966502786513" class="gh-footer__call">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           اتصل الآن
@@ -1023,7 +1032,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
       var bot = form.querySelector('[name=botcheck]');
       if (bot && bot.value) return;
       var data = {
-        subject:      'ProjectLaunch™ — طلب جلسة إطلاق',
+        subject:      'ProjectLaunch™: طلب جلسة إطلاق',
         from_name:    'Graphics House Site',
         name:         form.querySelector('[name=name]').value,
         company:      form.querySelector('[name=company]').value,

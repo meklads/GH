@@ -1,5 +1,5 @@
 /**
- * ProjectLaunch™ AR — nav-free light ads landing page only.
+ * ProjectLaunch™ AR، nav-free light ads landing page only.
  * Writes: solutions/project-launch-ads.html
  *
  * Permanent site page (solutions/project-launch.html) is maintained separately
@@ -156,7 +156,7 @@ const css = `
   @media (max-width: 720px) { .pl-sticky-cta { display: block; } }
   .pl-sticky-cta.is-hidden { display: none !important; }
 
-  /* Ads header — dark like site chrome so gold logo reads clearly */
+  /* Ads header: dark like site chrome so gold logo reads clearly */
   .pl-lp-header {
     position: fixed; inset-inline: 0; top: 0; z-index: 1000;
     background: rgba(8,12,10,.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
@@ -184,11 +184,11 @@ const css = `
     .pl-lp-actions .pl-btn { padding: 11px 12px; min-width: 44px; }
   }
 
-  /* Hero — one composition */
+  /* Hero: centered composition */
   .pl-hero {
     position: relative; min-height: 100vh; min-height: 100svh;
-    display: flex; align-items: flex-end; justify-content: flex-start;
-    padding: 110px var(--pl-pad-x) clamp(56px, 8vw, 88px); color: #fff; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    padding: 110px var(--pl-pad-x) clamp(56px, 8vw, 88px); color: #F3EDE2; overflow: hidden;
   }
   .pl-hero-media, .pl-hero-media video, .pl-hero-media img {
     position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
@@ -198,29 +198,29 @@ const css = `
   .pl-hero-scrim {
     position: absolute; inset: 0;
     background:
-      linear-gradient(180deg, rgba(0,0,0,.28) 0%, rgba(0,0,0,.22) 32%, rgba(0,0,0,.72) 78%, rgba(0,0,0,.88) 100%),
-      linear-gradient(90deg, rgba(0,0,0,.35) 0%, transparent 55%);
+      linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.28) 32%, rgba(0,0,0,.72) 78%, rgba(0,0,0,.88) 100%);
   }
   .pl-hero-copy {
     position: relative; z-index: 2; width: min(720px, 100%);
-    text-align: start;
+    text-align: center; margin-inline: auto;
   }
+  .pl-hero-copy, .pl-hero-copy * { text-align: center; }
   .pl-hero-brand {
     display: block; font-size: clamp(14px, 1.6vw, 18px); font-weight: 800;
     color: var(--pl-gold); letter-spacing: .08em; margin-bottom: 14px;
-    direction: ltr; unicode-bidi: isolate;
   }
   .pl-hero h1 {
     font-size: clamp(30px, 5vw, 52px); font-weight: 800; line-height: 1.22;
-    margin: 0 0 18px; text-shadow: 0 2px 28px rgba(0,0,0,.4); max-width: 14em;
+    margin: 0 auto 18px; text-shadow: 0 2px 28px rgba(0,0,0,.4); max-width: 16em;
+    color: #F3EDE2;
   }
   .pl-hero-lead {
     font-size: clamp(16px, 1.8vw, 20px); font-weight: 400; line-height: 1.7;
-    color: rgba(255,255,255,.9); margin: 0 0 28px; max-width: 32em;
+    color: #D9D2C5; margin: 0 auto 28px; max-width: 32em;
     white-space: pre-line; text-shadow: 0 1px 12px rgba(0,0,0,.35);
   }
   @media (max-width: 720px) {
-    .pl-hero { align-items: flex-end; min-height: 92svh; padding-bottom: 48px; }
+    .pl-hero { min-height: 92svh; padding-bottom: 48px; }
     .pl-hero h1 { font-size: clamp(28px, 8vw, 36px); }
     .pl-hero-lead { font-size: 16px; }
   }
@@ -291,7 +291,7 @@ const css = `
   .pl-tl-body h3 { margin: 0 0 6px; font-size: 17px; font-weight: 800; }
   .pl-tl-body p { margin: 0; color: var(--pl-muted); line-height: 1.7; font-size: 14px; max-width: 34em; }
 
-  /* Story — magazine */
+  /* Story: magazine */
   .pl-story {
     background: #fff; border: 1px solid var(--pl-line); padding: clamp(28px, 4vw, 48px);
   }
@@ -462,7 +462,7 @@ function adsFloatWa() {
 
 const MAIN = `<main id="main-content">
 
-  <!-- 01 Hero — H15 -->
+  <!-- 01 Hero، H15 -->
   <section class="pl-hero" id="hero" aria-label="ProjectLaunch">
     <div class="pl-hero-media" aria-hidden="true">
       <video id="pl-hero-vid" class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback">
@@ -481,7 +481,7 @@ const MAIN = `<main id="main-content">
     </div>
   </section>
 
-  <!-- Social proof — trust in first 15s -->
+  <!-- Social proof، trust in first 15s -->
   <section class="pl-proof" id="proof" aria-label="عملاء Graphics House">
     <div class="pl-wrap">
       <p class="pl-proof-title">وثقت بنا جهات رائدة في تطوير وإطلاق المشاريع</p>
@@ -522,7 +522,7 @@ const MAIN = `<main id="main-content">
       <div class="pl-reveal" style="max-width:720px">
         <span class="pl-eyebrow">قبل الحل</span>
         <h2 class="pl-h2">لماذا لا تحقق بعض المشاريع تأثيرًا قويًا عند الإطلاق؟</h2>
-        <p class="pl-lead">الإطلاق يضعف غالبًا قبل أن يبدأ البيع — في طريقة تقديم المشروع للسوق.</p>
+        <p class="pl-lead">الإطلاق يضعف غالبًا قبل أن يبدأ البيع، في طريقة تقديم المشروع للسوق.</p>
       </div>
       <ul class="pl-pain-list pl-reveal">
         <li><strong>تعدد الموردين:</strong> كل جهة تتكلم بلغة بصرية مختلفة عن الأخرى.</li>
@@ -541,7 +541,7 @@ const MAIN = `<main id="main-content">
       <div class="pl-reveal" style="max-width:720px">
         <span class="pl-eyebrow">الثقة</span>
         <h2 class="pl-h2">لماذا يثق المطورون بـ Graphics House؟</h2>
-        <p class="pl-lead">أربع أسباب فقط — بلا كلام إنشائي.</p>
+        <p class="pl-lead">أربع أسباب فقط، بلا كلام إنشائي.</p>
       </div>
       <div class="pl-trust-grid">
         <article class="pl-trust-card pl-reveal">
@@ -550,15 +550,15 @@ const MAIN = `<main id="main-content">
         </article>
         <article class="pl-trust-card pl-reveal">
           <h3>مشاريع منفذة تثبت المنهجية</h3>
-          <p>بيئات بيع، مجسمات ذكية، أفلام إطلاق، وصالات عرض — كمنظومات مكتملة لا تجارب منفصلة.</p>
+          <p>بيئات بيع، مجسمات ذكية، أفلام إطلاق، وصالات عرض، كمنظومات مكتملة لا تجارب منفصلة.</p>
         </article>
         <article class="pl-trust-card pl-reveal">
           <h3>فريق متعدد التخصصات</h3>
-          <p>هوية، تصور، إنتاج، مجسمات، تفاعلي، وتركيب في الموقع — تحت سقف واحد.</p>
+          <p>هوية، تصور، إنتاج، مجسمات، تفاعلي، وتركيب في الموقع، تحت سقف واحد.</p>
         </article>
         <article class="pl-trust-card pl-reveal">
           <h3>منظومة متكاملة</h3>
-          <p>لغة واحدة من أول إطار إلى آخر شاشة في صالة البيع — لتقليل إعادة العمل وتسريع الإطلاق.</p>
+          <p>لغة واحدة من أول إطار إلى آخر شاشة في صالة البيع، لتقليل إعادة العمل وتسريع الإطلاق.</p>
         </article>
       </div>
     </div>
@@ -569,10 +569,10 @@ const MAIN = `<main id="main-content">
     <div class="pl-wrap">
       <div class="pl-product-box pl-reveal">
         <span class="pl-eyebrow">المنهجية</span>
-        <h2 class="pl-h2">ProjectLaunch™ — منظومة إطلاق تجعل مشروعك جاهزًا للسوق.</h2>
+        <h2 class="pl-h2">ProjectLaunch™: منظومة إطلاق تجعل مشروعك جاهزًا للسوق.</h2>
         <p class="pl-lead">ليست قائمة خدمات. ليست «رندر + أنيميشن + موقع».</p>
-        <p class="pl-lead" style="margin-top:14px">هي منهجية متكاملة تحوّل مشروعك إلى قصة قابلة للبيع: هوية واضحة، أصول بصرية تُقنع، وأدوات إغلاق داخل بيئة البيع — بلغة واحدة.</p>
-        <p class="pl-lead" style="margin-top:14px">الهدف بسيط: أن يخرج زائر جلسة الإطلاق وهو يعرف ماذا يحتاج — وأن يخرج عميلك من صالة البيع وهو أقرب للقرار.</p>
+        <p class="pl-lead" style="margin-top:14px">هي منهجية متكاملة تحوّل مشروعك إلى قصة قابلة للبيع: هوية واضحة، أصول بصرية تُقنع، وأدوات إغلاق داخل بيئة البيع، بلغة واحدة.</p>
+        <p class="pl-lead" style="margin-top:14px">الهدف بسيط: أن يخرج زائر جلسة الإطلاق وهو يعرف ماذا يحتاج، وأن يخرج عميلك من صالة البيع وهو أقرب للقرار.</p>
         <div class="pl-cta-row">${btn()}</div>
       </div>
     </div>
@@ -618,7 +618,7 @@ const MAIN = `<main id="main-content">
       <div class="pl-reveal" style="max-width:720px">
         <span class="pl-eyebrow">التنفيذ</span>
         <h2 class="pl-h2">ماذا يحدث بعد توقيع الاتفاقية؟</h2>
-        <p class="pl-lead">مسار واضح يزيل الغموض — من أول يوم حتى الإطلاق.</p>
+        <p class="pl-lead">مسار واضح يزيل الغموض، من أول يوم حتى الإطلاق.</p>
       </div>
       <div class="pl-timeline pl-reveal">
         <div class="pl-tl-step">
@@ -647,7 +647,7 @@ const MAIN = `<main id="main-content">
         </div>
         <div class="pl-tl-step">
           <div class="pl-tl-rail"><span class="pl-tl-dot"></span></div>
-          <div class="pl-tl-body"><h3>جاهز للإطلاق</h3><p>مشروعك يُقدَّم للسوق كمنتج مكتمل — لا كمجموعة ملفات.</p></div>
+          <div class="pl-tl-body"><h3>جاهز للإطلاق</h3><p>مشروعك يُقدَّم للسوق كمنتج مكتمل، لا كمجموعة ملفات.</p></div>
         </div>
       </div>
       <div class="pl-cta-row pl-reveal">${btn()}</div>
@@ -660,7 +660,7 @@ const MAIN = `<main id="main-content">
       <div class="pl-reveal" style="max-width:720px;margin-bottom:28px">
         <span class="pl-eyebrow">قصة نجاح</span>
         <h2 class="pl-h2">كيف حوّلنا عرض المشروع إلى تجربة إقناع</h2>
-        <p class="pl-lead">قصة واحدة مكتملة — لا معرض صور.</p>
+        <p class="pl-lead">قصة واحدة مكتملة، لا معرض صور.</p>
       </div>
 
       <article class="pl-story pl-reveal">
@@ -668,20 +668,20 @@ const MAIN = `<main id="main-content">
         <h3>عندما أراد مطوّر عنان إسكان إطلاق مشروعه السكني… كان يواجه فجوة بين جاهزية المخططات وجاهزية البيع.</h3>
         <div class="pl-story-flow">
           <div>
-            <strong>01 — التحدي</strong>
-            <p>إقناع العملاء وصنّاع القرار قبل اكتمال التنفيذ — دون الاعتماد على صور متفرقة لا تبني قصة واحدة.</p>
+            <strong>01، التحدي</strong>
+            <p>إقناع العملاء وصنّاع القرار قبل اكتمال التنفيذ، دون الاعتماد على صور متفرقة لا تبني قصة واحدة.</p>
           </div>
           <div>
-            <strong>02 — كيف تعاملنا معه</strong>
+            <strong>02، كيف تعاملنا معه</strong>
             <p>وضعنا هدفًا واحدًا: أن يُفهم المشروع خلال دقائق، وأن يبدو كمنتج جاهز للسوق لا كحزمة ملفات.</p>
           </div>
           <div>
-            <strong>03 — ما الذي قمنا بتنفيذه</strong>
-            <p>منظومة إظهار مترابطة: تصور معماري سينمائي + مجسم يرسّخ الحضور داخل غرفة العرض — بلغة بصرية واحدة.</p>
+            <strong>03، ما الذي قمنا بتنفيذه</strong>
+            <p>منظومة إظهار مترابطة: تصور معماري سينمائي + مجسم يرسّخ الحضور داخل غرفة العرض، بلغة بصرية واحدة.</p>
           </div>
           <div>
-            <strong>04 — النتيجة</strong>
-            <p>أصبح المشروع أسهل في الشرح، أوضح في الانطباع الأول، وأقرب لقرار الشراء أو الشراكة — دون ادعاء أرقام غير موثقة.</p>
+            <strong>04، النتيجة</strong>
+            <p>أصبح المشروع أسهل في الشرح، أوضح في الانطباع الأول، وأقرب لقرار الشراء أو الشراكة، دون ادعاء أرقام غير موثقة.</p>
           </div>
         </div>
         <div class="pl-story-media">
@@ -697,7 +697,7 @@ const MAIN = `<main id="main-content">
             </picture>
           </div>
           <div class="pl-media-frame" style="grid-column:1/-1;aspect-ratio:21/9">
-            <img src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="تصور معماري — عنان إسكان" loading="lazy" width="1200" height="514">
+            <img src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="تصور معماري، عنان إسكان" loading="lazy" width="1200" height="514">
           </div>
         </div>
       </article>
@@ -705,15 +705,15 @@ const MAIN = `<main id="main-content">
       <div class="pl-strip pl-reveal" aria-label="إثبات تكرار المنهجية">
         <div class="pl-strip-item">
           <img src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="بيئة عرض تفاعلية" loading="lazy">
-          <div class="pl-strip-cap">رابطة العالم الإسلامي — بيئة إطلاق مكتملة</div>
+          <div class="pl-strip-cap">رابطة العالم الإسلامي، بيئة إطلاق مكتملة</div>
         </div>
         <div class="pl-strip-item">
           <img src="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="مشروع الأولى النخيل" loading="lazy">
-          <div class="pl-strip-cap">الأولى — إظهار يبيع ما لم يُبنَ</div>
+          <div class="pl-strip-cap">الأولى، إظهار يبيع ما لم يُبنَ</div>
         </div>
         <div class="pl-strip-item">
           <img src="../assets/projects/maquettes/alrajhi3.jpeg" alt="مجسم الراجحي" loading="lazy">
-          <div class="pl-strip-cap">الراجحي — حضور مؤسسي يبني الثقة</div>
+          <div class="pl-strip-cap">الراجحي، حضور مؤسسي يبني الثقة</div>
         </div>
       </div>
       <div class="pl-cta-row pl-reveal" style="margin-top:28px">${btn()}</div>
@@ -734,7 +734,7 @@ const MAIN = `<main id="main-content">
         </details>
         <details>
           <summary>هل يمكن تنفيذ المشروع على مراحل؟</summary>
-          <p>نعم. يمكن البدء بما يفتح البيع مبكرًا ثم استكمال بقية المنظومة — مع الإبقاء على لغة بصرية واحدة عبر كل مرحلة.</p>
+          <p>نعم. يمكن البدء بما يفتح البيع مبكرًا ثم استكمال بقية المنظومة، مع الإبقاء على لغة بصرية واحدة عبر كل مرحلة.</p>
         </details>
         <details>
           <summary>لدينا وكالة تسويق بالفعل، هل نحتاجكم؟</summary>
@@ -742,11 +742,11 @@ const MAIN = `<main id="main-content">
         </details>
         <details>
           <summary>كم تستغرق المنظومة؟</summary>
-          <p>تعتمد على نطاق المشروع ومرحلة الإطلاق. بعد جلسة التقييم نحدد جدولًا واضحًا للمراحل والتسليم — بدون وعود عامة غير مربوطة بنطاقك.</p>
+          <p>تعتمد على نطاق المشروع ومرحلة الإطلاق. بعد جلسة التقييم نحدد جدولًا واضحًا للمراحل والتسليم، بدون وعود عامة غير مربوطة بنطاقك.</p>
         </details>
         <details>
           <summary>هل تنفذون في جميع مدن المملكة؟</summary>
-          <p>نعم — نخدم مشاريع في مدن المملكة والخليج، مع إنتاج وتركيب حسب نطاق كل مشروع.</p>
+          <p>نعم، نخدم مشاريع في مدن المملكة والخليج، مع إنتاج وتركيب حسب نطاق كل مشروع.</p>
         </details>
       </div>
     </div>
@@ -758,7 +758,7 @@ const MAIN = `<main id="main-content">
       <div class="pl-reveal">
         <span class="pl-eyebrow">تقييم سريع</span>
         <h2 class="pl-h2">هل مشروعك جاهز للإطلاق؟</h2>
-        <p class="pl-lead">أجب بصراحة — هذه الأسئلة تكشف فجوة الجاهزية قبل يوم الإطلاق.</p>
+        <p class="pl-lead">أجب بصراحة، هذه الأسئلة تكشف فجوة الجاهزية قبل يوم الإطلاق.</p>
       </div>
       <ul class="pl-assess pl-reveal">
         <li><span class="q">١</span> هل لديك هوية بصرية متكاملة للمشروع؟</li>
@@ -818,7 +818,7 @@ const MAIN = `<main id="main-content">
         <div class="pl-span-2 pl-form-feedback" id="plFormFeedback" aria-live="polite"></div>
         <div class="pl-span-2">
           <button class="pl-btn" type="submit" id="plSubmitBtn" data-cta="form-submit">${FORM_CTA}</button>
-          <p class="pl-form-note">رد واضح بعد استلام طلبك — بدون التزام شراء في الجلسة الأولى.</p>
+          <p class="pl-form-note">رد واضح بعد استلام طلبك، بدون التزام شراء في الجلسة الأولى.</p>
         </div>
       </form>
     </div>
@@ -847,7 +847,7 @@ ${analyticsHeadTags('../')}
 ${hreflang}${robots}<meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ProjectLaunch™ | منظومة إطلاق المشاريع العقارية | Graphics House</title>
-<meta name="description" content="تخيّل أن يرى المستثمر مشروعك قبل أن يُبنى — وأن يفهمه العميل في دقائق داخل صالة البيع. ProjectLaunch™ منظومة إطلاق متكاملة من Graphics House."/>
+<meta name="description" content="تخيّل أن يرى المستثمر مشروعك قبل أن يُبنى، وأن يفهمه العميل في دقائق داخل صالة البيع. ProjectLaunch™ منظومة إطلاق متكاملة من Graphics House."/>
 <meta property="og:title" content="ProjectLaunch™ | Graphics House">
 <meta property="og:description" content="منظومة إطلاق تجعل مشروعك جاهزًا للسوق: إقناع المستثمر، تجربة البيع، وحضور قوي يوم الإطلاق.">
 <meta property="og:url" content="${pageUrl}">
@@ -863,7 +863,7 @@ ${siteAssets}<style>${css}</style>
   '@context': 'https://schema.org',
   '@type': 'Product',
   name: 'ProjectLaunch™',
-  description: 'منظومة متكاملة لإطلاق المشاريع العقارية — من إقناع المستثمر إلى تجربة صالة البيع.',
+  description: 'منظومة متكاملة لإطلاق المشاريع العقارية، من إقناع المستثمر إلى تجربة صالة البيع.',
   url: pageUrl,
   brand: { '@type': 'Brand', name: 'Graphics House' },
   provider: { '@type': 'Organization', name: 'Graphics House', url: BASE, telephone: PHONE },
