@@ -74,6 +74,19 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     background: rgba(201,168,76,.08) !important;
   }
   .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined' !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+  }
   ::-webkit-scrollbar { width:3px; }
   ::-webkit-scrollbar-track { background:#0A0A0A; }
   ::-webkit-scrollbar-thumb { background:#C9A84C; }
@@ -433,8 +446,10 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     display:flex; align-items:center; justify-content:center;
     background:rgba(7,24,16,.06); color:#071810;
   }
-  .ar-outcome-ico .material-symbols-outlined {
-    font-size:28px; font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 48;
+  .ar-outcome-ico svg {
+    width:26px; height:26px; display:block;
+    stroke:currentColor; fill:none; stroke-width:1.6;
+    stroke-linecap:round; stroke-linejoin:round;
   }
   .ar-outcome-card strong {
     display:block; font-family:'Tajawal',sans-serif;
@@ -672,22 +687,30 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
       <div>
         <div class="ar-outcomes-cards">
           <div class="ar-outcome-card reveal" style="opacity:0;transform:translateY(24px);transition-delay:.00s">
-            <div class="ar-outcome-ico" aria-hidden="true"><span class="material-symbols-outlined">palette</span></div>
+            <div class="ar-outcome-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M5 16l.9 2.1L8 19l-2.1.9L5 22l-.9-2.1L2 19l2.1-.9L5 16z"/><path d="M18 14l.7 1.7L20.4 16.4l-1.7.7L18 19l-.7-1.9L15.6 16.4l1.7-.7L18 14z"/></svg>
+            </div>
             <strong>هوية بصرية</strong>
             <span>لغة معمارية متماسكة للمشروع من أول انطباع حتى صالة البيع</span>
           </div>
           <div class="ar-outcome-card reveal" style="opacity:0;transform:translateY(24px);transition-delay:.06s">
-            <div class="ar-outcome-ico" aria-hidden="true"><span class="material-symbols-outlined">movie</span></div>
+            <div class="ar-outcome-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M17 9l4-2v10l-4-2V9z"/><path d="M8 11l3 2-3 2v-4z" fill="currentColor" stroke="none"/></svg>
+            </div>
             <strong>أفلام ورندرات</strong>
             <span>محتوى سينمائي يقنع المستثمر قبل أن تُصب الخرسانة</span>
           </div>
           <div class="ar-outcome-card reveal" style="opacity:0;transform:translateY(24px);transition-delay:.12s">
-            <div class="ar-outcome-ico" aria-hidden="true"><span class="material-symbols-outlined">view_in_ar</span></div>
+            <div class="ar-outcome-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
+            </div>
             <strong>مجسمات ذكية</strong>
             <span>حضور ملموس في غرفة العرض بطبقات إضاءة وتفاعل عند الحاجة</span>
           </div>
           <div class="ar-outcome-card reveal" style="opacity:0;transform:translateY(24px);transition-delay:.18s">
-            <div class="ar-outcome-ico" aria-hidden="true"><span class="material-symbols-outlined">touch_app</span></div>
+            <div class="ar-outcome-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M4 20v-1a5 5 0 0 1 5-5"/><path d="M14 8h6M17 5v6"/><path d="M14 17h7M14 20h5"/></svg>
+            </div>
             <strong>تجربة البيع</strong>
             <span>صالة عرض وأدوات تفاعلية تقرّب العميل من قرار الشراء</span>
           </div>
