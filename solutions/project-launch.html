@@ -84,18 +84,32 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   .ar-collab-copy strong { color: #fff !important; }
 
 
-  /* Trademark glyph (TM) — force Latin rendering */
-  .tm, h1 .tm, .pl-hero h1 .tm {
+  /* Trademark glyph (TM) — LTR mark, correct superscript seat */
+  .pl-mark {
+    display: inline-block;
+    direction: ltr;
+    unicode-bidi: isolate;
+    white-space: nowrap;
+    font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  }
+  .tm, h1 .tm, .pl-hero h1 .tm, .pl-mark .tm {
     font-family: Inter, 'Helvetica Neue', Arial, sans-serif !important;
     font-weight: 700 !important;
-    font-size: .55em !important;
+    font-size: .42em !important;
     color: #C9A84C !important;
     vertical-align: super;
-    line-height: 0;
-    margin-inline-start: .06em;
+    position: relative;
+    top: -0.15em;
+    line-height: 1;
+    margin-inline-start: .08em;
     letter-spacing: 0;
     unicode-bidi: isolate;
     direction: ltr;
+  }
+  .pl-hero h1 .tm {
+    color: #C9A84C !important;
+    font-size: .38em !important;
+    top: -0.22em;
   }
 
   /* Light-page body text must stay dark (theme is #FAFAF8) */
@@ -169,25 +183,56 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   .pl-hero-sub {
     color:rgba(255,255,255,.88) !important; font-size:clamp(15px,1.7vw,18px);
     font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif !important;
-    font-weight:300 !important; line-height:1.85; margin:0 auto 32px !important;
+    font-weight:300 !important; line-height:1.85; margin:0 auto 28px !important;
     opacity:1 !important; max-width:34em;
   }
+  .pl-hero-trust {
+    display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
+    margin-top:28px;
+  }
+  .pl-hero-trust span {
+    font-family:'Tajawal',sans-serif; font-size:12px; font-weight:500;
+    color:rgba(255,255,255,.9); padding:8px 16px; border-radius:999px;
+    border:1px solid rgba(255,255,255,.28); background:rgba(255,255,255,.08);
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    letter-spacing:.02em;
+  }
+  /* DAMAC white pill CTAs — larger readable Arabic */
   .pl-btn-pill {
-    display:inline-flex; align-items:center; justify-content:center;
-    border-radius:999px !important; padding:16px 36px !important;
-    font-weight:800 !important; letter-spacing:.12em !important;
-    transition:transform .2s ease, background .2s ease, box-shadow .2s ease, color .2s ease, border-color .2s ease;
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    border-radius:999px !important;
+    padding:17px 40px !important;
+    font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif !important;
+    font-size:15px !important;
+    font-weight:700 !important;
+    letter-spacing:.04em !important;
+    line-height:1.3 !important;
+    text-transform:none !important;
+    transition:transform .25s ease, background .25s ease, box-shadow .25s ease, color .25s ease, border-color .25s ease;
     text-decoration:none; border:1.5px solid transparent;
+    position:relative; overflow:hidden;
   }
+  .pl-btn-pill::after {
+    content:''; position:absolute; inset:0; background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);
+    transform:translateX(-120%); transition:transform .55s ease; pointer-events:none;
+  }
+  .pl-btn-pill:hover::after { transform:translateX(120%); }
   .pl-btn-pill:hover { transform:translateY(-2px); }
-  .pl-btn-pill-gold {
-    background:#C9A84C !important; color:#0A0A0A !important; border-color:#C9A84C !important;
-    box-shadow:0 10px 28px rgba(201,168,76,.28);
+  .pl-btn-pill-gold,
+  .pl-btn-pill-white {
+    background:#fff !important; color:#0A0A0A !important;
+    border-color:#fff !important;
+    box-shadow:0 12px 32px rgba(0,0,0,.18);
   }
-  .pl-btn-pill-gold:hover { background:#d4b45a !important; box-shadow:0 14px 36px rgba(201,168,76,.38); }
+  .pl-btn-pill-gold:hover,
+  .pl-btn-pill-white:hover {
+    background:#fff !important; color:#0A0A0A !important;
+    box-shadow:0 16px 40px rgba(0,0,0,.24), 0 0 0 1px rgba(201,168,76,.45);
+  }
   .pl-btn-pill-ghost {
     background:transparent !important; color:#fff !important;
-    border-color:rgba(255,255,255,.85) !important;
+    border-color:rgba(255,255,255,.9) !important;
+    box-shadow:none;
   }
   .pl-btn-pill-ghost:hover {
     background:rgba(255,255,255,.12) !important; border-color:#fff !important;
@@ -195,9 +240,20 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   .pl-btn-pill-outline-dark {
     background:#fff !important; color:#0A0A0A !important;
     border:1.5px solid #0A0A0A !important;
+    box-shadow:0 8px 24px rgba(10,10,10,.06);
   }
   .pl-btn-pill-outline-dark:hover {
     background:#0A0A0A !important; color:#fff !important;
+  }
+  /* On light sections: white pill + dark outline (DAMAC enquire) */
+  .pl-btn-on-light {
+    background:#fff !important; color:#0A0A0A !important;
+    border:1.5px solid #0A0A0A !important;
+    box-shadow:0 8px 28px rgba(10,10,10,.08) !important;
+  }
+  .pl-btn-on-light:hover {
+    background:#0A0A0A !important; color:#fff !important;
+    box-shadow:0 12px 32px rgba(10,10,10,.16) !important;
   }
 
   /* ---- Arabic: metrics strip ---- */
@@ -343,14 +399,17 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   .ar-form select option { background:#fff; color:#0A0A0A; }
   .ar-form-full { grid-column:1/-1; }
   .ar-submit {
-    width:100%; padding:16px 28px; border-radius:999px;
-    background:#C9A84C; color:#0A0A0A;
-    font-family:'Tajawal',sans-serif; font-size:15px; font-weight:900;
-    border:none; cursor:pointer; letter-spacing:.04em;
-    transition:background .2s, transform .2s, box-shadow .2s;
-    box-shadow:0 10px 28px rgba(201,168,76,.25);
+    width:100%; padding:17px 28px; border-radius:999px;
+    background:#fff; color:#0A0A0A;
+    font-family:'Tajawal',sans-serif; font-size:15px; font-weight:700;
+    border:1.5px solid #0A0A0A; cursor:pointer; letter-spacing:.02em;
+    transition:background .2s, transform .2s, box-shadow .2s, color .2s;
+    box-shadow:0 8px 24px rgba(10,10,10,.08);
   }
-  .ar-submit:hover { background:#d4b45a; transform:translateY(-1px); }
+  .ar-submit:hover {
+    background:#0A0A0A; color:#fff; transform:translateY(-1px);
+    box-shadow:0 12px 32px rgba(10,10,10,.16);
+  }
   .ar-form-note { font-size:12px; color:#888; text-align:center; margin-top:12px; }
   .ar-form-feedback { grid-column:1/-1; font-size:13px; min-height:16px; }
   .ar-form-feedback.success { color:#1a7a45; }
@@ -390,7 +449,16 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   }
   @media(max-width:720px){ .ar-sticky { display:block; } }
   .ar-sticky.is-hidden { display:none !important; }
-  .ar-sticky .ar-submit { font-size:14px; }
+  .ar-sticky .ar-submit { font-size:15px; }
+
+  /* Section labels — thin gold underline accent */
+  .font-label-caps.text-primary {
+    position:relative; display:inline-block; padding-bottom:10px;
+  }
+  .font-label-caps.text-primary::after {
+    content:''; position:absolute; bottom:0; inset-inline:30% 30%; height:1px;
+    background:linear-gradient(90deg,transparent,#C9A84C,transparent);
+  }
 
   /* ---- Featured row: oval check icons ---- */
   .ar-feat-row {
@@ -652,7 +720,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
                 </a>
                 <a href="../solutions/project-launch.html" class="mm-card" data-solution="project">
                   <div class="mm-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
-                  <div class="mm-title">ProjectLaunch&#8482;</div>
+                  <div class="mm-title"><span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span></div>
                   <div class="mm-sub">نظام إطلاق المشاريع العقارية</div>
                   <div class="mm-desc">حل متكامل لإطلاق المشاريع العقارية يشمل التصور، العلامة التجارية، التسويق ودعم المبيعات.</div>
                   <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
@@ -749,12 +817,18 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   <div class="relative z-10 text-center max-w-5xl px-6 w-full">
     <div class="pl-hero-copy-card">
       <span class="pl-hero-eyebrow-ar hero-enter" style="transition-delay:0ms">الحل الرائد</span>
-      <h1 class="hero-enter" style="transition-delay:120ms" dir="ltr">ProjectLaunch<span class="tm">&#8482;</span></h1>
+      <h1 class="hero-enter" style="transition-delay:120ms"><span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span></h1>
       <p class="pl-hero-tagline hero-enter" style="transition-delay:200ms">من الهوية المعمارية إلى صالة بيع تُغلق الصفقات</p>
       <p class="pl-hero-sub hero-enter" style="transition-delay:240ms">مجسمات ذكية، أفلام سينمائية، تجارب تفاعلية، ديكور، تصوير وإخراج في منظومة بصرية واحدة.</p>
       <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-5" style="transition-delay:360ms">
-        <a href="#lead-form" class="pl-btn-pill pl-btn-pill-gold font-label-caps text-label-caps" data-cta="hero-book">احجز جلسة إطلاق مشروعك</a>
-        <a href="../portfolio.html" class="pl-btn-pill pl-btn-pill-ghost font-label-caps text-label-caps">مشاهدة أعمالنا</a>
+        <a href="#lead-form" class="pl-btn-pill pl-btn-pill-white" data-cta="hero-book">احجز جلسة إطلاق مشروعك</a>
+        <a href="../portfolio.html" class="pl-btn-pill pl-btn-pill-ghost">مشاهدة أعمالنا</a>
+      </div>
+      <div class="pl-hero-trust hero-enter" style="transition-delay:480ms">
+        <span>هوية بصرية</span>
+        <span>أفلام CGI</span>
+        <span>مجسمات ذكية</span>
+        <span>صالة بيع</span>
       </div>
     </div>
   </div>
@@ -766,7 +840,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     <div class="reveal w-full md:w-1/2" style="opacity:0;transform:translateY(24px)">
       <span class="svc-tag mb-8 block">الحل الرائد</span>
       <h2 class="font-headline-xl text-on-background mb-8">المنظومة الكاملة لإطلاق مشروعك</h2>
-      <p class="font-body-lg text-secondary mb-10 opacity-80 leading-relaxed">ProjectLaunch&#8482; تجمع كل قدرة تحتاجها لفتح المبيعات قبل الخرسانة، لغة بصرية واحدة.</p>
+      <p class="font-body-lg text-secondary mb-10 opacity-80 leading-relaxed"><span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> تجمع كل قدرة تحتاجها لفتح المبيعات قبل الخرسانة، لغة بصرية واحدة.</p>
       <div class="space-y-1">
         <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>هوية بصرية متكاملة للمشروع العقاري</p></div>
         <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>رندرات فوتوريالستك وأفلام CGI سينمائية</p></div>
@@ -776,7 +850,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
         <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>تصوير وإخراج وتركيب في الموقع</p></div>
       </div>
       <div class="mt-10 flex gap-6">
-        <a href="#lead-form" class="pl-btn-pill pl-btn-pill-gold font-label-caps text-[11px]" data-cta="system-book">احجز جلسة إطلاق مشروعك</a>
+        <a href="#lead-form" class="pl-btn-pill pl-btn-on-light" data-cta="system-book">احجز جلسة إطلاق مشروعك</a>
       </div>
     </div>
     <div class="reveal w-full md:w-1/2 relative" style="opacity:0;transform:translateY(24px);transition-delay:.2s">
@@ -958,7 +1032,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     </div>
   </div>
   <div class="text-center mt-10 reveal" style="opacity:0;transform:translateY(24px)">
-    <a href="https://www.youtube.com/@GraphicsHouse2" target="_blank" rel="noopener" class="pl-btn-pill pl-btn-pill-outline-dark font-label-caps text-label-caps inline-flex items-center gap-3">
+    <a href="https://www.youtube.com/@GraphicsHouse2" target="_blank" rel="noopener" class="pl-btn-pill pl-btn-on-light inline-flex items-center gap-3">
       <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.38.55A3.02 3.02 0 00.5 6.19C0 8.03 0 12 0 12s0 3.97.5 5.81a3.02 3.02 0 002.12 2.14C4.45 20.5 12 20.5 12 20.5s7.55 0 9.38-.55a3.02 3.02 0 002.12-2.14C24 15.97 24 12 24 12s0-3.97-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
       كل الفيديوهات على يوتيوب
     </a>
@@ -1074,7 +1148,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     </div>
   </div>
   <div class="mt-10 reveal" style="opacity:0;transform:translateY(24px)">
-    <a href="#lead-form" class="pl-btn-pill pl-btn-pill-gold font-label-caps text-[11px] inline-flex" data-cta="stories-book">احجز جلسة إطلاق مشروعك</a>
+    <a href="#lead-form" class="pl-btn-pill pl-btn-on-light inline-flex" data-cta="stories-book">احجز جلسة إطلاق مشروعك</a>
   </div>
 </section>
 
@@ -1094,10 +1168,10 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
       <li><span class="q">٥</span>هل جميع مواد الإطلاق جاهزة قبل موعد الإطلاق؟</li>
     </ul>
     <div class="ar-assess-note reveal" style="opacity:0;transform:translateY(24px)">
-      إذا كانت إجابتك <span>«لا»</span> على أكثر من سؤال… فقد يكون ProjectLaunch&#8482; هو ما يحتاجه مشروعك.
+      إذا كانت إجابتك <span>«لا»</span> على أكثر من سؤال… فقد يكون <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> هو ما يحتاجه مشروعك.
     </div>
     <div class="mt-8 reveal" style="opacity:0;transform:translateY(24px)">
-      <a href="#lead-form" class="pl-btn-pill pl-btn-pill-gold font-label-caps text-[11px] inline-flex" data-cta="assess-book">احجز جلسة إطلاق مشروعك</a>
+      <a href="#lead-form" class="pl-btn-pill pl-btn-on-light inline-flex" data-cta="assess-book">احجز جلسة إطلاق مشروعك</a>
     </div>
   </div>
 </section>
@@ -1111,7 +1185,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     </div>
     <div class="reveal" style="opacity:0;transform:translateY(24px)">
       <div class="border-b border-black/5 py-7">
-        <h4 class="font-headline-md text-on-background mb-3">ماذا تشمل منظومة ProjectLaunch&#8482;؟</h4>
+        <h4 class="font-headline-md text-on-background mb-3">ماذا تشمل منظومة <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span>؟</h4>
         <p class="font-body-md text-secondary opacity-70 leading-relaxed">هوية بصرية، رندرات وأفلام CGI، مجسمات ذكية، تجارب تفاعلية، ديكور صالة البيع، تصوير وإخراج، منظومة واحدة.</p>
       </div>
       <div class="border-b border-black/5 py-7">
@@ -1119,8 +1193,8 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
         <p class="font-body-md text-secondary opacity-70 leading-relaxed">ليس بالضرورة. نساعدك في تحديد الأولويات حسب مرحلة مشروعك وميزانيتك. القيمة الحقيقية تظهر حين يكون كل شيء بلغة بصرية واحدة.</p>
       </div>
       <div class="border-b border-black/5 py-7">
-        <h4 class="font-headline-md text-on-background mb-3">لدينا وكالة تسويق، هل نحتاج ProjectLaunch&#8482;؟</h4>
-        <p class="font-body-md text-secondary opacity-70 leading-relaxed">غالبًا نعم. الوكالة تُحرّك الرسالة. ProjectLaunch&#8482; يجهّز «منتج الإطلاق» نفسه، اللغة البصرية، أصول الإقناع، وتجربة البيع. كثير من الحملات تضعف لأن المنتج البصري غير جاهز.</p>
+        <h4 class="font-headline-md text-on-background mb-3">لدينا وكالة تسويق، هل نحتاج <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span>؟</h4>
+        <p class="font-body-md text-secondary opacity-70 leading-relaxed">غالبًا نعم. الوكالة تُحرّك الرسالة. <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> يجهّز «منتج الإطلاق» نفسه، اللغة البصرية، أصول الإقناع، وتجربة البيع. كثير من الحملات تضعف لأن المنتج البصري غير جاهز.</p>
       </div>
       <div class="border-b border-black/5 py-7">
         <h4 class="font-headline-md text-on-background mb-3">هل تنفذون التركيب في الموقع؟</h4>
@@ -1273,8 +1347,8 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
       <span class="material-symbols-outlined ms-filled text-3xl">rocket_launch</span>
     </span>
     <h2 class="font-headline-xl text-on-background mb-6">جاهز لإطلاق المنظومة الكاملة؟</h2>
-    <p class="font-body-lg text-secondary opacity-70 mb-10">فريقنا يستطيع تحديد نطاق ProjectLaunch&#8482; ومشاركتك عرضًا واضحًا خلال 48 ساعة.</p>
-    <a href="#lead-form" class="pl-btn-pill pl-btn-pill-gold font-label-caps text-label-caps inline-flex" data-cta="final-cta">احجز جلسة إطلاق مشروعك الآن</a>
+    <p class="font-body-lg text-secondary opacity-70 mb-10">فريقنا يستطيع تحديد نطاق <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> ومشاركتك عرضًا واضحًا خلال 48 ساعة.</p>
+    <a href="#lead-form" class="pl-btn-pill pl-btn-on-light inline-flex" data-cta="final-cta">احجز جلسة إطلاق مشروعك الآن</a>
   </div>
 </section>
 
