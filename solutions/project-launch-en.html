@@ -227,16 +227,24 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     max-width:16em; letter-spacing:.02em;
   }
   .pl-hero-tagline {
-    color:#fff !important; font-size:clamp(17px,2.2vw,26px);
+    /* Match homepage hero H1 size + weight */
+    color:#FAFAF8 !important;
+    font-size:clamp(24px,4.5vw,58px) !important;
     font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif !important;
-    font-weight:700 !important; margin:0 auto 14px; line-height:1.5; max-width:22em;
-    text-shadow:0 2px 18px rgba(0,0,0,.45);
+    font-weight:900 !important;
+    margin:12px auto 0; line-height:1.2; max-width:18em;
+    letter-spacing:-.03em;
+    text-shadow:0 4px 40px rgba(0,0,0,.6);
   }
   .pl-hero-sub {
-    color:rgba(255,255,255,.88) !important; font-size:clamp(15px,1.7vw,18px);
+    /* Match homepage hero subtitle size + weight */
+    color:rgba(255,255,255,.8) !important;
+    font-size:clamp(14px,1.4vw,17px) !important;
     font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif !important;
-    font-weight:300 !important; line-height:1.85; margin:0 auto 22px !important;
-    opacity:1 !important; max-width:34em;
+    font-weight:400 !important;
+    line-height:1.8; margin:12px auto 22px !important;
+    opacity:1 !important; max-width:640px;
+    text-shadow:0 2px 12px rgba(0,0,0,.5);
   }
   /* Hero capabilities bar — pinned at bottom like homepage */
   .pl-hero .hero-caps-bar {
@@ -992,12 +1000,21 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
   html[dir='ltr'] .font-headline-xl,
   html[dir='ltr'] .font-headline-md,
   html[dir='ltr'] h1, html[dir='ltr'] h2, html[dir='ltr'] h3, html[dir='ltr'] h4,
-  html[dir='ltr'] .pl-hero-tagline,
   html[dir='ltr'] .ar-outcome-card strong,
   html[dir='ltr'] .ar-form-box h2 {
     font-family: Inter, 'Helvetica Neue', Arial, sans-serif !important;
   }
-  html[dir='ltr'] .pl-hero-tagline { color: #fff !important; }
+  html[dir='ltr'] .pl-hero-tagline {
+    color: #FAFAF8 !important;
+    font-family: 'Tajawal','IBM Plex Sans Arabic',sans-serif !important;
+    font-weight: 900 !important;
+    font-size: clamp(24px,4.5vw,58px) !important;
+  }
+  html[dir='ltr'] .pl-hero-sub {
+    font-family: 'Tajawal','IBM Plex Sans Arabic',sans-serif !important;
+    font-weight: 400 !important;
+    font-size: clamp(14px,1.4vw,17px) !important;
+  }
 
   /* ==========================================
      MOBILE RESPONSIVE POLISH
@@ -1023,15 +1040,13 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
       line-height:1.15 !important;
     }
     .pl-hero-tagline {
-      font-size:clamp(15px,4.2vw,18px) !important;
-      margin-bottom:10px !important;
+      /* keep homepage clamp — do not shrink below home hero */
+      margin-bottom:0 !important;
       max-width:20em;
     }
     .pl-hero-sub {
-      font-size:14px !important;
-      line-height:1.7 !important;
-      margin:0 auto 18px !important;
-      max-width:28em;
+      margin:12px auto 18px !important;
+      max-width:min(640px,100%);
       display:-webkit-box;
       -webkit-line-clamp:3;
       -webkit-box-orient:vertical;
