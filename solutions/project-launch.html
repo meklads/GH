@@ -582,8 +582,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     background:#111;
   }
   .ar-media-frame iframe,
-  .ar-media-frame video,
-  .ar-media-frame img {
+  .ar-media-frame video {
     position:absolute;
     left:0;
     width:100%;
@@ -591,6 +590,42 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     top:0;
     border:0;
     object-fit:cover;
+  }
+  .ar-media-frame--gallery {
+    aspect-ratio:auto;
+    overflow:visible;
+    background:transparent;
+    padding:14px 14px 4px;
+  }
+  .ar-media-frame--gallery .pl-s3-wrap,
+  .ar-media-frame--gallery .pl-s3-image,
+  .ar-media-frame--gallery .pl-s3-thumbs,
+  .ar-media-frame--gallery .pl-s3-thumb,
+  .ar-media-frame--gallery img {
+    position:static;
+    inset:auto;
+    width:auto;
+    height:auto;
+    object-fit:unset;
+    transform:none;
+  }
+  .ar-media-frame--gallery .pl-s3-wrap { width:100%; }
+  .ar-media-frame--gallery .pl-s3-image { width:100%; position:relative; }
+  .ar-media-frame--gallery .pl-s3-image > img {
+    width:100%; height:auto; display:block;
+  }
+  .ar-media-frame--gallery .pl-s3-thumbs {
+    display:grid; grid-template-columns:repeat(6,1fr); gap:8px;
+    margin-top:14px; width:100%;
+  }
+  .ar-media-frame--gallery .pl-s3-thumb {
+    width:100%; aspect-ratio:1; overflow:hidden;
+  }
+  .ar-media-frame--gallery .pl-s3-thumb img {
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .ar-media-card:has(.ar-media-frame--gallery) {
+    overflow:visible;
   }
   /* Mild top/bottom black: shorter frame, iframe keeps full width at true 16:9 */
   .ar-media-frame--soft {
@@ -621,12 +656,6 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     top:0; height:100%;
     object-fit:cover;
     transform:none;
-  }
-  .ar-media-frame--gallery {
-    aspect-ratio:auto;
-    overflow:visible;
-    background:transparent;
-    padding:14px 14px 4px;
   }
   .ar-env-card {
     border-radius:20px; overflow:hidden;
@@ -1178,7 +1207,20 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
             <div class="pl-s3-corner bl"></div>
             <div class="pl-s3-corner br"></div>
           </div>
-          <div class="pl-s3-thumbs" data-pl-thumbs></div>
+          <div class="pl-s3-thumbs" data-pl-thumbs>
+            <div class="pl-s3-thumb active" data-pl-src="../assets/news/makkah-charter-01.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-01.jpeg" alt="معرض ميثاق مكة 1"></div>
+            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-02.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-02.jpeg" alt="معرض ميثاق مكة 2"></div>
+            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-03.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-03.jpeg" alt="معرض ميثاق مكة 3"></div>
+            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-04.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-04.jpeg" alt="معرض ميثاق مكة 4"></div>
+            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-05.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-05.jpeg" alt="معرض ميثاق مكة 5"></div>
+            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-06.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-06.jpeg" alt="معرض ميثاق مكة 6"></div>
+            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-07.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-07.jpeg" alt="معرض ميثاق مكة 7"></div>
+            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-08.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-08.jpeg" alt="معرض ميثاق مكة 8"></div>
+            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-09.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-09.jpeg" alt="معرض ميثاق مكة 9"></div>
+            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-10.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-10.jpeg" alt="معرض ميثاق مكة 10"></div>
+            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-11.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-11.jpeg" alt="معرض ميثاق مكة 11"></div>
+            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-12.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-12.jpeg" alt="معرض ميثاق مكة 12"></div>
+          </div>
         </div>
       </div>
       <div class="ar-media-body">
@@ -1705,22 +1747,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
     setTimeout(function () { if (ldr) ldr.classList.add('out'); }, 400);
   });
 
-  /* ---- Homepage-style MWL gallery (replaces interactive-touch-screen.mp4) ---- */
-  var PL_S3_IMGS = [
-    '../assets/news/makkah-charter-01.jpeg',
-    '../assets/news/makkah-charter-02.jpeg',
-    '../assets/news/makkah-charter-03.jpeg',
-    '../assets/news/makkah-charter-04.jpeg',
-    '../assets/news/makkah-charter-05.jpeg',
-    '../assets/news/makkah-charter-06.jpeg',
-    '../assets/news/makkah-charter-07.jpeg',
-    '../assets/news/makkah-charter-08.jpeg',
-    '../assets/news/makkah-charter-09.jpeg',
-    '../assets/news/makkah-charter-10.jpeg',
-    '../assets/news/makkah-charter-11.jpeg',
-    '../assets/news/makkah-charter-12.jpeg'
-  ];
-
+  /* ---- Homepage-style MWL gallery ---- */
   function plInitGalleries() {
     document.querySelectorAll('[data-pl-gallery]').forEach(function (wrap) {
       var mainId = wrap.getAttribute('data-main-id');
@@ -1729,19 +1756,10 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
       var lightEl = wrap.querySelector('[data-pl-lightbox]');
       if (!mainImg || !thumbs) return;
 
-      thumbs.innerHTML = '';
-      PL_S3_IMGS.forEach(function (src, i) {
-        var thumb = document.createElement('div');
-        thumb.className = 'pl-s3-thumb' + (i === 0 ? ' active' : '');
-        thumb.setAttribute('role', 'button');
-        thumb.setAttribute('tabindex', '0');
-        thumb.setAttribute('aria-label', 'معرض ميثاق مكة ' + (i + 1));
-        var img = document.createElement('img');
-        img.loading = 'lazy';
-        img.src = src;
-        img.alt = 'معرض ميثاق مكة ' + (i + 1);
-        thumb.appendChild(img);
+      thumbs.querySelectorAll('.pl-s3-thumb').forEach(function (thumb) {
         function activate() {
+          var src = thumb.getAttribute('data-pl-src') || (thumb.querySelector('img') && thumb.querySelector('img').getAttribute('src'));
+          if (!src) return;
           mainImg.setAttribute('src', src);
           thumbs.querySelectorAll('.pl-s3-thumb').forEach(function (t) {
             t.classList.remove('active');
@@ -1755,7 +1773,6 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
             activate();
           }
         });
-        thumbs.appendChild(thumb);
       });
 
       if (lightEl) {
