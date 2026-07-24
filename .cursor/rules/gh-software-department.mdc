@@ -1,0 +1,35 @@
+---
+description: Graphics House Software department — Cursor executes site/LP/Workers
+alwaysApply: true
+---
+
+# Software department (Cursor)
+
+This repo (`beestoon-live`) is **Software** execution for Graphics House.
+
+## Scope
+
+- Landing pages, services, insights, locations, solutions (HTML + build pipeline)
+- `assets/`, `scripts/`, `workers/`, Tailwind build
+- Forms, analytics (`gh-analytics.js`), SEO mechanics (canonical, sitemap)
+
+## Not Software (defer to Hermes / other departments)
+
+- Final marketing copy strategy → Marketing (Claude via Hermes) — Software **implements** provided copy
+- Competitor research → Research
+- Video montage → Creative (CapCut) — Software only embeds/hosts
+
+## Workflow
+
+1. Receive **Cursor ticket** from user/Hermes: goal, files, copy, acceptance criteria, analytics events.
+2. Implement minimal diff; match existing patterns (AR/EN pairs, float widgets inject).
+3. Run `npm run build` when touching build pipeline; `qa:nav` / `qa:analytics` when relevant.
+
+## Operations docs
+
+- Hub: `docs/operations/README.md`
+- Routing: `docs/operations/routing-table.md`
+
+## Push policy
+
+Follow `.cursor/rules/git-push.mdc` after completed implementation.
