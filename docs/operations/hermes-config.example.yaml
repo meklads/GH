@@ -1,0 +1,27 @@
+# مثال — انسخ إلى ~/.hermes/config.yaml
+# عدّل system_prompt_file أو system_prompt حسب ما يدعمه إصدار Hermes لديك.
+# تحقق: hermes config --help
+
+model:
+  provider: openrouter
+  # رخيص للتنسيق اليومي — غيّر من openrouter.ai/deepseek
+  default: deepseek/deepseek-v4-flash
+
+# إن دعم Hermes fallback (اختياري — للتوقف لا للترقية التلقائية لـ Claude):
+# fallback:
+#   provider: openrouter
+#   model: deepseek/deepseek-chat
+
+openrouter:
+  # يُقرأ عادة من OPENROUTER_API_KEY في .env — لا تضع المفتاح هنا إن أمكن
+  site_url: https://3dgraphicshouse.com
+  app_name: Graphics House Hermes
+
+# بعض إصدارات Hermes تستخدم soul/system في ملف منفصل:
+# system_prompt_file: ~/.hermes/gh-system-prompt.txt
+
+# Graphics House — model presets (للتبديل اليدوي via `hermes model`)
+# gh_daily:     deepseek/deepseek-v4-flash
+# gh_structure: deepseek/deepseek-v4-pro
+# gh_final:     anthropic/claude-sonnet-4  # أو ~anthropic/claude-sonnet-latest
+# gh_longdoc:   moonshotai/kimi-k2         # تحقق من slug على OpenRouter

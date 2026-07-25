@@ -28,6 +28,8 @@
 - [جدول التوجيه (مهمة → قسم → نموذج)](routing-table.md)
 - [سياسة النماذج والتكلفة](model-policy.md)
 - [System prompt لـ Hermes (نسخ ولصق)](hermes-system-prompt.ar.md)
+- [إعداد Hermes + OpenRouter (خطوة بخطوة)](hermes-setup.ar.md)
+- [ملف prompt جاهز](gh-system-prompt.txt) · [مثال config.yaml](hermes-config.example.yaml)
 
 ## خدمات Graphics House → أي قسم يقود
 
