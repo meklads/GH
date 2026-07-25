@@ -68,17 +68,22 @@ hermes chat --provider openrouter --model 'deepseek/deepseek-v4-flash'
 
 ## 4) System prompt (قلب النظام)
 
-1. افتح [`hermes-system-prompt.ar.md`](hermes-system-prompt.ar.md) في هذا الريpo.
-2. انسخ من السطر «أنت **Hermes**» حتى نهاية الملف (بدون العناوين `#`).
-3. ضعه في Hermes:
-   - **محلي:** حسب وثائق Hermes — غالباً `~/.hermes/config.yaml` تحت `system_prompt` أو ملف `~/.hermes/SOUL.md` / `AGENTS.md` — راجع `hermes config` أو [OpenRouter cookbook](https://openrouter.ai/docs/cookbook/coding-agents/hermes-integration).
-   - **Hermify:** Onboarding → System instructions.
+**Settings → Chat** لا يحتوي حقل نص طويل — طبيعي في Hermes Agent.
 
-4. أضف سطراً في ذاكرة Hermes (إن وُجدت):
+### أ) `~/.hermes/SOUL.md` (عام)
 
-   ```text
-   مرجع الأقسام: GitHub meklads/GH → docs/operations/
-   ```
+انسخ [`gh-system-prompt.txt`](gh-system-prompt.txt) إلى **`~/.hermes/SOUL.md`**.
+
+### ب) **Settings → Workspace**
+
+| الحقل | القيمة |
+|--------|--------|
+| Working Directory | مسار `beestoon-live` على جهازك |
+| Automatic Repository Discovery | ON |
+
+Hermes يحمّل **`AGENTS.md`** من جذر المشروع.
+
+**Chat:** Personality = None — OK.
 
 ---
 
