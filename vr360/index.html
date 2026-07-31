@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script src="../assets/gh-forms-config.js?v=2"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y67JVE898Z"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+window.gtag=gtag;
+gtag('js',new Date());
+gtag('config','G-Y67JVE898Z');
+</script>
+<script src="../assets/gh-analytics.js?v=3"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>جولة افتراضية 360° | Graphics House</title>
+<meta name="description" content="جولة افتراضية تفاعلية لعرض الوحدة — Graphics House.">
+<link rel="canonical" href="https://3dgraphicshouse.com/vr360/">
+<meta property="og:title" content="Virtual Tour 360° | Graphics House">
+<meta property="og:description" content="Interactive 360° virtual tour — Graphics House.">
+<meta property="og:url" content="https://3dgraphicshouse.com/vr360/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://3dgraphicshouse.com/assets/projects/vr360/360gh.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
+<style>
+  :root {
+    --gh-bar: 44px;
+    --gh-bg: #0a0a0a;
+    --gh-gold: #c9a962;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: var(--gh-bg);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .gh-vr-bar {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    height: var(--gh-bar);
+    padding: 0 14px;
+    background: rgba(10, 10, 10, 0.92);
+    border-bottom: 1px solid rgba(201, 169, 98, 0.25);
+    backdrop-filter: blur(8px);
+  }
+  .gh-vr-bar a {
+    color: #fafaf8;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .gh-vr-bar a:hover { color: var(--gh-gold); }
+  .gh-vr-bar span {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 12px;
+  }
+  .gh-vr-frame-wrap {
+    position: fixed;
+    inset: var(--gh-bar) 0 0 0;
+  }
+  .gh-vr-frame-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #111;
+  }
+  .gh-vr-loading {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .gh-vr-loading.is-hidden { opacity: 0; }
+</style>
+</head>
+<body>
+<header class="gh-vr-bar">
+  <a href="/">Graphics House</a>
+  <span>جولة افتراضية 360°</span>
+  <a href="/services/vr-360.html">VR &amp; 360°</a>
+</header>
+<div class="gh-vr-frame-wrap">
+  <p class="gh-vr-loading" id="ghVrLoading">جاري تحميل الجولة…</p>
+  <iframe
+    id="ghVrTour"
+    title="جولة افتراضية 360°"
+    src="https://www.snapegypt.com/panorama/TYPE-N-UNIT-T3-178m2/"
+    allow="fullscreen; xr-spatial-tracking; gyroscope; accelerometer"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+<script>
+(function () {
+  var frame = document.getElementById('ghVrTour');
+  var loading = document.getElementById('ghVrLoading');
+  if (!frame || !loading) return;
+  frame.addEventListener('load', function () {
+    loading.classList.add('is-hidden');
+  });
+  if (window.gtag) {
+    gtag('event', 'vr360_tour_view', { page_path: '/vr360/' });
+  }
+})();
+</script>
+</body>
+</html>
