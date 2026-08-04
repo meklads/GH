@@ -43,6 +43,11 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=24">
 <link rel="stylesheet" href="assets/site-header.css?v=31">
 <style>
+:root {
+  --gold: #C7A150; --gold-light: #D9B860; --gold-dark: #A8883A;
+  --text-primary: #1A1A1A; --text-secondary: rgba(26,26,26,0.65);
+  --text-muted: rgba(26,26,26,0.4); --bg-white: #FFFFFF;
+}
 *,*::before,*::after{border-radius:0!important}
 html{scroll-behavior:smooth;background:#FAFAF8;color:#1A1A1A}
 body{font-family:'Tajawal','Inter',sans-serif;background:#FAFAF8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -124,102 +129,181 @@ img{max-width:100%;display:block}
   .gallery-strip-item:hover { flex: 4; }
 }
 
-/* Sections */
-section{padding:90px 0}
-.section-label{font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#C9A84C;display:block;margin-bottom:12px}
-html[dir="ltr"] .section-label{letter-spacing:.08em;font-size:11px}
-.section-title{font-size:clamp(26px,4vw,48px);font-weight:800;line-height:1.2;color:#1A1A1A}
-.section-title span{color:#C9A84C}
-.section-text{font-size:15px;font-weight:300;color:#777;line-height:1.8;max-width:560px}
+/* SECTIONS */
+section { padding: 90px 0; }
+@media (max-width: 768px) { section { padding: 56px 0; } }
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+  color: var(--gold); display: block; margin-bottom: 12px;
+  font-family: 'Inter', sans-serif; text-transform: uppercase;
+}
+.section-title {
+  font-size: clamp(28px, 3.8vw, 48px);
+  font-weight: 500; line-height: 1.15;
+  margin-bottom: 16px; color: var(--text-primary);
+}
+.section-title .gold { color: var(--gold); }
+.section-sub {
+  font-size: 16px; font-weight: 400; color: var(--text-secondary);
+  line-height: 1.8; max-width: 620px; margin-bottom: 48px;
+}
 
-/* About grid */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:40px}}
+/* FEATURE GRID */
+.feature-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+  background: rgba(26,26,26,0.06); border: 1px solid rgba(26,26,26,0.06);
+}
+.feature-card {
+  background: var(--bg-white); padding: 40px 28px; text-align: center;
+  transition: all 0.4s ease;
+}
+.feature-card:hover { background: #FAFAF8; }
+.feature-card .icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px; transition: all 0.4s ease;
+}
+.feature-card .icon .material-symbols-outlined { font-size: 24px; color: var(--gold); }
+.feature-card:hover .icon {
+  background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.4);
+  transform: translateY(-4px);
+}
+.feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 400; }
+@media (max-width: 1024px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .feature-grid { grid-template-columns: 1fr; } }
 
-/* Service cards */
-.svc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:rgba(26,26,26,.06);border:1px solid rgba(26,26,26,.06)}
-.svc-item{background:#FFF;padding:36px 28px;text-align:center;transition:all .3s}
-.svc-item:hover{background:#FAFAF8}
-.svc-item h3{font-size:13px;font-weight:700;color:#1A1A1A;margin-bottom:0}
-@media(max-width:768px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.svc-grid{grid-template-columns:1fr}}
+/* PORTFOLIO GRID */
+.portfolio-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+.portfolio-item {
+  position: relative; aspect-ratio: 4/3; overflow: hidden;
+  background: #EEE; border: 1px solid rgba(26,26,26,0.06);
+  transition: all 0.5s ease; cursor: pointer;
+}
+.portfolio-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25,0.1,0.1,1);
+}
+.portfolio-item:hover { border-color: rgba(201,168,76,0.2); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+.portfolio-item:hover img { transform: scale(1.06); }
+.portfolio-item-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 24px 18px 16px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  transform: translateY(8px); opacity: 0; transition: all 0.4s ease;
+}
+.portfolio-item:hover .portfolio-item-overlay { transform: translateY(0); opacity: 1; }
+.portfolio-item-category {
+  font-size: 10px; font-weight: 600; color: var(--gold);
+  display: block; letter-spacing: 1px; font-family: 'Inter', sans-serif;
+  text-transform: uppercase; margin-bottom: 4px;
+}
+.portfolio-item-title { font-size: 14px; font-weight: 500; color: #fff; display: block; }
+.portfolio-item::before, .portfolio-item::after {
+  content: ''; position: absolute; z-index: 2; pointer-events: none;
+  width: 16px; height: 16px; opacity: 0; transition: all 0.4s ease;
+}
+.portfolio-item::before { top: 8px; left: 8px; border-top: 1.5px solid var(--gold); border-left: 1.5px solid var(--gold); }
+.portfolio-item::after { bottom: 8px; right: 8px; border-bottom: 1.5px solid var(--gold); border-right: 1.5px solid var(--gold); }
+.portfolio-item:hover::before, .portfolio-item:hover::after { opacity: 0.6; }
+@media (max-width: 768px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .portfolio-grid { grid-template-columns: 1fr; } }
 
-/* Clients grid */
-.cli-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(26,26,26,.06);border:1px solid rgba(26,26,26,.06)}
-.cli-item{background:#FFF;padding:28px 20px;text-align:center;transition:all .3s}
-.cli-item:hover{background:#FAFAF8}
-.cli-item h3{font-size:13px;font-weight:600;color:#999;margin-bottom:0}
-@media(max-width:768px){.cli-grid{grid-template-columns:repeat(2,1fr)}}
+/* WHY GRID */
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.why-card { background: var(--bg-white); border: 1px solid rgba(26,26,26,0.06); padding: 32px 24px; text-align: center; transition: all 0.4s ease; }
+.why-card:hover { border-color: rgba(201,168,76,0.2); background: rgba(201,168,76,0.04); transform: translateY(-4px); }
+.why-card .num { font-size: 36px; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 8px; font-family: 'Inter', sans-serif; }
+.why-card h4 { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+.why-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 400; }
+@media (max-width: 1024px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .why-grid { grid-template-columns: 1fr; } }
 
-/* Content card */
-.content-card{background:#FFF;border:1px solid rgba(26,26,26,.06);padding:48px 44px}
-.content-card h2{font-size:22px;font-weight:800;color:#1A1A1A;margin-bottom:16px}
-.content-card p{font-size:14px;color:#777;line-height:1.9;margin-bottom:14px}
-.content-card p:last-child{margin-bottom:0}
+/* RELATED SERVICES */
+.rel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.rel-card {
+  background: var(--bg-white); border: 1px solid rgba(26,26,26,0.06); padding: 32px 24px; text-align: center;
+  transition: all 0.4s ease; text-decoration: none; color: inherit; display: block;
+}
+.rel-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+.rel-card .icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+  transition: all 0.4s ease;
+}
+.rel-card .icon .material-symbols-outlined { font-size: 24px; color: var(--gold); }
+.rel-card:hover .icon { background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
+.rel-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.rel-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; font-weight: 400; }
+@media (max-width: 1024px) { .rel-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .rel-grid { grid-template-columns: 1fr; } }
 
-/* Stats */
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(26,26,26,.06);border:1px solid rgba(26,26,26,.06)}
-.stats-item{background:#FAFAF8;padding:40px 20px;text-align:center}
-.stats-item .num{font-size:clamp(32px,4vw,48px);font-weight:900;color:#C9A84C;line-height:1}
-.stats-item .label{font-size:13px;color:#999;margin-top:8px;font-weight:500}
-@media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+/* CTA DIVIDERS */
+.cta-d { padding: 80px 0; text-align: center; }
+.cta-d-inner { max-width: 720px; margin: 0 auto; padding: 0 48px; }
+@media (max-width: 768px) { .cta-d { padding: 48px 0; } .cta-d-inner { padding: 0 20px; } }
+.cta-d h2 { font-size: clamp(26px, 3.2vw, 38px); font-weight: 500; margin-bottom: 12px; line-height: 1.15; }
+.cta-d h2 .gold { color: var(--gold); }
+.cta-d p { font-size: 16px; font-weight: 400; color: var(--text-secondary); margin-bottom: 28px; line-height: 1.7; max-width: 520px; margin-left: auto; margin-right: auto; }
+.btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.cta-d .btn-p { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: #fff; color: #1A1A1A; font-size: 14px; font-weight: 700; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s; font-family: 'Inter', sans-serif; text-decoration: none; }
+.cta-d .btn-p:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+.btn-o-light { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: transparent; color: #FAFAF8; font-size: 14px; font-weight: 600; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 50px; cursor: pointer; transition: all 0.3s; font-family: 'Inter', sans-serif; text-decoration: none; }
+.btn-o-light:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+.btn-o { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: transparent; color: var(--text-primary); font-size: 14px; font-weight: 600; border: 1.5px solid rgba(26,26,26,0.15); border-radius: 50px; cursor: pointer; transition: all 0.3s; font-family: 'Inter', sans-serif; text-decoration: none; }
+.btn-o:hover { border-color: var(--gold); color: var(--gold-dark); transform: translateY(-2px); }
 
-/* Buttons */
-.btn-p{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:all .4s;text-decoration:none;background:#1A1A1A;color:#FAFAF8;border:1.5px solid #1A1A1A}
-.btn-p:hover{background:#C9A84C;border-color:#C9A84C;color:#FAFAF8}
-.btn-o{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:all .4s;text-decoration:none;background:transparent;color:#1A1A1A;border:1.5px solid rgba(26,26,26,.2)}
-.btn-o:hover{border-color:#C9A84C;color:#C9A84C}
+/* CONTACT */
+.contact-s { padding: 80px 0; background: #F5F4F0; }
+.contact-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+@media (max-width: 768px) { .contact-s { padding: 48px 0; } .contact-inner { padding: 0 20px; } }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+.contact-info h3 { font-size: 22px; font-weight: 500; margin-bottom: 12px; }
+.contact-info p { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
+.contact-info-item { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(26,26,26,0.04); font-size: 16px; color: var(--text-secondary); }
+.contact-info-item .material-symbols-outlined { color: var(--gold); font-size: 20px; }
+.form-card { background: var(--bg-white); border: 1px solid rgba(26,26,26,0.08); padding: 40px; }
+@media (max-width: 768px) { .form-card { padding: 24px; } }
+.form-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 20px; }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 5px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 16px; background: rgba(26,26,26,0.03); border: 1px solid rgba(26,26,26,0.1); color: var(--text-primary); font-size: 14px; font-family: 'Inter', sans-serif; outline: none; transition: border-color 0.3s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+.form-group select { appearance: none; -webkit-appearance: none; cursor: pointer; }
+.form-group select option { background: #FAFAF8; color: var(--text-primary); }
+.form-group textarea { min-height: 90px; resize: vertical; }
+.form-submit { width: 100%; padding: 15px; background: #fff; color: #1A1A1A; font-size: 15px; font-weight: 700; font-family: 'Inter', sans-serif; border: 1px solid rgba(26,26,26,0.1); cursor: pointer; transition: all 0.3s; }
+.form-submit:hover { background: #f0f0f0; }
 
-/* CTA */
-.cta{text-align:center;padding:100px 0;background:#FFF;border-top:1px solid rgba(26,26,26,.06)}
-.cta h2{font-size:clamp(24px,3vw,36px);font-weight:800;color:#1A1A1A;max-width:550px;margin:0 auto 12px;line-height:1.2}
-.cta p{font-size:14px;color:#777;max-width:420px;margin:0 auto 28px;line-height:1.7}
-.cta .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+/* VIDEO PORTFOLIO */
+.portfolio-item.pf-video { cursor: pointer; }
+.portfolio-item.pf-video img { filter: brightness(.82); transition: transform .8s cubic-bezier(.25,.1,.1,1), filter .5s ease; }
+.portfolio-item.pf-video:hover img { filter: brightness(.55); }
+.pf-video-play {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  z-index: 2; pointer-events: none; opacity: 0; transition: opacity .4s ease;
+}
+.pf-video-play .material-symbols-outlined {
+  font-size: 56px; color: #fff;
+  filter: drop-shadow(0 0 20px rgba(201,168,76,.35));
+  font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+  transition: transform .4s ease, filter .4s ease;
+}
+.portfolio-item.pf-video:hover .pf-video-play { opacity: 1; }
+.portfolio-item.pf-video:hover .pf-video-play .material-symbols-outlined {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 30px rgba(201,168,76,.55));
+}
 
-/* Footer */
-.footer{background:#1A1A1A;color:rgba(255,255,255,.6);padding:60px 0 30px;margin-top:0}
-.footer-container{max-width:1280px;margin:0 auto;padding:0 24px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px}
-@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px}}
-.footer h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.9);margin-bottom:16px}
-.footer-links{display:flex;flex-direction:column;gap:10px}
-.footer-links a{font-size:13px;color:rgba(255,255,255,.5);transition:color .3s;text-decoration:none}
-.footer-links a:hover{color:#C9A84C}
-.footer-desc{font-size:13px;line-height:1.8;color:rgba(255,255,255,.4);max-width:300px;margin-top:12px}
-.footer-social{display:flex;gap:12px;margin-top:20px}
-.footer-social a{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);transition:all .3s;text-decoration:none}
-.footer-social a:hover{border-color:#C9A84C;color:#C9A84C}
-.footer-contact{display:flex;flex-direction:column;gap:12px}
-.footer-contact-item{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s}
-.footer-contact-item:hover{color:#C9A84C}
-.footer-contact-item .material-symbols-outlined{font-size:16px;color:#C9A84C}
-.footer-registration
-.footer-registration{text-align:center;padding:16px 0;margin-top:10px;border-top:1px solid rgba(255,255,255,.04);font-size:11px;color:rgba(255,255,255,.3);display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}
-.footer-registration .reg-sep{color:rgba(255,255,255,.1)}
-@media(max-width:480px){.footer-registration{flex-direction:column;gap:4px}}
-
-.footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.3)}
-@media(max-width:768px){.footer-registration
-.footer-registration{text-align:center;padding:16px 0;margin-top:10px;border-top:1px solid rgba(255,255,255,.04);font-size:11px;color:rgba(255,255,255,.3);display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}
-.footer-registration .reg-sep{color:rgba(255,255,255,.1)}
-@media(max-width:480px){.footer-registration{flex-direction:column;gap:4px}}
-
-.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
-
-.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.1,.1,1)}
+.reveal{opacity:0;transform:translateY(24px);transition:all .7s cubic-bezier(.25,.1,.1,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .r1{transition-delay:.1s}.r2{transition-delay:.2s}.r3{transition-delay:.3s}
-
-/* Service intro */
-.service-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-@media(max-width:768px){.service-intro-grid{grid-template-columns:1fr;gap:40px}}
-
-/* Why items */
-.why-item{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid rgba(26,26,26,.06)}
-.why-item:last-child{border-bottom:none;padding-bottom:0}
-.why-item .why-icon{font-size:22px;color:#C9A84C;margin-top:2px;flex-shrink:0}
-.why-item h4{font-size:14px;font-weight:700;color:#1A1A1A;margin:0 0 4px}
-.why-item p{font-size:13px;color:#777;line-height:1.6;margin:0}
 
 /* Video Modal */
 .video-modal{position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s ease;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
@@ -230,30 +314,6 @@ html[dir="ltr"] .section-label{letter-spacing:.08em;font-size:11px}
 .video-aspect{position:relative;padding-bottom:56.25%;background:#000;border-radius:4px;overflow:hidden}
 .video-aspect #videoModalPlayer{position:absolute;inset:0}
 .video-aspect iframe,.video-aspect video{width:100%;height:100%;border:0;background:#000}
-
-/* Portfolio grid for animation page */
-.animation-portfolio .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.animation-portfolio .pf-item{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;background:#eee;border:1px solid rgba(0,0,0,0.06);transition:all .5s ease}
-.animation-portfolio .pf-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.25,.1,.1,1)}
-.animation-portfolio .pf-item:hover{border-color:rgba(199,161,80,0.2);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
-.animation-portfolio .pf-item:hover img{transform:scale(1.05)}
-.animation-portfolio .pf-item-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.85));transform:translateY(8px);opacity:0;transition:all .4s ease}
-.animation-portfolio .pf-item:hover .pf-item-overlay{transform:translateY(0);opacity:1}
-.animation-portfolio .pf-item-location{font-size:10px;font-weight:600;color:#C9A84C;display:block;letter-spacing:1px;font-family:'Inter',sans-serif;text-transform:uppercase;margin-bottom:4px}
-html[dir="ltr"] .animation-portfolio .pf-item-location{letter-spacing:0;text-transform:none}
-.animation-portfolio .pf-item-title{font-size:14px;font-weight:500;color:#fff;display:block;font-family:'Tajawal',sans-serif}
-.animation-portfolio .pf-video-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none;opacity:0;transition:opacity .4s ease}
-.animation-portfolio .pf-video-play .material-symbols-outlined{font-size:56px;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.5);filter:drop-shadow(0 0 20px rgba(199,161,80,.3));transition:transform .4s ease,filter .4s ease;font-variation-settings:'FILL' 1,'wght' 300,'GRAD' 0,'opsz' 48}
-.animation-portfolio .pf-video:hover .pf-video-play{opacity:1}
-.animation-portfolio .pf-video:hover .pf-video-play .material-symbols-outlined{transform:scale(1.12);filter:drop-shadow(0 0 30px rgba(199,161,80,.5))}
-.animation-portfolio .pf-video img{filter:brightness(.7);transition:transform .8s cubic-bezier(.25,.1,.1,1),filter .5s ease}
-.animation-portfolio .pf-video:hover img{filter:brightness(.5)}
-.animation-portfolio .pf-item::before,.animation-portfolio .pf-item::after{content:'';position:absolute;z-index:2;pointer-events:none;width:16px;height:16px;opacity:0;transition:all .4s ease}
-.animation-portfolio .pf-item::before{top:8px;left:8px;border-top:1.5px solid #C9A84C;border-left:1.5px solid #C9A84C}
-.animation-portfolio .pf-item::after{bottom:8px;right:8px;border-bottom:1.5px solid #C9A84C;border-right:1.5px solid #C9A84C}
-.animation-portfolio .pf-item:hover::before,.animation-portfolio .pf-item:hover::after{opacity:.6}
-@media(max-width:1024px){.animation-portfolio .portfolio-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.animation-portfolio .portfolio-grid{grid-template-columns:1fr}}
 
 /* Header scroll behavior - like homepage */
 #main-nav {
@@ -303,7 +363,8 @@ html[dir="ltr"] h1,
 html[dir="ltr"] h2,
 html[dir="ltr"] .section-title,
 html[dir="ltr"] .content-card h2,
-html[dir="ltr"] .cta h2 {
+html[dir="ltr"] .cta h2,
+html[dir="ltr"] .cta-d h2 {
   font-family: 'Playfair Display', Georgia, serif;
   letter-spacing: -0.02em;
 }
@@ -524,137 +585,252 @@ html[dir="ltr"] .section-title {
   </div>
 </section>
 
-<!-- SERVICE INTRO -->
-<section>
-  <div class="container">
-    <div class="service-intro-grid">
-      <div class="reveal">
-        <span class="section-label">Our Service</span>
-        <h2 class="section-title">3D Animation <span>&amp; Visual Effects</span></h2>
-        <p class="section-text" style="margin-bottom:20px">Our architectural films masterfully blend imagery, sound, and narrative to transport viewers into immersive worlds، evoking powerful emotions and telling captivating stories. With compelling characters, breathtaking cinematography, and thought-provoking concepts, they captivate audiences and inspire imagination.</p>
-        <p class="section-text">We transform your architectural blueprints into a compelling cinematic narrative، helping you sell your project before it is built.</p>
+<!-- SERVICES -->
+<section style="background:var(--bg-white)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">Our Services</span>
+      <h2 class="section-title">3D Animation <span class="gold">&amp; Cinematic Films</span></h2>
+      <p class="section-sub" style="margin:0 auto">We transform your architectural plans into cinematic visual stories that blend imagery, sound, and pacing — helping you sell your project before it is built.</p>
+    </div>
+    <div class="feature-grid reveal r1">
+      <div class="feature-card">
+        <div class="icon"><span class="material-symbols-outlined">slow_motion_video</span></div>
+        <h3>Architectural CGI Films</h3>
+        <p>Cinematic CGI production that highlights the beauty of your project and evokes emotion — with professional visual storytelling built for major launches.</p>
       </div>
-      <div class="reveal r1">
-        <div class="content-card gold-border-right">
-          <h2>Why Graphics House?</h2>
-          <div class="why-item">
-            <span class="material-symbols-outlined why-icon">precision_manufacturing</span>
-            <div>
-              <h4>Technical Precision with an Artistic Touch</h4>
-              <p>Our team blends architectural expertise and technical capability to deliver 3D visuals that are both accurate and inspiring.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <span class="material-symbols-outlined why-icon">manage_accounts</span>
-            <div>
-              <h4>Dedicated Project Manager</h4>
-              <p>We assign you a dedicated project lead to ensure seamless communication and faithful execution of your vision.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <span class="material-symbols-outlined why-icon">update</span>
-            <div>
-              <h4>Transparent, Ongoing Updates</h4>
-              <p>Stay informed at every stage with regular virtual meetings and clear design updates.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <span class="material-symbols-outlined why-icon">price_check</span>
-            <div>
-              <h4>Clear Pricing &amp; Timelines</h4>
-              <p>We provide accurate quotes and defined schedules to ensure maximum value for your investment.</p>
-            </div>
-          </div>
-        </div>
+      <div class="feature-card">
+        <div class="icon"><span class="material-symbols-outlined">flight</span></div>
+        <h3>Virtual Fly-through Tours</h3>
+        <p>Cinematic fly-throughs inside and outside your project, revealing architectural details and spaces with deliberate camera movement and visual rhythm.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+        <h3>Project Launch Films</h3>
+        <p>Complete visual content for real estate launch campaigns — from early concept to final delivery, ready for big screens and social platforms.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><span class="material-symbols-outlined">auto_awesome</span></div>
+        <h3>Motion Graphics &amp; VFX</h3>
+        <p>VFX, cinematic transitions, and professional editing that strengthen your marketing message and give every film a world-class finish.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ANIMATION PORTFOLIO -->
+<!-- PRODUCTION PIPELINE -->
 <section style="background:#F5F4F0">
-  <div class="container">
-    <div class="animation-portfolio">
-      <div style="text-align:center;margin-bottom:50px">
-        <span class="section-label">Our Work</span>
-        <h2 class="section-title">Animation <span>Projects</span></h2>
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">Production Process</span>
+      <h2 class="section-title">From Concept to <span class="gold">the Big Screen</span></h2>
+      <p class="section-sub" style="margin:0 auto">A clear production methodology that delivers cinematic quality at every stage.</p>
+    </div>
+    <div class="why-grid reveal r1">
+      <div class="why-card"><div class="num">01</div><h4>Script &amp; Direction</h4><p>We build the visual story, camera movement, and cinematic pacing before any rendering begins.</p></div>
+      <div class="why-card"><div class="num">02</div><h4>Modeling &amp; Lighting</h4><p>Precise project modeling with cinematic lighting and realistic materials to international standards.</p></div>
+      <div class="why-card"><div class="num">03</div><h4>Rendering &amp; Edit</h4><p>High-resolution rendering, professional editing, sound, and music that serve your marketing message.</p></div>
+      <div class="why-card"><div class="num">04</div><h4>Delivery &amp; Distribution</h4><p>Files ready for big screens, sales galleries, and social media platforms.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 1 -->
+<section class="cta-d" style="background:#1A1A1A">
+  <div class="cta-d-inner">
+    <h2 style="color:#FAFAF8">Turn Your Project Into a <span class="gold">Cinematic Experience</span></h2>
+    <p style="color:rgba(255,255,255,0.6)">CGI films, virtual tours, and launch content — all from one studio with 15 years of experience.</p>
+    <div class="btns">
+      <a href="#booking" class="btn-p">Request a Quote <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
+      <a href="https://wa.me/966502786513" target="_blank" class="btn-o-light">WhatsApp Us <span class="material-symbols-outlined" style="font-size:16px">phone_in_talk</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section style="background:#F5F4F0">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">Our Work</span>
+      <h2 class="section-title">Animation <span class="gold">Film Gallery</span></h2>
+      <p class="section-sub" style="margin:0 auto">Samples of our cinematic films for leading developers and engineering firms across the region — click to watch.</p>
+    </div>
+    <div class="portfolio-grid reveal r1">
+      <div class="portfolio-item pf-video" onclick="playVideo('vYbn-9ramsI')">
+        <picture><source srcset="assets/projects/animation/jeddah-forum.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/jeddah-forum.jpg" alt="Jeddah Forum"></picture>
+        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
+        <div class="portfolio-item-overlay"><span class="portfolio-item-category">Jeddah</span><span class="portfolio-item-title">Jeddah Forum — Cinematic Film</span></div>
       </div>
-      <div class="portfolio-grid reveal">
-        
-        <div class="pf-item pf-video" onclick="playVideo('vYbn-9ramsI')">
-          <img src="assets/projects/animation/jeddah-forum.jpg" alt="" loading="lazy">
-          <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-          <div class="pf-item-overlay">
-            <span class="pf-item-location">Jeddah</span>
-            <span class="pf-item-title">Jeddah Forum، Cinematic Film</span>
+      <div class="portfolio-item pf-video" onclick="playVideo('ilWeCush3ew')">
+        <picture><source srcset="assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/rafal-pavilions.jpg" alt="Rafal Pavilions"></picture>
+        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
+        <div class="portfolio-item-overlay"><span class="portfolio-item-category">Saudi Arabia</span><span class="portfolio-item-title">Rafal Pavilions — Cinematic Film</span></div>
+      </div>
+      <div class="portfolio-item pf-video" onclick="playVideo('GlbvI0DRXE4')">
+        <picture><source srcset="assets/projects/animation/market-center.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/market-center.jpg" alt="Makkah Market Center"></picture>
+        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
+        <div class="portfolio-item-overlay"><span class="portfolio-item-category">Makkah</span><span class="portfolio-item-title">Makkah Market Center — Cinematic Film</span></div>
+      </div>
+      <div class="portfolio-item pf-video" onclick="playVideo('ALz6GdeITYc')">
+        <picture><source srcset="assets/projects/animation/alrajhi.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/alrajhi.jpg" alt="Al Rajhi Financial City"></picture>
+        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
+        <div class="portfolio-item-overlay"><span class="portfolio-item-category">Riyadh</span><span class="portfolio-item-title">Al Rajhi Financial City — Cinematic Film</span></div>
+      </div>
+      <div class="portfolio-item pf-video" onclick="playLocalVideo('assets/videos/3D-Architectural-visualisation.mp4')">
+        <picture><source srcset="assets/projects/animation/architectural-visualisation.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/architectural-visualisation.jpg" alt="Architectural Visualization"></picture>
+        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
+        <div class="portfolio-item-overlay"><span class="portfolio-item-category">Cinematic</span><span class="portfolio-item-title">Architectural Visualization — Animation</span></div>
+      </div>
+      <div class="portfolio-item pf-video" onclick="playLocalVideo('assets/videos/GH-Real-estate-services.mp4')">
+        <picture><source srcset="assets/projects/animation/real-estate-services.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/real-estate-services.jpg" alt="Real Estate Services"></picture>
+        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
+        <div class="portfolio-item-overlay"><span class="portfolio-item-category">Launch</span><span class="portfolio-item-title">Real Estate Services — Promotional Film</span></div>
+      </div>
+    </div>
+    <div class="reveal r2" style="text-align:center;margin-top:36px">
+      <a href="https://www.youtube.com/user/3dghouse/videos" target="_blank" rel="noopener" class="btn-o">Watch More on YouTube <span class="material-symbols-outlined" style="font-size:16px">play_circle</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GH -->
+<section style="background:var(--bg-white)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">Why Graphics House</span>
+      <h2 class="section-title">Deep Expertise in <span class="gold">Cinematic Production</span></h2>
+      <p class="section-sub" style="margin:0 auto">A team that combines art, engineering, and direction — creating films that sell projects before they are built.</p>
+    </div>
+    <div class="why-grid reveal r1">
+      <div class="why-card"><div class="num">200+</div><h4>CGI Films</h4><p>Cinematic architectural films for major developers and engineering firms across Saudi Arabia and the GCC.</p></div>
+      <div class="why-card"><div class="num">15</div><h4>Years of Experience</h4><p>Accumulated expertise in architectural cinematic production since the early 2000s.</p></div>
+      <div class="why-card"><div class="num">4K</div><h4>Cinematic Quality</h4><p>Direction, editing, sound, and VFX to international standards — built for big screens.</p></div>
+      <div class="why-card"><div class="num">1</div><h4>Integrated Team</h4><p>Directors, 3D artists, and editors — everything under one roof.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 2 -->
+<section class="cta-d" style="background:#1A1A1A">
+  <div class="cta-d-inner">
+    <h2 style="color:#FAFAF8">We've Produced Films for the Region's <span class="gold">Leading Developers</span></h2>
+    <p style="color:rgba(255,255,255,0.6)">From Jeddah Forum to Al Rajhi Financial City — our portfolio speaks for itself.</p>
+    <div class="btns">
+      <a href="#booking" class="btn-p">Book a Consultation <span class="material-symbols-outlined" style="font-size:16px">lightbulb</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED SERVICES -->
+<section style="background:#F5F4F0;padding:90px 0">
+  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="section-label">Related Services</span>
+      <h2 class="section-title">Everything Your Project Needs <span class="gold">in One Place</span></h2>
+      <p class="section-sub" style="margin:0 auto">An integrated suite of visual and marketing services — choose what fits your project.</p>
+    </div>
+    <div class="rel-grid reveal r1">
+      <a href="rendering-en.html" class="rel-card">
+        <div class="icon"><span class="material-symbols-outlined">imagesmode</span></div>
+        <h4>Architectural Visualization</h4>
+        <p>Photorealistic exterior and interior 3D renders for real estate projects.</p>
+      </a>
+      <a href="production-en.html" class="rel-card">
+        <div class="icon"><span class="material-symbols-outlined">videocam</span></div>
+        <h4>Photography &amp; Media Production</h4>
+        <p>Photography, editing, and visual content that completes your cinematic launch campaign.</p>
+      </a>
+      <a href="interactive-en.html" class="rel-card">
+        <div class="icon"><span class="material-symbols-outlined">smart_display</span></div>
+        <h4>Interactive Experiences</h4>
+        <p>Interactive screens and VR for sales galleries — extending the cinematic experience.</p>
+      </a>
+      <a href="maquettes-en.html" class="rel-card">
+        <div class="icon"><span class="material-symbols-outlined">home_work</span></div>
+        <h4>Scale Models</h4>
+        <p>Smart maquettes that blend physical and digital to present your project live.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 3 - FINAL -->
+<section class="cta-d" style="background:#1A1A1A">
+  <div class="cta-d-inner">
+    <h2 style="color:#FAFAF8">Now It's Your Turn to <span class="gold">Launch</span></h2>
+    <p style="color:rgba(255,255,255,0.6)">Request a quote today — our team responds within 24 hours.</p>
+    <div class="btns">
+      <a href="#booking" class="btn-p">Request a Quote <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
+      <a href="https://wa.me/966502786513" target="_blank" class="btn-o-light">WhatsApp <span class="material-symbols-outlined" style="font-size:16px">chat</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="booking" class="contact-s">
+  <div class="contact-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.2em;color:var(--gold);margin-bottom:12px;text-transform:uppercase">Contact Us</span>
+      <h2 style="font-size:clamp(26px,3.8vw,42px);font-weight:500;margin-bottom:12px">Request a Quote for <span style="color:var(--gold)">Your Cinematic Film</span></h2>
+      <p style="font-size:16px;color:var(--text-secondary);max-width:500px;margin:0 auto">Fill in the form and our cinematic production team will reach out within 24 hours.</p>
+    </div>
+    <div class="contact-grid reveal r1">
+      <div class="contact-info">
+        <h3>Let's Turn Your Project Into a Film That Sells</h3>
+        <p>Whether you need a full cinematic film, a virtual tour, or short launch content — our team is ready to help.</p>
+        <div class="contact-info-item"><span class="material-symbols-outlined">phone_in_talk</span> +966 50 278 6513</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">mail</span> info@3dgraphicshouse.com</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">location_on</span> Jeddah, Saudi Arabia — offices in 4 countries</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">schedule</span> Response within 24 business hours</div>
+      </div>
+      <div class="form-card">
+        <h3>Quote Request</h3>
+        <form class="gh-quote-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
+          <input type="hidden" name="_subject" value="Quote request - 3D Animation EN">
+          <input type="hidden" name="_next" value="https://3dgraphicshouse.com/services/animation-en.html?sent=1#booking">
+          <div class="form-group"><label>Full Name</label><input type="text" name="name" required placeholder="Your name"></div>
+          <div class="form-group"><label>Company / Organization</label><input type="text" name="company" placeholder="Company name"></div>
+          <div class="form-group"><label>Phone</label><input type="tel" name="phone" required placeholder="+966 5xxxxxxxx"></div>
+          <div class="form-group"><label>Email</label><input type="email" name="email" required placeholder="example@domain.com"></div>
+          <div class="form-group"><label>Service Required</label>
+            <select name="service" required>
+              <option value="">Select a service</option>
+              <option value="cinematic">Full architectural cinematic film</option>
+              <option value="flythrough">Virtual fly-through tour</option>
+              <option value="launch">Real estate project launch film</option>
+              <option value="motion">Motion graphics &amp; VFX</option>
+              <option value="other">Other</option>
+            </select>
           </div>
-        </div>
-        
-        <div class="pf-item pf-video" onclick="playVideo('ilWeCush3ew')">
-          <img src="assets/projects/animation/rafal-pavilions.jpg" alt="" loading="lazy">
-          <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-          <div class="pf-item-overlay">
-            <span class="pf-item-location">Saudi Arabia</span>
-            <span class="pf-item-title">Rafal Pavilions، Cinematic Film</span>
+          <div class="form-group"><label>City</label>
+            <select name="city">
+              <option value="">Select a city</option>
+              <option value="riyadh">Riyadh</option>
+              <option value="jeddah">Jeddah</option>
+              <option value="dammam">Dammam</option>
+              <option value="mecca">Makkah</option>
+              <option value="other">Other</option>
+            </select>
           </div>
-        </div>
-        
-        <div class="pf-item pf-video" onclick="playVideo('GlbvI0DRXE4')">
-          <img src="assets/projects/animation/market-center.jpg" alt="" loading="lazy">
-          <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-          <div class="pf-item-overlay">
-            <span class="pf-item-location">Makkah</span>
-            <span class="pf-item-title">Makkah Commercial Center، Cinematic Film</span>
+          <div class="form-group"><label>Project Details</label><textarea name="message" placeholder="Tell us about your project, type, approximate budget, and timeline..."></textarea></div>
+          <div class="gh-form-security">
+            <div class="gh-honeypot" aria-hidden="true">
+              <label>Leave blank</label>
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="gh-turnstile"></div>
           </div>
-        </div>
-        
-        <div class="pf-item pf-video" onclick="playVideo('ALz6GdeITYc')">
-          <img src="assets/projects/animation/alrajhi.jpg" alt="" loading="lazy">
-          <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-          <div class="pf-item-overlay">
-            <span class="pf-item-location">Saudi Arabia</span>
-            <span class="pf-item-title">Al Rajhi، Cinematic Film</span>
-          </div>
-        </div>
-        
-        <div class="pf-item pf-video" onclick="playLocalVideo('assets/videos/3D-Architectural-visualisation.mp4')">
-          <img src="assets/projects/animation/architectural-visualisation.jpg" alt="" loading="lazy">
-          <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-          <div class="pf-item-overlay">
-            <span class="pf-item-location">Saudi Arabia</span>
-            <span class="pf-item-title">Architectural Visualization، Animation</span>
-          </div>
-        </div>
-        
-        <div class="pf-item pf-video" onclick="playLocalVideo('assets/videos/GH-Real-estate-services.mp4')">
-          <img src="assets/projects/animation/real-estate-services.jpg" alt="" loading="lazy">
-          <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-          <div class="pf-item-overlay">
-            <span class="pf-item-location">Saudi Arabia</span>
-            <span class="pf-item-title">Real Estate Services، Animation</span>
-          </div>
-        </div>
-        
+          <div class="form-feedback" aria-live="polite"></div>
+          <button type="submit" class="form-submit">Send Request <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">send</span></button>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-  <div class="container">
-    <h2 class="reveal">Have a project you want turned into a cinematic film?</h2>
-    <p class="reveal r1">Talk to our team and get a free consultation for your next project.</p>
-    <div class="btns reveal r2">
-      <a href="contact-us-en.html" class="btn-p">Get in Touch <span class="material-symbols-outlined" style="font-size:14px">call</span></a>
-      <a href="mailto:info@3dgraphicshouse.com" class="btn-o">Request a Quote <span class="material-symbols-outlined" style="font-size:14px">request_quote</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- Video Modal -->
+<!-- VIDEO MODAL -->
 <div class="video-modal" id="videoModal">
-  <button class="video-modal-close" onclick="closeVideo()">✕</button>
+  <button class="video-modal-close" onclick="closeVideo()" aria-label="Close">✕</button>
   <div class="video-modal-inner">
     <div class="video-aspect">
       <div id="videoModalPlayer"></div>
@@ -784,6 +960,11 @@ html[dir="ltr"] .section-title {
 
 
 <script>
+
+// Reveal on scroll
+var ro=new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el)});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
 
 // Video modal popup
 function playVideo(videoId, startTime) {
@@ -930,6 +1111,8 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 <!-- GH FLOAT END -->
 
+<script defer src="assets/quote-form-config.js"></script>
+<script defer src="assets/quote-form.js?v=3"></script>
 <script defer src="assets/site-reveal.js"></script>
 </body>
 </html>
