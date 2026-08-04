@@ -116,6 +116,9 @@ const LEGACY_SERVICE_REDIRECTS = {
 function rewriteRootHtmlToServices(html, enFileName) {
   html = html.replace(/<html[^>]*>/i, '<html class="scroll-smooth" dir="ltr" lang="en">');
   html = html.replace(/(href|src)="assets\//g, '$1="../assets/');
+  html = html.replace(/data-video="assets\//g, 'data-video="../assets/');
+  html = html.replace(/poster="assets\//g, 'poster="../assets/');
+  html = html.replace(/srcset="assets\//g, 'srcset="../assets/');
   html = html.replace(/href="index\.html"/g, 'href="../index.html"');
   html = html.replace(/href="index-ar\.html"/g, 'href="../index-ar.html"');
   html = html.replace(/href="who-we-are-en\.html"/g, 'href="../who-we-are-en.html"');
