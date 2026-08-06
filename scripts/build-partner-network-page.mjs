@@ -64,12 +64,12 @@ const COPY = {
     zoomNote: 'نأمل التكرم بإفادتنا بالموعد المناسب لكم في النموذج أدناه، وسيسعدنا التنسيق بما يتوافق مع جدولكم.',
     zoomCta: 'تعبئة طلب الاجتماع',
     links: [
-      { href: 'solutions/project-launch.html', label: 'Project Launch™', sub: 'منظومة إطلاق المشروع' },
-      { href: 'services/animation.html', label: 'أفلام CGI', sub: 'إنتاج سينمائي' },
-      { href: 'services/maquettes.html', label: 'المجسمات', sub: 'مجسمات معمارية' },
-      { href: 'services/rendering.html', label: 'الإظهار المعماري', sub: '3D · renders' },
-      { href: 'services/interactive.html', label: 'التجارب التفاعلية', sub: 'شاشات · VR' },
-      { href: 'portfolio.html', label: 'معرض الأعمال', sub: 'نماذج مختارة' },
+      { href: 'solutions/project-launch.html', label: 'Project Launch™', sub: 'منظومة إطلاق المشروع', img: 'assets/mm-project.jpg' },
+      { href: 'services/animation.html', label: 'أفلام CGI', sub: 'إنتاج سينمائي', img: 'assets/projects/cinematic/video-1.jpg', webp: 'assets/projects/cinematic/video-1.webp' },
+      { href: 'services/maquettes.html', label: 'المجسمات', sub: 'مجسمات معمارية', img: 'assets/projects/maquettes/anan-eskan-maquette-01.jpeg', webp: 'assets/projects/maquettes/anan-eskan-maquette-01.webp' },
+      { href: 'services/rendering.html', label: 'الإظهار المعماري', sub: '3D · renders', img: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg', webp: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp' },
+      { href: 'services/interactive.html', label: 'التجارب التفاعلية', sub: 'شاشات · VR', img: 'assets/projects/interactive-01.jpg', webp: 'assets/projects/interactive-01.webp' },
+      { href: 'portfolio.html', label: 'معرض الأعمال', sub: 'نماذج مختارة', img: 'assets/projects/pavilion1.jpg', webp: 'assets/projects/pavilion1.webp' },
     ],
     siteTour: 'استكشف الموقع',
     siteTourHref: 'index-ar.html',
@@ -167,12 +167,12 @@ const COPY = {
     zoomNote: 'Please share your preferred times in the form below — we will coordinate according to your schedule.',
     zoomCta: 'Complete meeting request',
     links: [
-      { href: 'solutions/project-launch-en.html', label: 'Project Launch™', sub: 'Project launch system' },
-      { href: 'services/animation-en.html', label: 'CGI Films', sub: 'Cinematic production' },
-      { href: 'services/maquettes-en.html', label: 'Scale Models', sub: 'Architectural maquettes' },
-      { href: 'services/rendering-en.html', label: 'Visualization', sub: '3D · renders' },
-      { href: 'services/interactive-en.html', label: 'Interactive', sub: 'Screens · VR' },
-      { href: 'portfolio-en.html', label: 'Portfolio', sub: 'Selected work' },
+      { href: 'solutions/project-launch-en.html', label: 'Project Launch™', sub: 'Project launch system', img: 'assets/mm-project.jpg' },
+      { href: 'services/animation-en.html', label: 'CGI Films', sub: 'Cinematic production', img: 'assets/projects/cinematic/video-1.jpg', webp: 'assets/projects/cinematic/video-1.webp' },
+      { href: 'services/maquettes-en.html', label: 'Scale Models', sub: 'Architectural maquettes', img: 'assets/projects/maquettes/anan-eskan-maquette-01.jpeg', webp: 'assets/projects/maquettes/anan-eskan-maquette-01.webp' },
+      { href: 'services/rendering-en.html', label: 'Visualization', sub: '3D · renders', img: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg', webp: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp' },
+      { href: 'services/interactive-en.html', label: 'Interactive', sub: 'Screens · VR', img: 'assets/projects/interactive-01.jpg', webp: 'assets/projects/interactive-01.webp' },
+      { href: 'portfolio-en.html', label: 'Portfolio', sub: 'Selected work', img: 'assets/projects/pavilion1.jpg', webp: 'assets/projects/pavilion1.webp' },
     ],
     siteTour: 'Explore the site',
     siteTourHref: 'index.html',
@@ -228,14 +228,18 @@ function buildPage(c) {
   const collabOptions = c.collabOptions.map((o) => `<option value="${o.v}">${o.l}</option>`).join('');
 
   const exploreLinks = c.links
-    .map(
-      (l) => `
-    <a href="${l.href}" class="pn-link-card">
-      <span class="pn-link-label">${l.label}</span>
-      <span class="pn-link-sub">${l.sub}</span>
-      <span class="material-symbols-outlined pn-link-arrow" aria-hidden="true">arrow_forward</span>
-    </a>`
-    )
+    .map((l) => {
+      const imgHtml = l.webp
+        ? `<picture><source srcset="${l.webp}" type="image/webp"><img src="${l.img}" alt="${l.label}" loading="lazy"></picture>`
+        : `<img src="${l.img}" alt="${l.label}" loading="lazy">`;
+      return `
+    <a href="${l.href}" class="pn-offer-card" target="_blank" rel="noopener noreferrer">
+      <div class="pn-offer-img">${imgHtml}</div>
+      <span class="pn-offer-label">${l.label}</span>
+      <span class="pn-offer-sub">${l.sub}</span>
+      <span class="material-symbols-outlined pn-offer-ext" aria-hidden="true">open_in_new</span>
+    </a>`;
+    })
     .join('');
 
   const faqItems = c.faq
@@ -276,7 +280,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=21">
 <link rel="stylesheet" href="assets/site-header.css?v=33">
@@ -293,7 +297,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body.gh-partner-network {
-  font-family: ${isEn ? "'Inter','IBM Plex Sans Arabic','Tajawal'" : "'IBM Plex Sans Arabic','Tajawal','Inter'"}, sans-serif;
+  font-family: ${isEn ? "'Inter', 'Tajawal', 'IBM Plex Sans Arabic'" : "'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont"}, sans-serif;
   background: var(--bg);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
@@ -317,62 +321,86 @@ body.gh-partner-network {
   text-align: ${isEn ? 'left' : 'right'};
 }
 .pn-eye {
-  display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+  display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+  font-family: ${isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
 }
 .pn-h1 {
-  font-size: clamp(34px, 5.2vw, 54px); font-weight: 700; line-height: 1.18;
+  font-size: clamp(34px, 5.2vw, 54px); font-weight: 300; line-height: 1.18;
   letter-spacing: -0.025em; margin-bottom: 16px; color: var(--ink);
+  font-family: ${isEn ? "'Inter', 'Tajawal', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
 }
-.pn-h1 em { font-style: normal; color: var(--gold); }
+.pn-h1 em { font-style: normal; color: var(--gold); font-weight: 700; }
 .pn-lead {
-  font-size: clamp(16px, 1.8vw, 18px); line-height: 1.85; color: var(--muted);
+  font-size: clamp(16px, 1.8vw, 18px); line-height: 1.9; color: var(--muted);
   max-width: 640px; font-weight: 400;
+  font-family: ${isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
 }
 
 .pn-section { padding: 72px 0; }
 .pn-section--white { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .pn-h2 {
-  font-size: clamp(24px, 3.2vw, 32px); font-weight: 700; margin-bottom: 12px;
+  font-size: clamp(28px, 3.2vw, 40px); font-weight: 300; margin-bottom: 12px;
   letter-spacing: -0.02em; color: var(--ink);
+  font-family: ${isEn ? "'Inter', 'Tajawal', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
 }
 .pn-h3 {
-  font-size: clamp(18px, 2.4vw, 22px); font-weight: 700; margin: 40px 0 12px;
+  font-size: clamp(20px, 2.4vw, 26px); font-weight: 700; margin: 40px 0 12px;
   letter-spacing: -0.01em; color: var(--ink);
+  font-family: ${isEn ? "'Inter', 'Tajawal', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
 }
 .pn-h3:first-of-type { margin-top: 0; }
 .pn-sub {
   font-size: 16px; color: var(--muted); line-height: 1.85; margin-bottom: 28px; max-width: 600px;
+  font-family: ${isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
 }
 .pn-about-text {
   font-size: 17px; line-height: 2; color: var(--muted); max-width: 720px;
+  font-family: ${isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
 }
 .pn-invite {
   margin-top: 40px; padding: 28px 32px;
   background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.03));
   border: 1px solid rgba(201,168,76,0.22); border-radius: 14px;
   font-size: 17px; line-height: 1.95; color: var(--ink);
+  font-family: ${isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
 }
 
-.pn-links {
-  display: grid; grid-template-columns: 1fr; gap: 12px;
+.pn-offers {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
 }
-@media(min-width:640px){ .pn-links { grid-template-columns: repeat(2, 1fr); } }
-@media(min-width:960px){ .pn-links { grid-template-columns: repeat(3, 1fr); } }
-.pn-link-card {
-  display: flex; flex-direction: column; gap: 5px; padding: 22px 20px;
-  background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
-  text-decoration: none; color: inherit; position: relative; min-height: 92px;
-  transition: border-color 0.25s, box-shadow 0.25s;
+@media(min-width:768px){ .pn-offers { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+.pn-offer-card {
+  display: flex; flex-direction: column; gap: 0; text-decoration: none; color: inherit;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 14px;
+  overflow: hidden; position: relative;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.25s;
 }
-.pn-link-card:hover { border-color: rgba(201,168,76,0.45); box-shadow: 0 10px 32px rgba(0,0,0,0.05); }
-.pn-link-label { font-size: 15px; font-weight: 700; color: var(--ink); }
-.pn-link-sub { font-size: 13px; color: var(--muted); line-height: 1.5; }
-.pn-link-arrow {
-  position: absolute; bottom: 18px; ${isEn ? 'right' : 'left'}: 18px;
-  font-size: 18px; color: var(--gold); opacity: 0.75;
+.pn-offer-card:hover {
+  border-color: rgba(201,168,76,0.4); box-shadow: 0 14px 40px rgba(0,0,0,0.07);
+  transform: translateY(-3px);
 }
-html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
+.pn-offer-img {
+  aspect-ratio: 4 / 3; overflow: hidden; background: #eceae4;
+}
+.pn-offer-img img, .pn-offer-img picture { width: 100%; height: 100%; display: block; }
+.pn-offer-img img { object-fit: cover; transition: transform 0.45s ease; }
+.pn-offer-card:hover .pn-offer-img img { transform: scale(1.04); }
+.pn-offer-label {
+  display: block; padding: 16px 18px 4px; font-size: 15px; font-weight: 700; color: var(--ink);
+  font-family: ${isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
+}
+.pn-offer-sub {
+  display: block; padding: 0 18px 18px; font-size: 13px; color: var(--muted); line-height: 1.5;
+  font-family: ${isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
+}
+.pn-offer-ext {
+  position: absolute; top: 12px; ${isEn ? 'right' : 'left'}: 12px;
+  width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.92); border-radius: 8px; font-size: 16px; color: var(--gold);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); opacity: 0; transition: opacity 0.25s;
+}
+.pn-offer-card:hover .pn-offer-ext { opacity: 1; }
 
 .pn-tour {
   display: inline-flex; align-items: center; gap: 8px; margin-top: 24px;
@@ -521,8 +549,8 @@ ${header}
     <p class="pn-about-text">${c.aboutText}</p>
     <h3 class="pn-h3">${c.offerTitle}</h3>
     <p class="pn-sub">${c.offerSub}</p>
-    <div class="pn-links">${exploreLinks}</div>
-    <a href="${c.siteTourHref}" class="pn-tour">
+    <div class="pn-offers">${exploreLinks}</div>
+    <a href="${c.siteTourHref}" class="pn-tour" target="_blank" rel="noopener noreferrer">
       <span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
       ${c.siteTour}
     </a>
