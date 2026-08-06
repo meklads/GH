@@ -22,10 +22,11 @@ const COPY = {
       'شراكات استراتيجية في الإنتاج البصري والتجريبي مع وكالات الدعاية والمكاتب الهندسية وشركات المقاولات في المملكة ودول الخليج.',
     ogTitle: 'شبكة الشركاء — Graphics House',
     eye: 'شبكة الشركاء',
-    h1: 'يشرفنا',
-    h1Gold: 'التعاون معكم',
+    h1: 'دعوة للتعاون',
+    h1Gold: '',
     lead:
-      'جرافيكس هاوس — استوديو متخصص في الإظهار المعماري، الأفلام السينمائية، المجسمات، والتجارب التفاعلية.',
+      'نقدّم منتجات استراتيجية تخدم عملاءكم. أطلق مشروعك — نقدّم جميع أدوات التسويق الحيوية والراقية والفاعلة:',
+    leadItems: ['مجسمات معمارية', 'أفلام أنيميشن', 'عروض تفاعلية', 'ديكور إعلاني'],
     aboutTitle: 'من نحن',
     aboutText:
       'منذ أكثر من 15 عاماً، نُنتج محتوى بصرياً وتجريبياً للمشاريع الكبرى في المملكة ودول الخليج. نعمل مع جهات رائدة في التطوير والتصميم والإعلان — نُضيف طبقة إنتاج متخصصة إلى منظومة خدماتكم، لا نُنافسكم.',
@@ -64,7 +65,7 @@ const COPY = {
     zoomNote: 'نأمل التكرم بإفادتنا بالموعد المناسب لكم في النموذج أدناه، وسيسعدنا التنسيق بما يتوافق مع جدولكم.',
     zoomCta: 'تعبئة طلب الاجتماع',
     links: [
-      { href: 'solutions/project-launch.html', label: 'Project Launch™', sub: 'منظومة إطلاق المشروع', img: 'assets/mm-project.jpg' },
+      { href: 'solutions/project-launch.html', label: 'Project Launch™', sub: 'منظومة إطلاق المشروع', img: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg', webp: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.webp' },
       { href: 'services/animation.html', label: 'أفلام CGI', sub: 'إنتاج سينمائي', img: 'assets/projects/cinematic/video-1.jpg', webp: 'assets/projects/cinematic/video-1.webp' },
       { href: 'services/maquettes.html', label: 'المجسمات', sub: 'مجسمات معمارية', img: 'assets/projects/maquettes/anan-eskan-maquette-01.jpeg', webp: 'assets/projects/maquettes/anan-eskan-maquette-01.webp' },
       { href: 'services/rendering.html', label: 'الإظهار المعماري', sub: '3D · renders', img: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg', webp: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp' },
@@ -110,10 +111,11 @@ const COPY = {
       'Strategic partnerships in visual and experiential production with agencies, engineering firms, and contractors across the GCC.',
     ogTitle: 'Partner Network — Graphics House',
     eye: 'Partner Network',
-    h1: 'We would be honored',
-    h1Gold: 'to collaborate with you',
+    h1: 'An invitation',
+    h1Gold: 'to collaborate',
     lead:
-      'Graphics House — a specialist studio in architectural visualization, cinematic film, scale models, and interactive experiences.',
+      'We deliver strategic products that serve your clients. Launch your project — we provide vital, refined, and effective marketing tools:',
+    leadItems: ['Architectural maquettes', 'Animation films', 'Interactive experiences', 'Advertising environments'],
     aboutTitle: 'Who we are',
     aboutText:
       'For over 15 years, we have produced visual and experiential content for major projects across Saudi Arabia and the GCC. We work with leading developers, designers, and agencies — adding a specialist production layer to your offering, not competing with it.',
@@ -152,7 +154,7 @@ const COPY = {
     zoomNote: 'Please share your preferred times in the form below — we will coordinate according to your schedule.',
     zoomCta: 'Complete meeting request',
     links: [
-      { href: 'solutions/project-launch-en.html', label: 'Project Launch™', sub: 'Project launch system', img: 'assets/mm-project.jpg' },
+      { href: 'solutions/project-launch-en.html', label: 'Project Launch™', sub: 'Project launch system', img: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg', webp: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.webp' },
       { href: 'services/animation-en.html', label: 'CGI Films', sub: 'Cinematic production', img: 'assets/projects/cinematic/video-1.jpg', webp: 'assets/projects/cinematic/video-1.webp' },
       { href: 'services/maquettes-en.html', label: 'Scale Models', sub: 'Architectural maquettes', img: 'assets/projects/maquettes/anan-eskan-maquette-01.jpeg', webp: 'assets/projects/maquettes/anan-eskan-maquette-01.webp' },
       { href: 'services/rendering-en.html', label: 'Visualization', sub: '3D · renders', img: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg', webp: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp' },
@@ -220,6 +222,10 @@ function buildPage(c) {
     </details>`
     )
     .join('');
+
+  const leadItemsHtml = c.leadItems?.length
+    ? `<p class="pn-lead-items">${c.leadItems.join(' · ')}</p>`
+    : '';
 
   return `<!DOCTYPE html>
 <html lang="${c.lang}" dir="${c.dir}" class="scroll-smooth">
@@ -302,7 +308,12 @@ body.gh-partner-network {
 .pn-h1 em { font-style: normal; color: var(--gold); font-weight: 700; }
 .pn-lead {
   font-size: clamp(16px, 1.8vw, 18px); line-height: 1.9; color: var(--muted);
-  max-width: 640px; font-weight: 400;
+  max-width: 720px; font-weight: 400;
+  font-family: ${isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
+}
+.pn-lead-items {
+  margin-top: 14px; font-size: clamp(15px, 1.7vw, 17px); line-height: 1.85;
+  color: var(--ink); font-weight: 600; max-width: 720px;
   font-family: ${isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
 }
 
@@ -507,8 +518,9 @@ ${header}
 <section class="pn-hero">
   <div class="pn-wrap">
     <span class="pn-eye">${c.eye}</span>
-    <h1 class="pn-h1">${c.h1} <em>${c.h1Gold}</em></h1>
+    <h1 class="pn-h1">${c.h1Gold ? `${c.h1} <em>${c.h1Gold}</em>` : c.h1}</h1>
     <p class="pn-lead">${c.lead}</p>
+    ${leadItemsHtml}
   </div>
 </section>
 
