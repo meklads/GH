@@ -88,6 +88,32 @@ body.gh-partner-network {
   font-family: 'Inter', sans-serif;
 }
 
+.pn-segments { padding: 48px 0 56px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.pn-seg-label {
+  display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 18px;
+  font-family: 'Inter', sans-serif;
+}
+.pn-seg-grid {
+  display: grid; grid-template-columns: 1fr; gap: 12px;
+}
+@media(min-width:640px){ .pn-seg-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(min-width:960px){ .pn-seg-grid { grid-template-columns: repeat(4, 1fr); } }
+.pn-seg {
+  text-align: left; padding: 22px 20px; background: var(--white);
+  border: 1.5px solid var(--line); border-radius: 12px; cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.25s;
+  font-family: inherit; color: inherit; width: 100%;
+}
+.pn-seg:hover { border-color: rgba(201,168,76,0.35); box-shadow: 0 8px 32px rgba(0,0,0,0.04); }
+.pn-seg.is-active {
+  border-color: var(--gold); background: linear-gradient(135deg, var(--white), rgba(201,168,76,0.06));
+  box-shadow: 0 12px 40px rgba(201,168,76,0.12);
+}
+.pn-seg-icon { font-size: 28px; color: var(--gold); display: block; margin-bottom: 12px; }
+.pn-seg-title { display: block; font-size: 15px; font-weight: 700; margin-bottom: 6px; line-height: 1.35; }
+.pn-seg-desc { display: block; font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 400; }
+
 .pn-section { padding: 72px 0; }
 .pn-section--white { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .pn-h2 {
@@ -383,18 +409,45 @@ body.gh-partner-network {
 <section class="pn-hero">
   <div class="pn-wrap">
     <span class="pn-eye">Partner Network</span>
-    <h1 class="pn-h1">An invitation <em>to collaborate</em></h1>
+    <h1 class="pn-h1">Invitation to collaborate</h1>
     <p class="pn-lead">We deliver strategic products that serve your clients. Launch your project — we provide vital, refined, and effective marketing tools:</p>
     <p class="pn-lead-items">Architectural maquettes · Animation films · Interactive experiences · Advertising environments</p>
+  </div>
+</section>
+
+<section class="pn-segments" aria-label="Your organization type">
+  <div class="pn-wrap">
+    <span class="pn-seg-label">Your organization type</span>
+    <div class="pn-seg-grid" role="group">
+    <button type="button" class="pn-seg is-active" data-segment="agency" aria-pressed="true">
+      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">campaign</span>
+      <span class="pn-seg-title">Advertising & creative agencies</span>
+      <span class="pn-seg-desc">Extend what you deliver — we execute the visual and experiential layer beside you.</span>
+    </button>
+    <button type="button" class="pn-seg" data-segment="engineering" aria-pressed="false">
+      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">architecture</span>
+      <span class="pn-seg-title">Engineering firms</span>
+      <span class="pn-seg-desc">Complete your design package with Project Launch™ — film · maquette · 3D · interactive.</span>
+    </button>
+    <button type="button" class="pn-seg" data-segment="contracting" aria-pressed="false">
+      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">construction</span>
+      <span class="pn-seg-title">Contracting companies</span>
+      <span class="pn-seg-desc">Turn active projects into compelling presentation experiences for owners and investors.</span>
+    </button>
+    <button type="button" class="pn-seg" data-segment="other" aria-pressed="false">
+      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">domain</span>
+      <span class="pn-seg-title">Other</span>
+      <span class="pn-seg-desc">Another organization — specify your company name in the form below.</span>
+    </button></div>
   </div>
 </section>
 
 <section class="pn-section pn-section--white">
   <div class="pn-wrap">
     <h3 class="pn-h3">Who we are</h3>
-    <p class="pn-about-text">For over 15 years, we have produced visual and experiential content for major projects across Saudi Arabia and the GCC. We work with leading developers, designers, and agencies — adding a specialist production layer to your offering, not competing with it.</p>
-    <h3 class="pn-h3">What we deliver</h3>
-    <p class="pn-sub">Integrated production capabilities that extend your current projects and proposals.</p>
+    <p class="pn-about-text">For over 15 years, we have produced visual and experiential content for major projects across Saudi Arabia and the GCC. We work with leading entities in development, design, and advertising — we add a specialist production layer to your services; we do not compete with you.</p>
+    <h3 class="pn-h3">What we offer</h3>
+    <p class="pn-sub">Integrated production capabilities added to your projects and proposals.</p>
     <div class="pn-offers">
     <a href="solutions/project-launch-en.html" class="pn-offer-card" target="_blank" rel="noopener noreferrer">
       <div class="pn-offer-img"><picture><source srcset="assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img src="assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="Project Launch™" loading="lazy"></picture></div>
@@ -436,14 +489,14 @@ body.gh-partner-network {
       <span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
       Explore the site
     </a>
-    <p class="pn-invite">We would be pleased to learn more about your organization and discuss the possibility of cooperation on current and future projects — in a way that serves mutual interests.</p>
+    <p class="pn-invite">We would be pleased to learn more about your organization and discuss cooperation on current and future projects — in a way that serves mutual interests.</p>
   </div>
 </section>
 
 <section class="pn-section">
   <div class="pn-wrap">
-    <h2 class="pn-h2">Common questions</h2>
-    <p class="pn-sub">Brief answers to what our potential partners ask most.</p>
+    <h2 class="pn-h2">Frequently asked questions</h2>
+    <p class="pn-sub">Brief answers for potential partners.</p>
     <div class="pn-faq">
     <details class="pn-faq-item" open>
       <summary class="pn-faq-q">Who do you partner with?</summary>
@@ -472,8 +525,8 @@ body.gh-partner-network {
   <div class="pn-wrap">
     <div class="pn-form-box">
       <div class="pn-form-head">
-        <h2>Partnership inquiry form</h2>
-        <p>Our partnerships team will review your request and contact you to schedule the meeting.</p>
+        <h2>Collaboration inquiry form</h2>
+        <p>Our partnerships team will review your request and contact you to schedule a meeting.</p>
       </div>
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="Partnership inquiry — Partner Network EN">
@@ -634,6 +687,24 @@ body.gh-partner-network {
 <script defer src="assets/gh-float-widgets.js?v=8"></script>
 <script>
 (function(){
+  var segBtns = document.querySelectorAll('.pn-seg');
+  var segSelect = document.getElementById('pnSegment');
+  function setSegment(id) {
+    segBtns.forEach(function(btn) {
+      var on = btn.getAttribute('data-segment') === id;
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    if (segSelect && id) segSelect.value = id;
+  }
+  segBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() { setSegment(btn.getAttribute('data-segment')); });
+  });
+  if (segSelect) {
+    segSelect.addEventListener('change', function() { setSegment(segSelect.value); });
+    if (segSelect.value) setSegment(segSelect.value);
+    else if (segBtns.length) setSegment(segBtns[0].getAttribute('data-segment'));
+  }
   var form = document.querySelector('.pn-form');
   if (form) {
     form.addEventListener('submit', function() {

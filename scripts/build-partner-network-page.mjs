@@ -34,6 +34,13 @@ const COPY = {
     offerSub: 'قدرات إنتاج متكاملة تُضاف إلى مشاريعكم وعروضكم الحالية.',
     inviteText:
       'يسعدنا التنسيق للتعرف بشكل أكبر على جهتكم، ومناقشة إمكانية التعاون بين شركتينا في المشاريع الحالية والمستقبلية، بما يحقق المصالح المشتركة.',
+    segmentsLabel: 'نوع جهتكم',
+    segments: [
+      { id: 'agency', icon: 'campaign', title: 'وكالات الدعاية والإعلان', desc: 'وسّعوا ما تقدمونه — نُنفّذ الطبقة البصرية والتجريبية بجانبكم.' },
+      { id: 'engineering', icon: 'architecture', title: 'المكاتب الهندسية', desc: 'أكملوا العرض الهندسي بـ Project Launch™ — فيلم · مجسم · 3D · تفاعلي.' },
+      { id: 'contracting', icon: 'construction', title: 'شركات المقاولات', desc: 'حوّلوا المشاريع قيد التنفيذ إلى تجربة عرض وإقناع للمالك والمستثمر.' },
+      { id: 'other', icon: 'domain', title: 'أخرى', desc: 'جهة أخرى — حدّدوا اسم الشركة في النموذج أدناه.' },
+    ],
     faqTitle: 'أسئلة شائعة',
     faqSub: 'إجابات مختصرة على ما يهم شركاءنا المحتملين.',
     faq: [
@@ -87,6 +94,7 @@ const COPY = {
       { v: 'contracting', l: 'شركات المقاولات' },
       { v: 'other', l: 'أخرى' },
     ],
+    segmentSelectPlaceholder: 'اختر نوع الشركة',
     messagePlaceholder: 'الموعد المناسب للاجتماع، أو أي ملاحظة ترغبون في إيصالها.',
     submit: 'إرسال الطلب',
     sentMsg: 'شكراً لتواصلكم. سيتواصل فريق الشراكات معكم خلال 24 ساعة عمل لتنسيق الموعد.',
@@ -105,20 +113,27 @@ const COPY = {
       'Strategic partnerships in visual and experiential production with agencies, engineering firms, and contractors across the GCC.',
     ogTitle: 'Partner Network — Graphics House',
     eye: 'Partner Network',
-    h1: 'An invitation',
-    h1Gold: 'to collaborate',
+    h1: 'Invitation to collaborate',
+    h1Gold: '',
     lead:
       'We deliver strategic products that serve your clients. Launch your project — we provide vital, refined, and effective marketing tools:',
     leadItems: ['Architectural maquettes', 'Animation films', 'Interactive experiences', 'Advertising environments'],
     aboutTitle: 'Who we are',
     aboutText:
-      'For over 15 years, we have produced visual and experiential content for major projects across Saudi Arabia and the GCC. We work with leading developers, designers, and agencies — adding a specialist production layer to your offering, not competing with it.',
-    offerTitle: 'What we deliver',
-    offerSub: 'Integrated production capabilities that extend your current projects and proposals.',
+      'For over 15 years, we have produced visual and experiential content for major projects across Saudi Arabia and the GCC. We work with leading entities in development, design, and advertising — we add a specialist production layer to your services; we do not compete with you.',
+    offerTitle: 'What we offer',
+    offerSub: 'Integrated production capabilities added to your projects and proposals.',
     inviteText:
-      'We would be pleased to learn more about your organization and discuss the possibility of cooperation on current and future projects — in a way that serves mutual interests.',
-    faqTitle: 'Common questions',
-    faqSub: 'Brief answers to what our potential partners ask most.',
+      'We would be pleased to learn more about your organization and discuss cooperation on current and future projects — in a way that serves mutual interests.',
+    segmentsLabel: 'Your organization type',
+    segments: [
+      { id: 'agency', icon: 'campaign', title: 'Advertising & creative agencies', desc: 'Extend what you deliver — we execute the visual and experiential layer beside you.' },
+      { id: 'engineering', icon: 'architecture', title: 'Engineering firms', desc: 'Complete your design package with Project Launch™ — film · maquette · 3D · interactive.' },
+      { id: 'contracting', icon: 'construction', title: 'Contracting companies', desc: 'Turn active projects into compelling presentation experiences for owners and investors.' },
+      { id: 'other', icon: 'domain', title: 'Other', desc: 'Another organization — specify your company name in the form below.' },
+    ],
+    faqTitle: 'Frequently asked questions',
+    faqSub: 'Brief answers for potential partners.',
     faq: [
       {
         q: 'Who do you partner with?',
@@ -151,8 +166,8 @@ const COPY = {
     ],
     siteTour: 'Explore the site',
     siteTourHref: 'index.html',
-    formTitle: 'Partnership inquiry form',
-    formSub: 'Our partnerships team will review your request and contact you to schedule the meeting.',
+    formTitle: 'Collaboration inquiry form',
+    formSub: 'Our partnerships team will review your request and contact you to schedule a meeting.',
     formSubject: 'Partnership inquiry — Partner Network EN',
     formNext: `${BASE}/partner-network-en.html?sent=1#inquiry`,
     fields: {
@@ -170,6 +185,7 @@ const COPY = {
       { v: 'contracting', l: 'Contracting companies' },
       { v: 'other', l: 'Other' },
     ],
+    segmentSelectPlaceholder: 'Select company type',
     messagePlaceholder: 'Preferred meeting time, or any note you wish to share.',
     submit: 'Submit inquiry',
     sentMsg: 'Thank you. Our partnerships team will contact you within 24 business hours to schedule the meeting.',
@@ -185,6 +201,17 @@ function buildPage(c) {
   const footer = renderFooter(0, isEn);
 
   const segmentOptions = c.segmentOptions.map((o) => `<option value="${o.v}">${o.l}</option>`).join('');
+
+  const segmentCards = c.segments
+    .map(
+      (s, i) => `
+    <button type="button" class="pn-seg${i === 0 ? ' is-active' : ''}" data-segment="${s.id}" aria-pressed="${i === 0 ? 'true' : 'false'}">
+      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">${s.icon}</span>
+      <span class="pn-seg-title">${s.title}</span>
+      <span class="pn-seg-desc">${s.desc}</span>
+    </button>`
+    )
+    .join('');
 
   const exploreLinks = c.links
     .map((l) => {
@@ -304,6 +331,32 @@ body.gh-partner-network {
   color: var(--ink); font-weight: 600; max-width: 720px;
   font-family: ${isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
 }
+
+.pn-segments { padding: 48px 0 56px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.pn-seg-label {
+  display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 18px;
+  font-family: ${isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif"};
+}
+.pn-seg-grid {
+  display: grid; grid-template-columns: 1fr; gap: 12px;
+}
+@media(min-width:640px){ .pn-seg-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(min-width:960px){ .pn-seg-grid { grid-template-columns: repeat(4, 1fr); } }
+.pn-seg {
+  text-align: ${isEn ? 'left' : 'right'}; padding: 22px 20px; background: var(--white);
+  border: 1.5px solid var(--line); border-radius: 12px; cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.25s;
+  font-family: inherit; color: inherit; width: 100%;
+}
+.pn-seg:hover { border-color: rgba(201,168,76,0.35); box-shadow: 0 8px 32px rgba(0,0,0,0.04); }
+.pn-seg.is-active {
+  border-color: var(--gold); background: linear-gradient(135deg, var(--white), rgba(201,168,76,0.06));
+  box-shadow: 0 12px 40px rgba(201,168,76,0.12);
+}
+.pn-seg-icon { font-size: 28px; color: var(--gold); display: block; margin-bottom: 12px; }
+.pn-seg-title { display: block; font-size: 15px; font-weight: 700; margin-bottom: 6px; line-height: 1.35; }
+.pn-seg-desc { display: block; font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 400; }
 
 .pn-section { padding: 72px 0; }
 .pn-section--white { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -481,6 +534,13 @@ ${header}
   </div>
 </section>
 
+<section class="pn-segments" aria-label="${c.segmentsLabel}">
+  <div class="pn-wrap">
+    <span class="pn-seg-label">${c.segmentsLabel}</span>
+    <div class="pn-seg-grid" role="group">${segmentCards}</div>
+  </div>
+</section>
+
 <section class="pn-section pn-section--white">
   <div class="pn-wrap">
     <h3 class="pn-h3">${c.aboutTitle}</h3>
@@ -569,6 +629,24 @@ ${footer}
 <script defer src="assets/gh-float-widgets.js?v=8"></script>
 <script>
 (function(){
+  var segBtns = document.querySelectorAll('.pn-seg');
+  var segSelect = document.getElementById('pnSegment');
+  function setSegment(id) {
+    segBtns.forEach(function(btn) {
+      var on = btn.getAttribute('data-segment') === id;
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    if (segSelect && id) segSelect.value = id;
+  }
+  segBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() { setSegment(btn.getAttribute('data-segment')); });
+  });
+  if (segSelect) {
+    segSelect.addEventListener('change', function() { setSegment(segSelect.value); });
+    if (segSelect.value) setSegment(segSelect.value);
+    else if (segBtns.length) setSegment(segBtns[0].getAttribute('data-segment'));
+  }
   var form = document.querySelector('.pn-form');
   if (form) {
     form.addEventListener('submit', function() {

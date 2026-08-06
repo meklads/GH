@@ -88,6 +88,32 @@ body.gh-partner-network {
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
 }
 
+.pn-segments { padding: 48px 0 56px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.pn-seg-label {
+  display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 18px;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+}
+.pn-seg-grid {
+  display: grid; grid-template-columns: 1fr; gap: 12px;
+}
+@media(min-width:640px){ .pn-seg-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(min-width:960px){ .pn-seg-grid { grid-template-columns: repeat(4, 1fr); } }
+.pn-seg {
+  text-align: right; padding: 22px 20px; background: var(--white);
+  border: 1.5px solid var(--line); border-radius: 12px; cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.25s;
+  font-family: inherit; color: inherit; width: 100%;
+}
+.pn-seg:hover { border-color: rgba(201,168,76,0.35); box-shadow: 0 8px 32px rgba(0,0,0,0.04); }
+.pn-seg.is-active {
+  border-color: var(--gold); background: linear-gradient(135deg, var(--white), rgba(201,168,76,0.06));
+  box-shadow: 0 12px 40px rgba(201,168,76,0.12);
+}
+.pn-seg-icon { font-size: 28px; color: var(--gold); display: block; margin-bottom: 12px; }
+.pn-seg-title { display: block; font-size: 15px; font-weight: 700; margin-bottom: 6px; line-height: 1.35; }
+.pn-seg-desc { display: block; font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 400; }
+
 .pn-section { padding: 72px 0; }
 .pn-section--white { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .pn-h2 {
@@ -389,6 +415,33 @@ body.gh-partner-network {
   </div>
 </section>
 
+<section class="pn-segments" aria-label="نوع جهتكم">
+  <div class="pn-wrap">
+    <span class="pn-seg-label">نوع جهتكم</span>
+    <div class="pn-seg-grid" role="group">
+    <button type="button" class="pn-seg is-active" data-segment="agency" aria-pressed="true">
+      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">campaign</span>
+      <span class="pn-seg-title">وكالات الدعاية والإعلان</span>
+      <span class="pn-seg-desc">وسّعوا ما تقدمونه — نُنفّذ الطبقة البصرية والتجريبية بجانبكم.</span>
+    </button>
+    <button type="button" class="pn-seg" data-segment="engineering" aria-pressed="false">
+      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">architecture</span>
+      <span class="pn-seg-title">المكاتب الهندسية</span>
+      <span class="pn-seg-desc">أكملوا العرض الهندسي بـ Project Launch™ — فيلم · مجسم · 3D · تفاعلي.</span>
+    </button>
+    <button type="button" class="pn-seg" data-segment="contracting" aria-pressed="false">
+      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">construction</span>
+      <span class="pn-seg-title">شركات المقاولات</span>
+      <span class="pn-seg-desc">حوّلوا المشاريع قيد التنفيذ إلى تجربة عرض وإقناع للمالك والمستثمر.</span>
+    </button>
+    <button type="button" class="pn-seg" data-segment="other" aria-pressed="false">
+      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">domain</span>
+      <span class="pn-seg-title">أخرى</span>
+      <span class="pn-seg-desc">جهة أخرى — حدّدوا اسم الشركة في النموذج أدناه.</span>
+    </button></div>
+  </div>
+</section>
+
 <section class="pn-section pn-section--white">
   <div class="pn-wrap">
     <h3 class="pn-h3">من نحن</h3>
@@ -634,6 +687,24 @@ body.gh-partner-network {
 <script defer src="assets/gh-float-widgets.js?v=8"></script>
 <script>
 (function(){
+  var segBtns = document.querySelectorAll('.pn-seg');
+  var segSelect = document.getElementById('pnSegment');
+  function setSegment(id) {
+    segBtns.forEach(function(btn) {
+      var on = btn.getAttribute('data-segment') === id;
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    if (segSelect && id) segSelect.value = id;
+  }
+  segBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() { setSegment(btn.getAttribute('data-segment')); });
+  });
+  if (segSelect) {
+    segSelect.addEventListener('change', function() { setSegment(segSelect.value); });
+    if (segSelect.value) setSegment(segSelect.value);
+    else if (segBtns.length) setSegment(segBtns[0].getAttribute('data-segment'));
+  }
   var form = document.querySelector('.pn-form');
   if (form) {
     form.addEventListener('submit', function() {
