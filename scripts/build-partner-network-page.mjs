@@ -41,12 +41,19 @@ const COPY = {
     ideaTail: 'يمكننا الانضمام في المرحلة التي تستدعي فيها وكالتكم هذه القدرات.',
     ideaHighlight: 'قدرات أوسع. فرص أرقى. من دون بنية جديدة.',
     fitTitle: 'فريقان. منظومة واحدة.',
-    fitYouLabel: 'وكالتكم',
-    fitYouLead: 'قيادتكم',
-    fitYouItems: ['علاقة العميل', 'استراتيجية العلامة', 'استراتيجية الحملة', 'التوجيه الإبداعي', 'التسويق والاتصال', 'إدارة الحساب'],
-    fitUsLabel: 'جرافيكس هاوس',
-    fitUsLead: 'نُكمل',
-    fitUsItems: ['الإظهار ثلاثي الأبعاد', 'الأفلام السينمائية بالحاسوب', 'المجسمات المعمارية', 'التجارب التفاعلية', 'العروض الرقمية', 'البيئات المادية والتجريبية'],
+    fitSub: 'تقسيم أدوار واضح — كل طرف في نطاق تخصصه.',
+    fitAgency: {
+      roleTitle: 'دور وكالة الدعاية والإعلان',
+      headline: 'الاستراتيجية والتسويق والإبداع وإدارة العميل',
+      items: ['الهوية', 'الحملات', 'الرسائل', 'المحتوى', 'تخطيط الإعلام', 'التسويق', 'إدارة العلاقة مع العميل'],
+      icon: 'campaign',
+    },
+    fitGh: {
+      roleTitle: 'دور جرافيكس هاوس',
+      headline: 'التنفيذ البصري والتجريبي المتخصص',
+      items: ['الإظهار ثلاثي الأبعاد', 'الأفلام', 'المجسمات', 'التجارب التفاعلية', 'الشاشات', 'المعارض', 'بيئات العرض'],
+      icon: 'view_in_ar',
+    },
     fitTogether: 'معًا',
     fitResult: 'حلّ أثرى لعملائكم.',
     valueTitle: 'ما الذي تضيفه الشراكة لوكالتكم؟',
@@ -206,12 +213,19 @@ const COPY = {
     ideaTail: 'We can join at the stage where your agency needs these capabilities.',
     ideaHighlight: 'More capabilities. More opportunities. No new department required.',
     fitTitle: 'Two teams. One system.',
-    fitYouLabel: 'YOUR AGENCY',
-    fitYouLead: 'You Lead',
-    fitYouItems: ['Client Relationship', 'Brand Strategy', 'Campaign Strategy', 'Creative Direction', 'Marketing & Communication', 'Account Management'],
-    fitUsLabel: 'GRAPHICS HOUSE',
-    fitUsLead: 'We Add',
-    fitUsItems: ['3D Visualization', 'CGI & Cinematic Films', 'Architectural Maquettes', 'Interactive Experiences', 'Digital Presentations', 'Physical & Experiential Environments'],
+    fitSub: 'Clear roles — each partner in their lane.',
+    fitAgency: {
+      roleTitle: "Advertising Agency's Role",
+      headline: 'Strategy, marketing, creative direction, and client management',
+      items: ['Branding', 'Campaigns', 'Messaging', 'Content', 'Media planning', 'Marketing', 'Client relationship management'],
+      icon: 'campaign',
+    },
+    fitGh: {
+      roleTitle: "Graphics House's Role",
+      headline: 'Specialized visual and experiential production',
+      items: ['3D', 'Films', 'Maquettes', 'Interactive experiences', 'Digital displays', 'Exhibitions', 'Presentation environments'],
+      icon: 'view_in_ar',
+    },
     fitTogether: 'Together',
     fitResult: 'A More Powerful Client Solution.',
     valueTitle: 'What your agency gains',
@@ -352,6 +366,22 @@ function chips(items) {
   return items.map((x) => `<span class="pn-chip">${x}</span>`).join('');
 }
 
+function roleChips(items) {
+  return items.map((x) => `<span class="pn-role-chip">${x}</span>`).join('');
+}
+
+function renderRoleCard(role, variant) {
+  return `
+    <article class="pn-role pn-role--${variant}">
+      <div class="pn-role-top">
+        <span class="pn-role-icon material-symbols-outlined" aria-hidden="true">${role.icon}</span>
+        <span class="pn-role-tag">${role.roleTitle}</span>
+      </div>
+      <h3 class="pn-role-head">${role.headline}</h3>
+      <div class="pn-role-chips">${roleChips(role.items)}</div>
+    </article>`;
+}
+
 function checkGroup(opts, prefix) {
   return opts
     .map(
@@ -448,25 +478,36 @@ body.gh-partner-network{font-family:${isEn ? "'Inter','Tajawal','IBM Plex Sans A
 .pn-btn--primary:hover{background:#1a1f1c;transform:translateY(-1px)}
 .pn-btn--ghost{background:transparent;color:var(--ink);border-color:var(--line)}
 .pn-btn--ghost:hover{border-color:var(--gold);color:var(--gold)}
-.pn-hero-media{border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:#eceae4;box-shadow:0 24px 64px rgba(0,0,0,.06)}
+.pn-hero-media{border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:#eceae4;box-shadow:0 28px 72px rgba(0,0,0,.08),0 0 0 1px rgba(20,20,20,.04)}
 .pn-hero-media img{width:100%;height:100%;object-fit:cover;display:block}
 .pn-idea{text-align:${isEn ? 'left' : 'right'}}
 .pn-idea-body{font-size:17px;line-height:1.95;color:var(--muted);max-width:720px;margin:20px 0;font-family:${ff}}
 .pn-chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
 .pn-chip{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:600;background:var(--white);font-family:${ff}}
 .pn-quote{margin-top:32px;padding:24px 28px;border-${isEn ? 'left' : 'right'}:3px solid var(--gold);background:var(--gold-soft);font-size:17px;font-weight:600;line-height:1.6;font-family:${ff}}
-.pn-fit-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:36px}
-@media(min-width:768px){.pn-fit-grid{grid-template-columns:1fr auto 1fr;align-items:stretch}}
-.pn-fit-col{padding:32px 28px;border:1px solid var(--line);border-radius:16px;background:var(--white)}
-.pn-fit-col--gh{background:var(--gold-soft);border-color:rgba(201,168,76,.22)}
-.pn-fit-label{font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--gold);margin-bottom:6px;font-family:${ff}}
-.pn-fit-lead{font-size:13px;font-weight:700;margin-bottom:18px;font-family:${ff}}
-.pn-fit-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.pn-fit-col li{font-size:14px;line-height:1.5;color:var(--muted);padding-${isEn ? 'left' : 'right'}:14px;border-${isEn ? 'left' : 'right'}:2px solid var(--line);font-family:${ff}}
-.pn-fit-plus{display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--gold);font-weight:300;padding:8px}
-.pn-fit-result{text-align:center;margin-top:36px}
-.pn-fit-result em{display:block;font-style:normal;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-family:${ff}}
-.pn-fit-result strong{font-size:clamp(20px,2.8vw,28px);font-weight:700;font-family:${ffH}}
+.pn-roles-sec{padding:96px 0;background:linear-gradient(180deg,var(--ivory) 0%,var(--white) 42%,var(--ivory) 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:${isEn ? 'left' : 'right'}}
+.pn-roles{display:grid;grid-template-columns:1fr;gap:20px;margin-top:44px;align-items:stretch}
+@media(min-width:960px){.pn-roles{grid-template-columns:1fr 72px 1fr;gap:28px}}
+.pn-role{position:relative;padding:40px 32px;border-radius:20px;background:var(--white);border:1px solid var(--line);box-shadow:0 18px 48px rgba(0,0,0,.04);display:flex;flex-direction:column;gap:18px;min-height:100%}
+@media(min-width:768px){.pn-role{padding:44px 36px}}
+.pn-role--agency{border-top:3px solid rgba(20,20,20,.12)}
+.pn-role--gh{border-top:3px solid var(--gold);background:linear-gradient(165deg,var(--white) 0%,rgba(201,168,76,.07) 100%);box-shadow:0 22px 56px rgba(201,168,76,.1)}
+.pn-role-top{display:flex;align-items:center;gap:12px}
+.pn-role-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:var(--ivory);border:1px solid var(--line);font-size:22px;color:var(--gold);flex-shrink:0}
+.pn-role--gh .pn-role-icon{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.22)}
+.pn-role-tag{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--muted);line-height:1.45;font-family:${ff}}
+.pn-role-head{font-size:clamp(19px,2.3vw,24px);font-weight:700;line-height:1.45;letter-spacing:-.02em;color:var(--ink);font-family:${ffH}}
+.pn-role-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.pn-role-chip{padding:9px 14px;border-radius:999px;font-size:12px;font-weight:600;line-height:1.3;color:var(--ink);background:var(--ivory);border:1px solid var(--line);font-family:${ff}}
+.pn-role--gh .pn-role-chip{background:rgba(255,255,255,.88);border-color:rgba(201,168,76,.18)}
+.pn-roles-bridge{display:flex;align-items:center;justify-content:center;gap:0;padding:8px 0}
+@media(min-width:960px){.pn-roles-bridge{flex-direction:column;padding:0;align-self:center}}
+.pn-roles-bridge-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.45),transparent);max-width:80px}
+@media(min-width:960px){.pn-roles-bridge-line{width:1px;height:48px;max-width:none;background:linear-gradient(180deg,transparent,rgba(201,168,76,.45),transparent)}}
+.pn-roles-bridge-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:var(--white);border:1.5px solid rgba(201,168,76,.35);color:var(--gold);font-size:22px;font-weight:300;box-shadow:0 8px 24px rgba(201,168,76,.12);flex-shrink:0}
+.pn-roles-result{margin-top:44px;padding:28px 32px;border-radius:16px;text-align:center;background:#080c0a;color:#fff}
+.pn-roles-result em{display:block;font-style:normal;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-family:${ff}}
+.pn-roles-result strong{display:block;font-size:clamp(20px,2.8vw,28px);font-weight:700;line-height:1.35;font-family:${ffH}}
 .pn-benefits{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:36px}
 @media(min-width:640px){.pn-benefits{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:960px){.pn-benefits{grid-template-columns:repeat(3,1fr)}}
@@ -609,24 +650,21 @@ ${header}
   </div>
 </section>
 
-<section class="pn-sec pn-sec--white">
+<section class="pn-sec pn-roles-sec">
   <div class="pn-wrap">
     <span class="pn-eye">03</span>
     <h2 class="pn-h2">${c.fitTitle}</h2>
-    <div class="pn-fit-grid">
-      <div class="pn-fit-col">
-        <div class="pn-fit-label">${c.fitYouLabel}</div>
-        <div class="pn-fit-lead">${c.fitYouLead}</div>
-        <ul>${li(c.fitYouItems)}</ul>
+    <p class="pn-sub" style="margin-bottom:0">${c.fitSub}</p>
+    <div class="pn-roles">
+      ${renderRoleCard(c.fitAgency, 'agency')}
+      <div class="pn-roles-bridge" aria-hidden="true">
+        <span class="pn-roles-bridge-line"></span>
+        <span class="pn-roles-bridge-icon">+</span>
+        <span class="pn-roles-bridge-line"></span>
       </div>
-      <div class="pn-fit-plus" aria-hidden="true">+</div>
-      <div class="pn-fit-col pn-fit-col--gh">
-        <div class="pn-fit-label">${c.fitUsLabel}</div>
-        <div class="pn-fit-lead">${c.fitUsLead}</div>
-        <ul>${li(c.fitUsItems)}</ul>
-      </div>
+      ${renderRoleCard(c.fitGh, 'gh')}
     </div>
-    <div class="pn-fit-result"><em>${c.fitTogether}</em><strong>${c.fitResult}</strong></div>
+    <div class="pn-roles-result"><em>${c.fitTogether}</em><strong>${c.fitResult}</strong></div>
   </div>
 </section>
 
