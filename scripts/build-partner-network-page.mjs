@@ -58,12 +58,6 @@ const COPY = {
         a: 'يراجع فريق الشراكات كل طلب ويرد خلال 24 ساعة عمل.',
       },
     ],
-    zoomTitle: 'طلب اجتماع تعارف',
-    zoomSub:
-      'نود التنسيق لعقد اجتماع في الوقت الذي يناسبكم — للتعرف على خدماتنا وأعمالنا، ومناقشة إمكانية التعاون.',
-    zoomDuration: 'مدة الاجتماع: 20–30 دقيقة · عبر Zoom',
-    zoomNote: 'نأمل التكرم بإفادتنا بالموعد المناسب لكم في النموذج أدناه، وسيسعدنا التنسيق بما يتوافق مع جدولكم.',
-    zoomCta: 'تعبئة طلب الاجتماع',
     links: [
       { href: 'solutions/project-launch.html', label: 'Project Launch™', sub: 'منظومة إطلاق المشروع', img: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg', webp: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.webp' },
       { href: 'services/animation.html', label: 'أفلام CGI', sub: 'إنتاج سينمائي', img: 'assets/projects/cinematic/video-1.jpg', webp: 'assets/projects/cinematic/video-1.webp' },
@@ -147,12 +141,6 @@ const COPY = {
         a: 'Our partnerships team reviews every request and responds within 24 business hours.',
       },
     ],
-    zoomTitle: 'Request an introductory meeting',
-    zoomSub:
-      'We would like to coordinate a meeting at a time that suits you — to learn about our services and discuss the possibility of collaboration.',
-    zoomDuration: 'Duration: 20–30 minutes · via Zoom',
-    zoomNote: 'Please share your preferred times in the form below — we will coordinate according to your schedule.',
-    zoomCta: 'Complete meeting request',
     links: [
       { href: 'solutions/project-launch-en.html', label: 'Project Launch™', sub: 'Project launch system', img: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg', webp: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.webp' },
       { href: 'services/animation-en.html', label: 'CGI Films', sub: 'Cinematic production', img: 'assets/projects/cinematic/video-1.jpg', webp: 'assets/projects/cinematic/video-1.webp' },
@@ -410,37 +398,6 @@ body.gh-partner-network {
   padding: 0 24px 20px; font-size: 15px; line-height: 1.85; color: var(--muted);
 }
 
-.pn-zoom {
-  background: #080c0a; color: #fff; border-radius: 20px;
-  padding: 48px 36px; text-align: ${isEn ? 'left' : 'right'};
-}
-@media(min-width:768px){ .pn-zoom { padding: 56px 52px; } }
-.pn-zoom-icon {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 52px; height: 52px; border-radius: 14px;
-  background: rgba(201,168,76,0.15); color: var(--gold); margin-bottom: 20px;
-}
-.pn-zoom-icon .material-symbols-outlined { font-size: 28px; }
-.pn-zoom h2 { color: #fff; margin-bottom: 12px; }
-.pn-zoom .pn-sub { color: rgba(255,255,255,0.72); margin-bottom: 16px; }
-.pn-zoom-duration {
-  font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 12px;
-}
-.pn-zoom-note {
-  font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.68);
-  margin-bottom: 28px; max-width: 560px;
-}
-.pn-zoom-cta {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 15px 28px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em;
-  font-family: inherit; text-decoration: none; color: #080c0a;
-  background: var(--gold); border-radius: 999px; transition: transform 0.25s, box-shadow 0.25s;
-}
-.pn-zoom-cta:hover {
-  transform: translateY(-2px); box-shadow: 0 12px 36px rgba(201,168,76,0.35);
-}
-
 .pn-form-section {
   padding: 80px 0 110px;
   background: linear-gradient(180deg, var(--bg) 0%, var(--white) 50%);
@@ -547,24 +504,6 @@ ${header}
   </div>
 </section>
 
-<section class="pn-section pn-section--white">
-  <div class="pn-wrap">
-    <div class="pn-zoom" id="zoom">
-      <div class="pn-zoom-icon" aria-hidden="true">
-        <span class="material-symbols-outlined">videocam</span>
-      </div>
-      <h2 class="pn-h2">${c.zoomTitle}</h2>
-      <p class="pn-sub">${c.zoomSub}</p>
-      <p class="pn-zoom-duration">${c.zoomDuration}</p>
-      <p class="pn-zoom-note">${c.zoomNote}</p>
-      <a href="#inquiry" class="pn-zoom-cta">
-        ${c.zoomCta}
-        <span class="material-symbols-outlined" style="font-size:18px">arrow_downward</span>
-      </a>
-    </div>
-  </div>
-</section>
-
 <section class="pn-form-section" id="inquiry">
   <div class="pn-wrap">
     <div class="pn-form-box">
@@ -575,7 +514,6 @@ ${header}
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="${c.formSubject}">
         <input type="hidden" name="_next" value="${c.formNext}">
-        <input type="hidden" name="inquiry_type" id="pnInquiryType" value="partnership">
         <div class="pn-form-grid">
           <div class="pn-field pn-field--full">
             <label for="pnSegment">${c.fields.segment} <span class="req">*</span></label>
@@ -631,13 +569,6 @@ ${footer}
 <script defer src="assets/gh-float-widgets.js?v=8"></script>
 <script>
 (function(){
-  var inquiryType = document.getElementById('pnInquiryType');
-  if (location.hash === '#inquiry' || location.hash === '#zoom') {
-    if (inquiryType) inquiryType.value = 'zoom-meeting';
-  }
-  document.querySelector('.pn-zoom-cta')?.addEventListener('click', function() {
-    if (inquiryType) inquiryType.value = 'zoom-meeting';
-  });
   var form = document.querySelector('.pn-form');
   if (form) {
     form.addEventListener('submit', function() {
