@@ -22,29 +22,47 @@ const COPY = {
       'شراكات استراتيجية في الإنتاج البصري والتجريبي مع وكالات الدعاية والمكاتب الهندسية وشركات المقاولات في المملكة ودول الخليج.',
     ogTitle: 'شبكة الشركاء — Graphics House',
     eye: 'شبكة الشركاء',
-    h1: 'نسعى لبناء',
-    h1Gold: 'شراكات استراتيجية',
+    h1: 'يشرفنا',
+    h1Gold: 'التعاون معكم',
     lead:
-      'جرافيكس هاوس — استوديو متخصص في الإظهار المعماري، الأفلام السينمائية، المجسمات، والتجارب التفاعلية. نُكمّل قدرات شركائنا بشفافية واحترافية، دون white label.',
+      'جرافيكس هاوس — استوديو متخصص في الإظهار المعماري، الأفلام السينمائية، المجسمات، والتجارب التفاعلية.',
     aboutTitle: 'من نحن',
     aboutText:
       'منذ أكثر من 15 عاماً، نُنتج محتوى بصرياً وتجريبياً للمشاريع الكبرى في المملكة ودول الخليج. نعمل مع جهات رائدة في التطوير والتصميم والإعلان — نُضيف طبقة إنتاج متخصصة إلى منظومة خدماتكم، لا نُنافسكم.',
     offerTitle: 'ماذا نقدم',
     offerSub: 'قدرات إنتاج متكاملة تُضاف إلى مشاريعكم وعروضكم الحالية.',
-    collabTitle: 'كيف نتعاون',
-    collabSub: 'إطار تعاون واضح، شفاف، ومُصمَّم للمشاريع ذات القيمة.',
-    fitYou: 'ما تقدّمونه',
-    fitUs: 'ما نُضيفه',
-    fitRows: [
-      ['العلاقة مع العميل · الاستراتيجية · الهندسة', 'الإظهار المعماري · CGI · المجسمات'],
-      ['الحملة · إدارة المشروع · التنفيذ', 'الأفلام · التجارب التفاعلية · بيئات العرض'],
+    inviteText:
+      'يسعدنا التنسيق للتعرف بشكل أكبر على جهتكم، ومناقشة إمكانية التعاون بين شركتينا في المشاريع الحالية والمستقبلية، بما يحقق المصالح المشتركة.',
+    faqTitle: 'أسئلة شائعة',
+    faqSub: 'إجابات مختصرة على ما يهم شركاءنا المحتملين.',
+    faq: [
+      {
+        q: 'مع من نتعاون؟',
+        a: 'مع وكالات الدعاية والإعلان، المكاتب الهندسية، شركات المقاولات، والجهات الرائدة في التطوير والتصميم — في المملكة ودول الخليج.',
+      },
+      {
+        q: 'كيف يتم التعاون؟',
+        a: 'عبر نموذج Co-Delivery بأدوار واضحة وشفافية كاملة. نُكمّل ما تقدمونه — علاقة العميل، الاستراتيجية، الهندسة — بقدراتنا في الإظهار والأفلام والمجسمات والتجارب التفاعلية.',
+      },
+      {
+        q: 'هل تقدمون white label؟',
+        a: 'لا. نؤمن بكيانين واضحين أمام العميل — شفافية واحترافية دون إخفاء الهوية.',
+      },
+      {
+        q: 'كيف نبدأ؟',
+        a: 'بجلسة تعارف عبر Zoom (20–30 دقيقة)، ثم تحديد نطاق المشروع أو فرصة التعاون، يليه تنفيذ مشترك بإطار واضح.',
+      },
+      {
+        q: 'ما مدة الرد على الطلب؟',
+        a: 'يراجع فريق الشراكات كل طلب ويرد خلال 24 ساعة عمل.',
+      },
     ],
-    fitNote: 'تعارف متبادل عند الحاجة · أدوار واضحة · لا وسيط ثالث.',
-    steps: [
-      'جلسة تعارف استراتيجية (20–30 دقيقة)',
-      'تحديد نطاق المشروع أو فرصة التعاون',
-      'تنفيذ مشترك بإطار واضح للأدوار والمسؤوليات',
-    ],
+    zoomTitle: 'طلب اجتماع تعارف',
+    zoomSub:
+      'نود التنسيق لعقد اجتماع في الوقت الذي يناسبكم — للتعرف على خدماتنا وأعمالنا، ومناقشة إمكانية التعاون.',
+    zoomDuration: 'مدة الاجتماع: 20–30 دقيقة · عبر Zoom',
+    zoomNote: 'نأمل التكرم بإفادتنا بالموعد المناسب لكم في النموذج أدناه، وسيسعدنا التنسيق بما يتوافق مع جدولكم.',
+    zoomCta: 'تعبئة طلب الاجتماع',
     links: [
       { href: 'solutions/project-launch.html', label: 'Project Launch™', sub: 'منظومة إطلاق المشروع' },
       { href: 'services/animation.html', label: 'أفلام CGI', sub: 'إنتاج سينمائي' },
@@ -55,12 +73,13 @@ const COPY = {
     ],
     siteTour: 'استكشف الموقع',
     siteTourHref: 'index-ar.html',
-    formTitle: 'طلب تعاون استراتيجي',
-    formSub: 'يُراجع فريق الشراكات طلبكم ويرد خلال 24 ساعة عمل.',
+    formTitle: 'نموذج طلب التعاون',
+    formSub: 'يُراجع فريق الشراكات طلبكم ويتواصل معكم لتنسيق الاجتماع.',
     formSubject: 'طلب شراكة — شبكة الشركاء AR',
     formNext: `${BASE}/partner-network.html?sent=1#inquiry`,
     formOrgHeading: 'بيانات الجهة',
     formContactHeading: 'بيانات المسؤول',
+    formMeetingHeading: 'تنسيق الاجتماع',
     fields: {
       segment: 'تصنيف الجهة',
       company: 'اسم الشركة',
@@ -70,6 +89,7 @@ const COPY = {
       phone: 'رقم التواصل',
       website: 'موقع الشركة',
       collab: 'نوع التعاون المطلوب',
+      meetingTimes: 'الأوقات المناسبة لكم للاجتماع',
       brief: 'نبذة عن الفرصة أو المشروع',
     },
     segmentOptions: [
@@ -81,14 +101,15 @@ const COPY = {
     ],
     collabOptions: [
       { v: '', l: 'اختر نوع التعاون' },
+      { v: 'zoom-intro', l: 'اجتماع تعارف — Zoom' },
       { v: 'co-delivery', l: 'تسليم مشترك — Co-Delivery' },
       { v: 'referral', l: 'تعارف بفرصة مشروع محددة' },
-      { v: 'capabilities', l: 'استكشاف القدرات — جلسة أولى' },
       { v: 'strategic', l: 'شراكة استراتيجية طويلة المدى' },
     ],
-    briefPlaceholder: 'صفّوا بإيجاز طبيعة التعاون المقترح، نوع المشروع، أو الإطار الزمني المتوقع.',
+    meetingPlaceholder: 'مثال: الأحد–الثلاثاء، 10 ص – 2 م · أو أي ملاحظات للتنسيق',
+    briefPlaceholder: 'صفّوا بإيجاز طبيعة التعاون المقترح أو نوع المشاريع التي تهمكم.',
     submit: 'إرسال الطلب',
-    sentMsg: 'شكراً لتواصلكم. سيراجع فريق الشراكات طلبكم ويرد خلال 24 ساعة عمل.',
+    sentMsg: 'شكراً لتواصلكم. سيتواصل فريق الشراكات معكم خلال 24 ساعة عمل لتنسيق الموعد.',
     wa: 'واتساب',
     langSwitch: 'English',
     langHref: 'partner-network-en.html',
@@ -104,29 +125,47 @@ const COPY = {
       'Strategic partnerships in visual and experiential production with agencies, engineering firms, and contractors across the GCC.',
     ogTitle: 'Partner Network — Graphics House',
     eye: 'Partner Network',
-    h1: 'Building',
-    h1Gold: 'strategic partnerships',
+    h1: 'We would be honored',
+    h1Gold: 'to collaborate with you',
     lead:
-      'Graphics House — a specialist studio in architectural visualization, cinematic film, scale models, and interactive experiences. We complement our partners with transparency and professionalism — never white label.',
+      'Graphics House — a specialist studio in architectural visualization, cinematic film, scale models, and interactive experiences.',
     aboutTitle: 'Who we are',
     aboutText:
       'For over 15 years, we have produced visual and experiential content for major projects across Saudi Arabia and the GCC. We work with leading developers, designers, and agencies — adding a specialist production layer to your offering, not competing with it.',
     offerTitle: 'What we deliver',
     offerSub: 'Integrated production capabilities that extend your current projects and proposals.',
-    collabTitle: 'How we collaborate',
-    collabSub: 'A clear, transparent framework designed for high-value engagements.',
-    fitYou: 'You bring',
-    fitUs: 'We add',
-    fitRows: [
-      ['Client relationship · strategy · engineering', 'Visualization · CGI · scale models'],
-      ['Campaign · project management · delivery', 'Films · interactive · presentation environments'],
+    inviteText:
+      'We would be pleased to learn more about your organization and discuss the possibility of cooperation on current and future projects — in a way that serves mutual interests.',
+    faqTitle: 'Common questions',
+    faqSub: 'Brief answers to what our potential partners ask most.',
+    faq: [
+      {
+        q: 'Who do you partner with?',
+        a: 'Advertising and creative agencies, engineering firms, contracting companies, and leading organizations in development and design — across Saudi Arabia and the GCC.',
+      },
+      {
+        q: 'How does collaboration work?',
+        a: 'Through a Co-Delivery model with clear roles and full transparency. We complement what you bring — client relationships, strategy, engineering — with visualization, film, maquettes, and interactive experiences.',
+      },
+      {
+        q: 'Do you offer white label?',
+        a: 'No. We believe in two clear entities in front of the client — transparency and professionalism without hidden identity.',
+      },
+      {
+        q: 'How do we start?',
+        a: 'With an introductory Zoom session (20–30 minutes), then scope definition for a project or partnership opportunity, followed by joint execution with a clear framework.',
+      },
+      {
+        q: 'How quickly do you respond?',
+        a: 'Our partnerships team reviews every request and responds within 24 business hours.',
+      },
     ],
-    fitNote: 'Mutual introductions when appropriate · defined roles · no third-party intermediary.',
-    steps: [
-      'Strategic introduction session (20–30 minutes)',
-      'Scope definition for project or partnership opportunity',
-      'Joint execution with clear roles and responsibilities',
-    ],
+    zoomTitle: 'Request an introductory meeting',
+    zoomSub:
+      'We would like to coordinate a meeting at a time that suits you — to learn about our services and discuss the possibility of collaboration.',
+    zoomDuration: 'Duration: 20–30 minutes · via Zoom',
+    zoomNote: 'Please share your preferred times in the form below — we will coordinate according to your schedule.',
+    zoomCta: 'Complete meeting request',
     links: [
       { href: 'solutions/project-launch-en.html', label: 'Project Launch™', sub: 'Project launch system' },
       { href: 'services/animation-en.html', label: 'CGI Films', sub: 'Cinematic production' },
@@ -137,12 +176,13 @@ const COPY = {
     ],
     siteTour: 'Explore the site',
     siteTourHref: 'index.html',
-    formTitle: 'Strategic Partnership Inquiry',
-    formSub: 'Our partnerships team reviews every request and responds within 24 business hours.',
+    formTitle: 'Partnership inquiry form',
+    formSub: 'Our partnerships team will review your request and contact you to schedule the meeting.',
     formSubject: 'Partnership inquiry — Partner Network EN',
     formNext: `${BASE}/partner-network-en.html?sent=1#inquiry`,
     formOrgHeading: 'Organization details',
     formContactHeading: 'Contact details',
+    formMeetingHeading: 'Meeting coordination',
     fields: {
       segment: 'Organization category',
       company: 'Company name',
@@ -152,6 +192,7 @@ const COPY = {
       phone: 'Phone',
       website: 'Company website',
       collab: 'Collaboration type',
+      meetingTimes: 'Preferred meeting times',
       brief: 'Brief about the opportunity or project',
     },
     segmentOptions: [
@@ -163,14 +204,15 @@ const COPY = {
     ],
     collabOptions: [
       { v: '', l: 'Select collaboration type' },
+      { v: 'zoom-intro', l: 'Introductory meeting — Zoom' },
       { v: 'co-delivery', l: 'Co-Delivery — joint project delivery' },
       { v: 'referral', l: 'Project-specific introduction' },
-      { v: 'capabilities', l: 'Capabilities exploration — first session' },
       { v: 'strategic', l: 'Long-term strategic partnership' },
     ],
-    briefPlaceholder: 'Briefly describe the proposed collaboration, project type, or expected timeline.',
+    meetingPlaceholder: 'e.g. Sun–Wed, 10am–2pm · or any scheduling notes',
+    briefPlaceholder: 'Briefly describe the proposed collaboration or project types of interest.',
     submit: 'Submit inquiry',
-    sentMsg: 'Thank you. Our partnerships team will review your request and respond within 24 business hours.',
+    sentMsg: 'Thank you. Our partnerships team will contact you within 24 business hours to schedule the meeting.',
     wa: 'WhatsApp',
     langSwitch: 'العربية',
     langHref: 'partner-network.html',
@@ -196,17 +238,15 @@ function buildPage(c) {
     )
     .join('');
 
-  const fitRows = c.fitRows
+  const faqItems = c.faq
     .map(
-      ([you, us]) => `
-    <div class="pn-fit-row">
-      <div class="pn-fit-cell pn-fit-you"><span class="pn-fit-tag">${c.fitYou}</span>${you}</div>
-      <div class="pn-fit-cell pn-fit-us"><span class="pn-fit-tag">${c.fitUs}</span>${us}</div>
-    </div>`
+      (item, i) => `
+    <details class="pn-faq-item"${i === 0 ? ' open' : ''}>
+      <summary class="pn-faq-q">${item.q}</summary>
+      <p class="pn-faq-a">${item.a}</p>
+    </details>`
     )
     .join('');
-
-  const steps = c.steps.map((s) => `<li>${s}</li>`).join('');
 
   return `<!DOCTYPE html>
 <html lang="${c.lang}" dir="${c.dir}" class="scroll-smooth">
@@ -271,9 +311,10 @@ body.gh-partner-network {
 .pn-lang:hover { border-color: var(--gold); color: #fff; }
 
 .pn-hero {
-  padding: calc(var(--gh-header-height, 88px) + 56px) 0 64px;
+  padding: calc(var(--gh-header-height, 88px) + 56px) 0 48px;
   background: var(--white);
   border-bottom: 1px solid var(--line);
+  text-align: ${isEn ? 'left' : 'right'};
 }
 .pn-eye {
   display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
@@ -281,12 +322,12 @@ body.gh-partner-network {
 }
 .pn-h1 {
   font-size: clamp(34px, 5.2vw, 54px); font-weight: 700; line-height: 1.18;
-  letter-spacing: -0.025em; margin-bottom: 20px; color: var(--ink);
+  letter-spacing: -0.025em; margin-bottom: 16px; color: var(--ink);
 }
 .pn-h1 em { font-style: normal; color: var(--gold); }
 .pn-lead {
-  font-size: clamp(17px, 1.9vw, 19px); line-height: 1.9; color: var(--muted);
-  max-width: 680px; font-weight: 400;
+  font-size: clamp(16px, 1.8vw, 18px); line-height: 1.85; color: var(--muted);
+  max-width: 640px; font-weight: 400;
 }
 
 .pn-section { padding: 72px 0; }
@@ -295,37 +336,22 @@ body.gh-partner-network {
   font-size: clamp(24px, 3.2vw, 32px); font-weight: 700; margin-bottom: 12px;
   letter-spacing: -0.02em; color: var(--ink);
 }
+.pn-h3 {
+  font-size: clamp(18px, 2.4vw, 22px); font-weight: 700; margin: 40px 0 12px;
+  letter-spacing: -0.01em; color: var(--ink);
+}
+.pn-h3:first-of-type { margin-top: 0; }
 .pn-sub {
-  font-size: 16px; color: var(--muted); line-height: 1.85; margin-bottom: 32px; max-width: 600px;
+  font-size: 16px; color: var(--muted); line-height: 1.85; margin-bottom: 28px; max-width: 600px;
 }
 .pn-about-text {
   font-size: 17px; line-height: 2; color: var(--muted); max-width: 720px;
 }
-
-.pn-fit { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-.pn-fit-row { display: grid; grid-template-columns: 1fr; gap: 10px; }
-@media(min-width:768px){ .pn-fit-row { grid-template-columns: 1fr 1fr; } }
-.pn-fit-cell {
-  padding: 22px 24px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
-  font-size: 15px; line-height: 1.75;
-}
-.pn-fit-us { background: var(--gold-soft); border-color: rgba(201,168,76,0.24); }
-.pn-fit-tag {
-  display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
-}
-.pn-fit-note { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
-
-.pn-steps { list-style: none; display: flex; flex-direction: column; gap: 12px; counter-reset: step; }
-.pn-steps li {
-  display: flex; align-items: flex-start; gap: 16px; font-size: 15px; line-height: 1.75;
-  padding: 20px 22px; background: var(--white); border: 1px solid var(--line); border-radius: 12px;
-}
-.pn-steps li::before {
-  content: counter(step); counter-increment: step;
-  width: 30px; height: 30px; min-width: 30px; border-radius: 50%;
-  background: var(--gold-soft); color: var(--gold); font-size: 12px; font-weight: 800;
-  display: flex; align-items: center; justify-content: center;
+.pn-invite {
+  margin-top: 40px; padding: 28px 32px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.03));
+  border: 1px solid rgba(201,168,76,0.22); border-radius: 14px;
+  font-size: 17px; line-height: 1.95; color: var(--ink);
 }
 
 .pn-links {
@@ -335,7 +361,7 @@ body.gh-partner-network {
 @media(min-width:960px){ .pn-links { grid-template-columns: repeat(3, 1fr); } }
 .pn-link-card {
   display: flex; flex-direction: column; gap: 5px; padding: 22px 20px;
-  background: var(--white); border: 1px solid var(--line); border-radius: 12px;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
   text-decoration: none; color: inherit; position: relative; min-height: 92px;
   transition: border-color 0.25s, box-shadow 0.25s;
 }
@@ -349,12 +375,63 @@ body.gh-partner-network {
 html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
 
 .pn-tour {
-  display: inline-flex; align-items: center; gap: 8px; margin-top: 28px;
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 24px;
   font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none;
   padding: 13px 24px; border: 1.5px solid var(--line); border-radius: 999px;
   background: var(--white); transition: all 0.25s;
 }
 .pn-tour:hover { border-color: var(--gold); color: var(--gold); }
+
+.pn-faq { display: flex; flex-direction: column; gap: 10px; max-width: 760px; }
+.pn-faq-item {
+  background: var(--white); border: 1px solid var(--line); border-radius: 12px;
+  overflow: hidden; transition: border-color 0.25s;
+}
+.pn-faq-item[open] { border-color: rgba(201,168,76,0.35); }
+.pn-faq-q {
+  padding: 20px 24px; font-size: 15px; font-weight: 700; cursor: pointer;
+  list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.pn-faq-q::-webkit-details-marker { display: none; }
+.pn-faq-q::after {
+  content: '+'; font-size: 18px; font-weight: 400; color: var(--gold); flex-shrink: 0;
+  transition: transform 0.25s;
+}
+.pn-faq-item[open] .pn-faq-q::after { content: '−'; }
+.pn-faq-a {
+  padding: 0 24px 20px; font-size: 15px; line-height: 1.85; color: var(--muted);
+}
+
+.pn-zoom {
+  background: #080c0a; color: #fff; border-radius: 20px;
+  padding: 48px 36px; text-align: ${isEn ? 'left' : 'right'};
+}
+@media(min-width:768px){ .pn-zoom { padding: 56px 52px; } }
+.pn-zoom-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; border-radius: 14px;
+  background: rgba(201,168,76,0.15); color: var(--gold); margin-bottom: 20px;
+}
+.pn-zoom-icon .material-symbols-outlined { font-size: 28px; }
+.pn-zoom h2 { color: #fff; margin-bottom: 12px; }
+.pn-zoom .pn-sub { color: rgba(255,255,255,0.72); margin-bottom: 16px; }
+.pn-zoom-duration {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+}
+.pn-zoom-note {
+  font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.68);
+  margin-bottom: 28px; max-width: 560px;
+}
+.pn-zoom-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 28px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em;
+  font-family: inherit; text-decoration: none; color: #080c0a;
+  background: var(--gold); border-radius: 999px; transition: transform 0.25s, box-shadow 0.25s;
+}
+.pn-zoom-cta:hover {
+  transform: translateY(-2px); box-shadow: 0 12px 36px rgba(201,168,76,0.35);
+}
 
 .pn-form-section {
   padding: 80px 0 110px;
@@ -440,30 +517,42 @@ ${header}
 
 <section class="pn-section pn-section--white">
   <div class="pn-wrap">
-    <h2 class="pn-h2">${c.aboutTitle}</h2>
+    <h3 class="pn-h3">${c.aboutTitle}</h3>
     <p class="pn-about-text">${c.aboutText}</p>
-  </div>
-</section>
-
-<section class="pn-section">
-  <div class="pn-wrap">
-    <h2 class="pn-h2">${c.offerTitle}</h2>
+    <h3 class="pn-h3">${c.offerTitle}</h3>
     <p class="pn-sub">${c.offerSub}</p>
     <div class="pn-links">${exploreLinks}</div>
     <a href="${c.siteTourHref}" class="pn-tour">
       <span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
       ${c.siteTour}
     </a>
+    <p class="pn-invite">${c.inviteText}</p>
+  </div>
+</section>
+
+<section class="pn-section">
+  <div class="pn-wrap">
+    <h2 class="pn-h2">${c.faqTitle}</h2>
+    <p class="pn-sub">${c.faqSub}</p>
+    <div class="pn-faq">${faqItems}</div>
   </div>
 </section>
 
 <section class="pn-section pn-section--white">
   <div class="pn-wrap">
-    <h2 class="pn-h2">${c.collabTitle}</h2>
-    <p class="pn-sub">${c.collabSub}</p>
-    <div class="pn-fit">${fitRows}</div>
-    <p class="pn-fit-note">${c.fitNote}</p>
-    <ol class="pn-steps">${steps}</ol>
+    <div class="pn-zoom" id="zoom">
+      <div class="pn-zoom-icon" aria-hidden="true">
+        <span class="material-symbols-outlined">videocam</span>
+      </div>
+      <h2 class="pn-h2">${c.zoomTitle}</h2>
+      <p class="pn-sub">${c.zoomSub}</p>
+      <p class="pn-zoom-duration">${c.zoomDuration}</p>
+      <p class="pn-zoom-note">${c.zoomNote}</p>
+      <a href="#inquiry" class="pn-zoom-cta">
+        ${c.zoomCta}
+        <span class="material-symbols-outlined" style="font-size:18px">arrow_downward</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -517,6 +606,15 @@ ${header}
               <label for="pnPhone">${c.fields.phone} <span class="req">*</span></label>
               <input type="tel" name="phone" id="pnPhone" required autocomplete="tel">
             </div>
+          </div>
+        </div>
+        <div class="pn-form-group">
+          <div class="pn-form-group-title">${c.formMeetingHeading}</div>
+          <div class="pn-form-grid">
+            <div class="pn-field pn-field--full">
+              <label for="pnMeeting">${c.fields.meetingTimes} <span class="req">*</span></label>
+              <input type="text" name="meeting_times" id="pnMeeting" required placeholder="${c.meetingPlaceholder}">
+            </div>
             <div class="pn-field pn-field--full">
               <label for="pnBrief">${c.fields.brief}</label>
               <textarea name="message" id="pnBrief" placeholder="${c.briefPlaceholder}"></textarea>
@@ -552,6 +650,13 @@ ${footer}
 <script defer src="assets/gh-float-widgets.js?v=8"></script>
 <script>
 (function(){
+  var collab = document.getElementById('pnCollab');
+  if (location.hash === '#inquiry' || location.hash === '#zoom') {
+    if (collab && !collab.value) collab.value = 'zoom-intro';
+  }
+  document.querySelector('.pn-zoom-cta')?.addEventListener('click', function() {
+    if (collab) collab.value = 'zoom-intro';
+  });
   var form = document.querySelector('.pn-form');
   if (form) {
     form.addEventListener('submit', function() {

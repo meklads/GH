@@ -61,9 +61,10 @@ body.gh-partner-network {
 .pn-lang:hover { border-color: var(--gold); color: #fff; }
 
 .pn-hero {
-  padding: calc(var(--gh-header-height, 88px) + 56px) 0 64px;
+  padding: calc(var(--gh-header-height, 88px) + 56px) 0 48px;
   background: var(--white);
   border-bottom: 1px solid var(--line);
+  text-align: right;
 }
 .pn-eye {
   display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
@@ -71,12 +72,12 @@ body.gh-partner-network {
 }
 .pn-h1 {
   font-size: clamp(34px, 5.2vw, 54px); font-weight: 700; line-height: 1.18;
-  letter-spacing: -0.025em; margin-bottom: 20px; color: var(--ink);
+  letter-spacing: -0.025em; margin-bottom: 16px; color: var(--ink);
 }
 .pn-h1 em { font-style: normal; color: var(--gold); }
 .pn-lead {
-  font-size: clamp(17px, 1.9vw, 19px); line-height: 1.9; color: var(--muted);
-  max-width: 680px; font-weight: 400;
+  font-size: clamp(16px, 1.8vw, 18px); line-height: 1.85; color: var(--muted);
+  max-width: 640px; font-weight: 400;
 }
 
 .pn-section { padding: 72px 0; }
@@ -85,37 +86,22 @@ body.gh-partner-network {
   font-size: clamp(24px, 3.2vw, 32px); font-weight: 700; margin-bottom: 12px;
   letter-spacing: -0.02em; color: var(--ink);
 }
+.pn-h3 {
+  font-size: clamp(18px, 2.4vw, 22px); font-weight: 700; margin: 40px 0 12px;
+  letter-spacing: -0.01em; color: var(--ink);
+}
+.pn-h3:first-of-type { margin-top: 0; }
 .pn-sub {
-  font-size: 16px; color: var(--muted); line-height: 1.85; margin-bottom: 32px; max-width: 600px;
+  font-size: 16px; color: var(--muted); line-height: 1.85; margin-bottom: 28px; max-width: 600px;
 }
 .pn-about-text {
   font-size: 17px; line-height: 2; color: var(--muted); max-width: 720px;
 }
-
-.pn-fit { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-.pn-fit-row { display: grid; grid-template-columns: 1fr; gap: 10px; }
-@media(min-width:768px){ .pn-fit-row { grid-template-columns: 1fr 1fr; } }
-.pn-fit-cell {
-  padding: 22px 24px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
-  font-size: 15px; line-height: 1.75;
-}
-.pn-fit-us { background: var(--gold-soft); border-color: rgba(201,168,76,0.24); }
-.pn-fit-tag {
-  display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
-}
-.pn-fit-note { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
-
-.pn-steps { list-style: none; display: flex; flex-direction: column; gap: 12px; counter-reset: step; }
-.pn-steps li {
-  display: flex; align-items: flex-start; gap: 16px; font-size: 15px; line-height: 1.75;
-  padding: 20px 22px; background: var(--white); border: 1px solid var(--line); border-radius: 12px;
-}
-.pn-steps li::before {
-  content: counter(step); counter-increment: step;
-  width: 30px; height: 30px; min-width: 30px; border-radius: 50%;
-  background: var(--gold-soft); color: var(--gold); font-size: 12px; font-weight: 800;
-  display: flex; align-items: center; justify-content: center;
+.pn-invite {
+  margin-top: 40px; padding: 28px 32px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.03));
+  border: 1px solid rgba(201,168,76,0.22); border-radius: 14px;
+  font-size: 17px; line-height: 1.95; color: var(--ink);
 }
 
 .pn-links {
@@ -125,7 +111,7 @@ body.gh-partner-network {
 @media(min-width:960px){ .pn-links { grid-template-columns: repeat(3, 1fr); } }
 .pn-link-card {
   display: flex; flex-direction: column; gap: 5px; padding: 22px 20px;
-  background: var(--white); border: 1px solid var(--line); border-radius: 12px;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
   text-decoration: none; color: inherit; position: relative; min-height: 92px;
   transition: border-color 0.25s, box-shadow 0.25s;
 }
@@ -139,12 +125,63 @@ body.gh-partner-network {
 html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
 
 .pn-tour {
-  display: inline-flex; align-items: center; gap: 8px; margin-top: 28px;
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 24px;
   font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none;
   padding: 13px 24px; border: 1.5px solid var(--line); border-radius: 999px;
   background: var(--white); transition: all 0.25s;
 }
 .pn-tour:hover { border-color: var(--gold); color: var(--gold); }
+
+.pn-faq { display: flex; flex-direction: column; gap: 10px; max-width: 760px; }
+.pn-faq-item {
+  background: var(--white); border: 1px solid var(--line); border-radius: 12px;
+  overflow: hidden; transition: border-color 0.25s;
+}
+.pn-faq-item[open] { border-color: rgba(201,168,76,0.35); }
+.pn-faq-q {
+  padding: 20px 24px; font-size: 15px; font-weight: 700; cursor: pointer;
+  list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.pn-faq-q::-webkit-details-marker { display: none; }
+.pn-faq-q::after {
+  content: '+'; font-size: 18px; font-weight: 400; color: var(--gold); flex-shrink: 0;
+  transition: transform 0.25s;
+}
+.pn-faq-item[open] .pn-faq-q::after { content: '−'; }
+.pn-faq-a {
+  padding: 0 24px 20px; font-size: 15px; line-height: 1.85; color: var(--muted);
+}
+
+.pn-zoom {
+  background: #080c0a; color: #fff; border-radius: 20px;
+  padding: 48px 36px; text-align: right;
+}
+@media(min-width:768px){ .pn-zoom { padding: 56px 52px; } }
+.pn-zoom-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; border-radius: 14px;
+  background: rgba(201,168,76,0.15); color: var(--gold); margin-bottom: 20px;
+}
+.pn-zoom-icon .material-symbols-outlined { font-size: 28px; }
+.pn-zoom h2 { color: #fff; margin-bottom: 12px; }
+.pn-zoom .pn-sub { color: rgba(255,255,255,0.72); margin-bottom: 16px; }
+.pn-zoom-duration {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+}
+.pn-zoom-note {
+  font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.68);
+  margin-bottom: 28px; max-width: 560px;
+}
+.pn-zoom-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 28px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em;
+  font-family: inherit; text-decoration: none; color: #080c0a;
+  background: var(--gold); border-radius: 999px; transition: transform 0.25s, box-shadow 0.25s;
+}
+.pn-zoom-cta:hover {
+  transform: translateY(-2px); box-shadow: 0 12px 36px rgba(201,168,76,0.35);
+}
 
 .pn-form-section {
   padding: 80px 0 110px;
@@ -348,21 +385,16 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
 <section class="pn-hero">
   <div class="pn-wrap">
     <span class="pn-eye">شبكة الشركاء</span>
-    <h1 class="pn-h1">نسعى لبناء <em>شراكات استراتيجية</em></h1>
-    <p class="pn-lead">جرافيكس هاوس — استوديو متخصص في الإظهار المعماري، الأفلام السينمائية، المجسمات، والتجارب التفاعلية. نُكمّل قدرات شركائنا بشفافية واحترافية، دون white label.</p>
+    <h1 class="pn-h1">يشرفنا <em>التعاون معكم</em></h1>
+    <p class="pn-lead">جرافيكس هاوس — استوديو متخصص في الإظهار المعماري، الأفلام السينمائية، المجسمات، والتجارب التفاعلية.</p>
   </div>
 </section>
 
 <section class="pn-section pn-section--white">
   <div class="pn-wrap">
-    <h2 class="pn-h2">من نحن</h2>
+    <h3 class="pn-h3">من نحن</h3>
     <p class="pn-about-text">منذ أكثر من 15 عاماً، نُنتج محتوى بصرياً وتجريبياً للمشاريع الكبرى في المملكة ودول الخليج. نعمل مع جهات رائدة في التطوير والتصميم والإعلان — نُضيف طبقة إنتاج متخصصة إلى منظومة خدماتكم، لا نُنافسكم.</p>
-  </div>
-</section>
-
-<section class="pn-section">
-  <div class="pn-wrap">
-    <h2 class="pn-h2">ماذا نقدم</h2>
+    <h3 class="pn-h3">ماذا نقدم</h3>
     <p class="pn-sub">قدرات إنتاج متكاملة تُضاف إلى مشاريعكم وعروضكم الحالية.</p>
     <div class="pn-links">
     <a href="solutions/project-launch.html" class="pn-link-card">
@@ -399,24 +431,53 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
       <span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
       استكشف الموقع
     </a>
+    <p class="pn-invite">يسعدنا التنسيق للتعرف بشكل أكبر على جهتكم، ومناقشة إمكانية التعاون بين شركتينا في المشاريع الحالية والمستقبلية، بما يحقق المصالح المشتركة.</p>
+  </div>
+</section>
+
+<section class="pn-section">
+  <div class="pn-wrap">
+    <h2 class="pn-h2">أسئلة شائعة</h2>
+    <p class="pn-sub">إجابات مختصرة على ما يهم شركاءنا المحتملين.</p>
+    <div class="pn-faq">
+    <details class="pn-faq-item" open>
+      <summary class="pn-faq-q">مع من نتعاون؟</summary>
+      <p class="pn-faq-a">مع وكالات الدعاية والإعلان، المكاتب الهندسية، شركات المقاولات، والجهات الرائدة في التطوير والتصميم — في المملكة ودول الخليج.</p>
+    </details>
+    <details class="pn-faq-item">
+      <summary class="pn-faq-q">كيف يتم التعاون؟</summary>
+      <p class="pn-faq-a">عبر نموذج Co-Delivery بأدوار واضحة وشفافية كاملة. نُكمّل ما تقدمونه — علاقة العميل، الاستراتيجية، الهندسة — بقدراتنا في الإظهار والأفلام والمجسمات والتجارب التفاعلية.</p>
+    </details>
+    <details class="pn-faq-item">
+      <summary class="pn-faq-q">هل تقدمون white label؟</summary>
+      <p class="pn-faq-a">لا. نؤمن بكيانين واضحين أمام العميل — شفافية واحترافية دون إخفاء الهوية.</p>
+    </details>
+    <details class="pn-faq-item">
+      <summary class="pn-faq-q">كيف نبدأ؟</summary>
+      <p class="pn-faq-a">بجلسة تعارف عبر Zoom (20–30 دقيقة)، ثم تحديد نطاق المشروع أو فرصة التعاون، يليه تنفيذ مشترك بإطار واضح.</p>
+    </details>
+    <details class="pn-faq-item">
+      <summary class="pn-faq-q">ما مدة الرد على الطلب؟</summary>
+      <p class="pn-faq-a">يراجع فريق الشراكات كل طلب ويرد خلال 24 ساعة عمل.</p>
+    </details></div>
   </div>
 </section>
 
 <section class="pn-section pn-section--white">
   <div class="pn-wrap">
-    <h2 class="pn-h2">كيف نتعاون</h2>
-    <p class="pn-sub">إطار تعاون واضح، شفاف، ومُصمَّم للمشاريع ذات القيمة.</p>
-    <div class="pn-fit">
-    <div class="pn-fit-row">
-      <div class="pn-fit-cell pn-fit-you"><span class="pn-fit-tag">ما تقدّمونه</span>العلاقة مع العميل · الاستراتيجية · الهندسة</div>
-      <div class="pn-fit-cell pn-fit-us"><span class="pn-fit-tag">ما نُضيفه</span>الإظهار المعماري · CGI · المجسمات</div>
+    <div class="pn-zoom" id="zoom">
+      <div class="pn-zoom-icon" aria-hidden="true">
+        <span class="material-symbols-outlined">videocam</span>
+      </div>
+      <h2 class="pn-h2">طلب اجتماع تعارف</h2>
+      <p class="pn-sub">نود التنسيق لعقد اجتماع في الوقت الذي يناسبكم — للتعرف على خدماتنا وأعمالنا، ومناقشة إمكانية التعاون.</p>
+      <p class="pn-zoom-duration">مدة الاجتماع: 20–30 دقيقة · عبر Zoom</p>
+      <p class="pn-zoom-note">نأمل التكرم بإفادتنا بالموعد المناسب لكم في النموذج أدناه، وسيسعدنا التنسيق بما يتوافق مع جدولكم.</p>
+      <a href="#inquiry" class="pn-zoom-cta">
+        تعبئة طلب الاجتماع
+        <span class="material-symbols-outlined" style="font-size:18px">arrow_downward</span>
+      </a>
     </div>
-    <div class="pn-fit-row">
-      <div class="pn-fit-cell pn-fit-you"><span class="pn-fit-tag">ما تقدّمونه</span>الحملة · إدارة المشروع · التنفيذ</div>
-      <div class="pn-fit-cell pn-fit-us"><span class="pn-fit-tag">ما نُضيفه</span>الأفلام · التجارب التفاعلية · بيئات العرض</div>
-    </div></div>
-    <p class="pn-fit-note">تعارف متبادل عند الحاجة · أدوار واضحة · لا وسيط ثالث.</p>
-    <ol class="pn-steps"><li>جلسة تعارف استراتيجية (20–30 دقيقة)</li><li>تحديد نطاق المشروع أو فرصة التعاون</li><li>تنفيذ مشترك بإطار واضح للأدوار والمسؤوليات</li></ol>
   </div>
 </section>
 
@@ -424,8 +485,8 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
   <div class="pn-wrap">
     <div class="pn-form-box">
       <div class="pn-form-head">
-        <h2>طلب تعاون استراتيجي</h2>
-        <p>يُراجع فريق الشراكات طلبكم ويرد خلال 24 ساعة عمل.</p>
+        <h2>نموذج طلب التعاون</h2>
+        <p>يُراجع فريق الشراكات طلبكم ويتواصل معكم لتنسيق الاجتماع.</p>
       </div>
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="طلب شراكة — شبكة الشركاء AR">
@@ -451,7 +512,7 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
             </div>
             <div class="pn-field pn-field--full">
               <label for="pnCollab">نوع التعاون المطلوب <span class="req">*</span></label>
-              <select name="collaboration_type" id="pnCollab" required><option value="">اختر نوع التعاون</option><option value="co-delivery">تسليم مشترك — Co-Delivery</option><option value="referral">تعارف بفرصة مشروع محددة</option><option value="capabilities">استكشاف القدرات — جلسة أولى</option><option value="strategic">شراكة استراتيجية طويلة المدى</option></select>
+              <select name="collaboration_type" id="pnCollab" required><option value="">اختر نوع التعاون</option><option value="zoom-intro">اجتماع تعارف — Zoom</option><option value="co-delivery">تسليم مشترك — Co-Delivery</option><option value="referral">تعارف بفرصة مشروع محددة</option><option value="strategic">شراكة استراتيجية طويلة المدى</option></select>
             </div>
           </div>
         </div>
@@ -470,9 +531,18 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
               <label for="pnPhone">رقم التواصل <span class="req">*</span></label>
               <input type="tel" name="phone" id="pnPhone" required autocomplete="tel">
             </div>
+          </div>
+        </div>
+        <div class="pn-form-group">
+          <div class="pn-form-group-title">تنسيق الاجتماع</div>
+          <div class="pn-form-grid">
+            <div class="pn-field pn-field--full">
+              <label for="pnMeeting">الأوقات المناسبة لكم للاجتماع <span class="req">*</span></label>
+              <input type="text" name="meeting_times" id="pnMeeting" required placeholder="مثال: الأحد–الثلاثاء، 10 ص – 2 م · أو أي ملاحظات للتنسيق">
+            </div>
             <div class="pn-field pn-field--full">
               <label for="pnBrief">نبذة عن الفرصة أو المشروع</label>
-              <textarea name="message" id="pnBrief" placeholder="صفّوا بإيجاز طبيعة التعاون المقترح، نوع المشروع، أو الإطار الزمني المتوقع."></textarea>
+              <textarea name="message" id="pnBrief" placeholder="صفّوا بإيجاز طبيعة التعاون المقترح أو نوع المشاريع التي تهمكم."></textarea>
             </div>
             <div class="pn-field pn-field--full">
               <div class="gh-form-security">
@@ -606,6 +676,13 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
 <script defer src="assets/gh-float-widgets.js?v=8"></script>
 <script>
 (function(){
+  var collab = document.getElementById('pnCollab');
+  if (location.hash === '#inquiry' || location.hash === '#zoom') {
+    if (collab && !collab.value) collab.value = 'zoom-intro';
+  }
+  document.querySelector('.pn-zoom-cta')?.addEventListener('click', function() {
+    if (collab) collab.value = 'zoom-intro';
+  });
   var form = document.querySelector('.pn-form');
   if (form) {
     form.addEventListener('submit', function() {
@@ -622,7 +699,7 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
     var box = document.querySelector('.form-feedback');
     if (box) {
       box.className = 'form-feedback is-visible is-success';
-      box.textContent = "شكراً لتواصلكم. سيراجع فريق الشراكات طلبكم ويرد خلال 24 ساعة عمل.";
+      box.textContent = "شكراً لتواصلكم. سيتواصل فريق الشراكات معكم خلال 24 ساعة عمل لتنسيق الموعد.";
     }
   }
 })();
