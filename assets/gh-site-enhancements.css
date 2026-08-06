@@ -28,7 +28,9 @@
 body.gh-home .header,
 body.gh-home .header.scrolled,
 body.gh-contact .header,
-body.gh-contact .header.scrolled {
+body.gh-contact .header.scrolled,
+body.gh-partner-network .header,
+body.gh-partner-network .header.scrolled {
   background: #080c0a !important;
   border-bottom: 1px solid rgba(201, 168, 76, 0.14) !important;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);

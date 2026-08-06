@@ -17,15 +17,15 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>شبكة الشركاء | Graphics House</title>
-<meta name="description" content="شراكة Co-Delivery مع وكالات الدعاية والمكاتب الهندسية وشركات المقاولات — طبقة إنتاج بصري وتجريبي من Graphics House.">
+<meta name="description" content="شراكات استراتيجية في الإنتاج البصري والتجريبي مع وكالات الدعاية والمكاتب الهندسية وشركات المقاولات في المملكة ودول الخليج.">
 <meta property="og:title" content="شبكة الشركاء — Graphics House">
-<meta property="og:description" content="شراكة Co-Delivery مع وكالات الدعاية والمكاتب الهندسية وشركات المقاولات — طبقة إنتاج بصري وتجريبي من Graphics House.">
+<meta property="og:description" content="شراكات استراتيجية في الإنتاج البصري والتجريبي مع وكالات الدعاية والمكاتب الهندسية وشركات المقاولات في المملكة ودول الخليج.">
 <meta property="og:image" content="https://3dgraphicshouse.com/assets/favicon/og-image.png">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=21">
@@ -34,184 +34,173 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <style>
 :root {
   --gold: #C9A84C;
-  --gold-soft: rgba(201,168,76,0.12);
-  --ink: #1A1A1A;
-  --muted: rgba(26,26,26,0.58);
-  --line: rgba(26,26,26,0.08);
+  --gold-soft: rgba(201,168,76,0.1);
+  --ink: #141414;
+  --muted: rgba(20,20,20,0.62);
+  --line: rgba(20,20,20,0.09);
   --white: #FFFFFF;
   --bg: #FAFAF8;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body {
-  font-family: 'Tajawal','Inter', sans-serif;
+body.gh-partner-network {
+  font-family: 'IBM Plex Sans Arabic','Tajawal','Inter', sans-serif;
   background: var(--bg);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
 }
-.pn-wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.pn-wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 @media(min-width:768px){ .pn-wrap { padding: 0 40px; } }
 
 .pn-lang {
-  position: fixed; top: 96px; left: 20px; z-index: 100;
-  font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--muted); text-decoration: none; padding: 8px 14px;
-  background: var(--white); border: 1px solid var(--line); border-radius: 999px;
+  position: fixed; top: calc(var(--gh-header-height, 88px) + 12px); left: 20px; z-index: 100;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.72); text-decoration: none; padding: 7px 14px;
+  background: rgba(8,12,10,0.88); border: 1px solid rgba(201,168,76,0.22); border-radius: 999px;
   transition: border-color 0.25s, color 0.25s;
 }
-.pn-lang:hover { border-color: var(--gold); color: var(--ink); }
+.pn-lang:hover { border-color: var(--gold); color: #fff; }
 
 .pn-hero {
-  padding: 140px 0 56px;
-  background: linear-gradient(180deg, var(--white) 0%, var(--bg) 100%);
+  padding: calc(var(--gh-header-height, 88px) + 56px) 0 64px;
+  background: var(--white);
   border-bottom: 1px solid var(--line);
 }
 .pn-eye {
-  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+  display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
 }
 .pn-h1 {
-  font-size: clamp(32px, 5vw, 52px); font-weight: 700; line-height: 1.15;
-  letter-spacing: -0.02em; margin-bottom: 16px; color: var(--ink);
+  font-size: clamp(34px, 5.2vw, 54px); font-weight: 700; line-height: 1.18;
+  letter-spacing: -0.025em; margin-bottom: 20px; color: var(--ink);
 }
 .pn-h1 em { font-style: normal; color: var(--gold); }
 .pn-lead {
-  font-size: clamp(16px, 1.8vw, 18px); line-height: 1.85; color: var(--muted);
-  max-width: 640px; font-weight: 400;
+  font-size: clamp(17px, 1.9vw, 19px); line-height: 1.9; color: var(--muted);
+  max-width: 680px; font-weight: 400;
 }
 
-.pn-segments { padding: 48px 0 32px; }
-.pn-seg-label {
-  font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 16px; display: block;
-}
-.pn-seg-grid {
-  display: grid; grid-template-columns: 1fr; gap: 10px;
-}
-@media(min-width:640px){ .pn-seg-grid { grid-template-columns: repeat(2, 1fr); } }
-@media(min-width:960px){ .pn-seg-grid { grid-template-columns: repeat(4, 1fr); } }
-.pn-seg {
-  text-align: right; padding: 22px 20px; background: var(--white);
-  border: 1.5px solid var(--line); border-radius: 12px; cursor: pointer;
-  transition: border-color 0.3s, box-shadow 0.3s, transform 0.25s;
-  font-family: inherit; color: inherit; width: 100%;
-}
-.pn-seg:hover { border-color: rgba(201,168,76,0.35); box-shadow: 0 8px 32px rgba(0,0,0,0.04); }
-.pn-seg.is-active {
-  border-color: var(--gold); background: linear-gradient(135deg, var(--white), rgba(201,168,76,0.06));
-  box-shadow: 0 12px 40px rgba(201,168,76,0.12);
-}
-.pn-seg-icon { font-size: 28px; color: var(--gold); display: block; margin-bottom: 12px; }
-.pn-seg-title { display: block; font-size: 15px; font-weight: 700; margin-bottom: 6px; line-height: 1.35; }
-.pn-seg-desc { display: block; font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 400; }
-
-.pn-section { padding: 56px 0; }
+.pn-section { padding: 72px 0; }
 .pn-section--white { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.pn-h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 700; margin-bottom: 10px; letter-spacing: -0.02em; }
-.pn-sub { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 28px; max-width: 560px; }
+.pn-h2 {
+  font-size: clamp(24px, 3.2vw, 32px); font-weight: 700; margin-bottom: 12px;
+  letter-spacing: -0.02em; color: var(--ink);
+}
+.pn-sub {
+  font-size: 16px; color: var(--muted); line-height: 1.85; margin-bottom: 32px; max-width: 600px;
+}
+.pn-about-text {
+  font-size: 17px; line-height: 2; color: var(--muted); max-width: 720px;
+}
 
-.pn-fit { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
-.pn-fit-row { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.pn-fit { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.pn-fit-row { display: grid; grid-template-columns: 1fr; gap: 10px; }
 @media(min-width:768px){ .pn-fit-row { grid-template-columns: 1fr 1fr; } }
 .pn-fit-cell {
-  padding: 18px 20px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
-  font-size: 14px; line-height: 1.6;
+  padding: 22px 24px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
+  font-size: 15px; line-height: 1.75;
 }
-.pn-fit-us { background: var(--gold-soft); border-color: rgba(201,168,76,0.22); }
+.pn-fit-us { background: var(--gold-soft); border-color: rgba(201,168,76,0.24); }
 .pn-fit-tag {
-  display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+  display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
 }
-.pn-fit-note { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.pn-fit-note { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
+
+.pn-steps { list-style: none; display: flex; flex-direction: column; gap: 12px; counter-reset: step; }
+.pn-steps li {
+  display: flex; align-items: flex-start; gap: 16px; font-size: 15px; line-height: 1.75;
+  padding: 20px 22px; background: var(--white); border: 1px solid var(--line); border-radius: 12px;
+}
+.pn-steps li::before {
+  content: counter(step); counter-increment: step;
+  width: 30px; height: 30px; min-width: 30px; border-radius: 50%;
+  background: var(--gold-soft); color: var(--gold); font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
 
 .pn-links {
-  display: grid; grid-template-columns: 1fr; gap: 10px;
+  display: grid; grid-template-columns: 1fr; gap: 12px;
 }
 @media(min-width:640px){ .pn-links { grid-template-columns: repeat(2, 1fr); } }
 @media(min-width:960px){ .pn-links { grid-template-columns: repeat(3, 1fr); } }
 .pn-link-card {
-  display: flex; flex-direction: column; gap: 4px; padding: 20px 18px;
-  background: var(--white); border: 1px solid var(--line); border-radius: 10px;
-  text-decoration: none; color: inherit; position: relative; min-height: 88px;
+  display: flex; flex-direction: column; gap: 5px; padding: 22px 20px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 12px;
+  text-decoration: none; color: inherit; position: relative; min-height: 92px;
   transition: border-color 0.25s, box-shadow 0.25s;
 }
-.pn-link-card:hover { border-color: var(--gold); box-shadow: 0 8px 28px rgba(0,0,0,0.05); }
-.pn-link-label { font-size: 14px; font-weight: 700; color: var(--ink); }
-.pn-link-sub { font-size: 12px; color: var(--muted); }
+.pn-link-card:hover { border-color: rgba(201,168,76,0.45); box-shadow: 0 10px 32px rgba(0,0,0,0.05); }
+.pn-link-label { font-size: 15px; font-weight: 700; color: var(--ink); }
+.pn-link-sub { font-size: 13px; color: var(--muted); line-height: 1.5; }
 .pn-link-arrow {
-  position: absolute; bottom: 16px; left: 16px;
-  font-size: 18px; color: var(--gold); opacity: 0.7;
+  position: absolute; bottom: 18px; left: 18px;
+  font-size: 18px; color: var(--gold); opacity: 0.75;
 }
 html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
 
 .pn-tour {
-  display: inline-flex; align-items: center; gap: 8px; margin-top: 24px;
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 28px;
   font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none;
-  padding: 12px 22px; border: 1.5px solid var(--line); border-radius: 999px;
+  padding: 13px 24px; border: 1.5px solid var(--line); border-radius: 999px;
   background: var(--white); transition: all 0.25s;
 }
 .pn-tour:hover { border-color: var(--gold); color: var(--gold); }
 
-.pn-steps { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.pn-steps li {
-  display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.6;
-  padding: 16px 18px; background: var(--white); border: 1px solid var(--line); border-radius: 10px;
-}
-.pn-steps li::before {
-  content: counter(step); counter-increment: step;
-  width: 28px; height: 28px; min-width: 28px; border-radius: 50%;
-  background: var(--gold-soft); color: var(--gold); font-size: 12px; font-weight: 800;
-  display: flex; align-items: center; justify-content: center;
-}
-.pn-steps { counter-reset: step; }
-
 .pn-form-section {
-  padding: 64px 0 100px;
-  background: linear-gradient(180deg, var(--bg) 0%, var(--white) 40%);
+  padding: 80px 0 110px;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--white) 50%);
 }
 .pn-form-box {
-  background: var(--white); border: 1px solid var(--line); border-radius: 16px;
-  padding: 40px 32px; box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+  background: var(--white); border: 1px solid var(--line); border-radius: 20px;
+  padding: 44px 32px; box-shadow: 0 24px 64px rgba(0,0,0,0.06);
 }
-@media(min-width:768px){ .pn-form-box { padding: 48px 44px; } }
-.pn-form-head { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
-.pn-form-head h2 { font-size: clamp(22px, 3vw, 28px); font-weight: 700; margin-bottom: 8px; }
-.pn-form-head p { font-size: 14px; color: var(--muted); line-height: 1.75; }
+@media(min-width:768px){ .pn-form-box { padding: 52px 48px; } }
+.pn-form-head { margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.pn-form-head h2 { font-size: clamp(24px, 3vw, 30px); font-weight: 700; margin-bottom: 10px; letter-spacing: -0.02em; }
+.pn-form-head p { font-size: 15px; color: var(--muted); line-height: 1.8; }
 
-.pn-form-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.pn-form-group { margin-bottom: 28px; }
+.pn-form-group-title {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px; padding-bottom: 10px;
+  border-bottom: 1px solid rgba(201,168,76,0.18);
+}
+
+.pn-form-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
 @media(min-width:640px){ .pn-form-grid { grid-template-columns: 1fr 1fr; } }
 .pn-form-grid .pn-field--full { grid-column: 1 / -1; }
 
-.pn-field { display: flex; flex-direction: column; gap: 6px; }
+.pn-field { display: flex; flex-direction: column; gap: 7px; }
 .pn-field label {
-  font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  color: rgba(26,26,26,0.55);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+  color: rgba(20,20,20,0.52);
 }
 .pn-field label .req { color: var(--gold); margin-right: 2px; }
 .pn-field input, .pn-field select, .pn-field textarea {
-  padding: 13px 16px; font-size: 14px; font-family: inherit;
-  border: 1.5px solid var(--line); border-radius: 8px; background: var(--bg);
-  color: var(--ink); outline: none; transition: border-color 0.25s, box-shadow 0.25s;
+  padding: 14px 16px; font-size: 15px; font-family: inherit;
+  border: 1.5px solid var(--line); border-radius: 10px; background: #F7F6F3;
+  color: var(--ink); outline: none; transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
   text-align: right;
 }
 .pn-field input:focus, .pn-field select:focus, .pn-field textarea:focus {
-  border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.14); background: var(--white);
+  border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); background: var(--white);
 }
-.pn-field input[type="email"] { direction: ltr; text-align: left; }
-.pn-field textarea { min-height: 120px; resize: vertical; }
+.pn-field input[type="email"], .pn-field input[type="url"], .pn-field input[type="tel"] { direction: ltr; text-align: left; }
+.pn-field textarea { min-height: 132px; resize: vertical; line-height: 1.7; }
 .pn-field select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23888'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: left 12px center; padding-left: 36px; }
 
 .pn-submit {
-  width: 100%; margin-top: 8px; padding: 16px 28px; font-size: 14px; font-weight: 700;
-  letter-spacing: 0.04em; font-family: inherit; cursor: pointer;
-  background: var(--ink); color: var(--white); border: none; border-radius: 999px;
+  width: 100%; margin-top: 12px; padding: 17px 28px; font-size: 14px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; font-family: inherit; cursor: pointer;
+  background: #080c0a; color: var(--white); border: none; border-radius: 999px;
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   transition: background 0.3s, transform 0.25s, box-shadow 0.25s;
 }
-.pn-submit:hover { background: #333; transform: translateY(-2px); box-shadow: 0 12px 36px rgba(0,0,0,0.12); }
+.pn-submit:hover { background: #1a1f1c; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,0.14); }
 .pn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
 .pn-alt-cta {
-  margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line);
+  margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--line);
   display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 13px; color: var(--muted);
 }
 .pn-wa {
@@ -220,14 +209,12 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
   font-size: 13px; font-weight: 600; transition: transform 0.2s;
 }
 .pn-wa:hover { transform: scale(1.03); }
-
-.header { background: rgba(255,255,255,0.92) !important; border-bottom: 1px solid var(--line) !important; }
 </style>
 <script defer src="assets/site-header.js?v=16"></script>
 <script defer src="assets/gh-performance.js?v=3"></script>
 <script defer src="assets/lang-switch.js?v=2"></script>
 </head>
-<body>
+<body class="gh-partner-network">
 <a class="gh-skip-link" href="#main-content">تخطي إلى المحتوى الرئيسي</a>
 <header class="header" id="header">
   <div class="container header-inner">
@@ -360,68 +347,32 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
 
 <section class="pn-hero">
   <div class="pn-wrap">
-    <span class="pn-eye">Partner Network</span>
-    <h1 class="pn-h1">نعمل معاً <em>أمام العميل</em></h1>
-    <p class="pn-lead">جرافيكس هاوس — Visualizing Projects. Creating Experiences. شريك إنتاج متخصص في 3D والأفلام والمجسمات والتجارب التفاعلية. بدون white label — كيانان واضحان.</p>
-  </div>
-</section>
-
-<section class="pn-segments" aria-label="نوع جهتكم">
-  <div class="pn-wrap">
-    <span class="pn-seg-label">نوع جهتكم</span>
-    <div class="pn-seg-grid" role="group">
-    <button type="button" class="pn-seg is-active" data-segment="agency" aria-pressed="true">
-      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">campaign</span>
-      <span class="pn-seg-title">وكالات الدعاية والإعلان</span>
-      <span class="pn-seg-desc">وسّعوا ما تقدمونه — نُنفّذ الطبقة البصرية والتجريبية بجانبكم.</span>
-    </button>
-    <button type="button" class="pn-seg" data-segment="engineering" aria-pressed="false">
-      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">architecture</span>
-      <span class="pn-seg-title">المكاتب الهندسية</span>
-      <span class="pn-seg-desc">أكملوا العرض الهندسي بـ Project Launch™ — فيلم · مجسم · 3D · تفاعلي.</span>
-    </button>
-    <button type="button" class="pn-seg" data-segment="contracting" aria-pressed="false">
-      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">construction</span>
-      <span class="pn-seg-title">شركات المقاولات</span>
-      <span class="pn-seg-desc">حوّلوا المشاريع قيد التنفيذ إلى تجربة عرض وإقناع للمالك والمستثمر.</span>
-    </button>
-    <button type="button" class="pn-seg" data-segment="other" aria-pressed="false">
-      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">domain</span>
-      <span class="pn-seg-title">أخرى</span>
-      <span class="pn-seg-desc">جهة أخرى — حدّدوا اسم الشركة في النموذج أدناه.</span>
-    </button></div>
+    <span class="pn-eye">شبكة الشركاء</span>
+    <h1 class="pn-h1">نسعى لبناء <em>شراكات استراتيجية</em></h1>
+    <p class="pn-lead">جرافيكس هاوس — استوديو متخصص في الإظهار المعماري، الأفلام السينمائية، المجسمات، والتجارب التفاعلية. نُكمّل قدرات شركائنا بشفافية واحترافية، دون white label.</p>
   </div>
 </section>
 
 <section class="pn-section pn-section--white">
   <div class="pn-wrap">
-    <h2 class="pn-h2">أين نكمل بعضنا</h2>
-    <div class="pn-fit">
-    <div class="pn-fit-row">
-      <div class="pn-fit-cell pn-fit-you"><span class="pn-fit-tag">ما تملكونه</span>العميل والعلاقة</div>
-      <div class="pn-fit-cell pn-fit-us"><span class="pn-fit-tag">ما نضيفه</span>3D · CGI · مجسمات</div>
-    </div>
-    <div class="pn-fit-row">
-      <div class="pn-fit-cell pn-fit-you"><span class="pn-fit-tag">ما تملكونه</span>الاستراتيجية · الحملة · الهندسة</div>
-      <div class="pn-fit-cell pn-fit-us"><span class="pn-fit-tag">ما نضيفه</span>أفلام · تفاعلي · بيئات عرض</div>
-    </div></div>
-    <p class="pn-fit-note">تعارف متبادل عند الحاجة — Co-Delivery ظاهر — لا وسيط ثالث.</p>
+    <h2 class="pn-h2">من نحن</h2>
+    <p class="pn-about-text">منذ أكثر من 15 عاماً، نُنتج محتوى بصرياً وتجريبياً للمشاريع الكبرى في المملكة ودول الخليج. نعمل مع جهات رائدة في التطوير والتصميم والإعلان — نُضيف طبقة إنتاج متخصصة إلى منظومة خدماتكم، لا نُنافسكم.</p>
   </div>
 </section>
 
 <section class="pn-section">
   <div class="pn-wrap">
-    <h2 class="pn-h2">استكشفوا قدراتنا</h2>
-    <p class="pn-sub">تعرّفوا على خدماتنا في الموقع — ثم لنحدد موعداً للاجتماع.</p>
+    <h2 class="pn-h2">ماذا نقدم</h2>
+    <p class="pn-sub">قدرات إنتاج متكاملة تُضاف إلى مشاريعكم وعروضكم الحالية.</p>
     <div class="pn-links">
     <a href="solutions/project-launch.html" class="pn-link-card">
       <span class="pn-link-label">Project Launch™</span>
-      <span class="pn-link-sub">حزمة إطلاق المشروع</span>
+      <span class="pn-link-sub">منظومة إطلاق المشروع</span>
       <span class="material-symbols-outlined pn-link-arrow" aria-hidden="true">arrow_forward</span>
     </a>
     <a href="services/animation.html" class="pn-link-card">
       <span class="pn-link-label">أفلام CGI</span>
-      <span class="pn-link-sub">تحريك سينمائي</span>
+      <span class="pn-link-sub">إنتاج سينمائي</span>
       <span class="material-symbols-outlined pn-link-arrow" aria-hidden="true">arrow_forward</span>
     </a>
     <a href="services/maquettes.html" class="pn-link-card">
@@ -441,20 +392,31 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
     </a>
     <a href="portfolio.html" class="pn-link-card">
       <span class="pn-link-label">معرض الأعمال</span>
-      <span class="pn-link-sub">عند الرغبة</span>
+      <span class="pn-link-sub">نماذج مختارة</span>
       <span class="material-symbols-outlined pn-link-arrow" aria-hidden="true">arrow_forward</span>
     </a></div>
     <a href="index-ar.html" class="pn-tour">
       <span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
-      تجول في الموقع
+      استكشف الموقع
     </a>
   </div>
 </section>
 
 <section class="pn-section pn-section--white">
   <div class="pn-wrap">
-    <h2 class="pn-h2">كيف نبدأ</h2>
-    <ol class="pn-steps"><li>اجتماع تعارف 20–30 دقيقة</li><li>brief أو مشروع محدد</li><li>Co-Delivery أمام العميل</li></ol>
+    <h2 class="pn-h2">كيف نتعاون</h2>
+    <p class="pn-sub">إطار تعاون واضح، شفاف، ومُصمَّم للمشاريع ذات القيمة.</p>
+    <div class="pn-fit">
+    <div class="pn-fit-row">
+      <div class="pn-fit-cell pn-fit-you"><span class="pn-fit-tag">ما تقدّمونه</span>العلاقة مع العميل · الاستراتيجية · الهندسة</div>
+      <div class="pn-fit-cell pn-fit-us"><span class="pn-fit-tag">ما نُضيفه</span>الإظهار المعماري · CGI · المجسمات</div>
+    </div>
+    <div class="pn-fit-row">
+      <div class="pn-fit-cell pn-fit-you"><span class="pn-fit-tag">ما تقدّمونه</span>الحملة · إدارة المشروع · التنفيذ</div>
+      <div class="pn-fit-cell pn-fit-us"><span class="pn-fit-tag">ما نُضيفه</span>الأفلام · التجارب التفاعلية · بيئات العرض</div>
+    </div></div>
+    <p class="pn-fit-note">تعارف متبادل عند الحاجة · أدوار واضحة · لا وسيط ثالث.</p>
+    <ol class="pn-steps"><li>جلسة تعارف استراتيجية (20–30 دقيقة)</li><li>تحديد نطاق المشروع أو فرصة التعاون</li><li>تنفيذ مشترك بإطار واضح للأدوار والمسؤوليات</li></ol>
   </div>
 </section>
 
@@ -462,68 +424,74 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
   <div class="pn-wrap">
     <div class="pn-form-box">
       <div class="pn-form-head">
-        <h2>طلب شراكة / اجتماع</h2>
-        <p>نموذج رسمي لطلبات الشراكة والتعاون — نرد خلال 24 ساعة عمل.</p>
+        <h2>طلب تعاون استراتيجي</h2>
+        <p>يُراجع فريق الشراكات طلبكم ويرد خلال 24 ساعة عمل.</p>
       </div>
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="طلب شراكة — شبكة الشركاء AR">
         <input type="hidden" name="_next" value="https://3dgraphicshouse.com/partner-network.html?sent=1#inquiry">
-        <input type="hidden" name="segment_type" id="pnSegmentHidden" value="agency">
-        <div class="pn-form-grid">
-          <div class="pn-field pn-field--full">
-            <label for="pnSegment">نوع الجهة <span class="req">*</span></label>
-            <select name="organization_type" id="pnSegment" required><option value="agency" selected>وكالات الدعاية والإعلان</option><option value="engineering">المكاتب الهندسية</option><option value="contracting">شركات المقاولات</option><option value="other">أخرى</option></select>
-          </div>
-          <div class="pn-field">
-            <label for="pnCompany">اسم الشركة <span class="req">*</span></label>
-            <input type="text" name="company" id="pnCompany" required autocomplete="organization">
-          </div>
-          <div class="pn-field">
-            <label for="pnCompanyEmail">البريد الإلكتروني الرسمي للشركة <span class="req">*</span></label>
-            <input type="email" name="company_email" id="pnCompanyEmail" required autocomplete="work email" placeholder="info@company.com">
-          </div>
-          <div class="pn-field">
-            <label for="pnName">اسم المسؤول <span class="req">*</span></label>
-            <input type="text" name="name" id="pnName" required autocomplete="name">
-          </div>
-          <div class="pn-field">
-            <label for="pnRole">المسمى الوظيفي <span class="req">*</span></label>
-            <input type="text" name="job_title" id="pnRole" required autocomplete="organization-title">
-          </div>
-          <div class="pn-field">
-            <label for="pnPhone">رقم التواصل <span class="req">*</span></label>
-            <input type="tel" name="phone" id="pnPhone" required autocomplete="tel">
-          </div>
-          <div class="pn-field">
-            <label for="pnWeb">موقع الشركة</label>
-            <input type="url" name="website" id="pnWeb" placeholder="https://" dir="ltr" style="text-align:left">
-          </div>
-          <div class="pn-field pn-field--full">
-            <label for="pnCollab">نوع التعاون المطلوب <span class="req">*</span></label>
-            <select name="collaboration_type" id="pnCollab" required><option value="">اختر نوع التعاون</option><option value="co-delivery">Co-Delivery — تسليم مشترك أمام العميل</option><option value="referral">تعارف بمشروع محدد</option><option value="capabilities">استكشاف القدرات — اجتماع أول</option><option value="strategic">شراكة استراتيجية</option></select>
-          </div>
-          <div class="pn-field pn-field--full">
-            <label for="pnBrief">نبذة عن الفرصة أو المشروع</label>
-            <textarea name="message" id="pnBrief" placeholder=""></textarea>
-          </div>
-          <div class="pn-field pn-field--full">
-            <div class="gh-form-security">
-              <div class="gh-honeypot" aria-hidden="true">
-                <label>Leave blank</label>
-                <input type="text" name="_honey" tabindex="-1" autocomplete="off">
-              </div>
-              <div class="gh-turnstile"></div>
+        <div class="pn-form-group">
+          <div class="pn-form-group-title">بيانات الجهة</div>
+          <div class="pn-form-grid">
+            <div class="pn-field pn-field--full">
+              <label for="pnSegment">تصنيف الجهة <span class="req">*</span></label>
+              <select name="organization_type" id="pnSegment" required><option value="">اختر تصنيف الجهة</option><option value="agency">وكالات الدعاية والإعلان</option><option value="engineering">المكاتب الهندسية</option><option value="contracting">شركات المقاولات</option><option value="other">أخرى — يرجى ذكر اسم الشركة</option></select>
             </div>
-            <div class="form-feedback" aria-live="polite"></div>
+            <div class="pn-field">
+              <label for="pnCompany">اسم الشركة <span class="req">*</span></label>
+              <input type="text" name="company" id="pnCompany" required autocomplete="organization">
+            </div>
+            <div class="pn-field">
+              <label for="pnCompanyEmail">البريد الإلكتروني الرسمي للشركة <span class="req">*</span></label>
+              <input type="email" name="company_email" id="pnCompanyEmail" required autocomplete="work email" placeholder="info@company.com">
+            </div>
+            <div class="pn-field pn-field--full">
+              <label for="pnWeb">موقع الشركة</label>
+              <input type="url" name="website" id="pnWeb" placeholder="https://" dir="ltr" style="text-align:left">
+            </div>
+            <div class="pn-field pn-field--full">
+              <label for="pnCollab">نوع التعاون المطلوب <span class="req">*</span></label>
+              <select name="collaboration_type" id="pnCollab" required><option value="">اختر نوع التعاون</option><option value="co-delivery">تسليم مشترك — Co-Delivery</option><option value="referral">تعارف بفرصة مشروع محددة</option><option value="capabilities">استكشاف القدرات — جلسة أولى</option><option value="strategic">شراكة استراتيجية طويلة المدى</option></select>
+            </div>
+          </div>
+        </div>
+        <div class="pn-form-group">
+          <div class="pn-form-group-title">بيانات المسؤول</div>
+          <div class="pn-form-grid">
+            <div class="pn-field">
+              <label for="pnName">اسم المسؤول <span class="req">*</span></label>
+              <input type="text" name="name" id="pnName" required autocomplete="name">
+            </div>
+            <div class="pn-field">
+              <label for="pnRole">المسمى الوظيفي <span class="req">*</span></label>
+              <input type="text" name="job_title" id="pnRole" required autocomplete="organization-title">
+            </div>
+            <div class="pn-field pn-field--full">
+              <label for="pnPhone">رقم التواصل <span class="req">*</span></label>
+              <input type="tel" name="phone" id="pnPhone" required autocomplete="tel">
+            </div>
+            <div class="pn-field pn-field--full">
+              <label for="pnBrief">نبذة عن الفرصة أو المشروع</label>
+              <textarea name="message" id="pnBrief" placeholder="صفّوا بإيجاز طبيعة التعاون المقترح، نوع المشروع، أو الإطار الزمني المتوقع."></textarea>
+            </div>
+            <div class="pn-field pn-field--full">
+              <div class="gh-form-security">
+                <div class="gh-honeypot" aria-hidden="true">
+                  <label>Leave blank</label>
+                  <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+                </div>
+                <div class="gh-turnstile"></div>
+              </div>
+              <div class="form-feedback" aria-live="polite"></div>
+            </div>
           </div>
         </div>
         <button type="submit" class="form-submit pn-submit">
-          إرسال الطلب الرسمي
+          إرسال الطلب
           <span class="material-symbols-outlined" style="font-size:18px">send</span>
         </button>
       </form>
       <div class="pn-alt-cta">
-        <span>أو احجز اجتماعاً عبر النموذج</span>
         <a href="https://wa.me/966502786513" class="pn-wa" target="_blank" rel="noopener">واتساب</a>
       </div>
     </div>
@@ -638,30 +606,13 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
 <script defer src="assets/gh-float-widgets.js?v=8"></script>
 <script>
 (function(){
-  var segBtns = document.querySelectorAll('.pn-seg');
-  var segSelect = document.getElementById('pnSegment');
-  var segHidden = document.getElementById('pnSegmentHidden');
-  function setSegment(id) {
-    segBtns.forEach(function(btn) {
-      var on = btn.getAttribute('data-segment') === id;
-      btn.classList.toggle('is-active', on);
-      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-    });
-    if (segSelect) segSelect.value = id;
-    if (segHidden) segHidden.value = id;
-  }
-  segBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() { setSegment(btn.getAttribute('data-segment')); });
-  });
-  if (segSelect) {
-    segSelect.addEventListener('change', function() { setSegment(segSelect.value); });
-  }
   var form = document.querySelector('.pn-form');
   if (form) {
     form.addEventListener('submit', function() {
+      var seg = document.getElementById('pnSegment');
       if (typeof window.ghTrack === 'function') {
         window.ghTrack('partner_network_inquiry', {
-          organization_type: segHidden ? segHidden.value : '',
+          organization_type: seg ? seg.value : '',
           page_language: 'ar'
         });
       }
@@ -671,7 +622,7 @@ html[dir="rtl"] .pn-link-arrow { transform: scaleX(-1); }
     var box = document.querySelector('.form-feedback');
     if (box) {
       box.className = 'form-feedback is-visible is-success';
-      box.textContent = 'شكراً. سنتواصل معكم خلال 24 ساعة عمل.';
+      box.textContent = "شكراً لتواصلكم. سيراجع فريق الشراكات طلبكم ويرد خلال 24 ساعة عمل.";
     }
   }
 })();
