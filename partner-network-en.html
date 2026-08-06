@@ -521,69 +521,41 @@ body.gh-partner-network {
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="Partnership inquiry — Partner Network EN">
         <input type="hidden" name="_next" value="https://3dgraphicshouse.com/partner-network-en.html?sent=1#inquiry">
-        <div class="pn-form-group">
-          <div class="pn-form-group-title">Organization details</div>
-          <div class="pn-form-grid">
-            <div class="pn-field pn-field--full">
-              <label for="pnSegment">Organization category <span class="req">*</span></label>
-              <select name="organization_type" id="pnSegment" required><option value="">Select organization category</option><option value="agency">Advertising & creative agencies</option><option value="engineering">Engineering firms</option><option value="contracting">Contracting companies</option><option value="other">Other — please specify company name</option></select>
-            </div>
-            <div class="pn-field">
-              <label for="pnCompany">Company name <span class="req">*</span></label>
-              <input type="text" name="company" id="pnCompany" required autocomplete="organization">
-            </div>
-            <div class="pn-field">
-              <label for="pnCompanyEmail">Official company email <span class="req">*</span></label>
-              <input type="email" name="company_email" id="pnCompanyEmail" required autocomplete="work email" placeholder="info@company.com">
-            </div>
-            <div class="pn-field pn-field--full">
-              <label for="pnWeb">Company website</label>
-              <input type="url" name="website" id="pnWeb" placeholder="https://" dir="ltr" style="text-align:left">
-            </div>
-            <div class="pn-field pn-field--full">
-              <label for="pnCollab">Collaboration type <span class="req">*</span></label>
-              <select name="collaboration_type" id="pnCollab" required><option value="">Select collaboration type</option><option value="zoom-intro">Introductory meeting — Zoom</option><option value="co-delivery">Co-Delivery — joint project delivery</option><option value="referral">Project-specific introduction</option><option value="strategic">Long-term strategic partnership</option></select>
-            </div>
+        <input type="hidden" name="inquiry_type" id="pnInquiryType" value="partnership">
+        <div class="pn-form-grid">
+          <div class="pn-field pn-field--full">
+            <label for="pnSegment">Company type <span class="req">*</span></label>
+            <select name="organization_type" id="pnSegment" required><option value="">Select company type</option><option value="agency">Advertising & creative agencies</option><option value="engineering">Engineering firms</option><option value="contracting">Contracting companies</option><option value="other">Other</option></select>
           </div>
-        </div>
-        <div class="pn-form-group">
-          <div class="pn-form-group-title">Contact details</div>
-          <div class="pn-form-grid">
-            <div class="pn-field">
-              <label for="pnName">Contact name <span class="req">*</span></label>
-              <input type="text" name="name" id="pnName" required autocomplete="name">
-            </div>
-            <div class="pn-field">
-              <label for="pnRole">Job title <span class="req">*</span></label>
-              <input type="text" name="job_title" id="pnRole" required autocomplete="organization-title">
-            </div>
-            <div class="pn-field pn-field--full">
-              <label for="pnPhone">Phone <span class="req">*</span></label>
-              <input type="tel" name="phone" id="pnPhone" required autocomplete="tel">
-            </div>
+          <div class="pn-field">
+            <label for="pnName">Name <span class="req">*</span></label>
+            <input type="text" name="name" id="pnName" required autocomplete="name">
           </div>
-        </div>
-        <div class="pn-form-group">
-          <div class="pn-form-group-title">Meeting coordination</div>
-          <div class="pn-form-grid">
-            <div class="pn-field pn-field--full">
-              <label for="pnMeeting">Preferred meeting times <span class="req">*</span></label>
-              <input type="text" name="meeting_times" id="pnMeeting" required placeholder="e.g. Sun–Wed, 10am–2pm · or any scheduling notes">
-            </div>
-            <div class="pn-field pn-field--full">
-              <label for="pnBrief">Brief about the opportunity or project</label>
-              <textarea name="message" id="pnBrief" placeholder="Briefly describe the proposed collaboration or project types of interest."></textarea>
-            </div>
-            <div class="pn-field pn-field--full">
-              <div class="gh-form-security">
-                <div class="gh-honeypot" aria-hidden="true">
-                  <label>Leave blank</label>
-                  <input type="text" name="_honey" tabindex="-1" autocomplete="off">
-                </div>
-                <div class="gh-turnstile"></div>
+          <div class="pn-field">
+            <label for="pnRole">Job title <span class="req">*</span></label>
+            <input type="text" name="job_title" id="pnRole" required autocomplete="organization-title">
+          </div>
+          <div class="pn-field">
+            <label for="pnEmail">Email <span class="req">*</span></label>
+            <input type="email" name="email" id="pnEmail" required autocomplete="email" placeholder="name@company.com">
+          </div>
+          <div class="pn-field">
+            <label for="pnPhone">Mobile <span class="req">*</span></label>
+            <input type="tel" name="phone" id="pnPhone" required autocomplete="tel">
+          </div>
+          <div class="pn-field pn-field--full">
+            <label for="pnMessage">Message</label>
+            <textarea name="message" id="pnMessage" placeholder="Preferred meeting time, or any note you wish to share."></textarea>
+          </div>
+          <div class="pn-field pn-field--full">
+            <div class="gh-form-security">
+              <div class="gh-honeypot" aria-hidden="true">
+                <label>Leave blank</label>
+                <input type="text" name="_honey" tabindex="-1" autocomplete="off">
               </div>
-              <div class="form-feedback" aria-live="polite"></div>
+              <div class="gh-turnstile"></div>
             </div>
+            <div class="form-feedback" aria-live="polite"></div>
           </div>
         </div>
         <button type="submit" class="form-submit pn-submit">
@@ -706,12 +678,12 @@ body.gh-partner-network {
 <script defer src="assets/gh-float-widgets.js?v=8"></script>
 <script>
 (function(){
-  var collab = document.getElementById('pnCollab');
+  var inquiryType = document.getElementById('pnInquiryType');
   if (location.hash === '#inquiry' || location.hash === '#zoom') {
-    if (collab && !collab.value) collab.value = 'zoom-intro';
+    if (inquiryType) inquiryType.value = 'zoom-meeting';
   }
   document.querySelector('.pn-zoom-cta')?.addEventListener('click', function() {
-    if (collab) collab.value = 'zoom-intro';
+    if (inquiryType) inquiryType.value = 'zoom-meeting';
   });
   var form = document.querySelector('.pn-form');
   if (form) {

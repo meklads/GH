@@ -521,69 +521,41 @@ body.gh-partner-network {
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="طلب شراكة — شبكة الشركاء AR">
         <input type="hidden" name="_next" value="https://3dgraphicshouse.com/partner-network.html?sent=1#inquiry">
-        <div class="pn-form-group">
-          <div class="pn-form-group-title">بيانات الجهة</div>
-          <div class="pn-form-grid">
-            <div class="pn-field pn-field--full">
-              <label for="pnSegment">تصنيف الجهة <span class="req">*</span></label>
-              <select name="organization_type" id="pnSegment" required><option value="">اختر تصنيف الجهة</option><option value="agency">وكالات الدعاية والإعلان</option><option value="engineering">المكاتب الهندسية</option><option value="contracting">شركات المقاولات</option><option value="other">أخرى — يرجى ذكر اسم الشركة</option></select>
-            </div>
-            <div class="pn-field">
-              <label for="pnCompany">اسم الشركة <span class="req">*</span></label>
-              <input type="text" name="company" id="pnCompany" required autocomplete="organization">
-            </div>
-            <div class="pn-field">
-              <label for="pnCompanyEmail">البريد الإلكتروني الرسمي للشركة <span class="req">*</span></label>
-              <input type="email" name="company_email" id="pnCompanyEmail" required autocomplete="work email" placeholder="info@company.com">
-            </div>
-            <div class="pn-field pn-field--full">
-              <label for="pnWeb">موقع الشركة</label>
-              <input type="url" name="website" id="pnWeb" placeholder="https://" dir="ltr" style="text-align:left">
-            </div>
-            <div class="pn-field pn-field--full">
-              <label for="pnCollab">نوع التعاون المطلوب <span class="req">*</span></label>
-              <select name="collaboration_type" id="pnCollab" required><option value="">اختر نوع التعاون</option><option value="zoom-intro">اجتماع تعارف — Zoom</option><option value="co-delivery">تسليم مشترك — Co-Delivery</option><option value="referral">تعارف بفرصة مشروع محددة</option><option value="strategic">شراكة استراتيجية طويلة المدى</option></select>
-            </div>
+        <input type="hidden" name="inquiry_type" id="pnInquiryType" value="partnership">
+        <div class="pn-form-grid">
+          <div class="pn-field pn-field--full">
+            <label for="pnSegment">نوع الشركة <span class="req">*</span></label>
+            <select name="organization_type" id="pnSegment" required><option value="">اختر نوع الشركة</option><option value="agency">وكالات الدعاية والإعلان</option><option value="engineering">المكاتب الهندسية</option><option value="contracting">شركات المقاولات</option><option value="other">أخرى</option></select>
           </div>
-        </div>
-        <div class="pn-form-group">
-          <div class="pn-form-group-title">بيانات المسؤول</div>
-          <div class="pn-form-grid">
-            <div class="pn-field">
-              <label for="pnName">اسم المسؤول <span class="req">*</span></label>
-              <input type="text" name="name" id="pnName" required autocomplete="name">
-            </div>
-            <div class="pn-field">
-              <label for="pnRole">المسمى الوظيفي <span class="req">*</span></label>
-              <input type="text" name="job_title" id="pnRole" required autocomplete="organization-title">
-            </div>
-            <div class="pn-field pn-field--full">
-              <label for="pnPhone">رقم التواصل <span class="req">*</span></label>
-              <input type="tel" name="phone" id="pnPhone" required autocomplete="tel">
-            </div>
+          <div class="pn-field">
+            <label for="pnName">الاسم <span class="req">*</span></label>
+            <input type="text" name="name" id="pnName" required autocomplete="name">
           </div>
-        </div>
-        <div class="pn-form-group">
-          <div class="pn-form-group-title">تنسيق الاجتماع</div>
-          <div class="pn-form-grid">
-            <div class="pn-field pn-field--full">
-              <label for="pnMeeting">الأوقات المناسبة لكم للاجتماع <span class="req">*</span></label>
-              <input type="text" name="meeting_times" id="pnMeeting" required placeholder="مثال: الأحد–الثلاثاء، 10 ص – 2 م · أو أي ملاحظات للتنسيق">
-            </div>
-            <div class="pn-field pn-field--full">
-              <label for="pnBrief">نبذة عن الفرصة أو المشروع</label>
-              <textarea name="message" id="pnBrief" placeholder="صفّوا بإيجاز طبيعة التعاون المقترح أو نوع المشاريع التي تهمكم."></textarea>
-            </div>
-            <div class="pn-field pn-field--full">
-              <div class="gh-form-security">
-                <div class="gh-honeypot" aria-hidden="true">
-                  <label>Leave blank</label>
-                  <input type="text" name="_honey" tabindex="-1" autocomplete="off">
-                </div>
-                <div class="gh-turnstile"></div>
+          <div class="pn-field">
+            <label for="pnRole">المنصب <span class="req">*</span></label>
+            <input type="text" name="job_title" id="pnRole" required autocomplete="organization-title">
+          </div>
+          <div class="pn-field">
+            <label for="pnEmail">البريد الإلكتروني <span class="req">*</span></label>
+            <input type="email" name="email" id="pnEmail" required autocomplete="email" placeholder="name@company.com">
+          </div>
+          <div class="pn-field">
+            <label for="pnPhone">الجوال <span class="req">*</span></label>
+            <input type="tel" name="phone" id="pnPhone" required autocomplete="tel">
+          </div>
+          <div class="pn-field pn-field--full">
+            <label for="pnMessage">نص الرسالة</label>
+            <textarea name="message" id="pnMessage" placeholder="الموعد المناسب للاجتماع، أو أي ملاحظة ترغبون في إيصالها."></textarea>
+          </div>
+          <div class="pn-field pn-field--full">
+            <div class="gh-form-security">
+              <div class="gh-honeypot" aria-hidden="true">
+                <label>Leave blank</label>
+                <input type="text" name="_honey" tabindex="-1" autocomplete="off">
               </div>
-              <div class="form-feedback" aria-live="polite"></div>
+              <div class="gh-turnstile"></div>
             </div>
+            <div class="form-feedback" aria-live="polite"></div>
           </div>
         </div>
         <button type="submit" class="form-submit pn-submit">
@@ -706,12 +678,12 @@ body.gh-partner-network {
 <script defer src="assets/gh-float-widgets.js?v=8"></script>
 <script>
 (function(){
-  var collab = document.getElementById('pnCollab');
+  var inquiryType = document.getElementById('pnInquiryType');
   if (location.hash === '#inquiry' || location.hash === '#zoom') {
-    if (collab && !collab.value) collab.value = 'zoom-intro';
+    if (inquiryType) inquiryType.value = 'zoom-meeting';
   }
   document.querySelector('.pn-zoom-cta')?.addEventListener('click', function() {
-    if (collab) collab.value = 'zoom-intro';
+    if (inquiryType) inquiryType.value = 'zoom-meeting';
   });
   var form = document.querySelector('.pn-form');
   if (form) {

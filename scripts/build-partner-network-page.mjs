@@ -77,37 +77,22 @@ const COPY = {
     formSub: 'يُراجع فريق الشراكات طلبكم ويتواصل معكم لتنسيق الاجتماع.',
     formSubject: 'طلب شراكة — شبكة الشركاء AR',
     formNext: `${BASE}/partner-network.html?sent=1#inquiry`,
-    formOrgHeading: 'بيانات الجهة',
-    formContactHeading: 'بيانات المسؤول',
-    formMeetingHeading: 'تنسيق الاجتماع',
     fields: {
-      segment: 'تصنيف الجهة',
-      company: 'اسم الشركة',
-      companyEmail: 'البريد الإلكتروني الرسمي للشركة',
-      name: 'اسم المسؤول',
-      role: 'المسمى الوظيفي',
-      phone: 'رقم التواصل',
-      website: 'موقع الشركة',
-      collab: 'نوع التعاون المطلوب',
-      meetingTimes: 'الأوقات المناسبة لكم للاجتماع',
-      brief: 'نبذة عن الفرصة أو المشروع',
+      segment: 'نوع الشركة',
+      name: 'الاسم',
+      role: 'المنصب',
+      email: 'البريد الإلكتروني',
+      phone: 'الجوال',
+      message: 'نص الرسالة',
     },
     segmentOptions: [
-      { v: '', l: 'اختر تصنيف الجهة' },
+      { v: '', l: 'اختر نوع الشركة' },
       { v: 'agency', l: 'وكالات الدعاية والإعلان' },
       { v: 'engineering', l: 'المكاتب الهندسية' },
       { v: 'contracting', l: 'شركات المقاولات' },
-      { v: 'other', l: 'أخرى — يرجى ذكر اسم الشركة' },
+      { v: 'other', l: 'أخرى' },
     ],
-    collabOptions: [
-      { v: '', l: 'اختر نوع التعاون' },
-      { v: 'zoom-intro', l: 'اجتماع تعارف — Zoom' },
-      { v: 'co-delivery', l: 'تسليم مشترك — Co-Delivery' },
-      { v: 'referral', l: 'تعارف بفرصة مشروع محددة' },
-      { v: 'strategic', l: 'شراكة استراتيجية طويلة المدى' },
-    ],
-    meetingPlaceholder: 'مثال: الأحد–الثلاثاء، 10 ص – 2 م · أو أي ملاحظات للتنسيق',
-    briefPlaceholder: 'صفّوا بإيجاز طبيعة التعاون المقترح أو نوع المشاريع التي تهمكم.',
+    messagePlaceholder: 'الموعد المناسب للاجتماع، أو أي ملاحظة ترغبون في إيصالها.',
     submit: 'إرسال الطلب',
     sentMsg: 'شكراً لتواصلكم. سيتواصل فريق الشراكات معكم خلال 24 ساعة عمل لتنسيق الموعد.',
     wa: 'واتساب',
@@ -180,37 +165,22 @@ const COPY = {
     formSub: 'Our partnerships team will review your request and contact you to schedule the meeting.',
     formSubject: 'Partnership inquiry — Partner Network EN',
     formNext: `${BASE}/partner-network-en.html?sent=1#inquiry`,
-    formOrgHeading: 'Organization details',
-    formContactHeading: 'Contact details',
-    formMeetingHeading: 'Meeting coordination',
     fields: {
-      segment: 'Organization category',
-      company: 'Company name',
-      companyEmail: 'Official company email',
-      name: 'Contact name',
+      segment: 'Company type',
+      name: 'Name',
       role: 'Job title',
-      phone: 'Phone',
-      website: 'Company website',
-      collab: 'Collaboration type',
-      meetingTimes: 'Preferred meeting times',
-      brief: 'Brief about the opportunity or project',
+      email: 'Email',
+      phone: 'Mobile',
+      message: 'Message',
     },
     segmentOptions: [
-      { v: '', l: 'Select organization category' },
+      { v: '', l: 'Select company type' },
       { v: 'agency', l: 'Advertising & creative agencies' },
       { v: 'engineering', l: 'Engineering firms' },
       { v: 'contracting', l: 'Contracting companies' },
-      { v: 'other', l: 'Other — please specify company name' },
+      { v: 'other', l: 'Other' },
     ],
-    collabOptions: [
-      { v: '', l: 'Select collaboration type' },
-      { v: 'zoom-intro', l: 'Introductory meeting — Zoom' },
-      { v: 'co-delivery', l: 'Co-Delivery — joint project delivery' },
-      { v: 'referral', l: 'Project-specific introduction' },
-      { v: 'strategic', l: 'Long-term strategic partnership' },
-    ],
-    meetingPlaceholder: 'e.g. Sun–Wed, 10am–2pm · or any scheduling notes',
-    briefPlaceholder: 'Briefly describe the proposed collaboration or project types of interest.',
+    messagePlaceholder: 'Preferred meeting time, or any note you wish to share.',
     submit: 'Submit inquiry',
     sentMsg: 'Thank you. Our partnerships team will contact you within 24 business hours to schedule the meeting.',
     wa: 'WhatsApp',
@@ -225,7 +195,6 @@ function buildPage(c) {
   const footer = renderFooter(0, isEn);
 
   const segmentOptions = c.segmentOptions.map((o) => `<option value="${o.v}">${o.l}</option>`).join('');
-  const collabOptions = c.collabOptions.map((o) => `<option value="${o.v}">${o.l}</option>`).join('');
 
   const exploreLinks = c.links
     .map((l) => {
@@ -594,69 +563,41 @@ ${header}
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="${c.formSubject}">
         <input type="hidden" name="_next" value="${c.formNext}">
-        <div class="pn-form-group">
-          <div class="pn-form-group-title">${c.formOrgHeading}</div>
-          <div class="pn-form-grid">
-            <div class="pn-field pn-field--full">
-              <label for="pnSegment">${c.fields.segment} <span class="req">*</span></label>
-              <select name="organization_type" id="pnSegment" required>${segmentOptions}</select>
-            </div>
-            <div class="pn-field">
-              <label for="pnCompany">${c.fields.company} <span class="req">*</span></label>
-              <input type="text" name="company" id="pnCompany" required autocomplete="organization">
-            </div>
-            <div class="pn-field">
-              <label for="pnCompanyEmail">${c.fields.companyEmail} <span class="req">*</span></label>
-              <input type="email" name="company_email" id="pnCompanyEmail" required autocomplete="work email" placeholder="info@company.com">
-            </div>
-            <div class="pn-field pn-field--full">
-              <label for="pnWeb">${c.fields.website}</label>
-              <input type="url" name="website" id="pnWeb" placeholder="https://" dir="ltr" style="text-align:left">
-            </div>
-            <div class="pn-field pn-field--full">
-              <label for="pnCollab">${c.fields.collab} <span class="req">*</span></label>
-              <select name="collaboration_type" id="pnCollab" required>${collabOptions}</select>
-            </div>
+        <input type="hidden" name="inquiry_type" id="pnInquiryType" value="partnership">
+        <div class="pn-form-grid">
+          <div class="pn-field pn-field--full">
+            <label for="pnSegment">${c.fields.segment} <span class="req">*</span></label>
+            <select name="organization_type" id="pnSegment" required>${segmentOptions}</select>
           </div>
-        </div>
-        <div class="pn-form-group">
-          <div class="pn-form-group-title">${c.formContactHeading}</div>
-          <div class="pn-form-grid">
-            <div class="pn-field">
-              <label for="pnName">${c.fields.name} <span class="req">*</span></label>
-              <input type="text" name="name" id="pnName" required autocomplete="name">
-            </div>
-            <div class="pn-field">
-              <label for="pnRole">${c.fields.role} <span class="req">*</span></label>
-              <input type="text" name="job_title" id="pnRole" required autocomplete="organization-title">
-            </div>
-            <div class="pn-field pn-field--full">
-              <label for="pnPhone">${c.fields.phone} <span class="req">*</span></label>
-              <input type="tel" name="phone" id="pnPhone" required autocomplete="tel">
-            </div>
+          <div class="pn-field">
+            <label for="pnName">${c.fields.name} <span class="req">*</span></label>
+            <input type="text" name="name" id="pnName" required autocomplete="name">
           </div>
-        </div>
-        <div class="pn-form-group">
-          <div class="pn-form-group-title">${c.formMeetingHeading}</div>
-          <div class="pn-form-grid">
-            <div class="pn-field pn-field--full">
-              <label for="pnMeeting">${c.fields.meetingTimes} <span class="req">*</span></label>
-              <input type="text" name="meeting_times" id="pnMeeting" required placeholder="${c.meetingPlaceholder}">
-            </div>
-            <div class="pn-field pn-field--full">
-              <label for="pnBrief">${c.fields.brief}</label>
-              <textarea name="message" id="pnBrief" placeholder="${c.briefPlaceholder}"></textarea>
-            </div>
-            <div class="pn-field pn-field--full">
-              <div class="gh-form-security">
-                <div class="gh-honeypot" aria-hidden="true">
-                  <label>Leave blank</label>
-                  <input type="text" name="_honey" tabindex="-1" autocomplete="off">
-                </div>
-                <div class="gh-turnstile"></div>
+          <div class="pn-field">
+            <label for="pnRole">${c.fields.role} <span class="req">*</span></label>
+            <input type="text" name="job_title" id="pnRole" required autocomplete="organization-title">
+          </div>
+          <div class="pn-field">
+            <label for="pnEmail">${c.fields.email} <span class="req">*</span></label>
+            <input type="email" name="email" id="pnEmail" required autocomplete="email" placeholder="name@company.com">
+          </div>
+          <div class="pn-field">
+            <label for="pnPhone">${c.fields.phone} <span class="req">*</span></label>
+            <input type="tel" name="phone" id="pnPhone" required autocomplete="tel">
+          </div>
+          <div class="pn-field pn-field--full">
+            <label for="pnMessage">${c.fields.message}</label>
+            <textarea name="message" id="pnMessage" placeholder="${c.messagePlaceholder}"></textarea>
+          </div>
+          <div class="pn-field pn-field--full">
+            <div class="gh-form-security">
+              <div class="gh-honeypot" aria-hidden="true">
+                <label>Leave blank</label>
+                <input type="text" name="_honey" tabindex="-1" autocomplete="off">
               </div>
-              <div class="form-feedback" aria-live="polite"></div>
+              <div class="gh-turnstile"></div>
             </div>
+            <div class="form-feedback" aria-live="polite"></div>
           </div>
         </div>
         <button type="submit" class="form-submit pn-submit">
@@ -678,12 +619,12 @@ ${footer}
 <script defer src="assets/gh-float-widgets.js?v=8"></script>
 <script>
 (function(){
-  var collab = document.getElementById('pnCollab');
+  var inquiryType = document.getElementById('pnInquiryType');
   if (location.hash === '#inquiry' || location.hash === '#zoom') {
-    if (collab && !collab.value) collab.value = 'zoom-intro';
+    if (inquiryType) inquiryType.value = 'zoom-meeting';
   }
   document.querySelector('.pn-zoom-cta')?.addEventListener('click', function() {
-    if (collab) collab.value = 'zoom-intro';
+    if (inquiryType) inquiryType.value = 'zoom-meeting';
   });
   var form = document.querySelector('.pn-form');
   if (form) {
