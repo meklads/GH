@@ -59,6 +59,26 @@ body.gh-partner-network{font-family:'Tajawal','IBM Plex Sans Arabic',-apple-syst
 .pn-btn--ghost:hover{border-color:var(--gold);color:var(--gold)}
 .pn-hero-media{border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:#eceae4;box-shadow:0 28px 72px rgba(0,0,0,.08),0 0 0 1px rgba(20,20,20,.04)}
 .pn-hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+.pn-proof{padding:40px 0 48px;background:var(--white);border-bottom:1px solid var(--line)}
+.pn-stats{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:36px}
+@media(min-width:640px){.pn-stats{grid-template-columns:repeat(3,1fr);gap:16px}}
+.pn-stat{padding:24px 20px;border:1px solid var(--line);border-radius:14px;background:var(--ivory);text-align:right}
+.pn-stat-value{display:block;font-size:clamp(32px,4vw,42px);font-weight:700;line-height:1;color:var(--ink);letter-spacing:-.03em;font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
+.pn-stat-label{display:block;margin-top:8px;font-size:14px;font-weight:700;line-height:1.4;font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
+.pn-stat-sub{display:block;margin-top:4px;font-size:12px;line-height:1.6;color:var(--muted);font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
+.pn-logos-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:18px;font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
+.pn-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:28px 36px;direction:ltr}
+.pn-logo-item img{height:38px;width:auto;display:block;filter:grayscale(1);opacity:.52;transition:filter .25s ease,opacity .25s ease}
+.pn-logo-item:hover img{filter:grayscale(0);opacity:1}
+.pn-form-steps{margin:0 0 28px;padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--ivory);text-align:right}
+.pn-form-steps h3{font-size:13px;font-weight:700;margin-bottom:16px;font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
+.pn-form-step{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.pn-form-step:last-child{border-bottom:none;padding-bottom:0}
+.pn-form-step-n{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--gold);font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
+.pn-form-step h3{font-size:14px;margin-bottom:4px;font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
+.pn-form-step p{font-size:13px;line-height:1.65;color:var(--muted);font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
+.pn-deck{margin-top:16px;padding-top:20px;border-top:1px solid var(--line);text-align:right}
+.pn-deck-note{margin-top:8px;font-size:12px;line-height:1.65;color:var(--muted);font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
 .pn-idea{text-align:right}
 .pn-idea-body{font-size:17px;line-height:1.95;color:var(--muted);max-width:720px;margin:20px 0;font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
 .pn-chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
@@ -342,6 +362,29 @@ body.gh-partner-network{font-family:'Tajawal','IBM Plex Sans Arabic',-apple-syst
   </div>
 </section>
 
+<section class="pn-proof" aria-label="إثبات">
+  <div class="pn-wrap">
+    <div class="pn-stats">
+    <article class="pn-stat">
+      <span class="pn-stat-value">+20</span>
+      <strong class="pn-stat-label">عامًا من الخبرة</strong>
+      <span class="pn-stat-sub">منذ 2004</span>
+    </article>
+    <article class="pn-stat">
+      <span class="pn-stat-value">5</span>
+      <strong class="pn-stat-label">تخصصات إنتاج</strong>
+      <span class="pn-stat-sub">شريك واحد — قدرات متعددة</span>
+    </article>
+    <article class="pn-stat">
+      <span class="pn-stat-value">6</span>
+      <strong class="pn-stat-label">قطاعات رئيسية</strong>
+      <span class="pn-stat-sub">عقاري · حكومي · ثقافي · وغيرها</span>
+    </article></div>
+    <p class="pn-logos-label">ثقة عملاء في المنطقة</p>
+    <div class="pn-logos"><div class="pn-logo-item"><img src="assets/clients-logo/rafal.png" alt="رفال" loading="lazy"></div><div class="pn-logo-item"><img src="assets/clients-logo/anan-eskan.png" alt="عنان إسكان" loading="lazy"></div><div class="pn-logo-item"><img src="assets/clients-logo/al-owla.png" alt="الأولى" loading="lazy"></div><div class="pn-logo-item"><img src="assets/clients-logo/aqarat.png" alt="عقارات" loading="lazy"></div><div class="pn-logo-item"><img src="assets/clients-logo/bn-zooma.png" alt="بن زومة" loading="lazy"></div><div class="pn-logo-item"><img src="assets/clients-logo/makyon.png" alt="مكيون" loading="lazy"></div><div class="pn-logo-item"><img src="assets/clients-logo/oteck.png" alt="أوتيك" loading="lazy"></div><div class="pn-logo-item"><img src="assets/clients-logo/imc-150x150.png" alt="IMC" loading="lazy"></div></div>
+  </div>
+</section>
+
 <section class="pn-sec pn-idea">
   <div class="pn-wrap">
     <span class="pn-eye">02</span>
@@ -469,7 +512,7 @@ body.gh-partner-network{font-family:'Tajawal','IBM Plex Sans Arabic',-apple-syst
 
 <section class="pn-sec pn-sec--white">
   <div class="pn-wrap">
-    <span class="pn-eye">10</span>
+    <span class="pn-eye">07</span>
     <p class="pn-eye" style="margin-bottom:8px">خبرة مُنجزة.</p>
     <h2 class="pn-h2">لا وعودًا على الورق.</h2>
     <div class="pn-case">
@@ -489,7 +532,7 @@ body.gh-partner-network{font-family:'Tajawal','IBM Plex Sans Arabic',-apple-syst
 
 <section class="pn-sec">
   <div class="pn-wrap">
-    <span class="pn-eye">07</span>
+    <span class="pn-eye">08</span>
     <div class="pn-pitch">
       <h2 class="pn-h2">قبل أن يُرسى المشروع.</h2>
       <p class="pn-h3" style="color:rgba(255,255,255,.85);font-weight:400;margin-bottom:16px">تعزيز فرص الفوز — منذ مرحلة العرض.</p>
@@ -503,7 +546,7 @@ body.gh-partner-network{font-family:'Tajawal','IBM Plex Sans Arabic',-apple-syst
 
 <section class="pn-sec pn-sec--white">
   <div class="pn-wrap">
-    <span class="pn-eye">08</span>
+    <span class="pn-eye">09</span>
     <h2 class="pn-h2">آليات التعاون</h2>
     <div class="pn-models"><article class="pn-model"><span class="pn-model-tag">إحالة</span><h3>فرصة تناسب قدراتنا.</h3><p>تعريف بالمشروع، وتحديد صيغة التعاون الأنسب.</p></article><article class="pn-model"><span class="pn-model-tag">تسليم مشترك</span><h3>قيادتكم للعميل. تخصصنا في الإنتاج.</h3><p>نعمل ضمن فريق المشروع، بأدوار واضحة ومسؤوليات محددة.</p></article><article class="pn-model"><span class="pn-model-tag">علامة بيضاء</span><h3>إنتاج خلف الكواليس عند الحاجة.</h3><p>يمكن تنظيم بعض المشاريع بصيغة العلامة البيضاء، وفق طبيعة المشروع والاتفاق، مع التزام كامل بالسرية وحماية علاقة العميل.</p></article><article class="pn-model"><span class="pn-model-tag">شريك مفضّل</span><h3>شراكة مستمرة، لا مشروعًا واحدًا.</h3><p>للوكالات ذات الاحتياج المتكرر، نبني إطارًا طويل الأمد يشمل آلية العمل والأولوية والاستجابة.</p></article></div>
   </div>
@@ -511,7 +554,7 @@ body.gh-partner-network{font-family:'Tajawal','IBM Plex Sans Arabic',-apple-syst
 
 <section class="pn-sec pn-sec--tight">
   <div class="pn-wrap">
-    <span class="pn-eye">09</span>
+    <span class="pn-eye">10</span>
     <h2 class="pn-h2">من الموجز إلى التسليم</h2>
     <div class="pn-process"><article class="pn-step"><div class="pn-step-n">01</div><h3>مشاركة الموجز</h3><p>احتياج العميل، السياق، والمخرجات المطلوبة.</p></article><article class="pn-step"><div class="pn-step-n">02</div><h3>تحديد الفرصة</h3><p>تحديد موضع أكبر قيمة في المشروع.</p></article><article class="pn-step"><div class="pn-step-n">03</div><h3>نطاق الإنتاج</h3><p>المنهج، المخرجات، الجدول الزمني، والتكلفة.</p></article><article class="pn-step"><div class="pn-step-n">04</div><h3>التنفيذ</h3><p>تنفيذ وإدارة النطاق المتفق عليه.</p></article><article class="pn-step"><div class="pn-step-n">05</div><h3>تقديم الحل المتكامل</h3><p>عودة المخرجات إلى منظومة مشروعكم، جزءًا من الحل النهائي للعميل.</p></article></div>
   </div>
@@ -550,6 +593,7 @@ body.gh-partner-network{font-family:'Tajawal','IBM Plex Sans Arabic',-apple-syst
     <div class="pn-final-actions">
       <a href="#inquiry" class="pn-btn pn-btn--primary">محادثة الشراكة →</a>
       <a href="#inquiry" class="pn-btn pn-btn--ghost">إرسال موجز مشروع →</a>
+      <a href="partner-network-overview.html" class="pn-btn pn-btn--ghost" target="_blank" rel="noopener noreferrer">ملخص الشراكة ↗</a>
     </div>
   </div>
 </section>
@@ -562,6 +606,26 @@ body.gh-partner-network{font-family:'Tajawal','IBM Plex Sans Arabic',-apple-syst
         <h2>طلب شراكة وتعاون</h2>
         <p>نبذة عن جهتكم وفرصة التعاون — سيتواصل فريق الشراكات لاستكمال الخطوة التالية.</p>
       </div>
+      <div class="pn-form-steps">
+        <h3>ما الذي يحدث بعد الطلب؟</h3>
+        
+    <article class="pn-form-step">
+      <span class="pn-form-step-n">01</span>
+      <div><h3>مراجعة أولية</h3><p>نراجع طلبكم خلال 24 ساعة عمل.</p></div>
+    </article>
+    <article class="pn-form-step">
+      <span class="pn-form-step-n">02</span>
+      <div><h3>محادثة تعارف</h3><p>مكالمة قصيرة لفهم الجهة وفرصة التعاون.</p></div>
+    </article>
+    <article class="pn-form-step">
+      <span class="pn-form-step-n">03</span>
+      <div><h3>تحديد المسار</h3><p>نقترح صيغة الشراكة أو الخطوة التالية المناسبة.</p></div>
+    </article>
+      </div>
+      <div class="pn-deck">
+        <a href="partner-network-overview.html" class="pn-btn pn-btn--ghost" target="_blank" rel="noopener noreferrer">ملخص الشراكة ↗</a>
+        <p class="pn-deck-note">صفحة جاهزة للطباعة أو الحفظ كـ PDF — للمشاركة داخليًا.</p>
+      </div>
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="طلب شراكة وتعاون — AR">
         <input type="hidden" name="_next" value="https://3dgraphicshouse.com/partner-network.html?sent=1#inquiry">
@@ -571,7 +635,7 @@ body.gh-partner-network{font-family:'Tajawal','IBM Plex Sans Arabic',-apple-syst
           <div class="pn-field"><label for="pnRole">المنصب <span class="req">*</span></label><input type="text" name="job_title" id="pnRole" required autocomplete="organization-title"></div>
           <div class="pn-field"><label for="pnEmail">البريد الإلكتروني <span class="req">*</span></label><input type="email" name="email" id="pnEmail" required autocomplete="email" placeholder="name@agency.com"></div>
           <div class="pn-field"><label for="pnPhone">الجوال <span class="req">*</span></label><input type="tel" name="phone" id="pnPhone" required autocomplete="tel"></div>
-          <div class="pn-field"><label for="pnWeb">موقع الوكالة</label><input type="url" name="agency_website" id="pnWeb" autocomplete="url" placeholder="https://"></div>
+          <div class="pn-field"><label for="pnWeb">موقع الجهة</label><input type="url" name="agency_website" id="pnWeb" autocomplete="url" placeholder="https://"></div>
           <div class="pn-field pn-field--full">
             <label>ما نوع الشراكة التي تهمكم؟</label>
             <div class="pn-checks">

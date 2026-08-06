@@ -11,6 +11,17 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://3dgraphicshouse.com';
 const MWL_VIDEO = 'H66KNP1sQCk';
 
+const CLIENT_LOGOS = [
+  { src: 'assets/clients-logo/rafal.png', altAr: 'رفال', altEn: 'Rafal' },
+  { src: 'assets/clients-logo/anan-eskan.png', altAr: 'عنان إسكان', altEn: 'Anan Iskan' },
+  { src: 'assets/clients-logo/al-owla.png', altAr: 'الأولى', altEn: 'Al Oula' },
+  { src: 'assets/clients-logo/aqarat.png', altAr: 'عقارات', altEn: 'Aqarat' },
+  { src: 'assets/clients-logo/bn-zooma.png', altAr: 'بن زومة', altEn: 'Bin Zoma' },
+  { src: 'assets/clients-logo/makyon.png', altAr: 'مكيون', altEn: 'Makklyoon' },
+  { src: 'assets/clients-logo/oteck.png', altAr: 'أوتيك', altEn: 'Autek' },
+  { src: 'assets/clients-logo/imc-150x150.png', altAr: 'IMC', altEn: 'IMC' },
+];
+
 const COPY = {
   ar: {
     lang: 'ar',
@@ -30,6 +41,12 @@ const COPY = {
     heroSupport: 'الوكالة تحمل علاقة العميل ورسالة المشروع.<br>ونحن نُضيف طبقة التنفيذ البصري والتجريبي.',
     heroCtaPrimary: 'محادثة شراكة',
     heroCtaSecondary: 'القدرات المتخصصة',
+    proofStats: [
+      { value: '+20', label: 'عامًا من الخبرة', sub: 'منذ 2004' },
+      { value: '5', label: 'تخصصات إنتاج', sub: 'شريك واحد — قدرات متعددة' },
+      { value: '6', label: 'قطاعات رئيسية', sub: 'عقاري · حكومي · ثقافي · وغيرها' },
+    ],
+    proofLogosLabel: 'ثقة عملاء في المنطقة',
     heroImgAlt: 'إنتاج بصري وتجريبي — جرافيكس هاوس',
     heroImg: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg',
     heroWebp: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.webp',
@@ -145,6 +162,16 @@ const COPY = {
     finalCtaSub: 'جرافيكس هاوس — امتداد متخصص لفريقكم في المشاريع والعروض.',
     finalCtaPrimary: 'محادثة الشراكة',
     finalCtaSecondary: 'إرسال موجز مشروع',
+    finalCtaDeck: 'ملخص الشراكة',
+    formStepsTitle: 'ما الذي يحدث بعد الطلب؟',
+    formSteps: [
+      { n: '01', title: 'مراجعة أولية', desc: 'نراجع طلبكم خلال 24 ساعة عمل.' },
+      { n: '02', title: 'محادثة تعارف', desc: 'مكالمة قصيرة لفهم الجهة وفرصة التعاون.' },
+      { n: '03', title: 'تحديد المسار', desc: 'نقترح صيغة الشراكة أو الخطوة التالية المناسبة.' },
+    ],
+    deckCta: 'ملخص الشراكة',
+    deckHref: 'partner-network-overview.html',
+    deckNote: 'صفحة جاهزة للطباعة أو الحفظ كـ PDF — للمشاركة داخليًا.',
     formTitle: 'طلب شراكة وتعاون',
     formSub: 'نبذة عن جهتكم وفرصة التعاون — سيتواصل فريق الشراكات لاستكمال الخطوة التالية.',
     formSubject: 'طلب شراكة وتعاون — AR',
@@ -203,6 +230,12 @@ const COPY = {
     heroSupport: 'You own the client and the strategy.<br>We add the visual and experiential production layer.',
     heroCtaPrimary: 'Partnership conversation',
     heroCtaSecondary: 'Specialist capabilities',
+    proofStats: [
+      { value: '20+', label: 'Years of experience', sub: 'Since 2004' },
+      { value: '5', label: 'Production disciplines', sub: 'One partner — multiple capabilities' },
+      { value: '6', label: 'Core sectors', sub: 'Real estate · Government · Culture · more' },
+    ],
+    proofLogosLabel: 'Trusted across the region',
     heroImgAlt: 'Visual and experiential production — Graphics House',
     heroImg: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg',
     heroWebp: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.webp',
@@ -318,6 +351,16 @@ const COPY = {
     finalCtaSub: 'Graphics House — a specialist extension of your team for projects and pitches.',
     finalCtaPrimary: 'Partnership conversation',
     finalCtaSecondary: 'Send a project brief',
+    finalCtaDeck: 'Partnership overview',
+    formStepsTitle: 'What happens after you submit?',
+    formSteps: [
+      { n: '01', title: 'Initial review', desc: 'We review your inquiry within 24 business hours.' },
+      { n: '02', title: 'Intro conversation', desc: 'A short call to understand your organization and the opportunity.' },
+      { n: '03', title: 'Next step defined', desc: 'We propose the right partnership model or follow-up path.' },
+    ],
+    deckCta: 'Partnership overview',
+    deckHref: 'partner-network-overview-en.html',
+    deckNote: 'Print-ready page — save as PDF for internal sharing.',
     formTitle: 'Partnership & Collaboration Inquiry',
     formSub: 'A brief about your organization and the collaboration opportunity — our partnerships team will follow up with next steps.',
     formSubject: 'Partnership & Collaboration Inquiry — EN',
@@ -392,6 +435,37 @@ function checkGroup(opts, prefix) {
       <input type="checkbox" name="${prefix}_${o.id}" value="Yes">
       <span>${o.label}</span>
     </label>`
+    )
+    .join('');
+}
+
+function renderProofStats(stats) {
+  return stats
+    .map(
+      (s) => `
+    <article class="pn-stat">
+      <span class="pn-stat-value">${s.value}</span>
+      <strong class="pn-stat-label">${s.label}</strong>
+      <span class="pn-stat-sub">${s.sub}</span>
+    </article>`
+    )
+    .join('');
+}
+
+function renderClientLogos(isEn) {
+  return CLIENT_LOGOS.map(
+    (l) => `<div class="pn-logo-item"><img src="${l.src}" alt="${isEn ? l.altEn : l.altAr}" loading="lazy"></div>`
+  ).join('');
+}
+
+function renderFormSteps(steps) {
+  return steps
+    .map(
+      (s) => `
+    <article class="pn-form-step">
+      <span class="pn-form-step-n">${s.n}</span>
+      <div><h3>${s.title}</h3><p>${s.desc}</p></div>
+    </article>`
     )
     .join('');
 }
@@ -482,6 +556,26 @@ body.gh-partner-network{font-family:${isEn ? "'Inter','Tajawal','IBM Plex Sans A
 .pn-btn--ghost:hover{border-color:var(--gold);color:var(--gold)}
 .pn-hero-media{border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:#eceae4;box-shadow:0 28px 72px rgba(0,0,0,.08),0 0 0 1px rgba(20,20,20,.04)}
 .pn-hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+.pn-proof{padding:40px 0 48px;background:var(--white);border-bottom:1px solid var(--line)}
+.pn-stats{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:36px}
+@media(min-width:640px){.pn-stats{grid-template-columns:repeat(3,1fr);gap:16px}}
+.pn-stat{padding:24px 20px;border:1px solid var(--line);border-radius:14px;background:var(--ivory);text-align:${isEn ? 'left' : 'right'}}
+.pn-stat-value{display:block;font-size:clamp(32px,4vw,42px);font-weight:700;line-height:1;color:var(--ink);letter-spacing:-.03em;font-family:${ffH}}
+.pn-stat-label{display:block;margin-top:8px;font-size:14px;font-weight:700;line-height:1.4;font-family:${ff}}
+.pn-stat-sub{display:block;margin-top:4px;font-size:12px;line-height:1.6;color:var(--muted);font-family:${ff}}
+.pn-logos-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:18px;font-family:${ff}}
+.pn-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:28px 36px;direction:ltr}
+.pn-logo-item img{height:38px;width:auto;display:block;filter:grayscale(1);opacity:.52;transition:filter .25s ease,opacity .25s ease}
+.pn-logo-item:hover img{filter:grayscale(0);opacity:1}
+.pn-form-steps{margin:0 0 28px;padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--ivory);text-align:${isEn ? 'left' : 'right'}}
+.pn-form-steps h3{font-size:13px;font-weight:700;margin-bottom:16px;font-family:${ff}}
+.pn-form-step{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.pn-form-step:last-child{border-bottom:none;padding-bottom:0}
+.pn-form-step-n{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--gold);font-family:${ff}}
+.pn-form-step h3{font-size:14px;margin-bottom:4px;font-family:${ff}}
+.pn-form-step p{font-size:13px;line-height:1.65;color:var(--muted);font-family:${ff}}
+.pn-deck{margin-top:16px;padding-top:20px;border-top:1px solid var(--line);text-align:${isEn ? 'left' : 'right'}}
+.pn-deck-note{margin-top:8px;font-size:12px;line-height:1.65;color:var(--muted);font-family:${ff}}
 .pn-idea{text-align:${isEn ? 'left' : 'right'}}
 .pn-idea-body{font-size:17px;line-height:1.95;color:var(--muted);max-width:720px;margin:20px 0;font-family:${ff}}
 .pn-chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
@@ -640,6 +734,14 @@ ${header}
   </div>
 </section>
 
+<section class="pn-proof" aria-label="${isEn ? 'Proof' : 'إثبات'}">
+  <div class="pn-wrap">
+    <div class="pn-stats">${renderProofStats(c.proofStats)}</div>
+    <p class="pn-logos-label">${c.proofLogosLabel}</p>
+    <div class="pn-logos">${renderClientLogos(isEn)}</div>
+  </div>
+</section>
+
 <section class="pn-sec pn-idea">
   <div class="pn-wrap">
     <span class="pn-eye">02</span>
@@ -706,7 +808,7 @@ ${header}
 
 <section class="pn-sec pn-sec--white">
   <div class="pn-wrap">
-    <span class="pn-eye">10</span>
+    <span class="pn-eye">07</span>
     <p class="pn-eye" style="margin-bottom:8px">${c.caseEyebrow}</p>
     <h2 class="pn-h2">${c.caseTitle}</h2>
     <div class="pn-case">
@@ -726,7 +828,7 @@ ${header}
 
 <section class="pn-sec">
   <div class="pn-wrap">
-    <span class="pn-eye">07</span>
+    <span class="pn-eye">08</span>
     <div class="pn-pitch">
       <h2 class="pn-h2">${c.pitchTitle}</h2>
       <p class="pn-h3" style="color:rgba(255,255,255,.85);font-weight:400;margin-bottom:16px">${c.pitchSub}</p>
@@ -740,7 +842,7 @@ ${header}
 
 <section class="pn-sec pn-sec--white">
   <div class="pn-wrap">
-    <span class="pn-eye">08</span>
+    <span class="pn-eye">09</span>
     <h2 class="pn-h2">${c.modelsTitle}</h2>
     <div class="pn-models">${c.models.map((m) => `<article class="pn-model"><span class="pn-model-tag">${m.tag}</span><h3>${m.title}</h3><p>${m.desc}</p></article>`).join('')}</div>
   </div>
@@ -748,7 +850,7 @@ ${header}
 
 <section class="pn-sec pn-sec--tight">
   <div class="pn-wrap">
-    <span class="pn-eye">09</span>
+    <span class="pn-eye">10</span>
     <h2 class="pn-h2">${c.processTitle}</h2>
     <div class="pn-process">${c.process.map((s) => `<article class="pn-step"><div class="pn-step-n">${s.n}</div><h3>${s.title}</h3><p>${s.desc}</p></article>`).join('')}</div>
   </div>
@@ -787,6 +889,7 @@ ${header}
     <div class="pn-final-actions">
       <a href="#inquiry" class="pn-btn pn-btn--primary">${c.finalCtaPrimary} →</a>
       <a href="#inquiry" class="pn-btn pn-btn--ghost">${c.finalCtaSecondary} →</a>
+      <a href="${c.deckHref}" class="pn-btn pn-btn--ghost" target="_blank" rel="noopener noreferrer">${c.finalCtaDeck} ↗</a>
     </div>
   </div>
 </section>
@@ -798,6 +901,14 @@ ${header}
         <span class="pn-eye">15</span>
         <h2>${c.formTitle}</h2>
         <p>${c.formSub}</p>
+      </div>
+      <div class="pn-form-steps">
+        <h3>${c.formStepsTitle}</h3>
+        ${renderFormSteps(c.formSteps)}
+      </div>
+      <div class="pn-deck">
+        <a href="${c.deckHref}" class="pn-btn pn-btn--ghost" target="_blank" rel="noopener noreferrer">${c.deckCta} ↗</a>
+        <p class="pn-deck-note">${c.deckNote}</p>
       </div>
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="${c.formSubject}">
@@ -866,9 +977,94 @@ ${footer}
 </html>`;
 }
 
+function buildOverview(c) {
+  const isEn = c.lang === 'en';
+  const ff = isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif";
+  const pageName = isEn ? 'Partnership Overview' : 'ملخص الشراكة';
+  const backHref = isEn ? 'partner-network-en.html' : 'partner-network.html';
+  const modelsList = c.models
+    .map((m) => `<li><strong>${m.tag}</strong> — ${m.title} ${m.desc}</li>`)
+    .join('');
+  const capsList = c.capabilities.map((cap) => `<li>${cap.title}</li>`).join('');
+  const principlesList = c.principles
+    .map((p) => `<li><strong>${p.title}</strong> — ${p.desc}</li>`)
+    .join('');
+  const statsHtml = c.proofStats
+    .map((s) => `<article class="stat"><strong>${s.value}</strong><span>${s.label}</span></article>`)
+    .join('');
+
+  return `<!DOCTYPE html>
+<html lang="${c.lang}" dir="${c.dir}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${pageName} | ${c.pageFootBrand}</title>
+<style>
+@page{size:A4;margin:16mm}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:${ff};color:#141414;background:#fff;line-height:1.6;padding:32px;max-width:880px;margin:0 auto}
+header{border-bottom:2px solid #C9A84C;padding-bottom:20px;margin-bottom:28px;text-align:${isEn ? 'left' : 'right'}}
+.brand{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;font-weight:700}
+h1{font-size:28px;font-weight:700;margin:10px 0 8px;line-height:1.25}
+.lead{font-size:15px;color:rgba(20,20,20,.68);max-width:640px}
+section{margin-bottom:24px;text-align:${isEn ? 'left' : 'right'}}
+h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px}
+ul{padding-${isEn ? 'left' : 'right'}:18px}
+li{font-size:13px;line-height:1.7;margin-bottom:6px;color:rgba(20,20,20,.78)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.stat{border:1px solid rgba(20,20,20,.08);border-radius:10px;padding:14px;text-align:center}
+.stat strong{display:block;font-size:22px}
+.stat span{display:block;font-size:11px;color:rgba(20,20,20,.58);margin-top:4px}
+footer{margin-top:32px;padding-top:20px;border-top:1px solid rgba(20,20,20,.08);font-size:12px;color:rgba(20,20,20,.58);text-align:${isEn ? 'left' : 'right'}}
+.actions{margin:20px 0 28px;display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;padding:10px 18px;border-radius:999px;font-size:12px;font-weight:700;text-decoration:none;border:1px solid #141414;color:#141414}
+.btn--gold{background:#C9A84C;border-color:#C9A84C;color:#0A0A0A}
+@media print{.actions{display:none}body{padding:0}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">${c.brand}</div>
+  <h1>${c.ideaTitle}</h1>
+  <p class="lead">${c.heroLead}</p>
+  <div class="actions">
+    <a class="btn btn--gold" href="javascript:window.print()">${isEn ? 'Save as PDF' : 'حفظ كـ PDF'}</a>
+    <a class="btn" href="${backHref}#inquiry">${isEn ? 'Partnership inquiry' : 'طلب شراكة وتعاون'}</a>
+  </div>
+</header>
+<section>
+  <h2>${isEn ? 'At a glance' : 'نظرة سريعة'}</h2>
+  <div class="grid">${statsHtml}</div>
+</section>
+<section>
+  <h2>${c.modelsTitle}</h2>
+  <ul>${modelsList}</ul>
+</section>
+<section>
+  <h2>${c.capTitle}</h2>
+  <ul>${capsList}</ul>
+</section>
+<section>
+  <h2>${c.principlesTitle}</h2>
+  <ul>${principlesList}</ul>
+</section>
+<footer>
+  <strong>${c.pageFootBrand}</strong> · ${c.pageFootTagline}<br>
+  ${isEn ? 'Contact' : 'التواصل'}: info@3dgraphicshouse.com · 3dgraphicshouse.com<br>
+  ${isEn ? 'Full page' : 'الصفحة الكاملة'}: ${BASE}/${backHref}
+</footer>
+</body>
+</html>`;
+}
+
 console.log('Building Partner Network pages…');
 fs.writeFileSync(path.join(ROOT, 'partner-network.html'), buildPage(COPY.ar), 'utf8');
 fs.writeFileSync(path.join(ROOT, 'partner-network-en.html'), buildPage(COPY.en), 'utf8');
+fs.writeFileSync(path.join(ROOT, 'partner-network-overview.html'), buildOverview(COPY.ar), 'utf8');
+fs.writeFileSync(path.join(ROOT, 'partner-network-overview-en.html'), buildOverview(COPY.en), 'utf8');
 console.log('  partner-network.html');
 console.log('  partner-network-en.html');
+console.log('  partner-network-overview.html');
+console.log('  partner-network-overview-en.html');
 console.log('Done.');
