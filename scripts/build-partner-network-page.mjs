@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Partner Network landing — AR + EN (agency-first channel partner positioning).
+ * Agency Partner Network™ — premium B2B partnership landing (AR + EN).
  */
 import fs from 'fs';
 import path from 'path';
@@ -9,6 +9,7 @@ import { renderHeader, renderFooter } from './layout-partials.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://3dgraphicshouse.com';
+const MWL_VIDEO = 'H66KNP1sQCk';
 
 const COPY = {
   ar: {
@@ -17,105 +18,159 @@ const COPY = {
     canonical: `${BASE}/partner-network.html`,
     altEn: `${BASE}/partner-network-en.html`,
     altAr: `${BASE}/partner-network.html`,
-    title: 'شبكة الشركاء | Graphics House',
+    title: 'Agency Partner Network™ | Graphics House',
     description:
-      'وسّع قدرات وكالتك — Graphics House شريك إنتاج بصري وتجريبي متخصص لوكالات الإعلان والإبداع في المملكة ودول الخليج.',
-    ogTitle: 'شبكة الشركاء — Graphics House',
-    eye: 'Visual & Experiential Production Partner',
-    h1: 'وسّع قدرات وكالتك',
-    h1Gold: 'دون بناء فريق جديد',
-    lead:
-      'Graphics House شريككم المتخصص في تحويل المشاريع إلى تجارب بصرية ومادية — من 3D والأفلام السينمائية إلى المجسمات والتجارب التفاعلية وبيئات العرض.',
-    heroYou: 'أنتم تملكون العميل والاستراتيجية.',
-    heroUs: 'ونحن نضيف طبقة التنفيذ البصري والتجريبي — دون أن ننافسكم على العميل.',
-    segmentsLabel: 'نوع جهتكم',
-    segmentsNote: 'وكالات الإعلان والإبداع — شركاؤنا الأساسيون',
-    segments: [
-      { id: 'agency', icon: 'campaign', title: 'وكالات الدعاية والإعلان', desc: 'وسّعوا ما تقدمونه — نُنفّذ الطبقة البصرية والتجريبية بجانبكم.', featured: true },
-      { id: 'engineering', icon: 'architecture', title: 'المكاتب الهندسية', desc: 'أكملوا العرض الهندسي بـ Project Launch™ — فيلم · مجسم · 3D · تفاعلي.' },
-      { id: 'contracting', icon: 'construction', title: 'شركات المقاولات', desc: 'حوّلوا المشاريع قيد التنفيذ إلى تجربة عرض وإقناع للمالك والمستثمر.' },
-      { id: 'other', icon: 'domain', title: 'أخرى', desc: 'جهة أخرى — حدّدوا التفاصيل في النموذج أدناه.' },
-    ],
-    whyTitle: 'ماذا تكسب الوكالة؟',
-    whySub: 'شراكة تساعدكم على الفوز بمشاريع أكبر وتنفيذها — لا مجرد مورد.',
+      'وسّع قدرات وكالتك دون بناء فريق جديد — Graphics House شريك إنتاج بصري وتجريبي متخصص لوكالات الإعلان والإبداع.',
+    ogTitle: 'Agency Partner Network™ — Graphics House',
+    brand: 'Agency Partner Network™',
+    heroH1: 'وسّع قدرات وكالتك.',
+    heroH2: 'دون أن تبني فريقًا جديدًا.',
+    heroLead:
+      'Graphics House شريكك المتخصص في الإنتاج البصري والتجارب، نضيف إلى قدرات وكالتك ما تحتاجه مشاريع عملائك من 3D، الأفلام السينمائية، المجسمات المعمارية، التجارب التفاعلية وبيئات العرض.',
+    heroSupport: 'أنتم تملكون العميل والاستراتيجية.<br>ونحن نضيف طبقة التنفيذ البصري والتجريبي.',
+    heroCtaPrimary: 'ابدأ محادثة شراكة',
+    heroCtaSecondary: 'استكشف قدراتنا',
+    heroImg: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg',
+    heroWebp: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.webp',
+    ideaTitle: 'أنت لا تحتاج إلى وكالة أخرى.',
+    ideaSub: 'تحتاج إلى شريك متخصص.',
+    ideaBody:
+      'Graphics House لا تأتي لتنافس وكالتك على العميل أو الاستراتيجية أو الحملة. نعمل كامتداد متخصص لفريقك، ونوفر القدرات الإنتاجية التي قد لا تحتاج وكالتك إلى بنائها داخليًا.',
+    ideaList: ['3D Visualization', 'Cinematic Films', 'Architectural Maquettes', 'Interactive Experiences', 'Digital Presentations', 'Experiential Environments'],
+    ideaTail: 'يمكننا الدخول في المشروع في المرحلة التي تحتاج فيها وكالتك إلى هذه القدرات.',
+    ideaHighlight: 'More capabilities. More opportunities. No new department required.',
+    fitTitle: 'فريقان. منظومة واحدة.',
+    fitYouLabel: 'YOUR AGENCY',
+    fitYouLead: 'You Lead',
+    fitYouItems: ['Client Relationship', 'Brand Strategy', 'Campaign Strategy', 'Creative Direction', 'Marketing & Communication', 'Account Management'],
+    fitUsLabel: 'GRAPHICS HOUSE',
+    fitUsLead: 'We Add',
+    fitUsItems: ['3D Visualization', 'CGI & Cinematic Films', 'Architectural Maquettes', 'Interactive Experiences', 'Digital Presentations', 'Physical & Experiential Environments'],
+    fitTogether: 'Together',
+    fitResult: 'A More Powerful Client Solution.',
+    valueTitle: 'ماذا تكسب وكالتك؟',
     benefits: [
-      { title: 'وسّع خدماتك', desc: 'قدّم للعميل قدرات إضافية دون إضافة أقسام جديدة.' },
-      { title: 'ارفع قيمة عروضك', desc: 'أدخل 3D والمجسمات والأفلام والتجارب التفاعلية في الـPitch والمشاريع.' },
-      { title: 'اختصر وقت التنفيذ', desc: 'شريك متخصص بدل تنسيق عدة موردين مستقلين.' },
-      { title: 'قلّل التكلفة الثابتة', desc: 'لا حاجة لبناء فريق إنتاج متخصص دائم داخل الوكالة.' },
-      { title: 'ادخل مشاريع أكبر', desc: 'قدرات إضافية تتيح المنافسة على Briefs أكثر تعقيدًا.' },
+      { n: '01', title: 'وسّع عرضك', desc: 'قدّم لعملائك قدرات بصرية وتجريبية متقدمة دون الحاجة إلى إنشاء قسم متخصص داخل الوكالة.' },
+      { n: '02', title: 'ارفع قيمة مشاريعك', desc: 'أدخل الـ3D والمجسمات والأفلام والتجارب التفاعلية ضمن عروضك ومشاريعك ذات القيمة العالية.' },
+      { n: '03', title: 'استجب للـBriefs المعقدة', desc: 'عندما يتحول المشروع من حملة إعلانية إلى تجربة متكاملة، لديك شريك متخصص يمكنه الدخول بسرعة.' },
+      { n: '04', title: 'قلّل التعقيد', desc: 'بدل التنسيق بين عدة موردين متخصصين، تحصل على شريك واحد يدير طبقة الإنتاج الخاصة بنا.' },
+      { n: '05', title: 'عزّز فرص الفوز', desc: 'يمكننا دعم العروض والـPitches التي تحتاج إلى تصور بصري أو Production Approach أكثر قوة.' },
+      { n: '06', title: 'حافظ على مرونتك', desc: 'استخدم Graphics House حسب الحاجة، دون إضافة تكاليف فريق دائم أو بنية إنتاج جديدة.' },
     ],
-    complementTitle: 'حل أقوى للعميل',
-    complementYou: 'وكالتكم',
-    complementYouItems: ['الاستراتيجية', 'العلامة', 'الحملة', 'التسويق', 'العلاقة مع العميل'],
-    complementUs: 'Graphics House',
-    complementUsItems: ['3D', 'أفلام', 'مجسمات', 'تفاعلي', 'تجارب'],
-    complementResult: '= حل أقوى للعميل',
-    pitchTitle: 'اربحوا المزيد من الـPitch',
-    pitchLead: 'ادخلوا Graphics House في عرضكم القادم — وقوّوا الجانب الإنتاجي من مقترحكم.',
-    pitchSub: 'وكالة لديها Pitch غدًا وتحتاج تجربة تفاعلية + مجسم + فيلم + 3D؟ نساعدكم في بناء الجزء البصري — وإذا فزتم بالمشروع، ننفّذه معكم.',
+    capTitle: 'قدرات متخصصة.',
+    capSub: 'متصلة حول مشروع واحد.',
+    capFootH: 'One specialist partner.',
+    capFootP: 'Multiple production capabilities.',
+    capabilities: [
+      { tag: 'VISUALIZE', title: '3D & Architectural Visualization', desc: 'تحويل المخططات والأفكار إلى صور وتجارب بصرية واضحة ومقنعة.', href: 'services/rendering.html', img: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg', webp: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp' },
+      { tag: 'TELL', title: 'Cinematic Films & Animation', desc: 'الأفلام السينمائية، CGI، Animation وMotion Graphics لسرد فكرة المشروع.', href: 'services/animation.html', img: 'assets/projects/cinematic/video-1.jpg', webp: 'assets/projects/cinematic/video-1.webp' },
+      { tag: 'BUILD', title: 'Architectural Maquettes', desc: 'مجسمات معمارية دقيقة، نماذج تقديمية ومجسمات مميزة للمشاريع.', href: 'services/maquettes.html', img: 'assets/projects/maquettes/anan-eskan-maquette-01.jpeg', webp: 'assets/projects/maquettes/anan-eskan-maquette-01.webp' },
+      { tag: 'INTERACT', title: 'Interactive Experiences', desc: 'شاشات تفاعلية، Touch Experiences، VR وDigital Presentations.', href: 'services/interactive.html', img: 'assets/projects/interactive-01.jpg', webp: 'assets/projects/interactive-01.webp' },
+      { tag: 'EXPERIENCE', title: 'Physical & Experiential Environments', desc: 'بيئات العرض، المعارض، صالات المبيعات، التجارب المكانية والعناصر البصرية للمشاريع.', href: 'services/interactive.html', img: 'assets/projects/pavilion1.jpg', webp: 'assets/projects/pavilion1.webp' },
+    ],
+    plEyebrow: 'مثال على ما يمكننا أن نبنيه معًا',
     plTitle: 'Project Launch™',
     plSub: 'Bring Your Project to Life Before It Is Built.',
-    plItems: ['Masterplan Visualization', 'Cinematic Film', 'Architectural Maquette', 'Interactive Experience', 'Presentation Environment'],
-    plNote: 'مثال على ما يمكننا بناؤه معكم — للمشاريع العقارية، تدمج الوكالة هذه القدرات ضمن استراتيجيتها بينما تتولى Graphics House طبقة الإنتاج المتخصصة.',
+    plBody: 'Project Launch™ هو نظام Graphics House المتكامل لمساعدة المطورين وأصحاب المشاريع على رؤية مشاريعهم وفهمها وتجربتها قبل بنائها.',
+    plItems: ['3D Visualization', 'Cinematic Films', 'Architectural Maquettes', 'Interactive Experiences', 'Digital Displays', 'Presentation Environments'],
+    plQuote: 'يمكن لوكالتك قيادة الاستراتيجية والتسويق والعلاقة مع العميل، بينما تتولى Graphics House الطبقة البصرية والتجريبية المتخصصة.',
     plHref: 'solutions/project-launch.html',
-    plCta: 'استكشف Project Launch™',
-    capabilitiesTitle: 'قدرات الإنتاج',
-    capabilitiesSub: 'Visual & Experiential Production — ليس وكالة تسويق متكاملة.',
-    links: [
-      { href: 'services/animation.html', label: 'أفلام CGI', sub: 'إنتاج سينمائي', img: 'assets/projects/cinematic/video-1.jpg', webp: 'assets/projects/cinematic/video-1.webp' },
-      { href: 'services/maquettes.html', label: 'المجسمات', sub: 'مجسمات معمارية', img: 'assets/projects/maquettes/anan-eskan-maquette-01.jpeg', webp: 'assets/projects/maquettes/anan-eskan-maquette-01.webp' },
-      { href: 'services/rendering.html', label: 'الإظهار المعماري', sub: '3D · renders', img: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg', webp: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp' },
-      { href: 'services/interactive.html', label: 'التجارب التفاعلية', sub: 'شاشات · VR', img: 'assets/projects/interactive-01.jpg', webp: 'assets/projects/interactive-01.webp' },
+    plCta: 'Explore Project Launch™',
+    pitchTitle: 'لا تنتظر المشروع.',
+    pitchSub: 'ساعد وكالتك على الفوز به.',
+    pitchBody: 'بعض المشاريع تُحسم قبل توقيع العقد. عندما تحتاج وكالتك في Pitch أو Proposal إلى تصور أقوى لتجربة بصرية أو مجسم أو فيلم أو بيئة تفاعلية، يمكن لـGraphics House الدخول مبكرًا لدعم الجانب الإنتاجي من العرض.',
+    pitchList: ['Creative Concepts', '3D Visual Directions', 'Maquette Concepts', 'Experience Concepts', 'Production Approaches', 'Visual Presentation Assets'],
+    pitchHighlight: 'Bring us into your next complex pitch.',
+    pitchCta: 'Discuss a Pitch',
+    modelsTitle: 'طريقة التعاون',
+    models: [
+      { n: '01', tag: 'REFERRAL', title: 'لديكم فرصة مناسبة لقدراتنا.', desc: 'تعرّفوننا بالمشروع، ونحدد معكم أفضل طريقة للتعاون.' },
+      { n: '02', tag: 'CO-DELIVERY', title: 'أنتم تقودون العميل. ونحن نقود تخصصنا.', desc: 'نعمل كجزء من فريق المشروع بأدوار واضحة ومسؤوليات محددة.' },
+      { n: '03', tag: 'WHITE LABEL', title: 'حل إنتاج خلف الكواليس عند الحاجة.', desc: 'يمكن تنظيم بعض المشاريع بصيغة White Label وفق طبيعة المشروع واتفاق الطرفين، مع الالتزام بالسرية وحماية علاقة العميل.' },
+      { n: '04', tag: 'PREFERRED PARTNER', title: 'شراكة مستمرة وليست مشروعًا واحدًا.', desc: 'للوكالات التي لديها احتياج متكرر، يمكن بناء إطار تعاون طويل الأجل يشمل آلية العمل، الأولوية، الأسعار، والاستجابة للمشاريع.' },
     ],
-    caseLabel: 'Selected Collaboration',
-    caseTitle: 'Muslim World League Exhibition',
-    caseDesc: 'تجارب تفاعلية + مجسمات معمارية + بيئة عرض',
+    processTitle: 'من الـBrief إلى التسليم',
+    process: [
+      { n: '01', title: 'You Share the Brief', desc: 'تشاركونا احتياج العميل والسياق والمخرجات المطلوبة.' },
+      { n: '02', title: 'We Define the Opportunity', desc: 'نحدد أين يمكن لـGraphics House إضافة أكبر قيمة.' },
+      { n: '03', title: 'We Build the Production Scope', desc: 'نحدد المنهج، المخرجات، الجدول الزمني والتكلفة.' },
+      { n: '04', title: 'We Produce', desc: 'يتولى فريق Graphics House تنفيذ وإدارة نطاق العمل المتفق عليه.' },
+      { n: '05', title: 'You Deliver the Bigger Solution', desc: 'تعود المخرجات إلى منظومة مشروعكم لتصبح جزءًا من الحل النهائي للعميل.' },
+    ],
+    caseEyebrow: 'خبرة حقيقية.',
+    caseTitle: 'وليست مجرد قدرات على الورق.',
+    caseName: 'Muslim World League Exhibition',
+    caseTags: 'Interactive Experiences + Architectural Maquettes + Presentation Environment',
+    caseBody: 'ضمن مشروع معرض رابطة العالم الإسلامي، قامت Graphics House بتطوير وتنفيذ عناصر بصرية وتجريبية جمعت بين المجسمات المعمارية، التجارب التفاعلية وبيئات العرض، لتحويل محتوى ومشاريع المؤسسة إلى تجربة يمكن رؤيتها وفهمها والتفاعل معها.',
+    caseVideoCta: 'Watch the Project Film',
     caseHref: 'casestudy1.html',
-    caseCta: 'شاهد المشروع',
-    caseImg: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg',
-    caseWebp: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.webp',
-    aboutText:
-      'منذ 2004، بخبرة تتجاوز 20 عامًا في الإنتاج البصري والتجارب للمشاريع الكبرى في المملكة ودول الخليج. نُضيف طبقة إنتاج متخصصة إلى منظومة خدماتكم — **لا ننافسكم** على العميل أو الاستراتيجية.',
-    ctaTitle: 'لنبني معًا',
-    ctaLead: 'لديكم مشروع أو Pitch يحتاج قدرات بصرية أو تجريبية متقدمة؟ دعونا نبحث عن طريقة لبنائه معًا.',
-    ctaBtn: 'ابدأ محادثة الشراكة',
-    faqTitle: 'أسئلة شائعة',
-    faqSub: 'إجابات مختصرة على ما يهم شركاءنا.',
-    faq: [
-      { q: 'هل Graphics House منافس لوكالتي؟', a: 'لا. نحن شريك إنتاج متخصص — أنتم تبقون على العميل والاستراتيجية، ونحن نُنفّذ الطبقة البصرية والتجريبية.' },
-      { q: 'هل تقدمون White Label؟', a: 'نعم، يمكن تنظيم بعض المشاريع بصيغة White Label وفق طبيعة الشراكة واتفاق الطرفين، مع الالتزام الكامل بالسرية وحماية علاقة العميل. كما يمكن العمل بنموذج Co-Delivery أو شراكة إنتاجية مشتركة.' },
-      { q: 'هل تحتاجون إلى تحويل العميل إليكم؟', a: 'لا. يمكن للوكالة أن تحتفظ بعلاقة العميل وإدارة الحساب، ونحدد نموذج العمل وفق طبيعة المشروع.' },
-      { q: 'هل يمكن استخدام Graphics House في عروضنا وPitch Decks؟', a: 'نعم. يمكن التنسيق معنا لدعم العروض والمشاريع التي تتطلب قدراتنا المتخصصة — قبل ترسية المشروع.' },
-      { q: 'كيف نبدأ؟', a: 'بجلسة تعارف (20–30 دقيقة)، ثم تحديد نطاق المشروع أو فرصة التعاون، يليه تنفيذ مشترك بإطار واضح.' },
-      { q: 'ما مدة الرد على الطلب؟', a: 'يراجع فريق الشراكات كل طلب ويرد خلال 24 ساعة عمل.' },
+    whyTitle: 'لماذا Graphics House؟',
+    whyItems: [
+      { title: 'أكثر من 20 عامًا من الخبرة', sub: 'Since 2004' },
+      { title: 'Saudi-Based', sub: 'خبرة في السوق السعودي والمنطقة.' },
+      { title: 'Multi-Disciplinary', sub: 'عدة تخصصات إنتاجية تحت شريك واحد.' },
+      { title: 'Scalable', sub: 'فريق إنتاج متخصص وشبكة قدرات قابلة للتوسع حسب حجم المشروع.' },
+      { title: 'Project Experience', sub: 'خبرة في المشاريع العقارية والمؤسسية والثقافية والمعارض والتجارب.' },
+      { title: 'One Point of Contact', sub: 'نقطة اتصال واضحة لإدارة نطاق Graphics House.' },
     ],
-    formTitle: 'محادثة الشراكة',
-    formSub: 'يُراجع فريق الشراكات طلبكم ويتواصل معكم خلال 24 ساعة عمل.',
-    formSubject: 'طلب شراكة — شبكة الشركاء AR',
+    principlesTitle: 'شراكة مبنية على الثقة.',
+    principles: [
+      { title: 'Client Protection', desc: 'علاقة العميل محفوظة وفق نموذج الشراكة المتفق عليه.' },
+      { title: 'Confidentiality', desc: 'NDA والسرية متاحة للمشاريع التي تتطلب ذلك.' },
+      { title: 'Clear Responsibilities', desc: 'نحدد المسؤوليات والمخرجات قبل بدء التنفيذ.' },
+      { title: 'No Unapproved Direct Contact', desc: 'لا يتم التواصل المباشر مع عميل الشريك خارج إطار الاتفاق بين الطرفين.' },
+      { title: 'Professional Delivery', desc: 'Graphics House مسؤولة عن جودة وتنفيذ نطاقها المتفق عليه.' },
+    ],
+    whoTitle: 'هل هذا مناسب لوكالتك؟',
+    whoItems: [
+      { title: 'Advertising Agencies', desc: 'وكالات الدعاية والإعلان والحملات المتكاملة.' },
+      { title: 'Creative & Branding Agencies', desc: 'الوكالات الإبداعية ووكالات بناء العلامات.' },
+      { title: 'Real Estate Marketing Agencies', desc: 'الوكالات المتخصصة في التسويق العقاري.' },
+      { title: 'Experiential Agencies', desc: 'وكالات التجارب والفعاليات والتنشيط.' },
+      { title: 'Architecture & Design Firms', desc: 'المكاتب التي تحتاج إلى رفع مستوى تقديم المشاريع.' },
+      { title: 'Government & Institutional Communications', desc: 'الجهات التي تحتاج إلى تحويل المشاريع والمبادرات إلى تجارب بصرية.' },
+    ],
+    finalCtaTitle: "Let's Build Something Bigger Together.",
+    finalCtaLead: 'لديكم مشروع، Pitch أو عميل يحتاج إلى قدرات بصرية وتجريبية متقدمة؟',
+    finalCtaSub: 'دعونا نرى كيف يمكن لـGraphics House أن تصبح امتدادًا متخصصًا لفريقكم.',
+    finalCtaPrimary: 'ابدأ محادثة الشراكة',
+    finalCtaSecondary: 'أرسل Brief لمشروع',
+    formTitle: 'Agency Partnership Inquiry',
+    formSub: 'شاركونا نبذة عن وكالتك وفرصة التعاون، وسيتواصل معك فريق Graphics House لمناقشة الخطوة التالية.',
+    formSubject: 'Agency Partnership Inquiry — AR',
     formNext: `${BASE}/partner-network.html?sent=1#inquiry`,
-    fields: { segment: 'نوع الشركة', collab: 'كيف يمكن أن نتعاون؟', name: 'الاسم', role: 'المنصب', email: 'البريد الإلكتروني', phone: 'الجوال', message: 'نص الرسالة' },
-    segmentOptions: [
-      { v: '', l: 'اختر نوع الشركة' },
-      { v: 'agency', l: 'وكالات الدعاية والإعلان' },
-      { v: 'engineering', l: 'المكاتب الهندسية' },
-      { v: 'contracting', l: 'شركات المقاولات' },
-      { v: 'other', l: 'أخرى' },
+    fields: {
+      name: 'Full Name',
+      agency: 'Agency Name',
+      role: 'Position',
+      email: 'Email',
+      phone: 'Phone',
+      website: 'Agency Website',
+      partnership: 'What type of partnership are you interested in?',
+      clients: 'What type of clients do you mainly serve?',
+      message: 'Tell us about the opportunity',
+    },
+    partnershipOpts: [
+      { id: 'referral', label: 'Referral' },
+      { id: 'co-delivery', label: 'Co-Delivery' },
+      { id: 'white-label', label: 'White Label' },
+      { id: 'preferred-partner', label: 'Preferred Partner' },
+      { id: 'pitch-support', label: 'Project / Pitch Support' },
     ],
-    collabOptions: [
-      { v: '', l: 'اختر نوع التعاون' },
-      { v: 'production-partnership', l: 'شراكة إنتاجية' },
-      { v: 'co-delivery', l: 'Co-Delivery — تسليم مشترك' },
-      { v: 'referral', l: 'إحالة مشاريع' },
-      { v: 'white-label', l: 'White Label — وفق الاتفاق' },
-      { v: 'pitch-support', l: 'دعم Pitch / عروض تقديمية' },
-      { v: 'active-project', l: 'مشروع قائم' },
-      { v: 'strategic', l: 'شراكة استراتيجية' },
+    clientOpts: [
+      { id: 'real-estate', label: 'Real Estate' },
+      { id: 'government', label: 'Government' },
+      { id: 'corporate', label: 'Corporate' },
+      { id: 'culture', label: 'Culture & Museums' },
+      { id: 'hospitality', label: 'Hospitality' },
+      { id: 'experiential', label: 'Events & Experiential' },
+      { id: 'other', label: 'Other' },
     ],
-    messagePlaceholder: 'موعد مناسب للاجتماع، أو تفاصيل المشروع / الـPitch.',
-    submit: 'إرسال الطلب',
+    messagePlaceholder: 'Brief، Pitch، أو تفاصيل فرصة التعاون…',
+    submit: 'Submit Partnership Inquiry',
     sentMsg: 'شكراً لتواصلكم. سيتواصل فريق الشراكات معكم خلال 24 ساعة عمل.',
-    wa: 'واتساب',
+    pageFootTagline: 'Visualizing Projects. Creating Experiences.',
+    pageFootLinks: 'Project Launch™ · 3D Visualization · Films · Maquettes · Interactive · Experiential Production',
     langSwitch: 'English',
     langHref: 'partner-network-en.html',
   },
@@ -125,173 +180,215 @@ const COPY = {
     canonical: `${BASE}/partner-network-en.html`,
     altEn: `${BASE}/partner-network-en.html`,
     altAr: `${BASE}/partner-network.html`,
-    title: 'Partner Network | Graphics House',
+    title: 'Agency Partner Network™ | Graphics House',
     description:
-      'Expand your agency capabilities — Graphics House is your specialist visual and experiential production partner across the GCC.',
-    ogTitle: 'Partner Network — Graphics House',
-    eye: 'Visual & Experiential Production Partner',
-    h1: 'Expand your agency',
-    h1Gold: 'without building a new team',
-    lead:
-      'Graphics House is your specialist partner in turning projects into visual and physical experiences — from 3D and cinematic film to maquettes, interactive experiences, and presentation environments.',
-    heroYou: 'You own the client and the strategy.',
-    heroUs: 'We add the visual and experiential production layer — without competing for the client.',
-    segmentsLabel: 'Your organization type',
-    segmentsNote: 'Advertising & creative agencies — our primary partners',
-    segments: [
-      { id: 'agency', icon: 'campaign', title: 'Advertising & creative agencies', desc: 'Extend what you deliver — we execute the visual and experiential layer beside you.', featured: true },
-      { id: 'engineering', icon: 'architecture', title: 'Engineering firms', desc: 'Complete your design package with Project Launch™ — film · maquette · 3D · interactive.' },
-      { id: 'contracting', icon: 'construction', title: 'Contracting companies', desc: 'Turn active projects into compelling presentation experiences for owners and investors.' },
-      { id: 'other', icon: 'domain', title: 'Other', desc: 'Another organization — share details in the form below.' },
-    ],
-    whyTitle: 'What your agency gains',
-    whySub: 'A partnership that helps you win and deliver bigger projects — not just another vendor.',
+      'Expand your agency without building a new team — Graphics House is your specialist visual and experiential production partner.',
+    ogTitle: 'Agency Partner Network™ — Graphics House',
+    brand: 'Agency Partner Network™',
+    heroH1: 'Expand your agency.',
+    heroH2: 'Without building a new team.',
+    heroLead:
+      'Graphics House is your specialist visual and experiential production partner — adding to your agency the 3D, cinematic film, architectural maquette, interactive, and presentation capabilities your clients need.',
+    heroSupport: 'You own the client and the strategy.<br>We add the visual and experiential production layer.',
+    heroCtaPrimary: 'Start partnership conversation',
+    heroCtaSecondary: 'Explore our capabilities',
+    heroImg: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg',
+    heroWebp: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.webp',
+    ideaTitle: "You don't need another agency.",
+    ideaSub: 'You need a specialist partner.',
+    ideaBody:
+      'Graphics House does not compete for your client, strategy, or campaign. We work as a specialist extension of your team — providing production capabilities your agency may not need to build in-house.',
+    ideaList: ['3D Visualization', 'Cinematic Films', 'Architectural Maquettes', 'Interactive Experiences', 'Digital Presentations', 'Experiential Environments'],
+    ideaTail: 'We can join at the stage where your agency needs these capabilities.',
+    ideaHighlight: 'More capabilities. More opportunities. No new department required.',
+    fitTitle: 'Two teams. One system.',
+    fitYouLabel: 'YOUR AGENCY',
+    fitYouLead: 'You Lead',
+    fitYouItems: ['Client Relationship', 'Brand Strategy', 'Campaign Strategy', 'Creative Direction', 'Marketing & Communication', 'Account Management'],
+    fitUsLabel: 'GRAPHICS HOUSE',
+    fitUsLead: 'We Add',
+    fitUsItems: ['3D Visualization', 'CGI & Cinematic Films', 'Architectural Maquettes', 'Interactive Experiences', 'Digital Presentations', 'Physical & Experiential Environments'],
+    fitTogether: 'Together',
+    fitResult: 'A More Powerful Client Solution.',
+    valueTitle: 'What your agency gains',
     benefits: [
-      { title: 'Expand your services', desc: 'Offer clients additional capabilities without building new departments.' },
-      { title: 'Raise proposal value', desc: 'Bring 3D, maquettes, film, and interactive into pitches and live projects.' },
-      { title: 'Shorten delivery time', desc: 'One specialist partner instead of coordinating multiple vendors.' },
-      { title: 'Reduce fixed cost', desc: 'No need for a permanent in-house production team.' },
-      { title: 'Win bigger briefs', desc: 'Added capabilities to compete on more complex opportunities.' },
+      { n: '01', title: 'Expand your offering', desc: 'Deliver advanced visual and experiential capabilities without building a specialist department.' },
+      { n: '02', title: 'Raise project value', desc: 'Bring 3D, maquettes, film, and interactive into high-value proposals and live projects.' },
+      { n: '03', title: 'Respond to complex briefs', desc: 'When a project moves from campaign to integrated experience, you have a specialist who can move fast.' },
+      { n: '04', title: 'Reduce complexity', desc: 'One partner managing our production layer instead of coordinating multiple vendors.' },
+      { n: '05', title: 'Strengthen win rates', desc: 'We support pitches that need stronger visual direction or production approach.' },
+      { n: '06', title: 'Stay flexible', desc: 'Use Graphics House when you need us — without permanent headcount or new infrastructure.' },
     ],
-    complementTitle: 'A more powerful client solution',
-    complementYou: 'Your agency',
-    complementYouItems: ['Strategy', 'Brand', 'Campaign', 'Marketing', 'Client relationship'],
-    complementUs: 'Graphics House',
-    complementUsItems: ['3D', 'Films', 'Maquettes', 'Interactive', 'Experiences'],
-    complementResult: '= A more powerful client solution',
-    pitchTitle: 'Win more pitches',
-    pitchLead: 'Bring Graphics House into your next complex pitch and strengthen the production side of your proposal.',
-    pitchSub: 'Pitch tomorrow and need interactive + maquette + film + 3D? We help you build the visual layer — and if you win, we execute with you.',
+    capTitle: 'Specialist capabilities.',
+    capSub: 'Connected around one project.',
+    capFootH: 'One specialist partner.',
+    capFootP: 'Multiple production capabilities.',
+    capabilities: [
+      { tag: 'VISUALIZE', title: '3D & Architectural Visualization', desc: 'Turn plans and ideas into clear, compelling visual experiences.', href: 'services/rendering-en.html', img: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg', webp: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp' },
+      { tag: 'TELL', title: 'Cinematic Films & Animation', desc: 'Cinematic film, CGI, animation, and motion graphics to tell the project story.', href: 'services/animation-en.html', img: 'assets/projects/cinematic/video-1.jpg', webp: 'assets/projects/cinematic/video-1.webp' },
+      { tag: 'BUILD', title: 'Architectural Maquettes', desc: 'Precise architectural models, presentation models, and signature project maquettes.', href: 'services/maquettes-en.html', img: 'assets/projects/maquettes/anan-eskan-maquette-01.jpeg', webp: 'assets/projects/maquettes/anan-eskan-maquette-01.webp' },
+      { tag: 'INTERACT', title: 'Interactive Experiences', desc: 'Interactive screens, touch experiences, VR, and digital presentations.', href: 'services/interactive-en.html', img: 'assets/projects/interactive-01.jpg', webp: 'assets/projects/interactive-01.webp' },
+      { tag: 'EXPERIENCE', title: 'Physical & Experiential Environments', desc: 'Exhibition environments, sales galleries, spatial experiences, and physical project elements.', href: 'services/interactive-en.html', img: 'assets/projects/pavilion1.jpg', webp: 'assets/projects/pavilion1.webp' },
+    ],
+    plEyebrow: 'An example of what we can build together',
     plTitle: 'Project Launch™',
     plSub: 'Bring Your Project to Life Before It Is Built.',
-    plItems: ['Masterplan Visualization', 'Cinematic Film', 'Architectural Maquette', 'Interactive Experience', 'Presentation Environment'],
-    plNote: 'An example of what we can build with you — for real estate projects, your agency integrates these capabilities into its strategy while Graphics House handles specialist production.',
+    plBody: 'Project Launch™ is Graphics House\'s integrated system helping developers and project owners see, understand, and experience their projects before they are built.',
+    plItems: ['3D Visualization', 'Cinematic Films', 'Architectural Maquettes', 'Interactive Experiences', 'Digital Displays', 'Presentation Environments'],
+    plQuote: 'Your agency leads strategy, marketing, and the client relationship — while Graphics House handles the specialist visual and experiential layer.',
     plHref: 'solutions/project-launch-en.html',
     plCta: 'Explore Project Launch™',
-    capabilitiesTitle: 'Production capabilities',
-    capabilitiesSub: 'Visual & experiential production — not a full-service marketing agency.',
-    links: [
-      { href: 'services/animation-en.html', label: 'CGI Films', sub: 'Cinematic production', img: 'assets/projects/cinematic/video-1.jpg', webp: 'assets/projects/cinematic/video-1.webp' },
-      { href: 'services/maquettes-en.html', label: 'Scale Models', sub: 'Architectural maquettes', img: 'assets/projects/maquettes/anan-eskan-maquette-01.jpeg', webp: 'assets/projects/maquettes/anan-eskan-maquette-01.webp' },
-      { href: 'services/rendering-en.html', label: 'Visualization', sub: '3D · renders', img: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg', webp: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp' },
-      { href: 'services/interactive-en.html', label: 'Interactive', sub: 'Screens · VR', img: 'assets/projects/interactive-01.jpg', webp: 'assets/projects/interactive-01.webp' },
+    pitchTitle: "Don't wait for the project.",
+    pitchSub: 'Help your agency win it.',
+    pitchBody: 'Some projects are decided before the contract is signed. When your pitch or proposal needs a stronger visual experience, maquette, film, or interactive environment, Graphics House can join early to strengthen the production side.',
+    pitchList: ['Creative Concepts', '3D Visual Directions', 'Maquette Concepts', 'Experience Concepts', 'Production Approaches', 'Visual Presentation Assets'],
+    pitchHighlight: 'Bring us into your next complex pitch.',
+    pitchCta: 'Discuss a Pitch',
+    modelsTitle: 'How we work together',
+    models: [
+      { n: '01', tag: 'REFERRAL', title: 'You have an opportunity that fits our capabilities.', desc: 'Introduce the project and we define the best way to collaborate.' },
+      { n: '02', tag: 'CO-DELIVERY', title: 'You lead the client. We lead our specialty.', desc: 'We work as part of the project team with clear roles and responsibilities.' },
+      { n: '03', tag: 'WHITE LABEL', title: 'Production support behind the scenes when needed.', desc: 'Some projects can be structured as white label per project nature and agreement, with full confidentiality and client relationship protection.' },
+      { n: '04', tag: 'PREFERRED PARTNER', title: 'Ongoing partnership — not a one-off project.', desc: 'For agencies with recurring needs, we can build a long-term framework covering workflow, priority, pricing, and response.' },
     ],
-    caseLabel: 'Selected Collaboration',
-    caseTitle: 'Muslim World League Exhibition',
-    caseDesc: 'Interactive experiences + architectural maquettes + presentation environment',
+    processTitle: 'From brief to delivery',
+    process: [
+      { n: '01', title: 'You Share the Brief', desc: 'You share the client need, context, and required outputs.' },
+      { n: '02', title: 'We Define the Opportunity', desc: 'We identify where Graphics House adds the most value.' },
+      { n: '03', title: 'We Build the Production Scope', desc: 'We define approach, deliverables, timeline, and cost.' },
+      { n: '04', title: 'We Produce', desc: 'The Graphics House team executes and manages the agreed scope.' },
+      { n: '05', title: 'You Deliver the Bigger Solution', desc: 'Outputs return to your project system as part of the final client solution.' },
+    ],
+    caseEyebrow: 'Real experience.',
+    caseTitle: 'Not capabilities on paper alone.',
+    caseName: 'Muslim World League Exhibition',
+    caseTags: 'Interactive Experiences + Architectural Maquettes + Presentation Environment',
+    caseBody: 'For the Muslim World League exhibition, Graphics House developed and delivered visual and experiential elements combining architectural maquettes, interactive experiences, and presentation environments — turning institutional content into something audiences could see, understand, and engage with.',
+    caseVideoCta: 'Watch the Project Film',
     caseHref: 'case-study-mwl-en.html',
-    caseCta: 'View the project',
-    caseImg: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg',
-    caseWebp: 'assets/projects/maquettes/mwl-humanity-exhibition-hero.webp',
-    aboutText:
-      'Since 2004 — over 20 years of visual and experiential production for major projects across Saudi Arabia and the GCC. We add a specialist production layer to your offering. **We do not compete** for the client or the strategy.',
-    ctaTitle: "Let's build together",
-    ctaLead: "Have a project or pitch that needs advanced visual or experiential capabilities? Let's find a way to build it together.",
-    ctaBtn: 'Start partnership conversation',
-    faqTitle: 'Frequently asked questions',
-    faqSub: 'Brief answers for potential partners.',
-    faq: [
-      { q: 'Is Graphics House a competitor to my agency?', a: 'No. We are a specialist production partner — you keep the client and strategy; we execute the visual and experiential layer.' },
-      { q: 'Do you offer white label?', a: 'Yes. Some projects can be structured as white label according to the partnership and agreement, with full confidentiality and protection of your client relationship. Co-Delivery and joint production models are also available.' },
-      { q: 'Do you need us to hand over the client?', a: 'No. Your agency can retain the client relationship and account management; we define the working model per project.' },
-      { q: 'Can we use Graphics House in pitches and pitch decks?', a: 'Yes. We can support proposals that require our specialist capabilities — including before the project is awarded.' },
-      { q: 'How do we start?', a: 'With a 20–30 minute introduction, then scope definition, followed by joint execution with a clear framework.' },
-      { q: 'How quickly do you respond?', a: 'Our partnerships team reviews every request and responds within 24 business hours.' },
+    whyTitle: 'Why Graphics House?',
+    whyItems: [
+      { title: 'Over 20 years of experience', sub: 'Since 2004' },
+      { title: 'Saudi-Based', sub: 'Deep experience in Saudi Arabia and the region.' },
+      { title: 'Multi-Disciplinary', sub: 'Multiple production disciplines under one partner.' },
+      { title: 'Scalable', sub: 'Specialist team and expandable capability network by project size.' },
+      { title: 'Project Experience', sub: 'Real estate, institutional, cultural, exhibition, and experiential projects.' },
+      { title: 'One Point of Contact', sub: 'Clear contact for managing the Graphics House scope.' },
     ],
-    formTitle: 'Partnership conversation',
-    formSub: 'Our partnerships team will review your request and contact you within 24 business hours.',
-    formSubject: 'Partnership inquiry — Partner Network EN',
+    principlesTitle: 'Partnership built on trust.',
+    principles: [
+      { title: 'Client Protection', desc: 'Client relationships are protected per the agreed partnership model.' },
+      { title: 'Confidentiality', desc: 'NDA and confidentiality available for projects that require it.' },
+      { title: 'Clear Responsibilities', desc: 'Roles and deliverables are defined before production starts.' },
+      { title: 'No Unapproved Direct Contact', desc: 'No direct contact with the partner\'s client outside the agreed framework.' },
+      { title: 'Professional Delivery', desc: 'Graphics House is accountable for quality and delivery of its agreed scope.' },
+    ],
+    whoTitle: 'Is this right for your agency?',
+    whoItems: [
+      { title: 'Advertising Agencies', desc: 'Advertising and integrated campaign agencies.' },
+      { title: 'Creative & Branding Agencies', desc: 'Creative studios and brand-building agencies.' },
+      { title: 'Real Estate Marketing Agencies', desc: 'Agencies focused on real estate marketing.' },
+      { title: 'Experiential Agencies', desc: 'Experiential, events, and activation agencies.' },
+      { title: 'Architecture & Design Firms', desc: 'Firms that need to elevate project presentation.' },
+      { title: 'Government & Institutional Communications', desc: 'Organizations turning initiatives into visual experiences.' },
+    ],
+    finalCtaTitle: "Let's Build Something Bigger Together.",
+    finalCtaLead: 'Have a project, pitch, or client that needs advanced visual and experiential capabilities?',
+    finalCtaSub: 'Let\'s explore how Graphics House can become a specialist extension of your team.',
+    finalCtaPrimary: 'Start partnership conversation',
+    finalCtaSecondary: 'Send a project brief',
+    formTitle: 'Agency Partnership Inquiry',
+    formSub: 'Share a brief about your agency and the collaboration opportunity. Our team will reach out to discuss next steps.',
+    formSubject: 'Agency Partnership Inquiry — EN',
     formNext: `${BASE}/partner-network-en.html?sent=1#inquiry`,
-    fields: { segment: 'Company type', collab: 'How can we collaborate?', name: 'Name', role: 'Job title', email: 'Email', phone: 'Mobile', message: 'Message' },
-    segmentOptions: [
-      { v: '', l: 'Select company type' },
-      { v: 'agency', l: 'Advertising & creative agencies' },
-      { v: 'engineering', l: 'Engineering firms' },
-      { v: 'contracting', l: 'Contracting companies' },
-      { v: 'other', l: 'Other' },
+    fields: {
+      name: 'Full Name',
+      agency: 'Agency Name',
+      role: 'Position',
+      email: 'Email',
+      phone: 'Phone',
+      website: 'Agency Website',
+      partnership: 'What type of partnership are you interested in?',
+      clients: 'What type of clients do you mainly serve?',
+      message: 'Tell us about the opportunity',
+    },
+    partnershipOpts: [
+      { id: 'referral', label: 'Referral' },
+      { id: 'co-delivery', label: 'Co-Delivery' },
+      { id: 'white-label', label: 'White Label' },
+      { id: 'preferred-partner', label: 'Preferred Partner' },
+      { id: 'pitch-support', label: 'Project / Pitch Support' },
     ],
-    collabOptions: [
-      { v: '', l: 'Select collaboration type' },
-      { v: 'production-partnership', l: 'Production partnership' },
-      { v: 'co-delivery', l: 'Co-Delivery — joint delivery' },
-      { v: 'referral', l: 'Project referral' },
-      { v: 'white-label', l: 'White label — by agreement' },
-      { v: 'pitch-support', l: 'Pitch / proposal support' },
-      { v: 'active-project', l: 'Active project' },
-      { v: 'strategic', l: 'Strategic partnership' },
+    clientOpts: [
+      { id: 'real-estate', label: 'Real Estate' },
+      { id: 'government', label: 'Government' },
+      { id: 'corporate', label: 'Corporate' },
+      { id: 'culture', label: 'Culture & Museums' },
+      { id: 'hospitality', label: 'Hospitality' },
+      { id: 'experiential', label: 'Events & Experiential' },
+      { id: 'other', label: 'Other' },
     ],
-    messagePlaceholder: 'Preferred meeting time, or project / pitch details.',
-    submit: 'Submit inquiry',
+    messagePlaceholder: 'Brief, pitch, or collaboration details…',
+    submit: 'Submit Partnership Inquiry',
     sentMsg: 'Thank you. Our partnerships team will contact you within 24 business hours.',
-    wa: 'WhatsApp',
+    pageFootTagline: 'Visualizing Projects. Creating Experiences.',
+    pageFootLinks: 'Project Launch™ · 3D Visualization · Films · Maquettes · Interactive · Experiential Production',
     langSwitch: 'العربية',
     langHref: 'partner-network.html',
   },
 };
+
+function li(items) {
+  return items.map((x) => `<li>${x}</li>`).join('');
+}
+
+function chips(items) {
+  return items.map((x) => `<span class="pn-chip">${x}</span>`).join('');
+}
+
+function checkGroup(opts, prefix) {
+  return opts
+    .map(
+      (o) => `
+    <label class="pn-check">
+      <input type="checkbox" name="${prefix}_${o.id}" value="Yes">
+      <span>${o.label}</span>
+    </label>`
+    )
+    .join('');
+}
 
 function buildPage(c) {
   const isEn = c.lang === 'en';
   const header = renderHeader(0, isEn);
   const footer = renderFooter(0, isEn);
   const ff = isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif";
+  const ffH = isEn ? "'Inter', 'Tajawal', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif";
 
-  const segmentOptions = c.segmentOptions.map((o) => `<option value="${o.v}">${o.l}</option>`).join('');
-  const collabOptions = c.collabOptions.map((o) => `<option value="${o.v}">${o.l}</option>`).join('');
-
-  const segmentCards = c.segments
-    .map((s, i) => {
-      const cls = ['pn-seg', i === 0 ? 'is-active' : '', s.featured ? 'pn-seg--featured' : ''].filter(Boolean).join(' ');
+  const capHtml = c.capabilities
+    .map((cap) => {
+      const img = cap.webp
+        ? `<picture><source srcset="${cap.webp}" type="image/webp"><img src="${cap.img}" alt="" loading="lazy"></picture>`
+        : `<img src="${cap.img}" alt="" loading="lazy">`;
       return `
-    <button type="button" class="${cls}" data-segment="${s.id}" aria-pressed="${i === 0 ? 'true' : 'false'}">
-      <span class="material-symbols-outlined pn-seg-icon" aria-hidden="true">${s.icon}</span>
-      <span class="pn-seg-title">${s.title}</span>
-      <span class="pn-seg-desc">${s.desc}</span>
-    </button>`;
+    <article class="pn-cap">
+      <div class="pn-cap-media">${img}</div>
+      <div class="pn-cap-body">
+        <span class="pn-cap-tag">${cap.tag}</span>
+        <h3>${cap.title}</h3>
+        <p>${cap.desc}</p>
+        <a href="${cap.href}" class="pn-cap-link" target="_blank" rel="noopener noreferrer">${isEn ? 'Learn more' : 'اعرف المزيد'} →</a>
+      </div>
+    </article>`;
     })
     .join('');
-
-  const benefitsHtml = c.benefits
-    .map((b) => `<div class="pn-benefit"><h3>${b.title}</h3><p>${b.desc}</p></div>`)
-    .join('');
-
-  const complementYou = c.complementYouItems.map((x) => `<span>${x}</span>`).join('');
-  const complementUs = c.complementUsItems.map((x) => `<span>${x}</span>`).join('');
-  const plItems = c.plItems.map((x) => `<li>${x}</li>`).join('');
-
-  const exploreLinks = c.links
-    .map((l) => {
-      const imgHtml = l.webp
-        ? `<picture><source srcset="${l.webp}" type="image/webp"><img src="${l.img}" alt="${l.label}" loading="lazy"></picture>`
-        : `<img src="${l.img}" alt="${l.label}" loading="lazy">`;
-      return `
-    <a href="${l.href}" class="pn-offer-card" target="_blank" rel="noopener noreferrer">
-      <div class="pn-offer-img">${imgHtml}</div>
-      <span class="pn-offer-label">${l.label}</span>
-      <span class="pn-offer-sub">${l.sub}</span>
-      <span class="material-symbols-outlined pn-offer-ext" aria-hidden="true">open_in_new</span>
-    </a>`;
-    })
-    .join('');
-
-  const faqItems = c.faq
-    .map((item, i) => `
-    <details class="pn-faq-item"${i === 0 ? ' open' : ''}>
-      <summary class="pn-faq-q">${item.q}</summary>
-      <p class="pn-faq-a">${item.a}</p>
-    </details>`)
-    .join('');
-
-  const aboutHtml = c.aboutText.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 
   return `<!DOCTYPE html>
 <html lang="${c.lang}" dir="${c.dir}" class="scroll-smooth">
 <head>
 <script src="assets/gh-forms-config.js?v=2"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y67JVE898Z"></script>
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');</script>
 <script src="assets/gh-analytics.js?v=3"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -305,7 +402,7 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <meta name="description" content="${c.description}">
 <meta property="og:title" content="${c.ogTitle}">
 <meta property="og:description" content="${c.description}">
-<meta property="og:image" content="${BASE}/assets/favicon/og-image.png">
+<meta property="og:image" content="${BASE}/${c.heroImg}">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
@@ -317,117 +414,154 @@ window.gtag=gtag;gtag('js',new Date());gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="assets/site-header.css?v=33">
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=8">
 <style>
-:root{--gold:#C9A84C;--gold-soft:rgba(201,168,76,0.1);--ink:#141414;--muted:rgba(20,20,20,0.62);--line:rgba(20,20,20,0.09);--white:#FFF;--bg:#FAFAF8}
+:root{--gold:#C9A84C;--gold-soft:rgba(201,168,76,.08);--ink:#141414;--muted:rgba(20,20,20,.58);--line:rgba(20,20,20,.08);--white:#FFF;--ivory:#FAFAF8}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body.gh-partner-network{font-family:${isEn ? "'Inter','Tajawal','IBM Plex Sans Arabic'" : "'Tajawal','IBM Plex Sans Arabic',-apple-system,BlinkMacSystemFont"},sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
-.pn-wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-@media(min-width:768px){.pn-wrap{padding:0 40px}}
+html{scroll-behavior:smooth}
+body.gh-partner-network{font-family:${isEn ? "'Inter','Tajawal','IBM Plex Sans Arabic'" : "'Tajawal','IBM Plex Sans Arabic',-apple-system,BlinkMacSystemFont"},sans-serif;background:var(--ivory);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6}
+.pn-wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.pn-wrap{padding:0 48px}}
 .pn-lang{position:fixed;top:calc(var(--gh-header-height,88px) + 12px);${isEn ? 'right' : 'left'}:20px;z-index:100;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72);text-decoration:none;padding:7px 14px;background:rgba(8,12,10,.88);border:1px solid rgba(201,168,76,.22);border-radius:999px}
 .pn-lang:hover{border-color:var(--gold);color:#fff}
-.pn-hero{padding:calc(var(--gh-header-height,88px) + 56px) 0 40px;background:var(--white);border-bottom:1px solid var(--line);text-align:${isEn ? 'left' : 'right'}}
-.pn-eye{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-family:${ff}}
-.pn-h1{font-size:clamp(34px,5.2vw,54px);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin-bottom:14px;font-family:${ff}}
-.pn-h1 em{font-style:normal;color:var(--gold);font-weight:700}
-.pn-lead{font-size:clamp(16px,1.8vw,18px);line-height:1.9;color:var(--muted);max-width:720px;font-family:${ff}}
-.pn-hero-split{display:grid;grid-template-columns:1fr;gap:12px;margin-top:28px;max-width:720px}
-@media(min-width:640px){.pn-hero-split{grid-template-columns:1fr 1fr}}
-.pn-hero-box{padding:18px 20px;border-radius:12px;border:1px solid var(--line);background:var(--bg);font-size:15px;line-height:1.75;font-family:${ff}}
-.pn-hero-box strong{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:700}
-.pn-hero-box--us{background:var(--gold-soft);border-color:rgba(201,168,76,.24)}
-.pn-segments{padding:48px 0 56px;background:var(--bg);border-bottom:1px solid var(--line)}
-.pn-seg-label{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-family:${ff}}
-.pn-seg-note{font-size:14px;color:var(--gold);margin-bottom:18px;font-weight:600;font-family:${ff}}
-.pn-seg-grid{display:grid;grid-template-columns:1fr;gap:12px}
-@media(min-width:640px){.pn-seg-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:960px){.pn-seg-grid{grid-template-columns:repeat(4,1fr)}}
-.pn-seg{text-align:${isEn ? 'left' : 'right'};padding:22px 20px;background:var(--white);border:1.5px solid var(--line);border-radius:12px;cursor:pointer;transition:.25s;font-family:inherit;color:inherit;width:100%}
-.pn-seg:hover{border-color:rgba(201,168,76,.35);box-shadow:0 8px 32px rgba(0,0,0,.04)}
-.pn-seg.is-active,.pn-seg--featured.is-active{border-color:var(--gold);background:linear-gradient(135deg,var(--white),rgba(201,168,76,.06));box-shadow:0 12px 40px rgba(201,168,76,.12)}
-.pn-seg--featured{border-color:rgba(201,168,76,.28)}
-.pn-seg-icon{font-size:28px;color:var(--gold);display:block;margin-bottom:12px}
-.pn-seg-title{display:block;font-size:15px;font-weight:700;margin-bottom:6px;line-height:1.35}
-.pn-seg-desc{display:block;font-size:13px;color:var(--muted);line-height:1.65}
-.pn-section{padding:72px 0}
-.pn-section--white{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.pn-h2{font-size:clamp(28px,3.2vw,40px);font-weight:300;margin-bottom:12px;letter-spacing:-.02em;font-family:${ff}}
-.pn-sub{font-size:16px;color:var(--muted);line-height:1.85;margin-bottom:28px;max-width:640px;font-family:${ff}}
-.pn-benefits{display:grid;grid-template-columns:1fr;gap:14px}
+.pn-sec{padding:88px 0}
+.pn-sec--white{background:var(--white)}
+.pn-sec--tight{padding:64px 0}
+.pn-eye{display:block;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-family:${ff}}
+.pn-h1{font-size:clamp(36px,5.5vw,58px);font-weight:300;line-height:1.12;letter-spacing:-.03em;font-family:${ffH}}
+.pn-h2{font-size:clamp(28px,3.8vw,44px);font-weight:300;line-height:1.18;letter-spacing:-.025em;margin-bottom:14px;font-family:${ffH}}
+.pn-h3{font-size:clamp(18px,2.2vw,22px);font-weight:700;line-height:1.35;font-family:${ffH}}
+.pn-lead{font-size:clamp(17px,1.9vw,19px);line-height:1.85;color:var(--muted);max-width:640px;font-family:${ff}}
+.pn-support{margin-top:22px;font-size:16px;line-height:1.9;font-weight:600;max-width:520px;font-family:${ff}}
+.pn-hero{padding:calc(var(--gh-header-height,88px) + 48px) 0 72px;background:var(--white);border-bottom:1px solid var(--line)}
+.pn-hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media(min-width:960px){.pn-hero-grid{grid-template-columns:1.05fr .95fr;gap:56px}}
+.pn-hero-copy{text-align:${isEn ? 'left' : 'right'}}
+.pn-hero-sub{font-size:clamp(22px,3vw,32px);font-weight:300;margin-top:8px;color:var(--ink);font-family:${ffH}}
+.pn-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.pn-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.04em;text-decoration:none;font-family:${ff};transition:.25s;border:1.5px solid transparent}
+.pn-btn--primary{background:#080c0a;color:#fff}
+.pn-btn--primary:hover{background:#1a1f1c;transform:translateY(-1px)}
+.pn-btn--ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.pn-btn--ghost:hover{border-color:var(--gold);color:var(--gold)}
+.pn-hero-media{border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:#eceae4;box-shadow:0 24px 64px rgba(0,0,0,.06)}
+.pn-hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+.pn-idea{text-align:${isEn ? 'left' : 'right'}}
+.pn-idea-body{font-size:17px;line-height:1.95;color:var(--muted);max-width:720px;margin:20px 0;font-family:${ff}}
+.pn-chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+.pn-chip{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:600;background:var(--white);font-family:${ff}}
+.pn-quote{margin-top:32px;padding:24px 28px;border-${isEn ? 'left' : 'right'}:3px solid var(--gold);background:var(--gold-soft);font-size:17px;font-weight:600;line-height:1.6;font-family:${ff}}
+.pn-fit-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:36px}
+@media(min-width:768px){.pn-fit-grid{grid-template-columns:1fr auto 1fr;align-items:stretch}}
+.pn-fit-col{padding:32px 28px;border:1px solid var(--line);border-radius:16px;background:var(--white)}
+.pn-fit-col--gh{background:var(--gold-soft);border-color:rgba(201,168,76,.22)}
+.pn-fit-label{font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--gold);margin-bottom:6px;font-family:${ff}}
+.pn-fit-lead{font-size:13px;font-weight:700;margin-bottom:18px;font-family:${ff}}
+.pn-fit-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.pn-fit-col li{font-size:14px;line-height:1.5;color:var(--muted);padding-${isEn ? 'left' : 'right'}:14px;border-${isEn ? 'left' : 'right'}:2px solid var(--line);font-family:${ff}}
+.pn-fit-plus{display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--gold);font-weight:300;padding:8px}
+.pn-fit-result{text-align:center;margin-top:36px}
+.pn-fit-result em{display:block;font-style:normal;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-family:${ff}}
+.pn-fit-result strong{font-size:clamp(20px,2.8vw,28px);font-weight:700;font-family:${ffH}}
+.pn-benefits{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:36px}
 @media(min-width:640px){.pn-benefits{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:960px){.pn-benefits{grid-template-columns:repeat(3,1fr)}}
-.pn-benefit{padding:22px 20px;background:var(--white);border:1px solid var(--line);border-radius:12px}
-.pn-benefit h3{font-size:15px;font-weight:700;margin-bottom:8px;font-family:${ff}}
-.pn-benefit p{font-size:14px;line-height:1.7;color:var(--muted);font-family:${ff}}
-.pn-complement{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;margin-top:8px}
-@media(max-width:767px){.pn-complement{grid-template-columns:1fr;gap:12px}}
-.pn-complement-col{padding:24px 20px;border-radius:14px;border:1px solid var(--line);background:var(--bg);text-align:center}
-.pn-complement-col--us{background:var(--gold-soft);border-color:rgba(201,168,76,.24)}
-.pn-complement-col h3{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-family:${ff}}
-.pn-complement-col span{display:inline-block;margin:4px 6px;padding:6px 12px;background:var(--white);border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;font-family:${ff}}
-.pn-complement-eq{font-size:28px;font-weight:300;color:var(--gold);text-align:center}
-.pn-complement-result{margin-top:20px;text-align:center;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);font-family:${ff}}
-.pn-pitch{padding:32px;border-radius:16px;background:#080c0a;color:#fff;margin-top:0}
-.pn-pitch h2{color:#fff;margin-bottom:10px}
-.pn-pitch .pn-sub{color:rgba(255,255,255,.72)}
-.pn-pl{margin-top:0;padding:36px;border-radius:16px;border:1px solid var(--line);background:var(--white)}
-.pn-pl-items{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;list-style:none}
-.pn-pl-items li{padding:8px 14px;background:var(--gold-soft);border:1px solid rgba(201,168,76,.22);border-radius:999px;font-size:13px;font-weight:600;font-family:${ff}}
-.pn-pl-note{font-size:15px;line-height:1.85;color:var(--muted);margin-bottom:20px;font-family:${ff}}
-.pn-pl-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:#080c0a;color:#fff;text-decoration:none;border-radius:999px;font-size:13px;font-weight:700;font-family:${ff}}
-.pn-offers{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-@media(min-width:768px){.pn-offers{grid-template-columns:repeat(4,1fr)}}
-.pn-offer-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:14px;overflow:hidden;position:relative;transition:.25s}
-.pn-offer-card:hover{border-color:rgba(201,168,76,.4);transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,.07)}
-.pn-offer-img{aspect-ratio:4/3;overflow:hidden;background:#eceae4}
-.pn-offer-img img,.pn-offer-img picture{width:100%;height:100%;display:block}
-.pn-offer-img img{object-fit:cover;transition:transform .45s}
-.pn-offer-card:hover .pn-offer-img img{transform:scale(1.04)}
-.pn-offer-label{display:block;padding:14px 16px 4px;font-size:14px;font-weight:700;font-family:${ff}}
-.pn-offer-sub{display:block;padding:0 16px 16px;font-size:12px;color:var(--muted);font-family:${ff}}
-.pn-offer-ext{position:absolute;top:10px;${isEn ? 'right' : 'left'}:10px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.92);border-radius:8px;font-size:15px;color:var(--gold);opacity:0;transition:.25s}
-.pn-offer-card:hover .pn-offer-ext{opacity:1}
-.pn-case{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--bg)}
-@media(min-width:768px){.pn-case{grid-template-columns:1.1fr 1fr}}
-.pn-case-img{border-radius:12px;overflow:hidden;aspect-ratio:16/10}
+.pn-benefit{padding:28px 24px;background:var(--white)}
+.pn-benefit-n{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--gold);margin-bottom:10px;font-family:${ff}}
+.pn-benefit h3{font-size:16px;margin-bottom:8px}
+.pn-benefit p{font-size:14px;line-height:1.75;color:var(--muted);font-family:${ff}}
+.pn-cap{display:grid;grid-template-columns:1fr;gap:0;border-bottom:1px solid var(--line);padding:40px 0}
+@media(min-width:768px){.pn-cap{grid-template-columns:280px 1fr;gap:40px;align-items:center}}
+.pn-cap:last-child{border-bottom:none;padding-bottom:0}
+.pn-cap-media{border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#eceae4}
+.pn-cap-media img{width:100%;height:100%;object-fit:cover;display:block}
+.pn-cap-tag{font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--gold);margin-bottom:8px;display:block;font-family:${ff}}
+.pn-cap-body h3{font-size:clamp(18px,2.2vw,22px);margin-bottom:10px}
+.pn-cap-body p{font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:12px;font-family:${ff}}
+.pn-cap-link{font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;font-family:${ff}}
+.pn-cap-link:hover{color:var(--gold)}
+.pn-cap-foot{margin-top:48px;text-align:center;padding-top:40px;border-top:1px solid var(--line)}
+.pn-cap-foot h3{font-size:clamp(22px,3vw,30px);font-weight:700;margin-bottom:6px}
+.pn-cap-foot p{font-size:16px;color:var(--muted);font-family:${ff}}
+.pn-pl{padding:48px;border:1px solid var(--line);border-radius:20px;background:var(--white)}
+.pn-pl-items{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0;list-style:none}
+.pn-pl-items li{padding:8px 14px;background:var(--gold-soft);border-radius:999px;font-size:12px;font-weight:600;font-family:${ff}}
+.pn-pl-quote{margin:24px 0;padding:20px 24px;background:var(--ivory);border-radius:12px;font-size:15px;line-height:1.85;color:var(--muted);font-family:${ff}}
+.pn-pitch{padding:48px;border-radius:20px;background:#080c0a;color:#fff}
+.pn-pitch .pn-h2,.pn-pitch .pn-h3{color:#fff}
+.pn-pitch .pn-lead{color:rgba(255,255,255,.68)}
+.pn-pitch-list{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0;list-style:none}
+.pn-pitch-list li{padding:8px 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:12px;font-weight:600;font-family:${ff}}
+.pn-pitch-highlight{font-size:clamp(22px,3vw,32px);font-weight:700;margin:28px 0 20px;line-height:1.25;font-family:${ffH}}
+.pn-models{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
+@media(min-width:640px){.pn-models{grid-template-columns:repeat(2,1fr)}}
+.pn-model{padding:28px 24px;border:1px solid var(--line);border-radius:16px;background:var(--white)}
+.pn-model-tag{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--gold);margin-bottom:8px;display:block;font-family:${ff}}
+.pn-model h3{font-size:16px;margin-bottom:10px;line-height:1.45}
+.pn-model p{font-size:14px;line-height:1.75;color:var(--muted);font-family:${ff}}
+.pn-process{display:grid;grid-template-columns:1fr;gap:0;margin-top:32px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+@media(min-width:768px){.pn-process{grid-template-columns:repeat(5,1fr)}}
+.pn-step{padding:24px 20px;background:var(--white);border-bottom:1px solid var(--line)}
+@media(min-width:768px){.pn-step{border-bottom:none;border-${isEn ? 'right' : 'left'}:1px solid var(--line)}.pn-step:first-child{border-${isEn ? 'left' : 'right'}:none}}
+.pn-step:last-child{border:none}
+.pn-step-n{font-size:11px;font-weight:700;color:var(--gold);margin-bottom:10px;font-family:${ff}}
+.pn-step h3{font-size:14px;margin-bottom:8px;line-height:1.4}
+.pn-step p{font-size:13px;line-height:1.65;color:var(--muted);font-family:${ff}}
+.pn-case{display:grid;grid-template-columns:1fr;gap:32px;margin-top:36px}
+@media(min-width:960px){.pn-case{grid-template-columns:1.1fr .9fr;align-items:start}}
+.pn-case-media{border-radius:16px;overflow:hidden;background:#000;aspect-ratio:16/9}
+.pn-case-media iframe{width:100%;height:100%;border:0;display:block}
+.pn-case-img{margin-top:16px;border-radius:12px;overflow:hidden;aspect-ratio:16/10}
 .pn-case-img img{width:100%;height:100%;object-fit:cover;display:block}
-.pn-case-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-family:${ff}}
-.pn-case-title{font-size:clamp(20px,2.5vw,26px);font-weight:700;margin-bottom:8px;font-family:${ff}}
-.pn-case-desc{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:16px;font-family:${ff}}
-.pn-case-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:var(--gold);color:#080c0a;text-decoration:none;border-radius:999px;font-size:13px;font-weight:700;font-family:${ff}}
-.pn-about-text{font-size:17px;line-height:2;color:var(--muted);max-width:720px;font-family:${ff}}
-.pn-about-text strong{color:var(--ink);font-weight:700}
-.pn-cta-band{padding:56px 0;background:linear-gradient(135deg,#080c0a,#1a1f1c);color:#fff;text-align:${isEn ? 'left' : 'right'}}
-.pn-cta-band h2{color:#fff;margin-bottom:12px}
-.pn-cta-band p{color:rgba(255,255,255,.75);max-width:560px;margin-bottom:24px;line-height:1.85;font-family:${ff}}
-.pn-cta-btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;background:var(--gold);color:#080c0a;text-decoration:none;border-radius:999px;font-size:14px;font-weight:700;font-family:${ff}}
-.pn-faq{display:flex;flex-direction:column;gap:10px;max-width:760px}
-.pn-faq-item{background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.pn-faq-item[open]{border-color:rgba(201,168,76,.35)}
-.pn-faq-q{padding:20px 24px;font-size:15px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-family:${ff}}
-.pn-faq-q::-webkit-details-marker{display:none}
-.pn-faq-q::after{content:'+';color:var(--gold);font-size:18px}
-.pn-faq-item[open] .pn-faq-q::after{content:'−'}
-.pn-faq-a{padding:0 24px 20px;font-size:15px;line-height:1.85;color:var(--muted);font-family:${ff}}
-.pn-form-section{padding:80px 0 110px;background:linear-gradient(180deg,var(--bg) 0%,var(--white) 50%)}
-.pn-form-box{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:44px 32px;box-shadow:0 24px 64px rgba(0,0,0,.06)}
+.pn-case-name{font-size:clamp(20px,2.6vw,26px);font-weight:700;margin:12px 0 6px;font-family:${ffH}}
+.pn-case-tags{font-size:13px;font-weight:600;color:var(--gold);margin-bottom:14px;font-family:${ff}}
+.pn-case-body{font-size:15px;line-height:1.9;color:var(--muted);margin-bottom:20px;font-family:${ff}}
+.pn-case-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;font-family:${ff}}
+.pn-trust-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
+@media(min-width:640px){.pn-trust-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.pn-trust-grid{grid-template-columns:repeat(3,1fr)}}
+.pn-trust{padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--white)}
+.pn-trust h3{font-size:15px;margin-bottom:6px}
+.pn-trust p{font-size:13px;line-height:1.65;color:var(--muted);font-family:${ff}}
+.pn-principles{display:flex;flex-direction:column;gap:0;margin-top:32px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.pn-principle{padding:22px 28px;background:var(--white);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:8px}
+@media(min-width:640px){.pn-principle{grid-template-columns:220px 1fr;gap:24px;align-items:baseline}}
+.pn-principle:last-child{border-bottom:none}
+.pn-principle h3{font-size:14px;font-weight:700;font-family:${ff}}
+.pn-principle p{font-size:14px;line-height:1.75;color:var(--muted);font-family:${ff}}
+.pn-who{display:grid;grid-template-columns:1fr;gap:12px;margin-top:32px}
+@media(min-width:640px){.pn-who{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.pn-who{grid-template-columns:repeat(3,1fr)}}
+.pn-who-item{padding:22px 20px;border:1px solid var(--line);border-radius:14px;background:var(--white)}
+.pn-who-item h3{font-size:14px;margin-bottom:6px}
+.pn-who-item p{font-size:13px;line-height:1.65;color:var(--muted);font-family:${ff}}
+.pn-final{text-align:center;padding:96px 0;background:var(--white);border-top:1px solid var(--line)}
+.pn-final .pn-h2{margin-bottom:16px}
+.pn-final .pn-lead{margin:0 auto 8px;max-width:560px}
+.pn-final-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px}
+.pn-form-sec{padding:80px 0 100px;background:var(--ivory)}
+.pn-form-box{max-width:720px;margin:0 auto;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:44px 32px;box-shadow:0 20px 60px rgba(0,0,0,.04)}
 @media(min-width:768px){.pn-form-box{padding:52px 48px}}
-.pn-form-head{margin-bottom:36px;padding-bottom:28px;border-bottom:1px solid var(--line)}
-.pn-form-head h2{font-size:clamp(24px,3vw,30px);font-weight:700;margin-bottom:10px;font-family:${ff}}
+.pn-form-head{margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--line);text-align:${isEn ? 'left' : 'right'}}
+.pn-form-head h2{font-size:clamp(24px,3vw,32px);font-weight:700;margin-bottom:10px;font-family:${ffH}}
 .pn-form-head p{font-size:15px;color:var(--muted);line-height:1.8;font-family:${ff}}
 .pn-form-grid{display:grid;grid-template-columns:1fr;gap:18px}
 @media(min-width:640px){.pn-form-grid{grid-template-columns:1fr 1fr}}
 .pn-form-grid .pn-field--full{grid-column:1/-1}
-.pn-field{display:flex;flex-direction:column;gap:7px}
+.pn-field{display:flex;flex-direction:column;gap:7px;text-align:${isEn ? 'left' : 'right'}}
 .pn-field label{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:rgba(20,20,20,.52);font-family:${ff}}
-.pn-field label .req{color:var(--gold);margin-${isEn ? 'left' : 'right'}:2px}
-.pn-field input,.pn-field select,.pn-field textarea{padding:14px 16px;font-size:15px;font-family:inherit;border:1.5px solid var(--line);border-radius:10px;background:#F7F6F3;color:var(--ink);outline:none;${isEn ? '' : 'text-align:right'}}
-.pn-field input:focus,.pn-field select:focus,.pn-field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.12);background:var(--white)}
-.pn-field input[type=email],.pn-field input[type=tel]{direction:ltr;text-align:left}
-.pn-field textarea{min-height:120px;resize:vertical;line-height:1.7}
-.pn-field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23888'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:${isEn ? 'right' : 'left'} 12px center;padding-${isEn ? 'right' : 'left'}:36px}
-.pn-submit{width:100%;margin-top:12px;padding:17px 28px;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-family:inherit;cursor:pointer;background:#080c0a;color:var(--white);border:none;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:10px}
-.pn-submit:hover{background:#1a1f1c;transform:translateY(-2px)}
-.pn-alt-cta{margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
-.pn-wa{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#25D366;color:#fff;text-decoration:none;border-radius:999px;font-size:13px;font-weight:600}
+.pn-field label .req{color:var(--gold)}
+.pn-field input,.pn-field textarea{padding:14px 16px;font-size:15px;font-family:inherit;border:1.5px solid var(--line);border-radius:10px;background:#F7F6F3;color:var(--ink);outline:none;${isEn ? '' : 'text-align:right'}}
+.pn-field input:focus,.pn-field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.12);background:var(--white)}
+.pn-field input[type=email],.pn-field input[type=tel],.pn-field input[type=url]{direction:ltr;text-align:left}
+.pn-field textarea{min-height:140px;resize:vertical;line-height:1.7}
+.pn-checks{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.pn-check{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;cursor:pointer;background:var(--ivory);font-family:${ff}}
+.pn-check input{accent-color:var(--gold);width:16px;height:16px}
+.pn-submit{width:100%;margin-top:8px;padding:17px 28px;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-family:inherit;cursor:pointer;background:#080c0a;color:#fff;border:none;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:10px}
+.pn-submit:hover{background:#1a1f1c}
+.pn-page-foot{padding:40px 0 48px;background:#080c0a;color:rgba(255,255,255,.72);text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+.pn-page-foot strong{display:block;color:#fff;font-size:15px;margin-bottom:8px;font-family:${ff}}
+.pn-page-foot p{font-size:13px;line-height:1.7;font-family:${ff}}
+.pn-page-foot-links{margin-top:12px;font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.48);font-family:${ff}}
 </style>
 <script defer src="assets/site-header.js?v=16"></script>
 <script defer src="assets/gh-performance.js?v=3"></script>
@@ -440,135 +574,224 @@ ${header}
 
 <section class="pn-hero">
   <div class="pn-wrap">
-    <span class="pn-eye">${c.eye}</span>
-    <h1 class="pn-h1">${c.h1} <em>${c.h1Gold}</em></h1>
-    <p class="pn-lead">${c.lead}</p>
-    <div class="pn-hero-split">
-      <div class="pn-hero-box"><strong>${isEn ? 'You' : 'أنتم'}</strong>${c.heroYou}</div>
-      <div class="pn-hero-box pn-hero-box--us"><strong>Graphics House</strong>${c.heroUs}</div>
+    <div class="pn-hero-grid">
+      <div class="pn-hero-copy">
+        <span class="pn-eye">${c.brand}</span>
+        <h1 class="pn-h1">${c.heroH1}</h1>
+        <p class="pn-hero-sub">${c.heroH2}</p>
+        <p class="pn-lead" style="margin-top:24px">${c.heroLead}</p>
+        <p class="pn-support">${c.heroSupport}</p>
+        <div class="pn-hero-actions">
+          <a href="#inquiry" class="pn-btn pn-btn--primary">${c.heroCtaPrimary} <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_forward' : 'arrow_back'}</span></a>
+          <a href="#capabilities" class="pn-btn pn-btn--ghost">${c.heroCtaSecondary} ↓</a>
+        </div>
+      </div>
+      <div class="pn-hero-media"><picture><source srcset="${c.heroWebp}" type="image/webp"><img src="${c.heroImg}" alt="Graphics House production" loading="eager"></picture></div>
     </div>
   </div>
 </section>
 
-<section class="pn-segments" aria-label="${c.segmentsLabel}">
+<section class="pn-sec pn-idea">
   <div class="pn-wrap">
-    <span class="pn-seg-label">${c.segmentsLabel}</span>
-    <p class="pn-seg-note">${c.segmentsNote}</p>
-    <div class="pn-seg-grid" role="group">${segmentCards}</div>
+    <span class="pn-eye">02</span>
+    <h2 class="pn-h2">${c.ideaTitle}</h2>
+    <p class="pn-h3" style="font-weight:400;color:var(--muted);margin-bottom:0">${c.ideaSub}</p>
+    <p class="pn-idea-body">${c.ideaBody}</p>
+    <div class="pn-chips">${chips(c.ideaList)}</div>
+    <p class="pn-idea-body" style="margin-top:0">${c.ideaTail}</p>
+    <blockquote class="pn-quote">${c.ideaHighlight}</blockquote>
   </div>
 </section>
 
-<section class="pn-section pn-section--white">
+<section class="pn-sec pn-sec--white">
   <div class="pn-wrap">
-    <h2 class="pn-h2">${c.whyTitle}</h2>
-    <p class="pn-sub">${c.whySub}</p>
-    <div class="pn-benefits">${benefitsHtml}</div>
-  </div>
-</section>
-
-<section class="pn-section">
-  <div class="pn-wrap">
-    <h2 class="pn-h2">${c.complementTitle}</h2>
-    <div class="pn-complement">
-      <div class="pn-complement-col"><h3>${c.complementYou}</h3>${complementYou}</div>
-      <div class="pn-complement-eq" aria-hidden="true">+</div>
-      <div class="pn-complement-col pn-complement-col--us"><h3>${c.complementUs}</h3>${complementUs}</div>
-    </div>
-    <p class="pn-complement-result">${c.complementResult}</p>
-  </div>
-</section>
-
-<section class="pn-section pn-section--white">
-  <div class="pn-wrap pn-pitch">
-    <h2 class="pn-h2">${c.pitchTitle}</h2>
-    <p class="pn-sub">${c.pitchLead}</p>
-    <p style="font-size:15px;line-height:1.85;color:rgba(255,255,255,.68);font-family:${ff}">${c.pitchSub}</p>
-  </div>
-</section>
-
-<section class="pn-section">
-  <div class="pn-wrap">
-    <div class="pn-pl">
-      <h2 class="pn-h2">${c.plTitle}</h2>
-      <p class="pn-sub" style="font-style:italic;margin-bottom:12px">${c.plSub}</p>
-      <ul class="pn-pl-items">${plItems}</ul>
-      <p class="pn-pl-note">${c.plNote}</p>
-      <a href="${c.plHref}" class="pn-pl-cta" target="_blank" rel="noopener noreferrer">${c.plCta} <span class="material-symbols-outlined" style="font-size:16px">open_in_new</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="pn-section pn-section--white">
-  <div class="pn-wrap">
-    <h2 class="pn-h2">${c.capabilitiesTitle}</h2>
-    <p class="pn-sub">${c.capabilitiesSub}</p>
-    <div class="pn-offers">${exploreLinks}</div>
-  </div>
-</section>
-
-<section class="pn-section">
-  <div class="pn-wrap">
-    <div class="pn-case">
-      <div class="pn-case-img"><picture><source srcset="${c.caseWebp}" type="image/webp"><img src="${c.caseImg}" alt="${c.caseTitle}" loading="lazy"></picture></div>
-      <div>
-        <p class="pn-case-label">${c.caseLabel}</p>
-        <h3 class="pn-case-title">${c.caseTitle}</h3>
-        <p class="pn-case-desc">${c.caseDesc}</p>
-        <a href="${c.caseHref}" class="pn-case-cta" target="_blank" rel="noopener noreferrer">${c.caseCta} <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></a>
+    <span class="pn-eye">03</span>
+    <h2 class="pn-h2">${c.fitTitle}</h2>
+    <div class="pn-fit-grid">
+      <div class="pn-fit-col">
+        <div class="pn-fit-label">${c.fitYouLabel}</div>
+        <div class="pn-fit-lead">${c.fitYouLead}</div>
+        <ul>${li(c.fitYouItems)}</ul>
+      </div>
+      <div class="pn-fit-plus" aria-hidden="true">+</div>
+      <div class="pn-fit-col pn-fit-col--gh">
+        <div class="pn-fit-label">${c.fitUsLabel}</div>
+        <div class="pn-fit-lead">${c.fitUsLead}</div>
+        <ul>${li(c.fitUsItems)}</ul>
       </div>
     </div>
-    <p class="pn-about-text" style="margin-top:40px">${aboutHtml}</p>
+    <div class="pn-fit-result"><em>${c.fitTogether}</em><strong>${c.fitResult}</strong></div>
   </div>
 </section>
 
-<section class="pn-cta-band">
+<section class="pn-sec">
   <div class="pn-wrap">
-    <h2 class="pn-h2">${c.ctaTitle}</h2>
-    <p>${c.ctaLead}</p>
-    <a href="#inquiry" class="pn-cta-btn">${c.ctaBtn} <span class="material-symbols-outlined" style="font-size:18px">arrow_downward</span></a>
+    <span class="pn-eye">04</span>
+    <h2 class="pn-h2">${c.valueTitle}</h2>
+    <div class="pn-benefits">${c.benefits.map((b) => `<article class="pn-benefit"><div class="pn-benefit-n">${b.n}</div><h3>${b.title}</h3><p>${b.desc}</p></article>`).join('')}</div>
   </div>
 </section>
 
-<section class="pn-section pn-section--white">
+<section class="pn-sec pn-sec--white" id="capabilities">
   <div class="pn-wrap">
-    <h2 class="pn-h2">${c.faqTitle}</h2>
-    <p class="pn-sub">${c.faqSub}</p>
-    <div class="pn-faq">${faqItems}</div>
+    <span class="pn-eye">05</span>
+    <h2 class="pn-h2">${c.capTitle}</h2>
+    <p class="pn-h3" style="font-weight:400;color:var(--muted)">${c.capSub}</p>
+    <div style="margin-top:36px">${capHtml}</div>
+    <div class="pn-cap-foot"><h3>${c.capFootH}</h3><p>${c.capFootP}</p></div>
   </div>
 </section>
 
-<section class="pn-form-section" id="inquiry">
+<section class="pn-sec">
+  <div class="pn-wrap">
+    <span class="pn-eye">06</span>
+    <p class="pn-eye" style="margin-bottom:12px">${c.plEyebrow}</p>
+    <div class="pn-pl">
+      <h2 class="pn-h2">${c.plTitle}</h2>
+      <p class="pn-h3" style="font-weight:400;font-style:italic;color:var(--muted);margin:8px 0 0">${c.plSub}</p>
+      <p class="pn-idea-body" style="margin-top:20px">${c.plBody}</p>
+      <ul class="pn-pl-items">${li(c.plItems)}</ul>
+      <p class="pn-pl-quote">${c.plQuote}</p>
+      <a href="${c.plHref}" class="pn-btn pn-btn--primary" target="_blank" rel="noopener noreferrer">${c.plCta} →</a>
+    </div>
+  </div>
+</section>
+
+<section class="pn-sec pn-sec--white">
+  <div class="pn-wrap">
+    <span class="pn-eye">10</span>
+    <p class="pn-eye" style="margin-bottom:8px">${c.caseEyebrow}</p>
+    <h2 class="pn-h2">${c.caseTitle}</h2>
+    <div class="pn-case">
+      <div>
+        <div class="pn-case-media"><iframe src="https://www.youtube.com/embed/${MWL_VIDEO}?rel=0&modestbranding=1" title="${c.caseName}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="pn-case-img"><picture><source srcset="${c.heroWebp}" type="image/webp"><img src="${c.heroImg}" alt="${c.caseName}" loading="lazy"></picture></div>
+      </div>
+      <div>
+        <h3 class="pn-case-name">${c.caseName}</h3>
+        <p class="pn-case-tags">${c.caseTags}</p>
+        <p class="pn-case-body">${c.caseBody}</p>
+        <a href="${c.caseHref}" class="pn-case-link" target="_blank" rel="noopener noreferrer">${c.caseVideoCta} →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pn-sec">
+  <div class="pn-wrap">
+    <span class="pn-eye">07</span>
+    <div class="pn-pitch">
+      <h2 class="pn-h2">${c.pitchTitle}</h2>
+      <p class="pn-h3" style="color:rgba(255,255,255,.85);font-weight:400;margin-bottom:16px">${c.pitchSub}</p>
+      <p class="pn-lead">${c.pitchBody}</p>
+      <ul class="pn-pitch-list">${li(c.pitchList)}</ul>
+      <p class="pn-pitch-highlight">${c.pitchHighlight}</p>
+      <a href="#inquiry" class="pn-btn pn-btn--primary">${c.pitchCta} →</a>
+    </div>
+  </div>
+</section>
+
+<section class="pn-sec pn-sec--white">
+  <div class="pn-wrap">
+    <span class="pn-eye">08</span>
+    <h2 class="pn-h2">${c.modelsTitle}</h2>
+    <div class="pn-models">${c.models.map((m) => `<article class="pn-model"><span class="pn-model-tag">${m.tag}</span><h3>${m.title}</h3><p>${m.desc}</p></article>`).join('')}</div>
+  </div>
+</section>
+
+<section class="pn-sec pn-sec--tight">
+  <div class="pn-wrap">
+    <span class="pn-eye">09</span>
+    <h2 class="pn-h2">${c.processTitle}</h2>
+    <div class="pn-process">${c.process.map((s) => `<article class="pn-step"><div class="pn-step-n">${s.n}</div><h3>${s.title}</h3><p>${s.desc}</p></article>`).join('')}</div>
+  </div>
+</section>
+
+<section class="pn-sec pn-sec--white">
+  <div class="pn-wrap">
+    <span class="pn-eye">11</span>
+    <h2 class="pn-h2">${c.whyTitle}</h2>
+    <div class="pn-trust-grid">${c.whyItems.map((w) => `<article class="pn-trust"><h3>${w.title}</h3><p>${w.sub}</p></article>`).join('')}</div>
+  </div>
+</section>
+
+<section class="pn-sec">
+  <div class="pn-wrap">
+    <span class="pn-eye">12</span>
+    <h2 class="pn-h2">${c.principlesTitle}</h2>
+    <div class="pn-principles">${c.principles.map((p) => `<article class="pn-principle"><h3>${p.title}</h3><p>${p.desc}</p></article>`).join('')}</div>
+  </div>
+</section>
+
+<section class="pn-sec pn-sec--white">
+  <div class="pn-wrap">
+    <span class="pn-eye">13</span>
+    <h2 class="pn-h2">${c.whoTitle}</h2>
+    <div class="pn-who">${c.whoItems.map((w) => `<article class="pn-who-item"><h3>${w.title}</h3><p>${w.desc}</p></article>`).join('')}</div>
+  </div>
+</section>
+
+<section class="pn-final">
+  <div class="pn-wrap">
+    <span class="pn-eye">14</span>
+    <h2 class="pn-h2">${c.finalCtaTitle}</h2>
+    <p class="pn-lead">${c.finalCtaLead}</p>
+    <p class="pn-lead">${c.finalCtaSub}</p>
+    <div class="pn-final-actions">
+      <a href="#inquiry" class="pn-btn pn-btn--primary">${c.finalCtaPrimary} →</a>
+      <a href="#inquiry" class="pn-btn pn-btn--ghost">${c.finalCtaSecondary} →</a>
+    </div>
+  </div>
+</section>
+
+<section class="pn-form-sec" id="inquiry">
   <div class="pn-wrap">
     <div class="pn-form-box">
-      <div class="pn-form-head"><h2>${c.formTitle}</h2><p>${c.formSub}</p></div>
+      <div class="pn-form-head">
+        <span class="pn-eye">15</span>
+        <h2>${c.formTitle}</h2>
+        <p>${c.formSub}</p>
+      </div>
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="${c.formSubject}">
         <input type="hidden" name="_next" value="${c.formNext}">
         <div class="pn-form-grid">
-          <div class="pn-field pn-field--full">
-            <label for="pnSegment">${c.fields.segment} <span class="req">*</span></label>
-            <select name="organization_type" id="pnSegment" required>${segmentOptions}</select>
-          </div>
-          <div class="pn-field pn-field--full">
-            <label for="pnCollab">${c.fields.collab} <span class="req">*</span></label>
-            <select name="collaboration_type" id="pnCollab" required>${collabOptions}</select>
-          </div>
           <div class="pn-field"><label for="pnName">${c.fields.name} <span class="req">*</span></label><input type="text" name="name" id="pnName" required autocomplete="name"></div>
+          <div class="pn-field"><label for="pnAgency">${c.fields.agency} <span class="req">*</span></label><input type="text" name="agency_name" id="pnAgency" required autocomplete="organization"></div>
           <div class="pn-field"><label for="pnRole">${c.fields.role} <span class="req">*</span></label><input type="text" name="job_title" id="pnRole" required autocomplete="organization-title"></div>
-          <div class="pn-field"><label for="pnEmail">${c.fields.email} <span class="req">*</span></label><input type="email" name="email" id="pnEmail" required autocomplete="email" placeholder="name@company.com"></div>
+          <div class="pn-field"><label for="pnEmail">${c.fields.email} <span class="req">*</span></label><input type="email" name="email" id="pnEmail" required autocomplete="email" placeholder="name@agency.com"></div>
           <div class="pn-field"><label for="pnPhone">${c.fields.phone} <span class="req">*</span></label><input type="tel" name="phone" id="pnPhone" required autocomplete="tel"></div>
-          <div class="pn-field pn-field--full"><label for="pnMessage">${c.fields.message}</label><textarea name="message" id="pnMessage" placeholder="${c.messagePlaceholder}"></textarea></div>
+          <div class="pn-field"><label for="pnWeb">${c.fields.website}</label><input type="url" name="agency_website" id="pnWeb" autocomplete="url" placeholder="https://"></div>
+          <div class="pn-field pn-field--full">
+            <label>${c.fields.partnership}</label>
+            <div class="pn-checks">${checkGroup(c.partnershipOpts, 'partnership')}</div>
+          </div>
+          <div class="pn-field pn-field--full">
+            <label>${c.fields.clients}</label>
+            <div class="pn-checks">${checkGroup(c.clientOpts, 'clients')}</div>
+          </div>
+          <div class="pn-field pn-field--full">
+            <label for="pnMessage">${c.fields.message}</label>
+            <textarea name="message" id="pnMessage" placeholder="${c.messagePlaceholder}"></textarea>
+          </div>
           <div class="pn-field pn-field--full">
             <div class="gh-form-security"><div class="gh-honeypot" aria-hidden="true"><label>Leave blank</label><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div><div class="gh-turnstile"></div></div>
             <div class="form-feedback" aria-live="polite"></div>
           </div>
         </div>
-        <button type="submit" class="form-submit pn-submit">${c.submit} <span class="material-symbols-outlined" style="font-size:18px">send</span></button>
+        <button type="submit" class="form-submit pn-submit">${c.submit} →</button>
       </form>
-      <div class="pn-alt-cta"><a href="https://wa.me/966502786513" class="pn-wa" target="_blank" rel="noopener">${c.wa}</a></div>
     </div>
   </div>
 </section>
+
+<div class="pn-page-foot">
+  <div class="pn-wrap">
+    <strong>Graphics House</strong>
+    <p>${c.pageFootTagline}</p>
+    <p class="pn-page-foot-links">${c.pageFootLinks}</p>
+  </div>
+</div>
 
 ${footer}
 
@@ -577,28 +800,12 @@ ${footer}
 <script defer src="assets/gh-float-widgets.js?v=8"></script>
 <script>
 (function(){
-  var segBtns=document.querySelectorAll('.pn-seg');
-  var segSelect=document.getElementById('pnSegment');
-  function setSegment(id){
-    segBtns.forEach(function(btn){
-      var on=btn.getAttribute('data-segment')===id;
-      btn.classList.toggle('is-active',on);
-      btn.setAttribute('aria-pressed',on?'true':'false');
-    });
-    if(segSelect&&id)segSelect.value=id;
-  }
-  segBtns.forEach(function(btn){btn.addEventListener('click',function(){setSegment(btn.getAttribute('data-segment'));});});
-  if(segSelect){
-    segSelect.addEventListener('change',function(){setSegment(segSelect.value);});
-    setSegment(segSelect.value||'agency');
-  }
   var form=document.querySelector('.pn-form');
   if(form){
     form.addEventListener('submit',function(){
-      var seg=document.getElementById('pnSegment');
-      var collab=document.getElementById('pnCollab');
       if(typeof window.ghTrack==='function'){
-        window.ghTrack('partner_network_inquiry',{organization_type:seg?seg.value:'',collaboration_type:collab?collab.value:'',page_language:'${c.lang}'});
+        var checked=[].slice.call(form.querySelectorAll('input[type=checkbox]:checked')).map(function(el){return el.name;});
+        window.ghTrack('partner_network_inquiry',{partnership_fields:checked.join(','),page_language:'${c.lang}'});
       }
     });
   }
