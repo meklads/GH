@@ -56,14 +56,15 @@ const COPY = {
     },
     fitTogether: 'معًا',
     fitResult: 'حلّ أثرى لعملائكم.',
-    valueTitle: 'ما الذي تضيفه الشراكة لوكالتكم؟',
+    valueTitle: 'ما تضيفه الشراكة لوكالتكم',
+    valueSub: 'محاسن عملية — من دون التزامات بنية جديدة.',
     benefits: [
-      { n: '01', title: 'وسّعوا عرضكم', desc: 'قدّموا لعملائكم قدرات بصرية وتجريبية متقدمة، من دون الحاجة إلى بناء قسم متخصص داخل الوكالة.' },
-      { n: '02', title: 'ارفعوا قيمة مشاريعكم', desc: 'ادمجوا الإظهار ثلاثي الأبعاد والمجسمات والأفلام والتجارب التفاعلية في العروض والمشاريع ذات القيمة العالية.' },
-      { n: '03', title: 'استجيبوا للموجزات المعقدة', desc: 'حين يتجاوز المشروع إطار الحملة إلى تجربة متكاملة، يكون لديكم شريك متخصص قادر على الانضمام بسرعة.' },
-      { n: '04', title: 'خفّفوا التعقيد', desc: 'بدل تنسيق عدة موردين، شريك واحد يتولى طبقة الإنتاج بانسجام ووضوح.' },
-      { n: '05', title: 'عزّزوا فرص الفوز', desc: 'ندعم العروض التقديمية التي تستحق تصورًا بصريًا ومنهجًا إنتاجيًا أكثر حضورًا.' },
-      { n: '06', title: 'حافظوا على مرونتكم', desc: 'تعاونوا مع جرافيكس هاوس حسب الحاجة، من دون التزامات فريق دائم أو بنية إنتاج جديدة.' },
+      { n: '01', title: 'توسيع العرض', desc: 'قدرة على تقديم حلول بصرية وتجريبية متقدمة لعملائكم، من دون الحاجة إلى بناء قسم متخصص داخل الوكالة.' },
+      { n: '02', title: 'قيمة مضافة للمشاريع', desc: 'إدماج الإظهار ثلاثي الأبعاد والمجسمات والأفلام والتجارب التفاعلية في العروض والمشاريع ذات القيمة العالية.' },
+      { n: '03', title: 'مواجهة الموجزات المعقدة', desc: 'حين يتجاوز المشروع إطار الحملة إلى تجربة متكاملة، يكون لديكم شريك متخصص قادر على الانضمام بسرعة.' },
+      { n: '04', title: 'تخفيف التعقيد', desc: 'شريك واحد يتولى طبقة الإنتاج، بدل تنسيق عدة موردين متفرّقين.' },
+      { n: '05', title: 'تعزيز فرص الفوز', desc: 'دعم العروض التقديمية التي تستحق تصورًا بصريًا ومنهجًا إنتاجيًا أكثر حضورًا.' },
+      { n: '06', title: 'مرونة تشغيلية', desc: 'تعاون حسب الحاجة، من دون التزامات فريق دائم أو بنية إنتاج جديدة.' },
     ],
     capTitle: 'قدرات متخصصة.',
     capSub: 'تتكامل في خدمة مشروع واحد.',
@@ -228,14 +229,15 @@ const COPY = {
     },
     fitTogether: 'Together',
     fitResult: 'A More Powerful Client Solution.',
-    valueTitle: 'What your agency gains',
+    valueTitle: 'What the partnership adds to your agency',
+    valueSub: 'Practical advantages — without new infrastructure.',
     benefits: [
-      { n: '01', title: 'Expand your offering', desc: 'Deliver advanced visual and experiential capabilities without building a specialist department.' },
-      { n: '02', title: 'Raise project value', desc: 'Bring 3D, maquettes, film, and interactive into high-value proposals and live projects.' },
-      { n: '03', title: 'Respond to complex briefs', desc: 'When a project moves from campaign to integrated experience, you have a specialist who can move fast.' },
-      { n: '04', title: 'Reduce complexity', desc: 'One partner managing our production layer instead of coordinating multiple vendors.' },
-      { n: '05', title: 'Strengthen win rates', desc: 'We support pitches that need stronger visual direction or production approach.' },
-      { n: '06', title: 'Stay flexible', desc: 'Use Graphics House when you need us — without permanent headcount or new infrastructure.' },
+      { n: '01', title: 'Expanding the offering', desc: 'The ability to deliver advanced visual and experiential solutions to your clients, without building a specialist department in-house.' },
+      { n: '02', title: 'Added project value', desc: 'Integrating 3D, maquettes, film, and interactive into high-value proposals and live projects.' },
+      { n: '03', title: 'Complex brief readiness', desc: 'When a project moves beyond campaign into integrated experience, a specialist partner ready to join quickly.' },
+      { n: '04', title: 'Reduced complexity', desc: 'One partner for the production layer, instead of coordinating multiple vendors.' },
+      { n: '05', title: 'Stronger win potential', desc: 'Support for pitches that deserve stronger visual direction and production approach.' },
+      { n: '06', title: 'Operational flexibility', desc: 'Collaboration as needed — without permanent headcount or new production infrastructure.' },
     ],
     capTitle: 'Specialist capabilities.',
     capSub: 'Connected around one project.',
@@ -672,6 +674,7 @@ ${header}
   <div class="pn-wrap">
     <span class="pn-eye">04</span>
     <h2 class="pn-h2">${c.valueTitle}</h2>
+    ${c.valueSub ? `<p class="pn-sub" style="margin-bottom:0">${c.valueSub}</p>` : ''}
     <div class="pn-benefits">${c.benefits.map((b) => `<article class="pn-benefit"><div class="pn-benefit-n">${b.n}</div><h3>${b.title}</h3><p>${b.desc}</p></article>`).join('')}</div>
   </div>
 </section>
