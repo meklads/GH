@@ -24,6 +24,9 @@
 
   function tryPlay(v) {
     prep(v);
+    if (v.classList && v.classList.contains('pl-lazy-video') && v.getAttribute('data-pl-loaded') !== '1') {
+      return;
+    }
     if (v.readyState === 0) {
       try {
         v.load();
