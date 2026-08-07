@@ -363,6 +363,7 @@ const PRODUCTS = [
     slug: 'brand-scale',
     brandEn: 'BrandScale',
     icon: 'workspace_premium',
+    premium: true,
     og: 'projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg',
     hero: {
       src: '../assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg',
@@ -380,6 +381,7 @@ const PRODUCTS = [
     videos: [
       {
         src: '../assets/videos/GH-Marketing-Media-Production.mp4',
+        mobileSrc: '../assets/videos/GH-Marketing-Media-Production-mobile.mp4',
         poster: '../assets/projects/cinematic/video-3.jpg',
         tagAr: 'هوية وإعلام',
         tagEn: 'BRAND & MEDIA',
@@ -399,75 +401,106 @@ const PRODUCTS = [
         leadEn: 'How identity translates into visual experiences',
       },
     ],
+    proofStats: [
+      { value: '4', labelAr: 'مراحل منهجية', labelEn: 'Structured phases', subAr: 'من الاستكشاف إلى الإطلاق', subEn: 'Discovery through launch' },
+      { value: '48h', labelAr: 'عرض أولي', labelEn: 'Initial proposal', subAr: 'نطاق واضح بعد الجلسة', subEn: 'Clear scope after the session' },
+      { value: '+200', labelAr: 'مشروع مُنجز', labelEn: 'Projects delivered', subAr: 'ثقة B2B في المنطقة', subEn: 'B2B trust across the region' },
+    ],
     ar: {
       title: 'BrandScale™ | نظام نمو العلامات التجارية | Graphics House',
-      desc: 'ابنِ علامة تلهم الثقة — استراتيجية، هوية، وحضور مصمم للمطورين والمؤسسات.',
-      eyebrow: 'الحل',
+      desc: 'منظومة علامة متكاملة — تموضع، هوية، أدلة استخدام، وحضور رقمي يبني ثقة السوق ويتوسع مع كل مشروع.',
+      eyebrow: 'نظام العلامة',
       h1Ar: 'نظام نمو العلامات التجارية',
-      heroHeadline: 'من الاستراتيجية إلى حضور يفرض الثقة',
-      heroLead: 'تموضع، هوية بصرية، وحضور رقمي في منظومة بصرية واحدة.',
-      overviewTag: 'الحل',
+      heroHeadline: 'من التموضع إلى حضور يفرض الثقة — نظام علامة، لا شعار منفصل',
+      heroLead: 'تموضع، هوية بصرية، أدلة للفريق، وحضور رقمي في لغة واحدة قابلة للتوسع.',
+      gapTitle: 'لماذا تضعف العلامة مع توسّع المشاريع؟',
+      gapLead: 'كل مشروع جديد يُضاف بلغة مختلفة — فيختلط التموضع وتضعف ثقة السوق قبل أن تبدأ المبيعات.',
+      gapItems: ['هوية متفرقة بين المشاريع والحملات', 'فريق بدون دليل استخدام واضح', 'حضور رقمي لا يعكس قيمة المؤسسة'],
+      outcomesTitle: 'ماذا يبني BrandScale™؟',
+      outcomesLead: 'أصول علامة جاهزة للتطبيق — من الرسالة إلى كل سطح يلمسه العميل.',
+      outcomes: [
+        ['تموضع واضح', 'رسالة واحدة تميّز المؤسسة في السوق'],
+        ['نظام هوية', 'شعار وألوان وطباعة قابلة للتوسع'],
+        ['أدلة استخدام', 'فريقك يطبّق بنفس اللغة — بدون تفسيرات'],
+        ['حضور رقمي', 'موقع ومواد تتوافق مع الإطلاق ومسارات النمو'],
+      ],
+      overviewTag: 'المنظومة',
       overviewTitle: 'هوية تصمد وتتوسع',
-      overviewLead: 'BrandScale™ يبني نظام علامة واضح — من التموضع إلى التطبيقات — حتى تتراكم الثقة مع كل مشروع وحملة.',
+      overviewLead: 'BrandScale™ يبني نظام علامة واضح — من التموضع إلى التطبيقات — حتى تتراكم الثقة مع كل مشروع وحملة، لا تُعاد من الصفر.',
       features: [
-        'تموضع وهندسة رسائل',
-        'نظام شعار وهوية بصرية',
-        'أدلة استخدام واضحة للفريق',
-        'حضور ويب ورقمي',
-        'مواد متوافقة مع الإطلاق والنمو',
+        'تموضع وهندسة رسائل للمطورين والمؤسسات',
+        'نظام شعار وهوية بصرية قابل للتوسع',
+        'أدلة استخدام عملية للفريق والوكالات',
+        'حضور ويب ورقمي متسق',
+        'مواد متوافقة مع ProjectLaunch™ وGrowthLaunch™',
       ],
       process: ['استكشاف وتموضع', 'بناء نظام الهوية', 'تطبيقات رقمية ومطبوعة', 'إطلاق ومتابعة الاتساق'],
       processEyebrow: 'كيف نعمل',
       processTitle: 'المنهجية',
       portEyebrow: 'بيئات علامة',
       portTitle: 'حضور يُشعر قبل أن يُقال',
-      ytEyebrow: '',
-      ytTitle: '',
       vidEyebrow: 'هوية في الحركة',
       vidTitle: 'محتوى يحافظ على اللغة',
-      vidLead: 'إنتاج يحمل نظام العلامة — لا مجسمات إطلاق ولا مسار مبيعات.',
+      vidLead: 'إنتاج يحمل نظام العلامة — مكمّل للإطلاق ومسارات النمو، لا بديلاً عنهما.',
       faq: [
-        ['ماذا يشمل BrandScale™؟', 'تموضع، نظام هوية، أدلة استخدام، وحضور رقمي متماسك.'],
-        ['هل يناسب المطوّرين والمؤسسات؟', 'نعم — مصمم للعلامات التي تحتاج ثقة السوق والاستمرارية.'],
-        ['هل يرتبط مع ProjectLaunch وGrowthLaunch؟', 'نعم — الهوية تُسلَّم بلغة متوافقة مع الإطلاق ومسارات النمو.'],
+        ['ماذا يشمل BrandScale™؟', 'تموضع، نظام هوية، أدلة استخدام، وحضور رقمي متماسك — كنظام واحد.'],
+        ['هل يناسب المطوّرين والمؤسسات؟', 'نعم — مصمم للعلامات التي تحتاج ثقة السوق والاستمرارية عبر مشاريع متعددة.'],
+        ['كم يستغرق البناء؟', 'نحدد نطاقاً واضحاً في جلسة واحدة ونقدّم عرضاً أولياً خلال ٤٨ ساعة.'],
+        ['هل يرتبط مع ProjectLaunch وGrowthLaunch؟', 'نعم — الهوية تُسلَّم بلغة متوافقة مع الإطلاق ومسارات النمو، حتى لا تتعارض القنوات.'],
       ],
-      ctaTitle: 'جاهز لتوسيع علامتك؟',
-      ctaLead: 'نصمم نظام هوية يصمد عبر المشاريع والحملات.',
+      ctaTitle: 'جاهز لبناء نظام علامة يصمد؟',
+      ctaLead: 'جلسة واحدة لرسم التموضع ونطاق الهوية — بدون التزام في الخطوة الأولى.',
+      ctaPrimary: 'جلسة نظام العلامة',
+      ctaSecondary: 'استعراض الأعمال',
+      ctaFinal: 'احجز جلسة نظام العلامة',
     },
     en: {
       title: 'BrandScale™ | Brand Growth System | Graphics House',
-      desc: 'Build a brand that inspires trust — strategy, identity, and presence designed for developers and institutions.',
-      eyebrow: 'Solution',
+      desc: 'An integrated brand system — positioning, identity, guidelines, and digital presence that builds market trust and scales with every project.',
+      eyebrow: 'Brand system',
       h1Ar: '',
-      heroHeadline: 'From strategy to a presence that commands trust',
-      heroLead: 'Positioning, visual identity, and digital presence in one coherent system.',
-      overviewTag: 'Solution',
+      heroHeadline: 'From positioning to a presence that commands trust — a brand system, not a standalone logo',
+      heroLead: 'Positioning, visual identity, team guidelines, and digital presence in one scalable language.',
+      gapTitle: 'Why does the brand weaken as projects multiply?',
+      gapLead: 'Each new project arrives with a different visual language — positioning blurs and market trust erodes before sales begin.',
+      gapItems: ['Identity scattered across projects and campaigns', 'Teams without practical usage guidelines', 'Digital presence that undersells the institution'],
+      outcomesTitle: 'What BrandScale™ builds',
+      outcomesLead: 'Brand assets ready to deploy — from message to every surface the client touches.',
+      outcomes: [
+        ['Clear positioning', 'One message that distinguishes you in market'],
+        ['Identity system', 'Logo, colour and print that scale'],
+        ['Usage guidelines', 'Your team applies the same language — no guesswork'],
+        ['Digital presence', 'Web and collateral aligned with launch and growth'],
+      ],
+      overviewTag: 'The system',
       overviewTitle: 'Identity that endures and scales',
-      overviewLead: 'BrandScale™ builds a clear brand system — from positioning to applications — so trust compounds with every project and campaign.',
+      overviewLead: 'BrandScale™ builds a clear brand system — from positioning to applications — so trust compounds with every project and campaign, not rebuilt from scratch.',
       features: [
-        'Positioning and messaging architecture',
-        'Logo system and visual identity',
-        'Practical guidelines teams can use',
-        'Web and digital presence',
-        'Collateral aligned with launch and growth',
+        'Positioning and messaging for developers and institutions',
+        'Scalable logo and visual identity system',
+        'Practical guidelines for teams and agencies',
+        'Consistent web and digital presence',
+        'Collateral aligned with ProjectLaunch™ and GrowthLaunch™',
       ],
       process: ['Discovery and positioning', 'Identity system design', 'Digital and print applications', 'Launch and consistency follow-through'],
       processEyebrow: 'How we work',
       processTitle: 'Methodology',
       portEyebrow: 'Brand environments',
       portTitle: 'Presence felt before it is spoken',
-      ytEyebrow: '',
-      ytTitle: '',
       vidEyebrow: 'Brand in motion',
       vidTitle: 'Content that keeps the language',
-      vidLead: 'Media that carries the brand system — not launch maquettes or sales funnels.',
+      vidLead: 'Media that carries the brand system — complementary to launch and growth, not a replacement.',
       faq: [
-        ['What does BrandScale™ include?', 'Positioning, identity system, guidelines, and a coherent digital presence.'],
-        ['Is it for developers and institutions?', 'Yes — built for brands that need market trust and continuity.'],
-        ['Does it connect with ProjectLaunch and GrowthLaunch?', 'Yes — identity is delivered in a language compatible with launch and growth systems.'],
+        ['What does BrandScale™ include?', 'Positioning, identity system, guidelines, and a coherent digital presence — as one system.'],
+        ['Is it for developers and institutions?', 'Yes — built for brands that need market trust and continuity across multiple projects.'],
+        ['How long does it take?', 'We scope clearly in one session and share an initial proposal within 48 hours.'],
+        ['Does it connect with ProjectLaunch and GrowthLaunch?', 'Yes — identity is delivered in a language compatible with launch and growth paths.'],
       ],
-      ctaTitle: 'Ready to scale your brand?',
-      ctaLead: 'We design identity systems that hold across projects and campaigns.',
+      ctaTitle: 'Ready to build a brand system that holds?',
+      ctaLead: 'One session to map positioning and identity scope — no commitment in the first step.',
+      ctaPrimary: 'Brand system session',
+      ctaSecondary: 'View portfolio',
+      ctaFinal: 'Book your brand system session',
     },
   },
 ];
@@ -489,7 +522,6 @@ function buildPremiumPage(product, isEn) {
   const footer = renderFooter(DEPTH, isEn);
   const contact = isEn ? '../contact-us-en.html' : '../contact-us.html';
   const portfolio = isEn ? '../portfolio-en.html' : '../portfolio.html';
-  const skip = isEn ? 'Skip to main content' : 'تخطي إلى المحتوى الرئيسي';
   const heroAlt = isEn ? product.hero.altEn : product.hero.altAr;
   const brandName = product.brandEn;
   const ctaPrimary = t.ctaPrimary || (isEn ? 'START YOUR PROJECT' : 'ابدأ مشروعك');
@@ -499,6 +531,7 @@ function buildPremiumPage(product, isEn) {
   const cardLinkLabel = isEn ? 'View portfolio →' : 'استعرض الأعمال ←';
   const faqEyebrow = isEn ? 'FAQ' : 'الأسئلة الشائعة';
   const faqTitle = isEn ? 'Answers to common questions' : 'أجوبة عن استفساراتكم';
+  const ctaSlug = product.key || 'sol';
 
   const proofHtml = (product.proofStats || [])
     .map(
@@ -605,7 +638,7 @@ ${analyticsHeadTags('../')}
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
 <link rel="stylesheet" href="../assets/site-header.css?v=33">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
-<link rel="stylesheet" href="../assets/growth-launch-premium.css?v=1">
+<link rel="stylesheet" href="../assets/solution-premium.css?v=1">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=8">
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
@@ -623,7 +656,6 @@ ${analyticsHeadTags('../')}
   <img src="../assets/logo-gold.png" alt="" width="120" height="40" style="height:40px;width:auto">
   <div id="loader-bar-track"><div id="loader-bar"></div></div>
 </div>
-<a class="gh-skip-link" href="#main-content">${skip}</a>
 ${header}
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 
@@ -639,7 +671,7 @@ ${header}
       <p class="pl-hero-tagline hero-enter" style="transition-delay:200ms">${t.heroHeadline}</p>
       <p class="pl-hero-sub hero-enter" style="transition-delay:240ms">${t.heroLead}</p>
       <div class="hero-enter flex flex-wrap justify-center gap-4" style="transition-delay:360ms">
-        <a href="${contact}" class="pl-btn-pill pl-btn-pill-white" data-cta="gl-hero-primary">${ctaPrimary}</a>
+        <a href="${contact}" class="pl-btn-pill pl-btn-pill-white" data-cta="${ctaSlug}-hero-primary">${ctaPrimary}</a>
         <a href="${portfolio}" class="pl-btn-pill pl-btn-pill-ghost">${ctaSecondary}</a>
       </div>
     </div>
@@ -666,7 +698,7 @@ ${header}
       <p class="font-body-lg text-secondary mb-8 opacity-80 leading-relaxed">${t.overviewLead}</p>
       <div>${features}</div>
       <div class="mt-10">
-        <a href="${contact}" class="pl-btn-pill pl-btn-pill-white inline-flex" style="background:#0A0A0A;color:#fff;border:1.5px solid #0A0A0A" data-cta="gl-overview">${ctaPrimary}</a>
+        <a href="${contact}" class="pl-btn-pill pl-btn-pill-white inline-flex" style="background:#0A0A0A;color:#fff;border:1.5px solid #0A0A0A" data-cta="${ctaSlug}-overview">${ctaPrimary}</a>
       </div>
     </div>
     <div class="reveal w-full md:w-1/2 relative" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
@@ -728,7 +760,7 @@ ${header}
     <span class="material-symbols-outlined ms-filled text-primary text-4xl mb-5 block">${product.icon}</span>
     <h2>${t.ctaTitle}</h2>
     <p>${t.ctaLead}</p>
-    <a href="${contact}" class="pl-btn-pill pl-btn-pill-white" data-cta="gl-final">${ctaFinal}</a>
+    <a href="${contact}" class="pl-btn-pill pl-btn-pill-white" data-cta="${ctaSlug}-final">${ctaFinal}</a>
   </div>
 </section>
 
