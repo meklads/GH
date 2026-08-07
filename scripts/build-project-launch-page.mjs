@@ -72,6 +72,7 @@ const PRODUCTS = [
     slug: 'growth-launch',
     brandEn: 'GrowthLaunch',
     icon: 'query_stats',
+    premium: true,
     og: 'projects/animation/rafal-pavilions.jpg',
     hero: {
       src: '../assets/projects/animation/rafal-pavilions.jpg',
@@ -89,6 +90,7 @@ const PRODUCTS = [
     videos: [
       {
         src: '../assets/videos/GH-Marketing-Media-Production.mp4',
+        mobileSrc: '../assets/videos/GH-Marketing-Media-Production-mobile.mp4',
         poster: '../assets/projects/cinematic/video-1.jpg',
         tagAr: 'تسويق',
         tagEn: 'MARKETING',
@@ -99,6 +101,7 @@ const PRODUCTS = [
       },
       {
         src: '../assets/videos/GH-Real-estate-services.mp4',
+        mobileSrc: '../assets/videos/GH-Real-estate-services-mobile.mp4',
         poster: '../assets/projects/animation/real-estate-services.jpg',
         tagAr: 'مبيعات',
         tagEn: 'SALES',
@@ -108,14 +111,30 @@ const PRODUCTS = [
         leadEn: 'Storytelling that turns interest into a sales opportunity',
       },
     ],
+    proofStats: [
+      { value: '7', labelAr: 'أيام لإطلاق المسار', labelEn: 'Days to live pipeline', subAr: 'نطاق واضح من البداية', subEn: 'Clear scope from day one' },
+      { value: '24h', labelAr: 'رد على الطلبات', labelEn: 'Lead response SLA', subAr: 'قبل أن يبرد الاهتمام', subEn: 'Before intent cools off' },
+      { value: '+200', labelAr: 'مشروع مُنجز', labelEn: 'Projects delivered', subAr: 'خبرة B2B في المنطقة', subEn: 'B2B experience across the region' },
+    ],
     ar: {
       title: 'GrowthLaunch™ | نظام توليد العملاء والمبيعات | Graphics House',
-      desc: 'نظام مبيعات متكامل — جذب، تحويل، وتوسيع العملاء المؤهلين مع التتبع وCRM وأتمتة الرد.',
-      eyebrow: 'الحل',
+      desc: 'منظومة مبيعات متكاملة — جذب مؤهل، رد فوري، ومتابعة آلية مع تتبع وCRM قابل للقياس.',
+      eyebrow: 'الحل المتكامل',
       h1Ar: 'نظام توليد العملاء والمبيعات',
-      heroHeadline: 'من أول نقرة إلى صفقة مغلقة — ابنِ نظام مبيعات لا حملة فقط',
-      heroLead: 'جذب مؤهل، تحويل سريع، ومتابعة آلية في منظومة واحدةحدة.',
-      overviewTag: 'الحل',
+      heroHeadline: 'من أول نقرة إلى صفقة مغلقة — منظومة مبيعات، لا حملة منفصلة',
+      heroLead: 'جذب مؤهل، رد خلال دقائق، ومتابعة آلية في مسار واحد قابل للقياس.',
+      gapTitle: 'لماذا تضيع الفرص بعد الحملة؟',
+      gapLead: 'الإعلان يجلب زيارات — لكن بدون رد سريع ومسار CRM واضح، يبرد العميل قبل أن يلمسه فريق المبيعات.',
+      gapItems: ['رد متأخر بعد الإعلان', 'بيانات مشتتة بين واتساب وجداول', 'لا رؤية لمصدر كل صفقة'],
+      outcomesTitle: 'ماذا يبني GrowthLaunch™؟',
+      outcomesLead: 'أصول مبيعات جاهزة للتشغيل — من العرض إلى الإغلاق.',
+      outcomes: [
+        ['عرض عالي النية', 'صفحات ومواد تميّز من يصلح ومن لا يصلح'],
+        ['رد خلال دقائق', 'واتساب وذكاء اصطناعي قبل أن يبرد الاهتمام'],
+        ['مسار CRM', 'ملكية واضحة لكل lead من المصدر إلى الإغلاق'],
+        ['تحسين مستمر', 'أرقام حقيقية — لا vanity metrics'],
+      ],
+      overviewTag: 'المنظومة',
       overviewTitle: 'مسار مبيعات قابل للقياس',
       overviewLead: 'GrowthLaunch™ يربط الحملات بالرد والمتابعة والتحويل — حتى لا تضيع الفرص بين القنوات والفريق.',
       features: [
@@ -130,27 +149,40 @@ const PRODUCTS = [
       processTitle: 'المنهجية',
       portEyebrow: 'أعمال ذات صلة',
       portTitle: 'بيئات ومواد تدعم التحويل',
-      ytEyebrow: '',
-      ytTitle: '',
       vidEyebrow: 'أفلام وتسويق',
       vidTitle: 'محتوى يفتح المسار',
-      vidLead: 'أفلام ومواد تسويقية تدعم الجذب والتحويل — لا مجسمات ولا إطلاق مشروع.',
+      vidLead: 'أفلام ومواد تسويقية تدعم الجذب والتحويل — مكمّلة لبيئة البيع، لا بديلاً عنها.',
       faq: [
         ['ماذا يشمل GrowthLaunch™؟', 'هيكلة العرض، الحملات، التتبع، الرد الآلي، ومسار CRM قابل للقياس.'],
         ['هل يناسب المطوّرين العقاريين؟', 'نعم — مصمم للمطورين وفرق B2B في الخليج.'],
         ['كم يستغرق الإطلاق؟', 'نحدد نطاقاً واضحاً ونبدأ بمسار قابل للقياس خلال أيام عمل قليلة.'],
+        ['هل يتكامل مع ProjectLaunch™؟', 'نعم — مسار النمو يكمّل إطلاق المشروع: حملات بعد جاهزية العرض والبيع.'],
       ],
       ctaTitle: 'جاهز لبناء مسار مبيعات متوقع؟',
-      ctaLead: 'نرسم العرض والقنوات ومسار التحويل في جلسة واحدة.',
+      ctaLead: 'جلسة واحدة لرسم العرض والقنوات ومسار التحويل — بدون التزام في الخطوة الأولى.',
+      ctaPrimary: 'جلسة مسار المبيعات',
+      ctaSecondary: 'استعراض الأعمال',
+      ctaFinal: 'احجز جلسة مسار المبيعات',
     },
     en: {
       title: 'GrowthLaunch™ | Lead Generation & Sales System | Graphics House',
-      desc: 'A complete sales system — attract, convert, and scale qualified leads with tracking, CRM, and response automation.',
-      eyebrow: 'Solution',
+      desc: 'An integrated sales system — qualified demand, instant response, and automated follow-up with measurable tracking and CRM.',
+      eyebrow: 'Flagship solution',
       h1Ar: '',
-      heroHeadline: 'From first click to closed deal — build a sales system, not a campaign',
-      heroLead: 'Qualified demand, fast conversion, and automated follow-up in one system.',
-      overviewTag: 'Solution',
+      heroHeadline: 'From first click to closed deal — a sales system, not a standalone campaign',
+      heroLead: 'Qualified demand, response within minutes, and automated follow-up in one measurable path.',
+      gapTitle: 'Why do leads go cold after the campaign?',
+      gapLead: 'Ads bring traffic — but without fast response and a clear CRM path, intent fades before sales touches the lead.',
+      gapItems: ['Slow response after the ad', 'Data scattered across WhatsApp and spreadsheets', 'No view of each deal’s source'],
+      outcomesTitle: 'What GrowthLaunch™ builds',
+      outcomesLead: 'Sales assets ready to run — from offer to close.',
+      outcomes: [
+        ['High-intent offer', 'Pages and assets that filter fit from noise'],
+        ['Response in minutes', 'WhatsApp and AI before intent cools'],
+        ['CRM pipeline', 'Clear ownership from source to close'],
+        ['Continuous optimization', 'Real numbers — not vanity metrics'],
+      ],
+      overviewTag: 'The system',
       overviewTitle: 'A measurable sales path',
       overviewLead: 'GrowthLaunch™ connects campaigns, response, and CRM — so opportunities are not lost between channels and teams.',
       features: [
@@ -169,14 +201,18 @@ const PRODUCTS = [
       ytTitle: '',
       vidEyebrow: 'Films & marketing',
       vidTitle: 'Content that opens the path',
-      vidLead: 'Marketing films and assets for demand and conversion — not launch models or exhibition systems.',
+      vidLead: 'Marketing films and assets for demand and conversion — complementary to the sales environment, not a replacement.',
       faq: [
         ['What does GrowthLaunch™ include?', 'Offer architecture, campaigns, tracking, automated response, and a measurable CRM path.'],
         ['Is it built for real-estate developers?', 'Yes — designed for developers and B2B teams across the GCC.'],
         ['How fast can we launch?', 'We scope clearly and start a measurable path within a few working days.'],
+        ['Does it connect with ProjectLaunch™?', 'Yes — growth paths complement project launch once offer and sales assets are ready.'],
       ],
       ctaTitle: 'Ready to build a predictable pipeline?',
-      ctaLead: 'We map your offer, channels, and conversion path in one session.',
+      ctaLead: 'One session to map offer, channels, and conversion — no commitment in the first step.',
+      ctaPrimary: 'Sales path session',
+      ctaSecondary: 'View portfolio',
+      ctaFinal: 'Book your sales path session',
     },
   },
   {
@@ -443,7 +479,275 @@ function pic(src, webp, alt, cls = 'w-full h-full object-cover') {
   return `<img class="${cls}" src="${src}" alt="${alt}" loading="lazy"/>`;
 }
 
+function buildPremiumPage(product, isEn) {
+  const file = isEn ? `${product.slug}-en.html` : `${product.slug}.html`;
+  const t = isEn ? product.en : product.ar;
+  const canonical = isEn ? `${BASE}/solutions/${product.slug}-en.html` : `${BASE}/solutions/${product.slug}.html`;
+  const arUrl = `${BASE}/solutions/${product.slug}.html`;
+  const enUrl = `${BASE}/solutions/${product.slug}-en.html`;
+  const header = renderHeader(DEPTH, isEn);
+  const footer = renderFooter(DEPTH, isEn);
+  const contact = isEn ? '../contact-us-en.html' : '../contact-us.html';
+  const portfolio = isEn ? '../portfolio-en.html' : '../portfolio.html';
+  const skip = isEn ? 'Skip to main content' : 'تخطي إلى المحتوى الرئيسي';
+  const heroAlt = isEn ? product.hero.altEn : product.hero.altAr;
+  const brandName = product.brandEn;
+  const ctaPrimary = t.ctaPrimary || (isEn ? 'START YOUR PROJECT' : 'ابدأ مشروعك');
+  const ctaSecondary = t.ctaSecondary || (isEn ? 'VIEW PORTFOLIO' : 'استعرض أعمالنا');
+  const ctaFinal = t.ctaFinal || ctaPrimary;
+  const portAll = isEn ? 'Full portfolio' : 'كل الأعمال';
+  const cardLinkLabel = isEn ? 'View portfolio →' : 'استعرض الأعمال ←';
+  const faqEyebrow = isEn ? 'FAQ' : 'الأسئلة الشائعة';
+  const faqTitle = isEn ? 'Answers to common questions' : 'أجوبة عن استفساراتكم';
+
+  const proofHtml = (product.proofStats || [])
+    .map(
+      (s) => `<article class="gl-proof-stat reveal" style="opacity:0;transform:translateY(16px)">
+        <strong>${s.value}</strong>
+        <span>${isEn ? s.labelEn : s.labelAr}<br><small style="opacity:.65;font-size:11px">${isEn ? s.subEn : s.subAr}</small></span>
+      </article>`
+    )
+    .join('');
+
+  const gapItems = (t.gapItems || [])
+    .map((item) => `<li class="reveal" style="opacity:0;transform:translateY(16px)">${item}</li>`)
+    .join('');
+
+  const outcomesHtml = (t.outcomes || [])
+    .map(
+      ([title, desc], i) => `<article class="gl-outcome-card reveal" style="opacity:0;transform:translateY(20px);transition-delay:${(i * 0.06).toFixed(2)}s">
+        <strong>${title}</strong><span>${desc}</span>
+      </article>`
+    )
+    .join('');
+
+  const features = t.features
+    .map(
+      (f) =>
+        `<div class="ar-feat-row"><span class="material-symbols-outlined ms-filled">check</span><p>${f}</p></div>`
+    )
+    .join('');
+
+  const process = t.process
+    .map(
+      (p, i) => `<article class="gl-step reveal" style="opacity:0;transform:translateY(20px);transition-delay:${(i * 0.08).toFixed(2)}s">
+        <div class="gl-step-num">${String(i + 1).padStart(2, '0')}</div>
+        <p>${p}</p>
+      </article>`
+    )
+    .join('');
+
+  const cards = product.cards
+    .map(
+      (c, i) => `<article class="gl-port-card reveal" style="opacity:0;transform:translateY(20px);transition-delay:${(0.05 + i * 0.07).toFixed(2)}s">
+        <img src="${c.img}" alt="${isEn ? c.titleEn : c.titleAr}" loading="lazy"/>
+        <div class="gl-port-card-copy">
+          <h3>${isEn ? c.titleEn : c.titleAr}</h3>
+          <a href="${portfolio}">${cardLinkLabel}</a>
+        </div>
+      </article>`
+    )
+    .join('');
+
+  const videos = product.videos
+    .map(
+      (v, i) => `<article class="gl-vid-card reveal" style="opacity:0;transform:translateY(20px);transition-delay:${(0.05 + i * 0.06).toFixed(2)}s">
+      <div class="gl-vid-frame">
+        <video class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="${v.poster}" data-pl-src="${v.src}"${v.mobileSrc ? ` data-pl-src-mobile="${v.mobileSrc}"` : ''} title="${isEn ? v.titleEn : v.titleAr}"></video>
+      </div>
+      <div class="gl-vid-body">
+        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">${isEn ? v.tagEn : v.tagAr}</span>
+        <h3 class="font-headline-md text-on-background mb-1">${isEn ? v.titleEn : v.titleAr}</h3>
+        <p class="text-secondary text-sm opacity-70">${isEn ? v.leadEn : v.leadAr}</p>
+      </div>
+    </article>`
+    )
+    .join('');
+
+  const faq = t.faq
+    .map(
+      ([q, a]) => `<div class="gl-faq-item">
+          <h4>${q}</h4>
+          <p>${a}</p>
+        </div>`
+    )
+    .join('');
+
+  const html = `<!DOCTYPE html>
+<html class="scroll-smooth" dir="${isEn ? 'ltr' : 'rtl'}" lang="${isEn ? 'en' : 'ar'}">
+<head>
+<script src="../assets/gh-forms-config.js?v=2"></script>
+${analyticsHeadTags('../')}
+<link rel="canonical" href="${canonical}">
+<link rel="alternate" hreflang="en" href="${enUrl}">
+<link rel="alternate" hreflang="ar" href="${arUrl}">
+<link rel="alternate" hreflang="x-default" href="${enUrl}">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>${t.title}</title>
+<meta name="description" content="${t.desc}"/>
+<meta property="og:title" content="${brandName}™ | Graphics House">
+<meta property="og:description" content="${t.desc}">
+<meta property="og:image" content="${BASE}/assets/${product.og}">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>${PAGE_CSS}
+  .ar-feat-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(10,10,10,.06)}
+  .ar-feat-row .ms{color:#C9A84C;font-size:20px}
+  .ar-feat-row p{margin:0;font-size:14px;color:#1A1A1A;line-height:1.55}
+</style>
+<script defer src="../assets/site-header.js?v=16"></script>
+<script defer src="../assets/gh-performance.js?v=5"></script>
+<script defer src="../assets/lang-switch.js?v=2"></script>
+<script defer src="../assets/project-launch-media.js?v=2"></script>
+<link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
+<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
+<link rel="stylesheet" href="../assets/site-header.css?v=33">
+<link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
+<link rel="stylesheet" href="../assets/growth-launch-premium.css?v=1">
+<link rel="stylesheet" href="../assets/gh-float-widgets.css?v=8">
+<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `${brandName}™`,
+    description: t.desc,
+    url: canonical,
+    brand: { '@type': 'Brand', name: 'Graphics House' },
+    provider: { '@type': 'Organization', name: 'Graphics House', url: BASE },
+    areaServed: ['SA', 'AE', 'OM', 'BH', 'EG'],
+  })}</script>
+</head>
+<body class="bg-background gl-premium selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<div id="loader" aria-hidden="true">
+  <img src="../assets/logo-gold.png" alt="" width="120" height="40" style="height:40px;width:auto">
+  <div id="loader-bar-track"><div id="loader-bar"></div></div>
+</div>
+<a class="gh-skip-link" href="#main-content">${skip}</a>
+${header}
+<div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
+
+<section class="pl-hero relative overflow-hidden">
+  <div class="pl-hero-media">${pic(product.hero.src, product.hero.webp, heroAlt)}</div>
+  <div class="pl-hero-vignette" aria-hidden="true"></div>
+  <div class="pl-hero-bottom-glow" aria-hidden="true"></div>
+  <div class="pl-hero-bottom-panel">
+    <div class="pl-hero-copy-card">
+      <span class="pl-hero-eyebrow-ar hero-enter" style="transition-delay:0ms">${t.eyebrow}</span>
+      <h1 class="hero-enter" style="transition-delay:120ms" dir="ltr">${brandName}<span class="tm">™</span></h1>
+      ${t.h1Ar ? `<p class="pl-hero-tagline hero-enter" style="transition-delay:160ms">${t.h1Ar}</p>` : ''}
+      <p class="pl-hero-tagline hero-enter" style="transition-delay:200ms">${t.heroHeadline}</p>
+      <p class="pl-hero-sub hero-enter" style="transition-delay:240ms">${t.heroLead}</p>
+      <div class="hero-enter flex flex-wrap justify-center gap-4" style="transition-delay:360ms">
+        <a href="${contact}" class="pl-btn-pill pl-btn-pill-white" data-cta="gl-hero-primary">${ctaPrimary}</a>
+        <a href="${portfolio}" class="pl-btn-pill pl-btn-pill-ghost">${ctaSecondary}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gl-proof" aria-label="${isEn ? 'Proof points' : 'أرقام المنظومة'}">
+  <div class="gl-proof-grid">${proofHtml}</div>
+</section>
+
+<section class="gl-gap">
+  <div class="gl-gap-inner reveal" style="opacity:0;transform:translateY(20px)">
+    <h2>${t.gapTitle}</h2>
+    <p class="gl-gap-lead">${t.gapLead}</p>
+    <ul class="gl-gap-list">${gapItems}</ul>
+  </div>
+</section>
+
+<section class="py-[100px] px-8 md:px-12">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
+    <div class="reveal w-full md:w-1/2" style="opacity:0;transform:translateY(24px)">
+      <span class="svc-tag mb-6 block">${t.overviewTag}</span>
+      <h2 class="font-headline-xl text-on-background mb-6">${t.overviewTitle}</h2>
+      <p class="font-body-lg text-secondary mb-8 opacity-80 leading-relaxed">${t.overviewLead}</p>
+      <div>${features}</div>
+      <div class="mt-10">
+        <a href="${contact}" class="pl-btn-pill pl-btn-pill-white inline-flex" style="background:#0A0A0A;color:#fff;border:1.5px solid #0A0A0A" data-cta="gl-overview">${ctaPrimary}</a>
+      </div>
+    </div>
+    <div class="reveal w-full md:w-1/2 relative" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
+      <div class="absolute -inset-3 border border-primary/20 pointer-events-none" style="transform:translate(12px,12px)"></div>
+      <img class="relative z-10 w-full rounded-sm shadow-2xl" src="${product.overviewImg}" alt="" loading="lazy"/>
+    </div>
+  </div>
+</section>
+
+<section class="gl-outcomes">
+  <div class="gl-outcomes-head reveal" style="opacity:0;transform:translateY(20px)">
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${isEn ? 'Outcomes' : 'النتائج'}</span>
+    <h2>${t.outcomesTitle}</h2>
+    <p>${t.outcomesLead}</p>
+  </div>
+  <div class="gl-outcomes-grid">${outcomesHtml}</div>
+</section>
+
+<section class="gl-process-sec">
+  <div class="text-center mb-12 reveal" style="opacity:0;transform:translateY(20px)">
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${t.processEyebrow}</span>
+    <h2 class="font-headline-xl text-on-background">${t.processTitle}</h2>
+  </div>
+  <div class="gl-steps">${process}</div>
+</section>
+
+<section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto">
+  <div class="flex justify-between items-end mb-12 reveal" style="opacity:0;transform:translateY(20px)">
+    <div>
+      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${t.portEyebrow}</span>
+      <h2 class="font-headline-xl text-on-background">${t.portTitle}</h2>
+    </div>
+    <a href="${portfolio}" class="border-b border-primary text-primary pb-1 font-label-caps text-[11px] tracking-widest hidden md:block">${portAll}</a>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${cards}</div>
+</section>
+
+<section class="gl-vid-sec">
+  <div class="text-center mb-10 px-8 reveal" style="opacity:0;transform:translateY(20px)">
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${t.vidEyebrow}</span>
+    <h2 class="font-headline-xl text-on-background mb-4">${t.vidTitle}</h2>
+    <p class="font-body-lg text-secondary opacity-70 max-w-2xl mx-auto">${t.vidLead}</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto px-8 md:px-12">${videos}</div>
+</section>
+
+<section class="gl-faq-sec">
+  <div class="px-8 md:px-12 max-w-3xl mx-auto">
+    <div class="text-center mb-12 reveal" style="opacity:0;transform:translateY(20px)">
+      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${faqEyebrow}</span>
+      <h2 class="font-headline-xl text-on-background">${faqTitle}</h2>
+    </div>
+    <div class="reveal" style="opacity:0;transform:translateY(20px)">${faq}</div>
+  </div>
+</section>
+
+<section class="gl-final">
+  <div class="gl-final-inner reveal" style="opacity:0;transform:translateY(20px)">
+    <span class="material-symbols-outlined ms-filled text-primary text-4xl mb-5 block">${product.icon}</span>
+    <h2>${t.ctaTitle}</h2>
+    <p>${t.ctaLead}</p>
+    <a href="${contact}" class="pl-btn-pill pl-btn-pill-white" data-cta="gl-final">${ctaFinal}</a>
+  </div>
+</section>
+
+${footer}
+<button id="back-top" class="fixed bottom-8 right-6 z-50 w-11 h-11 bg-white border border-primary/30 text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" aria-label="${isEn ? 'Back to top' : 'العودة للأعلى'}"><span class="material-symbols-outlined text-xl">arrow_upward</span></button>
+<script defer src="../assets/service-page.js?v=4"></script>
+<script defer src="../assets/gh-float-widgets.js?v=8"></script>
+</body>
+</html>`;
+
+  fs.writeFileSync(path.join(OUT, file), html, 'utf8');
+  console.log('  wrote', file, '(premium)');
+}
+
 function buildPage(product, isEn) {
+  if (product.premium) {
+    buildPremiumPage(product, isEn);
+    return;
+  }
   const t = isEn ? product.en : product.ar;
   const file = isEn ? `${product.slug}-en.html` : `${product.slug}.html`;
   const canonical = `${BASE}/solutions/${file}`;
