@@ -4,7 +4,7 @@
  */
 (function () {
   var SELECTOR =
-    'video[autoplay], video.gh-autoplay, #hero-vid, #hero-vid-ar, #s2VideoPlayer';
+    'video[autoplay], video.gh-autoplay, #hero-vid, #hero-vid-ar, #s2VideoPlayer, .ar-media-frame video, .ar-outcomes-media video, .ar-img-frame video';
 
   function prep(v) {
     if (!v || v.nodeName !== 'VIDEO') return;

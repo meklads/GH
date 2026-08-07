@@ -105,8 +105,12 @@ html[dir=rtl] .pn-stat::before{inset:0 0 0 auto}
 .pn-form-step-n{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-size:11px;font-weight:700;color:var(--gold);background:var(--gold-soft);border:1px solid rgba(201,168,76,.22);font-family:'Inter', sans-serif}
 .pn-form-step h3{font-size:14px;margin-bottom:4px;font-family:'Inter', sans-serif}
 .pn-form-step p{font-size:13px;line-height:1.7;color:var(--muted);font-family:'Inter', sans-serif}
-.pn-deck{margin-top:20px;padding-top:22px;border-top:1px solid var(--line);text-align:left}
-.pn-deck-note{margin-top:10px;font-size:12px;line-height:1.7;color:var(--muted);font-family:'Inter', sans-serif}
+.pn-individual{margin:0 0 28px;padding:22px 24px;border:1px solid rgba(201,168,76,.28);border-radius:var(--radius);background:linear-gradient(165deg,rgba(201,168,76,.08) 0%,var(--white) 100%);text-align:left}
+.pn-individual h3{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-family:'Inter', sans-serif}
+.pn-individual p{font-size:14px;line-height:1.75;color:var(--muted);margin-bottom:12px;font-family:'Inter', sans-serif}
+.pn-individual-tel{display:inline-flex;align-items:center;gap:8px;font-size:clamp(20px,4vw,26px);font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:.04em;font-family:'Inter', sans-serif;direction:ltr;unicode-bidi:isolate}
+.pn-individual-tel:hover{color:var(--gold)}
+.pn-individual-tel .ms{font-size:22px;color:var(--gold)}
 .pn-sec .pn-btn--primary{background:var(--dark);color:#fff;box-shadow:0 12px 32px rgba(0,0,0,.12)}
 .pn-sec .pn-btn--primary:hover{background:#1a1f1c;box-shadow:0 16px 40px rgba(0,0,0,.16)}
 .pn-sec .pn-btn--ghost{background:var(--white);color:var(--ink);border-color:var(--line)}
@@ -611,7 +615,7 @@ html[dir=rtl] .pn-quote{border-radius:var(--radius) 0 0 var(--radius)}
   <div class="pn-wrap">
     <span class="pn-eye">09</span>
     <h2 class="pn-h2">How we work together</h2>
-    <div class="pn-models"><article class="pn-model"><span class="pn-model-tag">REFERRAL</span><h3>An opportunity that fits our capabilities.</h3><p>Project introduction and defining the best collaboration model.</p></article><article class="pn-model"><span class="pn-model-tag">CO-DELIVERY</span><h3>You lead the client. We lead our specialty.</h3><p>We work as part of the project team with clear roles and responsibilities.</p></article><article class="pn-model"><span class="pn-model-tag">WHITE LABEL</span><h3>Production support behind the scenes when needed.</h3><p>Some projects can be structured as white label per project nature and agreement, with full confidentiality and client relationship protection.</p></article><article class="pn-model"><span class="pn-model-tag">PREFERRED PARTNER</span><h3>Ongoing partnership — not a one-off project.</h3><p>For agencies with recurring needs, we can build a long-term framework covering workflow, priority, pricing, and response.</p></article></div>
+    <div class="pn-models"><article class="pn-model"><span class="pn-model-tag">REFERRAL</span><h3>An opportunity that fits our capabilities.</h3><p>Project introduction and defining the best collaboration model.</p></article><article class="pn-model"><span class="pn-model-tag">CO-DELIVERY</span><h3>You lead the client. We lead our specialty.</h3><p>We work as part of the project team with clear roles and responsibilities.</p></article><article class="pn-model"><span class="pn-model-tag">BRAND PRESENCE</span><h3>Institutional production — under the Graphics House name.</h3><p>Partnership projects are delivered with visible credit for our capabilities and reputation; every project builds our profile — we do not work in the shadows.</p></article><article class="pn-model"><span class="pn-model-tag">PREFERRED PARTNER</span><h3>Ongoing partnership — not a one-off project.</h3><p>For agencies with recurring needs, we can build a long-term framework covering workflow, priority, pricing, and response.</p></article></div>
   </div>
 </section>
 
@@ -657,7 +661,6 @@ html[dir=rtl] .pn-quote{border-radius:var(--radius) 0 0 var(--radius)}
     <div class="pn-final-actions">
       <a href="#inquiry" class="pn-btn pn-btn--primary">Partnership conversation →</a>
       <a href="#inquiry" class="pn-btn pn-btn--ghost">Send a project brief →</a>
-      <a href="partner-network-overview-en.html" class="pn-btn pn-btn--ghost" target="_blank" rel="noopener noreferrer">Partnership overview ↗</a>
     </div>
   </div>
 </section>
@@ -683,13 +686,14 @@ html[dir=rtl] .pn-quote{border-radius:var(--radius) 0 0 var(--radius)}
     </article>
     <article class="pn-form-step">
       <span class="pn-form-step-n">03</span>
-      <div><h3>Next step defined</h3><p>We propose the right partnership model or follow-up path.</p></div>
+      <div><h3>Next step defined</h3><p>We propose the right partnership model and share our partnership deck.</p></div>
     </article>
       </div>
-      <div class="pn-deck">
-        <a href="partner-network-overview-en.html" class="pn-btn pn-btn--ghost" target="_blank" rel="noopener noreferrer">Partnership overview ↗</a>
-        <p class="pn-deck-note">Print-ready page — save as PDF for internal sharing.</p>
-      </div>
+      <aside class="pn-individual" aria-label="Individual partnerships">
+        <h3>Individual partnerships</h3>
+        <p>Marketing managers, consultants, or project introducers — for individual collaboration and referrals, call:</p>
+        <a class="pn-individual-tel" href="tel:+966502786513" data-cta="partner-individual-call"><span class="material-symbols-outlined ms" aria-hidden="true">call</span>050 278 6513</a>
+      </aside>
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="Partnership & Collaboration Inquiry — EN">
         <input type="hidden" name="_next" value="https://3dgraphicshouse.com/partner-network-en.html?sent=1#inquiry">
@@ -710,10 +714,6 @@ html[dir=rtl] .pn-quote{border-radius:var(--radius) 0 0 var(--radius)}
     <label class="pn-check">
       <input type="checkbox" name="partnership_co-delivery" value="Yes">
       <span>Co-Delivery</span>
-    </label>
-    <label class="pn-check">
-      <input type="checkbox" name="partnership_white-label" value="Yes">
-      <span>White Label</span>
     </label>
     <label class="pn-check">
       <input type="checkbox" name="partnership_preferred-partner" value="Yes">

@@ -113,7 +113,7 @@ const COPY = {
     models: [
       { n: '01', tag: 'إحالة', title: 'فرصة تناسب قدراتنا.', desc: 'تعريف بالمشروع، وتحديد صيغة التعاون الأنسب.' },
       { n: '02', tag: 'تسليم مشترك', title: 'قيادتكم للعميل. تخصصنا في الإنتاج.', desc: 'نعمل ضمن فريق المشروع، بأدوار واضحة ومسؤوليات محددة.' },
-      { n: '03', tag: 'علامة بيضاء', title: 'إنتاج خلف الكواليس عند الحاجة.', desc: 'يمكن تنظيم بعض المشاريع بصيغة العلامة البيضاء، وفق طبيعة المشروع والاتفاق، مع التزام كامل بالسرية وحماية علاقة العميل.' },
+      { n: '03', tag: 'حضور العلامة', title: 'إنتاج بجودة مؤسسية — باسم Graphics House.', desc: 'ننفّذ مشاريع الشراكة بحضور واضح لقدراتنا وسمعتنا؛ لأن كل مشروع يبني بروفايلنا — لا نعمل في الخفاء.' },
       { n: '04', tag: 'شريك مفضّل', title: 'شراكة مستمرة، لا مشروعًا واحدًا.', desc: 'للوكالات ذات الاحتياج المتكرر، نبني إطارًا طويل الأمد يشمل آلية العمل والأولوية والاستجابة.' },
     ],
     processTitle: 'من الموجز إلى التسليم',
@@ -162,18 +162,18 @@ const COPY = {
     finalCtaSub: 'جرافيكس هاوس — امتداد متخصص لفريقكم في المشاريع والعروض.',
     finalCtaPrimary: 'محادثة الشراكة',
     finalCtaSecondary: 'إرسال موجز مشروع',
-    finalCtaDeck: 'ملخص الشراكة',
     formStepsTitle: 'ما الذي يحدث بعد الطلب؟',
     formSteps: [
       { n: '01', title: 'مراجعة أولية', desc: 'نراجع طلبكم خلال 24 ساعة عمل.' },
       { n: '02', title: 'محادثة تعارف', desc: 'مكالمة قصيرة لفهم الجهة وفرصة التعاون.' },
-      { n: '03', title: 'تحديد المسار', desc: 'نقترح صيغة الشراكة أو الخطوة التالية المناسبة.' },
+      { n: '03', title: 'تحديد المسار', desc: 'نقترح صيغة الشراكة ونشارككم ملف الشراكة التفصيلي.' },
     ],
-    deckCta: 'ملخص الشراكة',
-    deckHref: 'partner-network-overview.html',
-    deckNote: 'صفحة جاهزة للطباعة أو الحفظ كـ PDF — للمشاركة داخليًا.',
     formTitle: 'طلب شراكة وتعاون',
     formSub: 'نبذة عن جهتكم وفرصة التعاون — سيتواصل فريق الشراكات لاستكمال الخطوة التالية.',
+    individualTitle: 'تعاون الأفراد',
+    individualLead: 'مدير تسويق، مستشار، أو وسيط مشاريع؟ للتعاون الفردي وبرنامج الإحالة، تواصل مباشرة:',
+    individualPhone: '+966502786513',
+    individualPhoneDisplay: '٠٥٠٢٧٨٦٥١٣',
     formSubject: 'طلب شراكة وتعاون — AR',
     formNext: `${BASE}/partner-network.html?sent=1#inquiry`,
     fields: {
@@ -190,7 +190,6 @@ const COPY = {
     partnershipOpts: [
       { id: 'referral', label: 'إحالة' },
       { id: 'co-delivery', label: 'تسليم مشترك' },
-      { id: 'white-label', label: 'علامة بيضاء' },
       { id: 'preferred-partner', label: 'شريك مفضّل' },
       { id: 'pitch-support', label: 'دعم مشروع / عرض تقديمي' },
     ],
@@ -302,7 +301,7 @@ const COPY = {
     models: [
       { n: '01', tag: 'REFERRAL', title: 'An opportunity that fits our capabilities.', desc: 'Project introduction and defining the best collaboration model.' },
       { n: '02', tag: 'CO-DELIVERY', title: 'You lead the client. We lead our specialty.', desc: 'We work as part of the project team with clear roles and responsibilities.' },
-      { n: '03', tag: 'WHITE LABEL', title: 'Production support behind the scenes when needed.', desc: 'Some projects can be structured as white label per project nature and agreement, with full confidentiality and client relationship protection.' },
+      { n: '03', tag: 'BRAND PRESENCE', title: 'Institutional production — under the Graphics House name.', desc: 'Partnership projects are delivered with visible credit for our capabilities and reputation; every project builds our profile — we do not work in the shadows.' },
       { n: '04', tag: 'PREFERRED PARTNER', title: 'Ongoing partnership — not a one-off project.', desc: 'For agencies with recurring needs, we can build a long-term framework covering workflow, priority, pricing, and response.' },
     ],
     processTitle: 'From brief to delivery',
@@ -351,18 +350,18 @@ const COPY = {
     finalCtaSub: 'Graphics House — a specialist extension of your team for projects and pitches.',
     finalCtaPrimary: 'Partnership conversation',
     finalCtaSecondary: 'Send a project brief',
-    finalCtaDeck: 'Partnership overview',
     formStepsTitle: 'What happens after you submit?',
     formSteps: [
       { n: '01', title: 'Initial review', desc: 'We review your inquiry within 24 business hours.' },
       { n: '02', title: 'Intro conversation', desc: 'A short call to understand your organization and the opportunity.' },
-      { n: '03', title: 'Next step defined', desc: 'We propose the right partnership model or follow-up path.' },
+      { n: '03', title: 'Next step defined', desc: 'We propose the right partnership model and share our partnership deck.' },
     ],
-    deckCta: 'Partnership overview',
-    deckHref: 'partner-network-overview-en.html',
-    deckNote: 'Print-ready page — save as PDF for internal sharing.',
     formTitle: 'Partnership & Collaboration Inquiry',
     formSub: 'A brief about your organization and the collaboration opportunity — our partnerships team will follow up with next steps.',
+    individualTitle: 'Individual partnerships',
+    individualLead: 'Marketing managers, consultants, or project introducers — for individual collaboration and referrals, call:',
+    individualPhone: '+966502786513',
+    individualPhoneDisplay: '050 278 6513',
     formSubject: 'Partnership & Collaboration Inquiry — EN',
     formNext: `${BASE}/partner-network-en.html?sent=1#inquiry`,
     fields: {
@@ -379,7 +378,6 @@ const COPY = {
     partnershipOpts: [
       { id: 'referral', label: 'Referral' },
       { id: 'co-delivery', label: 'Co-Delivery' },
-      { id: 'white-label', label: 'White Label' },
       { id: 'preferred-partner', label: 'Preferred Partner' },
       { id: 'pitch-support', label: 'Project / Pitch Support' },
     ],
@@ -603,8 +601,12 @@ html[dir=rtl] .pn-stat::before{inset:0 0 0 auto}
 .pn-form-step-n{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-size:11px;font-weight:700;color:var(--gold);background:var(--gold-soft);border:1px solid rgba(201,168,76,.22);font-family:${ff}}
 .pn-form-step h3{font-size:14px;margin-bottom:4px;font-family:${ff}}
 .pn-form-step p{font-size:13px;line-height:1.7;color:var(--muted);font-family:${ff}}
-.pn-deck{margin-top:20px;padding-top:22px;border-top:1px solid var(--line);text-align:${isEn ? 'left' : 'right'}}
-.pn-deck-note{margin-top:10px;font-size:12px;line-height:1.7;color:var(--muted);font-family:${ff}}
+.pn-individual{margin:0 0 28px;padding:22px 24px;border:1px solid rgba(201,168,76,.28);border-radius:var(--radius);background:linear-gradient(165deg,rgba(201,168,76,.08) 0%,var(--white) 100%);text-align:${isEn ? 'left' : 'right'}}
+.pn-individual h3{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-family:${ff}}
+.pn-individual p{font-size:14px;line-height:1.75;color:var(--muted);margin-bottom:12px;font-family:${ff}}
+.pn-individual-tel{display:inline-flex;align-items:center;gap:8px;font-size:clamp(20px,4vw,26px);font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:.04em;font-family:${ff};direction:ltr;unicode-bidi:isolate}
+.pn-individual-tel:hover{color:var(--gold)}
+.pn-individual-tel .ms{font-size:22px;color:var(--gold)}
 .pn-sec .pn-btn--primary{background:var(--dark);color:#fff;box-shadow:0 12px 32px rgba(0,0,0,.12)}
 .pn-sec .pn-btn--primary:hover{background:#1a1f1c;box-shadow:0 16px 40px rgba(0,0,0,.16)}
 .pn-sec .pn-btn--ghost{background:var(--white);color:var(--ink);border-color:var(--line)}
@@ -954,7 +956,6 @@ ${header}
     <div class="pn-final-actions">
       <a href="#inquiry" class="pn-btn pn-btn--primary">${c.finalCtaPrimary} →</a>
       <a href="#inquiry" class="pn-btn pn-btn--ghost">${c.finalCtaSecondary} →</a>
-      <a href="${c.deckHref}" class="pn-btn pn-btn--ghost" target="_blank" rel="noopener noreferrer">${c.finalCtaDeck} ↗</a>
     </div>
   </div>
 </section>
@@ -971,10 +972,11 @@ ${header}
         <h3>${c.formStepsTitle}</h3>
         ${renderFormSteps(c.formSteps)}
       </div>
-      <div class="pn-deck">
-        <a href="${c.deckHref}" class="pn-btn pn-btn--ghost" target="_blank" rel="noopener noreferrer">${c.deckCta} ↗</a>
-        <p class="pn-deck-note">${c.deckNote}</p>
-      </div>
+      <aside class="pn-individual" aria-label="${c.individualTitle}">
+        <h3>${c.individualTitle}</h3>
+        <p>${c.individualLead}</p>
+        <a class="pn-individual-tel" href="tel:${c.individualPhone}" data-cta="partner-individual-call"><span class="material-symbols-outlined ms" aria-hidden="true">call</span>${c.individualPhoneDisplay}</a>
+      </aside>
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="${c.formSubject}">
         <input type="hidden" name="_next" value="${c.formNext}">
@@ -1051,94 +1053,9 @@ ${footer}
 </html>`;
 }
 
-function buildOverview(c) {
-  const isEn = c.lang === 'en';
-  const ff = isEn ? "'Inter', sans-serif" : "'Tajawal', 'IBM Plex Sans Arabic', sans-serif";
-  const pageName = isEn ? 'Partnership Overview' : 'ملخص الشراكة';
-  const backHref = isEn ? 'partner-network-en.html' : 'partner-network.html';
-  const modelsList = c.models
-    .map((m) => `<li><strong>${m.tag}</strong> — ${m.title} ${m.desc}</li>`)
-    .join('');
-  const capsList = c.capabilities.map((cap) => `<li>${cap.title}</li>`).join('');
-  const principlesList = c.principles
-    .map((p) => `<li><strong>${p.title}</strong> — ${p.desc}</li>`)
-    .join('');
-  const statsHtml = c.proofStats
-    .map((s) => `<article class="stat"><strong>${s.value}</strong><span>${s.label}</span></article>`)
-    .join('');
-
-  return `<!DOCTYPE html>
-<html lang="${c.lang}" dir="${c.dir}">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${pageName} | ${c.pageFootBrand}</title>
-<style>
-@page{size:A4;margin:16mm}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:${ff};color:#141414;background:#fff;line-height:1.6;padding:32px;max-width:880px;margin:0 auto}
-header{border-bottom:2px solid #C9A84C;padding-bottom:20px;margin-bottom:28px;text-align:${isEn ? 'left' : 'right'}}
-.brand{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;font-weight:700}
-h1{font-size:28px;font-weight:700;margin:10px 0 8px;line-height:1.25}
-.lead{font-size:15px;color:rgba(20,20,20,.68);max-width:640px}
-section{margin-bottom:24px;text-align:${isEn ? 'left' : 'right'}}
-h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px}
-ul{padding-${isEn ? 'left' : 'right'}:18px}
-li{font-size:13px;line-height:1.7;margin-bottom:6px;color:rgba(20,20,20,.78)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
-.stat{border:1px solid rgba(20,20,20,.08);border-radius:10px;padding:14px;text-align:center}
-.stat strong{display:block;font-size:22px}
-.stat span{display:block;font-size:11px;color:rgba(20,20,20,.58);margin-top:4px}
-footer{margin-top:32px;padding-top:20px;border-top:1px solid rgba(20,20,20,.08);font-size:12px;color:rgba(20,20,20,.58);text-align:${isEn ? 'left' : 'right'}}
-.actions{margin:20px 0 28px;display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-flex;padding:10px 18px;border-radius:999px;font-size:12px;font-weight:700;text-decoration:none;border:1px solid #141414;color:#141414}
-.btn--gold{background:#C9A84C;border-color:#C9A84C;color:#0A0A0A}
-@media print{.actions{display:none}body{padding:0}}
-@media(max-width:640px){.grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<header>
-  <div class="brand">${c.brand}</div>
-  <h1>${c.ideaTitle}</h1>
-  <p class="lead">${c.heroLead}</p>
-  <div class="actions">
-    <a class="btn btn--gold" href="javascript:window.print()">${isEn ? 'Save as PDF' : 'حفظ كـ PDF'}</a>
-    <a class="btn" href="${backHref}#inquiry">${isEn ? 'Partnership inquiry' : 'طلب شراكة وتعاون'}</a>
-  </div>
-</header>
-<section>
-  <h2>${isEn ? 'At a glance' : 'نظرة سريعة'}</h2>
-  <div class="grid">${statsHtml}</div>
-</section>
-<section>
-  <h2>${c.modelsTitle}</h2>
-  <ul>${modelsList}</ul>
-</section>
-<section>
-  <h2>${c.capTitle}</h2>
-  <ul>${capsList}</ul>
-</section>
-<section>
-  <h2>${c.principlesTitle}</h2>
-  <ul>${principlesList}</ul>
-</section>
-<footer>
-  <strong>${c.pageFootBrand}</strong> · ${c.pageFootTagline}<br>
-  ${isEn ? 'Contact' : 'التواصل'}: info@3dgraphicshouse.com · 3dgraphicshouse.com<br>
-  ${isEn ? 'Full page' : 'الصفحة الكاملة'}: ${BASE}/${backHref}
-</footer>
-</body>
-</html>`;
-}
-
 console.log('Building Partner Network pages…');
 fs.writeFileSync(path.join(ROOT, 'partner-network.html'), buildPage(COPY.ar), 'utf8');
 fs.writeFileSync(path.join(ROOT, 'partner-network-en.html'), buildPage(COPY.en), 'utf8');
-fs.writeFileSync(path.join(ROOT, 'partner-network-overview.html'), buildOverview(COPY.ar), 'utf8');
-fs.writeFileSync(path.join(ROOT, 'partner-network-overview-en.html'), buildOverview(COPY.en), 'utf8');
 console.log('  partner-network.html');
 console.log('  partner-network-en.html');
-console.log('  partner-network-overview.html');
-console.log('  partner-network-overview-en.html');
 console.log('Done.');

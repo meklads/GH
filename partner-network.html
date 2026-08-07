@@ -105,8 +105,12 @@ html[dir=rtl] .pn-stat::before{inset:0 0 0 auto}
 .pn-form-step-n{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-size:11px;font-weight:700;color:var(--gold);background:var(--gold-soft);border:1px solid rgba(201,168,76,.22);font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
 .pn-form-step h3{font-size:14px;margin-bottom:4px;font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
 .pn-form-step p{font-size:13px;line-height:1.7;color:var(--muted);font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
-.pn-deck{margin-top:20px;padding-top:22px;border-top:1px solid var(--line);text-align:right}
-.pn-deck-note{margin-top:10px;font-size:12px;line-height:1.7;color:var(--muted);font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
+.pn-individual{margin:0 0 28px;padding:22px 24px;border:1px solid rgba(201,168,76,.28);border-radius:var(--radius);background:linear-gradient(165deg,rgba(201,168,76,.08) 0%,var(--white) 100%);text-align:right}
+.pn-individual h3{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
+.pn-individual p{font-size:14px;line-height:1.75;color:var(--muted);margin-bottom:12px;font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif}
+.pn-individual-tel{display:inline-flex;align-items:center;gap:8px;font-size:clamp(20px,4vw,26px);font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:.04em;font-family:'Tajawal', 'IBM Plex Sans Arabic', sans-serif;direction:ltr;unicode-bidi:isolate}
+.pn-individual-tel:hover{color:var(--gold)}
+.pn-individual-tel .ms{font-size:22px;color:var(--gold)}
 .pn-sec .pn-btn--primary{background:var(--dark);color:#fff;box-shadow:0 12px 32px rgba(0,0,0,.12)}
 .pn-sec .pn-btn--primary:hover{background:#1a1f1c;box-shadow:0 16px 40px rgba(0,0,0,.16)}
 .pn-sec .pn-btn--ghost{background:var(--white);color:var(--ink);border-color:var(--line)}
@@ -611,7 +615,7 @@ html[dir=rtl] .pn-quote{border-radius:var(--radius) 0 0 var(--radius)}
   <div class="pn-wrap">
     <span class="pn-eye">09</span>
     <h2 class="pn-h2">آليات التعاون</h2>
-    <div class="pn-models"><article class="pn-model"><span class="pn-model-tag">إحالة</span><h3>فرصة تناسب قدراتنا.</h3><p>تعريف بالمشروع، وتحديد صيغة التعاون الأنسب.</p></article><article class="pn-model"><span class="pn-model-tag">تسليم مشترك</span><h3>قيادتكم للعميل. تخصصنا في الإنتاج.</h3><p>نعمل ضمن فريق المشروع، بأدوار واضحة ومسؤوليات محددة.</p></article><article class="pn-model"><span class="pn-model-tag">علامة بيضاء</span><h3>إنتاج خلف الكواليس عند الحاجة.</h3><p>يمكن تنظيم بعض المشاريع بصيغة العلامة البيضاء، وفق طبيعة المشروع والاتفاق، مع التزام كامل بالسرية وحماية علاقة العميل.</p></article><article class="pn-model"><span class="pn-model-tag">شريك مفضّل</span><h3>شراكة مستمرة، لا مشروعًا واحدًا.</h3><p>للوكالات ذات الاحتياج المتكرر، نبني إطارًا طويل الأمد يشمل آلية العمل والأولوية والاستجابة.</p></article></div>
+    <div class="pn-models"><article class="pn-model"><span class="pn-model-tag">إحالة</span><h3>فرصة تناسب قدراتنا.</h3><p>تعريف بالمشروع، وتحديد صيغة التعاون الأنسب.</p></article><article class="pn-model"><span class="pn-model-tag">تسليم مشترك</span><h3>قيادتكم للعميل. تخصصنا في الإنتاج.</h3><p>نعمل ضمن فريق المشروع، بأدوار واضحة ومسؤوليات محددة.</p></article><article class="pn-model"><span class="pn-model-tag">حضور العلامة</span><h3>إنتاج بجودة مؤسسية — باسم Graphics House.</h3><p>ننفّذ مشاريع الشراكة بحضور واضح لقدراتنا وسمعتنا؛ لأن كل مشروع يبني بروفايلنا — لا نعمل في الخفاء.</p></article><article class="pn-model"><span class="pn-model-tag">شريك مفضّل</span><h3>شراكة مستمرة، لا مشروعًا واحدًا.</h3><p>للوكالات ذات الاحتياج المتكرر، نبني إطارًا طويل الأمد يشمل آلية العمل والأولوية والاستجابة.</p></article></div>
   </div>
 </section>
 
@@ -657,7 +661,6 @@ html[dir=rtl] .pn-quote{border-radius:var(--radius) 0 0 var(--radius)}
     <div class="pn-final-actions">
       <a href="#inquiry" class="pn-btn pn-btn--primary">محادثة الشراكة →</a>
       <a href="#inquiry" class="pn-btn pn-btn--ghost">إرسال موجز مشروع →</a>
-      <a href="partner-network-overview.html" class="pn-btn pn-btn--ghost" target="_blank" rel="noopener noreferrer">ملخص الشراكة ↗</a>
     </div>
   </div>
 </section>
@@ -683,13 +686,14 @@ html[dir=rtl] .pn-quote{border-radius:var(--radius) 0 0 var(--radius)}
     </article>
     <article class="pn-form-step">
       <span class="pn-form-step-n">03</span>
-      <div><h3>تحديد المسار</h3><p>نقترح صيغة الشراكة أو الخطوة التالية المناسبة.</p></div>
+      <div><h3>تحديد المسار</h3><p>نقترح صيغة الشراكة ونشارككم ملف الشراكة التفصيلي.</p></div>
     </article>
       </div>
-      <div class="pn-deck">
-        <a href="partner-network-overview.html" class="pn-btn pn-btn--ghost" target="_blank" rel="noopener noreferrer">ملخص الشراكة ↗</a>
-        <p class="pn-deck-note">صفحة جاهزة للطباعة أو الحفظ كـ PDF — للمشاركة داخليًا.</p>
-      </div>
+      <aside class="pn-individual" aria-label="تعاون الأفراد">
+        <h3>تعاون الأفراد</h3>
+        <p>مدير تسويق، مستشار، أو وسيط مشاريع؟ للتعاون الفردي وبرنامج الإحالة، تواصل مباشرة:</p>
+        <a class="pn-individual-tel" href="tel:+966502786513" data-cta="partner-individual-call"><span class="material-symbols-outlined ms" aria-hidden="true">call</span>٠٥٠٢٧٨٦٥١٣</a>
+      </aside>
       <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
         <input type="hidden" name="_subject" value="طلب شراكة وتعاون — AR">
         <input type="hidden" name="_next" value="https://3dgraphicshouse.com/partner-network.html?sent=1#inquiry">
@@ -710,10 +714,6 @@ html[dir=rtl] .pn-quote{border-radius:var(--radius) 0 0 var(--radius)}
     <label class="pn-check">
       <input type="checkbox" name="partnership_co-delivery" value="Yes">
       <span>تسليم مشترك</span>
-    </label>
-    <label class="pn-check">
-      <input type="checkbox" name="partnership_white-label" value="Yes">
-      <span>علامة بيضاء</span>
     </label>
     <label class="pn-check">
       <input type="checkbox" name="partnership_preferred-partner" value="Yes">
