@@ -371,7 +371,9 @@ const PRODUCTS = [
       altAr: 'حضور مؤسسي يفرض الثقة',
       altEn: 'Institutional presence that commands trust',
     },
-    overviewImg: '../assets/projects/rendering/The-Meteorological-Building.jpeg',
+    overviewImg: '../assets/news/makkah-charter-02.jpeg',
+    overviewAltAr: 'هوية علامة في بيئة معرض — لغة بصرية متسقة',
+    overviewAltEn: 'Brand identity in an exhibition environment — consistent visual language',
     cards: [
       { img: '../assets/news/makkah-charter-08.jpeg', titleAr: 'هوية في الفضاء', titleEn: 'Identity in space' },
       { img: '../assets/news/makkah-charter-10.jpeg', titleAr: 'لغة علامة متسقة', titleEn: 'Consistent brand language' },
@@ -412,10 +414,23 @@ const PRODUCTS = [
       eyebrow: 'نظام العلامة',
       h1Ar: 'نظام نمو العلامات التجارية',
       heroHeadline: 'من التموضع إلى حضور يفرض الثقة — نظام علامة، لا شعار منفصل',
-      heroLead: 'تموضع، هوية بصرية، أدلة للفريق، وحضور رقمي في لغة واحدة قابلة للتوسع.',
+      heroLead: 'تموضع، هوية بصرية، أدلة للفريق، وحضور رقمي في لغة واحدة — حتى يراك السوق كمؤسسة واحدة مهما تعدّدت مشاريعك.',
       gapTitle: 'لماذا تضعف العلامة مع توسّع المشاريع؟',
-      gapLead: 'كل مشروع جديد يُضاف بلغة مختلفة — فيختلط التموضع وتضعف ثقة السوق قبل أن تبدأ المبيعات.',
-      gapItems: ['هوية متفرقة بين المشاريع والحملات', 'فريق بدون دليل استخدام واضح', 'حضور رقمي لا يعكس قيمة المؤسسة'],
+      gapLead: 'كل مشروع جديد يُضاف بلغة مختلفة — فيختلط التموضع، يتشتت الفريق، وتضعف ثقة السوق قبل أن تبدأ المبيعات.',
+      gapItems: [
+        'هوية متفرقة بين المشاريع والحملات',
+        'فريق بدون دليل استخدام واضح',
+        'حضور رقمي لا يعكس قيمة المؤسسة',
+        'حملات ومواد تبدو كأنها من جهات مختلفة',
+      ],
+      pillarsEyebrow: 'لماذا نظام وليس شعاراً؟',
+      pillarsTitle: 'ثلاثة أركان تبني ثقة السوق',
+      pillarsLead: 'BrandScale™ لا يبدأ بالألوان — يبدأ بمن أنتم، ثم يترجم ذلك إلى كل سطح يلمسه العميل.',
+      pillars: [
+        { icon: 'psychology', title: 'تموضع يفرق', desc: 'قبل أي لون: من تخدمون، لماذا أنتم، وكيف تُقال الرسالة — رسالة واحدة تميّزكم في سوق مزدحم.' },
+        { icon: 'layers', title: 'نظام قابل للتوسع', desc: 'هوية تعمل على المشروع الخامس كما على الأول — بدون إعادة اختراع أو تضارب بين الفرق والوكالات.' },
+        { icon: 'touch_app', title: 'حضور يُترجم', desc: 'من الموقع إلى صالة العرض إلى الحملة: لغة واحدة في كل نقطة لمس — حضور يُشعر قبل أن يُقال.' },
+      ],
       outcomesTitle: 'ماذا يبني BrandScale™؟',
       outcomesLead: 'أصول علامة جاهزة للتطبيق — من الرسالة إلى كل سطح يلمسه العميل.',
       outcomes: [
@@ -423,6 +438,8 @@ const PRODUCTS = [
         ['نظام هوية', 'شعار وألوان وطباعة قابلة للتوسع'],
         ['أدلة استخدام', 'فريقك يطبّق بنفس اللغة — بدون تفسيرات'],
         ['حضور رقمي', 'موقع ومواد تتوافق مع الإطلاق ومسارات النمو'],
+        ['مواد جاهزة', 'قوالب للحملات والعروض والمطبوعات'],
+        ['اتساق تراكمي', 'ثقة تتراكم مع كل مشروع — لا تُعاد من الصفر'],
       ],
       overviewTag: 'المنظومة',
       overviewTitle: 'هوية تصمد وتتوسع',
@@ -434,7 +451,12 @@ const PRODUCTS = [
         'حضور ويب ورقمي متسق',
         'مواد متوافقة مع ProjectLaunch™ وGrowthLaunch™',
       ],
-      process: ['استكشاف وتموضع', 'بناء نظام الهوية', 'تطبيقات رقمية ومطبوعة', 'إطلاق ومتابعة الاتساق'],
+      process: [
+        ['استكشاف وتموضع', 'جلسة لفهم السوق والجمهور ورسالة التميّز'],
+        ['بناء نظام الهوية', 'شعار، ألوان، طباعة، وقواعد الاستخدام'],
+        ['تطبيقات رقمية ومطبوعة', 'موقع، قوالب، ومواد جاهزة للفريق'],
+        ['إطلاق ومتابعة الاتساق', 'تسليم للفريق مع مراجعة بعد الإطلاق'],
+      ],
       processEyebrow: 'كيف نعمل',
       processTitle: 'المنهجية',
       portEyebrow: 'بيئات علامة',
@@ -442,11 +464,53 @@ const PRODUCTS = [
       vidEyebrow: 'هوية في الحركة',
       vidTitle: 'محتوى يحافظ على اللغة',
       vidLead: 'إنتاج يحمل نظام العلامة — مكمّل للإطلاق ومسارات النمو، لا بديلاً عنهما.',
+      compareTitle: 'بدون نظام — أم مع BrandScale™؟',
+      compareLead: 'الفرق ليس في جمال الشعار — بل في اتساق الثقة عبر كل مشروع.',
+      compareWithout: [
+        'شعار جديد أو متغيّر مع كل مشروع',
+        'فريق يخمّن الألوان والخطوط',
+        'موقع لا يطابق صالة البيع',
+        'حملات تبدو من وكالات مختلفة',
+      ],
+      compareWith: [
+        'رسالة وتموضع واحد عبر المحفظة',
+        'دليل استخدام واضح للفريق والوكالات',
+        'مواد رقمية ومطبوعة متوافقة',
+        'ثقة تراكمية مع كل إطلاق',
+      ],
+      deliverablesEyebrow: 'ماذا تستلم؟',
+      deliverablesTitle: 'حزمة علامة جاهزة للتطبيق',
+      deliverablesLead: 'ليس ملفاً واحداً — منظومة أصول يعمل بها فريقك من اليوم الأول.',
+      deliverables: [
+        { icon: 'description', title: 'وثيقة التموضع', desc: 'من تخدمون، رسالة التميّز، ونبرة الصوت' },
+        { icon: 'palette', title: 'نظام الهوية البصرية', desc: 'شعار، ألوان، خطوط، وقواعد الاستخدام' },
+        { icon: 'menu_book', title: 'دليل العلامة', desc: 'Brand Guidelines عملية للفريق والوكالات' },
+        { icon: 'web', title: 'حضور رقمي', desc: 'موقع وقوالب رقمية متسقة' },
+        { icon: 'print', title: 'قوالب مطبوعة', desc: 'بطاقات، عروض، ومواد جاهزة للطباعة' },
+        { icon: 'rocket_launch', title: 'حزمة الإطلاق', desc: 'مواد جاهزة لأول حملة أو مشروع' },
+      ],
+      audienceEyebrow: 'لمن صُمّم؟',
+      audienceTitle: 'علامات تحتاج ثقة قبل الحجم',
+      audience: [
+        { title: 'مطوّرون متعدّدو المشاريع', desc: 'محفظة مشاريع تحتاج لغة واحدة — لا هوية جديدة مع كل إطلاق.' },
+        { title: 'مؤسسات رسمية', desc: 'حضور يفرض الثقة أمام المستثمرين والشركاء والجهات الحكومية.' },
+        { title: 'فرق تطلق مشروعاً جديداً', desc: 'تحتاج لغة بصرية واضحة قبل الإعلان — لا وقت لإعادة الاختراع.' },
+      ],
+      ecosystemEyebrow: 'منظومة Graphics House',
+      ecosystemTitle: 'BrandScale™ — الأساس قبل الإطلاق والنمو',
+      ecosystemLead: 'الهوية تسبق كل شيء. ثم يبني ProjectLaunch™ بيئة البيع، وGrowthLaunch™ مسار الطلب.',
+      ecosystem: [
+        { slug: 'brand-scale', icon: 'workspace_premium', active: true, name: 'BrandScale™', roleAr: 'نظام العلامة والتموضع', roleEn: 'Brand & positioning system' },
+        { slug: 'project-launch', icon: 'rocket_launch', active: false, name: 'ProjectLaunch™', roleAr: 'إطلاق المشروع وبيئة البيع', roleEn: 'Project launch & sales environment' },
+        { slug: 'growth-launch', icon: 'query_stats', active: false, name: 'GrowthLaunch™', roleAr: 'توليد العملاء والمبيعات', roleEn: 'Lead generation & sales' },
+      ],
       faq: [
-        ['ماذا يشمل BrandScale™؟', 'تموضع، نظام هوية، أدلة استخدام، وحضور رقمي متماسك — كنظام واحد.'],
+        ['ماذا يشمل BrandScale™؟', 'تموضع، نظام هوية، أدلة استخدام، حضور رقمي، وقوالب جاهزة — كنظام واحد قابل للتطبيق.'],
         ['هل يناسب المطوّرين والمؤسسات؟', 'نعم — مصمم للعلامات التي تحتاج ثقة السوق والاستمرارية عبر مشاريع متعددة.'],
         ['كم يستغرق البناء؟', 'نحدد نطاقاً واضحاً في جلسة واحدة ونقدّم عرضاً أولياً خلال ٤٨ ساعة.'],
-        ['هل يرتبط مع ProjectLaunch وGrowthLaunch؟', 'نعم — الهوية تُسلَّم بلغة متوافقة مع الإطلاق ومسارات النمو، حتى لا تتعارض القنوات.'],
+        ['هل يتكامل مع ProjectLaunch وGrowthLaunch؟', 'نعم — الهوية تُسلَّم بلغة متوافقة مع الإطلاق ومسارات النمو، حتى لا تتعارض القنوات.'],
+        ['هل يمكن البدء بمرحلة التموضع فقط؟', 'نعم — يمكن التنفيذ على مراحل، لكن قيمة النظام في اللغة الموحدة عبر كل سطح.'],
+        ['ماذا يحدث بعد التسليم؟', 'نسلّم أصولاً جاهزة للفريق مع جلسة توجيه — ويمكن متابعة الاتساق عند إطلاق مشاريع جديدة.'],
       ],
       ctaTitle: 'جاهز لبناء نظام علامة يصمد؟',
       ctaLead: 'جلسة واحدة لرسم التموضع ونطاق الهوية — بدون التزام في الخطوة الأولى.',
@@ -460,10 +524,23 @@ const PRODUCTS = [
       eyebrow: 'Brand system',
       h1Ar: '',
       heroHeadline: 'From positioning to a presence that commands trust — a brand system, not a standalone logo',
-      heroLead: 'Positioning, visual identity, team guidelines, and digital presence in one scalable language.',
+      heroLead: 'Positioning, visual identity, team guidelines, and digital presence in one language — so the market sees one institution, however many projects you launch.',
       gapTitle: 'Why does the brand weaken as projects multiply?',
-      gapLead: 'Each new project arrives with a different visual language — positioning blurs and market trust erodes before sales begin.',
-      gapItems: ['Identity scattered across projects and campaigns', 'Teams without practical usage guidelines', 'Digital presence that undersells the institution'],
+      gapLead: 'Each new project arrives with a different visual language — positioning blurs, teams drift, and market trust erodes before sales begin.',
+      gapItems: [
+        'Identity scattered across projects and campaigns',
+        'Teams without practical usage guidelines',
+        'Digital presence that undersells the institution',
+        'Campaigns that look like they came from different agencies',
+      ],
+      pillarsEyebrow: 'Why a system, not a logo?',
+      pillarsTitle: 'Three pillars that build market trust',
+      pillarsLead: 'BrandScale™ does not start with colour — it starts with who you are, then translates that to every surface the client touches.',
+      pillars: [
+        { icon: 'psychology', title: 'Positioning that matters', desc: 'Before any colour: who you serve, why you, and how the message is said — one message that distinguishes you in a crowded market.' },
+        { icon: 'layers', title: 'A scalable system', desc: 'Identity that works on project five as well as project one — no reinvention or conflict between teams and agencies.' },
+        { icon: 'touch_app', title: 'Presence that translates', desc: 'From website to sales hall to campaign: one language at every touchpoint — presence felt before it is spoken.' },
+      ],
       outcomesTitle: 'What BrandScale™ builds',
       outcomesLead: 'Brand assets ready to deploy — from message to every surface the client touches.',
       outcomes: [
@@ -471,6 +548,8 @@ const PRODUCTS = [
         ['Identity system', 'Logo, colour and print that scale'],
         ['Usage guidelines', 'Your team applies the same language — no guesswork'],
         ['Digital presence', 'Web and collateral aligned with launch and growth'],
+        ['Ready collateral', 'Templates for campaigns, decks and print'],
+        ['Compounding consistency', 'Trust builds with every project — not rebuilt from scratch'],
       ],
       overviewTag: 'The system',
       overviewTitle: 'Identity that endures and scales',
@@ -482,7 +561,12 @@ const PRODUCTS = [
         'Consistent web and digital presence',
         'Collateral aligned with ProjectLaunch™ and GrowthLaunch™',
       ],
-      process: ['Discovery and positioning', 'Identity system design', 'Digital and print applications', 'Launch and consistency follow-through'],
+      process: [
+        ['Discovery & positioning', 'A session to understand market, audience and differentiation'],
+        ['Identity system design', 'Logo, colour, typography and usage rules'],
+        ['Digital & print applications', 'Website, templates and team-ready assets'],
+        ['Launch & consistency follow-through', 'Handover with post-launch consistency review'],
+      ],
       processEyebrow: 'How we work',
       processTitle: 'Methodology',
       portEyebrow: 'Brand environments',
@@ -490,11 +574,53 @@ const PRODUCTS = [
       vidEyebrow: 'Brand in motion',
       vidTitle: 'Content that keeps the language',
       vidLead: 'Media that carries the brand system — complementary to launch and growth, not a replacement.',
+      compareTitle: 'Without a system — or with BrandScale™?',
+      compareLead: 'The difference is not logo beauty — it is consistent trust across every project.',
+      compareWithout: [
+        'A new or shifting logo with every project',
+        'Teams guessing colours and typography',
+        'Website that does not match the sales hall',
+        'Campaigns that look like different agencies',
+      ],
+      compareWith: [
+        'One message and positioning across the portfolio',
+        'Clear guidelines for teams and agencies',
+        'Aligned digital and print collateral',
+        'Trust that compounds with every launch',
+      ],
+      deliverablesEyebrow: 'What you receive',
+      deliverablesTitle: 'A brand pack ready to deploy',
+      deliverablesLead: 'Not a single file — a system of assets your team can use from day one.',
+      deliverables: [
+        { icon: 'description', title: 'Positioning document', desc: 'Who you serve, differentiation and tone of voice' },
+        { icon: 'palette', title: 'Visual identity system', desc: 'Logo, colour, typography and usage rules' },
+        { icon: 'menu_book', title: 'Brand guidelines', desc: 'Practical guidelines for teams and agencies' },
+        { icon: 'web', title: 'Digital presence', desc: 'Website and consistent digital templates' },
+        { icon: 'print', title: 'Print templates', desc: 'Cards, decks and print-ready collateral' },
+        { icon: 'rocket_launch', title: 'Launch pack', desc: 'Assets ready for the first campaign or project' },
+      ],
+      audienceEyebrow: 'Built for',
+      audienceTitle: 'Brands that need trust before scale',
+      audience: [
+        { title: 'Multi-project developers', desc: 'A portfolio that needs one language — not a new identity with every launch.' },
+        { title: 'Institutional brands', desc: 'A presence that commands trust with investors, partners and authorities.' },
+        { title: 'Teams launching something new', desc: 'Clear visual language before advertising — no time to reinvent.' },
+      ],
+      ecosystemEyebrow: 'Graphics House ecosystem',
+      ecosystemTitle: 'BrandScale™ — the foundation before launch and growth',
+      ecosystemLead: 'Identity comes first. Then ProjectLaunch™ builds the sales environment, and GrowthLaunch™ drives demand.',
+      ecosystem: [
+        { slug: 'brand-scale', icon: 'workspace_premium', active: true, name: 'BrandScale™', roleAr: 'نظام العلامة والتموضع', roleEn: 'Brand & positioning system' },
+        { slug: 'project-launch', icon: 'rocket_launch', active: false, name: 'ProjectLaunch™', roleAr: 'إطلاق المشروع وبيئة البيع', roleEn: 'Project launch & sales environment' },
+        { slug: 'growth-launch', icon: 'query_stats', active: false, name: 'GrowthLaunch™', roleAr: 'توليد العملاء والمبيعات', roleEn: 'Lead generation & sales' },
+      ],
       faq: [
-        ['What does BrandScale™ include?', 'Positioning, identity system, guidelines, and a coherent digital presence — as one system.'],
+        ['What does BrandScale™ include?', 'Positioning, identity system, guidelines, digital presence and ready templates — as one deployable system.'],
         ['Is it for developers and institutions?', 'Yes — built for brands that need market trust and continuity across multiple projects.'],
         ['How long does it take?', 'We scope clearly in one session and share an initial proposal within 48 hours.'],
         ['Does it connect with ProjectLaunch and GrowthLaunch?', 'Yes — identity is delivered in a language compatible with launch and growth paths.'],
+        ['Can we start with positioning only?', 'Yes — delivery can be phased, but the system value is one language across every surface.'],
+        ['What happens after handover?', 'Team-ready assets with a briefing session — plus consistency support when new projects launch.'],
       ],
       ctaTitle: 'Ready to build a brand system that holds?',
       ctaLead: 'One session to map positioning and identity scope — no commitment in the first step.',
@@ -510,6 +636,123 @@ function pic(src, webp, alt, cls = 'w-full h-full object-cover') {
     return `<picture><source srcset="${webp}" type="image/webp"><img class="${cls}" src="${src}" alt="${alt}" loading="lazy"/></picture>`;
   }
   return `<img class="${cls}" src="${src}" alt="${alt}" loading="lazy"/>`;
+}
+
+function buildPremiumExtras(t, isEn, contact, ctaSlug) {
+  const out = { pillars: '', compare: '', deliverables: '', audience: '', ecosystem: '' };
+
+  if (t.pillars?.length) {
+    const items = t.pillars
+      .map(
+        (p, i) => `<article class="gl-pillar reveal" style="opacity:0;transform:translateY(20px);transition-delay:${(i * 0.07).toFixed(2)}s">
+        <span class="material-symbols-outlined ms-filled gl-pillar-icon">${p.icon}</span>
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+      </article>`
+      )
+      .join('');
+    out.pillars = `<section class="gl-pillars">
+  <div class="gl-pillars-head reveal" style="opacity:0;transform:translateY(20px)">
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${t.pillarsEyebrow || ''}</span>
+    <h2>${t.pillarsTitle || ''}</h2>
+    <p>${t.pillarsLead || ''}</p>
+  </div>
+  <div class="gl-pillars-grid">${items}</div>
+</section>`;
+  }
+
+  if (t.compareWithout?.length && t.compareWith?.length) {
+    const without = t.compareWithout.map((item) => `<li>${item}</li>`).join('');
+    const withItems = t.compareWith.map((item) => `<li>${item}</li>`).join('');
+    out.compare = `<section class="gl-compare">
+  <div class="gl-compare-head reveal" style="opacity:0;transform:translateY(20px)">
+    <h2>${t.compareTitle || ''}</h2>
+    <p>${t.compareLead || ''}</p>
+  </div>
+  <div class="gl-compare-grid">
+    <article class="gl-compare-col gl-compare-without reveal" style="opacity:0;transform:translateY(20px)">
+      <span class="gl-compare-label">${isEn ? 'Without a system' : 'بدون نظام'}</span>
+      <ul>${without}</ul>
+    </article>
+    <article class="gl-compare-col gl-compare-with reveal" style="opacity:0;transform:translateY(20px);transition-delay:.1s">
+      <span class="gl-compare-label">${isEn ? 'With BrandScale™' : 'مع BrandScale™'}</span>
+      <ul>${withItems}</ul>
+    </article>
+  </div>
+</section>`;
+  }
+
+  if (t.deliverables?.length) {
+    const items = t.deliverables
+      .map(
+        (d, i) => `<article class="gl-deliverable reveal" style="opacity:0;transform:translateY(20px);transition-delay:${(i * 0.05).toFixed(2)}s">
+        <span class="material-symbols-outlined ms-filled">${d.icon}</span>
+        <strong>${d.title}</strong>
+        <span>${d.desc}</span>
+      </article>`
+      )
+      .join('');
+    out.deliverables = `<section class="gl-deliverables">
+  <div class="gl-deliverables-head reveal" style="opacity:0;transform:translateY(20px)">
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${t.deliverablesEyebrow || ''}</span>
+    <h2>${t.deliverablesTitle || ''}</h2>
+    <p>${t.deliverablesLead || ''}</p>
+  </div>
+  <div class="gl-deliverables-grid">${items}</div>
+</section>`;
+  }
+
+  if (t.audience?.length) {
+    const items = t.audience
+      .map(
+        (a, i) => `<article class="gl-audience-card reveal" style="opacity:0;transform:translateY(20px);transition-delay:${(i * 0.07).toFixed(2)}s">
+        <h3>${a.title}</h3>
+        <p>${a.desc}</p>
+      </article>`
+      )
+      .join('');
+    out.audience = `<section class="gl-audience">
+  <div class="gl-audience-head reveal" style="opacity:0;transform:translateY(20px)">
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${t.audienceEyebrow || ''}</span>
+    <h2>${t.audienceTitle || ''}</h2>
+  </div>
+  <div class="gl-audience-grid">${items}</div>
+</section>`;
+  }
+
+  if (t.ecosystem?.length) {
+    const suffix = isEn ? '-en.html' : '.html';
+    const items = t.ecosystem
+      .map((e) => {
+        const href = e.active ? contact : `../solutions/${e.slug}${suffix}`;
+        const role = isEn ? e.roleEn : e.roleAr;
+        const cls = e.active ? 'gl-eco-card gl-eco-card-active' : 'gl-eco-card';
+        const cta = e.active
+          ? isEn
+            ? 'Book session →'
+            : 'احجز جلسة ←'
+          : isEn
+            ? 'Explore →'
+            : 'اكتشف ←';
+        return `<a href="${href}" class="${cls} reveal" style="opacity:0;transform:translateY(20px)" data-cta="${ctaSlug}-eco-${e.slug}">
+        <span class="material-symbols-outlined ms-filled gl-eco-icon">${e.icon}</span>
+        <strong dir="ltr">${e.name}</strong>
+        <span>${role}</span>
+        <em>${cta}</em>
+      </a>`;
+      })
+      .join('');
+    out.ecosystem = `<section class="gl-ecosystem">
+  <div class="gl-ecosystem-head reveal" style="opacity:0;transform:translateY(20px)">
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${t.ecosystemEyebrow || ''}</span>
+    <h2>${t.ecosystemTitle || ''}</h2>
+    <p>${t.ecosystemLead || ''}</p>
+  </div>
+  <div class="gl-ecosystem-grid">${items}</div>
+</section>`;
+  }
+
+  return out;
 }
 
 function buildPremiumPage(product, isEn) {
@@ -532,6 +775,8 @@ function buildPremiumPage(product, isEn) {
   const faqEyebrow = isEn ? 'FAQ' : 'الأسئلة الشائعة';
   const faqTitle = isEn ? 'Answers to common questions' : 'أجوبة عن استفساراتكم';
   const ctaSlug = product.key || 'sol';
+  const extras = buildPremiumExtras(t, isEn, contact, ctaSlug);
+  const overviewAlt = isEn ? product.overviewAltEn || '' : product.overviewAltAr || '';
 
   const proofHtml = (product.proofStats || [])
     .map(
@@ -562,12 +807,17 @@ function buildPremiumPage(product, isEn) {
     .join('');
 
   const process = t.process
-    .map(
-      (p, i) => `<article class="gl-step reveal" style="opacity:0;transform:translateY(20px);transition-delay:${(i * 0.08).toFixed(2)}s">
+    .map((p, i) => {
+      const title = Array.isArray(p) ? p[0] : p;
+      const desc = Array.isArray(p) ? p[1] : '';
+      const body = desc
+        ? `<strong class="gl-step-title">${title}</strong><p>${desc}</p>`
+        : `<p>${title}</p>`;
+      return `<article class="gl-step reveal" style="opacity:0;transform:translateY(20px);transition-delay:${(i * 0.08).toFixed(2)}s">
         <div class="gl-step-num">${String(i + 1).padStart(2, '0')}</div>
-        <p>${p}</p>
-      </article>`
-    )
+        ${body}
+      </article>`;
+    })
     .join('');
 
   const cards = product.cards
@@ -638,7 +888,7 @@ ${analyticsHeadTags('../')}
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
 <link rel="stylesheet" href="../assets/site-header.css?v=33">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
-<link rel="stylesheet" href="../assets/solution-premium.css?v=1">
+<link rel="stylesheet" href="../assets/solution-premium.css?v=2">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=8">
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
@@ -690,6 +940,8 @@ ${header}
   </div>
 </section>
 
+${extras.pillars}
+
 <section class="py-[100px] px-8 md:px-12">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
     <div class="reveal w-full md:w-1/2" style="opacity:0;transform:translateY(24px)">
@@ -703,7 +955,7 @@ ${header}
     </div>
     <div class="reveal w-full md:w-1/2 relative" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
       <div class="absolute -inset-3 border border-primary/20 pointer-events-none" style="transform:translate(12px,12px)"></div>
-      <img class="relative z-10 w-full rounded-sm shadow-2xl" src="${product.overviewImg}" alt="" loading="lazy"/>
+      <img class="relative z-10 w-full rounded-sm shadow-2xl" src="${product.overviewImg}" alt="${overviewAlt}" loading="lazy"/>
     </div>
   </div>
 </section>
@@ -717,6 +969,9 @@ ${header}
   <div class="gl-outcomes-grid">${outcomesHtml}</div>
 </section>
 
+${extras.compare}
+${extras.deliverables}
+
 <section class="gl-process-sec">
   <div class="text-center mb-12 reveal" style="opacity:0;transform:translateY(20px)">
     <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${t.processEyebrow}</span>
@@ -724,6 +979,8 @@ ${header}
   </div>
   <div class="gl-steps">${process}</div>
 </section>
+
+${extras.audience}
 
 <section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto">
   <div class="flex justify-between items-end mb-12 reveal" style="opacity:0;transform:translateY(20px)">
@@ -744,6 +1001,8 @@ ${header}
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto px-8 md:px-12">${videos}</div>
 </section>
+
+${extras.ecosystem}
 
 <section class="gl-faq-sec">
   <div class="px-8 md:px-12 max-w-3xl mx-auto">
