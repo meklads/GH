@@ -79,8 +79,8 @@ for (const rel of collectHtml(ROOT)) {
       ? html.includes('Quick Links') && html.includes('gh-footer__top') && !html.includes('Saudi Cities') && !html.includes('gh-lang-alt')
       : html.includes('روابط مهمة') && html.includes('gh-footer__top') && !html.includes('المدن السعودية') && !html.includes('gh-lang-alt');
     if (!footerOk) issues.push(`${rel}: outdated footer layout`);
-    if (!/gh-site-enhancements\.css\?v=21/.test(html)) {
-      issues.push(`${rel}: missing versioned footer CSS (gh-site-enhancements.css?v=21)`);
+    if (!/gh-site-enhancements\.css\?v=22/.test(html)) {
+      issues.push(`${rel}: missing versioned footer CSS (gh-site-enhancements.css?v=22)`);
     }
   }
 

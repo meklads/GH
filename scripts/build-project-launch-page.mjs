@@ -893,7 +893,7 @@ ${analyticsHeadTags('../')}
 <script defer src="../assets/lang-switch.js?v=2"></script>
 <script defer src="../assets/project-launch-media.js?v=3"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
+<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=22">
 <link rel="stylesheet" href="../assets/site-header.css?v=33">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 <link rel="stylesheet" href="../assets/solution-premium.css?v=2">
@@ -1195,7 +1195,7 @@ ${analyticsHeadTags('../')}
 <script defer src="../assets/gh-performance.js?v=2"></script>
 <script defer src="../assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=21">
+<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=22">
 <link rel="stylesheet" href="../assets/site-header.css?v=31">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 <script type="application/ld+json">${JSON.stringify({
