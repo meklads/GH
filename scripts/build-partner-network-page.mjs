@@ -522,7 +522,7 @@ function buildPage(c) {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=23">
-<link rel="stylesheet" href="assets/site-header.css?v=33">
+<link rel="stylesheet" href="assets/site-header.css?v=34">
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=8">
 <style>
 :root{--gold:#C9A84C;--gold-light:#E2C878;--gold-soft:rgba(201,168,76,.1);--gold-glow:rgba(201,168,76,.35);--ink:#141414;--dark:#080c0a;--muted:rgba(20,20,20,.58);--line:rgba(20,20,20,.08);--white:#FFF;--ivory:#FAFAF8;--radius:16px;--radius-lg:24px;--ease:cubic-bezier(.22,1,.36,1)}
