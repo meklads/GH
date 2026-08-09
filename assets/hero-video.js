@@ -7,6 +7,11 @@
     v.dataset.heroOk = '1';
 
     var wrap = v.closest('.hero-video-bg');
+    if (window.GHVideo) {
+      window.GHVideo.ensureLoaded(v);
+      window.GHVideo.prep(v);
+    }
+
     v.muted = true;
     v.defaultMuted = true;
     v.playsInline = true;
@@ -31,6 +36,10 @@
 
     function tryPlay() {
       atStart();
+      if (window.GHVideo) {
+        window.GHVideo.tryPlay(v);
+        return;
+      }
       var p = v.play();
       if (p && typeof p.catch === 'function') {
         p.catch(function () {});
@@ -62,6 +71,7 @@
     tryPlay();
     window.setTimeout(tryPlay, 300);
     window.setTimeout(tryPlay, 1000);
+    window.setTimeout(tryPlay, 2500);
 
     ['touchstart', 'click', 'scroll'].forEach(function (evt) {
       document.addEventListener(evt, tryPlay, { passive: true });
