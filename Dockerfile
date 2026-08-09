@@ -1,9 +1,12 @@
 # Build static site in CI/Coolify, then serve with nginx
 FROM node:20-alpine AS builder
 WORKDIR /app
+RUN apk add --no-cache libwebp-tools
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
+ENV NODE_OPTIONS="--max-old-space-size=1024"
+ENV CI=true
 RUN npm run build
 
 FROM nginx:alpine
@@ -17,6 +20,9 @@ RUN rm -rf /usr/share/nginx/html/node_modules \
     /usr/share/nginx/html/package-lock.json \
     /usr/share/nginx/html/tailwind.config.js \
     /usr/share/nginx/html/.cursor \
-    /usr/share/nginx/html/workers
+    /usr/share/nginx/html/workers \
+    /usr/share/nginx/html/.github \
+    /usr/share/nginx/html/docs \
+    /usr/share/nginx/html/.trash
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

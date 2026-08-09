@@ -3,7 +3,12 @@
 node_modules
 .cursor
 .trash
+docs
+.github
 workers
 *.md
 Dockerfile
 .dockerignore
+.DS_Store
+**/.DS_Store
+agent-transcripts
