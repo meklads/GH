@@ -67,12 +67,13 @@ ${analyticsHeadTags(p)}
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="${p}assets/site-header.css?v=31">
-<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=16">
+<link rel="stylesheet" href="${p}assets/site-header.css?v=33">
+<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=23">
 <link rel="stylesheet" href="${p}assets/gh-location.css?v=8">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=16"></script>
-<script defer src="${p}assets/gh-performance.js?v=1"></script>
+<script defer src="${p}assets/gh-performance.js?v=10"></script>
+<script defer src="${p}assets/gh-cta-track.js?v=1"></script>
 <script defer src="${p}assets/lang-switch.js?v=3"></script>
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
