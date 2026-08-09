@@ -73,115 +73,18 @@ a{text-decoration:none;color:inherit}
   .nav.open a{font-size:20px;text-align:center}
 }
 
-/* ══ HERO ══ */
-.pf-hero{background:linear-gradient(160deg,#0D1A12 0%,#0A0A0A 60%,#1A1200 100%);padding:140px 0 80px;position:relative;overflow:hidden}
-.pf-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 100%,black 20%,transparent 80%)}
-.pf-hero-inner{position:relative;z-index:2}
-.pf-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.15em;color:#C9A84C;text-transform:uppercase;margin-bottom:20px}
-.pf-eyebrow::after{content:'';width:28px;height:1px;background:#C9A84C}
-.pf-hero h1{font-size:clamp(40px,6vw,80px);font-weight:900;line-height:1.1;color:#FAFAF8}
-.pf-hero h1 em{font-style:normal;color:#C9A84C}
-.pf-hero p{font-size:17px;color:rgba(255,255,255,.55);margin-top:20px;max-width:560px;line-height:2}
-/* ══ FILTER — full-bleed bar, links align to page .container (not viewport edge) ══ */
-.filter-wrap{position:sticky;top:var(--gh-header-height,98px);z-index:800;background:#FFFFFF;border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 2px 20px rgba(0,0,0,.06)}
-.filter-inner{display:flex;align-items:center;justify-content:flex-start;gap:0;overflow-x:auto;scrollbar-width:none;height:56px;flex-direction:row}
-.filter-inner::-webkit-scrollbar{display:none}
-.filter-btn{flex-shrink:0;background:none;border:none;border-bottom:3px solid transparent;font-family:'Tajawal',sans-serif;font-size:13px;font-weight:700;color:#9B9B9B;cursor:pointer;padding:0 18px;height:100%;transition:all .25s;white-space:nowrap}
-.filter-btn:first-child{padding-inline-start:0}
-.filter-btn:hover{color:#1A1A1A}
-.filter-btn.active{color:#C9A84C;border-bottom-color:#C9A84C}
-@media(max-width:768px){
-  .filter-wrap{top:var(--gh-header-height-mobile,78px)}
-  .filter-btn{padding:0 14px}
-  .filter-btn:first-child{padding-inline-start:0}
-}
-
-/* ══ SECTION ══ */
-.pf-section{padding:72px 0}
-.pf-section:nth-child(even){background:#FFFFFF}
-.pf-section:nth-child(odd){background:#F5F4F0}
-.section-header{margin-bottom:40px}
-.section-label{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.15em;color:#C9A84C;text-transform:uppercase;margin-bottom:12px}
-.section-label::after{content:'';width:20px;height:1px;background:#C9A84C}
-.section-title{font-size:clamp(24px,3vw,36px);font-weight:900;color:#1A1A1A}
-.section-desc{font-size:15px;color:#6B6B6B;margin-top:8px;max-width:520px;line-height:1.8}
-
-/* ══ GRID ══ */
-.pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:900px){.pf-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.pf-grid{grid-template-columns:1fr}}
-
-/* ══ CARD ══ */
-.pf-card{background:#FFFFFF;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .35s cubic-bezier(.25,.46,.45,.94),box-shadow .35s;cursor:pointer}
-.pf-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.14)}
-.pf-card-img{aspect-ratio:16/9;overflow:hidden;position:relative;background:#E8E6E0}
-.pf-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
-.pf-card:hover .pf-card-img img{transform:scale(1.05)}
-.pf-card-video-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.65);border:2px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;transition:all .3s;backdrop-filter:blur(4px)}
-.pf-card:hover .pf-card-video-icon{background:rgba(201,168,76,.9);border-color:#C9A84C}
-.pf-card-body{padding:20px 20px 18px}
-.pf-card-cat{font-size:10px;font-weight:700;letter-spacing:.1em;color:#C9A84C;margin-bottom:6px}
-.pf-card-title{font-size:15px;font-weight:700;color:#1A1A1A;line-height:1.4}
-.pf-card-sub{font-size:12px;color:#8B8B8B;margin-top:4px}
-.pf-card-arrow{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;font-weight:700;color:#C9A84C;opacity:0;transform:translateX(6px);transition:all .3s}
-.pf-card:hover .pf-card-arrow{opacity:1;transform:translateX(0)}
-
-/* ══ CTA ══ */
-.pf-cta{background:linear-gradient(135deg,#0D1A12 0%,#0A0A0A 100%);padding:100px 0;text-align:center;position:relative;overflow:hidden}
-.pf-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(ellipse,rgba(201,168,76,.07) 0%,transparent 65%);pointer-events:none}
-.pf-cta h2{font-size:clamp(28px,4vw,52px);font-weight:900;color:#FAFAF8;position:relative;z-index:1}
-.pf-cta h2 em{font-style:normal;color:#C9A84C}
-.pf-cta p{font-size:17px;color:rgba(255,255,255,.5);margin:16px auto 0;max-width:480px;line-height:2;position:relative;z-index:1}
-.pf-cta-btn{display:inline-flex;align-items:center;gap:10px;margin-top:40px;padding:15px 40px;background:#C9A84C;color:#0A0A0A;font-family:'Tajawal',sans-serif;font-size:15px;font-weight:800;border-radius:50px;transition:all .3s;position:relative;z-index:1}
-.pf-cta-btn:hover{background:#D9B860;transform:scale(1.04)}
-
-/* ══ FOOTER ══ */
-.footer{background:#071810;color:#fff;font-family:'Tajawal','Inter',sans-serif;position:relative;overflow:hidden;direction:rtl}
-.footer-inner{max-width:1320px;margin:0 auto;padding:56px 48px 0;position:relative;z-index:1}
-.footer-motif{position:absolute;bottom:-80px;left:-60px;width:1560px;height:auto;opacity:.05;pointer-events:none;filter:brightness(1.2) saturate(0)}
-.footer-logo{padding-bottom:40px;border-bottom:1px solid rgba(201,168,76,.35)}
-.footer-offices{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid rgba(201,168,76,.35)}
-.footer-office{padding:36px 28px}
-.footer-office:first-child{padding-right:0}
-.footer-office:last-child{padding-left:0}
-.footer-city{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px;font-family:'Inter',sans-serif}
-.footer-addr{font-size:12px;color:rgba(255,255,255,.65);line-height:2;margin-bottom:22px;direction:ltr;text-align:right}
-.footer-call{display:inline-flex;align-items:center;gap:7px;padding:9px 22px;border:1px solid rgba(255,255,255,.3);border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.08em;color:#fff;transition:all .3s}
-.footer-call:hover{border-color:#C9A84C;color:#C9A84C}
-.footer-social{padding:28px 0;border-bottom:1px solid rgba(201,168,76,.35);display:flex;align-items:center;gap:16px}
-.footer-social-label{font-size:13px;color:rgba(255,255,255,.6);white-space:nowrap;font-weight:600}
-.footer-icon{width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .3s}
-.footer-icon:hover{background:rgba(201,168,76,.3)}
-.footer-bottom{padding:20px 0 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;direction:ltr}
-.footer-copy{font-size:11px;color:rgba(255,255,255,.85)}
-.footer-links{display:flex;gap:20px}
-.footer-links a{font-size:11px;color:rgba(255,255,255,.5);transition:color .3s}
-.footer-links a:hover{color:#C9A84C}
-@media(max-width:768px){.footer-offices{grid-template-columns:1fr 1fr}.footer-office{padding:24px 12px}.footer-inner{padding:40px 20px 0}}
-
-/* LIGHTBOX */
-#imgLB{display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:99999;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;padding:20px}
-#imgLBimg{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px;box-shadow:0 40px 120px rgba(0,0,0,.8)}
-.lb-x{position:absolute;top:20px;left:24px;background:none;border:none;color:rgba(255,255,255,.5);font-size:32px;cursor:pointer;line-height:1;transition:color .2s}
-.lb-x:hover{color:#fff}
-.lb-meta{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);text-align:center}
-.lb-meta-cat{font-size:10px;font-weight:700;color:#C9A84C;margin-bottom:6px}
-.lb-meta-title{font-size:14px;font-weight:600;color:rgba(255,255,255,.8)}
-/* VIDEO */
-#vidModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.97);z-index:99999;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
-.vid-wrap{position:relative;width:min(1280px,95vw);aspect-ratio:16/9}
-.vid-wrap iframe{width:100%;height:100%;border:none;border-radius:6px}
-.vid-x{position:absolute;top:-48px;left:0;background:none;border:none;color:rgba(255,255,255,.5);font-size:32px;cursor:pointer;transition:color .2s}
-.vid-x:hover{color:#fff}
-
 </style>
 <script defer src="assets/site-header.js?v=16"></script>
 <script defer src="assets/gh-performance.js?v=10"></script>
 <script defer src="assets/lang-switch.js?v=2"></script>
+<script defer src="assets/portfolio-page.js?v=1"></script>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=23">
 <link rel="stylesheet" href="assets/site-header.css?v=35">
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=8">
+<link rel="preconnect" href="https://img.youtube.com">
+<link rel="dns-prefetch" href="https://img.youtube.com">
+<link rel="stylesheet" href="assets/portfolio-page.css?v=1">
 </head>
 <body>
 
@@ -350,42 +253,42 @@ a{text-decoration:none;color:inherit}
     </div>
     <div class="pf-grid">
       <div class="pf-card" data-cat="cinematic" onclick="openImg('assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg','سينمائي CGI','الخير هايتس، مكة المكرمة')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><img src="assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" alt="الخير هايتس" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp" type="image/webp"><img src="assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" alt="الخير هايتس" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">سينمائي CGI</div><div class="pf-card-title">الخير هايتس، مكة المكرمة</div><div class="pf-card-sub">برج سكني · المملكة العربية السعودية</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="cinematic" onclick="openImg('assets/projects/rendering/uae-e1745147961286.jpeg','سينمائي CGI','برج متعدد الاستخدامات، الإمارات')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/uae-e1745147961286.webp" type="image/webp"><img src="assets/projects/rendering/uae-e1745147961286.jpeg" alt="برج الإمارات" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/uae-e1745147961286.webp" type="image/webp"><img src="assets/projects/rendering/uae-e1745147961286.jpeg" alt="برج الإمارات" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">سينمائي CGI</div><div class="pf-card-title">برج متعدد الاستخدامات، الإمارات</div><div class="pf-card-sub">مشروع تجاري · الإمارات العربية المتحدة</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
-      <div class="pf-card" data-cat="cinematic" onclick="openVid('https://www.youtube.com/embed/?autoplay=1&vq=hd1080')">
+      <div class="pf-card" data-cat="cinematic" onclick="openVidById('AYStF0c4Hgk')">
         <div class="pf-card-img">
-          <picture><source srcset="assets/projects/cinematic/video-1.webp" type="image/webp"><img src="assets/projects/cinematic/video-1.jpg" alt="فيلم سينمائي" loading="lazy"/></picture>
+          <picture><source srcset="assets/projects/cinematic/video-1.webp" type="image/webp"><img src="assets/projects/cinematic/video-1.jpg" alt="فيلم سينمائي" loading="lazy" decoding="async"/></picture>
           <div class="pf-card-video-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="pf-card-body"><div class="pf-card-cat">سينمائي CGI · فيلم</div><div class="pf-card-title">أبراج بارزة، فيلم سينمائي</div><div class="pf-card-sub">إنتاج فيلم CGI</div><div class="pf-card-arrow">← مشاهدة الفيلم</div></div>
       </div>
       <div class="pf-card" data-cat="cinematic" onclick="openImg('assets/projects/rendering/Anan-Escan-Co.01.jpeg','سينمائي CGI','عنان إسكان للتطوير، الرياض')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="عنان إسكان للتطوير" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="عنان إسكان للتطوير" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">سينمائي CGI</div><div class="pf-card-title">عنان إسكان للتطوير، الرياض</div><div class="pf-card-sub">مجمع سكني · المملكة العربية السعودية</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="cinematic" onclick="openImg('assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg','سينمائي CGI','المركز المالي، مدينة الملك عبدالله')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><img src="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg" alt="المركز المالي" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.webp" type="image/webp"><img src="assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg" alt="المركز المالي" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">سينمائي CGI</div><div class="pf-card-title">المركز المالي، مدينة الملك عبدالله</div><div class="pf-card-sub">مشروع حكومي · المملكة العربية السعودية</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="cinematic" onclick="openImg('assets/projects/rendering/wahat-alsalam9-scaled.jpg','سينمائي CGI','واحة السلام')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/wahat-alsalam9-scaled.webp" type="image/webp"><img src="assets/projects/rendering/wahat-alsalam9-scaled.jpg" alt="واحة السلام" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/wahat-alsalam9-scaled.webp" type="image/webp"><img src="assets/projects/rendering/wahat-alsalam9-scaled.jpg" alt="واحة السلام" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">سينمائي CGI</div><div class="pf-card-title">واحة السلام</div><div class="pf-card-sub">مخطط رئيسي · المملكة العربية السعودية</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="cinematic" onclick="openImg('assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg','سينمائي CGI','الأولى لتطوير النخيل')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp" type="image/webp"><img src="assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="الأولى النخيل" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp" type="image/webp"><img src="assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="الأولى النخيل" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">سينمائي CGI</div><div class="pf-card-title">الأولى لتطوير النخيل</div><div class="pf-card-sub">وحدات سكنية · المملكة العربية السعودية</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="cinematic" onclick="openImg('assets/projects/rendering/The-Meteorological-Building.jpeg','سينمائي CGI','مبنى الأرصاد الجوية')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/The-Meteorological-Building.webp" type="image/webp"><img src="assets/projects/rendering/The-Meteorological-Building.jpeg" alt="مبنى الأرصاد" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/The-Meteorological-Building.webp" type="image/webp"><img src="assets/projects/rendering/The-Meteorological-Building.jpeg" alt="مبنى الأرصاد" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">سينمائي CGI</div><div class="pf-card-title">مبنى الأرصاد الجوية</div><div class="pf-card-sub">منشأة حكومية · المملكة العربية السعودية</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="cinematic" onclick="openImg('assets/projects/rendering/kuday-makkah-e1745137682714.jpeg','سينمائي CGI','كداء، مكة المكرمة')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/kuday-makkah-e1745137682714.webp" type="image/webp"><img src="assets/projects/rendering/kuday-makkah-e1745137682714.jpeg" alt="كداء مكة" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/kuday-makkah-e1745137682714.webp" type="image/webp"><img src="assets/projects/rendering/kuday-makkah-e1745137682714.jpeg" alt="كداء مكة" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">سينمائي CGI</div><div class="pf-card-title">مشروع كداء، مكة المكرمة</div><div class="pf-card-sub">برج سكني · مكة المكرمة</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
     </div>
@@ -402,27 +305,27 @@ a{text-decoration:none;color:inherit}
     </div>
         <div class="pf-grid">
       <div class="pf-card" data-cat="maquettes" onclick="openImg('assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg','مجسمات ذكية','ميثاق مكة — معرض رابطة العالم الإسلامي')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img src="assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="مجسم ميثاق مكة رابطة العالم الإسلامي" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img src="assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="مجسم ميثاق مكة رابطة العالم الإسلامي" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">مجسمات ذكية</div><div class="pf-card-title">ميثاق مكة — معرض رابطة العالم الإسلامي</div><div class="pf-card-sub">مجسم ذكي وتجربة تفاعلية · مكة</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="maquettes" onclick="openImg('assets/projects/maquettes/maquette-detail-04.jpeg','مجسمات ذكية','مجسم ميثاق مكة')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/maquette-detail-04.webp" type="image/webp"><img src="assets/projects/maquettes/maquette-detail-04.jpeg" alt="مجسم معماري ميثاق مكة" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/maquette-detail-04.webp" type="image/webp"><img src="assets/projects/maquettes/maquette-detail-04.jpeg" alt="مجسم معماري ميثاق مكة" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">مجسمات ذكية</div><div class="pf-card-title">مجسم ميثاق مكة</div><div class="pf-card-sub">رابطة العالم الإسلامي · مكة</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="maquettes" onclick="openImg('assets/projects/maquettes/anan-eskan-maquette-01.jpeg','مجسمات ذكية','عنان إسكان — الرياض')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/anan-eskan-maquette-01.webp" type="image/webp"><img src="assets/projects/maquettes/anan-eskan-maquette-01.jpeg" alt="مجسم عنان إسكان الرياض" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/anan-eskan-maquette-01.webp" type="image/webp"><img src="assets/projects/maquettes/anan-eskan-maquette-01.jpeg" alt="مجسم عنان إسكان الرياض" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">مجسمات ذكية</div><div class="pf-card-title">عنان إسكان — الرياض</div><div class="pf-card-sub">مجسم معماري ذكي · المملكة</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="maquettes" onclick="openImg('assets/projects/maquettes/anan-eskan-maquette-02.jpeg','مجسمات ذكية','مجسم صالة بيع عنان إسكان')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/anan-eskan-maquette-02.webp" type="image/webp"><img src="assets/projects/maquettes/anan-eskan-maquette-02.jpeg" alt="مجسم صالة بيع عنان إسكان" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/anan-eskan-maquette-02.webp" type="image/webp"><img src="assets/projects/maquettes/anan-eskan-maquette-02.jpeg" alt="مجسم صالة بيع عنان إسكان" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">مجسمات ذكية</div><div class="pf-card-title">مجسم صالة بيع عنان إسكان</div><div class="pf-card-sub">LED تفاعلي · الرياض</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="maquettes" onclick="openImg('assets/projects/maquettes/alrajhi-maquette-01.jpeg','مجسمات ذكية','مدينة الراجحي المالية')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/alrajhi-maquette-01.webp" type="image/webp"><img src="assets/projects/maquettes/alrajhi-maquette-01.jpeg" alt="مجسم مدينة الراجحي المالية" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/alrajhi-maquette-01.webp" type="image/webp"><img src="assets/projects/maquettes/alrajhi-maquette-01.jpeg" alt="مجسم مدينة الراجحي المالية" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">مجسمات ذكية</div><div class="pf-card-title">مدينة الراجحي المالية</div><div class="pf-card-sub">مجسم CGI سينمائي · الرياض</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="maquettes" onclick="openImg('assets/projects/maquettes/alrajhi-maquette-02.jpeg','مجسمات ذكية','مجسم الراجحي التفاعلي')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/alrajhi-maquette-02.webp" type="image/webp"><img src="assets/projects/maquettes/alrajhi-maquette-02.jpeg" alt="مجسم الراجحي التفاعلي" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/alrajhi-maquette-02.webp" type="image/webp"><img src="assets/projects/maquettes/alrajhi-maquette-02.jpeg" alt="مجسم الراجحي التفاعلي" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">مجسمات ذكية</div><div class="pf-card-title">مجسم الراجحي التفاعلي</div><div class="pf-card-sub">لمسي تفاعلي · المملكة</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
     </div>
@@ -439,15 +342,15 @@ a{text-decoration:none;color:inherit}
     </div>
     <div class="pf-grid">
       <div class="pf-card" data-cat="interactive" onclick="openImg('assets/projects/interactive-01.jpg','تجارب تفاعلية','جاليري مبيعات، شاشة لمسية')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/interactive-01.webp" type="image/webp"><img src="assets/projects/interactive-01.jpg" alt="شاشة تفاعلية" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/interactive-01.webp" type="image/webp"><img src="assets/projects/interactive-01.jpg" alt="شاشة تفاعلية" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">تجارب تفاعلية</div><div class="pf-card-title">جاليري مبيعات، نظام شاشة لمسية</div><div class="pf-card-sub">أداة مبيعات تفاعلية · المملكة العربية السعودية</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="interactive" onclick="openImg('assets/projects/vr360/360gh.png','تجارب تفاعلية','جولة VR غامرة')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/vr360/360gh.webp" type="image/webp"><img src="assets/projects/vr360/360gh.png" alt="VR 360" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/vr360/360gh.webp" type="image/webp"><img src="assets/projects/vr360/360gh.png" alt="VR 360" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">VR و 360°</div><div class="pf-card-title">جولة VR غامرة</div><div class="pf-card-sub">تجربة واقع افتراضي · متعدد الأسواق</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="interactive" onclick="openImg('assets/projects/rendering/Al-Khair-Heights-in-Makkah2-e1746262287150.jpeg','تجارب تفاعلية','الخير هايتس، تجربة مبيعات')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/Al-Khair-Heights-in-Makkah2-e1746262287150.webp" type="image/webp"><img src="assets/projects/rendering/Al-Khair-Heights-in-Makkah2-e1746262287150.jpeg" alt="تجربة تفاعلية" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/rendering/Al-Khair-Heights-in-Makkah2-e1746262287150.webp" type="image/webp"><img src="assets/projects/rendering/Al-Khair-Heights-in-Makkah2-e1746262287150.jpeg" alt="تجربة تفاعلية" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">تجارب تفاعلية</div><div class="pf-card-title">الخير هايتس، تجربة مبيعات</div><div class="pf-card-sub">360° تفاعلي · مكة المكرمة</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
     </div>
@@ -464,15 +367,15 @@ a{text-decoration:none;color:inherit}
     </div>
     <div class="pf-grid">
       <div class="pf-card" data-cat="galleries" onclick="openImg('assets/projects/pavilion1.jpg','جاليريات وديكور إعلاني','جناح المعرض، تصميم كامل')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/pavilion1.webp" type="image/webp"><img src="assets/projects/pavilion1.jpg" alt="جناح المعرض" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/pavilion1.webp" type="image/webp"><img src="assets/projects/pavilion1.jpg" alt="جناح المعرض" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">جاليريات وديكور إعلاني</div><div class="pf-card-title">جناح المعرض، تصميم كامل</div><div class="pf-card-sub">بيئة براند · المملكة العربية السعودية</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="galleries" onclick="openImg('assets/projects/pavilion2.jpg','جاليريات وديكور إعلاني','جناح مبيعات تفاعلي')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/pavilion2.webp" type="image/webp"><img src="assets/projects/pavilion2.jpg" alt="جناح المبيعات" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/pavilion2.webp" type="image/webp"><img src="assets/projects/pavilion2.jpg" alt="جناح المبيعات" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">جاليريات وديكور إعلاني</div><div class="pf-card-title">جناح مبيعات تفاعلي</div><div class="pf-card-sub">جاليري مبيعات · البحرين</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="galleries" onclick="openImg('assets/projects/pavilion3.jpg','جاليريات وديكور إعلاني','جناح تجربة البراند')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/pavilion3.webp" type="image/webp"><img src="assets/projects/pavilion3.jpg" alt="جناح البراند" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/pavilion3.webp" type="image/webp"><img src="assets/projects/pavilion3.jpg" alt="جناح البراند" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">جاليريات وديكور إعلاني</div><div class="pf-card-title">جناح تجربة البراند</div><div class="pf-card-sub">فضاء مميز · سلطنة عُمان</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
     </div>
@@ -488,34 +391,34 @@ a{text-decoration:none;color:inherit}
       <div class="section-desc">رسوم متحركة ثلاثية الأبعاد وفيديوهات flythrough وأفلام سينمائية تروي قصة مشروعك بتأثير لا يُنسى.</div>
     </div>
     <div class="pf-grid">
-      <div class="pf-card" data-cat="media" onclick="openVid('https://www.youtube.com/embed/?autoplay=1&vq=hd1080')">
+      <div class="pf-card" data-cat="media" onclick="openVidById('vYbn-9ramsI')">
         <div class="pf-card-img">
-          <picture><source srcset="assets/projects/cinematic/video-2.webp" type="image/webp"><img src="assets/projects/cinematic/video-2.jpg" alt="ميديا برودكشن" loading="lazy"/></picture>
+          <picture><source srcset="assets/projects/cinematic/video-2.webp" type="image/webp"><img src="assets/projects/cinematic/video-2.jpg" alt="ميديا برودكشن" loading="lazy" decoding="async"/></picture>
           <div class="pf-card-video-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="pf-card-body"><div class="pf-card-cat">ميديا برودكشن · فيلم</div><div class="pf-card-title">برج سكني، مشهد جوي سينمائي</div><div class="pf-card-sub">فيلم رسوم متحركة ثلاثية الأبعاد</div><div class="pf-card-arrow">← مشاهدة الفيلم</div></div>
       </div>
       <div class="pf-card" data-cat="media" onclick="openImg('assets/projects/animation/rafal-pavilions.jpg','ميديا برودكشن','رفال بافيليونز، رسوم متحركة')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img src="assets/projects/animation/rafal-pavilions.jpg" alt="رفال بافيليونز" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img src="assets/projects/animation/rafal-pavilions.jpg" alt="رفال بافيليونز" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">ميديا برودكشن</div><div class="pf-card-title">رفال بافيليونز، رسوم متحركة</div><div class="pf-card-sub">فيلم متحرك · المملكة العربية السعودية</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="media" onclick="openImg('assets/projects/animation/market-center.jpg','ميديا برودكشن','مركز السوق، رسوم متحركة')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/animation/market-center.webp" type="image/webp"><img src="assets/projects/animation/market-center.jpg" alt="مركز السوق" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/animation/market-center.webp" type="image/webp"><img src="assets/projects/animation/market-center.jpg" alt="مركز السوق" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">ميديا برودكشن</div><div class="pf-card-title">مركز السوق، رسوم متحركة</div><div class="pf-card-sub">جولة ثلاثية الأبعاد · المملكة العربية السعودية</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
-      <div class="pf-card" data-cat="media" onclick="openVid('https://www.youtube.com/embed/?autoplay=1&vq=hd1080')">
+      <div class="pf-card" data-cat="media" onclick="openVidById('GlbvI0DRXE4')">
         <div class="pf-card-img">
-          <picture><source srcset="assets/projects/cinematic/video-3.webp" type="image/webp"><img src="assets/projects/cinematic/video-3.jpg" alt="ميديا برودكشن" loading="lazy"/></picture>
+          <picture><source srcset="assets/projects/cinematic/video-3.webp" type="image/webp"><img src="assets/projects/cinematic/video-3.jpg" alt="ميديا برودكشن" loading="lazy" decoding="async"/></picture>
           <div class="pf-card-video-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="pf-card-body"><div class="pf-card-cat">ميديا برودكشن · فيلم</div><div class="pf-card-title">فيلا راقية، مشهد الغروب</div><div class="pf-card-sub">فيلم CGI سينمائي</div><div class="pf-card-arrow">← مشاهدة الفيلم</div></div>
       </div>
       <div class="pf-card" data-cat="media" onclick="openImg('assets/projects/animation/alrajhi.jpg','ميديا برودكشن','الراجحي، رسوم طيران')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/animation/alrajhi.webp" type="image/webp"><img src="assets/projects/animation/alrajhi.jpg" alt="الراجحي" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/animation/alrajhi.webp" type="image/webp"><img src="assets/projects/animation/alrajhi.jpg" alt="الراجحي" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">ميديا برودكشن</div><div class="pf-card-title">الراجحي، رسوم طيران</div><div class="pf-card-sub">رسوم متحركة · المملكة العربية السعودية</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
       <div class="pf-card" data-cat="media" onclick="openImg('assets/projects/animation/architectural-visualisation.jpg','ميديا برودكشن','فيلم التصور المعماري')">
-        <div class="pf-card-img"><picture><source srcset="assets/projects/animation/architectural-visualisation.webp" type="image/webp"><img src="assets/projects/animation/architectural-visualisation.jpg" alt="فيلم معماري" loading="lazy"/></picture></div>
+        <div class="pf-card-img"><picture><source srcset="assets/projects/animation/architectural-visualisation.webp" type="image/webp"><img src="assets/projects/animation/architectural-visualisation.jpg" alt="فيلم معماري" loading="lazy" decoding="async"/></picture></div>
         <div class="pf-card-body"><div class="pf-card-cat">ميديا برودكشن</div><div class="pf-card-title">فيلم التصور المعماري</div><div class="pf-card-sub">رسوم CGI · متعدد الأسواق</div><div class="pf-card-arrow">← عرض المشروع</div></div>
       </div>
     </div>
@@ -532,37 +435,37 @@ a{text-decoration:none;color:inherit}
       <div class="section-desc">سلاسل موشن جرافيك أُنتجت للمركز الطبي الدولي — شاهد الحلقات على يوتيوب.</div>
     </div>
     <div class="pf-grid">
-      <div class="pf-card" data-cat="motion" onclick="openVid('https://www.youtube.com/embed/CtjHnqYOX3I?autoplay=1')">
+      <div class="pf-card" data-cat="motion" onclick="openVidById('CtjHnqYOX3I')">
         <div class="pf-card-img">
-          <img src="https://img.youtube.com/vi/CtjHnqYOX3I/hqdefault.jpg" alt="سلسلة طبيب الأسرة" loading="lazy" width="480" height="360"/>
+          <img data-yt-id="CtjHnqYOX3I" src="https://img.youtube.com/vi/CtjHnqYOX3I/maxresdefault.jpg" alt="سلسلة طبيب الأسرة" loading="lazy" width="480" height="360" decoding="async"/>
           <div class="pf-card-video-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="pf-card-body"><div class="pf-card-cat">أفلام موشن جرافيك</div><div class="pf-card-title">سلسلة طبيب الأسرة</div><div class="pf-card-sub">٨ أجزاء · توعية طبية · المركز الطبي الدولي</div><div class="pf-card-arrow">← شاهد السلسلة</div></div>
       </div>
-      <div class="pf-card" data-cat="motion" onclick="openVid('https://www.youtube.com/embed/hz3TtUd5-eo?autoplay=1')">
+      <div class="pf-card" data-cat="motion" onclick="openVidById('hz3TtUd5-eo')">
         <div class="pf-card-img">
-          <img src="https://img.youtube.com/vi/hz3TtUd5-eo/hqdefault.jpg" alt="سلسلة إدارة العافية" loading="lazy" width="480" height="360"/>
+          <img data-yt-id="hz3TtUd5-eo" src="https://img.youtube.com/vi/hz3TtUd5-eo/maxresdefault.jpg" alt="سلسلة إدارة العافية" loading="lazy" width="480" height="360" decoding="async"/>
           <div class="pf-card-video-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="pf-card-body"><div class="pf-card-cat">أفلام موشن جرافيك</div><div class="pf-card-title">سلسلة إدارة العافية</div><div class="pf-card-sub">١٢ جزء · تثقيف صحي · المركز الطبي الدولي</div><div class="pf-card-arrow">← شاهد السلسلة</div></div>
       </div>
-      <div class="pf-card" data-cat="motion" onclick="openVid('https://www.youtube.com/embed/jNYuQoRHNfg?autoplay=1')">
+      <div class="pf-card" data-cat="motion" onclick="openVidById('jNYuQoRHNfg')">
         <div class="pf-card-img">
-          <img src="https://img.youtube.com/vi/jNYuQoRHNfg/hqdefault.jpg" alt="سلسلة الحمل والولادة" loading="lazy" width="480" height="360"/>
+          <img data-yt-id="jNYuQoRHNfg" src="https://img.youtube.com/vi/jNYuQoRHNfg/maxresdefault.jpg" alt="سلسلة الحمل والولادة" loading="lazy" width="480" height="360" decoding="async"/>
           <div class="pf-card-video-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="pf-card-body"><div class="pf-card-cat">أفلام موشن جرافيك</div><div class="pf-card-title">سلسلة الحمل والولادة</div><div class="pf-card-sub">٣٢ جزء · رعاية الأم والطفل · المركز الطبي الدولي</div><div class="pf-card-arrow">← شاهد السلسلة</div></div>
       </div>
-      <div class="pf-card" data-cat="motion" onclick="openVid('https://www.youtube.com/embed/wzUNAKqOE8Q?autoplay=1')">
+      <div class="pf-card" data-cat="motion" onclick="openVidById('wzUNAKqOE8Q')">
         <div class="pf-card-img">
-          <img src="https://img.youtube.com/vi/wzUNAKqOE8Q/hqdefault.jpg" alt="سلسلة أفلام الكارتون" loading="lazy" width="480" height="360"/>
+          <img data-yt-id="wzUNAKqOE8Q" src="https://img.youtube.com/vi/wzUNAKqOE8Q/maxresdefault.jpg" alt="سلسلة أفلام الكارتون" loading="lazy" width="480" height="360" decoding="async"/>
           <div class="pf-card-video-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="pf-card-body"><div class="pf-card-cat">أفلام موشن جرافيك</div><div class="pf-card-title">سلسلة أفلام الكارتون</div><div class="pf-card-sub">٣ أفلام · رسوم متحركة طبية · المركز الطبي الدولي</div><div class="pf-card-arrow">← شاهد السلسلة</div></div>
       </div>
-      <div class="pf-card" data-cat="motion" onclick="openVid('https://www.youtube.com/embed/heeNhPdB25E?autoplay=1')">
+      <div class="pf-card" data-cat="motion" onclick="openVidById('heeNhPdB25E')">
         <div class="pf-card-img">
-          <img src="https://img.youtube.com/vi/heeNhPdB25E/hqdefault.jpg" alt="سلسلة التعريف بالمركز الطبي" loading="lazy" width="480" height="360"/>
+          <img data-yt-id="heeNhPdB25E" src="https://img.youtube.com/vi/heeNhPdB25E/maxresdefault.jpg" alt="سلسلة التعريف بالمركز الطبي" loading="lazy" width="480" height="360" decoding="async"/>
           <div class="pf-card-video-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="pf-card-body"><div class="pf-card-cat">أفلام موشن جرافيك</div><div class="pf-card-title">سلسلة التعريف بالمركز الطبي</div><div class="pf-card-sub">٨ أجزاء · فيلم تعريفي · المركز الطبي الدولي</div><div class="pf-card-arrow">← شاهد السلسلة</div></div>
@@ -796,20 +699,6 @@ a{text-decoration:none;color:inherit}
 <script>
 window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>40);});
 function toggleMenu(){document.getElementById('nav').classList.toggle('open');}
-document.querySelectorAll('.filter-btn').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
-    btn.classList.add('active');
-    var f=btn.dataset.filter;
-    if(f==='all'){document.querySelectorAll('.pf-section').forEach(function(s){s.style.display='';});}
-    else{document.querySelectorAll('.pf-section').forEach(function(s){s.style.display=(s.dataset.section===f)?'':'none';});}
-  });
-});
-function openImg(s,c,t){var m=document.getElementById('imgLB');document.getElementById('imgLBimg').src=s;document.getElementById('lbCat').textContent=c||'';document.getElementById('lbTitle').textContent=t||'';m.style.display='flex';setTimeout(function(){m.style.opacity='1'},10);document.body.style.overflow='hidden';}
-function closeLB(e){var m=document.getElementById('imgLB');if(!e||e.target===m||e.target.classList.contains('lb-x')){m.style.opacity='0';setTimeout(function(){m.style.display='none';document.body.style.overflow=''},300);}}
-function openVid(s){var m=document.getElementById('vidModal');document.getElementById('vidFrame').src=s;m.style.display='flex';setTimeout(function(){m.style.opacity='1'},10);document.body.style.overflow='hidden';}
-function closeVid(e){var m=document.getElementById('vidModal');if(!e||e.target===m||e.target.classList.contains('vid-x')){m.style.opacity='0';document.getElementById('vidFrame').src='';setTimeout(function(){m.style.display='none';document.body.style.overflow=''},300);}}
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeLB();closeVid();}});
 </script>
 <script>
 function ghSubmit(e){
