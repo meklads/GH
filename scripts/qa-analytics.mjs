@@ -34,4 +34,23 @@ const sm = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 const urlCount = (sm.match(/<loc>/g) || []).length;
 console.log(`OK: sitemap.xml — ${urlCount} URLs`);
 
+const expectedEvents = [
+  'video_play',
+  'cta_click',
+  'solution_view',
+  'solution_finder_complete',
+  'launch_checklist_complete',
+  'organic_landing',
+];
+const assetSrc = ['assets/gh-performance.js', 'assets/gh-cta-track.js', 'assets/gh-solution-finder.js', 'assets/gh-launch-checklist.js']
+  .map((f) => fs.readFileSync(path.join(ROOT, f), 'utf8'))
+  .join('\n');
+for (const ev of expectedEvents) {
+  if (!assetSrc.includes(`'${ev}'`) && !assetSrc.includes(`"${ev}"`)) {
+    console.warn(`WARN: GA4 event "${ev}" not found in tracking scripts`);
+  } else {
+    console.log(`OK: event ${ev}`);
+  }
+}
+
 process.exit(ok ? 0 : 1);

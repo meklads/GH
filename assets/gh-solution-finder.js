@@ -275,6 +275,13 @@
     }
 
     resultEl.style.display = 'block';
+    if (window.ghTrack) {
+      window.ghTrack('solution_finder_complete', {
+        primary: primary.key,
+        secondary: secondary.key,
+        page_path: location.pathname,
+      });
+    }
     resultEl.innerHTML =
       '<p class="gh-quiz-result-kicker">' + (isEn ? 'Primary match' : 'التوصية الرئيسية') + '</p>' +
       '<h3>' + r.title + '</h3>' +

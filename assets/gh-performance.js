@@ -146,6 +146,12 @@
 
     function start() {
       var p = v.play();
+      if (window.ghTrack) {
+        window.ghTrack('video_play', {
+          video_src: (v.currentSrc || v.getAttribute('data-pl-src') || '').split('/').pop(),
+          page_path: location.pathname,
+        });
+      }
       if (p && typeof p.then === 'function') {
         p.then(function () {
           setPlayingUI(wrap);

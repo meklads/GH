@@ -1109,11 +1109,54 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
   margin-bottom: 0.5em;
 }
 
+.gh-article-solutions {
+  margin-top: 40px;
+  padding: 28px 24px;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.08), rgba(10, 10, 10, 0.03));
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  border-radius: 4px;
+}
+
+.gh-article-solutions-label {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a7340;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.gh-article-solutions-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.gh-article-solutions-links a {
+  padding: 10px 18px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  color: #0a0a0a;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.gh-article-solutions-links a:hover {
+  background: rgba(201, 168, 76, 0.12);
+  border-color: #c9a84c;
+}
+
 .gh-article-footer-cta {
-  margin-top: 48px;
+  margin-top: 32px;
   padding-top: 40px;
   border-top: 1px solid rgba(201, 168, 76, 0.2);
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
 }
 
 /* ----- Tool pages ----- */

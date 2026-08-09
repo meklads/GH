@@ -23,10 +23,22 @@ const SITEMAP_SKIP = new Set([
   ...SKIP,
   'en.html',
   'blog.html',
+  '3d-animation.html',
   '3d-animation-en.html',
+  'media-production.html',
   'media-production-en.html',
+  'smart-maquettes.html',
   'smart-maquettes-en.html',
+  'interactive-experiences.html',
   'interactive-experiences-en.html',
+  'galleries-advertising.html',
+  'galleries-advertising-en.html',
+  'contact.html',
+  'case-study-alrajhi-en.html',
+  'case-study-anan-eskan-en.html',
+  'case-study-mwl-en.html',
+  'offer-en.html',
+  'vr360.html',
   'insights/news.html',
   'insights/articles.html',
   'insights/case-studies.html',
@@ -76,7 +88,8 @@ const EXPLICIT_PAIRS = {
   'case-study-alrajhi-en.html': 'insights/projects/al-rajhi-riyadh.html',
   'case-study-anan-eskan-en.html': 'insights/projects/anan-eskan-riyadh.html',
   'case-study-mwl-en.html': 'insights/projects/makkah-charter-mwl.html',
-  'careers-en.html': 'index-ar.html',
+  'careers-en.html': 'index.html',
+  'offer-en.html': 'contact-us-en.html',
 };
 
 /** services/foo.html ↔ services/foo-en.html */
@@ -118,6 +131,20 @@ function alternateFile(fileName, rel = '') {
 
 function seoTags(rel) {
   const fileName = path.basename(rel);
+  const legacyServiceCanon = {
+    '3d-animation.html': `${BASE}/services/animation.html`,
+    'media-production.html': `${BASE}/services/production.html`,
+    'smart-maquettes.html': `${BASE}/services/maquettes.html`,
+    'interactive-experiences.html': `${BASE}/services/interactive-experiences.html`,
+    'galleries-advertising.html': `${BASE}/services/branding.html`,
+    'contact.html': `${BASE}/contact-us.html`,
+  };
+  if (legacyServiceCanon[rel]) {
+    const canonical = legacyServiceCanon[rel];
+    const enUrl = canonical.replace(/\.html$/, '-en.html');
+    return { canonical, enUrl, arUrl: canonical };
+  }
+
   const urlPath = rel === 'index.html' ? '' : rel;
   const canonical = `${BASE}/${urlPath}`.replace(/\/$/, '') || BASE + '/';
   const altFile = alternateFile(fileName, rel);
@@ -175,6 +202,9 @@ function injectSeo(html, rel) {
 
   if (html.includes('rel="canonical"')) {
     html = html.replace(/<!-- GH SEO -->[\s\S]*?<link rel="alternate" hreflang="x-default"[^>]*>/, block);
+    if (!html.includes('hreflang="en"')) {
+      html = html.replace(/(<link rel="canonical"[^>]*>)/i, `$1\n${block.replace('<!-- GH SEO -->\n', '')}`);
+    }
     return html;
   }
   return html.replace(/<head>/i, `<head>\n${block}`);
@@ -302,7 +332,7 @@ function secureFormSubmits(html) {
 }
 
 function injectPerformanceScript(html, prefix) {
-  const tag = `<script defer src="${prefix}assets/gh-performance.js?v=1"></script>`;
+  const tag = `<script defer src="${prefix}assets/gh-performance.js?v=10"></script>`;
   if (html.includes('gh-performance.js')) return html;
   if (html.includes('site-header.js')) {
     return html.replace(
@@ -372,6 +402,10 @@ function patchHtml(html, rel) {
   html = injectJsonLd(html, rel);
   html = stripLegacyGa(html);
   html = injectAnalytics(html, prefix);
+  const ctaTrack = `<script defer src="${prefix}assets/gh-cta-track.js?v=1"></script>`;
+  if (!html.includes('gh-cta-track.js')) {
+    html = html.replace(/<\/body>/i, `${ctaTrack}\n</body>`);
+  }
   html = injectPerformanceScript(html, prefix);
   html = secureFormSubmits(html);
   html = stripConflictingHeaderStyles(html);
@@ -401,7 +435,10 @@ function patchHtml(html, rel) {
     const videoIdx = chunk.lastIndexOf('<video');
     if (videoIdx === -1) return 'preload="metadata"';
     const tag = chunk.slice(videoIdx);
-    if (/\b(autoplay|gh-autoplay)\b/i.test(tag)) return match;
+    if (/\bid=["'](hero-vid|hero-vid-ar|s2VideoPlayer)["']/i.test(tag) || /\bhero-video-bg\b/.test(chunk)) {
+      return match;
+    }
+    if (/\b(autoplay|gh-autoplay|gh-ambient)\b/i.test(tag)) return 'preload="none"';
     return 'preload="metadata"';
   });
 
@@ -489,6 +526,7 @@ Disallow: /home-v2-backup.html
 Disallow: /en-backup.html
 Disallow: /en-v2.html
 Disallow: /offer-lite.html
+Disallow: /assets/projects/maquettes/WhatsApp-
 
 Sitemap: ${BASE}/sitemap.xml
 `
@@ -503,6 +541,7 @@ if (fs.existsSync(enPath)) {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex,follow">
 <meta http-equiv="refresh" content="0;url=/">
 <link rel="canonical" href="${BASE}/">
 <title>Redirecting…</title>
@@ -576,6 +615,32 @@ writeDirRedirect('contact-us-2', 'contact-us.html');
 
 // One-off spam slug
 writeFileRedirect('boyslove.html', 'index-ar.html');
+
+const LEGACY_SERVICE_ROOT = {
+  '3d-animation.html': 'services/animation.html',
+  'media-production.html': 'services/production.html',
+  'smart-maquettes.html': 'services/maquettes.html',
+  'interactive-experiences.html': 'services/interactive-experiences.html',
+  'galleries-advertising.html': 'services/branding.html',
+  'contact.html': 'contact-us.html',
+  'blog.html': 'insights/index.html',
+  'offer-en.html': 'contact-us-en.html',
+  'vr360.html': 'vr360/index.html',
+};
+
+for (const [from, to] of Object.entries(LEGACY_SERVICE_ROOT)) {
+  writeFileRedirect(from, to);
+}
+
+const CASE_STUDY_REDIRECTS = {
+  'case-study-alrajhi-en.html': 'insights/projects/al-rajhi-riyadh-en.html',
+  'case-study-anan-eskan-en.html': 'insights/projects/anan-eskan-riyadh-en.html',
+  'case-study-mwl-en.html': 'insights/projects/makkah-charter-mwl-en.html',
+};
+
+for (const [from, to] of Object.entries(CASE_STUDY_REDIRECTS)) {
+  writeFileRedirect(from, to);
+}
 
 // Disable gh-admin client password
 const adminPath = path.join(ROOT, 'gh-admin.html');

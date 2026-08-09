@@ -78,15 +78,28 @@ function fixLogoCss(html) {
 }
 
 function ensurePerformanceScript(html, prefix) {
-  const tag = `<script defer src="${prefix}gh-performance.js?v=9"></script>`;
+  const perfTag = `<script defer src="${prefix}gh-performance.js?v=10"></script>`;
+  const ctaTag = `<script defer src="${prefix}gh-cta-track.js?v=1"></script>`;
   if (html.includes('gh-performance.js')) {
-    return html.replace(/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=9');
-  }
-  if (html.includes('site-header.js')) {
-    return html.replace(
+    html = html.replace(/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=10');
+  } else if (html.includes('site-header.js')) {
+    html = html.replace(
       /(<script defer src="[^"]*site-header\.js[^"]*"><\/script>)/,
-      `$1\n${tag}`
+      `$1\n${perfTag}`
     );
+  }
+  if (!html.includes('gh-cta-track.js')) {
+    if (html.includes('gh-performance.js')) {
+      html = html.replace(
+        /(<script defer src="[^"]*gh-performance\.js[^"]*"><\/script>)/,
+        `$1\n${ctaTag}`
+      );
+    } else if (html.includes('site-header.js')) {
+      html = html.replace(
+        /(<script defer src="[^"]*site-header\.js[^"]*"><\/script>)/,
+        `$1\n${ctaTag}`
+      );
+    }
   }
   return html;
 }

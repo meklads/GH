@@ -145,11 +145,12 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=31">
-<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=16">
+<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=23">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=23">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=16"></script>
-<script defer src="${p}assets/gh-performance.js?v=1"></script>
+<script defer src="${p}assets/gh-performance.js?v=9"></script>
+<script defer src="${p}assets/gh-cta-track.js?v=1"></script>
 <script defer src="${p}assets/lang-switch.js?v=3"></script>
 </head>
 <body class="gh-insights">`;
@@ -468,6 +469,23 @@ function hubExcerpt(article, lang) {
   return ex;
 }
 
+function articleSolutionsFooter(isEn, depthPrefix) {
+  const p = depthPrefix;
+  const suffix = isEn ? '-en.html' : '.html';
+  return `<div class="gh-article-solutions">
+          <p class="gh-article-solutions-label">${isEn ? 'Explore Graphics House solutions' : 'اكتشف حلول Graphics House'}</p>
+          <div class="gh-article-solutions-links">
+            <a href="${p}solutions/project-launch${suffix}">ProjectLaunch™</a>
+            <a href="${p}solutions/growth-launch${suffix}">GrowthLaunch™</a>
+            <a href="${p}solutions/brand-scale${suffix}">BrandScale™</a>
+          </div>
+        </div>
+        <div class="gh-article-footer-cta">
+          <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Discuss Your Project' : 'ناقش مشروعك'}</a>
+          <a href="${p}insights/tools/solution-finder${isEn ? '-en' : ''}.html" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'Which solution fits?' : 'أي حل يناسبك؟'}</a>
+        </div>`;
+}
+
 function buildHub(lang) {
   const isEn = lang === 'en';
   const { header, footer } = getLayout(lang, 1);
@@ -566,9 +584,7 @@ ${header}
       <img class="gh-article-hero-img" src="${p}${article.image}" alt="${esc(L(article.title))}" loading="lazy">
       <div class="gh-article-body-wrap">
         ${bodyHtml}
-        <div class="gh-article-footer-cta">
-          <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Discuss Your Project' : 'ناقش مشروعك'}</a>
-        </div>
+        ${articleSolutionsFooter(isEn, p)}
       </div>
     </article>
   </div>
@@ -638,6 +654,7 @@ ${header}
         ${gallery ? `<div class="gh-ins-proj-gallery">${gallery}</div>` : ''}
         <div class="gh-article-footer-cta">
           <a href="${portfolioHref}" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'View in Portfolio' : 'في معرض الأعمال'}</a>
+          <a href="${p}solutions/project-launch${isEn ? '-en' : ''}.html" class="gh-btn-editorial gh-btn-editorial--outline">ProjectLaunch™</a>
           <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Discuss Your Project' : 'ناقش مشروعك'}</a>
         </div>
       </div>
@@ -700,6 +717,8 @@ function buildLaunchChecklist(lang) {
       ? '12 essentials before your real estate visual launch.'
       : '12 بنداً أساسياً قبل الإطلاق البصري لمشروعك العقاري.',
     canonical: `https://3dgraphicshouse.com/insights/tools/launch-checklist${isEn ? '-en' : ''}.html`,
+    altEn: 'https://3dgraphicshouse.com/insights/tools/launch-checklist-en.html',
+    altAr: 'https://3dgraphicshouse.com/insights/tools/launch-checklist.html',
   })}
 ${header}
 <main class="gh-tool-page-wrap">
@@ -743,6 +762,8 @@ function buildSolutionFinder(lang) {
       ? '7 questions to recommend GrowthLaunch, ProjectLaunch, or BrandScale — with service links.'
       : '7 أسئلة للتوصية بين GrowthLaunch وProjectLaunch وBrandScale — مع روابط للخدمات.',
     canonical: `https://3dgraphicshouse.com/insights/tools/solution-finder${isEn ? '-en' : ''}.html`,
+    altEn: 'https://3dgraphicshouse.com/insights/tools/solution-finder-en.html',
+    altAr: 'https://3dgraphicshouse.com/insights/tools/solution-finder.html',
   })}
 ${header}
 <main class="gh-tool-page-wrap">
@@ -821,6 +842,8 @@ function buildBriefTemplate(lang) {
       ? 'Fill this brief before your first meeting with Graphics House.'
       : 'عبّئ هذا النموذج قبل أول اجتماع مع فريق جرافيكس هاوس.',
     canonical: `https://3dgraphicshouse.com/insights/tools/project-brief${isEn ? '-en' : ''}.html`,
+    altEn: 'https://3dgraphicshouse.com/insights/tools/project-brief-en.html',
+    altAr: 'https://3dgraphicshouse.com/insights/tools/project-brief.html',
   })}
 ${header}
 <main class="gh-tool-page-wrap">
@@ -863,6 +886,7 @@ function buildRedirects() {
     const html = `<!DOCTYPE html>
 <html><head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex,follow">
 <meta http-equiv="refresh" content="0;url=${target}">
 <link rel="canonical" href="https://3dgraphicshouse.com/insights/${target}">
 <script>location.replace('${target}');</script>

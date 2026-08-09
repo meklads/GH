@@ -19,6 +19,10 @@
       }
     });
     if (bar) bar.style.width = Math.round((done / items.length) * 100) + '%';
+    if (done === items.length && items.length && window.ghTrack && list.dataset.ghChecklistTracked !== '1') {
+      list.dataset.ghChecklistTracked = '1';
+      window.ghTrack('launch_checklist_complete', { page_path: location.pathname });
+    }
   }
 
   items.forEach(function (li) {

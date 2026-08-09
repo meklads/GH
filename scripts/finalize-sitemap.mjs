@@ -43,6 +43,7 @@ function isRedirectOrNoindex(loc) {
 const today = new Date().toISOString().slice(0, 10);
 const urls = [...byLoc.entries()]
   .filter(([loc]) => !isRedirectOrNoindex(loc))
+  .filter(([loc]) => !loc.includes('/insights/downloads/files/'))
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([loc, { priority }]) =>
     `  <url><loc>${loc}</loc><lastmod>${today}</lastmod><priority>${priority}</priority></url>`
