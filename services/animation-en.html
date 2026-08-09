@@ -386,9 +386,10 @@ html[dir="ltr"] .section-title {
 /* Mega menu: assets/site-header.css */
 </style>
 <script defer src="../assets/site-header.js?v=16"></script>
-<script defer src="../assets/gh-performance.js?v=3"></script>
+<script defer src="../assets/gh-performance.js?v=7"></script>
 <script defer src="../assets/lang-switch.js?v=2"></script>
-<link rel="stylesheet" href="../assets/gh-float-widgets.css?v=5">
+<link rel="stylesheet" href="../assets/gh-float-widgets.css?v=8">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"3D Animation، Graphics House","description":"3D Animation &amp; CGI services by Graphics House، high-quality architectural cinematic films.","url":"https://3dgraphicshouse.com/services/animation-en.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
 </head>
 <body>
 
@@ -1067,7 +1068,10 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script>
 
-<script defer src="../assets/gh-float-widgets.js?v=1"></script>
+<script defer src="../assets/gh-float-widgets.js?v=8"></script>
+<script defer src="../assets/quote-form-config.js"></script>
+<script defer src="../assets/quote-form.js?v=3"></script>
+<script defer src="../assets/site-reveal.js"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">
   <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="WhatsApp">
@@ -1081,19 +1085,22 @@ document.addEventListener('DOMContentLoaded', function(){
       <span class="gh-motif-ring"></span>
       <span class="gh-motif-ring" style="animation-delay:1.2s"></span>
       <span class="gh-motif-ring" style="animation-delay:2.4s"></span>
-      <img loading="lazy" src="../assets/chatbot-motif.png" alt="" width="52" height="52" style="width:52px;height:52px;object-fit:contain;position:relative;z-index:2">
+      <img src="../assets/chatbot-motif.png" alt="" width="52" height="52" style="width:52px;height:52px;object-fit:contain;position:relative;z-index:2">
     </span>
   </button>
 </div>
-<div id="ghPopup">
+<div id="ghPopup" role="dialog" aria-modal="true" aria-labelledby="ghPopupTitle" aria-hidden="true">
   <div class="gh-popup-box">
     <button type="button" class="gh-popup-close" data-gh-popup-close aria-label="Close">✕</button>
-    <div class="gh-popup-title">Register Your Interest</div>
+    <div class="gh-popup-title" id="ghPopupTitle">Register Your Interest</div>
     <div class="gh-popup-sub">Tell us about your project and we'll get in touch within 24 hours.</div>
     <form onsubmit="ghSubmit(event)">
-      <input class="gh-field" type="text" id="ghName" placeholder="Full Name *" required>
-      <input class="gh-field" type="text" id="ghCompany" placeholder="Company / Developer">
-      <select class="gh-field" id="ghProject" required>
+      <label class="gh-sr-only" for="ghName">Full Name</label>
+      <input class="gh-field" type="text" id="ghName" placeholder="Full Name *" required aria-label="Full Name">
+      <label class="gh-sr-only" for="ghCompany">Company / Developer</label>
+      <input class="gh-field" type="text" id="ghCompany" placeholder="Company / Developer" aria-label="Company or Developer">
+      <label class="gh-sr-only" for="ghProject">Project Type</label>
+      <select class="gh-field" id="ghProject" required aria-label="Project Type">
         <option value="" disabled selected>Project Type *</option>
         <option>Residential Development</option>
         <option>Commercial Project</option>
@@ -1102,8 +1109,12 @@ document.addEventListener('DOMContentLoaded', function(){
         <option>Government / Public</option>
         <option>Other</option>
       </select>
-      <input class="gh-field" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required>
-      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Brief about your project..." style="resize:none"></textarea>
+      <label class="gh-sr-only" for="ghPhone">Phone / WhatsApp</label>
+      <input class="gh-field" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required aria-label="Phone or WhatsApp">
+      <label class="gh-sr-only" for="ghEmail">Email</label>
+      <input class="gh-field" type="email" id="ghEmail" placeholder="Email *" required aria-label="Email" dir="ltr">
+      <label class="gh-sr-only" for="ghBrief">Project brief</label>
+      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Brief about your project..." style="resize:none" aria-label="Brief about your project"></textarea>
       <button type="submit" class="gh-submit">Submit Enquiry →</button>
     </form>
     <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
@@ -1115,8 +1126,5 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 <!-- GH FLOAT END -->
 
-<script defer src="../assets/quote-form-config.js"></script>
-<script defer src="../assets/quote-form.js?v=3"></script>
-<script defer src="../assets/site-reveal.js"></script>
 </body>
 </html>

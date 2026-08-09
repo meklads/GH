@@ -78,9 +78,9 @@ function fixLogoCss(html) {
 }
 
 function ensurePerformanceScript(html, prefix) {
-  const tag = `<script defer src="${prefix}gh-performance.js?v=6"></script>`;
+  const tag = `<script defer src="${prefix}gh-performance.js?v=7"></script>`;
   if (html.includes('gh-performance.js')) {
-    return html.replace(/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=6');
+    return html.replace(/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=7');
   }
   if (html.includes('site-header.js')) {
     return html.replace(

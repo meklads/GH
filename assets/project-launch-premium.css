@@ -128,8 +128,13 @@ body:has(.pl-hero) .gh-main-anchor {
   filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
 }
 
+.pl-video-wrap.pl-video-paused {
+  cursor: pointer;
+}
+
 .pl-video-wrap.pl-video-paused .pl-video-fallback {
   display: flex;
+  pointer-events: auto;
 }
 
 .pl-video-wrap.pl-video-paused video {
