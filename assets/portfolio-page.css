@@ -56,7 +56,13 @@
 [dir="ltr"] .pf-card-arrow{transform:translateX(-6px)}
 .pf-card:hover .pf-card-arrow{opacity:1;transform:translateX(0)}
 
-/* ══ CTA ══ */
+/* ══ BEES MOTION PARTNER LINK ══ */
+.pf-motion-partner{margin-top:36px;padding-top:28px;border-top:1px solid rgba(0,0,0,.08);max-width:520px}
+.pf-motion-partner p{font-size:14px;color:#6B6B6B;line-height:1.8;margin-bottom:10px}
+.pf-motion-partner a{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#C9A84C;transition:color .25s,gap .25s}
+.pf-motion-partner a:hover{color:#A8872E;gap:12px}
+[dir="rtl"] .pf-motion-partner a .material-symbols-outlined{transform:scaleX(-1)}
+
 .pf-cta{background:linear-gradient(135deg,#0D1A12 0%,#0A0A0A 100%);padding:100px 0;text-align:center;position:relative;overflow:hidden}
 .pf-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(ellipse,rgba(201,168,76,.07) 0%,transparent 65%);pointer-events:none}
 .pf-cta h2{font-size:clamp(28px,4vw,52px);font-weight:900;color:#FAFAF8;position:relative;z-index:1}
