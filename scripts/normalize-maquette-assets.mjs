@@ -151,3 +151,32 @@ for (const rel of collectTextFiles(ROOT)) {
 console.log(
   `Maquette assets: ${repaired} repaired, ${copied} aliases, ${webp} webp, ${filesPatched} files updated`
 );
+
+const trashDir = path.join(ROOT, '.trash/maquettes-corrupt');
+fs.mkdirSync(trashDir, { recursive: true });
+const refText = collectTextFiles(ROOT)
+  .map((rel) => {
+    try {
+      return fs.readFileSync(path.join(ROOT, rel), 'utf8');
+    } catch {
+      return '';
+    }
+  })
+  .join('\n');
+const keepSources = new Set(Object.values(REPAIR_FROM));
+let quarantined = 0;
+for (const ent of fs.readdirSync(MAQ_DIR)) {
+  if (!/\.jpe?g$/i.test(ent)) continue;
+  const full = path.join(MAQ_DIR, ent);
+  if (!isCorruptImage(full)) continue;
+  if (keepSources.has(ent)) continue;
+  if (refText.includes(ent) && !refText.includes(`assets/projects/maquettes/${ent}`)) continue;
+  const usedOnSite = refText.includes(`assets/projects/maquettes/${ent}`) || refText.includes(ent);
+  if (usedOnSite && ent.includes('19.18.45-2')) continue;
+  const dest = path.join(trashDir, ent);
+  if (!fs.existsSync(dest)) {
+    fs.renameSync(full, dest);
+    quarantined++;
+  }
+}
+if (quarantined) console.log(`  quarantined ${quarantined} corrupt maquette JPEG placeholders`);

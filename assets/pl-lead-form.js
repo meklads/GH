@@ -168,7 +168,16 @@
               btn.disabled = true;
               btn.textContent = 'تم الإرسال';
             }
-            if (window.gtag) {
+            if (window.ghTrack) {
+              window.ghTrack('form_submit', {
+                form_name: 'project_launch_lead',
+                page_path: location.pathname,
+              });
+              window.ghTrack('generate_lead', {
+                form_name: 'project_launch_lead',
+                event_category: 'ProjectLaunch',
+              });
+            } else if (window.gtag) {
               window.gtag('event', 'generate_lead', {
                 event_category: 'ProjectLaunch',
                 event_label: 'launch_readiness_form',

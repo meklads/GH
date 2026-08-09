@@ -41,8 +41,20 @@ const expectedEvents = [
   'solution_finder_complete',
   'launch_checklist_complete',
   'organic_landing',
+  'form_submit',
+  'generate_lead',
+  'whatsapp_click',
+  'roi_calculator_view',
 ];
-const assetSrc = ['assets/gh-performance.js', 'assets/gh-cta-track.js', 'assets/gh-solution-finder.js', 'assets/gh-launch-checklist.js']
+const assetSrc = [
+  'assets/gh-performance.js',
+  'assets/gh-cta-track.js',
+  'assets/gh-solution-finder.js',
+  'assets/gh-launch-checklist.js',
+  'assets/gh-float-widgets.js',
+  'assets/pl-lead-form.js',
+  'assets/gh-roi-calculator.js',
+]
   .map((f) => fs.readFileSync(path.join(ROOT, f), 'utf8'))
   .join('\n');
 for (const ev of expectedEvents) {

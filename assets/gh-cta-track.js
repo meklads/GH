@@ -11,11 +11,21 @@
     'click',
     function (e) {
       var el = e.target.closest('[data-cta]');
-      if (!el) return;
-      track('cta_click', {
-        cta_id: el.getAttribute('data-cta') || '',
-        page_path: location.pathname,
-      });
+      if (el) {
+        track('cta_click', {
+          cta_id: el.getAttribute('data-cta') || '',
+          page_path: location.pathname,
+        });
+        return;
+      }
+
+      var wa = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"], .gh-wa, .float-wa');
+      if (wa) {
+        track('whatsapp_click', {
+          link_url: wa.getAttribute('href') || '',
+          page_path: location.pathname,
+        });
+      }
     },
     true
   );

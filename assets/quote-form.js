@@ -169,6 +169,13 @@
         .then(function (payload) {
           var msg = (payload && payload.message) ? String(payload.message) : '';
           if (payload && (payload.success === true || payload.success === 'true')) {
+            if (window.ghTrack) {
+              window.ghTrack('form_submit', {
+                form_name: form.id || 'quote_form',
+                page_path: location.pathname,
+              });
+              window.ghTrack('generate_lead', { form_name: form.id || 'quote_form' });
+            }
             showFeedback(
               feedback,
               'success',

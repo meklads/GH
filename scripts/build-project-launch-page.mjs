@@ -116,6 +116,28 @@ const PRODUCTS = [
       { value: '24h', labelAr: 'رد على الطلبات', labelEn: 'Lead response SLA', subAr: 'قبل أن يبرد الاهتمام', subEn: 'Before intent cools off' },
       { value: '+200', labelAr: 'مشروع مُنجز', labelEn: 'Projects delivered', subAr: 'خبرة B2B في المنطقة', subEn: 'B2B experience across the region' },
     ],
+    caseStudies: [
+      {
+        slug: 'jeddah-forum',
+        img: '../assets/projects/animation/jeddah-forum.jpg',
+        tagAr: 'إنتاج سينمائي',
+        tagEn: 'Cinematic',
+        titleAr: 'منتدى جدة',
+        titleEn: 'Jeddah Forum',
+        leadAr: 'فيلم يحمل رسالة الحدث ويحفّز الطلب',
+        leadEn: 'Film that carries the event message and drives demand',
+      },
+      {
+        slug: 'wahat-al-salam',
+        img: '../assets/projects/animation/real-estate-services.jpg',
+        tagAr: 'تصور معماري',
+        tagEn: 'Archviz',
+        titleAr: 'واحة السلام',
+        titleEn: 'Wahat Al Salam',
+        leadAr: 'محتوى بصري يدعم حضور المشروع في السوق',
+        leadEn: 'Visual content supporting market presence',
+      },
+    ],
     ar: {
       title: 'GrowthLaunch™ | نظام توليد العملاء والمبيعات | Graphics House',
       desc: 'منظومة مبيعات متكاملة — جذب مؤهل، رد فوري، ومتابعة آلية مع تتبع وCRM قابل للقياس.',
@@ -439,6 +461,28 @@ const PRODUCTS = [
       { value: '4', labelAr: 'مراحل منهجية', labelEn: 'Structured phases', subAr: 'من الاستكشاف إلى الإطلاق', subEn: 'Discovery through launch' },
       { value: '48h', labelAr: 'عرض أولي', labelEn: 'Initial proposal', subAr: 'نطاق واضح بعد الجلسة', subEn: 'Clear scope after the session' },
       { value: '+200', labelAr: 'مشروع مُنجز', labelEn: 'Projects delivered', subAr: 'ثقة B2B في المنطقة', subEn: 'B2B trust across the region' },
+    ],
+    caseStudies: [
+      {
+        slug: 'makkah-charter-mwl',
+        img: '../assets/news/makkah-charter-01.jpeg',
+        tagAr: 'هوية ومعرض',
+        tagEn: 'Identity & exhibition',
+        titleAr: 'ميثاق مكة — رابطة العالم الإسلامي',
+        titleEn: 'Makkah Charter — MWL',
+        leadAr: 'لغة علامة متسقة عبر المجسم والتفاعلي والفضاء',
+        leadEn: 'Consistent brand language across model, interactive and space',
+      },
+      {
+        slug: 'al-owla-nakheel',
+        img: '../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg',
+        tagAr: 'هوية مشروع',
+        tagEn: 'Project identity',
+        titleAr: 'الأولى — النخيل',
+        titleEn: 'Al Oula — Al Nakheel',
+        leadAr: 'تصور فوتوريالي يحمل تموضع المشروع',
+        leadEn: 'Photoreal visualization carrying project positioning',
+      },
     ],
     ar: {
       title: 'BrandScale™ | نظام نمو العلامات التجارية | Graphics House',
@@ -819,6 +863,57 @@ function buildPremiumPage(product, isEn) {
     )
     .join('');
 
+  const caseStudiesHtml = (product.caseStudies || [])
+    .map(
+      (cs, i) => {
+        const href = `../insights/projects/${cs.slug}${isEn ? '-en' : ''}.html`;
+        return `<a href="${href}" class="gl-case-card reveal" style="opacity:0;transform:translateY(20px);transition-delay:${(i * 0.08).toFixed(2)}s" data-cta="${ctaSlug}-case-${cs.slug}">
+        <div class="gl-case-img"><img src="${cs.img}" alt="${isEn ? cs.titleEn : cs.titleAr}" loading="lazy" width="640" height="360"></div>
+        <div class="gl-case-body">
+          <span class="gl-case-tag">${isEn ? cs.tagEn : cs.tagAr}</span>
+          <h3>${isEn ? cs.titleEn : cs.titleAr}</h3>
+          <p>${isEn ? cs.leadEn : cs.leadAr}</p>
+          <span class="gl-case-link">${isEn ? 'Read case study →' : 'اقرأ دراسة الحالة ←'}</span>
+        </div>
+      </a>`;
+      }
+    )
+    .join('');
+
+  const caseStudiesSection =
+    caseStudiesHtml &&
+    `<section class="gl-case-studies">
+  <div class="gl-case-head reveal" style="opacity:0;transform:translateY(20px)">
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${isEn ? 'Proof in the field' : 'إثبات ميداني'}</span>
+    <h2>${isEn ? 'Case studies from our work' : 'دراسات حالة من أعمالنا'}</h2>
+    <p>${isEn ? 'Real launches and environments that show how the system performs in market.' : 'إطلاقات وبيئات حقيقية تُظهر أداء المنظومة في السوق.'}</p>
+  </div>
+  <div class="gl-case-grid">${caseStudiesHtml}</div>
+</section>`;
+
+  const roiSection =
+    product.key === 'growth'
+      ? `<section class="gl-roi" id="gl-roi-calculator">
+  <div class="gl-roi-inner reveal" style="opacity:0;transform:translateY(20px)">
+    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">${isEn ? 'ROI estimator' : 'تقدير العائد'}</span>
+    <h2>${isEn ? 'What faster response could mean' : 'ماذا يعني الرد الأسرع؟'}</h2>
+    <p class="gl-roi-lead">${isEn ? 'Adjust your numbers — see estimated revenue with slow vs. fast lead response (illustrative).' : 'عدّل أرقامك — تقدير للإيراد مع رد بطيء مقابل رد سريع (تقريبي).'}</p>
+    <div class="gl-roi-fields">
+      <label>${isEn ? 'Monthly ad spend (SAR)' : 'إنفاق إعلاني شهري (ر.س)'}<input type="number" data-roi="budget" min="0" step="1000" value="50000"></label>
+      <label>${isEn ? 'Average deal value (SAR)' : 'متوسط قيمة الصفقة (ر.س)'}<input type="number" data-roi="deal" min="0" step="10000" value="800000"></label>
+      <label>${isEn ? 'Close rate (%)' : 'نسبة الإغلاق (%)'}<input type="number" data-roi="rate" min="1" max="50" step="0.5" value="5"></label>
+    </div>
+    <div class="gl-roi-results">
+      <article><span>${isEn ? 'Slow response' : 'رد بطيء'}</span><strong data-roi="out-slow">—</strong></article>
+      <article class="gl-roi-highlight"><span>${isEn ? 'Fast response (GrowthLaunch)' : 'رد سريع (GrowthLaunch)'}</span><strong data-roi="out-fast">—</strong></article>
+      <article><span>${isEn ? 'Estimated uplift' : 'الفارق التقديري'}</span><strong data-roi="out-delta">—</strong></article>
+    </div>
+    <p class="gl-roi-note">${isEn ? 'Illustrative model — book a session for a scoped forecast.' : 'نموذج تقريبي — احجز جلسة لتوقعات مخصّصة.'}</p>
+    <a href="${contact}" class="pl-btn-pill pl-btn-pill-white" data-cta="${ctaSlug}-roi">${isEn ? 'Book sales path session' : 'احجز جلسة مسار المبيعات'}</a>
+  </div>
+</section>`
+      : '';
+
   const gapItems = (t.gapItems || [])
     .map((item) => `<li class="reveal" style="opacity:0;transform:translateY(16px)">${item}</li>`)
     .join('');
@@ -867,7 +962,7 @@ function buildPremiumPage(product, isEn) {
   const renderVidFrame = (v, isEn) => {
     const title = isEn ? v.titleEn : v.titleAr;
     const mobileAttr = v.mobileSrc ? ` data-pl-src-mobile="${v.mobileSrc}"` : '';
-    const video = `<video class="gh-autoplay gh-ambient-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="${v.poster}" data-pl-src="${v.src}"${mobileAttr} title="${title}"></video>`;
+    const video = `<div class="pl-video-wrap pl-video-paused"><video class="w-full h-full object-cover gh-autoplay" muted playsinline webkit-playsinline disablepictureinpicture preload="none" poster="${v.poster}" data-pl-src="${v.src}"${mobileAttr} title="${title}"><source src="${v.src}" type="video/mp4"></video></div>`;
     if (/GH-Real-estate-services/i.test(v.src)) {
       return `<div class="gl-vid-frame gh-ambient-dual">${video}<img class="gh-ambient-poster-mobile" src="${v.poster}" alt="${title}" loading="eager" decoding="async"></div>`;
     }
@@ -921,14 +1016,15 @@ ${analyticsHeadTags('../')}
   .ar-feat-row p{margin:0;font-size:14px;color:#1A1A1A;line-height:1.55}
 </style>
 <script defer src="../assets/site-header.js?v=16"></script>
-<script defer src="../assets/gh-performance.js?v=8"></script>
-<script defer src="../assets/lang-switch.js?v=2"></script>
-<script defer src="../assets/project-launch-media.js?v=3"></script>
+<script defer src="../assets/gh-performance.js?v=10"></script>
+<script defer src="../assets/gh-cta-track.js?v=1"></script>
+${product.key === 'growth' ? '<script defer src="../assets/gh-roi-calculator.js?v=1"></script>\n' : ''}<script defer src="../assets/lang-switch.js?v=2"></script>
+<script defer src="../assets/project-launch-media.js?v=4"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=23">
 <link rel="stylesheet" href="../assets/site-header.css?v=33">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
-<link rel="stylesheet" href="../assets/solution-premium.css?v=2">
+<link rel="stylesheet" href="../assets/solution-premium.css?v=3">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=8">
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
@@ -972,6 +1068,8 @@ ${header}
   <div class="gl-proof-grid">${proofHtml}</div>
 </section>
 
+${caseStudiesSection}
+
 <section class="gl-gap">
   <div class="gl-gap-inner reveal" style="opacity:0;transform:translateY(20px)">
     <h2>${t.gapTitle}</h2>
@@ -1008,6 +1106,8 @@ ${extras.pillars}
   </div>
   <div class="gl-outcomes-grid">${outcomesHtml}</div>
 </section>
+
+${roiSection}
 
 ${extras.compare}
 ${extras.deliverables}
@@ -1179,18 +1279,23 @@ function buildPage(product, isEn) {
 
   const videos = product.videos
     .map(
-      (v, i) => `<div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:${(0.05 + i * 0.05).toFixed(2)}s">
-      <div class="aspect-video overflow-hidden relative bg-black">
-        <video class="w-full h-full object-cover gh-autoplay" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="${v.poster}">
-          <source src="${v.src}" type="video/mp4">
-        </video>
+      (v, i) => {
+        const mobileAttr = v.mobileSrc ? ` data-pl-src-mobile="${v.mobileSrc}"` : '';
+        return `<div class="reveal group relative overflow-hidden border border-white/8 hover:border-primary/40 transition-all duration-500" style="opacity:0;transform:translateY(24px);transition-delay:${(0.05 + i * 0.05).toFixed(2)}s">
+      <div class="aspect-video overflow-hidden relative bg-black gl-vid-frame">
+        <div class="pl-video-wrap pl-video-paused">
+          <video class="w-full h-full object-cover gh-autoplay" muted playsinline webkit-playsinline preload="none" poster="${v.poster}" data-pl-src="${v.src}"${mobileAttr}>
+            <source src="${v.src}" type="video/mp4">
+          </video>
+        </div>
       </div>
       <div class="p-5 bg-surface-container">
         <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">${isEn ? v.tagEn : v.tagAr}</span>
         <h3 class="font-headline-md text-on-background mb-1">${isEn ? v.titleEn : v.titleAr}</h3>
         <p class="text-secondary text-sm opacity-70">${isEn ? v.leadEn : v.leadAr}</p>
       </div>
-    </div>`
+    </div>`;
+      }
     )
     .join('\n');
 
@@ -1224,12 +1329,14 @@ ${analyticsHeadTags('../')}
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>${PAGE_CSS}</style>
 <script defer src="../assets/site-header.js?v=16"></script>
-<script defer src="../assets/gh-performance.js?v=2"></script>
-<script defer src="../assets/lang-switch.js?v=2"></script>
+<script defer src="../assets/gh-performance.js?v=10"></script>
+<script defer src="../assets/gh-cta-track.js?v=1"></script>
+${product.key === 'growth' ? '<script defer src="../assets/gh-roi-calculator.js?v=1"></script>\n' : ''}<script defer src="../assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=23">
 <link rel="stylesheet" href="../assets/site-header.css?v=31">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
+<link rel="stylesheet" href="../assets/solution-premium.css?v=3">
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Product',

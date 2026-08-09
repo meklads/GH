@@ -27,6 +27,7 @@ console.log('Patching hand-crafted pages…');
 patch('solutions/project-launch.html', [
   [/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=10'],
   [/project-launch-media\.js\?v=\d+/g, 'project-launch-media.js?v=4'],
+  [/solution-premium\.css\?v=\d+/g, 'solution-premium.css?v=3'],
   [
     /<link rel="stylesheet" href="\.\.\/assets\/project-launch-premium\.css\?v=2">/,
     '<link rel="stylesheet" href="../assets/project-launch-premium.css?v=2">\n<link rel="stylesheet" href="../assets/solution-premium.css?v=2">',
@@ -43,11 +44,13 @@ if (!fs.readFileSync(path.join(ROOT, 'solutions/project-launch.html'), 'utf8').i
 }
 
 patch('solutions/project-launch-en.html', [
+  [/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=10'],
+  [/project-launch-media\.js\?v=\d+/g, 'project-launch-media.js?v=4'],
+  [/solution-premium\.css\?v=\d+/g, 'solution-premium.css?v=3'],
   [
     /<link rel="stylesheet" href="\.\.\/assets\/project-launch-premium\.css\?v=2">/,
-    '<link rel="stylesheet" href="../assets/project-launch-premium.css?v=2">\n<link rel="stylesheet" href="../assets/solution-premium.css?v=2">',
+    '<link rel="stylesheet" href="../assets/project-launch-premium.css?v=2">\n<link rel="stylesheet" href="../assets/solution-premium.css?v=3">',
   ],
-  [/project-launch-media\.js\?v=\d+/g, 'project-launch-media.js?v=4'],
 ]);
 
 console.log('Done.');

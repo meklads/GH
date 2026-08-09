@@ -444,6 +444,13 @@ function patchHtml(html, rel) {
 
   html = html.replace(/dot4life\.team@gmail\.com/g, 'info@3dgraphicshouse.com');
 
+  if (rel === 'index.html' || rel === 'index-ar.html') {
+    html = html.replace(
+      /(<script type="application\/ld\+json">\s*\{[\s\S]*?"@type":\s*"WebSite"[\s\S]*?)(,\s*"potentialAction"\s*:\s*\{[\s\S]*?\})([\s\S]*?\}\s*<\/script>)/,
+      '$1$3'
+    );
+  }
+
   if (html.includes('web3forms.com') && !html.includes('gh-forms-config.js')) {
     html = html.replace(/<head>/i, `<head>\n<script src="${prefix}assets/gh-forms-config.js"></script>`);
   }

@@ -10,6 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'meklads/GH'
     steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Trigger Coolify redeploy
         env:
           COOLIFY_WEBHOOK: ${{ secrets.COOLIFY_DEPLOY_WEBHOOK }}
@@ -38,3 +44,15 @@ jobs:
             -H "Content-Type: application/json" \
             --data '{"purge_everything":true}'
           echo "Cloudflare cache purged."
+
+      - name: Verify live deploy (optional)
+        env:
+          COOLIFY_WEBHOOK: ${{ secrets.COOLIFY_DEPLOY_WEBHOOK }}
+        run: |
+          if [ -z "$COOLIFY_WEBHOOK" ]; then
+            echo "::notice::Skipping live verify — no auto-deploy configured."
+            exit 0
+          fi
+          echo "Waiting 60s for Coolify deploy…"
+          sleep 60
+          node scripts/verify-live-deploy.mjs
