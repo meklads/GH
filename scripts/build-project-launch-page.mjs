@@ -881,7 +881,7 @@ ${analyticsHeadTags('../')}
   .ar-feat-row p{margin:0;font-size:14px;color:#1A1A1A;line-height:1.55}
 </style>
 <script defer src="../assets/site-header.js?v=16"></script>
-<script defer src="../assets/gh-performance.js?v=7"></script>
+<script defer src="../assets/gh-performance.js?v=8"></script>
 <script defer src="../assets/lang-switch.js?v=2"></script>
 <script defer src="../assets/project-launch-media.js?v=3"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">

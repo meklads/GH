@@ -107,6 +107,29 @@ body:has(.pl-hero) .gh-main-anchor {
   to   { background-position: -120% 0; }
 }
 
+img.gh-mobile-poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #111;
+}
+
+.ar-img-frame img.gh-mobile-poster-img,
+.ar-media-frame img.gh-mobile-poster-img,
+.ar-outcomes-media img.gh-mobile-poster-img {
+  position: absolute;
+  inset: 0;
+}
+
+.gl-vid-frame img.gh-mobile-poster-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Tap-to-play fallback (mobile autoplay blocked) */
 .pl-video-fallback {
   display: none;

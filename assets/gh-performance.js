@@ -1,6 +1,6 @@
 /**
  * GH ambient video — reliable muted autoplay + loop (mobile + desktop).
- * v7: delayed play overlay, gesture unlock, stronger mobile play().
+ * v8: mobile poster fallback for clips that don't autoplay reliably (e.g. real-estate).
  */
 (function () {
   'use strict';
@@ -62,6 +62,49 @@
 
   function isEager(v) {
     return isHero(v) || v.hasAttribute('data-gh-eager') || v.getAttribute('preload') === 'auto';
+  }
+
+  function shouldUsePosterOnMobile(v) {
+    if (!prefersMobileSrc() || isHero(v)) return false;
+    if (v.getAttribute('data-gh-mobile-poster') === '1') return true;
+    if (v.getAttribute('data-gh-mobile-poster') === '0') return false;
+    var src =
+      v.getAttribute('data-pl-src') ||
+      v.getAttribute('data-gh-src') ||
+      v.getAttribute('src') ||
+      '';
+    return /GH-Real-estate-services/i.test(src);
+  }
+
+  function swapToPoster(v) {
+    if (v.getAttribute('data-gh-poster-swap') === '1') return;
+    var poster = v.getAttribute('poster');
+    if (!poster) return;
+
+    v.setAttribute('data-gh-poster-swap', '1');
+    v.removeAttribute('autoplay');
+    v.pause();
+    v.style.display = 'none';
+
+    var host = v.parentElement;
+    if (!host) return;
+
+    var img = document.createElement('img');
+    img.src = poster;
+    img.alt = v.getAttribute('title') || '';
+    img.className = 'gh-mobile-poster-img';
+    if (v.getAttribute('style')) img.setAttribute('style', v.getAttribute('style'));
+    img.decoding = 'async';
+    img.loading = 'eager';
+
+    host.insertBefore(img, v);
+
+    var wrap = v.closest('.pl-video-wrap');
+    if (wrap) {
+      wrap.classList.remove('pl-video-paused', 'is-loading');
+      var btn = wrap.querySelector('.pl-video-fallback');
+      if (btn) btn.remove();
+    }
   }
 
   function isInView(el) {
@@ -243,6 +286,11 @@
   function initVideo(v) {
     if (!v || v.nodeName !== 'VIDEO' || v.dataset.ghVideoInit === '1') return;
     v.dataset.ghVideoInit = '1';
+
+    if (shouldUsePosterOnMobile(v)) {
+      swapToPoster(v);
+      return;
+    }
 
     prep(v);
     ensureWrap(v);
