@@ -832,12 +832,20 @@ function buildPremiumPage(product, isEn) {
     )
     .join('');
 
+  const renderVidFrame = (v, isEn) => {
+    const title = isEn ? v.titleEn : v.titleAr;
+    const mobileAttr = v.mobileSrc ? ` data-pl-src-mobile="${v.mobileSrc}"` : '';
+    const video = `<video class="gh-autoplay gh-ambient-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="${v.poster}" data-pl-src="${v.src}"${mobileAttr} title="${title}"></video>`;
+    if (/GH-Real-estate-services/i.test(v.src)) {
+      return `<div class="gl-vid-frame gh-ambient-dual">${video}<img class="gh-ambient-poster-mobile" src="${v.poster}" alt="${title}" loading="eager" decoding="async"></div>`;
+    }
+    return `<div class="gl-vid-frame">${video}</div>`;
+  };
+
   const videos = product.videos
     .map(
       (v, i) => `<article class="gl-vid-card reveal" style="opacity:0;transform:translateY(20px);transition-delay:${(0.05 + i * 0.06).toFixed(2)}s">
-      <div class="gl-vid-frame">
-        <video class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="${v.poster}" data-pl-src="${v.src}"${v.mobileSrc ? ` data-pl-src-mobile="${v.mobileSrc}"` : ''} title="${isEn ? v.titleEn : v.titleAr}"></video>
-      </div>
+      ${renderVidFrame(v, isEn)}
       <div class="gl-vid-body">
         <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">${isEn ? v.tagEn : v.tagAr}</span>
         <h3 class="font-headline-md text-on-background mb-1">${isEn ? v.titleEn : v.titleAr}</h3>

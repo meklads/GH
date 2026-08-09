@@ -685,3 +685,52 @@ body:has(.header) {
 .header.scrolled .logo-img {
   height: var(--gh-logo-height, 82px) !important;
 }
+
+/* Ambient clips: static poster on mobile, video loop on desktop (no JS required) */
+.gh-ambient-dual {
+  position: relative;
+  overflow: hidden;
+  background: #111;
+}
+
+.gh-ambient-dual .gh-ambient-poster-mobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.gh-ambient-dual .gh-ambient-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ar-img-frame .gh-ambient-dual,
+.ar-media-frame .gh-ambient-dual,
+.gl-vid-frame.gh-ambient-dual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .gh-ambient-dual .gh-ambient-video,
+  .gh-ambient-dual video,
+  .gh-ambient-dual .pl-video-wrap {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .gh-ambient-dual .gh-ambient-poster-mobile {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .gh-ambient-dual .pl-video-fallback {
+    display: none !important;
+  }
+}

@@ -287,6 +287,7 @@
     if (!v || v.nodeName !== 'VIDEO' || v.dataset.ghVideoInit === '1') return;
     v.dataset.ghVideoInit = '1';
 
+    if (prefersMobileSrc() && v.closest('.gh-ambient-dual')) return;
     if (shouldUsePosterOnMobile(v)) {
       swapToPoster(v);
       return;
