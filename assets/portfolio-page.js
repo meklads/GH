@@ -82,6 +82,12 @@
           document.querySelectorAll('.pf-section').forEach(function (s) {
             s.style.display = s.dataset.section === f ? '' : 'none';
           });
+          var target = document.querySelector(
+            '.pf-section[data-section="' + f + '"]'
+          );
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
       });
     });
