@@ -141,7 +141,7 @@ function collectHtmlFiles(dir, base = '') {
 }
 
 function ensureHeaderCssOrder(html, prefix) {
-  const headerHref = `${prefix}site-header.css?v=34`;
+  const headerHref = `${prefix}site-header.css?v=35`;
   const headerTag = `<link rel="stylesheet" href="${headerHref}">`;
   html = html.replace(/<link[^>]*href="[^"]*site-header\.css[^"]*"[^>]*>\s*/gi, '');
   if (/gh-site-enhancements\.css/i.test(html)) {

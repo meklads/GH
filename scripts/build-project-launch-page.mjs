@@ -1022,7 +1022,7 @@ ${product.key === 'growth' ? '<script defer src="../assets/gh-roi-calculator.js?
 <script defer src="../assets/project-launch-media.js?v=4"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=23">
-<link rel="stylesheet" href="../assets/site-header.css?v=34">
+<link rel="stylesheet" href="../assets/site-header.css?v=35">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 <link rel="stylesheet" href="../assets/solution-premium.css?v=3">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=8">

@@ -350,7 +350,7 @@ function injectPerformanceScript(html, prefix) {
 }
 
 function ensureHeaderCssOrder(html, assetsPrefix) {
-  const headerHref = `${assetsPrefix}site-header.css?v=34`;
+  const headerHref = `${assetsPrefix}site-header.css?v=35`;
   const headerTag = `<link rel="stylesheet" href="${headerHref}">`;
   html = html.replace(/<link[^>]*href="[^"]*site-header\.css[^"]*"[^>]*>\s*/gi, '');
   if (/gh-site-enhancements\.css/i.test(html)) {
