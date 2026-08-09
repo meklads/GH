@@ -82,7 +82,7 @@ function underConstructionHtml(project) {
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/site-header.css?v=33">
-<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=22">
+<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=23">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',sans-serif;background:#0A0A0A;color:#fff;min-height:100vh;display:flex;flex-direction:column}

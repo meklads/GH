@@ -9,7 +9,9 @@
     var wrap = v.closest('.hero-video-bg');
     if (window.GHVideo) {
       window.GHVideo.ensureLoaded(v);
-      window.GHVideo.prep(v);
+      if (window.GHVideo.prepHero) {
+        window.GHVideo.prepHero(v);
+      }
     }
 
     v.muted = true;

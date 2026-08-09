@@ -78,9 +78,9 @@ function fixLogoCss(html) {
 }
 
 function ensurePerformanceScript(html, prefix) {
-  const tag = `<script defer src="${prefix}gh-performance.js?v=8"></script>`;
+  const tag = `<script defer src="${prefix}gh-performance.js?v=9"></script>`;
   if (html.includes('gh-performance.js')) {
-    return html.replace(/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=8');
+    return html.replace(/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=9');
   }
   if (html.includes('site-header.js')) {
     return html.replace(
@@ -193,11 +193,11 @@ function syncFile(rel) {
   html = html.replace(/lang-switch\.js(\?v=\d+)?/g, 'lang-switch.js?v=2');
 
   html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=16');
-  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=22');
+  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=23');
 
   // Ensure footer layout CSS is always present, versioned, and after Tailwind
   // (unversioned or pre-Tailwind links caused a collapsed narrow footer on many pages).
-  const enhHref = `${prefix}gh-site-enhancements.css?v=22`;
+  const enhHref = `${prefix}gh-site-enhancements.css?v=23`;
   const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
   html = html.replace(
     /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,
@@ -231,7 +231,7 @@ function syncFooterOnly(rel) {
   html = html.replace(/<footer dir="(?:ltr|rtl)"[\s\S]*?<\/footer>/, footer);
 
   const prefix = depth > 0 ? '../'.repeat(depth) + 'assets/' : 'assets/';
-  const enhHref = `${prefix}gh-site-enhancements.css?v=22`;
+  const enhHref = `${prefix}gh-site-enhancements.css?v=23`;
   const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
   html = html.replace(
     /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,

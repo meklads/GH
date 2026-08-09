@@ -211,7 +211,7 @@ function buildEnStub(enFileName, data) {
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${PREFIX}assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="${PREFIX}assets/gh-site-enhancements.css?v=22">
+<link rel="stylesheet" href="${PREFIX}assets/gh-site-enhancements.css?v=23">
 <link rel="stylesheet" href="${PREFIX}assets/site-header.css?v=31">
 <style>
 :root{--gold:#C9A84C;--text-primary:#FAFAF8;--text-secondary:rgba(255,255,255,.7);--border-medium:rgba(255,255,255,.12)}
