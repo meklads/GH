@@ -113,13 +113,37 @@
     }
   });
 
+  function initReveal() {
+    document.querySelectorAll('.pf-section').forEach(function (section) {
+      var cards = section.querySelectorAll('.pf-card');
+      var partner = section.querySelector('.pf-motion-partner');
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            cards.forEach(function (card, i) {
+              card.style.transitionDelay = i * 0.07 + 's';
+              card.classList.add('is-visible');
+            });
+            if (partner) partner.classList.add('is-visible');
+            io.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -5% 0px' }
+      );
+      io.observe(section);
+    });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       initFilters();
       initYtThumbs();
+      initReveal();
     });
   } else {
     initFilters();
     initYtThumbs();
+    initReveal();
   }
 })();

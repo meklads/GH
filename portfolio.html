@@ -38,16 +38,16 @@ gtag('config','G-Y67JVE898Z');
 <script defer src="assets/site-header.js?v=16"></script>
 <script defer src="assets/gh-performance.js?v=10"></script>
 <script defer src="assets/lang-switch.js?v=2"></script>
-<script defer src="assets/portfolio-page.js?v=3"></script>
+<script defer src="assets/portfolio-page.js?v=4"></script>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=23">
 <link rel="stylesheet" href="assets/site-header.css?v=35">
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=8">
 <link rel="preconnect" href="https://img.youtube.com">
 <link rel="dns-prefetch" href="https://img.youtube.com">
-<link rel="stylesheet" href="assets/portfolio-page.css?v=3">
+<link rel="stylesheet" href="assets/portfolio-page.css?v=4">
 </head>
-<body>
+<body class="pf-page">
 
 <!-- ══ HEADER (exact from homepage AR) ══ -->
 <a class="gh-skip-link" href="#main-content">تخطي إلى المحتوى الرئيسي</a>
@@ -184,10 +184,28 @@ gtag('config','G-Y67JVE898Z');
 
 <!-- ══ HERO ══ -->
 <section class="pf-hero">
-  <div class="container pf-hero-inner">
-    <div class="pf-eyebrow">بورتفوليو</div>
-    <h1>أعمال تتحدث<br><em>بصوت عالٍ</em></h1>
-    <p>من التصور الفوتوواقعي إلى الماكيتات الذكية والإنتاج السينمائي CGI وجاليريات المبيعات التفاعلية، مصممة لمشاريع التطوير الكبرى في الشرق الأوسط.</p>
+  <div class="pf-hero-glow" aria-hidden="true"></div>
+  <div class="container pf-hero-layout">
+    <div class="pf-hero-copy">
+      <div class="pf-eyebrow">بورتفوليو</div>
+      <h1>أعمال تتحدث<br><em>بصوت عالٍ</em></h1>
+      <p>من التصور الفوتوواقعي إلى الماكيتات الذكية والإنتاج السينمائي CGI وجاليريات المبيعات التفاعلية، مصممة لمشاريع التطوير الكبرى في الشرق الأوسط.</p>
+      <a href="#filterBar" class="pf-hero-cta">استكشف الأعمال</a>
+    </div>
+    <div class="pf-hero-mosaic" aria-hidden="true">
+      <div class="pf-hero-mosaic__cell pf-hero-mosaic__cell--a"><img src="assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="" loading="eager" decoding="async"/></div>
+      <div class="pf-hero-mosaic__cell pf-hero-mosaic__cell--b"><img src="assets/projects/maquettes/alrajhi-maquette-01.jpeg" alt="" loading="eager" decoding="async"/></div>
+      <div class="pf-hero-mosaic__cell pf-hero-mosaic__cell--c"><img src="assets/projects/maquettes/anan-eskan-maquette-01.jpeg" alt="" loading="eager" decoding="async"/></div>
+      <div class="pf-hero-mosaic__cell pf-hero-mosaic__cell--d"><img src="https://img.youtube.com/vi/GlbvI0DRXE4/maxresdefault.jpg" alt="" loading="eager" decoding="async"/></div>
+    </div>
+  </div>
+  <div class="pf-hero-stats">
+    <div class="container pf-hero-stats__grid">
+      <div class="pf-stat"><strong>25+</strong><span>مشروع منجز</span></div>
+      <div class="pf-stat"><strong>6</strong><span>تخصصات إبداعية</span></div>
+      <div class="pf-stat"><strong>4</strong><span>أسواق خليجية</span></div>
+      <div class="pf-stat"><strong>CGI</strong><span>سينمائي · تفاعلي · ماكيت</span></div>
+    </div>
   </div>
 </section>
 
@@ -207,11 +225,9 @@ gtag('config','G-Y67JVE898Z');
 <!-- ══ سينمائي CGI ══ -->
 <section class="pf-section" data-section="cinematic">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">الخدمة الأولى</div>
+    <div class="section-header"><div class="section-header__content"><div class="section-label">الخدمة الأولى</div>
       <div class="section-title">سينمائي CGI</div>
-      <div class="section-desc">أفلام ثلاثية الأبعاد سينمائية CGI تُحيي المشاريع التطويرية قبل بداية البناء.</div>
-    </div>
+      <div class="section-desc">أفلام ثلاثية الأبعاد سينمائية CGI تُحيي المشاريع التطويرية قبل بداية البناء.</div></div></div>
     <div class="pf-grid pf-grid--feature-5">
       <div class="pf-card" data-cat="cinematic" onclick="openVidById('GlbvI0DRXE4')">
         <div class="pf-card-img">
@@ -255,11 +271,9 @@ gtag('config','G-Y67JVE898Z');
 <!-- ══ مجسمات ذكية ══ -->
 <section class="pf-section" data-section="maquettes">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">الخدمة الثانية</div>
+    <div class="section-header"><div class="section-header__content"><div class="section-label">الخدمة الثانية</div>
       <div class="section-title">مجسمات ذكية</div>
-      <div class="section-desc">نماذج مصغّرة مهندسة بدقة بأنظمة LED وتفاعل لمسي وتكامل مع البيانات الحية.</div>
-    </div>
+      <div class="section-desc">نماذج مصغّرة مهندسة بدقة بأنظمة LED وتفاعل لمسي وتكامل مع البيانات الحية.</div></div></div>
         <div class="pf-grid">
       <div class="pf-card" data-cat="maquettes" onclick="openImg('assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg','مجسمات ذكية','ميثاق مكة — معرض رابطة العالم الإسلامي')">
         <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img src="assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="مجسم ميثاق مكة رابطة العالم الإسلامي" loading="lazy" decoding="async"/></picture></div>
@@ -292,11 +306,9 @@ gtag('config','G-Y67JVE898Z');
 <!-- ══ تجارب تفاعلية ══ -->
 <section class="pf-section" data-section="interactive">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">الخدمة الثالثة</div>
+    <div class="section-header"><div class="section-header__content"><div class="section-label">الخدمة الثالثة</div>
       <div class="section-title">تجارب تفاعلية</div>
-      <div class="section-desc">جولات VR غامرة ومشاريع 360° وتطبيقات شاشات اللمس لمبيعات أسرع وأكثر تأثيراً.</div>
-    </div>
+      <div class="section-desc">جولات VR غامرة ومشاريع 360° وتطبيقات شاشات اللمس لمبيعات أسرع وأكثر تأثيراً.</div></div></div>
     <div class="pf-grid">
       <div class="pf-card" data-cat="interactive" onclick="openImg('assets/projects/interactive-01.jpg','تجارب تفاعلية','جاليري مبيعات، شاشة لمسية')">
         <div class="pf-card-img"><picture><source srcset="assets/projects/interactive-01.webp" type="image/webp"><img src="assets/projects/interactive-01.jpg" alt="شاشة تفاعلية" loading="lazy" decoding="async"/></picture></div>
@@ -317,11 +329,9 @@ gtag('config','G-Y67JVE898Z');
 <!-- ══ جاليريات وديكور إعلاني ══ -->
 <section class="pf-section" data-section="galleries">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">الخدمة الرابعة</div>
+    <div class="section-header"><div class="section-header__content"><div class="section-label">الخدمة الرابعة</div>
       <div class="section-title">جاليريات وديكور إعلاني</div>
-      <div class="section-desc">أجنحة معارض مصممة بالكامل وبيئات براند تخلق تجارب مشترين لا تُنسى.</div>
-    </div>
+      <div class="section-desc">أجنحة معارض مصممة بالكامل وبيئات براند تخلق تجارب مشترين لا تُنسى.</div></div></div>
     <div class="pf-grid">
       <div class="pf-card" data-cat="galleries" onclick="openImg('assets/projects/pavilion1.jpg','جاليريات وديكور إعلاني','جناح المعرض، تصميم كامل')">
         <div class="pf-card-img"><picture><source srcset="assets/projects/pavilion1.webp" type="image/webp"><img src="assets/projects/pavilion1.jpg" alt="جناح المعرض" loading="lazy" decoding="async"/></picture></div>
@@ -342,11 +352,9 @@ gtag('config','G-Y67JVE898Z');
 <!-- ══ الإنتاج الفني ══ -->
 <section class="pf-section" data-section="media">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">الخدمة الخامسة</div>
+    <div class="section-header"><div class="section-header__content"><div class="section-label">الخدمة الخامسة</div>
       <div class="section-title">الإنتاج الفني</div>
-      <div class="section-desc">أفلام وسلاسل حلقات إنتاج فني — من التصوير السينمائي إلى المحتوى الترويجي للعلامات والمؤسسات.</div>
-    </div>
+      <div class="section-desc">أفلام وسلاسل حلقات إنتاج فني — من التصوير السينمائي إلى المحتوى الترويجي للعلامات والمؤسسات.</div></div></div>
     <div class="pf-grid pf-grid--duo">
       <div class="pf-card" data-cat="media" onclick="openVidById('NM60mClJNwg')">
         <div class="pf-card-img">
@@ -370,11 +378,9 @@ gtag('config','G-Y67JVE898Z');
 <!-- ══ أفلام موشن جرافيك ══ -->
 <section class="pf-section" data-section="motion">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">الخدمة السادسة</div>
+    <div class="section-header"><div class="section-header__content"><div class="section-label">الخدمة السادسة</div>
       <div class="section-title">أفلام موشن جرافيك</div>
-      <div class="section-desc">سلاسل موشن جرافيك أُنتجت للمركز الطبي الدولي — شاهد الحلقات على يوتيوب.</div>
-    </div>
+      <div class="section-desc">سلاسل موشن جرافيك أُنتجت للمركز الطبي الدولي — شاهد الحلقات على يوتيوب.</div></div></div>
     <div class="pf-grid">
       <div class="pf-card" data-cat="motion" onclick="openVidById('CtjHnqYOX3I')">
         <div class="pf-card-img">

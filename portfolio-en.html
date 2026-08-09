@@ -38,16 +38,16 @@ gtag('config','G-Y67JVE898Z');
 <script defer src="assets/site-header.js?v=16"></script>
 <script defer src="assets/gh-performance.js?v=10"></script>
 <script defer src="assets/lang-switch.js?v=2"></script>
-<script defer src="assets/portfolio-page.js?v=3"></script>
+<script defer src="assets/portfolio-page.js?v=4"></script>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=23">
 <link rel="stylesheet" href="assets/site-header.css?v=35">
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=8">
 <link rel="preconnect" href="https://img.youtube.com">
 <link rel="dns-prefetch" href="https://img.youtube.com">
-<link rel="stylesheet" href="assets/portfolio-page.css?v=3">
+<link rel="stylesheet" href="assets/portfolio-page.css?v=4">
 </head>
-<body>
+<body class="pf-page">
 
 <!-- ══════ HEADER (exact from homepage) ══════ -->
 <a class="gh-skip-link" href="#main-content">Skip to main content</a>
@@ -184,14 +184,32 @@ gtag('config','G-Y67JVE898Z');
 
 <!-- ══════ HERO ══════ -->
 <section class="pf-hero">
-  <div class="container pf-hero-inner">
-    <div class="pf-eyebrow">Portfolio</div>
-    <h1>Work That<br>Speaks <em>Volumes</em></h1>
-    <p>From photorealistic visualization to smart maquettes, cinematic CGI, and interactive sales galleries, crafted for landmark developments across the Middle East.</p>
+  <div class="pf-hero-glow" aria-hidden="true"></div>
+  <div class="container pf-hero-layout">
+    <div class="pf-hero-copy">
+      <div class="pf-eyebrow">Portfolio</div>
+      <h1>Work That<br>Speaks <em>Volumes</em></h1>
+      <p>From photorealistic visualization to smart maquettes, cinematic CGI, and interactive sales galleries, crafted for landmark developments across the Middle East.</p>
+      <a href="#filterBar" class="pf-hero-cta">Explore the Work</a>
+    </div>
+    <div class="pf-hero-mosaic" aria-hidden="true">
+      <div class="pf-hero-mosaic__cell pf-hero-mosaic__cell--a"><img src="assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="" loading="eager" decoding="async"/></div>
+      <div class="pf-hero-mosaic__cell pf-hero-mosaic__cell--b"><img src="assets/projects/maquettes/alrajhi-maquette-01.jpeg" alt="" loading="eager" decoding="async"/></div>
+      <div class="pf-hero-mosaic__cell pf-hero-mosaic__cell--c"><img src="assets/projects/maquettes/anan-eskan-maquette-01.jpeg" alt="" loading="eager" decoding="async"/></div>
+      <div class="pf-hero-mosaic__cell pf-hero-mosaic__cell--d"><img src="https://img.youtube.com/vi/GlbvI0DRXE4/maxresdefault.jpg" alt="" loading="eager" decoding="async"/></div>
+    </div>
+  </div>
+  <div class="pf-hero-stats">
+    <div class="container pf-hero-stats__grid">
+      <div class="pf-stat"><strong>25+</strong><span>Delivered Projects</span></div>
+      <div class="pf-stat"><strong>6</strong><span>Creative Disciplines</span></div>
+      <div class="pf-stat"><strong>4</strong><span>GCC Markets</span></div>
+      <div class="pf-stat"><strong>CGI</strong><span>Cinematic · Interactive · Maquette</span></div>
+    </div>
   </div>
 </section>
 
-<!-- ══════ FILTER BAR ══════ -->
+<!-- ══ FILTER BAR ══════ -->
 <div class="filter-wrap" id="filterBar">
   <div class="container filter-inner">
     <button class="filter-btn active" data-filter="all">All Work</button>
@@ -207,11 +225,9 @@ gtag('config','G-Y67JVE898Z');
 <!-- ══════ CINEMATIC CGI ══════ -->
 <section class="pf-section" data-section="cinematic">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">Service 01</div>
+    <div class="section-header"><div class="section-header__content"><div class="section-label">Service 01</div>
       <div class="section-title">Cinematic CGI</div>
-      <div class="section-desc">Cinematic 3D CGI films bringing landmark developments to life before construction begins.</div>
-    </div>
+      <div class="section-desc">Cinematic 3D CGI films bringing landmark developments to life before construction begins.</div></div></div>
     <div class="pf-grid pf-grid--feature-5">
       <div class="pf-card" data-cat="cinematic" onclick="openVidById('GlbvI0DRXE4')">
         <div class="pf-card-img">
@@ -255,11 +271,9 @@ gtag('config','G-Y67JVE898Z');
 <!-- ══════ SMART MAQUETTES ══════ -->
 <section class="pf-section" data-section="maquettes">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">Service 02</div>
+    <div class="section-header"><div class="section-header__content"><div class="section-label">Service 02</div>
       <div class="section-title">Smart Maquettes</div>
-      <div class="section-desc">Precision-engineered intelligent scale models with LED systems, touch interaction, and live data integration.</div>
-    </div>
+      <div class="section-desc">Precision-engineered intelligent scale models with LED systems, touch interaction, and live data integration.</div></div></div>
     <div class="pf-grid">
       <div class="pf-card" data-cat="maquettes" onclick="openImg('assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg','Smart Maquettes','Makkah Charter — MWL Exhibition')">
         <div class="pf-card-img"><picture><source srcset="assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img src="assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="Makkah Charter MWL smart maquette exhibition" loading="lazy" decoding="async"/></picture></div>
@@ -292,11 +306,9 @@ gtag('config','G-Y67JVE898Z');
 <!-- ══════ INTERACTIVE EXPERIENCES ══════ -->
 <section class="pf-section" data-section="interactive">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">Service 03</div>
+    <div class="section-header"><div class="section-header__content"><div class="section-label">Service 03</div>
       <div class="section-title">Interactive Experiences</div>
-      <div class="section-desc">Immersive VR walkthroughs, 360° tours, and touch-screen sales applications that accelerate pre-sales.</div>
-    </div>
+      <div class="section-desc">Immersive VR walkthroughs, 360° tours, and touch-screen sales applications that accelerate pre-sales.</div></div></div>
     <div class="pf-grid">
       <div class="pf-card" data-cat="interactive" onclick="openImg('assets/projects/interactive-01.jpg','Interactive Experiences','Sales Gallery، Interactive Screen')">
         <div class="pf-card-img"><picture><source srcset="assets/projects/interactive-01.webp" type="image/webp"><img src="assets/projects/interactive-01.jpg" alt="Interactive Screen" loading="lazy" decoding="async"/></picture></div>
@@ -317,11 +329,9 @@ gtag('config','G-Y67JVE898Z');
 <!-- ══════ GALLERIES & ADVERTISING DECOR ══════ -->
 <section class="pf-section" data-section="galleries">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">Service 04</div>
+    <div class="section-header"><div class="section-header__content"><div class="section-label">Service 04</div>
       <div class="section-title">Galleries &amp; Advertising Decor</div>
-      <div class="section-desc">Custom-designed exhibition pavilions and branded environments that create unforgettable buyer experiences.</div>
-    </div>
+      <div class="section-desc">Custom-designed exhibition pavilions and branded environments that create unforgettable buyer experiences.</div></div></div>
     <div class="pf-grid">
       <div class="pf-card" data-cat="galleries" onclick="openImg('assets/projects/pavilion1.jpg','Galleries & Advertising Decor','Exhibition Pavilion، Design')">
         <div class="pf-card-img"><picture><source srcset="assets/projects/pavilion1.webp" type="image/webp"><img src="assets/projects/pavilion1.jpg" alt="Exhibition Pavilion" loading="lazy" decoding="async"/></picture></div>
@@ -342,11 +352,9 @@ gtag('config','G-Y67JVE898Z');
 <!-- ══════ ARTISTIC PRODUCTION ══════ -->
 <section class="pf-section" data-section="media">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">Service 05</div>
+    <div class="section-header"><div class="section-header__content"><div class="section-label">Service 05</div>
       <div class="section-title">Artistic Production</div>
-      <div class="section-desc">Films and episodic series — from cinematic production to branded content for institutions and organizations.</div>
-    </div>
+      <div class="section-desc">Films and episodic series — from cinematic production to branded content for institutions and organizations.</div></div></div>
     <div class="pf-grid pf-grid--duo">
       <div class="pf-card" data-cat="media" onclick="openVidById('NM60mClJNwg')">
         <div class="pf-card-img">
@@ -369,11 +377,9 @@ gtag('config','G-Y67JVE898Z');
 <!-- ══════ MOTION GRAPHICS FILMS ══════ -->
 <section class="pf-section" data-section="motion">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">Service 06</div>
+    <div class="section-header"><div class="section-header__content"><div class="section-label">Service 06</div>
       <div class="section-title">Motion Graphics Films</div>
-      <div class="section-desc">Motion graphics series produced for International Medical Center — watch episodes on YouTube.</div>
-    </div>
+      <div class="section-desc">Motion graphics series produced for International Medical Center — watch episodes on YouTube.</div></div></div>
     <div class="pf-grid">
       <div class="pf-card" data-cat="motion" onclick="openVidById('CtjHnqYOX3I')">
         <div class="pf-card-img">
