@@ -4,12 +4,14 @@
   var YT_EMBED =
     'https://www.youtube.com/embed/{id}?autoplay=1&rel=0&modestbranding=1&playsinline=1';
 
-  function ytEmbedUrl(id) {
-    return YT_EMBED.replace('{id}', id);
+  function ytEmbedUrl(id, start) {
+    var url = YT_EMBED.replace('{id}', id);
+    if (start) url += '&start=' + start;
+    return url;
   }
 
-  window.openVidById = function (id) {
-    openVid(ytEmbedUrl(id));
+  window.openVidById = function (id, start) {
+    openVid(ytEmbedUrl(id, start));
   };
 
   window.openVid = function (src) {
