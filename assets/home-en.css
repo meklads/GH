@@ -1,7 +1,9 @@
+@import url('gh-tokens.css');
+
 :root {
-  --gold: #C9A84C;
-  --gold-light: #D9B860;
-  --gold-dark: #A8883A;
+  --gold: var(--gh-gold, #C9A84C);
+  --gold-light: var(--gh-gold-light, #D9B860);
+  --gold-dark: var(--gh-gold-dark, #A8883A);
   --text-primary: #FFFFFF;
   --text-secondary: rgba(255,255,255,0.7);
   --text-muted: rgba(255,255,255,0.35);

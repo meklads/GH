@@ -1,0 +1,81 @@
+/**
+ * Graphics House — English typography (canonical: index.html)
+ * Inter body · Playfair Display for marketing headlines
+ */
+html[lang="en"],
+html[dir="ltr"]:not([lang="ar"]) {
+  --gh-en-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --gh-en-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+html[lang="en"] body,
+html[dir="ltr"]:not([lang="ar"]) body {
+  font-family: var(--gh-en-font) !important;
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html[lang="en"] .header,
+html[lang="en"] .nav,
+html[lang="en"] .gh-footer,
+html[lang="en"] .filter-wrap,
+html[lang="en"] .pf-hero,
+html[lang="en"] .pf-section,
+html[lang="en"] .pf-card-body,
+html[lang="en"] .btn-pill,
+html[lang="en"] .filter-btn,
+html[lang="en"] .nav-link,
+html[lang="en"] .gh-insights-page,
+html[lang="en"] .gh-article-page-wrap,
+html[lang="en"] .gh-tool-page-wrap,
+html[dir="ltr"]:not([lang="ar"]) .header,
+html[dir="ltr"]:not([lang="ar"]) .nav,
+html[dir="ltr"]:not([lang="ar"]) .gh-footer,
+html[dir="ltr"]:not([lang="ar"]) .filter-wrap,
+html[dir="ltr"]:not([lang="ar"]) .pf-hero,
+html[dir="ltr"]:not([lang="ar"]) .pf-section,
+html[dir="ltr"]:not([lang="ar"]) .pf-card-body,
+html[dir="ltr"]:not([lang="ar"]) .btn-pill,
+html[dir="ltr"]:not([lang="ar"]) .filter-btn,
+html[dir="ltr"]:not([lang="ar"]) .nav-link,
+html[dir="ltr"]:not([lang="ar"]) .gh-insights-page,
+html[dir="ltr"]:not([lang="ar"]) .gh-article-page-wrap,
+html[dir="ltr"]:not([lang="ar"]) .gh-tool-page-wrap {
+  font-family: var(--gh-en-font);
+}
+
+html[lang="en"] body.gh-insights,
+html[lang="en"] body.pf-page,
+html[lang="en"] body.gh-home,
+html[lang="en"] body.gh-contact,
+html[lang="en"] body.case-page,
+html[dir="ltr"]:not([lang="ar"]) body.gh-insights,
+html[dir="ltr"]:not([lang="ar"]) body.pf-page,
+html[dir="ltr"]:not([lang="ar"]) body.gh-home,
+html[dir="ltr"]:not([lang="ar"]) body.gh-contact,
+html[dir="ltr"]:not([lang="ar"]) body.case-page {
+  font-family: var(--gh-en-font) !important;
+}
+
+html[lang="en"] .font-body-md,
+html[lang="en"] .font-body-lg,
+html[lang="en"] .font-label-caps,
+html[dir="ltr"]:not([lang="ar"]) .font-body-md,
+html[dir="ltr"]:not([lang="ar"]) .font-body-lg,
+html[dir="ltr"]:not([lang="ar"]) .font-label-caps {
+  font-family: var(--gh-en-font);
+}
+
+html[lang="en"] .font-headline-xl,
+html[lang="en"] .font-headline-md,
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[dir="ltr"]:not([lang="ar"]) .font-headline-xl,
+html[dir="ltr"]:not([lang="ar"]) .font-headline-md,
+html[dir="ltr"]:not([lang="ar"]) h1,
+html[dir="ltr"]:not([lang="ar"]) h2 {
+  font-family: var(--gh-en-display);
+}

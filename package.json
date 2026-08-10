@@ -16,6 +16,7 @@
     "qa:analytics": "node scripts/qa-analytics.mjs",
     "qa:seo": "node scripts/qa-seo.mjs",
     "terminology": "node scripts/patch-gh-terminology.mjs",
+    "tokens": "node scripts/patch-gh-gold-tokens.mjs",
     "verify:live": "node scripts/verify-live-deploy.mjs",
     "gsc:apply": "node scripts/apply-gsc-verification.mjs",
     "float": "node scripts/inject-float-widgets.mjs"

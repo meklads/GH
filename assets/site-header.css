@@ -1,3 +1,5 @@
+@import url('gh-tokens.css');
+
 /* ===== Site header & navigation ===== */
 
 /* Fixed + off-screen via transform — avoids RTL scrollWidth blowout from left:-9999px */
@@ -40,8 +42,8 @@
 }
 
 :root {
-  --header-gold: #C9A84C;
-  --header-gold-light: #D9B860;
+  --header-gold: var(--gh-gold, #C9A84C);
+  --header-gold-light: var(--gh-gold-light, #D9B860);
   --header-bg: #080c0a;
   --header-border: rgba(201, 168, 76, 0.14);
   --gh-header-height: 98px;

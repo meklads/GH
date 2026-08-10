@@ -1,0 +1,16 @@
+/**
+ * Graphics House — canonical design tokens
+ * Load before site-header.css / page stylesheets.
+ */
+:root {
+  --gh-gold: #C9A84C;
+  --gh-gold-light: #D9B860;
+  --gh-gold-dark: #A8883A;
+
+  /* Legacy aliases used across page CSS */
+  --gold: var(--gh-gold);
+  --gold-light: var(--gh-gold-light);
+  --gold-dark: var(--gh-gold-dark);
+  --header-gold: var(--gh-gold);
+  --header-gold-light: var(--gh-gold-light);
+}
