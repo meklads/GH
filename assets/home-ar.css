@@ -1732,6 +1732,51 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
+.pf-subsection-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0 8px;
+  margin-top: 8px;
+  border-top: 1px solid rgba(201,168,76,0.22);
+}
+.pf-subsection-header:first-child {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+.pf-subsection-logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+}
+.pf-subsection-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  margin-bottom: 4px;
+}
+.pf-subsection-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+}
+.pf-subsection-link {
+  margin-right: auto;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+.pf-subsection-link:hover { color: #C9A84C; }
 .pf-item {
   position: relative;
   aspect-ratio: 4/3;
