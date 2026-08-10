@@ -1,0 +1,96 @@
+/**
+ * Graphics House — Arabic typography (canonical: index-ar.html)
+ * Tajawal + IBM Plex Sans Arabic · smoothing aligned with homepage
+ */
+html[lang="ar"],
+html[dir="rtl"]:not([lang="en"]) {
+  --gh-ar-font: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html[lang="ar"] body,
+html[dir="rtl"]:not([lang="en"]) body {
+  font-family: var(--gh-ar-font) !important;
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html[lang="ar"] .header,
+html[lang="ar"] .nav,
+html[lang="ar"] .gh-footer,
+html[lang="ar"] .filter-wrap,
+html[lang="ar"] .pf-hero,
+html[lang="ar"] .pf-section,
+html[lang="ar"] .pf-card-body,
+html[lang="ar"] .btn-pill,
+html[lang="ar"] .filter-btn,
+html[lang="ar"] .nav-link,
+html[lang="ar"] .gh-insights-page,
+html[lang="ar"] .gh-article-page-wrap,
+html[lang="ar"] .gh-tool-page-wrap,
+html[dir="rtl"]:not([lang="en"]) .header,
+html[dir="rtl"]:not([lang="en"]) .nav,
+html[dir="rtl"]:not([lang="en"]) .gh-footer,
+html[dir="rtl"]:not([lang="en"]) .filter-wrap,
+html[dir="rtl"]:not([lang="en"]) .pf-hero,
+html[dir="rtl"]:not([lang="en"]) .pf-section,
+html[dir="rtl"]:not([lang="en"]) .pf-card-body,
+html[dir="rtl"]:not([lang="en"]) .btn-pill,
+html[dir="rtl"]:not([lang="en"]) .filter-btn,
+html[dir="rtl"]:not([lang="en"]) .nav-link,
+html[dir="rtl"]:not([lang="en"]) .gh-insights-page,
+html[dir="rtl"]:not([lang="en"]) .gh-article-page-wrap,
+html[dir="rtl"]:not([lang="en"]) .gh-tool-page-wrap {
+  font-family: var(--gh-ar-font);
+}
+
+html[lang="ar"] body.gh-insights,
+html[lang="ar"] body.pf-page,
+html[lang="ar"] body.gh-home,
+html[lang="ar"] body.gh-contact,
+html[dir="rtl"]:not([lang="en"]) body.gh-insights,
+html[dir="rtl"]:not([lang="en"]) body.pf-page,
+html[dir="rtl"]:not([lang="en"]) body.gh-home,
+html[dir="rtl"]:not([lang="en"]) body.gh-contact {
+  font-family: var(--gh-ar-font) !important;
+}
+
+html[lang="ar"] .font-body-md,
+html[lang="ar"] .font-body-lg,
+html[lang="ar"] .font-headline-xl,
+html[lang="ar"] .font-headline-md,
+html[lang="ar"] .font-label-caps,
+html[dir="rtl"]:not([lang="en"]) .font-body-md,
+html[dir="rtl"]:not([lang="en"]) .font-body-lg,
+html[dir="rtl"]:not([lang="en"]) .font-headline-xl,
+html[dir="rtl"]:not([lang="en"]) .font-headline-md,
+html[dir="rtl"]:not([lang="en"]) .font-label-caps {
+  font-family: var(--gh-ar-font);
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] p,
+html[lang="ar"] li,
+html[lang="ar"] label,
+html[lang="ar"] input,
+html[lang="ar"] textarea,
+html[lang="ar"] select,
+html[lang="ar"] button,
+html[dir="rtl"]:not([lang="en"]) h1,
+html[dir="rtl"]:not([lang="en"]) h2,
+html[dir="rtl"]:not([lang="en"]) h3,
+html[dir="rtl"]:not([lang="en"]) h4,
+html[dir="rtl"]:not([lang="en"]) p,
+html[dir="rtl"]:not([lang="en"]) li,
+html[dir="rtl"]:not([lang="en"]) label,
+html[dir="rtl"]:not([lang="en"]) input,
+html[dir="rtl"]:not([lang="en"]) textarea,
+html[dir="rtl"]:not([lang="en"]) select,
+html[dir="rtl"]:not([lang="en"]) button {
+  font-family: inherit;
+}

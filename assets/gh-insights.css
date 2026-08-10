@@ -3,7 +3,7 @@
 body.gh-insights {
   background: #f7f5f0;
   color: #1a1a1a;
-  font-family: "Tajawal", "Inter", sans-serif;
+  font-family: "Tajawal", "IBM Plex Sans Arabic", -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

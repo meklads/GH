@@ -30,7 +30,7 @@ body.pf-page {
   counter-reset: pf-sec;
 }
 
-[dir="rtl"] body.pf-page { font-family: 'Tajawal', 'Inter', sans-serif; }
+[dir="rtl"] body.pf-page { font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif; }
 [dir="ltr"] body.pf-page { font-family: 'Inter', 'Tajawal', sans-serif; }
 
 img { max-width: 100%; display: block; }

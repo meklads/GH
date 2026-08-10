@@ -219,7 +219,7 @@ body.gh-home #hero .hero-contact-strip {
 }
 
 .gh-footer[dir="rtl"] {
-  font-family: 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .gh-footer[dir="ltr"] {

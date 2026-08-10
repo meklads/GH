@@ -540,7 +540,7 @@ html[dir="rtl"] .nav-cta {
   transition: all 0.35s;
   cursor: pointer;
   border: none;
-  font-family: 'Tajawal', 'Inter', sans-serif;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 .btn-pill-gold {
   background: var(--header-gold);
