@@ -41,6 +41,9 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=23">
 <link rel="stylesheet" href="../assets/site-header.css?v=35">
+<link rel="stylesheet" href="../assets/gh-tokens.css?v=1">
+<link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=4">
+
 <style>
 
   .en, .en-block { display: none !important; }
@@ -847,10 +850,10 @@ gtag('config','G-Y67JVE898Z');
   body.is-en .en-block { display: block !important; }
   .ar-block { display: block; }
 
-:root{--gold:#C9A84C;--gold-light:#D9B860;--gold-dark:#A8883A;--text-primary:#FFFFFF;--text-secondary:rgba(255,255,255,0.7);--text-muted:rgba(255,255,255,0.35);--border-subtle:rgba(255,255,255,0.06);--border-medium:rgba(255,255,255,0.12);--heading-dark:#1A1A1A;--body-dark:#555555;--body-muted:#888888}
+:root{--gold:var(--gh-gold,#C9A84C);--gold-light:var(--gh-gold-light,#D9B860);--gold-dark:var(--gh-gold-dark,#A8883A);--text-primary:#1A1A1A;--text-secondary:rgba(26,26,26,0.65);--text-muted:rgba(26,26,26,0.4);--border-subtle:rgba(26,26,26,0.06);--border-medium:rgba(26,26,26,0.12);--heading-dark:#1A1A1A;--body-dark:#555555;--body-muted:#888888}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"Inter","Tajawal",-apple-system,BlinkMacSystemFont,sans-serif;background:#0A0A0A;color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+body{font-family:"Inter","Tajawal",-apple-system,BlinkMacSystemFont,sans-serif;background:#FAFAF8;color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{max-width:1280px;margin:0 auto;padding:0 48px}
@@ -875,7 +878,7 @@ html[dir="ltr"] .nav-link:hover::after{width:100%}
 
 /* Under Development section */
 .ud-section{flex:1;display:flex;align-items:center;justify-content:center;padding:140px 24px 80px}
-.ud-card{max-width:720px;width:100%;text-align:center;padding:60px 40px;background:rgba(255,255,255,.02);border:1px solid var(--border-medium);border-radius:24px;position:relative;overflow:hidden}
+.ud-card{max-width:720px;width:100%;text-align:center;padding:60px 40px;background:#FFFFFF;border:1px solid rgba(26,26,26,0.08);border-radius:24px;box-shadow:0 12px 48px rgba(26,26,26,0.06);position:relative;overflow:hidden}
 .ud-card::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,rgba(201,168,76,.03) 0%,transparent 50%);pointer-events:none}
 .ud-icon{font-size:64px;color:var(--gold);margin-bottom:28px;display:inline-block}
 .ud-title{font-family:"Playfair Display","Tajawal",serif;font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--text-primary);margin-bottom:16px;letter-spacing:-.02em}
@@ -887,10 +890,10 @@ html[dir="ltr"] .nav-link:hover::after{width:100%}
 .btn-pill{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:all .35s;cursor:pointer;border:none;font-family:"Inter","Tajawal",sans-serif}
 .btn-pill-gold{background:#C9A84C;color:#0A0A0A;border:2px solid #C9A84C}
 .btn-pill-gold:hover{background:#A8883A;border-color:#A8883A;color:#0A0A0A;transform:translateY(-2px)}
-.btn-pill-outline{background:transparent;color:#FAFAF8;border:2px solid rgba(255,255,255,.5)}
+.btn-pill-outline{background:transparent;color:#1A1A1A;border:2px solid rgba(26,26,26,0.22)}
 .btn-pill-outline:hover{border-color:#C9A84C;color:#C9A84C;transform:translateY(-2px)}
 
-.footer{background:#0A0A0A;padding:60px 0 0;border-top:1px solid rgba(255,255,255,.04);margin-top:auto}
+.footer{display:none}
 .footer-container{max-width:1280px;margin:0 auto;padding:0 24px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;padding-bottom:40px}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px}}
@@ -918,7 +921,7 @@ document.addEventListener("DOMContentLoaded",function(){document.querySelectorAl
 <link rel="stylesheet" href="../assets/gh-ar-typography.css?v=1">
 </head>
 <body>
-<div id="loader" style="position:fixed;inset:0;z-index:99999;background:#0A0A0A;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s ease,visibility .6s ease">
+<div id="loader" style="position:fixed;inset:0;z-index:99999;background:#FAFAF8;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s ease,visibility .6s ease">
   <svg width="42" height="42" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
   <div style="width:180px;height:1px;background:rgba(201,168,76,.15);margin-top:20px;overflow:hidden">
     <div id="loader-bar" style="height:100%;width:0;background:#C9A84C;transition:width 1s cubic-bezier(.4,0,.2,1)"></div>
