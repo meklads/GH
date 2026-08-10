@@ -1,5 +1,7 @@
+@import url('gh-tokens.css');
+
 /* Brand theme for legacy service pages (interactive, vr-360, shop).
-   Matches homepage: light #FAFAF8, gold #C9A84C, Inter/Playfair (EN), Tajawal (AR). */
+   Matches homepage: light #FAFAF8, gold via gh-tokens, Inter/Playfair (EN), Tajawal (AR). */
 :root {
   --gh-bg: #fafaf8;
   --gh-surface: #ffffff;
@@ -7,9 +9,9 @@
   --gh-surface-lowest: #ffffff;
   --gh-on-bg: #1a1a1a;
   --gh-secondary: #555555;
-  --gh-primary: #c9a84c;
+  --gh-primary: var(--gh-gold, #c9a84c);
   --gh-on-primary: #0a0a0a;
-  --gh-primary-container: rgba(201, 168, 76, 0.16);
+  --gh-primary-container: color-mix(in srgb, var(--gh-gold, #c9a84c) 16%, transparent);
   --gh-border: rgba(26, 26, 26, 0.08);
 }
 
@@ -42,7 +44,7 @@ html[dir='ltr'] .header button.nav-link {
 .header button.nav-link:hover,
 .header .nav-link-accent,
 .header .nav-link-accent:hover {
-  color: #c9a84c !important;
+  color: var(--gh-gold, #c9a84c) !important;
 }
 .header .lang-switch-link {
   color: rgba(255, 255, 255, 0.62) !important;

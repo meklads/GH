@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" dir="ltr" lang="en">
 <head>
+<!-- GH perf -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <script src="../assets/gh-forms-config.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y67JVE898Z"></script>
@@ -169,6 +175,7 @@ gtag('config','G-Y67JVE898Z');
   </div>
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
+<div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 <main>
   <section class="gh-loc-hero">
     <div class="gh-loc-hero-inner">
@@ -369,7 +376,7 @@ gtag('config','G-Y67JVE898Z');
 
 <script defer src="../assets/gh-float-widgets.js?v=8"></script>
 <script>
-window.addEventListener("scroll",function(){var h=document.getElementById("header");if(h)h.classList.toggle("scrolled",window.scrollY>80)});
+;
 (function(){
   var t=document.querySelector(".gh-loc-cli-track");
   if(!t)return;
@@ -406,7 +413,7 @@ window.addEventListener("scroll",function(){var h=document.getElementById("heade
       <span class="gh-motif-ring"></span>
       <span class="gh-motif-ring" style="animation-delay:1.2s"></span>
       <span class="gh-motif-ring" style="animation-delay:2.4s"></span>
-      <img src="../assets/chatbot-motif.png" alt="" width="52" height="52" style="width:52px;height:52px;object-fit:contain;position:relative;z-index:2">
+      <img loading="lazy" src="../assets/chatbot-motif.png" alt="" width="52" height="52" style="width:52px;height:52px;object-fit:contain;position:relative;z-index:2">
     </span>
   </button>
 </div>

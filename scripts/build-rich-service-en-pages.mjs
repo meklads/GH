@@ -679,18 +679,19 @@ function buildPage(cfg, css) {
 <link rel="icon" type="image/png" sizes="32x32" href="${P}assets/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="${P}assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="${P}assets/favicon/apple-touch-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" rel="stylesheet" />
 <link rel="stylesheet" href="${P}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=23">
-<link rel="stylesheet" href="${P}assets/site-header.css?v=31">
+<link rel="stylesheet" href="${P}assets/site-header.css?v=35">
+<link rel="stylesheet" href="${P}assets/gh-en-typography.css?v=1">
 <style>
 body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 ${css}
 </style>
 <script defer src="${P}assets/site-header.js?v=16"></script>
-<script defer src="${P}assets/gh-performance.js?v=2"></script>
-<script defer src="${P}assets/lang-switch.js?v=1"></script>
+<script defer src="${P}assets/gh-performance.js?v=10"></script>
+<script defer src="${P}assets/lang-switch.js?v=2"></script>
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Service',

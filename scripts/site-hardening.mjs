@@ -243,11 +243,26 @@ function injectNoindex(html, rel) {
   return html.replace(/<head>/i, '<head>\n<meta name="robots" content="noindex,follow">');
 }
 
+function injectLcpPreload(html, rel) {
+  const preloads = [];
+  if (rel === 'index.html' || rel === 'index-ar.html') {
+    preloads.push('<link rel="preload" as="image" href="assets/hero-demo-poster.jpg" fetchpriority="high">');
+  }
+  if (rel === 'portfolio.html' || rel === 'portfolio-en.html') {
+    preloads.push(
+      '<link rel="preload" as="image" href="assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" fetchpriority="high">'
+    );
+  }
+  if (!preloads.length) return html;
+  if (preloads.every((tag) => html.includes(tag))) return html;
+  const block = preloads.filter((tag) => !html.includes(tag)).join('\n');
+  if (!block) return html;
+  return html.replace(/<head>/i, `<head>\n${block}`);
+}
+
+/** @deprecated use injectLcpPreload */
 function injectHomeLcpPreload(html, rel) {
-  if (rel !== 'index.html' && rel !== 'index-ar.html') return html;
-  const tag = '<link rel="preload" as="image" href="assets/hero-demo-poster.jpg" fetchpriority="high">';
-  if (html.includes('hero-demo-poster.jpg') && html.includes('rel="preload" as="image"')) return html;
-  return html.replace(/<head>/i, `<head>\n${tag}`);
+  return injectLcpPreload(html, rel);
 }
 
 function jsonLdForPage(rel, html) {
@@ -389,15 +404,78 @@ function stripConflictingHeaderStyles(html) {
   return html;
 }
 
+const PLAYFAIR_FONT =
+  '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">';
+
+function injectArPlayfairFont(html, rel) {
+  if (rel !== 'index-ar.html') return html;
+  if (html.includes('Playfair+Display')) return html;
+  return html.replace(
+    /(<link href="https:\/\/fonts\.googleapis\.com\/css2\?family=Tajawal[^"]+" rel="stylesheet">)/,
+    `$1\n${PLAYFAIR_FONT}`
+  );
+}
+
+function injectServiceEnTypography(html, rel) {
+  if (!rel.startsWith('services/') || !rel.endsWith('-en.html')) return html;
+  const link = '<link rel="stylesheet" href="../assets/gh-en-typography.css?v=1">';
+  if (html.includes('gh-en-typography.css')) return html;
+  if (html.includes('site-header.css')) {
+    return html.replace(
+      /(<link rel="stylesheet" href="\.\.\/assets\/site-header\.css[^"]*">)/i,
+      `$1\n${link}`
+    );
+  }
+  return html.replace(/<\/head>/i, `${link}\n</head>`);
+}
+
+function wrapPortfolioHeroWebp(html, rel) {
+  if (rel !== 'portfolio.html' && rel !== 'portfolio-en.html') return html;
+  const pairs = [
+    ['alrajhi-maquette-01.jpeg', 'alrajhi-maquette-01.webp'],
+    ['anan-eskan-maquette-01.jpeg', 'anan-eskan-maquette-01.webp'],
+  ];
+  let out = html;
+  for (const [jpeg, webp] of pairs) {
+    if (out.includes(`pf-hero-mosaic__cell`) && out.includes(`<picture><source srcset="assets/projects/maquettes/${webp}"`)) {
+      continue;
+    }
+    const re = new RegExp(
+      `(<div class="pf-hero-mosaic__cell[^"]*">)<img src="assets/projects/maquettes/${jpeg.replace('.', '\\.')}"([^>]*)>`,
+      'g'
+    );
+    out = out.replace(
+      re,
+      `$1<picture><source srcset="assets/projects/maquettes/${webp}" type="image/webp"><img src="assets/projects/maquettes/${jpeg}"$2></picture>`
+    );
+  }
+  return out;
+}
+
+function fixServiceLinks(html, rel) {
+  if (!rel.startsWith('services/')) return html;
+  let out = html.replace(/href="galleries-advertising-en\.html"/g, 'href="branding-en.html"');
+  if (rel.endsWith('-en.html')) {
+    out = out.replace(/href="\.\.\/contact\.html"/g, 'href="../contact-us-en.html"');
+  } else if (rel === 'services/vr-360.html' || rel === 'services/interactive.html') {
+    out = out.replace(/href="\.\.\/contact\.html"/g, 'href="../contact-us.html"');
+  }
+  return out;
+}
+
 function patchHtml(html, rel) {
   const depth = rel.split('/').length - 1;
   const prefix = depth > 0 ? '../'.repeat(depth) : '';
 
   html = injectSeo(html, rel);
   html = injectPerformanceHints(html);
-  html = injectHomeLcpPreload(html, rel);
+  html = injectLcpPreload(html, rel);
   html = injectNoindex(html, rel);
   html = injectMainContentAnchor(html);
+  html = injectArPlayfairFont(html, rel);
+  html = injectServiceEnTypography(html, rel);
+  html = wrapPortfolioHeroWebp(html, rel);
+  html = fixServiceLinks(html, rel);
   html = replaceTailwindCdn(html, prefix);
   html = injectJsonLd(html, rel);
   html = stripLegacyGa(html);
