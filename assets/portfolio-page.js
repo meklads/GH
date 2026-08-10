@@ -97,12 +97,21 @@
     document.querySelectorAll('img[data-yt-id]').forEach(function (img) {
       var id = img.getAttribute('data-yt-id');
       if (!id) return;
-      img.src =
-        'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg';
-      img.onerror = function () {
+      var hq = 'https://img.youtube.com/vi/' + id + '/hqdefault.jpg';
+      var max = 'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg';
+
+      function useHq() {
         img.onerror = null;
-        img.src = 'https://img.youtube.com/vi/' + id + '/hqdefault.jpg';
+        img.src = hq;
+      }
+
+      img.onerror = useHq;
+      img.onload = function () {
+        if (img.naturalWidth <= 120 || img.naturalHeight <= 90) {
+          if (img.src.indexOf('hqdefault') === -1) useHq();
+        }
       };
+      img.src = max;
     });
   }
 
