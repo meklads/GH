@@ -497,6 +497,107 @@ img { max-width: 100%; display: block; }
   display: block;
 }
 
+/* Client project block (Anan Eskan) */
+.case-content--client {
+  border-top: 1px solid rgba(201,168,76,0.18);
+  padding-top: 72px;
+}
+.case-client-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.case-client-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+}
+.case-client-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.case-client-header h2 {
+  font-size: clamp(24px, 2.4vw, 36px);
+  font-weight: 300;
+  color: #0A0A0A;
+  margin: 0;
+  line-height: 1.25;
+}
+.case-project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 36px;
+}
+.case-project-item {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  cursor: pointer;
+  background: #E8E7E2;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.case-project-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+.case-project-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.case-project-item:hover img { transform: scale(1.04); }
+.case-project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.82) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.case-project-item:hover .case-project-overlay { opacity: 1; }
+.case-project-location {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.case-project-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.4;
+}
+.case-project-video .case-project-overlay { opacity: 1; background: linear-gradient(180deg, transparent 20%, rgba(0,0,0,0.55) 100%); }
+.case-project-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.case-project-play .material-symbols-outlined {
+  font-size: 56px;
+  color: rgba(255,255,255,0.92);
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
+  transition: transform 0.3s ease;
+}
+.case-project-video:hover .case-project-play .material-symbols-outlined { transform: scale(1.08); }
+
 /* Video Modal */
 .video-modal {
   position: fixed;
@@ -616,6 +717,7 @@ img { max-width: 100%; display: block; }
   .s2-hero-gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 4px; }
   .s2-hero-gallery-grid .s2-hero-thumb { width: 60px; height: 60px; }
   .highlights { grid-template-columns: 1fr; }
+  .case-project-grid { grid-template-columns: 1fr; }
   .s2-hero-wrap { min-height: 100vh; }
 }
 
@@ -994,6 +1096,102 @@ html[dir="ltr"] .section-title {
     <!-- Full-screen image -->
     <div class="full-image-wrap">
       <img loading="lazy" src="assets/news/makkah-charter-04.jpeg" alt="Humanity Exhibition، Interactive Experience">
+    </div>
+
+  </div>
+</section>
+
+<!-- Anan Eskan Projects -->
+<section class="case-content case-content--client" id="anan-eskan">
+  <div class="case-content-inner">
+
+    <div class="case-client-header">
+      <img src="assets/clients-logo/anan-eskan.png" alt="Anan Eskan Development" class="case-client-logo" loading="lazy">
+      <div>
+        <span class="case-client-eyebrow">Successful Project</span>
+        <h2>Anan Eskan Development</h2>
+      </div>
+    </div>
+
+    <p>
+      A selection of our work for Anan Eskan Development — smart architectural maquettes, sales galleries (decor design &amp; build), and architectural visualization — in Riyadh and across the GCC.
+    </p>
+
+    <div class="case-project-grid">
+
+      <div class="case-project-item" onclick="openHeroImage('assets/projects/maquettes/anan-escan3.jpeg')">
+        <picture><source srcset="assets/projects/maquettes/anan-escan3.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/anan-escan3.jpeg" alt="Anan Eskan — Smart Architectural Maquette"></picture>
+        <div class="case-project-overlay">
+          <span class="case-project-location">Riyadh</span>
+          <span class="case-project-title">Anan Eskan — Smart Architectural Maquette</span>
+        </div>
+      </div>
+
+      <div class="case-project-item" onclick="openHeroImage('assets/projects/maquettes/Anan_Eskan_ryadh5-scaled-e1745137604161.jpg')">
+        <picture><source srcset="assets/projects/maquettes/Anan_Eskan_ryadh5-scaled-e1745137604161.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/Anan_Eskan_ryadh5-scaled-e1745137604161.jpg" alt="Anan Eskan — Riyadh"></picture>
+        <div class="case-project-overlay">
+          <span class="case-project-location">Riyadh</span>
+          <span class="case-project-title">Anan Eskan — Riyadh</span>
+        </div>
+      </div>
+
+      <div class="case-project-item" onclick="openHeroImage('assets/projects/maquettes/20-scaled-e1745147420120.jpg')">
+        <img loading="lazy" src="assets/projects/maquettes/20-scaled-e1745147420120.jpg" alt="Anan Eskan — Development Maquette">
+        <div class="case-project-overlay">
+          <span class="case-project-location">Riyadh</span>
+          <span class="case-project-title">Anan Eskan — Development Maquette</span>
+        </div>
+      </div>
+
+      <div class="case-project-item case-project-video" onclick="playVideo('jP8vLnnRhb0')">
+        <img loading="lazy" src="assets/projects/maquettes/anan-eskan-amlak-interview-poster.jpg" alt="Anan Eskan — Hassan Al-Hamid، Amlak Exhibition">
+        <div class="case-project-play"><span class="material-symbols-outlined">play_circle</span></div>
+        <div class="case-project-overlay">
+          <span class="case-project-location">Amlak Exhibition</span>
+          <span class="case-project-title">Anan Eskan — Hassan Al-Hamid، Amlak Exhibition</span>
+        </div>
+      </div>
+
+      <div class="case-project-item" onclick="openHeroImage('assets/projects/maquettes/anan-eskan-maquette-01.jpeg')">
+        <picture><source srcset="assets/projects/maquettes/anan-eskan-maquette-01.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/anan-eskan-maquette-01.jpeg" alt="Anan Eskan — Sales Gallery"></picture>
+        <div class="case-project-overlay">
+          <span class="case-project-location">Riyadh</span>
+          <span class="case-project-title">Anan Eskan — Sales Gallery (Decor Design &amp; Build)</span>
+        </div>
+      </div>
+
+      <div class="case-project-item" onclick="openHeroImage('assets/projects/maquettes/anan-eskan-maquette-03.jpeg')">
+        <picture><source srcset="assets/projects/maquettes/anan-eskan-maquette-03.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/anan-eskan-maquette-03.jpeg" alt="Anan Eskan — Detail Maquette"></picture>
+        <div class="case-project-overlay">
+          <span class="case-project-location">Riyadh</span>
+          <span class="case-project-title">Anan Eskan — Detail Maquette</span>
+        </div>
+      </div>
+
+      <div class="case-project-item" onclick="openHeroImage('assets/projects/maquettes/anan-eskan-maquette-04.jpeg')">
+        <picture><source srcset="assets/projects/maquettes/anan-eskan-maquette-04.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/anan-eskan-maquette-04.jpeg" alt="Anan Eskan — Interactive LED Maquette"></picture>
+        <div class="case-project-overlay">
+          <span class="case-project-location">Riyadh</span>
+          <span class="case-project-title">Anan Eskan — Interactive LED Maquette</span>
+        </div>
+      </div>
+
+      <div class="case-project-item" onclick="openHeroImage('assets/projects/rendering/Anan-Escan-Co.01.jpeg')">
+        <picture><source srcset="assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img loading="lazy" src="assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Anan Eskan — Architectural Rendering"></picture>
+        <div class="case-project-overlay">
+          <span class="case-project-location">Riyadh</span>
+          <span class="case-project-title">Anan Eskan — Architectural Rendering</span>
+        </div>
+      </div>
+
+      <div class="case-project-item" onclick="openHeroImage('assets/projects/rendering/anan-escan2.jpeg')">
+        <picture><source srcset="assets/projects/rendering/anan-escan2.webp" type="image/webp"><img loading="lazy" src="assets/projects/rendering/anan-escan2.jpeg" alt="Anan Eskan — Residential Complex"></picture>
+        <div class="case-project-overlay">
+          <span class="case-project-location">Riyadh</span>
+          <span class="case-project-title">Anan Eskan — Residential Complex</span>
+        </div>
+      </div>
+
     </div>
 
   </div>
