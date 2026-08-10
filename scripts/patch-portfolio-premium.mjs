@@ -9,9 +9,9 @@ const heroAr = `<!-- ══ HERO ══ -->
   <div class="pf-hero-glow" aria-hidden="true"></div>
   <div class="container pf-hero-layout">
     <div class="pf-hero-copy">
-      <div class="pf-eyebrow">بورتفوليو</div>
+      <div class="pf-eyebrow">معرض الأعمال</div>
       <h1>أعمال تتحدث<br><em>بصوت عالٍ</em></h1>
-      <p>من التصور الفوتوواقعي إلى الماكيتات الذكية والإنتاج السينمائي CGI وجاليريات المبيعات التفاعلية، مصممة لمشاريع التطوير الكبرى في الشرق الأوسط.</p>
+      <p>من الإظهار المعماري الواقعي إلى المجسمات الذكية والإنتاج السينمائي CGI وجاليريات المبيعات التفاعلية، مصممة لمشاريع التطوير الكبرى في الشرق الأوسط.</p>
       <a href="#filterBar" class="pf-hero-cta">استكشف الأعمال</a>
     </div>
     <div class="pf-hero-mosaic" aria-hidden="true">
@@ -26,7 +26,7 @@ const heroAr = `<!-- ══ HERO ══ -->
       <div class="pf-stat"><strong>25+</strong><span>مشروع منجز</span></div>
       <div class="pf-stat"><strong>6</strong><span>تخصصات إبداعية</span></div>
       <div class="pf-stat"><strong>4</strong><span>أسواق خليجية</span></div>
-      <div class="pf-stat"><strong>CGI</strong><span>سينمائي · تفاعلي · ماكيت</span></div>
+      <div class="pf-stat"><strong>CGI</strong><span>سينمائي · تفاعلي · مجسم</span></div>
     </div>
   </div>
 </section>`;

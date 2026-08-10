@@ -125,7 +125,7 @@ const T = [
   ['مشاهدة أعمالنا', 'View our work'],
   ['هوية بصرية', 'Visual identity'],
   ['ميديا برودكشن', 'Media Production'],
-  ['جاليريات وديكور إعلاني', 'Galleries &amp; Decor'],
+  ['جاليريات وديكور', 'Galleries &amp; Decor'],
   ['تجارب تفاعلية', 'Interactive Experiences'],
   ['سينمائي CGI', 'Cinematic CGI'],
   ['قدرات المنظومة', 'System capabilities'],

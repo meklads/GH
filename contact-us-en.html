@@ -24,7 +24,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="alternate" hreflang="x-default" href="https://3dgraphicshouse.com/contact-us-en.html">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Start a Project، Graphics House</title>
+  <title>Start a Project, Graphics House</title>
   <meta name="description" content="Get in touch with Graphics House. Start your architectural visualization, smart maquette, or interactive experience project.">
   <link rel="icon" href="assets/favicon/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,7 +91,7 @@ gtag('config','G-Y67JVE898Z');
     footer a:hover { color:var(--gold); }
     @keyframes spin { to { transform:rotate(360deg); } }
 
-/* EN heading font، Playfair Display (matches homepage) */
+/* EN heading font, Playfair Display (matches homepage) */
 html[dir="ltr"] h1,
 html[dir="ltr"] h2,
 html[dir="ltr"] .section-title,
@@ -266,7 +266,7 @@ html[dir="ltr"] .section-title {
   <div class="ch-inner">
     <span class="ch-eye">Let's Build Together</span>
     <h1>Start Your <span>Project</span><br>with Graphics House</h1>
-    <p>Tell us about your vision، we'll respond within 24 hours with a tailored proposal.</p>
+    <p>Tell us about your vision, we'll respond within 24 hours with a tailored proposal.</p>
   </div>
 </section>
 
@@ -320,7 +320,7 @@ html[dir="ltr"] .section-title {
         </div>
       </div>
       <div class="fs">
-        <div class="fg"><label>How can we help?</label><textarea name="message" placeholder="Describe your project، location, scale, timeline, requirements…"></textarea></div>
+        <div class="fg"><label>How can we help?</label><textarea name="message" placeholder="Describe your project, location, scale, timeline, requirements…"></textarea></div>
       </div>
       <p class="fn">I agree to Graphics House's <a href="privacy-policy-en.html">Terms of Use</a> and <a href="privacy-policy-en.html">Privacy Policy</a>.</p>
       <button type="submit" class="bs" id="submitBtn">
@@ -342,7 +342,7 @@ html[dir="ltr"] .section-title {
     <div class="cc">
       <div class="cc-icon"><span class="material-symbols-outlined">location_on</span></div>
       <h3>Headquarters</h3>
-      <p>Saudi Arabia، Jeddah<br>P.O.Box 136972، CR 4030502306</p>
+      <p>Saudi Arabia, Jeddah<br>P.O.Box 136972, CR 4030502306</p>
       <a href="https://maps.google.com/?q=Jeddah,Saudi+Arabia" target="_blank">Get Directions <span class="material-symbols-outlined" style="font-size:13px">arrow_forward</span></a>
     </div>
     <div class="cc">
@@ -568,7 +568,7 @@ function ghSubmit(e){
   e.preventDefault();
   var btn=e.target.querySelector('button[type="submit"]');
   btn.disabled=true; btn.textContent='Sending…';
-  fetch((window.GH_FORMS&&window.GH_FORMS.formEndpoint)||'https://3dgraphicshouse.com/api/form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({subject:'New Enquiry، Graphics House Website',from_name:'Graphics House Website',name:document.getElementById('ghName').value,company:document.getElementById('ghCompany').value,project_type:document.getElementById('ghProject').value,phone:document.getElementById('ghPhone').value,brief:document.getElementById('ghBrief').value,botcheck:''})}).then(function(r){return r.json();}).then(function(res){btn.disabled=false;btn.textContent='Submit Enquiry →';if(res.success){document.querySelector('#ghPopup form').style.display='none';document.getElementById('ghThanks').style.display='block';setTimeout(function(){document.getElementById('ghPopup').classList.remove('open');document.querySelector('#ghPopup form').style.display='block';document.getElementById('ghThanks').style.display='none';},3000);}else{alert('Something went wrong. Please try again.');}}).catch(function(){btn.disabled=false;btn.textContent='Submit Enquiry →';alert('Connection error.');});
+  fetch((window.GH_FORMS&&window.GH_FORMS.formEndpoint)||'https://3dgraphicshouse.com/api/form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({subject:'New Enquiry, Graphics House Website',from_name:'Graphics House Website',name:document.getElementById('ghName').value,company:document.getElementById('ghCompany').value,project_type:document.getElementById('ghProject').value,phone:document.getElementById('ghPhone').value,brief:document.getElementById('ghBrief').value,botcheck:''})}).then(function(r){return r.json();}).then(function(res){btn.disabled=false;btn.textContent='Submit Enquiry →';if(res.success){document.querySelector('#ghPopup form').style.display='none';document.getElementById('ghThanks').style.display='block';setTimeout(function(){document.getElementById('ghPopup').classList.remove('open');document.querySelector('#ghPopup form').style.display='block';document.getElementById('ghThanks').style.display='none';},3000);}else{alert('Something went wrong. Please try again.');}}).catch(function(){btn.disabled=false;btn.textContent='Submit Enquiry →';alert('Connection error.');});
 
 }
 </script>

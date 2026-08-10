@@ -418,7 +418,7 @@ function patchHtml(html, rel) {
   if (rel === 'index-ar.html' && !html.includes('<meta name="description"')) {
     html = html.replace(
       /<meta name="viewport"[^>]*>/,
-      `$&\n<meta name="description" content="Graphics House: هوية بصرية، مجسمات ذكية، إعلانات، وتجارب تفاعلية للمشاريع التجارية والسكنية في السعودية والخليج.">`
+      `$&\n<meta name="description" content="Graphics House: هوية بصرية, مجسمات ذكية, إعلانات, وتجارب تفاعلية للمشاريع التجارية والسكنية في السعودية والخليج.">`
     );
   }
 
