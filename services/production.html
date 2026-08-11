@@ -814,16 +814,92 @@ img { max-width: 100%; display: block; }
 }
 .works-frame {
   position: relative;
+  padding: clamp(18px, 2.4vw, 28px);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 4px;
+  box-shadow:
+    0 28px 64px rgba(26, 26, 26, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
+.works-capture {
+  position: relative;
+}
+.works-guide {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+.works-guide-h {
+  left: clamp(10px, 1.6vw, 18px);
+  right: clamp(10px, 1.6vw, 18px);
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, rgba(201, 168, 76, 0.15) 8%, rgba(201, 168, 76, 0.72) 50%, rgba(201, 168, 76, 0.15) 92%, transparent 100%);
+}
+.works-guide-top { top: clamp(10px, 1.6vw, 18px); }
+.works-guide-bottom { bottom: clamp(10px, 1.6vw, 18px); }
+.works-guide-v {
+  top: clamp(10px, 1.6vw, 18px);
+  bottom: clamp(10px, 1.6vw, 18px);
+  width: 1px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(201, 168, 76, 0.15) 8%, rgba(201, 168, 76, 0.72) 50%, rgba(201, 168, 76, 0.15) 92%, transparent 100%);
+}
+.works-guide-left { left: clamp(10px, 1.6vw, 18px); }
+.works-guide-right { right: clamp(10px, 1.6vw, 18px); }
 .works-viewport {
   position: relative;
   overflow: hidden;
-  border-radius: 999px / clamp(30px, 3.6vw, 46px);
+  margin: clamp(28px, 3.8vw, 48px) clamp(22px, 3vw, 36px);
+  border-radius: 2px;
   background: #0A0A0A;
   aspect-ratio: 16/9;
   box-shadow:
-    0 36px 88px rgba(26, 26, 26, 0.14),
-    0 10px 28px rgba(26, 26, 26, 0.08);
+    0 24px 56px rgba(26, 26, 26, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+.works-corner {
+  position: absolute;
+  z-index: 5;
+  width: clamp(16px, 2vw, 22px);
+  height: clamp(16px, 2vw, 22px);
+  pointer-events: none;
+  opacity: 0.88;
+}
+.works-corner-tl { top: calc(clamp(28px, 3.8vw, 48px) - 1px); left: calc(clamp(22px, 3vw, 36px) - 1px); border-top: 2px solid rgba(255, 255, 255, 0.82); border-left: 2px solid rgba(255, 255, 255, 0.82); }
+.works-corner-tr { top: calc(clamp(28px, 3.8vw, 48px) - 1px); right: calc(clamp(22px, 3vw, 36px) - 1px); border-top: 2px solid rgba(255, 255, 255, 0.82); border-right: 2px solid rgba(255, 255, 255, 0.82); }
+.works-corner-bl { bottom: calc(clamp(28px, 3.8vw, 48px) - 1px); left: calc(clamp(22px, 3vw, 36px) - 1px); border-bottom: 2px solid rgba(255, 255, 255, 0.82); border-left: 2px solid rgba(255, 255, 255, 0.82); }
+.works-corner-br { bottom: calc(clamp(28px, 3.8vw, 48px) - 1px); right: calc(clamp(22px, 3vw, 36px) - 1px); border-bottom: 2px solid rgba(255, 255, 255, 0.82); border-right: 2px solid rgba(255, 255, 255, 0.82); }
+.works-rec {
+  position: absolute;
+  z-index: 5;
+  top: calc(clamp(28px, 3.8vw, 48px) + 14px);
+  left: calc(clamp(22px, 3vw, 36px) + 14px);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: rgba(10, 10, 10, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.88);
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.works-rec-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #E05252;
+  box-shadow: 0 0 0 0 rgba(224, 82, 82, 0.5);
+  animation: works-rec-pulse 1.8s ease-in-out infinite;
+}
+@keyframes works-rec-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(224, 82, 82, 0.45); opacity: 1; }
+  50% { box-shadow: 0 0 0 6px rgba(224, 82, 82, 0); opacity: 0.82; }
 }
 .works-track {
   display: flex;
@@ -854,16 +930,17 @@ img { max-width: 100%; display: block; }
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  border-radius: inherit;
-  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.18);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2);
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 0%, transparent 18%, transparent 82%, rgba(0, 0, 0, 0.18) 100%);
 }
 .works-counter-float {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 14px;
+  right: 14px;
   z-index: 5;
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: 4px;
   background: rgba(10, 10, 10, 0.62);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -883,15 +960,16 @@ img { max-width: 100%; display: block; }
   left: 0;
   right: 0;
   bottom: 0;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.12);
-  z-index: 3;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 6;
 }
 .works-progress-bar {
   display: block;
   height: 100%;
   width: 0;
-  background: linear-gradient(to left, var(--gold-light), var(--gold-dark));
+  background: linear-gradient(to left, #EBD48A, var(--gold), #A8883A);
+  box-shadow: 0 0 14px rgba(201, 168, 76, 0.55);
 }
 .works-progress-bar.is-running {
   animation: works-progress 4s linear forwards;
@@ -926,14 +1004,15 @@ img { max-width: 100%; display: block; }
   border-color: var(--gold);
   transform: translateY(-50%) scale(1.06);
 }
-.works-nav-btn.prev { right: 16px; }
-.works-nav-btn.next { left: 16px; }
+.works-nav-btn.prev { right: clamp(4px, 1vw, 8px); }
+.works-nav-btn.next { left: clamp(4px, 1vw, 8px); }
 .works-toolbar {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
+  margin-top: 6px;
 }
 .works-thumbs {
   display: flex;
@@ -942,10 +1021,21 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding: 6px 4px 10px;
+  padding: 10px 4px 12px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  position: relative;
+}
+.works-thumbs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201, 168, 76, 0.28), transparent);
+  pointer-events: none;
 }
 .works-thumbs::-webkit-scrollbar { display: none; }
 .works-thumb {
@@ -955,7 +1045,7 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 16/10;
   border: none;
   padding: 0;
-  border-radius: 14px;
+  border-radius: 3px;
   overflow: hidden;
   cursor: pointer;
   opacity: 0.52;
@@ -974,9 +1064,10 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 12px;
+  border-radius: 3px;
   border: 2px solid transparent;
   transition: border-color 0.35s ease;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 .works-thumb:hover { opacity: 0.88; transform: translateY(-2px); }
 .works-thumb.is-active {
@@ -995,12 +1086,27 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 8px 24px rgba(26, 26, 26, 0.05);
 }
 @media (max-width: 900px) {
-  .works-nav-btn.prev { right: 10px; }
-  .works-nav-btn.next { left: 10px; }
+  .works-nav-btn.prev { right: 4px; }
+  .works-nav-btn.next { left: 4px; }
+  .works-viewport {
+    margin: clamp(22px, 5vw, 32px) clamp(16px, 4vw, 24px);
+  }
+  .works-corner-tl { top: calc(clamp(22px, 5vw, 32px) - 1px); left: calc(clamp(16px, 4vw, 24px) - 1px); }
+  .works-corner-tr { top: calc(clamp(22px, 5vw, 32px) - 1px); right: calc(clamp(16px, 4vw, 24px) - 1px); }
+  .works-corner-bl { bottom: calc(clamp(22px, 5vw, 32px) - 1px); left: calc(clamp(16px, 4vw, 24px) - 1px); }
+  .works-corner-br { bottom: calc(clamp(22px, 5vw, 32px) - 1px); right: calc(clamp(16px, 4vw, 24px) - 1px); }
+  .works-rec {
+    top: calc(clamp(22px, 5vw, 32px) + 10px);
+    left: calc(clamp(16px, 4vw, 24px) + 10px);
+    font-size: 9px;
+    padding: 4px 8px;
+  }
 }
 @media (max-width: 520px) {
-  .works-thumb { width: 84px; border-radius: 11px; }
-  .works-counter-float { top: 12px; right: 12px; font-size: 11px; padding: 6px 11px; }
+  .works-thumb { width: 84px; border-radius: 2px; }
+  .works-thumb::after { border-radius: 2px; }
+  .works-counter-float { top: 10px; right: 10px; font-size: 11px; padding: 6px 10px; }
+  .works-frame { padding: 14px; }
 }
 
 /* ===== SLIDER (legacy) ===== */
@@ -1169,7 +1275,7 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
   .works-stats { gap: 8px; }
   .works-stat { font-size: 11px; padding: 8px 12px; }
   .works-nav-btn { width: 44px; height: 44px; }
-  .works-viewport { border-radius: 999px / clamp(20px, 5vw, 30px); }
+  .works-viewport { margin: clamp(20px, 5vw, 28px) clamp(14px, 3.5vw, 20px); }
   .works-toolbar { margin-top: 4px; }
   .photo-banner-sec { padding: 40px 0 48px; }
   .section-sub { font-size: 15px; margin-bottom: 32px; }
@@ -1455,9 +1561,19 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
     <div class="works-showcase">
       <div class="works-stage" dir="ltr">
         <div class="works-frame">
-          <div class="works-viewport" id="worksViewport">
-            <p class="works-counter-float" id="worksCounter" aria-live="polite">01 <span>/ 06</span></p>
-            <div class="works-track" id="projectSlider">
+          <div class="works-capture">
+            <span class="works-guide works-guide-h works-guide-top" aria-hidden="true"></span>
+            <span class="works-guide works-guide-h works-guide-bottom" aria-hidden="true"></span>
+            <span class="works-guide works-guide-v works-guide-left" aria-hidden="true"></span>
+            <span class="works-guide works-guide-v works-guide-right" aria-hidden="true"></span>
+            <span class="works-corner works-corner-tl" aria-hidden="true"></span>
+            <span class="works-corner works-corner-tr" aria-hidden="true"></span>
+            <span class="works-corner works-corner-bl" aria-hidden="true"></span>
+            <span class="works-corner works-corner-br" aria-hidden="true"></span>
+            <span class="works-rec" aria-hidden="true"><span class="works-rec-dot"></span>REC</span>
+            <div class="works-viewport" id="worksViewport">
+              <p class="works-counter-float" id="worksCounter" aria-live="polite">01 <span>/ 06</span></p>
+              <div class="works-track" id="projectSlider">
               <article class="works-slide is-active">
                 <img src="../assets/photography/slide_image_2.png" alt="مشروع إنتاج بصري — Graphics House" loading="lazy" decoding="async">
               </article>
@@ -1478,6 +1594,7 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
               </article>
             </div>
             <div class="works-progress" aria-hidden="true"><span class="works-progress-bar" id="worksProgressBar"></span></div>
+            </div>
           </div>
           <button type="button" class="works-nav-btn prev" onclick="slideProject(-1)" aria-label="المشروع السابق">
             <span class="material-symbols-outlined">chevron_left</span>
