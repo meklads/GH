@@ -664,7 +664,261 @@ img { max-width: 100%; display: block; }
 .gh-float-mail { background: var(--gold); }
 .gh-float-mail span { color: #1A1A1A; }
 
-/* ===== SLIDER ===== */
+/* ===== WORKS SHOWCASE ===== */
+.works-sec {
+  padding: clamp(72px, 8vw, 112px) 0;
+  background:
+    linear-gradient(180deg, #FAFAF8 0%, #F3F0EA 52%, #FAFAF8 100%);
+  position: relative;
+  overflow: hidden;
+}
+.works-sec::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0%, rgba(201, 168, 76, 0.1) 0%, transparent 62%),
+    radial-gradient(circle at 85% 78%, rgba(255, 255, 255, 0.65) 0%, transparent 42%);
+  pointer-events: none;
+}
+.works-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.works-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 44px;
+}
+.works-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+.works-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  box-shadow: 0 6px 20px rgba(26, 26, 26, 0.04);
+}
+.works-stat .material-symbols-outlined {
+  font-size: 16px;
+  color: var(--gold);
+}
+.works-showcase {
+  display: grid;
+  gap: 22px;
+}
+.works-stage {
+  position: relative;
+}
+.works-frame {
+  position: relative;
+  padding: 7px;
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(217, 184, 96, 0.55), rgba(201, 168, 76, 0.18) 42%, rgba(26, 26, 26, 0.08));
+  box-shadow:
+    0 36px 88px rgba(26, 26, 26, 0.14),
+    0 10px 28px rgba(168, 136, 58, 0.12);
+}
+.works-viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #0A0A0A;
+  aspect-ratio: 16/9;
+}
+.works-track {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  transition: transform 0.75s cubic-bezier(0.25, 0.1, 0.1, 1);
+}
+.works-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+.works-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.works-slide-cap {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: clamp(48px, 8vw, 88px) clamp(22px, 4vw, 36px) clamp(20px, 3vw, 28px);
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.45) 52%, transparent 100%);
+  text-align: right;
+}
+.works-slide-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  border-radius: 999px;
+  background: rgba(201, 168, 76, 0.16);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.04em;
+}
+.works-slide-title {
+  font-size: clamp(20px, 2.6vw, 32px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #FAFAF8;
+  margin: 0;
+}
+.works-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: 3;
+}
+.works-progress-bar {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to left, var(--gold-light), var(--gold-dark));
+}
+.works-progress-bar.is-running {
+  animation: works-progress 4s linear forwards;
+}
+@keyframes works-progress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.works-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(10, 10, 10, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #FAFAF8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+.works-nav-btn:hover {
+  background: var(--gold);
+  color: #1A1A1A;
+  border-color: var(--gold);
+  transform: translateY(-50%) scale(1.06);
+}
+.works-nav-btn.prev { right: -26px; }
+.works-nav-btn.next { left: -26px; }
+.works-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.works-counter {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold-dark);
+}
+.works-counter span {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.works-thumbs {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.works-thumb {
+  position: relative;
+  width: 92px;
+  aspect-ratio: 16/10;
+  border: none;
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.58;
+  transform: translateY(0);
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 18px rgba(26, 26, 26, 0.08);
+}
+.works-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.works-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: border-color 0.35s ease;
+}
+.works-thumb:hover { opacity: 0.88; transform: translateY(-2px); }
+.works-thumb.is-active {
+  opacity: 1;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(168, 136, 58, 0.22);
+}
+.works-thumb.is-active::after { border-color: var(--gold); }
+.works-foot {
+  text-align: center;
+  margin-top: 34px;
+}
+.works-foot .btn-o {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(201, 168, 76, 0.28);
+  box-shadow: 0 8px 24px rgba(26, 26, 26, 0.05);
+}
+@media (max-width: 900px) {
+  .works-inner { padding: 0 20px; }
+  .works-nav-btn.prev { right: 8px; }
+  .works-nav-btn.next { left: 8px; }
+  .works-toolbar { justify-content: center; }
+  .works-counter { width: 100%; text-align: center; }
+}
+@media (max-width: 520px) {
+  .works-thumb { width: 72px; border-radius: 10px; }
+  .works-slide-cap { text-align: center; }
+  .works-slide-title { font-size: 18px; }
+}
+
+/* ===== SLIDER (legacy) ===== */
 .slider-track { display:flex; flex-wrap:nowrap; }
 .slider-item { flex:0 0 100%; width:100%; }
 
@@ -1036,36 +1290,90 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
   </div>
 </section>
 
-<!-- PORTFOLIO SLIDER -->
-<div class="slider-section reveal" style="padding:90px 0;background:#FAFAF8">
-  <div class="slider-container" style="max-width:1320px;margin:0 auto;padding:0 48px;position:relative">
-    <div style="text-align:center;margin-bottom:36px">
+<!-- WORKS SHOWCASE -->
+<section class="works-sec reveal" aria-labelledby="works-title">
+  <div class="works-inner">
+    <header class="works-head">
       <span class="section-label">أعمالنا</span>
-      <h2 class="section-title">مشاريع <span class="gold">الإنتاج البصري</span></h2>
-      <p class="section-sub" style="margin:0 auto">نماذج من أعمال التصوير والإنتاج الفني لعملائنا في العقار والضيافة والعلامات التجارية.</p>
-    </div>
-    <div style="position:relative;overflow:hidden;border-radius:4px" dir="ltr">
-      <div class="slider-track" id="projectSlider" style="display:flex;transition:transform 0.7s cubic-bezier(0.25,0.1,0.1,1)">
-        <div class="slider-item" style="flex:0 0 100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:10px 0"><img src="../assets/photography/slide_image_2.png" alt="مشروع تصوير" loading="lazy"></div>
-        <div class="slider-item" style="flex:0 0 100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:10px 0"><img src="../assets/photography/slide_image_7.png" alt="مشروع تصوير" loading="lazy"></div>
-        <div class="slider-item" style="flex:0 0 100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:10px 0"><img src="../assets/photography/slide_image_8.png" alt="مشروع تصوير" loading="lazy"></div>
-        <div class="slider-item" style="flex:0 0 100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:10px 0"><img src="../assets/photography/slide_image_3.png" alt="مشروع تصوير" loading="lazy"></div>
-        <div class="slider-item" style="flex:0 0 100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:10px 0"><img src="../assets/photography/slide_image_6.png" alt="مشروع تصوير" loading="lazy"></div>
-        <div class="slider-item" style="flex:0 0 100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:20px;padding:10px 0"><img src="../assets/photography/slide_image_9.png" alt="مشروع تصوير" loading="lazy"></div>
+      <h2 class="section-title" id="works-title">مشاريع <span class="gold">الإنتاج البصري</span></h2>
+      <p class="section-sub" style="margin:0 auto">نماذج مختارة من التصوير والإنتاج الفني — عقار، ضيافة، وعلامات تجارية في السعودية والخليج.</p>
+      <div class="works-stats">
+        <span class="works-stat"><span class="material-symbols-outlined" aria-hidden="true">movie</span>6 مشاريع مختارة</span>
+        <span class="works-stat"><span class="material-symbols-outlined" aria-hidden="true">apartment</span>عقار · ضيافة · تجزئة</span>
+        <span class="works-stat"><span class="material-symbols-outlined" aria-hidden="true">4k</span>جودة سينمائية</span>
+      </div>
+    </header>
+
+    <div class="works-showcase">
+      <div class="works-stage" dir="ltr">
+        <div class="works-frame">
+          <div class="works-viewport" id="worksViewport">
+            <div class="works-track" id="projectSlider">
+              <article class="works-slide" data-category="تصوير معماري" data-title="مشروع سكني فاخر">
+                <img src="../assets/photography/slide_image_2.png" alt="مشروع سكني فاخر — تصوير معماري" loading="lazy" decoding="async">
+                <div class="works-slide-cap">
+                  <span class="works-slide-cat">تصوير معماري</span>
+                  <h3 class="works-slide-title">مشروع سكني فاخر</h3>
+                </div>
+              </article>
+              <article class="works-slide" data-category="فيلم ترويجي" data-title="مجمع تجاري راقٍ">
+                <img src="../assets/photography/slide_image_7.png" alt="مجمع تجاري راقٍ — فيلم ترويجي" loading="lazy" decoding="async">
+                <div class="works-slide-cap">
+                  <span class="works-slide-cat">فيلم ترويجي</span>
+                  <h3 class="works-slide-title">مجمع تجاري راقٍ</h3>
+                </div>
+              </article>
+              <article class="works-slide" data-category="تغطية فعاليات" data-title="إطلاق مشروع عقاري">
+                <img src="../assets/photography/slide_image_8.png" alt="إطلاق مشروع عقاري — تغطية فعاليات" loading="lazy" decoding="async">
+                <div class="works-slide-cap">
+                  <span class="works-slide-cat">تغطية فعاليات</span>
+                  <h3 class="works-slide-title">إطلاق مشروع عقاري</h3>
+                </div>
+              </article>
+              <article class="works-slide" data-category="تصوير داخلي" data-title="فيلا نموذجية">
+                <img src="../assets/photography/slide_image_3.png" alt="فيلا نموذجية — تصوير داخلي" loading="lazy" decoding="async">
+                <div class="works-slide-cap">
+                  <span class="works-slide-cat">تصوير داخلي</span>
+                  <h3 class="works-slide-title">فيلا نموذجية</h3>
+                </div>
+              </article>
+              <article class="works-slide" data-category="محتوى إعلامي" data-title="حملة علامة تجارية">
+                <img src="../assets/photography/slide_image_6.png" alt="حملة علامة تجارية — محتوى إعلامي" loading="lazy" decoding="async">
+                <div class="works-slide-cap">
+                  <span class="works-slide-cat">محتوى إعلامي</span>
+                  <h3 class="works-slide-title">حملة علامة تجارية</h3>
+                </div>
+              </article>
+              <article class="works-slide" data-category="إنتاج سينمائي" data-title="منتجع ضيافة">
+                <img src="../assets/photography/slide_image_9.png" alt="منتجع ضيافة — إنتاج سينمائي" loading="lazy" decoding="async">
+                <div class="works-slide-cap">
+                  <span class="works-slide-cat">إنتاج سينمائي</span>
+                  <h3 class="works-slide-title">منتجع ضيافة</h3>
+                </div>
+              </article>
+            </div>
+            <div class="works-progress" aria-hidden="true"><span class="works-progress-bar" id="worksProgressBar"></span></div>
+          </div>
+          <button type="button" class="works-nav-btn prev" onclick="slideProject(-1)" aria-label="المشروع السابق">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <button type="button" class="works-nav-btn next" onclick="slideProject(1)" aria-label="المشروع التالي">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="works-toolbar">
+        <p class="works-counter" id="worksCounter" aria-live="polite">01 <span>/ 06</span></p>
+        <div class="works-thumbs" id="projectThumbs"></div>
       </div>
     </div>
-    <button onclick="slideProject(-1)" style="position:absolute;top:55%;right:-6px;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.95);border:none;box-shadow:0 4px 20px rgba(0,0,0,0.12);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;color:var(--text-primary);transition:all 0.3s" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.95)'" aria-label="السابق">
-      <span class="material-symbols-outlined" style="font-size:24px">chevron_left</span>
-    </button>
-    <button onclick="slideProject(1)" style="position:absolute;top:55%;left:-6px;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.95);border:none;box-shadow:0 4px 20px rgba(0,0,0,0.12);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;color:var(--text-primary);transition:all 0.3s" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.95)'" aria-label="التالي">
-      <span class="material-symbols-outlined" style="font-size:24px">chevron_right</span>
-    </button>
-    <div style="display:flex;justify-content:center;gap:10px;margin-top:24px;direction:ltr" id="projectDots"></div>
-    <div style="text-align:center;margin-top:28px">
-      <a href="../portfolio.html" class="btn-o">شاهد جميع الأعمال <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span></a>
+
+    <div class="works-foot">
+      <a href="../portfolio.html" class="btn-o">استكشف معرض الأعمال <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span></a>
     </div>
   </div>
-</div>
+</section>
 
 <!-- FEATURED SHOWCASE -->
 <div class="slide-sec reveal" style="background:#d0d0d0;padding:48px 0">
@@ -1417,27 +1725,48 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
   });
 });
 var projectIndex=0;
-var projectItems=document.querySelectorAll('#projectSlider .slider-item');
+var projectItems=document.querySelectorAll('#projectSlider .works-slide');
 var projectTotal=projectItems.length;
 var projectTimer;
-var dotsContainer=document.getElementById('projectDots');
-if(dotsContainer){
-  for(var i=0;i<projectTotal;i++){
-    var d=document.createElement('button');
-    d.className='project-dot';
-    d.style.cssText='width:10px;height:10px;border-radius:50%;border:none;background:'+(i===0?'var(--gold)':'rgba(26,26,26,0.15)')+';cursor:pointer;transition:all 0.3s;padding:0';
-    d.setAttribute('aria-label','مشروع '+(i+1));
-    d.onclick=function(idx){return function(){goToProject(idx)}}(i);
-    dotsContainer.appendChild(d);
-  }
+var thumbsContainer=document.getElementById('projectThumbs');
+var worksCounter=document.getElementById('worksCounter');
+var worksProgressBar=document.getElementById('worksProgressBar');
+function padProjectNum(n){return n<10?'0'+n:String(n)}
+function restartWorksProgress(){
+  if(!worksProgressBar) return;
+  worksProgressBar.classList.remove('is-running');
+  void worksProgressBar.offsetWidth;
+  worksProgressBar.classList.add('is-running');
+}
+if(thumbsContainer){
+  projectItems.forEach(function(item,i){
+    var img=item.querySelector('img');
+    var btn=document.createElement('button');
+    btn.type='button';
+    btn.className='works-thumb'+(i===0?' is-active':'');
+    btn.setAttribute('aria-label','عرض مشروع '+(i+1));
+    btn.onclick=function(idx){return function(){goToProject(idx)}}(i);
+    if(img){
+      var thumbImg=document.createElement('img');
+      thumbImg.src=img.getAttribute('src');
+      thumbImg.alt='';
+      thumbImg.loading='lazy';
+      btn.appendChild(thumbImg);
+    }
+    thumbsContainer.appendChild(btn);
+  });
 }
 function goToProject(idx){
   projectIndex=idx;
   var track=document.getElementById('projectSlider');
   if(track){track.style.transform='translateX(-'+(projectIndex*100)+'%)'}
-  document.querySelectorAll('.project-dot').forEach(function(d,i){
-    d.style.background=(i===projectIndex?'var(--gold)':'rgba(26,26,26,0.15)');
+  document.querySelectorAll('.works-thumb').forEach(function(btn,i){
+    btn.classList.toggle('is-active',i===projectIndex);
   });
+  if(worksCounter){
+    worksCounter.innerHTML=padProjectNum(projectIndex+1)+' <span>/ '+padProjectNum(projectTotal)+'</span>';
+  }
+  restartWorksProgress();
   resetProjectTimer();
 }
 function slideProject(dir){goToProject((projectIndex+dir+projectTotal)%projectTotal)}
@@ -1445,11 +1774,11 @@ function resetProjectTimer(){
   clearInterval(projectTimer);
   projectTimer=setInterval(function(){slideProject(1)},4000);
 }
-resetProjectTimer();
-var sliderTrack=document.getElementById('projectSlider');
-if(sliderTrack){
-  sliderTrack.parentElement.addEventListener('mouseenter',function(){clearInterval(projectTimer)});
-  sliderTrack.parentElement.addEventListener('mouseleave',function(){resetProjectTimer()});
+goToProject(0);
+var worksViewport=document.getElementById('worksViewport');
+if(worksViewport){
+  worksViewport.addEventListener('mouseenter',function(){clearInterval(projectTimer)});
+  worksViewport.addEventListener('mouseleave',function(){resetProjectTimer()});
 }
 function closeVideo(){
   document.getElementById('videoModal').classList.remove('active');
