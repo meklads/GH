@@ -363,6 +363,79 @@ img { max-width: 100%; display: block; }
   .hero-btns .btn-o { justify-content: center; }
 }
 
+/* ===== PHOTO BANNER ===== */
+.photo-banner-sec {
+  width: 100%;
+  padding: clamp(56px, 6vw, 84px) 0;
+  background: linear-gradient(180deg, #FAFAF8 0%, #F3F0EA 48%, #FAFAF8 100%);
+  position: relative;
+  overflow: hidden;
+}
+.photo-banner-sec::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 22% 50%, rgba(255, 255, 255, 0.55) 0%, transparent 62%),
+    radial-gradient(ellipse 50% 45% at 82% 40%, rgba(201, 168, 76, 0.06) 0%, transparent 58%);
+  pointer-events: none;
+}
+.photo-banner-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.photo-banner-head {
+  text-align: center;
+  margin-bottom: clamp(24px, 3vw, 36px);
+  padding: 0 20px;
+}
+.photo-banner-art {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: clamp(18px, 2vw, 28px);
+}
+.photo-banner-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(to right, transparent 0%, transparent 46%, rgba(243, 240, 234, 0.22) 72%, rgba(243, 240, 234, 0.62) 92%, rgba(243, 240, 234, 0.88) 100%),
+    linear-gradient(to bottom, rgba(243, 240, 234, 0.88) 0%, rgba(243, 240, 234, 0.28) 9%, transparent 20%),
+    linear-gradient(to top, rgba(250, 250, 248, 0.95) 0%, rgba(250, 250, 248, 0.32) 11%, transparent 22%);
+}
+.photo-banner-art img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 7%, #000 93%, transparent 100%),
+    linear-gradient(to right, #000 0%, #000 44%, #000 90%, transparent 100%);
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 7%, #000 93%, transparent 100%),
+    linear-gradient(to right, #000 0%, #000 44%, #000 90%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+@media (max-width: 768px) {
+  .photo-banner-inner { padding: 0 20px; }
+  .photo-banner-art { border-radius: 16px; }
+  .photo-banner-art::after {
+    background:
+      linear-gradient(to right, transparent 0%, transparent 40%, rgba(243, 240, 234, 0.35) 68%, rgba(243, 240, 234, 0.78) 100%),
+      linear-gradient(to bottom, rgba(243, 240, 234, 0.92) 0%, rgba(243, 240, 234, 0.35) 8%, transparent 18%),
+      linear-gradient(to top, rgba(250, 250, 248, 0.96) 0%, rgba(250, 250, 248, 0.38) 10%, transparent 20%);
+  }
+}
+
 /* ===== SLIDE SECTION ===== */
 .slide-sec {
   width: 100%;
@@ -1373,15 +1446,17 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 </section>
 
 <!-- FEATURED SHOWCASE -->
-<div class="slide-sec reveal" style="background:#d0d0d0;padding:48px 0">
-  <div class="slide-sec-inner">
-    <div style="text-align:center;margin-bottom:28px;padding:0 20px">
+<section class="photo-banner-sec reveal" aria-labelledby="photo-banner-title">
+  <div class="photo-banner-inner">
+    <header class="photo-banner-head">
       <span class="section-label">إنتاج مميز</span>
-      <h2 class="section-title" style="margin-bottom:8px">محتوى <span class="gold">يُبرز مشروعك</span></h2>
-    </div>
-    <img src="../assets/photography/slide_image_11.png" alt="مشروع إنتاج بصري" loading="lazy">
+      <h2 class="section-title" id="photo-banner-title" style="margin-bottom:8px">محتوى <span class="gold">يُبرز مشروعك</span></h2>
+    </header>
+    <figure class="photo-banner-art">
+      <img src="../assets/photography/photography-professional-banner.png" alt="التصوير الفوتوغرافي الاحترافي — Graphics House" loading="lazy" decoding="async">
+    </figure>
   </div>
-</div>
+</section>
 
 <!-- PRESENTATIONS CTA -->
 <section class="cta-d reveal" style="background:#FAFAF8">
