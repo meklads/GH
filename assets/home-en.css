@@ -2586,7 +2586,7 @@ img { max-width: 100%; display: block; }
   position: relative;
   overflow: hidden !important;
   width: 100% !important;
-  height: clamp(220px, 32vw, 340px);
+  height: clamp(330px, 48vw, 510px);
   background: #111;
   border-block: 1px solid rgba(26,26,26,0.08);
 }
@@ -2616,7 +2616,7 @@ img { max-width: 100%; display: block; }
   height: 100% !important;
   gap: 12px !important;
   padding: 0 12px;
-  animation: pfAlbumScroll 55s linear infinite !important;
+  animation: pfAlbumScroll 95s linear infinite !important;
   will-change: transform;
 }
 .pf-album__frame:hover .pf-album__track {
@@ -2628,7 +2628,7 @@ img { max-width: 100%; display: block; }
 }
 .pf-album__track .pf-item {
   flex: 0 0 auto !important;
-  width: clamp(280px, 38vw, 460px) !important;
+  width: clamp(420px, 57vw, 690px) !important;
   height: 100% !important;
   aspect-ratio: auto !important;
   margin: 0 !important;
