@@ -40,9 +40,9 @@ gtag('config','G-Y67JVE898Z');
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=23">
+<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=24">
 <link rel="stylesheet" href="assets/site-header.css?v=35">
-<link rel="stylesheet" href="assets/home-ar.css?v=6">
+<link rel="stylesheet" href="assets/home-ar.css?v=8">
 
 <script type="application/ld+json">
 {
@@ -340,8 +340,8 @@ gtag('config','G-Y67JVE898Z');
 <section id="trust-band" class="gh-logo-album-section" aria-label="موثوق من عملائنا" dir="rtl">
   <div class="gh-logo-album">
     <p class="gh-logo-album__label">موثوق من كبار المطورين في المملكة العربية السعودية وعُمان والبحرين</p>
-    <div class="gh-logo-album__frame" role="region" aria-label="شعارات العملاء">
-      <div class="gh-logo-album__track gh-logo-album__track--rtl">
+    <div class="gh-logo-album__frame" role="region" aria-label="شعارات العملاء" style="overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);height:96px">
+      <div class="gh-logo-album__track gh-logo-album__track--rtl" style="display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;width:max-content;height:100%">
         <div class="gh-logo-album__item"><img src="assets/clients-logo/rafal.png" alt="رفال" loading="lazy" decoding="async"></div>
         <div class="gh-logo-album__item"><img src="assets/clients-logo/toyota.png" alt="تويوتا" loading="lazy" decoding="async"></div>
         <div class="gh-logo-album__item"><img src="assets/clients-logo/imc-150x150.png" alt="IMC" loading="lazy" decoding="async"></div>
@@ -1019,18 +1019,16 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
     </div>
 
     <!-- Grid -->
-    <div class="portfolio-grid s2-fade s2-d3" id="portfolioGrid">
-
-      <!-- عنان إسكان للتطوير -->
-      <div class="pf-subsection-header" data-category="maquette">
-        <img src="assets/clients-logo/anan-eskan.png" alt="عنان إسكان للتطوير" class="pf-subsection-logo" loading="lazy">
-        <div>
+    <div class="pf-subsection-header" data-category="maquette"><div>
           <span class="pf-subsection-eyebrow">عميل مميز</span>
           <h3 class="pf-subsection-title">عنان إسكان للتطوير</h3>
         </div>
         <a href="case-study-anan-eskan-en.html" class="pf-subsection-link">عرض دراسة الحالة ←</a>
       </div>
-      <div class="pf-item" onclick="openGalleryImage('assets/projects/maquettes/anan-escan3.jpeg','')" style="cursor:pointer" data-category="maquette">
+    <div class="pf-album s2-fade s2-d3" aria-label="معرض المشاريع الناجحة">
+      <div class="pf-album__frame">
+        <div class="pf-album__track" id="portfolioGrid" style="display:flex;flex-direction:row;flex-wrap:nowrap;width:max-content;align-items:stretch;height:100%">
+<div class="pf-item" onclick="openGalleryImage('assets/projects/maquettes/anan-escan3.jpeg','')" style="cursor:pointer" data-category="maquette">
         <picture><source srcset="assets/projects/maquettes/anan-escan3.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/anan-escan3.jpeg" alt="عنان إسكان للتطوير، مجسم"></picture>
         <div class="pf-item-overlay">
           <span class="pf-item-location">الرياض</span>
@@ -1162,8 +1160,9 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
           <span class="pf-item-title">المركز المالي، مدينة الملك عبدالله</span>
         </div>
       </div>
-
+        </div>
       </div>
+    </div>
 
       <div style="text-align:center;margin-top:40px">
         <a href="portfolio.html" style="display:inline-flex;align-items:center;gap:10px;padding:16px 44px;background:#1A1A1A;color:#FAFAF8;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-radius:50px;transition:all .35s;font-family:'Tajawal',sans-serif"
@@ -1671,29 +1670,30 @@ function closeImageLightbox(e) {
   }, 350);
 }
 
-// Portfolio filter، default to maquette
+// Portfolio album: duplicate track for seamless loop + click handlers
 (function() {
-  var btns = document.querySelectorAll('#portfolioFilters .pf-btn');
-  var items = document.querySelectorAll('#portfolioGrid .pf-item');
-  function filterTo(f) {
-    btns.forEach(function(b) { b.classList.remove('active'); });
-    items.forEach(function(item) {
-      if (f === 'all' || item.getAttribute('data-category') === f) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
+  var track = document.getElementById('portfolioGrid');
+  if (!track) return;
+  var items = Array.prototype.slice.call(track.querySelectorAll(':scope > .pf-item'));
+  items.forEach(function(item) {
+    if (!item.hasAttribute('onclick')) {
+      var img = item.querySelector('img');
+      if (img) {
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', function() {
+          openImage(img.getAttribute('src'));
+        });
       }
+    }
+  });
+  if (track.closest('.pf-album')) {
+    items.forEach(function(item) {
+      var clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.querySelectorAll('[id]').forEach(function(el){ el.removeAttribute('id'); });
+      track.appendChild(clone);
     });
   }
-  btns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      btns.forEach(function(b) { b.classList.remove('active'); });
-      this.classList.add('active');
-      filterTo(this.getAttribute('data-filter'));
-    });
-  });
-  // Set initial filter to maquette
-  filterTo('maquette');
 })();
 
 // Hero progress bars

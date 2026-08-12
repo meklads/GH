@@ -40,9 +40,9 @@ gtag('config','G-Y67JVE898Z');
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=23">
+<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=24">
 <link rel="stylesheet" href="assets/site-header.css?v=35">
-<link rel="stylesheet" href="assets/home-en.css?v=6">
+<link rel="stylesheet" href="assets/home-en.css?v=8">
 <link rel="stylesheet" href="assets/gh-en-typography.css?v=1">
 <script type="application/ld+json">
 {
@@ -342,8 +342,8 @@ gtag('config','G-Y67JVE898Z');
 <section id="trust-band" class="gh-logo-album-section" aria-label="Trusted by clients">
   <div class="gh-logo-album">
     <p class="gh-logo-album__label">Trusted by leading developers across Saudi Arabia, Oman &amp; Bahrain</p>
-    <div class="gh-logo-album__frame" role="region" aria-label="Client logos">
-      <div class="gh-logo-album__track">
+    <div class="gh-logo-album__frame" role="region" aria-label="Client logos" style="overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);height:96px">
+      <div class="gh-logo-album__track" style="display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;width:max-content;height:100%">
         <div class="gh-logo-album__item"><img src="assets/clients-logo/rafal.png" alt="Rafal" loading="lazy" decoding="async"></div>
         <div class="gh-logo-album__item"><img src="assets/clients-logo/toyota.png" alt="Toyota" loading="lazy" decoding="async"></div>
         <div class="gh-logo-album__item"><img src="assets/clients-logo/imc-150x150.png" alt="IMC" loading="lazy" decoding="async"></div>
@@ -961,18 +961,16 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
     </div>
 
     <!-- Grid -->
-    <div class="portfolio-grid s2-fade s2-d3" id="portfolioGrid">
-
-      <!-- Anan Eskan -->
-      <div class="pf-subsection-header" data-category="maquette">
-        <img src="assets/clients-logo/anan-eskan.png" alt="Anan Eskan" class="pf-subsection-logo" loading="lazy">
-        <div>
+    <div class="pf-subsection-header" data-category="maquette"><div>
           <span class="pf-subsection-eyebrow">Featured Client</span>
           <h3 class="pf-subsection-title">Anan Eskan Development</h3>
         </div>
         <a href="case-study-anan-eskan-en.html" class="pf-subsection-link">View Case Study →</a>
       </div>
-      <div class="pf-item" onclick="openGalleryImage('assets/projects/maquettes/anan-escan3.jpeg','')" style="cursor:pointer" data-category="maquette">
+    <div class="pf-album s2-fade s2-d3" aria-label="Successful projects album">
+      <div class="pf-album__frame">
+        <div class="pf-album__track" id="portfolioGrid" style="display:flex;flex-direction:row;flex-wrap:nowrap;width:max-content;align-items:stretch;height:100%">
+<div class="pf-item" onclick="openGalleryImage('assets/projects/maquettes/anan-escan3.jpeg','')" style="cursor:pointer" data-category="maquette">
         <picture><source srcset="assets/projects/maquettes/anan-escan3.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/anan-escan3.jpeg" alt="Anan Eskan — Maquette"></picture>
         <div class="pf-item-overlay">
           <span class="pf-item-location">Riyadh</span>
@@ -1104,8 +1102,9 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
           <span class="pf-item-title">Financial Center — King Abdullah City</span>
         </div>
       </div>
-
+        </div>
       </div>
+    </div>
 
       <div style="text-align:center;margin-top:40px">
         <a href="portfolio-en.html" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;background:#1A1A1A;color:#FAFAF8;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-radius:50px;transition:all .4s;border:1px solid #1A1A1A"
@@ -1537,12 +1536,12 @@ function swapImage(src, thumbEl) {
   thumbEl.classList.add('active');
 }
 
-// Portfolio, show all items with click handlers
+// Portfolio album: duplicate track for seamless loop + click handlers
 (function() {
-  var items = document.querySelectorAll('#portfolioGrid .pf-item');
+  var track = document.getElementById('portfolioGrid');
+  if (!track) return;
+  var items = Array.prototype.slice.call(track.querySelectorAll(':scope > .pf-item'));
   items.forEach(function(item) {
-    item.style.display = 'block';
-    // If item has an onclick (video), keep it; otherwise add image lightbox
     if (!item.hasAttribute('onclick')) {
       var img = item.querySelector('img');
       if (img) {
@@ -1553,6 +1552,14 @@ function swapImage(src, thumbEl) {
       }
     }
   });
+  if (track.closest('.pf-album')) {
+    items.forEach(function(item) {
+      var clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.querySelectorAll('[id]').forEach(function(el){ el.removeAttribute('id'); });
+      track.appendChild(clone);
+    });
+  }
 })();
 
 // Hero progress bars
