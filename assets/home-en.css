@@ -2041,6 +2041,117 @@ img { max-width: 100%; display: block; }
   .csr-br{width:40px;height:40px}
 }
 
+/* ── Full-bleed client logo album ── */
+.gh-logo-album-section {
+  background: #071810;
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 0;
+  overflow: hidden;
+}
+.gh-logo-album {
+  width: 100%;
+  padding: 36px 0 28px;
+}
+.gh-logo-album__label {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 24px 22px;
+  font-family: 'Inter', 'Tajawal', sans-serif;
+}
+.gh-logo-album__frame {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  height: 92px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.28);
+  border-block: 1px solid rgba(201, 168, 76, 0.14);
+}
+.gh-logo-album__frame::before,
+.gh-logo-album__frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: min(120px, 12vw);
+  z-index: 2;
+  pointer-events: none;
+}
+.gh-logo-album__frame::before {
+  left: 0;
+  background: linear-gradient(to right, #071810 0%, rgba(7, 24, 16, 0) 100%);
+}
+.gh-logo-album__frame::after {
+  right: 0;
+  background: linear-gradient(to left, #071810 0%, rgba(7, 24, 16, 0) 100%);
+}
+.gh-logo-album__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: 100%;
+  animation: ghLogoAlbumScroll 45s linear infinite;
+  will-change: transform;
+}
+.gh-logo-album__track--rtl {
+  animation-name: ghLogoAlbumScrollRtl;
+}
+.gh-logo-album__frame:hover .gh-logo-album__track {
+  animation-play-state: paused;
+}
+@keyframes ghLogoAlbumScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes ghLogoAlbumScrollRtl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+.gh-logo-album__item {
+  flex-shrink: 0;
+  height: 100%;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.gh-logo-album__item::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.gh-logo-album__item img {
+  height: 44px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  opacity: 0.7;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
+}
+.gh-logo-album__item:hover img {
+  opacity: 1;
+  transform: scale(1.06);
+}
+@media (max-width: 640px) {
+  .gh-logo-album__frame { height: 78px; }
+  .gh-logo-album__item { padding: 0 28px; }
+  .gh-logo-album__item img { height: 36px; max-width: 110px; }
+}
+
 /* ── Client logo strip، constrained to content width ── */
   .zl-clients-section {
     padding: 72px 0 80px;
