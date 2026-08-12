@@ -2460,8 +2460,10 @@ img { max-width: 100%; display: block; }
 .gh-logo-album__track--rtl {
   animation-name: ghLogoAlbumScrollRtl;
 }
-.gh-logo-album__frame:hover .gh-logo-album__track {
-  animation-play-state: paused;
+.gh-logo-album__frame:hover .gh-logo-album__track,
+.gh-logo-album:hover .gh-logo-album__track,
+.gh-logo-album__track:hover {
+  animation-play-state: paused !important;
 }
 @keyframes ghLogoAlbumScroll {
   0% { transform: translateX(0); }
@@ -2987,8 +2989,10 @@ img { max-width: 100%; display: block; }
   animation: pfAlbumScroll 95s linear infinite !important;
   will-change: transform;
 }
-.pf-album__frame:hover .pf-album__track {
-  animation-play-state: paused;
+.pf-album__frame:hover .pf-album__track,
+.pf-album:hover .pf-album__track,
+.pf-album__track:hover {
+  animation-play-state: paused !important;
 }
 @keyframes pfAlbumScroll {
   from { transform: translate3d(0,0,0); }
