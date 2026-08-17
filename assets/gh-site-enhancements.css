@@ -416,11 +416,23 @@ body.gh-home #hero .hero-contact-strip {
   padding: 20px 0 28px;
 }
 
-.gh-footer__copy {
+.gh-footer__legal-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.gh-footer__copy,
+.gh-footer__affiliation {
   margin: 0;
   font-size: 11px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.85);
+}
+
+.gh-footer__affiliation {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .gh-footer__legal-links {
