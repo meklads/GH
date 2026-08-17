@@ -435,6 +435,18 @@ body.gh-home #hero .hero-contact-strip {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.gh-footer__affiliation a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.45);
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.gh-footer__affiliation a:hover {
+  color: #c9a84c;
+  border-bottom-color: #c9a84c;
+}
+
 .gh-footer__legal-links {
   display: flex;
   flex-wrap: wrap;

@@ -521,7 +521,7 @@ function buildPage(c) {
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=25">
+<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=26">
 <link rel="stylesheet" href="assets/site-header.css?v=35">
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=8">
 <style>
