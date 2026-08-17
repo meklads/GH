@@ -419,32 +419,51 @@ body.gh-home #hero .hero-contact-strip {
 .gh-footer__legal-text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: flex-start;
+  gap: 14px;
   min-width: 0;
 }
 
-.gh-footer__copy,
-.gh-footer__affiliation {
+.gh-footer__copy {
   margin: 0;
   font-size: 11px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.85);
 }
 
-.gh-footer__affiliation {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.gh-footer__affiliation a {
-  color: rgba(255, 255, 255, 0.85);
+.gh-footer__group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 999px;
+  background: rgba(201, 168, 76, 0.06);
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(201, 168, 76, 0.8);
   text-decoration: none;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.45);
-  transition: color 0.25s ease, border-color 0.25s ease;
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
-.gh-footer__affiliation a:hover {
+.gh-footer__group strong {
+  font-weight: 700;
   color: #c9a84c;
-  border-bottom-color: #c9a84c;
+}
+
+.gh-footer__group svg {
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+
+[dir="rtl"] .gh-footer__group svg {
+  transform: scaleX(-1);
+}
+
+.gh-footer__group:hover {
+  color: #c9a84c;
+  border-color: rgba(201, 168, 76, 0.6);
+  background: rgba(201, 168, 76, 0.12);
 }
 
 .gh-footer__legal-links {
