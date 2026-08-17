@@ -68,7 +68,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=35">
-<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=23">
+<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=25">
 <link rel="stylesheet" href="${p}assets/gh-location.css?v=8">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=16"></script>

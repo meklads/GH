@@ -23,7 +23,7 @@ npm run verify:live
 Expect:
 
 - `gh-performance.js?v=10` (or current version in `sync-layout.mjs`)
-- `gh-site-enhancements.css?v=23`
+- `gh-site-enhancements.css?v=` (current cache version)
 - `gh-cta-track.js?v=1`
 
 ## Optional: auto-deploy (GitHub Secrets)

@@ -1021,7 +1021,7 @@ ${analyticsHeadTags('../')}
 ${product.key === 'growth' ? '<script defer src="../assets/gh-roi-calculator.js?v=1"></script>\n' : ''}<script defer src="../assets/lang-switch.js?v=2"></script>
 <script defer src="../assets/project-launch-media.js?v=4"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=23">
+<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=25">
 <link rel="stylesheet" href="../assets/site-header.css?v=35">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 <link rel="stylesheet" href="../assets/solution-premium.css?v=3">
@@ -1333,7 +1333,7 @@ ${analyticsHeadTags('../')}
 <script defer src="../assets/gh-cta-track.js?v=1"></script>
 ${product.key === 'growth' ? '<script defer src="../assets/gh-roi-calculator.js?v=1"></script>\n' : ''}<script defer src="../assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=23">
+<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=25">
 <link rel="stylesheet" href="../assets/site-header.css?v=31">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 <link rel="stylesheet" href="../assets/solution-premium.css?v=3">

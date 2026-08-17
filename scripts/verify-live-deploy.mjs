@@ -33,7 +33,7 @@ const pl = results.find((r) => r.path === '/solutions/project-launch.html');
 const requiredAssets = [
   ['gh-performance.js?v=10', home?.body],
   ['gh-cta-track.js?v=1', home?.body],
-  ['gh-site-enhancements.css?v=23', home?.body],
+  ['gh-site-enhancements.css?v=', home?.body],
   ['gl-ecosystem', pl?.body],
   ['gh-performance.js?v=10', pl?.body],
 ];
