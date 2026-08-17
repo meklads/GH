@@ -120,7 +120,8 @@ html[dir="ltr"] .s2-hero-wrap { direction: ltr; }
   pointer-events: none;
 }
 html[dir="rtl"] .s2-hero-inner {
-  inset-inline-end: 40px;
+  /* Reading side (right in RTL); the gallery and watch button sit opposite */
+  inset-inline-start: 40px;
   text-align: right;
   padding: 20px 60px 20px 48px;
 }
@@ -365,6 +366,11 @@ html[dir="ltr"] .s2-hero-inner {
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: rgba(201,168,76,0.3) transparent;
+}
+/* Float widgets are pinned to the physical left, which is this side in RTL */
+html[dir="rtl"] .s2-hero-gallery,
+html[dir="rtl"] .s2-watch-btn {
+  inset-inline-end: 100px;
 }
 .s2-hero-gallery::-webkit-scrollbar { width: 3px; }
 .s2-hero-gallery::-webkit-scrollbar-track { background: transparent; }
@@ -685,37 +691,52 @@ html[dir="ltr"] .case-content { direction: ltr; }
 /* Responsive */
 @media (max-width: 768px) {
     .case-hero { min-height: 80vh; padding: 100px 20px 60px; }
-  html[dir="rtl"] .s2-hero-inner {
-    top: 56%;
-    inset-inline-end: 16px;
-    inset-inline-start: auto;
-    padding: 16px 20px;
-    max-width: 85%;
+  /* Stack text, CTA and gallery in flow so they can never overlap */
+  .s2-hero-wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    padding: 96px 16px 48px;
   }
+  /* Hover-only hotspots and the duplicate play badge land on the stacked text */
+  .s2-hero-wrap .hotspot,
+  .s2-hero-wrap .s2-play-btn { display: none !important; }
+  html[dir="rtl"] .s2-hero-inner,
   html[dir="ltr"] .s2-hero-inner {
-    top: 56%;
-    inset-inline-start: 16px;
-    inset-inline-end: auto;
-    padding: 16px 20px;
-    max-width: 85%;
+    position: static;
+    inset: auto;
+    width: 100%;
+    max-width: 560px;
+    padding: 0;
   }
   .s2-hero-inner::before { display: none; }
   .s2-watch-btn {
-    left: 50%;
-    top: auto;
-    bottom: 100px;
-    transform: translateX(-50%);
+    position: static;
+    transform: none;
   }
   .s2-hero-gallery {
-    left: 50%;
-    top: auto;
-    bottom: 160px;
-    transform: translateX(-50%);
-    max-height: 20vh;
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 560px;
+    max-height: 26vh;
+    /* Clear the fixed float widgets, which stay on the physical left */
+    padding-left: 56px;
   }
-  .s2-hero-gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 4px; }
-  .s2-hero-gallery-grid .s2-hero-thumb { width: 60px; height: 60px; }
+  .s2-hero-gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 0; }
+  .s2-hero-gallery-grid .s2-hero-thumb { width: 100%; height: auto; aspect-ratio: 1 / 1; }
   .highlights { grid-template-columns: 1fr; }
   .case-project-grid { grid-template-columns: 1fr; }
-  .s2-hero-wrap { min-height: 100vh; }
+}
+
+/* Narrow desktop: 620px of text + a 4-column gallery no longer fit side by side */
+@media (min-width: 769px) and (max-width: 1180px) {
+  .s2-hero-inner { max-width: 46vw; }
+  .s2-hero-desc { max-width: 100%; }
+  .s2-hero-gallery { max-height: 30vh; }
+  .s2-hero-gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .s2-hero-gallery-grid .s2-hero-thumb { width: 68px; height: 68px; }
 }
