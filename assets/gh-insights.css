@@ -961,6 +961,38 @@ html[dir="rtl"] .gh-ins-proj-meta {
   display: none !important;
 }
 
+.gh-ins-card[hidden] {
+  display: none !important;
+}
+
+.gh-ins-faq {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid #e8e4dc;
+}
+
+.gh-ins-faq h2 {
+  margin: 0 0 20px;
+  font-size: 1.35rem;
+}
+
+.gh-ins-faq-item {
+  margin: 0 0 18px;
+}
+
+.gh-ins-faq-q {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1814;
+}
+
+.gh-ins-faq-a {
+  margin: 0;
+  color: #5c574f;
+  line-height: 1.7;
+}
+
 /* ----- Newsletter CTA ----- */
 .gh-ins-newsletter {
   background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #f0eeea 100%);

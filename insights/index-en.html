@@ -35,7 +35,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/site-header.css?v=31">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=28">
-<link rel="stylesheet" href="../assets/gh-insights.css?v=24">
+<link rel="stylesheet" href="../assets/gh-insights.css?v=25">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=2">
 <script defer src="../assets/site-header.js?v=16"></script>
 <script defer src="../assets/gh-performance.js?v=9"></script>
@@ -216,8 +216,9 @@ gtag('config','G-Y67JVE898Z');
         <h2>Featured Articles</h2>
         <p>Expert guides on archviz, CGI, smart maquettes, and visual launch strategy.</p>
       </div>
-      <div class="gh-ins-articles-grid">
-<article class="gh-ins-card gh-ins-card--featured">
+      <div class="gh-ins-report-filters" role="group" aria-label="Filter articles"><button type="button" class="gh-ins-report-filter is-active" data-gh-article-filter="all">All</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Finishes &amp; Viz">Finishes &amp; Viz</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Jeddah">Jeddah</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Project Type">Project Type</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Makkah">Makkah</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Project Launch">Project Launch</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Riyadh">Riyadh</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Saudi Market">Saudi Market</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Gulf">Gulf</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Architectural Viz">Architectural Viz</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Real Estate Sales">Real Estate Sales</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Smart Maquettes">Smart Maquettes</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Guides">Guides</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Cinematic Production">Cinematic Production</button><button type="button" class="gh-ins-report-filter" data-gh-article-filter="Interactive">Interactive</button></div>
+      <div class="gh-ins-articles-grid" id="ghInsArticlesGrid">
+<article class="gh-ins-card gh-ins-card--featured" data-gh-article-cat="Project Launch">
   <a href="articles/project-launch-saudi-developers-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="What Saudi Developers Need from a Visual Launch System Before Sales Day" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -231,7 +232,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Finishes &amp; Viz">
   <a href="articles/completed-finishes-tour-visual-story-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/wahat-alsalam9-scaled.jpg" alt="Completed Finishes Tours: How Material Boards + Matched Renders Become Broker Reference Content" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -245,7 +246,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Finishes &amp; Viz">
   <a href="articles/finishes-spec-visualization-gap-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/wahat-alsalam9-scaled.jpg" alt="The Finishes–Spec–Visualization Gap: Why Buyers Lose Trust on the Sales Floor" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -259,7 +260,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Jeddah">
   <a href="articles/jeddah-red-sea-visual-launch-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/jeddah-forum.jpg" alt="Visual Launch from Jeddah: Serving the Western Region &amp; Red Sea Projects" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -273,7 +274,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Project Type">
   <a href="articles/makkah-b2b-workforce-housing-viz-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="Makkah B2B Workforce Housing Viz: Sell Capacity &amp; Compliance, Not Luxury Lifestyle" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -287,7 +288,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Project Type">
   <a href="articles/makkah-hospitality-near-haram-viz-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" alt="Near-Haram Hospitality Viz: Sell Lodging Quality Without Misleading Proximity Claims" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -301,7 +302,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Makkah">
   <a href="articles/makkah-project-visual-sensitivity-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" alt="Architectural Visualization in Makkah: Place Sensitivity &amp; Investor Trust" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -315,7 +316,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Project Type">
   <a href="articles/masterplan-community-visual-sales-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/alrajhi3.jpeg" alt="Master-Planned Community Visual Sales: Sell Lifestyle Rhythm, Not Just Façades" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -329,7 +330,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Project Type">
   <a href="articles/mixed-use-gate-visual-launch-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/jeddah-forum.jpg" alt="Mixed-Use Gate Visual Launch: Sell Master Plan, Façade &amp; Product Mix Together" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -343,7 +344,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Project Type">
   <a href="articles/office-pavilion-visual-launch-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/pavilion3-1.jpg" alt="Office Pavilion Visual Launch: Sell Workplace Productivity, Not Residential Lifestyle" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -357,7 +358,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Project Launch">
   <a href="articles/project-launch-oman-developers-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/uae-e1745147961286.jpeg" alt="What Oman Developers Need from a Visual Launch System" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -371,7 +372,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Project Type">
   <a href="articles/riyadh-north-villa-compound-viz-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/alrajhi3.jpeg" alt="North Riyadh Villa Compounds: Sell Privacy &amp; Model Comparison, Not One Hero Façade" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -385,7 +386,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Riyadh">
   <a href="articles/riyadh-offplan-visual-sales-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/alrajhi3.jpeg" alt="Visual Sales in Riyadh: How to Persuade Before Construction Completes" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -399,7 +400,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Saudi Market">
   <a href="articles/saudi-offplan-visual-readiness-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/jeddah-forum.jpg" alt="How to Read the Saudi Off-Plan Pipeline Through Visual System Readiness" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -413,7 +414,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Gulf">
   <a href="articles/saudi-vs-gulf-visual-launch-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../assets/projects/rendering/uae-e1745147961286.jpeg" alt="Saudi to Gulf Visual Launch: What Stays the Same — and What Must Change" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -427,7 +428,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Architectural Viz">
   <a href="articles/ai-archviz-future-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../insights/images/ai-archviz-future.jpg" alt="The Future of Architectural Visualization in the AI Era: A GCC Market Guide" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -441,7 +442,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Real Estate Sales">
   <a href="articles/photorealistic-sells-before-construction-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../insights/images/photorealistic-sells-before-construction.jpg" alt="Why Photorealistic Images Sell Projects Before Construction: A GCC Real Estate Sales Guide" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -455,7 +456,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Smart Maquettes">
   <a href="articles/smart-maquette-evolution-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../insights/images/smart-maquette-evolution.jpg" alt="From Traditional Maquette to Interactive Smart Maquette: A GCC Sales Gallery Guide" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -469,7 +470,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Guides">
   <a href="articles/choosing-archviz-studio-gcc-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../insights/images/choosing-archviz-studio-gcc.jpg" alt="How to Choose an Archviz Studio for Major GCC Projects" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -483,7 +484,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Smart Maquettes">
   <a href="articles/when-to-use-smart-maquette-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../insights/images/when-to-use-smart-maquette.jpg" alt="When Do You Need a Smart Maquette Instead of Renders Alone?" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -497,7 +498,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Project Launch">
   <a href="articles/visual-launch-checklist-guide-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../insights/images/visual-launch-checklist-guide.jpg" alt="Visual Launch Guide: What You Need 6 Months Before Groundbreaking" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -511,7 +512,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Real Estate Sales">
   <a href="articles/roi-architectural-visualization-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../insights/images/roi-architectural-visualization.jpg" alt="Architectural Visualization ROI: A Complete Guide to Measuring Real Estate Archviz Returns" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -525,7 +526,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Cinematic Production">
   <a href="articles/cinematic-cgi-vs-static-renders-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../insights/images/cinematic-cgi-vs-static-renders.jpg" alt="Cinematic CGI vs. Static Architectural Renders: When Your Project Needs a Real Estate Marketing Film" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -539,7 +540,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Guides">
   <a href="articles/visualization-brief-guide-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../insights/images/visualization-brief-guide.jpg" alt="The Architectural Visualization Brief Guide: A Complete Template for Developers" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -553,7 +554,7 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
-<article class="gh-ins-card">
+<article class="gh-ins-card" data-gh-article-cat="Interactive">
   <a href="articles/interactive-sales-gallery-en.html" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="../insights/images/interactive-sales-gallery.jpg" alt="Interactive Sales Gallery: Building the Real Estate Buyer Experience From Billboard to Contract" loading="lazy"></figure>
     <div class="gh-ins-card-body">
@@ -584,7 +585,7 @@ gtag('config','G-Y67JVE898Z');
 <article class="gh-ins-report-card" data-gh-report-region="local" data-gh-report-status="under-prep">
   <a href="reports/abraj-omar-makkah-visual-report-en.html" class="gh-ins-proj-link">
     <figure class="gh-ins-proj-media">
-      <img src="../assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg" alt="Abraj Omar — M Gallery" loading="lazy">
+      <img src="../assets/insights/reports/abraj-omar-mgallery.jpg" alt="Abraj Omar — M Gallery" loading="lazy">
     </figure>
     <div class="gh-ins-proj-body">
       <div class="gh-ins-proj-meta">
@@ -598,10 +599,27 @@ gtag('config','G-Y67JVE898Z');
     </div>
   </a>
 </article>
+<article class="gh-ins-report-card" data-gh-report-region="local" data-gh-report-status="completed">
+  <a href="reports/anan-eskan-restatex-visual-report-en.html" class="gh-ins-proj-link">
+    <figure class="gh-ins-proj-media">
+      <img src="../assets/insights/reports/anan-eskan-amlak-interview.jpg" alt="Anan Eskan — exhibition presence &amp; Amlak interview" loading="lazy">
+    </figure>
+    <div class="gh-ins-proj-body">
+      <div class="gh-ins-proj-meta">
+        <span class="gh-ins-report-chip">Local (KSA)</span>
+        <span class="gh-ins-report-chip gh-ins-report-chip--status">Completed reference</span>
+      </div>
+      <p class="gh-ins-proj-cat">Riyadh · Jeddah · Anan Eskan</p>
+      <h3>Anan Eskan at Restatex &amp; the Amlak Interview: Why Booth, Maquette, and the CEO Media Moment Matter</h3>
+      <p class="gh-ins-proj-excerpt">Completed visual report: Anan Eskan’s exhibition presence and Amlak interview with CEO Hashim Mohsin AlHamed — plus Graphics House ProjectLaunch delivery (renders, CGI, maquette) for the Riyadh project, and a checklist for exhibition media readiness.</p>
+      <span class="gh-ins-read-more">Read report <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></span>
+    </div>
+  </a>
+</article>
 <article class="gh-ins-report-card" data-gh-report-region="local" data-gh-report-status="under-prep">
   <a href="reports/jeddah-gate-visual-report-en.html" class="gh-ins-proj-link">
     <figure class="gh-ins-proj-media">
-      <img src="../assets/projects/rendering/jeddah-forum.jpg" alt="Jeddah Gate" loading="lazy">
+      <img src="../assets/insights/reports/jeddah-gate-ruwaq.jpg" alt="Jeddah Gate" loading="lazy">
     </figure>
     <div class="gh-ins-proj-body">
       <div class="gh-ins-proj-meta">
@@ -611,6 +629,23 @@ gtag('config','G-Y67JVE898Z');
       <p class="gh-ins-proj-cat">Jeddah · AlOula</p>
       <h3>Jeddah Gate: Visual Launch Needs for a Mixed-Use Gate at This Scale</h3>
       <p class="gh-ins-proj-excerpt">A market visual reading of Jeddah Gate as a large mixed-use district in Jeddah — investor vs buyer packs, program clarity, day/night, and interactive block selection. Market context, not a Graphics House delivery claim.</p>
+      <span class="gh-ins-read-more">Read report <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></span>
+    </div>
+  </a>
+</article>
+<article class="gh-ins-report-card" data-gh-report-region="local" data-gh-report-status="completed">
+  <a href="reports/mwl-humanity-exhibition-visual-report-en.html" class="gh-ins-proj-link">
+    <figure class="gh-ins-proj-media">
+      <img src="../assets/insights/reports/mwl-al-issa-okaz.jpeg" alt="Humanity Exhibition — Makkah Charter" loading="lazy">
+    </figure>
+    <div class="gh-ins-proj-body">
+      <div class="gh-ins-proj-meta">
+        <span class="gh-ins-report-chip">Local (KSA)</span>
+        <span class="gh-ins-report-chip gh-ins-report-chip--status">Completed reference</span>
+      </div>
+      <p class="gh-ins-proj-cat">Makkah · Muslim World League</p>
+      <h3>Humanity Exhibition &amp; Makkah Charter: An Integrated Visual System Graphics House Delivered for the Muslim World League</h3>
+      <p class="gh-ins-proj-excerpt">Completed visual report on an institutional event: the Makkah Charter under Custodian patronage, then the Humanity Exhibition smart-maquette experience — a Graphics House ProjectLaunch delivery in Makkah, with case study, service links, and an acceptance checklist.</p>
       <span class="gh-ins-read-more">Read report <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></span>
     </div>
   </a>
@@ -635,7 +670,7 @@ gtag('config','G-Y67JVE898Z');
 <article class="gh-ins-report-card" data-gh-report-region="local" data-gh-report-status="under-prep">
   <a href="reports/sedra-roshn-visual-report-en.html" class="gh-ins-proj-link">
     <figure class="gh-ins-proj-media">
-      <img src="../assets/projects/rendering/alrajhi3.jpeg" alt="Sedra — ROSHN" loading="lazy">
+      <img src="../assets/insights/reports/sedra-roshn-hero.jpg" alt="Sedra — ROSHN" loading="lazy">
     </figure>
     <div class="gh-ins-proj-body">
       <div class="gh-ins-proj-meta">
@@ -947,7 +982,7 @@ gtag('config','G-Y67JVE898Z');
     <span class="gh-ins-dl-type">Interactive</span>
     <h3>Project Brief Template</h3>
     <p>Ready-to-fill brief before your first visual production meeting.</p>
-    <button type="button" class="gh-ins-btn gh-ins-btn--muted" disabled>Coming Soon</button>
+    <a href="../tools/project-brief-en.html" class="gh-ins-btn">Download</a>
   </div>
 </article>
 <article class="gh-ins-dl-card">
@@ -956,7 +991,7 @@ gtag('config','G-Y67JVE898Z');
     <span class="gh-ins-dl-type">PDF · Checklist</span>
     <h3>Sales Gallery Checklist</h3>
     <p>12 essentials before launching your sales gallery and visual assets.</p>
-    <button type="button" class="gh-ins-btn gh-ins-btn--muted" disabled>Coming Soon</button>
+    <a href="../tools/launch-checklist-en.html" class="gh-ins-btn">Download</a>
   </div>
 </article>
 <article class="gh-ins-dl-card">
@@ -1157,6 +1192,24 @@ gtag('config','G-Y67JVE898Z');
   window.addEventListener("hashchange",function(){
     var id=(location.hash||"").slice(1);
     if(id&&document.querySelector('[data-gh-ins-panel="'+id+'"]'))show(id);
+  });
+})();
+</script>
+<script>
+(function(){
+  var root=document.getElementById("articles");
+  if(!root)return;
+  var buttons=root.querySelectorAll("[data-gh-article-filter]");
+  var cards=root.querySelectorAll("[data-gh-article-cat]");
+  function apply(cat){
+    buttons.forEach(function(b){b.classList.toggle("is-active",b.getAttribute("data-gh-article-filter")===cat);});
+    cards.forEach(function(c){
+      var show=cat==="all"||c.getAttribute("data-gh-article-cat")===cat;
+      c.hidden=!show;
+    });
+  }
+  buttons.forEach(function(b){
+    b.addEventListener("click",function(){apply(b.getAttribute("data-gh-article-filter"));});
   });
 })();
 </script>

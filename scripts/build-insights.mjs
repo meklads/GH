@@ -114,12 +114,57 @@ function articleDescription(article, lang) {
   return isEn ? article.excerpt.en : article.excerpt.ar;
 }
 
+function faqSectionHtml(faq, lang) {
+  if (!faq || !faq.length) return '';
+  const isEn = lang === 'en';
+  const L = (key) => (isEn ? key.en : key.ar);
+  const items = faq
+    .map((item) => {
+      const q = L(item.q || item.question || {});
+      const a = L(item.a || item.answer || {});
+      if (!q || !a) return '';
+      return `<div class="gh-ins-faq-item"><h3 class="gh-ins-faq-q">${esc(q)}</h3><p class="gh-ins-faq-a">${richText(a)}</p></div>`;
+    })
+    .filter(Boolean)
+    .join('');
+  if (!items) return '';
+  return `<section class="gh-ins-faq" aria-label="${isEn ? 'Frequently asked questions' : 'أسئلة شائعة'}">
+          <h2>${isEn ? 'FAQ' : 'أسئلة شائعة'}</h2>
+          ${items}
+        </section>`;
+}
+
+function faqPageSchema(faq, lang, pageUrl) {
+  if (!faq || !faq.length) return null;
+  const isEn = lang === 'en';
+  const L = (key) => (isEn ? key.en : key.ar);
+  const entities = faq
+    .map((item) => {
+      const q = L(item.q || item.question || {});
+      const a = L(item.a || item.answer || {});
+      if (!q || !a) return null;
+      return {
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+|\/[^)\s]+)\)/g, '$1') },
+      };
+    })
+    .filter(Boolean);
+  if (!entities.length) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: entities,
+    url: pageUrl,
+  };
+}
+
 function articleSchema(article, lang) {
   const isEn = lang === 'en';
   const L = (key) => (isEn ? key.en : key.ar);
   const slug = `${article.slug}${isEn ? '-en' : ''}.html`;
-  return JSON.stringify({
-    '@context': 'https://schema.org',
+  const pageUrl = `https://3dgraphicshouse.com/insights/articles/${slug}`;
+  const articleNode = {
     '@type': 'Article',
     headline: L(article.title),
     description: articleDescription(article, lang),
@@ -131,9 +176,14 @@ function articleSchema(article, lang) {
       name: 'Graphics House',
       logo: { '@type': 'ImageObject', url: 'https://3dgraphicshouse.com/assets/favicon/og-image.png' },
     },
-    mainEntityOfPage: `https://3dgraphicshouse.com/insights/articles/${slug}`,
+    mainEntityOfPage: pageUrl,
     inLanguage: isEn ? 'en' : 'ar',
-  });
+  };
+  const faqNode = faqPageSchema(article.faq, lang, pageUrl);
+  if (faqNode) {
+    return JSON.stringify({ '@context': 'https://schema.org', '@graph': [articleNode, faqNode] });
+  }
+  return JSON.stringify({ '@context': 'https://schema.org', ...articleNode });
 }
 
 function prefixPaths(html, depth) {
@@ -181,7 +231,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=31">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=28">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=24">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=25">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=16"></script>
 <script defer src="${p}assets/gh-performance.js?v=9"></script>
@@ -301,13 +351,14 @@ function articleCard(article, lang, p, featured) {
   const href = `articles/${article.slug}${isEn ? '-en' : ''}.html`;
   const readLabel = isEn ? 'Read More' : 'اقرأ المزيد';
   const arrow = isEn ? 'arrow_forward' : 'arrow_back';
+  const cat = L(article.category);
   return `
-<article class="gh-ins-card${featured ? ' gh-ins-card--featured' : ''}">
+<article class="gh-ins-card${featured ? ' gh-ins-card--featured' : ''}" data-gh-article-cat="${esc(cat)}">
   <a href="${href}" class="gh-ins-card-link">
     <figure class="gh-ins-card-media"><img src="${p}${article.image}" alt="${esc(L(article.title))}" loading="lazy"></figure>
     <div class="gh-ins-card-body">
       <div class="gh-ins-card-meta">
-        <span class="gh-ins-cat">${esc(L(article.category))}</span>
+        <span class="gh-ins-cat">${esc(cat)}</span>
         <span class="gh-ins-read-time">${readingMinutes(article, lang)}</span>
       </div>
       <h3>${esc(L(article.title))}</h3>
@@ -615,6 +666,19 @@ function buildHub(lang) {
   const featured = ARTICLES.find((a) => a.featured) || ARTICLES[0];
   const rest = ARTICLES.filter((a) => a.slug !== featured.slug);
   const p = '../';
+  const isEnHub = isEn;
+  const catSet = new Map();
+  for (const a of ARTICLES) {
+    const label = isEnHub ? a.category.en : a.category.ar;
+    if (label) catSet.set(label, label);
+  }
+  const articleFilters = [
+    `<button type="button" class="gh-ins-report-filter is-active" data-gh-article-filter="all">${isEn ? 'All' : 'الكل'}</button>`,
+    ...[...catSet.keys()].map(
+      (c) =>
+        `<button type="button" class="gh-ins-report-filter" data-gh-article-filter="${esc(c)}">${esc(c)}</button>`
+    ),
+  ].join('');
 
   const articlesHtml = [
     articleCard(featured, lang, p, true),
@@ -648,7 +712,8 @@ ${header}
     ? 'Expert guides on archviz, CGI, smart maquettes, and visual launch strategy.'
     : 'أدلة متخصصة في الإظهار المعماري والمجسمات الذكية واستراتيجية الإطلاق البصري.'}</p>
       </div>
-      <div class="gh-ins-articles-grid">${articlesHtml}</div>
+      <div class="gh-ins-report-filters" role="group" aria-label="${isEn ? 'Filter articles' : 'تصفية المقالات'}">${articleFilters}</div>
+      <div class="gh-ins-articles-grid" id="ghInsArticlesGrid">${articlesHtml}</div>
     </section>
     ${marketReportsSection(lang)}
     ${citiesSection(lang)}
@@ -661,6 +726,24 @@ ${header}
 </main>
 ${footer}
 ${hubTabScript()}
+<script>
+(function(){
+  var root=document.getElementById("articles");
+  if(!root)return;
+  var buttons=root.querySelectorAll("[data-gh-article-filter]");
+  var cards=root.querySelectorAll("[data-gh-article-cat]");
+  function apply(cat){
+    buttons.forEach(function(b){b.classList.toggle("is-active",b.getAttribute("data-gh-article-filter")===cat);});
+    cards.forEach(function(c){
+      var show=cat==="all"||c.getAttribute("data-gh-article-cat")===cat;
+      c.hidden=!show;
+    });
+  }
+  buttons.forEach(function(b){
+    b.addEventListener("click",function(){apply(b.getAttribute("data-gh-article-filter"));});
+  });
+})();
+</script>
 ${tailScripts(1)}`;
 
   const out = isEn ? 'insights/index-en.html' : 'insights/index.html';
@@ -708,6 +791,7 @@ ${header}
       <img class="gh-article-hero-img" src="${p}${article.image}" alt="${esc(L(article.title))}" loading="lazy">
       <div class="gh-article-body-wrap">
         ${bodyHtml}
+        ${faqSectionHtml(article.faq, lang)}
         ${articleSolutionsFooter(isEn, p)}
       </div>
     </article>
@@ -730,8 +814,8 @@ function reportSchema(report, lang) {
   const isEn = lang === 'en';
   const L = (key) => (isEn ? key.en : key.ar);
   const slug = `${report.slug}${isEn ? '-en' : ''}.html`;
-  return JSON.stringify({
-    '@context': 'https://schema.org',
+  const pageUrl = `https://3dgraphicshouse.com/insights/reports/${slug}`;
+  const articleNode = {
     '@type': 'Article',
     headline: L(report.title),
     description: reportDescription(report, lang),
@@ -743,9 +827,14 @@ function reportSchema(report, lang) {
       name: 'Graphics House',
       logo: { '@type': 'ImageObject', url: 'https://3dgraphicshouse.com/assets/favicon/og-image.png' },
     },
-    mainEntityOfPage: `https://3dgraphicshouse.com/insights/reports/${slug}`,
+    mainEntityOfPage: pageUrl,
     inLanguage: isEn ? 'en' : 'ar',
-  });
+  };
+  const faqNode = faqPageSchema(report.faq, lang, pageUrl);
+  if (faqNode) {
+    return JSON.stringify({ '@context': 'https://schema.org', '@graph': [articleNode, faqNode] });
+  }
+  return JSON.stringify({ '@context': 'https://schema.org', ...articleNode });
 }
 
 function buildReport(report, lang) {
@@ -798,6 +887,7 @@ ${header}
       <img class="gh-article-hero-img" src="${p}${report.image}" alt="${esc(L(report.title))}" loading="lazy">
       <div class="gh-article-body-wrap">
         ${bodyHtml}
+        ${faqSectionHtml(report.faq, lang)}
         ${articleSolutionsFooter(isEn, p)}
       </div>
     </article>
