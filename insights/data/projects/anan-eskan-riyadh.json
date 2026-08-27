@@ -2,10 +2,22 @@
   "slug": "anan-eskan-riyadh",
   "date": "2024-02",
   "image": "assets/projects/rendering/Anan-Escan-Co.01.jpeg",
-  "developer": { "ar": "عنان إسكان للتطوير", "en": "Anan Eskan" },
-  "projectName": { "ar": "مجمع سكني — الرياض", "en": "Residential Community — Riyadh" },
-  "city": { "ar": "الرياض", "en": "Riyadh" },
-  "category": { "ar": "CGI سينمائي · مجسم", "en": "Cinematic CGI · Maquette" },
+  "developer": {
+    "ar": "عنان إسكان للتطوير",
+    "en": "Anan Eskan"
+  },
+  "projectName": {
+    "ar": "مجمع سكني — الرياض",
+    "en": "Residential Community — Riyadh"
+  },
+  "city": {
+    "ar": "الرياض",
+    "en": "Riyadh"
+  },
+  "category": {
+    "ar": "CGI سينمائي · مجسم",
+    "en": "Cinematic CGI · Maquette"
+  },
   "title": {
     "ar": "عنان إسكان للتطوير — إظهار معماري ومجسم لمجمع سكني في الرياض",
     "en": "Anan Eskan — archviz & maquette for a Riyadh residential community"
@@ -19,10 +31,21 @@
     "en": "Anan Eskan project in Riyadh — cinematic archviz and maquettes by Graphics House."
   },
   "services": {
-    "ar": ["رندر خارجي", "فيلم CGI", "مجسم معماري"],
-    "en": ["Exterior renders", "CGI film", "Architectural maquette"]
+    "ar": [
+      "رندر خارجي",
+      "فيلم CGI",
+      "مجسم معماري"
+    ],
+    "en": [
+      "Exterior renders",
+      "CGI film",
+      "Architectural maquette"
+    ]
   },
   "gallery": [
+    "assets/projects/maquettes/anan-eskan-maquette-01.jpeg",
+    "assets/projects/maquettes/anan-eskan-maquette-02.jpeg",
+    "assets/projects/maquettes/anan-eskan-amlak-interview-poster.jpg",
     "assets/projects/rendering/anan-escan2.jpeg",
     "assets/projects/rendering/anan-escan3.jpeg",
     "assets/projects/maquettes/anan-escan3.jpeg"
@@ -30,12 +53,34 @@
   "portfolioHref": "case-study-anan-eskan-en.html",
   "body": {
     "ar": [
-      { "type": "p", "text": "عنان إسكان للتطوير من المطورين النشطين في سوق الرياض السكني. المشروع يحتاج مواد بصرية توضّح الكثافة، المساحات الخضراء، وتنوع الوحدات — قبل أول يوم مبيعات." },
-      { "type": "p", "text": "قدّمنا حزمة CGI ومجسمات تخدم الحملة الإعلامية وصالة البيع معاً، باتساق في الإضاءة والزوايا عبر كل المخرجات." }
+      {
+        "type": "p",
+        "text": "عنان إسكان للتطوير من المطورين النشطين في سوق الرياض السكني. المشروع يحتاج مواد بصرية توضّح الكثافة، المساحات الخضراء، وتنوع الوحدات — قبل أول يوم مبيعات."
+      },
+      {
+        "type": "p",
+        "text": "قدّمنا حزمة CGI ومجسمات تخدم الحملة الإعلامية وصالة البيع معاً، باتساق في الإضاءة والزوايا عبر كل المخرجات."
+      },
+      {
+        "type": "p",
+        "text": "أُضيفت أيضاً أصول الحضور المعرضي: بوستر مقابلة أملاك وفيديو المقابلة مع الرئيس التنفيذي — إلى جانب صور المجسم المعماري. راجع التقرير: [عنان إسكان في Restatex ومقابلة أملاك](https://3dgraphicshouse.com/insights/reports/anan-eskan-restatex-visual-report.html)."
+      }
     ],
     "en": [
-      { "type": "p", "text": "Anan Eskan is among the active developers in Riyadh's residential market. The project needed visuals clarifying density, green space, and unit variety — before day one of sales." },
-      { "type": "p", "text": "We delivered CGI and maquette assets serving both the media campaign and sales gallery with consistent lighting and angles across deliverables." }
+      {
+        "type": "p",
+        "text": "Anan Eskan is among the active developers in Riyadh's residential market. The project needed visuals clarifying density, green space, and unit variety — before day one of sales."
+      },
+      {
+        "type": "p",
+        "text": "We delivered CGI and maquette assets serving both the media campaign and sales gallery with consistent lighting and angles across deliverables."
+      },
+      {
+        "type": "p",
+        "text": "Exhibition assets are also included: the Amlak interview poster and CEO interview video — alongside architectural maquette stills. See the report: [Anan Eskan at Restatex & the Amlak Interview](https://3dgraphicshouse.com/insights/reports/anan-eskan-restatex-visual-report-en.html)."
+      }
     ]
-  }
+  },
+  "video": "assets/projects/maquettes/anan-eskan-amlak-interview.mp4",
+  "videoPoster": "assets/projects/maquettes/anan-eskan-amlak-interview-poster.jpg"
 }

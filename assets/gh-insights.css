@@ -878,6 +878,36 @@ html[dir="rtl"] .gh-ins-proj-meta {
   display: block;
 }
 
+.gh-ins-featured-video {
+  margin: 0 0 32px;
+}
+
+.gh-ins-featured-video-label {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #7a6528;
+}
+
+.gh-ins-featured-video-frame {
+  margin: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  background: #0f0e0c;
+}
+
+.gh-ins-featured-video-frame video,
+.gh-ins-media--video video,
+.gh-ins-report-gal-item video {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: min(70vh, 720px);
+  background: #0f0e0c;
+}
+
 /* ----- Market visual reports (Project Spotlights) ----- */
 .gh-ins-report-filters {
   display: flex;

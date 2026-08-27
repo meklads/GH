@@ -15,7 +15,7 @@ const ASSETS = {
   siteHeaderCss: 31,
   siteHeaderJs: 16,
   ghSiteEnhancements: 28,
-  ghInsights: 20,
+  ghInsights: 27,
   ghFloatWidgets: 2,
   langSwitch: 3,
   ghLeadMagnet: 1,

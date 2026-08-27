@@ -107,6 +107,31 @@ function renderBody(body) {
   return (body || []).map(renderBodyBlock).join('\n');
 }
 
+function isVideoSrc(src) {
+  return /\.mp4($|\?)/i.test(src || '');
+}
+
+/** Gallery / media figure for insights pages (image or mp4 + optional poster). */
+function mediaFigure(src, depthPrefix, { poster, className = 'gh-ins-proj-gal-item', eager = false } = {}) {
+  const p = depthPrefix;
+  const loading = eager ? 'eager' : 'lazy';
+  if (isVideoSrc(src)) {
+    const posterAttr = poster ? ` poster="${p}${poster}"` : '';
+    return `<figure class="${className} gh-ins-media--video"><video controls playsinline preload="metadata"${posterAttr} src="${p}${src}"></video></figure>`;
+  }
+  return `<figure class="${className}"><img src="${p}${src}" alt="" loading="${loading}"></figure>`;
+}
+
+function featuredVideoHtml(entity, depthPrefix, isEn) {
+  if (!entity.video) return '';
+  const poster = entity.videoPoster || '';
+  const label = isEn ? 'Watch interview / clip' : 'شاهد المقابلة / المقطع';
+  return `<div class="gh-ins-featured-video">
+  <p class="gh-ins-featured-video-label">${label}</p>
+  ${mediaFigure(entity.video, depthPrefix, { poster, className: 'gh-ins-featured-video-frame', eager: true })}
+</div>`;
+}
+
 function articleDescription(article, lang) {
   const isEn = lang === 'en';
   const meta = article.metaDescription;
@@ -231,7 +256,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=31">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=28">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=26">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=27">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=16"></script>
 <script defer src="${p}assets/gh-performance.js?v=9"></script>
@@ -851,15 +876,13 @@ function buildReport(report, lang) {
       ? `<p class="gh-ins-report-source">${isEn ? 'Source:' : 'المصدر:'} <a href="${esc(report.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(L(report.sourceLabel))}</a></p>`
       : '';
   const galleryHtml = (report.gallery || [])
-    .filter((src) => src && src !== report.image)
-    .map(
-      (src) =>
-        `<figure class="gh-ins-report-gal-item"><img src="${p}${src}" alt="" loading="lazy"></figure>`
-    )
+    .filter((src) => src && src !== report.image && !isVideoSrc(src))
+    .map((src) => mediaFigure(src, p, { className: 'gh-ins-report-gal-item' }))
     .join('');
   const galleryBlock = galleryHtml
     ? `<div class="gh-ins-report-gallery">${galleryHtml}</div>`
     : '';
+  const videoBlock = featuredVideoHtml(report, p, isEn);
 
   const html = `${headBlock(lang, {
     depth: 2,
@@ -895,6 +918,7 @@ ${header}
         ${source}
       </header>
       <img class="gh-article-hero-img gh-article-hero-img--full" src="${p}${report.image}" alt="${esc(L(report.title))}" loading="eager">
+      ${videoBlock}
       ${galleryBlock}
       <div class="gh-article-body-wrap">
         ${bodyHtml}
@@ -925,11 +949,10 @@ function buildProject(project, lang) {
     .map((s) => `<span class="gh-ins-proj-tag">${esc(s)}</span>`)
     .join('');
   const gallery = (project.gallery || [])
-    .map(
-      (src) =>
-        `<figure class="gh-ins-proj-gal-item"><img src="${p}${src}" alt="" loading="lazy"></figure>`
-    )
+    .filter((src) => src && !isVideoSrc(src))
+    .map((src) => mediaFigure(src, p))
     .join('');
+  const videoBlock = featuredVideoHtml(project, p, isEn);
   const portfolioHref = project.portfolioHref
     ? `${p}${project.portfolioHref}`
     : `${p}portfolio${isEn ? '-en' : ''}.html`;
@@ -964,6 +987,7 @@ ${header}
       </header>
       <img class="gh-article-hero-img" src="${p}${project.image}" alt="${esc(L(project.projectName))}" loading="lazy">
       ${services ? `<div class="gh-ins-proj-tags">${services}</div>` : ''}
+      ${videoBlock}
       <div class="gh-article-body-wrap">
         ${bodyHtml}
         ${gallery ? `<div class="gh-ins-proj-gallery">${gallery}</div>` : ''}
