@@ -35,7 +35,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/site-header.css?v=31">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=28">
-<link rel="stylesheet" href="../assets/gh-insights.css?v=23">
+<link rel="stylesheet" href="../assets/gh-insights.css?v=24">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=2">
 <script defer src="../assets/site-header.js?v=16"></script>
 <script defer src="../assets/gh-performance.js?v=9"></script>
@@ -183,13 +183,17 @@ gtag('config','G-Y67JVE898Z');
       <span class="material-symbols-outlined" aria-hidden="true">article</span>
       Featured Articles
     </a>
+    <a href="#spotlights" class="gh-ins-subnav-link" data-gh-ins-tab="spotlights" role="tab" aria-selected="false">
+      <span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
+      Project Spotlights
+    </a>
     <a href="#cities" class="gh-ins-subnav-link" data-gh-ins-tab="cities" role="tab" aria-selected="false">
       <span class="material-symbols-outlined" aria-hidden="true">location_city</span>
       Cities
     </a>
     <a href="#projects" class="gh-ins-subnav-link" data-gh-ins-tab="projects" role="tab" aria-selected="false">
       <span class="material-symbols-outlined" aria-hidden="true">apartment</span>
-      Featured Projects
+      Our Work
     </a>
     <a href="#ai-tools" class="gh-ins-subnav-link" data-gh-ins-tab="ai-tools" role="tab" aria-selected="false">
       <span class="material-symbols-outlined" aria-hidden="true">smart_toy</span>
@@ -565,6 +569,72 @@ gtag('config','G-Y67JVE898Z');
 </article></div>
     </section>
     
+<section class="gh-ins-section gh-ins-panel" id="spotlights" data-gh-ins-panel="spotlights">
+  <div class="gh-ins-section-head">
+    <h2>Project Spotlights</h2>
+    <p>Visual-readiness reports on local projects under preparation, Gulf, and global references — for developers, marketers, brokers, and architects. Market context, not Graphics House delivery claims.</p>
+  </div>
+  <div class="gh-ins-report-filters" role="group" aria-label="Filter by region">
+    <button type="button" class="gh-ins-report-filter is-active" data-gh-report-filter="all">All</button>
+    <button type="button" class="gh-ins-report-filter" data-gh-report-filter="local">Local</button>
+    <button type="button" class="gh-ins-report-filter" data-gh-report-filter="gulf">Gulf</button>
+    <button type="button" class="gh-ins-report-filter" data-gh-report-filter="global">Global</button>
+  </div>
+  <div class="gh-ins-proj-grid gh-ins-report-grid" id="ghInsReportGrid">
+<article class="gh-ins-report-card" data-gh-report-region="local" data-gh-report-status="under-prep">
+  <a href="reports/jeddah-gate-visual-report-en.html" class="gh-ins-proj-link">
+    <figure class="gh-ins-proj-media">
+      <img src="../assets/projects/rendering/jeddah-forum.jpg" alt="Jeddah Gate" loading="lazy">
+    </figure>
+    <div class="gh-ins-proj-body">
+      <div class="gh-ins-proj-meta">
+        <span class="gh-ins-report-chip">Local (KSA)</span>
+        <span class="gh-ins-report-chip gh-ins-report-chip--status">Under preparation</span>
+      </div>
+      <p class="gh-ins-proj-cat">Jeddah · AlOula</p>
+      <h3>Jeddah Gate: Visual Launch Needs for a Mixed-Use Gate at This Scale</h3>
+      <p class="gh-ins-proj-excerpt">A market visual reading of Jeddah Gate as a large mixed-use district in Jeddah — investor vs buyer packs, program clarity, day/night, and interactive block selection. Market context, not a Graphics House delivery claim.</p>
+      <span class="gh-ins-read-more">Read report <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></span>
+    </div>
+  </a>
+</article>
+<article class="gh-ins-report-card" data-gh-report-region="local" data-gh-report-status="under-prep">
+  <a href="reports/sedra-roshn-visual-report-en.html" class="gh-ins-proj-link">
+    <figure class="gh-ins-proj-media">
+      <img src="../assets/projects/rendering/alrajhi3.jpeg" alt="Sedra — ROSHN" loading="lazy">
+    </figure>
+    <div class="gh-ins-proj-body">
+      <div class="gh-ins-proj-meta">
+        <span class="gh-ins-report-chip">Local (KSA)</span>
+        <span class="gh-ins-report-chip gh-ins-report-chip--status">Under preparation</span>
+      </div>
+      <p class="gh-ins-proj-cat">Riyadh · ROSHN</p>
+      <h3>Sedra — ROSHN: Community Lifestyle Visual Sales, Phasing &amp; Product Mix</h3>
+      <p class="gh-ins-proj-excerpt">A market visual reading of Sedra in north Riyadh — lifestyle rhythm, sales phasing, and broker product comparison including SEDRA Residence. Market context, not a Graphics House delivery claim.</p>
+      <span class="gh-ins-read-more">Read report <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></span>
+    </div>
+  </a>
+</article></div>
+</section>
+<script>
+(function(){
+  var root=document.getElementById("spotlights");
+  if(!root)return;
+  var buttons=root.querySelectorAll("[data-gh-report-filter]");
+  var cards=root.querySelectorAll("[data-gh-report-region]");
+  function apply(region){
+    buttons.forEach(function(b){b.classList.toggle("is-active",b.getAttribute("data-gh-report-filter")===region);});
+    cards.forEach(function(c){
+      var show=region==="all"||c.getAttribute("data-gh-report-region")===region;
+      c.hidden=!show;
+    });
+  }
+  buttons.forEach(function(b){
+    b.addEventListener("click",function(){apply(b.getAttribute("data-gh-report-filter"));});
+  });
+})();
+</script>
+    
 <section class="gh-ins-section gh-ins-panel" id="cities" data-gh-ins-panel="cities">
   <div class="gh-ins-section-head">
     <h2>Archviz by City</h2>
@@ -652,7 +722,7 @@ gtag('config','G-Y67JVE898Z');
     
 <section class="gh-ins-section gh-ins-panel" id="projects" data-gh-ins-panel="projects">
   <div class="gh-ins-section-head">
-    <h2>Featured Projects</h2>
+    <h2>Our Work</h2>
     <p>Selected Graphics House deliverables across the GCC — archviz, smart maquettes, CGI films, and interactive sales systems. Order refreshes on each visit.</p>
   </div>
   <div class="gh-ins-proj-grid" id="ghInsProjGrid">

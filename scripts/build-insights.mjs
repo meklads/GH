@@ -14,6 +14,7 @@ const ROOT = path.join(__dirname, '..');
 const DATA = JSON.parse(fs.readFileSync(path.join(ROOT, 'insights/data/content.json'), 'utf8'));
 const ARTICLES_DIR = path.join(ROOT, 'insights/data/articles');
 const PROJECTS_DIR = path.join(ROOT, 'insights/data/projects');
+const REPORTS_DIR = path.join(ROOT, 'insights/data/reports');
 
 function loadProjects() {
   if (!fs.existsSync(PROJECTS_DIR)) return [];
@@ -33,8 +34,18 @@ function loadArticles() {
     .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 }
 
+function loadReports() {
+  if (!fs.existsSync(REPORTS_DIR)) return [];
+  return fs
+    .readdirSync(REPORTS_DIR)
+    .filter((name) => name.endsWith('.json'))
+    .map((f) => JSON.parse(fs.readFileSync(path.join(REPORTS_DIR, f), 'utf8')))
+    .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+}
+
 const ARTICLES = loadArticles();
 const PROJECTS = loadProjects();
+const REPORTS = loadReports();
 
 function extract(html, pattern) {
   const m = html.match(pattern);
@@ -170,7 +181,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=31">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=28">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=23">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=24">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=16"></script>
 <script defer src="${p}assets/gh-performance.js?v=9"></script>
@@ -203,8 +214,9 @@ function hubSubNav(lang) {
   const isEn = lang === 'en';
   const items = [
     { id: 'articles', label: isEn ? 'Featured Articles' : 'مقالات مميزة', icon: 'article' },
+    { id: 'spotlights', label: isEn ? 'Project Spotlights' : 'مشاريع مميزة', icon: 'travel_explore' },
     { id: 'cities', label: isEn ? 'Cities' : 'المدن', icon: 'location_city' },
-    { id: 'projects', label: isEn ? 'Featured Projects' : 'مشاريع مميزة', icon: 'apartment' },
+    { id: 'projects', label: isEn ? 'Our Work' : 'أعمالنا', icon: 'apartment' },
     { id: 'ai-tools', label: isEn ? 'AI Tools' : 'أدوات الذكاء الاصطناعي', icon: 'smart_toy' },
     { id: 'downloads', label: isEn ? 'Downloads' : 'التحميلات', icon: 'download' },
     { id: 'newsletter', label: isEn ? 'Newsletter' : 'النشرة', icon: 'mail' },
@@ -389,6 +401,93 @@ function projectCard(project, lang, p) {
 </article>`;
 }
 
+function regionLabel(region, isEn) {
+  const map = {
+    local: isEn ? 'Local (KSA)' : 'محلي (السعودية)',
+    gulf: isEn ? 'Gulf' : 'خليجي',
+    global: isEn ? 'Global' : 'عالمي',
+  };
+  return map[region] || map.local;
+}
+
+function statusLabel(status, isEn) {
+  const map = {
+    'under-prep': isEn ? 'Under preparation' : 'تحت التجهيز',
+    live: isEn ? 'Live launch' : 'إطلاق قائم',
+    completed: isEn ? 'Completed reference' : 'مرجع مكتمل',
+  };
+  return map[status] || map['under-prep'];
+}
+
+function reportCard(report, lang, p) {
+  const isEn = lang === 'en';
+  const L = (key) => (isEn ? key.en : key.ar);
+  const href = `reports/${report.slug}${isEn ? '-en' : ''}.html`;
+  const readLabel = isEn ? 'Read report' : 'اقرأ التقرير';
+  const arrow = isEn ? 'arrow_forward' : 'arrow_back';
+  return `
+<article class="gh-ins-report-card" data-gh-report-region="${esc(report.region || 'local')}" data-gh-report-status="${esc(report.status || 'under-prep')}">
+  <a href="${href}" class="gh-ins-proj-link">
+    <figure class="gh-ins-proj-media">
+      <img src="${p}${report.image}" alt="${esc(L(report.projectName || report.title))}" loading="lazy">
+    </figure>
+    <div class="gh-ins-proj-body">
+      <div class="gh-ins-proj-meta">
+        <span class="gh-ins-report-chip">${esc(regionLabel(report.region, isEn))}</span>
+        <span class="gh-ins-report-chip gh-ins-report-chip--status">${esc(statusLabel(report.status, isEn))}</span>
+      </div>
+      <p class="gh-ins-proj-cat">${esc(L(report.city))} · ${esc(L(report.developer))}</p>
+      <h3>${esc(L(report.title))}</h3>
+      <p class="gh-ins-proj-excerpt">${esc(L(report.excerpt))}</p>
+      <span class="gh-ins-read-more">${readLabel} <span class="material-symbols-outlined" style="font-size:14px">${arrow}</span></span>
+    </div>
+  </a>
+</article>`;
+}
+
+function marketReportsSection(lang) {
+  const isEn = lang === 'en';
+  const p = '../';
+  const cards = REPORTS.map((r) => reportCard(r, lang, p)).join('');
+  const empty = isEn
+    ? 'Reports are being prepared — check back soon.'
+    : 'التقارير قيد الإعداد — عد قريباً.';
+  return `
+<section class="gh-ins-section gh-ins-panel" id="spotlights" data-gh-ins-panel="spotlights">
+  <div class="gh-ins-section-head">
+    <h2>${isEn ? 'Project Spotlights' : 'مشاريع مميزة'}</h2>
+    <p>${isEn
+    ? 'Visual-readiness reports on local projects under preparation, Gulf, and global references — for developers, marketers, brokers, and architects. Market context, not Graphics House delivery claims.'
+    : 'تقارير جاهزية بصرية لمشاريع محلية تحت التجهيز، وخليجية، وعالمية — للمطورين والمسوّقين والوسطاء والمكاتب المعمارية. سياق سوق، لا ادّعاء تسليم من Graphics House.'}</p>
+  </div>
+  <div class="gh-ins-report-filters" role="group" aria-label="${isEn ? 'Filter by region' : 'تصفية حسب النطاق'}">
+    <button type="button" class="gh-ins-report-filter is-active" data-gh-report-filter="all">${isEn ? 'All' : 'الكل'}</button>
+    <button type="button" class="gh-ins-report-filter" data-gh-report-filter="local">${isEn ? 'Local' : 'محلي'}</button>
+    <button type="button" class="gh-ins-report-filter" data-gh-report-filter="gulf">${isEn ? 'Gulf' : 'خليجي'}</button>
+    <button type="button" class="gh-ins-report-filter" data-gh-report-filter="global">${isEn ? 'Global' : 'عالمي'}</button>
+  </div>
+  <div class="gh-ins-proj-grid gh-ins-report-grid" id="ghInsReportGrid">${cards || `<p class="gh-ins-report-empty">${empty}</p>`}</div>
+</section>
+<script>
+(function(){
+  var root=document.getElementById("spotlights");
+  if(!root)return;
+  var buttons=root.querySelectorAll("[data-gh-report-filter]");
+  var cards=root.querySelectorAll("[data-gh-report-region]");
+  function apply(region){
+    buttons.forEach(function(b){b.classList.toggle("is-active",b.getAttribute("data-gh-report-filter")===region);});
+    cards.forEach(function(c){
+      var show=region==="all"||c.getAttribute("data-gh-report-region")===region;
+      c.hidden=!show;
+    });
+  }
+  buttons.forEach(function(b){
+    b.addEventListener("click",function(){apply(b.getAttribute("data-gh-report-filter"));});
+  });
+})();
+</script>`;
+}
+
 function featuredProjectsSection(lang) {
   const isEn = lang === 'en';
   const p = '../';
@@ -396,7 +495,7 @@ function featuredProjectsSection(lang) {
   return `
 <section class="gh-ins-section gh-ins-panel" id="projects" data-gh-ins-panel="projects">
   <div class="gh-ins-section-head">
-    <h2>${isEn ? 'Featured Projects' : 'مشاريع مميزة'}</h2>
+    <h2>${isEn ? 'Our Work' : 'أعمالنا'}</h2>
     <p>${isEn
     ? 'Selected Graphics House deliverables across the GCC — archviz, smart maquettes, CGI films, and interactive sales systems. Order refreshes on each visit.'
     : 'نماذج من أعمال Graphics House في الخليج — إظهار معماري، مجسمات ذكية، أفلام CGI، ومنصات مبيعات. الترتيب يتغيّر عند كل زيارة.'}</p>
@@ -551,6 +650,7 @@ ${header}
       </div>
       <div class="gh-ins-articles-grid">${articlesHtml}</div>
     </section>
+    ${marketReportsSection(lang)}
     ${citiesSection(lang)}
     ${featuredProjectsSection(lang)}
     ${aiToolsSection(lang)}
@@ -618,6 +718,96 @@ ${tailScripts(depth)}`;
 
   fs.writeFileSync(path.join(ROOT, 'insights/articles', slug), html, 'utf8');
   console.log('  article:', slug);
+}
+
+function reportDescription(report, lang) {
+  const isEn = lang === 'en';
+  if (report.metaDescription) return isEn ? report.metaDescription.en : report.metaDescription.ar;
+  return isEn ? report.excerpt.en : report.excerpt.ar;
+}
+
+function reportSchema(report, lang) {
+  const isEn = lang === 'en';
+  const L = (key) => (isEn ? key.en : key.ar);
+  const slug = `${report.slug}${isEn ? '-en' : ''}.html`;
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: L(report.title),
+    description: reportDescription(report, lang),
+    image: `https://3dgraphicshouse.com/${report.image}`,
+    datePublished: `${report.date}-01`,
+    author: { '@type': 'Organization', name: 'Graphics House' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Graphics House',
+      logo: { '@type': 'ImageObject', url: 'https://3dgraphicshouse.com/assets/favicon/og-image.png' },
+    },
+    mainEntityOfPage: `https://3dgraphicshouse.com/insights/reports/${slug}`,
+    inLanguage: isEn ? 'en' : 'ar',
+  });
+}
+
+function buildReport(report, lang) {
+  const isEn = lang === 'en';
+  const L = (key) => (isEn ? key.en : key.ar);
+  const depth = 2;
+  const { header, footer } = getLayout(lang, depth);
+  const p = '../../';
+  const slug = `${report.slug}${isEn ? '-en' : ''}.html`;
+  const bodyHtml = renderBody(L(report.body));
+  const description = reportDescription(report, lang);
+  const source =
+    report.sourceUrl && report.sourceLabel
+      ? `<p class="gh-ins-report-source">${isEn ? 'Market map / public context:' : 'خريطة سوق / سياق عام:'} <a href="${esc(report.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(L(report.sourceLabel))}</a></p>`
+      : '';
+
+  const html = `${headBlock(lang, {
+    depth: 2,
+    title: L(report.title),
+    description,
+    canonical: `https://3dgraphicshouse.com/insights/reports/${slug}`,
+    altEn: `https://3dgraphicshouse.com/insights/reports/${report.slug}-en.html`,
+    altAr: `https://3dgraphicshouse.com/insights/reports/${report.slug}.html`,
+    ogType: 'article',
+  })}
+<script type="application/ld+json">${reportSchema(report, lang)}</script>
+${header}
+<main class="gh-article-page-wrap">
+  <div class="gh-ins-wrap">
+    <a href="../${isEn ? 'index-en' : 'index'}.html#spotlights" class="gh-back-link">
+      <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_back' : 'arrow_forward'}</span>
+      ${isEn ? 'Back to Project Spotlights' : 'العودة إلى مشاريع مميزة'}
+    </a>
+    <article>
+      <header class="gh-article-header">
+        <div class="gh-ins-report-page-chips">
+          <span class="gh-ins-report-chip">${esc(regionLabel(report.region, isEn))}</span>
+          <span class="gh-ins-report-chip gh-ins-report-chip--status">${esc(statusLabel(report.status, isEn))}</span>
+          <span class="gh-ins-cat">${esc(L(report.category))}</span>
+        </div>
+        <h1>${L(report.title)}</h1>
+        <p class="gh-dek">${L(report.excerpt)}</p>
+        <div class="gh-ins-card-meta" style="margin:0">
+          <span>${esc(L(report.projectName))} · ${esc(L(report.city))}</span>
+          <time class="gh-byline" datetime="${report.date}">${L(report.dateLabel)}</time>
+          <span class="gh-ins-read-time">${readingMinutes(report, lang)}</span>
+        </div>
+        ${source}
+      </header>
+      <img class="gh-article-hero-img" src="${p}${report.image}" alt="${esc(L(report.title))}" loading="lazy">
+      <div class="gh-article-body-wrap">
+        ${bodyHtml}
+        ${articleSolutionsFooter(isEn, p)}
+      </div>
+    </article>
+  </div>
+</main>
+${footer}
+${tailScripts(depth)}`;
+
+  fs.writeFileSync(path.join(ROOT, 'insights/reports', slug), html, 'utf8');
+  console.log('  report:', slug);
 }
 
 function buildProject(project, lang) {
@@ -905,6 +1095,7 @@ function buildRedirects() {
     ['insights/articles.html', 'index.html'],
     ['insights/news.html', 'index.html'],
     ['insights/case-studies.html', 'index.html'],
+    ['insights/reports.html', 'index.html#spotlights'],
   ];
   for (const [file, target] of pages) {
     const html = `<!DOCTYPE html>
@@ -936,6 +1127,10 @@ function updateSitemap() {
     urls.push(`https://3dgraphicshouse.com/insights/projects/${proj.slug}.html`);
     urls.push(`https://3dgraphicshouse.com/insights/projects/${proj.slug}-en.html`);
   }
+  for (const report of REPORTS) {
+    urls.push(`https://3dgraphicshouse.com/insights/reports/${report.slug}.html`);
+    urls.push(`https://3dgraphicshouse.com/insights/reports/${report.slug}-en.html`);
+  }
   for (const t of DATA.tools) {
     urls.push(`https://3dgraphicshouse.com/insights/tools/${t.slug}.html`);
     urls.push(`https://3dgraphicshouse.com/insights/tools/${t.slug}-en.html`);
@@ -957,10 +1152,15 @@ function updateSitemap() {
 
 console.log('Building Insights…');
 fs.mkdirSync(path.join(ROOT, 'insights/articles'), { recursive: true });
+fs.mkdirSync(path.join(ROOT, 'insights/reports'), { recursive: true });
 ['ar', 'en'].forEach((lang) => buildHub(lang));
 ARTICLES.forEach((a) => {
   buildArticle(a, 'ar');
   buildArticle(a, 'en');
+});
+REPORTS.forEach((report) => {
+  buildReport(report, 'ar');
+  buildReport(report, 'en');
 });
 PROJECTS.forEach((proj) => {
   buildProject(proj, 'ar');

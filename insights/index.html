@@ -35,7 +35,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/site-header.css?v=31">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=28">
-<link rel="stylesheet" href="../assets/gh-insights.css?v=23">
+<link rel="stylesheet" href="../assets/gh-insights.css?v=24">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=2">
 <script defer src="../assets/site-header.js?v=16"></script>
 <script defer src="../assets/gh-performance.js?v=9"></script>
@@ -183,13 +183,17 @@ gtag('config','G-Y67JVE898Z');
       <span class="material-symbols-outlined" aria-hidden="true">article</span>
       مقالات مميزة
     </a>
+    <a href="#spotlights" class="gh-ins-subnav-link" data-gh-ins-tab="spotlights" role="tab" aria-selected="false">
+      <span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
+      مشاريع مميزة
+    </a>
     <a href="#cities" class="gh-ins-subnav-link" data-gh-ins-tab="cities" role="tab" aria-selected="false">
       <span class="material-symbols-outlined" aria-hidden="true">location_city</span>
       المدن
     </a>
     <a href="#projects" class="gh-ins-subnav-link" data-gh-ins-tab="projects" role="tab" aria-selected="false">
       <span class="material-symbols-outlined" aria-hidden="true">apartment</span>
-      مشاريع مميزة
+      أعمالنا
     </a>
     <a href="#ai-tools" class="gh-ins-subnav-link" data-gh-ins-tab="ai-tools" role="tab" aria-selected="false">
       <span class="material-symbols-outlined" aria-hidden="true">smart_toy</span>
@@ -565,6 +569,72 @@ gtag('config','G-Y67JVE898Z');
 </article></div>
     </section>
     
+<section class="gh-ins-section gh-ins-panel" id="spotlights" data-gh-ins-panel="spotlights">
+  <div class="gh-ins-section-head">
+    <h2>مشاريع مميزة</h2>
+    <p>تقارير جاهزية بصرية لمشاريع محلية تحت التجهيز، وخليجية، وعالمية — للمطورين والمسوّقين والوسطاء والمكاتب المعمارية. سياق سوق، لا ادّعاء تسليم من Graphics House.</p>
+  </div>
+  <div class="gh-ins-report-filters" role="group" aria-label="تصفية حسب النطاق">
+    <button type="button" class="gh-ins-report-filter is-active" data-gh-report-filter="all">الكل</button>
+    <button type="button" class="gh-ins-report-filter" data-gh-report-filter="local">محلي</button>
+    <button type="button" class="gh-ins-report-filter" data-gh-report-filter="gulf">خليجي</button>
+    <button type="button" class="gh-ins-report-filter" data-gh-report-filter="global">عالمي</button>
+  </div>
+  <div class="gh-ins-proj-grid gh-ins-report-grid" id="ghInsReportGrid">
+<article class="gh-ins-report-card" data-gh-report-region="local" data-gh-report-status="under-prep">
+  <a href="reports/jeddah-gate-visual-report.html" class="gh-ins-proj-link">
+    <figure class="gh-ins-proj-media">
+      <img src="../assets/projects/rendering/jeddah-forum.jpg" alt="باب جدة / جدة جيت" loading="lazy">
+    </figure>
+    <div class="gh-ins-proj-body">
+      <div class="gh-ins-proj-meta">
+        <span class="gh-ins-report-chip">محلي (السعودية)</span>
+        <span class="gh-ins-report-chip gh-ins-report-chip--status">تحت التجهيز</span>
+      </div>
+      <p class="gh-ins-proj-cat">جدة · الأولى / AlOula</p>
+      <h3>باب جدة: احتياجات الإطلاق البصري لبوابة مختلطة بهذا الحجم</h3>
+      <p class="gh-ins-proj-excerpt">قراءة بصرية لسوق باب جدة / جدة جيت كمخطط مختلط واسع في جدة — حزم مستثمر ومشتري، وضوح البرنامج، نهار/ليل، واختيار بلوك تفاعلي. سياق سوق لا ادّعاء تسليم Graphics House.</p>
+      <span class="gh-ins-read-more">اقرأ التقرير <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></span>
+    </div>
+  </a>
+</article>
+<article class="gh-ins-report-card" data-gh-report-region="local" data-gh-report-status="under-prep">
+  <a href="reports/sedra-roshn-visual-report.html" class="gh-ins-proj-link">
+    <figure class="gh-ins-proj-media">
+      <img src="../assets/projects/rendering/alrajhi3.jpeg" alt="سدرة — ROSHN" loading="lazy">
+    </figure>
+    <div class="gh-ins-proj-body">
+      <div class="gh-ins-proj-meta">
+        <span class="gh-ins-report-chip">محلي (السعودية)</span>
+        <span class="gh-ins-report-chip gh-ins-report-chip--status">تحت التجهيز</span>
+      </div>
+      <p class="gh-ins-proj-cat">الرياض · روشن</p>
+      <h3>سدرة — ROSHN: مبيعات بصرية لنمط حياة المجتمع والمراحل ومزيج المنتجات</h3>
+      <p class="gh-ins-proj-excerpt">قراءة بصرية لسوق سدرة شمال الرياض — إيقاع حياة، مراحل بيع، ومقارنة منتجات للوسطاء بما فيها SEDRA Residence. سياق سوق لا ادّعاء تسليم Graphics House.</p>
+      <span class="gh-ins-read-more">اقرأ التقرير <span class="material-symbols-outlined" style="font-size:14px">arrow_back</span></span>
+    </div>
+  </a>
+</article></div>
+</section>
+<script>
+(function(){
+  var root=document.getElementById("spotlights");
+  if(!root)return;
+  var buttons=root.querySelectorAll("[data-gh-report-filter]");
+  var cards=root.querySelectorAll("[data-gh-report-region]");
+  function apply(region){
+    buttons.forEach(function(b){b.classList.toggle("is-active",b.getAttribute("data-gh-report-filter")===region);});
+    cards.forEach(function(c){
+      var show=region==="all"||c.getAttribute("data-gh-report-region")===region;
+      c.hidden=!show;
+    });
+  }
+  buttons.forEach(function(b){
+    b.addEventListener("click",function(){apply(b.getAttribute("data-gh-report-filter"));});
+  });
+})();
+</script>
+    
 <section class="gh-ins-section gh-ins-panel" id="cities" data-gh-ins-panel="cities">
   <div class="gh-ins-section-head">
     <h2>الإظهار المعماري حسب المدينة</h2>
@@ -652,7 +722,7 @@ gtag('config','G-Y67JVE898Z');
     
 <section class="gh-ins-section gh-ins-panel" id="projects" data-gh-ins-panel="projects">
   <div class="gh-ins-section-head">
-    <h2>مشاريع مميزة</h2>
+    <h2>أعمالنا</h2>
     <p>نماذج من أعمال Graphics House في الخليج — إظهار معماري، مجسمات ذكية، أفلام CGI، ومنصات مبيعات. الترتيب يتغيّر عند كل زيارة.</p>
   </div>
   <div class="gh-ins-proj-grid" id="ghInsProjGrid">

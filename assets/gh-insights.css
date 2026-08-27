@@ -878,6 +878,89 @@ html[dir="rtl"] .gh-ins-proj-meta {
   display: block;
 }
 
+/* ----- Market visual reports (Project Spotlights) ----- */
+.gh-ins-report-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 28px;
+}
+
+.gh-ins-report-filter {
+  appearance: none;
+  border: 1px solid #e0dcd4;
+  background: #fff;
+  color: #5c574f;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.gh-ins-report-filter:hover {
+  border-color: rgba(201, 168, 76, 0.55);
+  color: #1a1814;
+}
+
+.gh-ins-report-filter.is-active {
+  border-color: #c9a84c;
+  background: rgba(201, 168, 76, 0.12);
+  color: #1a1814;
+}
+
+.gh-ins-report-chip {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #8a6d1f;
+  background: rgba(201, 168, 76, 0.14);
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.gh-ins-report-chip--status {
+  color: #4a5560;
+  background: #eef1f4;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.gh-ins-report-page-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.gh-ins-report-source {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #6b6560;
+}
+
+.gh-ins-report-source a {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.gh-ins-report-empty {
+  grid-column: 1 / -1;
+  color: #6b6560;
+  margin: 0;
+}
+
+.gh-ins-report-card[hidden] {
+  display: none !important;
+}
+
 /* ----- Newsletter CTA ----- */
 .gh-ins-newsletter {
   background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #f0eeea 100%);
