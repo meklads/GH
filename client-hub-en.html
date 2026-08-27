@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" dir="ltr" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Track your project | Graphics House</title>
+<meta name="description" content="Private project files portal — Graphics House">
+<link rel="canonical" href="https://3dgraphicshouse.com/client-hub-en.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
+<style>
+:root{--gold:#C9A84C;--ink:#0A0A0A;--paper:#FAFAF8}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#0A0A0A;color:var(--paper);font-family:Inter,sans-serif}
+.gh-hub-hero{padding:56px 24px 32px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.18),transparent 55%),linear-gradient(180deg,#121212,#0A0A0A)}
+.gh-hub-hero img{height:56px;width:auto;margin:0 auto 20px;display:block}
+.gh-hub-hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);margin:0 0 10px;font-weight:700}
+.gh-hub-hero p{margin:0 auto;max-width:480px;color:rgba(255,255,255,.62);font-size:15px;line-height:1.7}
+.gh-hub-wrap{max-width:880px;margin:0 auto;padding:24px 24px 64px}
+.gh-hub-gate{max-width:400px;margin:40px auto;padding:28px 24px;border:1px solid rgba(201,168,76,.3);border-radius:18px;background:rgba(201,168,76,.06)}
+.gh-hub-gate label{display:block;font-size:13px;color:rgba(255,255,255,.7);margin-bottom:10px}
+.gh-hub-gate input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(201,168,76,.35);background:#111;color:#FAFAF8;font-size:16px;font-family:inherit}
+.gh-hub-gate button{width:100%;margin-top:14px;padding:14px;border:0;border-radius:999px;background:var(--gold);color:#0A0A0A;font-weight:800;font-size:15px;cursor:pointer;font-family:inherit}
+.gh-hub-gate button:hover{background:#d9b860}
+.gh-hub-err{color:#f0a0a0;font-size:13px;margin-top:12px}
+.gh-hub-list{display:grid;gap:16px}
+.gh-hub-card{display:flex;gap:16px;align-items:flex-start;padding:20px;border-radius:16px;border:1px solid rgba(201,168,76,.22);background:rgba(255,255,255,.03)}
+.gh-hub-card__icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(201,168,76,.15);color:var(--gold);flex-shrink:0}
+.gh-hub-card h2{margin:0 0 6px;font-size:18px;font-weight:700}
+.gh-hub-card p{margin:0 0 14px;font-size:14px;line-height:1.65;color:rgba(255,255,255,.6)}
+.gh-hub-card__btn{display:inline-flex;padding:10px 18px;border-radius:999px;background:var(--gold);color:#0A0A0A;text-decoration:none;font-size:13px;font-weight:800}
+.gh-hub-card__btn:hover{background:#d9b860}
+.gh-hub-foot{text-align:center;padding:24px;color:rgba(255,255,255,.4);font-size:12px}
+.gh-hub-foot a{color:rgba(201,168,76,.85);text-decoration:none}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+  <header class="gh-hub-hero">
+    <img src="assets/logo-gold.png" alt="Graphics House" width="180" height="56">
+    <h1>Track your project</h1>
+    <p>A private portal for your project files and documents. Password protected — authorized clients only.</p>
+  </header>
+
+  <main class="gh-hub-wrap">
+    <section id="ghHubGate" class="gh-hub-gate" aria-label="Protected access">
+      <form id="ghHubForm">
+        <label for="ghHubPass">Password</label>
+        <input id="ghHubPass" type="password" autocomplete="current-password" required placeholder="••••••••">
+        <button type="submit">Enter</button>
+        <p id="ghHubErr" class="gh-hub-err" hidden>Incorrect password.</p>
+      </form>
+    </section>
+
+    <section id="ghHubApp" hidden>
+      <div id="ghHubList" class="gh-hub-list" data-prefix="" aria-label="Private files"></div>
+    </section>
+  </main>
+
+  <p class="gh-hub-foot"><a href="/">Back to site</a> · Graphics House</p>
+  <script defer src="assets/gh-client-hub.js?v=1"></script>
+</body>
+</html>
