@@ -44,6 +44,7 @@ const today = new Date().toISOString().slice(0, 10);
 const urls = [...byLoc.entries()]
   .filter(([loc]) => !isRedirectOrNoindex(loc))
   .filter(([loc]) => !loc.includes('/insights/downloads/files/'))
+  .filter(([loc]) => !/\/20\d{2}\/\d{2}\/\d{2}\/?$/.test(loc))
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([loc, { priority }]) =>
     `  <url><loc>${loc}</loc><lastmod>${today}</lastmod><priority>${priority}</priority></url>`

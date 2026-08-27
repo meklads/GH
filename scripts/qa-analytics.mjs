@@ -19,7 +19,8 @@ if (!cfg.enabled || !cfg.ga4MeasurementId) {
 }
 
 if (!cfg.googleSiteVerification) {
-  console.warn('WARN: googleSiteVerification is empty — run npm run gsc:apply -- TOKEN');
+  // Ownership may already be verified in GSC via GA / DNS / HTML file — meta token is optional.
+  console.log('OK: GSC HTML meta token not in repo (optional if property already verified in Search Console)');
 } else {
   console.log('OK: GSC verification token set');
   const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');

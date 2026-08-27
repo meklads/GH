@@ -7,16 +7,12 @@ Disallow: /wp-*.php
 Disallow: /goods/
 Disallow: /shopdetail/
 Disallow: /product/
-Disallow: /feed
-Disallow: /feed/
-Disallow: /wp-json
-Disallow: /2024/
-Disallow: /2023/
-Disallow: /2022/
 Disallow: /pcmypage
 Disallow: /us-store_
 Disallow: /search
 Disallow: /recruit
+Disallow: /feed/
+Disallow: /wp-json/
 Disallow: /events/
 Disallow: /feature/
 Disallow: /lander
@@ -26,9 +22,5 @@ Disallow: /en-backup.html
 Disallow: /en-v2.html
 Disallow: /offer-lite.html
 Disallow: /assets/projects/maquettes/WhatsApp-
-Disallow: /assets/downloads/
-Disallow: /assets/share/
-Disallow: /client-hub.html
-Disallow: /client-hub-en.html
 
 Sitemap: https://3dgraphicshouse.com/sitemap.xml

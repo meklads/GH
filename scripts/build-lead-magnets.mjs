@@ -12,7 +12,7 @@ const OUT = path.join(ROOT, 'insights/downloads');
 const FILES = path.join(OUT, 'files');
 
 const ASSETS = {
-  siteHeaderCss: 31,
+  siteHeaderCss: 35,
   siteHeaderJs: 16,
   ghSiteEnhancements: 28,
   ghInsights: 27,
@@ -225,6 +225,7 @@ function buildChecklistPrintFile(lang) {
 <head>
 <meta charset="UTF-8">
 <title>${isEn ? 'Visual Launch Readiness Checklist' : 'قائمة جاهزية الإطلاق البصري'} | Graphics House</title>
+<meta name="robots" content="noindex,nofollow">
 <style>${printStyles(isEn)}</style>
 </head>
 <body>
@@ -262,6 +263,7 @@ function buildBriefPrintFile(lang) {
 <head>
 <meta charset="UTF-8">
 <title>${isEn ? 'Visual Project Brief Template' : 'نموذج Brief للمشروع البصري'} | Graphics House</title>
+<meta name="robots" content="noindex,nofollow">
 <style>${printStyles(isEn)}</style>
 </head>
 <body>
@@ -494,7 +496,5 @@ updateSitemap([
   'https://3dgraphicshouse.com/insights/downloads/visual-launch-checklist-en.html',
   'https://3dgraphicshouse.com/insights/downloads/visual-project-brief.html',
   'https://3dgraphicshouse.com/insights/downloads/visual-project-brief-en.html',
-  'https://3dgraphicshouse.com/insights/downloads/files/visual-project-brief-ar.html',
-  'https://3dgraphicshouse.com/insights/downloads/files/visual-project-brief-en.html',
 ]);
 console.log('Done.');

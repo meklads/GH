@@ -53,6 +53,7 @@ const SITEMAP_REDIRECT_STUBS = new Set([
   'motion-graphic/index.html',
   'media-production/index.html',
   'interactive-presentation/index.html',
+  'interactive/index.html',
   'contact/index.html',
   'contact-us-2/index.html',
   'clients/index.html',
@@ -557,6 +558,7 @@ function patchHtml(html, rel) {
 function buildSitemap(files) {
   const urls = files
     .filter((f) => !SITEMAP_SKIP.has(f) && !SITEMAP_REDIRECT_STUBS.has(f) && !LEGACY_NOINDEX.has(f))
+    .filter((f) => !f.startsWith('insights/downloads/files/'))
     .map((f) => {
       const loc = f === 'index.html' ? `${BASE}/` : `${BASE}/${f}`;
       let priority = '0.6';
@@ -603,6 +605,8 @@ Disallow: /pcmypage
 Disallow: /us-store_
 Disallow: /search
 Disallow: /recruit
+Disallow: /feed/
+Disallow: /wp-json/
 Disallow: /events/
 Disallow: /feature/
 Disallow: /lander
@@ -685,6 +689,7 @@ function writeFileRedirect(fromFile, toPath) {
 writeDirRedirect('privacy-policy', 'privacy-policy.html');
 writeDirRedirect('folio', 'portfolio.html');
 writeDirRedirect('interactive-presentation', 'services/interactive.html');
+writeDirRedirect('interactive', 'services/interactive-experiences.html');
 writeDirRedirect('contact', 'contact-us.html');
 writeDirRedirect('portfolio', 'portfolio.html');
 writeDirRedirect('who-we-are', 'who-we-are.html');
