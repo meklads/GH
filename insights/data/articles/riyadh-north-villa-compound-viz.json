@@ -1,0 +1,434 @@
+{
+  "slug": "riyadh-north-villa-compound-viz",
+  "featured": false,
+  "date": "2026-08",
+  "dateLabel": {
+    "ar": "أغسطس 2026",
+    "en": "Aug 2026"
+  },
+  "category": {
+    "ar": "نوع المشروع",
+    "en": "Project Type"
+  },
+  "image": "assets/projects/rendering/alrajhi3.jpeg",
+  "title": {
+    "ar": "مجمّع فلل شمال الرياض: كيف تبيع الخصوصية والمقارنة لا واجهة واحدة؟",
+    "en": "North Riyadh Villa Compounds: Sell Privacy & Model Comparison, Not One Hero Façade"
+  },
+  "excerpt": {
+    "ar": "مجمّعات الفلل في شمال الرياض تُباع بالخصوصية والواجهة الجانبية والحديقة ومقارنة النماذج للوسطاء — لا برندر واجهة بطولية وحده. دليل تشغيلي للمراحل والتشطيب النموذجي ونسيج المجمّع.",
+    "en": "North Riyadh villa compounds sell on privacy, side elevations, gardens, and broker model comparison — not a single hero façade. An operating guide to phasing, show-villa finishes, and compound fabric."
+  },
+  "metaDescription": {
+    "ar": "إظهار مجمّع فلل شمال الرياض: خصوصية، واجهات جانبية، حدائق، مقارنة نماذج، مراحل، فيلا نموذجية — نظام Graphics House للمطورين والوسطاء.",
+    "en": "North Riyadh villa-compound visualization: privacy, side elevations, gardens, model comparison, phasing & show-villa finishes — Graphics House system for developers and brokers."
+  },
+  "body": {
+    "ar": [
+      {
+        "type": "p",
+        "text": "شمال الرياض يشهد تدفقاً من مجمّعات الفلل والمنتجات السكنية منخفضة الارتفاع. المشتري هنا لا يشتري «برجاً جميلاً» — يشتري خصوصية، مسافة عن الجار، حديقة، مسار دخول، ونموذجاً يمكن مقارنته مع ثلاثة خيارات في الأسبوع نفسه. إذا اقتصر الإظهار على واجهة أمامية بطولية، يختفي الفرق بين المجمّعات وتضعف حجة الوسيط."
+      },
+      {
+        "type": "p",
+        "text": "هذا المقال عن نمط مجمّع الفلل / مجتمع الفلل — وهو أضيق من دليل [مبيعات المجتمع المخطط](https://3dgraphicshouse.com/insights/articles/masterplan-community-visual-sales.html) الذي يعالج نسيج المجتمعات الواسعة متعددة المنتجات. من أعمالنا في [الراجحي](https://3dgraphicshouse.com/insights/projects/al-rajhi-riyadh.html) و[عنان إسكان الرياض](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh.html)، نربط [الرندر](https://3dgraphicshouse.com/services/rendering.html) و[المجسم](https://3dgraphicshouse.com/services/maquettes.html) و[CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html) داخل [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) حول الخصوصية والمقارنة لا حول صورة واحدة."
+      },
+      {
+        "type": "h2",
+        "text": "ماذا يحتاج مجمّع الفلل بصرياً؟"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "خصوصية: أسوار، مسافات، نوافذ جيران، مداخل خاصة",
+          "واجهات جانبية وخلفية — لا واجهة أمامية فقط",
+          "حديقة ومسار مشي ومدخل سيارة يُقرآن في ثوانٍ",
+          "مقارنة نماذج واضحة للوسيط (مساحة، غرف، فناء، سعر تقريبي)",
+          "مجسم أو خريطة تُظهر نسيج المجمّع لا فيلا معزولة",
+          "اتساق بين فيلا العرض ولوحة التشطيب والرندر الداخلي"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "سياق سوقي للمقارنة البصرية — لا ادعاء تسليم"
+      },
+      {
+        "type": "p",
+        "text": "كسياق أنواع حية من خريطة [Ruwaq Tours](https://ruwaq.co/tours) — للمقارنة البصرية فقط، وليست مشاريع سلّمتها Graphics House — تظهر أنماط فلل/مجتمعات بمتطلبات إظهار مختلفة رغم تشابه «شمال الرياض»:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "ميان الفرسان: فلل، أفق يُشار إليه حول الربع الثاني 2027، نطاق سعر يُذكر قرب ~1.68M ر.س — يحتاج مقارنة نماذج وخصوصية حديقة بقوة",
+          "سرايا الربى: فلل/دوبلكس/تاون هاوس، نحو الربع الرابع 2027، نطاق ~1.016M — يفرض مكتبة منتجات متعددة لا بطلاً واحداً",
+          "أنارا حي السحاب: فلل/تاون هاوس/شقق نحو الربع الرابع 2029 — مقارنة بصرية أوسع لأن المزيج أوسع من مجمّع فلل صرف"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "هذه ليست منتجات متطابقة. استخدمها لفهم أن مكتبة الأصول تختلف حسب مزيج الوحدات وجدول الإطلاق — لا لنسخ رسالة مشروع آخر."
+      },
+      {
+        "type": "h2",
+        "text": "الخصوصية والواجهات الجانبية — ما يُهمل غالباً"
+      },
+      {
+        "type": "p",
+        "text": "المشتري الجاد يطلب رؤية الجار والمسافة والسور قبل أن يعجب بالواجهة الأمامية. أنتج مشاهد جانبية وخلفية ومدخل خاص، ومشهد مساء يُظهر الإضاءة دون إبهار زائف. الخصوصية بصرية أيضاً: زوايا لا تكشف فناء الجار بطريقة تُضعف الوعد."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "تجميد مسافات ومخطط قطع معتمد قبل الرندر النهائي",
+          "رندرات واجهة أمامية + جانبية + فناء/حديقة لكل نموذج أولوية",
+          "مشهد مسار من البوابة إلى باب الفيلا",
+          "بطاقة وسيط: ما يُعرض اليوم من نماذج ومراحل"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "مقارنة النماذج للوسطاء"
+      },
+      {
+        "type": "p",
+        "text": "الوسيط في شمال الرياض يتنقل بين ثلاثة مجمّعات في يوم واحد. يحتاج جدولاً بصرياً: نموذج أ مقابل ب مقابل ج — مساحة، غرف، فناء، إطلالة داخل المجمّع، مرحلة البيع. [التجربة التفاعلية](https://3dgraphicshouse.com/services/interactive-experiences.html) أو لوحة مقارنة ثابتة أفضل من PDF مبعثر."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "نفس زاوية الكاميرا عبر النماذج لتسهيل المقارنة",
+          "مخطط طابق بجانب الرندر — لا أحدهما بلا الآخر",
+          "تسمية المرحلة والسعر التقريبي إن كان معتمداً للعرض",
+          "منع لقطات شاشة غير رسمية تختلف عن الحزمة"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "حزمة الوسيط الجيدة تُقرأ في السيارة قبل وصول العميل للصالة. لذلك صمّم صفحة واحدة لكل نموذج: رندر خارجي، رندر فناء، مخطط، ثلاث نقاط خصوصية، ومرحلة البيع. تجنّب ملفات ثقيلة متعددة الإصدارات؛ رقم إصدار واحد يُحدَّث أسبوعياً عند فتح مرحلة أو تغيير سعر معتمد للعرض."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "اختبر الحزمة مع وسيطين حقيقيين قبل الإطلاق — راقب أين يترددان",
+          "أزل أي مشهد لا يساعد المقارنة أو يخلق وعداً غير مقفل",
+          "اربط الحزمة الرقمية بنفس ملفات الصالة لمنع التناقض"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "نسيج المجمّع مقابل واجهة البطل"
+      },
+      {
+        "type": "p",
+        "text": "فيلا بطولية معزولة لا تُثبت أن المجمّع يعمل كحي. المجسم أو المشهد الجوي المعتمد يُظهر الشوارع الداخلية، المسافات، الحدائق المشتركة، والبوابة. هذا أقرب لمنطق «نسيج» لكنه بمقياس مجمّع فلل — لا بمقياس مجتمع ROSHN الواسع الذي عالجناه في مقال المجتمع المخطط."
+      },
+      {
+        "type": "p",
+        "text": "فيلم CGI القصير لمجمّع الفلل يجب أن يروي بوابة → شارع داخلي → حديقة مشتركة → باب الفيلا — لا مونتاج واجهات متكررة. إن كان المجمّع يبيع «هدوءاً عائلياً»، فأظهر المسارات والمسافات نهاراً ومساءً. إن كان يبيع مكانة البوابة، فاقفل مشهداً جوياً معتمداً بلا مبالغة في الكثافة أو المساحات الخضراء غير الموجودة في المخطط."
+      },
+      {
+        "type": "p",
+        "text": "للمجتمعات الأوسع متعددة المنتجات راجع مقال [مبيعات المجتمع المخطط](https://3dgraphicshouse.com/insights/articles/masterplan-community-visual-sales.html)؛ هنا يبقى التركيز على مقياس المجمّع ومقارنة الفلل."
+      },
+      {
+        "type": "h2",
+        "text": "المراحل: ماذا يُباع اليوم؟"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "خريطة مراحل بألوان واضحة على المجسم والشاشة",
+          "رندرات تُظهر المرحلة المفتوحة دون وعد مرحلة لم تُعتمد",
+          "تحديث أسبوعي لحزمة الوسيط عند فتح مرحلة",
+          "سيناريو عرض: بوابة ← نسيج ← نموذج ← تشطيب"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "فيلا العرض وفجوة التشطيب"
+      },
+      {
+        "type": "p",
+        "text": "عندما يقترب الزائر من الفيلا النموذجية، أي فجوة بين الرندر ولوحة المواد تُقتل الثقة فوراً. راجع [فجوة مواصفات التشطيب والإظهار](https://3dgraphicshouse.com/insights/articles/finishes-spec-visualization-gap.html). عند التنفيذ الميداني للتشطيب يمكن مواءمة الواقع مع [Turriva](https://turriva.com) بعد قفل المواصفات — لا قبلها."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "رندر داخلي معتمد مربوط بعيّنات الصالة",
+          "قائمة مواد موقعة من التسويق والتشطيب",
+          "تصوير فيلا العرض بنفس إضاءة الرندر قدر الإمكان",
+          "بطاقة «ما هو مقفل / ما هو قيد الاعتماد»"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "معايير قبول لمجمّع الفلل"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "خصوصية ومسافات قابلة للدفاع في المشاهد المعتمدة",
+          "وجود واجهات جانبية/فناء لكل نموذج أولوية بيع",
+          "مقارنة نماذج مقروءة للوسيط خلال دقيقتين",
+          "مجسم/خريطة تُظهر نسيج المجمّع لا فيلا معزولة",
+          "اتساق التشطيب بين الرندر وفيلا العرض",
+          "رقم إصدار على كل أصل عام"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "أخطاء شائعة"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "واجهة أمامية واحدة لكل النماذج بلا فرق",
+          "إهمال الخصوصية والمسافات حتى يسأل المشتري في الجولة",
+          "مكتبة مقارنة ضعيفة فيُضطر الوسيط للارتجال",
+          "مجسم بدون مراحل أو تسميات قطع",
+          "تشطيب فيلا العرض يختلف عن الرندر الداخلي",
+          "خلط رسالة مجمّع فلل مع رسالة مجتمع واسع دون ضبط الأصول",
+          "إطلاق رقمي قبل قفل النماذج ذات الأولوية"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "قائمة تحقق قبل الإطلاق"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "هل جُمّدت النماذج ذات الأولوية وزوايا الخصوصية؟",
+          "هل حزمة الوسيط تتضمن مقارنة لا صوراً مبعثرة؟",
+          "هل المجسم يقرأ النسيج والمراحل من مسافة الصالة؟",
+          "هل فيلا العرض مربوطة بالرندر والتشطيب؟",
+          "هل دُرّب الفريق على سيناريو البوابة→النموذج→التشطيب؟",
+          "هل استُخدم [موجز المشروع](https://3dgraphicshouse.com/insights/tools/project-brief.html) و[قائمة الجاهزية](https://3dgraphicshouse.com/insights/tools/launch-checklist.html)؟"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "الرياض: سرعة القرار وكثافة المقارنة"
+      },
+      {
+        "type": "p",
+        "text": "العاصمة سوق مقارنة سريع. راجع أيضاً [المبيعات البصرية في الرياض](https://3dgraphicshouse.com/insights/articles/riyadh-offplan-visual-sales.html) و[جاهزية off-plan](https://3dgraphicshouse.com/insights/articles/saudi-offplan-visual-readiness.html). صفحة [الرياض](https://3dgraphicshouse.com/locations/riyadh.html) و[الهوية والتركيب](https://3dgraphicshouse.com/services/branding.html) تضمنان اتساق الصالة. بعد قفل الأصول يمكن تضخيم الحملة عبر [Beesmotion](https://beesmotion.com)."
+      },
+      {
+        "type": "p",
+        "text": "في العاصمة، المشتري غالباً يزور مجمّعين في نفس اليوم. أي ضعف في الخصوصية أو المقارنة يظهر فوراً أمام المنافس. لذلك اجعل [الرندر](https://3dgraphicshouse.com/services/rendering.html) و[المجسم](https://3dgraphicshouse.com/services/maquettes.html) جاهزين كأدوات إغلاق لا كزينة افتتاح. إن كان المشروع جزءاً من بوابة مختلطة أوسع، انظر أيضاً [إطلاق البوابات المختلطة](https://3dgraphicshouse.com/insights/articles/mixed-use-gate-visual-launch.html) لفصل قصة الفيلا عن قصة البوابة التجارية."
+      },
+      {
+        "type": "h2",
+        "text": "الخلاصة: الخصوصية والمقارنة قبل البطولة"
+      },
+      {
+        "type": "p",
+        "text": "مجمّع فلل شمال الرياض يُباع بمسار خصوصية صادق، واجهات كاملة، حديقة، ومقارنة نماذج للوسيط — لا بواجهة بطل وحيدة. ابدأ من [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) واحجز تقييم الإطلاق قبل تثبيت تاريخ الصالة."
+      }
+    ],
+    "en": [
+      {
+        "type": "p",
+        "text": "North Riyadh continues to see villa compounds and low-rise residential products. Buyers here do not purchase a “beautiful tower” — they purchase privacy, distance from neighbors, a garden, an arrival path, and a model they can compare against three options in the same week. If visualization stops at one hero front façade, compounds blur together and brokers lose their edge."
+      },
+      {
+        "type": "p",
+        "text": "This article covers the villa-compound / villa-community pattern — narrower than [master-planned community visual sales](https://3dgraphicshouse.com/insights/articles/masterplan-community-visual-sales-en.html), which addresses large multi-product community fabric. From work such as [Al Rajhi](https://3dgraphicshouse.com/insights/projects/al-rajhi-riyadh-en.html) and [Anan Eskan Riyadh](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh-en.html), we tie [renders](https://3dgraphicshouse.com/services/rendering-en.html), [maquettes](https://3dgraphicshouse.com/services/maquettes-en.html), and [CGI](https://3dgraphicshouse.com/services/cinematic-cgi-en.html) inside [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) around privacy and comparison — not a single still."
+      },
+      {
+        "type": "h2",
+        "text": "What a villa compound needs visually"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Privacy: walls, setbacks, neighbor windows, private entrances",
+          "Side and rear elevations — not front façades only",
+          "Garden, walking path, and car arrival readable in seconds",
+          "Clear broker model comparison (area, rooms, court, indicative price)",
+          "Maquette or map showing compound fabric — not an isolated villa",
+          "Consistency between show villa, finish board, and interior render"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Market context for visual comparison — not delivery claims"
+      },
+      {
+        "type": "p",
+        "text": "As live-type context from [Ruwaq Tours](https://ruwaq.co/tours) — for visual comparison only, not Graphics House deliveries — villa/community patterns show different visualization needs even under a shared “North Riyadh” label:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Mayan Al Fursan: villas, horizon often discussed around Q2 2027, price band near ~1.68M SAR — strong need for model comparison and garden privacy",
+          "Saraya Al Ruba: villas/duplex/townhouse, toward Q4 2027, band near ~1.016M — demands a multi-product library, not one hero",
+          "Anara Sahab: villas/townhouse/apartments toward Q4 2029 — broader visual comparison because the mix exceeds a pure villa compound"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "These are not identical products. Use them to understand how asset libraries differ by unit mix and launch timing — not to copy another project’s message."
+      },
+      {
+        "type": "h2",
+        "text": "Privacy and side elevations — what teams often skip"
+      },
+      {
+        "type": "p",
+        "text": "Serious buyers ask to see the neighbor, setback, and wall before they fall for the front façade. Produce side/rear and private-entrance scenes, plus an evening pass that shows lighting without false drama. Privacy is visual too: angles that do not expose a neighbor’s court in ways that weaken the promise."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Freeze plot setbacks and approved parcel plan before final renders",
+          "Front + side + court/garden renders for each priority model",
+          "Path scene from gate to villa door",
+          "Broker card: which models and phases are shown today"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Model comparison for brokers"
+      },
+      {
+        "type": "p",
+        "text": "North Riyadh brokers often visit three compounds in one day. They need a visual table: model A vs B vs C — area, rooms, court, in-compound outlook, sales phase. [Interactive experiences](https://3dgraphicshouse.com/services/interactive-experiences-en.html) or a fixed comparison board beat a scattered PDF."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Same camera language across models to make comparison fair",
+          "Floor plan beside the render — never one without the other",
+          "Phase label and indicative price when approved for display",
+          "Block unofficial screenshots that diverge from the pack"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "A good broker pack is readable in the car before the client reaches the gallery. Design one page per model: exterior render, court render, plan, three privacy points, and sales phase. Avoid heavy multi-version files; keep one version number updated weekly when a phase opens or an approved display price changes."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Test the pack with two real brokers before launch — watch where they hesitate",
+          "Remove any scene that does not aid comparison or creates an unlocked promise",
+          "Link the digital pack to the same gallery files to prevent contradiction"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Compound fabric vs hero façade"
+      },
+      {
+        "type": "p",
+        "text": "An isolated hero villa does not prove the compound works as a neighborhood. A maquette or approved aerial must show internal streets, setbacks, shared gardens, and the gate. This is fabric logic at villa-compound scale — not the large ROSHN-scale community fabric covered in the masterplan article."
+      },
+      {
+        "type": "p",
+        "text": "A short CGI film for a villa compound should narrate gate → internal street → shared garden → villa door — not a montage of repeated façades. If the compound sells “family calm,” show paths and setbacks day and night. If it sells gate prestige, lock an approved aerial without exaggerating density or greenery that is not on the plan."
+      },
+      {
+        "type": "p",
+        "text": "For larger multi-product communities see [master-planned community visual sales](https://3dgraphicshouse.com/insights/articles/masterplan-community-visual-sales-en.html); here the focus stays at compound scale and villa comparison."
+      },
+      {
+        "type": "h2",
+        "text": "Phasing: what is for sale today?"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Phase map with clear colors on maquette and screen",
+          "Renders that show the open phase without promising an unapproved phase",
+          "Weekly broker-pack update when a phase opens",
+          "Presentation path: gate → fabric → model → finishes"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Show villa and the finishes gap"
+      },
+      {
+        "type": "p",
+        "text": "When visitors reach the show villa, any gap between render and material board kills trust immediately. See [finishes-spec visualization gap](https://3dgraphicshouse.com/insights/articles/finishes-spec-visualization-gap-en.html). On-site finish execution can align with [Turriva](https://turriva.com) after specs lock — not before."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Approved interior render linked to gallery samples",
+          "Material list signed by marketing and finishes",
+          "Show-villa photography matching render lighting as closely as possible",
+          "A “locked / pending approval” card"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Acceptance criteria for villa compounds"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Privacy and setbacks defensible in approved scenes",
+          "Side/court elevations present for each priority sales model",
+          "Broker model comparison readable in two minutes",
+          "Maquette/map shows compound fabric — not an isolated villa",
+          "Finish consistency between render and show villa",
+          "Version number on every public asset"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Common failures"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "One front façade reused across models with no difference",
+          "Skipping privacy and setbacks until buyers ask on the tour",
+          "Weak comparison library forcing brokers to improvise",
+          "Maquette without phases or plot labels",
+          "Show-villa finishes that diverge from interior renders",
+          "Mixing villa-compound messaging with large-community messaging without retuning assets",
+          "Digital launch before priority models lock"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Pre-launch checklist"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Are priority models and privacy angles frozen?",
+          "Does the broker pack include comparison — not scattered stills?",
+          "Does the maquette read fabric and phases from gallery distance?",
+          "Is the show villa linked to render and finishes?",
+          "Is the team trained on gate→model→finish scenario?",
+          "Have you used the [project brief](https://3dgraphicshouse.com/insights/tools/project-brief-en.html) and [launch checklist](https://3dgraphicshouse.com/insights/tools/launch-checklist-en.html)?"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Riyadh: fast decisions and dense comparison"
+      },
+      {
+        "type": "p",
+        "text": "The capital is a fast comparison market. Also see [Riyadh off-plan visual sales](https://3dgraphicshouse.com/insights/articles/riyadh-offplan-visual-sales-en.html) and [Saudi off-plan visual readiness](https://3dgraphicshouse.com/insights/articles/saudi-offplan-visual-readiness-en.html). The [Riyadh](https://3dgraphicshouse.com/locations/riyadh-en.html) page and [identity/install](https://3dgraphicshouse.com/services/branding-en.html) keep the gallery consistent. After assets lock, amplify via [Beesmotion](https://beesmotion.com)."
+      },
+      {
+        "type": "p",
+        "text": "In the capital, buyers often visit two compounds the same day. Any weakness in privacy or comparison shows immediately against a competitor. Make [renders](https://3dgraphicshouse.com/services/rendering-en.html) and [maquettes](https://3dgraphicshouse.com/services/maquettes-en.html) closing tools — not opening décor. If the scheme sits inside a wider mixed-use gate, also see [mixed-use gate visual launch](https://3dgraphicshouse.com/insights/articles/mixed-use-gate-visual-launch-en.html) to separate the villa story from the commercial gate story."
+      },
+      {
+        "type": "h2",
+        "text": "Bottom line: privacy and comparison before heroics"
+      },
+      {
+        "type": "p",
+        "text": "A North Riyadh villa compound sells on an honest privacy path, full elevations, garden, and broker model comparison — not a single hero façade. Start from [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) and book a launch assessment before locking the gallery date."
+      }
+    ]
+  }
+}
