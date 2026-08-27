@@ -7,6 +7,12 @@ Disallow: /wp-*.php
 Disallow: /goods/
 Disallow: /shopdetail/
 Disallow: /product/
+Disallow: /feed
+Disallow: /feed/
+Disallow: /wp-json
+Disallow: /2024/
+Disallow: /2023/
+Disallow: /2022/
 Disallow: /pcmypage
 Disallow: /us-store_
 Disallow: /search
