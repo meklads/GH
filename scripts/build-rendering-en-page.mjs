@@ -110,7 +110,6 @@ function bodyContent() {
     <p style="color:rgba(255,255,255,0.6)">3D visuals, catalogs, and brand identity — delivered by one integrated studio.</p>
     <div class="btns">
       <a href="#booking" class="btn-p">Request a Quote <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
-      <a href="${P}assets/downloads/GH-3d-images.pdf" target="_blank" rel="noopener noreferrer" class="btn-o-light">Download 3D Images PDF <span class="material-symbols-outlined" style="font-size:16px">picture_as_pdf</span></a>
       <a href="https://wa.me/966502786513" target="_blank" rel="noopener" class="btn-o-light">WhatsApp Us <span class="material-symbols-outlined" style="font-size:16px">phone_in_talk</span></a>
     </div>
   </div>
