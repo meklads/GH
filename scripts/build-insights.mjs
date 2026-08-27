@@ -49,22 +49,46 @@ function esc(s) {
     .replace(/"/g, '&quot;');
 }
 
+/** Escape text but allow markdown links: [label](https://... or /path) */
+function richText(s) {
+  const str = String(s || '');
+  const re = /\[([^\]]+)\]\((https?:\/\/[^)\s]+|\/[^)\s]+)\)/g;
+  let out = '';
+  let last = 0;
+  let m;
+  while ((m = re.exec(str)) !== null) {
+    if (m.index > last) out += esc(str.slice(last, m.index));
+    const label = esc(m[1]);
+    const href = m[2];
+    const isAbsolute = /^https?:\/\//i.test(href);
+    const isSameSite = /^https?:\/\/(www\.)?3dgraphicshouse\.com(\/|$)/i.test(href);
+    const attrs =
+      isAbsolute && !isSameSite
+        ? ' target="_blank" rel="noopener noreferrer"'
+        : '';
+    out += `<a href="${esc(href)}"${attrs}>${label}</a>`;
+    last = m.index + m[0].length;
+  }
+  if (last < str.length) out += esc(str.slice(last));
+  return out;
+}
+
 function renderBodyBlock(block) {
-  if (typeof block === 'string') return `<p>${esc(block)}</p>`;
+  if (typeof block === 'string') return `<p>${richText(block)}</p>`;
   const text = block.text || '';
   switch (block.type) {
     case 'p':
-      return `<p>${esc(text)}</p>`;
+      return `<p>${richText(text)}</p>`;
     case 'h2':
-      return `<h2>${esc(text)}</h2>`;
+      return `<h2>${richText(text)}</h2>`;
     case 'h3':
-      return `<h3>${esc(text)}</h3>`;
+      return `<h3>${richText(text)}</h3>`;
     case 'ul':
-      return `<ul>${(block.items || []).map((i) => `<li>${esc(i)}</li>`).join('')}</ul>`;
+      return `<ul>${(block.items || []).map((i) => `<li>${richText(i)}</li>`).join('')}</ul>`;
     case 'ol':
-      return `<ol>${(block.items || []).map((i) => `<li>${esc(i)}</li>`).join('')}</ol>`;
+      return `<ol>${(block.items || []).map((i) => `<li>${richText(i)}</li>`).join('')}</ol>`;
     default:
-      return text ? `<p>${esc(text)}</p>` : '';
+      return text ? `<p>${richText(text)}</p>` : '';
   }
 }
 

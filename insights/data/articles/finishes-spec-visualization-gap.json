@@ -1,0 +1,456 @@
+{
+  "slug": "finishes-spec-visualization-gap",
+  "featured": false,
+  "date": "2026-08",
+  "dateLabel": {
+    "ar": "أغسطس 2026",
+    "en": "Aug 2026"
+  },
+  "category": {
+    "ar": "التشطيب والإظهار",
+    "en": "Finishes & Viz"
+  },
+  "image": "assets/projects/rendering/wahat-alsalam9-scaled.jpg",
+  "title": {
+    "ar": "فجوة التشطيب والمواصفات والإظهار: لماذا يفقد المشتري الثقة في صالة البيع؟",
+    "en": "The Finishes–Spec–Visualization Gap: Why Buyers Lose Trust on the Sales Floor"
+  },
+  "excerpt": {
+    "ar": "حين يختلف وعد الرندر عن BOQ وعيّنة التشطيب، ينشأ نزاع على أرضية الصالة. مسار عملي من لوحة المواد إلى اعتماد الرندر إلى قفل العيّنة إلى التركيب — مع معايير قبول وجاهزية الوسيط.",
+    "en": "When the render promise diverges from BOQ and finish samples, conflict hits the gallery floor. A practical path from material board to render acceptance to sample lock to install — with acceptance criteria and broker readiness."
+  },
+  "metaDescription": {
+    "ar": "فجوة التشطيب والمواصفات والإظهار في off-plan السعودي: لوحة مواد، اعتماد رندر، قفل عيّنة وتركيب صالة — Graphics House للتصور وTurriva للتنفيذ.",
+    "en": "Saudi off-plan finishes–viz gap: material board, render acceptance, sample lock & gallery install — Graphics House for visualization, Turriva for execution."
+  },
+  "body": {
+    "ar": [
+      {
+        "type": "p",
+        "text": "أكثر النزاعات صمتاً في صالات البيع السعودية لا تبدأ بسعر المتر — بل بجملة: «هذه ليست نفس الرخامة في الصورة». الفجوة بين نية التصميم، وبنود BOQ/المواصفات، والتشطيب النهائي، والإظهار التسويقي تولّد عدم ثقة لدى المشتري وتُحرِج الوسيط وفريق الصالة في اللحظة الحاسمة."
+      },
+      {
+        "type": "p",
+        "text": "هذا المقال للمطور ومدير التشطيب ومدير التسويق معاً. الهدف: مسار تشغيلي يقلّص الفجوة قبل الإطلاق. التصور والإطلاق البصري عبر [Graphics House](https://3dgraphicshouse.com/solutions/project-launch.html)؛ التنفيذ التشطيبي الميداني حيث يلزم عبر [Turriva](https://turriva.com). جولات التشطيب المكتملة في السوق — كما تظهر ضمن [Ruwaq Tours](https://ruwaq.co/tours) لفيلا شمال جدة أو مبنى ضيافة مكة (120+ وحدة) أو شقق ساحلية — تذكّر بأن قصة التشطيب النهائية جزء من الإقناع، لا ملحقاً بعد البيع."
+      },
+      {
+        "type": "h2",
+        "text": "كيف تتشكّل الفجوة عملياً؟"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "المعماري يعتمد مادة في لوحة تصميم لا تدخل لاحقاً في مواصفة المشتريات",
+          "التسويق يطلق رندراً داخلياً قبل قفل عيّنة التشطيب",
+          "المقاول يستبدل مادة لأسباب توريد دون تحديث الأصول البصرية",
+          "الصالة تعرض عيّنة مختلفة عن الشاشة لأن الملفات غير مقفلة بإصدار",
+          "BOQ يتغير بعد اعتماد الرندر دون مسار تحديث بصري"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "النتيجة المتكررة: المشتري يشعر بالمبالغة، والوسيط يرتجل تفسيراً، والإدارة تدخل في اعتماد طارئ بعد الإطلاق — أغلى من التخطيط المبكر."
+      },
+      {
+        "type": "h2",
+        "text": "أطراف الفجوة ومسؤولياتهم"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "المكتب المعماري: نية المواد والكتالوج المرجعي",
+          "إدارة التشطيب/المشروع: مواصفات قابلة للشراء والتنفيذ",
+          "التسويق والمبيعات: وعد بصري يُعرض على المشتري",
+          "استوديو الإظهار: ترجمة معتمدة للمواد ضمن [الرندر](https://3dgraphicshouse.com/services/rendering.html) و[المجسمات](https://3dgraphicshouse.com/services/maquettes.html)",
+          "منفذ التشطيب: عيّنات وتركيب يطابقان الوعد — دور [Turriva](https://turriva.com) عند التنفيذ"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "المسار العملي: من لوحة المواد إلى تركيب الصالة"
+      },
+      {
+        "type": "h3",
+        "text": "1) لوحة مواد تسويقية قابلة للقفل"
+      },
+      {
+        "type": "p",
+        "text": "ليست لوحة مزاج — بل قائمة مواد أساسية للوحدات المعروضة في المرحلة الأولى: أرضيات، جدران رطبة، واجهات خشبية/معدنية، إضاءة ظاهرة، وألوان رئيسية. كل بند يحمل اسماً تجارياً أو مواصفة بديلة معتمدة مسبقاً."
+      },
+      {
+        "type": "h3",
+        "text": "2) اعتماد الرندر كوثيقة قبول"
+      },
+      {
+        "type": "p",
+        "text": "الرندر الداخلي لا يُعتمد «لأنه جميل». يُعتمد إذا طابقت المواد الأساسية اللوحة. ضع معايير قبول مكتوبة ضمن سير [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) قبل الحملة الرقمية."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "مواد أساسية مطابقة للوحة (لا تفسير حر للملمس)",
+          "إضاءة لا تخفي عيوب المادة أو تبالغ في اللمعان",
+          "نسخة ملف برقم إصدار على شاشة الصالة فقط"
+        ]
+      },
+      {
+        "type": "h3",
+        "text": "3) قفل عيّنة التشطيب"
+      },
+      {
+        "type": "p",
+        "text": "بعد الرندر المعتمد، تُقفل العيّنات الفعلية في غرفة عينات أو على طاولة الصالة. أي استبدال لاحق يتطلب تحديثاً بصرياً أو إقراراً كتابياً من التسويق والمبيعات."
+      },
+      {
+        "type": "h3",
+        "text": "4) تركيب الصالة والمعرض"
+      },
+      {
+        "type": "p",
+        "text": "التركيب يوحّد الشاشات، اللوحات، العيّنات، والمجسم. خدمة [البراندينغ والتركيب](https://3dgraphicshouse.com/services/branding.html) تربط الهوية بالمكان؛ التنفيذ التشطيبي للوحدات النموذجية يمكن أن يتماشى مع Turriva حتى لا يختلف «الملموس» عن «المعروض»."
+      },
+      {
+        "type": "h2",
+        "text": "مواءمة BOQ مع الوعد البصري"
+      },
+      {
+        "type": "p",
+        "text": "BOQ ليس مستنداً منفصلاً عن الإظهار. كل بند مادة أساسية في BOQ يجب أن يظهر في لوحة المواد التسويقية والرندر المعتمد."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "قائمة مواد مرحلة أولى موقعة من معماري + تشطيب + تسويق",
+          "رندر داخلي معتمد يحمل رقم إصدار وتاريخ",
+          "عيّنات مطابقة مرئية للزائر بجانب الشاشة",
+          "خطة تحديث عند تغيير توريد مادة أساسية",
+          "مسؤول واحد عن إصدار الأصول (Owner)"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "معايير قبول مشتركة بين الإظهار والتشطيب"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "قائمة مواد مرحلة أولى موقعة من معماري + تشطيب + تسويق",
+          "رندر داخلي معتمد يحمل رقم إصدار وتاريخ",
+          "عيّنات مطابقة مرئية للزائر بجانب الشاشة",
+          "حظر استخدام أصول قديمة على أجهزة الوسطاء بعد الاستبدال",
+          "خطة تحديث عند تغيير توريد مادة أساسية"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "سير اعتماد عند استبدال مادة"
+      },
+      {
+        "type": "p",
+        "text": "استبدال التوريد حتمي أحياناً. بدون سير واضح، تتضارب الشاشة مع العيّنة والوسيط يرتجل."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "إشعار كتابي من التشطيب/المشتريات إلى التسويق والاستوديو",
+          "تحديث لوحة المواد أو إقرار بديل معتمد",
+          "تحديث الرندر أو إقرار أن البديل مقبول بصرياً",
+          "تحديث حزمة الوسيط وشاشة الصالة بنفس الإصدار",
+          "تدريب قصير للمبيعات والوسطاء على التغيير"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "جاهزية الوسيط وصالة البيع عند وجود فجوة محتملة"
+      },
+      {
+        "type": "p",
+        "text": "حتى مع أفضل الأنظمة، قد يحدث استبدال توريد. الجاهزية تعني سيناريو حديث لا ارتجال."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "بطاقة «ما يُعرض اليوم» للوسيط: مواد مقفلة مقابل مواد قيد التحديث",
+          "سيناريو عرض: شاشة ← عيّنة ← وحدة نموذجية",
+          "منع الوسطاء من استخدام لقطات شاشة غير رسمية",
+          "تدريب أسبوعي قصير عند أي تغيير مادة"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "أخطاء شائعة تُكلّف ثقة المشتري"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "إطلاق حملة داخلية قبل قفل العيّنة",
+          "اعتماد رندر من استوديو منفصل عن هوية الصالة",
+          "عرض عيّنة «أجمل» من المادة المتعاقد عليها",
+          "تغيير BOQ دون مسار تحديث بصري",
+          "إهمال فيلم أو جولة تشرح التشطيب — يمكن دعم السرد بـ [CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html) أو جولات مكتملة كسياق سوقي عبر Ruwaq",
+          "فصل الوحدة النموذجية عن الرندر المعتمد حتى يختلف «الملموس» عن «المعروض»"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "قائمة تحقق قبل افتتاح الصالة"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "لوحة مواد مرحلة أولى مقفلة ومؤرشفة",
+          "رندرات داخلية معتمدة ومطابقة للعيّنات",
+          "شاشات الصالة على الإصدار الصحيح فقط",
+          "مجسم/تفاعلي لا يعرض تشطيباً متناقضاً إن وُجدت ألوان وحدات",
+          "مسؤول واحد عن إصدار الأصول (Owner)",
+          "موجز محدّث عبر [أداة الموجز](https://3dgraphicshouse.com/insights/tools/project-brief.html) و[قائمة الجاهزية](https://3dgraphicshouse.com/insights/tools/launch-checklist.html)"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "الوحدة النموذجية — جسر بين الرندر والواقع"
+      },
+      {
+        "type": "p",
+        "text": "الوحدة النموذجية في الصالة هي اختبار الوعد البصري أمام المشتري. إن اختلفت عن الرندر المعتمد، تظهر الفجوة فوراً. يجب أن تُبنى من نفس لوحة المواد المقفلة، وتُنفّذ تشطيبياً بما يطابق العيّنة — وعند الحاجة عبر Turriva — قبل افتتاح الصالة."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "نفس مواد لوحة المرحلة الأولى في الوحدة النموذجية",
+          "إضاءة الصالة لا تُجمّل العيّنة بما يخفي الفرق عن الرندر",
+          "زيارة قبول مشتركة: تسويق + مبيعات + تشطيب + استوديو",
+          "تصوير الوحدة النموذجية للوسيط فقط بعد القبول — لا قبل"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "من يغلق الفجوة؟"
+      },
+      {
+        "type": "p",
+        "text": "الإظهار وحده لا ينفّذ التشطيب؛ والتشطيب وحده لا يبني نظام إطلاق. Graphics House يغلق جانب التصور والاتساق عبر الرندر والمجسمات وProjectLaunch™ وصفحات [جدة](https://3dgraphicshouse.com/locations/jeddah.html) و[الرياض](https://3dgraphicshouse.com/locations/riyadh.html). [Turriva](https://turriva.com) يغلق جانب التنفيذ التشطيبي حين تحتاج الوحدة النموذجية أو التشطيب المتعاقد أن يطابق الوعد. بعد قفل القصة البصرية، يمكن تضخيم الحملة عبر [Beesmotion](https://beesmotion.com)."
+      },
+      {
+        "type": "p",
+        "text": "الفجوة الأكثر تكلفة ليست في الرخامة — بل في غياب مسؤول واحد عن إصدار الأصول. عيّن Owner للوحة المواد والرندر والعيّنة والشاشة قبل بدء الإنتاج — لا بعد افتتاح الصالة."
+      },
+      {
+        "type": "p",
+        "text": "احجز تقييماً مجانياً قبل تثبيت تاريخ الصالة: الهدف ليس صورة أجمل — بل وعد يمكن الدفاع عنه أمام المشتري. راجع [قائمة الجاهزية](https://3dgraphicshouse.com/insights/tools/launch-checklist.html) لضمان أن لوحة المواد والرندر والعيّنة والوحدة النموذجية على نفس الإصدار قبل الافتتاح."
+      }
+    ],
+    "en": [
+      {
+        "type": "p",
+        "text": "The quietest conflicts on Saudi sales floors rarely start with price per metre — they start with: “That is not the same marble as the image.” The gap between design intent, BOQ/specs, final finishes, and sales visualization creates buyer distrust and embarrasses brokers and gallery teams at the decisive moment."
+      },
+      {
+        "type": "p",
+        "text": "This article is for developers, finish managers, and marketing leads together. The goal: an operating path that shrinks the gap before launch. Visualization and visual launch via [Graphics House](https://3dgraphicshouse.com/solutions/project-launch-en.html); on-site finish execution where needed via [Turriva](https://turriva.com). Completed finish tours in the market — as seen on [Ruwaq Tours](https://ruwaq.co/tours) for North Jeddah villa, Makkah hospitality (120+ units), or coastal apartment contexts — remind teams that final finish storytelling is part of persuasion, not a post-sale appendix."
+      },
+      {
+        "type": "h2",
+        "text": "How the gap forms in practice"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Architecture locks a material in a design board that never enters procurement specs",
+          "Marketing launches an interior render before finish samples are locked",
+          "The contractor substitutes a material for supply reasons without updating visual assets",
+          "The gallery shows a different sample than the screen because files are not version-locked",
+          "BOQ changes after render approval without a visual update path"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The recurring result: buyers sense exaggeration, brokers improvise explanations, and management enters emergency approvals after launch — costlier than early planning."
+      },
+      {
+        "type": "h2",
+        "text": "Gap stakeholders and responsibilities"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Architecture office: material intent and reference catalogue",
+          "Finish/project management: purchasable, executable specifications",
+          "Marketing and sales: visual promise shown to the buyer",
+          "Visualization studio: approved material translation via [rendering](https://3dgraphicshouse.com/services/rendering-en.html) and [maquettes](https://3dgraphicshouse.com/services/maquettes-en.html)",
+          "Finish contractor: samples and install that match the promise — [Turriva](https://turriva.com)’s role in execution"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Practical path: material board to gallery install"
+      },
+      {
+        "type": "h3",
+        "text": "1) A lockable marketing material board"
+      },
+      {
+        "type": "p",
+        "text": "Not a mood board — a primary materials list for phase-one show units: floors, wet walls, visible wood/metal, exposed lighting, and main colours. Each item carries a trade name or a pre-approved alternate specification."
+      },
+      {
+        "type": "h3",
+        "text": "2) Render acceptance as a sign-off document"
+      },
+      {
+        "type": "p",
+        "text": "Interior renders are not approved “because they look good.” They are approved when primary materials match the board. Write acceptance criteria into the [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) workflow before the digital campaign."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Primary materials match the board (no free interpretation of texture)",
+          "Lighting does not hide material flaws or oversell gloss",
+          "One versioned file only on the gallery screen"
+        ]
+      },
+      {
+        "type": "h3",
+        "text": "3) Finish sample lock"
+      },
+      {
+        "type": "p",
+        "text": "After the approved render, physical samples lock in a sample room or on the gallery table. Any later substitution requires a visual update or written marketing/sales acknowledgment."
+      },
+      {
+        "type": "h3",
+        "text": "4) Gallery and exhibition install"
+      },
+      {
+        "type": "p",
+        "text": "Install unifies screens, boards, samples, and maquette. [Branding and install](https://3dgraphicshouse.com/services/branding-en.html) ties identity to place; show-unit finish execution can align with Turriva so the tangible does not diverge from the displayed."
+      },
+      {
+        "type": "h2",
+        "text": "Aligning BOQ with the visual promise"
+      },
+      {
+        "type": "p",
+        "text": "BOQ is not a document separate from visualization. Every primary material line in BOQ should appear on the marketing material board and the approved render."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Phase-one materials list signed by architecture + finishes + marketing",
+          "Approved interior render with version number and date",
+          "Matching samples visible to visitors beside the screen",
+          "Update plan when a primary material supply changes",
+          "One asset-version owner"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Shared acceptance criteria between viz and finishes"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Phase-one materials list signed by architecture + finishes + marketing",
+          "Approved interior render with version number and date",
+          "Matching samples visible to visitors beside the screen",
+          "Ban on obsolete assets on broker devices after substitution",
+          "Update plan when a primary material supply changes"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Approval workflow when a material is substituted"
+      },
+      {
+        "type": "p",
+        "text": "Supply substitution is sometimes inevitable. Without a clear loop, the screen conflicts with the sample and brokers improvise."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Written notice from finishes/procurement to marketing and studio",
+          "Update the material board or approve an alternate substitute",
+          "Update the render or acknowledge the substitute is visually acceptable",
+          "Update broker pack and gallery screen to the same version",
+          "Short training for sales and brokers on the change"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Broker and gallery readiness when a gap is possible"
+      },
+      {
+        "type": "p",
+        "text": "Even with strong systems, supply substitutions happen. Readiness means a spoken scenario — not improvisation."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "A “what we show today” card for brokers: locked materials vs materials under update",
+          "Presentation path: screen → sample → show unit",
+          "Block brokers from using unofficial screenshots",
+          "Short weekly training when any material changes"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Common failures that cost buyer trust"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Launching interior campaigns before sample lock",
+          "Approving renders from a studio disconnected from gallery identity",
+          "Displaying a “prettier” sample than the contracted material",
+          "Changing BOQ without a visual update path",
+          "Skipping film or tour storytelling for finishes — support narrative with [CGI](https://3dgraphicshouse.com/services/cinematic-cgi-en.html) or completed market tours on Ruwaq as context",
+          "Separating the show unit from the approved render until tangible diverges from displayed"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Checklist before gallery opening"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Phase-one material board locked and archived",
+          "Interior renders approved and matched to samples",
+          "Gallery screens on the correct version only",
+          "Maquette/interactive does not show conflicting finishes if unit colours exist",
+          "One asset-version owner",
+          "Updated brief via the [project brief tool](https://3dgraphicshouse.com/insights/tools/project-brief-en.html) and [launch checklist](https://3dgraphicshouse.com/insights/tools/launch-checklist-en.html)"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Show unit — bridge between render and reality"
+      },
+      {
+        "type": "p",
+        "text": "The show unit in the gallery is the visual promise tested in front of the buyer. If it diverges from the approved render, the gap appears immediately. It must be built from the same locked material board, finished to match the sample — via Turriva when needed — before gallery opening."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Same phase-one board materials in the show unit",
+          "Gallery lighting must not flatter the sample beyond what the render shows",
+          "Joint acceptance visit: marketing + sales + finishes + studio",
+          "Show-unit photography for brokers only after acceptance — not before"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Who closes the gap?"
+      },
+      {
+        "type": "p",
+        "text": "Visualization alone does not execute finishes; finishes alone do not build a launch system. Graphics House closes the visualization and consistency side through rendering, maquettes, ProjectLaunch™, and [Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) / [Riyadh](https://3dgraphicshouse.com/locations/riyadh-en.html) coverage. [Turriva](https://turriva.com) closes finish execution when the show unit or contracted finish must match the promise. After the visual story locks, amplify via [Beesmotion](https://beesmotion.com)."
+      },
+      {
+        "type": "p",
+        "text": "Book a free assessment before locking the gallery date: the goal is not a prettier image — it is a promise you can defend in front of the buyer."
+      }
+    ]
+  }
+}

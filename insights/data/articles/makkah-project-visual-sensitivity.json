@@ -2,69 +2,415 @@
   "slug": "makkah-project-visual-sensitivity",
   "featured": false,
   "date": "2026-08",
-  "dateLabel": { "ar": "أغسطس 2026", "en": "Aug 2026" },
-  "category": { "ar": "مكة المكرمة", "en": "Makkah" },
+  "dateLabel": {
+    "ar": "أغسطس 2026",
+    "en": "Aug 2026"
+  },
+  "category": {
+    "ar": "مكة المكرمة",
+    "en": "Makkah"
+  },
   "image": "assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg",
   "title": {
     "ar": "الإظهار المعماري في مكة: حساسية المكان وثقة المستثمر",
     "en": "Architectural Visualization in Makkah: Place Sensitivity & Investor Trust"
   },
   "excerpt": {
-    "ar": "في مكة كل مشروع يُقاس بالقرب من الحرم وجودة الإقامة وثقة المستثمر. المواد البصرية ليست ديكوراً — بل أول لغة يقرأها الزائر قبل صالة البيع.",
-    "en": "In Makkah every project is judged by proximity to the Haram, living quality, and investor trust. Visual assets are not décor — they are the first language a visitor reads before the sales gallery."
+    "ar": "في مكة كل مشروع يُقاس بالقرب من الحرم وجودة الإقامة وثقة المستثمر. دليل عملي للإظهار والمجسم والصالة — مع قراءة لأنواع الضيافة والإقامة في خط الأنابيب، ومعايير اعتماد خاصة بالمكان.",
+    "en": "In Makkah every project is judged by Haram proximity, living quality, and investor trust. A practical guide to viz, maquette, and gallery — with hospitality pipeline types as market context and place-specific approval criteria."
   },
   "metaDescription": {
-    "ar": "إظهار معماري في مكة المكرمة للمطورين: أبراج الخير، ميثاق مكة، رندر وCGI ومجسمات ذكية من Graphics House — حساسية المكان وثقة المستثمر.",
-    "en": "Archviz in Makkah for developers: Al Khair Heights, Makkah Charter, renders, CGI & smart maquettes by Graphics House — place sensitivity and investor trust."
+    "ar": "إظهار معماري في مكة المكرمة: حساسية المكان، ضيافة قرب الحرم، معايير اعتماد وثقة مستثمر — مع أعمال أبراج الخير وميثاق مكة من Graphics House.",
+    "en": "Archviz in Makkah: place sensitivity, near-Haram hospitality, approval criteria & investor trust — with Graphics House proof from Al Khair Heights & Makkah Charter."
   },
   "body": {
     "ar": [
-      { "type": "p", "text": "مكة ليست سوقاً عقارياً عادياً. المشروع يُقرأ من موقعه، من وعد الإقامة، ومن قدرته على كسب ثقة المشتري المحلي والمستثمر الدولي. لذلك يفشل الإطلاق إذا اعتمد على صور عامة لا تحترم السياق." },
-      { "type": "p", "text": "من خبرتنا في مشاريع مثل أبراج الخير وميثاق مكة لرابطة العالم الإسلامي، نعرف أن الإظهار والمجسم الذكي والتجربة التفاعلية يجب أن تعمل كنظام واحد — من الاعتماد إلى المعرض إلى صالة البيع." },
-      { "type": "h2", "text": "ما الذي يجعل إظهار مكة مختلفاً؟" },
-      { "type": "ul", "items": [
-        "دقة العلاقة البصرية بالمكان دون ادعاء مضلل",
-        "جودة الإضاءة والمواد بما يليق بتوقعات الضيافة والإقامة",
-        "وضوح الوحدات والمسارات للمستثمر والزائر",
-        "اتساق الهوية بين الحملة الرقمية والبيئة المعروضة ميدانياً"
-      ]},
-      { "type": "h2", "text": "من الرندر إلى المجسم الذكي" },
-      { "type": "p", "text": "الرندر يفتح الباب؛ المجسم والتجربة التفاعلية يثبتان الحضور. في المعارض المؤسسية والمشاريع الرمزية، الزائر يحتاج أن يلمس القصة خلال دقائق. لذلك نربط الإنتاج البصري بسيناريو العرض لا بعدد الصور فقط." },
-      { "type": "h2", "text": "قرب جدة يخدم مشاريع مكة" },
-      { "type": "p", "text": "المقر في جدة يتيح ورش اعتماد ميدانية ودعم تركيب أسرع لصالات البيع والمعارض في مكة. الزمن بين الملاحظة والتعديل أقصر — وهذا حاسم في جداول الإطلاق المضغوطة." },
-      { "type": "h2", "text": "قائمة تحقق قبل التعاقد" },
-      { "type": "ol", "items": [
-        "هل لدى الاستوديو أعمال موثّقة في مكة أو سياقات مشابهة؟",
-        "هل يمكنهم تسليم رندر + فيلم + مجسم/تفاعلي بهوية واحدة؟",
-        "هل سير الاعتماد واضح بين المكتب المعماري والتسويق؟",
-        "هل التركيب والتسليم جزء من العرض؟",
-        "هل المواد جاهزة للوسيط والمعرض والحملة الرقمية؟"
-      ]},
-      { "type": "p", "text": "راجع صفحة مكة المكرمة أو ProjectLaunch™، واحجز جلسة تقييم مجانية قبل تثبيت خطة الإطلاق." }
+      {
+        "type": "p",
+        "text": "مكة ليست سوقاً عقارياً عادياً. المشروع يُقرأ من موقعه، من وعد الإقامة، ومن قدرته على كسب ثقة المشتري المحلي والمستثمر الدولي. لذلك يفشل الإطلاق إذا اعتمد على صور عامة لا تحترم السياق أو تبالغ في القرب البصري بطريقة تُضعف المصداقية."
+      },
+      {
+        "type": "p",
+        "text": "من خبرتنا في مشاريع مثل [أبراج الخير](https://3dgraphicshouse.com/insights/projects/al-khair-makkah.html) و[ميثاق مكة](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl.html) لرابطة العالم الإسلامي، نعرف أن [الإظهار](https://3dgraphicshouse.com/services/rendering.html) و[المجسم الذكي](https://3dgraphicshouse.com/services/maquettes.html) و[التجربة التفاعلية](https://3dgraphicshouse.com/services/interactive-experiences.html) يجب أن تعمل كنظام واحد داخل [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) — من الاعتماد إلى المعرض إلى صالة البيع."
+      },
+      {
+        "type": "h2",
+        "text": "ما الذي يجعل إظهار مكة مختلفاً؟"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "دقة العلاقة البصرية بالمكان دون ادعاء مضلل عن القرب أو الإطلالة",
+          "جودة الإضاءة والمواد بما يليق بتوقعات الضيافة والإقامة",
+          "وضوح الوحدات والمسارات للمستثمر والزائر خلال دقائق",
+          "اتساق الهوية بين الحملة الرقمية والبيئة المعروضة ميدانياً",
+          "لغة احترام للمكان في الزوايا والنبرة — لا قالب سكني عام",
+          "توثيق أي ادعاء بصري عن القرب أو الإطلالة بما يمكن الدفاع عنه تجارياً"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "أنواع المشاريع في خط أنابيب مكة — سياق سوقي"
+      },
+      {
+        "type": "p",
+        "text": "لقراءة أنواع المشاريع الحية كسياق سوقي (لا كادعاء تسليم)، تظهر خريطة [Ruwaq Tours](https://ruwaq.co/tours) أنماطاً مثل الأبراج الفندقية قرب الحرم، والضيافة متعددة الوحدات، وسكن B2B. كل نمط يفرض مكتبة بصرية مختلفة."
+      },
+      {
+        "type": "h3",
+        "text": "ضيافة شاهقة قرب الحرم (كسياق Omar Towers M Gallery)"
+      },
+      {
+        "type": "p",
+        "text": "القصة تبدأ بالموقع ومسار الضيف وجودة الغرفة. المشاهد الجوية تحتاج حذراً في الادعاء؛ المشاهد الداخلية واللوبي والمرافق غالباً ما تبيع أكثر من واجهة مبالغ فيها. الفيلم القصير يجب أن يشرح القيمة الاستثمارية دون ضجيج. في مكة، المستثمر الجاد يقرأ جودة الإقامة قبل أي ادعاء بصري عن القرب."
+      },
+      {
+        "type": "h3",
+        "text": "ضيافة وضيافة متعددة الوحدات (كسياق Zakher Makkah نحو 2026)"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "رندرات غرف ومساحات مشتركة بمواصفات تشطيب واضحة",
+          "مجسم يوضح الكتلة والوصول للمستثمر المؤسسي",
+          "حزمة وسيط تفرّق بين منتج الإقامة ومنتج الاستثمار إن وُجدا",
+          "مشاهد مسار ضيف من المدخل إلى الغرفة — لا صورة لوبي معزولة"
+        ]
+      },
+      {
+        "type": "h3",
+        "text": "سكن عمالي/B2B (كسياق قرية عنان إسكان مكة كنوع سوقي)"
+      },
+      {
+        "type": "p",
+        "text": "الإقناع هنا مؤسسي: السعة، التشغيل، والثقة. الإظهار يوضح التنظيم والكثافة والمرافق التشغيلية أكثر من «نمط حياة فاخر». ملاحظة مهمة: أعمال Graphics House الموثّقة لـ [عنان إسكان في الرياض](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh.html) محفظة منفصلة عن أي مشروع مكة يحمل اسماً مشابهاً في السوق."
+      },
+      {
+        "type": "h2",
+        "text": "من الرندر إلى المجسم الذكي — سيناريو العرض"
+      },
+      {
+        "type": "p",
+        "text": "الرندر يفتح الباب؛ المجسم والتجربة التفاعلية يثبتان الحضور. في المعارض المؤسسية والمشاريع الرمزية، الزائر يحتاج أن يلمس القصة خلال دقائق. لذلك نربط الإنتاج البصري بسيناريو العرض لا بعدد الصور فقط — مع [أفلام CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html) عند الحاجة لعروض المستثمرين."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "تجميد زوايا الموقع والكتلة بموافقة المعماري والتسويق",
+          "إنتاج مشاهد داخلية للغرفة/الوحدة الأعلى أولوية بيعاً",
+          "بناء مجسم بمقياس وقراءة تسميات من مسافة الصالة",
+          "اختبار سيناريو 8–10 دقائق مع فريق المبيعات قبل الافتتاح",
+          "قفل نسخة الحملة الرقمية بعد الاعتماد الرسمي"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "سير اعتماد خاص بحساسية المكان"
+      },
+      {
+        "type": "p",
+        "text": "في مكة، الاعتماد لا يقتصر على الجمال — بل على ما يمكن الدفاع عنه أمام المستثمر والوسيط. اطلب قائمة قبول مكتوبة تتضمن أي ادعاء بصري عن القرب أو الإطلالة."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "المكتب المعماري يعتمد الكتلة والموقع دون مبالغة",
+          "التسويق يعتمد الرسالة والمشاهد البطولية قبل الحملة",
+          "المبيعات يعتمد سيناريو العرض وحزمة الوسيط",
+          "اعتماد lookdev واحد قبل الرندر النهائي",
+          "توقيع مكتوب قبل تسليم أي أصل للوسطاء أو الإعلانات"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "معايير قبول خاصة بحساسية المكان"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "لا مبالغة بصرية في القرب أو الإطلالة تتجاوز ما يمكن الدفاع عنه تجارياً",
+          "المواد والإضاءة تليق بتوقعات ضيافة مكة لا بقالب سكني عام",
+          "المخطط المعتمد للمبيعات مطابق للمجسم والشاشات",
+          "الهوية واللغة البصرية محترمة ومتسقة عبر اللوحات والفيلم والويب",
+          "عيّنات التشطيب في الصالة مربوطة بالرندر الداخلي المعتمد",
+          "رقم إصدار واضح على كل ملف يُعرض للجمهور"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "جاهزية الوسيط وصالة البيع في سوق مؤسسي"
+      },
+      {
+        "type": "p",
+        "text": "وسطاء مكة يبيعون لمستثمرين مؤسسيين ومشترين أفراد. الحزمة يجب أن تفرّق بين منتج الإقامة ومنتج الاستثمار، وتتجنب أي ادعاء بصري لا يمكن الدفاع عنه."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "حزمة وسيط: صور بطل + مخططات + فيلم قصير + رسالة موقع معتمدة",
+          "بطاقة «ما يُعرض اليوم» للمواد والمراحل المقفلة",
+          "سيناريو عرض 8–10 دقائق: شاشة ← مجسم ← غرفة نموذجية",
+          "منع لقطات الشاشة غير الرسمية",
+          "تدريب أسبوعي قصير عند أي تحديث أصول"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "قرب جدة يخدم مشاريع مكة"
+      },
+      {
+        "type": "p",
+        "text": "المقر في [جدة](https://3dgraphicshouse.com/locations/jeddah.html) يتيح ورش اعتماد ميدانية ودعم تركيب أسرع لصالات البيع والمعارض في [مكة](https://3dgraphicshouse.com/locations/makkah.html). الزمن بين الملاحظة والتعديل أقصر — وهذا حاسم في جداول الإطلاق المضغوطة حول المواسم والمعارض."
+      },
+      {
+        "type": "h2",
+        "text": "أخطاء شائعة في إطلاقات مكة"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "استخدام قوالب إظهار سكنية عامة بلا احترام للسياق",
+          "المبالغة في الإطلالة حتى تضعف ثقة المستثمر الجاد",
+          "إطلاق حملة قبل اعتماد مسار الضيف والمشاهد الداخلية",
+          "مجسم بدون تسميات واضحة للمراحل أو الأبراج",
+          "فصل التشطيب التنفيذي عن الوعد البصري في غرف العرض",
+          "تثبيت تاريخ الإطلاق قبل تجميد المشاهد البطولية",
+          "إهمال تدريب الفريق: أصول ممتازة تُعرض بلا سيناريو"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "قائمة تحقق قبل التعاقد"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "هل لدى الاستوديو أعمال موثّقة في مكة أو سياقات مشابهة؟",
+          "هل يمكنهم تسليم رندر + فيلم + مجسم/تفاعلي بهوية واحدة؟",
+          "هل سير الاعتماد واضح بين المكتب المعماري والتسويق؟",
+          "هل التركيب والتسليم جزء من العرض؟",
+          "هل المواد جاهزة للوسيط والمعرض والحملة الرقمية؟",
+          "هل استخدمت [موجز المشروع](https://3dgraphicshouse.com/insights/tools/project-brief.html) و[قائمة الجاهزية](https://3dgraphicshouse.com/insights/tools/launch-checklist.html) لضبط النطاق؟"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "عرض المستثمر مقابل عرض المشتري في مكة"
+      },
+      {
+        "type": "p",
+        "text": "المستثمر المؤسسي يريد مخططاً وكتلة ومسار ضيف ومواصفات تشطيب — غالباً في 8–10 دقائق. المشتري الفردي يريد أن يرى الغرفة والمواد. نظام الإطلاق يجب أن يخدم السيناريوين دون تضارب في الرسالة أو الادعاءات البصرية."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "حزمة مستثمر: مخطط + مجسم + فيلم قصير + مواصفات",
+          "حزمة مشتري: رندر غرفة + عيّنة تشطيب + مسار صالة",
+          "نفس الإصدار المعتمد على الشاشة والوسيط — لا نسختين متناقضتين"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "مواسم الإطلاق والمعارض في مكة"
+      },
+      {
+        "type": "p",
+        "text": "جداول الإطلاق حول المواسم والمعارض مضغوطة. كل يوم تأخير في الاعتماد يكلف دورة بيع. لذلك قرب جدة من مكة — ورش اعتماد ميدانية وتركيب أسرع — ليس رفاهية بل شرط تشغيلي. استخدم [قائمة الجاهزية](https://3dgraphicshouse.com/insights/tools/launch-checklist.html) قبل تثبيت تاريخ المعرض أو الصالة."
+      },
+      {
+        "type": "p",
+        "text": "راجع صفحة [مكة المكرمة](https://3dgraphicshouse.com/locations/makkah.html) أو [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html)، واحجز جلسة تقييم مجانية قبل تثبيت خطة الإطلاق. عند الحاجة لتضخيم الحملة بعد قفل الأصول، [Beesmotion](https://beesmotion.com) خيار طبيعي للتسويق الرقمي."
+      }
     ],
     "en": [
-      { "type": "p", "text": "Makkah is not an ordinary real estate market. A project is read through its place, the living promise it makes, and its ability to earn trust from local buyers and international investors. Launches fail when they rely on generic images that ignore context." },
-      { "type": "p", "text": "From work such as Al Khair Heights and the Makkah Charter for the Muslim World League, we know renders, smart maquettes, and interactive experiences must operate as one system — from approval through exhibition to the sales gallery." },
-      { "type": "h2", "text": "What makes Makkah visualization different?" },
-      { "type": "ul", "items": [
-        "Accurate visual relationship to place without misleading claims",
-        "Lighting and materials that match hospitality and lodging expectations",
-        "Clarity of units and paths for investors and visitors",
-        "Identity consistency between digital campaigns and on-site environments"
-      ]},
-      { "type": "h2", "text": "From render to smart maquette" },
-      { "type": "p", "text": "Renders open the door; maquettes and interactive experiences lock presence. In institutional exhibitions and landmark projects, visitors need to grasp the story in minutes. Production should follow the presentation scenario — not image count alone." },
-      { "type": "h2", "text": "Jeddah proximity serves Makkah projects" },
-      { "type": "p", "text": "Jeddah HQ enables on-ground approval workshops and faster install support for Makkah galleries and exhibitions. The loop from feedback to revision is shorter — critical on compressed launch calendars." },
-      { "type": "h2", "text": "Checklist before you contract" },
-      { "type": "ol", "items": [
-        "Does the studio have documented work in Makkah or similar contexts?",
-        "Can they deliver render + film + maquette/interactive under one identity?",
-        "Is the approval workflow clear between architecture and marketing?",
-        "Are install and handover part of the scope?",
-        "Are assets ready for brokers, exhibitions, and digital campaigns?"
-      ]},
-      { "type": "p", "text": "Review the Makkah location page or ProjectLaunch™, and book a free assessment before locking the launch plan." }
+      {
+        "type": "p",
+        "text": "Makkah is not an ordinary real estate market. A project is read through its place, the living promise it makes, and its ability to earn trust from local buyers and international investors. Launches fail when they rely on generic images that ignore context — or exaggerate visual proximity in ways that weaken credibility."
+      },
+      {
+        "type": "p",
+        "text": "From work such as [Al Khair Heights](https://3dgraphicshouse.com/insights/projects/al-khair-makkah-en.html) and the [Makkah Charter](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl-en.html) for the Muslim World League, we know [renders](https://3dgraphicshouse.com/services/rendering-en.html), [smart maquettes](https://3dgraphicshouse.com/services/maquettes-en.html), and [interactive experiences](https://3dgraphicshouse.com/services/interactive-experiences-en.html) must operate as one system inside [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) — from approval through exhibition to the sales gallery."
+      },
+      {
+        "type": "h2",
+        "text": "What makes Makkah visualization different?"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Accurate visual relationship to place without misleading proximity or view claims",
+          "Lighting and materials that match hospitality and lodging expectations",
+          "Clarity of units and paths for investors and visitors within minutes",
+          "Identity consistency between digital campaigns and on-site environments",
+          "Respectful camera language and tone — not a generic residential template",
+          "Documentation of any visual proximity or view claim that can be commercially defended"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Makkah pipeline project types — market context"
+      },
+      {
+        "type": "p",
+        "text": "To read live project types as market context (not a delivery claim), [Ruwaq Tours](https://ruwaq.co/tours) shows patterns such as hotel towers near the Haram, multi-unit hospitality, and B2B housing. Each pattern demands a different visual library."
+      },
+      {
+        "type": "h3",
+        "text": "High-rise hospitality near the Haram (e.g. Omar Towers M Gallery-type context)"
+      },
+      {
+        "type": "p",
+        "text": "The story starts with location, guest path, and room quality. Aerials need careful claims; interiors, lobby, and amenities often sell more than an exaggerated façade. The short film should explain investment value without noise. In Makkah, serious investors read lodging quality before any visual proximity claim."
+      },
+      {
+        "type": "h3",
+        "text": "Multi-unit hospitality (e.g. Zakher Makkah-type context toward 2026)"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Room and shared-space renders with clear finish specification",
+          "A maquette that clarifies massing and access for institutional investors",
+          "A broker pack that separates lodging product from investment product when both exist",
+          "Guest-path scenes from entrance to room — not an isolated lobby still"
+        ]
+      },
+      {
+        "type": "h3",
+        "text": "B2B labor housing (e.g. Anan Eskan village Makkah as a market type)"
+      },
+      {
+        "type": "p",
+        "text": "Persuasion here is institutional: capacity, operations, and trust. Visualization clarifies organization, density, and operational amenities more than “luxury lifestyle.” Important note: Graphics House documented work for [Anan Eskan in Riyadh](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh-en.html) is a separate portfolio case from any similarly named Makkah market project."
+      },
+      {
+        "type": "h2",
+        "text": "From render to smart maquette — presentation scenario"
+      },
+      {
+        "type": "p",
+        "text": "Renders open the door; maquettes and interactive experiences lock presence. In institutional exhibitions and landmark projects, visitors need to grasp the story in minutes. Production should follow the presentation scenario — not image count alone — with [CGI films](https://3dgraphicshouse.com/services/cinematic-cgi-en.html) when investor presentations require motion."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Freeze site and massing angles with architecture and marketing sign-off",
+          "Produce interiors for the highest-priority sales room/unit",
+          "Build a maquette with scale and labels readable from gallery distance",
+          "Test an 8–10 minute scenario with sales before opening",
+          "Lock the digital campaign version after formal approval"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Approval workflow for place sensitivity"
+      },
+      {
+        "type": "p",
+        "text": "In Makkah, approval is not only about aesthetics — it is about what can be defended in front of investors and brokers. Request a written acceptance list that includes any visual proximity or view claim."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Architecture signs off massing and site without exaggeration",
+          "Marketing signs off message and hero scenes before the campaign",
+          "Sales signs off presentation scenario and broker pack",
+          "One lookdev pass before final renders",
+          "Written sign-off before any asset reaches brokers or ads"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Acceptance criteria for place sensitivity"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "No visual exaggeration of proximity or views beyond what can be commercially defended",
+          "Materials and lighting fit Makkah hospitality expectations, not a generic residential template",
+          "Sales-approved plan matches maquette and screens",
+          "Identity and visual language remain respectful and consistent across boards, film, and web",
+          "Gallery finish samples linked to the approved interior render",
+          "Clear version number on every public-facing file"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Broker and gallery readiness in an institutional market"
+      },
+      {
+        "type": "p",
+        "text": "Makkah brokers sell to institutional investors and retail buyers. The pack must separate lodging product from investment product, and avoid any visual claim that cannot be defended."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Broker pack: hero stills + plans + short film + approved location message",
+          "A “what we show today” card for locked materials and phases",
+          "8–10 minute presentation path: screen → maquette → show room",
+          "Block unofficial screenshots",
+          "Short weekly training when assets update"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Jeddah proximity serves Makkah projects"
+      },
+      {
+        "type": "p",
+        "text": "[Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) HQ enables on-ground approval workshops and faster install support for [Makkah](https://3dgraphicshouse.com/locations/makkah-en.html) galleries and exhibitions. The loop from feedback to revision is shorter — critical on compressed launch calendars around seasons and exhibitions."
+      },
+      {
+        "type": "h2",
+        "text": "Common failures in Makkah launches"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Using generic residential visualization templates without place respect",
+          "Exaggerating views until serious investors lose trust",
+          "Launching campaigns before guest-path and interior scenes are approved",
+          "Maquette without clear phase or tower labels",
+          "Separating finish execution from the visual promise in show rooms",
+          "Locking a launch date before freezing hero scenes",
+          "Skipping team training: excellent assets presented without a scenario"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Checklist before you contract"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Does the studio have documented work in Makkah or similar contexts?",
+          "Can they deliver render + film + maquette/interactive under one identity?",
+          "Is the approval workflow clear between architecture and marketing?",
+          "Are install and handover part of the scope?",
+          "Are assets ready for brokers, exhibitions, and digital campaigns?",
+          "Have you used the [project brief](https://3dgraphicshouse.com/insights/tools/project-brief-en.html) and [launch checklist](https://3dgraphicshouse.com/insights/tools/launch-checklist-en.html) to lock scope?"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Investor presentation vs retail buyer in Makkah"
+      },
+      {
+        "type": "p",
+        "text": "Institutional investors want plan, massing, guest path, and finish specs — often in 8–10 minutes. Retail buyers want to see the room and materials. The launch system must serve both scenarios without conflicting message or visual claims."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Investor pack: plan + maquette + short film + specifications",
+          "Buyer pack: room render + finish sample + gallery path",
+          "Same approved version on screen and broker pack — no conflicting copies"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Review the [Makkah location page](https://3dgraphicshouse.com/locations/makkah-en.html) or [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html), and book a free assessment before locking the launch plan. When campaign amplification is needed after assets lock, [Beesmotion](https://beesmotion.com) is a natural digital marketing fit."
+      }
     ]
   }
 }

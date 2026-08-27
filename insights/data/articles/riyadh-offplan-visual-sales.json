@@ -2,67 +2,419 @@
   "slug": "riyadh-offplan-visual-sales",
   "featured": false,
   "date": "2026-08",
-  "dateLabel": { "ar": "أغسطس 2026", "en": "Aug 2026" },
-  "category": { "ar": "الرياض", "en": "Riyadh" },
+  "dateLabel": {
+    "ar": "أغسطس 2026",
+    "en": "Aug 2026"
+  },
+  "category": {
+    "ar": "الرياض",
+    "en": "Riyadh"
+  },
   "image": "assets/projects/rendering/alrajhi3.jpeg",
   "title": {
     "ar": "المبيعات البصرية في الرياض: كيف تُقنع قبل أن يكتمل البناء؟",
     "en": "Visual Sales in Riyadh: How to Persuade Before Construction Completes"
   },
   "excerpt": {
-    "ar": "العاصمة سوق قرارات سريع. تعرّف كيف يحوّل الإظهار والمجسمات والأفلام مشروعك off-plan إلى قصة يفهمها المستثمر والوسيط خلال خمس دقائق.",
-    "en": "The capital is a fast-decision market. See how archviz, maquettes, and films turn your off-plan project into a story investors and brokers grasp in five minutes."
+    "ar": "العاصمة سوق قرارات سريع. كيف يحوّل الإظهار والمجسمات والأفلام مشروعك off-plan إلى قصة يفهمها المستثمر والوسيط خلال خمس دقائق — مع قراءة لأنواع المشاريع في خط الأنابيب ومعايير قبول قبل الإطلاق.",
+    "en": "The capital is a fast-decision market. How archviz, maquettes, and films turn your off-plan project into a five-minute story for investors and brokers — plus pipeline project types and acceptance criteria before go-live."
   },
   "metaDescription": {
-    "ar": "إظهار معماري ومبيعات بصرية للمطورين في الرياض: رندر، مجسمات ذكية، CGI، وصالات بيع — Graphics House للسوق السعودي.",
-    "en": "Archviz and visual sales for Riyadh developers: renders, smart maquettes, CGI & sales galleries — Graphics House for the Saudi market."
+    "ar": "مبيعات بصرية off-plan في الرياض: رندر، مجسمات ذكية، CGI وصالة بيع — أنواع مشاريع العاصمة ونظام Graphics House للإقناع قبل اكتمال البناء.",
+    "en": "Riyadh off-plan visual sales: renders, smart maquettes, CGI & gallery — capital project types and Graphics House systems that persuade before construction."
   },
   "body": {
     "ar": [
-      { "type": "p", "text": "الرياض ليست مجرد مدينة إطلاق — بل بيئة قرارات مكثّفة. المطورون يتنافسون على انتباه المستثمر المحلي والدولي، والوسطاء يحتاجون مواد تُشرح نفسها، والمشتري يريد أن «يرى» الوحدة قبل أن تُبنى." },
-      { "type": "p", "text": "هنا يتحول الإظهار المعماري من «صور جميلة» إلى أداة مبيعات. عندما تتكامل الرندرات مع فيلم قصير ومجسم ذكي وتجربة تفاعلية، ينخفض زمن الشرح وترتفع جاهزية صالة البيع." },
-      { "type": "h2", "text": "ما الذي يبحث عنه صانع القرار في الرياض؟" },
-      { "type": "ul", "items": [
-        "وضوح الموقع والمخطط خلال الثواني الأولى",
-        "مصداقية المواد والإضاءة بما يطابق توقعات السوق السعودي",
-        "قصة مراحل البيع لا صورة واحدة معزولة",
-        "أدوات وسيط جاهزة للعرض على الجوال أو في الصالة"
-      ]},
-      { "type": "h2", "text": "من الرندر إلى صالة البيع — مسار عملي" },
-      { "type": "ol", "items": [
-        "بناء نموذج ثلاثي الأبعاد مركزي قابل لإعادة الاستخدام",
-        "إنتاج رندرات خارجية وداخلية للحملة والاعتماد",
-        "فيلم إطلاق يروي القصة للمستثمر في وقت قصير",
-        "مجسم أو منصة تفاعلية لتشبيت الحضور في الصالة",
-        "تركيب وتدريب فريق المبيعات على الأصول"
-      ]},
-      { "type": "h2", "text": "أمثلة من السوق" },
-      { "type": "p", "text": "مشاريع مثل عنان إسكان وأعمال إظهار مرتبطة بالعاصمة تُظهر أن التكامل البصري يُسرّع الفهم. المعيار ليس عدد الصور — بل قدرة الزائر على اتخاذ قرار أقرب للشراء أو الشراكة." },
-      { "type": "h2", "text": "الخطوة التالية" },
-      { "type": "p", "text": "إذا كان مشروعك في الرياض أو منطقة العاصمة، راجع صفحة الرياض وProjectLaunch™، أو احجز جلسة تقييم مجانية لمعرفة فجوات الجاهزية قبل يوم الإطلاق." }
+      {
+        "type": "p",
+        "text": "الرياض ليست مجرد مدينة إطلاق — بل بيئة قرارات مكثّفة. المطورون يتنافسون على انتباه المستثمر المحلي والدولي، والوسطاء يحتاجون مواد تُشرح نفسها، والمشتري يريد أن يرى الوحدة قبل أن تُبنى. في هذا المناخ، التأخير البصري يساوي خسارة دورة بيع كاملة أمام منافس أوضح."
+      },
+      {
+        "type": "p",
+        "text": "هنا يتحول [الإظهار المعماري](https://3dgraphicshouse.com/services/rendering.html) من صور جميلة إلى أداة مبيعات. عندما تتكامل الرندرات مع [فيلم CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html) و[مجسم ذكي](https://3dgraphicshouse.com/services/maquettes.html) و[تجربة تفاعلية](https://3dgraphicshouse.com/services/interactive-experiences.html) داخل نظام [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html)، ينخفض زمن الشرح وترتفع جاهزية صالة البيع في العاصمة."
+      },
+      {
+        "type": "h2",
+        "text": "ما الذي يبحث عنه صانع القرار في الرياض؟"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "وضوح الموقع والمخطط خلال الثواني الأولى على الجوال أو الشاشة",
+          "مصداقية المواد والإضاءة بما يطابق توقعات السوق السعودي الفاخر والمتوسط",
+          "قصة مراحل البيع لا صورة واحدة معزولة",
+          "أدوات وسيط جاهزة للعرض في السيارة أو الصالة أو المعرض",
+          "اتساق بين الحملة الرقمية وما يراه الزائر داخل الصالة",
+          "إجابة واضحة عن «ماذا أشتري اليوم؟» — مرحلة، نموذج، تشطيب، موعد تسليم"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "أنواع مشاريع العاصمة — ماذا يحتاج كل نوع بصرياً؟"
+      },
+      {
+        "type": "p",
+        "text": "خط أنابيب الرياض متنوع. كخريطة سوق عامة لأنواع المشاريع الحية (لا كادعاء تسليم)، تظهر جولات [Ruwaq](https://ruwaq.co/tours) أنماطاً تتكرر: مجتمعات واسعة، فلل، بوابات مختلطة، ومشاريع قرب الدرعية. كل نمط يفرض مكتبة أصول مختلفة."
+      },
+      {
+        "type": "h3",
+        "text": "مجتمعات واسعة (كسياقات Sedra ROSHN)"
+      },
+      {
+        "type": "p",
+        "text": "المشتري يشتري نمط حياة لا وحدة فقط. تحتاج مشاهد مرافق، مسارات مشي، وإيقاع وحدات واضح، مع فيلم يروي الحي قبل تفاصيل المطبخ. المجسم أو الخريطة التفاعلية يثبتان حجم المشروع بسرعة للمستثمر. في العاصمة، المشتري غالباً يقارن بين مجتمعين في نفس الأسبوع — لذلك يجب أن تُظهر المرافق والمداخل بوضوح لا تفاصيل داخلية متكررة."
+      },
+      {
+        "type": "h3",
+        "text": "فلل ومجمعات (كسياقات Mayan Al Fursan أو Saraya Al Ruba)"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "رندرات تُظهر الخصوصية والحديقة والواجهة الجانبية لا الواجهة الأمامية فقط",
+          "مقارنة خيارات التشطيب أو النماذج دون إرباك الوسيط",
+          "مجسم يوضّح توزيع الفلل والمسافات — غالباً أهم من فيلم طويل",
+          "مشاهد نهار ومساء للواجهة الخارجية والمدخل الخاص"
+        ]
+      },
+      {
+        "type": "h3",
+        "text": "بوابات ومواقع رمزية (كسياقات Pavilions Al Rabiyah أو Anara Sahab)"
+      },
+      {
+        "type": "p",
+        "text": "القصة تبدأ بالموقع والقيمة الاستثمارية. مشهد جوي معتمد، واجهة ليلية، ومسار من المدخل إلى الوحدة يختصران نقاش «أين المشروع؟». للحملات اللاحقة يمكن تضخيم الأصول عبر شريك رقمي مثل [Beesmotion](https://beesmotion.com) بعد قفل النسخ المعتمدة."
+      },
+      {
+        "type": "h2",
+        "text": "من الرندر إلى صالة البيع — مسار عملي للرياض"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "بناء نموذج ثلاثي الأبعاد مركزي قابل لإعادة الاستخدام عبر المراحل",
+          "إنتاج رندرات خارجية وداخلية للحملة والاعتماد — راجع خدمة [الرندر](https://3dgraphicshouse.com/services/rendering.html)",
+          "فيلم إطلاق يروي القصة للمستثمر في وقت قصير",
+          "مجسم أو منصة تفاعلية لتشبيت الحضور في الصالة",
+          "[هوية وتركيب](https://3dgraphicshouse.com/services/branding.html) يوحّدان الشاشات واللوحات",
+          "تدريب فريق المبيعات والوسطاء على سيناريو العرض",
+          "قفل إصدار الأصول قبل أي حملة مدفوعة أو افتتاح صالة"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "سير اعتماد بين المعماري والتسويق والمبيعات"
+      },
+      {
+        "type": "p",
+        "text": "في الرياض، جداول الإطلاق مضغوطة. بدون سير اعتماد واضح، يتحول كل تعديل إلى تأخير أسبوع. اطلب ورشة brief مشتركة في أسبوع التوقيع، ثم تجميد زوايا البطل قبل الإنتاج الكثيف."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "المكتب المعماري يعتمد الكتلة والواجهة والمخطط المعروض للمبيعات",
+          "التسويق يعتمد الرسالة والمشاهد البطولية قبل الحملة",
+          "المبيعات يعتمد سيناريو العرض وحزمة الوسيط",
+          "اعتماد lookdev واحد قبل الرندر النهائي",
+          "توقيع مكتوب قبل تسليم أي أصل للوسطاء أو الإعلانات"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "معايير قبول سريعة قبل فتح الحملة"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "المخطط المعتمد للمبيعات مطابق للكتلة في الرندر والمجسم",
+          "المواد الداخلية الأساسية مربوطة بلوحة عيّنات أو مواصفة تسويقية",
+          "حزمة وسيط واحدة فقط على قناة التوزيع الرسمية",
+          "شاشة الصالة تعرض نفس نسخة الفيلم المستخدمة في الإعلان",
+          "قائمة تحديث مجدولة عند إطلاق مرحلة لاحقة",
+          "رقم إصدار واضح على كل ملف يُعرض للجمهور"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "جاهزية الوسيط في سوق قرارات سريع"
+      },
+      {
+        "type": "p",
+        "text": "وسيط الرياض غالباً يفتح المحادثة من رسالة واتساب. إن لم تكن الصور مضغوطة والرسالة واضحة، سيأخذ أصولاً من مصادر أخرى. جهّز حزمة موحّدة لا تتجاوز حجم ملف معقول للجوال، مع نص موقع واحد معتمد."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "مجلد وسيط: صور بطل + مخططات + فيلم أقل من 90 ثانية",
+          "نص موقع واحد معتمد (لا نسخ متعددة من التسويق)",
+          "جدول أسئلة شائعة مرئي: مواقف، مرافق، مواعيد تسليم مرحلة",
+          "مسار زيارة صالة: ماذا يُعرض أولاً على الشاشة ثم المجسم",
+          "بطاقة «ما يُباع اليوم» عند تغيير المرحلة أو النموذج",
+          "منع استخدام لقطات شاشة غير رسمية من الوسطاء"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "مواصفات صالة البيع في العاصمة"
+      },
+      {
+        "type": "p",
+        "text": "صالات الرياض تستقبل مستثمرين مؤسسيين ومشترين أفراد في أيام مزدحمة. التصميم البصري للصالة جزء من نظام الإطلاق لا ديكوراً منفصلاً."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "شاشة بطل بارتفاع مناسب للقراءة من مسافة 3–4 أمتار",
+          "إضاءة المجسم لا تتنافس مع شاشة الفيلم",
+          "لوحة مواد أو عيّنات تشطيب مربوطة بالرندر الداخلي المعتمد",
+          "مسار واضح: شاشة ← مجسم ← وحدة نموذجية ← لوحة مواد",
+          "نسخ معتمدة فقط — قفل ملفات الإصدار على كل الأجهزة"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "دليل من محفظة Graphics House في العاصمة"
+      },
+      {
+        "type": "p",
+        "text": "أعمالنا في الرياض تُظهر أن التكامل البصري يُسرّع الفهم — المعيار ليس عدد الصور بل قدرة الزائر على الاقتراب من قرار الشراء أو الشراكة. راجع دراسات [عنان إسكان الرياض](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh.html) و[الراجحي الرياض](https://3dgraphicshouse.com/insights/projects/al-rajhi-riyadh.html)، وصفحة [الرياض](https://3dgraphicshouse.com/locations/riyadh.html)."
+      },
+      {
+        "type": "h2",
+        "text": "أخطاء شائعة في إطلاقات العاصمة"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "إطلاق رندر «عام» لا يُظهر فرق الحي أو المرحلة المعروضة فعلياً",
+          "إنتاج مجسم متأخر بعد افتتاح الصالة — فيبدو المكان ناقصاً أمام المستثمر",
+          "إهمال المشاهد الليلية والمرافق في المجتمعات الكبيرة",
+          "تغيير الواجهة بعد بدء الحملة دون تحديث كل القنوات",
+          "فصل التشطيب التنفيذي عن الوعد البصري حتى تظهر فجوة في الصالة — هنا يلتقي الإظهار لاحقاً مع تنفيذ مثل [Turriva](https://turriva.com) عند الحاجة",
+          "تثبيت تاريخ الإطلاق قبل تجميد المشاهد البطولية",
+          "تدريب ضعيف: أصول ممتازة تُعرض بلا سيناريو 8–10 دقائق"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "قائمة تحقق قبل التعاقد مع استوديو الإظهار"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "هل يمكن تسليم رندر + فيلم + مجسم/تفاعلي بهوية واحدة؟",
+          "هل سير الاعتماد واضح بين المعماري والتسويق والمبيعات؟",
+          "هل التركيب والتسليم جزء من العرض؟",
+          "هل المواد جاهزة للوسيط والمعرض والحملة الرقمية؟",
+          "هل استخدمت [موجز المشروع](https://3dgraphicshouse.com/insights/tools/project-brief.html) و[قائمة الجاهزية](https://3dgraphicshouse.com/insights/tools/launch-checklist.html) لضبط النطاق؟"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "الخطوة التالية لفريق التطوير في الرياض"
+      },
+      {
+        "type": "p",
+        "text": "قبل التعاقد، راجع ما إذا كان الاستوديو يفهم off-plan في العاصمة — لا مجرد «استوديو رندر». السؤال الصحيح: هل يمكنهم تسليم نظاماً كاملاً من نموذج ثلاثي الأبعاد إلى تركيب صالة؟"
+      },
+      {
+        "type": "p",
+        "text": "ابدأ بـ [موجز المشروع](https://3dgraphicshouse.com/insights/tools/project-brief.html) و[قائمة الجاهزية](https://3dgraphicshouse.com/insights/tools/launch-checklist.html)، ثم اطلب تقييماً عبر [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) أو صفحة الرياض. جلسة التقييم مجانية وبدون التزام — والهدف تحديد فجوات الجاهزية قبل تثبيت تاريخ الإطلاق."
+      }
     ],
     "en": [
-      { "type": "p", "text": "Riyadh is not just a launch city — it is a dense decision environment. Developers compete for local and international investor attention, brokers need self-explanatory assets, and buyers want to “see” the unit before it is built." },
-      { "type": "p", "text": "This is where architectural visualization becomes a sales tool, not decoration. When renders integrate with a short film, a smart maquette, and an interactive experience, explanation time drops and gallery readiness rises." },
-      { "type": "h2", "text": "What decision-makers in Riyadh look for" },
-      { "type": "ul", "items": [
-        "Clarity of location and master plan in the first seconds",
-        "Material and lighting credibility that matches Saudi market expectations",
-        "A phased sales story — not one isolated image",
-        "Broker-ready tools for mobile or on the sales floor"
-      ]},
-      { "type": "h2", "text": "From render to sales gallery — a practical path" },
-      { "type": "ol", "items": [
-        "Build a reusable central 3D model",
-        "Produce exterior and interior renders for campaign and approvals",
-        "Create a launch film that tells the investor story quickly",
-        "Add a maquette or interactive platform to anchor gallery presence",
-        "Install and train the sales team on the assets"
-      ]},
-      { "type": "h2", "text": "Market proof" },
-      { "type": "p", "text": "Projects such as Anan Eskan and capital-linked visualization work show that visual integration accelerates understanding. The metric is not image count — it is how quickly a visitor moves toward purchase or partnership." },
-      { "type": "h2", "text": "Next step" },
-      { "type": "p", "text": "If your project is in Riyadh or the capital region, review the Riyadh location page and ProjectLaunch™, or book a free assessment to find readiness gaps before launch day." }
+      {
+        "type": "p",
+        "text": "Riyadh is not just a launch city — it is a dense decision environment. Developers compete for local and international investor attention, brokers need self-explanatory assets, and buyers want to see the unit before it is built. In that climate, visual delay equals losing a full sales cycle to a clearer competitor."
+      },
+      {
+        "type": "p",
+        "text": "This is where [architectural visualization](https://3dgraphicshouse.com/services/rendering-en.html) becomes a sales tool, not decoration. When renders integrate with a [CGI film](https://3dgraphicshouse.com/services/cinematic-cgi-en.html), a [smart maquette](https://3dgraphicshouse.com/services/maquettes-en.html), and an [interactive experience](https://3dgraphicshouse.com/services/interactive-experiences-en.html) inside [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html), explanation time drops and gallery readiness rises across the capital."
+      },
+      {
+        "type": "h2",
+        "text": "What decision-makers in Riyadh look for"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Clarity of location and master plan in the first seconds on mobile or screen",
+          "Material and lighting credibility that matches Saudi premium and mid-market expectations",
+          "A phased sales story — not one isolated image",
+          "Broker-ready tools for car, gallery, or exhibition",
+          "Consistency between digital campaigns and what visitors see in the gallery",
+          "A clear answer to “what am I buying today?” — phase, model, finish, handover timing"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Capital project types — what each needs visually"
+      },
+      {
+        "type": "p",
+        "text": "Riyadh’s pipeline is diverse. As a public market map of live project types (not a delivery claim), [Ruwaq Tours](https://ruwaq.co/tours) shows recurring patterns: large communities, villas, mixed-use gates, and Diriyah-adjacent sites. Each pattern demands a different asset library."
+      },
+      {
+        "type": "h3",
+        "text": "Large communities (e.g. Sedra ROSHN-type contexts)"
+      },
+      {
+        "type": "p",
+        "text": "Buyers purchase a lifestyle, not only a unit. You need amenity scenes, walking paths, and clear unit rhythm, plus a film that narrates the neighbourhood before kitchen detail. A maquette or interactive map proves project scale quickly for investors. In the capital, buyers often compare two communities in the same week — amenities and neighbourhood entries must read clearly, not repeated interior detail."
+      },
+      {
+        "type": "h3",
+        "text": "Villa compounds (e.g. Mayan Al Fursan or Saraya Al Ruba-type contexts)"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Renders that show privacy, garden, and side elevation — not only the front façade",
+          "Finish or model option comparison without confusing brokers",
+          "A maquette that clarifies villa spacing — often more valuable than a long film",
+          "Day and evening scenes for exterior façade and private entry"
+        ]
+      },
+      {
+        "type": "h3",
+        "text": "Gates and landmark sites (e.g. Pavilions Al Rabiyah or Anara Sahab-type contexts)"
+      },
+      {
+        "type": "p",
+        "text": "The story starts with location and investment value. An approved aerial, night façade, and path from entrance to unit shorten the “where is it?” debate. Later campaigns can amplify locked assets through a digital partner such as [Beesmotion](https://beesmotion.com)."
+      },
+      {
+        "type": "h2",
+        "text": "From render to sales gallery — a Riyadh path"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Build a reusable central 3D model across phases",
+          "Produce exterior and interior renders for campaign and approvals — see [rendering](https://3dgraphicshouse.com/services/rendering-en.html)",
+          "Create a launch film that tells the investor story quickly",
+          "Add a maquette or interactive platform to anchor gallery presence",
+          "[Identity and install](https://3dgraphicshouse.com/services/branding-en.html) that unify screens and boards",
+          "Train sales and brokers on the presentation scenario",
+          "Lock asset versions before any paid campaign or gallery opening"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Approval workflow across architecture, marketing, and sales"
+      },
+      {
+        "type": "p",
+        "text": "In Riyadh, launch calendars are compressed. Without a clear approval loop, every revision becomes a week of delay. Run a joint brief workshop in the signing week, then freeze hero angles before dense production."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Architecture signs off massing, façade, and the sales-facing plan",
+          "Marketing signs off message and hero scenes before the campaign",
+          "Sales signs off presentation scenario and broker pack",
+          "One lookdev pass before final renders",
+          "Written sign-off before any asset reaches brokers or ads"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Fast acceptance criteria before campaign go-live"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Sales-approved plan matches massing in render and maquette",
+          "Primary interior materials linked to a sample board or marketing spec",
+          "One broker pack only on the official distribution channel",
+          "Gallery screen shows the same film version used in ads",
+          "Update list scheduled for later-phase launches",
+          "Clear version number on every public-facing file"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Broker readiness in a fast-decision market"
+      },
+      {
+        "type": "p",
+        "text": "Riyadh brokers often open the conversation from a WhatsApp message. If stills are heavy and the message is unclear, they will pull assets from elsewhere. Prepare one unified pack at a reasonable mobile file size, with one approved location line."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Broker folder: hero stills + plans + film under 90 seconds",
+          "One approved location line (no parallel marketing copies)",
+          "Visual FAQ: parking, amenities, phase handover timing",
+          "Gallery visit path: what shows first on screen, then maquette",
+          "A “what we sell today” card when phase or model changes",
+          "Block unofficial screenshots from brokers"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Sales gallery specifications in the capital"
+      },
+      {
+        "type": "p",
+        "text": "Riyadh galleries host institutional investors and retail buyers on busy days. Gallery visual design is part of the launch system — not separate décor."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Hero screen height readable from 3–4 metres",
+          "Maquette lighting does not compete with the film screen",
+          "Material board or finish samples linked to the approved interior render",
+          "Clear path: screen → maquette → show unit → material board",
+          "Approved versions only — version lock on every device"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Proof from Graphics House capital portfolio"
+      },
+      {
+        "type": "p",
+        "text": "Our Riyadh work shows visual integration accelerates understanding — the metric is not image count but how quickly a visitor moves toward purchase or partnership. See case studies for [Anan Eskan Riyadh](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh-en.html) and [Al Rajhi Riyadh](https://3dgraphicshouse.com/insights/projects/al-rajhi-riyadh-en.html), plus the [Riyadh location page](https://3dgraphicshouse.com/locations/riyadh-en.html)."
+      },
+      {
+        "type": "h2",
+        "text": "Common failures in capital launches"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Launching a “generic” render that does not show neighbourhood or active-phase difference",
+          "Delivering the maquette after gallery opening — the space feels incomplete to investors",
+          "Skipping night and amenity scenes in large communities",
+          "Changing the façade after campaign start without updating every channel",
+          "Separating finish execution from the visual promise until the gallery gap appears — visualization later meets execution partners such as [Turriva](https://turriva.com) when needed",
+          "Locking a launch date before freezing hero scenes",
+          "Weak training: excellent assets presented without an 8–10 minute scenario"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Checklist before contracting a visualization studio"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Can they deliver render + film + maquette/interactive under one identity?",
+          "Is the approval workflow clear between architecture, marketing, and sales?",
+          "Are install and handover part of the scope?",
+          "Are assets ready for brokers, exhibitions, and digital campaigns?",
+          "Have you used the [project brief](https://3dgraphicshouse.com/insights/tools/project-brief-en.html) and [launch checklist](https://3dgraphicshouse.com/insights/tools/launch-checklist-en.html) to lock scope?"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Next step for Riyadh development teams"
+      },
+      {
+        "type": "p",
+        "text": "Start with the [project brief](https://3dgraphicshouse.com/insights/tools/project-brief-en.html) and [launch checklist](https://3dgraphicshouse.com/insights/tools/launch-checklist-en.html), then request an assessment via [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) or the Riyadh page. The session is free and without obligation — the goal is to find readiness gaps before locking the launch date."
+      }
     ]
   }
 }
