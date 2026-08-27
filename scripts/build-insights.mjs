@@ -883,6 +883,9 @@ function buildReport(report, lang) {
     ? `<div class="gh-ins-report-gallery">${galleryHtml}</div>`
     : '';
   const videoBlock = featuredVideoHtml(report, p, isEn);
+  const heroImg = report.video
+    ? ''
+    : `<img class="gh-article-hero-img gh-article-hero-img--full" src="${p}${report.image}" alt="${esc(L(report.title))}" loading="eager">`;
 
   const html = `${headBlock(lang, {
     depth: 2,
@@ -917,7 +920,7 @@ ${header}
         </div>
         ${source}
       </header>
-      <img class="gh-article-hero-img gh-article-hero-img--full" src="${p}${report.image}" alt="${esc(L(report.title))}" loading="eager">
+      ${heroImg}
       ${videoBlock}
       ${galleryBlock}
       <div class="gh-article-body-wrap">

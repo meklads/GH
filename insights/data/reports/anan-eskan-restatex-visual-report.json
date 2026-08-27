@@ -23,12 +23,11 @@
     "ar": "تقرير بصري · فعالية",
     "en": "Visual Report · Event"
   },
-  "image": "assets/insights/reports/anan-eskan-amlak-interview.jpg",
+  "image": "assets/projects/maquettes/anan-eskan-maquette-01.jpeg",
   "gallery": [
-    "assets/insights/reports/anan-eskan-amlak-interview.jpg",
-    "assets/projects/maquettes/anan-eskan-amlak-interview-poster.jpg",
     "assets/projects/maquettes/anan-eskan-maquette-01.jpeg",
-    "assets/projects/maquettes/anan-eskan-maquette-02.jpeg"
+    "assets/projects/maquettes/anan-eskan-maquette-02.jpeg",
+    "assets/projects/rendering/Anan-Escan-Co.01.jpeg"
   ],
   "sourceLabel": {
     "ar": "عنان إسكان",
@@ -55,11 +54,7 @@
       },
       {
         "type": "p",
-        "text": "الصورة الرئيسية توثّق لحظة إعلامية في سياق المعرض (مقابلة أملاك / شارة الفعالية). المتحدث الرسمي في الرسالة المؤسسية: الرئيس التنفيذي هاشم بن محسن الحامد (Hashim Mohsin AlHamed) — الاسم المعتمد لدى الشركة والتغطيات الرسمية؛ قد تختلف صياغة الشريط السفلي في بعض المقاطع الإعلامية."
-      },
-      {
-        "type": "p",
-        "text": "فيديو المقابلة متاح أسفل الصورة الرئيسية، مع بوستر المعرض وصور المجسم في الألبوم — أصول تشغيلية للحظة الإعلام أمام المنتج البصري."
+        "text": "فيديو المقابلة أعلاه يوثّق لحظة إعلامية في سياق المعرض (مقابلة أملاك). المتحدث الرسمي في الرسالة المؤسسية: الرئيس التنفيذي هاشم بن محسن الحامد (Hashim Mohsin AlHamed) — الاسم المعتمد لدى الشركة والتغطيات الرسمية؛ قد تختلف صياغة الشريط السفلي في بعض المقاطع الإعلامية."
       },
       {
         "type": "h2",
@@ -228,11 +223,7 @@
       },
       {
         "type": "p",
-        "text": "The hero image documents a media moment in the exhibition context (Amlak interview / event lanyard). The institutional speaker is CEO Hashim Mohsin AlHamed (هاشم بن محسن الحامد) — the official name used by the company and formal coverage; media lower-thirds may vary in wording."
-      },
-      {
-        "type": "p",
-        "text": "The interview video sits below the hero image, with the exhibition poster and maquette stills in the gallery — operational assets for the media moment in front of the visual product."
+        "text": "The interview video above documents a media moment in the exhibition context (Amlak interview). The institutional spokesperson: CEO Hashim Mohsin AlHamed — the name used by the company and official coverage; lower-third wording may vary in some media cuts."
       },
       {
         "type": "h2",
@@ -418,5 +409,5 @@
     }
   ],
   "video": "assets/projects/maquettes/anan-eskan-amlak-interview.mp4",
-  "videoPoster": "assets/projects/maquettes/anan-eskan-amlak-interview-poster.jpg"
+  "videoPoster": ""
 }
