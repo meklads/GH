@@ -231,7 +231,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=31">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=28">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=25">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=26">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
 <script defer src="${p}assets/site-header.js?v=16"></script>
 <script defer src="${p}assets/gh-performance.js?v=9"></script>
@@ -848,8 +848,18 @@ function buildReport(report, lang) {
   const description = reportDescription(report, lang);
   const source =
     report.sourceUrl && report.sourceLabel
-      ? `<p class="gh-ins-report-source">${isEn ? 'Market map / public context:' : 'خريطة سوق / سياق عام:'} <a href="${esc(report.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(L(report.sourceLabel))}</a></p>`
+      ? `<p class="gh-ins-report-source">${isEn ? 'Source:' : 'المصدر:'} <a href="${esc(report.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(L(report.sourceLabel))}</a></p>`
       : '';
+  const galleryHtml = (report.gallery || [])
+    .filter((src) => src && src !== report.image)
+    .map(
+      (src) =>
+        `<figure class="gh-ins-report-gal-item"><img src="${p}${src}" alt="" loading="lazy"></figure>`
+    )
+    .join('');
+  const galleryBlock = galleryHtml
+    ? `<div class="gh-ins-report-gallery">${galleryHtml}</div>`
+    : '';
 
   const html = `${headBlock(lang, {
     depth: 2,
@@ -884,7 +894,8 @@ ${header}
         </div>
         ${source}
       </header>
-      <img class="gh-article-hero-img" src="${p}${report.image}" alt="${esc(L(report.title))}" loading="lazy">
+      <img class="gh-article-hero-img gh-article-hero-img--full" src="${p}${report.image}" alt="${esc(L(report.title))}" loading="eager">
+      ${galleryBlock}
       <div class="gh-article-body-wrap">
         ${bodyHtml}
         ${faqSectionHtml(report.faq, lang)}

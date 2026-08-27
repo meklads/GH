@@ -1178,10 +1178,40 @@ html[dir="rtl"] .gh-ins-newsletter-form button {
 
 .gh-article-hero-img {
   width: 100%;
-  max-height: 480px;
-  object-fit: cover;
+  max-height: 640px;
+  object-fit: contain;
+  background: #f4f1ea;
   border-radius: 4px;
   margin-bottom: 40px;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.gh-article-hero-img--full {
+  max-height: min(80vh, 900px);
+  height: auto;
+  object-fit: contain;
+  background: #0f0e0c;
+}
+
+.gh-ins-report-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 0 0 40px;
+}
+
+@media (min-width: 768px) {
+  .gh-ins-report-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gh-ins-report-gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: #f4f1ea;
+  border-radius: 4px;
   border: 1px solid rgba(201, 168, 76, 0.15);
 }
 
