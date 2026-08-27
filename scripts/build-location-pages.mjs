@@ -40,6 +40,7 @@ function headBlock(lang, meta) {
   const base = 'https://3dgraphicshouse.com';
   const slug = meta.slug;
   const canonical = `${base}/locations/${slug}${isEn ? '-en' : ''}.html`;
+  const country = meta.countryCode || 'SA';
 
   return `<!DOCTYPE html>
 <html class="scroll-smooth" dir="${isEn ? 'ltr' : 'rtl'}" lang="${isEn ? 'en' : 'ar'}">
@@ -85,7 +86,7 @@ ${analyticsHeadTags(p)}
     address: {
       '@type': 'PostalAddress',
       addressLocality: meta.city,
-      addressCountry: 'SA',
+      addressCountry: country,
     },
     parentOrganization: {
       '@type': 'Organization',
@@ -327,6 +328,17 @@ function buildPage(data, lang) {
     ? L(data.office.heading, lang)
     : (isEn ? `${cityName} office` : `مكتب ${cityName}`);
 
+  const countryCode = data.countryCode || 'SA';
+  const kickerDefault = {
+    SA: { en: 'Graphics House · Saudi Arabia', ar: 'جرافيكس هاوس · المملكة العربية السعودية' },
+    OM: { en: 'Graphics House · Oman', ar: 'جرافيكس هاوس · سلطنة عُمان' },
+    BH: { en: 'Graphics House · Bahrain', ar: 'جرافيكس هاوس · مملكة البحرين' },
+    EG: { en: 'Graphics House · Egypt', ar: 'جرافيكس هاوس · مصر' },
+  };
+  const kicker = data.kicker
+    ? L(data.kicker, lang)
+    : (kickerDefault[countryCode] || kickerDefault.SA)[isEn ? 'en' : 'ar'];
+
   const html = `${headBlock(lang, {
     slug,
     title: L(data.title, lang),
@@ -334,13 +346,14 @@ function buildPage(data, lang) {
     city: L(data.city, lang),
     phone: data.office.phone,
     heroImage: data.heroImage,
+    countryCode,
   })}
 ${header}
 <main>
   <section class="gh-loc-hero${data.narrative ? ' gh-loc-hero--rich' : ''}">
     <div class="gh-loc-hero-inner">
       <div class="gh-loc-hero-copy">
-        <span class="gh-loc-kicker">${isEn ? 'Graphics House · Saudi Arabia' : 'جرافيكس هاوس · المملكة العربية السعودية'}</span>
+        <span class="gh-loc-kicker">${esc(kicker)}</span>
         <h1>${esc(L(data.title, lang))}</h1>
         <p>${esc(L(data.subtitle, lang))}</p>
         <div class="gh-loc-hero-cta">

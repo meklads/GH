@@ -1,0 +1,107 @@
+{
+  "slug": "bahrain",
+  "countryCode": "BH",
+  "city": { "ar": "المنامة", "en": "Manama" },
+  "kicker": { "ar": "جرافيكس هاوس · مملكة البحرين", "en": "Graphics House · Bahrain" },
+  "heroImage": "assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg",
+  "heroCaption": {
+    "ar": "إظهار معماري لمشاريع تجارية ومختلطة — معيار خليجي للمنامة",
+    "en": "Architectural visualization for commercial and mixed-use — GCC standard for Manama"
+  },
+  "title": {
+    "ar": "إظهار معماري وأنظمة إطلاق بصرية للمطورين في البحرين",
+    "en": "Architectural Visualization & Visual Launch Systems in Bahrain"
+  },
+  "subtitle": {
+    "ar": "تواجد في المنامة مع خبرة إطلاق مشاريع كبرى في السعودية — رندر، مجسمات، CGI، وصالات بيع للمطورين في البحرين.",
+    "en": "Manama presence with major Saudi launch experience — renders, maquettes, CGI, and sales galleries for Bahrain developers."
+  },
+  "metaDescription": {
+    "ar": "جرافيكس هاوس في البحرين: إظهار معماري، مجسمات ذكية، أفلام CGI، وProjectLaunch™ للمطورين — مكتب المنامة.",
+    "en": "Graphics House in Bahrain: archviz, smart maquettes, CGI & ProjectLaunch™ for developers — Manama office."
+  },
+  "narrative": {
+    "title": {
+      "ar": "معيار خليجي… وتواجد في المنامة",
+      "en": "A GCC standard — with presence in Manama"
+    },
+    "paragraphs": [
+      {
+        "ar": "البحرين سوق عقاري مكثّف يحتاج مواد بصرية سريعة الإقناع: للمستثمر، للوسيط، ولصالة البيع. ننقل منهج الإطلاق الذي طوّرناه في السعودية عبر مكتبنا في المنامة.",
+        "en": "Bahrain’s compact real estate market needs visuals that persuade quickly — investors, brokers, and the sales floor. We bring the launch method we refined in Saudi Arabia through our Manama office."
+      }
+    ]
+  },
+  "stats": [
+    { "value": "15+", "label": { "ar": "سنة في الخليج", "en": "Years in the GCC" } },
+    { "value": "200+", "label": { "ar": "مشروع بصري", "en": "Visual projects" } },
+    { "value": "1", "label": { "ar": "مكتب في المنامة", "en": "Office in Manama" } }
+  ],
+  "coreServices": [
+    {
+      "icon": "view_in_ar",
+      "title": { "ar": "إظهار معماري", "en": "Architectural visualization" },
+      "desc": { "ar": "رندر فوتوريالستي للسكني والتجاري والمختلط.", "en": "Photoreal renders for residential, commercial, and mixed-use." },
+      "href": "services/rendering.html"
+    },
+    {
+      "icon": "home_work",
+      "title": { "ar": "مجسمات ذكية", "en": "Smart maquettes" },
+      "desc": { "ar": "حضور ملموس في صالة البيع والمعرض.", "en": "Tangible presence in the sales gallery and exhibition." },
+      "href": "services/maquettes.html"
+    },
+    {
+      "icon": "rocket_launch",
+      "title": { "ar": "ProjectLaunch™", "en": "ProjectLaunch™" },
+      "desc": { "ar": "نظام إطلاق بصري متكامل للمشروع.", "en": "Complete visual launch system for the development." },
+      "href": "solutions/project-launch.html"
+    }
+  ],
+  "products": [
+    {
+      "icon": "slow_motion_video",
+      "title": { "ar": "أفلام CGI", "en": "CGI films" },
+      "desc": { "ar": "أفلام إطلاق للحملات وعروض المستثمرين.", "en": "Launch films for campaigns and investor days." },
+      "href": "services/animation.html"
+    },
+    {
+      "icon": "smart_display",
+      "title": { "ar": "تجارب تفاعلية", "en": "Interactive experiences" },
+      "desc": { "ar": "شاشات وجولات تُسرّع فهم المشروع.", "en": "Screens and tours that accelerate project understanding." },
+      "href": "services/interactive.html"
+    },
+    {
+      "icon": "workspace_premium",
+      "title": { "ar": "BrandScale™", "en": "BrandScale™" },
+      "desc": { "ar": "هوية بصرية متسقة لنقاط البيع.", "en": "Consistent identity across sales touchpoints." },
+      "href": "solutions/brand-scale.html"
+    }
+  ],
+  "why": {
+    "title": { "ar": "لماذا Graphics House في البحرين؟", "en": "Why Graphics House in Bahrain?" },
+    "items": [
+      {
+        "title": { "ar": "مكتب في المنامة", "en": "Manama office" },
+        "desc": { "ar": "تواصل محلي مع دعم إنتاج خليجي متكامل.", "en": "Local contact with integrated GCC production support." }
+      },
+      {
+        "title": { "ar": "خبرة إطلاق مثبتة", "en": "Proven launch experience" },
+        "desc": { "ar": "منهج ProjectLaunch™ من أسواق عالية المنافسة.", "en": "ProjectLaunch™ method from highly competitive markets." }
+      },
+      {
+        "title": { "ar": "استوديو واحد", "en": "One studio" },
+        "desc": { "ar": "رندر وفيلم ومجسم ومنصة بهوية واحدة.", "en": "Render, film, maquette, and platform under one identity." }
+      },
+      {
+        "title": { "ar": "سرعة الإقناع", "en": "Speed to persuasion" },
+        "desc": { "ar": "مواد جاهزة للوسيط والمستثمر في أيام الإطلاق.", "en": "Broker- and investor-ready assets for launch windows." }
+      }
+    ]
+  },
+  "office": {
+    "heading": { "ar": "مكتب المنامة", "en": "Manama office" },
+    "address": { "ar": "مجمع 316 — المنامة، مملكة البحرين", "en": "Block 316 — Manama, Kingdom of Bahrain" },
+    "cr": "15571301",
+    "phone": "+97332150369"
+  }
+}

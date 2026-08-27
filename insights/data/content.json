@@ -239,6 +239,45 @@
         "ar": "مخططات سكنية، ضيافة، ومنصات مبيعات للمطورين.",
         "en": "Master plans, hospitality & sales platforms for developers."
       }
+    },
+    {
+      "slug": "oman",
+      "icon": "public",
+      "image": "assets/projects/rendering/uae-e1745147961286.jpeg",
+      "title": {
+        "ar": "إظهار معماري في عُمان",
+        "en": "Archviz in Oman"
+      },
+      "description": {
+        "ar": "مكتب مسقط — إطلاق بصري للمطورين والمشاريع الساحلية.",
+        "en": "Muscat office — visual launch for developers & coastal projects."
+      }
+    },
+    {
+      "slug": "bahrain",
+      "icon": "apartment",
+      "image": "assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg",
+      "title": {
+        "ar": "إظهار معماري في البحرين",
+        "en": "Archviz in Bahrain"
+      },
+      "description": {
+        "ar": "مكتب المنامة — رندر، مجسمات، وأنظمة إطلاق.",
+        "en": "Manama office — renders, maquettes & launch systems."
+      }
+    },
+    {
+      "slug": "egypt",
+      "icon": "location_city",
+      "image": "assets/projects/rendering/jeddah-forum.jpg",
+      "title": {
+        "ar": "إظهار معماري في مصر",
+        "en": "Archviz in Egypt"
+      },
+      "description": {
+        "ar": "مكتب الإسكندرية — معيار خليجي للمطورين في مصر.",
+        "en": "Alexandria office — GCC standard for Egypt developers."
+      }
     }
   ]
 }

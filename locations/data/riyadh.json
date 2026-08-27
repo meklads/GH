@@ -14,6 +14,78 @@
     "ar": "استوديو إظهار معماري للمطورين في الرياض: رندرات، مجسمات ذكية، أفلام CGI، GrowthLaunch وProjectLaunch — Graphics House.",
     "en": "Archviz studio for Riyadh developers: renders, smart maquettes, CGI films, GrowthLaunch & ProjectLaunch — Graphics House."
   },
+  "narrative": {
+    "title": {
+      "ar": "العاصمة تطلب إقناعاً أسرع",
+      "en": "The capital demands faster persuasion"
+    },
+    "paragraphs": [
+      {
+        "ar": "الرياض سوق قرارات كبير: مطورون، مستثمرون، ووسطاء يقيّمون المشروع في دقائق. المواد البصرية هنا ليست ترفاً — بل أداة مبيعات قبل الخرسانة. نخدم مشاريع العاصمة بمنهج ProjectLaunch™ وخبرة مثبتة في أبراج ومجمعات سكنية.",
+        "en": "Riyadh is a high-stakes decision market: developers, investors, and brokers judge a project in minutes. Visual assets here are not decoration — they are a sales tool before concrete. We serve capital projects with the ProjectLaunch™ method and proven work on towers and residential communities."
+      },
+      {
+        "ar": "من إنتاج مدعوم بمقر جدة وفرق ميدانية في الرياض، نقدّم رندر وفيلم ومجسم ومنصة تفاعلية بهوية واحدة — لتقصير زمن الشرح ورفع جاهزية صالة البيع.",
+        "en": "With production backed by Jeddah HQ and field support in Riyadh, we deliver render, film, maquette, and interactive platform under one identity — shortening explanation time and raising sales-gallery readiness."
+      }
+    ]
+  },
+  "stats": [
+    { "value": "Capital", "label": { "ar": "تغطية الرياض والعاصمة", "en": "Riyadh & capital coverage" } },
+    { "value": "15+", "label": { "ar": "سنة خبرة", "en": "Years of experience" } },
+    { "value": "200+", "label": { "ar": "مشروع بصري", "en": "Visual projects" } },
+    { "value": "SAR 2B+", "label": { "ar": "قيمة مشاريع مُظهَرة", "en": "Value of projects visualized" } }
+  ],
+  "projectTypes": {
+    "title": { "ar": "أنواع المشاريع في الرياض", "en": "Project types in Riyadh" },
+    "items": [
+      {
+        "icon": "apartment",
+        "title": { "ar": "أبراج سكنية", "en": "Residential towers" },
+        "desc": { "ar": "إظهار وإطلاق بصري للوحدات والمبيعات off-plan.", "en": "Visualization and visual launch for units and off-plan sales." }
+      },
+      {
+        "icon": "holiday_village",
+        "title": { "ar": "مجمعات سكنية", "en": "Gated communities" },
+        "desc": { "ar": "مخططات، مشاهد جوية، ومواد وسيط.", "en": "Master plans, aerials, and broker-ready assets." }
+      },
+      {
+        "icon": "domain",
+        "title": { "ar": "مختلط وتجاري", "en": "Mixed-use & commercial" },
+        "desc": { "ar": "هوية وأفلام لصالة البيع والمستثمر.", "en": "Identity and films for the sales floor and investors." }
+      },
+      {
+        "icon": "smart_display",
+        "title": { "ar": "صالات بيع تفاعلية", "en": "Interactive sales galleries" },
+        "desc": { "ar": "شاشات ومجسمات تُسرّع القرار.", "en": "Screens and maquettes that accelerate decisions." }
+      }
+    ]
+  },
+  "gallery": {
+    "title": { "ar": "من أعمالنا المرتبطة بالرياض", "en": "Work linked to Riyadh" },
+    "items": [
+      {
+        "src": "assets/projects/rendering/alrajhi3.jpeg",
+        "caption": { "ar": "الراجحي", "en": "Al Rajhi" },
+        "tag": { "ar": "إظهار", "en": "Archviz" }
+      },
+      {
+        "src": "assets/projects/rendering/Anan-Escan-Co.01.jpeg",
+        "caption": { "ar": "عنان إسكان", "en": "Anan Eskan" },
+        "tag": { "ar": "إطلاق سكني", "en": "Residential launch" }
+      },
+      {
+        "src": "assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg",
+        "caption": { "ar": "مركز مالي", "en": "Financial center" },
+        "tag": { "ar": "حضري", "en": "Urban" }
+      },
+      {
+        "src": "assets/projects/maquettes/anan-eskan-maquette-01.jpeg?v=2",
+        "caption": { "ar": "مجسم عنان", "en": "Anan maquette" },
+        "tag": { "ar": "مجسم ذكي", "en": "Smart maquette" }
+      }
+    ]
+  },
   "servicesLead": {
     "ar": "إنتاج بصري متكامل لمشاريع الأبراج السكنية، المجمعات السكنية، والوجهات المختلطة في العاصمة ومنطقة الرياض.",
     "en": "End-to-end visual production for residential towers, gated communities, and mixed-use destinations across Riyadh and the capital region."

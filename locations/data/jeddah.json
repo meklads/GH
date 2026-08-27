@@ -14,6 +14,78 @@
     "ar": "استوديو إظهار معماري في جدة: رندر فوتوريالستي، مجسمات ذكية، أفلام CGI، ومنصات تفاعلية للمطورين العقاريين — Graphics House المقر الرئيسي.",
     "en": "Archviz studio in Jeddah: photorealistic renders, smart maquettes, CGI films & interactive sales platforms for real estate developers — Graphics House HQ."
   },
+  "narrative": {
+    "title": {
+      "ar": "المقر الرئيسي… وقلب الإنتاج",
+      "en": "Headquarters — and the heart of production"
+    },
+    "paragraphs": [
+      {
+        "ar": "جدة ليست مجرد مكتب إداري. منها تُدار ورش الاعتماد، وتنطلق فرق التركيب إلى صالات البيع، ويُنتَج الرندر والفيلم والمجسم تحت سقف واحد. المنطقة الغربية ومشاريع البحر الأحمر تحتاج سرعة قرار ولغة بصرية تبيع off-plan بثقة.",
+        "en": "Jeddah is not just an admin office. From here we run approval workshops, deploy install teams to sales galleries, and produce render, film, and maquette under one roof. The Western Region and Red Sea projects need fast decisions and a visual language that sells off-plan with confidence."
+      },
+      {
+        "ar": "منذ أكثر من خمسة عشر عاماً نخدم مطورين ومكاتب هندسية وجهات مؤسسية من جدة — بمعيار واحد: أن يفهم المستثمر المشروع في دقائق، وأن تمتلك فرق المبيعات أدوات إقناع جاهزة قبل يوم الإطلاق.",
+        "en": "For fifteen-plus years we have served developers, engineering firms, and institutions from Jeddah — with one standard: investors understand the project in minutes, and sales teams hold persuasion-ready tools before launch day."
+      }
+    ]
+  },
+  "stats": [
+    { "value": "HQ", "label": { "ar": "المقر الرئيسي في جدة", "en": "Jeddah headquarters" } },
+    { "value": "15+", "label": { "ar": "سنة في السوق", "en": "Years in market" } },
+    { "value": "200+", "label": { "ar": "مشروع بصري", "en": "Visual projects" } },
+    { "value": "1", "label": { "ar": "استوديو متكامل", "en": "Integrated studio" } }
+  ],
+  "projectTypes": {
+    "title": { "ar": "أنواع المشاريع في جدة والمنطقة الغربية", "en": "Project types in Jeddah & the Western Region" },
+    "items": [
+      {
+        "icon": "apartment",
+        "title": { "ar": "أبراج ومجمعات سكنية", "en": "Towers & residential communities" },
+        "desc": { "ar": "إظهار وإطلاق بصري للوحدات والمخططات.", "en": "Visualization and visual launch for units and master plans." }
+      },
+      {
+        "icon": "beach_access",
+        "title": { "ar": "بحر أحمر وضيافة", "en": "Red Sea & hospitality" },
+        "desc": { "ar": "تصور يعكس الواجهة والضيف قبل الافتتاح.", "en": "Storytelling for waterfront and guest experience before opening." }
+      },
+      {
+        "icon": "domain",
+        "title": { "ar": "مختلط وتجاري", "en": "Mixed-use & commercial" },
+        "desc": { "ar": "هوية وأفلام ومجسمات لصالة البيع.", "en": "Identity, films, and maquettes for the sales floor." }
+      },
+      {
+        "icon": "museum",
+        "title": { "ar": "معارض ومؤسسات", "en": "Exhibitions & institutions" },
+        "desc": { "ar": "بيئات تفاعلية وديكور بمعيار مؤسسي.", "en": "Interactive environments and décor at institutional standard." }
+      }
+    ]
+  },
+  "gallery": {
+    "title": { "ar": "من أعمالنا المرتبطة بجدة والمنطقة", "en": "Work linked to Jeddah & the region" },
+    "items": [
+      {
+        "src": "assets/projects/rendering/jeddah-forum.jpg",
+        "caption": { "ar": "منتدى جدة", "en": "Jeddah Forum" },
+        "tag": { "ar": "إظهار", "en": "Archviz" }
+      },
+      {
+        "src": "assets/news/makkah-charter-04.jpeg",
+        "caption": { "ar": "ميثاق مكة", "en": "Makkah Charter" },
+        "tag": { "ar": "مجسم ذكي", "en": "Smart maquette" }
+      },
+      {
+        "src": "assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg",
+        "caption": { "ar": "الأولى", "en": "Al Oula" },
+        "tag": { "ar": "سكني", "en": "Residential" }
+      },
+      {
+        "src": "assets/projects/rendering/Anan-Escan-Co.01.jpeg",
+        "caption": { "ar": "عنان إسكان", "en": "Anan Eskan" },
+        "tag": { "ar": "إطلاق", "en": "Launch" }
+      }
+    ]
+  },
   "coreServices": [
     {
       "icon": "smart_display",
