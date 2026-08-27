@@ -4,9 +4,6 @@ Thumbs.db
 .claude/
 node_modules/
 
-# Large backup files - kept locally, not deployed
-assets/ghfolio.pdf
-
 # Workspace / backup / temp files
 *backup*
 workspace*
