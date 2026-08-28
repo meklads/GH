@@ -42,6 +42,36 @@
         "text": "لماذا يختلف اختيار استوديو الإظهار في الخليج عن أسواق أخرى؟"
       },
       {
+        "type": "callout",
+        "text": "🔍 اسأل دائماً: «من يملك ملف المصدر 3D بعد الإطلاق؟» — الإجابة الخاطئة تكلفك إعادة إنتاج عند تغيير التشطيب."
+      },
+      {
+        "type": "table",
+        "caption": "معايير اختيار استوديو الإظهار — نقاط سريعة",
+        "headers": [
+          "المعيار",
+          "سؤال للاستوديو",
+          "إشارة خضراء"
+        ],
+        "rows": [
+          [
+            "خبرة GCC",
+            "كم مشروع off-plan أطلقتموه؟",
+            "مراجع مبيعات + معرض"
+          ],
+          [
+            "الجودة",
+            "من يراجع الدقة المعمارية؟",
+            "مسار اعتماد مكتوب"
+          ],
+          [
+            "التسليم",
+            "ما الصيغ يوم الإطلاق؟",
+            "صالة + فيلم + سوشيال"
+          ]
+        ]
+      },
+      {
         "type": "p",
         "text": "سوق التصور المعماري في أوروبا وأمريكا الشمالية نضج على مدى عقود. في الخليج، الطلب انفجر مع مشاريع Vision 2030، والمدن الذكية، والمجمعات السكنية الضخمة off-plan. هذا يعني أن كثيراً من الاستوديوهات العالمية تدخل السوق دون فهم عميق للسياق المحلي: إضاءة الصحراء والشمس الحادة، مواد الحجر والرخام المفضلة محلياً، كثافة المباني في الرياض وجدة ودبي، وتوقعات المشتري الخليجي من حيث الفخامة والوضوح."
       },
@@ -300,6 +330,36 @@
       {
         "type": "h2",
         "text": "Why Choosing an Archviz Studio in the GCC Is Different"
+      },
+      {
+        "type": "callout",
+        "text": "🔍 Always ask: “Who owns the source 3D file after launch?” — the wrong answer means re-production when finishes change."
+      },
+      {
+        "type": "table",
+        "caption": "Archviz studio selection — quick scorecard",
+        "headers": [
+          "Criterion",
+          "Ask the studio",
+          "Green flag"
+        ],
+        "rows": [
+          [
+            "GCC experience",
+            "How many off-plan launches?",
+            "Sales + gallery references"
+          ],
+          [
+            "Quality",
+            "Who checks architectural accuracy?",
+            "Written approval path"
+          ],
+          [
+            "Delivery",
+            "What formats on launch day?",
+            "Gallery + film + social"
+          ]
+        ]
       },
       {
         "type": "p",
@@ -616,11 +676,11 @@
     }
   ],
   "tldr": {
-    "ar": "معايير عملية لمديري التسويق: ماذا تسأل قبل توقيع عقد إنتاج بصري بملايين الريالات لمشروع off-plan في الخليج.",
-    "en": "Practical criteria for marketing leaders: what to ask before signing a multi-million-riyal archviz contract on a GCC off-plan launch."
+    "ar": "اختر استوديو الإظهار بثلاثة معايير: خبرة مشاريع GCC، مسار اعتماد واضح، وربط المخرجات بجدول المبيعات — لا بسعر الصورة الواحدة.",
+    "en": "Choose an archviz studio on three criteria: GCC project experience, a clear approval path, and outputs tied to your sales timeline — not price per image."
   },
   "directAnswer": {
-    "ar": "اختيار استوديو إظهار معماري قرار استراتيجي يحدد سرعة المبيعات في سوق off-plan. في الرياض وجدة، المطور الذي يختار شريكاً ضعيفاً يدفع ثمن التأخير مرتين: تأجيل الإطلاق، وفقدان ثقة السوق.",
-    "en": "Choosing an archviz studio is a strategic decision that sets off-plan sales velocity. In Riyadh and Jeddah, a weak visual partner costs twice: delayed launch and lost market confidence."
+    "ar": "أفضل استوديو إظهار للمشاريع الكبرى في الخليج يفهم off-plan، يسلّم بصيغ متعددة (صالة بيع، سوشيال، طباعة)، ويعمل مع المعماري على التعديلات دون إعادة بناء كاملة.",
+    "en": "The best GCC archviz studio for major projects understands off-plan sales, delivers multi-format assets (gallery, social, print), and handles design revisions without full rebuilds."
   }
 }

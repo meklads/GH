@@ -38,6 +38,10 @@
         "text": "كيف تتشكّل الفجوة عملياً؟"
       },
       {
+        "type": "callout",
+        "text": "📋 اختبار 30 ثانية: هل رقم كود التشطيب في الرندر = العينة في الصالة؟ إن لا — أوقف الإطلاق."
+      },
+      {
         "type": "ul",
         "items": [
           "المعماري يعتمد مادة في لوحة تصميم لا تدخل لاحقاً في مواصفة المشتريات",
@@ -256,6 +260,10 @@
       {
         "type": "h2",
         "text": "How the gap forms in practice"
+      },
+      {
+        "type": "callout",
+        "text": "📋 30-second test: Does the finish code in the render match the gallery sample? If not — pause launch."
       },
       {
         "type": "ul",
@@ -534,11 +542,11 @@
     }
   ],
   "tldr": {
-    "ar": "حين يختلف وعد الرندر عن BOQ وعيّنة التشطيب، ينشأ نزاع على أرضية الصالة. مسار عملي من لوحة المواد إلى اعتماد الرندر إلى قفل العيّنة إلى التركيب، مع معايير قبول وجاهزية الوسيط.",
-    "en": "When the render promise diverges from BOQ and finish samples, conflict hits the gallery floor. A practical path from material board to render acceptance to sample lock to install, with acceptance criteria and broker readiness."
+    "ar": "المواصفات والإظهار المنفصلان يقتلان التحويل. وحّد ملف التشطيب، الرندر، وعينة الصالة في مرجع واحد قبل الإطلاق.",
+    "en": "Split specs and visualization kill conversion. Unify finish file, render, and gallery sample in one reference before launch."
   },
   "directAnswer": {
-    "ar": "أكثر النزاعات صمتاً في صالات البيع السعودية لا تبدأ بسعر المتر, بل بجملة: «هذه ليست نفس الرخامة في الصورة». الفجوة بين نية التصميم، وبنود BOQ/المواصفات، والتشطيب النهائي، والإظهار التسويقي تولّد عدم ثقة لدى المشتري وتُحرِج الوسيط وفريق الصالة في اللحظة الحاسمة.",
-    "en": "The quietest conflicts on Saudi sales floors rarely start with price per metre, they start with: “That is not the same marble as the image.” The gap between design intent, BOQ/specs, final finishes, and sales visualization creates buyer distrust and embarrasses brokers and galle…"
+    "ar": "سبب فقدان الثقة في صالة البيع: رندر يعرض تشطيباً غير موجود في جدول BOQ أو العينة. الحل: مرجع تشطيب بصري واحد يعتمد من التسويق والمبيعات والمورد.",
+    "en": "Why sales floors lose trust: renders show finishes not in the BOQ or sample board. Fix: one visual finish reference approved by marketing, sales, and procurement."
   }
 }

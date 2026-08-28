@@ -68,6 +68,36 @@
         "text": "متى تكون جاهزاً للحديث عن الخليج؟"
       },
       {
+        "type": "callout",
+        "text": "🌍 localise hero scene + casting — لا ت sufficiency بترجمة caption فقط."
+      },
+      {
+        "type": "table",
+        "caption": "سعودي vs خليج — ما يتغير في الإطلاق البصري",
+        "headers": [
+          "العنصر",
+          "السعودية",
+          "خليج (UAE/BH/OM)"
+        ],
+        "rows": [
+          [
+            "السرعة",
+            "سريع جداً",
+            "moderate"
+          ],
+          [
+            "اللغة",
+            "AR أساسي + EN",
+            "EN + AR حسب المشروع"
+          ],
+          [
+            "Sensitivity",
+            "مكة/المدina rules",
+            "ساحلي / urban"
+          ]
+        ]
+      },
+      {
         "type": "ul",
         "items": [
           "لديك سير اعتماد مكتوب بين معماري وتسويق ومبيعات في مشروع سعودي واحد على الأقل",
@@ -282,6 +312,36 @@
       {
         "type": "h2",
         "text": "When are you ready to talk Gulf?"
+      },
+      {
+        "type": "callout",
+        "text": "🌍 Localise hero scene + casting — translation alone is not enough."
+      },
+      {
+        "type": "table",
+        "caption": "Saudi vs Gulf — what changes in visual launch",
+        "headers": [
+          "Element",
+          "Saudi Arabia",
+          "Gulf (UAE/BH/OM)"
+        ],
+        "rows": [
+          [
+            "Pace",
+            "Very fast",
+            "Moderate"
+          ],
+          [
+            "Language",
+            "AR primary + EN",
+            "EN + AR by project"
+          ],
+          [
+            "Sensitivity",
+            "Makkah/Madinah rules",
+            "Coastal / urban"
+          ]
+        ]
       },
       {
         "type": "ul",
@@ -530,11 +590,11 @@
     }
   ],
   "tldr": {
-    "ar": "دليل مقارن للمطورين الذين أتمّوا جاهزية الإطلاق في الرياض وجدة ومكة ويستعدون للتوسع خليجياً: خصوصاً عُمان أولاً. نفس أعمدة ProjectLaunch™؛ نفسية مشترٍ ورموز مكان ولوجستيات مختلفة.",
-    "en": "A comparative playbook for developers who completed launch readiness in Riyadh, Jeddah, and Makkah and are expanding into the Gulf. Oman first. Same ProjectLaunch™ pillars; different buyer psychology, place codes, and logistics."
+    "ar": "إطلاق سعودي vs خليجي: نفس الم principles — اختلاف persona، channels، وسرعة. لا copy-paste Dubai assets إلى Riyadh.",
+    "en": "Saudi vs Gulf launch: same principles — different persona, channels, and pace. Do not copy-paste Dubai assets into Riyadh."
   },
   "directAnswer": {
-    "ar": "التوسع من السعودية إلى الخليج ليس «نسخ حملة الرياض بلغة ثانية». المطور الذي بنى نظام إطلاق في العاصمة أو جدة أو مكة يملك أساساً قوياً: لكن نفسية المشتري، رموز المكان، مزيج الضيافة/السكن، سرعة الاعتماد، وثنائية اللغة تتغيّر. هذا المقال إطار مقارن بعد جاهزية سعودية، لا بديل عنها و…",
-    "en": "Expanding from Saudi Arabia into the Gulf is not “copy the Riyadh campaign into a second language.” A developer who built a launch system in the capital, Jeddah, or Makkah already has a strong foundation. but buyer psychology, place codes, hospitality/residential mix, approval s…"
+    "ar": "ما يبقى ثابتاً: فوتوريализم، اتساق، فيlm، صالة. ما يتغير: اللغة، sensitivity، broker network، وexpectations luxury vs value.",
+    "en": "What stays constant: photorealism, consistency, film, gallery. What changes: language, sensitivity, broker network, and luxury vs value expectations."
   }
 }

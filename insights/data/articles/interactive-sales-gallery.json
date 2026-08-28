@@ -108,6 +108,36 @@
         "text": "سياق سوق الخليج: الصالة التفاعلية كمعيار جديد"
       },
       {
+        "type": "callout",
+        "text": "🖥️ خطأ شائع: شاشة 4K بمحتوى قديم — التفاعل بدون تحديث أسوأ من لوحة مطبوعة."
+      },
+      {
+        "type": "table",
+        "caption": "طبقات تجربة صالة البيع التفاعلية",
+        "headers": [
+          "الطبقة",
+          "الهدف",
+          "مؤشر نجاح"
+        ],
+        "rows": [
+          [
+            "Masterplan",
+            "فهم الموقع",
+            "المشتري يشرح الموقع بنفسه"
+          ],
+          [
+            "اختيار وحدة",
+            "مقارنة",
+            "≤3 دقائق للوحدة المفضلة"
+          ],
+          [
+            "تشطيب / فيلم",
+            "ثقة",
+            "أسئلة أقل عن «هل هذا حقيقي؟»"
+          ]
+        ]
+      },
+      {
         "type": "p",
         "text": "في 2025، مطورو [جدة](https://3dgraphicshouse.com/locations/jeddah.html) والرياض يستقبلون مشترين قارنوا بين ثلاثة مشاريع في نفس الأسبوع. الصالة التي تعرض PDF على شاشة تفقد المصداقية فوراً. الصالة التي تربط [الرندر](https://3dgraphicshouse.com/services/rendering.html) و[الفيلم السينمائي](https://3dgraphicshouse.com/services/cinematic-cgi.html) ومنصة اختيار الوحدات في تجربة واحدة ترفع زمن البقاء ومعدل التحويل."
       },
@@ -365,6 +395,36 @@
         "text": "GCC market context: the interactive gallery as new standard"
       },
       {
+        "type": "callout",
+        "text": "🖥️ Common mistake: 4K screen with outdated content — interactivity without updates is worse than print."
+      },
+      {
+        "type": "table",
+        "caption": "Interactive sales gallery layers",
+        "headers": [
+          "Layer",
+          "Goal",
+          "Success signal"
+        ],
+        "rows": [
+          [
+            "Masterplan",
+            "Site context",
+            "Buyer explains location unprompted"
+          ],
+          [
+            "Unit picker",
+            "Comparison",
+            "≤3 min to shortlist"
+          ],
+          [
+            "Finishes / film",
+            "Trust",
+            "Fewer “is this real?” questions"
+          ]
+        ]
+      },
+      {
         "type": "p",
         "text": "In 2025, [Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) and Riyadh developers receive buyers who compared three projects in the same week. A gallery showing PDF on screen loses credibility instantly. A gallery linking [renders](https://3dgraphicshouse.com/services/rendering-en.html), [cinematic film](https://3dgraphicshouse.com/services/cinematic-cgi-en.html), and unit selection in one experience raises dwell time and conversion."
       },
@@ -610,11 +670,11 @@
     ]
   },
   "tldr": {
-    "ar": "كيف تتحول صالة البيع من غرفة بلوحات إلى منظومة تجربة تفاعلية، ولماذا interactive sales gallery أصبح معياراً في مشاريع الخليج الكبرى.",
-    "en": "How the sales gallery evolves from a boardroom into an interactive experience system, and why the interactive sales gallery is now standard on major GCC schemes."
+    "ar": "صالة البيع التفاعلية ليست شاشة — منظومة: masterplan + اختيار وحدة + فيلم + مجسم. ابدأ من رحلة المشتري، لا من قائمة الميزات.",
+    "en": "An interactive sales gallery is not a screen — it is a system: masterplan + unit picker + film + model. Start from buyer journey, not feature lists."
   },
   "directAnswer": {
-    "ar": "دخل مشترٍ عقاري إلى صالة بيع في الرياض قبل عشر سنوات فوجد لوحات مطبوعة ومخططاً على الحائط وموظفاً يشرح بإصبعه. اليوم، يدخل مشترٍ مشابه إلى صالة في مشروع ضخم فيجد شاشة ترحيب تفاعلية، مجسمًا ذكياً يضيء عند لمسه، وجداراً لمسياً يعرض كل وحدة بالإطلالة والسعر، وتجربة المشتري العقاري…",
-    "en": "A real estate buyer walked into a sales gallery in Riyadh ten years ago and found printed boards, a wall plan, and a consultant pointing with a finger. Today, a similar buyer enters a major scheme gallery and finds an interactive welcome screen, a smart maquette that lights on t…"
+    "ar": "صالة مبيعات تفاعلية ناجحة تسمح للمشتري بفهم الموقع، مقارنة الوحدات، ورؤية التشطيب في جلسة واحدة 10–15 دقيقة — مع محتوى متسق مع الحملة الرقمية.",
+    "en": "A successful interactive gallery lets buyers understand site context, compare units, and see finishes in one 10–15 minute session — with content consistent with digital campaigns."
   }
 }

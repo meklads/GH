@@ -108,6 +108,41 @@
         "text": "سياق سوق الخليج: الفيلم أصبح معياراً في الإطلاقات الكبرى"
       },
       {
+        "type": "callout",
+        "text": "🎬 قاعدة عملية: فيلم 60–90 ثانية للإطلاق الرقمي + 5–8 رندرات بطولية للصالة — لا تختار واحداً على حساب الآخر."
+      },
+      {
+        "type": "table",
+        "caption": "متى CGI سينمائي vs رندر ثابت",
+        "headers": [
+          "الحالة",
+          "CGI سينمائي",
+          "رندر ثابت"
+        ],
+        "rows": [
+          [
+            "إطلاق off-plan تنافسي",
+            "✓ أساسي",
+            "✓ داعم"
+          ],
+          [
+            "كتalog / لوحات صالة",
+            "اختياري",
+            "✓ أساسي"
+          ],
+          [
+            "اعتماد معماري سريع",
+            "—",
+            "✓"
+          ],
+          [
+            "حملة سوشيال / فيديو",
+            "✓",
+            "قصاصات"
+          ]
+        ]
+      },
+      {
         "type": "p",
         "text": "في معارض Cityscape وفي صالات [الرياض](https://3dgraphicshouse.com/locations/riyadh.html) و[جدة](https://3dgraphicshouse.com/locations/jeddah.html)، المشتري يتوقع فيلماً بطولياً على الشاشة الكبيرة. غيابه لا يعني فشلاً تلقائياً، لكنه يُفسَّر أحياناً كضعف في جدية المطور. الفيلم الضعيف أخطر من عدمه: إنتاج سريع بجودة منخفضة يُضر بالعلامة أكثر مما ينفعها."
       },
@@ -318,6 +353,41 @@
         "text": "GCC market context: film is now expected at major launches"
       },
       {
+        "type": "callout",
+        "text": "🎬 Practical rule: 60–90s film for digital launch + 5–8 hero stills for the gallery — do not pick one at the expense of the other."
+      },
+      {
+        "type": "table",
+        "caption": "When to use cinematic CGI vs static renders",
+        "headers": [
+          "Scenario",
+          "Cinematic CGI",
+          "Static render"
+        ],
+        "rows": [
+          [
+            "Competitive off-plan launch",
+            "✓ Core",
+            "✓ Support"
+          ],
+          [
+            "Catalog / gallery panels",
+            "Optional",
+            "✓ Core"
+          ],
+          [
+            "Fast architect approval",
+            "—",
+            "✓"
+          ],
+          [
+            "Social / video campaign",
+            "✓",
+            "Cutdowns"
+          ]
+        ]
+      },
+      {
         "type": "p",
         "text": "At Cityscape exhibitions and in [Riyadh](https://3dgraphicshouse.com/locations/riyadh-en.html) and [Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) galleries, buyers expect a hero film on the main screen. Absence does not mean automatic failure, but it is sometimes read as weak developer commitment. A weak film is worse than none: rushed low-quality production damages the brand more than it helps."
       },
@@ -516,11 +586,11 @@
     ]
   },
   "tldr": {
-    "ar": "دليل قرار لمديري التسويق العقاري: كيف تختار بين architectural renders والإنتاج السينمائي، ولماذا الأفضل غالباً الجمع بينهما في سوق الخليج.",
-    "en": "A decision guide for real estate marketing leads: how to choose between architectural renders and cinematic production, and why combining both usually wins in the GCC."
+    "ar": "الرندر الثابت يبيع الزاوية — الفيلم السينمائي يبيع القرار. استخدم CGI عند الإطلاق والمنافسة العالية؛ الرندر للكتalog والموافقات السريعة.",
+    "en": "Static renders sell the angle — cinematic film sells the decision. Use CGI for launch and competitive schemes; stills for catalogs and fast approvals."
   },
   "directAnswer": {
-    "ar": "في كل اجتماع إطلاق مشروع عقاري كبير في السعودية، يُطرح السؤال ذاته: هل نكتفي بصور رندر احترافية، أم نستثمر في فيلم CGI سينمائي؟ الإجابة المختصرة: ليست إما/أو في أغلب الحالات، لكن فهم الفرق بين الأداتين يحدد أين تذهب كل ريال في ميزانية التسويق البصري ضمن نظام ProjectLaunch™.",
-    "en": "At every major real estate launch meeting in Saudi Arabia, the same question appears: are professional render images enough, or should we invest in cinematic CGI film? The short answer: rarely either/or for serious schemes, but understanding the difference between the two tools…"
+    "ar": "اختر CGI سينمائياً عند إطلاق off-plan تنافسي، حملات رقمية، أو شرح masterplan معقد. اختر رندرات ثابتة للكتalog، لوحات الصالة، والاعتمادات الداخلية — غالباً تحتاج الاثنين معاً.",
+    "en": "Choose cinematic CGI for competitive off-plan launches, digital campaigns, or complex masterplans. Choose static renders for catalogs, gallery panels, and internal approvals — most launches need both."
   }
 }

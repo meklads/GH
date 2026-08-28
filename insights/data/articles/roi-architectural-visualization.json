@@ -108,6 +108,36 @@
         "text": "سياق السوق الخليجي: لماذا ROI البصري أصبح قراراً مالياً"
       },
       {
+        "type": "callout",
+        "text": "💰 وحدة واحدة إضافية مبكراً في مشروع كبير often تغطي النظام البصري بالكامل."
+      },
+      {
+        "type": "table",
+        "caption": "مؤشرات ROI الإظهار المعماري",
+        "headers": [
+          "المؤشر",
+          "كيف تقيس",
+          "إشارة +"
+        ],
+        "rows": [
+          [
+            "تحويل الصالة",
+            "زيارة → حجز",
+            "↑ بعد refresh بصري"
+          ],
+          [
+            "زمن البقاء",
+            "دقائق في المعرض",
+            ">12 min"
+          ],
+          [
+            "Lead quality",
+            "أسئلة spec vs سعر فقط",
+            "أسئلة أعمق"
+          ]
+        ]
+      },
+      {
         "type": "p",
         "text": "في 2025، مطورو السعودية يواجهون ضغطاً مزدوجاً: تسارع الإطلاقات مع توقعات مشترٍ أعلى. المشتري الذي زار صالة ROSHN أو مشروعاً في بوابة جدة يقارن كل مشروع جديد بهذه المعايير. الإنفاق البصري الذي لا يُقاس يتحول إلى مصروف مجهول العائد، بينما المطور الذي يربط كل أصل بمؤشر مبيعات يدير الاستثمار كأي بند استراتيجي."
       },
@@ -304,6 +334,36 @@
         "text": "GCC market context: why visual ROI is now a finance decision"
       },
       {
+        "type": "callout",
+        "text": "💰 One additional early unit on a major scheme often covers the full visual system."
+      },
+      {
+        "type": "table",
+        "caption": "Archviz ROI KPIs",
+        "headers": [
+          "KPI",
+          "How to measure",
+          "Positive signal"
+        ],
+        "rows": [
+          [
+            "Gallery conversion",
+            "Visit → booking",
+            "↑ after visual refresh"
+          ],
+          [
+            "Dwell time",
+            "Minutes on floor",
+            ">12 min"
+          ],
+          [
+            "Lead quality",
+            "Spec vs price-only questions",
+            "Deeper questions"
+          ]
+        ]
+      },
+      {
         "type": "p",
         "text": "In 2025, Saudi developers face dual pressure: faster launches with higher buyer expectations. A buyer who visited a ROSHN gallery or a Jeddah gateway project compares every new scheme to that standard. Unmeasured visual spend becomes an unknown-expense line. A developer who ties every asset to a sales KPI manages the investment like any strategic budget item."
       },
@@ -488,11 +548,11 @@
     ]
   },
   "tldr": {
-    "ar": "كيف يُترجم الإنفاق على التصور المعماري إلى حجوزات أسرع وتسعير أقوى، بإطار عمل قابل للقياس لمطوري السعودية والخليج.",
-    "en": "How visual investment translates into faster bookings and stronger pricing, with a measurable framework for Saudi and GCC developers."
+    "ar": "ROI الإظهار = تحويل صالة + سرعة بيع + سعر perceived — لا «عدد الصور». قِس من أسبوع الإطلاق.",
+    "en": "Archviz ROI = gallery conversion + sell-through speed + perceived price — not “number of images.” Measure from launch week."
   },
   "directAnswer": {
-    "ar": "يسأل كل مدير مشروع عقاري في الرياض وجدة والدمام السؤال نفسه قبل توقيع عقد إنتاج بصري: ما عائد الاستثمار الحقيقي؟ في سوق يعتمد بشكل متزايد على البيع قبل البناء، لم يعد التصور المعماري رفاهية تسويقية، بل بنية تحتية لقرار الشراء. لكن الإجابة ليست في عدد الصور المُسلَّمة، بل في سرعة…",
-    "en": "Every real estate project director in Riyadh, Jeddah, and Dammam asks the same question before signing a visual production contract: what is the real return on investment? In a market that increasingly sells before construction, architectural visualization is no longer a marketi…"
+    "ar": "لقياس عائد التصور المعماري: حدّد baseline مبيعات، تتبع visit-to-booking، dwell time، وأسئلة العملاء المتكررة — ثم اربط كل أصل بمرحلة funnel.",
+    "en": "To measure archviz ROI: set a sales baseline, track visit-to-booking, dwell time, and recurring buyer questions — then map each asset to a funnel stage."
   }
 }

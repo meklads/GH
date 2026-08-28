@@ -42,6 +42,36 @@
         "text": "ما الفرق بين المجسم الذكي والرندر الثابت؟"
       },
       {
+        "type": "callout",
+        "text": "🎯 قرار سريع: هل المشتري يحتاج أن «يلمس» المشروع؟ نعم → مجسم. لا → رenders + رقمي."
+      },
+      {
+        "type": "table",
+        "caption": "رenders vs مجsm vs smart maquette",
+        "headers": [
+          "الأداة",
+          "الأفضل لـ",
+          "الحد"
+        ],
+        "rows": [
+          [
+            "رenders",
+            "وحدات، تشطيب",
+            "لا مخطط لمسي"
+          ],
+          [
+            "مجسم تقليدي",
+            "تأثير، بروتوكول",
+            "بيانات ثابتة"
+          ],
+          [
+            "مجسم ذكي",
+            "مخطط + بيانات",
+            "ميزانية + جدول"
+          ]
+        ]
+      },
+      {
         "type": "p",
         "text": "الرندر الفوتوريالستي يقدّم لقطة واحدة أو سلسلة لقطات من زاوية محددة. هو ممتاز للإعلانات الرقمية، ومواد السوشيال ميديا، والعرض على الشاشات. لكنه لا يمنح المشتري إحساساً بالحجم والعلاقات المكانية بين المباني والطرق والمرافق."
       },
@@ -288,6 +318,36 @@
       {
         "type": "h2",
         "text": "What Is the Difference Between a Smart Maquette and a Still Render?"
+      },
+      {
+        "type": "callout",
+        "text": "🎯 Quick rule: Must the buyer “touch” the scheme? Yes → maquette. No → renders + digital."
+      },
+      {
+        "type": "table",
+        "caption": "Renders vs maquette vs smart maquette",
+        "headers": [
+          "Tool",
+          "Best for",
+          "Limit"
+        ],
+        "rows": [
+          [
+            "Renders",
+            "Units, finishes",
+            "No tactile masterplan"
+          ],
+          [
+            "Traditional maquette",
+            "Wow, protocol",
+            "Static data"
+          ],
+          [
+            "Smart maquette",
+            "Masterplan + data",
+            "Budget + timeline"
+          ]
+        ]
       },
       {
         "type": "p",
@@ -592,11 +652,11 @@
     }
   ],
   "tldr": {
-    "ar": "دليل قرار للمطورين: خمس حالات يكون فيها المجسم الذكي الخيار الأذكى مالياً وتسويقياً في صالات بيع الخليج.",
-    "en": "A decision guide: five cases where a smart maquette is the smarter GCC sales gallery investment."
+    "ar": "مجسم ذكي عندما: مخطط كبير، يوم مستثمرين، أو صالة دورة بيع طويلة — الرenders وحدها لا تكفي لعرض المشروع.",
+    "en": "Choose smart maquette when: large masterplan, investor day, or long-cycle gallery — renders alone undersell the scheme."
   },
   "directAnswer": {
-    "ar": "في كل مشروع جديد يسأل مدير التسويق: رندر وفيديو، أم مجسم ذكي؟ في الرياض ومشاريع الخليج الكبرى، الإجابة تعتمد على تعقيد المخطط ومدة الصالة.",
-    "en": "On every new project the marketing director asks: renders and video, or a smart maquette? In Riyadh and major Gulf launches, the answer depends on master plan complexity and gallery duration."
+    "ar": "تحتاج مجسمًا ذكياً بدل الرenders فقط إذا: تبيع مخططاً متعدد المراحل، تحتاج تأثيراً لمسياً في الصالة، أو تريد بيانات حية (التوفر، الإضاءة). للبرج الواحد قد يكفي رenders + فيلم.",
+    "en": "You need a smart maquette instead of renders alone if: selling a multi-phase masterplan, needing tactile wow in gallery, or wanting live data layers (availability, lighting). Single towers may need renders + film only."
   }
 }

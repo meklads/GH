@@ -68,6 +68,36 @@
         "text": "لماذا يفشل الإطلاق إذا تفرّقت الملفات؟"
       },
       {
+        "type": "callout",
+        "text": "🇸🇦 ROSHN وغيرهم raised the bar — «جيد» لم يعد كافياً في الرياض وجدة."
+      },
+      {
+        "type": "table",
+        "caption": "ماذا يحتاج المطور السعودي قبل يوم الإطلاق",
+        "headers": [
+          "البند",
+          "الحد الأدنى",
+          "م competitive"
+        ],
+        "rows": [
+          [
+            "أصول بطولية",
+            "5",
+            "8–12"
+          ],
+          [
+            "فيلم",
+            "30 ث",
+            "60–90 ث"
+          ],
+          [
+            "صالة / رقمي",
+            "لوحات",
+            "تفاعلي + مجسم"
+          ]
+        ]
+      },
+      {
         "type": "p",
         "text": "توزيع الرندر على مورد، والفيلم على ثانٍ، والمجسم على ثالث ينتج تضارباً في الإضاءة والمواد والهوية. فرق المبيعات تفقد الثقة، والحملة الرقمية تبدو منفصلة عن صالة البيع. السوق السعودي: خاصة off-plan: يعاقب هذا التشتت بسرعة لأن المشتري يقارن بين مشاريع متزامنة في نفس المدينة."
       },
@@ -286,6 +316,36 @@
       {
         "type": "h2",
         "text": "Why launches fail when files are fragmented"
+      },
+      {
+        "type": "callout",
+        "text": "🇸🇦 ROSHN and peers raised the bar — “good enough” no longer works in Riyadh and Jeddah."
+      },
+      {
+        "type": "table",
+        "caption": "What Saudi developers need before launch day",
+        "headers": [
+          "Item",
+          "Minimum",
+          "Competitive"
+        ],
+        "rows": [
+          [
+            "Hero assets",
+            "5",
+            "8–12"
+          ],
+          [
+            "Film",
+            "30s",
+            "60–90s"
+          ],
+          [
+            "Gallery / digital",
+            "Panels",
+            "Interactive + model"
+          ]
+        ]
       },
       {
         "type": "p",
@@ -538,11 +598,11 @@
     }
   ],
   "tldr": {
-    "ar": "دليل تشغيلي لإطلاق off-plan في السعودية: معايير الاعتماد، جاهزية الوسيط، صالة البيع، وفشل شائع، وكيف يبني ProjectLaunch™ نظاماً واحداً من جدة للرياض ومكة.",
-    "en": "An operating playbook for Saudi off-plan launches: approval criteria, broker readiness, sales-gallery fit, common failures, and how ProjectLaunch™ builds one system from Jeddah for Riyadh and Makkah."
+    "ar": "المطور السعودي: ProjectLaunch = رenders + فيلم + صالة + حملة — قبل يوم المبيعات بـ6 أشهر، ليس قبلها بـ6 أسابيع.",
+    "en": "Saudi developers: ProjectLaunch = renders + film + gallery + campaign — 6 months before sales day, not 6 weeks."
   },
   "directAnswer": {
-    "ar": "السوق السعودي لا يغفر التأخير البصري. عندما يُعلن مشروع سكني أو مختلط أو ضيافة في الرياض أو جدة أو مكة، يبدأ المستثمر والوسيط والمشتري بتقييم العرض خلال دقائق. المخطط وحده لا يكفي؛ ما يبيع هو نظام إطلاق بصري متكامل يسبق يوم الافتتاح، ويُعتمد قبل أن تُفتح الحملة الرقمية.",
-    "en": "The Saudi market does not forgive visual delay. When a residential, mixed-use, or hospitality project launches in Riyadh, Jeddah, or Makkah, investors, brokers, and buyers start judging within minutes. Plans alone are not enough; what sells is a visual launch system that precede…"
+    "ar": "قبل إطلاق المبيعات في السعودية: masterplan معتمد، 8–12 أصل بطولي، فيلم 60–90 ث، صالة أو منصة رقمية، وتدريب مبيعات 10 دقائق — مع مالك إطلاق واحد من التسويق.",
+    "en": "Before Saudi sales launch: approved masterplan, 8–12 hero assets, 60–90s film, gallery or digital platform, and 10-minute sales training — with one marketing launch owner."
   }
 }

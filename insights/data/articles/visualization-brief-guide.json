@@ -108,6 +108,10 @@
         "text": "سياق السوق: لماذا الـ brief أصبح ضرورة في إطلاقات 2025"
       },
       {
+        "type": "callout",
+        "text": "📝 brief ناقص = 3 rounds revision إضافية — almost always."
+      },
+      {
         "type": "p",
         "text": "مطورو السعودية يطلقون بوتيرة أعلى مع فرق أصغر. brief معتمد داخلياً يمنع «لم نتفق على هذا» في منتصف الإنتاج ويُسرّع عرض السعر. المشاريع التي تبدأ بـ brief واضح تقل جولات المراجعة بنسبة تصل إلى 40% في تجربتنا في Graphics House."
       },
@@ -367,6 +371,10 @@
         "text": "Market context: why the brief is essential for 2025 launches"
       },
       {
+        "type": "callout",
+        "text": "📝 Incomplete brief = 3 extra revision rounds — almost always."
+      },
+      {
         "type": "p",
         "text": "Saudi developers launch at higher pace with smaller teams. An internally approved brief prevents we never agreed on this mid-production and speeds quoting. Projects that start with a clear brief reduce review rounds by up to 40% in our Graphics House experience."
       },
@@ -614,11 +622,11 @@
     ]
   },
   "tldr": {
-    "ar": "Brief ضعيف يُضاعف التكلفة والوقت. هذا الدليل يشرح كل ما يجب تضمينه في brief التصور المعماري قبل أول اجتماع مع الاستوديو في السعودية والخليج.",
-    "en": "A weak brief doubles cost and timeline. This guide covers everything your visualization brief template must include before the first studio meeting in Saudi and GCC markets."
+    "ar": "brief الإظهار الجيد = scope + زواia + تشطيب + جدول + موافقات — يوفر 30% rework. اكتبه قبل أول meeting مع الاستوديو.",
+    "en": "A strong viz brief = scope + angles + finishes + schedule + approvals — saves 30% rework. Write it before the first studio meeting."
   },
   "directAnswer": {
-    "ar": "أغلب تأخيرات مشاريع التصور المعماري لا تبدأ في الاستوديو، بل في الاجتماع الأول عندما يكون brief التصور المعماري ناقصاً أو غامضاً. المطور الذي يصل بملف واضح يختصر أسابيع من التخمين والتعديلات؛ والمطور الذي يقول «نريد صوراً جميلة» يدفع ثمن ذلك في كل جولة مراجعة.",
-    "en": "Most architectural visualization delays do not start in the studio. They start at the first meeting when the visualization brief is incomplete or vague. A developer who arrives with a clear document saves weeks of guesswork and revisions; a developer who says we want beautiful i…"
+    "ar": "نموذج brief المشروع البصري يجب أن يحدد: persona المشتري، قائمة deliverables، مرجع تشطيب، deadlines متوافقة مع المبيعات، ومسار اعتماد (marketing + architect).",
+    "en": "A visual project brief must define: buyer persona, deliverables list, finish reference, sales-aligned deadlines, and approval path (marketing + architect)."
   }
 }
