@@ -128,18 +128,38 @@ export function directAnswerBlock(direct, isEn) {
 export function tocHtml(toc, isEn, { mobile = false } = {}) {
   if (!toc.length) return '';
   const label = isEn ? 'In this article' : 'في هذا المقال';
-  const items = toc
-    .map((t) => `<li><a href="#${esc(t.id)}">${richText(t.text)}</a></li>`)
-    .join('');
+  const renderItems = (entries) =>
+    entries
+      .map((t) => `<li><a href="#${esc(t.id)}">${richText(t.text)}</a></li>`)
+      .join('');
+
   if (mobile) {
     return `<details class="gh-art-toc-mobile">
       <summary><span class="material-symbols-outlined" aria-hidden="true">format_list_bulleted</span> ${label}</summary>
-      <ol>${items}</ol>
+      <ol>${renderItems(toc)}</ol>
     </details>`;
   }
+
+  const visibleMax = 6;
+  let listHtml = '';
+  if (toc.length > visibleMax) {
+    const head = toc.slice(0, visibleMax);
+    const tail = toc.slice(visibleMax);
+    const moreLabel = isEn
+      ? `${tail.length} more sections`
+      : `${tail.length} أقسام إضافية`;
+    listHtml = `<ol class="gh-art-sidebar-toc gh-art-sidebar-toc--numbered">${renderItems(head)}</ol>
+    <details class="gh-art-toc-more">
+      <summary>${esc(moreLabel)}</summary>
+      <ol class="gh-art-sidebar-toc gh-art-sidebar-toc--numbered gh-art-sidebar-toc--more">${renderItems(tail)}</ol>
+    </details>`;
+  } else {
+    listHtml = `<ol class="gh-art-sidebar-toc gh-art-sidebar-toc--numbered">${renderItems(toc)}</ol>`;
+  }
+
   return `<nav class="gh-art-sidebar-block gh-art-sidebar-block--toc" aria-label="${esc(label)}">
     <p class="gh-art-sidebar-title"><span class="material-symbols-outlined" aria-hidden="true">format_list_bulleted</span> ${label}</p>
-    <ol class="gh-art-sidebar-toc gh-art-sidebar-toc--numbered">${items}</ol>
+    ${listHtml}
   </nav>`;
 }
 
