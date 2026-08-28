@@ -685,14 +685,14 @@
   },
   "takeaways": {
     "ar": [
-      "اختر استوديو الإظهار بثلاثة معايير: خبرة مشاريع GCC، مسار اعتماد واضح، وربط المخرجات بجدول المبيعات — لا بسعر الصورة الواحدة.",
-      "أفضل استوديو إظهار للمشاريع الكبرى في الخليج يفهم off-plan، يسلّم بصيغ متعددة (صالة بيع، سوشيال، طباعة)، ويعمل مع المعماري على التعديلات دون إعادة بناء كاملة.",
-      "اسأل دائماً: «من يملك ملف المصدر 3D بعد الإطلاق؟» — الإجابة الخاطئة تكلفك إعادة إنتاج عند تغيير التشطيب."
+      "قارن 3–5 استوديوهات بمحفظة GCC — لا بسعر الصورة الواحدة.",
+      "اسأل عن ملكية ملف 3D المصدر بعد الإطلاق قبل التوقيع.",
+      "اختر شريكاً يربط المخرجات بمرحلة المبيعات لا بعدد اللقطات."
     ],
     "en": [
-      "Choose an archviz studio on three criteria: GCC project experience, a clear approval path, and outputs tied to your sales timeline — not price per image.",
-      "The best GCC archviz studio for major projects understands off-plan sales, delivers multi-format assets (gallery, social, print), and handles design revisions without full rebuilds.",
-      "Always ask: “Who owns the source 3D file after launch?” — the wrong answer means re-production when finishes change."
+      "Compare 3–5 studios on GCC portfolio — not price per image.",
+      "Ask who owns the source 3D file after launch before signing.",
+      "Pick a partner that ties deliverables to sales stage, not shot count."
     ]
   },
   "midCta": {
@@ -711,6 +711,14 @@
     "href": {
       "ar": "services/rendering.html",
       "en": "services/rendering-en.html"
+    },
+    "btn2": {
+      "ar": "احجز استشارة",
+      "en": "Book a consultation"
+    },
+    "href2": {
+      "ar": "contact-us.html",
+      "en": "contact-us-en.html"
     }
   }
 }

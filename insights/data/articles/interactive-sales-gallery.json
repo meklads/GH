@@ -78,8 +78,8 @@
         "en": "How do we measure gallery success?"
       },
       "a": {
-        "ar": "زمن البقاء، معدل التحويل من زيارة إلى حجز، وعدد الوحدات المستكشفة لكل زيارة. راجع [عائد الاستثمار البصري](https://3dgraphicshouse.com/insights/roi-architectural-visualization.html).",
-        "en": "Dwell time, visit-to-booking conversion, and units explored per visit. See [visualization ROI](https://3dgraphicshouse.com/insights/roi-architectural-visualization.html)."
+        "ar": "زمن البقاء، معدل التحويل من زيارة إلى حجز، وعدد الوحدات المستكشفة لكل زيارة. راجع [عائد الاستثمار البصري](https://3dgraphicshouse.com/insights/articles/roi-architectural-visualization.html).",
+        "en": "Dwell time, visit-to-booking conversion, and units explored per visit. See [visualization ROI](https://3dgraphicshouse.com/insights/articles/roi-architectural-visualization.html)."
       }
     },
     {
@@ -143,7 +143,7 @@
       },
       {
         "type": "p",
-        "text": "للسياقات السوقية (لا كادعاء تسليم)، جولات [Ruwaq](https://ruwaq.co/tours) تعرض مستوى التوقعات في المجتمعات الكبرى. وللجدول الزمني قبل الإطلاق، راجع [دليل الإطلاق البصري](https://3dgraphicshouse.com/insights/visual-launch-checklist-guide.html)."
+        "text": "للسياقات السوقية (لا كادعاء تسليم)، جولات [Ruwaq](https://ruwaq.co/tours) تعرض مستوى التوقعات في المجتمعات الكبرى. وللجدول الزمني قبل الإطلاق، راجع [دليل الإطلاق البصري](https://3dgraphicshouse.com/insights/articles/visual-launch-checklist-guide.html)."
       },
       {
         "type": "h2",
@@ -336,7 +336,7 @@
       },
       {
         "type": "p",
-        "text": "نبدأ بورشة تجربة المشتري العقاري: من هو المشتري؟ ما أسئلته قبل الشراء؟ أين يتردد؟ ثم نصمم الصالة حول هذه الإجابات، وليس حول التكنولوجيا المتاحة. ابدأ بـ [brief التصور](https://3dgraphicshouse.com/insights/visualization-brief-guide.html) قبل أول اجتماع."
+        "text": "نبدأ بورشة تجربة المشتري العقاري: من هو المشتري؟ ما أسئلته قبل الشراء؟ أين يتردد؟ ثم نصمم الصالة حول هذه الإجابات، وليس حول التكنولوجيا المتاحة. ابدأ بـ [brief التصور](https://3dgraphicshouse.com/insights/articles/visualization-brief-guide.html) قبل أول اجتماع."
       },
       {
         "type": "h2",
@@ -430,7 +430,7 @@
       },
       {
         "type": "p",
-        "text": "For market context (not as a delivery claim), [Ruwaq](https://ruwaq.co/tours) tours show expectation levels at major communities. For pre-launch timing, see the [visual launch checklist guide](https://3dgraphicshouse.com/insights/visual-launch-checklist-guide.html)."
+        "text": "For market context (not as a delivery claim), [Ruwaq](https://ruwaq.co/tours) tours show expectation levels at major communities. For pre-launch timing, see the [visual launch checklist guide](https://3dgraphicshouse.com/insights/articles/visual-launch-checklist-guide.html)."
       },
       {
         "type": "h2",
@@ -623,7 +623,7 @@
       },
       {
         "type": "p",
-        "text": "We start with a real estate buyer experience workshop: who is the buyer? What are their pre-purchase questions? Where do they hesitate? Then we design the gallery around those answers, not around available technology. Start with the [visualization brief](https://3dgraphicshouse.com/insights/visualization-brief-guide.html) before the first meeting."
+        "text": "We start with a real estate buyer experience workshop: who is the buyer? What are their pre-purchase questions? Where do they hesitate? Then we design the gallery around those answers, not around available technology. Start with the [visualization brief](https://3dgraphicshouse.com/insights/articles/visualization-brief-guide.html) before the first meeting."
       },
       {
         "type": "h2",
@@ -679,14 +679,14 @@
   },
   "takeaways": {
     "ar": [
-      "صالة البيع التفاعلية ليست شاشة — منظومة: masterplan + اختيار وحدة + فيلم + مجسم.",
-      "صالة مبيعات تفاعلية ناجحة تسمح للمشتري بفهم الموقع، مقارنة الوحدات، ورؤية التشطيب في جلسة واحدة 10–15 دقيقة — مع محتوى متسق مع الحملة الرقمية.",
-      "️ خطأ شائع: شاشة 4K بمحتوى قديم — التفاعل بدون تحديث أسوأ من لوحة مطبوعة."
+      "صمّم الصالة حول أسئلة المشتري — لا حول التكنولogia المتاحة.",
+      "قِس: زمن البقاء، الوحدات المستكشفة، وتحويل الزيارة إلى حجز.",
+      "ابدأ بـ brief تجربة المشتري قبل اختيار الشاشات أو الـ VR."
     ],
     "en": [
-      "An interactive sales gallery is not a screen — it is a system: masterplan + unit picker + film + model.",
-      "A successful interactive gallery lets buyers understand site context, compare units, and see finishes in one 10–15 minute session — with content consistent with digital campaigns.",
-      "️ Common mistake: 4K screen with outdated content — interactivity without updates is worse than print."
+      "Design the gallery around buyer questions — not available tech.",
+      "Measure dwell time, units explored, and visit-to-booking conversion.",
+      "Start with a buyer-experience brief before picking screens or VR."
     ]
   },
   "midCta": {
@@ -705,6 +705,14 @@
     "href": {
       "ar": "services/interactive-experiences.html",
       "en": "services/interactive-experiences-en.html"
+    },
+    "btn2": {
+      "ar": "ناقش مشروعك",
+      "en": "Discuss your project"
+    },
+    "href2": {
+      "ar": "contact-us.html",
+      "en": "contact-us-en.html"
     }
   }
 }

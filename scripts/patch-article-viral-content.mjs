@@ -6,6 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { TAKEAWAYS, fixInsightsArticleLinks } from './article-takeaways.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = path.join(ROOT, 'insights/data/articles');
@@ -597,6 +598,8 @@ const MID_CTA_BY_KIND = {
     },
     btn: { ar: 'اكتشف ProjectLaunch™', en: 'Explore ProjectLaunch™' },
     href: { ar: 'solutions/project-launch.html', en: 'solutions/project-launch-en.html' },
+    btn2: { ar: 'ناقش مشروعك', en: 'Discuss your project' },
+    href2: { ar: 'contact-us.html', en: 'contact-us-en.html' },
   },
   maquette: {
     title: { ar: 'مجسم لصالة البيع؟', en: 'Need a sales gallery model?' },
@@ -606,6 +609,8 @@ const MID_CTA_BY_KIND = {
     },
     btn: { ar: 'خدمة المجسمات', en: 'Scale models service' },
     href: { ar: 'services/maquettes.html', en: 'services/maquettes-en.html' },
+    btn2: { ar: 'احجز استشارة', en: 'Book a consultation' },
+    href2: { ar: 'contact-us.html', en: 'contact-us-en.html' },
   },
   interactive: {
     title: { ar: 'صالة بيع تفاعلية؟', en: 'Interactive sales gallery?' },
@@ -615,6 +620,8 @@ const MID_CTA_BY_KIND = {
     },
     btn: { ar: 'التجارب التفاعلية', en: 'Interactive experiences' },
     href: { ar: 'services/interactive-experiences.html', en: 'services/interactive-experiences-en.html' },
+    btn2: { ar: 'ناقش مشروعك', en: 'Discuss your project' },
+    href2: { ar: 'contact-us.html', en: 'contact-us-en.html' },
   },
   rendering: {
     title: { ar: 'تحتاج رندرات قبل الإطلاق؟', en: 'Need renders before launch?' },
@@ -624,6 +631,8 @@ const MID_CTA_BY_KIND = {
     },
     btn: { ar: 'الإظهار المعماري', en: 'Archviz & renders' },
     href: { ar: 'services/rendering.html', en: 'services/rendering-en.html' },
+    btn2: { ar: 'احجز استشارة', en: 'Book a consultation' },
+    href2: { ar: 'contact-us.html', en: 'contact-us-en.html' },
   },
   cgi: {
     title: { ar: 'فيلم إطلاق سينمائي؟', en: 'Cinematic launch film?' },
@@ -633,6 +642,8 @@ const MID_CTA_BY_KIND = {
     },
     btn: { ar: 'أفلام CGI', en: 'Cinematic CGI' },
     href: { ar: 'services/animation.html', en: 'services/animation-en.html' },
+    btn2: { ar: 'ناقش مشروعك', en: 'Discuss your project' },
+    href2: { ar: 'contact-us.html', en: 'contact-us-en.html' },
   },
   consult: {
     title: { ar: 'ناقش مشروعك مع الفريق', en: 'Discuss your project with our team' },
@@ -660,7 +671,7 @@ function midCtaKindForSlug(slug) {
 let updated = 0;
 for (const file of fs.readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
   const full = path.join(DIR, file);
-  const data = JSON.parse(fs.readFileSync(full, 'utf8'));
+  let data = JSON.parse(fs.readFileSync(full, 'utf8'));
   const slug = data.slug || file.replace('.json', '');
   const hook = HOOKS[slug];
   if (!hook) {
@@ -669,6 +680,9 @@ for (const file of fs.readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
   }
 
   let changed = false;
+  const beforeLinks = JSON.stringify(data);
+  data = fixInsightsArticleLinks(data);
+  if (JSON.stringify(data) !== beforeLinks) changed = true;
 
   if (JSON.stringify(data.tldr) !== JSON.stringify(hook.tldr)) {
     data.tldr = hook.tldr;
@@ -679,7 +693,7 @@ for (const file of fs.readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
     changed = true;
   }
 
-  const takeaways = takeawaysFromHook(hook);
+  const takeaways = TAKEAWAYS[slug] || takeawaysFromHook(hook);
   if (JSON.stringify(data.takeaways) !== JSON.stringify(takeaways)) {
     data.takeaways = takeaways;
     changed = true;

@@ -567,14 +567,14 @@
   },
   "takeaways": {
     "ar": [
-      "الذكاء الاصطناعي يسرّع الإظهار — لا يستبدل الدقة المعمارية.",
-      "مستقبل الإظهار المعماري في الخليج يعتمد على دمج AI في الإنتاج مع مراجعة بشرية ومواصفات معتمدة.",
-      "قبل أي حملة: لا تنشر رندر AI دون مطابقة ملف التشطيب والواجهة المعتمد — خطأ واحد يكلف أسبوعاً من ثقة المشتري."
+      "وثّق سياسة جودة AI: ما يُنتج آلياً، ما يُراجع، وما يصل للمشتري.",
+      "لا تطلق حملة off-plan على رندر AI دون اعتماد المعماري على التشطيب.",
+      "الفائز: سير عمل هجين يسرّع الإنتاج دون المساس بمصداقية المبيعات."
     ],
     "en": [
-      "AI speeds archviz — it does not replace architectural accuracy.",
-      "The future of GCC archviz is hybrid: AI accelerates production while human review and approved specs protect sales credibility.",
-      "Before any campaign: never publish AI renders without matching approved façade and finish specs — one mismatch costs a week of buyer trust."
+      "Document an AI quality policy: auto-generated, reviewed, buyer-facing.",
+      "Never launch off-plan campaigns on AI renders without architect finish sign-off.",
+      "Winners use hybrid workflows that speed production without hurting sales trust."
     ]
   },
   "midCta": {
@@ -593,6 +593,14 @@
     "href": {
       "ar": "services/rendering.html",
       "en": "services/rendering-en.html"
+    },
+    "btn2": {
+      "ar": "احجز استشارة",
+      "en": "Book a consultation"
+    },
+    "href2": {
+      "ar": "contact-us.html",
+      "en": "contact-us-en.html"
     }
   }
 }

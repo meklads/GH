@@ -559,14 +559,14 @@
   },
   "takeaways": {
     "ar": [
-      "جولة التشطيبات المكتملة + رندر مطابق = ثقة الوسيط والمشتري.",
-      "لبيع التشطيبات قبل التسليم: صوّر أو اعرض مواد حقيقية مع رندر بنفس الكود والإضاءة، ثم درّب المبيعات على سرد «من اللوحة إلى الوحدة» في أقل من 3 دقائق.",
-      "️ الفجوة الأكثر تكلفة: رندر فاخر + عينة تشطيب مختلفة في الصالة — المشتري يلاحظ فوراً."
+      "حوّل لوحة المواد المعتمدة إلى جولة بصرية يعيدها الوسيط للعميل.",
+      "اربط كل مشهد رندر بتشطيب محدد في ملف المواصفات — لا «تقريب بصري».",
+      "استخدم الجولة كمرجع موحّد للمبيعات والمعماري وصالة البيع."
     ],
     "en": [
-      "Completed finishes tour + matched render = broker and buyer trust.",
-      "To sell finishes before handover: show real materials alongside renders with matching codes and lighting, then train sales on a under-3-minute “board to unit” story.",
-      "️ Costliest gap: luxury render + different finish sample in gallery — buyers notice immediately."
+      "Turn the approved materials board into a broker-ready visual tour.",
+      "Tie every render scene to a spec-sheet finish — no visual guesswork.",
+      "Use the tour as one reference for sales, architects, and the gallery."
     ]
   },
   "midCta": {
@@ -585,6 +585,14 @@
     "href": {
       "ar": "services/rendering.html",
       "en": "services/rendering-en.html"
+    },
+    "btn2": {
+      "ar": "احجز استشارة",
+      "en": "Book a consultation"
+    },
+    "href2": {
+      "ar": "contact-us.html",
+      "en": "contact-us-en.html"
     }
   }
 }

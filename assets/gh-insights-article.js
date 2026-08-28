@@ -51,9 +51,27 @@
     updateProgress();
   }
 
-  /* Copy link button */
+  /* Share + copy analytics */
+  document.querySelectorAll('.gh-art-share-btn[href]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (typeof window.ghTrack !== 'function') return;
+      var label = btn.getAttribute('aria-label') || 'share';
+      window.ghTrack('article_share', { method: label, page: window.location.pathname });
+    });
+  });
+
+  document.querySelectorAll('.gh-art-mid-cta a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (typeof window.ghTrack !== 'function') return;
+      window.ghTrack('article_mid_cta', { label: (a.textContent || '').trim(), page: window.location.pathname });
+    });
+  });
+
   document.querySelectorAll('[data-gh-copy-link]').forEach(function (btn) {
     btn.addEventListener('click', function () {
+      if (typeof window.ghTrack === 'function') {
+        window.ghTrack('article_share', { method: 'copy_link', page: window.location.pathname });
+      }
       var url = window.location.href.split('#')[0];
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(function () {

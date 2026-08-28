@@ -551,14 +551,14 @@
   },
   "takeaways": {
     "ar": [
-      "المواصفات والإظهار المنفصلان يقتلان التحويل.",
-      "سبب فقدان الثقة في صالة البيع: رندر يعرض تشطيباً غير موجود في جدول BOQ أو العينة.",
-      "اختبار 30 ثانية: هل رقم كود التشطيب في الرندر = العينة في الصالة؟ إن لا — أوقف الإطلاق."
+      "أي اختلاف بين الرندر ولوحة التشطيب في الصالة يكسر ثقة المشتري.",
+      "ثبّت «مشهد البطل» قبل الإعلان — لا تغيير واجهة بعد أول حملة.",
+      "أدمج Turriva/المواصفات في مسار الاعتماد قبل الإنتاج البصري."
     ],
     "en": [
-      "Split specs and visualization kill conversion.",
-      "Why sales floors lose trust: renders show finishes not in the BOQ or sample board.",
-      "30-second test: Does the finish code in the render match the gallery sample? If not — pause launch."
+      "Any gap between render and gallery finish panel breaks buyer trust.",
+      "Freeze the hero scene before advertising — no façade changes post-launch.",
+      "Integrate finish specs into approval before visual production starts."
     ]
   },
   "midCta": {
@@ -577,6 +577,14 @@
     "href": {
       "ar": "services/rendering.html",
       "en": "services/rendering-en.html"
+    },
+    "btn2": {
+      "ar": "احجز استشارة",
+      "en": "Book a consultation"
+    },
+    "href2": {
+      "ar": "contact-us.html",
+      "en": "contact-us-en.html"
     }
   }
 }

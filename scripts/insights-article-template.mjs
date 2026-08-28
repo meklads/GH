@@ -332,11 +332,18 @@ export function midCtaFromArticle(article, isEn, depthPrefix) {
   const btn = L(cta.btn || {});
   const href = cta.href?.[isEn ? 'en' : 'ar'] || cta.href || '#';
   const prefix = href.startsWith('http') ? '' : depthPrefix;
+  const btn2 = cta.btn2 ? L(cta.btn2) : '';
+  const href2Raw = cta.href2?.[isEn ? 'en' : 'ar'] || cta.href2 || '';
+  const href2Prefix = href2Raw.startsWith('http') ? '' : depthPrefix;
+  const btn2Html = btn2 && href2Raw
+    ? `<a href="${href2Prefix}${href2Raw}" class="gh-btn-editorial gh-btn-editorial--outline">${richText(btn2)}</a>`
+    : '';
   return `<div class="gh-art-mid-cta">
     <h3>${richText(title)}</h3>
     <p>${richText(text)}</p>
     <div class="gh-art-mid-cta-actions">
       <a href="${prefix}${href}" class="gh-btn-editorial">${richText(btn)}</a>
+      ${btn2Html}
     </div>
   </div>`;
 }

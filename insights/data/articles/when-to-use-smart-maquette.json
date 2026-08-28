@@ -661,14 +661,14 @@
   },
   "takeaways": {
     "ar": [
-      "مجسم ذكي عندما: مخطط كبير، يوم مستثمرين، أو صالة دورة بيع طويلة — الرenders وحدها لا تكفي لعرض المشروع.",
-      "تحتاج مجسمًا ذكياً بدل الرenders فقط إذا: تبيع مخططاً متعدد المراحل، تحتاج تأثيراً لمسياً في الصالة، أو تريد بيانات حية (التوفر، الإضاءة).",
-      "قرار سريع: هل المشتري يحتاج أن «يلمس» المشروع؟ نعم → مجسم. لا → رenders + رقمي."
+      "اختر مجسم ذكي عند masterplan معقد + حاجة لتحديث بيانات أثناء المبيعات.",
+      "الرندر وحده يكفي للوحدات والتشطيب — المجسم للسياق المكاني والبروتوكول.",
+      "احسب جدول التحديث: كم مرة يتغير المخطط خلال 12 شهر مبيعات؟"
     ],
     "en": [
-      "Choose smart maquette when: large masterplan, investor day, or long-cycle gallery — renders alone undersell the scheme.",
-      "You need a smart maquette instead of renders alone if: selling a multi-phase masterplan, needing tactile wow in gallery, or wanting live data layers (availability, lighting).",
-      "Quick rule: Must the buyer “touch” the scheme? Yes → maquette. No → renders + digital."
+      "Choose smart maquette for complex masterplans + live data during sales.",
+      "Renders suffice for units and finishes — models for spatial context and protocol.",
+      "Plan update cadence: how often does the scheme change during 12 months of sales?"
     ]
   },
   "midCta": {
@@ -687,6 +687,14 @@
     "href": {
       "ar": "services/maquettes.html",
       "en": "services/maquettes-en.html"
+    },
+    "btn2": {
+      "ar": "احجز استشارة",
+      "en": "Book a consultation"
+    },
+    "href2": {
+      "ar": "contact-us.html",
+      "en": "contact-us-en.html"
     }
   }
 }

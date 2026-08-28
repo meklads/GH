@@ -293,7 +293,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/site-header.css?v=36">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=28">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=28">
-<link rel="stylesheet" href="${p}assets/gh-insights-article.css?v=2">
+<link rel="stylesheet" href="${p}assets/gh-insights-article.css?v=3">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=9">
 ${isEn ? `<link rel="stylesheet" href="${p}assets/gh-en-typography.css?v=1">` : `<link rel="stylesheet" href="${p}assets/gh-ar-typography.css?v=2">`}
 <script defer src="${p}assets/site-header.js?v=16"></script>
@@ -307,7 +307,7 @@ ${isEn ? `<link rel="stylesheet" href="${p}assets/gh-en-typography.css?v=1">` : 
 function tailScripts(depth, { article = false } = {}) {
   const p = depth > 0 ? '../'.repeat(depth) : '';
   const articleJs = article
-    ? `\n<script defer src="${p}assets/gh-insights-article.js?v=2"></script>\n<script defer src="${p}assets/gh-newsletter.js?v=4"></script>`
+    ? `\n<script defer src="${p}assets/gh-insights-article.js?v=3"></script>\n<script defer src="${p}assets/gh-newsletter.js?v=4"></script>`
     : '';
   return `
 <script defer src="${p}assets/gh-float-widgets.js?v=9"></script>${articleJs}
@@ -867,7 +867,7 @@ function buildArticle(article, lang) {
 <script type="application/ld+json">${schemaJson}</script>
 ${header}
 ${articleProgressBar()}
-<main class="gh-article-page-wrap">
+<main id="main-content" class="gh-article-page-wrap">
   <div class="gh-ins-wrap">
     ${breadcrumbHtml(article, isEn, p)}
     <a href="../${isEn ? 'index-en' : 'index'}.html" class="gh-back-link">
@@ -981,7 +981,7 @@ function buildReport(report, lang) {
   })}
 <script type="application/ld+json">${reportSchema(report, lang)}</script>
 ${header}
-<main class="gh-article-page-wrap">
+<main id="main-content" class="gh-article-page-wrap">
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html#spotlights" class="gh-back-link">
       <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_back' : 'arrow_forward'}</span>
@@ -1054,7 +1054,7 @@ function buildProject(project, lang) {
   })}
 <script type="application/ld+json">${projectSchema(project, lang)}</script>
 ${header}
-<main class="gh-article-page-wrap">
+<main id="main-content" class="gh-article-page-wrap">
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html#projects" class="gh-back-link">
       <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_back' : 'arrow_forward'}</span>

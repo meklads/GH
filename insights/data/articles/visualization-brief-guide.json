@@ -117,7 +117,7 @@
       },
       {
         "type": "p",
-        "text": "اربط الـ brief بـ [دليل الإطلاق البصري](https://3dgraphicshouse.com/insights/visual-launch-checklist-guide.html) و[نموذج Brief التفاعلي](https://3dgraphicshouse.com/insights/tools/project-brief.html) قبل أول اجتماع. وللفهم العميق لاختيار الفيلم مقابل الرندر، راجع [CGI سينمائي مقابل الرندر الثابت](https://3dgraphicshouse.com/insights/cinematic-cgi-vs-static-renders.html)."
+        "text": "اربط الـ brief بـ [دليل الإطلاق البصري](https://3dgraphicshouse.com/insights/articles/visual-launch-checklist-guide.html) و[نموذج Brief التفاعلي](https://3dgraphicshouse.com/insights/tools/project-brief.html) قبل أول اجتماع. وللفهم العميق لاختيار الفيلم مقابل الرندر، راجع [CGI سينمائي مقابل الرندر الثابت](https://3dgraphicshouse.com/insights/articles/cinematic-cgi-vs-static-renders.html)."
       },
       {
         "type": "h2",
@@ -203,7 +203,7 @@
       },
       {
         "type": "p",
-        "text": "حدّد بوضوح: هل المشروع في ما قبل الإطلاق أم مبيعات نشطة؟ أين ستظهر الصور، إعلانات رقمية، [صالة بيع](https://3dgraphicshouse.com/insights/interactive-sales-gallery.html)، معرض عقاري، عرض مستثمر؟ ما اللغات المطلوبة، عربي فقط، عربي وإنجليزي، نصوص على الصور؟ كل إجابة تغيّر نطاق الإنتاج والتسعير."
+        "text": "حدّد بوضوح: هل المشروع في ما قبل الإطلاق أم مبيعات نشطة؟ أين ستظهر الصور، إعلانات رقمية، [صالة بيع](https://3dgraphicshouse.com/insights/articles/interactive-sales-gallery.html)، معرض عقاري، عرض مستثمر؟ ما اللغات المطلوبة، عربي فقط، عربي وإنجليزي، نصوص على الصور؟ كل إجابة تغيّر نطاق الإنتاج والتسعير."
       },
       {
         "type": "ul",
@@ -380,7 +380,7 @@
       },
       {
         "type": "p",
-        "text": "Link the brief to the [visual launch checklist guide](https://3dgraphicshouse.com/insights/visual-launch-checklist-guide.html) and [interactive brief tool](https://3dgraphicshouse.com/insights/tools/project-brief-en.html) before the first meeting. For film versus render decisions, see [cinematic CGI vs static renders](https://3dgraphicshouse.com/insights/cinematic-cgi-vs-static-renders.html)."
+        "text": "Link the brief to the [visual launch checklist guide](https://3dgraphicshouse.com/insights/articles/visual-launch-checklist-guide.html) and [interactive brief tool](https://3dgraphicshouse.com/insights/tools/project-brief-en.html) before the first meeting. For film versus render decisions, see [cinematic CGI vs static renders](https://3dgraphicshouse.com/insights/articles/cinematic-cgi-vs-static-renders.html)."
       },
       {
         "type": "h2",
@@ -466,7 +466,7 @@
       },
       {
         "type": "p",
-        "text": "Define clearly: is the project pre-launch or active sales? Where will images appear, digital ads, [sales gallery](https://3dgraphicshouse.com/insights/interactive-sales-gallery.html), property exhibition, investor deck? Which languages, Arabic only, Arabic and English, on-image text? Each answer changes production scope and pricing."
+        "text": "Define clearly: is the project pre-launch or active sales? Where will images appear, digital ads, [sales gallery](https://3dgraphicshouse.com/insights/articles/interactive-sales-gallery.html), property exhibition, investor deck? Which languages, Arabic only, Arabic and English, on-image text? Each answer changes production scope and pricing."
       },
       {
         "type": "ul",
@@ -631,14 +631,14 @@
   },
   "takeaways": {
     "ar": [
-      "brief الإظهار الجيد = scope + زواia + تشطيب + جدول + موافقات — يوفر 30% rework.",
-      "نموذج brief المشروع البصري يجب أن يحدد: persona المشتري، قائمة deliverables، مرجع تشطيب، deadlines متوافقة مع المبيعات، ومسار اعتماد (marketing + architect).",
-      "brief ناقص = 3 rounds revision إضافية — almost always."
+      "brief جيد يحدد: مرحلة المبيعات، القنوات، اللغات، ومسار الاعتماد.",
+      "أرفق moodboard + مواصفات تشطيب + جدول إطلاق في مستند واحد.",
+      "راجع brief مع المبيعات والمعماري قبل إرساله للاستوديو."
     ],
     "en": [
-      "A strong viz brief = scope + angles + finishes + schedule + approvals — saves 30% rework.",
-      "A visual project brief must define: buyer persona, deliverables list, finish reference, sales-aligned deadlines, and approval path (marketing + architect).",
-      "Incomplete brief = 3 extra revision rounds — almost always."
+      "A strong brief defines sales stage, channels, languages, and approval path.",
+      "Attach moodboard + finish specs + launch schedule in one document.",
+      "Review the brief with sales and architect before sending to the studio."
     ]
   },
   "midCta": {
@@ -657,6 +657,14 @@
     "href": {
       "ar": "services/rendering.html",
       "en": "services/rendering-en.html"
+    },
+    "btn2": {
+      "ar": "احجز استشارة",
+      "en": "Book a consultation"
+    },
+    "href2": {
+      "ar": "contact-us.html",
+      "en": "contact-us-en.html"
     }
   }
 }

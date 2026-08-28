@@ -545,14 +545,14 @@
   },
   "takeaways": {
     "ar": [
-      "من مجسم تقليدي إلى smart maquette: الإضاءة، البيانات، والتفاعل — ما يزال يبيع في صالة 2026 حيث الشاشة وحدها لا تكفي.",
-      "المجسم الذكي يجمع حضوراً físicoاً + طبقات رقمية (مناطق إضاءة، بيانات مبيعات، تمييز الوحدات).",
-      "smart ≠ gimmick: كل layer يجب أن يجيب سؤال مبيعات محدد."
+      "المجسم الذكي يبرر نفسه في masterplan كبير + بيانات حية للمستثمر.",
+      "قارن TCO: تحديث رقمي vs إعادة بناء مجسم فيزيائي.",
+      "ادمج المجسم مع شاشات الصالة — لا تعرضه كقطعة منفصلة."
     ],
     "en": [
-      "Traditional to smart maquette: lighting, data, interaction — still sells in 2026 galleries where screens alone are not enough.",
-      "Smart maquettes combine physical presence + digital layers (lighting zones, sales data, unit highlight).",
-      "Smart ≠ gimmick: every layer must answer a specific sales question."
+      "Smart maquettes justify cost on large masterplans + live investor data.",
+      "Compare TCO: digital updates vs rebuilding a physical model.",
+      "Integrate the model with gallery screens — not as a standalone piece."
     ]
   },
   "midCta": {
@@ -571,6 +571,14 @@
     "href": {
       "ar": "services/maquettes.html",
       "en": "services/maquettes-en.html"
+    },
+    "btn2": {
+      "ar": "احجز استشارة",
+      "en": "Book a consultation"
+    },
+    "href2": {
+      "ar": "contact-us.html",
+      "en": "contact-us-en.html"
     }
   }
 }
