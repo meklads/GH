@@ -277,12 +277,11 @@ ${EXTRA}
       </div>
       <div class="form-card">
         <h3>طلب جلسة تصوير / إنتاج</h3>
-        <form action="https://formsubmit.co/dot4life.team@gmail.com" method="POST" target="_blank">
+        <form class="gh-quote-form" method="POST" novalidate>
           <input type="hidden" name="_subject" value="طلب إنتاج إعلامي - services/production">
-          <input type="hidden" name="_next" value="https://3dgraphicshouse.com/services/production.html#booking">
           <div class="form-group"><label>الاسم الكامل</label><input type="text" name="name" required placeholder="أدخل اسمك"></div>
           <div class="form-group"><label>رقم الجوال</label><input type="tel" name="phone" required placeholder="05xxxxxxxx"></div>
-          <div class="form-group"><label>البريد الإلكتروني</label><input type="email" name="email" placeholder="example@domain.com"></div>
+          <div class="form-group"><label>البريد الإلكتروني</label><input type="email" name="email" required placeholder="you@company.com"></div>
           <div class="form-group"><label>الخدمة المطلوبة</label>
             <select name="service" required>
               <option value="">اختر الخدمة</option>
@@ -306,6 +305,11 @@ ${EXTRA}
             </select>
           </div>
           <div class="form-group"><label>تفاصيل الطلب</label><textarea name="message" placeholder="حدثنا عن مشروعك، نوع التصوير، الموقع، الميزانية التقريبية..."></textarea></div>
+          <div class="gh-form-security">
+            <div class="gh-honeypot" aria-hidden="true"><label>لا تملأ</label><input type="text" name="botcheck" tabindex="-1" autocomplete="off"></div>
+            <div class="gh-turnstile"></div>
+          </div>
+          <div class="form-feedback" aria-live="polite"></div>
           <button type="submit" class="form-submit">إرسال الطلب <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">send</span></button>
         </form>
       </div>
@@ -380,6 +384,9 @@ document.addEventListener('click',function(e){
 });
 document.addEventListener('keydown',function(e){if(e.key==='Escape') closeVideo()});
 </script>
+<script src="${P}assets/gh-forms-config.js?v=2"></script>
+<script src="${P}assets/quote-form-config.js"></script>
+<script defer src="${P}assets/quote-form.js?v=4"></script>
 </body>
 </html>`;
 

@@ -8,7 +8,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const IMG_RE = /<img([^>]*?)src="((?:\.\.\/)*assets\/projects\/[^"]+\.(?:jpe?g|png))"([^>]*)>/gi;
+const IMG_RE =
+  /<img([^>]*?)src="((?:\.\.\/)*assets\/(?:projects|photography|branding)\/[^"]+\.(?:jpe?g|png))"([^>]*)>/gi;
 const NESTED_PICTURE_RE =
   /(?:<picture>\s*<source\b[^>]*>\s*)+(<img\b[^>]*>)(?:\s*<\/picture>)+/gi;
 

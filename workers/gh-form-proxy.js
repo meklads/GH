@@ -195,13 +195,26 @@ async function handleSubscribe(body, env, cors, request) {
   );
 }
 
-async function handleForm(body, env, cors) {
+async function handleForm(body, env, cors, request) {
   const key = env.WEB3FORMS_ACCESS_KEY;
   if (!key) return json({ success: false, message: 'Form proxy not configured' }, 503, cors);
+
+  const turnstileToken = body['cf-turnstile-response'] || '';
+  if (env.TURNSTILE_SECRET_KEY) {
+    const turnstileOk = await verifyTurnstile(
+      turnstileToken,
+      env.TURNSTILE_SECRET_KEY,
+      request?.headers?.get('CF-Connecting-IP') || ''
+    );
+    if (!turnstileOk) {
+      return json({ success: false, message: 'Captcha verification failed' }, 403, cors);
+    }
+  }
 
   const allowPersonalEmail =
     body?.source === 'ads' ||
     body?.source === 'float' ||
+    body?.source === 'partner' ||
     /Ads/i.test(String(body?.subject || ''));
 
   /* Lead forms that include email: prefer company domain, except ads/float leads */
@@ -286,7 +299,7 @@ export default {
     }
 
     if (url.pathname === '/api/form') {
-      return handleForm(body, env, cors);
+      return handleForm(body, env, cors, request);
     }
 
     return json({ success: false, message: 'Not found' }, 404, cors);

@@ -306,9 +306,8 @@ ${styles}
       </div>
       <div class="form-card">
         <h3>Photography / production request</h3>
-        <form class="gh-quote-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
+        <form class="gh-quote-form" method="POST" novalidate>
           <input type="hidden" name="_subject" value="Media production request - services/production-en">
-          <input type="hidden" name="_next" value="https://3dgraphicshouse.com/services/production-en.html?sent=1#booking">
           <div class="form-group"><label>Full name</label><input type="text" name="name" required placeholder="Your name"></div>
           <div class="form-group"><label>Mobile number</label><input type="tel" name="phone" required placeholder="+966 5x xxx xxxx"></div>
           <div class="form-group"><label>Email</label><input type="email" name="email" required placeholder="you@company.com"></div>
@@ -338,7 +337,7 @@ ${styles}
           <div class="gh-form-security">
             <div class="gh-honeypot" aria-hidden="true">
               <label>Do not fill</label>
-              <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+              <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
             </div>
             <div class="gh-turnstile"></div>
           </div>
@@ -363,6 +362,9 @@ document.addEventListener('click',function(e){
 });
 document.addEventListener('keydown',function(e){if(e.key==='Escape') closeVideo()});
 </script>
+<script src="${P}assets/gh-forms-config.js?v=2"></script>
+<script src="${P}assets/quote-form-config.js"></script>
+<script defer src="${P}assets/quote-form.js?v=4"></script>
 </body>
 </html>`;
 

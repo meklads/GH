@@ -66,6 +66,9 @@ gtag('config','G-Y67JVE898Z');
 
 
 
+
+
+
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=29">
 <link rel="stylesheet" href="../assets/site-header.css?v=37">
@@ -1863,10 +1866,9 @@ html[dir="rtl"] .gallery-strip-label span {
       </div>
       <div class="form-card">
         <h3>طلب عرض سعر مجسم ذكي</h3>
-        <form class="gh-quote-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
+        <form class="gh-quote-form" method="POST" novalidate>
 <input type="hidden" name="_subject" value="طلب عرض سعر مجسم ذكي - gh-maquettes">
-          <input type="hidden" name="_next" value="https://3dgraphicshouse.com/gh-maquettes.html?sent=1#booking">
-          <div class="form-group">
+<div class="form-group">
             <label>الاسم الكامل</label>
             <input type="text" name="name" required placeholder="أدخل اسمك">
           </div>
@@ -1912,7 +1914,7 @@ html[dir="rtl"] .gallery-strip-label span {
           <div class="gh-form-security">
             <div class="gh-honeypot" aria-hidden="true">
               <label>لا تملأ</label>
-              <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+              <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
             </div>
             <div class="gh-turnstile"></div>
           </div>
@@ -2181,6 +2183,7 @@ html[dir="rtl"] .gallery-strip-label span {
 
 
 
+
 <!-- IMAGE LIGHTBOX -->
 <div id="imageLightbox" onclick="closeImageLightbox(event)" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:99998;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease;padding:20px">
   <img loading="lazy" id="imageLightboxImg" src="" alt="" style="max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.6);display:block">
@@ -2261,5 +2264,7 @@ html[dir="rtl"] .gallery-strip-label span {
 </div>
 <!-- GH FLOAT END -->
 
+<script src="../assets/quote-form-config.js"></script>
+<script defer src="../assets/quote-form.js?v=4"></script>
 </body>
 </html>

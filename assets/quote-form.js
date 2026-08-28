@@ -2,23 +2,49 @@
   'use strict';
 
   var CFG = window.GH_QUOTE_FORM || {};
+  var FORMS = window.GH_FORMS || {};
   var TURNSTILE_KEY = CFG.turnstileSiteKey || '';
-  var turnstileReady = false;
   var turnstileQueue = [];
+  var isEn =
+    (document.documentElement.lang || '').toLowerCase() === 'en' ||
+    document.documentElement.dir === 'ltr';
+
+  var MSG = isEn
+    ? {
+        captcha: 'Please complete the security check before submitting.',
+        sending: 'Sending…',
+        success:
+          '<strong>Request sent.</strong><br>Our team will contact you within 24 business hours.',
+        error:
+          'Could not send. Please try again or WhatsApp: <a href="https://wa.me/966502786513" target="_blank" rel="noopener">+966 50 278 6513</a>',
+        network: 'Connection error. Check your network or contact us on WhatsApp.',
+        companyEmail:
+          'Please use a company email (not Gmail/Hotmail), with full name and mobile number.',
+      }
+    : {
+        captcha: 'يرجى إكمال التحقق الأمني (أنا لست روبوتاً) قبل الإرسال.',
+        sending: 'جاري الإرسال…',
+        success:
+          '<strong>تم إرسال طلبك بنجاح.</strong><br>سيتواصل معك فريقنا خلال 24 ساعة عمل.',
+        error:
+          'تعذّر إرسال الطلب. جرّب مرة أخرى أو تواصل عبر واتساب: <a href="https://wa.me/966502786513" target="_blank" rel="noopener">+966 50 278 6513</a>',
+        network: 'تعذّر إرسال الطلب. تحقق من الاتصال بالإنترنت أو تواصل عبر واتساب.',
+        companyEmail:
+          'يرجى استخدام بريد الشركة (وليس Gmail أو Hotmail)، مع الاسم الكامل ورقم الجوال.',
+      };
 
   var style = document.createElement('style');
   style.textContent = [
-    '.form-feedback{display:none;margin-bottom:14px;padding:14px 16px;font-size:14px;line-height:1.75;border-radius:8px;font-family:Tajawal,sans-serif}',
+    '.form-feedback{display:none;margin-bottom:14px;padding:14px 16px;font-size:14px;line-height:1.75;border-radius:8px;font-family:Tajawal,Inter,sans-serif}',
     '.form-feedback.is-visible{display:block}',
     '.form-feedback.is-success{background:rgba(34,139,34,.08);border:1px solid rgba(34,139,34,.22);color:#1a5c1a}',
-    '.form-feedback.is-pending{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.35);color:#5c4a18}',
     '.form-feedback.is-error{background:rgba(180,0,0,.06);border:1px solid rgba(180,0,0,.18);color:#8b1a1a}',
     '.form-submit:disabled{opacity:.65;cursor:not-allowed}',
     '.gh-form-security{margin-bottom:14px}',
     '.gh-honeypot{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}',
     '.gh-turnstile{min-height:65px;display:flex;align-items:center}',
     'html[dir="rtl"] .gh-turnstile{justify-content:flex-end}',
-    'html[dir="ltr"] .gh-turnstile{justify-content:flex-start}'
+    'html[dir="ltr"] .gh-turnstile{justify-content:flex-start}',
   ].join('');
   document.head.appendChild(style);
 
@@ -45,20 +71,18 @@
       wrap.className = 'gh-form-security';
       wrap.innerHTML =
         '<div class="gh-honeypot" aria-hidden="true">' +
-        '<label for="">لا تملأ</label>' +
-        '<input type="text" name="_honey" tabindex="-1" autocomplete="off">' +
+        '<label>Leave blank</label>' +
+        '<input type="text" name="botcheck" tabindex="-1" autocomplete="off">' +
         '</div>' +
         '<div class="gh-turnstile"></div>';
       var anchor = form.querySelector('.form-feedback, .form-submit, button[type="submit"]');
       if (anchor) form.insertBefore(wrap, anchor);
       else form.appendChild(wrap);
     }
-    if (!form.querySelector('input[name="_captcha"]')) {
-      var cap = document.createElement('input');
-      cap.type = 'hidden';
-      cap.name = '_captcha';
-      cap.value = 'false';
-      form.appendChild(cap);
+    // Prefer Worker honeypot name
+    var honey = form.querySelector('input[name="_honey"]');
+    if (honey && !form.querySelector('input[name="botcheck"]')) {
+      honey.setAttribute('name', 'botcheck');
     }
   }
 
@@ -73,8 +97,9 @@
     s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
     s.async = true;
     s.onload = function () {
-      turnstileReady = true;
-      turnstileQueue.splice(0).forEach(function (fn) { fn(); });
+      turnstileQueue.splice(0).forEach(function (fn) {
+        fn();
+      });
     };
     document.head.appendChild(s);
   }
@@ -83,27 +108,16 @@
     if (!TURNSTILE_KEY) return;
     var box = form.querySelector('.gh-turnstile');
     if (!box || box.dataset.rendered === '1') return;
-
     loadTurnstile(function () {
       if (!window.turnstile || box.dataset.rendered === '1') return;
       var id = window.turnstile.render(box, {
         sitekey: TURNSTILE_KEY,
         theme: 'light',
-        language: document.documentElement.lang === 'en' ? 'en' : 'ar',
-        callback: function () { form.dataset.tsVerified = '1'; },
-        'expired-callback': function () { form.dataset.tsVerified = '0'; },
-        'error-callback': function () { form.dataset.tsVerified = '0'; }
+        language: isEn ? 'en' : 'ar',
       });
       box.dataset.rendered = '1';
       box.dataset.widgetId = id;
     });
-  }
-
-  function resetTurnstile(form) {
-    var box = form.querySelector('.gh-turnstile');
-    if (!box || !box.dataset.widgetId || !window.turnstile) return;
-    window.turnstile.reset(box.dataset.widgetId);
-    form.dataset.tsVerified = '0';
   }
 
   function turnstileToken(form) {
@@ -112,18 +126,39 @@
     return window.turnstile.getResponse(box.dataset.widgetId) || '';
   }
 
+  function resetTurnstile(form) {
+    var box = form.querySelector('.gh-turnstile');
+    if (!box || !box.dataset.widgetId || !window.turnstile) return;
+    window.turnstile.reset(box.dataset.widgetId);
+  }
+
+  function val(form, name) {
+    var el = form.querySelector('[name="' + name + '"]');
+    return el ? String(el.value || '').trim() : '';
+  }
+
+  function formSource(form) {
+    if (form.classList.contains('pn-form') || /partner-network/i.test(location.pathname)) {
+      return 'partner';
+    }
+    return form.getAttribute('data-gh-form-source') || 'quote';
+  }
+
   function wireForm(form) {
     if (form.dataset.ghQuoteWired === '1') return;
     form.dataset.ghQuoteWired = '1';
 
-    var action = form.getAttribute('action') || '';
-    if (!action.includes('formsubmit.co')) return;
-
-    var ajaxAction = action.includes('/ajax/')
-      ? action
-      : action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
-
+    form.classList.add('gh-quote-form');
+    form.removeAttribute('action');
     form.removeAttribute('target');
+    form.setAttribute('method', 'POST');
+    form.setAttribute('novalidate', '');
+
+    // Drop FormSubmit-only fields
+    form.querySelectorAll('input[name="_next"], input[name="_captcha"], input[name="_template"]').forEach(function (el) {
+      el.remove();
+    });
+
     ensureSecurityFields(form);
     renderTurnstile(form);
 
@@ -132,82 +167,79 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      var honey = form.querySelector('input[name="_honey"]');
+      var honey = form.querySelector('input[name="botcheck"], input[name="_honey"]');
       if (honey && honey.value.trim()) return;
 
-      if (TURNSTILE_KEY) {
-        var token = turnstileToken(form);
-        if (!token) {
-          showFeedback(feedback, 'error', 'يرجى إكمال التحقق الأمني (أنا لست روبوتاً) قبل الإرسال.');
-          return;
-        }
+      if (TURNSTILE_KEY && !turnstileToken(form)) {
+        showFeedback(feedback, 'error', MSG.captcha);
+        return;
       }
 
       var btn = form.querySelector('.form-submit, button[type="submit"]');
       var label = btn ? btn.innerHTML : '';
       if (btn) {
         btn.disabled = true;
-        btn.innerHTML = 'جاري الإرسال…';
+        btn.innerHTML = MSG.sending;
       }
 
-      var data = new FormData(form);
-      data.set('_captcha', 'false');
+      var subject = val(form, '_subject') || (isEn ? 'Quote request — Graphics House' : 'طلب عرض سعر — جرافيكس هاوس');
+      var source = formSource(form);
+      var payload = {
+        subject: subject,
+        from_name: 'Graphics House Website',
+        name: val(form, 'name'),
+        email: val(form, 'email'),
+        phone: val(form, 'phone'),
+        company: val(form, 'company') || val(form, 'agency_name'),
+        service: val(form, 'service'),
+        city: val(form, 'city'),
+        job_title: val(form, 'job_title'),
+        message: val(form, 'message'),
+        page: location.pathname,
+        source: source,
+        language: isEn ? 'en' : 'ar',
+        botcheck: '',
+      };
+
       if (TURNSTILE_KEY) {
-        data.set('cf-turnstile-response', turnstileToken(form));
+        payload['cf-turnstile-response'] = turnstileToken(form);
       }
 
-      fetch(ajaxAction, {
+      fetch(FORMS.formEndpoint || 'https://3dgraphicshouse.com/api/form', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' }
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
       })
-        .then(function (res) {
-          return res.json().catch(function () {
-            return { success: res.ok, message: '' };
+        .then(function (r) {
+          return r.json().then(function (data) {
+            return { ok: r.ok, data: data };
           });
         })
-        .then(function (payload) {
-          var msg = (payload && payload.message) ? String(payload.message) : '';
-          if (payload && (payload.success === true || payload.success === 'true')) {
+        .then(function (res) {
+          if (res.data && res.data.success) {
             if (window.ghTrack) {
               window.ghTrack('form_submit', {
-                form_name: form.id || 'quote_form',
+                form_name: form.id || source + '_form',
                 page_path: location.pathname,
               });
-              window.ghTrack('generate_lead', { form_name: form.id || 'quote_form' });
+              window.ghTrack('generate_lead', { form_name: form.id || source + '_form' });
             }
-            showFeedback(
-              feedback,
-              'success',
-              '<strong>تم إرسال طلبك بنجاح.</strong><br>سيتواصل معك فريقنا خلال 24 ساعة عمل.'
-            );
+            showFeedback(feedback, 'success', MSG.success);
             form.reset();
             resetTurnstile(form);
             feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             return;
           }
-          if (/activation|activate/i.test(msg)) {
-            showFeedback(
-              feedback,
-              'pending',
-              '<strong>تفعيل لمرة واحدة مطلوب.</strong><br>تم إرسال رابط تفعيل إلى <strong>dot4life.team@gmail.com</strong>. افتح البريد واضغط «Activate Form»، ثم أعد الإرسال.'
-            );
-            resetTurnstile(form);
-            return;
+          var apiMsg = (res.data && res.data.message) || '';
+          if (/شركة|company email|Gmail|Hotmail/i.test(apiMsg)) {
+            showFeedback(feedback, 'error', MSG.companyEmail);
+          } else {
+            showFeedback(feedback, 'error', apiMsg || MSG.error);
           }
-          showFeedback(
-            feedback,
-            'error',
-            'تعذّر إرسال الطلب. جرّب مرة أخرى أو تواصل عبر واتساب: <a href="https://wa.me/966502786513" target="_blank" rel="noopener">+966 50 278 6513</a>'
-          );
           resetTurnstile(form);
         })
         .catch(function () {
-          showFeedback(
-            feedback,
-            'error',
-            'تعذّر إرسال الطلب. تحقق من الاتصال بالإنترنت أو تواصل عبر واتساب.'
-          );
+          showFeedback(feedback, 'error', MSG.network);
           resetTurnstile(form);
         })
         .finally(function () {
@@ -219,20 +251,15 @@
     });
   }
 
-  document.querySelectorAll('form[action*="formsubmit.co"]').forEach(wireForm);
+  function init() {
+    document
+      .querySelectorAll('form.gh-quote-form')
+      .forEach(wireForm);
+  }
 
-  if (/[?&]sent=1/.test(location.search)) {
-    document.querySelectorAll('form[action*="formsubmit.co"]').forEach(function (form) {
-      var feedback = ensureFeedback(form);
-      showFeedback(
-        feedback,
-        'success',
-        '<strong>تم إرسال طلبك بنجاح.</strong><br>سيتواصل معك فريقنا خلال 24 ساعة عمل.'
-      );
-      if (form.closest('#booking')) {
-        form.closest('#booking').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-      history.replaceState(null, '', location.pathname + location.hash);
-    });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();

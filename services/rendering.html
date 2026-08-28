@@ -55,6 +55,8 @@ gtag('config','G-Y67JVE898Z');
 
 
 
+
+
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=29">
 <link rel="stylesheet" href="../assets/site-header.css?v=37">
@@ -775,10 +777,9 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
       </div>
       <div class="form-card">
         <h3>طلب عرض سعر</h3>
-        <form class="gh-quote-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
+        <form class="gh-quote-form" method="POST" novalidate>
           <input type="hidden" name="_subject" value="طلب عرض سعر - rendering">
-          <input type="hidden" name="_next" value="https://3dgraphicshouse.com/services/rendering.html?sent=1#booking">
-          <div class="form-group"><label>الاسم الكامل</label><input type="text" name="name" required placeholder="أدخل اسمك"></div>
+<div class="form-group"><label>الاسم الكامل</label><input type="text" name="name" required placeholder="أدخل اسمك"></div>
           <div class="form-group"><label>الجهة / الشركة</label><input type="text" name="company" placeholder="اسم الشركة"></div>
           <div class="form-group"><label>رقم الجوال</label><input type="tel" name="phone" required placeholder="05xxxxxxxx"></div>
           <div class="form-group"><label>البريد الإلكتروني</label><input type="email" name="email" required placeholder="example@domain.com"></div>
@@ -807,7 +808,7 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
           <div class="gh-form-security">
             <div class="gh-honeypot" aria-hidden="true">
               <label>لا تملأ</label>
-              <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+              <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
             </div>
             <div class="gh-turnstile"></div>
           </div>
@@ -1076,6 +1077,7 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 
 
 
+
 <script defer src="../assets/gh-float-widgets.js?v=10"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">
@@ -1141,5 +1143,7 @@ html[dir="rtl"] .portfolio-item-category { letter-spacing: 0; text-transform: no
 </div>
 <!-- GH FLOAT END -->
 
+<script src="../assets/quote-form-config.js"></script>
+<script defer src="../assets/quote-form.js?v=4"></script>
 </body>
 </html>

@@ -977,9 +977,8 @@ ${header}
         <p>${c.individualLead}</p>
         <a class="pn-individual-tel" href="tel:${c.individualPhone}" data-cta="partner-individual-call"><span class="material-symbols-outlined ms" aria-hidden="true">call</span>${c.individualPhoneDisplay}</a>
       </aside>
-      <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
+      <form class="gh-quote-form pn-form" method="POST" novalidate data-gh-form-source="partner">
         <input type="hidden" name="_subject" value="${c.formSubject}">
-        <input type="hidden" name="_next" value="${c.formNext}">
         <div class="pn-form-grid">
           <div class="pn-field"><label for="pnName">${c.fields.name} <span class="req">*</span></label><input type="text" name="name" id="pnName" required autocomplete="name"></div>
           <div class="pn-field"><label for="pnAgency">${c.fields.agency} <span class="req">*</span></label><input type="text" name="agency_name" id="pnAgency" required autocomplete="organization"></div>
@@ -1000,7 +999,7 @@ ${header}
             <textarea name="message" id="pnMessage" placeholder="${c.messagePlaceholder}"></textarea>
           </div>
           <div class="pn-field pn-field--full">
-            <div class="gh-form-security"><div class="gh-honeypot" aria-hidden="true"><label>Leave blank</label><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div><div class="gh-turnstile"></div></div>
+            <div class="gh-form-security"><div class="gh-honeypot" aria-hidden="true"><label>Leave blank</label><input type="text" name="botcheck" tabindex="-1" autocomplete="off"></div><div class="gh-turnstile"></div></div>
             <div class="form-feedback" aria-live="polite"></div>
           </div>
         </div>
@@ -1021,7 +1020,7 @@ ${header}
 ${footer}
 
 <script defer src="assets/quote-form-config.js"></script>
-<script defer src="assets/quote-form.js?v=3"></script>
+<script defer src="assets/quote-form.js?v=4"></script>
 <script defer src="assets/gh-float-widgets.js?v=8"></script>
 <script>
 (function(){

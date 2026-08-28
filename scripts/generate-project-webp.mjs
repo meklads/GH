@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Generate WebP siblings for assets/projects raster images (idempotent).
+ * Generate WebP siblings for project, photography, and branding rasters (idempotent).
  */
 import fs from 'fs';
 import path from 'path';
@@ -8,7 +8,11 @@ import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const PROJECTS = path.join(ROOT, 'assets/projects');
+const ROOTS = [
+  path.join(ROOT, 'assets/projects'),
+  path.join(ROOT, 'assets/photography'),
+  path.join(ROOT, 'assets/branding'),
+];
 
 function hasCwebp() {
   try {
@@ -37,18 +41,21 @@ if (!hasCwebp()) {
 let created = 0;
 let skipped = 0;
 
-for (const srcPath of walkImages(PROJECTS)) {
-  const webpPath = srcPath.replace(/\.(jpe?g|png)$/i, '.webp');
-  if (fs.existsSync(webpPath) && fs.statSync(webpPath).mtimeMs >= fs.statSync(srcPath).mtimeMs) {
-    skipped++;
-    continue;
-  }
-  try {
-    execSync(`cwebp -q 82 "${srcPath}" -o "${webpPath}"`, { stdio: 'ignore' });
-    created++;
-  } catch {
-    console.warn('  skip:', path.relative(ROOT, srcPath));
+for (const rootDir of ROOTS) {
+  for (const srcPath of walkImages(rootDir)) {
+    const webpPath = srcPath.replace(/\.(jpe?g|png)$/i, '.webp');
+    if (fs.existsSync(webpPath) && fs.statSync(webpPath).mtimeMs >= fs.statSync(srcPath).mtimeMs) {
+      skipped++;
+      continue;
+    }
+    try {
+      execSync(`cwebp -q 80 "${srcPath}" -o "${webpPath}"`, { stdio: 'ignore' });
+      created++;
+      console.log('  webp:', path.relative(ROOT, webpPath));
+    } catch {
+      console.warn('  skip:', path.relative(ROOT, srcPath));
+    }
   }
 }
 
-console.log(`Project WebP: ${created} created, ${skipped} up-to-date`);
+console.log(`Asset WebP: ${created} created, ${skipped} up-to-date`);

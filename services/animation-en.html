@@ -853,9 +853,8 @@ html[dir="ltr"] .section-title {
       </div>
       <div class="form-card">
         <h3>Quote Request</h3>
-        <form class="gh-quote-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
+        <form class="gh-quote-form" method="POST" novalidate>
           <input type="hidden" name="_subject" value="Quote request - 3D Animation EN">
-          <input type="hidden" name="_next" value="https://3dgraphicshouse.com/services/animation-en.html?sent=1#booking">
           <div class="form-group"><label>Full Name</label><input type="text" name="name" required placeholder="Your name"></div>
           <div class="form-group"><label>Company / Organization</label><input type="text" name="company" placeholder="Company name"></div>
           <div class="form-group"><label>Phone</label><input type="tel" name="phone" required placeholder="+966 5xxxxxxxx"></div>
@@ -884,7 +883,7 @@ html[dir="ltr"] .section-title {
           <div class="gh-form-security">
             <div class="gh-honeypot" aria-hidden="true">
               <label>Leave blank</label>
-              <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+              <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
             </div>
             <div class="gh-turnstile"></div>
           </div>
@@ -1187,5 +1186,7 @@ window.addEventListener("scroll",function(){var h=document.getElementById("heade
 </div>
 <!-- GH FLOAT END -->
 
+<script src="../assets/quote-form-config.js"></script>
+<script defer src="../assets/quote-form.js?v=4"></script>
 </body>
 </html>

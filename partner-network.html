@@ -775,9 +775,8 @@ html[dir=rtl] .pn-quote{border-radius:var(--radius) 0 0 var(--radius)}
         <p>مدير تسويق، مستشار، أو وسيط مشاريع؟ للتعاون الفردي وبرنامج الإحالة، تواصل مباشرة:</p>
         <a class="pn-individual-tel" href="tel:+966502786513" data-cta="partner-individual-call"><span class="material-symbols-outlined ms" aria-hidden="true">call</span>٠٥٠٢٧٨٦٥١٣</a>
       </aside>
-      <form class="gh-quote-form pn-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
+      <form class="gh-quote-form pn-form" method="POST" novalidate data-gh-form-source="partner">
         <input type="hidden" name="_subject" value="طلب شراكة وتعاون, AR">
-        <input type="hidden" name="_next" value="https://3dgraphicshouse.com/partner-network.html?sent=1#inquiry">
         <div class="pn-form-grid">
           <div class="pn-field"><label for="pnName">الاسم الكامل <span class="req">*</span></label><input type="text" name="name" id="pnName" required autocomplete="name"></div>
           <div class="pn-field"><label for="pnAgency">اسم الجهة <span class="req">*</span></label><input type="text" name="agency_name" id="pnAgency" required autocomplete="organization"></div>
@@ -842,7 +841,7 @@ html[dir=rtl] .pn-quote{border-radius:var(--radius) 0 0 var(--radius)}
             <textarea name="message" id="pnMessage" placeholder="موجز المشروع، العرض التقديمي، أو تفاصيل فرصة التعاون…"></textarea>
           </div>
           <div class="pn-field pn-field--full">
-            <div class="gh-form-security"><div class="gh-honeypot" aria-hidden="true"><label>Leave blank</label><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div><div class="gh-turnstile"></div></div>
+            <div class="gh-form-security"><div class="gh-honeypot" aria-hidden="true"><label>Leave blank</label><input type="text" name="botcheck" tabindex="-1" autocomplete="off"></div><div class="gh-turnstile"></div></div>
             <div class="form-feedback" aria-live="polite"></div>
           </div>
         </div>
@@ -978,7 +977,7 @@ html[dir=rtl] .pn-quote{border-radius:var(--radius) 0 0 var(--radius)}
 
 
 <script defer src="assets/quote-form-config.js"></script>
-<script defer src="assets/quote-form.js?v=3"></script>
+<script defer src="assets/quote-form.js?v=4"></script>
 <script defer src="assets/gh-float-widgets.js?v=10"></script>
 <script>
 (function(){

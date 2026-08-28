@@ -37,7 +37,7 @@ document.querySelectorAll('.gallery-video').forEach(function(item){
 });
 </script>
 <script defer src="${P}assets/quote-form-config.js"></script>
-<script defer src="${P}assets/quote-form.js?v=3"></script>`;
+<script defer src="${P}assets/quote-form.js?v=4"></script>`;
 }
 
 function bodyContent() {
@@ -205,9 +205,8 @@ function bodyContent() {
       </div>
       <div class="form-card">
         <h3>Quote Request</h3>
-        <form class="gh-quote-form" action="https://formsubmit.co/info@3dgraphicshouse.com" method="POST">
+        <form class="gh-quote-form" method="POST" novalidate>
           <input type="hidden" name="_subject" value="Quote request - Architectural Visualization EN">
-          <input type="hidden" name="_next" value="${BASE}/services/rendering-en.html?sent=1#booking">
           <div class="form-group"><label>Full Name</label><input type="text" name="name" required placeholder="Your name"></div>
           <div class="form-group"><label>Company</label><input type="text" name="company" placeholder="Company name"></div>
           <div class="form-group"><label>Phone</label><input type="tel" name="phone" required placeholder="+966..."></div>
@@ -235,7 +234,7 @@ function bodyContent() {
           </div>
           <div class="form-group"><label>Project Details</label><textarea name="message" placeholder="Tell us about your project, timeline, and scope..."></textarea></div>
           <div class="gh-form-security">
-            <div class="gh-honeypot" aria-hidden="true"><label>Leave blank</label><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+            <div class="gh-honeypot" aria-hidden="true"><label>Leave blank</label><input type="text" name="botcheck" tabindex="-1" autocomplete="off"></div>
             <div class="gh-turnstile"></div>
           </div>
           <div class="form-feedback" aria-live="polite"></div>
