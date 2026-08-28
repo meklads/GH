@@ -1,0 +1,211 @@
+/* Homepage — Launch Systems + Creative Disciplines (AR/EN unified) */
+
+.gh-home-eco {
+  padding: 100px 0;
+  background: #0a0a0a;
+  overflow: hidden;
+  position: relative;
+}
+
+.gh-home-eco__wrap {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.gh-home-eco__head {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.gh-home-eco__eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #c9a84c;
+  display: block;
+  margin-bottom: 14px;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+.gh-home-eco__head h2 {
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 300;
+  color: #fafaf8;
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.gh-home-eco__head h2 span {
+  font-family: 'Playfair Display', serif;
+  color: #c9a84c;
+}
+
+.gh-home-eco__head p {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 18px auto 0;
+  max-width: 620px;
+  line-height: 1.75;
+}
+
+.gh-home-eco__head a {
+  color: #c9a84c;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.gh-home-eco__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.75);
+  margin: 0 0 18px;
+  font-family: monospace;
+}
+
+html[dir="rtl"] .gh-home-eco__label {
+  letter-spacing: 0.08em;
+  text-transform: none;
+  font-size: 12px;
+}
+
+.gh-home-eco__products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 48px;
+}
+
+.gh-home-eco__disciplines {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.gh-home-eco-card {
+  display: block;
+  background: #151515;
+  padding: 36px 30px 28px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #1f1f1f;
+  height: 100%;
+}
+
+.gh-home-eco-card:hover {
+  border-color: #c9a84c;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.gh-home-eco-card:hover .gh-home-eco-card__title {
+  color: #c9a84c;
+}
+
+.gh-home-eco-card--product {
+  background: linear-gradient(145deg, #1a1814 0%, #151515 55%);
+  border-color: rgba(201, 168, 76, 0.28);
+}
+
+.gh-home-eco-card--product:hover {
+  border-color: #c9a84c;
+}
+
+.gh-home-eco-card__badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  padding: 4px 10px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+}
+
+html[dir="rtl"] .gh-home-eco-card__badge {
+  letter-spacing: 0.06em;
+  text-transform: none;
+}
+
+.gh-home-eco-card__icon {
+  width: 45px;
+  height: 45px;
+  display: block;
+  margin-bottom: 16px;
+  object-fit: contain;
+}
+
+.gh-home-eco-card__icon-ms {
+  font-size: 45px;
+  color: #c9a84c;
+  display: block;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.gh-home-eco-card__title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 6px;
+  line-height: 1.2;
+  transition: color 0.3s;
+}
+
+.gh-home-eco-card__sub {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(201, 168, 76, 0.85);
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+.gh-home-eco-card__desc {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.gh-home-eco-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #c9a84c;
+  margin-top: 18px;
+}
+
+html[dir="rtl"] .gh-home-eco-card__cta .material-symbols-outlined {
+  transform: scaleX(-1);
+}
+
+@media (max-width: 1024px) {
+  .gh-home-eco__products,
+  .gh-home-eco__disciplines {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .gh-home-eco {
+    padding: 72px 0;
+  }
+
+  .gh-home-eco__products,
+  .gh-home-eco__disciplines {
+    grid-template-columns: 1fr;
+  }
+}
