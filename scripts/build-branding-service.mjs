@@ -14,15 +14,17 @@ const OUT = path.join(ROOT, 'services');
 const BASE = 'https://3dgraphicshouse.com';
 const DEPTH = 1;
 const P = '../';
-const CSS_V = 1;
-const HERO = 'assets/projects/jeddah-forum/catalog/page-01.jpg';
-const CASE_IMG = 'assets/projects/jeddah-forum/catalog/page-08.jpg';
+const CSS_V = 2;
+const HERO = 'assets/projects/branding/jeddah-forum-premium.png';
+const CASE_IMG = 'assets/projects/branding/jeddah-forum-premium.png';
+const SHOWCASE = 'assets/projects/branding/portfolio-showcase.png';
 
 const GALLERY = [
   {
     filter: 'forums',
-    img: 'assets/projects/jeddah-forum/catalog/page-01.jpg',
+    img: 'assets/projects/branding/jeddah-forum-premium.png',
     logo: false,
+    light: false,
     titleAr: 'ملتقى جدة للعقار',
     titleEn: 'Jeddah Real Estate Forum',
     catAr: 'ملتقيات ومعارض',
@@ -31,9 +33,34 @@ const GALLERY = [
     hrefEn: '../case-studies/jeddah-real-estate-forum-en.html',
   },
   {
-    filter: 'group',
-    img: 'assets/logo-gold.png',
+    filter: 'forums',
+    img: 'assets/projects/branding/jeddah-forum-lockup.png',
     logo: true,
+    light: true,
+    titleAr: 'ملتقى جدة — الهوية',
+    titleEn: 'Jeddah Forum — identity lockup',
+    catAr: 'هوية بصرية',
+    catEn: 'Visual identity',
+    hrefAr: '../case-studies/jeddah-real-estate-forum.html',
+    hrefEn: '../case-studies/jeddah-real-estate-forum-en.html',
+  },
+  {
+    filter: 'forums',
+    img: 'assets/projects/branding/target-alhadaf.png',
+    logo: true,
+    light: true,
+    titleAr: 'الهدف — تنظيم المعارض والمؤتمرات',
+    titleEn: 'Target — exhibitions & conferences',
+    catAr: 'ملتقيات ومعارض',
+    catEn: 'Forums & exhibitions',
+    hrefAr: '../contact-us.html',
+    hrefEn: '../contact-us-en.html',
+  },
+  {
+    filter: 'group',
+    img: 'assets/projects/branding/graphicshouse-identity.png',
+    logo: true,
+    light: true,
     titleAr: 'Graphics House',
     titleEn: 'Graphics House',
     catAr: 'علامات المجموعة',
@@ -43,8 +70,34 @@ const GALLERY = [
   },
   {
     filter: 'group',
+    img: 'assets/projects/branding/bees-motion.png',
+    logo: true,
+    light: true,
+    titleAr: 'Bees Motion',
+    titleEn: 'Bees Motion',
+    catAr: 'إنتاج سينمائي',
+    catEn: 'Cinematic production',
+    hrefAr: 'https://beesmotion.com',
+    hrefEn: 'https://beesmotion.com',
+    external: true,
+  },
+  {
+    filter: 'commercial',
+    img: 'assets/projects/branding/scents-wave.png',
+    logo: true,
+    light: true,
+    titleAr: 'Scents Wave — عطور وهدايا',
+    titleEn: 'Scents Wave — perfume & gifts',
+    catAr: 'تجزئة وعلامات تجارية',
+    catEn: 'Retail & consumer brands',
+    hrefAr: '../contact-us.html',
+    hrefEn: '../contact-us-en.html',
+  },
+  {
+    filter: 'group',
     img: 'assets/projects/rendering/c3.jpg',
     logo: false,
+    light: false,
     titleAr: 'توريفا',
     titleEn: 'Turriva',
     catAr: 'علامات المجموعة',
@@ -57,6 +110,7 @@ const GALLERY = [
     filter: 'forums',
     img: 'assets/insights/reports/jeddah-gate-ruwaq.jpg',
     logo: false,
+    light: false,
     titleAr: 'رواق — جولات ومعارض',
     titleEn: 'Ruwaq — tours & exhibitions',
     catAr: 'معارض تفاعلية',
@@ -69,24 +123,13 @@ const GALLERY = [
     filter: 'catalogues',
     img: 'assets/projects/jeddah-forum/catalog/page-12.jpg',
     logo: false,
+    light: false,
     titleAr: 'كتالوج ملتقى جدة',
     titleEn: 'Jeddah Forum catalogue',
     catAr: 'كتالوجات ومطبوعات',
     catEn: 'Catalogues & print',
     hrefAr: '../case-studies/jeddah-real-estate-forum.html',
     hrefEn: '../case-studies/jeddah-real-estate-forum-en.html',
-  },
-  {
-    filter: 'forums',
-    img: 'assets/projects/animation/jeddah-forum.jpg',
-    logo: false,
-    titleAr: 'بيزموشن — إنتاج سينمائي',
-    titleEn: 'Bees Motion — cinematic production',
-    catAr: 'أفلام وإنتاج',
-    catEn: 'Film & production',
-    hrefAr: 'https://beesmotion.com',
-    hrefEn: 'https://beesmotion.com',
-    external: true,
   },
 ];
 
@@ -112,13 +155,16 @@ const COPY = {
       'شعار، لوحة ألوان، كتالوج ٤٤ صفحة، نموذج جدة سوبردوم ثلاثي الأبعاد، وفيلم CGI سينمائي — منظومة بصرية كاملة من استوديو واحد.',
     caseLink: 'اقرأ الدراسة الكاملة',
     galleryTitle: 'أعمال الهوية',
-    galleryLead: 'معرض يتوسع بأعمال المجموعة والملتقيات والكتالوجات. صور إضافية قريباً.',
+    galleryLead: 'معرض من هوياتنا: ملتقيات، علامات المجموعة، تجزئة، وكتالوجات — من الشعار إلى التطبيق الكامل.',
     filters: [
       { id: 'all', label: 'الكل' },
       { id: 'forums', label: 'ملتقيات ومعارض' },
       { id: 'group', label: 'علامات المجموعة' },
+      { id: 'commercial', label: 'تجزئة وعلامات' },
       { id: 'catalogues', label: 'كتالوجات ومطبوعات' },
     ],
+    showcaseTitle: 'محفظة الهوية البصرية',
+    showcaseLead: 'نماذج من شعارات وهويات أنتجتها Graphics House عبر قطاعات متعددة.',
     pathsTitle: 'أين تناسب الهوية في حلولنا؟',
     paths: [
       {
@@ -161,13 +207,16 @@ const COPY = {
       'Logo, colour system, 44-page catalogue, Jeddah Superdome 3D model, and cinematic CGI film — a complete visual system from one studio.',
     caseLink: 'Read the full case study',
     galleryTitle: 'Identity work',
-    galleryLead: 'A growing gallery of group brands, forums, and catalogues. More assets coming soon.',
+    galleryLead: 'A portfolio of our identity systems: forums, group brands, retail, and catalogues — from logo to full application.',
     filters: [
       { id: 'all', label: 'All' },
       { id: 'forums', label: 'Forums & exhibitions' },
       { id: 'group', label: 'Group brands' },
+      { id: 'commercial', label: 'Retail & consumer' },
       { id: 'catalogues', label: 'Catalogues & print' },
     ],
+    showcaseTitle: 'Visual identity portfolio',
+    showcaseLead: 'Sample logos and identity systems produced by Graphics House across multiple sectors.',
     pathsTitle: 'Where identity fits in our solutions',
     paths: [
       {
@@ -255,10 +304,11 @@ function page(lang) {
     const finalHref = isEn ? item.hrefEn : item.hrefAr;
     const ext = item.external ? ' target="_blank" rel="noopener noreferrer"' : '';
     const imgClass = item.logo ? 'bid-gal-logo' : '';
+    const lightClass = item.light ? ' bid-gal-img--light' : '';
     const title = isEn ? item.titleEn : item.titleAr;
     const cat = isEn ? item.catEn : item.catAr;
     return `<a href="${finalHref}" class="bid-gal-card reveal" data-bid-cat="${item.filter}"${ext}>
-      <div class="bid-gal-img"><img class="${imgClass}" src="${P}${item.img}" alt="${esc(title)}" loading="lazy"></div>
+      <div class="bid-gal-img${lightClass}"><img class="${imgClass}" src="${P}${item.img}" alt="${esc(title)}" loading="lazy"></div>
       <div class="bid-gal-body">
         <span class="bid-gal-cat">${esc(cat)}</span>
         <h4>${esc(title)}</h4>
@@ -369,6 +419,9 @@ ${header}
 
   <section class="bid-section" id="bid-gallery">
     <div class="bid-section-inner">
+      <div class="bid-showcase reveal">
+        <img src="${P}${SHOWCASE}" alt="${esc(t.showcaseTitle)}" loading="lazy" width="1200" height="675">
+      </div>
       <div class="bid-section-head reveal">
         <h2>${esc(t.galleryTitle)}</h2>
         <p>${esc(t.galleryLead)}</p>
