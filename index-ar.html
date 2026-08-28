@@ -29,9 +29,14 @@ gtag('config','G-Y67JVE898Z');
 <title>Graphics House | استوديو إطلاق بصري متكامل للمطورين في الخليج</title>
 <meta property="og:title" content="Graphics House | استوديو إطلاق بصري متكامل للمطورين في الخليج">
 <meta property="og:description" content="مجسمات ذكية، CGI سينمائي، وتجارب تفاعلية للمشاريع التطويرية في السعودية والخليج. فريق واحد من التصميم إلى التسليم.">
-<meta property="og:image" content="/assets/favicon/og-image.png">
+<meta property="og:image" content="https://3dgraphicshouse.com/assets/favicon/og-image.png">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://3dgraphicshouse.com/index-ar.html">
+<meta property="og:site_name" content="Graphics House">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Graphics House | استوديو إطلاق بصري متكامل للمطورين في الخليج">
+<meta name="twitter:description" content="مجسمات ذكية، CGI سينمائي، وتجارب تفاعلية للمشاريع التطويرية في السعودية والخليج.">
+<meta name="twitter:image" content="https://3dgraphicshouse.com/assets/favicon/og-image.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
@@ -66,8 +71,11 @@ gtag('config','G-Y67JVE898Z');
 
 
 
+
+
+
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=28">
+<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=29">
 <link rel="stylesheet" href="assets/site-header.css?v=37">
 <link rel="stylesheet" href="assets/home-ar.css?v=11">
 <link rel="stylesheet" href="assets/gh-home-ecosystem.css?v=1">
@@ -114,7 +122,7 @@ gtag('config','G-Y67JVE898Z');
 <script defer src="assets/gh-performance.js?v=10"></script>
 <script defer src="assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="assets/gh-home-mobile.css?v=3">
-<link rel="stylesheet" href="assets/gh-float-widgets.css?v=9">
+<link rel="stylesheet" href="assets/gh-float-widgets.css?v=10">
 <link rel="stylesheet" href="assets/gh-ar-typography.css?v=2">
 </head>
 <body class="gh-home">
@@ -327,7 +335,7 @@ gtag('config','G-Y67JVE898Z');
 
   <!-- Video Background -->
   <div class="hero-video-bg">
-    <video id="hero-vid-ar" class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline preload="auto"
+    <video id="hero-vid-ar" class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline preload="metadata"
            poster="assets/hero-demo-poster.jpg"
            data-pl-src="assets/videos/GH-demo-reel-2025.mp4"
            data-pl-src-mobile="assets/videos/GH-demo-reel-2025-mobile.mp4"
@@ -391,13 +399,13 @@ gtag('config','G-Y67JVE898Z');
 
       <!-- Buttons -->
       <div class="flex flex-wrap gap-4 mt-6 justify-center">
-        <a href="#services" class="gh-damac-btn gh-damac-btn-white">
-          <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">play_arrow</span>
-          <span>استكشف خدمات</span>
+        <a href="#services" class="gh-damac-btn gh-damac-btn-white" data-cta="hero_explore_systems">
+          <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">rocket_launch</span>
+          <span>استكشف أنظمة الإطلاق</span>
         </a>
-        <a href="#projects" class="gh-damac-btn gh-damac-btn-outline">
-          <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">collections</span>
-          <span>مشاريع</span>
+        <a href="contact-us.html" class="gh-damac-btn gh-damac-btn-outline" data-cta="hero_contact">
+          <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">calendar_month</span>
+          <span>احجز استشارة</span>
         </a>
       </div>
 
@@ -697,7 +705,7 @@ gtag('config','G-Y67JVE898Z');
 </section>
 
 <!-- GH_HOME_ECOSYSTEM -->
-<section class="gh-home-eco motif-bg" dir="rtl">
+<section class="gh-home-eco motif-bg" id="services" dir="rtl">
   <div class="gh-home-eco__wrap">
 
     <header class="gh-home-eco__head reveal">
@@ -753,36 +761,36 @@ gtag('config','G-Y67JVE898Z');
     <p class="gh-home-eco__label">التخصصات الإبداعية</p>
     <div class="gh-home-eco__disciplines">
 
-      <a href="3d-animation.html" class="gh-home-eco-card reveal">
-        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/cinematic.png" alt="">
+      <a href="services/animation.html" class="gh-home-eco-card reveal">
+        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/cinematic.png" alt="" aria-hidden="true">
         <h3 class="gh-home-eco-card__title">سينمائي CGI</h3>
         <p class="gh-home-eco-card__desc">إظهار معماري سينمائي فائق الجودة يحاكي تجربة المشروع بالكامل عبر أفلام تحوّل المخططات إلى سرديات بصرية مقنعة للمستثمرين.</p>
         <span class="gh-home-eco-card__cta"><span class="material-symbols-outlined" style="font-size:16px">arrow_back</span> اعرف المزيد</span>
       </a>
 
-      <a href="smart-maquettes.html" class="gh-home-eco-card reveal r1">
-        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/models.png" alt="">
+      <a href="services/maquettes.html" class="gh-home-eco-card reveal r1">
+        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/models.png" alt="" aria-hidden="true">
         <h3 class="gh-home-eco-card__title">مجسمات ذكية</h3>
         <p class="gh-home-eco-card__desc">مجسمات معمارية تجمع الحرفية اليدوية والإسقاط الضوئي والبيانات الحية — تجربة بصرية ورقمية تفاعلية فريدة.</p>
         <span class="gh-home-eco-card__cta"><span class="material-symbols-outlined" style="font-size:16px">arrow_back</span> اعرف المزيد</span>
       </a>
 
-      <a href="interactive-experiences.html" class="gh-home-eco-card reveal r2">
-        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/interactive.png" alt="">
+      <a href="services/interactive-experiences.html" class="gh-home-eco-card reveal r2">
+        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/interactive.png" alt="" aria-hidden="true">
         <h3 class="gh-home-eco-card__title">تجارب تفاعلية</h3>
         <p class="gh-home-eco-card__desc">أنظمة تفاعلية تعرض المشاريع عبر شاشات لمس وجولات افتراضية ومقارنات وحجز فوري — لتعزيز قرارات البيع والاستثمار.</p>
         <span class="gh-home-eco-card__cta"><span class="material-symbols-outlined" style="font-size:16px">arrow_back</span> اعرف المزيد</span>
       </a>
 
-      <a href="galleries-advertising.html" class="gh-home-eco-card reveal r1">
-        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/gallery.png" alt="">
+      <a href="services/branding.html" class="gh-home-eco-card reveal r1">
+        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/gallery.png" alt="" aria-hidden="true">
         <h3 class="gh-home-eco-card__title">جاليريات وديكور مكاني</h3>
         <p class="gh-home-eco-card__desc">تصميم وتنفيذ صالات عرض فاخرة وديكور إعلاني — تجارب مكانية غامرة تروي قصة المشروع وتعزز مكانة العلامة.</p>
         <span class="gh-home-eco-card__cta"><span class="material-symbols-outlined" style="font-size:16px">arrow_back</span> اعرف المزيد</span>
       </a>
 
-      <a href="media-production.html" class="gh-home-eco-card reveal r2">
-        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/tech.png" alt="">
+      <a href="services/production.html" class="gh-home-eco-card reveal r2">
+        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/tech.png" alt="" aria-hidden="true">
         <h3 class="gh-home-eco-card__title">ميديا برودكشن</h3>
         <p class="gh-home-eco-card__desc">إنتاج سينمائي ووسائط متعددة — تصوير، مونتاج، أنيميشن وموشن جرافيك — يحوّل الأفكار إلى قصص بصرية.</p>
         <span class="gh-home-eco-card__cta"><span class="material-symbols-outlined" style="font-size:16px">arrow_back</span> اعرف المزيد</span>
@@ -1590,6 +1598,7 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
 
 
 
+
 <script>
 // Loader
 var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
@@ -2093,7 +2102,7 @@ function ghSubmit(e){
 </script>
 
 <script defer src="assets/hero-video.js?v=3"></script>
-<script defer src="assets/gh-float-widgets.js?v=9"></script>
+<script defer src="assets/gh-float-widgets.js?v=10"></script>
 <script defer src="assets/gh-cta-track.js?v=1"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">

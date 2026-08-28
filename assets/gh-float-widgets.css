@@ -71,11 +71,16 @@ body:has(.gh-float-brand[data-gh-brand-action]) #ghChatBtn {
   padding: 0;
 }
 
-.gh-float-btn:hover,
+.gh-float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+}
+
 .gh-float-btn:focus-visible {
   transform: scale(1.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
-  outline: none;
+  outline: 2px solid #c9a84c;
+  outline-offset: 3px;
 }
 
 .gh-float-wa { background: #25D366; }

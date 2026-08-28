@@ -23,7 +23,7 @@ const SKIP = new Set([
   'solutions/project-launch-ads-en.html',
 ]);
 
-const FLOAT_VERSION = 9;
+const FLOAT_VERSION = 10;
 
 const HOMEPAGE_SKIP_REPLACE = new Set([]);
 

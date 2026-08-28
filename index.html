@@ -28,9 +28,14 @@ gtag('config','G-Y67JVE898Z');
 <title>Graphics House | Integrated Visual Launch Studio for GCC Developers</title>
 <meta property="og:title" content="Graphics House | Integrated Visual Launch Studio for GCC Developers">
 <meta property="og:description" content="Cinematic CGI, smart maquettes, and interactive sales tools for GCC developers. One studio from concept to delivery across Saudi Arabia and the Gulf.">
-<meta property="og:image" content="/assets/favicon/og-image.png">
+<meta property="og:image" content="https://3dgraphicshouse.com/assets/favicon/og-image.png">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://3dgraphicshouse.com">
+<meta property="og:site_name" content="Graphics House">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Graphics House | Integrated Visual Launch Studio for GCC Developers">
+<meta name="twitter:description" content="Cinematic CGI, smart maquettes, and interactive sales tools for GCC developers. One studio from concept to delivery across Saudi Arabia and the Gulf.">
+<meta name="twitter:image" content="https://3dgraphicshouse.com/assets/favicon/og-image.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
@@ -40,7 +45,7 @@ gtag('config','G-Y67JVE898Z');
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=28">
+<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=29">
 <link rel="stylesheet" href="assets/site-header.css?v=37">
 <link rel="stylesheet" href="assets/home-en.css?v=10">
 <link rel="stylesheet" href="assets/gh-home-ecosystem.css?v=1">
@@ -91,7 +96,7 @@ gtag('config','G-Y67JVE898Z');
 <script defer src="assets/gh-performance.js?v=10"></script>
 <script defer src="assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="assets/gh-home-mobile.css?v=3">
-<link rel="stylesheet" href="assets/gh-float-widgets.css?v=9">
+<link rel="stylesheet" href="assets/gh-float-widgets.css?v=10">
 </head>
 <body class="gh-home">
 
@@ -303,7 +308,7 @@ gtag('config','G-Y67JVE898Z');
 
   <!-- Video Background -->
   <div class="hero-video-bg">
-    <video id="hero-vid" class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline preload="auto"
+    <video id="hero-vid" class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline preload="metadata"
            poster="assets/hero-demo-poster.jpg"
            data-pl-src="assets/videos/GH-demo-reel-2025.mp4"
            data-pl-src-mobile="assets/videos/GH-demo-reel-2025-mobile.mp4"
@@ -367,13 +372,13 @@ gtag('config','G-Y67JVE898Z');
 
       <!-- Buttons -->
       <div class="flex flex-wrap gap-4 mt-6 justify-center">
-        <a href="#services" class="gh-damac-btn gh-damac-btn-white">
-          <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">play_arrow</span>
-          <span>Explore Our Services</span>
+        <a href="#services" class="gh-damac-btn gh-damac-btn-white" data-cta="hero_explore_systems">
+          <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">rocket_launch</span>
+          <span>Explore Launch Systems</span>
         </a>
-        <a href="#projects" class="gh-damac-btn gh-damac-btn-outline">
-          <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">collections</span>
-          <span>View Portfolio</span>
+        <a href="contact-us-en.html" class="gh-damac-btn gh-damac-btn-outline" data-cta="hero_contact">
+          <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">calendar_month</span>
+          <span>Book a Consultation</span>
         </a>
       </div>
 
@@ -679,7 +684,7 @@ gtag('config','G-Y67JVE898Z');
 </section>
 
 <!-- GH_HOME_ECOSYSTEM -->
-<section class="gh-home-eco motif-bg" dir="ltr">
+<section class="gh-home-eco motif-bg" id="services" dir="ltr">
   <div class="gh-home-eco__wrap">
 
     <header class="gh-home-eco__head reveal">
@@ -735,36 +740,36 @@ gtag('config','G-Y67JVE898Z');
     <p class="gh-home-eco__label">Creative Disciplines</p>
     <div class="gh-home-eco__disciplines">
 
-      <a href="3d-animation-en.html" class="gh-home-eco-card reveal">
-        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/cinematic.png" alt="">
+      <a href="services/animation-en.html" class="gh-home-eco-card reveal">
+        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/cinematic.png" alt="" aria-hidden="true">
         <h3 class="gh-home-eco-card__title">Cinematic CGI</h3>
         <p class="gh-home-eco-card__desc">Ultra-high-fidelity architectural films that simulate the full project experience — masterplans become emotional narratives for investors.</p>
         <span class="gh-home-eco-card__cta"><span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span> Learn more</span>
       </a>
 
-      <a href="smart-maquettes-en.html" class="gh-home-eco-card reveal r1">
-        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/models.png" alt="">
+      <a href="services/maquettes-en.html" class="gh-home-eco-card reveal r1">
+        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/models.png" alt="" aria-hidden="true">
         <h3 class="gh-home-eco-card__title">Smart Maquettes</h3>
         <p class="gh-home-eco-card__desc">Hybrid physical-digital models combining craftsmanship with projection mapping and live data — a unique interactive experience.</p>
         <span class="gh-home-eco-card__cta"><span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span> Learn more</span>
       </a>
 
-      <a href="interactive-experiences-en.html" class="gh-home-eco-card reveal r2">
-        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/interactive.png" alt="">
+      <a href="services/interactive-experiences-en.html" class="gh-home-eco-card reveal r2">
+        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/interactive.png" alt="" aria-hidden="true">
         <h3 class="gh-home-eco-card__title">Interactive Experiences</h3>
         <p class="gh-home-eco-card__desc">Touchscreens, virtual tours, unit comparisons, and real-time exploration — accelerating sales and investment decisions.</p>
         <span class="gh-home-eco-card__cta"><span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span> Learn more</span>
       </a>
 
       <a href="galleries-advertising-en.html" class="gh-home-eco-card reveal r1">
-        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/gallery.png" alt="">
+        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/gallery.png" alt="" aria-hidden="true">
         <h3 class="gh-home-eco-card__title">Galleries &amp; Spatial Design</h3>
         <p class="gh-home-eco-card__desc">Premium sales galleries and showrooms — immersive spatial experiences that tell the project story and elevate brand perception.</p>
         <span class="gh-home-eco-card__cta"><span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span> Learn more</span>
       </a>
 
-      <a href="media-production-en.html" class="gh-home-eco-card reveal r2">
-        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/tech.png" alt="">
+      <a href="services/production-en.html" class="gh-home-eco-card reveal r2">
+        <img loading="lazy" class="gh-home-eco-card__icon" src="assets/icons/tech.png" alt="" aria-hidden="true">
         <h3 class="gh-home-eco-card__title">Media Production</h3>
         <p class="gh-home-eco-card__desc">End-to-end cinematic and multimedia production — filming, editing, animation, and motion graphics.</p>
         <span class="gh-home-eco-card__cta"><span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span> Learn more</span>
@@ -1507,6 +1512,7 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
 
 
 
+
 <script>
 // Loader
 var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
@@ -1920,7 +1926,7 @@ function ghSubmit(e){
 </script>
 
 <script defer src="assets/hero-video.js?v=3"></script>
-<script defer src="assets/gh-float-widgets.js?v=9"></script>
+<script defer src="assets/gh-float-widgets.js?v=10"></script>
 <script defer src="assets/gh-cta-track.js?v=1"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">

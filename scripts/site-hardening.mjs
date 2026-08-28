@@ -32,7 +32,6 @@ const SITEMAP_SKIP = new Set([
   'interactive-experiences.html',
   'interactive-experiences-en.html',
   'galleries-advertising.html',
-  'galleries-advertising-en.html',
   'contact.html',
   'case-study-alrajhi-en.html',
   'case-study-anan-eskan-en.html',
@@ -537,13 +536,13 @@ function patchHtml(html, rel) {
     html = html.replace(/<head>/i, `<head>\n<script src="${prefix}assets/gh-forms-config.js"></script>`);
   }
 
-  const enhanceCss = `<link rel="stylesheet" href="${prefix}assets/gh-site-enhancements.css?v=28">`;
+  const enhanceCss = `<link rel="stylesheet" href="${prefix}assets/gh-site-enhancements.css?v=29">`;
   if (!html.includes('gh-site-enhancements.css')) {
     html = html.replace(/<\/head>/i, `${enhanceCss}\n</head>`);
   } else {
     html = html.replace(
       /gh-site-enhancements\.css(?:\?v=\d+)?/g,
-      'gh-site-enhancements.css?v=28'
+      'gh-site-enhancements.css?v=29'
     );
   }
 

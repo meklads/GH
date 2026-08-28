@@ -233,12 +233,13 @@ const STUBS = {
   },
   'photography-media.html': {
     icon: 'photo_camera',
-    metaAr: 'تصوير معماري وطائر وإنتاج إعلامي لتسويق المشاريع وفعاليات الإطلاق في الخليج.',
-    metaEn: 'Architectural photography, aerial filming, and media production for GCC project marketing.',
+    metaAr: 'تصوير معماري وطائر وتغطية إعلامية لتسويق المشاريع وفعاليات الإطلاق في الخليج.',
+    metaEn: 'Architectural photography, aerial filming, and media coverage for GCC project marketing.',
+    titleAr: 'التصوير المعماري والإعلامي | Graphics House',
     ar: {
       label: 'خدماتنا',
-      title: 'التصوير والإنتاج',
-      gold: 'الإعلامي',
+      title: 'التصوير المعماري',
+      gold: 'والإعلامي',
       hero:
         'نصوّر المشاريع وصالات البيع وفعاليات الإطلاق بجودة تحريرية جاهزة للحملات والصحافة. يكمّل <a href="production.html">الإنتاج الإعلامي</a> و<a href="cinematic-cgi.html">أفلام CGI</a>.',
       features: [
@@ -454,11 +455,18 @@ function featuresHtml(arItems, enItems) {
     .join('\n');
 }
 
+function relatedHref(href) {
+  // Data already uses correct relatives from services/ (e.g. rendering.html or ../insights/…).
+  if (!href) return '#';
+  if (/^(https?:|\/|#)/i.test(href) || href.startsWith('../')) return href;
+  return href;
+}
+
 function relatedHtml(arItems, enItems) {
   return arItems
     .map(
       (r, i) =>
-        `<a href="../${r.href}"><span class="ar">${esc(r.label)}</span><span class="en">${esc(enItems[i].label)}</span></a>`
+        `<a href="${relatedHref(r.href)}"><span class="ar">${esc(r.label)}</span><span class="en">${esc(enItems[i].label)}</span></a>`
     )
     .join('\n');
 }
@@ -503,14 +511,31 @@ function patch(file, cfg) {
   let html = fs.readFileSync(full, 'utf8');
 
   html = html.replace(/<meta name="description" content="[^"]*"\/?>/, `<meta name="description" content="${esc(cfg.metaAr)}"/>`);
+  if (cfg.titleAr) {
+    html = html.replace(/<title>[^<]*<\/title>/, `<title>${esc(cfg.titleAr)}</title>`);
+    html = html.replace(
+      /<meta property="og:title" content="[^"]*">/,
+      `<meta property="og:title" content="${esc(cfg.titleAr)}">`
+    );
+  }
 
-  if (!html.includes('gh-svc-hero')) {
-    if (!html.includes('.gh-svc-hero{')) {
-      html = html.replace('</style>', `${STUB_CSS}\n</style>`);
-    }
+  if (!html.includes('.gh-svc-hero{')) {
+    html = html.replace('</style>', `${STUB_CSS}\n</style>`);
+  }
+
+  const body = `<div id="main-content" tabindex="-1" class="gh-main-anchor"></div>\n${bodyHtml(cfg)}\n`;
+  if (/<div id="main-content" tabindex="-1" class="gh-main-anchor"><\/div>[\s\S]*?(?=<footer)/.test(html)) {
     html = html.replace(
       /<div id="main-content" tabindex="-1" class="gh-main-anchor"><\/div>[\s\S]*?(?=<footer)/,
-      `<div id="main-content" tabindex="-1" class="gh-main-anchor"></div>\n${bodyHtml(cfg)}\n`
+      body
+    );
+  } else if (!html.includes('gh-svc-hero')) {
+    html = html.replace(/(?=<footer)/, `${body}`);
+  } else {
+    // Refresh related links if body already present from prior builds
+    html = html.replace(
+      /<div class="gh-svc-link-row">[\s\S]*?<\/div>\s*<\/div>\s*<\/section>/,
+      `<div class="gh-svc-link-row">${relatedHtml(cfg.ar.related, cfg.en.related)}</div>\n  </div>\n</section>`
     );
   }
 

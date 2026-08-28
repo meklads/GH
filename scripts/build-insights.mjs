@@ -305,10 +305,10 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=37">
-<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=28">
+<link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=29">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=28">
 <link rel="stylesheet" href="${p}assets/gh-insights-article.css?v=5">
-<link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=9">
+<link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=10">
 ${isEn ? `<link rel="stylesheet" href="${p}assets/gh-en-typography.css?v=1">` : `<link rel="stylesheet" href="${p}assets/gh-ar-typography.css?v=2">`}
 <script defer src="${p}assets/site-header.js?v=16"></script>
 <script defer src="${p}assets/gh-performance.js?v=10"></script>
@@ -681,11 +681,11 @@ function citiesSection(lang) {
 function downloadsSection(lang) {
   const isEn = lang === 'en';
   const L = (key) => (isEn ? key.en : key.ar);
-  const p = '../';
+  // Hub lives at insights/index*.html — keep paths relative to that folder (tools/…).
   const items = DATA.downloads || [];
   const cards = items
     .map((d) => {
-      const href = d.href ? `${p}${d.href}${isEn ? '-en' : ''}.html` : '#';
+      const href = d.href ? `${d.href}${isEn ? '-en' : ''}.html` : '#';
       const btn = d.comingSoon
         ? `<button type="button" class="gh-ins-btn gh-ins-btn--muted" disabled>${isEn ? 'Coming Soon' : 'قريباً'}</button>`
         : `<a href="${href}" class="gh-ins-btn">${isEn ? 'Download' : 'تحميل'}</a>`;
@@ -789,7 +789,7 @@ function buildHub(lang) {
     canonical: `https://3dgraphicshouse.com/insights/${isEn ? 'index-en.html' : 'index.html'}`,
   })}
 ${header}
-<main class="gh-insights-page">
+<main id="main-content" class="gh-insights-page" tabindex="-1">
   <header class="gh-ins-hero">
     <span class="gh-kicker">Graphics House · Insights</span>
     <h1>Insights</h1>

@@ -60,18 +60,28 @@ gtag('config','G-Y67JVE898Z');
 
 
 
+
+
+
 <meta name="description" content="تسويق أداء ومحتوى وتوليد عملاء مؤهلين لإطلاقات المشاريع العقارية في السعودية والخليج."/>
 
 
 
 
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=28">
+<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=29">
 <link rel="stylesheet" href="../assets/site-header.css?v=37">
 <link rel="stylesheet" href="../assets/gh-tokens.css?v=1">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=4">
 
 <style>
+
+  .en, .en-block { display: none !important; }
+  body.is-en .en { display: inline !important; }
+  body.is-en .ar, body.is-en .ar-block { display: none !important; }
+  body.is-en .en-block { display: block !important; }
+  .ar-block { display: block; }
+
 
   .en, .en-block { display: none !important; }
   body.is-en .en { display: inline !important; }
@@ -1105,7 +1115,7 @@ document.addEventListener("DOMContentLoaded",function(){document.querySelectorAl
 <script defer src="../assets/gh-performance.js?v=10"></script>
 <script defer src="../assets/lang-switch.js?v=2"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"التسويق الرقمي","description":"تسويق أداء ومحتوى وتوليد عملاء مؤهلين لإطلاقات المشاريع العقارية في السعودية والخليج.","url":"https://3dgraphicshouse.com/services/digital-marketing.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
-<link rel="stylesheet" href="../assets/gh-float-widgets.css?v=9">
+<link rel="stylesheet" href="../assets/gh-float-widgets.css?v=10">
 <link rel="stylesheet" href="../assets/gh-ar-typography.css?v=2">
 </head>
 <body>
@@ -1349,9 +1359,9 @@ document.addEventListener("DOMContentLoaded",function(){document.querySelectorAl
 <section class="gh-svc-links">
   <div class="gh-svc-links-inner reveal">
     <h2><span class="ar">روابط ذات صلة</span><span class="en">Related links</span></h2>
-    <div class="gh-svc-link-row"><a href="../branding.html"><span class="ar">الهوية والعلامة</span><span class="en">Branding</span></a>
-<a href="../web-solutions.html"><span class="ar">الحلول الرقمية</span><span class="en">Web solutions</span></a>
-<a href="../../insights/tools/launch-checklist.html"><span class="ar">قائمة جاهزية الإطلاق</span><span class="en">Launch readiness checklist</span></a></div>
+    <div class="gh-svc-link-row"><a href="branding.html"><span class="ar">الهوية والعلامة</span><span class="en">Branding</span></a>
+<a href="web-solutions.html"><span class="ar">الحلول الرقمية</span><span class="en">Web solutions</span></a>
+<a href="../insights/tools/launch-checklist.html"><span class="ar">قائمة جاهزية الإطلاق</span><span class="en">Launch readiness checklist</span></a></div>
   </div>
 </section>
 <section class="gh-svc-cta reveal">
@@ -1614,6 +1624,7 @@ document.addEventListener("DOMContentLoaded",function(){document.querySelectorAl
 
 
 
+
 <script>
 var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
 if(ld&&lb){setTimeout(function(){lb.style.width="100%";},100);setTimeout(function(){ld.classList.add("out");ld.style.opacity="0";ld.style.visibility="hidden";},1400);}
@@ -1669,7 +1680,7 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 })();
 </script>
-<script defer src="../assets/gh-float-widgets.js?v=9"></script>
+<script defer src="../assets/gh-float-widgets.js?v=10"></script>
 <script>
 (function(){
   var key='gh-svc-lang';
@@ -3197,6 +3208,20 @@ document.addEventListener('DOMContentLoaded', function(){
 })();
 </script>
 <script defer src="../assets/gh-cta-track.js?v=1"></script>
+<script>
+(function(){
+  var key='gh-svc-lang';
+  function apply(en){document.body.classList.toggle('is-en',en);localStorage.setItem(key,en?'en':'ar');}
+  var saved=localStorage.getItem(key);
+  if(saved==='en')apply(true);
+  document.querySelectorAll('.lang-switch-link').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(a.getAttribute('hreflang')==='en'){e.preventDefault();apply(true);}
+      if(a.getAttribute('hreflang')==='ar'){e.preventDefault();apply(false);}
+    });
+  });
+})();
+</script>
 <script>
 (function(){
   var key='gh-svc-lang';

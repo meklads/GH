@@ -203,6 +203,7 @@ body.gh-home #hero .hero-bottom-panel .hero-caps-bar {
   z-index: 2;
   opacity: 1;
   visibility: visible;
+  display: none; /* declutter first viewport — disciplines live in #services */
 }
 
 body.gh-home #hero .hero-caps-bar .cap-bar-item {

@@ -59,10 +59,10 @@ const html = `<!DOCTYPE html>
 ${analyticsHeadTags(P)}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>التصوير والإنتاج الإعلامي | Graphics House</title>
-<meta name="description" content="تصوير احترافي، أفلام ترويجية، وتغطية فعاليات للمطورين العقاريين والعلامات التجارية في السعودية والخليج.">
-<meta property="og:title" content="التصوير والإنتاج الإعلامي | Graphics House">
-<meta property="og:description" content="إنتاج فني متكامل: تصوير، فيديو، ومحتوى بصري بجودة سينمائية.">
+<title>الإنتاج الإعلامي والأفلام | Graphics House</title>
+<meta name="description" content="إنتاج إعلامي وأفلام ترويجية وتغطية فعاليات للمطورين العقاريين والعلامات التجارية في السعودية والخليج.">
+<meta property="og:title" content="الإنتاج الإعلامي والأفلام | Graphics House">
+<meta property="og:description" content="إنتاج فني متكامل: أفلام ترويجية، مونتاج، ومحتوى بصري بجودة سينمائية.">
 <meta property="og:image" content="https://3dgraphicshouse.com/assets/favicon/og-image.png">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" sizes="32x32" href="${P}assets/favicon/favicon-32.png">
