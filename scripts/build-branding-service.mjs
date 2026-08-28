@@ -14,35 +14,43 @@ const OUT = path.join(ROOT, 'services');
 const BASE = 'https://3dgraphicshouse.com';
 const DEPTH = 1;
 const P = '../';
-const CSS_V = 5;
-const HERO = 'assets/projects/branding/jeddah-forum-premium.png';
-const CASE_IMG = 'assets/projects/branding/jeddah-forum-premium.png';
+const CSS_V = 6;
+const BRAND = 'assets/branding';
+const OG_IMG = `${BRAND}/jeddah-forum-mockup.png`;
 
-/** Identity portfolio — Jeddah Forum lives in the featured case block only (no grid duplicate). */
-const GALLERY = [
+/** Hero carousel — architectural half of each split mockup */
+const HERO_SLIDES = [
+  { img: `${BRAND}/jeddah-forum-mockup.png`, altAr: 'ملتقى جدة — تطبيق الهوية على واجهة معمارية', altEn: 'Jeddah Forum — identity on architectural facade' },
+  { img: `${BRAND}/ruwaq-mockup.png`, altAr: 'رواق — لافتة ثلاثية الأبعاد', altEn: 'Ruwaq — 3D signage application' },
+  { img: `${BRAND}/graphics-house-mockup.png`, altAr: 'Graphics House — تطبيق مكاني للهوية', altEn: 'Graphics House — spatial brand application' },
+];
+
+/** Large mockup showcase — full split-screen brand presentations */
+const SHOWCASE = [
   {
+    id: 'jeddah-forum',
     filter: 'forums',
-    tone: 'teal',
-    cover: false,
-    img: 'assets/projects/branding/target-alhadaf.png',
-    titleAr: 'الهدف',
-    titleEn: 'Target',
-    subAr: 'تنظيم المعارض والمؤتمرات',
-    subEn: 'Exhibitions & conferences',
-    catAr: 'ملتقيات ومعارض',
-    catEn: 'Forums & exhibitions',
-    hrefAr: '../contact-us.html',
-    hrefEn: '../contact-us-en.html',
+    size: 'feature',
+    featured: true,
+    img: `${BRAND}/jeddah-forum-mockup.png`,
+    titleAr: 'ملتقى جدة للعقار',
+    titleEn: 'Jeddah Real Estate Forum',
+    subAr: 'شعار، كتالوج ٤٤ صفحة، مجسم، وفيلم CGI — منظومة بصرية كاملة',
+    subEn: 'Logo, 44-page catalogue, maquette & CGI film — complete visual system',
+    catAr: 'دراسة حالة مميزة',
+    catEn: 'Featured case study',
+    hrefAr: '../case-studies/jeddah-real-estate-forum.html',
+    hrefEn: '../case-studies/jeddah-real-estate-forum-en.html',
   },
   {
+    id: 'ruwaq',
     filter: 'forums',
-    tone: 'gold',
-    cover: false,
-    img: 'assets/projects/branding/ruwaq-logo.png',
+    size: 'half',
+    img: `${BRAND}/ruwaq-mockup.png`,
     titleAr: 'رواق',
     titleEn: 'Ruwaq',
-    subAr: 'معارض تفاعلية وجولات',
-    subEn: 'Interactive exhibitions & tours',
+    subAr: 'هوية ذهبية لمعارض تفاعلية وجولات ثلاثية الأبعاد',
+    subEn: 'Gold identity for interactive exhibitions & 3D tours',
     catAr: 'معارض تفاعلية',
     catEn: 'Interactive exhibitions',
     hrefAr: 'https://ruwaq.co/tours',
@@ -50,43 +58,14 @@ const GALLERY = [
     external: true,
   },
   {
+    id: 'turriva',
     filter: 'group',
-    tone: 'charcoal',
-    cover: false,
-    img: 'assets/projects/branding/graphicshouse-identity.png',
-    titleAr: 'Graphics House',
-    titleEn: 'Graphics House',
-    subAr: 'استوديو الإظهار والهوية',
-    subEn: 'Visualization & identity studio',
-    catAr: 'علامات المجموعة',
-    catEn: 'Group brands',
-    hrefAr: '../who-we-are.html',
-    hrefEn: '../who-we-are-en.html',
-  },
-  {
-    filter: 'group',
-    tone: 'warm',
-    cover: false,
-    img: 'assets/projects/branding/bees-motion.png',
-    titleAr: 'Bees Motion',
-    titleEn: 'Bees Motion',
-    subAr: 'إنتاج سينمائي وحركة',
-    subEn: 'Cinematic & motion production',
-    catAr: 'إنتاج سينمائي',
-    catEn: 'Cinematic production',
-    hrefAr: 'https://beesmotion.com',
-    hrefEn: 'https://beesmotion.com',
-    external: true,
-  },
-  {
-    filter: 'group',
-    tone: 'slate',
-    cover: false,
-    img: 'assets/projects/branding/turriva-logo.png',
+    size: 'half',
+    img: `${BRAND}/turriva-mockup.png`,
     titleAr: 'توريفا',
     titleEn: 'Turriva',
-    subAr: 'عمارة · تصميم داخلي · تشييد',
-    subEn: 'Architecture · interior · construction',
+    subAr: 'عمارة · تصميم داخلي · تشييد — هوية معمارية متكاملة',
+    subEn: 'Architecture · interior · construction — integrated brand',
     catAr: 'علامات المجموعة',
     catEn: 'Group brands',
     hrefAr: 'https://turriva.com',
@@ -94,28 +73,57 @@ const GALLERY = [
     external: true,
   },
   {
+    id: 'graphics-house',
+    filter: 'group',
+    size: 'wide',
+    img: `${BRAND}/graphics-house-mockup.png`,
+    titleAr: 'Graphics House',
+    titleEn: 'Graphics House',
+    subAr: 'من الشعار إلى اللافتة المضيئة — استوديو الإظهار والهوية',
+    subEn: 'From logo to illuminated signage — visualization & identity studio',
+    catAr: 'علامات المجموعة',
+    catEn: 'Group brands',
+    hrefAr: '../who-we-are.html',
+    hrefEn: '../who-we-are-en.html',
+  },
+  {
+    id: 'bees-motion',
+    filter: 'group',
+    size: 'half',
+    img: `${BRAND}/bees-motion-mockup.png`,
+    titleAr: 'Bees Motion',
+    titleEn: 'Bees Motion',
+    subAr: 'إنتاج سينمائي وحركة — هوية ديناميكية',
+    subEn: 'Cinematic & motion production — dynamic identity',
+    catAr: 'إنتاج سينمائي',
+    catEn: 'Cinematic production',
+    hrefAr: 'https://beesmotion.com',
+    hrefEn: 'https://beesmotion.com',
+    external: true,
+  },
+  {
+    id: 'scents-wave',
     filter: 'commercial',
-    tone: 'cream',
-    cover: false,
-    img: 'assets/projects/branding/scents-wave.png',
-    titleAr: 'Scents Wave',
+    size: 'half',
+    img: `${BRAND}/scents-wave-mockup.png`,
+    titleAr: 'Scents Wave · موجة عطر',
     titleEn: 'Scents Wave',
-    subAr: 'عطور وهدايا',
-    subEn: 'Perfume & gifts',
+    subAr: 'هوية فاخرة ذهبية على أسود — عطور وهدايا',
+    subEn: 'Luxury gold-on-black identity — perfume & gifts',
     catAr: 'تجزئة وعلامات',
     catEn: 'Retail & consumer',
     hrefAr: '../contact-us.html',
     hrefEn: '../contact-us-en.html',
   },
   {
+    id: 'highly-chic',
     filter: 'commercial',
-    tone: 'lunovia',
-    cover: false,
-    img: 'assets/projects/branding/lunovia-logo.jpg',
-    titleAr: 'Lunovia',
-    titleEn: 'Lunovia',
-    subAr: 'نوم أفضل. حياة أفضل.',
-    subEn: 'Better sleep. Better you.',
+    size: 'wide',
+    img: `${BRAND}/highly-chic-mockup.png`,
+    titleAr: 'Highly CHIC',
+    titleEn: 'Highly CHIC',
+    subAr: 'هوية بوتيك فاخرة — من الشعار إلى واجهة المتجر',
+    subEn: 'Luxury boutique identity — from logo to storefront',
     catAr: 'تجزئة وعلامات',
     catEn: 'Retail & consumer',
     hrefAr: '../contact-us.html',
@@ -127,25 +135,27 @@ const COPY = {
   ar: {
     title: 'الهوية البصرية والأنظمة المكانية | Graphics House',
     description:
-      'من الشعار إلى الكتالوج وجناح المعرض: نظام بصري واحد للمشاريع العقارية والملتقيات في السعودية والخليج. جزء من ProjectLaunch™ وBrandScale™.',
+      'من الشعار إلى اللافتة المضيئة والكتالوج وجناح المعرض: نظام بصري واحد للمشاريع العقارية والملتقيات في السعودية والخليج. جزء من ProjectLaunch™ وBrandScale™.',
     kicker: 'خدماتنا · الهوية البصرية',
-    h1: 'من الشعار إلى المعرض — نظام بصري واحد',
+    h1: 'من الشعار إلى الواجهة — هوية تُرى وتُلمَس',
     lead:
-      'الهوية ليست ملف شعار منفصل. هي العمود الذي يغذي الكتالوج والفيلم والمطبوعات وتطبيق المعرض. نبنيها كمنظومة متكاملة ضمن <a href="../solutions/project-launch.html">ProjectLaunch™</a> للإطلاقات، <a href="../solutions/brand-scale.html">BrandScale™</a> للمحافظ المتعددة، و<a href="../solutions/institutional-events.html">الفعاليات المؤسسية</a> للملتقيات.',
+      'نصمّم الهوية كمنظومة متكاملة: شعار، ألوان، كتالوج، وتطبيق مكاني على اللافتات والمعارض. ضمن <a href="../solutions/project-launch.html">ProjectLaunch™</a> للإطلاقات، <a href="../solutions/brand-scale.html">BrandScale™</a> للمحافظ، و<a href="../solutions/institutional-events.html">الفعاليات المؤسسية</a> للملتقيات.',
     ctaPrimary: 'ابدأ مشروع الهوية',
-    ctaCase: 'دراسة ملتقى جدة',
+    ctaCase: 'استكشف الأعمال',
+    scrollHint: 'استكشف',
+    stats: [
+      { n: '7+', label: 'علامات وهويات منجزة' },
+      { n: '44', label: 'صفحة كتالوج — ملتقى جدة' },
+      { n: '3D', label: 'تطبيق مكاني على اللافتات' },
+      { n: '1', label: 'نظام بصري متصل' },
+    ],
     pillarsTitle: 'أربعة محاور — مخرج واحد',
     pillarsLead: 'كل محور يُصمَّم ليعمل مع الإظهار والفيلم والمجسم، لا كملف منفصل.',
     pipelineTitle: 'مسار العمل',
     pipelineLead: 'نفس اللغة البصرية من الموجز الأول حتى آخر مطبوعة في المعرض.',
     pipeline: ['هوية', 'كتالوج', 'تطبيق مكاني', 'فيلم CGI', 'مطبوعات'],
-    caseTag: 'دراسة حالة مميزة',
-    caseTitle: 'ملتقى جدة للعقار',
-    caseBody:
-      'شعار، لوحة ألوان، كتالوج ٤٤ صفحة، نموذج جدة سوبردوم ثلاثي الأبعاد، وفيلم CGI سينمائي — منظومة بصرية كاملة من استوديو واحد.',
-    caseLink: 'اقرأ الدراسة الكاملة',
     galleryTitle: 'أعمال الهوية',
-    galleryLead: 'علامات وهويات أنتجناها — ملتقى جدة معروض أعلاه كدراسة حالة كاملة.',
+    galleryLead: 'من التصميم المسطح إلى اللافتة المضيئة — شاهد كيف تتحول الهوية في الفضاء الحقيقي.',
     filters: [
       { id: 'all', label: 'الكل' },
       { id: 'forums', label: 'ملتقيات ومعارض' },
@@ -176,25 +186,27 @@ const COPY = {
   en: {
     title: 'Visual Identity & Spatial Brand Systems | Graphics House',
     description:
-      'From logo to catalogue to exhibition pavilion: one visual system for developments and forums across KSA and the GCC. Part of ProjectLaunch™ and BrandScale™.',
+      'From logo to illuminated signage, catalogue, and exhibition pavilion: one visual system for developments and forums across KSA and the GCC. Part of ProjectLaunch™ and BrandScale™.',
     kicker: 'Our Services · Visual Identity',
-    h1: 'From logo to exhibition — one visual system',
+    h1: 'From logo to facade — identity you see and feel',
     lead:
-      'Identity is not a standalone logo file. It is the spine that feeds catalogue, film, print, and spatial application. We build it as an integrated system within <a href="../solutions/project-launch-en.html">ProjectLaunch™</a> for launches, <a href="../solutions/brand-scale-en.html">BrandScale™</a> for multi-project portfolios, and <a href="../solutions/institutional-events-en.html">institutional events</a> for forums.',
+      'We design identity as an integrated system: logo, palette, catalogue, and spatial application on signage and exhibitions. Within <a href="../solutions/project-launch-en.html">ProjectLaunch™</a> for launches, <a href="../solutions/brand-scale-en.html">BrandScale™</a> for portfolios, and <a href="../solutions/institutional-events-en.html">institutional events</a> for forums.',
     ctaPrimary: 'Start your identity project',
-    ctaCase: 'Jeddah Forum case study',
+    ctaCase: 'Explore the work',
+    scrollHint: 'Explore',
+    stats: [
+      { n: '7+', label: 'Brands & identities delivered' },
+      { n: '44', label: 'Catalogue pages — Jeddah Forum' },
+      { n: '3D', label: 'Spatial signage application' },
+      { n: '1', label: 'Connected visual system' },
+    ],
     pillarsTitle: 'Four pillars — one deliverable system',
     pillarsLead: 'Each pillar is designed to work with visualization, film, and maquettes — not as a separate file.',
     pipelineTitle: 'How it connects',
     pipelineLead: 'The same visual language from first brief to the last print piece on the exhibition floor.',
     pipeline: ['BRAND', 'CATALOGUE', 'SPATIAL', 'CGI FILM', 'PRINT'],
-    caseTag: 'Featured case study',
-    caseTitle: 'Jeddah Real Estate Forum',
-    caseBody:
-      'Logo, colour system, 44-page catalogue, Jeddah Superdome 3D model, and cinematic CGI film — a complete visual system from one studio.',
-    caseLink: 'Read the full case study',
     galleryTitle: 'Identity work',
-    galleryLead: 'Brands and identities we built — Jeddah Forum is featured above as a full case study.',
+    galleryLead: 'From flat design to illuminated signage — see how identity transforms in real space.',
     filters: [
       { id: 'all', label: 'All' },
       { id: 'forums', label: 'Forums & exhibitions' },
@@ -256,9 +268,23 @@ function page(lang) {
   const altEn = `${BASE}/services/branding-en.html`;
   const altAr = `${BASE}/services/branding.html`;
   const contact = `${P}contact-us${isEn ? '-en' : ''}.html`;
-  const caseHref = `${P}case-studies/jeddah-real-estate-forum${isEn ? '-en' : ''}.html`;
   const dir = isEn ? 'ltr' : 'rtl';
   const htmlLang = isEn ? 'en' : 'ar';
+
+  const heroSlides = HERO_SLIDES.map((slide, i) => {
+    const alt = isEn ? slide.altEn : slide.altAr;
+    return `<div class="bid-hero-slide${i === 0 ? ' is-active' : ''}" data-bid-slide="${i}">
+      <img src="${P}${slide.img}" alt="${esc(alt)}"${i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'}>
+    </div>`;
+  }).join('\n');
+
+  const heroDots = HERO_SLIDES.map(
+    (_, i) => `<button type="button" class="bid-hero-dot${i === 0 ? ' is-active' : ''}" data-bid-dot="${i}" aria-label="Slide ${i + 1}"></button>`
+  ).join('');
+
+  const stats = t.stats
+    .map((s) => `<div class="bid-stat reveal"><strong>${esc(s.n)}</strong><span>${esc(s.label)}</span></div>`)
+    .join('');
 
   const pillars = PILLARS[lang]
     .map(
@@ -284,26 +310,26 @@ function page(lang) {
     )
     .join('');
 
-  const gallery = GALLERY.map((item) => {
+  const showcase = SHOWCASE.map((item) => {
     const finalHref = isEn ? item.hrefEn : item.hrefAr;
     const ext = item.external ? ' target="_blank" rel="noopener noreferrer"' : '';
     const title = isEn ? item.titleEn : item.titleAr;
     const sub = isEn ? item.subEn : item.subAr;
     const cat = isEn ? item.catEn : item.catAr;
-    const type = item.cover ? 'bid-gal-card--cover' : 'bid-gal-card--brand';
-    const tone = item.tone ? ` bid-gal-card--tone-${item.tone}` : '';
-    return `<a href="${finalHref}" class="bid-gal-card ${type}${tone} reveal" data-bid-cat="${item.filter}"${ext}>
-      <div class="bid-gal-visual">
+    const sizeClass = item.size ? ` bid-showcase-item--${item.size}` : '';
+    const tagClass = item.featured ? ' bid-showcase-tag--feat' : '';
+    return `<a href="${finalHref}" class="bid-showcase-item${sizeClass} reveal" data-bid-cat="${item.filter}"${ext}>
+      <figure class="bid-showcase-fig">
         <img src="${P}${item.img}" alt="${esc(title)}" loading="lazy">
-      </div>
-      <div class="bid-gal-foot">
-        <div class="bid-gal-meta">
-          <span class="bid-gal-cat">${esc(cat)}</span>
-          <h4>${esc(title)}</h4>
-          <p class="bid-gal-sub">${esc(sub)}</p>
-        </div>
-        <span class="bid-gal-go material-symbols-outlined" aria-hidden="true">arrow_forward</span>
-      </div>
+        <figcaption class="bid-showcase-cap">
+          <div class="bid-showcase-meta">
+            <span class="bid-showcase-tag${tagClass}">${esc(cat)}</span>
+            <h3>${esc(title)}</h3>
+            <p class="bid-showcase-sub">${esc(sub)}</p>
+          </div>
+          <span class="bid-showcase-go material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+        </figcaption>
+      </figure>
     </a>`;
   }).join('\n');
 
@@ -345,7 +371,7 @@ ${analyticsHeadTags(P)}
 <meta property="og:title" content="${esc(t.title)}">
 <meta property="og:description" content="${esc(t.description)}">
 <meta property="og:url" content="${canonical}">
-<meta property="og:image" content="${BASE}/${HERO}">
+<meta property="og:image" content="${BASE}/${OG_IMG}">
 <link rel="stylesheet" href="${P}assets/site-header.css?v=8">
 <link rel="stylesheet" href="${P}assets/gh-float-widgets.css?v=8">
 <link rel="stylesheet" href="${P}assets/gh-branding-service.css?v=${CSS_V}">
@@ -357,22 +383,42 @@ ${analyticsHeadTags(P)}
 ${header}
 <main id="main-content">
   <section class="bid-hero">
-    <div class="bid-hero-media" aria-hidden="true">
-      <img src="${P}${HERO}" alt="" fetchpriority="high">
+    <div class="bid-hero-slides" aria-hidden="true">
+      ${heroSlides}
     </div>
     <div class="bid-hero-scrim" aria-hidden="true"></div>
     <div class="bid-hero-copy">
-      <span class="bid-kicker">${esc(t.kicker)}</span>
-      <h1>${esc(t.h1)}</h1>
-      <p class="bid-lead">${t.lead}</p>
-      <div class="bid-cta-row">
-        <a class="bid-btn bid-btn--gold" href="${contact}" data-gh-cta="branding_primary">${esc(t.ctaPrimary)}</a>
-        <a class="bid-btn bid-btn--ghost" href="${caseHref}" data-gh-cta="branding_case">${esc(t.ctaCase)}</a>
+      <div class="bid-hero-copy-inner">
+        <span class="bid-kicker">${esc(t.kicker)}</span>
+        <h1>${esc(t.h1)}</h1>
+        <p class="bid-lead">${t.lead}</p>
+        <div class="bid-cta-row">
+          <a class="bid-btn bid-btn--gold" href="${contact}" data-gh-cta="branding_primary">${esc(t.ctaPrimary)}</a>
+          <a class="bid-btn bid-btn--ghost" href="#bid-gallery" data-gh-cta="branding_gallery">${esc(t.ctaCase)}</a>
+        </div>
+        <div class="bid-hero-dots">${heroDots}</div>
       </div>
+    </div>
+    <div class="bid-hero-scroll" aria-hidden="true">${esc(t.scrollHint)}<span></span></div>
+  </section>
+
+  <div class="bid-stats">
+    <div class="bid-stats-inner">${stats}</div>
+  </div>
+
+  <section class="bid-section bid-section--lift" id="bid-gallery">
+    <div class="bid-section-inner">
+      <div class="bid-section-head bid-section-head--center reveal">
+        <span class="bid-section-eyebrow">${isEn ? 'Portfolio' : 'معرض الأعمال'}</span>
+        <h2>${esc(t.galleryTitle)}</h2>
+        <p>${esc(t.galleryLead)}</p>
+      </div>
+      <div class="bid-filters reveal">${filters}</div>
+      <div class="bid-showcase">${showcase}</div>
     </div>
   </section>
 
-  <section class="bid-section">
+  <section class="bid-section bid-section--dark">
     <div class="bid-section-inner">
       <div class="bid-section-head reveal">
         <h2>${esc(t.pillarsTitle)}</h2>
@@ -382,7 +428,7 @@ ${header}
     </div>
   </section>
 
-  <section class="bid-section">
+  <section class="bid-section bid-section--dark">
     <div class="bid-section-inner">
       <div class="bid-section-head reveal">
         <h2>${esc(t.pipelineTitle)}</h2>
@@ -392,34 +438,7 @@ ${header}
     </div>
   </section>
 
-  <section class="bid-section">
-    <div class="bid-section-inner">
-      <article class="bid-case reveal">
-        <div class="bid-case-img">
-          <img src="${P}${CASE_IMG}" alt="${esc(t.caseTitle)}" loading="lazy">
-        </div>
-        <div class="bid-case-body">
-          <span class="bid-case-tag">${esc(t.caseTag)}</span>
-          <h3>${esc(t.caseTitle)}</h3>
-          <p>${esc(t.caseBody)}</p>
-          <a class="bid-case-link" href="${caseHref}">${esc(t.caseLink)} <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="bid-section" id="bid-gallery">
-    <div class="bid-section-inner">
-      <div class="bid-section-head reveal">
-        <h2>${esc(t.galleryTitle)}</h2>
-        <p>${esc(t.galleryLead)}</p>
-      </div>
-      <div class="bid-filters reveal">${filters}</div>
-      <div class="bid-gallery">${gallery}</div>
-    </div>
-  </section>
-
-  <section class="bid-section">
+  <section class="bid-section bid-section--dark">
     <div class="bid-section-inner">
       <div class="bid-section-head reveal">
         <h2>${esc(t.pathsTitle)}</h2>
@@ -441,8 +460,8 @@ ${footer}
 (function(){
   var els=document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.style.opacity='1';en.target.style.transform='none';io.unobserve(en.target);}});},{threshold:0.1});
-    els.forEach(function(e){e.style.opacity='0';e.style.transform='translateY(18px)';e.style.transition='opacity .5s ease, transform .5s ease';io.observe(e);});
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.style.opacity='1';en.target.style.transform='none';io.unobserve(en.target);}});},{threshold:0.08});
+    els.forEach(function(e){e.style.opacity='0';e.style.transform='translateY(24px)';io.observe(e);});
   }
   document.querySelectorAll('[data-bid-filter]').forEach(function(btn){
     btn.addEventListener('click',function(){
@@ -453,6 +472,18 @@ ${footer}
       });
     });
   });
+  var slides=document.querySelectorAll('[data-bid-slide]');
+  var dots=document.querySelectorAll('[data-bid-dot]');
+  var cur=0,timer;
+  function go(n){
+    if(!slides.length)return;
+    cur=(n+slides.length)%slides.length;
+    slides.forEach(function(s,i){s.classList.toggle('is-active',i===cur);});
+    dots.forEach(function(d,i){d.classList.toggle('is-active',i===cur);});
+  }
+  function auto(){timer=setInterval(function(){go(cur+1);},6000);}
+  dots.forEach(function(d){d.addEventListener('click',function(){clearInterval(timer);go(+d.getAttribute('data-bid-dot'));auto();});});
+  if(slides.length>1)auto();
   if(window.gtag){gtag('event','service_view',{service_id:'branding',page_path:location.pathname});}
 })();
 </script>
