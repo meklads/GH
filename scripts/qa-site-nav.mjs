@@ -18,7 +18,7 @@ const SKIP = new Set([
   'solutions/project-launch-ads.html',
 ]);
 
-const EXPECT_CSS = 'site-header.css?v=35';
+const EXPECT_CSS = 'site-header.css?v=36';
 const EXPECT_JS = 'site-header.js?v=16';
 
 function collectHtml(dir, base = '') {
