@@ -39,6 +39,22 @@ function isEnglishPage(rel, html) {
   return rel.endsWith('-en.html') || rel === 'index.html';
 }
 
+/** Current footer: 3-column top + regional offices (replaces legacy Saudi Cities / gh-lang-alt). */
+function isCurrentFooter(html, en) {
+  if (!html.includes('gh-footer__top') || !html.includes('gh-footer__offices')) return false;
+  if (html.includes('gh-lang-alt')) return false;
+  if (en) {
+    if (html.includes('Saudi Cities')) return false;
+    return (
+      html.includes('>Explore</h3>') ||
+      html.includes('Quick Links') ||
+      /aria-label="Quick links"/i.test(html)
+    );
+  }
+  if (html.includes('المدن السعودية')) return false;
+  return html.includes('>استكشف</h3>') || html.includes('روابط مهمة');
+}
+
 const issues = [];
 let checked = 0;
 
@@ -75,10 +91,7 @@ for (const rel of collectHtml(ROOT)) {
   }
 
   if (html.includes('<footer dir=')) {
-    const footerOk = en
-      ? html.includes('Quick Links') && html.includes('gh-footer__top') && !html.includes('Saudi Cities') && !html.includes('gh-lang-alt')
-      : html.includes('روابط مهمة') && html.includes('gh-footer__top') && !html.includes('المدن السعودية') && !html.includes('gh-lang-alt');
-    if (!footerOk) issues.push(`${rel}: outdated footer layout`);
+    if (!isCurrentFooter(html, en)) issues.push(`${rel}: outdated footer layout`);
     if (!/gh-site-enhancements\.css\?v=\d+/.test(html)) {
       issues.push(`${rel}: missing versioned footer CSS (gh-site-enhancements.css?v=)`);
     }
@@ -98,10 +111,7 @@ for (const rel of collectHtml(ROOT)) {
   if (!html.includes('<footer dir=')) continue;
 
   const en = isEnglishPage(rel, html);
-  const footerOk = en
-    ? html.includes('Quick Links') && html.includes('gh-footer__top') && !html.includes('Saudi Cities') && !html.includes('gh-lang-alt')
-    : html.includes('روابط مهمة') && html.includes('gh-footer__top') && !html.includes('المدن السعودية') && !html.includes('gh-lang-alt');
-  if (!footerOk) issues.push(`${rel}: outdated footer layout`);
+  if (!isCurrentFooter(html, en)) issues.push(`${rel}: outdated footer layout`);
 }
 
 console.log(`Checked ${checked} pages with site header.`);
