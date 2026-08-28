@@ -38,7 +38,7 @@ const COPY = {
     heroTitle: 'ملتقى جدة للعقار',
     heroEn: 'Jeddah Real Estate Forum',
     heroDek:
-      'تطوير هوية بصرية متكاملة وصناعة تجربة بصرية وسينمائية لملتقى جدة للعقار.',
+      'تطوير هوية بصرية متكاملة وكتالوج فاخر وتجربة بصرية وسينمائية لملتقى جدة للعقار، من الشعار والزخارف إلى الفيلم والمطبوعات.',
     metaLocation: 'جدة، المملكة العربية السعودية',
     metaScope: 'هوية بصرية · فيلم CGI · محتوى · إنتاج مطبوعات',
     metaAgency: 'Graphics House',
@@ -58,7 +58,7 @@ const COPY = {
     identityTitle: 'بناء هوية المشروع',
     identityMeta: 'BRAND IDENTITY',
     identityP:
-      'بدأ المشروع من الهوية. صممنا شعار ملتقى جدة للعقار وبنينا الثيم البصري الكامل: اللغة البصرية، الألوان، العناصر الرسومية، والأسلوب الفني الذي أصبح أساساً لجميع المواد اللاحقة. ما تراه في المعرض هنا يعكس اللغة التي حملها الفيلم والمحتوى والمطبوعات.',
+      'بدأ المشروع من الهوية. صممنا شعار ملتقى جدة للعقار وبنينا الثيم البصري الكامل: اللغة البصرية، الألوان، الزخارف الهندسية، والأسلوب الفني الذي حمله الكتالوج والفيلم والمحتوى والمطبوعات.',
     applicationTitle: 'الهوية خارج الشعار',
     applicationP:
       'قوة الهوية تظهر عندما تنتقل من الشعار إلى التجربة: خلفيات، لافتات، شاشات، مواد فعالية، وعناصر ترويجية تحمل نفس الإيقاع البصري.',
@@ -76,7 +76,20 @@ const COPY = {
     printTitle: 'عندما تصبح الفكرة مطبوعة',
     printMeta: 'CATALOGUE & PRINT',
     printP:
-      'صممنا الكتالوج والمواد المطبوعة والعناصر الفنية المرتبطة بالمشروع، مع الحفاظ على نفس اللغة البصرية التي تأسست منذ تصميم الهوية.',
+      'صممنا كتالوجاً من ٤٤ صفحة يحمل الهوية كاملة: الرؤية والرسالة والمحاور والمواد الترويجية، مع زخارف إسلامية هندسية وشعار «نعمل لغد أفضل» في الافتتاح والختام.',
+    poetryMeta: 'BRAND MOTTO',
+    poetryTitle: 'الشعار الذي يحمله الكتالوج',
+    visionMeta: 'OUR VISION',
+    visionTitle: 'رؤيتنا',
+    missionMeta: 'OUR MISSION',
+    missionTitle: 'رسالتنا',
+    paletteTitle: 'لوحة الألوان',
+    themesMeta: 'FORUM THEMES',
+    themesTitle: 'محاور الملتقى',
+    themesP: 'ستة محاور رئيسية صاغت لغة الكتالوج والحملة والمواد المرئية للملتقى.',
+    catalogMeta: 'CATALOGUE SPREADS',
+    catalogTitle: 'من داخل الكتالوج',
+    catalogP: 'صفحات مختارة من الكتالوج الذي أنتجته Graphics House، تعكس الهوية والزخارف والمحتوى كما طُبعت.',
     systemTitle: 'نظام بصري واحد. تطبيقات متعددة.',
     systemP: 'صُممت جميع مخرجات المشروع كأجزاء من منظومة واحدة، لا كقطع منفصلة.',
     systemSteps: ['BRAND', 'CAMPAIGN', 'FILM', 'CONTENT', 'PRINT', 'EXPERIENCE'],
@@ -113,7 +126,7 @@ const COPY = {
     heroTitle: 'Jeddah Real Estate Forum',
     heroEn: 'ملتقى جدة للعقار',
     heroDek:
-      'Integrated brand identity and a cinematic visual experience for Jeddah\'s flagship real estate forum.',
+      'Integrated brand identity, a premium 44-page catalogue, and a cinematic visual experience for Jeddah\'s flagship real estate forum, from logo and ornaments to film and print.',
     metaLocation: 'Jeddah, Saudi Arabia',
     metaScope: 'Brand Identity · CGI Film · Content · Print & Visual Production',
     metaAgency: 'Graphics House',
@@ -133,7 +146,7 @@ const COPY = {
     identityTitle: 'Building the project identity',
     identityMeta: 'BRAND IDENTITY',
     identityP:
-      'The project began with identity. We designed the forum logo and full visual theme: graphic language, colour, motifs, and art direction that became the foundation for everything that followed. What you see in this gallery reflects the language carried through film, content, and print.',
+      'The project began with identity. We designed the forum logo and full visual theme: graphic language, colour, geometric ornaments, and art direction carried through the catalogue, film, content, and print.',
     applicationTitle: 'Identity beyond the logo',
     applicationP:
       'Identity proves itself in application: backdrops, signage, screens, event materials, and promotional pieces sharing the same visual rhythm.',
@@ -151,7 +164,20 @@ const COPY = {
     printTitle: 'When the idea becomes print',
     printMeta: 'CATALOGUE & PRINT',
     printP:
-      'We designed the catalogue, print materials, and art-directed collateral while holding the same visual language established at identity stage.',
+      'We designed a 44-page catalogue carrying the full identity: vision, mission, themes, and promotional materials, with Islamic geometric ornaments and the motto "Working for a better tomorrow" opening and closing the book.',
+    poetryMeta: 'BRAND MOTTO',
+    poetryTitle: 'The motto that carries the catalogue',
+    visionMeta: 'OUR VISION',
+    visionTitle: 'Our vision',
+    missionMeta: 'OUR MISSION',
+    missionTitle: 'Our mission',
+    paletteTitle: 'Colour palette',
+    themesMeta: 'FORUM THEMES',
+    themesTitle: 'Forum themes',
+    themesP: 'Six core themes that shaped the catalogue language, campaign, and visual materials for the forum.',
+    catalogMeta: 'CATALOGUE SPREADS',
+    catalogTitle: 'Inside the catalogue',
+    catalogP: 'Selected spreads from the catalogue produced by Graphics House, reflecting identity, ornaments, and content as printed.',
     systemTitle: 'One visual system. Many applications.',
     systemP: 'Every output was designed as part of one system, not isolated pieces.',
     systemSteps: ['BRAND', 'CAMPAIGN', 'FILM', 'CONTENT', 'PRINT', 'EXPERIENCE'],
@@ -193,7 +219,14 @@ function figure(src, alt, caption, className = '', lazy = true) {
 function galleryItems(items, lang) {
   return items
     .map((item) => {
-      const cls = item.size === 'hero' ? 'jcs-figure--hero' : item.size === 'half' ? 'jcs-figure--half' : '';
+      const cls =
+        item.size === 'hero'
+          ? 'jcs-figure--hero'
+          : item.size === 'half'
+            ? 'jcs-figure--half'
+            : item.size === 'logo'
+              ? 'jcs-figure--logo'
+              : '';
       const cap = item.caption ? L(item.caption, lang) : '';
       return figure(item.src, L(item.alt, lang), cap, cls);
     })
@@ -246,6 +279,40 @@ function buildPage(lang) {
     )
     .join('');
 
+  const missionHtml = DATA.mission
+    .map((m) => `<li>${esc(L(m, lang))}</li>`)
+    .join('');
+
+  const paletteHtml = DATA.palette
+    .map(
+      (sw) => `<div class="jcs-palette-swatch jcs-reveal">
+        <span style="background:${esc(sw.hex)}"></span>
+        <span>${esc(L(sw.name, lang))} · ${esc(sw.hex)}</span>
+      </div>`
+    )
+    .join('');
+
+  const themesHtml = DATA.themes
+    .map((t) => {
+      const lines = t.items[lang] || t.items.en || [];
+      const items = lines.map((line) => `<li>${esc(line)}</li>`).join('');
+      return `<article class="jcs-theme-card jcs-reveal">
+        <span class="jcs-theme-num">${esc(t.num)}</span>
+        <h3>${esc(L(t.title, lang))}</h3>
+        <ul>${items}</ul>
+      </article>`;
+    })
+    .join('');
+
+  const catalogHtml = DATA.catalogSpreads
+    .map(
+      (sp) => `<figure class="jcs-catalog-item jcs-reveal" data-jcs-lightbox="${P}${sp.src}">
+        <img src="${P}${sp.src}" alt="${esc(L(sp.label, lang))}" loading="lazy" decoding="async">
+        <figcaption>${esc(L(sp.label, lang))}</figcaption>
+      </figure>`
+    )
+    .join('');
+
   const schema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
@@ -287,7 +354,7 @@ ${analyticsHeadTags(P)}
 <link rel="stylesheet" href="${P}assets/site-header.css?v=35">
 <link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=28">
 <link rel="stylesheet" href="${P}assets/gh-float-widgets.css?v=8">
-<link rel="stylesheet" href="${P}assets/gh-jeddah-forum-cs.css?v=1">
+<link rel="stylesheet" href="${P}assets/gh-jeddah-forum-cs.css?v=2">
 <script defer src="${P}assets/site-header.js?v=16"></script>
 <script defer src="${P}assets/gh-performance.js?v=10"></script>
 <script defer src="${P}assets/lang-switch.js?v=2"></script>
@@ -301,12 +368,16 @@ ${header}
   <div class="jcs-hero-bg">
     <img src="${P}${DATA.heroImage}" alt="${esc(c.heroTitle)}" width="1920" height="1080" fetchpriority="high">
   </div>
+  <div class="jcs-hero-pattern" aria-hidden="true"></div>
   <div class="jcs-wrap jcs-hero-inner">
     <div class="jcs-hero-grid">
       <div>
+        <img class="jcs-hero-logo" src="${P}${DATA.logo}" alt="${esc(c.heroTitle)} logo" width="200" height="280">
         <span class="jcs-meta">${esc(c.heroEyebrow)}</span>
         <h1>${esc(c.heroTitle)}</h1>
         <p class="jcs-hero-en">${esc(c.heroEn)}</p>
+        <p class="jcs-hero-motto">${esc(L(DATA.motto, lang))}</p>
+        <p class="jcs-hero-2030">${esc(L(DATA.vision2030, lang))}</p>
         <p class="jcs-hero-dek">${esc(c.heroDek)}</p>
       </div>
       <dl class="jcs-hero-meta">
@@ -317,6 +388,41 @@ ${header}
     </div>
   </div>
   <div class="jcs-scroll" aria-hidden="true">${esc(c.scroll)}<span></span></div>
+</section>
+
+<section class="jcs-poetry" aria-label="${esc(L(DATA.motto, lang))}">
+  <div class="jcs-wrap jcs-poetry-inner jcs-reveal">
+    <span class="jcs-meta">${esc(c.poetryMeta)}</span>
+    <h2 class="jcs-section-head" style="margin:12px 0 0;border:none">${esc(c.poetryTitle)}</h2>
+    <div class="jcs-poetry-grid">
+      <img class="jcs-poetry-ornament" src="${P}assets/projects/jeddah-forum/motif-divider.svg" alt="" aria-hidden="true">
+      <div>
+        <p class="jcs-poetry-quote">${esc(L(DATA.motto, lang))}</p>
+        <p class="jcs-poetry-sub">${esc(L(DATA.vision2030, lang))}</p>
+        <div class="jcs-poetry-divider" aria-hidden="true"></div>
+      </div>
+      <img class="jcs-poetry-ornament" src="${P}assets/projects/jeddah-forum/motif-divider.svg" alt="" aria-hidden="true">
+    </div>
+  </div>
+</section>
+
+<section class="jcs-section jcs-section--paper">
+  <div class="jcs-wrap jcs-reveal">
+    <div class="jcs-vision-block">
+      <h2 class="jcs-vision-title">${esc(c.visionTitle)}</h2>
+      <div>
+        <span class="jcs-meta jcs-meta-en">${esc(c.visionMeta)}</span>
+        <p class="jcs-vision-text">${esc(L(DATA.vision, lang))}</p>
+      </div>
+    </div>
+    <div class="jcs-vision-block" style="margin-top:64px">
+      <h2 class="jcs-vision-title">${esc(c.missionTitle)}</h2>
+      <div>
+        <span class="jcs-meta jcs-meta-en">${esc(c.missionMeta)}</span>
+        <ul class="jcs-mission-list">${missionHtml}</ul>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="jcs-section jcs-section--dark">
@@ -347,14 +453,37 @@ ${header}
   </div>
 </section>
 
-<section class="jcs-section jcs-section--dark" id="identity">
+<section class="jcs-section jcs-section--paper" id="identity">
   <div class="jcs-wrap">
     <div class="jcs-section-head jcs-reveal">
       <span class="jcs-meta">${esc(c.identityMeta)}</span>
       <h2>${esc(c.identityTitle)}</h2>
     </div>
     <p class="jcs-lead jcs-reveal">${esc(c.identityP)}</p>
+    <div class="jcs-palette jcs-reveal" aria-label="${esc(c.paletteTitle)}">${paletteHtml}</div>
     <div class="jcs-grid-editorial jcs-reveal" style="margin-top:48px">${galleryItems(DATA.identityGallery, lang)}</div>
+  </div>
+</section>
+
+<section class="jcs-section jcs-section--paper">
+  <div class="jcs-wrap">
+    <div class="jcs-section-head jcs-reveal">
+      <span class="jcs-meta jcs-meta-en">${esc(c.themesMeta)}</span>
+      <h2>${esc(c.themesTitle)}</h2>
+    </div>
+    <p class="jcs-lead jcs-reveal">${esc(c.themesP)}</p>
+    <div class="jcs-themes">${themesHtml}</div>
+  </div>
+</section>
+
+<section class="jcs-section jcs-section--paper" id="catalog">
+  <div class="jcs-wrap">
+    <div class="jcs-section-head jcs-reveal">
+      <span class="jcs-meta jcs-meta-en">${esc(c.catalogMeta)}</span>
+      <h2>${esc(c.catalogTitle)}</h2>
+    </div>
+    <p class="jcs-lead jcs-reveal">${esc(c.catalogP)}</p>
+    <div class="jcs-catalog-scroll jcs-reveal" role="list">${catalogHtml}</div>
   </div>
 </section>
 
@@ -407,7 +536,7 @@ ${header}
       <h2>${esc(c.contentTitle)}</h2>
     </div>
     <p class="jcs-lead jcs-reveal">${esc(c.contentP)}</p>
-    <div class="jcs-frame-pair jcs-reveal" style="margin-top:40px">${DATA.contentGallery
+    <div class="jcs-print-trio jcs-reveal" style="margin-top:40px">${DATA.contentGallery
       .map((item) => figure(item.src, L(item.alt, lang), ''))
       .join('')}</div>
   </div>
@@ -420,7 +549,7 @@ ${header}
       <h2>${esc(c.printTitle)}</h2>
     </div>
     <p class="jcs-lead jcs-reveal">${esc(c.printP)}</p>
-    <div class="jcs-frame-full jcs-reveal" style="margin-top:40px">${DATA.printGallery
+    <div class="jcs-print-trio jcs-reveal" style="margin-top:40px">${DATA.printGallery
       .map((item) => figure(item.src, L(item.alt, lang), ''))
       .join('')}</div>
   </div>
@@ -467,14 +596,15 @@ ${header}
   </div>
 </section>
 
-<section class="jcs-statement jcs-section--dark">
+<section class="jcs-statement jcs-section--paper">
   <span class="jcs-meta jcs-meta-en">${esc(c.statementMeta)}</span>
-  <h2>${esc(c.statement1)}<br>${esc(c.statement2)}</h2>
-  <p>${esc(c.statementP)}</p>
+  <h2 style="color:var(--jcs-burgundy)">${esc(c.statement1)}<br>${esc(c.statement2)}</h2>
+  <p style="color:var(--jcs-muted)">${esc(c.statementP)}</p>
+  <p class="jcs-poetry-quote" style="font-size:clamp(28px,4vw,48px);margin-top:48px">${esc(L(DATA.motto, lang))}</p>
 </section>
 
 <section class="jcs-final-visual" aria-hidden="true">
-  <img src="${P}${DATA.heroImage}" alt="" loading="lazy">
+  <img src="${P}assets/projects/jeddah-forum/catalog/page-44.jpg" alt="" loading="lazy">
   <div class="jcs-wrap">
     <span class="jcs-meta">${esc(c.finalLine)}</span>
     <h2>${esc(c.finalAgency)}</h2>
@@ -515,7 +645,7 @@ ${header}
 
 ${footer}
 <script defer src="${P}assets/gh-float-widgets.js?v=1"></script>
-<script defer src="${P}assets/gh-jeddah-forum-cs.js?v=1"></script>
+<script defer src="${P}assets/gh-jeddah-forum-cs.js?v=2"></script>
 </body>
 </html>`;
 }

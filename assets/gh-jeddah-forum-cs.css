@@ -2,17 +2,23 @@
  * Jeddah Real Estate Forum — premium editorial case study
  */
 :root {
-  --jcs-gold: #c9a84c;
+  --jcs-gold: #b8965d;
+  --jcs-gold-light: #d4b87a;
+  --jcs-burgundy: #733d2d;
   --jcs-ink: #0a0a0a;
-  --jcs-paper: #fafaf8;
-  --jcs-muted: rgba(250, 250, 248, 0.62);
-  --jcs-line: rgba(250, 250, 248, 0.12);
+  --jcs-brown: #5a3a3a;
+  --jcs-paper: #f2efe8;
+  --jcs-paper-dark: #e8e2d8;
+  --jcs-muted: rgba(90, 58, 58, 0.72);
+  --jcs-line: rgba(115, 61, 45, 0.14);
+  --jcs-line-light: rgba(250, 250, 248, 0.12);
   --jcs-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --jcs-pattern: url('projects/jeddah-forum/pattern-stars.svg');
 }
 
 body.jcs-page {
-  background: var(--jcs-ink);
-  color: var(--jcs-paper);
+  background: var(--jcs-paper);
+  color: var(--jcs-brown);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -28,6 +34,10 @@ body.jcs-page {
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  color: var(--jcs-burgundy);
+}
+
+.jcs-section--dark .jcs-meta {
   color: var(--jcs-gold);
 }
 
@@ -36,6 +46,10 @@ body.jcs-page {
   line-height: 1.85;
   color: var(--jcs-muted);
   max-width: 42rem;
+}
+
+.jcs-section--dark .jcs-lead {
+  color: rgba(250, 250, 248, 0.62);
 }
 
 html[dir="rtl"] .jcs-lead {
@@ -71,10 +85,65 @@ html[dir="rtl"] .jcs-lead {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(10, 10, 10, 0.35) 0%,
-    rgba(10, 10, 10, 0.55) 45%,
-    rgba(10, 10, 10, 0.92) 100%
+    rgba(242, 239, 232, 0.72) 0%,
+    rgba(242, 239, 232, 0.45) 35%,
+    rgba(10, 10, 10, 0.55) 70%,
+    rgba(10, 10, 10, 0.88) 100%
   );
+}
+
+.jcs-hero-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.35;
+  background-image: var(--jcs-pattern);
+  background-size: 120px 120px;
+  pointer-events: none;
+}
+
+.jcs-hero-logo {
+  width: clamp(120px, 16vw, 200px);
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 8px 24px rgba(115, 61, 45, 0.15));
+}
+
+.jcs-hero-motto {
+  display: inline-block;
+  font-size: clamp(15px, 1.6vw, 19px);
+  font-weight: 500;
+  color: var(--jcs-burgundy);
+  letter-spacing: 0.04em;
+  margin-top: 12px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(184, 150, 93, 0.45);
+  border-bottom: 1px solid rgba(184, 150, 93, 0.45);
+}
+
+html[dir="rtl"] .jcs-hero-motto {
+  font-family: 'Tajawal', sans-serif;
+}
+
+.jcs-hero-2030 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--jcs-gold);
+}
+
+.jcs-hero-2030::before,
+.jcs-hero-2030::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--jcs-gold);
+  opacity: 0.7;
 }
 
 .jcs-hero-inner {
@@ -103,6 +172,7 @@ html[dir="rtl"] .jcs-lead {
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin: 16px 0 20px;
+  color: var(--jcs-paper);
 }
 
 html[dir="rtl"] .jcs-hero h1 {
@@ -182,7 +252,29 @@ html[dir="rtl"] .jcs-hero h1 {
 
 .jcs-section--paper {
   background: var(--jcs-paper);
-  color: var(--jcs-ink);
+  color: var(--jcs-brown);
+  position: relative;
+}
+
+.jcs-section--paper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--jcs-pattern);
+  background-size: 120px 120px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.jcs-section--paper > .jcs-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.jcs-section--dark {
+  background: var(--jcs-ink);
+  color: #fafaf8;
+  position: relative;
 }
 
 .jcs-section--paper .jcs-lead {
@@ -799,4 +891,372 @@ html[dir="rtl"] .jcs-scope-text {
   .jcs-scroll span {
     animation: none;
   }
+}
+
+/* —— Catalog identity: poetry, vision, themes —— */
+
+.jcs-poetry {
+  position: relative;
+  padding: clamp(96px, 14vw, 160px) 0;
+  text-align: center;
+  background: var(--jcs-paper);
+  overflow: hidden;
+}
+
+.jcs-poetry::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--jcs-pattern);
+  background-size: 140px 140px;
+  opacity: 0.22;
+}
+
+.jcs-poetry-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 32px;
+  justify-items: center;
+}
+
+.jcs-poetry-ornament {
+  width: 24px;
+  height: clamp(120px, 18vw, 200px);
+  opacity: 0.85;
+}
+
+.jcs-poetry-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+  width: min(900px, 100%);
+}
+
+.jcs-poetry-quote {
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--jcs-burgundy);
+  margin: 0;
+}
+
+html[dir="rtl"] .jcs-poetry-quote {
+  font-family: 'Tajawal', sans-serif;
+}
+
+.jcs-poetry-sub {
+  font-size: clamp(14px, 1.4vw, 18px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--jcs-gold);
+  margin-top: 8px;
+}
+
+.jcs-poetry-divider {
+  width: min(200px, 60%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--jcs-gold), transparent);
+  margin: 8px auto 0;
+  position: relative;
+}
+
+.jcs-poetry-divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--jcs-gold);
+  background: var(--jcs-paper);
+}
+
+.jcs-vision-block {
+  display: grid;
+  gap: 40px;
+}
+
+@media (min-width: 900px) {
+  .jcs-vision-block {
+    grid-template-columns: auto 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+}
+
+.jcs-vision-title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 600;
+  color: var(--jcs-burgundy);
+  letter-spacing: 0.06em;
+  padding-inline-end: 24px;
+  border-inline-end: 2px solid var(--jcs-gold);
+  margin: 0;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html[dir="ltr"] .jcs-vision-title {
+  writing-mode: vertical-lr;
+}
+
+html[dir="rtl"] .jcs-vision-title {
+  font-family: 'Tajawal', sans-serif;
+}
+
+.jcs-vision-text {
+  font-size: clamp(18px, 1.8vw, 24px);
+  line-height: 2;
+  color: var(--jcs-muted);
+  max-width: 48rem;
+}
+
+html[dir="rtl"] .jcs-vision-text {
+  font-family: 'Tajawal', sans-serif;
+}
+
+.jcs-mission-list {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.jcs-mission-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--jcs-muted);
+}
+
+.jcs-mission-list li::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--jcs-gold);
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.jcs-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.jcs-palette-swatch {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 100px;
+}
+
+.jcs-palette-swatch span:first-child {
+  width: 100%;
+  height: 56px;
+  border-radius: 4px;
+  border: 1px solid rgba(115, 61, 45, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.jcs-palette-swatch span:last-child {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(90, 58, 58, 0.65);
+}
+
+.jcs-themes {
+  display: grid;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+@media (min-width: 640px) {
+  .jcs-themes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .jcs-themes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.jcs-theme-card {
+  background: #fff;
+  border: 1px solid var(--jcs-line);
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.4s var(--jcs-ease), transform 0.4s var(--jcs-ease);
+}
+
+.jcs-theme-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--jcs-gold), var(--jcs-burgundy));
+}
+
+.jcs-theme-card:hover {
+  border-color: rgba(184, 150, 93, 0.45);
+  transform: translateY(-4px);
+}
+
+.jcs-theme-num {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--jcs-gold);
+  margin-bottom: 8px;
+}
+
+.jcs-theme-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--jcs-burgundy);
+  margin: 0 0 16px;
+}
+
+html[dir="rtl"] .jcs-theme-card h3 {
+  font-family: 'Tajawal', sans-serif;
+}
+
+.jcs-theme-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.jcs-theme-card li {
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(90, 58, 58, 0.7);
+  padding-inline-start: 14px;
+  position: relative;
+}
+
+.jcs-theme-card li::before {
+  content: '+';
+  position: absolute;
+  inset-inline-start: 0;
+  color: var(--jcs-gold);
+  font-weight: 600;
+}
+
+.jcs-catalog-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 0 24px;
+  margin: 0 calc(-1 * clamp(20px, 4vw, 48px));
+  padding-inline: clamp(20px, 4vw, 48px);
+  scrollbar-width: thin;
+  scrollbar-color: var(--jcs-gold) transparent;
+}
+
+.jcs-catalog-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.jcs-catalog-scroll::-webkit-scrollbar-thumb {
+  background: var(--jcs-gold);
+  border-radius: 3px;
+}
+
+.jcs-catalog-item {
+  flex: 0 0 min(320px, 78vw);
+  scroll-snap-align: start;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid var(--jcs-line);
+  background: #fff;
+  transition: box-shadow 0.4s var(--jcs-ease);
+}
+
+.jcs-catalog-item:hover {
+  box-shadow: 0 16px 48px rgba(115, 61, 45, 0.12);
+}
+
+.jcs-catalog-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.jcs-catalog-item figcaption {
+  padding: 12px 16px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--jcs-burgundy);
+  border-top: 1px solid var(--jcs-line);
+}
+
+.jcs-figure--logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 48px;
+  min-height: 280px;
+  border: 1px solid var(--jcs-line);
+}
+
+.jcs-figure--logo img {
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.jcs-print-trio {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 900px) {
+  .jcs-print-trio {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.jcs-arch-deco {
+  position: absolute;
+  inset-inline-end: 0;
+  top: 10%;
+  width: min(180px, 22vw);
+  height: auto;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.jcs-section-head h2 {
+  color: var(--jcs-burgundy);
+}
+
+.jcs-section--dark .jcs-section-head h2 {
+  color: #fafaf8;
 }
