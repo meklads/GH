@@ -3,20 +3,20 @@
   "date": "2024-07",
   "image": "assets/projects/rendering/kuday-makkah-e1745137682714.jpeg",
   "developer": { "ar": "كداء", "en": "Kuday" },
-  "projectName": { "ar": "برج سكني — مكة", "en": "Residential Tower — Makkah" },
+  "projectName": { "ar": "برج سكني، مكة", "en": "Residential Tower, Makkah" },
   "city": { "ar": "مكة المكرمة", "en": "Makkah" },
   "category": { "ar": "إظهار معماري · برج سكني", "en": "Archviz · Residential tower" },
   "title": {
-    "ar": "كداء مكة — رندر فوتوريالستي لبرج سكني",
-    "en": "Kuday Makkah — photorealistic tower archviz"
+    "ar": "كداء مكة: رندر فوتوريالستي لبرج سكني باحترام السياق",
+    "en": "Kuday Makkah: photorealistic tower archviz with place respect"
   },
   "excerpt": {
-    "ar": "إظهار معماري دقيق لبرج سكني في مكة — زوايا بطل وحملة إطلاق.",
-    "en": "Precise archviz for a Makkah residential tower — hero angles and launch campaign."
+    "ar": "إظهار معماري دقيق لبرج سكني في مكة: زوايا بطل وحملة إطلاق بإضاءة واقعية دون مبالغة في الادعاءات البصرية.",
+    "en": "Precise archviz for a Makkah residential tower: hero angles and launch campaign with realistic lighting and no exaggerated visual claims."
   },
   "metaDescription": {
-    "ar": "مشروع كداء مكة — رندر معماري فوتوريالستي من Graphics House.",
-    "en": "Kuday Makkah project — photorealistic architectural renders by Graphics House."
+    "ar": "مشروع كداء مكة: رندر معماري فوتوريالستي من Graphics House مع إطار حساسية الإظهار في مكة.",
+    "en": "Kuday Makkah project: photorealistic architectural renders by Graphics House with Makkah visualization sensitivity framing."
   },
   "services": {
     "ar": ["رندر خارجي", "لقطات بطل", "حملة إطلاق"],
@@ -29,12 +29,144 @@
   "portfolioHref": "portfolio.html",
   "body": {
     "ar": [
-      { "type": "p", "text": "أبراج مكة تحتاج زوايا إظهار تبرز الارتفاع والموقع والواجهة — مع إضاءة واقعية تناسب مناخ المنطقة. مشروع كداء يمثّل نمط العمل المتكرر مع المطورين في المدينة المقدسة." },
-      { "type": "p", "text": "المواد جاهزة للحملات الرقمية، لوحات الإعلان، وصالات البيع." }
+      {
+        "type": "p",
+        "text": "أبراج مكة تحتاج زوايا إظهار تبرز الارتفاع والموقع والواجهة بإضاءة واقعية تناسب مناخ المنطقة. مشروع كداء يمثّل نمط العمل المتكرر مع المطورين في المدينة، حيث كل مشهد يجب أن يُدافع عنه تجارياً دون مبالغة في القرب أو الإطلالة."
+      },
+      {
+        "type": "h2",
+        "text": "التحدي"
+      },
+      {
+        "type": "p",
+        "text": "المطلوب [رندر خارجي](https://3dgraphicshouse.com/services/rendering.html) للحملة الرقمية ولوحات الإعلان وصالة البيع، مع لغة بصرية تحترم [حساسية المكان في مكة](https://3dgraphicshouse.com/insights/articles/makkah-project-visual-sensitivity.html). الزوايا الجوية تحتاج حذراً؛ الواجهة والمواد تحملان الرسالة."
+      },
+      {
+        "type": "h2",
+        "text": "ما نفّذته Graphics House"
+      },
+      {
+        "type": "p",
+        "text": "نفّذنا رندرات فوتوريالستية بزوايا بطل معتمدة، بإضاءة ومواد مضبوطة للمناخ والسياق. المواد جاهزة للحملات الرقمية والطباعة والصالة ضمن [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html)."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "زوايا بطل خارجية معتمدة للإطلاق",
+          "مواد وإضاءة واقعية للمنطقة",
+          "حزمة جاهزة للويب والوسيط واللوحات",
+          "اتساق مع معايير إظهار مكة الداخلية"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "النتيجة"
+      },
+      {
+        "type": "p",
+        "text": "المواد أصبحت جاهزة للحملات الرقمية ولوحات الإعلان وصالات البيع. راجع [أبراج الخير](https://3dgraphicshouse.com/insights/projects/al-khair-makkah.html) و[ضيافة قرب الحرم](https://3dgraphicshouse.com/insights/articles/makkah-hospitality-near-haram-viz.html) كسياق مكمل. بعد القفل يمكن التضخيم عبر [Beesmotion](https://beesmotion.com)."
+      }
     ],
     "en": [
-      { "type": "p", "text": "Makkah towers need views that communicate height, location, and façade — with realistic lighting for the region's climate. Kuday represents recurring work with developers in the holy city." },
-      { "type": "p", "text": "Deliverables are ready for digital campaigns, outdoor boards, and sales galleries." }
+      {
+        "type": "p",
+        "text": "Makkah towers need views communicating height, site, and façade with realistic lighting for the region's climate. Kuday represents recurring work with developers in the holy city, where every scene must be commercially defensible without exaggerating proximity or views."
+      },
+      {
+        "type": "h2",
+        "text": "The challenge"
+      },
+      {
+        "type": "p",
+        "text": "The brief required [exterior renders](https://3dgraphicshouse.com/services/rendering-en.html) for digital campaigns, outdoor boards, and sales gallery, with visual language respecting [Makkah place sensitivity](https://3dgraphicshouse.com/insights/articles/makkah-project-visual-sensitivity-en.html). Aerials need care; façade and materials carry the message."
+      },
+      {
+        "type": "h2",
+        "text": "What Graphics House delivered"
+      },
+      {
+        "type": "p",
+        "text": "We produced photorealistic renders with approved hero angles, tuned lighting and materials for climate and context. Assets are ready for digital, print, and gallery under [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html)."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Approved exterior hero angles for launch",
+          "Realistic materials and lighting for the region",
+          "Pack ready for web, brokers, and boards",
+          "Consistency with internal Makkah visualization standards"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Outcome"
+      },
+      {
+        "type": "p",
+        "text": "Deliverables became ready for digital campaigns, outdoor boards, and sales galleries. See [Al Khair Heights](https://3dgraphicshouse.com/insights/projects/al-khair-makkah-en.html) and [near-Haram hospitality](https://3dgraphicshouse.com/insights/articles/makkah-hospitality-near-haram-viz-en.html) as complementary context. After lock, amplify via [Beesmotion](https://beesmotion.com)."
+      }
     ]
-  }
+  },
+  "keywords": {
+    "ar": {
+      "short": ["كداء مكة", "رندر برج", "إظهار مكة", "حملة إطلاق"],
+      "long": [
+        "رندر فوتوريالستي كداء مكة",
+        "إظهار برج سكني Graphics House",
+        "حساسية الإظهار مكة المكرمة",
+        "زوايا بطل إطلاق مكة"
+      ]
+    },
+    "en": {
+      "short": ["Kuday Makkah", "tower render", "Makkah archviz", "launch campaign"],
+      "long": [
+        "Kuday Makkah photorealistic render",
+        "Makkah tower archviz Graphics House",
+        "Makkah visualization sensitivity",
+        "hero angle Makkah launch"
+      ]
+    }
+  },
+  "faq": [
+    {
+      "q": {
+        "ar": "كيف نتجنب المبالغة البصرية في مكة؟",
+        "en": "How do we avoid visual exaggeration in Makkah?"
+      },
+      "a": {
+        "ar": "اعتماد زوايا مدافع عنها تجارياً، تركيز على الواجهة والمواد، وتجنب ادعاءات قرب أو إطلالة غير محققة. راجع [حساسية الإظهار في مكة](https://3dgraphicshouse.com/insights/articles/makkah-project-visual-sensitivity.html).",
+        "en": "Approve commercially defensible angles, focus on façade and materials, and avoid unverified proximity or view claims. See [Makkah visualization sensitivity](https://3dgraphicshouse.com/insights/articles/makkah-project-visual-sensitivity-en.html)."
+      }
+    },
+    {
+      "q": {
+        "ar": "ما الذي شمله التسليم؟",
+        "en": "What did the delivery include?"
+      },
+      "a": {
+        "ar": "رندرات خارجية بزوايا بطل وحزمة حملة إطلاق للويب والطباعة والصالة.",
+        "en": "Exterior renders with hero angles and a launch asset pack for web, print, and gallery."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يمكن إضافة فيلم أو تجربة تفاعلية؟",
+        "en": "Can film or interactive experience be added?"
+      },
+      "a": {
+        "ar": "نعم، [فيلم CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html) و[تجارب تفاعلية](https://3dgraphicshouse.com/services/interactive-experiences.html) ضمن [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) بعد قفل الزوايا الأساسية.",
+        "en": "Yes, [CGI film](https://3dgraphicshouse.com/services/cinematic-cgi-en.html) and [interactive experiences](https://3dgraphicshouse.com/services/interactive-experiences-en.html) under [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) after core angles lock."
+      }
+    },
+    {
+      "q": {
+        "ar": "أين أرى مشاريع مكة الأخرى؟",
+        "en": "Where can I see other Makkah projects?"
+      },
+      "a": {
+        "ar": "[أبراج الخير](https://3dgraphicshouse.com/insights/projects/al-khair-makkah.html) و[ميثاق مكة](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl.html).",
+        "en": "[Al Khair Heights](https://3dgraphicshouse.com/insights/projects/al-khair-makkah-en.html) and [Makkah Charter](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl-en.html)."
+      }
+    }
+  ]
 }

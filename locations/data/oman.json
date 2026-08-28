@@ -5,44 +5,58 @@
   "kicker": { "ar": "جرافيكس هاوس · سلطنة عُمان", "en": "Graphics House · Oman" },
   "heroImage": "assets/projects/rendering/uae-e1745147961286.jpeg",
   "heroCaption": {
-    "ar": "إظهار معماري لمشاريع خليجية — خبرة جاهزة لسوق عُمان",
-    "en": "Architectural visualization for Gulf developments — ready for the Oman market"
+    "ar": "إظهار معماري لمشاريع خليجية، خبرة جاهزة لسوق عُمان",
+    "en": "Architectural visualization for Gulf developments, ready for the Oman market"
   },
   "title": {
     "ar": "إظهار معماري وأنظمة إطلاق بصرية للمطورين في عُمان",
-    "en": "Architectural Visualization & Visual Launch Systems in Oman"
+    "en": "Architectural Visualization and Visual Launch Systems in Oman"
   },
   "subtitle": {
-    "ar": "من خبرة إطلاق المشاريع الكبرى في السعودية إلى مكتبنا في مسقط — نبني أنظمة مبيعات بصرية للمطورين والمشاريع الساحلية والسكنية في سلطنة عُمان.",
-    "en": "From launching major developments in Saudi Arabia to our Muscat office — we build visual sales systems for developers and coastal, residential, and mixed-use projects across Oman."
+    "ar": "من خبرة إطلاق المشاريع الكبرى في السعودية إلى مكتبنا في مسقط، نبني أنظمة مبيعات بصرية للمطورين والمشاريع الساحلية والسكنية في سلطنة عُمان بهوية ثقافية واضحة لا مبالغة تسويقية.",
+    "en": "From launching major developments in Saudi Arabia to our Muscat office, we build visual sales systems for developers and coastal, residential, and mixed use projects across Oman with clear cultural identity, not marketing hype."
   },
   "metaDescription": {
-    "ar": "جرافيكس هاوس في مسقط: إظهار معماري، مجسمات ذكية، أفلام CGI، وProjectLaunch™ للمطورين في عُمان — مكتب الخوض، السيب.",
-    "en": "Graphics House in Muscat: archviz, smart maquettes, CGI films & ProjectLaunch™ for Oman developers — Al Khod, Al Seeb office."
+    "ar": "جرافيكس هاوس في مسقط: إظهار معماري، مجسمات ذكية، أفلام CGI، وProjectLaunch للمطورين في عُمان. مكتب الخوض، السيب.",
+    "en": "Graphics House in Muscat: archviz, smart maquettes, CGI films, and ProjectLaunch for Oman developers. Al Khod, Al Seeb office."
+  },
+  "keywords": {
+    "ar": {
+      "short": ["إظهار معماري عُمان", "مسقط", "مجسمات ذكية", "مشاريع ساحلية"],
+      "long": ["استوديو إظهار معماري مسقط للمطورين", "رندر فوتوريالستي المشاريع السكنية عُمان", "مجسمات ذكية صالات البيع", "ProjectLaunch عُمان", "تصور معماري المجتمعات الساحلية"]
+    },
+    "en": {
+      "short": ["Oman archviz", "Muscat", "smart maquettes", "coastal projects"],
+      "long": ["architectural visualization Muscat developers", "photorealistic rendering Oman residential", "smart maquettes sales gallery", "ProjectLaunch Oman launch system", "coastal community architectural visualization"]
+    }
   },
   "narrative": {
     "title": {
-      "ar": "من السعودية إلى عُمان — نفس معيار الإطلاق",
-      "en": "From Saudi Arabia to Oman — the same launch standard"
+      "ar": "من السعودية إلى عُمان بنفس معيار الإطلاق",
+      "en": "From Saudi Arabia to Oman with the same launch standard"
     },
     "paragraphs": [
       {
-        "ar": "سوق عُمان ينمو بمشاريع سكنية وساحلية وتجارية تحتاج لغة بصرية تقنع المستثمر والمشتري قبل البناء. ما نجح في الرياض وجدة ومكة — رندر فوتوريالستي، مجسمات ذكية، أفلام CGI، وصالات بيع — ننقله اليوم عبر تواجدنا في مسقط.",
-        "en": "Oman's market is growing with residential, coastal, and commercial projects that need a visual language to persuade investors and buyers before construction. What worked in Riyadh, Jeddah, and Makkah — photoreal renders, smart maquettes, CGI films, and sales galleries — we now deliver through our Muscat presence."
+        "ar": "سوق عُمان ينمو بمشاريع سكنية وساحلية وتجارية تحتاج لغة بصرية تقنع المستثمر والمشتري قبل البناء. ما نجح في [الرياض](locations/riyadh.html) و[جدة](locations/jeddah.html) و[مكة](locations/makkah.html) من [رندر](services/rendering.html) فوتوريالستي و[مجسمات ذكية](services/maquettes.html) وأفلام [سينمائية](services/cinematic-cgi.html) ننقله اليوم عبر تواجدنا في مسقط.",
+        "en": "Oman's market is growing with residential, coastal, and commercial projects that need a visual language to persuade investors and buyers before construction. What worked in [Riyadh](locations/riyadh-en.html), [Jeddah](locations/jeddah-en.html), and [Makkah](locations/makkah-en.html) with photoreal [rendering](services/rendering.html), [smart maquettes](services/maquettes.html), and [cinematic](services/cinematic-cgi.html) films we now deliver through our Muscat presence."
       },
       {
-        "ar": "مكتبنا في الخوض، السيب يمنح المطورين العمانيين نقطة تواصل محلية، مع إنتاج مدعوم بخبرة أكثر من خمسة عشر عاماً في الخليج واستوديو متكامل لا يشتّت الهوية البصرية بين موردين متعددين.",
-        "en": "Our Al Khod, Al Seeb office gives Omani developers a local contact point, backed by fifteen-plus years of GCC experience and one integrated studio that keeps visual identity consistent — without splitting work across vendors."
+        "ar": "مكتبنا في الخوض، السيب يمنح المطورين العمانيين نقطة تواصل محلية، مع إنتاج مدعوم بخبرة أكثر من خمسة عشر عاماً في الخليج واستوديو متكامل لا يشتّت الهوية البصرية بين موردين متعددين. لإطلاق المشاريع في السلطنة، راجع [ProjectLaunch™ لعُمان](solutions/project-launch-oman.html) و[دليل الإطلاق للمطورين](insights/articles/project-launch-oman-developers.html).",
+        "en": "Our Al Khod, Al Seeb office gives Omani developers a local contact point, backed by fifteen plus years of GCC experience and one integrated studio that keeps visual identity consistent without splitting work across vendors. For launches in the Sultanate, see [ProjectLaunch™ Oman](solutions/project-launch-oman.html) and our [Oman developer launch guide](insights/articles/project-launch-oman-developers-en.html)."
+      },
+      {
+        "ar": "نصيحة للمطور في عُمان: ابدأ بالمشاهد التي تُظهر العلاقة بين المشروع والساحل أو التضاريس المحلية. المشتري العماني يقدّر الوضوح والهوية أكثر من المؤثرات البصرية الصاخبة. حدّد ثلاث مواد أساسية قبل الإطلاق: مشهد خارجي، وحدة نموذجية، ومخطط أو فيلم قصير يشرح المراحل.",
+        "en": "Advice for Oman developers: start with views that show the relationship between the project and the coast or local terrain. Omani buyers value clarity and identity over loud visual effects. Define three core assets before launch: one exterior, one show unit, and a plan view or short film explaining phasing."
       }
     ],
     "quote": {
       "text": {
         "ar": "قدّمت جرافيكس هاوس تجربة عالمية المستوى تعكس المكانة الرفيعة لرابطة العالم الإسلامي، من المجسم الذكي إلى البيئة التفاعلية المتكاملة.",
-        "en": "Graphics House delivered a world-class experience worthy of the Muslim World League — from the smart maquette to the fully integrated interactive environment."
+        "en": "Graphics House delivered a world class experience worthy of the Muslim World League, from the smart maquette to the fully integrated interactive environment."
       },
       "attribution": {
-        "ar": "مسؤول رفيع، رابطة العالم الإسلامي — مشروع ميثاق مكة",
-        "en": "Senior official, Muslim World League — Makkah Charter project"
+        "ar": "مسؤول رفيع، رابطة العالم الإسلامي، مشروع ميثاق مكة",
+        "en": "Senior official, Muslim World League, Makkah Charter project"
       }
     }
   },
@@ -57,8 +71,8 @@
     "title": { "ar": "ProjectLaunch™ لعُمان", "en": "ProjectLaunch™ for Oman" },
     "subtitle": { "ar": "من هوية المشروع إلى صالة تُقنع وتبيع", "en": "From project identity to a gallery that persuades and sells" },
     "body": {
-      "ar": "نظام إطلاق بصري كامل: هوية، رندر، أفلام، مجسمات ذكية، تجارب تفاعلية، وديكور صالة البيع — بنفس المنهج الذي أطلقنا به مشاريع كبرى في السعودية، موجّه الآن للمطورين في عُمان.",
-      "en": "A complete visual launch system: identity, renders, films, smart maquettes, interactive experiences, and sales-gallery décor — the same method that launched major Saudi projects, now directed at Oman developers."
+      "ar": "نظام إطلاق بصري كامل: هوية، رندر، أفلام، مجسمات ذكية، تجارب تفاعلية، وديكور صالة البيع بنفس المنهج الذي أطلقنا به مشاريع كبرى في السعودية، موجّه الآن للمطورين في عُمان.",
+      "en": "A complete visual launch system: identity, renders, films, smart maquettes, interactive experiences, and sales gallery décor using the same method that launched major Saudi projects, now directed at Oman developers."
     },
     "image": "assets/news/makkah-charter-04.jpeg",
     "gallery": [
@@ -74,29 +88,29 @@
     "items": [
       {
         "icon": "villa",
-        "title": { "ar": "سكن ومجمعات", "en": "Residential & communities" },
+        "title": { "ar": "سكن ومجمعات", "en": "Residential and communities" },
         "desc": { "ar": "رندر وإطلاق بصري للوحدات والمخططات قبل التسليم.", "en": "Renders and visual launch for units and master plans before handover." }
       },
       {
         "icon": "beach_access",
-        "title": { "ar": "مشاريع ساحلية وضيافة", "en": "Coastal & hospitality" },
+        "title": { "ar": "مشاريع ساحلية وضيافة", "en": "Coastal and hospitality" },
         "desc": { "ar": "تصور فوتوريالستي يعكس الواجهة البحرية وتجربة الضيف.", "en": "Photoreal storytelling for waterfront living and guest experience." }
       },
       {
         "icon": "apartment",
-        "title": { "ar": "أبراج ومختلط الاستخدام", "en": "Towers & mixed-use" },
+        "title": { "ar": "أبراج ومختلط الاستخدام", "en": "Towers and mixed use" },
         "desc": { "ar": "هوية بصرية، أفلام، ومجسمات لصالة البيع والمستثمر.", "en": "Identity, films, and maquettes for the sales floor and investors." }
       },
       {
         "icon": "storefront",
-        "title": { "ar": "تجاري ومعارض", "en": "Commercial & exhibitions" },
-        "desc": { "ar": "بيئات عرض تفاعلية وديكور يعزّز الإقناع في الموقع.", "en": "Interactive display environments and décor that strengthen on-site persuasion." }
+        "title": { "ar": "تجاري ومعارض", "en": "Commercial and exhibitions" },
+        "desc": { "ar": "بيئات عرض تفاعلية وديكور يعزّز الإقناع في الموقع.", "en": "Interactive display environments and décor that strengthen on site persuasion." }
       }
     ]
   },
   "servicesLead": {
-    "ar": "إنتاج بصري متكامل للمطورين في عُمان — من أول رندر اعتماد حتى صالة البيع ونظام الإطلاق.",
-    "en": "Integrated visual production for Oman developers — from first approval render through sales gallery and launch system."
+    "ar": "إنتاج بصري متكامل للمطورين في عُمان من أول رندر اعتماد حتى صالة البيع ونظام الإطلاق.",
+    "en": "Integrated visual production for Oman developers from first approval render through sales gallery and launch system."
   },
   "coreServices": [
     {
@@ -115,14 +129,14 @@
       "icon": "slow_motion_video",
       "title": { "ar": "أفلام CGI سينمائية", "en": "Cinematic CGI films" },
       "desc": { "ar": "أفلام إطلاق تحكي قصة المشروع للمستثمر والمشتري.", "en": "Launch films that tell the project story to investors and buyers." },
-      "href": "services/animation.html"
+      "href": "services/cinematic-cgi.html"
     }
   ],
   "products": [
     {
       "icon": "rocket_launch",
       "title": { "ar": "ProjectLaunch™ عُمان", "en": "ProjectLaunch™ Oman" },
-      "desc": { "ar": "نظام الإطلاق البصري الكامل — موجّه للمطورين في السلطنة.", "en": "The complete visual launch system — directed at Oman developers." },
+      "desc": { "ar": "نظام الإطلاق البصري الكامل موجّه للمطورين في السلطنة.", "en": "The complete visual launch system directed at Oman developers." },
       "href": "solutions/project-launch-oman.html"
     },
     {
@@ -153,7 +167,7 @@
       },
       {
         "src": "assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg",
-        "caption": { "ar": "الأولى — النخيل", "en": "Al Oula — Al Nakheel" },
+        "caption": { "ar": "الأولى النخيل", "en": "Al Oula Al Nakheel" },
         "tag": { "ar": "إظهار معماري", "en": "Archviz" }
       },
       {
@@ -168,27 +182,27 @@
     "items": [
       {
         "title": { "ar": "تواجد محلي في مسقط", "en": "Local presence in Muscat" },
-        "desc": { "ar": "مكتب الخوض، السيب — تواصل مباشر ودعم ميداني للمطورين في السلطنة.", "en": "Al Khod, Al Seeb office — direct contact and on-ground support for Oman developers." }
+        "desc": { "ar": "مكتب الخوض، السيب: تواصل مباشر ودعم ميداني للمطورين في السلطنة.", "en": "Al Khod, Al Seeb office: direct contact and on ground support for Oman developers." }
       },
       {
         "title": { "ar": "خبرة سعودية مثبتة", "en": "Proven Saudi track record" },
-        "desc": { "ar": "مشاريع كبرى، معارض مؤسسية، وأنظمة إطلاق جاهزة للسوق.", "en": "Major projects, institutional exhibitions, and market-ready launch systems." }
+        "desc": { "ar": "مشاريع كبرى، معارض مؤسسية، وأنظمة إطلاق جاهزة للسوق.", "en": "Major projects, institutional exhibitions, and market ready launch systems." }
       },
       {
         "title": { "ar": "استوديو واحد لا تشتت", "en": "One studio, no fragmentation" },
-        "desc": { "ar": "رندر + فيلم + مجسم + منصة بهوية بصرية واحدة.", "en": "Render + film + maquette + platform under one visual language." }
+        "desc": { "ar": "رندر وفيلم ومجسم ومنصة بهوية بصرية واحدة.", "en": "Render, film, maquette, and platform under one visual language." }
       },
       {
-        "title": { "ar": "مصمم للمبيعات off-plan", "en": "Built for off-plan sales" },
-        "desc": { "ar": "مواد تقنع قبل الخرسانة — للمستثمر، الوسيط، والمشتري.", "en": "Assets that persuade before concrete — for investors, brokers, and buyers." }
+        "title": { "ar": "مصمم للمبيعات على المخطط", "en": "Built for off plan sales" },
+        "desc": { "ar": "مواد تقنع قبل الخرسانة للمستثمر، الوسيط، والمشتري.", "en": "Assets that persuade before concrete for investors, brokers, and buyers." }
       }
     ]
   },
   "office": {
     "heading": { "ar": "مكتب مسقط", "en": "Muscat office" },
     "address": {
-      "ar": "الخوض، السيب — مسقط، سلطنة عُمان",
-      "en": "Al Khod, Al Seeb — Muscat, Sultanate of Oman"
+      "ar": "الخوض، السيب، مسقط، سلطنة عُمان",
+      "en": "Al Khod, Al Seeb, Muscat, Sultanate of Oman"
     },
     "cr": "1460078",
     "phone": "+96891326735"

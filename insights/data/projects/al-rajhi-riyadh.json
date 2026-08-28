@@ -3,20 +3,20 @@
   "date": "2023-11",
   "image": "assets/projects/rendering/alrajhi3.jpeg",
   "developer": { "ar": "الراجحي", "en": "Al Rajhi" },
-  "projectName": { "ar": "مشروع سكني — الرياض", "en": "Residential Development — Riyadh" },
+  "projectName": { "ar": "مشروع سكني، الرياض", "en": "Residential Development, Riyadh" },
   "city": { "ar": "الرياض", "en": "Riyadh" },
   "category": { "ar": "مجسم ذكي · فيلم CGI · معرض", "en": "Smart maquette · CGI film · Gallery" },
   "title": {
-    "ar": "الراجحي — مجسم ذكي وفيلم سينمائي لإطلاق سكني في الرياض",
-    "en": "Al Rajhi — smart maquette & cinematic film for a Riyadh residential launch"
+    "ar": "الراجحي: مجسم ذكي وفيلم سينمائي لإطلاق سكني في الرياض",
+    "en": "Al Rajhi: smart maquette and cinematic film for a Riyadh residential launch"
   },
   "excerpt": {
-    "ar": "حزمة إطلاق متكاملة: مجسم تفاعلي، فيلم CGI، وتصميم بيئة عرض لأحد أبرز المطورين في العاصمة.",
-    "en": "Integrated launch package: interactive maquette, CGI film, and gallery environment for a leading capital-region developer."
+    "ar": "حزمة إطلاق متكاملة: مجسم تفاعلي، فيلم CGI، وبيئة عرض لأحد أبرز المطورين في العاصمة، بقصة واحدة من المدخل حتى اختيار الوحدة.",
+    "en": "An integrated launch pack: interactive maquette, CGI film, and gallery environment for a leading capital developer, one story from entrance to unit selection."
   },
   "metaDescription": {
-    "ar": "مشروع الراجحي السكني في الرياض — مجسم ذكي وأفلام CGI ومعرض مبيعات من Graphics House.",
-    "en": "Al Rajhi residential project in Riyadh — smart maquette, CGI films & sales gallery by Graphics House."
+    "ar": "مشروع الراجحي السكني في الرياض: مجسم ذكي وأفلام CGI ومعرض مبيعات من Graphics House ضمن ProjectLaunch.",
+    "en": "Al Rajhi residential project in Riyadh: smart maquette, CGI films, and sales gallery by Graphics House under ProjectLaunch."
   },
   "services": {
     "ar": ["مجسم ذكي", "فيلم CGI", "إظهار معماري", "ديكور صالة بيع"],
@@ -30,12 +30,152 @@
   "portfolioHref": "case-study-alrajhi-en.html",
   "body": {
     "ar": [
-      { "type": "p", "text": "مشاريع الراجحي العقارية تحتاج مواد بصرية تليق بحجم العلامة وثقة المشتري في سوق الرياض. دمجنا المجسم الذكي مع فيلم إطلاق سينمائي وبيئة عرض متسقة — حتى يقرأ الزائر قصة واحدة من المدخل حتى اختيار الوحدة." },
-      { "type": "p", "text": "النتيجة: نظام مبيعات بصري يخدم فرق المبيعات والوسطاء بمواد جاهزة للعرض أمام المستثمرين المحليين والدوليين." }
+      {
+        "type": "p",
+        "text": "مشاريع الراجحي العقارية في الرياض تُباع على ثقة العلامة قبل تفاصيل الوحدة. التحدي: مواد بصرية تليق بحجم المطور وتخدم فرق المبيعات والوسطاء في يوم الإطلاق، دون تضارب بين الشاشة والمجسم والحملة الرقمية."
+      },
+      {
+        "type": "h2",
+        "text": "المطلوب قبل أول يوم مبيعات"
+      },
+      {
+        "type": "p",
+        "text": "المطور يحتاج نظام عرض واحد: زائر يدخل الصالة، يفهم الموقع والكتلة خلال دقائق، ينتقل من المجسم إلى الفيلم إلى اختيار الوحدة بلا قفزات في الهوية أو الإضاءة. هذا الإطار هو ما نبنيه في [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html): [إظهار معماري](https://3dgraphicshouse.com/services/rendering.html)، [مجسم ذكي](https://3dgraphicshouse.com/services/maquettes.html)، [فيلم CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html)، و[ديكور صالة](https://3dgraphicshouse.com/services/branding.html) تحت لغة بصرية واحدة."
+      },
+      {
+        "type": "h2",
+        "text": "ما نفّذته Graphics House"
+      },
+      {
+        "type": "p",
+        "text": "دمجنا مجسماً ذكياً تفاعلياً مع فيلم إطلاق سينمائي وبيئة عرض متسقة. الزوايا والإضاءة والمواد مُقفلة عبر الرندر والفيلم والمجسم، حتى يقرأ الزائر قصة واحدة من المدخل حتى نقطة البيع. مسار الصالة صُمم ليعمل مع فرق المبيعات: شاشة بطل، مجسم، ثم تفاصيل الوحدة."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "مجسم ذكي يوضح الكتلة والمراحل من مسافة الصالة",
+          "فيلم CGI قصير يشرح القيمة للمستثمر في أقل من دقيقتين",
+          "رندرات خارجية وداخلية متسقة للويب والوسيط والطباعة",
+          "ديكور صالة يوحّد الشاشات واللوحات والمجسم"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "النتيجة"
+      },
+      {
+        "type": "p",
+        "text": "نظام مبيعات بصري جاهز للعرض أمام المستثمرين المحليين والدوليين. الوسطاء حصلوا على مواد معتمدة بلا نسخ متضاربة، وفرق المبيعات اختبرت سيناريو عرض قبل الافتتاح. بعد قفل الأصول يمكن تضخيم الحملة عبر [Beesmotion](https://beesmotion.com) دون إعادة إنتاج المشاهد الأساسية."
+      },
+      {
+        "type": "p",
+        "text": "لقراءة إطار الإطلاق في الرياض راجع [إطلاق المشاريع للمطورين السعوديين](https://3dgraphicshouse.com/insights/articles/project-launch-saudi-developers.html) و[الرياض](https://3dgraphicshouse.com/locations/riyadh.html). المواد التكميلية يمكن إنتاجها عبر [Dot4Life production](https://3dgraphicshouse.com/services/production.html) بعد اعتماد المشاهد."
+      }
     ],
     "en": [
-      { "type": "p", "text": "Al Rajhi real estate projects demand visual assets matching brand scale and buyer trust in the Riyadh market. We combined a smart maquette with a cinematic launch film and a coherent gallery environment — one story from entrance to unit selection." },
-      { "type": "p", "text": "The result: a visual sales system ready for consultants and brokers presenting to local and international investors." }
+      {
+        "type": "p",
+        "text": "Al Rajhi real estate in Riyadh sells on brand trust before unit detail. The challenge: visual assets that match developer scale and serve sales teams and brokers on launch day, without conflict between screen, maquette, and digital campaign."
+      },
+      {
+        "type": "h2",
+        "text": "What was needed before day one of sales"
+      },
+      {
+        "type": "p",
+        "text": "The developer needed one presentation system: a visitor enters the gallery, grasps site and massing in minutes, and moves from maquette to film to unit selection without jumps in identity or lighting. That is the frame we build in [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html): [archviz](https://3dgraphicshouse.com/services/rendering-en.html), [smart maquette](https://3dgraphicshouse.com/services/maquettes-en.html), [CGI film](https://3dgraphicshouse.com/services/cinematic-cgi-en.html), and [gallery design](https://3dgraphicshouse.com/services/branding-en.html) under one visual language."
+      },
+      {
+        "type": "h2",
+        "text": "What Graphics House delivered"
+      },
+      {
+        "type": "p",
+        "text": "We combined an interactive smart maquette with a cinematic launch film and a coherent gallery environment. Angles, lighting, and materials were locked across render, film, and maquette so visitors read one story from entrance to point of sale. The gallery path was designed for sales teams: hero screen, maquette, then unit detail."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Smart maquette clarifying massing and phases from gallery distance",
+          "Short CGI film explaining value to investors in under two minutes",
+          "Consistent exterior and interior stills for web, brokers, and print",
+          "Gallery décor unifying screens, boards, and maquette"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Outcome"
+      },
+      {
+        "type": "p",
+        "text": "A visual sales system ready for local and international investors. Brokers received approved assets without conflicting copies, and sales teams rehearsed the presentation path before opening. After assets lock, campaigns can amplify via [Beesmotion](https://beesmotion.com) without re-producing core scenes."
+      },
+      {
+        "type": "p",
+        "text": "For the Riyadh launch frame see [project launch for Saudi developers](https://3dgraphicshouse.com/insights/articles/project-launch-saudi-developers-en.html) and [Riyadh](https://3dgraphicshouse.com/locations/riyadh-en.html). Supporting media can be produced via [Dot4Life production](https://3dgraphicshouse.com/services/production-en.html) after scene approval."
+      }
     ]
-  }
+  },
+  "keywords": {
+    "ar": {
+      "short": ["الراجحي الرياض", "مجسم ذكي", "فيلم CGI", "صالة بيع"],
+      "long": [
+        "إطلاق سكني الراجحي الرياض",
+        "مجسم ذكي وفيلم سينمائي Graphics House",
+        "ProjectLaunch صالة مبيعات الرياض",
+        "إظهار معماري مطور عقاري السعودية"
+      ]
+    },
+    "en": {
+      "short": ["Al Rajhi Riyadh", "smart maquette", "CGI film", "sales gallery"],
+      "long": [
+        "Al Rajhi residential launch Riyadh",
+        "smart maquette cinematic film Graphics House",
+        "ProjectLaunch Riyadh sales gallery",
+        "archviz Saudi developer launch"
+      ]
+    }
+  },
+  "faq": [
+    {
+      "q": {
+        "ar": "ما الذي ميّز إطلاق الراجحي بصرياً؟",
+        "en": "What made the Al Rajhi launch visually distinct?"
+      },
+      "a": {
+        "ar": "دمج المجسم الذكي والفيلم السينمائي وبيئة الصالة في نظام واحد بإضاءة ومواد مقفلة، لا ملفات منفصلة.",
+        "en": "Combining smart maquette, cinematic film, and gallery environment in one system with locked lighting and materials, not separate files."
+      }
+    },
+    {
+      "q": {
+        "ar": "أي خدمات Graphics House شاركت في المشروع؟",
+        "en": "Which Graphics House services were involved?"
+      },
+      "a": {
+        "ar": "[مجسم ذكي](https://3dgraphicshouse.com/services/maquettes.html)، [فيلم CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html)، [إظهار معماري](https://3dgraphicshouse.com/services/rendering.html)، و[ديكور صالة](https://3dgraphicshouse.com/services/branding.html) ضمن [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html).",
+        "en": "[Smart maquette](https://3dgraphicshouse.com/services/maquettes-en.html), [CGI film](https://3dgraphicshouse.com/services/cinematic-cgi-en.html), [archviz](https://3dgraphicshouse.com/services/rendering-en.html), and [gallery design](https://3dgraphicshouse.com/services/branding-en.html) under [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html)."
+      }
+    },
+    {
+      "q": {
+        "ar": "كيف تخدم المواد فرق المبيعات والوسطاء؟",
+        "en": "How do the assets serve sales teams and brokers?"
+      },
+      "a": {
+        "ar": "مسار عرض معتمد: شاشة بطل، مجسم، تفاصيل وحدة، مع نسخة واحدة للوسيط والصالة دون تضارب.",
+        "en": "An approved presentation path: hero screen, maquette, unit detail, with one version for brokers and gallery without conflict."
+      }
+    },
+    {
+      "q": {
+        "ar": "أين أرى المشروع في المحفظة؟",
+        "en": "Where can I see the project in the portfolio?"
+      },
+      "a": {
+        "ar": "في [معرض الأعمال](https://3dgraphicshouse.com/case-study-alrajhi-en.html) وصفحة [الرياض](https://3dgraphicshouse.com/locations/riyadh.html).",
+        "en": "In the [portfolio case study](https://3dgraphicshouse.com/case-study-alrajhi-en.html) and the [Riyadh location page](https://3dgraphicshouse.com/locations/riyadh-en.html)."
+      }
+    }
+  ]
 }

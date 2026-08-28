@@ -4,15 +4,25 @@
   "heroImage": "assets/projects/rendering/alrajhi3.jpeg",
   "title": {
     "ar": "إظهار معماري وأنظمة إطلاق بصرية للمطورين في الرياض",
-    "en": "Architectural Visualization & Visual Launch Systems in Riyadh"
+    "en": "Architectural Visualization and Visual Launch Systems in Riyadh"
   },
   "subtitle": {
-    "ar": "نخدم مطوري العاصمة والمشاريع الضخمة في الرياض — رندر فوتوريالستي، مجسمات ذكية، أفلام CGI، ومنصات مبيعات تفاعلية من استوديو واحد متكامل.",
-    "en": "We serve capital-region developers and mega-projects in Riyadh — photorealistic archviz, smart maquettes, CGI films, and interactive sales platforms from one integrated studio."
+    "ar": "نخدم مطوري العاصمة والمشاريع الضخمة في الرياض برندر فوتوريالستي، مجسمات ذكية، أفلام CGI، ومنصات مبيعات تفاعلية من استوديو واحد متكامل يفهم سرعة قرار السوق.",
+    "en": "We serve capital region developers and mega projects in Riyadh with photorealistic archviz, smart maquettes, CGI films, and interactive sales platforms from one integrated studio that understands how fast this market decides."
   },
   "metaDescription": {
-    "ar": "استوديو إظهار معماري للمطورين في الرياض: رندرات، مجسمات ذكية، أفلام CGI، GrowthLaunch وProjectLaunch — Graphics House.",
-    "en": "Archviz studio for Riyadh developers: renders, smart maquettes, CGI films, GrowthLaunch & ProjectLaunch — Graphics House."
+    "ar": "استوديو إظهار معماري للمطورين في الرياض: رندرات، مجسمات ذكية، أفلام CGI، ونظام ProjectLaunch من Graphics House. مواد بصرية جاهزة لصالات البيع والمبيعات على المخطط.",
+    "en": "Archviz studio for Riyadh developers: renders, smart maquettes, CGI films, and ProjectLaunch from Graphics House. Visual assets built for sales galleries and off plan conversion."
+  },
+  "keywords": {
+    "ar": {
+      "short": ["إظهار معماري الرياض", "رندر معماري", "مجسمات ذكية", "إطلاق بصري"],
+      "long": ["استوديو إظهار معماري للمطورين في الرياض", "رندر فوتوريالستي للأبراج السكنية", "مجسمات ذكية لصالات البيع", "أفلام CGI للمشاريع العقارية", "منصات مبيعات تفاعلية off plan"]
+    },
+    "en": {
+      "short": ["Riyadh archviz", "architectural rendering", "smart maquettes", "visual launch"],
+      "long": ["architectural visualization studio Riyadh", "photorealistic rendering residential towers", "smart maquettes sales gallery", "CGI films real estate launch", "interactive off plan sales platforms"]
+    }
   },
   "narrative": {
     "title": {
@@ -21,17 +31,21 @@
     },
     "paragraphs": [
       {
-        "ar": "الرياض سوق قرارات كبير: مطورون، مستثمرون، ووسطاء يقيّمون المشروع في دقائق. المواد البصرية هنا ليست ترفاً — بل أداة مبيعات قبل الخرسانة. نخدم مشاريع العاصمة بمنهج ProjectLaunch™ وخبرة مثبتة في أبراج ومجمعات سكنية.",
-        "en": "Riyadh is a high-stakes decision market: developers, investors, and brokers judge a project in minutes. Visual assets here are not decoration — they are a sales tool before concrete. We serve capital projects with the ProjectLaunch™ method and proven work on towers and residential communities."
+        "ar": "الرياض سوق قرارات كبير: مطورون، مستثمرون، ووسطاء يقيّمون المشروع في دقائق. المواد البصرية هنا ليست ترفاً بل أداة مبيعات قبل الخرسانة. نخدم مشاريع العاصمة بمنهج [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) وخبرة مثبتة في أبراج ومجمعات سكنية مثل مشروع [الراجحي](portfolio.html) و[عنان إسكان](insights/projects/anan-eskan-riyadh.html).",
+        "en": "Riyadh is a high stakes decision market: developers, investors, and brokers judge a project in minutes. Visual assets here are not decoration but a sales tool before concrete. We serve capital projects with the [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) method and proven work on towers and communities such as [Al Rajhi](portfolio.html) and [Anan Eskan](insights/projects/anan-eskan-riyadh.html)."
       },
       {
-        "ar": "من إنتاج مدعوم بمقر جدة وفرق ميدانية في الرياض، نقدّم رندر وفيلم ومجسم ومنصة تفاعلية بهوية واحدة — لتقصير زمن الشرح ورفع جاهزية صالة البيع.",
-        "en": "With production backed by Jeddah HQ and field support in Riyadh, we deliver render, film, maquette, and interactive platform under one identity — shortening explanation time and raising sales-gallery readiness."
+        "ar": "من إنتاج مدعوم بمقر [جدة](locations/jeddah.html) وفرق ميدانية في الرياض، نقدّم [رندر](services/rendering.html) وفيلم [سينمائي](services/cinematic-cgi.html) ومجسم ومنصة تفاعلية بهوية واحدة لتقصير زمن الشرح ورفع جاهزية صالة البيع. للمشاريع التي تحتاج استراتيجية إطلاق أوسع، نتعاون مع [Turriva](https://turriva.com) على تخطيط الحملة والمحتوى.",
+        "en": "With production backed by [Jeddah](locations/jeddah-en.html) HQ and field support in Riyadh, we deliver [rendering](services/rendering.html), [cinematic CGI](services/cinematic-cgi.html), maquette, and interactive platform under one identity to shorten explanation time and raise sales gallery readiness. For launches that need broader campaign strategy, we collaborate with [Turriva](https://turriva.com) on planning and content."
+      },
+      {
+        "ar": "نصيحة عملية للمطور في الرياض: ابدأ بثلاث مشاهد اعتماد خارجية وداخلية واحدة قبل توسيع الحزمة. ركّز على المساحات التي يقيسها المشتري فعلاً: المطبخ، غرفة المعيشة، والواجهة من الشارع الرئيسي. راجع [دليل جاهزية الإطلاق البصري](insights/articles/saudi-offplan-visual-readiness.html) قبل تحديد موعد صالة البيع.",
+        "en": "Practical advice for Riyadh developers: start with three approval views, one exterior and two interiors, before expanding the package. Focus on spaces buyers actually measure: kitchen, living room, and the facade from the main street. Review our [off plan visual readiness guide](insights/articles/saudi-offplan-visual-readiness-en.html) before locking your sales gallery opening date."
       }
     ]
   },
   "stats": [
-    { "value": "Capital", "label": { "ar": "تغطية الرياض والعاصمة", "en": "Riyadh & capital coverage" } },
+    { "value": "Capital", "label": { "ar": "تغطية الرياض والعاصمة", "en": "Riyadh and capital coverage" } },
     { "value": "15+", "label": { "ar": "سنة خبرة", "en": "Years of experience" } },
     { "value": "200+", "label": { "ar": "مشروع بصري", "en": "Visual projects" } },
     { "value": "SAR 2B+", "label": { "ar": "قيمة مشاريع مُظهَرة", "en": "Value of projects visualized" } }
@@ -42,16 +56,16 @@
       {
         "icon": "apartment",
         "title": { "ar": "أبراج سكنية", "en": "Residential towers" },
-        "desc": { "ar": "إظهار وإطلاق بصري للوحدات والمبيعات off-plan.", "en": "Visualization and visual launch for units and off-plan sales." }
+        "desc": { "ar": "إظهار وإطلاق بصري للوحدات والمبيعات على المخطط.", "en": "Visualization and visual launch for units and off plan sales." }
       },
       {
         "icon": "holiday_village",
         "title": { "ar": "مجمعات سكنية", "en": "Gated communities" },
-        "desc": { "ar": "مخططات، مشاهد جوية، ومواد وسيط.", "en": "Master plans, aerials, and broker-ready assets." }
+        "desc": { "ar": "مخططات، مشاهد جوية، ومواد جاهزة للوسطاء.", "en": "Master plans, aerials, and broker ready assets." }
       },
       {
         "icon": "domain",
-        "title": { "ar": "مختلط وتجاري", "en": "Mixed-use & commercial" },
+        "title": { "ar": "مختلط وتجاري", "en": "Mixed use and commercial" },
         "desc": { "ar": "هوية وأفلام لصالة البيع والمستثمر.", "en": "Identity and films for the sales floor and investors." }
       },
       {
@@ -88,13 +102,13 @@
   },
   "servicesLead": {
     "ar": "إنتاج بصري متكامل لمشاريع الأبراج السكنية، المجمعات السكنية، والوجهات المختلطة في العاصمة ومنطقة الرياض.",
-    "en": "End-to-end visual production for residential towers, gated communities, and mixed-use destinations across Riyadh and the capital region."
+    "en": "End to end visual production for residential towers, gated communities, and mixed use destinations across Riyadh and the capital region."
   },
   "coreServices": [
     {
       "icon": "smart_display",
-      "title": { "ar": "العروض التفاعلية والبرمجيات الخاصة", "en": "Interactive Presentations & Custom Software" },
-      "desc": { "ar": "منصات تفاعلية وبرمجيات مخصصة لصالات البيع في الرياض — جولات افتراضية وتطبيقات مبيعات.", "en": "Custom interactive platforms & sales software for Riyadh galleries — virtual tours and sales apps." },
+      "title": { "ar": "العروض التفاعلية والبرمجيات الخاصة", "en": "Interactive Presentations and Custom Software" },
+      "desc": { "ar": "منصات تفاعلية وبرمجيات مخصصة لصالات البيع في الرياض: جولات افتراضية وتطبيقات مبيعات.", "en": "Custom interactive platforms and sales software for Riyadh galleries: virtual tours and sales apps." },
       "href": "interactive-experiences.html"
     },
     {
@@ -107,20 +121,20 @@
       "icon": "slow_motion_video",
       "title": { "ar": "إنتاج سينمائي CGI", "en": "Cinematic CGI" },
       "desc": { "ar": "أفلام إطلاق للمشاريع الكبرى والحملات الإعلامية.", "en": "Launch films for major developments and media campaigns." },
-      "href": "services/animation.html"
+      "href": "services/cinematic-cgi.html"
     }
   ],
   "products": [
     {
       "icon": "query_stats",
       "title": { "ar": "GrowthLaunch™", "en": "GrowthLaunch™" },
-      "desc": { "ar": "نظام توليد العملاء والمبيعات للمشاريع قيد الإطلاق.", "en": "Lead generation & sales system for projects going to market." },
+      "desc": { "ar": "نظام توليد العملاء والمبيعات للمشاريع قيد الإطلاق.", "en": "Lead generation and sales system for projects going to market." },
       "href": "solutions/growth-launch.html"
     },
     {
       "icon": "rocket_launch",
       "title": { "ar": "ProjectLaunch™", "en": "ProjectLaunch™" },
-      "desc": { "ar": "إطلاق متكامل: بصري + تسويق + صالة بيع للمطورين.", "en": "Integrated launch: visual + marketing + sales gallery." },
+      "desc": { "ar": "إطلاق متكامل: بصري وتسويق وصالة بيع للمطورين.", "en": "Integrated launch: visual, marketing, and sales gallery." },
       "href": "solutions/project-launch.html"
     },
     {
@@ -134,28 +148,28 @@
     "title": { "ar": "لماذا Graphics House في الرياض؟", "en": "Why Graphics House for Riyadh?" },
     "items": [
       {
-        "title": { "ar": "خبرة مشاريع العاصمة", "en": "Capital-region project experience" },
-        "desc": { "ar": "مشاريع سكنية وتجارية كبرى في الرياض — من الرندر حتى صالة البيع.", "en": "Major residential & commercial work in Riyadh — from renders through sales gallery." }
+        "title": { "ar": "خبرة مشاريع العاصمة", "en": "Capital region project experience" },
+        "desc": { "ar": "مشاريع سكنية وتجارية كبرى في الرياض من الرندر حتى صالة البيع.", "en": "Major residential and commercial work in Riyadh from renders through sales gallery." }
       },
       {
-        "title": { "ar": "فرق ميدانية في الرياض", "en": "On-the-ground in Riyadh" },
-        "desc": { "ar": "زيارات ميدانية، ورش اعتماد، ودعم صالات البيع في العاصمة.", "en": "Site visits, approval workshops, and sales-gallery support in the capital." }
+        "title": { "ar": "فرق ميدانية في الرياض", "en": "On the ground in Riyadh" },
+        "desc": { "ar": "زيارات ميدانية، ورش اعتماد، ودعم صالات البيع في العاصمة.", "en": "Site visits, approval workshops, and sales gallery support in the capital." }
       },
       {
         "title": { "ar": "المنتجات الثلاثة من استوديو واحد", "en": "All three systems, one studio" },
-        "desc": { "ar": "GrowthLaunch وProjectLaunch وBrandScale — حسب مرحلة مشروعك.", "en": "GrowthLaunch, ProjectLaunch & BrandScale — matched to your project stage." }
+        "desc": { "ar": "GrowthLaunch وProjectLaunch وBrandScale حسب مرحلة مشروعك.", "en": "GrowthLaunch, ProjectLaunch, and BrandScale matched to your project stage." }
       },
       {
         "title": { "ar": "لغة السوق السعودي", "en": "Saudi market fluency" },
-        "desc": { "ar": "نفهم off-plan، الوسطاء، ومعدلات التحويل في سوق الرياض.", "en": "We understand off-plan, brokers, and conversion dynamics in the Riyadh market." }
+        "desc": { "ar": "نفهم المبيعات على المخطط، الوسطاء، ومعدلات التحويل في سوق الرياض.", "en": "We understand off plan sales, brokers, and conversion dynamics in the Riyadh market." }
       }
     ]
   },
   "office": {
     "heading": { "ar": "خدماتنا في الرياض", "en": "Serving Riyadh" },
     "address": {
-      "ar": "تغطية مشاريع الرياض والعاصمة — فرق ميدانية + إنتاج من مقر جدة",
-      "en": "Riyadh & capital-region coverage — field teams + production from Jeddah HQ"
+      "ar": "تغطية مشاريع الرياض والعاصمة: فرق ميدانية وإنتاج من مقر جدة",
+      "en": "Riyadh and capital region coverage: field teams and production from Jeddah HQ"
     },
     "cr": "4030502306",
     "phone": "+966502786513"

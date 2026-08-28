@@ -445,8 +445,8 @@ function projectSchema(project, lang) {
   const isEn = lang === 'en';
   const L = (key) => (isEn ? key.en : key.ar);
   const slug = `${project.slug}${isEn ? '-en' : ''}.html`;
-  return JSON.stringify({
-    '@context': 'https://schema.org',
+  const pageUrl = `https://3dgraphicshouse.com/insights/projects/${slug}`;
+  const articleNode = {
     '@type': 'Article',
     headline: L(project.title),
     description: projectDescription(project, lang),
@@ -458,9 +458,14 @@ function projectSchema(project, lang) {
       name: 'Graphics House',
       logo: { '@type': 'ImageObject', url: 'https://3dgraphicshouse.com/assets/favicon/og-image.png' },
     },
-    mainEntityOfPage: `https://3dgraphicshouse.com/insights/projects/${slug}`,
+    mainEntityOfPage: pageUrl,
     inLanguage: isEn ? 'en' : 'ar',
-  });
+  };
+  const faqNode = faqPageSchema(project.faq, lang, pageUrl);
+  if (faqNode) {
+    return JSON.stringify({ '@context': 'https://schema.org', '@graph': [articleNode, faqNode] });
+  }
+  return JSON.stringify({ '@context': 'https://schema.org', ...articleNode });
 }
 
 function projectCard(project, lang, p) {
@@ -1006,6 +1011,7 @@ ${header}
       ${videoBlock}
       <div class="gh-article-body-wrap">
         ${bodyHtml}
+        ${faqSectionHtml(project.faq, lang)}
         ${gallery ? `<div class="gh-ins-proj-gallery">${gallery}</div>` : ''}
         <div class="gh-article-footer-cta">
           <a href="${portfolioHref}" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'View in Portfolio' : 'في معرض الأعمال'}</a>
@@ -1085,8 +1091,8 @@ ${header}
     <div class="gh-tool-main">
         <h1>${isEn ? 'Visual Launch Readiness Checklist' : 'قائمة جاهزية الإطلاق البصري'}</h1>
         <p class="gh-tool-intro">${isEn
-    ? 'Use this checklist before your launch. Track progress, then print or share with your team.'
-    : 'استخدم هذه القائمة قبل الإطلاق. تتبّع التقدم ثم اطبعها أو شاركها مع فريقك.'}</p>
+    ? 'Use this checklist before your launch window. Track progress against the 12 essentials, then print or share with marketing, sales, and your archviz partner. Part of our <a href="../articles/visual-launch-checklist-guide-en.html">visual launch guide</a>.'
+    : 'استخدم هذه القائمة قبل نافذة الإطلاق. تتبّع التقدم في 12 بنداً، ثم اطبعها أو شاركها مع التسويق والمبيعات وشريك الإظهار. جزء من <a href="../articles/visual-launch-checklist-guide.html">دليل الإطلاق البصري</a>.'}</p>
         <div class="gh-progress-bar"><span></span></div>
         <ul class="gh-checklist" id="ghLaunchChecklist">${listHtml}</ul>
         <div class="gh-tool-actions gh-no-print">
@@ -1130,8 +1136,8 @@ ${header}
     <div class="gh-tool-main">
         <h1>${isEn ? 'Which Solution Fits Your Project?' : 'أي حل يناسب مشروعك؟'}</h1>
         <p class="gh-tool-intro">${isEn
-    ? 'Answer 7 quick questions. We will recommend the Graphics House solution that best matches your stage, goals, and visual needs.'
-    : 'أجب على 7 أسئلة سريعة. سنقترح حل Graphics House الأنسب لمرحلتك وأهدافك واحتياجاتك البصرية.'}</p>
+    ? 'Answer seven quick questions about your project stage, sales goals, and visual needs. We will recommend ProjectLaunch™, GrowthLaunch™, or BrandScale™ with links to relevant services.'
+    : 'أجب على سبعة أسئلة عن مرحلة مشروعك وأهداف المبيعات واحتياجاتك البصرية. سنقترح ProjectLaunch™ أو GrowthLaunch™ أو BrandScale™ مع روابط للخدمات المناسبة.'}</p>
         <div id="ghSolutionFinder">
           <p class="gh-quiz-progress"></p>
           <div class="gh-quiz-steps"></div>
@@ -1210,8 +1216,8 @@ ${header}
     <div class="gh-tool-main">
         <h1>${isEn ? 'Visual Project Brief Template' : 'نموذج Brief للمشروع البصري'}</h1>
         <p class="gh-tool-intro">${isEn
-    ? 'Complete this form before your strategy session. Print it or copy the details into your enquiry.'
-    : 'أكمل هذا النموذج قبل جلسة الاستراتيجية. اطبعه أو انسخ التفاصيل في استفسارك.'}</p>
+    ? 'Complete this brief before your first strategy session with Graphics House. It covers scope, audience, and deliverables so we can align on timeline and production. Download the PDF or submit via our <a href="../../contact-us-en.html">contact form</a>.'
+    : 'أكمل هذا النموذج قبل أول جلسة استراتيجية مع جرافيكس هاوس. يغطي النطاق والجمهور والمخرجات لمواءمة الجدول والإنتاج. حمّل PDF أو أرسل عبر <a href="../../contact-us.html">نموذج التواصل</a>.'}</p>
         <form class="gh-brief-form" onsubmit="return false;">
           ${fieldsHtml}
         </form>

@@ -7,16 +7,16 @@
   "city": { "ar": "المملكة العربية السعودية", "en": "Saudi Arabia" },
   "category": { "ar": "CGI سينمائي · وحدات سكنية", "en": "Cinematic CGI · Residential" },
   "title": {
-    "ar": "الأولى لتطوير النخيل — تصور سينمائي لوحدات سكنية",
-    "en": "Al-Owla — cinematic visualization for residential units"
+    "ar": "الأولى لتطوير النخيل: تصور سينمائي لوحدات سكنية",
+    "en": "Al-Owla: cinematic visualization for residential units"
   },
   "excerpt": {
-    "ar": "رندر ووحدات سكنية بإضاءة طبيعية لحملة إطلاق مطور عقاري راسخ.",
-    "en": "Renders and residential unit visuals with natural lighting for an established developer launch."
+    "ar": "رندر ووحدات سكنية بإضاءة طبيعية لحملة إطلاق مطور عقاري راسخ، تُظهر جودة المعيشة والتفاصيل المعمارية لا الواجهة وحدها.",
+    "en": "Renders and residential unit visuals with natural lighting for an established developer launch, showing quality of living and architectural detail, not façade alone."
   },
   "metaDescription": {
-    "ar": "مشروع الأولى لتطوير النخيل — إظهار معماري سينمائي من Graphics House.",
-    "en": "Al-Owla Al Nakheel project — cinematic archviz by Graphics House."
+    "ar": "مشروع الأولى لتطوير النخيل: إظهار معماري سينمائي ووحدات سكنية من Graphics House ضمن إطلاق ProjectLaunch.",
+    "en": "Al-Owla Al Nakheel project: cinematic archviz and residential units by Graphics House under a ProjectLaunch rollout."
   },
   "services": {
     "ar": ["رندر وحدات", "خارجي", "فيلم قصير"],
@@ -28,12 +28,144 @@
   "portfolioHref": "portfolio.html",
   "body": {
     "ar": [
-      { "type": "p", "text": "الأولى لتطوير النخيل من المجموعات العقارية المعروفة في السوق السعودي. المشروع يحتاج مواد تُظهر جودة المعيشة والتفاصيل المعمارية — لا مجرد واجهة برج." },
-      { "type": "p", "text": "نفّذنا مشاهد CGI تبرز الوحدات، المساحات المشتركة، والهوية البصرية للمشروع عبر قنوات التسويق وصالة البيع." }
+      {
+        "type": "p",
+        "text": "الأولى لتطوير النخيل من المجموعات العقارية المعروفة في السوق السعودي. المشروع يحتاج مواد تُظهر جودة المعيشة والتفاصيل المعمارية، لا مجرد واجهة برج. المشتري يريد أن يرى الوحدة والمساحات المشتركة قبل أن يقرأ قائمة المواصفات."
+      },
+      {
+        "type": "h2",
+        "text": "التحدي"
+      },
+      {
+        "type": "p",
+        "text": "حملة إطلاق لمطور راسخ تتطلب اتساقاً بين [الرندر](https://3dgraphicshouse.com/services/rendering.html) و[الفيلم القصير](https://3dgraphicshouse.com/services/cinematic-cgi.html) والهوية البصرية. بدون lookdev مقفل تبدو الوحدات وكأنها من مشاريع مختلفة على الشاشة والطباعة."
+      },
+      {
+        "type": "h2",
+        "text": "ما نفّذته Graphics House"
+      },
+      {
+        "type": "p",
+        "text": "نفّذنا مشاهد CGI تبرز الوحدات والمساحات المشتركة والهوية البصرية للمشروع عبر قنوات التسويق وصالة البيع. الإضاءة الطبيعية والمواد مضبوطة لقراءة واقعية في الحملة الرقمية والمعرض."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "رندرات وحدات سكنية بمواصفات تشطيب واضحة",
+          "مشاهد خارجية بإضاءة نهارية طبيعية",
+          "فيلم قصير يربط الوحدة بالمساحات المشتركة",
+          "أصول جاهزة للويب والوسيط والصالة"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "النتيجة"
+      },
+      {
+        "type": "p",
+        "text": "المواد أصبحت جاهزة لإطلاق متسق عبر القنوات. للمشاريع المختلطة الكبرى من نفس المطور راجع سياق [باب جدة](https://3dgraphicshouse.com/insights/reports/jeddah-gate-visual-report.html) كقراءة سوقية منفصلة. بعد قفل الأصول يمكن التضخيم عبر [Beesmotion](https://beesmotion.com) والمواد التكميلية عبر [Dot4Life production](https://3dgraphicshouse.com/services/production.html)."
+      }
     ],
     "en": [
-      { "type": "p", "text": "Al-Owla is a recognized real estate group in the Saudi market. The project needed assets showing quality of living and architectural detail — not just a tower façade." },
-      { "type": "p", "text": "We produced CGI sequences highlighting units, shared amenities, and project identity across marketing channels and the sales gallery." }
+      {
+        "type": "p",
+        "text": "Al-Owla is a recognized real estate group in the Saudi market. The project needed assets showing quality of living and architectural detail, not just a tower façade. Buyers want to see the unit and shared amenities before parsing specification lists."
+      },
+      {
+        "type": "h2",
+        "text": "The challenge"
+      },
+      {
+        "type": "p",
+        "text": "A launch campaign for an established developer requires consistency between [renders](https://3dgraphicshouse.com/services/rendering-en.html), [short film](https://3dgraphicshouse.com/services/cinematic-cgi-en.html), and visual identity. Without locked lookdev, units look like different projects on screen and print."
+      },
+      {
+        "type": "h2",
+        "text": "What Graphics House delivered"
+      },
+      {
+        "type": "p",
+        "text": "We produced CGI sequences highlighting units, shared amenities, and project identity across marketing channels and the sales gallery. Natural lighting and materials were tuned for realistic reading in digital campaigns and exhibitions."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Residential unit renders with clear finish specifications",
+          "Exterior scenes with natural daylight",
+          "Short film linking unit to shared amenities",
+          "Assets ready for web, brokers, and gallery"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Outcome"
+      },
+      {
+        "type": "p",
+        "text": "Assets became ready for a consistent launch across channels. For larger mixed projects from the same developer see [Jeddah Gate](https://3dgraphicshouse.com/insights/reports/jeddah-gate-visual-report-en.html) as separate market context. After assets lock, amplify via [Beesmotion](https://beesmotion.com) and supporting media via [Dot4Life production](https://3dgraphicshouse.com/services/production-en.html)."
+      }
     ]
-  }
+  },
+  "keywords": {
+    "ar": {
+      "short": ["الأولى النخيل", "رندر وحدات", "CGI سكني", "إطلاق عقاري"],
+      "long": [
+        "إظهار معماري الأولى لتطوير النخيل",
+        "رندر وحدات سكنية Graphics House",
+        "فيلم CGI إطلاق سكني السعودية",
+        "ProjectLaunch مطور راسخ"
+      ]
+    },
+    "en": {
+      "short": ["Al-Owla Nakheel", "unit renders", "residential CGI", "developer launch"],
+      "long": [
+        "Al-Owla Nakheel archviz",
+        "residential unit render Graphics House",
+        "CGI film Saudi residential launch",
+        "ProjectLaunch established developer"
+      ]
+    }
+  },
+  "faq": [
+    {
+      "q": {
+        "ar": "ما الذي ركّز عليه الإظهار؟",
+        "en": "What did the visualization focus on?"
+      },
+      "a": {
+        "ar": "جودة المعيشة، الوحدات، والمساحات المشتركة بإضاءة طبيعية، لا واجهة برج معزولة.",
+        "en": "Quality of living, units, and shared amenities with natural lighting, not an isolated tower façade."
+      }
+    },
+    {
+      "q": {
+        "ar": "أي خدمات شاركت في المشروع؟",
+        "en": "Which services were involved?"
+      },
+      "a": {
+        "ar": "[رندر وحدات](https://3dgraphicshouse.com/services/rendering.html)، [فيلم CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html)، ومواد إطلاق ضمن [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html).",
+        "en": "[Unit renders](https://3dgraphicshouse.com/services/rendering-en.html), [CGI film](https://3dgraphicshouse.com/services/cinematic-cgi-en.html), and launch assets under [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html)."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يوجد سياق سوقي لمشاريع الأولى الأخرى؟",
+        "en": "Is there market context for other Al-Owla projects?"
+      },
+      "a": {
+        "ar": "نعم، [تقرير باب جدة](https://3dgraphicshouse.com/insights/reports/jeddah-gate-visual-report.html) كقراءة سوقية لمشروع مختلط واسع.",
+        "en": "Yes, the [Jeddah Gate report](https://3dgraphicshouse.com/insights/reports/jeddah-gate-visual-report-en.html) as market reading for a large mixed project."
+      }
+    },
+    {
+      "q": {
+        "ar": "كيف أبدأ مشروعاً مشابهاً؟",
+        "en": "How do I start a similar project?"
+      },
+      "a": {
+        "ar": "استخدم [موجز المشروع](https://3dgraphicshouse.com/insights/tools/project-brief.html) و[قائمة الإطلاق](https://3dgraphicshouse.com/insights/tools/launch-checklist.html) قبل التعاقد.",
+        "en": "Use the [project brief](https://3dgraphicshouse.com/insights/tools/project-brief-en.html) and [launch checklist](https://3dgraphicshouse.com/insights/tools/launch-checklist-en.html) before contracting."
+      }
+    }
+  ]
 }

@@ -20,108 +20,108 @@ const PROOF = 'assets/news/mwl-ramadan-forum-maquette-vip.jpeg';
 
 const COPY = {
   en: {
-    title: 'Institutional Events Under Time Pressure | ProjectLaunch™ | Graphics House',
+    title: 'Institutional Event Visual Systems | ProjectLaunch™ | Graphics House',
     description:
-      'Graphics House owns décor and interactive display ideas — and executes them fully under severe timelines. ProjectLaunch™ for forums, exhibitions, and protocol VIP walkthroughs in Saudi Arabia.',
+      'Forums and protocol exhibitions need one visual briefing system, not scattered vendors. Graphics House owns concept and build: interactive maquettes, screens, spatial install. Saudi Arabia and GCC.',
     kicker: 'ProjectLaunch™ · Institutional events',
-    h1: 'We own the idea.<br>We ship it under pressure.',
-    lead: 'When the guest path includes a Secretary General and multinational media, décor is not decoration — it is the briefing system.',
-    sub: 'Graphics House designs the exhibition concept and executes it end to end: interactive maquette, screens, control programs, and spatial install — with acceptance before first-guest day.',
+    h1: 'Your exhibition concept.<br>One studio from brief to VIP day.',
+    lead: 'When the guest path includes a Secretary General and multinational press, the room is the briefing. Fragmented décor vendors lose the narrative before opening day.',
+    sub: 'Graphics House authors the exhibition idea and builds it end to end: <a href="../services/maquettes-en.html">smart maquettes</a>, hero content via <a href="../services/cinematic-cgi-en.html">CGI</a>, screens, host programs, and on-site install, with acceptance rehearsal before the first guest. See the <a href="../insights/reports/mwl-ramadan-forum-visual-report-en.html">Ramadan Forum report</a>.',
     ctaPrimary: 'Book a readiness session',
     ctaSecondary: 'See ProjectLaunch™',
     ctaReport: 'Read the Ramadan Forum report',
     ctaCase: 'Open the MWL case study',
-    pressureTitle: 'Time pressure is not an excuse for a weaker vision',
+    pressureTitle: 'A compressed calendar should not shrink the idea',
     pressureBody:
-      'High-level institutional calendars compress install, content lock, and protocol rehearsal into days — not months. The easy path shrinks the idea. Our path keeps design ambition and accelerates disciplined execution from one studio.',
-    pointsTitle: 'What “behind the success” means',
+      'Institutional dates stack install, content lock, and protocol rehearsal into days, not months. Multiple vendors spend that window on handoffs. One studio spends it on the guest experience and what leadership sees on walkthrough day.',
+    pointsTitle: 'What one accountable studio delivers',
     points: [
-      ['Idea ownership', 'Décor, design, and interactive experience authored — not subcontracted into fragments'],
-      ['Full execution', 'Maquette, large displays, control tablets, press and photo programs — one handover'],
-      ['Protocol readiness', 'Guest path, lighting, and fallback tested before VIP walkthrough'],
-      ['Acceptance that closes', 'Vision that earns high-level praise — not just a installed screen'],
+      ['Concept ownership', 'Décor, spatial design, and interactive narrative from one brief, not stitched subcontractor files'],
+      ['Production under one roof', '<a href="../services/maquettes-en.html">Maquettes</a>, <a href="../services/cinematic-cgi-en.html">CGI films</a>, screens, and control programs in one handover pack. Campaign films can extend via <a href="https://beesmotion.com" target="_blank" rel="noopener noreferrer">Bees Motion</a> after assets lock'],
+      ['Protocol-ready install', 'Guest path, lighting cues, and fallback scenes tested before the first VIP walkthrough'],
+      ['Acceptance that closes the loop', 'A briefing environment leadership can praise, not a screen that merely turns on'],
     ],
-    proofTitle: 'Proof: Muslim World League — Ramadan Forum, Jeddah',
+    proofTitle: 'Proof: Muslim World League, Ramadan Forum, Jeddah',
     proofBody:
-      'We delivered the exhibition system for the League’s side: interactive maquette of flagship projects worldwide, detail screen, lighting control, world-press interactive program, and commemorative photo experience — under severe time pressure, with personal praise from H.E. the Secretary General.',
-    servicesTitle: 'The services that make this repeatable',
+      'For the League side at the Ramadan Forum in <a href="../locations/jeddah-en.html">Jeddah</a>, we delivered an interactive maquette of global flagship projects, detail screens, lighting control, press interaction, and a commemorative photo program under severe time pressure, with personal praise from H.E. the Secretary General. Read the <a href="../insights/reports/mwl-ramadan-forum-visual-report-en.html">visual report</a> and <a href="../insights/projects/makkah-charter-mwl-en.html">Makkah Charter case study</a>.',
+    servicesTitle: 'Capabilities behind the delivery',
     services: [
       ['ProjectLaunch™', 'solutions/project-launch-en.html', 'Readiness frame: lock message, pack assets, rehearse acceptance'],
-      ['Maquettes', 'services/maquettes-en.html', 'Smart interactive models as the briefing point'],
-      ['Interactive experiences', 'services/interactive-experiences-en.html', 'Screens and host/control programs'],
-      ['Branding & install', 'services/branding-en.html', 'Spatial décor with visual consistency'],
-      ['Jeddah', 'locations/jeddah-en.html', 'On-ground planning for Gulf host-city events'],
+      ['Smart maquettes', 'services/maquettes-en.html', 'Interactive models as the briefing anchor'],
+      ['Interactive experiences', 'services/interactive-experiences-en.html', 'Screens, unit tools, and host programs'],
+      ['Branding & install', 'services/branding-en.html', 'Spatial décor with one visual language'],
+      ['Makkah & Jeddah', 'locations/makkah-en.html', 'On-ground planning for host-city protocol events'],
     ],
     faqTitle: 'Before you book',
     faqs: [
       [
         'Is this only for real-estate launches?',
-        'No. The same ProjectLaunch™ readiness logic fits institutional forums, association exhibitions, and protocol VIP tours — where the “product” is initiatives and documents, not units.',
+        'No. The same ProjectLaunch™ readiness logic fits institutional forums, association exhibitions, and protocol VIP tours, where the product is initiatives and documents, not units.',
       ],
       [
         'Can you work inside a compressed calendar?',
-        'Yes — when idea and build sit with one studio. Split vendors burn the schedule on coordination; we spend it on quality.',
+        'Yes, when concept and build sit with one studio. Split vendors burn the schedule on coordination; we spend it on quality and rehearsal.',
       ],
       [
         'Where do I see the delivery record?',
-        'Start with the Ramadan Forum visual report and the Makkah Charter / MWL case study — then book a session for your next event.',
+        'Start with the <a href="../insights/reports/mwl-ramadan-forum-visual-report-en.html">Ramadan Forum visual report</a> and <a href="../insights/projects/makkah-charter-mwl-en.html">Makkah Charter case study</a>, then book a session for your next date.',
       ],
     ],
     finalTitle: 'Next institutional date on the calendar?',
-    finalBody: 'Send the occasion, guest profile, and install window. We reply within 24 hours with a readiness path — no obligation.',
+    finalBody: 'Send the occasion, guest profile, and install window. We reply within 24 hours with a readiness path, no obligation.',
     waLabel: 'WhatsApp',
     phoneLabel: 'Call Jeddah',
   },
   ar: {
-    title: 'فعاليات مؤسسية تحت ضغط الزمن | ProjectLaunch™ | Graphics House',
+    title: 'أنظمة العرض للفعاليات المؤسسية | ProjectLaunch™ | Graphics House',
     description:
-      'Graphics House تملك أفكار الديكور والعرض التفاعلي وتنفّذها بالكامل تحت جداول زمنية ضاغطة. ProjectLaunch™ للملتقيات والمعارض وجولات VIP في السعودية.',
+      'الملتقيات والمعارض البروتوكولية تحتاج نظام إحاطة بصري واحد لا مقاولين متفرّقين. Graphics House تملك الفكرة والتنفيذ: مجسمات تفاعلية، شاشات، تركيب مكاني. السعودية والخليج.',
     kicker: 'ProjectLaunch™ · فعاليات مؤسسية',
-    h1: 'نملك الفكرة.<br>ونسلّمها تحت الضغط.',
-    lead: 'عندما يضم مسار الضيف أميناً عاماً ووكالات أنباء متعددة الجنسيات، الديكور ليس زينة — هو نظام الإحاطة.',
-    sub: 'Graphics House تصوغ مفهوم المعرض وتنفّذه من طرف واحد: مجسم تفاعلي، شاشات، برامج تحكم، وتركيب مكاني — مع بروفة قبول قبل يوم الضيف الأول.',
+    h1: 'فكرة المعرض.<br>استوديو واحد من الموجز إلى يوم الضيف.',
+    lead: 'عندما يضم مسار الضيف أميناً عاماً ووكالات أنباء متعددة، القاعة هي غرفة الإحاطة. تفتيت الديكور بين موردين يضيع السرد قبل يوم الافتتاح.',
+    sub: 'Graphics House تصوغ مفهوم المعرض وتنفّذه من طرف واحد: <a href="../services/maquettes.html">مجسمات ذكية</a>، محتوى عبر <a href="../services/cinematic-cgi.html">CGI</a>، شاشات، برامج عرض، وتركيب ميداني، مع بروفة قبول قبل الضيف الأول. راجع <a href="../insights/reports/mwl-ramadan-forum-visual-report.html">تقرير الملتقى الرمضاني</a>.',
     ctaPrimary: 'احجز جلسة جاهزية',
     ctaSecondary: 'تعرّف على ProjectLaunch™',
     ctaReport: 'اقرأ تقرير الملتقى الرمضاني',
     ctaCase: 'افتح دراسة حالة الرابطة',
-    pressureTitle: 'ضغط الزمن لا يبرّر ضعفاً في الرؤية',
+    pressureTitle: 'الجدول المضغوط لا يبرّر اختصار الفكرة',
     pressureBody:
-      'جداول الفعاليات المؤسسية الرفيعة تضغط التركيب وقفل المحتوى وبروفة البروتوكول في أيام لا أشهر. السهل اختصار الفكرة. مسارنا الإبقاء على طموح التصميم مع تسريع تنفيذ منضبط من استوديو واحد.',
-    pointsTitle: 'ماذا يعني «وراء النجاح»؟',
+      'مواعيد الفعاليات المؤسسية تضغط التركيب وقفل المحتوى وبروفة البروتوكول في أيام لا أشهر. تعدد الموردين يستهلك هذا الوقت في التسليمات. استوديو واحد يصرفه على تجربة الضيف وما يراه القيادي يوم الجولة.',
+    pointsTitle: 'ماذا يقدّم استوديو واحد مسؤول؟',
     points: [
-      ['ملكية الفكرة', 'ديكور وتصميم وتجربة تفاعلية من مصدر واحد — لا تفتت بين مقاولين'],
-      ['تنفيذ كامل', 'مجسم، شاشات عرض، تابلت تحكم، برامج صحافة وصور — تسليم واحد'],
+      ['ملكية المفهوم', 'ديكور وتصميم مكاني وسرد تفاعلي من موجز واحد، لا ملفات مجمّعة من مقاولين'],
+      ['إنتاج تحت سقف واحد', '<a href="../services/maquettes.html">مجسمات</a> و<a href="../services/cinematic-cgi.html">أفلام CGI</a> وشاشات وبرامج تحكم في حزمة تسليم واحدة. أفلام الحملة يمكن توسيعها عبر <a href="https://beesmotion.com" target="_blank" rel="noopener noreferrer">بيزموشن</a> بعد قفل الأصول'],
       ['جاهزية بروتوكول', 'مسار الضيف والإضاءة والنسخة الاحتياطية تُختبر قبل جولة VIP'],
-      ['قبول يُغلق الحلقة', 'رؤية تنال إشادة رفيعة — لا مجرد شاشة مركّبة'],
+      ['قبول يُغلق الحلقة', 'بيئة إحاطة تنال إشادة القيادة، لا شاشة تُشغَّل فقط'],
     ],
-    proofTitle: 'دليل: رابطة العالم الإسلامي — الملتقى الرمضاني، جدة',
+    proofTitle: 'دليل: رابطة العالم الإسلامي، الملتقى الرمضاني، جدة',
     proofBody:
-      'نفّذنا نظام العرض لجانب الرابطة: مجسم تفاعلي لأبرز مشاريعها حول العالم، شاشة تفاصيل، تحكم إضاءة، برنامج صحافة عالمية، وتجربة صور تذكارية — تحت ضغط زمني شديد، مع إشادة شخصية من معالي الأمين العام.',
-    servicesTitle: 'الخدمات التي تجعل التسليم قابلاً للتكرار',
+      'في جانب الرابطة بالملتقى الرمضاني في <a href="../locations/jeddah.html">جدة</a>، نفّذنا مجسماً تفاعلياً لأبرز مشاريعها، شاشات تفاصيل، تحكم إضاءة، تفاعل صحفي، وتجربة صور تذكارية تحت ضغط زمني شديد، مع إشادة شخصية من معالي الأمين العام. اقرأ <a href="../insights/reports/mwl-ramadan-forum-visual-report.html">التقرير البصري</a> و<a href="../insights/projects/makkah-charter-mwl.html">دراسة ميثاق مكة</a>.',
+    servicesTitle: 'القدرات وراء التسليم',
     services: [
       ['ProjectLaunch™', 'solutions/project-launch.html', 'إطار الجاهزية: قفل الرسالة، حزم الأصول، بروفة القبول'],
-      ['المجسمات', 'services/maquettes.html', 'مجسمات ذكية تفاعلية كنقطة شرح'],
-      ['التجارب التفاعلية', 'services/interactive-experiences.html', 'شاشات وبرامج تحكم وعرض'],
-      ['الهوية والتركيب', 'services/branding.html', 'ديكور واتساق بصري للمكان'],
-      ['جدة', 'locations/jeddah.html', 'تخطيط ميداني لفعاليات مدينة الاستضافة'],
+      ['مجسمات ذكية', 'services/maquettes.html', 'نماذج تفاعلية كنقطة شرح رئيسية'],
+      ['تجارب تفاعلية', 'services/interactive-experiences.html', 'شاشات وأدوات عرض وبرامج مضيف'],
+      ['هوية وتركيب', 'services/branding.html', 'ديكور مكاني بلغة بصرية واحدة'],
+      ['مكة وجدة', 'locations/makkah.html', 'تخطيط ميداني لفعاليات مدن الاستضافة'],
     ],
     faqTitle: 'قبل الحجز',
     faqs: [
       [
         'هل هذا لإطلاقات عقارية فقط؟',
-        'لا. نفس منطق جاهزية ProjectLaunch™ يناسب الملتقيات المؤسسية ومعارض الجمعيات وجولات VIP — حيث «المنتج» مبادرات ووثائق لا وحدات.',
+        'لا. نفس منطق جاهزية ProjectLaunch™ يناسب الملتقيات المؤسسية ومعارض الجمعيات وجولات VIP، حيث المنتج مبادرات ووثائق لا وحدات.',
       ],
       [
         'هل تعملون تحت جدول مضغوط؟',
-        'نعم — عندما تكون الفكرة والتنفيذ عند استوديو واحد. تفتيت المسؤولية يحرق الزمن في التنسيق؛ نحن نصرفه على الجودة.',
+        'نعم، عندما يكون المفهوم والتنفيذ عند استوديو واحد. تفتيت المسؤولية يحرق الزمن في التنسيق؛ نحن نصرفه على الجودة والبروفة.',
       ],
       [
         'أين أرى سجل التسليم؟',
-        'ابدأ بتقرير الملتقى الرمضاني ودراسة حالة ميثاق مكة / الرابطة — ثم احجز جلسة لفعاليتك القادمة.',
+        'ابدأ ب<a href="../insights/reports/mwl-ramadan-forum-visual-report.html">تقرير الملتقى الرمضاني</a> و<a href="../insights/projects/makkah-charter-mwl.html">دراسة ميثاق مكة</a>، ثم احجز جلسة لموعدك القادم.',
       ],
     ],
     finalTitle: 'موعد مؤسسي قادم في الأجندة؟',
-    finalBody: 'أرسل المناسبة وملف الضيف ونافذة التركيب. نرد خلال 24 ساعة بمسار جاهزية — بلا التزام.',
+    finalBody: 'أرسل المناسبة وملف الضيف ونافذة التركيب. نرد خلال 24 ساعة بمسار جاهزية، بلا التزام.',
     waLabel: 'واتساب',
     phoneLabel: 'اتصل بجدة',
   },
@@ -142,8 +142,8 @@ function page(lang) {
   const phone = '+966502786513';
   const wa = `https://wa.me/966502786513?text=${encodeURIComponent(
     isEn
-      ? 'Hello Graphics House — institutional event / ProjectLaunch readiness'
-      : 'مرحباً Graphics House — فعالية مؤسسية / جاهزية ProjectLaunch'
+      ? 'Hello Graphics House, institutional event / ProjectLaunch readiness'
+      : 'مرحباً Graphics House، فعالية مؤسسية / جاهزية ProjectLaunch'
   )}`;
 
   const points = t.points
@@ -168,7 +168,7 @@ function page(lang) {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: isEn ? 'Institutional Events — ProjectLaunch™' : 'فعاليات مؤسسية — ProjectLaunch™',
+    name: isEn ? 'Institutional Events, ProjectLaunch™' : 'فعاليات مؤسسية، ProjectLaunch™',
     provider: { '@type': 'Organization', name: 'Graphics House', url: BASE },
     areaServed: 'SA',
     url: canonical,
@@ -292,7 +292,7 @@ ${header}
     <h2>${t.proofTitle}</h2>
     <p>${t.proofBody}</p>
     <div class="ie-proof">
-      <img src="${P}${PROOF}" alt="${isEn ? 'MWL interactive maquette — Graphics House' : 'مجسم تفاعلي لرابطة العالم الإسلامي — Graphics House'}" loading="lazy">
+      <img src="${P}${PROOF}" alt="${isEn ? 'MWL interactive maquette, Graphics House' : 'مجسم تفاعلي لرابطة العالم الإسلامي، Graphics House'}" loading="lazy">
       <div>
         <div class="ie-proof-links">
           <a class="ie-btn ie-btn--ghost" href="${report}">${t.ctaReport}</a>

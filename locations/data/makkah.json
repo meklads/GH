@@ -3,44 +3,58 @@
   "city": { "ar": "مكة المكرمة", "en": "Makkah" },
   "heroImage": "assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg",
   "heroCaption": {
-    "ar": "أبراج الخير — إظهار معماري سكني، مكة المكرمة",
-    "en": "Al Khair Heights — residential archviz, Makkah"
+    "ar": "أبراج الخير، إظهار معماري سكني، مكة المكرمة",
+    "en": "Al Khair Heights, residential archviz, Makkah"
   },
   "title": {
-    "ar": "إظهار معماري وأنظمة إطلاق بصرية للمطورين في مكة المكرمة",
-    "en": "Architectural Visualization & Visual Launch Systems in Makkah"
+    "ar": "إظهار معماري محترم للمطورين في مكة المكرمة",
+    "en": "Respectful Architectural Visualization for Developers in Makkah"
   },
   "subtitle": {
-    "ar": "نخدم المطورين والجهات التي تبني في أقدس مدن العالم — برندر فوتوريالستي، مجسمات ذكية، أفلام CGI، ومنصات مبيعات تحترم حساسية المكان وتطلعات المستثمر في آنٍ واحد.",
-    "en": "We partner with developers building in one of the world's most significant cities — photorealistic archviz, smart maquettes, CGI films, and sales platforms that respect place and persuade investors."
+    "ar": "نخدم المطورين والجهات التي تبني في مكة المكرمة برندر فوتوريالستي، مجسمات ذكية، أفلام CGI، ومنصات مبيعات تحترم حساسية المكان وتطلعات المستثمر في آن واحد.",
+    "en": "We partner with developers building in Makkah with photorealistic archviz, smart maquettes, CGI films, and sales platforms that respect the sanctity of place and meet investor expectations."
   },
   "metaDescription": {
-    "ar": "استوديو إظهار معماري في مكة: أبراج الخير، ميثاق مكة، مجسمات ذكية لرابطة العالم الإسلامي — رندر، CGI، وتجارب تفاعلية من Graphics House.",
-    "en": "Archviz studio for Makkah developers: Al Khair Heights, Makkah Charter smart maquette for MWL — renders, CGI & interactive experiences by Graphics House."
+    "ar": "استوديو إظهار معماري في مكة: أبراج الخير، ميثاق مكة، مجسمات ذكية لرابطة العالم الإسلامي. رندر وCGI وتجارب تفاعلية بمعيار حساسية المكان من Graphics House.",
+    "en": "Archviz studio for Makkah developers: Al Khair Heights, Makkah Charter, MWL smart maquette. Renders, CGI, and interactive experiences with place sensitive standards by Graphics House."
+  },
+  "keywords": {
+    "ar": {
+      "short": ["إظهار معماري مكة", "مجسمات ذكية", "ميثاق مكة", "رندر سكني"],
+      "long": ["استوديو إظهار معماري مكة المكرمة", "تصور معماري محترم للمشاريع السكنية", "مجسمات ذكية للمعارض المؤسسية", "رندر أبراج سكنية مكة", "مواد بصرية حساسة للمكان"]
+    },
+    "en": {
+      "short": ["Makkah archviz", "smart maquettes", "Makkah Charter", "residential rendering"],
+      "long": ["architectural visualization Makkah developers", "place sensitive project visualization", "smart maquettes institutional exhibitions", "residential tower rendering Makkah", "respectful visual assets holy city projects"]
+    }
   },
   "narrative": {
     "title": {
-      "ar": "حساسية المكان.. ودقة الإنتاج",
+      "ar": "حساسية المكان ودقة الإنتاج",
       "en": "Sensitivity to place. Precision in production."
     },
     "paragraphs": [
       {
-        "ar": "مكة ليست سوقاً عقارياً عادياً. كل مشروع يُقاس بموقعه من الحرم، بجودة الإقامة، وبقدرته على كسب ثقة المستثمر المحلي والدولي. المواد البصرية هنا ليست «ديكوراً» — بل أول لغة يقرأها الزائر قبل أن يخطو صالة البيع.",
-        "en": "Makkah is not an ordinary real estate market. Every project is judged by its relationship to the Haram, the quality of living it promises, and its ability to earn trust from local and international investors. Visual assets here are not decoration — they are the first language a visitor reads before entering the sales gallery."
+        "ar": "مكة المكرمة ليست سوقاً عقارياً عادياً. كل مشروع يُقاس بموقعه من الحرم، بجودة الإقامة، وبقدرته على كسب ثقة المستثمر المحلي والدولي. المواد البصرية هنا ليست ديكوراً بل أول لغة يقرأها الزائر قبل أن يخطو صالة البيع. نلتزم بمعايير الحساسية التي نشرحها في [دليل التصور البصري لمشاريع مكة](insights/articles/makkah-project-visual-sensitivity.html).",
+        "en": "Makkah is not an ordinary real estate market. Every project is judged by its relationship to the Haram, the quality of living it promises, and its ability to earn trust from local and international investors. Visual assets here are not decoration but the first language a visitor reads before entering the sales gallery. We follow the sensitivity standards outlined in our [Makkah project visual sensitivity guide](insights/articles/makkah-project-visual-sensitivity-en.html)."
       },
       {
-        "ar": "من مقرنا في جدة — على بعد ساعات من مكة — ننفّذ مشاريع سكنية وضيافة ومؤسسية بفريق واحد: رندر، فيلم، مجسم، ومنصة تفاعلية باتساق بصري كامل. نفهم متطلبات الاعتماد، سرعة الجداول، وحاجة فرق المبيعات لمواد جاهزة للعرض أمام الوسطاء والمشترين.",
-        "en": "From our Jeddah headquarters — hours from Makkah — we deliver residential, hospitality, and institutional work through one team: render, film, maquette, and interactive platform with full visual consistency. We understand approval cycles, compressed timelines, and sales teams' need for broker-ready materials."
+        "ar": "من مقرنا في [جدة](locations/jeddah.html) على مقربة من مكة ننفّذ مشاريع سكنية وضيافة ومؤسسية بفريق واحد: [رندر](services/rendering.html)، فيلم [سينمائي](services/cinematic-cgi.html)، [مجسم](services/maquettes.html)، ومنصة تفاعلية باتساق بصري كامل. لمشاريع الضيافة قرب المناطق الحيوية، راجع [تصور الضيافة في مكة](insights/articles/makkah-hospitality-near-haram-viz.html).",
+        "en": "From our [Jeddah](locations/jeddah-en.html) headquarters near Makkah we deliver residential, hospitality, and institutional work through one team: [rendering](services/rendering.html), [cinematic film](services/cinematic-cgi.html), [maquette](services/maquettes.html), and interactive platform with full visual consistency. For hospitality near key zones, see our [Makkah hospitality visualization guide](insights/articles/makkah-hospitality-near-haram-viz-en.html)."
+      },
+      {
+        "ar": "نصيحة للمطور في مكة: راجع المواد البصرية مع فريق الامتثال والعلاقات العامة قبل الإطلاق. تجنب المبالغة في الإضاءة أو الزخرفة، وركّز على الوضوح المعماري والراحة السكنية. للمعاينة عن بُعد، يمكن دمج جولات [Ruwaq](https://ruwaq.co/tours) مع حزمة [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) دون استبدال الحضور الميداني في الصالة.",
+        "en": "Advice for Makkah developers: review visual assets with compliance and communications teams before launch. Avoid exaggerated lighting or ornament, and focus on architectural clarity and residential comfort. For remote viewing, [Ruwaq](https://ruwaq.co/tours) tours can complement a [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) package without replacing the in gallery experience."
       }
     ],
     "quote": {
       "text": {
         "ar": "قدّمت جرافيكس هاوس تجربة عالمية المستوى تعكس المكانة الرفيعة لرابطة العالم الإسلامي، من المجسم الذكي إلى البيئة التفاعلية المتكاملة.",
-        "en": "Graphics House delivered a world-class experience worthy of the Muslim World League — from the smart maquette to the fully integrated interactive environment."
+        "en": "Graphics House delivered a world class experience worthy of the Muslim World League, from the smart maquette to the fully integrated interactive environment."
       },
       "attribution": {
-        "ar": "مسؤول رفيع، رابطة العالم الإسلامي — مشروع ميثاق مكة",
-        "en": "Senior official, Muslim World League — Makkah Charter project"
+        "ar": "مسؤول رفيع، رابطة العالم الإسلامي، مشروع ميثاق مكة",
+        "en": "Senior official, Muslim World League, Makkah Charter project"
       }
     }
   },
@@ -48,15 +62,15 @@
     { "value": "3+", "label": { "ar": "مشاريع إظهار في مكة", "en": "Makkah visualization projects" } },
     { "value": "1", "label": { "ar": "مجسم ذكي لرابطة العالم الإسلامي", "en": "MWL smart maquette delivered" } },
     { "value": "12+", "label": { "ar": "سنة خبرة في السوق السعودي", "en": "Years in the Saudi market" } },
-    { "value": "1", "label": { "ar": "استوديو متكامل — رندر إلى منصة", "en": "Integrated studio — render to platform" } }
+    { "value": "1", "label": { "ar": "استوديو متكامل من الرندر إلى المنصة", "en": "Integrated studio from render to platform" } }
   ],
   "spotlight": {
     "kicker": { "ar": "مشروع مميز", "en": "Signature project" },
-    "title": { "ar": "ميثاق مكة — مجسم ذكي تفاعلي", "en": "Makkah Charter — interactive smart maquette" },
+    "title": { "ar": "ميثاق مكة، مجسم ذكي تفاعلي", "en": "Makkah Charter, interactive smart maquette" },
     "subtitle": { "ar": "رابطة العالم الإسلامي · معرض الإنسانية", "en": "Muslim World League · Humanity Exhibition" },
     "body": {
-      "ar": "مجسم هجين يجمع الحرفية اليدوية، الإسقاط الضوئي، البيانات الحية، والإضاءة التفاعلية — عُرض في احتفالية ميثاق مكة. من الديكور الداخلي إلى البرمجيات الخاصة، فريق واحد صمّم التجربة كاملة.",
-      "en": "A hybrid model combining hand craftsmanship, projection mapping, live data, and interactive lighting — unveiled at the Makkah Charter celebration. From interior design to custom software, one team designed the full experience."
+      "ar": "مجسم هجين يجمع الحرفية اليدوية، الإسقاط الضوئي، البيانات الحية، والإضاءة التفاعلية. عُرض في احتفالية ميثاق مكة. من الديكور الداخلي إلى البرمجيات الخاصة، فريق واحد صمّم التجربة كاملة.",
+      "en": "A hybrid model combining hand craftsmanship, projection mapping, live data, and interactive lighting, unveiled at the Makkah Charter celebration. From interior design to custom software, one team designed the full experience."
     },
     "image": "assets/news/makkah-charter-04.jpeg",
     "gallery": [
@@ -77,24 +91,24 @@
       },
       {
         "icon": "hotel",
-        "title": { "ar": "ضيافة وإقامة", "en": "Hospitality & lodging" },
-        "desc": { "ar": "تصور فندقي، لوبيات، ووحدات ضيافة بإضاءة واقعية تناسب سياق مكة.", "en": "Hotel visualization, lobbies, and suites with lighting that fits Makkah's context." }
+        "title": { "ar": "ضيافة وإقامة", "en": "Hospitality and lodging" },
+        "desc": { "ar": "تصور فندقي، لوبيات، ووحدات ضيافة بإضاءة واقعية تناسب سياق مكة.", "en": "Hotel visualization, lobbies, and suites with lighting that fits Makkah context." }
       },
       {
         "icon": "account_balance",
-        "title": { "ar": "مؤسسات ومعارض", "en": "Institutional & exhibitions" },
+        "title": { "ar": "مؤسسات ومعارض", "en": "Institutional and exhibitions" },
         "desc": { "ar": "مجسمات ذكية، شاشات تفاعلية، وديكور متكامل لصالات العرض والجهات الرسمية.", "en": "Smart maquettes, interactive walls, and integrated décor for galleries and institutions." }
       },
       {
         "icon": "map",
         "title": { "ar": "مخططات رئيسية", "en": "Master plans" },
-        "desc": { "ar": "مشاهد جوية، تقسيمات، وقصص بصرية للمخططات السكنية والمختلطة.", "en": "Aerial views, phasing, and visual narratives for residential and mixed-use master plans." }
+        "desc": { "ar": "مشاهد جوية، تقسيمات، وقصص بصرية للمخططات السكنية والمختلطة.", "en": "Aerial views, phasing, and visual narratives for residential and mixed use master plans." }
       }
     ]
   },
   "servicesLead": {
-    "ar": "إنتاج بصري متكامل للمطورين في مكة — من أول رندر اعتماد حتى صالة البيع والحملة الإعلامية.",
-    "en": "Integrated visual production for Makkah developers — from first approval render through sales gallery and media campaign."
+    "ar": "إنتاج بصري متكامل للمطورين في مكة من أول رندر اعتماد حتى صالة البيع والحملة الإعلامية.",
+    "en": "Integrated visual production for Makkah developers from first approval render through sales gallery and media campaign."
   },
   "coreServices": [
     {
@@ -106,21 +120,21 @@
     {
       "icon": "home_work",
       "title": { "ar": "مجسمات ذكية", "en": "Smart maquettes" },
-      "desc": { "ar": "مجسمات تفاعلية لصالات البيع والمعارض — خبرة ميثاق مكة.", "en": "Interactive models for sales galleries and exhibitions — Makkah Charter expertise." },
-      "href": "smart-maquettes.html"
+      "desc": { "ar": "مجسمات تفاعلية لصالات البيع والمعارض، خبرة ميثاق مكة.", "en": "Interactive models for sales galleries and exhibitions, Makkah Charter expertise." },
+      "href": "services/maquettes.html"
     },
     {
       "icon": "slow_motion_video",
       "title": { "ar": "أفلام CGI سينمائية", "en": "Cinematic CGI films" },
-      "desc": { "ar": "أفلام إطلاق قصيرة ومتوسطة تحكي قصة المشروع للمستثمر والزائر.", "en": "Short and mid-form launch films that tell the project story to investors and visitors." },
-      "href": "services/animation.html"
+      "desc": { "ar": "أفلام إطلاق قصيرة ومتوسطة تحكي قصة المشروع للمستثمر والزائر.", "en": "Short and mid form launch films that tell the project story to investors and visitors." },
+      "href": "services/cinematic-cgi.html"
     }
   ],
   "products": [
     {
       "icon": "rocket_launch",
       "title": { "ar": "ProjectLaunch™", "en": "ProjectLaunch™" },
-      "desc": { "ar": "إطلاق متكامل: بصري + تسويق + صالة بيع لمشاريع مكة.", "en": "Integrated launch: visual + marketing + sales gallery for Makkah projects." },
+      "desc": { "ar": "إطلاق متكامل: بصري وتسويق وصالة بيع لمشاريع مكة.", "en": "Integrated launch: visual, marketing, and sales gallery for Makkah projects." },
       "href": "solutions/project-launch.html"
     },
     {
@@ -137,7 +151,7 @@
     }
   ],
   "gallery": {
-    "title": { "ar": "من أعمالنا في مكة والمنطقة", "en": "Our work in Makkah & the region" },
+    "title": { "ar": "من أعمالنا في مكة والمنطقة", "en": "Our work in Makkah and the region" },
     "items": [
       {
         "src": "assets/projects/rendering/Al-Khair-Heights-in-Makkah2-e1745148056352.jpeg",
@@ -166,27 +180,27 @@
     "items": [
       {
         "title": { "ar": "قرب جغرافي من مكة", "en": "Geographic proximity to Makkah" },
-        "desc": { "ar": "مقر جدة يتيح زيارات ميدانية سريعة، ورش اعتماد، ودعم صالات البيع في مكة.", "en": "Jeddah HQ enables fast site visits, approval workshops, and sales-gallery support in Makkah." }
+        "desc": { "ar": "مقر جدة يتيح زيارات ميدانية سريعة، ورش اعتماد، ودعم صالات البيع في مكة.", "en": "Jeddah HQ enables fast site visits, approval workshops, and sales gallery support in Makkah." }
       },
       {
         "title": { "ar": "خبرة مؤسسية موثّقة", "en": "Proven institutional track record" },
-        "desc": { "ar": "مشروع ميثاق مكة لرابطة العالم الإسلامي — مجسم ذكي وبيئة تفاعلية متكاملة.", "en": "Makkah Charter for the Muslim World League — smart maquette and integrated interactive environment." }
+        "desc": { "ar": "مشروع ميثاق مكة لرابطة العالم الإسلامي: مجسم ذكي وبيئة تفاعلية متكاملة.", "en": "Makkah Charter for the Muslim World League: smart maquette and integrated interactive environment." }
       },
       {
         "title": { "ar": "استوديو واحد، اتساق كامل", "en": "One studio, full consistency" },
-        "desc": { "ar": "رندر + فيلم + مجسم + منصة من فريق واحد — دون تشتت بصري بين الموردين.", "en": "Render + film + maquette + platform from one team — no visual fragmentation across vendors." }
+        "desc": { "ar": "رندر وفيلم ومجسم ومنصة من فريق واحد دون تشتت بصري بين الموردين.", "en": "Render, film, maquette, and platform from one team with no visual fragmentation across vendors." }
       },
       {
         "title": { "ar": "لغة المبيعات العقارية", "en": "Real estate sales fluency" },
-        "desc": { "ar": "مواد جاهزة للوسطاء، حملات off-plan، وصالات البيع في السوق السعودي.", "en": "Broker-ready assets, off-plan campaigns, and sales galleries in the Saudi market." }
+        "desc": { "ar": "مواد جاهزة للوسطاء، حملات على المخطط، وصالات البيع في السوق السعودي.", "en": "Broker ready assets, off plan campaigns, and sales galleries in the Saudi market." }
       }
     ]
   },
   "office": {
     "heading": { "ar": "خدماتنا في مكة المكرمة", "en": "Serving Makkah" },
     "address": {
-      "ar": "تغطية مشاريع مكة — فرق ميدانية + إنتاج من مقر جدة",
-      "en": "Makkah project coverage — field teams + production from Jeddah HQ"
+      "ar": "تغطية مشاريع مكة: فرق ميدانية وإنتاج من مقر جدة",
+      "en": "Makkah project coverage: field teams and production from Jeddah HQ"
     },
     "cr": "4030502306",
     "phone": "+966502786513"

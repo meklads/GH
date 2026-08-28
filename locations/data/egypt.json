@@ -5,30 +5,48 @@
   "kicker": { "ar": "جرافيكس هاوس · مصر", "en": "Graphics House · Egypt" },
   "heroImage": "assets/projects/rendering/jeddah-forum.jpg",
   "heroCaption": {
-    "ar": "إظهار معماري ومعارض — معيار إنتاج ننقله إلى مصر",
-    "en": "Architectural visualization and exhibitions — a production standard we bring to Egypt"
+    "ar": "إظهار معماري ومعارض، معيار إنتاج ننقله إلى مصر",
+    "en": "Architectural visualization and exhibitions, a production standard we bring to Egypt"
   },
   "title": {
-    "ar": "إظهار معماري وأنظمة إطلاق بصرية للمطورين في مصر",
-    "en": "Architectural Visualization & Visual Launch Systems in Egypt"
+    "ar": "إظهار معماري بمعيار خليجي للمطورين في مصر",
+    "en": "GCC Standard Architectural Visualization for Developers in Egypt"
   },
   "subtitle": {
-    "ar": "مكتب في الإسكندرية مع خبرة مشاريع كبرى في الخليج — إظهار، مجسمات، CGI، وتجارب بيع بصرية للمطورين في مصر.",
-    "en": "Alexandria office with major Gulf project experience — visualization, maquettes, CGI, and visual sales experiences for Egypt developers."
+    "ar": "مكتب في الإسكندرية مع خبرة مشاريع كبرى في الخليج. إظهار، مجسمات، CGI، وتجارب بيع بصرية للمطورين في مصر الذين يتنافسون على انتباه المستثمر بمواد احترافية لا إعلانات سطحية.",
+    "en": "Alexandria office with major Gulf project experience. Visualization, maquettes, CGI, and visual sales experiences for Egypt developers competing for investor attention with professional assets, not surface level ads."
   },
   "metaDescription": {
-    "ar": "جرافيكس هاوس في مصر: إظهار معماري، مجسمات ذكية، أفلام CGI، وProjectLaunch™ — مكتب الإسكندرية، برج فيكتوريا سيتي.",
-    "en": "Graphics House in Egypt: archviz, smart maquettes, CGI & ProjectLaunch™ — Alexandria office, Victoria City Tower."
+    "ar": "جرافيكس هاوس في مصر: إظهار معماري، مجسمات ذكية، أفلام CGI، وProjectLaunch. مكتب الإسكندرية، برج فيكتوريا سيتي مع دعم إنتاج خليجي.",
+    "en": "Graphics House in Egypt: archviz, smart maquettes, CGI, and ProjectLaunch. Alexandria office, Victoria City Tower with Gulf production support."
+  },
+  "keywords": {
+    "ar": {
+      "short": ["إظهار معماري مصر", "الإسكندرية", "مجسمات ذكية", "رندر سكني"],
+      "long": ["استوديو إظهار معماري الإسكندرية", "رندر فوتوريالستي المشاريع السكنية مصر", "مجسمات ذكية صالات البيع", "أفلام CGI إطلاق عقاري", "ProjectLaunch نظام إطلاق بصري"]
+    },
+    "en": {
+      "short": ["Egypt archviz", "Alexandria", "smart maquettes", "residential rendering"],
+      "long": ["architectural visualization Alexandria developers", "photorealistic rendering Egypt residential", "smart maquettes sales gallery", "CGI launch films real estate", "ProjectLaunch visual launch system Egypt"]
+    }
   },
   "narrative": {
     "title": {
-      "ar": "خبرة خليجية… وحضور في الإسكندرية",
-      "en": "Gulf experience — with presence in Alexandria"
+      "ar": "خبرة خليجية وحضور في الإسكندرية",
+      "en": "Gulf experience with presence in Alexandria"
     },
     "paragraphs": [
       {
-        "ar": "المطورون في مصر يحتاجون مواد بصرية تنافس على انتباه المستثمر والمشتري. من مكتب الإسكندرية نوفّر نفس معيار الإنتاج الذي بنيناه عبر مشاريع الخليج: إظهار، فيلم، مجسم، وتجربة بيع.",
-        "en": "Egypt developers need visuals that compete for investor and buyer attention. From our Alexandria office we deliver the same production standard built across Gulf projects: visualization, film, maquette, and sales experience."
+        "ar": "المطورون في مصر يحتاجون مواد بصرية تنافس على انتباه المستثمر والمشتري. من مكتب الإسكندرية نوفّر نفس معيار الإنتاج الذي بنيناه عبر مشاريع الخليج: [إظهار](services/rendering.html)، فيلم [سينمائي](services/cinematic-cgi.html)، [مجسم](services/maquettes.html)، وتجربة بيع عبر [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html).",
+        "en": "Egypt developers need visuals that compete for investor and buyer attention. From our Alexandria office we deliver the same production standard built across Gulf projects: [visualization](services/rendering.html), [cinematic](services/cinematic-cgi.html) film, [maquette](services/maquettes.html), and sales experience through [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html)."
+      },
+      {
+        "ar": "السوق المصري يكافئ المطور الذي يقدّم وضوحاً معمارياً حقيقياً. لا حاجة لمبالغة بصرية: المشتري يريد أن يرى المساحة، الإضاءة، والمواد كما ستكون. نربط الإنتاج البصري بمحتوى إعلامي عبر [Bees Motion](https://beesmotion.com) عند الحاجة، مع الحفاظ على هوية المشروع عبر [BrandScale™](solutions/brand-scale.html).",
+        "en": "The Egyptian market rewards developers who offer genuine architectural clarity. No need for visual exaggeration: buyers want to see space, light, and materials as they will be. We connect visual production to media content through [Bees Motion](https://beesmotion.com) when needed, while preserving project identity through [BrandScale™](solutions/brand-scale.html)."
+      },
+      {
+        "ar": "نصيحة للمطور في مصر: لا تؤجل المواد البصرية حتى اكتمال الهيكل الإنشائي. ابدأ برندر اعتماد واحد ووحدة نموذجية قبل فتح صالة البيع. راجع [قائمة جاهزية الإطلاق البصري](insights/downloads/visual-launch-checklist.html) وقارن خياراتك عبر [دليل اختيار الاستوديو](insights/articles/choosing-archviz-studio-gcc.html).",
+        "en": "Advice for Egypt developers: do not delay visual assets until the structure is complete. Start with one approval render and one show unit before opening the sales gallery. Review our [visual launch checklist](insights/downloads/visual-launch-checklist-en.html) and compare options via our [studio selection guide](insights/articles/choosing-archviz-studio-gcc-en.html)."
       }
     ]
   },
@@ -62,7 +80,7 @@
       "icon": "slow_motion_video",
       "title": { "ar": "أفلام CGI", "en": "CGI films" },
       "desc": { "ar": "أفلام إطلاق للحملات والعروض.", "en": "Launch films for campaigns and presentations." },
-      "href": "services/animation.html"
+      "href": "services/cinematic-cgi.html"
     },
     {
       "icon": "smart_display",
@@ -82,7 +100,7 @@
     "items": [
       {
         "title": { "ar": "مكتب الإسكندرية", "en": "Alexandria office" },
-        "desc": { "ar": "تواجد محلي مع دعم إنتاج مجموعة تسامي / جرافيكس هاوس.", "en": "Local presence with Graphics House / Tasami Group production support." }
+        "desc": { "ar": "تواجد محلي مع دعم إنتاج مجموعة تسامي وجرافيكس هاوس.", "en": "Local presence with Graphics House and Tasami Group production support." }
       },
       {
         "title": { "ar": "معيار خليجي", "en": "GCC production standard" },
@@ -101,10 +119,10 @@
   "office": {
     "heading": { "ar": "مكتب الإسكندرية", "en": "Alexandria office" },
     "address": {
-      "ar": "شارع محمد عثمان — برج فيكتوريا سيتي، الإسكندرية",
-      "en": "Mohamed Othman St. — Victoria City Tower, Alexandria"
+      "ar": "شارع محمد عثمان، برج فيكتوريا سيتي، الإسكندرية",
+      "en": "Mohamed Othman St., Victoria City Tower, Alexandria"
     },
-    "cr": "—",
+    "cr": "N/A",
     "phone": "+201032955089"
   }
 }

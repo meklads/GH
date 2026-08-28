@@ -26,6 +26,38 @@ function esc(s) {
     .replace(/"/g, '&quot;');
 }
 
+/** Escape text but allow markdown links: [label](https://... or /path) */
+function richText(s) {
+  const str = String(s || '');
+  const re = /\[([^\]]+)\]\((https?:\/\/[^)\s]+|\/[^)\s]+)\)/g;
+  let out = '';
+  let last = 0;
+  let m;
+  while ((m = re.exec(str)) !== null) {
+    if (m.index > last) out += esc(str.slice(last, m.index));
+    const label = esc(m[1]);
+    const href = m[2];
+    const isAbsolute = /^https?:\/\//i.test(href);
+    const isSameSite = /^https?:\/\/(www\.)?3dgraphicshouse\.com(\/|$)/i.test(href);
+    const attrs =
+      isAbsolute && !isSameSite
+        ? ' target="_blank" rel="noopener noreferrer"'
+        : '';
+    out += `<a href="${esc(href)}"${attrs}>${label}</a>`;
+    last = m.index + m[0].length;
+  }
+  if (last < str.length) out += esc(str.slice(last));
+  return out;
+}
+
+function locationKeywords(data, lang) {
+  const isEn = lang === 'en';
+  const kw = data.keywords?.[isEn ? 'en' : 'ar'];
+  if (!kw) return '';
+  const list = [...(kw.short || []), ...(kw.long || [])].filter(Boolean);
+  return list.length ? list.join(', ') : '';
+}
+
 function prefixPaths(html, depth) {
   const p = depth > 0 ? '../'.repeat(depth) : '';
   return html
@@ -41,6 +73,9 @@ function headBlock(lang, meta) {
   const slug = meta.slug;
   const canonical = `${base}/locations/${slug}${isEn ? '-en' : ''}.html`;
   const country = meta.countryCode || 'SA';
+  const keywordsMeta = meta.keywords
+    ? `\n<meta name="keywords" content="${esc(meta.keywords)}"/>`
+    : '';
 
   return `<!DOCTYPE html>
 <html class="scroll-smooth" dir="${isEn ? 'ltr' : 'rtl'}" lang="${isEn ? 'en' : 'ar'}">
@@ -55,7 +90,7 @@ ${analyticsHeadTags(p)}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${esc(meta.title)} | Graphics House</title>
-<meta name="description" content="${esc(meta.description)}"/>
+<meta name="description" content="${esc(meta.description)}"/>${keywordsMeta}
 <meta property="og:title" content="${esc(meta.title)} | Graphics House">
 <meta property="og:description" content="${esc(meta.description)}">
 <meta property="og:image" content="${base}/${meta.ogImage || meta.heroImage || 'assets/favicon/og-image.png'}">
@@ -79,7 +114,7 @@ ${analyticsHeadTags(p)}
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Graphics House — ' + meta.city,
+    name: 'Graphics House, ' + meta.city,
     description: meta.description,
     url: canonical,
     telephone: meta.phone,
@@ -184,7 +219,7 @@ function narrativeSection(data, lang) {
   if (!data.narrative) return '';
   const n = data.narrative;
   const paragraphs = (n.paragraphs || [])
-    .map((p) => `<p>${esc(L(p, lang))}</p>`)
+    .map((p) => `<p>${richText(L(p, lang))}</p>`)
     .join('');
   const quote = n.quote
     ? `<blockquote class="gh-loc-quote">
@@ -343,6 +378,7 @@ function buildPage(data, lang) {
     slug,
     title: L(data.title, lang),
     description: L(data.metaDescription, lang),
+    keywords: locationKeywords(data, lang),
     city: L(data.city, lang),
     phone: data.office.phone,
     heroImage: data.heroImage,

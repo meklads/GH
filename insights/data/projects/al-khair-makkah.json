@@ -7,16 +7,16 @@
   "city": { "ar": "مكة المكرمة", "en": "Makkah" },
   "category": { "ar": "إظهار معماري · تجربة 360°", "en": "Archviz · 360° experience" },
   "title": {
-    "ar": "أبراج الخير — إظهار معماري سكني فاخر في مكة",
-    "en": "Al Khair Heights — premium residential archviz in Makkah"
+    "ar": "أبراج الخير: إظهار معماري سكني في مكة باحترام السياق",
+    "en": "Al Khair Heights: residential archviz in Makkah with place respect"
   },
   "excerpt": {
-    "ar": "رندر خارجي وداخلي وتجربة مبيعات تفاعلية لبرج سكني في مكة المكرمة.",
-    "en": "Exterior and interior renders plus interactive sales experience for a residential tower in Makkah."
+    "ar": "رندر خارجي وداخلي وتجربة مبيعات تفاعلية لبرج سكني في مكة، بإضاءة واقعية ولغة بصرية تحترم حساسية المكان دون مبالغة في الادعاءات.",
+    "en": "Exterior and interior renders plus interactive sales experience for a Makkah residential tower, with realistic lighting and visuals that respect place without exaggerated claims."
   },
   "metaDescription": {
-    "ar": "أبراج الخير مكة — رندر فوتوريالستي وتجربة مبيعات تفاعلية من Graphics House.",
-    "en": "Al Khair Heights Makkah — photorealistic archviz and interactive sales experience by Graphics House."
+    "ar": "أبراج الخير مكة: رندر فوتوريالستي وتجربة مبيعات تفاعلية من Graphics House، مع إطار حساسية الإظهار في مكة.",
+    "en": "Al Khair Heights Makkah: photorealistic archviz and interactive sales experience by Graphics House, with Makkah place-sensitivity framing."
   },
   "services": {
     "ar": ["رندر فوتوريالستي", "داخلي", "جولة 360°", "مواد مبيعات"],
@@ -29,12 +29,152 @@
   "portfolioHref": "portfolio.html",
   "body": {
     "ar": [
-      { "type": "p", "text": "مشاريع مكة السكنية تتطلب إضاءة واقعية ومواد بصرية تحترم حساسية المكان وتقنع المستثمر في آنٍ واحد. أبراج الخير مثال على حزمة رندر + تجربة تفاعلية لصالة البيع." },
-      { "type": "p", "text": "من المقر في جدة، ننفّذ مشاريع مكة بزيارات ميدانية سريعة وورش اعتماد مع فرق المبيعات والتسويق." }
+      {
+        "type": "p",
+        "text": "مشاريع مكة السكنية تُقاس بجودة الإقامة وثقة المستثمر، لا بصورة برج عامة. أبراج الخير يحتاج مواد بصرية واقعية تحترم حساسية المكان وتقنع المشتري في آن واحد، دون ادعاءات بصرية عن القرب أو الإطلالة لا يمكن الدفاع عنها."
+      },
+      {
+        "type": "h2",
+        "text": "التحدي في سياق مكة"
+      },
+      {
+        "type": "p",
+        "text": "في مكة يفشل الإطلاق إذا اعتمد على قوالب سكنية عامة. المطلوب [إظهار معماري](https://3dgraphicshouse.com/services/rendering.html) يوضح الوحدة والمواد ومسار الضيف، مع [تجربة تفاعلية](https://3dgraphicshouse.com/services/interactive-experiences.html) لصالة البيع. الإطار العام في [حساسية الإظهار في مكة](https://3dgraphicshouse.com/insights/articles/makkah-project-visual-sensitivity.html) ينطبق هنا: دقة العلاقة بالمكان، لا مبالغة."
+      },
+      {
+        "type": "h2",
+        "text": "ما نفّذته Graphics House"
+      },
+      {
+        "type": "p",
+        "text": "قدّمنا حزمة رندر خارجي وداخلي مع تجربة مبيعات تفاعلية ومواد جاهزة للصالة. الإضاءة والمواد مضبوطة لمناخ المنطقة؛ المشاهد الداخلية والوحدة تحمل قرار الشراء أكثر من زاوية جوية مبالغ فيها."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "رندرات خارجية بزوايا بطل واقعية",
+          "مشاهد داخلية للغرفة واللوبي بمواصفات تشطيب واضحة",
+          "جولة 360° للوحدة النموذجية في سياق المبيعات",
+          "حزمة مواد للحملات الرقمية والوسيط"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "النتيجة والتشغيل من جدة"
+      },
+      {
+        "type": "p",
+        "text": "المواد جاهزة للحملات الرقمية ولوحات الإعلان وصالات البيع. من مقر [جدة](https://3dgraphicshouse.com/locations/jeddah.html) ننفّذ مشاريع [مكة](https://3dgraphicshouse.com/locations/makkah.html) بزيارات ميدانية وورش اعتماد مع فرق المبيعات والتسويق. راجع أيضاً [ميثاق مكة](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl.html) و[تقرير أبراج عمر](https://3dgraphicshouse.com/insights/reports/abraj-omar-makkah-visual-report.html) كسياق سوقي منفصل."
+      },
+      {
+        "type": "p",
+        "text": "بعد اعتماد المشاهد يمكن مواءمة التشطيب مع [Turriva](https://turriva.com) وتضخيم الحملة عبر [Beesmotion](https://beesmotion.com)."
+      }
     ],
     "en": [
-      { "type": "p", "text": "Residential projects in Makkah demand realistic lighting and visuals that respect place while persuading investors. Al Khair Heights exemplifies render + interactive sales-gallery delivery." },
-      { "type": "p", "text": "From our Jeddah HQ we serve Makkah with fast site visits and approval workshops with sales and marketing teams." }
+      {
+        "type": "p",
+        "text": "Residential projects in Makkah are judged on lodging quality and investor trust, not a generic tower image. Al Khair Heights needed realistic visuals that respect place sensitivity and persuade buyers, without visual claims about proximity or views that cannot be defended."
+      },
+      {
+        "type": "h2",
+        "text": "The challenge in a Makkah context"
+      },
+      {
+        "type": "p",
+        "text": "In Makkah, launches fail on generic residential templates. The brief required [archviz](https://3dgraphicshouse.com/services/rendering-en.html) clarifying unit, materials, and guest path, with an [interactive experience](https://3dgraphicshouse.com/services/interactive-experiences-en.html) for the sales gallery. The general frame in [Makkah visualization sensitivity](https://3dgraphicshouse.com/insights/articles/makkah-project-visual-sensitivity-en.html) applies here: accurate place relationship, no exaggeration."
+      },
+      {
+        "type": "h2",
+        "text": "What Graphics House delivered"
+      },
+      {
+        "type": "p",
+        "text": "We delivered exterior and interior render packs with an interactive sales experience and gallery-ready assets. Lighting and materials suit the regional climate; interior and unit scenes carry the purchase decision more than an exaggerated aerial."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Exterior hero angles with realistic lighting",
+          "Interior room and lobby scenes with clear finish specs",
+          "360° tour of the model unit in a sales context",
+          "Asset pack for digital campaigns and brokers"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Outcome and Jeddah operations"
+      },
+      {
+        "type": "p",
+        "text": "Deliverables are ready for digital campaigns, outdoor boards, and sales galleries. From [Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) HQ we serve [Makkah](https://3dgraphicshouse.com/locations/makkah-en.html) with site visits and approval workshops with sales and marketing. See also [Makkah Charter](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl-en.html) and the [Abraj Omar report](https://3dgraphicshouse.com/insights/reports/abraj-omar-makkah-visual-report-en.html) as separate market context."
+      },
+      {
+        "type": "p",
+        "text": "After scene approval, finishes can align with [Turriva](https://turriva.com) and campaigns amplify via [Beesmotion](https://beesmotion.com)."
+      }
     ]
-  }
+  },
+  "keywords": {
+    "ar": {
+      "short": ["أبراج الخير", "إظهار مكة", "تجربة 360", "صالة بيع"],
+      "long": [
+        "إظهار معماري أبراج الخير مكة",
+        "رندر سكني مكة Graphics House",
+        "حساسية المكان إطلاق مكة",
+        "تجربة مبيعات تفاعلية مكة"
+      ]
+    },
+    "en": {
+      "short": ["Al Khair Heights", "Makkah archviz", "360 experience", "sales gallery"],
+      "long": [
+        "Al Khair Heights Makkah archviz",
+        "Makkah residential render Graphics House",
+        "Makkah place sensitivity launch",
+        "interactive sales experience Makkah"
+      ]
+    }
+  },
+  "faq": [
+    {
+      "q": {
+        "ar": "كيف يختلف إظهار مكة عن مشروع سكني عادي؟",
+        "en": "How does Makkah visualization differ from a typical residential project?"
+      },
+      "a": {
+        "ar": "دقة العلاقة بالمكان، لغة احترام، ووضوح جودة الإقامة دون مبالغة في القرب أو الإطلالة. راجع [حساسية الإظهار في مكة](https://3dgraphicshouse.com/insights/articles/makkah-project-visual-sensitivity.html).",
+        "en": "Accurate place relationship, respectful language, and clear lodging quality without exaggerating proximity or views. See [Makkah visualization sensitivity](https://3dgraphicshouse.com/insights/articles/makkah-project-visual-sensitivity-en.html)."
+      }
+    },
+    {
+      "q": {
+        "ar": "ما الذي شمله التسليم؟",
+        "en": "What did the delivery include?"
+      },
+      "a": {
+        "ar": "رندر خارجي وداخلي، جولة 360°، وتجربة مبيعات تفاعلية ضمن [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html).",
+        "en": "Exterior and interior renders, 360° tour, and interactive sales experience under [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html)."
+      }
+    },
+    {
+      "q": {
+        "ar": "لماذا المقر في جدة يخدم مكة؟",
+        "en": "Why does Jeddah HQ serve Makkah?"
+      },
+      "a": {
+        "ar": "زيارات ميدانية وورش اعتماد أسرع بين [جدة](https://3dgraphicshouse.com/locations/jeddah.html) و[مكة](https://3dgraphicshouse.com/locations/makkah.html).",
+        "en": "Faster site visits and approval workshops between [Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) and [Makkah](https://3dgraphicshouse.com/locations/makkah-en.html)."
+      }
+    },
+    {
+      "q": {
+        "ar": "أين أرى أعمال Graphics House الأخرى في مكة؟",
+        "en": "Where else is Graphics House work documented in Makkah?"
+      },
+      "a": {
+        "ar": "[ميثاق مكة](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl.html) لرابطة العالم الإسلامي و[كداء مكة](https://3dgraphicshouse.com/insights/projects/kuday-makkah.html).",
+        "en": "[Makkah Charter](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl-en.html) for the Muslim World League and [Kuday Makkah](https://3dgraphicshouse.com/insights/projects/kuday-makkah-en.html)."
+      }
+    }
+  ]
 }

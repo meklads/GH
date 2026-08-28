@@ -3,20 +3,20 @@
   "date": "2023-06",
   "image": "assets/projects/rendering/jeddah-forum.jpg",
   "developer": { "ar": "منتدى جدة الاقتصادي", "en": "Jeddah Economic Forum" },
-  "projectName": { "ar": "المركز المؤتمرات — جدة", "en": "Convention Center — Jeddah" },
+  "projectName": { "ar": "المركز المؤتمرات، جدة", "en": "Convention Center, Jeddah" },
   "city": { "ar": "جدة", "en": "Jeddah" },
   "category": { "ar": "إظهار معماري · مؤسسي", "en": "Archviz · Institutional" },
   "title": {
-    "ar": "منتدى جدة — إظهار معماري لمركز مؤتمرات بارز",
-    "en": "Jeddah Forum — archviz for a landmark convention center"
+    "ar": "منتدى جدة: إظهار معماري لمركز مؤتمرات بارز",
+    "en": "Jeddah Forum: archviz for a landmark convention center"
   },
   "excerpt": {
-    "ar": "تصور معماري لمشروع مؤسسي في قلب المنطقة الغربية — من مقر Graphics House في جدة.",
-    "en": "Architectural visualization for an institutional landmark in the Western Region — from Graphics House Jeddah HQ."
+    "ar": "تصور معماري لمشروع مؤسسي في قلب المنطقة الغربية، من مقر Graphics House في جدة، لعروض الجهات الرسمية والمستثمرين قبل التنفيذ.",
+    "en": "Architectural visualization for an institutional landmark in the Western Region, from Graphics House Jeddah HQ, serving official and investor presentations before construction."
   },
   "metaDescription": {
-    "ar": "منتدى جدة الاقتصادي — إظهار معماري من Graphics House المقر الرئيسي.",
-    "en": "Jeddah Economic Forum — archviz from Graphics House headquarters."
+    "ar": "منتدى جدة الاقتصادي: إظهار معماري مؤسسي من Graphics House المقر الرئيسي في جدة.",
+    "en": "Jeddah Economic Forum: institutional archviz from Graphics House headquarters in Jeddah."
   },
   "services": {
     "ar": ["رندر خارجي", "مشاهد بطل", "عرض مؤسسي"],
@@ -28,12 +28,144 @@
   "portfolioHref": "portfolio.html",
   "body": {
     "ar": [
-      { "type": "p", "text": "جدة — مقر Graphics House — تستضيف مشاريع مؤسسية واقتصادية بارزة. منتدى جدة مثال على إظهار معماري يخدم عروض الجهات الرسمية والمستثمرين قبل التنفيذ." },
-      { "type": "p", "text": "نخدم المطورين والجهات في المنطقة الغربية بفريق إنتاج محلي وورش اعتماد سريعة." }
+      {
+        "type": "p",
+        "text": "جدة، مقر Graphics House، تستضيف مشاريع مؤسسية واقتصادية بارزة. منتدى جدة مثال على إظهار معماري يخدم عروض الجهات الرسمية والمستثمرين قبل التنفيذ، حيث القرار يُتخذ على الكتلة والموقع والحضور الحضري لا على تفاصيل الوحدة."
+      },
+      {
+        "type": "h2",
+        "text": "التحدي"
+      },
+      {
+        "type": "p",
+        "text": "المشروع المؤسسي يحتاج مشاهد بطل توضّح الحجم والموقع والعلاقة بالمدينة خلال دقائق في اجتماع أو معرض. المطلوب [إظهار معماري](https://3dgraphicshouse.com/services/rendering.html) بزوايا جوية وواجهة ومدخل، مع مواد جاهزة للعرض المؤسسي لا كتالوج سكني."
+      },
+      {
+        "type": "h2",
+        "text": "ما نفّذته Graphics House"
+      },
+      {
+        "type": "p",
+        "text": "نفّذنا رندرات خارجية ومشاهد بطل للمركز المؤتمرات، بإضاءة ومواد تليق بعرض رسمي. الفريق المحلي في [جدة](https://3dgraphicshouse.com/locations/jeddah.html) مكّن ورش اعتماد سريعة مع المعماري والجهة المالكة."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "مشاهد جوية وواجهة رئيسية معتمدة",
+          "رندرات خارجية للعرض المؤسسي والطباعة",
+          "مواد جاهزة للعروض الرسمية والمستثمرين",
+          "إنتاج محلي بجدول زمني مضغوط"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "النتيجة"
+      },
+      {
+        "type": "p",
+        "text": "المواد أصبحت جاهزة للعرض أمام الجهات الرسمية والمستثمرين قبل التنفيذ. للفعاليات المؤسسية المشابهة راجع [ميثاق مكة](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl.html) و[الملتقى الرمضاني](https://3dgraphicshouse.com/insights/reports/mwl-ramadan-forum-visual-report.html). الأفلام التكميلية عبر [Dot4Life production](https://3dgraphicshouse.com/services/production.html) و[الفعاليات المؤسسية](https://3dgraphicshouse.com/solutions/institutional-events.html)."
+      }
     ],
     "en": [
-      { "type": "p", "text": "Jeddah — Graphics House headquarters — hosts landmark institutional and economic projects. Jeddah Forum exemplifies archviz serving official and investor presentations before construction." },
-      { "type": "p", "text": "We serve Western Region developers and institutions with local production and fast approval workshops." }
+      {
+        "type": "p",
+        "text": "Jeddah, Graphics House headquarters, hosts landmark institutional and economic projects. Jeddah Forum exemplifies archviz serving official and investor presentations before construction, where decisions rest on massing, site, and urban presence, not unit detail."
+      },
+      {
+        "type": "h2",
+        "text": "The challenge"
+      },
+      {
+        "type": "p",
+        "text": "Institutional projects need hero scenes clarifying scale, site, and city relationship in minutes during a meeting or exhibition. The brief required [archviz](https://3dgraphicshouse.com/services/rendering-en.html) with aerial, façade, and entrance angles, plus assets ready for institutional presentation, not a residential catalog."
+      },
+      {
+        "type": "h2",
+        "text": "What Graphics House delivered"
+      },
+      {
+        "type": "p",
+        "text": "We produced exterior renders and hero views for the convention center with lighting and materials fit for official presentation. The local team in [Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) enabled fast approval workshops with architecture and the client."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Approved aerial and main façade scenes",
+          "Exterior renders for institutional presentation and print",
+          "Assets ready for official and investor presentations",
+          "Local production on a compressed schedule"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Outcome"
+      },
+      {
+        "type": "p",
+        "text": "Assets became ready for official and investor presentations before construction. For similar institutional events see [Makkah Charter](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl-en.html) and the [Ramadan Forum report](https://3dgraphicshouse.com/insights/reports/mwl-ramadan-forum-visual-report-en.html). Supporting films via [Dot4Life production](https://3dgraphicshouse.com/services/production-en.html) and [institutional events](https://3dgraphicshouse.com/solutions/institutional-events-en.html)."
+      }
     ]
-  }
+  },
+  "keywords": {
+    "ar": {
+      "short": ["منتدى جدة", "إظهار مؤسسي", "مركز مؤتمرات", "جدة"],
+      "long": [
+        "إظهار معماري منتدى جدة الاقتصادي",
+        "رندر مؤسسي Graphics House جدة",
+        "عرض معماري قبل التنفيذ",
+        "مقر Graphics House المنطقة الغربية"
+      ]
+    },
+    "en": {
+      "short": ["Jeddah Forum", "institutional archviz", "convention center", "Jeddah"],
+      "long": [
+        "Jeddah Economic Forum archviz",
+        "institutional render Graphics House Jeddah",
+        "pre-construction architectural presentation",
+        "Graphics House Western Region HQ"
+      ]
+    }
+  },
+  "faq": [
+    {
+      "q": {
+        "ar": "ما الذي يميّز الإظهار المؤسسي عن السكني؟",
+        "en": "What distinguishes institutional from residential visualization?"
+      },
+      "a": {
+        "ar": "التركيز على الكتلة والموقع والحضور الحضري في دقائق، لا تفاصيل الوحدة والتشطيب.",
+        "en": "Focus on massing, site, and urban presence in minutes, not unit and finish detail."
+      }
+    },
+    {
+      "q": {
+        "ar": "لماذا الإنتاج من جدة؟",
+        "en": "Why produce from Jeddah?"
+      },
+      "a": {
+        "ar": "مقر Graphics House في [جدة](https://3dgraphicshouse.com/locations/jeddah.html) يتيح ورش اعتماد ميدانية أسرع للمشاريع الغربية.",
+        "en": "Graphics House HQ in [Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) enables faster on-ground approval workshops for Western Region projects."
+      }
+    },
+    {
+      "q": {
+        "ar": "أين أرى أعمال مؤسسية مشابهة؟",
+        "en": "Where can I see similar institutional work?"
+      },
+      "a": {
+        "ar": "[ميثاق مكة](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl.html) و[تقرير الملتقى الرمضاني](https://3dgraphicshouse.com/insights/reports/mwl-ramadan-forum-visual-report.html).",
+        "en": "[Makkah Charter](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl-en.html) and the [Ramadan Forum report](https://3dgraphicshouse.com/insights/reports/mwl-ramadan-forum-visual-report-en.html)."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يمكن إنتاج أفلام تكميلية؟",
+        "en": "Can supporting films be produced?"
+      },
+      "a": {
+        "ar": "نعم، عبر [Dot4Life production](https://3dgraphicshouse.com/services/production.html) بعد اعتماد المشاهد المعمارية.",
+        "en": "Yes, via [Dot4Life production](https://3dgraphicshouse.com/services/production-en.html) after architectural scene approval."
+      }
+    }
+  ]
 }

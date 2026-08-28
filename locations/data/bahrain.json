@@ -5,30 +5,48 @@
   "kicker": { "ar": "جرافيكس هاوس · مملكة البحرين", "en": "Graphics House · Bahrain" },
   "heroImage": "assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg",
   "heroCaption": {
-    "ar": "إظهار معماري لمشاريع تجارية ومختلطة — معيار خليجي للمنامة",
-    "en": "Architectural visualization for commercial and mixed-use — GCC standard for Manama"
+    "ar": "إظهار معماري لمشاريع تجارية ومختلطة، معيار خليجي للمنامة",
+    "en": "Architectural visualization for commercial and mixed use, GCC standard for Manama"
   },
   "title": {
-    "ar": "إظهار معماري وأنظمة إطلاق بصرية للمطورين في البحرين",
-    "en": "Architectural Visualization & Visual Launch Systems in Bahrain"
+    "ar": "إظهار معماري سريع الإقناع للمطورين في البحرين",
+    "en": "Fast Persuasion Archviz for Developers in Bahrain"
   },
   "subtitle": {
-    "ar": "تواجد في المنامة مع خبرة إطلاق مشاريع كبرى في السعودية — رندر، مجسمات، CGI، وصالات بيع للمطورين في البحرين.",
-    "en": "Manama presence with major Saudi launch experience — renders, maquettes, CGI, and sales galleries for Bahrain developers."
+    "ar": "تواجد في المنامة مع خبرة إطلاق مشاريع كبرى في السعودية. رندر، مجسمات، CGI، وصالات بيع للمطورين في سوق مكثّف يحتاج وضوحاً بصرياً من اليوم الأول.",
+    "en": "Manama presence with major Saudi launch experience. Renders, maquettes, CGI, and sales galleries for developers in a compact market that needs visual clarity from day one."
   },
   "metaDescription": {
-    "ar": "جرافيكس هاوس في البحرين: إظهار معماري، مجسمات ذكية، أفلام CGI، وProjectLaunch™ للمطورين — مكتب المنامة.",
-    "en": "Graphics House in Bahrain: archviz, smart maquettes, CGI & ProjectLaunch™ for developers — Manama office."
+    "ar": "جرافيكس هاوس في البحرين: إظهار معماري، مجسمات ذكية، أفلام CGI، وProjectLaunch للمطورين. مكتب المنامة مع دعم إنتاج خليجي متكامل.",
+    "en": "Graphics House in Bahrain: archviz, smart maquettes, CGI, and ProjectLaunch for developers. Manama office with integrated GCC production support."
+  },
+  "keywords": {
+    "ar": {
+      "short": ["إظهار معماري البحرين", "المنامة", "مجسمات ذكية", "رندر تجاري"],
+      "long": ["استوديو إظهار معماري المنامة", "رندر فوتوريالستي المشاريع المختلطة", "مجسمات ذكية صالات البيع البحرين", "أفلام CGI إطلاق عقاري", "ProjectLaunch نظام إطلاق بصري"]
+    },
+    "en": {
+      "short": ["Bahrain archviz", "Manama", "smart maquettes", "commercial rendering"],
+      "long": ["architectural visualization Manama developers", "photorealistic mixed use rendering Bahrain", "smart maquettes sales gallery", "CGI launch films real estate", "ProjectLaunch visual launch system"]
+    }
   },
   "narrative": {
     "title": {
-      "ar": "معيار خليجي… وتواجد في المنامة",
-      "en": "A GCC standard — with presence in Manama"
+      "ar": "معيار خليجي وتواجد في المنامة",
+      "en": "A GCC standard with presence in Manama"
     },
     "paragraphs": [
       {
-        "ar": "البحرين سوق عقاري مكثّف يحتاج مواد بصرية سريعة الإقناع: للمستثمر، للوسيط، ولصالة البيع. ننقل منهج الإطلاق الذي طوّرناه في السعودية عبر مكتبنا في المنامة.",
-        "en": "Bahrain’s compact real estate market needs visuals that persuade quickly — investors, brokers, and the sales floor. We bring the launch method we refined in Saudi Arabia through our Manama office."
+        "ar": "البحرين سوق عقاري مكثّف يحتاج مواد بصرية سريعة الإقناع للمستثمر، للوسيط، ولصالة البيع. ننقل منهج الإطلاق الذي طوّرناه في [السعودية](locations/riyadh.html) عبر مكتبنا في المنامة عبر [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) مع [رندر](services/rendering.html) و[مجسمات](services/maquettes.html) وأفلام [سينمائية](services/cinematic-cgi.html).",
+        "en": "Bahrain's compact real estate market needs visuals that persuade quickly for investors, brokers, and the sales floor. We bring the launch method we refined in [Saudi Arabia](locations/riyadh-en.html) through our Manama office via [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) with [rendering](services/rendering.html), [maquettes](services/maquettes.html), and [cinematic](services/cinematic-cgi.html) films."
+      },
+      {
+        "ar": "في سوق صغير الحجم، الاتساق البصري أهم من كثرة المواد. مطور واحد في المنامة قد يعرض عدة مشاريع في نفس الربع، والمشتري يقارن بسرعة. نساعدك على بناء هوية بصرية متماسكة عبر [BrandScale™](solutions/brand-scale.html) ومواد جاهزة للوسطاء. للمحتوى الإعلامي المرافق، يمكن ربط الحزمة بإنتاج [Dot4Life](production.html).",
+        "en": "In a small market, visual consistency matters more than volume. A Manama developer may present several projects in the same quarter, and buyers compare fast. We help you build a cohesive visual identity through [BrandScale™](solutions/brand-scale.html) and broker ready assets. For companion media content, the package can connect to [Dot4Life](production.html) production."
+      },
+      {
+        "ar": "نصيحة للمطور في البحرين: خصص يوماً واحداً لورشة اعتماد مع فريق المبيعات والوسيط الرئيسي قبل الإطلاق. اعرض ثلاث مواد فقط: واجهة، داخلية نموذجية، ومخطط أو فيلم قصير. راجع [دليل اختيار استوديو الإظهار في الخليج](insights/articles/choosing-archviz-studio-gcc.html) قبل توقيع العقد.",
+        "en": "Advice for Bahrain developers: dedicate one day to an approval workshop with sales and your lead broker before launch. Present only three assets: facade, show interior, and plan or short film. Review our [GCC archviz studio selection guide](insights/articles/choosing-archviz-studio-gcc-en.html) before signing the contract."
       }
     ]
   },
@@ -41,7 +59,7 @@
     {
       "icon": "view_in_ar",
       "title": { "ar": "إظهار معماري", "en": "Architectural visualization" },
-      "desc": { "ar": "رندر فوتوريالستي للسكني والتجاري والمختلط.", "en": "Photoreal renders for residential, commercial, and mixed-use." },
+      "desc": { "ar": "رندر فوتوريالستي للسكني والتجاري والمختلط.", "en": "Photoreal renders for residential, commercial, and mixed use." },
       "href": "services/rendering.html"
     },
     {
@@ -62,7 +80,7 @@
       "icon": "slow_motion_video",
       "title": { "ar": "أفلام CGI", "en": "CGI films" },
       "desc": { "ar": "أفلام إطلاق للحملات وعروض المستثمرين.", "en": "Launch films for campaigns and investor days." },
-      "href": "services/animation.html"
+      "href": "services/cinematic-cgi.html"
     },
     {
       "icon": "smart_display",
@@ -94,13 +112,13 @@
       },
       {
         "title": { "ar": "سرعة الإقناع", "en": "Speed to persuasion" },
-        "desc": { "ar": "مواد جاهزة للوسيط والمستثمر في أيام الإطلاق.", "en": "Broker- and investor-ready assets for launch windows." }
+        "desc": { "ar": "مواد جاهزة للوسيط والمستثمر في أيام الإطلاق.", "en": "Broker and investor ready assets for launch windows." }
       }
     ]
   },
   "office": {
     "heading": { "ar": "مكتب المنامة", "en": "Manama office" },
-    "address": { "ar": "مجمع 316 — المنامة، مملكة البحرين", "en": "Block 316 — Manama, Kingdom of Bahrain" },
+    "address": { "ar": "مجمع 316، المنامة، مملكة البحرين", "en": "Block 316, Manama, Kingdom of Bahrain" },
     "cr": "15571301",
     "phone": "+97332150369"
   }

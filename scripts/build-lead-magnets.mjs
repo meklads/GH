@@ -26,11 +26,11 @@ const CHECKLIST_AR = [
   'مواءمة جدول المبيعات مع خطة الإنتاج البصري',
   'اعتماد المخطط الرئيسي والزوايا الأساسية للإظهار',
   'جاهزية دليل الهوية أو التوجيه البصري',
-  'تخطيط صور البطل (hero) لحملة الإطلاق',
+  'تخطيط صور البطل لحملة الإطلاق',
   'وضوح متطلبات صالة البيع أو المنصة الرقمية',
-  'تحديد نطاق الفيديو / الفيلم السينمائي (المدة، اللغة، القنوات)',
+  'تحديد نطاق الفيلم السينمائي (المدة، اللغة، القنوات)',
   'تحديد نطاق التجربة التفاعلية (إن وُجدت)',
-  'قرار المجسم الفيزيائي أو النموذج الذكي',
+  'قرار المجسم الفيزيائي أو المجسم الذكي',
   'مسار اعتماد المحتوى مع أصحاب المصلحة',
   'مشاركة قائمة الإطلاق مع فريق المبيعات',
   'خطة تحديث الأصول بعد الإطلاق',
@@ -43,10 +43,10 @@ const CHECKLIST_EN = [
   'Brand guidelines or visual direction document ready',
   'Hero renders planned for launch campaign',
   'Sales gallery or digital platform requirements clear',
-  'Video / CGI film scope defined (length, language, channels)',
+  'CGI film scope defined (length, language, channels)',
   'Interactive experience scope defined (if applicable)',
-  'Maquette or physical model decision made',
-  'Content approval workflow with stakeholders',
+  'Physical or smart maquette decision made',
+  'Content approval workflow with stakeholders agreed',
   'Launch checklist shared with sales team',
   'Post-launch asset update plan in place',
 ];
@@ -405,7 +405,7 @@ const CHECKLIST_CONFIG = {
     description:
       'حمّل مجاناً قائمة جاهزية الإطلاق البصري — 12 بنداً للمطورين العقاريين من جرافيكس هاوس.',
     heading: 'قائمة جاهزية الإطلاق البصري',
-    lead: 'PDF مجاني — 12 بنداً يجب على كل مطوّر التحقق منها قبل إعلان مبيعات المخطط. أدخل بريدك للتحميل.',
+    lead: 'PDF مجاني، 12 بنداً للتحقق قبل إعلان مبيعات المخطط في السعودية والخليج. أدخل بريدك للتحميل، ثم شارك القائمة مع التسويق والمبيعات وشريك الإظهار.',
     features: [
       '12 بنداً عملياً قابلاً للتطبيق',
       'متوافق مع إطلاقات المخطط في الخليج',
@@ -424,7 +424,7 @@ const CHECKLIST_CONFIG = {
     description:
       'Download the free 12-point Visual Launch Readiness Checklist for real estate developers — PDF by Graphics House.',
     heading: 'Visual Launch Readiness Checklist',
-    lead: 'Free PDF — 12 essentials every developer should verify before announcing off-plan sales. Enter your email to download.',
+    lead: 'Free PDF, 12 checkpoints before you announce off-plan sales in Saudi Arabia and the GCC. Enter your email to download, then share with marketing, sales, and your visualization partner.',
     features: [
       '12 actionable checkpoints',
       'Aligned with GCC off-plan launches',
