@@ -1,16 +1,28 @@
-# Build static site in CI/Coolify, then serve with nginx
-# Use AWS Public ECR mirror — avoids Docker Hub rate limits / metadata timeouts on self-hosted Coolify
+# Build static site in CI/Coolify, then serve with nginx.
+# Prefer AWS Public ECR (avoids Docker Hub rate limits on self-hosted Coolify).
+# Fallback mirrors kept as comments if ECR metadata times out on the host.
 FROM public.ecr.aws/docker/library/node:20-bookworm-slim AS builder
 WORKDIR /app
+
+# fonts-noto-core includes Arabic; there is no fonts-noto-arabic package on Debian.
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends libwebp-dev webp fontconfig fonts-noto-core fonts-noto-arabic \
+  && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    libwebp-dev \
+    webp \
+    fontconfig \
+    fonts-noto-core \
+    fonts-dejavu-core \
   && rm -rf /var/lib/apt/lists/*
+
 COPY package.json package-lock.json ./
 RUN npm ci --prefer-offline --no-audit --no-fund \
   || npm ci --prefer-offline --no-audit --no-fund
+
 COPY . .
-ENV NODE_OPTIONS="--max-old-space-size=1024"
+ENV NODE_OPTIONS="--max-old-space-size=1536"
 ENV CI=true
+# OG/WebP assets are committed; generation is best-effort and must not fail the deploy.
 RUN npm run build
 
 FROM public.ecr.aws/docker/library/nginx:1.27-alpine

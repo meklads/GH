@@ -112,15 +112,27 @@ async function main() {
   const articles = loadArticles();
   let count = 0;
   console.log('Generating article OG images…');
-  for (const article of articles) {
-    for (const lang of ['ar', 'en']) {
-      if (await generateOne(article, lang)) {
-        console.log('  og:', articleOgAssetPath(article, lang));
-        count += 1;
+  try {
+    for (const article of articles) {
+      for (const lang of ['ar', 'en']) {
+        if (await generateOne(article, lang)) {
+          console.log('  og:', articleOgAssetPath(article, lang));
+          count += 1;
+        }
       }
     }
+    console.log(`Done — ${count} OG image(s).`);
+  } catch (err) {
+    const existing = fs.existsSync(OUT_DIR)
+      ? fs.readdirSync(OUT_DIR).filter((f) => f.endsWith('.jpg')).length
+      : 0;
+    if (existing > 0) {
+      console.warn('OG generation failed; keeping committed assets:', err?.message || err);
+      console.log(`Done — using ${existing} existing OG image(s).`);
+      return;
+    }
+    throw err;
   }
-  console.log(`Done — ${count} OG image(s).`);
 }
 
 main().catch((err) => {
