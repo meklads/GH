@@ -38,61 +38,55 @@ const COPY = {
     heroTitle: 'ملتقى جدة للعقار',
     heroEn: 'Jeddah Real Estate Forum',
     heroDek:
-      'تطوير هوية بصرية متكاملة وكتالوج فاخر وتجربة بصرية وسينمائية لملتقى جدة للعقار، من الشعار والزخارف إلى الفيلم والمطبوعات.',
+      'بنينا كل شيء لنجاح المشروع: هوية بصرية، كتالوج فاخر، نموذج ثلاثي الأبعاد لجدة سوبردوم، وفيلم CGI سينمائي تخيلي يحملها جميعاً.',
+    metaScope: 'هوية بصرية · كتالوج · جدة سوبردوم 3D · فيلم CGI',
     metaLocation: 'جدة، المملكة العربية السعودية',
-    metaScope: 'هوية بصرية · فيلم CGI · محتوى · إنتاج مطبوعات',
     metaAgency: 'Graphics House',
     scroll: 'Scroll',
-    experienceTitle: 'عندما تصبح الهوية تجربة',
-    experienceMeta: 'WHEN IDENTITY BECOMES AN EXPERIENCE',
+    experienceTitle: 'بنينا كل شيء لنجاح المشروع',
+    experienceMeta: 'BUILT FOR SUCCESS',
     experienceP1:
-      'لم يكن دور Graphics House في ملتقى جدة للعقار إنتاج مواد منفصلة. امتد العمل ليشمل بناء الهوية البصرية للمشروع، تطوير عالمه الإبداعي، ثم تحويل هذه الهوية إلى تجربة سينمائية ومنظومة متكاملة من المحتوى والعناصر الفنية والمطبوعات.',
+      'لم يكن المطلوب شعاراً أو فيلماً منفصلاً. المطلوب منظومة بصرية كاملة ترفع حضور ملتقى جدة للعقار: هوية، كتالوج، نموذج معماري ثلاثي الأبعاد، وفيلم سينمائي تخيلي يحملها جميعاً.',
     experienceP2:
-      'كل مخرج يخدم نقطة تواصل واحدة: حضور الملتقى في جدة كحدث عقاري كبير يستحق لغة بصرية موحدة من الشعار حتى الشاشة والمطبوعة.',
-    pipeline: ['IDENTITY', 'VISUAL LANGUAGE', 'CINEMATIC FILM', 'CONTENT', 'PRINT & ART DIRECTION'],
-    challengeTitle: 'من فكرة إلى حضور',
-    challengeMeta: 'FROM IDEA TO PRESENCE',
-    challengeP:
-      'كان التحدي خلق حضوراً بصرياً يليق بملتقى عقاري كبير في جدة، ويمنح المشروع شخصية واضحة قابلة للتطبيق عبر مختلف نقاط التواصل. عملنا على لغة بصرية موحدة تنتقل بسلاسة بين الهوية والفيلم والمحتوى والمطبوعات، مع الحفاظ على شخصية واحدة متماسكة.',
-    words: ['IDENTITY', 'STORY', 'IMPACT'],
-    identityTitle: 'بناء هوية المشروع',
+      'من «نعمل لغد أفضل» في الكتالوج، إلى قبة جدة سوبردوم في الفيلم: كل مخرج صُمم ليعمل مع الآخر.',
+    pipeline: ['BRAND', 'CATALOGUE', 'SUPERDOME 3D', 'CINEMATIC FILM', 'PRINT'],
+    pillars: [
+      { title: 'الهوية', sub: 'BRANDING', text: 'شعار، ألوان، زخارف، ونظام بصري يحمل الملتقى في كل نقطة تواصل.' },
+      { title: 'الكتالوج', sub: 'CATALOGUE', text: '٤٤ صفحة فاخرة تحمل الهوية من الغلاف إلى الختام.' },
+      { title: 'الفيلم', sub: 'CGI FILM', text: 'فيلم تخيلي سينمائي يبني العالم البصري للملتقى في الحركة.' },
+    ],
+    identityTitle: 'الهوية البصرية',
     identityMeta: 'BRAND IDENTITY',
     identityP:
-      'بدأ المشروع من الهوية. صممنا شعار ملتقى جدة للعقار وبنينا الثيم البصري الكامل: اللغة البصرية، الألوان، الزخارف الهندسية، والأسلوب الفني الذي حمله الكتالوج والفيلم والمحتوى والمطبوعات.',
-    applicationTitle: 'الهوية خارج الشعار',
+      'صممنا شعار ملتقى جدة للعقار ونظام الهوية الكامل: الذهبي والبورجوندي، الزخارف الهندسية، والشعار «نعمل لغد أفضل» الذي يفتح الكتالوج ويختمه.',
+    applicationTitle: 'تطبيق الهوية',
     applicationP:
-      'قوة الهوية تظهر عندما تنتقل من الشعار إلى التجربة: خلفيات، لافتات، شاشات، مواد فعالية، وعناصر ترويجية تحمل نفس الإيقاع البصري.',
-    filmTitle: 'رواية المشروع بالصورة',
+      'من جناح المعرض إلى مواد جدة سوبردوم وحملة الترويج: نفس اللغة البصرية في كل تطبيق.',
+    superdomeTitle: 'تصميم جدة سوبردوم للفيلم التخيلي',
+    superdomeMeta: 'JEDDAH SUPERDOME · 3D FOR FILM',
+    superdomeP:
+      'لأن الفيلم يحتاج مكاناً حقيقياً بمقياس الملتقى، بنينا نموذجاً ثلاثي الأبعاد كاملاً لجدة سوبردوم: الخارج، الداخل، توزيع المعرض، والمسرح المركزي. كل ما تراه في المعرض أدناه هو مرحلة التصميم الأولية التي أصبحت أساس الفيلم السينمائي.',
+    superdomeFeatured: 'الواجهة — لقطة من مرحلة التصميم',
+    filmTitle: 'الفيلم السينمائي التخيلي',
     filmMeta: 'CINEMATIC CGI FILM',
     filmP:
-      'بعد بناء الهوية، انتقلت اللغة البصرية إلى الفيلم. أنتجنا فيلماً ثلاثي الأبعاد تخيلياً بأسلوب سينمائي يحول فكرة الملتقى إلى عالم بصري متكامل، ويمنح المشروع حضوراً يتجاوز حدود التصميم الثابت.',
-    watchFilm: 'WATCH THE FILM',
-    watchSub: 'Jeddah Real Estate Forum · Cinematic CGI',
-    framesTitle: 'من الفكرة إلى المشهد',
-    contentTitle: 'بناء المنظومة البصرية',
-    contentMeta: 'CONTENT & ART DIRECTION',
-    contentP:
-      'لم يتوقف العمل عند الهوية والفيلم. طوّرنا المحتوى الكامل للمشروع والعناصر الفنية والمواد البصرية اللازمة لتقديم الملتقى بصورة متماسكة عبر القنوات الرقمية والفعالية.',
-    printTitle: 'عندما تصبح الفكرة مطبوعة',
+      'بعد الهوية والنموذج ثلاثي الأبعاد، أنتجنا فيلماً سينمائياً تخيلياً يحول ملتقى جدة للعقار إلى تجربة بصرية متحركة. القبة، الإضاءة، والإيقاع السينمائي كلها مبنية على ما صممناه لجدة سوبردوم.',
+    watchFilm: 'شاهد الفيلم',
+    watchSub: 'ملتقى جدة للعقار · فيلم CGI سينمائي',
+    framesTitle: 'لقطات من عالم الفيلم',
+    printTitle: 'الكتالوج والمطبوعات',
     printMeta: 'CATALOGUE & PRINT',
     printP:
-      'صممنا كتالوجاً من ٤٤ صفحة يحمل الهوية كاملة: الرؤية والرسالة والمحاور والمواد الترويجية، مع زخارف إسلامية هندسية وشعار «نعمل لغد أفضل» في الافتتاح والختام.',
+      'كتالوج من ٤٤ صفحة يحمل الهوية كاملة، مع زخارف إسلامية هندسية وشعار «نعمل لغد أفضل» في الافتتاح والختام.',
     poetryMeta: 'BRAND MOTTO',
-    poetryTitle: 'الشعار الذي يحمله الكتالوج',
-    visionMeta: 'OUR VISION',
-    visionTitle: 'رؤيتنا',
-    missionMeta: 'OUR MISSION',
-    missionTitle: 'رسالتنا',
+    poetryTitle: 'نعمل لغد أفضل',
     paletteTitle: 'لوحة الألوان',
-    themesMeta: 'FORUM THEMES',
-    themesTitle: 'محاور الملتقى',
-    themesP: 'ستة محاور رئيسية صاغت لغة الكتالوج والحملة والمواد المرئية للملتقى.',
-    catalogMeta: 'CATALOGUE SPREADS',
-    catalogTitle: 'من داخل الكتالوج',
-    catalogP: 'صفحات مختارة من الكتالوج الذي أنتجته Graphics House، تعكس الهوية والزخارف والمحتوى كما طُبعت.',
-    systemTitle: 'نظام بصري واحد. تطبيقات متعددة.',
-    systemP: 'صُممت جميع مخرجات المشروع كأجزاء من منظومة واحدة، لا كقطع منفصلة.',
-    systemSteps: ['BRAND', 'CAMPAIGN', 'FILM', 'CONTENT', 'PRINT', 'EXPERIENCE'],
+    catalogMeta: 'CATALOGUE',
+    catalogTitle: 'الكتالوج',
+    catalogP: 'صفحات مختارة من الكتالوج الذي أنتجته Graphics House — الهوية كما طُبعت.',
+    systemTitle: 'منظومة واحدة. ثلاثة محاور.',
+    systemP: 'الهوية، الكتالوج، والفيلم — ثلاثة مخرجات مترابطة صُممت معاً، لا بشكل منفصل.',
+    systemSteps: ['BRAND', 'CATALOGUE', 'SUPERDOME 3D', 'CGI FILM', 'PRINT'],
     behindTitle: 'خلف الكواليس',
     behindMeta: 'BEHIND THE CREATIVE',
     behindP:
@@ -126,61 +120,55 @@ const COPY = {
     heroTitle: 'Jeddah Real Estate Forum',
     heroEn: 'ملتقى جدة للعقار',
     heroDek:
-      'Integrated brand identity, a premium 44-page catalogue, and a cinematic visual experience for Jeddah\'s flagship real estate forum, from logo and ornaments to film and print.',
+      'We built everything for project success: brand identity, a premium catalogue, a full Jeddah Superdome 3D model, and a cinematic CGI film that carries them all.',
+    metaScope: 'Brand Identity · Catalogue · Superdome 3D · CGI Film',
     metaLocation: 'Jeddah, Saudi Arabia',
-    metaScope: 'Brand Identity · CGI Film · Content · Print & Visual Production',
     metaAgency: 'Graphics House',
     scroll: 'Scroll',
-    experienceTitle: 'When identity becomes an experience',
-    experienceMeta: 'WHEN IDENTITY BECOMES AN EXPERIENCE',
+    experienceTitle: 'We built everything for success',
+    experienceMeta: 'BUILT FOR SUCCESS',
     experienceP1:
-      'Graphics House did not deliver disconnected assets for Jeddah Real Estate Forum. We built the project\'s visual identity, shaped its creative world, then translated that identity into a cinematic film and an integrated system of content, art direction, and print.',
+      'This was not a logo or a film in isolation. The brief was a complete visual system to elevate Jeddah Real Estate Forum: brand identity, catalogue, architectural 3D model, and a cinematic CGI film carrying them all.',
     experienceP2:
-      'Every deliverable served one communication goal: a major Jeddah real estate event with one visual language from logo to screen to print.',
-    pipeline: ['IDENTITY', 'VISUAL LANGUAGE', 'CINEMATIC FILM', 'CONTENT', 'PRINT & ART DIRECTION'],
-    challengeTitle: 'From idea to presence',
-    challengeMeta: 'FROM IDEA TO PRESENCE',
-    challengeP:
-      'The challenge was a visual presence worthy of a major Jeddah real estate forum: a clear personality that could travel across every touchpoint. We built one visual language moving smoothly from identity to film, content, and print without losing coherence.',
-    words: ['IDENTITY', 'STORY', 'IMPACT'],
-    identityTitle: 'Building the project identity',
+      'From "Working for a better tomorrow" in the catalogue to Jeddah Superdome on screen: every deliverable was designed to work together.',
+    pipeline: ['BRAND', 'CATALOGUE', 'SUPERDOME 3D', 'CINEMATIC FILM', 'PRINT'],
+    pillars: [
+      { title: 'Branding', sub: 'BRANDING', text: 'Logo, colour, ornaments, and a visual system across every touchpoint.' },
+      { title: 'Catalogue', sub: 'CATALOGUE', text: '44 premium pages carrying identity from cover to close.' },
+      { title: 'Film', sub: 'CGI FILM', text: 'A cinematic CGI film that brings the forum\'s visual world to life.' },
+    ],
+    identityTitle: 'Brand identity',
     identityMeta: 'BRAND IDENTITY',
     identityP:
-      'The project began with identity. We designed the forum logo and full visual theme: graphic language, colour, geometric ornaments, and art direction carried through the catalogue, film, content, and print.',
-    applicationTitle: 'Identity beyond the logo',
+      'We designed the Jeddah Real Estate Forum logo and full identity system: gold and burgundy, geometric ornaments, and the motto "Working for a better tomorrow" opening and closing the catalogue.',
+    applicationTitle: 'Identity in application',
     applicationP:
-      'Identity proves itself in application: backdrops, signage, screens, event materials, and promotional pieces sharing the same visual rhythm.',
-    filmTitle: 'Telling the story in motion',
+      'From the exhibition booth to Jeddah Superdome materials and the campaign: one visual language throughout.',
+    superdomeTitle: 'Designing Jeddah Superdome for the cinematic film',
+    superdomeMeta: 'JEDDAH SUPERDOME · 3D FOR FILM',
+    superdomeP:
+      'Because the film needed a venue at forum scale, we built a complete 3D model of Jeddah Superdome: exterior, interior, exhibition layout, and central auditorium. Every thumbnail below is from the preliminary design phase that became the foundation of the cinematic film.',
+    superdomeFeatured: 'Facade — design-phase frame',
+    filmTitle: 'The cinematic CGI film',
     filmMeta: 'CINEMATIC CGI FILM',
     filmP:
-      'Once identity was set, the visual language moved into film. We produced a cinematic CGI piece that turns the forum idea into an integrated visual world and gives the project a presence beyond static design.',
+      'After identity and the 3D model, we produced a cinematic CGI film turning Jeddah Real Estate Forum into a moving visual experience. The dome, lighting, and cinematic rhythm all build on what we designed for Jeddah Superdome.',
     watchFilm: 'WATCH THE FILM',
     watchSub: 'Jeddah Real Estate Forum · Cinematic CGI',
-    framesTitle: 'From idea to frame',
-    contentTitle: 'Building the visual system',
-    contentMeta: 'CONTENT & ART DIRECTION',
-    contentP:
-      'Work did not stop at identity and film. We developed the full content suite and art-directed assets needed to present the forum consistently across digital channels and the live event.',
-    printTitle: 'When the idea becomes print',
+    framesTitle: 'Frames from the film world',
+    printTitle: 'Catalogue & print',
     printMeta: 'CATALOGUE & PRINT',
     printP:
-      'We designed a 44-page catalogue carrying the full identity: vision, mission, themes, and promotional materials, with Islamic geometric ornaments and the motto "Working for a better tomorrow" opening and closing the book.',
+      'A 44-page catalogue carrying the full identity, with Islamic geometric ornaments and "Working for a better tomorrow" opening and closing the book.',
     poetryMeta: 'BRAND MOTTO',
-    poetryTitle: 'The motto that carries the catalogue',
-    visionMeta: 'OUR VISION',
-    visionTitle: 'Our vision',
-    missionMeta: 'OUR MISSION',
-    missionTitle: 'Our mission',
+    poetryTitle: 'Working for a better tomorrow',
     paletteTitle: 'Colour palette',
-    themesMeta: 'FORUM THEMES',
-    themesTitle: 'Forum themes',
-    themesP: 'Six core themes that shaped the catalogue language, campaign, and visual materials for the forum.',
-    catalogMeta: 'CATALOGUE SPREADS',
-    catalogTitle: 'Inside the catalogue',
-    catalogP: 'Selected spreads from the catalogue produced by Graphics House, reflecting identity, ornaments, and content as printed.',
-    systemTitle: 'One visual system. Many applications.',
-    systemP: 'Every output was designed as part of one system, not isolated pieces.',
-    systemSteps: ['BRAND', 'CAMPAIGN', 'FILM', 'CONTENT', 'PRINT', 'EXPERIENCE'],
+    catalogMeta: 'CATALOGUE',
+    catalogTitle: 'The catalogue',
+    catalogP: 'Selected spreads from the catalogue produced by Graphics House — identity as printed.',
+    systemTitle: 'One system. Three pillars.',
+    systemP: 'Brand, catalogue, and film — three interconnected outputs designed together, not in isolation.',
+    systemSteps: ['BRAND', 'CATALOGUE', 'SUPERDOME 3D', 'CGI FILM', 'PRINT'],
     behindTitle: 'Behind the creative',
     behindMeta: 'BEHIND THE CREATIVE',
     behindP:
@@ -279,10 +267,6 @@ function buildPage(lang) {
     )
     .join('');
 
-  const missionHtml = DATA.mission
-    .map((m) => `<li>${esc(L(m, lang))}</li>`)
-    .join('');
-
   const paletteHtml = DATA.palette
     .map(
       (sw) => `<div class="jcs-palette-swatch jcs-reveal">
@@ -292,16 +276,23 @@ function buildPage(lang) {
     )
     .join('');
 
-  const themesHtml = DATA.themes
-    .map((t) => {
-      const lines = t.items[lang] || t.items.en || [];
-      const items = lines.map((line) => `<li>${esc(line)}</li>`).join('');
-      return `<article class="jcs-theme-card jcs-reveal">
-        <span class="jcs-theme-num">${esc(t.num)}</span>
-        <h3>${esc(L(t.title, lang))}</h3>
-        <ul>${items}</ul>
-      </article>`;
-    })
+  const pillarsHtml = c.pillars
+    .map(
+      (p) => `<article class="jcs-pillar jcs-reveal">
+        <span class="jcs-pillar-sub">${esc(p.sub)}</span>
+        <h3>${esc(p.title)}</h3>
+        <p>${esc(p.text)}</p>
+      </article>`
+    )
+    .join('');
+
+  const superdomeThumbs = DATA.superdomeRenders
+    .map(
+      (r) => `<figure class="jcs-sd-thumb jcs-reveal" data-jcs-lightbox="${P}${r.src}">
+        <img src="${P}${r.src}" alt="${esc(L(r.caption, lang))}" loading="lazy" decoding="async">
+        <figcaption>${esc(L(r.caption, lang))}</figcaption>
+      </figure>`
+    )
     .join('');
 
   const catalogHtml = DATA.catalogSpreads
@@ -354,7 +345,7 @@ ${analyticsHeadTags(P)}
 <link rel="stylesheet" href="${P}assets/site-header.css?v=35">
 <link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=28">
 <link rel="stylesheet" href="${P}assets/gh-float-widgets.css?v=8">
-<link rel="stylesheet" href="${P}assets/gh-jeddah-forum-cs.css?v=2">
+<link rel="stylesheet" href="${P}assets/gh-jeddah-forum-cs.css?v=3">
 <script defer src="${P}assets/site-header.js?v=16"></script>
 <script defer src="${P}assets/gh-performance.js?v=10"></script>
 <script defer src="${P}assets/lang-switch.js?v=2"></script>
@@ -393,7 +384,6 @@ ${header}
 <section class="jcs-poetry" aria-label="${esc(L(DATA.motto, lang))}">
   <div class="jcs-wrap jcs-poetry-inner jcs-reveal">
     <span class="jcs-meta">${esc(c.poetryMeta)}</span>
-    <h2 class="jcs-section-head" style="margin:12px 0 0;border:none">${esc(c.poetryTitle)}</h2>
     <div class="jcs-poetry-grid">
       <img class="jcs-poetry-ornament" src="${P}assets/projects/jeddah-forum/motif-divider.svg" alt="" aria-hidden="true">
       <div>
@@ -406,25 +396,6 @@ ${header}
   </div>
 </section>
 
-<section class="jcs-section jcs-section--paper">
-  <div class="jcs-wrap jcs-reveal">
-    <div class="jcs-vision-block">
-      <h2 class="jcs-vision-title">${esc(c.visionTitle)}</h2>
-      <div>
-        <span class="jcs-meta jcs-meta-en">${esc(c.visionMeta)}</span>
-        <p class="jcs-vision-text">${esc(L(DATA.vision, lang))}</p>
-      </div>
-    </div>
-    <div class="jcs-vision-block" style="margin-top:64px">
-      <h2 class="jcs-vision-title">${esc(c.missionTitle)}</h2>
-      <div>
-        <span class="jcs-meta jcs-meta-en">${esc(c.missionMeta)}</span>
-        <ul class="jcs-mission-list">${missionHtml}</ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="jcs-section jcs-section--dark">
   <div class="jcs-wrap jcs-reveal">
     <div class="jcs-section-head">
@@ -433,23 +404,8 @@ ${header}
     </div>
     <p class="jcs-lead">${esc(c.experienceP1)}</p>
     <p class="jcs-lead" style="margin-top:1.25rem">${esc(c.experienceP2)}</p>
+    <div class="jcs-pillars">${pillarsHtml}</div>
     <div class="jcs-pipeline" aria-label="Process">${pipelineHtml}</div>
-  </div>
-</section>
-
-<section class="jcs-section jcs-section--paper">
-  <div class="jcs-wrap">
-    <div class="jcs-split jcs-reveal">
-      <div>
-        <div class="jcs-section-head">
-          <span class="jcs-meta jcs-meta-en">${esc(c.challengeMeta)}</span>
-          <h2>${esc(c.challengeTitle)}</h2>
-        </div>
-        <p class="jcs-lead">${esc(c.challengeP)}</p>
-        <div class="jcs-words-xl">${c.words.map((w) => `<span>${esc(w)}</span>`).join('')}</div>
-      </div>
-      <div>${figure(DATA.heroImage, c.heroTitle, '', '', true)}</div>
-    </div>
   </div>
 </section>
 
@@ -462,17 +418,6 @@ ${header}
     <p class="jcs-lead jcs-reveal">${esc(c.identityP)}</p>
     <div class="jcs-palette jcs-reveal" aria-label="${esc(c.paletteTitle)}">${paletteHtml}</div>
     <div class="jcs-grid-editorial jcs-reveal" style="margin-top:48px">${galleryItems(DATA.identityGallery, lang)}</div>
-  </div>
-</section>
-
-<section class="jcs-section jcs-section--paper">
-  <div class="jcs-wrap">
-    <div class="jcs-section-head jcs-reveal">
-      <span class="jcs-meta jcs-meta-en">${esc(c.themesMeta)}</span>
-      <h2>${esc(c.themesTitle)}</h2>
-    </div>
-    <p class="jcs-lead jcs-reveal">${esc(c.themesP)}</p>
-    <div class="jcs-themes">${themesHtml}</div>
   </div>
 </section>
 
@@ -496,6 +441,18 @@ ${header}
     <div class="jcs-grid-masonry jcs-reveal" style="margin-top:40px">${DATA.applicationGallery
       .map((item) => figure(item.src, L(item.alt, lang), L(item.caption, lang)))
       .join('')}</div>
+  </div>
+</section>
+
+<section class="jcs-section jcs-section--superdome" id="superdome">
+  <div class="jcs-wrap">
+    <div class="jcs-section-head jcs-reveal">
+      <span class="jcs-meta">${esc(c.superdomeMeta)}</span>
+      <h2>${esc(c.superdomeTitle)}</h2>
+    </div>
+    <p class="jcs-lead jcs-reveal">${esc(c.superdomeP)}</p>
+    <div class="jcs-sd-feature jcs-reveal">${figure(DATA.superdomeHero, c.superdomeTitle, c.superdomeFeatured, 'jcs-figure--feature')}</div>
+    <div class="jcs-sd-grid" role="list">${superdomeThumbs}</div>
   </div>
 </section>
 
@@ -529,20 +486,7 @@ ${header}
   </div>
 </section>
 
-<section class="jcs-section jcs-section--paper" id="content">
-  <div class="jcs-wrap">
-    <div class="jcs-section-head jcs-reveal">
-      <span class="jcs-meta jcs-meta-en">${esc(c.contentMeta)}</span>
-      <h2>${esc(c.contentTitle)}</h2>
-    </div>
-    <p class="jcs-lead jcs-reveal">${esc(c.contentP)}</p>
-    <div class="jcs-print-trio jcs-reveal" style="margin-top:40px">${DATA.contentGallery
-      .map((item) => figure(item.src, L(item.alt, lang), ''))
-      .join('')}</div>
-  </div>
-</section>
-
-<section class="jcs-section jcs-section--dark" id="print">
+<section class="jcs-section jcs-section--paper" id="print">
   <div class="jcs-wrap">
     <div class="jcs-section-head jcs-reveal">
       <span class="jcs-meta">${esc(c.printMeta)}</span>
@@ -565,23 +509,9 @@ ${header}
         .join('')}</div>
     </div>
     <div class="jcs-system-grid">
-      <img src="${P}${DATA.heroImage}" alt="" loading="lazy">
+      <img src="${P}${DATA.logo}" alt="" loading="lazy">
+      <img src="${P}${DATA.superdomeHero}" alt="" loading="lazy">
       <img src="${P}${DATA.filmPoster}" alt="" loading="lazy">
-      <img src="${P}${DATA.heroImage}" alt="" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<section class="jcs-section jcs-section--paper">
-  <div class="jcs-wrap jcs-reveal">
-    <div class="jcs-section-head">
-      <span class="jcs-meta jcs-meta-en">${esc(c.behindMeta)}</span>
-      <h2>${esc(c.behindTitle)}</h2>
-    </div>
-    <p class="jcs-lead">${esc(c.behindP)}</p>
-    <div class="jcs-frame-pair" style="margin-top:40px">
-      ${figure(DATA.filmPoster, c.behindTitle, '')}
-      ${figure(DATA.heroImage, c.identityTitle, '')}
     </div>
   </div>
 </section>
@@ -645,7 +575,7 @@ ${header}
 
 ${footer}
 <script defer src="${P}assets/gh-float-widgets.js?v=1"></script>
-<script defer src="${P}assets/gh-jeddah-forum-cs.js?v=2"></script>
+<script defer src="${P}assets/gh-jeddah-forum-cs.js?v=3"></script>
 </body>
 </html>`;
 }

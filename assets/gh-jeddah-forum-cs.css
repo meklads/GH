@@ -1260,3 +1260,170 @@ html[dir="rtl"] .jcs-theme-card h3 {
 .jcs-section--dark .jcs-section-head h2 {
   color: #fafaf8;
 }
+
+/* Pillars — Brand · Catalogue · Film */
+.jcs-pillars {
+  display: grid;
+  gap: 16px;
+  margin: 48px 0 40px;
+}
+
+@media (min-width: 768px) {
+  .jcs-pillars {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.jcs-pillar {
+  padding: 32px 28px;
+  border: 1px solid var(--jcs-line-light);
+  background: rgba(255, 255, 255, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.jcs-pillar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--jcs-gold), transparent);
+}
+
+.jcs-pillar-sub {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--jcs-gold);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.jcs-pillar h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 12px;
+  color: #fafaf8;
+}
+
+html[dir="rtl"] .jcs-pillar h3 {
+  font-family: 'Tajawal', sans-serif;
+}
+
+.jcs-pillar p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(250, 250, 248, 0.58);
+  margin: 0;
+}
+
+/* Jeddah Superdome — 3D for film */
+.jcs-section--superdome {
+  background: linear-gradient(165deg, #1a1410 0%, #0a0a0a 45%, #12100e 100%);
+  color: #fafaf8;
+  padding: clamp(80px, 12vw, 140px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.jcs-section--superdome::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--jcs-pattern);
+  background-size: 160px 160px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.jcs-section--superdome > .jcs-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.jcs-section--superdome .jcs-section-head h2 {
+  color: #fafaf8;
+}
+
+.jcs-section--superdome .jcs-lead {
+  color: rgba(250, 250, 248, 0.62);
+}
+
+.jcs-sd-feature {
+  margin: 48px 0 32px;
+}
+
+.jcs-figure--feature {
+  aspect-ratio: 21 / 9;
+  min-height: 240px;
+  border: 1px solid rgba(184, 150, 93, 0.25);
+}
+
+.jcs-figure--feature figcaption {
+  color: var(--jcs-gold) !important;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.jcs-sd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .jcs-sd-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+}
+
+.jcs-sd-thumb {
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid rgba(184, 150, 93, 0.18);
+  background: rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  transition: border-color 0.35s var(--jcs-ease), transform 0.35s var(--jcs-ease);
+}
+
+.jcs-sd-thumb:hover {
+  border-color: rgba(184, 150, 93, 0.55);
+  transform: translateY(-3px);
+}
+
+.jcs-sd-thumb img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--jcs-ease);
+}
+
+.jcs-sd-thumb:hover img {
+  transform: scale(1.04);
+}
+
+.jcs-sd-thumb figcaption {
+  padding: 8px 10px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.5);
+  line-height: 1.4;
+  border-top: 1px solid rgba(184, 150, 93, 0.12);
+}
+
+html[dir="rtl"] .jcs-sd-thumb figcaption {
+  font-family: 'Tajawal', sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 10px;
+}
+
+.jcs-section--paper#print {
+  background: var(--jcs-paper-dark);
+}

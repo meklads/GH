@@ -4,6 +4,7 @@
   "logo": "assets/projects/jeddah-forum/logo.png",
   "heroImage": "assets/projects/jeddah-forum/catalog/page-01.jpg",
   "filmPoster": "assets/projects/animation/jeddah-forum.jpg",
+  "superdomeHero": "assets/projects/jeddah-forum/superdome/render-06.jpg",
   "nav": {
     "prev": {
       "href": "../casestudy1.html",
@@ -26,96 +27,66 @@
     "ar": "نحو ٢٠٣٠",
     "en": "Towards 2030"
   },
-  "vision": {
-    "ar": "أن يصبح ملتقى جدة الأول من نوعه في مجال طرح المشروعات التي تشكل مستقبل جدة في جميع النواحي العمرانية والمجتمعية التي تحقق رؤية ٢٠٣٠ في رفع مستوى جودة الحياة لأهالي جدة لتصبح من أفضل مدن العالم.",
-    "en": "To make Jeddah Forum the first of its kind in launching projects that shape Jeddah's future across urban and community dimensions, advancing Vision 2030 and raising quality of life for Jeddah's residents toward one of the world's finest cities."
-  },
-  "mission": [
-    {
-      "ar": "تنظيم حركة التوسع العمراني والمشاريع الريادية في مدينة جدة.",
-      "en": "Organising urban expansion and pioneering projects across Jeddah."
-    },
-    {
-      "ar": "تحقيق التوازن العمراني في جميع أنحاء المدينة.",
-      "en": "Achieving urban balance throughout the city."
-    },
-    {
-      "ar": "توفير بيئة جمالية وتجارية وتسويقية في المجال الاستثماري.",
-      "en": "Providing an aesthetic, commercial, and marketing environment for investment."
-    },
-    {
-      "ar": "تعزيز مكانة جدة بمقومات إنسانية وساحلية مميزة.",
-      "en": "Enhancing Jeddah's human and coastal strengths."
-    }
-  ],
-  "themes": [
-    {
-      "num": "01",
-      "title": { "ar": "عمران مزدهر", "en": "Prosperous urbanism" },
-      "items": {
-        "ar": ["المشاريع الريادية", "المشاريع الحكومية", "المشاريع الخاصة"],
-        "en": ["Entrepreneurial projects", "Government projects", "Private sector projects"]
-      }
-    },
-    {
-      "num": "02",
-      "title": { "ar": "مجتمع حيوي مشارك", "en": "A vibrant community" },
-      "items": {
-        "ar": ["المشاركة المجتمعية", "تطوير المبادرات والفعاليات", "تنمية المدينة"],
-        "en": ["Community participation", "Initiatives and events", "City development"]
-      }
-    },
-    {
-      "num": "03",
-      "title": { "ar": "إثراء نمط الحياة", "en": "Enriching lifestyle" },
-      "items": {
-        "ar": ["تطوير المرافق والبنية", "تفعيل أنماط حياة أكثر حيوية", "جودة الحياة"],
-        "en": ["Facilities and infrastructure", "More vibrant lifestyles", "Quality of life"]
-      }
-    },
-    {
-      "num": "04",
-      "title": { "ar": "مدينة ذكية", "en": "Smart city" },
-      "items": {
-        "ar": ["التحول الرقمي", "الذكاء الاصطناعي"],
-        "en": ["Digital transformation", "Artificial intelligence"]
-      }
-    },
-    {
-      "num": "05",
-      "title": { "ar": "استثمار جاذب", "en": "Attractive investment" },
-      "items": {
-        "ar": ["شراكات مع القطاع الخاص", "تنمية الاستثمار", "فرص العمل"],
-        "en": ["Private-sector partnerships", "Investment development", "Job opportunities"]
-      }
-    },
-    {
-      "num": "06",
-      "title": { "ar": "تطوير مستوى المعيشة", "en": "Raising living standards" },
-      "items": {
-        "ar": ["أنسنة المدن", "جودة الخدمات", "وجهة عالمية للفعاليات"],
-        "en": ["Humanising cities", "Service quality", "Global events destination"]
-      }
-    }
-  ],
   "palette": [
     { "name": { "ar": "كريم الهوية", "en": "Identity cream" }, "hex": "#f2efe8" },
     { "name": { "ar": "ذهبي الملتقى", "en": "Forum gold" }, "hex": "#b8965d" },
     { "name": { "ar": "بورجوندي النص", "en": "Burgundy type" }, "hex": "#733d2d" },
     { "name": { "ar": "بني عميق", "en": "Deep brown" }, "hex": "#5a3a3a" }
   ],
+  "superdomeRenders": [
+    {
+      "src": "assets/projects/jeddah-forum/superdome/render-01.jpg",
+      "caption": { "ar": "منظر جوي — الموقع والبنية", "en": "Aerial — site & structure" }
+    },
+    {
+      "src": "assets/projects/jeddah-forum/superdome/render-02.jpg",
+      "caption": { "ar": "الداخل — الشبكة الهندسية", "en": "Interior — geodesic lattice" }
+    },
+    {
+      "src": "assets/projects/jeddah-forum/superdome/render-03.jpg",
+      "caption": { "ar": "نموذج ثلاثي الأبعاد — المنظور", "en": "3D model — perspective" }
+    },
+    {
+      "src": "assets/projects/jeddah-forum/superdome/render-04.jpg",
+      "caption": { "ar": "تخطيط المعرض والمسرح", "en": "Exhibition & stage layout" }
+    },
+    {
+      "src": "assets/projects/jeddah-forum/superdome/render-05.jpg",
+      "caption": { "ar": "القاعة الكاملة — من الأعلى", "en": "Full hall — bird's eye" }
+    },
+    {
+      "src": "assets/projects/jeddah-forum/superdome/render-06.jpg",
+      "caption": { "ar": "الواجهة والمدخل", "en": "Facade & entrance" }
+    },
+    {
+      "src": "assets/projects/jeddah-forum/superdome/render-07.jpg",
+      "caption": { "ar": "توزيع الأجنحة", "en": "Booth distribution" }
+    },
+    {
+      "src": "assets/projects/jeddah-forum/superdome/render-08.jpg",
+      "caption": { "ar": "مخطط أرضي تفصيلي", "en": "Detailed floor plan" }
+    },
+    {
+      "src": "assets/projects/jeddah-forum/superdome/render-09.jpg",
+      "caption": { "ar": "المسرح المركزي", "en": "Central auditorium" }
+    },
+    {
+      "src": "assets/projects/jeddah-forum/superdome/render-10.jpg",
+      "caption": { "ar": "الفضاء الداخلي — الإضاءة", "en": "Interior volume — lighting" }
+    }
+  ],
   "frames": [
     {
-      "src": "assets/projects/rendering/jeddah-forum.jpg",
+      "src": "assets/projects/jeddah-forum/superdome/render-01.jpg",
       "caption": { "ar": "01 / لقطة افتتاحية", "en": "01 / ESTABLISHING SHOT" }
     },
     {
-      "src": "assets/projects/animation/jeddah-forum.jpg",
-      "caption": { "ar": "02 / العالم البصري", "en": "02 / VISUAL WORLD" }
+      "src": "assets/projects/jeddah-forum/superdome/render-02.jpg",
+      "caption": { "ar": "02 / الداخل السينمائي", "en": "02 / CINEMATIC INTERIOR" }
     },
     {
-      "src": "assets/projects/rendering/jeddah-forum.jpg",
-      "caption": { "ar": "03 / تفصيل سينمائي", "en": "03 / CINEMATIC DETAIL" },
+      "src": "assets/projects/jeddah-forum/superdome/render-06.jpg",
+      "caption": { "ar": "03 / الواجهة", "en": "03 / FACADE" },
       "layout": "full"
     }
   ],
@@ -123,57 +94,43 @@
     {
       "src": "assets/projects/jeddah-forum/logo.png",
       "alt": { "ar": "شعار ملتقى جدة للعقار", "en": "Jeddah Real Estate Forum logo" },
-      "caption": { "ar": "الشعار والهوية", "en": "Logo & identity" },
+      "caption": { "ar": "الشعار", "en": "Logo" },
       "size": "logo"
     },
     {
       "src": "assets/projects/jeddah-forum/catalog/page-01.jpg",
-      "alt": { "ar": "غلاف الكتالوج والهوية التطبيقية", "en": "Catalogue cover and identity application" },
-      "caption": { "ar": "الغلاف", "en": "Cover spread" },
+      "alt": { "ar": "غلاف الكتالوج", "en": "Catalogue cover" },
+      "caption": { "ar": "الغلاف", "en": "Cover" },
       "size": "hero"
     },
     {
       "src": "assets/projects/jeddah-forum/catalog/page-02.jpg",
-      "alt": { "ar": "صفحة الرؤية", "en": "Vision page" },
+      "alt": { "ar": "الهوية — الرؤية", "en": "Identity — vision spread" },
       "caption": { "ar": "الرؤية", "en": "Vision" },
       "size": "half"
     },
     {
       "src": "assets/projects/jeddah-forum/catalog/page-03.jpg",
-      "alt": { "ar": "صفحة الرسالة", "en": "Mission page" },
+      "alt": { "ar": "الهوية — الرسالة", "en": "Identity — mission spread" },
       "caption": { "ar": "الرسالة", "en": "Mission" },
       "size": "half"
     }
   ],
   "applicationGallery": [
     {
-      "src": "assets/projects/jeddah-forum/catalog/page-06.jpg",
-      "alt": { "ar": "نطاق الملتقى والفئات المستهدفة", "en": "Forum scope and target groups" },
-      "caption": { "ar": "نطاق الملتقى", "en": "Forum scope" }
-    },
-    {
       "src": "assets/projects/jeddah-forum/catalog/page-07.jpg",
-      "alt": { "ar": "جدة سوبردوم — المكان والزمن", "en": "Jeddah Superdome — venue and dates" },
-      "caption": { "ar": "المكان والزمن", "en": "Venue & timing" }
+      "alt": { "ar": "تطبيق الهوية — جدة سوبردوم", "en": "Identity on venue materials" },
+      "caption": { "ar": "المكان", "en": "Venue" }
     },
     {
       "src": "assets/projects/jeddah-forum/catalog/page-35.jpg",
-      "alt": { "ar": "مقترحات آلية التسويق — جناح المعرض", "en": "Marketing booth concept" },
-      "caption": { "ar": "التطبيق الميداني", "en": "Event application" }
-    }
-  ],
-  "contentGallery": [
-    {
-      "src": "assets/projects/jeddah-forum/catalog/page-08.jpg",
-      "alt": { "ar": "محاور الملتقى", "en": "Forum themes" }
-    },
-    {
-      "src": "assets/projects/jeddah-forum/catalog/page-10.jpg",
-      "alt": { "ar": "نبذة عن محاور الملتقى", "en": "Forum themes overview" }
+      "alt": { "ar": "جناح المعرض — تطبيق الهوية", "en": "Exhibition booth concept" },
+      "caption": { "ar": "الجناح", "en": "Booth" }
     },
     {
       "src": "assets/projects/jeddah-forum/catalog/page-30.jpg",
-      "alt": { "ar": "الترويج للحملة", "en": "Campaign promotion" }
+      "alt": { "ar": "حملة الترويج", "en": "Campaign promotion" },
+      "caption": { "ar": "الحملة", "en": "Campaign" }
     }
   ],
   "printGallery": [
@@ -187,7 +144,7 @@
     },
     {
       "src": "assets/projects/jeddah-forum/catalog/page-44.jpg",
-      "alt": { "ar": "صفحة الختام — نعمل لغد أفضل", "en": "Closing spread — working for a better tomorrow" }
+      "alt": { "ar": "الختام — نعمل لغد أفضل", "en": "Closing — working for a better tomorrow" }
     }
   ],
   "catalogSpreads": [
@@ -195,23 +152,17 @@
     { "src": "assets/projects/jeddah-forum/catalog/page-02.jpg", "label": { "ar": "الرؤية", "en": "Vision" } },
     { "src": "assets/projects/jeddah-forum/catalog/page-03.jpg", "label": { "ar": "الرسالة", "en": "Mission" } },
     { "src": "assets/projects/jeddah-forum/catalog/page-04.jpg", "label": { "ar": "الأهداف", "en": "Objectives" } },
-    { "src": "assets/projects/jeddah-forum/catalog/page-05.jpg", "label": { "ar": "أين نحن اليوم", "en": "Where we are" } },
-    { "src": "assets/projects/jeddah-forum/catalog/page-06.jpg", "label": { "ar": "النطاق", "en": "Scope" } },
-    { "src": "assets/projects/jeddah-forum/catalog/page-07.jpg", "label": { "ar": "المكان", "en": "Venue" } },
-    { "src": "assets/projects/jeddah-forum/catalog/page-08.jpg", "label": { "ar": "المحاور", "en": "Themes" } },
-    { "src": "assets/projects/jeddah-forum/catalog/page-10.jpg", "label": { "ar": "المحاور التفصيلية", "en": "Theme detail" } },
-    { "src": "assets/projects/jeddah-forum/catalog/page-16.jpg", "label": { "ar": "عوامل النجاح", "en": "Success factors" } },
+    { "src": "assets/projects/jeddah-forum/catalog/page-07.jpg", "label": { "ar": "جدة سوبردوم", "en": "Jeddah Superdome" } },
     { "src": "assets/projects/jeddah-forum/catalog/page-35.jpg", "label": { "ar": "التسويق", "en": "Marketing" } },
     { "src": "assets/projects/jeddah-forum/catalog/page-44.jpg", "label": { "ar": "الختام", "en": "Closing" } }
   ],
   "deliverables": [
-    { "ar": "الهوية البصرية", "en": "Brand Identity" },
-    { "ar": "تصميم الشعار", "en": "Logo Design" },
-    { "ar": "نظام الهوية البصرية", "en": "Visual Identity System" },
-    { "ar": "فيلم CGI سينمائي", "en": "Cinematic CGI Film" },
-    { "ar": "إنتاج المحتوى", "en": "Content Creation" },
-    { "ar": "تصميم الكتالوج", "en": "Catalogue Design" },
-    { "ar": "الإخراج الفني", "en": "Art Direction" },
-    { "ar": "المواد المطبوعة والبصرية", "en": "Print & Visual Materials" }
+    { "ar": "الهوية البصرية والشعار", "en": "Brand identity & logo" },
+    { "ar": "نظام الهوية والزخارف", "en": "Visual system & ornaments" },
+    { "ar": "تصميم وبناء جدة سوبردوم ثلاثي الأبعاد", "en": "Jeddah Superdome 3D design & build" },
+    { "ar": "فيلم CGI سينمائي تخيلي", "en": "Cinematic CGI film" },
+    { "ar": "كتالوج ٤٤ صفحة", "en": "44-page catalogue" },
+    { "ar": "إخراج فني ومحتوى", "en": "Art direction & content" },
+    { "ar": "مواد مطبوعة وبصرية", "en": "Print & visual materials" }
   ]
 }
