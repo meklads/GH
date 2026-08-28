@@ -25,7 +25,7 @@ function patch(rel, transforms) {
 console.log('Patching hand-crafted pages…');
 
 patch('solutions/project-launch.html', [
-  [/site-header\.css\?v=\d+/g, 'site-header.css?v=35'],
+  [/site-header\.css\?v=\d+/g, 'site-header.css?v=36'],
   [/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=10'],
   [/project-launch-media\.js\?v=\d+/g, 'project-launch-media.js?v=4'],
   [/solution-premium\.css\?v=\d+/g, 'solution-premium.css?v=3'],
@@ -45,7 +45,7 @@ if (!fs.readFileSync(path.join(ROOT, 'solutions/project-launch.html'), 'utf8').i
 }
 
 patch('solutions/project-launch-en.html', [
-  [/site-header\.css\?v=\d+/g, 'site-header.css?v=35'],
+  [/site-header\.css\?v=\d+/g, 'site-header.css?v=36'],
   [/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=10'],
   [/project-launch-media\.js\?v=\d+/g, 'project-launch-media.js?v=4'],
   [/solution-premium\.css\?v=\d+/g, 'solution-premium.css?v=3'],
