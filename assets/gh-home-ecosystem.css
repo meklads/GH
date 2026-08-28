@@ -80,7 +80,71 @@ html[dir="rtl"] .gh-home-eco__label {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
+  margin-bottom: 32px;
+}
+
+.gh-home-eco__institutional {
   margin-bottom: 48px;
+}
+
+.gh-home-eco-institutional {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  text-decoration: none;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.08) 0%, #151515 45%);
+  border: 1px solid rgba(201, 168, 76, 0.22);
+  transition: all 0.35s ease;
+}
+
+.gh-home-eco-institutional:hover {
+  border-color: #c9a84c;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.gh-home-eco-institutional__icon {
+  font-size: 40px;
+  color: #c9a84c;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.gh-home-eco-institutional__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gh-home-eco-institutional__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.gh-home-eco-institutional__sub {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.55;
+}
+
+.gh-home-eco-institutional__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #c9a84c;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+html[dir="rtl"] .gh-home-eco-institutional__cta .material-symbols-outlined {
+  transform: scaleX(-1);
 }
 
 .gh-home-eco__disciplines {
@@ -202,6 +266,17 @@ html[dir="rtl"] .gh-home-eco-card__cta .material-symbols-outlined {
 @media (max-width: 640px) {
   .gh-home-eco {
     padding: 72px 0;
+  }
+
+  .gh-home-eco-institutional {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px;
+  }
+
+  .gh-home-eco-institutional__cta {
+    white-space: normal;
   }
 
   .gh-home-eco__products,
