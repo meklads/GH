@@ -293,6 +293,21 @@ html[dir="rtl"] .bid-case-link .material-symbols-outlined { transform: scaleX(-1
 .bid-gal-card--tone-burgundy .bid-gal-visual {
   background: linear-gradient(145deg, #3d2828 0%, #1a1010 100%);
 }
+.bid-gal-card--tone-slate .bid-gal-visual {
+  background: radial-gradient(ellipse 95% 85% at 50% 42%, #4a4a4a 0%, #2a2a2a 45%, #121212 100%);
+}
+.bid-gal-card--tone-slate .bid-gal-visual img {
+  max-width: 88%;
+  max-height: 72px;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,.4));
+}
+.bid-gal-card--tone-lunovia .bid-gal-visual {
+  background: radial-gradient(ellipse 90% 80% at 50% 38%, #faf8f4 0%, #f0ebe3 50%, #e6dfd4 100%);
+}
+.bid-gal-card--tone-lunovia .bid-gal-visual img {
+  max-height: 130px;
+  max-width: 85%;
+}
 
 .bid-gal-foot {
   display: flex;

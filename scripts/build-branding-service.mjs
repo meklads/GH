@@ -14,7 +14,7 @@ const OUT = path.join(ROOT, 'services');
 const BASE = 'https://3dgraphicshouse.com';
 const DEPTH = 1;
 const P = '../';
-const CSS_V = 4;
+const CSS_V = 5;
 const HERO = 'assets/projects/branding/jeddah-forum-premium.png';
 const CASE_IMG = 'assets/projects/branding/jeddah-forum-premium.png';
 
@@ -80,13 +80,13 @@ const GALLERY = [
   },
   {
     filter: 'group',
-    tone: 'burgundy',
-    cover: true,
-    img: 'assets/projects/rendering/c3.jpg',
+    tone: 'slate',
+    cover: false,
+    img: 'assets/projects/branding/turriva-logo.png',
     titleAr: 'توريفا',
     titleEn: 'Turriva',
-    subAr: 'تشطيبات وصالات العرض',
-    subEn: 'Finishes & sales galleries',
+    subAr: 'عمارة · تصميم داخلي · تشييد',
+    subEn: 'Architecture · interior · construction',
     catAr: 'علامات المجموعة',
     catEn: 'Group brands',
     hrefAr: 'https://turriva.com',
@@ -102,6 +102,20 @@ const GALLERY = [
     titleEn: 'Scents Wave',
     subAr: 'عطور وهدايا',
     subEn: 'Perfume & gifts',
+    catAr: 'تجزئة وعلامات',
+    catEn: 'Retail & consumer',
+    hrefAr: '../contact-us.html',
+    hrefEn: '../contact-us-en.html',
+  },
+  {
+    filter: 'commercial',
+    tone: 'lunovia',
+    cover: false,
+    img: 'assets/projects/branding/lunovia-logo.jpg',
+    titleAr: 'Lunovia',
+    titleEn: 'Lunovia',
+    subAr: 'نوم أفضل. حياة أفضل.',
+    subEn: 'Better sleep. Better you.',
     catAr: 'تجزئة وعلامات',
     catEn: 'Retail & consumer',
     hrefAr: '../contact-us.html',
