@@ -34,6 +34,27 @@ body.gh-home .gh-full-bleed {
     padding-bottom: 60px;
   }
 
+  /* Portfolio album — avoid 100vw bleed + tighter cards on small screens */
+  body.gh-home .pf-album {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.gh-home .pf-album__frame {
+    height: clamp(240px, 56vw, 360px);
+  }
+
+  body.gh-home .pf-album__track .pf-item {
+    width: clamp(260px, 78vw, 420px) !important;
+  }
+
+  body.gh-home .pf-album__frame::before,
+  body.gh-home .pf-album__frame::after {
+    width: min(48px, 8vw);
+  }
+
   /* Trust band */
   body.gh-home #trust-band > div {
     padding: 28px 20px !important;

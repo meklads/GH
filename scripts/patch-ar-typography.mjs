@@ -8,7 +8,7 @@ import { join, relative } from 'node:path';
 const ROOT = join(import.meta.dirname, '..');
 const CANONICAL_FONTS =
   '<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>';
-const TYPO_VERSION = 'v=1';
+const TYPO_VERSION = 'v=2';
 
 function walkHtml(dir, out = []) {
   for (const name of readdirSync(dir)) {
@@ -41,40 +41,45 @@ function assetPrefix(rel) {
 }
 
 function normalizeFontLinks(html) {
-  if (html.includes('IBM+Plex+Sans+Arabic')) return html;
-
-  let needPlayfair = false;
+  const materialLinks = [];
   html = html.replace(
     /<link[^>]*href="https:\/\/fonts\.googleapis\.com\/css2[^"]*"[^>]*>/gi,
     (match) => {
-      if (/Material\+Symbols/i.test(match)) return match;
-      if (/Playfair/i.test(match) && /Tajawal/i.test(match)) {
-        needPlayfair = true;
-        return CANONICAL_FONTS;
+      if (/Material\+Symbols/i.test(match)) {
+        materialLinks.push(match);
+        return '';
       }
-      if (/Playfair/i.test(match) && !/Tajawal/i.test(match)) return match;
-      if (/Tajawal|family=Inter/i.test(match)) return CANONICAL_FONTS;
-      return match;
+      return '';
     }
   );
 
-  if (needPlayfair && !html.includes('Playfair+Display')) {
+  const needsPlayfair = /Playfair Display/i.test(html);
+  const hasCanonical = html.includes('IBM+Plex+Sans+Arabic');
+
+  if (!hasCanonical) {
+    const anchor =
+      html.match(/<link rel="apple-touch-icon"[^>]*>/i)?.[0] ||
+      html.match(/<link rel="preconnect" href="https:\/\/fonts\.gstatic\.com"[^>]*>/i)?.[0] ||
+      '<meta charset';
+    const block =
+      anchor === '<meta charset'
+        ? `${CANONICAL_FONTS}\n<meta charset`
+        : `${anchor}\n${CANONICAL_FONTS}`;
+    html = html.replace(anchor, block);
+  }
+
+  if (needsPlayfair && !html.includes('Playfair+Display')) {
     html = html.replace(
       CANONICAL_FONTS,
       `${CANONICAL_FONTS}\n<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>`
     );
   }
 
-  if (!html.includes('family=Tajawal')) {
-    if (html.includes('fonts.gstatic.com')) {
-      html = html.replace(
-        /(<link rel="preconnect" href="https:\/\/fonts\.gstatic\.com"[^>]*>)/i,
-        `$1\n${CANONICAL_FONTS}`
-      );
-    } else {
-      html = html.replace('<meta charset', `${CANONICAL_FONTS}\n<meta charset`);
-    }
+  if (materialLinks.length) {
+    const insertAfter = html.match(CANONICAL_FONTS.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))?.[0] || CANONICAL_FONTS;
+    html = html.replace(insertAfter, `${insertAfter}\n${materialLinks[0]}`);
   }
+
   return html;
 }
 

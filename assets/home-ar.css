@@ -3012,6 +3012,16 @@ img { max-width: 100%; display: block; }
   height: 100% !important;
   object-fit: cover !important;
 }
+/* Marquee track must stay LTR even inside RTL portfolio section */
+.pf-album,
+.pf-album__frame,
+.pf-album__track {
+  direction: ltr;
+}
+.pf-album__track .pf-item-overlay {
+  direction: rtl;
+  text-align: right;
+}
 .pf-subsection-header {
   display: flex !important;
   align-items: center;

@@ -261,15 +261,14 @@ ${analyticsHeadTags(p)}
 <link rel="icon" type="image/png" sizes="32x32" href="${p}assets/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="${p}assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="${p}assets/favicon/apple-touch-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=35">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=28">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=27">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
+<link rel="stylesheet" href="${p}assets/gh-ar-typography.css?v=2">
 <script defer src="${p}assets/site-header.js?v=16"></script>
 <script defer src="${p}assets/gh-performance.js?v=9"></script>
 <script defer src="${p}assets/gh-cta-track.js?v=1"></script>

@@ -118,7 +118,7 @@ html[dir='ltr'] .header button.nav-link {
 }
 html[dir='rtl'] .font-headline-xl {
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-  font-weight: 800;
+  font-weight: 300;
   letter-spacing: -0.01em;
 }
 .font-headline-md {
@@ -129,7 +129,7 @@ html[dir='rtl'] .font-headline-xl {
 }
 html[dir='rtl'] .font-headline-md {
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-  font-weight: 700;
+  font-weight: 400;
 }
 .font-body-lg {
   font-family: 'Inter', 'Tajawal', sans-serif;
@@ -213,7 +213,7 @@ section.relative.min-h-screen h1 {
 html[dir='rtl'] section.relative.h-screen h1,
 html[dir='rtl'] section.relative.min-h-screen h1 {
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 .svc-hero-overlay {

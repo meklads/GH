@@ -307,18 +307,19 @@ function gateHead(lang, config) {
 <title>${config.title} | Graphics House</title>
 <meta name="description" content="${config.description}"/>
 <link rel="icon" type="image/png" sizes="32x32" href="${p}assets/favicon/favicon-32.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=${ASSETS.siteHeaderCss}">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=${ASSETS.ghSiteEnhancements}">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=${ASSETS.ghInsights}">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=${ASSETS.ghFloatWidgets}">
+<link rel="stylesheet" href="${p}assets/gh-ar-typography.css?v=2">
 <script defer src="${p}assets/site-header.js?v=${ASSETS.siteHeaderJs}"></script>
 <script defer src="${p}assets/lang-switch.js?v=${ASSETS.langSwitch}"></script>
 <style>
 body.gh-insights{min-height:100vh;display:flex;flex-direction:column;background:#f7f5f0}
 .gh-lead-page{flex:1;padding:120px 24px 80px;max-width:560px;margin:0 auto;width:100%}
 .gh-lead-card{background:#ffffff;border:1px solid #e8e4dc;box-shadow:0 16px 40px rgba(0,0,0,0.06);padding:40px 36px}
-.gh-lead-card h1{font-family:"Playfair Display","Tajawal",serif;font-size:1.75rem;margin:0 0 12px;line-height:1.25;color:#0a0a0a}
+.gh-lead-card h1{font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif;font-size:clamp(28px,3vw,44px);font-weight:300;margin:0 0 12px;line-height:1.25;color:#0a0a0a}
 .gh-lead-card .lead{font-size:16px;color:#555555;line-height:1.7;margin:0 0 24px}
 .gh-lead-form input[type=email]{width:100%;padding:12px 14px;border:1px solid #ddd8ce;border-radius:4px;font-size:15px;margin-bottom:10px;background:#fff;color:#1a1a1a}
 .gh-lead-form button{width:100%;padding:14px;background:#c9a84c;color:#0a0a0a;border:none;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:4px}
