@@ -140,6 +140,23 @@ function collectHtmlFiles(dir, base = '') {
   return out;
 }
 
+function ensureMaterialSymbols(html) {
+  if (/Material\+Symbols|Material Symbols Outlined/i.test(html)) return html;
+  if (!html.includes('material-symbols-outlined')) return html;
+  const tag =
+    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />';
+  if (/fonts\.googleapis\.com/i.test(html)) {
+    return html.replace(
+      /(<link[^>]*fonts\.googleapis\.com[^>]*>)/i,
+      `$1\n${tag}`
+    );
+  }
+  if (/<\/head>/i.test(html)) {
+    return html.replace(/<\/head>/i, `${tag}\n</head>`);
+  }
+  return html;
+}
+
 function ensureHeaderCssOrder(html, prefix) {
   const headerHref = `${prefix}site-header.css?v=37`;
   const headerTag = `<link rel="stylesheet" href="${headerHref}">`;
@@ -185,6 +202,7 @@ function syncFile(rel) {
   html = fixCorruption(html);
   html = fixLogoCss(html);
   html = ensureFontDisplaySwap(html);
+  html = ensureMaterialSymbols(html);
   html = html.replace(/<a class="gh-skip-link"[\s\S]*?<\/a>\s*/g, '');
   html = html.replace(/<header class="header"[\s\S]*?<\/header>/, header);
   html = html.replace(
