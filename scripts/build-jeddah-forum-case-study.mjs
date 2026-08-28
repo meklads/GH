@@ -59,6 +59,7 @@ const COPY = {
     identityMeta: 'BRAND IDENTITY',
     identityP:
       'صممنا شعار ملتقى جدة للعقار ونظام الهوية الكامل: الذهبي والبورجوندي، الزخارف الهندسية، والشعار «نعمل لغد أفضل» الذي يفتح الكتالوج ويختمه.',
+    identityServiceLink: 'خدمة الهوية البصرية ←',
     applicationTitle: 'تطبيق الهوية',
     applicationP:
       'من جناح المعرض إلى مواد جدة سوبردوم وحملة الترويج: نفس اللغة البصرية في كل تطبيق.',
@@ -141,6 +142,7 @@ const COPY = {
     identityMeta: 'BRAND IDENTITY',
     identityP:
       'We designed the Jeddah Real Estate Forum logo and full identity system: gold and burgundy, geometric ornaments, and the motto "Working for a better tomorrow" opening and closing the catalogue.',
+    identityServiceLink: 'Visual identity service →',
     applicationTitle: 'Identity in application',
     applicationP:
       'From the exhibition booth to Jeddah Superdome materials and the campaign: one visual language throughout.',
@@ -416,6 +418,7 @@ ${header}
       <h2>${esc(c.identityTitle)}</h2>
     </div>
     <p class="jcs-lead jcs-reveal">${esc(c.identityP)}</p>
+    <p class="jcs-reveal" style="margin-top:1rem"><a class="jcs-link" href="${isEn ? '../services/branding-en.html' : '../services/branding.html'}">${esc(c.identityServiceLink)}</a></p>
     <div class="jcs-palette jcs-reveal" aria-label="${esc(c.paletteTitle)}">${paletteHtml}</div>
     <div class="jcs-grid-editorial jcs-reveal" style="margin-top:48px">${galleryItems(DATA.identityGallery, lang)}</div>
   </div>
