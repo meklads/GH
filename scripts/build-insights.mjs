@@ -218,6 +218,15 @@ function prefixPaths(html, depth) {
     .replace(/href="(?!https?:|\/|#|mailto:|tel:)([^"]*)"/g, `href="${p}$1"`);
 }
 
+function articleKeywords(article, lang) {
+  const isEn = lang === 'en';
+  const kw = article.keywords?.[isEn ? 'en' : 'ar'];
+  if (!kw) return '';
+  const list = [...(kw.short || []), ...(kw.long || [])].filter(Boolean);
+  if (!list.length) return '';
+  return list.join(', ');
+}
+
 function headBlock(lang, meta) {
   const isEn = lang === 'en';
   const depth = meta.depth || 1;
@@ -226,6 +235,9 @@ function headBlock(lang, meta) {
   const canonical = meta.canonical || `${base}/insights/${isEn ? 'index-en.html' : 'index.html'}`;
   const altEn = meta.altEn || `${base}/insights/index-en.html`;
   const altAr = meta.altAr || `${base}/insights/index.html`;
+  const keywordsMeta = meta.keywords
+    ? `\n<meta name="keywords" content="${esc(meta.keywords)}"/>`
+    : '';
 
   return `<!DOCTYPE html>
 <html class="scroll-smooth" dir="${isEn ? 'ltr' : 'rtl'}" lang="${isEn ? 'en' : 'ar'}">
@@ -240,7 +252,7 @@ ${analyticsHeadTags(p)}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${esc(meta.title)} | Graphics House</title>
-<meta name="description" content="${esc(meta.description)}"/>
+<meta name="description" content="${esc(meta.description)}"/>${keywordsMeta}
 <meta property="og:title" content="${esc(meta.title)} | Graphics House">
 <meta property="og:description" content="${esc(meta.description)}">
 <meta property="og:image" content="${base}/assets/favicon/og-image.png">
@@ -790,6 +802,7 @@ function buildArticle(article, lang) {
     depth: 2,
     title: L(article.title),
     description,
+    keywords: articleKeywords(article, lang),
     canonical: `https://3dgraphicshouse.com/insights/articles/${slug}`,
     altEn: `https://3dgraphicshouse.com/insights/articles/${article.slug}-en.html`,
     altAr: `https://3dgraphicshouse.com/insights/articles/${article.slug}.html`,

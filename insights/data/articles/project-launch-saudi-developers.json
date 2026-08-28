@@ -10,18 +10,48 @@
     "ar": "إطلاق المشاريع",
     "en": "Project Launch"
   },
-  "image": "assets/projects/rendering/Anan-Escan-Co.01.jpeg",
+  "image": "assets/insights/reports/sedra-roshn-hero.jpg",
   "title": {
     "ar": "ماذا يحتاج المطور السعودي من نظام إطلاق بصري قبل يوم البيع؟",
     "en": "What Saudi Developers Need from a Visual Launch System Before Sales Day"
   },
   "excerpt": {
-    "ar": "دليل تشغيلي لإطلاق off-plan في السعودية: معايير الاعتماد، جاهزية الوسيط، صالة البيع، وفشل شائع — وكيف يبني ProjectLaunch™ نظاماً واحداً من جدة للرياض ومكة.",
-    "en": "An operating playbook for Saudi off-plan launches: approval criteria, broker readiness, sales-gallery fit, common failures — and how ProjectLaunch™ builds one system from Jeddah for Riyadh and Makkah."
+    "ar": "دليل تشغيلي لإطلاق off-plan في السعودية: معايير الاعتماد، جاهزية الوسيط، صالة البيع، وفشل شائع، وكيف يبني ProjectLaunch™ نظاماً واحداً من جدة للرياض ومكة.",
+    "en": "An operating playbook for Saudi off-plan launches: approval criteria, broker readiness, sales-gallery fit, common failures, and how ProjectLaunch™ builds one system from Jeddah for Riyadh and Makkah."
   },
   "metaDescription": {
-    "ar": "دليل تشغيلي لإطلاق off-plan في السعودية: رندر فوتوريالستي، مجسمات ذكية، أفلام CGI، صالة بيع، وجاهزية وسيط — ProjectLaunch™ من Graphics House قبل يوم المبيعات.",
-    "en": "Saudi developer visual launch playbook: renders, smart maquettes, CGI, sales gallery & broker readiness — ProjectLaunch™ by Graphics House before sales day."
+    "ar": "دليل تشغيلي لإطلاق off-plan في السعودية: رندر فوتوريالستي، مجسمات ذكية، أفلام CGI، صالة بيع، وجاهزية وسيط. ProjectLaunch™ من Graphics House قبل يوم المبيعات.",
+    "en": "Saudi developer visual launch playbook: renders, smart maquettes, CGI, sales gallery and broker readiness. ProjectLaunch™ by Graphics House before sales day."
+  },
+  "keywords": {
+    "ar": {
+      "short": [
+        "إطلاق بصري السعودية",
+        "مطورين off-plan",
+        "ProjectLaunch",
+        "صالة بيع"
+      ],
+      "long": [
+        "نظام إطلاق بصري للمطورين السعوديين قبل يوم البيع",
+        "جاهزية وسيط وصالة بيع off-plan الرياض جدة مكة",
+        "معايير قبول رندر ومجسم وفيلم CGI",
+        "Graphics House ProjectLaunch من جدة"
+      ]
+    },
+    "en": {
+      "short": [
+        "Saudi visual launch",
+        "off-plan developers",
+        "ProjectLaunch",
+        "sales gallery"
+      ],
+      "long": [
+        "visual launch system for Saudi developers before sales day",
+        "broker and gallery readiness Saudi off-plan",
+        "render maquette CGI acceptance criteria",
+        "Graphics House ProjectLaunch from Jeddah"
+      ]
+    }
   },
   "body": {
     "ar": [
@@ -31,7 +61,7 @@
       },
       {
         "type": "p",
-        "text": "هذا الدليل مكتوب لمدير التسويق، ومدير التطوير، ورئيس المبيعات في المكاتب السعودية. الهدف ليس «صور أجمل» — بل معايير قبول، سير اعتماد، وجاهزية صالة ووسيط يمكن قياسها. في Graphics House نبني هذا النظام تحت [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html): هوية، [إظهار معماري](https://3dgraphicshouse.com/services/rendering.html)، [أفلام CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html)، [مجسمات ذكية](https://3dgraphicshouse.com/services/maquettes.html)، [تجارب تفاعلية](https://3dgraphicshouse.com/services/interactive-experiences.html)، و[هوية وديكور صالة](https://3dgraphicshouse.com/services/branding.html) — بلغة واحدة ومن مقر جدة مع تغطية العاصمة والمدن الكبرى."
+        "text": "هذا الدليل مكتوب لمدير التسويق، ومدير التطوير، ورئيس المبيعات في المكاتب السعودية. الهدف ليس «صور أجمل»، بل معايير قبول، سير اعتماد، وجاهزية صالة ووسيط يمكن قياسها. في Graphics House نبني هذا النظام تحت [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html): هوية، [إظهار معماري](https://3dgraphicshouse.com/services/rendering.html)، [أفلام CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html)، [مجسمات ذكية](https://3dgraphicshouse.com/services/maquettes.html)، [تجارب تفاعلية](https://3dgraphicshouse.com/services/interactive-experiences.html)، و[هوية وديكور صالة](https://3dgraphicshouse.com/services/branding.html) بلغة واحدة من مقر جدة مع تغطية العاصمة والمدن الكبرى. لقراءة أنواع المشاريع في خط الأنابيب راجع [جاهزية off-plan السعودية](https://3dgraphicshouse.com/insights/articles/saudi-offplan-visual-readiness.html)."
       },
       {
         "type": "h2",
@@ -39,7 +69,7 @@
       },
       {
         "type": "p",
-        "text": "توزيع الرندر على مورد، والفيلم على ثانٍ، والمجسم على ثالث ينتج تضارباً في الإضاءة والمواد والهوية. فرق المبيعات تفقد الثقة، والحملة الرقمية تبدو منفصلة عن صالة البيع. السوق السعودي — خاصة off-plan — يعاقب هذا التشتت بسرعة لأن المشتري يقارن بين مشاريع متزامنة في نفس المدينة."
+        "text": "توزيع الرندر على مورد، والفيلم على ثانٍ، والمجسم على ثالث ينتج تضارباً في الإضاءة والمواد والهوية. فرق المبيعات تفقد الثقة، والحملة الرقمية تبدو منفصلة عن صالة البيع. السوق السعودي: خاصة off-plan: يعاقب هذا التشتت بسرعة لأن المشتري يقارن بين مشاريع متزامنة في نفس المدينة."
       },
       {
         "type": "ul",
@@ -56,7 +86,7 @@
       },
       {
         "type": "p",
-        "text": "لقراءة أنواع المشاريع الحية في السوق — لا كادعاء تسليم — يمكن مراجعة خريطة الجولات العامة في [Ruwaq Tours](https://ruwaq.co/tours). الأنماط المتكررة تفرض أنظمة بصرية مختلفة، حتى لو اشتركت في الحاجة إلى رندر ومجسم وصالة."
+        "text": "لقراءة أنواع المشاريع الحية في السوق: لا كادعاء تسليم: يمكن مراجعة خريطة الجولات العامة في [Ruwaq Tours](https://ruwaq.co/tours). الأنماط المتكررة تفرض أنظمة بصرية مختلفة، حتى لو اشتركت في الحاجة إلى رندر ومجسم وصالة."
       },
       {
         "type": "ul",
@@ -65,7 +95,7 @@
           "مجتمعات واسعة (مثل سياقات Sedra ROSHN): قصة الحي، المرافق، وتكرار الوحدات بوضوح للمشتري",
           "فلل ومجمعات (مثل سياقات Mayan أو Pavilions): فرق الخصوصية، الحديقة، وتفاصيل التشطيب الخارجي",
           "ضيافة وإقامة قرب الحرم (مثل سياقات Omar Towers أو Zakher): قرب المكان، جودة الغرفة، ومسار الضيف",
-          "سكن عمالي/B2B (مثل قرية عنان إسكان مكة كنوع سوقي): وضوح السعة، التشغيل، والثقة المؤسسية — مع ملاحظة أن أعمالنا الموثّقة لعنان إسكان في الرياض منفصلة كمحفظة"
+          "سكن عمالي/B2B (مثل قرية عنان إسكان مكة كنوع سوقي): وضوح السعة، التشغيل، والثقة المؤسسية: مع ملاحظة أن أعمالنا الموثّقة لعنان إسكان في الرياض منفصلة كمحفظة"
         ]
       },
       {
@@ -124,7 +154,7 @@
           "اعتماد زوايا البطل والمشاهد الداخلية ذات الأولوية قبل بناء المواد النهائية",
           "جولة مراجعة واحدة للمشاهد الخام (lookdev) قبل الرندر النهائي",
           "اعتماد رسمي مكتوب قبل تسليم الحملة الرقمية",
-          "جلسة تدريب مبيعات على الأصول قبل افتتاح الصالة بـ 3–5 أيام"
+          "جلسة تدريب مبيعات على الأصول قبل افتتاح الصالة بـ 3 to 5 أيام"
         ]
       },
       {
@@ -133,15 +163,15 @@
       },
       {
         "type": "p",
-        "text": "معظم التأخير لا يأتي من الإنتاج نفسه — بل من غياب نقاط تجميد. اطلب جدولاً يحدد: أسبوع brief، أسبوع lookdev، أسبوع اعتماد، ثم تسليم حزمة الوسيط قبل الحملة بـ 5–7 أيام على الأقل. أي تاريخ إطلاق يُثبت قبل تجميد المشاهد البطولية يحمل مخاطرة تصحيح عام."
+        "text": "معظم التأخير لا يأتي من الإنتاج نفسه: بل من غياب نقاط تجميد. اطلب جدولاً يحدد: أسبوع brief، أسبوع lookdev، أسبوع اعتماد، ثم تسليم حزمة الوسيط قبل الحملة بـ 5 to 7 أيام على الأقل. أي تاريخ إطلاق يُثبت قبل تجميد المشاهد البطولية يحمل مخاطرة تصحيح عام."
       },
       {
         "type": "ol",
         "items": [
           "أسبوع 1: ورشة brief واعتماد زوايا البطل",
-          "أسبوع 2–3: lookdev ثم رندر نهائي للمشاهد المعتمدة",
+          "أسبوع 2 to 3: lookdev ثم رندر نهائي للمشاهد المعتمدة",
           "أسبوع 4: فيلم + مجسم/تفاعلي + هوية صالة",
-          "قبل الإطلاق بـ 5–7 أيام: تدريب مبيعات وقفل حزمة الوسيط"
+          "قبل الإطلاق بـ 5 to 7 أيام: تدريب مبيعات وقفل حزمة الوسيط"
         ]
       },
       {
@@ -155,24 +185,60 @@
       {
         "type": "ul",
         "items": [
-          "حزمة وسيط: 6–10 صور مضغوطة، فيلم قصير، مخططات PDF، ورسالة واحدة للموقع",
-          "سيناريو عرض 8–10 دقائق من الشاشة إلى المجسم إلى الوحدة النموذجية",
-          "شاشة رئيسية تعرض نسخة معتمدة فقط — لا ملفات سطح مكتب غير مراقبة",
+          "حزمة وسيط: 6 to 10 صور مضغوطة، فيلم قصير، مخططات PDF، ورسالة واحدة للموقع",
+          "سيناريو عرض 8 to 10 دقائق من الشاشة إلى المجسم إلى الوحدة النموذجية",
+          "شاشة رئيسية تعرض نسخة معتمدة فقط: لا ملفات سطح مكتب غير مراقبة",
           "لوحة مواد أو عيّنات تشطيب مربوطة بالرندر الداخلي المعتمد",
           "خطة تحديث عند نفاد وحدات المرحلة أو إطلاق مرحلة لاحقة"
         ]
       },
       {
         "type": "h2",
-        "text": "الرياض وجدة ومكة — اختلاف السياق لا اختلاف المعيار"
+        "text": "الرياض وجدة ومكة: اختلاف السياق لا اختلاف المعيار"
       },
       {
         "type": "p",
-        "text": "العاصمة تطلب سرعة إقناع وكثافة قرارات؛ راجع سياق [الرياض](https://3dgraphicshouse.com/locations/riyadh.html) وأعمال مثل [عنان إسكان الرياض](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh.html) و[الراجحي](https://3dgraphicshouse.com/insights/projects/al-rajhi-riyadh.html). جدة والمنطقة الغربية تربط المقر والبحر الأحمر والاجتماعات الميدانية — انظر [جدة](https://3dgraphicshouse.com/locations/jeddah.html) و[منتدى جدة](https://3dgraphicshouse.com/insights/projects/jeddah-forum.html). مكة تضيف حساسية المكان وثقة المستثمر — انظر [مكة](https://3dgraphicshouse.com/locations/makkah.html) و[أبراج الخير](https://3dgraphicshouse.com/insights/projects/al-khair-makkah.html) و[ميثاق مكة](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl.html)."
+        "text": "العاصمة تطلب سرعة إقناع وكثافة قرارات؛ راجع سياق [الرياض](https://3dgraphicshouse.com/locations/riyadh.html) وأعمال مثل [عنان إسكان الرياض](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh.html) و[الراجحي](https://3dgraphicshouse.com/insights/projects/al-rajhi-riyadh.html). جدة والمنطقة الغربية تربط المقر والبحر الأحمر والاجتماعات الميدانية: انظر [جدة](https://3dgraphicshouse.com/locations/jeddah.html) و[منتدى جدة](https://3dgraphicshouse.com/insights/projects/jeddah-forum.html). مكة تضيف حساسية المكان وثقة المستثمر: انظر [مكة](https://3dgraphicshouse.com/locations/makkah.html) و[أبراج الخير](https://3dgraphicshouse.com/insights/projects/al-khair-makkah.html) و[ميثاق مكة](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl.html)."
       },
       {
         "type": "p",
-        "text": "المعيار واحد في المدن الثلاث: أن يُفهم المشروع في دقائق، وأن تمتلك فرق المبيعات أدوات جاهزة قبل يوم الإطلاق."
+        "text": "المعيار واحد في المدن الثلاث: أن يُفهم المشروع في دقائق، وأن تمتلك فرق المبيعات أدوات جاهزة قبل يوم الإطلاق. للساحل الغربي والبحر الأحمر راجع [إطلاق بصري من جدة](https://3dgraphicshouse.com/insights/articles/jeddah-red-sea-visual-launch.html)."
+      },
+      {
+        "type": "h2",
+        "text": "نصائح عملية قبل توقيع العقد"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "اطلب نموذجاً ثلاثي الأبعاد مركزياً قابلاً لإعادة الاستخدام، لا ملفات منفصلة لكل مورد",
+          "حدّد 4 to 6 مشاهد بطل للمرحلة الأولى في العقد، لا «كل الزوايا»",
+          "اربط الدفعات بمعالم اعتماد (lookdev، رندر نهائي، تسليم حزمة وسيط)",
+          "تأكد أن التركيب والهوية جزء من النطاق، لا بنداً لاحقاً",
+          "اسأل عن خبرة off-plan في مدينتك: الرياض ليست جدة وليست مكة"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "كيف تقيس الجاهزية في أسبوع واحد"
+      },
+      {
+        "type": "p",
+        "text": "قبل تثبيت تاريخ الإطلاق، اختبر الجاهزية بأسئلة بسيطة يمكن الإجابة عليها خلال أسبوع."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "هل يستطيع الوسيط إرسال حزمة معتمدة من جواله دون الرجوع للتسويق؟",
+          "هل شاشة الصالة تعرض نفس المشهد البطل المعتمد في الإعلان؟",
+          "هل المجسم يطابق المخطط المعتمد للمبيعات؟",
+          "هل الفريق أكمل سيناريو عرض 8 to 10 دقائق بلا ارتجال؟",
+          "هل رقم إصدار واحد يغطي كل الأصول المعروضة للجمهور؟"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "إن فشل أي سؤال، أجّل الحملة المدفوعة. يمكن لاحقاً تضخيم الحملة عبر [Beesmotion](https://beesmotion.com) بعد قفل الأصول فقط. للمشاريع ذات مرافق متصلة، إشارة خفيفة واحدة عبر [Dot for Life](https://dotforlife.com) داخل قصة المرافق تكفي ولا تحل محل النظام البصري."
       },
       {
         "type": "h2",
@@ -182,7 +248,7 @@
         "type": "ol",
         "items": [
           "تثبيت تاريخ الإطلاق قبل تجميد المشاهد البطولية",
-          "إنتاج رندر داخلي دون قفل عيّنة التشطيب — ثم نزاع على أرضية الصالة",
+          "إنتاج رندر داخلي دون قفل عيّنة التشطيب: ثم نزاع على أرضية الصالة",
           "إطلاق حملة رقمية بأصول مختلفة عن شاشات الصالة",
           "إهمال تدريب الفريق: أصول ممتازة تُعرض بلا سيناريو",
           "طلب «كل شيء» دفعة واحدة بدل مكتبة مرحلة أولى قابلة للتوسع",
@@ -205,17 +271,17 @@
       },
       {
         "type": "p",
-        "text": "إذا كان مشروعك في السعودية ويقترب من الإطلاق، ابدأ من ProjectLaunch™ أو صفحات المدن — جلسة التقييم مجانية وبدون التزام. للتشطيب التنفيذي الذي يطابق الوعد البصري، يمكن لاحقاً مواءمة التنفيذ مع شركاء مثل [Turriva](https://turriva.com) حيث يلزم؛ ولتضخيم الحملة بعد جاهزية الأصول، [Beesmotion](https://beesmotion.com) خيار طبيعي للتسويق الرقمي."
+        "text": "إذا كان مشروعك في السعودية ويقترب من الإطلاق، ابدأ من ProjectLaunch™ أو صفحات المدن. جلسة التقييم مجانية وبدون التزام. للتشطيب التنفيذي الذي يطابق الوعد البصري، يمكن لاحقاً مواءمة التنفيذ مع شركاء مثل [Turriva](https://turriva.com) حيث يلزم؛ ولتضخيم الحملة بعد جاهزية الأصول، [Beesmotion](https://beesmotion.com) خيار طبيعي للتسويق الرقمي. للتوسع الخليجي بعد جاهزية سعودية راجع [مقارنة السعودية والخليج](https://3dgraphicshouse.com/insights/articles/saudi-vs-gulf-visual-launch.html)."
       }
     ],
     "en": [
       {
         "type": "p",
-        "text": "The Saudi market does not forgive visual delay. When a residential, mixed-use, or hospitality project launches in Riyadh, Jeddah, or Makkah, investors, brokers, and buyers start judging within minutes. Plans alone are not enough; what sells is a visual launch system that precedes opening day — and is approved before the digital campaign goes live."
+        "text": "The Saudi market does not forgive visual delay. When a residential, mixed-use, or hospitality project launches in Riyadh, Jeddah, or Makkah, investors, brokers, and buyers start judging within minutes. Plans alone are not enough; what sells is a visual launch system that precedes opening day, and is approved before the digital campaign goes live."
       },
       {
         "type": "p",
-        "text": "This playbook is written for marketing leads, development managers, and sales heads in Saudi offices. The goal is not “prettier images” — it is acceptance criteria, approval workflow, and measurable gallery/broker readiness. At Graphics House we build that system under [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html): identity, [architectural rendering](https://3dgraphicshouse.com/services/rendering-en.html), [CGI films](https://3dgraphicshouse.com/services/cinematic-cgi-en.html), [smart maquettes](https://3dgraphicshouse.com/services/maquettes-en.html), [interactive experiences](https://3dgraphicshouse.com/services/interactive-experiences-en.html), and [branding / gallery décor](https://3dgraphicshouse.com/services/branding-en.html) — one language, one Jeddah HQ, covering the capital and major cities."
+        "text": "This playbook is written for marketing leads, development managers, and sales heads in Saudi offices. The goal is not \"prettier images\"; it is acceptance criteria, approval workflow, and measurable gallery/broker readiness. At Graphics House we build that system under [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html): identity, [architectural rendering](https://3dgraphicshouse.com/services/rendering-en.html), [CGI films](https://3dgraphicshouse.com/services/cinematic-cgi-en.html), [smart maquettes](https://3dgraphicshouse.com/services/maquettes-en.html), [interactive experiences](https://3dgraphicshouse.com/services/interactive-experiences-en.html), and [branding / gallery décor](https://3dgraphicshouse.com/services/branding-en.html) in one language from Jeddah HQ, covering the capital and major cities. To read pipeline project types see [Saudi off-plan visual readiness](https://3dgraphicshouse.com/insights/articles/saudi-offplan-visual-readiness-en.html)."
       },
       {
         "type": "h2",
@@ -240,7 +306,7 @@
       },
       {
         "type": "p",
-        "text": "To read live project types in the market — as context, not as a delivery claim — review the public tour map on [Ruwaq Tours](https://ruwaq.co/tours). Recurring patterns demand different visual systems, even when they share the need for renders, maquettes, and a gallery."
+        "text": "To read live project types in the market. as context, not as a delivery claim. review the public tour map on [Ruwaq Tours](https://ruwaq.co/tours). Recurring patterns demand different visual systems, even when they share the need for renders, maquettes, and a gallery."
       },
       {
         "type": "ul",
@@ -249,7 +315,7 @@
           "Large communities (e.g. Sedra ROSHN-type contexts): neighbourhood story, amenities, and clear unit repetition for buyers",
           "Villa compounds (e.g. Mayan or Pavilions-type contexts): privacy differentials, gardens, exterior finish detail",
           "Hospitality near the Haram (e.g. Omar Towers or Zakher-type contexts): place proximity, room quality, guest journey",
-          "B2B labor housing (e.g. Anan Eskan village Makkah as a market type): capacity, operations, institutional trust — noting that our documented Anan Eskan portfolio work in Riyadh is a separate case"
+          "B2B labor housing (e.g. Anan Eskan village Makkah as a market type): capacity, operations, institutional trust. noting that our documented Anan Eskan portfolio work in Riyadh is a separate case"
         ]
       },
       {
@@ -308,7 +374,24 @@
           "Approve hero angles and priority interiors before final materials build",
           "One lookdev review pass before final renders",
           "Written formal sign-off before digital campaign handover",
-          "Sales training on assets 3–5 days before gallery opening"
+          "Sales training on assets 3 to 5 days before gallery opening"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "A realistic timeline before sales day"
+      },
+      {
+        "type": "p",
+        "text": "Most delay comes from missing freeze points, not production itself. Ask for a schedule that names: brief week, lookdev week, approval week, then broker pack delivery at least 5 to 7 days before the campaign. Any launch date locked before hero scenes freeze carries public-correction risk."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Week 1: brief workshop and hero-angle approval",
+          "Weeks 2 to 3: lookdev then final render on approved scenes",
+          "Week 4: film + maquette/interactive + gallery identity",
+          "5 to 7 days before launch: sales training and broker pack lock"
         ]
       },
       {
@@ -322,24 +405,60 @@
       {
         "type": "ul",
         "items": [
-          "Broker pack: 6–10 compressed stills, short film, PDF plans, one location message",
-          "8–10 minute presentation path from screen to maquette to show unit",
-          "Main screen shows approved versions only — no unsupervised desktop files",
+          "Broker pack: 6 to 10 compressed stills, short film, PDF plans, one location message",
+          "8 to 10 minute presentation path from screen to maquette to show unit",
+          "Main screen shows approved versions only; no unsupervised desktop files",
           "Material board or finish samples linked to the approved interior render",
           "Update plan when phase units sell out or a later phase launches"
         ]
       },
       {
         "type": "h2",
-        "text": "Riyadh, Jeddah, Makkah — different context, same standard"
+        "text": "Riyadh, Jeddah, Makkah: different context, same standard"
       },
       {
         "type": "p",
-        "text": "The capital demands fast persuasion and dense decisions; see [Riyadh](https://3dgraphicshouse.com/locations/riyadh-en.html) and work such as [Anan Eskan Riyadh](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh-en.html) and [Al Rajhi](https://3dgraphicshouse.com/insights/projects/al-rajhi-riyadh-en.html). Jeddah and the Western Region connect HQ, Red Sea projects, and on-site workshops — see [Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) and [Jeddah Forum](https://3dgraphicshouse.com/insights/projects/jeddah-forum-en.html). Makkah adds place sensitivity and investor trust — see [Makkah](https://3dgraphicshouse.com/locations/makkah-en.html), [Al Khair Heights](https://3dgraphicshouse.com/insights/projects/al-khair-makkah-en.html), and [Makkah Charter](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl-en.html)."
+        "text": "The capital demands fast persuasion and dense decisions; see [Riyadh](https://3dgraphicshouse.com/locations/riyadh-en.html) and work such as [Anan Eskan Riyadh](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh-en.html) and [Al Rajhi](https://3dgraphicshouse.com/insights/projects/al-rajhi-riyadh-en.html). Jeddah and the Western Region connect HQ, Red Sea projects, and on-site workshops; see [Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) and [Jeddah Forum](https://3dgraphicshouse.com/insights/projects/jeddah-forum-en.html). Makkah adds place sensitivity and investor trust; see [Makkah](https://3dgraphicshouse.com/locations/makkah-en.html), [Al Khair Heights](https://3dgraphicshouse.com/insights/projects/al-khair-makkah-en.html), and [Makkah Charter](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl-en.html)."
       },
       {
         "type": "p",
-        "text": "One standard across all three cities: the project is understood in minutes, and sales teams hold ready tools before launch day."
+        "text": "One standard across all three cities: the project is understood in minutes, and sales teams hold ready tools before launch day. For the Western coast and Red Sea see [visual launch from Jeddah](https://3dgraphicshouse.com/insights/articles/jeddah-red-sea-visual-launch-en.html)."
+      },
+      {
+        "type": "h2",
+        "text": "Practical tips before you sign the contract"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Demand a reusable central 3D model, not separate files per vendor",
+          "Lock 4 to 6 hero scenes for phase one in the contract, not \"every angle\"",
+          "Tie payments to approval milestones (lookdev, final render, broker pack)",
+          "Confirm install and identity are in scope, not a late line item",
+          "Ask about off-plan experience in your city: Riyadh is not Jeddah is not Makkah"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "How to measure readiness in one week"
+      },
+      {
+        "type": "p",
+        "text": "Before locking the launch date, test readiness with simple questions answerable within a week."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Can a broker send an approved pack from mobile without calling marketing?",
+          "Does the gallery screen show the same approved hero as the ad?",
+          "Does the maquette match the sales-approved master plan?",
+          "Has the team completed an 8 to 10 minute presentation without improvisation?",
+          "Does one version number cover every public-facing asset?"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "If any answer fails, defer paid campaign. Amplification via [Beesmotion](https://beesmotion.com) can follow only after assets lock. For connected-amenity projects, one light nod via [Dot for Life](https://dotforlife.com) inside the amenity narrative is enough; it does not replace the visual system."
       },
       {
         "type": "h2",
@@ -349,7 +468,7 @@
         "type": "ol",
         "items": [
           "Locking a launch date before freezing hero scenes",
-          "Producing interiors without locking finish samples — then arguing on the gallery floor",
+          "Producing interiors without locking finish samples, then arguing on the gallery floor",
           "Launching digital campaigns with assets that differ from gallery screens",
           "Skipping team training: excellent assets presented without a scenario",
           "Ordering “everything” at once instead of a expandable phase-one library",
@@ -372,7 +491,7 @@
       },
       {
         "type": "p",
-        "text": "If your Saudi project is approaching launch, start with ProjectLaunch™ or the city pages — the assessment session is free and without obligation. Where finish execution must match the visual promise, align later with partners such as [Turriva](https://turriva.com) when needed; for campaign amplification after assets are ready, [Beesmotion](https://beesmotion.com) is a natural digital marketing fit."
+        "text": "If your Saudi project is approaching launch, start with ProjectLaunch™ or the city pages. The assessment session is free and without obligation. Where finish execution must match the visual promise, align later with partners such as [Turriva](https://turriva.com) when needed; for campaign amplification after assets are ready, [Beesmotion](https://beesmotion.com) is a natural digital marketing fit. For Gulf expansion after Saudi readiness see [Saudi vs Gulf visual launch](https://3dgraphicshouse.com/insights/articles/saudi-vs-gulf-visual-launch-en.html)."
       }
     ]
   },
@@ -383,8 +502,8 @@
         "en": "When should visual launch start?"
       },
       "a": {
-        "ar": "قبل قفل الهوية وصالة البيع — لا بعد إطلاق الحملة.",
-        "en": "Before locking identity and the sales gallery — not after the campaign launches."
+        "ar": "قبل قفل الهوية وصالة البيع: لا بعد إطلاق الحملة.",
+        "en": "Before locking identity and the sales gallery, not after the campaign launches."
       }
     },
     {
@@ -404,7 +523,17 @@
       },
       "a": {
         "ar": "مطابقة المواد والكتلة والمشهد البطل لسؤال المشتري الأول.",
-        "en": "Materials, massing, and hero scene match the buyer’s first question."
+        "en": "Materials, massing, and hero scene match the buyer's first question."
+      }
+    },
+    {
+      "q": {
+        "ar": "كم يستغرق بناء نظام إطلاق كامل؟",
+        "en": "How long does a full launch system take?"
+      },
+      "a": {
+        "ar": "غالباً 4 أسابيع إنتاج بعد brief معتمد، مع 5 to 7 أيام تدريب وقفل حزمة الوسيط قبل الحملة. التأخير يأتي من غياب نقاط التجميد لا من الاستوديو وحده.",
+        "en": "Often 4 production weeks after an approved brief, plus 5 to 7 days for training and broker pack lock before campaign. Delay usually comes from missing freeze points, not the studio alone."
       }
     }
   ]

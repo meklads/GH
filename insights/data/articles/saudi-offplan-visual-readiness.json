@@ -10,28 +10,58 @@
     "ar": "السوق السعودي",
     "en": "Saudi Market"
   },
-  "image": "assets/projects/rendering/jeddah-forum.jpg",
+  "image": "assets/insights/reports/sedra-roshn-hero.jpg",
   "title": {
     "ar": "كيف تقرأ خط أنابيب off-plan السعودي عبر جاهزية النظام البصري؟",
     "en": "How to Read the Saudi Off-Plan Pipeline Through Visual System Readiness"
   },
   "excerpt": {
-    "ar": "خريطة عملية لأنواع المشاريع في السعودية — بوابة مختلطة، مجتمع ROSHN، ضيافة مكة، مجمع فلل — وما يحتاجه كل نوع من رندر ومجسم وصالة قبل يوم البيع، مع سير اعتماد واحد.",
-    "en": "A practical map of Saudi project types — mixed-use gate, ROSHN community, Makkah hospitality, villa compound — and the render, maquette, and gallery system each needs before sales day, with one approval workflow."
+    "ar": "خريطة عملية لأنواع المشاريع في السعودية: بوابة مختلطة، مجتمع ROSHN، ضيافة مكة، مجمع فلل: وما يحتاجه كل نوع من رندر ومجسم وصالة قبل يوم البيع، مع سير اعتماد واحد.",
+    "en": "A practical map of Saudi project types. mixed-use gate, ROSHN community, Makkah hospitality, villa compound, and the render, maquette, and gallery system each needs before sales day, with one approval workflow."
   },
   "metaDescription": {
-    "ar": "جاهزية بصرية لخط أنابيب off-plan السعودي: مقارنة أنواع المشاريع وما يحتاجه كل نوع من ProjectLaunch™ — رندر ومجسمات وCGI وصالة من Graphics House.",
-    "en": "Saudi off-plan visual readiness: compare project types and what each needs from ProjectLaunch™ — renders, maquettes, CGI & galleries by Graphics House."
+    "ar": "جاهزية بصرية لخط أنابيب off-plan السعودي: مقارنة أنواع المشاريع وما يحتاجه كل نوع من ProjectLaunch™: رندر ومجسمات وCGI وصالة من Graphics House.",
+    "en": "Saudi off-plan visual readiness: compare project types and what each needs from ProjectLaunch. renders, maquettes, CGI and galleries by Graphics House."
+  },
+  "keywords": {
+    "ar": {
+      "short": [
+        "جاهزية off-plan",
+        "أنواع المشاريع السعودية",
+        "ROSHN مجتمع",
+        "بوابة مختلطة"
+      ],
+      "long": [
+        "جاهزية بصرية لخط أنابيب off-plan السعودي",
+        "مقارنة بوابة مختلطة ومجتمع واسع وضيافة مكة",
+        "نظام رندر ومجسم وصالة حسب نوع المشروع",
+        "ProjectLaunch Graphics House جدة"
+      ]
+    },
+    "en": {
+      "short": [
+        "off-plan readiness",
+        "Saudi project types",
+        "ROSHN community",
+        "mixed-use gate"
+      ],
+      "long": [
+        "Saudi off-plan pipeline visual readiness",
+        "compare gate community Makkah hospitality villa types",
+        "render maquette gallery system by project type",
+        "ProjectLaunch Graphics House Jeddah"
+      ]
+    }
   },
   "body": {
     "ar": [
       {
         "type": "p",
-        "text": "خط أنابيب off-plan في السعودية لا يُقرأ من قائمة مشاريع فقط — يُقرأ من قدرة كل نوع على الإقناع البصري قبل الخرسانة. المطور الذي يعامل البوابة المختلطة، ومجتمع ROSHN، وبرج ضيافة قرب الحرم، ومجمع فلل بنفس مكتبة الصور يخسر دقة الرسالة أمام وسطاء ومشترين يقارنون بسرعة."
+        "text": "خط أنابيب off-plan في السعودية لا يُقرأ من قائمة مشاريع فقط: يُقرأ من قدرة كل نوع على الإقناع البصري قبل الخرسانة. المطور الذي يعامل البوابة المختلطة، ومجتمع ROSHN، وبرج ضيافة قرب الحرم، ومجمع فلل بنفس مكتبة الصور يخسر دقة الرسالة أمام وسطاء ومشترين يقارنون بسرعة."
       },
       {
         "type": "p",
-        "text": "هذا المقال يقدّم إطار جاهزية بصرية لأنواع المشاريع الشائعة في السوق. كخريطة عامة لأنماط حية يمكن الرجوع إلى جولات [Ruwaq Tours](https://ruwaq.co/tours) — كسياق سوقي للمقارنة لا كادعاء تسليم. التنفيذ التشغيلي للنظام يأتي عبر [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) من Graphics House في جدة."
+        "text": "هذا المقال يقدّم إطار جاهزية بصرية لأنواع المشاريع الشائعة في السوق. كخريطة عامة لأنماط حية يمكن الرجوع إلى جولات [Ruwaq Tours](https://ruwaq.co/tours) كسياق سوقي للمقارنة لا كادعاء تسليم. التنفيذ التشغيلي للنظام يأتي عبر [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) من Graphics House في جدة. للدليل التشغيلي العام راجع [إطلاق المشروع للمطورين السعوديين](https://3dgraphicshouse.com/insights/articles/project-launch-saudi-developers.html)."
       },
       {
         "type": "h2",
@@ -52,24 +82,24 @@
       },
       {
         "type": "h2",
-        "text": "بوابة مختلطة — كسياقات Jeddah Gate"
+        "text": "بوابة مختلطة: كسياقات Jeddah Gate"
       },
       {
         "type": "p",
-        "text": "البوابة المختلطة تحتاج إقناعاً مزدوجاً: سكني وتجاري/استثماري. المشهد الجوي المعتمد، مسارات الحركة، والواجهة الليلية غالباً أهم من مشهد غرفة معيشة مبكر. في جدة والرياض، البوابة تُعرض في معرض وصالة — الأصول يجب أن تعمل على شاشة كبيرة وجوال."
+        "text": "البوابة المختلطة تحتاج إقناعاً مزدوجاً: سكني وتجاري/استثماري. المشهد الجوي المعتمد، مسارات الحركة، والواجهة الليلية غالباً أهم من مشهد غرفة معيشة مبكر. في جدة والرياض، البوابة تُعرض في معرض وصالة، لذلك يجب أن تعمل الأصول على شاشة كبيرة وجوال. راجع أيضاً [إطلاق بصري لبوابة مختلطة](https://3dgraphicshouse.com/insights/articles/mixed-use-gate-visual-launch.html) و[إطلاق بصري من جدة](https://3dgraphicshouse.com/insights/articles/jeddah-red-sea-visual-launch.html)."
       },
       {
         "type": "ol",
         "items": [
           "رندرات مخطط ومسارات + واجهة نهار/ليل عبر [الإظهار](https://3dgraphicshouse.com/services/rendering.html)",
-          "مجسم أو خريطة تفاعلية توضح الكتل والاستخدامات — [مجسمات](https://3dgraphicshouse.com/services/maquettes.html) و[تفاعلي](https://3dgraphicshouse.com/services/interactive-experiences.html)",
-          "فيلم إطلاق يشرح المنطق الحضري في أقل من دقيقتين — [CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html)",
-          "هوية صالة تخدم عروض المستثمر والوسيط معاً — [براندينغ](https://3dgraphicshouse.com/services/branding.html)"
+          "مجسم أو خريطة تفاعلية توضح الكتل والاستخدامات: [مجسمات](https://3dgraphicshouse.com/services/maquettes.html) و[تفاعلي](https://3dgraphicshouse.com/services/interactive-experiences.html)",
+          "فيلم إطلاق يشرح المنطق الحضري في أقل من دقيقتين: [CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html)",
+          "هوية صالة تخدم عروض المستثمر والوسيط معاً: [براندينغ](https://3dgraphicshouse.com/services/branding.html)"
         ]
       },
       {
         "type": "h2",
-        "text": "مجتمع واسع — كسياقات Sedra ROSHN"
+        "text": "مجتمع واسع: كسياقات Sedra ROSHN"
       },
       {
         "type": "p",
@@ -87,7 +117,7 @@
       },
       {
         "type": "h2",
-        "text": "ضيافة وإقامة مكة — كسياقات Omar Towers وZakher"
+        "text": "ضيافة وإقامة مكة: كسياقات Omar Towers وZakher"
       },
       {
         "type": "p",
@@ -104,7 +134,7 @@
       },
       {
         "type": "h2",
-        "text": "مجمعات فلل — كسياقات Mayan وPavilions وSaraya"
+        "text": "مجمعات فلل: كسياقات Mayan وPavilions وSaraya"
       },
       {
         "type": "p",
@@ -121,11 +151,11 @@
       },
       {
         "type": "h2",
-        "text": "سكن B2B وقرى عمالية — سياق منفصل عن المحفظة"
+        "text": "سكن B2B وقرى عمالية: سياق منفصل عن المحفظة"
       },
       {
         "type": "p",
-        "text": "مشاريع مثل قرية عنان إسكان مكة تظهر في السوق كنوع B2B: السعة والتشغيل والثقة المؤسسية. الإظهار يوضح التنظيم والكثافة. أما أعمال Graphics House لـ [عنان إسكان الرياض](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh.html) فهي محفظة منفصلة — لا تخلط بين سياق السوق وادّعاء التسليم."
+        "text": "مشاريع مثل قرية عنان إسكان مكة تظهر في السوق كنوع B2B: السعة والتشغيل والثقة المؤسسية. الإظهار يوضح التنظيم والكثافة. أما أعمال Graphics House لـ [عنان إسكان الرياض](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh.html) فهي محفظة منفصلة: لا تخلط بين سياق السوق وادّعاء التسليم."
       },
       {
         "type": "h2",
@@ -152,7 +182,7 @@
       {
         "type": "ol",
         "items": [
-          "حدّد 4–6 مشاهد بطل للمرحلة الأولى",
+          "حدّد 4 to 6 مشاهد بطل للمرحلة الأولى",
           "أنتج فيلماً قصيراً يروي سؤال المشتري الأول",
           "ابنِ مجسماً أو تفاعلياً يثبت الحجم والمراحل",
           "جدول تحديث عند إطلاق مرحلة لاحقة أو تغيير تشطيب",
@@ -184,12 +214,12 @@
       },
       {
         "type": "p",
-        "text": "الوسيط يبيع على الجوال أولاً. حزمة موحّدة لكل نوع مشروع — لا نسخ متعددة من التسويق."
+        "text": "الوسيط يبيع على الجوال أولاً. حزمة موحّدة لكل نوع مشروع: لا نسخ متعددة من التسويق."
       },
       {
         "type": "ul",
         "items": [
-          "6–10 صور مضغوطة + فيلم قصير + مخططات PDF",
+          "6 to 10 صور مضغوطة + فيلم قصير + مخططات PDF",
           "رسالة موقع واحدة معتمدة",
           "بطاقة «ما يُباع اليوم» عند تغيير المرحلة",
           "منع لقطات الشاشة غير الرسمية"
@@ -211,7 +241,29 @@
       },
       {
         "type": "h2",
-        "text": "ميزانية النظام البصري — أين تُستثمر؟"
+        "text": "نصائح عملية حسب نوع المشروع"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "بوابة مختلطة: اعتمد المخطط والواجهة الليلية قبل أي رندر داخلي",
+          "مجتمع واسع: ابدأ بمشاهد المرافق والحي قبل مطبخ الوحدة",
+          "ضيافة مكة: اكتب معايير قبول للإطلالة قبل الإنتاج الكثيف",
+          "فلل: مجسم توزيع أقوى من فيلم طويل في أغلب الحالات",
+          "B2B: لغة مؤسسية على الشاشات، لا صور سكنية فاخرة معزولة"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "متى توسّع المكتبة بعد المرحلة الأولى؟"
+      },
+      {
+        "type": "p",
+        "text": "وسّع عند إطلاق مرحلة لاحقة، أو عند تغيير عرض التشطيب، أو عند دخول سوق جديد خليجياً. لا توسّع لأن المنافس أضاف زوايا. راجع [مقارنة السعودية والخليج](https://3dgraphicshouse.com/insights/articles/saudi-vs-gulf-visual-launch.html) قبل نسخ مكتبة سعودية حرفياً في الخارج."
+      },
+      {
+        "type": "h2",
+        "text": "ميزانية النظام البصري: أين تُستثمر؟"
       },
       {
         "type": "p",
@@ -220,10 +272,10 @@
       {
         "type": "ul",
         "items": [
-          "40–50% للمشاهد البطولية والرندر المعتمد",
-          "20–25% للفيلم والمجسم/التفاعلي",
-          "15–20% للهوية والتركيب",
-          "10–15% للتحديثات والمراحل اللاحقة"
+          "40 to 50% للمشاهد البطولية والرندر المعتمد",
+          "20 to 25% للفيلم والمجسم/التفاعلي",
+          "15 to 20% للهوية والتركيب",
+          "10 to 15% للتحديثات والمراحل اللاحقة"
         ]
       },
       {
@@ -232,25 +284,25 @@
       },
       {
         "type": "p",
-        "text": "حدد نوع مشروعك أولاً، ثم اطلب نظاماً لا صوراً. المقارنة بين أنواع خط الأنابيب — عبر Ruwaq كسياق سوقي — تساعدك على عدم نسخ مكتبة أصول من مشروع لآخر."
+        "text": "حدد نوع مشروعك أولاً، ثم اطلب نظاماً لا صوراً. المقارنة بين أنواع خط الأنابيب عبر Ruwaq كسياق سوقي تساعدك على عدم نسخ مكتبة أصول من مشروع لآخر."
       },
       {
         "type": "p",
-        "text": "ابدأ من [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) وصفحات [الرياض](https://3dgraphicshouse.com/locations/riyadh.html) و[جدة](https://3dgraphicshouse.com/locations/jeddah.html) و[مكة](https://3dgraphicshouse.com/locations/makkah.html). إن كان المشروع يروي أسلوب حياة ذكياً أو مرافق متصلة، يمكن ذكر طبقة سردية خفيفة عبر أدوات مثل [Dot for Life](https://dotforlife.com) مرة واحدة داخل قصة المرافق — دون أن تحل محل نظام الإطلاق البصري."
+        "text": "ابدأ من [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) وصفحات [الرياض](https://3dgraphicshouse.com/locations/riyadh.html) و[جدة](https://3dgraphicshouse.com/locations/jeddah.html) و[مكة](https://3dgraphicshouse.com/locations/makkah.html). إن كان المشروع يروي أسلوب حياة ذكياً أو مرافق متصلة، يمكن ذكر طبقة سردية خفيفة عبر أدوات مثل [Dot for Life](https://dotforlife.com) مرة واحدة داخل قصة المرافق، دون أن تحل محل نظام الإطلاق البصري."
       },
       {
         "type": "p",
-        "text": "جلسة التقييم مجانية وبدون التزام: الهدف قياس فجوة الجاهزية قبل تثبيت تاريخ الإطلاق. استخدم [قائمة الجاهزية](https://3dgraphicshouse.com/insights/tools/launch-checklist.html) لتحديد ما ينقص نوع مشروعك تحديداً — بوابة، مجتمع، ضيافة، فلل، أو B2B — قبل توقيع الإنتاج."
+        "text": "جلسة التقييم مجانية وبدون التزام. الهدف قياس فجوة الجاهزية قبل تثبيت تاريخ الإطلاق. استخدم [قائمة الجاهزية](https://3dgraphicshouse.com/insights/tools/launch-checklist.html) لتحديد ما ينقص نوع مشروعك تحديداً (بوابة، مجتمع، ضيافة، فلل، أو B2B) قبل توقيع الإنتاج. بعد قفل الأصول يمكن تضخيم الحملة عبر [Beesmotion](https://beesmotion.com)."
       }
     ],
     "en": [
       {
         "type": "p",
-        "text": "Saudi off-plan pipelines are not read from project lists alone — they are read from each type’s ability to persuade visually before concrete. Developers who treat mixed-use gates, ROSHN-scale communities, near-Haram hospitality towers, and villa compounds with the same image library lose message precision while brokers and buyers compare quickly."
+        "text": "Saudi off-plan pipelines are not read from project lists alone. they are read from each type’s ability to persuade visually before concrete. Developers who treat mixed-use gates, ROSHN-scale communities, near-Haram hospitality towers, and villa compounds with the same image library lose message precision while brokers and buyers compare quickly."
       },
       {
         "type": "p",
-        "text": "This article offers a visual-readiness frame for common market types. As a public map of live patterns, see [Ruwaq Tours](https://ruwaq.co/tours) — market context for comparison, not a delivery claim. Operating the system sits with [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) from Graphics House in Jeddah."
+        "text": "This article offers a visual-readiness frame for common market types. As a public map of live patterns, see [Ruwaq Tours](https://ruwaq.co/tours) as market context for comparison, not a delivery claim. Operating the system sits with [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) from Graphics House in Jeddah. For the general operating playbook see [project launch for Saudi developers](https://3dgraphicshouse.com/insights/articles/project-launch-saudi-developers-en.html)."
       },
       {
         "type": "h2",
@@ -265,30 +317,30 @@
         "items": [
           "The buyer’s first question sets the first hero scene",
           "The sales channel (broker / gallery / exhibition / ads) sets asset format",
-          "The sales stage (first launch / later phase) sets library size — not quality",
+          "The sales stage (first launch / later phase) sets library size, not quality",
           "Project type sets maquette vs film vs render priority"
         ]
       },
       {
         "type": "h2",
-        "text": "Mixed-use gate — e.g. Jeddah Gate-type contexts"
+        "text": "Mixed-use gate. e.g. Jeddah Gate-type contexts"
       },
       {
         "type": "p",
-        "text": "Gates need dual persuasion: residential and commercial/investment. Approved aerials, movement paths, and night façades often matter more than an early living-room still. In Jeddah and Riyadh, gates are shown in both exhibition and gallery — assets must work on large screens and mobile."
+        "text": "Gates need dual persuasion: residential and commercial/investment. Approved aerials, movement paths, and night façades often matter more than an early living-room still. In Jeddah and Riyadh, gates are shown in both exhibition and gallery, so assets must work on large screens and mobile. Also see [mixed-use gate visual launch](https://3dgraphicshouse.com/insights/articles/mixed-use-gate-visual-launch-en.html) and [visual launch from Jeddah](https://3dgraphicshouse.com/insights/articles/jeddah-red-sea-visual-launch-en.html)."
       },
       {
         "type": "ol",
         "items": [
           "Plan and path renders + day/night façade via [rendering](https://3dgraphicshouse.com/services/rendering-en.html)",
-          "Maquette or interactive map clarifying blocks and uses — [maquettes](https://3dgraphicshouse.com/services/maquettes-en.html) and [interactive](https://3dgraphicshouse.com/services/interactive-experiences-en.html)",
-          "Launch film explaining urban logic in under two minutes — [CGI](https://3dgraphicshouse.com/services/cinematic-cgi-en.html)",
-          "Gallery identity that serves investors and brokers together — [branding](https://3dgraphicshouse.com/services/branding-en.html)"
+          "Maquette or interactive map clarifying blocks and uses. [maquettes](https://3dgraphicshouse.com/services/maquettes-en.html) and [interactive](https://3dgraphicshouse.com/services/interactive-experiences-en.html)",
+          "Launch film explaining urban logic in under two minutes. [CGI](https://3dgraphicshouse.com/services/cinematic-cgi-en.html)",
+          "Gallery identity that serves investors and brokers together. [branding](https://3dgraphicshouse.com/services/branding-en.html)"
         ]
       },
       {
         "type": "h2",
-        "text": "Large community — e.g. Sedra ROSHN-type contexts"
+        "text": "Large community. e.g. Sedra ROSHN-type contexts"
       },
       {
         "type": "p",
@@ -306,7 +358,7 @@
       },
       {
         "type": "h2",
-        "text": "Makkah hospitality — e.g. Omar Towers and Zakher-type contexts"
+        "text": "Makkah hospitality. e.g. Omar Towers and Zakher-type contexts"
       },
       {
         "type": "p",
@@ -323,7 +375,7 @@
       },
       {
         "type": "h2",
-        "text": "Villa compounds — e.g. Mayan, Pavilions, Saraya-type contexts"
+        "text": "Villa compounds. e.g. Mayan, Pavilions, Saraya-type contexts"
       },
       {
         "type": "p",
@@ -340,11 +392,11 @@
       },
       {
         "type": "h2",
-        "text": "B2B labor housing — separate from portfolio claims"
+        "text": "B2B labor housing. separate from portfolio claims"
       },
       {
         "type": "p",
-        "text": "Projects such as Anan Eskan village Makkah appear in the market as a B2B type: capacity, operations, institutional trust. Visualization clarifies organization and density. Graphics House work for [Anan Eskan Riyadh](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh-en.html) is a separate portfolio case — do not conflate market context with delivery claims."
+        "text": "Projects such as Anan Eskan village Makkah appear in the market as a B2B type: capacity, operations, institutional trust. Visualization clarifies organization and density. Graphics House work for [Anan Eskan Riyadh](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh-en.html) is a separate portfolio case. do not conflate market context with delivery claims."
       },
       {
         "type": "h2",
@@ -371,7 +423,7 @@
       {
         "type": "ol",
         "items": [
-          "Define 4–6 hero scenes for phase one",
+          "Define 4 to 6 hero scenes for phase one",
           "Produce a short film that narrates the buyer’s first question",
           "Build a maquette or interactive that proves scale and phases",
           "Schedule updates when a later phase launches or finish offer changes",
@@ -403,12 +455,12 @@
       },
       {
         "type": "p",
-        "text": "Brokers sell on mobile first. One unified pack per project type — no parallel marketing copies."
+        "text": "Brokers sell on mobile first. One unified pack per project type; no parallel marketing copies."
       },
       {
         "type": "ul",
         "items": [
-          "6–10 compressed stills + short film + PDF plans",
+          "6 to 10 compressed stills + short film + PDF plans",
           "One approved location message",
           "A “what we sell today” card when the phase changes",
           "Block unofficial screenshots"
@@ -430,7 +482,29 @@
       },
       {
         "type": "h2",
-        "text": "Visual system budget — where to invest"
+        "text": "Practical tips by project type"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Mixed-use gate: approve plan and night façade before any interior render",
+          "Large community: start with amenity and neighbourhood scenes before the unit kitchen",
+          "Makkah hospitality: write view acceptance criteria before dense production",
+          "Villas: distribution maquette often beats a long film",
+          "B2B: institutional language on screens, not isolated luxury residential stills"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "When to expand the library after phase one"
+      },
+      {
+        "type": "p",
+        "text": "Expand when a later phase launches, when the finish offer changes, or when entering a new Gulf market. Do not expand because a competitor added angles. See [Saudi vs Gulf visual launch](https://3dgraphicshouse.com/insights/articles/saudi-vs-gulf-visual-launch-en.html) before copying a Saudi library literally abroad."
+      },
+      {
+        "type": "h2",
+        "text": "Visual system budget: where to invest"
       },
       {
         "type": "p",
@@ -439,10 +513,10 @@
       {
         "type": "ul",
         "items": [
-          "40–50% for hero scenes and approved renders",
-          "20–25% for film and maquette/interactive",
-          "15–20% for identity and install",
-          "10–15% for updates and later phases"
+          "40 to 50% for hero scenes and approved renders",
+          "20 to 25% for film and maquette/interactive",
+          "15 to 20% for identity and install",
+          "10 to 15% for updates and later phases"
         ]
       },
       {
@@ -451,12 +525,54 @@
       },
       {
         "type": "p",
-        "text": "Name your project type first, then demand a system — not images. Start from [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) and the [Riyadh](https://3dgraphicshouse.com/locations/riyadh-en.html), [Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html), and [Makkah](https://3dgraphicshouse.com/locations/makkah-en.html) pages. If the project narrates smart living or connected amenities, a light storytelling layer via tools such as [Dot for Life](https://dotforlife.com) can appear once inside amenity narrative — without replacing the visual launch system."
+        "text": "Name your project type first, then demand a system, not images. Start from [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) and the [Riyadh](https://3dgraphicshouse.com/locations/riyadh-en.html), [Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html), and [Makkah](https://3dgraphicshouse.com/locations/makkah-en.html) pages. If the project narrates smart living or connected amenities, a light storytelling layer via tools such as [Dot for Life](https://dotforlife.com) can appear once inside amenity narrative, without replacing the visual launch system."
       },
       {
         "type": "p",
-        "text": "The assessment session is free and without obligation: the goal is to measure readiness gaps before locking the launch date."
+        "text": "The assessment session is free and without obligation. The goal is to measure readiness gaps before locking the launch date. Use the [launch checklist](https://3dgraphicshouse.com/insights/tools/launch-checklist-en.html) to name what your project type still lacks. After assets lock, campaign amplification can follow via [Beesmotion](https://beesmotion.com)."
       }
     ]
-  }
+  },
+  "faq": [
+    {
+      "q": {
+        "ar": "هل نفس مكتبة الصور تناسب كل أنواع المشاريع؟",
+        "en": "Can one image library fit every project type?"
+      },
+      "a": {
+        "ar": "لا. البوابة تبيع مخططاً وحركة، والمجتمع يبيع إيقاع حي، ومكة تبيع موقعاً ومسار ضيف. ابدأ من سؤال المشتري الأول لكل نوع.",
+        "en": "No. A gate sells plan and movement, a community sells neighbourhood rhythm, Makkah sells place and guest path. Start from each type's first buyer question."
+      }
+    },
+    {
+      "q": {
+        "ar": "كم مشهد بطل للمرحلة الأولى؟",
+        "en": "How many hero scenes for phase one?"
+      },
+      "a": {
+        "ar": "غالباً 4 to 6 مشاهد معتمدة، ثم توسيع عند مرحلة لاحقة. «كل الزوايا» دفعة واحدة يضعف الجودة.",
+        "en": "Usually 4 to 6 approved scenes, then expand at a later phase. \"Every angle\" at once weakens quality."
+      }
+    },
+    {
+      "q": {
+        "ar": "متى نحتاج مجسمًا مقابل فيلماً؟",
+        "en": "When do we need a maquette vs a film?"
+      },
+      "a": {
+        "ar": "المجتمعات والبوابات والفلل غالباً تحتاج مجسم حجم/مراحل. الفيلم يفتح الباب للمستثمر في كل الأنواع، لكن لا يستبدل المجسم حيث الحجم قرار البيع.",
+        "en": "Communities, gates, and villas often need a scale/phase maquette. Film opens the door for investors in every type, but does not replace the maquette where scale is the sales decision."
+      }
+    },
+    {
+      "q": {
+        "ar": "أين أبدأ التقييم؟",
+        "en": "Where do I start the assessment?"
+      },
+      "a": {
+        "ar": "من [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) و[موجز المشروع](https://3dgraphicshouse.com/insights/tools/project-brief.html) بعد تحديد نوع المشروع.",
+        "en": "From [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) and the [project brief](https://3dgraphicshouse.com/insights/tools/project-brief-en.html) after naming your project type."
+      }
+    }
+  ]
 }

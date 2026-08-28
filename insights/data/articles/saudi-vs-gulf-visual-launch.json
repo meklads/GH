@@ -10,24 +10,54 @@
     "ar": "الخليج",
     "en": "Gulf"
   },
-  "image": "assets/projects/rendering/uae-e1745147961286.jpeg",
+  "image": "assets/insights/reports/jeddah-gate-ruwaq.jpg",
   "title": {
     "ar": "من السعودية إلى الخليج: ماذا يبقى وماذا يتغيّر في نظام الإطلاق البصري؟",
-    "en": "Saudi to Gulf Visual Launch: What Stays the Same — and What Must Change"
+    "en": "Saudi to Gulf Visual Launch: What Stays the Same, and What Must Change"
   },
   "excerpt": {
-    "ar": "دليل مقارن للمطورين الذين أتمّوا جاهزية الإطلاق في الرياض وجدة ومكة ويستعدون للتوسع خليجياً — خصوصاً عُمان أولاً. نفس أعمدة ProjectLaunch™؛ نفسية مشترٍ ورموز مكان ولوجستيات مختلفة.",
-    "en": "A comparative playbook for developers who completed launch readiness in Riyadh, Jeddah, and Makkah and are expanding into the Gulf — Oman first. Same ProjectLaunch™ pillars; different buyer psychology, place codes, and logistics."
+    "ar": "دليل مقارن للمطورين الذين أتمّوا جاهزية الإطلاق في الرياض وجدة ومكة ويستعدون للتوسع خليجياً: خصوصاً عُمان أولاً. نفس أعمدة ProjectLaunch™؛ نفسية مشترٍ ورموز مكان ولوجستيات مختلفة.",
+    "en": "A comparative playbook for developers who completed launch readiness in Riyadh, Jeddah, and Makkah and are expanding into the Gulf. Oman first. Same ProjectLaunch™ pillars; different buyer psychology, place codes, and logistics."
   },
   "metaDescription": {
-    "ar": "مقارنة إطلاق بصري السعودية↔الخليج: ما يثبت وما يتغيّر — ProjectLaunch™، عُمان، نفسية المشتري، ثنائية اللغة، لوجستيات جدة. Graphics House.",
-    "en": "Saudi↔Gulf visual launch comparison: what holds and what changes — ProjectLaunch™, Oman, buyer psychology, bilingual assets, Jeddah logistics. Graphics House."
+    "ar": "مقارنة إطلاق بصري السعودية↔الخليج: ما يثبت وما يتغيّر. ProjectLaunch™، عُمان، نفسية المشتري، ثنائية اللغة، لوجستيات جدة. Graphics House.",
+    "en": "Saudi to Gulf visual launch comparison: what holds and what changes. ProjectLaunch, Oman, buyer psychology, bilingual assets, Jeddah logistics. Graphics House."
+  },
+  "keywords": {
+    "ar": {
+      "short": [
+        "توسع خليجي",
+        "إطلاق بصري السعودية",
+        "ProjectLaunch عُمان",
+        "ثنائية اللغة"
+      ],
+      "long": [
+        "مقارنة إطلاق بصري من السعودية إلى الخليج",
+        "ما يثبت وما يتغير في نظام ProjectLaunch",
+        "توسع المطور السعودي إلى عُمان أولاً",
+        "لوجستيات تركيب من مقر جدة Graphics House"
+      ]
+    },
+    "en": {
+      "short": [
+        "Gulf expansion",
+        "Saudi visual launch",
+        "ProjectLaunch Oman",
+        "bilingual assets"
+      ],
+      "long": [
+        "Saudi to Gulf visual launch comparison",
+        "what stays same what changes ProjectLaunch",
+        "Saudi developer expansion to Oman first",
+        "Jeddah HQ install logistics Graphics House"
+      ]
+    }
   },
   "body": {
     "ar": [
       {
         "type": "p",
-        "text": "التوسع من السعودية إلى الخليج ليس «نسخ حملة الرياض بلغة ثانية». المطور الذي بنى نظام إطلاق في العاصمة أو جدة أو مكة يملك أساساً قوياً — لكن نفسية المشتري، رموز المكان، مزيج الضيافة/السكن، سرعة الاعتماد، وثنائية اللغة تتغيّر. هذا المقال إطار مقارن بعد جاهزية سعودية، لا بديل عنها ولا تحسين محركات بحث يضع عُمان أولاً بلا سياق."
+        "text": "التوسع من السعودية إلى الخليج ليس «نسخ حملة الرياض بلغة ثانية». المطور الذي بنى نظام إطلاق في العاصمة أو جدة أو مكة يملك أساساً قوياً: لكن نفسية المشتري، رموز المكان، مزيج الضيافة/السكن، سرعة الاعتماد، وثنائية اللغة تتغيّر. هذا المقال إطار مقارن بعد جاهزية سعودية، لا بديل عنها ولا تحسين محركات بحث يضع عُمان أولاً بلا سياق."
       },
       {
         "type": "p",
@@ -43,13 +73,13 @@
           "لديك سير اعتماد مكتوب بين معماري وتسويق ومبيعات في مشروع سعودي واحد على الأقل",
           "أصولك تعمل كحزمة وسيط/صالة لا كصور مبعثرة",
           "Freeze للمشاهد البطولية والتشطيب المعتمد قبل الحملة",
-          "فريقك يفهم سيناريو عرض 8–10 دقائق",
-          "تعرف فرق الرياض وجدة ومكة — لا قالباً سعودياً واحداً"
+          "فريقك يفهم سيناريو عرض 8 to 10 دقائق",
+          "تعرف فرق الرياض وجدة ومكة: لا قالباً سعودياً واحداً"
         ]
       },
       {
         "type": "p",
-        "text": "إن لم تكتمل هذه الطبقة، ابدأ من مقالات المدن: [الرياض](https://3dgraphicshouse.com/insights/articles/riyadh-offplan-visual-sales.html)، [جدة والبحر الأحمر](https://3dgraphicshouse.com/insights/articles/jeddah-red-sea-visual-launch.html)، [حساسية مكة](https://3dgraphicshouse.com/insights/articles/makkah-project-visual-sensitivity.html) — ثم عد إلى التوسع."
+        "text": "إن لم تكتمل هذه الطبقة، ابدأ من مقالات المدن: [الرياض](https://3dgraphicshouse.com/insights/articles/riyadh-offplan-visual-sales.html)، [جدة والبحر الأحمر](https://3dgraphicshouse.com/insights/articles/jeddah-red-sea-visual-launch.html)، [حساسية مكة](https://3dgraphicshouse.com/insights/articles/makkah-project-visual-sensitivity.html). ثم عد إلى التوسع."
       },
       {
         "type": "h2",
@@ -68,7 +98,7 @@
       },
       {
         "type": "p",
-        "text": "الثبات هنا تشغيلي: نفس نموذج ثلاثي الأبعاد المركزي، نفس سير الاعتماد، نفس منطق الإصدار. ما يتغيّر هو المحتوى والرسالة وزوايا المكان — لا إعادة اختراع الاستوديو في كل سوق. المطور الذي يبدّل المورّدين مع كل توسع يدفع ثمن إعادة تعلم الاعتماد وفقدان اتساق الهوية."
+        "text": "الثبات هنا تشغيلي: نفس نموذج ثلاثي الأبعاد المركزي، نفس سير الاعتماد، نفس منطق الإصدار. ما يتغيّر هو المحتوى والرسالة وزوايا المكان: لا إعادة اختراع الاستوديو في كل سوق. المطور الذي يبدّل المورّدين مع كل توسع يدفع ثمن إعادة تعلم الاعتماد وفقدان اتساق الهوية."
       },
       {
         "type": "p",
@@ -80,7 +110,7 @@
       },
       {
         "type": "p",
-        "text": "في السعودية، كثافة المقارنة وسرعة القرار في الرياض تختلف عن حساسية المكان في مكة وعن سرد الساحل في جدة. في الخليج — وخصوصاً عُمان كأول محطة عملية لدينا — يزداد وزن الضيافة الساحلية، إيقاع اعتماد مختلف، وتوقعات ثنائية اللغة أبكر في الحزمة. الإمارات والبحرين تُذكر كأسواق مجاورة بنفس المنطق المقارن: لا تنسخ رسالة الرياض حرفياً."
+        "text": "في السعودية، كثافة المقارنة وسرعة القرار في الرياض تختلف عن حساسية المكان في مكة وعن سرد الساحل في جدة. في الخليج: وخصوصاً عُمان كأول محطة عملية لدينا: يزداد وزن الضيافة الساحلية، إيقاع اعتماد مختلف، وتوقعات ثنائية اللغة أبكر في الحزمة. الإمارات والبحرين تُذكر كأسواق مجاورة بنفس المنطق المقارن: لا تنسخ رسالة الرياض حرفياً."
       },
       {
         "type": "ul",
@@ -92,7 +122,7 @@
       },
       {
         "type": "p",
-        "text": "مثال عملي: مشاهد «كثافة العاصمة» التي تعمل في الرياض قد تبدو صاخبة أو غير ملائمة لإيقاع ساحلي في مسقط. ومشاهد حساسية مكة لا تُنقل كما هي إلى سوق خليجي بلا سياق حرمي. أعد كتابة موجز المكان في صفحة واحدة: من المشتري؟ ما رمز المكان غير القابل للتفاوض؟ ما الادعاءات الممنوعة؟ ثم أعد إنتاج المشاهد البطولية فقط — لا المكتبة كلها بالضرورة."
+        "text": "مثال عملي: مشاهد «كثافة العاصمة» التي تعمل في الرياض قد تبدو صاخبة أو غير ملائمة لإيقاع ساحلي في مسقط. ومشاهد حساسية مكة لا تُنقل كما هي إلى سوق خليجي بلا سياق حرمي. أعد كتابة موجز المكان في صفحة واحدة: من المشتري؟ ما رمز المكان غير القابل للتفاوض؟ ما الادعاءات الممنوعة؟ ثم أعد إنتاج المشاهد البطولية فقط: لا المكتبة كلها بالضرورة."
       },
       {
         "type": "ul",
@@ -108,7 +138,7 @@
       },
       {
         "type": "p",
-        "text": "كثير من التوسعات الخليجية تمزج إقامة وضيافة أكثر مما يفعله مجمّع فلل شمال الرياض. ذلك يعيد ترتيب هرمية الأصول: مسار ضيف ولوبي قبل حديقة خاصة. راجع نمط [ضيافة قرب الحرم](https://3dgraphicshouse.com/insights/articles/makkah-hospitality-near-haram-viz.html) كتمرين سعودي على مسار الضيف — ثم أعد ضبط الزوايا لرموز المكان المحلية في السوق المستهدف."
+        "text": "كثير من التوسعات الخليجية تمزج إقامة وضيافة أكثر مما يفعله مجمّع فلل شمال الرياض. ذلك يعيد ترتيب هرمية الأصول: مسار ضيف ولوبي قبل حديقة خاصة. راجع نمط [ضيافة قرب الحرم](https://3dgraphicshouse.com/insights/articles/makkah-hospitality-near-haram-viz.html) كتمرين سعودي على مسار الضيف: ثم أعد ضبط الزوايا لرموز المكان المحلية في السوق المستهدف."
       },
       {
         "type": "p",
@@ -122,9 +152,9 @@
         "type": "ol",
         "items": [
           "اقفل lookdev والمشاهد البطولية قبل ترجمة الحملة",
-          "عربي + إنجليزي من اليوم الأول في حزمة الوسيط الخليجية — لا لاحقاً",
+          "عربي + إنجليزي من اليوم الأول في حزمة الوسيط الخليجية: لا لاحقاً",
           "لا تترجم الادعاءات المكانية حرفياً إن تغيّر السياق القانوني/التسويقي",
-          "نسخة إصدار واحدة عبر اللغتين — ممنوع نسختان متناقضتان"
+          "نسخة إصدار واحدة عبر اللغتين: ممنوع نسختان متناقضتان"
         ]
       },
       {
@@ -133,11 +163,11 @@
       },
       {
         "type": "p",
-        "text": "المقر في [جدة](https://3dgraphicshouse.com/locations/jeddah.html) يبقى مركز الإنتاج والتركيب، مع تغطية [الرياض](https://3dgraphicshouse.com/locations/riyadh.html) و[مكة](https://3dgraphicshouse.com/locations/makkah.html) للتأسيس السعودي، وتواجد [عُمان](https://3dgraphicshouse.com/locations/oman.html) للتوسع. خطط شحن المجسم والتركيب وورش الاعتماد الميدانية مبكراً — الزمن اللوجستي جزء من جدول الإطلاق لا بنداً لاحقاً."
+        "text": "المقر في [جدة](https://3dgraphicshouse.com/locations/jeddah.html) يبقى مركز الإنتاج والتركيب، مع تغطية [الرياض](https://3dgraphicshouse.com/locations/riyadh.html) و[مكة](https://3dgraphicshouse.com/locations/makkah.html) للتأسيس السعودي، وتواجد [عُمان](https://3dgraphicshouse.com/locations/oman.html) للتوسع. خطط شحن المجسم والتركيب وورش الاعتماد الميدانية مبكراً: الزمن اللوجستي جزء من جدول الإطلاق لا بنداً لاحقاً."
       },
       {
         "type": "p",
-        "text": "خطّط للوقت الضائع: شحن، جمارك إن لزم، تركيب، تدريب فريق، بروفة سيناريو. كثير من الإطلاقات العابرة للحدود تفشل لأن التاريخ التسويقي ثُبّت قبل سلسلة التركيب. اجعل تاريخ «جاهزية الصالة» هو المخرج الأساسي، وتاريخ الحملة تابعاً له — لا العكس."
+        "text": "خطّط للوقت الضائع: شحن، جمارك إن لزم، تركيب، تدريب فريق، بروفة سيناريو. كثير من الإطلاقات العابرة للحدود تفشل لأن التاريخ التسويقي ثُبّت قبل سلسلة التركيب. اجعل تاريخ «جاهزية الصالة» هو المخرج الأساسي، وتاريخ الحملة تابعاً له: لا العكس."
       },
       {
         "type": "p",
@@ -145,7 +175,7 @@
       },
       {
         "type": "h2",
-        "text": "إثبات سعودي يُبنى عليه — لا يُستبدل"
+        "text": "إثبات سعودي يُبنى عليه: لا يُستبدل"
       },
       {
         "type": "p",
@@ -153,11 +183,11 @@
       },
       {
         "type": "h2",
-        "text": "سياق خط الأنابيب السعودي — إشارة واحدة"
+        "text": "سياق خط الأنابيب السعودي: إشارة واحدة"
       },
       {
         "type": "p",
-        "text": "لفهم ضغط الإطلاق داخل المملكة قبل التوسع، تكفي نظرة واحدة على أنواع المشاريع الحية في [Ruwaq Tours](https://ruwaq.co/tours) كخريطة سوق — لا كادعاء تسليم ولا كقائمة مشاريع خليجية."
+        "text": "لفهم ضغط الإطلاق داخل المملكة قبل التوسع، تكفي نظرة واحدة على أنواع المشاريع الحية في [Ruwaq Tours](https://ruwaq.co/tours) كخريطة سوق: لا كادعاء تسليم ولا كقائمة مشاريع خليجية."
       },
       {
         "type": "h2",
@@ -167,7 +197,7 @@
         "type": "ul",
         "items": [
           "أعمدة ProjectLaunch™ مكتملة في المشروع المرجعي السعودي",
-          "رسالة مكان محلية للسوق المستهدف — لا نسخ الرياض/جدة حرفياً",
+          "رسالة مكان محلية للسوق المستهدف: لا نسخ الرياض/جدة حرفياً",
           "حزمة ثنائية اللغة بإصدار واحد",
           "خطة تركيب وشحن بتواريخ قبل افتتاح الصالة",
           "سيناريو عرض مُختبَر مع فريق المبيعات المحلي",
@@ -176,7 +206,7 @@
       },
       {
         "type": "p",
-        "text": "أضف معياراً صريحاً: هل يستطيع فريق المبيعات المحلي إكمال سيناريو 8–10 دقائق دون الرجوع لملف قديم من السوق السعودي؟ إن كانت الإجابة لا، فالتوسع سابق لأوانه بصرياً حتى لو كان العقار جاهزاً للبيع. راجع أيضاً أنماط [مجمّع فلل الرياض](https://3dgraphicshouse.com/insights/articles/riyadh-north-villa-compound-viz.html) و[ضيافة مكة](https://3dgraphicshouse.com/insights/articles/makkah-hospitality-near-haram-viz.html) كتمارين نوع منتج قبل نسخها خليجياً."
+        "text": "أضف معياراً صريحاً: هل يستطيع فريق المبيعات المحلي إكمال سيناريو 8 to 10 دقائق دون الرجوع لملف قديم من السوق السعودي؟ إن كانت الإجابة لا، فالتوسع سابق لأوانه بصرياً حتى لو كان العقار جاهزاً للبيع. راجع أيضاً أنماط [مجمّع فلل الرياض](https://3dgraphicshouse.com/insights/articles/riyadh-north-villa-compound-viz.html) و[ضيافة مكة](https://3dgraphicshouse.com/insights/articles/makkah-hospitality-near-haram-viz.html) كتمارين نوع منتج قبل نسخها خليجياً."
       },
       {
         "type": "h2",
@@ -196,6 +226,28 @@
       },
       {
         "type": "h2",
+        "text": "نصائح عملية للتوسع الأول إلى عُمان"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "أعد كتابة موجز المكان في صفحة واحدة قبل أي ترجمة حملة",
+          "أنتج المشاهد البطولية فقط، لا المكتبة كلها",
+          "اختبر الحزمة مع وسيط محلي قبل الطباعة",
+          "اربط شحن المجسم بتاريخ «جاهزية الصالة» لا تاريخ الإعلان",
+          "احتفظ بنفس الاستوديو لتجنب إعادة تعلم الاعتماد"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "متى تضيف طبقة تسويق رقمي؟"
+      },
+      {
+        "type": "p",
+        "text": "بعد قفل الأصول فقط. [Beesmotion](https://beesmotion.com) خيار طبيعي للتضخيم متعدد الأسواق، لكن لا تضخّم قبل إصدار واحد ثنائي اللغة. للتشطيب التنفيذي الذي يطابق الوعد البصري في السوق الجديد، خطّط لاحقاً مع [Turriva](https://turriva.com) حيث يلزم."
+      },
+      {
+        "type": "h2",
         "text": "قائمة تحقق للمطور المتوسع"
       },
       {
@@ -206,22 +258,22 @@
           "هل رُبط النطاق بـ [ProjectLaunch عُمان](https://3dgraphicshouse.com/solutions/project-launch-oman.html)؟",
           "هل الحزمة ثنائية اللغة ومقفلة الإصدار؟",
           "هل جدول التركيب من جدة واضح؟",
-          "هل الحملة المؤجلة مرتبطة بقفل الأصول فقط — عبر [Beesmotion](https://beesmotion.com) عند الحاجة؟"
+          "هل الحملة المؤجلة مرتبطة بقفل الأصول فقط: عبر [Beesmotion](https://beesmotion.com) عند الحاجة؟"
         ]
       },
       {
         "type": "h2",
-        "text": "الخلاصة: نفس النظام — سوق جديد"
+        "text": "الخلاصة: نفس النظام: سوق جديد"
       },
       {
         "type": "p",
-        "text": "التوسع خليجياً يكافئ من أتقن الإطلاق في السعودية ثم أعاد ضبط النفس والمكان واللغة واللوجستيات. ابدأ من الأساس السعودي، ثم [ProjectLaunch™ عُمان](https://3dgraphicshouse.com/solutions/project-launch-oman.html)، واحجز تقييماً عابراً للحدود قبل تثبيت تاريخ الصالة الثانية."
+        "text": "التوسع خليجياً يكافئ من أتقن الإطلاق في السعودية ثم أعاد ضبط النفس والمكان واللغة واللوجستيات. ابدأ من الأساس السعودي في [إطلاق المطورين السعوديين](https://3dgraphicshouse.com/insights/articles/project-launch-saudi-developers.html)، ثم [ProjectLaunch™ عُمان](https://3dgraphicshouse.com/solutions/project-launch-oman.html)، واحجز تقييماً عابراً للحدود قبل تثبيت تاريخ الصالة الثانية."
       }
     ],
     "en": [
       {
         "type": "p",
-        "text": "Expanding from Saudi Arabia into the Gulf is not “copy the Riyadh campaign into a second language.” A developer who built a launch system in the capital, Jeddah, or Makkah already has a strong foundation — but buyer psychology, place codes, hospitality/residential mix, approval speed, and bilingual expectations change. This is a comparative frame after Saudi readiness — not a substitute for it, and not Oman-first SEO without context."
+        "text": "Expanding from Saudi Arabia into the Gulf is not “copy the Riyadh campaign into a second language.” A developer who built a launch system in the capital, Jeddah, or Makkah already has a strong foundation. but buyer psychology, place codes, hospitality/residential mix, approval speed, and bilingual expectations change. This is a comparative frame after Saudi readiness, not a substitute for it, and not Oman-first SEO without context."
       },
       {
         "type": "p",
@@ -235,15 +287,15 @@
         "type": "ul",
         "items": [
           "You have a written approval path across architecture, marketing, and sales on at least one Saudi project",
-          "Your assets work as a broker/gallery pack — not scattered stills",
+          "Your assets work as a broker/gallery pack, not scattered stills",
           "Hero scenes and approved finishes freeze before campaign",
-          "Your team understands an 8–10 minute presentation scenario",
-          "You know Riyadh vs Jeddah vs Makkah differences — not one Saudi template"
+          "Your team understands an 8 to 10 minute presentation scenario",
+          "You know Riyadh vs Jeddah vs Makkah differences, not one Saudi template"
         ]
       },
       {
         "type": "p",
-        "text": "If that layer is incomplete, start with city articles: [Riyadh](https://3dgraphicshouse.com/insights/articles/riyadh-offplan-visual-sales-en.html), [Jeddah & Red Sea](https://3dgraphicshouse.com/insights/articles/jeddah-red-sea-visual-launch-en.html), [Makkah sensitivity](https://3dgraphicshouse.com/insights/articles/makkah-project-visual-sensitivity-en.html) — then return to expansion."
+        "text": "If that layer is incomplete, start with city articles: [Riyadh](https://3dgraphicshouse.com/insights/articles/riyadh-offplan-visual-sales-en.html), [Jeddah & Red Sea](https://3dgraphicshouse.com/insights/articles/jeddah-red-sea-visual-launch-en.html), [Makkah sensitivity](https://3dgraphicshouse.com/insights/articles/makkah-project-visual-sensitivity-en.html), then return to expansion."
       },
       {
         "type": "h2",
@@ -253,7 +305,7 @@
         "type": "ol",
         "items": [
           "[Architectural visualization](https://3dgraphicshouse.com/services/rendering-en.html) from a reusable central model",
-          "[CGI films](https://3dgraphicshouse.com/services/cinematic-cgi-en.html) for the investor story — not façade montage alone",
+          "[CGI films](https://3dgraphicshouse.com/services/cinematic-cgi-en.html) for the investor story, not façade montage alone",
           "[Maquettes](https://3dgraphicshouse.com/services/maquettes-en.html) that lock scale and phases in the gallery",
           "[Interactive experiences](https://3dgraphicshouse.com/services/interactive-experiences-en.html) for unit selection and comparison",
           "[Identity and install](https://3dgraphicshouse.com/services/branding-en.html) unifying screens and boards",
@@ -262,11 +314,11 @@
       },
       {
         "type": "p",
-        "text": "Sameness here is operational: the same central 3D model, the same approval path, the same versioning logic. What changes is content, message, and place angles — not reinventing the studio in every market. Developers who switch vendors on every expansion pay for relearning approval and losing identity consistency."
+        "text": "Sameness here is operational: the same central 3D model, the same approval path, the same versioning logic. What changes is content, message, and place angles, not reinventing the studio in every market. Developers who switch vendors on every expansion pay for relearning approval and losing identity consistency."
       },
       {
         "type": "p",
-        "text": "Use [project launch for Oman developers](https://3dgraphicshouse.com/insights/articles/project-launch-oman-developers-en.html) as a local application of the same pillars — after the Saudi layer is closed."
+        "text": "Use [project launch for Oman developers](https://3dgraphicshouse.com/insights/articles/project-launch-oman-developers-en.html) as a local application of the same pillars. after the Saudi layer is closed."
       },
       {
         "type": "h2",
@@ -274,7 +326,7 @@
       },
       {
         "type": "p",
-        "text": "In Saudi Arabia, Riyadh’s dense comparison and decision speed differ from Makkah’s place sensitivity and Jeddah’s coastal narrative. Across the Gulf — especially Oman as our first practical expansion lane — coastal hospitality weight, a different approval rhythm, and earlier bilingual expectations rise. UAE and Bahrain appear as neighboring markets under the same comparative logic: do not copy Riyadh messaging literally."
+        "text": "In Saudi Arabia, Riyadh’s dense comparison and decision speed differ from Makkah’s place sensitivity and Jeddah’s coastal narrative. Across the Gulf. especially Oman as our first practical expansion lane. coastal hospitality weight, a different approval rhythm, and earlier bilingual expectations rise. UAE and Bahrain appear as neighboring markets under the same comparative logic: do not copy Riyadh messaging literally."
       },
       {
         "type": "ul",
@@ -286,7 +338,7 @@
       },
       {
         "type": "p",
-        "text": "Practical example: “capital density” scenes that work in Riyadh can feel loud or mismatched to a coastal Muscat rhythm. Makkah sensitivity scenes do not transfer as-is into a Gulf market without Haram context. Rewrite a one-page place brief: who is the buyer? What place code is non-negotiable? Which claims are forbidden? Then remake hero scenes only — not necessarily the entire library."
+        "text": "Practical example: “capital density” scenes that work in Riyadh can feel loud or mismatched to a coastal Muscat rhythm. Makkah sensitivity scenes do not transfer as-is into a Gulf market without Haram context. Rewrite a one-page place brief: who is the buyer? What place code is non-negotiable? Which claims are forbidden? Then remake hero scenes only, not necessarily the entire library."
       },
       {
         "type": "ul",
@@ -302,7 +354,7 @@
       },
       {
         "type": "p",
-        "text": "Many Gulf expansions mix lodging and hospitality more than a North Riyadh villa compound. That reorders the asset hierarchy: guest path and lobby before private garden. See the [near-Haram hospitality](https://3dgraphicshouse.com/insights/articles/makkah-hospitality-near-haram-viz-en.html) pattern as a Saudi exercise in guest-path storytelling — then retune angles to local place codes in the target market."
+        "text": "Many Gulf expansions mix lodging and hospitality more than a North Riyadh villa compound. That reorders the asset hierarchy: guest path and lobby before private garden. See the [near-Haram hospitality](https://3dgraphicshouse.com/insights/articles/makkah-hospitality-near-haram-viz-en.html) pattern as a Saudi exercise in guest-path storytelling, then retune angles to local place codes in the target market."
       },
       {
         "type": "p",
@@ -316,9 +368,9 @@
         "type": "ol",
         "items": [
           "Lock lookdev and hero scenes before campaign translation",
-          "Arabic + English from day one in the Gulf broker pack — not later",
+          "Arabic + English from day one in the Gulf broker pack, not later",
           "Do not literally translate place claims if legal/marketing context changes",
-          "One version number across both languages — no conflicting copies"
+          "One version number across both languages; no conflicting copies"
         ]
       },
       {
@@ -327,19 +379,19 @@
       },
       {
         "type": "p",
-        "text": "[Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) HQ remains the production and install hub, with [Riyadh](https://3dgraphicshouse.com/locations/riyadh-en.html) and [Makkah](https://3dgraphicshouse.com/locations/makkah-en.html) coverage for the Saudi foundation, and [Oman](https://3dgraphicshouse.com/locations/oman-en.html) presence for expansion. Plan maquette shipping, install, and on-ground approval workshops early — logistics time is part of the launch calendar, not a late line item."
+        "text": "[Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) HQ remains the production and install hub, with [Riyadh](https://3dgraphicshouse.com/locations/riyadh-en.html) and [Makkah](https://3dgraphicshouse.com/locations/makkah-en.html) coverage for the Saudi foundation, and [Oman](https://3dgraphicshouse.com/locations/oman-en.html) presence for expansion. Plan maquette shipping, install, and on-ground approval workshops early. logistics time is part of the launch calendar, not a late line item."
       },
       {
         "type": "p",
-        "text": "Plan dead time: shipping, customs if required, install, team training, scenario rehearsal. Many cross-border launches fail because the marketing date was locked before the install chain. Make “gallery ready” the primary milestone and let the campaign date follow — not the reverse."
+        "text": "Plan dead time: shipping, customs if required, install, team training, scenario rehearsal. Many cross-border launches fail because the marketing date was locked before the install chain. Make “gallery ready” the primary milestone and let the campaign date follow, not the reverse."
       },
       {
         "type": "p",
-        "text": "For on-site identity, signage, and screens, tie [branding and install services](https://3dgraphicshouse.com/services/branding-en.html) to the same shipping schedule so screens do not arrive before content — or the reverse."
+        "text": "For on-site identity, signage, and screens, tie [branding and install services](https://3dgraphicshouse.com/services/branding-en.html) to the same shipping schedule so screens do not arrive before content. or the reverse."
       },
       {
         "type": "h2",
-        "text": "Saudi proof to build on — not replace"
+        "text": "Saudi proof to build on, not replace"
       },
       {
         "type": "p",
@@ -347,11 +399,11 @@
       },
       {
         "type": "h2",
-        "text": "Saudi pipeline context — one mention"
+        "text": "Saudi pipeline context. one mention"
       },
       {
         "type": "p",
-        "text": "To understand in-Kingdom launch pressure before expansion, one look at live project types on [Ruwaq Tours](https://ruwaq.co/tours) as a market map is enough — not a delivery claim and not a Gulf project list."
+        "text": "To understand in-Kingdom launch pressure before expansion, one look at live project types on [Ruwaq Tours](https://ruwaq.co/tours) as a market map is enough, not a delivery claim and not a Gulf project list."
       },
       {
         "type": "h2",
@@ -361,7 +413,7 @@
         "type": "ul",
         "items": [
           "ProjectLaunch™ pillars complete on the Saudi reference project",
-          "Local place message for the target market — no literal Riyadh/Jeddah copy",
+          "Local place message for the target market; no literal Riyadh/Jeddah copy",
           "Bilingual pack with one version",
           "Install and shipping plan dated before gallery opening",
           "Presentation scenario tested with the local sales team",
@@ -370,7 +422,7 @@
       },
       {
         "type": "p",
-        "text": "Add an explicit criterion: can the local sales team complete an 8–10 minute scenario without reaching for an old Saudi-market file? If not, expansion is visually premature even if the real estate is ready to sell. Also review [Riyadh villa compound](https://3dgraphicshouse.com/insights/articles/riyadh-north-villa-compound-viz-en.html) and [Makkah hospitality](https://3dgraphicshouse.com/insights/articles/makkah-hospitality-near-haram-viz-en.html) as product-type drills before copying them into the Gulf."
+        "text": "Add an explicit criterion: can the local sales team complete an 8 to 10 minute scenario without reaching for an old Saudi-market file? If not, expansion is visually premature even if the real estate is ready to sell. Also review [Riyadh villa compound](https://3dgraphicshouse.com/insights/articles/riyadh-north-villa-compound-viz-en.html) and [Makkah hospitality](https://3dgraphicshouse.com/insights/articles/makkah-hospitality-near-haram-viz-en.html) as product-type drills before copying them into the Gulf."
       },
       {
         "type": "h2",
@@ -390,6 +442,28 @@
       },
       {
         "type": "h2",
+        "text": "Practical tips for first expansion into Oman"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Rewrite the one-page place brief before any campaign translation",
+          "Remake hero scenes only, not the entire library",
+          "Test the pack with a local broker before print",
+          "Tie maquette shipping to \"gallery ready\" date, not ad date",
+          "Keep the same studio to avoid relearning approval"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "When to add digital marketing amplification"
+      },
+      {
+        "type": "p",
+        "text": "Only after assets lock. [Beesmotion](https://beesmotion.com) is a natural fit for multi-market amplification, but do not amplify before a bilingual version lock. Where finish execution must match the visual promise in the new market, plan later alignment with [Turriva](https://turriva.com) when needed."
+      },
+      {
+        "type": "h2",
         "text": "Checklist for the expanding developer"
       },
       {
@@ -400,17 +474,59 @@
           "Is scope linked to [ProjectLaunch Oman](https://3dgraphicshouse.com/solutions/project-launch-oman-en.html)?",
           "Is the pack bilingual and version-locked?",
           "Is the Jeddah-origin install schedule clear?",
-          "Is deferred campaign tied to asset lock only — via [Beesmotion](https://beesmotion.com) when needed?"
+          "Is deferred campaign tied to asset lock only, via [Beesmotion](https://beesmotion.com) when needed?"
         ]
       },
       {
         "type": "h2",
-        "text": "Bottom line: same system — new market"
+        "text": "Bottom line: same system, new market"
       },
       {
         "type": "p",
-        "text": "Gulf expansion rewards teams that mastered Saudi launch, then retuned psychology, place, language, and logistics. Start from the Saudi foundation, then [ProjectLaunch™ Oman](https://3dgraphicshouse.com/solutions/project-launch-oman-en.html), and book a cross-border assessment before locking the second gallery date."
+        "text": "Gulf expansion rewards teams that mastered Saudi launch, then retuned psychology, place, language, and logistics. Start from the Saudi foundation in [project launch for Saudi developers](https://3dgraphicshouse.com/insights/articles/project-launch-saudi-developers-en.html), then [ProjectLaunch™ Oman](https://3dgraphicshouse.com/solutions/project-launch-oman-en.html), and book a cross-border assessment before locking the second gallery date."
       }
     ]
-  }
+  },
+  "faq": [
+    {
+      "q": {
+        "ar": "هل ننسخ حملة الرياض في عُمان؟",
+        "en": "Do we copy the Riyadh campaign in Oman?"
+      },
+      "a": {
+        "ar": "لا. الأعمدة تبقى؛ موجز المكان والحزمة ثنائية اللغة يتغيران. راجع [إطلاق عُمان للمطورين](https://3dgraphicshouse.com/insights/articles/project-launch-oman-developers.html).",
+        "en": "No. Pillars stay; place brief and bilingual pack change. See [project launch for Oman developers](https://3dgraphicshouse.com/insights/articles/project-launch-oman-developers-en.html)."
+      }
+    },
+    {
+      "q": {
+        "ar": "متى نكون جاهزين للتوسع؟",
+        "en": "When are we ready to expand?"
+      },
+      "a": {
+        "ar": "عند اكتمال سير اعتماد مكتوب، حزمة وسيط/صالة موحّدة، وتدريب فريق على سيناريو 8 to 10 دقائق في مشروع سعودي واحد على الأقل.",
+        "en": "When a written approval path, unified broker/gallery pack, and 8 to 10 minute team scenario are complete on at least one Saudi project."
+      }
+    },
+    {
+      "q": {
+        "ar": "لماذا عُمان أولاً تشغيلياً؟",
+        "en": "Why Oman first operationally?"
+      },
+      "a": {
+        "ar": "لوجستيات من جدة، تواجد مسقط، وإيقاع اعتماد يمكن إدارته عبر حدود بسيطة مقارنة بتعدد أسواق دفعة واحدة.",
+        "en": "Jeddah logistics, Muscat presence, and an approval rhythm manageable across a simpler border than multi-market launches at once."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل نحتاج استوديو جديد في كل سوق؟",
+        "en": "Do we need a new studio in every market?"
+      },
+      "a": {
+        "ar": "لا. نفس النموذج المركزي وسير الاعتماد؛ ما يتغير المحتوى والرسالة وزوايا المكان فقط.",
+        "en": "No. Same central model and approval path; only content, message, and place angles change."
+      }
+    }
+  ]
 }

@@ -850,6 +850,41 @@ gtag('config','G-Y67JVE898Z');
   body.is-en .en-block { display: block !important; }
   .ar-block { display: block; }
 
+
+  .en, .en-block { display: none !important; }
+  body.is-en .en { display: inline !important; }
+  body.is-en .ar, body.is-en .ar-block { display: none !important; }
+  body.is-en .en-block { display: block !important; }
+  .ar-block { display: block; }
+
+
+  .en, .en-block { display: none !important; }
+  body.is-en .en { display: inline !important; }
+  body.is-en .ar, body.is-en .ar-block { display: none !important; }
+  body.is-en .en-block { display: block !important; }
+  .ar-block { display: block; }
+
+
+  .en, .en-block { display: none !important; }
+  body.is-en .en { display: inline !important; }
+  body.is-en .ar, body.is-en .ar-block { display: none !important; }
+  body.is-en .en-block { display: block !important; }
+  .ar-block { display: block; }
+
+
+  .en, .en-block { display: none !important; }
+  body.is-en .en { display: inline !important; }
+  body.is-en .ar, body.is-en .ar-block { display: none !important; }
+  body.is-en .en-block { display: block !important; }
+  .ar-block { display: block; }
+
+
+  .en, .en-block { display: none !important; }
+  body.is-en .en { display: inline !important; }
+  body.is-en .ar, body.is-en .ar-block { display: none !important; }
+  body.is-en .en-block { display: block !important; }
+  .ar-block { display: block; }
+
 :root{--gold:var(--gh-gold,#C9A84C);--gold-light:var(--gh-gold-light,#D9B860);--gold-dark:var(--gh-gold-dark,#A8883A);--text-primary:#1A1A1A;--text-secondary:rgba(26,26,26,0.65);--text-muted:rgba(26,26,26,0.4);--border-subtle:rgba(26,26,26,0.06);--border-medium:rgba(26,26,26,0.12);--heading-dark:#1A1A1A;--body-dark:#555555;--body-muted:#888888}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -1203,6 +1238,11 @@ document.addEventListener("DOMContentLoaded",function(){document.querySelectorAl
     </div>
   </div>
 </footer>
+
+
+
+
+
 
 
 
@@ -2953,6 +2993,76 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 })();
 </script>
+<script>
+(function(){
+  var key='gh-svc-lang';
+  function apply(en){document.body.classList.toggle('is-en',en);localStorage.setItem(key,en?'en':'ar');}
+  var saved=localStorage.getItem(key);
+  if(saved==='en')apply(true);
+  document.querySelectorAll('.lang-switch-link').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(a.getAttribute('hreflang')==='en'){e.preventDefault();apply(true);}
+      if(a.getAttribute('hreflang')==='ar'){e.preventDefault();apply(false);}
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var key='gh-svc-lang';
+  function apply(en){document.body.classList.toggle('is-en',en);localStorage.setItem(key,en?'en':'ar');}
+  var saved=localStorage.getItem(key);
+  if(saved==='en')apply(true);
+  document.querySelectorAll('.lang-switch-link').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(a.getAttribute('hreflang')==='en'){e.preventDefault();apply(true);}
+      if(a.getAttribute('hreflang')==='ar'){e.preventDefault();apply(false);}
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var key='gh-svc-lang';
+  function apply(en){document.body.classList.toggle('is-en',en);localStorage.setItem(key,en?'en':'ar');}
+  var saved=localStorage.getItem(key);
+  if(saved==='en')apply(true);
+  document.querySelectorAll('.lang-switch-link').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(a.getAttribute('hreflang')==='en'){e.preventDefault();apply(true);}
+      if(a.getAttribute('hreflang')==='ar'){e.preventDefault();apply(false);}
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var key='gh-svc-lang';
+  function apply(en){document.body.classList.toggle('is-en',en);localStorage.setItem(key,en?'en':'ar');}
+  var saved=localStorage.getItem(key);
+  if(saved==='en')apply(true);
+  document.querySelectorAll('.lang-switch-link').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(a.getAttribute('hreflang')==='en'){e.preventDefault();apply(true);}
+      if(a.getAttribute('hreflang')==='ar'){e.preventDefault();apply(false);}
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var key='gh-svc-lang';
+  function apply(en){document.body.classList.toggle('is-en',en);localStorage.setItem(key,en?'en':'ar');}
+  var saved=localStorage.getItem(key);
+  if(saved==='en')apply(true);
+  document.querySelectorAll('.lang-switch-link').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(a.getAttribute('hreflang')==='en'){e.preventDefault();apply(true);}
+      if(a.getAttribute('hreflang')==='ar'){e.preventDefault();apply(false);}
+    });
+  });
+})();
+</script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">
   <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="واتساب">
@@ -2966,7 +3076,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <span class="gh-motif-ring"></span>
       <span class="gh-motif-ring" style="animation-delay:1.2s"></span>
       <span class="gh-motif-ring" style="animation-delay:2.4s"></span>
-      <img loading="lazy" src="../assets/chatbot-motif.png" alt="" width="52" height="52" style="width:52px;height:52px;object-fit:contain;position:relative;z-index:2">
+      <img src="../assets/chatbot-motif.png" alt="" width="52" height="52" style="width:52px;height:52px;object-fit:contain;position:relative;z-index:2">
     </span>
   </button>
 </div>

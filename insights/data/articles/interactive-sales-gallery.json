@@ -4,45 +4,76 @@
   "date": "2024-07",
   "dateLabel": { "ar": "يوليو 2024", "en": "Jul 2024" },
   "category": { "ar": "تجارب تفاعلية", "en": "Interactive" },
-  "image": "insights/images/interactive-sales-gallery.jpg",
-  "imageCredit": { "ar": "صورة مؤقتة — Pexels", "en": "Temporary — Pexels" },
+  "image": "assets/projects/maquettes/interactive-showroom-01.webp",
+  "imageCredit": { "ar": "Graphics House، صالة عرض تفاعلية", "en": "Graphics House, interactive showroom" },
   "title": {
     "ar": "صالة بيع تفاعلية: بناء تجربة المشتري العقاري من اللوحة إلى العقد",
     "en": "Interactive Sales Gallery: Building the Real Estate Buyer Experience From Billboard to Contract"
   },
   "excerpt": {
-    "ar": "كيف تتحول صالة البيع من غرفة بلوحات إلى منظومة تجربة تفاعلية — ولماذا interactive sales gallery أصبح معياراً في مشاريع الخليج الكبرى.",
-    "en": "How the sales gallery evolves from a boardroom into an interactive experience system — and why the interactive sales gallery is now standard on major GCC schemes."
+    "ar": "كيف تتحول صالة البيع من غرفة بلوحات إلى منظومة تجربة تفاعلية، ولماذا interactive sales gallery أصبح معياراً في مشاريع الخليج الكبرى.",
+    "en": "How the sales gallery evolves from a boardroom into an interactive experience system, and why the interactive sales gallery is now standard on major GCC schemes."
   },
   "metaDescription": {
-    "ar": "دليل صالة بيع تفاعلية للمطورين: تصميم interactive sales gallery وتجربة المشتري العقاري المتكاملة — من الجذب إلى توقيع العقد في السعودية والخليج.",
-    "en": "Interactive sales gallery guide for developers: design buyer journey and integrated interactive sales gallery experience — from awareness to signed contract in Saudi and GCC."
+    "ar": "دليل صالة بيع تفاعلية للمطورين: تصميم interactive sales gallery وتجربة المشتري العقاري المتكاملة في السعودية والخليج، من الجذب إلى توقيع العقد.",
+    "en": "Interactive sales gallery guide for developers: design buyer journey and integrated interactive sales gallery experience in Saudi and GCC, from awareness to signed contract."
   },
+  "keywords": {
+    "ar": {
+      "short": ["صالة بيع تفاعلية", "تجربة المشتري", "مبيعات عقارية"],
+      "long": ["كيف تبني صالة بيع تفاعلية في السعودية", "interactive sales gallery لمشاريع off-plan"]
+    },
+    "en": {
+      "short": ["interactive sales gallery", "buyer experience", "real estate sales"],
+      "long": ["how to build interactive sales gallery Saudi Arabia", "GCC off-plan buyer journey design"]
+    }
+  },
+  "faq": [
+    {
+      "q": { "ar": "هل كل مشروع يحتاج صالة تفاعلية كاملة؟", "en": "Does every project need a full interactive gallery?" },
+      "a": { "ar": "لا. المشاريع الضخمة بمئات الوحدات ومبيعات من 18 إلى 36 شهراً تستفيد أكثر. للمشاريع الأصغر، تطبيق مبيعات تفاعلي على تابلت قد يكفي.", "en": "No. Major schemes with hundreds of units and 18 to 36 month sales benefit most. Smaller projects may need only an interactive tablet sales app." }
+    },
+    {
+      "q": { "ar": "ما أهم طبقة في الصالة؟", "en": "What is the most important gallery layer?" },
+      "a": { "ar": "الاستكشاف: منصة اختيار الوحدات التي تربط الرندرات بقرار الشراء. بدونها، الشاشة الكبيرة مجرد loop.", "en": "Exploration: the unit selection platform linking renders to purchase decision. Without it, the big screen is just a loop." }
+    },
+    {
+      "q": { "ar": "كيف نقيس نجاح الصالة؟", "en": "How do we measure gallery success?" },
+      "a": { "ar": "زمن البقاء، معدل التحويل من زيارة إلى حجز، وعدد الوحدات المستكشفة لكل زيارة. راجع [عائد الاستثمار البصري](https://3dgraphicshouse.com/insights/roi-architectural-visualization.html).", "en": "Dwell time, visit-to-booking conversion, and units explored per visit. See [visualization ROI](https://3dgraphicshouse.com/insights/roi-architectural-visualization.html)." }
+    },
+    {
+      "q": { "ar": "هل المجسم ضروري؟", "en": "Is a maquette essential?" },
+      "a": { "ar": "في المشاريع المعقدة متعددة المراحل، المجسم الذكي يكمّل الشاشة ويُسرّع الفهم المكاني في أول 120 ثانية.", "en": "On complex multi-phase schemes, a smart maquette complements the screen and speeds spatial understanding in the first 120 seconds." }
+    }
+  ],
   "body": {
     "ar": [
-      { "type": "p", "text": "دخل مشترٍ عقاري إلى صالة بيع في الرياض قبل عشر سنوات فوجد لوحات مطبوعة ومخططاً على الحائط وموظفاً يشرح بإصبعه. اليوم، يدخل مشترٍ مشابه إلى صالة في مشروع ضخم فيجد شاشة ترحيب تفاعلية، مجسمًا ذكياً يضيء عند لمسه، وجداراً لمسياً يعرض كل وحدة بالإطلالة والسعر — وتجربة المشتري العقاري تبدأ قبل أن يُفتح الفم." },
-      { "type": "p", "text": "صالة البيع التفاعلية لم تعد رفاهية تقنية — إنها استجابة لتوقعات مشترٍ يعيش تجارب رقمية متقدمة في كل جانب من حياته. في سوق يبيع قبل البناء، interactive sales gallery هي النقطة التي يُحوَّل فيها الاهتمام الإعلاني إلى قرار شراء. هذا الدليل يشرح كيف تُبنى هذه المنظومة طبقة بطبقة." },
+      { "type": "p", "text": "دخل مشترٍ عقاري إلى صالة بيع في [الرياض](https://3dgraphicshouse.com/locations/riyadh.html) قبل عشر سنوات فوجد لوحات مطبوعة ومخططاً على الحائط وموظفاً يشرح بإصبعه. اليوم، يدخل مشترٍ مشابه إلى صالة في مشروع ضخم فيجد شاشة ترحيب تفاعلية، [مجسمًا ذكياً](https://3dgraphicshouse.com/services/maquettes.html) يضيء عند لمسه، وجداراً لمسياً يعرض كل وحدة بالإطلالة والسعر، وتجربة المشتري العقاري تبدأ قبل أن يُفتح الفم." },
+      { "type": "p", "text": "صالة البيع التفاعلية لم تعد رفاهية تقنية، إنها استجابة لتوقعات مشترٍ يعيش تجارب رقمية متقدمة في كل جانب من حياته. في سوق يبيع قبل البناء، interactive sales gallery هي النقطة التي يُحوَّل فيها الاهتمام الإعلاني إلى قرار شراء. هذا الدليل يشرح كيف تُبنى هذه المنظومة طبقة بطبقة ضمن [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html)." },
+      { "type": "h2", "text": "سياق سوق الخليج: الصالة التفاعلية كمعيار جديد" },
+      { "type": "p", "text": "في 2025، مطورو [جدة](https://3dgraphicshouse.com/locations/jeddah.html) والرياض يستقبلون مشترين قارنوا بين ثلاثة مشاريع في نفس الأسبوع. الصالة التي تعرض PDF على شاشة تفقد المصداقية فوراً. الصالة التي تربط [الرندر](https://3dgraphicshouse.com/services/rendering.html) و[الفيلم السينمائي](https://3dgraphicshouse.com/services/cinematic-cgi.html) ومنصة اختيار الوحدات في تجربة واحدة ترفع زمن البقاء ومعدل التحويل." },
+      { "type": "p", "text": "للسياقات السوقية (لا كادعاء تسليم)، جولات [Ruwaq](https://ruwaq.co/tours) تعرض مستوى التوقعات في المجتمعات الكبرى. وللجدول الزمني قبل الإطلاق، راجع [دليل الإطلاق البصري](https://3dgraphicshouse.com/insights/visual-launch-checklist-guide.html)." },
       { "type": "h2", "text": "ما المقصود بصالة بيع تفاعلية في 2025؟" },
-      { "type": "p", "text": "صالة البيع التفاعلية ليست شاشة واحدة كبيرة — إنها منظومة متكاملة تربط الإعلان الخارجي بالتجربة داخل الصالة ومواد المتابعة بعد الزيارة. كل نقطة اتصال تُكمل الأخرى: نفس الإضاءة، نفس المواد، نفس قصة المشروع." },
+      { "type": "p", "text": "صالة البيع التفاعلية ليست شاشة واحدة كبيرة، إنها منظومة متكاملة تربط الإعلان الخارجي بالتجربة داخل الصالة ومواد المتابعة بعد الزيارة. كل نقطة اتصال تُكمل الأخرى: نفس الإضاءة، نفس المواد، نفس قصة المشروع." },
       { "type": "p", "text": "المكونات الأساسية تشمل: رندرات وفيلم سينمائي للجذب، شاشة استقبال أو مجسم ذكي للشرح السريع، منصة اختيار الوحدات (تطبيق أو touch wall)، غرفة عرض خاصة للإغلاق، ونظام CRM يربط الزيارة بالمتابعة. الغياب في أي طبقة يُضعف تجربة المشتري العقاري بالكامل." },
-      { "type": "h2", "text": "الطبقة الأولى: الجذب — من اللوحة إلى باب الصالة" },
-      { "type": "p", "text": "رحلة المشتري تبدأ قبل دخوله الصالة — في إعلان على طريق الملك فهد، أو مقطع على سناب، أو لوحة خارجية عند الموقع. الهدف: خلق رغبة كافية لحجز زيارة." },
+      { "type": "h2", "text": "الطبقة الأولى: الجذب، من اللوحة إلى باب الصالة" },
+      { "type": "p", "text": "رحلة المشتري تبدأ قبل دخوله الصالة، في إعلان على طريق الملك فهد، أو مقطع على سناب، أو لوحة خارجية عند الموقع. الهدف: خلق رغبة كافية لحجز زيارة." },
       { "type": "ul", "items": [
-        "فيلم CGI سينمائي قصير (30-60 ثانية) للإعلانات الرقمية",
+        "فيلم CGI سينمائي قصير (من 30 إلى 60 ثانية) للإعلانات الرقمية",
         "رندرات بطل عالية الدقة للوحات الخارجية",
         "رابط حجز زيارة مباشر من كل إعلان",
-        "اتساق بصري كامل بين القنوات — لا صور متضاربة",
+        "اتساق بصري كامل بين القنوات، لا صور متضاربة",
         "رسالة واضحة: ماذا سيرى الزائر في الصالة"
       ]},
-      { "type": "p", "text": "الخطأ الشائع: إعلان مبهر يوجه لصالة باهتة — فينكسر الوعد فوراً. الجذب يجب أن يعكس مستوى التجربة داخل الصالة." },
-      { "type": "h2", "text": "الطبقة الثانية: الاستقبال — أول 120 ثانية" },
+      { "type": "p", "text": "الخطأ الشائع: إعلان مبهر يوجه لصالة باهتة، فينكسر الوعد فوراً. الجذب يجب أن يعكس مستوى التجربة داخل الصالة. بعد جاهزية الأصول، يمكن توسيع الحملات عبر [Beesmotion](https://beesmotion.com)." },
+      { "type": "h2", "text": "الطبقة الثانية: الاستقبال، أول 120 ثانية" },
       { "type": "p", "text": "أول دقيقتين تحددان ما إذا كان الزائر سيبقى 20 دقيقة أو 5. الاستقبال التفاعلي يجيب على السؤال الأساسي: «ما هذا المشروع ولماذا يهمّني؟»" },
       { "type": "h3", "text": "شاشة الترحيب التفاعلية" },
-      { "type": "p", "text": "شاشة كبيرة عند المدخل تعرض فيلماً قصيراً (90-120 ثانية) يشرح الموقع، المفهوم، المرافق، ونمط الحياة. يمكن للزائر التفاعل مع خريطة المشروع، استكشاف المراحل، أو اختيار نوع الوحدة التي تهمه — قبل أن يجلس مع مستشار المبيعات." },
+      { "type": "p", "text": "شاشة كبيرة عند المدخل تعرض فيلماً قصيراً (من 90 إلى 120 ثانية) يشرح الموقع، المفهوم، المرافق، ونمط الحياة. يمكن للزائر التفاعل مع خريطة المشروع، استكشاف المراحل، أو اختيار نوع الوحدة التي تهمه، قبل أن يجلس مع مستشار المبيعات." },
       { "type": "h3", "text": "المجسم الذكي كعنصر استقبال" },
-      { "type": "p", "text": "في المشاريع المعقدة، المجسم الذكي يكمّل الشاشة — يقدّم فهماً مكانياً لا تقدمه الصورة وحدها. إضاءة برمجية تُبرز مرحلة عند لمسها، شاشات مدمجة تعرض تفاصيل الوحدة. المجسم ليس ديكوراً — إنه أداة شرح في أول 120 ثانية." },
-      { "type": "h2", "text": "الطبقة الثالثة: الاستكشاف — interactive sales gallery الأساسية" },
-      { "type": "p", "text": "هنا تتحول صالة البيع التفاعلية من عرض إلى تجربة. الزائر يستكشف بنفسه — وكل دقيقة استكشاف ترفع احتمال الشراء." },
+      { "type": "p", "text": "في المشاريع المعقدة، المجسم الذكي يكمّل الشاشة، يقدّم فهماً مكانياً لا تقدمه الصورة وحدها. إضاءة برمجية تُبرز مرحلة عند لمسها، شاشات مدمجة تعرض تفاصيل الوحدة. المجسم ليس ديكوراً، إنه أداة شرح في أول 120 ثانية." },
+      { "type": "h2", "text": "الطبقة الثالثة: الاستكشاف، interactive sales gallery الأساسية" },
+      { "type": "p", "text": "هنا تتحول صالة البيع التفاعلية من عرض إلى تجربة. الزائر يستكشف بنفسه، وكل دقيقة استكشاف ترفع احتمال الشراء." },
       { "type": "ul", "items": [
         "touch wall أو شاشة كبيرة لاختيار الوحدة على المخطط",
         "عرض الإطلالة من شرفة الوحدة المختارة بزاوية 360°",
@@ -51,22 +82,25 @@
         "حفظ الوحدة المفضلة وإرسالها للبريد أو واتساب",
         "تجربة الواقع الافتراضي للشقق النموذجية (عند الحاجة)"
       ]},
-      { "type": "p", "text": "تطبيق المبيعات على تابلت أو شاشة لمس يُمكّن مستشار المبيعات من الجلوس بجانب العميل — لا أمامه خلف مكتب — وتوجيه الاستكشاف معاً. هذا يغيّر ديناميكية المحادثة من «عرض» إلى «شراكة»." },
+      { "type": "p", "text": "تطبيق المبيعات على تابلت أو شاشة لمس يُمكّن مستشار المبيعات من الجلوس بجانب العميل، لا أمامه خلف مكتب، وتوجيه الاستكشاف معاً. هذا يغيّر ديناميكية المحادثة من «عرض» إلى «شراكة»." },
       { "type": "h2", "text": "تجربة المشتري العقاري: ماذا يشعر ومتى يقرر؟" },
       { "type": "p", "text": "فهم تجربة المشتري العقاري نفسياً يساعد في تصميم الصالة. المشتري يمر بمراحل: فضول، تخيّل، مقارنة، تردد، قرار. كل مرحلة تحتاج أداة بصرية مختلفة." },
       { "type": "ol", "items": [
-        "الفضول: فيلم قصير وصور بطل — «ما هذا المكان؟»",
-        "التخيّل: داخلية فوتوريالستية وإطلالة من الشرفة — «أستطيع أن أعيش هنا»",
-        "المقارنة: جدول وحدات وأسعار تفاعلي — «هل هذه أفضل من البديل؟»",
-        "التردد: غرفة هادئة بعرض مخصص للوحدة المختارة — «دعني أفكّر»",
-        "القرار: مستشار مدرب ومواد متابعة فورية — «أريد الحجز»"
+        "الفضول: فيلم قصير وصور بطل، «ما هذا المكان؟»",
+        "التخيّل: داخلية فوتوريالستية وإطلالة من الشرفة، «أستطيع أن أعيش هنا»",
+        "المقارنة: جدول وحدات وأسعار تفاعلي، «هل هذه أفضل من البديل؟»",
+        "التردد: غرفة هادئة بعرض مخصص للوحدة المختارة، «دعني أفكّر»",
+        "القرار: مستشار مدرب ومواد متابعة فورية، «أريد الحجز»"
       ]},
-      { "type": "p", "text": "صالة بيع تفاعلية مصممة جيداً تُسرّع الانتقال بين المراحل — خاصة من التخيّل إلى المقارنة، حيث يضيع كثير من المشاريع الوقت." },
-      { "type": "h2", "text": "الطبقة الرابعة: الإغلاق — غرفة القرار الخاصة" },
-      { "type": "p", "text": "بعد الاستكشاف، يحتاج المشتري الجاد مساحة هادئة — غرفة خاصة بشاشة كبيرة تعرض فيلماً مخصصاً للوحدة التي اختارها، مع تفاصيل السعر وخطة الدفع. هذا ليس ترفاً — إنه تصميم لحظة القرار." },
-      { "type": "p", "text": "الفيلم المخصص يُنتج مسبقاً لأكثر الوحدات طلباً، أو يُولَّد ديناميكياً من المنصة التفاعلية. المشتري يرى «وحدته» — لا المشروع العام — وهذا يُقربه من التوقيع." },
+      { "type": "p", "text": "صالة بيع تفاعلية مصممة جيداً تُسرّع الانتقال بين المراحل، خاصة من التخيّل إلى المقارنة، حيث يضيع كثير من المشاريع الوقت." },
+      { "type": "h2", "text": "نصائح عملية لتصميم مسار الزائر" },
+      { "type": "p", "text": "اختبر مسار الزائر بنفسك قبل الافتتاح الرسمي: من موقف السيارات إلى توقيع عقد تجريبي. أي احتكاك في الرحلة، بطء شاشة، محتوى غير واضح، يُصلح قبل وصول أول مشترٍ حقيقي. حدّد مساراً واضحاً: شاشة → مجسم → استكشاف → غرفة إغلاق → ضيافة." },
+      { "type": "p", "text": "عندما يحتاج المشروع مطابقة التشطيبات مع الوعد البصري، يمكن التنسيق لاحقاً مع [Turriva](https://turriva.com) لتنفيذ التشطيبات. ولتصوير مواد تكميلية للصالة، راجع [إنتاج الصور والفيديو](https://3dgraphicshouse.com/services/production.html)." },
+      { "type": "h2", "text": "الطبقة الرابعة: الإغلاق، غرفة القرار الخاصة" },
+      { "type": "p", "text": "بعد الاستكشاف، يحتاج المشتري الجاد مساحة هادئة، غرفة خاصة بشاشة كبيرة تعرض فيلماً مخصصاً للوحدة التي اختارها، مع تفاصيل السعر وخطة الدفع. هذا ليس ترفاً، إنه تصميم لحظة القرار." },
+      { "type": "p", "text": "الفيلم المخصص يُنتج مسبقاً لأكثر الوحدات طلباً، أو يُولَّد ديناميكياً من المنصة التفاعلية. المشتري يرى «وحدته»، لا المشروع العام، وهذا يُقربه من التوقيع." },
       { "type": "h2", "text": "ربط الصالة بنظام المتابعة بعد الزيارة" },
-      { "type": "p", "text": "interactive sales gallery لا تنتهي عند خروج الزائر. كل تفاعل — الوحدة المفضلة، الوقت المستغرق، الأسئلة — يجب أن يُسجَّل ويُتابَع." },
+      { "type": "p", "text": "interactive sales gallery لا تنتهي عند خروج الزائر. كل تفاعل، الوحدة المفضلة، الوقت المستغرق، الأسئلة، يجب أن يُسجَّل ويُتابَع." },
       { "type": "ul", "items": [
         "إرسال تلقائي لملخص الزيارة والوحدة المختارة عبر واتساب",
         "ربط مع CRM المبيعات لتذكير المستشار بالمتابعة",
@@ -75,58 +109,60 @@
         "تحليلات: أكثر الوحدات استكشافاً، أوقات الذروة، معدل التحويل"
       ]},
       { "type": "h2", "text": "تصميم المساحة الفيزيائية للصالة التفاعلية" },
-      { "type": "p", "text": "التكنولوجيا وحدها لا تكفي — تدفق الحركة في الصالة يحدد نجاح التجربة. التصميم الأمثل يقسم المساحة إلى مناطق: استقبال مفتوح، استكشاف مركزي، غرف إغلاق خاصة، ومنطقة ضيافة." },
-      { "type": "p", "text": "الإضاءة تحاكي إضاءة المشروع الفعلية — دافئة للمشاريع السكنية الفاخرة، محايدة للتجاري. المواد في الصالة تعكس جودة التشطيب المتوقع في الوحدات. كل تفصيل يقول للمشتري: «هذا المستوى ستحصل عليه»." },
+      { "type": "p", "text": "التكنولوجيا وحدها لا تكفي، تدفق الحركة في الصالة يحدد نجاح التجربة. التصميم الأمثل يقسم المساحة إلى مناطق: استقبال مفتوح، استكشاف مركزي، غرف إغلاق خاصة، ومنطقة ضيافة." },
+      { "type": "p", "text": "الإضاءة تحاكي إضاءة المشروع الفعلية، دافئة للمشاريع السكنية الفاخرة، محايدة للتجاري. المواد في الصالة تعكس جودة التشطيب المتوقع في الوحدات. كل تفصيل يقول للمشتري: «هذا المستوى ستحصل عليه»." },
       { "type": "h2", "text": "أخطاء شائعة في بناء صالة بيع تفاعلية" },
-      { "type": "p", "text": "الخطأ الأول: شراء شاشة كبيرة دون محتوى تفاعلي — فيصبح العرض مجرد فيديو يُعرض على loop. الثاني: عدم تدريب فريق المبيعات على المنصة — فيتجنبونها ويعودون للوحات الورقية." },
-      { "type": "p", "text": "الثالث: تجربة تفاعلية معقدة يصعب على الزائر فهمها في 30 ثانية. الرابع: عدم تحديث الأسعار والوحدات المتاحة — فيفقد المشتري الثقة فوراً. الخامس: فصل إنتاج الصالة عن الإعلانات — فيرى تناقضاً بصرياً." },
+      { "type": "p", "text": "الخطأ الأول: شراء شاشة كبيرة دون محتوى تفاعلي، فيصبح العرض مجرد فيديو يُعرض على loop. الثاني: عدم تدريب فريق المبيعات على المنصة، فيتجنبونها ويعودون للوحات الورقية." },
+      { "type": "p", "text": "الثالث: تجربة تفاعلية معقدة يصعب على الزائر فهمها في 30 ثانية. الرابع: عدم تحديث الأسعار والوحدات المتاحة، فيفقد المشتري الثقة فوراً. الخامس: فصل إنتاج الصالة عن الإعلانات، فيرى تناقضاً بصرياً." },
       { "type": "h2", "text": "متى تستثمر في صالة بيع تفاعلية كاملة؟" },
-      { "type": "p", "text": "ليست كل المشاريع تحتاج منصة تفاعلية بملايين الريالات. المشاريع التي تستفيد أكثر: سكني ضخم بمئات الوحدات، مختلط الاستخدامات بمراحل متعددة، مشاريع off-plan بمبيعات 18-36 شهراً، ومشاريع رمزية تستقبل وفوداً دولية." },
-      { "type": "p", "text": "للمشاريع الأصغر: تطبيق مبيعات على تابلت مع رندرات عالية الجودة قد يكفي — لكنه يجب أن يكون تفاعلياً وليس PDF على شاشة." },
+      { "type": "p", "text": "ليست كل المشاريع تحتاج منصة تفاعلية بملايين الريالات. المشاريع التي تستفيد أكثر: سكني ضخم بمئات الوحدات، مختلط الاستخدامات بمراحل متعددة، مشاريع off-plan بمبيعات من 18 إلى 36 شهراً، ومشاريع رمزية تستقبل وفوداً دولية عبر [الفعاليات المؤسسية](https://3dgraphicshouse.com/solutions/institutional-events.html)." },
+      { "type": "p", "text": "للمشاريع الأصغر: تطبيق مبيعات على تابلت مع رندرات عالية الجودة قد يكفي، لكنه يجب أن يكون تفاعلياً وليس PDF على شاشة." },
       { "type": "h2", "text": "Graphics House وProjectLaunch™: منظومة متكاملة" },
-      { "type": "p", "text": "في Graphics House، نبني interactive sales gallery كجزء من ProjectLaunch™ — ليس قطعاً منفصلة من استوديوهات مختلفة. الرندر، الفيلم، المنصة التفاعلية، والمجسم الذكي تُنتج من نفس المشهد ثلاثي الأبعاد — مما يضمن الاتساق ويُسرّع التحديثات." },
-      { "type": "p", "text": "نبدأ بورشة تجربة المشتري العقاري: من هو المشتري؟ ما أسئلته قبل الشراء؟ أين يتردد؟ ثم نصمم الصالة حول هذه الإجابات — وليس حول التكنولوجيا المتاحة." },
+      { "type": "p", "text": "في Graphics House، نبني interactive sales gallery كجزء من ProjectLaunch™، ليس قطعاً منفصلة من استوديوهات مختلفة. الرندر، الفيلم، المنصة التفاعلية، والمجسم الذكي تُنتج من نفس المشهد ثلاثي الأبعاد، مما يضمن الاتساق ويُسرّع التحديثات." },
+      { "type": "p", "text": "نبدأ بورشة تجربة المشتري العقاري: من هو المشتري؟ ما أسئلته قبل الشراء؟ أين يتردد؟ ثم نصمم الصالة حول هذه الإجابات، وليس حول التكنولوجيا المتاحة. ابدأ بـ [brief التصور](https://3dgraphicshouse.com/insights/visualization-brief-guide.html) قبل أول اجتماع." },
       { "type": "h2", "text": "قياس نجاح الصالة التفاعلية" },
       { "type": "p", "text": "صالة بيع تفاعلية ناجحة تُقاس بمؤشرات واضحة: زمن البقاء، معدل التحويل من زيارة إلى حجز، عدد الوحدات المستكشفة لكل زيارة، معدل الزيارة الثانية، ورضا فريق المبيعات عن الأدوات." },
       { "type": "ul", "items": [
-        "زمن البقاء: هدف 25-45 دقيقة للمشترين الجادين",
+        "زمن البقاء: هدف من 25 إلى 45 دقيقة للمشترين الجادين",
         "معدل التحويل: قارن قبل وبعد تركيب المنصة التفاعلية",
         "الوحدات المستكشفة: أكثر من 3 يدل على اهتمام حقيقي",
         "الزيارة الثانية: مؤشر قوي على قرب القرار",
         "تقييم المستشارين: هل الأدوات تساعدهم فعلاً؟"
       ]},
       { "type": "h2", "text": "تدريب فريق المبيعات على الصالة التفاعلية" },
-      { "type": "p", "text": "أفضل interactive sales gallery تفشل إذا لم يُدرَّب المستشارون عليها. خصص يوماً كاملاً قبل الافتتاح: جولة على كل شاشة، محاكاة زيارة عميل، وأسئلة شائعة مع إجابات بصرية جاهزة. المستشار الذي يثق بالأداة يستخدمها — والزائر يشعر بالثقة." },
-      { "type": "p", "text": "أنشئ دليلاً داخلياً قصيراً: كيف تبدأ العرض، أي وحدة تُعرض أولاً حسب شخصية المشتري، وكيف تُرسل المتابعة قبل مغادرة العميل. تجربة المشتري العقاري تنتهي بانطباع عن المشروع — وفريق مبيعات متناسق يضمن أن الانطباط إيجابي." },
-      { "type": "p", "text": "اختبر مسار الزائر بنفسك قبل الافتتاح الرسمي: من موقف السيارات إلى توقيع عقد تجريبي. أي احتكاك في الرحلة — بطء شاشة، محتوى غير واضح — يُصلح قبل وصول أول مشترٍ حقيقي." },
+      { "type": "p", "text": "أفضل interactive sales gallery تفشل إذا لم يُدرَّب المستشارون عليها. خصص يوماً كاملاً قبل الافتتاح: جولة على كل شاشة، محاكاة زيارة عميل، وأسئلة شائعة مع إجابات بصرية جاهزة. المستشار الذي يثق بالأداة يستخدمها، والزائر يشعر بالثقة." },
+      { "type": "p", "text": "أنشئ دليلاً داخلياً قصيراً: كيف تبدأ العرض، أي وحدة تُعرض أولاً حسب شخصية المشتري، وكيف تُرسل المتابعة قبل مغادرة العميل. تجربة المشتري العقاري تنتهي بانطباع عن المشروع، وفريق مبيعات متناسق يضمن أن الانطباع إيجابي." },
       { "type": "h2", "text": "الخلاصة: الصالة التفاعلية هي بنية تحتية للبيع" },
-      { "type": "p", "text": "صالة البيع التفاعلية ليست تكلفة ديكور — إنها بنية تحتية لتحويل الاهتمام إلى عقد. تجربة المشتري العقاري المتكاملة، من اللوحة الإعلانية إلى المتابعة بعد الزيارة، هي ما يميّز المطورين الذين يبيعون بسرعة في سوق السعودية والخليج." },
-      { "type": "p", "text": "إذا كنت تستعد لإطلاق صالة مبيعات لمشروعك القادم، ابدأ بتصميم رحلة المشتري — قبل اختيار الشاشات. التكنولوجيا تخدم التجربة، وليس العكس." }
+      { "type": "p", "text": "صالة البيع التفاعلية ليست تكلفة ديكور، إنها بنية تحتية لتحويل الاهتمام إلى عقد. تجربة المشتري العقاري المتكاملة، من اللوحة الإعلانية إلى المتابعة بعد الزيارة، هي ما يميّز المطورين الذين يبيعون بسرعة في سوق السعودية والخليج." },
+      { "type": "p", "text": "إذا كنت تستعد لإطلاق صالة مبيعات لمشروعك القادم، ابدأ بتصميم رحلة المشتري، قبل اختيار الشاشات. التكنولوجيا تخدم التجربة، وليس العكس." }
     ],
     "en": [
-      { "type": "p", "text": "A real estate buyer walked into a sales gallery in Riyadh ten years ago and found printed boards, a wall plan, and a consultant pointing with a finger. Today, a similar buyer enters a major scheme gallery and finds an interactive welcome screen, a smart maquette that lights on touch, and a touch wall showing every unit with view and price — the real estate buyer experience begins before anyone speaks." },
-      { "type": "p", "text": "The interactive sales gallery is no longer a tech luxury — it responds to buyer expectations shaped by advanced digital experiences everywhere else. In a market that sells before construction, the interactive sales gallery is where advertising interest converts to purchase decision. This guide explains how to build that system layer by layer." },
+      { "type": "p", "text": "A real estate buyer walked into a sales gallery in [Riyadh](https://3dgraphicshouse.com/locations/riyadh-en.html) ten years ago and found printed boards, a wall plan, and a consultant pointing with a finger. Today, a similar buyer enters a major scheme gallery and finds an interactive welcome screen, a [smart maquette](https://3dgraphicshouse.com/services/maquettes-en.html) that lights on touch, and a touch wall showing every unit with view and price. The real estate buyer experience begins before anyone speaks." },
+      { "type": "p", "text": "The interactive sales gallery is no longer a tech luxury. It responds to buyer expectations shaped by advanced digital experiences everywhere else. In a market that sells before construction, the interactive sales gallery is where advertising interest converts to purchase decision. This guide explains how to build that system layer by layer within [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html)." },
+      { "type": "h2", "text": "GCC market context: the interactive gallery as new standard" },
+      { "type": "p", "text": "In 2025, [Jeddah](https://3dgraphicshouse.com/locations/jeddah-en.html) and Riyadh developers receive buyers who compared three projects in the same week. A gallery showing PDF on screen loses credibility instantly. A gallery linking [renders](https://3dgraphicshouse.com/services/rendering-en.html), [cinematic film](https://3dgraphicshouse.com/services/cinematic-cgi-en.html), and unit selection in one experience raises dwell time and conversion." },
+      { "type": "p", "text": "For market context (not as a delivery claim), [Ruwaq](https://ruwaq.co/tours) tours show expectation levels at major communities. For pre-launch timing, see the [visual launch checklist guide](https://3dgraphicshouse.com/insights/visual-launch-checklist-guide.html)." },
       { "type": "h2", "text": "What does interactive sales gallery mean in 2025?" },
-      { "type": "p", "text": "An interactive sales gallery is not one large screen — it is an integrated system linking outdoor advertising to in-gallery experience and post-visit follow-up materials. Every touchpoint completes the others: same lighting, same materials, same project story." },
+      { "type": "p", "text": "An interactive sales gallery is not one large screen. It is an integrated system linking outdoor advertising to in-gallery experience and post-visit follow-up materials. Every touchpoint completes the others: same lighting, same materials, same project story." },
       { "type": "p", "text": "Core components include: renders and cinematic film for awareness, reception screen or smart maquette for quick explanation, unit selection platform (app or touch wall), private presentation room for closing, and CRM linking the visit to follow-up. Absence in any layer weakens the full real estate buyer experience." },
-      { "type": "h2", "text": "Layer one: awareness — from billboard to gallery door" },
-      { "type": "p", "text": "The buyer journey starts before entering the gallery — in an ad on King Fahd Road, a Snap clip, or an outdoor board at site. Goal: create enough desire to book a visit." },
+      { "type": "h2", "text": "Layer one: awareness, from billboard to gallery door" },
+      { "type": "p", "text": "The buyer journey starts before entering the gallery, in an ad on King Fahd Road, a Snap clip, or an outdoor board at site. Goal: create enough desire to book a visit." },
       { "type": "ul", "items": [
-        "Short cinematic CGI film (30-60 seconds) for digital ads",
+        "Short cinematic CGI film (30 to 60 seconds) for digital ads",
         "High-resolution hero renders for outdoor boards",
         "Direct visit booking link from every ad",
-        "Full visual consistency across channels — no conflicting images",
+        "Full visual consistency across channels, no conflicting images",
         "Clear message: what the visitor will see in the gallery"
       ]},
-      { "type": "p", "text": "Common mistake: a stunning ad leading to a dull gallery — the promise breaks instantly. Awareness must reflect the experience level inside the gallery." },
-      { "type": "h2", "text": "Layer two: welcome — the first 120 seconds" },
+      { "type": "p", "text": "Common mistake: a stunning ad leading to a dull gallery, the promise breaks instantly. Awareness must reflect the experience level inside the gallery. Once assets are ready, campaigns can expand through [Beesmotion](https://beesmotion.com)." },
+      { "type": "h2", "text": "Layer two: welcome, the first 120 seconds" },
       { "type": "p", "text": "The first two minutes determine whether the visitor stays 20 minutes or 5. Interactive reception answers the core question: what is this project and why does it matter to me?" },
       { "type": "h3", "text": "Interactive welcome screen" },
-      { "type": "p", "text": "A large screen at entry plays a short film (90-120 seconds) explaining location, concept, amenities, and lifestyle. The visitor can interact with the project map, explore phases, or select a unit type of interest — before sitting with a sales consultant." },
+      { "type": "p", "text": "A large screen at entry plays a short film (90 to 120 seconds) explaining location, concept, amenities, and lifestyle. The visitor can interact with the project map, explore phases, or select a unit type of interest, before sitting with a sales consultant." },
       { "type": "h3", "text": "Smart maquette as reception element" },
-      { "type": "p", "text": "On complex schemes, a smart maquette complements the screen — offering spatial understanding stills alone cannot provide. Programmed lighting highlights a phase on touch; integrated screens show unit detail. The maquette is not decoration — it is an explanation tool in the first 120 seconds." },
-      { "type": "h2", "text": "Layer three: exploration — the core interactive sales gallery" },
-      { "type": "p", "text": "Here the interactive sales gallery shifts from presentation to experience. The visitor explores independently — and every minute of exploration raises purchase probability." },
+      { "type": "p", "text": "On complex schemes, a smart maquette complements the screen, offering spatial understanding stills alone cannot provide. Programmed lighting highlights a phase on touch; integrated screens show unit detail. The maquette is not decoration. It is an explanation tool in the first 120 seconds." },
+      { "type": "h2", "text": "Layer three: exploration, the core interactive sales gallery" },
+      { "type": "p", "text": "Here the interactive sales gallery shifts from presentation to experience. The visitor explores independently, and every minute of exploration raises purchase probability." },
       { "type": "ul", "items": [
         "Touch wall or large screen to select units on the floor plan",
         "View from the chosen unit balcony at 360°",
@@ -135,22 +171,25 @@
         "Save favorite unit and send to email or WhatsApp",
         "VR experience for show apartments (when needed)"
       ]},
-      { "type": "p", "text": "A sales app on tablet or touch screen lets the consultant sit beside the client — not across a desk — and guide exploration together. This shifts the conversation dynamic from pitch to partnership." },
+      { "type": "p", "text": "A sales app on tablet or touch screen lets the consultant sit beside the client, not across a desk, and guide exploration together. This shifts the conversation dynamic from pitch to partnership." },
       { "type": "h2", "text": "Real estate buyer experience: what they feel and when they decide" },
       { "type": "p", "text": "Understanding buyer psychology helps gallery design. The buyer moves through stages: curiosity, imagination, comparison, hesitation, decision. Each stage needs a different visual tool." },
       { "type": "ol", "items": [
-        "Curiosity: short film and hero images — what is this place?",
-        "Imagination: photorealistic interior and balcony view — I could live here",
-        "Comparison: interactive unit and price table — is this better than the alternative?",
-        "Hesitation: quiet room with tailored presentation for chosen unit — let me think",
-        "Decision: trained consultant and instant follow-up materials — I want to book"
+        "Curiosity: short film and hero images, what is this place?",
+        "Imagination: photorealistic interior and balcony view, I could live here",
+        "Comparison: interactive unit and price table, is this better than the alternative?",
+        "Hesitation: quiet room with tailored presentation for chosen unit, let me think",
+        "Decision: trained consultant and instant follow-up materials, I want to book"
       ]},
-      { "type": "p", "text": "A well-designed interactive sales gallery accelerates movement between stages — especially from imagination to comparison, where many projects lose time." },
-      { "type": "h2", "text": "Layer four: close — the private decision room" },
-      { "type": "p", "text": "After exploration, a serious buyer needs quiet space — a private room with a large screen showing a film tailored to their chosen unit, with pricing and payment plan detail. This is not luxury — it is decision-moment design." },
-      { "type": "p", "text": "The tailored film is pre-produced for the most requested units, or generated dynamically from the interactive platform. The buyer sees their unit — not the generic project — bringing them closer to signature." },
+      { "type": "p", "text": "A well-designed interactive sales gallery accelerates movement between stages, especially from imagination to comparison, where many projects lose time." },
+      { "type": "h2", "text": "Practical tips for designing the visitor path" },
+      { "type": "p", "text": "Walk the visitor path yourself before official opening: from parking to trial contract signing. Fix any friction in the journey, slow screen, unclear content, before the first real buyer arrives. Define a clear path: screen, maquette, exploration, closing room, hospitality." },
+      { "type": "p", "text": "When the project needs finish execution to match the visual promise, coordination can follow with [Turriva](https://turriva.com) for fit-out. For complementary gallery photo and video, see [Dot4Life production](https://3dgraphicshouse.com/services/production-en.html)." },
+      { "type": "h2", "text": "Layer four: close, the private decision room" },
+      { "type": "p", "text": "After exploration, a serious buyer needs quiet space, a private room with a large screen showing a film tailored to their chosen unit, with pricing and payment plan detail. This is not luxury. It is decision-moment design." },
+      { "type": "p", "text": "The tailored film is pre-produced for the most requested units, or generated dynamically from the interactive platform. The buyer sees their unit, not the generic project, bringing them closer to signature." },
       { "type": "h2", "text": "Connecting the gallery to post-visit follow-up" },
-      { "type": "p", "text": "The interactive sales gallery does not end when the visitor leaves. Every interaction — favorite unit, time spent, questions — should be logged and followed up." },
+      { "type": "p", "text": "The interactive sales gallery does not end when the visitor leaves. Every interaction, favorite unit, time spent, questions, should be logged and followed up." },
       { "type": "ul", "items": [
         "Automatic visit summary and chosen unit via WhatsApp",
         "CRM integration for consultant follow-up reminders",
@@ -159,32 +198,32 @@
         "Analytics: most explored units, peak times, conversion rate"
       ]},
       { "type": "h2", "text": "Physical space design for the interactive gallery" },
-      { "type": "p", "text": "Technology alone is not enough — traffic flow in the gallery determines experience success. Optimal design divides space into zones: open reception, central exploration, private closing rooms, and hospitality area." },
-      { "type": "p", "text": "Lighting mimics actual project lighting — warm for luxury residential, neutral for commercial. Gallery materials reflect expected unit finish quality. Every detail tells the buyer: this is the level you will receive." },
+      { "type": "p", "text": "Technology alone is not enough. Traffic flow in the gallery determines experience success. Optimal design divides space into zones: open reception, central exploration, private closing rooms, and hospitality area." },
+      { "type": "p", "text": "Lighting mimics actual project lighting, warm for luxury residential, neutral for commercial. Gallery materials reflect expected unit finish quality. Every detail tells the buyer: this is the level you will receive." },
       { "type": "h2", "text": "Common mistakes building an interactive sales gallery" },
-      { "type": "p", "text": "Mistake one: buying a large screen without interactive content — display becomes a looped video. Two: not training the sales team on the platform — they avoid it and return to paper boards." },
-      { "type": "p", "text": "Three: complex interactive experience the visitor cannot grasp in 30 seconds. Four: failing to update prices and available units — buyer trust collapses instantly. Five: separating gallery production from advertising — visual inconsistency appears." },
+      { "type": "p", "text": "Mistake one: buying a large screen without interactive content, display becomes a looped video. Two: not training the sales team on the platform, they avoid it and return to paper boards." },
+      { "type": "p", "text": "Three: complex interactive experience the visitor cannot grasp in 30 seconds. Four: failing to update prices and available units, buyer trust collapses instantly. Five: separating gallery production from advertising, visual inconsistency appears." },
       { "type": "h2", "text": "When to invest in a full interactive sales gallery" },
-      { "type": "p", "text": "Not every project needs a multi-million-riyal interactive platform. Schemes that benefit most: major residential with hundreds of units, mixed-use with multiple phases, off-plan with 18-36 month sales, and landmark projects receiving international delegations." },
-      { "type": "p", "text": "For smaller schemes: a sales app on tablet with high-quality renders may suffice — but it must be interactive, not a PDF on screen." },
+      { "type": "p", "text": "Not every project needs a multi-million-riyal interactive platform. Schemes that benefit most: major residential with hundreds of units, mixed-use with multiple phases, off-plan with 18 to 36 month sales, and landmark projects receiving international delegations via [institutional events](https://3dgraphicshouse.com/solutions/institutional-events-en.html)." },
+      { "type": "p", "text": "For smaller schemes: a sales app on tablet with high-quality renders may suffice, but it must be interactive, not a PDF on screen." },
       { "type": "h2", "text": "Graphics House and ProjectLaunch™: integrated system" },
-      { "type": "p", "text": "At Graphics House, we build the interactive sales gallery as part of ProjectLaunch™ — not disconnected pieces from different studios. Renders, film, interactive platform, and smart maquette are produced from the same 3D scene — ensuring consistency and faster updates." },
-      { "type": "p", "text": "We start with a real estate buyer experience workshop: who is the buyer? What are their pre-purchase questions? Where do they hesitate? Then we design the gallery around those answers — not around available technology." },
+      { "type": "p", "text": "At Graphics House, we build the interactive sales gallery as part of ProjectLaunch™, not disconnected pieces from different studios. Renders, film, interactive platform, and smart maquette are produced from the same 3D scene, ensuring consistency and faster updates." },
+      { "type": "p", "text": "We start with a real estate buyer experience workshop: who is the buyer? What are their pre-purchase questions? Where do they hesitate? Then we design the gallery around those answers, not around available technology. Start with the [visualization brief](https://3dgraphicshouse.com/insights/visualization-brief-guide.html) before the first meeting." },
       { "type": "h2", "text": "Measuring interactive gallery success" },
       { "type": "p", "text": "A successful interactive sales gallery is measured with clear KPIs: dwell time, visit-to-booking conversion, units explored per visit, second visit rate, and sales team satisfaction with tools." },
       { "type": "ul", "items": [
-        "Dwell time: target 25-45 minutes for serious buyers",
+        "Dwell time: target 25 to 45 minutes for serious buyers",
         "Conversion rate: compare before and after interactive platform install",
         "Units explored: more than 3 indicates genuine interest",
         "Second visit: strong indicator of near decision",
         "Consultant feedback: do the tools actually help them?"
       ]},
       { "type": "h2", "text": "Training the sales team on the interactive gallery" },
-      { "type": "p", "text": "The best interactive sales gallery fails if consultants are not trained on it. Allocate a full day before opening: tour every screen, simulate a client visit, and prepare visual answers to common questions. A consultant who trusts the tool uses it — and the visitor feels confidence." },
-      { "type": "p", "text": "Create a short internal guide: how to start the presentation, which unit to show first by buyer persona, and how to send follow-up before the client leaves. The real estate buyer experience ends with an impression of the project — and a aligned sales team ensures it is positive." },
+      { "type": "p", "text": "The best interactive sales gallery fails if consultants are not trained on it. Allocate a full day before opening: tour every screen, simulate a client visit, and prepare visual answers to common questions. A consultant who trusts the tool uses it, and the visitor feels confidence." },
+      { "type": "p", "text": "Create a short internal guide: how to start the presentation, which unit to show first by buyer persona, and how to send follow-up before the client leaves. The real estate buyer experience ends with an impression of the project, and an aligned sales team ensures it is positive." },
       { "type": "h2", "text": "Conclusion: the interactive gallery is sales infrastructure" },
-      { "type": "p", "text": "The interactive sales gallery is not a decor expense — it is infrastructure for converting interest into contract. An integrated real estate buyer experience, from advertising to post-visit follow-up, is what distinguishes developers who sell fast in the Saudi Arabia and GCC market." },
-      { "type": "p", "text": "If you are preparing a sales gallery for your next project, start by designing the buyer journey — before choosing screens. Technology serves experience, not the reverse." }
+      { "type": "p", "text": "The interactive sales gallery is not a decor expense. It is infrastructure for converting interest into contract. An integrated real estate buyer experience, from advertising to post-visit follow-up, is what distinguishes developers who sell fast in the Saudi Arabia and GCC market." },
+      { "type": "p", "text": "If you are preparing a sales gallery for your next project, start by designing the buyer journey, before choosing screens. Technology serves experience, not the reverse." }
     ]
   }
 }

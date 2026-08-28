@@ -10,28 +10,58 @@
     "ar": "إطلاق المشاريع",
     "en": "Project Launch"
   },
-  "image": "assets/projects/rendering/uae-e1745147961286.jpeg",
+  "image": "assets/insights/reports/anan-eskan-amlak-interview.jpg",
   "title": {
     "ar": "ماذا يحتاج المطور في عُمان من نظام إطلاق بصري؟",
     "en": "What Oman Developers Need from a Visual Launch System"
   },
   "excerpt": {
-    "ar": "من خبرة الإطلاق في السعودية إلى مكتب مسقط: كيف يُبنى نظام بيع بصري يقنع المستثمر قبل البناء في سوق عُمان.",
-    "en": "From Saudi launch experience to our Muscat office: how to build a visual sales system that persuades investors before construction in Oman."
+    "ar": "من خبرة الإطلاق في السعودية إلى مكتب مسقط: كيف يُبنى نظام بيع بصري يقنع المستثمر قبل البناء في سوق عُمان، مع سير اعتماد ثنائي اللغة وجاهزية صالة ساحلية.",
+    "en": "From Saudi launch experience to our Muscat office: how to build a visual sales system that persuades investors before construction in Oman, with bilingual approval workflow and coastal gallery readiness."
   },
   "metaDescription": {
-    "ar": "دليل للمطورين في عُمان: إظهار معماري، مجسمات ذكية، أفلام CGI، وProjectLaunch™ — خبرة سعودية وتواجد في مسقط من Graphics House.",
-    "en": "Guide for Oman developers: archviz, smart maquettes, CGI films & ProjectLaunch™ — Saudi expertise with Muscat presence by Graphics House."
+    "ar": "دليل للمطورين في عُمان: إظهار معماري، مجسمات ذكية، أفلام CGI، وProjectLaunch™. خبرة سعودية وتواجد في مسقط من Graphics House.",
+    "en": "Guide for Oman developers: archviz, smart maquettes, CGI films and ProjectLaunch™. Saudi expertise with Muscat presence by Graphics House."
+  },
+  "keywords": {
+    "ar": {
+      "short": [
+        "إطلاق بصري عُمان",
+        "مطورين مسقط",
+        "ProjectLaunch عُمان",
+        "مجسمات ذكية"
+      ],
+      "long": [
+        "نظام إطلاق بصري للمطورين في سلطنة عُمان",
+        "إظهار معماري للمشاريع الساحلية في مسقط",
+        "جاهزية صالة بيع off-plan عُمان",
+        "خبرة سعودية للتوسع الخليجي Graphics House"
+      ]
+    },
+    "en": {
+      "short": [
+        "Oman visual launch",
+        "Muscat developers",
+        "ProjectLaunch Oman",
+        "smart maquettes"
+      ],
+      "long": [
+        "visual launch system for Oman developers",
+        "architectural visualization coastal Muscat projects",
+        "off-plan sales gallery readiness Oman",
+        "Saudi launch expertise GCC expansion Graphics House"
+      ]
+    }
   },
   "body": {
     "ar": [
       {
         "type": "p",
-        "text": "سوق عُمان يشهد نمواً في المشاريع السكنية والساحلية والتجارية. الفارق بين مشروع يُفهم في دقائق ومشروع يحتاج شرحاً طويلاً ليس في المخطط وحده — بل في نظام الإطلاق البصري الذي يسبق يوم البيع."
+        "text": "سوق عُمان يشهد نمواً في المشاريع السكنية والساحلية والتجارية. الفارق بين مشروع يُفهم في دقائق ومشروع يحتاج شرحاً طويلاً ليس في المخطط وحده، بل في نظام الإطلاق البصري الذي يسبق يوم البيع. مسقط والسيب والخوض تشهد أنماطاً مثل المجتمعات الساحلية (Al Mouj وAIDA كنوع سوقي) والمشاريع المختلطة قرب الواجهة البحرية: المشتري يريد رؤية المكان والإيقاع الساحلي قبل التوقيع."
       },
       {
         "type": "p",
-        "text": "في Graphics House نقلنا منهج ProjectLaunch™ الذي طُوّر عبر إطلاقات كبرى في السعودية إلى تواجدنا في مسقط (الخوض، السيب). هذا المقال يلخّص ما يحتاجه المطور العماني فعلياً قبل أن يفتح صالة البيع."
+        "text": "في Graphics House نقلنا منهج [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-oman.html) الذي طُوّر عبر إطلاقات كبرى في السعودية إلى تواجدنا في مسقط (الخوض، السيب). هذا المقال يلخّص ما يحتاجه المطور العماني فعلياً قبل أن يفتح صالة البيع. للأساس السعودي راجع [إطلاق المشروع للمطورين السعوديين](https://3dgraphicshouse.com/insights/articles/project-launch-saudi-developers.html) و[مقارنة السعودية والخليج](https://3dgraphicshouse.com/insights/articles/saudi-vs-gulf-visual-launch.html)."
       },
       {
         "type": "h2",
@@ -39,7 +69,7 @@
       },
       {
         "type": "p",
-        "text": "المستثمر والوسيط والمشتري يقيّمون المشروع بسرعة. صورة واجهة معزولة لا تبني قصة، ولا تشرح مراحل البيع، ولا تجهّز الفريق. النظام البصري المتكامل يربط الهوية والرندر والفيلم والمجسم والتجربة التفاعلية بلغة واحدة."
+        "text": "المستثمر والوسيط والمشتري يقيّمون المشروع بسرعة. صورة واجهة معزولة لا تبني قصة، ولا تشرح مراحل البيع، ولا تجهّز الفريق. النظام البصري المتكامل يربط الهوية والرندر والفيلم والمجسم والتجربة التفاعلية بلغة واحدة. في عُمان يزداد وزن الوضوح الساحلي والثقة التنفيذية: المشتري المحلي والمستثمر الإقليمي يقارنان بسرعة بين مشاريع على نفس الساحل."
       },
       {
         "type": "h2",
@@ -48,20 +78,103 @@
       {
         "type": "ul",
         "items": [
-          "إظهار معماري فوتوريالستي يعكس السياق الساحلي والسكني بدقة",
-          "أفلام CGI قصيرة لعرض المستثمر والمعارض",
-          "مجسم ذكي يثبت الحضور في صالة البيع",
-          "تجارب تفاعلية لاختيار الوحدات والمخططات",
-          "ديكور وتركيب ميداني يوحّد التجربة"
+          "[إظهار معماري](https://3dgraphicshouse.com/services/rendering.html) فوتوريالستي يعكس السياق الساحلي والسكني بدقة",
+          "[أفلام CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html) قصيرة لعرض المستثمر والمعارض",
+          "[مجسم ذكي](https://3dgraphicshouse.com/services/maquettes.html) يثبت الحضور في صالة البيع",
+          "[تجارب تفاعلية](https://3dgraphicshouse.com/services/interactive-experiences.html) لاختيار الوحدات والمخططات",
+          "[ديكور وتركيب](https://3dgraphicshouse.com/services/branding.html) ميداني يوحّد التجربة",
+          "حزمة وسيط عربية/إنجليزية من اليوم الأول، لا ترجمة لاحقة"
         ]
       },
       {
         "type": "h2",
-        "text": "من السعودية إلى عُمان — ماذا ننقل؟"
+        "text": "أنماط المشاريع في مسقط والساحل العماني"
       },
       {
         "type": "p",
-        "text": "ما نجح في مشاريع مثل عنان إسكان والأولى وميثاق مكة لرابطة العالم الإسلامي ليس «أسلوباً بصرياً» فقط — بل سير عمل: اعتماد سريع، اتساق بين القنوات، وتركيب جاهز قبل الإطلاق. نفس السير نقدّمه للمطورين في السلطنة عبر مكتب مسقط وخط عُمان المباشر."
+        "text": "كخريطة سوقية للمقارنة (لا كادعاء تسليم)، راجع تقرير [مجتمعات ساحلية مسقط](https://3dgraphicshouse.com/insights/reports/oman-coastal-community-visual-report.html) وأنماط حية على [Ruwaq Tours](https://ruwaq.co/tours). الأنماط المتكررة تفرض أولويات بصرية مختلفة."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "مجتمعات ساحلية: إيقاع الحي، المرافق، والإضاءة المسائية واقعية",
+          "مشاريع مختلطة قرب الواجهة: مخطط، حركة، وواجهة تجارية قبل تفاصيل الوحدة",
+          "ضيافة وإقامة: مسار ضيف من المدخل إلى الغرفة",
+          "فلل وشقق ساحلية: خصوصية، حديقة، وإطلالة تُباع كجزء من التجربة"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "من السعودية إلى عُمان: ماذا ننقل؟"
+      },
+      {
+        "type": "p",
+        "text": "ما نجح في مشاريع مثل [عنان إسكان الرياض](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh.html) و[ميثاق مكة](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl.html) ليس «أسلوباً بصرياً» فقط، بل سير عمل: اعتماد سريع، اتساق بين القنوات، وتركيب جاهز قبل الإطلاق. نفس السير نقدّمه للمطورين في السلطنة عبر مكتب مسقط وصفحة [عُمان](https://3dgraphicshouse.com/locations/oman.html)."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "نموذج ثلاثي الأبعاد مركزي قابل لإعادة الاستخدام عبر الرندر والفيلم والمجسم",
+          "سير اعتماد مكتوب بين معماري وتسويق ومبيعات",
+          "قفل المشاهد البطولية قبل الحملة الرقمية",
+          "حزمة وسيط/صالة موحّدة بإصدار واحد",
+          "تركيب ميداني من فريق يعرف المنتج، لا مقاول منفصل عن الأصول"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "معايير قبول للسوق العماني"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "الإضاءة الساحلية واقعية ولا تبالغ في مظهر المنتجع العام",
+          "المخطط المعتمد للمبيعات يطابق المجسم والشاشات",
+          "فيلم الإطلاق يوضح الموقع في أول 20 ثانية",
+          "حزمة ثنائية اللغة بإصدار واحد عبر العربية والإنجليزية",
+          "رقم إصدار على كل أصل يُعرض للوسطاء"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "جاهزية الوسيط وصالة البيع في عُمان"
+      },
+      {
+        "type": "p",
+        "text": "وسطاء مسقط يبيعون على الجوال أولاً، وغالباً لمشترين محليين وإقليميين. الحزمة يجب أن تكون خفيفة وموحّدة."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "6 to 10 صور مضغوطة + فيلم قصير + مخططات PDF",
+          "رسالة موقع واحدة معتمدة بالعربية والإنجليزية",
+          "سيناريو عرض 8 to 10 دقائق من الشاشة إلى المجسم",
+          "بطاقة «ما يُباع اليوم» عند تغيير المرحلة",
+          "تدريب فريق قبل الافتتاح بـ 3 to 5 أيام"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "نصائح عملية قبل التعاقد في عُمان"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "لا تنسخ مكتبة أصول من الرياض أو جدة حرفياً: أعد كتابة موجز المكان لمسقط",
+          "اطلب استوديوًاً يفهم off-plan خليجياً، لا مورّد رندر منفصل عن المجسم",
+          "اربط جدول التركيب بتاريخ افتتاح الصالة، لا بتاريخ الحملة فقط",
+          "استخدم [موجز المشروع](https://3dgraphicshouse.com/insights/tools/project-brief.html) و[قائمة الجاهزية](https://3dgraphicshouse.com/insights/tools/launch-checklist.html) قبل التوقيع",
+          "للتشطيب التنفيذي الذي يطابق الوعد البصري، خطّط لاحقاً مع [Turriva](https://turriva.com) حيث يلزم",
+          "بعد قفل الأصول، يمكن تضخيم الحملة عبر [Beesmotion](https://beesmotion.com)"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "متى تذكر طبقة نمط الحياة؟"
+      },
+      {
+        "type": "p",
+        "text": "للمشاريع التي تبيع مرافقاً متصلة أو أسلوب حياة ذكياً، يمكن إشارة خفيفة واحدة داخل قصة المرافق عبر [Dot for Life](https://dotforlife.com). ذلك لا يحل محل نظام الإطلاق البصري ولا يستبدل الرندر والمجسم والصالة."
       },
       {
         "type": "h2",
@@ -72,32 +185,32 @@
         "items": [
           "حدّد مرحلة البيع: اعتماد، إطلاق، أم توسيع مراحل",
           "اجمع أصحاب المصلحة الذين يعتمدون الأصول البصرية",
-          "اطلب نظاماً متكاملاً لا مورّدين متفرقين",
+          "اطلب نظاماً متكاملاً عبر [ProjectLaunch™ عُمان](https://3dgraphicshouse.com/solutions/project-launch-oman.html) لا مورّدين متفرقين",
           "اربط الميزانية بأثر المبيعات لا بعدد الصور فقط",
-          "احجز جلسة تقييم مبكرة مع فريق محلي أو خليجي يفهم off-plan"
+          "احجز جلسة تقييم مبكرة مع فريق يفهم off-plan من [مسقط](https://3dgraphicshouse.com/locations/oman.html)"
         ]
       },
       {
         "type": "p",
-        "text": "إذا كان مشروعك في عُمان ويستعد للإطلاق، ابدأ من صفحة ProjectLaunch™ لعُمان أو تواصل مع مكتب مسقط — جلسة التقييم مجانية وبدون التزام."
+        "text": "إذا كان مشروعك في عُمان ويستعد للإطلاق، ابدأ من [ProjectLaunch™ عُمان](https://3dgraphicshouse.com/solutions/project-launch-oman.html) أو تواصل مع مكتب مسقط. جلسة التقييم مجانية وبدون التزام. للمقارنة مع السوق السعودي راجع [جاهزية off-plan السعودية](https://3dgraphicshouse.com/insights/articles/saudi-offplan-visual-readiness.html)."
       }
     ],
     "en": [
       {
         "type": "p",
-        "text": "Oman’s residential, coastal, and commercial pipeline is growing. The difference between a project understood in minutes and one that needs a long explanation is not the plan alone — it is the visual launch system that precedes sales day."
+        "text": "Oman's residential, coastal, and commercial pipeline is growing. The difference between a project understood in minutes and one that needs a long explanation is not the plan alone: it is the visual launch system that precedes sales day. Muscat, Al Seeb, and Al Khod see patterns such as coastal communities (Al Mouj and AIDA as market types) and mixed-use schemes near the waterfront: buyers want to see place and coastal rhythm before signing."
       },
       {
         "type": "p",
-        "text": "At Graphics House we brought the ProjectLaunch™ method — refined across major Saudi launches — to our Muscat presence (Al Khod, Al Seeb). This article outlines what an Omani developer actually needs before opening the sales gallery."
+        "text": "At Graphics House we brought the [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-oman-en.html) method, refined across major Saudi launches, to our Muscat presence (Al Khod, Al Seeb). This article outlines what an Omani developer actually needs before opening the sales gallery. For the Saudi foundation see [project launch for Saudi developers](https://3dgraphicshouse.com/insights/articles/project-launch-saudi-developers-en.html) and [Saudi vs Gulf visual launch](https://3dgraphicshouse.com/insights/articles/saudi-vs-gulf-visual-launch-en.html)."
       },
       {
         "type": "h2",
-        "text": "Why “pretty images” are not enough"
+        "text": "Why \"pretty images\" are not enough"
       },
       {
         "type": "p",
-        "text": "Investors, brokers, and buyers judge quickly. An isolated facade still does not build a story, explain sales phases, or equip the team. An integrated visual system ties identity, render, film, maquette, and interactive experience into one language."
+        "text": "Investors, brokers, and buyers judge quickly. An isolated facade still does not build a story, explain sales phases, or equip the team. An integrated visual system ties identity, render, film, maquette, and interactive experience into one language. In Oman, coastal clarity and execution trust carry extra weight: local buyers and regional investors compare projects on the same coastline fast."
       },
       {
         "type": "h2",
@@ -106,20 +219,103 @@
       {
         "type": "ul",
         "items": [
-          "Photoreal architectural visualization that fits coastal and residential context",
-          "Short CGI films for investor days and exhibitions",
-          "A smart maquette that anchors presence on the sales floor",
-          "Interactive experiences for unit and plan selection",
-          "On-site décor and install that unify the experience"
+          "Photoreal [architectural visualization](https://3dgraphicshouse.com/services/rendering-en.html) that fits coastal and residential context",
+          "Short [CGI films](https://3dgraphicshouse.com/services/cinematic-cgi-en.html) for investor days and exhibitions",
+          "A [smart maquette](https://3dgraphicshouse.com/services/maquettes-en.html) that anchors presence on the sales floor",
+          "[Interactive experiences](https://3dgraphicshouse.com/services/interactive-experiences-en.html) for unit and plan selection",
+          "On-site [décor and install](https://3dgraphicshouse.com/services/branding-en.html) that unify the experience",
+          "Arabic/English broker pack from day one, not a later translation"
         ]
       },
       {
         "type": "h2",
-        "text": "From Saudi Arabia to Oman — what transfers"
+        "text": "Project patterns in Muscat and the Omani coast"
       },
       {
         "type": "p",
-        "text": "What worked on projects such as Anan Eskan, Al Oula, and the Makkah Charter for the Muslim World League is not a style alone — it is a workflow: fast approvals, channel consistency, and install readiness before launch. The same workflow is available to Oman developers through our Muscat office and direct Oman line."
+        "text": "As a market map for comparison (not a delivery claim), see the [Muscat coastal communities report](https://3dgraphicshouse.com/insights/reports/oman-coastal-community-visual-report-en.html) and live patterns on [Ruwaq Tours](https://ruwaq.co/tours). Recurring types set different visual priorities."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Coastal communities: neighbourhood rhythm, amenities, realistic evening light",
+          "Waterfront mixed-use: plan, movement, and commercial frontage before unit detail",
+          "Hospitality and lodging: guest path from entrance to room",
+          "Coastal villas and apartments: privacy, garden, and view sold as part of the experience"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "From Saudi Arabia to Oman: what transfers"
+      },
+      {
+        "type": "p",
+        "text": "What worked on projects such as [Anan Eskan Riyadh](https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh-en.html) and the [Makkah Charter](https://3dgraphicshouse.com/insights/projects/makkah-charter-mwl-en.html) is not a style alone: it is a workflow of fast approvals, channel consistency, and install readiness before launch. The same workflow is available to Oman developers through our Muscat office and the [Oman location page](https://3dgraphicshouse.com/locations/oman-en.html)."
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Reusable central 3D model across render, film, and maquette",
+          "Written approval path across architecture, marketing, and sales",
+          "Hero scene lock before digital campaign",
+          "Unified broker/gallery pack with one version number",
+          "On-site install from a team that knows the product, not a contractor detached from assets"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Acceptance criteria for the Omani market"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Coastal lighting is realistic and not generic resort oversaturation",
+          "Sales-approved master plan matches maquette and screens",
+          "Launch film clarifies location in the first 20 seconds",
+          "Bilingual pack with one version across Arabic and English",
+          "Version number on every asset shown to brokers"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Broker and gallery readiness in Oman"
+      },
+      {
+        "type": "p",
+        "text": "Muscat brokers sell on mobile first, often to local and regional buyers. The pack must be light and unified."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "6 to 10 compressed stills + short film + PDF plans",
+          "One approved location message in Arabic and English",
+          "8 to 10 minute presentation path from screen to maquette",
+          "A \"what we sell today\" card when the phase changes",
+          "Team training 3 to 5 days before opening"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Practical tips before contracting in Oman"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Do not copy Riyadh or Jeddah asset libraries literally: rewrite the Muscat place brief",
+          "Demand a studio that understands Gulf off-plan, not a render vendor separate from the maquette",
+          "Tie install schedule to gallery opening date, not campaign date alone",
+          "Use the [project brief](https://3dgraphicshouse.com/insights/tools/project-brief-en.html) and [launch checklist](https://3dgraphicshouse.com/insights/tools/launch-checklist-en.html) before sign-off",
+          "Where finish execution must match the visual promise, plan later alignment with [Turriva](https://turriva.com)",
+          "After assets lock, campaign amplification can follow via [Beesmotion](https://beesmotion.com)"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "When to add a lifestyle layer"
+      },
+      {
+        "type": "p",
+        "text": "For projects selling connected amenities or smart living, one light contextual nod inside the amenity narrative via [Dot for Life](https://dotforlife.com) is enough. It does not replace the visual launch system or substitute for render, maquette, and gallery."
       },
       {
         "type": "h2",
@@ -130,15 +326,57 @@
         "items": [
           "Define the sales stage: approval, launch, or phase expansion",
           "Gather stakeholders who approve visual assets",
-          "Demand one integrated system — not fragmented vendors",
+          "Demand one integrated system via [ProjectLaunch™ Oman](https://3dgraphicshouse.com/solutions/project-launch-oman-en.html), not fragmented vendors",
           "Tie budget to sales impact, not image count alone",
-          "Book an early assessment with a local or GCC team that understands off-plan"
+          "Book an early assessment with an off-plan team from [Muscat](https://3dgraphicshouse.com/locations/oman-en.html)"
         ]
       },
       {
         "type": "p",
-        "text": "If your Oman project is approaching launch, start with ProjectLaunch™ for Oman or contact the Muscat office — the assessment session is free and without obligation."
+        "text": "If your Oman project is approaching launch, start with [ProjectLaunch™ Oman](https://3dgraphicshouse.com/solutions/project-launch-oman-en.html) or contact the Muscat office. The assessment session is free and without obligation. To compare with the Saudi market see [Saudi off-plan visual readiness](https://3dgraphicshouse.com/insights/articles/saudi-offplan-visual-readiness-en.html)."
       }
     ]
-  }
+  },
+  "faq": [
+    {
+      "q": {
+        "ar": "هل نبدأ من الصفر في عُمان إن كان لدينا نظام سعودي؟",
+        "en": "Do we start from zero in Oman if we already have a Saudi system?"
+      },
+      "a": {
+        "ar": "لا. الأعمدة (رندر، CGI، مجسم، صالة) تبقى؛ ما يتغيّر موجز المكان والحزمة ثنائية اللغة. راجع [مقارنة السعودية والخليج](https://3dgraphicshouse.com/insights/articles/saudi-vs-gulf-visual-launch.html).",
+        "en": "No. Pillars (render, CGI, maquette, gallery) stay; what changes is the place brief and bilingual pack. See [Saudi vs Gulf visual launch](https://3dgraphicshouse.com/insights/articles/saudi-vs-gulf-visual-launch-en.html)."
+      }
+    },
+    {
+      "q": {
+        "ar": "متى نحتاج حزمة عربية/إنجليزية؟",
+        "en": "When do we need an Arabic/English pack?"
+      },
+      "a": {
+        "ar": "من اليوم الأول في عُمان، لا بعد افتتاح الصالة. إصدار واحد عبر اللغتين.",
+        "en": "From day one in Oman, not after gallery opening. One version across both languages."
+      }
+    },
+    {
+      "q": {
+        "ar": "هل يكفي استوديو محلي للرندر فقط؟",
+        "en": "Is a local render-only studio enough?"
+      },
+      "a": {
+        "ar": "نادراً. off-plan يحتاج اتساق فيلم/مجسم/صالة/وسيط. اطلب نظاماً عبر ProjectLaunch™ لا صوراً متفرقة.",
+        "en": "Rarely. Off-plan needs film/maquette/gallery/broker consistency. Demand a system via ProjectLaunch™, not scattered images."
+      }
+    },
+    {
+      "q": {
+        "ar": "أين يبدأ التقييم المجاني؟",
+        "en": "Where does the free assessment start?"
+      },
+      "a": {
+        "ar": "من [ProjectLaunch™ عُمان](https://3dgraphicshouse.com/solutions/project-launch-oman.html) أو صفحة [عُمان](https://3dgraphicshouse.com/locations/oman.html) في Graphics House.",
+        "en": "From [ProjectLaunch™ Oman](https://3dgraphicshouse.com/solutions/project-launch-oman-en.html) or the Graphics House [Oman page](https://3dgraphicshouse.com/locations/oman-en.html)."
+      }
+    }
+  ]
 }
