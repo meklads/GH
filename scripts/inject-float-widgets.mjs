@@ -23,7 +23,9 @@ const SKIP = new Set([
   'solutions/project-launch-ads-en.html',
 ]);
 
-const HOMEPAGE_SKIP_REPLACE = new Set(['index.html', 'index-ar.html']);
+const FLOAT_VERSION = 9;
+
+const HOMEPAGE_SKIP_REPLACE = new Set([]);
 
 function collectHtmlFiles(dir, base = '') {
   const out = [];
@@ -58,18 +60,29 @@ function renderFloatPartial(rel, html) {
 function stripLegacyFloat(html) {
   let out = html;
   out = out.replace(/<!-- GH FLOAT START -->[\s\S]*?<!-- GH FLOAT END -->\s*/g, '');
-  out = out.replace(/<div class="gh-float"[\s\S]*?<\/div>\s*(?=\n*(?:<div id="ghPopup"|<\/body>))/g, '');
-  out = out.replace(/<div id="ghPopup"[\s\S]*?<\/div>\s*(?=\n*(?:<script|<div class="gh-float"|<\/body>))/g, '');
+  out = out.replace(/<!--[^\n]*(?:float|عائمة|FLOAT|Contact|تواصل)[^\n]*-->\s*\n/gi, '');
+  out = out.replace(/<!--[^\n]*(?:نموذج|popup|Popup)[^\n]*-->\s*\n/gi, '');
+
+  const popupIdx = out.indexOf('<div id="ghPopup"');
+  const floatIdx = out.lastIndexOf('<div class="gh-float"', popupIdx > -1 ? popupIdx : out.length);
+  if (floatIdx !== -1) {
+    const end = popupIdx > floatIdx ? popupIdx : out.indexOf('</body>', floatIdx);
+    if (end > floatIdx) {
+      out = out.slice(0, floatIdx) + out.slice(end);
+    }
+  }
+
+  out = out.replace(/<div id="ghPopup"[\s\S]*?<\/div>\s*(?=\n*(?:<script|<\/body>))/gi, '');
   return out;
 }
 
 function injectAssets(html, prefix) {
-  const css = `<link rel="stylesheet" href="${prefix}assets/gh-float-widgets.css?v=8">`;
-  const js = `<script defer src="${prefix}assets/gh-float-widgets.js?v=8"></script>`;
+  const css = `<link rel="stylesheet" href="${prefix}assets/gh-float-widgets.css?v=${FLOAT_VERSION}">`;
+  const js = `<script defer src="${prefix}assets/gh-float-widgets.js?v=${FLOAT_VERSION}"></script>`;
   const forms = `<script src="${prefix}assets/gh-forms-config.js"></script>`;
 
-  html = html.replace(/gh-float-widgets\.css\?v=\d+/g, 'gh-float-widgets.css?v=8');
-  html = html.replace(/gh-float-widgets\.js\?v=\d+/g, 'gh-float-widgets.js?v=8');
+  html = html.replace(/gh-float-widgets\.css\?v=\d+/g, `gh-float-widgets.css?v=${FLOAT_VERSION}`);
+  html = html.replace(/gh-float-widgets\.js\?v=\d+/g, `gh-float-widgets.js?v=${FLOAT_VERSION}`);
 
   if (!html.includes('gh-float-widgets.css')) {
     html = html.replace(/<\/head>/i, `${css}\n</head>`);

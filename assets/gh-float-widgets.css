@@ -14,19 +14,18 @@
 .gh-float {
   position: fixed;
   bottom: 32px;
-  /* Always physical LEFT — match English on Arabic (RTL) pages too */
   direction: ltr;
   left: 28px !important;
   right: auto !important;
   inset-inline-start: unset !important;
   inset-inline-end: unset !important;
-  inset: auto auto 32px 28px !important; /* top right bottom left */
+  inset: auto auto 32px 28px !important;
   z-index: 9000;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
-  width: 52px;
+  width: auto;
   margin: 0;
   padding: 0;
 }
@@ -45,6 +44,17 @@ body .gh-float[data-gh-float="1"] {
   inset: auto auto 32px 28px !important;
 }
 
+/* Hide legacy standalone chat button when unified float stack is present */
+body:has(.gh-float-brand[data-gh-brand-action]) #ghChatBtn {
+  display: none !important;
+}
+
+.gh-float-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .gh-float-btn {
   width: 52px;
   height: 52px;
@@ -61,20 +71,80 @@ body .gh-float[data-gh-float="1"] {
   padding: 0;
 }
 
-.gh-float-btn:hover {
-  transform: scale(1.12);
+.gh-float-btn:hover,
+.gh-float-btn:focus-visible {
+  transform: scale(1.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+  outline: none;
 }
 
 .gh-float-wa { background: #25D366; }
 .gh-float-mail { background: #C9A84C; }
 
+/* Hover tooltips */
+.gh-float-tip {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+  padding: 8px 14px;
+  background: rgba(10, 10, 10, 0.94);
+  color: #fafaf8;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  letter-spacing: 0.01em;
+}
+
+html[lang="en"] .gh-float-tip,
+html[dir="ltr"]:not([lang="ar"]) .gh-float-tip {
+  font-family: 'Inter', sans-serif;
+}
+
+.gh-float-tip::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right-color: rgba(10, 10, 10, 0.94);
+}
+
+@media (hover: hover) {
+  .gh-float-item:hover .gh-float-tip,
+  .gh-float-item:focus-within .gh-float-tip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Brand / assistant button */
 .gh-float-brand {
   background: transparent !important;
-  box-shadow: none !important;
+  box-shadow: 0 4px 22px rgba(201, 168, 76, 0.42) !important;
   overflow: visible;
   width: 52px;
   height: 52px;
+}
+
+.gh-float-brand:hover,
+.gh-float-brand:focus-visible {
+  box-shadow: 0 8px 34px rgba(201, 168, 76, 0.52) !important;
+}
+
+.gh-float-brand.is-active {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.35), 0 8px 34px rgba(201, 168, 76, 0.5) !important;
 }
 
 .gh-float-brand-inner {
@@ -86,23 +156,51 @@ body .gh-float[data-gh-float="1"] {
   justify-content: center;
 }
 
+.gh-float-brand-disc {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f5d547 0%, #e8c547 38%, #c9a84c 72%, #a8883a 100%);
+  box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.35), inset 0 -2px 6px rgba(0, 0, 0, 0.12);
+  z-index: 1;
+}
+
+.gh-float-brand-logo {
+  position: relative;
+  z-index: 2;
+  width: 36px !important;
+  height: 36px !important;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
 .gh-motif-ring {
   position: absolute;
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  border: 2px solid rgba(201, 168, 76, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.75);
   animation: ghMotifRing 3.6s ease-out infinite;
   opacity: 0;
   top: 0;
   left: 0;
   pointer-events: none;
+  z-index: 0;
+}
+
+.gh-float-brand.gh-float-brand--nudge .gh-float-brand-disc {
+  animation: ghBrandNudge 0.55s ease;
 }
 
 @keyframes ghMotifRing {
-  0% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.5); opacity: 0.2; }
-  100% { transform: scale(2); opacity: 0; }
+  0% { transform: scale(1); opacity: 0.75; }
+  50% { transform: scale(1.45); opacity: 0.18; }
+  100% { transform: scale(1.85); opacity: 0; }
+}
+
+@keyframes ghBrandNudge {
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.08); }
 }
 
 #ghPopup {
@@ -215,5 +313,19 @@ html[dir="rtl"] .gh-popup-box {
     inset-inline-end: unset !important;
     inset: auto auto 20px 16px !important;
   }
+
+  .gh-float-tip {
+    display: none;
+  }
+
   .gh-popup-box { padding: 28px 20px 24px; }
+}
+
+@media (hover: none) and (max-width: 600px) {
+  .gh-float-item:active .gh-float-tip {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+  }
 }

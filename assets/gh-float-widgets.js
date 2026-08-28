@@ -54,14 +54,34 @@
   }
 
   function brandAction() {
+    var brandBtn = document.querySelector('.gh-float-brand[data-gh-brand-action]');
     if (typeof window.toggleChat === 'function') {
       window.toggleChat();
+      syncBrandActiveState();
       return;
     }
-    var link = document.querySelector('.gh-float-brand[data-contact-href]');
-    if (link) {
-      window.location.href = link.getAttribute('data-contact-href');
+    if (brandBtn) {
+      var href = brandBtn.getAttribute('data-contact-href');
+      if (href) window.location.href = href;
     }
+  }
+
+  function syncBrandActiveState() {
+    var brandBtn = document.querySelector('.gh-float-brand[data-gh-brand-action]');
+    var panel = document.getElementById('ghChatPanel');
+    if (!brandBtn || !panel) return;
+    var open = panel.classList.contains('open') || panel.style.display === 'flex' || panel.style.display === 'block';
+    brandBtn.classList.toggle('is-active', !!open);
+  }
+
+  function nudgeBrandButton() {
+    var brandBtn = document.querySelector('.gh-float-brand[data-gh-brand-action]');
+    if (!brandBtn || sessionStorage.getItem('ghFloatNudged')) return;
+    setTimeout(function () {
+      brandBtn.classList.add('gh-float-brand--nudge');
+      sessionStorage.setItem('ghFloatNudged', '1');
+      setTimeout(function () { brandBtn.classList.remove('gh-float-brand--nudge'); }, 600);
+    }, 4000);
   }
 
   window.ghOpenPopup = openPopup;
@@ -178,6 +198,23 @@
     });
     document.querySelectorAll('[data-gh-brand-action]').forEach(function (el) {
       el.addEventListener('click', brandAction);
+    });
+
+    syncBrandActiveState();
+    nudgeBrandButton();
+
+    var chatPanel = document.getElementById('ghChatPanel');
+    if (chatPanel && typeof MutationObserver !== 'undefined') {
+      new MutationObserver(syncBrandActiveState).observe(chatPanel, {
+        attributes: true,
+        attributeFilter: ['class', 'style']
+      });
+    }
+
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('[onclick*="toggleChat"]') || e.target.closest('#ghChatBtn')) {
+        setTimeout(syncBrandActiveState, 50);
+      }
     });
   });
 })();
