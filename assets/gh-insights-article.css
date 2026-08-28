@@ -583,3 +583,188 @@ html[dir="rtl"] .gh-art-sidebar-title {
     display: none;
   }
 }
+
+/* ----- Phase 3: breadcrumbs, author, proof, takeaways, progress ----- */
+.gh-art-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.gh-art-breadcrumb a {
+  color: #8a7340;
+  text-decoration: none;
+}
+
+.gh-art-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.gh-art-breadcrumb-current {
+  color: #444;
+  max-width: min(100%, 280px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gh-art-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 12px;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.gh-art-author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c9a84c, #8a7340);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gh-art-author-meta strong {
+  display: block;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.gh-art-author-meta span {
+  font-size: 12px;
+  color: #777;
+}
+
+.gh-art-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 14px 18px;
+  margin-bottom: 28px;
+  background: #faf8f4;
+  border: 1px solid #ebe6dc;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #555;
+}
+
+.gh-art-proof strong {
+  color: #8a7340;
+}
+
+.gh-art-takeaways {
+  padding: 22px 24px 20px;
+  margin-bottom: 28px;
+  background: #fff;
+  border: 1px solid #e0d8c8;
+  border-radius: 4px;
+  border-inline-start: 4px solid #c9a84c;
+}
+
+.gh-art-takeaways-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a7340;
+  margin: 0 0 12px;
+}
+
+html[dir="rtl"] .gh-art-takeaways-label {
+  letter-spacing: 0.06em;
+  text-transform: none;
+  font-size: 12px;
+}
+
+.gh-art-takeaways-label .material-symbols-outlined {
+  font-size: 18px;
+  color: #c9a84c;
+}
+
+.gh-art-takeaways ul {
+  margin: 0;
+  padding-inline-start: 20px;
+}
+
+.gh-art-takeaways li {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.gh-art-takeaways li:last-child {
+  margin-bottom: 0;
+}
+
+.gh-art-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.06);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.gh-art-progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #c9a84c, #8a7340);
+  transition: width 0.08s linear;
+}
+
+.gh-art-sidebar-newsletter-sub {
+  font-size: 12px;
+  color: #666;
+  margin: 0 0 12px;
+  line-height: 1.45;
+}
+
+.gh-art-newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gh-art-newsletter-form input[type="email"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 13px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.gh-art-newsletter-form button {
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #0a0a0a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.gh-art-newsletter-form button:hover {
+  background: #222;
+}

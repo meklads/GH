@@ -148,15 +148,20 @@ export function shareBarHtml(pageUrl, title, isEn) {
   const encTitle = encodeURIComponent(title);
   const wa = `https://wa.me/?text=${encTitle}%20${encUrl}`;
   const li = `https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}`;
+  const tw = `https://twitter.com/intent/tweet?url=${encUrl}&text=${encTitle}`;
   const label = isEn ? 'Share' : 'شارك';
   const copyLabel = isEn ? 'Copy link' : 'نسخ الرابط';
   const copied = isEn ? 'Link copied' : 'تم نسخ الرابط';
   const waLabel = isEn ? 'WhatsApp' : 'واتساب';
   const liLabel = 'LinkedIn';
+  const xLabel = 'X';
   return `<div class="gh-art-share" role="group" aria-label="${esc(label)}">
     <span class="gh-art-share-label">${label}</span>
     <a class="gh-art-share-btn" href="${li}" target="_blank" rel="noopener noreferrer" aria-label="${liLabel}">
       <span class="material-symbols-outlined" aria-hidden="true">share</span><span>${liLabel}</span>
+    </a>
+    <a class="gh-art-share-btn" href="${tw}" target="_blank" rel="noopener noreferrer" aria-label="${xLabel}">
+      <span class="material-symbols-outlined" aria-hidden="true">tag</span><span>${xLabel}</span>
     </a>
     <a class="gh-art-share-btn" href="${wa}" target="_blank" rel="noopener noreferrer" aria-label="${waLabel}">
       <span class="material-symbols-outlined" aria-hidden="true">chat</span><span>${waLabel}</span>
@@ -318,6 +323,133 @@ export function defaultMidCta(isEn, depthPrefix) {
   </div>`;
 }
 
+export function midCtaFromArticle(article, isEn, depthPrefix) {
+  const cta = article.midCta;
+  if (!cta) return defaultMidCta(isEn, depthPrefix);
+  const L = (k) => (isEn ? k.en : k.ar);
+  const title = L(cta.title || {});
+  const text = L(cta.text || {});
+  const btn = L(cta.btn || {});
+  const href = cta.href?.[isEn ? 'en' : 'ar'] || cta.href || '#';
+  const prefix = href.startsWith('http') ? '' : depthPrefix;
+  return `<div class="gh-art-mid-cta">
+    <h3>${richText(title)}</h3>
+    <p>${richText(text)}</p>
+    <div class="gh-art-mid-cta-actions">
+      <a href="${prefix}${href}" class="gh-btn-editorial">${richText(btn)}</a>
+    </div>
+  </div>`;
+}
+
+export function breadcrumbHtml(article, isEn, depthPrefix) {
+  const hub = isEn ? 'Insights' : 'الرؤى';
+  const hubHref = `${depthPrefix}insights/${isEn ? 'index-en' : 'index'}.html`;
+  const cat = isEn ? article.category.en : article.category.ar;
+  const title = isEn ? article.title.en : article.title.ar;
+  const sep = isEn ? '/' : '◂';
+  return `<nav class="gh-art-breadcrumb" aria-label="${isEn ? 'Breadcrumb' : 'مسار التنقل'}">
+    <a href="${hubHref}">${hub}</a>
+    <span aria-hidden="true">${sep}</span>
+    <span class="gh-art-breadcrumb-cat">${esc(cat)}</span>
+    <span aria-hidden="true">${sep}</span>
+    <span class="gh-art-breadcrumb-current" aria-current="page">${esc(title.length > 48 ? `${title.slice(0, 45)}…` : title)}</span>
+  </nav>`;
+}
+
+export function authorBylineHtml(isEn) {
+  const name = isEn ? 'Graphics House Insights' : 'فريق رؤى Graphics House';
+  const role = isEn ? 'GCC architectural visualization & launch strategy' : 'إظهار معماري واستراتيجية إطلاق في الخليج';
+  return `<div class="gh-art-author">
+    <div class="gh-art-author-avatar" aria-hidden="true">GH</div>
+    <div class="gh-art-author-meta">
+      <strong>${name}</strong>
+      <span>${role}</span>
+    </div>
+  </div>`;
+}
+
+export function socialProofStrip(isEn) {
+  if (isEn) {
+    return `<div class="gh-art-proof" role="note">
+      <span><strong>15+ years</strong> in GCC archviz</span>
+      <span><strong>500+</strong> projects delivered</span>
+      <span><strong>4</strong> regional studios</span>
+    </div>`;
+  }
+  return `<div class="gh-art-proof" role="note">
+    <span><strong>+15 سنة</strong> في الإظهار بالخليج</span>
+    <span><strong>500+</strong> مشروع</span>
+    <span><strong>4</strong> مكاتب إقليمية</span>
+  </div>`;
+}
+
+export function takeawaysBlock(takeaways, isEn) {
+  if (!takeaways) return '';
+  const items = isEn ? takeaways.en : takeaways.ar;
+  if (!items?.length) return '';
+  const label = isEn ? 'Key takeaways' : 'أبرز النقاط';
+  const lis = items.map((i) => `<li>${richText(i)}</li>`).join('');
+  return `<div class="gh-art-takeaways">
+    <p class="gh-art-takeaways-label"><span class="material-symbols-outlined" aria-hidden="true">stars</span> ${label}</p>
+    <ul>${lis}</ul>
+  </div>`;
+}
+
+export function sidebarNewsletterHtml(isEn) {
+  const title = isEn ? 'Launch insights' : 'رؤى الإطلاق';
+  const sub = isEn ? 'Monthly GCC archviz & sales tips — no spam.' : 'نصائح شهرية للإطلاق البصري — بدون إزعاج.';
+  const ph = isEn ? 'Your email' : 'بريدك';
+  const btn = isEn ? 'Subscribe' : 'اشترك';
+  return `<div class="gh-art-sidebar-block gh-art-sidebar-newsletter">
+    <p class="gh-art-sidebar-title"><span class="material-symbols-outlined" aria-hidden="true">mail</span> ${title}</p>
+    <p class="gh-art-sidebar-newsletter-sub">${sub}</p>
+    <form class="gh-art-newsletter-form" data-gh-newsletter novalidate>
+      <input type="email" name="email" placeholder="${ph}" required autocomplete="email" aria-label="${ph}">
+      <button type="submit">${btn}</button>
+    </form>
+  </div>`;
+}
+
+export function articleProgressBar() {
+  return '<div class="gh-art-progress" aria-hidden="true"><span></span></div>';
+}
+
+export function articleGraphSchema(article, lang, pageUrl) {
+  const isEn = lang === 'en';
+  const L = (key) => (isEn ? key.en : key.ar);
+  const articleNode = {
+    '@type': 'Article',
+    headline: L(article.title),
+    description: L(article.metaDescription || article.excerpt),
+    image: `https://3dgraphicshouse.com/${article.image}`,
+    datePublished: `${article.date}-01`,
+    dateModified: `${article.date}-15`,
+    author: {
+      '@type': 'Person',
+      name: isEn ? 'Graphics House Insights Team' : 'فريق رؤى Graphics House',
+      jobTitle: isEn ? 'Architectural Visualization Strategists' : 'استراتيجيون الإظهار المعماري',
+      worksFor: { '@type': 'Organization', name: 'Graphics House', url: 'https://3dgraphicshouse.com' },
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Graphics House',
+      logo: { '@type': 'ImageObject', url: 'https://3dgraphicshouse.com/assets/favicon/og-image.png' },
+    },
+    mainEntityOfPage: pageUrl,
+    inLanguage: isEn ? 'en' : 'ar',
+  };
+  const breadcrumb = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: isEn ? 'Home' : 'الرئيسية', item: 'https://3dgraphicshouse.com/' },
+      { '@type': 'ListItem', position: 2, name: isEn ? 'Insights' : 'الرؤى', item: `https://3dgraphicshouse.com/insights/${isEn ? 'index-en.html' : 'index.html'}` },
+      { '@type': 'ListItem', position: 3, name: L(article.title), item: pageUrl },
+    ],
+  };
+  const nodes = [articleNode, breadcrumb];
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': nodes });
+}
+
 export function faqAccordionHtml(faq, isEn) {
   if (!faq || !faq.length) return '';
   const L = (key) => (isEn ? key.en : key.ar);
@@ -348,6 +480,7 @@ export function articleSidebarHtml({ toc, related, isEn, depthPrefix }) {
       ${sidebarServicesHtml(isEn, depthPrefix)}
       ${sidebarRelatedHtml(related, isEn, depthPrefix)}
       ${sidebarToolHtml(isEn, depthPrefix)}
+      ${sidebarNewsletterHtml(isEn)}
       ${sidebarContactHtml(isEn, depthPrefix)}
     </div>
   </aside>`;

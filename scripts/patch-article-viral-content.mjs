@@ -560,6 +560,103 @@ function injectAfterH2(body, blocksToInsert) {
   return next;
 }
 
+function firstSentence(text) {
+  const s = String(text || '').trim();
+  const m = s.match(/^[^.!?؟]+[.!?؟]/);
+  return m ? m[0].trim() : s.slice(0, 140).trim();
+}
+
+function stripLeadEmoji(text) {
+  return String(text || '')
+    .replace(/^[\u{1F300}-\u{1FAFF}\u2600-\u27BF]\s*/u, '')
+    .trim();
+}
+
+function takeawaysFromHook(hook) {
+  return {
+    ar: [
+      firstSentence(hook.tldr.ar),
+      firstSentence(hook.directAnswer.ar),
+      stripLeadEmoji(hook.callout.ar),
+    ],
+    en: [
+      firstSentence(hook.tldr.en),
+      firstSentence(hook.directAnswer.en),
+      stripLeadEmoji(hook.callout.en),
+    ],
+  };
+}
+
+/** @type {Record<string, { title: {ar:string,en:string}, text: {ar:string,en:string}, btn: {ar:string,en:string}, href: {ar:string,en:string} }>} */
+const MID_CTA_BY_KIND = {
+  launch: {
+    title: { ar: 'تطلق خلال الستة أشهر القادمة؟', en: 'Launching in the next 6 months?' },
+    text: {
+      ar: 'اربط أصولك البصرية بجدول المبيعات عبر ProjectLaunch™ — رندرات، فيلم، صالة بيع، ومحتوى إطلاق من فريق واحد.',
+      en: 'Map visual assets to your sales timeline with ProjectLaunch™ — renders, film, gallery, and launch content from one GCC team.',
+    },
+    btn: { ar: 'اكتشف ProjectLaunch™', en: 'Explore ProjectLaunch™' },
+    href: { ar: 'solutions/project-launch.html', en: 'solutions/project-launch-en.html' },
+  },
+  maquette: {
+    title: { ar: 'مجسم لصالة البيع؟', en: 'Need a sales gallery model?' },
+    text: {
+      ar: 'مجسمات ذكية ومجسمات تقليدية — نربطها بجدول الإطلاق والمبيعات off-plan.',
+      en: 'Smart and traditional scale models — tied to your off-plan launch and sales schedule.',
+    },
+    btn: { ar: 'خدمة المجسمات', en: 'Scale models service' },
+    href: { ar: 'services/maquettes.html', en: 'services/maquettes-en.html' },
+  },
+  interactive: {
+    title: { ar: 'صالة بيع تفاعلية؟', en: 'Interactive sales gallery?' },
+    text: {
+      ar: 'شاشات تفاعلية، جولات 360، ومحتوى رقمي لصالات البيع في الخليج.',
+      en: 'Touchscreens, 360 tours, and digital content for GCC sales galleries.',
+    },
+    btn: { ar: 'التجارب التفاعلية', en: 'Interactive experiences' },
+    href: { ar: 'services/interactive-experiences.html', en: 'services/interactive-experiences-en.html' },
+  },
+  rendering: {
+    title: { ar: 'تحتاج رندرات قبل الإطلاق؟', en: 'Need renders before launch?' },
+    text: {
+      ar: 'رندرات خارجية وداخلية وفق مواصفات المشروع — جاهزة للصالة والسوشيال والطباعة.',
+      en: 'Exterior and interior renders to spec — gallery, social, and print ready.',
+    },
+    btn: { ar: 'الإظهار المعماري', en: 'Archviz & renders' },
+    href: { ar: 'services/rendering.html', en: 'services/rendering-en.html' },
+  },
+  cgi: {
+    title: { ar: 'فيلم إطلاق سينمائي؟', en: 'Cinematic launch film?' },
+    text: {
+      ar: 'أفلام CGI وجولات متحركة للمشاريع الكبرى — من فكرة واحدة إلى حملة إطلاق.',
+      en: 'CGI films and walkthroughs for major schemes — from one brief to full launch campaign.',
+    },
+    btn: { ar: 'أفلام CGI', en: 'Cinematic CGI' },
+    href: { ar: 'services/animation.html', en: 'services/animation-en.html' },
+  },
+  consult: {
+    title: { ar: 'ناقش مشروعك مع الفريق', en: 'Discuss your project with our team' },
+    text: {
+      ar: 'استشارة مجانية لربط الميزانية البصرية بجدول المبيعات في السعودية والخليج.',
+      en: 'Free consultation to align visual budget with sales timeline across the GCC.',
+    },
+    btn: { ar: 'احجز استشارة', en: 'Book a consultation' },
+    href: { ar: 'contact-us.html', en: 'contact-us-en.html' },
+  },
+};
+
+function midCtaKindForSlug(slug) {
+  if (/maquette|smart-maquette/.test(slug)) return 'maquette';
+  if (/interactive|gallery/.test(slug)) return 'interactive';
+  if (/cinematic|cgi-vs|animation/.test(slug)) return 'cgi';
+  if (/render|archviz|photorealistic|finishes|visualization-brief|ai-archviz/.test(slug)) return 'rendering';
+  if (/launch|checklist|offplan|off-plan|readiness|masterplan|mixed-use|gate|pavilion|jeddah|riyadh|makkah|oman|saudi-vs/.test(slug)) {
+    return 'launch';
+  }
+  if (/roi|choosing-archviz/.test(slug)) return 'consult';
+  return 'launch';
+}
+
 let updated = 0;
 for (const file of fs.readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
   const full = path.join(DIR, file);
@@ -579,6 +676,18 @@ for (const file of fs.readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
   }
   if (JSON.stringify(data.directAnswer) !== JSON.stringify(hook.directAnswer)) {
     data.directAnswer = hook.directAnswer;
+    changed = true;
+  }
+
+  const takeaways = takeawaysFromHook(hook);
+  if (JSON.stringify(data.takeaways) !== JSON.stringify(takeaways)) {
+    data.takeaways = takeaways;
+    changed = true;
+  }
+
+  const midCta = MID_CTA_BY_KIND[midCtaKindForSlug(slug)];
+  if (midCta && JSON.stringify(data.midCta) !== JSON.stringify(midCta)) {
+    data.midCta = midCta;
     changed = true;
   }
 

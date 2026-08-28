@@ -1,15 +1,19 @@
 # Build static site in CI/Coolify, then serve with nginx
-FROM node:20-alpine AS builder
+# Pin minor tag + retry npm for flaky Docker Hub / network on self-hosted runners
+FROM node:20-bookworm-slim AS builder
 WORKDIR /app
-RUN apk add --no-cache libwebp-tools
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends libwebp-dev webp \
+  && rm -rf /var/lib/apt/lists/*
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm ci --prefer-offline --no-audit --no-fund \
+  || npm ci --prefer-offline --no-audit --no-fund
 COPY . .
 ENV NODE_OPTIONS="--max-old-space-size=1024"
 ENV CI=true
 RUN npm run build
 
-FROM nginx:alpine
+FROM nginx:1.27-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY nginx-redirects.conf /etc/nginx/snippets/gh-redirects.conf
 COPY --from=builder /app /usr/share/nginx/html

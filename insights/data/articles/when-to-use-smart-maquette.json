@@ -658,5 +658,35 @@
   "directAnswer": {
     "ar": "تحتاج مجسمًا ذكياً بدل الرenders فقط إذا: تبيع مخططاً متعدد المراحل، تحتاج تأثيراً لمسياً في الصالة، أو تريد بيانات حية (التوفر، الإضاءة). للبرج الواحد قد يكفي رenders + فيلم.",
     "en": "You need a smart maquette instead of renders alone if: selling a multi-phase masterplan, needing tactile wow in gallery, or wanting live data layers (availability, lighting). Single towers may need renders + film only."
+  },
+  "takeaways": {
+    "ar": [
+      "مجسم ذكي عندما: مخطط كبير، يوم مستثمرين، أو صالة دورة بيع طويلة — الرenders وحدها لا تكفي لعرض المشروع.",
+      "تحتاج مجسمًا ذكياً بدل الرenders فقط إذا: تبيع مخططاً متعدد المراحل، تحتاج تأثيراً لمسياً في الصالة، أو تريد بيانات حية (التوفر، الإضاءة).",
+      "قرار سريع: هل المشتري يحتاج أن «يلمس» المشروع؟ نعم → مجسم. لا → رenders + رقمي."
+    ],
+    "en": [
+      "Choose smart maquette when: large masterplan, investor day, or long-cycle gallery — renders alone undersell the scheme.",
+      "You need a smart maquette instead of renders alone if: selling a multi-phase masterplan, needing tactile wow in gallery, or wanting live data layers (availability, lighting).",
+      "Quick rule: Must the buyer “touch” the scheme? Yes → maquette. No → renders + digital."
+    ]
+  },
+  "midCta": {
+    "title": {
+      "ar": "مجسم لصالة البيع؟",
+      "en": "Need a sales gallery model?"
+    },
+    "text": {
+      "ar": "مجسمات ذكية ومجسمات تقليدية — نربطها بجدول الإطلاق والمبيعات off-plan.",
+      "en": "Smart and traditional scale models — tied to your off-plan launch and sales schedule."
+    },
+    "btn": {
+      "ar": "خدمة المجسمات",
+      "en": "Scale models service"
+    },
+    "href": {
+      "ar": "services/maquettes.html",
+      "en": "services/maquettes-en.html"
+    }
   }
 }

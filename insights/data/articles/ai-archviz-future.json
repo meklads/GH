@@ -564,5 +564,35 @@
   "directAnswer": {
     "ar": "مستقبل الإظهار المعماري في الخليج يعتمد على دمج AI في الإنتاج مع مراجعة بشرية ومواصفات معتمدة. المطور يحتاج سياسة جودة واضحة: ما يُنتج بالآلة، وما يُراجع، وما يُعرض للمشتري off-plan.",
     "en": "The future of GCC archviz is hybrid: AI accelerates production while human review and approved specs protect sales credibility. Developers need a clear quality policy for what AI generates, what gets reviewed, and what reaches off-plan buyers."
+  },
+  "takeaways": {
+    "ar": [
+      "الذكاء الاصطناعي يسرّع الإظهار — لا يستبدل الدقة المعمارية.",
+      "مستقبل الإظهار المعماري في الخليج يعتمد على دمج AI في الإنتاج مع مراجعة بشرية ومواصفات معتمدة.",
+      "قبل أي حملة: لا تنشر رندر AI دون مطابقة ملف التشطيب والواجهة المعتمد — خطأ واحد يكلف أسبوعاً من ثقة المشتري."
+    ],
+    "en": [
+      "AI speeds archviz — it does not replace architectural accuracy.",
+      "The future of GCC archviz is hybrid: AI accelerates production while human review and approved specs protect sales credibility.",
+      "Before any campaign: never publish AI renders without matching approved façade and finish specs — one mismatch costs a week of buyer trust."
+    ]
+  },
+  "midCta": {
+    "title": {
+      "ar": "تحتاج رندرات قبل الإطلاق؟",
+      "en": "Need renders before launch?"
+    },
+    "text": {
+      "ar": "رندرات خارجية وداخلية وفق مواصفات المشروع — جاهزة للصالة والسوشيال والطباعة.",
+      "en": "Exterior and interior renders to spec — gallery, social, and print ready."
+    },
+    "btn": {
+      "ar": "الإظهار المعماري",
+      "en": "Archviz & renders"
+    },
+    "href": {
+      "ar": "services/rendering.html",
+      "en": "services/rendering-en.html"
+    }
   }
 }

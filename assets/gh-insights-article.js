@@ -32,6 +32,25 @@
     }
   }
 
+  /* Reading progress bar */
+  var progressBar = document.querySelector('.gh-art-progress span');
+  var articleMain = document.querySelector('.gh-article-main');
+  if (progressBar && articleMain) {
+    function updateProgress() {
+      var rect = articleMain.getBoundingClientRect();
+      var total = articleMain.offsetHeight - window.innerHeight;
+      if (total <= 0) {
+        progressBar.style.width = '100%';
+        return;
+      }
+      var scrolled = -rect.top;
+      var pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+      progressBar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
   /* Copy link button */
   document.querySelectorAll('[data-gh-copy-link]').forEach(function (btn) {
     btn.addEventListener('click', function () {
