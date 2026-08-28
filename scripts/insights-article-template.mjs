@@ -137,9 +137,9 @@ export function tocHtml(toc, isEn, { mobile = false } = {}) {
       <ol>${items}</ol>
     </details>`;
   }
-  return `<nav class="gh-art-sidebar-block" aria-label="${esc(label)}">
+  return `<nav class="gh-art-sidebar-block gh-art-sidebar-block--toc" aria-label="${esc(label)}">
     <p class="gh-art-sidebar-title"><span class="material-symbols-outlined" aria-hidden="true">format_list_bulleted</span> ${label}</p>
-    <ol class="gh-art-sidebar-toc">${items}</ol>
+    <ol class="gh-art-sidebar-toc gh-art-sidebar-toc--numbered">${items}</ol>
   </nav>`;
 }
 
@@ -223,10 +223,16 @@ export function sidebarServicesHtml(isEn, depthPrefix) {
       </span>
     </a>`
   ).join('');
-  return `<div class="gh-art-sidebar-block">
-    <p class="gh-art-sidebar-title"><span class="material-symbols-outlined" aria-hidden="true">design_services</span> ${label}</p>
-    ${promos}
-  </div>`;
+  return `<details class="gh-art-sidebar-fold">
+    <summary class="gh-art-sidebar-fold__summary">
+      <span class="material-symbols-outlined" aria-hidden="true">design_services</span>
+      <span>${label}</span>
+      <span class="material-symbols-outlined gh-art-sidebar-fold__chev" aria-hidden="true">expand_more</span>
+    </summary>
+    <div class="gh-art-sidebar-fold__body gh-art-sidebar-block">
+      ${promos}
+    </div>
+  </details>`;
 }
 
 export function sidebarToolHtml(isEn, depthPrefix) {
@@ -295,9 +301,9 @@ export function sidebarRelatedHtml(related, lang, depthPrefix) {
       return `<li><a href="${href}">${esc(L(a.title))}</a></li>`;
     })
     .join('');
-  return `<nav class="gh-art-sidebar-block" aria-label="${esc(label)}">
+  return `<nav class="gh-art-sidebar-block gh-art-sidebar-block--related" aria-label="${esc(label)}">
     <p class="gh-art-sidebar-title"><span class="material-symbols-outlined" aria-hidden="true">auto_stories</span> ${label}</p>
-    <ol class="gh-art-sidebar-toc">${links}</ol>
+    <ol class="gh-art-sidebar-toc gh-art-sidebar-toc--compact">${links}</ol>
   </nav>`;
 }
 
@@ -407,14 +413,20 @@ export function sidebarNewsletterHtml(isEn) {
   const sub = isEn ? 'Monthly GCC archviz & sales tips — no spam.' : 'نصائح شهرية للإطلاق البصري — بدون إزعاج.';
   const ph = isEn ? 'Your email' : 'بريدك';
   const btn = isEn ? 'Subscribe' : 'اشترك';
-  return `<div class="gh-art-sidebar-block gh-art-sidebar-newsletter">
-    <p class="gh-art-sidebar-title"><span class="material-symbols-outlined" aria-hidden="true">mail</span> ${title}</p>
-    <p class="gh-art-sidebar-newsletter-sub">${sub}</p>
-    <form class="gh-art-newsletter-form" data-gh-newsletter novalidate>
-      <input type="email" name="email" placeholder="${ph}" required autocomplete="email" aria-label="${ph}">
-      <button type="submit">${btn}</button>
-    </form>
-  </div>`;
+  return `<details class="gh-art-sidebar-fold gh-art-sidebar-fold--muted">
+    <summary class="gh-art-sidebar-fold__summary">
+      <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+      <span>${title}</span>
+      <span class="material-symbols-outlined gh-art-sidebar-fold__chev" aria-hidden="true">expand_more</span>
+    </summary>
+    <div class="gh-art-sidebar-fold__body gh-art-sidebar-block gh-art-sidebar-newsletter">
+      <p class="gh-art-sidebar-newsletter-sub">${sub}</p>
+      <form class="gh-art-newsletter-form" data-gh-newsletter novalidate>
+        <input type="email" name="email" placeholder="${ph}" required autocomplete="email" aria-label="${ph}">
+        <button type="submit">${btn}</button>
+      </form>
+    </div>
+  </details>`;
 }
 
 export function articleProgressBar() {
@@ -484,11 +496,13 @@ export function articleSidebarHtml({ toc, related, isEn, depthPrefix }) {
   return `<aside class="gh-article-sidebar" aria-label="${isEn ? 'Article sidebar' : 'الشريط الجانبي'}">
     <div class="gh-art-sidebar-inner">
       ${tocHtml(toc, isEn)}
-      ${sidebarServicesHtml(isEn, depthPrefix)}
-      ${sidebarRelatedHtml(related, isEn, depthPrefix)}
-      ${sidebarToolHtml(isEn, depthPrefix)}
-      ${sidebarNewsletterHtml(isEn)}
-      ${sidebarContactHtml(isEn, depthPrefix)}
+      <div class="gh-art-sidebar-secondary">
+        ${sidebarToolHtml(isEn, depthPrefix)}
+        ${sidebarServicesHtml(isEn, depthPrefix)}
+        ${sidebarRelatedHtml(related, isEn, depthPrefix)}
+        ${sidebarNewsletterHtml(isEn)}
+        ${sidebarContactHtml(isEn, depthPrefix)}
+      </div>
     </div>
   </aside>`;
 }
