@@ -14,7 +14,7 @@ const OUT = path.join(ROOT, 'services');
 const BASE = 'https://3dgraphicshouse.com';
 const DEPTH = 1;
 const P = '../';
-const CSS_V = 6;
+const CSS_V = 7;
 const BRAND = 'assets/branding';
 const OG_IMG = `${BRAND}/jeddah-forum-mockup.png`;
 
@@ -24,6 +24,8 @@ const HERO_SLIDES = [
   { img: `${BRAND}/ruwaq-mockup.png`, altAr: 'رواق — لافتة ثلاثية الأبعاد', altEn: 'Ruwaq — 3D signage application' },
   { img: `${BRAND}/graphics-house-mockup.png`, altAr: 'Graphics House — تطبيق مكاني للهوية', altEn: 'Graphics House — spatial brand application' },
 ];
+
+const HERO_SLIDE_COUNT = HERO_SLIDES.length;
 
 /** Large mockup showcase — full split-screen brand presentations */
 const SHOWCASE = [
@@ -137,12 +139,12 @@ const COPY = {
     description:
       'من الشعار إلى اللافتة المضيئة والكتالوج وجناح المعرض: نظام بصري واحد للمشاريع العقارية والملتقيات في السعودية والخليج. جزء من ProjectLaunch™ وBrandScale™.',
     kicker: 'خدماتنا · الهوية البصرية',
-    h1: 'من الشعار إلى الواجهة — هوية تُرى وتُلمَس',
-    lead:
-      'نصمّم الهوية كمنظومة متكاملة: شعار، ألوان، كتالوج، وتطبيق مكاني على اللافتات والمعارض. ضمن <a href="../solutions/project-launch.html">ProjectLaunch™</a> للإطلاقات، <a href="../solutions/brand-scale.html">BrandScale™</a> للمحافظ، و<a href="../solutions/institutional-events.html">الفعاليات المؤسسية</a> للملتقيات.',
+    h1Line1: 'الهوية البصرية والأنظمة المكانية',
+    h1Gold: 'من الشعار إلى اللافتة المُضيِّئة',
+    subtitle:
+      'نظام بصري متكامل للمشاريع والملتقيات — شعار، كتالوج، وتطبيق مكاني من استوديو واحد.',
     ctaPrimary: 'ابدأ مشروع الهوية',
     ctaCase: 'استكشف الأعمال',
-    scrollHint: 'استكشف',
     stats: [
       { n: '7+', label: 'علامات وهويات منجزة' },
       { n: '44', label: 'صفحة كتالوج — ملتقى جدة' },
@@ -188,12 +190,12 @@ const COPY = {
     description:
       'From logo to illuminated signage, catalogue, and exhibition pavilion: one visual system for developments and forums across KSA and the GCC. Part of ProjectLaunch™ and BrandScale™.',
     kicker: 'Our Services · Visual Identity',
-    h1: 'From logo to facade — identity you see and feel',
-    lead:
-      'We design identity as an integrated system: logo, palette, catalogue, and spatial application on signage and exhibitions. Within <a href="../solutions/project-launch-en.html">ProjectLaunch™</a> for launches, <a href="../solutions/brand-scale-en.html">BrandScale™</a> for portfolios, and <a href="../solutions/institutional-events-en.html">institutional events</a> for forums.',
+    h1Line1: 'Visual identity & spatial brand systems',
+    h1Gold: 'from logo to illuminated signage',
+    subtitle:
+      'One integrated system for developments and forums — logo, catalogue, and spatial application from a single studio.',
     ctaPrimary: 'Start your identity project',
     ctaCase: 'Explore the work',
-    scrollHint: 'Explore',
     stats: [
       { n: '7+', label: 'Brands & identities delivered' },
       { n: '44', label: 'Catalogue pages — Jeddah Forum' },
@@ -271,6 +273,8 @@ function page(lang) {
   const dir = isEn ? 'ltr' : 'rtl';
   const htmlLang = isEn ? 'en' : 'ar';
 
+  const heroFont = "'Tajawal','IBM Plex Sans Arabic',sans-serif";
+
   const heroSlides = HERO_SLIDES.map((slide, i) => {
     const alt = isEn ? slide.altEn : slide.altAr;
     return `<div class="bid-hero-slide${i === 0 ? ' is-active' : ''}" data-bid-slide="${i}">
@@ -278,9 +282,18 @@ function page(lang) {
     </div>`;
   }).join('\n');
 
-  const heroDots = HERO_SLIDES.map(
-    (_, i) => `<button type="button" class="bid-hero-dot${i === 0 ? ' is-active' : ''}" data-bid-dot="${i}" aria-label="Slide ${i + 1}"></button>`
+  const heroProgs = Array.from({ length: HERO_SLIDE_COUNT }, (_, i) =>
+    `<div class="hero-prog${i === 0 ? ' hp-active' : ''}" id="bid-hprog-${i}"></div>`
   ).join('');
+
+  const heroCaps = t.pipeline
+    .map((label, i) => {
+      const dot = i > 0 ? '<div class="cap-bar-dot"></div>' : '';
+      return `${dot}<div class="cap-bar-item"><span class="cap-bar-label">${esc(label)}</span></div>`;
+    })
+    .join('\n');
+
+  const slideTotal = String(HERO_SLIDE_COUNT).padStart(2, '0');
 
   const stats = t.stats
     .map((s) => `<div class="bid-stat reveal"><strong>${esc(s.n)}</strong><span>${esc(s.label)}</span></div>`)
@@ -375,31 +388,50 @@ ${analyticsHeadTags(P)}
 <link rel="stylesheet" href="${P}assets/site-header.css?v=8">
 <link rel="stylesheet" href="${P}assets/gh-float-widgets.css?v=8">
 <link rel="stylesheet" href="${P}assets/gh-branding-service.css?v=${CSS_V}">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="${isEn ? 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Tajawal:wght@200;300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap' : 'https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap'}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
 <script type="application/ld+json">${schema}</script>
 </head>
 <body class="bid-page" data-gh-service="branding">
 ${header}
 <main id="main-content">
-  <section class="bid-hero">
-    <div class="bid-hero-slides" aria-hidden="true">
+  <section class="hero motif-bg" id="bid-hero" style="background:#0A0A0A">
+    <div class="hero-video-bg bid-hero-slides" aria-hidden="true">
       ${heroSlides}
     </div>
-    <div class="bid-hero-scrim" aria-hidden="true"></div>
-    <div class="bid-hero-copy">
-      <div class="bid-hero-copy-inner">
-        <span class="bid-kicker">${esc(t.kicker)}</span>
-        <h1>${esc(t.h1)}</h1>
-        <p class="bid-lead">${t.lead}</p>
-        <div class="bid-cta-row">
-          <a class="bid-btn bid-btn--gold" href="${contact}" data-gh-cta="branding_primary">${esc(t.ctaPrimary)}</a>
-          <a class="bid-btn bid-btn--ghost" href="#bid-gallery" data-gh-cta="branding_gallery">${esc(t.ctaCase)}</a>
+    <div class="hero-vignette" aria-hidden="true"></div>
+    <div class="hero-glow-accent" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-bottom-glow" aria-hidden="true"></div>
+
+    <div class="hero-bottom-panel">
+      <div class="hero-bottom-panel__inner">
+        <h1 class="font-black text-center" style="margin:12px 0 0;font-size:clamp(24px,4.5vw,58px);color:#FAFAF8;letter-spacing:-.03em;line-height:1.2;text-shadow:0 4px 40px rgba(0,0,0,.6);font-family:${heroFont}">
+          ${esc(t.h1Line1)}<br>
+          <span style="color:#C9A84C">${esc(t.h1Gold)}</span>
+        </h1>
+        <p style="font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,.8);margin:12px 0 0;font-weight:400;max-width:640px;line-height:1.8;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.5);font-family:${heroFont}">
+          ${esc(t.subtitle)}
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;justify-content:center">
+          <a href="${contact}" class="gh-damac-btn gh-damac-btn-white" data-gh-cta="branding_primary">
+            <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">brush</span>
+            <span>${esc(t.ctaPrimary)}</span>
+          </a>
+          <a href="#bid-gallery" class="gh-damac-btn gh-damac-btn-outline" data-gh-cta="branding_gallery">
+            <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">collections</span>
+            <span>${esc(t.ctaCase)}</span>
+          </a>
         </div>
-        <div class="bid-hero-dots">${heroDots}</div>
+        <div class="hero-caps-bar">${heroCaps}</div>
       </div>
     </div>
-    <div class="bid-hero-scroll" aria-hidden="true">${esc(t.scrollHint)}<span></span></div>
+
+    <div class="hero-prog-track" dir="ltr" aria-hidden="true">${heroProgs}</div>
+    <div class="hero-slide-counter tabular-nums" dir="ltr" style="font-family:monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.45)">
+      <span id="bid-hero-cur">01</span><span style="color:#C9A84C;margin:0 3px">/</span><span>${slideTotal}</span>
+    </div>
   </section>
 
   <div class="bid-stats">
@@ -473,17 +505,20 @@ ${footer}
     });
   });
   var slides=document.querySelectorAll('[data-bid-slide]');
-  var dots=document.querySelectorAll('[data-bid-dot]');
-  var cur=0,timer;
-  function go(n){
-    if(!slides.length)return;
-    cur=(n+slides.length)%slides.length;
-    slides.forEach(function(s,i){s.classList.toggle('is-active',i===cur);});
-    dots.forEach(function(d,i){d.classList.toggle('is-active',i===cur);});
+  var hprogs=document.querySelectorAll('#bid-hero .hero-prog');
+  var hcur=document.getElementById('bid-hero-cur');
+  var hsIdx=0,hsTotal=${HERO_SLIDE_COUNT},hsTimer;
+  function goSlide(n){
+    hsIdx=((n%hsTotal)+hsTotal)%hsTotal;
+    slides.forEach(function(s,i){s.classList.toggle('is-active',i===hsIdx);});
+    for(var i=0;i<hsTotal;i++){
+      var p=document.getElementById('bid-hprog-'+i);
+      if(p){p.className='hero-prog'+(i<hsIdx?' hp-done':'')+(i===hsIdx?' hp-active':'');}
+    }
+    if(hcur){hcur.textContent=String(hsIdx+1).padStart(2,'0');}
   }
-  function auto(){timer=setInterval(function(){go(cur+1);},6000);}
-  dots.forEach(function(d){d.addEventListener('click',function(){clearInterval(timer);go(+d.getAttribute('data-bid-dot'));auto();});});
-  if(slides.length>1)auto();
+  function autoSlide(){hsTimer=setInterval(function(){goSlide(hsIdx+1);},6000);}
+  if(slides.length>1){goSlide(0);autoSlide();}
   if(window.gtag){gtag('event','service_view',{service_id:'branding',page_path:location.pathname});}
 })();
 </script>
