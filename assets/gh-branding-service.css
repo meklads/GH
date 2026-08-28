@@ -228,6 +228,7 @@ html[dir="rtl"] .bid-case-link .material-symbols-outlined { transform: scaleX(-1
 .bid-gal-img img.bid-gal-logo { object-fit: contain; max-height: 72px; width: auto; }
 .bid-gal-img--light { background: #f2efe8; }
 .bid-gal-img--light img.bid-gal-logo { max-height: 88px; }
+.bid-gal-img:not(.bid-gal-img--light) img.bid-gal-logo { max-height: 96px; object-fit: contain; width: auto; margin: 0 auto; }
 
 .bid-showcase {
   margin-bottom: clamp(32px, 5vw, 48px);
