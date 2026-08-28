@@ -1,6 +1,6 @@
 # Build static site in CI/Coolify, then serve with nginx
-# Pin minor tag + retry npm for flaky Docker Hub / network on self-hosted runners
-FROM node:20-bookworm-slim AS builder
+# Use AWS Public ECR mirror — avoids Docker Hub rate limits / metadata timeouts on self-hosted Coolify
+FROM public.ecr.aws/docker/library/node:20-bookworm-slim AS builder
 WORKDIR /app
 RUN apt-get update \
   && apt-get install -y --no-install-recommends libwebp-dev webp \
@@ -13,7 +13,7 @@ ENV NODE_OPTIONS="--max-old-space-size=1024"
 ENV CI=true
 RUN npm run build
 
-FROM nginx:1.27-alpine
+FROM public.ecr.aws/docker/library/nginx:1.27-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY nginx-redirects.conf /etc/nginx/snippets/gh-redirects.conf
 COPY --from=builder /app /usr/share/nginx/html
