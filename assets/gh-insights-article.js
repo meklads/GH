@@ -1,10 +1,24 @@
 (function () {
   'use strict';
 
-  /* FAQ accordion — native details, no JS required; enhance analytics if needed */
+  var pagePath = window.location.pathname;
+
+  function track(name, params) {
+    if (typeof window.ghTrack === 'function') {
+      window.ghTrack(name, params || {});
+    }
+  }
+
+  /* Page view for article template */
+  if (document.querySelector('.gh-article-page-wrap')) {
+    track('article_view', {
+      page: pagePath,
+      lang: (document.documentElement.lang || '').toLowerCase(),
+    });
+  }
 
   /* TOC scroll spy */
-  var tocLinks = document.querySelectorAll('.gh-art-sidebar-toc a[href^="#"]');
+  var tocLinks = document.querySelectorAll('.gh-art-sidebar-toc a[href^="#"], .gh-art-toc-mobile a[href^="#"]');
   if (tocLinks.length) {
     var headings = [];
     tocLinks.forEach(function (a) {
@@ -30,6 +44,15 @@
         obs.observe(h.el);
       });
     }
+
+    tocLinks.forEach(function (a) {
+      a.addEventListener('click', function () {
+        track('article_toc_click', {
+          section: a.getAttribute('href') || '',
+          page: pagePath,
+        });
+      });
+    });
   }
 
   /* Reading progress bar */
@@ -54,24 +77,25 @@
   /* Share + copy analytics */
   document.querySelectorAll('.gh-art-share-btn[href]').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      if (typeof window.ghTrack !== 'function') return;
-      var label = btn.getAttribute('aria-label') || 'share';
-      window.ghTrack('article_share', { method: label, page: window.location.pathname });
+      track('article_share', {
+        method: btn.getAttribute('aria-label') || 'share',
+        page: pagePath,
+      });
     });
   });
 
   document.querySelectorAll('.gh-art-mid-cta a').forEach(function (a) {
     a.addEventListener('click', function () {
-      if (typeof window.ghTrack !== 'function') return;
-      window.ghTrack('article_mid_cta', { label: (a.textContent || '').trim(), page: window.location.pathname });
+      track('article_mid_cta', {
+        label: (a.textContent || '').trim(),
+        page: pagePath,
+      });
     });
   });
 
   document.querySelectorAll('[data-gh-copy-link]').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      if (typeof window.ghTrack === 'function') {
-        window.ghTrack('article_share', { method: 'copy_link', page: window.location.pathname });
-      }
+      track('article_share', { method: 'copy_link', page: pagePath });
       var url = window.location.href.split('#')[0];
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(function () {
@@ -84,6 +108,57 @@
           }, 2000);
         });
       }
+    });
+  });
+
+  /* Footer + solution links */
+  document.querySelectorAll('.gh-article-footer-cta a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      track('article_footer_cta', {
+        label: (a.textContent || '').trim(),
+        href: a.getAttribute('href') || '',
+        page: pagePath,
+      });
+    });
+  });
+
+  document.querySelectorAll('.gh-article-solutions-links a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      track('article_solution_link', {
+        solution: (a.textContent || '').trim(),
+        page: pagePath,
+      });
+    });
+  });
+
+  /* Related articles */
+  document.querySelectorAll('.gh-art-related-card, .gh-art-sidebar-block--related a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      track('article_related_click', {
+        href: a.getAttribute('href') || '',
+        page: pagePath,
+      });
+    });
+  });
+
+  /* Sidebar service promos + contact */
+  document.querySelectorAll('.gh-art-sidebar-promo, .gh-art-sidebar-contact a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      track('article_sidebar_click', {
+        label: (a.textContent || '').trim().slice(0, 80),
+        href: a.getAttribute('href') || '',
+        page: pagePath,
+      });
+    });
+  });
+
+  document.querySelectorAll('.gh-art-sidebar-tool').forEach(function (a) {
+    a.addEventListener('click', function () {
+      track('article_sidebar_click', {
+        label: 'launch_checklist_tool',
+        href: a.getAttribute('href') || '',
+        page: pagePath,
+      });
     });
   });
 })();

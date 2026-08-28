@@ -27,6 +27,8 @@ import {
   articleGraphSchema,
 } from './insights-article-template.mjs';
 
+import { articleOgAssetPath } from './build-article-og-images.mjs';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const DATA = JSON.parse(fs.readFileSync(path.join(ROOT, 'insights/data/content.json'), 'utf8'));
@@ -257,6 +259,12 @@ function headBlock(lang, meta) {
     ? `\n<meta name="keywords" content="${esc(meta.keywords)}"/>`
     : '';
   const ogImage = meta.ogImage || `${base}/assets/favicon/og-image.png`;
+  const ogUrl = meta.canonical
+    ? `\n<meta property="og:url" content="${meta.canonical}">`
+    : '';
+  const ogImageAlt = meta.ogImageAlt
+    ? `\n<meta property="og:image:alt" content="${esc(meta.ogImageAlt)}">`
+    : '';
   const articleMeta =
     meta.ogType === 'article' && meta.articleDate
       ? `
@@ -281,9 +289,15 @@ ${analyticsHeadTags(p)}
 <meta name="description" content="${esc(meta.description)}"/>${keywordsMeta}
 <meta property="og:title" content="${esc(meta.title)} | Graphics House">
 <meta property="og:description" content="${esc(meta.description)}">
-<meta property="og:image" content="${ogImage}">
+<meta property="og:image" content="${ogImage}">${ogUrl}${ogImageAlt}
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="${meta.ogType || 'website'}">
-<meta name="twitter:card" content="summary_large_image">${articleMeta}
+<meta property="og:site_name" content="Graphics House">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(meta.title)} | Graphics House">
+<meta name="twitter:description" content="${esc(meta.description)}">
+<meta name="twitter:image" content="${ogImage}">${articleMeta}
 <link rel="icon" type="image/png" sizes="32x32" href="${p}assets/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="${p}assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="${p}assets/favicon/apple-touch-icon.png">
@@ -307,7 +321,7 @@ ${isEn ? `<link rel="stylesheet" href="${p}assets/gh-en-typography.css?v=1">` : 
 function tailScripts(depth, { article = false } = {}) {
   const p = depth > 0 ? '../'.repeat(depth) : '';
   const articleJs = article
-    ? `\n<script defer src="${p}assets/gh-insights-article.js?v=5"></script>\n<script defer src="${p}assets/gh-newsletter.js?v=4"></script>`
+    ? `\n<script defer src="${p}assets/gh-insights-article.js?v=6"></script>\n<script defer src="${p}assets/gh-newsletter.js?v=5"></script>`
     : '';
   return `
 <script defer src="${p}assets/gh-float-widgets.js?v=9"></script>${articleJs}
@@ -397,7 +411,7 @@ function newsletterSection(lang) {
     <p class="gh-ins-newsletter-desc">${isEn
     ? 'Receive exclusive insights, AI resources, presentation strategies, and industry knowledge designed for real estate developers.'
     : 'احصل على رؤى حصرية، موارد الذكاء الاصطناعي، استراتيجيات العروض، ومعرفة صناعية مصممة لمطوري العقار.'}</p>
-    <form class="gh-ins-newsletter-form" data-gh-newsletter novalidate>
+    <form class="gh-ins-newsletter-form" data-gh-newsletter data-gh-newsletter-source="insights_hub" novalidate>
       <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
       <div class="gh-ins-newsletter-row">
         <input type="email" name="email" placeholder="${isEn ? 'Your email address' : 'بريدك الإلكتروني'}" required autocomplete="email">
@@ -714,6 +728,16 @@ function hubExcerpt(article, lang) {
   return ex;
 }
 
+function resolveArticleOgImage(article, lang) {
+  const base = 'https://3dgraphicshouse.com';
+  const rel = articleOgAssetPath(article, lang);
+  if (fs.existsSync(path.join(ROOT, rel))) {
+    return `${base}/${rel}`;
+  }
+  if (article.image) return `${base}/${article.image}`;
+  return `${base}/assets/favicon/og-image.png`;
+}
+
 function articleSolutionsFooter(isEn, depthPrefix) {
   const p = depthPrefix;
   const suffix = isEn ? '-en.html' : '.html';
@@ -839,11 +863,9 @@ function buildArticle(article, lang) {
   });
   const description = articleDescription(article, lang);
   const related = pickRelatedArticles(article, ARTICLES, 3);
-  const ogImage = article.image
-    ? `https://3dgraphicshouse.com/${article.image}`
-    : 'https://3dgraphicshouse.com/assets/favicon/og-image.png';
+  const ogImage = resolveArticleOgImage(article, lang);
   const imageCredit = article.imageCredit ? L(article.imageCredit) : '';
-  let schemaJson = articleGraphSchema(article, lang, pageUrl);
+  let schemaJson = articleGraphSchema(article, lang, pageUrl, ogImage);
   const faqNode = faqPageSchema(article.faq, lang, pageUrl);
   if (faqNode) {
     const graph = JSON.parse(schemaJson);
@@ -861,6 +883,7 @@ function buildArticle(article, lang) {
     altAr: `https://3dgraphicshouse.com/insights/articles/${article.slug}.html`,
     ogType: 'article',
     ogImage,
+    ogImageAlt: L(article.title),
     articleDate: `${article.date}-01`,
     articleSection: L(article.category),
   })}

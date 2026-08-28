@@ -104,7 +104,7 @@
         from_name: 'Graphics House Newsletter',
         email: email,
         language: isEn() ? 'en' : 'ar',
-        source: 'insights-newsletter',
+        source: form.getAttribute('data-gh-newsletter-source') || 'insights-newsletter',
         list: (FORMS.mailingListName || 'gh-journal'),
         message: isEn()
           ? 'New newsletter subscriber from Knowledge Hub.'
@@ -124,7 +124,12 @@
         .then(function (res) {
           if (res.success) {
             if (msgEl) { msgEl.className = 'gh-newsletter-msg ok'; msgEl.textContent = MSG.success; }
-            if (window.ghTrack) window.ghTrack('newsletter_signup', { source: 'insights-newsletter' });
+            if (window.ghTrack) {
+              window.ghTrack('newsletter_signup', {
+                source: form.getAttribute('data-gh-newsletter-source') || 'insights-newsletter',
+                page: window.location.pathname,
+              });
+            }
             form.reset();
             reset(turnstileBox);
           } else {

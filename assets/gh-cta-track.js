@@ -10,10 +10,10 @@
   document.addEventListener(
     'click',
     function (e) {
-      var el = e.target.closest('[data-cta]');
+      var el = e.target.closest('[data-cta], [data-gh-cta]');
       if (el) {
         track('cta_click', {
-          cta_id: el.getAttribute('data-cta') || '',
+          cta_id: el.getAttribute('data-cta') || el.getAttribute('data-gh-cta') || '',
           page_path: location.pathname,
         });
         return;

@@ -441,7 +441,7 @@ export function sidebarNewsletterHtml(isEn) {
     </summary>
     <div class="gh-art-sidebar-fold__body gh-art-sidebar-block gh-art-sidebar-newsletter">
       <p class="gh-art-sidebar-newsletter-sub">${sub}</p>
-      <form class="gh-art-newsletter-form" data-gh-newsletter novalidate>
+      <form class="gh-art-newsletter-form" data-gh-newsletter data-gh-newsletter-source="article_sidebar" novalidate>
         <input type="email" name="email" placeholder="${ph}" required autocomplete="email" aria-label="${ph}">
         <button type="submit">${btn}</button>
       </form>
@@ -453,14 +453,17 @@ export function articleProgressBar() {
   return '<div class="gh-art-progress" aria-hidden="true"><span></span></div>';
 }
 
-export function articleGraphSchema(article, lang, pageUrl) {
+export function articleGraphSchema(article, lang, pageUrl, ogImageUrl) {
   const isEn = lang === 'en';
   const L = (key) => (isEn ? key.en : key.ar);
+  const imageUrl =
+    ogImageUrl ||
+    (article.image ? `https://3dgraphicshouse.com/${article.image}` : 'https://3dgraphicshouse.com/assets/favicon/og-image.png');
   const articleNode = {
     '@type': 'Article',
     headline: L(article.title),
     description: L(article.metaDescription || article.excerpt),
-    image: `https://3dgraphicshouse.com/${article.image}`,
+    image: imageUrl,
     datePublished: `${article.date}-01`,
     dateModified: `${article.date}-15`,
     author: {

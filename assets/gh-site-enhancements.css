@@ -134,6 +134,68 @@ body.gh-home #hero .hero-bottom-panel__inner {
   pointer-events: auto;
 }
 
+body.gh-home #hero .hero-launch-systems {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+body.gh-home #hero .hero-launch-systems__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.75);
+  font-family: monospace;
+}
+
+html[dir="rtl"] body.gh-home #hero .hero-launch-systems__label {
+  letter-spacing: 0.08em;
+  text-transform: none;
+  font-size: 11px;
+}
+
+body.gh-home #hero .hero-launch-systems__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+body.gh-home #hero .hero-launch-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fafaf8;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+body.gh-home #hero .hero-launch-pill .material-symbols-outlined {
+  font-size: 18px;
+  color: #c9a84c;
+}
+
+body.gh-home #hero .hero-launch-pill:hover {
+  border-color: #c9a84c;
+  background: rgba(201, 168, 76, 0.12);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
 body.gh-home #hero .hero-bottom-panel .hero-caps-bar {
   margin-top: 14px;
   margin-bottom: 4px;

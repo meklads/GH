@@ -46,6 +46,15 @@ const expectedEvents = [
   'generate_lead',
   'whatsapp_click',
   'roi_calculator_view',
+  'article_share',
+  'article_mid_cta',
+  'article_view',
+  'article_footer_cta',
+  'article_related_click',
+  'article_toc_click',
+  'article_sidebar_click',
+  'article_solution_link',
+  'newsletter_signup',
 ];
 const assetSrc = [
   'assets/gh-performance.js',
@@ -55,6 +64,8 @@ const assetSrc = [
   'assets/gh-float-widgets.js',
   'assets/pl-lead-form.js',
   'assets/gh-roi-calculator.js',
+  'assets/gh-insights-article.js',
+  'assets/gh-newsletter.js',
 ]
   .map((f) => fs.readFileSync(path.join(ROOT, f), 'utf8'))
   .join('\n');
