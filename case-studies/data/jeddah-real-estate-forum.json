@@ -1,0 +1,87 @@
+{
+  "slug": "jeddah-real-estate-forum",
+  "youtubeId": "vYbn-9ramsI",
+  "heroImage": "assets/projects/rendering/jeddah-forum.jpg",
+  "filmPoster": "assets/projects/animation/jeddah-forum.jpg",
+  "nav": {
+    "prev": {
+      "href": "../casestudy1.html",
+      "hrefEn": "../casestudy1-en.html",
+      "image": "assets/news/makkah-charter-01.jpeg",
+      "title": { "ar": "ميثاق مكة", "en": "Makkah Charter" }
+    },
+    "next": {
+      "href": "../insights/projects/al-rajhi-riyadh.html",
+      "hrefEn": "../insights/projects/al-rajhi-riyadh-en.html",
+      "image": "assets/projects/rendering/alrajhi3.jpeg",
+      "title": { "ar": "مدينة الراجحي المالية", "en": "Al Rajhi Financial City" }
+    }
+  },
+  "frames": [
+    {
+      "src": "assets/projects/rendering/jeddah-forum.jpg",
+      "caption": { "ar": "01 / لقطة افتتاحية", "en": "01 / ESTABLISHING SHOT" }
+    },
+    {
+      "src": "assets/projects/animation/jeddah-forum.jpg",
+      "caption": { "ar": "02 / العالم البصري", "en": "02 / VISUAL WORLD" }
+    },
+    {
+      "src": "assets/projects/rendering/jeddah-forum.jpg",
+      "caption": { "ar": "03 / تفصيل سينمائي", "en": "03 / CINEMATIC DETAIL" },
+      "layout": "full"
+    }
+  ],
+  "identityGallery": [
+    {
+      "src": "assets/projects/rendering/jeddah-forum.jpg",
+      "alt": { "ar": "لغة بصرية لملتقى جدة للعقار", "en": "Jeddah Real Estate Forum visual language" },
+      "caption": { "ar": "اللغة البصرية", "en": "Visual language" },
+      "size": "hero"
+    },
+    {
+      "src": "assets/projects/animation/jeddah-forum.jpg",
+      "alt": { "ar": "إطار من الفيلم السينمائي", "en": "Frame from the cinematic film" },
+      "caption": { "ar": "من الفيلم", "en": "From the film" },
+      "size": "half"
+    }
+  ],
+  "applicationGallery": [
+    {
+      "src": "assets/projects/rendering/jeddah-forum.jpg",
+      "alt": { "ar": "تطبيق الهوية على المواد الترويجية", "en": "Identity on promotional materials" },
+      "caption": { "ar": "Visual Identity Application", "en": "Visual Identity Application" }
+    },
+    {
+      "src": "assets/projects/animation/jeddah-forum.jpg",
+      "alt": { "ar": "محتوى الحملة والشاشات", "en": "Campaign and screen content" },
+      "caption": { "ar": "Visual Identity Application", "en": "Visual Identity Application" }
+    }
+  ],
+  "contentGallery": [
+    {
+      "src": "assets/projects/rendering/jeddah-forum.jpg",
+      "alt": { "ar": "محتوى ترويجي للملتقى", "en": "Forum promotional content" }
+    },
+    {
+      "src": "assets/projects/animation/jeddah-forum.jpg",
+      "alt": { "ar": "عناصر فنية للحملة", "en": "Campaign art direction" }
+    }
+  ],
+  "printGallery": [
+    {
+      "src": "assets/projects/rendering/jeddah-forum.jpg",
+      "alt": { "ar": "غلاف الكتالوج والمواد المطبوعة", "en": "Catalogue cover and print materials" }
+    }
+  ],
+  "deliverables": [
+    { "ar": "الهوية البصرية", "en": "Brand Identity" },
+    { "ar": "تصميم الشعار", "en": "Logo Design" },
+    { "ar": "نظام الهوية البصرية", "en": "Visual Identity System" },
+    { "ar": "فيلم CGI سينمائي", "en": "Cinematic CGI Film" },
+    { "ar": "إنتاج المحتوى", "en": "Content Creation" },
+    { "ar": "تصميم الكتالوج", "en": "Catalogue Design" },
+    { "ar": "الإخراج الفني", "en": "Art Direction" },
+    { "ar": "المواد المطبوعة والبصرية", "en": "Print & Visual Materials" }
+  ]
+}
