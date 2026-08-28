@@ -31,6 +31,7 @@ const COPY = {
     ctaSecondary: 'See ProjectLaunch™',
     ctaReport: 'Read the Ramadan Forum report',
     ctaCase: 'Open the MWL case study',
+    ctaJeddahCase: 'Jeddah Forum case study',
     pressureTitle: 'A compressed calendar should not shrink the idea',
     pressureBody:
       'Institutional dates stack install, content lock, and protocol rehearsal into days, not months. Multiple vendors spend that window on handoffs. One studio spends it on the guest experience and what leadership sees on walkthrough day.',
@@ -43,7 +44,7 @@ const COPY = {
     ],
     proofTitle: 'Proof: Muslim World League, Ramadan Forum, Jeddah',
     proofBody:
-      'For the League side at the Ramadan Forum in <a href="../locations/jeddah-en.html">Jeddah</a>, we delivered an interactive maquette of global flagship projects, detail screens, lighting control, press interaction, and a commemorative photo program under severe time pressure, with personal praise from H.E. the Secretary General. Read the <a href="../insights/reports/mwl-ramadan-forum-visual-report-en.html">visual report</a> and <a href="../insights/projects/makkah-charter-mwl-en.html">Makkah Charter case study</a>.',
+      'For the League side at the Ramadan Forum in <a href="../locations/jeddah-en.html">Jeddah</a>, we delivered an interactive maquette of global flagship projects, detail screens, lighting control, press interaction, and a commemorative photo program under severe time pressure, with personal praise from H.E. the Secretary General. Read the <a href="../insights/reports/mwl-ramadan-forum-visual-report-en.html">visual report</a> and <a href="../casestudy-mwl-en.html">Makkah Charter case study</a>. For brand, catalogue, and cinematic CGI at scale, see the <a href="../case-studies/jeddah-real-estate-forum-en.html">Jeddah Real Estate Forum case study</a>.',
     servicesTitle: 'Capabilities behind the delivery',
     services: [
       ['ProjectLaunch™', 'solutions/project-launch-en.html', 'Readiness frame: lock message, pack assets, rehearse acceptance'],
@@ -64,7 +65,7 @@ const COPY = {
       ],
       [
         'Where do I see the delivery record?',
-        'Start with the <a href="../insights/reports/mwl-ramadan-forum-visual-report-en.html">Ramadan Forum visual report</a> and <a href="../insights/projects/makkah-charter-mwl-en.html">Makkah Charter case study</a>, then book a session for your next date.',
+        'Start with the <a href="../insights/reports/mwl-ramadan-forum-visual-report-en.html">Ramadan Forum visual report</a>, <a href="../casestudy-mwl-en.html">Makkah Charter case study</a>, and <a href="../case-studies/jeddah-real-estate-forum-en.html">Jeddah Real Estate Forum case study</a>, then book a session for your next date.',
       ],
     ],
     finalTitle: 'Next institutional date on the calendar?',
@@ -84,6 +85,7 @@ const COPY = {
     ctaSecondary: 'تعرّف على ProjectLaunch™',
     ctaReport: 'اقرأ تقرير الملتقى الرمضاني',
     ctaCase: 'افتح دراسة حالة الرابطة',
+    ctaJeddahCase: 'دراسة ملتقى جدة للعقار',
     pressureTitle: 'الجدول المضغوط لا يبرّر اختصار الفكرة',
     pressureBody:
       'مواعيد الفعاليات المؤسسية تضغط التركيب وقفل المحتوى وبروفة البروتوكول في أيام لا أشهر. تعدد الموردين يستهلك هذا الوقت في التسليمات. استوديو واحد يصرفه على تجربة الضيف وما يراه القيادي يوم الجولة.',
@@ -96,7 +98,7 @@ const COPY = {
     ],
     proofTitle: 'دليل: رابطة العالم الإسلامي، الملتقى الرمضاني، جدة',
     proofBody:
-      'في جانب الرابطة بالملتقى الرمضاني في <a href="../locations/jeddah.html">جدة</a>، نفّذنا مجسماً تفاعلياً لأبرز مشاريعها، شاشات تفاصيل، تحكم إضاءة، تفاعل صحفي، وتجربة صور تذكارية تحت ضغط زمني شديد، مع إشادة شخصية من معالي الأمين العام. اقرأ <a href="../insights/reports/mwl-ramadan-forum-visual-report.html">التقرير البصري</a> و<a href="../insights/projects/makkah-charter-mwl.html">دراسة ميثاق مكة</a>.',
+      'في جانب الرابطة بالملتقى الرمضاني في <a href="../locations/jeddah.html">جدة</a>، نفّذنا مجسماً تفاعلياً لأبرز مشاريعها، شاشات تفاصيل، تحكم إضاءة، تفاعل صحفي، وتجربة صور تذكارية تحت ضغط زمني شديد، مع إشادة شخصية من معالي الأمين العام. اقرأ <a href="../insights/reports/mwl-ramadan-forum-visual-report.html">التقرير البصري</a> و<a href="../casestudy-mwl.html">دراسة ميثاق مكة</a>. وللهوية والكتالوج والفيلم السينمائي على نطاق الملتقى، راجع <a href="../case-studies/jeddah-real-estate-forum.html">دراسة ملتقى جدة للعقار</a>.',
     servicesTitle: 'القدرات وراء التسليم',
     services: [
       ['ProjectLaunch™', 'solutions/project-launch.html', 'إطار الجاهزية: قفل الرسالة، حزم الأصول، بروفة القبول'],
@@ -117,7 +119,7 @@ const COPY = {
       ],
       [
         'أين أرى سجل التسليم؟',
-        'ابدأ ب<a href="../insights/reports/mwl-ramadan-forum-visual-report.html">تقرير الملتقى الرمضاني</a> و<a href="../insights/projects/makkah-charter-mwl.html">دراسة ميثاق مكة</a>، ثم احجز جلسة لموعدك القادم.',
+        'ابدأ ب<a href="../insights/reports/mwl-ramadan-forum-visual-report.html">تقرير الملتقى الرمضاني</a> و<a href="../casestudy-mwl.html">دراسة ميثاق مكة</a> و<a href="../case-studies/jeddah-real-estate-forum.html">دراسة ملتقى جدة للعقار</a>، ثم احجز جلسة لموعدك القادم.',
       ],
     ],
     finalTitle: 'موعد مؤسسي قادم في الأجندة؟',
@@ -138,7 +140,8 @@ function page(lang) {
   const contact = `${P}contact-us${isEn ? '-en' : ''}.html`;
   const fullPl = `${P}solutions/project-launch${isEn ? '-en' : ''}.html`;
   const report = `${P}insights/reports/mwl-ramadan-forum-visual-report${isEn ? '-en' : ''}.html`;
-  const casestudy = `${P}insights/projects/makkah-charter-mwl${isEn ? '-en' : ''}.html`;
+  const casestudy = `${P}casestudy-mwl${isEn ? '-en' : ''}.html`;
+  const jeddahCase = `${P}case-studies/jeddah-real-estate-forum${isEn ? '-en' : ''}.html`;
   const phone = '+966502786513';
   const wa = `https://wa.me/966502786513?text=${encodeURIComponent(
     isEn
@@ -297,6 +300,7 @@ ${header}
         <div class="ie-proof-links">
           <a class="ie-btn ie-btn--ghost" href="${report}">${t.ctaReport}</a>
           <a class="ie-btn ie-btn--ghost" href="${casestudy}">${t.ctaCase}</a>
+          <a class="ie-btn ie-btn--ghost" href="${jeddahCase}">${t.ctaJeddahCase}</a>
         </div>
       </div>
     </div>

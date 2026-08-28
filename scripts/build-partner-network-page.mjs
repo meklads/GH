@@ -130,7 +130,7 @@ const COPY = {
     caseTags: 'تجارب تفاعلية · مجسمات معمارية · بيئة عرض',
     caseBody: 'في مشروع معرض رابطة العالم الإسلامي، طوّرت جرافيكس هاوس ونفّذت عناصر بصرية وتجريبية جمعت المجسمات المعمارية والتجارب التفاعلية وبيئات العرض, لتحويل محتوى المؤسسة إلى تجربة يرى فيها الجمهور المشاريع ويفهمها ويتفاعل معها.',
     caseVideoCta: 'فيلم المشروع',
-    caseHref: 'casestudy1.html',
+    caseHref: 'casestudy-mwl.html',
     whyTitle: 'لماذا جرافيكس هاوس؟',
     whyItems: [
       { title: 'أكثر من 20 عامًا من الخبرة', sub: 'منذ 2004' },
@@ -318,7 +318,7 @@ const COPY = {
     caseTags: 'Interactive Experiences + Architectural Maquettes + Presentation Environment',
     caseBody: 'For the Muslim World League exhibition, Graphics House developed and delivered visual and experiential elements combining architectural maquettes, interactive experiences, and presentation environments, turning institutional content into something audiences could see, understand, and engage with.',
     caseVideoCta: 'Project film',
-    caseHref: 'case-study-mwl-en.html',
+    caseHref: 'casestudy-mwl-en.html',
     whyTitle: 'Why Graphics House?',
     whyItems: [
       { title: 'Over 20 years of experience', sub: 'Since 2004' },

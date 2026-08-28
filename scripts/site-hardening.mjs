@@ -88,7 +88,7 @@ const EXPLICIT_PAIRS = {
   'contact-us-en.html': 'contact-us.html',
   'case-study-alrajhi-en.html': 'insights/projects/al-rajhi-riyadh.html',
   'case-study-anan-eskan-en.html': 'insights/projects/anan-eskan-riyadh.html',
-  'case-study-mwl-en.html': 'insights/projects/makkah-charter-mwl.html',
+  'case-study-mwl-en.html': 'casestudy-mwl.html',
   'careers-en.html': 'index.html',
   'offer-en.html': 'contact-us-en.html',
 };
@@ -725,7 +725,7 @@ for (const [from, to] of Object.entries(LEGACY_SERVICE_ROOT)) {
 const CASE_STUDY_REDIRECTS = {
   'case-study-alrajhi-en.html': 'insights/projects/al-rajhi-riyadh-en.html',
   'case-study-anan-eskan-en.html': 'insights/projects/anan-eskan-riyadh-en.html',
-  'case-study-mwl-en.html': 'insights/projects/makkah-charter-mwl-en.html',
+  'case-study-mwl-en.html': 'casestudy-mwl-en.html',
 };
 
 for (const [from, to] of Object.entries(CASE_STUDY_REDIRECTS)) {

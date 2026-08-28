@@ -119,13 +119,14 @@ const PRODUCTS = [
     caseStudies: [
       {
         slug: 'jeddah-forum',
-        img: '../assets/projects/animation/jeddah-forum.jpg',
-        tagAr: 'إنتاج سينمائي',
-        tagEn: 'Cinematic',
-        titleAr: 'منتدى جدة',
-        titleEn: 'Jeddah Forum',
-        leadAr: 'فيلم يحمل رسالة الحدث ويحفّز الطلب',
-        leadEn: 'Film that carries the event message and drives demand',
+        href: '../case-studies/jeddah-real-estate-forum',
+        img: '../assets/projects/jeddah-forum/catalog/page-01.jpg',
+        tagAr: 'هوية · كتالوج · فيلم CGI',
+        tagEn: 'Brand · Catalogue · CGI Film',
+        titleAr: 'ملتقى جدة للعقار',
+        titleEn: 'Jeddah Real Estate Forum',
+        leadAr: 'هوية بصرية، كتالوج فاخر، جدة سوبردوم 3D، وفيلم سينمائي تخيلي',
+        leadEn: 'Brand identity, premium catalogue, Superdome 3D, and cinematic CGI film',
       },
       {
         slug: 'wahat-al-salam',
@@ -465,6 +466,7 @@ const PRODUCTS = [
     caseStudies: [
       {
         slug: 'makkah-charter-mwl',
+        href: '../casestudy-mwl',
         img: '../assets/news/makkah-charter-01.jpeg',
         tagAr: 'هوية ومعرض',
         tagEn: 'Identity & exhibition',
@@ -866,7 +868,9 @@ function buildPremiumPage(product, isEn) {
   const caseStudiesHtml = (product.caseStudies || [])
     .map(
       (cs, i) => {
-        const href = `../insights/projects/${cs.slug}${isEn ? '-en' : ''}.html`;
+        const href = cs.href
+          ? `${cs.href}${isEn ? '-en' : ''}.html`
+          : `../insights/projects/${cs.slug}${isEn ? '-en' : ''}.html`;
         return `<a href="${href}" class="gl-case-card reveal" style="opacity:0;transform:translateY(20px);transition-delay:${(i * 0.08).toFixed(2)}s" data-cta="${ctaSlug}-case-${cs.slug}">
         <div class="gl-case-img"><img src="${cs.img}" alt="${isEn ? cs.titleEn : cs.titleAr}" loading="lazy" width="640" height="360"></div>
         <div class="gl-case-body">
