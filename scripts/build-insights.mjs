@@ -8,6 +8,18 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { analyticsHeadTags } from './analytics-snippet.mjs';
 import { getLayout } from './layout-partials.mjs';
+import {
+  renderArticleBody,
+  tldrBlock,
+  directAnswerBlock,
+  tocHtml,
+  shareBarHtml,
+  pickRelatedArticles,
+  relatedArticlesMainHtml,
+  articleSidebarHtml,
+  defaultMidCta,
+  faqAccordionHtml,
+} from './insights-article-template.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -195,7 +207,7 @@ function articleSchema(article, lang) {
     description: articleDescription(article, lang),
     image: `https://3dgraphicshouse.com/${article.image}`,
     datePublished: `${article.date}-01`,
-    author: { '@type': 'Organization', name: 'Graphics House' },
+    author: { '@type': 'Organization', name: 'Graphics House', url: 'https://3dgraphicshouse.com' },
     publisher: {
       '@type': 'Organization',
       name: 'Graphics House',
@@ -238,6 +250,7 @@ function headBlock(lang, meta) {
   const keywordsMeta = meta.keywords
     ? `\n<meta name="keywords" content="${esc(meta.keywords)}"/>`
     : '';
+  const ogImage = meta.ogImage || `${base}/assets/favicon/og-image.png`;
 
   return `<!DOCTYPE html>
 <html class="scroll-smooth" dir="${isEn ? 'ltr' : 'rtl'}" lang="${isEn ? 'en' : 'ar'}">
@@ -255,7 +268,7 @@ ${analyticsHeadTags(p)}
 <meta name="description" content="${esc(meta.description)}"/>${keywordsMeta}
 <meta property="og:title" content="${esc(meta.title)} | Graphics House">
 <meta property="og:description" content="${esc(meta.description)}">
-<meta property="og:image" content="${base}/assets/favicon/og-image.png">
+<meta property="og:image" content="${ogImage}">
 <meta property="og:type" content="${meta.ogType || 'website'}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="${p}assets/favicon/favicon-32.png">
@@ -264,23 +277,27 @@ ${analyticsHeadTags(p)}
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="${p}assets/site-header.css?v=35">
+<link rel="stylesheet" href="${p}assets/site-header.css?v=36">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=28">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=27">
-<link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=2">
-<link rel="stylesheet" href="${p}assets/gh-ar-typography.css?v=2">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=28">
+<link rel="stylesheet" href="${p}assets/gh-insights-article.css?v=1">
+<link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=9">
+${isEn ? `<link rel="stylesheet" href="${p}assets/gh-en-typography.css?v=1">` : `<link rel="stylesheet" href="${p}assets/gh-ar-typography.css?v=2">`}
 <script defer src="${p}assets/site-header.js?v=16"></script>
-<script defer src="${p}assets/gh-performance.js?v=9"></script>
+<script defer src="${p}assets/gh-performance.js?v=10"></script>
 <script defer src="${p}assets/gh-cta-track.js?v=1"></script>
 <script defer src="${p}assets/lang-switch.js?v=3"></script>
 </head>
 <body class="gh-insights">`;
 }
 
-function tailScripts(depth) {
+function tailScripts(depth, { article = false } = {}) {
   const p = depth > 0 ? '../'.repeat(depth) : '';
+  const articleJs = article
+    ? `\n<script defer src="${p}assets/gh-insights-article.js?v=1"></script>`
+    : '';
   return `
-<script defer src="${p}assets/gh-float-widgets.js?v=1"></script>
+<script defer src="${p}assets/gh-float-widgets.js?v=9"></script>${articleJs}
 </body></html>`;
 }
 
@@ -799,18 +816,31 @@ function buildArticle(article, lang) {
   const { header, footer } = getLayout(lang, depth);
   const p = '../../';
   const slug = `${article.slug}${isEn ? '-en' : ''}.html`;
-  const bodyHtml = renderBody(L(article.body));
+  const pageUrl = `https://3dgraphicshouse.com/insights/articles/${slug}`;
+  const bodyBlocks = L(article.body);
+  const midCtaHtml = defaultMidCta(isEn, p);
+  const { html: bodyHtml, toc } = renderArticleBody(bodyBlocks, {
+    isEn,
+    depthPrefix: p,
+    midCtaHtml,
+  });
   const description = articleDescription(article, lang);
+  const related = pickRelatedArticles(article, ARTICLES, 3);
+  const ogImage = article.image
+    ? `https://3dgraphicshouse.com/${article.image}`
+    : 'https://3dgraphicshouse.com/assets/favicon/og-image.png';
+  const imageCredit = article.imageCredit ? L(article.imageCredit) : '';
 
   const html = `${headBlock(lang, {
     depth: 2,
     title: L(article.title),
     description,
     keywords: articleKeywords(article, lang),
-    canonical: `https://3dgraphicshouse.com/insights/articles/${slug}`,
+    canonical: pageUrl,
     altEn: `https://3dgraphicshouse.com/insights/articles/${article.slug}-en.html`,
     altAr: `https://3dgraphicshouse.com/insights/articles/${article.slug}.html`,
     ogType: 'article',
+    ogImage,
   })}
 <script type="application/ld+json">${articleSchema(article, lang)}</script>
 ${header}
@@ -820,27 +850,36 @@ ${header}
       <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_back' : 'arrow_forward'}</span>
       ${backToInsights(isEn)}
     </a>
-    <article>
-      <header class="gh-article-header">
-        <span class="gh-ins-cat">${L(article.category)}</span>
-        <h1>${L(article.title)}</h1>
-        <p class="gh-dek">${L(article.excerpt)}</p>
-        <div class="gh-ins-card-meta" style="margin:0">
-          <time class="gh-byline" datetime="${article.date}">${L(article.dateLabel)}</time>
-          <span class="gh-ins-read-time">${readingMinutes(article, lang)}</span>
+    <div class="gh-article-layout">
+      <article class="gh-article-main">
+        <header class="gh-article-header">
+          <span class="gh-ins-cat">${L(article.category)}</span>
+          <h1>${L(article.title)}</h1>
+          <p class="gh-dek">${L(article.excerpt)}</p>
+          <div class="gh-ins-card-meta" style="margin:0">
+            <time class="gh-byline" datetime="${article.date}">${L(article.dateLabel)}</time>
+            <span class="gh-ins-read-time">${readingMinutes(article, lang)}</span>
+          </div>
+          ${shareBarHtml(pageUrl, L(article.title), isEn)}
+        </header>
+        <img class="gh-article-hero-img" src="${p}${article.image}" alt="${esc(L(article.title))}" loading="eager" fetchpriority="high">
+        ${imageCredit ? `<p class="gh-art-image-credit">${esc(imageCredit)}</p>` : ''}
+        <div class="gh-article-body-wrap">
+          ${tldrBlock(article.tldr, isEn)}
+          ${directAnswerBlock(article.directAnswer, isEn)}
+          ${tocHtml(toc, isEn, { mobile: true })}
+          ${bodyHtml}
+          ${faqAccordionHtml(article.faq, isEn)}
+          ${relatedArticlesMainHtml(related, lang, p)}
+          ${articleSolutionsFooter(isEn, p)}
         </div>
-      </header>
-      <img class="gh-article-hero-img" src="${p}${article.image}" alt="${esc(L(article.title))}" loading="lazy">
-      <div class="gh-article-body-wrap">
-        ${bodyHtml}
-        ${faqSectionHtml(article.faq, lang)}
-        ${articleSolutionsFooter(isEn, p)}
-      </div>
-    </article>
+      </article>
+      ${articleSidebarHtml({ toc, related, isEn, depthPrefix: p })}
+    </div>
   </div>
 </main>
 ${footer}
-${tailScripts(depth)}`;
+${tailScripts(depth, { article: true })}`;
 
   fs.writeFileSync(path.join(ROOT, 'insights/articles', slug), html, 'utf8');
   console.log('  article:', slug);

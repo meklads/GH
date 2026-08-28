@@ -29,30 +29,68 @@
   },
   "keywords": {
     "ar": {
-      "short": ["عائد التصور المعماري", "ROI archviz", "مبيعات عقارية"],
-      "long": ["كيف تقيس عائد الاستثمار في الإظهار المعماري", "مؤشرات أداء التصور البصري لمشاريع off-plan"]
+      "short": [
+        "عائد التصور المعماري",
+        "ROI archviz",
+        "مبيعات عقارية"
+      ],
+      "long": [
+        "كيف تقيس عائد الاستثمار في الإظهار المعماري",
+        "مؤشرات أداء التصور البصري لمشاريع off-plan"
+      ]
     },
     "en": {
-      "short": ["archviz ROI", "visualization ROI", "real estate sales"],
-      "long": ["how to measure architectural visualization ROI", "visual sales KPIs for GCC off-plan projects"]
+      "short": [
+        "archviz ROI",
+        "visualization ROI",
+        "real estate sales"
+      ],
+      "long": [
+        "how to measure architectural visualization ROI",
+        "visual sales KPIs for GCC off-plan projects"
+      ]
     }
   },
   "faq": [
     {
-      "q": { "ar": "ما أهم مؤشر لقياس عائد التصور المعماري؟", "en": "What is the top KPI for visualization ROI?" },
-      "a": { "ar": "معدل التحويل من زيارة صالة البيع إلى حجز، مع زمن البقاء كمؤشر مبكر.", "en": "Gallery visit-to-booking conversion rate, with dwell time as an early indicator." }
+      "q": {
+        "ar": "ما أهم مؤشر لقياس عائد التصور المعماري؟",
+        "en": "What is the top KPI for visualization ROI?"
+      },
+      "a": {
+        "ar": "معدل التحويل من زيارة صالة البيع إلى حجز، مع زمن البقاء كمؤشر مبكر.",
+        "en": "Gallery visit-to-booking conversion rate, with dwell time as an early indicator."
+      }
     },
     {
-      "q": { "ar": "هل يغطي الاستثمار البصري تكلفته؟", "en": "Does visual investment pay for itself?" },
-      "a": { "ar": "في مشاريع ضخمة، وحدة واحدة إضافية مباعة مبكراً قد تغطي النظام البصري بالكامل. الأرقام تختلف، لكن المنطق ثابت.", "en": "On major schemes, one additional early unit sold can cover the full visual system. Numbers vary, but the logic holds." }
+      "q": {
+        "ar": "هل يغطي الاستثمار البصري تكلفته؟",
+        "en": "Does visual investment pay for itself?"
+      },
+      "a": {
+        "ar": "في مشاريع ضخمة، وحدة واحدة إضافية مباعة مبكراً قد تغطي النظام البصري بالكامل. الأرقام تختلف، لكن المنطق ثابت.",
+        "en": "On major schemes, one additional early unit sold can cover the full visual system. Numbers vary, but the logic holds."
+      }
     },
     {
-      "q": { "ar": "متى نبدأ قياس ROI؟", "en": "When should ROI measurement start?" },
-      "a": { "ar": "قبل توقيع عقد الإنتاج البصري، بتحديد خط أساس للمبيعات المتوقعة ومؤشرات واضحة.", "en": "Before signing the visual production contract, by defining a sales baseline and clear KPIs." }
+      "q": {
+        "ar": "متى نبدأ قياس ROI؟",
+        "en": "When should ROI measurement start?"
+      },
+      "a": {
+        "ar": "قبل توقيع عقد الإنتاج البصري، بتحديد خط أساس للمبيعات المتوقعة ومؤشرات واضحة.",
+        "en": "Before signing the visual production contract, by defining a sales baseline and clear KPIs."
+      }
     },
     {
-      "q": { "ar": "ما الفرق بين الحد الأدنى والنظام المتكامل؟", "en": "What is the difference between minimum and integrated systems?" },
-      "a": { "ar": "الحد الأدنى يخدم قنوات محدودة. النظام المتكامل عبر [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) يخفض تكلفة التحديث على مدى 18 شهراً من المبيعات.", "en": "Minimum serves limited channels. An integrated [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) system lowers update cost over 18 months of sales." }
+      "q": {
+        "ar": "ما الفرق بين الحد الأدنى والنظام المتكامل؟",
+        "en": "What is the difference between minimum and integrated systems?"
+      },
+      "a": {
+        "ar": "الحد الأدنى يخدم قنوات محدودة. النظام المتكامل عبر [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html) يخفض تكلفة التحديث على مدى 18 شهراً من المبيعات.",
+        "en": "Minimum serves limited channels. An integrated [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html) system lowers update cost over 18 months of sales."
+      }
     }
   ],
   "body": {
@@ -448,5 +486,13 @@
         "text": "If you are preparing your next project launch, define your archviz ROI metrics today, before the first render. The gap between a developer who measures and one who guesses often shows up in Q1 sales numbers."
       }
     ]
+  },
+  "tldr": {
+    "ar": "كيف يُترجم الإنفاق على التصور المعماري إلى حجوزات أسرع وتسعير أقوى، بإطار عمل قابل للقياس لمطوري السعودية والخليج.",
+    "en": "How visual investment translates into faster bookings and stronger pricing, with a measurable framework for Saudi and GCC developers."
+  },
+  "directAnswer": {
+    "ar": "يسأل كل مدير مشروع عقاري في الرياض وجدة والدمام السؤال نفسه قبل توقيع عقد إنتاج بصري: ما عائد الاستثمار الحقيقي؟ في سوق يعتمد بشكل متزايد على البيع قبل البناء، لم يعد التصور المعماري رفاهية تسويقية، بل بنية تحتية لقرار الشراء. لكن الإجابة ليست في عدد الصور المُسلَّمة، بل في سرعة…",
+    "en": "Every real estate project director in Riyadh, Jeddah, and Dammam asks the same question before signing a visual production contract: what is the real return on investment? In a market that increasingly sells before construction, architectural visualization is no longer a marketi…"
   }
 }
