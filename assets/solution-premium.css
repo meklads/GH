@@ -926,18 +926,43 @@ body.gl-premium {
   text-decoration: none;
 }
 
-/* Video section light */
+/* Video / Shorts section */
 .gl-vid-sec {
-  background: #F7F5F0;
-  padding: clamp(72px, 10vw, 100px) 0;
+  background: linear-gradient(180deg, #F3F0E8 0%, #FAFAF8 55%, #F7F5F0 100%);
+  padding: clamp(72px, 10vw, 110px) 0;
+}
+
+.gl-vid-head {
+  text-align: center;
+  margin: 0 auto 48px;
+  padding: 0 clamp(20px, 4vw, 48px);
+}
+
+.gl-vid-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.5vw, 28px);
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
 }
 
 .gl-vid-card {
-  border-radius: 18px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 24px;
+  overflow: visible;
   background: #fff;
-  border: 1px solid rgba(10,10,10,.06);
-  box-shadow: 0 12px 36px rgba(10,10,10,.06);
+  border: 1px solid rgba(10, 10, 10, 0.06);
+  box-shadow: 0 18px 48px rgba(10, 10, 10, 0.07);
+  padding: 22px 18px 26px;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.gl-vid-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 56px rgba(10, 10, 10, 0.1);
 }
 
 .gl-vid-frame {
@@ -965,11 +990,48 @@ body.gl-premium {
   background: #111;
 }
 
-.gl-vid-body { padding: 18px 20px 22px; }
-
 .gl-vid-frame--short {
+  width: min(100%, 248px);
   aspect-ratio: 9 / 16;
-  max-height: 420px;
+  max-height: none;
+  margin: 0 auto 18px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #0A0A0A;
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.22),
+    0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.gl-vid-body {
+  width: 100%;
+  text-align: center;
+  padding: 0 6px;
+}
+
+.gl-vid-kicker {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C9A84C;
+}
+
+.gl-vid-body h3 {
+  margin: 0 0 8px;
+  font-size: clamp(16px, 1.5vw, 19px);
+  font-weight: 600;
+  line-height: 1.35;
+  color: #0A0A0A;
+}
+
+.gl-vid-body p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #666;
 }
 
 .gl-yt-play {
@@ -988,6 +1050,7 @@ body.gl-premium {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -997,26 +1060,26 @@ body.gl-premium {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(10, 10, 10, 0.28);
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.08), rgba(10, 10, 10, 0.42));
   transition: background .2s ease;
 }
 
 .gl-yt-play:hover .gl-yt-play-icon,
 .gl-yt-play:focus-visible .gl-yt-play-icon {
-  background: rgba(10, 10, 10, 0.42);
+  background: rgba(10, 10, 10, 0.5);
 }
 
 .gl-yt-play-icon .material-symbols-outlined {
-  font-size: 48px;
-  color: #fff;
-  background: rgba(201, 168, 76, 0.95);
+  font-size: 42px;
+  color: #0A0A0A;
+  background: #C9A84C;
   border-radius: 999px;
-  width: 64px;
-  height: 64px;
+  width: 58px;
+  height: 58px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
 .gl-vid-frame iframe {
@@ -1041,10 +1104,13 @@ body.gl-premium {
   text-decoration: underline;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
+  .gl-vid-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
   .gl-vid-frame--short {
-    aspect-ratio: 16 / 9;
-    max-height: none;
+    width: min(100%, 280px);
   }
 }
 
