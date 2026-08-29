@@ -21,7 +21,7 @@ const PAGES = [
       p1: 'MWL Interactive Maquette',
       p2: 'Makkah Charter Experience',
       p3: 'Interactive Exhibition Hall',
-      overviewAlt: 'Muslim World League interactive maquette — Makkah Charter',
+      overviewAlt: 'Muslim World League interactive maquette, Makkah Charter',
       heroAlt: 'Muslim World League interactive exhibition',
     },
   },
@@ -34,7 +34,7 @@ const PAGES = [
       p1: 'مجسم رابطة العالم الإسلامي التفاعلي',
       p2: 'تجربة ميثاق مكة',
       p3: 'قاعة المعرض التفاعلي',
-      overviewAlt: 'مجسم تفاعلي لرابطة العالم الإسلامي — ميثاق مكة',
+      overviewAlt: 'مجسم تفاعلي لرابطة العالم الإسلامي, ميثاق مكة',
       heroAlt: 'المعرض التفاعلي لرابطة العالم الإسلامي',
     },
   },
@@ -93,7 +93,7 @@ function fix(html, cfg) {
 <!-- ── Process`
   );
 
-  // Portfolio grid — replace entire 3-card block
+  // Portfolio grid, replace entire 3-card block
   const cards = [
     { src: p1, title: cfg.titles.p1, delay: '.05s' },
     { src: p2, title: cfg.titles.p2, delay: '.12s' },

@@ -58,7 +58,7 @@ gtag('config','G-Y67JVE898Z');
      ARABIC-SPECIFIC OVERRIDES & ADDITIONS
      ========================================== */
 
-  /* Homepage typography — light Tajawal, gold accents */
+  /* Homepage typography, light Tajawal, gold accents */
   body {
     font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif !important;
   }
@@ -104,7 +104,7 @@ gtag('config','G-Y67JVE898Z');
   .ar-env-card a:hover { opacity: .85; }
 
 
-  /* Trademark glyph (TM) — LTR mark, correct superscript seat */
+  /* Trademark glyph (TM), LTR mark, correct superscript seat */
   .pl-mark {
     display: inline-block;
     direction: ltr;
@@ -112,7 +112,7 @@ gtag('config','G-Y67JVE898Z');
     white-space: nowrap;
     font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   }
-  .tm, h1 .tm, .pl-hero h1 .tm, .pl-mark .tm {
+  .tm, h1 .tm.pl-hero h1 .tm.pl-mark .tm {
     font-family: Inter, 'Helvetica Neue', Arial, sans-serif !important;
     font-weight: 700 !important;
     font-size: .42em !important;
@@ -225,7 +225,7 @@ gtag('config','G-Y67JVE898Z');
     padding:8px 12px 12px; background:transparent; border:none;
     text-align:center; width:100%;
   }
-  .pl-hero-copy-card, .pl-hero-copy-card * { text-align:center !important; }
+  .pl-hero-copy-card.pl-hero-copy-card * { text-align:center !important; }
   .pl-hero-eyebrow-ar {
     display:inline-block; color:#fff; font-size:11px; font-weight:700;
     letter-spacing:.28em; margin-bottom:18px; text-transform:uppercase;
@@ -250,7 +250,7 @@ gtag('config','G-Y67JVE898Z');
     text-shadow:0 4px 40px rgba(0,0,0,.6);
   }
   .pl-hero-sub {
-    /* Same size as homepage subtitle — bold only */
+    /* Same size as homepage subtitle, bold only */
     color:rgba(255,255,255,.8) !important;
     font-size:clamp(14px,1.4vw,17px) !important;
     font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif !important;
@@ -259,7 +259,7 @@ gtag('config','G-Y67JVE898Z');
     opacity:1 !important; max-width:640px;
     text-shadow:0 2px 12px rgba(0,0,0,.5);
   }
-  /* Hero capabilities bar — pinned at bottom like homepage */
+  /* Hero capabilities bar, pinned at bottom like homepage */
   .pl-hero .hero-caps-bar {
     display:flex; align-items:center; gap:8px; flex-wrap:nowrap;
     justify-content:center; margin-top:16px; margin-bottom:0; padding:8px 4px 0;
@@ -304,7 +304,7 @@ gtag('config','G-Y67JVE898Z');
     .pl-hero .cap-bar-item img { height:22px; }
     .pl-hero .cap-bar-label { font-size:10px; }
   }
-  /* DAMAC white pill CTAs — larger readable Arabic */
+  /* DAMAC white pill CTAs, larger readable Arabic */
   .pl-btn-pill {
     display:inline-flex; align-items:center; justify-content:center; gap:10px;
     border-radius:999px !important;
@@ -504,13 +504,13 @@ gtag('config','G-Y67JVE898Z');
   .ar-form { display:grid; grid-template-columns:1fr 1fr; gap:18px 16px; }
   @media(max-width:560px){ .ar-form { grid-template-columns:1fr; } }
   .ar-form label { display:none; }
-  .ar-form input, .ar-form select {
+  .ar-form input.ar-form select {
     width:100%; padding:12px 2px 14px;
     background:transparent; border:none; border-bottom:1.5px solid rgba(10,10,10,.14);
     border-radius:0; color:#0A0A0A; font-family:'Tajawal',sans-serif; font-size:15px;
     transition:border-color .2s; -webkit-appearance:none;
   }
-  .ar-form input:focus, .ar-form select:focus {
+  .ar-form input:focus.ar-form select:focus {
     outline:none; border-bottom-color:#C9A84C;
   }
   .ar-form input::placeholder { color:rgba(10,10,10,.38); }
@@ -592,7 +592,7 @@ gtag('config','G-Y67JVE898Z');
   .ar-sticky.is-hidden { display:none !important; }
   .ar-sticky .ar-submit { font-size:15px; }
 
-  /* Section labels — thin gold underline accent */
+  /* Section labels, thin gold underline accent */
   .font-label-caps.text-primary {
     position:relative; display:inline-block; padding-bottom:10px;
   }
@@ -696,7 +696,7 @@ gtag('config','G-Y67JVE898Z');
   .ar-media-card:hover { transform:translateY(-3px); box-shadow:0 16px 40px rgba(10,10,10,.08); }
   .ar-media-card .ar-media-body { padding:20px 22px 22px; background:#fff; }
 
-  /* Crop letterbox by shortening height only — width stays 100%, no zoom/scale */
+  /* Crop letterbox by shortening height only, width stays 100%, no zoom/scale */
   .ar-media-frame {
     position:relative;
     width:100%;
@@ -938,7 +938,7 @@ gtag('config','G-Y67JVE898Z');
     border-radius:22px;
   }
 
-  /* Homepage MWL gallery (s3) — scoped for ProjectLaunch */
+  /* Homepage MWL gallery (s3), scoped for ProjectLaunch */
   .pl-s3-wrap { position:relative; width:100%; }
   .pl-s3-image {
     position:relative; width:100%; border-radius:4px; overflow:hidden;
@@ -1024,7 +1024,7 @@ gtag('config','G-Y67JVE898Z');
       line-height:1.15 !important;
     }
     .pl-hero-tagline {
-      /* keep homepage clamp — do not shrink below home hero */
+      /* keep homepage clamp, do not shrink below home hero */
       margin-bottom:0 !important;
       max-width:20em;
     }
@@ -1172,849 +1172,849 @@ gtag('config','G-Y67JVE898Z');
 
 <body class="bg-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
 <div id="loader" aria-hidden="true">
-  <img src="../assets/logo-gold.png" alt="" width="120" height="40" style="height:40px;width:auto">
-  <div id="loader-bar-track"><div id="loader-bar"></div></div>
+ <img src="../assets/logo-gold.png" alt="" width="120" height="40" style="height:40px;width:auto">
+ <div id="loader-bar-track"><div id="loader-bar"></div></div>
 </div>
 <a class="gh-skip-link" href="#main-content">تخطي إلى المحتوى الرئيسي</a>
 
 <!-- ===== SITE HEADER (Arabic) ===== -->
 <header class="header" id="header">
-  <div class="container header-inner">
-    <a href="/index-ar.html" class="logo">
-      <img src="../assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="75">
-    </a>
-    <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
-      <a class="nav-link" href="../who-we-are.html">من نحن</a>
-      <div class="nav-mega-item" data-mega="solutions">
-        <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
-          حلولنا
-          <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
-        </button>
-        <div class="mega-menu mega-menu-solutions" dir="rtl">
-          <div class="mm-panel">
-            <div class="mm-panel-head">
-              <span class="mm-panel-label">أنظمتنا المتكاملة</span>
-              <p class="mm-panel-desc">حلول أعمال جاهزة للمطورين والمكاتب الهندسية</p>
-            </div>
-            <div class="mm-main">
-              <div class="mm-grid">
-                <a href="../solutions/project-launch.html" class="mm-card" data-solution="project">
-                  <div class="mm-icon"><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span></div>
-                  <div class="mm-title" dir="ltr">ProjectLaunch<span class="tm">&#8482;</span></div>
-                  <div class="mm-sub">نظام إطلاق المشاريع العقارية</div>
-                  <div class="mm-desc">حل متكامل لإطلاق المشاريع العقارية يشمل التصور، العلامة التجارية، التسويق ودعم المبيعات.</div>
-                  <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
-                </a>
-                <a href="../solutions/growth-launch.html" class="mm-card" data-solution="growth">
-                  <div class="mm-icon"><span class="material-symbols-outlined" aria-hidden="true">campaign</span></div>
-                  <div class="mm-title" dir="ltr">GrowthLaunch<span class="tm">&#8482;</span></div>
-                  <div class="mm-sub">نظام توليد العملاء والمبيعات</div>
-                  <div class="mm-desc">توليد عملاء مؤهلين، أتمتة المتابعة، وتحسين معدلات التحويل.</div>
-                  <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
-                </a>
-                <a href="../solutions/brand-scale.html" class="mm-card" data-solution="brand">
-                  <div class="mm-icon"><span class="material-symbols-outlined" aria-hidden="true">diamond</span></div>
-                  <div class="mm-title" dir="ltr">BrandScale<span class="tm">&#8482;</span></div>
-                  <div class="mm-sub">نظام نمو العلامات التجارية</div>
-                  <div class="mm-desc">بناء وتقوية وتنمية علامتك التجارية من خلال حلول إبداعية وتسويقية متكاملة.</div>
-                  <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="nav-mega-item" data-mega="services">
-        <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
-          خدماتنا
-          <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
-        </button>
-        <div class="mega-menu mega-menu-services" dir="rtl">
-          <div class="mm-panel">
-            <div class="mm-panel-head">
-              <span class="mm-panel-label">خدماتنا الإبداعية</span>
-              <p class="mm-panel-desc">من التصور المعماري إلى الإنتاج الإعلامي المتكامل</p>
-            </div>
-            <div class="mm-main">
-              <div class="mm-grid">
-                <div class="mm-col mm-col-core">
-                  <div class="mm-col-header">الخدمات الأساسية</div>
-                  <a href="../services/maquettes.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">home_work</span></span>
-                    <span class="mm-svc-body"><span class="mm-svc-text">المجسمات المعمارية</span><span class="mm-svc-desc">مجسمات دقيقة للمشاريع</span></span>
-                  </a>
-                  <a href="../services/animation.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span>
-                    <span class="mm-svc-body"><span class="mm-svc-text">الأفلام الثري دي</span><span class="mm-svc-desc">أفلام CGI سينمائية</span></span>
-                  </a>
-                  <a href="../services/interactive.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span>
-                    <span class="mm-svc-body"><span class="mm-svc-text">العروض التفاعلية</span><span class="mm-svc-desc">تجارب رقمية غامرة</span></span>
-                  </a>
-                </div>
-                <div class="mm-col">
-                  <div class="mm-col-header">الإبداع والإنتاج</div>
-                  <a href="../services/rendering.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span>
-                    <span class="mm-svc-body"><span class="mm-svc-text">الإظهار المعماري</span><span class="mm-svc-desc">صور ثلاثية الأبعاد سينمائية</span></span>
-                  </a>
-                  <a href="../services/production.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">videocam</span></span>
-                    <span class="mm-svc-body"><span class="mm-svc-text">التصوير والإنتاج الإعلامي</span><span class="mm-svc-desc">تصوير وإنتاج متكامل</span></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="nav-link" href="../portfolio.html">أعمالنا</a>
-      <a class="nav-link" href="../casestudy1.html">مشاريع ناجحة</a>
-      <a class="nav-link" href="../contact-us.html">للاتصال بنا</a>
-      <a class="nav-link nav-link-accent" href="../insights/index.html">رؤى</a>
-      <a class="nav-link nav-mobile-cta" href="#lead-form">احجز جلسة إطلاق مشروعك</a>
-    </nav>
-    <div class="nav-actions">
-      <div class="lang-switch" role="group" aria-label="اختيار اللغة">
-        <a href="../index-ar.html" class="lang-switch-link is-active" hreflang="ar">AR</a>
-        <span class="lang-switch-sep" aria-hidden="true">|</span>
-        <a href="../index.html" class="lang-switch-link" hreflang="en">EN</a>
-      </div>
-      <a href="#lead-form" class="nav-cta btn-pill btn-pill-gold">احجز جلسة إطلاق مشروعك</a>
-    </div>
-    <button type="button" class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-  </div>
-  <div class="nav-backdrop" id="navBackdrop" hidden></div>
+ <div class="container header-inner">
+ <a href="/index-ar.html" class="logo">
+ <img src="../assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="75">
+ </a>
+ <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
+ <a class="nav-link" href="../who-we-are.html">من نحن</a>
+ <div class="nav-mega-item" data-mega="solutions">
+ <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
+ حلولنا
+ <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
+ </button>
+ <div class="mega-menu mega-menu-solutions" dir="rtl">
+ <div class="mm-panel">
+ <div class="mm-panel-head">
+ <span class="mm-panel-label">أنظمتنا المتكاملة</span>
+ <p class="mm-panel-desc">حلول أعمال جاهزة للمطورين والمكاتب الهندسية</p>
+ </div>
+ <div class="mm-main">
+ <div class="mm-grid">
+ <a href="../solutions/project-launch.html" class="mm-card" data-solution="project">
+ <div class="mm-icon"><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span></div>
+ <div class="mm-title" dir="ltr">ProjectLaunch<span class="tm">&#8482;</span></div>
+ <div class="mm-sub">نظام إطلاق المشاريع العقارية</div>
+ <div class="mm-desc">حل متكامل لإطلاق المشاريع العقارية يشمل التصور، العلامة التجارية، التسويق ودعم المبيعات.</div>
+ <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
+ </a>
+ <a href="../solutions/growth-launch.html" class="mm-card" data-solution="growth">
+ <div class="mm-icon"><span class="material-symbols-outlined" aria-hidden="true">campaign</span></div>
+ <div class="mm-title" dir="ltr">GrowthLaunch<span class="tm">&#8482;</span></div>
+ <div class="mm-sub">نظام توليد العملاء والمبيعات</div>
+ <div class="mm-desc">توليد عملاء مؤهلين، أتمتة المتابعة، وتحسين معدلات التحويل.</div>
+ <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
+ </a>
+ <a href="../solutions/brand-scale.html" class="mm-card" data-solution="brand">
+ <div class="mm-icon"><span class="material-symbols-outlined" aria-hidden="true">diamond</span></div>
+ <div class="mm-title" dir="ltr">BrandScale<span class="tm">&#8482;</span></div>
+ <div class="mm-sub">نظام نمو العلامات التجارية</div>
+ <div class="mm-desc">بناء وتقوية وتنمية علامتك التجارية من خلال حلول إبداعية وتسويقية متكاملة.</div>
+ <div class="mm-cta">اكتشف المزيد <span class="material-symbols-outlined">arrow_forward</span></div>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="nav-mega-item" data-mega="services">
+ <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
+ خدماتنا
+ <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
+ </button>
+ <div class="mega-menu mega-menu-services" dir="rtl">
+ <div class="mm-panel">
+ <div class="mm-panel-head">
+ <span class="mm-panel-label">خدماتنا الإبداعية</span>
+ <p class="mm-panel-desc">من التصور المعماري إلى الإنتاج الإعلامي المتكامل</p>
+ </div>
+ <div class="mm-main">
+ <div class="mm-grid">
+ <div class="mm-col mm-col-core">
+ <div class="mm-col-header">الخدمات الأساسية</div>
+ <a href="../services/maquettes.html" class="mm-svc-link">
+ <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">home_work</span></span>
+ <span class="mm-svc-body"><span class="mm-svc-text">المجسمات المعمارية</span><span class="mm-svc-desc">مجسمات دقيقة للمشاريع</span></span>
+ </a>
+ <a href="../services/animation.html" class="mm-svc-link">
+ <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span>
+ <span class="mm-svc-body"><span class="mm-svc-text">الأفلام الثري دي</span><span class="mm-svc-desc">أفلام CGI سينمائية</span></span>
+ </a>
+ <a href="../services/interactive.html" class="mm-svc-link">
+ <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span>
+ <span class="mm-svc-body"><span class="mm-svc-text">العروض التفاعلية</span><span class="mm-svc-desc">تجارب رقمية غامرة</span></span>
+ </a>
+ </div>
+ <div class="mm-col">
+ <div class="mm-col-header">الإبداع والإنتاج</div>
+ <a href="../services/rendering.html" class="mm-svc-link">
+ <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span>
+ <span class="mm-svc-body"><span class="mm-svc-text">الإظهار المعماري</span><span class="mm-svc-desc">صور ثلاثية الأبعاد سينمائية</span></span>
+ </a>
+ <a href="../services/production.html" class="mm-svc-link">
+ <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">videocam</span></span>
+ <span class="mm-svc-body"><span class="mm-svc-text">التصوير والإنتاج الإعلامي</span><span class="mm-svc-desc">تصوير وإنتاج متكامل</span></span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <a class="nav-link" href="../portfolio.html">أعمالنا</a>
+ <a class="nav-link" href="../casestudy1.html">مشاريع ناجحة</a>
+ <a class="nav-link" href="../contact-us.html">للاتصال بنا</a>
+ <a class="nav-link nav-link-accent" href="../insights/index.html">رؤى</a>
+ <a class="nav-link nav-mobile-cta" href="#lead-form">احجز جلسة إطلاق مشروعك</a>
+ </nav>
+ <div class="nav-actions">
+ <div class="lang-switch" role="group" aria-label="اختيار اللغة">
+ <a href="../index-ar.html" class="lang-switch-link is-active" hreflang="ar">AR</a>
+ <span class="lang-switch-sep" aria-hidden="true">|</span>
+ <a href="../index.html" class="lang-switch-link" hreflang="en">EN</a>
+ </div>
+ <a href="#lead-form" class="nav-cta btn-pill btn-pill-gold">احجز جلسة إطلاق مشروعك</a>
+ </div>
+ <button type="button" class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav">
+ <span class="material-symbols-outlined">menu</span>
+ </button>
+ </div>
+ <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
 
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 
-<!-- ===== 01. HERO — Full-screen MWL environment image ===== -->
+<!-- ===== 01. HERO, Full-screen MWL environment image ===== -->
 <section class="pl-hero relative overflow-hidden overflow-x-clip">
-  <div class="pl-hero-media">
-    <picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="بيئة إطلاق متكاملة، رابطة العالم الإسلامي" loading="eager"></picture>
-  </div>
-  <div class="pl-hero-vignette" aria-hidden="true"></div>
-  <div class="pl-hero-bottom-glow" aria-hidden="true"></div>
-  <div class="pl-hero-bottom-panel">
-    <div class="pl-hero-bottom-panel__inner">
-      <div class="pl-hero-copy-card">
-        <span class="pl-hero-eyebrow-ar hero-enter" style="transition-delay:0ms">الحل الرائد</span>
-        <h1 class="hero-enter" style="transition-delay:120ms"><span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span></h1>
-        <p class="pl-hero-tagline hero-enter" style="transition-delay:200ms">من قصة المخطط الرئيسي إلى صالة بيع تُقنع المستثمر قبل الخرسانة</p>
-        <p class="pl-hero-sub hero-enter" style="transition-delay:240ms">مشكلة المطور: أصول متفرقة ورسالة غير موحّدة. ProjectLaunch™ يبني نظام إطلاق واحد: <a href="../services/branding.html">الهوية البصرية</a>، <a href="../services/rendering.html">تصور</a>، <a href="../services/cinematic-cgi.html">أفلام CGI</a>، <a href="../services/maquettes.html">مجسمات ذكية</a>، و<a href="../services/interactive-experiences.html">تفاعلي</a>.</p>
-        <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-5" style="transition-delay:360ms">
-          <a href="#lead-form" class="pl-btn-pill pl-btn-pill-white" data-cta="hero-book">احجز جلسة إطلاق مشروعك</a>
-          <a href="../portfolio.html" class="pl-btn-pill pl-btn-pill-ghost">مشاهدة أعمالنا</a>
-        </div>
-      </div>
-      <div class="hero-caps-bar hero-enter" style="transition-delay:480ms" aria-label="قدرات المنظومة">
-        <div class="cap-bar-item">
-          <img loading="lazy" src="../assets/icons/tech.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-          <span class="cap-bar-label">ميديا برودكشن</span>
-        </div>
-        <div class="cap-bar-dot" aria-hidden="true"></div>
-        <div class="cap-bar-item">
-          <img loading="lazy" src="../assets/icons/gallery.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-          <span class="cap-bar-label">جاليريات وديكور</span>
-        </div>
-        <div class="cap-bar-dot" aria-hidden="true"></div>
-        <div class="cap-bar-item">
-          <img loading="lazy" src="../assets/icons/models.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-          <span class="cap-bar-label">مجسمات ذكية</span>
-        </div>
-        <div class="cap-bar-dot" aria-hidden="true"></div>
-        <div class="cap-bar-item">
-          <img loading="lazy" src="../assets/icons/interactive.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-          <span class="cap-bar-label">تجارب تفاعلية</span>
-        </div>
-        <div class="cap-bar-dot" aria-hidden="true"></div>
-        <div class="cap-bar-item">
-          <img loading="lazy" src="../assets/icons/cinematic.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
-          <span class="cap-bar-label">سينمائي CGI</span>
-        </div>
-      </div>
-    </div>
-  </div>
+ <div class="pl-hero-media">
+ <picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="بيئة إطلاق متكاملة، رابطة العالم الإسلامي" loading="eager"></picture>
+ </div>
+ <div class="pl-hero-vignette" aria-hidden="true"></div>
+ <div class="pl-hero-bottom-glow" aria-hidden="true"></div>
+ <div class="pl-hero-bottom-panel">
+ <div class="pl-hero-bottom-panel__inner">
+ <div class="pl-hero-copy-card">
+ <span class="pl-hero-eyebrow-ar hero-enter" style="transition-delay:0ms">الحل الرائد</span>
+ <h1 class="hero-enter" style="transition-delay:120ms"><span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span></h1>
+ <p class="pl-hero-tagline hero-enter" style="transition-delay:200ms">من قصة المخطط الرئيسي إلى صالة بيع تُقنع المستثمر قبل الخرسانة</p>
+ <p class="pl-hero-sub hero-enter" style="transition-delay:240ms">مشكلة المطور: أصول متفرقة ورسالة غير موحّدة. ProjectLaunch™ يبني نظام إطلاق واحد: <a href="../services/branding.html">الهوية البصرية</a>، <a href="../services/rendering.html">تصور</a>، <a href="../services/cinematic-cgi.html">أفلام CGI</a>، <a href="../services/maquettes.html">مجسمات ذكية</a>، و<a href="../services/interactive-experiences.html">تفاعلي</a>.</p>
+ <div class="hero-enter flex flex-wrap justify-center gap-4 md:gap-5" style="transition-delay:360ms">
+ <a href="#lead-form" class="pl-btn-pill pl-btn-pill-white" data-cta="hero-book">احجز جلسة إطلاق مشروعك</a>
+ <a href="../portfolio.html" class="pl-btn-pill pl-btn-pill-ghost">مشاهدة أعمالنا</a>
+ </div>
+ </div>
+ <div class="hero-caps-bar hero-enter" style="transition-delay:480ms" aria-label="قدرات المنظومة">
+ <div class="cap-bar-item">
+ <img loading="lazy" src="../assets/icons/tech.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+ <span class="cap-bar-label">ميديا برودكشن</span>
+ </div>
+ <div class="cap-bar-dot" aria-hidden="true"></div>
+ <div class="cap-bar-item">
+ <img loading="lazy" src="../assets/icons/gallery.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+ <span class="cap-bar-label">جاليريات وديكور</span>
+ </div>
+ <div class="cap-bar-dot" aria-hidden="true"></div>
+ <div class="cap-bar-item">
+ <img loading="lazy" src="../assets/icons/models.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+ <span class="cap-bar-label">مجسمات ذكية</span>
+ </div>
+ <div class="cap-bar-dot" aria-hidden="true"></div>
+ <div class="cap-bar-item">
+ <img loading="lazy" src="../assets/icons/interactive.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+ <span class="cap-bar-label">تجارب تفاعلية</span>
+ </div>
+ <div class="cap-bar-dot" aria-hidden="true"></div>
+ <div class="cap-bar-item">
+ <img loading="lazy" src="../assets/icons/cinematic.png" alt="" width="38" height="38" style="height:38px;width:auto;filter:brightness(0.85) saturate(0.7)">
+ <span class="cap-bar-label">سينمائي CGI</span>
+ </div>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- ===== 02. THE COMPLETE SYSTEM ===== -->
 <section class="py-[100px] px-8 md:px-12">
-  <div class="max-w-7xl mx-auto ar-system">
-    <div class="reveal ar-system-copy" style="opacity:0;transform:translateY(24px)">
-      <span class="svc-tag mb-6 block">الحل الرائد</span>
-      <h2 class="font-headline-xl text-on-background mb-6">مشروعك يحتاج نظام إطلاق، لا مقاولين متفرّقين</h2>
-      <p class="font-body-lg text-secondary mb-8 opacity-80 leading-relaxed"><span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> يجمع كل قدرة لفتح المبيعات على الخارطة: <a href="../services/branding.html">هوية</a>، محتوى، مجسم، صالة، وتركيب ميداني بلغة بصرية واحدة. راجع <a href="../insights/articles/saudi-offplan-visual-readiness.html">جاهزية الإطلاق في السعودية</a>.</p>
-      <div class="ar-feat-grid">
-        <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p><a href="../services/branding.html">هوية معمارية</a> ومخطط رسالة للمشروع</p></div>
-        <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>رندرات فوتوريالية وأفلام CGI سينمائية</p></div>
-        <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>مجسمات ذكية بإضاءة وطبقات تفاعلية</p></div>
-        <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>تجارب تفاعلية لاختيار الوحدات والمخططات</p></div>
-        <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>ديكور صالة البيع يعرض كل أصل بصري. تشطيب الصالة يمكن مواءمته مع <a href="https://turriva.com" target="_blank" rel="noopener noreferrer">توريفا</a> بعد قفل المواصفات</p></div>
-        <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>تصوير وإخراج عبر <a href="../services/production.html">Dot4Life production</a> وتركيب في الموقع</p></div>
-      </div>
-      <div class="mt-10">
-        <a href="#lead-form" class="pl-btn-pill pl-btn-on-light" data-cta="system-book">احجز جلسة إطلاق مشروعك</a>
-      </div>
-    </div>
-    <div class="reveal ar-system-media" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
-      <div class="ar-img-frame">
-        <div class="gh-ambient-dual">
-          <video class="gh-autoplay gh-ambient-video" autoplay loop muted playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="../assets/projects/animation/real-estate-services.jpg" title="خدمات العقارات — Graphics House" data-pl-src="../assets/videos/GH-Real-estate-services.mp4" data-pl-src-mobile="../assets/videos/GH-Real-estate-services-mobile.mp4"></video>
-          <picture><source srcset="../assets/projects/animation/real-estate-services.webp" type="image/webp"><img class="gh-ambient-poster-mobile" src="../assets/projects/animation/real-estate-services.jpg" alt="خدمات العقارات — Graphics House" loading="eager" decoding="async"></picture>
-        </div>
-      </div>
-    </div>
-  </div>
+ <div class="max-w-7xl mx-auto ar-system">
+ <div class="reveal ar-system-copy" style="opacity:0;transform:translateY(24px)">
+ <span class="svc-tag mb-6 block">الحل الرائد</span>
+ <h2 class="font-headline-xl text-on-background mb-6">مشروعك يحتاج نظام إطلاق، لا مقاولين متفرّقين</h2>
+ <p class="font-body-lg text-secondary mb-8 opacity-80 leading-relaxed"><span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> يجمع كل قدرة لفتح المبيعات على الخارطة: <a href="../services/branding.html">هوية</a>، محتوى، مجسم، صالة، وتركيب ميداني بلغة بصرية واحدة. راجع <a href="../insights/articles/saudi-offplan-visual-readiness.html">جاهزية الإطلاق في السعودية</a>.</p>
+ <div class="ar-feat-grid">
+ <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p><a href="../services/branding.html">هوية معمارية</a> ومخطط رسالة للمشروع</p></div>
+ <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>رندرات فوتوريالية وأفلام CGI سينمائية</p></div>
+ <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>مجسمات ذكية بإضاءة وطبقات تفاعلية</p></div>
+ <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>تجارب تفاعلية لاختيار الوحدات والمخططات</p></div>
+ <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>ديكور صالة البيع يعرض كل أصل بصري. تشطيب الصالة يمكن مواءمته مع <a href="https://turriva.com" target="_blank" rel="noopener noreferrer">توريفا</a> بعد قفل المواصفات</p></div>
+ <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>تصوير وإخراج عبر <a href="../services/production.html">Dot4Life production</a> وتركيب في الموقع</p></div>
+ </div>
+ <div class="mt-10">
+ <a href="#lead-form" class="pl-btn-pill pl-btn-on-light" data-cta="system-book">احجز جلسة إطلاق مشروعك</a>
+ </div>
+ </div>
+ <div class="reveal ar-system-media" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
+ <div class="ar-img-frame">
+ <div class="gh-ambient-dual">
+ <video class="gh-autoplay gh-ambient-video" autoplay loop muted playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="../assets/projects/animation/real-estate-services.jpg" title="خدمات العقارات, Graphics House" data-pl-src="../assets/videos/GH-Real-estate-services.mp4" data-pl-src-mobile="../assets/videos/GH-Real-estate-services-mobile.mp4"></video>
+ <picture><source srcset="../assets/projects/animation/real-estate-services.webp" type="image/webp"><img class="gh-ambient-poster-mobile" src="../assets/projects/animation/real-estate-services.jpg" alt="خدمات العقارات, Graphics House" loading="eager" decoding="async"></picture>
+ </div>
+ </div>
+ </div>
+ </div>
 </section>
 
-<!-- ===== 03. METHODOLOGY — 4 oval steps ===== -->
+<!-- ===== 03. METHODOLOGY, 4 oval steps ===== -->
 <section class="py-[100px] ar-band-cream border-t border-white/5">
-  <div class="px-8 md:px-12 max-w-container-max mx-auto">
-    <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
-      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">كيف نعمل</span>
-      <h2 class="font-headline-xl text-on-background">المنهجية</h2>
-    </div>
-    <div class="ar-steps">
-      <div class="ar-step reveal" style="opacity:0;transform:translateY(24px);transition-delay:0.00s">
-        <div class="ar-step-num">01</div>
-        <p>قفل التموضع والرسالة واللغة البصرية</p>
-      </div>
-      <div class="ar-step reveal" style="opacity:0;transform:translateY(24px);transition-delay:0.08s">
-        <div class="ar-step-num">02</div>
-        <p>إنتاج CGI والأفلام والمجسمات والطبقات التفاعلية</p>
-      </div>
-      <div class="ar-step reveal" style="opacity:0;transform:translateY(24px);transition-delay:0.16s">
-        <div class="ar-step-num">03</div>
-        <p>تصميم صالة البيع وتجهيز الفراغ للوسيط والمشتري</p>
-      </div>
-      <div class="ar-step reveal" style="opacity:0;transform:translateY(24px);transition-delay:0.24s">
-        <div class="ar-step-num">04</div>
-        <p>تصوير، تركيب، تسليم، وتدريب فريق المبيعات</p>
-      </div>
-    </div>
-  </div>
+ <div class="px-8 md:px-12 max-w-container-max mx-auto">
+ <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
+ <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">كيف نعمل</span>
+ <h2 class="font-headline-xl text-on-background">المنهجية</h2>
+ </div>
+ <div class="ar-steps">
+ <div class="ar-step reveal" style="opacity:0;transform:translateY(24px);transition-delay:0.00s">
+ <div class="ar-step-num">01</div>
+ <p>قفل التموضع والرسالة واللغة البصرية</p>
+ </div>
+ <div class="ar-step reveal" style="opacity:0;transform:translateY(24px);transition-delay:0.08s">
+ <div class="ar-step-num">02</div>
+ <p>إنتاج CGI والأفلام والمجسمات والطبقات التفاعلية</p>
+ </div>
+ <div class="ar-step reveal" style="opacity:0;transform:translateY(24px);transition-delay:0.16s">
+ <div class="ar-step-num">03</div>
+ <p>تصميم صالة البيع وتجهيز الفراغ للوسيط والمشتري</p>
+ </div>
+ <div class="ar-step reveal" style="opacity:0;transform:translateY(24px);transition-delay:0.24s">
+ <div class="ar-step-num">04</div>
+ <p>تصوير، تركيب، تسليم، وتدريب فريق المبيعات</p>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- ===== WHAT THE CLIENT GETS ===== -->
 <section class="ar-outcomes" id="outcomes" aria-label="ما سيحصل عليه العميل">
-  <div class="ar-outcomes-inner">
-    <div class="ar-outcomes-head reveal" style="opacity:0;transform:translateY(24px)">
-      <h2>ماذا يأخذ المطور إلى السوق؟</h2>
-      <p>أصول إطلاق جاهزة: <a href="../services/branding.html">هوية</a>، أفلام، مجسمات، وصالة بيع في منظومة واحدة، حتى يفهم المستثمر المخطط في دقائق. للمقارنة مع سوق الخليج راجع جولات <a href="https://ruwaq.co/tours" target="_blank" rel="noopener noreferrer">Ruwaq</a>.</p>
-    </div>
-    <div class="ar-outcomes-layout">
-      <div>
-        <div class="ar-outcomes-cards">
-          <div class="ar-outcome-card reveal" style="opacity:0;transform:translateY(24px);transition-delay:.00s">
-            <div class="ar-outcome-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M5 16l.9 2.1L8 19l-2.1.9L5 22l-.9-2.1L2 19l2.1-.9L5 16z"/><path d="M18 14l.7 1.7L20.4 16.4l-1.7.7L18 19l-.7-1.9L15.6 16.4l1.7-.7L18 14z"/></svg>
-            </div>
-            <strong><a href="../services/branding.html">هوية بصرية</a></strong>
-            <span>لغة معمارية متماسكة للمشروع من أول انطباع حتى صالة البيع — انظر <a href="../case-studies/jeddah-real-estate-forum.html">ملتقى جدة للعقار</a></span>
-          </div>
-          <div class="ar-outcome-card reveal" style="opacity:0;transform:translateY(24px);transition-delay:.06s">
-            <div class="ar-outcome-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M17 9l4-2v10l-4-2V9z"/><path d="M8 11l3 2-3 2v-4z" fill="currentColor" stroke="none"/></svg>
-            </div>
-            <strong>أفلام ورندرات</strong>
-            <span>محتوى سينمائي يشرح المخطط قبل الخرسانة. حملات لاحقة عبر <a href="https://beesmotion.com" target="_blank" rel="noopener noreferrer">بيزموشن</a> بعد قفل الأصول</span>
-          </div>
-          <div class="ar-outcome-card reveal" style="opacity:0;transform:translateY(24px);transition-delay:.12s">
-            <div class="ar-outcome-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
-            </div>
-            <strong>مجسمات ذكية</strong>
-            <span>حضور ملموس في غرفة العرض بطبقات إضاءة وتفاعل عند الحاجة</span>
-          </div>
-          <div class="ar-outcome-card reveal" style="opacity:0;transform:translateY(24px);transition-delay:.18s">
-            <div class="ar-outcome-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M4 20v-1a5 5 0 0 1 5-5"/><path d="M14 8h6M17 5v6"/><path d="M14 17h7M14 20h5"/></svg>
-            </div>
-            <strong>تجربة البيع</strong>
-            <span>صالة عرض وأدوات تفاعلية تقرّب الوسيط والمشتري من قرار الشراء</span>
-          </div>
-        </div>
-        <p class="ar-outcomes-note">* تُحدَّد الأولويات حسب مرحلة مشروعك وميزانية الإطلاق</p>
-      </div>
-      <div class="ar-outcomes-media reveal" style="opacity:0;transform:translateY(24px);transition-delay:.1s">
-        <video class="gh-autoplay" autoplay loop muted playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="../assets/videos/scale-model-maquette-poster.jpg" title="المجسم المعماري المُدرَّج" data-pl-src="../assets/videos/scale-model-maquette.mp4" data-pl-src-mobile="../assets/videos/scale-model-maquette-mobile.mp4"></video>
-      </div>
-    </div>
-  </div>
+ <div class="ar-outcomes-inner">
+ <div class="ar-outcomes-head reveal" style="opacity:0;transform:translateY(24px)">
+ <h2>ماذا يأخذ المطور إلى السوق؟</h2>
+ <p>أصول إطلاق جاهزة: <a href="../services/branding.html">هوية</a>، أفلام، مجسمات، وصالة بيع في منظومة واحدة، حتى يفهم المستثمر المخطط في دقائق. للمقارنة مع سوق الخليج راجع جولات <a href="https://ruwaq.co/tours" target="_blank" rel="noopener noreferrer">Ruwaq</a>.</p>
+ </div>
+ <div class="ar-outcomes-layout">
+ <div>
+ <div class="ar-outcomes-cards">
+ <div class="ar-outcome-card reveal" style="opacity:0;transform:translateY(24px);transition-delay:.00s">
+ <div class="ar-outcome-ico" aria-hidden="true">
+ <svg viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M5 16l.9 2.1L8 19l-2.1.9L5 22l-.9-2.1L2 19l2.1-.9L5 16z"/><path d="M18 14l.7 1.7L20.4 16.4l-1.7.7L18 19l-.7-1.9L15.6 16.4l1.7-.7L18 14z"/></svg>
+ </div>
+ <strong><a href="../services/branding.html">هوية بصرية</a></strong>
+ <span>لغة معمارية متماسكة للمشروع من أول انطباع حتى صالة البيع, انظر <a href="../case-studies/jeddah-real-estate-forum.html">ملتقى جدة للعقار</a></span>
+ </div>
+ <div class="ar-outcome-card reveal" style="opacity:0;transform:translateY(24px);transition-delay:.06s">
+ <div class="ar-outcome-ico" aria-hidden="true">
+ <svg viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M17 9l4-2v10l-4-2V9z"/><path d="M8 11l3 2-3 2v-4z" fill="currentColor" stroke="none"/></svg>
+ </div>
+ <strong>أفلام ورندرات</strong>
+ <span>محتوى سينمائي يشرح المخطط قبل الخرسانة. حملات لاحقة عبر <a href="https://beesmotion.com" target="_blank" rel="noopener noreferrer">بيزموشن</a> بعد قفل الأصول</span>
+ </div>
+ <div class="ar-outcome-card reveal" style="opacity:0;transform:translateY(24px);transition-delay:.12s">
+ <div class="ar-outcome-ico" aria-hidden="true">
+ <svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
+ </div>
+ <strong>مجسمات ذكية</strong>
+ <span>حضور ملموس في غرفة العرض بطبقات إضاءة وتفاعل عند الحاجة</span>
+ </div>
+ <div class="ar-outcome-card reveal" style="opacity:0;transform:translateY(24px);transition-delay:.18s">
+ <div class="ar-outcome-ico" aria-hidden="true">
+ <svg viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M4 20v-1a5 5 0 0 1 5-5"/><path d="M14 8h6M17 5v6"/><path d="M14 17h7M14 20h5"/></svg>
+ </div>
+ <strong>تجربة البيع</strong>
+ <span>صالة عرض وأدوات تفاعلية تقرّب الوسيط والمشتري من قرار الشراء</span>
+ </div>
+ </div>
+ <p class="ar-outcomes-note">* تُحدَّد الأولويات حسب مرحلة مشروعك وميزانية الإطلاق</p>
+ </div>
+ <div class="ar-outcomes-media reveal" style="opacity:0;transform:translateY(24px);transition-delay:.1s">
+ <video class="gh-autoplay" autoplay loop muted playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="../assets/videos/scale-model-maquette-poster.jpg" title="المجسم المعماري المُدرَّج" data-pl-src="../assets/videos/scale-model-maquette.mp4" data-pl-src-mobile="../assets/videos/scale-model-maquette-mobile.mp4"></video>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- ===== 04. METRICS STRIP (Arabic exclusive) ===== -->
 <div class="ar-metrics" id="results" aria-label="أرقام النجاح">
-  <div class="ar-metrics-grid reveal" style="opacity:0;transform:translateY(24px)">
-    <div class="ar-metric"><strong>+200</strong><span>مشروع مُنجز</span></div>
-    <div class="ar-metric"><strong>SAR 2B+</strong><span>قيمة مشاريع مُصوَّرة</span></div>
-    <div class="ar-metric"><strong>+15</strong><span>سنة خبرة في السوق</span></div>
-  </div>
+ <div class="ar-metrics-grid reveal" style="opacity:0;transform:translateY(24px)">
+ <div class="ar-metric"><strong>+200</strong><span>مشروع مُنجز</span></div>
+ <div class="ar-metric"><strong>SAR 2B+</strong><span>قيمة مشاريع مُصوَّرة</span></div>
+ <div class="ar-metric"><strong>+15</strong><span>سنة خبرة في السوق</span></div>
+ </div>
 </div>
 
-<!-- ===== 05. SELECTED ENVIRONMENTS — 3 cards ===== -->
+<!-- ===== 05. SELECTED ENVIRONMENTS, 3 cards ===== -->
 <section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto">
-  <div class="flex justify-between items-end mb-12 reveal" style="opacity:0;transform:translateY(24px)">
-    <div>
-      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">ما يثبت المنظومة</span>
-      <h2 class="font-headline-xl text-on-background">بيئات مختارة</h2>
-    </div>
-    <a href="../portfolio.html" class="border-b border-primary text-primary pb-1 font-label-caps text-[11px] tracking-widest hover:opacity-70 transition-opacity hidden md:block">كامل الأعمال</a>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="reveal group relative ar-env-card" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
-      <div class="aspect-[4/3] overflow-hidden">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-04.jpeg" alt="بيئة معرض تفاعلية" loading="lazy"/>
-      </div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6">
-        <h3 class="font-headline-md text-white mb-1">بيئة معرض تفاعلية</h3>
-        <a href="../portfolio.html" class="text-primary text-xs tracking-widest">مشاهدة الأعمال ←</a>
-      </div>
-    </div>
-    <div class="reveal group relative ar-env-card" style="opacity:0;transform:translateY(24px);transition-delay:0.12s">
-      <div class="aspect-[4/3] overflow-hidden">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-02.jpeg" alt="هوية وتجارب لمسية" loading="lazy"/>
-      </div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6">
-        <h3 class="font-headline-md text-white mb-1">هوية وتجارب لمسية</h3>
-        <a href="../portfolio.html" class="text-primary text-xs tracking-widest">مشاهدة الأعمال ←</a>
-      </div>
-    </div>
-    <div class="reveal group relative ar-env-card" style="opacity:0;transform:translateY(24px);transition-delay:0.19s">
-      <div class="aspect-[4/3] overflow-hidden">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-07.jpeg" alt="صالة بيع وتأهيل مكاني" loading="lazy"/>
-      </div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
-      <div class="absolute bottom-0 p-6">
-        <h3 class="font-headline-md text-white mb-1">صالة بيع وتأهيل مكاني</h3>
-        <a href="../portfolio.html" class="text-primary text-xs tracking-widest">مشاهدة الأعمال ←</a>
-      </div>
-    </div>
-  </div>
+ <div class="flex justify-between items-end mb-12 reveal" style="opacity:0;transform:translateY(24px)">
+ <div>
+ <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">ما يثبت المنظومة</span>
+ <h2 class="font-headline-xl text-on-background">بيئات مختارة</h2>
+ </div>
+ <a href="../portfolio.html" class="border-b border-primary text-primary pb-1 font-label-caps text-[11px] tracking-widest hover:opacity-70 transition-opacity hidden md:block">كامل الأعمال</a>
+ </div>
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+ <div class="reveal group relative ar-env-card" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
+ <div class="aspect-[4/3] overflow-hidden">
+ <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-04.jpeg" alt="بيئة معرض تفاعلية" loading="lazy"/>
+ </div>
+ <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+ <div class="absolute bottom-0 p-6">
+ <h3 class="font-headline-md text-white mb-1">بيئة معرض تفاعلية</h3>
+ <a href="../portfolio.html" class="text-primary text-xs tracking-widest">مشاهدة الأعمال ←</a>
+ </div>
+ </div>
+ <div class="reveal group relative ar-env-card" style="opacity:0;transform:translateY(24px);transition-delay:0.12s">
+ <div class="aspect-[4/3] overflow-hidden">
+ <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-02.jpeg" alt="هوية وتجارب لمسية" loading="lazy"/>
+ </div>
+ <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+ <div class="absolute bottom-0 p-6">
+ <h3 class="font-headline-md text-white mb-1">هوية وتجارب لمسية</h3>
+ <a href="../portfolio.html" class="text-primary text-xs tracking-widest">مشاهدة الأعمال ←</a>
+ </div>
+ </div>
+ <div class="reveal group relative ar-env-card" style="opacity:0;transform:translateY(24px);transition-delay:0.19s">
+ <div class="aspect-[4/3] overflow-hidden">
+ <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-07.jpeg" alt="صالة بيع وتأهيل مكاني" loading="lazy"/>
+ </div>
+ <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+ <div class="absolute bottom-0 p-6">
+ <h3 class="font-headline-md text-white mb-1">صالة بيع وتأهيل مكاني</h3>
+ <a href="../portfolio.html" class="text-primary text-xs tracking-widest">مشاهدة الأعمال ←</a>
+ </div>
+ </div>
+ </div>
 </section>
 
-<!-- ===== 06. SMART MAQUETTES — YouTube iFrames ===== -->
+<!-- ===== 06. SMART MAQUETTES, YouTube iFrames ===== -->
 <section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto ar-band-cream">
-  <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
-    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">المجسمات والتفاعلي</span>
-    <h2 class="font-headline-xl text-on-background">نماذج ذكية وعروض تفاعلية</h2>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="reveal ar-media-card md:col-span-2" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
-      <div class="ar-media-frame ar-media-frame--gallery">
-        <div class="pl-s3-wrap" data-pl-gallery data-main-id="plGalMaquetteImg">
-          <div class="pl-s3-image" data-pl-lightbox>
-            <img loading="lazy" id="plGalMaquetteImg" src="../assets/news/makkah-charter-01.jpeg" alt="مشروع ميثاق مكة، رابطة العالم الإسلامي">
-            <div class="pl-s3-corner tl"></div>
-            <div class="pl-s3-corner tr"></div>
-            <div class="pl-s3-corner bl"></div>
-            <div class="pl-s3-corner br"></div>
-          </div>
-          <div class="pl-s3-thumbs" data-pl-thumbs>
-            <div class="pl-s3-thumb active" data-pl-src="../assets/news/makkah-charter-01.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-01.jpeg" alt="معرض ميثاق مكة 1"></div>
-            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-02.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-02.jpeg" alt="معرض ميثاق مكة 2"></div>
-            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-03.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-03.jpeg" alt="معرض ميثاق مكة 3"></div>
-            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-04.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-04.jpeg" alt="معرض ميثاق مكة 4"></div>
-            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-05.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-05.jpeg" alt="معرض ميثاق مكة 5"></div>
-            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-06.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-06.jpeg" alt="معرض ميثاق مكة 6"></div>
-            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-07.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-07.jpeg" alt="معرض ميثاق مكة 7"></div>
-            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-08.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-08.jpeg" alt="معرض ميثاق مكة 8"></div>
-            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-09.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-09.jpeg" alt="معرض ميثاق مكة 9"></div>
-            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-10.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-10.jpeg" alt="معرض ميثاق مكة 10"></div>
-            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-11.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-11.jpeg" alt="معرض ميثاق مكة 11"></div>
-            <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-12.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-12.jpeg" alt="معرض ميثاق مكة 12"></div>
-          </div>
-        </div>
-      </div>
-      <div class="ar-media-body">
-        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">i-MAQUETTE</span>
-        <h3 class="font-headline-md text-on-background mb-1">المجسم التفاعلي الذكي</h3>
-        <p class="text-secondary text-sm opacity-70">نموذج معماري مدمج بتقنية العرض التفاعلي</p>
-      </div>
-    </div>
-  </div>
-  <div class="text-center mt-10 reveal" style="opacity:0;transform:translateY(24px)">
-    <a href="https://www.youtube.com/@GraphicsHouse2" target="_blank" rel="noopener" class="pl-btn-pill pl-btn-on-light inline-flex items-center gap-3">
-      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.38.55A3.02 3.02 0 00.5 6.19C0 8.03 0 12 0 12s0 3.97.5 5.81a3.02 3.02 0 002.12 2.14C4.45 20.5 12 20.5 12 20.5s7.55 0 9.38-.55a3.02 3.02 0 002.12-2.14C24 15.97 24 12 24 12s0-3.97-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
-      كل الفيديوهات على يوتيوب
-    </a>
-  </div>
+ <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
+ <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">المجسمات والتفاعلي</span>
+ <h2 class="font-headline-xl text-on-background">نماذج ذكية وعروض تفاعلية</h2>
+ </div>
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ <div class="reveal ar-media-card md:col-span-2" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
+ <div class="ar-media-frame ar-media-frame--gallery">
+ <div class="pl-s3-wrap" data-pl-gallery data-main-id="plGalMaquetteImg">
+ <div class="pl-s3-image" data-pl-lightbox>
+ <img loading="lazy" id="plGalMaquetteImg" src="../assets/news/makkah-charter-01.jpeg" alt="مشروع ميثاق مكة، رابطة العالم الإسلامي">
+ <div class="pl-s3-corner tl"></div>
+ <div class="pl-s3-corner tr"></div>
+ <div class="pl-s3-corner bl"></div>
+ <div class="pl-s3-corner br"></div>
+ </div>
+ <div class="pl-s3-thumbs" data-pl-thumbs>
+ <div class="pl-s3-thumb active" data-pl-src="../assets/news/makkah-charter-01.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-01.jpeg" alt="معرض ميثاق مكة 1"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-02.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-02.jpeg" alt="معرض ميثاق مكة 2"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-03.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-03.jpeg" alt="معرض ميثاق مكة 3"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-04.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-04.jpeg" alt="معرض ميثاق مكة 4"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-05.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-05.jpeg" alt="معرض ميثاق مكة 5"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-06.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-06.jpeg" alt="معرض ميثاق مكة 6"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-07.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-07.jpeg" alt="معرض ميثاق مكة 7"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-08.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-08.jpeg" alt="معرض ميثاق مكة 8"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-09.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-09.jpeg" alt="معرض ميثاق مكة 9"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-10.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-10.jpeg" alt="معرض ميثاق مكة 10"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-11.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-11.jpeg" alt="معرض ميثاق مكة 11"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-12.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-12.jpeg" alt="معرض ميثاق مكة 12"></div>
+ </div>
+ </div>
+ </div>
+ <div class="ar-media-body">
+ <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">i-MAQUETTE</span>
+ <h3 class="font-headline-md text-on-background mb-1">المجسم التفاعلي الذكي</h3>
+ <p class="text-secondary text-sm opacity-70">نموذج معماري مدمج بتقنية العرض التفاعلي</p>
+ </div>
+ </div>
+ </div>
+ <div class="text-center mt-10 reveal" style="opacity:0;transform:translateY(24px)">
+ <a href="https://www.youtube.com/@GraphicsHouse2" target="_blank" rel="noopener" class="pl-btn-pill pl-btn-on-light inline-flex items-center gap-3">
+ <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.38.55A3.02 3.02 0 00.5 6.19C0 8.03 0 12 0 12s0 3.97.5 5.81a3.02 3.02 0 002.12 2.14C4.45 20.5 12 20.5 12 20.5s7.55 0 9.38-.55a3.02 3.02 0 002.12-2.14C24 15.97 24 12 24 12s0-3.97-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+ كل الفيديوهات على يوتيوب
+ </a>
+ </div>
 </section>
 
-<!-- ===== 07. CINEMATIC FILMS — 3-video grid ===== -->
+<!-- ===== 07. CINEMATIC FILMS, 3-video grid ===== -->
 <section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto">
-  <div class="text-center mb-6 reveal" style="opacity:0;transform:translateY(24px)">
-    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">الأنيميشن وأفلام CGI</span>
-    <h2 class="font-headline-xl text-on-background mb-4">أفلام الإطلاق السينمائية</h2>
-    <p class="font-body-lg text-secondary opacity-70 max-w-2xl mx-auto">أفلام سينمائية تحمل نفس <a href="../services/branding.html">الهوية</a> إلى أيام المستثمرين والحملات.</p>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-    <div class="reveal ar-media-card" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
-      <div class="ar-media-frame ar-media-frame--soft">
-        <video class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" data-pl-src="../assets/videos/3D-Architectural-visualisation.mp4" data-pl-src-mobile="../assets/videos/3D-Architectural-visualisation-mobile.mp4"></video>
-      </div>
-      <div class="ar-media-body">
-        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">CGI FILM</span>
-        <h3 class="font-headline-md text-on-background mb-1">ريل التصور المعماري</h3>
-        <p class="text-secondary text-sm opacity-70">مشاهد فوتوريالستك تبيع ما لم يُبنَ</p>
-      </div>
-    </div>
-    <div class="reveal ar-media-card" style="opacity:0;transform:translateY(24px);transition-delay:0.10s">
-      <div class="ar-media-frame ar-media-frame--soft">
-        <div class="gh-ambient-dual">
-          <video class="gh-autoplay gh-ambient-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="../assets/projects/animation/real-estate-services.jpg" data-pl-src="../assets/videos/GH-Real-estate-services.mp4" data-pl-src-mobile="../assets/videos/GH-Real-estate-services-mobile.mp4"></video>
-          <picture><source srcset="../assets/projects/animation/real-estate-services.webp" type="image/webp"><img class="gh-ambient-poster-mobile" src="../assets/projects/animation/real-estate-services.jpg" alt="فيلم إطلاق عقاري" loading="eager" decoding="async"></picture>
-        </div>
-      </div>
-      <div class="ar-media-body">
-        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">REAL ESTATE</span>
-        <h3 class="font-headline-md text-on-background mb-1">فيلم إطلاق عقاري</h3>
-        <p class="text-secondary text-sm opacity-70">سرد سينمائي لإطلاق المشاريع التطويرية</p>
-      </div>
-    </div>
-    <div class="reveal ar-media-card" style="opacity:0;transform:translateY(24px);transition-delay:0.15s">
-      <div class="ar-media-frame ar-media-frame--soft">
-        <video class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="../assets/projects/animation/architectural-visualisation.jpg" data-pl-src="../assets/videos/GH-demo-reel-2025.mp4" data-pl-src-mobile="../assets/videos/GH-demo-reel-2025-mobile.mp4"></video>
-      </div>
-      <div class="ar-media-body">
-        <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">DEMO REEL</span>
-        <h3 class="font-headline-md text-on-background mb-1">ريل Graphics House 2025</h3>
-        <p class="text-secondary text-sm opacity-70">مقطع عرضي من أعمال التصور والإنتاج</p>
-      </div>
-    </div>
-  </div>
+ <div class="text-center mb-6 reveal" style="opacity:0;transform:translateY(24px)">
+ <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">الأنيميشن وأفلام CGI</span>
+ <h2 class="font-headline-xl text-on-background mb-4">أفلام الإطلاق السينمائية</h2>
+ <p class="font-body-lg text-secondary opacity-70 max-w-2xl mx-auto">أفلام سينمائية تحمل نفس <a href="../services/branding.html">الهوية</a> إلى أيام المستثمرين والحملات.</p>
+ </div>
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+ <div class="reveal ar-media-card" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
+ <div class="ar-media-frame ar-media-frame--soft">
+ <video class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" data-pl-src="../assets/videos/3D-Architectural-visualisation.mp4" data-pl-src-mobile="../assets/videos/3D-Architectural-visualisation-mobile.mp4"></video>
+ </div>
+ <div class="ar-media-body">
+ <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">CGI FILM</span>
+ <h3 class="font-headline-md text-on-background mb-1">ريل التصور المعماري</h3>
+ <p class="text-secondary text-sm opacity-70">مشاهد فوتوريالستك تبيع ما لم يُبنَ</p>
+ </div>
+ </div>
+ <div class="reveal ar-media-card" style="opacity:0;transform:translateY(24px);transition-delay:0.10s">
+ <div class="ar-media-frame ar-media-frame--soft">
+ <div class="gh-ambient-dual">
+ <video class="gh-autoplay gh-ambient-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="../assets/projects/animation/real-estate-services.jpg" data-pl-src="../assets/videos/GH-Real-estate-services.mp4" data-pl-src-mobile="../assets/videos/GH-Real-estate-services-mobile.mp4"></video>
+ <picture><source srcset="../assets/projects/animation/real-estate-services.webp" type="image/webp"><img class="gh-ambient-poster-mobile" src="../assets/projects/animation/real-estate-services.jpg" alt="فيلم إطلاق عقاري" loading="eager" decoding="async"></picture>
+ </div>
+ </div>
+ <div class="ar-media-body">
+ <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">REAL ESTATE</span>
+ <h3 class="font-headline-md text-on-background mb-1">فيلم إطلاق عقاري</h3>
+ <p class="text-secondary text-sm opacity-70">سرد سينمائي لإطلاق المشاريع التطويرية</p>
+ </div>
+ </div>
+ <div class="reveal ar-media-card" style="opacity:0;transform:translateY(24px);transition-delay:0.15s">
+ <div class="ar-media-frame ar-media-frame--soft">
+ <video class="gh-autoplay" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="../assets/projects/animation/architectural-visualisation.jpg" data-pl-src="../assets/videos/GH-demo-reel-2025.mp4" data-pl-src-mobile="../assets/videos/GH-demo-reel-2025-mobile.mp4"></video>
+ </div>
+ <div class="ar-media-body">
+ <span class="text-primary text-[9px] font-bold tracking-widest uppercase mb-2 block">DEMO REEL</span>
+ <h3 class="font-headline-md text-on-background mb-1">ريل Graphics House 2025</h3>
+ <p class="text-secondary text-sm opacity-70">مقطع عرضي من أعمال التصور والإنتاج</p>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- ===== 08. CASE STUDIES (Arabic exclusive) ===== -->
 <section class="py-[100px] px-8 md:px-12 max-w-container-max mx-auto ar-band-cream" id="stories">
-  <div class="mb-12 reveal" style="opacity:0;transform:translateY(24px)">
-    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">قصص نجاح</span>
-    <h2 class="font-headline-xl text-on-background">كيف حوّلنا عرض المشروع إلى تجربة إقناع</h2>
-  </div>
+ <div class="mb-12 reveal" style="opacity:0;transform:translateY(24px)">
+ <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">قصص نجاح</span>
+ <h2 class="font-headline-xl text-on-background">كيف حوّلنا عرض المشروع إلى تجربة إقناع</h2>
+ </div>
 
-  <!-- MWL Exhibition -->
-  <div class="ar-story reveal" style="opacity:0;transform:translateY(24px)">
-    <div class="ar-story-img">
-      <img src="../assets/news/makkah-charter-04.jpeg" alt="معرض رابطة العالم الإسلامي" loading="lazy">
-      <div class="ar-story-badge">رابطة العالم الإسلامي · معرض الإنسانية</div>
-    </div>
-    <div class="ar-story-body">
-      <div class="ar-story-brand">
-        <img src="../assets/clients-logo/رابطة العالم الاسلامي.png" alt="شعار رابطة العالم الإسلامي" loading="lazy" width="140" height="44">
-        <span>رابطة العالم الإسلامي<br>معرض الإنسانية</span>
-      </div>
-      <h3>معرض رابطة العالم الإسلامي: منظومة إطلاق متكاملة في أقل من ثلاثة أسابيع.</h3>
-      <div class="ar-story-steps">
-        <div><strong>التحدي</strong><p>إنتاج بيئة معرض مؤسسية تليق بمكانة الرابطة، وتعرض أهم المشاريع حول العالم بطريقة تُقنع الزائر خلال دقائق.</p></div>
-        <div><strong>كيف تعاملنا معه</strong><p>عملنا بمنظومة واحدة: مجسم معماري كبير، برامج تفاعلية على شاشات العرض، وهوية تصميمية مع ديكور مناسب للمعرض.</p></div>
-        <div><strong>ما الذي قمنا بتنفيذه</strong><p>مجسم معماري ضخم يضم أهم المشاريع حول العالم، تجارب تفاعلية على الشاشات، وهوية بصرية وديكور متكامل للمعرض.</p></div>
-        <div><strong>النتيجة</strong><p>تسليم كامل خلال فترة لم تتجاوز ثلاثة أسابيع، بتجربة عرض تعكس المكانة الرفيعة لرابطة العالم الإسلامي.</p></div>
-      </div>
-      <div class="ar-pills">
-        <span class="ar-pill">أقل من 3 أسابيع</span>
-        <span class="ar-pill">مجسم + تفاعلي</span>
-        <span class="ar-pill">هوية وديكور</span>
-      </div>
-    </div>
-  </div>
+ <!-- MWL Exhibition -->
+ <div class="ar-story reveal" style="opacity:0;transform:translateY(24px)">
+ <div class="ar-story-img">
+ <img src="../assets/news/makkah-charter-04.jpeg" alt="معرض رابطة العالم الإسلامي" loading="lazy">
+ <div class="ar-story-badge">رابطة العالم الإسلامي · معرض الإنسانية</div>
+ </div>
+ <div class="ar-story-body">
+ <div class="ar-story-brand">
+ <img src="../assets/clients-logo/رابطة العالم الاسلامي.png" alt="شعار رابطة العالم الإسلامي" loading="lazy" width="140" height="44">
+ <span>رابطة العالم الإسلامي<br>معرض الإنسانية</span>
+ </div>
+ <h3>معرض رابطة العالم الإسلامي: منظومة إطلاق متكاملة في أقل من ثلاثة أسابيع.</h3>
+ <div class="ar-story-steps">
+ <div><strong>التحدي</strong><p>إنتاج بيئة معرض مؤسسية تليق بمكانة الرابطة، وتعرض أهم المشاريع حول العالم بطريقة تُقنع الزائر خلال دقائق.</p></div>
+ <div><strong>كيف تعاملنا معه</strong><p>عملنا بمنظومة واحدة: مجسم معماري كبير، برامج تفاعلية على شاشات العرض، وهوية تصميمية مع ديكور مناسب للمعرض.</p></div>
+ <div><strong>ما الذي قمنا بتنفيذه</strong><p>مجسم معماري ضخم يضم أهم المشاريع حول العالم، تجارب تفاعلية على الشاشات، وهوية بصرية وديكور متكامل للمعرض.</p></div>
+ <div><strong>النتيجة</strong><p>تسليم كامل خلال فترة لم تتجاوز ثلاثة أسابيع، بتجربة عرض تعكس المكانة الرفيعة لرابطة العالم الإسلامي.</p></div>
+ </div>
+ <div class="ar-pills">
+ <span class="ar-pill">أقل من 3 أسابيع</span>
+ <span class="ar-pill">مجسم + تفاعلي</span>
+ <span class="ar-pill">هوية وديكور</span>
+ </div>
+ </div>
+ </div>
 
-  <!-- Anan Eskan -->
-  <div class="ar-story reveal" style="opacity:0;transform:translateY(24px)">
-    <div class="ar-story-img">
-      <picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="عنان إسكان" loading="lazy"></picture>
-      <div class="ar-story-badge">عنان إسكان للتطوير · الرياض</div>
-    </div>
-    <div class="ar-story-body">
-      <div class="ar-story-brand">
-        <img src="../assets/clients-logo/anan-eskan.png" alt="شعار عنان إسكان" loading="lazy" width="140" height="44">
-        <span>عنان إسكان للتطوير<br>الرياض</span>
-      </div>
-      <h3>عندما أراد مطوّر عنان إسكان إطلاق مشروعه السكني… كان يواجه فجوة بين جاهزية المخططات وجاهزية البيع.</h3>
-      <div class="ar-story-steps">
-        <div><strong>التحدي</strong><p>إقناع العملاء وصنّاع القرار قبل اكتمال التنفيذ، دون الاعتماد على صور متفرقة لا تبني قصة.</p></div>
-        <div><strong>كيف تعاملنا معه</strong><p>وضعنا هدفًا واحدًا: أن يُفهم المشروع خلال دقائق، وأن يبدو كمنتج جاهز للسوق.</p></div>
-        <div><strong>ما الذي قمنا بتنفيذه</strong><p>منظومة إظهار مترابطة: تصور معماري سينمائي + مجسم يرسّخ الحضور داخل غرفة العرض، بلغة بصرية واحدة.</p></div>
-        <div><strong>النتيجة</strong><p>أصبح المشروع أسهل في الشرح، أوضح في الانطباع الأول، وأقرب لقرار الشراء أو الشراكة.</p></div>
-      </div>
-      <div class="ar-pills">
-        <span class="ar-pill">تسليم في الموعد</span>
-        <span class="ar-pill">منظومة متكاملة</span>
-        <span class="ar-pill">عميل عاد مجدداً</span>
-      </div>
-    </div>
-  </div>
+ <!-- Anan Eskan -->
+ <div class="ar-story reveal" style="opacity:0;transform:translateY(24px)">
+ <div class="ar-story-img">
+ <picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="عنان إسكان" loading="lazy"></picture>
+ <div class="ar-story-badge">عنان إسكان للتطوير · الرياض</div>
+ </div>
+ <div class="ar-story-body">
+ <div class="ar-story-brand">
+ <img src="../assets/clients-logo/anan-eskan.png" alt="شعار عنان إسكان" loading="lazy" width="140" height="44">
+ <span>عنان إسكان للتطوير<br>الرياض</span>
+ </div>
+ <h3>عندما أراد مطوّر عنان إسكان إطلاق مشروعه السكني… كان يواجه فجوة بين جاهزية المخططات وجاهزية البيع.</h3>
+ <div class="ar-story-steps">
+ <div><strong>التحدي</strong><p>إقناع العملاء وصنّاع القرار قبل اكتمال التنفيذ، دون الاعتماد على صور متفرقة لا تبني قصة.</p></div>
+ <div><strong>كيف تعاملنا معه</strong><p>وضعنا هدفًا واحدًا: أن يُفهم المشروع خلال دقائق، وأن يبدو كمنتج جاهز للسوق.</p></div>
+ <div><strong>ما الذي قمنا بتنفيذه</strong><p>منظومة إظهار مترابطة: تصور معماري سينمائي + مجسم يرسّخ الحضور داخل غرفة العرض، بلغة بصرية واحدة.</p></div>
+ <div><strong>النتيجة</strong><p>أصبح المشروع أسهل في الشرح، أوضح في الانطباع الأول، وأقرب لقرار الشراء أو الشراكة.</p></div>
+ </div>
+ <div class="ar-pills">
+ <span class="ar-pill">تسليم في الموعد</span>
+ <span class="ar-pill">منظومة متكاملة</span>
+ <span class="ar-pill">عميل عاد مجدداً</span>
+ </div>
+ </div>
+ </div>
 
-  <div class="ar-mini-grid reveal" style="opacity:0;transform:translateY(24px)">
-    <div class="ar-mini">
-      <picture><source srcset="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp" type="image/webp"><img src="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="الأولى النخيل" loading="lazy"></picture>
-      <span>الأولى النخيل، إظهار يبيع ما لم يُبنَ</span>
-    </div>
-    <div class="ar-mini">
-      <picture><source srcset="../assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img src="../assets/projects/animation/rafal-pavilions.jpg" alt="رفال بافيليونز" loading="lazy"></picture>
-      <span>رفال بافيليونز، أفلام إطلاق وحضور سوقي</span>
-    </div>
-  </div>
-  <div class="mt-10 reveal" style="opacity:0;transform:translateY(24px)">
-    <a href="#lead-form" class="pl-btn-pill pl-btn-on-light inline-flex" data-cta="stories-book">احجز جلسة إطلاق مشروعك</a>
-  </div>
+ <div class="ar-mini-grid reveal" style="opacity:0;transform:translateY(24px)">
+ <div class="ar-mini">
+ <picture><source srcset="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp" type="image/webp"><img src="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="الأولى النخيل" loading="lazy"></picture>
+ <span>الأولى النخيل، إظهار يبيع ما لم يُبنَ</span>
+ </div>
+ <div class="ar-mini">
+ <picture><source srcset="../assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img src="../assets/projects/animation/rafal-pavilions.jpg" alt="رفال بافيليونز" loading="lazy"></picture>
+ <span>رفال بافيليونز، أفلام إطلاق وحضور سوقي</span>
+ </div>
+ </div>
+ <div class="mt-10 reveal" style="opacity:0;transform:translateY(24px)">
+ <a href="#lead-form" class="pl-btn-pill pl-btn-on-light inline-flex" data-cta="stories-book">احجز جلسة إطلاق مشروعك</a>
+ </div>
 </section>
 
 <!-- ===== 09. SELF-ASSESSMENT (Arabic exclusive) ===== -->
 <section class="py-[100px] px-8 md:px-12 border-t border-white/5" id="assess">
-  <div class="max-w-4xl mx-auto">
-    <div class="reveal" style="opacity:0;transform:translateY(24px)">
-      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">تقييم سريع</span>
-      <h2 class="font-headline-xl text-on-background mb-4">هل مشروعك جاهز للإطلاق؟</h2>
-      <p class="font-body-lg text-secondary opacity-70">أجب بصراحة، هذه الأسئلة تكشف فجوة الجاهزية قبل يوم الإطلاق.</p>
-    </div>
-    <ul class="ar-assess reveal" style="opacity:0;transform:translateY(24px)">
-      <li><span class="q">١</span>هل لديك هوية بصرية متكاملة للمشروع؟</li>
-      <li><span class="q">٢</span>هل يمتلك فريق المبيعات أدوات عرض احترافية؟</li>
-      <li><span class="q">٣</span>هل لديك فيلم ورندرات جاهزة للبيع؟</li>
-      <li><span class="q">٤</span>هل يستطيع المستثمر فهم المشروع خلال أول خمس دقائق؟</li>
-      <li><span class="q">٥</span>هل جميع مواد الإطلاق جاهزة قبل موعد الإطلاق؟</li>
-    </ul>
-    <div class="ar-assess-note reveal" style="opacity:0;transform:translateY(24px)">
-      إذا كانت إجابتك <span>«لا»</span> على أكثر من سؤال… فقد يكون <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> هو ما يحتاجه مشروعك.
-    </div>
-    <div class="mt-8 reveal" style="opacity:0;transform:translateY(24px)">
-      <a href="#lead-form" class="pl-btn-pill pl-btn-on-light inline-flex" data-cta="assess-book">احجز جلسة إطلاق مشروعك</a>
-    </div>
-  </div>
+ <div class="max-w-4xl mx-auto">
+ <div class="reveal" style="opacity:0;transform:translateY(24px)">
+ <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">تقييم سريع</span>
+ <h2 class="font-headline-xl text-on-background mb-4">هل مشروعك جاهز للإطلاق؟</h2>
+ <p class="font-body-lg text-secondary opacity-70">أجب بصراحة، هذه الأسئلة تكشف فجوة الجاهزية قبل يوم الإطلاق.</p>
+ </div>
+ <ul class="ar-assess reveal" style="opacity:0;transform:translateY(24px)">
+ <li><span class="q">١</span>هل لديك هوية بصرية متكاملة للمشروع؟</li>
+ <li><span class="q">٢</span>هل يمتلك فريق المبيعات أدوات عرض احترافية؟</li>
+ <li><span class="q">٣</span>هل لديك فيلم ورندرات جاهزة للبيع؟</li>
+ <li><span class="q">٤</span>هل يستطيع المستثمر فهم المشروع خلال أول خمس دقائق؟</li>
+ <li><span class="q">٥</span>هل جميع مواد الإطلاق جاهزة قبل موعد الإطلاق؟</li>
+ </ul>
+ <div class="ar-assess-note reveal" style="opacity:0;transform:translateY(24px)">
+ إذا كانت إجابتك <span>«لا»</span> على أكثر من سؤال… فقد يكون <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> هو ما يحتاجه مشروعك.
+ </div>
+ <div class="mt-8 reveal" style="opacity:0;transform:translateY(24px)">
+ <a href="#lead-form" class="pl-btn-pill pl-btn-on-light inline-flex" data-cta="assess-book">احجز جلسة إطلاق مشروعك</a>
+ </div>
+ </div>
 </section>
 
 <!-- ===== 10. FAQ ===== -->
 <section class="py-[100px] ar-band-cream border-t border-white/5">
-  <div class="px-8 md:px-12 max-w-4xl mx-auto">
-    <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
-      <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">الأسئلة الشائعة</span>
-      <h2 class="font-headline-xl text-on-background">أسئلة يطرحها صنّاع القرار قبل الحجز</h2>
-    </div>
-    <div class="reveal" style="opacity:0;transform:translateY(24px)">
-      <div class="border-b border-black/5 py-7">
-        <h4 class="font-headline-md text-on-background mb-3">ماذا تشمل منظومة <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span>؟</h4>
-        <p class="font-body-md text-secondary opacity-70 leading-relaxed"><a href="../services/branding.html">هوية بصرية</a>، رندرات وأفلام CGI، مجسمات ذكية، تجارب تفاعلية، ديكور صالة البيع، تصوير وإخراج، منظومة واحدة.</p>
-      </div>
-      <div class="border-b border-black/5 py-7">
-        <h4 class="font-headline-md text-on-background mb-3">هل يجب تنفيذ جميع العناصر دفعة واحدة؟</h4>
-        <p class="font-body-md text-secondary opacity-70 leading-relaxed">ليس بالضرورة. نساعدك في تحديد الأولويات حسب مرحلة مشروعك وميزانيتك. القيمة الحقيقية تظهر حين يكون كل شيء بلغة بصرية واحدة.</p>
-      </div>
-      <div class="border-b border-black/5 py-7">
-        <h4 class="font-headline-md text-on-background mb-3">لدينا وكالة تسويق، هل نحتاج <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span>؟</h4>
-        <p class="font-body-md text-secondary opacity-70 leading-relaxed">غالبًا نعم. الوكالة تُحرّك الرسالة. <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> يجهّز «منتج الإطلاق» نفسه، اللغة البصرية، أصول الإقناع، وتجربة البيع. كثير من الحملات تضعف لأن المنتج البصري غير جاهز.</p>
-      </div>
-      <div class="border-b border-black/5 py-7">
-        <h4 class="font-headline-md text-on-background mb-3">هل تنفذون التركيب في الموقع؟</h4>
-        <p class="font-body-md text-secondary opacity-70 leading-relaxed">نعم، الديكور، الشاشات، المجسمات، والأنظمة التفاعلية تُنفَّذ وتُسلَّم مع تدريب الفريق على الاستخدام.</p>
-      </div>
-      <div class="py-7">
-        <h4 class="font-headline-md text-on-background mb-3">هل تخدمون مشاريع خارج الرياض؟</h4>
-        <p class="font-body-md text-secondary opacity-70 leading-relaxed">نعم، نخدم مشاريع في جميع مدن المملكة والخليج (الإمارات، عُمان، البحرين، مصر)، مع إنتاج وتركيب ميداني.</p>
-      </div>
-    </div>
-  </div>
+ <div class="px-8 md:px-12 max-w-4xl mx-auto">
+ <div class="text-center mb-16 reveal" style="opacity:0;transform:translateY(24px)">
+ <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">الأسئلة الشائعة</span>
+ <h2 class="font-headline-xl text-on-background">أسئلة يطرحها صنّاع القرار قبل الحجز</h2>
+ </div>
+ <div class="reveal" style="opacity:0;transform:translateY(24px)">
+ <div class="border-b border-black/5 py-7">
+ <h4 class="font-headline-md text-on-background mb-3">ماذا تشمل منظومة <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span>؟</h4>
+ <p class="font-body-md text-secondary opacity-70 leading-relaxed"><a href="../services/branding.html">هوية بصرية</a>، رندرات وأفلام CGI، مجسمات ذكية، تجارب تفاعلية، ديكور صالة البيع، تصوير وإخراج، منظومة واحدة.</p>
+ </div>
+ <div class="border-b border-black/5 py-7">
+ <h4 class="font-headline-md text-on-background mb-3">هل يجب تنفيذ جميع العناصر دفعة واحدة؟</h4>
+ <p class="font-body-md text-secondary opacity-70 leading-relaxed">ليس بالضرورة. نساعدك في تحديد الأولويات حسب مرحلة مشروعك وميزانيتك. القيمة الحقيقية تظهر حين يكون كل شيء بلغة بصرية واحدة.</p>
+ </div>
+ <div class="border-b border-black/5 py-7">
+ <h4 class="font-headline-md text-on-background mb-3">لدينا وكالة تسويق، هل نحتاج <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span>؟</h4>
+ <p class="font-body-md text-secondary opacity-70 leading-relaxed">غالبًا نعم. الوكالة تُحرّك الرسالة. <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> يجهّز «منتج الإطلاق» نفسه، اللغة البصرية، أصول الإقناع، وتجربة البيع. كثير من الحملات تضعف لأن المنتج البصري غير جاهز.</p>
+ </div>
+ <div class="border-b border-black/5 py-7">
+ <h4 class="font-headline-md text-on-background mb-3">هل تنفذون التركيب في الموقع؟</h4>
+ <p class="font-body-md text-secondary opacity-70 leading-relaxed">نعم، الديكور، الشاشات، المجسمات، والأنظمة التفاعلية تُنفَّذ وتُسلَّم مع تدريب الفريق على الاستخدام.</p>
+ </div>
+ <div class="py-7">
+ <h4 class="font-headline-md text-on-background mb-3">هل تخدمون مشاريع خارج الرياض؟</h4>
+ <p class="font-body-md text-secondary opacity-70 leading-relaxed">نعم، نخدم مشاريع في جميع مدن المملكة والخليج (الإمارات، عُمان، البحرين، مصر)، مع إنتاج وتركيب ميداني.</p>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- ===== CURATED COLLABORATIONS ===== -->
 <section class="ar-collab" id="collaborations" aria-label="شراكات ومشاريع مختارة">
-  <div class="ar-collab-inner">
-    <div class="ar-collab-head reveal" style="opacity:0;transform:translateY(24px)">
-      <h2>شراكات ومشاريع مختارة</h2>
-      <p>نعمل مع مطورين ومؤسسات رائدة في المملكة لتحويل المشاريع إلى تجارب إطلاق تُقنع المستثمر وتُغلق البيع.</p>
-    </div>
-    <div class="ar-collab-grid">
-      <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.00s">
-        <picture><source srcset="../assets/projects/rendering/alrajhi2.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/rendering/alrajhi2.jpeg" alt="مشروع الراجحي بمكة" loading="lazy"></picture>
-        <div class="ar-collab-logo"><span class="ar-collab-brand">مصرف الراجحي</span></div>
-        <div class="ar-collab-copy">
-          <strong>مشروع الراجحي بمكة</strong>
-          <span>تصور معماري ومجسمات لإطلاق مشروع حضري بجوار المشاعر المقدسة</span>
-        </div>
-      </a>
-      <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.05s">
-        <picture><source srcset="../assets/projects/rendering/kuday-makkah1.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/rendering/kuday-makkah1.jpeg" alt="مشروع مكيون برج التلال" loading="lazy"></picture>
-        <div class="ar-collab-logo"><img src="../assets/clients-logo/makyon.png" alt="مكيون"></div>
-        <div class="ar-collab-copy">
-          <strong>مكيون · برج التلال</strong>
-          <span>إظهار سينمائي وهوية بصرية لبرج سكني بمعايير إطلاق راقية</span>
-        </div>
-      </a>
-      <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.10s">
-        <picture><source srcset="../assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/animation/rafal-pavilions.jpg" alt="مشروع رفال بافيليونز" loading="lazy"></picture>
-        <div class="ar-collab-logo"><img src="../assets/clients-logo/rafal.png" alt="رفال"></div>
-        <div class="ar-collab-copy">
-          <strong>رفال بافيليونز</strong>
-          <span>أفلام إطلاق وتجارب عرض تبني حضور المشروع في السوق</span>
-        </div>
-      </a>
-      <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
-        <picture><source srcset="../assets/projects/animation/market-center.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/animation/market-center.jpg" alt="مشروع السوق المركزي" loading="lazy"></picture>
-        <div class="ar-collab-logo"><span class="ar-collab-brand">السوق المركزي</span></div>
-        <div class="ar-collab-copy">
-          <strong>السوق المركزي</strong>
-          <span>منظومة بصرية متكاملة لبيئة تجارية قابلة للبيع قبل الافتتاح</span>
-        </div>
-      </a>
-      <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.20s">
-        <picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="مشروع عنان إسكان" loading="lazy"></picture>
-        <div class="ar-collab-logo"><img src="../assets/clients-logo/anan-eskan.png" alt="عنان إسكان"></div>
-        <div class="ar-collab-copy">
-          <strong>عنان إسكان</strong>
-          <span>تصور ومجسمات ذكية حوّلت عرض المشروع إلى تجربة إقناع</span>
-        </div>
-      </a>
-      <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.25s">
-        <picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="مشروع رابطة العالم الإسلامي" loading="lazy"></picture>
-        <div class="ar-collab-logo"><img src="../assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"></div>
-        <div class="ar-collab-copy">
-          <strong>رابطة العالم الإسلامي</strong>
-          <span>بيئة إطلاق تفاعلية بمعايير مؤسسية عالمية المستوى</span>
-        </div>
-      </a>
-    </div>
-  </div>
+ <div class="ar-collab-inner">
+ <div class="ar-collab-head reveal" style="opacity:0;transform:translateY(24px)">
+ <h2>شراكات ومشاريع مختارة</h2>
+ <p>نعمل مع مطورين ومؤسسات رائدة في المملكة لتحويل المشاريع إلى تجارب إطلاق تُقنع المستثمر وتُغلق البيع.</p>
+ </div>
+ <div class="ar-collab-grid">
+ <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.00s">
+ <picture><source srcset="../assets/projects/rendering/alrajhi2.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/rendering/alrajhi2.jpeg" alt="مشروع الراجحي بمكة" loading="lazy"></picture>
+ <div class="ar-collab-logo"><span class="ar-collab-brand">مصرف الراجحي</span></div>
+ <div class="ar-collab-copy">
+ <strong>مشروع الراجحي بمكة</strong>
+ <span>تصور معماري ومجسمات لإطلاق مشروع حضري بجوار المشاعر المقدسة</span>
+ </div>
+ </a>
+ <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.05s">
+ <picture><source srcset="../assets/projects/rendering/kuday-makkah1.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/rendering/kuday-makkah1.jpeg" alt="مشروع مكيون برج التلال" loading="lazy"></picture>
+ <div class="ar-collab-logo"><img src="../assets/clients-logo/makyon.png" alt="مكيون"></div>
+ <div class="ar-collab-copy">
+ <strong>مكيون · برج التلال</strong>
+ <span>إظهار سينمائي وهوية بصرية لبرج سكني بمعايير إطلاق راقية</span>
+ </div>
+ </a>
+ <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.10s">
+ <picture><source srcset="../assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/animation/rafal-pavilions.jpg" alt="مشروع رفال بافيليونز" loading="lazy"></picture>
+ <div class="ar-collab-logo"><img src="../assets/clients-logo/rafal.png" alt="رفال"></div>
+ <div class="ar-collab-copy">
+ <strong>رفال بافيليونز</strong>
+ <span>أفلام إطلاق وتجارب عرض تبني حضور المشروع في السوق</span>
+ </div>
+ </a>
+ <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
+ <picture><source srcset="../assets/projects/animation/market-center.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/animation/market-center.jpg" alt="مشروع السوق المركزي" loading="lazy"></picture>
+ <div class="ar-collab-logo"><span class="ar-collab-brand">السوق المركزي</span></div>
+ <div class="ar-collab-copy">
+ <strong>السوق المركزي</strong>
+ <span>منظومة بصرية متكاملة لبيئة تجارية قابلة للبيع قبل الافتتاح</span>
+ </div>
+ </a>
+ <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.20s">
+ <picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="مشروع عنان إسكان" loading="lazy"></picture>
+ <div class="ar-collab-logo"><img src="../assets/clients-logo/anan-eskan.png" alt="عنان إسكان"></div>
+ <div class="ar-collab-copy">
+ <strong>عنان إسكان</strong>
+ <span>تصور ومجسمات ذكية حوّلت عرض المشروع إلى تجربة إقناع</span>
+ </div>
+ </a>
+ <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.25s">
+ <picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="مشروع رابطة العالم الإسلامي" loading="lazy"></picture>
+ <div class="ar-collab-logo"><img src="../assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"></div>
+ <div class="ar-collab-copy">
+ <strong>رابطة العالم الإسلامي</strong>
+ <span>بيئة إطلاق تفاعلية بمعايير مؤسسية عالمية المستوى</span>
+ </div>
+ </a>
+ </div>
+ </div>
 </section>
 
 <section class="gl-ecosystem">
-  <div class="gl-ecosystem-head reveal" style="opacity:0;transform:translateY(20px)">
-    <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">منظومة Graphics House</span>
-    <h2>ProjectLaunch™ — قلب الإطلاق البصري</h2>
-    <p><a href="../services/branding.html">الهوية</a> من <a href="../solutions/brand-scale.html">BrandScale™</a>، والطلب من GrowthLaunch™ — وProjectLaunch™ يربطهما ببيئة بيع متكاملة.</p>
-  </div>
-  <div class="gl-ecosystem-grid"><a href="#lead-form" class="gl-eco-card gl-eco-card-active reveal" style="opacity:0;transform:translateY(20px)" data-cta="pl-eco-project-launch">
-        <span class="material-symbols-outlined ms-filled gl-eco-icon">rocket_launch</span>
-        <strong dir="ltr">ProjectLaunch™</strong>
-        <span>إطلاق المشروع وبيئة البيع</span>
-        <em>احجز جلسة ←</em>
-      </a><a href="../solutions/brand-scale.html" class="gl-eco-card reveal" style="opacity:0;transform:translateY(20px)" data-cta="pl-eco-brand-scale">
-        <span class="material-symbols-outlined ms-filled gl-eco-icon">workspace_premium</span>
-        <strong dir="ltr">BrandScale™</strong>
-        <span>نظام العلامة والتموضع</span>
-        <em>اكتشف ←</em>
-      </a><a href="../solutions/growth-launch.html" class="gl-eco-card reveal" style="opacity:0;transform:translateY(20px)" data-cta="pl-eco-growth-launch">
-        <span class="material-symbols-outlined ms-filled gl-eco-icon">query_stats</span>
-        <strong dir="ltr">GrowthLaunch™</strong>
-        <span>توليد العملاء والمبيعات</span>
-        <em>اكتشف ←</em>
-      </a></div>
+ <div class="gl-ecosystem-head reveal" style="opacity:0;transform:translateY(20px)">
+ <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">منظومة Graphics House</span>
+ <h2>ProjectLaunch™, قلب الإطلاق البصري</h2>
+ <p><a href="../services/branding.html">الهوية</a> من <a href="../solutions/brand-scale.html">BrandScale™</a>، والطلب من GrowthLaunch™, وProjectLaunch™ يربطهما ببيئة بيع متكاملة.</p>
+ </div>
+ <div class="gl-ecosystem-grid"><a href="#lead-form" class="gl-eco-card gl-eco-card-active reveal" style="opacity:0;transform:translateY(20px)" data-cta="pl-eco-project-launch">
+ <span class="material-symbols-outlined ms-filled gl-eco-icon">rocket_launch</span>
+ <strong dir="ltr">ProjectLaunch™</strong>
+ <span>إطلاق المشروع وبيئة البيع</span>
+ <em>احجز جلسة ←</em>
+ </a><a href="../solutions/brand-scale.html" class="gl-eco-card reveal" style="opacity:0;transform:translateY(20px)" data-cta="pl-eco-brand-scale">
+ <span class="material-symbols-outlined ms-filled gl-eco-icon">workspace_premium</span>
+ <strong dir="ltr">BrandScale™</strong>
+ <span>نظام العلامة والتموضع</span>
+ <em>اكتشف ←</em>
+ </a><a href="../solutions/growth-launch.html" class="gl-eco-card reveal" style="opacity:0;transform:translateY(20px)" data-cta="pl-eco-growth-launch">
+ <span class="material-symbols-outlined ms-filled gl-eco-icon">query_stats</span>
+ <strong dir="ltr">GrowthLaunch™</strong>
+ <span>توليد العملاء والمبيعات</span>
+ <em>اكتشف ←</em>
+ </a></div>
 </section>
 
 <!-- ===== 11. LEAD FORM (Arabic exclusive) ===== -->
 <section class="ar-form-sec" id="lead-form">
-  <div class="ar-form-max">
-    <div class="ar-urgency reveal" style="opacity:0;transform:translateY(24px)">
-      <span class="ico material-symbols-outlined">schedule</span>
-      <span>الجلسات المتاحة هذا الشهر: 4 جلسات فقط، احجز مكانك قبل اكتمالها</span>
-    </div>
-    <div class="ar-form-grid">
-      <div class="ar-form-box reveal" style="opacity:0;transform:translateY(24px)">
-        <h2>هل مشروعك جاهز فعلاً للإطلاق؟</h2>
-        <p>أخبرنا عن مشروعك، جلسة التقييم مجانية بالكامل</p>
-        <form class="ar-form" id="plLeadForm" novalidate>
-          <div>
-            <label for="pl-name">الاسم</label>
-            <input id="pl-name" name="name" type="text" autocomplete="name" required placeholder="الاسم الكامل">
-          </div>
-          <div>
-            <label for="pl-company">الشركة</label>
-            <input id="pl-company" name="company" type="text" autocomplete="organization" required placeholder="اسم الشركة / الجهة">
-          </div>
-          <div>
-            <label for="pl-phone">رقم الجوال</label>
-            <input id="pl-phone" name="phone" type="tel" autocomplete="tel" required placeholder="05XXXXXXXX" dir="ltr">
-          </div>
-          <div>
-            <label for="pl-email">البريد الإلكتروني</label>
-            <input id="pl-email" name="email" type="email" autocomplete="email" required placeholder="you@yourcompany.com" dir="ltr">
-          </div>
-          <div>
-            <label for="pl-type">نوع المشروع</label>
-            <select id="pl-type" name="project_type" required>
-              <option value="">اختر…</option>
-              <option>سكني</option>
-              <option>تجاري</option>
-              <option>مختلط</option>
-              <option>ضيافة / فندقي</option>
-              <option>مؤسسي / معرض</option>
-              <option>أخرى</option>
-            </select>
-          </div>
-          <div>
-            <label for="pl-city">مدينة المشروع</label>
-            <input id="pl-city" name="city" type="text" required placeholder="الرياض، جدة، …">
-          </div>
-          <div class="ar-form-full ar-form-feedback" id="plFormFeedback" aria-live="polite"></div>
-          <div class="gh-honeypot" aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0">
-            <label for="pl-botcheck">Leave blank</label>
-            <input id="pl-botcheck" type="text" name="botcheck" tabindex="-1" autocomplete="off">
-          </div>
-          <div class="ar-form-full">
-            <button class="ar-submit" type="submit" id="plSubmitBtn" data-cta="form-submit">احصل على تقييم جاهزية إطلاق مشروعك ←</button>
-            <p class="ar-form-note">رد واضح خلال 24 ساعة، بدون التزام شراء في الجلسة الأولى</p>
-          </div>
-        </form>
-      </div>
-      <aside class="ar-reassure reveal" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
-        <ul>
-          <li>جلسة مجانية 100%</li>
-          <li>بدون عقد أو التزام</li>
-          <li>رد خلال 24 ساعة</li>
-          <li>متاح للمشاريع في جميع مدن المملكة والخليج</li>
-        </ul>
-        <blockquote class="ar-quote">
-          "قدّمت جرافيكس هاوس تجربة عالمية المستوى تعكس المكانة الرفيعة لرابطة العالم الإسلامي"
-          <cite>مسؤول رفيع، رابطة العالم الإسلامي</cite>
-        </blockquote>
-      </aside>
-    </div>
-  </div>
+ <div class="ar-form-max">
+ <div class="ar-urgency reveal" style="opacity:0;transform:translateY(24px)">
+ <span class="ico material-symbols-outlined">schedule</span>
+ <span>الجلسات المتاحة هذا الشهر: 4 جلسات فقط، احجز مكانك قبل اكتمالها</span>
+ </div>
+ <div class="ar-form-grid">
+ <div class="ar-form-box reveal" style="opacity:0;transform:translateY(24px)">
+ <h2>هل مشروعك جاهز فعلاً للإطلاق؟</h2>
+ <p>أخبرنا عن مشروعك، جلسة التقييم مجانية بالكامل</p>
+ <form class="ar-form" id="plLeadForm" novalidate>
+ <div>
+ <label for="pl-name">الاسم</label>
+ <input id="pl-name" name="name" type="text" autocomplete="name" required placeholder="الاسم الكامل">
+ </div>
+ <div>
+ <label for="pl-company">الشركة</label>
+ <input id="pl-company" name="company" type="text" autocomplete="organization" required placeholder="اسم الشركة / الجهة">
+ </div>
+ <div>
+ <label for="pl-phone">رقم الجوال</label>
+ <input id="pl-phone" name="phone" type="tel" autocomplete="tel" required placeholder="05XXXXXXXX" dir="ltr">
+ </div>
+ <div>
+ <label for="pl-email">البريد الإلكتروني</label>
+ <input id="pl-email" name="email" type="email" autocomplete="email" required placeholder="you@yourcompany.com" dir="ltr">
+ </div>
+ <div>
+ <label for="pl-type">نوع المشروع</label>
+ <select id="pl-type" name="project_type" required>
+ <option value="">اختر…</option>
+ <option>سكني</option>
+ <option>تجاري</option>
+ <option>مختلط</option>
+ <option>ضيافة / فندقي</option>
+ <option>مؤسسي / معرض</option>
+ <option>أخرى</option>
+ </select>
+ </div>
+ <div>
+ <label for="pl-city">مدينة المشروع</label>
+ <input id="pl-city" name="city" type="text" required placeholder="الرياض، جدة، …">
+ </div>
+ <div class="ar-form-full ar-form-feedback" id="plFormFeedback" aria-live="polite"></div>
+ <div class="gh-honeypot" aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0">
+ <label for="pl-botcheck">Leave blank</label>
+ <input id="pl-botcheck" type="text" name="botcheck" tabindex="-1" autocomplete="off">
+ </div>
+ <div class="ar-form-full">
+ <button class="ar-submit" type="submit" id="plSubmitBtn" data-cta="form-submit">احصل على تقييم جاهزية إطلاق مشروعك ←</button>
+ <p class="ar-form-note">رد واضح خلال 24 ساعة، بدون التزام شراء في الجلسة الأولى</p>
+ </div>
+ </form>
+ </div>
+ <aside class="ar-reassure reveal" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
+ <ul>
+ <li>جلسة مجانية 100%</li>
+ <li>بدون عقد أو التزام</li>
+ <li>رد خلال 24 ساعة</li>
+ <li>متاح للمشاريع في جميع مدن المملكة والخليج</li>
+ </ul>
+ <blockquote class="ar-quote">
+ "قدّمت جرافيكس هاوس تجربة عالمية المستوى تعكس المكانة الرفيعة لرابطة العالم الإسلامي"
+ <cite>مسؤول رفيع، رابطة العالم الإسلامي</cite>
+ </blockquote>
+ </aside>
+ </div>
+ </div>
 </section>
 
 <!-- ===== 12. FINAL CTA ===== -->
 <section class="py-24 text-center relative overflow-hidden ar-band-cream">
-  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3"></div>
-  <div class="relative z-10 max-w-2xl mx-auto px-8">
-    <span class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-8" style="background:rgba(201,168,76,.14);color:#C9A84C">
-      <span class="material-symbols-outlined ms-filled text-3xl">rocket_launch</span>
-    </span>
-    <h2 class="font-headline-xl text-on-background mb-6">جاهز لإطلاق المنظومة الكاملة؟</h2>
-    <p class="font-body-lg text-secondary opacity-70 mb-10">فريقنا يستطيع تحديد نطاق <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> ومشاركتك عرضًا واضحًا خلال 48 ساعة.</p>
-    <a href="#lead-form" class="pl-btn-pill pl-btn-on-light inline-flex" data-cta="final-cta">احجز جلسة إطلاق مشروعك الآن</a>
-  </div>
+ <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3"></div>
+ <div class="relative z-10 max-w-2xl mx-auto px-8">
+ <span class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-8" style="background:rgba(201,168,76,.14);color:#C9A84C">
+ <span class="material-symbols-outlined ms-filled text-3xl">rocket_launch</span>
+ </span>
+ <h2 class="font-headline-xl text-on-background mb-6">جاهز لإطلاق المنظومة الكاملة؟</h2>
+ <p class="font-body-lg text-secondary opacity-70 mb-10">فريقنا يستطيع تحديد نطاق <span class="pl-mark">ProjectLaunch<span class="tm">&#8482;</span></span> ومشاركتك عرضًا واضحًا خلال 48 ساعة.</p>
+ <a href="#lead-form" class="pl-btn-pill pl-btn-on-light inline-flex" data-cta="final-cta">احجز جلسة إطلاق مشروعك الآن</a>
+ </div>
 </section>
 
 <!-- ===== FOOTER (Arabic) ===== -->
 <footer dir="rtl" class="gh-footer">
-  <div class="gh-footer__inner">
-    <img loading="lazy" src="../assets/chatbot-motif.png" aria-hidden="true" class="gh-footer-motif">
+ <div class="gh-footer__inner">
+ <img loading="lazy" src="../assets/chatbot-motif.png" aria-hidden="true" class="gh-footer-motif">
 
-    <div class="gh-footer__top">
-      <div class="gh-footer__brand">
-        <img src="../assets/logo-gold.png" alt="Graphics House">
-      </div>
-      <div class="gh-footer__col">
-        <h3 class="gh-footer__title">روابط مهمة</h3>
-        <nav class="gh-footer__links" aria-label="روابط مهمة">
-          <a href="../who-we-are.html">من نحن</a>
-          <a href="../portfolio.html">أعمالنا</a>
-          <a href="../insights/index.html">رؤى</a>
-          <a href="../contact-us.html">تواصل معنا</a>
-        </nav>
-      </div>
-      <div class="gh-footer__col">
-        <h3 class="gh-footer__title">الخدمات</h3>
-        <nav class="gh-footer__links" aria-label="الخدمات">
-          <a href="../services/rendering.html">الإظهار المعماري</a>
-          <a href="../services/animation.html">أفلام CGI</a>
-          <a href="../services/maquettes.html">المجسمات</a>
-          <a href="../services/interactive.html">العروض التفاعلية</a>
-        </nav>
-      </div>
-      <div class="gh-footer__col">
-        <h3 class="gh-footer__title">الحلول</h3>
-        <nav class="gh-footer__links" aria-label="الحلول">
-          <a href="../solutions/growth-launch.html">إطلاق النمو</a>
-          <a href="../solutions/project-launch.html">إطلاق المشروع</a>
-          <a href="../solutions/brand-scale.html">توسعة العلامة</a>
-        </nav>
-      </div>
-    </div>
+ <div class="gh-footer__top">
+ <div class="gh-footer__brand">
+ <img src="../assets/logo-gold.png" alt="Graphics House">
+ </div>
+ <div class="gh-footer__col">
+ <h3 class="gh-footer__title">روابط مهمة</h3>
+ <nav class="gh-footer__links" aria-label="روابط مهمة">
+ <a href="../who-we-are.html">من نحن</a>
+ <a href="../portfolio.html">أعمالنا</a>
+ <a href="../insights/index.html">رؤى</a>
+ <a href="../contact-us.html">تواصل معنا</a>
+ </nav>
+ </div>
+ <div class="gh-footer__col">
+ <h3 class="gh-footer__title">الخدمات</h3>
+ <nav class="gh-footer__links" aria-label="الخدمات">
+ <a href="../services/rendering.html">الإظهار المعماري</a>
+ <a href="../services/animation.html">أفلام CGI</a>
+ <a href="../services/maquettes.html">المجسمات</a>
+ <a href="../services/interactive.html">العروض التفاعلية</a>
+ </nav>
+ </div>
+ <div class="gh-footer__col">
+ <h3 class="gh-footer__title">الحلول</h3>
+ <nav class="gh-footer__links" aria-label="الحلول">
+ <a href="../solutions/growth-launch.html">إطلاق النمو</a>
+ <a href="../solutions/project-launch.html">إطلاق المشروع</a>
+ <a href="../solutions/brand-scale.html">توسعة العلامة</a>
+ </nav>
+ </div>
+ </div>
 
-    <div class="gh-footer__offices">
-      <div class="gh-footer__office">
-        <h4 class="gh-footer__office-title">السعودية</h4>
-        <p class="gh-footer__office-meta">ص.ب 136972<br>س.ت 4030502306، المقر الرئيسي</p>
-        <a href="tel:+966502786513" class="gh-footer__call">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          اتصل الآن
-        </a>
-      </div>
-      <div class="gh-footer__office">
-        <h4 class="gh-footer__office-title">سلطنة عُمان</h4>
-        <p class="gh-footer__office-meta">الخوض، السيب<br><span dir="ltr">CR 1460078</span></p>
-        <a href="tel:+96891326735" class="gh-footer__call">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          اتصل الآن
-        </a>
-      </div>
-      <div class="gh-footer__office">
-        <h4 class="gh-footer__office-title">مملكة البحرين</h4>
-        <p class="gh-footer__office-meta">مجمع 316<br><span dir="ltr">CR 15571301</span></p>
-        <a href="tel:+97332150369" class="gh-footer__call">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          اتصل الآن
-        </a>
-      </div>
-      <div class="gh-footer__office">
-        <h4 class="gh-footer__office-title">مصر</h4>
-        <p class="gh-footer__office-meta">شارع محمد عثمان<br>برج فيكتوريا سيتي</p>
-        <a href="tel:+201032955089" class="gh-footer__call">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          اتصل الآن
-        </a>
-      </div>
-    </div>
+ <div class="gh-footer__offices">
+ <div class="gh-footer__office">
+ <h4 class="gh-footer__office-title">السعودية</h4>
+ <p class="gh-footer__office-meta">ص.ب 136972<br>س.ت 4030502306، المقر الرئيسي</p>
+ <a href="tel:+966502786513" class="gh-footer__call">
+ <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+ اتصل الآن
+ </a>
+ </div>
+ <div class="gh-footer__office">
+ <h4 class="gh-footer__office-title">سلطنة عُمان</h4>
+ <p class="gh-footer__office-meta">الخوض، السيب<br><span dir="ltr">CR 1460078</span></p>
+ <a href="tel:+96891326735" class="gh-footer__call">
+ <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+ اتصل الآن
+ </a>
+ </div>
+ <div class="gh-footer__office">
+ <h4 class="gh-footer__office-title">مملكة البحرين</h4>
+ <p class="gh-footer__office-meta">مجمع 316<br><span dir="ltr">CR 15571301</span></p>
+ <a href="tel:+97332150369" class="gh-footer__call">
+ <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+ اتصل الآن
+ </a>
+ </div>
+ <div class="gh-footer__office">
+ <h4 class="gh-footer__office-title">مصر</h4>
+ <p class="gh-footer__office-meta">شارع محمد عثمان<br>برج فيكتوريا سيتي</p>
+ <a href="tel:+201032955089" class="gh-footer__call">
+ <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+ اتصل الآن
+ </a>
+ </div>
+ </div>
 
-    <div class="gh-footer__social">
-      <span class="gh-footer__social-label">تابعنا على:</span>
-      <a href="https://web.facebook.com/3dghouse" target="_blank" rel="noopener noreferrer" title="Facebook">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
-      <a href="https://twitter.com/GraphicsHouse2" target="_blank" rel="noopener noreferrer" title="X">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/3dgraphicshouse/" target="_blank" rel="noopener noreferrer" title="Instagram">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/company/graphics-house-gh/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/user/3dghouse/videos" target="_blank" rel="noopener noreferrer" title="YouTube">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      </a>
+ <div class="gh-footer__social">
+ <span class="gh-footer__social-label">تابعنا على:</span>
+ <a href="https://web.facebook.com/3dghouse" target="_blank" rel="noopener noreferrer" title="Facebook">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+ </a>
+ <a href="https://twitter.com/GraphicsHouse2" target="_blank" rel="noopener noreferrer" title="X">
+ <svg width="15" height="15" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+ </a>
+ <a href="https://www.instagram.com/3dgraphicshouse/" target="_blank" rel="noopener noreferrer" title="Instagram">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+ </a>
+ <a href="https://www.linkedin.com/company/graphics-house-gh/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+ </a>
+ <a href="https://www.youtube.com/user/3dghouse/videos" target="_blank" rel="noopener noreferrer" title="YouTube">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+ </a>
 
 </div>
 
-    <div class="gh-footer__legal">
-      <div class="gh-footer__legal-text">
-        <a class="gh-footer__group" href="https://www.tasamify.com/" target="_blank" rel="noopener noreferrer">
-          جرافيكس هاوس — شركة من <strong>مجموعة تسامي</strong>
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-        </a>
-        <p class="gh-footer__copy">© 2026 Graphics House Co.، جميع الحقوق محفوظة &nbsp;|&nbsp; س.ت: 7054412114 &nbsp;|&nbsp; الرقم الضريبي: 314808998900003</p>
-      </div>
-      <div class="gh-footer__legal-links">
-        <a href="../privacy-policy.html">سياسة الخصوصية</a>
-        <a href="../faq.html">الأسئلة الشائعة</a>
-      </div>
-    </div>
-  </div>
+ <div class="gh-footer__legal">
+ <div class="gh-footer__legal-text">
+ <a class="gh-footer__group" href="https://www.tasamify.com/" target="_blank" rel="noopener noreferrer">
+ جرافيكس هاوس, شركة من <strong>مجموعة تسامي</strong>
+ <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+ </a>
+ <p class="gh-footer__copy">© 2026 Graphics House Co.، جميع الحقوق محفوظة &nbsp;|&nbsp; س.ت: 7054412114 &nbsp;|&nbsp; الرقم الضريبي: 314808998900003</p>
+ </div>
+ <div class="gh-footer__legal-links">
+ <a href="../privacy-policy.html">سياسة الخصوصية</a>
+ <a href="../faq.html">الأسئلة الشائعة</a>
+ </div>
+ </div>
+ </div>
 </footer>
 
 
 <!-- Back to top -->
 <button id="back-top" class="fixed bottom-8 right-6 z-50 w-11 h-11 bg-surface-container-high border border-primary/30 text-primary flex items-center justify-content-center hover:bg-primary hover:text-on-primary transition-all" aria-label="العودة للأعلى">
-  <span class="material-symbols-outlined text-xl">arrow_upward</span>
+ <span class="material-symbols-outlined text-xl">arrow_upward</span>
 </button>
 
 <a class="ar-wa-float" href="https://wa.me/966502786513" target="_blank" rel="noopener" aria-label="واتساب" data-cta="float-whatsapp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+ <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
 </a>
 
 <!-- Mobile sticky CTA -->
 <div class="ar-sticky" id="arSticky">
-  <button class="ar-submit" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})" data-cta="sticky-book">احجز جلسة إطلاق مشروعك</button>
+ <button class="ar-submit" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})" data-cta="sticky-book">احجز جلسة إطلاق مشروعك</button>
 </div>
 
 <!-- MWL gallery lightbox -->
 <div class="pl-s3-lightbox" id="plS3Lightbox" role="dialog" aria-modal="true" aria-label="عرض الصورة">
-  <button type="button" class="pl-s3-lightbox-close" id="plS3LightboxClose" aria-label="إغلاق">&times;</button>
-  <img loading="lazy" id="plS3LightboxImg" src="" alt="">
+ <button type="button" class="pl-s3-lightbox-close" id="plS3LightboxClose" aria-label="إغلاق">&times;</button>
+ <img loading="lazy" id="plS3LightboxImg" src="" alt="">
 </div>
 
 <script defer src="../assets/gh-float-widgets.js?v=15"></script>

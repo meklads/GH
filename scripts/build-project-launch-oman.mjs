@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ProjectLaunch™ Oman — geo commercial LP (AR + EN)
+ * ProjectLaunch™ Oman, geo commercial LP (AR + EN)
  * Narrative: Saudi launch track record → Oman expansion.
  */
 import fs from 'fs';

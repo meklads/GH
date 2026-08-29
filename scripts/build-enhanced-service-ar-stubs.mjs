@@ -547,4 +547,4 @@ console.log('Enhancing AR service stub pages…');
 for (const [file, cfg] of Object.entries(STUBS)) {
   patch(file, cfg);
 }
-console.log(`Done — ${Object.keys(STUBS).length} enhanced AR stubs.`);
+console.log(`Done, ${Object.keys(STUBS).length} enhanced AR stubs.`);

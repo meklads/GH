@@ -251,7 +251,7 @@ const SHARED_RELATED = {
   interactive: { href: 'interactive-en.html', icon: 'touch_app', title: 'Interactive Experiences', desc: 'Touchscreens, VR tours, and digital sales platforms.' },
   marketing: { href: 'digital-marketing-en.html', icon: 'campaign', title: 'Digital Marketing', desc: 'Performance campaigns and lead generation for launches.' },
   web: { href: 'web-solutions-en.html', icon: 'language', title: 'Web Solutions', desc: 'Project websites, landing pages, and digital sales funnels.' },
-  branding: { href: 'branding-en.html', icon: 'brush', title: 'Visual identity', desc: 'Logo, catalogue, spatial signage — one integrated brand system.' },
+  branding: { href: 'branding-en.html', icon: 'brush', title: 'Visual identity', desc: 'Logo, catalogue, spatial signage, one integrated brand system.' },
   ai: { href: 'ai-solutions-en.html', icon: 'psychology', title: 'AI Solutions', desc: 'AI-assisted visualization and creative workflow automation.' },
 };
 

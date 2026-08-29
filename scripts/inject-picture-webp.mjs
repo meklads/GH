@@ -91,4 +91,4 @@ for (const rel of collectHtml(ROOT)) {
   if (html !== before) fs.writeFileSync(full, html, 'utf8');
 }
 
-console.log(`Done — flattened ${flattened} pages, picture/webp on ${patched} pages.`);
+console.log(`Done, flattened ${flattened} pages, picture/webp on ${patched} pages.`);

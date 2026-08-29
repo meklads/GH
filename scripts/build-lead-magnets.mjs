@@ -404,7 +404,7 @@ const CHECKLIST_CONFIG = {
     altAr: 'visual-launch-checklist.html',
     title: 'تحميل قائمة الإطلاق البصري مجاناً',
     description:
-      'حمّل مجاناً قائمة جاهزية الإطلاق البصري — 12 بنداً للمطورين العقاريين من جرافيكس هاوس.',
+      'حمّل مجاناً قائمة جاهزية الإطلاق البصري, 12 بنداً للمطورين العقاريين من جرافيكس هاوس.',
     heading: 'قائمة جاهزية الإطلاق البصري',
     lead: 'PDF مجاني، 12 بنداً للتحقق قبل إعلان مبيعات المخطط في السعودية والخليج. أدخل بريدك للتحميل، ثم شارك القائمة مع التسويق والمبيعات وشريك الإظهار.',
     features: [
@@ -423,7 +423,7 @@ const CHECKLIST_CONFIG = {
     altAr: 'visual-launch-checklist.html',
     title: 'Free Visual Launch Checklist PDF',
     description:
-      'Download the free 12-point Visual Launch Readiness Checklist for real estate developers — PDF by Graphics House.',
+      'Download the free 12-point Visual Launch Readiness Checklist for real estate developers, PDF by Graphics House.',
     heading: 'Visual Launch Readiness Checklist',
     lead: 'Free PDF, 12 checkpoints before you announce off-plan sales in Saudi Arabia and the GCC. Enter your email to download, then share with marketing, sales, and your visualization partner.',
     features: [
@@ -445,9 +445,9 @@ const BRIEF_CONFIG = {
     altAr: 'visual-project-brief.html',
     title: 'تحميل نموذج Brief للمشروع البصري',
     description:
-      'حمّل مجاناً نموذج Brief للمشروع البصري — PDF جاهز للطباعة قبل أول اجتماع مع فريق الإنتاج البصري.',
+      'حمّل مجاناً نموذج Brief للمشروع البصري, PDF جاهز للطباعة قبل أول اجتماع مع فريق الإنتاج البصري.',
     heading: 'نموذج Brief للمشروع البصري',
-    lead: 'PDF مجاني — نموذج منظم لتعبئة تفاصيل مشروعك قبل جلسة الاستراتيجية. أدخل بريدك للتحميل.',
+    lead: 'PDF مجاني, نموذج منظم لتعبئة تفاصيل مشروعك قبل جلسة الاستراتيجية. أدخل بريدك للتحميل.',
     features: [
       '10 حقول أساسية للمشروع والمخرجات',
       'متوافق مع جلسات الإظهار المعماري وصالات البيع',
@@ -464,9 +464,9 @@ const BRIEF_CONFIG = {
     altAr: 'visual-project-brief.html',
     title: 'Free Visual Project Brief PDF',
     description:
-      'Download the free Visual Project Brief template — printable PDF before your first visual production meeting.',
+      'Download the free Visual Project Brief template, printable PDF before your first visual production meeting.',
     heading: 'Visual Project Brief Template',
-    lead: 'Free PDF — structured template to capture project details before your strategy session. Enter your email to download.',
+    lead: 'Free PDF, structured template to capture project details before your strategy session. Enter your email to download.',
     features: [
       '10 essential fields for scope and deliverables',
       'Aligned with archviz and sales gallery planning',

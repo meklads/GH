@@ -98,7 +98,7 @@ function bodyContent() {
       <div class="feature-card">
         <div class="icon"><span class="material-symbols-outlined">brand_awareness</span></div>
         <h3>Project Branding</h3>
-        <p>Integrated visual identity — logo, palette, typography, and marketing collateral for launch-ready developments.</p>
+        <p>Integrated visual identity, logo, palette, typography, and marketing collateral for launch-ready developments.</p>
       </div>
     </div>
   </div>
@@ -107,7 +107,7 @@ function bodyContent() {
 <section class="cta-d" style="background:#1A1A1A">
   <div class="cta-d-inner">
     <h2 style="color:#FAFAF8">Bring Your <span class="gold">Development</span> to Life</h2>
-    <p style="color:rgba(255,255,255,0.6)">3D visuals, catalogs, and brand identity — delivered by one integrated studio.</p>
+    <p style="color:rgba(255,255,255,0.6)">3D visuals, catalogs, and brand identity, delivered by one integrated studio.</p>
     <div class="btns">
       <a href="#booking" class="btn-p">Request a Quote <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
       <a href="https://wa.me/966502786513" target="_blank" rel="noopener" class="btn-o-light">WhatsApp Us <span class="material-symbols-outlined" style="font-size:16px">phone_in_talk</span></a>
@@ -141,13 +141,13 @@ function bodyContent() {
     <div class="reveal" style="text-align:center;margin-bottom:48px">
       <span class="section-label">Why Graphics House</span>
       <h2 class="section-title">15 Years in <span class="gold">Architectural Visualization</span></h2>
-      <p class="section-sub" style="margin:0 auto">Experience, technology, and creative direction — imagery built to sell.</p>
+      <p class="section-sub" style="margin:0 auto">Experience, technology, and creative direction, imagery built to sell.</p>
     </div>
     <div class="why-grid reveal r1">
       <div class="why-card"><div class="num">15</div><h4>Years of Experience</h4><p>Deep GCC market knowledge serving developers and engineering firms.</p></div>
       <div class="why-card"><div class="num">500+</div><h4>Projects Delivered</h4><p>Residential, commercial, hospitality, and government mega-developments.</p></div>
-      <div class="why-card"><div class="num">4</div><h4>Regional Offices</h4><p>Saudi Arabia, Oman, Bahrain, and Egypt — teams where you need them.</p></div>
-      <div class="why-card"><div class="num">1</div><h4>Integrated Studio</h4><p>Artists, designers, and directors under one roof — zero fragmentation.</p></div>
+      <div class="why-card"><div class="num">4</div><h4>Regional Offices</h4><p>Saudi Arabia, Oman, Bahrain, and Egypt, teams where you need them.</p></div>
+      <div class="why-card"><div class="num">1</div><h4>Integrated Studio</h4><p>Artists, designers, and directors under one roof, zero fragmentation.</p></div>
     </div>
   </div>
 </section>
@@ -179,7 +179,7 @@ function bodyContent() {
 <section class="cta-d" style="background:#1A1A1A">
   <div class="cta-d-inner">
     <h2 style="color:#FAFAF8">Ready to <span class="gold">Launch</span> Your Project?</h2>
-    <p style="color:rgba(255,255,255,0.6)">Request a quote today — our team responds within 24 hours.</p>
+    <p style="color:rgba(255,255,255,0.6)">Request a quote today, our team responds within 24 hours.</p>
     <div class="btns">
       <a href="#booking" class="btn-p">Request a Quote <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
       <a href="https://wa.me/966502786513" target="_blank" rel="noopener" class="btn-o-light">WhatsApp <span class="material-symbols-outlined" style="font-size:16px">chat</span></a>
@@ -197,10 +197,10 @@ function bodyContent() {
     <div class="contact-grid reveal r1">
       <div class="contact-info">
         <h3>Let's Build Your Project's Visual Identity</h3>
-        <p>Whether you need 3D stills, a sales catalog, or a complete brand system — our specialists are ready.</p>
+        <p>Whether you need 3D stills, a sales catalog, or a complete brand system, our specialists are ready.</p>
         <div class="contact-info-item"><span class="material-symbols-outlined">phone_in_talk</span> +966 50 278 6513</div>
         <div class="contact-info-item"><span class="material-symbols-outlined">mail</span> info@3dgraphicshouse.com</div>
-        <div class="contact-info-item"><span class="material-symbols-outlined">location_on</span> Jeddah, Saudi Arabia — 4 regional offices</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">location_on</span> Jeddah, Saudi Arabia, 4 regional offices</div>
         <div class="contact-info-item"><span class="material-symbols-outlined">schedule</span> Response within 24 business hours</div>
       </div>
       <div class="form-card">

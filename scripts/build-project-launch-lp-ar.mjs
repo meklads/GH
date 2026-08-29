@@ -19,7 +19,7 @@ const ADS_AR = 'https://3dgraphicshouse.com/solutions/project-launch-ads.html';
 const ADS_EN = 'https://3dgraphicshouse.com/solutions/project-launch-ads-en.html';
 
 const ADS_CSS = `
-  /* Ads LP — no site header (DAMAC-style paid landing) */
+  /* Ads LP, no site header (DAMAC-style paid landing) */
   body.pl-ads-lp {
     padding-top: 0 !important;
   }
@@ -111,7 +111,7 @@ function buildAdsLp({ srcRel, outRel, pageUrl, lang, homeHref, ghostCtaFrom, gho
     `"url":"${pageUrl}"`
   );
 
-  /* Strip site header chrome assets — keep lang-switch.js for AR/EN toggle */
+  /* Strip site header chrome assets, keep lang-switch.js for AR/EN toggle */
   html = html.replace(/<link rel="stylesheet" href="\.\.\/assets\/site-header\.css[^"]*">\s*/g, '');
   html = html.replace(/<script defer src="\.\.\/assets\/site-header\.js[^"]*"><\/script>\s*/g, '');
 
@@ -140,7 +140,7 @@ function buildAdsLp({ srcRel, outRel, pageUrl, lang, homeHref, ghostCtaFrom, gho
     'class="bg-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden pl-ads-lp" data-pl-ads="1"'
   );
 
-  if (!html.includes('Ads LP — no site header')) {
+  if (!html.includes('Ads LP, no site header')) {
     html = html.replace('</style>', `${ADS_CSS}\n</style>`);
   }
 

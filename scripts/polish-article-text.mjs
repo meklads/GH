@@ -16,27 +16,27 @@ export function polishText(text, lang = null) {
   if (!text || typeof text !== 'string') return text;
   let s = text;
 
-  // Numeric ranges: 6–4, 3–5, 60–90, 10–15
-  s = s.replace(/(\d+)\s*[–—]\s*(\d+)/g, (_, a, b) => {
+  // Numeric ranges: 6-4, 3-5, 60-90, 10-15
+  s = s.replace(/(\d+)\s*[-, ]\s*(\d+)/g, (_, a, b) => {
     if (lang === 'ar') return `من ${a} إلى ${b}`;
     return `${a} to ${b}`;
   });
 
   // Month labels
-  s = s.replace(/الشهر\s+(\d+)\s*[–—]\s*(\d+)/g, 'الشهر من $1 إلى $2');
-  s = s.replace(/Month\s+(\d+)\s*[–—]\s*(\d+)/gi, 'Month $1 to $2');
+  s = s.replace(/الشهر\s+(\d+)\s*[-, ]\s*(\d+)/g, 'الشهر من $1 إلى $2');
+  s = s.replace(/Month\s+(\d+)\s*[-, ]\s*(\d+)/gi, 'Month $1 to $2');
 
   // Em dash with spaces → sentence break or comma
-  s = s.replace(/\s*—\s*/g, () => {
+  s = s.replace(/\s*, \s*/g, () => {
     if (lang === 'ar') return '، ';
     return ', ';
   });
 
   // Remaining en dashes used as punctuation (not in URLs)
-  s = s.replace(/\s+–\s+/g, () => (lang === 'ar' ? '، ' : ', '));
+  s = s.replace(/\s+-\s+/g, () => (lang === 'ar' ? '، ' : ', '));
 
-  // Title-style compound dashes without spaces: Finishes–Spec
-  s = s.replace(/([^\s])[–—]([^\s])/g, (_, a, b) => {
+  // Title-style compound dashes without spaces: Finishes-Spec
+  s = s.replace(/([^\s])[-, ]([^\s])/g, (_, a, b) => {
     if (lang === 'ar') return `${a} و${b}`;
     return `${a} and ${b}`;
   });
@@ -105,7 +105,7 @@ function polishArticle(article) {
 
 function countDashes(text) {
   if (!text) return 0;
-  return (String(text).match(/[—–]/g) || []).length;
+  return (String(text).match(/[, -]/g) || []).length;
 }
 
 function walkDashes(obj) {

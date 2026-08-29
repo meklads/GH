@@ -19,13 +19,13 @@ if (!cfg.enabled || !cfg.ga4MeasurementId) {
 }
 
 if (!cfg.googleSiteVerification) {
-  // Ownership may already be verified in GSC via GA / DNS / HTML file — meta token is optional.
+  // Ownership may already be verified in GSC via GA / DNS / HTML file, meta token is optional.
   console.log('OK: GSC HTML meta token not in repo (optional if property already verified in Search Console)');
 } else {
   console.log('OK: GSC verification token set');
   const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   if (!index.includes(`content="${cfg.googleSiteVerification}"`)) {
-    console.warn('WARN: index.html missing GSC meta — run npm run build');
+    console.warn('WARN: index.html missing GSC meta, run npm run build');
   } else {
     console.log('OK: GSC meta tag present on homepage');
   }
@@ -33,7 +33,7 @@ if (!cfg.googleSiteVerification) {
 
 const sm = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 const urlCount = (sm.match(/<loc>/g) || []).length;
-console.log(`OK: sitemap.xml — ${urlCount} URLs`);
+console.log(`OK: sitemap.xml, ${urlCount} URLs`);
 
 const expectedEvents = [
   'video_play',

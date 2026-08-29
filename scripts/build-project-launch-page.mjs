@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Solution flagship pages — GrowthLaunch / ProjectLaunch / BrandScale
+ * Solution flagship pages, GrowthLaunch / ProjectLaunch / BrandScale
  * Same simple Interactive-style layout. Shared hero hierarchy:
  * English name™ → Arabic product title → headline → services line
  */
@@ -182,7 +182,7 @@ const PRODUCTS = [
         ['هل يتكامل مع ProjectLaunch™؟', 'نعم، مسار النمو يكمّل إطلاق المشروع: حملات بعد جاهزية العرض والبيع.'],
       ],
       ecosystemEyebrow: 'منظومة Graphics House',
-      ecosystemTitle: 'GrowthLaunch™، مسار الطلب بعد جاهزية العرض',
+      ecosystemTitle: 'GrowthLaunch™: مسار الطلب بعد جاهزية العرض',
       ecosystemLead: 'BrandScale™ يثبت الهوية، وProjectLaunch™ يبني بيئة البيع، ثم GrowthLaunch™ يحوّل الاهتمام إلى صفقات.',
       ecosystem: [
         { slug: 'growth-launch', icon: 'query_stats', active: true, name: 'GrowthLaunch™', roleAr: 'توليد العملاء والمبيعات', roleEn: 'Lead generation & sales' },
@@ -240,7 +240,7 @@ const PRODUCTS = [
         ['Does it connect with ProjectLaunch™?', 'Yes, growth paths complement project launch once offer and sales assets are ready.'],
       ],
       ecosystemEyebrow: 'Graphics House ecosystem',
-      ecosystemTitle: 'GrowthLaunch™, demand after the offer is ready',
+      ecosystemTitle: 'GrowthLaunch™: demand after the offer is ready',
       ecosystemLead: 'BrandScale™ sets identity, ProjectLaunch™ builds the sales environment, then GrowthLaunch™ turns interest into deals.',
       ecosystem: [
         { slug: 'growth-launch', icon: 'query_stats', active: true, name: 'GrowthLaunch™', roleAr: 'توليد العملاء والمبيعات', roleEn: 'Lead generation & sales' },
@@ -263,8 +263,8 @@ const PRODUCTS = [
     hero: {
       src: '../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg',
       webp: '../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp',
-      altAr: 'بيئة إطلاق متكاملة — رابطة العالم الإسلامي',
-      altEn: 'Integrated launch environment — Muslim World League',
+      altAr: 'بيئة إطلاق متكاملة, رابطة العالم الإسلامي',
+      altEn: 'Integrated launch environment, Muslim World League',
     },
     overviewImg: '../assets/news/makkah-charter-01.jpeg',
     cards: [
@@ -326,14 +326,14 @@ const PRODUCTS = [
     ],
     ar: {
       title: 'ProjectLaunch™ | المنظومة الكاملة لإطلاق المشاريع العقارية | Graphics House',
-      desc: 'كل ما يحتاجه إطلاق المشروع — هوية معمارية، أفلام CGI، مجسمات ذكية، عروض تفاعلية، ديكور صالة البيع، تصوير وإخراج — استوديو واحد.',
+      desc: 'هوية معمارية، أفلام CGI، مجسمات ذكية، عروض تفاعلية، ديكور صالة البيع، وتصوير وإخراج من استوديو واحد.',
       eyebrow: 'الحل الرئيسي',
       h1Ar: 'نظام إطلاق المشاريع العقارية',
-      heroHeadline: 'من الهوية المعمارية إلى صالة عرض تفاعلية تُغلق الصفقات',
-      heroLead: 'مجسمات تفاعلية، أفلام سينمائية، عروض تفاعلية، ديكور، تصوير وإخراج في منظومة بصرية واحدة.',
+      heroHeadline: 'من الهوية المعمارية إلى صالة عرض تُغلق الصفقات',
+      heroLead: 'مجسمات وأفلام وعروض تفاعلية وديكور وتصوير، بلغة بصرية واحدة من استوديو واحد.',
       overviewTag: 'الحل الرئيسي',
       overviewTitle: 'المنظومة الكاملة للإطلاق',
-      overviewLead: 'ProjectLaunch™ يجمع كل ما يلزم لفتح المبيعات قبل الخرسانة: <a href="../services/branding.html">هوية</a>، CGI، أفلام، مجسمات، تفاعلي، ديكور صالة البيع، وإنتاج — بلغة بصرية واحدة.',
+      overviewLead: 'ProjectLaunch™ يجمع ما يلزم لفتح المبيعات قبل الخرسانة: <a href="../services/branding.html">هوية</a>، CGI، أفلام، مجسمات، تفاعلي، ديكور صالة البيع، وإنتاج، كلّها بلغة بصرية واحدة.',
       features: [
         '<a href="../services/branding.html">هوية معمارية للمشروع</a>',
         'تصور فوتورياليستي وأفلام سينمائية',
@@ -353,13 +353,13 @@ const PRODUCTS = [
       vidTitle: 'أفلام إطلاق سينمائية',
       vidLead: 'أنيميشن وسينما CGI تحمل نفس <a href="../services/branding.html">الهوية</a> إلى أيام المستثمرين والحملات.',
       faq: [
-        ['ماذا يشمل ProjectLaunch™؟', '<a href="../services/branding.html">هوية معمارية</a>، CGI وأفلام، مجسمات ذكية، عروض تفاعلية، ديكور صالة البيع، تصوير وقيادة إبداعية — كنطاق واحد.'],
-        ['هل يمكن البدء بالتصور أو المجسمات فقط؟', 'نعم، يمكن التنفيذ على مراحل، لكن قيمة الحل هي لغة واحدة عبر كل سطح.'],
-        ['هل تقومون بالتركيب في الموقع؟', 'نعم — الديكور والشاشات والمجسمات والأنظمة التفاعلية تُركَّب وتُسلَّم مع التدريب.'],
+        ['ماذا يشمل ProjectLaunch™؟', '<a href="../services/branding.html">هوية معمارية</a>، CGI وأفلام، مجسمات ذكية، عروض تفاعلية، ديكور صالة البيع، وتصوير وقيادة إبداعية في نطاق واحد.'],
+        ['هل يمكن البدء بالتصور أو المجسمات فقط؟', 'نعم، يمكن التنفيذ على مراحل. قيمة الحل تظهر حين تبقى اللغة واحدة على كل سطح.'],
+        ['هل تقومون بالتركيب في الموقع؟', 'نعم. الديكور والشاشات والمجسمات والأنظمة التفاعلية تُركَّب وتُسلَّم مع التدريب.'],
       ],
       ecosystemEyebrow: 'منظومة Graphics House',
-      ecosystemTitle: 'ProjectLaunch™ — قلب الإطلاق البصري',
-      ecosystemLead: '<a href="../services/branding.html">الهوية</a> من <a href="../solutions/brand-scale.html">BrandScale™</a>، والطلب من GrowthLaunch™ — وProjectLaunch™ يربطهما ببيئة بيع متكاملة.',
+      ecosystemTitle: 'ProjectLaunch™ في قلب الإطلاق البصري',
+      ecosystemLead: '<a href="../services/branding.html">الهوية</a> من <a href="../solutions/brand-scale.html">BrandScale™</a>، والطلب من GrowthLaunch™. ProjectLaunch™ يربطهما ببيئة بيع متكاملة.',
       ecosystem: [
         { slug: 'project-launch', icon: 'rocket_launch', active: true, name: 'ProjectLaunch™', roleAr: 'إطلاق المشروع وبيئة البيع', roleEn: 'Project launch & sales environment' },
         { slug: 'brand-scale', icon: 'workspace_premium', active: false, name: 'BrandScale™', roleAr: 'نظام العلامة والتموضع', roleEn: 'Brand & positioning system' },
@@ -370,14 +370,14 @@ const PRODUCTS = [
     },
     en: {
       title: 'ProjectLaunch™ | Complete Real Estate Launch System | Graphics House',
-      desc: 'Everything a development launch needs — architectural identity, CGI films, smart maquettes, interactive experiences, sales-gallery décor, photography and direction — one studio.',
+      desc: 'Architectural identity, CGI films, smart maquettes, interactive experiences, sales-gallery décor, photography and direction from one studio.',
       eyebrow: 'Flagship Solution',
       h1Ar: '',
-      heroHeadline: 'From architectural identity to an interactive sales hall that closes deals',
-      heroLead: 'Interactive maquettes, cinematic films, interactive experiences, décor, photography and direction — one visual system.',
+      heroHeadline: 'From architectural identity to a sales hall that closes deals',
+      heroLead: 'Maquettes, films, interactive tools, décor, and production in one visual language from one studio.',
       overviewTag: 'Flagship Solution',
       overviewTitle: 'The complete launch system',
-      overviewLead: 'ProjectLaunch™ gathers every capability required to open sales before concrete — <a href="../services/branding-en.html">identity</a>, CGI, films, maquettes, interactive, sales-gallery décor, and production in one visual language.',
+      overviewLead: 'ProjectLaunch™ gathers what you need to open sales before concrete: <a href="../services/branding-en.html">identity</a>, CGI, films, maquettes, interactive tools, sales-gallery décor, and production in one visual language.',
       features: [
         '<a href="../services/branding-en.html">Architectural identity for the development</a>',
         'Photoreal CGI and cinematic films',
@@ -397,13 +397,13 @@ const PRODUCTS = [
       vidTitle: 'Cinematic launch films',
       vidLead: 'Animation and CGI cinema that carry the same <a href="../services/branding-en.html">identity</a> into investor days and campaigns.',
       faq: [
-        ['What does ProjectLaunch™ include?', '<a href="../services/branding-en.html">Architectural identity</a>, CGI and films, smart maquettes, interactive experiences, sales-gallery décor, photography and creative direction — one system.'],
-        ['Can we start with only visualization or maquettes?', 'Yes. We can phase delivery, but the flagship value is one coherent language across every surface.'],
-        ['Do you install on site?', 'Yes — décor, screens, models and interactive systems are installed and handed over with training.'],
+        ['What does ProjectLaunch™ include?', '<a href="../services/branding-en.html">Architectural identity</a>, CGI and films, smart maquettes, interactive experiences, sales-gallery décor, photography and creative direction as one system.'],
+        ['Can we start with only visualization or maquettes?', 'Yes. We can phase delivery. The real value shows when every surface still speaks one language.'],
+        ['Do you install on site?', 'Yes. Décor, screens, models and interactive systems are installed and handed over with training.'],
       ],
       ecosystemEyebrow: 'Graphics House ecosystem',
-      ecosystemTitle: 'ProjectLaunch™ — the visual launch core',
-      ecosystemLead: '<a href="../services/branding-en.html">Identity</a> from <a href="../solutions/brand-scale-en.html">BrandScale™</a>, demand from GrowthLaunch™ — ProjectLaunch™ connects both in one sales environment.',
+      ecosystemTitle: 'ProjectLaunch™ at the centre of the visual launch',
+      ecosystemLead: '<a href="../services/branding-en.html">Identity</a> from <a href="../solutions/brand-scale-en.html">BrandScale™</a>, demand from GrowthLaunch™. ProjectLaunch™ connects both in one sales environment.',
       ecosystem: [
         { slug: 'project-launch', icon: 'rocket_launch', active: true, name: 'ProjectLaunch™', roleAr: 'إطلاق المشروع وبيئة البيع', roleEn: 'Project launch & sales environment' },
         { slug: 'brand-scale', icon: 'workspace_premium', active: false, name: 'BrandScale™', roleAr: 'نظام العلامة والتموضع', roleEn: 'Brand & positioning system' },
@@ -427,8 +427,8 @@ const PRODUCTS = [
       altEn: 'Institutional presence that commands trust',
     },
     overviewImg: '../assets/news/makkah-charter-02.jpeg',
-    overviewAltAr: 'هوية علامة في بيئة معرض — لغة بصرية متسقة',
-    overviewAltEn: 'Brand identity in an exhibition environment — consistent visual language',
+    overviewAltAr: 'هوية علامة في بيئة معرض, لغة بصرية متسقة',
+    overviewAltEn: 'Brand identity in an exhibition environment, consistent visual language',
     cards: [
       { img: '../assets/news/makkah-charter-08.jpeg', titleAr: 'هوية في الفضاء', titleEn: 'Identity in space' },
       { img: '../assets/news/makkah-charter-10.jpeg', titleAr: 'لغة علامة متسقة', titleEn: 'Consistent brand language' },
@@ -470,8 +470,8 @@ const PRODUCTS = [
         img: '../assets/news/makkah-charter-01.jpeg',
         tagAr: 'هوية ومعرض',
         tagEn: 'Identity & exhibition',
-        titleAr: 'ميثاق مكة — رابطة العالم الإسلامي',
-        titleEn: 'Makkah Charter — MWL',
+        titleAr: 'ميثاق مكة, رابطة العالم الإسلامي',
+        titleEn: 'Makkah Charter, MWL',
         leadAr: 'لغة علامة متسقة عبر المجسم والتفاعلي والفضاء',
         leadEn: 'Consistent brand language across model, interactive and space',
       },
@@ -480,8 +480,8 @@ const PRODUCTS = [
         img: '../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg',
         tagAr: 'هوية مشروع',
         tagEn: 'Project identity',
-        titleAr: 'الأولى — النخيل',
-        titleEn: 'Al Oula — Al Nakheel',
+        titleAr: 'الأولى, النخيل',
+        titleEn: 'Al Oula, Al Nakheel',
         leadAr: 'تصور فوتوريالي يحمل تموضع المشروع',
         leadEn: 'Photoreal visualization carrying project positioning',
       },
@@ -575,7 +575,7 @@ const PRODUCTS = [
         { title: 'فرق تطلق مشروعاً جديداً', desc: 'تحتاج لغة بصرية واضحة قبل الإعلان، بلا وقت لإعادة الاختراع.' },
       ],
       ecosystemEyebrow: 'منظومة Graphics House',
-      ecosystemTitle: 'BrandScale™، الأساس قبل الإطلاق والنمو',
+      ecosystemTitle: 'BrandScale™: الأساس قبل الإطلاق والنمو',
       ecosystemLead: '<a href="../services/branding.html">الهوية</a> تسبق كل شيء. ثم يبني ProjectLaunch™ بيئة البيع، وGrowthLaunch™ مسار الطلب.',
       ecosystem: [
         { slug: 'brand-scale', icon: 'workspace_premium', active: true, name: 'BrandScale™', roleAr: 'نظام العلامة والتموضع', roleEn: 'Brand & positioning system' },
@@ -685,7 +685,7 @@ const PRODUCTS = [
         { title: 'Teams launching something new', desc: 'Clear visual language before advertising, no time to reinvent.' },
       ],
       ecosystemEyebrow: 'Graphics House ecosystem',
-      ecosystemTitle: 'BrandScale™, the foundation before launch and growth',
+      ecosystemTitle: 'BrandScale™: the foundation before launch and growth',
       ecosystemLead: '<a href="../services/branding-en.html">Identity</a> comes first. Then ProjectLaunch™ builds the sales environment, and GrowthLaunch™ drives demand.',
       ecosystem: [
         { slug: 'brand-scale', icon: 'workspace_premium', active: true, name: 'BrandScale™', roleAr: 'نظام العلامة والتموضع', roleEn: 'Brand & positioning system' },

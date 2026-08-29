@@ -34,7 +34,7 @@ function walkImages(dir, out = []) {
 }
 
 if (!hasCwebp()) {
-  console.warn('generate-project-webp: cwebp not found — skip WebP generation');
+  console.warn('generate-project-webp: cwebp not found, skip WebP generation');
   process.exit(0);
 }
 

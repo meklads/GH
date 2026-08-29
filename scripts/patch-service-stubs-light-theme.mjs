@@ -64,4 +64,4 @@ for (const file of STUBS) {
   writeFileSync(path, html);
   console.log('light-themed', file);
 }
-console.log(`Done — ${STUBS.length} AR service stubs.`);
+console.log(`Done, ${STUBS.length} AR service stubs.`);

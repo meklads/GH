@@ -636,8 +636,8 @@ function aiToolsSection(lang) {
   <div class="gh-ins-section-head">
     <h2>${isEn ? 'AI Tools' : 'أدوات الذكاء الاصطناعي'}</h2>
     <p>${isEn
-    ? 'Intelligent assistants for developers — more tools launching soon.'
-    : 'مساعدات ذكية للمطورين — المزيد من الأدوات قريباً.'}</p>
+    ? 'Intelligent assistants for developers. More tools launching soon.'
+    : 'مساعدات ذكية للمطورين. المزيد من الأدوات قريباً.'}</p>
   </div>
   <div class="gh-ins-tools-grid">${cards}</div>
 </section>`;
@@ -752,15 +752,15 @@ function marketReportsSection(lang) {
   const p = '../';
   const cards = REPORTS.map((r) => reportCard(r, lang, p)).join('');
   const empty = isEn
-    ? 'Reports are being prepared — check back soon.'
-    : 'التقارير قيد الإعداد — عد قريباً.';
+    ? 'Reports are being prepared. Check back soon.'
+    : 'التقارير قيد الإعداد. عد قريباً.';
   return `
 <section class="gh-ins-section gh-ins-panel" id="spotlights" data-gh-ins-panel="spotlights">
   <div class="gh-ins-section-head">
     <h2>${isEn ? 'Project Spotlights' : 'مشاريع مميزة'}</h2>
     <p>${isEn
-    ? 'Visual-readiness reports on local projects under preparation, Gulf, and global references — for developers, marketers, brokers, and architects. Market context, not Graphics House delivery claims.'
-    : 'تقارير جاهزية بصرية لمشاريع محلية تحت التجهيز، وخليجية، وعالمية — للمطورين والمسوّقين والوسطاء والمكاتب المعمارية. سياق سوق، لا ادّعاء تسليم من Graphics House.'}</p>
+    ? 'Visual-readiness reports on local projects under preparation, plus Gulf and global references, for developers, marketers, brokers, and architects. Market context only, not Graphics House delivery claims.'
+    : 'تقارير جاهزية بصرية لمشاريع محلية تحت التجهيز، وخليجية، وعالمية، للمطورين والمسوّقين والوسطاء والمكاتب المعمارية. سياق سوق، لا ادّعاء تسليم من Graphics House.'}</p>
   </div>
   <div class="gh-ins-report-filters" role="group" aria-label="${isEn ? 'Filter by region' : 'تصفية حسب النطاق'}">
     <button type="button" class="gh-ins-report-filter is-active" data-gh-report-filter="all">${isEn ? 'All' : 'الكل'}</button>
@@ -799,8 +799,8 @@ function featuredProjectsSection(lang) {
   <div class="gh-ins-section-head">
     <h2>${isEn ? 'Our Work' : 'أعمالنا'}</h2>
     <p>${isEn
-    ? 'Selected Graphics House deliverables across the GCC — archviz, smart maquettes, CGI films, and interactive sales systems. Order refreshes on each visit.'
-    : 'نماذج من أعمال Graphics House في الخليج — إظهار معماري، مجسمات ذكية، أفلام CGI، ومنصات مبيعات. الترتيب يتغيّر عند كل زيارة.'}</p>
+    ? 'Selected Graphics House work across the GCC: archviz, smart maquettes, CGI films, and interactive sales systems. Order refreshes on each visit.'
+    : 'نماذج من أعمال Graphics House في الخليج: إظهار معماري، مجسمات ذكية، أفلام CGI، ومنصات مبيعات. الترتيب يتغيّر عند كل زيارة.'}</p>
   </div>
   <div class="gh-ins-proj-grid" id="ghInsProjGrid">${cards}</div>
 </section>
@@ -837,8 +837,8 @@ function citiesSection(lang) {
   <div class="gh-ins-section-head">
     <h2>${isEn ? 'Archviz by City' : 'الإظهار المعماري حسب المدينة'}</h2>
     <p>${isEn
-    ? 'Landing pages for developers in Jeddah, Riyadh, Makkah, and Madinah — services, portfolio highlights, and local expertise.'
-    : 'صفحات مخصصة للمطورين في جدة والرياض ومكة والمدينة — خدمات، أعمال مميزة، وخبرة محلية.'}</p>
+    ? 'Landing pages for developers in Jeddah, Riyadh, Makkah, and Madinah: services, portfolio highlights, and local expertise.'
+    : 'صفحات مخصصة للمطورين في جدة والرياض ومكة والمدينة: خدمات، أعمال مميزة، وخبرة محلية.'}</p>
   </div>
   <div class="gh-ins-cities-grid">${cards}</div>
 </section>`;
@@ -950,8 +950,8 @@ function buildHub(lang) {
     depth: 1,
     title: isEn ? 'Insights' : 'رؤى',
     description: isEn
-      ? 'Premium knowledge hub for architectural visualization, cinematic CGI, interactive experiences, and real estate marketing — by Graphics House.'
-      : 'مركز معرفة متميز للإظهار المعماري، الـ CGI السينمائي، التجارب التفاعلية، وتسويق العقار — من Graphics House.',
+      ? 'A knowledge hub for architectural visualization, cinematic CGI, interactive experiences, and real estate marketing, by Graphics House.'
+      : 'مركز معرفة للإظهار المعماري والـ CGI السينمائي والتجارب التفاعلية وتسويق العقار، من Graphics House.',
     canonical: `https://3dgraphicshouse.com/insights/${isEn ? 'index-en.html' : 'index.html'}`,
   })}
 ${header}
@@ -960,8 +960,8 @@ ${header}
     <span class="gh-kicker">Graphics House · Insights</span>
     <h1>Insights</h1>
     <p>${isEn
-    ? 'Strategic knowledge for developers shaping major projects — architectural visualization, immersive sales systems, and digital transformation across Saudi Arabia and the GCC.'
-    : 'معرفة استراتيجية للمطورين في المشاريع الكبرى — الإظهار المعماري، أنظمة المبيعات الغامرة، والتحول الرقمي في السعودية والخليج.'}</p>
+    ? 'Strategic knowledge for developers shaping major projects: architectural visualization, immersive sales systems, and digital transformation across Saudi Arabia and the GCC.'
+    : 'معرفة استراتيجية للمطورين في المشاريع الكبرى: الإظهار المعماري، أنظمة المبيعات الغامرة، والتحول الرقمي في السعودية والخليج.'}</p>
   </header>
   ${hubSubNav(lang)}
   <div class="gh-ins-wrap">
@@ -1389,8 +1389,8 @@ function buildSolutionFinder(lang) {
     depth: 2,
     title: isEn ? 'Which Solution Fits Your Project?' : 'أي حل يناسب مشروعك؟',
     description: isEn
-      ? '7 questions to recommend GrowthLaunch, ProjectLaunch, or BrandScale — with service links.'
-      : '7 أسئلة للتوصية بين GrowthLaunch وProjectLaunch وBrandScale — مع روابط للخدمات.',
+      ? 'Seven questions to recommend GrowthLaunch, ProjectLaunch, or BrandScale, with links to the right services.'
+      : 'سبعة أسئلة للتوصية بين GrowthLaunch وProjectLaunch وBrandScale، مع روابط للخدمات.',
     canonical: `https://3dgraphicshouse.com/insights/tools/solution-finder${isEn ? '-en' : ''}.html`,
     altEn: 'https://3dgraphicshouse.com/insights/tools/solution-finder-en.html',
     altAr: 'https://3dgraphicshouse.com/insights/tools/solution-finder.html',

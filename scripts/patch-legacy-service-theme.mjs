@@ -21,7 +21,7 @@ const EN_META = {
   'services/interactive-en.html': {
     title: 'Interactive Presentations | Graphics House',
     description:
-      'Touch-enabled interactive environments with Unreal Engine — walkthroughs, material switching, and unit selection in real time.',
+      'Touch-enabled interactive environments with Unreal Engine, walkthroughs, material switching, and unit selection in real time.',
     name: 'Interactive Presentations',
   },
   'services/vr-360-en.html': {
@@ -60,7 +60,7 @@ function patch(html, rel) {
   // Soft-disable custom cursor (causes broken UX / invisible pointer)
   html = html.replace(
     /@media \(pointer:fine\) \{ \*,\*::before,\*::after \{ cursor:none !important; \} \}/,
-    '/* custom cursor disabled — site-wide pointer restored */'
+    '/* custom cursor disabled, site-wide pointer restored */'
   );
 
   // Stronger hero darkening for text contrast

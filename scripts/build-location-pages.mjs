@@ -424,8 +424,8 @@ ${header}
   <section class="gh-loc-cta-band">
     <h2>${isEn ? 'See our work' : 'شاهد أعمالنا'}</h2>
     <p>${isEn
-    ? 'Explore portfolio projects across the GCC — renders, films, smart maquettes, and interactive sales systems.'
-    : 'استعرض مشاريعنا في الخليج — رندرات، أفلام، مجسمات ذكية، ومنصات مبيعات تفاعلية.'}</p>
+    ? 'Explore portfolio projects across the GCC, renders, films, smart maquettes, and interactive sales systems.'
+    : 'استعرض مشاريعنا في الخليج, رندرات، أفلام، مجسمات ذكية، ومنصات مبيعات تفاعلية.'}</p>
     <a href="${portfolioHref}" class="gh-loc-btn gh-loc-btn--outline">${isEn ? 'View Portfolio' : 'معرض الأعمال'}</a>
   </section>
   <section class="gh-loc-section">

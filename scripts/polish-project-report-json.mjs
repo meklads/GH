@@ -12,9 +12,9 @@ const ROOT = path.join(__dirname, '..');
 function polishText(s) {
   if (typeof s !== 'string') return s;
   return s
-    .replace(/(\d)\s*–\s*(\d)/g, '$1 to $2')
-    .replace(/–/g, ', ')
-    .replace(/—/g, ', ')
+    .replace(/(\d)\s*-\s*(\d)/g, '$1 to $2')
+    .replace(/-/g, ', ')
+    .replace(/, /g, ', ')
     .replace(/,\s*,/g, ',')
     .replace(/\s+,/g, ',')
     .replace(/,\s+/g, ', ')
@@ -264,7 +264,7 @@ function polishReport(file) {
   data = walk(data);
 
   if (REPORT_TITLE_FIXES[slug]) {
-    data.title = { ...data.title, ...REPORT_TITLE_FIXES[slug].title };
+    data.title = { ...data.title...REPORT_TITLE_FIXES[slug].title };
   }
 
   const meta = REPORT_META[slug];

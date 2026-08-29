@@ -18,16 +18,16 @@ const CSS_V = 7;
 const BRAND = 'assets/branding';
 const OG_IMG = `${BRAND}/jeddah-forum-mockup.png`;
 
-/** Hero carousel — architectural half of each split mockup */
+/** Hero carousel, architectural half of each split mockup */
 const HERO_SLIDES = [
-  { img: `${BRAND}/jeddah-forum-mockup.png`, altAr: 'ملتقى جدة — تطبيق الهوية على واجهة معمارية', altEn: 'Jeddah Forum — identity on architectural facade' },
-  { img: `${BRAND}/ruwaq-mockup.png`, altAr: 'رواق — لافتة ثلاثية الأبعاد', altEn: 'Ruwaq — 3D signage application' },
-  { img: `${BRAND}/graphics-house-mockup.png`, altAr: 'Graphics House — تطبيق مكاني للهوية', altEn: 'Graphics House — spatial brand application' },
+  { img: `${BRAND}/jeddah-forum-mockup.png`, altAr: 'ملتقى جدة, تطبيق الهوية على واجهة معمارية', altEn: 'Jeddah Forum, identity on architectural facade' },
+  { img: `${BRAND}/ruwaq-mockup.png`, altAr: 'رواق, لافتة ثلاثية الأبعاد', altEn: 'Ruwaq, 3D signage application' },
+  { img: `${BRAND}/graphics-house-mockup.png`, altAr: 'Graphics House, تطبيق مكاني للهوية', altEn: 'Graphics House, spatial brand application' },
 ];
 
 const HERO_SLIDE_COUNT = HERO_SLIDES.length;
 
-/** Large mockup showcase — full split-screen brand presentations */
+/** Large mockup showcase, full split-screen brand presentations */
 const SHOWCASE = [
   {
     id: 'jeddah-forum',
@@ -37,8 +37,8 @@ const SHOWCASE = [
     img: `${BRAND}/jeddah-forum-mockup.png`,
     titleAr: 'ملتقى جدة للعقار',
     titleEn: 'Jeddah Real Estate Forum',
-    subAr: 'شعار، كتالوج ٤٤ صفحة، مجسم، وفيلم CGI — منظومة بصرية كاملة',
-    subEn: 'Logo, 44-page catalogue, maquette & CGI film — complete visual system',
+    subAr: 'شعار، كتالوج ٤٤ صفحة، مجسم، وفيلم CGI, منظومة بصرية كاملة',
+    subEn: 'Logo, 44-page catalogue, maquette & CGI film, complete visual system',
     catAr: 'دراسة حالة مميزة',
     catEn: 'Featured case study',
     hrefAr: '../case-studies/jeddah-real-estate-forum.html',
@@ -66,8 +66,8 @@ const SHOWCASE = [
     img: `${BRAND}/turriva-mockup.png`,
     titleAr: 'توريفا',
     titleEn: 'Turriva',
-    subAr: 'عمارة · تصميم داخلي · تشييد — هوية معمارية متكاملة',
-    subEn: 'Architecture · interior · construction — integrated brand',
+    subAr: 'عمارة · تصميم داخلي · تشييد, هوية معمارية متكاملة',
+    subEn: 'Architecture · interior · construction, integrated brand',
     catAr: 'علامات المجموعة',
     catEn: 'Group brands',
     hrefAr: 'https://turriva.com',
@@ -81,8 +81,8 @@ const SHOWCASE = [
     img: `${BRAND}/graphics-house-mockup.png`,
     titleAr: 'Graphics House',
     titleEn: 'Graphics House',
-    subAr: 'من الشعار إلى اللافتة المضيئة — استوديو الإظهار والهوية',
-    subEn: 'From logo to illuminated signage — visualization & identity studio',
+    subAr: 'من الشعار إلى اللافتة المضيئة, استوديو الإظهار والهوية',
+    subEn: 'From logo to illuminated signage, visualization & identity studio',
     catAr: 'علامات المجموعة',
     catEn: 'Group brands',
     hrefAr: '../who-we-are.html',
@@ -95,8 +95,8 @@ const SHOWCASE = [
     img: `${BRAND}/bees-motion-mockup.png`,
     titleAr: 'Bees Motion',
     titleEn: 'Bees Motion',
-    subAr: 'إنتاج سينمائي وحركة — هوية ديناميكية',
-    subEn: 'Cinematic & motion production — dynamic identity',
+    subAr: 'إنتاج سينمائي وحركة, هوية ديناميكية',
+    subEn: 'Cinematic & motion production, dynamic identity',
     catAr: 'إنتاج سينمائي',
     catEn: 'Cinematic production',
     hrefAr: 'https://beesmotion.com',
@@ -110,8 +110,8 @@ const SHOWCASE = [
     img: `${BRAND}/scents-wave-mockup.png`,
     titleAr: 'Scents Wave · موجة عطر',
     titleEn: 'Scents Wave',
-    subAr: 'هوية فاخرة ذهبية على أسود — عطور وهدايا',
-    subEn: 'Luxury gold-on-black identity — perfume & gifts',
+    subAr: 'هوية فاخرة ذهبية على أسود, عطور وهدايا',
+    subEn: 'Luxury gold-on-black identity, perfume & gifts',
     catAr: 'تجزئة وعلامات',
     catEn: 'Retail & consumer',
     hrefAr: '../contact-us.html',
@@ -124,8 +124,8 @@ const SHOWCASE = [
     img: `${BRAND}/highly-chic-mockup.png`,
     titleAr: 'Highly CHIC',
     titleEn: 'Highly CHIC',
-    subAr: 'هوية بوتيك فاخرة — من الشعار إلى واجهة المتجر',
-    subEn: 'Luxury boutique identity — from logo to storefront',
+    subAr: 'هوية بوتيك فاخرة, من الشعار إلى واجهة المتجر',
+    subEn: 'Luxury boutique identity, from logo to storefront',
     catAr: 'تجزئة وعلامات',
     catEn: 'Retail & consumer',
     hrefAr: '../contact-us.html',
@@ -142,22 +142,22 @@ const COPY = {
     h1Line1: 'الهوية البصرية والأنظمة المكانية',
     h1Gold: 'من الشعار إلى اللافتة المُضيِّئة',
     subtitle:
-      'نظام بصري متكامل للمشاريع والملتقيات — شعار، كتالوج، وتطبيق مكاني من استوديو واحد.',
+      'نظام بصري متكامل للمشاريع والملتقيات, شعار، كتالوج، وتطبيق مكاني من استوديو واحد.',
     ctaPrimary: 'ابدأ مشروع الهوية',
     ctaCase: 'استكشف الأعمال',
     stats: [
       { n: '7+', label: 'علامات وهويات منجزة' },
-      { n: '44', label: 'صفحة كتالوج — ملتقى جدة' },
+      { n: '44', label: 'صفحة كتالوج, ملتقى جدة' },
       { n: '3D', label: 'تطبيق مكاني على اللافتات' },
       { n: '1', label: 'نظام بصري متصل' },
     ],
-    pillarsTitle: 'أربعة محاور — مخرج واحد',
+    pillarsTitle: 'أربعة محاور, مخرج واحد',
     pillarsLead: 'كل محور يُصمَّم ليعمل مع الإظهار والفيلم والمجسم، لا كملف منفصل.',
     pipelineTitle: 'مسار العمل',
     pipelineLead: 'نفس اللغة البصرية من الموجز الأول حتى آخر مطبوعة في المعرض.',
     pipeline: ['هوية', 'كتالوج', 'تطبيق مكاني', 'فيلم CGI', 'مطبوعات'],
     galleryTitle: 'أعمال الهوية',
-    galleryLead: 'من التصميم المسطح إلى اللافتة المضيئة — شاهد كيف تتحول الهوية في الفضاء الحقيقي.',
+    galleryLead: 'من التصميم المسطح إلى اللافتة المضيئة, شاهد كيف تتحول الهوية في الفضاء الحقيقي.',
     filters: [
       { id: 'all', label: 'الكل' },
       { id: 'forums', label: 'ملتقيات ومعارض' },
@@ -193,22 +193,22 @@ const COPY = {
     h1Line1: 'Visual identity & spatial brand systems',
     h1Gold: 'from logo to illuminated signage',
     subtitle:
-      'One integrated system for developments and forums — logo, catalogue, and spatial application from a single studio.',
+      'One integrated system for developments and forums, logo, catalogue, and spatial application from a single studio.',
     ctaPrimary: 'Start your identity project',
     ctaCase: 'Explore the work',
     stats: [
       { n: '7+', label: 'Brands & identities delivered' },
-      { n: '44', label: 'Catalogue pages — Jeddah Forum' },
+      { n: '44', label: 'Catalogue pages, Jeddah Forum' },
       { n: '3D', label: 'Spatial signage application' },
       { n: '1', label: 'Connected visual system' },
     ],
-    pillarsTitle: 'Four pillars — one deliverable system',
-    pillarsLead: 'Each pillar is designed to work with visualization, film, and maquettes — not as a separate file.',
+    pillarsTitle: 'Four pillars, one deliverable system',
+    pillarsLead: 'Each pillar is designed to work with visualization, film, and maquettes, not as a separate file.',
     pipelineTitle: 'How it connects',
     pipelineLead: 'The same visual language from first brief to the last print piece on the exhibition floor.',
     pipeline: ['BRAND', 'CATALOGUE', 'SPATIAL', 'CGI FILM', 'PRINT'],
     galleryTitle: 'Identity work',
-    galleryLead: 'From flat design to illuminated signage — see how identity transforms in real space.',
+    galleryLead: 'From flat design to illuminated signage, see how identity transforms in real space.',
     filters: [
       { id: 'all', label: 'All' },
       { id: 'forums', label: 'Forums & exhibitions' },
@@ -532,14 +532,14 @@ function patchHeaderNav() {
                     <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">brush</span></span>
                     <span class="mm-svc-body">
                       <span class="mm-svc-text">الهوية البصرية</span>
-                      <span class="mm-svc-desc">شعار، كتالوج، معارض — نظام بصري واحد</span>
+                      <span class="mm-svc-desc">شعار، كتالوج، معارض, نظام بصري واحد</span>
                     </span>
                   </a>`,
     en: `<a href="{{PREFIX}}services/branding-en.html" class="mm-svc-link">
                     <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">brush</span></span>
                     <span class="mm-svc-body">
                       <span class="mm-svc-text">Visual identity</span>
-                      <span class="mm-svc-desc">Logo, catalogue, exhibitions — one system</span>
+                      <span class="mm-svc-desc">Logo, catalogue, exhibitions, one system</span>
                     </span>
                   </a>`,
   };

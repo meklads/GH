@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Week 2 — normalize legacy gold hex drift to canonical #C9A84C.
+ * Week 2, normalize legacy gold hex drift to canonical #C9A84C.
  * Run: node scripts/patch-gh-gold-tokens.mjs
  */
 import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';

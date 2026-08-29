@@ -84,7 +84,7 @@ ${styles}
         Visual content that supports
         <strong>your project launch</strong>
       </h1>
-      <p class="lp-hero-sub">Architectural photography, promotional films, and event coverage. Integrated production for developers and brands in Saudi Arabia and the GCC — from the same team that builds your maquettes and CGI films.</p>
+      <p class="lp-hero-sub">Architectural photography, promotional films, and event coverage. Integrated production for developers and brands in Saudi Arabia and the GCC, from the same team that builds your maquettes and CGI films.</p>
       <div class="lp-hero-ctas">
         <a href="#booking" class="btn-p">Book a production session</a>
         <a href="#gallery" class="btn-o">View our work</a>
@@ -115,7 +115,7 @@ ${styles}
         <p class="lp-kicker lp-kicker-light">Impact</p>
         <h2 class="lp-section-title lp-section-title-light">Content that builds trust before the signature</h2>
       </div>
-      <p class="lp-impact-copy">Strong video and photography explain the project and build investor confidence. We produce for real estate, hospitality, and brands — at standards suited to GCC launch campaigns.</p>
+      <p class="lp-impact-copy">Strong video and photography explain the project and build investor confidence. We produce for real estate, hospitality, and brands, at standards suited to GCC launch campaigns.</p>
     </div>
     <div class="lp-metrics">
       <div>
@@ -139,7 +139,7 @@ ${styles}
     <div class="lp-film-copy reveal">
       <p class="lp-kicker">Production film</p>
       <h2 class="lp-section-title">See how we build visual presence</h2>
-      <p>From architectural photography to promotional films — production that serves sales, platforms, and campaigns, from a team that understands real estate launch context.</p>
+      <p>From architectural photography to promotional films, production that serves sales, platforms, and campaigns, from a team that understands real estate launch context.</p>
       <div class="lp-film-chips">
         <span>Real estate photography</span>
         <span>Promotional films</span>
@@ -172,22 +172,22 @@ ${styles}
       <article class="lp-svc reveal">
         <div class="lp-svc-num">01</div>
         <h3>Commercial &amp; real estate photography</h3>
-        <p>Sessions for products, residential projects, hotels, and restaurants — professional lighting that reflects brand value and shows detail accurately.</p>
+        <p>Sessions for products, residential projects, hotels, and restaurants, professional lighting that reflects brand value and shows detail accurately.</p>
       </article>
       <article class="lp-svc reveal r1">
         <div class="lp-svc-num">02</div>
         <h3>Promotional films</h3>
-        <p>Cinematic videos for campaigns and project launches — visual storytelling that explains the project and supports purchase decisions.</p>
+        <p>Cinematic videos for campaigns and project launches, visual storytelling that explains the project and supports purchase decisions.</p>
       </article>
       <article class="lp-svc reveal">
         <div class="lp-svc-num">03</div>
         <h3>Event coverage</h3>
-        <p>Photography and production for exhibitions, conferences, and project openings — content ready to publish on your channels.</p>
+        <p>Photography and production for exhibitions, conferences, and project openings, content ready to publish on your channels.</p>
       </article>
       <article class="lp-svc reveal r1">
         <div class="lp-svc-num">04</div>
         <h3>Presentations</h3>
-        <p>Visual presentations for client and investor meetings — integrated design, capture, and direction that serves project narrative.</p>
+        <p>Visual presentations for client and investor meetings, integrated design, capture, and direction that serves project narrative.</p>
       </article>
     </div>
   </div>
@@ -249,7 +249,7 @@ ${styles}
 <section class="lp-close reveal">
   <div class="lp-wrap">
     <h2>Turn your project into a compelling visual story</h2>
-    <p>A short session is enough for us to propose a production system suited to your brand and audience — with the same rigour we apply to major launch projects.</p>
+    <p>A short session is enough for us to propose a production system suited to your brand and audience, with the same rigour we apply to major launch projects.</p>
     <div class="lp-close-actions">
       <a href="#booking" class="btn-p">Book a production session</a>
       <a href="https://wa.me/966502786513" target="_blank" rel="noopener" class="btn-o-light">WhatsApp</a>
@@ -298,10 +298,10 @@ ${styles}
     <div class="contact-grid reveal r1">
       <div class="contact-info">
         <h3>Let us build your visual content together</h3>
-        <p>Whether you need a photography session, event coverage, or a promotional film — our production team is ready to serve you at agency standards.</p>
+        <p>Whether you need a photography session, event coverage, or a promotional film, our production team is ready to serve you at agency standards.</p>
         <div class="contact-info-item"><span class="material-symbols-outlined">phone_in_talk</span> +966 50 278 6513</div>
         <div class="contact-info-item"><span class="material-symbols-outlined">mail</span> info@3dgraphicshouse.com</div>
-        <div class="contact-info-item"><span class="material-symbols-outlined">location_on</span> Jeddah, Saudi Arabia — offices in 4 countries</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">location_on</span> Jeddah, Saudi Arabia, offices in 4 countries</div>
         <div class="contact-info-item"><span class="material-symbols-outlined">schedule</span> We reply within 24 business hours</div>
       </div>
       <div class="form-card">

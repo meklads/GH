@@ -29,7 +29,7 @@ const FONTS_AR = `<link href="https://fonts.googleapis.com/css2?family=Tajawal:w
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>`;
 
 const LIGHT_PAGE_CSS = `
-  /* Brand light page chrome — do NOT override .header / .nav-link (site-header.css owns those) */
+  /* Brand light page chrome, do NOT override .header / .nav-link (site-header.css owns those) */
   ::-webkit-scrollbar { width:3px; }
   ::-webkit-scrollbar-track { background:#FAFAF8; }
   ::-webkit-scrollbar-thumb { background:#CCC; }
@@ -75,7 +75,7 @@ function stripHeaderNavOverrides(html) {
   if (html.includes('Brand light page chrome') && html.includes('color:#555 !important')) {
     html = html.replace(
       /\/\* Brand light page chrome[\s\S]*?#mob-nav \{ background:#FAFAF8 !important; \}/,
-      `/* Brand light page chrome — do NOT override .header / .nav-link (site-header.css owns those) */
+      `/* Brand light page chrome, do NOT override .header / .nav-link (site-header.css owns those) */
   ::-webkit-scrollbar { width:3px; }
   ::-webkit-scrollbar-track { background:#FAFAF8; }
   ::-webkit-scrollbar-thumb { background:#CCC; }

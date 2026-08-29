@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Premium light solution product pages — GrowthLaunch / ProjectLaunch / BrandScale
+ * Premium light solution product pages, GrowthLaunch / ProjectLaunch / BrandScale
  * Split hero + three-stage narrative + curated real site media. AR + EN.
  */
 import fs from 'fs';
@@ -84,12 +84,12 @@ const PRODUCTS = {
       name: 'GrowthLaunch™',
       tag: 'Lead Generation & Sales System',
       title: 'GrowthLaunch™ | Lead Generation & Sales System | Graphics House',
-      desc: 'A complete sales system — attract, convert, and scale qualified leads with tracking, CRM, and response automation.',
+      desc: 'A complete sales system, attract, convert, and scale qualified leads with tracking, CRM, and response automation.',
       headline: 'Stop buying campaigns.<br><em>Build a sales system.</em>',
-      sub: 'From first click to closed deal — one integrated pipeline for developers and B2B teams across the GCC.',
+      sub: 'From first click to closed deal, one integrated pipeline for developers and B2B teams across the GCC.',
       promiseTitle: 'In 7 days',
       promiseBody:
-        'A measurable lead journey: capture, qualify, respond, and convert — with visibility at every step.',
+        'A measurable lead journey: capture, qualify, respond, and convert, with visibility at every step.',
       stagesNav: [
         { id: 'stage-1', num: '01', label: 'Attract' },
         { id: 'stage-2', num: '02', label: 'Convert' },
@@ -100,7 +100,7 @@ const PRODUCTS = {
           id: 'stage-1',
           num: 'Stage 01',
           title: 'Attract the right demand',
-          lead: 'Campaigns, landing pages, and tracking that bring qualified interest — not noise.',
+          lead: 'Campaigns, landing pages, and tracking that bring qualified interest, not noise.',
           points: [
             'Offer architecture & high-intent landing pages',
             'Pixel / GA4 / GTM tracking from day one',
@@ -135,7 +135,7 @@ const PRODUCTS = {
           id: 'stage-3',
           num: 'Stage 03',
           title: 'Scale what works',
-          lead: 'Dashboards, training, and iteration — so growth compounds after launch week.',
+          lead: 'Dashboards, training, and iteration, so growth compounds after launch week.',
           points: [
             'Live performance dashboards',
             'Team enablement & playbooks',
@@ -152,12 +152,12 @@ const PRODUCTS = {
       showcaseEyebrow: 'In market',
       showcaseTitle: 'Where demand meets a sales-ready experience',
       showcaseLead:
-        'GrowthLaunch connects campaigns to the environments buyers actually walk into — galleries, booths, and digital journeys.',
+        'GrowthLaunch connects campaigns to the environments buyers actually walk into, galleries, booths, and digital journeys.',
       proofEyebrow: 'Trusted by leading teams',
       proofLead: 'Client brands that rely on Graphics House for launch and growth systems.',
       gallery: [],
-      bafTitle: 'Your situation — transformed',
-      bafLead: 'Not just tools — a shift in how you capture and convert leads.',
+      bafTitle: 'Before and after',
+      bafLead: 'Tools alone do not change results. The shift is how you capture and convert leads.',
       baf: [
         ['Ads without follow-up', 'Complete journey from click to call'],
         ['Slow manual responses', 'Instant WhatsApp & AI response'],
@@ -166,7 +166,7 @@ const PRODUCTS = {
       ],
       ctaTitle: 'Ready to build a predictable pipeline?',
       ctaLead:
-        'Book a strategy session — we map your offer, channels, and conversion path in one workshop.',
+        'Book a strategy session, we map your offer, channels, and conversion path in one workshop.',
       ctaPrimary: 'Book strategy session',
       ctaSecondary: 'View our work',
       crossTitle: 'Continue the system',
@@ -187,12 +187,12 @@ const PRODUCTS = {
       name: 'GrowthLaunch™',
       tag: 'نظام توليد العملاء والمبيعات',
       title: 'GrowthLaunch™ | نظام توليد العملاء والمبيعات | Graphics House',
-      desc: 'نظام مبيعات متكامل — جذب، تحويل، وتوسيع العملاء المؤهلين مع التتبع وCRM وأتمتة الرد.',
+      desc: 'نظام مبيعات متكامل, جذب، تحويل، وتوسيع العملاء المؤهلين مع التتبع وCRM وأتمتة الرد.',
       headline: 'توقف عن شراء الحملات.<br><em>وابنِ نظام مبيعات.</em>',
-      sub: 'من أول نقرة إلى إغلاق الصفقة — مسار متكامل للمطورين وفرق B2B في الخليج.',
+      sub: 'من أول نقرة إلى إغلاق الصفقة, مسار متكامل للمطورين وفرق B2B في الخليج.',
       promiseTitle: 'خلال 7 أيام',
       promiseBody:
-        'رحلة عميل قابلة للقياس: جذب، تأهيل، رد، وتحويل — مع رؤية واضحة في كل خطوة.',
+        'رحلة عميل قابلة للقياس: جذب، تأهيل، رد، وتحويل, مع رؤية واضحة في كل خطوة.',
       stagesNav: [
         { id: 'stage-1', num: '01', label: 'الجذب' },
         { id: 'stage-2', num: '02', label: 'التحويل' },
@@ -203,7 +203,7 @@ const PRODUCTS = {
           id: 'stage-1',
           num: 'المرحلة 01',
           title: 'اجذب الطلب الصحيح',
-          lead: 'حملات وصفحات هبوط وتتبع يجلب اهتماماً مؤهلاً — لا ضوضاء.',
+          lead: 'حملات وصفحات هبوط وتتبع يجلب اهتماماً مؤهلاً, لا ضوضاء.',
           points: [
             'هيكلة العرض وصفحات هبوط عالية النية',
             'تتبع Pixel / GA4 / GTM من اليوم الأول',
@@ -236,7 +236,7 @@ const PRODUCTS = {
           id: 'stage-3',
           num: 'المرحلة 03',
           title: 'وسّع ما ينجح',
-          lead: 'لوحات قياس، تدريب، وتحسين مستمر — لينمو الأداء بعد أسبوع الإطلاق.',
+          lead: 'لوحات قياس، تدريب، وتحسين مستمر, لينمو الأداء بعد أسبوع الإطلاق.',
           points: [
             'لوحات أداء مباشرة',
             'تمكين الفريق وخطط عمل',
@@ -253,12 +253,12 @@ const PRODUCTS = {
       showcaseEyebrow: 'في السوق',
       showcaseTitle: 'حيث يلتقي الطلب بتجربة جاهزة للبيع',
       showcaseLead:
-        'GrowthLaunch يربط الحملات بالبيئات التي يدخلها المشتري فعلياً — صالات، أجنحة، ومسارات رقمية.',
+        'GrowthLaunch يربط الحملات بالبيئات التي يدخلها المشتري فعلياً, صالات، أجنحة، ومسارات رقمية.',
       proofEyebrow: 'يثق بنا قادة السوق',
       proofLead: 'علامات تعتمد على جرافيكس هاوس في أنظمة الإطلاق والنمو.',
       gallery: [],
-      bafTitle: 'وضعك الحالي — بعد التحول',
-      bafLead: 'ليس أدوات فقط — بل تحول في طريقة استقبال العملاء وتحويلهم.',
+      bafTitle: 'قبل وبعد',
+      bafLead: 'ليست أدوات منفصلة. التغيير في طريقة استقبال العملاء وتحويلهم.',
       baf: [
         ['إعلانات بلا متابعة', 'رحلة كاملة من النقرة إلى الاتصال'],
         ['ردود يدوية بطيئة', 'رد فوري عبر واتساب والذكاء الاصطناعي'],
@@ -266,7 +266,7 @@ const PRODUCTS = {
         ['لا رؤية للتحويل', 'تحليلات وتتبع كامل'],
       ],
       ctaTitle: 'جاهز لبناء مسار مبيعات متوقع؟',
-      ctaLead: 'احجز جلسة استراتيجية — نرسم العرض والقنوات ومسار التحويل في ورشة واحدة.',
+      ctaLead: 'احجز جلسة استراتيجية, نرسم العرض والقنوات ومسار التحويل في ورشة واحدة.',
       ctaPrimary: 'احجز جلسة استراتيجية',
       ctaSecondary: 'استعرض أعمالنا',
       crossTitle: 'أكمل المنظومة',
@@ -304,10 +304,10 @@ const PRODUCTS = {
       name: 'ProjectLaunch™',
       tag: 'The Complete Real Estate Launch System',
       title: 'ProjectLaunch™ | Complete Real Estate Launch System | Graphics House',
-      desc: 'Everything a development launch needs — architectural identity, CGI films, smart maquettes, interactive experiences, sales-gallery décor, photography and direction — one studio, one system.',
+      desc: 'Everything a development launch needs, architectural identity, CGI films, smart maquettes, interactive experiences, sales-gallery décor, photography and direction, one studio, one system.',
       eyebrow: 'Flagship Solution',
       headline: 'From architectural identity<br><em>to a hall that sells.</em>',
-      sub: 'ProjectLaunch™ is the full stack: visualization, cinema, scale models, interactive tools, showroom décor, and production — designed so every asset speaks one language.',
+      sub: 'ProjectLaunch™ is the full stack: visualization, cinema, scale models, interactive tools, showroom décor, and production, designed so every asset speaks one language.',
       promiseTitle: 'One system',
       promiseBody:
         'Identity → CGI & films → maquettes → interactive → gallery décor → photography & direction. Not vendors. One launch.',
@@ -334,7 +334,7 @@ const PRODUCTS = {
           id: 'stage-1',
           num: 'Stage 01',
           title: 'Identity & vision that lead',
-          lead: 'We define how the project looks, feels, and speaks — then prove it with photoreal CGI and cinematic film before groundbreaking.',
+          lead: 'We define how the project looks, feels, and speaks, then prove it with photoreal CGI and cinematic film before groundbreaking.',
           points: [
             'Architectural identity for the development',
             'Photoreal visualization & aerial sequences',
@@ -345,7 +345,7 @@ const PRODUCTS = {
             type: 'image',
             src: A.aloula,
             webp: A.aloulaW,
-            caption: 'Photoreal CGI — Al-Owla / Al Nakheel',
+            caption: 'Photoreal CGI, Al-Owla / Al Nakheel',
           },
         },
         {
@@ -362,7 +362,7 @@ const PRODUCTS = {
           media: {
             type: 'image',
             src: A.maqAnan,
-            caption: 'Precision scale model — Anan Eskan',
+            caption: 'Precision scale model, Anan Eskan',
           },
           flip: true,
         },
@@ -370,7 +370,7 @@ const PRODUCTS = {
           id: 'stage-3',
           num: 'Stage 03',
           title: 'A sales hall that closes',
-          lead: 'The climax: décor, booth systems, screens, and models composed as one room — where identity, film, and tools finally meet the buyer.',
+          lead: 'The climax: décor, booth systems, screens, and models composed as one room, where identity, film, and tools finally meet the buyer.',
           points: [
             'Sales-gallery and exhibition environments',
             'Spatial design that stages every asset',
@@ -381,7 +381,7 @@ const PRODUCTS = {
             type: 'image',
             src: A.booth,
             webp: A.boothW,
-            caption: 'Sales environment — models, lighting, brand',
+            caption: 'Sales environment, models, lighting, brand',
           },
         },
       ],
@@ -389,21 +389,21 @@ const PRODUCTS = {
       roomTitle: 'Where every tool becomes one experience',
       roomLead:
         'Models under glass. Screens that respond. Identity on the walls. Film in the air. ProjectLaunch designs the room that makes the development inevitable.',
-      roomCaption: 'Muslim World League — integrated launch environment',
+      roomCaption: 'Muslim World League, integrated launch environment',
       showcaseEyebrow: 'Launch cinema',
       showcaseTitle: 'Proof before concrete',
       showcaseLead:
         'Cinematic visualization that carries the same identity into investor days, digital campaigns, and the sales floor.',
       proofEyebrow: 'Trusted for landmark launches',
-      proofLead: 'One visual language — from masterplan to the room where buyers decide.',
+      proofLead: 'One visual language, from masterplan to the room where buyers decide.',
       gallery: [],
       bafTitle: 'Fragmented vendors → one launch command',
       bafLead: 'Stop coordinating seven studios. Start launching as one system.',
       baf: [
-        ['Separate vendors for CGI, models, décor', 'One ProjectLaunch™ system — end to end'],
+        ['Separate vendors for CGI, models, décor', 'One ProjectLaunch™ system, end to end'],
         ['Identity that never reaches the showroom', 'Identity built into the sales hall'],
         ['Assets that look unrelated', 'One visual language across film, model, and space'],
-        ['A room that displays — but does not sell', 'A composed experience designed to close'],
+        ['A room that displays, but does not sell', 'A composed experience designed to close'],
       ],
       ctaTitle: 'Ready to launch the complete system?',
       ctaLead:
@@ -428,10 +428,10 @@ const PRODUCTS = {
       name: 'ProjectLaunch™',
       tag: 'المنظومة الكاملة لإطلاق المشاريع العقارية',
       title: 'ProjectLaunch™ | المنظومة الكاملة لإطلاق المشاريع العقارية | Graphics House',
-      desc: 'كل ما يحتاجه إطلاق المشروع — هوية معمارية، أفلام CGI، مجسمات ذكية، عروض تفاعلية، ديكور صالة البيع، تصوير وإخراج — استوديو واحد ومنظومة واحدةحدة.',
+      desc: 'كل ما يحتاجه إطلاق المشروع, هوية معمارية، أفلام CGI، مجسمات ذكية، عروض تفاعلية، ديكور صالة البيع، تصوير وإخراج, استوديو واحد ومنظومة واحدةحدة.',
       eyebrow: 'الحل الرئيسي',
       headline: 'من الهوية المعمارية<br><em>إلى صالة تبيع.</em>',
-      sub: 'ProjectLaunch™ هي المنظومة الكاملة: تصور، سينما، مجسمات، أدوات تفاعلية، ديكور صالة العرض، وتصوير وإخراج — بلغة بصرية واحدة من أول يوم.',
+      sub: 'ProjectLaunch™ هي المنظومة الكاملة: تصور، سينما، مجسمات، أدوات تفاعلية، ديكور صالة العرض، وتصوير وإخراج, بلغة بصرية واحدة من أول يوم.',
       promiseTitle: 'منظومة واحدةحدة',
       promiseBody:
         'هوية ← CGI وأفلام ← مجسمات ← تفاعلي ← ديكور الصالة ← تصوير وإخراج. ليس مورّدين. إطلاق واحد.',
@@ -458,7 +458,7 @@ const PRODUCTS = {
           id: 'stage-1',
           num: 'المرحلة 01',
           title: 'هوية وتصور يقودان',
-          lead: 'نحدد كيف يبدو المشروع ويُشعر ويُقال — ثم نُثبته بـ CGI فوتورياليستي وفيلم سينمائي قبل وضع الحجر.',
+          lead: 'نحدد كيف يبدو المشروع ويُشعر ويُقال, ثم نُثبته بـ CGI فوتورياليستي وفيلم سينمائي قبل وضع الحجر.',
           points: [
             'هوية معمارية للمشروع',
             'تصور فوتورياليستي ومشاهد جوية',
@@ -469,7 +469,7 @@ const PRODUCTS = {
             type: 'image',
             src: A.aloula,
             webp: A.aloulaW,
-            caption: 'تصور فوتورياليستي — الأولى / النخيل',
+            caption: 'تصور فوتورياليستي, الأولى / النخيل',
           },
         },
         {
@@ -486,7 +486,7 @@ const PRODUCTS = {
           media: {
             type: 'image',
             src: A.maqAnan,
-            caption: 'مجسم دقيق — أنان إسكان',
+            caption: 'مجسم دقيق, أنان إسكان',
           },
           flip: true,
         },
@@ -494,7 +494,7 @@ const PRODUCTS = {
           id: 'stage-3',
           num: 'المرحلة 03',
           title: 'صالة بيع تُغلق الصفقة',
-          lead: 'الذروة: ديكور، أنظمة جناح، شاشات، ومجسمات في غرفة واحدة — حيث تلتقي الهوية والفيلم والأدوات بالمشتري.',
+          lead: 'الذروة: ديكور، أنظمة جناح، شاشات، ومجسمات في غرفة واحدة, حيث تلتقي الهوية والفيلم والأدوات بالمشتري.',
           points: [
             'بيئات صالات بيع ومعارض',
             'تصميم فراغي يُخرج كل أصل',
@@ -505,7 +505,7 @@ const PRODUCTS = {
             type: 'image',
             src: A.booth,
             webp: A.boothW,
-            caption: 'بيئة بيع — مجسمات، إضاءة، هوية',
+            caption: 'بيئة بيع, مجسمات، إضاءة، هوية',
           },
         },
       ],
@@ -513,13 +513,13 @@ const PRODUCTS = {
       roomTitle: 'حيث تتحول كل أداة إلى تجربة واحدة',
       roomLead:
         'مجسمات تحت الزجاج. شاشات تستجيب. هوية على الجدران. فيلم في الأجواء. ProjectLaunch يصمم الصالة التي تجعل المشروع حتمياً.',
-      roomCaption: 'رابطة العالم الإسلامي — بيئة إطلاق متكاملة',
+      roomCaption: 'رابطة العالم الإسلامي, بيئة إطلاق متكاملة',
       showcaseEyebrow: 'سينما الإطلاق',
       showcaseTitle: 'إثبات قبل الخرسانة',
       showcaseLead:
         'تصور سينمائي يحمل نفس الهوية إلى أيام المستثمرين والحملات الرقمية وأرضية المبيعات.',
       proofEyebrow: 'يثق بنا لإطلاقات كبرى',
-      proofLead: 'لغة بصرية واحدة — من المخطط إلى الصالة التي يقرر فيها المشتري.',
+      proofLead: 'لغة بصرية واحدة, من المخطط إلى الصالة التي يقرر فيها المشتري.',
       gallery: [],
       bafTitle: 'مورّدون متفرقون ← قيادة إطلاق واحدة',
       bafLead: 'توقف عن تنسيق سبعة استوديوهات. ابدأ الإطلاق كمنظومة واحدةحدة.',
@@ -566,12 +566,12 @@ const PRODUCTS = {
       name: 'BrandScale™',
       tag: 'Brand Growth System',
       title: 'BrandScale™ | Brand Growth System | Graphics House',
-      desc: 'Build a brand that inspires trust — strategy, identity, and presence designed for developers and institutions.',
+      desc: 'Build a brand that inspires trust, strategy, identity, and presence designed for developers and institutions.',
       headline: 'A brand that<br><em>commands trust.</em>',
-      sub: 'From positioning to identity systems and market presence — built to scale across projects and channels.',
+      sub: 'From positioning to identity systems and market presence, built to scale across projects and channels.',
       promiseTitle: 'Identity → Presence',
       promiseBody:
-        'Strategy, visual system, guidelines, and digital presence — coherent enough to sell the next project.',
+        'Strategy, visual system, guidelines, and digital presence, coherent enough to sell the next project.',
       stagesNav: [
         { id: 'stage-1', num: '01', label: 'Strategy' },
         { id: 'stage-2', num: '02', label: 'Identity' },
@@ -582,7 +582,7 @@ const PRODUCTS = {
           id: 'stage-1',
           num: 'Stage 01',
           title: 'Strategy that positions',
-          lead: 'Clarify audience, promise, and voice — so every asset speaks with one authority.',
+          lead: 'Clarify audience, promise, and voice, so every asset speaks with one authority.',
           points: [
             'Brand positioning & messaging architecture',
             'Competitive framing for GCC markets',
@@ -591,14 +591,14 @@ const PRODUCTS = {
           media: {
             type: 'image',
             src: A.mc04,
-            caption: 'Muslim World League — strategic environments',
+            caption: 'Muslim World League, strategic environments',
           },
         },
         {
           id: 'stage-2',
           num: 'Stage 02',
           title: 'Identity that endures',
-          lead: 'A visual system worthy of landmark developments — guidelines teams can actually use.',
+          lead: 'A visual system worthy of landmark developments, guidelines teams can actually use.',
           points: [
             'Logo system & brand marks',
             'Typography, color, and application rules',
@@ -631,11 +631,11 @@ const PRODUCTS = {
       showcaseEyebrow: 'Case in point',
       showcaseTitle: 'Identity you can walk through',
       showcaseLead:
-        'BrandScale turns positioning into spaces, screens, and systems — so trust is felt before a word is spoken.',
+        'BrandScale turns positioning into spaces, screens, and systems, so trust is felt before a word is spoken.',
       proofEyebrow: 'Brand environments we shape',
-      proofLead: 'Identity work delivered alongside visualization and interactive — one studio language.',
+      proofLead: 'Identity work delivered alongside visualization and interactive, one studio language.',
       gallery: [],
-      bafTitle: 'Your situation — transformed',
+      bafTitle: 'Before and after',
       bafLead: 'From looking small to commanding market trust.',
       baf: [
         ['Inconsistent identity', 'Unified professional brand system'],
@@ -665,12 +665,12 @@ const PRODUCTS = {
       name: 'BrandScale™',
       tag: 'نظام نمو العلامات التجارية',
       title: 'BrandScale™ | نظام نمو العلامات التجارية | Graphics House',
-      desc: 'ابنِ علامة تلهم الثقة — استراتيجية، هوية، وحضور مصمم للمطورين والمؤسسات.',
+      desc: 'ابنِ علامة تلهم الثقة, استراتيجية، هوية، وحضور مصمم للمطورين والمؤسسات.',
       headline: 'علامة<br><em>تفرض الثقة.</em>',
-      sub: 'من التموضع إلى أنظمة الهوية والحضور السوقي — مصممة لتتوسع عبر المشاريع والقنوات.',
+      sub: 'من التموضع إلى أنظمة الهوية والحضور السوقي, مصممة لتتوسع عبر المشاريع والقنوات.',
       promiseTitle: 'هوية ← حضور',
       promiseBody:
-        'استراتيجية، نظام بصري، أدلة إرشادية، وحضور رقمي — متماسك بما يكفي لبيع المشروع التالي.',
+        'استراتيجية، نظام بصري، أدلة إرشادية، وحضور رقمي, متماسك بما يكفي لبيع المشروع التالي.',
       stagesNav: [
         { id: 'stage-1', num: '01', label: 'الاستراتيجية' },
         { id: 'stage-2', num: '02', label: 'الهوية' },
@@ -681,7 +681,7 @@ const PRODUCTS = {
           id: 'stage-1',
           num: 'المرحلة 01',
           title: 'استراتيجية تموضع',
-          lead: 'وضوح الجمهور والوعد والصوت — حتى يتحدث كل أصل بسلطة واحدة.',
+          lead: 'وضوح الجمهور والوعد والصوت, حتى يتحدث كل أصل بسلطة واحدة.',
           points: [
             'تموضع العلامة وهندسة الرسائل',
             'إطار تنافسي لأسواق الخليج',
@@ -690,14 +690,14 @@ const PRODUCTS = {
           media: {
             type: 'image',
             src: A.mc04,
-            caption: 'رابطة العالم الإسلامي — بيئات استراتيجية',
+            caption: 'رابطة العالم الإسلامي, بيئات استراتيجية',
           },
         },
         {
           id: 'stage-2',
           num: 'المرحلة 02',
           title: 'هوية تدوم',
-          lead: 'نظام بصري يليق بالمشاريع الكبرى — أدلة يستطيع الفريق استخدامها فعلياً.',
+          lead: 'نظام بصري يليق بالمشاريع الكبرى, أدلة يستطيع الفريق استخدامها فعلياً.',
           points: [
             'نظام الشعار والعلامات',
             'قواعد الخط واللون والتطبيق',
@@ -728,11 +728,11 @@ const PRODUCTS = {
       showcaseEyebrow: 'نموذج حي',
       showcaseTitle: 'هوية تمشي فيها',
       showcaseLead:
-        'BrandScale يحوّل التموضع إلى فضاءات وشاشات وأنظمة — فتُشعر بالثقة قبل أن تُقال كلمة.',
+        'BrandScale يحوّل التموضع إلى فضاءات وشاشات وأنظمة, فتُشعر بالثقة قبل أن تُقال كلمة.',
       proofEyebrow: 'بيئات علامة نُشكّلها',
-      proofLead: 'هوية تُسلَّم مع التصور والتفاعلي — لغة استوديو واحدة.',
+      proofLead: 'هوية تُسلَّم مع التصور والتفاعلي, لغة استوديو واحدة.',
       gallery: [],
-      bafTitle: 'وضعك الحالي — بعد التحول',
+      bafTitle: 'قبل وبعد',
       bafLead: 'من حضور ضعيف إلى ثقة سوقية قوية.',
       baf: [
         ['هوية غير متسقة', 'نظام علامة احترافي موحّد'],

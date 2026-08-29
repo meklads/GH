@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * QA: SEO hygiene — canonical, hreflang, noindex stubs, sitemap duplicates.
+ * QA: SEO hygiene, canonical, hreflang, noindex stubs, sitemap duplicates.
  */
 import fs from 'fs';
 import path from 'path';

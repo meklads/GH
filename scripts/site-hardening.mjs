@@ -43,7 +43,7 @@ const SITEMAP_SKIP = new Set([
   'insights/case-studies.html',
 ]);
 
-/** Folder index.html stubs that only redirect — exclude from sitemap */
+/** Folder index.html stubs that only redirect, exclude from sitemap */
 const SITEMAP_REDIRECT_STUBS = new Set([
   'who-we-are/index.html',
   'folio/index.html',
@@ -63,7 +63,7 @@ const SITEMAP_REDIRECT_STUBS = new Set([
   'faq/index.html',
 ]);
 
-/** Legacy landings superseded by current IA — keep URLs but de-index */
+/** Legacy landings superseded by current IA, keep URLs but de-index */
 const LEGACY_NOINDEX = new Set([
   'about.html',
   'gh-visualization.html',
@@ -502,7 +502,7 @@ function patchHtml(html, rel) {
 
   if ((rel === 'workspace.html' || rel === 'workspace-en.html') && !html.includes('<meta name="description"')) {
     const desc = rel.endsWith('-en.html')
-      ? 'Interactive project workspace demo — explore Graphics House visualization deliverables.'
+      ? 'Interactive project workspace demo, explore Graphics House visualization deliverables.'
       : 'مساحة عمل تفاعلية لعرض مخرجات التصور المعماري من Graphics House.';
     html = html.replace(/<meta name="viewport"[^>]*>/, `$&\n<meta name="description" content="${desc}">`);
   }
@@ -737,7 +737,7 @@ if (fs.existsSync(adminPath)) {
   let admin = fs.readFileSync(adminPath, 'utf8');
   admin = admin.replace(
     /if\(pw === '[^']+'\)/,
-    "if(false /* disabled — use server-side auth */)"
+    "if(false /* disabled, use server-side auth */)"
   );
   if (!admin.includes('noindex')) {
     admin = admin.replace(/<head>/i, '<head>\n<meta name="robots" content="noindex,nofollow">');

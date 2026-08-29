@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Build services/maquettes-en.html from AR template — same structure, translated text.
+ * Build services/maquettes-en.html from AR template, same structure, translated text.
  */
 import fs from 'fs';
 import path from 'path';

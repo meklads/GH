@@ -45,7 +45,7 @@ const EN_STUBS = {
     icon: 'brush',
     title: 'Branding',
     subtitle:
-      'Comprehensive branding — identity design, brand strategy, and positioning for developers across the GCC.',
+      'Comprehensive branding, identity design, brand strategy, and positioning for developers across the GCC.',
     meta: 'Strategic brand identity and brand development services.',
   },
   'cinematic-cgi-en.html': {
@@ -322,4 +322,4 @@ for (const [from, to] of Object.entries(LEGACY_SERVICE_REDIRECTS)) {
   if (fs.existsSync(path.join(ROOT, from))) writeRedirect(from, to);
 }
 
-console.log('Done — English service pages built.');
+console.log('Done, English service pages built.');

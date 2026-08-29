@@ -52,7 +52,7 @@ for (const rel of SAMPLES) {
   ];
   for (const [label, pass] of checks) {
     if (!pass) {
-      console.error(`FAIL: ${rel} — ${label}`);
+      console.error(`FAIL: ${rel}, ${label}`);
       ok = false;
     }
   }

@@ -35,7 +35,7 @@ const STUBS = {
     en: {
       title: 'Branding',
       subtitle:
-        'Comprehensive branding solutions — from identity design to brand strategy and positioning for the GCC market. This page is under development.',
+        'Comprehensive branding solutions, from identity design to brand strategy and positioning for the GCC market. This page is under development.',
       status: 'Coming Soon',
       back: 'Back to Home',
       cta: 'Get in Touch',
@@ -43,7 +43,7 @@ const STUBS = {
     ar: {
       title: 'الهوية والعلامة التجارية',
       subtitle:
-        'حلول هوية متكاملة — من تصميم الهوية إلى استراتيجية العلامة وموقعها في سوق الخليج. هذه الصفحة قيد التطوير.',
+        'حلول هوية متكاملة, من تصميم الهوية إلى استراتيجية العلامة وموقعها في سوق الخليج. هذه الصفحة قيد التطوير.',
       status: 'قريباً',
       back: 'العودة للرئيسية',
       cta: 'تواصل معنا',
@@ -201,7 +201,7 @@ const STUBS = {
 };
 
 const BILINGUAL_CSS = `
-  .en, .en-block { display: none !important; }
+  .en.en-block { display: none !important; }
   body.is-en .en { display: inline !important; }
   body.is-en .ar, body.is-en .ar-block { display: none !important; }
   body.is-en .en-block { display: block !important; }
@@ -289,4 +289,4 @@ for (const [file, data] of Object.entries(STUBS)) {
   patchStub(file, data);
 }
 
-console.log(`Done — ${Object.keys(STUBS).length} service stubs localized.`);
+console.log(`Done, ${Object.keys(STUBS).length} service stubs localized.`);

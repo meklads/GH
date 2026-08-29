@@ -93,4 +93,4 @@ for (const rel of collectHtml(ROOT)) {
   console.log('  migrated:', rel);
   n += 1;
 }
-console.log(`Done — migrated ${n} page(s).`);
+console.log(`Done, migrated ${n} page(s).`);

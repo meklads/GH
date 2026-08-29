@@ -9,10 +9,10 @@ import { join } from 'node:path';
 const ROOT = join(import.meta.dirname, '..');
 const src = readFileSync(join(ROOT, 'casestudy1.html'), 'utf8');
 const lines = src.split('\n');
-const block = lines.slice(38, 721).join('\n'); // inside <style>, L39–721
+const block = lines.slice(38, 721).join('\n'); // inside <style>, L39-721
 
 const css = `/**
- * Graphics House — case study page styles (casestudy1 AR/EN)
+ * Graphics House, case study page styles (casestudy1 AR/EN)
  * Directional layout via [dir=rtl] / [dir=ltr]
  */
 ${block

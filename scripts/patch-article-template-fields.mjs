@@ -12,12 +12,12 @@ const DIR = path.join(ROOT, 'insights/data/articles');
 const CUSTOM = {
   'visual-launch-checklist-guide': {
     tldr: {
-      ar: 'ابدأ الإطلاق البصري قبل الحفر بـ6 أشهر: اعتمد المخطط، أنتج 8–12 أصلاً بطولياً، درّب المبيعات، وأطلق بصالة بيع ومنصة رقمية متسقة — لا تنتظر يوم إعلان المبيعات.',
-      en: 'Start visual launch 6 months before groundbreaking: approve the master plan, produce 8–12 hero assets, train sales, and launch with a consistent gallery and digital platform — do not wait for sales announcement day.',
+      ar: 'ابدأ الإطلاق البصري قبل الحفر بـ6 أشهر: اعتمد المخطط، أنتج 8-12 أصلاً بطولياً، درّب المبيعات، وأطلق بصالة بيع ومنصة رقمية متسقة, لا تنتظر يوم إعلان المبيعات.',
+      en: 'Start visual launch 6 months before groundbreaking: approve the master plan, produce 8-12 hero assets, train sales, and launch with a consistent gallery and digital platform, do not wait for sales announcement day.',
     },
     directAnswer: {
-      ar: 'المطور في السعودية والخليج يحتاج قبل إطلاق مبيعات off-plan: جدول إنتاج بصري من 6 أشهر، 8–12 أصلاً معتمدة (واجهات، داخلية، فيلم، مواد صالة)، مالك إطلاق واحد من التسويق، وصالة بيع جاهزة يوم الإعلان.',
-      en: 'GCC developers launching off-plan sales need: a 6-month visual production timeline, 8–12 approved hero assets (facades, interiors, film, gallery materials), one marketing launch owner, and a sales gallery ready on announcement day.',
+      ar: 'المطور في السعودية والخليج يحتاج قبل إطلاق مبيعات off-plan: جدول إنتاج بصري من 6 أشهر، 8-12 أصلاً معتمدة (واجهات، داخلية، فيلم، مواد صالة)، مالك إطلاق واحد من التسويق، وصالة بيع جاهزة يوم الإعلان.',
+      en: 'GCC developers launching off-plan sales need: a 6-month visual production timeline, 8-12 approved hero assets (facades, interiors, film, gallery materials), one marketing launch owner, and a sales gallery ready on announcement day.',
     },
   },
 };

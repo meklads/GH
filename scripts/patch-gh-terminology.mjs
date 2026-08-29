@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Week 1 — unify GH brand terminology across HTML + build scripts.
+ * Week 1, unify GH brand terminology across HTML + build scripts.
  * Run: node scripts/patch-gh-terminology.mjs
  */
 import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';

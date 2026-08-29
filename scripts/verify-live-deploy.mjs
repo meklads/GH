@@ -43,16 +43,16 @@ for (const [asset, body] of requiredAssets) {
   if (body.includes(asset)) {
     console.log('OK', asset, asset.startsWith('gh-') || asset.startsWith('gl-') ? 'on live' : '');
   } else {
-    console.log('WARN missing', asset, '— redeploy Coolify + purge Cloudflare');
+    console.log('WARN missing', asset, ',  redeploy Coolify + purge Cloudflare');
     assetWarnings += 1;
   }
 }
 if (assetWarnings) {
-  console.log(`\n${assetWarnings} asset(s) stale on live — push is on GitHub but CDN/server may need refresh.`);
+  console.log(`\n${assetWarnings} asset(s) stale on live, push is on GitHub but CDN/server may need refresh.`);
 }
 
 if (failed.length) {
-  console.error(`\n${failed.length} path(s) not live — redeploy Coolify and purge Cloudflare cache.`);
+  console.error(`\n${failed.length} path(s) not live, redeploy Coolify and purge Cloudflare cache.`);
   process.exit(1);
 }
 

@@ -25,7 +25,7 @@ const payload = {
 
 fs.writeFileSync(
   out,
-  `/** Auto-generated — run: node scripts/build-chat-knowledge.mjs */\nwindow.GH_CHAT_KB = ${JSON.stringify(payload, null, 0)};\n`,
+  `/** Auto-generated, run: node scripts/build-chat-knowledge.mjs */\nwindow.GH_CHAT_KB = ${JSON.stringify(payload, null, 0)};\n`,
   'utf8'
 );
 console.log('Wrote', out);

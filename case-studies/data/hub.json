@@ -28,76 +28,178 @@
       "featured": true,
       "mega": true,
       "megaOrder": 5,
-      "href": { "ar": "case-studies/jeddah-real-estate-forum.html", "en": "case-studies/jeddah-real-estate-forum-en.html" },
+      "href": {
+        "ar": "case-studies/jeddah-real-estate-forum.html",
+        "en": "case-studies/jeddah-real-estate-forum-en.html"
+      },
       "image": "assets/projects/jeddah-forum/catalog/page-01.jpg",
-      "title": { "ar": "ملتقى جدة للعقار", "en": "Jeddah Real Estate Forum" },
-      "shortTitle": { "ar": "مشروع ملتقى جدة", "en": "Jeddah Forum Project" },
-      "tag": { "ar": "هوية · كتالوج · فيلم CGI · جدة سوبردوم", "en": "Brand · Catalogue · CGI Film · Superdome 3D" },
-      "location": { "ar": "جدة", "en": "Jeddah" }
+      "title": {
+        "ar": "ملتقى جدة للعقار",
+        "en": "Jeddah Real Estate Forum"
+      },
+      "shortTitle": {
+        "ar": "مشروع ملتقى جدة",
+        "en": "Jeddah Forum Project"
+      },
+      "tag": {
+        "ar": "هوية · كتالوج · فيلم CGI · جدة سوبردوم",
+        "en": "Brand · Catalogue · CGI Film · Superdome 3D"
+      },
+      "location": {
+        "ar": "جدة",
+        "en": "Jeddah"
+      }
     },
     {
       "featured": false,
       "mega": true,
       "megaOrder": 6,
-      "href": { "ar": "insights/projects/rafal-pavilions.html", "en": "insights/projects/rafal-pavilions-en.html" },
+      "href": {
+        "ar": "insights/projects/rafal-pavilions.html",
+        "en": "insights/projects/rafal-pavilions-en.html"
+      },
       "image": "assets/projects/rafal-pavilions/lobby.jpg",
-      "title": { "ar": "بافيليونز — رفال للتطوير", "en": "Pavilions — Rafal Development" },
-      "shortTitle": { "ar": "مشروع بافيليونز", "en": "Pavilions Project" },
-      "tag": { "ar": "فيلم CGI · مجسم · مكاتب VIP · الرياض", "en": "CGI film · Maquette · VIP offices · Riyadh" },
-      "location": { "ar": "الرياض", "en": "Riyadh" }
+      "title": {
+        "ar": "بافيليونز، رفال للتطوير",
+        "en": "Pavilions, Rafal Development"
+      },
+      "shortTitle": {
+        "ar": "مشروع بافيليونز",
+        "en": "Pavilions Project"
+      },
+      "tag": {
+        "ar": "فيلم CGI · مجسم · مكاتب VIP · الرياض",
+        "en": "CGI film · Maquette · VIP offices · Riyadh"
+      },
+      "location": {
+        "ar": "الرياض",
+        "en": "Riyadh"
+      }
     },
     {
       "featured": false,
       "mega": true,
       "megaOrder": 4,
-      "href": { "ar": "insights/projects/wahat-al-salam.html", "en": "insights/projects/wahat-al-salam-en.html" },
+      "href": {
+        "ar": "insights/projects/wahat-al-salam.html",
+        "en": "insights/projects/wahat-al-salam-en.html"
+      },
       "image": "assets/projects/wahat-al-salam/hero-aerial.jpg",
-      "title": { "ar": "واحة السلام — عقارات العيسائي", "en": "Wahat Al Salam — Al-Essai Real Estate" },
-      "shortTitle": { "ar": "مشروع عقارات العيسائي", "en": "Al-Essai Real Estate Project" },
-      "tag": { "ar": "مخطط حي · أفلام CGI · كتالوج · بيع كامل", "en": "Living master plan · CGI films · Catalogue · Full sell-out" },
-      "location": { "ar": "السعودية", "en": "Saudi Arabia" }
+      "title": {
+        "ar": "واحة السلام، عقارات العيسائي",
+        "en": "Wahat Al Salam, Al-Essai Real Estate"
+      },
+      "shortTitle": {
+        "ar": "مشروع عقارات العيسائي",
+        "en": "Al-Essai Real Estate Project"
+      },
+      "tag": {
+        "ar": "مخطط حي · أفلام CGI · كتالوج · بيع كامل",
+        "en": "Living master plan · CGI films · Catalogue · Full sell-out"
+      },
+      "location": {
+        "ar": "السعودية",
+        "en": "Saudi Arabia"
+      }
     },
     {
       "featured": false,
       "mega": true,
       "megaOrder": 3,
-      "href": { "ar": "casestudy-mwl.html", "en": "casestudy-mwl-en.html" },
+      "href": {
+        "ar": "casestudy-mwl.html",
+        "en": "casestudy-mwl-en.html"
+      },
       "image": "assets/news/makkah-charter-01.jpeg",
-      "title": { "ar": "ميثاق مكة — رابطة العالم الإسلامي", "en": "Makkah Charter — Muslim World League" },
-      "shortTitle": { "ar": "مشروع رابطة العالم الإسلامي", "en": "Muslim World League Project" },
-      "tag": { "ar": "مجسم ذكي · تجربة تفاعلية · معرض", "en": "Smart maquette · Interactive · Exhibition" },
-      "location": { "ar": "مكة المكرمة", "en": "Makkah" }
+      "title": {
+        "ar": "ميثاق مكة، رابطة العالم الإسلامي",
+        "en": "Makkah Charter, Muslim World League"
+      },
+      "shortTitle": {
+        "ar": "مشروع رابطة العالم الإسلامي",
+        "en": "Muslim World League Project"
+      },
+      "tag": {
+        "ar": "مجسم ذكي · تجربة تفاعلية · معرض",
+        "en": "Smart maquette · Interactive · Exhibition"
+      },
+      "location": {
+        "ar": "مكة المكرمة",
+        "en": "Makkah"
+      }
     },
     {
       "featured": false,
       "mega": true,
       "megaOrder": 2,
-      "href": { "ar": "insights/projects/anan-eskan-riyadh.html", "en": "insights/projects/anan-eskan-riyadh-en.html" },
+      "href": {
+        "ar": "insights/projects/anan-eskan-riyadh.html",
+        "en": "insights/projects/anan-eskan-riyadh-en.html"
+      },
       "image": "assets/projects/maquettes/anan-eskan-maquette-01.jpeg",
-      "title": { "ar": "عنان إسكان — الرياض", "en": "Anan Eskan — Riyadh" },
-      "shortTitle": { "ar": "مشروع عنان إسكان", "en": "Anan Eskan Project" },
-      "tag": { "ar": "مجسم معماري · Restatex", "en": "Architectural maquette · Restatex" },
-      "location": { "ar": "الرياض", "en": "Riyadh" }
+      "title": {
+        "ar": "عنان إسكان، الرياض",
+        "en": "Anan Eskan, Riyadh"
+      },
+      "shortTitle": {
+        "ar": "مشروع عنان إسكان",
+        "en": "Anan Eskan Project"
+      },
+      "tag": {
+        "ar": "مجسم معماري · Restatex",
+        "en": "Architectural maquette · Restatex"
+      },
+      "location": {
+        "ar": "الرياض",
+        "en": "Riyadh"
+      }
     },
     {
       "featured": false,
       "mega": true,
       "megaOrder": 1,
-      "href": { "ar": "insights/projects/al-rajhi-riyadh.html", "en": "insights/projects/al-rajhi-riyadh-en.html" },
+      "href": {
+        "ar": "insights/projects/al-rajhi-riyadh.html",
+        "en": "insights/projects/al-rajhi-riyadh-en.html"
+      },
       "image": "assets/projects/al-rajhi-naseem/aerial-bird.jpg",
-      "title": { "ar": "نسيم الحرم — الراجحي", "en": "Naseem Al-Haram — Al Rajhi" },
-      "shortTitle": { "ar": "مشروع الراجحي", "en": "Al Rajhi Project" },
-      "tag": { "ar": "فيلم CGI · مجسم · رندرات · نسيم الحرم", "en": "CGI film · Maquette · Renders · Naseem Al-Haram" },
-      "location": { "ar": "السعودية", "en": "Saudi Arabia" }
+      "title": {
+        "ar": "نسيم الحرم، الراجحي",
+        "en": "Naseem Al-Haram, Al Rajhi"
+      },
+      "shortTitle": {
+        "ar": "مشروع الراجحي",
+        "en": "Al Rajhi Project"
+      },
+      "tag": {
+        "ar": "فيلم CGI · مجسم · رندرات · نسيم الحرم",
+        "en": "CGI film · Maquette · Renders · Naseem Al-Haram"
+      },
+      "location": {
+        "ar": "السعودية",
+        "en": "Saudi Arabia"
+      }
     },
     {
       "featured": false,
       "mega": false,
-      "href": { "ar": "insights/reports/mwl-ramadan-forum-visual-report.html", "en": "insights/reports/mwl-ramadan-forum-visual-report-en.html" },
+      "href": {
+        "ar": "insights/reports/mwl-ramadan-forum-visual-report.html",
+        "en": "insights/reports/mwl-ramadan-forum-visual-report-en.html"
+      },
       "image": "assets/insights/reports/mwl-ramadan-forum-maquette-full.jpg",
-      "title": { "ar": "الملتقى الرمضاني — رابطة العالم الإسلامي", "en": "Ramadan Forum — Muslim World League" },
-      "tag": { "ar": "تقرير بصري · مجسم تفاعلي", "en": "Visual report · Interactive maquette" },
-      "location": { "ar": "جدة", "en": "Jeddah" }
+      "title": {
+        "ar": "الملتقى الرمضاني، رابطة العالم الإسلامي",
+        "en": "Ramadan Forum, Muslim World League"
+      },
+      "tag": {
+        "ar": "تقرير بصري · مجسم تفاعلي",
+        "en": "Visual report · Interactive maquette"
+      },
+      "location": {
+        "ar": "جدة",
+        "en": "Jeddah"
+      }
     }
   ]
 }

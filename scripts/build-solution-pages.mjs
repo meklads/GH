@@ -56,8 +56,8 @@ function beforeAfterSection(product, lang) {
     growth: {
       name: 'GrowthLaunch™',
       lead: isEn
-        ? 'Not just tools — a shift in how you capture and convert leads.'
-        : 'ليس أدوات فقط — بل تحول في طريقة استقبال العملاء وتحويلهم.',
+        ? 'Tools alone do not change results. The shift is how you capture and convert leads.'
+        : 'ليست أدوات منفصلة. التغيير في طريقة استقبال العملاء وتحويلهم.',
       rows: isEn
         ? [
             ['Ads without follow-up', 'Complete lead journey from click to call'],
@@ -81,14 +81,14 @@ function beforeAfterSection(product, lang) {
         : 'من جهود متفرقة إلى إطلاق موحّد يبيع المشروع.',
       rows: isEn
         ? [
-            ['Multiple vendors to manage', 'One launch partner — end to end'],
+            ['Multiple vendors to manage', 'One launch partner, end to end'],
             ['Concept without marketing assets', 'Sales-ready launch package'],
             ['Weak visual presentation', 'Cinematic CGI & scale models'],
             ['No structured launch plan', 'Clear 6-phase launch system'],
             ['Slow market confidence', 'Accelerated investor & buyer trust'],
           ]
         : [
-            ['التعامل مع عدة مورّدين', 'شريك إطلاق واحد — من البداية للنهاية'],
+            ['التعامل مع عدة مورّدين', 'شريك إطلاق واحد, من البداية للنهاية'],
             ['فكرة بلا مواد تسويقية', 'حزمة إطلاق جاهزة للمبيعات'],
             ['عرض بصري ضعيف', 'CGI سينمائي ومجسمات'],
             ['لا خطة إطلاق واضحة', 'نظام إطلاق من 6 مراحل'],
@@ -134,7 +134,7 @@ function beforeAfterSection(product, lang) {
     <div class="sol-baf-inner">
       <div class="sol-baf-head">
         <div class="sol-baf-eyebrow">${title}</div>
-        <h2 class="sol-baf-title">${isEn ? 'Your situation — transformed' : 'وضعك الحالي — بعد التحول'}</h2>
+        <h2 class="sol-baf-title">${isEn ? 'Before and after' : 'قبل وبعد'}</h2>
         <p class="sol-baf-lead">${d.lead}</p>
       </div>
       <div class="sol-baf-table">
@@ -198,7 +198,7 @@ function growthLaunchEnMain() {
           <p class="gl-hero-en">Stop Buying Marketing...<br><span>Start Building a Predictable Sales Pipeline.</span></p>
           <h1>GrowthLaunch<span class="tm">™</span></h1>
           <p style="font-size:15px;color:#C9A84C;font-weight:600;margin:0 0 12px">Lead Generation &amp; Sales System</p>
-          <p class="gl-hero-sub">A complete system that builds a machine generating qualified leads continuously — and helps your sales team convert them into contracts. Deployed in <strong style="color:#C9A84C">7 business days</strong> — your company's primary cash-flow engine.</p>
+          <p class="gl-hero-sub">A complete system that builds a machine generating qualified leads continuously, and helps your sales team convert them into contracts. Deployed in <strong style="color:#C9A84C">7 business days</strong>, your company's primary cash-flow engine.</p>
           <div class="gl-btn-row">
             <a href="${contact}" class="gl-btn gl-btn-gold">
               <span class="material-symbols-outlined">calendar_month</span>
@@ -254,7 +254,7 @@ function growthLaunchEnMain() {
             <li><span class="material-symbols-outlined">close</span> Not just a <strong>website</strong></li>
             <li><span class="material-symbols-outlined">close</span> Not a <strong>landing page</strong></li>
           </ul>
-          <p style="font-size:17px;line-height:1.85;color:rgba(255,255,255,.78)">A system from first visit to professional handoff to sales. We don't just design pages — we build infrastructure that turns traffic into real revenue.</p>
+          <p style="font-size:17px;line-height:1.85;color:rgba(255,255,255,.78)">A system from first visit to professional handoff to sales. We design the path from first visit to a clean handoff for sales, so traffic becomes revenue.</p>
         </div>
       </div>
     </div>
@@ -265,12 +265,12 @@ function growthLaunchEnMain() {
       <div class="gl-eyebrow">What You Get</div>
       <h2 class="gl-section-title">Six engines for sales growth</h2>
       <div class="gl-bento">
-        <div class="gl-bento-card"><div class="gl-bento-icon"><span class="material-symbols-outlined">person_add</span></div><h3>Capture</h3><p>Make it effortless for prospects to take the next step — smart forms and clear paths.</p></div>
-        <div class="gl-bento-card"><div class="gl-bento-icon"><span class="material-symbols-outlined">verified</span></div><h3>Qualify</h3><p>Qualify leads before they reach sales — less noise, higher quality.</p></div>
+        <div class="gl-bento-card"><div class="gl-bento-icon"><span class="material-symbols-outlined">person_add</span></div><h3>Capture</h3><p>Make it effortless for prospects to take the next step, smart forms and clear paths.</p></div>
+        <div class="gl-bento-card"><div class="gl-bento-icon"><span class="material-symbols-outlined">verified</span></div><h3>Qualify</h3><p>Qualify leads before they reach sales, less noise, higher quality.</p></div>
         <div class="gl-bento-card"><div class="gl-bento-icon"><span class="material-symbols-outlined">route</span></div><h3>Track</h3><p>Know where leads came from, what they did, and where they dropped off.</p></div>
-        <div class="gl-bento-card"><div class="gl-bento-icon"><span class="material-symbols-outlined">bolt</span></div><h3>Respond</h3><p>Instant, professional replies via WhatsApp &amp; AI — no waiting.</p></div>
+        <div class="gl-bento-card"><div class="gl-bento-icon"><span class="material-symbols-outlined">bolt</span></div><h3>Respond</h3><p>Instant, professional replies via WhatsApp &amp; AI, no waiting.</p></div>
         <div class="gl-bento-card"><div class="gl-bento-icon"><span class="material-symbols-outlined">trending_up</span></div><h3>Convert</h3><p>Help your sales team close more deals with organized handoffs.</p></div>
-        <div class="gl-bento-card"><div class="gl-bento-icon"><span class="material-symbols-outlined">monitoring</span></div><h3>Measure</h3><p>Decisions based on real data — not guesswork.</p></div>
+        <div class="gl-bento-card"><div class="gl-bento-icon"><span class="material-symbols-outlined">monitoring</span></div><h3>Measure</h3><p>Decisions based on real data, not guesswork.</p></div>
       </div>
     </div>
   </section>
@@ -311,7 +311,7 @@ function growthLaunchEnMain() {
     <div class="gl-container">
       <div class="gl-eyebrow">System Components</div>
       <h2 class="gl-section-title">Everything in one integrated stack</h2>
-      <p style="color:var(--gl-muted);max-width:640px;line-height:1.8">From offer strategy to tracking and integrations — not scattered pieces, but one system working as a unit.</p>
+      <p style="color:var(--gl-muted);max-width:640px;line-height:1.8">From offer strategy to tracking and integrations, not scattered pieces, but one system working as a unit.</p>
       <div class="gl-comp-grid">
         <div class="gl-comp-chip"><span class="material-symbols-outlined">strategy</span>Business Offer Strategy</div>
         <div class="gl-comp-chip"><span class="material-symbols-outlined">edit_note</span>Sales Copywriting</div>
@@ -355,11 +355,11 @@ function growthLaunchEnMain() {
         </div>
         <div>
           <div class="gl-eyebrow">Why Graphics House?</div>
-          <p class="gl-quote">We don't sell tools — we build systems where marketing and sales work as one.</p>
+          <p class="gl-quote">We build systems where marketing and sales work as one.</p>
           <div class="gl-quote-lines">
             <p>We don't just design beautiful pages.</p>
             <p>We don't build websites disconnected from sales.</p>
-            <p>We build one ecosystem — from first click to first call.</p>
+            <p>We build one ecosystem, from first click to first call.</p>
           </div>
         </div>
       </div>
@@ -417,12 +417,12 @@ function projectLaunchMain(lang) {
         cta1: 'Book Strategy Session',
         cta2: 'View Our Work',
         whyTitle: 'Why ProjectLaunch™?',
-        whyLead: 'Instead of dealing with five different vendors... we deliver everything you need to launch your project — from one place.',
+        whyLead: 'Instead of dealing with five different vendors... we deliver everything you need to launch your project, from one place.',
         offerTitle: 'What We Deliver',
         offerLead: 'A structured launch journey from concept to sales-ready assets.',
         svcTitle: 'Included Services',
         delTitle: 'What You Receive',
-        delLead: 'Not a list of services — a complete package of launch-ready deliverables.',
+        delLead: 'Not a list of services, a complete package of launch-ready deliverables.',
         statsTitle: 'Why Graphics House?',
         portTitle: 'Selected Work',
         journeyTitle: 'Our Process',
@@ -431,7 +431,7 @@ function projectLaunchMain(lang) {
         ctaP: "Let's turn your vision into a project that commands attention and delivers results.",
         viewCase: 'View Case Study',
         eyebrow: '02 · GRAPHICS HOUSE · Business Solutions',
-        heroAr: 'From concept to launch — and your first sale.',
+        heroAr: 'From concept to launch, and your first sale.',
       }
     : {
         title: 'أطلق مشروعك العقاري باحترافية... من أول انطباع إلى أول عملية بيع.',
@@ -445,7 +445,7 @@ function projectLaunchMain(lang) {
         offerLead: 'رحلة إطلاق منظمة من الفكرة إلى أصول جاهزة للمبيعات.',
         svcTitle: 'الخدمات المشمولة',
         delTitle: 'ما الذي تستلمه',
-        delLead: 'ليس قائمة خدمات فقط — بل حزمة مخرجات جاهزة لإطلاق مشروعك.',
+        delLead: 'ليس قائمة خدمات فقط, بل حزمة مخرجات جاهزة لإطلاق مشروعك.',
         statsTitle: 'لماذا Graphics House؟',
         portTitle: 'نماذج من أعمالنا',
         journeyTitle: 'رحلة العمل',
@@ -586,17 +586,17 @@ function projectLaunchMain(lang) {
 
   const faqs = isEn
     ? [
-        ['How long does a project take?', 'Timeline depends on scope — from 4 weeks for focused deliverables to 12+ weeks for full launch packages. We define a clear schedule in the proposal phase.'],
+        ['How long does a project take?', 'Timeline depends on scope, from 4 weeks for focused deliverables to 12+ weeks for full launch packages. We define a clear schedule in the proposal phase.'],
         ['Can we order part of the services only?', 'Yes. ProjectLaunch is modular. You can start with visualization, add animation later, or commission a full launch package.'],
         ['Do you work outside Saudi Arabia?', 'Absolutely. We serve clients across Saudi Arabia, UAE, Oman, Bahrain, Egypt, and internationally.'],
-        ['Do you provide on-site supervision?', 'Yes — for exhibitions, sales centers, and on-ground installations we offer supervision and coordination.'],
+        ['Do you provide on-site supervision?', 'Yes, for exhibitions, sales centers, and on-ground installations we offer supervision and coordination.'],
         ['Do you offer updates after delivery?', 'We provide revision rounds during production and optional maintenance packages for digital assets after launch.'],
       ]
     : [
-        ['كم يستغرق المشروع؟', 'يعتمد على نطاق العمل — من 4 أسابيع للمخرجات المحددة إلى 12+ أسبوعاً لحزمة الإطلاق الكاملة. نحدد جدولاً واضحاً في مرحلة العرض.'],
-        ['هل يمكن تنفيذ جزء من الخدمات فقط؟', 'نعم. ProjectLaunch مرن — يمكنك البدء بالتصور المعماري وإضافة الأنيميشن لاحقاً أو طلب حزمة إطلاق متكاملة.'],
+        ['كم يستغرق المشروع؟', 'يعتمد على نطاق العمل, من 4 أسابيع للمخرجات المحددة إلى 12+ أسبوعاً لحزمة الإطلاق الكاملة. نحدد جدولاً واضحاً في مرحلة العرض.'],
+        ['هل يمكن تنفيذ جزء من الخدمات فقط؟', 'نعم. ProjectLaunch مرن, يمكنك البدء بالتصور المعماري وإضافة الأنيميشن لاحقاً أو طلب حزمة إطلاق متكاملة.'],
         ['هل يمكن تنفيذ المشروع خارج السعودية؟', 'بالتأكيد. نخدم عملاء في السعودية والإمارات وعُمان والبحرين ومصر ودولياً.'],
-        ['هل توفرون الإشراف؟', 'نعم — للمعارض ومراكز المبيعات والتركيبات الميدانية نوفر إشرافاً وتنسيقاً كاملاً.'],
+        ['هل توفرون الإشراف؟', 'نعم, للمعارض ومراكز المبيعات والتركيبات الميدانية نوفر إشرافاً وتنسيقاً كاملاً.'],
         ['هل تقدمون تحديثات بعد التسليم؟', 'نوفر جولات مراجعة أثناء الإنتاج وحزم صيانة اختيارية للأصول الرقمية بعد الإطلاق.'],
       ];
 
@@ -791,7 +791,7 @@ function projectLaunchMain(lang) {
 // GrowthLaunch EN
 const glEn = head({
   title: 'GrowthLaunch™ | Lead Generation & Sales System | Graphics House',
-  desc: 'GrowthLaunch™ — integrated lead generation and predictable sales pipeline in 7 business days.',
+  desc: 'GrowthLaunch™, integrated lead generation and predictable sales pipeline in 7 business days.',
   ogTitle: 'GrowthLaunch™ | Graphics House',
   css: 'growth-launch',
   dir: 'ltr',
@@ -803,7 +803,7 @@ fs.writeFileSync(path.join(SOLUTIONS, 'growth-launch-en.html'), glEn);
 // ProjectLaunch AR
 const plAr = head({
   title: 'ProjectLaunch™ | نظام إطلاق المشاريع العقارية | Graphics House',
-  desc: 'ProjectLaunch™ — نظام متكامل لإطلاق المشاريع العقارية من التصور إلى المبيعات.',
+  desc: 'ProjectLaunch™, نظام متكامل لإطلاق المشاريع العقارية من التصور إلى المبيعات.',
   ogTitle: 'ProjectLaunch™ | Graphics House',
   css: 'project-launch',
   dir: 'rtl',
@@ -815,7 +815,7 @@ fs.writeFileSync(path.join(SOLUTIONS, 'project-launch.html'), plAr);
 // ProjectLaunch EN
 const plEn = head({
   title: 'ProjectLaunch™ | Real Estate Launch System | Graphics House',
-  desc: 'ProjectLaunch™ — complete creative launch system for real estate developers.',
+  desc: 'ProjectLaunch™, complete creative launch system for real estate developers.',
   ogTitle: 'ProjectLaunch™ | Graphics House',
   css: 'project-launch',
   dir: 'ltr',
@@ -845,12 +845,12 @@ function brandScaleMain(lang) {
         processTitle: 'How We Work',
         indTitle: 'Industries',
         credTitle: 'Why Graphics House?',
-        credLead: 'Beyond numbers — a track record of trust.',
+        credLead: 'Beyond numbers, a track record of trust.',
         workTitle: 'Selected Work',
         idealTitle: 'Ideal For',
         faqTitle: 'Frequently Asked Questions',
         journeyTitle: 'Continue Your Growth Journey',
-        journeyLead: 'After building your brand — how do you start attracting clients?',
+        journeyLead: 'After building your brand, how do you start attracting clients?',
         ctaH: 'Ready to Scale Your Brand?',
         ctaP: "Let's turn your brand into a strategic asset that supports business growth for years.",
         eyebrow: '03 · GRAPHICS HOUSE · Business Solutions',
@@ -964,16 +964,16 @@ function brandScaleMain(lang) {
   const faqs = isEn
     ? [
         ['Can you evolve our existing identity?', 'Yes. We audit your current brand, keep what works, and elevate the system without losing recognition.'],
-        ['Can the website be built later?', 'Absolutely. BrandScale is modular — start with strategy & identity, add website and digital assets when ready.'],
-        ['How long does the process take?', 'Typically 4–8 weeks depending on scope. We provide a clear timeline in the proposal.'],
-        ['Do you include Brand Strategy?', 'Yes. Strategy is the foundation — positioning, audience, messaging, and competitive differentiation.'],
+        ['Can the website be built later?', 'Yes. BrandScale is modular: start with strategy & identity, add website and digital assets when ready.'],
+        ['How long does the process take?', 'Typically 4-8 weeks depending on scope. We provide a clear timeline in the proposal.'],
+        ['Do you include Brand Strategy?', 'Yes. Strategy is the foundation, positioning, audience, messaging, and competitive differentiation.'],
         ['Is a brand guidelines manual included?', 'Yes. Every package includes brand guidelines for consistent application across all touchpoints.'],
       ]
     : [
         ['هل يمكن تطوير الهوية الحالية؟', 'نعم. نراجع علامتك الحالية، نحتفظ بما يعمل، ونرتقي بالنظام دون فقدان التعرّف.'],
-        ['هل يمكن تنفيذ الموقع لاحقًا؟', 'بالتأكيد. BrandScale مرن — ابدأ بالاستراتيجية والهوية وأضف الموقع عند الجاهزية.'],
-        ['كم تستغرق العملية؟', 'عادة 4–8 أسابيع حسب النطاق. نحدد جدولاً واضحاً في العرض.'],
-        ['هل تقدمون Brand Strategy؟', 'نعم. الاستراتيجية هي الأساس — التموضع والجمهور والرسائل والتمييز.'],
+        ['هل يمكن تنفيذ الموقع لاحقًا؟', 'بالتأكيد. BrandScale مرن, ابدأ بالاستراتيجية والهوية وأضف الموقع عند الجاهزية.'],
+        ['كم تستغرق العملية؟', 'عادة 4-8 أسابيع حسب النطاق. نحدد جدولاً واضحاً في العرض.'],
+        ['هل تقدمون Brand Strategy؟', 'نعم. الاستراتيجية هي الأساس, التموضع والجمهور والرسائل والتمييز.'],
         ['هل تشمل الخدمة دليل الهوية؟', 'نعم. كل حزمة تتضمن دليل هوية لضمان الاتساق في كل نقاط التواصل.'],
       ];
 
@@ -1167,7 +1167,7 @@ function brandScaleMain(lang) {
 // BrandScale AR
 const bsAr = head({
   title: 'BrandScale™ | نظام نمو العلامة التجارية | Graphics House',
-  desc: 'BrandScale™ — نظام متكامل لبناء العلامة التجارية والنمو الرقمي.',
+  desc: 'BrandScale™, نظام متكامل لبناء العلامة التجارية والنمو الرقمي.',
   ogTitle: 'BrandScale™ | Graphics House',
   css: 'brand-scale',
   dir: 'rtl',
@@ -1179,7 +1179,7 @@ fs.writeFileSync(path.join(SOLUTIONS, 'brand-scale.html'), bsAr);
 // BrandScale EN
 const bsEn = head({
   title: 'BrandScale™ | Brand Growth System | Graphics House',
-  desc: 'BrandScale™ — complete branding and digital growth system for premium market positioning.',
+  desc: 'BrandScale™, complete branding and digital growth system for premium market positioning.',
   ogTitle: 'BrandScale™ | Graphics House',
   css: 'brand-scale',
   dir: 'ltr',

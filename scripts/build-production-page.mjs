@@ -101,11 +101,11 @@ ${EXTRA}
 <section class="hero-sec">
   <div class="hero-inner">
     <div class="hero-image">
-      <img src="${P}assets/photography/slide_image_12.png" alt="التصوير والإنتاج الإعلامي — Graphics House" loading="eager">
+      <img src="${P}assets/photography/slide_image_12.png" alt="التصوير والإنتاج الإعلامي, Graphics House" loading="eager">
       <div class="hero-overlay reveal">
         <span class="hero-kicker">Photography &amp; Media Production</span>
         <h1>التصوير والإنتاج الإعلامي<br><span style="color:var(--gold)">بجودة سينمائية</span></h1>
-        <p>نصنع محتوى بصرياً يبيع مشروعك — من جلسات التصوير الاحترافية إلى الأفلام الترويجية وتغطية الفعاليات، بفريق إنتاج يفهم السوق السعودي والخليجي.</p>
+        <p>نصنع محتوى بصرياً يبيع مشروعك, من جلسات التصوير الاحترافية إلى الأفلام الترويجية وتغطية الفعاليات، بفريق إنتاج يفهم السوق السعودي والخليجي.</p>
       </div>
     </div>
     <div class="hero-btns">
@@ -122,28 +122,28 @@ ${EXTRA}
     <div class="reveal" style="text-align:center;margin-bottom:48px">
       <span class="section-label">خدمات الإنتاج</span>
       <h2 class="section-title">كل ما تحتاجه <span class="gold">لإنتاجك البصري</span></h2>
-      <p class="section-sub" style="margin:0 auto">حلول متكاملة للتصوير والفيديو — من الفكرة إلى التسليم النهائي، بمعايير احترافية تناسب العقار والضيافة والعلامات التجارية.</p>
+      <p class="section-sub" style="margin:0 auto">حلول متكاملة للتصوير والفيديو, من الفكرة إلى التسليم النهائي، بمعايير احترافية تناسب العقار والضيافة والعلامات التجارية.</p>
     </div>
     <div class="feature-grid reveal r1">
       <div class="feature-card">
         <div class="icon"><span class="material-symbols-outlined">photo_camera</span></div>
         <h3>تصوير تجاري وعقاري</h3>
-        <p>جلسات تصوير للمنتجات، المشاريع العقارية، الفنادق والمطاعم — بإضاءة واحترافية تعكس قيمة العلامة.</p>
+        <p>جلسات تصوير للمنتجات، المشاريع العقارية، الفنادق والمطاعم, بإضاءة واحترافية تعكس قيمة العلامة.</p>
       </div>
       <div class="feature-card">
         <div class="icon"><span class="material-symbols-outlined">movie</span></div>
         <h3>أفلام ترويجية</h3>
-        <p>فيديوهات سينمائية للحملات الإعلانية وإطلاق المشاريع — سرد بصري يجذب المستثمرين ويشجّع على الشراء.</p>
+        <p>فيديوهات سينمائية للحملات الإعلانية وإطلاق المشاريع, سرد بصري يجذب المستثمرين ويشجّع على الشراء.</p>
       </div>
       <div class="feature-card">
         <div class="icon"><span class="material-symbols-outlined">event</span></div>
         <h3>تغطية فعاليات</h3>
-        <p>تصوير وإنتاج فوري للمعارض، المؤتمرات، وافتتاح المشاريع — محتوى جاهز للنشر على المنصات.</p>
+        <p>تصوير وإنتاج فوري للمعارض، المؤتمرات، وافتتاح المشاريع, محتوى جاهز للنشر على المنصات.</p>
       </div>
       <div class="feature-card">
         <div class="icon"><span class="material-symbols-outlined">slideshow</span></div>
         <h3>عروض تقديمية</h3>
-        <p>عروض بصرية احترافية لاجتماعات العملاء والمستثمرين — تصميم وتصوير وإخراج متكامل.</p>
+        <p>عروض بصرية احترافية لاجتماعات العملاء والمستثمرين, تصميم وتصوير وإخراج متكامل.</p>
       </div>
     </div>
   </div>
@@ -206,7 +206,7 @@ ${EXTRA}
 <section class="cta-d reveal" style="background:#FAFAF8">
   <div class="cta-d-inner">
     <h2>عروض تقديمية <span class="gold">تبهر عملاءك</span></h2>
-    <p>نصمم عروضاً تقديمية احترافية تناسب اجتماعاتك مع العملاء والمستثمرين — تصوير، مونتاج، وإخراج بصري متكامل.</p>
+    <p>نصمم عروضاً تقديمية احترافية تناسب اجتماعاتك مع العملاء والمستثمرين, تصوير، مونتاج، وإخراج بصري متكامل.</p>
     <div class="btns">
       <a href="#booking" class="btn-p">اطلب عرضاً <span class="material-symbols-outlined">slideshow</span></a>
     </div>
@@ -269,10 +269,10 @@ ${EXTRA}
     <div class="contact-grid reveal r1">
       <div class="contact-info">
         <h3>لنصنع معاً محتواك البصري</h3>
-        <p>سواء كنت تريد جلسة تصوير لمنتجاتك، تغطية فعالية، أو فيديو ترويجي — فريق الإنتاج جاهز لخدمتك.</p>
+        <p>سواء كنت تريد جلسة تصوير لمنتجاتك، تغطية فعالية، أو فيديو ترويجي, فريق الإنتاج جاهز لخدمتك.</p>
         <div class="contact-info-item"><span class="material-symbols-outlined">phone_in_talk</span> +966 50 278 6513</div>
         <div class="contact-info-item"><span class="material-symbols-outlined">mail</span> dot4life.team@gmail.com</div>
-        <div class="contact-info-item"><span class="material-symbols-outlined">location_on</span> جدة، السعودية — مكاتبنا في 4 دول</div>
+        <div class="contact-info-item"><span class="material-symbols-outlined">location_on</span> جدة، السعودية, مكاتبنا في 4 دول</div>
         <div class="contact-info-item"><span class="material-symbols-outlined">schedule</span> نرد خلال 24 ساعة عمل</div>
       </div>
       <div class="form-card">

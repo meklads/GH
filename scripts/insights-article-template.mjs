@@ -197,8 +197,8 @@ const SIDEBAR_SERVICES = [
     icon: 'rocket_launch',
     title: { ar: 'ProjectLaunch™', en: 'ProjectLaunch™' },
     desc: {
-      ar: 'نظام إطلاق off-plan متكامل — رندرات، فيلم، صالة بيع.',
-      en: 'Integrated off-plan launch — renders, film, sales gallery.',
+      ar: 'نظام إطلاق off-plan متكامل, رندرات، فيلم، صالة بيع.',
+      en: 'Integrated off-plan launch, renders, film, sales gallery.',
     },
     href: 'solutions/project-launch',
   },
@@ -258,7 +258,7 @@ export function sidebarServicesHtml(isEn, depthPrefix) {
 export function sidebarToolHtml(isEn, depthPrefix) {
   const suffix = isEn ? '-en.html' : '.html';
   const title = isEn ? 'Launch readiness checklist' : 'قائمة جاهزية الإطلاق';
-  const sub = isEn ? 'Free interactive tool — 12 essentials' : 'أداة تفاعلية مجانية — 12 بنداً';
+  const sub = isEn ? 'Free interactive tool, 12 essentials' : 'أداة تفاعلية مجانية, 12 بنداً';
   return `<a href="${depthPrefix}insights/tools/launch-checklist${suffix}" class="gh-art-sidebar-block gh-art-sidebar-tool">
     <span class="material-symbols-outlined" aria-hidden="true">checklist</span>
     <strong>${title}</strong>
@@ -332,7 +332,7 @@ export function defaultMidCta(isEn, depthPrefix) {
   if (isEn) {
     return `<div class="gh-art-mid-cta">
       <h3>Launching in the next 6 months?</h3>
-      <p>Map your visual assets to your sales timeline with ProjectLaunch™ — renders, film, gallery, and launch content from one GCC team.</p>
+      <p>Map your visual assets to your sales timeline with ProjectLaunch™, renders, film, gallery, and launch content from one GCC team.</p>
       <div class="gh-art-mid-cta-actions">
         <a href="${depthPrefix}solutions/project-launch-en.html" class="gh-btn-editorial">Explore ProjectLaunch™</a>
         <a href="${depthPrefix}contact-us-en.html" class="gh-btn-editorial gh-btn-editorial--outline">Discuss your project</a>
@@ -341,7 +341,7 @@ export function defaultMidCta(isEn, depthPrefix) {
   }
   return `<div class="gh-art-mid-cta">
     <h3>تطلق خلال الستة أشهر القادمة؟</h3>
-    <p>اربط أصولك البصرية بجدول المبيعات عبر ProjectLaunch™ — رندرات، فيلم، صالة بيع، ومحتوى إطلاق من فريق واحد في الخليج.</p>
+    <p>اربط أصولك البصرية بجدول المبيعات عبر ProjectLaunch™, رندرات، فيلم، صالة بيع، ومحتوى إطلاق من فريق واحد في الخليج.</p>
     <div class="gh-art-mid-cta-actions">
       <a href="${depthPrefix}solutions/project-launch.html" class="gh-btn-editorial">اكتشف ProjectLaunch™</a>
       <a href="${depthPrefix}contact-us.html" class="gh-btn-editorial gh-btn-editorial--outline">ناقش مشروعك</a>
@@ -430,7 +430,7 @@ export function takeawaysBlock(takeaways, isEn) {
 
 export function sidebarNewsletterHtml(isEn) {
   const title = isEn ? 'Launch insights' : 'رؤى الإطلاق';
-  const sub = isEn ? 'Monthly GCC archviz & sales tips — no spam.' : 'نصائح شهرية للإطلاق البصري — بدون إزعاج.';
+  const sub = isEn ? 'Monthly GCC archviz & sales tips, no spam.' : 'نصائح شهرية للإطلاق البصري, بدون إزعاج.';
   const ph = isEn ? 'Your email' : 'بريدك';
   const btn = isEn ? 'Subscribe' : 'اشترك';
   return `<details class="gh-art-sidebar-fold gh-art-sidebar-fold--muted">

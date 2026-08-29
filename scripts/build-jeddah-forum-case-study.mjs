@@ -67,7 +67,7 @@ const COPY = {
     superdomeMeta: 'JEDDAH SUPERDOME · 3D FOR FILM',
     superdomeP:
       'لأن الفيلم يحتاج مكاناً حقيقياً بمقياس الملتقى، بنينا نموذجاً ثلاثي الأبعاد كاملاً لجدة سوبردوم: الخارج، الداخل، توزيع المعرض، والمسرح المركزي. كل ما تراه في المعرض أدناه هو مرحلة التصميم الأولية التي أصبحت أساس الفيلم السينمائي.',
-    superdomeFeatured: 'الواجهة — لقطة من مرحلة التصميم',
+    superdomeFeatured: 'الواجهة, لقطة من مرحلة التصميم',
     filmTitle: 'الفيلم السينمائي التخيلي',
     filmMeta: 'CINEMATIC CGI FILM',
     filmP:
@@ -84,9 +84,9 @@ const COPY = {
     paletteTitle: 'لوحة الألوان',
     catalogMeta: 'CATALOGUE',
     catalogTitle: 'الكتالوج',
-    catalogP: 'صفحات مختارة من الكتالوج الذي أنتجته Graphics House — الهوية كما طُبعت.',
+    catalogP: 'صفحات مختارة من الكتالوج الذي أنتجته Graphics House, الهوية كما طُبعت.',
     systemTitle: 'منظومة واحدة. ثلاثة محاور.',
-    systemP: 'الهوية، الكتالوج، والفيلم — ثلاثة مخرجات مترابطة صُممت معاً، لا بشكل منفصل.',
+    systemP: 'الهوية، الكتالوج، والفيلم, ثلاثة مخرجات مترابطة صُممت معاً، لا بشكل منفصل.',
     systemSteps: ['BRAND', 'CATALOGUE', 'SUPERDOME 3D', 'CGI FILM', 'PRINT'],
     behindTitle: 'خلف الكواليس',
     behindMeta: 'BEHIND THE CREATIVE',
@@ -150,7 +150,7 @@ const COPY = {
     superdomeMeta: 'JEDDAH SUPERDOME · 3D FOR FILM',
     superdomeP:
       'Because the film needed a venue at forum scale, we built a complete 3D model of Jeddah Superdome: exterior, interior, exhibition layout, and central auditorium. Every thumbnail below is from the preliminary design phase that became the foundation of the cinematic film.',
-    superdomeFeatured: 'Facade — design-phase frame',
+    superdomeFeatured: 'Facade, design-phase frame',
     filmTitle: 'The cinematic CGI film',
     filmMeta: 'CINEMATIC CGI FILM',
     filmP:
@@ -167,9 +167,9 @@ const COPY = {
     paletteTitle: 'Colour palette',
     catalogMeta: 'CATALOGUE',
     catalogTitle: 'The catalogue',
-    catalogP: 'Selected spreads from the catalogue produced by Graphics House — identity as printed.',
+    catalogP: 'Selected spreads from the catalogue produced by Graphics House, identity as printed.',
     systemTitle: 'One system. Three pillars.',
-    systemP: 'Brand, catalogue, and film — three interconnected outputs designed together, not in isolation.',
+    systemP: 'Brand, catalogue, and film, three interconnected outputs designed together, not in isolation.',
     systemSteps: ['BRAND', 'CATALOGUE', 'SUPERDOME 3D', 'CGI FILM', 'PRINT'],
     behindTitle: 'Behind the creative',
     behindMeta: 'BEHIND THE CREATIVE',

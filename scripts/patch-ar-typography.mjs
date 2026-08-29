@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Unify Arabic typography across all AR pages — matches index-ar.html font stack.
+ * Unify Arabic typography across all AR pages, matches index-ar.html font stack.
  */
 import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
@@ -105,4 +105,4 @@ for (const file of walkHtml(ROOT)) {
     console.log('patched', rel);
   }
 }
-console.log(`Done — ${patched} Arabic page(s) updated.`);
+console.log(`Done, ${patched} Arabic page(s) updated.`);

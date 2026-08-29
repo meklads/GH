@@ -183,7 +183,7 @@ const SKIP = new Set([
   'home-v2-backup.html', 'en-backup.html', 'en-v2.html', 'offer-lite.html', 'gh-admin.html',
   // ProjectLaunch AR site page keeps custom #lead-form header CTAs (not contact-us)
   'solutions/project-launch.html',
-  // Ads LP — nav-free landing header
+  // Ads LP, nav-free landing header
   'solutions/project-launch-ads.html',
   'solutions/project-launch-ads-en.html',
 ]);

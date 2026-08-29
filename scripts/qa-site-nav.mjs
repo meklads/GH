@@ -98,10 +98,10 @@ for (const rel of collectHtml(ROOT)) {
   }
 
   if (/services\/[^/]+-en\.html$/.test(rel) && /http-equiv="refresh"/i.test(html)) {
-    issues.push(`${rel}: redirect stub — rebuild service EN pages`);
+    issues.push(`${rel}: redirect stub, rebuild service EN pages`);
   }
   if (/services\/[^/]+-en\.html$/.test(rel) && html.split('\n').length < 500) {
-    issues.push(`${rel}: thin EN service page (${html.split('\n').length} lines) — expected rich content`);
+    issues.push(`${rel}: thin EN service page (${html.split('\n').length} lines), expected rich content`);
   }
 }
 

@@ -121,14 +121,14 @@ async function main() {
         }
       }
     }
-    console.log(`Done — ${count} OG image(s).`);
+    console.log(`Done, ${count} OG image(s).`);
   } catch (err) {
     const existing = fs.existsSync(OUT_DIR)
       ? fs.readdirSync(OUT_DIR).filter((f) => f.endsWith('.jpg')).length
       : 0;
     if (existing > 0) {
       console.warn('OG generation failed; keeping committed assets:', err?.message || err);
-      console.log(`Done — using ${existing} existing OG image(s).`);
+      console.log(`Done, using ${existing} existing OG image(s).`);
       return;
     }
     throw err;
