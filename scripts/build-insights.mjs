@@ -152,9 +152,61 @@ function heroImageHtml(src, depthPrefix, alt) {
   const webp = String(src).replace(/\.(jpe?g|png)$/i, '.webp');
   const hasWebp = webp !== src && fs.existsSync(path.join(ROOT, webp));
   if (hasWebp) {
-    return `<picture><source srcset="${p}${webp}" type="image/webp"><img class="gh-article-hero-img" src="${p}${src}" alt="${esc(alt)}" loading="lazy"></picture>`;
+    return `<picture><source srcset="${p}${webp}" type="image/webp"><img class="gh-article-hero-img" src="${p}${src}" alt="${esc(alt)}" loading="eager" fetchpriority="high"></picture>`;
   }
-  return `<img class="gh-article-hero-img" src="${p}${src}" alt="${esc(alt)}" loading="lazy">`;
+  return `<img class="gh-article-hero-img" src="${p}${src}" alt="${esc(alt)}" loading="eager" fetchpriority="high">`;
+}
+
+function assetPicture(src, depthPrefix, alt, { eager = false, className = '' } = {}) {
+  const full = `${depthPrefix}${src}`;
+  const webp = String(src).replace(/\.(jpe?g|png)$/i, '.webp');
+  const hasWebp = webp !== src && fs.existsSync(path.join(ROOT, webp));
+  const load = eager ? ' loading="eager" fetchpriority="high"' : ' loading="lazy"';
+  const cls = className ? ` class="${className}"` : '';
+  if (hasWebp) {
+    return `<picture><source srcset="${depthPrefix}${webp}" type="image/webp"><img${cls} src="${full}" alt="${esc(alt)}"${load} decoding="async"></picture>`;
+  }
+  return `<img${cls} src="${full}" alt="${esc(alt)}"${load} decoding="async">`;
+}
+
+function projectCinematicHeroHtml(project, lang, depthPrefix) {
+  const isEn = lang === 'en';
+  const L = (obj) => (isEn ? obj?.en : obj?.ar) || obj?.en || '';
+  const name = L(project.heroHeading) || (L(project.projectName) || '').split(/[—–-]/)[0].trim() || L(project.projectName);
+  const line = L(project.heroLine) || L(project.title);
+  const dek = L(project.heroDek) || L(project.excerpt);
+  const filmHref = project.youtubeId ? '#gh-proj-film' : '';
+  const contactHref = `${depthPrefix}contact-us${isEn ? '-en' : ''}.html`;
+  const filmLabel = isEn ? 'Watch the film' : 'شاهد الفيلم';
+  const discussLabel = isEn ? 'Discuss your project' : 'ناقش مشروعك';
+  const actions = [
+    filmHref
+      ? `<a class="gh-proj-hero__cta gh-proj-hero__cta--primary" href="${filmHref}">${filmLabel}</a>`
+      : '',
+    `<a class="gh-proj-hero__cta gh-proj-hero__cta--ghost" href="${contactHref}">${discussLabel}</a>`,
+  ]
+    .filter(Boolean)
+    .join('\n      ');
+
+  return `<section class="gh-proj-hero" aria-label="${esc(name)}">
+  <div class="gh-proj-hero__media" aria-hidden="true">
+    ${assetPicture(project.image, depthPrefix, name, { eager: true })}
+  </div>
+  <div class="gh-proj-hero__veil" aria-hidden="true"></div>
+  <div class="gh-proj-hero__content">
+    <p class="gh-proj-hero__kicker">
+      <span>${esc(L(project.developer))}</span>
+      <span class="gh-proj-hero__kicker-sep" aria-hidden="true"></span>
+      <span>${esc(L(project.city))}</span>
+    </p>
+    <h1 class="gh-proj-hero__name">${esc(name)}</h1>
+    <p class="gh-proj-hero__line">${esc(line)}</p>
+    <p class="gh-proj-hero__dek">${esc(dek)}</p>
+    <div class="gh-proj-hero__actions">
+      ${actions}
+    </div>
+  </div>
+</section>`;
 }
 
 function projectAlbumHtml(project, lang, depthPrefix) {
@@ -162,32 +214,38 @@ function projectAlbumHtml(project, lang, depthPrefix) {
   const L = (obj) => (isEn ? obj?.en : obj?.ar) || obj?.en || '';
   const gallery = (project.gallery || []).filter((src) => src && !isVideoSrc(src));
   if (gallery.length < 2) return '';
-  const loc = L(project.city);
   const title = L(project.projectName) || L(project.title);
   const label = isEn ? 'Project gallery' : 'معرض المشروع';
-  const items = gallery
-    .map((src) => {
+  const first = gallery[0];
+  const firstFull = `${depthPrefix}${first}`;
+  const firstWebp = String(first).replace(/\.(jpe?g|png)$/i, '.webp');
+  const firstHasWebp = firstWebp !== first && fs.existsSync(path.join(ROOT, firstWebp));
+  const thumbs = gallery
+    .map((src, i) => {
       const full = `${depthPrefix}${src}`;
       const webp = String(src).replace(/\.(jpe?g|png)$/i, '.webp');
       const hasWebp = webp !== src && fs.existsSync(path.join(ROOT, webp));
-      const img = hasWebp
-        ? `<picture><source srcset="${depthPrefix}${webp}" type="image/webp"><img src="${full}" alt="${esc(title)}" loading="eager" decoding="async"></picture>`
-        : `<img src="${full}" alt="${esc(title)}" loading="eager" decoding="async">`;
-      return `<button type="button" class="pf-item" data-gh-album-full="${esc(full)}" data-gh-album-alt="${esc(title)}" aria-label="${esc(isEn ? `View ${title}` : `عرض ${title}`)}">
-      ${img}
-      <span class="pf-item-overlay">
-        <span class="pf-item-location">${esc(loc)}</span>
-        <span class="pf-item-title">${esc(title)}</span>
-      </span>
-    </button>`;
+      const thumbImg = hasWebp
+        ? `<picture><source srcset="${depthPrefix}${webp}" type="image/webp"><img src="${full}" alt="" loading="${i < 6 ? 'eager' : 'lazy'}" decoding="async"></picture>`
+        : `<img src="${full}" alt="" loading="${i < 6 ? 'eager' : 'lazy'}" decoding="async">`;
+      return `<button type="button" class="gh-vg__thumb${i === 0 ? ' is-active' : ''}" role="option" aria-selected="${i === 0 ? 'true' : 'false'}" data-gh-vg-thumb data-full="${esc(full)}" data-webp="${hasWebp ? esc(`${depthPrefix}${webp}`) : ''}" data-alt="${esc(title)}" aria-label="${esc(isEn ? `Image ${i + 1}` : `صورة ${i + 1}`)}">${thumbImg}</button>`;
     })
     .join('');
+  const mainPic = firstHasWebp
+    ? `<picture><source srcset="${depthPrefix}${firstWebp}" type="image/webp"><img src="${firstFull}" alt="${esc(title)}" decoding="async"></picture>`
+    : `<img src="${firstFull}" alt="${esc(title)}" decoding="async">`;
+
   return `<section class="gh-ins-album-wrap" aria-label="${esc(label)}">
   <h2 class="gh-ins-album-title">${esc(label)}</h2>
-  <div class="pf-album">
-    <div class="pf-album__frame">
-      <div class="pf-album__track" data-gh-album-track>${items}</div>
+  <div class="gh-vg" data-gh-viewer-gallery tabindex="0">
+    <div class="gh-vg__stage">
+      <button type="button" class="gh-vg__main" data-gh-vg-main data-gh-album-full="${esc(firstFull)}" data-gh-album-alt="${esc(title)}" aria-label="${esc(isEn ? 'Open full image' : 'فتح الصورة بالحجم الكامل')}">
+        <span data-gh-vg-slot>${mainPic}</span>
+      </button>
+      <button type="button" class="gh-vg__nav gh-vg__nav--prev" data-gh-vg-prev aria-label="${esc(isEn ? 'Previous image' : 'الصورة السابقة')}"><span class="material-symbols-outlined" aria-hidden="true">chevron_left</span></button>
+      <button type="button" class="gh-vg__nav gh-vg__nav--next" data-gh-vg-next aria-label="${esc(isEn ? 'Next image' : 'الصورة التالية')}"><span class="material-symbols-outlined" aria-hidden="true">chevron_right</span></button>
     </div>
+    <div class="gh-vg__thumbs" role="listbox" aria-label="${esc(label)}">${thumbs}</div>
   </div>
 </section>`;
 }
@@ -198,7 +256,7 @@ function featuredVideoHtml(entity, depthPrefix, isEn) {
     if (!id) return '';
     const label = isEn ? 'Watch the film' : 'شاهد الفيلم';
     const title = isEn ? 'Project film' : 'فيلم المشروع';
-    return `<div class="gh-ins-featured-video">
+    return `<div class="gh-ins-featured-video" id="gh-proj-film">
   <p class="gh-ins-featured-video-label">${label}</p>
   <div class="gh-ins-featured-video-frame gh-ins-media--youtube">
     <iframe src="https://www.youtube.com/embed/${id}?rel=0&modestbranding=1" title="${esc(title)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -368,9 +426,9 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=38">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=29">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=29">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=30">
 <link rel="stylesheet" href="${p}assets/gh-insights-article.css?v=5">
-<link rel="stylesheet" href="${p}assets/gh-pf-album.css?v=2">
+<link rel="stylesheet" href="${p}assets/gh-pf-album.css?v=3">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=10">
 ${isEn ? `<link rel="stylesheet" href="${p}assets/gh-en-typography.css?v=1">` : `<link rel="stylesheet" href="${p}assets/gh-ar-typography.css?v=2">`}
 <script defer src="${p}assets/site-header.js?v=16"></script>
@@ -387,7 +445,7 @@ function tailScripts(depth, { article = false, album = false } = {}) {
     ? `\n<script defer src="${p}assets/gh-insights-article.js?v=6"></script>\n<script defer src="${p}assets/gh-newsletter.js?v=5"></script>`
     : '';
   const albumJs = album
-    ? `\n<script defer src="${p}assets/gh-pf-album.js?v=2"></script>`
+    ? `\n<script defer src="${p}assets/gh-pf-album.js?v=3"></script>`
     : '';
   return `
 <script defer src="${p}assets/gh-float-widgets.js?v=9"></script>${articleJs}${albumJs}
@@ -1132,6 +1190,21 @@ function buildProject(project, lang) {
     : '';
   const albumBlock = useAlbum ? projectAlbumHtml(project, lang, p) : '';
   const videoBlock = featuredVideoHtml(project, p, isEn);
+  const cinematic = project.cinematicHero === true;
+  const cinematicHero = cinematic ? projectCinematicHeroHtml(project, lang, p) : '';
+  const classicHeader = cinematic
+    ? ''
+    : `<header class="gh-article-header">
+        <div class="gh-ins-proj-meta gh-ins-proj-meta--page">
+          <span class="gh-ins-proj-dev">${esc(L(project.developer))}</span>
+          <span class="gh-ins-proj-city">${esc(L(project.city))}</span>
+        </div>
+        <span class="gh-ins-cat">${esc(L(project.category))}</span>
+        <h1>${L(project.title)}</h1>
+        <p class="gh-dek">${L(project.excerpt)}</p>
+        <p class="gh-ins-proj-name"><strong>${isEn ? 'Project' : 'المشروع'}:</strong> ${esc(L(project.projectName))}</p>
+      </header>
+      ${heroImageHtml(project.image, p, L(project.projectName))}`;
   const portfolioHref = project.portfolioHref
     ? `${p}${project.portfolioHref}`
     : `${p}portfolio${isEn ? '-en' : ''}.html`;
@@ -1144,27 +1217,19 @@ function buildProject(project, lang) {
     altEn: `https://3dgraphicshouse.com/insights/projects/${project.slug}-en.html`,
     altAr: `https://3dgraphicshouse.com/insights/projects/${project.slug}.html`,
     ogType: 'article',
+    ogImage: project.image ? `https://3dgraphicshouse.com/${project.image}` : undefined,
   })}
 <script type="application/ld+json">${projectSchema(project, lang)}</script>
 ${header}
-<main id="main-content" class="gh-article-page-wrap">
+<main id="main-content" class="gh-article-page-wrap${cinematic ? ' gh-article-page-wrap--cinema' : ''}">
+  ${cinematicHero}
   <div class="gh-ins-wrap">
     <a href="../${isEn ? 'index-en' : 'index'}.html#projects" class="gh-back-link">
       <span class="material-symbols-outlined" style="font-size:16px">${isEn ? 'arrow_back' : 'arrow_forward'}</span>
       ${isEn ? 'Back to Featured Projects' : 'العودة إلى المشاريع المميزة'}
     </a>
     <article>
-      <header class="gh-article-header">
-        <div class="gh-ins-proj-meta gh-ins-proj-meta--page">
-          <span class="gh-ins-proj-dev">${esc(L(project.developer))}</span>
-          <span class="gh-ins-proj-city">${esc(L(project.city))}</span>
-        </div>
-        <span class="gh-ins-cat">${esc(L(project.category))}</span>
-        <h1>${L(project.title)}</h1>
-        <p class="gh-dek">${L(project.excerpt)}</p>
-        <p class="gh-ins-proj-name"><strong>${isEn ? 'Project' : 'المشروع'}:</strong> ${esc(L(project.projectName))}</p>
-      </header>
-      ${heroImageHtml(project.image, p, L(project.projectName))}
+      ${classicHeader}
       ${services ? `<div class="gh-ins-proj-tags">${services}</div>` : ''}
       ${videoBlock}
       <div class="gh-article-body-wrap">

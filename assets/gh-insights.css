@@ -33,6 +33,10 @@ body.gh-insights .gh-tool-page-wrap {
   padding-top: 108px;
 }
 
+body.gh-insights .gh-article-page-wrap--cinema {
+  padding-top: 0;
+}
+
 /* ----- Page shell ----- */
 .gh-ins-wrap {
   max-width: 1280px;

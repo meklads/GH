@@ -1,8 +1,21 @@
 {
   "slug": "wahat-al-salam",
   "date": "2023-09",
-  "image": "assets/projects/wahat-al-salam/cam-03.jpg",
+  "image": "assets/projects/wahat-al-salam/hero-aerial.jpg",
   "youtubeId": "vCJ55NstJ0I",
+  "cinematicHero": true,
+  "heroHeading": {
+    "ar": "واحة السلام",
+    "en": "Wahat Al Salam"
+  },
+  "heroLine": {
+    "ar": "مدينة حية قبل أول وحدة — من النماذج إلى بيع كامل",
+    "en": "A living city before day one — from models to full sell-out"
+  },
+  "heroDek": {
+    "ar": "مخطط كامل، أفلام CGI، رندرات وكتالوج فاخر لعقارات العيسائي — حتى بيع كل الوحدات.",
+    "en": "Full master plan, CGI films, renders, and a luxury catalogue for Al-Essai — through to every unit sold."
+  },
   "developer": {
     "ar": "عقارات العيسائي",
     "en": "Al-Essai Real Estate"
@@ -48,6 +61,7 @@
     ]
   },
   "gallery": [
+    "assets/projects/wahat-al-salam/hero-aerial.jpg",
     "assets/projects/wahat-al-salam/cam-03.jpg",
     "assets/projects/wahat-al-salam/cam-12.jpg",
     "assets/projects/wahat-al-salam/cam-09.jpg",
@@ -56,7 +70,8 @@
     "assets/projects/wahat-al-salam/cam-26.jpg",
     "assets/projects/wahat-al-salam/cam-30-1.jpg",
     "assets/projects/wahat-al-salam/cam-30-2.jpg",
-    "assets/projects/wahat-al-salam/cam-30-3.jpg"
+    "assets/projects/wahat-al-salam/cam-30-3.jpg",
+    "assets/projects/wahat-al-salam/hero-aerial-alt.jpg"
   ],
   "galleryAlbum": true,
   "portfolioHref": "portfolio.html",
