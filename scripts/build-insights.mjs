@@ -139,7 +139,22 @@ function mediaFigure(src, depthPrefix, { poster, className = 'gh-ins-proj-gal-it
     const posterAttr = poster ? ` poster="${p}${poster}"` : '';
     return `<figure class="${className} gh-ins-media--video"><video controls playsinline preload="metadata"${posterAttr} src="${p}${src}"></video></figure>`;
   }
+  const webp = String(src).replace(/\.(jpe?g|png)$/i, '.webp');
+  const hasWebp = webp !== src && fs.existsSync(path.join(ROOT, webp));
+  if (hasWebp) {
+    return `<figure class="${className}"><picture><source srcset="${p}${webp}" type="image/webp"><img src="${p}${src}" alt="" loading="${loading}"></picture></figure>`;
+  }
   return `<figure class="${className}"><img src="${p}${src}" alt="" loading="${loading}"></figure>`;
+}
+
+function heroImageHtml(src, depthPrefix, alt) {
+  const p = depthPrefix;
+  const webp = String(src).replace(/\.(jpe?g|png)$/i, '.webp');
+  const hasWebp = webp !== src && fs.existsSync(path.join(ROOT, webp));
+  if (hasWebp) {
+    return `<picture><source srcset="${p}${webp}" type="image/webp"><img class="gh-article-hero-img" src="${p}${src}" alt="${esc(alt)}" loading="lazy"></picture>`;
+  }
+  return `<img class="gh-article-hero-img" src="${p}${src}" alt="${esc(alt)}" loading="lazy">`;
 }
 
 function featuredVideoHtml(entity, depthPrefix, isEn) {
@@ -1106,7 +1121,7 @@ ${header}
         <p class="gh-dek">${L(project.excerpt)}</p>
         <p class="gh-ins-proj-name"><strong>${isEn ? 'Project' : 'المشروع'}:</strong> ${esc(L(project.projectName))}</p>
       </header>
-      <img class="gh-article-hero-img" src="${p}${project.image}" alt="${esc(L(project.projectName))}" loading="lazy">
+      ${heroImageHtml(project.image, p, L(project.projectName))}
       ${services ? `<div class="gh-ins-proj-tags">${services}</div>` : ''}
       ${videoBlock}
       <div class="gh-article-body-wrap">
