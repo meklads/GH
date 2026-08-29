@@ -157,6 +157,41 @@ function heroImageHtml(src, depthPrefix, alt) {
   return `<img class="gh-article-hero-img" src="${p}${src}" alt="${esc(alt)}" loading="lazy">`;
 }
 
+function projectAlbumHtml(project, lang, depthPrefix) {
+  const isEn = lang === 'en';
+  const L = (obj) => (isEn ? obj?.en : obj?.ar) || obj?.en || '';
+  const gallery = (project.gallery || []).filter((src) => src && !isVideoSrc(src));
+  if (gallery.length < 2) return '';
+  const loc = L(project.city);
+  const title = L(project.projectName) || L(project.title);
+  const label = isEn ? 'Project gallery' : 'معرض المشروع';
+  const items = gallery
+    .map((src) => {
+      const full = `${depthPrefix}${src}`;
+      const webp = String(src).replace(/\.(jpe?g|png)$/i, '.webp');
+      const hasWebp = webp !== src && fs.existsSync(path.join(ROOT, webp));
+      const img = hasWebp
+        ? `<picture><source srcset="${depthPrefix}${webp}" type="image/webp"><img src="${full}" alt="${esc(title)}" loading="lazy" decoding="async"></picture>`
+        : `<img src="${full}" alt="${esc(title)}" loading="lazy" decoding="async">`;
+      return `<button type="button" class="pf-item" data-gh-album-full="${esc(full)}" data-gh-album-alt="${esc(title)}" aria-label="${esc(isEn ? `View ${title}` : `عرض ${title}`)}">
+      ${img}
+      <span class="pf-item-overlay">
+        <span class="pf-item-location">${esc(loc)}</span>
+        <span class="pf-item-title">${esc(title)}</span>
+      </span>
+    </button>`;
+    })
+    .join('');
+  return `<section class="gh-ins-album-wrap" aria-label="${esc(label)}">
+  <h2 class="gh-ins-album-title">${esc(label)}</h2>
+  <div class="pf-album">
+    <div class="pf-album__frame">
+      <div class="pf-album__track" data-gh-album-track>${items}</div>
+    </div>
+  </div>
+</section>`;
+}
+
 function featuredVideoHtml(entity, depthPrefix, isEn) {
   if (entity.youtubeId) {
     const id = String(entity.youtubeId).replace(/[^a-zA-Z0-9_-]/g, '');
@@ -335,6 +370,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=29">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=29">
 <link rel="stylesheet" href="${p}assets/gh-insights-article.css?v=5">
+<link rel="stylesheet" href="${p}assets/gh-pf-album.css?v=1">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=10">
 ${isEn ? `<link rel="stylesheet" href="${p}assets/gh-en-typography.css?v=1">` : `<link rel="stylesheet" href="${p}assets/gh-ar-typography.css?v=2">`}
 <script defer src="${p}assets/site-header.js?v=16"></script>
@@ -345,13 +381,16 @@ ${isEn ? `<link rel="stylesheet" href="${p}assets/gh-en-typography.css?v=1">` : 
 <body class="gh-insights">`;
 }
 
-function tailScripts(depth, { article = false } = {}) {
+function tailScripts(depth, { article = false, album = false } = {}) {
   const p = depth > 0 ? '../'.repeat(depth) : '';
   const articleJs = article
     ? `\n<script defer src="${p}assets/gh-insights-article.js?v=6"></script>\n<script defer src="${p}assets/gh-newsletter.js?v=5"></script>`
     : '';
+  const albumJs = album
+    ? `\n<script defer src="${p}assets/gh-pf-album.js?v=1"></script>`
+    : '';
   return `
-<script defer src="${p}assets/gh-float-widgets.js?v=9"></script>${articleJs}
+<script defer src="${p}assets/gh-float-widgets.js?v=9"></script>${articleJs}${albumJs}
 </body></html>`;
 }
 
@@ -1084,10 +1123,14 @@ function buildProject(project, lang) {
   const services = (project.services?.[isEn ? 'en' : 'ar'] || project.services?.en || [])
     .map((s) => `<span class="gh-ins-proj-tag">${esc(s)}</span>`)
     .join('');
-  const gallery = (project.gallery || [])
-    .filter((src) => src && !isVideoSrc(src))
-    .map((src) => mediaFigure(src, p))
-    .join('');
+  const useAlbum = project.galleryAlbum === true || (project.gallery || []).filter((src) => src && !isVideoSrc(src)).length >= 4;
+  const galleryGrid = !useAlbum
+    ? (project.gallery || [])
+        .filter((src) => src && !isVideoSrc(src))
+        .map((src) => mediaFigure(src, p))
+        .join('')
+    : '';
+  const albumBlock = useAlbum ? projectAlbumHtml(project, lang, p) : '';
   const videoBlock = featuredVideoHtml(project, p, isEn);
   const portfolioHref = project.portfolioHref
     ? `${p}${project.portfolioHref}`
@@ -1127,7 +1170,8 @@ ${header}
       <div class="gh-article-body-wrap">
         ${bodyHtml}
         ${faqSectionHtml(project.faq, lang)}
-        ${gallery ? `<div class="gh-ins-proj-gallery">${gallery}</div>` : ''}
+        ${galleryGrid ? `<div class="gh-ins-proj-gallery">${galleryGrid}</div>` : ''}
+        ${albumBlock}
         <div class="gh-article-footer-cta">
           <a href="${portfolioHref}" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'View in Portfolio' : 'في معرض الأعمال'}</a>
           <a href="${p}solutions/project-launch${isEn ? '-en' : ''}.html" class="gh-btn-editorial gh-btn-editorial--outline">ProjectLaunch™</a>
@@ -1138,7 +1182,7 @@ ${header}
   </div>
 </main>
 ${footer}
-${tailScripts(depth)}`;
+${tailScripts(depth, { album: useAlbum })}`;
 
   fs.mkdirSync(path.join(ROOT, 'insights/projects'), { recursive: true });
   fs.writeFileSync(path.join(ROOT, 'insights/projects', slug), html, 'utf8');
