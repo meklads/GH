@@ -289,15 +289,56 @@ function faqSectionHtml(faq, lang) {
       const q = L(item.q || item.question || {});
       const a = L(item.a || item.answer || {});
       if (!q || !a) return '';
-      return `<div class="gh-ins-faq-item"><h3 class="gh-ins-faq-q">${esc(q)}</h3><p class="gh-ins-faq-a">${richText(a)}</p></div>`;
+      return `<details class="gh-ins-faq-item">
+        <summary class="gh-ins-faq-q">${esc(q)}</summary>
+        <p class="gh-ins-faq-a">${richText(a)}</p>
+      </details>`;
     })
     .filter(Boolean)
     .join('');
   if (!items) return '';
-  return `<section class="gh-ins-faq" aria-label="${isEn ? 'Frequently asked questions' : 'أسئلة شائعة'}">
+  return `<section class="gh-ins-faq gh-ins-faq--accordion" aria-label="${isEn ? 'Frequently asked questions' : 'أسئلة شائعة'}">
           <h2>${isEn ? 'FAQ' : 'أسئلة شائعة'}</h2>
           ${items}
         </section>`;
+}
+
+function projectAchievementsHtml(project, lang, depthPrefix) {
+  const block = project.achievements;
+  if (!block) return '';
+  const isEn = lang === 'en';
+  const L = (obj) => (isEn ? obj?.en : obj?.ar) || obj?.en || '';
+  const items = Array.isArray(block.items) ? block.items : Array.isArray(block) ? block : [];
+  if (!items.length) return '';
+  const title = L(block.title) || (isEn ? 'Achievements' : 'الإنجازات');
+  const lead = L(block.lead);
+  const cards = items
+    .map((item) => {
+      const src = typeof item === 'string' ? item : item.image;
+      if (!src || isVideoSrc(src)) return '';
+      const full = `${depthPrefix}${src}`;
+      const webp = String(src).replace(/\.(jpe?g|png)$/i, '.webp');
+      const hasWebp = webp !== src && fs.existsSync(path.join(ROOT, webp));
+      const caption = typeof item === 'object' ? L(item.caption) : '';
+      const alt = caption || title;
+      const img = hasWebp
+        ? `<picture><source srcset="${depthPrefix}${webp}" type="image/webp"><img src="${full}" alt="${esc(alt)}" loading="lazy" decoding="async"></picture>`
+        : `<img src="${full}" alt="${esc(alt)}" loading="lazy" decoding="async">`;
+      return `<figure class="gh-ins-achieve-card">
+      <button type="button" class="gh-ins-achieve-media" data-gh-album-full="${esc(full)}" data-gh-album-alt="${esc(alt)}" aria-label="${esc(isEn ? `View ${alt}` : `عرض ${alt}`)}">
+        ${img}
+      </button>
+      ${caption ? `<figcaption class="gh-ins-achieve-cap">${esc(caption)}</figcaption>` : ''}
+    </figure>`;
+    })
+    .filter(Boolean)
+    .join('');
+  if (!cards) return '';
+  return `<section class="gh-ins-achieve" aria-label="${esc(title)}">
+  <h2 class="gh-ins-achieve-title">${esc(title)}</h2>
+  ${lead ? `<p class="gh-ins-achieve-lead">${esc(lead)}</p>` : ''}
+  <div class="gh-ins-achieve-grid">${cards}</div>
+</section>`;
 }
 
 function faqPageSchema(faq, lang, pageUrl) {
@@ -427,7 +468,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=38">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=29">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=30">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=31">
 <link rel="stylesheet" href="${p}assets/gh-insights-article.css?v=5">
 <link rel="stylesheet" href="${p}assets/gh-pf-album.css?v=5">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=10">
@@ -1190,6 +1231,8 @@ function buildProject(project, lang) {
         .join('')
     : '';
   const albumBlock = useAlbum ? projectAlbumHtml(project, lang, p) : '';
+  const achievementsBlock = projectAchievementsHtml(project, lang, p);
+  const faqBlock = faqSectionHtml(project.faq, lang);
   const videoBlock = featuredVideoHtml(project, p, isEn);
   const cinematic = project.cinematicHero === true;
   const cinematicHero = cinematic ? projectCinematicHeroHtml(project, lang, p) : '';
@@ -1235,20 +1278,21 @@ ${header}
       ${videoBlock}
       <div class="gh-article-body-wrap">
         ${bodyHtml}
-        ${faqSectionHtml(project.faq, lang)}
         ${galleryGrid ? `<div class="gh-ins-proj-gallery">${galleryGrid}</div>` : ''}
         ${albumBlock}
+        ${achievementsBlock}
+        ${faqBlock}
         <div class="gh-article-footer-cta">
-          <a href="${portfolioHref}" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'View in Portfolio' : 'في معرض الأعمال'}</a>
-          <a href="${p}solutions/project-launch${isEn ? '-en' : ''}.html" class="gh-btn-editorial gh-btn-editorial--outline">ProjectLaunch™</a>
           <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Discuss Your Project' : 'ناقش مشروعك'}</a>
+          <a href="${p}solutions/project-launch${isEn ? '-en' : ''}.html" class="gh-btn-editorial gh-btn-editorial--outline">ProjectLaunch™</a>
+          <a href="${portfolioHref}" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'View in Portfolio' : 'في معرض الأعمال'}</a>
         </div>
       </div>
     </article>
   </div>
 </main>
 ${footer}
-${tailScripts(depth, { album: useAlbum })}`;
+${tailScripts(depth, { album: useAlbum || Boolean(achievementsBlock) })}`;
 
   fs.mkdirSync(path.join(ROOT, 'insights/projects'), { recursive: true });
   fs.writeFileSync(path.join(ROOT, 'insights/projects', slug), html, 'utf8');

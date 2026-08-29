@@ -79,6 +79,32 @@
     "assets/projects/al-rajhi-naseem/maquette-01.jpg"
   ],
   "galleryAlbum": true,
+  "achievements": {
+    "title": {
+      "ar": "الإنجازات — المجسم وديكور المعرض",
+      "en": "Achievements — maquette & exhibition décor"
+    },
+    "lead": {
+      "ar": "إلى جانب الفيلم والرندرات: مجسم معماري مضيء وديكور معرض متكامل أمام زوار وقيادات — حضور يثبت المشروع في الصالة والمعرض.",
+      "en": "Beyond film and stills: an illuminated architectural maquette and full exhibition décor presented to visitors and leaders — presence that proves the project on the floor."
+    },
+    "items": [
+      {
+        "image": "assets/projects/maquettes/alrajhi-maquette-01.jpeg",
+        "caption": {
+          "ar": "عرض المجسم في المعرض أمام زوار وقيادات مع تغطية إعلامية",
+          "en": "Maquette presentation at the exhibition before visitors, leaders, and media"
+        }
+      },
+      {
+        "image": "assets/projects/maquettes/alrajhi-maquette-02.jpeg",
+        "caption": {
+          "ar": "ديكور المعرض والمجسم المضيء بهوية المشروع — تجربة عرض كاملة",
+          "en": "Exhibition décor and illuminated maquette under project identity — a complete display experience"
+        }
+      }
+    ]
+  },
   "portfolioHref": "portfolio.html",
   "body": {
     "ar": [

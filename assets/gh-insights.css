@@ -882,6 +882,81 @@ html[dir="rtl"] .gh-ins-proj-meta {
   display: block;
 }
 
+/* ----- Project achievements (maquette / exhibition) ----- */
+.gh-ins-achieve {
+  margin: 48px 0 8px;
+  padding-top: 8px;
+}
+
+.gh-ins-achieve-title {
+  margin: 0 0 10px;
+  font-family: "Playfair Display", "Tajawal", serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+.gh-ins-achieve-lead {
+  margin: 0 0 22px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  max-width: 40em;
+}
+
+.gh-ins-achieve-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.gh-ins-achieve-card {
+  margin: 0;
+}
+
+.gh-ins-achieve-media {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(26, 26, 26, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ebe7df;
+  cursor: zoom-in;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.gh-ins-achieve-media img,
+.gh-ins-achieve-media picture {
+  display: block;
+  width: 100%;
+}
+
+.gh-ins-achieve-media img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gh-ins-achieve-media:hover img {
+  transform: scale(1.03);
+}
+
+.gh-ins-achieve-cap {
+  margin: 10px 4px 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #666;
+}
+
+@media (max-width: 640px) {
+  .gh-ins-achieve-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .gh-ins-featured-video {
   margin: 0 0 32px;
 }
