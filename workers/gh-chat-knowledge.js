@@ -6,14 +6,17 @@ import {
   WHATSAPP_LINK,
   PHONE_DISPLAY,
   EMAIL,
-  KEYWORDS,
   PAGE_CONTEXT,
-  HUMAN_KEYWORDS,
-  GREETING_PHRASES,
   getSystemContext,
 } from './gh-site-knowledge.js';
+import {
+  greetingReplyLang,
+  quickRepliesForIntent,
+  matchIntent,
+} from './gh-chat-matcher.js';
 
 export { getSystemContext, serializeForClient } from './gh-site-knowledge.js';
+export { analyzeMessage, matchIntent, isGreeting, greetingReplyLang, quickRepliesForIntent } from './gh-chat-matcher.js';
 
 const WA_BTN = {
   ar: '<a href="#" data-gh-chat-action="whatsapp">💬 تحدث مع فريقنا على واتساب</a>',
@@ -75,6 +78,14 @@ export const REPLIES = {
     cgi: `الإنتاج السينمائي CGI:<br><br>🎬 أفلام إطلاق · جولات سينمائية · سرد بصري عاطفي<br>📎 ${link('/services/cinematic-cgi.html', 'سينمائي CGI')} · ${link('/services/animation.html', 'أنيميشن')}`,
     interactive: `التجارب التفاعلية:<br><br>🖥️ شاشات لمس · جولات افتراضية · VR/360<br>📎 ${link('/services/interactive-experiences.html', 'تجارب تفاعلية')} · ${link('/services/vr-360.html', 'VR 360')}`,
     galleries: `جاليريات وديكور مبيعات:<br><br>🏛️ تصميم وتنفيذ صالات العرض حسب المساحة<br>📎 ${link('/galleries-advertising.html', 'جاليريات وديكور')}`,
+    rendering: `الإظهار المعماري — صور واقعية عالية الجودة:<br><br>🏙️ خارجي · داخلي · masterplan · مواد وإضاءة<br>📎 ${link('/services/rendering.html', 'إظهار معماري')} · ${link('/services/smart-visualization.html', 'Smart Visualization')}`,
+    production: `ميديا برودكشن — تصوير وإنتاج متكامل:<br><br>🎥 تصوير · مونتاج · موشن · محتوى حملات<br>📎 ${link('/services/production.html', 'ميديا برودكشن')} · ${link('/services/photography-media.html', 'تصوير')}`,
+    branding: `الهوية البصرية — من الشعار إلى التطبيق المكاني:<br><br>🎨 هوية · guidelines · كتالوج · لافتات<br>📎 ${link('/services/branding.html', 'هوية بصرية')}`,
+    project_inquiry: `رائع — يسعدنا سماع تفاصيل مشروعك! 🎯<br><br>شاركنا:<br>📌 نوع المشروع (سكني/تجاري/مؤسسي)<br>📍 المدينة · 📅 الجدول · 📎 أي مواد متوفرة<br><br><a href="#" data-gh-chat-action="open-form">📝 نموذج استفسار</a> · ${WA_BTN.ar}`,
+    project_cgi: `ممتاز! 🎬 مشروع فيديو/CGI — هذا تخصصنا:<br><br>🎥 أفلام إطلاق · جولات سينمائية · موشن · محتوى حملات<br>📎 ${link('/services/cinematic-cgi.html', 'سينمائي CGI')} · ${link('/services/animation.html', 'أنيميشن')}<br><br>هل تريد <strong>عرض سعر</strong>؟ ${WA_BTN.ar}`,
+    project_production: `ممتاز! 🎥 مشروع ميديا/إنتاج — فريقنا جاهز:<br><br>تصوير · مونتاج · محتوى تسويقي · إنتاج معماري<br>📎 ${link('/services/production.html', 'ميديا برودكشن')}<br><br><a href="#" data-gh-chat-action="open-form">📝 أرسل تفاصيل المشروع</a> · ${WA_BTN.ar}`,
+    project_rendering: `ممتاز! 🏙️ مشروع إظهار معماري — نُحيي المخططات واقعياً:<br><br>صور خارجية/داخلية · masterplan · VR<br>📎 ${link('/services/rendering.html', 'إظهار معماري')}<br><br><a href="#" data-gh-chat-action="open-form">📝 اطلب عرض سعر</a> · ${WA_BTN.ar}`,
+    project_maquette: `ممتاز! 🏗️ مشروع مجسم — حرفية + تقنية:<br><br>مجسمات ذكية · إسقاط · بيانات حية · تركيب<br>📎 ${link('/services/maquettes.html', 'مجسمات ذكية')}<br><br><a href="#" data-gh-chat-action="open-form">📝 شاركنا المقاس والموقع</a> · ${WA_BTN.ar}`,
     fallback: `لم أفهم سؤالك بالكامل. 😅<br><br>جرّب أحد الخيارات أو ${WA_BTN.ar}`,
   },
   en: {
@@ -95,6 +106,14 @@ export const REPLIES = {
     cgi: `Cinematic CGI production:<br><br>🎬 Launch films · cinematic tours · emotional storytelling<br>📎 ${link('/services/cinematic-cgi-en.html', 'Cinematic CGI')} · ${link('/services/animation-en.html', 'Animation')}`,
     interactive: `Interactive experiences:<br><br>🖥️ Touchscreens · virtual tours · VR/360<br>📎 ${link('/services/interactive-experiences-en.html', 'Interactive')} · ${link('/services/vr-360-en.html', 'VR 360')}`,
     galleries: `Sales galleries &amp; spatial design:<br><br>🏛️ Showroom design &amp; build tailored to space<br>📎 ${link('/galleries-advertising-en.html', 'Galleries')}`,
+    rendering: `Architectural rendering — photoreal stills &amp; masterplans:<br><br>🏙️ Exterior · interior · materials · lighting<br>📎 ${link('/services/rendering-en.html', 'Rendering')} · ${link('/services/smart-visualization-en.html', 'Smart Visualization')}`,
+    production: `Media production — photo, film &amp; motion:<br><br>🎥 Filming · editing · motion · campaign content<br>📎 ${link('/services/production-en.html', 'Media production')} · ${link('/services/photography-media-en.html', 'Photography')}`,
+    branding: `Visual identity — logo to spatial application:<br><br>🎨 Brand systems · guidelines · catalogues<br>📎 ${link('/services/branding-en.html', 'Branding')}`,
+    project_inquiry: `Great — we'd love to hear about your project! 🎯<br><br>Please share:<br>📌 Type (residential/commercial/institutional)<br>📍 City · 📅 Timeline · 📎 Any drawings<br><br><a href="#" data-gh-chat-action="open-form">📝 Enquiry form</a> · ${WA_BTN.en}`,
+    project_cgi: `Excellent! 🎬 Video/CGI projects are our specialty:<br><br>🎥 Launch films · cinematic tours · motion · campaign content<br>📎 ${link('/services/cinematic-cgi-en.html', 'Cinematic CGI')} · ${link('/services/animation-en.html', 'Animation')}<br><br>Would you like a <strong>quote</strong>? ${WA_BTN.en}`,
+    project_production: `Great! 🎥 Media/production project — our team is ready:<br><br>Filming · editing · marketing content · archviz media<br>📎 ${link('/services/production-en.html', 'Media production')}<br><br><a href="#" data-gh-chat-action="open-form">📝 Send project details</a> · ${WA_BTN.en}`,
+    project_rendering: `Excellent! 🏙️ Archviz project — we bring plans to life:<br><br>Exterior/interior stills · masterplan · VR<br>📎 ${link('/services/rendering-en.html', 'Rendering')}<br><br><a href="#" data-gh-chat-action="open-form">📝 Request a quote</a> · ${WA_BTN.en}`,
+    project_maquette: `Excellent! 🏗️ Maquette project — craft + technology:<br><br>Smart maquettes · projection · live data · install<br>📎 ${link('/services/maquettes-en.html', 'Smart maquettes')}<br><br><a href="#" data-gh-chat-action="open-form">📝 Share scale &amp; location</a> · ${WA_BTN.en}`,
     fallback: `I didn't fully catch that. 😅<br><br>Try an option below or ${WA_BTN.en}`,
   },
 };
@@ -134,82 +153,22 @@ export function quickRepliesForPage(page, lang) {
   return base;
 }
 
-function normalizeGreeting(text) {
-  return String(text || '')
-    .toLowerCase()
-    .trim()
-    .replace(/[!.,؟?…]/g, '')
-    .replace(/\s+/g, ' ');
-}
-
-export function isGreeting(message) {
-  const text = normalizeGreeting(message);
-  if (!text || text.length > 48) return false;
-  return GREETING_PHRASES.some((phrase) => {
-    const p = normalizeGreeting(phrase);
-    return text === p || text.startsWith(`${p} `);
-  });
-}
-
-export function greetingReplyLang(message, pageLang) {
-  const text = normalizeGreeting(message);
-  const arPhrases = GREETING_PHRASES.filter((p) => /[\u0600-\u06FF]/.test(p));
-  const enPhrases = GREETING_PHRASES.filter((p) => !/[\u0600-\u06FF]/.test(p));
-  if (arPhrases.some((phrase) => {
-    const p = normalizeGreeting(phrase);
-    return text === p || text.startsWith(`${p} `);
-  })) return 'ar';
-  if (enPhrases.some((phrase) => {
-    const p = normalizeGreeting(phrase);
-    return text === p || text.startsWith(`${p} `);
-  })) return 'en';
-  return pageLang === 'ar' ? 'ar' : 'en';
-}
-
-function isHumanRequest(text, lang) {
-  const words = HUMAN_KEYWORDS[lang] || HUMAN_KEYWORDS.en;
-  const lower = text.toLowerCase();
-  return words.some((w) => lower.includes(w.toLowerCase()));
-}
-
-export function matchIntent(message, lang, page) {
-  const text = String(message || '').toLowerCase().trim();
-
-  if (isGreeting(message)) return 'greeting';
-
-  if (isHumanRequest(text, lang)) return 'human';
-
-  const dict = KEYWORDS[lang] || KEYWORDS.en;
-  let best = null;
-  let bestScore = 0;
-
-  for (const [intent, words] of Object.entries(dict)) {
-    if (intent === 'human' || intent === 'greeting') continue;
-    let score = 0;
-    for (const word of words) {
-      if (text.includes(word.toLowerCase())) score += word.length > 4 ? 2 : 1;
-    }
-    if (score > bestScore) {
-      bestScore = score;
-      best = intent;
-    }
-  }
-
-  if (!best && page) {
-    for (const ctx of PAGE_CONTEXT) {
-      if (ctx.match.test(page)) {
-        best = ctx.intent;
-        break;
-      }
-    }
-  }
-
-  return best || 'fallback';
-}
-
 export function buildReply(intent, lang) {
   const pack = REPLIES[lang] || REPLIES.en;
-  return pack[intent] || pack.fallback;
+  const baseIntent = intent.startsWith('project_') ? intent : intent;
+  if (pack[baseIntent]) return pack[baseIntent];
+  if (intent.startsWith('project_')) {
+    const sub = intent.replace('project_', '');
+    if (pack[sub]) return pack[sub];
+  }
+  return pack.fallback;
+}
+
+function intentHasReply(intent, lang) {
+  const pack = REPLIES[lang] || REPLIES.en;
+  if (pack[intent]) return true;
+  if (intent.startsWith('project_') && pack[intent.replace('project_', '')]) return true;
+  return false;
 }
 
 export function handleChatMessage(body) {
@@ -231,14 +190,16 @@ export function handleChatMessage(body) {
     return { success: false, message: 'Empty message' };
   }
 
-  const intent = body.intent && REPLIES[lang][body.intent] ? body.intent : matchIntent(message, lang, page);
+  const intent = body.intent && intentHasReply(body.intent, lang)
+    ? body.intent
+    : matchIntent(message, lang, page);
   const replyLang = intent === 'greeting' ? greetingReplyLang(message, lang) : lang;
 
   return {
     success: true,
     reply: buildReply(intent, replyLang),
     intent,
-    quickReplies: quickRepliesForPage(page, lang),
+    quickReplies: quickRepliesForIntent(intent, lang, page),
     openWhatsApp: intent === 'human' || intent === 'whatsapp',
     source: 'kb',
   };

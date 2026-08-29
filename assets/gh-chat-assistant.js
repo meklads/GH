@@ -239,120 +239,85 @@
           }
           return;
         }
-        appendMessage(localReply(payload), false);
+        applyLocalResponse(localRespond(payload));
       })
       .catch(function () {
         hideTyping(typing);
         if (sendBtn) sendBtn.disabled = false;
-        appendMessage(localReply(payload), false);
-        track('assistant_message_sent', { intent: payload.intent || 'fallback', source: 'local', page_path: location.pathname });
-        if (payload.intent === 'human') {
-          setTimeout(openWhatsApp, 600);
-        }
+        applyLocalResponse(localRespond(payload));
       });
   }
 
-  function normalizeGreeting(text) {
-    return String(text || '')
-      .toLowerCase()
-      .trim()
-      .replace(/[!.,؟?…]/g, '')
-      .replace(/\s+/g, ' ');
-  }
-
-  function isGreetingMessage(text) {
-    var normalized = normalizeGreeting(text);
-    if (!normalized || normalized.length > 48) return false;
-    var phrases = (window.GH_CHAT_KB && window.GH_CHAT_KB.greetingPhrases) || [
-      'السلام عليكم', 'عليكم السلام', 'سلام عليكم', 'سلام', 'مرحباً', 'مرحبا',
-      'أهلاً', 'أهلا', 'اهلا', 'هلا', 'صباح الخير', 'مساء الخير',
-      'hello', 'hi', 'hey', 'good morning', 'good evening', 'good afternoon', 'salam',
-    ];
-    return phrases.some(function (phrase) {
-      var p = normalizeGreeting(phrase);
-      return normalized === p || normalized.indexOf(p + ' ') === 0;
-    });
-  }
-
-  function matchLocalIntent(text, page) {
-    var kb = window.GH_CHAT_KB;
-    var lang = isAr ? 'ar' : 'en';
-    var lower = String(text || '').toLowerCase();
-
-    if (isGreetingMessage(text)) return 'greeting';
-
-    if (kb && kb.humanKeywords && kb.humanKeywords[lang]) {
-      if (kb.humanKeywords[lang].some(function (w) { return lower.indexOf(w.toLowerCase()) !== -1; })) {
-        return 'human';
-      }
+  function applyLocalResponse(res) {
+    appendMessage(res.reply, false);
+    if (res.quickReplies && res.quickReplies.length) {
+      renderQuickReplies(res.quickReplies);
     }
-
-    var keys = (kb && kb.keywords && kb.keywords[lang]) || {};
-    var best = 'fallback';
-    var bestScore = 0;
-    Object.keys(keys).forEach(function (intent) {
-      if (intent === 'human' || intent === 'greeting') return;
-      (keys[intent] || []).forEach(function (w) {
-        if (lower.indexOf(w.toLowerCase()) !== -1) {
-          var s = w.length > 4 ? 2 : 1;
-          if (s > bestScore) {
-            bestScore = s;
-            best = intent;
-          }
-        }
-      });
+    track('assistant_message_sent', {
+      intent: res.intent || 'fallback',
+      source: 'local',
+      page_path: location.pathname,
     });
-
-    if (best === 'fallback' && /project-launch|growth-launch|brand-scale|institutional/i.test(page)) best = 'launch';
-    if (best === 'fallback' && /partner-network/i.test(page)) best = 'partner';
-    if (best === 'fallback' && /portfolio|case-study/i.test(page)) best = 'projects';
-    if (best === 'fallback' && /insights\//i.test(page)) best = 'insights';
-    return best;
+    if (res.intent === 'quote') {
+      track('assistant_lead_cta', { intent: 'quote' });
+    }
+    if (res.openWhatsApp || res.intent === 'human') {
+      setTimeout(openWhatsApp, 600);
+    }
   }
 
-  function greetingReplyLang(text, pageLang) {
-    var normalized = normalizeGreeting(text);
-    var phrases = (window.GH_CHAT_KB && window.GH_CHAT_KB.greetingPhrases) || [];
-    var arPhrases = phrases.filter(function (p) { return /[\u0600-\u06FF]/.test(p); });
-    var enPhrases = phrases.filter(function (p) { return !/[\u0600-\u06FF]/.test(p); });
-    if (arPhrases.some(function (phrase) {
-      var p = normalizeGreeting(phrase);
-      return normalized === p || normalized.indexOf(p + ' ') === 0;
-    })) return 'ar';
-    if (enPhrases.some(function (phrase) {
-      var p = normalizeGreeting(phrase);
-      return normalized === p || normalized.indexOf(p + ' ') === 0;
-    })) return 'en';
-    return pageLang;
+  function buildLocalReply(intent, lang) {
+    var replies = window.GH_CHAT_KB && window.GH_CHAT_KB.replies;
+    if (!replies || !replies[lang]) {
+      return lang === 'ar'
+        ? 'اختر أحد الخيارات أو <a href="#" data-gh-chat-action="whatsapp">تحدث معنا على واتساب</a>.'
+        : 'Pick an option or <a href="#" data-gh-chat-action="whatsapp">chat with us on WhatsApp</a>.';
+    }
+    if (replies[lang][intent]) return replies[lang][intent];
+    if (intent.indexOf('project_') === 0 && replies[lang][intent.replace('project_', '')]) {
+      return replies[lang][intent.replace('project_', '')];
+    }
+    return replies[lang].fallback;
   }
 
-  function localReply(payload) {
+  function localRespond(payload) {
     var lang = isAr ? 'ar' : 'en';
+    var page = payload.page || location.pathname;
+    var matcher = window.GH_CHAT_MATCHER;
     var intent = payload.intent;
 
     if (!intent || intent === 'fallback') {
-      intent = matchLocalIntent(payload.message || '', payload.page || location.pathname);
+      intent = matcher
+        ? matcher.matchIntent(payload.message || '', lang, page)
+        : 'fallback';
     }
 
-    if (intent === 'greeting') {
-      lang = greetingReplyLang(payload.message || '', lang);
+    var replyLang = lang;
+    if (intent === 'greeting' && matcher) {
+      replyLang = matcher.greetingReplyLang(payload.message || '', lang);
     }
 
-    if (window.GH_CHAT_KB && window.GH_CHAT_KB.replies && window.GH_CHAT_KB.replies[lang]) {
-      return window.GH_CHAT_KB.replies[lang][intent] || window.GH_CHAT_KB.replies[lang].fallback;
-    }
+    var quickReplies = matcher
+      ? matcher.quickRepliesForIntent(intent, lang, page)
+      : defaultQuickReplies();
 
-    return isAr
-      ? 'اختر أحد الخيارات أو <a href="#" data-gh-chat-action="whatsapp">تحدث معنا على واتساب</a>.'
-      : 'Pick an option or <a href="#" data-gh-chat-action="whatsapp">chat with us on WhatsApp</a>.';
+    return {
+      reply: buildLocalReply(intent, replyLang),
+      intent: intent,
+      quickReplies: quickReplies,
+      openWhatsApp: intent === 'human' || intent === 'whatsapp',
+    };
+  }
+
+  function localReply(payload) {
+    return localRespond(payload).reply;
   }
 
   function handleQuickReply(intent, label) {
     appendMessage(label, true);
     track('assistant_quick_reply', { intent: intent, page_path: location.pathname });
     if (intent === 'human') {
-      appendMessage(localReply({ intent: 'human', page: location.pathname }), false);
-      setTimeout(openWhatsApp, 500);
+      applyLocalResponse(localRespond({ intent: 'human', page: location.pathname }));
       return;
     }
     respondWith({

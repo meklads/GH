@@ -179,7 +179,7 @@ export const KEYWORDS = {
     launch: ['launch', 'إطلاق', 'projectlaunch', 'growthlaunch', 'brandscale', 'منتج', 'نظام'],
     partner: ['شريك', 'وكالة', 'agency', 'partner', 'white label'],
     insights: ['مقال', 'insights', 'تقرير', 'checklist', 'موجز', 'معرفة'],
-    cgi: ['فيلم', 'animation', 'أنيميشن', 'سينema'],
+    cgi: ['فيلم', 'فيديو', 'animation', 'أنيميشن', 'سينema', 'مونتاج', 'موشن'],
     interactive: ['تفاعلي', 'touch', 'شاشة', 'virtual', 'vr'],
     galleries: ['جاليري', 'معرض', 'صالة', 'ديكور', 'showroom'],
   },

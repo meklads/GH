@@ -23,8 +23,9 @@ const SKIP = new Set([
 ]);
 
 const FLOAT_VERSION = 15;
-const CHAT_VERSION = 9;
-const KB_VERSION = 2;
+const CHAT_VERSION = 10;
+const KB_VERSION = 3;
+const MATCHER_VERSION = 1;
 
 const HOMEPAGE_SKIP_REPLACE = new Set([]);
 
@@ -108,16 +109,17 @@ function ensureChatCssLast(html, prefix) {
 
 function fixChatScriptOrder(html) {
   const chatRe = /<script defer src="[^"]*gh-chat-assistant\.js[^"]*"><\/script>\s*/;
+  const matcherRe = /<script src="[^"]*gh-chat-matcher\.js[^"]*"><\/script>\s*/;
   const kbRe = /<script src="[^"]*gh-chat-knowledge-data\.js[^"]*"><\/script>\s*/;
   const chatMatch = html.match(chatRe);
+  const matcherMatch = html.match(matcherRe);
   const kbMatch = html.match(kbRe);
   if (!chatMatch || !kbMatch) return html;
-  if (html.indexOf(chatMatch[0]) < html.indexOf(kbMatch[0])) {
-    let out = html.replace(chatMatch[0], '');
-    out = out.replace(kbRe, `${kbMatch[0]}${chatMatch[0]}`);
-    return out;
-  }
-  return html;
+  let out = html;
+  if (matcherMatch) out = out.replace(matcherMatch[0], '');
+  out = out.replace(chatMatch[0], '');
+  out = out.replace(kbRe, `${kbMatch[0]}${matcherMatch ? matcherMatch[0] : ''}${chatMatch[0]}`);
+  return out;
 }
 
 function injectAssets(html, prefix) {
@@ -125,6 +127,7 @@ function injectAssets(html, prefix) {
   const chatCss = `<link rel="stylesheet" href="${prefix}assets/gh-chat-assistant.css?v=${CHAT_VERSION}">`;
   const floatJs = `<script defer src="${prefix}assets/gh-float-widgets.js?v=${FLOAT_VERSION}"></script>`;
   const kbJs = `<script src="${prefix}assets/gh-chat-knowledge-data.js?v=${KB_VERSION}"></script>`;
+  const matcherJs = `<script src="${prefix}assets/gh-chat-matcher.js?v=${MATCHER_VERSION}"></script>`;
   const chatJs = `<script defer src="${prefix}assets/gh-chat-assistant.js?v=${CHAT_VERSION}"></script>`;
   const forms = `<script src="${prefix}assets/gh-forms-config.js"></script>`;
 
@@ -133,6 +136,7 @@ function injectAssets(html, prefix) {
   html = html.replace(/gh-chat-assistant\.css\?v=\d+/g, `gh-chat-assistant.css?v=${CHAT_VERSION}`);
   html = html.replace(/gh-chat-assistant\.js\?v=\d+/g, `gh-chat-assistant.js?v=${CHAT_VERSION}`);
   html = html.replace(/gh-chat-knowledge-data\.js\?v=\d+/g, `gh-chat-knowledge-data.js?v=${KB_VERSION}`);
+  html = html.replace(/gh-chat-matcher\.js\?v=\d+/g, `gh-chat-matcher.js?v=${MATCHER_VERSION}`);
 
   if (!html.includes('gh-float-widgets.css')) {
     html = html.replace(/<\/head>/i, `${floatCss}\n</head>`);
@@ -148,6 +152,9 @@ function injectAssets(html, prefix) {
   }
   if (!html.includes('gh-chat-knowledge-data.js')) {
     html = html.replace(/<\/body>/i, `${kbJs}\n</body>`);
+  }
+  if (!html.includes('gh-chat-matcher.js')) {
+    html = html.replace(/<\/body>/i, `${matcherJs}\n</body>`);
   }
   if (!html.includes('gh-chat-assistant.js')) {
     html = html.replace(/<\/body>/i, `${chatJs}\n</body>`);

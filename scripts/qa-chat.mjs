@@ -41,8 +41,9 @@ for (const rel of SAMPLES) {
     ['gh-chat-assistant.js v7+', /gh-chat-assistant\.js\?v=([7-9]|\d{2,})/.test(html)],
     ['kb before assistant js', (() => {
       const kb = html.search(/gh-chat-knowledge-data\.js/);
+      const matcher = html.search(/gh-chat-matcher\.js/);
       const chat = html.search(/gh-chat-assistant\.js/);
-      return kb !== -1 && chat !== -1 && kb < chat;
+      return kb !== -1 && matcher !== -1 && chat !== -1 && kb < matcher && matcher < chat;
     })()],
     ['toggleChat via brand', html.includes('data-gh-brand-action')],
     ['no legacy ghQAs', !html.includes('var ghQAs')],
