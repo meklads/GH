@@ -1028,7 +1028,7 @@ ${product.key === 'growth' ? '<script defer src="../assets/gh-roi-calculator.js?
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=28">
 <link rel="stylesheet" href="../assets/site-header.css?v=37">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
-<link rel="stylesheet" href="../assets/solution-premium.css?v=3">
+<link rel="stylesheet" href="../assets/solution-premium.css?v=4">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=8">
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
@@ -1340,7 +1340,7 @@ ${product.key === 'growth' ? '<script defer src="../assets/gh-roi-calculator.js?
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=28">
 <link rel="stylesheet" href="../assets/site-header.css?v=37">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
-<link rel="stylesheet" href="../assets/solution-premium.css?v=3">
+<link rel="stylesheet" href="../assets/solution-premium.css?v=4">
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Product',

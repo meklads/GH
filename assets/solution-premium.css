@@ -836,13 +836,8 @@ body.gl-premium {
 .gl-eco-card-active {
   background: linear-gradient(165deg, #0A0A0A 0%, #141414 100%);
   border-color: rgba(201,168,76,.4);
+  color: #fff;
 }
-
-.gl-eco-card-active strong,
-.gl-eco-card-active span,
-.gl-eco-card-active em { color: #fff; }
-.gl-eco-card-active span { opacity: .72; }
-.gl-eco-card-active em { color: #C9A84C; }
 
 .gl-eco-icon {
   font-size: 32px;
@@ -859,7 +854,7 @@ body.gl-premium {
   margin-bottom: 6px;
 }
 
-.gl-eco-card span {
+.gl-eco-card span:not(.gl-eco-icon):not(.material-symbols-outlined) {
   display: block;
   font-size: 13px;
   line-height: 1.6;
@@ -873,6 +868,20 @@ body.gl-premium {
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
+  color: #C9A84C;
+}
+
+/* After base text colors so the dark ticket stays readable */
+.gl-eco-card.gl-eco-card-active strong {
+  color: #fff;
+}
+.gl-eco-card.gl-eco-card-active span:not(.gl-eco-icon):not(.material-symbols-outlined) {
+  color: rgba(255, 255, 255, 0.78);
+}
+.gl-eco-card.gl-eco-card-active em {
+  color: #C9A84C;
+}
+.gl-eco-card.gl-eco-card-active .gl-eco-icon {
   color: #C9A84C;
 }
 
