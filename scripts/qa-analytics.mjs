@@ -55,6 +55,11 @@ const expectedEvents = [
   'article_sidebar_click',
   'article_solution_link',
   'newsletter_signup',
+  'assistant_open',
+  'assistant_close',
+  'assistant_quick_reply',
+  'assistant_message_sent',
+  'assistant_lead_cta',
 ];
 const assetSrc = [
   'assets/gh-performance.js',
@@ -66,6 +71,7 @@ const assetSrc = [
   'assets/gh-roi-calculator.js',
   'assets/gh-insights-article.js',
   'assets/gh-newsletter.js',
+  'assets/gh-chat-assistant.js',
 ]
   .map((f) => fs.readFileSync(path.join(ROOT, f), 'utf8'))
   .join('\n');

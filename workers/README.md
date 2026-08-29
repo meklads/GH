@@ -12,18 +12,27 @@ wrangler secret put WEB3FORMS_ACCESS_KEY   # paste key from Web3Forms dashboard
 wrangler deploy
 ```
 
-## Route
+## Routes
 
-- `POST https://3dgraphicshouse.com/api/form`
-- Allowed origins: `3dgraphicshouse.com`, `www.3dgraphicshouse.com`
+- `POST https://3dgraphicshouse.com/api/form` — lead forms
+- `POST https://3dgraphicshouse.com/api/subscribe` — newsletter
+- `POST https://3dgraphicshouse.com/api/chat` — site assistant (knowledge base + optional OpenRouter)
 
-## Web3Forms dashboard
+Allowed origins: `3dgraphicshouse.com`, `www.3dgraphicshouse.com`
 
-- Restrict submissions to domain `3dgraphicshouse.com`
-- Rotate key if the old key was ever exposed in client JS
+## Optional secrets (chat AI)
+
+```bash
+wrangler secret put OPENROUTER_API_KEY   # enables DeepSeek replies for free-text questions
+# wrangler secret put OPENROUTER_CHAT_MODEL  # default: deepseek/deepseek-chat
+```
+
+Without `OPENROUTER_API_KEY`, `/api/chat` uses the built-in knowledge base only (no extra cost).
 
 ## Client
 
-`assets/gh-forms-config.js` points forms to `/api/form` — no key in the browser.
+`assets/gh-forms-config.js` points forms to `/api/form` and chat to `/api/chat` — no keys in the browser.
+
+The chat UI (`assets/gh-chat-assistant.js`) falls back to local keyword replies if the Worker is unreachable.
 
 Until the worker is deployed, form submissions will return 503 from Cloudflare or fail at the edge. Deploy the worker before purging cache on production.

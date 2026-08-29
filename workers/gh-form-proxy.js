@@ -1,3 +1,5 @@
+import { handleChatMessage } from './gh-chat-knowledge.js';
+
 /**
  * Cloudflare Worker — form proxy + mailing list subscriptions.
  *
@@ -269,6 +271,73 @@ async function handleForm(body, env, cors, request) {
   return json(data, ok ? 200 : 502, cors);
 }
 
+async function handleChat(body, env, cors) {
+  const result = handleChatMessage(body || {});
+
+  if (env.OPENROUTER_API_KEY && body.message && body.message !== '__init__') {
+    try {
+      const aiReply = await callOpenRouterChat(body, env);
+      if (aiReply) {
+        return json(
+          {
+            success: true,
+            reply: aiReply,
+            intent: result.intent,
+            quickReplies: result.quickReplies,
+            source: 'ai',
+          },
+          200,
+          cors
+        );
+      }
+    } catch (e) {
+      console.error('OpenRouter chat error', e);
+    }
+  }
+
+  if (!result.success) {
+    return json(result, 400, cors);
+  }
+  return json(result, 200, cors);
+}
+
+async function callOpenRouterChat(body, env) {
+  const lang = body.lang === 'ar' ? 'ar' : 'en';
+  const system = lang === 'ar'
+    ? 'أنت مساعد Graphics House — استوديو B2B للإظهار المعماري والمجسمات والتجارب التفاعلية في السعودية والخليج. أجب باختصار (3-5 جمل). وجّه طلبات الأسعار للتواصل أو النموذج. لا تختلق أسعاراً.'
+    : 'You are the Graphics House assistant — a GCC B2B studio for archviz, maquettes, and interactive experiences. Reply briefly (3-5 sentences). Route pricing requests to contact or the enquiry form. Never invent prices.';
+
+  const messages = [{ role: 'system', content: system }];
+  (body.history || []).slice(-4).forEach((m) => {
+    messages.push({
+      role: m.role === 'user' ? 'user' : 'assistant',
+      content: String(m.text || '').replace(/<[^>]+>/g, ' '),
+    });
+  });
+  messages.push({ role: 'user', content: String(body.message) });
+
+  const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${env.OPENROUTER_API_KEY}`,
+      'Content-Type': 'application/json',
+      'HTTP-Referer': 'https://3dgraphicshouse.com',
+      'X-Title': 'Graphics House Assistant',
+    },
+    body: JSON.stringify({
+      model: env.OPENROUTER_CHAT_MODEL || 'deepseek/deepseek-chat',
+      messages,
+      max_tokens: 280,
+      temperature: 0.4,
+    }),
+  });
+
+  if (!res.ok) return null;
+  const data = await res.json();
+  const text = data?.choices?.[0]?.message?.content;
+  return text ? String(text).trim() : null;
+}
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get('Origin') || '';
@@ -300,6 +369,10 @@ export default {
 
     if (url.pathname === '/api/form') {
       return handleForm(body, env, cors, request);
+    }
+
+    if (url.pathname === '/api/chat') {
+      return handleChat(body, env, cors);
     }
 
     return json({ success: false, message: 'Not found' }, 404, cors);

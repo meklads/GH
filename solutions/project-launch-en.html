@@ -1218,6 +1218,7 @@ gtag('config','G-Y67JVE898Z');
   }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ProjectLaunch&#8482;","description":"An integrated system for real estate project launches — from investor persuasion to the sales gallery experience.","url":"https://3dgraphicshouse.com/solutions/project-launch-en.html","brand":{"@type":"Brand","name":"Graphics House"},"provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","telephone":"+966502786513"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
+<link rel="stylesheet" href="../assets/gh-chat-assistant.css?v=1">
 </head>
 
 <body class="bg-background selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
@@ -2461,6 +2462,7 @@ gtag('config','G-Y67JVE898Z');
 })();
 </script>
 <script defer src="../assets/gh-cta-track.js?v=1"></script>
+<script defer src="../assets/gh-chat-assistant.js?v=1"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">
   <div class="gh-float-item">
@@ -2523,6 +2525,28 @@ gtag('config','G-Y67JVE898Z');
   </div>
 </div>
 <!-- GH FLOAT END -->
+
+<!-- GH CHAT START -->
+<div id="ghChatPanel" class="gh-chat-panel" dir="ltr" role="dialog" aria-modal="true" aria-labelledby="ghChatTitle" aria-hidden="true">
+  <div id="ghChatHead" class="gh-chat-head">
+    <img src="../assets/chatbot-motif.png" alt="" width="22" height="22" class="gh-chat-head-icon">
+    <span id="ghChatTitle">GH Assistant</span>
+    <span class="gh-chat-head-spacer" aria-hidden="true"></span>
+    <button type="button" class="gh-chat-close" data-gh-chat-close aria-label="Close">
+      <span class="material-symbols-outlined" aria-hidden="true">close</span>
+    </button>
+  </div>
+  <div id="ghChatMsgs" class="gh-chat-msgs" aria-live="polite"></div>
+  <div id="ghChatQuick" class="gh-chat-quick"></div>
+  <div id="ghChatInput" class="gh-chat-input">
+    <label class="gh-sr-only" for="ghChatField">Type your question</label>
+    <input type="text" id="ghChatField" placeholder="Type your question..." autocomplete="off">
+    <button type="button" id="ghChatSend" aria-label="Send">
+      <span class="material-symbols-outlined" aria-hidden="true">send</span>
+    </button>
+  </div>
+</div>
+<!-- GH CHAT END -->
 
 </body>
 </html>

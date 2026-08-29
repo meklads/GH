@@ -5,6 +5,7 @@
 window.GH_FORMS = {
   formEndpoint: 'https://3dgraphicshouse.com/api/form',
   subscribeEndpoint: 'https://3dgraphicshouse.com/api/subscribe',
+  chatEndpoint: 'https://3dgraphicshouse.com/api/chat',
   quoteFormEmail: 'info@3dgraphicshouse.com',
   mailingListName: 'gh-journal',
 };

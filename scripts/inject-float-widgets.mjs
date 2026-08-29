@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Inject standardized float widgets (WhatsApp, email popup, brand) on all pages.
+ * Inject standardized float widgets + chat assistant on all pages.
  * Run: node scripts/inject-float-widgets.mjs
  */
 import fs from 'fs';
@@ -18,12 +18,12 @@ const SKIP = new Set([
   'en-v2.html',
   'offer-lite.html',
   'en.html',
-  // Ads LP has its own WA float — skip site float chrome
   'solutions/project-launch-ads.html',
   'solutions/project-launch-ads-en.html',
 ]);
 
 const FLOAT_VERSION = 11;
+const CHAT_VERSION = 1;
 
 const HOMEPAGE_SKIP_REPLACE = new Set([]);
 
@@ -57,6 +57,14 @@ function renderFloatPartial(rel, html) {
   return fs.readFileSync(path.join(PARTIALS, name), 'utf8').replaceAll('{{PREFIX}}', prefix);
 }
 
+function renderChatPartial(rel, html) {
+  const depth = rel.split('/').length - 1;
+  const prefix = depth > 0 ? '../'.repeat(depth) : '';
+  const en = isEnglishPage(rel, html);
+  const name = en ? 'chat-assistant-en.html' : 'chat-assistant-ar.html';
+  return fs.readFileSync(path.join(PARTIALS, name), 'utf8').replaceAll('{{PREFIX}}', prefix);
+}
+
 function stripLegacyFloat(html) {
   let out = html;
   out = out.replace(/<!-- GH FLOAT START -->[\s\S]*?<!-- GH FLOAT END -->\s*/g, '');
@@ -76,22 +84,43 @@ function stripLegacyFloat(html) {
   return out;
 }
 
+function stripLegacyChat(html) {
+  let out = html;
+  out = out.replace(/<!-- GH CHAT START -->[\s\S]*?<!-- GH CHAT END -->\s*/g, '');
+  out = out.replace(/<!-- ===== CHAT BOT ===== -->[\s\S]*?<\/div>\s*\n\s*<div id="ghChatPanel"[\s\S]*?<\/div>\s*/gi, '');
+  out = out.replace(/<div id="ghChatBtn"[\s\S]*?<\/div>\s*/gi, '');
+  out = out.replace(/<div id="ghChatPanel"[\s\S]*?<\/div>\s*(?=\n*(?:<script|<div|<\/body>))/gi, '');
+  out = out.replace(/<script>\s*var ghLang[\s\S]*?<\/script>\s*/gi, '');
+  out = out.replace(/<script>\s*function toggleChat[\s\S]*?ghChatField[\s\S]*?<\/script>\s*/gi, '');
+  return out;
+}
+
 function injectAssets(html, prefix) {
-  const css = `<link rel="stylesheet" href="${prefix}assets/gh-float-widgets.css?v=${FLOAT_VERSION}">`;
-  const js = `<script defer src="${prefix}assets/gh-float-widgets.js?v=${FLOAT_VERSION}"></script>`;
+  const floatCss = `<link rel="stylesheet" href="${prefix}assets/gh-float-widgets.css?v=${FLOAT_VERSION}">`;
+  const chatCss = `<link rel="stylesheet" href="${prefix}assets/gh-chat-assistant.css?v=${CHAT_VERSION}">`;
+  const floatJs = `<script defer src="${prefix}assets/gh-float-widgets.js?v=${FLOAT_VERSION}"></script>`;
+  const chatJs = `<script defer src="${prefix}assets/gh-chat-assistant.js?v=${CHAT_VERSION}"></script>`;
   const forms = `<script src="${prefix}assets/gh-forms-config.js"></script>`;
 
   html = html.replace(/gh-float-widgets\.css\?v=\d+/g, `gh-float-widgets.css?v=${FLOAT_VERSION}`);
   html = html.replace(/gh-float-widgets\.js\?v=\d+/g, `gh-float-widgets.js?v=${FLOAT_VERSION}`);
+  html = html.replace(/gh-chat-assistant\.css\?v=\d+/g, `gh-chat-assistant.css?v=${CHAT_VERSION}`);
+  html = html.replace(/gh-chat-assistant\.js\?v=\d+/g, `gh-chat-assistant.js?v=${CHAT_VERSION}`);
 
   if (!html.includes('gh-float-widgets.css')) {
-    html = html.replace(/<\/head>/i, `${css}\n</head>`);
+    html = html.replace(/<\/head>/i, `${floatCss}\n</head>`);
+  }
+  if (!html.includes('gh-chat-assistant.css')) {
+    html = html.replace(/<\/head>/i, `${chatCss}\n</head>`);
   }
   if (!html.includes('gh-forms-config.js')) {
     html = html.replace(/<head>/i, `<head>\n${forms}`);
   }
   if (!html.includes('gh-float-widgets.js')) {
-    html = html.replace(/<\/body>/i, `${js}\n</body>`);
+    html = html.replace(/<\/body>/i, `${floatJs}\n</body>`);
+  }
+  if (!html.includes('gh-chat-assistant.js')) {
+    html = html.replace(/<\/body>/i, `${chatJs}\n</body>`);
   }
   return html;
 }
@@ -107,11 +136,16 @@ function patchPage(rel) {
   html = injectAssets(html, prefix);
   html = stripLegacyGa(html);
   html = injectAnalytics(html, prefix);
+  html = stripLegacyChat(html);
 
   if (!HOMEPAGE_SKIP_REPLACE.has(rel)) {
     html = stripLegacyFloat(html);
-    const block = renderFloatPartial(rel, html);
-    html = html.replace(/<\/body>/i, `${block}\n</body>`);
+    const floatBlock = renderFloatPartial(rel, html);
+    const chatBlock = renderChatPartial(rel, html);
+    html = html.replace(/<\/body>/i, `${floatBlock}\n${chatBlock}\n</body>`);
+  } else if (!html.includes('id="ghChatPanel"')) {
+    const chatBlock = renderChatPartial(rel, html);
+    html = html.replace(/<\/body>/i, `${chatBlock}\n</body>`);
   }
 
   if (html !== before) {
@@ -122,4 +156,4 @@ function patchPage(rel) {
 }
 
 const updated = collectHtmlFiles(ROOT).map(patchPage).filter(Boolean);
-console.log(`Float widgets injected on ${updated.length} pages`);
+console.log(`Float + chat assistant injected on ${updated.length} pages`);

@@ -7,6 +7,8 @@ routes = [
   { pattern = "www.3dgraphicshouse.com/api/form", zone_name = "3dgraphicshouse.com" },
   { pattern = "3dgraphicshouse.com/api/subscribe", zone_name = "3dgraphicshouse.com" },
   { pattern = "www.3dgraphicshouse.com/api/subscribe", zone_name = "3dgraphicshouse.com" },
+  { pattern = "3dgraphicshouse.com/api/chat", zone_name = "3dgraphicshouse.com" },
+  { pattern = "www.3dgraphicshouse.com/api/chat", zone_name = "3dgraphicshouse.com" },
 ]
 
 # Optional: create KV namespace in Cloudflare dashboard, then uncomment:
