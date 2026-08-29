@@ -1026,7 +1026,7 @@ ${product.key === 'growth' ? '<script defer src="../assets/gh-roi-calculator.js?
 <script defer src="../assets/project-launch-media.js?v=4"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=28">
-<link rel="stylesheet" href="../assets/site-header.css?v=37">
+<link rel="stylesheet" href="../assets/site-header.css?v=38">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 <link rel="stylesheet" href="../assets/solution-premium.css?v=4">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=8">
@@ -1338,7 +1338,7 @@ ${analyticsHeadTags('../')}
 ${product.key === 'growth' ? '<script defer src="../assets/gh-roi-calculator.js?v=1"></script>\n' : ''}<script defer src="../assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=28">
-<link rel="stylesheet" href="../assets/site-header.css?v=37">
+<link rel="stylesheet" href="../assets/site-header.css?v=38">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 <link rel="stylesheet" href="../assets/solution-premium.css?v=4">
 <script type="application/ld+json">${JSON.stringify({

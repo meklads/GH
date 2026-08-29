@@ -31,23 +31,23 @@ function renderMegaMenu(lang) {
   const dir = isEn ? 'ltr' : 'rtl';
   const hubFile = isEn ? 'casestudy1-en.html' : 'casestudy1.html';
   const h = DATA.hub[lang];
-  const items = DATA.items.slice(0, 4);
+  const items = DATA.items
+    .filter((item) => item.mega !== false && (item.shortTitle || item.mega))
+    .sort((a, b) => (a.megaOrder || 99) - (b.megaOrder || 99));
 
   const cards = items
     .map((item) => {
-      const featured = item.featured ? ' mm-cs-card--featured' : '';
-      return `<a href="{{PREFIX}}${item.href[lang]}" class="mm-cs-card${featured}">
-      <span class="mm-cs-img"><img src="{{PREFIX}}${item.image}" alt="" loading="lazy" width="280" height="168"></span>
-      <span class="mm-cs-body">
-        <span class="mm-cs-title">${esc(L(item.title, lang))}</span>
-        <span class="mm-cs-tag">${esc(L(item.tag, lang))}</span>
-      </span>
+      const name = L(item.shortTitle || item.title, lang);
+      return `<a href="{{PREFIX}}${item.href[lang]}" class="mm-cs-row">
+      <span class="mm-cs-thumb"><img src="{{PREFIX}}${item.image}" alt="" loading="lazy" width="96" height="72"></span>
+      <span class="mm-cs-name">${esc(name)}</span>
+      <span class="material-symbols-outlined mm-cs-arrow" aria-hidden="true">arrow_forward</span>
     </a>`;
     })
     .join('\n');
 
   const label = isEn ? 'Case Studies' : 'مشاريع ناجحة';
-  const viewAll = isEn ? 'View all case studies' : 'عرض كل المشاريع';
+  const viewAll = h.megaViewAll || (isEn ? 'View all case studies' : 'عرض كل المشاريع');
 
   return `<div class="nav-mega-item" data-mega="casestudies">
         <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
@@ -58,9 +58,9 @@ function renderMegaMenu(lang) {
           <div class="mm-panel">
             <div class="mm-panel-head">
               <span class="mm-panel-label">${esc(h.h1)}</span>
-              <p class="mm-panel-desc">${esc(h.lead)}</p>
+              <p class="mm-panel-desc">${esc(h.megaLead || h.lead)}</p>
             </div>
-            <div class="mm-cs-grid">${cards}</div>
+            <div class="mm-cs-list">${cards}</div>
             <a href="{{PREFIX}}${hubFile}" class="mm-cs-all">${viewAll} <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
           </div>
         </div>
