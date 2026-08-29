@@ -429,7 +429,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=29">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=30">
 <link rel="stylesheet" href="${p}assets/gh-insights-article.css?v=5">
-<link rel="stylesheet" href="${p}assets/gh-pf-album.css?v=4">
+<link rel="stylesheet" href="${p}assets/gh-pf-album.css?v=5">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=10">
 ${isEn ? `<link rel="stylesheet" href="${p}assets/gh-en-typography.css?v=1">` : `<link rel="stylesheet" href="${p}assets/gh-ar-typography.css?v=2">`}
 <script defer src="${p}assets/site-header.js?v=16"></script>
@@ -446,7 +446,7 @@ function tailScripts(depth, { article = false, album = false } = {}) {
     ? `\n<script defer src="${p}assets/gh-insights-article.js?v=6"></script>\n<script defer src="${p}assets/gh-newsletter.js?v=5"></script>`
     : '';
   const albumJs = album
-    ? `\n<script defer src="${p}assets/gh-pf-album.js?v=4"></script>`
+    ? `\n<script defer src="${p}assets/gh-pf-album.js?v=5"></script>`
     : '';
   return `
 <script defer src="${p}assets/gh-float-widgets.js?v=9"></script>${articleJs}${albumJs}
