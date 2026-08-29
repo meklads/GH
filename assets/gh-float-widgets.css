@@ -133,10 +133,10 @@ html[dir="ltr"]:not([lang="ar"]) .gh-float-tip {
   }
 }
 
-/* Brand / assistant button */
+/* Brand / assistant button — motif icon + gold ring + white halo + ripples */
 .gh-float-brand {
   background: transparent !important;
-  box-shadow: 0 4px 22px rgba(201, 168, 76, 0.42) !important;
+  box-shadow: none !important;
   overflow: visible;
   width: 52px;
   height: 52px;
@@ -144,12 +144,11 @@ html[dir="ltr"]:not([lang="ar"]) .gh-float-tip {
 
 .gh-float-brand:hover,
 .gh-float-brand:focus-visible {
-  box-shadow: 0 8px 34px rgba(201, 168, 76, 0.52) !important;
+  box-shadow: none !important;
 }
 
 .gh-float-brand.is-active {
   transform: scale(1.06);
-  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.35), 0 8px 34px rgba(201, 168, 76, 0.5) !important;
 }
 
 .gh-float-brand-inner {
@@ -161,22 +160,16 @@ html[dir="ltr"]:not([lang="ar"]) .gh-float-tip {
   justify-content: center;
 }
 
-.gh-float-brand-disc {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #f5d547 0%, #e8c547 38%, #c9a84c 72%, #a8883a 100%);
-  box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.35), inset 0 -2px 6px rgba(0, 0, 0, 0.12);
-  z-index: 1;
-}
-
 .gh-float-brand-logo {
   position: relative;
   z-index: 2;
-  width: 36px !important;
-  height: 36px !important;
+  width: 52px !important;
+  height: 52px !important;
   object-fit: contain;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+  border-radius: 50%;
+  border: 2px solid #c9a84c;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.92);
+  background: transparent;
 }
 
 .gh-motif-ring {
@@ -193,7 +186,7 @@ html[dir="ltr"]:not([lang="ar"]) .gh-float-tip {
   z-index: 0;
 }
 
-.gh-float-brand.gh-float-brand--nudge .gh-float-brand-disc {
+.gh-float-brand.gh-float-brand--nudge .gh-float-brand-logo {
   animation: ghBrandNudge 0.55s ease;
 }
 
