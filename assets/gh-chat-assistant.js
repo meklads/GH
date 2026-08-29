@@ -12,7 +12,7 @@
     if (img && img.getAttribute('src')) return img.getAttribute('src');
     var brand = document.querySelector('.gh-float-brand-logo');
     if (brand && brand.getAttribute('src')) return brand.getAttribute('src');
-    return 'assets/chatbot-motif.png';
+    return 'assets/chatbot-motif-clear.png';
   })();
 
   function chatEndpoint() {
@@ -26,11 +26,52 @@
     }
   }
 
-  function getPanel() { return document.getElementById('ghChatPanel'); }
-  function getMsgs() { return document.getElementById('ghChatMsgs'); }
-  function getQuick() { return document.getElementById('ghChatQuick'); }
-  function getField() { return document.getElementById('ghChatField'); }
-  function getSendBtn() { return document.getElementById('ghChatSend'); }
+  function getPanel() {
+    return document.querySelector('#ghChatPanel.gh-chat-panel');
+  }
+
+  function ensureOverlayRoot() {
+    var panel = getPanel();
+    if (!panel) return;
+    var root = document.getElementById('gh-chat-root');
+    if (!root) {
+      root = document.createElement('div');
+      root.id = 'gh-chat-root';
+      document.body.appendChild(root);
+      root.appendChild(panel);
+    } else if (panel.parentElement !== root) {
+      root.appendChild(panel);
+    }
+    if (root.parentElement !== document.body) {
+      document.body.appendChild(root);
+    }
+  }
+
+  function focusChatField() {
+    var field = getField();
+    if (!field) return;
+    try {
+      field.focus({ preventScroll: true });
+    } catch (e) {
+      field.focus();
+    }
+  }
+  function getMsgs() {
+    var panel = getPanel();
+    return panel ? panel.querySelector('#ghChatMsgs') : null;
+  }
+  function getQuick() {
+    var panel = getPanel();
+    return panel ? panel.querySelector('#ghChatQuick') : null;
+  }
+  function getField() {
+    var panel = getPanel();
+    return panel ? panel.querySelector('#ghChatField') : null;
+  }
+  function getSendBtn() {
+    var panel = getPanel();
+    return panel ? panel.querySelector('#ghChatSend') : null;
+  }
 
   function loadSession() {
     try {
@@ -328,10 +369,10 @@
     if (!panel) return;
     panel.classList.toggle('open', open);
     panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body.classList.toggle('gh-chat-open', open);
     if (open) {
       track('assistant_open', { page_path: location.pathname });
-      var field = getField();
-      if (field) setTimeout(function () { field.focus(); }, 120);
+      setTimeout(focusChatField, 120);
     } else {
       track('assistant_close', { page_path: location.pathname });
     }
@@ -342,12 +383,14 @@
   }
 
   window.toggleChat = function () {
+    ensureOverlayRoot();
     var panel = getPanel();
     if (!panel) return;
     setOpen(!panel.classList.contains('open'));
   };
 
   function init() {
+    ensureOverlayRoot();
     var panel = getPanel();
     if (!panel) return;
 

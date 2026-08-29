@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * QA: chat assistant present on representative pages.
+ * QA: chat assistant present and structurally valid on representative pages.
  */
 import fs from 'fs';
 import path from 'path';
@@ -12,10 +12,15 @@ const SAMPLES = [
   'index.html',
   'index-ar.html',
   'contact-us.html',
+  'contact-us-en.html',
   'services/rendering.html',
   'solutions/project-launch.html',
   'insights/index.html',
 ];
+
+function countMatches(html, re) {
+  return (html.match(re) || []).length;
+}
 
 let ok = true;
 
@@ -28,11 +33,21 @@ for (const rel of SAMPLES) {
   }
   const html = fs.readFileSync(full, 'utf8');
   const checks = [
-    ['ghChatPanel', html.includes('id="ghChatPanel"')],
-    ['gh-chat-assistant.css', /gh-chat-assistant\.css\?v=\d+/.test(html)],
-    ['gh-chat-assistant.js', /gh-chat-assistant\.js\?v=\d+/.test(html)],
+    ['gh-chat-root', html.includes('id="gh-chat-root"')],
+    ['ghChatPanel', countMatches(html, /id="ghChatPanel"/g) === 1],
+    ['ghChatField unique', countMatches(html, /id="ghChatField"/g) === 1],
+    ['ghChatMsgs unique', countMatches(html, /id="ghChatMsgs"/g) === 1],
+    ['gh-chat-assistant.css v6+', /gh-chat-assistant\.css\?v=([6-9]|\d{2,})/.test(html)],
+    ['gh-chat-assistant.js v6+', /gh-chat-assistant\.js\?v=([6-9]|\d{2,})/.test(html)],
+    ['kb before assistant js', (() => {
+      const kb = html.search(/gh-chat-knowledge-data\.js/);
+      const chat = html.search(/gh-chat-assistant\.js/);
+      return kb !== -1 && chat !== -1 && kb < chat;
+    })()],
     ['toggleChat via brand', html.includes('data-gh-brand-action')],
     ['no legacy ghQAs', !html.includes('var ghQAs')],
+    ['no orphan sendChatMsg', !html.includes('sendChatMsg()')],
+    ['motif-clear asset', html.includes('chatbot-motif-clear.png')],
   ];
   for (const [label, pass] of checks) {
     if (!pass) {
@@ -50,8 +65,8 @@ if (!fs.existsSync(path.join(ROOT, 'assets/gh-chat-assistant.js'))) {
   ok = false;
 }
 
-if (!fs.existsSync(path.join(ROOT, 'workers/gh-chat-knowledge.js'))) {
-  console.error('FAIL: workers/gh-chat-knowledge.js missing');
+if (!fs.existsSync(path.join(ROOT, 'assets/chatbot-motif-clear.png'))) {
+  console.error('FAIL: assets/chatbot-motif-clear.png missing');
   ok = false;
 }
 

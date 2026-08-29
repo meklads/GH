@@ -158,17 +158,21 @@ html[dir="ltr"]:not([lang="ar"]) .gh-float-tip {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%, #161616 0%, #0a0a0a 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
 }
 
 .gh-float-brand-logo {
   position: relative;
   z-index: 2;
-  width: 52px !important;
-  height: 52px !important;
+  width: 34px !important;
+  height: 34px !important;
   object-fit: contain;
   border: none;
   box-shadow: none;
   background: transparent;
+  filter: brightness(0) saturate(100%) invert(71%) sepia(52%) saturate(650%) hue-rotate(5deg) brightness(95%) contrast(92%);
 }
 
 .gh-motif-ring {

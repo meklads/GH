@@ -197,7 +197,10 @@
       el.addEventListener('click', closePopup);
     });
     document.querySelectorAll('[data-gh-brand-action]').forEach(function (el) {
-      el.addEventListener('click', brandAction);
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        brandAction();
+      });
     });
 
     syncBrandActiveState();

@@ -22,8 +22,8 @@ const SKIP = new Set([
   'solutions/project-launch-ads-en.html',
 ]);
 
-const FLOAT_VERSION = 12;
-const CHAT_VERSION = 3;
+const FLOAT_VERSION = 14;
+const CHAT_VERSION = 6;
 const KB_VERSION = 1;
 
 const HOMEPAGE_SKIP_REPLACE = new Set([]);
@@ -88,12 +88,36 @@ function stripLegacyFloat(html) {
 function stripLegacyChat(html) {
   let out = html;
   out = out.replace(/<!-- GH CHAT START -->[\s\S]*?<!-- GH CHAT END -->\s*/g, '');
+  out = out.replace(/<!-- ===== CHAT BOT ===== -->[\s\S]*?<!-- GH CHAT END -->\s*/gi, '');
   out = out.replace(/<!-- ===== CHAT BOT ===== -->[\s\S]*?<\/div>\s*\n\s*<div id="ghChatPanel"[\s\S]*?<\/div>\s*/gi, '');
   out = out.replace(/<div id="ghChatBtn"[\s\S]*?<\/div>\s*/gi, '');
-  out = out.replace(/<div id="ghChatPanel"[\s\S]*?<\/div>\s*(?=\n*(?:<script|<div|<\/body>))/gi, '');
+  out = out.replace(/<div id="gh-chat-root"[\s\S]*?<\/div>\s*(?=\n*(?:<!--|<script|<\/body>))/gi, '');
+  out = out.replace(/<div id="ghChatPanel"[\s\S]*?<div id="ghChatInput"[\s\S]*?<\/div>\s*\n<\/div>\s*/gi, '');
+  // Orphaned inner chat nodes when panel wrapper was removed (homepage residue)
+  out = out.replace(/<div id="ghChatMsgs"[\s\S]*?<div id="ghChatInput"[\s\S]*?<\/div>\s*\n<\/div>\s*/gi, '');
   out = out.replace(/<script>\s*var ghLang[\s\S]*?<\/script>\s*/gi, '');
   out = out.replace(/<script>\s*function toggleChat[\s\S]*?ghChatField[\s\S]*?<\/script>\s*/gi, '');
   return out;
+}
+
+function ensureChatCssLast(html, prefix) {
+  const chatCss = `<link rel="stylesheet" href="${prefix}assets/gh-chat-assistant.css?v=${CHAT_VERSION}">`;
+  let out = html.replace(/<link rel="stylesheet" href="[^"]*gh-chat-assistant\.css\?v=\d+">\s*/g, '');
+  return out.replace(/<\/head>/i, `${chatCss}\n</head>`);
+}
+
+function fixChatScriptOrder(html) {
+  const chatRe = /<script defer src="[^"]*gh-chat-assistant\.js[^"]*"><\/script>\s*/;
+  const kbRe = /<script src="[^"]*gh-chat-knowledge-data\.js[^"]*"><\/script>\s*/;
+  const chatMatch = html.match(chatRe);
+  const kbMatch = html.match(kbRe);
+  if (!chatMatch || !kbMatch) return html;
+  if (html.indexOf(chatMatch[0]) < html.indexOf(kbMatch[0])) {
+    let out = html.replace(chatMatch[0], '');
+    out = out.replace(kbRe, `${kbMatch[0]}${chatMatch[0]}`);
+    return out;
+  }
+  return html;
 }
 
 function injectAssets(html, prefix) {
@@ -140,6 +164,8 @@ function patchPage(rel) {
   const prefix = depth > 0 ? '../'.repeat(depth) : '';
 
   html = injectAssets(html, prefix);
+  html = ensureChatCssLast(html, prefix);
+  html = fixChatScriptOrder(html);
   html = stripLegacyGa(html);
   html = injectAnalytics(html, prefix);
   html = stripLegacyChat(html);
