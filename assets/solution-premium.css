@@ -967,6 +967,87 @@ body.gl-premium {
 
 .gl-vid-body { padding: 18px 20px 22px; }
 
+.gl-vid-frame--short {
+  aspect-ratio: 9 / 16;
+  max-height: 420px;
+}
+
+.gl-yt-play {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background: #111;
+  display: block;
+}
+
+.gl-yt-play img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gl-yt-play-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.28);
+  transition: background .2s ease;
+}
+
+.gl-yt-play:hover .gl-yt-play-icon,
+.gl-yt-play:focus-visible .gl-yt-play-icon {
+  background: rgba(10, 10, 10, 0.42);
+}
+
+.gl-yt-play-icon .material-symbols-outlined {
+  font-size: 48px;
+  color: #fff;
+  background: rgba(201, 168, 76, 0.95);
+  border-radius: 999px;
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.gl-vid-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.gl-yt-link {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: #C9A84C;
+  text-decoration: none;
+}
+
+.gl-yt-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .gl-vid-frame--short {
+    aspect-ratio: 16 / 9;
+    max-height: none;
+  }
+}
+
 /* FAQ light */
 .gl-faq-sec {
   background: #FAFAF8;
