@@ -16,16 +16,16 @@
     "en": "Graphics House, architectural maquette detail"
   },
   "title": {
-    "ar": "دليل brief التصور المعماري: نموذج visualization brief template للمطورين",
-    "en": "The Architectural Visualization Brief Guide: A Complete Template for Developers"
+    "ar": "دليل موجز التصور المعماري للمطورين",
+    "en": "An architectural visualization brief guide for developers"
   },
   "excerpt": {
-    "ar": "Brief ضعيف يُضاعف التكلفة والوقت. هذا الدليل يشرح كل ما يجب تضمينه في brief التصور المعماري قبل أول اجتماع مع الاستوديو في السعودية والخليج.",
-    "en": "A weak brief doubles cost and timeline. This guide covers everything your visualization brief template must include before the first studio meeting in Saudi and GCC markets."
+    "ar": "ما يكتبه المطور قبل الإنتاج: نطاق، مراجع تشطيب، زوايا، ومواعيد، حتى يقلّ التعديل بعد التسليم.",
+    "en": "What developers write before production: scope, finish references, angles, and dates, so revisions drop after delivery."
   },
   "metaDescription": {
-    "ar": "دليل brief التصور المعماري الكامل: visualization brief template جاهز للمطورين في السعودية والخليج، يوفر وقتاً في الإنتاج ويقلل جولات المراجعة.",
-    "en": "Complete architectural visualization brief guide: ready visualization brief template for GCC developers, saves production time and cuts revision rounds."
+    "ar": "دليل موجز التصور المعماري للمطورين. ما يكتبه المطور قبل الإنتاج: نطاق، مراجع تشطيب، زوايا، ومواعيد، حتى يقلّ التعديل بعد التسليم. Graphics House.",
+    "en": "What developers write before production: scope, finish references, angles, and dates, so revisions drop after delivery. Graphics House."
   },
   "keywords": {
     "ar": {
@@ -109,7 +109,7 @@
       },
       {
         "type": "callout",
-        "text": "📝 brief ناقص = 3 rounds revision إضافية — almost always."
+        "text": "📝 brief ناقص = 3 rounds revision إضافية, almost always."
       },
       {
         "type": "p",
@@ -372,7 +372,7 @@
       },
       {
         "type": "callout",
-        "text": "📝 Incomplete brief = 3 extra revision rounds — almost always."
+        "text": "📝 Incomplete brief = 3 extra revision rounds, almost always."
       },
       {
         "type": "p",
@@ -622,8 +622,8 @@
     ]
   },
   "tldr": {
-    "ar": "brief الإظهار الجيد = scope + زواia + تشطيب + جدول + موافقات — يوفر 30% rework. اكتبه قبل أول meeting مع الاستوديو.",
-    "en": "A strong viz brief = scope + angles + finishes + schedule + approvals — saves 30% rework. Write it before the first studio meeting."
+    "ar": "brief الإظهار الجيد = scope + زواia + تشطيب + جدول + موافقات, يوفر 30% rework. اكتبه قبل أول meeting مع الاستوديو.",
+    "en": "A strong viz brief = scope + angles + finishes + schedule + approvals, saves 30% rework. Write it before the first studio meeting."
   },
   "directAnswer": {
     "ar": "نموذج brief المشروع البصري يجب أن يحدد: persona المشتري، قائمة deliverables، مرجع تشطيب، deadlines متوافقة مع المبيعات، ومسار اعتماد (marketing + architect).",
@@ -647,8 +647,8 @@
       "en": "Need renders before launch?"
     },
     "text": {
-      "ar": "رندرات خارجية وداخلية وفق مواصفات المشروع — جاهزة للصالة والسوشيال والطباعة.",
-      "en": "Exterior and interior renders to spec — gallery, social, and print ready."
+      "ar": "رندرات خارجية وداخلية وفق مواصفات المشروع, جاهزة للصالة والسوشيال والطباعة.",
+      "en": "Exterior and interior renders to spec, gallery, social, and print ready."
     },
     "btn": {
       "ar": "الإظهار المعماري",

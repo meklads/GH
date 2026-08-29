@@ -16,16 +16,16 @@
     "en": "Graphics House, interactive showroom"
   },
   "title": {
-    "ar": "صالة بيع تفاعلية: بناء تجربة المشتري العقاري من اللوحة إلى العقد",
-    "en": "Interactive Sales Gallery: Building the Real Estate Buyer Experience From Billboard to Contract"
+    "ar": "صالة بيع تفاعلية: من أول انطباع إلى قرار الشراء",
+    "en": "Interactive sales gallery: from first impression to purchase decision"
   },
   "excerpt": {
-    "ar": "كيف تتحول صالة البيع من غرفة بلوحات إلى منظومة تجربة تفاعلية، ولماذا interactive sales gallery أصبح معياراً في مشاريع الخليج الكبرى.",
-    "en": "How the sales gallery evolves from a boardroom into an interactive experience system, and why the interactive sales gallery is now standard on major GCC schemes."
+    "ar": "كيف تُبنى تجربة المشتري من الشاشة والمجسم إلى مقارنة الوحدات والحجز، دون تشتيت فريق المبيعات.",
+    "en": "How to build the buyer journey from screen and maquette to unit comparison and booking, without overwhelming the sales team."
   },
   "metaDescription": {
-    "ar": "دليل صالة بيع تفاعلية للمطورين: تصميم interactive sales gallery وتجربة المشتري العقاري المتكاملة في السعودية والخليج، من الجذب إلى توقيع العقد.",
-    "en": "Interactive sales gallery guide for developers: design buyer journey and integrated interactive sales gallery experience in Saudi and GCC, from awareness to signed contract."
+    "ar": "صالة بيع تفاعلية: من أول انطباع إلى قرار الشراء. كيف تُبنى تجربة المشتري من الشاشة والمجسم إلى مقارنة الوحدات والحجز، دون تشتيت فريق المبيعات. Graphics House.",
+    "en": "How to build the buyer journey from screen and maquette to unit comparison and booking, without overwhelming the sales team. Graphics House."
   },
   "keywords": {
     "ar": {
@@ -109,7 +109,7 @@
       },
       {
         "type": "callout",
-        "text": "🖥️ خطأ شائع: شاشة 4K بمحتوى قديم — التفاعل بدون تحديث أسوأ من لوحة مطبوعة."
+        "text": "🖥️ خطأ شائع: شاشة 4K بمحتوى قديم, التفاعل بدون تحديث أسوأ من لوحة مطبوعة."
       },
       {
         "type": "table",
@@ -396,7 +396,7 @@
       },
       {
         "type": "callout",
-        "text": "🖥️ Common mistake: 4K screen with outdated content — interactivity without updates is worse than print."
+        "text": "🖥️ Common mistake: 4K screen with outdated content, interactivity without updates is worse than print."
       },
       {
         "type": "table",
@@ -488,7 +488,7 @@
       },
       {
         "type": "p",
-        "text": "On complex schemes, a smart maquette complements the screen, offering spatial understanding stills alone cannot provide. Programmed lighting highlights a phase on touch; integrated screens show unit detail. The maquette is not decoration. It is an explanation tool in the first 120 seconds."
+        "text": "On complex schemes, a smart maquette complements the screen, offering spatial understanding stills cannot provide. Programmed lighting highlights a phase on touch; integrated screens show unit detail. The maquette is not decoration. It is an explanation tool in the first 120 seconds."
       },
       {
         "type": "h2",
@@ -583,7 +583,7 @@
       },
       {
         "type": "p",
-        "text": "Technology alone is not enough. Traffic flow in the gallery determines experience success. Optimal design divides space into zones: open reception, central exploration, private closing rooms, and hospitality area."
+        "text": "Technology is not enough. Traffic flow in the gallery determines experience success. Optimal design divides space into zones: open reception, central exploration, private closing rooms, and hospitality area."
       },
       {
         "type": "p",
@@ -670,21 +670,21 @@
     ]
   },
   "tldr": {
-    "ar": "صالة البيع التفاعلية ليست شاشة — منظومة: masterplan + اختيار وحدة + فيلم + مجسم. ابدأ من رحلة المشتري، لا من قائمة الميزات.",
-    "en": "An interactive sales gallery is not a screen — it is a system: masterplan + unit picker + film + model. Start from buyer journey, not feature lists."
+    "ar": "صالة البيع التفاعلية ليست شاشة, منظومة: masterplan + اختيار وحدة + فيلم + مجسم. ابدأ من رحلة المشتري، لا من قائمة الميزات.",
+    "en": "An interactive sales gallery is not a screen, it is a system: masterplan + unit picker + film + model. Start from buyer journey, not feature lists."
   },
   "directAnswer": {
-    "ar": "صالة مبيعات تفاعلية ناجحة تسمح للمشتري بفهم الموقع، مقارنة الوحدات، ورؤية التشطيب في جلسة واحدة 10–15 دقيقة — مع محتوى متسق مع الحملة الرقمية.",
-    "en": "A successful interactive gallery lets buyers understand site context, compare units, and see finishes in one 10–15 minute session — with content consistent with digital campaigns."
+    "ar": "صالة مبيعات تفاعلية ناجحة تسمح للمشتري بفهم الموقع، مقارنة الوحدات، ورؤية التشطيب في جلسة واحدة 10-15 دقيقة, مع محتوى متسق مع الحملة الرقمية.",
+    "en": "A successful interactive gallery lets buyers understand site context, compare units, and see finishes in one 10-15 minute session, with content consistent with digital campaigns."
   },
   "takeaways": {
     "ar": [
-      "صمّم الصالة حول أسئلة المشتري — لا حول التكنولogia المتاحة.",
+      "صمّم الصالة حول أسئلة المشتري, لا حول التكنولogia المتاحة.",
       "قِس: زمن البقاء، الوحدات المستكشفة، وتحويل الزيارة إلى حجز.",
       "ابدأ بـ brief تجربة المشتري قبل اختيار الشاشات أو الـ VR."
     ],
     "en": [
-      "Design the gallery around buyer questions — not available tech.",
+      "Design the gallery around buyer questions, not available tech.",
       "Measure dwell time, units explored, and visit-to-booking conversion.",
       "Start with a buyer-experience brief before picking screens or VR."
     ]

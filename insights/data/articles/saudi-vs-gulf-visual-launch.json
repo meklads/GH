@@ -12,16 +12,16 @@
   },
   "image": "assets/insights/reports/jeddah-gate-ruwaq.jpg",
   "title": {
-    "ar": "من السعودية إلى الخليج: ماذا يبقى وماذا يتغيّر في نظام الإطلاق البصري؟",
-    "en": "Saudi to Gulf Visual Launch: What Stays the Same, and What Must Change"
+    "ar": "من السعودية إلى الخليج: ما يبقى وما يتغيّر في الإطلاق البصري",
+    "en": "From Saudi to the wider Gulf: what stays and what changes in visual launch"
   },
   "excerpt": {
-    "ar": "دليل مقارن للمطورين الذين أتمّوا جاهزية الإطلاق في الرياض وجدة ومكة ويستعدون للتوسع خليجياً: خصوصاً عُمان أولاً. نفس أعمدة ProjectLaunch™؛ نفسية مشترٍ ورموز مكان ولوجستيات مختلفة.",
-    "en": "A comparative playbook for developers who completed launch readiness in Riyadh, Jeddah, and Makkah and are expanding into the Gulf. Oman first. Same ProjectLaunch™ pillars; different buyer psychology, place codes, and logistics."
+    "ar": "نفس منطق النظام الواحد، باختلاف الإيقاع والتنظيم وتوقعات الضيف بين الأسواق.",
+    "en": "The same one-system logic, with different pace, regulation, and guest expectations across markets."
   },
   "metaDescription": {
-    "ar": "مقارنة إطلاق بصري السعودية↔الخليج: ما يثبت وما يتغيّر. ProjectLaunch™، عُمان، نفسية المشتري، ثنائية اللغة، لوجستيات جدة. Graphics House.",
-    "en": "Saudi to Gulf visual launch comparison: what holds and what changes. ProjectLaunch, Oman, buyer psychology, bilingual assets, Jeddah logistics. Graphics House."
+    "ar": "من السعودية إلى الخليج: ما يبقى وما يتغيّر في الإطلاق البصري. نفس منطق النظام الواحد، باختلاف الإيقاع والتنظيم وتوقعات الضيف بين الأسواق. Graphics House.",
+    "en": "The same one-system logic, with different pace, regulation, and guest expectations across markets. Graphics House."
   },
   "keywords": {
     "ar": {
@@ -69,11 +69,11 @@
       },
       {
         "type": "callout",
-        "text": "🌍 localise hero scene + casting — لا ت sufficiency بترجمة caption فقط."
+        "text": "🌍 localise hero scene + casting, لا ت sufficiency بترجمة caption فقط."
       },
       {
         "type": "table",
-        "caption": "سعودي vs خليج — ما يتغير في الإطلاق البصري",
+        "caption": "سعودي vs خليج, ما يتغير في الإطلاق البصري",
         "headers": [
           "العنصر",
           "السعودية",
@@ -315,11 +315,11 @@
       },
       {
         "type": "callout",
-        "text": "🌍 Localise hero scene + casting — translation alone is not enough."
+        "text": "🌍 Localise hero scene + casting, translation is not enough."
       },
       {
         "type": "table",
-        "caption": "Saudi vs Gulf — what changes in visual launch",
+        "caption": "Saudi vs Gulf, what changes in visual launch",
         "headers": [
           "Element",
           "Saudi Arabia",
@@ -365,7 +365,7 @@
         "type": "ol",
         "items": [
           "[Architectural visualization](https://3dgraphicshouse.com/services/rendering-en.html) from a reusable central model",
-          "[CGI films](https://3dgraphicshouse.com/services/cinematic-cgi-en.html) for the investor story, not façade montage alone",
+          "[CGI films](https://3dgraphicshouse.com/services/cinematic-cgi-en.html) for the investor story, not façade montage",
           "[Maquettes](https://3dgraphicshouse.com/services/maquettes-en.html) that lock scale and phases in the gallery",
           "[Interactive experiences](https://3dgraphicshouse.com/services/interactive-experiences-en.html) for unit selection and comparison",
           "[Identity and install](https://3dgraphicshouse.com/services/branding-en.html) unifying screens and boards",
@@ -590,8 +590,8 @@
     }
   ],
   "tldr": {
-    "ar": "إطلاق سعودي vs خليجي: نفس الم principles — اختلاف persona، channels، وسرعة. لا copy-paste Dubai assets إلى Riyadh.",
-    "en": "Saudi vs Gulf launch: same principles — different persona, channels, and pace. Do not copy-paste Dubai assets into Riyadh."
+    "ar": "إطلاق سعودي vs خليجي: نفس الم principles, اختلاف persona، channels، وسرعة. لا copy-paste Dubai assets إلى Riyadh.",
+    "en": "Saudi vs Gulf launch: same principles, different persona, channels, and pace. Do not copy-paste Dubai assets into Riyadh."
   },
   "directAnswer": {
     "ar": "ما يبقى ثابتاً: فوتوريализم، اتساق، فيlm، صالة. ما يتغير: اللغة، sensitivity، broker network، وexpectations luxury vs value.",
@@ -599,12 +599,12 @@
   },
   "takeaways": {
     "ar": [
-      "السعودية: وتيرة أعلى + off-plan dominant — الإمارات/عُمان: nuances مختلفة في القنوات.",
+      "السعودية: وتيرة أعلى + off-plan dominant, الإمارات/عُمان: nuances مختلفة في القنوات.",
       "لا تنسخ حملة الرياض حرفياً لمسقط أو دبي.",
       "خصّص اللغة والقنوات والوسيط لكل سوق خليجي."
     ],
     "en": [
-      "KSA: faster pace + off-plan dominant — UAE/Oman differ in channels.",
+      "KSA: faster pace + off-plan dominant, UAE/Oman differ in channels.",
       "Do not copy a Riyadh campaign verbatim to Muscat or Dubai.",
       "Localize language, channels, and broker tools per GCC market."
     ]
@@ -615,8 +615,8 @@
       "en": "Launching in the next 6 months?"
     },
     "text": {
-      "ar": "اربط أصولك البصرية بجدول المبيعات عبر ProjectLaunch™ — رندرات، فيلم، صالة بيع، ومحتوى إطلاق من فريق واحد.",
-      "en": "Map visual assets to your sales timeline with ProjectLaunch™ — renders, film, gallery, and launch content from one GCC team."
+      "ar": "اربط أصولك البصرية بجدول المبيعات عبر ProjectLaunch™: رندرات وفيلم وصالة بيع ومحتوى إطلاق من فريق واحد.",
+      "en": "Map visual assets to your sales timeline with ProjectLaunch™: renders, film, gallery, and launch content from one GCC team."
     },
     "btn": {
       "ar": "اكتشف ProjectLaunch™",
