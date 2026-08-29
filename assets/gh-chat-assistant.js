@@ -67,23 +67,34 @@
     });
   }
 
+  function openWhatsApp() {
+    var msg = encodeURIComponent(
+      isAr
+        ? 'مرحباً، أود التحدث مع أحد ممثلي Graphics House'
+        : 'Hello, I would like to speak with a Graphics House representative'
+    );
+    var url = (window.GH_CHAT_KB && window.GH_CHAT_KB.whatsappLink) || 'https://wa.me/966502786513';
+    window.open(url + '?text=' + msg, '_blank', 'noopener,noreferrer');
+    track('assistant_lead_cta', { action: 'whatsapp' });
+  }
+
   function defaultQuickReplies() {
     return isAr
       ? [
           { id: 'services', label: 'خدمات' },
+          { id: 'projects', label: 'مشاريع' },
+          { id: 'clients', label: 'عملاؤنا' },
           { id: 'quote', label: 'عرض سعر' },
-          { id: 'contact', label: 'اتصال' },
-          { id: 'maquette', label: 'مجسمات ذكية' },
           { id: 'launch', label: 'Launch™' },
-          { id: 'location', label: 'الفروع' },
+          { id: 'human', label: '💬 تحدث مع فريقنا' },
         ]
       : [
           { id: 'services', label: 'Services' },
+          { id: 'projects', label: 'Projects' },
+          { id: 'clients', label: 'Our Clients' },
           { id: 'quote', label: 'Get a Quote' },
-          { id: 'contact', label: 'Contact' },
-          { id: 'maquette', label: 'Smart Maquettes' },
           { id: 'launch', label: 'Launch™' },
-          { id: 'location', label: 'Branches' },
+          { id: 'human', label: '💬 Talk to our team' },
         ];
   }
 
@@ -125,6 +136,12 @@
           window.ghOpenPopup();
           track('assistant_lead_cta', { action: 'open-form' });
         }
+      });
+    });
+    root.querySelectorAll('[data-gh-chat-action="whatsapp"]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        openWhatsApp();
       });
     });
   }
@@ -176,94 +193,83 @@
           if (res.intent === 'quote') {
             track('assistant_lead_cta', { intent: 'quote' });
           }
+          if (res.openWhatsApp || res.intent === 'human') {
+            setTimeout(openWhatsApp, 600);
+          }
           return;
         }
-        appendMessage(localFallback(payload.message || userLabel || ''), false);
+        appendMessage(localReply(payload), false);
       })
       .catch(function () {
         hideTyping(typing);
         if (sendBtn) sendBtn.disabled = false;
         appendMessage(localReply(payload), false);
         track('assistant_message_sent', { intent: payload.intent || 'fallback', source: 'local', page_path: location.pathname });
+        if (payload.intent === 'human') {
+          setTimeout(openWhatsApp, 600);
+        }
       });
+  }
+
+  function matchLocalIntent(text, page) {
+    var kb = window.GH_CHAT_KB;
+    var lang = isAr ? 'ar' : 'en';
+    var lower = String(text || '').toLowerCase();
+
+    if (kb && kb.humanKeywords && kb.humanKeywords[lang]) {
+      if (kb.humanKeywords[lang].some(function (w) { return lower.indexOf(w.toLowerCase()) !== -1; })) {
+        return 'human';
+      }
+    }
+
+    var keys = (kb && kb.keywords && kb.keywords[lang]) || {};
+    var best = 'fallback';
+    var bestScore = 0;
+    Object.keys(keys).forEach(function (intent) {
+      if (intent === 'human') return;
+      (keys[intent] || []).forEach(function (w) {
+        if (lower.indexOf(w.toLowerCase()) !== -1) {
+          var s = w.length > 4 ? 2 : 1;
+          if (s > bestScore) {
+            bestScore = s;
+            best = intent;
+          }
+        }
+      });
+    });
+
+    if (best === 'fallback' && /project-launch|growth-launch|brand-scale|institutional/i.test(page)) best = 'launch';
+    if (best === 'fallback' && /partner-network/i.test(page)) best = 'partner';
+    if (best === 'fallback' && /portfolio|case-study/i.test(page)) best = 'projects';
+    if (best === 'fallback' && /insights\//i.test(page)) best = 'insights';
+    return best;
   }
 
   function localReply(payload) {
-    var text = String(payload.message || '').toLowerCase();
+    var lang = isAr ? 'ar' : 'en';
     var intent = payload.intent;
-    var page = String(payload.page || '');
 
-    if (!intent) {
-      var keys = isAr ? {
-        services: ['خدمات', 'خدمة', 'cgi', 'سينمائي', 'إظهار'],
-        quote: ['سعر', 'عرض', 'تكلفة', 'ميزانية'],
-        contact: ['اتصال', 'تواصل', 'واتس', 'جوال', 'رقم'],
-        maquette: ['مجسم', 'ماكيت', 'maquette'],
-        clients: ['عميل', 'عملاء', 'portfolio'],
-        location: ['فرع', 'جدة', 'مسقط', 'موقع'],
-        launch: ['launch', 'إطلاق', 'projectlaunch'],
-        partner: ['شريك', 'وكالة', 'partner'],
-        insights: ['مقال', 'insights', 'تقرير'],
-      } : {
-        services: ['service', 'cgi', 'render', 'visualization'],
-        quote: ['quote', 'price', 'cost', 'pricing'],
-        contact: ['contact', 'phone', 'whatsapp', 'email'],
-        maquette: ['maquette', 'model', 'scale'],
-        clients: ['client', 'portfolio'],
-        location: ['branch', 'jeddah', 'office', 'location'],
-        launch: ['launch', 'projectlaunch', 'off-plan'],
-        partner: ['partner', 'agency'],
-        insights: ['article', 'insights', 'report'],
-      };
-      var best = 'fallback';
-      var score = 0;
-      Object.keys(keys).forEach(function (k) {
-        keys[k].forEach(function (w) {
-          if (text.indexOf(w) !== -1 && w.length >= score) {
-            score = w.length;
-            best = k;
-          }
-        });
-      });
-      if (best === 'fallback' && /project-launch|growth-launch|brand-scale/i.test(page)) best = 'launch';
-      if (best === 'fallback' && /partner-network/i.test(page)) best = 'partner';
-      if (best === 'fallback' && /insights\//i.test(page)) best = 'insights';
-      intent = best;
+    if (!intent || intent === 'fallback') {
+      intent = matchLocalIntent(payload.message || '', payload.page || location.pathname);
     }
 
-    var pack = isAr ? {
-      services: 'نقدّم CGI سينمائي، مجسمات ذكية، تجارب تفاعلية، جاليريات، وميديا برودكشن. <a href="/services/rendering.html">استكشف الخدمات</a>',
-      quote: 'لطلب عرض سعر، شاركنا نوع المشروع والجدول والموقع. <a href="#" data-gh-chat-action="open-form">افتح نموذج الاستفسار</a> أو اتصل: <a href="tel:+966502786513">+966 50 278 6513</a>',
-      contact: 'تواصل عبر <a href="https://wa.me/966502786513">واتساب</a> أو <a href="mailto:info@3dgraphicshouse.com">info@3dgraphicshouse.com</a>',
-      maquette: 'المجسمات الذكية متوفرة بجميع المقاييس مع إسقاط ضوئي وتفاعل. <a href="/services/maquettes.html">تفاصيل أكثر</a>',
-      clients: 'عملاؤنا يشملون الراجحي، رافال، عنان إسكان، وغيرهم. <a href="/portfolio.html">الأعمال</a>',
-      location: 'فروعنا: جدة، مسقط، المنامة، مصر — ونشحن عالمياً.',
-      launch: 'Launch™: ProjectLaunch، GrowthLaunch، BrandScale، والفعاليات المؤسسية.',
-      partner: 'شبكة شركاء الوكالات™ — <a href="/partner-network.html">تعرّف على الشراكة</a>',
-      insights: 'مركز المعرفة: <a href="/insights/articles.html">مقالات</a> وأدوات مجانية.',
-      fallback: 'اختر أحد الخيارات أدناه أو <a href="tel:+966502786513">اتصل بنا</a>.',
-    } : {
-      services: 'We offer cinematic CGI, smart maquettes, interactive experiences, galleries, and media production. <a href="/services/rendering-en.html">Explore services</a>',
-      quote: 'For a quote, share project type, timeline, and location. <a href="#" data-gh-chat-action="open-form">Open enquiry form</a> or call <a href="tel:+966502786513">+966 50 278 6513</a>',
-      contact: 'Reach us on <a href="https://wa.me/966502786513">WhatsApp</a> or <a href="mailto:info@3dgraphicshouse.com">info@3dgraphicshouse.com</a>',
-      maquette: 'Smart maquettes at any scale with projection mapping. <a href="/services/maquettes-en.html">Learn more</a>',
-      clients: 'Clients include Al Rajhi, Raffal, Anan Eskan, and more. <a href="/portfolio-en.html">Portfolio</a>',
-      location: 'Branches: Jeddah, Muscat, Manama, Egypt — worldwide delivery.',
-      launch: 'Launch™: ProjectLaunch, GrowthLaunch, BrandScale, and institutional events.',
-      partner: 'Agency Partner Network™ — <a href="/partner-network-en.html">Partner with us</a>',
-      insights: 'Knowledge Hub: <a href="/insights/articles.html">articles</a> and free tools.',
-      fallback: 'Pick an option below or <a href="tel:+966502786513">call us</a>.',
-    };
-    return pack[intent] || pack.fallback;
-  }
+    if (window.GH_CHAT_KB && window.GH_CHAT_KB.replies && window.GH_CHAT_KB.replies[lang]) {
+      return window.GH_CHAT_KB.replies[lang][intent] || window.GH_CHAT_KB.replies[lang].fallback;
+    }
 
-  function localFallback(text) {
-    return localReply({ message: text, lang: isAr ? 'ar' : 'en', page: location.pathname });
+    return isAr
+      ? 'اختر أحد الخيارات أو <a href="#" data-gh-chat-action="whatsapp">تحدث معنا على واتساب</a>.'
+      : 'Pick an option or <a href="#" data-gh-chat-action="whatsapp">chat with us on WhatsApp</a>.';
   }
 
   function handleQuickReply(intent, label) {
     appendMessage(label, true);
     track('assistant_quick_reply', { intent: intent, page_path: location.pathname });
+    if (intent === 'human') {
+      appendMessage(localReply({ intent: 'human', page: location.pathname }), false);
+      setTimeout(openWhatsApp, 500);
+      return;
+    }
     respondWith({
       message: label,
       intent: intent,

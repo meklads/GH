@@ -1,4 +1,4 @@
-import { handleChatMessage } from './gh-chat-knowledge.js';
+import { handleChatMessage, getSystemContext } from './gh-chat-knowledge.js';
 
 /**
  * Cloudflare Worker — form proxy + mailing list subscriptions.
@@ -274,7 +274,9 @@ async function handleForm(body, env, cors, request) {
 async function handleChat(body, env, cors) {
   const result = handleChatMessage(body || {});
 
-  if (env.OPENROUTER_API_KEY && body.message && body.message !== '__init__') {
+  const skipAi = !body.message || body.message === '__init__' || result.intent === 'human' || result.intent === 'whatsapp';
+
+  if (env.OPENROUTER_API_KEY && !skipAi) {
     try {
       const aiReply = await callOpenRouterChat(body, env);
       if (aiReply) {
@@ -303,9 +305,7 @@ async function handleChat(body, env, cors) {
 
 async function callOpenRouterChat(body, env) {
   const lang = body.lang === 'ar' ? 'ar' : 'en';
-  const system = lang === 'ar'
-    ? 'أنت مساعد Graphics House — استوديو B2B للإظهار المعماري والمجسمات والتجارب التفاعلية في السعودية والخليج. أجب باختصار (3-5 جمل). وجّه طلبات الأسعار للتواصل أو النموذج. لا تختلق أسعاراً.'
-    : 'You are the Graphics House assistant — a GCC B2B studio for archviz, maquettes, and interactive experiences. Reply briefly (3-5 sentences). Route pricing requests to contact or the enquiry form. Never invent prices.';
+  const system = getSystemContext(lang);
 
   const messages = [{ role: 'system', content: system }];
   (body.history || []).slice(-4).forEach((m) => {

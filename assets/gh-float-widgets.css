@@ -133,7 +133,7 @@ html[dir="ltr"]:not([lang="ar"]) .gh-float-tip {
   }
 }
 
-/* Brand / assistant button — motif icon + gold ring + white halo + ripples */
+/* Brand / assistant button — motif only + white ripple rings */
 .gh-float-brand {
   background: transparent !important;
   box-shadow: none !important;
@@ -166,9 +166,8 @@ html[dir="ltr"]:not([lang="ar"]) .gh-float-tip {
   width: 52px !important;
   height: 52px !important;
   object-fit: contain;
-  border-radius: 50%;
-  border: 2px solid #c9a84c;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.92);
+  border: none;
+  box-shadow: none;
   background: transparent;
 }
 

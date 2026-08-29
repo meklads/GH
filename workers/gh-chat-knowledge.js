@@ -1,108 +1,119 @@
 /**
- * Graphics House assistant knowledge base (AR/EN).
- * Used by gh-form-proxy Worker /api/chat and client-side offline fallback.
+ * Chat intent matching + HTML replies built from gh-site-knowledge.js
  */
+import {
+  SITE,
+  WHATSAPP_LINK,
+  PHONE_DISPLAY,
+  EMAIL,
+  KEYWORDS,
+  PAGE_CONTEXT,
+  HUMAN_KEYWORDS,
+  getSystemContext,
+} from './gh-site-knowledge.js';
+
+export { getSystemContext, serializeForClient } from './gh-site-knowledge.js';
+
+const WA_BTN = {
+  ar: '<a href="#" data-gh-chat-action="whatsapp">💬 تحدث مع فريقنا على واتساب</a>',
+  en: '<a href="#" data-gh-chat-action="whatsapp">💬 Chat with our team on WhatsApp</a>',
+};
+
+function L(lang) {
+  return lang === 'ar' ? 'ar' : 'en';
+}
+
+function link(url, label) {
+  return `<a href="${url}">${label}</a>`;
+}
+
+function servicesList(lang) {
+  const key = L(lang);
+  return SITE.services
+    .slice(0, 8)
+    .map((s, i) => `${i + 1}️⃣ <strong>${s.name[key]}</strong> — ${link(s.url[key], lang === 'ar' ? 'تفاصيل' : 'Details')}`)
+    .join('<br>');
+}
+
+function productsList(lang) {
+  const key = L(lang);
+  return SITE.products
+    .map((p) => `🚀 <strong>${p.name}</strong> — ${p.desc[key]} ${link(p.url[key], lang === 'ar' ? 'المزيد' : 'More')}`)
+    .join('<br><br>');
+}
+
+function clientsList(lang) {
+  const key = L(lang);
+  return SITE.clients.map((c) => c[key]).join(' · ');
+}
+
+function projectsList(lang, limit = 6) {
+  const key = L(lang);
+  return SITE.projects
+    .slice(0, limit)
+    .map((p) => `🏗️ <strong>${p.client[key]}</strong> — ${p.title[key]} ${link(p.url[key], lang === 'ar' ? 'المشروع' : 'Project')}`)
+    .join('<br><br>');
+}
 
 export const REPLIES = {
   ar: {
-    welcome: 'مرحباً! 👋 أنا مساعد Graphics House. كيف يمكنني مساعدتك؟ اختر أحد الخيارات أو اكتب سؤالك.',
-    services:
-      'نغطي الهوية البصرية الكاملة للمشاريع العقارية والمؤسسية:<br><br>1️⃣ <strong>سينمائي CGI</strong> — إظهار معماري سينمائي فائق الجودة.<br>2️⃣ <strong>مجسمات ذكية</strong> — مجسمات معمارية بمقاييس مختلفة.<br>3️⃣ <strong>تجارب تفاعلية</strong> — شاشات لمس وجولات افتراضية.<br>4️⃣ <strong>جاليريات وديكور</strong> — صالات عرض وجاليري مبيعات.<br>5️⃣ <strong>ميديا برودكشن</strong> — إنتاج سينمائي وأنيميشن.<br><br>📎 <a href="/services/rendering.html">استكشف الخدمات</a>',
-    quote:
-      'للحصول على عرض سعر دقيق، جهّز:<br><br>📌 نوع المشروع والمقاس<br>📅 الجدول الزمني<br>📍 الموقع<br>📎 رسومات أولية إن وُجدت<br><br>⚠️ الأسعار تُحدَّد بعد دراسة المشروع.<br><br>📞 <a href="tel:+966502786513">+966 50 278 6513</a><br>أو <a href="#" data-gh-chat-action="open-form">افتح نموذج الاستفسار</a> الآن.',
-    contact:
-      'تواصل مباشرة:<br><br>📞 <strong>واتساب / اتصال:</strong> <a href="https://wa.me/966502786513">+966 50 278 6513</a><br>📧 <strong>إيميل:</strong> <a href="mailto:info@3dgraphicshouse.com">info@3dgraphicshouse.com</a><br>📍 <strong>المركز الرئيسي:</strong> جدة، السعودية<br><br>نفضّل التواصل المباشر — فريقنا جاهز لمساعدتك.',
-    maquette:
-      'المجسمات الذكية تجمع الحرفية والتقنية:<br><br>🏗️ فلل، أبراج، مدن سكنية، أراضي مخطط<br>✨ إسقاط ضوئي، بيانات حية، إضاءة وصوت ذكي<br>📐 بالمقاس المطلوب + توصيل وتركيب عالمياً<br><br>📎 <a href="/services/maquettes.html">تعرّف على المجسمات الذكية</a>',
-    clients:
-      'نفّذنا مشاريع لكبرى الشركات:<br><br>🏢 مصرف الراجحي · رافال · عنان إسكان · تويota · المركز الطبي الدولي · هيئة المدن الصناعية وغيرهم.<br><br>📎 <a href="/portfolio.html">استعرض الأعمال</a>',
-    location:
-      'فروعنا:<br><br>🇸🇦 جدة (المركز الرئيسي)<br>🇴🇲 مسقط · 🇧🇭 المنامة · 🇪🇬 مصر<br><br>🌍 ننفّذ ونشحن لأي مكان في العالم.',
-    launch:
-      'أنظمة Launch™ لدينا:<br><br>🚀 <strong>ProjectLaunch™</strong> — إطلاق مشروع عقاري off-plan<br>📈 <strong>GrowthLaunch™</strong> — نمو المبيعات والتسويق البصري<br>🏛️ <strong>BrandScale™</strong> — هوية بصرية على نطاق واسع<br>🎪 <strong>Institutional Events</strong> — فعاليات ومعارض مؤسسية<br><br>📎 <a href="/solutions/project-launch.html">ProjectLaunch™</a> · <a href="/solutions/growth-launch.html">GrowthLaunch™</a>',
-    partner:
-      'شبكة شركاء الوكالات™ — وسّع قدرات وكالتك دون بناء فريق جديد:<br><br>✅ CGI · مجسمات · تفاعلي · ميديا<br>✅ White-label أو co-branded<br><br>📎 <a href="/partner-network.html">تعرّف على الشراكة</a>',
-    insights:
-      'مركز المعرفة يضم مقالات وتقارير وأدوات:<br><br>📚 <a href="/insights/articles.html">مقالات</a> · <a href="/insights/reports.html">تقارير</a><br>🛠️ <a href="/insights/tools/project-brief.html">موجز المشروع</a> · <a href="/insights/tools/launch-checklist.html">قائمة الإطلاق</a>',
-    fallback:
-      'عذراً، لم أفهم سؤالك بالكامل. 😅<br><br>جرّب أحد الخيارات أدناه، أو تواصل مباشرة:<br>📞 <a href="tel:+966502786513">+966 50 278 6513</a>',
+    welcome: `مرحباً! 👋 أنا مساعد <strong>Graphics House</strong>.<br><br>أسألني عن خدماتنا، منتجات Launch™، مشاريعنا، عملائنا، أو اطلب <strong>التحدث مع فريقنا</strong>.`,
+    human: `بكل سرور! 👤<br><br>أحوّلك الآن لفريقنا للرد البشري المباشر على واتساب:<br><br>${WA_BTN.ar}<br><br>📞 أو اتصل: <a href="tel:+966502786513">${PHONE_DISPLAY}</a>`,
+    services: `خدماتنا للمطورين والمؤسسات في الخليج:<br><br>${servicesList('ar')}<br><br>📎 ${link('/services/rendering.html', 'كل الخدمات')} · ${link(SITE.portfolio.ar, 'معرض الأعمال')}`,
+    quote: `لعرض سعر دقيق، شاركنا:<br><br>📌 نوع المشروع والمقاس<br>📅 الجدول الزمني<br>📍 الموقع<br>📎 رسومات أولية إن وُجدت<br><br>⚠️ الأسعار تُحدَّد بعد دراسة المشروع.<br><br><a href="#" data-gh-chat-action="open-form">📝 نموذج استفسار</a> · ${WA_BTN.ar}`,
+    contact: `تواصل معنا:<br><br>📞 ${WA_BTN.ar}<br>📧 <a href="mailto:${EMAIL}">${EMAIL}</a><br>📍 ${SITE.contact.hq.ar}<br><br>نفضّل التواصل المباشر — فريقنا جاهز.`,
+    whatsapp: `اضغط للانتقال إلى واتساب:<br><br>${WA_BTN.ar}`,
+    maquette: `المجسمات الذكية — حرفية + تقنية:<br><br>🏗️ فلل، أبراج، مدن سكنية، أراضي مخطط<br>✨ إسقاط ضوئي · بيانات حية · إضاءة وصوت<br>📐 توصيل وتركيب عالمياً<br><br>📎 ${link('/services/maquettes.html', 'مجسمات ذكية')} · ${link('/insights/projects/makkah-charter-mwl.html', 'مشروع MWL')}`,
+    clients: `عملاؤنا يشملون كبرى الشركات والمؤسسات:<br><br>🏢 ${clientsList('ar')}<br><br>📎 ${link(SITE.portfolio.ar, 'استعرض الأعمال')}`,
+    projects: `مشاريع مرجعية ناجحة:<br><br>${projectsList('ar')}<br><br>📎 ${link(SITE.portfolio.ar, 'كل الأعمال')} · ${link('/insights/projects/', 'مشاريع Insights')}`,
+    location: `فروعنا:<br><br>${SITE.contact.branches.map((b) => `📍 ${b.ar}`).join('<br>')}<br><br>🌍 ننفّذ ونشحن لأي مكان.`,
+    launch: `أنظمة <strong>Launch™</strong>:<br><br>${productsList('ar')}`,
+    partner: `شبكة شركاء الوكالات™ — وسّع قدرات وكالتك:<br><br>✅ CGI · مجسمات · تفاعلي · ميديا<br>✅ White-label أو co-branded<br><br>📎 ${link('/partner-network.html', 'تفاصيل الشراكة')}`,
+    insights: `مركز المعرفة:<br><br>📚 ${link(SITE.insights.articles.ar, 'مقالات')} · ${link(SITE.insights.reports.ar, 'تقارير')}<br>🛠️ ${link(SITE.insights.tools.brief.ar, 'موجز المشروع')} · ${link(SITE.insights.tools.checklist.ar, 'قائمة الإطلاق')} · ${link(SITE.insights.tools.finder.ar, 'Solution Finder')}`,
+    cgi: `الإنتاج السينمائي CGI:<br><br>🎬 أفلام إطلاق · جولات سينمائية · سرد بصري عاطفي<br>📎 ${link('/services/cinematic-cgi.html', 'سينمائي CGI')} · ${link('/services/animation.html', 'أنيميشن')}`,
+    interactive: `التجارب التفاعلية:<br><br>🖥️ شاشات لمس · جولات افتراضية · VR/360<br>📎 ${link('/services/interactive-experiences.html', 'تجارب تفاعلية')} · ${link('/services/vr-360.html', 'VR 360')}`,
+    galleries: `جاليريات وديكور مبيعات:<br><br>🏛️ تصميم وتنفيذ صالات العرض حسب المساحة<br>📎 ${link('/galleries-advertising.html', 'جاليريات وديكور')}`,
+    fallback: `لم أفهم سؤالك بالكامل. 😅<br><br>جرّب أحد الخيارات أو ${WA_BTN.ar}`,
   },
   en: {
-    welcome: 'Hello! 👋 I\'m the Graphics House assistant. How can I help? Pick an option or type your question.',
-    services:
-      'We cover the full visual identity for real estate and institutional projects:<br><br>1️⃣ <strong>Cinematic CGI</strong> — premium architectural films.<br>2️⃣ <strong>Smart Maquettes</strong> — architectural models at any scale.<br>3️⃣ <strong>Interactive Experiences</strong> — touchscreens &amp; virtual tours.<br>4️⃣ <strong>Galleries &amp; Display</strong> — sales galleries and showrooms.<br>5️⃣ <strong>Media Production</strong> — cinematic production &amp; animation.<br><br>📎 <a href="/services/rendering-en.html">Explore services</a>',
-    quote:
-      'For an accurate quote, please share:<br><br>📌 Project type &amp; scale<br>📅 Timeline<br>📍 Location<br>📎 Preliminary drawings if available<br><br>⚠️ Pricing is confirmed after project review.<br><br>📞 <a href="tel:+966502786513">+966 50 278 6513</a><br>Or <a href="#" data-gh-chat-action="open-form">open the enquiry form</a> now.',
-    contact:
-      'Get in touch directly:<br><br>📞 <strong>WhatsApp / Call:</strong> <a href="https://wa.me/966502786513">+966 50 278 6513</a><br>📧 <strong>Email:</strong> <a href="mailto:info@3dgraphicshouse.com">info@3dgraphicshouse.com</a><br>📍 <strong>Head office:</strong> Jeddah, Saudi Arabia<br><br>We prefer direct contact — our team is ready to help.',
-    maquette:
-      'Smart Maquettes combine craftsmanship and technology:<br><br>🏗️ Villas, towers, residential cities, land plots<br>✨ Projection mapping, live data, smart lighting &amp; sound<br>📐 Built to scale + worldwide delivery &amp; installation<br><br>📎 <a href="/services/maquettes-en.html">Smart maquettes</a>',
-    clients:
-      'We\'ve delivered for leading brands:<br><br>🏢 Al Rajhi Bank · Raffal · Anan Eskan · Toyota · IMC · MODON and more.<br><br>📎 <a href="/portfolio-en.html">View portfolio</a>',
-    location:
-      'Our branches:<br><br>🇸🇦 Jeddah (HQ)<br>🇴🇲 Muscat · 🇧🇭 Manama · 🇪🇬 Egypt<br><br>🌍 We deliver and install worldwide.',
-    launch:
-      'Our Launch™ systems:<br><br>🚀 <strong>ProjectLaunch™</strong> — off-plan real estate launch<br>📈 <strong>GrowthLaunch™</strong> — visual sales growth<br>🏛️ <strong>BrandScale™</strong> — brand at scale<br>🎪 <strong>Institutional Events</strong> — exhibitions &amp; forums<br><br>📎 <a href="/solutions/project-launch-en.html">ProjectLaunch™</a> · <a href="/solutions/growth-launch-en.html">GrowthLaunch™</a>',
-    partner:
-      'Agency Partner Network™ — expand your agency without building a new team:<br><br>✅ CGI · maquettes · interactive · media<br>✅ White-label or co-branded delivery<br><br>📎 <a href="/partner-network-en.html">Partner with us</a>',
-    insights:
-      'Our Knowledge Hub includes articles, reports, and tools:<br><br>📚 <a href="/insights/articles.html">Articles</a> · <a href="/insights/reports.html">Reports</a><br>🛠️ <a href="/insights/tools/project-brief-en.html">Project brief</a> · <a href="/insights/tools/launch-checklist-en.html">Launch checklist</a>',
-    fallback:
-      'Sorry, I didn\'t fully understand. 😅<br><br>Try an option below, or contact us directly:<br>📞 <a href="tel:+966502786513">+966 50 278 6513</a>',
+    welcome: `Hello! 👋 I'm the <strong>Graphics House</strong> assistant.<br><br>Ask about our services, Launch™ products, projects, clients, or request to <strong>speak with our team</strong>.`,
+    human: `Happy to connect you! 👤<br><br>I'll route you to our team for a direct reply on WhatsApp:<br><br>${WA_BTN.en}<br><br>📞 Or call: <a href="tel:+966502786513">${PHONE_DISPLAY}</a>`,
+    services: `Our services for GCC developers &amp; institutions:<br><br>${servicesList('en')}<br><br>📎 ${link('/services/rendering-en.html', 'All services')} · ${link(SITE.portfolio.en, 'Portfolio')}`,
+    quote: `For an accurate quote, please share:<br><br>📌 Project type &amp; scale<br>📅 Timeline<br>📍 Location<br>📎 Drawings if available<br><br>⚠️ Pricing confirmed after project review.<br><br><a href="#" data-gh-chat-action="open-form">📝 Enquiry form</a> · ${WA_BTN.en}`,
+    contact: `Get in touch:<br><br>📞 ${WA_BTN.en}<br>📧 <a href="mailto:${EMAIL}">${EMAIL}</a><br>📍 ${SITE.contact.hq.en}<br><br>We prefer direct contact — our team is ready.`,
+    whatsapp: `Tap to open WhatsApp:<br><br>${WA_BTN.en}`,
+    maquette: `Smart Maquettes — craft + technology:<br><br>🏗️ Villas, towers, cities, land plots<br>✨ Projection mapping · live data · smart AV<br>📐 Worldwide delivery &amp; install<br><br>📎 ${link('/services/maquettes-en.html', 'Smart maquettes')} · ${link('/insights/projects/makkah-charter-mwl-en.html', 'MWL project')}`,
+    clients: `Our clients include leading brands &amp; institutions:<br><br>🏢 ${clientsList('en')}<br><br>📎 ${link(SITE.portfolio.en, 'View portfolio')}`,
+    projects: `Reference projects:<br><br>${projectsList('en')}<br><br>📎 ${link(SITE.portfolio.en, 'Full portfolio')} · ${link('/insights/projects/', 'Insights projects')}`,
+    location: `Our branches:<br><br>${SITE.contact.branches.map((b) => `📍 ${b.en}`).join('<br>')}<br><br>🌍 We deliver worldwide.`,
+    launch: `<strong>Launch™</strong> systems:<br><br>${productsList('en')}`,
+    partner: `Agency Partner Network™ — expand your agency:<br><br>✅ CGI · maquettes · interactive · media<br>✅ White-label or co-branded<br><br>📎 ${link('/partner-network-en.html', 'Partnership details')}`,
+    insights: `Knowledge Hub:<br><br>📚 ${link(SITE.insights.articles.en, 'Articles')} · ${link(SITE.insights.reports.en, 'Reports')}<br>🛠️ ${link(SITE.insights.tools.brief.en, 'Project brief')} · ${link(SITE.insights.tools.checklist.en, 'Launch checklist')} · ${link(SITE.insights.tools.finder.en, 'Solution Finder')}`,
+    cgi: `Cinematic CGI production:<br><br>🎬 Launch films · cinematic tours · emotional storytelling<br>📎 ${link('/services/cinematic-cgi-en.html', 'Cinematic CGI')} · ${link('/services/animation-en.html', 'Animation')}`,
+    interactive: `Interactive experiences:<br><br>🖥️ Touchscreens · virtual tours · VR/360<br>📎 ${link('/services/interactive-experiences-en.html', 'Interactive')} · ${link('/services/vr-360-en.html', 'VR 360')}`,
+    galleries: `Sales galleries &amp; spatial design:<br><br>🏛️ Showroom design &amp; build tailored to space<br>📎 ${link('/galleries-advertising-en.html', 'Galleries')}`,
+    fallback: `I didn't fully catch that. 😅<br><br>Try an option below or ${WA_BTN.en}`,
   },
 };
-
-export const KEYWORDS = {
-  ar: {
-    services: ['خدمات', 'خدمة', 'تقدمون', 'cgi', 'سينمائي', 'إظهار', 'تصور'],
-    quote: ['سعر', 'عرض', 'تكلفة', 'كم', 'ميزانية', 'تسعير'],
-    contact: ['اتصال', 'تواصل', 'رقم', 'جوال', 'ايميل', 'بريد', 'واتس', 'whatsapp'],
-    maquette: ['مجسم', 'مقياس', 'ماكيت', 'maquette', 'model'],
-    clients: ['عميل', 'عملاء', 'شركات', 'الراجحي', 'portfolio', 'أعمال'],
-    location: ['فرع', 'موقع', 'عنوان', 'مكتب', 'جدة', 'مسقط', 'منامة', 'مصر'],
-    launch: ['launch', 'إطلاق', 'projectlaunch', 'growthlaunch', 'brandscale', 'منتج'],
-    partner: ['شريك', 'وكالة', 'agency', 'partner'],
-    insights: ['مقال', 'insights', 'تقرير', 'checklist', 'موجز'],
-  },
-  en: {
-    services: ['service', 'cgi', 'render', 'visualization', 'visualisation', 'animation'],
-    quote: ['quote', 'price', 'cost', 'pricing', 'budget', 'estimate'],
-    contact: ['contact', 'email', 'phone', 'call', 'whatsapp', 'reach'],
-    maquette: ['maquette', 'model', 'physical', 'scale model'],
-    clients: ['client', 'clients', 'portfolio', 'al rajhi', 'toyota', 'work'],
-    location: ['branch', 'office', 'location', 'address', 'jeddah', 'muscat', 'manama', 'egypt'],
-    launch: ['launch', 'projectlaunch', 'growthlaunch', 'brandscale', 'off-plan', 'offplan'],
-    partner: ['partner', 'agency', 'white-label', 'whitelabel'],
-    insights: ['article', 'insights', 'report', 'checklist', 'brief', 'hub'],
-  },
-};
-
-export const PAGE_CONTEXT = [
-  { match: /project-launch|growth-launch|brand-scale|institutional-events/i, intent: 'launch', quick: ['launch', 'quote', 'contact'] },
-  { match: /partner-network/i, intent: 'partner', quick: ['partner', 'quote', 'contact'] },
-  { match: /insights\/articles|insights\/reports|insights\/tools|insights\/index/i, intent: 'insights', quick: ['insights', 'quote', 'services'] },
-  { match: /services\/maquettes|smart-maquettes|scale-models/i, intent: 'maquette', quick: ['maquette', 'quote', 'contact'] },
-  { match: /services\//i, intent: 'services', quick: ['services', 'quote', 'contact'] },
-];
 
 export function defaultQuickReplies(lang) {
   const isAr = lang === 'ar';
   return isAr
     ? [
         { id: 'services', label: 'خدمات' },
+        { id: 'projects', label: 'مشاريع' },
+        { id: 'clients', label: 'عملاؤنا' },
         { id: 'quote', label: 'عرض سعر' },
-        { id: 'contact', label: 'اتصال' },
-        { id: 'maquette', label: 'مجسمات ذكية' },
         { id: 'launch', label: 'Launch™' },
-        { id: 'location', label: 'الفروع' },
+        { id: 'human', label: '💬 تحدث مع فريقنا' },
       ]
     : [
         { id: 'services', label: 'Services' },
+        { id: 'projects', label: 'Projects' },
+        { id: 'clients', label: 'Our Clients' },
         { id: 'quote', label: 'Get a Quote' },
-        { id: 'contact', label: 'Contact' },
-        { id: 'maquette', label: 'Smart Maquettes' },
         { id: 'launch', label: 'Launch™' },
-        { id: 'location', label: 'Branches' },
+        { id: 'human', label: '💬 Talk to our team' },
       ];
 }
 
@@ -120,13 +131,23 @@ export function quickRepliesForPage(page, lang) {
   return base;
 }
 
+function isHumanRequest(text, lang) {
+  const words = HUMAN_KEYWORDS[lang] || HUMAN_KEYWORDS.en;
+  const lower = text.toLowerCase();
+  return words.some((w) => lower.includes(w.toLowerCase()));
+}
+
 export function matchIntent(message, lang, page) {
   const text = String(message || '').toLowerCase().trim();
+
+  if (isHumanRequest(text, lang)) return 'human';
+
   const dict = KEYWORDS[lang] || KEYWORDS.en;
   let best = null;
   let bestScore = 0;
 
   for (const [intent, words] of Object.entries(dict)) {
+    if (intent === 'human') continue;
     let score = 0;
     for (const word of words) {
       if (text.includes(word.toLowerCase())) score += word.length > 4 ? 2 : 1;
@@ -173,22 +194,14 @@ export function handleChatMessage(body) {
     return { success: false, message: 'Empty message' };
   }
 
-  if (body.intent && REPLIES[lang][body.intent]) {
-    return {
-      success: true,
-      reply: buildReply(body.intent, lang),
-      intent: body.intent,
-      quickReplies: quickRepliesForPage(page, lang),
-      source: 'kb',
-    };
-  }
+  const intent = body.intent && REPLIES[lang][body.intent] ? body.intent : matchIntent(message, lang, page);
 
-  const intent = matchIntent(message, lang, page);
   return {
     success: true,
     reply: buildReply(intent, lang),
     intent,
     quickReplies: quickRepliesForPage(page, lang),
+    openWhatsApp: intent === 'human' || intent === 'whatsapp',
     source: 'kb',
   };
 }
