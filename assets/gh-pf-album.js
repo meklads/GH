@@ -1,6 +1,18 @@
-/** Viewer gallery (main + thumbs) + lightbox. */
+/** Viewer gallery (main + thumbs) + lightbox with corner GH mark. */
 (function () {
   'use strict';
+
+  var LOGO_SRC = '/assets/logo-gold.png';
+
+  function watermarkHtml() {
+    return (
+      '<span class="gh-wm" aria-hidden="true">' +
+      '<img src="' +
+      LOGO_SRC +
+      '" alt="" width="120" height="36" decoding="async">' +
+      '</span>'
+    );
+  }
 
   function ensureLightbox() {
     var box = document.getElementById('ghAlbumLightbox');
@@ -12,7 +24,10 @@
     box.setAttribute('aria-modal', 'true');
     box.innerHTML =
       '<button type="button" class="gh-album-lightbox__close" data-gh-album-close aria-label="Close">&times;</button>' +
-      '<img src="" alt="">';
+      '<div class="gh-album-lightbox__frame">' +
+      '<img data-gh-lb-img src="" alt="">' +
+      watermarkHtml() +
+      '</div>';
     document.body.appendChild(box);
     box.addEventListener('click', function (e) {
       if (e.target === box || e.target.hasAttribute('data-gh-album-close')) closeLightbox();
@@ -23,7 +38,7 @@
   function openLightbox(src, alt) {
     if (!src) return;
     var box = ensureLightbox();
-    var img = box.querySelector('img');
+    var img = box.querySelector('[data-gh-lb-img]');
     img.src = src;
     img.alt = alt || '';
     box.classList.add('is-open');
@@ -34,7 +49,7 @@
     var box = document.getElementById('ghAlbumLightbox');
     if (!box) return;
     box.classList.remove('is-open');
-    var img = box.querySelector('img');
+    var img = box.querySelector('[data-gh-lb-img]');
     if (img) img.removeAttribute('src');
     document.body.style.overflow = '';
   }
@@ -49,13 +64,16 @@
       src +
       '" alt="' +
       (alt || '') +
-      '" decoding="async"' +
-      (webp ? '' : '') +
-      '>';
+      '" decoding="async">';
     if (webp) {
       return '<picture><source srcset="' + webp + '" type="image/webp">' + img + '</picture>';
     }
     return img;
+  }
+
+  function ensureStageMark(stage) {
+    if (!stage || stage.querySelector('.gh-wm')) return;
+    stage.insertAdjacentHTML('beforeend', watermarkHtml());
   }
 
   function initViewer(root) {
@@ -63,7 +81,10 @@
     var thumbs = Array.prototype.slice.call(root.querySelectorAll('[data-gh-vg-thumb]'));
     var mainBtn = root.querySelector('[data-gh-vg-main]');
     var mainSlot = root.querySelector('[data-gh-vg-slot]');
+    var stage = root.querySelector('.gh-vg__stage');
     if (!thumbs.length || !mainBtn || !mainSlot) return;
+
+    ensureStageMark(stage);
 
     var index = Math.max(
       0,
@@ -125,7 +146,6 @@
 
   document.querySelectorAll('[data-gh-viewer-gallery]').forEach(initViewer);
 
-  /* Legacy marquee clone support if old markup remains */
   document.querySelectorAll('[data-gh-album-track]').forEach(function (track) {
     if (track.getAttribute('data-gh-album-ready')) return;
     var items = Array.prototype.slice.call(track.children);

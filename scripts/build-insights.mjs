@@ -244,6 +244,7 @@ function projectAlbumHtml(project, lang, depthPrefix) {
       </button>
       <button type="button" class="gh-vg__nav gh-vg__nav--prev" data-gh-vg-prev aria-label="${esc(isEn ? 'Previous image' : 'الصورة السابقة')}"><span class="material-symbols-outlined" aria-hidden="true">chevron_left</span></button>
       <button type="button" class="gh-vg__nav gh-vg__nav--next" data-gh-vg-next aria-label="${esc(isEn ? 'Next image' : 'الصورة التالية')}"><span class="material-symbols-outlined" aria-hidden="true">chevron_right</span></button>
+      <span class="gh-wm" aria-hidden="true"><img src="${depthPrefix}assets/logo-gold.png" alt="" width="120" height="36" decoding="async"></span>
     </div>
     <div class="gh-vg__thumbs" role="listbox" aria-label="${esc(label)}">${thumbs}</div>
   </div>
@@ -428,7 +429,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=29">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=30">
 <link rel="stylesheet" href="${p}assets/gh-insights-article.css?v=5">
-<link rel="stylesheet" href="${p}assets/gh-pf-album.css?v=3">
+<link rel="stylesheet" href="${p}assets/gh-pf-album.css?v=4">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=10">
 ${isEn ? `<link rel="stylesheet" href="${p}assets/gh-en-typography.css?v=1">` : `<link rel="stylesheet" href="${p}assets/gh-ar-typography.css?v=2">`}
 <script defer src="${p}assets/site-header.js?v=16"></script>
@@ -445,7 +446,7 @@ function tailScripts(depth, { article = false, album = false } = {}) {
     ? `\n<script defer src="${p}assets/gh-insights-article.js?v=6"></script>\n<script defer src="${p}assets/gh-newsletter.js?v=5"></script>`
     : '';
   const albumJs = album
-    ? `\n<script defer src="${p}assets/gh-pf-album.js?v=3"></script>`
+    ? `\n<script defer src="${p}assets/gh-pf-album.js?v=4"></script>`
     : '';
   return `
 <script defer src="${p}assets/gh-float-widgets.js?v=9"></script>${articleJs}${albumJs}
