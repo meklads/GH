@@ -23,8 +23,8 @@ const SKIP = new Set([
 ]);
 
 const FLOAT_VERSION = 15;
-const CHAT_VERSION = 7;
-const KB_VERSION = 1;
+const CHAT_VERSION = 9;
+const KB_VERSION = 2;
 
 const HOMEPAGE_SKIP_REPLACE = new Set([]);
 

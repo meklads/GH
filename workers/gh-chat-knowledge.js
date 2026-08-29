@@ -9,6 +9,7 @@ import {
   KEYWORDS,
   PAGE_CONTEXT,
   HUMAN_KEYWORDS,
+  GREETING_PHRASES,
   getSystemContext,
 } from './gh-site-knowledge.js';
 
@@ -58,6 +59,7 @@ function projectsList(lang, limit = 6) {
 export const REPLIES = {
   ar: {
     welcome: `مرحباً! 👋 أنا مساعد <strong>Graphics House</strong>.<br><br>أسألني عن خدماتنا، منتجات Launch™، مشاريعنا، عملائنا، أو اطلب <strong>التحدث مع فريقنا</strong>.`,
+    greeting: `وعليكم السلام ورحمة الله! 👋<br><br>أهلاً بك في <strong>Graphics House</strong>. كيف يمكنني مساعدتك اليوم؟`,
     human: `بكل سرور! 👤<br><br>أحوّلك الآن لفريقنا للرد البشري المباشر على واتساب:<br><br>${WA_BTN.ar}<br><br>📞 أو اتصل: <a href="tel:+966502786513">${PHONE_DISPLAY}</a>`,
     services: `خدماتنا للمطورين والمؤسسات في الخليج:<br><br>${servicesList('ar')}<br><br>📎 ${link('/services/rendering.html', 'كل الخدمات')} · ${link(SITE.portfolio.ar, 'معرض الأعمال')}`,
     quote: `لعرض سعر دقيق، شاركنا:<br><br>📌 نوع المشروع والمقاس<br>📅 الجدول الزمني<br>📍 الموقع<br>📎 رسومات أولية إن وُجدت<br><br>⚠️ الأسعار تُحدَّد بعد دراسة المشروع.<br><br><a href="#" data-gh-chat-action="open-form">📝 نموذج استفسار</a> · ${WA_BTN.ar}`,
@@ -77,6 +79,7 @@ export const REPLIES = {
   },
   en: {
     welcome: `Hello! 👋 I'm the <strong>Graphics House</strong> assistant.<br><br>Ask about our services, Launch™ products, projects, clients, or request to <strong>speak with our team</strong>.`,
+    greeting: `Hello! 👋<br><br>Welcome to <strong>Graphics House</strong>. How can I help you today?`,
     human: `Happy to connect you! 👤<br><br>I'll route you to our team for a direct reply on WhatsApp:<br><br>${WA_BTN.en}<br><br>📞 Or call: <a href="tel:+966502786513">${PHONE_DISPLAY}</a>`,
     services: `Our services for GCC developers &amp; institutions:<br><br>${servicesList('en')}<br><br>📎 ${link('/services/rendering-en.html', 'All services')} · ${link(SITE.portfolio.en, 'Portfolio')}`,
     quote: `For an accurate quote, please share:<br><br>📌 Project type &amp; scale<br>📅 Timeline<br>📍 Location<br>📎 Drawings if available<br><br>⚠️ Pricing confirmed after project review.<br><br><a href="#" data-gh-chat-action="open-form">📝 Enquiry form</a> · ${WA_BTN.en}`,
@@ -131,6 +134,38 @@ export function quickRepliesForPage(page, lang) {
   return base;
 }
 
+function normalizeGreeting(text) {
+  return String(text || '')
+    .toLowerCase()
+    .trim()
+    .replace(/[!.,؟?…]/g, '')
+    .replace(/\s+/g, ' ');
+}
+
+export function isGreeting(message) {
+  const text = normalizeGreeting(message);
+  if (!text || text.length > 48) return false;
+  return GREETING_PHRASES.some((phrase) => {
+    const p = normalizeGreeting(phrase);
+    return text === p || text.startsWith(`${p} `);
+  });
+}
+
+export function greetingReplyLang(message, pageLang) {
+  const text = normalizeGreeting(message);
+  const arPhrases = GREETING_PHRASES.filter((p) => /[\u0600-\u06FF]/.test(p));
+  const enPhrases = GREETING_PHRASES.filter((p) => !/[\u0600-\u06FF]/.test(p));
+  if (arPhrases.some((phrase) => {
+    const p = normalizeGreeting(phrase);
+    return text === p || text.startsWith(`${p} `);
+  })) return 'ar';
+  if (enPhrases.some((phrase) => {
+    const p = normalizeGreeting(phrase);
+    return text === p || text.startsWith(`${p} `);
+  })) return 'en';
+  return pageLang === 'ar' ? 'ar' : 'en';
+}
+
 function isHumanRequest(text, lang) {
   const words = HUMAN_KEYWORDS[lang] || HUMAN_KEYWORDS.en;
   const lower = text.toLowerCase();
@@ -140,6 +175,8 @@ function isHumanRequest(text, lang) {
 export function matchIntent(message, lang, page) {
   const text = String(message || '').toLowerCase().trim();
 
+  if (isGreeting(message)) return 'greeting';
+
   if (isHumanRequest(text, lang)) return 'human';
 
   const dict = KEYWORDS[lang] || KEYWORDS.en;
@@ -147,7 +184,7 @@ export function matchIntent(message, lang, page) {
   let bestScore = 0;
 
   for (const [intent, words] of Object.entries(dict)) {
-    if (intent === 'human') continue;
+    if (intent === 'human' || intent === 'greeting') continue;
     let score = 0;
     for (const word of words) {
       if (text.includes(word.toLowerCase())) score += word.length > 4 ? 2 : 1;
@@ -195,10 +232,11 @@ export function handleChatMessage(body) {
   }
 
   const intent = body.intent && REPLIES[lang][body.intent] ? body.intent : matchIntent(message, lang, page);
+  const replyLang = intent === 'greeting' ? greetingReplyLang(message, lang) : lang;
 
   return {
     success: true,
-    reply: buildReply(intent, lang),
+    reply: buildReply(intent, replyLang),
     intent,
     quickReplies: quickRepliesForPage(page, lang),
     openWhatsApp: intent === 'human' || intent === 'whatsapp',

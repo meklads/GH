@@ -126,6 +126,31 @@ export const SITE = {
   portfolio: { ar: '/portfolio.html', en: '/portfolio-en.html' },
 };
 
+export const GREETING_PHRASES = [
+  'السلام عليكم',
+  'عليكم السلام',
+  'سلام عليكم',
+  'سلام',
+  'مرحباً',
+  'مرحبا',
+  'أهلاً',
+  'أهلا',
+  'اهلا',
+  'هلا',
+  'صباح الخير',
+  'مساء الخير',
+  'hello',
+  'hi',
+  'hey',
+  'good morning',
+  'good evening',
+  'good afternoon',
+  'howdy',
+  'salam',
+  'assalamu alaikum',
+  'assalam',
+];
+
 export const HUMAN_KEYWORDS = {
   ar: [
     'انسان', 'إنسان', 'بشر', 'شخص', 'موظف', 'ممثل', 'مسؤول', 'مدير', 'مبيعات',
@@ -142,6 +167,7 @@ export const HUMAN_KEYWORDS = {
 export const KEYWORDS = {
   ar: {
     human: HUMAN_KEYWORDS.ar,
+    greeting: ['سلام', 'السلام', 'عليكم', 'مرحب', 'أهلا', 'اهلا', 'هلا', 'صباح', 'مساء', 'hello', 'hi', 'hey', 'good morning', 'good evening'],
     services: ['خدمات', 'خدمة', 'تقدمون', 'cgi', 'سينمائي', 'إظهار', 'تصور', 'ماذا تقدم'],
     quote: ['سعر', 'عرض', 'تكلفة', 'كم', 'ميزانية', 'تسعير', 'quotation'],
     contact: ['اتصال', 'تواصل', 'رقم', 'جوال', 'ايميل', 'بريد'],
@@ -159,6 +185,7 @@ export const KEYWORDS = {
   },
   en: {
     human: HUMAN_KEYWORDS.en,
+    greeting: ['hello', 'hi', 'hey', 'good morning', 'good evening', 'good afternoon', 'howdy', 'salam', 'assalam', 'سلام', 'مرحب', 'أهلا', 'هلا'],
     services: ['service', 'cgi', 'render', 'visualization', 'visualisation', 'animation', 'what do you offer'],
     quote: ['quote', 'price', 'cost', 'pricing', 'budget', 'estimate', 'how much'],
     contact: ['contact', 'email', 'phone', 'call', 'reach'],
@@ -224,6 +251,7 @@ export function serializeForClient() {
     email: EMAIL,
     site: SITE,
     humanKeywords: HUMAN_KEYWORDS,
+    greetingPhrases: GREETING_PHRASES,
     keywords: KEYWORDS,
   };
 }

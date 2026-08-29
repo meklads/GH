@@ -252,10 +252,34 @@
       });
   }
 
+  function normalizeGreeting(text) {
+    return String(text || '')
+      .toLowerCase()
+      .trim()
+      .replace(/[!.,؟?…]/g, '')
+      .replace(/\s+/g, ' ');
+  }
+
+  function isGreetingMessage(text) {
+    var normalized = normalizeGreeting(text);
+    if (!normalized || normalized.length > 48) return false;
+    var phrases = (window.GH_CHAT_KB && window.GH_CHAT_KB.greetingPhrases) || [
+      'السلام عليكم', 'عليكم السلام', 'سلام عليكم', 'سلام', 'مرحباً', 'مرحبا',
+      'أهلاً', 'أهلا', 'اهلا', 'هلا', 'صباح الخير', 'مساء الخير',
+      'hello', 'hi', 'hey', 'good morning', 'good evening', 'good afternoon', 'salam',
+    ];
+    return phrases.some(function (phrase) {
+      var p = normalizeGreeting(phrase);
+      return normalized === p || normalized.indexOf(p + ' ') === 0;
+    });
+  }
+
   function matchLocalIntent(text, page) {
     var kb = window.GH_CHAT_KB;
     var lang = isAr ? 'ar' : 'en';
     var lower = String(text || '').toLowerCase();
+
+    if (isGreetingMessage(text)) return 'greeting';
 
     if (kb && kb.humanKeywords && kb.humanKeywords[lang]) {
       if (kb.humanKeywords[lang].some(function (w) { return lower.indexOf(w.toLowerCase()) !== -1; })) {
@@ -267,7 +291,7 @@
     var best = 'fallback';
     var bestScore = 0;
     Object.keys(keys).forEach(function (intent) {
-      if (intent === 'human') return;
+      if (intent === 'human' || intent === 'greeting') return;
       (keys[intent] || []).forEach(function (w) {
         if (lower.indexOf(w.toLowerCase()) !== -1) {
           var s = w.length > 4 ? 2 : 1;
@@ -286,12 +310,32 @@
     return best;
   }
 
+  function greetingReplyLang(text, pageLang) {
+    var normalized = normalizeGreeting(text);
+    var phrases = (window.GH_CHAT_KB && window.GH_CHAT_KB.greetingPhrases) || [];
+    var arPhrases = phrases.filter(function (p) { return /[\u0600-\u06FF]/.test(p); });
+    var enPhrases = phrases.filter(function (p) { return !/[\u0600-\u06FF]/.test(p); });
+    if (arPhrases.some(function (phrase) {
+      var p = normalizeGreeting(phrase);
+      return normalized === p || normalized.indexOf(p + ' ') === 0;
+    })) return 'ar';
+    if (enPhrases.some(function (phrase) {
+      var p = normalizeGreeting(phrase);
+      return normalized === p || normalized.indexOf(p + ' ') === 0;
+    })) return 'en';
+    return pageLang;
+  }
+
   function localReply(payload) {
     var lang = isAr ? 'ar' : 'en';
     var intent = payload.intent;
 
     if (!intent || intent === 'fallback') {
       intent = matchLocalIntent(payload.message || '', payload.page || location.pathname);
+    }
+
+    if (intent === 'greeting') {
+      lang = greetingReplyLang(payload.message || '', lang);
     }
 
     if (window.GH_CHAT_KB && window.GH_CHAT_KB.replies && window.GH_CHAT_KB.replies[lang]) {
