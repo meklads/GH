@@ -112,7 +112,7 @@ export const SITE = {
     { client: { ar: 'الأولى — النخيل', en: 'Al-Owla Nakheel' }, title: { ar: 'تصور سينمائي لوحدات سكنية', en: 'Cinematic visualization for residential units' }, services: ['cgi', 'rendering'], url: { ar: '/insights/projects/al-owla-nakheel.html', en: '/insights/projects/al-owla-nakheel-en.html' } },
     { client: { ar: 'أبراج الخير — مكة', en: 'Al Khair Heights — Makkah' }, title: { ar: 'إظهار معماري سكني باحترام السياق', en: 'Residential archviz with place sensitivity' }, services: ['rendering', 'cgi'], url: { ar: '/insights/projects/al-khair-makkah.html', en: '/insights/projects/al-khair-makkah-en.html' } },
     { client: { ar: 'كداء — مكة', en: 'Kuday — Makkah' }, title: { ar: 'إظهار واقعي لبرج سكني', en: 'Photorealistic tower archviz' }, services: ['rendering'], url: { ar: '/insights/projects/kuday-makkah.html', en: '/insights/projects/kuday-makkah-en.html' } },
-    { client: { ar: 'واحة السلام', en: 'Wahat Al Salam' }, title: { ar: 'قصة بصرية لمخطط سكني متكامل', en: 'Visual narrative for integrated residential masterplan' }, services: ['rendering', 'cgi'], url: { ar: '/insights/projects/wahat-al-salam.html', en: '/insights/projects/wahat-al-salam-en.html' } },
+    { client: { ar: 'عقارات العيسائي — واحة السلام', en: 'Al-Essai Real Estate — Wahat Al Salam' }, title: { ar: 'مخطط حي كامل وأفلام وكتالوج — بيع كل الوحدات', en: 'Living master plan, films & catalogue — full sell-out' }, services: ['rendering', 'cgi', 'branding', 'production'], url: { ar: '/insights/projects/wahat-al-salam.html', en: '/insights/projects/wahat-al-salam-en.html' } },
   ],
   insights: {
     articles: { ar: '/insights/articles.html', en: '/insights/articles.html' },

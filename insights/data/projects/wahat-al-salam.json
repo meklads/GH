@@ -2,25 +2,50 @@
   "slug": "wahat-al-salam",
   "date": "2023-09",
   "image": "assets/projects/rendering/wahat-alsalam9-scaled.jpg",
-  "developer": { "ar": "واحة السلام", "en": "Wahat Al Salam" },
-  "projectName": { "ar": "المخطط الرئيسي السكني", "en": "Residential Master Plan" },
-  "city": { "ar": "المملكة العربية السعودية", "en": "Saudi Arabia" },
-  "category": { "ar": "مخطط رئيسي · فيلم CGI", "en": "Master plan · CGI film" },
+  "youtubeId": "vCJ55NstJ0I",
+  "developer": {
+    "ar": "عقارات العيسائي",
+    "en": "Al-Essai Real Estate"
+  },
+  "projectName": {
+    "ar": "واحة السلام — مخطط سكني متكامل",
+    "en": "Wahat Al Salam — Integrated Residential Master Plan"
+  },
+  "city": {
+    "ar": "المملكة العربية السعودية",
+    "en": "Saudi Arabia"
+  },
+  "category": {
+    "ar": "مخطط رئيسي · نماذج 3D · فيلم CGI · كتالوج",
+    "en": "Master plan · 3D models · CGI film · Catalogue"
+  },
   "title": {
-    "ar": "واحة السلام: قصة بصرية لمخطط سكني متكامل",
-    "en": "Wahat Al Salam: visual narrative for an integrated residential master plan"
+    "ar": "واحة السلام: مدينة حية قبل أول وحدة — من النماذج إلى بيع كامل",
+    "en": "Wahat Al Salam: a living city before day one — from models to full sell-out"
   },
   "excerpt": {
-    "ar": "مشاهد جوية وتقسيم مراحل لفيلم إطلاق مخطط سكني واسع، مواد جاهزة لفرق المبيعات والمستثمرين بنفس الجودة السينمائية.",
-    "en": "Aerial views and phasing sequences for a master plan launch film, sales and investor ready assets with consistent cinematic quality."
+    "ar": "لصالح عقارات العيسائي (مجموعة العيسائي): بنينا المخطط بالكامل — فلل وعمائر وخدمات ولاندسكيب — ثم أفلام سينمائية وصور عالية الجودة وكتالوج فاخر. النتيجة: بيع كل الوحدات بنجاح مبهر.",
+    "en": "For Al-Essai Real Estate (Al-Essai Group): we built the full master plan — villas, buildings, amenities, and landscape — then cinematic films, high-end stills, and a luxury catalogue. Outcome: every unit sold."
   },
   "metaDescription": {
-    "ar": "واحة السلام: تصور مخطط رئيسي وفيلم CGI من Graphics House لإطلاق مجتمع سكني واسع.",
-    "en": "Wahat Al Salam: master plan visualization and CGI film by Graphics House for a large community launch."
+    "ar": "دراسة حالة واحة السلام لعقارات العيسائي: نماذج وحدات، مخطط حي كامل، أفلام CGI، رندرات، وكتالوج فاخر — مع بيع كامل للوحدات.",
+    "en": "Wahat Al Salam case study for Al-Essai Real Estate: unit models, full living master plan, CGI films, renders, and luxury catalogue — with full sell-out."
   },
   "services": {
-    "ar": ["مخطط رئيسي", "فيلم CGI", "مشاهد جوية"],
-    "en": ["Master plan", "CGI film", "Aerial views"]
+    "ar": [
+      "نماذج الوحدات",
+      "مخطط كامل 3D",
+      "فيلم CGI",
+      "رندرات",
+      "كتالوج فاخر"
+    ],
+    "en": [
+      "Unit models",
+      "Full 3D master plan",
+      "CGI film",
+      "Renders",
+      "Luxury catalogue"
+    ]
   },
   "gallery": [
     "assets/projects/rendering/bird.jpg",
@@ -31,7 +56,7 @@
     "ar": [
       {
         "type": "p",
-        "text": "المخططات السكنية الكبرى تحتاج قصة بصرية تشرح التقسيم والكثافة والمساحات الخضراء قبل أن يفهم المشتري قائمة الوحدات. واحة السلام نموذج على فيلم ومشاهد رندر تخدم الإطلاق والمستثمرين في آن واحد."
+        "text": "واحة السلام مشروع مخطط سكني لصالح **عقارات العيسائي** التابعة لمجموعة العيسائي. المطلوب لم يكن صوراً منفصلة، بل مدينة بصرية كاملة: أنواع الفلل والعمائر، الخدمات (مستشفيات، مولات، مراكز صحية)، الشوارع، واللاندسكيب — بحيث يُرى المخطط كحيّ فيه سكان وحياة طبيعية قبل أول صفقة."
       },
       {
         "type": "h2",
@@ -39,7 +64,7 @@
       },
       {
         "type": "p",
-        "text": "المستثمر يريد مخططاً ومراحل ومسارات في دقائق؛ المشتري يريد أن يرى الحي والمرافق. بدون [فيلم CGI](https://3dgraphicshouse.com/services/cinematic-cgi.html) و[رندر جوي](https://3dgraphicshouse.com/services/rendering.html) متسقين يتحول العرض إلى شرائح منفصلة بلا قصة."
+        "text": "المخطط الكبير لا يُباع بقائمة وحدات. المستثمر والمشتري يحتاجان أن يفهما التقسيم والكثافة والمرافق والمسارات في دقائق. بدون نماذج دقيقة للمساكن والخدمات، ومخطط حيّ متكامل، وفيلم يربط القصة، يبقى العرض مجرّد شرائح بلا إحساس بالمكان."
       },
       {
         "type": "h2",
@@ -47,15 +72,16 @@
       },
       {
         "type": "p",
-        "text": "نفّذنا فيلم إطلاق مع مشاهد جوية وتقسيم مراحل، بإضاءة ومواد مقفلة عبر المخرجات. الحزمة صُممت للعرض في اجتماعات المستثمرين والمعارض وصالات البيع ضمن [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html)."
+        "text": "قدّمنا حزمة إطلاق متكاملة ضمن [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html): من نماذج الوحدات إلى المدينة الحية، ثم المحتوى السينمائي والكتالوج الذي تحتاجه فرق المبيعات والمستثمرون."
       },
       {
         "type": "ul",
         "items": [
-          "مشاهد جوية توضح المخطط والكثافة والمساحات الخضراء",
-          "تسلسل مراحل البيع في الفيلم",
-          "رندرات داعمة للحملة والوسيط",
-          "جودة سينمائية متسقة عبر القنوات"
+          "بناء عدة نماذج لأنواع الوحدات: الفلل والعمائر ومرافق الخدمات (مستشفيات، مولات، مراكز صحية)",
+          "بناء المخطط بالكامل: شوارع وبنايات وخدمات ولاندسكيب، مع إضفاء حياة طبيعية وسكان كأن المدينة قائمة",
+          "[أفلام سينمائية](https://3dgraphicshouse.com/services/cinematic-cgi.html) وإعلانات للمشروع — منها [فيلم الإطلاق](https://youtu.be/vCJ55NstJ0I)",
+          "[صور عالية الجودة](https://3dgraphicshouse.com/services/rendering.html) تغطي المخطط والفلل والشوارع والمرافق بزوايا متنوعة",
+          "كتالوج فاخر للمشروع يوحّد الرسالة البصرية لفرق المبيعات والوسطاء"
         ]
       },
       {
@@ -64,13 +90,13 @@
       },
       {
         "type": "p",
-        "text": "المواد أصبحت جاهزة لفرق المبيعات والمستثمرين بنفس الجودة السينمائية. للمقارنة مع مجتمعات واسعة أخرى راجع [سدرة ROSHN](https://3dgraphicshouse.com/insights/reports/sedra-roshn-visual-report.html) و[مبيعات المجتمع المخطط](https://3dgraphicshouse.com/insights/articles/masterplan-community-visual-sales.html). بعد القفل يمكن التضخيم عبر [Beesmotion](https://beesmotion.com)."
+        "text": "الحزمة البصرية دعمت الإطلاق والمبيعات حتى **بيع كل الوحدات بنجاح مبهر**. واحة السلام نموذج على كيف يحوّل المخطط من رسم إلى مدينة يثق بها المشتري قبل البناء. للمقارنة مع مجتمعات واسعة أخرى راجع [سدرة ROSHN](https://3dgraphicshouse.com/insights/reports/sedra-roshn-visual-report.html) و[مبيعات المجتمع المخطط](https://3dgraphicshouse.com/insights/articles/masterplan-community-visual-sales.html)."
       }
     ],
     "en": [
       {
         "type": "p",
-        "text": "Large residential master plans need a visual story explaining phasing, density, and green space before buyers parse unit lists. Wahat Al Salam shows how launch films and render sequences serve investors and sales together."
+        "text": "Wahat Al Salam is a residential master plan for **Al-Essai Real Estate**, part of the Al-Essai Group. The brief was not isolated stills — it was a complete visual city: villa and building typologies, amenities (hospitals, malls, health centers), streets, and landscape — so the plan reads as a neighborhood with people and everyday life before the first deal."
       },
       {
         "type": "h2",
@@ -78,7 +104,7 @@
       },
       {
         "type": "p",
-        "text": "Investors want plan, phasing, and paths in minutes; buyers want to see the neighborhood and amenities. Without a consistent [CGI film](https://3dgraphicshouse.com/services/cinematic-cgi-en.html) and [aerial render](https://3dgraphicshouse.com/services/rendering-en.html), the presentation becomes disconnected slides without a story."
+        "text": "A large master plan does not sell from a unit list. Investors and buyers need phasing, density, amenities, and paths in minutes. Without accurate residential and amenity models, a living full-plan scene, and a film that holds the story, the pitch stays a stack of slides with no sense of place."
       },
       {
         "type": "h2",
@@ -86,15 +112,16 @@
       },
       {
         "type": "p",
-        "text": "We produced a launch film with aerial views and phasing sequences, with locked lighting and materials across deliverables. The pack was designed for investor meetings, exhibitions, and sales galleries under [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html)."
+        "text": "We delivered a full launch pack under [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html): from unit models to a living city, then cinematic content and the catalogue sales and investors need."
       },
       {
         "type": "ul",
         "items": [
-          "Aerial scenes clarifying plan, density, and green space",
-          "Sales phasing sequence in the film",
-          "Supporting renders for campaign and brokers",
-          "Consistent cinematic quality across channels"
+          "Multiple unit-type models: villas, buildings, and amenity facilities (hospitals, malls, health centers)",
+          "Full master plan build-out: streets, buildings, services, and landscape — with natural life and people so the city feels inhabited",
+          "[Cinematic CGI films](https://3dgraphicshouse.com/services/cinematic-cgi-en.html) and project ads — including the [launch film](https://youtu.be/vCJ55NstJ0I)",
+          "[High-quality stills](https://3dgraphicshouse.com/services/rendering-en.html) covering the plan, villas, streets, and amenities from multiple angles",
+          "A luxury project catalogue unifying the visual message for sales teams and brokers"
         ]
       },
       {
@@ -103,69 +130,81 @@
       },
       {
         "type": "p",
-        "text": "Assets became ready for sales teams and investors with the same cinematic quality. For comparison with other large communities see [Sedra ROSHN](https://3dgraphicshouse.com/insights/reports/sedra-roshn-visual-report-en.html) and [masterplan community visual sales](https://3dgraphicshouse.com/insights/articles/masterplan-community-visual-sales-en.html). After lock, amplify via [Beesmotion](https://beesmotion.com)."
+        "text": "The visual pack supported launch and sales through to an **impressive full sell-out of every unit**. Wahat Al Salam shows how a plan becomes a city buyers trust before construction. For comparison with other large communities see [Sedra ROSHN](https://3dgraphicshouse.com/insights/reports/sedra-roshn-visual-report-en.html) and [masterplan community visual sales](https://3dgraphicshouse.com/insights/articles/masterplan-community-visual-sales-en.html)."
       }
     ]
   },
   "keywords": {
     "ar": {
-      "short": ["واحة السلام", "مخطط رئيسي", "فيلم CGI", "مجتمع سكني"],
+      "short": [
+        "واحة السلام",
+        "عقارات العيسائي",
+        "مخطط رئيسي",
+        "فيلم CGI",
+        "كتالوج"
+      ],
       "long": [
-        "تصور مخطط رئيسي واحة السلام",
+        "دراسة حالة واحة السلام عقارات العيسائي",
+        "نماذج فلل وعمائر مخطط سكني",
         "فيلم إطلاق مجتمع سكني Graphics House",
-        "مشاهد جوية تقسيم مراحل",
-        "ProjectLaunch مخطط سكني"
+        "بيع كامل وحدات مخطط رئيسي"
       ]
     },
     "en": {
-      "short": ["Wahat Al Salam", "master plan", "CGI film", "residential community"],
+      "short": [
+        "Wahat Al Salam",
+        "Al-Essai Real Estate",
+        "master plan",
+        "CGI film",
+        "catalogue"
+      ],
       "long": [
-        "Wahat Al Salam master plan visualization",
+        "Wahat Al Salam Al-Essai case study",
+        "villa and building models residential masterplan",
         "community launch CGI film Graphics House",
-        "aerial phasing sequences",
-        "ProjectLaunch residential masterplan"
+        "full sell-out residential master plan"
       ]
     }
   },
   "faq": [
     {
       "q": {
-        "ar": "لماذا فيلم وليس رندرات فقط؟",
-        "en": "Why film and not renders alone?"
+        "ar": "من هو العميل؟",
+        "en": "Who was the client?"
       },
       "a": {
-        "ar": "المخطط الكبير يُباع بقصة: مراحل، كثافة، ومسارات. الفيلم يختصر شرح PDF في دقائق.",
-        "en": "Large master plans sell on story: phasing, density, and paths. Film shortens PDF explanation in minutes."
+        "ar": "عقارات العيسائي، التابعة لمجموعة العيسائي.",
+        "en": "Al-Essai Real Estate, part of the Al-Essai Group."
       }
     },
     {
       "q": {
-        "ar": "ما الذي شمله التسليم؟",
-        "en": "What did the delivery include?"
+        "ar": "ما الذي شمله التسليم بالضبط؟",
+        "en": "What exactly did delivery include?"
       },
       "a": {
-        "ar": "فيلم CGI، مشاهد جوية، وتقسيم مراحل ضمن [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html).",
-        "en": "CGI film, aerial views, and phasing sequences under [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html)."
+        "ar": "نماذج وحدات (فلل وعمائر وخدمات)، مخطط 3D كامل مع شوارع ولاندسكيب وحياة، أفلام وإعلانات CGI، رندرات عالية الجودة، وكتالوج فاخر ضمن [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch.html).",
+        "en": "Unit models (villas, buildings, amenities), a full 3D master plan with streets, landscape, and life, CGI films and ads, high-quality renders, and a luxury catalogue under [ProjectLaunch™](https://3dgraphicshouse.com/solutions/project-launch-en.html)."
       }
     },
     {
       "q": {
-        "ar": "هل يمكن إضافة مجسم أو تجربة تفاعلية؟",
-        "en": "Can a maquette or interactive experience be added?"
+        "ar": "أين أشاهد الفيلم؟",
+        "en": "Where can I watch the film?"
       },
       "a": {
-        "ar": "نعم، [مجسم ذكي](https://3dgraphicshouse.com/services/maquettes.html) و[تجارب تفاعلية](https://3dgraphicshouse.com/services/interactive-experiences.html) تكمّل الفيلم في الصالة.",
-        "en": "Yes, [smart maquette](https://3dgraphicshouse.com/services/maquettes-en.html) and [interactive experiences](https://3dgraphicshouse.com/services/interactive-experiences-en.html) complement film in the gallery."
+        "ar": "فيلم المشروع متاح على الصفحة أعلاه، أو مباشرة عبر [YouTube](https://youtu.be/vCJ55NstJ0I).",
+        "en": "The project film is embedded on this page, or directly on [YouTube](https://youtu.be/vCJ55NstJ0I)."
       }
     },
     {
       "q": {
-        "ar": "أين أقرأ عن مجتمعات مخططة مشابهة؟",
-        "en": "Where can I read about similar masterplan communities?"
+        "ar": "ما نتيجة المشروع؟",
+        "en": "What was the project outcome?"
       },
       "a": {
-        "ar": "[تقرير سدرة](https://3dgraphicshouse.com/insights/reports/sedra-roshn-visual-report.html) و[مبيعات المجتمع المخطط](https://3dgraphicshouse.com/insights/articles/masterplan-community-visual-sales.html).",
-        "en": "[Sedra report](https://3dgraphicshouse.com/insights/reports/sedra-roshn-visual-report-en.html) and [masterplan community visual sales](https://3dgraphicshouse.com/insights/articles/masterplan-community-visual-sales-en.html)."
+        "ar": "تم بيع كل الوحدات بنجاح مبهر بعد دعم الإطلاق بهذه الحزمة البصرية.",
+        "en": "Every unit sold successfully after the launch was supported by this visual pack."
       }
     }
   ]

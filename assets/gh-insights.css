@@ -908,6 +908,21 @@ html[dir="rtl"] .gh-ins-proj-meta {
   background: #0f0e0c;
 }
 
+.gh-ins-featured-video-frame.gh-ins-media--youtube {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #0f0e0c;
+}
+
+.gh-ins-featured-video-frame.gh-ins-media--youtube iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 /* ----- Market visual reports (Project Spotlights) ----- */
 .gh-ins-report-filters {
   display: flex;

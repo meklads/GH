@@ -101,7 +101,7 @@ function richText(s) {
     last = m.index + m[0].length;
   }
   if (last < str.length) out += esc(str.slice(last));
-  return out;
+  return out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 }
 
 function renderBodyBlock(block) {
@@ -143,6 +143,18 @@ function mediaFigure(src, depthPrefix, { poster, className = 'gh-ins-proj-gal-it
 }
 
 function featuredVideoHtml(entity, depthPrefix, isEn) {
+  if (entity.youtubeId) {
+    const id = String(entity.youtubeId).replace(/[^a-zA-Z0-9_-]/g, '');
+    if (!id) return '';
+    const label = isEn ? 'Watch the film' : 'شاهد الفيلم';
+    const title = isEn ? 'Project film' : 'فيلم المشروع';
+    return `<div class="gh-ins-featured-video">
+  <p class="gh-ins-featured-video-label">${label}</p>
+  <div class="gh-ins-featured-video-frame gh-ins-media--youtube">
+    <iframe src="https://www.youtube.com/embed/${id}?rel=0&modestbranding=1" title="${esc(title)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>`;
+  }
   if (!entity.video) return '';
   const poster = entity.videoPoster || '';
   const label = isEn ? 'Watch interview / clip' : 'شاهد المقابلة / المقطع';
@@ -306,7 +318,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${p}assets/site-header.css?v=37">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=29">
-<link rel="stylesheet" href="${p}assets/gh-insights.css?v=28">
+<link rel="stylesheet" href="${p}assets/gh-insights.css?v=29">
 <link rel="stylesheet" href="${p}assets/gh-insights-article.css?v=5">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=10">
 ${isEn ? `<link rel="stylesheet" href="${p}assets/gh-en-typography.css?v=1">` : `<link rel="stylesheet" href="${p}assets/gh-ar-typography.css?v=2">`}
