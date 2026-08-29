@@ -39,6 +39,16 @@
     document.body.style.overflow = '';
   }
 
+  function eagerLoad(root) {
+    root.querySelectorAll('img').forEach(function (img) {
+      img.loading = 'eager';
+      img.setAttribute('loading', 'eager');
+      if (img.dataset.src && !img.getAttribute('src')) {
+        img.src = img.dataset.src;
+      }
+    });
+  }
+
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeLightbox();
   });
@@ -52,6 +62,7 @@
 
   document.querySelectorAll('[data-gh-album-track]').forEach(function (track) {
     if (track.getAttribute('data-gh-album-ready')) return;
+    eagerLoad(track);
     var items = Array.prototype.slice.call(track.children);
     if (!items.length) return;
     items.forEach(function (item) {
@@ -62,6 +73,7 @@
       });
       track.appendChild(clone);
     });
+    eagerLoad(track);
     track.setAttribute('data-gh-album-ready', '1');
   });
 })();

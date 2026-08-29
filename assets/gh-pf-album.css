@@ -18,6 +18,7 @@
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   position: relative;
+  direction: ltr;
 }
 
 .pf-album__frame {
@@ -25,7 +26,7 @@
   overflow: hidden;
   width: 100%;
   height: clamp(300px, 46vw, 500px);
-  background: #111;
+  background: #f7f5f0;
   border-block: 1px solid rgba(26, 26, 26, 0.08);
 }
 
@@ -35,19 +36,19 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: min(100px, 10vw);
+  width: min(72px, 8vw);
   z-index: 3;
   pointer-events: none;
 }
 
 .pf-album__frame::before {
   left: 0;
-  background: linear-gradient(to right, #FAFAF8 0%, rgba(250, 250, 248, 0) 100%);
+  background: linear-gradient(to right, #f7f5f0 0%, rgba(247, 245, 240, 0) 100%);
 }
 
 .pf-album__frame::after {
   right: 0;
-  background: linear-gradient(to left, #FAFAF8 0%, rgba(250, 250, 248, 0) 100%);
+  background: linear-gradient(to left, #f7f5f0 0%, rgba(247, 245, 240, 0) 100%);
 }
 
 .pf-album__track {
@@ -57,9 +58,9 @@
   align-items: stretch;
   width: max-content;
   height: 100%;
-  gap: 12px;
-  padding: 0 12px;
-  animation: pfAlbumScroll 70s linear infinite;
+  gap: 0;
+  padding: 0;
+  animation: pfAlbumScroll 140s linear infinite;
   will-change: transform;
   direction: ltr;
 }
@@ -85,27 +86,34 @@
   border-radius: 0;
   overflow: hidden;
   cursor: pointer;
-  background: #1a1a1a;
+  background: transparent;
   display: block;
   text-align: left;
   appearance: none;
   -webkit-appearance: none;
 }
 
-.pf-album .pf-item img,
-.pf-album .pf-item picture {
+.pf-album .pf-item picture,
+.pf-album .pf-item > img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   display: block;
+  margin: 0;
 }
 
 .pf-album .pf-item img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.1, 1);
 }
 
 .pf-album .pf-item:hover img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .pf-item-overlay {
@@ -113,8 +121,9 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 2;
   padding: 28px 18px 16px;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.82));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
   transform: translateY(8px);
   opacity: 0;
   transition: all 0.35s ease;
@@ -205,6 +214,8 @@ html[dir="ltr"] .pf-item-overlay {
     overflow-x: auto;
     width: 100%;
     max-width: 100%;
+    gap: 8px;
+    padding: 0 12px;
   }
 }
 

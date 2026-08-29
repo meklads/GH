@@ -171,8 +171,8 @@ function projectAlbumHtml(project, lang, depthPrefix) {
       const webp = String(src).replace(/\.(jpe?g|png)$/i, '.webp');
       const hasWebp = webp !== src && fs.existsSync(path.join(ROOT, webp));
       const img = hasWebp
-        ? `<picture><source srcset="${depthPrefix}${webp}" type="image/webp"><img src="${full}" alt="${esc(title)}" loading="lazy" decoding="async"></picture>`
-        : `<img src="${full}" alt="${esc(title)}" loading="lazy" decoding="async">`;
+        ? `<picture><source srcset="${depthPrefix}${webp}" type="image/webp"><img src="${full}" alt="${esc(title)}" loading="eager" decoding="async"></picture>`
+        : `<img src="${full}" alt="${esc(title)}" loading="eager" decoding="async">`;
       return `<button type="button" class="pf-item" data-gh-album-full="${esc(full)}" data-gh-album-alt="${esc(title)}" aria-label="${esc(isEn ? `View ${title}` : `عرض ${title}`)}">
       ${img}
       <span class="pf-item-overlay">
@@ -370,7 +370,7 @@ ${analyticsHeadTags(p)}
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=29">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=29">
 <link rel="stylesheet" href="${p}assets/gh-insights-article.css?v=5">
-<link rel="stylesheet" href="${p}assets/gh-pf-album.css?v=1">
+<link rel="stylesheet" href="${p}assets/gh-pf-album.css?v=2">
 <link rel="stylesheet" href="${p}assets/gh-float-widgets.css?v=10">
 ${isEn ? `<link rel="stylesheet" href="${p}assets/gh-en-typography.css?v=1">` : `<link rel="stylesheet" href="${p}assets/gh-ar-typography.css?v=2">`}
 <script defer src="${p}assets/site-header.js?v=16"></script>
@@ -387,7 +387,7 @@ function tailScripts(depth, { article = false, album = false } = {}) {
     ? `\n<script defer src="${p}assets/gh-insights-article.js?v=6"></script>\n<script defer src="${p}assets/gh-newsletter.js?v=5"></script>`
     : '';
   const albumJs = album
-    ? `\n<script defer src="${p}assets/gh-pf-album.js?v=1"></script>`
+    ? `\n<script defer src="${p}assets/gh-pf-album.js?v=2"></script>`
     : '';
   return `
 <script defer src="${p}assets/gh-float-widgets.js?v=9"></script>${articleJs}${albumJs}
