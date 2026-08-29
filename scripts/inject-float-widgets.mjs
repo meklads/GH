@@ -22,8 +22,8 @@ const SKIP = new Set([
   'solutions/project-launch-ads-en.html',
 ]);
 
-const FLOAT_VERSION = 14;
-const CHAT_VERSION = 6;
+const FLOAT_VERSION = 15;
+const CHAT_VERSION = 7;
 const KB_VERSION = 1;
 
 const HOMEPAGE_SKIP_REPLACE = new Set([]);

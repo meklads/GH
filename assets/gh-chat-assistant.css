@@ -60,7 +60,6 @@ html[dir="rtl"] #ghChatPanel.gh-chat-panel {
   object-fit: contain;
   border-radius: 50%;
   flex-shrink: 0;
-  filter: brightness(0) saturate(100%) invert(71%) sepia(52%) saturate(650%) hue-rotate(5deg) brightness(95%) contrast(92%);
 }
 
 .gh-chat-head-spacer {

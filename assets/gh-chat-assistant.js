@@ -12,7 +12,7 @@
     if (img && img.getAttribute('src')) return img.getAttribute('src');
     var brand = document.querySelector('.gh-float-brand-logo');
     if (brand && brand.getAttribute('src')) return brand.getAttribute('src');
-    return 'assets/chatbot-motif-clear.png';
+    return 'assets/chatbot-motif.png';
   })();
 
   function chatEndpoint() {
