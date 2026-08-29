@@ -19,10 +19,10 @@ const PROJECTS = [
   },
   {
     slug: 'rafal',
-    nameEn: 'Rafal',
-    nameAr: 'رفال',
-    img: 'assets/projects/animation/rafal-pavilions.jpg',
-    webp: 'assets/projects/animation/rafal-pavilions.webp',
+    nameEn: 'Rafal Pavilions',
+    nameAr: 'بافيليونز رفال',
+    img: 'assets/projects/rafal-pavilions/lobby.jpg',
+    webp: 'assets/projects/rafal-pavilions/lobby.webp',
   },
   {
     slug: 'alissa',

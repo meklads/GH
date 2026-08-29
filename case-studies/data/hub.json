@@ -38,6 +38,17 @@
     {
       "featured": false,
       "mega": true,
+      "megaOrder": 6,
+      "href": { "ar": "insights/projects/rafal-pavilions.html", "en": "insights/projects/rafal-pavilions-en.html" },
+      "image": "assets/projects/rafal-pavilions/lobby.jpg",
+      "title": { "ar": "بافيليونز — رفال للتطوير", "en": "Pavilions — Rafal Development" },
+      "shortTitle": { "ar": "مشروع بافيليونز", "en": "Pavilions Project" },
+      "tag": { "ar": "فيلم CGI · مجسم · مكاتب VIP · الرياض", "en": "CGI film · Maquette · VIP offices · Riyadh" },
+      "location": { "ar": "الرياض", "en": "Riyadh" }
+    },
+    {
+      "featured": false,
+      "mega": true,
       "megaOrder": 4,
       "href": { "ar": "insights/projects/wahat-al-salam.html", "en": "insights/projects/wahat-al-salam-en.html" },
       "image": "assets/projects/wahat-al-salam/hero-aerial.jpg",
