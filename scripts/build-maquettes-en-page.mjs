@@ -125,8 +125,9 @@ body { font-family: 'Inter', 'Tajawal', -apple-system, BlinkMacSystemFont, sans-
 ${css}
 </style>
 <script defer src="${P}assets/site-header.js?v=16"></script>
-<script defer src="${P}assets/gh-performance.js?v=2"></script>
-<script defer src="${P}assets/lang-switch.js?v=1"></script>
+<script defer src="${P}assets/gh-performance.js?v=10"></script>
+<script defer src="${P}assets/site-reveal.js?v=2"></script>
+<script defer src="${P}assets/lang-switch.js?v=2"></script>
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Service',

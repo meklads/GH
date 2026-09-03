@@ -31,9 +31,15 @@ function hasRevealObserver(html) {
 }
 
 function injectRevealAssets(html, depth) {
-  if (!html.includes('class="reveal"') && !html.includes("class='reveal'")) return html;
-  if (hasRevealObserver(html)) return html;
-  const tag = REVEAL_ASSETS(depth);
+  const needsReveal =
+    /\bclass="[^"]*\breveal\b/.test(html) ||
+    /\bclass='[^']*\breveal\b/.test(html) ||
+    html.includes('gallery-video');
+  if (!needsReveal) return html;
+  if (hasRevealObserver(html)) {
+    return html.replace(/site-reveal\.js(\?v=\d+)?/g, 'site-reveal.js?v=2');
+  }
+  const tag = REVEAL_ASSETS(depth).replace('site-reveal.js', 'site-reveal.js?v=2');
   if (html.includes('</head>')) {
     return html.replace('</head>', `${tag}</head>`);
   }

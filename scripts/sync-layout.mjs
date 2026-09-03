@@ -104,6 +104,37 @@ function ensurePerformanceScript(html, prefix) {
   return html;
 }
 
+/** Pages with .reveal { opacity:0 } stay invisible without site-reveal.js */
+function ensureRevealScript(html, prefix) {
+  const needsReveal =
+    /\bclass="[^"]*\breveal\b/.test(html) ||
+    /\bclass='[^']*\breveal\b/.test(html) ||
+    html.includes('gallery-video');
+  if (!needsReveal) return html;
+
+  const revealTag = `<script defer src="${prefix}site-reveal.js?v=2"></script>`;
+  if (html.includes('site-reveal.js')) {
+    return html.replace(/site-reveal\.js(\?v=\d+)?/g, 'site-reveal.js?v=2');
+  }
+
+  if (html.includes('gh-performance.js')) {
+    return html.replace(
+      /(<script defer src="[^"]*gh-performance\.js[^"]*"><\/script>)/,
+      `$1\n${revealTag}`
+    );
+  }
+  if (html.includes('site-header.js')) {
+    return html.replace(
+      /(<script defer src="[^"]*site-header\.js[^"]*"><\/script>)/,
+      `$1\n${revealTag}`
+    );
+  }
+  if (/<\/head>/i.test(html)) {
+    return html.replace(/<\/head>/i, `${revealTag}\n</head>`);
+  }
+  return html;
+}
+
 function ensureFontDisplaySwap(html) {
   return html.replace(
     /fonts\.googleapis\.com\/css2\?([^"']+)/g,
@@ -246,6 +277,7 @@ function syncFile(rel) {
   html = ensureHeaderCssOrder(html, prefix);
 
   html = ensurePerformanceScript(html, prefix);
+  html = ensureRevealScript(html, prefix);
 
   fs.writeFileSync(full, html, 'utf8');
   return rel;
