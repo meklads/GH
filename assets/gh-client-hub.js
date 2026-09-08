@@ -7,11 +7,21 @@ window.GH_CLIENT_HUB_PASS =
 
 window.GH_CLIENT_HUB_ITEMS = [
   {
+    id: 'mechanical',
+    title: { ar: 'النظام الميكانيكي', en: 'Mechanical System' },
+    desc: {
+      ar: 'ألبوم فيديو للمجسمات المتحركة والديناميكية، مع مصنع السويدي كعرض افتراضي.',
+      en: 'Video album of kinetic and dynamic maquettes, with Sweedy Factory as the default film.',
+    },
+    href: { ar: 'client-hub-mechanical.html', en: 'client-hub-mechanical-en.html' },
+    icon: 'precision_manufacturing',
+  },
+  {
     id: 'folio',
     title: { ar: 'ملف الشركة', en: 'Company Profile' },
     desc: {
-      ar: 'بروفايل جرافيكس هاوس — للنسخ الخاصة والمشاركات المحدودة.',
-      en: 'Graphics House company folio — for private sharing only.',
+      ar: 'بروفايل جرافيكس هاوس للنسخ الخاصة والمشاركات المحدودة.',
+      en: 'Graphics House company folio for private sharing only.',
     },
     href: 'assets/share/folio-private.pdf',
     icon: 'picture_as_pdf',
@@ -57,14 +67,22 @@ window.GH_CLIENT_HUB_ITEMS = [
       .map((item) => {
         const title = item.title[lang] || item.title.en;
         const desc = item.desc[lang] || item.desc.en;
-        const href = prefix + item.href;
+        const rawHref =
+          item.href && typeof item.href === 'object'
+            ? item.href[lang] || item.href.en
+            : item.href;
+        const href = prefix + rawHref;
         const open = lang === 'en' ? 'Open' : 'فتح';
+        const isPage = /\.html($|\?)/i.test(rawHref || '');
+        const targetAttrs = isPage
+          ? ''
+          : ' target="_blank" rel="noopener noreferrer"';
         return `<article class="gh-hub-card">
           <div class="gh-hub-card__icon"><span class="material-symbols-outlined">${item.icon || 'lock'}</span></div>
           <div class="gh-hub-card__body">
             <h2>${title}</h2>
             <p>${desc}</p>
-            <a class="gh-hub-card__btn" href="${href}" target="_blank" rel="noopener noreferrer">${open}</a>
+            <a class="gh-hub-card__btn" href="${href}"${targetAttrs}>${open}</a>
           </div>
         </article>`;
       })
