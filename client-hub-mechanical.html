@@ -37,16 +37,7 @@ gtag('config','G-Y67JVE898Z');
   <a href="client-hub.html">بوابة العملاء ←</a>
 </header>
 
-<section id="ghHubGate" class="gh-mech-gate" aria-label="دخول محمي">
-  <form id="ghHubForm">
-    <label for="ghHubPass">كلمة المرور</label>
-    <input id="ghHubPass" type="password" autocomplete="current-password" required placeholder="••••••••">
-    <button type="submit">دخول</button>
-    <p id="ghHubErr" class="gh-mech-err" hidden>كلمة المرور غير صحيحة.</p>
-  </form>
-</section>
-
-<main id="ghHubApp" hidden>
+<main id="ghHubApp">
   <section class="gh-mech-hero" aria-label="النظام الميكانيكي">
     <div class="gh-mech-copy">
       <p class="gh-mech-kicker">ألبوم خاص للعملاء</p>
@@ -93,31 +84,6 @@ gtag('config','G-Y67JVE898Z');
 
 <p class="gh-mech-foot"><a href="client-hub.html">العودة للبوابة</a> · Graphics House</p>
 
-<script>
-window.GH_CLIENT_HUB_PASS='f7b074395b6597bf02d3a9a66f11451bbc477e8482d281e3e697c5930f2f748f';
-(async function(){
-  var gate=document.getElementById('ghHubGate');
-  var app=document.getElementById('ghHubApp');
-  var form=document.getElementById('ghHubForm');
-  var input=document.getElementById('ghHubPass');
-  var err=document.getElementById('ghHubErr');
-  var KEY='gh_client_hub_ok_v1';
-  async function sha256(text){
-    var data=new TextEncoder().encode(text);
-    var buf=await crypto.subtle.digest('SHA-256',data);
-    return [...new Uint8Array(buf)].map(function(b){return b.toString(16).padStart(2,'0')}).join('');
-  }
-  function unlock(){ if(gate) gate.hidden=true; if(app) app.hidden=false; sessionStorage.setItem(KEY,'1'); }
-  if(sessionStorage.getItem(KEY)==='1'){ unlock(); return; }
-  if(!form) return;
-  form.addEventListener('submit', async function(e){
-    e.preventDefault(); err.hidden=true;
-    var hash=await sha256((input.value||'').trim());
-    if(hash===window.GH_CLIENT_HUB_PASS){ unlock(); return; }
-    err.hidden=false; input.value=''; input.focus();
-  });
-})();
-</script>
 <script defer src="assets/gh-mech-album.js?v=1"></script>
 <script defer src="assets/gh-cta-track.js?v=1"></script>
 <script defer src="assets/gh-performance.js?v=10"></script>
