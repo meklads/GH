@@ -289,6 +289,11 @@ body {
   font-family: inherit;
 }
 .gh-mech-stage.needs-tap .gh-mech-tap { display: grid; }
+.gh-mech-stage.is-mobile .gh-mech-play { display: none; }
+.gh-mech-stage.is-mobile video {
+  object-fit: contain;
+  background: #000;
+}
 .gh-mech-tap__pill {
   display: inline-flex;
   align-items: center;

@@ -9,7 +9,13 @@
   Cache-Control: public, max-age=31536000, immutable
 
 /assets/videos/*
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=604800, s-maxage=0, no-transform
+
+/assets/projects/*.mp4
+  Cache-Control: public, max-age=604800, s-maxage=0, no-transform
+
+/assets/projects/maquettes/*
+  Cache-Control: public, max-age=604800, s-maxage=0, no-transform
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate

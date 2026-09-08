@@ -1,16 +1,17 @@
 /**
  * Mechanical System video album — stage + filmstrip.
- * v3 — muted inline autoplay on mobile (baseline mobile MP4s, no audio).
+ * v4 — iOS-safe muted play (byte-range friendly sources + native controls fallback).
  */
 (function () {
   'use strict';
 
   var ROOT = 'assets/projects/maquettes/Mechanism/';
+  var VER = '4';
   var FILMS = [
     {
       id: 'sweedy',
       src: ROOT + 'mech-sweedy-factory.mp4',
-      mobile: ROOT + 'mech-sweedy-factory-mobile.mp4',
+      mobile: ROOT + 'mech-sweedy-factory-m.mp4',
       poster: ROOT + 'mech-sweedy-factory-poster.jpg',
       title: { ar: 'مصنع السويدي', en: 'Sweedy Factory' },
       tag: { ar: 'آلية صناعية', en: 'Industrial mechanism' },
@@ -18,7 +19,7 @@
     {
       id: 'mall',
       src: ROOT + 'mech-mall.mp4',
-      mobile: ROOT + 'mech-mall-mobile.mp4',
+      mobile: ROOT + 'mech-mall-m.mp4',
       poster: ROOT + 'mech-mall-poster.jpg',
       title: { ar: 'مجمع تجاري', en: 'Commercial Mall' },
       tag: { ar: 'حركة متعددة الطبقات', en: 'Multi-layer motion' },
@@ -26,7 +27,7 @@
     {
       id: 'tower',
       src: ROOT + 'mech-tower.mp4',
-      mobile: ROOT + 'mech-tower-mobile.mp4',
+      mobile: ROOT + 'mech-tower-m.mp4',
       poster: ROOT + 'mech-tower-poster.jpg',
       title: { ar: 'برج', en: 'Tower' },
       tag: { ar: 'كتلة رأسية متحركة', en: 'Vertical kinetic mass' },
@@ -34,7 +35,7 @@
     {
       id: 'villa1',
       src: ROOT + 'mech-villa-01.mp4',
-      mobile: ROOT + 'mech-villa-01-mobile.mp4',
+      mobile: ROOT + 'mech-villa-01-m.mp4',
       poster: ROOT + 'mech-villa-01-poster.jpg',
       title: { ar: 'فيلا 01', en: 'Villa 01' },
       tag: { ar: 'تفاصيل سكنية', en: 'Residential detail' },
@@ -42,7 +43,7 @@
     {
       id: 'villa2',
       src: ROOT + 'mech-villa-02.mp4',
-      mobile: ROOT + 'mech-villa-02-mobile.mp4',
+      mobile: ROOT + 'mech-villa-02-m.mp4',
       poster: ROOT + 'mech-villa-02-poster.jpg',
       title: { ar: 'فيلا 02', en: 'Villa 02' },
       tag: { ar: 'إيقاع الواجهة', en: 'Façade rhythm' },
@@ -50,7 +51,7 @@
     {
       id: 'lighting',
       src: ROOT + 'lighting-action.mp4',
-      mobile: ROOT + 'lighting-action-mobile.mp4',
+      mobile: ROOT + 'lighting-action-m.mp4',
       poster: ROOT + 'lighting-action-poster.jpg',
       title: { ar: 'إضاءة تفاعلية', en: 'Lighting Action' },
       tag: { ar: 'مشاهد ليلية ونهارية', en: 'Day / night cues' },
@@ -70,13 +71,9 @@
   var active = 0;
   var loadToken = 0;
   var wantPlay = true;
-  var retryTimer = null;
+  var isMobile = false;
 
-  function L(obj) {
-    return (obj && (obj[lang] || obj.en)) || '';
-  }
-
-  function preferMobile() {
+  function detectMobile() {
     var ua = navigator.userAgent || '';
     if (/iPhone|iPad|iPod|Android|Mobile|webOS|BlackBerry|IEMobile|Opera Mini/i.test(ua)) {
       return true;
@@ -84,34 +81,49 @@
     if (navigator.maxTouchPoints > 1) return true;
     if (window.matchMedia('(max-width: 900px)').matches) return true;
     if (window.matchMedia('(pointer: coarse)').matches) return true;
-    var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    if (conn && (conn.saveData || /2g/.test(conn.effectiveType || ''))) return true;
     return false;
   }
 
+  isMobile = detectMobile();
+
+  function L(obj) {
+    return (obj && (obj[lang] || obj.en)) || '';
+  }
+
+  function withVer(url) {
+    return url + (url.indexOf('?') >= 0 ? '&' : '?') + 'v=' + VER;
+  }
+
   function pickSrc(film) {
-    if (preferMobile() && film.mobile) return film.mobile;
-    return film.src;
+    if (isMobile && film.mobile) return withVer(film.mobile);
+    return withVer(film.src);
   }
 
   function prepVideoEl() {
     video.muted = true;
     video.defaultMuted = true;
-    video.volume = 0;
+    try {
+      video.volume = 0;
+    } catch (e) {}
     video.setAttribute('muted', '');
     video.setAttribute('autoplay', '');
     video.playsInline = true;
     video.setAttribute('playsinline', '');
     video.setAttribute('webkit-playsinline', '');
     video.setAttribute('x5-playsinline', '');
-    video.setAttribute('x5-video-player-type', 'h5');
-    video.setAttribute('x5-video-player-fullscreen', 'false');
     video.loop = true;
     video.setAttribute('loop', '');
     video.setAttribute('preload', 'auto');
     video.disablePictureInPicture = true;
-    video.setAttribute('disablePictureInPicture', '');
-    video.removeAttribute('controls');
+    // Native controls on phones: reliable play gesture when autoplay is blocked
+    if (isMobile) {
+      video.controls = true;
+      video.setAttribute('controls', '');
+      video.setAttribute('controlsList', 'nodownload noplaybackrate noremoteplayback');
+    } else {
+      video.controls = false;
+      video.removeAttribute('controls');
+    }
   }
 
   function showTap(needed) {
@@ -131,29 +143,7 @@
     if (playing) showTap(false);
   }
 
-  function clearRetry() {
-    if (retryTimer) {
-      clearInterval(retryTimer);
-      retryTimer = null;
-    }
-  }
-
-  function startRetry() {
-    clearRetry();
-    var tries = 0;
-    retryTimer = setInterval(function () {
-      tries += 1;
-      if (!wantPlay || !video.paused) {
-        clearRetry();
-        if (!video.paused) showTap(false);
-        return;
-      }
-      tryPlay(false);
-      if (tries >= 12) clearRetry();
-    }, 350);
-  }
-
-  function tryPlay(showFallback) {
+  function tryPlay() {
     prepVideoEl();
     var p = video.play();
     if (p && typeof p.then === 'function') {
@@ -161,10 +151,9 @@
         .then(function () {
           showTap(false);
           updatePlayUi();
-          clearRetry();
         })
         .catch(function () {
-          if (showFallback !== false) showTap(true);
+          showTap(true);
           updatePlayUi();
         });
     }
@@ -185,14 +174,14 @@
 
     prepVideoEl();
     video.poster = film.poster;
-    video.setAttribute('poster', film.poster);
 
     video.querySelectorAll('source').forEach(function (s) {
       s.remove();
     });
+    video.removeAttribute('src');
 
-    // Direct src is more reliable than <source> for mobile play()
-    video.src = pickSrc(film);
+    var url = pickSrc(film);
+    video.src = url;
     video.load();
 
     if (titleEl) titleEl.textContent = L(film.title);
@@ -206,28 +195,30 @@
     if (!autoplay) {
       showTap(true);
       updatePlayUi();
-      clearRetry();
       return;
     }
 
     function onReady() {
       if (token !== loadToken) return;
-      tryPlay(true);
-      startRetry();
+      tryPlay();
     }
 
-    if (video.readyState >= 2) {
-      onReady();
-    } else {
-      video.addEventListener('loadeddata', onReady, { once: true });
-      video.addEventListener('canplay', onReady, { once: true });
-      setTimeout(function () {
-        if (token === loadToken && video.paused && wantPlay) onReady();
-      }, 400);
-      setTimeout(function () {
-        if (token === loadToken && video.paused && wantPlay) onReady();
-      }, 1200);
-    }
+    video.addEventListener('loadeddata', onReady, { once: true });
+    video.addEventListener('canplay', onReady, { once: true });
+    video.addEventListener(
+      'error',
+      function () {
+        if (token !== loadToken) return;
+        showTap(true);
+        updatePlayUi();
+      },
+      { once: true }
+    );
+
+    if (video.readyState >= 2) onReady();
+    setTimeout(function () {
+      if (token === loadToken && video.paused && wantPlay) onReady();
+    }, 600);
   }
 
   function togglePlay(e) {
@@ -237,11 +228,9 @@
     }
     if (video.paused) {
       wantPlay = true;
-      tryPlay(true);
-      startRetry();
+      tryPlay();
     } else {
       wantPlay = false;
-      clearRetry();
       video.pause();
       updatePlayUi();
     }
@@ -274,20 +263,12 @@
     setFilm(Number(btn.getAttribute('data-i')), true);
   });
 
-  if (playBtn) {
-    playBtn.addEventListener('click', togglePlay);
-  }
+  if (playBtn) playBtn.addEventListener('click', togglePlay);
 
   if (tapHint) {
-    tapHint.addEventListener('click', togglePlay);
-    tapHint.addEventListener(
-      'touchend',
-      function (e) {
-        e.preventDefault();
-        togglePlay(e);
-      },
-      { passive: false }
-    );
+    tapHint.addEventListener('click', function (e) {
+      togglePlay(e);
+    });
   }
 
   video.addEventListener('play', updatePlayUi);
@@ -295,28 +276,29 @@
   video.addEventListener('ended', updatePlayUi);
   video.addEventListener('playing', function () {
     showTap(false);
-    clearRetry();
   });
 
+  // Keep stage tap working, but don't steal taps from native controls
   if (stage) {
     stage.addEventListener('click', function (e) {
       if (e.target.closest('.gh-mech-play') || e.target.closest('.gh-mech-tap')) return;
+      if (e.target === video || e.target.closest('video')) return;
       togglePlay(e);
     });
   }
 
-  // First touch anywhere unlocks autoplay policies on strict browsers
   function unlockOnce() {
-    if (!wantPlay) return;
-    prepVideoEl();
-    tryPlay(false);
+    if (!wantPlay || !video.paused) return;
+    tryPlay();
   }
   document.addEventListener('touchstart', unlockOnce, { once: true, passive: true });
-  document.addEventListener('pointerdown', unlockOnce, { once: true });
+  document.addEventListener('click', unlockOnce, { once: true });
 
   document.addEventListener('visibilitychange', function () {
-    if (!document.hidden && wantPlay && video.paused) tryPlay(false);
+    if (!document.hidden && wantPlay && video.paused) tryPlay();
   });
+
+  if (stage && isMobile) stage.classList.add('is-mobile');
 
   prepVideoEl();
   setFilm(0, true);
