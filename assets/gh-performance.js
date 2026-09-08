@@ -52,6 +52,10 @@
     );
   }
 
+  function isMechAlbum(v) {
+    return v.id === 'ghMechVideo' || !!v.closest('.gh-mech-stage');
+  }
+
   function prepHero(v) {
     if (v.dataset.ghUserUnmuted !== '1') {
       v.muted = true;
@@ -248,6 +252,8 @@
   function initVideo(v) {
     if (!v || v.nodeName !== 'VIDEO' || v.dataset.ghVideoInit === '1') return;
     v.dataset.ghVideoInit = '1';
+
+    if (isMechAlbum(v)) return;
 
     if (isHero(v)) {
       prepHero(v);

@@ -1,6 +1,6 @@
 /**
- * Mechanical System video album — stage + filmstrip (desktop + mobile).
- * v2
+ * Mechanical System video album — stage + filmstrip.
+ * v3 — muted inline autoplay on mobile (baseline mobile MP4s, no audio).
  */
 (function () {
   'use strict';
@@ -69,13 +69,21 @@
 
   var active = 0;
   var loadToken = 0;
+  var wantPlay = true;
+  var retryTimer = null;
 
   function L(obj) {
     return (obj && (obj[lang] || obj.en)) || '';
   }
 
   function preferMobile() {
+    var ua = navigator.userAgent || '';
+    if (/iPhone|iPad|iPod|Android|Mobile|webOS|BlackBerry|IEMobile|Opera Mini/i.test(ua)) {
+      return true;
+    }
+    if (navigator.maxTouchPoints > 1) return true;
     if (window.matchMedia('(max-width: 900px)').matches) return true;
+    if (window.matchMedia('(pointer: coarse)').matches) return true;
     var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
     if (conn && (conn.saveData || /2g/.test(conn.effectiveType || ''))) return true;
     return false;
@@ -89,15 +97,21 @@
   function prepVideoEl() {
     video.muted = true;
     video.defaultMuted = true;
+    video.volume = 0;
     video.setAttribute('muted', '');
+    video.setAttribute('autoplay', '');
     video.playsInline = true;
     video.setAttribute('playsinline', '');
     video.setAttribute('webkit-playsinline', '');
     video.setAttribute('x5-playsinline', '');
+    video.setAttribute('x5-video-player-type', 'h5');
+    video.setAttribute('x5-video-player-fullscreen', 'false');
     video.loop = true;
     video.setAttribute('loop', '');
     video.setAttribute('preload', 'auto');
     video.disablePictureInPicture = true;
+    video.setAttribute('disablePictureInPicture', '');
+    video.removeAttribute('controls');
   }
 
   function showTap(needed) {
@@ -117,7 +131,29 @@
     if (playing) showTap(false);
   }
 
-  function tryPlay() {
+  function clearRetry() {
+    if (retryTimer) {
+      clearInterval(retryTimer);
+      retryTimer = null;
+    }
+  }
+
+  function startRetry() {
+    clearRetry();
+    var tries = 0;
+    retryTimer = setInterval(function () {
+      tries += 1;
+      if (!wantPlay || !video.paused) {
+        clearRetry();
+        if (!video.paused) showTap(false);
+        return;
+      }
+      tryPlay(false);
+      if (tries >= 12) clearRetry();
+    }, 350);
+  }
+
+  function tryPlay(showFallback) {
     prepVideoEl();
     var p = video.play();
     if (p && typeof p.then === 'function') {
@@ -125,9 +161,10 @@
         .then(function () {
           showTap(false);
           updatePlayUi();
+          clearRetry();
         })
         .catch(function () {
-          showTap(true);
+          if (showFallback !== false) showTap(true);
           updatePlayUi();
         });
     }
@@ -140,22 +177,22 @@
     if (!film) return;
     active = index;
     var token = ++loadToken;
+    wantPlay = !!autoplay;
 
     try {
       video.pause();
     } catch (e) {}
 
     prepVideoEl();
+    video.poster = film.poster;
     video.setAttribute('poster', film.poster);
-    video.removeAttribute('src');
+
     video.querySelectorAll('source').forEach(function (s) {
       s.remove();
     });
 
-    var source = document.createElement('source');
-    source.src = pickSrc(film);
-    source.type = 'video/mp4';
-    video.appendChild(source);
+    // Direct src is more reliable than <source> for mobile play()
+    video.src = pickSrc(film);
     video.load();
 
     if (titleEl) titleEl.textContent = L(film.title);
@@ -169,12 +206,14 @@
     if (!autoplay) {
       showTap(true);
       updatePlayUi();
+      clearRetry();
       return;
     }
 
     function onReady() {
       if (token !== loadToken) return;
-      tryPlay();
+      tryPlay(true);
+      startRetry();
     }
 
     if (video.readyState >= 2) {
@@ -182,9 +221,11 @@
     } else {
       video.addEventListener('loadeddata', onReady, { once: true });
       video.addEventListener('canplay', onReady, { once: true });
-      // Fallback if events never fire on some WebViews
       setTimeout(function () {
-        if (token === loadToken && video.paused) onReady();
+        if (token === loadToken && video.paused && wantPlay) onReady();
+      }, 400);
+      setTimeout(function () {
+        if (token === loadToken && video.paused && wantPlay) onReady();
       }, 1200);
     }
   }
@@ -194,8 +235,13 @@
       e.preventDefault();
       e.stopPropagation();
     }
-    if (video.paused) tryPlay();
-    else {
+    if (video.paused) {
+      wantPlay = true;
+      tryPlay(true);
+      startRetry();
+    } else {
+      wantPlay = false;
+      clearRetry();
       video.pause();
       updatePlayUi();
     }
@@ -230,18 +276,18 @@
 
   if (playBtn) {
     playBtn.addEventListener('click', togglePlay);
-    playBtn.addEventListener('touchend', function (e) {
-      e.preventDefault();
-      togglePlay(e);
-    });
   }
 
   if (tapHint) {
     tapHint.addEventListener('click', togglePlay);
-    tapHint.addEventListener('touchend', function (e) {
-      e.preventDefault();
-      togglePlay(e);
-    });
+    tapHint.addEventListener(
+      'touchend',
+      function (e) {
+        e.preventDefault();
+        togglePlay(e);
+      },
+      { passive: false }
+    );
   }
 
   video.addEventListener('play', updatePlayUi);
@@ -249,6 +295,7 @@
   video.addEventListener('ended', updatePlayUi);
   video.addEventListener('playing', function () {
     showTap(false);
+    clearRetry();
   });
 
   if (stage) {
@@ -257,6 +304,19 @@
       togglePlay(e);
     });
   }
+
+  // First touch anywhere unlocks autoplay policies on strict browsers
+  function unlockOnce() {
+    if (!wantPlay) return;
+    prepVideoEl();
+    tryPlay(false);
+  }
+  document.addEventListener('touchstart', unlockOnce, { once: true, passive: true });
+  document.addEventListener('pointerdown', unlockOnce, { once: true });
+
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden && wantPlay && video.paused) tryPlay(false);
+  });
 
   prepVideoEl();
   setFilm(0, true);
