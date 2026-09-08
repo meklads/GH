@@ -265,11 +265,53 @@ body {
   flex-shrink: 0;
   backdrop-filter: blur(8px);
   transition: transform 0.25s ease, background 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  z-index: 3;
 }
 .gh-mech-play:hover { transform: scale(1.05); background: rgba(201, 168, 76, 0.25); }
 .gh-mech-play .icon-pause { display: none; }
 .gh-mech-play.is-playing .icon-play { display: none; }
 .gh-mech-play.is-playing .icon-pause { display: block; }
+
+.gh-mech-tap {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: none;
+  place-items: center;
+  border: 0;
+  background: rgba(7, 7, 7, 0.35);
+  color: #fafaf8;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  font-family: inherit;
+}
+.gh-mech-stage.needs-tap .gh-mech-tap { display: grid; }
+.gh-mech-tap__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.72);
+  border: 1px solid rgba(201, 168, 76, 0.55);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(10px);
+}
+.gh-mech-tap__pill svg { flex-shrink: 0; }
+
+.gh-mech-stage video {
+  -webkit-touch-callout: none;
+}
+
+.gh-mech-thumb {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
 
 .gh-mech-orbit {
   position: absolute;
