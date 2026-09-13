@@ -18,7 +18,7 @@ const SKIP = new Set([
   'solutions/project-launch-ads.html',
 ]);
 
-const EXPECT_CSS = 'site-header.css?v=38';
+const EXPECT_CSS = 'site-header.css?v=39';
 const EXPECT_JS = 'site-header.js?v=16';
 
 function collectHtml(dir, base = '') {
@@ -78,7 +78,7 @@ for (const rel of collectHtml(ROOT)) {
 
   const contactPattern = en
     ? /href="[^"]*contact-us[^"]*"[^>]*>Contact Us</
-    : /href="[^"]*contact-us[^"]*"[^>]*>(للاتصال بنا|تواصل معنا)</;
+    : /href="[^"]*contact-us[^"]*"[^>]*>(اتصل بنا|للاتصال بنا|تواصل معنا)</;
   if (!contactPattern.test(html)) {
     issues.push(`${rel}: missing contact nav link`);
   }
