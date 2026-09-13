@@ -189,7 +189,7 @@ function ensureMaterialSymbols(html) {
 }
 
 function ensureHeaderCssOrder(html, prefix) {
-  const headerHref = `${prefix}site-header.css?v=39`;
+  const headerHref = `${prefix}site-header.css?v=40`;
   const headerTag = `<link rel="stylesheet" href="${headerHref}">`;
   html = html.replace(/<link[^>]*href="[^"]*site-header\.css[^"]*"[^>]*>\s*/gi, '');
   if (/gh-site-enhancements\.css/i.test(html)) {
@@ -255,12 +255,12 @@ function syncFile(rel) {
   html = html.replace(/lang-switch\.js(\?v=\d+)?/g, 'lang-switch.js?v=2');
 
   html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=16');
-  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=30');
-  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=39');
+  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=31');
+  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=40');
 
   // Ensure footer layout CSS is always present, versioned, and after Tailwind
   // (unversioned or pre-Tailwind links caused a collapsed narrow footer on many pages).
-  const enhHref = `${prefix}gh-site-enhancements.css?v=30`;
+  const enhHref = `${prefix}gh-site-enhancements.css?v=31`;
   const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
   html = html.replace(
     /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,
@@ -295,7 +295,7 @@ function syncFooterOnly(rel) {
   html = html.replace(/<footer dir="(?:ltr|rtl)"[\s\S]*?<\/footer>/, footer);
 
   const prefix = depth > 0 ? '../'.repeat(depth) + 'assets/' : 'assets/';
-  const enhHref = `${prefix}gh-site-enhancements.css?v=30`;
+  const enhHref = `${prefix}gh-site-enhancements.css?v=31`;
   const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
   html = html.replace(
     /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,

@@ -92,10 +92,10 @@ body.nav-open .gh-float {
 }
 /* Beat Tailwind's .container utility on the site header bar */
 .header > .container.header-inner {
-  max-width: 1320px !important;
+  max-width: 1360px !important;
   width: 100% !important;
   margin-inline: auto !important;
-  padding-inline: 48px !important;
+  padding-inline: 40px !important;
   padding-block: 0 !important;
   box-sizing: border-box !important;
 }
@@ -144,7 +144,7 @@ body.nav-open .gh-float {
     grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas: "logo nav actions";
     align-items: center;
-    gap: 8px 16px;
+    gap: 0 28px;
     height: calc(var(--gh-header-height) - (var(--gh-header-pad-y) * 2));
     min-height: 0;
     max-height: none;
@@ -153,13 +153,15 @@ body.nav-open .gh-float {
     flex-wrap: nowrap !important;
   }
   html[dir="ltr"] .header .container.header-inner {
-    grid-template-columns: auto minmax(0, 1fr) minmax(260px, auto);
+    grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas: "logo nav actions";
+    gap: 0 28px;
   }
   html[dir="rtl"] .header .container.header-inner {
     grid-template-columns: auto minmax(0, 1fr) auto;
     /* Physical columns: actions | nav | logo → logo on the right for Arabic */
     grid-template-areas: "actions nav logo";
+    gap: 0 28px;
   }
   .logo {
     grid-area: logo;
@@ -167,7 +169,7 @@ body.nav-open .gh-float {
     justify-self: start;
     z-index: 4;
     margin-inline-end: 0 !important;
-    max-width: 144px;
+    max-width: 152px;
     width: auto;
     align-self: center;
     flex-shrink: 0;
@@ -183,36 +185,35 @@ body.nav-open .gh-float {
     top: auto;
     transform: none;
     flex: none;
-    width: auto;
+    width: 100%;
     max-width: 100%;
     min-width: 0;
     z-index: 3;
-    justify-content: center;
     justify-self: stretch;
     align-self: center;
-    gap: 6px !important;
     overflow: visible;
     flex-wrap: nowrap !important;
   }
   html[dir="ltr"] .nav {
     direction: ltr;
-    gap: 4px !important;
-    justify-content: center;
-    padding-inline: 4px;
+    justify-content: flex-start;
+    gap: 2px !important;
+    padding: 0;
   }
   html[dir="rtl"] .nav {
     direction: rtl;
-    gap: 4px !important;
-    padding-inline: 8px;
+    justify-content: flex-start;
+    gap: 2px !important;
+    padding: 0;
   }
   html[dir="ltr"] .nav-link {
-    font-size: 10px;
-    padding: 8px 6px;
-    letter-spacing: 0.03em;
+    font-size: 11px;
+    padding: 10px 11px;
+    letter-spacing: 0.055em;
   }
   html[dir="rtl"] .nav-link {
-    font-size: 14px;
-    padding: 7px 6px;
+    font-size: 14.5px;
+    padding: 9px 10px;
   }
   .nav-actions {
     grid-area: actions;
@@ -222,7 +223,7 @@ body.nav-open .gh-float {
     flex: 0 0 auto;
     z-index: 5;
     margin-inline-start: 0;
-    gap: 10px;
+    gap: 12px;
     min-width: max-content;
     padding-inline-start: 0;
     border: none;
@@ -230,101 +231,101 @@ body.nav-open .gh-float {
   }
   html[dir="ltr"] .nav-actions {
     direction: ltr;
-    padding-inline-start: 16px;
+    padding-inline-start: 20px;
     margin-inline-start: 4px;
     border-inline-start: 1px solid rgba(201, 168, 76, 0.22);
-    background: var(--header-bg);
-    gap: 10px;
+    background: transparent;
+    gap: 12px;
     align-items: center;
   }
   html[dir="rtl"] .nav-actions {
     direction: rtl;
     justify-self: start;
-    padding-inline-end: 14px;
-    margin-inline-end: 0;
+    padding-inline-end: 20px;
+    margin-inline-end: 4px;
     border-inline-end: 1px solid rgba(201, 168, 76, 0.22);
-    background: var(--header-bg);
-    gap: 10px;
+    background: transparent;
+    gap: 12px;
     align-items: center;
   }
   /* Insights + Contact stay visible after portfolio / case studies */
   .menu-toggle { display: none !important; }
 }
 
-@media (min-width: 901px) and (max-width: 1280px) {
-  html[dir="ltr"] .header .container.header-inner {
-    grid-template-columns: auto minmax(0, 1fr) minmax(240px, auto);
-    gap: 6px 10px;
-  }
+@media (min-width: 901px) and (max-width: 1180px) {
+  html[dir="ltr"] .header .container.header-inner,
   html[dir="rtl"] .header .container.header-inner {
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    gap: 6px 8px;
-  }
-  html[dir="ltr"] .nav {
-    gap: 2px !important;
-    min-width: 0;
-    overflow: visible;
-    padding-inline-end: 8px;
-  }
-  html[dir="rtl"] .nav {
-    gap: 2px !important;
-    min-width: 0;
-    overflow: visible;
-    padding-inline: 4px;
+    gap: 0 16px;
   }
   html[dir="ltr"] .nav-link {
-    font-size: 9px;
-    padding: 8px 4px;
-    letter-spacing: 0.02em;
+    font-size: 10px;
+    padding: 9px 7px;
+    letter-spacing: 0.04em;
   }
   html[dir="rtl"] .nav-link {
     font-size: 13px;
-    padding: 6px 5px;
+    padding: 8px 7px;
   }
   html[dir="ltr"] .nav-cta {
-    padding: 10px 24px !important;
-    font-size: 9px !important;
-    letter-spacing: 0.06em !important;
-    min-width: 148px !important;
-    min-height: 38px !important;
-  }
-  html[dir="rtl"] .nav-cta {
-    padding: 8px 12px !important;
-    font-size: 12.5px !important;
-    min-width: 0 !important;
-  }
-}
-
-@media (min-width: 1281px) and (max-width: 1440px) {
-  html[dir="ltr"] .nav-link {
-    font-size: 10px;
-    padding: 8px 5px;
-  }
-  html[dir="rtl"] .nav-link {
-    font-size: 14px;
-    padding: 7px 6px;
-  }
-  html[dir="ltr"] .nav-cta {
-    padding: 12px 30px !important;
+    padding: 11px 22px !important;
     font-size: 10px !important;
-    min-width: 160px !important;
+    letter-spacing: 0.08em !important;
+    min-width: 0 !important;
     min-height: 40px !important;
   }
   html[dir="rtl"] .nav-cta {
-    padding: 9px 14px !important;
+    padding: 8px 14px !important;
+    font-size: 12.5px !important;
+    min-width: 0 !important;
+  }
+  html[dir="ltr"] .nav-actions,
+  html[dir="rtl"] .nav-actions {
+    padding-inline-start: 14px;
+    padding-inline-end: 14px;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 1181px) and (max-width: 1440px) {
+  html[dir="ltr"] .nav-link {
+    font-size: 11px;
+    padding: 10px 10px;
+  }
+  html[dir="rtl"] .nav-link {
+    font-size: 14px;
+    padding: 9px 9px;
+  }
+  html[dir="ltr"] .nav-cta {
+    padding: 12px 28px !important;
+    font-size: 10.5px !important;
+    min-width: 0 !important;
+    min-height: 42px !important;
+  }
+  html[dir="rtl"] .nav-cta {
+    padding: 9px 16px !important;
     font-size: 13.5px !important;
   }
 }
 
 @media (min-width: 1441px) {
+  html[dir="ltr"] .header .container.header-inner,
+  html[dir="rtl"] .header .container.header-inner {
+    gap: 0 36px;
+  }
   html[dir="ltr"] .nav-link {
-    font-size: 11px;
-    padding: 8px 8px;
-    letter-spacing: 0.04em;
+    font-size: 11.5px;
+    padding: 10px 12px;
+    letter-spacing: 0.06em;
+  }
+  html[dir="rtl"] .nav-link {
+    font-size: 15px;
+    padding: 9px 11px;
   }
   html[dir="ltr"] .nav {
-    gap: 6px;
-    padding-inline-end: 12px;
+    gap: 4px !important;
+  }
+  html[dir="rtl"] .nav {
+    gap: 4px !important;
   }
 }
 
@@ -378,7 +379,7 @@ html[dir="rtl"] .nav { gap: 8px; }
 button.nav-link {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   padding: 10px 14px;
   border-radius: 8px;
   text-decoration: none;
@@ -394,10 +395,10 @@ button.nav-link {
 
 html[dir="ltr"] .nav-link {
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.84);
 }
 html[dir="rtl"] .nav-link {
   font-size: 15px;
@@ -410,7 +411,7 @@ html[dir="rtl"] .nav-link {
 .nav-link:hover,
 .nav-mega-item.is-open > .nav-mega-trigger {
   color: var(--header-gold) !important;
-  background: rgba(201, 168, 76, 0.07);
+  background: rgba(201, 168, 76, 0.08);
 }
 
 /* Override legacy inline nav underlines on index pages */
@@ -422,21 +423,23 @@ html[dir="rtl"] .nav-link {
 }
 
 .nav-link-accent {
-  color: var(--header-gold) !important;
+  color: rgba(232, 208, 138, 0.95) !important;
 }
 .nav-link-accent:hover {
-  background: rgba(201, 168, 76, 0.12) !important;
+  color: #fff !important;
+  background: rgba(201, 168, 76, 0.1) !important;
 }
 
 .nav-chevron {
-  font-size: 16px !important;
-  opacity: 0.7;
+  font-size: 15px !important;
+  opacity: 0.55;
+  margin-inline-start: 1px;
   transition: transform 0.28s ease, opacity 0.28s ease;
 }
 .nav-mega-item:hover .nav-chevron,
 .nav-mega-item.is-open .nav-chevron {
   transform: rotate(180deg);
-  opacity: 1;
+  opacity: 0.9;
 }
 
 /* ----- Mega item wrapper ----- */
@@ -480,8 +483,8 @@ html[dir="rtl"] .nav-link {
   white-space: nowrap;
   padding: 3px;
   border-radius: 50px;
-  border: 1px solid rgba(201, 168, 76, 0.38);
-  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(201, 168, 76, 0.32);
+  background: rgba(255, 255, 255, 0.03);
   line-height: 1;
   min-height: 36px;
   box-sizing: border-box;
@@ -490,10 +493,10 @@ html[dir="rtl"] .nav-link {
   display: none;
 }
 .lang-switch-link {
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(255, 255, 255, 0.58);
   text-decoration: none;
   transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-  padding: 6px 11px;
+  padding: 7px 12px;
   border-radius: 50px;
   border-bottom: none;
   min-width: auto;
@@ -509,34 +512,35 @@ html[dir="rtl"] .nav-link {
 }
 
 .nav-cta {
-  padding: 13px 36px !important;
+  padding: 12px 28px !important;
   font-size: 11px !important;
   font-weight: 700 !important;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
   min-height: 42px;
-  min-width: 168px;
+  min-width: 0;
   box-sizing: border-box;
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
+  border-radius: 999px !important;
 }
 html[dir="ltr"] .nav-cta {
-  padding: 13px 38px !important;
-  font-size: 11px !important;
-  min-width: 172px;
-  letter-spacing: 0.11em;
+  padding: 12px 26px !important;
+  font-size: 10.5px !important;
+  min-width: 0;
+  letter-spacing: 0.1em;
 }
 html[dir="rtl"] .nav-cta {
   text-transform: none;
   letter-spacing: 0;
-  font-size: 14.5px !important;
+  font-size: 14px !important;
   padding: 9px 18px !important;
 }
 .nav-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.28);
+  box-shadow: 0 8px 22px rgba(201, 168, 76, 0.3);
 }
 
 /* ----- Pill buttons (shared) ----- */
@@ -603,9 +607,9 @@ html[dir="rtl"] .nav-cta {
 }
 
 @media (max-width: 1100px) {
-  .nav { gap: 2px !important; }
-  .nav-link, button.nav-link { padding: 8px 8px; }
-  html[dir="ltr"] .nav-link { font-size: 12px; }
+  .nav { gap: 1px !important; }
+  .nav-link, button.nav-link { padding: 8px 6px; }
+  html[dir="ltr"] .nav-link { font-size: 10px; }
   html[dir="rtl"] .nav-link { font-size: 13px; }
   .nav-cta { padding: 9px 16px !important; font-size: 10px !important; }
 }
