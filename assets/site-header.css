@@ -250,6 +250,29 @@ body.nav-open .gh-float {
   }
   /* Insights + Contact stay visible after portfolio / case studies */
   .menu-toggle { display: none !important; }
+  .header .nav {
+    display: flex !important;
+  }
+  .header .nav-actions {
+    display: flex !important;
+  }
+  .header .nav-cta {
+    border-radius: 999px !important;
+  }
+  .header .lang-switch {
+    border-radius: 50px !important;
+  }
+  .header .lang-switch-link {
+    border-radius: 50px !important;
+  }
+  .header .nav-link::after,
+  .header button.nav-link::after,
+  .header .nav a::after {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
 }
 
 @media (min-width: 901px) and (max-width: 1180px) {

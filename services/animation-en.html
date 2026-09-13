@@ -41,7 +41,6 @@ gtag('config','G-Y67JVE898Z');
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=31">
-<link rel="stylesheet" href="../assets/site-header.css?v=40">
 <link rel="stylesheet" href="../assets/gh-en-typography.css?v=1">
 <style>
 :root {
@@ -49,7 +48,7 @@ gtag('config','G-Y67JVE898Z');
   --text-primary: #1A1A1A; --text-secondary: rgba(26,26,26,0.65);
   --text-muted: rgba(26,26,26,0.4); --bg-white: #FFFFFF;
 }
-*,*::before,*::after{border-radius:0!important}
+main *, main *::before, main *::after, .gh-footer *, .gh-footer *::before, .gh-footer *::after, footer *:not(.header):not(.header *), footer *:not(.header):not(.header *)::before, footer *:not(.header):not(.header *)::after { border-radius: 0 !important; }
 html{scroll-behavior:smooth;background:#FAFAF8;color:#1A1A1A}
 body{font-family:'Tajawal','Inter',sans-serif;background:#FAFAF8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 ::selection{background:#C9A84C;color:#FAFAF8}
@@ -62,12 +61,12 @@ img{max-width:100%;display:block}
 .container{max-width:1320px;margin:0 auto;padding:0 48px}
 @media(max-width:768px){.container{padding:0 20px}}
 
-.nav-link{font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#666;text-decoration:none;transition:color .3s;position:relative;padding-bottom:2px}
 
-.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#1A1A1A;transition:width .3s}
-.nav-link:hover{color:#1A1A1A!important}
+
+
+
 .nav-link:hover::after{width:100%}
-.nav-link::after{background:#C9A84C!important}
+
 
 /* Dropdown menu */
 .nav-item-drop{position:relative}
@@ -333,58 +332,8 @@ section { padding: 90px 0; }
   padding-bottom: 12px !important;
 }
 
-/* ===== STANDARD HEADER ===== */
+/* legacy STANDARD HEADER removed — owned by site-header.css */
 
-
-.logo{display:flex;align-items:center}
-.nav{display:flex;align-items:center;gap:28px;
-  flex: 1;
-}
-.nav a{color:rgba(255,255,255,.85);text-decoration:none}
-.nav-link{font-size:15px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,.85);text-decoration:none;transition:color .3s;position:relative;cursor:pointer}
-.nav-link:hover{color:#C9A84C!important}
-.nav-item-drop{position:relative;display:inline-block}
-.nav-item-drop .nav-dropdown{position:absolute;top:calc(100% + 10px);left:0;background:#111;border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 50px rgba(0,0,0,.7);min-width:240px;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:all .3s ease;z-index:500}
-html[dir="rtl"] .nav-item-drop .nav-dropdown{left:auto;right:0}
-.nav-item-drop:hover .nav-dropdown{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
-.nav-item-drop .nav-dropdown a{display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:14px;color:rgba(255,255,255,.65);text-decoration:none;transition:all .2s;font-weight:400}
-.nav-item-drop .nav-dropdown a:hover{background:rgba(255,255,255,.04);color:#C9A84C}
-.menu-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:0}
-.menu-toggle span{font-size:28px}
-@media(max-width:960px){
-  .nav{display:none}.menu-toggle{display:flex;z-index:1001}
-  .nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.97);backdrop-filter:blur(30px);justify-content:center;align-items:center;gap:28px;z-index:1000}
-  .nav.open a,.nav.open .nav-link{font-size:20px}
-  .nav.open .nav-item-drop .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;background:transparent;border:none;box-shadow:none;padding:8px 0 0}
-}
-@media(max-width:768px){.header-inner{padding:0 20px}}
-
-/* EN heading font, Playfair Display (matches homepage) */
-html[dir="ltr"] h1,
-html[dir="ltr"] h2,
-html[dir="ltr"] .section-title,
-html[dir="ltr"] .content-card h2,
-html[dir="ltr"] .cta h2,
-html[dir="ltr"] .cta-d h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  letter-spacing: -0.02em;
-}
-html[dir="ltr"] .section-title {
-  font-weight: 700;
-}
-
-/* Float buttons */
-.gh-float{position:fixed;bottom:32px;left:28px;z-index:9000;display:flex;flex-direction:column;align-items:center;gap:12px}
-.gh-float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.45);transition:transform .25s,box-shadow .25s;text-decoration:none;flex-shrink:0;border:none;cursor:pointer}
-.gh-float-btn:hover{transform:scale(1.12);box-shadow:0 8px 32px rgba(0,0,0,.55)}
-.gh-float-wa{background:#25D366}
-.gh-float-mail{background:#C9A84C}
-
-}
-
-}
-
-/* Mega menu: assets/site-header.css */
 </style>
 <script defer src="../assets/site-header.js?v=16"></script>
 <script defer src="../assets/gh-performance.js?v=10"></script>
@@ -394,6 +343,7 @@ html[dir="ltr"] .section-title {
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=15">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"3D Animation, Graphics House","description":"3D Animation &amp; CGI services by Graphics House, high-quality architectural cinematic films.","url":"https://3dgraphicshouse.com/services/animation-en.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
 <link rel="stylesheet" href="../assets/gh-chat-assistant.css?v=10">
+<link rel="stylesheet" href="../assets/site-header.css?v=41" data-gh-header-css="1">
 </head>
 <body>
 
@@ -1067,6 +1017,7 @@ html[dir="ltr"] .section-title {
 
 
 
+
 <script>
 
 // Reveal on scroll
@@ -1220,7 +1171,7 @@ window.addEventListener("scroll",function(){var h=document.getElementById("heade
 <div id="gh-chat-root">
 <div id="ghChatPanel" class="gh-chat-panel" dir="ltr" role="dialog" aria-modal="true" aria-labelledby="ghChatTitle" aria-hidden="true">
   <div id="ghChatHead" class="gh-chat-head">
-    <img src="../assets/chatbot-motif.png" alt="" width="22" height="22" class="gh-chat-head-icon">
+    <img loading="lazy" src="../assets/chatbot-motif.png" alt="" width="22" height="22" class="gh-chat-head-icon">
     <span id="ghChatTitle">GH Assistant</span>
     <span class="gh-chat-head-spacer" aria-hidden="true"></span>
     <button type="button" class="gh-chat-close" data-gh-chat-close aria-label="Close">

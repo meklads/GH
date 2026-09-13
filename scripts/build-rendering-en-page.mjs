@@ -284,8 +284,8 @@ function build() {
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" rel="stylesheet" />
 <link rel="stylesheet" href="${P}assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=28">
-<link rel="stylesheet" href="${P}assets/site-header.css?v=35">
+<link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=31">
+<link rel="stylesheet" href="${P}assets/site-header.css?v=40">
 <style>
 body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 ${css}

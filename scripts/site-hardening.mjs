@@ -7,6 +7,11 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { stripLegacyGa, injectAnalytics } from './analytics-snippet.mjs';
+import {
+  SITE_HEADER_CSS_VER,
+  stripConflictingHeaderStyles,
+  ensureHeaderCssLast,
+} from './lib/header-css-guard.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = 'https://3dgraphicshouse.com';
@@ -365,43 +370,7 @@ function injectPerformanceScript(html, prefix) {
 }
 
 function ensureHeaderCssOrder(html, assetsPrefix) {
-  const headerHref = `${assetsPrefix}site-header.css?v=35`;
-  const headerTag = `<link rel="stylesheet" href="${headerHref}">`;
-  html = html.replace(/<link[^>]*href="[^"]*site-header\.css[^"]*"[^>]*>\s*/gi, '');
-  if (/gh-site-enhancements\.css/i.test(html)) {
-    return html.replace(
-      /(<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>)/i,
-      `$1\n${headerTag}`
-    );
-  }
-  if (/tailwind\.min\.css/i.test(html)) {
-    return html.replace(
-      /(<link[^>]*href="[^"]*tailwind\.min\.css[^"]*"[^>]*>)/i,
-      `$1\n${headerTag}`
-    );
-  }
-  if (/<\/head>/i.test(html)) {
-    return html.replace(/<\/head>/i, `${headerTag}\n</head>`);
-  }
-  return html;
-}
-
-function stripConflictingHeaderStyles(html) {
-  html = html.replace(/body\s*\{\s*padding-top:\s*0\s*!important;\s*\}/g, '');
-  html = html.replace(/\.header-inner\s*\{[^}]*display\s*:\s*flex[^}]*\}/gi, '');
-  html = html.replace(/\.header\.scrolled\s*\{[^}]*padding\s*:[^}]*\}/gi, '');
-  html = html.replace(/\.header\s*\{[^}]*position\s*:\s*fixed[^}]*\}/gi, '');
-  html = html.replace(/html\[dir="ltr"\]\s*\.nav-link\s*\{[^}]*\}/gi, '');
-  html = html.replace(/\.nav a\{[^}]*font-size[^}]*\}/gi, '');
-  html = html.replace(
-    /window\.addEventListener\(["']scroll["'],\s*function\s*\(\)\s*\{document\.getElementById\(["']header["']\)\.classList\.toggle\(["']scrolled["'],\s*window\.scrollY>\d+\)\};?\)/g,
-    ''
-  );
-  html = html.replace(
-    /window\.addEventListener\(["']scroll["'],\s*function\s*\(\)\s*\{var\s+h=document\.getElementById\(["']header["']\);if\(h\)h\.classList\.toggle\(["']scrolled["'],\s*window\.scrollY>\d+\)\};?\)/g,
-    ''
-  );
-  return html;
+  return ensureHeaderCssLast(html, assetsPrefix);
 }
 
 const PLAYFAIR_FONT =
@@ -536,13 +505,13 @@ function patchHtml(html, rel) {
     html = html.replace(/<head>/i, `<head>\n<script src="${prefix}assets/gh-forms-config.js"></script>`);
   }
 
-  const enhanceCss = `<link rel="stylesheet" href="${prefix}assets/gh-site-enhancements.css?v=29">`;
+  const enhanceCss = `<link rel="stylesheet" href="${prefix}assets/gh-site-enhancements.css?v=31">`;
   if (!html.includes('gh-site-enhancements.css')) {
     html = html.replace(/<\/head>/i, `${enhanceCss}\n</head>`);
   } else {
     html = html.replace(
       /gh-site-enhancements\.css(?:\?v=\d+)?/g,
-      'gh-site-enhancements.css?v=29'
+      'gh-site-enhancements.css?v=31'
     );
   }
 

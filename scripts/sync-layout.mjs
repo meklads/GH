@@ -6,6 +6,12 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import {
+  SITE_HEADER_CSS_VER,
+  SITE_ENHANCEMENTS_CSS_VER,
+  stripConflictingHeaderStyles,
+  ensureHeaderCssLast,
+} from './lib/header-css-guard.mjs';
 import { renderPartial } from './layout-partials.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -189,25 +195,7 @@ function ensureMaterialSymbols(html) {
 }
 
 function ensureHeaderCssOrder(html, prefix) {
-  const headerHref = `${prefix}site-header.css?v=40`;
-  const headerTag = `<link rel="stylesheet" href="${headerHref}">`;
-  html = html.replace(/<link[^>]*href="[^"]*site-header\.css[^"]*"[^>]*>\s*/gi, '');
-  if (/gh-site-enhancements\.css/i.test(html)) {
-    return html.replace(
-      /(<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>)/i,
-      `$1\n${headerTag}`
-    );
-  }
-  if (/tailwind\.min\.css/i.test(html)) {
-    return html.replace(
-      /(<link[^>]*href="[^"]*tailwind\.min\.css[^"]*"[^>]*>)/i,
-      `$1\n${headerTag}`
-    );
-  }
-  if (/<\/head>/i.test(html)) {
-    return html.replace(/<\/head>/i, `${headerTag}\n</head>`);
-  }
-  return html;
+  return ensureHeaderCssLast(html, prefix);
 }
 
 const SKIP = new Set([
@@ -255,9 +243,12 @@ function syncFile(rel) {
   html = html.replace(/lang-switch\.js(\?v=\d+)?/g, 'lang-switch.js?v=2');
 
   html = html.replace(/site-header\.js\?v=\d+/g, 'site-header.js?v=16');
-  html = html.replace(/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=31');
-  html = html.replace(/site-header\.css\?v=\d+/g, 'site-header.css?v=40');
-
+  html = html.replace(
+    /gh-site-enhancements\.css\?v=\d+/g,
+    `gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}`
+  );
+  html = html.replace(/site-header\.css\?v=\d+/g, `site-header.css?v=${SITE_HEADER_CSS_VER}`);
+  html = stripConflictingHeaderStyles(html);
   // Ensure footer layout CSS is always present, versioned, and after Tailwind
   // (unversioned or pre-Tailwind links caused a collapsed narrow footer on many pages).
   const enhHref = `${prefix}gh-site-enhancements.css?v=31`;

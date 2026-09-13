@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" dir="ltr" lang="en">
 <head>
+<!-- GH perf -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <script src="../../assets/gh-forms-config.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y67JVE898Z"></script>
@@ -49,7 +55,8 @@ body.gh-insights{min-height:100vh;display:flex;flex-direction:column;background:
 </style>
 <link rel="stylesheet" href="../../assets/gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="../../assets/gh-site-enhancements.css?v=31">
-<link rel="stylesheet" href="../../assets/site-header.css?v=40">
+<link rel="stylesheet" href="../../assets/tailwind.min.css?v=1">
+<link rel="stylesheet" href="../../assets/site-header.css?v=41" data-gh-header-css="1">
 </head>
 <body class="gh-insights">
 <a class="gh-skip-link" href="#main-content">Skip to main content</a>
@@ -247,6 +254,7 @@ body.gh-insights{min-height:100vh;display:flex;flex-direction:column;background:
   </div>
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
+<div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 <main class="gh-lead-page">
   <a href="../index-en.html" style="font-size:12px;color:#888888;text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-bottom:20px">
     <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>
@@ -411,6 +419,7 @@ body.gh-insights{min-height:100vh;display:flex;flex-direction:column;background:
 
 
 
+
 <script defer src="../../assets/gh-lead-magnet.js?v=1"></script>
 <script defer src="../../assets/gh-float-widgets.js?v=15"></script>
 <script src="../../assets/gh-chat-knowledge-data.js?v=3"></script>
@@ -483,7 +492,7 @@ body.gh-insights{min-height:100vh;display:flex;flex-direction:column;background:
 <div id="gh-chat-root">
 <div id="ghChatPanel" class="gh-chat-panel" dir="ltr" role="dialog" aria-modal="true" aria-labelledby="ghChatTitle" aria-hidden="true">
   <div id="ghChatHead" class="gh-chat-head">
-    <img src="../../assets/chatbot-motif.png" alt="" width="22" height="22" class="gh-chat-head-icon">
+    <img loading="lazy" src="../../assets/chatbot-motif.png" alt="" width="22" height="22" class="gh-chat-head-icon">
     <span id="ghChatTitle">GH Assistant</span>
     <span class="gh-chat-head-spacer" aria-hidden="true"></span>
     <button type="button" class="gh-chat-close" data-gh-chat-close aria-label="Close">

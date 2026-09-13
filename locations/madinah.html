@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" dir="rtl" lang="ar">
 <head>
+<!-- GH perf -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <script src="../assets/gh-forms-config.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y67JVE898Z"></script>
@@ -35,7 +41,6 @@ gtag('config','G-Y67JVE898Z');
 
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=31">
-<link rel="stylesheet" href="../assets/site-header.css?v=40">
 <link rel="stylesheet" href="../assets/gh-location.css?v=8">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="../assets/gh-ar-typography.css?v=2">
@@ -45,6 +50,7 @@ gtag('config','G-Y67JVE898Z');
 <script defer src="../assets/lang-switch.js?v=2"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Graphics House, المدينة المنورة","description":"استوديو إظهار معماري للمطورين في المدينة المنورة: مخططات، رندر فوتوريالستي، أفلام CGI، ومنصات مبيعات بمعيار وضوح واحترام من Graphics House.","url":"https://3dgraphicshouse.com/locations/madinah.html","telephone":"+966502786513","address":{"@type":"PostalAddress","addressLocality":"المدينة المنورة","addressCountry":"SA"},"parentOrganization":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com"}}</script>
 <link rel="stylesheet" href="../assets/gh-chat-assistant.css?v=10">
+<link rel="stylesheet" href="../assets/site-header.css?v=41" data-gh-header-css="1">
 </head>
 <body class="gh-location">
 <a class="gh-skip-link" href="#main-content">تخطي إلى المحتوى الرئيسي</a>
@@ -242,6 +248,7 @@ gtag('config','G-Y67JVE898Z');
   </div>
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
+<div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 <main>
  <section class="gh-loc-hero gh-loc-hero--rich">
  <div class="gh-loc-hero-inner">
@@ -563,9 +570,10 @@ gtag('config','G-Y67JVE898Z');
 
 
 
+
 <script defer src="../assets/gh-float-widgets.js?v=15"></script>
 <script>
-window.addEventListener("scroll",function(){var h=document.getElementById("header");if(h)h.classList.toggle("scrolled",window.scrollY>80)});
+;
 (function(){
   var t=document.querySelector(".gh-loc-cli-track");
   if(!t)return;
@@ -659,7 +667,7 @@ window.addEventListener("scroll",function(){var h=document.getElementById("heade
 <div id="gh-chat-root">
 <div id="ghChatPanel" class="gh-chat-panel" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="ghChatTitle" aria-hidden="true">
   <div id="ghChatHead" class="gh-chat-head">
-    <img src="../assets/chatbot-motif.png" alt="" width="22" height="22" class="gh-chat-head-icon">
+    <img loading="lazy" src="../assets/chatbot-motif.png" alt="" width="22" height="22" class="gh-chat-head-icon">
     <span id="ghChatTitle">مساعد Graphics House</span>
     <span class="gh-chat-head-spacer" aria-hidden="true"></span>
     <button type="button" class="gh-chat-close" data-gh-chat-close aria-label="إغلاق">
