@@ -251,7 +251,7 @@ function syncFile(rel) {
   html = stripConflictingHeaderStyles(html);
   // Ensure footer layout CSS is always present, versioned, and after Tailwind
   // (unversioned or pre-Tailwind links caused a collapsed narrow footer on many pages).
-  const enhHref = `${prefix}gh-site-enhancements.css?v=31`;
+  const enhHref = `${prefix}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}`;
   const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
   html = html.replace(
     /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,
@@ -286,7 +286,7 @@ function syncFooterOnly(rel) {
   html = html.replace(/<footer dir="(?:ltr|rtl)"[\s\S]*?<\/footer>/, footer);
 
   const prefix = depth > 0 ? '../'.repeat(depth) + 'assets/' : 'assets/';
-  const enhHref = `${prefix}gh-site-enhancements.css?v=31`;
+  const enhHref = `${prefix}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}`;
   const enhTag = `<link rel="stylesheet" href="${enhHref}">`;
   html = html.replace(
     /<link[^>]*href="[^"]*gh-site-enhancements\.css[^"]*"[^>]*>\s*/gi,

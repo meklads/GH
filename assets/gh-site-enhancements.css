@@ -57,16 +57,18 @@ body.gh-insights .gh-tool-page-wrap {
 /* Footer decorative motif — keep inside viewport (was 1560px fixed, caused horizontal scroll) */
 .gh-footer-motif {
   position: absolute;
-  bottom: -80px;
+  bottom: -100px;
   left: 50%;
   transform: translateX(-50%);
   width: min(1560px, 110vw);
   max-width: 110vw;
   height: auto;
-  opacity: 0.05;
+  opacity: 0.07;
   pointer-events: none;
   z-index: 0;
-  filter: brightness(1.2) saturate(0);
+  filter: brightness(1.35) saturate(0);
+  mask-image: linear-gradient(to top, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 40%, transparent 100%);
 }
 
 /* ===== Homepage hero stack (AR + EN) ===== */
@@ -253,15 +255,7 @@ body.gh-home #hero .hero-contact-strip {
   body.gh-home #hero .hero-bottom-panel .hero-caps-bar {
     justify-content: flex-start;
   }
-  html[dir="ltr"] body.gh-home #hero .hero-slide-counter {
-    right: 16px !important;
-  }
-  html[dir="rtl"] body.gh-home #hero .hero-slide-counter {
-    left: 16px !important;
-  }
-}
-
-/* ===== Site footer typography & layout =====
+  html[dir="ltr"] body.gh-home #hero ./* ===== Site footer typography & layout =====
    !important on layout props: page inline styles / Tailwind load order
    previously collapsed the grid into a narrow column on several pages. */
 .gh-footer {
@@ -272,13 +266,33 @@ body.gh-home #hero .hero-contact-strip {
   float: none !important;
   clear: both !important;
   box-sizing: border-box !important;
-  background: #071810;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201, 168, 76, 0.12), transparent 55%),
+    linear-gradient(180deg, #0b1c14 0%, #071810 42%, #050f0b 100%);
   color: #fff;
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  /* Clearance for fixed WhatsApp / mail float stack */
   padding-inline-end: 0;
+  border-top: 1px solid rgba(201, 168, 76, 0.22);
+}
+
+.gh-footer::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 168, 76, 0.15) 18%,
+    rgba(201, 168, 76, 0.65) 50%,
+    rgba(201, 168, 76, 0.15) 82%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
 }
 
 .gh-footer[dir="rtl"] {
@@ -298,29 +312,47 @@ body.gh-home #hero .hero-contact-strip {
   margin: 0 auto !important;
   float: none !important;
   box-sizing: border-box !important;
-  padding: 52px 48px 0 !important;
+  padding: 64px 48px 0 !important;
 }
 
 .gh-footer__top {
   display: grid !important;
-  grid-template-columns: minmax(160px, 1.25fr) repeat(3, minmax(0, 1fr)) !important;
-  gap: 32px 28px !important;
+  grid-template-columns: minmax(180px, 1.35fr) repeat(3, minmax(0, 1fr)) !important;
+  gap: 40px 32px !important;
   align-items: start;
   width: 100% !important;
   box-sizing: border-box !important;
-  padding-bottom: 32px;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
 }
 
 .gh-footer__brand {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-inline-end: 12px;
 }
 
 .gh-footer__brand img {
   display: block;
-  height: 72px;
+  height: 78px;
   width: auto;
   max-width: 100%;
+}
+
+.gh-footer__tagline {
+  margin: 0;
+  max-width: 16rem;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.gh-footer[dir="ltr"] .gh-footer__tagline {
+  font-size: 12.5px;
+  letter-spacing: 0.01em;
 }
 
 .gh-footer__col {
@@ -329,62 +361,92 @@ body.gh-home #hero .hero-contact-strip {
 }
 
 .gh-footer__title {
-  margin: 0 0 14px;
-  font-size: 13px;
+  position: relative;
+  margin: 0 0 18px;
+  padding-bottom: 12px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.35;
   color: #fafaf8;
 }
 
+.gh-footer__title::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+  width: 28px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #c9a84c, rgba(201, 168, 76, 0.15));
+}
+
 .gh-footer[dir="ltr"] .gh-footer__title {
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .gh-footer__links {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 12px;
 }
 
 .gh-footer__links a {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.72);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 13.5px;
   line-height: 1.55;
-  transition: color 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .gh-footer[dir="ltr"] .gh-footer__links a {
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 1.6;
 }
 
 .gh-footer__links a:hover {
-  color: #c9a84c;
+  color: #e0c06a;
+}
+
+html[dir="rtl"] .gh-footer__links a:hover {
+  transform: translateX(-2px);
+}
+html[dir="ltr"] .gh-footer__links a:hover {
+  transform: translateX(2px);
 }
 
 .gh-footer__offices {
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  gap: 8px 20px !important;
+  gap: 14px !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  padding: 28px 0 32px;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+  padding: 32px 0 36px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
 }
 
 .gh-footer__office {
   text-align: start;
-  padding: 8px 12px;
+  padding: 18px 16px;
   min-width: 0;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.025);
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gh-footer__office:hover {
+  border-color: rgba(201, 168, 76, 0.28);
+  background: rgba(201, 168, 76, 0.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
 }
 
 .gh-footer__office-title {
   margin: 0 0 10px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.35;
   color: #fafaf8;
@@ -398,10 +460,10 @@ body.gh-home #hero .hero-contact-strip {
 }
 
 .gh-footer__office-meta {
-  margin: 0 0 18px;
-  font-size: 12px;
+  margin: 0 0 16px;
+  font-size: 12.5px;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255, 255, 255, 0.58);
 }
 
 .gh-footer__office-meta span[dir="ltr"] {
@@ -414,16 +476,17 @@ body.gh-home #hero .hero-contact-strip {
   align-items: center;
   justify-content: center;
   gap: 7px;
-  padding: 9px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50px;
+  padding: 10px 18px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 999px;
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  color: #fff;
+  color: #e8d5a0;
   text-decoration: none;
   white-space: nowrap;
-  transition: border-color 0.25s ease, color 0.25s ease;
+  background: rgba(201, 168, 76, 0.06);
+  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
 }
 
 .gh-footer[dir="ltr"] .gh-footer__call {
@@ -434,46 +497,57 @@ body.gh-home #hero .hero-contact-strip {
 
 .gh-footer__call:hover {
   border-color: #c9a84c;
-  color: #c9a84c;
+  color: #0a0a0a;
+  background: #c9a84c;
 }
 
 .gh-footer__social {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 14px;
-  padding: 24px 0;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+  gap: 12px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
 }
 
 .gh-footer__social-label {
   font-size: 12px;
   font-weight: 600;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.55);
   white-space: nowrap;
+  margin-inline-end: 4px;
 }
 
 .gh-footer[dir="ltr"] .gh-footer__social-label {
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 11px;
 }
 
 .gh-footer__social a {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: rgba(201, 168, 76, 0.15);
-  border: 1.5px solid rgba(201, 168, 76, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.gh-footer__social a:hover {
+  background: rgba(201, 168, 76, 0.16);
+  border-color: rgba(201, 168, 76, 0.55);
+  transform: translateY(-2px);
 }
 
 .gh-footer__social a.gh-footer__profile {
   width: auto;
   height: auto;
-  min-height: 38px;
+  min-height: 40px;
   padding: 8px 16px;
   border-radius: 999px;
   gap: 8px;
@@ -501,48 +575,42 @@ body.gh-home #hero .hero-contact-strip {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px 20px;
-  padding: 20px 0 28px;
+  gap: 14px 24px;
+  padding: 22px 0 32px;
 }
 
 .gh-footer__legal-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
+  gap: 8px;
   min-width: 0;
 }
 
 .gh-footer__copy {
   margin: 0;
-  font-size: 11px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.42);
 }
 
 .gh-footer__group {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border: 1px solid rgba(201, 168, 76, 0.35);
-  border-radius: 999px;
-  background: rgba(201, 168, 76, 0.06);
-  font-size: 12px;
-  line-height: 1.4;
-  color: rgba(201, 168, 76, 0.8);
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.62);
   text-decoration: none;
-  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  font-size: 12.5px;
+  line-height: 1.4;
+  transition: color 0.25s ease;
 }
 
 .gh-footer__group strong {
+  color: #e0c06a;
   font-weight: 700;
-  color: #c9a84c;
 }
 
 .gh-footer__group svg {
-  flex-shrink: 0;
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
 [dir="rtl"] .gh-footer__group svg {
@@ -550,22 +618,19 @@ body.gh-home #hero .hero-contact-strip {
 }
 
 .gh-footer__group:hover {
-  color: #c9a84c;
-  border-color: rgba(201, 168, 76, 0.6);
-  background: rgba(201, 168, 76, 0.12);
+  color: #fafaf8;
 }
 
 .gh-footer__legal-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 8px 18px;
 }
 
 .gh-footer__legal-links a {
-  font-size: 11px;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.48);
   text-decoration: none;
+  font-size: 12px;
   transition: color 0.25s ease;
 }
 
@@ -573,15 +638,13 @@ body.gh-home #hero .hero-contact-strip {
   color: #c9a84c;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .gh-footer__inner {
-    /* Keep content clear of fixed float widgets on physical left (≈52px + gutter) */
-    padding-left: 96px !important;
-    padding-right: 0 !important;
+    padding: 52px 28px 0 !important;
   }
 
   .gh-footer__top {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: minmax(140px, 1fr) repeat(2, minmax(0, 1fr)) !important;
   }
 
   .gh-footer__brand {
@@ -590,22 +653,30 @@ body.gh-home #hero .hero-contact-strip {
 
   .gh-footer__offices {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 20px 16px !important;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 700px) {
   .gh-footer__inner {
-    padding: 40px 24px 0 !important;
-    padding-inline-end: 88px !important;
+    padding: 44px 20px 0 !important;
   }
 
   .gh-footer__top {
     grid-template-columns: 1fr !important;
-    gap: 24px !important;
+    gap: 28px !important;
   }
 
   .gh-footer__offices {
+    grid-template-columns: 1fr !important;
+  }
+
+  .gh-footer__legal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+__offices {
     grid-template-columns: 1fr !important;
   }
 

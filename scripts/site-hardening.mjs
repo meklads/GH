@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url';
 import { stripLegacyGa, injectAnalytics } from './analytics-snippet.mjs';
 import {
   SITE_HEADER_CSS_VER,
+  SITE_ENHANCEMENTS_CSS_VER,
   stripConflictingHeaderStyles,
   ensureHeaderCssLast,
 } from './lib/header-css-guard.mjs';
@@ -505,13 +506,13 @@ function patchHtml(html, rel) {
     html = html.replace(/<head>/i, `<head>\n<script src="${prefix}assets/gh-forms-config.js"></script>`);
   }
 
-  const enhanceCss = `<link rel="stylesheet" href="${prefix}assets/gh-site-enhancements.css?v=31">`;
+  const enhanceCss = `<link rel="stylesheet" href="${prefix}assets/gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">`;
   if (!html.includes('gh-site-enhancements.css')) {
     html = html.replace(/<\/head>/i, `${enhanceCss}\n</head>`);
   } else {
     html = html.replace(
       /gh-site-enhancements\.css(?:\?v=\d+)?/g,
-      'gh-site-enhancements.css?v=31'
+      `gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}`
     );
   }
 

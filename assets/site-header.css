@@ -878,20 +878,20 @@ html[dir="rtl"] .mm-panel-label {
 
 /* ----- Solutions mega ----- */
 .mega-menu-solutions {
-  width: min(980px, 94vw);
+  width: min(1274px, 98vw);
   padding: 0;
 }
 .mega-menu-solutions .mm-main {
-  padding: 20px 24px 28px;
+  padding: 26px 31px 36px;
 }
 .mega-menu-solutions .mm-main--split {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 .mega-menu-solutions .mm-section-label {
-  margin: 0 0 12px;
-  font-size: 10px;
+  margin: 0 0 16px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -901,17 +901,17 @@ html[dir="rtl"] .mm-panel-label {
 html[dir="rtl"] .mega-menu-solutions .mm-section-label {
   letter-spacing: 0.06em;
   text-transform: none;
-  font-size: 11px;
+  font-size: 14px;
 }
 .mega-menu-solutions .mm-institutional-block {
-  margin-top: 20px;
-  padding-top: 20px;
+  margin-top: 26px;
+  padding-top: 26px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 .mega-menu-solutions .mm-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  gap: 26px;
 }
 @media (min-width: 1100px) {
   .mega-menu-solutions .mm-grid--launch {
@@ -921,10 +921,10 @@ html[dir="rtl"] .mega-menu-solutions .mm-section-label {
 .mega-menu-solutions .mm-card {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 26px 22px 22px;
-  min-height: 220px;
-  border-radius: 14px;
+  gap: 13px;
+  padding: 34px 29px 29px;
+  min-height: 286px;
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.07);
   background: rgba(255, 255, 255, 0.02);
   transition: all 0.3s cubic-bezier(0.25, 0.1, 0.1, 1);
@@ -937,15 +937,15 @@ html[dir="rtl"] .mega-menu-solutions .mm-section-label {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 .mega-menu-solutions .mm-card .mm-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
   background: linear-gradient(145deg, rgba(201, 168, 76, 0.18), rgba(201, 168, 76, 0.06));
   border: 1px solid rgba(201, 168, 76, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   transition: all 0.3s ease;
 }
 .mega-menu-solutions .mm-card:hover .mm-icon {
@@ -954,12 +954,12 @@ html[dir="rtl"] .mega-menu-solutions .mm-section-label {
   transform: scale(1.04);
 }
 .mega-menu-solutions .mm-card .mm-icon span {
-  font-size: 23px;
+  font-size: 30px;
   color: var(--header-gold-light);
   font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
 }
 .mega-menu-solutions .mm-card .mm-title {
-  font-size: 16px;
+  font-size: 21px;
   font-weight: 700;
   color: #FAFAF8;
   font-family: 'Inter', 'Tajawal', sans-serif;
@@ -977,7 +977,7 @@ html[dir="rtl"] .mega-menu-solutions .mm-section-label {
   opacity: 0.9;
 }
 .mega-menu-solutions .mm-card .mm-sub {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
   color: rgba(201, 168, 76, 0.85);
   letter-spacing: 0.04em;
@@ -985,25 +985,25 @@ html[dir="rtl"] .mega-menu-solutions .mm-section-label {
 }
 html[dir="rtl"] .mega-menu-solutions .mm-card .mm-sub { letter-spacing: 0; }
 .mega-menu-solutions .mm-card .mm-desc {
-  font-size: 13px;
+  font-size: 17px;
   color: rgba(255, 255, 255, 0.5);
   line-height: 1.65;
   flex: 1;
 }
 .mega-menu-solutions .mm-card .mm-cta {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--header-gold);
   margin-top: auto;
-  padding-top: 8px;
+  padding-top: 10px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   opacity: 0;
   transform: translateX(-6px);
   transition: all 0.3s ease;
 }
-.mega-menu-solutions .mm-card .mm-cta .material-symbols-outlined { font-size: 14px; }
+.mega-menu-solutions .mm-card .mm-cta .material-symbols-outlined { font-size: 18px; }
 html[dir="rtl"] .mega-menu-solutions .mm-card .mm-cta { transform: translateX(6px); }
 .mega-menu-solutions .mm-card:hover .mm-cta {
   opacity: 1;
@@ -1052,63 +1052,63 @@ html[dir="rtl"] .mega-menu-solutions .mm-card--institutional .mm-cta {
 
 /* ----- Services mega ----- */
 .mega-menu-services {
-  width: min(1180px, 96vw);
+  width: min(1534px, 98vw);
   padding: 0;
 }
 .mega-menu-services .mm-panel-head {
-  padding: 26px 32px 0;
+  padding: 34px 42px 0;
 }
 .mega-menu-services .mm-panel-desc {
-  font-size: 14px;
-  margin-bottom: 18px;
-  max-width: 42rem;
+  font-size: 18px;
+  margin-bottom: 23px;
+  max-width: 48rem;
 }
 .mega-menu-services .mm-main {
-  padding: 20px 24px 28px;
+  padding: 26px 31px 36px;
   width: 100%;
 }
 .mega-menu-services .mm-grid {
   display: grid;
-  grid-template-columns: minmax(460px, 1.15fr) minmax(320px, 0.85fr);
-  gap: 10px;
+  grid-template-columns: minmax(600px, 1.15fr) minmax(416px, 0.85fr);
+  gap: 13px;
   width: 100%;
 }
 html[dir="ltr"] .mega-menu-services .mm-grid {
-  grid-template-columns: minmax(460px, 1.15fr) minmax(320px, 0.85fr);
+  grid-template-columns: minmax(600px, 1.15fr) minmax(416px, 0.85fr);
 }
 .mega-menu-services .mm-col-core {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 .mega-menu-services .mm-col {
-  padding: 10px 32px 14px;
+  padding: 13px 42px 18px;
   border-inline-end: 1px solid rgba(255, 255, 255, 0.07);
 }
 .mega-menu-services .mm-col:last-child { border-inline-end: none; }
 .mega-menu-services .mm-col-header {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--header-gold);
-  margin-bottom: 16px;
-  padding-bottom: 10px;
+  margin-bottom: 21px;
+  padding-bottom: 13px;
   border-bottom: 1px solid rgba(201, 168, 76, 0.18);
 }
 html[dir="rtl"] .mega-menu-services .mm-col-header {
   letter-spacing: 0.04em;
   text-transform: none;
-  font-size: 13px;
+  font-size: 17px;
 }
 .mega-menu-services .mm-svc-link {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 14px 16px;
+  gap: 21px;
+  padding: 18px 21px;
   text-decoration: none;
   transition: all 0.25s ease;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 .mega-menu-services .mm-svc-link:hover {
   background: rgba(201, 168, 76, 0.08);
@@ -1116,9 +1116,9 @@ html[dir="rtl"] .mega-menu-services .mm-col-header {
 }
 html[dir="ltr"] .mega-menu-services .mm-svc-link:hover { transform: translateX(2px); }
 .mega-menu-services .mm-svc-icon-wrap {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 62px;
+  height: 62px;
+  border-radius: 14px;
   background: linear-gradient(145deg, rgba(201, 168, 76, 0.16), rgba(201, 168, 76, 0.05));
   border: 1px solid rgba(201, 168, 76, 0.2);
   display: flex;
@@ -1132,19 +1132,19 @@ html[dir="ltr"] .mega-menu-services .mm-svc-link:hover { transform: translateX(2
   border-color: rgba(201, 168, 76, 0.38);
 }
 .mega-menu-services .mm-svc-icon-wrap span {
-  font-size: 24px;
+  font-size: 31px;
   color: var(--header-gold-light);
   font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
 }
 .mega-menu-services .mm-svc-body {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   min-width: 0;
   flex: 1;
 }
 .mega-menu-services .mm-svc-text {
-  font-size: 16px;
+  font-size: 21px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.88);
   line-height: 1.4;
@@ -1152,7 +1152,7 @@ html[dir="ltr"] .mega-menu-services .mm-svc-link:hover { transform: translateX(2
 }
 .mega-menu-services .mm-svc-link:hover .mm-svc-text { color: #FAFAF8; }
 .mega-menu-services .mm-svc-desc {
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.45);
   line-height: 1.5;
@@ -1322,32 +1322,32 @@ html[dir="ltr"] .mega-menu-services .mm-svc-link:hover { transform: translateX(2
 
 /* ----- Case studies mega menu — compact title + thumb ----- */
 .mega-menu-casestudies {
-  width: min(920px, calc(100vw - 32px));
+  width: min(1196px, calc(100vw - 32px));
   left: 50%;
   transform: translateX(-50%) translateY(8px);
 }
 .mega-menu-casestudies .mm-panel-head {
-  padding: 16px 20px 8px;
+  padding: 21px 26px 10px;
 }
 .mega-menu-casestudies .mm-panel-desc {
-  margin: 4px 0 0;
-  font-size: 12px;
+  margin: 5px 0 0;
+  font-size: 16px;
   line-height: 1.45;
   opacity: 0.55;
 }
 .mega-menu-casestudies .mm-cs-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  padding: 4px 16px 14px;
+  gap: 13px;
+  padding: 5px 21px 18px;
 }
 .mega-menu-casestudies .mm-cs-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-height: 64px;
-  padding: 8px 10px;
-  border-radius: 12px;
+  gap: 16px;
+  min-height: 83px;
+  padding: 10px 13px;
+  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.03);
   text-decoration: none;
@@ -1360,10 +1360,10 @@ html[dir="ltr"] .mega-menu-services .mm-svc-link:hover { transform: translateX(2
   transform: translateY(-1px);
 }
 .mega-menu-casestudies .mm-cs-thumb {
-  flex: 0 0 72px;
-  width: 72px;
-  height: 54px;
-  border-radius: 8px;
+  flex: 0 0 94px;
+  width: 94px;
+  height: 70px;
+  border-radius: 10px;
   overflow: hidden;
   background: #141414;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
