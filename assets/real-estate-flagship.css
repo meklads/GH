@@ -110,3 +110,5 @@ html[dir="rtl"] .revs-section h2 {
 .page-revs .revs-close .btn-pill-outline:hover {
   background: rgba(250, 250, 248, 0.08); border-color: #c9a84c; color: #c9a84c;
 }
+
+/* cache-bust 20260921b */
