@@ -1,8 +1,9 @@
 /**
  * Shared guards so site-header.css owns the chrome on every page.
  */
-export const SITE_HEADER_CSS_VER = 46;
-export const SITE_ENHANCEMENTS_CSS_VER = 34;
+export const SITE_HEADER_CSS_VER = 47;
+export const SITE_ENHANCEMENTS_CSS_VER = 35;
+export const SITE_FOOTER_LOCK_CSS_VER = 1;
 
 export function stripConflictingHeaderStyles(html) {
   let out = html;
@@ -81,4 +82,15 @@ export function ensureHeaderCssLast(html, prefix) {
     return html.replace(/<\/head>/i, `${headerTag}\n</head>`);
   }
   return html + headerTag;
+}
+
+/** Homepage footer lock — must load after site-header so grids never collapse. */
+export function ensureFooterLockCssLast(html, prefix) {
+  const href = `${prefix}gh-footer-lock.css?v=${SITE_FOOTER_LOCK_CSS_VER}`;
+  const tag = `<link rel="stylesheet" href="${href}" data-gh-footer-lock="1">`;
+  html = html.replace(/<link[^>]*href="[^"]*gh-footer-lock\.css[^"]*"[^>]*>\s*/gi, '');
+  if (/<\/head>/i.test(html)) {
+    return html.replace(/<\/head>/i, `${tag}\n</head>`);
+  }
+  return html + tag;
 }

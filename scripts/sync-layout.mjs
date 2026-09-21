@@ -11,6 +11,7 @@ import {
   SITE_ENHANCEMENTS_CSS_VER,
   stripConflictingHeaderStyles,
   ensureHeaderCssLast,
+  ensureFooterLockCssLast,
 } from './lib/header-css-guard.mjs';
 import { renderPartial } from './layout-partials.mjs';
 
@@ -195,7 +196,8 @@ function ensureMaterialSymbols(html) {
 }
 
 function ensureHeaderCssOrder(html, prefix) {
-  return ensureHeaderCssLast(html, prefix);
+  html = ensureHeaderCssLast(html, prefix);
+  return ensureFooterLockCssLast(html, prefix);
 }
 
 const SKIP = new Set([
