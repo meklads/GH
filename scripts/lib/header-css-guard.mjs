@@ -3,7 +3,7 @@
  */
 export const SITE_HEADER_CSS_VER = 49;
 export const SITE_ENHANCEMENTS_CSS_VER = 35;
-export const SITE_FOOTER_LOCK_CSS_VER = 2;
+export const SITE_FOOTER_LOCK_CSS_VER = 3;
 
 export function stripConflictingHeaderStyles(html) {
   let out = html;

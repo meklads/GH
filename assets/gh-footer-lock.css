@@ -151,6 +151,78 @@
   background:
     linear-gradient(165deg, rgba(201, 168, 76, 0.06), transparent 42%),
     rgba(255, 255, 255, 0.025) !important;
+  color: #fff !important;
+}
+
+/* Beat page <style> that forces h2–h4 / p to #0A0A0A on ProjectLaunch */
+.gh-footer h1,
+.gh-footer h2,
+.gh-footer h3,
+.gh-footer h4,
+.gh-footer p,
+.gh-footer span,
+.gh-footer a,
+.gh-footer li,
+.gh-footer strong {
+  color: #fff !important;
+}
+
+.gh-footer__offices-desc {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+}
+
+.gh-footer__office-title {
+  margin: 0 0 4px !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+
+.gh-footer__office-city {
+  margin: 0 0 12px !important;
+  color: #f0d78a !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+}
+
+.gh-footer__office-meta {
+  margin: 0 0 18px !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 12.5px !important;
+  line-height: 1.7 !important;
+  flex: 1 !important;
+}
+
+.gh-footer__office-badge {
+  color: #0a0a0a !important;
+}
+
+.gh-footer__social-label {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.gh-footer__group,
+.gh-footer__group strong {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.gh-footer__copy {
+  color: rgba(255, 255, 255, 0.62) !important;
+}
+
+.gh-footer__legal-links a {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.gh-footer__legal-links a:hover {
+  color: #c9a84c !important;
 }
 
 .gh-footer__call {
