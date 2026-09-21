@@ -284,37 +284,61 @@ body:has(.nav-mega-item.is-open) .gh-float {
   }
 }
 
-@media (min-width: 901px) and (max-width: 1180px) {
+@media (min-width: 901px) and (max-width: 1280px) {
   html[dir="ltr"] .header .container.header-inner,
   html[dir="rtl"] .header .container.header-inner {
-    gap: 0 16px;
+    gap: 0 14px;
+  }
+  .header .nav {
+    min-width: 0;
+    overflow: hidden;
+  }
+  .header .nav-actions {
+    z-index: 6;
+    position: relative;
+    background: var(--header-bg);
+    isolation: isolate;
+  }
+  html[dir="ltr"] .header .nav-actions {
+    box-shadow: -18px 0 18px 8px var(--header-bg);
+  }
+  html[dir="rtl"] .header .nav-actions {
+    box-shadow: 18px 0 18px 8px var(--header-bg);
+  }
+  /* Drop secondary links before they collide with lang switch / CTA */
+  .header .nav > a.nav-link[href*="portfolio"],
+  .header .nav > a.nav-link[href*="casestudy"] {
+    display: none !important;
   }
   html[dir="ltr"] .nav-link {
     font-size: 10px;
-    padding: 9px 7px;
+    padding: 9px 6px;
     letter-spacing: 0.04em;
   }
   html[dir="rtl"] .nav-link {
     font-size: 13px;
-    padding: 8px 7px;
+    padding: 8px 6px;
   }
   html[dir="ltr"] .nav-cta {
-    padding: 11px 22px !important;
+    padding: 10px 18px !important;
     font-size: 10px !important;
     letter-spacing: 0.08em !important;
     min-width: 0 !important;
-    min-height: 40px !important;
+    min-height: 38px !important;
   }
   html[dir="rtl"] .nav-cta {
-    padding: 8px 14px !important;
-    font-size: 12.5px !important;
+    padding: 8px 12px !important;
+    font-size: 12px !important;
     min-width: 0 !important;
   }
   html[dir="ltr"] .nav-actions,
   html[dir="rtl"] .nav-actions {
-    padding-inline-start: 14px;
-    padding-inline-end: 14px;
-    gap: 10px;
+    padding-inline-start: 12px;
+    padding-inline-end: 12px;
+    gap: 8px;
+  }
+  .lang-switch-link {
+    padding: 6px 10px;
   }
 }
 
