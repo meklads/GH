@@ -212,8 +212,8 @@ ${analyticsHeadTags(P)}
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${P}assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="${P}assets/site-header.css?v=40">
-<link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=31">
+<link rel="stylesheet" href="${P}assets/site-header.css?v=46">
+<link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=34">
 <link rel="stylesheet" href="${P}assets/gh-float-widgets.css?v=8">
 <style>
 .ie{--gold:#C9A84C;--ink:#0A0A0A;--paper:#FAFAF8;--muted:rgba(250,250,248,.68);background:#0A0A0A;color:var(--paper)}

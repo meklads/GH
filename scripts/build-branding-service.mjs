@@ -385,7 +385,7 @@ ${analyticsHeadTags(P)}
 <meta property="og:description" content="${esc(t.description)}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${BASE}/${OG_IMG}">
-<link rel="stylesheet" href="${P}assets/site-header.css?v=40">
+<link rel="stylesheet" href="${P}assets/site-header.css?v=46">
 <link rel="stylesheet" href="${P}assets/gh-float-widgets.css?v=8">
 <link rel="stylesheet" href="${P}assets/gh-branding-service.css?v=${CSS_V}">
 <link href="${isEn ? 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Tajawal:wght@200;300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap' : 'https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap'}" rel="stylesheet">

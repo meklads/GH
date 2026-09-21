@@ -78,6 +78,15 @@ body.nav-open .gh-float {
   pointer-events: none;
   visibility: hidden;
 }
+/* Desktop mega open: raise header above floats so the full panel is visible */
+body:has(.nav-mega-item.is-open) .header {
+  z-index: 10050 !important;
+}
+body:has(.nav-mega-item.is-open) .gh-float {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
 @media (max-width: 900px) {
   body,
   body:has(.header) {
@@ -827,8 +836,13 @@ html[dir="rtl"] .nav-cta {
     visibility 0.28s;
   z-index: 1100;
   border-radius: 16px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   min-width: 200px;
+  max-height: calc(100vh - var(--gh-header-height) - 24px);
+  max-height: calc(100dvh - var(--gh-header-height) - 24px);
+  -webkit-overflow-scrolling: touch;
 }
 
 .nav-mega-item:hover .mega-menu,
@@ -882,7 +896,7 @@ html[dir="rtl"] .mm-panel-label {
   padding: 0;
 }
 .mega-menu-solutions .mm-main {
-  padding: 20px 24px 28px;
+  padding: 16px 22px 20px;
 }
 .mega-menu-solutions .mm-main--split {
   display: flex;
@@ -904,8 +918,8 @@ html[dir="rtl"] .mega-menu-solutions .mm-section-label {
   font-size: 11px;
 }
 .mega-menu-solutions .mm-institutional-block {
-  margin-top: 20px;
-  padding-top: 20px;
+  margin-top: 14px;
+  padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 .mega-menu-solutions .mm-grid {
@@ -922,8 +936,8 @@ html[dir="rtl"] .mega-menu-solutions .mm-section-label {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 26px 22px 22px;
-  min-height: 220px;
+  padding: 22px 20px 20px;
+  min-height: 0;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.07);
   background: rgba(255, 255, 255, 0.02);

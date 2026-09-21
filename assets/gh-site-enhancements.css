@@ -255,7 +255,15 @@ body.gh-home #hero .hero-contact-strip {
   body.gh-home #hero .hero-bottom-panel .hero-caps-bar {
     justify-content: flex-start;
   }
-  html[dir="ltr"] body.gh-home #hero ./* ===== Site footer typography & layout =====
+  html[dir="ltr"] body.gh-home #hero .hero-slide-counter {
+    right: 16px !important;
+  }
+  html[dir="rtl"] body.gh-home #hero .hero-slide-counter {
+    left: 16px !important;
+  }
+}
+
+/* ===== Site footer typography & layout =====
    !important on layout props: page inline styles / Tailwind load order
    previously collapsed the grid into a narrow column on several pages. */
 .gh-footer {
@@ -815,16 +823,6 @@ html[dir="ltr"] .gh-footer__links a:hover {
   .gh-footer__offices-head {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .gh-footer__legal {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-__offices {
-    grid-template-columns: 1fr !important;
   }
 
   .gh-footer__legal {
