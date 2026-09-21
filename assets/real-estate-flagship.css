@@ -1,0 +1,112 @@
+/* Real Estate Visual Launch System — flagship */
+.page-revs { background: #fafaf8; color: #1a1a1a; }
+.revs-hero {
+  padding: clamp(7rem, 14vw, 9rem) 0 clamp(3.5rem, 7vw, 5rem);
+  background:
+    radial-gradient(70% 55% at 90% 0%, rgba(201, 168, 76, 0.14), transparent 55%),
+    linear-gradient(180deg, #f7f5f0 0%, #fafaf8 100%);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+}
+.revs-hero-grid { display: grid; gap: clamp(2rem, 4vw, 3.5rem); align-items: center; }
+@media (min-width: 960px) {
+  .revs-hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); }
+}
+.revs-eyebrow {
+  margin: 0 0 0.85rem; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; color: #c9a84c;
+}
+.revs-hero h1 {
+  margin: 0 0 1rem; font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(2rem, 4.4vw, 3.35rem); font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.08; color: #0a0a0a;
+}
+html[dir="rtl"] .revs-hero h1 {
+  font-family: Tajawal, "IBM Plex Sans Arabic", sans-serif; font-weight: 500; letter-spacing: 0;
+}
+.revs-hero-sub {
+  margin: 0 0 1.75rem; max-width: 36rem;
+  font-size: clamp(1rem, 1.5vw, 1.125rem); line-height: 1.65; color: rgba(26, 26, 26, 0.7);
+}
+.revs-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.revs-hero-media {
+  overflow: hidden; min-height: clamp(18rem, 42vw, 28rem); background: #111;
+  box-shadow: 0 24px 60px rgba(10, 10, 10, 0.16);
+}
+.revs-hero-media img { width: 100%; height: 100%; min-height: inherit; object-fit: cover; display: block; }
+.revs-section { padding: clamp(3.25rem, 7vw, 5.25rem) 0; }
+.revs-narrow { max-width: 40rem; }
+.revs-tag {
+  display: inline-block; margin: 0 0 0.75rem; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: #c9a84c;
+}
+.revs-section h2 {
+  margin: 0 0 1rem; font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(1.55rem, 3vw, 2.25rem); font-weight: 700;
+  letter-spacing: -0.025em; line-height: 1.15; color: #0a0a0a;
+}
+html[dir="rtl"] .revs-section h2 {
+  font-family: Tajawal, "IBM Plex Sans Arabic", sans-serif; font-weight: 500; letter-spacing: 0;
+}
+.revs-section p.lead { margin: 0; font-size: 1.05rem; line-height: 1.65; color: rgba(26, 26, 26, 0.68); }
+.revs-band { background: #f3f0e8; }
+.revs-system-grid {
+  list-style: none; margin: 1.75rem 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 0.75rem;
+}
+.revs-system-grid li {
+  padding: 1.15rem 1.1rem; background: #fff; border: 1px solid rgba(26, 26, 26, 0.08);
+  font-weight: 650; font-size: 0.95rem;
+}
+.revs-work-grid { display: grid; gap: 1rem; margin-top: 1.75rem; }
+@media (min-width: 900px) { .revs-work-grid { grid-template-columns: repeat(3, 1fr); } }
+.revs-work-card {
+  display: flex; flex-direction: column; text-decoration: none; color: inherit;
+  background: #fff; border: 1px solid rgba(26, 26, 26, 0.08); overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.revs-work-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(10, 10, 10, 0.1); }
+.revs-work-card img { width: 100%; aspect-ratio: 16 / 11; object-fit: cover; display: block; background: #111; }
+.revs-work-meta { padding: 1rem 1.1rem 1.25rem; }
+.revs-work-meta span {
+  display: block; margin: 0 0 0.35rem; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: #c9a84c;
+}
+.revs-work-meta h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+.revs-work-meta em { font-style: normal; font-size: 0.88rem; font-weight: 650; color: #8a6e2f; }
+.revs-who-grid { list-style: none; margin: 1.5rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.65rem; }
+.revs-who-grid li {
+  padding: 0.65rem 1rem; border: 1px solid rgba(26, 26, 26, 0.12); background: #fff;
+  font-weight: 650; font-size: 0.92rem;
+}
+.revs-why-grid { display: grid; gap: 0.85rem; margin-top: 1.75rem; }
+@media (min-width: 800px) { .revs-why-grid { grid-template-columns: repeat(3, 1fr); } }
+.revs-why-card { padding: 1.35rem 1.2rem; background: #fff; border: 1px solid rgba(26, 26, 26, 0.08); }
+.revs-why-card h3 { margin: 0 0 0.45rem; font-size: 1.05rem; }
+.revs-why-card p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: rgba(26, 26, 26, 0.65); }
+.revs-process { list-style: none; margin: 1.75rem 0 0; padding: 0; display: grid; gap: 0.85rem; }
+@media (min-width: 900px) { .revs-process { grid-template-columns: repeat(5, 1fr); } }
+.revs-process li {
+  padding: 1.15rem 1rem; background: #fff; border: 1px solid rgba(26, 26, 26, 0.08); display: grid; gap: 0.35rem;
+}
+.revs-process span { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; color: #c9a84c; }
+.revs-process strong { font-size: 1rem; }
+.revs-process em { font-style: normal; font-size: 0.88rem; line-height: 1.45; color: rgba(26, 26, 26, 0.62); }
+.revs-close { background: #0a0a0a; color: #fafaf8; }
+.revs-close h2, .revs-close p { color: #fafaf8; }
+.revs-close p { opacity: 0.78; }
+.revs-close-inner { max-width: 36rem; text-align: center; margin-inline: auto; }
+.revs-close .revs-ctas { justify-content: center; margin-top: 1.5rem; }
+.nav-link.is-active-revs { color: #c9a84c; }
+.page-revs .btn-pill {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 32px; border-radius: 50px;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  text-decoration: none; transition: all 0.35s; cursor: pointer; border: 2px solid transparent;
+}
+.page-revs .btn-pill-gold { background: #c9a84c; color: #0a0a0a; border-color: #c9a84c; }
+.page-revs .btn-pill-gold:hover { background: #a8883a; border-color: #a8883a; color: #0a0a0a; }
+.page-revs .btn-pill-outline { background: transparent; color: #1a1a1a; border-color: #1a1a1a; }
+.page-revs .btn-pill-outline:hover { background: #1a1a1a; color: #fafaf8; }
+.page-revs .revs-close .btn-pill-outline { border-color: rgba(250, 250, 248, 0.35); color: #fafaf8; }
+.page-revs .revs-close .btn-pill-outline:hover {
+  background: rgba(250, 250, 248, 0.08); border-color: #c9a84c; color: #c9a84c;
+}
