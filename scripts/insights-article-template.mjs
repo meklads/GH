@@ -405,13 +405,13 @@ export function socialProofStrip(isEn) {
   if (isEn) {
     return `<div class="gh-art-proof" role="note">
       <span><strong>15+ years</strong> in GCC archviz</span>
-      <span><strong>500+</strong> projects delivered</span>
+      <span>Projects for developers across the region</span>
       <span><strong>4</strong> regional studios</span>
     </div>`;
   }
   return `<div class="gh-art-proof" role="note">
     <span><strong>+15 سنة</strong> في الإظهار بالخليج</span>
-    <span><strong>500+</strong> مشروع</span>
+    <span>مشاريع لمطورين في المنطقة</span>
     <span><strong>4</strong> مكاتب إقليمية</span>
   </div>`;
 }

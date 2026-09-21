@@ -145,7 +145,7 @@ function bodyContent() {
     </div>
     <div class="why-grid reveal r1">
       <div class="why-card"><div class="num">15</div><h4>Years of Experience</h4><p>Deep GCC market knowledge serving developers and engineering firms.</p></div>
-      <div class="why-card"><div class="num">500+</div><h4>Projects Delivered</h4><p>Residential, commercial, hospitality, and government mega-developments.</p></div>
+      <div class="why-card"><div class="num">15+</div><h4>Years of Craft</h4><p>Residential, commercial, hospitality, and government mega-developments.</p></div>
       <div class="why-card"><div class="num">4</div><h4>Regional Offices</h4><p>Saudi Arabia, Oman, Bahrain, and Egypt, teams where you need them.</p></div>
       <div class="why-card"><div class="num">1</div><h4>Integrated Studio</h4><p>Artists, designers, and directors under one roof, zero fragmentation.</p></div>
     </div>

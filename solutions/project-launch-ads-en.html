@@ -366,8 +366,8 @@ gtag('config','G-Y67JVE898Z');
     border-top:none; border-bottom:none;
   }
   .ar-metrics-grid {
-    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
-    max-width:1100px; margin:0 auto; padding:0 clamp(20px,4vw,48px);
+    display:grid; grid-template-columns:1fr; gap:0;
+    max-width:420px; margin:0 auto; padding:0 clamp(20px,4vw,48px);
   }
   @media(max-width:600px){ .ar-metrics-grid { grid-template-columns:1fr; } }
   .ar-metric { text-align:center; padding:28px 20px; }
@@ -478,13 +478,7 @@ gtag('config','G-Y67JVE898Z');
     padding:88px 0; border-top:none;
   }
   .ar-form-max { max-width:1100px; margin:0 auto; padding:0 clamp(20px,4vw,48px); }
-  .ar-urgency {
-    background:#1A1A1A; border:none; border-radius:999px;
-    padding:14px 24px; display:flex; align-items:center; justify-content:center; gap:10px;
-    font-size:13px; font-weight:700; color:#fff; margin-bottom:28px; text-align:center;
-  }
-  .ar-urgency .ico { color:#C9A84C; font-size:20px; }
-  .ar-form-grid {
+.ar-form-grid {
     display:grid; grid-template-columns:1.2fr 0.8fr; gap:24px; align-items:start;
   }
   @media(max-width:820px){ .ar-form-grid { grid-template-columns:1fr; } }
@@ -1140,11 +1134,7 @@ gtag('config','G-Y67JVE898Z');
     .ar-form-sec { padding:64px 0 !important; }
     .ar-form-box { padding:24px 18px; border-radius:18px; }
     .ar-form-box h2 { font-size:clamp(22px,6vw,28px); }
-    .ar-urgency {
-      font-size:13px; padding:12px 14px; gap:8px;
-      flex-wrap:wrap; justify-content:center; text-align:center;
-    }
-    .ar-reassure { padding:20px 16px; border-radius:18px; }
+.ar-reassure { padding:20px 16px; border-radius:18px; }
     .ar-submit { font-size:14px; padding:16px 18px; }
 
     .ar-collab { padding:64px 0 !important; }
@@ -1341,7 +1331,7 @@ gtag('config','G-Y67JVE898Z');
  <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>Smart maquettes with lighting and interactive layers</p></div>
  <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>Interactive experiences for unit and plan selection</p></div>
  <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>Sales-gallery décor that stages every asset. Gallery finishes can align with <a href="https://turriva.com" target="_blank" rel="noopener noreferrer">Turriva</a> when specs lock</p></div>
- <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>Photography and direction via <a href="../services/production-en.html">Dot4Life production</a>, plus on-site install</p></div>
+ <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>Photography and direction, plus on-site install — see our <a href="../services/production-en.html">production service</a></p></div>
  </div>
  <div class="mt-10">
  <a href="#lead-form" class="pl-btn-pill pl-btn-on-light" data-cta="system-book">Book a launch session</a>
@@ -1391,7 +1381,7 @@ gtag('config','G-Y67JVE898Z');
  <div class="ar-outcomes-inner">
  <div class="ar-outcomes-head reveal" style="opacity:0;transform:translateY(24px)">
  <h2>What the developer takes to market</h2>
- <p>Market-ready launch assets: <a href="../services/branding-en.html">identity</a>, films, maquettes, and a sales gallery in one system, so investors grasp the masterplan in minutes. For GCC benchmarks see <a href="https://ruwaq.co/tours" target="_blank" rel="noopener noreferrer">Ruwaq</a> tours.</p>
+ <p>Market-ready launch assets: <a href="../services/branding-en.html">identity</a>, films, maquettes, and a sales gallery in one system, so investors grasp the masterplan in minutes.</p>
  </div>
  <div class="ar-outcomes-layout">
  <div>
@@ -1437,8 +1427,6 @@ gtag('config','G-Y67JVE898Z');
 <!-- ===== 04. METRICS STRIP  ===== -->
 <div class="ar-metrics" id="results" aria-label="Proof in numbers">
  <div class="ar-metrics-grid reveal" style="opacity:0;transform:translateY(24px)">
- <div class="ar-metric"><strong>+200</strong><span>Projects delivered</span></div>
- <div class="ar-metric"><strong>SAR 2B+</strong><span>Value of projects visualized</span></div>
  <div class="ar-metric"><strong>+15</strong><span>Years in the market</span></div>
  </div>
 </div>
@@ -1637,7 +1625,13 @@ gtag('config','G-Y67JVE898Z');
  </div>
  </div>
 
- <div class="ar-mini-grid reveal" style="opacity:0;transform:translateY(24px)">
+ <blockquote class="ar-quote reveal" style="opacity:0;transform:translateY(24px);margin:40px 0 0">
+ "The Wahat Al-Salam masterplan film was completed with excellence. It supported the market story of the project and contributed to a full sell-through of the offering."
+ <cite>Marketing Director, Aqarat</cite>
+ </blockquote>
+
+ 
+ <div class="ar-mini-grid style="opacity:0;transform:translateY(24px)">
  <div class="ar-mini">
  <picture><source srcset="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp" type="image/webp"><img src="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="AlOula Al Nakheel" loading="lazy"></picture>
  <span>AlOula Al Nakheel, visualization that sells the unbuilt.</span>
@@ -1770,35 +1764,35 @@ gtag('config','G-Y67JVE898Z');
 
 <section class="gl-ecosystem">
  <div class="gl-ecosystem-head reveal" style="opacity:0;transform:translateY(20px)">
- <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">Graphics House ecosystem</span>
- <h2>ProjectLaunch™, the visual launch core</h2>
- <p><a href="../services/branding-en.html">Identity</a> from <a href="../solutions/brand-scale-en.html">BrandScale™</a>, demand from PropMotion™ (Bees Motion), ProjectLaunch™ connects both in one sales environment.</p>
+ <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">Tasami Group delivery</span>
+ <h2>One launch. Three delivery layers.</h2>
+ <p>Graphics House leads the launch. Turriva and BeesMotion, both part of Tasami Group, deliver the space and the market layer under the same plan and timeline.</p>
  </div>
- <div class="gl-ecosystem-grid"><a href="../solutions/brand-scale-en.html" class="gl-eco-card reveal" style="opacity:0;transform:translateY(20px)" data-cta="pl-eco-brand-scale">
- <span class="material-symbols-outlined ms-filled gl-eco-icon">workspace_premium</span>
- <strong dir="ltr">BrandScale™</strong>
- <span>Brand &amp; positioning system</span>
+ <div class="gl-ecosystem-grid">
+ <div class="gl-eco-card gl-eco-card-active reveal" style="opacity:0;transform:translateY(20px)">
+ <span class="material-symbols-outlined ms-filled gl-eco-icon">movie</span>
+ <strong>Visual layer</strong>
+ <span>Graphics House. Films, renders, smart maquettes and interactive tools.</span>
+ </div>
+ <a href="https://turriva.com/en/real-estate-experience" class="gl-eco-card reveal" style="opacity:0;transform:translateY(20px)" target="_blank" rel="noopener noreferrer" data-cta="pl-eco-turriva">
+ <span class="material-symbols-outlined ms-filled gl-eco-icon">apartment</span>
+ <strong>Space layer</strong>
+ <span>Turriva. Sales gallery, show unit and launch space, built and handed over ready to open.</span>
  <em>Explore →</em>
- </a><a href="#lead-form" class="gl-eco-card gl-eco-card-active reveal" style="opacity:0;transform:translateY(20px)" data-cta="pl-eco-project-launch">
- <span class="material-symbols-outlined ms-filled gl-eco-icon">rocket_launch</span>
- <strong dir="ltr">ProjectLaunch™</strong>
- <span>Project launch &amp; sales environment</span>
- <em>Book session →</em>
- </a><a href="growth-launch-en.html" class="gl-eco-card reveal" style="opacity:0;transform:translateY(20px)" data-cta="pl-eco-growth-launch">
- <span class="material-symbols-outlined ms-filled gl-eco-icon">query_stats</span>
- <strong dir="ltr">PropMotion™</strong>
- <span>Lead generation &amp; sales</span>
+ </a>
+ <a href="https://beesmotion.com/propmotion/" class="gl-eco-card reveal" style="opacity:0;transform:translateY(20px)" target="_blank" rel="noopener noreferrer" data-cta="pl-eco-beesmotion">
+ <span class="material-symbols-outlined ms-filled gl-eco-icon">campaign</span>
+ <strong>Market layer</strong>
+ <span>BeesMotion. Launch campaign and ongoing content that keep the project selling after opening day.</span>
  <em>Explore →</em>
- </a></div>
+ </a>
+ </div>
+ <p class="gl-ecosystem-head reveal" style="opacity:0;transform:translateY(20px);margin-top:28px;text-align:center">Every project is scoped in conversation with our team.</p>
 </section>
 
 <!-- ===== 11. LEAD FORM  ===== -->
 <section class="ar-form-sec" id="lead-form">
  <div class="ar-form-max">
- <div class="ar-urgency reveal" style="opacity:0;transform:translateY(24px)">
- <span class="ico material-symbols-outlined">schedule</span>
- <span>Sessions available this month: only 4 left, reserve yours before they fill.</span>
- </div>
  <div class="ar-form-grid">
  <div class="ar-form-box reveal" style="opacity:0;transform:translateY(24px)">
  <h2>Is your project actually launch-ready?</h2>

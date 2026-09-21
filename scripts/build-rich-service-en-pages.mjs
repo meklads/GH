@@ -162,7 +162,7 @@ ${ctaBlock(cfg.cta1)}
     </div>
     <div class="why-grid reveal r1">
       <div class="why-card"><div class="num">15</div><h4>Years of Experience</h4><p>Deep GCC market knowledge serving developers and engineering firms.</p></div>
-      <div class="why-card"><div class="num">500+</div><h4>Projects Delivered</h4><p>Residential, commercial, hospitality, and government mega-developments.</p></div>
+      <div class="why-card"><div class="num">15+</div><h4>Years of Craft</h4><p>Residential, commercial, hospitality, and government mega-developments.</p></div>
       <div class="why-card"><div class="num">4</div><h4>Regional Offices</h4><p>Saudi Arabia, Oman, Bahrain, and Egypt, with teams where you need them.</p></div>
       <div class="why-card"><div class="num">1</div><h4>Integrated Studio</h4><p>Creative, technical, and production talent under one roof.</p></div>
     </div>
@@ -420,7 +420,7 @@ const PAGES = [
       { img: 'assets/projects/rendering/uae-e1745147961286.jpeg', cat: 'Campaign', title: 'Regional Rollout' },
     ],
     cta1: { title: 'Turn Visuals Into', gold: 'Qualified Leads', sub: 'Campaigns powered by studio-grade creative, not stock templates.' },
-    cta2: { title: 'Packages From', gold: 'SAR 1,200', sub: 'Flexible retainers and launch bursts for developers at every scale.' },
+    cta2: { title: 'Start a', gold: 'Conversation', sub: 'Scope and commercial terms are confirmed privately with our team.' },
     cta3: { title: 'Grow Your', gold: 'Pipeline', sub: 'Request a marketing audit and launch plan for your next project.' },
     related: [SHARED_RELATED.branding, SHARED_RELATED.web, SHARED_RELATED.production, SHARED_RELATED.rendering],
     bookingTitle: 'Build a Launch Marketing System',

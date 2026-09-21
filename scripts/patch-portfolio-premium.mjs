@@ -50,8 +50,7 @@ const heroEn = `<!-- ══════ HERO ══════ -->
   </div>
   <div class="pf-hero-stats">
     <div class="container pf-hero-stats__grid">
-      <div class="pf-stat"><strong>25+</strong><span>Delivered Projects</span></div>
-      <div class="pf-stat"><strong>6</strong><span>Creative Disciplines</span></div>
+            <div class="pf-stat"><strong>6</strong><span>Creative Disciplines</span></div>
       <div class="pf-stat"><strong>4</strong><span>GCC Markets</span></div>
       <div class="pf-stat"><strong>CGI</strong><span>Cinematic · Interactive · Maquette</span></div>
     </div>

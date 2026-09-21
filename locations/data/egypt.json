@@ -1,8 +1,14 @@
 {
   "slug": "egypt",
   "countryCode": "EG",
-  "city": { "ar": "الإسكندرية", "en": "Alexandria" },
-  "kicker": { "ar": "جرافيكس هاوس · مصر", "en": "Graphics House · Egypt" },
+  "city": {
+    "ar": "الإسكندرية",
+    "en": "Alexandria"
+  },
+  "kicker": {
+    "ar": "جرافيكس هاوس · مصر",
+    "en": "Graphics House · Egypt"
+  },
   "heroImage": "assets/projects/rendering/jeddah-forum.jpg",
   "heroCaption": {
     "ar": "إظهار معماري ومعارض، معيار إنتاج ننقله إلى مصر",
@@ -22,12 +28,34 @@
   },
   "keywords": {
     "ar": {
-      "short": ["إظهار معماري مصر", "الإسكندرية", "مجسمات ذكية", "رندر سكني"],
-      "long": ["استوديو إظهار معماري الإسكندرية", "رندر فوتوريالستي المشاريع السكنية مصر", "مجسمات ذكية صالات البيع", "أفلام CGI إطلاق عقاري", "ProjectLaunch نظام إطلاق بصري"]
+      "short": [
+        "إظهار معماري مصر",
+        "الإسكندرية",
+        "مجسمات ذكية",
+        "رندر سكني"
+      ],
+      "long": [
+        "استوديو إظهار معماري الإسكندرية",
+        "رندر فوتوريالستي المشاريع السكنية مصر",
+        "مجسمات ذكية صالات البيع",
+        "أفلام CGI إطلاق عقاري",
+        "ProjectLaunch نظام إطلاق بصري"
+      ]
     },
     "en": {
-      "short": ["Egypt archviz", "Alexandria", "smart maquettes", "residential rendering"],
-      "long": ["architectural visualization Alexandria developers", "photorealistic rendering Egypt residential", "smart maquettes sales gallery", "CGI launch films real estate", "ProjectLaunch visual launch system Egypt"]
+      "short": [
+        "Egypt archviz",
+        "Alexandria",
+        "smart maquettes",
+        "residential rendering"
+      ],
+      "long": [
+        "architectural visualization Alexandria developers",
+        "photorealistic rendering Egypt residential",
+        "smart maquettes sales gallery",
+        "CGI launch films real estate",
+        "ProjectLaunch visual launch system Egypt"
+      ]
     }
   },
   "narrative": {
@@ -51,73 +79,150 @@
     ]
   },
   "stats": [
-    { "value": "15+", "label": { "ar": "سنة خبرة", "en": "Years of experience" } },
-    { "value": "200+", "label": { "ar": "مشروع بصري", "en": "Visual projects" } },
-    { "value": "1", "label": { "ar": "مكتب في الإسكندرية", "en": "Office in Alexandria" } }
+    {
+      "value": "15+",
+      "label": {
+        "ar": "سنة خبرة",
+        "en": "Years of experience"
+      }
+    },
+    {
+      "value": "1",
+      "label": {
+        "ar": "مكتب في الإسكندرية",
+        "en": "Office in Alexandria"
+      }
+    }
   ],
   "coreServices": [
     {
       "icon": "view_in_ar",
-      "title": { "ar": "إظهار معماري", "en": "Architectural visualization" },
-      "desc": { "ar": "رندر فوتوريالستي للسكني والتجاري.", "en": "Photoreal renders for residential and commercial." },
+      "title": {
+        "ar": "إظهار معماري",
+        "en": "Architectural visualization"
+      },
+      "desc": {
+        "ar": "رندر فوتوريالستي للسكني والتجاري.",
+        "en": "Photoreal renders for residential and commercial."
+      },
       "href": "services/rendering.html"
     },
     {
       "icon": "home_work",
-      "title": { "ar": "مجسمات ذكية", "en": "Smart maquettes" },
-      "desc": { "ar": "مجسمات لصالات البيع والمعارض.", "en": "Models for sales galleries and exhibitions." },
+      "title": {
+        "ar": "مجسمات ذكية",
+        "en": "Smart maquettes"
+      },
+      "desc": {
+        "ar": "مجسمات لصالات البيع والمعارض.",
+        "en": "Models for sales galleries and exhibitions."
+      },
       "href": "services/maquettes.html"
     },
     {
       "icon": "rocket_launch",
-      "title": { "ar": "ProjectLaunch™", "en": "ProjectLaunch™" },
-      "desc": { "ar": "نظام إطلاق بصري متكامل.", "en": "Complete visual launch system." },
+      "title": {
+        "ar": "ProjectLaunch™",
+        "en": "ProjectLaunch™"
+      },
+      "desc": {
+        "ar": "نظام إطلاق بصري متكامل.",
+        "en": "Complete visual launch system."
+      },
       "href": "solutions/project-launch.html"
     }
   ],
   "products": [
     {
       "icon": "slow_motion_video",
-      "title": { "ar": "أفلام CGI", "en": "CGI films" },
-      "desc": { "ar": "أفلام إطلاق للحملات والعروض.", "en": "Launch films for campaigns and presentations." },
+      "title": {
+        "ar": "أفلام CGI",
+        "en": "CGI films"
+      },
+      "desc": {
+        "ar": "أفلام إطلاق للحملات والعروض.",
+        "en": "Launch films for campaigns and presentations."
+      },
       "href": "services/cinematic-cgi.html"
     },
     {
       "icon": "smart_display",
-      "title": { "ar": "تجارب تفاعلية", "en": "Interactive experiences" },
-      "desc": { "ar": "شاشات وجولات تُسهّل قرار الشراء.", "en": "Screens and tours that ease the purchase decision." },
+      "title": {
+        "ar": "تجارب تفاعلية",
+        "en": "Interactive experiences"
+      },
+      "desc": {
+        "ar": "شاشات وجولات تُسهّل قرار الشراء.",
+        "en": "Screens and tours that ease the purchase decision."
+      },
       "href": "services/interactive.html"
     },
     {
       "icon": "workspace_premium",
-      "title": { "ar": "BrandScale™", "en": "BrandScale™" },
-      "desc": { "ar": "هوية بصرية لنقاط البيع.", "en": "Visual identity for sales touchpoints." },
+      "title": {
+        "ar": "BrandScale™",
+        "en": "BrandScale™"
+      },
+      "desc": {
+        "ar": "هوية بصرية لنقاط البيع.",
+        "en": "Visual identity for sales touchpoints."
+      },
       "href": "solutions/brand-scale.html"
     }
   ],
   "why": {
-    "title": { "ar": "لماذا Graphics House في مصر؟", "en": "Why Graphics House in Egypt?" },
+    "title": {
+      "ar": "لماذا Graphics House في مصر؟",
+      "en": "Why Graphics House in Egypt?"
+    },
     "items": [
       {
-        "title": { "ar": "مكتب الإسكندرية", "en": "Alexandria office" },
-        "desc": { "ar": "تواجد محلي مع دعم إنتاج مجموعة تسامي وجرافيكس هاوس.", "en": "Local presence with Graphics House and Tasami Group production support." }
+        "title": {
+          "ar": "مكتب الإسكندرية",
+          "en": "Alexandria office"
+        },
+        "desc": {
+          "ar": "تواجد محلي مع دعم إنتاج مجموعة تسامي وجرافيكس هاوس.",
+          "en": "Local presence with Graphics House and Tasami Group production support."
+        }
       },
       {
-        "title": { "ar": "معيار خليجي", "en": "GCC production standard" },
-        "desc": { "ar": "خبرة مشاريع كبرى ومعارض مؤسسية.", "en": "Experience on major projects and institutional exhibitions." }
+        "title": {
+          "ar": "معيار خليجي",
+          "en": "GCC production standard"
+        },
+        "desc": {
+          "ar": "خبرة مشاريع كبرى ومعارض مؤسسية.",
+          "en": "Experience on major projects and institutional exhibitions."
+        }
       },
       {
-        "title": { "ar": "نظام متكامل", "en": "Integrated system" },
-        "desc": { "ar": "من الرندر إلى صالة البيع دون تشتت الموردين.", "en": "From render to sales gallery without vendor fragmentation." }
+        "title": {
+          "ar": "نظام متكامل",
+          "en": "Integrated system"
+        },
+        "desc": {
+          "ar": "من الرندر إلى صالة البيع دون تشتت الموردين.",
+          "en": "From render to sales gallery without vendor fragmentation."
+        }
       },
       {
-        "title": { "ar": "لغة المبيعات", "en": "Sales language" },
-        "desc": { "ar": "مواد مصممة للإقناع قبل اكتمال البناء.", "en": "Assets designed to persuade before construction completes." }
+        "title": {
+          "ar": "لغة المبيعات",
+          "en": "Sales language"
+        },
+        "desc": {
+          "ar": "مواد مصممة للإقناع قبل اكتمال البناء.",
+          "en": "Assets designed to persuade before construction completes."
+        }
       }
     ]
   },
   "office": {
-    "heading": { "ar": "مكتب الإسكندرية", "en": "Alexandria office" },
+    "heading": {
+      "ar": "مكتب الإسكندرية",
+      "en": "Alexandria office"
+    },
     "address": {
       "ar": "شارع محمد عثمان، برج فيكتوريا سيتي، الإسكندرية",
       "en": "Mohamed Othman St., Victoria City Tower, Alexandria"

@@ -1,6 +1,9 @@
 {
   "slug": "jeddah",
-  "city": { "ar": "جدة", "en": "Jeddah" },
+  "city": {
+    "ar": "جدة",
+    "en": "Jeddah"
+  },
   "heroImage": "assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg",
   "title": {
     "ar": "إظهار معماري وإنتاج بصري متكامل للمطورين في جدة",
@@ -16,12 +19,34 @@
   },
   "keywords": {
     "ar": {
-      "short": ["إظهار معماري جدة", "استوديو رندر", "مجسمات ذكية", "البحر الأحمر"],
-      "long": ["استوديو إظهار معماري جدة للمطورين", "رندر فوتوريالستي المنطقة الغربية", "أفلام CGI إطلاق مشاريع", "مجسمات ذكية صالات البيع", "تصور معماري مشاريع البحر الأحمر"]
+      "short": [
+        "إظهار معماري جدة",
+        "استوديو رندر",
+        "مجسمات ذكية",
+        "البحر الأحمر"
+      ],
+      "long": [
+        "استوديو إظهار معماري جدة للمطورين",
+        "رندر فوتوريالستي المنطقة الغربية",
+        "أفلام CGI إطلاق مشاريع",
+        "مجسمات ذكية صالات البيع",
+        "تصور معماري مشاريع البحر الأحمر"
+      ]
     },
     "en": {
-      "short": ["Jeddah archviz", "rendering studio", "smart maquettes", "Red Sea projects"],
-      "long": ["architectural visualization studio Jeddah developers", "photorealistic rendering Western Region", "CGI launch films real estate", "smart maquettes sales gallery", "archviz Red Sea hospitality projects"]
+      "short": [
+        "Jeddah archviz",
+        "rendering studio",
+        "smart maquettes",
+        "Red Sea projects"
+      ],
+      "long": [
+        "architectural visualization studio Jeddah developers",
+        "photorealistic rendering Western Region",
+        "CGI launch films real estate",
+        "smart maquettes sales gallery",
+        "archviz Red Sea hospitality projects"
+      ]
     }
   },
   "narrative": {
@@ -45,124 +70,261 @@
     ]
   },
   "stats": [
-    { "value": "HQ", "label": { "ar": "المقر الرئيسي في جدة", "en": "Jeddah headquarters" } },
-    { "value": "15+", "label": { "ar": "سنة في السوق", "en": "Years in market" } },
-    { "value": "200+", "label": { "ar": "مشروع بصري", "en": "Visual projects" } },
-    { "value": "1", "label": { "ar": "استوديو متكامل", "en": "Integrated studio" } }
+    {
+      "value": "HQ",
+      "label": {
+        "ar": "المقر الرئيسي في جدة",
+        "en": "Jeddah headquarters"
+      }
+    },
+    {
+      "value": "15+",
+      "label": {
+        "ar": "سنة في السوق",
+        "en": "Years in market"
+      }
+    },
+    {
+      "value": "1",
+      "label": {
+        "ar": "استوديو متكامل",
+        "en": "Integrated studio"
+      }
+    }
   ],
   "projectTypes": {
-    "title": { "ar": "أنواع المشاريع في جدة والمنطقة الغربية", "en": "Project types in Jeddah and the Western Region" },
+    "title": {
+      "ar": "أنواع المشاريع في جدة والمنطقة الغربية",
+      "en": "Project types in Jeddah and the Western Region"
+    },
     "items": [
       {
         "icon": "apartment",
-        "title": { "ar": "أبراج ومجمعات سكنية", "en": "Towers and residential communities" },
-        "desc": { "ar": "إظهار وإطلاق بصري للوحدات والمخططات.", "en": "Visualization and visual launch for units and master plans." }
+        "title": {
+          "ar": "أبراج ومجمعات سكنية",
+          "en": "Towers and residential communities"
+        },
+        "desc": {
+          "ar": "إظهار وإطلاق بصري للوحدات والمخططات.",
+          "en": "Visualization and visual launch for units and master plans."
+        }
       },
       {
         "icon": "beach_access",
-        "title": { "ar": "بحر أحمر وضيافة", "en": "Red Sea and hospitality" },
-        "desc": { "ar": "تصور يعكس الواجهة والضيف قبل الافتتاح.", "en": "Storytelling for waterfront and guest experience before opening." }
+        "title": {
+          "ar": "بحر أحمر وضيافة",
+          "en": "Red Sea and hospitality"
+        },
+        "desc": {
+          "ar": "تصور يعكس الواجهة والضيف قبل الافتتاح.",
+          "en": "Storytelling for waterfront and guest experience before opening."
+        }
       },
       {
         "icon": "domain",
-        "title": { "ar": "مختلط وتجاري", "en": "Mixed use and commercial" },
-        "desc": { "ar": "هوية وأفلام ومجسمات لصالة البيع.", "en": "Identity, films, and maquettes for the sales floor." }
+        "title": {
+          "ar": "مختلط وتجاري",
+          "en": "Mixed use and commercial"
+        },
+        "desc": {
+          "ar": "هوية وأفلام ومجسمات لصالة البيع.",
+          "en": "Identity, films, and maquettes for the sales floor."
+        }
       },
       {
         "icon": "museum",
-        "title": { "ar": "معارض ومؤسسات", "en": "Exhibitions and institutions" },
-        "desc": { "ar": "بيئات تفاعلية وديكور بمعيار مؤسسي.", "en": "Interactive environments and décor at institutional standard." }
+        "title": {
+          "ar": "معارض ومؤسسات",
+          "en": "Exhibitions and institutions"
+        },
+        "desc": {
+          "ar": "بيئات تفاعلية وديكور بمعيار مؤسسي.",
+          "en": "Interactive environments and décor at institutional standard."
+        }
       }
     ]
   },
   "gallery": {
-    "title": { "ar": "من أعمالنا المرتبطة بجدة والمنطقة", "en": "Work linked to Jeddah and the region" },
+    "title": {
+      "ar": "من أعمالنا المرتبطة بجدة والمنطقة",
+      "en": "Work linked to Jeddah and the region"
+    },
     "items": [
       {
         "src": "assets/projects/rendering/jeddah-forum.jpg",
-        "caption": { "ar": "منتدى جدة", "en": "Jeddah Forum" },
-        "tag": { "ar": "إظهار", "en": "Archviz" }
+        "caption": {
+          "ar": "منتدى جدة",
+          "en": "Jeddah Forum"
+        },
+        "tag": {
+          "ar": "إظهار",
+          "en": "Archviz"
+        }
       },
       {
         "src": "assets/news/makkah-charter-04.jpeg",
-        "caption": { "ar": "ميثاق مكة", "en": "Makkah Charter" },
-        "tag": { "ar": "مجسم ذكي", "en": "Smart maquette" }
+        "caption": {
+          "ar": "ميثاق مكة",
+          "en": "Makkah Charter"
+        },
+        "tag": {
+          "ar": "مجسم ذكي",
+          "en": "Smart maquette"
+        }
       },
       {
         "src": "assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg",
-        "caption": { "ar": "الأولى", "en": "Al Oula" },
-        "tag": { "ar": "سكني", "en": "Residential" }
+        "caption": {
+          "ar": "الأولى",
+          "en": "Al Oula"
+        },
+        "tag": {
+          "ar": "سكني",
+          "en": "Residential"
+        }
       },
       {
         "src": "assets/projects/rendering/Anan-Escan-Co.01.jpeg",
-        "caption": { "ar": "عنان إسكان", "en": "Anan Eskan" },
-        "tag": { "ar": "إطلاق", "en": "Launch" }
+        "caption": {
+          "ar": "عنان إسكان",
+          "en": "Anan Eskan"
+        },
+        "tag": {
+          "ar": "إطلاق",
+          "en": "Launch"
+        }
       }
     ]
   },
   "coreServices": [
     {
       "icon": "smart_display",
-      "title": { "ar": "العروض التفاعلية والبرمجيات الخاصة", "en": "Interactive Presentations and Custom Software" },
-      "desc": { "ar": "منصات تفاعلية وبرمجيات مخصصة لصالات البيع: شاشات لمس، جولات افتراضية، وتطبيقات مبيعات.", "en": "Custom interactive platforms and software for sales galleries: touch walls, virtual tours, and sales apps." },
+      "title": {
+        "ar": "العروض التفاعلية والبرمجيات الخاصة",
+        "en": "Interactive Presentations and Custom Software"
+      },
+      "desc": {
+        "ar": "منصات تفاعلية وبرمجيات مخصصة لصالات البيع: شاشات لمس، جولات افتراضية، وتطبيقات مبيعات.",
+        "en": "Custom interactive platforms and software for sales galleries: touch walls, virtual tours, and sales apps."
+      },
       "href": "interactive-experiences.html"
     },
     {
       "icon": "home_work",
-      "title": { "ar": "مجسمات ذكية", "en": "Smart Maquettes" },
-      "desc": { "ar": "مجسمات فيزيائية تفاعلية لصالات البيع والمعارض.", "en": "Interactive physical models for sales galleries and exhibitions." },
+      "title": {
+        "ar": "مجسمات ذكية",
+        "en": "Smart Maquettes"
+      },
+      "desc": {
+        "ar": "مجسمات فيزيائية تفاعلية لصالات البيع والمعارض.",
+        "en": "Interactive physical models for sales galleries and exhibitions."
+      },
       "href": "services/maquettes.html"
     },
     {
       "icon": "slow_motion_video",
-      "title": { "ar": "إنتاج سينمائي CGI", "en": "Cinematic CGI" },
-      "desc": { "ar": "أفلام إطلاق قصيرة ومتوسطة للحملات والتلفزيون.", "en": "Short and mid form launch films for campaigns and broadcast." },
+      "title": {
+        "ar": "إنتاج سينمائي CGI",
+        "en": "Cinematic CGI"
+      },
+      "desc": {
+        "ar": "أفلام إطلاق قصيرة ومتوسطة للحملات والتلفزيون.",
+        "en": "Short and mid form launch films for campaigns and broadcast."
+      },
       "href": "services/cinematic-cgi.html"
     }
   ],
   "products": [
     {
       "icon": "query_stats",
-      "title": { "ar": "GrowthLaunch™", "en": "GrowthLaunch™" },
-      "desc": { "ar": "نظام توليد العملاء والمبيعات للمشاريع قيد الإطلاق.", "en": "Lead generation and sales system for projects going to market." },
+      "title": {
+        "ar": "GrowthLaunch™",
+        "en": "GrowthLaunch™"
+      },
+      "desc": {
+        "ar": "نظام توليد العملاء والمبيعات للمشاريع قيد الإطلاق.",
+        "en": "Lead generation and sales system for projects going to market."
+      },
       "href": "solutions/growth-launch.html"
     },
     {
       "icon": "rocket_launch",
-      "title": { "ar": "ProjectLaunch™", "en": "ProjectLaunch™" },
-      "desc": { "ar": "إطلاق متكامل: بصري وتسويق وصالة بيع.", "en": "Integrated launch: visual, marketing, and sales gallery." },
+      "title": {
+        "ar": "ProjectLaunch™",
+        "en": "ProjectLaunch™"
+      },
+      "desc": {
+        "ar": "إطلاق متكامل: بصري وتسويق وصالة بيع.",
+        "en": "Integrated launch: visual, marketing, and sales gallery."
+      },
       "href": "solutions/project-launch.html"
     },
     {
       "icon": "workspace_premium",
-      "title": { "ar": "BrandScale™", "en": "BrandScale™" },
-      "desc": { "ar": "بناء وتقوية العلامة التجارية للمطورين والمجموعات العقارية.", "en": "Build and scale the developer brand across touchpoints." },
+      "title": {
+        "ar": "BrandScale™",
+        "en": "BrandScale™"
+      },
+      "desc": {
+        "ar": "بناء وتقوية العلامة التجارية للمطورين والمجموعات العقارية.",
+        "en": "Build and scale the developer brand across touchpoints."
+      },
       "href": "solutions/brand-scale.html"
     }
   ],
   "why": {
-    "title": { "ar": "لماذا Graphics House في جدة؟", "en": "Why Graphics House in Jeddah?" },
+    "title": {
+      "ar": "لماذا Graphics House في جدة؟",
+      "en": "Why Graphics House in Jeddah?"
+    },
     "items": [
       {
-        "title": { "ar": "المقر الرئيسي في جدة", "en": "Jeddah headquarters" },
-        "desc": { "ar": "فريق إنتاج واستراتيجية بصري في قلب السوق الغربي مع اجتماعات ميدانية وورش اعتماد سريعة.", "en": "Production and visual strategy team at the heart of the Western market with fast on site reviews and workshops." }
+        "title": {
+          "ar": "المقر الرئيسي في جدة",
+          "en": "Jeddah headquarters"
+        },
+        "desc": {
+          "ar": "فريق إنتاج واستراتيجية بصري في قلب السوق الغربي مع اجتماعات ميدانية وورش اعتماد سريعة.",
+          "en": "Production and visual strategy team at the heart of the Western market with fast on site reviews and workshops."
+        }
       },
       {
-        "title": { "ar": "خبرة المشاريع الكبرى", "en": "Major project experience" },
-        "desc": { "ar": "مشاريع سكنية ضخمة، مختلطة، وضيافة من الإطلاق حتى صالة البيع.", "en": "Large residential, mixed use, and hospitality from launch through sales gallery." }
+        "title": {
+          "ar": "خبرة المشاريع الكبرى",
+          "en": "Major project experience"
+        },
+        "desc": {
+          "ar": "مشاريع سكنية ضخمة، مختلطة، وضيافة من الإطلاق حتى صالة البيع.",
+          "en": "Large residential, mixed use, and hospitality from launch through sales gallery."
+        }
       },
       {
-        "title": { "ar": "نظام متكامل لا قطع منفصلة", "en": "Integrated system, not fragments" },
-        "desc": { "ar": "رندر وفيلم ومجسم ومنصة من استوديو واحد باتساق بصري كامل.", "en": "Render, film, maquette, and platform from one studio with full visual consistency." }
+        "title": {
+          "ar": "نظام متكامل لا قطع منفصلة",
+          "en": "Integrated system, not fragments"
+        },
+        "desc": {
+          "ar": "رندر وفيلم ومجسم ومنصة من استوديو واحد باتساق بصري كامل.",
+          "en": "Render, film, maquette, and platform from one studio with full visual consistency."
+        }
       },
       {
-        "title": { "ar": "لغة المبيعات العقارية", "en": "Real estate sales language" },
-        "desc": { "ar": "نفهم المبيعات على المخطط، الوسطاء، وصالات البيع في السوق السعودي.", "en": "We understand off plan sales, brokers, and sales galleries in the Saudi market." }
+        "title": {
+          "ar": "لغة المبيعات العقارية",
+          "en": "Real estate sales language"
+        },
+        "desc": {
+          "ar": "نفهم المبيعات على المخطط، الوسطاء، وصالات البيع في السوق السعودي.",
+          "en": "We understand off plan sales, brokers, and sales galleries in the Saudi market."
+        }
       }
     ]
   },
   "office": {
-    "address": { "ar": "جدة، المملكة العربية السعودية، ص.ب 136972", "en": "Jeddah, Saudi Arabia, P.O. Box 136972" },
+    "address": {
+      "ar": "جدة، المملكة العربية السعودية، ص.ب 136972",
+      "en": "Jeddah, Saudi Arabia, P.O. Box 136972"
+    },
     "cr": "4030502306",
     "phone": "+966502786513"
   }

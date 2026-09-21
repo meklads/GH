@@ -170,9 +170,7 @@ const T = [
 
   /* Metrics */
   ['أرقام النجاح', 'Proof in numbers'],
-  ['مشروع مُنجز', 'Projects delivered'],
-  ['قيمة مشاريع مُصوَّرة', 'Value of visualized projects'],
-  ['سنة خبرة في السوق', 'Years in market'],
+      ['سنة خبرة في السوق', 'Years in market'],
 
   /* Environments */
   ['ما يثبت المنظومة', 'What proves the system'],
@@ -290,7 +288,6 @@ const T = [
   ['تصور ومجسمات ذكية حوّلت عرض المشروع إلى تجربة إقناع', 'Visualization and smart maquettes that turned presentation into persuasion'],
   ['مشروع رابطة العالم الإسلامي', 'Muslim World League project'],
   ['بيئة إطلاق تفاعلية بمعايير مؤسسية عالمية المستوى', 'An interactive launch environment at institutional world-class standard'],
-  ['الجلسات المتاحة هذا الشهر: 4 جلسات فقط، احجز مكانك قبل اكتمالها', 'Sessions available this month: only 4 left, reserve yours before they fill'],
 
   /* Form */
   ['هل مشروعك جاهز فعلاً للإطلاق؟', 'Is your project truly ready to launch?'],

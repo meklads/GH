@@ -367,8 +367,8 @@ gtag('config','G-Y67JVE898Z');
     border-top:none; border-bottom:none;
   }
   .ar-metrics-grid {
-    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
-    max-width:1100px; margin:0 auto; padding:0 clamp(20px,4vw,48px);
+    display:grid; grid-template-columns:1fr; gap:0;
+    max-width:420px; margin:0 auto; padding:0 clamp(20px,4vw,48px);
   }
   @media(max-width:600px){ .ar-metrics-grid { grid-template-columns:1fr; } }
   .ar-metric { text-align:center; padding:28px 20px; }
@@ -479,13 +479,7 @@ gtag('config','G-Y67JVE898Z');
     padding:88px 0; border-top:none;
   }
   .ar-form-max { max-width:1100px; margin:0 auto; padding:0 clamp(20px,4vw,48px); }
-  .ar-urgency {
-    background:#1A1A1A; border:none; border-radius:999px;
-    padding:14px 24px; display:flex; align-items:center; justify-content:center; gap:10px;
-    font-size:13px; font-weight:700; color:#fff; margin-bottom:28px; text-align:center;
-  }
-  .ar-urgency .ico { color:#C9A84C; font-size:20px; }
-  .ar-form-grid {
+.ar-form-grid {
     display:grid; grid-template-columns:1.2fr 0.8fr; gap:24px; align-items:start;
   }
   @media(max-width:820px){ .ar-form-grid { grid-template-columns:1fr; } }
@@ -1112,11 +1106,7 @@ gtag('config','G-Y67JVE898Z');
     .ar-form-sec { padding:64px 0 !important; }
     .ar-form-box { padding:24px 18px; border-radius:18px; }
     .ar-form-box h2 { font-size:clamp(22px,6vw,28px); }
-    .ar-urgency {
-      font-size:13px; padding:12px 14px; gap:8px;
-      flex-wrap:wrap; justify-content:center; text-align:center;
-    }
-    .ar-reassure { padding:20px 16px; border-radius:18px; }
+.ar-reassure { padding:20px 16px; border-radius:18px; }
     .ar-submit { font-size:14px; padding:16px 18px; }
 
     .ar-collab { padding:64px 0 !important; }
@@ -1353,7 +1343,7 @@ gtag('config','G-Y67JVE898Z');
  <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>مجسمات ذكية بإضاءة وطبقات تفاعلية</p></div>
  <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>تجارب تفاعلية لاختيار الوحدات والمخططات</p></div>
  <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>ديكور صالة البيع يعرض كل أصل بصري. تشطيب الصالة يمكن مواءمته مع <a href="https://turriva.com" target="_blank" rel="noopener noreferrer">توريفا</a> بعد قفل المواصفات</p></div>
- <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>تصوير وإخراج عبر <a href="../services/production.html">Dot4Life production</a> وتركيب في الموقع</p></div>
+ <div class="ar-feat-row"><span class="material-symbols-outlined ms ms-filled">check</span><p>تصوير وإخراج، مع تركيب في الموقع — راجع <a href="../services/production.html">خدمة الإنتاج</a></p></div>
  </div>
  <div class="mt-10">
  <a href="#lead-form" class="pl-btn-pill pl-btn-on-light" data-cta="system-book">احجز جلسة إطلاق مشروعك</a>
@@ -1403,7 +1393,7 @@ gtag('config','G-Y67JVE898Z');
  <div class="ar-outcomes-inner">
  <div class="ar-outcomes-head reveal" style="opacity:0;transform:translateY(24px)">
  <h2>ماذا يأخذ المطور إلى السوق؟</h2>
- <p>أصول إطلاق جاهزة: <a href="../services/branding.html">هوية</a>، أفلام، مجسمات، وصالة بيع في منظومة واحدة، حتى يفهم المستثمر المخطط في دقائق. للمقارنة مع سوق الخليج راجع جولات <a href="https://ruwaq.co/tours" target="_blank" rel="noopener noreferrer">Ruwaq</a>.</p>
+ <p>أصول إطلاق جاهزة: <a href="../services/branding.html">هوية</a>، أفلام، مجسمات، وصالة بيع في منظومة واحدة، حتى يفهم المستثمر المخطط في دقائق.</p>
  </div>
  <div class="ar-outcomes-layout">
  <div>
@@ -1449,8 +1439,6 @@ gtag('config','G-Y67JVE898Z');
 <!-- ===== 04. METRICS STRIP (Arabic exclusive) ===== -->
 <div class="ar-metrics" id="results" aria-label="أرقام النجاح">
  <div class="ar-metrics-grid reveal" style="opacity:0;transform:translateY(24px)">
- <div class="ar-metric"><strong>+200</strong><span>مشروع مُنجز</span></div>
- <div class="ar-metric"><strong>SAR 2B+</strong><span>قيمة مشاريع مُصوَّرة</span></div>
  <div class="ar-metric"><strong>+15</strong><span>سنة خبرة في السوق</span></div>
  </div>
 </div>
@@ -1649,6 +1637,11 @@ gtag('config','G-Y67JVE898Z');
  </div>
  </div>
 
+ <blockquote class="ar-quote reveal" style="opacity:0;transform:translateY(24px);margin:40px 0 0">
+ "تم تنفيذ فيلم المخطط العام لواحة السلام بتميّز. لقد دعم قصة المشروع في السوق وأسهم في بيع العرض بالكامل."
+ <cite>مدير التسويق، عقارات</cite>
+ </blockquote>
+
  <div class="ar-mini-grid reveal" style="opacity:0;transform:translateY(24px)">
  <div class="ar-mini">
  <picture><source srcset="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp" type="image/webp"><img src="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="الأولى النخيل" loading="lazy"></picture>
@@ -1782,35 +1775,35 @@ gtag('config','G-Y67JVE898Z');
 
 <section class="gl-ecosystem">
  <div class="gl-ecosystem-head reveal" style="opacity:0;transform:translateY(20px)">
- <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">منظومة Graphics House</span>
- <h2>ProjectLaunch™, قلب الإطلاق البصري</h2>
- <p><a href="../services/branding.html">الهوية</a> من <a href="../solutions/brand-scale.html">BrandScale™</a>، والطلب من PropMotion™ (بيز موشن), وProjectLaunch™ يربطهما ببيئة بيع متكاملة.</p>
+ <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] mb-4 block">تسليم مجموعة تسامي</span>
+ <h2>إطلاق واحد. ثلاث طبقات تسليم.</h2>
+ <p>تقود Graphics House الإطلاق، وتسلّم Turriva وBeesMotion، ضمن مجموعة تسامي، طبقة المكان وطبقة السوق بنفس الخطة والجدول.</p>
  </div>
- <div class="gl-ecosystem-grid"><a href="../solutions/brand-scale.html" class="gl-eco-card reveal" style="opacity:0;transform:translateY(20px)" data-cta="pl-eco-brand-scale">
- <span class="material-symbols-outlined ms-filled gl-eco-icon">workspace_premium</span>
- <strong dir="ltr">BrandScale™</strong>
- <span>نظام العلامة والتموضع</span>
- <em>اكتشف ←</em>
- </a><a href="#lead-form" class="gl-eco-card gl-eco-card-active reveal" style="opacity:0;transform:translateY(20px)" data-cta="pl-eco-project-launch">
- <span class="material-symbols-outlined ms-filled gl-eco-icon">rocket_launch</span>
- <strong dir="ltr">ProjectLaunch™</strong>
- <span>إطلاق المشروع وبيئة البيع</span>
- <em>احجز جلسة ←</em>
- </a><a href="growth-launch.html" class="gl-eco-card reveal" style="opacity:0;transform:translateY(20px)" data-cta="pl-eco-growth-launch">
- <span class="material-symbols-outlined ms-filled gl-eco-icon">query_stats</span>
- <strong dir="ltr">PropMotion™</strong>
- <span>توليد العملاء والمبيعات</span>
- <em>اكتشف ←</em>
- </a></div>
+ <div class="gl-ecosystem-grid">
+ <div class="gl-eco-card gl-eco-card-active reveal" style="opacity:0;transform:translateY(20px)">
+ <span class="material-symbols-outlined ms-filled gl-eco-icon">movie</span>
+ <strong>الطبقة البصرية</strong>
+ <span>Graphics House. أفلام ورندرات وماكيتات ذكية وأدوات تفاعلية.</span>
+ </div>
+ <a href="https://turriva.com/en/real-estate-experience" class="gl-eco-card reveal" style="opacity:0;transform:translateY(20px)" target="_blank" rel="noopener noreferrer" data-cta="pl-eco-turriva">
+ <span class="material-symbols-outlined ms-filled gl-eco-icon">apartment</span>
+ <strong>الطبقة المكانية</strong>
+ <span>Turriva. صالة البيع والوحدة النموذجية ومساحة الإطلاق، تُنفَّذ وتُسلَّم جاهزة للافتتاح.</span>
+ <em>استكشف ←</em>
+ </a>
+ <a href="https://beesmotion.com/propmotion/" class="gl-eco-card reveal" style="opacity:0;transform:translateY(20px)" target="_blank" rel="noopener noreferrer" data-cta="pl-eco-beesmotion">
+ <span class="material-symbols-outlined ms-filled gl-eco-icon">campaign</span>
+ <strong>طبقة السوق</strong>
+ <span>BeesMotion. حملة الإطلاق ومحتوى مستمر يبقي المشروع في السوق بعد يوم الافتتاح.</span>
+ <em>استكشف ←</em>
+ </a>
+ </div>
+ <p class="gl-ecosystem-head reveal" style="opacity:0;transform:translateY(20px);margin-top:28px;text-align:center">يُحدَّد نطاق كل مشروع بالحوار مع فريقنا.</p>
 </section>
 
 <!-- ===== 11. LEAD FORM (Arabic exclusive) ===== -->
 <section class="ar-form-sec" id="lead-form">
  <div class="ar-form-max">
- <div class="ar-urgency reveal" style="opacity:0;transform:translateY(24px)">
- <span class="ico material-symbols-outlined">schedule</span>
- <span>الجلسات المتاحة هذا الشهر: 4 جلسات فقط، احجز مكانك قبل اكتمالها</span>
- </div>
  <div class="ar-form-grid">
  <div class="ar-form-box reveal" style="opacity:0;transform:translateY(24px)">
  <h2>هل مشروعك جاهز فعلاً للإطلاق؟</h2>

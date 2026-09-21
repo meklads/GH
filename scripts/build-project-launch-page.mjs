@@ -114,7 +114,7 @@ const PRODUCTS = [
     proofStats: [
       { value: '7', labelAr: 'أيام لإطلاق المسار', labelEn: 'Days to live pipeline', subAr: 'نطاق واضح من البداية', subEn: 'Clear scope from day one' },
       { value: '24h', labelAr: 'رد على الطلبات', labelEn: 'Lead response SLA', subAr: 'قبل أن يبرد الاهتمام', subEn: 'Before intent cools off' },
-      { value: '+200', labelAr: 'مشروع مُنجز', labelEn: 'Projects delivered', subAr: 'خبرة B2B في المنطقة', subEn: 'B2B experience across the region' },
+      { value: '+15', labelAr: 'سنة خبرة', labelEn: 'Years in the market', subAr: 'خبرة B2B في المنطقة', subEn: 'B2B experience across the region' },
     ],
     caseStudies: [
       {
@@ -461,7 +461,7 @@ const PRODUCTS = [
     proofStats: [
       { value: '4', labelAr: 'مراحل منهجية', labelEn: 'Structured phases', subAr: 'من الاستكشاف إلى الإطلاق', subEn: 'Discovery through launch' },
       { value: '48h', labelAr: 'عرض أولي', labelEn: 'Initial proposal', subAr: 'نطاق واضح بعد الجلسة', subEn: 'Clear scope after the session' },
-      { value: '+200', labelAr: 'مشروع مُنجز', labelEn: 'Projects delivered', subAr: 'ثقة B2B في المنطقة', subEn: 'B2B trust across the region' },
+      { value: '+15', labelAr: 'سنة خبرة', labelEn: 'Years in the market', subAr: 'ثقة B2B في المنطقة', subEn: 'B2B trust across the region' },
     ],
     caseStudies: [
       {
