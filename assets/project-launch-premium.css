@@ -443,8 +443,13 @@ body.gl-premium .pl-hero-copy-card {
 }
 
 body.gl-premium .pl-hero .hero-caps-bar {
-  max-width: min(920px, 100%);
+  max-width: min(960px, 100%);
   margin-inline: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: visible;
+  gap: 8px 10px;
+  box-sizing: border-box;
 }
 
 /* Unified section rhythm + gutters */

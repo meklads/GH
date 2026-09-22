@@ -14,21 +14,34 @@
   var MSG = isEn
     ? {
         required: 'Please complete the required fields.',
+        emailMatch: 'Email and confirmation email must match.',
         url: 'Please add a valid portfolio or CV link (https://…).',
         captcha: 'Please complete the security check before submitting.',
         sending: 'Sending…',
+        pending:
+          '<strong>Thank you.</strong><br>We sent a confirmation link to your email. Open it within 24 hours to complete your submission — this protects us from spam.',
         success:
-          '<strong>Profile received.</strong><br>We review submissions as opportunities open. If your profile matches a live need, we will follow up.',
+          '<strong>Thank you for your trust.</strong><br>Your profile was received. We appreciate your interest and will contact you at the earliest opportunity.',
+        verified:
+          '<strong>Email confirmed — thank you.</strong><br>Your profile is now with us. We will review it and contact you as soon as a matching opportunity arises.',
+        verifyFail:
+          'This confirmation link is invalid or expired. Please submit the form again.',
         error: 'Could not send. Please try again, or email ' + NOTIFY_EMAIL + '.',
         network: 'Connection error. Check your network and try again.',
       }
     : {
         required: 'يرجى تعبئة الحقول المطلوبة.',
+        emailMatch: 'البريد وتأكيد البريد غير متطابقين.',
         url: 'يرجى إضافة رابط صحيح للمعرض أو السيرة (يبدأ بـ https://).',
         captcha: 'يرجى إكمال التحقق الأمني قبل الإرسال.',
         sending: 'جارٍ الإرسال…',
+        pending:
+          '<strong>شكراً لك.</strong><br>أرسلنا رابط تأكيد إلى بريدك. افتحه خلال 24 ساعة لإكمال الطلب — هذا يحمينا من الرسائل المزعجة.',
         success:
-          '<strong>تم استلام ملفك.</strong><br>نراجع الطلبات مع ظهور الفرص. إن تطابق ملفك مع احتياج فعلي، سنتواصل معك.',
+          '<strong>شكراً لثقتك وتقديرنا لك.</strong><br>تم استلام بياناتك. سنراجعها ونتواصل معك في أقرب فرصة.',
+        verified:
+          '<strong>تم تأكيد بريدك — شكراً لك.</strong><br>استلمنا ملفك بنجاح. سنراجعه ونتواصل معك في أقرب فرصة عند وجود احتياج مناسب.',
+        verifyFail: 'رابط التأكيد غير صالح أو منتهي. يرجى إرسال النموذج مجدداً.',
         error: 'تعذّر الإرسال. حاول مجدداً أو راسلنا على ' + NOTIFY_EMAIL + '.',
         network: 'خطأ في الاتصال. تحقق من الشبكة وحاول مجدداً.',
       };
@@ -100,34 +113,34 @@
 
   function renderTurnstile(form) {
     if (!TURNSTILE_KEY) return;
-    var box = form.querySelector('.gh-turnstile');
-    if (!box || box.dataset.rendered === '1') return;
+    var host = form.querySelector('.gh-turnstile');
+    if (!host || host.dataset.rendered === '1') return;
     loadTurnstile(function () {
-      if (!window.turnstile || box.dataset.rendered === '1') return;
-      var id = window.turnstile.render(box, {
+      if (!window.turnstile || host.dataset.rendered === '1') return;
+      host.dataset.rendered = '1';
+      window.turnstile.render(host, {
         sitekey: TURNSTILE_KEY,
         theme: 'light',
-        language: isEn ? 'en' : 'ar',
       });
-      box.dataset.rendered = '1';
-      box.dataset.widgetId = id;
     });
   }
 
   function turnstileToken(form) {
-    var box = form.querySelector('.gh-turnstile');
-    if (!box || !box.dataset.widgetId || !window.turnstile) return '';
-    return window.turnstile.getResponse(box.dataset.widgetId) || '';
+    var host = form.querySelector('.gh-turnstile');
+    if (!host || !window.turnstile) return '';
+    try {
+      return window.turnstile.getResponse(host) || '';
+    } catch (e) {
+      return '';
+    }
   }
 
   function resetTurnstile(form) {
-    var box = form.querySelector('.gh-turnstile');
-    if (!box || !box.dataset.widgetId || !window.turnstile) return;
-    window.turnstile.reset(box.dataset.widgetId);
-  }
-
-  function looksLikeUrl(v) {
-    return /^https?:\/\/\S+/i.test(String(v || '').trim());
+    var host = form.querySelector('.gh-turnstile');
+    if (!host || !window.turnstile) return;
+    try {
+      window.turnstile.reset(host);
+    } catch (e) {}
   }
 
   function val(form, name) {
@@ -135,20 +148,20 @@
     return el ? String(el.value || '').trim() : '';
   }
 
+  function looksLikeUrl(s) {
+    return /^https?:\/\/.+/i.test(s || '');
+  }
+
   function wireDisciplinePickers(form) {
     var select = form.querySelector('[name="discipline"]');
     if (!select) return;
     document.querySelectorAll('[data-discipline]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var code = btn.getAttribute('data-discipline');
-        if (!code) return;
-        select.value = code;
+        var v = btn.getAttribute('data-discipline') || '';
+        select.value = v;
         document.querySelectorAll('[data-discipline]').forEach(function (b) {
           b.classList.toggle('is-active', b === btn);
         });
-        var formSec = document.getElementById('apply');
-        if (formSec) formSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        select.focus({ preventScroll: true });
       });
     });
   }
@@ -178,6 +191,33 @@
     });
   }
 
+  function scrollToFormFeedback(form) {
+    var box = form.querySelector('.form-feedback');
+    if (box && box.scrollIntoView) {
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  function handleVerifiedQuery(form) {
+    var params = new URLSearchParams(location.search);
+    var verified = params.get('verified');
+    if (verified !== '1' && verified !== '0') return;
+    var feedback = ensureFeedback(form);
+    if (verified === '1') {
+      showFeedback(feedback, 'success', MSG.verified);
+      if (window.ghTrack) {
+        window.ghTrack('generate_lead', { form_name: 'collaborator_form', verified: true });
+      }
+    } else {
+      showFeedback(feedback, 'error', MSG.verifyFail);
+    }
+    scrollToFormFeedback(form);
+    if (history.replaceState) {
+      var clean = location.pathname + location.hash;
+      history.replaceState({}, '', clean);
+    }
+  }
+
   function wireForm() {
     var form = document.getElementById('collaboratorForm');
     if (!form || form.dataset.wired === '1') return;
@@ -186,6 +226,7 @@
     ensureSecurityFields(form);
     renderTurnstile(form);
     wireDisciplinePickers(form);
+    handleVerifiedQuery(form);
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -196,7 +237,8 @@
 
       var first = val(form, 'first_name');
       var last = val(form, 'last_name');
-      var email = val(form, 'email');
+      var email = val(form, 'email').toLowerCase();
+      var emailConfirm = val(form, 'email_confirm').toLowerCase();
       var city = val(form, 'city');
       var discipline = val(form, 'discipline');
       var portfolio = val(form, 'portfolio_url');
@@ -204,8 +246,12 @@
       var phone = val(form, 'phone');
       var consent = form.querySelector('[name="consent"]');
 
-      if (!first || !last || !email || !city || !discipline) {
+      if (!first || !last || !email || !emailConfirm || !city || !discipline) {
         showFeedback(feedback, 'error', MSG.required);
+        return;
+      }
+      if (email !== emailConfirm) {
+        showFeedback(feedback, 'error', MSG.emailMatch);
         return;
       }
       if (!looksLikeUrl(portfolio) && !looksLikeUrl(cv)) {
@@ -243,9 +289,12 @@
           ? 'Collaborator profile — Graphics House → ' + NOTIFY_EMAIL
           : 'ملف متعاون — جرافيكس هاوس → ' + NOTIFY_EMAIL,
         from_name: 'Graphics House Collaborators',
+        name: fullName,
         email: email,
+        email_confirm: emailConfirm,
         city: city,
-        source: 'partner',
+        lang: isEn ? 'en' : 'ar',
+        source: 'collaborator',
         form_type: 'collaborator',
         discipline: discipline,
         portfolio_url: portfolio,
@@ -254,10 +303,7 @@
         message: lines.join('\n') + '\nNotify: ' + NOTIFY_EMAIL,
         botcheck: '',
       };
-      /* Include name/phone only when phone is provided (Worker requires both together).
-         Name is always in the message body above. */
       if (phone.replace(/\D/g, '').length >= 8) {
-        payload.name = fullName;
         payload.phone = phone;
       }
       if (TURNSTILE_KEY) {
@@ -284,13 +330,21 @@
         })
         .then(function (res) {
           if (res.data && res.data.success) {
-            showFeedback(feedback, 'success', MSG.success);
+            var html = res.data.pending ? MSG.pending : MSG.success;
+            if (res.data.message && res.data.pending) {
+              html =
+                '<strong>' +
+                (isEn ? 'Thank you.' : 'شكراً لك.') +
+                '</strong><br>' +
+                res.data.message;
+            }
+            showFeedback(feedback, 'success', html);
             form.reset();
             document.querySelectorAll('[data-discipline]').forEach(function (b) {
               b.classList.remove('is-active');
             });
             resetTurnstile(form);
-            if (window.ghTrack) {
+            if (window.ghTrack && !res.data.pending) {
               window.ghTrack('generate_lead', { form_name: 'collaborator_form' });
             }
           } else {
