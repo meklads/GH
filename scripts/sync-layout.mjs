@@ -61,8 +61,8 @@ function fixCorruption(html) {
 
 function normalizeNavTail(header, isEn) {
   const insightsLabel = isEn ? 'Insights' : 'رؤى';
-  const contactLabel = isEn ? 'Contact Us' : 'اتصل بنا';
-  const ctaLabel = isEn ? 'Book Session' : 'احجز جلسة استراتيجية';
+  const contactLabel = isEn ? 'Contact' : 'اتصال';
+  const ctaLabel = isEn ? 'Start Project' : 'ابدأ مشروعاً';
   const insightsFile = isEn ? 'insights/index-en.html' : 'insights/index.html';
   const contactFile = isEn ? 'contact-us-en.html' : 'contact-us.html';
 
