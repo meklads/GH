@@ -2,8 +2,8 @@
  * Shared guards so site-header.css owns the chrome on every page.
  */
 export const SITE_HEADER_CSS_VER = 58;
-export const SITE_ENHANCEMENTS_CSS_VER = 36;
-export const SITE_FOOTER_LOCK_CSS_VER = 4;
+export const SITE_ENHANCEMENTS_CSS_VER = 37;
+export const SITE_FOOTER_LOCK_CSS_VER = 5;
 
 export function stripConflictingHeaderStyles(html) {
   let out = html;

@@ -43,10 +43,11 @@ function isEnglishPage(rel, html) {
   return rel.endsWith('-en.html') || rel === 'index.html';
 }
 
-/** Current footer: 3-column top + regional offices (replaces legacy Saudi Cities / gh-lang-alt). */
+/** Current footer: nav columns + compact 3-line offices strip. */
 function isCurrentFooter(html, en) {
   if (!html.includes('gh-footer__top') || !html.includes('gh-footer__offices')) return false;
   if (html.includes('gh-lang-alt')) return false;
+  if (html.includes('gh-footer__office-meta') || html.includes('gh-footer__offices-grid')) return false;
   if (en) {
     if (html.includes('Saudi Cities')) return false;
     return (

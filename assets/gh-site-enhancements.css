@@ -338,9 +338,12 @@ body.gh-home #hero .hero-contact-strip {
 
 .gh-footer__brand img {
   display: block;
-  height: 78px;
   width: auto;
-  max-width: 100%;
+  height: auto;
+  max-height: 48px;
+  max-width: min(148px, 100%);
+  aspect-ratio: 732 / 344;
+  object-fit: contain;
 }
 
 .gh-footer__tagline {

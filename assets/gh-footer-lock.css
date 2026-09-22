@@ -1,11 +1,9 @@
 /**
  * Footer chrome lock — loads LAST.
- * Matches header language: no hairlines, soft fades, slate glass cards,
- * forced light text so page <style> cannot paint offices black.
+ * Compact layout: fixed logo aspect, 3-line offices, soft fades, no hairlines.
  */
 .gh-footer {
-  --gh-ft-chrome: rgba(186, 186, 186, 0.42);
-  --gh-ft-glass: rgba(16, 16, 16, 0.55);
+  --gh-ft-chrome: rgba(186, 186, 186, 0.4);
   --gh-ft-gold: #c9a84c;
   display: block !important;
   width: 100% !important;
@@ -19,11 +17,10 @@
   isolation: isolate !important;
   color: #fff !important;
   background:
-    radial-gradient(ellipse 70% 42% at 50% -8%, rgba(201, 168, 76, 0.1), transparent 58%),
-    radial-gradient(ellipse 50% 40% at 85% 80%, rgba(255, 255, 255, 0.03), transparent 55%),
-    linear-gradient(180deg, #0a1611 0%, #07140f 45%, #050f0b 100%) !important;
+    radial-gradient(ellipse 65% 40% at 50% -6%, rgba(201, 168, 76, 0.09), transparent 55%),
+    linear-gradient(180deg, #0a1611 0%, #07140f 50%, #050f0b 100%) !important;
   border-top: none !important;
-  box-shadow: 0 -28px 64px rgba(0, 0, 0, 0.45) !important;
+  box-shadow: 0 -20px 48px rgba(0, 0, 0, 0.4) !important;
 }
 
 .gh-footer::before {
@@ -32,15 +29,10 @@
   left: 0 !important;
   right: 0 !important;
   top: 0 !important;
-  height: 72px !important;
+  height: 48px !important;
   pointer-events: none !important;
   z-index: 0 !important;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.18) 48%,
-    transparent 100%
-  ) !important;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent) !important;
 }
 
 .gh-footer__inner {
@@ -50,19 +42,19 @@
   margin: 0 auto !important;
   float: none !important;
   box-sizing: border-box !important;
-  padding: 72px 48px 56px !important;
+  padding: 48px 40px 36px !important;
   position: relative !important;
   z-index: 1 !important;
 }
 
 .gh-footer__top {
   display: grid !important;
-  grid-template-columns: minmax(180px, 1.35fr) repeat(3, minmax(0, 1fr)) !important;
-  gap: 40px 32px !important;
+  grid-template-columns: minmax(150px, 1.1fr) repeat(3, minmax(0, 1fr)) !important;
+  gap: 28px 28px !important;
   align-items: start !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  padding-bottom: 44px !important;
+  padding-bottom: 28px !important;
   border-bottom: none !important;
   position: relative !important;
 }
@@ -73,36 +65,38 @@
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  height: 40px !important;
+  height: 28px !important;
   pointer-events: none !important;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.28) 100%
-  ) !important;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.22)) !important;
   transform: translateY(100%);
 }
 
 .gh-footer__brand {
   display: flex !important;
   flex-direction: column !important;
-  gap: 14px !important;
+  gap: 10px !important;
   min-width: 0 !important;
 }
 
+/* Fix stretched wordmark — lock natural aspect (732×344) */
 .gh-footer__brand img {
   display: block !important;
-  height: 78px !important;
   width: auto !important;
-  max-width: 100% !important;
+  height: auto !important;
+  max-height: 48px !important;
+  max-width: min(148px, 100%) !important;
+  aspect-ratio: 732 / 344 !important;
+  object-fit: contain !important;
+  object-position: start center !important;
+  flex-shrink: 0 !important;
 }
 
 .gh-footer__tagline {
   margin: 0 !important;
-  max-width: 17rem !important;
-  font-size: 13.5px !important;
-  line-height: 1.65 !important;
-  color: rgba(255, 255, 255, 0.62) !important;
+  max-width: 15rem !important;
+  font-size: 12.5px !important;
+  line-height: 1.55 !important;
+  color: rgba(255, 255, 255, 0.58) !important;
   font-weight: 400 !important;
 }
 
@@ -113,13 +107,13 @@
 
 .gh-footer__title {
   position: relative !important;
-  margin: 0 0 18px !important;
-  padding-bottom: 12px !important;
+  margin: 0 0 12px !important;
+  padding-bottom: 8px !important;
   font-size: 11px !important;
   font-weight: 800 !important;
-  letter-spacing: 0.14em !important;
+  letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
-  line-height: 1.35 !important;
+  line-height: 1.3 !important;
   color: var(--gh-ft-gold) !important;
 }
 
@@ -128,238 +122,198 @@
   position: absolute !important;
   inset-inline-start: 0 !important;
   bottom: 0 !important;
-  width: 28px !important;
+  width: 22px !important;
   height: 2px !important;
   border-radius: 2px !important;
-  background: linear-gradient(90deg, var(--gh-ft-gold), rgba(201, 168, 76, 0.12)) !important;
+  background: linear-gradient(90deg, var(--gh-ft-gold), rgba(201, 168, 76, 0.1)) !important;
 }
 
 .gh-footer__links {
   display: flex !important;
   flex-direction: column !important;
-  gap: 11px !important;
+  gap: 8px !important;
 }
 
 .gh-footer__links a {
-  color: rgba(255, 255, 255, 0.74) !important;
+  color: rgba(255, 255, 255, 0.72) !important;
   text-decoration: none !important;
-  font-size: 13.5px !important;
-  line-height: 1.5 !important;
-  transition: color 0.2s ease, transform 0.2s ease !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  transition: color 0.2s ease !important;
 }
 
 .gh-footer__links a:hover {
   color: #f0d78a !important;
 }
 
-html[dir="ltr"] .gh-footer__links a:hover {
-  transform: translateX(2px);
-}
-html[dir="rtl"] .gh-footer__links a:hover {
-  transform: translateX(-2px);
-}
-
+/* —— Offices: exactly 3 lines —— */
 .gh-footer__offices {
-  margin-top: 48px !important;
+  margin-top: 28px !important;
   width: 100% !important;
-}
-
-.gh-footer__offices-head {
   display: flex !important;
-  align-items: flex-end !important;
-  justify-content: space-between !important;
-  gap: 20px !important;
-  margin-bottom: 22px !important;
-  flex-wrap: wrap !important;
+  flex-direction: column !important;
+  gap: 8px !important;
 }
 
 .gh-footer__offices-title {
   margin: 0 !important;
+  padding: 0 !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
   color: var(--gh-ft-gold) !important;
-  position: relative !important;
-  padding-bottom: 10px !important;
+  line-height: 1.3 !important;
 }
 
 .gh-footer__offices-title::after {
-  content: '' !important;
-  position: absolute !important;
-  inset-inline-start: 0 !important;
-  bottom: 0 !important;
-  width: 28px !important;
-  height: 2px !important;
-  border-radius: 2px !important;
-  background: linear-gradient(90deg, var(--gh-ft-gold), rgba(201, 168, 76, 0.12)) !important;
+  display: none !important;
+  content: none !important;
 }
 
-.gh-footer__offices-desc {
+.gh-footer__offices-line {
   margin: 0 !important;
-  color: rgba(255, 255, 255, 0.72) !important;
+  color: rgba(255, 255, 255, 0.68) !important;
   font-size: 13.5px !important;
-  line-height: 1.55 !important;
-  max-width: 28rem !important;
+  line-height: 1.45 !important;
+  font-weight: 400 !important;
 }
 
-.gh-footer__offices-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  gap: 14px !important;
-  width: 100% !important;
-}
-
-.gh-footer__office {
+.gh-footer__offices-phones {
+  margin: 0 !important;
   display: flex !important;
-  flex-direction: column !important;
-  min-width: 0 !important;
-  min-height: 100% !important;
-  padding: 20px 18px 18px !important;
-  border-radius: 18px !important;
-  border: 1px solid var(--gh-ft-chrome) !important;
-  background:
-    linear-gradient(165deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015)),
-    var(--gh-ft-glass) !important;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.05) inset,
-    0 14px 32px rgba(0, 0, 0, 0.28) !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 8px 0 !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+.gh-footer__offices-phones a {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  gap: 6px !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  text-decoration: none !important;
+  padding: 4px 12px 4px 0 !important;
+  margin-inline-end: 4px !important;
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.12) !important;
+  transition: color 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.gh-footer__offices-phones a:last-child {
+  border-inline-end: none !important;
+  margin-inline-end: 0 !important;
+}
+
+.gh-footer__offices-phones a span {
+  color: #f0d78a !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+}
+
+.gh-footer__offices-phones a:hover {
   color: #fff !important;
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease !important;
 }
 
-.gh-footer__office:hover {
-  border-color: rgba(210, 210, 210, 0.55) !important;
-  transform: translateY(-2px) !important;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.07) inset,
-    0 18px 40px rgba(0, 0, 0, 0.36) !important;
+.gh-footer__offices-phones a:hover span {
+  color: #fff !important;
 }
 
-.gh-footer__office--hq {
-  border-color: rgba(201, 168, 76, 0.42) !important;
-  background:
-    linear-gradient(165deg, rgba(201, 168, 76, 0.12), rgba(255, 255, 255, 0.02)),
-    var(--gh-ft-glass) !important;
+/* Hide legacy office cards if any page still has them */
+.gh-footer__offices-head,
+.gh-footer__offices-grid,
+.gh-footer__office,
+.gh-footer__offices-desc {
+  display: none !important;
 }
 
-/* Beat page <style> that forces h2–h4 / p to #0A0A0A */
+/* Beat page <style> that forces dark text */
 .gh-footer h1,
 .gh-footer h2,
 .gh-footer h3,
 .gh-footer h4,
 .gh-footer p,
-.gh-footer span:not(.gh-footer__office-badge),
 .gh-footer a,
 .gh-footer li,
 .gh-footer strong {
-  color: #fff !important;
+  color: inherit;
 }
 
-.gh-footer__office-title {
-  margin: 0 0 4px !important;
-  color: #fff !important;
-  font-size: 16px !important;
-  font-weight: 700 !important;
-  line-height: 1.3 !important;
-}
-
-.gh-footer__office-city {
-  margin: 0 0 12px !important;
-  color: #f0d78a !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  line-height: 1.4 !important;
-}
-
-.gh-footer__office-meta {
-  margin: 0 0 18px !important;
-  color: rgba(255, 255, 255, 0.78) !important;
-  font-size: 12.5px !important;
-  line-height: 1.7 !important;
-  flex: 1 !important;
-}
-
-.gh-footer__office-mark {
+.gh-footer__offices-title {
   color: var(--gh-ft-gold) !important;
 }
-
-.gh-footer__office-badge {
-  color: #0a0a0a !important;
-  background: linear-gradient(135deg, #e0c06a, #c9a84c) !important;
-  border-radius: 999px !important;
-  font-size: 10px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.06em !important;
-  padding: 4px 10px !important;
+.gh-footer__offices-line {
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+.gh-footer__title {
+  color: var(--gh-ft-gold) !important;
+}
+.gh-footer__links a {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+.gh-footer__tagline {
+  color: rgba(255, 255, 255, 0.58) !important;
 }
 
-.gh-footer__call {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  margin-top: auto !important;
-  padding: 11px 14px !important;
-  border-radius: 999px !important;
-  border: 1px solid var(--gh-ft-chrome) !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-  color: #f0d78a !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  text-decoration: none !important;
-  letter-spacing: 0.02em !important;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
+/* Bottom bar: social + legal on one band */
+.gh-footer__bar {
+  margin-top: 28px !important;
+  padding-top: 22px !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
 }
 
-.gh-footer__call:hover {
-  background: rgba(201, 168, 76, 0.18) !important;
-  border-color: rgba(201, 168, 76, 0.55) !important;
-  color: #fff !important;
+.gh-footer__bar::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  height: 32px !important;
+  pointer-events: none !important;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.28), transparent) !important;
 }
 
 .gh-footer__social {
   display: flex !important;
   align-items: center !important;
   flex-wrap: wrap !important;
-  gap: 12px 14px !important;
-  margin-top: 40px !important;
-  padding-top: 36px !important;
-  border-top: none !important;
+  gap: 8px 10px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
   position: relative !important;
 }
 
-.gh-footer__social::before {
-  content: '' !important;
-  position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  top: 0 !important;
-  height: 48px !important;
-  pointer-events: none !important;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(0, 0, 0, 0.12) 55%,
-    transparent 100%
-  ) !important;
+.gh-footer__social::before,
+.gh-footer__social::after {
+  display: none !important;
+  content: none !important;
 }
 
 .gh-footer__social-label {
-  color: rgba(255, 255, 255, 0.72) !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  margin-inline-end: 4px !important;
 }
 
 .gh-footer__social a {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 38px !important;
-  height: 38px !important;
+  width: 34px !important;
+  height: 34px !important;
   border-radius: 999px !important;
   border: 1px solid var(--gh-ft-chrome) !important;
   background: rgba(255, 255, 255, 0.04) !important;
+  color: var(--gh-ft-gold) !important;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease !important;
 }
 
@@ -367,6 +321,7 @@ html[dir="rtl"] .gh-footer__links a:hover {
   background: rgba(201, 168, 76, 0.14) !important;
   border-color: rgba(201, 168, 76, 0.45) !important;
   transform: translateY(-1px) !important;
+  color: #f0d78a !important;
 }
 
 .gh-footer__legal {
@@ -374,44 +329,51 @@ html[dir="rtl"] .gh-footer__links a:hover {
   align-items: center !important;
   justify-content: space-between !important;
   flex-wrap: wrap !important;
-  gap: 16px !important;
-  margin-top: 28px !important;
-  padding-top: 28px !important;
-  border-top: none !important;
+  gap: 12px 20px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
   position: relative !important;
 }
 
-.gh-footer__legal::before {
-  content: '' !important;
-  position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  top: 0 !important;
-  height: 40px !important;
-  pointer-events: none !important;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.28) 0%,
-    rgba(0, 0, 0, 0.08) 50%,
-    transparent 100%
-  ) !important;
+.gh-footer__legal::before,
+.gh-footer__legal::after {
+  display: none !important;
+  content: none !important;
 }
 
-.gh-footer__group,
+.gh-footer__group {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  text-decoration: none !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
 .gh-footer__group strong {
-  color: rgba(255, 255, 255, 0.88) !important;
+  color: #f0d78a !important;
+  font-weight: 700 !important;
 }
 
 .gh-footer__copy {
-  color: rgba(255, 255, 255, 0.58) !important;
-  font-size: 12.5px !important;
-  line-height: 1.55 !important;
+  margin: 4px 0 0 !important;
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-size: 11.5px !important;
+  line-height: 1.45 !important;
+}
+
+.gh-footer__legal-links {
+  display: flex !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
 }
 
 .gh-footer__legal-links a {
-  color: rgba(255, 255, 255, 0.68) !important;
+  color: rgba(255, 255, 255, 0.58) !important;
   text-decoration: none !important;
-  font-size: 13px !important;
+  font-size: 12.5px !important;
 }
 
 .gh-footer__legal-links a:hover {
@@ -419,37 +381,51 @@ html[dir="rtl"] .gh-footer__links a:hover {
 }
 
 .gh-footer-motif {
-  opacity: 0.07 !important;
+  opacity: 0.05 !important;
   pointer-events: none !important;
+  position: absolute !important;
+  inset-inline-end: -4% !important;
+  bottom: -8% !important;
+  width: min(420px, 55vw) !important;
+  height: auto !important;
+  max-height: 280px !important;
+  object-fit: contain !important;
+  z-index: 0 !important;
 }
 
 @media (max-width: 1100px) {
   .gh-footer__inner {
-    padding: 56px 28px 48px !important;
+    padding: 40px 28px 32px !important;
   }
   .gh-footer__top {
-    grid-template-columns: minmax(140px, 1fr) repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: minmax(120px, 1fr) repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px !important;
   }
   .gh-footer__brand {
     grid-column: 1 / -1 !important;
-  }
-  .gh-footer__offices-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
 
 @media (max-width: 700px) {
   .gh-footer__inner {
-    padding: 48px 20px 40px !important;
+    padding: 36px 20px 28px !important;
   }
   .gh-footer__top {
-    grid-template-columns: 1fr !important;
-    gap: 28px !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 22px 18px !important;
   }
-  .gh-footer__offices-grid {
-    grid-template-columns: 1fr !important;
+  .gh-footer__brand {
+    grid-column: 1 / -1 !important;
   }
-  .gh-footer__offices-head,
+  .gh-footer__brand img {
+    max-height: 44px !important;
+    max-width: 132px !important;
+  }
+  .gh-footer__offices-phones a {
+    border-inline-end: none !important;
+    width: 100% !important;
+    padding: 6px 0 !important;
+  }
   .gh-footer__legal {
     flex-direction: column !important;
     align-items: flex-start !important;
