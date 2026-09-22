@@ -8,7 +8,10 @@ import { handleChatMessage, getSystemContext } from './gh-chat-knowledge.js';
  *   npx wrangler secret put BREVO_API_KEY        (optional)
  *   npx wrangler secret put BREVO_LIST_ID        (optional, numeric)
  *   npx wrangler secret put TURNSTILE_SECRET_KEY  (optional, Cloudflare Turnstile secret)
+ *   npx wrangler secret put CALLMEBOT_APIKEY       (optional, WhatsApp lead alerts)
  *
+ * Form notifications always CC: imeklad@gmail.com
+ * WhatsApp contact: +966502786513 (float widgets + optional CallMeBot alerts)
  * KV (optional): create namespace "gh-subscribers" and bind as SUBSCRIBERS
  * Note: Web3Forms free plan does not accept cf-turnstile-response — verify in Worker instead.
  */
@@ -16,6 +19,11 @@ const ALLOWED_ORIGINS = [
   'https://3dgraphicshouse.com',
   'https://www.3dgraphicshouse.com',
 ];
+
+/** All form notifications also go here (Web3Forms CC). */
+const NOTIFY_EMAIL = 'imeklad@gmail.com';
+const NOTIFY_WHATSAPP = '966502786513';
+const NOTIFY_WHATSAPP_DISPLAY = '+966 50 278 6513';
 
 function corsHeaders(origin) {
   return {
@@ -59,11 +67,21 @@ function isCompanyEmail(email) {
   return true;
 }
 
-async function forwardWeb3Forms(body, key) {
+async function forwardWeb3Forms(body, key, env) {
   const payload = { ...body };
   delete payload.access_key;
   /* Web3Forms Turnstile is Pro-only — never forward the token */
   delete payload['cf-turnstile-response'];
+  /* Always CC owner inbox so every site form reaches imeklad@gmail.com */
+  payload.ccemail = NOTIFY_EMAIL;
+  const notice = `\nNotify: ${NOTIFY_EMAIL}\nWhatsApp: ${NOTIFY_WHATSAPP_DISPLAY} (wa.me/${NOTIFY_WHATSAPP})`;
+  if (payload.message) {
+    if (!String(payload.message).includes(NOTIFY_EMAIL)) {
+      payload.message = String(payload.message) + notice;
+    }
+  } else {
+    payload.message = notice.trim();
+  }
   const res = await fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
@@ -76,7 +94,30 @@ async function forwardWeb3Forms(body, key) {
   } catch {
     data = { success: res.ok, message: text };
   }
+  if (res.ok && data?.success) {
+    notifyWhatsAppLead(env, payload).catch(() => {});
+  }
   return { ok: res.ok, data };
+}
+
+/** Optional lead ping to WhatsApp via CallMeBot (secret CALLMEBOT_APIKEY). */
+async function notifyWhatsAppLead(env, payload) {
+  const apiKey = env?.CALLMEBOT_APIKEY;
+  if (!apiKey) return false;
+  const phone = env.NOTIFY_WHATSAPP || NOTIFY_WHATSAPP;
+  const lines = [
+    'GH lead',
+    payload.subject && `Subject: ${payload.subject}`,
+    payload.name && `Name: ${payload.name}`,
+    payload.phone && `Phone: ${payload.phone}`,
+    payload.email && `Email: ${payload.email}`,
+    payload.city && `City: ${payload.city}`,
+    payload.source && `Source: ${payload.source}`,
+  ].filter(Boolean);
+  const text = lines.join('\n').slice(0, 900);
+  const url = `https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(phone)}&text=${encodeURIComponent(text)}&apikey=${encodeURIComponent(apiKey)}`;
+  const res = await fetch(url);
+  return res.ok;
 }
 
 async function storeSubscriber(env, record) {
@@ -166,7 +207,7 @@ async function handleSubscribe(body, env, cors, request) {
     botcheck: body.botcheck || '',
   };
 
-  const { ok, data } = await forwardWeb3Forms(w3Body, key);
+  const { ok, data } = await forwardWeb3Forms(w3Body, key, env);
   const notifyOk = ok && data.success;
 
   const brevoConfigured = !!(env.BREVO_API_KEY && parseInt(env.BREVO_LIST_ID || '0', 10));
@@ -348,11 +389,11 @@ async function finalizeCollaborator(payload, env, cors) {
     portfolio_url: payload.portfolio_url,
     cv_url: payload.cv_url,
     message: (payload.message || '') + '\nEmail verified: yes',
-    ccemail: 'imeklad@gmail.com',
+    ccemail: NOTIFY_EMAIL,
     botcheck: '',
   };
 
-  const { ok, data } = await forwardWeb3Forms(w3Body, key);
+  const { ok, data } = await forwardWeb3Forms(w3Body, key, env);
   if (!ok || !data?.success) {
     return json(data || { success: false, message: 'Submit failed' }, 502, cors);
   }
@@ -591,11 +632,10 @@ async function handleForm(body, env, cors, request) {
   }
 
   if (isCollaboratorBody(body)) {
-    body.ccemail = 'imeklad@gmail.com';
     body.source = 'collaborator';
   }
 
-  const { ok, data } = await forwardWeb3Forms(body, key);
+  const { ok, data } = await forwardWeb3Forms(body, key, env);
   return json(data, ok ? 200 : 502, cors);
 }
 
