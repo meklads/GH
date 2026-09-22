@@ -193,59 +193,79 @@ body:has(.nav-mega-item.is-open) .gh-float {
     left: auto;
     top: auto;
     transform: none;
-    flex: none;
-    width: auto;
+    flex: 0 0 auto !important;
+    width: max-content !important;
     max-width: 100%;
     min-width: 0;
     z-index: 3;
-    justify-self: center;
+    justify-self: center !important;
     align-self: center;
-    /* Pill frame — same language as AR/EN switch */
+    margin-inline: auto;
+    /* Pill frame — light gray (رصاصي), links centered inside */
     overflow: visible !important;
     flex-wrap: nowrap !important;
     box-sizing: border-box;
-    padding: 3px !important;
-    gap: 1px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 3px 4px !important;
+    gap: 0 !important;
     border-radius: 999px;
-    border: 1px solid rgba(201, 168, 76, 0.4);
-    background: rgba(0, 0, 0, 0.45);
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+    border: 1px solid rgba(176, 176, 176, 0.48);
+    background: rgba(12, 12, 12, 0.72);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
     -webkit-font-smoothing: antialiased;
   }
-  html[dir="ltr"] .nav {
-    direction: ltr;
-    justify-content: center;
-  }
+  html[dir="ltr"] .nav,
   html[dir="rtl"] .nav {
-    direction: rtl;
-    justify-content: center;
+    direction: ltr;
+    justify-content: center !important;
+  }
+  html[dir="ltr"] .nav-link,
+  html[dir="ltr"] .nav button.nav-link,
+  html[dir="rtl"] .nav-link,
+  html[dir="rtl"] .nav button.nav-link {
+    flex: 0 0 auto;
+    border-radius: 999px !important;
+    margin: 0;
   }
   html[dir="ltr"] .nav-link,
   html[dir="ltr"] .nav button.nav-link {
     font-size: 10.5px;
     padding: 9px 10px;
     letter-spacing: 0.05em;
-    flex: 0 0 auto;
-    border-radius: 999px !important;
   }
   html[dir="rtl"] .nav-link,
   html[dir="rtl"] .nav button.nav-link {
     font-size: 13px;
     padding: 8px 10px;
+    letter-spacing: 0;
+  }
+  .header .nav > .nav-mega-item {
+    display: inline-flex;
     flex: 0 0 auto;
-    border-radius: 999px !important;
+    margin: 0;
+  }
+  .header .nav > .nav-mobile-cta {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    overflow: hidden !important;
   }
   .header .nav .nav-link:hover,
   .header .nav .nav-mega-item.is-open > .nav-mega-trigger {
-    background: rgba(201, 168, 76, 0.14) !important;
-    color: var(--header-gold) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
   }
   .header .nav .nav-link-accent {
-    color: #e8d08a !important;
+    color: rgba(255, 255, 255, 0.92) !important;
   }
   .header .nav .nav-link-accent:hover {
     color: #fff !important;
-    background: rgba(201, 168, 76, 0.16) !important;
+    background: rgba(255, 255, 255, 0.12) !important;
   }
   .nav-actions {
     grid-area: actions;
@@ -552,17 +572,18 @@ html[dir="rtl"] .nav-link {
   white-space: nowrap;
   padding: 2px;
   border-radius: 50px;
-  border: 1px solid rgba(201, 168, 76, 0.4);
-  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(176, 176, 176, 0.48);
+  background: rgba(12, 12, 12, 0.72);
   line-height: 1;
   min-height: 32px;
   box-sizing: border-box;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
 }
 .lang-switch-sep {
   display: none !important;
 }
 .lang-switch-link {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.72);
   text-decoration: none;
   transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   padding: 6px 9px;
@@ -579,8 +600,8 @@ html[dir="rtl"] .nav-link {
 }
 .lang-switch-link.is-active {
   color: #0c0c0c;
-  background: linear-gradient(135deg, var(--header-gold) 0%, var(--header-gold-light) 100%);
-  box-shadow: 0 2px 10px rgba(201, 168, 76, 0.28);
+  background: linear-gradient(135deg, #d0d0d0 0%, #b0b0b0 100%);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 
 .nav-cta {
