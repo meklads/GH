@@ -194,39 +194,58 @@ body:has(.nav-mega-item.is-open) .gh-float {
     top: auto;
     transform: none;
     flex: none;
-    width: 100%;
+    width: auto;
     max-width: 100%;
     min-width: 0;
     z-index: 3;
-    justify-self: stretch;
+    justify-self: center;
     align-self: center;
-    /* Clip only empty spill — never hide whole nav items via display:none */
-    overflow-x: clip !important;
-    overflow-y: visible !important;
+    /* Pill frame — same language as AR/EN switch */
+    overflow: visible !important;
     flex-wrap: nowrap !important;
+    box-sizing: border-box;
+    padding: 3px !important;
+    gap: 1px !important;
+    border-radius: 999px;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+    -webkit-font-smoothing: antialiased;
   }
   html[dir="ltr"] .nav {
     direction: ltr;
-    justify-content: flex-start;
-    gap: 2px !important;
-    padding: 0;
+    justify-content: center;
   }
   html[dir="rtl"] .nav {
     direction: rtl;
-    justify-content: flex-start;
-    gap: 2px !important;
-    padding: 0;
+    justify-content: center;
   }
-  html[dir="ltr"] .nav-link {
-    font-size: 11px;
-    padding: 10px 8px;
-    letter-spacing: 0.04em;
+  html[dir="ltr"] .nav-link,
+  html[dir="ltr"] .nav button.nav-link {
+    font-size: 10.5px;
+    padding: 9px 10px;
+    letter-spacing: 0.05em;
     flex: 0 0 auto;
+    border-radius: 999px !important;
   }
-  html[dir="rtl"] .nav-link {
-    font-size: 14px;
-    padding: 8px 8px;
+  html[dir="rtl"] .nav-link,
+  html[dir="rtl"] .nav button.nav-link {
+    font-size: 13px;
+    padding: 8px 10px;
     flex: 0 0 auto;
+    border-radius: 999px !important;
+  }
+  .header .nav .nav-link:hover,
+  .header .nav .nav-mega-item.is-open > .nav-mega-trigger {
+    background: rgba(201, 168, 76, 0.14) !important;
+    color: var(--header-gold) !important;
+  }
+  .header .nav .nav-link-accent {
+    color: #e8d08a !important;
+  }
+  .header .nav .nav-link-accent:hover {
+    color: #fff !important;
+    background: rgba(201, 168, 76, 0.16) !important;
   }
   .nav-actions {
     grid-area: actions;
@@ -242,26 +261,25 @@ body:has(.nav-mega-item.is-open) .gh-float {
     padding-inline-start: 0;
     border: none;
     isolation: isolate;
-    background: var(--header-bg) !important;
+    background: transparent !important;
+    box-shadow: none !important;
   }
   html[dir="ltr"] .nav-actions {
     direction: ltr;
-    padding-inline-start: 18px;
-    margin-inline-start: 4px;
-    border-inline-start: 1px solid rgba(201, 168, 76, 0.22);
+    padding-inline-start: 12px;
+    margin-inline-start: 0;
+    border-inline-start: none;
     gap: 12px;
     align-items: center;
-    box-shadow: -16px 0 14px 6px var(--header-bg);
   }
   html[dir="rtl"] .nav-actions {
     direction: rtl;
     justify-self: start;
-    padding-inline-end: 18px;
-    margin-inline-end: 4px;
-    border-inline-end: 1px solid rgba(201, 168, 76, 0.22);
+    padding-inline-end: 12px;
+    margin-inline-end: 0;
+    border-inline-end: none;
     gap: 12px;
     align-items: center;
-    box-shadow: 16px 0 14px 6px var(--header-bg);
   }
   /* Insights + Contact stay visible after portfolio / case studies */
   .menu-toggle { display: none !important; }
@@ -290,22 +308,24 @@ body:has(.nav-mega-item.is-open) .gh-float {
   }
 }
 
-/* Laptop → mid desktop: compact labels fit — keep ALL nav items visible */
 @media (min-width: 901px) and (max-width: 1600px) {
   html[dir="ltr"] .header .container.header-inner,
   html[dir="rtl"] .header .container.header-inner {
     gap: 0 10px;
   }
+  .header .nav {
+    padding: 2px !important;
+  }
   html[dir="ltr"] .nav-link,
   html[dir="ltr"] .nav button.nav-link {
-    font-size: 10px;
-    padding: 8px 5px;
-    letter-spacing: 0.02em;
+    font-size: 9.5px;
+    padding: 8px 7px;
+    letter-spacing: 0.03em;
   }
   html[dir="rtl"] .nav-link,
   html[dir="rtl"] .nav button.nav-link {
     font-size: 12px;
-    padding: 7px 5px;
+    padding: 7px 7px;
   }
   .header .nav > .nav-mega-item,
   .header .nav > a.nav-link {
@@ -331,8 +351,8 @@ body:has(.nav-mega-item.is-open) .gh-float {
   }
   html[dir="ltr"] .nav-actions,
   html[dir="rtl"] .nav-actions {
-    padding-inline-start: 10px;
-    padding-inline-end: 10px;
+    padding-inline-start: 8px;
+    padding-inline-end: 8px;
     gap: 8px;
   }
   .lang-switch {
@@ -348,22 +368,23 @@ body:has(.nav-mega-item.is-open) .gh-float {
 @media (min-width: 1601px) {
   html[dir="ltr"] .header .container.header-inner,
   html[dir="rtl"] .header .container.header-inner {
-    gap: 0 28px;
+    gap: 0 24px;
   }
-  html[dir="ltr"] .nav-link {
+  html[dir="ltr"] .nav-link,
+  html[dir="ltr"] .nav button.nav-link {
     font-size: 11px;
-    padding: 10px 10px;
+    padding: 10px 12px;
     letter-spacing: 0.05em;
   }
-  html[dir="rtl"] .nav-link {
-    font-size: 14px;
-    padding: 9px 9px;
+  html[dir="rtl"] .nav-link,
+  html[dir="rtl"] .nav button.nav-link {
+    font-size: 13.5px;
+    padding: 9px 11px;
   }
-  html[dir="ltr"] .nav {
-    gap: 4px !important;
-  }
+  html[dir="ltr"] .nav,
   html[dir="rtl"] .nav {
-    gap: 4px !important;
+    gap: 2px !important;
+    padding: 4px !important;
   }
   html[dir="ltr"] .nav-cta {
     padding: 11px 24px !important;

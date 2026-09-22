@@ -168,7 +168,7 @@ ${analyticsHeadTags('')}
 <meta property="og:description" content="${esc(h.description)}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${BASE}/${DATA.items[0].image}">
-<link rel="stylesheet" href="assets/site-header.css?v=53">
+<link rel="stylesheet" href="assets/site-header.css?v=54">
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=8">
 <link rel="stylesheet" href="assets/gh-case-studies-hub.css?v=${CSS_V}">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
