@@ -51,6 +51,11 @@
   --gh-header-pad-y: 8px;
   --gh-logo-height: 82px;
   --gh-logo-height-mobile: 70px;
+  /* Desktop chrome controls — shared height & slate frame */
+  --gh-chrome-h: 42px;
+  --gh-chrome-border: rgba(186, 186, 186, 0.46);
+  --gh-chrome-bg: rgba(16, 16, 16, 0.62);
+  --gh-chrome-inset: 0 1px 0 rgba(255, 255, 255, 0.07) inset;
 }
 
 html {
@@ -201,19 +206,26 @@ body:has(.nav-mega-item.is-open) .gh-float {
     justify-self: center !important;
     align-self: center;
     margin-inline: auto;
-    /* Pill frame — light gray (رصاصي), links centered inside */
     overflow: visible !important;
     flex-wrap: nowrap !important;
     box-sizing: border-box;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 3px 4px !important;
-    gap: 0 !important;
+    height: var(--gh-chrome-h);
+    min-height: var(--gh-chrome-h);
+    padding: 3px 5px !important;
+    gap: 1px !important;
     border-radius: 999px;
-    border: 1px solid rgba(176, 176, 176, 0.48);
-    background: rgba(12, 12, 12, 0.72);
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    border: 1px solid var(--gh-chrome-border);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.015) 100%),
+      var(--gh-chrome-bg);
+    box-shadow:
+      var(--gh-chrome-inset),
+      0 10px 28px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(14px) saturate(1.15);
+    -webkit-backdrop-filter: blur(14px) saturate(1.15);
     -webkit-font-smoothing: antialiased;
   }
   html[dir="ltr"] .nav,
@@ -226,25 +238,38 @@ body:has(.nav-mega-item.is-open) .gh-float {
   html[dir="rtl"] .nav-link,
   html[dir="rtl"] .nav button.nav-link {
     flex: 0 0 auto;
-    border-radius: 999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center;
+    height: calc(var(--gh-chrome-h) - 6px);
+    min-height: calc(var(--gh-chrome-h) - 6px);
     margin: 0;
+    border-radius: 999px !important;
+    line-height: 1 !important;
+    box-sizing: border-box;
   }
   html[dir="ltr"] .nav-link,
   html[dir="ltr"] .nav button.nav-link {
     font-size: 10.5px;
-    padding: 9px 10px;
-    letter-spacing: 0.05em;
+    font-weight: 650;
+    padding: 0 11px;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.88);
   }
   html[dir="rtl"] .nav-link,
   html[dir="rtl"] .nav button.nav-link {
     font-size: 13px;
-    padding: 8px 10px;
+    font-weight: 700;
+    padding: 0 11px;
     letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.9);
   }
   .header .nav > .nav-mega-item {
     display: inline-flex;
+    align-items: center;
     flex: 0 0 auto;
     margin: 0;
+    height: calc(var(--gh-chrome-h) - 6px);
   }
   .header .nav > .nav-mobile-cta {
     display: none !important;
@@ -257,15 +282,24 @@ body:has(.nav-mega-item.is-open) .gh-float {
   }
   .header .nav .nav-link:hover,
   .header .nav .nav-mega-item.is-open > .nav-mega-trigger {
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255, 255, 255, 0.11) !important;
     color: #fff !important;
   }
+  .header .nav .nav-mega-item.is-open > .nav-mega-trigger {
+    box-shadow: inset 0 0 0 1px rgba(201, 168, 76, 0.38);
+  }
   .header .nav .nav-link-accent {
-    color: rgba(255, 255, 255, 0.92) !important;
+    color: rgba(255, 255, 255, 0.95) !important;
   }
   .header .nav .nav-link-accent:hover {
     color: #fff !important;
     background: rgba(255, 255, 255, 0.12) !important;
+  }
+  .header .nav .nav-chevron {
+    font-size: 14px !important;
+    opacity: 0.5;
+    margin-inline-start: 2px;
+    translate: 0 0.5px;
   }
   .nav-actions {
     grid-area: actions;
@@ -276,30 +310,63 @@ body:has(.nav-mega-item.is-open) .gh-float {
     z-index: 20;
     position: relative;
     margin-inline-start: 0;
-    gap: 12px;
+    gap: 10px;
     min-width: max-content;
     padding-inline-start: 0;
     border: none;
     isolation: isolate;
     background: transparent !important;
     box-shadow: none !important;
+    height: var(--gh-chrome-h);
   }
   html[dir="ltr"] .nav-actions {
     direction: ltr;
-    padding-inline-start: 12px;
+    padding-inline-start: 8px;
     margin-inline-start: 0;
     border-inline-start: none;
-    gap: 12px;
+    gap: 10px;
     align-items: center;
   }
   html[dir="rtl"] .nav-actions {
     direction: rtl;
     justify-self: start;
-    padding-inline-end: 12px;
+    padding-inline-end: 8px;
     margin-inline-end: 0;
     border-inline-end: none;
-    gap: 12px;
+    gap: 10px;
     align-items: center;
+  }
+  .header .lang-switch {
+    height: var(--gh-chrome-h);
+    min-height: var(--gh-chrome-h);
+    padding: 3px;
+    border-radius: 999px !important;
+    border-color: var(--gh-chrome-border);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.015) 100%),
+      var(--gh-chrome-bg);
+    box-shadow: var(--gh-chrome-inset);
+    backdrop-filter: blur(14px) saturate(1.15);
+    -webkit-backdrop-filter: blur(14px) saturate(1.15);
+  }
+  .header .lang-switch-link {
+    height: calc(var(--gh-chrome-h) - 6px);
+    min-height: calc(var(--gh-chrome-h) - 6px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 11px;
+    border-radius: 999px !important;
+  }
+  .header .nav-cta {
+    height: var(--gh-chrome-h) !important;
+    min-height: var(--gh-chrome-h) !important;
+    padding-block: 0 !important;
+    border-radius: 999px !important;
+    box-shadow: 0 6px 18px rgba(201, 168, 76, 0.28);
+  }
+  .header .nav-cta:hover {
+    box-shadow: 0 10px 24px rgba(201, 168, 76, 0.36);
   }
   /* Insights + Contact stay visible after portfolio / case studies */
   .menu-toggle { display: none !important; }
@@ -339,7 +406,7 @@ body:has(.nav-mega-item.is-open) .gh-float {
   html[dir="ltr"] .nav-link,
   html[dir="ltr"] .nav button.nav-link {
     font-size: 9.5px;
-    padding: 8px 7px;
+    padding: 0 8px;
     letter-spacing: 0.03em;
   }
   html[dir="rtl"] .nav-link,
@@ -572,12 +639,12 @@ html[dir="rtl"] .nav-link {
   white-space: nowrap;
   padding: 2px;
   border-radius: 50px;
-  border: 1px solid rgba(176, 176, 176, 0.48);
-  background: rgba(12, 12, 12, 0.72);
+  border: 1px solid var(--gh-chrome-border, rgba(176, 176, 176, 0.48));
+  background: var(--gh-chrome-bg, rgba(12, 12, 12, 0.72));
   line-height: 1;
   min-height: 32px;
   box-sizing: border-box;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  box-shadow: var(--gh-chrome-inset, 0 0 0 1px rgba(255, 255, 255, 0.04) inset);
 }
 .lang-switch-sep {
   display: none !important;
@@ -600,7 +667,7 @@ html[dir="rtl"] .nav-link {
 }
 .lang-switch-link.is-active {
   color: #0c0c0c;
-  background: linear-gradient(135deg, #d0d0d0 0%, #b0b0b0 100%);
+  background: linear-gradient(135deg, #d8d8d8 0%, #b8b8b8 100%);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 
