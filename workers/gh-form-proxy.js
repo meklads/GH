@@ -217,9 +217,12 @@ async function handleForm(body, env, cors, request) {
     body?.source === 'ads' ||
     body?.source === 'float' ||
     body?.source === 'partner' ||
+    body?.source === 'collaborator' ||
     /Ads/i.test(String(body?.subject || ''));
 
-  /* Lead forms that include email: prefer company domain, except ads/float leads */
+  const isCollaborator = body?.source === 'collaborator';
+
+  /* Lead forms that include email: prefer company domain, except ads/float/partner/collaborator */
   if (body && typeof body.email === 'string' && body.email.trim()) {
     const email = body.email.trim();
     if (!validEmail(email)) {
@@ -240,7 +243,28 @@ async function handleForm(body, env, cors, request) {
   if (body && (body.name !== undefined || body.phone !== undefined)) {
     const name = String(body.name || '').trim();
     const phone = String(body.phone || '').replace(/\D/g, '');
-    if (!name || phone.length < 8) {
+    if (isCollaborator) {
+      if (!name) {
+        return json(
+          {
+            success: false,
+            message: 'Please enter your full name.',
+          },
+          400,
+          cors
+        );
+      }
+      if (phone && phone.length < 8) {
+        return json(
+          {
+            success: false,
+            message: 'Please enter a valid phone number, or leave it blank.',
+          },
+          400,
+          cors
+        );
+      }
+    } else if (!name || phone.length < 8) {
       return json(
         {
           success: false,
