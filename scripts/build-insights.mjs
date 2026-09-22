@@ -466,7 +466,7 @@ ${analyticsHeadTags(p)}
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${p}assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="${p}assets/site-header.css?v=56">
+<link rel="stylesheet" href="${p}assets/site-header.css?v=57">
 <link rel="stylesheet" href="${p}assets/gh-site-enhancements.css?v=34">
 <link rel="stylesheet" href="${p}assets/gh-insights.css?v=31">
 <link rel="stylesheet" href="${p}assets/gh-insights-article.css?v=5">
