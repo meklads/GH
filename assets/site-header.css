@@ -200,8 +200,9 @@ body:has(.nav-mega-item.is-open) .gh-float {
     z-index: 3;
     justify-self: stretch;
     align-self: center;
-    /* Never paint under lang switch / CTA */
-    overflow: hidden !important;
+    /* Clip only empty spill — never hide whole nav items via display:none */
+    overflow-x: clip !important;
+    overflow-y: visible !important;
     flex-wrap: nowrap !important;
   }
   html[dir="ltr"] .nav {
@@ -218,12 +219,14 @@ body:has(.nav-mega-item.is-open) .gh-float {
   }
   html[dir="ltr"] .nav-link {
     font-size: 11px;
-    padding: 10px 11px;
-    letter-spacing: 0.055em;
+    padding: 10px 8px;
+    letter-spacing: 0.04em;
+    flex: 0 0 auto;
   }
   html[dir="rtl"] .nav-link {
-    font-size: 14.5px;
-    padding: 9px 10px;
+    font-size: 14px;
+    padding: 8px 8px;
+    flex: 0 0 auto;
   }
   .nav-actions {
     grid-area: actions;
@@ -287,58 +290,58 @@ body:has(.nav-mega-item.is-open) .gh-float {
   }
 }
 
-/* Laptop → mid desktop: drop secondary links so lang + CTA never collide */
+/* Laptop → mid desktop: compact labels fit — keep ALL nav items visible */
 @media (min-width: 901px) and (max-width: 1600px) {
   html[dir="ltr"] .header .container.header-inner,
   html[dir="rtl"] .header .container.header-inner {
-    gap: 0 12px;
+    gap: 0 10px;
   }
-  .header .nav > a.nav-link[href*="portfolio"],
-  .header .nav > a.nav-link[href*="casestudy"],
-  .header .nav > a.nav-link[href*="insights"],
-  .header .nav > a.nav-link.nav-link-accent {
-    display: none !important;
-  }
-  html[dir="ltr"] .nav-link {
+  html[dir="ltr"] .nav-link,
+  html[dir="ltr"] .nav button.nav-link {
     font-size: 10px;
-    padding: 8px 6px;
-    letter-spacing: 0.03em;
+    padding: 8px 5px;
+    letter-spacing: 0.02em;
   }
-  html[dir="rtl"] .nav-link {
-    font-size: 12.5px;
-    padding: 8px 6px;
+  html[dir="rtl"] .nav-link,
+  html[dir="rtl"] .nav button.nav-link {
+    font-size: 12px;
+    padding: 7px 5px;
+  }
+  .header .nav > .nav-mega-item,
+  .header .nav > a.nav-link {
+    flex: 0 0 auto;
   }
   html[dir="ltr"] .nav-cta {
-    padding: 9px 16px !important;
+    padding: 8px 14px !important;
     font-size: 10px !important;
-    letter-spacing: 0.06em !important;
+    letter-spacing: 0.05em !important;
     min-width: 0 !important;
-    min-height: 36px !important;
-    max-width: 160px;
+    min-height: 34px !important;
+    max-width: 140px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
   html[dir="rtl"] .nav-cta {
-    padding: 7px 12px !important;
-    font-size: 12px !important;
+    padding: 7px 11px !important;
+    font-size: 11.5px !important;
     min-width: 0 !important;
-    max-width: 170px;
+    max-width: 140px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
   html[dir="ltr"] .nav-actions,
   html[dir="rtl"] .nav-actions {
-    padding-inline-start: 12px;
-    padding-inline-end: 12px;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
     gap: 8px;
   }
   .lang-switch {
-    min-height: 30px;
+    min-height: 28px;
   }
   .lang-switch-link {
-    padding: 5px 8px;
-    min-width: 28px;
-    font-size: 10.5px;
+    padding: 5px 7px;
+    min-width: 26px;
+    font-size: 10px;
   }
 }
 
