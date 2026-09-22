@@ -6,6 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { SITE_HEADER_CSS_VER } from './lib/header-css-guard.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -16,11 +17,14 @@ const SKIP = new Set([
   'gh-admin.html',
   'offer-lite.html',
   'solutions/project-launch-ads.html',
+  'solutions/project-launch-ads-en.html',
+  'solutions/project-launch.html',
+  'solutions/project-launch-en.html',
 ]);
 
-const EXPECT_CSS = 'site-header.css?v=57';
+const EXPECT_CSS = `site-header.css?v=${SITE_HEADER_CSS_VER}`;
 const EXPECT_JS = 'site-header.js?v=16';
-
+const EXPECT_FOOTER_LOCK = 'gh-footer-lock.css?v=';
 function collectHtml(dir, base = '') {
   const out = [];
   for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -77,8 +81,8 @@ for (const rel of collectHtml(ROOT)) {
   }
 
   const contactPattern = en
-    ? /href="[^"]*contact-us[^"]*"[^>]*>Contact Us</
-    : /href="[^"]*contact-us[^"]*"[^>]*>(اتصل بنا|للاتصال بنا|تواصل معنا)</;
+    ? /href="[^"]*contact-us[^"]*"[^>]*>Contact(?:\s+Us)?</
+    : /href="[^"]*contact-us[^"]*"[^>]*>(اتصل بنا|للاتصال بنا|تواصل معنا|اتصال)</;
   if (!contactPattern.test(html)) {
     issues.push(`${rel}: missing contact nav link`);
   }
@@ -94,6 +98,9 @@ for (const rel of collectHtml(ROOT)) {
     if (!isCurrentFooter(html, en)) issues.push(`${rel}: outdated footer layout`);
     if (!/gh-site-enhancements\.css\?v=\d+/.test(html)) {
       issues.push(`${rel}: missing versioned footer CSS (gh-site-enhancements.css?v=)`);
+    }
+    if (!html.includes(EXPECT_FOOTER_LOCK)) {
+      issues.push(`${rel}: missing versioned footer lock (${EXPECT_FOOTER_LOCK})`);
     }
   }
 

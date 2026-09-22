@@ -1,9 +1,9 @@
 /**
  * Shared guards so site-header.css owns the chrome on every page.
  */
-export const SITE_HEADER_CSS_VER = 57;
-export const SITE_ENHANCEMENTS_CSS_VER = 35;
-export const SITE_FOOTER_LOCK_CSS_VER = 3;
+export const SITE_HEADER_CSS_VER = 58;
+export const SITE_ENHANCEMENTS_CSS_VER = 36;
+export const SITE_FOOTER_LOCK_CSS_VER = 4;
 
 export function stripConflictingHeaderStyles(html) {
   let out = html;
@@ -68,6 +68,20 @@ export function stripConflictingHeaderStyles(html) {
   out = out.replace(
     /window\.addEventListener\(["']scroll["'],\s*function\s*\(\)\s*\{var\s+h=document\.getElementById\(["']header["']\);if\(h\)h\.classList\.toggle\(["']scrolled["'],\s*window\.scrollY>\d+\)\};?\)/g,
     ''
+  );
+
+  // Page styles that re-introduce header/footer hairlines
+  out = out.replace(
+    /\.header(?:\.scrolled)?\s*\{\s*[^}]*border-bottom\s*:\s*[^;]+;[^}]*\}/gi,
+    (m) => m.replace(/border-bottom\s*:\s*[^;]+;/gi, 'border-bottom: none !important;')
+  );
+  out = out.replace(
+    /\.gh-footer\s*\{\s*[^}]*border-top\s*:\s*[^;]+;[^}]*\}/gi,
+    (m) => m.replace(/border-top\s*:\s*[^;]+;/gi, 'border-top: none !important;')
+  );
+  out = out.replace(
+    /\.gh-footer__top\s*\{\s*[^}]*border-bottom\s*:\s*[^;]+;[^}]*\}/gi,
+    (m) => m.replace(/border-bottom\s*:\s*[^;]+;/gi, 'border-bottom: none !important;')
   );
 
   return out;
