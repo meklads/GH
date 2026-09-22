@@ -1461,73 +1461,102 @@ html[dir="ltr"] .mega-menu-services .mm-svc-link:hover { transform: translateX(2
   .lang-switch { font-size: 11px; }
 }
 
-/* ----- Case studies mega menu — compact title + thumb ----- */
+/* ----- Case studies mega — full-width, solutions-grade cards ----- */
 .mega-menu-casestudies {
-  width: min(920px, calc(100vw - 32px));
+  width: min(1180px, 96vw);
+  padding: 0;
   left: 50%;
   transform: translateX(-50%) translateY(8px);
 }
 .mega-menu-casestudies .mm-panel-head {
-  padding: 16px 20px 8px;
+  padding: 22px 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 0;
 }
 .mega-menu-casestudies .mm-panel-desc {
-  margin: 4px 0 0;
-  font-size: 12px;
-  line-height: 1.45;
-  opacity: 0.55;
+  margin: 6px 0 16px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.48);
+  max-width: 42rem;
 }
 .mega-menu-casestudies .mm-cs-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  padding: 4px 16px 14px;
+  gap: 16px;
+  padding: 18px 24px 8px;
 }
 .mega-menu-casestudies .mm-cs-row {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 64px;
-  padding: 8px 10px;
-  border-radius: 12px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.03);
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
+    rgba(12, 12, 12, 0.55);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  transition: border-color 0.28s ease, background 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
 }
 .mega-menu-casestudies .mm-cs-row:hover {
-  border-color: rgba(201, 169, 98, 0.5);
-  background: rgba(201, 169, 98, 0.08);
-  transform: translateY(-1px);
+  border-color: rgba(201, 168, 76, 0.32);
+  background:
+    linear-gradient(165deg, rgba(201, 168, 76, 0.12), rgba(201, 168, 76, 0.03)),
+    rgba(18, 16, 10, 0.7);
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(201, 168, 76, 0.08) inset;
 }
 .mega-menu-casestudies .mm-cs-thumb {
-  flex: 0 0 72px;
-  width: 72px;
-  height: 54px;
-  border-radius: 8px;
+  flex: none;
+  width: 100%;
+  height: 148px;
+  border-radius: 0;
   overflow: hidden;
-  background: #141414;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+  background: #0e0e0e;
+  box-shadow: none;
+  position: relative;
+}
+.mega-menu-casestudies .mm-cs-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.35));
+  pointer-events: none;
 }
 .mega-menu-casestudies .mm-cs-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
+}
+.mega-menu-casestudies .mm-cs-row:hover .mm-cs-thumb img {
+  transform: scale(1.04);
 }
 .mega-menu-casestudies .mm-cs-name {
   flex: 1 1 auto;
   min-width: 0;
-  font-size: 14px;
+  padding: 16px 18px 6px;
+  font-size: 15px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.4;
   color: #fafaf8;
 }
 .mega-menu-casestudies .mm-cs-arrow {
   flex: 0 0 auto;
+  align-self: flex-start;
+  margin: 0 18px 16px;
   font-size: 18px;
-  color: rgba(201, 169, 98, 0.75);
-  opacity: 0;
+  color: var(--header-gold);
+  opacity: 0.55;
   transition: opacity 0.2s, transform 0.2s;
 }
 .mega-menu-casestudies .mm-cs-row:hover .mm-cs-arrow {
@@ -1537,32 +1566,58 @@ html[dir="rtl"] .mega-menu-casestudies .mm-cs-arrow {
   transform: scaleX(-1);
 }
 html[dir="rtl"] .mega-menu-casestudies .mm-cs-row:hover .mm-cs-arrow {
-  transform: scaleX(-1) translateX(2px);
+  transform: scaleX(-1) translateX(3px);
 }
 html[dir="ltr"] .mega-menu-casestudies .mm-cs-row:hover .mm-cs-arrow {
-  transform: translateX(2px);
+  transform: translateX(3px);
 }
 .mega-menu-casestudies .mm-cs-all {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  margin: 0 16px 16px;
-  padding: 12px 16px;
-  border-radius: 10px;
-  border: 1px solid rgba(201, 169, 98, 0.35);
-  color: #c9a962;
-  font-size: 13px;
-  font-weight: 600;
+  gap: 8px;
+  margin: 12px 24px 22px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(201, 168, 76, 0.38);
+  background: rgba(201, 168, 76, 0.06);
+  color: #e8d5a3;
+  font-size: 13.5px;
+  font-weight: 700;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 .mega-menu-casestudies .mm-cs-all:hover {
-  background: rgba(201, 169, 98, 0.12);
-  color: #e8d5a3;
+  background: rgba(201, 168, 76, 0.14);
+  border-color: rgba(201, 168, 76, 0.55);
+  color: #fff;
 }
-.mega-menu-casestudies .mm-cs-all .material-symbols-outlined { font-size: 16px; }
+.mega-menu-casestudies .mm-cs-all .material-symbols-outlined { font-size: 18px; }
 html[dir="rtl"] .mega-menu-casestudies .mm-cs-all .material-symbols-outlined { transform: scaleX(-1); }
+
+@media (min-width: 901px) and (max-width: 1280px) {
+  .mega-menu-casestudies .mm-panel-head {
+    padding: 18px 20px 0;
+  }
+  .mega-menu-casestudies .mm-cs-list {
+    gap: 12px;
+    padding: 14px 18px 6px;
+  }
+  .mega-menu-casestudies .mm-cs-thumb {
+    height: 120px;
+  }
+  .mega-menu-casestudies .mm-cs-name {
+    font-size: 14px;
+    padding: 12px 14px 4px;
+  }
+  .mega-menu-casestudies .mm-cs-arrow {
+    margin: 0 14px 12px;
+  }
+  .mega-menu-casestudies .mm-cs-all {
+    margin: 10px 18px 18px;
+  }
+}
 
 @media (max-width: 900px) {
   .mega-menu-casestudies {
@@ -1570,6 +1625,11 @@ html[dir="rtl"] .mega-menu-casestudies .mm-cs-all .material-symbols-outlined { t
   }
   .mega-menu-casestudies .mm-cs-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 12px 14px 6px;
+  }
+  .mega-menu-casestudies .mm-cs-thumb {
+    height: 110px;
   }
 }
 @media (max-width: 560px) {
@@ -1578,14 +1638,12 @@ html[dir="rtl"] .mega-menu-casestudies .mm-cs-all .material-symbols-outlined { t
   }
   .mega-menu-casestudies .mm-cs-list {
     grid-template-columns: 1fr;
-    padding: 4px 12px 10px;
+    padding: 10px 12px 6px;
   }
   .mega-menu-casestudies .mm-cs-thumb {
-    flex: 0 0 64px;
-    width: 64px;
-    height: 48px;
+    height: 132px;
   }
-  .mega-menu-casestudies .mm-cs-all { margin: 0 12px 12px; }
+  .mega-menu-casestudies .mm-cs-all { margin: 8px 12px 14px; }
 }
 
 /* Legacy class hooks (older markup) kept harmless */
