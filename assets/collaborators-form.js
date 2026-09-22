@@ -9,6 +9,8 @@
     (document.documentElement.lang || '').toLowerCase() === 'en' ||
     document.documentElement.dir === 'ltr';
 
+  var NOTIFY_EMAIL = 'imeklad@gmail.com';
+
   var MSG = isEn
     ? {
         required: 'Please complete the required fields.',
@@ -16,8 +18,8 @@
         captcha: 'Please complete the security check before submitting.',
         sending: 'Sending…',
         success:
-          '<strong>Profile received.</strong><br>We review submissions as the roster grows. If your profile matches an opening, we will follow up.',
-        error: 'Could not send. Please try again, or email info@3dgraphicshouse.com.',
+          '<strong>Profile received.</strong><br>We review submissions as opportunities open. If your profile matches a live need, we will follow up.',
+        error: 'Could not send. Please try again, or email ' + NOTIFY_EMAIL + '.',
         network: 'Connection error. Check your network and try again.',
       }
     : {
@@ -26,8 +28,8 @@
         captcha: 'يرجى إكمال التحقق الأمني قبل الإرسال.',
         sending: 'جارٍ الإرسال…',
         success:
-          '<strong>تم استلام ملفك.</strong><br>نراجع الطلبات مع نمو الشبكة. إن تطابق ملفك مع فرصة مناسبة، سنتواصل معك.',
-        error: 'تعذّر الإرسال. حاول مجدداً أو راسلنا على info@3dgraphicshouse.com.',
+          '<strong>تم استلام ملفك.</strong><br>نراجع الطلبات مع ظهور الفرص. إن تطابق ملفك مع احتياج فعلي، سنتواصل معك.',
+        error: 'تعذّر الإرسال. حاول مجدداً أو راسلنا على ' + NOTIFY_EMAIL + '.',
         network: 'خطأ في الاتصال. تحقق من الشبكة وحاول مجدداً.',
       };
 
@@ -238,8 +240,8 @@
 
       var payload = {
         subject: isEn
-          ? 'Collaborator profile — Graphics House'
-          : 'ملف متعاون — جرافيكس هاوس',
+          ? 'Collaborator profile — Graphics House → ' + NOTIFY_EMAIL
+          : 'ملف متعاون — جرافيكس هاوس → ' + NOTIFY_EMAIL,
         from_name: 'Graphics House Collaborators',
         email: email,
         city: city,
@@ -248,7 +250,8 @@
         discipline: discipline,
         portfolio_url: portfolio,
         cv_url: cv,
-        message: lines.join('\n'),
+        ccemail: NOTIFY_EMAIL,
+        message: lines.join('\n') + '\nNotify: ' + NOTIFY_EMAIL,
         botcheck: '',
       };
       /* Include name/phone only when phone is provided (Worker requires both together).

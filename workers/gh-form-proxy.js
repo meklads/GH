@@ -291,6 +291,12 @@ async function handleForm(body, env, cors, request) {
     if (lines.length) body.message = lines.join('\n');
   }
 
+  /* Collaborator roster: always CC talent inbox */
+  if (body && (body.form_type === 'collaborator' || /Collaborator profile|ملف متعاون/i.test(String(body.subject || '')))) {
+    body.ccemail = 'imeklad@gmail.com';
+    body.source = body.source || 'collaborator';
+  }
+
   const { ok, data } = await forwardWeb3Forms(body, key);
   return json(data, ok ? 200 : 502, cors);
 }

@@ -35,7 +35,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0&display=swap">
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=37">
-<link rel="stylesheet" href="assets/collaborators.css?v=1">
+<link rel="stylesheet" href="assets/collaborators.css?v=2">
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="assets/gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="assets/site-header.css?v=58" data-gh-header-css="1">
@@ -260,12 +260,39 @@ gtag('config','G-Y67JVE898Z');
     <div class="col-wrap col-intro col-reveal">
       <div>
         <p class="col-eye">Why this exists</p>
-        <h2 class="col-h2">A practical roster — not an open job board</h2>
-        <p class="col-lead">When a brief needs a specialist beyond our core studio team, we look first to people we already know. Submitting a profile places you in that roster. It is not a job offer, and it does not guarantee assignment.</p>
+        <h2 class="col-h2">We look for people who do the work well — and call when we actually need them</h2>
+        <p class="col-lead">Projects do not always wait for a full team to be hired from scratch. So we keep a quiet roster of people whose craft we trust: we return to it when a brief expands, or when a company in the group needs a specialist hand for a defined stretch. Submitting a profile is not a job offer, and it does not guarantee assignment — it means your name is in front of us at the right moment.</p>
       </div>
       <aside class="col-note" aria-label="What happens next">
-        Profiles are reviewed as the network grows. When skills, location, and availability match a live need — whether Graphics House delivery, a Tasami Group project, or client overflow — we may reach out. Once the roster is large enough, we also plan structured knowledge exchange among members.
+        We review profiles carefully — not with an automated reply to every submission. If your skills, location, and availability match a live need — at Graphics House, a Tasami company, or client support — we will reach out with clear scope and timing. Once the roster is large enough, we also open structured knowledge exchange among members.
       </aside>
+    </div>
+    <div class="col-wrap col-group col-reveal">
+      <p class="col-eye">Tasami Group</p>
+      <h2 class="col-h2">Three specialist companies. One umbrella.</h2>
+      <p class="col-group-lead">Graphics House is part of <a href="https://www.tasamify.com/" target="_blank" rel="noopener noreferrer" style="color:#C9A84C;text-decoration:none;font-weight:600">Tasami Group</a>. Each company has a clear role: marketing and campaigns, visual launch and experience, then spatial execution. Browse the group sites to see where your craft may be called in.</p>
+      <div class="col-group-grid">
+        <a class="col-group-card" href="https://www.tasamify.com/" target="_blank" rel="noopener noreferrer">
+          <strong>Tasami Group</strong>
+          <span>The umbrella behind complementary specialist companies.</span>
+          <em>tasamify.com</em>
+        </a>
+        <a class="col-group-card" href="https://3dgraphicshouse.com/" target="_blank" rel="noopener noreferrer">
+          <strong>Graphics House</strong>
+          <span>Visual launch: archviz, maquettes, CGI, and sales experiences.</span>
+          <em>3dgraphicshouse.com</em>
+        </a>
+        <a class="col-group-card" href="https://beesmotion.com/" target="_blank" rel="noopener noreferrer">
+          <strong>Bees Motion</strong>
+          <span>Digital marketing and creative production that moves the market.</span>
+          <em>beesmotion.com</em>
+        </a>
+        <a class="col-group-card" href="https://turriva.com/" target="_blank" rel="noopener noreferrer">
+          <strong>Turriva</strong>
+          <span>Spatial execution: sales galleries, fit-out, and on-site delivery.</span>
+          <em>turriva.com</em>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -274,7 +301,7 @@ gtag('config','G-Y67JVE898Z');
       <div class="col-reveal">
         <p class="col-eye">Disciplines</p>
         <h2 class="col-h2">Who we are looking for</h2>
-        <p class="col-lead">Select a discipline to jump to the form. We welcome freelancers and independent practitioners across the Gulf and beyond.</p>
+        <p class="col-lead">Select a discipline to jump to the form. We welcome freelancers and independents across the Gulf and beyond — including marketing and sales when a project needs the market layer.</p>
       </div>
       <div class="col-disc-grid col-reveal">
         <button type="button" class="col-disc" data-discipline="architect">
@@ -308,6 +335,14 @@ gtag('config','G-Y67JVE898Z');
         <button type="button" class="col-disc" data-discipline="physical-model">
           <img loading="lazy" src="assets/collaborators/maquette.webp" alt="" width="800" height="600">
           <span class="col-disc__label"><strong>Physical model maker</strong><span>Scale models &amp; fabrication</span></span>
+        </button>
+        <button type="button" class="col-disc" data-discipline="digital-marketing">
+          <img loading="lazy" src="assets/collaborators/marketing.jpg" alt="" width="800" height="570">
+          <span class="col-disc__label"><strong>Digital marketing manager</strong><span>Channels, content, performance</span></span>
+        </button>
+        <button type="button" class="col-disc" data-discipline="sales-manager">
+          <img loading="lazy" src="assets/collaborators/sales.jpg" alt="" width="800" height="450">
+          <span class="col-disc__label"><strong>Specialist sales manager</strong><span>Real estate, B2B, closing</span></span>
         </button>
       </div>
     </div>
@@ -392,6 +427,8 @@ gtag('config','G-Y67JVE898Z');
                 <option value="ai-video">AI video production</option>
                 <option value="editor">Video editor</option>
                 <option value="physical-model">Physical model maker</option>
+                <option value="digital-marketing">Digital marketing manager</option>
+                <option value="sales-manager">Specialist sales manager</option>
                 <option value="other">Other</option>
               </select>
             </div>
@@ -430,16 +467,18 @@ gtag('config','G-Y67JVE898Z');
               <label for="colNote">Brief note <span class="hint">(optional)</span></label>
               <textarea id="colNote" name="note" maxlength="1200" placeholder="Tools you use, recent projects, or how you prefer to collaborate."></textarea>
             </div>
-            <div class="col-field col-field--full">
+            <div class="col-field col-field--full col-field--consent">
               <label class="col-check">
                 <input type="checkbox" name="consent" value="yes" required>
-                <span>I understand this is a collaborator roster, not a guaranteed job offer, and I agree to be contacted about relevant opportunities.</span>
+                <span class="col-check__text">I understand this is a collaborator roster, not a guaranteed job offer, and I agree to be contacted about relevant opportunities.</span>
               </label>
             </div>
           </div>
           <div class="col-form-actions">
-            <button type="submit" class="col-btn col-btn--primary">Send profile</button>
-            <p class="col-form-note">We typically acknowledge strong matches when a live need appears — not with an automated reply for every submission.</p>
+            <div class="col-form-actions__row">
+              <button type="submit" class="col-btn col-btn--primary">Send profile</button>
+              <p class="col-form-note">We typically follow up when a live need matches the profile — not with an automated reply for every submission.</p>
+            </div>
           </div>
         </form>
       </div>
@@ -546,7 +585,7 @@ gtag('config','G-Y67JVE898Z');
 
 <script defer src="assets/site-header.js?v=16"></script>
 <script defer src="assets/lang-switch.js?v=2"></script>
-<script defer src="assets/collaborators-form.js?v=1"></script>
+<script defer src="assets/collaborators-form.js?v=2"></script>
 <script defer src="assets/gh-performance.js?v=10"></script>
 <script defer src="assets/site-reveal.js?v=2"></script>
 <script defer src="assets/gh-cta-track.js?v=1"></script>
