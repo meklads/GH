@@ -899,7 +899,8 @@ html[dir="rtl"] .nav-cta {
   }
 
   .mega-menu-solutions,
-  .mega-menu-services {
+  .mega-menu-services,
+  .mega-menu-casestudies {
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
@@ -913,7 +914,9 @@ html[dir="rtl"] .nav-cta {
   .nav-mega-item:hover .mega-menu-solutions,
   .nav-mega-item.is-open .mega-menu-solutions,
   .nav-mega-item:hover .mega-menu-services,
-  .nav-mega-item.is-open .mega-menu-services {
+  .nav-mega-item.is-open .mega-menu-services,
+  .nav-mega-item:hover .mega-menu-casestudies,
+  .nav-mega-item.is-open .mega-menu-casestudies {
     transform: translateY(0) !important;
   }
 
@@ -921,22 +924,6 @@ html[dir="rtl"] .nav-cta {
   .mega-menu-services::before,
   .mega-menu-casestudies::before {
     display: none;
-  }
-
-  /* Narrow case-studies panel: center in header-inner, never overflow */
-  .mega-menu-casestudies {
-    left: 50% !important;
-    right: auto !important;
-    width: min(520px, 100%) !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    transform: translateX(-50%) translateY(8px) !important;
-    box-sizing: border-box;
-  }
-
-  .nav-mega-item:hover .mega-menu-casestudies,
-  .nav-mega-item.is-open .mega-menu-casestudies {
-    transform: translateX(-50%) translateY(0) !important;
   }
 }
 
