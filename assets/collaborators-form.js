@@ -117,19 +117,21 @@
     if (!host || host.dataset.rendered === '1') return;
     loadTurnstile(function () {
       if (!window.turnstile || host.dataset.rendered === '1') return;
-      host.dataset.rendered = '1';
-      window.turnstile.render(host, {
+      var id = window.turnstile.render(host, {
         sitekey: TURNSTILE_KEY,
         theme: 'light',
+        language: isEn ? 'en' : 'ar',
       });
+      host.dataset.rendered = '1';
+      host.dataset.widgetId = id;
     });
   }
 
   function turnstileToken(form) {
     var host = form.querySelector('.gh-turnstile');
-    if (!host || !window.turnstile) return '';
+    if (!host || !host.dataset.widgetId || !window.turnstile) return '';
     try {
-      return window.turnstile.getResponse(host) || '';
+      return window.turnstile.getResponse(host.dataset.widgetId) || '';
     } catch (e) {
       return '';
     }
@@ -137,9 +139,9 @@
 
   function resetTurnstile(form) {
     var host = form.querySelector('.gh-turnstile');
-    if (!host || !window.turnstile) return;
+    if (!host || !host.dataset.widgetId || !window.turnstile) return;
     try {
-      window.turnstile.reset(host);
+      window.turnstile.reset(host.dataset.widgetId);
     } catch (e) {}
   }
 
@@ -218,6 +220,58 @@
     }
   }
 
+  function handleConfirmToken(form) {
+    var params = new URLSearchParams(location.search);
+    var token = params.get('confirm');
+    if (!token) return;
+    var feedback = ensureFeedback(form);
+    showFeedback(
+      feedback,
+      'success',
+      isEn ? 'Confirming your email…' : 'جارٍ تأكيد بريدك…'
+    );
+    scrollToFormFeedback(form);
+    fetch(
+      (FORMS.formEndpoint || 'https://3dgraphicshouse.com/api/form').replace(
+        /\/api\/form\/?$/,
+        '/api/collaborator/confirm'
+      ),
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ token: token }),
+      }
+    )
+      .then(function (r) {
+        return r.json().then(function (data) {
+          return { ok: r.ok, data: data };
+        });
+      })
+      .then(function (res) {
+        if (res.data && res.data.success) {
+          showFeedback(feedback, 'success', MSG.verified);
+          if (window.ghTrack) {
+            window.ghTrack('generate_lead', {
+              form_name: 'collaborator_form',
+              verified: true,
+            });
+          }
+        } else {
+          showFeedback(
+            feedback,
+            'error',
+            (res.data && res.data.message) || MSG.verifyFail
+          );
+        }
+        if (history.replaceState) {
+          history.replaceState({}, '', location.pathname + location.hash);
+        }
+      })
+      .catch(function () {
+        showFeedback(feedback, 'error', MSG.network);
+      });
+  }
+
   function wireForm() {
     var form = document.getElementById('collaboratorForm');
     if (!form || form.dataset.wired === '1') return;
@@ -227,6 +281,7 @@
     renderTurnstile(form);
     wireDisciplinePickers(form);
     handleVerifiedQuery(form);
+    handleConfirmToken(form);
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();

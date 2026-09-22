@@ -12,3 +12,8 @@ window.GH_FORMS = {
   notifyWhatsApp: '966502786513',
   mailingListName: 'gh-journal',
 };
+
+window.GH_QUOTE_FORM = window.GH_QUOTE_FORM || {};
+if (!window.GH_QUOTE_FORM.turnstileSiteKey) {
+  window.GH_QUOTE_FORM.turnstileSiteKey = '0x4AAAAAADv7uKaQhHuTHq7h';
+}

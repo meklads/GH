@@ -73,9 +73,32 @@
     if (!form || form.dataset.ghNewsletterWired === '1') return;
     form.dataset.ghNewsletterWired = '1';
 
-    var msgEl = form.querySelector('.gh-newsletter-msg');
+    if (!form.querySelector('input[name="botcheck"]')) {
+      var honey = document.createElement('div');
+      honey.className = 'gh-honeypot';
+      honey.setAttribute('aria-hidden', 'true');
+      honey.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden';
+      honey.innerHTML =
+        '<label>Leave blank</label><input type="text" name="botcheck" tabindex="-1" autocomplete="off">';
+      form.appendChild(honey);
+    }
     var turnstileBox = form.querySelector('.gh-turnstile');
-    if (turnstileBox) renderTurnstile(turnstileBox);
+    if (!turnstileBox) {
+      turnstileBox = document.createElement('div');
+      turnstileBox.className = 'gh-turnstile';
+      turnstileBox.style.cssText = 'margin:8px 0;min-height:65px';
+      var btnAnchor = form.querySelector('button[type="submit"]');
+      if (btnAnchor) form.insertBefore(turnstileBox, btnAnchor);
+      else form.appendChild(turnstileBox);
+    }
+    if (!form.querySelector('.gh-newsletter-msg')) {
+      var msg = document.createElement('div');
+      msg.className = 'gh-newsletter-msg';
+      form.appendChild(msg);
+    }
+
+    var msgEl = form.querySelector('.gh-newsletter-msg');
+    renderTurnstile(turnstileBox);
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();

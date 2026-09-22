@@ -238,7 +238,7 @@ html[dir="rtl"] .section-label{letter-spacing:.08em;font-size:11px}
 <script defer src="assets/gh-performance.js?v=10"></script>
 <script defer src="assets/site-reveal.js?v=2"></script>
 <script defer src="assets/gh-cta-track.js?v=1"></script>
-<script defer src="assets/lang-switch.js?v=2"></script>
+<script defer src="assets/lang-switch.js?v=3"></script>
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="assets/gh-ar-typography.css?v=2">
 <link rel="stylesheet" href="assets/gh-chat-assistant.css?v=10">
@@ -627,6 +627,7 @@ html[dir="rtl"] .section-label{letter-spacing:.08em;font-size:11px}
         <h3 class="gh-footer__title">الحلول</h3>
         <nav class="gh-footer__links" aria-label="الحلول">
           <a href="solutions/brand-scale.html">BrandScale™، نمو العلامة</a>
+          <a href="real-estate.html">الإطلاق البصري العقاري</a>
           <a href="solutions/project-launch.html">ProjectLaunch™، إطلاق على الخارطة</a>
           <a href="solutions/institutional-events.html">فعاليات مؤسسية ومنتديات</a>
           <a href="solutions/growth-launch.html">GrowthLaunch™</a>
@@ -872,6 +873,7 @@ html[dir="rtl"] .section-label{letter-spacing:.08em;font-size:11px}
 
 
 
+
 <script>
 var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
 if(ld&&lb){setTimeout(function(){lb.style.width="100%";},100);setTimeout(function(){ld.classList.add("out");},1400);}
@@ -882,12 +884,7 @@ window.addEventListener("scroll",function(){var h=document.getElementById("main-
 </script>
 
 <script>
-function ghSubmit(e){
-  e.preventDefault();
-  var btn=e.target.querySelector('button[type="submit"]');
-  btn.disabled=true; btn.textContent='جارٍ الإرسال…';
-  fetch((window.GH_FORMS&&window.GH_FORMS.formEndpoint)||'https://3dgraphicshouse.com/api/form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({subject:'استفسار جديد، موقع جرافيكس هاوس',from_name:'Graphics House Website',name:document.getElementById('ghName').value,company:document.getElementById('ghCompany').value,project_type:document.getElementById('ghProject').value,phone:document.getElementById('ghPhone').value,brief:document.getElementById('ghBrief').value,botcheck:''})}).then(function(r){return r.json();}).then(function(res){btn.disabled=false;btn.textContent='إرسال الطلب ←';if(res.success){document.querySelector('#ghPopup form').style.display='none';document.getElementById('ghThanks').style.display='block';setTimeout(function(){document.getElementById('ghPopup').classList.remove('open');document.querySelector('#ghPopup form').style.display='block';document.getElementById('ghThanks').style.display='none';},3000);}else{alert('حدث خطأ، يرجى المحاولة مرة أخرى.');}}).catch(function(){btn.disabled=false;btn.textContent='إرسال الطلب ←';alert('خطأ في الاتصال.');});
-}
+/* ghSubmit owned by gh-float-widgets.js */
 </script>
 
 <script defer src="assets/gh-float-widgets.js?v=15"></script>
@@ -946,7 +943,12 @@ function ghSubmit(e){
       <input class="gh-field" type="email" id="ghEmail" placeholder="البريد الإلكتروني *" required dir="ltr" aria-label="البريد الإلكتروني">
       <label class="gh-sr-only" for="ghBrief">نبذة عن المشروع</label>
       <textarea class="gh-field" id="ghBrief" rows="3" placeholder="الجدول الزمني أو الموقع أو الاحتياج البصري..." style="resize:none" aria-label="نبذة مختصرة عن مشروعك"></textarea>
-      <button type="submit" class="gh-submit">إرسال الاستفسار</button>
+            <div class="gh-honeypot" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+        <label>Leave blank</label>
+        <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="gh-turnstile" style="margin:8px 0 12px;min-height:65px"></div>
+<button type="submit" class="gh-submit">إرسال الاستفسار</button>
     </form>
     <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
       <div style="font-size:36px;margin-bottom:12px">✓</div>

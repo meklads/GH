@@ -487,7 +487,8 @@ async function handleCollaboratorRequest(body, env, cors, request) {
     return json({ success: false, message: 'Could not start verification.' }, 500, cors);
   }
 
-  const confirmUrl = `${origin}/api/collaborator/confirm?token=${encodeURIComponent(token)}`;
+  const page = lang === 'ar' ? '/collaborators.html' : '/collaborators-en.html';
+  const confirmUrl = `${origin}${page}?confirm=${encodeURIComponent(token)}`;
   const mail = collaboratorConfirmEmail(lang, name, confirmUrl);
   const sent = await sendBrevoTransactional(env, {
     to: email,
@@ -716,7 +717,7 @@ export default {
       return new Response(null, { status: 204, headers: cors });
     }
 
-    /* Collaborator email confirmation (magic link) */
+    /* Collaborator email confirmation — GET only redirects to page; finalize via POST */
     if (
       request.method === 'GET' &&
       (url.pathname === '/api/collaborator/confirm' || url.pathname === '/api/form/collaborator-confirm')
@@ -724,16 +725,10 @@ export default {
       const token = url.searchParams.get('token') || '';
       const peek = await readCollaboratorToken(env, token);
       const lang = peek?.lang === 'ar' ? 'ar' : 'en';
-      const result = await handleCollaboratorConfirm(token, env, cors);
-      const data = await result.clone().json().catch(() => ({}));
       const dest =
         lang === 'ar'
-          ? `https://3dgraphicshouse.com/collaborators.html?verified=${data.success ? '1' : '0'}`
-          : `https://3dgraphicshouse.com/collaborators-en.html?verified=${data.success ? '1' : '0'}`;
-      const accept = request.headers.get('Accept') || '';
-      if (accept.includes('application/json')) {
-        return result;
-      }
+          ? `https://3dgraphicshouse.com/collaborators.html?confirm=${encodeURIComponent(token)}`
+          : `https://3dgraphicshouse.com/collaborators-en.html?confirm=${encodeURIComponent(token)}`;
       return Response.redirect(dest, 302);
     }
 

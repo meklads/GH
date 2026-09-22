@@ -22,9 +22,9 @@ gtag('config','G-Y67JVE898Z');
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <!-- GH SEO -->
 <link rel="canonical" href="https://3dgraphicshouse.com/casestudy-mwl.html">
-<link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/">
-<link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/index-ar.html">
-<link rel="alternate" hreflang="x-default" href="https://3dgraphicshouse.com/">
+<link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/casestudy-mwl-en.html">
+<link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/casestudy-mwl.html">
+<link rel="alternate" hreflang="x-default" href="https://3dgraphicshouse.com/casestudy-mwl-en.html">
 <meta 
 
 charset="UTF-8">
@@ -41,7 +41,7 @@ charset="UTF-8">
 <link rel="stylesheet" href="assets/case-study.css?v=3">
 <script defer src="assets/site-header.js?v=16"></script>
 <script defer src="assets/gh-performance.js?v=10"></script>
-<script defer src="assets/lang-switch.js?v=2"></script>
+<script defer src="assets/lang-switch.js?v=3"></script>
 <link rel="stylesheet" href="assets/gh-tokens.css?v=1">
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=41">
@@ -585,6 +585,7 @@ charset="UTF-8">
         <h3 class="gh-footer__title">الحلول</h3>
         <nav class="gh-footer__links" aria-label="الحلول">
           <a href="solutions/brand-scale.html">BrandScale™، نمو العلامة</a>
+          <a href="real-estate.html">الإطلاق البصري العقاري</a>
           <a href="solutions/project-launch.html">ProjectLaunch™، إطلاق على الخارطة</a>
           <a href="solutions/institutional-events.html">فعاليات مؤسسية ومنتديات</a>
           <a href="solutions/growth-launch.html">GrowthLaunch™</a>
@@ -639,6 +640,7 @@ charset="UTF-8">
     </div>
   </div>
 </footer>
+
 
 
 
@@ -952,7 +954,12 @@ document.addEventListener('keydown', function(e) {
       <input class="gh-field" type="email" id="ghEmail" placeholder="البريد الإلكتروني *" required dir="ltr" aria-label="البريد الإلكتروني">
       <label class="gh-sr-only" for="ghBrief">نبذة عن المشروع</label>
       <textarea class="gh-field" id="ghBrief" rows="3" placeholder="الجدول الزمني أو الموقع أو الاحتياج البصري..." style="resize:none" aria-label="نبذة مختصرة عن مشروعك"></textarea>
-      <button type="submit" class="gh-submit">إرسال الاستفسار</button>
+            <div class="gh-honeypot" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+        <label>Leave blank</label>
+        <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="gh-turnstile" style="margin:8px 0 12px;min-height:65px"></div>
+<button type="submit" class="gh-submit">إرسال الاستفسار</button>
     </form>
     <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
       <div style="font-size:36px;margin-bottom:12px">✓</div>

@@ -39,7 +39,7 @@ gtag('config','G-Y67JVE898Z');
 <script defer src="assets/site-header.js?v=16"></script>
 <script defer src="assets/gh-performance.js?v=10"></script>
 <script defer src="assets/gh-cta-track.js?v=1"></script>
-<script defer src="assets/lang-switch.js?v=2"></script>
+<script defer src="assets/lang-switch.js?v=3"></script>
 <script defer src="assets/portfolio-page.js?v=5"></script>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=41">
@@ -608,7 +608,7 @@ gtag('config','G-Y67JVE898Z');
           <a href="services/animation-en.html">Cinematic CGI films</a>
           <a href="services/maquettes-en.html">Architectural scale models</a>
           <a href="services/interactive-en.html">Interactive sales galleries</a>
-          <a href="vr360/">VR360 walkthroughs</a>
+          <a href="vr360/index-en.html">VR360 walkthroughs</a>
         </nav>
       </div>
       <div class="gh-footer__col">
@@ -861,6 +861,7 @@ gtag('config','G-Y67JVE898Z');
 
 
 
+
 <!-- LIGHTBOX -->
 <div id="imgLB" onclick="closeLB(event)">
  <button class="lb-x" onclick="closeLB()">✕</button>
@@ -884,13 +885,7 @@ function toggleMenu(){document.getElementById('nav').classList.toggle('open');}
 
 </script>
 <script>
-function ghSubmit(e){
-  e.preventDefault();
-  var btn=e.target.querySelector('button[type="submit"]');
-  btn.disabled=true; btn.textContent='Sending…';
-  fetch((window.GH_FORMS&&window.GH_FORMS.formEndpoint)||'https://3dgraphicshouse.com/api/form',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({subject:'New Enquiry, Graphics House Website',from_name:'Graphics House Website',name:document.getElementById('ghName').value,company:document.getElementById('ghCompany').value,project_type:document.getElementById('ghProject').value,phone:document.getElementById('ghPhone').value,brief:document.getElementById('ghBrief').value,botcheck:''})}).then(function(r){return r.json();}).then(function(res){btn.disabled=false;btn.textContent='Submit Enquiry →';if(res.success){document.querySelector('#ghPopup form').style.display='none';document.getElementById('ghThanks').style.display='block';setTimeout(function(){document.getElementById('ghPopup').classList.remove('open');document.querySelector('#ghPopup form').style.display='block';document.getElementById('ghThanks').style.display='none';},3000);}else{alert('Something went wrong. Please try again.');}}).catch(function(){btn.disabled=false;btn.textContent='Submit Enquiry →';alert('Connection error.');});
-
-}
+/* ghSubmit owned by gh-float-widgets.js */
 </script>
 
 <script defer src="assets/gh-float-widgets.js?v=15"></script>
@@ -949,7 +944,12 @@ function ghSubmit(e){
       <input class="gh-field" type="email" id="ghEmail" placeholder="Email *" required aria-label="Email" dir="ltr">
       <label class="gh-sr-only" for="ghBrief">Project brief</label>
       <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Timeline, location, or visual needs..." style="resize:none" aria-label="Brief about your project"></textarea>
-      <button type="submit" class="gh-submit">Send enquiry</button>
+            <div class="gh-honeypot" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+        <label>Leave blank</label>
+        <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="gh-turnstile" style="margin:8px 0 12px;min-height:65px"></div>
+<button type="submit" class="gh-submit">Send enquiry</button>
     </form>
     <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
       <div style="font-size:36px;margin-bottom:12px">✓</div>

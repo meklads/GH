@@ -1,9 +1,14 @@
 (function () {
   'use strict';
 
-  var isEn = (document.documentElement.lang || '').toLowerCase() === 'en'
-    || document.documentElement.dir === 'ltr';
+  var isEn =
+    (document.documentElement.lang || '').toLowerCase() === 'en' ||
+    document.documentElement.dir === 'ltr';
   var lastFocus = null;
+  var CFG = window.GH_QUOTE_FORM || {};
+  var TURNSTILE_KEY = CFG.turnstileSiteKey || '';
+  var turnstileQueue = [];
+  var floatWidgetId = null;
 
   function getFocusable(popup) {
     return popup.querySelectorAll(
@@ -17,6 +22,7 @@
     lastFocus = document.activeElement;
     popup.classList.add('open');
     popup.setAttribute('aria-hidden', 'false');
+    ensureSecurity(popup);
     var closeBtn = popup.querySelector('[data-gh-popup-close]');
     if (closeBtn) closeBtn.focus();
   }
@@ -70,7 +76,10 @@
     var brandBtn = document.querySelector('.gh-float-brand[data-gh-brand-action]');
     var panel = document.getElementById('ghChatPanel');
     if (!brandBtn || !panel) return;
-    var open = panel.classList.contains('open') || panel.style.display === 'flex' || panel.style.display === 'block';
+    var open =
+      panel.classList.contains('open') ||
+      panel.style.display === 'flex' ||
+      panel.style.display === 'block';
     brandBtn.classList.toggle('is-active', !!open);
   }
 
@@ -80,8 +89,81 @@
     setTimeout(function () {
       brandBtn.classList.add('gh-float-brand--nudge');
       sessionStorage.setItem('ghFloatNudged', '1');
-      setTimeout(function () { brandBtn.classList.remove('gh-float-brand--nudge'); }, 600);
+      setTimeout(function () {
+        brandBtn.classList.remove('gh-float-brand--nudge');
+      }, 600);
     }, 4000);
+  }
+
+  function loadTurnstile(cb) {
+    if (window.turnstile) {
+      cb();
+      return;
+    }
+    turnstileQueue.push(cb);
+    if (document.querySelector('script[src*="challenges.cloudflare.com/turnstile"]')) return;
+    var s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    s.async = true;
+    s.onload = function () {
+      turnstileQueue.splice(0).forEach(function (fn) {
+        fn();
+      });
+    };
+    document.head.appendChild(s);
+  }
+
+  function ensureSecurity(popup) {
+    var form = popup.querySelector('form');
+    if (!form) return;
+    if (!form.querySelector('input[name="botcheck"]')) {
+      var honey = document.createElement('div');
+      honey.className = 'gh-honeypot';
+      honey.setAttribute('aria-hidden', 'true');
+      honey.style.cssText =
+        'position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden';
+      honey.innerHTML =
+        '<label>Leave blank</label><input type="text" name="botcheck" tabindex="-1" autocomplete="off">';
+      var submit = form.querySelector('.gh-submit, button[type="submit"]');
+      if (submit) form.insertBefore(honey, submit);
+      else form.appendChild(honey);
+    }
+    var box = form.querySelector('.gh-turnstile');
+    if (!box) {
+      box = document.createElement('div');
+      box.className = 'gh-turnstile';
+      box.style.cssText = 'margin:8px 0 12px;min-height:65px';
+      var submit2 = form.querySelector('.gh-submit, button[type="submit"]');
+      if (submit2) form.insertBefore(box, submit2);
+      else form.appendChild(box);
+    }
+    if (!TURNSTILE_KEY || box.dataset.rendered === '1') return;
+    loadTurnstile(function () {
+      if (!window.turnstile || box.dataset.rendered === '1') return;
+      floatWidgetId = window.turnstile.render(box, {
+        sitekey: TURNSTILE_KEY,
+        theme: 'light',
+        language: isEn ? 'en' : 'ar',
+      });
+      box.dataset.rendered = '1';
+      box.dataset.widgetId = floatWidgetId;
+    });
+  }
+
+  function turnstileToken() {
+    if (!TURNSTILE_KEY || !window.turnstile || floatWidgetId == null) return '';
+    try {
+      return window.turnstile.getResponse(floatWidgetId) || '';
+    } catch (e) {
+      return '';
+    }
+  }
+
+  function resetTurnstile() {
+    if (!window.turnstile || floatWidgetId == null) return;
+    try {
+      window.turnstile.reset(floatWidgetId);
+    } catch (e) {}
   }
 
   window.ghOpenPopup = openPopup;
@@ -98,6 +180,11 @@
     var thanks = document.getElementById('ghThanks');
     if (!btn || !form) return;
 
+    ensureSecurity(popup);
+
+    var honey = form.querySelector('input[name="botcheck"]');
+    if (honey && honey.value.trim()) return;
+
     var nameEl = document.getElementById('ghName');
     var companyEl = document.getElementById('ghCompany');
     var projectEl = document.getElementById('ghProject');
@@ -113,12 +200,24 @@
     var brief = briefEl ? String(briefEl.value || '').trim() : '';
 
     if (!name || phone.replace(/\D/g, '').length < 8) {
-      alert(isEn ? 'Please enter your full name and a valid phone number.' : 'يرجى إدخال الاسم الكامل ورقم جوال صحيح.');
+      alert(
+        isEn
+          ? 'Please enter your full name and a valid phone number.'
+          : 'يرجى إدخال الاسم الكامل ورقم جوال صحيح.'
+      );
       return;
     }
     if (!email || email.indexOf('@') < 1) {
       alert(isEn ? 'Please enter a valid email address.' : 'يرجى إدخال بريد إلكتروني صحيح.');
       if (emailEl) emailEl.focus();
+      return;
+    }
+    if (TURNSTILE_KEY && !turnstileToken()) {
+      alert(
+        isEn
+          ? 'Please complete the security check before submitting.'
+          : 'يرجى إكمال التحقق الأمني قبل الإرسال.'
+      );
       return;
     }
 
@@ -138,25 +237,43 @@
       page: typeof location !== 'undefined' ? location.href : '',
       message:
         (brief ? brief + '\n\n' : '') +
-        'Company: ' + (company || '—') + '\n' +
-        'Project type: ' + (projectType || '—') + '\n' +
-        'Phone: ' + phone + '\n' +
-        'Email: ' + email,
-      botcheck: ''
+        'Company: ' +
+        (company || '—') +
+        '\n' +
+        'Project type: ' +
+        (projectType || '—') +
+        '\n' +
+        'Phone: ' +
+        phone +
+        '\n' +
+        'Email: ' +
+        email,
+      botcheck: '',
     };
+    if (TURNSTILE_KEY) {
+      payload['cf-turnstile-response'] = turnstileToken();
+    }
 
-    fetch((window.GH_FORMS && window.GH_FORMS.formEndpoint) || 'https://3dgraphicshouse.com/api/form', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(payload)
-    })
-      .then(function (r) { return r.json(); })
+    fetch(
+      (window.GH_FORMS && window.GH_FORMS.formEndpoint) || 'https://3dgraphicshouse.com/api/form',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      }
+    )
+      .then(function (r) {
+        return r.json();
+      })
       .then(function (res) {
         btn.disabled = false;
         btn.textContent = isEn ? 'Submit Enquiry →' : 'إرسال الطلب ←';
         if (res.success) {
           if (window.ghTrack) {
-            window.ghTrack('form_submit', { form_name: 'float_popup', page_path: location.pathname });
+            window.ghTrack('form_submit', {
+              form_name: 'float_popup',
+              page_path: location.pathname,
+            });
             window.ghTrack('generate_lead', { form_name: 'float_popup' });
           }
           form.style.display = 'none';
@@ -165,16 +282,24 @@
             closePopup();
             form.style.display = 'block';
             form.reset();
+            resetTurnstile();
             if (thanks) thanks.style.display = 'none';
           }, 3000);
         } else {
-          alert((res && res.message) || (isEn ? 'Something went wrong. Please try again.' : 'حدث خطأ، يرجى المحاولة مرة أخرى.'));
+          resetTurnstile();
+          alert(
+            (res && res.message) ||
+              (isEn ? 'Something went wrong. Please try again.' : 'حدث خطأ، يرجى المحاولة مرة أخرى.')
+          );
         }
       })
       .catch(function () {
         btn.disabled = false;
         btn.textContent = isEn ? 'Submit Enquiry →' : 'إرسال الطلب ←';
-        alert(isEn ? 'Connection error. Please try again.' : 'خطأ في الاتصال، يرجى المحاولة مرة أخرى.');
+        resetTurnstile();
+        alert(
+          isEn ? 'Connection error. Please try again.' : 'خطأ في الاتصال، يرجى المحاولة مرة أخرى.'
+        );
       });
   };
 
@@ -190,6 +315,8 @@
     if (popup && !popup.hasAttribute('aria-hidden')) {
       popup.setAttribute('aria-hidden', popup.classList.contains('open') ? 'false' : 'true');
     }
+    if (popup) ensureSecurity(popup);
+
     document.querySelectorAll('[data-gh-popup-open]').forEach(function (el) {
       el.addEventListener('click', openPopup);
     });
@@ -210,7 +337,7 @@
     if (chatPanel && typeof MutationObserver !== 'undefined') {
       new MutationObserver(syncBrandActiveState).observe(chatPanel, {
         attributes: true,
-        attributeFilter: ['class', 'style']
+        attributeFilter: ['class', 'style'],
       });
     }
 

@@ -11,7 +11,7 @@ gtag('js',new Date());
 gtag('config','G-Y67JVE898Z');
 </script>
 <script src="assets/gh-analytics.js?v=3"></script>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <meta http-equiv="refresh" content="0;url=/services/interactive-experiences.html">
   <link rel="canonical" href="https://3dgraphicshouse.com/services/interactive-experiences.html">
   <meta name="robots" content="noindex,follow">
@@ -76,7 +76,12 @@ gtag('config','G-Y67JVE898Z');
       <input class="gh-field" type="email" id="ghEmail" placeholder="البريد الإلكتروني *" required dir="ltr" aria-label="البريد الإلكتروني">
       <label class="gh-sr-only" for="ghBrief">نبذة عن المشروع</label>
       <textarea class="gh-field" id="ghBrief" rows="3" placeholder="الجدول الزمني أو الموقع أو الاحتياج البصري..." style="resize:none" aria-label="نبذة مختصرة عن مشروعك"></textarea>
-      <button type="submit" class="gh-submit">إرسال الاستفسار</button>
+            <div class="gh-honeypot" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+        <label>Leave blank</label>
+        <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="gh-turnstile" style="margin:8px 0 12px;min-height:65px"></div>
+<button type="submit" class="gh-submit">إرسال الاستفسار</button>
     </form>
     <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
       <div style="font-size:36px;margin-bottom:12px">✓</div>

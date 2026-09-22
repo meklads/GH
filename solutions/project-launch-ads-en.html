@@ -13,6 +13,7 @@
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <script src="../assets/gh-forms-config.js?v=2"></script>
+<script src="../assets/quote-form-config.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y67JVE898Z"></script>
 <script>
@@ -43,12 +44,12 @@ gtag('config','G-Y67JVE898Z');
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=34">
+<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=41">
 <link rel="stylesheet" href="../assets/gh-en-typography.css?v=1">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=10">
 <script defer src="../assets/gh-performance.js?v=10"></script>
-<script defer src="../assets/lang-switch.js?v=2"></script>
+<script defer src="../assets/lang-switch.js?v=3"></script>
 <script defer src="../assets/service-page.js?v=4"></script>
 <link rel="stylesheet" href="../assets/project-launch-premium.css?v=3">
 <link rel="stylesheet" href="../assets/solution-premium.css?v=4">
@@ -1831,6 +1832,7 @@ gtag('config','G-Y67JVE898Z');
  <label for="pl-botcheck">Leave blank</label>
  <input id="pl-botcheck" type="text" name="botcheck" tabindex="-1" autocomplete="off">
  </div>
+ <div class="gh-turnstile" id="plTurnstile" style="margin:8px 0 12px;min-height:65px"></div>
  <div class="ar-form-full">
  <button class="ar-submit" type="submit" id="plSubmitBtn" data-cta="form-submit">Get your launch-readiness assessment →</button>
  <p class="ar-form-note">A clear response within 24 hours. No purchase commitment in the first session.</p>
@@ -1897,7 +1899,7 @@ gtag('config','G-Y67JVE898Z');
  <a href="../services/animation-en.html">Cinematic CGI films</a>
  <a href="../services/maquettes-en.html">Architectural scale models</a>
  <a href="../services/interactive-en.html">Interactive sales galleries</a>
- <a href="../vr360/">VR360 walkthroughs</a>
+ <a href="../vr360/index-en.html">VR360 walkthroughs</a>
  </nav>
  </div>
  <div class="gh-footer__col">
@@ -2212,6 +2214,25 @@ gtag('config','G-Y67JVE898Z');
     feedback.className = 'ar-form-full ar-form-feedback error';
   }
 
+
+  var plTsId = null;
+  (function plInitTurnstile(){
+    var box = document.getElementById('plTurnstile');
+    var key = (window.GH_QUOTE_FORM && window.GH_QUOTE_FORM.turnstileSiteKey) || '';
+    if (!box || !key) return;
+    function render(){
+      if (!window.turnstile || box.dataset.rendered === '1') return;
+      plTsId = window.turnstile.render(box, { sitekey: key, theme: 'light' });
+      box.dataset.rendered = '1';
+    }
+    if (window.turnstile) { render(); return; }
+    var s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    s.async = true;
+    s.onload = render;
+    document.head.appendChild(s);
+  })();
+
   if (form && feedback && submitBtn) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -2254,6 +2275,13 @@ gtag('config','G-Y67JVE898Z');
         return;
       }
 
+      var tsTok = (typeof plTsId !== 'undefined' && plTsId != null && window.turnstile)
+        ? (window.turnstile.getResponse(plTsId) || '') : '';
+      if ((window.GH_QUOTE_FORM && window.GH_QUOTE_FORM.turnstileSiteKey) && !tsTok) {
+        plShowFormError((document.documentElement.lang || '').toLowerCase() === 'en' || document.documentElement.dir === 'ltr'
+          ? 'Please complete the security check.' : 'يرجى إكمال التحقق الأمني.');
+        return;
+      }
       var data = {
         subject:      'ProjectLaunch\u2122 Ads: Launch session request',
         from_name:    'Graphics House Site',
@@ -2275,6 +2303,8 @@ gtag('config','G-Y67JVE898Z');
           'Page: ' + location.href,
         botcheck:     ''
       };
+      if (tsTok) data['cf-turnstile-response'] = tsTok;
+
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
       feedback.textContent = '';

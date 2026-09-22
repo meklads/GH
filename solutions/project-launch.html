@@ -22,6 +22,7 @@ gtag('js',new Date());
 gtag('config','G-Y67JVE898Z');
 </script>
 <script src="../assets/gh-analytics.js?v=3"></script>
+<script src="../assets/quote-form-config.js"></script>
 <link rel="canonical" href="https://3dgraphicshouse.com/solutions/project-launch.html">
 <link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/solutions/project-launch-en.html">
 <link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/solutions/project-launch.html">
@@ -45,14 +46,14 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="../assets/gh-ar-typography.css?v=2">
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=37">
+<link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=41">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=15">
 <script defer src="../assets/site-header.js?v=16"></script>
 <script defer src="../assets/gh-performance.js?v=10"></script>
 <script defer src="../assets/site-reveal.js?v=2"></script>
 <script defer src="../assets/gh-cta-track.js?v=1"></script>
-<script defer src="../assets/lang-switch.js?v=2"></script>
+<script defer src="../assets/lang-switch.js?v=3"></script>
 <script defer src="../assets/service-page.js?v=4"></script>
 <link rel="stylesheet" href="../assets/project-launch-premium.css?v=5">
 <link rel="stylesheet" href="../assets/solution-premium.css?v=4">
@@ -1160,9 +1161,9 @@ gtag('config','G-Y67JVE898Z');
   }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"ProjectLaunch&#8482;","description":"منظومة متكاملة لإطلاق المشاريع العقارية، من إقناع المستثمر إلى تجربة صالة البيع.","url":"https://3dgraphicshouse.com/solutions/project-launch.html","brand":{"@type":"Brand","name":"Graphics House"},"provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","telephone":"+966502786513"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
-<link rel="stylesheet" href="../assets/gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="../assets/site-header.css?v=58" data-gh-header-css="1">
 <link rel="stylesheet" href="../assets/gh-footer-lock.css?v=5" data-gh-footer-lock="1">
+<link rel="stylesheet" href="../assets/gh-chat-assistant.css?v=10">
 </head>
 
 <body class="bg-background gl-premium selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
@@ -1945,6 +1946,7 @@ gtag('config','G-Y67JVE898Z');
  <label for="pl-botcheck">Leave blank</label>
  <input id="pl-botcheck" type="text" name="botcheck" tabindex="-1" autocomplete="off">
  </div>
+ <div class="gh-turnstile" id="plTurnstile" style="margin:8px 0 12px;min-height:65px"></div>
  <div class="ar-form-full">
  <button class="ar-submit" type="submit" id="plSubmitBtn" data-cta="form-submit">احصل على تقييم جاهزية إطلاق مشروعك ←</button>
  <p class="ar-form-note">رد واضح خلال 24 ساعة، بدون التزام شراء في الجلسة الأولى</p>
@@ -2242,6 +2244,25 @@ gtag('config','G-Y67JVE898Z');
     feedback.className = 'ar-form-full ar-form-feedback error';
   }
 
+
+  var plTsId = null;
+  (function plInitTurnstile(){
+    var box = document.getElementById('plTurnstile');
+    var key = (window.GH_QUOTE_FORM && window.GH_QUOTE_FORM.turnstileSiteKey) || '';
+    if (!box || !key) return;
+    function render(){
+      if (!window.turnstile || box.dataset.rendered === '1') return;
+      plTsId = window.turnstile.render(box, { sitekey: key, theme: 'light' });
+      box.dataset.rendered = '1';
+    }
+    if (window.turnstile) { render(); return; }
+    var s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    s.async = true;
+    s.onload = render;
+    document.head.appendChild(s);
+  })();
+
   if (form && feedback && submitBtn) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -2284,6 +2305,13 @@ gtag('config','G-Y67JVE898Z');
         return;
       }
 
+      var tsTok = (typeof plTsId !== 'undefined' && plTsId != null && window.turnstile)
+        ? (window.turnstile.getResponse(plTsId) || '') : '';
+      if ((window.GH_QUOTE_FORM && window.GH_QUOTE_FORM.turnstileSiteKey) && !tsTok) {
+        plShowFormError((document.documentElement.lang || '').toLowerCase() === 'en' || document.documentElement.dir === 'ltr'
+          ? 'Please complete the security check.' : 'يرجى إكمال التحقق الأمني.');
+        return;
+      }
       var data = {
         subject:      'ProjectLaunch\u2122: طلب جلسة إطلاق',
         from_name:    'Graphics House Site',
@@ -2305,6 +2333,8 @@ gtag('config','G-Y67JVE898Z');
           'Page: ' + location.href,
         botcheck:     ''
       };
+      if (tsTok) data['cf-turnstile-response'] = tsTok;
+
       submitBtn.disabled = true;
       submitBtn.textContent = 'جارٍ الإرسال…';
       feedback.textContent = '';
@@ -2394,7 +2424,12 @@ gtag('config','G-Y67JVE898Z');
       <input class="gh-field" type="email" id="ghEmail" placeholder="البريد الإلكتروني *" required dir="ltr" aria-label="البريد الإلكتروني">
       <label class="gh-sr-only" for="ghBrief">نبذة عن المشروع</label>
       <textarea class="gh-field" id="ghBrief" rows="3" placeholder="الجدول الزمني أو الموقع أو الاحتياج البصري..." style="resize:none" aria-label="نبذة مختصرة عن مشروعك"></textarea>
-      <button type="submit" class="gh-submit">إرسال الاستفسار</button>
+            <div class="gh-honeypot" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+        <label>Leave blank</label>
+        <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="gh-turnstile" style="margin:8px 0 12px;min-height:65px"></div>
+<button type="submit" class="gh-submit">إرسال الاستفسار</button>
     </form>
     <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
       <div style="font-size:36px;margin-bottom:12px">✓</div>

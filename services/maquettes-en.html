@@ -1070,7 +1070,7 @@ html[dir="rtl"] .gallery-strip-label span {
 <script defer src="../assets/gh-performance.js?v=10"></script>
 <script defer src="../assets/gh-cta-track.js?v=1"></script>
 <script defer src="../assets/site-reveal.js?v=2"></script>
-<script defer src="../assets/lang-switch.js?v=2"></script>
+<script defer src="../assets/lang-switch.js?v=3"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Smart Architectural Maquettes","description":"Smart architectural maquettes combining handcraft, projection mapping, and live data integration. The GCC's leading studio for physical-digital sales models.","url":"https://3dgraphicshouse.com/services/maquettes-en.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="../assets/gh-chat-assistant.css?v=10">
@@ -1931,7 +1931,7 @@ html[dir="rtl"] .gallery-strip-label span {
           <a href="../services/animation-en.html">Cinematic CGI films</a>
           <a href="../services/maquettes-en.html">Architectural scale models</a>
           <a href="../services/interactive-en.html">Interactive sales galleries</a>
-          <a href="../vr360/">VR360 walkthroughs</a>
+          <a href="../vr360/index-en.html">VR360 walkthroughs</a>
         </nav>
       </div>
       <div class="gh-footer__col">
@@ -2028,10 +2028,13 @@ html[dir="rtl"] .gallery-strip-label span {
 
 
 
+
 <script defer src="../assets/gh-float-widgets.js?v=15"></script>
 <script src="../assets/gh-chat-knowledge-data.js?v=3"></script>
 <script src="../assets/gh-chat-matcher.js?v=1"></script>
 <script defer src="../assets/gh-chat-assistant.js?v=10"></script>
+<script src="../assets/quote-form-config.js"></script>
+<script defer src="../assets/quote-form.js?v=4"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">
   <div class="gh-float-item">
@@ -2084,7 +2087,12 @@ html[dir="rtl"] .gallery-strip-label span {
       <input class="gh-field" type="email" id="ghEmail" placeholder="Email *" required aria-label="Email" dir="ltr">
       <label class="gh-sr-only" for="ghBrief">Project brief</label>
       <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Timeline, location, or visual needs..." style="resize:none" aria-label="Brief about your project"></textarea>
-      <button type="submit" class="gh-submit">Send enquiry</button>
+            <div class="gh-honeypot" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+        <label>Leave blank</label>
+        <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="gh-turnstile" style="margin:8px 0 12px;min-height:65px"></div>
+<button type="submit" class="gh-submit">Send enquiry</button>
     </form>
     <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
       <div style="font-size:36px;margin-bottom:12px">✓</div>
