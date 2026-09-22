@@ -344,7 +344,7 @@ ${analyticsHeadTags(P)}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
 <link rel="stylesheet" href="${P}assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="${P}assets/gh-tokens.css?v=1">
-<link rel="stylesheet" href="${P}assets/site-header.css?v=49">
+<link rel="stylesheet" href="${P}assets/site-header.css?v=50">
 <link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=34">
 <link rel="stylesheet" href="${P}assets/gh-float-widgets.css?v=8">
 <link rel="stylesheet" href="${P}assets/gh-jeddah-forum-cs.css?v=3">

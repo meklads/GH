@@ -200,7 +200,8 @@ body:has(.nav-mega-item.is-open) .gh-float {
     z-index: 3;
     justify-self: stretch;
     align-self: center;
-    overflow: visible;
+    /* Never paint under lang switch / CTA */
+    overflow: hidden !important;
     flex-wrap: nowrap !important;
   }
   html[dir="ltr"] .nav {
@@ -230,32 +231,34 @@ body:has(.nav-mega-item.is-open) .gh-float {
     justify-self: end;
     align-self: center;
     flex: 0 0 auto;
-    z-index: 5;
+    z-index: 20;
+    position: relative;
     margin-inline-start: 0;
     gap: 12px;
     min-width: max-content;
     padding-inline-start: 0;
     border: none;
-    background: transparent;
+    isolation: isolate;
+    background: var(--header-bg) !important;
   }
   html[dir="ltr"] .nav-actions {
     direction: ltr;
-    padding-inline-start: 20px;
+    padding-inline-start: 18px;
     margin-inline-start: 4px;
     border-inline-start: 1px solid rgba(201, 168, 76, 0.22);
-    background: transparent;
     gap: 12px;
     align-items: center;
+    box-shadow: -16px 0 14px 6px var(--header-bg);
   }
   html[dir="rtl"] .nav-actions {
     direction: rtl;
     justify-self: start;
-    padding-inline-end: 20px;
+    padding-inline-end: 18px;
     margin-inline-end: 4px;
     border-inline-end: 1px solid rgba(201, 168, 76, 0.22);
-    background: transparent;
     gap: 12px;
     align-items: center;
+    box-shadow: 16px 0 14px 6px var(--header-bg);
   }
   /* Insights + Contact stay visible after portfolio / case studies */
   .menu-toggle { display: none !important; }
@@ -284,31 +287,12 @@ body:has(.nav-mega-item.is-open) .gh-float {
   }
 }
 
-@media (min-width: 901px) and (max-width: 1400px) {
+/* Laptop → mid desktop: drop secondary links so lang + CTA never collide */
+@media (min-width: 901px) and (max-width: 1600px) {
   html[dir="ltr"] .header .container.header-inner,
   html[dir="rtl"] .header .container.header-inner {
     gap: 0 12px;
   }
-  .header .nav {
-    min-width: 0;
-    overflow: hidden;
-  }
-  .header .nav-actions {
-    z-index: 8;
-    position: relative;
-    flex: 0 0 auto;
-    background: var(--header-bg);
-    isolation: isolate;
-  }
-  html[dir="ltr"] .header .nav-actions {
-    box-shadow: -22px 0 20px 10px var(--header-bg);
-    margin-inline-start: 4px;
-  }
-  html[dir="rtl"] .header .nav-actions {
-    box-shadow: 22px 0 20px 10px var(--header-bg);
-    margin-inline-end: 4px;
-  }
-  /* Keep core links only — prevent lang/CTA collision on laptops */
   .header .nav > a.nav-link[href*="portfolio"],
   .header .nav > a.nav-link[href*="casestudy"],
   .header .nav > a.nav-link[href*="insights"],
@@ -317,35 +301,35 @@ body:has(.nav-mega-item.is-open) .gh-float {
   }
   html[dir="ltr"] .nav-link {
     font-size: 10px;
-    padding: 8px 5px;
+    padding: 8px 6px;
     letter-spacing: 0.03em;
   }
   html[dir="rtl"] .nav-link {
     font-size: 12.5px;
-    padding: 8px 5px;
+    padding: 8px 6px;
   }
   html[dir="ltr"] .nav-cta {
-    padding: 9px 14px !important;
-    font-size: 9.5px !important;
+    padding: 9px 16px !important;
+    font-size: 10px !important;
     letter-spacing: 0.06em !important;
     min-width: 0 !important;
     min-height: 36px !important;
-    max-width: 168px;
+    max-width: 160px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
   html[dir="rtl"] .nav-cta {
-    padding: 7px 11px !important;
-    font-size: 11.5px !important;
+    padding: 7px 12px !important;
+    font-size: 12px !important;
     min-width: 0 !important;
-    max-width: 190px;
+    max-width: 170px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
   html[dir="ltr"] .nav-actions,
   html[dir="rtl"] .nav-actions {
-    padding-inline-start: 10px;
-    padding-inline-end: 10px;
+    padding-inline-start: 12px;
+    padding-inline-end: 12px;
     gap: 8px;
   }
   .lang-switch {
@@ -358,46 +342,35 @@ body:has(.nav-mega-item.is-open) .gh-float {
   }
 }
 
-@media (min-width: 1181px) and (max-width: 1440px) {
+@media (min-width: 1601px) {
+  html[dir="ltr"] .header .container.header-inner,
+  html[dir="rtl"] .header .container.header-inner {
+    gap: 0 28px;
+  }
   html[dir="ltr"] .nav-link {
     font-size: 11px;
     padding: 10px 10px;
+    letter-spacing: 0.05em;
   }
   html[dir="rtl"] .nav-link {
     font-size: 14px;
     padding: 9px 9px;
-  }
-  html[dir="ltr"] .nav-cta {
-    padding: 12px 28px !important;
-    font-size: 10.5px !important;
-    min-width: 0 !important;
-    min-height: 42px !important;
-  }
-  html[dir="rtl"] .nav-cta {
-    padding: 9px 16px !important;
-    font-size: 13.5px !important;
-  }
-}
-
-@media (min-width: 1441px) {
-  html[dir="ltr"] .header .container.header-inner,
-  html[dir="rtl"] .header .container.header-inner {
-    gap: 0 36px;
-  }
-  html[dir="ltr"] .nav-link {
-    font-size: 11.5px;
-    padding: 10px 12px;
-    letter-spacing: 0.06em;
-  }
-  html[dir="rtl"] .nav-link {
-    font-size: 15px;
-    padding: 9px 11px;
   }
   html[dir="ltr"] .nav {
     gap: 4px !important;
   }
   html[dir="rtl"] .nav {
     gap: 4px !important;
+  }
+  html[dir="ltr"] .nav-cta {
+    padding: 11px 24px !important;
+    font-size: 10.5px !important;
+    min-width: 0 !important;
+    min-height: 40px !important;
+  }
+  html[dir="rtl"] .nav-cta {
+    padding: 9px 16px !important;
+    font-size: 13.5px !important;
   }
 }
 
