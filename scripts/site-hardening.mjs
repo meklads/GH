@@ -29,6 +29,14 @@ const SITEMAP_SKIP = new Set([
   ...SKIP,
   'en.html',
   'blog.html',
+  'gh-direct.html',
+  'gh-direct-en.html',
+  'client-hub.html',
+  'client-hub-en.html',
+  'client-hub-gh-direct.html',
+  'client-hub-gh-direct-en.html',
+  'client-hub-mechanical.html',
+  'client-hub-mechanical-en.html',
   '3d-animation.html',
   '3d-animation-en.html',
   'media-production.html',
@@ -96,8 +104,10 @@ const EXPLICIT_PAIRS = {
   'case-study-mwl-en.html': 'casestudy-mwl.html',
   'careers-en.html': 'index.html',
   'offer-en.html': 'contact-us-en.html',
-  'gh-direct.html': 'gh-direct-en.html',
-  'gh-direct-en.html': 'gh-direct.html',
+  'gh-direct.html': 'client-hub-gh-direct-en.html',
+  'gh-direct-en.html': 'client-hub-gh-direct.html',
+  'client-hub-gh-direct.html': 'client-hub-gh-direct-en.html',
+  'client-hub-gh-direct-en.html': 'client-hub-gh-direct.html',
 };
 
 /** services/foo.html ↔ services/foo-en.html */
@@ -535,7 +545,6 @@ function buildSitemap(files) {
       const loc = f === 'index.html' ? `${BASE}/` : `${BASE}/${f}`;
       let priority = '0.6';
       if (f === 'index.html' || f === 'index-ar.html') priority = '1.0';
-      else if (f === 'gh-direct.html' || f === 'gh-direct-en.html') priority = '0.95';
       else if (f.startsWith('solutions/')) priority = '0.9';
       else if (f.includes('portfolio') || f.includes('who-we-are')) priority = '0.85';
       else if (f.startsWith('services/')) priority = '0.75';

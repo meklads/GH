@@ -121,7 +121,7 @@ window.GH_DIRECT = {
       price: 2625,
       unit: 'image',
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/projects/rendering/Anan-Escan-Co.01.webp', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/rafal-pavilions/lobby.webp', placeholder: true },
     },
     {
       id: 'render-aerial',
@@ -145,7 +145,7 @@ window.GH_DIRECT = {
       price: 2625,
       unit: null,
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/projects/rendering/alrajhi2.jpeg', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/rendering/alrajhi2.webp', placeholder: true },
     },
     {
       id: 'identity-basic',
@@ -157,7 +157,7 @@ window.GH_DIRECT = {
       price: 9375,
       unit: null,
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/logo-gold.png', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/jeddah-forum/logo.webp', placeholder: true },
     },
     {
       id: 'identity-full',
@@ -169,7 +169,7 @@ window.GH_DIRECT = {
       price: 20625,
       unit: null,
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/logo-gold.png', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/jeddah-forum/catalog/page-01.jpg', placeholder: true },
     },
     {
       id: 'catalogue',
@@ -181,7 +181,7 @@ window.GH_DIRECT = {
       price: 11250,
       unit: null,
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/icons/gallery.png', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/jeddah-forum/catalog/page-01.jpg', placeholder: true },
     },
     {
       id: 'drone-short',
@@ -205,7 +205,7 @@ window.GH_DIRECT = {
       price: 18750,
       unit: null,
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/projects/animation/jeddah-forum.webp', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/rafal-pavilions/film-still.webp', placeholder: true },
     },
     {
       id: 'vr360',
@@ -217,7 +217,7 @@ window.GH_DIRECT = {
       price: 1125,
       unit: null,
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/icons/interactive.png', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/rafal-pavilions/open-office.webp', placeholder: true },
     },
     {
       id: 'interactive-custom',
@@ -229,7 +229,7 @@ window.GH_DIRECT = {
       price: 37500,
       unit: null,
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/icons/interactive.png', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/rafal-pavilions/executive.webp', placeholder: true },
     },
     {
       id: 'maquette-single',
@@ -265,7 +265,7 @@ window.GH_DIRECT = {
       price: 52500,
       unit: null,
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/icons/tech.png', placeholder: true },
+      media: { type: 'image', src: 'assets/news/makkah-charter-03.jpeg', placeholder: true },
     },
     {
       id: 'microsite',
@@ -277,7 +277,7 @@ window.GH_DIRECT = {
       price: 22500,
       unit: null,
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/icons/gallery.png', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/wahat-al-salam/cam-03.webp', placeholder: true },
     },
     {
       id: 'waitlist',
@@ -289,7 +289,7 @@ window.GH_DIRECT = {
       price: null,
       unit: null,
       priceLabel: 'contact',
-      media: { type: 'image', src: 'assets/icons/gallery.png', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/wahat-al-salam/cam-12.webp', placeholder: true },
     },
     {
       id: 'paid-ads',
@@ -301,7 +301,7 @@ window.GH_DIRECT = {
       price: 20000,
       unit: 'month',
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/icons/tech.png', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/animation/market-center.webp', placeholder: true },
     },
     {
       id: 'crm',
@@ -313,7 +313,7 @@ window.GH_DIRECT = {
       price: null,
       unit: null,
       priceLabel: 'contact',
-      media: { type: 'image', src: 'assets/icons/tech.png', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/animation/real-estate-services.webp', placeholder: true },
     },
     {
       id: 'show-unit',
@@ -337,7 +337,7 @@ window.GH_DIRECT = {
       price: null,
       unit: null,
       priceLabel: 'contact',
-      media: { type: 'image', src: 'assets/icons/gallery.png', placeholder: true },
+      media: { type: 'image', src: 'assets/news/makkah-charter-01.jpeg', placeholder: true },
     },
     {
       id: 'ground-photo',
@@ -349,7 +349,7 @@ window.GH_DIRECT = {
       price: 7500,
       unit: 'day',
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/projects/animation/architectural-visualisation.webp', placeholder: true },
+      media: { type: 'image', src: 'assets/projects/animation/alrajhi.webp', placeholder: true },
     },
   ],
   packages: [

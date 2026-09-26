@@ -7,6 +7,14 @@
   var DATA = window.GH_DIRECT;
   if (!DATA) return;
 
+  /* Soft gate when hosted under Client Hub draft URLs */
+  var hubGate = document.body && document.body.getAttribute('data-ghd-hub-gate') === '1';
+  if (hubGate && sessionStorage.getItem('gh_client_hub_ok_v1') !== '1') {
+    var hubUrl = document.body.getAttribute('data-ghd-hub-url') || 'client-hub.html';
+    location.replace(hubUrl);
+    return;
+  }
+
   var FORMS = window.GH_FORMS || {};
   var CFG = window.GH_QUOTE_FORM || {};
   var TURNSTILE_KEY = CFG.turnstileSiteKey || '';

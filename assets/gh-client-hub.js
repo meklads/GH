@@ -7,6 +7,16 @@ window.GH_CLIENT_HUB_PASS =
 
 window.GH_CLIENT_HUB_ITEMS = [
   {
+    id: 'gh-direct',
+    title: { ar: 'الباقات والأسعار · GH Direct', en: 'GH Direct · Packages & Pricing' },
+    desc: {
+      ar: 'مسودة داخلية لكتالوج الخدمات والباقات القابلة للتخصيص — للمراجعة قبل الإطلاق العام.',
+      en: 'Internal draft of the service catalog and configurable packages — for review before public launch.',
+    },
+    href: { ar: 'client-hub-gh-direct.html', en: 'client-hub-gh-direct-en.html' },
+    icon: 'sell',
+  },
+  {
     id: 'mechanical',
     title: { ar: 'النظام الميكانيكي', en: 'Mechanical System' },
     desc: {
