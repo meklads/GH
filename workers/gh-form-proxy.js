@@ -559,6 +559,7 @@ async function handleForm(body, env, cors, request) {
     body?.source === 'float' ||
     body?.source === 'partner' ||
     body?.source === 'collaborator' ||
+    body?.source === 'gh-direct' ||
     /Ads/i.test(String(body?.subject || ''));
 
   const isCollaborator = body?.source === 'collaborator' || body?.form_type === 'collaborator';

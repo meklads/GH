@@ -96,6 +96,8 @@ const EXPLICIT_PAIRS = {
   'case-study-mwl-en.html': 'casestudy-mwl.html',
   'careers-en.html': 'index.html',
   'offer-en.html': 'contact-us-en.html',
+  'gh-direct.html': 'gh-direct-en.html',
+  'gh-direct-en.html': 'gh-direct.html',
 };
 
 /** services/foo.html ↔ services/foo-en.html */
@@ -108,6 +110,7 @@ const HAS_EN = new Set([
   'portfolio.html', 'offer.html', 'media-production.html', 'interactive-experiences.html',
   'galleries-advertising.html', 'faq.html', 'contact-us.html', 'casestudy1.html',
   '3d-animation.html', 'growth-launch.html', 'project-launch.html', 'brand-scale.html',
+  'gh-direct.html',
 ]);
 
 function collectHtmlFiles(dir, base = '') {
@@ -532,6 +535,7 @@ function buildSitemap(files) {
       const loc = f === 'index.html' ? `${BASE}/` : `${BASE}/${f}`;
       let priority = '0.6';
       if (f === 'index.html' || f === 'index-ar.html') priority = '1.0';
+      else if (f === 'gh-direct.html' || f === 'gh-direct-en.html') priority = '0.95';
       else if (f.startsWith('solutions/')) priority = '0.9';
       else if (f.includes('portfolio') || f.includes('who-we-are')) priority = '0.85';
       else if (f.startsWith('services/')) priority = '0.75';

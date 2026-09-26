@@ -22,6 +22,8 @@
     'casestudy-mwl-en.html': 'casestudy-mwl.html',
     'client-hub.html': 'client-hub-en.html',
     'client-hub-en.html': 'client-hub.html',
+    'gh-direct.html': 'gh-direct-en.html',
+    'gh-direct-en.html': 'gh-direct.html',
     'smart-maquettes-en.html': 'services/maquettes.html',
     '3d-animation-en.html': 'services/animation.html',
     'media-production-en.html': 'services/production.html',
@@ -56,6 +58,7 @@
     'careers.html': true,
     'casestudy-mwl.html': true,
     'client-hub.html': true,
+    'gh-direct.html': true,
   };
 
   function parts() {
