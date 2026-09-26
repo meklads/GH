@@ -76,7 +76,7 @@ export const SITE = {
     { id: 'cgi', name: { ar: 'سينمائي CGI', en: 'Cinematic CGI' }, url: { ar: '/services/cinematic-cgi.html', en: '/services/cinematic-cgi-en.html' } },
     { id: 'rendering', name: { ar: 'الإظهار المعماري', en: 'Architectural Rendering' }, url: { ar: '/services/rendering.html', en: '/services/rendering-en.html' } },
     { id: 'maquettes', name: { ar: 'مجسمات ذكية', en: 'Smart Maquettes' }, url: { ar: '/services/maquettes.html', en: '/services/maquettes-en.html' } },
-    { id: 'scale', name: { ar: 'مجسمات معمارية', en: 'Scale Models' }, url: { ar: '/services/scale-models.html', en: '/services/scale-models-en.html' } },
+    { id: 'scale', name: { ar: 'مجسمات معمارية', en: 'Scale Models' }, url: { ar: '/services/maquettes.html', en: '/services/maquettes-en.html' } },
     { id: 'interactive', name: { ar: 'تجارب تفاعلية', en: 'Interactive Experiences' }, url: { ar: '/services/interactive-experiences.html', en: '/services/interactive-experiences-en.html' } },
     { id: 'vr', name: { ar: 'VR / 360', en: 'VR / 360' }, url: { ar: '/services/vr-360.html', en: '/services/vr-360-en.html' } },
     { id: 'galleries', name: { ar: 'جاليريات وديكور مكاني', en: 'Galleries & Spatial Design' }, url: { ar: '/galleries-advertising.html', en: '/galleries-advertising-en.html' } },
