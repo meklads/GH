@@ -17,7 +17,51 @@
 
 .gh-home-eco__head {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 36px;
+}
+
+/* Journey bridge — between head subcopy and launch-system cards */
+.gh-home-eco__journey {
+  text-align: center;
+  margin: 0 auto 48px;
+  max-width: 620px;
+}
+
+.gh-home-eco__journey .gh-home-eco__eyebrow {
+  margin-bottom: 12px;
+}
+
+.gh-home-eco__journey p {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  line-height: 1.75;
+}
+
+/* Inline product marks — same LTR + gold ™ treatment as solution pages */
+.gh-home-eco__journey .pl-mark {
+  display: inline-block;
+  direction: ltr;
+  unicode-bidi: isolate;
+  white-space: nowrap;
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  color: inherit;
+}
+
+.gh-home-eco__journey .tm {
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.42em;
+  color: #c9a84c;
+  vertical-align: super;
+  position: relative;
+  top: -0.15em;
+  line-height: 1;
+  margin-inline-start: 0.08em;
+  letter-spacing: 0;
+  unicode-bidi: isolate;
+  direction: ltr;
 }
 
 .gh-home-eco__eyebrow {
