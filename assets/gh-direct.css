@@ -167,6 +167,9 @@ html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.06em; }
   margin: 0;
 }
 
+.ghd-section {
+  padding: 56px 0;
+}
 .ghd-section--packages {
   padding-top: 8px;
   padding-bottom: 72px;
