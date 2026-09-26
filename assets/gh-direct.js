@@ -360,16 +360,17 @@
     DATA.packages.forEach(function (pkg) {
       var card = document.createElement('article');
       var builder = isBuilder(pkg);
+      var featured = !!pkg.featured && !builder;
       card.className =
         'ghd-pkg' +
-        (pkg.featured ? ' ghd-pkg--featured' : '') +
+        (featured ? ' ghd-pkg--featured' : '') +
         (builder ? ' ghd-pkg--builder' : ' ghd-pkg--bundle');
       card.setAttribute('data-package-id', pkg.id);
 
       var badge = builder
         ? '<span class="ghd-pkg-badge">' + escapeHtml(ui.builderBadge) + '</span>'
-        : pkg.featured
-          ? '<span class="ghd-pkg-badge">' + escapeHtml(ui.mostPopular) + '</span>'
+        : featured
+          ? '<span class="ghd-pkg-badge ghd-pkg-badge--hot">' + escapeHtml(ui.mostPopular) + '</span>'
           : '';
 
       var tagline = pkg.tagline
@@ -397,12 +398,29 @@
       }
 
       var basePrice = builder
-        ? '<p class="ghd-pkg-base ghd-pkg-base--live">' +
-          escapeHtml(lang === 'ar' ? 'سعّر حسب اختيارك' : 'Priced by your picks') +
-          '</p>'
-        : '<p class="ghd-pkg-base">' +
-          escapeHtml(ui.from + ' ' + formatNum(pkg.price) + ' ' + currency) +
-          '</p>';
+        ? '<div class="ghd-pkg-price ghd-pkg-price--live">' +
+          '<span class="ghd-pkg-price-value">' +
+          escapeHtml(ui.pricedByPicks || (lang === 'ar' ? 'سعّر حسب اختيارك' : 'Priced by your picks')) +
+          '</span></div>'
+        : '<div class="ghd-pkg-price">' +
+          '<span class="ghd-pkg-price-from">' +
+          escapeHtml(ui.from) +
+          '</span>' +
+          '<span class="ghd-pkg-price-value">' +
+          escapeHtml(formatNum(pkg.price)) +
+          '</span>' +
+          '<span class="ghd-pkg-price-cur">' +
+          escapeHtml(currency) +
+          '</span></div>';
+
+      var whyBox =
+        featured && ui.whyPlan
+          ? '<div class="ghd-pkg-why"><strong>' +
+            escapeHtml(ui.whyPlan) +
+            '</strong><p>' +
+            escapeHtml(ui.whyPlanBody || '') +
+            '</p></div>'
+          : '';
 
       var addonHtml = addonIdsFor(pkg)
         .map(function (id) {
@@ -412,6 +430,7 @@
 
       var tot = computeTotal(pkg);
       var addonsLabel = builder ? ui.buildLabel : ui.add;
+      var ctaClass = featured ? 'ghd-cta ghd-cta--solid' : 'ghd-cta ghd-cta--outline';
 
       card.innerHTML =
         badge +
@@ -422,7 +441,15 @@
         tagline +
         basePrice +
         '</header>' +
+        '<button type="button" class="' +
+        ctaClass +
+        '" data-lead-pkg="' +
+        escapeAttr(pkg.id) +
+        '">' +
+        escapeHtml(ui.choosePlan || ui.cta) +
+        '</button>' +
         lines +
+        whyBox +
         '<p class="ghd-addons-label">' +
         escapeHtml(addonsLabel) +
         '</p>' +
@@ -433,12 +460,7 @@
         '">' +
         addonHtml +
         '</div>' +
-        totalBoxHtml(pkg, tot) +
-        '<button type="button" class="ghd-cta" data-lead-pkg="' +
-        escapeAttr(pkg.id) +
-        '">' +
-        escapeHtml(ui.cta) +
-        '</button>';
+        totalBoxHtml(pkg, tot);
 
       host.appendChild(card);
     });
