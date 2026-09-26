@@ -41,6 +41,7 @@ window.GH_DIRECT = {
       whyPlanBody: 'الأنسب للإطلاق الكبير حين تحتاج هوية وإعلاماً وموقعاً وتفاعلاً في حزمة واحدة.',
       total: 'الإجمالي التقديري',
       totalNote: 'تقدير ابتدائي — يُؤكَّد عند التواصل',
+      trustLine: 'لا دفع أونلاين · تأكيد النطاق خلال يوم عمل · الأسعار تقدير ابتدائي',
       unpricedNote: 'راسلنا واتساب',
       unpricedLine: 'يُضاف — راسلنا واتساب لتأكيد السعر',
       emptyBuilder: 'لم تُضف خدمات بعد — اختر من القائمة أعلاه',
@@ -72,6 +73,41 @@ window.GH_DIRECT = {
       meetingWaText: 'مرحباً، أود حجز اجتماع لاختيار خدمات GH Direct حسب مشروعي.',
       meetingFormTitle: 'طلب اجتماع اختيار الخدمات',
       meetingFormLead: 'نحدد معك موعداً مناسباً ونراجع احتياجات المشروع معاً.',
+      faqTitle: 'أسئلة شائعة عن الأسعار',
+      faq: [
+        {
+          q: 'هل الأسعار نهائية؟',
+          a: 'الأسعار تقدير ابتدائي يبدأ من الرقم الظاهر. نؤكد النطاق والسعر النهائي خلال يوم عمل بعد مراجعة مشروعك.',
+        },
+        {
+          q: 'هل يوجد دفع أونلاين؟',
+          a: 'لا. هذه الصفحة للاختيار والتقدير فقط. التأكيد والتسعير النهائي يتم بالتواصل — واتساب أو نموذج.',
+        },
+        {
+          q: 'ما الفرق بين الباقات والخدمات؟',
+          a: 'الكتالوج يعرض كل خدمة بمفردها. الباقات تجمع خدمات جاهزة بسعر أساس، ويمكنك إضافة خدمات فوقها مباشرة.',
+        },
+        {
+          q: 'ماذا تشمل باقة «حضور كامل»؟',
+          a: 'هوية كاملة وكتالوج وإنتاج إعلامي وموقع وشاشة تفاعلية، مع نطاق رندرات مدمج. مناسبة للإطلاق الكبير.',
+        },
+        {
+          q: 'متى أختار الباقة المخصّصة؟',
+          a: 'عندما تريد انتقاء خدمات بعينها فقط. الإجمالي يتحدّث فوراً مع كل إضافة، ثم نراجع الاختيار معك.',
+        },
+        {
+          q: 'كم يستغرق الرد؟',
+          a: 'نرد عادة خلال يوم عمل واحد لتأكيد النطاق والجدول والسعر.',
+        },
+        {
+          q: 'هل يناسب المشاريع المؤسسية الكبيرة؟',
+          a: 'للمشاريع المؤسسية والمخططات الضخمة نفضّل مسار ProjectLaunch™ الاستشاري بدل الاختيار الذاتي.',
+        },
+        {
+          q: 'هل يمكن تعديل الباقة لاحقاً؟',
+          a: 'نعم. الباقة نقطة انطلاق. نضبط الإضافات والحذف حسب احتياج المشروع قبل التأكيد النهائي.',
+        },
+      ],
     },
     en: {
       pageEyebrow: 'Self-serve · Starting prices',
@@ -95,6 +131,7 @@ window.GH_DIRECT = {
       whyPlanBody: 'Best for a major launch when you need identity, media, site, and interactive in one package.',
       total: 'Estimated total',
       totalNote: 'Starting estimate — confirmed when we talk',
+      trustLine: 'No online checkout · Scope confirmed within one business day · Starting estimates',
       unpricedNote: 'WhatsApp us',
       unpricedLine: 'Added — WhatsApp us to confirm price',
       emptyBuilder: 'No services yet — pick from the list above',
@@ -126,6 +163,41 @@ window.GH_DIRECT = {
       meetingWaText: 'Hello — I would like to book a meeting to choose GH Direct services for my project.',
       meetingFormTitle: 'Service selection meeting',
       meetingFormLead: 'We will propose a time and review your project needs together.',
+      faqTitle: 'Pricing FAQs',
+      faq: [
+        {
+          q: 'Are these final prices?',
+          a: 'Figures are starting estimates. We confirm scope and final pricing within one business day after reviewing your project.',
+        },
+        {
+          q: 'Is there online checkout?',
+          a: 'No. This page is for selection and estimates only. Confirmation happens by WhatsApp or form.',
+        },
+        {
+          q: 'What is the difference between packages and catalog services?',
+          a: 'The catalog lists each service alone. Packages bundle services on a base price, and you can add more on top live.',
+        },
+        {
+          q: 'What does Full Presence include?',
+          a: 'Full identity, catalogue, media production, website, and a touchscreen — with bundled renders. Built for a major launch.',
+        },
+        {
+          q: 'When should I use the custom package?',
+          a: 'When you want to pick specific services only. The total updates instantly with each add, then we review with you.',
+        },
+        {
+          q: 'How fast do you reply?',
+          a: 'Usually within one business day to confirm scope, timeline, and price.',
+        },
+        {
+          q: 'Is this right for large institutional projects?',
+          a: 'For institutional work and large masterplans we recommend the consultative ProjectLaunch™ path instead of self-serve.',
+        },
+        {
+          q: 'Can I change the package later?',
+          a: 'Yes. A package is a starting point. We adjust adds and removals before final confirmation.',
+        },
+      ],
     },
   },
   services: [

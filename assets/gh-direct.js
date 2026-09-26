@@ -547,6 +547,62 @@
     }
   }
 
+  /* ---------- FAQ ---------- */
+  function renderFaq() {
+    var title = document.getElementById('ghd-faq-title');
+    var host = document.getElementById('ghd-faq');
+    var trust = document.getElementById('ghd-trust-line');
+    if (title) title.textContent = ui.faqTitle || (lang === 'ar' ? 'أسئلة شائعة' : 'FAQs');
+    if (trust && ui.trustLine) {
+      trust.hidden = false;
+      trust.textContent = ui.trustLine;
+    }
+    if (!host || !ui.faq || !ui.faq.length) return;
+    host.innerHTML = ui.faq
+      .map(function (item, i) {
+        var id = 'ghd-faq-' + i;
+        return (
+          '<div class="ghd-faq-item">' +
+          '<button type="button" class="ghd-faq-q" aria-expanded="false" aria-controls="' +
+          id +
+          '" id="' +
+          id +
+          '-btn">' +
+          '<span>' +
+          escapeHtml(item.q) +
+          '</span>' +
+          '<span class="ghd-faq-icon" aria-hidden="true">+</span>' +
+          '</button>' +
+          '<div class="ghd-faq-a" id="' +
+          id +
+          '" role="region" aria-labelledby="' +
+          id +
+          '-btn" hidden>' +
+          '<p>' +
+          escapeHtml(item.a) +
+          '</p></div></div>'
+        );
+      })
+      .join('');
+
+    host.querySelectorAll('.ghd-faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        var panel = document.getElementById(btn.getAttribute('aria-controls'));
+        host.querySelectorAll('.ghd-faq-q').forEach(function (other) {
+          if (other === btn) return;
+          other.setAttribute('aria-expanded', 'false');
+          other.classList.remove('is-open');
+          var op = document.getElementById(other.getAttribute('aria-controls'));
+          if (op) op.hidden = true;
+        });
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        btn.classList.toggle('is-open', !open);
+        if (panel) panel.hidden = open;
+      });
+    });
+  }
+
   /* ---------- Meeting ---------- */
   function waPhone() {
     var phone =
@@ -919,6 +975,7 @@
     renderHero();
     renderCatalog();
     renderPackages();
+    renderFaq();
     renderMeeting();
     wireModals();
     document.title =
