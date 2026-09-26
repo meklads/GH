@@ -186,7 +186,7 @@
     var grid = document.getElementById('ghd-catalog');
     if (!grid) return;
     grid.innerHTML = '';
-    DATA.services.forEach(function (svc) {
+    DATA.services.forEach(function (svc, idx) {
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'ghd-svc-card';
@@ -196,22 +196,23 @@
         ? '<span class="ghd-ph-badge">[PLACEHOLDER]</span>'
         : '';
       var src = mediaUrl(svc.media && svc.media.src);
+      var num = String(idx + 1).padStart(2, '0');
+      var unpriced = svc.price == null || svc.priceLabel === 'contact';
       btn.innerHTML =
         '<div class="ghd-svc-media">' +
         ph +
         '<img src="' +
         escapeAttr(src) +
         '" alt="" loading="lazy" decoding="async" width="640" height="400">' +
-        '</div>' +
+        '<span class="ghd-svc-num" aria-hidden="true">' +
+        num +
+        '</span></div>' +
         '<div class="ghd-svc-body">' +
         '<h3>' +
         escapeHtml(t(svc.name)) +
         '</h3>' +
-        '<p class="ghd-svc-desc">' +
-        escapeHtml(t(svc.description)) +
-        '</p>' +
         '<div class="ghd-price' +
-        (svc.price == null ? ' ghd-price-contact' : '') +
+        (unpriced ? ' ghd-price-contact' : '') +
         '">' +
         escapeHtml(priceText(svc)) +
         '</div></div>';
@@ -223,7 +224,16 @@
   }
 
   /* ---------- Packages ---------- */
+  function isBuilder(pkg) {
+    return pkg && pkg.mode === 'builder';
+  }
+
   function addonIdsFor(pkg) {
+    if (isBuilder(pkg)) {
+      return DATA.services.map(function (s) {
+        return s.id;
+      });
+    }
     var excluded = new Set(pkg.includedServiceIds || []);
     return DATA.services
       .filter(function (s) {
@@ -235,13 +245,13 @@
   }
 
   function computeTotal(pkg) {
-    var priced = Number(pkg.price) || 0;
+    var priced = isBuilder(pkg) ? 0 : Number(pkg.price) || 0;
     var unpriced = [];
     var selected = addonState[pkg.id];
     selected.forEach(function (id) {
       var svc = serviceById[id];
       if (!svc) return;
-      if (svc.price == null || typeof svc.price !== 'number' || isNaN(svc.price)) {
+      if (svc.price == null || typeof svc.price !== 'number' || isNaN(svc.price) || svc.priceLabel === 'contact') {
         unpriced.push(svc);
       } else {
         priced += svc.price;
@@ -250,108 +260,154 @@
     return { priced: priced, unpriced: unpriced };
   }
 
+  function addonRowHtml(pkg, id) {
+    var svc = serviceById[id];
+    if (!svc) return '';
+    var on = addonState[pkg.id].has(id);
+    var unpriced = svc.price == null || svc.priceLabel === 'contact';
+    var meta = unpriced ? ui.unpricedNote : formatNum(svc.price) + ' ' + currency;
+    return (
+      '<button type="button" class="ghd-addon' +
+      (on ? ' is-on' : '') +
+      (unpriced ? ' ghd-addon--contact' : '') +
+      '" data-addon="' +
+      escapeAttr(id) +
+      '" data-pkg="' +
+      escapeAttr(pkg.id) +
+      '" aria-pressed="' +
+      (on ? 'true' : 'false') +
+      '">' +
+      '<span class="ghd-addon-name">' +
+      escapeHtml(t(svc.name)) +
+      '</span>' +
+      '<span class="ghd-addon-meta">' +
+      escapeHtml(meta) +
+      '</span>' +
+      '<span class="ghd-addon-toggle">' +
+      escapeHtml(on ? ui.added : ui.add) +
+      '</span></button>'
+    );
+  }
+
+  function totalBoxHtml(pkg, tot) {
+    var empty =
+      isBuilder(pkg) && addonState[pkg.id].size === 0
+        ? '<p class="ghd-total-empty">' + escapeHtml(ui.emptyBuilder) + '</p>'
+        : '';
+    var extraLis = tot.unpriced
+      .map(function (s) {
+        return (
+          '<li>+ ' +
+          escapeHtml(t(s.name)) +
+          ' — ' +
+          escapeHtml(ui.unpricedLine) +
+          '</li>'
+        );
+      })
+      .join('');
+    var value =
+      isBuilder(pkg) && addonState[pkg.id].size === 0
+        ? '—'
+        : formatNum(tot.priced) + ' ' + currency;
+    return (
+      '<div class="ghd-total-box" data-total-for="' +
+      escapeAttr(pkg.id) +
+      '">' +
+      '<p class="ghd-total-label">' +
+      escapeHtml(ui.total) +
+      '</p>' +
+      '<p class="ghd-total-value">' +
+      escapeHtml(value) +
+      '</p>' +
+      empty +
+      (extraLis ? '<ul class="ghd-total-extra">' + extraLis + '</ul>' : '') +
+      '<p class="ghd-total-hint">' +
+      escapeHtml(ui.totalNote) +
+      '</p></div>'
+    );
+  }
+
   function renderPackages() {
     var host = document.getElementById('ghd-packages');
     if (!host) return;
     host.innerHTML = '';
     DATA.packages.forEach(function (pkg) {
       var card = document.createElement('article');
-      card.className = 'ghd-pkg' + (pkg.featured ? ' ghd-pkg--featured' : '');
+      var builder = isBuilder(pkg);
+      card.className =
+        'ghd-pkg' +
+        (pkg.featured ? ' ghd-pkg--featured' : '') +
+        (builder ? ' ghd-pkg--builder' : ' ghd-pkg--bundle');
       card.setAttribute('data-package-id', pkg.id);
 
-      var badge = pkg.featured
-        ? '<span class="ghd-pkg-badge">' + escapeHtml(ui.mostPopular) + '</span>'
+      var badge = builder
+        ? '<span class="ghd-pkg-badge">' + escapeHtml(ui.builderBadge) + '</span>'
+        : pkg.featured
+          ? '<span class="ghd-pkg-badge">' + escapeHtml(ui.mostPopular) + '</span>'
+          : '';
+
+      var tagline = pkg.tagline
+        ? '<p class="ghd-pkg-tagline">' + escapeHtml(t(pkg.tagline)) + '</p>'
         : '';
 
-      var lines = (pkg.includedLines || [])
-        .map(function (line) {
-          return (
-            '<li><span class="material-symbols-outlined ghd-check" aria-hidden="true">check</span><span>' +
-            escapeHtml(t(line)) +
-            '</span></li>'
-          );
-        })
-        .join('');
+      var lines = '';
+      if (!builder && pkg.includedLines && pkg.includedLines.length) {
+        lines =
+          '<p class="ghd-pkg-note">' +
+          escapeHtml(ui.included) +
+          '</p><ul class="ghd-list" aria-label="' +
+          escapeAttr(ui.included) +
+          '">' +
+          pkg.includedLines
+            .map(function (line) {
+              return (
+                '<li><span class="material-symbols-outlined ghd-check" aria-hidden="true">check</span><span>' +
+                escapeHtml(t(line)) +
+                '</span></li>'
+              );
+            })
+            .join('') +
+          '</ul>';
+      }
+
+      var basePrice = builder
+        ? '<p class="ghd-pkg-base ghd-pkg-base--live">' +
+          escapeHtml(lang === 'ar' ? 'سعّر حسب اختيارك' : 'Priced by your picks') +
+          '</p>'
+        : '<p class="ghd-pkg-base">' +
+          escapeHtml(ui.from + ' ' + formatNum(pkg.price) + ' ' + currency) +
+          '</p>';
 
       var addonHtml = addonIdsFor(pkg)
         .map(function (id) {
-          var svc = serviceById[id];
-          var on = addonState[pkg.id].has(id);
-          var meta =
-            svc.price == null ? ui.unpricedNote : formatNum(svc.price) + ' ' + currency;
-          return (
-            '<button type="button" class="ghd-addon' +
-            (on ? ' is-on' : '') +
-            '" data-addon="' +
-            escapeAttr(id) +
-            '" data-pkg="' +
-            escapeAttr(pkg.id) +
-            '" aria-pressed="' +
-            (on ? 'true' : 'false') +
-            '">' +
-            '<span class="ghd-addon-name">' +
-            escapeHtml(t(svc.name)) +
-            '</span>' +
-            '<span class="ghd-addon-meta">' +
-            escapeHtml(meta) +
-            '</span>' +
-            '<span class="ghd-addon-toggle">' +
-            escapeHtml(on ? ui.added : ui.add) +
-            '</span></button>'
-          );
+          return addonRowHtml(pkg, id);
         })
         .join('');
 
       var tot = computeTotal(pkg);
-      var extraLis = tot.unpriced
-        .map(function (s) {
-          return (
-            '<li>+ ' +
-            escapeHtml(t(s.name)) +
-            ' — ' +
-            escapeHtml(ui.unpricedLine) +
-            '</li>'
-          );
-        })
-        .join('');
+      var addonsLabel = builder ? ui.buildLabel : ui.add;
 
       card.innerHTML =
         badge +
+        '<header class="ghd-pkg-head">' +
         '<h3>' +
         escapeHtml(t(pkg.name)) +
         '</h3>' +
-        '<p class="ghd-pkg-base">' +
-        escapeHtml(ui.from + ' ' + formatNum(pkg.price) + ' ' + currency) +
-        '</p>' +
-        '<p class="ghd-pkg-note">' +
-        escapeHtml(ui.included) +
-        '</p>' +
-        '<ul class="ghd-list" aria-label="' +
-        escapeAttr(ui.included) +
-        '">' +
+        tagline +
+        basePrice +
+        '</header>' +
         lines +
-        '</ul>' +
         '<p class="ghd-addons-label">' +
-        escapeHtml(ui.add) +
+        escapeHtml(addonsLabel) +
         '</p>' +
-        '<div class="ghd-addons" data-addons-for="' +
+        '<div class="ghd-addons' +
+        (builder ? ' ghd-addons--grid' : '') +
+        '" data-addons-for="' +
         escapeAttr(pkg.id) +
         '">' +
         addonHtml +
         '</div>' +
-        '<div class="ghd-total-box" data-total-for="' +
-        escapeAttr(pkg.id) +
-        '">' +
-        '<p class="ghd-total-label">' +
-        escapeHtml(ui.total) +
-        '</p>' +
-        '<p class="ghd-total-value">' +
-        escapeHtml(formatNum(tot.priced) + ' ' + currency) +
-        '</p>' +
-        (extraLis ? '<ul class="ghd-total-extra">' + extraLis + '</ul>' : '') +
-        '<p class="ghd-total-hint">' +
-        escapeHtml(ui.totalNote) +
-        '</p></div>' +
+        totalBoxHtml(pkg, tot) +
         '<button type="button" class="ghd-cta" data-lead-pkg="' +
         escapeAttr(pkg.id) +
         '">' +
@@ -401,7 +457,24 @@
     var box = card.querySelector('[data-total-for="' + pkgId + '"]');
     if (!box) return;
     var val = box.querySelector('.ghd-total-value');
-    if (val) val.textContent = formatNum(tot.priced) + ' ' + currency;
+    if (val) {
+      val.textContent =
+        isBuilder(pkg) && addonState[pkgId].size === 0
+          ? '—'
+          : formatNum(tot.priced) + ' ' + currency;
+    }
+    var emptyEl = box.querySelector('.ghd-total-empty');
+    if (isBuilder(pkg) && addonState[pkgId].size === 0) {
+      if (!emptyEl) {
+        emptyEl = document.createElement('p');
+        emptyEl.className = 'ghd-total-empty';
+        emptyEl.textContent = ui.emptyBuilder;
+        var hint0 = box.querySelector('.ghd-total-hint');
+        box.insertBefore(emptyEl, hint0);
+      }
+    } else if (emptyEl) {
+      emptyEl.remove();
+    }
     var extra = box.querySelector('.ghd-total-extra');
     if (tot.unpriced.length) {
       if (!extra) {
@@ -423,6 +496,48 @@
         .join('');
     } else if (extra) {
       extra.remove();
+    }
+  }
+
+  /* ---------- Meeting ---------- */
+  function waPhone() {
+    var phone =
+      FORMS.notifyWhatsApp ||
+      (window.GH_FLOAT_CONFIG && window.GH_FLOAT_CONFIG.whatsapp) ||
+      '966502786513';
+    return String(phone).replace(/\D/g, '');
+  }
+
+  function renderMeeting() {
+    var host = document.getElementById('ghd-meeting-inner');
+    if (!host) return;
+    var waHref =
+      'https://wa.me/' + waPhone() + '?text=' + encodeURIComponent(ui.meetingWaText);
+    host.innerHTML =
+      '<div class="ghd-meeting-copy">' +
+      '<p class="ghd-meeting-kicker">' +
+      escapeHtml(lang === 'ar' ? 'مسار بديل' : 'Alternate path') +
+      '</p>' +
+      '<h2 id="ghd-meeting-title">' +
+      escapeHtml(ui.meetingTitle) +
+      '</h2>' +
+      '<p class="ghd-meeting-lead">' +
+      escapeHtml(ui.meetingLead) +
+      '</p></div>' +
+      '<div class="ghd-meeting-actions">' +
+      '<a class="ghd-meeting-wa" href="' +
+      escapeAttr(waHref) +
+      '" target="_blank" rel="noopener noreferrer">' +
+      escapeHtml(ui.meetingCtaWa) +
+      '</a>' +
+      '<button type="button" class="ghd-meeting-form" data-ghd-meeting-form>' +
+      escapeHtml(ui.meetingCtaForm) +
+      '</button></div>';
+    var formBtn = host.querySelector('[data-ghd-meeting-form]');
+    if (formBtn) {
+      formBtn.addEventListener('click', function () {
+        openMeetingLead();
+      });
     }
   }
 
@@ -474,25 +589,48 @@
   }
 
   function selectionSummary(pkgId) {
+    if (pkgId === 'meeting') {
+      return {
+        text: ui.meetingFormTitle + '\n' + ui.meetingFormLead,
+        tot: { priced: 0, unpriced: [] },
+        addons: [],
+        pkg: { name: { ar: ui.meetingFormTitle, en: ui.meetingFormTitle }, price: 0 },
+        kind: 'meeting',
+      };
+    }
     var pkg = DATA.packages.find(function (p) {
       return p.id === pkgId;
     });
-    if (!pkg) return { text: '', tot: null, addons: [] };
+    if (!pkg) return { text: '', tot: null, addons: [], kind: 'package' };
     var tot = computeTotal(pkg);
     var names = [];
     addonState[pkgId].forEach(function (id) {
       var s = serviceById[id];
       if (s) names.push(t(s.name));
     });
-    var lines = [
-      t(pkg.name) + ' — ' + ui.from + ' ' + formatNum(pkg.price) + ' ' + currency,
-    ];
-    if (names.length) lines.push((lang === 'ar' ? 'إضافات: ' : 'Add-ons: ') + names.join(' · '));
-    lines.push(ui.total + ': ' + formatNum(tot.priced) + ' ' + currency);
+    var lines = [];
+    if (isBuilder(pkg)) {
+      lines.push(t(pkg.name));
+      if (names.length) {
+        lines.push((lang === 'ar' ? 'الخدمات: ' : 'Services: ') + names.join(' · '));
+      } else {
+        lines.push(ui.emptyBuilder);
+      }
+    } else {
+      lines.push(t(pkg.name) + ' — ' + ui.from + ' ' + formatNum(pkg.price) + ' ' + currency);
+      if (names.length) lines.push((lang === 'ar' ? 'إضافات: ' : 'Add-ons: ') + names.join(' · '));
+    }
+    if (!(isBuilder(pkg) && addonState[pkgId].size === 0)) {
+      lines.push(ui.total + ': ' + formatNum(tot.priced) + ' ' + currency);
+    }
     tot.unpriced.forEach(function (s) {
       lines.push('+ ' + t(s.name) + ' — ' + ui.unpricedLine);
     });
-    return { text: lines.join('\n'), tot: tot, addons: names, pkg: pkg };
+    return { text: lines.join('\n'), tot: tot, addons: names, pkg: pkg, kind: 'package' };
+  }
+
+  function openMeetingLead() {
+    openLeadModal('meeting');
   }
 
   function openLeadModal(pkgId) {
@@ -500,6 +638,15 @@
     lastFocus = document.activeElement;
     var summary = selectionSummary(pkgId);
     leadModal.setAttribute('data-lead-pkg', pkgId || '');
+    var titleEl = document.getElementById('ghd-lead-title');
+    var leadP = leadModal.querySelector('[data-ghd-form-lead]');
+    if (summary.kind === 'meeting') {
+      if (titleEl) titleEl.textContent = ui.meetingFormTitle;
+      if (leadP) leadP.textContent = ui.meetingFormLead;
+    } else {
+      if (titleEl) titleEl.textContent = ui.formTitle;
+      if (leadP) leadP.textContent = ui.formLead;
+    }
     var sumEl = leadModal.querySelector('[data-ghd-summary]');
     if (sumEl) sumEl.textContent = summary.text;
     var msg = leadModal.querySelector('[data-ghd-form-msg]');
@@ -514,8 +661,10 @@
     var hiddenTotal = leadModal.querySelector('[name="estimated_total"]');
     if (hiddenPkg && summary.pkg) hiddenPkg.value = t(summary.pkg.name);
     if (hiddenAddons) hiddenAddons.value = summary.addons.join(', ');
-    if (hiddenTotal && summary.tot)
-      hiddenTotal.value = formatNum(summary.tot.priced) + ' ' + currency;
+    if (hiddenTotal) {
+      if (summary.kind === 'meeting') hiddenTotal.value = '';
+      else if (summary.tot) hiddenTotal.value = formatNum(summary.tot.priced) + ' ' + currency;
+    }
     updateWaLink(summary);
     ensureLeadSecurity(form);
     renderLeadTurnstile(form);
@@ -535,15 +684,14 @@
   function updateWaLink(summary) {
     var a = leadModal && leadModal.querySelector('[data-ghd-wa]');
     if (!a) return;
-    var phone =
-      FORMS.notifyWhatsApp ||
-      (window.GH_FLOAT_CONFIG && window.GH_FLOAT_CONFIG.whatsapp) ||
-      '966502786513';
-    phone = String(phone).replace(/\D/g, '');
-    var text =
-      (lang === 'ar' ? 'مرحباً، أود تأكيد باقة من GH Direct:\n\n' : 'Hello — I want to confirm a GH Direct package:\n\n') +
-      (summary.text || '');
-    a.href = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(text);
+    var phone = waPhone();
+    var prefix =
+      summary && summary.kind === 'meeting'
+        ? ui.meetingWaText + '\n\n'
+        : lang === 'ar'
+          ? 'مرحباً، أود تأكيد باقة من GH Direct:\n\n'
+          : 'Hello — I want to confirm a GH Direct package:\n\n';
+    a.href = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(prefix + (summary.text || ''));
   }
 
   function wireModals() {
@@ -611,7 +759,7 @@
     ].filter(Boolean);
 
     var payload = {
-      source: 'gh-direct',
+      source: pkgId === 'meeting' ? 'gh-direct-meeting' : 'gh-direct',
       page: location.pathname,
       lang: lang,
       name: name,
@@ -706,6 +854,7 @@
     renderHero();
     renderCatalog();
     renderPackages();
+    renderMeeting();
     wireModals();
     document.title =
       (lang === 'ar'
