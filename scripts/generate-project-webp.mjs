@@ -49,7 +49,10 @@ for (const rootDir of ROOTS) {
       continue;
     }
     try {
-      execSync(`cwebp -q 80 "${srcPath}" -o "${webpPath}"`, { stdio: 'ignore' });
+      // Branding mockups need higher fidelity; other rasters stay leaner.
+      const q = srcPath.includes(`${path.sep}branding${path.sep}`) ? 90 : 80;
+      const extra = q >= 90 ? '-m 6 -mt -sharp_yuv' : '';
+      execSync(`cwebp -q ${q} ${extra} "${srcPath}" -o "${webpPath}"`, { stdio: 'ignore' });
       created++;
       console.log('  webp:', path.relative(ROOT, webpPath));
     } catch {

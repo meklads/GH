@@ -14,7 +14,7 @@ const OUT = path.join(ROOT, 'services');
 const BASE = 'https://3dgraphicshouse.com';
 const DEPTH = 1;
 const P = '../';
-const CSS_V = 7;
+const CSS_V = 9;
 const BRAND = 'assets/branding';
 const OG_IMG = `${BRAND}/jeddah-forum-mockup.png`;
 
@@ -157,7 +157,7 @@ const COPY = {
     pipelineLead: 'نفس اللغة البصرية من الموجز الأول حتى آخر مطبوعة في المعرض.',
     pipeline: ['هوية', 'كتالوج', 'تطبيق مكاني', 'فيلم CGI', 'مطبوعات'],
     galleryTitle: 'أعمال الهوية',
-    galleryLead: 'من التصميم المسطح إلى اللافتة المضيئة, شاهد كيف تتحول الهوية في الفضاء الحقيقي.',
+    galleryLead: 'نماذج من أهم العلامات: من التصميم المسطح إلى اللافتة المضيئة في الفضاء الحقيقي.',
     filters: [
       { id: 'all', label: 'الكل' },
       { id: 'forums', label: 'ملتقيات ومعارض' },
@@ -208,7 +208,7 @@ const COPY = {
     pipelineLead: 'The same visual language from first brief to the last print piece on the exhibition floor.',
     pipeline: ['BRAND', 'CATALOGUE', 'SPATIAL', 'CGI FILM', 'PRINT'],
     galleryTitle: 'Identity work',
-    galleryLead: 'From flat design to illuminated signage, see how identity transforms in real space.',
+    galleryLead: 'Selected flagship brands: from flat design to illuminated signage in real space.',
     filters: [
       { id: 'all', label: 'All' },
       { id: 'forums', label: 'Forums & exhibitions' },
@@ -323,7 +323,7 @@ function page(lang) {
     )
     .join('');
 
-  const showcase = SHOWCASE.map((item) => {
+  const showcase = SHOWCASE.map((item, idx) => {
     const finalHref = isEn ? item.hrefEn : item.hrefAr;
     const ext = item.external ? ' target="_blank" rel="noopener noreferrer"' : '';
     const title = isEn ? item.titleEn : item.titleAr;
@@ -331,9 +331,14 @@ function page(lang) {
     const cat = isEn ? item.catEn : item.catAr;
     const sizeClass = item.size ? ` bid-showcase-item--${item.size}` : '';
     const tagClass = item.featured ? ' bid-showcase-tag--feat' : '';
+    const webp = item.img.replace(/\.png$/i, '.webp');
+    const eager = idx === 0 ? ' fetchpriority="high"' : ' loading="lazy"';
     return `<a href="${finalHref}" class="bid-showcase-item${sizeClass} reveal" data-bid-cat="${item.filter}"${ext}>
       <figure class="bid-showcase-fig">
-        <img src="${P}${item.img}" alt="${esc(title)}" loading="lazy">
+        <picture>
+          <source srcset="${P}${webp}" type="image/webp">
+          <img src="${P}${item.img}" alt="${esc(title)}" width="1536" height="1024"${eager} decoding="async">
+        </picture>
         <figcaption class="bid-showcase-cap">
           <div class="bid-showcase-meta">
             <span class="bid-showcase-tag${tagClass}">${esc(cat)}</span>
