@@ -18,6 +18,8 @@ const SKIP = new Set([
   'en-v2.html',
   'offer-lite.html',
   'en.html',
+  'gh-direct.html',
+  'gh-direct-en.html',
   'solutions/project-launch-ads.html',
   'solutions/project-launch-ads-en.html',
 ]);
