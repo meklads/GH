@@ -31,11 +31,11 @@ gtag('config','G-Y67JVE898Z');
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
 <script defer src="assets/gh-performance.js?v=10"></script>
 <script defer src="assets/gh-cta-track.js?v=1"></script>
-<script defer src="assets/gh-direct-data.js?v=10"></script>
-<script defer src="assets/gh-direct.js?v=10"></script>
+<script defer src="assets/gh-direct-data.js?v=11"></script>
+<script defer src="assets/gh-direct.js?v=11"></script>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=41">
-<link rel="stylesheet" href="assets/gh-direct.css?v=10">
+<link rel="stylesheet" href="assets/gh-direct.css?v=11">
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="assets/gh-ar-typography.css?v=4">
 <link rel="stylesheet" href="assets/gh-chat-assistant.css?v=10">
@@ -61,9 +61,25 @@ gtag('config','G-Y67JVE898Z');
       <h1 id="ghd-title"></h1>
       <p class="ghd-hero-brand" id="ghd-brand"></p>
       <p class="ghd-hero-lead" id="ghd-lead"></p>
+      <nav class="ghd-paths" id="ghd-paths" aria-label="مسار الاختيار"></nav>
     </div>
   </section>
-  <section class="ghd-section" aria-labelledby="ghd-catalog-title">
+  <section class="ghd-section ghd-section--packages" id="packages" aria-labelledby="ghd-packages-title">
+    <div class="ghd-wrap">
+      <div class="ghd-section-head">
+        <h2 id="ghd-packages-title"></h2>
+        <p id="ghd-packages-lead"></p>
+      </div>
+      <div class="ghd-who" id="ghd-who-for" role="list"></div>
+      <div class="ghd-packages" id="ghd-packages"></div>
+      <div class="ghd-next" id="ghd-next-steps" aria-label="ماذا بعد الطلب"></div>
+      <p class="ghd-trust-line" id="ghd-trust-line" hidden></p>
+      <div class="ghd-unsure" id="unsure" aria-labelledby="ghd-meeting-title">
+        <div class="ghd-meeting ghd-meeting--compact" id="ghd-meeting-inner"></div>
+      </div>
+    </div>
+  </section>
+  <section class="ghd-section ghd-section--catalog" id="catalog" aria-labelledby="ghd-catalog-title">
     <div class="ghd-wrap">
       <div class="ghd-section-head">
         <h2 id="ghd-catalog-title"></h2>
@@ -74,25 +90,10 @@ gtag('config','G-Y67JVE898Z');
       <p class="ghd-filter-empty" id="ghd-catalog-empty" hidden></p>
     </div>
   </section>
-  <section class="ghd-section ghd-section--packages" aria-labelledby="ghd-packages-title">
-    <div class="ghd-wrap">
-      <div class="ghd-section-head">
-        <h2 id="ghd-packages-title"></h2>
-        <p id="ghd-packages-lead"></p>
-      </div>
-      <div class="ghd-packages" id="ghd-packages"></div>
-      <p class="ghd-trust-line" id="ghd-trust-line" hidden></p>
-    </div>
-  </section>
   <section class="ghd-section ghd-section--faq" aria-labelledby="ghd-faq-title">
     <div class="ghd-wrap ghd-wrap--narrow">
       <h2 class="ghd-faq-title" id="ghd-faq-title"></h2>
       <div class="ghd-faq" id="ghd-faq"></div>
-    </div>
-  </section>
-  <section class="ghd-section ghd-section--meeting" aria-labelledby="ghd-meeting-title">
-    <div class="ghd-wrap">
-      <div class="ghd-meeting" id="ghd-meeting-inner"></div>
     </div>
   </section>
 </main>
@@ -111,6 +112,7 @@ gtag('config','G-Y67JVE898Z');
       <h3 id="ghd-svc-modal-title" data-ghd-title></h3>
       <p data-ghd-desc></p>
       <div class="ghd-price" data-ghd-price></div>
+      <div class="ghd-modal-actions" data-ghd-svc-actions></div>
     </div>
   </div>
 </div>
@@ -125,6 +127,7 @@ gtag('config','G-Y67JVE898Z');
       <h3 id="ghd-lead-title">طلب تأكيد الباقة</h3>
       <p data-ghd-form-lead>نراجع اختيارك ونؤكد النطاق والسعر خلال يوم عمل. لا دفع أونلاين.</p>
       <div class="ghd-form-summary" data-ghd-summary></div>
+      <ol class="ghd-form-next" data-ghd-form-next></ol>
       <form class="ghd-form-fields" novalidate>
         <input type="hidden" name="package" value="">
         <input type="hidden" name="addons" value="">
