@@ -27,6 +27,16 @@ window.GH_CLIENT_HUB_ITEMS = [
     icon: 'precision_manufacturing',
   },
   {
+    id: 'floor-furnish',
+    title: { ar: 'فرش الأدوار', en: 'Floor Furnish' },
+    desc: {
+      ar: 'ألبوم صور لفرش الأدوار داخل المجسمات المعمارية — تفاصيل الوحدات والطبقات لصالة البيع.',
+      en: 'Photo album of floor furnish inside architectural maquettes — unit and layer detail for the sales gallery.',
+    },
+    href: { ar: 'client-hub-floor-furnish.html', en: 'client-hub-floor-furnish-en.html' },
+    icon: 'layers',
+  },
+  {
     id: 'folio',
     title: { ar: 'ملف الشركة', en: 'Company Profile' },
     desc: {
