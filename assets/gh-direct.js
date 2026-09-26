@@ -543,7 +543,10 @@
         ? '<span class="ghd-pkg-badge">' + escapeHtml(ui.builderBadge) + '</span>'
         : featured
           ? '<span class="ghd-pkg-badge ghd-pkg-badge--hot">' + escapeHtml(ui.mostPopular) + '</span>'
-          : '';
+          : '<span class="ghd-pkg-badge ghd-pkg-badge--quiet">' + escapeHtml(lang === 'ar' ? 'جاهزة' : 'Ready') + '</span>';
+
+      var markLabel = t(pkg.name);
+      var mark = '<span class="ghd-pkg-mark" aria-hidden="true">' + escapeHtml(markLabel.charAt(0)) + '</span>';
 
       var tagline = pkg.tagline
         ? '<p class="ghd-pkg-tagline">' + escapeHtml(t(pkg.tagline)) + '</p>'
@@ -582,20 +585,21 @@
       }
 
       var basePrice = builder
-        ? '<div class="ghd-pkg-price ghd-pkg-price--live">' +
-          '<span class="ghd-pkg-price-value">' +
+        ? '<div class="ghd-pkg-price-board ghd-pkg-price-board--live">' +
+          '<span class="ghd-pkg-price-kicker">' +
           escapeHtml(ui.pricedByPicks || (lang === 'ar' ? 'سعّر حسب اختيارك' : 'Priced by your picks')) +
           '</span></div>'
-        : '<div class="ghd-pkg-price">' +
-          '<span class="ghd-pkg-price-from">' +
+        : '<div class="ghd-pkg-price-board">' +
+          '<span class="ghd-pkg-price-kicker">' +
           escapeHtml(ui.from) +
           '</span>' +
+          '<div class="ghd-pkg-price-row">' +
           '<span class="ghd-pkg-price-value">' +
           escapeHtml(formatNum(pkg.price)) +
           '</span>' +
           '<span class="ghd-pkg-price-cur">' +
           escapeHtml(currency) +
-          '</span></div>';
+          '</span></div></div>';
 
       var whyBox =
         featured && ui.whyPlan
@@ -613,10 +617,13 @@
         card.innerHTML =
           badge +
           '<header class="ghd-pkg-head">' +
+          mark +
+          '<div class="ghd-pkg-head-text">' +
           '<h3>' +
           escapeHtml(t(pkg.name)) +
           '</h3>' +
           tagline +
+          '</div>' +
           fitLine +
           basePrice +
           deliveryLine +
@@ -646,10 +653,13 @@
         card.innerHTML =
           badge +
           '<header class="ghd-pkg-head">' +
+          mark +
+          '<div class="ghd-pkg-head-text">' +
           '<h3>' +
           escapeHtml(t(pkg.name)) +
           '</h3>' +
           tagline +
+          '</div>' +
           fitLine +
           basePrice +
           deliveryLine +
@@ -737,8 +747,8 @@
       var summary = selectionSummary(pkgId);
       var prefix =
         lang === 'ar'
-          ? 'مرحباً، أود تأكيد باقة من GH Direct:\\n\\n'
-          : 'Hello — I want to confirm a GH Direct package:\\n\\n';
+          ? 'مرحباً، أود تأكيد باقة من GH Direct:\n\n'
+          : 'Hello — I want to confirm a GH Direct package:\n\n';
       a.href =
         'https://wa.me/' +
         waPhone() +

@@ -482,7 +482,7 @@ window.GH_DIRECT = {
         ar: 'إدارة إعلانات جوجل وميتا — ميزانية الإعلان منفصلة عن رسوم الإدارة.',
         en: 'Google and Meta ads management — ad spend separate from the management fee.',
       },
-      price: 20000,
+      price: 12000,
       unit: 'month',
       priceLabel: 'from',
       media: { type: 'image', src: 'assets/projects/animation/real-estate-services.webp' },
@@ -506,10 +506,10 @@ window.GH_DIRECT = {
       group: 'physical',
       name: { ar: 'مجسم معماري (مبنى مفرد)', en: 'Architectural maquette (single building)' },
       description: {
-        ar: 'مجسم فيزيائي بمقياس رسمي، مع إضاءة أساسية للواجهة.',
-        en: 'Physical scale model with basic façade lighting.',
+        ar: 'مجسم عرض بمقياس رسمي وإضاءة واجهة — السعر يبدأ من حسب المقياس والتفاصيل (ليس مجسم مفهوم رخيص).',
+        en: 'Sales-grade scale model with façade lighting — starting price depends on scale and detail (not a cheap concept model).',
       },
-      price: 15300,
+      price: 28500,
       unit: null,
       priceLabel: 'from',
       media: {
@@ -523,10 +523,10 @@ window.GH_DIRECT = {
       group: 'physical',
       name: { ar: 'مجسم معماري (مخطط عام)', en: 'Architectural maquette (masterplan)' },
       description: {
-        ar: 'مجسم كامل متعدد المباني بإضاءة وتفاصيل محيطة.',
-        en: 'Full multi-building model with lighting and surrounding detail.',
+        ar: 'مجسم مخطط عام متعدد المباني بإضاءة وسياق — يبدأ من حسب المساحة ومستوى التفاصيل.',
+        en: 'Multi-building masterplan model with lighting and context — from price depends on footprint and detail.',
       },
-      price: 61200,
+      price: 98000,
       unit: null,
       priceLabel: 'from',
       media: {
@@ -557,10 +557,10 @@ window.GH_DIRECT = {
       group: 'physical',
       name: { ar: 'تنفيذ وحدة نموذجية بالفرش (توريفا)', en: 'Furnished show unit (via Turriva)' },
       description: {
-        ar: 'تنفيذ كامل بالفرش والتشطيب لوحدة عرض حقيقية.',
-        en: 'Full furnish and finish of a real show unit.',
+        ar: 'تنفيذ كامل بالفرش والتشطيب لوحدة عرض حقيقية — يبدأ من حسب المساحة.',
+        en: 'Full furnish and finish of a real show unit — from price by area.',
       },
-      price: 61000,
+      price: 72000,
       unit: 'area',
       priceLabel: 'from',
       media: { type: 'image', src: 'assets/projects/al-rajhi-naseem/int-guest-salon.webp' },
@@ -597,7 +597,7 @@ window.GH_DIRECT = {
         ar: 'انطلاقة بصرية خلال أسابيع قليلة بعد التأكيد',
         en: 'Visual kickoff within a few weeks after confirmation',
       },
-      price: 43500,
+      price: 45000,
       featured: false,
       includedServiceIds: ['identity-basic', 'drone-short'],
       includedLines: [
@@ -623,7 +623,7 @@ window.GH_DIRECT = {
         ar: 'حزمة إطلاق متكاملة على مراحل واضحة بعد التأكيد',
         en: 'A phased full-launch package after confirmation',
       },
-      price: 197000,
+      price: 195000,
       featured: true,
       includedServiceIds: ['identity-full', 'catalogue', 'drone-short', 'ground-photo', 'microsite', 'touchscreen'],
       includedLines: [
