@@ -477,16 +477,15 @@
             '</p></div>'
           : '';
 
-      var addonHtml = addonIdsFor(pkg)
-        .map(function (id) {
-          return addonRowHtml(pkg, id);
-        })
-        .join('');
-
-      var tot = computeTotal(pkg);
       var ctaClass = featured ? 'ghd-cta ghd-cta--solid' : 'ghd-cta ghd-cta--outline';
 
       if (builder) {
+        var tot = computeTotal(pkg);
+        var addonHtml = addonIdsFor(pkg)
+          .map(function (id) {
+            return addonRowHtml(pkg, id);
+          })
+          .join('');
         card.innerHTML =
           badge +
           '<header class="ghd-pkg-head">' +
@@ -526,43 +525,11 @@
           whyBox +
           '<button type="button" class="' +
           ctaClass +
-          '" data-select-pkg="' +
+          '" data-lead-pkg="' +
           escapeAttr(pkg.id) +
           '">' +
           escapeHtml(ui.choosePlan || ui.cta) +
-          '</button>' +
-          '<div class="ghd-pkg-upsell" data-upsell-for="' +
-          escapeAttr(pkg.id) +
-          '" hidden>' +
-          '<div class="ghd-upsell-head">' +
-          '<p class="ghd-addons-label">' +
-          escapeHtml(ui.optionalAddons || ui.add) +
-          '</p>' +
-          '<p class="ghd-upsell-lead">' +
-          escapeHtml(ui.optionalAddonsLead || '') +
-          '</p></div>' +
-          '<div class="ghd-addons" data-addons-for="' +
-          escapeAttr(pkg.id) +
-          '">' +
-          addonHtml +
-          '</div>' +
-          totalBoxHtml(pkg, tot) +
-          '<div class="ghd-upsell-actions">' +
-          '<button type="button" class="ghd-cta ghd-cta--solid" data-lead-pkg="' +
-          escapeAttr(pkg.id) +
-          '">' +
-          escapeHtml(ui.confirmPlan || ui.cta) +
-          '</button>' +
-          '<button type="button" class="ghd-cta ghd-cta--ghost" data-lead-pkg="' +
-          escapeAttr(pkg.id) +
-          '" data-skip-addons="1">' +
-          escapeHtml(ui.skipAddons || ui.cta) +
-          '</button>' +
-          '<button type="button" class="ghd-linkish" data-deselect-pkg="' +
-          escapeAttr(pkg.id) +
-          '">' +
-          escapeHtml(ui.changePlan || '') +
-          '</button></div></div>';
+          '</button>';
       }
 
       host.appendChild(card);
@@ -580,61 +547,11 @@
       });
     });
 
-    host.querySelectorAll('[data-select-pkg]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        selectBundle(btn.getAttribute('data-select-pkg'));
-      });
-    });
-
-    host.querySelectorAll('[data-deselect-pkg]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        deselectBundle(btn.getAttribute('data-deselect-pkg'));
-      });
-    });
-
     host.querySelectorAll('[data-lead-pkg]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var pkgId = btn.getAttribute('data-lead-pkg');
-        if (btn.getAttribute('data-skip-addons') === '1' && pkgId && addonState[pkgId]) {
-          addonState[pkgId].clear();
-          updatePackageUI(pkgId);
-        }
-        openLeadModal(pkgId);
+        openLeadModal(btn.getAttribute('data-lead-pkg'));
       });
     });
-  }
-
-  function selectBundle(pkgId) {
-    if (!pkgId) return;
-    document.querySelectorAll('.ghd-pkg--bundle').forEach(function (card) {
-      var id = card.getAttribute('data-package-id');
-      var upsell = card.querySelector('[data-upsell-for]');
-      var selectBtn = card.querySelector('[data-select-pkg]');
-      var on = id === pkgId;
-      card.classList.toggle('is-selected', on);
-      if (upsell) upsell.hidden = !on;
-      if (selectBtn) selectBtn.hidden = on;
-      if (on && upsell) {
-        upsell.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-    });
-  }
-
-  function deselectBundle(pkgId) {
-    var card = document.querySelector('.ghd-pkg[data-package-id="' + pkgId + '"]');
-    if (!card) return;
-    card.classList.remove('is-selected');
-    var upsell = card.querySelector('[data-upsell-for]');
-    var selectBtn = card.querySelector('[data-select-pkg]');
-    if (upsell) upsell.hidden = true;
-    if (selectBtn) {
-      selectBtn.hidden = false;
-      selectBtn.focus();
-    }
-    if (addonState[pkgId]) {
-      addonState[pkgId].clear();
-      updatePackageUI(pkgId);
-    }
   }
 
   function updatePackageUI(pkgId) {
