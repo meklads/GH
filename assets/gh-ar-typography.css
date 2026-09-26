@@ -58,6 +58,11 @@ html[dir="rtl"]:not([lang="en"]) .gh-tool-page-wrap {
   font-family: var(--gh-ar-font);
 }
 
+html[lang="ar"] .material-symbols-outlined,
+html[dir="rtl"]:not([lang="en"]) .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+}
+
 html[lang="ar"] body.gh-insights,
 html[lang="ar"] body.pf-page,
 html[lang="ar"] body.gh-home,

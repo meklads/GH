@@ -364,10 +364,8 @@ body:has(.nav-mega-item.is-open) .gh-float {
     background: rgba(255, 255, 255, 0.12) !important;
   }
   .header .nav .nav-chevron {
-    font-size: 14px !important;
-    opacity: 0.5;
+    opacity: 0.55;
     margin-inline-start: 2px;
-    translate: 0 0.5px;
   }
   .nav-actions {
     grid-area: actions;
@@ -655,15 +653,53 @@ html[dir="rtl"] .nav-link {
 }
 
 .nav-chevron {
-  font-size: 15px !important;
-  opacity: 0.55;
-  margin-inline-start: 1px;
+  /* Never show "expand_more" ligature as English text if icon font fails */
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-inline-start: 3px;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  overflow: hidden;
+  vertical-align: middle;
+  opacity: 0.65;
   transition: transform 0.28s ease, opacity 0.28s ease;
+}
+.nav-chevron::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block-start: 45%;
+  width: 0;
+  height: 0;
+  margin-inline-start: -4px;
+  margin-block-start: -2px;
+  border-inline-start: 4px solid transparent;
+  border-inline-end: 4px solid transparent;
+  border-block-start: 5px solid rgba(255, 255, 255, 0.75);
 }
 .nav-mega-item:hover .nav-chevron,
 .nav-mega-item.is-open .nav-chevron {
   transform: rotate(180deg);
-  opacity: 0.9;
+  opacity: 0.95;
+}
+
+/* Material icons — never inherit Tajawal/body fonts */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ----- Mega item wrapper ----- */
@@ -992,7 +1028,10 @@ html[dir="rtl"] .nav-cta {
   }
   .nav-chevron {
     transition: transform 0.25s ease;
-    color: var(--header-gold);
+    opacity: 0.85;
+  }
+  .nav-chevron::after {
+    border-block-start-color: var(--header-gold);
   }
 
   .nav-mobile-cta {
