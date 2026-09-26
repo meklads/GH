@@ -31,14 +31,21 @@
 }
 
 .gh-home-eco__eyebrow {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  color: rgba(245, 245, 243, 0.55);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(245, 245, 243, 0.78);
   display: block;
   margin-bottom: 14px;
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', 'Inter', sans-serif;
   text-transform: uppercase;
+}
+
+html[dir='rtl'] .gh-home-eco__eyebrow,
+.gh-home-eco[dir='rtl'] .gh-home-eco__eyebrow {
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 14px;
 }
 
 .gh-home-eco__systems .gh-home-eco__head h2 {
@@ -58,11 +65,11 @@
 }
 
 .gh-home-eco__systems .gh-home-eco__head p {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
-  color: rgba(245, 245, 243, 0.72);
+  color: rgba(245, 245, 243, 0.88);
   margin: 18px auto 0;
-  max-width: 580px;
+  max-width: 600px;
   line-height: 1.75;
 }
 
@@ -177,7 +184,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(245, 245, 243, 0.62);
+  color: rgba(245, 245, 243, 0.82);
 }
 
 html[dir='rtl'] .gh-home-eco-ticket__phase,
@@ -191,24 +198,24 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
+  width: 68px;
+  height: 68px;
   margin-bottom: 18px;
-  color: #f5f5f3;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fafaf8;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .gh-home-eco-ticket:hover .gh-home-eco-ticket__icon {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.38);
   transform: translateY(-2px);
 }
 
 .gh-home-eco-ticket__icon svg {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   display: block;
 }
 
@@ -217,9 +224,9 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
 }
 
 .gh-home-eco-ticket__title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: rgba(245, 245, 243, 0.7);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fafaf8;
   margin: 0 0 6px;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -228,14 +235,14 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
 }
 
 .gh-home-eco-ticket:hover .gh-home-eco-ticket__title {
-  color: #fafaf8;
+  color: #ffffff;
 }
 
 .gh-home-eco-ticket__title-local {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: rgba(245, 245, 243, 0.92);
+  color: rgba(245, 245, 243, 0.96);
   line-height: 1.35;
   font-family: inherit;
 }
@@ -252,7 +259,7 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   font-size: 0.42em;
-  color: rgba(245, 245, 243, 0.65);
+  color: rgba(245, 245, 243, 0.8);
   vertical-align: super;
   position: relative;
   top: -0.15em;
@@ -267,9 +274,9 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
 .gh-home-eco-ticket__body,
 .gh-home-eco-card__desc,
 .gh-home-eco-institutional__sub {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
-  color: rgba(245, 245, 243, 0.82);
+  color: rgba(245, 245, 243, 0.9);
   margin: 0;
   line-height: 1.7;
 }
@@ -282,14 +289,14 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  color: #f5f5f3;
+  color: #fafaf8;
   margin-top: 22px;
 }
 
 .gh-home-eco-ticket__cta .material-symbols-outlined {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .gh-home-eco[dir='rtl'] .gh-home-eco-ticket__cta .material-symbols-outlined {
@@ -326,11 +333,11 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
 }
 
 .gh-home-eco__label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.72);
   margin: 0 0 14px;
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', 'Inter', sans-serif;
 }
@@ -339,7 +346,7 @@ html[dir='rtl'] .gh-home-eco__label,
 .gh-home-eco[dir='rtl'] .gh-home-eco__label {
   letter-spacing: 0.04em;
   text-transform: none;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .gh-home-eco__institutional {
@@ -353,19 +360,29 @@ html[dir='rtl'] .gh-home-eco__label,
   padding: 22px 26px;
   text-decoration: none;
   background: #121212;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   transition: border-color 0.3s ease, background 0.3s ease;
 }
 
 .gh-home-eco-institutional:hover {
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.38);
   background: #161616;
 }
 
-.gh-home-eco-institutional__icon {
-  font-size: 36px;
-  color: #f5f5f3;
+.gh-home-eco-institutional__icon-wrap {
   flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fafaf8;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.gh-home-eco-institutional__icon-wrap .material-symbols-outlined {
+  font-size: 28px;
   line-height: 1;
 }
 
@@ -378,7 +395,7 @@ html[dir='rtl'] .gh-home-eco__label,
 }
 
 .gh-home-eco-institutional__title {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
   line-height: 1.25;
@@ -388,11 +405,15 @@ html[dir='rtl'] .gh-home-eco__label,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #f5f5f3;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fafaf8;
   flex-shrink: 0;
   white-space: nowrap;
+}
+
+.gh-home-eco-institutional__cta .material-symbols-outlined {
+  font-size: 18px;
 }
 
 .gh-home-eco[dir='rtl'] .gh-home-eco-institutional__cta .material-symbols-outlined {
@@ -418,11 +439,11 @@ html[dir='rtl'] .gh-home-eco__label,
 
 .gh-home-eco__services-eyebrow {
   display: block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(20, 20, 20, 0.45);
+  color: rgba(20, 20, 20, 0.62);
   margin-bottom: 12px;
   font-family: 'Tajawal', 'IBM Plex Sans Arabic', 'Inter', sans-serif;
 }
@@ -431,7 +452,7 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
 .gh-home-eco[dir='rtl'] .gh-home-eco__services-eyebrow {
   letter-spacing: 0.04em;
   text-transform: none;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .gh-home-eco__services-title {
@@ -446,9 +467,9 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
 
 .gh-home-eco__services-lead {
   margin: 14px auto 0;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
-  color: rgba(20, 20, 20, 0.62);
+  color: rgba(20, 20, 20, 0.78);
   line-height: 1.7;
   max-width: 36rem;
 }
@@ -456,18 +477,19 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
 .gh-home-eco__disciplines {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 16px;
 }
 
 .gh-home-eco__services .gh-home-eco-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   padding: 28px 24px 22px;
   text-decoration: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(20, 20, 20, 0.08);
+  border: 1px solid rgba(20, 20, 20, 0.1);
   height: 100%;
   color: #141414;
   box-shadow: 0 8px 28px rgba(20, 20, 20, 0.04);
@@ -477,10 +499,10 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
   position: absolute;
   inset-block-start: 16px;
   inset-inline-end: 16px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: rgba(20, 20, 20, 0.35);
+  color: rgba(20, 20, 20, 0.45);
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   font-variant-numeric: tabular-nums;
   direction: ltr;
@@ -488,8 +510,8 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
 }
 
 .gh-home-eco__services .gh-home-eco-card:hover {
-  border-color: rgba(20, 20, 20, 0.28);
-  box-shadow: 0 16px 40px rgba(20, 20, 20, 0.08);
+  border-color: rgba(20, 20, 20, 0.32);
+  box-shadow: 0 16px 40px rgba(20, 20, 20, 0.09);
   transform: translateY(-2px);
 }
 
@@ -497,25 +519,31 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
   color: #0a0a0a;
 }
 
-.gh-home-eco__services .gh-home-eco-card__icon {
-  width: 42px;
-  height: 42px;
-  display: block;
-  margin-bottom: 14px;
-  object-fit: contain;
-  filter: grayscale(1) contrast(1.05);
+.gh-home-eco__services .gh-home-eco-card__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+  color: #141414;
+  background: rgba(20, 20, 20, 0.05);
+  border: 1px solid rgba(20, 20, 20, 0.14);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-.gh-home-eco__services .gh-home-eco-card__icon-ms {
-  font-size: 40px;
-  color: #141414;
-  display: block;
-  margin-bottom: 14px;
+.gh-home-eco__services .gh-home-eco-card:hover .gh-home-eco-card__icon-wrap {
+  background: rgba(20, 20, 20, 0.08);
+  border-color: rgba(20, 20, 20, 0.28);
+}
+
+.gh-home-eco__services .gh-home-eco-card__icon-wrap .material-symbols-outlined {
+  font-size: 28px;
   line-height: 1;
 }
 
 .gh-home-eco__services .gh-home-eco-card__title {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #141414;
   margin: 0 0 10px;
@@ -528,19 +556,24 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
 .gh-home-eco__services .gh-home-eco-card__desc {
   font-size: 15px;
   font-weight: 400;
-  color: rgba(20, 20, 20, 0.62);
+  color: rgba(20, 20, 20, 0.78);
   line-height: 1.7;
   margin: 0;
+  flex: 1;
 }
 
 .gh-home-eco__services .gh-home-eco-card__cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   color: #141414;
   margin-top: 18px;
+}
+
+.gh-home-eco__services .gh-home-eco-card__cta .material-symbols-outlined {
+  font-size: 18px;
 }
 
 .gh-home-eco[dir='rtl'] .gh-home-eco__services .gh-home-eco-card__cta .material-symbols-outlined {
