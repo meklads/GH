@@ -390,12 +390,15 @@ ${analyticsHeadTags(P)}
 <meta property="og:description" content="${esc(t.description)}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${BASE}/${OG_IMG}">
-<link rel="stylesheet" href="${P}assets/site-header.css?v=57">
+<link rel="stylesheet" href="${P}assets/site-header.css?v=60">
 <link rel="stylesheet" href="${P}assets/gh-float-widgets.css?v=8">
+<link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=41">
 <link rel="stylesheet" href="${P}assets/gh-branding-service.css?v=${CSS_V}">
 <link href="${isEn ? 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Tajawal:wght@200;300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap' : 'https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap'}" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+${isEn ? `<link rel="stylesheet" href="${P}assets/gh-en-typography.css?v=3">` : `<link rel="stylesheet" href="${P}assets/gh-ar-typography.css?v=3">`}
+<link rel="stylesheet" href="${P}assets/gh-footer-lock.css?v=5" data-gh-footer-lock="1">
 <script type="application/ld+json">${schema}</script>
 </head>
 <body class="bid-page" data-gh-service="branding">
