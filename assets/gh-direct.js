@@ -113,10 +113,43 @@
 
   function formatNum(n) {
     try {
-      return new Intl.NumberFormat(lang === 'ar' ? 'ar-SA' : 'en-US').format(n);
+      return new Intl.NumberFormat('en-US', { numberingSystem: 'latn' }).format(n);
     } catch (e) {
-      return String(n);
+      try {
+        return new Intl.NumberFormat('en-US').format(n);
+      } catch (e2) {
+        return String(n);
+      }
     }
+  }
+
+  function mediaMarkup(svc, opts) {
+    opts = opts || {};
+    var m = svc && svc.media;
+    var src = mediaUrl(m && m.src);
+    var poster = mediaUrl(m && m.poster);
+    var ph =
+      m && m.placeholder
+        ? '<span class="ghd-ph-badge">[PLACEHOLDER]</span>'
+        : '';
+    if (m && m.type === 'video' && src) {
+      return (
+        ph +
+        '<video class="ghd-media-el" src="' +
+        escapeAttr(src) +
+        '"' +
+        (poster ? ' poster="' + escapeAttr(poster) + '"' : '') +
+        ' muted loop playsinline preload="metadata"' +
+        (opts.autoplay ? ' autoplay' : '') +
+        '></video>'
+      );
+    }
+    return (
+      ph +
+      '<img class="ghd-media-el" src="' +
+      escapeAttr(src) +
+      '" alt="" loading="lazy" decoding="async" width="640" height="400">'
+    );
   }
 
   function unitSuffix(unit) {
@@ -192,18 +225,11 @@
       btn.className = 'ghd-svc-card';
       btn.setAttribute('data-service-id', svc.id);
       btn.setAttribute('aria-haspopup', 'dialog');
-      var ph = svc.media && svc.media.placeholder
-        ? '<span class="ghd-ph-badge">[PLACEHOLDER]</span>'
-        : '';
-      var src = mediaUrl(svc.media && svc.media.src);
       var num = String(idx + 1).padStart(2, '0');
       var unpriced = svc.price == null || svc.priceLabel === 'contact';
       btn.innerHTML =
         '<div class="ghd-svc-media">' +
-        ph +
-        '<img src="' +
-        escapeAttr(src) +
-        '" alt="" loading="lazy" decoding="async" width="640" height="400">' +
+        mediaMarkup(svc, { autoplay: true }) +
         '<span class="ghd-svc-num" aria-hidden="true">' +
         num +
         '</span></div>' +
@@ -554,22 +580,31 @@
     var svc = serviceById[id];
     if (!svc || !serviceModal) return;
     lastFocus = document.activeElement;
-    var img = serviceModal.querySelector('[data-ghd-media]');
+    var mediaHost = serviceModal.querySelector('.ghd-modal-media');
     var title = serviceModal.querySelector('[data-ghd-title]');
     var desc = serviceModal.querySelector('[data-ghd-desc]');
     var price = serviceModal.querySelector('[data-ghd-price]');
     var ph = serviceModal.querySelector('[data-ghd-ph]');
-    if (img) {
-      img.src = mediaUrl(svc.media && svc.media.src);
-      img.alt = t(svc.name);
+    if (mediaHost) {
+      mediaHost.innerHTML = mediaMarkup(svc, { autoplay: true });
+      var el = mediaHost.querySelector('.ghd-media-el');
+      if (el && el.tagName === 'IMG') el.alt = t(svc.name);
+      if (el && el.tagName === 'VIDEO') {
+        try {
+          el.play();
+        } catch (e) {}
+      }
     }
     if (title) title.textContent = t(svc.name);
     if (desc) desc.textContent = t(svc.description);
     if (price) {
       price.textContent = priceText(svc);
-      price.className = 'ghd-price' + (svc.price == null ? ' ghd-price-contact' : '');
+      price.className = 'ghd-price' + (svc.price == null || svc.priceLabel === 'contact' ? ' ghd-price-contact' : '');
     }
-    if (ph) ph.textContent = ui.placeholder;
+    if (ph) {
+      ph.textContent = svc.media && svc.media.placeholder ? ui.placeholder : '';
+      ph.hidden = !(svc.media && svc.media.placeholder);
+    }
     serviceModal.hidden = false;
     lockScroll(true);
     var closeBtn = serviceModal.querySelector('.ghd-modal-close');
@@ -583,6 +618,14 @@
 
   function closeServiceModal() {
     if (!serviceModal) return;
+    var mediaHost = serviceModal.querySelector('.ghd-modal-media');
+    if (mediaHost) {
+      mediaHost.querySelectorAll('video').forEach(function (v) {
+        try {
+          v.pause();
+        } catch (e) {}
+      });
+    }
     serviceModal.hidden = true;
     if (!leadModal || leadModal.hidden) lockScroll(false);
     if (lastFocus && lastFocus.focus) lastFocus.focus();
