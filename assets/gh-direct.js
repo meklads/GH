@@ -215,23 +215,78 @@
   }
 
   /* ---------- Catalog ---------- */
+  var catalogFilter = 'all';
+
+  function filteredServices() {
+    if (catalogFilter === 'all') return DATA.services.slice();
+    return DATA.services.filter(function (s) {
+      return (s.group || 'digital') === catalogFilter;
+    });
+  }
+
+  function renderCatalogFilters() {
+    var host = document.getElementById('ghd-catalog-filters');
+    if (!host) return;
+    var items = [
+      { id: 'all', label: ui.filterAll || (lang === 'ar' ? 'الكل' : 'All') },
+      { id: 'digital', label: ui.filterDigital || (lang === 'ar' ? 'رقمي' : 'Digital') },
+      { id: 'physical', label: ui.filterPhysical || (lang === 'ar' ? 'مادي' : 'Physical') },
+    ];
+    host.innerHTML = items
+      .map(function (item) {
+        return (
+          '<button type="button" class="ghd-filter' +
+          (catalogFilter === item.id ? ' is-active' : '') +
+          '" role="tab" aria-selected="' +
+          (catalogFilter === item.id ? 'true' : 'false') +
+          '" data-ghd-filter="' +
+          escapeAttr(item.id) +
+          '">' +
+          escapeHtml(item.label) +
+          '</button>'
+        );
+      })
+      .join('');
+    host.querySelectorAll('[data-ghd-filter]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        catalogFilter = btn.getAttribute('data-ghd-filter') || 'all';
+        renderCatalogFilters();
+        renderCatalog();
+      });
+    });
+  }
+
   function renderCatalog() {
     var grid = document.getElementById('ghd-catalog');
+    var empty = document.getElementById('ghd-catalog-empty');
     if (!grid) return;
     grid.innerHTML = '';
-    DATA.services.forEach(function (svc, idx) {
+    var list = filteredServices();
+    if (empty) {
+      empty.hidden = list.length > 0;
+      empty.textContent = ui.filterEmpty || '';
+    }
+    list.forEach(function (svc, idx) {
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'ghd-svc-card';
       btn.setAttribute('data-service-id', svc.id);
+      btn.setAttribute('data-group', svc.group || 'digital');
       btn.setAttribute('aria-haspopup', 'dialog');
       var num = String(idx + 1).padStart(2, '0');
       var unpriced = svc.price == null || svc.priceLabel === 'contact';
+      var groupLabel =
+        (svc.group || 'digital') === 'physical'
+          ? ui.filterPhysical || (lang === 'ar' ? 'مادي' : 'Physical')
+          : ui.filterDigital || (lang === 'ar' ? 'رقمي' : 'Digital');
       btn.innerHTML =
         '<div class="ghd-svc-media">' +
         mediaMarkup(svc, { autoplay: true }) +
         '<span class="ghd-svc-num" aria-hidden="true">' +
         num +
+        '</span>' +
+        '<span class="ghd-svc-chip">' +
+        escapeHtml(groupLabel) +
         '</span></div>' +
         '<div class="ghd-svc-body">' +
         '<h3>' +
@@ -1071,6 +1126,7 @@
   function init() {
     renderEnterprise();
     renderHero();
+    renderCatalogFilters();
     renderCatalog();
     renderPackages();
     renderFaq();
