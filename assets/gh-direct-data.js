@@ -84,7 +84,7 @@ window.GH_DIRECT = {
       priceDriversTitle: 'عوامل تقدير السعر',
       priceDrivers:
         'نطاق البنود، درجة تعقيد المشروع، مستوى التفاصيل، وعدد جولات المراجعة. يُثبَّت السعر النهائي عند التأكيد.',
-      proofTitle: 'أعمال منفَّذة',
+      proofTitle: 'مشاريع جعلناها تُرى',
       proofLead: 'نماذج من مشاريع نُفّذت لمطورين في المملكة والمنطقة.',
       proofBrowse: 'معرض الأعمال',
       proofCases: 'دراسات الحالة',
@@ -247,7 +247,7 @@ window.GH_DIRECT = {
       priceDriversTitle: 'Pricing factors',
       priceDrivers:
         'Scope of items, project complexity, detail level, and revision rounds. Final pricing is confirmed after review.',
-      proofTitle: 'Selected work',
+      proofTitle: 'Projects we made visible',
       proofLead: 'Examples of work delivered for developers in Saudi Arabia and the region.',
       proofBrowse: 'Portfolio',
       proofCases: 'Case studies',

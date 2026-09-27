@@ -379,15 +379,6 @@
       escapeHtml(ui.proofCases || '') +
       ' <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span></a>' +
       '</div>';
-
-    var track = document.getElementById('ghd-proof-track');
-    if (track) {
-      Array.prototype.slice.call(track.children).forEach(function (node) {
-        var clone = node.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
-        track.appendChild(clone);
-      });
-    }
   }
 
   function renderAtelierEntry() {
