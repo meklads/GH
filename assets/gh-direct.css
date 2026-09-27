@@ -2307,8 +2307,9 @@ body.ghd-modal-open { overflow: hidden; }
   .ghd-atelier-mark {
     display: none;
   }
-  .ghd-atelier-ctas {
-    grid-template-columns: 1fr;
+  .ghd-atelier-ctas .ghd-cta--primary {
+    flex: 1 1 100%;
+    width: 100%;
   }
 }
 
