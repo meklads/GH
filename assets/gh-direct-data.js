@@ -77,7 +77,7 @@ window.GH_DIRECT = {
         sales: 'بيع ونمو',
       },
       packagesTitle: 'الباقات',
-      packagesLead: 'نواة للتعريف · انطلاق للبناء · توقيع للإطلاق والبيع.',
+      packagesLead: 'ليست بعدد الصور — بل بجاهزية مشروعك للحظة الحالية: تعريف، بناء، أو إطلاق وبيع.',
       packagesFoot: 'تقدير يبدأ من · يُثبَّت عند التأكيد',
       stageLabel: 'اللحظة',
       stagePrefix: '',
@@ -104,8 +104,11 @@ window.GH_DIRECT = {
       closeLead: 'اختر باقة أعلاه، أو تواصل معنا عبر واتساب. نرد خلال يوم عمل واحد.',
       closeCtaPkg: 'عرض الباقات',
       closeCtaWa: 'تواصل عبر واتساب',
-      fitLabel: 'الأنسب لـ',
+      fitLabel: 'مناسبة لك إذا',
+      outcomeLabel: 'بعد التسليم',
       deliveryLabel: 'التسليم',
+      scopePrice: 'يُحدَّد حسب النطاق',
+      scopeNote: 'يُثبَّت حسب النطاق',
       rangeInTotal: 'يشمل بنوداً بنطاق سعري — يُؤكَّد عند التواصل',
       selectedCount: 'محدد',
       svcRequest: 'اطلب هذه الخدمة',
@@ -180,40 +183,60 @@ window.GH_DIRECT = {
       faqTitle: 'الأسئلة الشائعة',
       faq: [
         {
-          q: 'هل تبيع Graphics House العقار؟',
-          a: 'لا. نقدّم أصول العرض والمبيعات: إظهاراً معمارياً، أفلام CGI، مواقع إلكترونية، مجسمات، وأدوات صالة المبيعات.',
+          q: 'ماذا يعني «يبدأ من»؟',
+          a: 'رقم دخول معلن لنطاق الباقة كما هو مكتوب. السعر النهائي يُثبَّت بعد مراجعة المخطط والجدول والمتطلبات — خلال يوم عمل عادة.',
         },
         {
           q: 'هل الأسعار نهائية؟',
-          a: 'الأرقام المعروضة تقدير «يبدأ من». نؤكّد نطاق العمل والسعر النهائي خلال يوم عمل بعد مراجعة المشروع.',
+          a: 'لا كفاتورة فورية. هي تقدير يبدأ من، ثم نؤكّد النطاق والسعر كتابةً قبل أي التزام.',
         },
         {
           q: 'هل يتوفّر دفع إلكتروني؟',
-          a: 'لا. الصفحة مخصّصة للاختيار والتقدير. يتم التأكيد والتسعير النهائي عبر التواصل — واتساب أو نموذج الطلب.',
+          a: 'لا. الصفحة للاختيار والتقدير. التأكيد والتسعير النهائي عبر واتساب أو نموذج الطلب.',
         },
         {
-          q: 'كيف ترتبط الباقات بمراحل المشروع؟',
-          a: 'تعريف → نواة. بناء → انطلاق. إطلاق وبيع → توقيع. اختر وفق لحظة مشروعك اليوم.',
+          q: 'كيف أختار بين نواة وانطلاق وتوقيع؟',
+          a: 'تعريف → نواة. بناء → انطلاق. إطلاق وبيع → توقيع. اقرأ جملة «مناسبة لك إذا» تحت كل باقة.',
         },
         {
-          q: 'متى يُفضَّل أتيليه؟',
-          a: 'عند الحاجة إلى اختيار بنود محددة بدل الباقة الجاهزة. يُحدَّث الإجمالي مع كل إضافة، ثم نراجع الاختيار معكم.',
+          q: 'هل يمكن تبديل بنود الباقة؟',
+          a: 'نعم ضمن حدود معقولة قبل التأكيد. الزيادة أو الاستبدال الجوهري يُسعَّر كبند مكتوب.',
         },
         {
-          q: 'هل يمكن تعديل الباقة لاحقاً؟',
-          a: 'نعم. الباقة نقطة انطلاق؛ نضبط البنود قبل التأكيد النهائي.',
+          q: 'هل أستطيع طلب خدمة واحدة فقط؟',
+          a: 'نعم عبر كتالوج الخدمات أو عبر الأتيليه إن أردت مزيجاً مخصصاً.',
         },
         {
-          q: 'هل الأرقام قابلة للتفاوض؟',
-          a: 'نعم ضمن نطاق مهني معقول. الرقم المعروض «يبدأ من»، ويُثبَّت السعر النهائي بعد فهم متطلبات المشروع.',
+          q: 'ماذا يحدث بعد إرسال الطلب؟',
+          a: 'نراجع الاختيار خلال يوم عمل، نؤكّد النطاق والسعر، ثم نضع خطة التسليم.',
         },
         {
-          q: 'ما مدة الرد؟',
-          a: 'نرد عادة خلال يوم عمل واحد لتأكيد النطاق والجدول والسعر.',
+          q: 'كم جولة مراجعة مشمولة؟',
+          a: 'جولتان للمراجعات ضمن باقات نواة وانطلاق وتوقيع كما هو مذكور في البنود. ما زاد يُسعَّر عند الحاجة.',
+        },
+        {
+          q: 'هل تعملون على موديل 3D جاهز؟',
+          a: 'نعم إن كان الموديل صالحاً للإنتاج. نراجع الملفات أولاً ونوضّح إن لزم إعادة بناء أو تحسين.',
+        },
+        {
+          q: 'هل يمكن تنفيذ المشروع على مراحل؟',
+          a: 'نعم. كثيراً ما نبدأ بنواة أو انطلاق ثم نرتقي عند جاهزية البيع.',
+        },
+        {
+          q: 'متى يُفضَّل الأتيليه؟',
+          a: 'عندما تعرف بنوداً محددة ولا تريد الباقة كاملة. يظهر تقدير أولي، ثم نثبّت النطاق معاً.',
+        },
+        {
+          q: 'هل تبيع Graphics House العقار؟',
+          a: 'لا. نقدّم أصول العرض والبيع: إظهاراً، أفلام CGI، مواقع، مجسمات، وأدوات صالة المبيعات.',
+        },
+        {
+          q: 'هل تشمل الأسعار ضريبة القيمة المضافة؟',
+          a: 'الأرقام المعروضة تقدير قبل الضريبة ما لم يُذكر خلاف ذلك عند التأكيد الرسمي.',
         },
         {
           q: 'هل تناسب المشاريع المؤسسية الكبرى؟',
-          a: 'للمشاريع المؤسسية والمخططات واسعة النطاق يُفضَّل مسار ProjectLaunch™ الاستشاري بدل الاختيار الذاتي.',
+          a: 'للمخططات واسعة النطاق والمؤسسية يُفضَّل مسار ProjectLaunch™ الاستشاري.',
         },
       ],
     },
@@ -246,7 +269,7 @@ window.GH_DIRECT = {
         sales: 'Sales & Growth',
       },
       packagesTitle: 'Packages',
-      packagesLead: 'Core to Define · Launch to Build · Signature to Launch & Sell.',
+      packagesLead: 'Not by image count — by readiness for your moment: Define, Build, or Launch & Sell.',
       packagesFoot: 'Starting-from · locked at confirmation',
       stageLabel: 'Moment',
       stagePrefix: '',
@@ -272,8 +295,11 @@ window.GH_DIRECT = {
       closeLead: 'Select a package above, or contact us on WhatsApp. We reply within one business day.',
       closeCtaPkg: 'View packages',
       closeCtaWa: 'Contact on WhatsApp',
-      fitLabel: 'Best for',
+      fitLabel: 'Best for you if',
+      outcomeLabel: 'After delivery',
       deliveryLabel: 'Delivery',
+      scopePrice: 'Priced to scope',
+      scopeNote: 'finalised to scope',
       rangeInTotal: 'Includes ranged items — confirmed when we talk',
       selectedCount: 'selected',
       svcRequest: 'Request this service',
@@ -348,40 +374,60 @@ window.GH_DIRECT = {
       faqTitle: 'Frequently asked questions',
       faq: [
         {
-          q: 'Does Graphics House sell the real estate?',
-          a: 'No. We deliver sales and presentation assets: architectural visualization, CGI film, project sites, maquettes, and sales-gallery tools.',
+          q: 'What does “from” mean?',
+          a: 'A published entry figure for the package scope as written. Final pricing is locked after we review drawings, timeline, and requirements — usually within one business day.',
         },
         {
           q: 'Are these final prices?',
-          a: 'Published figures are starting-from estimates. We confirm scope and final pricing within one business day after reviewing the project.',
+          a: 'Not an instant invoice. They are starting-from estimates; we confirm scope and price in writing before any commitment.',
         },
         {
           q: 'Is online checkout available?',
-          a: 'No. This page is for selection and estimation. Confirmation and final pricing take place by WhatsApp or request form.',
+          a: 'No. This page is for selection and estimation. Confirmation and final pricing happen via WhatsApp or the request form.',
         },
         {
-          q: 'How do packages map to project stages?',
-          a: 'Define → Core. Build → Launch. Launch & Sell → Signature. Choose according to your project moment today.',
+          q: 'How do I choose between Core, Launch, and Signature?',
+          a: 'Define → Core. Build → Launch. Launch & Sell → Signature. Read the “Best for you if” line under each package.',
+        },
+        {
+          q: 'Can package line items be swapped?',
+          a: 'Yes within reasonable bounds before confirmation. Material additions or substitutions are priced as written line items.',
+        },
+        {
+          q: 'Can I request a single service only?',
+          a: 'Yes via the service catalog, or via Atelier if you need a custom mix.',
+        },
+        {
+          q: 'What happens after I submit a request?',
+          a: 'We review within one business day, confirm scope and price, then issue a delivery plan.',
+        },
+        {
+          q: 'How many revision rounds are included?',
+          a: 'Two revision rounds within Core, Launch, and Signature as listed. Extra rounds are priced if needed.',
+        },
+        {
+          q: 'Do you work from an existing 3D model?',
+          a: 'Yes when the model is production-ready. We review files first and state if rebuild or cleanup is required.',
+        },
+        {
+          q: 'Can work be delivered in phases?',
+          a: 'Yes. Many projects begin with Core or Launch, then step up when sales readiness is required.',
         },
         {
           q: 'When is Atelier preferable?',
-          a: 'When specific line items are required instead of a ready package. The total updates with each addition, then we review the selection with you.',
+          a: 'When you know specific line items and do not need a full package. You see a preliminary estimate, then we lock scope together.',
         },
         {
-          q: 'Can the package be adjusted later?',
-          a: 'Yes. A package is a starting point; we refine line items before final confirmation.',
+          q: 'Does Graphics House sell the real estate?',
+          a: 'No. We deliver sales and presentation assets: visualization, CGI film, sites, maquettes, and sales-gallery tools.',
         },
         {
-          q: 'Are figures negotiable?',
-          a: 'Yes within a professional range. The page shows starting-from estimates; final pricing is locked after project requirements are understood.',
-        },
-        {
-          q: 'What is the response time?',
-          a: 'Typically within one business day to confirm scope, schedule, and price.',
+          q: 'Do prices include VAT?',
+          a: 'Published figures are pre-tax estimates unless otherwise stated at formal confirmation.',
         },
         {
           q: 'Is this suitable for major institutional projects?',
-          a: 'For institutional work and large-scale masterplans, the consultative ProjectLaunch™ path is preferred over self-serve selection.',
+          a: 'For large-scale and institutional masterplans, the consultative ProjectLaunch™ path is preferred.',
         },
       ],
     },
@@ -542,8 +588,8 @@ services: [
       family: 'cgi',
       name: { ar: 'فيلم CGI سينمائي', en: 'Cinematic CGI film' },
       description: {
-        ar: 'فيلم CGI سينمائي ثلاثي الأبعاد لإطلاق المشروع. السعر من 25,000 إلى 150,000 ر.س بحسب طبيعة الفيلم، مستوى المؤثرات، وتعقيد المشهد المعماري.',
-        en: 'Cinematic 3D CGI film for project launch. From 25,000 to 150,000 SAR — shaped by the film’s nature, VFX level, and architectural complexity.',
+        ar: 'فيلم CGI سينمائي لإطلاق المشروع. النطاق يتحدّد بطبيعة الفيلم والمؤثرات وتعقيد المشهد — لذلك يُعرض كنطاق سعري لا كسعر سلعة ثابت.',
+        en: 'Cinematic CGI film for project launch. Scope depends on film nature, VFX, and scene complexity — shown as a range, not a fixed commodity price.',
       },
       price: 25000,
       priceTo: 150000,
@@ -575,12 +621,12 @@ services: [
       family: 'immersive',
       name: { ar: 'تجربة بيع تفاعلية', en: 'Interactive sales experience' },
       description: {
-        ar: 'بيئة ثلاثية الأبعاد تفاعلية من نماذج التصميم — تنقل حر وتخصيص تشطيبات لقرار أوضح.',
-        en: 'Interactive 3D environment from design models — free navigation and finish options for clearer decisions.',
+        ar: 'بيئة ثلاثية الأبعاد تفاعلية من نماذج التصميم — تنقل حر وتخصيص تشطيبات لقرار أوضح. يُسعَّر حسب النطاق.',
+        en: 'Interactive 3D environment from design models — free navigation and finish options for clearer decisions. Priced to scope.',
       },
       price: 37500,
       unit: null,
-      priceLabel: 'from',
+      priceLabel: 'scope',
       media: { type: 'image', src: 'assets/projects/maquettes/interactive-showroom-01.webp' },
     },
     {
@@ -588,12 +634,12 @@ services: [
       family: 'immersive',
       name: { ar: 'شاشة لمس تفاعلية', en: 'Interactive touchscreen' },
       description: {
-        ar: 'هاردوير شاشة لمس + تطبيق مخصص لاستعراض الوحدات والامتيازات وتوفر البيع.',
-        en: 'Touchscreen hardware + custom app for units, amenities, and availability.',
+        ar: 'هاردوير شاشة لمس + تطبيق مخصص لاستعراض الوحدات والامتيازات وتوفر البيع. يُسعَّر حسب النطاق والعتاد.',
+        en: 'Touchscreen hardware + custom app for units, amenities, and availability. Priced to scope and hardware.',
       },
       price: 52500,
       unit: null,
-      priceLabel: 'from',
+      priceLabel: 'scope',
       media: {
         type: 'video',
         src: 'assets/videos/interactive-touch-screen.mp4',
@@ -840,8 +886,12 @@ services: [
         en: 'Turn the approved vision into a clear visual language.',
       },
       fit: {
-        ar: 'عندما تحتاج تثبيت صورة المشروع قبل البناء الكامل',
-        en: 'When you need to lock the project image before full production',
+        ar: 'كانت الرؤية معتمدة وتحتاج حضوراً بصرياً أساسياً قبل التوسع في الإنتاج.',
+        en: 'The vision is approved and you need essential visual presence before scaling production.',
+      },
+      outcome: {
+        ar: 'صورة مشروع واضحة جاهزة للمشاركة الداخلية والعرض الأوّلي.',
+        en: 'A clear project image ready for internal alignment and early presentation.',
       },
       delivery: {
         ar: 'خلال أسابيع قليلة بعد تثبيت النطاق',
@@ -882,8 +932,12 @@ services: [
         en: 'Keep the project visually alive as it develops.',
       },
       fit: {
-        ar: 'عندما يحتاج المشروع حضوراً مستمراً قبل صالة البيع الكاملة',
-        en: 'When the project needs ongoing presence before a full sales gallery',
+        ar: 'كان المشروع يتطور وتحتاج سرداً بصرياً متسقاً وموقعاً للحملة قبل صالة كاملة.',
+        en: 'The project is developing and you need a consistent visual narrative and campaign site before a full gallery.',
+      },
+      outcome: {
+        ar: 'حضور بصري متصل جاهز للحملة والتواصل مع السوق.',
+        en: 'Connected visual presence ready for campaign and market communication.',
       },
       delivery: {
         ar: 'على مراحل واضحة بعد تثبيت النطاق',
@@ -930,8 +984,12 @@ services: [
         en: 'Turn the project into a complete sales experience.',
       },
       fit: {
-        ar: 'عندما تحتاج صالة وأدوات إقناع أمام العميل',
-        en: 'When you need a gallery and decision tools in front of the buyer',
+        ar: 'كنت تستعد للإطلاق أو البيع وتحتاج منظومة بصرية وتجريبية أمام العميل.',
+        en: 'You are preparing to launch or sell and need a visual and experiential system in front of the buyer.',
+      },
+      outcome: {
+        ar: 'منظومة بيع مترابطة تدعم العرض والإقناع في الصالة والقنوات الرقمية.',
+        en: 'A connected sales system that supports presentation and persuasion in gallery and digital channels.',
       },
       delivery: {
         ar: 'على مراحل واضحة بعد تثبيت النطاق',

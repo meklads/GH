@@ -161,8 +161,21 @@
   }
 
   function priceText(svc) {
+    if (svc.priceLabel === 'scope') {
+      if (svc.price != null && typeof svc.price === 'number') {
+        return (
+          ui.from +
+          ' ' +
+          formatNum(svc.price) +
+          ' ' +
+          currency +
+          (ui.scopeNote ? ' · ' + ui.scopeNote : '')
+        );
+      }
+      return ui.scopePrice || ui.contactPrice;
+    }
     if (svc.price == null || svc.priceLabel === 'contact') {
-      return ui.contactPrice;
+      return ui.scopePrice || ui.contactPrice;
     }
     if (svc.priceTo != null && typeof svc.priceTo === 'number') {
       return (
@@ -563,6 +576,22 @@
         ? '<p class="ghd-pkg-purpose-line">' + escapeHtml(t(pkg.tagline)) + '</p>'
         : '';
 
+      var fitLine = pkg.fit
+        ? '<p class="ghd-pkg-fitline"><span class="ghd-pkg-meta-label">' +
+          escapeHtml(ui.fitLabel || '') +
+          '</span> ' +
+          escapeHtml(t(pkg.fit)) +
+          '</p>'
+        : '';
+
+      var outcomeLine = pkg.outcome
+        ? '<p class="ghd-pkg-outcome"><span class="ghd-pkg-meta-label">' +
+          escapeHtml(ui.outcomeLabel || '') +
+          '</span> ' +
+          escapeHtml(t(pkg.outcome)) +
+          '</p>'
+        : '';
+
       var priceBlock =
         '<div class="ghd-pkg-priceblock">' +
         '<span class="ghd-pkg-price-from">' +
@@ -614,6 +643,8 @@
         '<div class="ghd-pkg-top">' +
         nameEl +
         purposeLine +
+        fitLine +
+        outcomeLine +
         priceBlock +
         '</div>' +
         lines +

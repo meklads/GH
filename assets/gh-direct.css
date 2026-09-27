@@ -2263,12 +2263,34 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   color: rgba(20, 20, 20, 0.48);
 }
 .ghd-pkg-purpose-line {
-  margin: 0 0 14px;
-  font-size: 14px;
-  line-height: 1.55;
-  font-weight: 500;
-  color: rgba(20, 20, 20, 0.72);
-  max-width: 22rem;
+  margin: 0 0 10px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #1a1a1a;
+  max-width: 24rem;
+}
+.ghd-pkg-fitline,
+.ghd-pkg-outcome {
+  margin: 0 0 8px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(20, 20, 20, 0.62);
+  max-width: 24rem;
+  text-align: start;
+}
+.ghd-pkg-meta-label {
+  display: inline;
+  font-weight: 700;
+  color: var(--ghd-gold-dark, #a8892e);
+  letter-spacing: 0.01em;
+}
+.ghd-pkg-fitline {
+  margin-bottom: 6px;
+}
+.ghd-pkg-outcome {
+  margin-bottom: 4px;
 }
 .ghd-pkg-desc,
 .ghd-pkg-tagline {
@@ -2281,7 +2303,9 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   justify-content: flex-start;
   gap: 8px;
   flex-wrap: wrap;
-  margin-top: 0;
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(14, 14, 14, 0.08);
   direction: ltr;
   unicode-bidi: isolate;
 }
@@ -2458,11 +2482,24 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   color: rgba(245, 245, 243, 0.5);
 }
 .ghd-pkg--featured .ghd-pkg-purpose-line {
-  color: rgba(245, 245, 243, 0.78);
+  color: rgba(245, 245, 243, 0.92);
+}
+.ghd-pkg--featured .ghd-pkg-fitline,
+.ghd-pkg--featured .ghd-pkg-outcome {
+  color: rgba(245, 245, 243, 0.68);
+}
+.ghd-pkg--featured .ghd-pkg-meta-label {
+  color: var(--ghd-gold);
+}
+.ghd-pkg--featured .ghd-pkg-outcome {
+  border-bottom-color: transparent;
 }
 .ghd-pkg--featured .ghd-pkg-price-main,
 .ghd-pkg--featured .ghd-pkg-price-suffix {
   color: #fff;
+}
+.ghd-pkg--featured .ghd-pkg-priceblock {
+  border-top-color: rgba(255, 255, 255, 0.12);
 }
 .ghd-pkg--featured .ghd-pkg-price-from {
   color: rgba(245, 245, 243, 0.55);
