@@ -607,7 +607,7 @@
         lines +
         '<div class="ghd-pkg-ctas">' +
         primaryCta +
-        '<a class="ghd-cta ghd-cta--link" data-pkg-wa="' +
+        '<a class="ghd-cta ghd-cta--outline" data-pkg-wa="' +
         escapeAttr(pkg.id) +
         '" href="#" target="_blank" rel="noopener noreferrer">' +
         escapeHtml(ui.wa) +
