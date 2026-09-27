@@ -58,9 +58,9 @@ window.GH_DIRECT = {
         brand: 'هوية',
         sales: 'بيع ونمو',
       },
-      packagesTitle: 'الباقات حسب لحظتك',
+      packagesTitle: 'ثلاثة قرارات حسب لحظة مشروعك',
       packagesLead:
-        'نواة للتعريف · انطلاق أثناء التنفيذ · توقيع للإطلاق والبيع — السعر يبدأ من رقم واضح، ويُثبَّت بعد فهم مشروعك.',
+        'كل باقة تجيب على سؤال مختلف. الرقم «يبدأ من» تقدير ابتدائي — النهائي بعد فهم مشروعك.',
       packagesFoot: 'يبدأ من · بلا دفع أونلاين · رد خلال يوم عمل · ترشيح مجاني',
       fitGuideTitle: 'ماذا تحتاج الآن؟',
       phaseLabel: 'المرحلة',
@@ -228,9 +228,9 @@ window.GH_DIRECT = {
         brand: 'Brand',
         sales: 'Sales & Growth',
       },
-      packagesTitle: 'Packages by your moment',
+      packagesTitle: 'Three decisions by project moment',
       packagesLead:
-        'Core for Define · Launch for Build · Signature for Launch & Sell — prices start from a clear figure, locked after we understand your project.',
+        'Each package answers a different question. Figures are starting-from estimates — final after we understand your project.',
       packagesFoot: 'Starting from · no online checkout · reply in one business day · free recommendation',
       fitGuideTitle: 'What you need now',
       phaseLabel: 'Stage',
@@ -837,6 +837,7 @@ services: [
     {
       id: 'basic',
       mode: 'bundle',
+      num: '01',
       phase: { ar: 'تعريف', en: 'Define' },
       name: { ar: 'نواة', en: 'Core' },
       tagline: {
@@ -844,6 +845,7 @@ services: [
         en: 'Turn the approved vision into a clear visual language',
       },
       purpose: { ar: 'تثبيت الرؤية بصرياً', en: 'Lock the vision visually' },
+      shift: { ar: 'هنا نجعل المشروع مرئياً للمرة الأولى — قبل أن يُطلب من المشتري أن يتخيّل.', en: 'Here the project becomes visible for the first time — before the buyer is asked to imagine it.' },
       coreOutput: { ar: 'رندرات بطولية + هوية أساسية + حضور أولي', en: 'Hero renders + essential identity + first presence' },
       fit: {
         ar: 'لحظة التعريف — مخطط/تصميم جاهز والمشتري لم يرَ المشروع بعد',
@@ -861,15 +863,15 @@ services: [
       featured: false,
       includedServiceIds: ['identity-basic', 'drone-short'],
       includedLines: [
-        { ar: 'رندرات 3D بطولية: 10–15 صورة', en: 'Hero 3D renders: 10–15 images' },
-        { ar: 'هوية بصرية أساسية للتواصل', en: 'Essential visual identity for communication', serviceId: 'identity-basic' },
-        { ar: 'فيديو درون قصير للسياق', en: 'Short drone film for context', serviceId: 'drone-short' },
-        { ar: 'صفحة هبوط لتعريف المشروع', en: 'Landing page to introduce the project' },
+        { ar: 'رندرات بطولية تثبت الهوية البصرية', en: 'Hero renders that lock visual identity' },
+        { ar: 'هوية أساسية للتواصل مع السوق', en: 'Essential identity for market communication' },
+        { ar: 'حضور أولي: درون قصير + صفحة تعريف', en: 'First presence: short drone + intro page' },
       ],
     },
     {
       id: 'launch',
       mode: 'bundle',
+      num: '02',
       phase: { ar: 'بناء', en: 'Build' },
       name: { ar: 'انطلاق', en: 'Launch' },
       tagline: {
@@ -877,6 +879,7 @@ services: [
         en: 'Keep the project visually alive during construction',
       },
       purpose: { ar: 'إبقاء المشروع حياً بصرياً أثناء التنفيذ', en: 'Keep the project visually alive during construction' },
+      shift: { ar: 'القفزة هنا نوعية: من «رؤية ثابتة» إلى «قصة حيّة» أثناء التنفيذ — تحديثات، ميديا موقع، وحضور رقمي.', en: 'The jump is qualitative: from a fixed vision to a living story during construction — updates, site media, digital presence.' },
       coreOutput: { ar: 'رندرات محدّثة + ميديا موقع + موقع مشروع', en: 'Updated renders + site media + project website' },
       fit: {
         ar: 'لحظة البناء — التنفيذ جارٍ والمبيعات قد تتزامن (Off-Plan)',
@@ -891,18 +894,18 @@ services: [
         en: 'Most requested during Build · no commitment until confirmation',
       },
       price: 98000,
-      featured: true,
+      featured: false,
       includedServiceIds: ['identity-basic', 'drone-short', 'ground-photo', 'microsite'],
       includedLines: [
-        { ar: 'كل ما في نواة (تعريف)، بالإضافة إلى…', en: 'Everything in Core (Define), and…' },
-        { ar: 'رندرات محدّثة: 15–18 صورة', en: 'Updated renders: 15–18 images' },
-        { ar: 'تصوير أرضي / تقدّم الموقع', en: 'Ground photography / site progress', serviceId: 'ground-photo' },
-        { ar: 'موقع المشروع للتحديثات والمبيعات', en: 'Project site for updates and sales', serviceId: 'microsite' },
+        { ar: 'كل ما يثبّت الرؤية في نواة', en: 'Everything that locks vision in Core' },
+        { ar: 'رندرات محدّثة تتماشى مع التقدّم', en: 'Updated renders aligned to progress' },
+        { ar: 'ميديا موقع + موقع مشروع للتحديثات والمبيعات', en: 'Site media + project website for updates and sales' },
       ],
     },
     {
       id: 'growth',
       mode: 'bundle',
+      num: '03',
       phase: { ar: 'إطلاق وبيع', en: 'Launch & Sell' },
       name: { ar: 'توقيع', en: 'Signature' },
       tagline: {
@@ -910,6 +913,7 @@ services: [
         en: 'Turn the project into a sales experience that persuades and closes',
       },
       purpose: { ar: 'تحويل المشروع إلى تجربة بيع', en: 'Turn the project into a sales experience' },
+      shift: { ar: 'هنا تتركّز القيمة: من أصول تسويقية إلى تجربة بيع كاملة — هوية، كتالوج، وتفاعل في صالة البيع.', en: 'Value densest here: from marketing assets to a full sales experience — identity, catalogue, sales-floor interaction.' },
       coreOutput: { ar: 'هوية كاملة + كتالوج + تفاعل صالة البيع', en: 'Full identity + catalogue + sales-floor interaction' },
       fit: {
         ar: 'لحظة الإطلاق والبيع — صالة نشطة تحتاج تفاعلاً وإقناعاً',
@@ -924,13 +928,12 @@ services: [
         en: 'Map the sales experience in one meeting · final price with no surprises',
       },
       price: 195000,
-      featured: false,
+      featured: true,
       includedServiceIds: ['identity-full', 'catalogue', 'drone-short', 'ground-photo', 'microsite', 'touchscreen'],
       includedLines: [
-        { ar: 'كل ما في انطلاق (بناء)، بالإضافة إلى…', en: 'Everything in Launch (Build), and…' },
-        { ar: 'رندرات بطولية: 20 صورة', en: 'Hero renders: 20 images' },
-        { ar: 'هوية كاملة + كتالوج مبيعات / وسطاء', en: 'Full identity + sales / broker catalogue', serviceId: 'identity-full' },
-        { ar: 'شاشة لمس تفاعلية لصالة البيع', en: 'Interactive touchscreen for the sales floor', serviceId: 'touchscreen' },
+        { ar: 'كل ما يُبقي المشروع حياً في انطلاق', en: 'Everything that keeps the project alive in Launch' },
+        { ar: 'هوية كاملة + كتالوج مبيعات / وسطاء', en: 'Full identity + sales / broker catalogue' },
+        { ar: 'تفاعل صالة البيع (شاشة لمس) لإقناع العميل', en: 'Sales-floor interaction (touchscreen) to persuade' },
       ],
     },
     {
