@@ -220,12 +220,76 @@
     var catL = document.getElementById('ghd-catalog-lead');
     var pkgH = document.getElementById('ghd-packages-title');
     var pkgL = document.getElementById('ghd-packages-lead');
+    var posH = document.getElementById('ghd-posture-title');
+    var posL = document.getElementById('ghd-posture-lead');
     if (catH) catH.textContent = ui.catalogTitle;
     if (catL) catL.textContent = ui.catalogLead;
     if (pkgH) pkgH.textContent = ui.packagesTitle;
     if (pkgL) pkgL.textContent = ui.packagesLead;
+    if (posH) posH.textContent = ui.postureTitle || '';
+    if (posL) posL.textContent = ui.postureLead || '';
+    renderPosture();
     renderWhoFor();
     renderNextSteps();
+    renderClose();
+  }
+
+  function renderPosture() {
+    var host = document.getElementById('ghd-posture');
+    if (!host) return;
+    var items = DATA.posture || [];
+    if (!items.length) {
+      host.innerHTML = '';
+      return;
+    }
+    host.innerHTML = items
+      .map(function (item) {
+        return (
+          '<article class="ghd-posture-card">' +
+          '<span class="ghd-posture-n" aria-hidden="true">' +
+          escapeHtml(item.n || '') +
+          '</span>' +
+          '<h3 class="ghd-posture-title">' +
+          escapeHtml(t(item.title)) +
+          '</h3>' +
+          '<p class="ghd-posture-body">' +
+          escapeHtml(t(item.body)) +
+          '</p></article>'
+        );
+      })
+      .join('');
+  }
+
+  function renderClose() {
+    var host = document.getElementById('ghd-close');
+    if (!host) return;
+    var waHref =
+      'https://wa.me/' +
+      waPhone() +
+      '?text=' +
+      encodeURIComponent(
+        lang === 'ar'
+          ? 'مرحباً، أود تثبيت تجربة البيع لمشروعي عبر GH Direct.'
+          : 'Hello — I want to lock the sales experience for my project via GH Direct.'
+      );
+    host.innerHTML =
+      '<div class="ghd-close-inner">' +
+      '<div class="ghd-close-copy">' +
+      '<h2 id="ghd-close-title">' +
+      escapeHtml(ui.closeTitle || '') +
+      '</h2>' +
+      '<p>' +
+      escapeHtml(ui.closeLead || '') +
+      '</p></div>' +
+      '<div class="ghd-close-ctas">' +
+      '<a class="ghd-cta ghd-cta--primary" href="#packages">' +
+      escapeHtml(ui.closeCtaPkg || '') +
+      '</a>' +
+      '<a class="ghd-cta ghd-cta--link" href="' +
+      escapeAttr(waHref) +
+      '" target="_blank" rel="noopener noreferrer">' +
+      escapeHtml(ui.closeCtaWa || ui.wa || '') +
+      '</a></div></div>';
   }
 
   function renderPaths() {
@@ -432,6 +496,15 @@
       var namePill =
         '<span class="ghd-pkg-namepill">' + escapeHtml(t(pkg.name)) + '</span>';
 
+      var stage =
+        pkg.stage
+          ? '<p class="ghd-pkg-stage"><span>' +
+            escapeHtml(ui.stageLabel || '') +
+            '</span><strong>' +
+            escapeHtml(t(pkg.stage)) +
+            '</strong></p>'
+          : '';
+
       var priceBlock =
         '<div class="ghd-pkg-priceblock">' +
         '<span class="ghd-pkg-price-from">' +
@@ -503,6 +576,7 @@
         ribbon +
         '<div class="ghd-pkg-top">' +
         namePill +
+        stage +
         priceBlock +
         tagline +
         '</div>' +
