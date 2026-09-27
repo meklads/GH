@@ -243,17 +243,36 @@
     }
     host.innerHTML = items
       .map(function (item) {
+        var pkg = (DATA.packages || []).find(function (p) {
+          return p.id === item.packageId;
+        });
+        var pkgName = pkg ? t(pkg.name) : '';
+        var href = item.packageId ? '#pkg-' + item.packageId : '#packages';
+        var mapLine = pkgName
+          ? '<span class="ghd-posture-map">' +
+            escapeHtml(ui.stagePrefix || ui.stageLabel || '') +
+            ' ' +
+            escapeHtml(t(item.title)) +
+            ' → ' +
+            escapeHtml(ui.packageLabel || '') +
+            ' ' +
+            escapeHtml(pkgName) +
+            '</span>'
+          : '';
         return (
-          '<article class="ghd-posture-card">' +
+          '<a class="ghd-posture-card" href="' +
+          escapeAttr(href) +
+          '">' +
           '<span class="ghd-posture-n" aria-hidden="true">' +
           escapeHtml(item.n || '') +
           '</span>' +
           '<h3 class="ghd-posture-title">' +
           escapeHtml(t(item.title)) +
           '</h3>' +
+          mapLine +
           '<p class="ghd-posture-body">' +
           escapeHtml(t(item.body)) +
-          '</p></article>'
+          '</p></a>'
         );
       })
       .join('');
@@ -515,17 +534,21 @@
           '</div>'
         : '';
 
-      var namePill =
-        '<span class="ghd-pkg-namepill">' + escapeHtml(t(pkg.name)) + '</span>';
-
       var stage =
         pkg.stage
-          ? '<p class="ghd-pkg-stage"><span>' +
-            escapeHtml(ui.stageLabel || '') +
-            '</span><strong>' +
+          ? '<p class="ghd-pkg-stage">' +
+            '<span class="ghd-pkg-stage-kicker">' +
+            escapeHtml(ui.stagePrefix || ui.stageLabel || '') +
+            '</span>' +
+            '<strong class="ghd-pkg-stage-name">' +
             escapeHtml(t(pkg.stage)) +
             '</strong></p>'
           : '';
+
+      var namePill =
+        '<span class="ghd-pkg-namepill">' +
+        escapeHtml((ui.packageLabel ? ui.packageLabel + ' ' : '') + t(pkg.name)) +
+        '</span>';
 
       var priceBlock =
         '<div class="ghd-pkg-priceblock">' +
@@ -597,8 +620,8 @@
       card.innerHTML =
         ribbon +
         '<div class="ghd-pkg-top">' +
-        namePill +
         stage +
+        namePill +
         priceBlock +
         tagline +
         '</div>' +

@@ -282,13 +282,21 @@ html[dir='ltr'] .ghd-hero-rule {
 }
 .ghd-posture-card {
   position: relative;
+  display: block;
   padding: 26px 22px 24px;
   border-radius: 4px;
   background: var(--ghd-paper);
   border: 1px solid rgba(14, 14, 14, 0.08);
   box-shadow: none;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
   animation: ghd-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.ghd-posture-card:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+  box-shadow: 0 10px 28px rgba(14, 14, 14, 0.05);
 }
 .ghd-posture-card:nth-child(2) { animation-delay: 0.08s; }
 .ghd-posture-card:nth-child(3) { animation-delay: 0.16s; }
@@ -312,11 +320,20 @@ html[dir='ltr'] .ghd-hero-rule {
   margin: 0 0 12px;
 }
 .ghd-posture-title {
-  margin: 0 0 10px;
-  font-size: 1.12rem;
+  margin: 0 0 8px;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--ghd-ink);
-  line-height: 1.3;
+  line-height: 1.25;
+}
+.ghd-posture-map {
+  display: block;
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ghd-gold-dark);
+  line-height: 1.4;
 }
 .ghd-posture-body {
   margin: 0;
@@ -328,26 +345,30 @@ html[dir='ltr'] .ghd-hero-rule {
 }
 .ghd-pkg-stage {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin: 10px 0 0;
-  font-size: 12px;
-  line-height: 1.3;
-  color: rgba(20, 20, 20, 0.48);
+  gap: 4px;
+  margin: 0 0 10px;
+  line-height: 1.2;
 }
-.ghd-pkg-stage span {
-  font-weight: 400;
+.ghd-pkg-stage-kicker {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 20, 0.45);
 }
-.ghd-pkg-stage strong {
-  font-weight: 600;
-  color: var(--ghd-gold-dark);
-  letter-spacing: 0.01em;
+.ghd-pkg-stage-name {
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+  font-weight: 700;
+  color: var(--ghd-ink);
+  letter-spacing: -0.02em;
 }
-.ghd-pkg--featured .ghd-pkg-stage {
-  color: rgba(245, 245, 243, 0.55);
+.ghd-pkg--featured .ghd-pkg-stage-kicker {
+  color: rgba(245, 245, 243, 0.5);
 }
-.ghd-pkg--featured .ghd-pkg-stage strong {
+.ghd-pkg--featured .ghd-pkg-stage-name {
   color: var(--ghd-gold);
 }
 .ghd-section--close {
