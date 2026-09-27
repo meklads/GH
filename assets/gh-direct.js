@@ -535,21 +535,10 @@
   }
 
   function renderEstimatesChrome() {
-    var sum = document.getElementById('ghd-catalog-summary-title');
-    if (sum) {
-      sum.textContent =
-        lang === 'ar'
-          ? 'عائلات الخدمات — تفصيل عند الحاجة'
-          : 'Service families — detail when needed';
-    }
-    var hash = (location.hash || '').toLowerCase();
-    if (hash === '#catalog' || hash.indexOf('catalog') >= 0) {
-      var det = document.getElementById('catalog-details');
-      if (det) det.open = true;
-    }
-    if (hash === '#atelier-workshop') {
-      var workshop = document.getElementById('atelier-workshop');
-      if (workshop) workshop.classList.add('is-open');
+    var need = document.getElementById('ghd-need-specific');
+    if (need && ui.needSpecific) {
+      need.hidden = false;
+      need.textContent = ui.needSpecific;
     }
   }
 
@@ -728,17 +717,15 @@
     var host = document.getElementById('ghd-atelier-entry');
     if (!host) return;
     host.innerHTML =
-      '<div class="ghd-atelier-entry-inner ghd-atelier-entry-inner--quiet">' +
-      '<div><p class="ghd-atelier-entry-kicker">' +
-      escapeHtml(ui.needSpecific || '') +
-      '</p><p class="ghd-atelier-entry-title">' +
+      '<div class="ghd-atelier-entry-inner">' +
+      '<div><p class="ghd-atelier-entry-title">' +
       escapeHtml(ui.atelierEntryTitle || '') +
       '</p><p class="ghd-atelier-entry-lead">' +
       escapeHtml(ui.atelierEntryLead || '') +
       '</p></div>' +
-      '<button type="button" class="ghd-stage-offer__wa" data-open-atelier="1">' +
+      '<a class="ghd-cta ghd-cta--primary" href="#atelier-workshop" data-open-atelier="1">' +
       escapeHtml(ui.atelierEntryCta || ui.openAtelier || '') +
-      '</button></div>';
+      '</a></div>';
     host.querySelectorAll('[data-open-atelier]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var workshop = document.getElementById('atelier-workshop');
@@ -836,83 +823,147 @@
     var host = document.getElementById('ghd-packages');
     if (!host) return;
     host.innerHTML = '';
-    host.className = 'ghd-stage-offers';
-    var idx = 0;
     DATA.packages.forEach(function (pkg) {
       if (isBuilder(pkg)) return;
-      idx += 1;
       var card = document.createElement('article');
-      var peak = !!pkg.featured || pkg.id === 'growth';
-      card.className = 'ghd-stage-offer' + (peak ? ' ghd-stage-offer--peak' : '');
+      var featured = !!pkg.featured;
+      card.className =
+        'ghd-pkg ghd-pkg--bundle' + (featured ? ' ghd-pkg--featured' : '');
       card.id = 'pkg-' + pkg.id;
       card.setAttribute('data-package-id', pkg.id);
 
-      var num = pkg.num || String(idx).padStart(2, '0');
+      var ribbon = featured
+        ? '<div class="ghd-pkg-ribbon" aria-hidden="true">' +
+          escapeHtml(ui.mostPopular) +
+          '</div>'
+        : '';
+
+      var phase =
+        pkg.phase
+          ? '<div class="ghd-pkg-meta-row"><span class="ghd-pkg-meta-k">' +
+            escapeHtml(ui.phaseLabel || '') +
+            '</span><span class="ghd-pkg-meta-v">' +
+            escapeHtml(t(pkg.phase)) +
+            '</span></div>'
+          : '';
+
+      var purpose =
+        pkg.purpose
+          ? '<div class="ghd-pkg-meta-row"><span class="ghd-pkg-meta-k">' +
+            escapeHtml(ui.purposeLabel || '') +
+            '</span><span class="ghd-pkg-meta-v">' +
+            escapeHtml(t(pkg.purpose)) +
+            '</span></div>'
+          : '';
+
+      var coreOut =
+        pkg.coreOutput
+          ? '<div class="ghd-pkg-meta-row"><span class="ghd-pkg-meta-k">' +
+            escapeHtml(ui.coreOutputLabel || '') +
+            '</span><span class="ghd-pkg-meta-v">' +
+            escapeHtml(t(pkg.coreOutput)) +
+            '</span></div>'
+          : '';
+
+      var namePill =
+        '<span class="ghd-pkg-namepill">' + escapeHtml(t(pkg.name)) + '</span>';
+
+      var priceBlock =
+        '<p class="ghd-pkg-price-note">' +
+        escapeHtml(ui.from) +
+        '</p>' +
+        '<div class="ghd-pkg-priceblock">' +
+        '<span class="ghd-pkg-price-main">' +
+        escapeHtml(formatNum(pkg.price)) +
+        '</span>' +
+        '<span class="ghd-pkg-price-suffix">' +
+        escapeHtml(currency) +
+        '</span></div>';
+
+      var tagline = pkg.tagline
+        ? '<p class="ghd-pkg-tagline">' + escapeHtml(t(pkg.tagline)) + '</p>'
+        : '';
+
+      var incentive =
+        '<p class="ghd-pkg-incentive">' +
+        escapeHtml(t(pkg.incentive) || ui.incentiveDefault || '') +
+        '</p>';
+
+      var fit =
+        pkg.fit
+          ? '<p class="ghd-pkg-fit"><span class="material-symbols-outlined" aria-hidden="true">person</span><span><em>' +
+            escapeHtml(ui.fitLabel || '') +
+            '</em> ' +
+            escapeHtml(t(pkg.fit)) +
+            '</span></p>'
+          : '';
+      var delivery =
+        pkg.delivery
+          ? '<p class="ghd-pkg-delivery"><span class="material-symbols-outlined" aria-hidden="true">schedule</span><span><em>' +
+            escapeHtml(ui.deliveryLabel || '') +
+            '</em> ' +
+            escapeHtml(t(pkg.delivery)) +
+            '</span></p>'
+          : '';
+
       var lines = '';
       if (pkg.includedLines && pkg.includedLines.length) {
         lines =
-          '<ul class="ghd-stage-offer__list">' +
+          '<ul class="ghd-list" aria-label="' +
+          escapeAttr(ui.included) +
+          '">' +
           pkg.includedLines
             .map(function (line) {
-              return '<li>' + escapeHtml(t(line)) + '</li>';
+              return '<li><span>' + escapeHtml(t(line)) + '</span></li>';
             })
             .join('') +
           '</ul>';
       }
 
-      card.innerHTML =
-        '<div class="ghd-stage-offer__rail">' +
-        '<span class="ghd-stage-offer__num">' +
-        escapeHtml(num) +
-        '</span>' +
-        '<span class="ghd-stage-offer__phase">' +
-        escapeHtml(t(pkg.phase) || '') +
-        '</span></div>' +
-        '<div class="ghd-stage-offer__body">' +
-        '<div class="ghd-stage-offer__intro">' +
-        '<p class="ghd-stage-offer__name">' +
-        escapeHtml(t(pkg.name)) +
-        '</p>' +
-        '<h3 class="ghd-stage-offer__purpose">' +
-        escapeHtml(t(pkg.purpose) || t(pkg.tagline) || '') +
-        '</h3>' +
-        (pkg.shift
-          ? '<p class="ghd-stage-offer__shift">' + escapeHtml(t(pkg.shift)) + '</p>'
-          : '') +
-        (pkg.coreOutput
-          ? '<p class="ghd-stage-offer__core"><em>' +
-            escapeHtml(ui.coreOutputLabel || '') +
-            '</em> ' +
-            escapeHtml(t(pkg.coreOutput)) +
-            '</p>'
-          : '') +
-        '</div>' +
-        '<div class="ghd-stage-offer__price">' +
-        '<span class="ghd-stage-offer__from">' +
-        escapeHtml(ui.from) +
-        '</span>' +
-        '<span class="ghd-stage-offer__figure">' +
-        escapeHtml(formatNum(pkg.price)) +
-        '</span>' +
-        '<span class="ghd-stage-offer__cur">' +
-        escapeHtml(currency) +
-        '</span>' +
-        '<p class="ghd-stage-offer__price-note">' +
-        escapeHtml(ui.totalNote || ui.packagesFoot || '') +
-        '</p></div>' +
-        '<div class="ghd-stage-offer__detail">' +
-        lines +
-        '<div class="ghd-stage-offer__actions">' +
-        '<button type="button" class="ghd-cta ghd-cta--hero" data-lead-pkg="' +
+      var foot =
+        '<p class="ghd-pkg-foot">' +
+        escapeHtml(
+          ui.packagesFoot ||
+            (lang === 'ar'
+              ? 'يبدأ من · بلا دفع أونلاين · رد خلال يوم عمل · ترشيح مجاني'
+              : 'Starting from · no online checkout · reply in one business day · free recommendation')
+        ) +
+        '</p>';
+
+      var ctaClass = featured ? 'ghd-cta ghd-cta--on-dark' : 'ghd-cta ghd-cta--primary';
+      var primaryCta =
+        '<button type="button" class="' +
+        ctaClass +
+        '" data-lead-pkg="' +
         escapeAttr(pkg.id) +
         '">' +
         escapeHtml(ui.choosePlan || ui.cta) +
-        '</button>' +
-        '<a class="ghd-stage-offer__wa" data-pkg-wa="' +
+        '</button>';
+
+      card.innerHTML =
+        ribbon +
+        '<div class="ghd-pkg-top">' +
+        namePill +
+        priceBlock +
+        '<div class="ghd-pkg-meta">' +
+        phase +
+        purpose +
+        coreOut +
+        '</div>' +
+        tagline +
+        incentive +
+        '</div>' +
+        fit +
+        delivery +
+        lines +
+        '<div class="ghd-pkg-ctas">' +
+        primaryCta +
+        '<a class="ghd-cta ghd-cta--link" data-pkg-wa="' +
         escapeAttr(pkg.id) +
         '" href="#" target="_blank" rel="noopener noreferrer">' +
         escapeHtml(ui.wa) +
-        '</a></div></div></div>';
+        '</a></div>' +
+        foot;
 
       host.appendChild(card);
     });
@@ -926,6 +977,7 @@
     refreshPkgWaLinks();
     renderAtelierEntry();
     renderAtelierWorkshop();
+    renderProof();
   }
 
   function renderNextSteps() {
