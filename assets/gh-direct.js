@@ -678,7 +678,11 @@
     if (!svc) return '';
     var on = addonState[pkg.id].has(id);
     var unpriced = svc.price == null || svc.priceLabel === 'contact';
-    var meta = unpriced ? ui.unpricedNote : formatNum(svc.price) + ' ' + currency;
+    var meta = unpriced
+      ? ui.unpricedNote
+      : svc.priceTo != null && typeof svc.priceTo === 'number'
+        ? formatNum(svc.price) + '–' + formatNum(svc.priceTo) + ' ' + currency
+        : formatNum(svc.price) + ' ' + currency;
     return (
       '<button type="button" class="ghd-addon' +
       (on ? ' is-on' : '') +
@@ -754,23 +758,30 @@
       groups[cat].push(id);
     });
     var labels = ui.composeGroups || {};
+    var famIdx = 0;
     return (
       '<p class="ghd-compose-hint">' +
       escapeHtml(ui.composeHint || '') +
       '</p>' +
-      '<div class="ghd-compose-groups">' +
-      COMPOSE_ORDER.map(function (key, idx) {
+      '<div class="ghd-compose-groups ghd-compose-groups--flat">' +
+      COMPOSE_ORDER.map(function (key) {
         var ids = groups[key] || [];
         if (!ids.length) return '';
+        famIdx += 1;
         return (
-          '<details class="ghd-compose-group"' +
-          (idx === 0 ? ' open' : '') +
-          '>' +
-          '<summary>' +
+          '<section class="ghd-compose-family" data-family="' +
+          escapeAttr(key) +
+          '">' +
+          '<header class="ghd-compose-family-head">' +
+          '<span class="ghd-compose-family-idx" aria-hidden="true">' +
+          String(famIdx).padStart(2, '0') +
+          '</span>' +
+          '<h4 class="ghd-compose-family-name">' +
           escapeHtml(labels[key] || key) +
-          ' <em>(' +
+          '</h4>' +
+          '<span class="ghd-compose-family-count">' +
           ids.length +
-          ')</em></summary>' +
+          '</span></header>' +
           '<div class="ghd-addons ghd-addons--grid" data-addons-for="' +
           escapeAttr(pkg.id) +
           '">' +
@@ -779,7 +790,7 @@
               return addonRowHtml(pkg, id);
             })
             .join('') +
-          '</div></details>'
+          '</div></section>'
         );
       }).join('') +
       '</div>'
@@ -813,10 +824,16 @@
     ];
     roots.forEach(function (root) {
       if (!root) return;
-      root.querySelectorAll('.ghd-compose-group').forEach(function (d) {
-        var btn = d.querySelector('[data-addon="' + serviceId + '"]');
-        if (btn) d.open = true;
-      });
+      var btn = root.querySelector('[data-addon="' + serviceId + '"]');
+      if (btn) {
+        try {
+          btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } catch (e) {}
+        btn.classList.add('is-pulse-add');
+        setTimeout(function () {
+          btn.classList.remove('is-pulse-add');
+        }, 900);
+      }
     });
   }
 
