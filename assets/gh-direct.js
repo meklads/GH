@@ -280,23 +280,42 @@
   }
 
   /* ---------- Catalog ---------- */
+  var FAMILY_ORDER = ['viz', 'cgi', 'immersive', 'maquettes', 'brand', 'sales'];
+
+  function familyLabel(id, short) {
+    var map = short ? ui.familyShort : ui.families;
+    if (map && map[id]) return map[id];
+    return id;
+  }
+
+  function serviceFamily(svc) {
+    if (svc && svc.family) return svc.family;
+    var id = (svc && svc.id) || '';
+    if (/^render-/.test(id)) return 'viz';
+    if (id === 'cinematic') return 'cgi';
+    if (/vr360|interactive|touchscreen/.test(id)) return 'immersive';
+    if (/^maquette-/.test(id)) return 'maquettes';
+    if (/identity|catalogue|microsite|waitlist/.test(id)) return 'brand';
+    return 'sales';
+  }
+
   var catalogFilter = 'all';
 
   function filteredServices() {
     if (catalogFilter === 'all') return DATA.services.slice();
     return DATA.services.filter(function (s) {
-      return (s.group || 'digital') === catalogFilter;
+      return serviceFamily(s) === catalogFilter;
     });
   }
 
   function renderCatalogFilters() {
     var host = document.getElementById('ghd-catalog-filters');
     if (!host) return;
-    var items = [
-      { id: 'all', label: ui.filterAll || (lang === 'ar' ? 'الكل' : 'All') },
-      { id: 'digital', label: ui.filterDigital || (lang === 'ar' ? 'رقمي' : 'Digital') },
-      { id: 'physical', label: ui.filterPhysical || (lang === 'ar' ? 'مادي' : 'Physical') },
-    ];
+    var items = [{ id: 'all', label: ui.filterAll || (lang === 'ar' ? 'الكل' : 'All') }].concat(
+      FAMILY_ORDER.map(function (id) {
+        return { id: id, label: familyLabel(id, true) };
+      })
+    );
     host.innerHTML = items
       .map(function (item) {
         return (
@@ -306,6 +325,8 @@
           (catalogFilter === item.id ? 'true' : 'false') +
           '" data-ghd-filter="' +
           escapeAttr(item.id) +
+          '" title="' +
+          escapeAttr(item.id === 'all' ? item.label : familyLabel(item.id, false)) +
           '">' +
           escapeHtml(item.label) +
           '</button>'
@@ -321,65 +342,111 @@
     });
   }
 
+  function svcCardHtml(svc, idx) {
+    var num = String(idx + 1).padStart(2, '0');
+    var unpriced = svc.price == null || svc.priceLabel === 'contact';
+    var fam = serviceFamily(svc);
+    return (
+      '<button type="button" class="ghd-svc-card" data-service-id="' +
+      escapeAttr(svc.id) +
+      '" data-family="' +
+      escapeAttr(fam) +
+      '" aria-haspopup="dialog">' +
+      '<div class="ghd-svc-media">' +
+      mediaMarkup(svc, { autoplay: true }) +
+      '<span class="ghd-svc-num" aria-hidden="true">' +
+      num +
+      '</span>' +
+      '<span class="ghd-svc-chip">' +
+      escapeHtml(familyLabel(fam, true)) +
+      '</span></div>' +
+      '<div class="ghd-svc-body">' +
+      '<h3>' +
+      escapeHtml(t(svc.name)) +
+      '</h3>' +
+      '<p class="ghd-svc-blurb">' +
+      escapeHtml(t(svc.description)) +
+      '</p>' +
+      '<div class="ghd-price' +
+      (unpriced ? ' ghd-price-contact' : '') +
+      '">' +
+      escapeHtml(priceText(svc)) +
+      '</div></div></button>'
+    );
+  }
+
+  function bindCatalogCards(root) {
+    if (!root) return;
+    root.querySelectorAll('.ghd-svc-card').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        openServiceModal(btn.getAttribute('data-service-id'));
+      });
+    });
+  }
+
   function renderCatalog() {
     var grid = document.getElementById('ghd-catalog');
     var empty = document.getElementById('ghd-catalog-empty');
     if (!grid) return;
     grid.innerHTML = '';
+    grid.className = 'ghd-catalog' + (catalogFilter === 'all' ? ' ghd-catalog--grouped' : ' ghd-catalog--flat');
     var list = filteredServices();
     if (empty) {
       empty.hidden = list.length > 0;
       empty.textContent = ui.filterEmpty || '';
     }
-    list.forEach(function (svc, idx) {
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'ghd-svc-card';
-      btn.setAttribute('data-service-id', svc.id);
-      btn.setAttribute('data-group', svc.group || 'digital');
-      btn.setAttribute('aria-haspopup', 'dialog');
-      var num = String(idx + 1).padStart(2, '0');
-      var unpriced = svc.price == null || svc.priceLabel === 'contact';
-      var groupLabel =
-        (svc.group || 'digital') === 'physical'
-          ? ui.filterPhysical || (lang === 'ar' ? 'مادي' : 'Physical')
-          : ui.filterDigital || (lang === 'ar' ? 'رقمي' : 'Digital');
-      btn.innerHTML =
-        '<div class="ghd-svc-media">' +
-        mediaMarkup(svc, { autoplay: true }) +
-        '<span class="ghd-svc-num" aria-hidden="true">' +
-        num +
-        '</span>' +
-        '<span class="ghd-svc-chip">' +
-        escapeHtml(groupLabel) +
-        '</span></div>' +
-        '<div class="ghd-svc-body">' +
-        '<h3>' +
-        escapeHtml(t(svc.name)) +
-        '</h3>' +
-        '<div class="ghd-price' +
-        (unpriced ? ' ghd-price-contact' : '') +
-        '">' +
-        escapeHtml(priceText(svc)) +
-        '</div></div>';
-      btn.addEventListener('click', function () {
-        openServiceModal(svc.id);
+    if (!list.length) return;
+
+    if (catalogFilter === 'all') {
+      var html = '';
+      var globalIdx = 0;
+      FAMILY_ORDER.forEach(function (fam) {
+        var items = list.filter(function (s) {
+          return serviceFamily(s) === fam;
+        });
+        if (!items.length) return;
+        html +=
+          '<section class="ghd-family-block" data-family="' +
+          escapeAttr(fam) +
+          '">' +
+          '<header class="ghd-family-head">' +
+          '<span class="ghd-family-index" aria-hidden="true">' +
+          String(FAMILY_ORDER.indexOf(fam) + 1).padStart(2, '0') +
+          '</span>' +
+          '<div><h3 class="ghd-family-title">' +
+          escapeHtml(familyLabel(fam, false)) +
+          '</h3>' +
+          '<p class="ghd-family-count">' +
+          escapeHtml(
+            lang === 'ar'
+              ? items.length + ' بنود'
+              : items.length + (items.length === 1 ? ' item' : ' items')
+          ) +
+          '</p></div></header>' +
+          '<div class="ghd-family-grid">';
+        items.forEach(function (svc) {
+          globalIdx += 1;
+          html += svcCardHtml(svc, globalIdx - 1);
+        });
+        html += '</div></section>';
       });
-      grid.appendChild(btn);
-    });
+      grid.innerHTML = html;
+    } else {
+      grid.innerHTML = list
+        .map(function (svc, idx) {
+          return svcCardHtml(svc, idx);
+        })
+        .join('');
+    }
+    bindCatalogCards(grid);
   }
 
   /* ---------- Packages ---------- */
   function serviceCategory(svc) {
-    var id = (svc && svc.id) || '';
-    if (/^render-/.test(id)) return 'viz';
-    if (id === 'catalogue' || /^identity-/.test(id)) return 'brand';
-    if (/drone|film|ground-photo/.test(id)) return 'media';
-    if (/microsite|waitlist|campaign|crm|interactive/.test(id)) return 'web';
-    return 'physical';
+    return serviceFamily(svc);
   }
 
-  var COMPOSE_ORDER = ['viz', 'brand', 'media', 'web', 'physical'];
+  var COMPOSE_ORDER = FAMILY_ORDER.slice();
 
   function isBuilder(pkg) {
     return pkg && pkg.mode === 'builder';
