@@ -250,12 +250,8 @@
         var href = item.packageId ? '#pkg-' + item.packageId : '#packages';
         var mapLine = pkgName
           ? '<span class="ghd-posture-map">' +
-            escapeHtml(ui.stagePrefix || ui.stageLabel || '') +
-            ' ' +
             escapeHtml(t(item.title)) +
             ' → ' +
-            escapeHtml(ui.packageLabel || '') +
-            ' ' +
             escapeHtml(pkgName) +
             '</span>'
           : '';
@@ -552,8 +548,20 @@
           '</div>'
         : '';
 
+      var purpose = pkg.purpose || pkg.stage;
       var nameEl =
-        '<h3 class="ghd-pkg-name">' + escapeHtml(t(pkg.name)) + '</h3>';
+        '<h3 class="ghd-pkg-name">' +
+        escapeHtml(t(pkg.name)) +
+        (purpose
+          ? ' <span class="ghd-pkg-purpose">· ' +
+            escapeHtml(t(purpose)) +
+            '</span>'
+          : '') +
+        '</h3>';
+
+      var purposeLine = pkg.tagline
+        ? '<p class="ghd-pkg-purpose-line">' + escapeHtml(t(pkg.tagline)) + '</p>'
+        : '';
 
       var priceBlock =
         '<div class="ghd-pkg-priceblock">' +
@@ -605,6 +613,7 @@
         ribbon +
         '<div class="ghd-pkg-top">' +
         nameEl +
+        purposeLine +
         priceBlock +
         '</div>' +
         lines +

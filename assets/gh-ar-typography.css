@@ -345,6 +345,11 @@ html[dir="rtl"]:not([lang="en"]) .ghd-page .ghd-svc-body h3 {
   letter-spacing: 0 !important;
 }
 
+html[lang="ar"] .ghd-page .ghd-pkg .ghd-pkg-purpose-line,
+html[dir="rtl"]:not([lang="en"]) .ghd-page .ghd-pkg .ghd-pkg-purpose-line {
+  font-weight: 500 !important;
+}
+
 html[lang="ar"] .ghd-page .ghd-pkg h3,
 html[lang="ar"] .ghd-page .ghd-pkg-name,
 html[dir="rtl"]:not([lang="en"]) .ghd-page .ghd-pkg h3,

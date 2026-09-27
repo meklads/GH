@@ -263,28 +263,28 @@ html[dir='ltr'] .ghd-hero-rule {
   padding-bottom: 40px;
 }
 .ghd-section--posture {
-  padding: 28px 0 8px;
+  padding: 20px 0 4px;
   border-bottom: 1px solid var(--ghd-border);
 }
 .ghd-section-head--posture {
-  margin-bottom: 22px;
+  margin-bottom: 16px;
 }
 .ghd-posture {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 10px;
 }
 @media (min-width: 800px) {
   .ghd-posture {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    gap: 12px;
   }
 }
 .ghd-posture-card {
   position: relative;
   display: block;
-  padding: 26px 22px 24px;
-  border-radius: 4px;
+  padding: 18px 18px 16px;
+  border-radius: 2px;
   background: var(--ghd-paper);
   border: 1px solid rgba(14, 14, 14, 0.08);
   box-shadow: none;
@@ -296,7 +296,7 @@ html[dir='ltr'] .ghd-hero-rule {
 }
 .ghd-posture-card:hover {
   border-color: rgba(201, 168, 76, 0.5);
-  box-shadow: 0 10px 28px rgba(14, 14, 14, 0.05);
+  box-shadow: 0 8px 22px rgba(14, 14, 14, 0.04);
 }
 .ghd-posture-card:nth-child(2) { animation-delay: 0.08s; }
 .ghd-posture-card:nth-child(3) { animation-delay: 0.16s; }
@@ -313,35 +313,35 @@ html[dir='ltr'] .ghd-hero-rule {
 .ghd-posture-n {
   display: block;
   font-family: var(--ghd-latin);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.14em;
   color: var(--ghd-gold-dark);
-  margin: 0 0 12px;
+  margin: 0 0 8px;
 }
 .ghd-posture-title {
-  margin: 0 0 8px;
-  font-size: 1.35rem;
+  margin: 0 0 6px;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--ghd-ink);
   line-height: 1.25;
 }
 .ghd-posture-map {
   display: block;
-  margin: 0 0 10px;
-  font-size: 12.5px;
+  margin: 0 0 6px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--ghd-gold-dark);
-  line-height: 1.4;
+  line-height: 1.35;
 }
 .ghd-posture-body {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 13px;
+  line-height: 1.55;
   font-weight: 400;
-  color: rgba(14, 14, 14, 0.62);
-  max-width: 24rem;
+  color: rgba(14, 14, 14, 0.58);
+  max-width: 22rem;
 }
 .ghd-pkg-stage {
   display: flex;
@@ -2195,13 +2195,13 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   align-items: stretch;
   text-align: start;
   background: #ffffff;
-  border: 1px solid rgba(14, 14, 14, 0.09);
-  border-radius: 10px;
-  padding: 28px 22px 20px;
-  box-shadow: 0 10px 28px rgba(14, 14, 14, 0.05);
+  border: 1px solid rgba(14, 14, 14, 0.1);
+  border-radius: 2px;
+  padding: 26px 22px 18px;
+  box-shadow: none;
   overflow: visible;
   min-height: 100%;
-  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
   animation: ghd-rise 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .ghd-pkg:nth-child(1) { animation-delay: 0.05s; }
@@ -2211,30 +2211,27 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   content: none;
 }
 .ghd-pkg:hover {
-  border-color: rgba(14, 14, 14, 0.16);
-  box-shadow: 0 14px 36px rgba(14, 14, 14, 0.07);
+  border-color: rgba(14, 14, 14, 0.18);
+  box-shadow: 0 12px 32px rgba(14, 14, 14, 0.05);
 }
 
 .ghd-pkg-ribbon {
   position: absolute;
-  top: -11px;
-  inset-inline-start: 22px;
+  top: -10px;
+  inset-inline-start: 20px;
   left: auto;
   transform: none;
   z-index: 3;
   white-space: nowrap;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  padding: 4px 10px;
+  border-radius: 1px;
   background: var(--ghd-gold);
   color: #141414;
-  box-shadow: 0 4px 12px rgba(201, 168, 76, 0.28);
-}
-html[dir="ltr"] .ghd-pkg-ribbon {
-  inset-inline-start: 22px;
+  box-shadow: none;
 }
 
 .ghd-pkg-top {
@@ -2242,7 +2239,7 @@ html[dir="ltr"] .ghd-pkg-ribbon {
   flex-direction: column;
   align-items: stretch;
   gap: 0;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   padding-bottom: 14px;
   border-bottom: 1px solid rgba(14, 14, 14, 0.08);
 }
@@ -2250,16 +2247,32 @@ html[dir="ltr"] .ghd-pkg-ribbon {
 .ghd-pkg-name,
 .ghd-pkg-namepill {
   display: block;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   padding: 0;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.3;
   color: #141414;
   letter-spacing: -0.01em;
   background: none;
   border-radius: 0;
   text-transform: none;
+}
+.ghd-pkg-purpose {
+  font-weight: 500;
+  color: rgba(20, 20, 20, 0.48);
+}
+.ghd-pkg-purpose-line {
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.55;
+  font-weight: 500;
+  color: rgba(20, 20, 20, 0.72);
+  max-width: 22rem;
+}
+.ghd-pkg-desc,
+.ghd-pkg-tagline {
+  display: none !important;
 }
 
 .ghd-pkg-priceblock {
@@ -2285,7 +2298,7 @@ html[dir="ltr"] .ghd-pkg-ribbon {
   unicode-bidi: plaintext;
 }
 .ghd-pkg-price-main {
-  font-size: clamp(1.85rem, 3vw, 2.25rem);
+  font-size: clamp(1.75rem, 2.8vw, 2.1rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -2311,14 +2324,9 @@ html[dir="ltr"] .ghd-pkg-ribbon {
   line-height: 1.35;
 }
 
-.ghd-pkg-desc,
-.ghd-pkg-tagline {
-  display: none !important;
-}
-
 .ghd-pkg .ghd-list {
   list-style: none;
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   padding: 0;
   width: 100%;
   text-align: start;
@@ -2326,7 +2334,7 @@ html[dir="ltr"] .ghd-pkg-ribbon {
 .ghd-pkg .ghd-list li {
   position: relative;
   margin: 0;
-  padding: 8px 0 8px 0;
+  padding: 7px 0;
   padding-inline-start: 1.05rem;
   border: none;
   border-bottom: 1px solid rgba(20, 20, 20, 0.06);
@@ -2348,7 +2356,7 @@ html[dir="ltr"] .ghd-pkg-ribbon {
   content: '';
   position: absolute;
   inset-inline-start: 0;
-  top: 0.72em;
+  top: 0.7em;
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -2365,13 +2373,13 @@ html[dir="ltr"] .ghd-pkg-ribbon {
   align-items: stretch;
   gap: 8px;
   width: 100%;
-  padding-top: 4px;
+  padding-top: 2px;
 }
 .ghd-pkg-ctas .ghd-cta {
   margin: 0;
   width: 100%;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: 2px;
   padding: 12px 16px;
   font-size: 13.5px;
   font-weight: 600;
@@ -2419,22 +2427,23 @@ html[dir="ltr"] .ghd-pkg-ribbon {
   text-align: start;
 }
 
-/* Featured — dark middle card */
+/* Featured — restrained dark card */
 .ghd-pkg--featured {
   background: #141414;
   color: #f5f5f3;
   border-color: transparent;
-  box-shadow: 0 18px 44px rgba(14, 14, 14, 0.26);
+  box-shadow: 0 16px 40px rgba(14, 14, 14, 0.22);
   transform: none;
   z-index: 2;
-  padding-top: 34px;
+  padding-top: 30px;
 }
 @media (min-width: 980px) {
   .ghd-pkg--featured {
     transform: none;
   }
   .ghd-pkg--featured:hover {
-    transform: translateY(-2px);
+    transform: none;
+    box-shadow: 0 18px 44px rgba(14, 14, 14, 0.28);
   }
 }
 .ghd-pkg--featured .ghd-pkg-top {
@@ -2444,6 +2453,12 @@ html[dir="ltr"] .ghd-pkg-ribbon {
 .ghd-pkg--featured .ghd-pkg-namepill {
   background: none;
   color: #fff;
+}
+.ghd-pkg--featured .ghd-pkg-purpose {
+  color: rgba(245, 245, 243, 0.5);
+}
+.ghd-pkg--featured .ghd-pkg-purpose-line {
+  color: rgba(245, 245, 243, 0.78);
 }
 .ghd-pkg--featured .ghd-pkg-price-main,
 .ghd-pkg--featured .ghd-pkg-price-suffix {
