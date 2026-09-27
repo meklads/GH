@@ -84,8 +84,10 @@ window.GH_DIRECT = {
       priceDriversTitle: 'ما يغيّر السعر؟',
       priceDrivers:
         'عدد البنود، صعوبة المشروع، مستوى التفاصيل، وعدد التعديلات. السعر النهائي يُثبَّت عند التأكيد.',
-      proofTitle: 'من أعمالنا',
-      proofLead: 'صور من مشاريع نفّذناها — ليست صوراً جاهزة.',
+      proofTitle: 'مشاريع جعلناها تُرى',
+      proofLead: 'من أعمالنا مع مطورين في المملكة والمنطقة.',
+      proofBrowse: 'تصفح الأعمال',
+      proofCases: 'دراسات الحالة',
       whoTitle: 'أي باقة تناسبك؟',
       nextTitle: 'ماذا بعد الطلب؟',
       nextSteps: [
@@ -245,8 +247,10 @@ window.GH_DIRECT = {
       priceDriversTitle: 'What changes the price?',
       priceDrivers:
         'Number of items, project difficulty, detail level, and revision rounds. Final price locks at confirmation.',
-      proofTitle: 'From our work',
-      proofLead: 'Images from projects we delivered — not stock.',
+      proofTitle: 'Projects we made visible',
+      proofLead: 'Selected work for developers in KSA and the region.',
+      proofBrowse: 'Browse work',
+      proofCases: 'Case studies',
       nextTitle: 'What happens next?',
       nextSteps: [
         { title: 'Review within one business day', body: 'We review your selection and project size.' },
@@ -374,8 +378,16 @@ window.GH_DIRECT = {
       caption: { ar: 'واحة السلام — مخطط · CGI', en: 'Wahat Al Salam — master plan · CGI' },
     },
     {
+      src: 'assets/projects/maquettes/anan-escan3.webp',
+      caption: { ar: 'عنان إسكان — مجسم', en: 'Anan Eskan — maquette' },
+    },
+    {
       src: 'assets/projects/al-rajhi-naseem/aerial-bird.webp',
       caption: { ar: 'نسيم الحرم — فيلم · مجسم', en: 'Naseem Al-Haram — film · maquette' },
+    },
+    {
+      src: 'assets/projects/maquettes/anan-eskan-maquette-01.webp',
+      caption: { ar: 'عنان إسكان — صالة بيع', en: 'Anan Eskan — sales gallery' },
     },
     {
       src: 'assets/projects/rafal-pavilions/lobby.webp',
@@ -383,10 +395,47 @@ window.GH_DIRECT = {
     },
     {
       src: 'assets/projects/rendering/Anan-Escan-Co.01.webp',
-      caption: {
-        ar: 'مجمع سكني (عنان إسكان) — CGI · مجسم',
-        en: 'Residential community (Anan Eskan) — CGI · maquette',
-      },
+      caption: { ar: 'عنان إسكان — إظهار معماري', en: 'Anan Eskan — architectural viz' },
+    },
+    {
+      src: 'assets/projects/maquettes/alrajhi3.webp',
+      caption: { ar: 'الراجحي — مجسم', en: 'Al Rajhi — maquette' },
+    },
+    {
+      src: 'assets/projects/animation/rafal-pavilions.webp',
+      caption: { ar: 'بافيليونز رافال — فيلم', en: 'Rafal Pavilions — film' },
+    },
+    {
+      src: 'assets/projects/rendering/anan-escan2.webp',
+      caption: { ar: 'عنان إسكان — مجمع سكني', en: 'Anan Eskan — residential' },
+    },
+    {
+      src: 'assets/projects/animation/jeddah-forum.webp',
+      caption: { ar: 'منتدى جدة — فيلم', en: 'Jeddah Forum — film' },
+    },
+    {
+      src: 'assets/projects/maquettes/The-Financial-Center-of-King-Abdullah-City.webp',
+      caption: { ar: 'المركز المالي — مجسم', en: 'Financial Center — maquette' },
+    },
+    {
+      src: 'assets/projects/animation/alrajhi.webp',
+      caption: { ar: 'الراجحي — فيلم', en: 'Al Rajhi — film' },
+    },
+    {
+      src: 'assets/news/makkah-charter-02.jpeg',
+      caption: { ar: 'معرض الإنسانية — رابطة العالم الإسلامي', en: 'Humanity Expo — MWL' },
+    },
+    {
+      src: 'assets/projects/maquettes/Al-Khair-Heights-in-Makkah1-e1745148056352.webp',
+      caption: { ar: 'نخبة الخير — مجسم', en: 'Nukhbat Al Khair — maquette' },
+    },
+    {
+      src: 'assets/projects/al-rajhi-naseem/int-living.webp',
+      caption: { ar: 'نسيم الحرم — داخلي', en: 'Naseem Al-Haram — interior' },
+    },
+    {
+      src: 'assets/projects/cinematic/video-1.webp',
+      caption: { ar: 'فيلم سينمائي — إنتاج GH', en: 'Cinematic film — GH production' },
     },
   ],
 

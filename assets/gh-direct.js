@@ -336,28 +336,58 @@
       host.innerHTML = '';
       return;
     }
+    var prefix = assetPrefix || '';
+    var portfolioHref = prefix + (lang === 'ar' ? 'portfolio.html' : 'portfolio-en.html');
+    var casesHref = prefix + (lang === 'ar' ? 'casestudy1.html' : 'casestudy1-en.html');
+    var slideHtml = items
+      .map(function (item) {
+        return (
+          '<figure class="ghd-proof-slide">' +
+          '<img src="' +
+          escapeAttr(mediaUrl(item.src)) +
+          '" alt="' +
+          escapeAttr(t(item.caption)) +
+          '" loading="lazy" decoding="async" width="320" height="180">' +
+          '<figcaption>' +
+          escapeHtml(t(item.caption)) +
+          '</figcaption></figure>'
+        );
+      })
+      .join('');
     host.innerHTML =
       '<div class="ghd-proof-head"><h3 class="ghd-proof-title">' +
       escapeHtml(ui.proofTitle || '') +
       '</h3><p class="ghd-proof-lead">' +
       escapeHtml(ui.proofLead || '') +
-      '</p></div><div class="ghd-proof-grid">' +
-      items
-        .map(function (item) {
-          return (
-            '<figure class="ghd-proof-card">' +
-            '<img src="' +
-            escapeAttr(mediaUrl(item.src)) +
-            '" alt="' +
-            escapeAttr(t(item.caption)) +
-            '" loading="lazy" decoding="async" width="480" height="320">' +
-            '<figcaption>' +
-            escapeHtml(t(item.caption)) +
-            '</figcaption></figure>'
-          );
-        })
-        .join('') +
+      '</p></div>' +
+      '<div class="ghd-proof-album" aria-label="' +
+      escapeAttr(ui.proofTitle || '') +
+      '">' +
+      '<div class="ghd-proof-frame">' +
+      '<div class="ghd-proof-track" id="ghd-proof-track">' +
+      slideHtml +
+      '</div></div></div>' +
+      '<div class="ghd-proof-actions">' +
+      '<a class="ghd-proof-btn ghd-proof-btn--solid" href="' +
+      escapeAttr(portfolioHref) +
+      '">' +
+      escapeHtml(ui.proofBrowse || '') +
+      ' <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>' +
+      '<a class="ghd-proof-btn ghd-proof-btn--ghost" href="' +
+      escapeAttr(casesHref) +
+      '">' +
+      escapeHtml(ui.proofCases || '') +
+      ' <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span></a>' +
       '</div>';
+
+    var track = document.getElementById('ghd-proof-track');
+    if (track) {
+      Array.prototype.slice.call(track.children).forEach(function (node) {
+        var clone = node.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+      });
+    }
   }
 
   function renderAtelierEntry() {
