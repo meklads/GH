@@ -20,7 +20,10 @@
         en: '',
       },
       brandName: { ar: 'GRAPHICS HOUSE', en: 'GRAPHICS HOUSE' },
-      brandTag: { ar: 'نُظهر ما سيأتي.', en: 'Visualizing what comes next.' },
+      brandTag: {
+        ar: 'نُجسّد المشاريع بصريًا، ونصنع تجارب تبقى.',
+        en: 'Visualizing Projects. Creating Experiences.',
+      },
       ctaPrimary: { ar: 'ابدأ مشروعك', en: 'Start your project' },
       ctaSecondary: { ar: 'ماذا نقدّم', en: 'See what we deliver' },
       media: 'assets/projects/wahat-al-salam/hero-aerial.webp',
@@ -276,33 +279,45 @@
       h2a: { ar: 'مشاريع ساعدنا', en: 'Projects we helped' },
       h2b: { ar: 'على أن تُرى.', en: 'bring to life.' },
       lead: {
-        ar: 'عيّنات من أعمال Graphics House — إظهار، فيلم، ومجسمات.',
-        en: 'Selected Graphics House work — visualization, film, and models.',
+        ar: 'عيّنات من أعمال Graphics House الموثّقة — إظهار، فيلم، ومجسمات.',
+        en: 'Selected verified Graphics House work — visualization, film, and models.',
       },
       items: [
         {
           name: { ar: 'واحة السلام', en: 'Wahat Al Salam' },
-          role: { ar: 'إظهار جوي · قصة المخطط', en: 'Aerial visualization · masterplan story' },
+          role: {
+            ar: 'عقارات العيسائي · مخطط رئيسي · CGI · كتالوج',
+            en: 'Al-Essai Real Estate · master plan · CGI · catalogue',
+          },
           path: { ar: 'رؤية → إظهار → إطلاق', en: 'Vision → Visualization → Launch' },
           src: 'assets/projects/wahat-al-salam/hero-aerial.webp',
         },
         {
-          name: { ar: 'الراجحي النسيم', en: 'Al Rajhi Naseem' },
-          role: { ar: 'إظهار داخلي · مجسم', en: 'Interior visualization · maquette' },
+          name: { ar: 'نسيم الحرم', en: 'Naseem Al-Haram' },
+          role: {
+            ar: 'الراجحي · فيلم CGI · مجسم · إظهار داخلي وخارجي',
+            en: 'Al Rajhi · CGI film · maquette · interior & exterior viz',
+          },
           path: { ar: 'رؤية → إظهار → تجربة', en: 'Vision → Visualization → Experience' },
-          src: 'assets/projects/al-rajhi-naseem/int-living.webp',
+          src: 'assets/projects/al-rajhi-naseem/aerial-bird.webp',
         },
         {
-          name: { ar: 'رافال بافيليونز', en: 'Rafal Pavilions' },
-          role: { ar: 'أفلام إطلاق · حضور سوقي', en: 'Launch films · market presence' },
+          name: { ar: 'بافيليونز', en: 'Pavilions' },
+          role: {
+            ar: 'رفال للتطوير · فيلم CGI · مجسم · مكاتب VIP',
+            en: 'Rafal Development · CGI film · maquette · VIP offices',
+          },
           path: { ar: 'إظهار → تجربة → إطلاق', en: 'Visualization → Experience → Launch' },
-          src: 'assets/projects/rafal-pavilions/film-still.webp',
+          src: 'assets/projects/rafal-pavilions/lobby.webp',
         },
         {
-          name: { ar: 'عنان إسكان', en: 'Anan Eskan' },
-          role: { ar: 'مجسم معماري · جاهزية البيع', en: 'Architectural maquette · sales readiness' },
+          name: { ar: 'مجمع سكني، الرياض', en: 'Residential Community, Riyadh' },
+          role: {
+            ar: 'عنان إسكان للتطوير · CGI سينمائي · مجسم',
+            en: 'Anan Eskan · cinematic CGI · maquette',
+          },
           path: { ar: 'رؤية → تجربة → إطلاق', en: 'Vision → Experience → Launch' },
-          src: 'assets/projects/maquettes/anan-eskan-maquette-01.webp',
+          src: 'assets/projects/rendering/Anan-Escan-Co.01.webp',
         },
       ],
     },
@@ -361,7 +376,10 @@
       primary: { ar: 'ابدأ مشروعك', en: 'Start your project' },
       secondary: { ar: 'واتساب', en: 'WhatsApp' },
       brand: { ar: 'GRAPHICS HOUSE', en: 'GRAPHICS HOUSE' },
-      tag: { ar: 'إظهار · تجربة · إطلاق', en: 'Visualization · Experience · Launch' },
+      tag: {
+        ar: 'إظهار · تجربة · إطلاق',
+        en: 'Visualization · Experience · Launch',
+      },
     },
   };
 })();

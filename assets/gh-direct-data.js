@@ -419,19 +419,22 @@ window.GH_DIRECT = {
   proof: [
     {
       src: 'assets/projects/wahat-al-salam/hero-aerial.webp',
-      caption: { ar: 'واحة السلام — إظهار جوي', en: 'Wahat Al Salam — aerial viz' },
+      caption: { ar: 'واحة السلام — مخطط · CGI', en: 'Wahat Al Salam — master plan · CGI' },
     },
     {
-      src: 'assets/projects/al-rajhi-naseem/int-living.webp',
-      caption: { ar: 'الراجحي النسيم — داخلي', en: 'Al Rajhi Naseem — interior' },
+      src: 'assets/projects/al-rajhi-naseem/aerial-bird.webp',
+      caption: { ar: 'نسيم الحرم — فيلم · مجسم', en: 'Naseem Al-Haram — film · maquette' },
     },
     {
-      src: 'assets/projects/rafal-pavilions/film-still.webp',
-      caption: { ar: 'رافال — لقطة فيلم', en: 'Rafal — film still' },
+      src: 'assets/projects/rafal-pavilions/lobby.webp',
+      caption: { ar: 'بافيليونز — فيلم · مجسم', en: 'Pavilions — film · maquette' },
     },
     {
-      src: 'assets/projects/maquettes/anan-eskan-maquette-01.webp',
-      caption: { ar: 'عنان إسكان — مجسم', en: 'Anan Eskan — maquette' },
+      src: 'assets/projects/rendering/Anan-Escan-Co.01.webp',
+      caption: {
+        ar: 'مجمع سكني (عنان إسكان) — CGI · مجسم',
+        en: 'Residential community (Anan Eskan) — CGI · maquette',
+      },
     },
   ],
 
