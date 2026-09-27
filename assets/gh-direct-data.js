@@ -843,17 +843,31 @@ services: [
         en: 'A project in the Foundation stage that needs a fast visual presence',
       },
       delivery: {
-        ar: 'خلال أسابيع قليلة بعد التأكيد',
-        en: 'Within a few weeks after confirmation',
+        ar: 'خلال أسابيع قليلة بعد تثبيت النطاق',
+        en: 'Within a few weeks after scope lock',
       },
       price: 45000,
       featured: false,
       includedServiceIds: ['identity-basic', 'drone-short'],
       includedLines: [
-        { ar: 'رندرات 3D: 10–15 صورة', en: '3D renders: 10–15 images' },
-        { ar: 'هوية بصرية أساسية', en: 'Essential visual identity', serviceId: 'identity-basic' },
-        { ar: 'فيديو درون قصير', en: 'Short drone film', serviceId: 'drone-short' },
-        { ar: 'صفحة هبوط تسويقية', en: 'One marketing landing page' },
+        {
+          ar: 'رندرات 3D: حتى 12 صورة فوتوريال (خارجي/داخلي حسب المخطط) · جولتا مراجعة',
+          en: '3D renders: up to 12 photoreal images (exterior/interior per plans) · two revision rounds',
+        },
+        {
+          ar: 'هوية أساسية: شعار المشروع + لوحة ألوان + ملفات تسليم جاهزة للاستخدام',
+          en: 'Essential identity: project logo + colour palette + ready-to-use delivery files',
+          serviceId: 'identity-basic',
+        },
+        {
+          ar: 'فيديو درون: تصوير موقع واحد · فيلم قصير حتى ~60 ثانية بعد المونتاج',
+          en: 'Drone film: one site shoot · short film up to ~60 seconds after edit',
+          serviceId: 'drone-short',
+        },
+        {
+          ar: 'صفحة هبوط: صفحة تسويقية واحدة للمشروع (عربي) · جاهزة للنشر',
+          en: 'Landing page: one project marketing page (Arabic) · publish-ready',
+        },
       ],
     },
     {
