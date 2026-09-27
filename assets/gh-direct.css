@@ -773,9 +773,9 @@ html[dir='ltr'] .ghd-hero-rule {
   background: #141414;
   color: #f5f5f3;
   border-color: transparent;
-  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.28);
-  transform: scale(1.01);
-  z-index: 1;
+  box-shadow: 0 18px 44px rgba(14, 14, 14, 0.26);
+  transform: none;
+  z-index: 2;
 }
 .ghd-pkg--featured .ghd-pkg-tagline,
 .ghd-pkg--featured .ghd-pkg-note,
@@ -2506,10 +2506,10 @@ html[dir="ltr"] .ghd-pkg-ribbon {
 @media (max-width: 979px) {
   .ghd-pkg--featured {
     transform: none;
-    padding-top: 44px;
+    padding-top: 34px;
   }
   .ghd-pkg--featured:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
 }
 
