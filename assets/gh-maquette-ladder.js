@@ -20,7 +20,6 @@
         ar: 'للاعتمادات واجتماعات المستثمرين — مجسم دقيق بدون أنظمة رقمية.',
         en: 'For approvals and investor meetings — precise model without digital systems.',
       },
-      from: { ar: 'يبدأ من 28,500 ر.س', en: 'From 28,500 SAR' },
       proof: {
         title: { ar: 'مجسم عرض دقيق', en: 'Precision display model' },
         tag: { ar: 'كلاسيكي · صالة واجتماعات', en: 'Classic · gallery & meetings' },
@@ -38,12 +37,11 @@
         ar: 'لصالة البيع — إضاءة وبيانات وشاشات تعمل مع فريق المبيعات.',
         en: 'For the sales gallery — lighting, data, and screens for the sales team.',
       },
-      from: { ar: 'حسب النطاق والتقنية', en: 'Scoped to tech & size' },
       proof: {
-        title: { ar: 'إضاءة حية على المجسم', en: 'Live lighting on the model' },
-        tag: { ar: 'ذكي · أداة بيع', en: 'Smart · sales tool' },
-        src: PREFIX + 'assets/projects/maquettes/Mechanism/lighting-action-mobile.mp4',
-        poster: PREFIX + 'assets/projects/maquettes/Mechanism/lighting-action-poster.jpg',
+        title: { ar: 'مجسم ذكي لصالة البيع', en: 'Smart maquette for the sales gallery' },
+        tag: { ar: 'ذكي · حضور كامل', en: 'Smart · full presence' },
+        src: PREFIX + 'assets/videos/scale-model-maquette-mobile.mp4',
+        poster: PREFIX + 'assets/videos/scale-model-maquette-poster.jpg',
         kind: 'video',
       },
     },
@@ -56,7 +54,6 @@
         ar: 'للإطلاق والقصة — طبقات وآليات تتحرك مع مراحل المشروع.',
         en: 'For launch storytelling — layers and mechanisms that move with the project.',
       },
-      from: { ar: 'حسب الآلية', en: 'By mechanism scope' },
       proof: {
         title: { ar: 'آلية صناعية متحركة', en: 'Moving industrial mechanism' },
         tag: { ar: 'حركي · قصة الإطلاق', en: 'Kinetic · launch story' },
@@ -74,7 +71,6 @@
         ar: 'لإقناع المشتري بالوحدة والتشطيب — تفاصيل داخل الأدوار.',
         en: 'To sell the unit and finishes — interior detail by floor.',
       },
-      from: { ar: 'يبدأ من حسب المساحة', en: 'From · by area' },
       proof: {
         title: { ar: 'فرش الدور داخل المجسم', en: 'Floor furnish inside the model' },
         tag: { ar: 'فرش · مقياس حي', en: 'Furnish · living scale' },
@@ -184,9 +180,6 @@
         '</h3>' +
         '<p class="gh-mq-card__fit">' +
         t(type.fit) +
-        '</p>' +
-        '<p class="gh-mq-card__from">' +
-        t(type.from) +
         '</p>' +
         '<span class="gh-mq-card__cta">' +
         (lang === 'ar' ? 'اختر هذا النوع ←' : 'Choose this type →') +
