@@ -1,30 +1,82 @@
 /* GH Direct — packages & pricing configurator (site tokens) */
 .ghd-page {
-  --ghd-bg: #f7f5f0;
+  --ghd-bg: #f6f4ef;
   --ghd-paper: #ffffff;
-  --ghd-ink: #141414;
-  --ghd-muted: #5c5c5c;
-  --ghd-faint: #8a8a8a;
+  --ghd-ink: #121212;
+  --ghd-muted: #4a4a4a;
+  --ghd-faint: #7a7a7a;
   --ghd-gold: #c9a84c;
   --ghd-gold-dark: #a8883a;
-  --ghd-border: rgba(20, 20, 20, 0.08);
-  --ghd-shadow: 0 16px 48px rgba(20, 20, 20, 0.07);
+  --ghd-border: rgba(18, 18, 18, 0.08);
+  --ghd-shadow: 0 16px 48px rgba(18, 18, 18, 0.07);
+  --ghd-display: 'Tajawal', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  --ghd-text: 'IBM Plex Sans Arabic', 'Tajawal', system-ui, sans-serif;
+  --ghd-latin: Inter, 'Helvetica Neue', Arial, sans-serif;
   background: var(--ghd-bg);
   color: var(--ghd-ink);
   min-height: 100vh;
+  font-family: var(--ghd-text);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html[dir='ltr'] .ghd-page {
+  --ghd-display: Inter, 'Helvetica Neue', Arial, sans-serif;
+  --ghd-text: Inter, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .ghd-page--hub {
-  --ghd-bg: #fafaf8;
+  --ghd-bg: #f8f7f3;
   --ghd-paper: #ffffff;
-  --ghd-ink: #141414;
-  --ghd-muted: #5c5c5c;
-  --ghd-faint: #8a8a8a;
-  --ghd-border: rgba(20, 20, 20, 0.08);
-  --ghd-shadow: 0 14px 40px rgba(20, 20, 20, 0.06);
+  --ghd-ink: #121212;
+  --ghd-muted: #4a4a4a;
+  --ghd-faint: #7a7a7a;
+  --ghd-border: rgba(18, 18, 18, 0.08);
+  --ghd-shadow: 0 14px 40px rgba(18, 18, 18, 0.06);
   background:
-    radial-gradient(ellipse 70% 45% at 50% -10%, rgba(201, 168, 76, 0.1), transparent 55%),
+    radial-gradient(ellipse 72% 48% at 50% -12%, rgba(201, 168, 76, 0.12), transparent 58%),
+    linear-gradient(180deg, #faf9f5 0%, var(--ghd-bg) 42%),
     var(--ghd-bg);
+}
+
+/* Clarity: body/meta use text face; display titles use display face */
+.ghd-page h1,
+.ghd-page h2,
+.ghd-page h3,
+.ghd-page .ghd-hero-brand,
+.ghd-page .ghd-pkg-price-main,
+.ghd-page .ghd-family-title {
+  font-family: var(--ghd-display);
+}
+.ghd-page .ghd-hero-lead,
+.ghd-page .ghd-section-head p,
+.ghd-page .ghd-svc-blurb,
+.ghd-page .ghd-pkg-tagline,
+.ghd-page .ghd-pkg-foot,
+.ghd-page .ghd-atelier-lead,
+.ghd-page .ghd-compose-hint,
+.ghd-page .ghd-addon-name,
+.ghd-page .ghd-addon-meta,
+.ghd-page .ghd-filter,
+.ghd-page .ghd-family-count,
+.ghd-page .ghd-list li,
+.ghd-page .ghd-faq-q,
+.ghd-page .ghd-faq-a,
+.ghd-page .ghd-meeting-lead,
+.ghd-page .ghd-next-list p {
+  font-family: var(--ghd-text);
+  font-weight: 400;
+}
+
+@keyframes ghd-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ghd-rule {
+  from { transform: scaleX(0); opacity: 0; }
+  to { transform: scaleX(1); opacity: 1; }
 }
 
 /* Client-hub draft chrome */
@@ -143,48 +195,68 @@
   color: #141414;
 }
 
-/* Hero */
+/* Hero — brand first */
 .ghd-hero {
-  padding: 48px 0 36px;
+  padding: 56px 0 44px;
   border-bottom: 1px solid var(--ghd-border);
   background:
-    radial-gradient(ellipse 80% 60% at 50% -20%, rgba(201, 168, 76, 0.14), transparent 55%),
+    radial-gradient(ellipse 70% 55% at 72% 0%, rgba(201, 168, 76, 0.16), transparent 52%),
+    radial-gradient(ellipse 50% 40% at 12% 80%, rgba(18, 18, 18, 0.03), transparent 55%),
     transparent;
 }
-.ghd-hero-eyebrow {
-  color: var(--ghd-gold);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin: 0 0 12px;
+.ghd-hero-inner {
+  max-width: 42rem;
+  animation: ghd-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-.ghd-hero h1 {
-  font-size: clamp(1.55rem, 3.5vw, 2.35rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0 0 6px;
-  color: var(--ghd-ink);
+.ghd-hero-eyebrow {
+  color: var(--ghd-gold-dark);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
 }
 .ghd-hero-brand {
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  font-weight: 600;
-  color: var(--ghd-gold);
-  margin: 0 0 14px;
-  letter-spacing: 0.04em;
+  font-size: clamp(2.15rem, 5.2vw, 3.35rem);
+  font-weight: 700;
+  line-height: 1.08;
+  margin: 0 0 10px;
+  color: var(--ghd-ink);
+  letter-spacing: -0.02em;
 }
-html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.08em; }
+html[dir='ltr'] .ghd-hero-brand {
+  letter-spacing: 0.02em;
+}
+.ghd-hero-title {
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0 0 16px;
+  color: rgba(18, 18, 18, 0.62);
+  font-family: var(--ghd-text);
+}
 .ghd-hero-lead {
-  font-size: 0.98rem;
-  line-height: 1.7;
+  font-size: 1.02rem;
+  line-height: 1.75;
   font-weight: 400;
   color: var(--ghd-muted);
-  max-width: 38rem;
-  margin: 0;
+  max-width: 36rem;
+  margin: 0 0 22px;
+}
+.ghd-hero-rule {
+  display: block;
+  width: 72px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ghd-gold), rgba(201, 168, 76, 0.15));
+  transform-origin: right center;
+  animation: ghd-rule 0.8s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+html[dir='ltr'] .ghd-hero-rule {
+  transform-origin: left center;
 }
 
 .ghd-section {
-  padding: 48px 0;
+  padding: 52px 0;
 }
 .ghd-section--packages {
   padding-top: 8px;
@@ -195,19 +267,21 @@ html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.08em; }
   padding-bottom: 72px;
 }
 .ghd-section-head {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+  position: relative;
 }
 .ghd-section-head h2 {
-  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
   font-weight: 700;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
 }
 .ghd-section-head p {
   margin: 0;
   color: var(--ghd-muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.7;
   max-width: 36rem;
 }
 
@@ -1528,15 +1602,17 @@ body.ghd-modal-open { overflow: hidden; }
   margin-bottom: 36px;
 }
 .ghd-section--packages .ghd-section-head h2 {
-  font-size: clamp(1.75rem, 3vw, 2.35rem);
-  font-weight: 800;
+  font-size: clamp(1.65rem, 2.8vw, 2.15rem);
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: #1a1a1a;
 }
 .ghd-section--packages .ghd-section-head p {
   margin-inline: auto;
-  color: rgba(26, 26, 26, 0.55);
-  font-size: 0.98rem;
+  color: rgba(26, 26, 26, 0.58);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .ghd-packages {
@@ -1563,13 +1639,17 @@ body.ghd-modal-open { overflow: hidden; }
   text-align: center;
   background: #ffffff;
   border: 1px solid rgba(20, 20, 20, 0.06);
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 36px 28px 28px;
   box-shadow: 0 12px 36px rgba(20, 20, 20, 0.06);
   overflow: visible;
   min-height: 100%;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease;
+  animation: ghd-rise 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+.ghd-pkg:nth-child(1) { animation-delay: 0.05s; }
+.ghd-pkg:nth-child(2) { animation-delay: 0.12s; }
+.ghd-pkg:nth-child(3) { animation-delay: 0.19s; }
 .ghd-pkg::before {
   content: none;
 }
@@ -1586,7 +1666,7 @@ body.ghd-modal-open { overflow: hidden; }
   z-index: 3;
   white-space: nowrap;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 7px 16px;
@@ -1609,7 +1689,7 @@ body.ghd-modal-open { overflow: hidden; }
   align-items: center;
   justify-content: center;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   padding: 7px 16px;
   border-radius: 999px;
   background: #eef0f3;
@@ -1629,23 +1709,23 @@ body.ghd-modal-open { overflow: hidden; }
 }
 .ghd-pkg-price-main {
   font-size: clamp(2.4rem, 4vw, 3rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -0.03em;
   color: #141414;
-  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--ghd-latin);
   font-variant-numeric: tabular-nums;
 }
 .ghd-pkg-price-suffix {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: rgba(20, 20, 20, 0.55);
 }
 .ghd-pkg-price-note {
   margin: 0;
   font-size: 12px;
-  font-weight: 600;
-  color: rgba(20, 20, 20, 0.45);
+  font-weight: 400;
+  color: rgba(20, 20, 20, 0.48);
 }
 .ghd-pkg-priceblock--live .ghd-pkg-price-main {
   font-size: clamp(1.15rem, 2vw, 1.35rem);
@@ -1655,11 +1735,11 @@ body.ghd-modal-open { overflow: hidden; }
 }
 
 .ghd-pkg-tagline {
-  margin: 4px 0 18px;
-  font-size: 14px;
-  line-height: 1.5;
+  margin: 6px auto 20px;
+  font-size: 14.5px;
+  line-height: 1.6;
   font-weight: 400;
-  color: rgba(20, 20, 20, 0.58);
+  color: rgba(20, 20, 20, 0.6);
   max-width: 22rem;
 }
 
@@ -1672,12 +1752,12 @@ body.ghd-modal-open { overflow: hidden; }
 }
 .ghd-pkg .ghd-list li {
   margin: 0;
-  padding: 14px 6px;
-  border-top: 1px solid rgba(20, 20, 20, 0.08);
+  padding: 13px 8px;
+  border-top: 1px solid rgba(20, 20, 20, 0.07);
   font-size: 14px;
-  line-height: 1.45;
-  font-weight: 500;
-  color: rgba(20, 20, 20, 0.78);
+  line-height: 1.55;
+  font-weight: 400;
+  color: rgba(20, 20, 20, 0.72);
   display: block;
 }
 .ghd-pkg .ghd-list li:last-child {
@@ -1701,8 +1781,8 @@ body.ghd-modal-open { overflow: hidden; }
   justify-content: center;
   border-radius: 10px;
   padding: 14px 18px;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 14.5px;
+  font-weight: 600;
 }
 .ghd-cta--primary {
   background: #141414 !important;
@@ -1728,7 +1808,7 @@ body.ghd-modal-open { overflow: hidden; }
   box-shadow: none !important;
   color: rgba(20, 20, 20, 0.55) !important;
   font-size: 13px !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   padding: 4px !important;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -1739,10 +1819,10 @@ body.ghd-modal-open { overflow: hidden; }
 
 .ghd-pkg-foot {
   margin: 14px 0 0;
-  font-size: 12px;
-  line-height: 1.45;
-  color: rgba(20, 20, 20, 0.45);
-  font-weight: 500;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: rgba(20, 20, 20, 0.48);
+  font-weight: 400;
 }
 
 /* Featured (Signature) — dark calm card */
@@ -1850,10 +1930,11 @@ body.ghd-modal-open { overflow: hidden; }
 }
 
 .ghd-atelier {
-  margin: 36px auto 0;
+  margin: 40px auto 0;
   max-width: 1100px;
   scroll-margin-top: calc(var(--gh-header-height, 72px) + 16px);
   position: relative;
+  animation: ghd-rise 0.75s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .ghd-atelier-inner {
   position: relative;
@@ -1975,18 +2056,22 @@ body.ghd-modal-open { overflow: hidden; }
 
 /* Catalog section elevation */
 .ghd-section--catalog {
-  padding-top: 40px;
-  padding-bottom: 56px;
+  padding-top: 48px;
+  padding-bottom: 64px;
   border-top: 1px solid var(--ghd-border);
   background:
-    radial-gradient(ellipse 55% 40% at 50% 0%, rgba(201, 168, 76, 0.07), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 50% 0%, rgba(201, 168, 76, 0.08), transparent 60%),
     transparent;
 }
 .ghd-section--catalog .ghd-section-head {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  max-width: 40rem;
+}
+.ghd-section--catalog .ghd-section-head h2 {
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
 }
 .ghd-filter-bar {
-  background: linear-gradient(180deg, rgba(250, 250, 248, 0.97) 55%, rgba(250, 250, 248, 0.82) 100%);
+  background: linear-gradient(180deg, rgba(248, 247, 243, 0.97) 55%, rgba(248, 247, 243, 0.82) 100%);
 }
 
 /* Hide legacy path pills / who-strip if any markup remains */

@@ -213,8 +213,8 @@
     var brand = document.getElementById('ghd-brand');
     var lead = document.getElementById('ghd-lead');
     if (eye) eye.textContent = ui.pageEyebrow;
-    if (title) title.textContent = ui.pageTitle;
     if (brand) brand.textContent = ui.pageBrand;
+    if (title) title.textContent = ui.pageTitle;
     if (lead) lead.textContent = ui.pageLead;
     var catH = document.getElementById('ghd-catalog-title');
     var catL = document.getElementById('ghd-catalog-lead');
@@ -373,7 +373,7 @@
         ? '<a class="' +
           ctaClass +
           '" href="#atelier-workshop" data-open-atelier="1">' +
-          escapeHtml(ui.openAtelier || (lang === 'ar' ? 'ابنِ مزيجك ↓' : 'Build your mix ↓')) +
+          escapeHtml(ui.openAtelier || (lang === 'ar' ? 'ابنِ مزيجك' : 'Build your mix')) +
           '</a>'
         : '<button type="button" class="' +
           ctaClass +
