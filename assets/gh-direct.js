@@ -552,21 +552,8 @@
           '</div>'
         : '';
 
-      var stage =
-        pkg.stage
-          ? '<p class="ghd-pkg-stage">' +
-            '<span class="ghd-pkg-stage-kicker">' +
-            escapeHtml(ui.stagePrefix || ui.stageLabel || '') +
-            '</span>' +
-            '<strong class="ghd-pkg-stage-name">' +
-            escapeHtml(t(pkg.stage)) +
-            '</strong></p>'
-          : '';
-
       var namePill =
-        '<span class="ghd-pkg-namepill">' +
-        escapeHtml((ui.packageLabel ? ui.packageLabel + ' ' : '') + t(pkg.name)) +
-        '</span>';
+        '<span class="ghd-pkg-namepill">' + escapeHtml(t(pkg.name)) + '</span>';
 
       var priceBlock =
         '<div class="ghd-pkg-priceblock">' +
@@ -580,26 +567,13 @@
         escapeHtml(currency) +
         '</span></div>';
 
-      var tagline = pkg.tagline
-        ? '<p class="ghd-pkg-tagline">' + escapeHtml(t(pkg.tagline)) + '</p>'
+      var desc = pkg.stage
+        ? '<p class="ghd-pkg-desc">' +
+          escapeHtml(
+            (ui.stagePrefix || ui.stageLabel || '') + ' ' + t(pkg.stage)
+          ) +
+          '</p>'
         : '';
-
-      var fit =
-        pkg.fit
-          ? '<p class="ghd-pkg-fit"><span class="material-symbols-outlined" aria-hidden="true">person</span><span><em>' +
-            escapeHtml(ui.fitLabel || '') +
-            '</em> ' +
-            escapeHtml(t(pkg.fit)) +
-            '</span></p>'
-          : '';
-      var delivery =
-        pkg.delivery
-          ? '<p class="ghd-pkg-delivery"><span class="material-symbols-outlined" aria-hidden="true">schedule</span><span><em>' +
-            escapeHtml(ui.deliveryLabel || '') +
-            '</em> ' +
-            escapeHtml(t(pkg.delivery)) +
-            '</span></p>'
-          : '';
 
       var lines = '';
       if (pkg.includedLines && pkg.includedLines.length) {
@@ -620,8 +594,8 @@
         escapeHtml(
           ui.packagesFoot ||
             (lang === 'ar'
-              ? 'تقدير ابتدائي · تأكيد خلال يوم عمل · بلا دفع أونلاين'
-              : 'Starting estimate · confirm in one business day · no online checkout')
+              ? 'تقدير يبدأ من · يُثبَّت عند التأكيد'
+              : 'Starting-from · locked at confirmation')
         ) +
         '</p>';
 
@@ -638,21 +612,14 @@
       card.innerHTML =
         ribbon +
         '<div class="ghd-pkg-top">' +
-        stage +
         namePill +
         priceBlock +
-        tagline +
+        desc +
         '</div>' +
-        fit +
-        delivery +
         lines +
         '<div class="ghd-pkg-ctas">' +
         primaryCta +
-        '<a class="ghd-cta ghd-cta--outline" data-pkg-wa="' +
-        escapeAttr(pkg.id) +
-        '" href="#" target="_blank" rel="noopener noreferrer">' +
-        escapeHtml(ui.wa) +
-        '</a></div>' +
+        '</div>' +
         foot;
 
       host.appendChild(card);

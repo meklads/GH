@@ -2175,15 +2175,15 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
 .ghd-packages {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 24px;
   align-items: stretch;
-  max-width: 1100px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 @media (min-width: 980px) {
   .ghd-packages {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+    gap: 20px;
     align-items: stretch;
   }
 }
@@ -2195,13 +2195,13 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   align-items: stretch;
   text-align: center;
   background: #ffffff;
-  border: 1px solid rgba(14, 14, 14, 0.09);
-  border-radius: 6px;
-  padding: 36px 28px 28px;
-  box-shadow: 0 10px 32px rgba(14, 14, 14, 0.045);
+  border: 1px solid rgba(14, 14, 14, 0.08);
+  border-radius: 12px;
+  padding: 40px 28px 28px;
+  box-shadow: 0 12px 36px rgba(14, 14, 14, 0.06);
   overflow: visible;
   min-height: 100%;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
   animation: ghd-rise 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .ghd-pkg:nth-child(1) { animation-delay: 0.05s; }
@@ -2211,34 +2211,33 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   content: none;
 }
 .ghd-pkg:hover {
-  transform: none;
-  border-color: rgba(201, 168, 76, 0.4);
-  box-shadow: 0 14px 40px rgba(14, 14, 14, 0.07);
+  border-color: rgba(14, 14, 14, 0.14);
+  box-shadow: 0 16px 44px rgba(14, 14, 14, 0.08);
 }
 
 .ghd-pkg-ribbon {
   position: absolute;
-  top: -11px;
+  top: -12px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
   white-space: nowrap;
   font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 2px;
-  background: #c9a84c;
+  padding: 7px 16px;
+  border-radius: 6px;
+  background: var(--ghd-gold);
   color: #141414;
-  box-shadow: 0 6px 14px rgba(201, 168, 76, 0.28);
+  box-shadow: 0 6px 16px rgba(201, 168, 76, 0.3);
 }
 
 .ghd-pkg-top {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 0;
   margin-bottom: 8px;
 }
 
@@ -2246,14 +2245,15 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
-  padding: 6px 14px;
-  border-radius: 2px;
-  background: rgba(14, 14, 14, 0.05);
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: rgba(14, 14, 14, 0.06);
   color: #1a1a1a;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   text-transform: none;
+  margin-bottom: 18px;
 }
 
 .ghd-pkg-priceblock {
@@ -2262,35 +2262,35 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-top: 6px;
+  margin-top: 0;
   direction: ltr;
   unicode-bidi: isolate;
 }
 .ghd-pkg-price-from {
   width: 100%;
   text-align: center;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: none;
-  color: rgba(20, 20, 20, 0.48);
-  margin-bottom: 2px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 20, 0.42);
+  margin-bottom: 4px;
   direction: inherit;
   unicode-bidi: plaintext;
 }
 .ghd-pkg-price-main {
-  font-size: clamp(2.4rem, 4vw, 3rem);
+  font-size: clamp(2.5rem, 4.2vw, 3.15rem);
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
   color: #141414;
   font-family: var(--ghd-latin);
   font-variant-numeric: tabular-nums;
 }
 .ghd-pkg-price-suffix {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  color: rgba(20, 20, 20, 0.55);
+  color: rgba(20, 20, 20, 0.5);
 }
 .ghd-pkg-price-note {
   margin: 0;
@@ -2305,30 +2305,33 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   line-height: 1.35;
 }
 
-.ghd-pkg-tagline {
-  margin: 6px auto 20px;
-  font-size: 14.5px;
-  line-height: 1.6;
+.ghd-pkg-desc {
+  margin: 14px auto 22px;
+  font-size: 13.5px;
+  line-height: 1.45;
   font-weight: 400;
-  color: rgba(20, 20, 20, 0.6);
-  max-width: 22rem;
+  color: rgba(20, 20, 20, 0.55);
+  max-width: 16rem;
+}
+.ghd-pkg-tagline {
+  display: none;
 }
 
 .ghd-pkg .ghd-list {
   list-style: none;
-  margin: 0 0 22px;
+  margin: 0 0 24px;
   padding: 0;
   width: 100%;
   text-align: center;
 }
 .ghd-pkg .ghd-list li {
   margin: 0;
-  padding: 13px 8px;
-  border-top: 1px solid rgba(20, 20, 20, 0.07);
-  font-size: 14px;
-  line-height: 1.55;
+  padding: 14px 10px;
+  border-top: 1px solid rgba(20, 20, 20, 0.08);
+  font-size: 13.5px;
+  line-height: 1.5;
   font-weight: 400;
-  color: rgba(20, 20, 20, 0.72);
+  color: rgba(20, 20, 20, 0.78);
   display: block;
 }
 .ghd-pkg .ghd-list li:last-child {
@@ -2350,11 +2353,11 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   margin: 0;
   width: 100%;
   justify-content: center;
-  border-radius: 3px;
-  padding: 14px 18px;
+  border-radius: 8px;
+  padding: 15px 18px;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 .ghd-cta--primary {
   background: #141414 !important;
@@ -2391,28 +2394,28 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
 
 .ghd-pkg-foot {
   margin: 14px 0 0;
-  font-size: 12.5px;
-  line-height: 1.55;
-  color: rgba(20, 20, 20, 0.48);
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(20, 20, 20, 0.45);
   font-weight: 400;
 }
 
-/* Featured (Signature) — dark calm card */
+/* Featured — dark middle card */
 .ghd-pkg--featured {
-  background: #0f1724;
+  background: #141414;
   color: #f5f5f3;
   border-color: transparent;
-  box-shadow: 0 22px 50px rgba(15, 23, 36, 0.28);
+  box-shadow: 0 22px 52px rgba(14, 14, 14, 0.28);
   transform: none;
   z-index: 2;
-  padding-top: 44px;
+  padding-top: 48px;
 }
 @media (min-width: 980px) {
   .ghd-pkg--featured {
-    transform: scale(1.03);
+    transform: scale(1.04);
   }
   .ghd-pkg--featured:hover {
-    transform: scale(1.03) translateY(-3px);
+    transform: scale(1.04) translateY(-2px);
   }
 }
 .ghd-pkg--featured .ghd-pkg-namepill {
@@ -2424,17 +2427,17 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   color: #fff;
 }
 .ghd-pkg--featured .ghd-pkg-price-from {
-  color: rgba(245, 245, 243, 0.62);
+  color: rgba(245, 245, 243, 0.55);
 }
 .ghd-pkg--featured .ghd-pkg-price-suffix,
 .ghd-pkg--featured .ghd-pkg-price-note,
-.ghd-pkg--featured .ghd-pkg-tagline,
+.ghd-pkg--featured .ghd-pkg-desc,
 .ghd-pkg--featured .ghd-pkg-foot {
-  color: rgba(245, 245, 243, 0.62);
+  color: rgba(245, 245, 243, 0.58);
 }
 .ghd-pkg--featured .ghd-list li {
   border-color: rgba(255, 255, 255, 0.12);
-  color: rgba(245, 245, 243, 0.88);
+  color: rgba(245, 245, 243, 0.9);
 }
 .ghd-pkg--featured .ghd-cta--link {
   color: rgba(245, 245, 243, 0.6) !important;
