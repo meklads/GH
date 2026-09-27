@@ -28,16 +28,16 @@ html[dir='ltr'] .ghd-page {
 }
 
 .ghd-page--hub {
-  --ghd-bg: #f8f7f3;
+  --ghd-bg: #f7f6f2;
   --ghd-paper: #ffffff;
-  --ghd-ink: #121212;
-  --ghd-muted: #4a4a4a;
-  --ghd-faint: #7a7a7a;
-  --ghd-border: rgba(18, 18, 18, 0.08);
-  --ghd-shadow: 0 14px 40px rgba(18, 18, 18, 0.06);
+  --ghd-ink: #0e0e0e;
+  --ghd-muted: #3d3d3d;
+  --ghd-faint: #6e6e6e;
+  --ghd-border: rgba(14, 14, 14, 0.09);
+  --ghd-shadow: 0 18px 48px rgba(14, 14, 14, 0.06);
   background:
-    radial-gradient(ellipse 72% 48% at 50% -12%, rgba(201, 168, 76, 0.12), transparent 58%),
-    linear-gradient(180deg, #faf9f5 0%, var(--ghd-bg) 42%),
+    radial-gradient(ellipse 68% 42% at 50% -10%, rgba(201, 168, 76, 0.09), transparent 56%),
+    linear-gradient(180deg, #fbfaf7 0%, var(--ghd-bg) 38%),
     var(--ghd-bg);
 }
 
@@ -197,57 +197,57 @@ html[dir='ltr'] .ghd-page {
 
 /* Hero — brand first */
 .ghd-hero {
-  padding: 56px 0 44px;
+  padding: 64px 0 52px;
   border-bottom: 1px solid var(--ghd-border);
   background:
-    radial-gradient(ellipse 70% 55% at 72% 0%, rgba(201, 168, 76, 0.16), transparent 52%),
-    radial-gradient(ellipse 50% 40% at 12% 80%, rgba(18, 18, 18, 0.03), transparent 55%),
+    radial-gradient(ellipse 64% 50% at 78% 0%, rgba(201, 168, 76, 0.11), transparent 54%),
+    radial-gradient(ellipse 46% 36% at 8% 88%, rgba(14, 14, 14, 0.025), transparent 55%),
     transparent;
 }
 .ghd-hero-inner {
-  max-width: 42rem;
+  max-width: 44rem;
   animation: ghd-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .ghd-hero-eyebrow {
   color: var(--ghd-gold-dark);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin: 0 0 16px;
+  margin: 0 0 18px;
 }
 .ghd-hero-brand {
-  font-size: clamp(2.15rem, 5.2vw, 3.35rem);
+  font-size: clamp(2.35rem, 5.4vw, 3.55rem);
   font-weight: 700;
-  line-height: 1.08;
-  margin: 0 0 10px;
+  line-height: 1.05;
+  margin: 0 0 14px;
   color: var(--ghd-ink);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 html[dir='ltr'] .ghd-hero-brand {
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 .ghd-hero-title {
-  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
-  font-weight: 600;
-  line-height: 1.35;
-  margin: 0 0 16px;
-  color: rgba(18, 18, 18, 0.78);
+  font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 18px;
+  color: rgba(14, 14, 14, 0.72);
   font-family: var(--ghd-text);
 }
 .ghd-hero-lead {
-  font-size: 1.02rem;
-  line-height: 1.75;
+  font-size: 1.05rem;
+  line-height: 1.85;
   font-weight: 400;
   color: var(--ghd-muted);
-  max-width: 38rem;
-  margin: 0 0 22px;
+  max-width: 40rem;
+  margin: 0 0 26px;
 }
 .ghd-hero-rule {
   display: block;
-  width: 72px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--ghd-gold), rgba(201, 168, 76, 0.15));
+  width: 56px;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--ghd-gold), rgba(201, 168, 76, 0.12));
   transform-origin: right center;
   animation: ghd-rule 0.8s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -282,12 +282,11 @@ html[dir='ltr'] .ghd-hero-rule {
 }
 .ghd-posture-card {
   position: relative;
-  padding: 22px 20px 20px;
-  border-radius: 18px;
-  background:
-    linear-gradient(165deg, rgba(255, 255, 255, 0.96), rgba(248, 246, 240, 0.92));
-  border: 1px solid rgba(20, 20, 20, 0.06);
-  box-shadow: 0 10px 28px rgba(20, 20, 20, 0.03);
+  padding: 26px 22px 24px;
+  border-radius: 4px;
+  background: var(--ghd-paper);
+  border: 1px solid rgba(14, 14, 14, 0.08);
+  box-shadow: none;
   overflow: hidden;
   animation: ghd-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -297,34 +296,35 @@ html[dir='ltr'] .ghd-hero-rule {
   content: '';
   position: absolute;
   inset-inline-start: 0;
-  top: 18px;
-  bottom: 18px;
+  top: 0;
+  bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, var(--ghd-gold), rgba(201, 168, 76, 0.15));
+  background: var(--ghd-gold);
+  opacity: 0.85;
 }
 .ghd-posture-n {
   display: block;
   font-family: var(--ghd-latin);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   color: var(--ghd-gold-dark);
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 .ghd-posture-title {
-  margin: 0 0 8px;
-  font-size: 1.15rem;
+  margin: 0 0 10px;
+  font-size: 1.12rem;
   font-weight: 700;
-  color: #141414;
-  line-height: 1.25;
+  color: var(--ghd-ink);
+  line-height: 1.3;
 }
 .ghd-posture-body {
   margin: 0;
   font-size: 14px;
-  line-height: 1.65;
+  line-height: 1.75;
   font-weight: 400;
-  color: rgba(20, 20, 20, 0.62);
-  max-width: 22rem;
+  color: rgba(14, 14, 14, 0.62);
+  max-width: 24rem;
 }
 .ghd-pkg-stage {
   display: flex;
@@ -359,13 +359,13 @@ html[dir='ltr'] .ghd-hero-rule {
   align-items: center;
   justify-content: space-between;
   gap: 22px 28px;
-  padding: 28px 26px;
-  border-radius: 20px;
+  padding: 32px 30px;
+  border-radius: 4px;
   background:
-    radial-gradient(ellipse 60% 80% at 100% 0%, rgba(201, 168, 76, 0.18), transparent 55%),
-    #121212;
+    radial-gradient(ellipse 55% 70% at 100% 0%, rgba(201, 168, 76, 0.14), transparent 55%),
+    #0e0e0e;
   color: #f5f5f3;
-  border: 1px solid rgba(201, 168, 76, 0.28);
+  border: 1px solid rgba(201, 168, 76, 0.32);
 }
 .ghd-close-copy {
   max-width: 34rem;
@@ -410,18 +410,19 @@ html[dir='ltr'] .ghd-hero-rule {
   position: relative;
 }
 .ghd-section-head h2 {
-  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
   font-weight: 700;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   letter-spacing: -0.02em;
+  color: var(--ghd-ink);
 }
 .ghd-section-head p {
   margin: 0;
   color: var(--ghd-muted);
-  font-size: 1rem;
+  font-size: 1.02rem;
   font-weight: 400;
-  line-height: 1.7;
-  max-width: 36rem;
+  line-height: 1.8;
+  max-width: 38rem;
 }
 
 /* Catalog filters — sticky family rail */
@@ -734,10 +735,10 @@ html[dir='ltr'] .ghd-hero-rule {
 .ghd-pkg {
   background: var(--ghd-paper);
   border: 1px solid var(--ghd-border);
-  border-radius: 18px;
+  border-radius: 6px;
   padding: 28px 22px 22px;
   position: relative;
-  box-shadow: 0 10px 32px rgba(20, 20, 20, 0.05);
+  box-shadow: 0 10px 32px rgba(14, 14, 14, 0.045);
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -1574,31 +1575,31 @@ body.ghd-modal-open { overflow: hidden; }
 .ghd-fit-chip {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(20, 20, 20, 0.08);
-  background: rgba(255, 255, 255, 0.85);
+  gap: 6px;
+  padding: 16px 18px;
+  border-radius: 4px;
+  border: 1px solid rgba(14, 14, 14, 0.1);
+  background: var(--ghd-paper);
   text-decoration: none;
   color: inherit;
   text-align: start;
-  transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 .ghd-fit-chip:hover {
   border-color: rgba(201, 168, 76, 0.55);
-  transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(20, 20, 20, 0.06);
+  transform: none;
+  box-shadow: 0 8px 22px rgba(14, 14, 14, 0.05);
 }
 .ghd-fit-chip strong {
   font-size: 14px;
   font-weight: 600;
-  color: #141414;
+  color: var(--ghd-ink);
 }
 .ghd-fit-chip span {
   font-size: 12.5px;
   font-weight: 400;
-  line-height: 1.45;
-  color: rgba(20, 20, 20, 0.58);
+  line-height: 1.5;
+  color: rgba(14, 14, 14, 0.55);
 }
 
 /* Atelier entry strip */
@@ -1814,12 +1815,12 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 22px;
+  padding: 13px 24px;
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-decoration: none;
-  border-radius: 999px;
+  border-radius: 3px;
   transition: background 0.25s, color 0.25s, border-color 0.25s;
 }
 .ghd-proof-btn .material-symbols-outlined {
@@ -2166,13 +2167,13 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   align-items: stretch;
   text-align: center;
   background: #ffffff;
-  border: 1px solid rgba(20, 20, 20, 0.06);
-  border-radius: 18px;
+  border: 1px solid rgba(14, 14, 14, 0.09);
+  border-radius: 6px;
   padding: 36px 28px 28px;
-  box-shadow: 0 12px 36px rgba(20, 20, 20, 0.06);
+  box-shadow: 0 10px 32px rgba(14, 14, 14, 0.045);
   overflow: visible;
   min-height: 100%;
-  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
   animation: ghd-rise 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .ghd-pkg:nth-child(1) { animation-delay: 0.05s; }
@@ -2182,26 +2183,27 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   content: none;
 }
 .ghd-pkg:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 44px rgba(20, 20, 20, 0.1);
+  transform: none;
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: 0 14px 40px rgba(14, 14, 14, 0.07);
 }
 
 .ghd-pkg-ribbon {
   position: absolute;
-  top: -12px;
+  top: -11px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
   white-space: nowrap;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 7px 16px;
-  border-radius: 8px;
+  padding: 6px 14px;
+  border-radius: 2px;
   background: #c9a84c;
   color: #141414;
-  box-shadow: 0 8px 18px rgba(201, 168, 76, 0.35);
+  box-shadow: 0 6px 14px rgba(201, 168, 76, 0.28);
 }
 
 .ghd-pkg-top {
@@ -2216,13 +2218,14 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  padding: 7px 16px;
-  border-radius: 999px;
-  background: #eef0f3;
-  color: #2a2a2a;
-  letter-spacing: 0.01em;
+  padding: 6px 14px;
+  border-radius: 2px;
+  background: rgba(14, 14, 14, 0.05);
+  color: #1a1a1a;
+  letter-spacing: 0.06em;
+  text-transform: none;
 }
 
 .ghd-pkg-priceblock {
@@ -2319,10 +2322,11 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   margin: 0;
   width: 100%;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 14px 18px;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 .ghd-cta--primary {
   background: #141414 !important;
