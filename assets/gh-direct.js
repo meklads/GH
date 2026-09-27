@@ -164,6 +164,18 @@
     if (svc.price == null || svc.priceLabel === 'contact') {
       return ui.contactPrice;
     }
+    if (svc.priceTo != null && typeof svc.priceTo === 'number') {
+      return (
+        ui.from +
+        ' ' +
+        formatNum(svc.price) +
+        ' – ' +
+        formatNum(svc.priceTo) +
+        ' ' +
+        currency +
+        unitSuffix(svc.unit)
+      );
+    }
     var base = ui.from + ' ' + formatNum(svc.price) + ' ' + currency;
     return base + unitSuffix(svc.unit);
   }
@@ -212,24 +224,12 @@
     if (catL) catL.textContent = ui.catalogLead;
     if (pkgH) pkgH.textContent = ui.packagesTitle;
     if (pkgL) pkgL.textContent = ui.packagesLead;
-    renderPaths();
     renderWhoFor();
     renderNextSteps();
   }
 
   function renderPaths() {
-    var host = document.getElementById('ghd-paths');
-    if (!host) return;
-    host.innerHTML =
-      '<a class="ghd-path" href="#packages"><span class="ghd-path-num">1</span><span>' +
-      escapeHtml(ui.pathPackages || '') +
-      '</span></a>' +
-      '<a class="ghd-path" href="#catalog"><span class="ghd-path-num">2</span><span>' +
-      escapeHtml(ui.pathCatalog || '') +
-      '</span></a>' +
-      '<a class="ghd-path ghd-path--soft" href="#unsure"><span class="ghd-path-num">?</span><span>' +
-      escapeHtml(ui.pathUnsure || '') +
-      '</span></a>';
+    /* Removed: path pills — keep the page simple. */
   }
 
   function renderWhoFor() {
@@ -255,11 +255,6 @@
         openLeadModal(btn.getAttribute('data-lead-pkg'));
       });
     });
-    root.querySelectorAll('[data-seed-spark]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        seedComposeFromSpark();
-      });
-    });
   }
 
   function renderAtelierWorkshop() {
@@ -275,7 +270,7 @@
     var tot = computeTotal(pkg);
     host.innerHTML =
       '<header class="ghd-atelier-head">' +
-      '<div>' +
+      '<div class="ghd-atelier-head-copy">' +
       '<p class="ghd-atelier-kicker">' +
       escapeHtml(ui.builderBadge || '') +
       '</p>' +
@@ -285,10 +280,11 @@
       '<p class="ghd-atelier-lead">' +
       escapeHtml(ui.atelierLead || t(pkg.tagline)) +
       '</p></div>' +
-      '<button type="button" class="ghd-compose-seed" data-seed-spark="1">' +
-      escapeHtml(ui.startFromSpark || '') +
-      '</button></header>' +
+      '<div class="ghd-atelier-mark" aria-hidden="true"></div>' +
+      '</header>' +
+      '<div class="ghd-atelier-stage">' +
       composeGroupsHtml(pkg) +
+      '</div>' +
       totalBoxHtml(pkg, tot) +
       '<div class="ghd-pkg-ctas ghd-atelier-ctas">' +
       '<button type="button" class="ghd-cta ghd-cta--primary" data-lead-pkg="' +
@@ -790,41 +786,6 @@
     );
   }
 
-  function seedComposeFromSpark() {
-    var spark = DATA.packages.find(function (p) {
-      return p.id === 'basic';
-    });
-    var custom = DATA.packages.find(function (p) {
-      return p.id === 'custom';
-    });
-    if (!spark || !custom || !addonState.custom) return;
-    addonState.custom.clear();
-    (spark.includedServiceIds || []).forEach(function (id) {
-      addonState.custom.add(id);
-    });
-    updatePackageUI('custom');
-    refreshPkgWaLinks();
-    var workshop = document.getElementById('atelier-workshop');
-    if (workshop) {
-      workshop.classList.add('is-open');
-      try {
-        workshop.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } catch (e) {}
-    }
-    var card = document.getElementById('pkg-custom');
-    if (card) {
-      card.classList.add('is-pulse');
-      setTimeout(function () {
-        card.classList.remove('is-pulse');
-      }, 1200);
-    }
-    if (window.ghTrack) {
-      try {
-        window.ghTrack('gh_direct_compose_seed_spark');
-      } catch (e) {}
-    }
-  }
-
   function refreshPkgWaLinks() {
     document.querySelectorAll('[data-pkg-wa]').forEach(function (a) {
       var pkgId = a.getAttribute('data-pkg-wa');
@@ -846,14 +807,17 @@
     addonState.custom.add(serviceId);
     updatePackageUI('custom');
     refreshPkgWaLinks();
-    var card = document.getElementById('pkg-custom');
-    if (card) {
-      var details = card.querySelectorAll('.ghd-compose-group');
-      details.forEach(function (d) {
+    var roots = [
+      document.getElementById('ghd-atelier-inner'),
+      document.getElementById('pkg-custom'),
+    ];
+    roots.forEach(function (root) {
+      if (!root) return;
+      root.querySelectorAll('.ghd-compose-group').forEach(function (d) {
         var btn = d.querySelector('[data-addon="' + serviceId + '"]');
         if (btn) d.open = true;
       });
-    }
+    });
   }
 
   function updatePackageUI(pkgId) {
