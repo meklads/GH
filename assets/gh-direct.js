@@ -191,23 +191,13 @@
     var el = document.getElementById('ghd-enterprise');
     if (!el) return;
     var e = DATA.enterprise[lang];
-    var fork =
-      e.forkDirect && e.forkLaunch
-        ? '<ul class="ghd-enterprise-fork"><li><strong>GH Direct</strong> ' +
-          escapeHtml(e.forkDirect.replace(/^GH Direct\s*[—–-]\s*/i, '')) +
-          '</li><li><strong>ProjectLaunch™</strong> ' +
-          escapeHtml(e.forkLaunch.replace(/^ProjectLaunch™\s*[—–-]\s*/i, '')) +
-          '</li></ul>'
-        : '';
     el.innerHTML =
       '<div class="ghd-wrap ghd-enterprise-inner">' +
       '<div><p class="ghd-enterprise-label">' +
       escapeHtml(e.label) +
       '</p><p>' +
       escapeHtml(e.text) +
-      '</p>' +
-      fork +
-      '</div>' +
+      '</p></div>' +
       '<a class="ghd-enterprise-cta" href="' +
       escapeAttr(assetPrefix + e.href) +
       '">' +
@@ -216,421 +206,16 @@
       '</div>';
   }
 
-  /* ---------- Sales narrative (From Vision to Sale) ---------- */
-  function nl(s) {
-    return escapeHtml(s || '').replace(/\n/g, '<br>');
-  }
-
-  function renderSalesHero() {
-    var host = document.querySelector('.ghd-sales-hero');
-    var N = DATA.narrative;
-    if (!host || !N || !N.hero) return;
-    var h = N.hero;
-    var secondary = t(h.leadArSecondary);
-    host.innerHTML =
-      '<div class="ghd-sales-hero__media" aria-hidden="true">' +
-      '<img src="' +
-      escapeAttr(mediaUrl(h.media)) +
-      '" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">' +
-      '</div><div class="ghd-sales-hero__shade" aria-hidden="true"></div>' +
-      '<div class="ghd-sales-hero__inner">' +
-      '<p class="ghd-sales-eyebrow">' +
-      escapeHtml(t(h.eyebrow)) +
-      '</p>' +
-      '<h1 class="ghd-sales-hero__title" id="ghd-sales-h1"><span>' +
-      escapeHtml(t(h.h1a)) +
-      '</span><span>' +
-      escapeHtml(t(h.h1b)) +
-      '</span></h1>' +
-      '<p class="ghd-sales-hero__lead">' +
-      escapeHtml(t(h.lead)) +
-      '</p>' +
-      (secondary
-        ? '<p class="ghd-sales-hero__lead-ar">' + escapeHtml(secondary) + '</p>'
-        : '') +
-      '<p class="ghd-sales-hero__brand"><strong>' +
-      escapeHtml(t(h.brandName)) +
-      '</strong><em>' +
-      escapeHtml(t(h.brandTag)) +
-      '</em></p>' +
-      '<div class="ghd-sales-hero__ctas">' +
-      '<button type="button" class="ghd-cta ghd-cta--hero" data-ghd-start="1">' +
-      escapeHtml(t(h.ctaPrimary)) +
-      '</button>' +
-      '<a class="ghd-cta--ghost" href="' +
-      escapeAttr((h.ctaSecondaryHref || '#capability')) +
-      '">' +
-      escapeHtml(t(h.ctaSecondary)) +
-      '</a></div></div>';
-    host.querySelectorAll('[data-ghd-start]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        openLeadModal('launch');
-      });
-    });
-  }
-
-  function renderProblem() {
-    var host = document.getElementById('problem');
-    var p = DATA.narrative && DATA.narrative.problem;
-    if (!host || !p) return;
-    host.innerHTML =
-      '<div class="ghd-wrap ghd-wrap--wide">' +
-      '<h2 class="ghd-ed__title" id="ghd-problem-title"><span>' +
-      escapeHtml(t(p.h2a)) +
-      '</span><span>' +
-      escapeHtml(t(p.h2b)) +
-      '</span></h2>' +
-      '<p class="ghd-ed__lead">' +
-      nl(t(p.body)) +
-      '</p>' +
-      '<p class="ghd-problem__closer">' +
-      escapeHtml(t(p.closer)) +
-      '</p>' +
-      '<ol class="ghd-problem__chain">' +
-      (p.chain || [])
-        .map(function (c) {
-          return '<li>' + escapeHtml(t(c)) + '</li>';
-        })
-        .join('') +
-      '</ol></div>';
-  }
-
-  function renderJourneyHeadAndMoments() {
-    var head = document.getElementById('ghd-journey-head');
-    var host = document.getElementById('ghd-moments');
-    var N = DATA.narrative;
-    if (!N) return;
-    var jh = N.journeyHead || {};
-    if (head) {
-      head.innerHTML =
-        '<h2 class="ghd-ed__title" id="ghd-journey-title"><span>' +
-        escapeHtml(t(jh.h2a)) +
-        '</span><span>' +
-        escapeHtml(t(jh.h2b)) +
-        '</span></h2>' +
-        '<p class="ghd-ed__lead">' +
-        escapeHtml(t(jh.lead)) +
-        '</p>';
-    }
-    if (!host) return;
-    var moments = N.moments || [];
-    host.innerHTML = moments
-      .map(function (m) {
-        var peak = m.peak ? ' ghd-moment--peak' : '';
-        var mantra =
-          m.mantra && m.mantra.length
-            ? '<ul class="ghd-mantra" aria-label="See · Understand · Experience · Buy">' +
-              m.mantra
-                .map(function (x) {
-                  return '<li>' + escapeHtml(t(x)) + '</li>';
-                })
-                .join('') +
-              '</ul>'
-            : '';
-        return (
-          '<article class="ghd-moment' +
-          peak +
-          '" id="moment-' +
-          escapeAttr(m.id) +
-          '">' +
-          '<div class="ghd-moment__copy-col">' +
-          '<span class="ghd-moment__num">' +
-          escapeHtml(m.num) +
-          '</span>' +
-          '<span class="ghd-moment__stage">' +
-          escapeHtml(t(m.name)) +
-          '</span>' +
-          '<h3 class="ghd-moment__h">' +
-          escapeHtml(t(m.headline)) +
-          '</h3>' +
-          '<p class="ghd-moment__copy">' +
-          escapeHtml(t(m.copy)) +
-          '</p>' +
-          '<ul class="ghd-moment__items">' +
-          (m.items || [])
-            .map(function (it) {
-              return '<li>' + escapeHtml(t(it)) + '</li>';
-            })
-            .join('') +
-          '</ul>' +
-          '<a class="ghd-moment__cta" href="#start" data-ghd-start-pkg="' +
-          escapeAttr(m.packageId) +
-          '">' +
-          escapeHtml(lang === 'ar' ? 'ابدأ من هذه اللحظة ←' : 'Start from this moment →') +
-          '</a>' +
-          mantra +
-          '</div>' +
-          '<figure class="ghd-moment__media"><img src="' +
-          escapeAttr(mediaUrl(m.image)) +
-          '" alt="' +
-          escapeAttr(t(m.headline)) +
-          '" loading="lazy" decoding="async" width="960" height="720"></figure>' +
-          '</article>'
-        );
-      })
-      .join('');
-    host.querySelectorAll('[data-ghd-start-pkg]').forEach(function (a) {
-      a.addEventListener('click', function (e) {
-        e.preventDefault();
-        var pkg = a.getAttribute('data-ghd-start-pkg') || 'launch';
-        openLeadModal(pkg);
-      });
-    });
-  }
-
-  function renderCapability() {
-    var host = document.getElementById('capability');
-    var d = DATA.narrative && DATA.narrative.capability;
-    if (!host || !d) return;
-    host.innerHTML =
-      '<div class="ghd-wrap ghd-wrap--wide">' +
-      '<h2 class="ghd-ed__title" id="ghd-capability-title"><span>' +
-      escapeHtml(t(d.h2a)) +
-      '</span>' +
-      (t(d.h2b) ? '<span>' + escapeHtml(t(d.h2b)) + '</span>' : '') +
-      '</h2>' +
-      '<p class="ghd-ed__lead">' +
-      escapeHtml(t(d.lead)) +
-      '</p>' +
-      '<div class="ghd-capmap" role="list">' +
-      (d.families || [])
-        .map(function (s) {
-          return (
-            '<article class="ghd-cap" role="listitem">' +
-            '<div class="ghd-cap__head">' +
-            '<span class="ghd-cap__num">' +
-            escapeHtml(s.num) +
-            '</span>' +
-            '<h3 class="ghd-cap__name">' +
-            escapeHtml(t(s.name)) +
-            '</h3>' +
-            '<p class="ghd-cap__line">' +
-            escapeHtml(t(s.line)) +
-            '</p></div>' +
-            '<ul class="ghd-cap__items">' +
-            (s.items || [])
-              .map(function (it) {
-                return '<li>' + escapeHtml(t(it)) + '</li>';
-              })
-              .join('') +
-            '</ul></article>'
-          );
-        })
-        .join('') +
-      '</div></div>';
-  }
-
-  function renderWhy() {}
-  function renderAbout() {}
-  function renderWorkflow() {}
-  function renderAdvantage() {}
-
-  function renderProjectsEditorial() {
-    var host = document.getElementById('work');
-    var p = DATA.narrative && DATA.narrative.projects;
-    if (!host || !p) return;
-    host.innerHTML =
-      '<div class="ghd-wrap ghd-wrap--wide">' +
-      '<h2 class="ghd-ed__title" id="ghd-projects-title"><span>' +
-      escapeHtml(t(p.h2a)) +
-      '</span>' +
-      (t(p.h2b)
-        ? '<span>' + escapeHtml(t(p.h2b)) + '</span>'
-        : '') +
-      '</h2>' +
-      '<p class="ghd-ed__lead">' +
-      escapeHtml(t(p.lead)) +
-      '</p>' +
-      '<div class="ghd-proj-grid">' +
-      (p.items || [])
-        .map(function (item) {
-          return (
-            '<figure class="ghd-proj">' +
-            '<div class="ghd-proj__media"><img src="' +
-            escapeAttr(mediaUrl(item.src)) +
-            '" alt="' +
-            escapeAttr(t(item.name)) +
-            '" loading="lazy" decoding="async" width="800" height="500"></div>' +
-            '<figcaption><h3 class="ghd-proj__name">' +
-            escapeHtml(t(item.name)) +
-            '</h3><p class="ghd-proj__role">' +
-            escapeHtml(t(item.role)) +
-            '</p><p class="ghd-proj__path">' +
-            escapeHtml(t(item.path)) +
-            '</p></figcaption></figure>'
-          );
-        })
-        .join('') +
-      '</div></div>';
-  }
-
-  function renderQualify() {
-    var host = document.getElementById('qualify');
-    var q = DATA.narrative && DATA.narrative.qualify;
-    if (!host || !q) return;
-    host.innerHTML =
-      '<div class="ghd-wrap ghd-wrap--wide">' +
-      '<h2 class="ghd-ed__title" id="ghd-qualify-title"><span>' +
-      escapeHtml(t(q.h2a)) +
-      '</span><span>' +
-      escapeHtml(t(q.h2b)) +
-      '</span></h2>' +
-      '<p class="ghd-ed__lead">' +
-      escapeHtml(t(q.lead)) +
-      '</p>' +
-      '<div class="ghd-qualify__grid">' +
-      (q.choices || [])
-        .map(function (c) {
-          return (
-            '<a class="ghd-qualify__card" href="' +
-            escapeAttr(c.href) +
-            '" data-qualify-pkg="' +
-            escapeAttr(c.packageId) +
-            '">' +
-            '<span class="ghd-qualify__tag">' +
-            escapeHtml(t(c.tag)) +
-            '</span>' +
-            '<h3 class="ghd-qualify__title">' +
-            escapeHtml(t(c.title)) +
-            '</h3>' +
-            '<p class="ghd-qualify__line">' +
-            escapeHtml(t(c.line)) +
-            '</p>' +
-            '<span class="ghd-qualify__go">' +
-            escapeHtml(t(q.goLabel) || (lang === 'ar' ? 'إلى اللحظة ←' : 'Go to moment →')) +
-            '</span></a>'
-          );
-        })
-        .join('') +
-      '</div>' +
-      '<p class="ghd-qualify__next">' +
-      '<a class="ghd-cta ghd-cta--hero" href="#start" data-ghd-start="1">' +
-      escapeHtml(
-        (DATA.narrative.finalCta && t(DATA.narrative.finalCta.primary)) ||
-          (lang === 'ar' ? 'ابدأ مشروعك' : 'Start your project')
-      ) +
-      '</a></p></div>';
-    host.querySelectorAll('[data-ghd-start]').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        openLeadModal('launch');
-      });
-    });
-  }
-
-  function renderGhDirectHead() {
-    var host = document.getElementById('ghd-ghdirect-head');
-    var g = DATA.narrative && DATA.narrative.ghDirect;
-    if (!host || !g) return;
-    host.innerHTML =
-      '<p class="ghd-ed__eyebrow">' +
-      escapeHtml(t(g.kicker)) +
-      '</p>' +
-      '<h2 class="ghd-ed__title" id="ghd-ghdirect-title">' +
-      escapeHtml(t(g.title)) +
-      '</h2>' +
-      '<p class="ghd-ed__lead">' +
-      escapeHtml(t(g.lead)) +
-      '</p>';
-  }
-
-  function renderEstimatesChrome() {
-    var need = document.getElementById('ghd-need-specific');
-    if (need && ui.needSpecific) {
-      need.hidden = false;
-      need.textContent = ui.needSpecific;
-    }
-  }
-
-  function renderCommercialBridge() {
-    /* superseded by renderGhDirectHead */
-  }
-
-  function renderFinalCta() {
-    var host = document.getElementById('start');
-    var f = DATA.narrative && DATA.narrative.finalCta;
-    if (!host || !f) return;
-    var wa =
-      'https://wa.me/' +
-      waPhone() +
-      '?text=' +
-      encodeURIComponent(
-        lang === 'ar'
-          ? 'مرحباً — أريد بدء مشروع مع Graphics House (من الرؤية إلى تجربة البيع).'
-          : 'Hello — I want to start a project with Graphics House (From Vision to Sales Experience).'
-      );
-    host.innerHTML =
-      '<div class="ghd-wrap ghd-wrap--narrow">' +
-      '<h2 class="ghd-final__title" id="ghd-final-title"><span>' +
-      escapeHtml(t(f.h2a)) +
-      '</span><span>' +
-      escapeHtml(t(f.h2b)) +
-      '</span></h2>' +
-      '<p class="ghd-final__copy">' +
-      nl(t(f.copy)) +
-      '</p>' +
-      '<div class="ghd-final__ctas">' +
-      '<button type="button" class="ghd-cta ghd-cta--hero" data-ghd-start="1">' +
-      escapeHtml(t(f.primary)) +
-      '</button>' +
-      '<a class="ghd-cta--ghost" href="' +
-      escapeAttr(wa) +
-      '" target="_blank" rel="noopener noreferrer">' +
-      escapeHtml(t(f.secondary)) +
-      '</a></div>' +
-      '<p class="ghd-final__brand"><strong>' +
-      escapeHtml(t(f.brand)) +
-      '</strong><em>' +
-      escapeHtml(t(f.tag)) +
-      '</em></p></div>';
-    host.querySelectorAll('[data-ghd-start]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        openLeadModal('launch');
-      });
-    });
-  }
-
-  function wireReveals() {
-    var nodes = document.querySelectorAll('.ghd-reveal');
-    if (!nodes.length) return;
-    if (!('IntersectionObserver' in window)) {
-      nodes.forEach(function (n) {
-        n.classList.add('is-in');
-      });
-      return;
-    }
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('is-in');
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { rootMargin: '0px 0px -8% 0px', threshold: 0.12 }
-    );
-    nodes.forEach(function (n) {
-      io.observe(n);
-    });
-  }
-
-  function renderNarrative() {
-    if (!DATA.narrative) return;
-    renderSalesHero();
-    renderProblem();
-    renderJourneyHeadAndMoments();
-    renderProjectsEditorial();
-    renderCapability();
-    renderQualify();
-    renderGhDirectHead();
-    renderEstimatesChrome();
-    renderFinalCta();
-    wireReveals();
-  }
-
-  /* ---------- Legacy hero hooks (packages titles only) ---------- */
+  /* ---------- Hero copy ---------- */
   function renderHero() {
+    var eye = document.getElementById('ghd-eyebrow');
+    var title = document.getElementById('ghd-title');
+    var brand = document.getElementById('ghd-brand');
+    var lead = document.getElementById('ghd-lead');
+    if (eye) eye.textContent = ui.pageEyebrow;
+    if (brand) brand.textContent = ui.pageBrand;
+    if (title) title.textContent = ui.pageTitle;
+    if (lead) lead.textContent = ui.pageLead;
     var catH = document.getElementById('ghd-catalog-title');
     var catL = document.getElementById('ghd-catalog-lead');
     var pkgH = document.getElementById('ghd-packages-title');
@@ -644,11 +229,7 @@
   }
 
   function renderPaths() {
-    /* Removed */
-  }
-
-  function renderJourney() {
-    /* Replaced by narrative moments */
+    /* Removed: path pills — keep the page simple. */
   }
 
   function renderWhoFor() {
@@ -664,7 +245,9 @@
       return;
     }
     host.innerHTML =
-      '<div class="ghd-fit-guide-row">' +
+      '<p class="ghd-fit-guide-title">' +
+      escapeHtml(ui.fitGuideTitle || '') +
+      '</p><div class="ghd-fit-guide-row">' +
       items
         .map(function (item) {
           return (
@@ -753,6 +336,14 @@
         refreshPkgWaLinks();
       });
     });
+    root.querySelectorAll('.ghd-compose-family').forEach(function (panel) {
+      panel.addEventListener('toggle', function () {
+        if (!panel.open) return;
+        root.querySelectorAll('.ghd-compose-family').forEach(function (other) {
+          if (other !== panel) other.open = false;
+        });
+      });
+    });
     root.querySelectorAll('[data-lead-pkg]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         openLeadModal(btn.getAttribute('data-lead-pkg'));
@@ -838,41 +429,14 @@
           '</div>'
         : '';
 
-      var phase =
-        pkg.phase
-          ? '<div class="ghd-pkg-meta-row"><span class="ghd-pkg-meta-k">' +
-            escapeHtml(ui.phaseLabel || '') +
-            '</span><span class="ghd-pkg-meta-v">' +
-            escapeHtml(t(pkg.phase)) +
-            '</span></div>'
-          : '';
-
-      var purpose =
-        pkg.purpose
-          ? '<div class="ghd-pkg-meta-row"><span class="ghd-pkg-meta-k">' +
-            escapeHtml(ui.purposeLabel || '') +
-            '</span><span class="ghd-pkg-meta-v">' +
-            escapeHtml(t(pkg.purpose)) +
-            '</span></div>'
-          : '';
-
-      var coreOut =
-        pkg.coreOutput
-          ? '<div class="ghd-pkg-meta-row"><span class="ghd-pkg-meta-k">' +
-            escapeHtml(ui.coreOutputLabel || '') +
-            '</span><span class="ghd-pkg-meta-v">' +
-            escapeHtml(t(pkg.coreOutput)) +
-            '</span></div>'
-          : '';
-
       var namePill =
         '<span class="ghd-pkg-namepill">' + escapeHtml(t(pkg.name)) + '</span>';
 
       var priceBlock =
-        '<p class="ghd-pkg-price-note">' +
-        escapeHtml(ui.from) +
-        '</p>' +
         '<div class="ghd-pkg-priceblock">' +
+        '<span class="ghd-pkg-price-from">' +
+        escapeHtml(ui.from) +
+        '</span>' +
         '<span class="ghd-pkg-price-main">' +
         escapeHtml(formatNum(pkg.price)) +
         '</span>' +
@@ -883,11 +447,6 @@
       var tagline = pkg.tagline
         ? '<p class="ghd-pkg-tagline">' + escapeHtml(t(pkg.tagline)) + '</p>'
         : '';
-
-      var incentive =
-        '<p class="ghd-pkg-incentive">' +
-        escapeHtml(t(pkg.incentive) || ui.incentiveDefault || '') +
-        '</p>';
 
       var fit =
         pkg.fit
@@ -925,8 +484,8 @@
         escapeHtml(
           ui.packagesFoot ||
             (lang === 'ar'
-              ? 'يبدأ من · بلا دفع أونلاين · رد خلال يوم عمل · ترشيح مجاني'
-              : 'Starting from · no online checkout · reply in one business day · free recommendation')
+              ? 'تقدير ابتدائي · تأكيد خلال يوم عمل · بلا دفع أونلاين'
+              : 'Starting estimate · confirm in one business day · no online checkout')
         ) +
         '</p>';
 
@@ -945,13 +504,7 @@
         '<div class="ghd-pkg-top">' +
         namePill +
         priceBlock +
-        '<div class="ghd-pkg-meta">' +
-        phase +
-        purpose +
-        coreOut +
-        '</div>' +
         tagline +
-        incentive +
         '</div>' +
         fit +
         delivery +
@@ -1319,20 +872,25 @@
     });
     var labels = ui.composeGroups || {};
     var famIdx = 0;
+    var openFirst = true;
     return (
       '<p class="ghd-compose-hint">' +
       escapeHtml(ui.composeHint || '') +
       '</p>' +
-      '<div class="ghd-compose-groups ghd-compose-groups--flat">' +
+      '<div class="ghd-compose-groups ghd-compose-groups--accordion">' +
       COMPOSE_ORDER.map(function (key) {
         var ids = groups[key] || [];
         if (!ids.length) return '';
         famIdx += 1;
+        var openAttr = openFirst ? ' open' : '';
+        openFirst = false;
         return (
-          '<section class="ghd-compose-family" data-family="' +
+          '<details class="ghd-compose-family"' +
+          openAttr +
+          ' data-family="' +
           escapeAttr(key) +
           '">' +
-          '<header class="ghd-compose-family-head">' +
+          '<summary class="ghd-compose-family-head">' +
           '<span class="ghd-compose-family-idx" aria-hidden="true">' +
           String(famIdx).padStart(2, '0') +
           '</span>' +
@@ -1341,7 +899,7 @@
           '</h4>' +
           '<span class="ghd-compose-family-count">' +
           ids.length +
-          '</span></header>' +
+          '</span></summary>' +
           '<div class="ghd-addons ghd-addons--grid" data-addons-for="' +
           escapeAttr(pkg.id) +
           '">' +
@@ -1350,7 +908,7 @@
               return addonRowHtml(pkg, id);
             })
             .join('') +
-          '</div></section>'
+          '</div></details>'
         );
       }).join('') +
       '</div>'
@@ -1994,7 +1552,6 @@
   /* ---------- Init ---------- */
   function init() {
     renderEnterprise();
-    renderNarrative();
     renderHero();
     renderPackages();
     renderCatalogFilters();
@@ -2009,8 +1566,8 @@
     wireModals();
     document.title =
       (lang === 'ar'
-        ? 'من الرؤية إلى تجربة البيع | GH Direct | Graphics House'
-        : 'From Vision to Sales Experience | GH Direct | Graphics House');
+        ? 'الباقات والأسعار | GH Direct | Graphics House'
+        : 'GH Direct | Packages & Pricing | Graphics House');
   }
 
   if (document.readyState === 'loading') {
