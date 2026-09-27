@@ -229,7 +229,6 @@
     if (posH) posH.textContent = ui.postureTitle || '';
     if (posL) posL.textContent = ui.postureLead || '';
     renderPosture();
-    renderWhoFor();
     renderNextSteps();
     renderClose();
   }
@@ -296,13 +295,13 @@
     /* Removed: path pills — keep the page simple. */
   }
 
-  function renderWhoFor() {
-    renderFitGuide();
-  }
+  function renderWhoFor() {}
 
   function renderFitGuide() {
     var host = document.getElementById('ghd-fit-guide');
     if (!host) return;
+    host.innerHTML = '';
+    return;
     var items = DATA.fitGuide || [];
     if (!items.length) {
       host.innerHTML = '';
@@ -384,6 +383,8 @@
   function renderAtelierEntry() {
     var host = document.getElementById('ghd-atelier-entry');
     if (!host) return;
+    host.innerHTML = '';
+    return;
     host.innerHTML =
       '<div class="ghd-atelier-entry-inner">' +
       '<div><p class="ghd-atelier-entry-title">' +
@@ -623,7 +624,6 @@
     });
 
     refreshPkgWaLinks();
-    renderAtelierEntry();
     renderAtelierWorkshop();
     renderProof();
   }
