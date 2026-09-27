@@ -697,12 +697,13 @@
       '<span class="ghd-addon-name">' +
       escapeHtml(t(svc.name)) +
       '</span>' +
+      '<span class="ghd-addon-foot">' +
       '<span class="ghd-addon-meta">' +
       escapeHtml(meta) +
       '</span>' +
       '<span class="ghd-addon-toggle">' +
       escapeHtml(on ? ui.added : ui.add) +
-      '</span></button>'
+      '</span></span></button>'
     );
   }
 

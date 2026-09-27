@@ -293,20 +293,13 @@ html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.08em; }
   display: none;
 }
 
-/* Catalog — grouped families + larger cards */
+/* Catalog — 4-up compact tickets (fix: flat must NOT be a grid of header+grid) */
 .ghd-catalog {
   display: block;
 }
-.ghd-catalog--flat {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 18px;
-}
-@media (min-width: 900px) {
-  .ghd-catalog--flat {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
-  }
+.ghd-catalog--flat,
+.ghd-catalog--grouped {
+  display: block;
 }
 .ghd-family-block {
   margin: 0 0 42px;
@@ -346,19 +339,25 @@ html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.08em; }
 }
 .ghd-family-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
-@media (min-width: 900px) {
+@media (min-width: 720px) {
   .ghd-family-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+@media (min-width: 1024px) {
+  .ghd-family-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
   }
 }
 .ghd-svc-card {
   background: var(--ghd-paper);
   border: 1px solid var(--ghd-border);
-  border-radius: 18px;
+  border-radius: 14px;
   padding: 0;
   text-align: start;
   cursor: pointer;
@@ -369,9 +368,10 @@ html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.08em; }
   font: inherit;
   color: var(--ghd-ink);
   width: 100%;
+  min-width: 0;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 10px 28px rgba(20, 20, 20, 0.05);
+  box-shadow: 0 8px 22px rgba(20, 20, 20, 0.05);
 }
 .ghd-svc-card::before {
   content: none;
@@ -379,13 +379,13 @@ html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.08em; }
 .ghd-svc-card:hover,
 .ghd-svc-card:focus-visible {
   border-color: rgba(20, 20, 20, 0.22);
-  box-shadow: 0 18px 44px rgba(20, 20, 20, 0.12);
+  box-shadow: 0 14px 32px rgba(20, 20, 20, 0.1);
   outline: none;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 .ghd-svc-media {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   background: linear-gradient(145deg, #ebe6dc 0%, #d9d2c4 100%);
   overflow: hidden;
 }
@@ -411,14 +411,14 @@ html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.08em; }
 }
 .ghd-svc-card:hover .ghd-svc-media img,
 .ghd-svc-card:hover .ghd-svc-media video {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 .ghd-svc-num {
   position: absolute;
-  inset-inline-start: 12px;
-  inset-block-end: 10px;
+  inset-inline-start: 10px;
+  inset-block-end: 8px;
   z-index: 1;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.92);
@@ -439,18 +439,18 @@ html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.08em; }
   pointer-events: none;
 }
 .ghd-svc-body {
-  padding: 14px 15px 16px;
+  padding: 10px 12px 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   flex: 1;
   background: var(--ghd-paper);
 }
 .ghd-svc-body h3 {
-  font-size: 14.5px !important;
+  font-size: 13px !important;
   font-weight: 700 !important;
   margin: 0;
-  line-height: 1.35 !important;
+  line-height: 1.3 !important;
   letter-spacing: -0.01em;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -461,17 +461,17 @@ html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.08em; }
 }
 .ghd-svc-blurb {
   margin: 0;
-  font-size: 12px;
-  line-height: 1.45;
-  color: rgba(20, 20, 20, 0.55);
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(20, 20, 20, 0.52);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex: 1;
 }
-.ghd-price {
-  font-size: 13px;
+.ghd-svc-card .ghd-price {
+  font-size: 12px;
   font-weight: 800;
   color: #141414;
   margin-top: auto;
@@ -480,6 +480,9 @@ html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.08em; }
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   direction: ltr;
   unicode-bidi: isolate;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .ghd-price-contact {
   color: var(--ghd-gold-dark);
@@ -542,146 +545,180 @@ html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.08em; }
   display: flex;
   flex-direction: column;
   gap: 8px;
-  max-height: 156px;
-  overflow: auto;
+  max-height: none;
+  overflow: visible;
   margin-bottom: 16px;
-  padding: 2px 4px 2px 0;
+  padding: 0;
   scrollbar-width: thin;
   scrollbar-color: rgba(20, 20, 20, 0.28) transparent;
 }
 .ghd-addons--grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-  max-height: 156px;
-  overflow: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-height: none;
+  overflow: visible;
 }
-@media (min-width: 700px) {
+@media (min-width: 720px) {
   .ghd-addons--grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .ghd-addons--grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 .ghd-pkg--bundle .ghd-addons {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-  max-height: 156px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-height: none;
 }
 .ghd-pkg--featured .ghd-addons {
   scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
 }
 .ghd-addon {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   justify-content: space-between;
   gap: 10px;
-  padding: 12px 14px;
+  padding: 12px;
   border: 1px solid rgba(20, 20, 20, 0.1);
   border-radius: 12px;
-  background: #eceae4;
+  background: #f4f2ed;
   cursor: pointer;
   font: inherit;
   color: #141414;
   text-align: start;
   width: 100%;
+  min-width: 0;
+  min-height: 100%;
   transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
 }
 .ghd-addon:hover {
-  border-color: rgba(201, 168, 76, 0.55);
-  background: #f3f1ec;
+  border-color: rgba(20, 20, 20, 0.28);
+  background: #fff;
 }
 .ghd-addon.is-on {
-  border-color: var(--ghd-gold);
-  background: rgba(201, 168, 76, 0.18);
-  box-shadow: inset 0 0 0 1px rgba(201, 168, 76, 0.25);
+  border-color: #141414;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #141414;
 }
 .ghd-addon--contact .ghd-addon-meta {
   color: var(--ghd-gold-dark);
   font-weight: 700;
 }
 .ghd-addon-name {
-  font-size: 13.5px;
-  font-weight: 650;
+  font-size: 12.5px;
+  font-weight: 700;
   flex: 1;
   line-height: 1.35;
   color: #141414;
   min-width: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ghd-addon-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
 }
 .ghd-addon-meta {
-  font-size: 12.5px;
-  font-weight: 600;
+  font-size: 11.5px;
+  font-weight: 700;
   color: rgba(20, 20, 20, 0.62);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-variant-numeric: tabular-nums;
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   direction: ltr;
   unicode-bidi: isolate;
+  min-width: 0;
 }
 .ghd-addon-toggle {
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 800;
-  color: var(--ghd-gold-dark);
+  color: #141414;
   flex-shrink: 0;
   letter-spacing: 0.01em;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(20, 20, 20, 0.06);
 }
 .ghd-addon.is-on .ghd-addon-toggle {
-  color: #8a6d28;
+  background: #141414;
+  color: #fff;
 }
 
-/* Unified price ticket — same on every package */
+/* Compact sticky-feeling total bar (atelier) */
 .ghd-total-box {
-  background: #dcd9d1;
-  color: #141414;
-  padding: 18px 18px 16px;
-  margin-top: auto;
+  background: #141414;
+  color: #f5f5f3;
+  padding: 14px 18px;
+  margin-top: 16px;
   margin-bottom: 0;
-  border: 1px solid rgba(20, 20, 20, 0.12);
+  border: none;
   border-radius: 14px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  box-shadow: 0 12px 28px rgba(20, 20, 20, 0.18);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 16px;
+  align-items: center;
 }
 .ghd-total-label {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: none;
-  color: rgba(20, 20, 20, 0.78);
-  margin: 0 0 6px;
+  color: rgba(245, 245, 243, 0.7);
+  margin: 0;
+  grid-column: 1;
 }
 .ghd-total-value {
-  font-size: clamp(1.55rem, 3vw, 1.9rem);
+  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
   font-weight: 800;
   margin: 0;
-  color: #0f0f0f;
+  color: #fff;
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   direction: ltr;
   unicode-bidi: isolate;
   line-height: 1.15;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  text-align: end;
 }
 .ghd-total-empty {
-  margin: 10px 0 0;
-  font-size: 13px;
+  margin: 0;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 1.45;
-  color: rgba(20, 20, 20, 0.72);
+  line-height: 1.4;
+  color: rgba(245, 245, 243, 0.62);
+  grid-column: 1;
 }
 .ghd-total-extra {
-  margin: 10px 0 0;
+  grid-column: 1 / -1;
+  margin: 4px 0 0;
   padding: 0;
   list-style: none;
-  font-size: 12.5px;
-  font-weight: 500;
-  color: rgba(20, 20, 20, 0.74);
-  line-height: 1.5;
+  font-size: 12px;
+  color: rgba(245, 245, 243, 0.72);
 }
 .ghd-total-extra li { margin-top: 4px; }
 .ghd-total-hint {
-  font-size: 12px;
-  font-weight: 600;
-  color: rgba(20, 20, 20, 0.62);
-  margin: 10px 0 0;
-  line-height: 1.4;
+  margin: 0;
+  font-size: 11px;
+  color: rgba(245, 245, 243, 0.5);
+  grid-column: 1;
 }
 
 .ghd-cta {
@@ -1335,9 +1372,7 @@ body.ghd-modal-open { overflow: hidden; }
 .ghd-compose-group .ghd-addons,
 .ghd-compose-group .ghd-addons--grid {
   max-height: none;
-  margin: 0;
-  padding: 10px;
-  background: transparent;
+  overflow: visible;
 }
 .ghd-pkg--builder .ghd-addons--grid {
   max-height: none;
@@ -1865,15 +1900,23 @@ body.ghd-modal-open { overflow: hidden; }
 }
 .ghd-atelier .ghd-addons,
 .ghd-atelier .ghd-addons--grid {
-  max-height: 280px;
+  max-height: none;
+  overflow: visible;
 }
 .ghd-atelier-ctas {
-  margin-top: 18px;
-  max-width: 320px;
+  margin-top: 14px;
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 280px) auto;
+  gap: 12px;
+  align-items: center;
 }
 .ghd-atelier-ctas .ghd-cta {
-  width: 100%;
+  width: auto;
   justify-content: center;
+}
+.ghd-atelier-ctas .ghd-cta--primary {
+  width: 100%;
 }
 @media (max-width: 700px) {
   .ghd-atelier-head {
@@ -1882,4 +1925,15 @@ body.ghd-modal-open { overflow: hidden; }
   .ghd-atelier .ghd-compose-seed {
     width: 100%;
   }
+  .ghd-atelier-ctas {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Clear floating bottom widgets so last catalog row stays clickable */
+#ghd-main {
+  padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px));
+}
+.ghd-section--faq {
+  padding-bottom: 48px;
 }
