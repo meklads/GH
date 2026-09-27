@@ -233,7 +233,93 @@
   }
 
   function renderWhoFor() {
-    /* Removed: quick-fit strip above packages — cluttered the calm pricing layout. */
+    renderFitGuide();
+  }
+
+  function renderFitGuide() {
+    var host = document.getElementById('ghd-fit-guide');
+    if (!host) return;
+    var items = DATA.fitGuide || [];
+    if (!items.length) {
+      host.innerHTML = '';
+      return;
+    }
+    host.innerHTML =
+      '<p class="ghd-fit-guide-title">' +
+      escapeHtml(ui.fitGuideTitle || '') +
+      '</p><div class="ghd-fit-guide-row">' +
+      items
+        .map(function (item) {
+          return (
+            '<a class="ghd-fit-chip" href="#pkg-' +
+            escapeAttr(item.packageId) +
+            '"><strong>' +
+            escapeHtml(t(item.label)) +
+            '</strong><span>' +
+            escapeHtml(t(item.blurb)) +
+            '</span></a>'
+          );
+        })
+        .join('') +
+      '</div>';
+  }
+
+  function renderProof() {
+    var host = document.getElementById('ghd-proof');
+    if (!host) return;
+    var items = DATA.proof || [];
+    if (!items.length) {
+      host.innerHTML = '';
+      return;
+    }
+    host.innerHTML =
+      '<div class="ghd-proof-head"><h3 class="ghd-proof-title">' +
+      escapeHtml(ui.proofTitle || '') +
+      '</h3><p class="ghd-proof-lead">' +
+      escapeHtml(ui.proofLead || '') +
+      '</p></div><div class="ghd-proof-grid">' +
+      items
+        .map(function (item) {
+          return (
+            '<figure class="ghd-proof-card">' +
+            '<img src="' +
+            escapeAttr(mediaUrl(item.src)) +
+            '" alt="' +
+            escapeAttr(t(item.caption)) +
+            '" loading="lazy" decoding="async" width="480" height="320">' +
+            '<figcaption>' +
+            escapeHtml(t(item.caption)) +
+            '</figcaption></figure>'
+          );
+        })
+        .join('') +
+      '</div>';
+  }
+
+  function renderAtelierEntry() {
+    var host = document.getElementById('ghd-atelier-entry');
+    if (!host) return;
+    host.innerHTML =
+      '<div class="ghd-atelier-entry-inner">' +
+      '<div><p class="ghd-atelier-entry-title">' +
+      escapeHtml(ui.atelierEntryTitle || '') +
+      '</p><p class="ghd-atelier-entry-lead">' +
+      escapeHtml(ui.atelierEntryLead || '') +
+      '</p></div>' +
+      '<a class="ghd-cta ghd-cta--primary" href="#atelier-workshop" data-open-atelier="1">' +
+      escapeHtml(ui.atelierEntryCta || ui.openAtelier || '') +
+      '</a></div>';
+    host.querySelectorAll('[data-open-atelier]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var workshop = document.getElementById('atelier-workshop');
+        if (workshop) {
+          workshop.classList.add('is-open');
+          try {
+            workshop.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } catch (e) {}
+        }
+      });
+    });
   }
 
   function bindAtelierControls(root) {
@@ -268,6 +354,7 @@
       return;
     }
     var tot = computeTotal(pkg);
+    var selCount = addonState[pkg.id] ? addonState[pkg.id].size : 0;
     host.innerHTML =
       '<header class="ghd-atelier-head">' +
       '<div class="ghd-atelier-head-copy">' +
@@ -282,6 +369,13 @@
       '</p></div>' +
       '<div class="ghd-atelier-mark" aria-hidden="true"></div>' +
       '</header>' +
+      '<aside class="ghd-price-drivers" aria-label="' +
+      escapeAttr(ui.priceDriversTitle || '') +
+      '"><strong>' +
+      escapeHtml(ui.priceDriversTitle || '') +
+      '</strong><p>' +
+      escapeHtml(ui.priceDrivers || '') +
+      '</p></aside>' +
       '<div class="ghd-atelier-stage">' +
       composeGroupsHtml(pkg) +
       '</div>' +
@@ -296,7 +390,15 @@
       escapeAttr(pkg.id) +
       '" href="#" target="_blank" rel="noopener noreferrer">' +
       escapeHtml(ui.wa) +
-      '</a></div>';
+      '</a>' +
+      (selCount
+        ? '<span class="ghd-atelier-selcount">' +
+          selCount +
+          ' ' +
+          escapeHtml(ui.selectedCount || '') +
+          '</span>'
+        : '') +
+      '</div>';
     bindAtelierControls(host);
   }
 
@@ -305,13 +407,11 @@
     if (!host) return;
     host.innerHTML = '';
     DATA.packages.forEach(function (pkg) {
+      if (isBuilder(pkg)) return;
       var card = document.createElement('article');
-      var builder = isBuilder(pkg);
-      var featured = !!pkg.featured && !builder;
+      var featured = !!pkg.featured;
       card.className =
-        'ghd-pkg' +
-        (featured ? ' ghd-pkg--featured' : '') +
-        (builder ? ' ghd-pkg--atelier-teaser' : ' ghd-pkg--bundle');
+        'ghd-pkg ghd-pkg--bundle' + (featured ? ' ghd-pkg--featured' : '');
       card.id = 'pkg-' + pkg.id;
       card.setAttribute('data-package-id', pkg.id);
 
@@ -324,25 +424,38 @@
       var namePill =
         '<span class="ghd-pkg-namepill">' + escapeHtml(t(pkg.name)) + '</span>';
 
-      var priceBlock = builder
-        ? '<div class="ghd-pkg-priceblock ghd-pkg-priceblock--live">' +
-          '<span class="ghd-pkg-price-main">' +
-          escapeHtml(ui.pricedByPicks || (lang === 'ar' ? 'سعّر حسب اختيارك' : 'Priced by picks')) +
-          '</span></div>'
-        : '<div class="ghd-pkg-priceblock">' +
-          '<span class="ghd-pkg-price-main">' +
-          escapeHtml(formatNum(pkg.price)) +
-          '</span>' +
-          '<span class="ghd-pkg-price-suffix">' +
-          escapeHtml(currency) +
-          '</span></div>' +
-          '<p class="ghd-pkg-price-note">' +
-          escapeHtml(ui.from) +
-          '</p>';
+      var priceBlock =
+        '<div class="ghd-pkg-priceblock">' +
+        '<span class="ghd-pkg-price-main">' +
+        escapeHtml(formatNum(pkg.price)) +
+        '</span>' +
+        '<span class="ghd-pkg-price-suffix">' +
+        escapeHtml(currency) +
+        '</span></div>' +
+        '<p class="ghd-pkg-price-note">' +
+        escapeHtml(ui.from) +
+        '</p>';
 
       var tagline = pkg.tagline
         ? '<p class="ghd-pkg-tagline">' + escapeHtml(t(pkg.tagline)) + '</p>'
         : '';
+
+      var fit =
+        pkg.fit
+          ? '<p class="ghd-pkg-fit"><span class="material-symbols-outlined" aria-hidden="true">person</span><span><em>' +
+            escapeHtml(ui.fitLabel || '') +
+            '</em> ' +
+            escapeHtml(t(pkg.fit)) +
+            '</span></p>'
+          : '';
+      var delivery =
+        pkg.delivery
+          ? '<p class="ghd-pkg-delivery"><span class="material-symbols-outlined" aria-hidden="true">schedule</span><span><em>' +
+            escapeHtml(ui.deliveryLabel || '') +
+            '</em> ' +
+            escapeHtml(t(pkg.delivery)) +
+            '</span></p>'
+          : '';
 
       var lines = '';
       if (pkg.includedLines && pkg.includedLines.length) {
@@ -369,19 +482,14 @@
         '</p>';
 
       var ctaClass = featured ? 'ghd-cta ghd-cta--on-dark' : 'ghd-cta ghd-cta--primary';
-      var primaryCta = builder
-        ? '<a class="' +
-          ctaClass +
-          '" href="#atelier-workshop" data-open-atelier="1">' +
-          escapeHtml(ui.openAtelier || (lang === 'ar' ? 'ابنِ مزيجك' : 'Build your mix')) +
-          '</a>'
-        : '<button type="button" class="' +
-          ctaClass +
-          '" data-lead-pkg="' +
-          escapeAttr(pkg.id) +
-          '">' +
-          escapeHtml(ui.choosePlan || ui.cta) +
-          '</button>';
+      var primaryCta =
+        '<button type="button" class="' +
+        ctaClass +
+        '" data-lead-pkg="' +
+        escapeAttr(pkg.id) +
+        '">' +
+        escapeHtml(ui.choosePlan || ui.cta) +
+        '</button>';
 
       card.innerHTML =
         ribbon +
@@ -390,6 +498,8 @@
         priceBlock +
         tagline +
         '</div>' +
+        fit +
+        delivery +
         lines +
         '<div class="ghd-pkg-ctas">' +
         primaryCta +
@@ -409,20 +519,10 @@
       });
     });
 
-    host.querySelectorAll('[data-open-atelier]').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        var workshop = document.getElementById('atelier-workshop');
-        if (workshop) {
-          workshop.classList.add('is-open');
-          try {
-            workshop.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          } catch (err) {}
-        }
-      });
-    });
-
     refreshPkgWaLinks();
+    renderAtelierEntry();
     renderAtelierWorkshop();
+    renderProof();
   }
 
   function renderNextSteps() {
@@ -660,6 +760,7 @@
   function computeTotal(pkg) {
     var priced = isBuilder(pkg) ? 0 : Number(pkg.price) || 0;
     var unpriced = [];
+    var hasRange = false;
     var selected = addonState[pkg.id];
     selected.forEach(function (id) {
       var svc = serviceById[id];
@@ -668,9 +769,10 @@
         unpriced.push(svc);
       } else {
         priced += svc.price;
+        if (svc.priceTo != null && typeof svc.priceTo === 'number') hasRange = true;
       }
     });
-    return { priced: priced, unpriced: unpriced };
+    return { priced: priced, unpriced: unpriced, hasRange: hasRange };
   }
 
   function addonRowHtml(pkg, id) {
@@ -727,6 +829,9 @@
       isBuilder(pkg) && addonState[pkg.id].size === 0
         ? '—'
         : formatNum(tot.priced) + ' ' + currency;
+    var hintText = tot.hasRange
+      ? (ui.rangeInTotal || '') + ' · ' + (ui.totalNote || '')
+      : ui.totalNote || '';
     return (
       '<div class="ghd-total-box" data-total-for="' +
       escapeAttr(pkg.id) +
@@ -740,7 +845,7 @@
       empty +
       (extraLis ? '<ul class="ghd-total-extra">' + extraLis + '</ul>' : '') +
       '<p class="ghd-total-hint">' +
-      escapeHtml(ui.totalNote) +
+      escapeHtml(hintText) +
       '</p></div>'
     );
   }
@@ -899,6 +1004,27 @@
         .join('');
     } else if (extra) {
       extra.remove();
+    }
+    var hintEl = box.querySelector('.ghd-total-hint');
+    if (hintEl) {
+      hintEl.textContent = tot.hasRange
+        ? (ui.rangeInTotal || '') + ' · ' + (ui.totalNote || '')
+        : ui.totalNote || '';
+    }
+    var ctas = card.querySelector('.ghd-atelier-ctas');
+    if (ctas && isBuilder(pkg)) {
+      var countEl = ctas.querySelector('.ghd-atelier-selcount');
+      var n = addonState[pkgId].size;
+      if (n) {
+        if (!countEl) {
+          countEl = document.createElement('span');
+          countEl.className = 'ghd-atelier-selcount';
+          ctas.appendChild(countEl);
+        }
+        countEl.textContent = n + ' ' + (ui.selectedCount || '');
+      } else if (countEl) {
+        countEl.remove();
+      }
     }
   }
 

@@ -46,8 +46,17 @@ window.GH_DIRECT = {
         sales: 'بيع ونمو',
       },
       packagesTitle: 'الباقات',
-      packagesLead: 'ثلاثة مسارات واضحة — اختر الجاهز، أو ابنِ مزيجك.',
+      packagesLead: 'ثلاث باقات جاهزة — أو ابنِ مزيجك في أتيليه أسفل الصفحة.',
       packagesFoot: 'تقدير ابتدائي · تأكيد خلال يوم عمل · بلا دفع أونلاين',
+      fitGuideTitle: 'أي باقة تناسبك؟',
+      atelierEntryTitle: 'تحتاج مزيجاً خارج الباقات؟',
+      atelierEntryLead: 'أتيليه يعرض كل البنود فوراً ويحسب الإجمالي مع كل إضافة.',
+      atelierEntryCta: 'انتقل إلى أتيليه',
+      priceDriversTitle: 'ما يحرّك التقدير؟',
+      priceDrivers:
+        'نطاق البنود، تعقيد المشروع المعماري، مستوى المؤثرات، وعدد جولات المراجعة — يُثبَّت الرقم النهائي عند التأكيد.',
+      proofTitle: 'من أعمالنا',
+      proofLead: 'عيّنات حقيقية من مشاريع سابقة — لا صور مخزّنة.',
       whoTitle: 'لمحة سريعة: أي باقة تناسبك؟',
       nextTitle: 'ماذا بعد الطلب؟',
       nextSteps: [
@@ -55,6 +64,10 @@ window.GH_DIRECT = {
         { title: 'تأكيد السعر والنطاق', body: 'رقم نهائي واضح قبل أي التزام.' },
         { title: 'جدول تسليم مبدئي', body: 'نحدد المراحل وموعد التسليم المتوقع.' },
       ],
+      fitLabel: 'الأنسب لـ',
+      deliveryLabel: 'التسليم',
+      rangeInTotal: 'يشمل بنوداً بنطاق سعري — يُؤكَّد عند التواصل',
+      selectedCount: 'محدد',
       svcRequest: 'اطلب هذه الخدمة',
       svcWhatsApp: 'واتساب بهذه الخدمة',
       svcAddCompose: 'أضفها إلى أتيليه',
@@ -72,7 +85,7 @@ window.GH_DIRECT = {
       buildLabel: 'اختر الخدمات',
       add: 'أضف',
       added: 'مضاف',
-      mostPopular: 'الأكثر طلباً',
+      mostPopular: 'الأنسب لمعظم المشاريع',
       builderBadge: 'بناء مخصص',
       choosePlan: 'اطلب هذه الباقة',
       optionalAddons: 'إضافات اختيارية',
@@ -84,8 +97,8 @@ window.GH_DIRECT = {
       openAtelier: 'ابنِ مزيجك',
       atelierTitle: 'أتيليه',
       atelierLead: 'انتقِ البنود بهدوء. الإجمالي يتحدّث فوراً — والتأكيد بلا التزام مسبق.',
-      whyPlan: 'لماذا توقيع؟',
-      whyPlanBody: 'الأنسب للإطلاق الكبير حين تحتاج هوية وإعلاماً وموقعاً وتفاعلاً في حزمة واحدة جاهزة.',
+      whyPlan: 'لماذا انطلاق؟',
+      whyPlanBody: 'الجسر بين النواة والتوقيع: حضور بصري أقوى + ميديا + موقع، دون حزمة الإطلاق الكاملة.',
       total: 'الإجمالي التقديري',
       totalNote: 'تقدير ابتدائي — يُؤكَّد عند التواصل',
       trustLine: 'لا دفع أونلاين · تأكيد النطاق خلال يوم عمل · الأسعار تقدير ابتدائي',
@@ -131,20 +144,16 @@ window.GH_DIRECT = {
           a: 'لا. هذه الصفحة للاختيار والتقدير فقط. التأكيد والتسعير النهائي يتم بالتواصل — واتساب أو نموذج.',
         },
         {
-          q: 'ما الفرق بين الباقات والخدمات؟',
-          a: 'الكتالوج يعرض كل خدمة بمفردها. «نواة» و«توقيع» حزمتان جاهزتان بسعر ثابت. إن أردت مزيجاً مختلفاً استخدم «أتيليه».',
-        },
-        {
-          q: 'ماذا تشمل باقة «توقيع»؟',
-          a: 'هوية كاملة وكتالوج وإنتاج إعلامي وموقع وشاشة تفاعلية، مع نطاق رندرات مدمج. مناسبة للإطلاق الكبير.',
+          q: 'ما الفرق بين نواة وانطلاق وتوقيع؟',
+          a: 'نواة للانطلاقة البصرية السريعة. انطلاق تضيف ميديا وموقعاً وحضوراً أقوى. توقيع حزمة إطلاق كاملة مع هوية وكتالوج وتفاعل لصالة البيع.',
         },
         {
           q: 'متى أختار «أتيليه»؟',
           a: 'عندما تريد انتقاء خدمات بعينها بدل الحزمة الجاهزة. الإجمالي يتحدّث فوراً مع كل إضافة، ثم نراجع الاختيار معك.',
         },
         {
-          q: 'هل يمكن إضافة خدمات فوق نواة أو توقيع؟',
-          a: 'لا على هذه الصفحة — الباقة الجاهزة تُطلب كما هي. للتخصيص اختر «أتيليه»، أو اذكر التعديل عند التواصل قبل التأكيد النهائي.',
+          q: 'هل يمكن تعديل الباقة لاحقاً؟',
+          a: 'نعم. الباقة نقطة انطلاق. نضبط النطاق معك قبل التأكيد النهائي.',
         },
         {
           q: 'كم يستغرق الرد؟',
@@ -153,10 +162,6 @@ window.GH_DIRECT = {
         {
           q: 'هل يناسب المشاريع المؤسسية الكبيرة؟',
           a: 'للمشاريع المؤسسية والمخططات الضخمة نفضّل مسار ProjectLaunch™ الاستشاري بدل الاختيار الذاتي.',
-        },
-        {
-          q: 'هل يمكن تعديل الباقة لاحقاً؟',
-          a: 'نعم. الباقة نقطة انطلاق. نضبط النطاق معك قبل التأكيد النهائي.',
         },
       ],
     },
@@ -187,14 +192,27 @@ window.GH_DIRECT = {
         sales: 'Sales & Growth',
       },
       packagesTitle: 'Packages',
-      packagesLead: 'Three clear paths — ready bundles, or build your own.',
+      packagesLead: 'Three ready packages — or build your mix in Atelier below.',
       packagesFoot: 'Starting estimate · confirm in one business day · no online checkout',
+      fitGuideTitle: 'Which package fits?',
+      atelierEntryTitle: 'Need a mix outside the packages?',
+      atelierEntryLead: 'Atelier shows every line item and updates the total as you add.',
+      atelierEntryCta: 'Go to Atelier',
+      priceDriversTitle: 'What moves the estimate?',
+      priceDrivers:
+        'Line-item scope, architectural complexity, VFX level, and revision rounds — the final figure locks at confirmation.',
+      proofTitle: 'From our work',
+      proofLead: 'Real project stills — not stock.',
       nextTitle: 'What happens next?',
       nextSteps: [
         { title: 'Review within one business day', body: 'We read your selection and project scope carefully.' },
         { title: 'Confirm price and scope', body: 'A clear final figure before any commitment.' },
         { title: 'Initial delivery plan', body: 'We outline phases and the expected handoff.' },
       ],
+      fitLabel: 'Best for',
+      deliveryLabel: 'Delivery',
+      rangeInTotal: 'Includes ranged items — confirmed when we talk',
+      selectedCount: 'selected',
       svcRequest: 'Request this service',
       svcWhatsApp: 'WhatsApp this service',
       svcAddCompose: 'Add to Atelier',
@@ -212,7 +230,7 @@ window.GH_DIRECT = {
       buildLabel: 'Select services',
       add: 'Add',
       added: 'Added',
-      mostPopular: 'Most popular',
+      mostPopular: 'Best for most projects',
       builderBadge: 'Custom build',
       choosePlan: 'Request this package',
       optionalAddons: 'Optional add-ons',
@@ -224,8 +242,8 @@ window.GH_DIRECT = {
       openAtelier: 'Build your mix',
       atelierTitle: 'Atelier',
       atelierLead: 'Pick items calmly. The total updates live — with no commitment until confirmation.',
-      whyPlan: 'Why Signature?',
-      whyPlanBody: 'Best for a major launch when you need identity, media, site, and interactive in one ready package.',
+      whyPlan: 'Why Launch?',
+      whyPlanBody: 'The bridge between Core and Signature: stronger presence, media, and a site — without the full launch stack.',
       total: 'Estimated total',
       totalNote: 'Starting estimate — confirmed when we talk',
       trustLine: 'No online checkout · Scope confirmed within one business day · Starting estimates',
@@ -271,20 +289,16 @@ window.GH_DIRECT = {
           a: 'No. This page is for selection and estimates only. Confirmation happens by WhatsApp or form.',
         },
         {
-          q: 'What is the difference between packages and catalog services?',
-          a: 'The catalog lists each service alone. Core and Signature are fixed ready bundles. For a different mix, use Atelier.',
-        },
-        {
-          q: 'What does Signature include?',
-          a: 'Full identity, catalogue, media production, website, and a touchscreen — with bundled renders. Built for a major launch.',
+          q: 'What is the difference between Core, Launch, and Signature?',
+          a: 'Core is a fast visual start. Launch adds media and a site for stronger presence. Signature is a full launch stack with identity, catalogue, and interactive for the sales floor.',
         },
         {
           q: 'When should I use Atelier?',
           a: 'When you want specific services instead of a ready bundle. The total updates live with every add, then we review with you.',
         },
         {
-          q: 'Can I add services on top of Core or Signature?',
-          a: 'Not on this page — ready packages are requested as listed. For a custom mix use Atelier, or mention changes when we confirm scope.',
+          q: 'Can I change the package later?',
+          a: 'Yes. A package is a starting point. We refine scope with you before final confirmation.',
         },
         {
           q: 'How fast do you reply?',
@@ -294,13 +308,56 @@ window.GH_DIRECT = {
           q: 'Is this right for large institutional projects?',
           a: 'For institutional work and large masterplans we recommend the consultative ProjectLaunch™ path instead of self-serve.',
         },
-        {
-          q: 'Can I change the package later?',
-          a: 'Yes. A package is a starting point. We refine scope with you before final confirmation.',
-        },
       ],
     },
   },
+
+  proof: [
+    {
+      src: 'assets/projects/wahat-al-salam/hero-aerial.webp',
+      caption: { ar: 'واحة السلام — إظهار جوي', en: 'Wahat Al Salam — aerial viz' },
+    },
+    {
+      src: 'assets/projects/al-rajhi-naseem/int-living.webp',
+      caption: { ar: 'الراجحي النسيم — داخلي', en: 'Al Rajhi Naseem — interior' },
+    },
+    {
+      src: 'assets/projects/rafal-pavilions/film-still.webp',
+      caption: { ar: 'رافال — لقطة فيلم', en: 'Rafal — film still' },
+    },
+    {
+      src: 'assets/projects/maquettes/anan-eskan-maquette-01.webp',
+      caption: { ar: 'عنان إسكان — مجسم', en: 'Anan Eskan — maquette' },
+    },
+  ],
+
+  fitGuide: [
+    {
+      packageId: 'basic',
+      label: { ar: 'نواة', en: 'Core' },
+      blurb: {
+        ar: 'إطلاق قريب · حضور بصري سريع',
+        en: 'Near-term launch · fast visual presence',
+      },
+    },
+    {
+      packageId: 'launch',
+      label: { ar: 'انطلاق', en: 'Launch' },
+      blurb: {
+        ar: 'ميديا + موقع · معظم المشاريع',
+        en: 'Media + site · most projects',
+      },
+    },
+    {
+      packageId: 'growth',
+      label: { ar: 'توقيع', en: 'Signature' },
+      blurb: {
+        ar: 'صالة بيع · إطلاق كامل',
+        en: 'Sales floor · full launch',
+      },
+    },
+  ],
+
 services: [
     /* 1 — Architectural Visualization (stills only) */
     {
@@ -676,6 +733,32 @@ services: [
       ],
     },
     {
+      id: 'launch',
+      mode: 'bundle',
+      name: { ar: 'انطلاق', en: 'Launch' },
+      tagline: {
+        ar: 'حضور أقوى: ميديا + موقع',
+        en: 'Stronger presence: media + site',
+      },
+      fit: {
+        ar: 'مشروع يحتاج رندرات وميديا وموقعاً دون حزمة الإطلاق الكاملة',
+        en: 'A project that needs renders, media, and a site — without the full launch stack',
+      },
+      delivery: {
+        ar: 'حزمة مترابطة على مراحل واضحة بعد التأكيد',
+        en: 'A phased connected package after confirmation',
+      },
+      price: 98000,
+      featured: true,
+      includedServiceIds: ['identity-basic', 'drone-short', 'ground-photo', 'microsite'],
+      includedLines: [
+        { ar: 'كل ما في نواة، بالإضافة إلى…', en: 'Everything in Core, and…' },
+        { ar: 'رندرات 3D: 15–18 صورة', en: '3D renders: 15–18 images' },
+        { ar: 'تصوير أرضي احترافي', en: 'Professional ground photography', serviceId: 'ground-photo' },
+        { ar: 'موقع المشروع', en: 'Project website', serviceId: 'microsite' },
+      ],
+    },
+    {
       id: 'growth',
       mode: 'bundle',
       name: { ar: 'توقيع', en: 'Signature' },
@@ -692,14 +775,12 @@ services: [
         en: 'A phased full-launch package after confirmation',
       },
       price: 195000,
-      featured: true,
+      featured: false,
       includedServiceIds: ['identity-full', 'catalogue', 'drone-short', 'ground-photo', 'microsite', 'touchscreen'],
       includedLines: [
-        { ar: 'كل ما في نواة، بالإضافة إلى…', en: 'Everything in Core, and…' },
+        { ar: 'كل ما في انطلاق، بالإضافة إلى…', en: 'Everything in Launch, and…' },
         { ar: 'رندرات 3D: 20 صورة', en: '3D renders: 20 images' },
         { ar: 'نظام هوية كامل + كتالوج', en: 'Full identity system + catalogue', serviceId: 'identity-full' },
-        { ar: 'إنتاج إعلامي (درون + تصوير)', en: 'Media production (drone + photo)' },
-        { ar: 'موقع المشروع', en: 'Project website', serviceId: 'microsite' },
         { ar: 'شاشة لمس تفاعلية', en: 'Interactive touchscreen', serviceId: 'touchscreen' },
       ],
     },
