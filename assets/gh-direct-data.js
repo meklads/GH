@@ -26,7 +26,7 @@ window.GH_DIRECT = {
       pageLead:
         'اختر باقة جاهزة، أو خدمة واحدة، أو ابنِ مزيجك في أتيليه. الأرقام تقديرية حتى التأكيد — بلا دفع أونلاين.',
       catalogTitle: 'كتالوج الخدمات',
-      catalogLead: 'ست عائلات واضحة. الرندر صورة ثابتة — والأفلام حيث تلزم الحركة. افتح البند ثم اطلب أو أضفه إلى أتيليه.',
+      catalogLead: 'اختر عائلة لعرض بنودها فقط — الصفحة أقصر وأوضح.',
       filterAll: 'الكل',
       filterEmpty: 'لا خدمات في هذا التصنيف.',
       families: {
@@ -169,7 +169,7 @@ window.GH_DIRECT = {
       pageLead:
         'Choose a ready package, a single service, or build your mix in Atelier. Figures are estimates until confirmed — no online checkout.',
       catalogTitle: 'Service catalog',
-      catalogLead: 'Six clear families. Renders are stills — film where motion matters. Open a line item, then request or add to Atelier.',
+      catalogLead: 'Pick a family to show only its items — shorter and clearer.',
       filterAll: 'All',
       filterEmpty: 'No services in this category.',
       families: {

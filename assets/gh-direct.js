@@ -299,7 +299,7 @@
     return 'sales';
   }
 
-  var catalogFilter = 'all';
+  var catalogFilter = 'viz';
 
   function filteredServices() {
     if (catalogFilter === 'all') return DATA.services.slice();
@@ -311,22 +311,19 @@
   function renderCatalogFilters() {
     var host = document.getElementById('ghd-catalog-filters');
     if (!host) return;
-    var items = [{ id: 'all', label: ui.filterAll || (lang === 'ar' ? 'الكل' : 'All') }].concat(
-      FAMILY_ORDER.map(function (id) {
-        return { id: id, label: familyLabel(id, true) };
-      })
-    );
+    var items = FAMILY_ORDER.map(function (id) {
+      return { id: id, label: familyLabel(id, false) };
+    }).concat([{ id: 'all', label: ui.filterAll || (lang === 'ar' ? 'الكل' : 'All') }]);
     host.innerHTML = items
       .map(function (item) {
         return (
           '<button type="button" class="ghd-filter' +
           (catalogFilter === item.id ? ' is-active' : '') +
+          (item.id === 'all' ? ' ghd-filter--all' : '') +
           '" role="tab" aria-selected="' +
           (catalogFilter === item.id ? 'true' : 'false') +
           '" data-ghd-filter="' +
           escapeAttr(item.id) +
-          '" title="' +
-          escapeAttr(item.id === 'all' ? item.label : familyLabel(item.id, false)) +
           '">' +
           escapeHtml(item.label) +
           '</button>'
@@ -335,9 +332,15 @@
       .join('');
     host.querySelectorAll('[data-ghd-filter]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        catalogFilter = btn.getAttribute('data-ghd-filter') || 'all';
+        catalogFilter = btn.getAttribute('data-ghd-filter') || 'viz';
         renderCatalogFilters();
         renderCatalog();
+        var section = document.getElementById('catalog');
+        if (section && catalogFilter !== 'all') {
+          try {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } catch (e) {}
+        }
       });
     });
   }
@@ -432,11 +435,28 @@
       });
       grid.innerHTML = html;
     } else {
-      grid.innerHTML = list
-        .map(function (svc, idx) {
-          return svcCardHtml(svc, idx);
-        })
-        .join('');
+      grid.innerHTML =
+        '<header class="ghd-family-head ghd-family-head--active">' +
+        '<span class="ghd-family-index" aria-hidden="true">' +
+        String(FAMILY_ORDER.indexOf(catalogFilter) + 1).padStart(2, '0') +
+        '</span>' +
+        '<div><h3 class="ghd-family-title">' +
+        escapeHtml(familyLabel(catalogFilter, false)) +
+        '</h3>' +
+        '<p class="ghd-family-count">' +
+        escapeHtml(
+          lang === 'ar'
+            ? list.length + ' بنود في هذه العائلة'
+            : list.length + (list.length === 1 ? ' item in this family' : ' items in this family')
+        ) +
+        '</p></div></header>' +
+        '<div class="ghd-family-grid">' +
+        list
+          .map(function (svc, idx) {
+            return svcCardHtml(svc, idx);
+          })
+          .join('') +
+        '</div>';
     }
     bindCatalogCards(grid);
   }
