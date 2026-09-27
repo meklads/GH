@@ -1945,6 +1945,20 @@ body.ghd-modal-open { overflow: hidden; }
   color: #2a2a2a;
   letter-spacing: 0.01em;
 }
+.ghd-pkg-phase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ghd-gold-dark);
+  margin-bottom: 2px;
+}
+.ghd-pkg--featured .ghd-pkg-phase {
+  color: var(--ghd-gold);
+}
 
 .ghd-pkg-priceblock {
   display: flex;
@@ -1952,7 +1966,7 @@ body.ghd-modal-open { overflow: hidden; }
   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-top: 6px;
+  margin-top: 4px;
   direction: ltr;
   unicode-bidi: isolate;
 }
@@ -1971,10 +1985,25 @@ body.ghd-modal-open { overflow: hidden; }
   color: rgba(20, 20, 20, 0.55);
 }
 .ghd-pkg-price-note {
-  margin: 0;
-  font-size: 12px;
+  margin: 10px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(20, 20, 20, 0.55);
+}
+.ghd-pkg--featured .ghd-pkg-price-note {
+  color: rgba(245, 240, 228, 0.78);
+}
+.ghd-pkg-incentive {
+  margin: 10px auto 0;
+  max-width: 22rem;
+  font-size: 12.5px;
   font-weight: 400;
-  color: rgba(20, 20, 20, 0.48);
+  line-height: 1.5;
+  color: var(--ghd-gold-dark);
+}
+.ghd-pkg--featured .ghd-pkg-incentive {
+  color: var(--ghd-gold);
 }
 .ghd-pkg-priceblock--live .ghd-pkg-price-main {
   font-size: clamp(1.15rem, 2vw, 1.35rem);

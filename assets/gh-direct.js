@@ -421,24 +421,36 @@
           '</div>'
         : '';
 
+      var phase =
+        pkg.phase
+          ? '<span class="ghd-pkg-phase">' +
+            escapeHtml((ui.phaseLabel ? ui.phaseLabel + ' · ' : '') + t(pkg.phase)) +
+            '</span>'
+          : '';
+
       var namePill =
         '<span class="ghd-pkg-namepill">' + escapeHtml(t(pkg.name)) + '</span>';
 
       var priceBlock =
+        '<p class="ghd-pkg-price-note">' +
+        escapeHtml(ui.from) +
+        '</p>' +
         '<div class="ghd-pkg-priceblock">' +
         '<span class="ghd-pkg-price-main">' +
         escapeHtml(formatNum(pkg.price)) +
         '</span>' +
         '<span class="ghd-pkg-price-suffix">' +
         escapeHtml(currency) +
-        '</span></div>' +
-        '<p class="ghd-pkg-price-note">' +
-        escapeHtml(ui.from) +
-        '</p>';
+        '</span></div>';
 
       var tagline = pkg.tagline
         ? '<p class="ghd-pkg-tagline">' + escapeHtml(t(pkg.tagline)) + '</p>'
         : '';
+
+      var incentive =
+        '<p class="ghd-pkg-incentive">' +
+        escapeHtml(t(pkg.incentive) || ui.incentiveDefault || '') +
+        '</p>';
 
       var fit =
         pkg.fit
@@ -476,8 +488,8 @@
         escapeHtml(
           ui.packagesFoot ||
             (lang === 'ar'
-              ? 'تقدير ابتدائي · تأكيد خلال يوم عمل · بلا دفع أونلاين'
-              : 'Starting estimate · confirm in one business day · no online checkout')
+              ? 'يبدأ من · بلا دفع أونلاين · رد خلال يوم عمل · ترشيح مجاني'
+              : 'Starting from · no online checkout · reply in one business day · free recommendation')
         ) +
         '</p>';
 
@@ -494,9 +506,11 @@
       card.innerHTML =
         ribbon +
         '<div class="ghd-pkg-top">' +
+        phase +
         namePill +
         priceBlock +
         tagline +
+        incentive +
         '</div>' +
         fit +
         delivery +
