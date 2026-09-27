@@ -561,36 +561,10 @@
           '</div>'
         : '';
 
-      var purpose = pkg.purpose || pkg.stage;
       var nameEl =
-        '<h3 class="ghd-pkg-name">' +
+        '<h3 class="ghd-pkg-name"><span class="ghd-pkg-namepill">' +
         escapeHtml(t(pkg.name)) +
-        (purpose
-          ? ' <span class="ghd-pkg-purpose">· ' +
-            escapeHtml(t(purpose)) +
-            '</span>'
-          : '') +
-        '</h3>';
-
-      var purposeLine = pkg.tagline
-        ? '<p class="ghd-pkg-purpose-line">' + escapeHtml(t(pkg.tagline)) + '</p>'
-        : '';
-
-      var fitLine = pkg.fit
-        ? '<p class="ghd-pkg-fitline"><span class="ghd-pkg-meta-label">' +
-          escapeHtml(ui.fitLabel || '') +
-          '</span> ' +
-          escapeHtml(t(pkg.fit)) +
-          '</p>'
-        : '';
-
-      var outcomeLine = pkg.outcome
-        ? '<p class="ghd-pkg-outcome"><span class="ghd-pkg-meta-label">' +
-          escapeHtml(ui.outcomeLabel || '') +
-          '</span> ' +
-          escapeHtml(t(pkg.outcome)) +
-          '</p>'
-        : '';
+        '</span></h3>';
 
       var priceBlock =
         '<div class="ghd-pkg-priceblock">' +
@@ -642,9 +616,6 @@
         ribbon +
         '<div class="ghd-pkg-top">' +
         nameEl +
-        purposeLine +
-        fitLine +
-        outcomeLine +
         priceBlock +
         '</div>' +
         lines +

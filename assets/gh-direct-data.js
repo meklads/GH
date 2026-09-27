@@ -77,7 +77,7 @@ window.GH_DIRECT = {
         sales: 'بيع ونمو',
       },
       packagesTitle: 'الباقات',
-      packagesLead: 'ليست بعدد الصور — بل بجاهزية مشروعك للحظة الحالية: تعريف، بناء، أو إطلاق وبيع.',
+      packagesLead: 'باقة التعريف · باقة الانطلاق · باقة البيع — حسب لحظة مشروعك.',
       packagesFoot: 'تقدير يبدأ من · يُثبَّت عند التأكيد',
       stageLabel: 'اللحظة',
       stagePrefix: '',
@@ -144,8 +144,8 @@ window.GH_DIRECT = {
       atelierStep1: 'اختر البنود',
       atelierStep2: 'راجع التقدير',
       atelierStep3: 'ثبّت النطاق',
-      whyPlan: 'لماذا انطلاق؟',
-      whyPlanBody: 'بين نواة وتوقيع: إظهار أقوى وميديا وموقع المشروع — دون صالة البيع الكاملة.',
+      whyPlan: 'لماذا باقة الانطلاق؟',
+      whyPlanBody: 'بين باقتي التعريف والبيع: إظهار أقوى وموقع للحملة — دون منظومة البيع الكاملة.',
       total: 'الإجمالي التقديري',
       totalNote: 'تقدير يبدأ من — يُؤكَّد عند التواصل',
       trustLine: 'دون دفع إلكتروني · تأكيد النطاق خلال يوم عمل · الأسعار تقدير يبدأ من',
@@ -195,8 +195,8 @@ window.GH_DIRECT = {
           a: 'لا. الصفحة للاختيار والتقدير. التأكيد والتسعير النهائي عبر واتساب أو نموذج الطلب.',
         },
         {
-          q: 'كيف أختار بين نواة وانطلاق وتوقيع؟',
-          a: 'تعريف → نواة. بناء → انطلاق. إطلاق وبيع → توقيع. اقرأ جملة «مناسبة لك إذا» تحت كل باقة.',
+          q: 'كيف أختار بين باقات التعريف والانطلاق والبيع؟',
+          a: 'تعريف → باقة التعريف. بناء → باقة الانطلاق. إطلاق وبيع → باقة البيع.',
         },
         {
           q: 'هل يمكن تبديل بنود الباقة؟',
@@ -212,7 +212,7 @@ window.GH_DIRECT = {
         },
         {
           q: 'كم جولة مراجعة مشمولة؟',
-          a: 'جولتان للمراجعات ضمن باقات نواة وانطلاق وتوقيع كما هو مذكور في البنود. ما زاد يُسعَّر عند الحاجة.',
+          a: 'باقة التعريف: جولة واحدة. باقتا الانطلاق والبيع: جولتان. ما زاد يُسعَّر عند الحاجة.',
         },
         {
           q: 'هل تعملون على موديل 3D جاهز؟',
@@ -220,7 +220,7 @@ window.GH_DIRECT = {
         },
         {
           q: 'هل يمكن تنفيذ المشروع على مراحل؟',
-          a: 'نعم. كثيراً ما نبدأ بنواة أو انطلاق ثم نرتقي عند جاهزية البيع.',
+          a: 'نعم. كثيراً ما نبدأ بباقة التعريف أو الانطلاق ثم نرتقي عند جاهزية البيع.',
         },
         {
           q: 'متى يُفضَّل الأتيليه؟',
@@ -269,7 +269,7 @@ window.GH_DIRECT = {
         sales: 'Sales & Growth',
       },
       packagesTitle: 'Packages',
-      packagesLead: 'Not by image count — by readiness for your moment: Define, Build, or Launch & Sell.',
+      packagesLead: 'Definition · Launch · Sell — matched to your project moment.',
       packagesFoot: 'Starting-from · locked at confirmation',
       stageLabel: 'Moment',
       stagePrefix: '',
@@ -335,8 +335,8 @@ window.GH_DIRECT = {
       atelierStep1: 'Select items',
       atelierStep2: 'Review estimate',
       atelierStep3: 'Lock scope',
-      whyPlan: 'Why Launch?',
-      whyPlanBody: 'Between Core and Signature: stronger visualization, media, and a project site — without the full sales gallery.',
+      whyPlan: 'Why Launch Package?',
+      whyPlanBody: 'Between Definition and Sell: stronger visualization and a campaign site — without the full sales system.',
       total: 'Estimated total',
       totalNote: 'Starting-from estimate — confirmed when we talk',
       trustLine: 'No online checkout · Scope confirmed within one business day · Starting-from estimates',
@@ -386,8 +386,8 @@ window.GH_DIRECT = {
           a: 'No. This page is for selection and estimation. Confirmation and final pricing happen via WhatsApp or the request form.',
         },
         {
-          q: 'How do I choose between Core, Launch, and Signature?',
-          a: 'Define → Core. Build → Launch. Launch & Sell → Signature. Read the “Best for you if” line under each package.',
+          q: 'How do I choose between Definition, Launch, and Sell packages?',
+          a: 'Define → Definition Package. Build → Launch Package. Launch & Sell → Sell Package.',
         },
         {
           q: 'Can package line items be swapped?',
@@ -403,7 +403,7 @@ window.GH_DIRECT = {
         },
         {
           q: 'How many revision rounds are included?',
-          a: 'Two revision rounds within Core, Launch, and Signature as listed. Extra rounds are priced if needed.',
+          a: 'Definition Package: one round. Launch and Sell: two rounds. Extra rounds are priced if needed.',
         },
         {
           q: 'Do you work from an existing 3D model?',
@@ -411,7 +411,7 @@ window.GH_DIRECT = {
         },
         {
           q: 'Can work be delivered in phases?',
-          a: 'Yes. Many projects begin with Core or Launch, then step up when sales readiness is required.',
+          a: 'Yes. Many projects begin with Definition or Launch, then step up when sales readiness is required.',
         },
         {
           q: 'When is Atelier preferable?',
@@ -503,7 +503,7 @@ window.GH_DIRECT = {
   fitGuide: [
     {
       packageId: 'basic',
-      label: { ar: 'نواة', en: 'Core' },
+      label: { ar: 'باقة التعريف', en: 'Definition' },
       blurb: {
         ar: 'تعريف · لغة بصرية واضحة',
         en: 'Define · clear visual language',
@@ -511,7 +511,7 @@ window.GH_DIRECT = {
     },
     {
       packageId: 'launch',
-      label: { ar: 'انطلاق', en: 'Launch' },
+      label: { ar: 'باقة الانطلاق', en: 'Launch' },
       blurb: {
         ar: 'بناء · حضور بصري مستمر',
         en: 'Build · sustained visual presence',
@@ -519,7 +519,7 @@ window.GH_DIRECT = {
     },
     {
       packageId: 'growth',
-      label: { ar: 'توقيع', en: 'Signature' },
+      label: { ar: 'باقة البيع', en: 'Sell' },
       blurb: {
         ar: 'إطلاق وبيع · تجربة بيع متكاملة',
         en: 'Launch & Sell · complete sales experience',
@@ -878,20 +878,20 @@ services: [
     {
       id: 'basic',
       mode: 'bundle',
-      name: { ar: 'نواة', en: 'Core' },
+      name: { ar: 'باقة التعريف', en: 'Definition Package' },
       purpose: { ar: 'تعريف', en: 'Define' },
       stage: { ar: 'تعريف', en: 'Define' },
       tagline: {
-        ar: 'حوّل الرؤية المعتمدة إلى لغة بصرية واضحة.',
-        en: 'Turn the approved vision into a clear visual language.',
+        ar: 'لغة بصرية واضحة للرؤية المعتمدة.',
+        en: 'A clear visual language for the approved vision.',
       },
       fit: {
-        ar: 'كانت الرؤية معتمدة وتحتاج حضوراً بصرياً أساسياً قبل التوسع في الإنتاج.',
-        en: 'The vision is approved and you need essential visual presence before scaling production.',
+        ar: 'الرؤية معتمدة وتحتاج حضوراً بصرياً أساسياً.',
+        en: 'Vision approved and needs essential visual presence.',
       },
       outcome: {
-        ar: 'صورة مشروع واضحة جاهزة للمشاركة الداخلية والعرض الأوّلي.',
-        en: 'A clear project image ready for internal alignment and early presentation.',
+        ar: 'صورة مشروع واضحة جاهزة للمشاركة والعرض الأوّلي.',
+        en: 'A clear project image ready for sharing and early presentation.',
       },
       delivery: {
         ar: 'خلال أسابيع قليلة بعد تثبيت النطاق',
@@ -899,45 +899,50 @@ services: [
       },
       price: 45000,
       featured: false,
-      includedServiceIds: ['identity-basic', 'drone-short'],
+      includedServiceIds: ['identity-basic', 'drone-short', 'microsite'],
       includedLines: [
         {
-          ar: 'حتى 12 رندرة 3D · جولتا مراجعة',
-          en: 'Up to 12 3D renders · two revision rounds',
+          ar: 'إنتاج 12 صورة ثري دي فوتوريالستيك تغطي واجهات ومساحات المشروع',
+          en: '12 photoreal 3D images covering the project façades and spaces',
         },
         {
-          ar: 'شعار المشروع + لوحة ألوان + ملفات التسليم',
-          en: 'Project logo + colour palette + delivery files',
+          ar: 'جولة تعديل واحدة',
+          en: 'One revision round',
+        },
+        {
+          ar: 'هوية بصرية: شعار + ألوان وخطوط + ملفات تسليم جاهزة',
+          en: 'Visual identity: logo + colours & type + ready delivery files',
           serviceId: 'identity-basic',
         },
         {
-          ar: 'فيديو درون لموقع واحد (~60 ثانية)',
-          en: 'One-site drone film (~60 seconds)',
+          ar: 'فيديو جوي لموقع المشروع (~60 ثانية)',
+          en: 'Aerial film of the project site (~60 seconds)',
           serviceId: 'drone-short',
         },
         {
-          ar: 'صفحة هبوط عربية جاهزة للنشر',
-          en: 'One Arabic landing page, publish-ready',
+          ar: 'موقع إلكتروني متعدد الصفحات، جاهز للنشر',
+          en: 'Multi-page website, publish-ready',
+          serviceId: 'microsite',
         },
       ],
     },
     {
       id: 'launch',
       mode: 'bundle',
-      name: { ar: 'انطلاق', en: 'Launch' },
+      name: { ar: 'باقة الانطلاق', en: 'Launch Package' },
       purpose: { ar: 'بناء', en: 'Build' },
       stage: { ar: 'بناء', en: 'Build' },
       tagline: {
-        ar: 'أبقِ المشروع حيّاً بصرياً أثناء تطوره.',
-        en: 'Keep the project visually alive as it develops.',
+        ar: 'حضور بصري متصل أثناء تطور المشروع.',
+        en: 'Connected visual presence as the project develops.',
       },
       fit: {
-        ar: 'كان المشروع يتطور وتحتاج سرداً بصرياً متسقاً وموقعاً للحملة قبل صالة كاملة.',
-        en: 'The project is developing and you need a consistent visual narrative and campaign site before a full gallery.',
+        ar: 'المشروع يتطور ويحتاج سرداً بصرياً وموقعاً للحملة.',
+        en: 'The project is developing and needs narrative visuals and a campaign site.',
       },
       outcome: {
-        ar: 'حضور بصري متصل جاهز للحملة والتواصل مع السوق.',
-        en: 'Connected visual presence ready for campaign and market communication.',
+        ar: 'حضور بصري جاهز للحملة والتواصل مع السوق.',
+        en: 'Visual presence ready for campaign and market communication.',
       },
       delivery: {
         ar: 'على مراحل واضحة بعد تثبيت النطاق',
@@ -945,30 +950,29 @@ services: [
       },
       price: 98000,
       featured: true,
-      includedServiceIds: ['identity-basic', 'drone-short', 'ground-photo', 'microsite'],
+      includedServiceIds: ['identity-basic', 'drone-short', 'microsite'],
       includedLines: [
         {
-          ar: 'حتى 18 رندرة 3D · جولتا مراجعة',
-          en: 'Up to 18 3D renders · two revision rounds',
+          ar: 'إنتاج 18 صورة ثري دي فوتوريالستيك تغطي واجهات ومساحات المشروع',
+          en: '18 photoreal 3D images covering the project façades and spaces',
         },
         {
-          ar: 'شعار المشروع + لوحة ألوان + ملفات التسليم',
-          en: 'Project logo + colour palette + delivery files',
+          ar: 'جولتا تعديل',
+          en: 'Two revision rounds',
+        },
+        {
+          ar: 'هوية بصرية: شعار + لوحة ألوان + ملفات التسليم الكاملة',
+          en: 'Visual identity: logo + colour palette + full delivery files',
           serviceId: 'identity-basic',
         },
         {
-          ar: 'فيديو درون لموقع واحد (~60 ثانية)',
-          en: 'One-site drone film (~60 seconds)',
+          ar: 'فيديو جوي لموقع المشروع (~60 ثانية)',
+          en: 'Aerial film of the project site (~60 seconds)',
           serviceId: 'drone-short',
         },
         {
-          ar: 'يوم تصوير أرضي مع التحرير',
-          en: 'One ground photography day with edit',
-          serviceId: 'ground-photo',
-        },
-        {
-          ar: 'موقع متعدد الصفحات جاهز للإطلاق',
-          en: 'Multi-page project site, launch-ready',
+          ar: 'موقع إلكتروني متعدد الصفحات، جاهز للإطلاق',
+          en: 'Multi-page website, launch-ready',
           serviceId: 'microsite',
         },
       ],
@@ -976,20 +980,20 @@ services: [
     {
       id: 'growth',
       mode: 'bundle',
-      name: { ar: 'توقيع', en: 'Signature' },
+      name: { ar: 'باقة البيع', en: 'Sell Package' },
       purpose: { ar: 'إطلاق وبيع', en: 'Launch & Sell' },
       stage: { ar: 'إطلاق وبيع', en: 'Launch & Sell' },
       tagline: {
-        ar: 'حوّل المشروع إلى تجربة بيع متكاملة.',
-        en: 'Turn the project into a complete sales experience.',
+        ar: 'تجربة بيع متكاملة أمام العميل.',
+        en: 'A complete sales experience in front of the buyer.',
       },
       fit: {
-        ar: 'كنت تستعد للإطلاق أو البيع وتحتاج منظومة بصرية وتجريبية أمام العميل.',
-        en: 'You are preparing to launch or sell and need a visual and experiential system in front of the buyer.',
+        ar: 'الإطلاق أو البيع يتطلب منظومة بصرية وتجريبية كاملة.',
+        en: 'Launch or sales requires a full visual and experiential system.',
       },
       outcome: {
-        ar: 'منظومة بيع مترابطة تدعم العرض والإقناع في الصالة والقنوات الرقمية.',
-        en: 'A connected sales system that supports presentation and persuasion in gallery and digital channels.',
+        ar: 'منظومة بيع مترابطة للصالة والقنوات الرقمية.',
+        en: 'A connected sales system for gallery and digital channels.',
       },
       delivery: {
         ar: 'على مراحل واضحة بعد تثبيت النطاق',
@@ -1000,37 +1004,41 @@ services: [
       includedServiceIds: ['identity-full', 'catalogue', 'drone-short', 'ground-photo', 'microsite', 'touchscreen'],
       includedLines: [
         {
-          ar: 'حتى 20 رندرة 3D · جولتا مراجعة',
-          en: 'Up to 20 3D renders · two revision rounds',
+          ar: 'إنتاج 20 صورة ثري دي فوتوريالستيك تغطي واجهات ومساحات المشروع',
+          en: '20 photoreal 3D images covering the project façades and spaces',
         },
         {
-          ar: 'هوية كاملة + دليل استخدام مختصر',
-          en: 'Full identity + short usage guide',
+          ar: 'جولتا تعديل',
+          en: 'Two revision rounds',
+        },
+        {
+          ar: 'هوية بصرية كاملة + دليل استخدام مختصر للعلامة',
+          en: 'Full visual identity + short brand usage guide',
           serviceId: 'identity-full',
         },
         {
-          ar: 'كتالوج طباعة وديجيتال + بروشور مبيعات',
-          en: 'Print & digital catalogue + sales brochure',
+          ar: 'كتالوج المشروع + بروشور مبيعات (مطبوع ورقمي)',
+          en: 'Project catalogue + sales brochure (print and digital)',
           serviceId: 'catalogue',
         },
         {
-          ar: 'فيديو درون لموقع واحد (~60 ثانية)',
-          en: 'One-site drone film (~60 seconds)',
+          ar: 'فيديو جوي لموقع المشروع (~60 ثانية)',
+          en: 'Aerial film of the project site (~60 seconds)',
           serviceId: 'drone-short',
         },
         {
-          ar: 'يوم تصوير أرضي مع التحرير',
-          en: 'One ground photography day with edit',
+          ar: 'جلسة تصوير فوتوغرافي أرضي ليوم واحد',
+          en: 'One full day of ground photography',
           serviceId: 'ground-photo',
         },
         {
-          ar: 'موقع متعدد الصفحات',
-          en: 'Multi-page project site',
+          ar: 'موقع إلكتروني متعدد الصفحات',
+          en: 'Multi-page website',
           serviceId: 'microsite',
         },
         {
-          ar: 'شاشة لمس + تطبيق الوحدات والتوفر',
-          en: 'Touchscreen + units & availability app',
+          ar: 'برنامج عرض تفاعلي لشاشة اللمس، يعرض الوحدات وحالة التوفر',
+          en: 'Interactive touchscreen presentation app for units and availability',
           serviceId: 'touchscreen',
         },
       ],
