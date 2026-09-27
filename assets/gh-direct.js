@@ -474,13 +474,13 @@
       composeGroupsHtml(pkg) +
       '</div>' +
       totalBoxHtml(pkg, tot) +
-      '<div class="ghd-pkg-ctas ghd-atelier-ctas">' +
-      '<button type="button" class="ghd-cta ghd-cta--primary" data-lead-pkg="' +
+      '<div class="ghd-atelier-ctas">' +
+      '<button type="button" class="ghd-cta ghd-cta--primary ghd-atelier-cta" data-lead-pkg="' +
       escapeAttr(pkg.id) +
       '">' +
       escapeHtml(ui.confirmPlan || ui.cta) +
       '</button>' +
-      '<a class="ghd-cta ghd-cta--link" data-pkg-wa="' +
+      '<a class="ghd-cta ghd-cta--outline ghd-atelier-cta" data-pkg-wa="' +
       escapeAttr(pkg.id) +
       '" href="#" target="_blank" rel="noopener noreferrer">' +
       escapeHtml(ui.wa) +
