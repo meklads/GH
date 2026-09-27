@@ -1614,7 +1614,7 @@ body.ghd-modal-open { overflow: hidden; }
   justify-content: space-between;
   gap: 16px 24px;
   padding: 18px 22px;
-  border-radius: 16px;
+  border-radius: 4px;
   border: 1px dashed rgba(201, 168, 76, 0.45);
   background: linear-gradient(135deg, rgba(201, 168, 76, 0.08), rgba(255, 255, 255, 0.7));
 }
@@ -2487,12 +2487,12 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   position: relative;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, #faf9f6 100%);
-  border: 1px solid rgba(20, 20, 20, 0.08);
-  border-radius: 22px;
+  border: 1px solid rgba(14, 14, 14, 0.09);
+  border-radius: 6px;
   padding: 32px 28px 28px;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.8) inset,
-    0 24px 60px rgba(20, 20, 20, 0.08);
+    0 18px 48px rgba(14, 14, 14, 0.06);
   text-align: start;
   overflow: hidden;
 }
