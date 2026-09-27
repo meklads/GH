@@ -884,17 +884,37 @@ services: [
         en: 'A project in the Launch stage that needs media and a site before a full gallery',
       },
       delivery: {
-        ar: 'على مراحل واضحة بعد التأكيد',
-        en: 'In clear phases after confirmation',
+        ar: 'على مراحل واضحة بعد تثبيت النطاق',
+        en: 'In clear phases after scope lock',
       },
       price: 98000,
       featured: true,
       includedServiceIds: ['identity-basic', 'drone-short', 'ground-photo', 'microsite'],
       includedLines: [
-        { ar: 'كل ما في نواة، بالإضافة إلى…', en: 'Everything in Core, and…' },
-        { ar: 'رندرات 3D: 15–18 صورة', en: '3D renders: 15–18 images' },
-        { ar: 'تصوير أرضي احترافي', en: 'Professional ground photography', serviceId: 'ground-photo' },
-        { ar: 'موقع المشروع', en: 'Project website', serviceId: 'microsite' },
+        {
+          ar: 'رندرات 3D: حتى 18 صورة فوتوريال (خارجي/داخلي حسب المخطط) · جولتا مراجعة',
+          en: '3D renders: up to 18 photoreal images (exterior/interior per plans) · two revision rounds',
+        },
+        {
+          ar: 'هوية أساسية: شعار المشروع + لوحة ألوان + ملفات تسليم جاهزة للاستخدام',
+          en: 'Essential identity: project logo + colour palette + ready-to-use delivery files',
+          serviceId: 'identity-basic',
+        },
+        {
+          ar: 'فيديو درون: تصوير موقع واحد · فيلم قصير حتى ~60 ثانية بعد المونتاج',
+          en: 'Drone film: one site shoot · short film up to ~60 seconds after edit',
+          serviceId: 'drone-short',
+        },
+        {
+          ar: 'تصوير أرضي: يوم تصوير واحد للموقع أو الوحدات · مع التحرير والاختيار النهائي',
+          en: 'Ground photography: one shoot day for site or units · with edit and final selects',
+          serviceId: 'ground-photo',
+        },
+        {
+          ar: 'موقع المشروع: موقع متعدد الصفحات (عربي) · جاهز للحملة ويوم الإطلاق',
+          en: 'Project site: multi-page website (Arabic) · ready for campaign and launch day',
+          serviceId: 'microsite',
+        },
       ],
     },
     {
@@ -911,17 +931,47 @@ services: [
         en: 'A project in the Sell stage that needs a gallery and decision tools',
       },
       delivery: {
-        ar: 'على مراحل واضحة بعد التأكيد',
-        en: 'In clear phases after confirmation',
+        ar: 'على مراحل واضحة بعد تثبيت النطاق',
+        en: 'In clear phases after scope lock',
       },
       price: 195000,
       featured: false,
       includedServiceIds: ['identity-full', 'catalogue', 'drone-short', 'ground-photo', 'microsite', 'touchscreen'],
       includedLines: [
-        { ar: 'كل ما في انطلاق، بالإضافة إلى…', en: 'Everything in Launch, and…' },
-        { ar: 'رندرات 3D: 20 صورة', en: '3D renders: 20 images' },
-        { ar: 'نظام هوية كامل + كتالوج', en: 'Full identity system + catalogue', serviceId: 'identity-full' },
-        { ar: 'شاشة لمس تفاعلية', en: 'Interactive touchscreen', serviceId: 'touchscreen' },
+        {
+          ar: 'رندرات 3D: حتى 20 صورة فوتوريال (خارجي/داخلي حسب المخطط) · جولتا مراجعة',
+          en: '3D renders: up to 20 photoreal images (exterior/interior per plans) · two revision rounds',
+        },
+        {
+          ar: 'هوية كاملة: شعار بصيغ متعددة + نظام ألوان وتايبوغرافي + دليل استخدام مختصر',
+          en: 'Full identity: logo in multiple formats + colour & type system + short usage guide',
+          serviceId: 'identity-full',
+        },
+        {
+          ar: 'كتالوج المشروع: نسخة طباعة وديجيتال + بروشور جاهز لفريق المبيعات',
+          en: 'Project catalogue: print + digital edition + sales-ready brochure',
+          serviceId: 'catalogue',
+        },
+        {
+          ar: 'فيديو درون: تصوير موقع واحد · فيلم قصير حتى ~60 ثانية بعد المونتاج',
+          en: 'Drone film: one site shoot · short film up to ~60 seconds after edit',
+          serviceId: 'drone-short',
+        },
+        {
+          ar: 'تصوير أرضي: يوم تصوير واحد للموقع أو الوحدات · مع التحرير والاختيار النهائي',
+          en: 'Ground photography: one shoot day for site or units · with edit and final selects',
+          serviceId: 'ground-photo',
+        },
+        {
+          ar: 'موقع المشروع: موقع متعدد الصفحات (عربي) · جاهز للحملة وصالة البيع',
+          en: 'Project site: multi-page website (Arabic) · ready for campaign and sales gallery',
+          serviceId: 'microsite',
+        },
+        {
+          ar: 'شاشة لمس: جهاز واحد + تطبيق استعراض الوحدات والامتيازات والتوفر',
+          en: 'Touchscreen: one device + app for units, amenities, and availability',
+          serviceId: 'touchscreen',
+        },
       ],
     },
     {
