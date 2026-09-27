@@ -26,6 +26,7 @@
       },
       ctaPrimary: { ar: 'ابدأ مشروعك', en: 'Start your project' },
       ctaSecondary: { ar: 'ماذا نقدّم', en: 'See what we deliver' },
+      ctaSecondaryHref: '#capability',
       media: 'assets/projects/wahat-al-salam/hero-aerial.webp',
     },
 
@@ -65,12 +66,11 @@
           en: 'We turn architectural intent into visual clarity.',
         },
         items: [
-          { ar: 'إظهار المخطط الرئيسي', en: 'Masterplan Visualization' },
           { ar: 'CGI معماري', en: 'Architectural CGI' },
+          { ar: 'إظهار المخطط الرئيسي', en: 'Masterplan Visualization' },
           { ar: 'إظهار داخلي', en: 'Interior Visualization' },
-          { ar: 'دراسات خامات وأجواء', en: 'Material & Atmosphere Studies' },
+          { ar: 'دراسات خامات وأجواء', en: 'Material / Atmosphere Studies' },
           { ar: 'مشاهد رئيسية للمشروع', en: 'Key Project Views' },
-          { ar: 'أصول بصرية جاهزة للبيع', en: 'Sales-Ready Visual Assets' },
         ],
         image: 'assets/projects/wahat-al-salam/hero-aerial.webp',
         packageId: 'basic',
@@ -88,9 +88,8 @@
           { ar: 'CGI محدّث', en: 'Updated CGI' },
           { ar: 'إظهار التقدّم', en: 'Progress Visualization' },
           { ar: 'تواصل المراحل', en: 'Phase Communication' },
-          { ar: 'تحديثات البناء', en: 'Construction Updates' },
-          { ar: 'أصول تسويقية', en: 'Marketing Visuals' },
           { ar: 'سرد المشروع', en: 'Project Storytelling' },
+          { ar: 'أصول تسويقية', en: 'Marketing Visuals' },
         ],
         image: 'assets/projects/al-rajhi-naseem/cam-1.webp',
         packageId: 'launch',
@@ -111,7 +110,6 @@
           { ar: 'تجارب تفاعلية', en: 'Interactive Experiences' },
           { ar: 'مرئيات صالة البيع', en: 'Sales Center Visuals' },
           { ar: 'أصول الإطلاق الرقمي', en: 'Digital Launch Assets' },
-          { ar: 'عروض الوحدات والمشروع', en: 'Unit & Project Presentations' },
           { ar: 'مواد المبيعات / الوسطاء', en: 'Sales / Broker Materials' },
         ],
         image: 'assets/projects/rafal-pavilions/film-still.webp',
@@ -126,153 +124,77 @@
       },
     ],
 
-    deliver: {
-      h2a: { ar: 'مبني حول طريقة', en: 'Built around the way' },
-      h2b: { ar: 'عمل المطوّرين.', en: 'developers work.' },
-      solutions: [
+    capability: {
+      h2a: { ar: 'كل ما يحتاجه مشروعك', en: 'Everything your project needs' },
+      h2b: { ar: 'لكي يُرى.', en: 'to be seen.' },
+      lead: {
+        ar: 'خريطة قدرات — ليست قائمة أسعار. المنظومة البصرية والتجريبية حول مشروعك.',
+        en: 'A capability map — not a price list. The visual and experiential system around your project.',
+      },
+      families: [
         {
           num: '01',
           name: { ar: 'تصوّر', en: 'Visualize' },
           line: { ar: 'اجعل المشروع مرئياً.', en: 'Make the project visible.' },
-          tags: { ar: 'CGI · رندرات · مخطط رئيسي · داخلي', en: 'CGI · Renders · Masterplan · Interiors' },
+          items: [
+            { ar: 'CGI معماري', en: 'Architectural CGI' },
+            { ar: 'إظهار المخطط الرئيسي', en: 'Masterplan Visualization' },
+            { ar: 'إظهار داخلي', en: 'Interior Visualization' },
+            { ar: 'مشاهد رئيسية', en: 'Key Project Views' },
+            { ar: 'إظهار خامات وأجواء', en: 'Material / Atmosphere Visualization' },
+          ],
         },
         {
           num: '02',
           name: { ar: 'اشرح', en: 'Explain' },
           line: { ar: 'اجعل المشروع سهل الفهم.', en: 'Make the project easy to understand.' },
-          tags: { ar: 'أفلام · مخططات · قصص مشروع · عروض', en: 'Films · Diagrams · Project Stories · Presentations' },
+          items: [
+            { ar: 'أفلام CGI', en: 'CGI Films' },
+            { ar: 'تحريك', en: 'Animation' },
+            { ar: 'سرد المشروع', en: 'Project Storytelling' },
+            { ar: 'أصول العروض', en: 'Presentation Assets' },
+          ],
         },
         {
           num: '03',
           name: { ar: 'جرّب', en: 'Experience' },
           line: { ar: 'اجعل المشروع ملموساً.', en: 'Make the project tangible.' },
-          tags: {
-            ar: 'مجسمات معمارية · مجسمات ذكية · تجارب تفاعلية',
-            en: 'Architectural Models · Smart Models · Interactive Experiences',
-          },
+          items: [
+            { ar: 'مجسمات معمارية', en: 'Architectural Models' },
+            { ar: 'مجسمات بمقياس', en: 'Scale Models' },
+            { ar: 'مجسمات ذكية', en: 'Smart Models' },
+            { ar: 'تجارب تفاعلية', en: 'Interactive Experiences' },
+          ],
         },
         {
           num: '04',
           name: { ar: 'أطلق', en: 'Launch' },
           line: { ar: 'اجعل المشروع جاهزاً للسوق.', en: 'Make the project market-ready.' },
-          tags: {
-            ar: 'أصول حملات · محتوى رقمي · مواد مبيعات',
-            en: 'Campaign Assets · Digital Content · Sales Materials',
-          },
+          items: [
+            { ar: 'أصول الإطلاق الرقمي', en: 'Digital Launch Assets' },
+            { ar: 'مرئيات الحملات', en: 'Campaign Visuals' },
+            { ar: 'محتوى المشروع', en: 'Project Content' },
+            { ar: 'مواد تسويقية', en: 'Marketing Materials' },
+          ],
         },
         {
           num: '05',
           name: { ar: 'بِع', en: 'Sell' },
-          line: { ar: 'قوِّ تجربة الشراء.', en: 'Make the buying experience stronger.' },
-          tags: {
-            ar: 'صالات بيع · اختيار تفاعلي · تجربة المشروع',
-            en: 'Sales Centers · Interactive Selection · Project Experience',
-          },
+          line: { ar: 'قوِّ تجربة الشراء.', en: 'Make the buying experience stronger.' },
+          items: [
+            { ar: 'مرئيات صالة البيع', en: 'Sales Center Visuals' },
+            { ar: 'تجارب بيع تفاعلية', en: 'Interactive Sales Experiences' },
+            { ar: 'عرض الوحدة / المشروع', en: 'Unit / Project Presentation' },
+            { ar: 'مواد المبيعات / الوسطاء', en: 'Sales / Broker Materials' },
+          ],
         },
       ],
     },
 
-    why: {
-      h2a: { ar: 'المشروع لا يُباع', en: 'A project is not sold' },
-      h2b: { ar: 'بالمخططات وحدها.', en: 'by drawings alone.' },
-      copy: {
-        ar: 'المشتري لا يشتري رسماً.\nهو يشتري مكاناً يستطيع تخيّله.',
-        en: 'The buyer is not purchasing a drawing.\nThey are purchasing a place they can imagine.',
-      },
-      pillars: [
-        {
-          name: { ar: 'وضوح', en: 'Clarity' },
-          line: { ar: 'يفهم المشروع.', en: 'Understand the project.' },
-        },
-        {
-          name: { ar: 'ثقة', en: 'Confidence' },
-          line: { ar: 'يثق بما يراه.', en: 'Trust what they are seeing.' },
-        },
-        {
-          name: { ar: 'رغبة', en: 'Desire' },
-          line: { ar: 'يرغب في امتلاكه.', en: 'Want to own it.' },
-        },
-      ],
-      closer: {
-        ar: 'من المعلومة إلى الإحساس.\nومن الإحساس إلى القرار.',
-        en: 'From information to emotion.\nFrom emotion to decision.',
-      },
-    },
-
-    about: {
-      h2a: { ar: 'أكثر من', en: 'More than a' },
-      h2b: { ar: 'استوديو إظهار.', en: 'visualization studio.' },
-      copy: {
-        ar: 'تجمع Graphics House بين الإظهار المعماري والإنتاج السينمائي والنمذجة المادية والتقنية التفاعلية لصناعة تجارب مشروع كاملة للمطوّرين.',
-        en: 'Graphics House combines architectural visualization, cinematic production, physical modeling and interactive technology to create complete project experiences for developers.',
-      },
-      pillars: [
-        { ar: 'معماري', en: 'Architectural' },
-        { ar: 'سينمائي', en: 'Cinematic' },
-        { ar: 'مادي', en: 'Physical' },
-        { ar: 'تفاعلي', en: 'Interactive' },
-      ],
-      closerA: { ar: 'شريك بصري واحد.', en: 'One visual partner.' },
-      closerB: { ar: 'نقاط اتصال متعددة للمشروع.', en: 'Multiple project touchpoints.' },
-    },
-
-    workflow: {
-      h2a: { ar: 'من المدخل', en: 'From input' },
-      h2b: { ar: 'إلى الأثر.', en: 'to impact.' },
-      steps: [
-        {
-          num: '01',
-          name: { ar: 'فهم', en: 'Understand' },
-          detail: { ar: 'موجز · تصميم · مخطط رئيسي', en: 'Brief · Design · Masterplan' },
-        },
-        {
-          num: '02',
-          name: { ar: 'ترجمة', en: 'Translate' },
-          detail: { ar: 'لغة بصرية · قصة · تجربة', en: 'Visual Language · Story · Experience' },
-        },
-        {
-          num: '03',
-          name: { ar: 'إنتاج', en: 'Produce' },
-          detail: { ar: 'CGI · فيلم · مجسم · تفاعلي', en: 'CGI · Film · Model · Interactive' },
-        },
-        {
-          num: '04',
-          name: { ar: 'نشر', en: 'Deploy' },
-          detail: { ar: 'صالة بيع · حملة · رقمي · مبيعات', en: 'Sales Center · Campaign · Digital · Sales' },
-        },
-        {
-          num: '05',
-          name: { ar: 'إطلاق', en: 'Launch' },
-          detail: { ar: 'مشروع جاهز لأن يُرى.', en: 'A project ready to be seen.' },
-        },
-      ],
-    },
-
-    advantage: {
-      h2a: { ar: 'مشروع واحد.', en: 'One project.' },
-      h2b: { ar: 'منظومة بصرية مترابطة.', en: 'One connected visual system.' },
-      copy: {
-        ar: 'بدل تنسيق مورّدين منفصلين للإظهار والفيلم والمجسمات والتجارب التفاعلية وبيئات البيع، يبني المطوّر تجربة مشروع متناسقة عبر شريك بصري واحد.',
-        en: 'Instead of coordinating multiple disconnected suppliers for visualization, film, models, interactive experiences and sales environments, developers can build a coordinated project experience through one visual partner.',
-      },
-      pillars: [
-        {
-          name: { ar: 'اتساق', en: 'Consistency' },
-          line: { ar: 'كل شيء يتحدث بلغة بصرية واحدة.', en: 'Everything speaks the same visual language.' },
-        },
-        {
-          name: { ar: 'سيطرة', en: 'Control' },
-          line: { ar: 'مخرجات مترابطة عبر المشروع.', en: 'Connected outputs across the project.' },
-        },
-        {
-          name: { ar: 'سرعة', en: 'Speed' },
-          line: { ar: 'مسار أوضح من التصميم إلى السوق.', en: 'A clearer path from design to market.' },
-        },
-        {
-          name: { ar: 'أثر', en: 'Impact' },
-          line: { ar: 'تجربة أقوى للمشتري.', en: 'A stronger experience for the buyer.' },
-        },
-      ],
+    estimates: {
+      kicker: { ar: 'بعد فهم المرحلة', en: 'After stage clarity' },
+      title: { ar: 'تقديرات تبدأ من — عند الحاجة', en: 'Starting-from estimates — when needed' },
+      hint: { ar: 'افتح إن أردت أرقاماً تقديرية أو أتيليه', en: 'Open for estimate figures or Atelier' },
     },
 
     projects: {
@@ -326,16 +248,17 @@
       h2a: { ar: 'أين مشروعك', en: 'Where is your' },
       h2b: { ar: 'اليوم؟', en: 'project today?' },
       lead: {
-        ar: 'اختر لحظتك — نوجّهك إلى ما تحتاجه الآن.',
-        en: 'Choose your moment — we’ll point you to what you need now.',
+        ar: 'اختر لحظتك — ثم ابدأ الحوار. التقديرات اختيارية بعد ذلك.',
+        en: 'Choose your moment — then start the conversation. Estimates are optional after that.',
       },
+      goLabel: { ar: 'إلى اللحظة ←', en: 'Go to moment →' },
       choices: [
         {
           id: 'define',
           title: { ar: 'لديّ رؤية.', en: 'I have a vision.' },
           line: { ar: 'أحتاج أن أتصوّرها.', en: 'I need to visualize it.' },
           tag: { ar: 'تعريف', en: 'Define' },
-          href: '#pkg-basic',
+          href: '#moment-define',
           packageId: 'basic',
         },
         {
@@ -343,7 +266,7 @@
           title: { ar: 'أنا أبني.', en: 'I am building.' },
           line: { ar: 'أحتاج أن أوصّلها.', en: 'I need to communicate it.' },
           tag: { ar: 'بناء', en: 'Build' },
-          href: '#pkg-launch',
+          href: '#moment-build',
           packageId: 'launch',
         },
         {
@@ -351,14 +274,14 @@
           title: { ar: 'أنا أُطلق.', en: 'I am launching.' },
           line: { ar: 'أحتاج أن أبيعها.', en: 'I need to sell it.' },
           tag: { ar: 'إطلاق وبيع', en: 'Launch & Sell' },
-          href: '#pkg-growth',
+          href: '#moment-sell',
           packageId: 'growth',
         },
       ],
     },
 
     commercial: {
-      eyebrow: { ar: 'الخطوة التالية', en: 'Next step' },
+      eyebrow: { ar: 'تقدير حسب اللحظة', en: 'Estimate by moment' },
       h2: { ar: 'الباقات حسب لحظتك', en: 'Packages by your moment' },
       lead: {
         ar: 'تقدير يبدأ من رقم واضح — النهائي بعد اجتماع قصير بلا التزام.',

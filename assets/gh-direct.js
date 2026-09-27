@@ -247,7 +247,9 @@
       '<button type="button" class="ghd-cta ghd-cta--hero" data-ghd-start="1">' +
       escapeHtml(t(h.ctaPrimary)) +
       '</button>' +
-      '<a class="ghd-cta--ghost" href="#deliver">' +
+      '<a class="ghd-cta--ghost" href="' +
+      escapeAttr((h.ctaSecondaryHref || '#capability')) +
+      '">' +
       escapeHtml(t(h.ctaSecondary)) +
       '</a></div></div>';
     host.querySelectorAll('[data-ghd-start]').forEach(function (btn) {
@@ -341,10 +343,10 @@
             })
             .join('') +
           '</ul>' +
-          '<a class="ghd-moment__cta" href="#pkg-' +
+          '<a class="ghd-moment__cta" href="#start" data-ghd-start-pkg="' +
           escapeAttr(m.packageId) +
           '">' +
-          escapeHtml(lang === 'ar' ? 'الباقة المناسبة ←' : 'Matching package →') +
+          escapeHtml(lang === 'ar' ? 'ابدأ من هذه اللحظة ←' : 'Start from this moment →') +
           '</a>' +
           mantra +
           '</div>' +
@@ -357,157 +359,61 @@
         );
       })
       .join('');
+    host.querySelectorAll('[data-ghd-start-pkg]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var pkg = a.getAttribute('data-ghd-start-pkg') || 'launch';
+        openLeadModal(pkg);
+      });
+    });
   }
 
-  function renderDeliver() {
-    var host = document.getElementById('deliver');
-    var d = DATA.narrative && DATA.narrative.deliver;
+  function renderCapability() {
+    var host = document.getElementById('capability');
+    var d = DATA.narrative && DATA.narrative.capability;
     if (!host || !d) return;
     host.innerHTML =
       '<div class="ghd-wrap ghd-wrap--wide">' +
-      '<h2 class="ghd-ed__title" id="ghd-deliver-title"><span>' +
+      '<h2 class="ghd-ed__title" id="ghd-capability-title"><span>' +
       escapeHtml(t(d.h2a)) +
       '</span><span>' +
       escapeHtml(t(d.h2b)) +
       '</span></h2>' +
-      '<div class="ghd-solutions">' +
-      (d.solutions || [])
+      '<p class="ghd-ed__lead">' +
+      escapeHtml(t(d.lead)) +
+      '</p>' +
+      '<div class="ghd-capmap" role="list">' +
+      (d.families || [])
         .map(function (s) {
           return (
-            '<article class="ghd-sol">' +
-            '<span class="ghd-sol__num">' +
+            '<article class="ghd-cap" role="listitem">' +
+            '<div class="ghd-cap__head">' +
+            '<span class="ghd-cap__num">' +
             escapeHtml(s.num) +
             '</span>' +
-            '<div><h3 class="ghd-sol__name">' +
+            '<h3 class="ghd-cap__name">' +
             escapeHtml(t(s.name)) +
-            '</h3><p class="ghd-sol__line">' +
+            '</h3>' +
+            '<p class="ghd-cap__line">' +
             escapeHtml(t(s.line)) +
             '</p></div>' +
-            '<p class="ghd-sol__tags">' +
-            escapeHtml(t(s.tags)) +
-            '</p></article>'
+            '<ul class="ghd-cap__items">' +
+            (s.items || [])
+              .map(function (it) {
+                return '<li>' + escapeHtml(t(it)) + '</li>';
+              })
+              .join('') +
+            '</ul></article>'
           );
         })
         .join('') +
       '</div></div>';
   }
 
-  function renderWhy() {
-    var host = document.getElementById('why');
-    var w = DATA.narrative && DATA.narrative.why;
-    if (!host || !w) return;
-    host.innerHTML =
-      '<div class="ghd-wrap ghd-wrap--wide">' +
-      '<h2 class="ghd-ed__title" id="ghd-why-title"><span>' +
-      escapeHtml(t(w.h2a)) +
-      '</span><span>' +
-      escapeHtml(t(w.h2b)) +
-      '</span></h2>' +
-      '<p class="ghd-ed__lead">' +
-      nl(t(w.copy)) +
-      '</p>' +
-      '<ul class="ghd-why__pillars">' +
-      (w.pillars || [])
-        .map(function (p) {
-          return (
-            '<li><strong>' +
-            escapeHtml(t(p.name)) +
-            '</strong><span>' +
-            escapeHtml(t(p.line)) +
-            '</span></li>'
-          );
-        })
-        .join('') +
-      '</ul>' +
-      '<p class="ghd-why__closer">' +
-      nl(t(w.closer)) +
-      '</p></div>';
-  }
-
-  function renderAbout() {
-    var host = document.getElementById('about');
-    var a = DATA.narrative && DATA.narrative.about;
-    if (!host || !a) return;
-    host.innerHTML =
-      '<div class="ghd-wrap ghd-wrap--wide">' +
-      '<h2 class="ghd-ed__title" id="ghd-about-title"><span>' +
-      escapeHtml(t(a.h2a)) +
-      '</span><span>' +
-      escapeHtml(t(a.h2b)) +
-      '</span></h2>' +
-      '<p class="ghd-ed__lead">' +
-      escapeHtml(t(a.copy)) +
-      '</p>' +
-      '<ul class="ghd-about__pillars">' +
-      (a.pillars || [])
-        .map(function (p) {
-          return '<li>' + escapeHtml(t(p)) + '</li>';
-        })
-        .join('') +
-      '</ul>' +
-      '<p class="ghd-about__closer"><span>' +
-      escapeHtml(t(a.closerA)) +
-      '</span><span>' +
-      escapeHtml(t(a.closerB)) +
-      '</span></p></div>';
-  }
-
-  function renderWorkflow() {
-    var host = document.getElementById('workflow');
-    var w = DATA.narrative && DATA.narrative.workflow;
-    if (!host || !w) return;
-    host.innerHTML =
-      '<div class="ghd-wrap ghd-wrap--wide">' +
-      '<h2 class="ghd-ed__title" id="ghd-workflow-title"><span>' +
-      escapeHtml(t(w.h2a)) +
-      '</span><span>' +
-      escapeHtml(t(w.h2b)) +
-      '</span></h2>' +
-      '<ol class="ghd-flow">' +
-      (w.steps || [])
-        .map(function (s) {
-          return (
-            '<li><span class="ghd-flow__num">' +
-            escapeHtml(s.num) +
-            '</span><strong class="ghd-flow__name">' +
-            escapeHtml(t(s.name)) +
-            '</strong><span class="ghd-flow__detail">' +
-            escapeHtml(t(s.detail)) +
-            '</span></li>'
-          );
-        })
-        .join('') +
-      '</ol></div>';
-  }
-
-  function renderAdvantage() {
-    var host = document.getElementById('advantage');
-    var a = DATA.narrative && DATA.narrative.advantage;
-    if (!host || !a) return;
-    host.innerHTML =
-      '<div class="ghd-wrap ghd-wrap--wide">' +
-      '<h2 class="ghd-ed__title" id="ghd-advantage-title"><span>' +
-      escapeHtml(t(a.h2a)) +
-      '</span><span>' +
-      escapeHtml(t(a.h2b)) +
-      '</span></h2>' +
-      '<p class="ghd-ed__lead">' +
-      escapeHtml(t(a.copy)) +
-      '</p>' +
-      '<ul class="ghd-adv__grid">' +
-      (a.pillars || [])
-        .map(function (p) {
-          return (
-            '<li><strong>' +
-            escapeHtml(t(p.name)) +
-            '</strong><span>' +
-            escapeHtml(t(p.line)) +
-            '</span></li>'
-          );
-        })
-        .join('') +
-      '</ul></div>';
-  }
+  function renderWhy() {}
+  function renderAbout() {}
+  function renderWorkflow() {}
+  function renderAdvantage() {}
 
   function renderProjectsEditorial() {
     var host = document.getElementById('work');
@@ -579,12 +485,48 @@
             escapeHtml(t(c.line)) +
             '</p>' +
             '<span class="ghd-qualify__go">' +
-            escapeHtml(lang === 'ar' ? 'عرض الباقة ←' : 'View package →') +
+            escapeHtml(t(q.goLabel) || (lang === 'ar' ? 'إلى اللحظة ←' : 'Go to moment →')) +
             '</span></a>'
           );
         })
         .join('') +
-      '</div></div>';
+      '</div>' +
+      '<p class="ghd-qualify__next">' +
+      '<a class="ghd-cta ghd-cta--hero" href="#start" data-ghd-start="1">' +
+      escapeHtml(
+        (DATA.narrative.finalCta && t(DATA.narrative.finalCta.primary)) ||
+          (lang === 'ar' ? 'ابدأ مشروعك' : 'Start your project')
+      ) +
+      '</a></p></div>';
+    host.querySelectorAll('[data-ghd-start]').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openLeadModal('launch');
+      });
+    });
+  }
+
+  function renderEstimatesChrome() {
+    var est = DATA.narrative && DATA.narrative.estimates;
+    if (!est) return;
+    var k = document.getElementById('ghd-estimates-kicker');
+    var title = document.getElementById('ghd-estimates-title');
+    var hint = document.getElementById('ghd-estimates-hint');
+    if (k) k.textContent = t(est.kicker);
+    if (title) title.textContent = t(est.title);
+    if (hint) hint.textContent = t(est.hint);
+    var details = document.getElementById('estimates');
+    if (!details) return;
+    var hash = (location.hash || '').toLowerCase();
+    if (
+      hash.indexOf('pkg-') >= 0 ||
+      hash === '#packages' ||
+      hash === '#estimates' ||
+      hash === '#atelier-workshop' ||
+      hash === '#catalog'
+    ) {
+      details.open = true;
+    }
   }
 
   function renderCommercialBridge() {
@@ -671,13 +613,10 @@
     renderSalesHero();
     renderProblem();
     renderJourneyHeadAndMoments();
-    renderDeliver();
-    renderWhy();
-    renderAbout();
-    renderWorkflow();
-    renderAdvantage();
     renderProjectsEditorial();
+    renderCapability();
     renderQualify();
+    renderEstimatesChrome();
     renderCommercialBridge();
     renderFinalCta();
     wireReveals();
