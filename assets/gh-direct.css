@@ -262,6 +262,11 @@ html[dir='ltr'] .ghd-hero-rule {
   padding-top: 8px;
   padding-bottom: 40px;
 }
+.ghd-section--journey {
+  padding-top: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--ghd-border);
+}
 .ghd-section--meeting {
   padding-top: 8px;
   padding-bottom: 72px;
@@ -269,6 +274,9 @@ html[dir='ltr'] .ghd-hero-rule {
 .ghd-section-head {
   margin-bottom: 28px;
   position: relative;
+}
+.ghd-section-head--need {
+  margin-bottom: 16px;
 }
 .ghd-section-head h2 {
   font-size: clamp(1.35rem, 2.4vw, 1.75rem);
@@ -282,7 +290,137 @@ html[dir='ltr'] .ghd-hero-rule {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.7;
+  max-width: 40rem;
+}
+
+/* Developer journey — 3 key moments */
+.ghd-journey {
+  margin: 0 0 20px;
+}
+.ghd-journey-track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  counter-reset: none;
+}
+@media (min-width: 900px) {
+  .ghd-journey-track {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    position: relative;
+  }
+  .ghd-journey-track::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(201, 168, 76, 0.45),
+      rgba(201, 168, 76, 0.45),
+      transparent
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+  html[dir='rtl'] .ghd-journey-track::before {
+    background: linear-gradient(
+      270deg,
+      transparent,
+      rgba(201, 168, 76, 0.45),
+      rgba(201, 168, 76, 0.45),
+      transparent
+    );
+  }
+}
+.ghd-journey-moment {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+.ghd-journey-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  padding: 22px 20px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.ghd-journey-card:hover {
+  border-color: rgba(201, 168, 76, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(20, 20, 20, 0.07);
+}
+.ghd-journey-moment--peak .ghd-journey-card {
+  border-color: rgba(201, 168, 76, 0.35);
+  background:
+    linear-gradient(165deg, rgba(201, 168, 76, 0.1), transparent 42%),
+    rgba(255, 255, 255, 0.96);
+}
+.ghd-journey-num {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--ghd-gold-dark);
+  font-family: var(--ghd-text);
+}
+.ghd-journey-name {
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ghd-ink);
+  letter-spacing: -0.02em;
+}
+.ghd-journey-sub {
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: rgba(18, 18, 18, 0.62);
+  margin-bottom: 4px;
+}
+.ghd-journey-role,
+.ghd-journey-meta {
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(18, 18, 18, 0.58);
+}
+.ghd-journey-role em,
+.ghd-journey-meta em {
+  display: block;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 18, 0.42);
+  margin-bottom: 2px;
+}
+.ghd-journey-role {
+  padding-top: 8px;
+  border-top: 1px solid rgba(20, 20, 20, 0.06);
+  color: rgba(18, 18, 18, 0.78);
+}
+.ghd-journey-bridge {
+  margin: 8px 0 0;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.55;
+  color: rgba(18, 18, 18, 0.72);
   max-width: 36rem;
+  margin-inline: auto;
 }
 
 /* Catalog filters — sticky family rail */
@@ -1410,17 +1548,10 @@ body.ghd-modal-open { overflow: hidden; }
   color: var(--ghd-gold);
 }
 
-/* Fit guide */
+/* Fit guide — What you need now */
 .ghd-fit-guide {
-  margin: 0 auto 28px;
+  margin: 0 auto 32px;
   max-width: 920px;
-  text-align: center;
-}
-.ghd-fit-guide-title {
-  margin: 0 0 12px;
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(20, 20, 20, 0.55);
 }
 .ghd-fit-guide-row {
   display: grid;

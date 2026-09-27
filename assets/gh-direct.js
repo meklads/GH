@@ -220,16 +220,78 @@
     var catL = document.getElementById('ghd-catalog-lead');
     var pkgH = document.getElementById('ghd-packages-title');
     var pkgL = document.getElementById('ghd-packages-lead');
+    var jourH = document.getElementById('ghd-journey-title');
+    var jourL = document.getElementById('ghd-journey-lead');
+    var needH = document.getElementById('ghd-need-title');
+    var needL = document.getElementById('ghd-need-lead');
     if (catH) catH.textContent = ui.catalogTitle;
     if (catL) catL.textContent = ui.catalogLead;
     if (pkgH) pkgH.textContent = ui.packagesTitle;
     if (pkgL) pkgL.textContent = ui.packagesLead;
+    if (jourH) jourH.textContent = ui.journeyTitle || '';
+    if (jourL) jourL.textContent = ui.journeyLead || '';
+    if (needH) needH.textContent = ui.needTitle || ui.fitGuideTitle || '';
+    if (needL) needL.textContent = ui.needLead || '';
+    renderJourney();
     renderWhoFor();
     renderNextSteps();
   }
 
   function renderPaths() {
     /* Removed: path pills — keep the page simple. */
+  }
+
+  function renderJourney() {
+    var host = document.getElementById('ghd-journey');
+    if (!host) return;
+    var moments = DATA.journey || [];
+    if (!moments.length) {
+      host.innerHTML = '';
+      return;
+    }
+    var bridge = document.getElementById('ghd-journey-bridge');
+    if (bridge) bridge.textContent = ui.journeyBridge || '';
+
+    host.innerHTML =
+      '<ol class="ghd-journey-track">' +
+      moments
+        .map(function (m, i) {
+          return (
+            '<li class="ghd-journey-moment' +
+            (m.id === 'sell' ? ' ghd-journey-moment--peak' : '') +
+            '">' +
+            '<a class="ghd-journey-card" href="#pkg-' +
+            escapeAttr(m.packageId) +
+            '">' +
+            '<span class="ghd-journey-num" aria-hidden="true">' +
+            escapeHtml(m.num || String(i + 1).padStart(2, '0')) +
+            '</span>' +
+            '<strong class="ghd-journey-name">' +
+            escapeHtml(t(m.name)) +
+            '</strong>' +
+            '<span class="ghd-journey-sub">' +
+            escapeHtml(t(m.subtitle)) +
+            '</span>' +
+            '<span class="ghd-journey-role"><em>' +
+            escapeHtml(ui.journeyGhLabel || '') +
+            '</em> ' +
+            escapeHtml(t(m.role)) +
+            '</span>' +
+            '<span class="ghd-journey-meta"><em>' +
+            escapeHtml(ui.journeyDevLabel || '') +
+            '</em> ' +
+            escapeHtml(t(m.developerHas)) +
+            '</span>' +
+            '<span class="ghd-journey-meta"><em>' +
+            escapeHtml(ui.journeyOutLabel || '') +
+            '</em> ' +
+            escapeHtml(t(m.outputs)) +
+            '</span>' +
+            '</a></li>'
+          );
+        })
+        .join('') +
+      '</ol>';
   }
 
   function renderWhoFor() {
@@ -245,9 +307,7 @@
       return;
     }
     host.innerHTML =
-      '<p class="ghd-fit-guide-title">' +
-      escapeHtml(ui.fitGuideTitle || '') +
-      '</p><div class="ghd-fit-guide-row">' +
+      '<div class="ghd-fit-guide-row">' +
       items
         .map(function (item) {
           return (
@@ -1567,8 +1627,8 @@
     wireModals();
     document.title =
       (lang === 'ar'
-        ? 'الباقات والأسعار | GH Direct | Graphics House'
-        : 'GH Direct | Packages & Pricing | Graphics House');
+        ? 'من الرؤية إلى البيع | GH Direct | Graphics House'
+        : 'From Vision to Sale | GH Direct | Graphics House');
   }
 
   if (document.readyState === 'loading') {
