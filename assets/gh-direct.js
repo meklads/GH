@@ -269,8 +269,8 @@
       '?text=' +
       encodeURIComponent(
         lang === 'ar'
-          ? 'مرحباً، أود تثبيت تجربة البيع لمشروعي عبر GH Direct.'
-          : 'Hello — I want to lock the sales experience for my project via GH Direct.'
+          ? 'مرحباً، أود اختيار باقة من GH Direct لمشروعي.'
+          : 'Hello — I want to choose a GH Direct package for my project.'
       );
     host.innerHTML =
       '<div class="ghd-close-inner">' +
