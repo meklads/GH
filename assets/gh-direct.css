@@ -713,7 +713,7 @@ html[dir='ltr'] .ghd-hero-brand { letter-spacing: 0.08em; }
 }
 
 .ghd-trust-line {
-  margin: 28px auto 0;
+  margin: 18px auto 8px;
   text-align: center;
   font-size: 13px;
   font-weight: 600;
@@ -1086,6 +1086,13 @@ body.ghd-modal-open { overflow: hidden; }
   color: #141414;
 }
 
+.ghd-who-title {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(20, 20, 20, 0.62);
+  letter-spacing: 0.01em;
+}
 .ghd-who {
   display: grid;
   grid-template-columns: 1fr;

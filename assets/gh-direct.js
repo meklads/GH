@@ -234,6 +234,11 @@
 
   function renderWhoFor() {
     var host = document.getElementById('ghd-who-for');
+    var title = document.getElementById('ghd-who-title');
+    if (title && ui.whoTitle) {
+      title.hidden = false;
+      title.textContent = ui.whoTitle;
+    }
     if (!host) return;
     host.innerHTML = DATA.packages
       .map(function (pkg) {
