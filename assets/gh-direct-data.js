@@ -77,7 +77,7 @@ window.GH_DIRECT = {
         sales: 'بيع ونمو',
       },
       packagesTitle: 'أين مشروعك الآن؟',
-      packagesLead: 'مرحلة التأسيس → نواة · مرحلة الإطلاق → انطلاق · مرحلة البيع → توقيع. باقة انطلاق تناسب غالبية المشاريع.',
+      packagesLead: 'باقة التأسيس · باقة الإطلاق · باقة البيع. باقة الإطلاق تناسب غالبية المشاريع.',
       packagesFoot: 'تقدير يبدأ من · يُثبَّت عند التأكيد',
       stageLabel: 'المرحلة',
       stagePrefix: 'مرحلة',
@@ -141,8 +141,8 @@ window.GH_DIRECT = {
       atelierStep1: 'اختر البنود',
       atelierStep2: 'راجع التقدير',
       atelierStep3: 'ثبّت النطاق',
-      whyPlan: 'لماذا انطلاق؟',
-      whyPlanBody: 'بين باقتي نواة وتوقيع: إظهار أقوى وإنتاج ميديا وموقع المشروع، دون حزمة صالة المبيعات الكاملة.',
+      whyPlan: 'لماذا باقة الإطلاق؟',
+      whyPlanBody: 'بين باقتي التأسيس والبيع: إظهار أقوى وإنتاج ميديا وموقع المشروع، دون حزمة صالة المبيعات الكاملة.',
       total: 'الإجمالي التقديري',
       totalNote: 'تقدير يبدأ من — يُؤكَّد عند التواصل',
       trustLine: 'دون دفع إلكتروني · تأكيد النطاق خلال يوم عمل · الأسعار تقدير يبدأ من',
@@ -193,7 +193,7 @@ window.GH_DIRECT = {
         },
         {
           q: 'كيف ترتبط الباقات بمراحل المشروع؟',
-          a: 'مرحلة التأسيس → باقة نواة. مرحلة الإطلاق → باقة انطلاق. مرحلة البيع → باقة توقيع. اختر وفق موقع مشروعك اليوم.',
+          a: 'مرحلة التأسيس → باقة التأسيس. مرحلة الإطلاق → باقة الإطلاق. مرحلة البيع → باقة البيع. اختر وفق موقع مشروعك اليوم.',
         },
         {
           q: 'متى يُفضَّل أتيليه؟',
@@ -246,7 +246,7 @@ window.GH_DIRECT = {
         sales: 'Sales & Growth',
       },
       packagesTitle: 'Where is your project now?',
-      packagesLead: 'Foundation → Core · Launch → Launch · Sell → Signature. Launch suits most projects.',
+      packagesLead: 'Foundation · Launch · Sell. Launch suits most projects.',
       packagesFoot: 'Starting-from · locked at confirmation',
       stageLabel: 'Stage',
       stagePrefix: 'Stage',
@@ -309,8 +309,8 @@ window.GH_DIRECT = {
       atelierStep1: 'Select items',
       atelierStep2: 'Review estimate',
       atelierStep3: 'Lock scope',
-      whyPlan: 'Why Launch?',
-      whyPlanBody: 'Between Core and Signature: stronger visualization, media production, and a project site — without the full sales-gallery package.',
+      whyPlan: 'Why Launch Package?',
+      whyPlanBody: 'Between Foundation and Sell: stronger visualization, media production, and a project site — without the full sales-gallery package.',
       total: 'Estimated total',
       totalNote: 'Starting-from estimate — confirmed when we talk',
       trustLine: 'No online checkout · Scope confirmed within one business day · Starting-from estimates',
@@ -361,7 +361,7 @@ window.GH_DIRECT = {
         },
         {
           q: 'How do packages map to project stages?',
-          a: 'Foundation stage → Core. Launch stage → Launch. Sell stage → Signature. Choose according to where your project stands today.',
+          a: 'Foundation stage → Foundation Package. Launch stage → Launch Package. Sell stage → Sell Package. Choose according to where your project stands today.',
         },
         {
           q: 'When is Atelier preferable?',
@@ -457,26 +457,26 @@ window.GH_DIRECT = {
   fitGuide: [
     {
       packageId: 'basic',
-      label: { ar: 'نواة', en: 'Core' },
+      label: { ar: 'التأسيس', en: 'Foundation' },
       blurb: {
-        ar: 'مرحلة التأسيس · باقة نواة',
-        en: 'Foundation stage · Core package',
+        ar: 'مرحلة التأسيس · باقة التأسيس',
+        en: 'Foundation stage · Foundation Package',
       },
     },
     {
       packageId: 'launch',
-      label: { ar: 'انطلاق', en: 'Launch' },
+      label: { ar: 'الإطلاق', en: 'Launch' },
       blurb: {
-        ar: 'مرحلة الإطلاق · باقة انطلاق',
-        en: 'Launch stage · Launch package',
+        ar: 'مرحلة الإطلاق · باقة الإطلاق',
+        en: 'Launch stage · Launch Package',
       },
     },
     {
       packageId: 'growth',
-      label: { ar: 'توقيع', en: 'Signature' },
+      label: { ar: 'البيع', en: 'Sell' },
       blurb: {
-        ar: 'مرحلة البيع · باقة توقيع',
-        en: 'Sell stage · Signature package',
+        ar: 'مرحلة البيع · باقة البيع',
+        en: 'Sell stage · Sell Package',
       },
     },
   ],
@@ -832,11 +832,11 @@ services: [
     {
       id: 'basic',
       mode: 'bundle',
-      name: { ar: 'نواة', en: 'Core' },
+      name: { ar: 'باقة التأسيس', en: 'Foundation Package' },
       stage: { ar: 'تأسيس', en: 'Foundation' },
       tagline: {
-        ar: 'باقة مرحلة التأسيس — إظهار وهوية أساسية',
-        en: 'Foundation-stage package — visualization and essential identity',
+        ar: 'إظهار وهوية أساسية',
+        en: 'Visualization and essential identity',
       },
       fit: {
         ar: 'مشروع في مرحلة التأسيس يحتاج حضوراً بصرياً سريعاً',
@@ -873,11 +873,11 @@ services: [
     {
       id: 'launch',
       mode: 'bundle',
-      name: { ar: 'انطلاق', en: 'Launch' },
+      name: { ar: 'باقة الإطلاق', en: 'Launch Package' },
       stage: { ar: 'إطلاق', en: 'Launch' },
       tagline: {
-        ar: 'باقة مرحلة الإطلاق — ميديا وموقع وأصول الحملة',
-        en: 'Launch-stage package — media, site, and campaign assets',
+        ar: 'ميديا وموقع وأصول الحملة',
+        en: 'Media, site, and campaign assets',
       },
       fit: {
         ar: 'مشروع في مرحلة الإطلاق يحتاج ميديا وموقعاً قبل صالة كاملة',
@@ -920,11 +920,11 @@ services: [
     {
       id: 'growth',
       mode: 'bundle',
-      name: { ar: 'توقيع', en: 'Signature' },
+      name: { ar: 'باقة البيع', en: 'Sell Package' },
       stage: { ar: 'بيع', en: 'Sell' },
       tagline: {
-        ar: 'باقة مرحلة البيع — صالة مبيعات كاملة أمام العميل',
-        en: 'Sell-stage package — a full sales gallery in front of the buyer',
+        ar: 'صالة مبيعات وأدوات البيع',
+        en: 'Sales gallery and closing tools',
       },
       fit: {
         ar: 'مشروع في مرحلة البيع يحتاج صالة وأدوات إقناع وتفاعل',
@@ -983,8 +983,8 @@ services: [
         en: 'Private compose — live estimate, item by item',
       },
       fit: {
-        ar: 'عندما تحتاج مزيجاً أدق خارج نواة / انطلاق / توقيع',
-        en: 'When you need a sharper mix outside Core / Launch / Signature',
+        ar: 'عندما تحتاج مزيجاً أدق خارج الباقات الثلاث',
+        en: 'When you need a sharper mix outside the three packages',
       },
       delivery: {
         ar: 'الجدول وفق البنود المختارة — يُثبَّت عند التأكيد',

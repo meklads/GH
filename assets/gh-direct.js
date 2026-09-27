@@ -552,8 +552,8 @@
           '</div>'
         : '';
 
-      var namePill =
-        '<span class="ghd-pkg-namepill">' + escapeHtml(t(pkg.name)) + '</span>';
+      var nameEl =
+        '<h3 class="ghd-pkg-name">' + escapeHtml(t(pkg.name)) + '</h3>';
 
       var priceBlock =
         '<div class="ghd-pkg-priceblock">' +
@@ -567,14 +567,6 @@
         escapeHtml(currency) +
         '</span></div>';
 
-      var desc = pkg.stage
-        ? '<p class="ghd-pkg-desc">' +
-          escapeHtml(
-            (ui.stagePrefix || ui.stageLabel || '') + ' ' + t(pkg.stage)
-          ) +
-          '</p>'
-        : '';
-
       var lines = '';
       if (pkg.includedLines && pkg.includedLines.length) {
         lines =
@@ -583,7 +575,7 @@
           '">' +
           pkg.includedLines
             .map(function (line) {
-              return '<li><span>' + escapeHtml(t(line)) + '</span></li>';
+              return '<li>' + escapeHtml(t(line)) + '</li>';
             })
             .join('') +
           '</ul>';
@@ -612,9 +604,8 @@
       card.innerHTML =
         ribbon +
         '<div class="ghd-pkg-top">' +
-        namePill +
+        nameEl +
         priceBlock +
-        desc +
         '</div>' +
         lines +
         '<div class="ghd-pkg-ctas">' +
