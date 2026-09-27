@@ -1792,3 +1792,94 @@ body.ghd-modal-open { overflow: hidden; }
     transform: translateY(-3px);
   }
 }
+
+/* —— Atelier workshop (below equal package cards) —— */
+.ghd-packages {
+  align-items: stretch;
+}
+.ghd-pkg {
+  height: 100%;
+}
+.ghd-pkg--atelier-teaser .ghd-pkg-price-main {
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+  max-width: 14rem;
+  line-height: 1.3;
+}
+.ghd-pkg-ctas .ghd-cta--primary,
+.ghd-pkg-ctas .ghd-cta--on-dark {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ghd-atelier {
+  margin: 28px auto 0;
+  max-width: 1100px;
+  scroll-margin-top: calc(var(--gh-header-height, 72px) + 16px);
+}
+.ghd-atelier-inner {
+  background: #fff;
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  border-radius: 18px;
+  padding: 28px 24px 24px;
+  box-shadow: 0 14px 40px rgba(20, 20, 20, 0.06);
+  text-align: start;
+}
+.ghd-atelier-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.08);
+}
+.ghd-atelier-kicker {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 20, 0.45);
+}
+.ghd-atelier-head h3 {
+  margin: 0 0 8px;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 800;
+  color: #141414;
+}
+.ghd-atelier-lead {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(20, 20, 20, 0.58);
+  max-width: 36rem;
+}
+.ghd-atelier .ghd-compose-seed {
+  flex: 0 0 auto;
+}
+.ghd-atelier .ghd-compose-groups {
+  margin-top: 8px;
+}
+.ghd-atelier .ghd-addons,
+.ghd-atelier .ghd-addons--grid {
+  max-height: 280px;
+}
+.ghd-atelier-ctas {
+  margin-top: 18px;
+  max-width: 320px;
+}
+.ghd-atelier-ctas .ghd-cta {
+  width: 100%;
+  justify-content: center;
+}
+@media (max-width: 700px) {
+  .ghd-atelier-head {
+    flex-direction: column;
+  }
+  .ghd-atelier .ghd-compose-seed {
+    width: 100%;
+  }
+}
