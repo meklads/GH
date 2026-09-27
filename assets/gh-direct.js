@@ -468,6 +468,19 @@
     }
     var tot = computeTotal(pkg);
     var selCount = addonState[pkg.id] ? addonState[pkg.id].size : 0;
+    var steps =
+      '<ol class="ghd-atelier-steps" aria-label="' +
+      escapeAttr(ui.builderBadge || '') +
+      '">' +
+      '<li><span>01</span>' +
+      escapeHtml(ui.atelierStep1 || '') +
+      '</li>' +
+      '<li><span>02</span>' +
+      escapeHtml(ui.atelierStep2 || '') +
+      '</li>' +
+      '<li><span>03</span>' +
+      escapeHtml(ui.atelierStep3 || '') +
+      '</li></ol>';
     host.innerHTML =
       '<header class="ghd-atelier-head">' +
       '<div class="ghd-atelier-head-copy">' +
@@ -479,19 +492,24 @@
       '</h3>' +
       '<p class="ghd-atelier-lead">' +
       escapeHtml(ui.atelierLead || t(pkg.tagline)) +
-      '</p></div>' +
-      '<div class="ghd-atelier-mark" aria-hidden="true"></div>' +
+      '</p>' +
+      steps +
+      '</div>' +
+      '<p class="ghd-atelier-mark" aria-hidden="true">Atelier</p>' +
       '</header>' +
-      '<aside class="ghd-price-drivers" aria-label="' +
+      '<div class="ghd-atelier-body">' +
+      '<div class="ghd-atelier-main">' +
+      '<div class="ghd-atelier-stage">' +
+      composeGroupsHtml(pkg) +
+      '</div></div>' +
+      '<aside class="ghd-atelier-rail">' +
+      '<div class="ghd-price-drivers" aria-label="' +
       escapeAttr(ui.priceDriversTitle || '') +
       '"><strong>' +
       escapeHtml(ui.priceDriversTitle || '') +
       '</strong><p>' +
       escapeHtml(ui.priceDrivers || '') +
-      '</p></aside>' +
-      '<div class="ghd-atelier-stage">' +
-      composeGroupsHtml(pkg) +
-      '</div>' +
+      '</p></div>' +
       totalBoxHtml(pkg, tot) +
       '<div class="ghd-atelier-ctas">' +
       '<button type="button" class="ghd-cta ghd-cta--primary ghd-atelier-cta" data-lead-pkg="' +
@@ -511,7 +529,7 @@
           escapeHtml(ui.selectedCount || '') +
           '</span>'
         : '') +
-      '</div>';
+      '</div></aside></div>';
     bindAtelierControls(host);
   }
 
