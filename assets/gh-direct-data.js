@@ -7,13 +7,17 @@ window.GH_DIRECT = {
   enterprise: {
     ar: {
       label: 'مشروع مؤسسي أو مطوّر كبير؟',
-      text: 'هذه الصفحة للتسعير الشفاف والاختيار الذاتي. للمشاريع المؤسسية والمخططات الكبيرة ابدأ من نظام الإطلاق الاستشاري.',
+      text: 'GH Direct للتسعير الشفاف والاختيار الذاتي. للمشاريع المؤسسية والمخططات الكبيرة، نبدأ من نظام الإطلاق الاستشاري ProjectLaunch™.',
+      forkDirect: 'GH Direct — تقدير شفاف ونطاق ذاتي',
+      forkLaunch: 'ProjectLaunch™ — نظام إطلاق استشاري للمشاريع الأكبر',
       cta: 'انتقل إلى ProjectLaunch™',
       href: 'solutions/project-launch.html',
     },
     en: {
       label: 'Large or institutional project?',
-      text: 'This page is for transparent, self-serve pricing. For institutional and large masterplans, start with our consultative launch system.',
+      text: 'GH Direct is transparent pricing and self-serve scope. For institutional and large masterplans, we start with the consultative ProjectLaunch™ system.',
+      forkDirect: 'GH Direct — transparent pricing & self-serve scope',
+      forkLaunch: 'ProjectLaunch™ — consultative launch for larger projects',
       cta: 'Go to ProjectLaunch™',
       href: 'solutions/project-launch-en.html',
     },
@@ -59,10 +63,13 @@ window.GH_DIRECT = {
         'نواة للتعريف · انطلاق أثناء التنفيذ · توقيع للإطلاق والبيع — السعر يبدأ من رقم واضح، ويُثبَّت بعد فهم مشروعك.',
       packagesFoot: 'يبدأ من · بلا دفع أونلاين · رد خلال يوم عمل · ترشيح مجاني',
       fitGuideTitle: 'ماذا تحتاج الآن؟',
-      phaseLabel: 'اللحظة',
+      phaseLabel: 'المرحلة',
+      purposeLabel: 'الهدف',
+      coreOutputLabel: 'المخرج الأساسي',
+      needSpecific: 'تحتاج شيئاً أدق؟',
       incentiveDefault: 'ترشيح مجاني خلال يوم عمل — بلا التزام',
-      atelierEntryTitle: 'لحظتك لا تطابق باقة جاهزة؟',
-      atelierEntryLead: 'ابنِ مزيجك بنداً بنداً — الإجمالي يتحدّث فوراً، والتسعير النهائي بعد اجتماع قصير.',
+      atelierEntryTitle: 'تحتاج نطاقاً أدق؟',
+      atelierEntryLead: 'ابنِ نطاق مشروعك حسب احتياجك — تقدير أولي قبل تثبيت النطاق والسعر النهائي.',
       atelierEntryCta: 'ابنِ في أتيليه',
       priceDriversTitle: 'ما يحرّك التقدير؟',
       priceDrivers:
@@ -96,7 +103,7 @@ window.GH_DIRECT = {
       buildLabel: 'اختر الخدمات',
       add: 'أضف',
       added: 'مضاف',
-      mostPopular: 'الأنسب أثناء التنفيذ والإطلاق',
+      mostPopular: 'لحظة البناء',
       builderBadge: 'بناء مخصص',
       choosePlan: 'احجز ترشيحاً مجانياً',
       optionalAddons: 'إضافات اختيارية',
@@ -107,7 +114,7 @@ window.GH_DIRECT = {
       pricedByPicks: 'سعّر حسب اختيارك',
       openAtelier: 'ابنِ مزيجك',
       atelierTitle: 'أتيليه',
-      atelierLead: 'انتقِ البنود بهدوء. الإجمالي يتحدّث فوراً — والتسعير النهائي بعد التأكيد.',
+      atelierLead: 'اختر العناصر المطلوبة لبناء نطاق مخصص، واحصل على تقدير أولي قبل تثبيت النطاق والسعر النهائي.',
       whyPlan: 'لماذا انطلاق؟',
       whyPlanBody:
         'باقة لحظة البناء: تُبقي المشروع حياً بصرياً أثناء التنفيذ — ميديا وموقع قبل حزمة صالة البيع الكاملة.',
@@ -148,6 +155,10 @@ window.GH_DIRECT = {
       meetingFormLead: 'نراجع احتياجك ونقترح الأنسب خلال يوم عمل — بلا التزام مسبق.',
       faqTitle: 'أسئلة شائعة',
       faq: [
+        {
+          q: 'هل Graphics House المقاول أو المعماري؟',
+          a: 'لا. نحن الشريك البصري والتجريبي: إظهار، أفلام، مجسمات، تجارب تفاعلية، وأصول الإطلاق والبيع — بينما التصميم والتنفيذ الإنشائي لديكم أو لشركائكم.',
+        },
         {
           q: 'هل الأسعار نهائية؟',
           a: 'لا. كل رقم «يبدأ من» تقدير ابتدائي. نثبت السعر النهائي بعد اجتماع قصير لفهم لحظتك ونطاق المشروع.',
@@ -222,10 +233,13 @@ window.GH_DIRECT = {
         'Core for Define · Launch for Build · Signature for Launch & Sell — prices start from a clear figure, locked after we understand your project.',
       packagesFoot: 'Starting from · no online checkout · reply in one business day · free recommendation',
       fitGuideTitle: 'What you need now',
-      phaseLabel: 'Moment',
+      phaseLabel: 'Stage',
+      purposeLabel: 'Purpose',
+      coreOutputLabel: 'Core output',
+      needSpecific: 'Need something more specific?',
       incentiveDefault: 'Free recommendation within one business day — no commitment',
-      atelierEntryTitle: 'Moment doesn’t match a ready package?',
-      atelierEntryLead: 'Build line by line — live total, final pricing after a short meeting.',
+      atelierEntryTitle: 'Need a more specific scope?',
+      atelierEntryLead: 'Build your project scope around what you actually need — an initial estimate before final scope and price.',
       atelierEntryCta: 'Build in Atelier',
       priceDriversTitle: 'What moves the estimate?',
       priceDrivers:
@@ -259,7 +273,7 @@ window.GH_DIRECT = {
       buildLabel: 'Select services',
       add: 'Add',
       added: 'Added',
-      mostPopular: 'Best during Build & Launch',
+      mostPopular: 'Build moment',
       builderBadge: 'Custom build',
       choosePlan: 'Book a free recommendation',
       optionalAddons: 'Optional add-ons',
@@ -270,7 +284,7 @@ window.GH_DIRECT = {
       pricedByPicks: 'Priced by your picks',
       openAtelier: 'Build your mix',
       atelierTitle: 'Atelier',
-      atelierLead: 'Pick items calmly. The total updates live — final pricing after confirmation.',
+      atelierLead: 'Select the items you need for a custom scope, and get an initial estimate before locking scope and final price.',
       whyPlan: 'Why Launch?',
       whyPlanBody:
         'The Build-moment package: keeps the project visually alive during construction — media and a site before the full sales-floor stack.',
@@ -311,6 +325,10 @@ window.GH_DIRECT = {
       meetingFormLead: 'We review your needs and suggest the best fit within one business day — no upfront commitment.',
       faqTitle: 'FAQs',
       faq: [
+        {
+          q: 'Is Graphics House the contractor or architect?',
+          a: 'No. We are the visual and experiential partner: viz, film, models, interactive experiences, and launch/sales assets — while design and construction stay with you or your partners.',
+        },
         {
           q: 'Are these final prices?',
           a: 'No. Every figure is “starting from.” We lock the final price after a short meeting to understand your moment and scope.',
@@ -825,6 +843,8 @@ services: [
         ar: 'حوّل الرؤية المعتمدة إلى لغة بصرية واضحة',
         en: 'Turn the approved vision into a clear visual language',
       },
+      purpose: { ar: 'تثبيت الرؤية بصرياً', en: 'Lock the vision visually' },
+      coreOutput: { ar: 'رندرات بطولية + هوية أساسية + حضور أولي', en: 'Hero renders + essential identity + first presence' },
       fit: {
         ar: 'لحظة التعريف — مخطط/تصميم جاهز والمشتري لم يرَ المشروع بعد',
         en: 'Define moment — plans ready, the buyer has not seen the project yet',
@@ -856,6 +876,8 @@ services: [
         ar: 'أبقِ المشروع حياً بصرياً أثناء التنفيذ',
         en: 'Keep the project visually alive during construction',
       },
+      purpose: { ar: 'إبقاء المشروع حياً بصرياً أثناء التنفيذ', en: 'Keep the project visually alive during construction' },
+      coreOutput: { ar: 'رندرات محدّثة + ميديا موقع + موقع مشروع', en: 'Updated renders + site media + project website' },
       fit: {
         ar: 'لحظة البناء — التنفيذ جارٍ والمبيعات قد تتزامن (Off-Plan)',
         en: 'Build moment — construction underway; sales may run in parallel (off-plan)',
@@ -887,6 +909,8 @@ services: [
         ar: 'حوّل المشروع إلى تجربة بيع تُقنع وتُغلق',
         en: 'Turn the project into a sales experience that persuades and closes',
       },
+      purpose: { ar: 'تحويل المشروع إلى تجربة بيع', en: 'Turn the project into a sales experience' },
+      coreOutput: { ar: 'هوية كاملة + كتالوج + تفاعل صالة البيع', en: 'Full identity + catalogue + sales-floor interaction' },
       fit: {
         ar: 'لحظة الإطلاق والبيع — صالة نشطة تحتاج تفاعلاً وإقناعاً',
         en: 'Launch & Sell moment — an active gallery that needs interaction and persuasion',

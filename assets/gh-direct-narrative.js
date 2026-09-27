@@ -10,14 +10,14 @@
     hero: {
       eyebrow: { ar: 'رحلة المطوّر', en: 'The Developer Journey' },
       h1a: { ar: 'من الرؤية', en: 'From Vision' },
-      h1b: { ar: 'إلى البيع.', en: 'To Sale.' },
+      h1b: { ar: 'إلى تجربة البيع.', en: 'To Sales Experience.' },
       lead: {
         ar: 'نساعد المطوّرين على تحويل المشاريع غير المبنية إلى تجارب واضحة ومقنعة وجاهزة للسوق.',
         en: 'We help developers turn unbuilt projects into clear, compelling and market-ready experiences.',
       },
       leadArSecondary: {
-        ar: 'من الرؤية الأولى، إلى المشروع القابل للفهم، إلى تجربة البيع.',
-        en: '',
+        ar: 'رؤية → فهم → تجربة → مبيعات',
+        en: 'Vision → Understanding → Experience → Sales',
       },
       brandName: { ar: 'GRAPHICS HOUSE', en: 'GRAPHICS HOUSE' },
       brandTag: {
@@ -50,8 +50,8 @@
       h2a: { ar: 'ثلاث لحظات.', en: 'Three moments.' },
       h2b: { ar: 'رحلة تطوير واحدة.', en: 'One development journey.' },
       lead: {
-        ar: 'لسنا المقاول ولا المعماري. نحن الطبقة البصرية والتجريبية التي تربط المشروع بسوقه — وتزداد كثافتها عند الإطلاق والبيع.',
-        en: 'We are not the contractor or the architect. We are the visual and experiential layer connecting the project to its market — densest at launch and sales.',
+        ar: 'نحن الطبقة البصرية والتجريبية التي تربط المشروع بسوقه — من الرؤية إلى الإطلاق وتجربة البيع.',
+        en: 'We are the visual and experiential layer connecting the project to its market — from vision through launch and the sales experience.',
       },
     },
 
@@ -125,11 +125,11 @@
     ],
 
     capability: {
-      h2a: { ar: 'كل ما يحتاجه مشروعك', en: 'Everything your project needs' },
-      h2b: { ar: 'لكي يُرى.', en: 'to be seen.' },
+      h2a: { ar: 'منظومة قدرات Graphics House', en: 'The Graphics House' },
+      h2b: { ar: '', en: 'Capability' },
       lead: {
-        ar: 'خريطة قدرات — ليست قائمة أسعار. المنظومة البصرية والتجريبية حول مشروعك.',
-        en: 'A capability map — not a price list. The visual and experiential system around your project.',
+        ar: 'منظومة القدرات البصرية والتجريبية حول مشروعك.',
+        en: 'The visual and experiential capability system around your project.',
       },
       families: [
         {
@@ -191,15 +191,18 @@
       ],
     },
 
-    estimates: {
-      kicker: { ar: 'بعد فهم المرحلة', en: 'After stage clarity' },
-      title: { ar: 'تقديرات تبدأ من — عند الحاجة', en: 'Starting-from estimates — when needed' },
-      hint: { ar: 'افتح إن أردت أرقاماً تقديرية أو أتيليه', en: 'Open for estimate figures or Atelier' },
+    ghDirect: {
+      kicker: { ar: 'GH Direct', en: 'GH Direct' },
+      title: { ar: 'تقدير مباشر. اختيار واضح. بدون تعقيد.', en: 'Direct estimate. Clear choice. No friction.' },
+      lead: {
+        ar: 'بعد أن تحدد لحظة مشروعك، يمكنك اختيار باقة مناسبة أو بناء نطاقك بنفسك من خلال الأتيليه.',
+        en: 'Transparent starting points for developers who want to explore scope and budget directly.',
+      },
     },
 
     projects: {
-      h2a: { ar: 'مشاريع ساعدنا', en: 'Projects we helped' },
-      h2b: { ar: 'على أن تُرى.', en: 'bring to life.' },
+      h2a: { ar: 'مشاريع جعلناها تُرى.', en: 'Projects we made visible.' },
+      h2b: { ar: '', en: '' },
       lead: {
         ar: 'عيّنات من أعمال Graphics House الموثّقة — إظهار، فيلم، ومجسمات.',
         en: 'Selected verified Graphics House work — visualization, film, and models.',
@@ -290,10 +293,10 @@
     },
 
     finalCta: {
-      h2a: { ar: 'لنبنِ التجربة', en: 'Let’s build' },
-      h2b: { ar: 'قبل البناء.', en: 'the experience before the building.' },
+      h2a: { ar: 'لنبنِ تجربة المشروع', en: 'Let’s build the project experience' },
+      h2b: { ar: 'قبل أن يكتمل.', en: 'before it is complete.' },
       copy: {
-        ar: 'أخبرنا أين يقف مشروعك اليوم.\nنساعد على تحديد ما يأتي بعد ذلك.',
+        ar: 'أخبرنا أين يقف مشروعك اليوم.\nنساعدك على تحديد ما يأتي بعد ذلك.',
         en: 'Tell us where your project is today.\nWe’ll help define what comes next.',
       },
       primary: { ar: 'ابدأ مشروعك', en: 'Start your project' },

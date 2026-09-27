@@ -468,51 +468,84 @@ html[dir='rtl'] .ghd-problem__chain li:not(:last-child)::after {
   display: inline-flex;
 }
 
-/* Commercial estimates — demoted from story flow */
-.ghd-commercial-details {
-  margin: 0;
-  border-top: 1px solid var(--ghd-border);
-  background: #f3f1eb;
+/* GH Direct layer transition */
+.ghd-ghdirect-head {
+  padding-top: 8px;
+  border-top: 1px solid var(--ghd-line);
 }
-.ghd-commercial-summary {
-  list-style: none;
-  cursor: pointer;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 28px 20px;
-  display: grid;
-  gap: 4px;
+#gh-direct {
+  padding-bottom: 24px;
 }
-.ghd-commercial-summary::-webkit-details-marker {
-  display: none;
-}
-.ghd-commercial-summary__kicker {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ghd-gold-dark);
-  font-weight: 600;
-}
-.ghd-commercial-summary__title {
-  font-family: var(--ghd-display);
-  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-.ghd-commercial-summary__hint {
-  font-size: 0.88rem;
-  color: var(--ghd-muted);
-}
-.ghd-commercial-details[open] .ghd-commercial-summary {
-  border-bottom: 1px solid var(--ghd-border);
-}
-.ghd-commercial-details .ghd-section--packages {
-  padding-top: 24px;
+.ghd-section--packages {
+  padding-top: 0;
 }
 
-/* Soften older solutions grid if present */
-.ghd-solutions {
-  display: none;
+.ghd-pkg-meta {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 12px;
+  text-align: start;
+}
+.ghd-pkg-meta-row {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 10px;
+  align-items: baseline;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+.ghd-pkg-meta-k {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(18, 18, 18, 0.42);
+}
+.ghd-pkg--featured .ghd-pkg-meta-k {
+  color: rgba(247, 245, 240, 0.45);
+}
+.ghd-pkg-meta-v {
+  font-weight: 500;
+  color: rgba(18, 18, 18, 0.82);
+}
+.ghd-pkg--featured .ghd-pkg-meta-v {
+  color: rgba(247, 245, 240, 0.88);
+}
+.ghd-need-specific {
+  margin: 28px auto 0;
+  max-width: 1100px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgba(18, 18, 18, 0.55);
+}
+
+.ghd-enterprise-fork {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.ghd-enterprise-fork li {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(18, 18, 18, 0.7);
+}
+.ghd-enterprise-fork strong {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ghd-gold-dark);
+  margin-bottom: 2px;
+}
+
+/* Hide collapsed-details chrome if leftover */
+.ghd-commercial-details {
+  border: none;
+  background: transparent;
 }
 
 /* —— 05 Why —— */

@@ -191,13 +191,23 @@
     var el = document.getElementById('ghd-enterprise');
     if (!el) return;
     var e = DATA.enterprise[lang];
+    var fork =
+      e.forkDirect && e.forkLaunch
+        ? '<ul class="ghd-enterprise-fork"><li><strong>GH Direct</strong> ' +
+          escapeHtml(e.forkDirect.replace(/^GH Direct\s*[—–-]\s*/i, '')) +
+          '</li><li><strong>ProjectLaunch™</strong> ' +
+          escapeHtml(e.forkLaunch.replace(/^ProjectLaunch™\s*[—–-]\s*/i, '')) +
+          '</li></ul>'
+        : '';
     el.innerHTML =
       '<div class="ghd-wrap ghd-enterprise-inner">' +
       '<div><p class="ghd-enterprise-label">' +
       escapeHtml(e.label) +
       '</p><p>' +
       escapeHtml(e.text) +
-      '</p></div>' +
+      '</p>' +
+      fork +
+      '</div>' +
       '<a class="ghd-enterprise-cta" href="' +
       escapeAttr(assetPrefix + e.href) +
       '">' +
@@ -376,9 +386,9 @@
       '<div class="ghd-wrap ghd-wrap--wide">' +
       '<h2 class="ghd-ed__title" id="ghd-capability-title"><span>' +
       escapeHtml(t(d.h2a)) +
-      '</span><span>' +
-      escapeHtml(t(d.h2b)) +
-      '</span></h2>' +
+      '</span>' +
+      (t(d.h2b) ? '<span>' + escapeHtml(t(d.h2b)) + '</span>' : '') +
+      '</h2>' +
       '<p class="ghd-ed__lead">' +
       escapeHtml(t(d.lead)) +
       '</p>' +
@@ -423,9 +433,11 @@
       '<div class="ghd-wrap ghd-wrap--wide">' +
       '<h2 class="ghd-ed__title" id="ghd-projects-title"><span>' +
       escapeHtml(t(p.h2a)) +
-      '</span><span>' +
-      escapeHtml(t(p.h2b)) +
-      '</span></h2>' +
+      '</span>' +
+      (t(p.h2b)
+        ? '<span>' + escapeHtml(t(p.h2b)) + '</span>'
+        : '') +
+      '</h2>' +
       '<p class="ghd-ed__lead">' +
       escapeHtml(t(p.lead)) +
       '</p>' +
@@ -506,37 +518,32 @@
     });
   }
 
+  function renderGhDirectHead() {
+    var host = document.getElementById('ghd-ghdirect-head');
+    var g = DATA.narrative && DATA.narrative.ghDirect;
+    if (!host || !g) return;
+    host.innerHTML =
+      '<p class="ghd-ed__eyebrow">' +
+      escapeHtml(t(g.kicker)) +
+      '</p>' +
+      '<h2 class="ghd-ed__title" id="ghd-ghdirect-title">' +
+      escapeHtml(t(g.title)) +
+      '</h2>' +
+      '<p class="ghd-ed__lead">' +
+      escapeHtml(t(g.lead)) +
+      '</p>';
+  }
+
   function renderEstimatesChrome() {
-    var est = DATA.narrative && DATA.narrative.estimates;
-    if (!est) return;
-    var k = document.getElementById('ghd-estimates-kicker');
-    var title = document.getElementById('ghd-estimates-title');
-    var hint = document.getElementById('ghd-estimates-hint');
-    if (k) k.textContent = t(est.kicker);
-    if (title) title.textContent = t(est.title);
-    if (hint) hint.textContent = t(est.hint);
-    var details = document.getElementById('estimates');
-    if (!details) return;
-    var hash = (location.hash || '').toLowerCase();
-    if (
-      hash.indexOf('pkg-') >= 0 ||
-      hash === '#packages' ||
-      hash === '#estimates' ||
-      hash === '#atelier-workshop' ||
-      hash === '#catalog'
-    ) {
-      details.open = true;
+    var need = document.getElementById('ghd-need-specific');
+    if (need && ui.needSpecific) {
+      need.hidden = false;
+      need.textContent = ui.needSpecific;
     }
   }
 
   function renderCommercialBridge() {
-    var host = document.getElementById('ghd-commercial-bridge');
-    var c = DATA.narrative && DATA.narrative.commercial;
-    if (!host || !c) return;
-    host.innerHTML =
-      '<p class="ghd-ed__eyebrow">' +
-      escapeHtml(t(c.eyebrow)) +
-      '</p>';
+    /* superseded by renderGhDirectHead */
   }
 
   function renderFinalCta() {
@@ -549,8 +556,8 @@
       '?text=' +
       encodeURIComponent(
         lang === 'ar'
-          ? 'مرحباً — أريد بدء مشروع مع Graphics House (من الرؤية إلى البيع).'
-          : 'Hello — I want to start a project with Graphics House (From Vision to Sale).'
+          ? 'مرحباً — أريد بدء مشروع مع Graphics House (من الرؤية إلى تجربة البيع).'
+          : 'Hello — I want to start a project with Graphics House (From Vision to Sales Experience).'
       );
     host.innerHTML =
       '<div class="ghd-wrap ghd-wrap--narrow">' +
@@ -616,8 +623,8 @@
     renderProjectsEditorial();
     renderCapability();
     renderQualify();
+    renderGhDirectHead();
     renderEstimatesChrome();
-    renderCommercialBridge();
     renderFinalCta();
     wireReveals();
   }
@@ -833,9 +840,29 @@
 
       var phase =
         pkg.phase
-          ? '<span class="ghd-pkg-phase">' +
-            escapeHtml((ui.phaseLabel ? ui.phaseLabel + ' · ' : '') + t(pkg.phase)) +
-            '</span>'
+          ? '<div class="ghd-pkg-meta-row"><span class="ghd-pkg-meta-k">' +
+            escapeHtml(ui.phaseLabel || '') +
+            '</span><span class="ghd-pkg-meta-v">' +
+            escapeHtml(t(pkg.phase)) +
+            '</span></div>'
+          : '';
+
+      var purpose =
+        pkg.purpose
+          ? '<div class="ghd-pkg-meta-row"><span class="ghd-pkg-meta-k">' +
+            escapeHtml(ui.purposeLabel || '') +
+            '</span><span class="ghd-pkg-meta-v">' +
+            escapeHtml(t(pkg.purpose)) +
+            '</span></div>'
+          : '';
+
+      var coreOut =
+        pkg.coreOutput
+          ? '<div class="ghd-pkg-meta-row"><span class="ghd-pkg-meta-k">' +
+            escapeHtml(ui.coreOutputLabel || '') +
+            '</span><span class="ghd-pkg-meta-v">' +
+            escapeHtml(t(pkg.coreOutput)) +
+            '</span></div>'
           : '';
 
       var namePill =
@@ -916,9 +943,13 @@
       card.innerHTML =
         ribbon +
         '<div class="ghd-pkg-top">' +
-        phase +
         namePill +
         priceBlock +
+        '<div class="ghd-pkg-meta">' +
+        phase +
+        purpose +
+        coreOut +
+        '</div>' +
         tagline +
         incentive +
         '</div>' +
@@ -1978,8 +2009,8 @@
     wireModals();
     document.title =
       (lang === 'ar'
-        ? 'من الرؤية إلى البيع | GH Direct | Graphics House'
-        : 'From Vision to Sale | GH Direct | Graphics House');
+        ? 'من الرؤية إلى تجربة البيع | GH Direct | Graphics House'
+        : 'From Vision to Sales Experience | GH Direct | Graphics House');
   }
 
   if (document.readyState === 'loading') {
