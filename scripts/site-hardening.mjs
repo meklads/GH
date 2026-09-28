@@ -26,6 +26,13 @@ const SKIP = new Set([
 ]);
 
 const SITEMAP_SKIP = new Set([
+  'insights/projects/jeddah-forum.html',
+  'insights/projects/jeddah-forum-en.html',
+  'insights/projects/makkah-charter-mwl.html',
+  'insights/projects/makkah-charter-mwl-en.html',
+  'services/interactive.html',
+  'services/interactive-en.html',
+
   ...SKIP,
   'en.html',
   'blog.html',
@@ -87,7 +94,6 @@ const LEGACY_NOINDEX = new Set([
   'offer.html',
   'offer-lite.html',
   'marketing.html',
-  'real-estate.html',
   'shop.html',
   'boyslove.html',
   'en.html',
@@ -99,19 +105,29 @@ const EXPLICIT_PAIRS = {
   'en.html': 'index-ar.html',
   'contact.html': 'contact-us-en.html',
   'contact-us-en.html': 'contact-us.html',
-  'case-study-alrajhi-en.html': 'insights/projects/al-rajhi-riyadh.html',
-  'case-study-anan-eskan-en.html': 'insights/projects/anan-eskan-riyadh.html',
-  'case-study-mwl-en.html': 'casestudy-mwl.html',
-  'careers-en.html': 'index.html',
+  'case-study-alrajhi-en.html': 'insights/projects/al-rajhi-riyadh-en.html',
+  'case-study-anan-eskan-en.html': 'insights/projects/anan-eskan-riyadh-en.html',
+  'case-study-mwl-en.html': 'casestudy-mwl-en.html',
+  'careers-en.html': 'careers.html',
+  'careers.html': 'careers-en.html',
   'offer-en.html': 'contact-us-en.html',
   'gh-direct.html': 'client-hub-gh-direct-en.html',
   'gh-direct-en.html': 'client-hub-gh-direct.html',
   'client-hub-gh-direct.html': 'client-hub-gh-direct-en.html',
   'client-hub-gh-direct-en.html': 'client-hub-gh-direct.html',
-  'client-hub-gh-direct-2.html': 'client-hub-gh-direct-2-en.html',
-  'client-hub-gh-direct-2-en.html': 'client-hub-gh-direct-2.html',
+  'client-hub-gh-direct-2.html': 'Packages-en.html',
+  'client-hub-gh-direct-2-en.html': 'Packages.html',
   'Packages.html': 'Packages-en.html',
   'Packages-en.html': 'Packages.html',
+  'real-estate.html': 'real-estate/',
+  'real-estate/index.html': '../real-estate.html',
+  'real-estate-en.html': 'real-estate/',
+  'casestudy-mwl.html': 'casestudy-mwl-en.html',
+  'casestudy-mwl-en.html': 'casestudy-mwl.html',
+  'collaborators.html': 'collaborators-en.html',
+  'collaborators-en.html': 'collaborators.html',
+  'partner-network.html': 'partner-network-en.html',
+  'partner-network-en.html': 'partner-network.html',
 };
 
 /** services/foo.html ↔ services/foo-en.html */
@@ -674,7 +690,7 @@ function writeFileRedirect(fromFile, toPath) {
 // Legacy trailing-slash URLs seen in GSC → current pages
 writeDirRedirect('privacy-policy', 'privacy-policy.html');
 writeDirRedirect('folio', 'portfolio.html');
-writeDirRedirect('interactive-presentation', 'services/interactive.html');
+writeDirRedirect('interactive-presentation', 'services/interactive-experiences.html');
 writeDirRedirect('interactive', 'services/interactive-experiences.html');
 writeDirRedirect('contact', 'contact-us.html');
 writeDirRedirect('portfolio', 'portfolio.html');

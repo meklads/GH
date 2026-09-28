@@ -84,7 +84,7 @@ const AR_HEADER = `<header class="header" id="header">
                       <span class="mm-svc-desc">صور ثلاثية الأبعاد سينمائية</span>
                     </span>
                   </a>
-                  <a href="services/interactive.html" class="mm-svc-link">
+                  <a href="services/interactive-experiences.html" class="mm-svc-link">
                     <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span>
                     <span class="mm-svc-body">
                       <span class="mm-svc-text">العروض التفاعلية</span>
@@ -208,7 +208,7 @@ const EN_HEADER = `<header class="header" id="header">
                       <span class="mm-svc-desc">Cinematic 3D renders</span>
                     </span>
                   </a>
-                  <a href="services/interactive.html" class="mm-svc-link">
+                  <a href="services/interactive-experiences.html" class="mm-svc-link">
                     <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span>
                     <span class="mm-svc-body">
                       <span class="mm-svc-text">Interactive Experiences</span>

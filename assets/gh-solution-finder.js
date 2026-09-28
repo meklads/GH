@@ -160,13 +160,13 @@
     rendering: { title: 'Architectural Rendering', href: '../../services/rendering.html' },
     animation: { title: 'Cinematic CGI & Animation', href: '../../services/animation.html' },
     maquette: { title: 'Maquettes & Scale Models', href: '../../services/maquettes.html' },
-    interactive: { title: 'Interactive Experiences', href: '../../services/interactive.html' },
+    interactive: { title: 'Interactive Experiences', href: '../../services/interactive-experiences-en.html' },
     production: { title: 'Visual Production', href: '../../services/production.html' }
   } : {
     rendering: { title: 'الإظهار المعماري', href: '../../services/rendering.html' },
     animation: { title: 'الـ CGI السينمائي والأنيميشن', href: '../../services/animation.html' },
     maquette: { title: 'المجسمات والنماذج', href: '../../services/maquettes.html' },
-    interactive: { title: 'التجارب التفاعلية', href: '../../services/interactive.html' },
+    interactive: { title: 'التجارب التفاعلية', href: '../../services/interactive-experiences.html' },
     production: { title: 'الإنتاج البصري', href: '../../services/production.html' }
   };
 

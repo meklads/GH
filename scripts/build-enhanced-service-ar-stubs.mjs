@@ -108,7 +108,7 @@ const STUBS = {
       title: 'أفلام CGI',
       gold: 'سينمائية',
       hero:
-        'ننتج أفلاماً معمارية تشرح الحجم ونمط الحياة وقيمة الاستثمار قبل البناء. مخرجات أساسية في <a href="../solutions/project-launch.html">ProjectLaunch™</a> و<a href="../insights/projects/jeddah-forum.html">ملتقى جدة للعقار</a>.',
+        'ننتج أفلاماً معمارية تشرح الحجم ونمط الحياة وقيمة الاستثمار قبل البناء. مخرجات أساسية في <a href="../solutions/project-launch.html">ProjectLaunch™</a> و<a href="../case-studies/jeddah-real-estate-forum.html">ملتقى جدة للعقار</a>.',
       features: [
         { icon: 'flight', title: 'طيران جوي', desc: 'لقطات جوية للمخطط الرئيسي والمرافق والربط.' },
         { icon: 'directions_walk', title: 'جولة داخلية', desc: 'تجوال في الوحدات والمرافق بإيقاع سينمائي.' },
@@ -127,7 +127,7 @@ const STUBS = {
       title: 'Cinematic CGI',
       gold: 'Films',
       hero:
-        'Architectural films that communicate scale, lifestyle, and investment value before ground breaks. Core to <a href="../solutions/project-launch-en.html">ProjectLaunch™</a> and landmark work like the <a href="../insights/projects/jeddah-forum-en.html">Jeddah Real Estate Forum</a>.',
+        'Architectural films that communicate scale, lifestyle, and investment value before ground breaks. Core to <a href="../solutions/project-launch-en.html">ProjectLaunch™</a> and landmark work like the <a href="../case-studies/jeddah-real-estate-forum-en.html">Jeddah Real Estate Forum</a>.',
       features: [
         { icon: 'flight', title: 'Aerial flyovers', desc: 'Masterplan films showing scale, amenities, and connectivity.' },
         { icon: 'directions_walk', title: 'Walkthrough films', desc: 'Unit and amenity tours with cinematic pacing.' },

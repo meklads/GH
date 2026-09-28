@@ -9,9 +9,9 @@
     'en.html': 'index-ar.html',
     'contact.html': 'contact-us-en.html',
     'contact-us-en.html': 'contact-us.html',
-    'case-study-alrajhi-en.html': 'casestudy1.html',
-    'case-study-anan-eskan-en.html': 'casestudy1.html',
-    'case-study-mwl-en.html': 'casestudy1.html',
+    'case-study-alrajhi-en.html': 'insights/projects/al-rajhi-riyadh-en.html',
+    'case-study-anan-eskan-en.html': 'insights/projects/anan-eskan-riyadh-en.html',
+    'case-study-mwl-en.html': 'casestudy-mwl-en.html',
     'careers-en.html': 'careers.html',
     'careers.html': 'careers-en.html',
     'collaborators.html': 'collaborators-en.html',
@@ -26,34 +26,35 @@
     'gh-direct-en.html': 'client-hub-gh-direct.html',
     'client-hub-gh-direct.html': 'client-hub-gh-direct-en.html',
     'client-hub-gh-direct-en.html': 'client-hub-gh-direct.html',
-    'client-hub-gh-direct-2.html': 'client-hub-gh-direct-2-en.html',
-    'client-hub-gh-direct-2-en.html': 'client-hub-gh-direct-2.html',
+    'client-hub-gh-direct-2.html': 'Packages-en.html',
+    'client-hub-gh-direct-2-en.html': 'Packages.html',
     'Packages.html': 'Packages-en.html',
     'Packages-en.html': 'Packages.html',
     'smart-maquettes-en.html': 'services/maquettes.html',
+    'smart-maquettes.html': 'services/maquettes-en.html',
     '3d-animation-en.html': 'services/animation.html',
+    '3d-animation.html': 'services/animation-en.html',
     'media-production-en.html': 'services/production.html',
+    'media-production.html': 'services/production-en.html',
     'interactive-experiences-en.html': 'services/interactive-experiences.html',
+    'interactive-experiences.html': 'services/interactive-experiences-en.html',
+    'real-estate.html': 'real-estate/',
+    'real-estate-en.html': 'real-estate/',
   };
 
   var HAS_EN = {
     'who-we-are.html': true,
     'workspace.html': true,
-    'smart-maquettes.html': true,
     'privacy-policy.html': true,
     'portfolio.html': true,
     'offer.html': true,
-    'media-production.html': true,
-    'interactive-experiences.html': true,
-    'galleries-advertising.html': true,
     'faq.html': true,
     'contact-us.html': true,
     'casestudy1.html': true,
-    '3d-animation.html': true,
     'growth-launch.html': true,
     'project-launch.html': true,
     'brand-scale.html': true,
-    'interactive.html': true,
+    'interactive-experiences.html': true,
     'vr-360.html': true,
     'maquettes.html': true,
     'animation.html': true,
@@ -66,6 +67,7 @@
     'client-hub.html': true,
     'gh-direct.html': true,
     'client-hub-gh-direct.html': true,
+    'Packages.html': true,
   };
 
   function parts() {
@@ -95,6 +97,12 @@
   }
 
   function alternateFileName(fileName, dirPath) {
+    if (/\/real-estate(\/|$)/.test(dirPath)) {
+      if (fileName === 'index.html' || fileName === 'index-en.html') return '/real-estate.html';
+    }
+    if (fileName === 'real-estate.html') return '/real-estate/';
+    if (fileName === 'real-estate-en.html') return '/real-estate/';
+
     if (EXPLICIT[fileName] && !isPairedSection(dirPath)) return EXPLICIT[fileName];
 
     if (isPairedSection(dirPath)) {
