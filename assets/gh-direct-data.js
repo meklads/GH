@@ -938,10 +938,11 @@ services: [
       stage: { ar: 'الإطلاق والبيع', en: 'Launch & Sell' },
       price: 195000,
       featured: false,
-      includedServiceIds: ['identity-full', 'catalogue', 'ground-photo', 'touchscreen'],
+      includedServiceIds: ['identity-full', 'catalogue', 'ground-photo', 'touchscreen', 'maquette-single'],
       includedLines: [
         { ar: 'تصميم صالة المبيعات مع التنفيذ', en: 'Sales gallery design with build-out' },
         { ar: 'تصميم بوث المعارض مع التنفيذ', en: 'Exhibition booth design with build-out' },
+        { ar: 'المجسم المعماري للمشروع (الحجم والسعر يُحدَّدان بعد الاجتماع)', en: 'Architectural scale model (size and price set after the meeting)' },
         { ar: 'برنامج عرض تفاعلي لشاشة اللمس يعرض الوحدات وحالة التوفر', en: 'Interactive touchscreen presentation app for units and availability' },
         { ar: 'مواد المبيعات: كتالوج طباعي ورقمي + بروشور + أوراق مواصفات الوحدات + عرض للوسطاء', en: 'Sales materials: print and digital catalogue + brochure + unit specs + broker presentation' },
         { ar: 'تصميم اللوحات الإعلانية والإشارات (Hoarding & Signage)', en: 'Hoarding and signage design' },
@@ -971,10 +972,6 @@ services: [
     {
       ar: 'التصميم المعماري (ابتدائي أو تنفيذي)',
       en: 'Architectural design (preliminary or construction documents)',
-    },
-    {
-      ar: 'المجسم المصغر للمشروع (Scale Model)',
-      en: 'Project scale model',
     },
     {
       ar: 'تنفيذ وحدة نموذجية مفروشة (عبر تريفا)',
