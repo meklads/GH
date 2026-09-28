@@ -3286,3 +3286,367 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
 .ghd-section--proof .ghd-proof-head {
   margin-bottom: 22px;
 }
+
+/* —— Page quality polish —— */
+@media (prefers-reduced-motion: reduce) {
+  .ghd-page *,
+  .ghd-page *::before,
+  .ghd-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.ghd-page--hub {
+  background:
+    radial-gradient(ellipse 70% 44% at 50% -8%, rgba(201, 168, 76, 0.1), transparent 58%),
+    linear-gradient(180deg, #fcfbf8 0%, #f7f6f2 42%, #f4f2ec 100%);
+}
+
+.ghd-enterprise {
+  padding: 16px 0;
+}
+.ghd-enterprise-cta {
+  border-radius: 999px;
+  padding: 10px 18px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.ghd-enterprise-cta:hover {
+  transform: translateY(-1px);
+}
+
+.ghd-hero {
+  padding: 56px 0 48px;
+  text-align: center;
+  border-bottom: 0;
+  background:
+    radial-gradient(ellipse 58% 48% at 50% 0%, rgba(201, 168, 76, 0.12), transparent 60%),
+    transparent;
+}
+.ghd-hero-inner {
+  max-width: 40rem;
+  margin-inline: auto;
+}
+.ghd-hero-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  margin-bottom: 16px;
+}
+.ghd-hero-brand {
+  font-size: clamp(2.5rem, 5.6vw, 3.75rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.ghd-hero-title {
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  color: rgba(14, 14, 14, 0.68);
+  margin-bottom: 16px;
+}
+.ghd-hero-lead {
+  margin-inline: auto;
+  margin-bottom: 22px;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  max-width: 34rem;
+}
+.ghd-hero-rule {
+  margin-inline: auto;
+  width: 64px;
+  height: 2px;
+  transform-origin: center center;
+}
+
+.ghd-section {
+  padding: 52px 0;
+}
+.ghd-section--posture {
+  padding: 12px 0 36px;
+  border-bottom: 0;
+}
+.ghd-section-head--posture {
+  text-align: center;
+  margin-bottom: 22px;
+}
+.ghd-section-head--posture h2 {
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+}
+.ghd-section-head--posture p {
+  margin-inline: auto;
+  max-width: 34rem;
+}
+.ghd-section-head--posture h2::after,
+.ghd-section--packages .ghd-section-head h2::after,
+.ghd-section--catalog .ghd-section-head h2::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin: 14px auto 0;
+  background: linear-gradient(90deg, var(--ghd-gold), rgba(201, 168, 76, 0.15));
+  border-radius: 2px;
+}
+
+.ghd-posture {
+  gap: 14px;
+}
+@media (min-width: 800px) {
+  .ghd-posture {
+    gap: 16px;
+  }
+}
+.ghd-posture-card {
+  border-radius: 14px;
+  padding: 22px 20px 18px;
+  box-shadow: 0 10px 28px rgba(14, 14, 14, 0.035);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+.ghd-posture-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(14, 14, 14, 0.06);
+}
+.ghd-posture-title {
+  font-size: 1.18rem;
+}
+.ghd-posture-goal {
+  font-size: 13.5px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.ghd-posture-ready {
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.ghd-section--packages {
+  padding: 48px 0 56px;
+  background:
+    linear-gradient(180deg, rgba(14, 14, 14, 0.02), transparent 18%),
+    #f3f2ee;
+  border-block: 1px solid rgba(14, 14, 14, 0.05);
+}
+.ghd-section--packages .ghd-section-head {
+  margin-bottom: 40px;
+}
+.ghd-section--packages .ghd-section-head p {
+  max-width: 36rem;
+}
+
+.ghd-packages {
+  gap: 20px;
+}
+@media (min-width: 980px) {
+  .ghd-packages {
+    gap: 20px;
+  }
+}
+
+.ghd-pkg {
+  border-radius: 16px;
+  padding: 40px 28px 28px;
+  box-shadow: 0 16px 44px rgba(14, 14, 14, 0.055);
+}
+.ghd-pkg:hover {
+  box-shadow: 0 22px 52px rgba(14, 14, 14, 0.1);
+}
+.ghd-pkg-namepill {
+  padding: 9px 20px;
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
+}
+.ghd-pkg-stage-line {
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+.ghd-pkg-price-main {
+  font-size: clamp(2.55rem, 4.2vw, 3.15rem);
+}
+.ghd-pkg-price-main--quote {
+  color: var(--ghd-gold-dark);
+  font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+  font-weight: 700;
+  max-width: 16rem;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+}
+.ghd-pkg .ghd-list {
+  margin: 16px 0 20px;
+}
+.ghd-pkg .ghd-list li {
+  padding: 12px 8px;
+  font-size: 13.25px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(20, 20, 20, 0.76);
+}
+.ghd-pkg--featured .ghd-list li {
+  font-weight: 400;
+  color: rgba(245, 245, 243, 0.88);
+}
+.ghd-pkg-foot {
+  margin-top: 14px;
+  font-size: 12.5px;
+  color: rgba(20, 20, 20, 0.5);
+}
+.ghd-pkg-ctas .ghd-cta {
+  border-radius: 12px;
+  padding: 15px 18px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.ghd-pkg-ctas .ghd-cta:hover {
+  transform: translateY(-1px);
+}
+.ghd-pkg-ctas .ghd-cta:focus-visible,
+.ghd-meeting-wa:focus-visible,
+.ghd-meeting-form:focus-visible,
+.ghd-filter:focus-visible {
+  outline: 2px solid var(--ghd-gold);
+  outline-offset: 2px;
+}
+
+.ghd-section--extras {
+  padding: 20px 0 28px;
+  background: #f3f2ee;
+}
+.ghd-section--atelier {
+  padding: 36px 0 40px;
+}
+.ghd-section--next {
+  padding: 20px 0 36px;
+}
+
+.ghd-section--catalog {
+  padding: 56px 0 48px;
+  border-top: 1px solid rgba(14, 14, 14, 0.06);
+  background: #fbfaf7;
+}
+.ghd-section--catalog .ghd-section-head {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.ghd-section--catalog .ghd-section-head p {
+  margin-inline: auto;
+}
+
+.ghd-section--meeting {
+  padding: 44px 0 48px;
+  background:
+    linear-gradient(180deg, #fbfaf7 0%, #f0ebe1 48%, #fbfaf7 100%);
+}
+.ghd-section--meeting .ghd-unsure {
+  margin-top: 0;
+}
+.ghd-section--meeting .ghd-trust-line {
+  margin: 0 auto 18px;
+  max-width: 42rem;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(14, 14, 14, 0.06);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(20, 20, 20, 0.62);
+  line-height: 1.5;
+}
+.ghd-meeting--compact {
+  max-width: 960px;
+  margin-inline: auto;
+  padding: 28px 26px;
+  border-radius: 20px;
+  border: 1px solid rgba(201, 168, 76, 0.42);
+  box-shadow: 0 24px 56px rgba(14, 14, 14, 0.2);
+  background:
+    radial-gradient(ellipse 55% 80% at 100% 0%, rgba(201, 168, 76, 0.16), transparent 55%),
+    linear-gradient(145deg, #161616 0%, #241f14 100%);
+}
+@media (min-width: 800px) {
+  .ghd-meeting--compact {
+    padding: 32px 34px;
+    gap: 24px;
+  }
+}
+.ghd-meeting--compact h2 {
+  font-size: clamp(1.25rem, 2.3vw, 1.6rem);
+  margin: 6px 0 10px;
+  letter-spacing: -0.02em;
+}
+.ghd-meeting--compact .ghd-meeting-lead {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: rgba(245, 245, 243, 0.78);
+}
+.ghd-meeting--compact .ghd-meeting-wa,
+.ghd-meeting--compact .ghd-meeting-form {
+  border-radius: 12px;
+  min-width: 200px;
+  padding: 14px 18px;
+}
+.ghd-meeting--compact .ghd-meeting-wa {
+  background: var(--ghd-gold);
+  border-color: var(--ghd-gold);
+  color: #141414;
+}
+.ghd-meeting--compact .ghd-meeting-wa:hover {
+  background: #d9b860;
+  border-color: #d9b860;
+}
+.ghd-meeting--compact .ghd-meeting-form {
+  border-color: rgba(245, 245, 243, 0.28);
+  color: #f5f5f3;
+}
+.ghd-meeting--compact .ghd-meeting-form:hover {
+  border-color: var(--ghd-gold);
+  color: var(--ghd-gold);
+}
+
+.ghd-section--proof {
+  padding: 48px 0 44px;
+  background: #fbfaf7;
+}
+.ghd-proof-title {
+  font-size: clamp(1.45rem, 2.6vw, 1.95rem);
+  text-align: center;
+}
+.ghd-proof-lead {
+  text-align: center;
+  margin-inline: auto;
+}
+.ghd-proof-head {
+  text-align: center;
+}
+.ghd-proof-actions {
+  justify-content: center;
+}
+
+.ghd-section--close {
+  padding: 36px 0 56px;
+}
+.ghd-close-inner {
+  border-radius: 18px;
+  padding: 36px 32px;
+  box-shadow: 0 20px 48px rgba(14, 14, 14, 0.14);
+}
+.ghd-close-ctas .ghd-cta {
+  border-radius: 12px;
+}
+
+.ghd-section--faq {
+  padding: 56px 0 72px;
+  background: #fff;
+}
+
+.ghd-filter {
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.ghd-filter:hover {
+  transform: translateY(-1px);
+}
+
+.ghd-slider-arrow {
+  transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.ghd-slider-arrow:hover {
+  transform: scale(1.04);
+}
