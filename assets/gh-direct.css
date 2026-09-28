@@ -643,28 +643,106 @@ html[dir='ltr'] .ghd-hero-rule {
   font-weight: 400;
   color: rgba(20, 20, 20, 0.48);
 }
-.ghd-family-grid {
+/* Service ticket slider — 3 visible, Concept Ave-style arrows */
+.ghd-slider {
+  position: relative;
+  margin: 0 -4px;
+  padding: 4px 0 8px;
+}
+.ghd-slider-viewport {
+  overflow: hidden;
+  width: 100%;
+  container-type: inline-size;
+  container-name: ghd-slider;
+}
+.ghd-slider-track {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.ghd-slider-track .ghd-svc-card {
+  flex: 0 0 100cqi;
+  width: 100cqi;
+  max-width: 100cqi;
+  min-width: 0;
+}
+@container ghd-slider (min-width: 560px) {
+  .ghd-slider-track .ghd-svc-card {
+    flex: 0 0 calc((100cqi - 18px) / 2);
+    width: calc((100cqi - 18px) / 2);
+    max-width: calc((100cqi - 18px) / 2);
+  }
+}
+@container ghd-slider (min-width: 900px) {
+  .ghd-slider-track .ghd-svc-card {
+    flex: 0 0 calc((100cqi - 36px) / 3);
+    width: calc((100cqi - 36px) / 3);
+    max-width: calc((100cqi - 36px) / 3);
+  }
+}
+.ghd-slider-arrow {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  z-index: 6;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #e4572e;
+  cursor: pointer;
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 16px;
+  place-items: center;
+  padding: 0;
+  transition: color 0.2s, opacity 0.2s, transform 0.2s;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.18));
 }
-@media (min-width: 560px) {
-  .ghd-family-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+.ghd-slider-arrow span {
+  font-size: 54px;
+  font-weight: 300;
+  line-height: 1;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.ghd-slider-arrow--prev {
+  inset-inline-start: -6px;
+}
+.ghd-slider-arrow--next {
+  inset-inline-end: -6px;
+}
+.ghd-slider-arrow:hover:not(:disabled) {
+  color: #c2410c;
+  transform: translateY(-50%) scale(1.06);
+}
+.ghd-slider-arrow:disabled {
+  opacity: 0.22;
+  cursor: default;
+  pointer-events: none;
+}
+.ghd-slider.is-static .ghd-slider-arrow {
+  display: none;
+}
+@media (max-width: 700px) {
+  .ghd-slider-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  .ghd-slider-arrow span {
+    font-size: 42px;
+  }
+  .ghd-slider-arrow--prev {
+    inset-inline-start: 2px;
+  }
+  .ghd-slider-arrow--next {
+    inset-inline-end: 2px;
   }
 }
-@media (min-width: 860px) {
-  .ghd-family-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-  }
-}
-@media (min-width: 1100px) {
-  .ghd-family-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 22px;
-  }
+/* Legacy alias — grids redirected to slider track */
+.ghd-family-grid {
+  display: flex;
+  gap: 18px;
 }
 .ghd-svc-card {
   background: var(--ghd-paper);
@@ -697,7 +775,7 @@ html[dir='ltr'] .ghd-hero-rule {
 }
 .ghd-svc-media {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 4;
   background:
     linear-gradient(160deg, rgba(201, 168, 76, 0.12), transparent 55%),
     linear-gradient(145deg, #ebe6dc 0%, #d9d2c4 100%);

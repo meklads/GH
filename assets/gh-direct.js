@@ -811,6 +811,145 @@
     });
   }
 
+  function sliderShell(cardsHtml) {
+    var prevLabel = lang === 'ar' ? 'السابق' : 'Previous';
+    var nextLabel = lang === 'ar' ? 'التالي' : 'Next';
+    return (
+      '<div class="ghd-slider">' +
+      '<button type="button" class="ghd-slider-arrow ghd-slider-arrow--prev" aria-label="' +
+      escapeAttr(prevLabel) +
+      '"><span aria-hidden="true">‹</span></button>' +
+      '<div class="ghd-slider-viewport">' +
+      '<div class="ghd-slider-track" data-ghd-slider-index="0">' +
+      cardsHtml +
+      '</div></div>' +
+      '<button type="button" class="ghd-slider-arrow ghd-slider-arrow--next" aria-label="' +
+      escapeAttr(nextLabel) +
+      '"><span aria-hidden="true">›</span></button></div>'
+    );
+  }
+
+  function sliderVisibleCount(viewport) {
+    var w = viewport ? viewport.clientWidth : 1100;
+    if (w < 560) return 1;
+    if (w < 900) return 2;
+    return 3;
+  }
+
+  function syncSlider(slider) {
+    var viewport = slider.querySelector('.ghd-slider-viewport');
+    var track = slider.querySelector('.ghd-slider-track');
+    var prev = slider.querySelector('.ghd-slider-arrow--prev');
+    var next = slider.querySelector('.ghd-slider-arrow--next');
+    if (!viewport || !track) return;
+    var cards = track.querySelectorAll('.ghd-svc-card');
+    var count = cards.length;
+    var visible = sliderVisibleCount(viewport);
+    var maxIndex = Math.max(0, count - visible);
+    var index = parseInt(track.getAttribute('data-ghd-slider-index') || '0', 10) || 0;
+    if (index > maxIndex) index = maxIndex;
+    if (index < 0) index = 0;
+    track.setAttribute('data-ghd-slider-index', String(index));
+
+    var gap = 18;
+    try {
+      var cs = window.getComputedStyle(track);
+      gap = parseFloat(cs.columnGap || cs.gap) || 18;
+    } catch (e) {}
+    var cardW = count ? cards[0].getBoundingClientRect().width : 0;
+    if (!cardW && viewport.clientWidth) {
+      cardW = (viewport.clientWidth - gap * (visible - 1)) / visible;
+    }
+    var offset = index * (cardW + gap);
+    var rtl = (document.documentElement.getAttribute('dir') || '').toLowerCase() === 'rtl' ||
+      (document.body && (document.body.getAttribute('dir') || '').toLowerCase() === 'rtl') ||
+      getComputedStyle(track).direction === 'rtl';
+    track.style.transform = 'translate3d(' + (rtl ? offset : -offset) + 'px,0,0)';
+
+    var staticMode = maxIndex === 0;
+    slider.classList.toggle('is-static', staticMode);
+    if (prev) prev.disabled = staticMode || index <= 0;
+    if (next) next.disabled = staticMode || index >= maxIndex;
+  }
+
+  function bindSliders(root) {
+    if (!root) return;
+    root.querySelectorAll('.ghd-slider').forEach(function (slider) {
+      var track = slider.querySelector('.ghd-slider-track');
+      var prev = slider.querySelector('.ghd-slider-arrow--prev');
+      var next = slider.querySelector('.ghd-slider-arrow--next');
+      if (!track) return;
+
+      function move(delta) {
+        var index = parseInt(track.getAttribute('data-ghd-slider-index') || '0', 10) || 0;
+        track.setAttribute('data-ghd-slider-index', String(index + delta));
+        syncSlider(slider);
+      }
+
+      if (prev) {
+        prev.addEventListener('click', function (e) {
+          e.preventDefault();
+          move(-1);
+        });
+      }
+      if (next) {
+        next.addEventListener('click', function (e) {
+          e.preventDefault();
+          move(1);
+        });
+      }
+
+      var touching = false;
+      var startX = 0;
+      var startIndex = 0;
+      track.addEventListener(
+        'touchstart',
+        function (e) {
+          if (!e.touches || !e.touches.length) return;
+          touching = true;
+          startX = e.touches[0].clientX;
+          startIndex = parseInt(track.getAttribute('data-ghd-slider-index') || '0', 10) || 0;
+        },
+        { passive: true }
+      );
+      track.addEventListener(
+        'touchend',
+        function (e) {
+          if (!touching) return;
+          touching = false;
+          var endX = e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : startX;
+          var dx = endX - startX;
+          var rtl =
+            (document.documentElement.getAttribute('dir') || '').toLowerCase() === 'rtl' ||
+            getComputedStyle(track).direction === 'rtl';
+          if (Math.abs(dx) < 40) return;
+          if (rtl) {
+            track.setAttribute('data-ghd-slider-index', String(startIndex + (dx > 0 ? 1 : -1)));
+          } else {
+            track.setAttribute('data-ghd-slider-index', String(startIndex + (dx < 0 ? 1 : -1)));
+          }
+          syncSlider(slider);
+        },
+        { passive: true }
+      );
+
+      syncSlider(slider);
+      requestAnimationFrame(function () {
+        syncSlider(slider);
+      });
+      if (!window.__ghdSliderResizeBound) {
+        window.__ghdSliderResizeBound = true;
+        var t;
+        window.addEventListener('resize', function () {
+          clearTimeout(t);
+          t = setTimeout(function () {
+            document.querySelectorAll('.ghd-slider').forEach(syncSlider);
+          }, 120);
+        });
+      }
+    });
+  }
+
   function renderCatalog() {
     var grid = document.getElementById('ghd-catalog');
     var empty = document.getElementById('ghd-catalog-empty');
@@ -832,6 +971,11 @@
           return serviceFamily(s) === fam;
         });
         if (!items.length) return;
+        var cards = '';
+        items.forEach(function (svc) {
+          globalIdx += 1;
+          cards += svcCardHtml(svc, globalIdx - 1);
+        });
         html +=
           '<section class="ghd-family-block" data-family="' +
           escapeAttr(fam) +
@@ -850,12 +994,8 @@
               : items.length + (items.length === 1 ? ' item' : ' items')
           ) +
           '</p></div></header>' +
-          '<div class="ghd-family-grid">';
-        items.forEach(function (svc) {
-          globalIdx += 1;
-          html += svcCardHtml(svc, globalIdx - 1);
-        });
-        html += '</div></section>';
+          sliderShell(cards) +
+          '</section>';
       });
       grid.innerHTML = html;
     } else {
@@ -874,15 +1014,16 @@
             : list.length + (list.length === 1 ? ' item in this family' : ' items in this family')
         ) +
         '</p></div></header>' +
-        '<div class="ghd-family-grid">' +
-        list
-          .map(function (svc, idx) {
-            return svcCardHtml(svc, idx);
-          })
-          .join('') +
-        '</div>';
+        sliderShell(
+          list
+            .map(function (svc, idx) {
+              return svcCardHtml(svc, idx);
+            })
+            .join('')
+        );
     }
     bindCatalogCards(grid);
+    bindSliders(grid);
   }
 
   /* ---------- Packages ---------- */
