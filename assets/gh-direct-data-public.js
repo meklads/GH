@@ -128,7 +128,21 @@ window.GH_DIRECT = {
         },
         {
           "title": "تأكيد السعر والنطاق",
-          "body": "رقم نهائي معلن قبل أي التزام."
+          "body": "رقم واضح قبل أي التزام — بعد مراجعة المخطط والجدول."
+        },
+        {
+          "title": "خطة التسليم",
+          "body": "مراحل التنفيذ وموعد التسليم المتوقع."
+        }
+      ],
+      "nextStepsPublic": [
+        {
+          "title": "مراجعة خلال يوم عمل",
+          "body": "نراجع اختيارك ونطاق المشروع."
+        },
+        {
+          "title": "عرض سعر بعد الاجتماع",
+          "body": "نؤكد النطاق والسعر النهائي بعد فهم المخطط والجدول."
         },
         {
           "title": "خطة التسليم",
@@ -391,7 +405,21 @@ window.GH_DIRECT = {
         },
         {
           "title": "Confirm price and scope",
-          "body": "A published final figure before any commitment."
+          "body": "A clear figure before any commitment — after drawings and timeline review."
+        },
+        {
+          "title": "Delivery plan",
+          "body": "Execution phases and expected handoff."
+        }
+      ],
+      "nextStepsPublic": [
+        {
+          "title": "Review within one business day",
+          "body": "We review your selection and project scope."
+        },
+        {
+          "title": "Quote after the meeting",
+          "body": "We confirm scope and final pricing once we understand drawings and timeline."
         },
         {
           "title": "Delivery plan",

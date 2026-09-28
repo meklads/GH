@@ -215,6 +215,7 @@ ${analyticsHeadTags(P)}
 <link rel="stylesheet" href="${P}assets/site-header.css?v=57">
 <link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=34">
 <link rel="stylesheet" href="${P}assets/gh-float-widgets.css?v=8">
+<link rel="stylesheet" href="${P}assets/gh-sales-room.css?v=1">
 <style>
 .ie{--gold:#C9A84C;--ink:#0A0A0A;--paper:#FAFAF8;--muted:rgba(250,250,248,.68);background:#0A0A0A;color:var(--paper)}
 .ie-hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;isolation:isolate}
@@ -291,20 +292,111 @@ ${header}
     <div class="ie-grid">${points}</div>
   </section>
 
-  <section class="ie-section">
-    <h2>${t.proofTitle}</h2>
-    <p>${t.proofBody}</p>
-    <div class="ie-proof">
-      <img src="${P}${PROOF}" alt="${isEn ? 'MWL interactive maquette, Graphics House' : 'مجسم تفاعلي لرابطة العالم الإسلامي، Graphics House'}" loading="lazy">
+  <!-- GH_SALES_ROOM_START -->
+  <section class="pl-proof-early" id="proof-early" aria-label="${isEn ? 'From our work' : 'من أعمالنا'}">
+    <div class="pl-proof-early-inner">
+      <div class="pl-proof-early-media">
+        <img src="${P}${PROOF}" alt="${isEn ? 'MWL interactive maquette' : 'مجسم تفاعلي للرابطة'}" loading="lazy" width="960" height="720">
+      </div>
       <div>
-        <div class="ie-proof-links">
-          <a class="ie-btn ie-btn--ghost" href="${report}">${t.ctaReport}</a>
-          <a class="ie-btn ie-btn--ghost" href="${casestudy}">${t.ctaCase}</a>
-          <a class="ie-btn ie-btn--ghost" href="${jeddahCase}">${t.ctaJeddahCase}</a>
+        <span class="pl-proof-early-eyebrow">${isEn ? 'From our work' : 'من أعمالنا'}</span>
+        <h2>${t.proofTitle}</h2>
+        <p>${t.proofBody}</p>
+        <div class="pl-proof-early-meta">
+          <span>${isEn ? 'Compressed calendar' : 'جدول مضغوط'}</span>
+          <span>${isEn ? 'Interactive maquette' : 'مجسم تفاعلي'}</span>
+          <span>${isEn ? 'VIP acceptance' : 'قبول VIP'}</span>
+        </div>
+        <a class="pl-proof-early-link" href="${report}">${t.ctaReport}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pl-ladder-sec" id="readiness" aria-label="${isEn ? 'Event readiness ladder' : 'سلّم جاهزية الفعالية'}">
+    <div class="pl-ladder-head">
+      <span style="display:block;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(201,168,76,.75);margin-bottom:12px">${isEn ? 'Pick readiness depth' : 'اختر عمق الجاهزية'}</span>
+      <h2>${isEn ? 'Three levels — matched to your install window' : 'ثلاث درجات — حسب نافذة التركيب'}</h2>
+      <p>${isEn ? 'You do not need the full system on day one. We size scope against guest path and protocol date.' : 'لا حاجة للمنظومة كاملة من اليوم الأول. نضبط النطاق حسب مسار الضيف وموعد البروتوكول.'}</p>
+    </div>
+    <div class="pl-ladder-grid">
+      <article class="pl-ladder-card">
+        <span class="pl-ladder-num">01</span>
+        <h3>${isEn ? 'Briefing core' : 'نواة الإحاطة'}</h3>
+        <p class="pl-ladder-fit">${isEn ? 'When the date is near and the idea must stay sharp.' : 'عندما يقترب الموعد ويجب أن تبقى الفكرة حادة.'}</p>
+        <ul class="pl-ladder-outs">
+          <li>${isEn ? 'Concept lock + guest path' : 'قفل المفهوم + مسار الضيف'}</li>
+          <li>${isEn ? 'Hero maquette or screen focus' : 'مجسم أو شاشة بطلة'}</li>
+          <li>${isEn ? 'Acceptance checklist' : 'قائمة قبول'}</li>
+        </ul>
+        <p class="pl-ladder-time">${isEn ? 'Days, not months' : 'أيام لا أشهر'}</p>
+        <a href="${contact}" class="pl-btn-pill pl-btn-on-light" data-cta="ie-ladder-core" data-pl-tier="briefing-core">${isEn ? 'Start here' : 'ابدأ من هنا'}</a>
+      </article>
+      <article class="pl-ladder-card is-featured">
+        <span class="pl-ladder-num">02</span>
+        <h3>${isEn ? 'Protocol room' : 'قاعة بروتوكول'}</h3>
+        <p class="pl-ladder-fit">${isEn ? 'When VIP walkthroughs and press must hold.' : 'عندما يجب أن تصمد جولات VIP والصحافة.'}</p>
+        <ul class="pl-ladder-outs">
+          <li>${isEn ? 'Spatial install + lighting cues' : 'تركيب مكاني + إضاءة'}</li>
+          <li>${isEn ? 'Host program + fallback scenes' : 'برنامج مضيف + نسخ احتياطية'}</li>
+          <li>${isEn ? 'Rehearsal before first guest' : 'بروفة قبل الضيف الأول'}</li>
+        </ul>
+        <p class="pl-ladder-time">${isEn ? 'Aligned to VIP day' : 'مربوط بيوم VIP'}</p>
+        <a href="${contact}" class="pl-btn-pill pl-btn-on-light" data-cta="ie-ladder-protocol" data-pl-tier="protocol-room">${isEn ? 'Book protocol session' : 'احجز جلسة بروتوكول'}</a>
+      </article>
+      <article class="pl-ladder-card">
+        <span class="pl-ladder-num">03</span>
+        <h3>${isEn ? 'Full ProjectLaunch™' : 'منظومة ProjectLaunch™'}</h3>
+        <p class="pl-ladder-fit">${isEn ? 'Forum-scale: identity, film, catalogue, and room as one system.' : 'نطاق ملتقى: هوية وفيلم وكتالوج وقاعة كمنظومة واحدة.'}</p>
+        <ul class="pl-ladder-outs">
+          <li>${isEn ? 'Concept to install under one studio' : 'من المفهوم للتركيب تحت سقف واحد'}</li>
+          <li>${isEn ? 'Press + commemorative layer' : 'طبقة صحافة وتذكار'}</li>
+          <li>${isEn ? 'Linked case-study trail' : 'مسار دراسات حالة مترابط'}</li>
+        </ul>
+        <p class="pl-ladder-time">${isEn ? 'Set after readiness review' : 'يُحدَّد بعد تقييم الجاهزية'}</p>
+        <a href="${fullPl}" class="pl-btn-pill pl-btn-on-light" data-cta="ie-ladder-full" data-pl-tier="full-system">${isEn ? 'Explore ProjectLaunch™' : 'استكشف ProjectLaunch™'}</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="pl-assess-host" id="assess">
+    <div class="pl-assess-host-inner">
+      <div class="pl-assess-head">
+        <h2>${isEn ? 'Is the room ready for VIP day?' : 'هل القاعة جاهزة ليوم VIP؟'}</h2>
+        <p>${isEn ? 'Five yes/no answers reveal whether the gap is concept, install, or full system.' : 'خمس إجابات تكشف إن كانت الفجوة في المفهوم أو التركيب أو المنظومة.'}</p>
+      </div>
+      <div class="pl-assess" data-pl-assess data-lang="${isEn ? 'en' : 'ar'}">
+        <ul class="pl-assess-list">
+          <li class="pl-assess-item" data-gap="identity">
+            <div class="pl-assess-item-row"><span class="q">1</span><div><p class="pl-assess-qtext">${isEn ? 'Is the exhibition concept owned by one studio — not stitched vendors?' : 'هل مفهوم المعرض عند استوديو واحد — لا موردين مجمّعين؟'}</p></div></div>
+            <div class="pl-assess-btns"><button type="button" data-ans="yes">${isEn ? 'Yes' : 'نعم'}</button><button type="button" data-ans="no">${isEn ? 'No' : 'لا'}</button></div>
+          </li>
+          <li class="pl-assess-item" data-gap="content">
+            <div class="pl-assess-item-row"><span class="q">2</span><div><p class="pl-assess-qtext">${isEn ? 'Can leadership brief initiatives from the room in under five minutes?' : 'هل تستطيع القيادة شرح المبادرات من القاعة في أقل من خمس دقائق؟'}</p></div></div>
+            <div class="pl-assess-btns"><button type="button" data-ans="yes">${isEn ? 'Yes' : 'نعم'}</button><button type="button" data-ans="no">${isEn ? 'No' : 'لا'}</button></div>
+          </li>
+          <li class="pl-assess-item" data-gap="gallery">
+            <div class="pl-assess-item-row"><span class="q">3</span><div><p class="pl-assess-qtext">${isEn ? 'Are lighting cues and fallback scenes rehearsed before first guest?' : 'هل بروفة الإضاءة والنسخ الاحتياطية تتم قبل الضيف الأول؟'}</p></div></div>
+            <div class="pl-assess-btns"><button type="button" data-ans="yes">${isEn ? 'Yes' : 'نعم'}</button><button type="button" data-ans="no">${isEn ? 'No' : 'لا'}</button></div>
+          </li>
+          <li class="pl-assess-item" data-gap="system">
+            <div class="pl-assess-item-row"><span class="q">4</span><div><p class="pl-assess-qtext">${isEn ? 'Is maquette, screens, and décor in one handover pack?' : 'هل المجسم والشاشات والديكور في حزمة تسليم واحدة؟'}</p></div></div>
+            <div class="pl-assess-btns"><button type="button" data-ans="yes">${isEn ? 'Yes' : 'نعم'}</button><button type="button" data-ans="no">${isEn ? 'No' : 'لا'}</button></div>
+          </li>
+          <li class="pl-assess-item" data-gap="system">
+            <div class="pl-assess-item-row"><span class="q">5</span><div><p class="pl-assess-qtext">${isEn ? 'Is the install window protected from vendor handoff delays?' : 'هل نافذة التركيب محمية من تأخير تسليمات المقاولين؟'}</p></div></div>
+            <div class="pl-assess-btns"><button type="button" data-ans="yes">${isEn ? 'Yes' : 'نعم'}</button><button type="button" data-ans="no">${isEn ? 'No' : 'لا'}</button></div>
+          </li>
+        </ul>
+        <div class="pl-assess-result" data-pl-assess-result hidden>
+          <h3 data-pl-assess-title></h3>
+          <p data-pl-assess-body></p>
+          <ul class="pl-assess-gaps" data-pl-assess-gaps></ul>
+          <a href="${contact}" class="pl-btn-pill pl-btn-on-light" data-cta="ie-assess" data-pl-assess-cta data-pl-tier="assess">${t.ctaPrimary}</a>
         </div>
       </div>
     </div>
   </section>
+  <!-- GH_SALES_ROOM_END -->
 
   <section class="ie-section">
     <h2>${t.servicesTitle}</h2>
@@ -327,7 +419,13 @@ ${header}
   </section>
 </main>
 ${footer}
+<script defer src="${P}assets/gh-sales-room.js?v=1"></script>
 <script defer src="${P}assets/gh-float-widgets.js?v=8"></script>
+<script>
+(function(){if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(el){el.style.opacity=1;el.style.transform='none';});return;}
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');e.target.style.opacity=1;e.target.style.transform='none';io.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});})();
+</script>
 <script>
 if(window.gtag){gtag('event','solution_view',{solution_id:'institutional-events',page_path:location.pathname});}
 </script>

@@ -727,12 +727,16 @@
 
   function renderNextSteps() {
     var host = document.getElementById('ghd-next-steps');
-    if (!host || !ui.nextSteps || !ui.nextSteps.length) return;
+    var steps =
+      hidePrices && ui.nextStepsPublic && ui.nextStepsPublic.length
+        ? ui.nextStepsPublic
+        : ui.nextSteps;
+    if (!host || !steps || !steps.length) return;
     host.innerHTML =
       '<h3 class="ghd-next-title">' +
       escapeHtml(ui.nextTitle || '') +
       '</h3><ol class="ghd-next-list">' +
-      ui.nextSteps
+      steps
         .map(function (step, i) {
           return (
             '<li><span class="ghd-next-num">' +
