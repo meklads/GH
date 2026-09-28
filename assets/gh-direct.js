@@ -398,15 +398,15 @@
     var prefix = assetPrefix || '';
     var portfolioHref = prefix + (lang === 'ar' ? 'portfolio.html' : 'portfolio-en.html');
     var casesHref = prefix + (lang === 'ar' ? 'casestudy1.html' : 'casestudy1-en.html');
-    var slideHtml = items
+    var slides = items
       .map(function (item) {
         return (
-          '<figure class="ghd-proof-slide">' +
+          '<figure class="ghd-proof-slide ghd-slider-item">' +
           '<img src="' +
           escapeAttr(mediaUrl(item.src)) +
           '" alt="' +
           escapeAttr(t(item.caption)) +
-          '" loading="lazy" decoding="async" width="320" height="180">' +
+          '" loading="lazy" decoding="async" width="480" height="360">' +
           '<figcaption>' +
           escapeHtml(t(item.caption)) +
           '</figcaption></figure>'
@@ -422,10 +422,8 @@
       '<div class="ghd-proof-album" aria-label="' +
       escapeAttr(ui.proofTitle || '') +
       '">' +
-      '<div class="ghd-proof-frame">' +
-      '<div class="ghd-proof-track" id="ghd-proof-track">' +
-      slideHtml +
-      '</div></div></div>' +
+      sliderShell(slides) +
+      '</div>' +
       '<div class="ghd-proof-actions">' +
       '<a class="ghd-proof-btn ghd-proof-btn--solid" href="' +
       escapeAttr(portfolioHref) +
@@ -438,6 +436,7 @@
       escapeHtml(ui.proofCases || '') +
       ' <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span></a>' +
       '</div>';
+    bindSliders(host);
   }
 
   function renderAtelierEntry() {
@@ -774,7 +773,7 @@
     var unpriced = svc.price == null || svc.priceLabel === 'contact';
     var fam = serviceFamily(svc);
     return (
-      '<button type="button" class="ghd-svc-card" data-service-id="' +
+      '<button type="button" class="ghd-svc-card ghd-slider-item" data-service-id="' +
       escapeAttr(svc.id) +
       '" data-family="' +
       escapeAttr(fam) +
@@ -842,7 +841,10 @@
     var prev = slider.querySelector('.ghd-slider-arrow--prev');
     var next = slider.querySelector('.ghd-slider-arrow--next');
     if (!viewport || !track) return;
-    var cards = track.querySelectorAll('.ghd-svc-card');
+    var cards = track.querySelectorAll('.ghd-svc-card, .ghd-proof-slide, .ghd-slider-item');
+    if (!cards.length) {
+      cards = track.children;
+    }
     var count = cards.length;
     var visible = sliderVisibleCount(viewport);
     var maxIndex = Math.max(0, count - visible);
