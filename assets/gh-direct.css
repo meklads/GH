@@ -596,8 +596,14 @@ html[dir='ltr'] .ghd-hero-rule {
 .ghd-family-head--active {
   margin-bottom: 18px;
 }
-.ghd-catalog--flat .ghd-family-grid {
-  margin-top: 0;
+.ghd-catalog--rail {
+  display: block;
+}
+.ghd-family-head--rail {
+  margin-bottom: 14px;
+}
+.ghd-catalog--rail .ghd-slider {
+  margin-top: 4px;
 }
 .ghd-svc-chip {
   position: absolute;
