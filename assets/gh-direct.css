@@ -1940,6 +1940,8 @@ body.ghd-modal-open { overflow: hidden; }
   display: block;
 }
 .ghd-proof-slide img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
