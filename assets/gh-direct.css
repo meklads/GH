@@ -2617,7 +2617,7 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   position: absolute;
   top: -12px;
   left: 50%;
-  inset-inline-start: auto;
+  right: auto;
   transform: translateX(-50%);
   z-index: 3;
   white-space: nowrap;
@@ -2630,6 +2630,7 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   background: var(--ghd-gold);
   color: #141414;
   box-shadow: 0 6px 16px rgba(201, 168, 76, 0.28);
+  pointer-events: none;
 }
 
 .ghd-pkg-top {
