@@ -282,8 +282,8 @@ body:has(.nav-mega-item.is-open) .gh-float {
     justify-content: center !important;
     height: var(--gh-chrome-h);
     min-height: var(--gh-chrome-h);
-    padding: 3px 5px !important;
-    gap: 1px !important;
+    padding: 3px 16px !important;
+    gap: 2px !important;
     border-radius: 999px;
     border: 1px solid var(--gh-chrome-border);
     background:
@@ -467,7 +467,7 @@ body:has(.nav-mega-item.is-open) .gh-float {
     gap: 0 10px;
   }
   .header .nav {
-    padding: 2px !important;
+    padding: 3px 14px !important;
   }
   html[dir="ltr"] .nav-link,
   html[dir="ltr"] .nav button.nav-link {
@@ -537,7 +537,7 @@ body:has(.nav-mega-item.is-open) .gh-float {
   html[dir="ltr"] .nav,
   html[dir="rtl"] .nav {
     gap: 2px !important;
-    padding: 4px !important;
+    padding: 4px 18px !important;
   }
   html[dir="ltr"] .nav-cta {
     padding: 11px 24px !important;
