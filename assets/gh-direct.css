@@ -363,6 +363,17 @@ html[dir='ltr'] .ghd-hero-rule {
   color: rgba(20, 20, 20, 0.55);
   text-align: center;
 }
+.ghd-pkg-stage-line--hero {
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ghd-ink, #141414);
+  margin: 4px 0 8px;
+}
+.ghd-pkg--featured .ghd-pkg-stage-line--hero {
+  color: #f5f0e4;
+}
 .ghd-pkg--featured .ghd-pkg-stage-line {
   color: rgba(245, 245, 243, 0.62);
 }
@@ -3597,6 +3608,26 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   font-size: 12.5px;
   letter-spacing: 0.02em;
   margin-bottom: 16px;
+}
+.ghd-pkg-stage-line--hero {
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+  letter-spacing: -0.015em;
+  margin-bottom: 10px;
+}
+.ghd-total-box--briefonly .ghd-total-briefs {
+  margin-top: 0;
+  min-height: 0;
+}
+.ghd-total-box--briefonly .ghd-total-briefs-head {
+  margin-bottom: 14px;
+}
+.ghd-total-box--briefonly .ghd-total-hint {
+  margin-top: 16px;
+}
+.ghd-page--public .ghd-svc-card .ghd-price {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 .ghd-pkg-price-main {
   font-size: clamp(2.55rem, 4.2vw, 3.15rem);

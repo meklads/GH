@@ -172,7 +172,7 @@
   }
 
   function priceText(svc) {
-    if (hidePrices) return publicPriceLabel();
+    if (hidePrices) return '';
     if (svc.priceLabel === 'scope') {
       if (svc.price != null && typeof svc.price === 'number') {
         return (
@@ -617,26 +617,32 @@
         '</span></h3>';
 
       var stageEl = pkg.stageLine
-        ? '<p class="ghd-pkg-stage-line">' + escapeHtml(t(pkg.stageLine)) + '</p>'
+        ? '<p class="ghd-pkg-stage-line' +
+          (hidePrices ? ' ghd-pkg-stage-line--hero' : '') +
+          '">' +
+          escapeHtml(t(pkg.stageLine)) +
+          '</p>'
         : '';
 
       var isQuote = isQuotePkg(pkg) || hidePrices;
 
-      var priceBlock = isQuote
-        ? '<div class="ghd-pkg-priceblock ghd-pkg-priceblock--quote">' +
-          '<span class="ghd-pkg-price-main ghd-pkg-price-main--quote">' +
-          escapeHtml(publicPriceLabel()) +
-          '</span></div>'
-        : '<div class="ghd-pkg-priceblock">' +
-          '<span class="ghd-pkg-price-from">' +
-          escapeHtml(ui.from) +
-          '</span>' +
-          '<span class="ghd-pkg-price-main">' +
-          escapeHtml(formatNum(pkg.price)) +
-          '</span>' +
-          '<span class="ghd-pkg-price-suffix">' +
-          escapeHtml(currency) +
-          '</span></div>';
+      var priceBlock = hidePrices
+        ? ''
+        : isQuote
+          ? '<div class="ghd-pkg-priceblock ghd-pkg-priceblock--quote">' +
+            '<span class="ghd-pkg-price-main ghd-pkg-price-main--quote">' +
+            escapeHtml(ui.scopePrice || '') +
+            '</span></div>'
+          : '<div class="ghd-pkg-priceblock">' +
+            '<span class="ghd-pkg-price-from">' +
+            escapeHtml(ui.from) +
+            '</span>' +
+            '<span class="ghd-pkg-price-main">' +
+            escapeHtml(formatNum(pkg.price)) +
+            '</span>' +
+            '<span class="ghd-pkg-price-suffix">' +
+            escapeHtml(currency) +
+            '</span></div>';
 
       var lines = '';
       if (pkg.includedLines && pkg.includedLines.length) {
@@ -820,9 +826,9 @@
       escapeHtml(t(svc.description)) +
       '</p>' +
       '<div class="ghd-price' +
-      (unpriced ? ' ghd-price-contact' : '') +
+      (hidePrices || unpriced ? ' ghd-price-contact' : '') +
       '">' +
-      escapeHtml(priceText(svc)) +
+      escapeHtml(hidePrices ? ui.tapForMore || '' : priceText(svc)) +
       '</div></div></button>'
     );
   }
@@ -1234,13 +1240,15 @@
     if (!svc) return '';
     var on = addonState[pkg.id].has(id);
     var unpriced = isNonLumpService(svc) && !isMeterPriced(svc);
-    var meta = unpriced
-      ? ui.unpricedNote
-      : priceText(svc);
+    var meta = hidePrices
+      ? ''
+      : unpriced
+        ? ui.unpricedNote
+        : priceText(svc);
     return (
       '<button type="button" class="ghd-addon' +
       (on ? ' is-on' : '') +
-      (unpriced ? ' ghd-addon--contact' : '') +
+      (unpriced && !hidePrices ? ' ghd-addon--contact' : '') +
       '" data-addon="' +
       escapeAttr(id) +
       '" data-pkg="' +
@@ -1252,9 +1260,9 @@
       escapeHtml(t(svc.name)) +
       '</span>' +
       '<span class="ghd-addon-foot">' +
-      '<span class="ghd-addon-meta">' +
-      escapeHtml(meta) +
-      '</span>' +
+      (meta
+        ? '<span class="ghd-addon-meta">' + escapeHtml(meta) + '</span>'
+        : '') +
       '<span class="ghd-addon-toggle">' +
       escapeHtml(on ? ui.added : ui.add) +
       '</span></span></button>'
@@ -1295,6 +1303,11 @@
       );
     }
     var note = svc.atelierNote ? t(svc.atelierNote) : t(svc.description);
+    var priceLine = hidePrices
+      ? ''
+      : '<p class="ghd-total-brief-price">' +
+        escapeHtml(priceText(svc)) +
+        '</p>';
     return (
       '<div class="ghd-total-briefs-head">' +
       escapeHtml(ui.atelierBriefLabel || '') +
@@ -1305,9 +1318,8 @@
       '<h4 class="ghd-total-brief-title">' +
       escapeHtml(t(svc.name)) +
       '</h4>' +
-      '<p class="ghd-total-brief-price">' +
-      escapeHtml(priceText(svc)) +
-      '</p></div>' +
+      priceLine +
+      '</div>' +
       '<p class="ghd-total-brief-body">' +
       escapeHtml(note) +
       '</p></article></div>'
@@ -1315,21 +1327,26 @@
   }
 
   function totalBoxHtml(pkg, tot) {
-    var extraLis = tot.unpriced
-      .map(function (s) {
-        return (
-          '<li>+ ' +
-          escapeHtml(t(s.name)) +
-          ' — ' +
-          escapeHtml(addonExtraLine(s)) +
-          '</li>'
-        );
-      })
-      .join('');
+    var extraLis =
+      hidePrices
+        ? ''
+        : tot.unpriced
+            .map(function (s) {
+              return (
+                '<li>+ ' +
+                escapeHtml(t(s.name)) +
+                ' — ' +
+                escapeHtml(addonExtraLine(s)) +
+                '</li>'
+              );
+            })
+            .join('');
     var value = formatEstimateValue(tot, pkg);
-    var hintText = tot.hasRange
-      ? ui.rangeInTotal || ui.totalNote || ''
-      : ui.totalNote || '';
+    var hintText = hidePrices
+      ? ui.packagesFoot || ui.totalNote || ''
+      : tot.hasRange
+        ? ui.rangeInTotal || ui.totalNote || ''
+        : ui.totalNote || '';
     var briefs =
       isBuilder(pkg)
         ? '<div class="ghd-total-briefs" data-total-briefs="' +
@@ -1338,19 +1355,23 @@
           selectedBriefsHtml(pkg) +
           '</div>'
         : '';
+    var priceblock = hidePrices
+      ? ''
+      : '<div class="ghd-total-priceblock">' +
+        '<p class="ghd-total-label">' +
+        escapeHtml(ui.total) +
+        '</p>' +
+        '<p class="ghd-total-value">' +
+        escapeHtml(value) +
+        '</p></div>';
     return (
       '<div class="ghd-total-box' +
       (isBuilder(pkg) ? ' ghd-total-box--atelier' : '') +
+      (hidePrices ? ' ghd-total-box--briefonly' : '') +
       '" data-total-for="' +
       escapeAttr(pkg.id) +
       '">' +
-      '<div class="ghd-total-priceblock">' +
-      '<p class="ghd-total-label">' +
-      escapeHtml(ui.total) +
-      '</p>' +
-      '<p class="ghd-total-value">' +
-      escapeHtml(value) +
-      '</p></div>' +
+      priceblock +
       briefs +
       (extraLis ? '<ul class="ghd-total-extra">' + extraLis + '</ul>' : '') +
       '<p class="ghd-total-hint">' +
@@ -1664,8 +1685,15 @@
     if (title) title.textContent = t(svc.name);
     if (desc) desc.textContent = t(svc.description);
     if (price) {
-      price.textContent = priceText(svc);
-      price.className = 'ghd-price' + (svc.price == null || svc.priceLabel === 'contact' ? ' ghd-price-contact' : '');
+      if (hidePrices) {
+        price.textContent = ui.tapForMore || '';
+        price.className = 'ghd-price ghd-price-contact';
+      } else {
+        price.textContent = priceText(svc);
+        price.className =
+          'ghd-price' +
+          (svc.price == null || svc.priceLabel === 'contact' ? ' ghd-price-contact' : '');
+      }
     }
     if (ph) {
       ph.textContent = svc.media && svc.media.placeholder ? ui.placeholder : '';
@@ -1677,8 +1705,7 @@
           ? 'مرحباً، أود الاستفسار عن خدمة من GH Direct:\n\n'
           : 'Hello — I want to ask about a GH Direct service:\n\n') +
         t(svc.name) +
-        ' — ' +
-        priceText(svc);
+        (hidePrices ? '' : ' — ' + priceText(svc));
       var inCompose = addonState.custom && addonState.custom.has(id);
       actions.innerHTML =
         '<button type="button" class="ghd-cta ghd-cta--solid" data-svc-request="' +
@@ -1766,7 +1793,7 @@
           : 0;
       var unpriced = priced ? [] : [svc];
       var lines = [
-        t(svc.name) + ' — ' + priceText(svc),
+        t(svc.name) + (hidePrices ? '' : ' — ' + priceText(svc)),
         ui.total +
           ': ' +
           (hidePrices
@@ -1777,6 +1804,9 @@
                 ? priceText(svc)
                 : ui.contactPrice),
       ];
+      if (hidePrices) {
+        lines = [t(svc.name)];
+      }
       return {
         text: lines.join('\n'),
         tot: { priced: priced, unpriced: unpriced },
@@ -1805,7 +1835,7 @@
         lines.push(ui.emptyBuilder);
       }
     } else if (isQuotePkg(pkg) || hidePrices) {
-      lines.push(t(pkg.name) + ' — ' + (ui.scopePrice || ui.requestQuote || ''));
+      lines.push(t(pkg.name) + (hidePrices ? '' : ' — ' + (ui.scopePrice || ui.requestQuote || '')));
     } else {
       lines.push(t(pkg.name) + ' — ' + ui.from + ' ' + formatNum(pkg.price) + ' ' + currency);
     }
@@ -1826,8 +1856,6 @@
               currency
             : formatNum(tot.priced) + ' ' + currency)
       );
-    } else if (hidePrices && !(isBuilder(pkg) && addonState[pkgId].size === 0)) {
-      lines.push(ui.total + ': ' + publicPriceLabel());
     }
     tot.unpriced.forEach(function (s) {
       lines.push('+ ' + t(s.name) + ' — ' + addonExtraLine(s));
