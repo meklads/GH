@@ -1146,6 +1146,21 @@
       });
   }
 
+  function isMeterPriced(svc) {
+    return !!(svc && svc.unit === 'area');
+  }
+
+  function isNonLumpService(svc) {
+    return (
+      !svc ||
+      svc.price == null ||
+      typeof svc.price !== 'number' ||
+      isNaN(svc.price) ||
+      svc.priceLabel === 'contact' ||
+      isMeterPriced(svc)
+    );
+  }
+
   function isQuotePkg(pkg) {
     return (
       !!pkg &&
@@ -1161,7 +1176,7 @@
     selected.forEach(function (id) {
       var svc = serviceById[id];
       if (!svc) return;
-      if (svc.price == null || typeof svc.price !== 'number' || isNaN(svc.price) || svc.priceLabel === 'contact') {
+      if (isNonLumpService(svc)) {
         unpriced.push(svc);
       } else {
         priced += svc.price;
@@ -1175,12 +1190,10 @@
     var svc = serviceById[id];
     if (!svc) return '';
     var on = addonState[pkg.id].has(id);
-    var unpriced = svc.price == null || svc.priceLabel === 'contact';
+    var unpriced = isNonLumpService(svc) && !isMeterPriced(svc);
     var meta = unpriced
       ? ui.unpricedNote
-      : svc.priceTo != null && typeof svc.priceTo === 'number'
-        ? formatNum(svc.price) + '–' + formatNum(svc.priceTo) + ' ' + currency
-        : formatNum(svc.price) + ' ' + currency;
+      : priceText(svc);
     return (
       '<button type="button" class="ghd-addon' +
       (on ? ' is-on' : '') +
@@ -1205,6 +1218,14 @@
     );
   }
 
+  function addonExtraLine(svc) {
+    if (!svc) return ui.unpricedLine;
+    if (svc.price != null && typeof svc.price === 'number' && !isNaN(svc.price)) {
+      return priceText(svc);
+    }
+    return ui.unpricedLine;
+  }
+
   function totalBoxHtml(pkg, tot) {
     var empty =
       isBuilder(pkg) && addonState[pkg.id].size === 0
@@ -1216,7 +1237,7 @@
           '<li>+ ' +
           escapeHtml(t(s.name)) +
           ' — ' +
-          escapeHtml(ui.unpricedLine) +
+          escapeHtml(addonExtraLine(s)) +
           '</li>'
         );
       })
@@ -1398,7 +1419,7 @@
             '<li>+ ' +
             escapeHtml(t(s.name)) +
             ' — ' +
-            escapeHtml(ui.unpricedLine) +
+            escapeHtml(addonExtraLine(s)) +
             '</li>'
           );
         })
@@ -1652,13 +1673,22 @@
       var svc = serviceById[sid];
       if (!svc) return { text: '', tot: null, addons: [], kind: 'service' };
       var priced =
-        svc.price != null && typeof svc.price === 'number' && svc.priceLabel !== 'contact'
+        svc.price != null &&
+        typeof svc.price === 'number' &&
+        svc.priceLabel !== 'contact' &&
+        !isMeterPriced(svc)
           ? svc.price
           : 0;
       var unpriced = priced ? [] : [svc];
       var lines = [
         t(svc.name) + ' — ' + priceText(svc),
-        ui.total + ': ' + (priced ? formatNum(priced) + ' ' + currency : ui.contactPrice),
+        ui.total +
+          ': ' +
+          (priced
+            ? formatNum(priced) + ' ' + currency
+            : isMeterPriced(svc)
+              ? priceText(svc)
+              : ui.contactPrice),
       ];
       return {
         text: lines.join('\n'),
@@ -1696,7 +1726,7 @@
       lines.push(ui.total + ': ' + formatNum(tot.priced) + ' ' + currency);
     }
     tot.unpriced.forEach(function (s) {
-      lines.push('+ ' + t(s.name) + ' — ' + ui.unpricedLine);
+      lines.push('+ ' + t(s.name) + ' — ' + addonExtraLine(s));
     });
     return { text: lines.join('\n'), tot: tot, addons: names, pkg: pkg, kind: 'package' };
   }
