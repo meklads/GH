@@ -509,20 +509,14 @@
     }
     var tot = computeTotal(pkg);
     var selCount = addonState[pkg.id] ? addonState[pkg.id].size : 0;
-    var steps =
-      '<ol class="ghd-atelier-steps" aria-label="' +
-      escapeAttr(ui.builderBadge || '') +
-      '">' +
-      '<li><span>01</span>' +
-      escapeHtml(ui.atelierStep1 || '') +
-      '</li>' +
-      '<li><span>02</span>' +
-      escapeHtml(ui.atelierStep2 || '') +
-      '</li>' +
-      '<li><span>03</span>' +
-      escapeHtml(ui.atelierStep3 || '') +
-      '</li></ol>';
     host.innerHTML =
+      '<div class="ghd-ticket-stub" aria-hidden="true">' +
+      '<span class="ghd-ticket-stub__code">GH · ATELIER</span>' +
+      '<span class="ghd-ticket-stub__cut"></span>' +
+      '<span class="ghd-ticket-stub__hint">' +
+      escapeHtml(ui.builderBadge || '') +
+      '</span></div>' +
+      '<div class="ghd-ticket-main">' +
       '<header class="ghd-atelier-head">' +
       '<div class="ghd-atelier-head-copy">' +
       '<p class="ghd-atelier-kicker">' +
@@ -534,23 +528,23 @@
       '<p class="ghd-atelier-lead">' +
       escapeHtml(ui.atelierLead || t(pkg.tagline)) +
       '</p>' +
-      steps +
-      '</div>' +
-      '<p class="ghd-atelier-mark" aria-hidden="true">Atelier</p>' +
-      '</header>' +
+      '<ol class="ghd-atelier-steps">' +
+      '<li><span>1</span>' +
+      escapeHtml(ui.atelierStep1 || '') +
+      '</li>' +
+      '<li><span>2</span>' +
+      escapeHtml(ui.atelierStep2 || '') +
+      '</li>' +
+      '<li><span>3</span>' +
+      escapeHtml(ui.atelierStep3 || '') +
+      '</li></ol>' +
+      '</div></header>' +
       '<div class="ghd-atelier-body">' +
       '<div class="ghd-atelier-main">' +
       '<div class="ghd-atelier-stage">' +
       composeGroupsHtml(pkg) +
       '</div></div>' +
       '<aside class="ghd-atelier-rail">' +
-      '<div class="ghd-price-drivers" aria-label="' +
-      escapeAttr(ui.priceDriversTitle || '') +
-      '"><strong>' +
-      escapeHtml(ui.priceDriversTitle || '') +
-      '</strong><p>' +
-      escapeHtml(ui.priceDrivers || '') +
-      '</p></div>' +
       totalBoxHtml(pkg, tot) +
       '<div class="ghd-atelier-ctas">' +
       '<button type="button" class="ghd-cta ghd-cta--primary ghd-atelier-cta" data-lead-pkg="' +
@@ -570,7 +564,15 @@
           escapeHtml(ui.selectedCount || '') +
           '</span>'
         : '') +
-      '</div></aside></div>';
+      '</div>' +
+      '<p class="ghd-atelier-note">' +
+      escapeHtml(
+        ui.packagesFoot ||
+          (lang === 'ar'
+            ? 'السعر النهائي يُحدَّد بعد الاجتماع'
+            : 'Final price is set after the meeting')
+      ) +
+      '</p></aside></div></div>';
     bindAtelierControls(host);
   }
 
@@ -633,8 +635,8 @@
         escapeHtml(
           ui.packagesFoot ||
             (lang === 'ar'
-              ? 'السعر تقديري، يُثبَّت عند التأكيد النهائي'
-              : 'Price is indicative and locked at final confirmation')
+              ? 'السعر النهائي يُحدَّد بعد الاجتماع'
+              : 'Final price is set after the meeting')
         ) +
         '</p>';
 
@@ -719,7 +721,7 @@
     return 'sales';
   }
 
-  var catalogFilter = 'viz';
+  var catalogFilter = 'all';
 
   function filteredServices() {
     if (catalogFilter === 'all') return DATA.services.slice();
@@ -731,9 +733,11 @@
   function renderCatalogFilters() {
     var host = document.getElementById('ghd-catalog-filters');
     if (!host) return;
-    var items = FAMILY_ORDER.map(function (id) {
-      return { id: id, label: familyLabel(id, false) };
-    }).concat([{ id: 'all', label: ui.filterAll || (lang === 'ar' ? 'الكل' : 'All') }]);
+    var items = [{ id: 'all', label: ui.filterAll || (lang === 'ar' ? 'الكل' : 'All') }].concat(
+      FAMILY_ORDER.map(function (id) {
+        return { id: id, label: familyLabel(id, false) };
+      })
+    );
     host.innerHTML = items
       .map(function (item) {
         return (
@@ -752,7 +756,7 @@
       .join('');
     host.querySelectorAll('[data-ghd-filter]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        catalogFilter = btn.getAttribute('data-ghd-filter') || 'viz';
+        catalogFilter = btn.getAttribute('data-ghd-filter') || 'all';
         renderCatalogFilters();
         renderCatalog();
         var section = document.getElementById('catalog');
