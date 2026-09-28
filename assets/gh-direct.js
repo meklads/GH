@@ -1170,6 +1170,7 @@
 
   function computeTotal(pkg) {
     var priced = isBuilder(pkg) ? 0 : isQuotePkg(pkg) ? 0 : Number(pkg.price) || 0;
+    var pricedTo = priced;
     var unpriced = [];
     var hasRange = false;
     var selected = addonState[pkg.id];
@@ -1180,10 +1181,31 @@
         unpriced.push(svc);
       } else {
         priced += svc.price;
-        if (svc.priceTo != null && typeof svc.priceTo === 'number') hasRange = true;
+        if (svc.priceTo != null && typeof svc.priceTo === 'number') {
+          pricedTo += svc.priceTo;
+          hasRange = true;
+        } else {
+          pricedTo += svc.price;
+        }
       }
     });
-    return { priced: priced, unpriced: unpriced, hasRange: hasRange };
+    if (!hasRange) pricedTo = priced;
+    return { priced: priced, pricedTo: pricedTo, unpriced: unpriced, hasRange: hasRange };
+  }
+
+  function formatEstimateValue(tot, pkg) {
+    if (isBuilder(pkg) && addonState[pkg.id].size === 0) return '—';
+    if (tot.hasRange && tot.pricedTo != null && tot.pricedTo !== tot.priced) {
+      return (
+        (ui.from ? ui.from + ' ' : '') +
+        formatNum(tot.priced) +
+        ' – ' +
+        formatNum(tot.pricedTo) +
+        ' ' +
+        currency
+      );
+    }
+    return formatNum(tot.priced) + ' ' + currency;
   }
 
   function addonRowHtml(pkg, id) {
@@ -1242,12 +1264,9 @@
         );
       })
       .join('');
-    var value =
-      isBuilder(pkg) && addonState[pkg.id].size === 0
-        ? '—'
-        : formatNum(tot.priced) + ' ' + currency;
+    var value = formatEstimateValue(tot, pkg);
     var hintText = tot.hasRange
-      ? (ui.rangeInTotal || '') + ' · ' + (ui.totalNote || '')
+      ? ui.rangeInTotal || ui.totalNote || ''
       : ui.totalNote || '';
     return (
       '<div class="ghd-total-box" data-total-for="' +
@@ -1388,10 +1407,7 @@
     if (!box) return;
     var val = box.querySelector('.ghd-total-value');
     if (val) {
-      val.textContent =
-        isBuilder(pkg) && addonState[pkgId].size === 0
-          ? '—'
-          : formatNum(tot.priced) + ' ' + currency;
+      val.textContent = formatEstimateValue(tot, pkg);
     }
     var emptyEl = box.querySelector('.ghd-total-empty');
     if (isBuilder(pkg) && addonState[pkgId].size === 0) {
@@ -1430,7 +1446,7 @@
     var hintEl = box.querySelector('.ghd-total-hint');
     if (hintEl) {
       hintEl.textContent = tot.hasRange
-        ? (ui.rangeInTotal || '') + ' · ' + (ui.totalNote || '')
+        ? ui.rangeInTotal || ui.totalNote || ''
         : ui.totalNote || '';
     }
     var ctas = card.querySelector('.ghd-atelier-ctas');
@@ -1723,7 +1739,18 @@
       lines.push(t(pkg.name) + ' — ' + ui.from + ' ' + formatNum(pkg.price) + ' ' + currency);
     }
     if (!(isBuilder(pkg) && addonState[pkgId].size === 0) && !isQuotePkg(pkg)) {
-      lines.push(ui.total + ': ' + formatNum(tot.priced) + ' ' + currency);
+      lines.push(
+        ui.total +
+          ': ' +
+          (tot.hasRange && tot.pricedTo != null && tot.pricedTo !== tot.priced
+            ? (ui.from ? ui.from + ' ' : '') +
+              formatNum(tot.priced) +
+              ' – ' +
+              formatNum(tot.pricedTo) +
+              ' ' +
+              currency
+            : formatNum(tot.priced) + ' ' + currency)
+      );
     }
     tot.unpriced.forEach(function (s) {
       lines.push('+ ' + t(s.name) + ' — ' + addonExtraLine(s));
