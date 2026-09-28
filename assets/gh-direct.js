@@ -26,6 +26,14 @@
   var ui = DATA.ui[lang];
   var currency = DATA.currency[lang];
   var assetPrefix = document.body.getAttribute('data-ghd-prefix') || '';
+  var hidePrices = document.body.getAttribute('data-ghd-hide-prices') === '1';
+  if (hidePrices) {
+    document.body.classList.add('ghd-hide-prices');
+  }
+
+  function publicPriceLabel() {
+    return ui.scopePrice || ui.onRequest || ui.contactPrice || '';
+  }
 
   function loadTurnstile(cb) {
     if (window.turnstile) {
@@ -164,6 +172,7 @@
   }
 
   function priceText(svc) {
+    if (hidePrices) return publicPriceLabel();
     if (svc.priceLabel === 'scope') {
       if (svc.price != null && typeof svc.price === 'number') {
         return (
@@ -611,12 +620,12 @@
         ? '<p class="ghd-pkg-stage-line">' + escapeHtml(t(pkg.stageLine)) + '</p>'
         : '';
 
-      var isQuote = isQuotePkg(pkg);
+      var isQuote = isQuotePkg(pkg) || hidePrices;
 
       var priceBlock = isQuote
         ? '<div class="ghd-pkg-priceblock ghd-pkg-priceblock--quote">' +
           '<span class="ghd-pkg-price-main ghd-pkg-price-main--quote">' +
-          escapeHtml(ui.scopePrice || '') +
+          escapeHtml(publicPriceLabel()) +
           '</span></div>'
         : '<div class="ghd-pkg-priceblock">' +
           '<span class="ghd-pkg-price-from">' +
@@ -1202,6 +1211,10 @@
   }
 
   function formatEstimateValue(tot, pkg) {
+    if (hidePrices) {
+      if (isBuilder(pkg) && addonState[pkg.id].size === 0) return '—';
+      return publicPriceLabel();
+    }
     if (isBuilder(pkg) && addonState[pkg.id].size === 0) return '—';
     if (tot.hasRange && tot.pricedTo != null && tot.pricedTo !== tot.priced) {
       return (
@@ -1744,6 +1757,7 @@
       var svc = serviceById[sid];
       if (!svc) return { text: '', tot: null, addons: [], kind: 'service' };
       var priced =
+        !hidePrices &&
         svc.price != null &&
         typeof svc.price === 'number' &&
         svc.priceLabel !== 'contact' &&
@@ -1755,11 +1769,13 @@
         t(svc.name) + ' — ' + priceText(svc),
         ui.total +
           ': ' +
-          (priced
-            ? formatNum(priced) + ' ' + currency
-            : isMeterPriced(svc)
-              ? priceText(svc)
-              : ui.contactPrice),
+          (hidePrices
+            ? publicPriceLabel()
+            : priced
+              ? formatNum(priced) + ' ' + currency
+              : isMeterPriced(svc)
+                ? priceText(svc)
+                : ui.contactPrice),
       ];
       return {
         text: lines.join('\n'),
@@ -1788,12 +1804,16 @@
       } else {
         lines.push(ui.emptyBuilder);
       }
-    } else if (isQuotePkg(pkg)) {
+    } else if (isQuotePkg(pkg) || hidePrices) {
       lines.push(t(pkg.name) + ' — ' + (ui.scopePrice || ui.requestQuote || ''));
     } else {
       lines.push(t(pkg.name) + ' — ' + ui.from + ' ' + formatNum(pkg.price) + ' ' + currency);
     }
-    if (!(isBuilder(pkg) && addonState[pkgId].size === 0) && !isQuotePkg(pkg)) {
+    if (
+      !hidePrices &&
+      !(isBuilder(pkg) && addonState[pkgId].size === 0) &&
+      !isQuotePkg(pkg)
+    ) {
       lines.push(
         ui.total +
           ': ' +
@@ -1806,6 +1826,8 @@
               currency
             : formatNum(tot.priced) + ' ' + currency)
       );
+    } else if (hidePrices && !(isBuilder(pkg) && addonState[pkgId].size === 0)) {
+      lines.push(ui.total + ': ' + publicPriceLabel());
     }
     tot.unpriced.forEach(function (s) {
       lines.push('+ ' + t(s.name) + ' — ' + addonExtraLine(s));
@@ -1861,8 +1883,8 @@
     if (hiddenAddons) hiddenAddons.value = summary.addons.join(', ');
     if (hiddenTotal) {
       if (summary.kind === 'meeting') hiddenTotal.value = '';
-      else if (summary.pkg && isQuotePkg(summary.pkg))
-        hiddenTotal.value = ui.scopePrice || ui.requestQuote || '';
+      else if (hidePrices || (summary.pkg && isQuotePkg(summary.pkg)))
+        hiddenTotal.value = publicPriceLabel();
       else if (summary.tot) hiddenTotal.value = formatNum(summary.tot.priced) + ' ' + currency;
     }
     updateWaLink(summary);
@@ -1959,8 +1981,8 @@
 
     var pkgName = summary.pkg ? t(summary.pkg.name) : '';
     var totalStr =
-      summary.pkg && isQuotePkg(summary.pkg)
-        ? ui.scopePrice || ui.requestQuote || ''
+      hidePrices || (summary.pkg && isQuotePkg(summary.pkg))
+        ? publicPriceLabel()
         : summary.tot
           ? formatNum(summary.tot.priced) + ' ' + currency
           : '';

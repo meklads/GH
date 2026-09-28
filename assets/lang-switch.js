@@ -26,6 +26,8 @@
     'gh-direct-en.html': 'client-hub-gh-direct.html',
     'client-hub-gh-direct.html': 'client-hub-gh-direct-en.html',
     'client-hub-gh-direct-en.html': 'client-hub-gh-direct.html',
+    'client-hub-gh-direct-2.html': 'client-hub-gh-direct-2-en.html',
+    'client-hub-gh-direct-2-en.html': 'client-hub-gh-direct-2.html',
     'smart-maquettes-en.html': 'services/maquettes.html',
     '3d-animation-en.html': 'services/animation.html',
     'media-production-en.html': 'services/production.html',
