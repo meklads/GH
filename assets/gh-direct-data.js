@@ -119,8 +119,9 @@ window.GH_DIRECT = {
       fitLabel: 'مناسبة لك إذا',
       outcomeLabel: 'بعد التسليم',
       deliveryLabel: 'التسليم',
-      scopePrice: 'يُحدَّد حسب النطاق',
+      scopePrice: 'يُسعَّر حسب النطاق',
       scopeNote: 'يُثبَّت حسب النطاق',
+      requestQuote: 'اطلب عرض سعر',
       rangeInTotal: 'يشمل بنوداً بنطاق سعري — يُؤكَّد عند التواصل',
       selectedCount: 'محدد',
       svcRequest: 'اطلب هذه الخدمة',
@@ -162,7 +163,8 @@ window.GH_DIRECT = {
       whyPlanBody: 'بين باقتي التعريف والبيع: إظهار أقوى وموقع للحملة — دون منظومة البيع الكاملة.',
       total: 'الإجمالي التقديري',
       totalNote: 'تقدير يبدأ من — يُؤكَّد عند التواصل',
-      trustLine: 'دون دفع إلكتروني · تأكيد النطاق خلال يوم عمل · الأسعار تقدير يبدأ من',
+      trustLine:
+        'دون دفع إلكتروني · تأكيد النطاق خلال يوم عمل · نواة وانطلاق «يبدأ من» · توقيع بعرض سعر',
       unpricedNote: 'تواصل عبر واتساب',
       unpricedLine: 'يُضاف — يُؤكَّد السعر عبر واتساب',
       emptyBuilder: 'اختر خدمة واحدة على الأقل لعرض الإجمالي',
@@ -202,7 +204,7 @@ window.GH_DIRECT = {
         },
         {
           q: 'هل الأسعار نهائية؟',
-          a: 'لا. الأرقام المعروضة تقدير «يبدأ من». السعر النهائي يُحدَّد بعد الاجتماع ومراجعة النطاق.',
+          a: 'لا. نواة وانطلاق تقدير «يبدأ من». باقة توقيع بلا سعر معلن وتُسعَّر بعرض سعر بعد الاجتماع. السعر النهائي يُحدَّد بعد مراجعة النطاق.',
         },
         {
           q: 'هل يتوفّر دفع إلكتروني؟',
@@ -210,7 +212,7 @@ window.GH_DIRECT = {
         },
         {
           q: 'كيف أختار بين باقات التعريف والانطلاق والبيع؟',
-          a: 'تعريف → باقة التعريف. بناء → باقة الانطلاق. إطلاق وبيع → باقة البيع.',
+          a: 'تعريف → نواة (سعر يبدأ من). بناء → انطلاق (سعر يبدأ من). إطلاق وبيع → توقيع (يُسعَّر بعرض سعر بعد الاجتماع).',
         },
         {
           q: 'هل يمكن تبديل بنود الباقة؟',
@@ -314,6 +316,7 @@ window.GH_DIRECT = {
       deliveryLabel: 'Delivery',
       scopePrice: 'Priced to scope',
       scopeNote: 'finalised to scope',
+      requestQuote: 'Request a quote',
       rangeInTotal: 'Includes ranged items — confirmed when we talk',
       selectedCount: 'selected',
       svcRequest: 'Request this service',
@@ -355,7 +358,8 @@ window.GH_DIRECT = {
       whyPlanBody: 'Between Definition and Sell: stronger visualization and a campaign site — without the full sales system.',
       total: 'Estimated total',
       totalNote: 'Starting-from estimate — confirmed when we talk',
-      trustLine: 'No online checkout · Scope confirmed within one business day · Starting-from estimates',
+      trustLine:
+        'No online checkout · Scope confirmed within one business day · Core & Launch from-prices · Signature by quote',
       unpricedNote: 'Contact on WhatsApp',
       unpricedLine: 'Added — price confirmed via WhatsApp',
       emptyBuilder: 'Add at least one service to see the total',
@@ -395,7 +399,7 @@ window.GH_DIRECT = {
         },
         {
           q: 'Are these final prices?',
-          a: 'No. Figures shown are starting-from estimates. Final price is set after the meeting and scope review.',
+          a: 'No. Core and Launch show starting-from estimates. Signature has no published price and is quoted after the meeting. Final pricing is set after scope review.',
         },
         {
           q: 'Is online checkout available?',
@@ -403,7 +407,7 @@ window.GH_DIRECT = {
         },
         {
           q: 'How do I choose between Definition, Launch, and Sell packages?',
-          a: 'Define → Definition Package. Build → Launch Package. Launch & Sell → Sell Package.',
+          a: 'Define → Core (published from-price). Build → Launch (published from-price). Launch & Sell → Signature (quote after meeting).',
         },
         {
           q: 'Can package line items be swapped?',
@@ -936,7 +940,8 @@ services: [
       name: { ar: 'توقيع', en: 'Signature' },
       stageLine: { ar: 'المرحلة الثالثة: الإطلاق والبيع', en: 'Stage 3: Launch & Sell' },
       stage: { ar: 'الإطلاق والبيع', en: 'Launch & Sell' },
-      price: 195000,
+      price: null,
+      priceLabel: 'quote',
       featured: false,
       includedServiceIds: ['identity-full', 'catalogue', 'ground-photo', 'touchscreen', 'maquette-single'],
       includedLines: [

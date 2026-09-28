@@ -2580,6 +2580,20 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   max-width: 16rem;
   line-height: 1.35;
 }
+.ghd-pkg-priceblock--quote {
+  direction: inherit;
+  unicode-bidi: plaintext;
+  margin-bottom: 4px;
+}
+.ghd-pkg-price-main--quote {
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  font-family: inherit;
+  max-width: 15rem;
+  color: #141414;
+}
 
 .ghd-pkg-desc,
 .ghd-pkg-tagline,

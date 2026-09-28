@@ -603,17 +603,23 @@
         ? '<p class="ghd-pkg-stage-line">' + escapeHtml(t(pkg.stageLine)) + '</p>'
         : '';
 
-      var priceBlock =
-        '<div class="ghd-pkg-priceblock">' +
-        '<span class="ghd-pkg-price-from">' +
-        escapeHtml(ui.from) +
-        '</span>' +
-        '<span class="ghd-pkg-price-main">' +
-        escapeHtml(formatNum(pkg.price)) +
-        '</span>' +
-        '<span class="ghd-pkg-price-suffix">' +
-        escapeHtml(currency) +
-        '</span></div>';
+      var isQuote = isQuotePkg(pkg);
+
+      var priceBlock = isQuote
+        ? '<div class="ghd-pkg-priceblock ghd-pkg-priceblock--quote">' +
+          '<span class="ghd-pkg-price-main ghd-pkg-price-main--quote">' +
+          escapeHtml(ui.scopePrice || '') +
+          '</span></div>'
+        : '<div class="ghd-pkg-priceblock">' +
+          '<span class="ghd-pkg-price-from">' +
+          escapeHtml(ui.from) +
+          '</span>' +
+          '<span class="ghd-pkg-price-main">' +
+          escapeHtml(formatNum(pkg.price)) +
+          '</span>' +
+          '<span class="ghd-pkg-price-suffix">' +
+          escapeHtml(currency) +
+          '</span></div>';
 
       var lines = '';
       if (pkg.includedLines && pkg.includedLines.length) {
@@ -640,13 +646,16 @@
         '</p>';
 
       var ctaClass = featured ? 'ghd-cta ghd-cta--on-dark' : 'ghd-cta ghd-cta--primary';
+      var ctaLabel = isQuote
+        ? ui.requestQuote || ui.choosePlan || ui.cta
+        : ui.choosePlan || ui.cta;
       var primaryCta =
         '<button type="button" class="' +
         ctaClass +
         '" data-lead-pkg="' +
         escapeAttr(pkg.id) +
         '">' +
-        escapeHtml(ui.choosePlan || ui.cta) +
+        escapeHtml(ctaLabel) +
         '</button>';
 
       card.innerHTML =
@@ -1137,8 +1146,15 @@
       });
   }
 
+  function isQuotePkg(pkg) {
+    return (
+      !!pkg &&
+      (pkg.price == null || pkg.priceLabel === 'quote' || pkg.priceLabel === 'contact')
+    );
+  }
+
   function computeTotal(pkg) {
-    var priced = isBuilder(pkg) ? 0 : Number(pkg.price) || 0;
+    var priced = isBuilder(pkg) ? 0 : isQuotePkg(pkg) ? 0 : Number(pkg.price) || 0;
     var unpriced = [];
     var hasRange = false;
     var selected = addonState[pkg.id];
@@ -1671,10 +1687,12 @@
       } else {
         lines.push(ui.emptyBuilder);
       }
+    } else if (isQuotePkg(pkg)) {
+      lines.push(t(pkg.name) + ' — ' + (ui.scopePrice || ui.requestQuote || ''));
     } else {
       lines.push(t(pkg.name) + ' — ' + ui.from + ' ' + formatNum(pkg.price) + ' ' + currency);
     }
-    if (!(isBuilder(pkg) && addonState[pkgId].size === 0)) {
+    if (!(isBuilder(pkg) && addonState[pkgId].size === 0) && !isQuotePkg(pkg)) {
       lines.push(ui.total + ': ' + formatNum(tot.priced) + ' ' + currency);
     }
     tot.unpriced.forEach(function (s) {
@@ -1699,6 +1717,9 @@
       if (leadP) leadP.textContent = ui.meetingFormLead;
     } else if (summary.kind === 'service') {
       if (titleEl) titleEl.textContent = ui.svcRequest || ui.formTitle;
+      if (leadP) leadP.textContent = ui.formLead;
+    } else if (summary.pkg && isQuotePkg(summary.pkg)) {
+      if (titleEl) titleEl.textContent = ui.requestQuote || ui.formTitle;
       if (leadP) leadP.textContent = ui.formLead;
     } else {
       if (titleEl) titleEl.textContent = ui.formTitle;
@@ -1728,6 +1749,8 @@
     if (hiddenAddons) hiddenAddons.value = summary.addons.join(', ');
     if (hiddenTotal) {
       if (summary.kind === 'meeting') hiddenTotal.value = '';
+      else if (summary.pkg && isQuotePkg(summary.pkg))
+        hiddenTotal.value = ui.scopePrice || ui.requestQuote || '';
       else if (summary.tot) hiddenTotal.value = formatNum(summary.tot.priced) + ' ' + currency;
     }
     updateWaLink(summary);
@@ -1823,7 +1846,12 @@
     }
 
     var pkgName = summary.pkg ? t(summary.pkg.name) : '';
-    var totalStr = summary.tot ? formatNum(summary.tot.priced) + ' ' + currency : '';
+    var totalStr =
+      summary.pkg && isQuotePkg(summary.pkg)
+        ? ui.scopePrice || ui.requestQuote || ''
+        : summary.tot
+          ? formatNum(summary.tot.priced) + ' ' + currency
+          : '';
     var messageLines = [
       summary.text,
       project ? (lang === 'ar' ? 'المشروع: ' : 'Project: ') + project : '',
