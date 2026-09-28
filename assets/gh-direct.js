@@ -96,8 +96,11 @@
 
   /** @type {Record<string, Set<string>>} */
   var addonState = {};
+  /** Last service chosen for the deliverable brief panel (one at a time). */
+  var briefFocus = {};
   DATA.packages.forEach(function (pkg) {
     addonState[pkg.id] = new Set();
+    briefFocus[pkg.id] = null;
   });
 
   var serviceById = {};
@@ -475,8 +478,13 @@
         var id = btn.getAttribute('data-addon');
         if (!pkgId || !id) return;
         var set = addonState[pkgId];
-        if (set.has(id)) set.delete(id);
-        else set.add(id);
+        if (set.has(id)) {
+          set.delete(id);
+          if (briefFocus[pkgId] === id) briefFocus[pkgId] = null;
+        } else {
+          set.add(id);
+          briefFocus[pkgId] = id;
+        }
         updatePackageUI(pkgId);
         refreshPkgWaLinks();
       });
@@ -1257,32 +1265,39 @@
         '</p>'
       );
     }
-    var items = [];
-    selected.forEach(function (id) {
-      var svc = serviceById[id];
-      if (!svc) return;
-      var note = svc.atelierNote ? t(svc.atelierNote) : t(svc.description);
-      items.push(
-        '<article class="ghd-total-brief">' +
-          '<div class="ghd-total-brief-top">' +
-          '<h4 class="ghd-total-brief-title">' +
-          escapeHtml(t(svc.name)) +
-          '</h4>' +
-          '<p class="ghd-total-brief-price">' +
-          escapeHtml(priceText(svc)) +
-          '</p></div>' +
-          '<p class="ghd-total-brief-body">' +
-          escapeHtml(note) +
-          '</p></article>'
+    var focusId = briefFocus[pkg.id];
+    if (!focusId || !selected.has(focusId)) {
+      return (
+        '<p class="ghd-total-briefs-empty">' +
+        escapeHtml(ui.atelierBriefIdle || ui.atelierBriefEmpty || '') +
+        '</p>'
       );
-    });
+    }
+    var svc = serviceById[focusId];
+    if (!svc) {
+      return (
+        '<p class="ghd-total-briefs-empty">' +
+        escapeHtml(ui.atelierBriefEmpty || '') +
+        '</p>'
+      );
+    }
+    var note = svc.atelierNote ? t(svc.atelierNote) : t(svc.description);
     return (
       '<div class="ghd-total-briefs-head">' +
       escapeHtml(ui.atelierBriefLabel || '') +
       '</div>' +
       '<div class="ghd-total-briefs-list">' +
-      items.join('') +
-      '</div>'
+      '<article class="ghd-total-brief">' +
+      '<div class="ghd-total-brief-top">' +
+      '<h4 class="ghd-total-brief-title">' +
+      escapeHtml(t(svc.name)) +
+      '</h4>' +
+      '<p class="ghd-total-brief-price">' +
+      escapeHtml(priceText(svc)) +
+      '</p></div>' +
+      '<p class="ghd-total-brief-body">' +
+      escapeHtml(note) +
+      '</p></article></div>'
     );
   }
 
@@ -1407,6 +1422,7 @@
   function addServiceToCompose(serviceId) {
     if (!addonState.custom) return;
     addonState.custom.add(serviceId);
+    briefFocus.custom = serviceId;
     updatePackageUI('custom');
     refreshPkgWaLinks();
     var roots = [

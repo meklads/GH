@@ -1221,7 +1221,7 @@ html[dir='ltr'] .ghd-hero-rule {
   align-items: stretch;
   gap: 0;
   padding: 22px 20px 18px;
-  min-height: 280px;
+  min-height: 0;
 }
 .ghd-total-priceblock {
   display: contents;
@@ -1279,7 +1279,7 @@ html[dir='ltr'] .ghd-hero-rule {
 }
 .ghd-total-briefs {
   margin: 12px 0 4px;
-  min-height: 120px;
+  min-height: 0;
 }
 .ghd-total-briefs-head {
   margin: 0 0 12px;
