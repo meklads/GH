@@ -512,6 +512,139 @@ const PAGES = {
       ],
     },
   }),
+  'services/interactive-experiences.html': (p) => ({
+    lang: 'ar',
+    insertBefore: '<section class="gh-svc-links">',
+    fallbackBefore: '<section class="gh-svc-cta',
+    proof: {
+      eyebrow: 'من أعمالنا',
+      title: 'ميثاق مكة: مجسم تفاعلي يشرح المبادرات في دقائق',
+      body: 'شاشات ومسار ضيف ولغة واحدة — حتى تصبح الصالة أو المعرض أداة إقناع، لا ديكوراً يُشغَّل فقط.',
+      meta: ['تفاعلي', 'صالة / معرض', 'بروتوكول'],
+      linkHref: `${p}casestudy-mwl.html`,
+      linkLabel: 'اقرأ دراسة الحالة',
+      img: `${p}assets/news/makkah-charter-02.jpeg`,
+      imgAlt: 'تجربة تفاعلية — ميثاق مكة',
+    },
+    ladderAria: 'سلّم جاهزية التجارب التفاعلية',
+    ladderEyebrow: 'اختر عمق التجربة',
+    ladderTitle: 'ثلاث درجات — من كيوسك إلى منظومة صالة',
+    ladderLead: 'لا حاجة لكل الطبقات دفعة واحدة. نضبط النطاق حسب صالتكم وجدول الإطلاق.',
+    ladder: [
+      {
+        num: '01',
+        title: 'كيوسك بيع',
+        fit: 'عندما تحتاج استكشاف وحدات ومخططات على الشاشة.',
+        outs: ['واجهة لمس للوحدات', 'فلاتر ومفضلة', 'ربط بيانات التوفر'],
+        time: 'أسابيع حسب تعقيد البيانات',
+        cta: 'ابدأ بالكيوسك',
+        href: `${p}contact-us.html`,
+        tier: 'kiosk',
+      },
+      {
+        num: '02',
+        title: 'صالة تفاعلية',
+        fit: 'عندما يحتاج فريق المبيعات أدوات إقناع داخل الفراغ.',
+        outs: ['شاشات عرض + مقارنة وحدات', 'تكامل مع المجسم', 'تدريب الفريق'],
+        time: 'وفق موعد افتتاح الصالة',
+        cta: 'احجز جلسة صالة',
+        href: `${p}contact-us.html`,
+        tier: 'gallery-interactive',
+        featured: true,
+      },
+      {
+        num: '03',
+        title: 'منظومة تجربة كاملة',
+        fit: 'إطلاق مؤسسي أو معرض بروتوكول: قصة واحدة من المدخل حتى الشاشة.',
+        outs: ['كيوسك + VR/360 + لوحات', 'مسار ضيف وبروفة قبول', 'ربط مع ProjectLaunch™'],
+        time: 'يُحدَّد بعد تقييم الجاهزية',
+        cta: 'استكشف المنظومة',
+        href: `${p}solutions/project-launch.html`,
+        tier: 'full-interactive',
+      },
+    ],
+    assess: {
+      lang: 'ar',
+      title: 'هل صالتكم تُقنع أم تعرض فقط؟',
+      lead: 'خمس إجابات تكشف إن كانت الفجوة في الشاشة، البيانات، أو تجربة الضيف كاملة.',
+      ctaHref: `${p}contact-us.html`,
+      ctaLabel: 'احجز جلسة تجربة تفاعلية',
+      questions: [
+        { gap: 'content', text: 'هل يستطيع الزائر استكشاف الوحدات على الشاشة دون انتظار الاستشاري؟' },
+        { gap: 'gallery', text: 'هل المجسم والشاشات يعملان كلغة واحدة داخل الصالة؟' },
+        { gap: 'identity', text: 'هل بيانات التوفر والمخططات محدّثة ومترابطة؟' },
+        { gap: 'system', text: 'هل لديكم VR/360 أو جولة عن بُعد للمشترين الدوليين؟' },
+        { gap: 'system', text: 'هل دُرّب فريق المبيعات على تشغيل التجربة يوم الإطلاق؟' },
+      ],
+    },
+  }),
+  'services/interactive-experiences-en.html': (p) => ({
+    lang: 'en',
+    insertBefore:
+      '<section class="cta-d" style="background:#1A1A1A">\n <div class="cta-d-inner">\n <h2 style="color:#FAFAF8">Upgrade Your <span class="gold">Sales Gallery</span></h2>',
+    fallbackBefore: '<section style="background:#F5F4F0">\n <div style="max-width:1320px;margin:0 auto;padding:0 48px">\n <div class="reveal" style="text-align:center;margin-bottom:48px">\n <span class="section-label">Portfolio</span>',
+    proof: {
+      eyebrow: 'From our work',
+      title: 'Makkah Charter: an interactive maquette that briefed initiatives in minutes',
+      body: 'Screens, guest path, and one language — so the gallery or exhibition becomes a persuasion tool, not décor that merely turns on.',
+      meta: ['Interactive', 'Gallery / exhibition', 'Protocol'],
+      linkHref: `${p}casestudy-mwl-en.html`,
+      linkLabel: 'Read the case study',
+      img: `${p}assets/news/makkah-charter-02.jpeg`,
+      imgAlt: 'Interactive experience — Makkah Charter',
+    },
+    ladderAria: 'Interactive experience readiness ladder',
+    ladderEyebrow: 'Pick experience depth',
+    ladderTitle: 'Three levels — from kiosk to full gallery system',
+    ladderLead: 'You do not need every layer at once. We size scope to your gallery and launch date.',
+    ladder: [
+      {
+        num: '01',
+        title: 'Sales kiosk',
+        fit: 'When buyers need unit and plan exploration on screen.',
+        outs: ['Touch UI for units', 'Filters and favorites', 'Availability data link'],
+        time: 'Weeks depending on data complexity',
+        cta: 'Start with the kiosk',
+        href: `${p}contact-us-en.html`,
+        tier: 'kiosk',
+      },
+      {
+        num: '02',
+        title: 'Interactive gallery',
+        fit: 'When the sales team needs persuasion tools inside the space.',
+        outs: ['Display screens + unit compare', 'Maquette integration', 'Team training'],
+        time: 'Aligned to gallery opening',
+        cta: 'Book a gallery session',
+        href: `${p}contact-us-en.html`,
+        tier: 'gallery-interactive',
+        featured: true,
+      },
+      {
+        num: '03',
+        title: 'Full experience system',
+        fit: 'Institutional launch or protocol exhibition: one story from entry to screen.',
+        outs: ['Kiosk + VR/360 + dashboards', 'Guest path and acceptance rehearsal', 'Link to ProjectLaunch™'],
+        time: 'Set after readiness review',
+        cta: 'Explore the system',
+        href: `${p}solutions/project-launch-en.html`,
+        tier: 'full-interactive',
+      },
+    ],
+    assess: {
+      lang: 'en',
+      title: 'Does your gallery persuade — or only display?',
+      lead: 'Five answers show whether the gap is the screen, the data, or the full guest experience.',
+      ctaHref: `${p}contact-us-en.html`,
+      ctaLabel: 'Book an interactive session',
+      questions: [
+        { gap: 'content', text: 'Can a visitor explore units on screen without waiting for a consultant?' },
+        { gap: 'gallery', text: 'Do maquette and screens speak one language inside the gallery?' },
+        { gap: 'identity', text: 'Are availability and plans live and connected?' },
+        { gap: 'system', text: 'Do you offer VR/360 or remote tours for international buyers?' },
+        { gap: 'system', text: 'Was the sales team trained to run the experience on launch day?' },
+      ],
+    },
+  }),
 };
 
 function patchFile(rel) {
@@ -542,7 +675,13 @@ function patchFile(rel) {
 }
 
 let n = 0;
-for (const rel of Object.keys(PAGES)) {
+const only = process.argv.slice(2).filter((a) => !a.startsWith('-'));
+const targets = only.length ? only : Object.keys(PAGES);
+for (const rel of targets) {
+  if (!PAGES[rel]) {
+    console.warn('unknown page', rel);
+    continue;
+  }
   if (patchFile(rel)) n += 1;
 }
 console.log(`sales-room patched ${n} pages`);
