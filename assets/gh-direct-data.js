@@ -901,7 +901,7 @@ services: [
       name: { ar: 'نواة', en: 'Core' },
       stageLine: { ar: 'المرحلة الأولى: التعريف', en: 'Stage 1: Definition' },
       stage: { ar: 'التعريف', en: 'Definition' },
-      price: 45000,
+      price: 65000,
       featured: false,
       includedServiceIds: ['identity-basic', 'drone-short'],
       includedLines: [
