@@ -452,67 +452,67 @@ window.GH_DIRECT = {
   proof: [
     {
       src: 'assets/projects/wahat-al-salam/hero-aerial.webp',
-      caption: { ar: 'واحة السلام — مخطط · CGI', en: 'Wahat Al Salam — master plan · CGI' },
+      caption: { ar: 'واحة السلام مخطط CGI', en: 'Wahat Al Salam master plan CGI' },
     },
     {
       src: 'assets/projects/maquettes/anan-escan3.webp',
-      caption: { ar: 'عنان إسكان — مجسم', en: 'Anan Eskan — maquette' },
+      caption: { ar: 'عنان إسكان مجسم', en: 'Anan Eskan maquette' },
     },
     {
       src: 'assets/projects/al-rajhi-naseem/aerial-bird.webp',
-      caption: { ar: 'نسيم الحرم — فيلم · مجسم', en: 'Naseem Al-Haram — film · maquette' },
+      caption: { ar: 'نسيم الحرم فيلم مجسم', en: 'Naseem Al-Haram film maquette' },
     },
     {
       src: 'assets/projects/maquettes/anan-eskan-maquette-01.webp',
-      caption: { ar: 'عنان إسكان — صالة بيع', en: 'Anan Eskan — sales gallery' },
+      caption: { ar: 'عنان إسكان صالة بيع', en: 'Anan Eskan sales gallery' },
     },
     {
       src: 'assets/projects/rafal-pavilions/lobby.webp',
-      caption: { ar: 'بافيليونز — فيلم · مجسم', en: 'Pavilions — film · maquette' },
+      caption: { ar: 'بافيليونز فيلم مجسم', en: 'Pavilions film maquette' },
     },
     {
       src: 'assets/projects/rendering/Anan-Escan-Co.01.webp',
-      caption: { ar: 'عنان إسكان — إظهار معماري', en: 'Anan Eskan — architectural viz' },
+      caption: { ar: 'عنان إسكان إظهار معماري', en: 'Anan Eskan architectural viz' },
     },
     {
       src: 'assets/projects/maquettes/alrajhi3.webp',
-      caption: { ar: 'الراجحي — مجسم', en: 'Al Rajhi — maquette' },
+      caption: { ar: 'الراجحي مجسم', en: 'Al Rajhi maquette' },
     },
     {
       src: 'assets/projects/animation/rafal-pavilions.webp',
-      caption: { ar: 'بافيليونز رافال — فيلم', en: 'Rafal Pavilions — film' },
+      caption: { ar: 'بافيليونز رافال فيلم', en: 'Rafal Pavilions film' },
     },
     {
       src: 'assets/projects/rendering/anan-escan2.webp',
-      caption: { ar: 'عنان إسكان — مجمع سكني', en: 'Anan Eskan — residential' },
+      caption: { ar: 'عنان إسكان مجمع سكني', en: 'Anan Eskan residential' },
     },
     {
       src: 'assets/projects/animation/jeddah-forum.webp',
-      caption: { ar: 'منتدى جدة — فيلم', en: 'Jeddah Forum — film' },
+      caption: { ar: 'منتدى جدة فيلم', en: 'Jeddah Forum film' },
     },
     {
       src: 'assets/projects/maquettes/The-Financial-Center-of-King-Abdullah-City.webp',
-      caption: { ar: 'المركز المالي — مجسم', en: 'Financial Center — maquette' },
+      caption: { ar: 'المركز المالي مجسم', en: 'Financial Center maquette' },
     },
     {
       src: 'assets/projects/animation/alrajhi.webp',
-      caption: { ar: 'الراجحي — فيلم', en: 'Al Rajhi — film' },
+      caption: { ar: 'الراجحي فيلم', en: 'Al Rajhi film' },
     },
     {
       src: 'assets/news/makkah-charter-02.jpeg',
-      caption: { ar: 'معرض الإنسانية — رابطة العالم الإسلامي', en: 'Humanity Expo — MWL' },
+      caption: { ar: 'معرض الإنسانية رابطة العالم الإسلامي', en: 'Humanity Expo MWL' },
     },
     {
       src: 'assets/projects/maquettes/Al-Khair-Heights-in-Makkah1-e1745148056352.webp',
-      caption: { ar: 'نخبة الخير — مجسم', en: 'Nukhbat Al Khair — maquette' },
+      caption: { ar: 'نخبة الخير مجسم', en: 'Nukhbat Al Khair maquette' },
     },
     {
       src: 'assets/projects/al-rajhi-naseem/int-living.webp',
-      caption: { ar: 'نسيم الحرم — داخلي', en: 'Naseem Al-Haram — interior' },
+      caption: { ar: 'نسيم الحرم داخلي', en: 'Naseem Al-Haram interior' },
     },
     {
       src: 'assets/projects/cinematic/video-1.webp',
-      caption: { ar: 'فيلم سينمائي — إنتاج GH', en: 'Cinematic film — GH production' },
+      caption: { ar: 'فيلم سينمائي إنتاج GH', en: 'Cinematic film GH production' },
     },
   ],
 
