@@ -326,23 +326,89 @@ html[dir='ltr'] .ghd-hero-rule {
   color: var(--ghd-ink);
   line-height: 1.25;
 }
-.ghd-posture-map {
-  display: block;
-  margin: 0 0 6px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--ghd-gold-dark);
-  line-height: 1.35;
+.ghd-posture-goal {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  font-weight: 500;
+  color: rgba(14, 14, 14, 0.78);
 }
-.ghd-posture-body {
+.ghd-posture-ready {
   margin: 0;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.55;
   font-weight: 400;
-  color: rgba(14, 14, 14, 0.58);
-  max-width: 22rem;
+  color: rgba(14, 14, 14, 0.55);
+  padding-top: 10px;
+  border-top: 1px solid rgba(14, 14, 14, 0.08);
 }
+.ghd-pkg-stage-line {
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(20, 20, 20, 0.55);
+  text-align: center;
+}
+.ghd-pkg--featured .ghd-pkg-stage-line {
+  color: rgba(245, 245, 243, 0.62);
+}
+.ghd-pkg-top {
+  border-bottom: 1px solid rgba(20, 20, 20, 0.08);
+  padding-bottom: 18px;
+  margin-bottom: 4px;
+}
+.ghd-pkg--featured .ghd-pkg-top {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Extras under packages */
+.ghd-extras {
+  margin: 40px auto 8px;
+  max-width: 720px;
+  text-align: center;
+  padding: 28px 22px 8px;
+}
+.ghd-extras .ghd-section-head {
+  margin-bottom: 18px;
+}
+.ghd-extras .ghd-section-head h2 {
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}
+.ghd-extras .ghd-section-head p {
+  margin: 6px 0 0;
+  color: rgba(26, 26, 26, 0.55);
+  font-size: 0.98rem;
+}
+.ghd-extras-list {
+  list-style: none;
+  margin: 0 auto 22px;
+  padding: 0;
+  max-width: 32rem;
+  text-align: center;
+}
+.ghd-extras-list li {
+  margin: 0;
+  padding: 12px 8px;
+  border-top: 1px solid rgba(20, 20, 20, 0.08);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(20, 20, 20, 0.78);
+}
+.ghd-extras-list li:last-child {
+  border-bottom: 1px solid rgba(20, 20, 20, 0.08);
+}
+.ghd-extras-cta {
+  display: inline-flex;
+  margin: 0 auto;
+  min-width: 200px;
+  justify-content: center;
+}
+
 .ghd-pkg-stage {
   display: flex;
   flex-direction: column;
@@ -2182,18 +2248,14 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
 }
 @media (min-width: 980px) {
   .ghd-packages {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
-  align-items: stretch;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-@media (min-width: 980px) {
-  .ghd-packages {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
-    align-items: stretch;
+    max-width: 1100px;
+  }
+}
+@media (max-width: 979px) {
+  .ghd-packages .ghd-pkg--featured {
+    order: -1;
   }
 }
 
@@ -2249,9 +2311,9 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   flex-direction: column;
   align-items: center;
   gap: 0;
-  margin-bottom: 8px;
-  padding-bottom: 0;
-  border-bottom: none;
+  margin-bottom: 4px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.08);
   text-align: center;
 }
 
@@ -2453,7 +2515,7 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
   }
 }
 .ghd-pkg--featured .ghd-pkg-top {
-  border-bottom: none;
+  border-bottom-color: rgba(255, 255, 255, 0.12);
 }
 .ghd-pkg--featured .ghd-pkg-namepill {
   background: rgba(255, 255, 255, 0.12);
@@ -2518,6 +2580,9 @@ html[dir='ltr'] .ghd-proof-slide figcaption {
 }
 
 @media (max-width: 979px) {
+  .ghd-packages .ghd-pkg--featured {
+    order: -1;
+  }
   .ghd-pkg--featured {
     transform: none;
     padding-top: 44px;

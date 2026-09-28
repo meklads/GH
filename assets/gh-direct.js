@@ -208,9 +208,10 @@
       '<div class="ghd-wrap ghd-enterprise-inner">' +
       '<div><p class="ghd-enterprise-label">' +
       escapeHtml(e.label) +
-      '</p><p>' +
-      escapeHtml(e.text) +
-      '</p></div>' +
+      (e.text
+        ? '</p><p>' + escapeHtml(e.text) + '</p>'
+        : '</p>') +
+      '</div>' +
       '<a class="ghd-enterprise-cta" href="' +
       escapeAttr(assetPrefix + e.href) +
       '">' +
@@ -256,18 +257,7 @@
     }
     host.innerHTML = items
       .map(function (item) {
-        var pkg = (DATA.packages || []).find(function (p) {
-          return p.id === item.packageId;
-        });
-        var pkgName = pkg ? t(pkg.name) : '';
         var href = item.packageId ? '#pkg-' + item.packageId : '#packages';
-        var mapLine = pkgName
-          ? '<span class="ghd-posture-map">' +
-            escapeHtml(t(item.title)) +
-            ' → ' +
-            escapeHtml(pkgName) +
-            '</span>'
-          : '';
         return (
           '<a class="ghd-posture-card" href="' +
           escapeAttr(href) +
@@ -278,13 +268,55 @@
           '<h3 class="ghd-posture-title">' +
           escapeHtml(t(item.title)) +
           '</h3>' +
-          mapLine +
-          '<p class="ghd-posture-body">' +
-          escapeHtml(t(item.body)) +
-          '</p></a>'
+          (item.goal
+            ? '<p class="ghd-posture-goal">' + escapeHtml(t(item.goal)) + '</p>'
+            : '') +
+          (item.ready
+            ? '<p class="ghd-posture-ready">' + escapeHtml(t(item.ready)) + '</p>'
+            : '') +
+          '</a>'
         );
       })
       .join('');
+  }
+
+  function renderExtras() {
+    var host = document.getElementById('ghd-extras');
+    if (!host) return;
+    var items = DATA.extras || [];
+    if (!items.length) {
+      host.innerHTML = '';
+      return;
+    }
+    var waHref =
+      'https://wa.me/' +
+      waPhone() +
+      '?text=' +
+      encodeURIComponent(
+        lang === 'ar'
+          ? 'مرحباً، أرغب في استشارة حول الخدمات الإضافية من GH Direct.'
+          : 'Hello — I would like a consultation on GH Direct additional services.'
+      );
+    host.innerHTML =
+      '<div class="ghd-section-head">' +
+      '<h2 id="ghd-extras-title">' +
+      escapeHtml(ui.extrasTitle || '') +
+      '</h2>' +
+      '<p>' +
+      escapeHtml(ui.extrasLead || '') +
+      '</p></div>' +
+      '<ul class="ghd-extras-list">' +
+      items
+        .map(function (item) {
+          return '<li>' + escapeHtml(t(item)) + '</li>';
+        })
+        .join('') +
+      '</ul>' +
+      '<a class="ghd-cta ghd-cta--primary ghd-extras-cta" href="' +
+      escapeAttr(waHref) +
+      '" target="_blank" rel="noopener noreferrer">' +
+      escapeHtml(ui.extrasCta || '') +
+      '</a>';
   }
 
   function renderClose() {
@@ -566,6 +598,10 @@
         escapeHtml(t(pkg.name)) +
         '</span></h3>';
 
+      var stageEl = pkg.stageLine
+        ? '<p class="ghd-pkg-stage-line">' + escapeHtml(t(pkg.stageLine)) + '</p>'
+        : '';
+
       var priceBlock =
         '<div class="ghd-pkg-priceblock">' +
         '<span class="ghd-pkg-price-from">' +
@@ -597,8 +633,8 @@
         escapeHtml(
           ui.packagesFoot ||
             (lang === 'ar'
-              ? 'تقدير يبدأ من · يُثبَّت عند التأكيد'
-              : 'Starting-from · locked at confirmation')
+              ? 'السعر تقديري، يُثبَّت عند التأكيد النهائي'
+              : 'Price is indicative and locked at final confirmation')
         ) +
         '</p>';
 
@@ -616,6 +652,7 @@
         ribbon +
         '<div class="ghd-pkg-top">' +
         nameEl +
+        stageEl +
         priceBlock +
         '</div>' +
         lines +
@@ -636,6 +673,7 @@
     refreshPkgWaLinks();
     renderAtelierWorkshop();
     renderProof();
+    renderExtras();
   }
 
   function renderNextSteps() {
