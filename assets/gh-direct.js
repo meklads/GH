@@ -1327,8 +1327,9 @@
   }
 
   function totalBoxHtml(pkg, tot) {
+    /* Never list unpriced addons in the Atelier rail — brief only. */
     var extraLis =
-      hidePrices
+      hidePrices || isBuilder(pkg)
         ? ''
         : tot.unpriced
             .map(function (s) {
@@ -1511,7 +1512,10 @@
     var emptyEl = box.querySelector('.ghd-total-empty');
     if (emptyEl) emptyEl.remove();
     var extra = box.querySelector('.ghd-total-extra');
-    if (tot.unpriced.length) {
+    /* Atelier/public: brief for the focused service only — never stack unpriced lines. */
+    if (hidePrices || isBuilder(pkg)) {
+      if (extra) extra.remove();
+    } else if (tot.unpriced.length) {
       if (!extra) {
         extra = document.createElement('ul');
         extra.className = 'ghd-total-extra';
@@ -1534,9 +1538,11 @@
     }
     var hintEl = box.querySelector('.ghd-total-hint');
     if (hintEl) {
-      hintEl.textContent = tot.hasRange
-        ? ui.rangeInTotal || ui.totalNote || ''
-        : ui.totalNote || '';
+      hintEl.textContent = hidePrices
+        ? ui.packagesFoot || ui.totalNote || ''
+        : tot.hasRange
+          ? ui.rangeInTotal || ui.totalNote || ''
+          : ui.totalNote || '';
     }
     var ctas = card.querySelector('.ghd-atelier-ctas');
     if (ctas && isBuilder(pkg)) {
