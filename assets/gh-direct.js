@@ -1248,11 +1248,45 @@
     return ui.unpricedLine;
   }
 
+  function selectedBriefsHtml(pkg) {
+    var selected = addonState[pkg.id];
+    if (!selected || !selected.size) {
+      return (
+        '<p class="ghd-total-briefs-empty">' +
+        escapeHtml(ui.atelierBriefEmpty || '') +
+        '</p>'
+      );
+    }
+    var items = [];
+    selected.forEach(function (id) {
+      var svc = serviceById[id];
+      if (!svc) return;
+      var note = svc.atelierNote ? t(svc.atelierNote) : t(svc.description);
+      items.push(
+        '<article class="ghd-total-brief">' +
+          '<div class="ghd-total-brief-top">' +
+          '<h4 class="ghd-total-brief-title">' +
+          escapeHtml(t(svc.name)) +
+          '</h4>' +
+          '<p class="ghd-total-brief-price">' +
+          escapeHtml(priceText(svc)) +
+          '</p></div>' +
+          '<p class="ghd-total-brief-body">' +
+          escapeHtml(note) +
+          '</p></article>'
+      );
+    });
+    return (
+      '<div class="ghd-total-briefs-head">' +
+      escapeHtml(ui.atelierBriefLabel || '') +
+      '</div>' +
+      '<div class="ghd-total-briefs-list">' +
+      items.join('') +
+      '</div>'
+    );
+  }
+
   function totalBoxHtml(pkg, tot) {
-    var empty =
-      isBuilder(pkg) && addonState[pkg.id].size === 0
-        ? '<p class="ghd-total-empty">' + escapeHtml(ui.emptyBuilder) + '</p>'
-        : '';
     var extraLis = tot.unpriced
       .map(function (s) {
         return (
@@ -1268,17 +1302,28 @@
     var hintText = tot.hasRange
       ? ui.rangeInTotal || ui.totalNote || ''
       : ui.totalNote || '';
+    var briefs =
+      isBuilder(pkg)
+        ? '<div class="ghd-total-briefs" data-total-briefs="' +
+          escapeAttr(pkg.id) +
+          '">' +
+          selectedBriefsHtml(pkg) +
+          '</div>'
+        : '';
     return (
-      '<div class="ghd-total-box" data-total-for="' +
+      '<div class="ghd-total-box' +
+      (isBuilder(pkg) ? ' ghd-total-box--atelier' : '') +
+      '" data-total-for="' +
       escapeAttr(pkg.id) +
       '">' +
+      '<div class="ghd-total-priceblock">' +
       '<p class="ghd-total-label">' +
       escapeHtml(ui.total) +
       '</p>' +
       '<p class="ghd-total-value">' +
       escapeHtml(value) +
-      '</p>' +
-      empty +
+      '</p></div>' +
+      briefs +
       (extraLis ? '<ul class="ghd-total-extra">' + extraLis + '</ul>' : '') +
       '<p class="ghd-total-hint">' +
       escapeHtml(hintText) +
@@ -1409,18 +1454,12 @@
     if (val) {
       val.textContent = formatEstimateValue(tot, pkg);
     }
-    var emptyEl = box.querySelector('.ghd-total-empty');
-    if (isBuilder(pkg) && addonState[pkgId].size === 0) {
-      if (!emptyEl) {
-        emptyEl = document.createElement('p');
-        emptyEl.className = 'ghd-total-empty';
-        emptyEl.textContent = ui.emptyBuilder;
-        var hint0 = box.querySelector('.ghd-total-hint');
-        box.insertBefore(emptyEl, hint0);
-      }
-    } else if (emptyEl) {
-      emptyEl.remove();
+    var briefs = box.querySelector('[data-total-briefs="' + pkgId + '"]');
+    if (briefs && isBuilder(pkg)) {
+      briefs.innerHTML = selectedBriefsHtml(pkg);
     }
+    var emptyEl = box.querySelector('.ghd-total-empty');
+    if (emptyEl) emptyEl.remove();
     var extra = box.querySelector('.ghd-total-extra');
     if (tot.unpriced.length) {
       if (!extra) {

@@ -124,6 +124,8 @@ window.GH_DIRECT = {
       requestQuote: 'اطلب عرض سعر',
       rangeInTotal: 'يشمل بنوداً بنطاق سعري — يُؤكَّد عند التواصل',
       selectedCount: 'محدد',
+      atelierBriefEmpty: 'اختر بنداً أو أكثر لعرض تفاصيل المخرجات هنا.',
+      atelierBriefLabel: 'ماذا ستستلم',
       svcRequest: 'اطلب هذه الخدمة',
       svcWhatsApp: 'واتساب بهذه الخدمة',
       svcAddCompose: 'أضفها إلى أتيليه',
@@ -319,6 +321,8 @@ window.GH_DIRECT = {
       requestQuote: 'Request a quote',
       rangeInTotal: 'Includes ranged items — confirmed when we talk',
       selectedCount: 'selected',
+      atelierBriefEmpty: 'Select one or more items to see deliverable details here.',
+      atelierBriefLabel: 'What you get',
       svcRequest: 'Request this service',
       svcWhatsApp: 'WhatsApp this service',
       svcAddCompose: 'Add to Atelier',
@@ -557,6 +561,10 @@ services: [
         ar: 'صورة ثابتة فوتوريالستك لواجهة خارجية واحدة — إضاءة طبيعية ومحيط أساسي بجودة تسويقية.',
         en: 'One photoreal still of a single exterior façade — natural light and basic context, marketing grade.',
       },
+      atelierNote: {
+        ar: 'صورة فوتوريالستك واحدة لواجهة خارجية بجودة تسويقية: إضاءة طبيعية، مواد دقيقة، ومحيط أساسي جاهز للإطلاق والحملات.',
+        en: 'One marketing-grade photoreal exterior still: natural light, accurate materials, and basic context ready for launch and ads.',
+      },
       price: 5500,
       unit: 'image',
       priceLabel: 'from',
@@ -569,6 +577,10 @@ services: [
       description: {
         ar: 'صورة ثابتة لمساحة داخلية (معيشة، مطبخ، غرفة) بتفاصيل أثاث وإضاءة معمارية.',
         en: 'One still of an interior space (living, kitchen, bedroom) with furniture detail and architectural lighting.',
+      },
+      atelierNote: {
+        ar: 'صورة ثابتة لمساحة داخلية (معيشة/مطبخ/غرفة) بأثاث وإضاءة معمارية — مخرج بيع يُظهر جودة التشطيب قبل التنفيذ.',
+        en: 'One interior still (living/kitchen/bedroom) with furniture and architectural lighting — a sales asset that sells finish quality before build.',
       },
       price: 4500,
       unit: 'image',
@@ -583,6 +595,10 @@ services: [
         ar: 'منظور علوي للمشروع أو المخطط العام يوضح السياق العمراني المحيط.',
         en: 'Bird’s-eye still of the project or masterplan, showing surrounding urban context.',
       },
+      atelierNote: {
+        ar: 'منظور جوي يوضح موقع المشروع ضمن السياق العمراني والطرق والمحيط — مفيد لعروض المستثمرين وصفحات الإطلاق.',
+        en: 'Aerial view placing the project in urban context, roads, and surroundings — strong for investor decks and launch pages.',
+      },
       price: 9500,
       unit: null,
       priceLabel: 'from',
@@ -595,6 +611,10 @@ services: [
       description: {
         ar: 'مخطط وحدة بتصميم بصري احترافي: ألوان، أثاث توضيحي، وقياسات واضحة لفريق المبيعات.',
         en: 'Unit plan with professional visual treatment: colour, illustrative furniture, and clear dimensions for sales.',
+      },
+      atelierNote: {
+        ar: 'إظهار مخطط وحدة بألوان وفرش وقياسات واضحة لفريق المبيعات والوسطاء — يقلل اللبس في شرح المساحات.',
+        en: 'Unit plan visualization with colour, furnish cues, and clear dimensions for sales and brokers — less ambiguity on space.',
       },
       price: 4000,
       unit: null,
@@ -610,6 +630,10 @@ services: [
       description: {
         ar: 'فيلم CGI سينمائي لإطلاق المشروع. النطاق السعري حسب المدة وجودة الإخراج وتعقيد المشاهد والمؤثرات.',
         en: 'Cinematic CGI film for project launch. Price range depends on duration, production quality, scene complexity, and VFX.',
+      },
+      atelierNote: {
+        ar: 'فيلم ثري دي سينمائي عالي التأثير لإطلاق المشروع. المدة عادة من ١–٥ دقائق وفق الرسالة المطلوبة ومدى تعقيد الكتلة المعمارية والمشاهد والحركة والمؤثرات — يُحدَّد السيناريو والطول النهائي بعد الاجتماع.',
+        en: 'High-impact cinematic 3D film for project launch. Typical runtime 1–5 minutes, shaped by the story needed and the architectural massing, scenes, motion, and VFX complexity — final length and treatment set after the briefing.',
       },
       price: 48000,
       priceTo: 150000,
@@ -631,6 +655,10 @@ services: [
         ar: 'جولة تفاعلية بصور كروية لوحدة أو موقع. النطاق حسب عدد الفراغات ونقاط التنقّل.',
         en: 'Interactive spherical-image tour of a unit or site. Range by space count and hotspots.',
       },
+      atelierNote: {
+        ar: 'جولة تفاعلية بصور كروية داخل وحدة أو موقع، مع نقاط تنقّل بين الفراغات — تجربة استكشاف دون حضور ميداني.',
+        en: 'Interactive spherical tour of a unit or site with hotspots between spaces — exploration without a site visit.',
+      },
       price: 8500,
       priceTo: 28000,
       unit: null,
@@ -645,6 +673,10 @@ services: [
         ar: 'بيئة ثلاثية الأبعاد تفاعلية من نماذج التصميم — تنقل حر وتخصيص تشطيبات. النطاق حسب حجم المشروع ومستوى التفاعل.',
         en: 'Interactive 3D environment from design models — free navigation and finish options. Range by project size and interaction depth.',
       },
+      atelierNote: {
+        ar: 'بيئة ثلاثية الأبعاد تفاعلية من نماذج التصميم: تنقّل حر وتبديل تشطيبات. النطاق حسب حجم المشروع وعمق التفاعل المطلوب لقرار الشراء.',
+        en: 'Interactive 3D environment from design models: free navigation and finish switching. Scope tracks project size and interaction depth needed for purchase decisions.',
+      },
       price: 55000,
       priceTo: 140000,
       unit: null,
@@ -658,6 +690,10 @@ services: [
       description: {
         ar: 'إنتاج برنامج عرض تفاعلي لشاشة اللمس: الوحدات والمزايا وحالة التوفر. النطاق حسب عدد الوحدات والتكاملات. الشاشة/العتاد من العميل أو يُسعَّر منفصلاً.',
         en: 'Interactive touchscreen presentation app: units, amenities, and availability. Range by unit count and integrations. Screen/hardware client-supplied or quoted separately.',
+      },
+      atelierNote: {
+        ar: 'برنامج عرض تفاعلي لشاشة اللمس يستعرض الوحدات والمزايا وحالة التوفر. الشاشة من العميل أو تُسعَّر منفصلة؛ النطاق حسب عدد الوحدات والتكاملات.',
+        en: 'Touchscreen presentation software for units, amenities, and availability. Screen is client-supplied or quoted separately; range by unit count and integrations.',
       },
       price: 75000,
       priceTo: 160000,
@@ -679,6 +715,10 @@ services: [
         ar: 'مجسم عرض بمقياس رسمي وتشطيب فاخر. النطاق حسب الحجم والمقياس ومستوى التفاصيل.',
         en: 'Sales-grade scale model with refined finish. Range by size, scale, and detail level.',
       },
+      atelierNote: {
+        ar: 'مجسم معماري لمبنى مفرد بمقياس وتشطيب عرض — حضور ملموس في الصالة. النطاق حسب الحجم والمقياس ومستوى التفاصيل.',
+        en: 'Single-building sales maquette at presentation scale and finish — tangible gallery presence. Range by size, scale, and detail.',
+      },
       price: 48000,
       priceTo: 120000,
       unit: null,
@@ -693,6 +733,10 @@ services: [
         ar: 'مجسم مخطط عام متعدد المباني مع سياق حضري. النطاق حسب المساحة وعدد المباني والتفاصيل.',
         en: 'Multi-building masterplan model with urban context. Range by footprint, building count, and detail.',
       },
+      atelierNote: {
+        ar: 'مجسم مخطط عام متعدد المباني مع سياق حضري. النطاق حسب مساحة القاعدة وعدد المباني وكثافة التفاصيل.',
+        en: 'Masterplan maquette with multiple buildings and urban context. Range by base size, building count, and detail density.',
+      },
       price: 145000,
       priceTo: 450000,
       unit: null,
@@ -706,6 +750,10 @@ services: [
       description: {
         ar: 'مجسم بطبقات إضاءة قابلة للتحكم. النطاق حسب الحجم وعدد مناطق الإضاءة ونظام التحكم.',
         en: 'Maquette with controllable lighting layers. Range by size, lighting zones, and control system.',
+      },
+      atelierNote: {
+        ar: 'مجسم بطبقات إضاءة قابلة للتحكم لسرد المناطق والمراحل أمام العميل. النطاق حسب الحجم وعدد مناطق الإضاءة ونظام التحكم.',
+        en: 'Maquette with controllable lighting layers to narrate zones and phases. Range by size, lighting zones, and control system.',
       },
       price: 75000,
       priceTo: 180000,
@@ -725,6 +773,10 @@ services: [
         ar: 'مجسم بآليات حركة تكشف الطبقات أو المراحل. النطاق حسب التعقيد الميكانيكي والحجم.',
         en: 'Maquette with mechanical motion revealing layers or phases. Range by mechanical complexity and size.',
       },
+      atelierNote: {
+        ar: 'مجسم بآليات حركة تكشف الطبقات أو المراحل — لحظة عرض قوية في الصالة. النطاق حسب التعقيد الميكانيكي والحجم.',
+        en: 'Kinetic maquette with motion that reveals layers or phases — a memorable gallery moment. Range by mechanical complexity and size.',
+      },
       price: 110000,
       priceTo: 280000,
       unit: null,
@@ -743,6 +795,10 @@ services: [
         ar: 'مجسم داخلي بمقاطع أدوار وفرش. النطاق حسب عدد الأدوار ومستوى الفرش والتفاصيل.',
         en: 'Cutaway interior model with furnished floors. Range by floor count and furnish detail.',
       },
+      atelierNote: {
+        ar: 'مجسم داخلي بمقاطع أدوار وفرش يوضح توزيع الفراغات والتشطيب للمستثمر. النطاق حسب عدد الأدوار ومستوى الفرش.',
+        en: 'Cutaway interior maquette with furnished floors for investors. Range by floor count and furnish detail.',
+      },
       price: 65000,
       priceTo: 150000,
       unit: null,
@@ -759,6 +815,10 @@ services: [
         ar: 'شعار + نظام ألوان + تايبوغرافي — أساس واضح دون دليل استخدام موسّع.',
         en: 'Logo + colour system + typography — a clear foundation without an extended brand manual.',
       },
+      atelierNote: {
+        ar: 'هوية بصرية أساسية للمشروع: شعار، ألوان، وخطوط — أساس واضح للطرح دون دليل موسّع.',
+        en: 'Essential project identity: logo, colours, and type — a clear launch foundation without an extended manual.',
+      },
       price: 15000,
       unit: null,
       priceLabel: 'from',
@@ -771,6 +831,10 @@ services: [
       description: {
         ar: 'شعار بصيغ متعددة، نظام ألوان وتايبوغرافي موثّق، وتطبيق مكاني للهوية.',
         en: 'Logo in multiple formats, documented colour and type systems, plus spatial brand application.',
+      },
+      atelierNote: {
+        ar: 'نظام هوية كامل مع دليل استخدام وتطبيق مكاني — توحيد المظهر عبر الصالة، المطبوعات، والرقمي.',
+        en: 'Full identity system with guidelines and spatial application — consistent look across gallery, print, and digital.',
       },
       price: 32000,
       unit: null,
@@ -785,6 +849,10 @@ services: [
         ar: 'كتالوج طباعة وديجيتال، بروشور، ومواد عرض جاهزة لفريق المبيعات.',
         en: 'Print and digital catalogue, brochure, and sales-ready display materials.',
       },
+      atelierNote: {
+        ar: 'كتالوج طباعي ورقمي مع بروشور ومواد عرض جاهزة لفريق المبيعات والوسطاء.',
+        en: 'Print and digital catalogue with brochure and sales-ready materials for the team and brokers.',
+      },
       price: 18000,
       unit: null,
       priceLabel: 'from',
@@ -798,6 +866,10 @@ services: [
         ar: 'موقع متعدد الصفحات لمشروع واحد — جاهز للحملة ويوم الإطلاق.',
         en: 'Multi-page site for a single project — ready for campaign and launch day.',
       },
+      atelierNote: {
+        ar: 'موقع متعدد الصفحات لمشروع واحد جاهز للحملة ويوم الإطلاق — صفحات، نماذج اهتمام، وربط بالأصول البصرية.',
+        en: 'Multi-page project site ready for campaign and launch day — pages, interest forms, and visual asset wiring.',
+      },
       price: 35000,
       unit: null,
       priceLabel: 'from',
@@ -810,6 +882,10 @@ services: [
       description: {
         ar: 'صفحة تسجيل مهتمين قبل الإطلاق. النطاق حسب التصميم والتكاملات ونموذج التسجيل.',
         en: 'Interest-capture page before official launch. Range by design, integrations, and form setup.',
+      },
+      atelierNote: {
+        ar: 'صفحة هبوط لتسجيل المهتمين قبل الإطلاق الرسمي، مع حافز أولوية. النطاق حسب التصميم والتكاملات.',
+        en: 'Landing page to capture interest before official launch, with priority incentive. Range by design and integrations.',
       },
       price: 12000,
       priceTo: 28000,
@@ -827,6 +903,10 @@ services: [
         ar: 'تصميم وتنفيذ ديكور صالة المبيعات عبر توريفا. يُسعَّر بالمتر المربع حسب مستوى التشطيب والتجهيزات.',
         en: 'Sales gallery décor design and build-out via Turriva. Priced per m² by finish level and fit-out scope.',
       },
+      atelierNote: {
+        ar: 'ديكور وتنفيذ صالة المبيعات عبر توريفا. يُسعَّر بالمتر حسب مستوى التشطيب والتجهيزات — المساحة تُحسب بعد الاجتماع.',
+        en: 'Sales gallery décor and build-out via Turriva. Priced per m² by finish and fit-out — area confirmed after the meeting.',
+      },
       price: 1400,
       priceTo: 2800,
       unit: 'area',
@@ -840,6 +920,10 @@ services: [
       description: {
         ar: 'تنفيذ ديكور وفرش وحدة سكنية نموذجية ترويجية عبر توريفا. يُسعَّر بالمتر المربع حسب المساحة ومستوى التشطيب.',
         en: 'Promotional residential show-unit décor and furnish via Turriva. Priced per m² by area and finish level.',
+      },
+      atelierNote: {
+        ar: 'ديكور وفرش وحدة سكنية نموذجية ترويجية عبر توريفا. يُسعَّر بالمتر حسب التشطيب — المساحة تُحسب بعد الاجتماع.',
+        en: 'Promotional residential show-unit décor and furnish via Turriva. Priced per m² by finish — area confirmed after the meeting.',
       },
       price: 1800,
       priceTo: 3500,
@@ -855,6 +939,10 @@ services: [
         ar: 'تصوير فوتوغرافي للموقع أو الوحدات الجاهزة — يوم تصوير مع تحرير.',
         en: 'Professional photography of site or finished units — full shoot day with edit.',
       },
+      atelierNote: {
+        ar: 'يوم تصوير فوتوغرافي احترافي للموقع أو الوحدات الجاهزة مع تحرير — أصول جاهزة للمنصات والمبيعات.',
+        en: 'One professional photography day of site or finished units with edit — assets ready for platforms and sales.',
+      },
       price: 12000,
       unit: 'day',
       priceLabel: 'from',
@@ -867,6 +955,10 @@ services: [
       description: {
         ar: 'مقطع قصير (~30 ثانية) تصوير جوي أو ميديا إنتاجية مع مونتاج جاهز للنشر.',
         en: 'Short (~30s) aerial or production media clip with edit ready to publish.',
+      },
+      atelierNote: {
+        ar: 'مقطع قصير (~٣٠ ثانية) درون أو ميديا إنتاجية مع مونتاج جاهز للنشر على المنصات.',
+        en: 'Short (~30s) drone or production media clip with edit ready to publish on platforms.',
       },
       price: 12000,
       unit: null,
@@ -885,6 +977,10 @@ services: [
         ar: 'إدارة إعلانات جوجل وميتا عبر بيزموشن — ميزانية الإعلان منفصلة عن رسوم الإدارة.',
         en: 'Google and Meta ads management via BeesMotion — ad spend separate from the management fee.',
       },
+      atelierNote: {
+        ar: 'إدارة حملات جوجل وميتا عبر بيزموشن — رسوم الإدارة منفصلة عن ميزانية الإعلان الشهرية.',
+        en: 'Google and Meta ads management via BeesMotion — management fee separate from monthly ad spend.',
+      },
       price: 18000,
       unit: 'month',
       priceLabel: 'from',
@@ -897,6 +993,10 @@ services: [
       description: {
         ar: 'ربط الحملات بالرد الآلي والمتابعة وتتبع المصادر. النطاق حسب القنوات وحجم التدفق الشهري.',
         en: 'Connect campaigns to auto-response, follow-up, and source tracking. Range by channels and monthly lead volume.',
+      },
+      atelierNote: {
+        ar: 'ربط الحملات بالرد والمتابعة وتتبع مصدر كل عميل محتمل. النطاق حسب القنوات وحجم التدفق الشهري.',
+        en: 'Wire campaigns to response, follow-up, and lead-source tracking. Range by channels and monthly volume.',
       },
       price: 15000,
       priceTo: 35000,
