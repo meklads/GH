@@ -66,14 +66,12 @@ function normalizeNavTail(header, isEn) {
   const ctaLabel = isEn ? 'Start Project' : 'ابدأ مشروعاً';
   const insightsFile = isEn ? 'insights/index-en.html' : 'insights/index.html';
   const contactFile = isEn ? 'contact-us-en.html' : 'contact-us.html';
-  const packagesFile = isEn
-    ? 'client-hub-gh-direct-2-en.html'
-    : 'client-hub-gh-direct-2.html';
+  const packagesFile = isEn ? 'Packages-en.html' : 'Packages.html';
 
   let h = header.replace(/<a class="nav-link[^"]*" href="[^"]*insights\/index[^"]*">[^<]*<\/a>\s*/gi, '');
   h = h.replace(/<a class="nav-link[^"]*" href="[^"]*contact-us[^"]*">[^<]*<\/a>\s*/gi, '');
   h = h.replace(
-    /<a class="nav-link[^"]*" href="[^"]*client-hub-gh-direct-2[^"]*">[^<]*<\/a>\s*/gi,
+    /<a class="nav-link[^"]*" href="[^"]*(?:client-hub-gh-direct-2|Packages)[^"]*">[^<]*<\/a>\s*/gi,
     ''
   );
 
