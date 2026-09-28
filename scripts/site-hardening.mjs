@@ -108,6 +108,8 @@ const EXPLICIT_PAIRS = {
   'gh-direct-en.html': 'client-hub-gh-direct.html',
   'client-hub-gh-direct.html': 'client-hub-gh-direct-en.html',
   'client-hub-gh-direct-en.html': 'client-hub-gh-direct.html',
+  'client-hub-gh-direct-2.html': 'client-hub-gh-direct-2-en.html',
+  'client-hub-gh-direct-2-en.html': 'client-hub-gh-direct-2.html',
 };
 
 /** services/foo.html ↔ services/foo-en.html */

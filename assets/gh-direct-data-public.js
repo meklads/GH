@@ -77,6 +77,9 @@ window.GH_DIRECT = {
       "pageTitle": "باقات وخدمات بأسعار معلنة",
       "pageBrand": "GH Direct",
       "pageLead": "ثلاث لحظات للمشروع: تعريف، بناء، وإطلاق وبيع. اختر الباقة المطابقة — أسعار تبدأ من رقم معلن، دون دفع إلكتروني.",
+      "pageEyebrowPublic": "اختيار مباشر · عرض سعر بعد الاجتماع",
+      "pageTitlePublic": "باقات وخدمات لمشروعك",
+      "pageLeadPublic": "ثلاث لحظات للمشروع: تعريف، بناء، وإطلاق وبيع. اختر الباقة أو ابنِ مزيجك — التسعير يُؤكَّد بعد الاجتماع، دون دفع إلكتروني.",
       "postureTitle": "مراحل مشروعك",
       "postureLead": "ثلاث مراحل لمشروع المطوّر العقاري. حدّد مرحلتك ثم اختر الباقة.",
       "catalogTitle": "كتالوج الخدمات",
@@ -101,6 +104,7 @@ window.GH_DIRECT = {
       },
       "packagesTitle": "الباقات",
       "packagesLead": "نواة وانطلاق بأسعار معلنة · توقيع بعرض سعر بعد الاجتماع.",
+      "packagesLeadPublic": "ثلاث باقات حسب مرحلة المشروع · التسعير بعرض سعر بعد الاجتماع.",
       "packagesFoot": "السعر النهائي يُحدَّد بعد الاجتماع",
       "stageLabel": "اللحظة",
       "stagePrefix": "",
@@ -276,6 +280,60 @@ window.GH_DIRECT = {
           "q": "هل تناسب المشاريع المؤسسية الكبرى؟",
           "a": "للمخططات واسعة النطاق والمؤسسية يُفضَّل مسار ProjectLaunch™ الاستشاري."
         }
+      ],
+      "faqPublic": [
+        {
+          "q": "كيف يُحدَّد السعر؟",
+          "a": "بعد اختيار الباقة أو البنود نراجع المخطط والجدول والمتطلبات، ثم نؤكد عرض السعر خلال يوم عمل عادة."
+        },
+        {
+          "q": "هل يتوفّر دفع إلكتروني؟",
+          "a": "لا. الصفحة للاختيار وطلب العرض. التأكيد والتسعير النهائي عبر واتساب أو نموذج الطلب."
+        },
+        {
+          "q": "كيف أختار بين باقات التعريف والانطلاق والبيع؟",
+          "a": "تعريف → نواة. بناء → انطلاق. إطلاق وبيع → توقيع. أو ابنِ مزيجاً في الأتيليه."
+        },
+        {
+          "q": "هل يمكن تبديل بنود الباقة؟",
+          "a": "نعم ضمن حدود معقولة قبل التأكيد. الزيادة أو الاستبدال الجوهري يُسعَّر كبند مكتوب."
+        },
+        {
+          "q": "هل أستطيع طلب خدمة واحدة فقط؟",
+          "a": "نعم عبر كتالوج الخدمات أو عبر الأتيليه إن أردت مزيجاً مخصصاً."
+        },
+        {
+          "q": "ماذا يحدث بعد إرسال الطلب؟",
+          "a": "نراجع الاختيار خلال يوم عمل، نؤكّد النطاق والسعر، ثم نضع خطة التسليم."
+        },
+        {
+          "q": "كم جولة مراجعة مشمولة؟",
+          "a": "باقة التعريف: جولة واحدة. باقتا الانطلاق والبيع: جولتان. ما زاد يُسعَّر عند الحاجة."
+        },
+        {
+          "q": "هل تعملون على موديل 3D جاهز؟",
+          "a": "نعم إن كان الموديل صالحاً للإنتاج. نراجع الملفات أولاً ونوضّح إن لزم إعادة بناء أو تحسين."
+        },
+        {
+          "q": "هل يمكن تنفيذ المشروع على مراحل؟",
+          "a": "نعم. كثيراً ما نبدأ بباقة التعريف أو الانطلاق ثم نرتقي عند جاهزية البيع."
+        },
+        {
+          "q": "متى يُفضَّل الأتيليه؟",
+          "a": "عندما تعرف بنوداً محددة ولا تريد الباقة كاملة. تختار المخرجات ثم نثبّت النطاق والتسعير معاً."
+        },
+        {
+          "q": "هل تبيع Graphics House العقار؟",
+          "a": "لا. نقدّم أصول العرض والبيع: إظهاراً، أفلام CGI، مواقع، مجسمات، وأدوات صالة المبيعات."
+        },
+        {
+          "q": "هل تشمل العروض ضريبة القيمة المضافة؟",
+          "a": "عرض السعر يوضح المعاملة الضريبية عند التأكيد الرسمي."
+        },
+        {
+          "q": "هل تناسب المشاريع المؤسسية الكبرى؟",
+          "a": "للمخططات واسعة النطاق والمؤسسية يُفضَّل مسار ProjectLaunch™ الاستشاري."
+        }
       ]
     },
     "en": {
@@ -283,6 +341,9 @@ window.GH_DIRECT = {
       "pageTitle": "Packages and services with published pricing",
       "pageBrand": "GH Direct",
       "pageLead": "Three project moments: Define, Build, and Launch & Sell. Choose the matching package — published starting-from prices, no online checkout.",
+      "pageEyebrowPublic": "Direct selection · Quote after the meeting",
+      "pageTitlePublic": "Packages and services for your project",
+      "pageLeadPublic": "Three project moments: Define, Build, and Launch & Sell. Choose a package or build your mix — pricing confirmed after the meeting, no online checkout.",
       "postureTitle": "Your project stages",
       "postureLead": "Three stages for a real-estate developer project. Identify your stage, then choose the package.",
       "catalogTitle": "Service catalog",
@@ -307,6 +368,7 @@ window.GH_DIRECT = {
       },
       "packagesTitle": "Packages",
       "packagesLead": "Core and Launch with published from-prices · Signature quoted after the meeting.",
+      "packagesLeadPublic": "Three packages by project stage · Pricing quoted after the meeting.",
       "packagesFoot": "Final price is set after the meeting",
       "stageLabel": "Moment",
       "stagePrefix": "",
@@ -476,6 +538,60 @@ window.GH_DIRECT = {
         {
           "q": "Do prices include VAT?",
           "a": "Published figures are pre-tax estimates unless otherwise stated at formal confirmation."
+        },
+        {
+          "q": "Is this suitable for major institutional projects?",
+          "a": "For large-scale and institutional masterplans, the consultative ProjectLaunch™ path is preferred."
+        }
+      ],
+      "faqPublic": [
+        {
+          "q": "How is pricing set?",
+          "a": "After you choose a package or items, we review drawings, timeline, and requirements, then confirm a quote — usually within one business day."
+        },
+        {
+          "q": "Is online checkout available?",
+          "a": "No. This page is for selection and quote requests. Confirmation and final pricing happen via WhatsApp or the request form."
+        },
+        {
+          "q": "How do I choose between Definition, Launch, and Sell packages?",
+          "a": "Define → Core. Build → Launch. Launch & Sell → Signature. Or compose a mix in Atelier."
+        },
+        {
+          "q": "Can package items be swapped?",
+          "a": "Yes within reason before confirmation. Material additions or swaps are priced as written line items."
+        },
+        {
+          "q": "Can I request a single service only?",
+          "a": "Yes via the service catalog, or via Atelier for a custom mix."
+        },
+        {
+          "q": "What happens after I submit a request?",
+          "a": "We review within one business day, confirm scope and pricing, then set the delivery plan."
+        },
+        {
+          "q": "How many revision rounds are included?",
+          "a": "Definition package: one round. Launch and Sell: two rounds. Extra rounds are priced if needed."
+        },
+        {
+          "q": "Do you work from an existing 3D model?",
+          "a": "Yes if the model is production-ready. We review files first and clarify if rebuild or cleanup is needed."
+        },
+        {
+          "q": "Can the project run in phases?",
+          "a": "Yes. Many clients start with Definition or Launch, then upgrade when sales readiness arrives."
+        },
+        {
+          "q": "When is Atelier preferable?",
+          "a": "When you know specific line items and do not need a full package. You select deliverables, then we lock scope and pricing together."
+        },
+        {
+          "q": "Does Graphics House sell the real estate?",
+          "a": "No. We deliver sales and presentation assets: visualization, CGI film, sites, maquettes, and sales-gallery tools."
+        },
+        {
+          "q": "Do quotes include VAT?",
+          "a": "The formal quote states tax treatment at confirmation."
         },
         {
           "q": "Is this suitable for major institutional projects?",

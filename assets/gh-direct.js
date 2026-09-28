@@ -238,10 +238,22 @@
     var title = document.getElementById('ghd-title');
     var brand = document.getElementById('ghd-brand');
     var lead = document.getElementById('ghd-lead');
-    if (eye) eye.textContent = ui.pageEyebrow;
+    if (eye) {
+      eye.textContent = hidePrices
+        ? ui.pageEyebrowPublic || ui.pageEyebrow
+        : ui.pageEyebrow;
+    }
     if (brand) brand.textContent = ui.pageBrand;
-    if (title) title.textContent = ui.pageTitle;
-    if (lead) lead.textContent = ui.pageLead;
+    if (title) {
+      title.textContent = hidePrices
+        ? ui.pageTitlePublic || ui.pageTitle
+        : ui.pageTitle;
+    }
+    if (lead) {
+      lead.textContent = hidePrices
+        ? ui.pageLeadPublic || ui.pageLead
+        : ui.pageLead;
+    }
     var catH = document.getElementById('ghd-catalog-title');
     var catL = document.getElementById('ghd-catalog-lead');
     var pkgH = document.getElementById('ghd-packages-title');
@@ -251,7 +263,11 @@
     if (catH) catH.textContent = ui.catalogTitle;
     if (catL) catL.textContent = ui.catalogLead;
     if (pkgH) pkgH.textContent = ui.packagesTitle;
-    if (pkgL) pkgL.textContent = ui.packagesLead;
+    if (pkgL) {
+      pkgL.textContent = hidePrices
+        ? ui.packagesLeadPublic || ui.packagesLead
+        : ui.packagesLead;
+    }
     if (posH) posH.textContent = ui.postureTitle || '';
     if (posL) posL.textContent = ui.postureLead || '';
     renderPosture();
@@ -1572,7 +1588,9 @@
       trust.textContent = ui.trustLine;
     }
     if (!host || !ui.faq || !ui.faq.length) return;
-    host.innerHTML = ui.faq
+    var faqItems =
+      hidePrices && ui.faqPublic && ui.faqPublic.length ? ui.faqPublic : ui.faq;
+    host.innerHTML = faqItems
       .map(function (item, i) {
         var id = 'ghd-faq-' + i;
         return (
@@ -2132,10 +2150,13 @@
       trust.textContent = ui.trustLine;
     }
     wireModals();
-    document.title =
-      (lang === 'ar'
+    document.title = hidePrices
+      ? lang === 'ar'
+        ? 'الباقات | GH Direct | Graphics House'
+        : 'Packages | GH Direct | Graphics House'
+      : lang === 'ar'
         ? 'الباقات والأسعار | GH Direct | Graphics House'
-        : 'GH Direct | Packages & Pricing | Graphics House');
+        : 'GH Direct | Packages & Pricing | Graphics House';
   }
 
   if (document.readyState === 'loading') {

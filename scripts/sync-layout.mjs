@@ -62,12 +62,20 @@ function fixCorruption(html) {
 function normalizeNavTail(header, isEn) {
   const insightsLabel = isEn ? 'Insights' : 'رؤى';
   const contactLabel = isEn ? 'Contact' : 'اتصال';
+  const packagesLabel = isEn ? 'Packages' : 'الباقات';
   const ctaLabel = isEn ? 'Start Project' : 'ابدأ مشروعاً';
   const insightsFile = isEn ? 'insights/index-en.html' : 'insights/index.html';
   const contactFile = isEn ? 'contact-us-en.html' : 'contact-us.html';
+  const packagesFile = isEn
+    ? 'client-hub-gh-direct-2-en.html'
+    : 'client-hub-gh-direct-2.html';
 
   let h = header.replace(/<a class="nav-link[^"]*" href="[^"]*insights\/index[^"]*">[^<]*<\/a>\s*/gi, '');
   h = h.replace(/<a class="nav-link[^"]*" href="[^"]*contact-us[^"]*">[^<]*<\/a>\s*/gi, '');
+  h = h.replace(
+    /<a class="nav-link[^"]*" href="[^"]*client-hub-gh-direct-2[^"]*">[^<]*<\/a>\s*/gi,
+    ''
+  );
 
   const prefixMatch =
     h.match(/href="((?:\.\.\/)+)portfolio/) ||
@@ -76,7 +84,7 @@ function normalizeNavTail(header, isEn) {
     h.match(/href="((?:\.\.\/)+)who-we-are/);
   const prefix = prefixMatch ? prefixMatch[1] : '';
 
-  const insert = `      <a class="nav-link" href="${prefix}${contactFile}">${contactLabel}</a>\n      <a class="nav-link nav-link-accent" href="${prefix}${insightsFile}">${insightsLabel}</a>\n      <a class="nav-link nav-mobile-cta" href="${prefix}${contactFile}">${ctaLabel}</a>\n    `;
+  const insert = `      <a class="nav-link" href="${prefix}${packagesFile}">${packagesLabel}</a>\n      <a class="nav-link" href="${prefix}${contactFile}">${contactLabel}</a>\n      <a class="nav-link nav-link-accent" href="${prefix}${insightsFile}">${insightsLabel}</a>\n      <a class="nav-link nav-mobile-cta" href="${prefix}${contactFile}">${ctaLabel}</a>\n    `;
   return h.replace(/\s*<\/nav>/, `\n${insert}</nav>`);
 }
 
