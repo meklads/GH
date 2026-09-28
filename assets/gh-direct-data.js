@@ -608,11 +608,11 @@ services: [
       family: 'cgi',
       name: { ar: 'فيلم CGI سينمائي', en: 'Cinematic CGI film' },
       description: {
-        ar: 'فيلم CGI سينمائي لإطلاق المشروع. النطاق يتحدّد بطبيعة الفيلم والمؤثرات وتعقيد المشهد — لذلك يُعرض كنطاق سعري لا كسعر سلعة ثابت.',
-        en: 'Cinematic CGI film for project launch. Scope depends on film nature, VFX, and scene complexity — shown as a range, not a fixed commodity price.',
+        ar: 'فيلم CGI سينمائي لإطلاق المشروع. النطاق السعري حسب المدة وجودة الإخراج وتعقيد المشاهد والمؤثرات.',
+        en: 'Cinematic CGI film for project launch. Price range depends on duration, production quality, scene complexity, and VFX.',
       },
       price: 48000,
-      priceTo: 185000,
+      priceTo: 150000,
       unit: null,
       priceLabel: 'from',
       media: {
@@ -652,10 +652,10 @@ services: [
     {
       id: 'touchscreen',
       family: 'immersive',
-      name: { ar: 'شاشة لمس تفاعلية', en: 'Interactive touchscreen' },
+      name: { ar: 'برنامج عرض تفاعلي لشاشة اللمس', en: 'Interactive touchscreen presentation app' },
       description: {
-        ar: 'هاردوير شاشة لمس + تطبيق مخصص لاستعراض الوحدات والامتيازات وتوفر البيع. يُسعَّر حسب النطاق والعتاد.',
-        en: 'Touchscreen hardware + custom app for units, amenities, and availability. Priced to scope and hardware.',
+        ar: 'إنتاج برنامج عرض تفاعلي يعمل على شاشة لمس: استعراض الوحدات والمزايا وحالة التوفر. الشاشة/العتاد من العميل أو يُسعَّر منفصلاً عند الطلب.',
+        en: 'Custom interactive presentation software for a touchscreen: units, amenities, and availability. Screen/hardware is client-supplied or quoted separately on request.',
       },
       price: 75000,
       unit: null,
