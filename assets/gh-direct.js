@@ -735,7 +735,7 @@
     if (!host) return;
     var items = [{ id: 'all', label: ui.filterAll || (lang === 'ar' ? 'الكل' : 'All') }].concat(
       FAMILY_ORDER.map(function (id) {
-        return { id: id, label: familyLabel(id, false) };
+        return { id: id, label: familyLabel(id, true) };
       })
     );
     host.innerHTML = items
