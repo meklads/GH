@@ -1,283 +1,288 @@
 {
-  "tools": [
-    {
-      "slug": "launch-checklist",
-      "icon": "checklist",
-      "title": {
-        "ar": "قائمة جاهزية الإطلاق البصري",
-        "en": "Visual Launch Readiness Checklist"
-      },
-      "description": {
-        "ar": "12 بنداً للتحقق قبل إطلاق مشروعك عقارياً. تفاعلية مع إمكانية الطباعة.",
-        "en": "12 checkpoints to review before your real estate launch. Interactive, with print support."
-      }
-    },
-    {
-      "slug": "solution-finder",
-      "icon": "psychology",
-      "title": {
-        "ar": "أي حل يناسب مشروعك؟",
-        "en": "Which Solution Fits Your Project?"
-      },
-      "description": {
-        "ar": "7 أسئلة قصيرة. توصية رئيسية وبديلة مع روابط للحلول والخدمات المناسبة.",
-        "en": "Seven short questions. Get a primary and secondary match with links to the right solutions and services."
-      }
-    },
-    {
-      "slug": "project-brief",
-      "icon": "description",
-      "title": {
-        "ar": "نموذج Brief للمشروع البصري",
-        "en": "Visual Project Brief Template"
-      },
-      "description": {
-        "ar": "نموذج جاهز للتعبئة قبل أول اجتماع. يوضح النطاق ويرفع جودة التسليم.",
-        "en": "A ready-to-fill template before your first meeting. Clarifies scope and improves delivery quality."
-      }
-    }
-  ],
-  "aiTools": [
-    {
-      "slug": "presentation-planner",
-      "icon": "slideshow",
-      "comingSoon": true,
-      "title": {
-        "ar": "مخطط العروض التقديمية",
-        "en": "Presentation Planner"
-      },
-      "description": {
-        "ar": "خطّط هيكل العرض البصري لمشروعك، من الرندر إلى الفيلم والتجربة التفاعلية.",
-        "en": "Plan your project's visual presentation structure, from renders to film and interactive layers."
-      }
-    },
-    {
-      "slug": "viz-advisor",
-      "icon": "architecture",
-      "comingSoon": true,
-      "title": {
-        "ar": "مستشار التصور البصري للمشروع",
-        "en": "Project Visualization Advisor"
-      },
-      "description": {
-        "ar": "إرشادات لاختيار مزيج الإظهار المعماري والمجسمات والـ CGI المناسب لمرحلة مشروعك.",
-        "en": "Guidance on the right archviz, maquette, and CGI mix for your project stage."
-      }
-    },
-    {
-      "slug": "copy-generator",
-      "icon": "edit_note",
-      "comingSoon": true,
-      "title": {
-        "ar": "مولّد النصوص التسويقية",
-        "en": "Marketing Copy Generator"
-      },
-      "description": {
-        "ar": "نصوص إطلاق وصالات بيع متسقة مع هوية مشروعك العقاري.",
-        "en": "Launch and sales-gallery copy aligned with your development brand."
-      }
-    },
-    {
-      "slug": "naming-assistant",
-      "icon": "badge",
-      "comingSoon": true,
-      "title": {
-        "ar": "مساعد تسمية المشاريع",
-        "en": "Project Naming Assistant"
-      },
-      "description": {
-        "ar": "اقتراحات أسماء ومفاهيم تموضع للمشاريع السكنية والمختلطة في السوق السعودي.",
-        "en": "Naming and positioning concepts for residential and mixed-use projects in Saudi Arabia."
-      }
-    }
-  ],
-  "downloads": [
-    {
-      "slug": "project-brief",
-      "fileType": { "ar": "نموذج تفاعلي", "en": "Interactive" },
-      "icon": "description",
-      "href": "tools/project-brief",
-      "comingSoon": false,
-      "emailGate": false,
-      "title": {
-        "ar": "نموذج Brief للمشروع",
-        "en": "Project Brief Template"
-      },
-      "description": {
-        "ar": "نموذج للتعبئة قبل أول اجتماع مع فريق الإنتاج البصري. يوضح النطاق والمخرجات المتوقعة.",
-        "en": "Fill in before your first visual production meeting. Covers scope and expected deliverables."
-      }
-    },
-    {
-      "slug": "sales-gallery-checklist",
-      "fileType": { "ar": "PDF · قائمة", "en": "PDF · Checklist" },
-      "icon": "checklist",
-      "href": "tools/launch-checklist",
-      "comingSoon": false,
-      "emailGate": false,
-      "title": {
-        "ar": "قائمة جاهزية صالة البيع",
-        "en": "Sales Gallery Checklist"
-      },
-      "description": {
-        "ar": "12 بنداً للتحقق قبل افتتاح صالة البيع وتسليم المواد البصرية.",
-        "en": "12 checkpoints before opening your sales gallery and handing over visual assets."
-      }
-    },
-    {
-      "slug": "visual-launch-checklist-pdf",
-      "fileType": { "ar": "PDF · قائمة", "en": "PDF · Checklist" },
-      "icon": "download",
-      "href": "downloads/visual-launch-checklist",
-      "comingSoon": true,
-      "emailGate": true,
-      "title": {
-        "ar": "قائمة الإطلاق البصري (PDF)",
-        "en": "Visual Launch Checklist (PDF)"
-      },
-      "description": {
-        "ar": "12 بنداً للتحقق قبل إعلان مبيعات المخطط. تحميل مجاني بعد التسجيل.",
-        "en": "12 checkpoints before your off-plan sales announcement. Free download after sign-up."
-      }
-    },
-    {
-      "slug": "visual-project-brief-pdf",
-      "fileType": { "ar": "PDF · نموذج", "en": "PDF · Template" },
-      "icon": "description",
-      "href": "downloads/visual-project-brief",
-      "comingSoon": true,
-      "emailGate": true,
-      "title": {
-        "ar": "نموذج Brief للمشروع (PDF)",
-        "en": "Visual Project Brief (PDF)"
-      },
-      "description": {
-        "ar": "نموذج قابل للطباعة قبل أول اجتماع. 10 حقول أساسية للمشروع والمخرجات.",
-        "en": "Printable template before your first meeting. Ten essential fields for project and deliverables."
-      }
-    },
-    {
-      "slug": "cgi-planning-guide",
-      "fileType": { "ar": "PDF · دليل", "en": "PDF · Guide" },
-      "icon": "movie",
-      "comingSoon": true,
-      "emailGate": false,
-      "title": {
-        "ar": "دليل تخطيط الـ CGI",
-        "en": "CGI Planning Guide"
-      },
-      "description": {
-        "ar": "إطار عمل لتخطيط أفلام الإطلاق السينمائية والجدول الزمني للإنتاج.",
-        "en": "A framework for planning cinematic launch films and production timelines."
-      }
-    },
-    {
-      "slug": "presentation-strategy",
-      "fileType": { "ar": "PDF · دليل", "en": "PDF · Guide" },
-      "icon": "present_to_all",
-      "comingSoon": true,
-      "emailGate": false,
-      "title": {
-        "ar": "دليل استراتيجية العروض",
-        "en": "Presentation Strategy Guide"
-      },
-      "description": {
-        "ar": "كيف تبني نظام عرض بصري متكامل من الرندر إلى المنصة التفاعلية.",
-        "en": "How to build an integrated visual presentation system from render to interactive platform."
-      }
-    }
-  ],
-  "cities": [
-    {
-      "slug": "jeddah",
-      "icon": "location_on",
-      "image": "assets/projects/rendering/jeddah-forum.jpg",
-      "title": {
-        "ar": "إظهار معماري في جدة",
-        "en": "Archviz in Jeddah"
-      },
-      "description": {
-        "ar": "المقر الرئيسي. مشاريع المنطقة الغربية والبحر الأحمر.",
-        "en": "Head office. Western Region and Red Sea developer projects."
-      }
-    },
-    {
-      "slug": "riyadh",
-      "icon": "location_city",
-      "image": "assets/projects/rendering/alrajhi3.jpeg",
-      "title": {
-        "ar": "إظهار معماري في الرياض",
-        "en": "Archviz in Riyadh"
-      },
-      "description": {
-        "ar": "مشاريع العاصمة والمطورين في منطقة الرياض.",
-        "en": "Capital-region developers and master-planned communities."
-      }
-    },
-    {
-      "slug": "makkah",
-      "icon": "mosque",
-      "image": "assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg",
-      "title": {
-        "ar": "إظهار معماري في مكة المكرمة",
-        "en": "Archviz in Makkah"
-      },
-      "description": {
-        "ar": "أبراج الخير وميثاق مكة ومشاريع سكنية وضيافة.",
-        "en": "Al Khair Heights, Makkah Charter, and hospitality developments."
-      }
-    },
-    {
-      "slug": "madinah",
-      "icon": "night_shelter",
-      "image": "assets/projects/rendering/wahat-alsalam9-scaled.jpg",
-      "title": {
-        "ar": "إظهار معماري في المدينة المنورة",
-        "en": "Archviz in Madinah"
-      },
-      "description": {
-        "ar": "مخططات سكنية وضيافة ومنصات مبيعات للمطورين.",
-        "en": "Master plans, hospitality, and sales platforms for developers."
-      }
-    },
-    {
-      "slug": "oman",
-      "icon": "public",
-      "image": "assets/projects/rendering/uae-e1745147961286.jpeg",
-      "title": {
-        "ar": "إظهار معماري في عُمان",
-        "en": "Archviz in Oman"
-      },
-      "description": {
-        "ar": "مكتب مسقط. إطلاق بصري للمطورين والمشاريع الساحلية.",
-        "en": "Muscat office. Visual launch support for developers and coastal projects."
-      }
-    },
-    {
-      "slug": "bahrain",
-      "icon": "apartment",
-      "image": "assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg",
-      "title": {
-        "ar": "إظهار معماري في البحرين",
-        "en": "Archviz in Bahrain"
-      },
-      "description": {
-        "ar": "مكتب المنامة. رندر ومجسمات وأنظمة إطلاق.",
-        "en": "Manama office. Renders, maquettes, and launch systems."
-      }
-    },
-    {
-      "slug": "egypt",
-      "icon": "location_city",
-      "image": "assets/projects/rendering/jeddah-forum.jpg",
-      "title": {
-        "ar": "إظهار معماري في مصر",
-        "en": "Archviz in Egypt"
-      },
-      "description": {
-        "ar": "مكتب الإسكندرية. إنتاج بصري للمطورين في مصر بمعايير الخليج.",
-        "en": "Alexandria office. Visual production for Egypt developers, GCC production standards."
-      }
-    }
-  ]
+ "tools": [
+  {
+   "slug": "launch-checklist",
+   "icon": "checklist",
+   "title": {
+    "ar": "قائمة جاهزية الإطلاق البصري",
+    "en": "Visual Launch Readiness Checklist"
+   },
+   "description": {
+    "ar": "12 بنداً للتحقق قبل إطلاق مشروعك عقارياً. تفاعلية مع إمكانية الطباعة.",
+    "en": "12 checkpoints to review before your real estate launch. Interactive, with print support."
+   }
+  },
+  {
+   "slug": "solution-finder",
+   "icon": "psychology",
+   "title": {
+    "ar": "أي حل يناسب مشروعك؟",
+    "en": "Which Solution Fits Your Project?"
+   },
+   "description": {
+    "ar": "7 أسئلة قصيرة. توصية رئيسية وبديلة مع روابط للحلول والخدمات المناسبة.",
+    "en": "Seven short questions. Get a primary and secondary match with links to the right solutions and services."
+   }
+  },
+  {
+   "slug": "project-brief",
+   "icon": "description",
+   "title": {
+    "ar": "نموذج Brief للمشروع البصري",
+    "en": "Visual Project Brief Template"
+   },
+   "description": {
+    "ar": "نموذج جاهز للتعبئة قبل أول اجتماع. يوضح النطاق ويرفع جودة التسليم.",
+    "en": "A ready-to-fill template before your first meeting. Clarifies scope and improves delivery quality."
+   }
+  }
+ ],
+ "aiTools": [
+  {
+   "slug": "presentation-planner",
+   "icon": "slideshow",
+   "comingSoon": true,
+   "title": {
+    "ar": "مخطط العروض التقديمية",
+    "en": "Presentation Planner"
+   },
+   "description": {
+    "ar": "خطّط هيكل العرض البصري لمشروعك، من الرندر إلى الفيلم والتجربة التفاعلية.",
+    "en": "Plan your project's visual presentation structure, from renders to film and interactive layers."
+   }
+  },
+  {
+   "slug": "viz-advisor",
+   "icon": "architecture",
+   "comingSoon": true,
+   "title": {
+    "ar": "مستشار التصور البصري للمشروع",
+    "en": "Project Visualization Advisor"
+   },
+   "description": {
+    "ar": "إرشادات لاختيار مزيج الإظهار المعماري والمجسمات والـ CGI المناسب لمرحلة مشروعك.",
+    "en": "Guidance on the right archviz, maquette, and CGI mix for your project stage."
+   }
+  },
+  {
+   "slug": "copy-generator",
+   "icon": "edit_note",
+   "comingSoon": true,
+   "title": {
+    "ar": "مولّد النصوص التسويقية",
+    "en": "Marketing Copy Generator"
+   },
+   "description": {
+    "ar": "نصوص إطلاق وصالات بيع متسقة مع هوية مشروعك العقاري.",
+    "en": "Launch and sales-gallery copy aligned with your development brand."
+   }
+  },
+  {
+   "slug": "naming-assistant",
+   "icon": "badge",
+   "comingSoon": true,
+   "title": {
+    "ar": "مساعد تسمية المشاريع",
+    "en": "Project Naming Assistant"
+   },
+   "description": {
+    "ar": "اقتراحات أسماء ومفاهيم تموضع للمشاريع السكنية والمختلطة في السوق السعودي.",
+    "en": "Naming and positioning concepts for residential and mixed-use projects in Saudi Arabia."
+   }
+  }
+ ],
+ "downloads": [
+  {
+   "slug": "project-brief",
+   "fileType": {
+    "ar": "نموذج تفاعلي",
+    "en": "Interactive"
+   },
+   "icon": "description",
+   "href": "tools/project-brief",
+   "comingSoon": false,
+   "emailGate": false,
+   "title": {
+    "ar": "نموذج Brief للمشروع",
+    "en": "Project Brief Template"
+   },
+   "description": {
+    "ar": "نموذج للتعبئة قبل أول اجتماع مع فريق الإنتاج البصري. يوضح النطاق والمخرجات المتوقعة.",
+    "en": "Fill in before your first visual production meeting. Covers scope and expected deliverables."
+   }
+  },
+  {
+   "slug": "sales-gallery-checklist",
+   "fileType": {
+    "ar": "PDF · قائمة",
+    "en": "PDF · Checklist"
+   },
+   "icon": "checklist",
+   "href": "tools/launch-checklist",
+   "comingSoon": false,
+   "emailGate": false,
+   "title": {
+    "ar": "قائمة جاهزية صالة البيع",
+    "en": "Sales Gallery Checklist"
+   },
+   "description": {
+    "ar": "12 بنداً للتحقق قبل افتتاح صالة البيع وتسليم المواد البصرية.",
+    "en": "12 checkpoints before opening your sales gallery and handing over visual assets."
+   }
+  },
+  {
+   "slug": "visual-launch-checklist-pdf",
+   "fileType": {
+    "ar": "PDF · قائمة",
+    "en": "PDF · Checklist"
+   },
+   "icon": "download",
+   "href": "downloads/visual-launch-checklist",
+   "comingSoon": true,
+   "emailGate": true,
+   "title": {
+    "ar": "قائمة الإطلاق البصري (PDF)",
+    "en": "Visual Launch Checklist (PDF)"
+   },
+   "description": {
+    "ar": "12 بنداً للتحقق قبل إعلان مبيعات المخطط. تحميل مجاني بعد التسجيل.",
+    "en": "12 checkpoints before your off-plan sales announcement. Free download after sign-up."
+   }
+  },
+  {
+   "slug": "visual-project-brief-pdf",
+   "fileType": {
+    "ar": "PDF · نموذج",
+    "en": "PDF · Template"
+   },
+   "icon": "description",
+   "href": "downloads/visual-project-brief",
+   "comingSoon": true,
+   "emailGate": true,
+   "title": {
+    "ar": "نموذج Brief للمشروع (PDF)",
+    "en": "Visual Project Brief (PDF)"
+   },
+   "description": {
+    "ar": "نموذج قابل للطباعة قبل أول اجتماع. 10 حقول أساسية للمشروع والمخرجات.",
+    "en": "Printable template before your first meeting. Ten essential fields for project and deliverables."
+   }
+  },
+  {
+   "slug": "cgi-planning-guide",
+   "fileType": {
+    "ar": "PDF · دليل",
+    "en": "PDF · Guide"
+   },
+   "icon": "movie",
+   "comingSoon": true,
+   "emailGate": false,
+   "title": {
+    "ar": "دليل تخطيط الـ CGI",
+    "en": "CGI Planning Guide"
+   },
+   "description": {
+    "ar": "إطار عمل لتخطيط أفلام الإطلاق السينمائية والجدول الزمني للإنتاج.",
+    "en": "A framework for planning cinematic launch films and production timelines."
+   }
+  },
+  {
+   "slug": "presentation-strategy",
+   "fileType": {
+    "ar": "PDF · دليل",
+    "en": "PDF · Guide"
+   },
+   "icon": "present_to_all",
+   "comingSoon": true,
+   "emailGate": false,
+   "title": {
+    "ar": "دليل استراتيجية العروض",
+    "en": "Presentation Strategy Guide"
+   },
+   "description": {
+    "ar": "كيف تبني نظام عرض بصري متكامل من الرندر إلى المنصة التفاعلية.",
+    "en": "How to build an integrated visual presentation system from render to interactive platform."
+   }
+  }
+ ],
+ "cities": [
+  {
+   "slug": "jeddah",
+   "icon": "location_on",
+   "image": "assets/projects/rendering/jeddah-forum.jpg",
+   "title": {
+    "ar": "إظهار معماري في جدة",
+    "en": "Archviz in Jeddah"
+   },
+   "description": {
+    "ar": "المقر الرئيسي. مشاريع المنطقة الغربية والبحر الأحمر.",
+    "en": "Head office. Western Region and Red Sea developer projects."
+   }
+  },
+  {
+   "slug": "riyadh",
+   "icon": "location_city",
+   "image": "assets/projects/rendering/alrajhi3.jpeg",
+   "title": {
+    "ar": "إظهار معماري في الرياض",
+    "en": "Archviz in Riyadh"
+   },
+   "description": {
+    "ar": "مشاريع العاصمة والمطورين في منطقة الرياض.",
+    "en": "Capital-region developers and master-planned communities."
+   }
+  },
+  {
+   "slug": "makkah",
+   "icon": "mosque",
+   "image": "assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.jpeg",
+   "title": {
+    "ar": "إظهار معماري في مكة المكرمة",
+    "en": "Archviz in Makkah"
+   },
+   "description": {
+    "ar": "أبراج الخير وميثاق مكة ومشاريع سكنية وضيافة.",
+    "en": "Al Khair Heights, Makkah Charter, and hospitality developments."
+   }
+  },
+  {
+   "slug": "madinah",
+   "icon": "night_shelter",
+   "image": "assets/projects/rendering/wahat-alsalam9-scaled.jpg",
+   "title": {
+    "ar": "إظهار معماري في المدينة المنورة",
+    "en": "Archviz in Madinah"
+   },
+   "description": {
+    "ar": "مخططات سكنية وضيافة ومنصات مبيعات للمطورين.",
+    "en": "Master plans, hospitality, and sales platforms for developers."
+   }
+  },
+  {
+   "slug": "oman",
+   "icon": "public",
+   "image": "assets/projects/rendering/uae-e1745147961286.jpeg",
+   "title": {
+    "ar": "إظهار معماري في عُمان",
+    "en": "Archviz in Oman"
+   },
+   "description": {
+    "ar": "مكتب مسقط. إطلاق بصري للمطورين والمشاريع الساحلية.",
+    "en": "Muscat office. Visual launch support for developers and coastal projects."
+   }
+  },
+  {
+   "slug": "bahrain",
+   "icon": "apartment",
+   "image": "assets/projects/rendering/The-Financial-Center-of-King-Abdullah-City.jpeg",
+   "title": {
+    "ar": "إظهار معماري في البحرين",
+    "en": "Archviz in Bahrain"
+   },
+   "description": {
+    "ar": "مكتب المنامة. رندر ومجسمات وأنظمة إطلاق.",
+    "en": "Manama office. Renders, maquettes, and launch systems."
+   }
+  }
+ ]
 }

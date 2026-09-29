@@ -412,7 +412,7 @@ export function socialProofStrip(isEn) {
   return `<div class="gh-art-proof" role="note">
     <span><strong>+15 سنة</strong> في الإظهار بالخليج</span>
     <span>مشاريع لمطورين في المنطقة</span>
-    <span><strong>4</strong> مكاتب إقليمية</span>
+    <span><strong>3</strong> مراكز إقليمية</span>
   </div>`;
 }
 

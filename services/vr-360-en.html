@@ -34,87 +34,87 @@ gtag('config','G-Y67JVE898Z');
 <!-- /GH brand fonts -->
 
 <style>
-  /* Bilingual visibility: see assets/gh-legacy-service-theme.css?v=3 */
+ /* Bilingual visibility: see assets/gh-legacy-service-theme.css?v=3 */
 /* ── Material Symbols FILL ─────────────────── */
-  .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
+ .ms-filled { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48; }
 
-  /* ── Scrollbar ──────────────────────────────── */
-  ::-webkit-scrollbar { width:3px; }
-  ::-webkit-scrollbar-track { background:#FAFAF8; }
-  ::-webkit-scrollbar-thumb { background:#C9A84C; }
+ /* ── Scrollbar ──────────────────────────────── */
+ ::-webkit-scrollbar { width:3px; }
+ ::-webkit-scrollbar-track { background:#FAFAF8; }
+ ::-webkit-scrollbar-thumb { background:#C9A84C; }
 
-  /* ── Custom Cursor ──────────────────────────── */
-  /* custom cursor disabled, site-wide pointer restored */
-  #cur-dot {
-    position:fixed; top:0; left:0; width:6px; height:6px; margin:-3px 0 0 -3px;
-    background:#C9A84C; border-radius:50%; pointer-events:none; z-index:99999;
-    will-change:transform; opacity:0; transition:opacity .3s ease,transform .05s linear;
-  }
-  #cur-ring {
-    position:fixed; top:0; left:0; width:36px; height:36px; margin:-18px 0 0 -18px;
-    border:1px solid rgba(201,168,76,.45); border-radius:50%;
-    pointer-events:none; z-index:99998; will-change:transform; opacity:0;
-    transition:opacity .3s ease,width .25s ease,height .25s ease,margin .25s ease,border-color .25s ease;
-  }
-  #cur-dot.visible,#cur-ring.visible { opacity:1; }
-  #cur-ring.hovered { width:60px; height:60px; margin:-30px 0 0 -30px; border-color:rgba(201,168,76,.8); }
+ /* ── Custom Cursor ──────────────────────────── */
+ /* custom cursor disabled, site-wide pointer restored */
+ #cur-dot {
+ position:fixed; top:0; left:0; width:6px; height:6px; margin:-3px 0 0 -3px;
+ background:#C9A84C; border-radius:50%; pointer-events:none; z-index:99999;
+ will-change:transform; opacity:0; transition:opacity .3s ease,transform .05s linear;
+ }
+ #cur-ring {
+ position:fixed; top:0; left:0; width:36px; height:36px; margin:-18px 0 0 -18px;
+ border:1px solid rgba(201,168,76,.45); border-radius:50%;
+ pointer-events:none; z-index:99998; will-change:transform; opacity:0;
+ transition:opacity .3s ease,width .25s ease,height .25s ease,margin .25s ease,border-color .25s ease;
+ }
+ #cur-dot.visible,#cur-ring.visible { opacity:1; }
+ #cur-ring.hovered { width:60px; height:60px; margin:-30px 0 0 -30px; border-color:rgba(201,168,76,.8); }
 
-  /* ── Film grain ─────────────────────────────── */
-  body::after {
-    content:''; position:fixed; inset:0; pointer-events:none; z-index:9990;
-    opacity:.018; mix-blend-mode:normal;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-    animation:grain 9s steps(8,end) infinite;
-  }
-  @keyframes grain {
-    0%{transform:translate(0,0)} 12%{transform:translate(-4%,-9%)} 25%{transform:translate(3%,-13%)}
-    37%{transform:translate(8%,6%)} 50%{transform:translate(-6%,11%)} 62%{transform:translate(10%,-4%)}
-    75%{transform:translate(-2%,8%)} 87%{transform:translate(5%,-7%)} 100%{transform:translate(0,0)}
-  }
+ /* ── Film grain ─────────────────────────────── */
+ body::after {
+ content:''; position:fixed; inset:0; pointer-events:none; z-index:9990;
+ opacity:.018; mix-blend-mode:normal;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+ animation:grain 9s steps(8,end) infinite;
+ }
+ @keyframes grain {
+ 0%{transform:translate(0,0)} 12%{transform:translate(-4%,-9%)} 25%{transform:translate(3%,-13%)}
+ 37%{transform:translate(8%,6%)} 50%{transform:translate(-6%,11%)} 62%{transform:translate(10%,-4%)}
+ 75%{transform:translate(-2%,8%)} 87%{transform:translate(5%,-7%)} 100%{transform:translate(0,0)}
+ }
 
-  /* ── Page Loader ────────────────────────────── */
-  #loader {
-    position:fixed; inset:0; z-index:99999; background:#FAFAF8;
-    display:flex; align-items:center; justify-content:center; flex-direction:column;
-    transition:opacity .6s ease,visibility .6s ease;
-  }
-  #loader.out { opacity:0; visibility:hidden; }
-  #loader-bar-track { width:180px; height:1px; background:rgba(201,168,76,.15); margin-top:20px; overflow:hidden; }
-  #loader-bar { height:100%; width:0; background:#C9A84C; transition:width 1s cubic-bezier(.4,0,.2,1); }
+ /* ── Page Loader ────────────────────────────── */
+ #loader {
+ position:fixed; inset:0; z-index:99999; background:#FAFAF8;
+ display:flex; align-items:center; justify-content:center; flex-direction:column;
+ transition:opacity .6s ease,visibility .6s ease;
+ }
+ #loader.out { opacity:0; visibility:hidden; }
+ #loader-bar-track { width:180px; height:1px; background:rgba(201,168,76,.15); margin-top:20px; overflow:hidden; }
+ #loader-bar { height:100%; width:0; background:#C9A84C; transition:width 1s cubic-bezier(.4,0,.2,1); }
 
-  /* ── Scroll reveal ──────────────────────────── */
-  .reveal { transition:opacity .75s cubic-bezier(.4,0,.2,1),transform .75s cubic-bezier(.4,0,.2,1); }
-  .reveal.visible { opacity:1 !important; transform:none !important; }
+ /* ── Scroll reveal ──────────────────────────── */
+ .reveal { transition:opacity .75s cubic-bezier(.4,0,.2,1),transform .75s cubic-bezier(.4,0,.2,1); }
+ .reveal.visible { opacity:1 !important; transform:none !important; }
 
-  /* ── Hero entrance ──────────────────────────── */
-  .hero-enter { opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1); }
-  .hero-enter.in { opacity:1; transform:none; }
+ /* ── Hero entrance ──────────────────────────── */
+ .hero-enter { opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1); }
+ .hero-enter.in { opacity:1; transform:none; }
 /* ── Mobile nav ─────────────────────────────── */
-  #mob-nav {
-    position:fixed; inset:0; z-index:9999;
-    background:#FAFAF8;
-    transform:translateX(100vw);
-    transition:transform .45s cubic-bezier(.4,0,.2,1);
-    overflow-y:auto;
-  }
-  #mob-nav.open { transform:translateX(0); }
+ #mob-nav {
+ position:fixed; inset:0; z-index:9999;
+ background:#FAFAF8;
+ transform:translateX(100vw);
+ transition:transform .45s cubic-bezier(.4,0,.2,1);
+ overflow-y:auto;
+ }
+ #mob-nav.open { transform:translateX(0); }
 
-  /* ── Back to top ─────────────────────────────── */
-  #back-top { transition:opacity .3s ease,transform .3s ease; opacity:0; pointer-events:none; transform:translateY(8px); }
-  #back-top.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
-
-
+ /* ── Back to top ─────────────────────────────── */
+ #back-top { transition:opacity .3s ease,transform .3s ease; opacity:0; pointer-events:none; transform:translateY(8px); }
+ #back-top.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
 
 
-  /* Brand light page chrome, header owned by site-header.css */
-  ::-webkit-scrollbar { width:3px; }
-  ::-webkit-scrollbar-track { background:#FAFAF8; }
-  ::-webkit-scrollbar-thumb { background:#CCC; }
-  ::-webkit-scrollbar-thumb:hover { background:#C9A84C; }
-  #loader { background:#FAFAF8 !important; }
-  #loader-bar-track { background:rgba(201,168,76,.18) !important; }
-  #loader-bar { background:#C9A84C !important; }
-  body::after { display:none !important; }
+
+
+ /* Brand light page chrome, header owned by site-header.css */
+ ::-webkit-scrollbar { width:3px; }
+ ::-webkit-scrollbar-track { background:#FAFAF8; }
+ ::-webkit-scrollbar-thumb { background:#CCC; }
+ ::-webkit-scrollbar-thumb:hover { background:#C9A84C; }
+ #loader { background:#FAFAF8 !important; }
+ #loader-bar-track { background:rgba(201,168,76,.18) !important; }
+ #loader-bar { background:#C9A84C !important; }
+ body::after { display:none !important; }
 
 </style>
 
@@ -127,7 +127,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="../assets/gh-en-typography.css?v=1">
 <link rel="stylesheet" href="../assets/gh-legacy-service-theme.css?v=3">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"VR & 360° Tours","description":"Immersive VR and panoramic 360° tours for real estate projects across Saudi Arabia and the GCC.","url":"https://3dgraphicshouse.com/services/vr-360-en.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH","EG"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"VR & 360° Tours","description":"Immersive VR and panoramic 360° tours for real estate projects across Saudi Arabia and the GCC.","url":"https://3dgraphicshouse.com/services/vr-360-en.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH"]}</script>
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="../assets/gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="../assets/site-header.css?v=62" data-gh-header-css="1">
@@ -525,7 +525,6 @@ gtag('config','G-Y67JVE898Z');
         <a href="tel:+966502786513"><span>Saudi · Jeddah</span> +966 50 278 6513</a>
         <a href="tel:+96891326735"><span>Oman</span> +968 9132 6735</a>
         <a href="tel:+97332150369"><span>Bahrain</span> +973 3215 0369</a>
-        <a href="tel:+201032955089"><span>Egypt · Production</span> +20 103 295 5089</a>
       </p>
     </section>
 
@@ -764,183 +763,184 @@ gtag('config','G-Y67JVE898Z');
 
 
 
+
 </div>
 <button id="back-top" class="fixed bottom-8 left-6 z-50 w-11 h-11 bg-surface-container-high border border-primary/30 text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" aria-label="Back to top"><span class="material-symbols-outlined text-xl">arrow_upward</span></button>
 <script>(function(){'use strict';
-  'use strict';
+ 'use strict';
 
-  // ── Language System ────────────────────────────
-  const html      = document.documentElement;
-  const body      = document.body;
-  const langBtn   = document.getElementById('lang-btn');
-  let   currentLang = localStorage.getItem('gh-lang') || 'ar';
+ // ── Language System ────────────────────────────
+ const html = document.documentElement;
+ const body = document.body;
+ const langBtn = document.getElementById('lang-btn');
+ let currentLang = localStorage.getItem('gh-lang') || 'ar';
 
-  function setLang(lang) {
-    currentLang = lang;
-    if (lang === 'en') {
-      body.classList.add('is-en');
-      html.lang = 'en';
-      // Keep RTL for visual consistency (Arabic company), only content changes
-    } else {
-      body.classList.remove('is-en');
-      html.lang = 'ar';
-    }
-    localStorage.setItem('gh-lang', lang);
-  }
+ function setLang(lang) {
+ currentLang = lang;
+ if (lang === 'en') {
+ body.classList.add('is-en');
+ html.lang = 'en';
+ // Keep RTL for visual consistency (Arabic company), only content changes
+ } else {
+ body.classList.remove('is-en');
+ html.lang = 'ar';
+ }
+ localStorage.setItem('gh-lang', lang);
+ }
 
-  // ── Theme System ───────────────────────────────
-  const themeBtn = document.getElementById('theme-btn');
-  let isDark = localStorage.getItem('gh-theme') !== 'light';
-  function applyTheme(dark) {
-    isDark = dark;
-    document.body.classList.toggle('is-light', !dark);
-    localStorage.setItem('gh-theme', dark ? 'dark' : 'light');
-  }
-  applyTheme(isDark);
-  themeBtn.addEventListener('click', () => applyTheme(!isDark));
-  langBtn.addEventListener('click', () => {
-    setLang(currentLang === 'ar' ? 'en' : 'ar');
-  });
+ // ── Theme System ───────────────────────────────
+ const themeBtn = document.getElementById('theme-btn');
+ let isDark = localStorage.getItem('gh-theme') !== 'light';
+ function applyTheme(dark) {
+ isDark = dark;
+ document.body.classList.toggle('is-light', !dark);
+ localStorage.setItem('gh-theme', dark ? 'dark' : 'light');
+ }
+ applyTheme(isDark);
+ themeBtn.addEventListener('click', () => applyTheme(!isDark));
+ langBtn.addEventListener('click', () => {
+ setLang(currentLang === 'ar' ? 'en' : 'ar');
+ });
 
-  // Init language on load
-  setLang(currentLang);
+ // Init language on load
+ setLang(currentLang);
 
-  // ── Page Loader ────────────────────────────────
-  const loader    = document.getElementById('loader');
-  const loaderBar = document.getElementById('loader-bar');
+ // ── Page Loader ────────────────────────────────
+ const loader = document.getElementById('loader');
+ const loaderBar = document.getElementById('loader-bar');
 
-  document.body.style.overflow = 'hidden';
-  setTimeout(() => { loaderBar.style.width = '100%'; }, 80);
-  setTimeout(() => {
-    loader.classList.add('out');
-    document.body.style.overflow = '';
-    triggerHeroEntrance();
-  }, 1450);
+ document.body.style.overflow = 'hidden';
+ setTimeout(() => { loaderBar.style.width = '100%'; }, 80);
+ setTimeout(() => {
+ loader.classList.add('out');
+ document.body.style.overflow = '';
+ triggerHeroEntrance();
+ }, 1450);
 
-  function triggerHeroEntrance() {
-    document.querySelectorAll('.hero-enter').forEach(el => el.classList.add('in'));
-  }
+ function triggerHeroEntrance() {
+ document.querySelectorAll('.hero-enter').forEach(el => el.classList.add('in'));
+ }
 
-  // ── Custom Cursor ──────────────────────────────
-  const dot  = document.getElementById('cur-dot');
-  const ring = document.getElementById('cur-ring');
+ // ── Custom Cursor ──────────────────────────────
+ const dot = document.getElementById('cur-dot');
+ const ring = document.getElementById('cur-ring');
 
-  if (window.matchMedia('(pointer:fine)').matches) {
-    let mx=0, my=0, rx=0, ry=0, moved=false;
+ if (window.matchMedia('(pointer:fine)').matches) {
+ let mx=0, my=0, rx=0, ry=0, moved=false;
 
-    document.addEventListener('mousemove', e => {
-      mx=e.clientX; my=e.clientY;
-      dot.style.transform = `translate(${mx}px,${my}px)`;
-      if (!moved) { rx=mx; ry=my; moved=true; dot.classList.add('visible'); ring.classList.add('visible'); }
-    });
+ document.addEventListener('mousemove', e => {
+ mx=e.clientX; my=e.clientY;
+ dot.style.transform = `translate(${mx}px,${my}px)`;
+ if (!moved) { rx=mx; ry=my; moved=true; dot.classList.add('visible'); ring.classList.add('visible'); }
+ });
 
-    (function animRing() {
-      rx += (mx-rx)*.13; ry += (my-ry)*.13;
-      ring.style.transform = `translate(${rx}px,${ry}px)`;
-      requestAnimationFrame(animRing);
-    })();
+ (function animRing() {
+ rx += (mx-rx)*.13; ry += (my-ry)*.13;
+ ring.style.transform = `translate(${rx}px,${ry}px)`;
+ requestAnimationFrame(animRing);
+ })();
 
-    document.querySelectorAll('a,button,[role="button"],input,select,textarea').forEach(el => {
-      el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
-      el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
-    });
-  }
+ document.querySelectorAll('a,button,[role="button"],input,select,textarea').forEach(el => {
+ el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+ el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+ });
+ }
 
-  // ── Scroll Reveal ──────────────────────────────
-  const revObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); }
-    });
-  }, { threshold:.1, rootMargin:'0px 0px -60px 0px' });
+ // ── Scroll Reveal ──────────────────────────────
+ const revObs = new IntersectionObserver(entries => {
+ entries.forEach(e => {
+ if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); }
+ });
+ }, { threshold:.1, rootMargin:'0px 0px -60px 0px' });
 
-  document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
 
-  // ── Counter Animation ──────────────────────────
-  const cntObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const el = e.target, target = parseInt(el.dataset.counter, 10), suffix = el.dataset.suffix||'';
-      const dur = 1800, start = performance.now();
-      (function tick(now) {
-        const p = Math.min((now-start)/dur, 1), v = Math.floor((1-Math.pow(1-p,3))*target);
-        el.textContent = v + suffix;
-        if (p < 1) requestAnimationFrame(tick); else el.textContent = target + suffix;
-      })(start);
-      cntObs.unobserve(el);
-    });
-  }, { threshold:.5 });
+ // ── Counter Animation ──────────────────────────
+ const cntObs = new IntersectionObserver(entries => {
+ entries.forEach(e => {
+ if (!e.isIntersecting) return;
+ const el = e.target, target = parseInt(el.dataset.counter, 10), suffix = el.dataset.suffix||'';
+ const dur = 1800, start = performance.now();
+ (function tick(now) {
+ const p = Math.min((now-start)/dur, 1), v = Math.floor((1-Math.pow(1-p,3))*target);
+ el.textContent = v + suffix;
+ if (p < 1) requestAnimationFrame(tick); else el.textContent = target + suffix;
+ })(start);
+ cntObs.unobserve(el);
+ });
+ }, { threshold:.5 });
 
-  document.querySelectorAll('[data-counter]').forEach(el => cntObs.observe(el));
+ document.querySelectorAll('[data-counter]').forEach(el => cntObs.observe(el));
 
-  // ── ScrollSpy + active page highlight ─────────
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section[id]');
+ // ── ScrollSpy + active page highlight ─────────
+ const navLinks = document.querySelectorAll('.nav-link');
+ const sections = document.querySelectorAll('section[id]');
 
-  // Highlight active page link on load (matches current filename)
-  const currentPage = location.pathname.split('/').pop() || 'index.html';
-  navLinks.forEach(a => {
-    const href = a.getAttribute('href') || '';
-    const linkFile = href.split('/').pop();
-    if (linkFile === currentPage || (currentPage === '' && href === 'index.html')) {
-      a.classList.add('nav-active');
-    }
-  });
+ // Highlight active page link on load (matches current filename)
+ const currentPage = location.pathname.split('/').pop() || 'index.html';
+ navLinks.forEach(a => {
+ const href = a.getAttribute('href') || '';
+ const linkFile = href.split('/').pop();
+ if (linkFile === currentPage || (currentPage === '' && href === 'index.html')) {
+ a.classList.add('nav-active');
+ }
+ });
 
-  // In-page section highlight (for #hash links like #services)
-  function updateNav() {
-    let cur = '';
-    sections.forEach(s => { if (s.getBoundingClientRect().top <= 160) cur = s.id; });
-    navLinks.forEach(a => {
-      const href = a.getAttribute('href') || '';
-      if (!href.startsWith('#')) return;
-      a.classList.toggle('nav-active', href === '#' + cur);
-    });
-  }
-  window.addEventListener('scroll', updateNav, {passive:true});
+ // In-page section highlight (for #hash links like #services)
+ function updateNav() {
+ let cur = '';
+ sections.forEach(s => { if (s.getBoundingClientRect().top <= 160) cur = s.id; });
+ navLinks.forEach(a => {
+ const href = a.getAttribute('href') || '';
+ if (!href.startsWith('#')) return;
+ a.classList.toggle('nav-active', href === '#' + cur);
+ });
+ }
+ window.addEventListener('scroll', updateNav, {passive:true});
 
-  // ── Nav scroll state ───────────────────────────
-  const nav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY>10), {passive:true});
+ // ── Nav scroll state ───────────────────────────
+ const nav = document.getElementById('main-nav');
+ window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY>10), {passive:true});
 
-  // ── Hero Parallax ──────────────────────────────
-  const heroBg = document.getElementById('hero-bg');
-  window.addEventListener('scroll', () => {
-    if (scrollY < innerHeight) heroBg.style.transform = `translateY(${scrollY*.3}px)`;
-  }, {passive:true});
+ // ── Hero Parallax ──────────────────────────────
+ const heroBg = document.getElementById('hero-bg');
+ window.addEventListener('scroll', () => {
+ if (scrollY < innerHeight) heroBg.style.transform = `translateY(${scrollY*.3}px)`;
+ }, {passive:true});
 
-  
-  // ── Mobile Lang/Theme buttons ──────────────────
-  const mobLangBtn = document.getElementById('mob-lang-btn');
-  const mobThemeBtn = document.getElementById('mob-theme-btn');
-  if (mobLangBtn) mobLangBtn.addEventListener('click', () => {
-    setLang(currentLang === 'ar' ? 'en' : 'ar');
-  });
-  if (mobThemeBtn) mobThemeBtn.addEventListener('click', () => {
-    applyTheme(!isDark);
-    // sync icon inside mob-theme-btn
-    const ms = mobThemeBtn.querySelectorAll('.material-symbols-outlined');
-    ms.forEach(el => { el.style.display = el.classList.contains('icon-moon') ? (isDark?'block':'none') : (isDark?'none':'block'); });
-  });
-  // ── Mobile Nav ─────────────────────────────────
-  const mobNav=document.getElementById('mob-nav'), mobOpen=document.getElementById('mob-open'), mobClose=document.getElementById('mob-close');
-  const openMob=()=>{mobNav.classList.add('open'); body.style.overflow='hidden';};
-  const closeMob=()=>{mobNav.classList.remove('open'); body.style.overflow='';};
-  mobOpen.addEventListener('click',openMob);
-  mobClose.addEventListener('click',closeMob);
-  document.querySelectorAll('.mob-link').forEach(a=>a.addEventListener('click',closeMob));
+ 
+ // ── Mobile Lang/Theme buttons ──────────────────
+ const mobLangBtn = document.getElementById('mob-lang-btn');
+ const mobThemeBtn = document.getElementById('mob-theme-btn');
+ if (mobLangBtn) mobLangBtn.addEventListener('click', () => {
+ setLang(currentLang === 'ar' ? 'en' : 'ar');
+ });
+ if (mobThemeBtn) mobThemeBtn.addEventListener('click', () => {
+ applyTheme(!isDark);
+ // sync icon inside mob-theme-btn
+ const ms = mobThemeBtn.querySelectorAll('.material-symbols-outlined');
+ ms.forEach(el => { el.style.display = el.classList.contains('icon-moon') ? (isDark?'block':'none') : (isDark?'none':'block'); });
+ });
+ // ── Mobile Nav ─────────────────────────────────
+ const mobNav=document.getElementById('mob-nav'), mobOpen=document.getElementById('mob-open'), mobClose=document.getElementById('mob-close');
+ const openMob=()=>{mobNav.classList.add('open'); body.style.overflow='hidden';};
+ const closeMob=()=>{mobNav.classList.remove('open'); body.style.overflow='';};
+ mobOpen.addEventListener('click',openMob);
+ mobClose.addEventListener('click',closeMob);
+ document.querySelectorAll('.mob-link').forEach(a=>a.addEventListener('click',closeMob));
 
-  // ── Video Modal ────────────────────────────────
-  const vidModal=document.getElementById('vid-modal'), vidClose=document.getElementById('vid-close');
-  const closeVid=()=>{vidModal.classList.remove('open'); body.style.overflow='';};
-  document.querySelectorAll('.play-btn').forEach(b=>b.addEventListener('click',()=>{vidModal.classList.add('open'); body.style.overflow='hidden';}));
-  vidClose.addEventListener('click',closeVid);
-  vidModal.addEventListener('click',e=>{if(e.target===vidModal) closeVid();});
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeVid();closeMob();} });
+ // ── Video Modal ────────────────────────────────
+ const vidModal=document.getElementById('vid-modal'), vidClose=document.getElementById('vid-close');
+ const closeVid=()=>{vidModal.classList.remove('open'); body.style.overflow='';};
+ document.querySelectorAll('.play-btn').forEach(b=>b.addEventListener('click',()=>{vidModal.classList.add('open'); body.style.overflow='hidden';}));
+ vidClose.addEventListener('click',closeVid);
+ vidModal.addEventListener('click',e=>{if(e.target===vidModal) closeVid();});
+ document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeVid();closeMob();} });
 
-  // ── Back to Top ────────────────────────────────
-  const backTop=document.getElementById('back-top');
-  window.addEventListener('scroll',()=>backTop.classList.toggle('visible',scrollY>600),{passive:true});
-  backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+ // ── Back to Top ────────────────────────────────
+ const backTop=document.getElementById('back-top');
+ window.addEventListener('scroll',()=>backTop.classList.toggle('visible',scrollY>600),{passive:true});
+ backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
 })();</script>
 
@@ -951,92 +951,92 @@ gtag('config','G-Y67JVE898Z');
 <script defer src="../assets/gh-chat-assistant.js?v=10"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">
-  <div class="gh-float-item">
-    <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" aria-label="WhatsApp">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-    </a>
-    <span class="gh-float-tip">WhatsApp · Quick reply</span>
-  </div>
-  <div class="gh-float-item">
-    <button type="button" class="gh-float-btn gh-float-mail" data-gh-popup-open aria-label="Project enquiry">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-    </button>
-    <span class="gh-float-tip">Project enquiry · Quick form</span>
-  </div>
-  <div class="gh-float-item">
-    <button type="button" class="gh-float-btn gh-float-brand" data-gh-brand-action data-contact-href="../contact-us-en.html" aria-label="Graphics House assistant">
-      <span class="gh-float-brand-inner">
-        <span class="gh-motif-ring"></span>
-        <span class="gh-motif-ring" style="animation-delay:1.2s"></span>
-        <span class="gh-motif-ring" style="animation-delay:2.4s"></span>
-        <img src="../assets/chatbot-motif.png" alt="" width="52" height="52" class="gh-float-brand-logo">
-      </span>
-    </button>
-    <span class="gh-float-tip">AI assistant · Chat with us</span>
-  </div>
+ <div class="gh-float-item">
+ <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" aria-label="WhatsApp">
+ <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+ </a>
+ <span class="gh-float-tip">WhatsApp · Quick reply</span>
+ </div>
+ <div class="gh-float-item">
+ <button type="button" class="gh-float-btn gh-float-mail" data-gh-popup-open aria-label="Project enquiry">
+ <svg width="24" height="24" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+ </button>
+ <span class="gh-float-tip">Project enquiry · Quick form</span>
+ </div>
+ <div class="gh-float-item">
+ <button type="button" class="gh-float-btn gh-float-brand" data-gh-brand-action data-contact-href="../contact-us-en.html" aria-label="Graphics House assistant">
+ <span class="gh-float-brand-inner">
+ <span class="gh-motif-ring"></span>
+ <span class="gh-motif-ring" style="animation-delay:1.2s"></span>
+ <span class="gh-motif-ring" style="animation-delay:2.4s"></span>
+ <img src="../assets/chatbot-motif.png" alt="" width="52" height="52" class="gh-float-brand-logo">
+ </span>
+ </button>
+ <span class="gh-float-tip">AI assistant · Chat with us</span>
+ </div>
 </div>
 <div id="ghPopup" role="dialog" aria-modal="true" aria-labelledby="ghPopupTitle" aria-hidden="true">
-  <div class="gh-popup-box">
-    <button type="button" class="gh-popup-close" data-gh-popup-close aria-label="Close">✕</button>
-    <div class="gh-popup-title" id="ghPopupTitle">Tell us about your project</div>
-    <div class="gh-popup-sub">Share a few details and we will respond within one business day.</div>
-    <form onsubmit="ghSubmit(event)">
-      <label class="gh-sr-only" for="ghName">Full Name</label>
-      <input class="gh-field" type="text" id="ghName" placeholder="Full Name *" required aria-label="Full Name">
-      <label class="gh-sr-only" for="ghCompany">Company / Developer</label>
-      <input class="gh-field" type="text" id="ghCompany" placeholder="Company / Developer" aria-label="Company or Developer">
-      <label class="gh-sr-only" for="ghProject">Project Type</label>
-      <select class="gh-field" id="ghProject" required aria-label="Project Type">
-        <option value="" disabled selected>Project Type *</option>
-        <option>Residential Development</option>
-        <option>Commercial Project</option>
-        <option>Hospitality / Hotel</option>
-        <option>Mixed-Use Development</option>
-        <option>Government / Public</option>
-        <option>Other</option>
-      </select>
-      <label class="gh-sr-only" for="ghPhone">Phone / WhatsApp</label>
-      <input class="gh-field" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required aria-label="Phone or WhatsApp">
-      <label class="gh-sr-only" for="ghEmail">Email</label>
-      <input class="gh-field" type="email" id="ghEmail" placeholder="Email *" required aria-label="Email" dir="ltr">
-      <label class="gh-sr-only" for="ghBrief">Project brief</label>
-      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Timeline, location, or visual needs..." style="resize:none" aria-label="Brief about your project"></textarea>
-            <div class="gh-honeypot" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
-        <label>Leave blank</label>
-        <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
-      </div>
-      <div class="gh-turnstile" style="margin:8px 0 12px;min-height:65px"></div>
+ <div class="gh-popup-box">
+ <button type="button" class="gh-popup-close" data-gh-popup-close aria-label="Close">✕</button>
+ <div class="gh-popup-title" id="ghPopupTitle">Tell us about your project</div>
+ <div class="gh-popup-sub">Share a few details and we will respond within one business day.</div>
+ <form onsubmit="ghSubmit(event)">
+ <label class="gh-sr-only" for="ghName">Full Name</label>
+ <input class="gh-field" type="text" id="ghName" placeholder="Full Name *" required aria-label="Full Name">
+ <label class="gh-sr-only" for="ghCompany">Company / Developer</label>
+ <input class="gh-field" type="text" id="ghCompany" placeholder="Company / Developer" aria-label="Company or Developer">
+ <label class="gh-sr-only" for="ghProject">Project Type</label>
+ <select class="gh-field" id="ghProject" required aria-label="Project Type">
+ <option value="" disabled selected>Project Type *</option>
+ <option>Residential Development</option>
+ <option>Commercial Project</option>
+ <option>Hospitality / Hotel</option>
+ <option>Mixed-Use Development</option>
+ <option>Government / Public</option>
+ <option>Other</option>
+ </select>
+ <label class="gh-sr-only" for="ghPhone">Phone / WhatsApp</label>
+ <input class="gh-field" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required aria-label="Phone or WhatsApp">
+ <label class="gh-sr-only" for="ghEmail">Email</label>
+ <input class="gh-field" type="email" id="ghEmail" placeholder="Email *" required aria-label="Email" dir="ltr">
+ <label class="gh-sr-only" for="ghBrief">Project brief</label>
+ <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Timeline, location, or visual needs..." style="resize:none" aria-label="Brief about your project"></textarea>
+ <div class="gh-honeypot" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+ <label>Leave blank</label>
+ <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
+ </div>
+ <div class="gh-turnstile" style="margin:8px 0 12px;min-height:65px"></div>
 <button type="submit" class="gh-submit">Send enquiry</button>
-    </form>
-    <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
-      <div style="font-size:36px;margin-bottom:12px">✓</div>
-      <div style="font-size:17px;font-weight:700;color:#1A1A1A;margin-bottom:8px">Thank you!</div>
-      <div style="font-size:14px;color:#888">We will be in touch shortly.</div>
-    </div>
-  </div>
+ </form>
+ <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
+ <div style="font-size:36px;margin-bottom:12px">✓</div>
+ <div style="font-size:17px;font-weight:700;color:#1A1A1A;margin-bottom:8px">Thank you!</div>
+ <div style="font-size:14px;color:#888">We will be in touch shortly.</div>
+ </div>
+ </div>
 </div>
 <!-- GH FLOAT END -->
 
 <!-- GH CHAT START -->
 <div id="gh-chat-root">
 <div id="ghChatPanel" class="gh-chat-panel" dir="ltr" role="dialog" aria-modal="true" aria-labelledby="ghChatTitle" aria-hidden="true">
-  <div id="ghChatHead" class="gh-chat-head">
-    <img loading="lazy" src="../assets/chatbot-motif.png" alt="" width="22" height="22" class="gh-chat-head-icon">
-    <span id="ghChatTitle">GH Assistant</span>
-    <span class="gh-chat-head-spacer" aria-hidden="true"></span>
-    <button type="button" class="gh-chat-close" data-gh-chat-close aria-label="Close">
-      <span class="material-symbols-outlined" aria-hidden="true">close</span>
-    </button>
-  </div>
-  <div id="ghChatMsgs" class="gh-chat-msgs" aria-live="polite"></div>
-  <div id="ghChatQuick" class="gh-chat-quick"></div>
-  <div id="ghChatInput" class="gh-chat-input">
-    <label class="gh-sr-only" for="ghChatField">Type your question</label>
-    <input type="text" id="ghChatField" placeholder="Type your question..." autocomplete="off">
-    <button type="button" id="ghChatSend" aria-label="Send">
-      <span class="material-symbols-outlined" aria-hidden="true">send</span>
-    </button>
-  </div>
+ <div id="ghChatHead" class="gh-chat-head">
+ <img loading="lazy" src="../assets/chatbot-motif.png" alt="" width="22" height="22" class="gh-chat-head-icon">
+ <span id="ghChatTitle">GH Assistant</span>
+ <span class="gh-chat-head-spacer" aria-hidden="true"></span>
+ <button type="button" class="gh-chat-close" data-gh-chat-close aria-label="Close">
+ <span class="material-symbols-outlined" aria-hidden="true">close</span>
+ </button>
+ </div>
+ <div id="ghChatMsgs" class="gh-chat-msgs" aria-live="polite"></div>
+ <div id="ghChatQuick" class="gh-chat-quick"></div>
+ <div id="ghChatInput" class="gh-chat-input">
+ <label class="gh-sr-only" for="ghChatField">Type your question</label>
+ <input type="text" id="ghChatField" placeholder="Type your question..." autocomplete="off">
+ <button type="button" id="ghChatSend" aria-label="Send">
+ <span class="material-symbols-outlined" aria-hidden="true">send</span>
+ </button>
+ </div>
 </div>
 </div>
 <!-- GH CHAT END -->

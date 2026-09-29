@@ -15,81 +15,81 @@ const BASE = 'https://3dgraphicshouse.com';
 const P = '../';
 
 function extractPageCss(arHtml) {
-  const m = arHtml.match(/<style>([\s\S]*?)<\/style>/);
-  return m ? m[1].trim() : '';
+ const m = arHtml.match(/<style>([\s\S]*?)<\/style>/);
+ return m ? m[1].trim() : '';
 }
 
 function extractBetween(html, startMarker, endMarker) {
-  const start = html.indexOf(startMarker);
-  if (start === -1) return '';
-  const end = html.indexOf(endMarker, start + startMarker.length);
-  if (end === -1) return '';
-  return html.slice(start, end);
+ const start = html.indexOf(startMarker);
+ if (start === -1) return '';
+ const end = html.indexOf(endMarker, start + startMarker.length);
+ if (end === -1) return '';
+ return html.slice(start, end);
 }
 
 function extractMainBody(arHtml) {
-  const main = extractBetween(arHtml, '<div id="main-content"', '<!-- FOOTER -->');
-  const modals = extractBetween(arHtml, '<!-- IMAGE LIGHTBOX -->', '<script>\nvar ro=');
-  return main + '\n' + modals;
+ const main = extractBetween(arHtml, '<div id="main-content"', '<!-- FOOTER -->');
+ const modals = extractBetween(arHtml, '<!-- IMAGE LIGHTBOX -->', '<script>\nvar ro=');
+ return main + '\n' + modals;
 }
 
 function extractPageScripts(arHtml) {
-  const m = arHtml.match(/<script>\nvar ro=new IntersectionObserver[\s\S]*?<\/script>\s*\n\s*<script defer src="\.\.\/assets\/quote-form-config\.js"><\/script>[\s\S]*?<script defer src="\.\.\/assets\/quote-form\.js[^"]*"><\/script>/);
-  return m ? m[0] : '';
+ const m = arHtml.match(/<script>\nvar ro=new IntersectionObserver[\s\S]*?<\/script>\s*\n\s*<script defer src="\.\.\/assets\/quote-form-config\.js"><\/script>[\s\S]*?<script defer src="\.\.\/assets\/quote-form\.js[^"]*"><\/script>/);
+ return m ? m[0] : '';
 }
 
 function applyTranslations(html) {
-  const pairs = [...MAQUETTES_EN_PAIRS].sort((a, b) => b[0].length - a[0].length);
-  let out = html;
-  for (const [ar, en] of pairs) {
-    out = out.split(ar).join(en);
-  }
-  return out;
+ const pairs = [...MAQUETTES_EN_PAIRS].sort((a, b) => b[0].length - a[0].length);
+ let out = html;
+ for (const [ar, en] of pairs) {
+ out = out.split(ar).join(en);
+ }
+ return out;
 }
 
 function fixEnBody(html) {
-  let out = html;
+ let out = html;
 
-  out = out.replace(/onclick="swapImage\('assets\//g, `onclick="swapImage('${P}assets/`);
-  out = out.replace(/top:12px;right:40px/g, 'top:12px;left:40px');
-  out = out.replace(/style="text-align:right"/g, 'style="text-align:left"');
-  out = out.replace(/direction:rtl/g, 'direction:ltr');
-  out = out.replace(/right:220px!important;left:0!important/g, 'left:220px!important;right:0!important');
-  out = out.replace(/arrow_back/g, 'arrow_forward');
-  out = out.replace(/href="\.\.\/contact-us\.html"/g, 'href="../contact-us-en.html"');
-  out = out.replace(/href="\.\.\/portfolio\.html"/g, 'href="../portfolio-en.html"');
-  out = out.replace(/href="rendering\.html"/g, 'href="rendering-en.html"');
-  out = out.replace(/href="animation\.html"/g, 'href="animation-en.html"');
-  out = out.replace(/href="digital-marketing\.html"/g, 'href="digital-marketing-en.html"');
-  out = out.replace(/href="interactive\.html"/g, 'href="interactive-en.html"');
-  out = out.replace(
-    /value="https:\/\/3dgraphicshouse\.com\/gh-maquettes\.html\?sent=1#booking"/,
-    `value="${BASE}/services/maquettes-en.html?sent=1#booking"`
-  );
-  out = out.replace(/<\/section>\s*<\/section>/, '</section>');
+ out = out.replace(/onclick="swapImage\('assets\//g, `onclick="swapImage('${P}assets/`);
+ out = out.replace(/top:12px;right:40px/g, 'top:12px;left:40px');
+ out = out.replace(/style="text-align:right"/g, 'style="text-align:left"');
+ out = out.replace(/direction:rtl/g, 'direction:ltr');
+ out = out.replace(/right:220px!important;left:0!important/g, 'left:220px!important;right:0!important');
+ out = out.replace(/arrow_back/g, 'arrow_forward');
+ out = out.replace(/href="\.\.\/contact-us\.html"/g, 'href="../contact-us-en.html"');
+ out = out.replace(/href="\.\.\/portfolio\.html"/g, 'href="../portfolio-en.html"');
+ out = out.replace(/href="rendering\.html"/g, 'href="rendering-en.html"');
+ out = out.replace(/href="animation\.html"/g, 'href="animation-en.html"');
+ out = out.replace(/href="digital-marketing\.html"/g, 'href="digital-marketing-en.html"');
+ out = out.replace(/href="interactive\.html"/g, 'href="interactive-en.html"');
+ out = out.replace(
+ /value="https:\/\/3dgraphicshouse\.com\/gh-maquettes\.html\?sent=1#booking"/,
+ `value="${BASE}/services/maquettes-en.html?sent=1#booking"`
+ );
+ out = out.replace(/<\/section>\s*<\/section>/, '</section>');
 
-  out = out.replace(/alt="عنان إسكان"/g, 'alt="Anan Eskan"');
-  out = out.replace(/alt="رفال"/g, 'alt="Rafal"');
-  out = out.replace(/alt="رابطة العالم الإسلامي"/g, 'alt="Muslim World League"');
-  out = out.replace(/alt="مكيون"/g, 'alt="Makyon"');
-  out = out.replace(/alt="ابن زومة"/g, 'alt="Ibn Zoma"');
-  out = out.replace(/alt="العلا"/g, 'alt="Al Oula"');
-  out = out.replace(/alt="تويوتا"/g, 'alt="Toyota"');
+ out = out.replace(/alt="عنان إسكان"/g, 'alt="Anan Eskan"');
+ out = out.replace(/alt="رفال"/g, 'alt="Rafal"');
+ out = out.replace(/alt="رابطة العالم الإسلامي"/g, 'alt="Muslim World League"');
+ out = out.replace(/alt="مكيون"/g, 'alt="Makyon"');
+ out = out.replace(/alt="ابن زومة"/g, 'alt="Ibn Zoma"');
+ out = out.replace(/alt="العلا"/g, 'alt="Al Oula"');
+ out = out.replace(/alt="تويوتا"/g, 'alt="Toyota"');
 
-  return out;
+ return out;
 }
 
 function build() {
-  const arHtml = fs.readFileSync(AR_PATH, 'utf8');
-  const css = extractPageCss(arHtml);
-  const body = fixEnBody(applyTranslations(extractMainBody(arHtml)));
-  const scripts = extractPageScripts(arHtml);
-  const header = renderHeader(1, true);
-  const footer = renderFooter(1, true);
-  const canonical = `${BASE}/services/maquettes-en.html`;
-  const arUrl = `${BASE}/services/maquettes.html`;
+ const arHtml = fs.readFileSync(AR_PATH, 'utf8');
+ const css = extractPageCss(arHtml);
+ const body = fixEnBody(applyTranslations(extractMainBody(arHtml)));
+ const scripts = extractPageScripts(arHtml);
+ const header = renderHeader(1, true);
+ const footer = renderFooter(1, true);
+ const canonical = `${BASE}/services/maquettes-en.html`;
+ const arUrl = `${BASE}/services/maquettes.html`;
 
-  const html = `<!DOCTYPE html>
+ const html = `<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
 <script src="${P}assets/gh-forms-config.js?v=2"></script>
@@ -129,14 +129,14 @@ ${css}
 <script defer src="${P}assets/site-reveal.js?v=2"></script>
 <script defer src="${P}assets/lang-switch.js?v=2"></script>
 <script type="application/ld+json">${JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Smart Architectural Maquettes',
-    description: 'Smart architectural maquettes with projection mapping and live data for developers in Saudi Arabia and the GCC.',
-    url: canonical,
-    provider: { '@type': 'Organization', name: 'Graphics House', url: BASE },
-    areaServed: ['SA', 'AE', 'OM', 'BH', 'EG'],
-  })}</script>
+ '@context': 'https://schema.org',
+ '@type': 'Service',
+ name: 'Smart Architectural Maquettes',
+ description: 'Smart architectural maquettes with projection mapping and live data for developers in Saudi Arabia and the GCC.',
+ url: canonical,
+ provider: { '@type': 'Organization', name: 'Graphics House', url: BASE },
+ areaServed: ['SA', 'AE', 'OM', 'BH'],
+ })}</script>
 </head>
 <body>
 ${header}
@@ -147,10 +147,10 @@ ${scripts}
 </html>
 `;
 
-  fs.writeFileSync(OUT_PATH, html, 'utf8');
-  const hasGallery = html.includes('gallery-strip');
-  const hasBooking = html.includes('id="booking"');
-  console.log(`Built services/maquettes-en.html (gallery-strip: ${hasGallery}, booking: ${hasBooking})`);
+ fs.writeFileSync(OUT_PATH, html, 'utf8');
+ const hasGallery = html.includes('gallery-strip');
+ const hasBooking = html.includes('id="booking"');
+ console.log(`Built services/maquettes-en.html (gallery-strip: ${hasGallery}, booking: ${hasBooking})`);
 }
 
 build();

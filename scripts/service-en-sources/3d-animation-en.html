@@ -44,9 +44,9 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="assets/site-header.css?v=57">
 <style>
 :root {
-  --gold: #C9A84C; --gold-light: #D9B860; --gold-dark: #A8883A;
-  --text-primary: #1A1A1A; --text-secondary: rgba(26,26,26,0.65);
-  --text-muted: rgba(26,26,26,0.4); --bg-white: #FFFFFF;
+ --gold: #C9A84C; --gold-light: #D9B860; --gold-dark: #A8883A;
+ --text-primary: #1A1A1A; --text-secondary: rgba(26,26,26,0.65);
+ --text-muted: rgba(26,26,26,0.4); --bg-white: #FFFFFF;
 }
 main *, main *::before, main *::after, .gh-footer *, .gh-footer *::before, .gh-footer *::after, footer *:not(.header):not(.header *), footer *:not(.header):not(.header *)::before, footer *:not(.header):not(.header *)::after { border-radius: 0 !important; }
 html{scroll-behavior:smooth;background:#FAFAF8;color:#1A1A1A}
@@ -85,21 +85,21 @@ img{max-width:100%;display:block}
 
 /* GALLERY STRIP HERO */
 .gallery-strip {
-  display: flex; width: 100%; height: 80vh;
-  gap: 0; overflow: hidden; direction: ltr;
-  border-top: 2px solid rgba(201,168,76,0.15);
-  border-bottom: 2px solid rgba(201,168,76,0.15);
-  box-shadow: inset 0 0 60px rgba(0,0,0,0.3), 0 4px 30px rgba(0,0,0,0.15);
+ display: flex; width: 100%; height: 80vh;
+ gap: 0; overflow: hidden; direction: ltr;
+ border-top: 2px solid rgba(201,168,76,0.15);
+ border-bottom: 2px solid rgba(201,168,76,0.15);
+ box-shadow: inset 0 0 60px rgba(0,0,0,0.3), 0 4px 30px rgba(0,0,0,0.15);
 }
 .gallery-strip-item {
-  flex: 1; position: relative; overflow: hidden; cursor: pointer;
-  transition: flex 0.6s cubic-bezier(0.25, 0.1, 0.1, 1), opacity 0.4s ease;
-  min-width: 0;
+ flex: 1; position: relative; overflow: hidden; cursor: pointer;
+ transition: flex 0.6s cubic-bezier(0.25, 0.1, 0.1, 1), opacity 0.4s ease;
+ min-width: 0;
 }
 .gallery-strip-item img, .gallery-strip-item video {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.1, 1);
-  position: absolute; inset: 0;
+ width: 100%; height: 100%; object-fit: cover;
+ transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.1, 1);
+ position: absolute; inset: 0;
 }
 .gallery-strip-item video { opacity: 0; transition: opacity 0.5s ease; }
 .gallery-strip-item:hover video { opacity: 1; }
@@ -107,68 +107,68 @@ img{max-width:100%;display:block}
 .gallery-strip-item:hover img { transform: scale(1.05); }
 .gallery-strip-item:not(:hover) { flex: 0.7; opacity: 0.7; }
 .gallery-strip-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
-  opacity: 0; transition: opacity 0.4s ease; z-index: 2; pointer-events: none;
+ position: absolute; inset: 0;
+ background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+ opacity: 0; transition: opacity 0.4s ease; z-index: 2; pointer-events: none;
 }
 .gallery-strip-item:hover .gallery-strip-overlay { opacity: 1; }
 .gallery-strip-label {
-  position: absolute; bottom: 0; left: 0; right: 0; z-index: 3;
-  padding: 16px; color: #fff;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
-  opacity: 0; transform: translateY(12px);
-  transition: all 0.4s ease 0.1s; pointer-events: none;
-  font-size: 16px; font-weight: 700; font-family: 'Inter', sans-serif;
-  text-align: center; line-height: 1.2;
-  letter-spacing: 0.04em; text-transform: uppercase;
+ position: absolute; bottom: 0; left: 0; right: 0; z-index: 3;
+ padding: 16px; color: #fff;
+ background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+ opacity: 0; transform: translateY(12px);
+ transition: all 0.4s ease 0.1s; pointer-events: none;
+ font-size: 16px; font-weight: 700; font-family: 'Inter', sans-serif;
+ text-align: center; line-height: 1.2;
+ letter-spacing: 0.04em; text-transform: uppercase;
 }
 .gallery-strip-item:hover .gallery-strip-label { opacity: 1; transform: translateY(0); }
 @media (max-width: 768px) {
-  .gallery-strip { height: 60vh; flex-direction: column; }
-  .gallery-strip-item:not(:hover) { flex: 0.5; opacity: 0.5; }
-  .gallery-strip-item:hover { flex: 4; }
+ .gallery-strip { height: 60vh; flex-direction: column; }
+ .gallery-strip-item:not(:hover) { flex: 0.5; opacity: 0.5; }
+ .gallery-strip-item:hover { flex: 4; }
 }
 
 /* SECTIONS */
 section { padding: 90px 0; }
 @media (max-width: 768px) { section { padding: 56px 0; } }
 .section-label {
-  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
-  color: var(--gold); display: block; margin-bottom: 12px;
-  font-family: 'Inter', sans-serif; text-transform: uppercase;
+ font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+ color: var(--gold); display: block; margin-bottom: 12px;
+ font-family: 'Inter', sans-serif; text-transform: uppercase;
 }
 .section-title {
-  font-size: clamp(28px, 3.8vw, 48px);
-  font-weight: 500; line-height: 1.15;
-  margin-bottom: 16px; color: var(--text-primary);
+ font-size: clamp(28px, 3.8vw, 48px);
+ font-weight: 500; line-height: 1.15;
+ margin-bottom: 16px; color: var(--text-primary);
 }
 .section-title .gold { color: var(--gold); }
 .section-sub {
-  font-size: 16px; font-weight: 400; color: var(--text-secondary);
-  line-height: 1.8; max-width: 620px; margin-bottom: 48px;
+ font-size: 16px; font-weight: 400; color: var(--text-secondary);
+ line-height: 1.8; max-width: 620px; margin-bottom: 48px;
 }
 
 /* FEATURE GRID */
 .feature-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
-  background: rgba(26,26,26,0.06); border: 1px solid rgba(26,26,26,0.06);
+ display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+ background: rgba(26,26,26,0.06); border: 1px solid rgba(26,26,26,0.06);
 }
 .feature-card {
-  background: var(--bg-white); padding: 40px 28px; text-align: center;
-  transition: all 0.4s ease;
+ background: var(--bg-white); padding: 40px 28px; text-align: center;
+ transition: all 0.4s ease;
 }
 .feature-card:hover { background: #FAFAF8; }
 .feature-card .icon {
-  width: 56px; height: 56px; border-radius: 50%;
-  background: rgba(201,168,76,0.1);
-  border: 1px solid rgba(201,168,76,0.2);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 16px; transition: all 0.4s ease;
+ width: 56px; height: 56px; border-radius: 50%;
+ background: rgba(201,168,76,0.1);
+ border: 1px solid rgba(201,168,76,0.2);
+ display: flex; align-items: center; justify-content: center;
+ margin: 0 auto 16px; transition: all 0.4s ease;
 }
 .feature-card .icon .material-symbols-outlined { font-size: 24px; color: var(--gold); }
 .feature-card:hover .icon {
-  background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.4);
-  transform: translateY(-4px);
+ background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.4);
+ transform: translateY(-4px);
 }
 .feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
 .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 400; }
@@ -177,35 +177,35 @@ section { padding: 90px 0; }
 
 /* PORTFOLIO GRID */
 .portfolio-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+ display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
 }
 .portfolio-item {
-  position: relative; aspect-ratio: 4/3; overflow: hidden;
-  background: #EEE; border: 1px solid rgba(26,26,26,0.06);
-  transition: all 0.5s ease; cursor: pointer;
+ position: relative; aspect-ratio: 4/3; overflow: hidden;
+ background: #EEE; border: 1px solid rgba(26,26,26,0.06);
+ transition: all 0.5s ease; cursor: pointer;
 }
 .portfolio-item img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.25,0.1,0.1,1);
+ width: 100%; height: 100%; object-fit: cover;
+ transition: transform 0.8s cubic-bezier(0.25,0.1,0.1,1);
 }
 .portfolio-item:hover { border-color: rgba(201,168,76,0.2); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
 .portfolio-item:hover img { transform: scale(1.06); }
 .portfolio-item-overlay {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 24px 18px 16px;
-  background: linear-gradient(transparent, rgba(0,0,0,0.85));
-  transform: translateY(8px); opacity: 0; transition: all 0.4s ease;
+ position: absolute; bottom: 0; left: 0; right: 0;
+ padding: 24px 18px 16px;
+ background: linear-gradient(transparent, rgba(0,0,0,0.85));
+ transform: translateY(8px); opacity: 0; transition: all 0.4s ease;
 }
 .portfolio-item:hover .portfolio-item-overlay { transform: translateY(0); opacity: 1; }
 .portfolio-item-category {
-  font-size: 10px; font-weight: 600; color: var(--gold);
-  display: block; letter-spacing: 1px; font-family: 'Inter', sans-serif;
-  text-transform: uppercase; margin-bottom: 4px;
+ font-size: 10px; font-weight: 600; color: var(--gold);
+ display: block; letter-spacing: 1px; font-family: 'Inter', sans-serif;
+ text-transform: uppercase; margin-bottom: 4px;
 }
 .portfolio-item-title { font-size: 14px; font-weight: 500; color: #fff; display: block; }
 .portfolio-item::before, .portfolio-item::after {
-  content: ''; position: absolute; z-index: 2; pointer-events: none;
-  width: 16px; height: 16px; opacity: 0; transition: all 0.4s ease;
+ content: ''; position: absolute; z-index: 2; pointer-events: none;
+ width: 16px; height: 16px; opacity: 0; transition: all 0.4s ease;
 }
 .portfolio-item::before { top: 8px; left: 8px; border-top: 1.5px solid var(--gold); border-left: 1.5px solid var(--gold); }
 .portfolio-item::after { bottom: 8px; right: 8px; border-bottom: 1.5px solid var(--gold); border-right: 1.5px solid var(--gold); }
@@ -226,15 +226,15 @@ section { padding: 90px 0; }
 /* RELATED SERVICES */
 .rel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .rel-card {
-  background: var(--bg-white); border: 1px solid rgba(26,26,26,0.06); padding: 32px 24px; text-align: center;
-  transition: all 0.4s ease; text-decoration: none; color: inherit; display: block;
+ background: var(--bg-white); border: 1px solid rgba(26,26,26,0.06); padding: 32px 24px; text-align: center;
+ transition: all 0.4s ease; text-decoration: none; color: inherit; display: block;
 }
 .rel-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
 .rel-card .icon {
-  width: 56px; height: 56px; border-radius: 50%;
-  background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
-  display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
-  transition: all 0.4s ease;
+ width: 56px; height: 56px; border-radius: 50%;
+ background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
+ display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+ transition: all 0.4s ease;
 }
 .rel-card .icon .material-symbols-outlined { font-size: 24px; color: var(--gold); }
 .rel-card:hover .icon { background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
@@ -286,19 +286,19 @@ section { padding: 90px 0; }
 .portfolio-item.pf-video img { filter: brightness(.82); transition: transform .8s cubic-bezier(.25,.1,.1,1), filter .5s ease; }
 .portfolio-item.pf-video:hover img { filter: brightness(.55); }
 .pf-video-play {
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  z-index: 2; pointer-events: none; opacity: 0; transition: opacity .4s ease;
+ position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+ z-index: 2; pointer-events: none; opacity: 0; transition: opacity .4s ease;
 }
 .pf-video-play .material-symbols-outlined {
-  font-size: 56px; color: #fff;
-  filter: drop-shadow(0 0 20px rgba(201,168,76,.35));
-  font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 48;
-  transition: transform .4s ease, filter .4s ease;
+ font-size: 56px; color: #fff;
+ filter: drop-shadow(0 0 20px rgba(201,168,76,.35));
+ font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+ transition: transform .4s ease, filter .4s ease;
 }
 .portfolio-item.pf-video:hover .pf-video-play { opacity: 1; }
 .portfolio-item.pf-video:hover .pf-video-play .material-symbols-outlined {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 30px rgba(201,168,76,.55));
+ transform: scale(1.1);
+ filter: drop-shadow(0 0 30px rgba(201,168,76,.55));
 }
 
 .reveal{opacity:0;transform:translateY(24px);transition:all .7s cubic-bezier(.25,.1,.1,1)}
@@ -317,19 +317,19 @@ section { padding: 90px 0; }
 
 /* Header scroll behavior - like homepage */
 #main-nav {
-  background: rgba(250,250,248,0.65) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  transition: all 0.4s ease !important;
+ background: rgba(250,250,248,0.65) !important;
+ backdrop-filter: blur(8px) !important;
+ -webkit-backdrop-filter: blur(8px) !important;
+ transition: all 0.4s ease !important;
 }
 #main-nav.header-scrolled {
-  background: rgba(250,250,248,.95) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border-bottom: 1px solid rgba(26,26,26,.06) !important;
-  box-shadow: 0 1px 0 rgba(26,26,26,.08) !important;
-  padding-top: 12px !important;
-  padding-bottom: 12px !important;
+ background: rgba(250,250,248,.95) !important;
+ backdrop-filter: blur(16px) !important;
+ -webkit-backdrop-filter: blur(16px) !important;
+ border-bottom: 1px solid rgba(26,26,26,.06) !important;
+ box-shadow: 0 1px 0 rgba(26,26,26,.08) !important;
+ padding-top: 12px !important;
+ padding-bottom: 12px !important;
 }
 
 /* legacy STANDARD HEADER removed — owned by site-header.css */
@@ -343,158 +343,158 @@ section { padding: 90px 0; }
 <body>
 
 <div id="loader" aria-hidden="true">
-  <div style="display:flex;flex-direction:column;align-items:center;gap:20px"><img src="assets/logo-gold.png" alt="Graphics House" style="height:112px;width:auto" class="logo-img"></div>
-  <div id="loader-bar-track"><div id="loader-bar"></div></div>
+ <div style="display:flex;flex-direction:column;align-items:center;gap:20px"><img src="assets/logo-gold.png" alt="Graphics House" style="height:112px;width:auto" class="logo-img"></div>
+ <div id="loader-bar-track"><div id="loader-bar"></div></div>
 </div>
 
 <div id="mob-nav" role="dialog" aria-modal="true" style="position:fixed;inset:0;z-index:999;background:rgba(10,10,10,.98);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);transform:translateX(100%);transition:transform .5s cubic-bezier(0.16,1,0.3,1);overflow-y:auto">
-  <div class="flex items-center justify-between px-6 py-5" style="border-bottom:1px solid rgba(255,255,255,.06)">
-    <img src="assets/logo-gold.png" alt="Graphics House" style="height:24px;width:auto">
-    <button id="mob-close"><span class="material-symbols-outlined text-2xl" style="color:rgba(255,255,255,.5)">close</span></button>
-  </div>
-  <div class="flex flex-col px-6 pt-8 pb-8 gap-1">
-    <a href="/" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>Home</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
-    <a href="who-we-are-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>About Us</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
-    <div class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer" onclick="toggleMobSub(this)">
-      <span>Services</span>
-      <span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">expand_more</span>
-    </div>
-    <div class="mob-sub" style="display:none;padding-right:16px">
-      <a href="3d-animation-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>Cinematic CGI</span></a>
-      <a href="smart-maquettes-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>Smart Maquettes</span></a>
-      <a href="interactive-experiences-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>Interactive Experiences</span></a>
-      <a href="branding-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>Galleries & Advertising Decor</span></a>
-      <a href="media-production-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>Media Production</span></a>
-    </div>
-    <a href="/#projects" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>Projects</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
-	    <a href="contact-us-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>Contact</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
-  </div>
+ <div class="flex items-center justify-between px-6 py-5" style="border-bottom:1px solid rgba(255,255,255,.06)">
+ <img src="assets/logo-gold.png" alt="Graphics House" style="height:24px;width:auto">
+ <button id="mob-close"><span class="material-symbols-outlined text-2xl" style="color:rgba(255,255,255,.5)">close</span></button>
+ </div>
+ <div class="flex flex-col px-6 pt-8 pb-8 gap-1">
+ <a href="/" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>Home</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
+ <a href="who-we-are-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>About Us</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
+ <div class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer" onclick="toggleMobSub(this)">
+ <span>Services</span>
+ <span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">expand_more</span>
+ </div>
+ <div class="mob-sub" style="display:none;padding-right:16px">
+ <a href="3d-animation-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>Cinematic CGI</span></a>
+ <a href="smart-maquettes-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>Smart Maquettes</span></a>
+ <a href="interactive-experiences-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>Interactive Experiences</span></a>
+ <a href="branding-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>Galleries & Advertising Decor</span></a>
+ <a href="media-production-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03)"><span>Media Production</span></a>
+ </div>
+ <a href="/#projects" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>Projects</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
+	 <a href="contact-us-en.html" class="mob-link" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:17px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04)"><span>Contact</span><span class="material-symbols-outlined" style="color:rgba(201,168,76,.4)">chevron_left</span></a>
+ </div>
 </div>
 <!-- HEADER -->
 <a class="gh-skip-link" href="#main-content">Skip to main content</a>
 <header class="header" id="header">
-  <div class="container header-inner">
-    <a href="/" class="logo">
-      <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="75">
-    </a>
-    <nav class="nav" id="nav" aria-label="Main navigation">
-      <a class="nav-link" href="who-we-are-en.html">About Us</a>
-      <div class="nav-mega-item" data-mega="solutions">
-        <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
-          Solutions
-          <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
-        </button>
-        <div class="mega-menu mega-menu-solutions">
-          <div class="mm-panel">
-            <div class="mm-panel-head">
-              <span class="mm-panel-label">Integrated Business Systems</span>
-              <p class="mm-panel-desc">Ready-made solutions for developers and engineering firms</p>
-            </div>
-            <div class="mm-main">
-              <div class="mm-grid">
-                <a href="../../solutions/growth-launch-en.html" class="mm-card" data-solution="growth">
-                  <div class="mm-icon"><span class="material-symbols-outlined">query_stats</span></div>
-                  <div class="mm-title">PropMotion&#8482;</div>
-                  <div class="mm-sub">Lead Generation & Sales System</div>
-                  <div class="mm-desc">Generate qualified leads, automate follow-up and improve sales conversion.</div>
-                  <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
-                </a>
-                <a href="solutions/project-launch-en.html" class="mm-card" data-solution="project">
-                  <div class="mm-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
-                  <div class="mm-title">ProjectLaunch&#8482;</div>
-                  <div class="mm-sub">Real Estate Project Launch System</div>
-                  <div class="mm-desc">Complete launch solution for real estate projects including visualization, branding, marketing and sales support.</div>
-                  <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
-                </a>
-                <a href="solutions/brand-scale-en.html" class="mm-card" data-solution="brand">
-                  <div class="mm-icon"><span class="material-symbols-outlined">workspace_premium</span></div>
-                  <div class="mm-title">BrandScale&#8482;</div>
-                  <div class="mm-sub">Brand Growth System</div>
-                  <div class="mm-desc">Build, strengthen and grow your brand through integrated creative and marketing solutions.</div>
-                  <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="nav-mega-item" data-mega="services">
-        <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
-          Services
-          <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
-        </button>
-        <div class="mega-menu mega-menu-services">
-          <div class="mm-panel">
-            <div class="mm-panel-head">
-              <span class="mm-panel-label">Creative Services</span>
-              <p class="mm-panel-desc">From architectural visualization to full media production</p>
-            </div>
-            <div class="mm-main">
-              <div class="mm-grid">
-                <div class="mm-col mm-col-core">
-                  <div class="mm-col-header">Core Services</div>
-                  <a href="services/maquettes.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">home_work</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Architectural Scale Models</span>
-                      <span class="mm-svc-desc">Precision project models</span>
-                    </span>
-                  </a>
-                  <a href="services/animation.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Cinematic CGI</span>
-                      <span class="mm-svc-desc">Professional CGI films</span>
-                    </span>
-                  </a>
-                  <a href="services/interactive-experiences.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Interactive Experiences</span>
-                      <span class="mm-svc-desc">Immersive digital showcases</span>
-                    </span>
-                  </a>
-                </div>
-                <div class="mm-col">
-                  <div class="mm-col-header">Creative & Production</div>
-                  <a href="services/rendering.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Smart Visualization</span>
-                      <span class="mm-svc-desc">Cinematic 3D renders</span>
-                    </span>
-                  </a>
-                  <a href="services/production.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">videocam</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Photography & Media Production</span>
-                      <span class="mm-svc-desc">Full photo & video production</span>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="nav-link" href="portfolio-en.html">Our Work</a>
-      <a class="nav-link" href="case-study-mwl-en.html">Case Studies</a>
-      <a class="nav-link nav-link-accent" href="insights/index-en.html">Insights</a>
-      <a class="nav-link" href="contact-us-en.html">Contact Us</a>
-    </nav>
-    <div class="nav-actions">
-      <div class="lang-switch" role="group" aria-label="Language">
-        <a href="index-ar.html" class="lang-switch-link" hreflang="ar">AR</a>
-        <span class="lang-switch-sep" aria-hidden="true">|</span>
-        <a href="index.html" class="lang-switch-link is-active" hreflang="en">EN</a>
-      </div>
-      <a href="contact-us-en.html" class="nav-cta btn-pill btn-pill-gold">Book Session</a>
-    </div>
-    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-  </div>
-  <div class="nav-backdrop" id="navBackdrop" hidden></div>
+ <div class="container header-inner">
+ <a href="/" class="logo">
+ <img src="assets/logo-gold.png" alt="Graphics House" class="logo-img" width="auto" height="75">
+ </a>
+ <nav class="nav" id="nav" aria-label="Main navigation">
+ <a class="nav-link" href="who-we-are-en.html">About Us</a>
+ <div class="nav-mega-item" data-mega="solutions">
+ <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
+ Solutions
+ <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
+ </button>
+ <div class="mega-menu mega-menu-solutions">
+ <div class="mm-panel">
+ <div class="mm-panel-head">
+ <span class="mm-panel-label">Integrated Business Systems</span>
+ <p class="mm-panel-desc">Ready-made solutions for developers and engineering firms</p>
+ </div>
+ <div class="mm-main">
+ <div class="mm-grid">
+ <a href="../../solutions/growth-launch-en.html" class="mm-card" data-solution="growth">
+ <div class="mm-icon"><span class="material-symbols-outlined">query_stats</span></div>
+ <div class="mm-title">PropMotion&#8482;</div>
+ <div class="mm-sub">Lead Generation & Sales System</div>
+ <div class="mm-desc">Generate qualified leads, automate follow-up and improve sales conversion.</div>
+ <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
+ </a>
+ <a href="solutions/project-launch-en.html" class="mm-card" data-solution="project">
+ <div class="mm-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+ <div class="mm-title">ProjectLaunch&#8482;</div>
+ <div class="mm-sub">Real Estate Project Launch System</div>
+ <div class="mm-desc">Complete launch solution for real estate projects including visualization, branding, marketing and sales support.</div>
+ <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
+ </a>
+ <a href="solutions/brand-scale-en.html" class="mm-card" data-solution="brand">
+ <div class="mm-icon"><span class="material-symbols-outlined">workspace_premium</span></div>
+ <div class="mm-title">BrandScale&#8482;</div>
+ <div class="mm-sub">Brand Growth System</div>
+ <div class="mm-desc">Build, strengthen and grow your brand through integrated creative and marketing solutions.</div>
+ <div class="mm-cta">Explore Solution <span class="material-symbols-outlined">arrow_forward</span></div>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="nav-mega-item" data-mega="services">
+ <button type="button" class="nav-link nav-mega-trigger" aria-expanded="false" aria-haspopup="true">
+ Services
+ <span class="material-symbols-outlined nav-chevron" aria-hidden="true">expand_more</span>
+ </button>
+ <div class="mega-menu mega-menu-services">
+ <div class="mm-panel">
+ <div class="mm-panel-head">
+ <span class="mm-panel-label">Creative Services</span>
+ <p class="mm-panel-desc">From architectural visualization to full media production</p>
+ </div>
+ <div class="mm-main">
+ <div class="mm-grid">
+ <div class="mm-col mm-col-core">
+ <div class="mm-col-header">Core Services</div>
+ <a href="services/maquettes.html" class="mm-svc-link">
+ <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">home_work</span></span>
+ <span class="mm-svc-body">
+ <span class="mm-svc-text">Architectural Scale Models</span>
+ <span class="mm-svc-desc">Precision project models</span>
+ </span>
+ </a>
+ <a href="services/animation.html" class="mm-svc-link">
+ <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">slow_motion_video</span></span>
+ <span class="mm-svc-body">
+ <span class="mm-svc-text">Cinematic CGI</span>
+ <span class="mm-svc-desc">Professional CGI films</span>
+ </span>
+ </a>
+ <a href="services/interactive-experiences.html" class="mm-svc-link">
+ <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">smart_display</span></span>
+ <span class="mm-svc-body">
+ <span class="mm-svc-text">Interactive Experiences</span>
+ <span class="mm-svc-desc">Immersive digital showcases</span>
+ </span>
+ </a>
+ </div>
+ <div class="mm-col">
+ <div class="mm-col-header">Creative & Production</div>
+ <a href="services/rendering.html" class="mm-svc-link">
+ <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">imagesmode</span></span>
+ <span class="mm-svc-body">
+ <span class="mm-svc-text">Smart Visualization</span>
+ <span class="mm-svc-desc">Cinematic 3D renders</span>
+ </span>
+ </a>
+ <a href="services/production.html" class="mm-svc-link">
+ <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">videocam</span></span>
+ <span class="mm-svc-body">
+ <span class="mm-svc-text">Photography & Media Production</span>
+ <span class="mm-svc-desc">Full photo & video production</span>
+ </span>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <a class="nav-link" href="portfolio-en.html">Our Work</a>
+ <a class="nav-link" href="case-study-mwl-en.html">Case Studies</a>
+ <a class="nav-link nav-link-accent" href="insights/index-en.html">Insights</a>
+ <a class="nav-link" href="contact-us-en.html">Contact Us</a>
+ </nav>
+ <div class="nav-actions">
+ <div class="lang-switch" role="group" aria-label="Language">
+ <a href="index-ar.html" class="lang-switch-link" hreflang="ar">AR</a>
+ <span class="lang-switch-sep" aria-hidden="true">|</span>
+ <a href="index.html" class="lang-switch-link is-active" hreflang="en">EN</a>
+ </div>
+ <a href="contact-us-en.html" class="nav-cta btn-pill btn-pill-gold">Book Session</a>
+ </div>
+ <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+ <span class="material-symbols-outlined">menu</span>
+ </button>
+ </div>
+ <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 
@@ -504,388 +504,384 @@ section { padding: 90px 0; }
 
 <!-- GALLERY STRIP HERO -->
 <section style="background:#0A0A0A;overflow:hidden;padding-top:96px">
-  <div class="gallery-strip">
-    <div class="gallery-strip-item gallery-video" data-video="assets/videos/GH-demo-reel-2025.mp4">
-      <picture><source srcset="assets/projects/animation/jeddah-forum.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/jeddah-forum.jpg" alt="Jeddah Forum Film"></picture>
-      <video preload="none" muted loop playsinline poster="assets/projects/animation/jeddah-forum.jpg"></video>
-      <div class="gallery-strip-label">Jeddah Forum Film</div>
-    </div>
-    <div class="gallery-strip-item gallery-video" data-video="assets/videos/3D-Architectural-visualisation.mp4">
-      <picture><source srcset="assets/projects/animation/architectural-visualisation.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/architectural-visualisation.jpg" alt="Cinematic Visualization"></picture>
-      <video preload="none" muted loop playsinline poster="assets/projects/animation/architectural-visualisation.jpg"></video>
-      <div class="gallery-strip-label">Cinematic Visualization</div>
-    </div>
-    <div class="gallery-strip-item">
-      <picture><source srcset="assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/rafal-pavilions.jpg" alt="Rafal Pavilions"></picture>
-      <div class="gallery-strip-label">Rafal Pavilions</div>
-    </div>
-    <div class="gallery-strip-item">
-      <picture><source srcset="assets/projects/animation/alrajhi.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/alrajhi.jpg" alt="Al Rajhi Financial City"></picture>
-      <div class="gallery-strip-label">Al Rajhi Financial City</div>
-    </div>
-    <div class="gallery-strip-item">
-      <picture><source srcset="assets/projects/animation/market-center.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/market-center.jpg" alt="Makkah Market Center"></picture>
-      <div class="gallery-strip-label">Makkah Market Center</div>
-    </div>
-    <div class="gallery-strip-item gallery-video" data-video="assets/videos/GH-Real-estate-services.mp4">
-      <picture><source srcset="assets/projects/animation/real-estate-services.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/real-estate-services.jpg" alt="Launch Films"></picture>
-      <video preload="none" muted loop playsinline poster="assets/projects/animation/real-estate-services.jpg"></video>
-      <div class="gallery-strip-label">Launch Films</div>
-    </div>
-  </div>
+ <div class="gallery-strip">
+ <div class="gallery-strip-item gallery-video" data-video="assets/videos/GH-demo-reel-2025.mp4">
+ <picture><source srcset="assets/projects/animation/jeddah-forum.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/jeddah-forum.jpg" alt="Jeddah Forum Film"></picture>
+ <video preload="none" muted loop playsinline poster="assets/projects/animation/jeddah-forum.jpg"></video>
+ <div class="gallery-strip-label">Jeddah Forum Film</div>
+ </div>
+ <div class="gallery-strip-item gallery-video" data-video="assets/videos/3D-Architectural-visualisation.mp4">
+ <picture><source srcset="assets/projects/animation/architectural-visualisation.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/architectural-visualisation.jpg" alt="Cinematic Visualization"></picture>
+ <video preload="none" muted loop playsinline poster="assets/projects/animation/architectural-visualisation.jpg"></video>
+ <div class="gallery-strip-label">Cinematic Visualization</div>
+ </div>
+ <div class="gallery-strip-item">
+ <picture><source srcset="assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/rafal-pavilions.jpg" alt="Rafal Pavilions"></picture>
+ <div class="gallery-strip-label">Rafal Pavilions</div>
+ </div>
+ <div class="gallery-strip-item">
+ <picture><source srcset="assets/projects/animation/alrajhi.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/alrajhi.jpg" alt="Al Rajhi Financial City"></picture>
+ <div class="gallery-strip-label">Al Rajhi Financial City</div>
+ </div>
+ <div class="gallery-strip-item">
+ <picture><source srcset="assets/projects/animation/market-center.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/market-center.jpg" alt="Makkah Market Center"></picture>
+ <div class="gallery-strip-label">Makkah Market Center</div>
+ </div>
+ <div class="gallery-strip-item gallery-video" data-video="assets/videos/GH-Real-estate-services.mp4">
+ <picture><source srcset="assets/projects/animation/real-estate-services.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/real-estate-services.jpg" alt="Launch Films"></picture>
+ <video preload="none" muted loop playsinline poster="assets/projects/animation/real-estate-services.jpg"></video>
+ <div class="gallery-strip-label">Launch Films</div>
+ </div>
+ </div>
 </section>
 
 <!-- SERVICES -->
 <section style="background:var(--bg-white)">
-  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
-    <div class="reveal" style="text-align:center;margin-bottom:48px">
-      <span class="section-label">Our Services</span>
-      <h2 class="section-title">3D Animation <span class="gold">&amp; Cinematic Films</span></h2>
-      <p class="section-sub" style="margin:0 auto">We transform your architectural plans into cinematic visual stories that blend imagery, sound, and pacing — helping you sell your project before it is built.</p>
-    </div>
-    <div class="feature-grid reveal r1">
-      <div class="feature-card">
-        <div class="icon"><span class="material-symbols-outlined">slow_motion_video</span></div>
-        <h3>Architectural CGI Films</h3>
-        <p>Cinematic CGI production that highlights the beauty of your project and evokes emotion — with professional visual storytelling built for major launches.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon"><span class="material-symbols-outlined">flight</span></div>
-        <h3>Virtual Fly-through Tours</h3>
-        <p>Cinematic fly-throughs inside and outside your project, revealing architectural details and spaces with deliberate camera movement and visual rhythm.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon"><span class="material-symbols-outlined">rocket_launch</span></div>
-        <h3>Project Launch Films</h3>
-        <p>Complete visual content for real estate launch campaigns — from early concept to final delivery, ready for big screens and social platforms.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon"><span class="material-symbols-outlined">auto_awesome</span></div>
-        <h3>Motion Graphics &amp; VFX</h3>
-        <p>VFX, cinematic transitions, and professional editing that strengthen your marketing message and give every film a world-class finish.</p>
-      </div>
-    </div>
-  </div>
+ <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+ <div class="reveal" style="text-align:center;margin-bottom:48px">
+ <span class="section-label">Our Services</span>
+ <h2 class="section-title">3D Animation <span class="gold">&amp; Cinematic Films</span></h2>
+ <p class="section-sub" style="margin:0 auto">We transform your architectural plans into cinematic visual stories that blend imagery, sound, and pacing — helping you sell your project before it is built.</p>
+ </div>
+ <div class="feature-grid reveal r1">
+ <div class="feature-card">
+ <div class="icon"><span class="material-symbols-outlined">slow_motion_video</span></div>
+ <h3>Architectural CGI Films</h3>
+ <p>Cinematic CGI production that highlights the beauty of your project and evokes emotion — with professional visual storytelling built for major launches.</p>
+ </div>
+ <div class="feature-card">
+ <div class="icon"><span class="material-symbols-outlined">flight</span></div>
+ <h3>Virtual Fly-through Tours</h3>
+ <p>Cinematic fly-throughs inside and outside your project, revealing architectural details and spaces with deliberate camera movement and visual rhythm.</p>
+ </div>
+ <div class="feature-card">
+ <div class="icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+ <h3>Project Launch Films</h3>
+ <p>Complete visual content for real estate launch campaigns — from early concept to final delivery, ready for big screens and social platforms.</p>
+ </div>
+ <div class="feature-card">
+ <div class="icon"><span class="material-symbols-outlined">auto_awesome</span></div>
+ <h3>Motion Graphics &amp; VFX</h3>
+ <p>VFX, cinematic transitions, and professional editing that strengthen your marketing message and give every film a world-class finish.</p>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- PRODUCTION PIPELINE -->
 <section style="background:#F5F4F0">
-  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
-    <div class="reveal" style="text-align:center;margin-bottom:48px">
-      <span class="section-label">Production Process</span>
-      <h2 class="section-title">From Concept to <span class="gold">the Big Screen</span></h2>
-      <p class="section-sub" style="margin:0 auto">A clear production methodology that delivers cinematic quality at every stage.</p>
-    </div>
-    <div class="why-grid reveal r1">
-      <div class="why-card"><div class="num">01</div><h4>Script &amp; Direction</h4><p>We build the visual story, camera movement, and cinematic pacing before any rendering begins.</p></div>
-      <div class="why-card"><div class="num">02</div><h4>Modeling &amp; Lighting</h4><p>Precise project modeling with cinematic lighting and realistic materials to international standards.</p></div>
-      <div class="why-card"><div class="num">03</div><h4>Rendering &amp; Edit</h4><p>High-resolution rendering, professional editing, sound, and music that serve your marketing message.</p></div>
-      <div class="why-card"><div class="num">04</div><h4>Delivery &amp; Distribution</h4><p>Files ready for big screens, sales galleries, and social media platforms.</p></div>
-    </div>
-  </div>
+ <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+ <div class="reveal" style="text-align:center;margin-bottom:48px">
+ <span class="section-label">Production Process</span>
+ <h2 class="section-title">From Concept to <span class="gold">the Big Screen</span></h2>
+ <p class="section-sub" style="margin:0 auto">A clear production methodology that delivers cinematic quality at every stage.</p>
+ </div>
+ <div class="why-grid reveal r1">
+ <div class="why-card"><div class="num">01</div><h4>Script &amp; Direction</h4><p>We build the visual story, camera movement, and cinematic pacing before any rendering begins.</p></div>
+ <div class="why-card"><div class="num">02</div><h4>Modeling &amp; Lighting</h4><p>Precise project modeling with cinematic lighting and realistic materials to international standards.</p></div>
+ <div class="why-card"><div class="num">03</div><h4>Rendering &amp; Edit</h4><p>High-resolution rendering, professional editing, sound, and music that serve your marketing message.</p></div>
+ <div class="why-card"><div class="num">04</div><h4>Delivery &amp; Distribution</h4><p>Files ready for big screens, sales galleries, and social media platforms.</p></div>
+ </div>
+ </div>
 </section>
 
 <!-- CTA 1 -->
 <section class="cta-d" style="background:#1A1A1A">
-  <div class="cta-d-inner">
-    <h2 style="color:#FAFAF8">Turn Your Project Into a <span class="gold">Cinematic Experience</span></h2>
-    <p style="color:rgba(255,255,255,0.6)">CGI films, virtual tours, and launch content — all from one studio with 15 years of experience.</p>
-    <div class="btns">
-      <a href="#booking" class="btn-p">Request a Quote <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
-      <a href="https://wa.me/966502786513" target="_blank" class="btn-o-light">WhatsApp Us <span class="material-symbols-outlined" style="font-size:16px">phone_in_talk</span></a>
-    </div>
-  </div>
+ <div class="cta-d-inner">
+ <h2 style="color:#FAFAF8">Turn Your Project Into a <span class="gold">Cinematic Experience</span></h2>
+ <p style="color:rgba(255,255,255,0.6)">CGI films, virtual tours, and launch content — all from one studio with 15 years of experience.</p>
+ <div class="btns">
+ <a href="#booking" class="btn-p">Request a Quote <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
+ <a href="https://wa.me/966502786513" target="_blank" class="btn-o-light">WhatsApp Us <span class="material-symbols-outlined" style="font-size:16px">phone_in_talk</span></a>
+ </div>
+ </div>
 </section>
 
 <!-- PORTFOLIO -->
 <section style="background:#F5F4F0">
-  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
-    <div class="reveal" style="text-align:center;margin-bottom:48px">
-      <span class="section-label">Our Work</span>
-      <h2 class="section-title">Animation <span class="gold">Film Gallery</span></h2>
-      <p class="section-sub" style="margin:0 auto">Samples of our cinematic films for leading developers and engineering firms across the region — click to watch.</p>
-    </div>
-    <div class="portfolio-grid reveal r1">
-      <div class="portfolio-item pf-video" onclick="playVideo('vYbn-9ramsI')">
-        <picture><source srcset="assets/projects/animation/jeddah-forum.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/jeddah-forum.jpg" alt="Jeddah Forum"></picture>
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="portfolio-item-overlay"><span class="portfolio-item-category">Jeddah</span><span class="portfolio-item-title">Jeddah Forum — Cinematic Film</span></div>
-      </div>
-      <div class="portfolio-item pf-video" onclick="playVideo('ilWeCush3ew')">
-        <picture><source srcset="assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/rafal-pavilions.jpg" alt="Rafal Pavilions"></picture>
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="portfolio-item-overlay"><span class="portfolio-item-category">Saudi Arabia</span><span class="portfolio-item-title">Rafal Pavilions — Cinematic Film</span></div>
-      </div>
-      <div class="portfolio-item pf-video" onclick="playVideo('GlbvI0DRXE4')">
-        <picture><source srcset="assets/projects/animation/market-center.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/market-center.jpg" alt="Makkah Market Center"></picture>
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="portfolio-item-overlay"><span class="portfolio-item-category">Makkah</span><span class="portfolio-item-title">Makkah Market Center — Cinematic Film</span></div>
-      </div>
-      <div class="portfolio-item pf-video" onclick="playVideo('ALz6GdeITYc')">
-        <picture><source srcset="assets/projects/animation/alrajhi.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/alrajhi.jpg" alt="Al Rajhi Financial City"></picture>
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="portfolio-item-overlay"><span class="portfolio-item-category">Riyadh</span><span class="portfolio-item-title">Al Rajhi Financial City — Cinematic Film</span></div>
-      </div>
-      <div class="portfolio-item pf-video" onclick="playLocalVideo('assets/videos/3D-Architectural-visualisation.mp4')">
-        <picture><source srcset="assets/projects/animation/architectural-visualisation.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/architectural-visualisation.jpg" alt="Architectural Visualization"></picture>
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="portfolio-item-overlay"><span class="portfolio-item-category">Cinematic</span><span class="portfolio-item-title">Architectural Visualization — Animation</span></div>
-      </div>
-      <div class="portfolio-item pf-video" onclick="playLocalVideo('assets/videos/GH-Real-estate-services.mp4')">
-        <picture><source srcset="assets/projects/animation/real-estate-services.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/real-estate-services.jpg" alt="Real Estate Services"></picture>
-        <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
-        <div class="portfolio-item-overlay"><span class="portfolio-item-category">Launch</span><span class="portfolio-item-title">Real Estate Services — Promotional Film</span></div>
-      </div>
-    </div>
-    <div class="reveal r2" style="text-align:center;margin-top:36px">
-      <a href="https://www.youtube.com/user/3dghouse/videos" target="_blank" rel="noopener" class="btn-o">Watch More on YouTube <span class="material-symbols-outlined" style="font-size:16px">play_circle</span></a>
-    </div>
-  </div>
+ <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+ <div class="reveal" style="text-align:center;margin-bottom:48px">
+ <span class="section-label">Our Work</span>
+ <h2 class="section-title">Animation <span class="gold">Film Gallery</span></h2>
+ <p class="section-sub" style="margin:0 auto">Samples of our cinematic films for leading developers and engineering firms across the region — click to watch.</p>
+ </div>
+ <div class="portfolio-grid reveal r1">
+ <div class="portfolio-item pf-video" onclick="playVideo('vYbn-9ramsI')">
+ <picture><source srcset="assets/projects/animation/jeddah-forum.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/jeddah-forum.jpg" alt="Jeddah Forum"></picture>
+ <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
+ <div class="portfolio-item-overlay"><span class="portfolio-item-category">Jeddah</span><span class="portfolio-item-title">Jeddah Forum — Cinematic Film</span></div>
+ </div>
+ <div class="portfolio-item pf-video" onclick="playVideo('ilWeCush3ew')">
+ <picture><source srcset="assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/rafal-pavilions.jpg" alt="Rafal Pavilions"></picture>
+ <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
+ <div class="portfolio-item-overlay"><span class="portfolio-item-category">Saudi Arabia</span><span class="portfolio-item-title">Rafal Pavilions — Cinematic Film</span></div>
+ </div>
+ <div class="portfolio-item pf-video" onclick="playVideo('GlbvI0DRXE4')">
+ <picture><source srcset="assets/projects/animation/market-center.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/market-center.jpg" alt="Makkah Market Center"></picture>
+ <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
+ <div class="portfolio-item-overlay"><span class="portfolio-item-category">Makkah</span><span class="portfolio-item-title">Makkah Market Center — Cinematic Film</span></div>
+ </div>
+ <div class="portfolio-item pf-video" onclick="playVideo('ALz6GdeITYc')">
+ <picture><source srcset="assets/projects/animation/alrajhi.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/alrajhi.jpg" alt="Al Rajhi Financial City"></picture>
+ <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
+ <div class="portfolio-item-overlay"><span class="portfolio-item-category">Riyadh</span><span class="portfolio-item-title">Al Rajhi Financial City — Cinematic Film</span></div>
+ </div>
+ <div class="portfolio-item pf-video" onclick="playLocalVideo('assets/videos/3D-Architectural-visualisation.mp4')">
+ <picture><source srcset="assets/projects/animation/architectural-visualisation.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/architectural-visualisation.jpg" alt="Architectural Visualization"></picture>
+ <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
+ <div class="portfolio-item-overlay"><span class="portfolio-item-category">Cinematic</span><span class="portfolio-item-title">Architectural Visualization — Animation</span></div>
+ </div>
+ <div class="portfolio-item pf-video" onclick="playLocalVideo('assets/videos/GH-Real-estate-services.mp4')">
+ <picture><source srcset="assets/projects/animation/real-estate-services.webp" type="image/webp"><img loading="lazy" src="assets/projects/animation/real-estate-services.jpg" alt="Real Estate Services"></picture>
+ <div class="pf-video-play"><span class="material-symbols-outlined">play_circle</span></div>
+ <div class="portfolio-item-overlay"><span class="portfolio-item-category">Launch</span><span class="portfolio-item-title">Real Estate Services — Promotional Film</span></div>
+ </div>
+ </div>
+ <div class="reveal r2" style="text-align:center;margin-top:36px">
+ <a href="https://www.youtube.com/user/3dghouse/videos" target="_blank" rel="noopener" class="btn-o">Watch More on YouTube <span class="material-symbols-outlined" style="font-size:16px">play_circle</span></a>
+ </div>
+ </div>
 </section>
 
 <!-- WHY GH -->
 <section style="background:var(--bg-white)">
-  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
-    <div class="reveal" style="text-align:center;margin-bottom:48px">
-      <span class="section-label">Why Graphics House</span>
-      <h2 class="section-title">Deep Expertise in <span class="gold">Cinematic Production</span></h2>
-      <p class="section-sub" style="margin:0 auto">A team that combines art, engineering, and direction — creating films that sell projects before they are built.</p>
-    </div>
-    <div class="why-grid reveal r1">
-      <div class="why-card"><div class="num">15+</div><h4>Years of Craft</h4><p>Cinematic architectural films for major developers and engineering firms across Saudi Arabia and the GCC.</p></div>
-      <div class="why-card"><div class="num">15</div><h4>Years of Experience</h4><p>Accumulated expertise in architectural cinematic production since the early 2000s.</p></div>
-      <div class="why-card"><div class="num">4K</div><h4>Cinematic Quality</h4><p>Direction, editing, sound, and VFX to international standards — built for big screens.</p></div>
-      <div class="why-card"><div class="num">1</div><h4>Integrated Team</h4><p>Directors, 3D artists, and editors — everything under one roof.</p></div>
-    </div>
-  </div>
+ <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+ <div class="reveal" style="text-align:center;margin-bottom:48px">
+ <span class="section-label">Why Graphics House</span>
+ <h2 class="section-title">Deep Expertise in <span class="gold">Cinematic Production</span></h2>
+ <p class="section-sub" style="margin:0 auto">A team that combines art, engineering, and direction — creating films that sell projects before they are built.</p>
+ </div>
+ <div class="why-grid reveal r1">
+ <div class="why-card"><div class="num">15+</div><h4>Years of Craft</h4><p>Cinematic architectural films for major developers and engineering firms across Saudi Arabia and the GCC.</p></div>
+ <div class="why-card"><div class="num">15</div><h4>Years of Experience</h4><p>Accumulated expertise in architectural cinematic production since the early 2000s.</p></div>
+ <div class="why-card"><div class="num">4K</div><h4>Cinematic Quality</h4><p>Direction, editing, sound, and VFX to international standards — built for big screens.</p></div>
+ <div class="why-card"><div class="num">1</div><h4>Integrated Team</h4><p>Directors, 3D artists, and editors — everything under one roof.</p></div>
+ </div>
+ </div>
 </section>
 
 <!-- CTA 2 -->
 <section class="cta-d" style="background:#1A1A1A">
-  <div class="cta-d-inner">
-    <h2 style="color:#FAFAF8">We've Produced Films for the Region's <span class="gold">Leading Developers</span></h2>
-    <p style="color:rgba(255,255,255,0.6)">From Jeddah Forum to Al Rajhi Financial City — our portfolio speaks for itself.</p>
-    <div class="btns">
-      <a href="#booking" class="btn-p">Book a Consultation <span class="material-symbols-outlined" style="font-size:16px">lightbulb</span></a>
-    </div>
-  </div>
+ <div class="cta-d-inner">
+ <h2 style="color:#FAFAF8">We've Produced Films for the Region's <span class="gold">Leading Developers</span></h2>
+ <p style="color:rgba(255,255,255,0.6)">From Jeddah Forum to Al Rajhi Financial City — our portfolio speaks for itself.</p>
+ <div class="btns">
+ <a href="#booking" class="btn-p">Book a Consultation <span class="material-symbols-outlined" style="font-size:16px">lightbulb</span></a>
+ </div>
+ </div>
 </section>
 
 <!-- RELATED SERVICES -->
 <section style="background:#F5F4F0;padding:90px 0">
-  <div style="max-width:1320px;margin:0 auto;padding:0 48px">
-    <div class="reveal" style="text-align:center;margin-bottom:48px">
-      <span class="section-label">Related Services</span>
-      <h2 class="section-title">Everything Your Project Needs <span class="gold">in One Place</span></h2>
-      <p class="section-sub" style="margin:0 auto">An integrated suite of visual and marketing services — choose what fits your project.</p>
-    </div>
-    <div class="rel-grid reveal r1">
-      <a href="rendering-en.html" class="rel-card">
-        <div class="icon"><span class="material-symbols-outlined">imagesmode</span></div>
-        <h4>Architectural Visualization</h4>
-        <p>Photorealistic exterior and interior 3D renders for real estate projects.</p>
-      </a>
-      <a href="production-en.html" class="rel-card">
-        <div class="icon"><span class="material-symbols-outlined">videocam</span></div>
-        <h4>Photography &amp; Media Production</h4>
-        <p>Photography, editing, and visual content that completes your cinematic launch campaign.</p>
-      </a>
-      <a href="interactive-en.html" class="rel-card">
-        <div class="icon"><span class="material-symbols-outlined">smart_display</span></div>
-        <h4>Interactive Experiences</h4>
-        <p>Interactive screens and VR for sales galleries — extending the cinematic experience.</p>
-      </a>
-      <a href="maquettes-en.html" class="rel-card">
-        <div class="icon"><span class="material-symbols-outlined">home_work</span></div>
-        <h4>Scale Models</h4>
-        <p>Smart maquettes that blend physical and digital to present your project live.</p>
-      </a>
-    </div>
-  </div>
+ <div style="max-width:1320px;margin:0 auto;padding:0 48px">
+ <div class="reveal" style="text-align:center;margin-bottom:48px">
+ <span class="section-label">Related Services</span>
+ <h2 class="section-title">Everything Your Project Needs <span class="gold">in One Place</span></h2>
+ <p class="section-sub" style="margin:0 auto">An integrated suite of visual and marketing services — choose what fits your project.</p>
+ </div>
+ <div class="rel-grid reveal r1">
+ <a href="rendering-en.html" class="rel-card">
+ <div class="icon"><span class="material-symbols-outlined">imagesmode</span></div>
+ <h4>Architectural Visualization</h4>
+ <p>Photorealistic exterior and interior 3D renders for real estate projects.</p>
+ </a>
+ <a href="production-en.html" class="rel-card">
+ <div class="icon"><span class="material-symbols-outlined">videocam</span></div>
+ <h4>Photography &amp; Media Production</h4>
+ <p>Photography, editing, and visual content that completes your cinematic launch campaign.</p>
+ </a>
+ <a href="interactive-en.html" class="rel-card">
+ <div class="icon"><span class="material-symbols-outlined">smart_display</span></div>
+ <h4>Interactive Experiences</h4>
+ <p>Interactive screens and VR for sales galleries — extending the cinematic experience.</p>
+ </a>
+ <a href="maquettes-en.html" class="rel-card">
+ <div class="icon"><span class="material-symbols-outlined">home_work</span></div>
+ <h4>Scale Models</h4>
+ <p>Smart maquettes that blend physical and digital to present your project live.</p>
+ </a>
+ </div>
+ </div>
 </section>
 
 <!-- CTA 3 - FINAL -->
 <section class="cta-d" style="background:#1A1A1A">
-  <div class="cta-d-inner">
-    <h2 style="color:#FAFAF8">Now It's Your Turn to <span class="gold">Launch</span></h2>
-    <p style="color:rgba(255,255,255,0.6)">Request a quote today — our team responds within 24 hours.</p>
-    <div class="btns">
-      <a href="#booking" class="btn-p">Request a Quote <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
-      <a href="https://wa.me/966502786513" target="_blank" class="btn-o-light">WhatsApp <span class="material-symbols-outlined" style="font-size:16px">chat</span></a>
-    </div>
-  </div>
+ <div class="cta-d-inner">
+ <h2 style="color:#FAFAF8">Now It's Your Turn to <span class="gold">Launch</span></h2>
+ <p style="color:rgba(255,255,255,0.6)">Request a quote today — our team responds within 24 hours.</p>
+ <div class="btns">
+ <a href="#booking" class="btn-p">Request a Quote <span class="material-symbols-outlined" style="font-size:16px">request_quote</span></a>
+ <a href="https://wa.me/966502786513" target="_blank" class="btn-o-light">WhatsApp <span class="material-symbols-outlined" style="font-size:16px">chat</span></a>
+ </div>
+ </div>
 </section>
 
 <!-- CONTACT FORM -->
 <section id="booking" class="contact-s">
-  <div class="contact-inner">
-    <div class="reveal" style="text-align:center;margin-bottom:48px">
-      <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.2em;color:var(--gold);margin-bottom:12px;text-transform:uppercase">Contact Us</span>
-      <h2 style="font-size:clamp(26px,3.8vw,42px);font-weight:500;margin-bottom:12px">Request a Quote for <span style="color:var(--gold)">Your Cinematic Film</span></h2>
-      <p style="font-size:16px;color:var(--text-secondary);max-width:500px;margin:0 auto">Fill in the form and our cinematic production team will reach out within 24 hours.</p>
-    </div>
-    <div class="contact-grid reveal r1">
-      <div class="contact-info">
-        <h3>Let's Turn Your Project Into a Film That Sells</h3>
-        <p>Whether you need a full cinematic film, a virtual tour, or short launch content — our team is ready to help.</p>
-        <div class="contact-info-item"><span class="material-symbols-outlined">phone_in_talk</span> +966 50 278 6513</div>
-        <div class="contact-info-item"><span class="material-symbols-outlined">mail</span> info@3dgraphicshouse.com</div>
-        <div class="contact-info-item"><span class="material-symbols-outlined">location_on</span> Jeddah, Saudi Arabia — offices in 4 countries</div>
-        <div class="contact-info-item"><span class="material-symbols-outlined">schedule</span> Response within 24 business hours</div>
-      </div>
-      <div class="form-card">
-        <h3>Quote Request</h3>
-        <form class="gh-quote-form" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="Quote request - 3D Animation EN">
-          <div class="form-group"><label>Full Name</label><input type="text" name="name" required placeholder="Your name"></div>
-          <div class="form-group"><label>Company / Organization</label><input type="text" name="company" placeholder="Company name"></div>
-          <div class="form-group"><label>Phone</label><input type="tel" name="phone" required placeholder="+966 5xxxxxxxx"></div>
-          <div class="form-group"><label>Email</label><input type="email" name="email" required placeholder="example@domain.com"></div>
-          <div class="form-group"><label>Service Required</label>
-            <select name="service" required>
-              <option value="">Select a service</option>
-              <option value="cinematic">Full architectural cinematic film</option>
-              <option value="flythrough">Virtual fly-through tour</option>
-              <option value="launch">Real estate project launch film</option>
-              <option value="motion">Motion graphics &amp; VFX</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="form-group"><label>City</label>
-            <select name="city">
-              <option value="">Select a city</option>
-              <option value="riyadh">Riyadh</option>
-              <option value="jeddah">Jeddah</option>
-              <option value="dammam">Dammam</option>
-              <option value="mecca">Makkah</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Project Details</label><textarea name="message" placeholder="Tell us about your project, type, approximate budget, and timeline..."></textarea></div>
-          <div class="gh-form-security">
-            <div class="gh-honeypot" aria-hidden="true">
-              <label>Leave blank</label>
-              <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
-            </div>
-            <div class="gh-turnstile"></div>
-          </div>
-          <div class="form-feedback" aria-live="polite"></div>
-          <button type="submit" class="form-submit">Send Request <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">send</span></button>
-        </form>
-      </div>
-    </div>
-  </div>
+ <div class="contact-inner">
+ <div class="reveal" style="text-align:center;margin-bottom:48px">
+ <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.2em;color:var(--gold);margin-bottom:12px;text-transform:uppercase">Contact Us</span>
+ <h2 style="font-size:clamp(26px,3.8vw,42px);font-weight:500;margin-bottom:12px">Request a Quote for <span style="color:var(--gold)">Your Cinematic Film</span></h2>
+ <p style="font-size:16px;color:var(--text-secondary);max-width:500px;margin:0 auto">Fill in the form and our cinematic production team will reach out within 24 hours.</p>
+ </div>
+ <div class="contact-grid reveal r1">
+ <div class="contact-info">
+ <h3>Let's Turn Your Project Into a Film That Sells</h3>
+ <p>Whether you need a full cinematic film, a virtual tour, or short launch content — our team is ready to help.</p>
+ <div class="contact-info-item"><span class="material-symbols-outlined">phone_in_talk</span> +966 50 278 6513</div>
+ <div class="contact-info-item"><span class="material-symbols-outlined">mail</span> info@3dgraphicshouse.com</div>
+ <div class="contact-info-item"><span class="material-symbols-outlined">location_on</span> Jeddah, Saudi Arabia — offices in 4 countries</div>
+ <div class="contact-info-item"><span class="material-symbols-outlined">schedule</span> Response within 24 business hours</div>
+ </div>
+ <div class="form-card">
+ <h3>Quote Request</h3>
+ <form class="gh-quote-form" method="POST" novalidate>
+ <input type="hidden" name="_subject" value="Quote request - 3D Animation EN">
+ <div class="form-group"><label>Full Name</label><input type="text" name="name" required placeholder="Your name"></div>
+ <div class="form-group"><label>Company / Organization</label><input type="text" name="company" placeholder="Company name"></div>
+ <div class="form-group"><label>Phone</label><input type="tel" name="phone" required placeholder="+966 5xxxxxxxx"></div>
+ <div class="form-group"><label>Email</label><input type="email" name="email" required placeholder="example@domain.com"></div>
+ <div class="form-group"><label>Service Required</label>
+ <select name="service" required>
+ <option value="">Select a service</option>
+ <option value="cinematic">Full architectural cinematic film</option>
+ <option value="flythrough">Virtual fly-through tour</option>
+ <option value="launch">Real estate project launch film</option>
+ <option value="motion">Motion graphics &amp; VFX</option>
+ <option value="other">Other</option>
+ </select>
+ </div>
+ <div class="form-group"><label>City</label>
+ <select name="city">
+ <option value="">Select a city</option>
+ <option value="riyadh">Riyadh</option>
+ <option value="jeddah">Jeddah</option>
+ <option value="dammam">Dammam</option>
+ <option value="mecca">Makkah</option>
+ <option value="other">Other</option>
+ </select>
+ </div>
+ <div class="form-group"><label>Project Details</label><textarea name="message" placeholder="Tell us about your project, type, approximate budget, and timeline..."></textarea></div>
+ <div class="gh-form-security">
+ <div class="gh-honeypot" aria-hidden="true">
+ <label>Leave blank</label>
+ <input type="text" name="botcheck" tabindex="-1" autocomplete="off">
+ </div>
+ <div class="gh-turnstile"></div>
+ </div>
+ <div class="form-feedback" aria-live="polite"></div>
+ <button type="submit" class="form-submit">Send Request <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">send</span></button>
+ </form>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- VIDEO MODAL -->
 <div class="video-modal" id="videoModal">
-  <button class="video-modal-close" onclick="closeVideo()" aria-label="Close">✕</button>
-  <div class="video-modal-inner">
-    <div class="video-aspect">
-      <div id="videoModalPlayer"></div>
-    </div>
-  </div>
+ <button class="video-modal-close" onclick="closeVideo()" aria-label="Close">✕</button>
+ <div class="video-modal-inner">
+ <div class="video-aspect">
+ <div id="videoModalPlayer"></div>
+ </div>
+ </div>
 </div>
 
 <!-- FOOTER -->
 <footer dir="ltr" class="gh-footer">
-  <div class="gh-footer__inner">
-    <img loading="lazy" src="assets/chatbot-motif.png" aria-hidden="true" class="gh-footer-motif">
+ <div class="gh-footer__inner">
+ <img loading="lazy" src="assets/chatbot-motif.png" aria-hidden="true" class="gh-footer-motif">
 
-    <div class="gh-footer__top">
-      <div class="gh-footer__brand">
-        <img src="assets/logo-gold.png" alt="Graphics House">
-      </div>
-      <div class="gh-footer__col">
-        <h3 class="gh-footer__title">Quick Links</h3>
-        <nav class="gh-footer__links" aria-label="Quick links">
-          <a href="who-we-are-en.html">About</a>
-          <a href="portfolio-en.html">Portfolio</a>
-          <a href="insights/index-en.html">Insights</a>
-          <a href="contact-us-en.html">Contact</a>
-        </nav>
-      </div>
-      <div class="gh-footer__col">
-        <h3 class="gh-footer__title">Services</h3>
-        <nav class="gh-footer__links" aria-label="Services">
-          <a href="services/rendering.html">Architectural visualization</a>
-          <a href="services/animation.html">CGI films</a>
-          <a href="services/maquettes.html">Scale models</a>
-          <a href="services/interactive-experiences.html">Interactive experiences</a>
-        </nav>
-      </div>
-      <div class="gh-footer__col">
-        <h3 class="gh-footer__title">Solutions</h3>
-        <nav class="gh-footer__links" aria-label="Solutions">
-          <a href="../../solutions/growth-launch-en.html">GrowthLaunch™</a>
-          <a href="solutions/project-launch-en.html">ProjectLaunch™</a>
-          <a href="solutions/brand-scale-en.html">BrandScale™</a>
-        </nav>
-      </div>
-    </div>
+ <div class="gh-footer__top">
+ <div class="gh-footer__brand">
+ <img src="assets/logo-gold.png" alt="Graphics House">
+ </div>
+ <div class="gh-footer__col">
+ <h3 class="gh-footer__title">Quick Links</h3>
+ <nav class="gh-footer__links" aria-label="Quick links">
+ <a href="who-we-are-en.html">About</a>
+ <a href="portfolio-en.html">Portfolio</a>
+ <a href="insights/index-en.html">Insights</a>
+ <a href="contact-us-en.html">Contact</a>
+ </nav>
+ </div>
+ <div class="gh-footer__col">
+ <h3 class="gh-footer__title">Services</h3>
+ <nav class="gh-footer__links" aria-label="Services">
+ <a href="services/rendering.html">Architectural visualization</a>
+ <a href="services/animation.html">CGI films</a>
+ <a href="services/maquettes.html">Scale models</a>
+ <a href="services/interactive-experiences.html">Interactive experiences</a>
+ </nav>
+ </div>
+ <div class="gh-footer__col">
+ <h3 class="gh-footer__title">Solutions</h3>
+ <nav class="gh-footer__links" aria-label="Solutions">
+ <a href="../../solutions/growth-launch-en.html">GrowthLaunch™</a>
+ <a href="solutions/project-launch-en.html">ProjectLaunch™</a>
+ <a href="solutions/brand-scale-en.html">BrandScale™</a>
+ </nav>
+ </div>
+ </div>
 
-    <div class="gh-footer__offices">
-      <div class="gh-footer__office">
-        <h4 class="gh-footer__office-title">Saudi Arabia</h4>
-        <p class="gh-footer__office-meta">P.O. Box 136972<br>CR 4030502306 — HQ</p>
-        <a href="tel:+966502786513" class="gh-footer__call">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          Call now
-        </a>
-      </div>
-      <div class="gh-footer__office">
-        <h4 class="gh-footer__office-title">Oman</h4>
-        <p class="gh-footer__office-meta">Al Khod, Al Seeb<br>CR 1460078</p>
-        <a href="tel:+96891326735" class="gh-footer__call">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          Call now
-        </a>
-      </div>
-      <div class="gh-footer__office">
-        <h4 class="gh-footer__office-title">Bahrain</h4>
-        <p class="gh-footer__office-meta">Block 316<br>CR 15571301</p>
-        <a href="tel:+97332150369" class="gh-footer__call">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          Call now
-        </a>
-      </div>
-      <div class="gh-footer__office">
-        <h4 class="gh-footer__office-title">Egypt</h4>
-        <p class="gh-footer__office-meta">Mohamed Othman St.<br>Victoria City Tower</p>
-        <a href="tel:+201032955089" class="gh-footer__call">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          Call now
-        </a>
-      </div>
-    </div>
+ <div class="gh-footer__offices">
+ <div class="gh-footer__office">
+ <h4 class="gh-footer__office-title">Saudi Arabia</h4>
+ <p class="gh-footer__office-meta">P.O. Box 136972<br>CR 4030502306 — HQ</p>
+ <a href="tel:+966502786513" class="gh-footer__call">
+ <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+ Call now
+ </a>
+ </div>
+ <div class="gh-footer__office">
+ <h4 class="gh-footer__office-title">Oman</h4>
+ <p class="gh-footer__office-meta">Al Khod, Al Seeb<br>CR 1460078</p>
+ <a href="tel:+96891326735" class="gh-footer__call">
+ <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+ Call now
+ </a>
+ </div>
+ <div class="gh-footer__office">
+ <h4 class="gh-footer__office-title">Bahrain</h4>
+ <p class="gh-footer__office-meta">Block 316<br>CR 15571301</p>
+ <a href="tel:+97332150369" class="gh-footer__call">
+ <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+ Call now
+ </a>
+ </div>
+ <div class="gh-footer__office">
+ <h4 class="gh-footer__office-title"></h4>
+ <p class="gh-footer__office-meta">Mohamed Othman St.<br></p>
+ </div>
+ </div>
 
-    <div class="gh-footer__social">
-      <span class="gh-footer__social-label">Follow us on:</span>
-      <a href="https://web.facebook.com/3dghouse" target="_blank" rel="noopener noreferrer" title="Facebook">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
-      <a href="https://twitter.com/GraphicsHouse2" target="_blank" rel="noopener noreferrer" title="X">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/3dgraphicshouse/" target="_blank" rel="noopener noreferrer" title="Instagram">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/company/graphics-house-gh/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/user/3dghouse/videos" target="_blank" rel="noopener noreferrer" title="YouTube">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      </a>
-    </div>
+ <div class="gh-footer__social">
+ <span class="gh-footer__social-label">Follow us on:</span>
+ <a href="https://web.facebook.com/3dghouse" target="_blank" rel="noopener noreferrer" title="Facebook">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+ </a>
+ <a href="https://twitter.com/GraphicsHouse2" target="_blank" rel="noopener noreferrer" title="X">
+ <svg width="15" height="15" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+ </a>
+ <a href="https://www.instagram.com/3dgraphicshouse/" target="_blank" rel="noopener noreferrer" title="Instagram">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+ </a>
+ <a href="https://www.linkedin.com/company/graphics-house-gh/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+ </a>
+ <a href="https://www.youtube.com/user/3dghouse/videos" target="_blank" rel="noopener noreferrer" title="YouTube">
+ <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+ </a>
+ </div>
 
-    <div class="gh-footer__legal">
-      <p class="gh-footer__copy">© 2026 Graphics House Co. All rights reserved &nbsp;|&nbsp; CR: 7054412114 &nbsp;|&nbsp; VAT: 314808998900003</p>
-      <div class="gh-footer__legal-links">
-        <a href="privacy-policy-en.html">Privacy Policy</a>
-        <a href="faq-en.html">FAQ</a>
-      </div>
-    </div>
-  </div>
+ <div class="gh-footer__legal">
+ <p class="gh-footer__copy">© 2026 Graphics House Co. All rights reserved &nbsp;|&nbsp; CR: 7054412114 &nbsp;|&nbsp; VAT: 314808998900003</p>
+ <div class="gh-footer__legal-links">
+ <a href="privacy-policy-en.html">Privacy Policy</a>
+ <a href="faq-en.html">FAQ</a>
+ </div>
+ </div>
+ </div>
 </footer>
 
 
@@ -917,66 +913,66 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener
 
 // Video modal popup
 function playVideo(videoId, startTime) {
-  var modal = document.getElementById('videoModal');
-  var container = document.getElementById('videoModalPlayer');
-  var src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1';
-  if (startTime) src += '&start=' + startTime;
-  var iframe = document.createElement('iframe');
-  iframe.setAttribute('src', src);
-  iframe.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
-  iframe.setAttribute('allowfullscreen', '');
-  iframe.style.cssText = 'width:100%;height:100%;border:0;';
-  container.innerHTML = '';
-  container.appendChild(iframe);
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
+ var modal = document.getElementById('videoModal');
+ var container = document.getElementById('videoModalPlayer');
+ var src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1';
+ if (startTime) src += '&start=' + startTime;
+ var iframe = document.createElement('iframe');
+ iframe.setAttribute('src', src);
+ iframe.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
+ iframe.setAttribute('allowfullscreen', '');
+ iframe.style.cssText = 'width:100%;height:100%;border:0;';
+ container.innerHTML = '';
+ container.appendChild(iframe);
+ modal.classList.add('active');
+ document.body.style.overflow = 'hidden';
 }
 
 function playLocalVideo(src) {
-  var modal = document.getElementById('videoModal');
-  var container = document.getElementById('videoModalPlayer');
-  var video = document.createElement('video');
-  video.setAttribute('controls', '');
-  video.setAttribute('autoplay', '');
-  video.setAttribute('playsinline', '');
-  video.style.cssText = 'width:100%;height:100%;border:0;background:#000;';
-  var source = document.createElement('source');
-  source.setAttribute('src', src);
-  source.setAttribute('type', 'video/mp4');
-  video.appendChild(source);
-  container.innerHTML = '';
-  container.appendChild(video);
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
+ var modal = document.getElementById('videoModal');
+ var container = document.getElementById('videoModalPlayer');
+ var video = document.createElement('video');
+ video.setAttribute('controls', '');
+ video.setAttribute('autoplay', '');
+ video.setAttribute('playsinline', '');
+ video.style.cssText = 'width:100%;height:100%;border:0;background:#000;';
+ var source = document.createElement('source');
+ source.setAttribute('src', src);
+ source.setAttribute('type', 'video/mp4');
+ video.appendChild(source);
+ container.innerHTML = '';
+ container.appendChild(video);
+ modal.classList.add('active');
+ document.body.style.overflow = 'hidden';
 }
 
 function closeVideo() {
-  var modal = document.getElementById('videoModal');
-  var container = document.getElementById('videoModalPlayer');
-  modal.classList.remove('active');
-  container.innerHTML = '';
-  document.body.style.overflow = '';
+ var modal = document.getElementById('videoModal');
+ var container = document.getElementById('videoModalPlayer');
+ modal.classList.remove('active');
+ container.innerHTML = '';
+ document.body.style.overflow = '';
 }
 
 // Close modal on overlay click
 document.addEventListener('click', function(e) {
-  var modal = document.getElementById('videoModal');
-  if (e.target === modal) closeVideo();
+ var modal = document.getElementById('videoModal');
+ if (e.target === modal) closeVideo();
 });
 
 // Close modal on Escape key
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeVideo();
+ if (e.key === 'Escape') closeVideo();
 });
 
 // Gallery video hover
 document.querySelectorAll('.gallery-video').forEach(function(item){
-  var video = item.querySelector('video');
-  if(!video) return;
-  var src = item.getAttribute('data-video');
-  if(src) { var source = document.createElement('source'); source.setAttribute('src', src); source.setAttribute('type', 'video/mp4'); video.appendChild(source); }
-  item.addEventListener('mouseenter', function(){ video.setAttribute('preload', 'auto'); video.currentTime = 0; video.play().catch(function(){}); });
-  item.addEventListener('mouseleave', function(){ video.pause(); });
+ var video = item.querySelector('video');
+ if(!video) return;
+ var src = item.getAttribute('data-video');
+ if(src) { var source = document.createElement('source'); source.setAttribute('src', src); source.setAttribute('type', 'video/mp4'); video.appendChild(source); }
+ item.addEventListener('mouseenter', function(){ video.setAttribute('preload', 'auto'); video.currentTime = 0; video.play().catch(function(){}); });
+ item.addEventListener('mouseleave', function(){ video.pause(); });
 });
 
 var ld=document.getElementById("loader"),lb=document.getElementById("loader-bar");
@@ -990,73 +986,73 @@ window.addEventListener("scroll",function(){var h=document.getElementById("heade
 
 <!-- FLOAT BUTTONS -->
 <div class="gh-float">
-  <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
-  <button class="gh-float-btn gh-float-mail" onclick="document.getElementById('ghPopup').classList.add('open')" title="Register Your Interest"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></button>
+ <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
+ <button class="gh-float-btn gh-float-mail" onclick="document.getElementById('ghPopup').classList.add('open')" title="Register Your Interest"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></button>
 </div>
 
 <script>
 // Mega menu mobile accordion
 document.addEventListener('DOMContentLoaded', function(){
-  var mmTriggers = document.querySelectorAll('.nav-mega-item > a.nav-link');
-  mmTriggers.forEach(function(trigger){
-    trigger.addEventListener('click', function(e){
-      if(window.innerWidth <= 900) {
-        e.preventDefault();
-        var menu = this.parentElement.querySelector('.mega-menu');
-        if(menu) {
-          menu.classList.toggle('open');
-        }
-      }
-    });
-  });
+ var mmTriggers = document.querySelectorAll('.nav-mega-item > a.nav-link');
+ mmTriggers.forEach(function(trigger){
+ trigger.addEventListener('click', function(e){
+ if(window.innerWidth <= 900) {
+ e.preventDefault();
+ var menu = this.parentElement.querySelector('.mega-menu');
+ if(menu) {
+ menu.classList.toggle('open');
+ }
+ }
+ });
+ });
 });
 </script>
 
 <script defer src="assets/gh-float-widgets.js?v=1"></script>
 <!-- GH FLOAT START -->
 <div class="gh-float" data-gh-float="1">
-  <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="WhatsApp">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-  </a>
-  <button type="button" class="gh-float-btn gh-float-mail" data-gh-popup-open title="Register Your Interest">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-  </button>
-  <button type="button" class="gh-float-btn gh-float-brand" data-gh-brand-action data-contact-href="contact-us-en.html" title="Contact Us">
-    <span class="gh-float-brand-inner">
-      <span class="gh-motif-ring"></span>
-      <span class="gh-motif-ring" style="animation-delay:1.2s"></span>
-      <span class="gh-motif-ring" style="animation-delay:2.4s"></span>
-      <img loading="lazy" src="assets/chatbot-motif.png" alt="" width="52" height="52" style="width:52px;height:52px;object-fit:contain;position:relative;z-index:2">
-    </span>
-  </button>
+ <a class="gh-float-btn gh-float-wa" href="https://wa.me/966502786513" target="_blank" rel="noopener" title="WhatsApp">
+ <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+ </a>
+ <button type="button" class="gh-float-btn gh-float-mail" data-gh-popup-open title="Register Your Interest">
+ <svg width="24" height="24" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+ </button>
+ <button type="button" class="gh-float-btn gh-float-brand" data-gh-brand-action data-contact-href="contact-us-en.html" title="Contact Us">
+ <span class="gh-float-brand-inner">
+ <span class="gh-motif-ring"></span>
+ <span class="gh-motif-ring" style="animation-delay:1.2s"></span>
+ <span class="gh-motif-ring" style="animation-delay:2.4s"></span>
+ <img loading="lazy" src="assets/chatbot-motif.png" alt="" width="52" height="52" style="width:52px;height:52px;object-fit:contain;position:relative;z-index:2">
+ </span>
+ </button>
 </div>
 <div id="ghPopup">
-  <div class="gh-popup-box">
-    <button type="button" class="gh-popup-close" data-gh-popup-close aria-label="Close">✕</button>
-    <div class="gh-popup-title">Register Your Interest</div>
-    <div class="gh-popup-sub">Tell us about your project and we'll get in touch within 24 hours.</div>
-    <form onsubmit="ghSubmit(event)">
-      <input class="gh-field" type="text" id="ghName" placeholder="Full Name *" required>
-      <input class="gh-field" type="text" id="ghCompany" placeholder="Company / Developer">
-      <select class="gh-field" id="ghProject" required>
-        <option value="" disabled selected>Project Type *</option>
-        <option>Residential Development</option>
-        <option>Commercial Project</option>
-        <option>Hospitality / Hotel</option>
-        <option>Mixed-Use Development</option>
-        <option>Government / Public</option>
-        <option>Other</option>
-      </select>
-      <input class="gh-field" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required>
-      <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Brief about your project..." style="resize:none"></textarea>
-      <button type="submit" class="gh-submit">Submit Enquiry →</button>
-    </form>
-    <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
-      <div style="font-size:36px;margin-bottom:12px">✓</div>
-      <div style="font-size:17px;font-weight:700;color:#1A1A1A;margin-bottom:8px">Thank you!</div>
-      <div style="font-size:14px;color:#888">We'll be in touch soon.</div>
-    </div>
-  </div>
+ <div class="gh-popup-box">
+ <button type="button" class="gh-popup-close" data-gh-popup-close aria-label="Close">✕</button>
+ <div class="gh-popup-title">Register Your Interest</div>
+ <div class="gh-popup-sub">Tell us about your project and we'll get in touch within 24 hours.</div>
+ <form onsubmit="ghSubmit(event)">
+ <input class="gh-field" type="text" id="ghName" placeholder="Full Name *" required>
+ <input class="gh-field" type="text" id="ghCompany" placeholder="Company / Developer">
+ <select class="gh-field" id="ghProject" required>
+ <option value="" disabled selected>Project Type *</option>
+ <option>Residential Development</option>
+ <option>Commercial Project</option>
+ <option>Hospitality / Hotel</option>
+ <option>Mixed-Use Development</option>
+ <option>Government / Public</option>
+ <option>Other</option>
+ </select>
+ <input class="gh-field" type="tel" id="ghPhone" placeholder="Phone / WhatsApp *" required>
+ <textarea class="gh-field" id="ghBrief" rows="3" placeholder="Brief about your project..." style="resize:none"></textarea>
+ <button type="submit" class="gh-submit">Submit Enquiry →</button>
+ </form>
+ <div id="ghThanks" style="display:none;text-align:center;padding:20px 0">
+ <div style="font-size:36px;margin-bottom:12px">✓</div>
+ <div style="font-size:17px;font-weight:700;color:#1A1A1A;margin-bottom:8px">Thank you!</div>
+ <div style="font-size:14px;color:#888">We'll be in touch soon.</div>
+ </div>
+ </div>
 </div>
 <!-- GH FLOAT END -->
 

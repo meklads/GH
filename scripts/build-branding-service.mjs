@@ -20,357 +20,357 @@ const OG_IMG = `${BRAND}/jeddah-forum-mockup.png`;
 
 /** Hero carousel, architectural half of each split mockup */
 const HERO_SLIDES = [
-  { img: `${BRAND}/jeddah-forum-mockup.png`, altAr: 'ملتقى جدة, تطبيق الهوية على واجهة معمارية', altEn: 'Jeddah Forum, identity on architectural facade' },
-  { img: `${BRAND}/ruwaq-mockup.png`, altAr: 'رواق, لافتة ثلاثية الأبعاد', altEn: 'Ruwaq, 3D signage application' },
-  { img: `${BRAND}/graphics-house-mockup.png`, altAr: 'Graphics House, تطبيق مكاني للهوية', altEn: 'Graphics House, spatial brand application' },
+ { img: `${BRAND}/jeddah-forum-mockup.png`, altAr: 'ملتقى جدة, تطبيق الهوية على واجهة معمارية', altEn: 'Jeddah Forum, identity on architectural facade' },
+ { img: `${BRAND}/ruwaq-mockup.png`, altAr: 'رواق, لافتة ثلاثية الأبعاد', altEn: 'Ruwaq, 3D signage application' },
+ { img: `${BRAND}/graphics-house-mockup.png`, altAr: 'Graphics House, تطبيق مكاني للهوية', altEn: 'Graphics House, spatial brand application' },
 ];
 
 const HERO_SLIDE_COUNT = HERO_SLIDES.length;
 
 /** Large mockup showcase, full split-screen brand presentations */
 const SHOWCASE = [
-  {
-    id: 'jeddah-forum',
-    filter: 'forums',
-    size: 'feature',
-    featured: true,
-    img: `${BRAND}/jeddah-forum-mockup.png`,
-    titleAr: 'ملتقى جدة للعقار',
-    titleEn: 'Jeddah Real Estate Forum',
-    subAr: 'شعار، كتالوج ٤٤ صفحة، مجسم، وفيلم CGI, منظومة بصرية كاملة',
-    subEn: 'Logo, 44-page catalogue, maquette & CGI film, complete visual system',
-    catAr: 'دراسة حالة مميزة',
-    catEn: 'Featured case study',
-    hrefAr: '../case-studies/jeddah-real-estate-forum.html',
-    hrefEn: '../case-studies/jeddah-real-estate-forum-en.html',
-  },
-  {
-    id: 'ruwaq',
-    filter: 'forums',
-    size: 'half',
-    img: `${BRAND}/ruwaq-mockup.png`,
-    titleAr: 'رواق',
-    titleEn: 'Ruwaq',
-    subAr: 'هوية ذهبية لمعارض تفاعلية وجولات ثلاثية الأبعاد',
-    subEn: 'Gold identity for interactive exhibitions & 3D tours',
-    catAr: 'معارض تفاعلية',
-    catEn: 'Interactive exhibitions',
-    hrefAr: 'https://ruwaq.co/tours',
-    hrefEn: 'https://ruwaq.co/tours',
-    external: true,
-  },
-  {
-    id: 'turriva',
-    filter: 'group',
-    size: 'half',
-    img: `${BRAND}/turriva-mockup.png`,
-    titleAr: 'توريفا',
-    titleEn: 'Turriva',
-    subAr: 'عمارة · تصميم داخلي · تشييد, هوية معمارية متكاملة',
-    subEn: 'Architecture · interior · construction, integrated brand',
-    catAr: 'علامات المجموعة',
-    catEn: 'Group brands',
-    hrefAr: 'https://turriva.com',
-    hrefEn: 'https://turriva.com',
-    external: true,
-  },
-  {
-    id: 'graphics-house',
-    filter: 'group',
-    size: 'wide',
-    img: `${BRAND}/graphics-house-mockup.png`,
-    titleAr: 'Graphics House',
-    titleEn: 'Graphics House',
-    subAr: 'من الشعار إلى اللافتة المضيئة, استوديو الإظهار والهوية',
-    subEn: 'From logo to illuminated signage, visualization & identity studio',
-    catAr: 'علامات المجموعة',
-    catEn: 'Group brands',
-    hrefAr: '../who-we-are.html',
-    hrefEn: '../who-we-are-en.html',
-  },
-  {
-    id: 'bees-motion',
-    filter: 'group',
-    size: 'half',
-    img: `${BRAND}/bees-motion-mockup.png`,
-    titleAr: 'Bees Motion',
-    titleEn: 'Bees Motion',
-    subAr: 'إنتاج سينمائي وحركة, هوية ديناميكية',
-    subEn: 'Cinematic & motion production, dynamic identity',
-    catAr: 'إنتاج سينمائي',
-    catEn: 'Cinematic production',
-    hrefAr: 'https://beesmotion.com',
-    hrefEn: 'https://beesmotion.com',
-    external: true,
-  },
-  {
-    id: 'scents-wave',
-    filter: 'commercial',
-    size: 'half',
-    img: `${BRAND}/scents-wave-mockup.png`,
-    titleAr: 'Scents Wave · موجة عطر',
-    titleEn: 'Scents Wave',
-    subAr: 'هوية فاخرة ذهبية على أسود, عطور وهدايا',
-    subEn: 'Luxury gold-on-black identity, perfume & gifts',
-    catAr: 'تجزئة وعلامات',
-    catEn: 'Retail & consumer',
-    hrefAr: '../contact-us.html',
-    hrefEn: '../contact-us-en.html',
-  },
-  {
-    id: 'highly-chic',
-    filter: 'commercial',
-    size: 'wide',
-    img: `${BRAND}/highly-chic-mockup.png`,
-    titleAr: 'Highly CHIC',
-    titleEn: 'Highly CHIC',
-    subAr: 'هوية بوتيك فاخرة, من الشعار إلى واجهة المتجر',
-    subEn: 'Luxury boutique identity, from logo to storefront',
-    catAr: 'تجزئة وعلامات',
-    catEn: 'Retail & consumer',
-    hrefAr: '../contact-us.html',
-    hrefEn: '../contact-us-en.html',
-  },
+ {
+ id: 'jeddah-forum',
+ filter: 'forums',
+ size: 'feature',
+ featured: true,
+ img: `${BRAND}/jeddah-forum-mockup.png`,
+ titleAr: 'ملتقى جدة للعقار',
+ titleEn: 'Jeddah Real Estate Forum',
+ subAr: 'شعار، كتالوج ٤٤ صفحة، مجسم، وفيلم CGI, منظومة بصرية كاملة',
+ subEn: 'Logo, 44-page catalogue, maquette & CGI film, complete visual system',
+ catAr: 'دراسة حالة مميزة',
+ catEn: 'Featured case study',
+ hrefAr: '../case-studies/jeddah-real-estate-forum.html',
+ hrefEn: '../case-studies/jeddah-real-estate-forum-en.html',
+ },
+ {
+ id: 'ruwaq',
+ filter: 'forums',
+ size: 'half',
+ img: `${BRAND}/ruwaq-mockup.png`,
+ titleAr: 'رواق',
+ titleEn: 'Ruwaq',
+ subAr: 'هوية ذهبية لمعارض تفاعلية وجولات ثلاثية الأبعاد',
+ subEn: 'Gold identity for interactive exhibitions & 3D tours',
+ catAr: 'معارض تفاعلية',
+ catEn: 'Interactive exhibitions',
+ hrefAr: 'https://ruwaq.co/tours',
+ hrefEn: 'https://ruwaq.co/tours',
+ external: true,
+ },
+ {
+ id: 'turriva',
+ filter: 'group',
+ size: 'half',
+ img: `${BRAND}/turriva-mockup.png`,
+ titleAr: 'توريفا',
+ titleEn: 'Turriva',
+ subAr: 'عمارة · تصميم داخلي · تشييد, هوية معمارية متكاملة',
+ subEn: 'Architecture · interior · construction, integrated brand',
+ catAr: 'علامات المجموعة',
+ catEn: 'Group brands',
+ hrefAr: 'https://turriva.com',
+ hrefEn: 'https://turriva.com',
+ external: true,
+ },
+ {
+ id: 'graphics-house',
+ filter: 'group',
+ size: 'wide',
+ img: `${BRAND}/graphics-house-mockup.png`,
+ titleAr: 'Graphics House',
+ titleEn: 'Graphics House',
+ subAr: 'من الشعار إلى اللافتة المضيئة, استوديو الإظهار والهوية',
+ subEn: 'From logo to illuminated signage, visualization & identity studio',
+ catAr: 'علامات المجموعة',
+ catEn: 'Group brands',
+ hrefAr: '../who-we-are.html',
+ hrefEn: '../who-we-are-en.html',
+ },
+ {
+ id: 'bees-motion',
+ filter: 'group',
+ size: 'half',
+ img: `${BRAND}/bees-motion-mockup.png`,
+ titleAr: 'Bees Motion',
+ titleEn: 'Bees Motion',
+ subAr: 'إنتاج سينمائي وحركة, هوية ديناميكية',
+ subEn: 'Cinematic & motion production, dynamic identity',
+ catAr: 'إنتاج سينمائي',
+ catEn: 'Cinematic production',
+ hrefAr: 'https://beesmotion.com',
+ hrefEn: 'https://beesmotion.com',
+ external: true,
+ },
+ {
+ id: 'scents-wave',
+ filter: 'commercial',
+ size: 'half',
+ img: `${BRAND}/scents-wave-mockup.png`,
+ titleAr: 'Scents Wave · موجة عطر',
+ titleEn: 'Scents Wave',
+ subAr: 'هوية فاخرة ذهبية على أسود, عطور وهدايا',
+ subEn: 'Luxury gold-on-black identity, perfume & gifts',
+ catAr: 'تجزئة وعلامات',
+ catEn: 'Retail & consumer',
+ hrefAr: '../contact-us.html',
+ hrefEn: '../contact-us-en.html',
+ },
+ {
+ id: 'highly-chic',
+ filter: 'commercial',
+ size: 'wide',
+ img: `${BRAND}/highly-chic-mockup.png`,
+ titleAr: 'Highly CHIC',
+ titleEn: 'Highly CHIC',
+ subAr: 'هوية بوتيك فاخرة, من الشعار إلى واجهة المتجر',
+ subEn: 'Luxury boutique identity, from logo to storefront',
+ catAr: 'تجزئة وعلامات',
+ catEn: 'Retail & consumer',
+ hrefAr: '../contact-us.html',
+ hrefEn: '../contact-us-en.html',
+ },
 ];
 
 const COPY = {
-  ar: {
-    title: 'الهوية البصرية والأنظمة المكانية | Graphics House',
-    description:
-      'من الشعار إلى اللافتة المضيئة والكتالوج وجناح المعرض: نظام بصري واحد للمشاريع العقارية والملتقيات في السعودية والخليج. جزء من ProjectLaunch™ وBrandScale™.',
-    kicker: 'خدماتنا · الهوية البصرية',
-    h1Line1: 'الهوية البصرية والأنظمة المكانية',
-    h1Gold: 'من الشعار إلى اللافتة المُضيِّئة',
-    subtitle:
-      'نظام بصري متكامل للمشاريع والملتقيات, شعار، كتالوج، وتطبيق مكاني من استوديو واحد.',
-    ctaPrimary: 'ابدأ مشروع الهوية',
-    ctaCase: 'استكشف الأعمال',
-    stats: [
-      { n: '7+', label: 'علامات وهويات منجزة' },
-      { n: '44', label: 'صفحة كتالوج, ملتقى جدة' },
-      { n: '3D', label: 'تطبيق مكاني على اللافتات' },
-      { n: '1', label: 'نظام بصري متصل' },
-    ],
-    pillarsTitle: 'أربعة محاور, مخرج واحد',
-    pillarsLead: 'كل محور يُصمَّم ليعمل مع الإظهار والفيلم والمجسم، لا كملف منفصل.',
-    pipelineTitle: 'مسار العمل',
-    pipelineLead: 'نفس اللغة البصرية من الموجز الأول حتى آخر مطبوعة في المعرض.',
-    pipeline: ['هوية', 'كتالوج', 'تطبيق مكاني', 'فيلم CGI', 'مطبوعات'],
-    galleryTitle: 'أعمال الهوية',
-    galleryLead: 'نماذج من أهم العلامات: من التصميم المسطح إلى اللافتة المضيئة في الفضاء الحقيقي.',
-    filters: [
-      { id: 'all', label: 'الكل' },
-      { id: 'forums', label: 'ملتقيات ومعارض' },
-      { id: 'group', label: 'علامات المجموعة' },
-      { id: 'commercial', label: 'تجزئة وعلامات' },
-    ],
-    pathsTitle: 'أين تناسب الهوية في حلولنا؟',
-    paths: [
-      {
-        title: 'ProjectLaunch™',
-        desc: 'الهوية المعمارية للمشروع ضمن حزمة الإطلاق على الخارطة.',
-        href: 'solutions/project-launch.html',
-      },
-      {
-        title: 'BrandScale™',
-        desc: 'نظام علامة قابل للتوسع عبر محفظة مشاريع المطور.',
-        href: 'solutions/brand-scale.html',
-      },
-      {
-        title: 'الفعاليات المؤسسية',
-        desc: 'هوية الملتقى والمعرض من الجناح إلى المواد المطبوعة.',
-        href: 'solutions/institutional-events.html',
-      },
-    ],
-    finalTitle: 'جاهز لبناء نظام بصري لمشروعك؟',
-    finalBody: 'أرسل الموجز أو احجز جلسة. نرد خلال ٢٤ ساعة بمسار واضح للهوية والمخرجات.',
-  },
-  en: {
-    title: 'Visual Identity & Spatial Brand Systems | Graphics House',
-    description:
-      'From logo to illuminated signage, catalogue, and exhibition pavilion: one visual system for developments and forums across KSA and the GCC. Part of ProjectLaunch™ and BrandScale™.',
-    kicker: 'Our Services · Visual Identity',
-    h1Line1: 'Visual identity & spatial brand systems',
-    h1Gold: 'from logo to illuminated signage',
-    subtitle:
-      'One integrated system for developments and forums, logo, catalogue, and spatial application from a single studio.',
-    ctaPrimary: 'Start your identity project',
-    ctaCase: 'Explore the work',
-    stats: [
-      { n: '7+', label: 'Brands & identities delivered' },
-      { n: '44', label: 'Catalogue pages, Jeddah Forum' },
-      { n: '3D', label: 'Spatial signage application' },
-      { n: '1', label: 'Connected visual system' },
-    ],
-    pillarsTitle: 'Four pillars, one deliverable system',
-    pillarsLead: 'Each pillar is designed to work with visualization, film, and maquettes, not as a separate file.',
-    pipelineTitle: 'How it connects',
-    pipelineLead: 'The same visual language from first brief to the last print piece on the exhibition floor.',
-    pipeline: ['BRAND', 'CATALOGUE', 'SPATIAL', 'CGI FILM', 'PRINT'],
-    galleryTitle: 'Identity work',
-    galleryLead: 'Selected flagship brands: from flat design to illuminated signage in real space.',
-    filters: [
-      { id: 'all', label: 'All' },
-      { id: 'forums', label: 'Forums & exhibitions' },
-      { id: 'group', label: 'Group brands' },
-      { id: 'commercial', label: 'Retail & consumer' },
-    ],
-    pathsTitle: 'Where identity fits in our solutions',
-    paths: [
-      {
-        title: 'ProjectLaunch™',
-        desc: 'Architectural project identity inside the off-plan launch pack.',
-        href: 'solutions/project-launch-en.html',
-      },
-      {
-        title: 'BrandScale™',
-        desc: 'Scalable brand system across a developer portfolio.',
-        href: 'solutions/brand-scale-en.html',
-      },
-      {
-        title: 'Institutional events',
-        desc: 'Forum and exhibition identity from pavilion to print.',
-        href: 'solutions/institutional-events-en.html',
-      },
-    ],
-    finalTitle: 'Ready to build a visual system for your project?',
-    finalBody: 'Send your brief or book a session. We reply within 24 hours with a clear identity path.',
-  },
+ ar: {
+ title: 'الهوية البصرية والأنظمة المكانية | Graphics House',
+ description:
+ 'من الشعار إلى اللافتة المضيئة والكتالوج وجناح المعرض: نظام بصري واحد للمشاريع العقارية والملتقيات في السعودية والخليج. جزء من ProjectLaunch™ وBrandScale™.',
+ kicker: 'خدماتنا · الهوية البصرية',
+ h1Line1: 'الهوية البصرية والأنظمة المكانية',
+ h1Gold: 'من الشعار إلى اللافتة المُضيِّئة',
+ subtitle:
+ 'نظام بصري متكامل للمشاريع والملتقيات, شعار، كتالوج، وتطبيق مكاني من استوديو واحد.',
+ ctaPrimary: 'ابدأ مشروع الهوية',
+ ctaCase: 'استكشف الأعمال',
+ stats: [
+ { n: '7+', label: 'علامات وهويات منجزة' },
+ { n: '44', label: 'صفحة كتالوج, ملتقى جدة' },
+ { n: '3D', label: 'تطبيق مكاني على اللافتات' },
+ { n: '1', label: 'نظام بصري متصل' },
+ ],
+ pillarsTitle: 'أربعة محاور, مخرج واحد',
+ pillarsLead: 'كل محور يُصمَّم ليعمل مع الإظهار والفيلم والمجسم، لا كملف منفصل.',
+ pipelineTitle: 'مسار العمل',
+ pipelineLead: 'نفس اللغة البصرية من الموجز الأول حتى آخر مطبوعة في المعرض.',
+ pipeline: ['هوية', 'كتالوج', 'تطبيق مكاني', 'فيلم CGI', 'مطبوعات'],
+ galleryTitle: 'أعمال الهوية',
+ galleryLead: 'نماذج من أهم العلامات: من التصميم المسطح إلى اللافتة المضيئة في الفضاء الحقيقي.',
+ filters: [
+ { id: 'all', label: 'الكل' },
+ { id: 'forums', label: 'ملتقيات ومعارض' },
+ { id: 'group', label: 'علامات المجموعة' },
+ { id: 'commercial', label: 'تجزئة وعلامات' },
+ ],
+ pathsTitle: 'أين تناسب الهوية في حلولنا؟',
+ paths: [
+ {
+ title: 'ProjectLaunch™',
+ desc: 'الهوية المعمارية للمشروع ضمن حزمة الإطلاق على الخارطة.',
+ href: 'solutions/project-launch.html',
+ },
+ {
+ title: 'BrandScale™',
+ desc: 'نظام علامة قابل للتوسع عبر محفظة مشاريع المطور.',
+ href: 'solutions/brand-scale.html',
+ },
+ {
+ title: 'الفعاليات المؤسسية',
+ desc: 'هوية الملتقى والمعرض من الجناح إلى المواد المطبوعة.',
+ href: 'solutions/institutional-events.html',
+ },
+ ],
+ finalTitle: 'جاهز لبناء نظام بصري لمشروعك؟',
+ finalBody: 'أرسل الموجز أو احجز جلسة. نرد خلال ٢٤ ساعة بمسار واضح للهوية والمخرجات.',
+ },
+ en: {
+ title: 'Visual Identity & Spatial Brand Systems | Graphics House',
+ description:
+ 'From logo to illuminated signage, catalogue, and exhibition pavilion: one visual system for developments and forums across KSA and the GCC. Part of ProjectLaunch™ and BrandScale™.',
+ kicker: 'Our Services · Visual Identity',
+ h1Line1: 'Visual identity & spatial brand systems',
+ h1Gold: 'from logo to illuminated signage',
+ subtitle:
+ 'One integrated system for developments and forums, logo, catalogue, and spatial application from a single studio.',
+ ctaPrimary: 'Start your identity project',
+ ctaCase: 'Explore the work',
+ stats: [
+ { n: '7+', label: 'Brands & identities delivered' },
+ { n: '44', label: 'Catalogue pages, Jeddah Forum' },
+ { n: '3D', label: 'Spatial signage application' },
+ { n: '1', label: 'Connected visual system' },
+ ],
+ pillarsTitle: 'Four pillars, one deliverable system',
+ pillarsLead: 'Each pillar is designed to work with visualization, film, and maquettes, not as a separate file.',
+ pipelineTitle: 'How it connects',
+ pipelineLead: 'The same visual language from first brief to the last print piece on the exhibition floor.',
+ pipeline: ['BRAND', 'CATALOGUE', 'SPATIAL', 'CGI FILM', 'PRINT'],
+ galleryTitle: 'Identity work',
+ galleryLead: 'Selected flagship brands: from flat design to illuminated signage in real space.',
+ filters: [
+ { id: 'all', label: 'All' },
+ { id: 'forums', label: 'Forums & exhibitions' },
+ { id: 'group', label: 'Group brands' },
+ { id: 'commercial', label: 'Retail & consumer' },
+ ],
+ pathsTitle: 'Where identity fits in our solutions',
+ paths: [
+ {
+ title: 'ProjectLaunch™',
+ desc: 'Architectural project identity inside the off-plan launch pack.',
+ href: 'solutions/project-launch-en.html',
+ },
+ {
+ title: 'BrandScale™',
+ desc: 'Scalable brand system across a developer portfolio.',
+ href: 'solutions/brand-scale-en.html',
+ },
+ {
+ title: 'Institutional events',
+ desc: 'Forum and exhibition identity from pavilion to print.',
+ href: 'solutions/institutional-events-en.html',
+ },
+ ],
+ finalTitle: 'Ready to build a visual system for your project?',
+ finalBody: 'Send your brief or book a session. We reply within 24 hours with a clear identity path.',
+ },
 };
 
 const PILLARS = {
-  ar: [
-    { icon: 'brush', title: 'الهوية البصرية', desc: 'شعار، ألوان، خطوط، زخارف، ودليل استخدام للمشروع أو الملتقى.' },
-    { icon: 'menu_book', title: 'كتالوجات ومطبوعات', desc: 'كتالوجات فاخرة، بطاقات وحدات، ومواد مستثمرين بنفس اللغة البصرية.' },
-    { icon: 'museum', title: 'تطبيق مكاني ومعارض', desc: 'جناح المعرض، صالة البيع، والرسومات البيئية في الفضاء.' },
-    { icon: 'account_tree', title: 'نظام متصل', desc: 'الهوية تغذي <a href="cinematic-cgi.html">الفيلم</a> و<a href="rendering.html">الإظهار</a> و<a href="maquettes.html">المجسم</a> من مصدر واحد.' },
-  ],
-  en: [
-    { icon: 'brush', title: 'Visual identity', desc: 'Logo, palette, typography, motifs, and usage guidelines for project or forum.' },
-    { icon: 'menu_book', title: 'Catalogues & print', desc: 'Premium catalogues, unit sheets, and investor materials in one visual language.' },
-    { icon: 'museum', title: 'Spatial & exhibition', desc: 'Pavilion, sales gallery, and environmental graphics in the space.' },
-    { icon: 'account_tree', title: 'Connected system', desc: 'Identity feeds <a href="cinematic-cgi-en.html">film</a>, <a href="rendering-en.html">visualization</a>, and <a href="maquettes-en.html">maquettes</a> from one source.' },
-  ],
+ ar: [
+ { icon: 'brush', title: 'الهوية البصرية', desc: 'شعار، ألوان، خطوط، زخارف، ودليل استخدام للمشروع أو الملتقى.' },
+ { icon: 'menu_book', title: 'كتالوجات ومطبوعات', desc: 'كتالوجات فاخرة، بطاقات وحدات، ومواد مستثمرين بنفس اللغة البصرية.' },
+ { icon: 'museum', title: 'تطبيق مكاني ومعارض', desc: 'جناح المعرض، صالة البيع، والرسومات البيئية في الفضاء.' },
+ { icon: 'account_tree', title: 'نظام متصل', desc: 'الهوية تغذي <a href="cinematic-cgi.html">الفيلم</a> و<a href="rendering.html">الإظهار</a> و<a href="maquettes.html">المجسم</a> من مصدر واحد.' },
+ ],
+ en: [
+ { icon: 'brush', title: 'Visual identity', desc: 'Logo, palette, typography, motifs, and usage guidelines for project or forum.' },
+ { icon: 'menu_book', title: 'Catalogues & print', desc: 'Premium catalogues, unit sheets, and investor materials in one visual language.' },
+ { icon: 'museum', title: 'Spatial & exhibition', desc: 'Pavilion, sales gallery, and environmental graphics in the space.' },
+ { icon: 'account_tree', title: 'Connected system', desc: 'Identity feeds <a href="cinematic-cgi-en.html">film</a>, <a href="rendering-en.html">visualization</a>, and <a href="maquettes-en.html">maquettes</a> from one source.' },
+ ],
 };
 
 function esc(s) {
-  return String(s)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+ return String(s)
+ .replace(/&/g, '&amp;')
+ .replace(/</g, '&lt;')
+ .replace(/>/g, '&gt;')
+ .replace(/"/g, '&quot;');
 }
 
 function page(lang) {
-  const isEn = lang === 'en';
-  const t = COPY[lang];
-  const { header, footer } = getLayout(lang, DEPTH);
-  const file = isEn ? 'branding-en.html' : 'branding.html';
-  const canonical = `${BASE}/services/${file}`;
-  const altEn = `${BASE}/services/branding-en.html`;
-  const altAr = `${BASE}/services/branding.html`;
-  const contact = `${P}contact-us${isEn ? '-en' : ''}.html`;
-  const dir = isEn ? 'ltr' : 'rtl';
-  const htmlLang = isEn ? 'en' : 'ar';
+ const isEn = lang === 'en';
+ const t = COPY[lang];
+ const { header, footer } = getLayout(lang, DEPTH);
+ const file = isEn ? 'branding-en.html' : 'branding.html';
+ const canonical = `${BASE}/services/${file}`;
+ const altEn = `${BASE}/services/branding-en.html`;
+ const altAr = `${BASE}/services/branding.html`;
+ const contact = `${P}contact-us${isEn ? '-en' : ''}.html`;
+ const dir = isEn ? 'ltr' : 'rtl';
+ const htmlLang = isEn ? 'en' : 'ar';
 
-  const heroFont = "'Tajawal','IBM Plex Sans Arabic',sans-serif";
+ const heroFont = "'Tajawal','IBM Plex Sans Arabic',sans-serif";
 
-  const heroSlides = HERO_SLIDES.map((slide, i) => {
-    const alt = isEn ? slide.altEn : slide.altAr;
-    return `<div class="bid-hero-slide${i === 0 ? ' is-active' : ''}" data-bid-slide="${i}">
-      <img src="${P}${slide.img}" alt="${esc(alt)}"${i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'}>
-    </div>`;
-  }).join('\n');
+ const heroSlides = HERO_SLIDES.map((slide, i) => {
+ const alt = isEn ? slide.altEn : slide.altAr;
+ return `<div class="bid-hero-slide${i === 0 ? ' is-active' : ''}" data-bid-slide="${i}">
+ <img src="${P}${slide.img}" alt="${esc(alt)}"${i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'}>
+ </div>`;
+ }).join('\n');
 
-  const heroProgs = Array.from({ length: HERO_SLIDE_COUNT }, (_, i) =>
-    `<div class="hero-prog${i === 0 ? ' hp-active' : ''}" id="bid-hprog-${i}"></div>`
-  ).join('');
+ const heroProgs = Array.from({ length: HERO_SLIDE_COUNT }, (_, i) =>
+ `<div class="hero-prog${i === 0 ? ' hp-active' : ''}" id="bid-hprog-${i}"></div>`
+ ).join('');
 
-  const heroCaps = t.pipeline
-    .map((label, i) => {
-      const dot = i > 0 ? '<div class="cap-bar-dot"></div>' : '';
-      return `${dot}<div class="cap-bar-item"><span class="cap-bar-label">${esc(label)}</span></div>`;
-    })
-    .join('\n');
+ const heroCaps = t.pipeline
+ .map((label, i) => {
+ const dot = i > 0 ? '<div class="cap-bar-dot"></div>' : '';
+ return `${dot}<div class="cap-bar-item"><span class="cap-bar-label">${esc(label)}</span></div>`;
+ })
+ .join('\n');
 
-  const slideTotal = String(HERO_SLIDE_COUNT).padStart(2, '0');
+ const slideTotal = String(HERO_SLIDE_COUNT).padStart(2, '0');
 
-  const stats = t.stats
-    .map((s) => `<div class="bid-stat reveal"><strong>${esc(s.n)}</strong><span>${esc(s.label)}</span></div>`)
-    .join('');
+ const stats = t.stats
+ .map((s) => `<div class="bid-stat reveal"><strong>${esc(s.n)}</strong><span>${esc(s.label)}</span></div>`)
+ .join('');
 
-  const pillars = PILLARS[lang]
-    .map(
-      (p) => `<article class="bid-pillar reveal">
-      <span class="material-symbols-outlined" aria-hidden="true">${p.icon}</span>
-      <h3>${p.title}</h3>
-      <p>${p.desc}</p>
-    </article>`
-    )
-    .join('');
+ const pillars = PILLARS[lang]
+ .map(
+ (p) => `<article class="bid-pillar reveal">
+ <span class="material-symbols-outlined" aria-hidden="true">${p.icon}</span>
+ <h3>${p.title}</h3>
+ <p>${p.desc}</p>
+ </article>`
+ )
+ .join('');
 
-  const pipeline = t.pipeline
-    .map((step, i) => {
-      const arrow = i < t.pipeline.length - 1 ? `<span class="bid-pipe-arrow material-symbols-outlined" aria-hidden="true">arrow_forward</span>` : '';
-      return `<span class="bid-pipe-step">${esc(step)}</span>${arrow}`;
-    })
-    .join('\n');
+ const pipeline = t.pipeline
+ .map((step, i) => {
+ const arrow = i < t.pipeline.length - 1 ? `<span class="bid-pipe-arrow material-symbols-outlined" aria-hidden="true">arrow_forward</span>` : '';
+ return `<span class="bid-pipe-step">${esc(step)}</span>${arrow}`;
+ })
+ .join('\n');
 
-  const filters = t.filters
-    .map(
-      (f, i) =>
-        `<button type="button" class="bid-filter${i === 0 ? ' is-active' : ''}" data-bid-filter="${f.id}">${esc(f.label)}</button>`
-    )
-    .join('');
+ const filters = t.filters
+ .map(
+ (f, i) =>
+ `<button type="button" class="bid-filter${i === 0 ? ' is-active' : ''}" data-bid-filter="${f.id}">${esc(f.label)}</button>`
+ )
+ .join('');
 
-  const showcase = SHOWCASE.map((item, idx) => {
-    const finalHref = isEn ? item.hrefEn : item.hrefAr;
-    const ext = item.external ? ' target="_blank" rel="noopener noreferrer"' : '';
-    const title = isEn ? item.titleEn : item.titleAr;
-    const sub = isEn ? item.subEn : item.subAr;
-    const cat = isEn ? item.catEn : item.catAr;
-    const sizeClass = item.size ? ` bid-showcase-item--${item.size}` : '';
-    const tagClass = item.featured ? ' bid-showcase-tag--feat' : '';
-    const webp = item.img.replace(/\.png$/i, '.webp');
-    const eager = idx === 0 ? ' fetchpriority="high"' : ' loading="lazy"';
-    return `<a href="${finalHref}" class="bid-showcase-item${sizeClass} reveal" data-bid-cat="${item.filter}"${ext}>
-      <figure class="bid-showcase-fig">
-        <picture>
-          <source srcset="${P}${webp}" type="image/webp">
-          <img src="${P}${item.img}" alt="${esc(title)}" width="1536" height="1024"${eager} decoding="async">
-        </picture>
-        <figcaption class="bid-showcase-cap">
-          <div class="bid-showcase-meta">
-            <span class="bid-showcase-tag${tagClass}">${esc(cat)}</span>
-            <h3>${esc(title)}</h3>
-            <p class="bid-showcase-sub">${esc(sub)}</p>
-          </div>
-          <span class="bid-showcase-go material-symbols-outlined" aria-hidden="true">arrow_forward</span>
-        </figcaption>
-      </figure>
-    </a>`;
-  }).join('\n');
+ const showcase = SHOWCASE.map((item, idx) => {
+ const finalHref = isEn ? item.hrefEn : item.hrefAr;
+ const ext = item.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+ const title = isEn ? item.titleEn : item.titleAr;
+ const sub = isEn ? item.subEn : item.subAr;
+ const cat = isEn ? item.catEn : item.catAr;
+ const sizeClass = item.size ? ` bid-showcase-item--${item.size}` : '';
+ const tagClass = item.featured ? ' bid-showcase-tag--feat' : '';
+ const webp = item.img.replace(/\.png$/i, '.webp');
+ const eager = idx === 0 ? ' fetchpriority="high"' : ' loading="lazy"';
+ return `<a href="${finalHref}" class="bid-showcase-item${sizeClass} reveal" data-bid-cat="${item.filter}"${ext}>
+ <figure class="bid-showcase-fig">
+ <picture>
+ <source srcset="${P}${webp}" type="image/webp">
+ <img src="${P}${item.img}" alt="${esc(title)}" width="1536" height="1024"${eager} decoding="async">
+ </picture>
+ <figcaption class="bid-showcase-cap">
+ <div class="bid-showcase-meta">
+ <span class="bid-showcase-tag${tagClass}">${esc(cat)}</span>
+ <h3>${esc(title)}</h3>
+ <p class="bid-showcase-sub">${esc(sub)}</p>
+ </div>
+ <span class="bid-showcase-go material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+ </figcaption>
+ </figure>
+ </a>`;
+ }).join('\n');
 
-  const paths = t.paths
-    .map(
-      (p) => `<a href="${P}${p.href}" class="bid-path reveal">
-      <strong>${esc(p.title)}</strong>
-      <span>${esc(p.desc)}</span>
-    </a>`
-    )
-    .join('');
+ const paths = t.paths
+ .map(
+ (p) => `<a href="${P}${p.href}" class="bid-path reveal">
+ <strong>${esc(p.title)}</strong>
+ <span>${esc(p.desc)}</span>
+ </a>`
+ )
+ .join('');
 
-  const schema = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: isEn ? 'Visual Identity & Spatial Brand Systems' : 'الهوية البصرية والأنظمة المكانية',
-    description: t.description,
-    url: canonical,
-    provider: { '@type': 'Organization', name: 'Graphics House', url: BASE },
-    areaServed: ['SA', 'AE', 'OM', 'BH', 'EG'],
-  });
+ const schema = JSON.stringify({
+ '@context': 'https://schema.org',
+ '@type': 'Service',
+ name: isEn ? 'Visual Identity & Spatial Brand Systems' : 'الهوية البصرية والأنظمة المكانية',
+ description: t.description,
+ url: canonical,
+ provider: { '@type': 'Organization', name: 'Graphics House', url: BASE },
+ areaServed: ['SA', 'AE', 'OM', 'BH'],
+ });
 
-  return `<!DOCTYPE html>
+ return `<!DOCTYPE html>
 <html class="dark scroll-smooth" dir="${dir}" lang="${htmlLang}">
 <head>
 <script src="${P}assets/gh-forms-config.js?v=2"></script>
@@ -404,130 +404,130 @@ ${isEn ? `<link rel="stylesheet" href="${P}assets/gh-en-typography.css?v=3">` : 
 <body class="bid-page" data-gh-service="branding">
 ${header}
 <main id="main-content">
-  <section class="hero motif-bg" id="bid-hero" style="background:#0A0A0A">
-    <div class="hero-video-bg bid-hero-slides" aria-hidden="true">
-      ${heroSlides}
-    </div>
-    <div class="hero-vignette" aria-hidden="true"></div>
-    <div class="hero-glow-accent" aria-hidden="true"></div>
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-bottom-glow" aria-hidden="true"></div>
+ <section class="hero motif-bg" id="bid-hero" style="background:#0A0A0A">
+ <div class="hero-video-bg bid-hero-slides" aria-hidden="true">
+ ${heroSlides}
+ </div>
+ <div class="hero-vignette" aria-hidden="true"></div>
+ <div class="hero-glow-accent" aria-hidden="true"></div>
+ <div class="hero-glow" aria-hidden="true"></div>
+ <div class="hero-bottom-glow" aria-hidden="true"></div>
 
-    <div class="hero-bottom-panel">
-      <div class="hero-bottom-panel__inner">
-        <h1 class="font-black text-center" style="margin:12px 0 0;font-size:clamp(24px,4.5vw,58px);color:#FAFAF8;letter-spacing:-.03em;line-height:1.2;text-shadow:0 4px 40px rgba(0,0,0,.6);font-family:${heroFont}">
-          ${esc(t.h1Line1)}<br>
-          <span style="color:#C9A84C">${esc(t.h1Gold)}</span>
-        </h1>
-        <p style="font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,.8);margin:12px 0 0;font-weight:400;max-width:640px;line-height:1.8;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.5);font-family:${heroFont}">
-          ${esc(t.subtitle)}
-        </p>
-        <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;justify-content:center">
-          <a href="${contact}" class="gh-damac-btn gh-damac-btn-white" data-gh-cta="branding_primary">
-            <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">brush</span>
-            <span>${esc(t.ctaPrimary)}</span>
-          </a>
-          <a href="#bid-gallery" class="gh-damac-btn gh-damac-btn-outline" data-gh-cta="branding_gallery">
-            <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">collections</span>
-            <span>${esc(t.ctaCase)}</span>
-          </a>
-        </div>
-        <div class="hero-caps-bar">${heroCaps}</div>
-      </div>
-    </div>
+ <div class="hero-bottom-panel">
+ <div class="hero-bottom-panel__inner">
+ <h1 class="font-black text-center" style="margin:12px 0 0;font-size:clamp(24px,4.5vw,58px);color:#FAFAF8;letter-spacing:-.03em;line-height:1.2;text-shadow:0 4px 40px rgba(0,0,0,.6);font-family:${heroFont}">
+ ${esc(t.h1Line1)}<br>
+ <span style="color:#C9A84C">${esc(t.h1Gold)}</span>
+ </h1>
+ <p style="font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,.8);margin:12px 0 0;font-weight:400;max-width:640px;line-height:1.8;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.5);font-family:${heroFont}">
+ ${esc(t.subtitle)}
+ </p>
+ <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;justify-content:center">
+ <a href="${contact}" class="gh-damac-btn gh-damac-btn-white" data-gh-cta="branding_primary">
+ <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">brush</span>
+ <span>${esc(t.ctaPrimary)}</span>
+ </a>
+ <a href="#bid-gallery" class="gh-damac-btn gh-damac-btn-outline" data-gh-cta="branding_gallery">
+ <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">collections</span>
+ <span>${esc(t.ctaCase)}</span>
+ </a>
+ </div>
+ <div class="hero-caps-bar">${heroCaps}</div>
+ </div>
+ </div>
 
-    <div class="hero-prog-track" dir="ltr" aria-hidden="true">${heroProgs}</div>
-    <div class="hero-slide-counter tabular-nums" dir="ltr" style="font-family:monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.45)">
-      <span id="bid-hero-cur">01</span><span style="color:#C9A84C;margin:0 3px">/</span><span>${slideTotal}</span>
-    </div>
-  </section>
+ <div class="hero-prog-track" dir="ltr" aria-hidden="true">${heroProgs}</div>
+ <div class="hero-slide-counter tabular-nums" dir="ltr" style="font-family:monospace;font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.45)">
+ <span id="bid-hero-cur">01</span><span style="color:#C9A84C;margin:0 3px">/</span><span>${slideTotal}</span>
+ </div>
+ </section>
 
-  <div class="bid-stats">
-    <div class="bid-stats-inner">${stats}</div>
-  </div>
+ <div class="bid-stats">
+ <div class="bid-stats-inner">${stats}</div>
+ </div>
 
-  <section class="bid-section bid-section--lift" id="bid-gallery">
-    <div class="bid-section-inner">
-      <div class="bid-section-head bid-section-head--center reveal">
-        <span class="bid-section-eyebrow">${isEn ? 'Portfolio' : 'معرض الأعمال'}</span>
-        <h2>${esc(t.galleryTitle)}</h2>
-        <p>${esc(t.galleryLead)}</p>
-      </div>
-      <div class="bid-filters reveal">${filters}</div>
-      <div class="bid-showcase">${showcase}</div>
-    </div>
-  </section>
+ <section class="bid-section bid-section--lift" id="bid-gallery">
+ <div class="bid-section-inner">
+ <div class="bid-section-head bid-section-head--center reveal">
+ <span class="bid-section-eyebrow">${isEn ? 'Portfolio' : 'معرض الأعمال'}</span>
+ <h2>${esc(t.galleryTitle)}</h2>
+ <p>${esc(t.galleryLead)}</p>
+ </div>
+ <div class="bid-filters reveal">${filters}</div>
+ <div class="bid-showcase">${showcase}</div>
+ </div>
+ </section>
 
-  <section class="bid-section bid-section--dark">
-    <div class="bid-section-inner">
-      <div class="bid-section-head reveal">
-        <h2>${esc(t.pillarsTitle)}</h2>
-        <p>${esc(t.pillarsLead)}</p>
-      </div>
-      <div class="bid-pillars">${pillars}</div>
-    </div>
-  </section>
+ <section class="bid-section bid-section--dark">
+ <div class="bid-section-inner">
+ <div class="bid-section-head reveal">
+ <h2>${esc(t.pillarsTitle)}</h2>
+ <p>${esc(t.pillarsLead)}</p>
+ </div>
+ <div class="bid-pillars">${pillars}</div>
+ </div>
+ </section>
 
-  <section class="bid-section bid-section--dark">
-    <div class="bid-section-inner">
-      <div class="bid-section-head reveal">
-        <h2>${esc(t.pipelineTitle)}</h2>
-        <p>${esc(t.pipelineLead)}</p>
-        <div class="bid-pipeline">${pipeline}</div>
-      </div>
-    </div>
-  </section>
+ <section class="bid-section bid-section--dark">
+ <div class="bid-section-inner">
+ <div class="bid-section-head reveal">
+ <h2>${esc(t.pipelineTitle)}</h2>
+ <p>${esc(t.pipelineLead)}</p>
+ <div class="bid-pipeline">${pipeline}</div>
+ </div>
+ </div>
+ </section>
 
-  <section class="bid-section bid-section--dark">
-    <div class="bid-section-inner">
-      <div class="bid-section-head reveal">
-        <h2>${esc(t.pathsTitle)}</h2>
-      </div>
-      <div class="bid-paths">${paths}</div>
-    </div>
-  </section>
+ <section class="bid-section bid-section--dark">
+ <div class="bid-section-inner">
+ <div class="bid-section-head reveal">
+ <h2>${esc(t.pathsTitle)}</h2>
+ </div>
+ <div class="bid-paths">${paths}</div>
+ </div>
+ </section>
 
-  <section class="bid-final">
-    <h2>${esc(t.finalTitle)}</h2>
-    <p>${esc(t.finalBody)}</p>
-    <a class="bid-btn bid-btn--gold" href="${contact}" data-gh-cta="branding_final">${esc(t.ctaPrimary)}</a>
-  </section>
+ <section class="bid-final">
+ <h2>${esc(t.finalTitle)}</h2>
+ <p>${esc(t.finalBody)}</p>
+ <a class="bid-btn bid-btn--gold" href="${contact}" data-gh-cta="branding_final">${esc(t.ctaPrimary)}</a>
+ </section>
 </main>
 ${footer}
 <script defer src="${P}assets/gh-float-widgets.js?v=8"></script>
 <script defer src="${P}assets/site-header.js?v=8"></script>
 <script>
 (function(){
-  var els=document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.style.opacity='1';en.target.style.transform='none';io.unobserve(en.target);}});},{threshold:0.08});
-    els.forEach(function(e){e.style.opacity='0';e.style.transform='translateY(24px)';io.observe(e);});
-  }
-  document.querySelectorAll('[data-bid-filter]').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var f=btn.getAttribute('data-bid-filter');
-      document.querySelectorAll('[data-bid-filter]').forEach(function(b){b.classList.toggle('is-active',b===btn);});
-      document.querySelectorAll('[data-bid-cat]').forEach(function(card){
-        card.classList.toggle('is-hidden',f!=='all'&&card.getAttribute('data-bid-cat')!==f);
-      });
-    });
-  });
-  var slides=document.querySelectorAll('[data-bid-slide]');
-  var hprogs=document.querySelectorAll('#bid-hero .hero-prog');
-  var hcur=document.getElementById('bid-hero-cur');
-  var hsIdx=0,hsTotal=${HERO_SLIDE_COUNT},hsTimer;
-  function goSlide(n){
-    hsIdx=((n%hsTotal)+hsTotal)%hsTotal;
-    slides.forEach(function(s,i){s.classList.toggle('is-active',i===hsIdx);});
-    for(var i=0;i<hsTotal;i++){
-      var p=document.getElementById('bid-hprog-'+i);
-      if(p){p.className='hero-prog'+(i<hsIdx?' hp-done':'')+(i===hsIdx?' hp-active':'');}
-    }
-    if(hcur){hcur.textContent=String(hsIdx+1).padStart(2,'0');}
-  }
-  function autoSlide(){hsTimer=setInterval(function(){goSlide(hsIdx+1);},6000);}
-  if(slides.length>1){goSlide(0);autoSlide();}
-  if(window.gtag){gtag('event','service_view',{service_id:'branding',page_path:location.pathname});}
+ var els=document.querySelectorAll('.reveal');
+ if('IntersectionObserver' in window){
+ var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.style.opacity='1';en.target.style.transform='none';io.unobserve(en.target);}});},{threshold:0.08});
+ els.forEach(function(e){e.style.opacity='0';e.style.transform='translateY(24px)';io.observe(e);});
+ }
+ document.querySelectorAll('[data-bid-filter]').forEach(function(btn){
+ btn.addEventListener('click',function(){
+ var f=btn.getAttribute('data-bid-filter');
+ document.querySelectorAll('[data-bid-filter]').forEach(function(b){b.classList.toggle('is-active',b===btn);});
+ document.querySelectorAll('[data-bid-cat]').forEach(function(card){
+ card.classList.toggle('is-hidden',f!=='all'&&card.getAttribute('data-bid-cat')!==f);
+ });
+ });
+ });
+ var slides=document.querySelectorAll('[data-bid-slide]');
+ var hprogs=document.querySelectorAll('#bid-hero .hero-prog');
+ var hcur=document.getElementById('bid-hero-cur');
+ var hsIdx=0,hsTotal=${HERO_SLIDE_COUNT},hsTimer;
+ function goSlide(n){
+ hsIdx=((n%hsTotal)+hsTotal)%hsTotal;
+ slides.forEach(function(s,i){s.classList.toggle('is-active',i===hsIdx);});
+ for(var i=0;i<hsTotal;i++){
+ var p=document.getElementById('bid-hprog-'+i);
+ if(p){p.className='hero-prog'+(i<hsIdx?' hp-done':'')+(i===hsIdx?' hp-active':'');}
+ }
+ if(hcur){hcur.textContent=String(hsIdx+1).padStart(2,'0');}
+ }
+ function autoSlide(){hsTimer=setInterval(function(){goSlide(hsIdx+1);},6000);}
+ if(slides.length>1){goSlide(0);autoSlide();}
+ if(window.gtag){gtag('event','service_view',{service_id:'branding',page_path:location.pathname});}
 })();
 </script>
 </body>
@@ -535,50 +535,50 @@ ${footer}
 }
 
 function patchHeaderNav() {
-  const brandingLink = {
-    ar: `<a href="{{PREFIX}}services/branding.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">brush</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">الهوية البصرية</span>
-                      <span class="mm-svc-desc">شعار، كتالوج، معارض, نظام بصري واحد</span>
-                    </span>
-                  </a>`,
-    en: `<a href="{{PREFIX}}services/branding-en.html" class="mm-svc-link">
-                    <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">brush</span></span>
-                    <span class="mm-svc-body">
-                      <span class="mm-svc-text">Visual identity</span>
-                      <span class="mm-svc-desc">Logo, catalogue, exhibitions, one system</span>
-                    </span>
-                  </a>`,
-  };
+ const brandingLink = {
+ ar: `<a href="{{PREFIX}}services/branding.html" class="mm-svc-link">
+ <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">brush</span></span>
+ <span class="mm-svc-body">
+ <span class="mm-svc-text">الهوية البصرية</span>
+ <span class="mm-svc-desc">شعار، كتالوج، معارض, نظام بصري واحد</span>
+ </span>
+ </a>`,
+ en: `<a href="{{PREFIX}}services/branding-en.html" class="mm-svc-link">
+ <span class="mm-svc-icon-wrap"><span class="material-symbols-outlined">brush</span></span>
+ <span class="mm-svc-body">
+ <span class="mm-svc-text">Visual identity</span>
+ <span class="mm-svc-desc">Logo, catalogue, exhibitions, one system</span>
+ </span>
+ </a>`,
+ };
 
-  for (const [lang, file] of [
-    ['ar', 'header-ar.html'],
-    ['en', 'header-en.html'],
-  ]) {
-    const fp = path.join(ROOT, 'partials', file);
-    let html = fs.readFileSync(fp, 'utf8');
-    const marker = '<!-- GH_BRANDING_NAV -->';
-    if (html.includes(marker)) {
-      html = html.replace(
-        new RegExp(`${marker}[\\s\\S]*?${marker}`, 'm'),
-        `${marker}\n${brandingLink[lang]}\n                  ${marker}`
-      );
-    } else {
-      const anchor = lang === 'ar' ? 'services/rendering.html' : 'services/rendering-en.html';
-      const needle = `<a href="{{PREFIX}}${anchor}" class="mm-svc-link">`;
-      if (html.includes(needle) && !html.includes('services/branding')) {
-        html = html.replace(needle, `${marker}\n${brandingLink[lang]}\n                  ${marker}\n                  ${needle}`);
-      }
-    }
-    fs.writeFileSync(fp, html);
-  }
+ for (const [lang, file] of [
+ ['ar', 'header-ar.html'],
+ ['en', 'header-en.html'],
+ ]) {
+ const fp = path.join(ROOT, 'partials', file);
+ let html = fs.readFileSync(fp, 'utf8');
+ const marker = '<!-- GH_BRANDING_NAV -->';
+ if (html.includes(marker)) {
+ html = html.replace(
+ new RegExp(`${marker}[\\s\\S]*?${marker}`, 'm'),
+ `${marker}\n${brandingLink[lang]}\n ${marker}`
+ );
+ } else {
+ const anchor = lang === 'ar' ? 'services/rendering.html' : 'services/rendering-en.html';
+ const needle = `<a href="{{PREFIX}}${anchor}" class="mm-svc-link">`;
+ if (html.includes(needle) && !html.includes('services/branding')) {
+ html = html.replace(needle, `${marker}\n${brandingLink[lang]}\n ${marker}\n ${needle}`);
+ }
+ }
+ fs.writeFileSync(fp, html);
+ }
 }
 
 for (const lang of ['ar', 'en']) {
-  const name = lang === 'en' ? 'branding-en.html' : 'branding.html';
-  fs.writeFileSync(path.join(OUT, name), page(lang), 'utf8');
-  console.log('Wrote services/' + name);
+ const name = lang === 'en' ? 'branding-en.html' : 'branding.html';
+ fs.writeFileSync(path.join(OUT, name), page(lang), 'utf8');
+ console.log('Wrote services/' + name);
 }
 
 patchHeaderNav();
