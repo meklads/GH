@@ -2093,7 +2093,7 @@ img { max-width: 100%; display: block; }
   max-width: 100vw !important;
   margin-left: calc(50% - 50vw) !important;
   margin-right: calc(50% - 50vw) !important;
-  height: 96px !important;
+  height: 176px !important;
   overflow: hidden !important;
   background: rgba(0, 0, 0, 0.28);
   border-block: 1px solid rgba(201, 168, 76, 0.14);
@@ -2150,7 +2150,7 @@ img { max-width: 100%; display: block; }
   flex-grow: 0 !important;
   width: auto !important;
   height: 100% !important;
-  padding: 0 44px !important;
+  padding: 0 56px !important;
   margin: 0 !important;
   display: flex !important;
   flex-direction: row !important;
@@ -2158,6 +2158,7 @@ img { max-width: 100%; display: block; }
   justify-content: center !important;
   position: relative;
   float: none !important;
+  gap: 10px;
 }
 .gh-logo-album__item::after {
   content: '';
@@ -2166,15 +2167,15 @@ img { max-width: 100%; display: block; }
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
-  height: 28px;
+  height: 48px;
   background: rgba(255, 255, 255, 0.1);
 }
 .gh-logo-album__item img {
-  height: 42px !important;
+  height: 88px !important;
   width: auto !important;
-  max-width: 140px !important;
+  max-width: 260px !important;
   object-fit: contain !important;
-  opacity: 0.75;
+  opacity: 0.85;
   filter: brightness(0) invert(1);
   transition: opacity 0.3s ease, transform 0.3s ease;
   display: block !important;
@@ -2182,12 +2183,34 @@ img { max-width: 100%; display: block; }
 }
 .gh-logo-album__item:hover img {
   opacity: 1;
-  transform: scale(1.06);
+  transform: scale(1.04);
+}
+.gh-logo-album__item--named {
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+.gh-logo-album__item--named img {
+  height: 72px !important;
+  max-width: 120px !important;
+  filter: none !important;
+  opacity: 0.95;
+}
+.gh-logo-album__name {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.78);
+  text-transform: uppercase;
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1;
+  white-space: nowrap;
 }
 @media (max-width: 640px) {
-  .gh-logo-album__frame { height: 80px !important; }
-  .gh-logo-album__item { padding: 0 28px !important; }
-  .gh-logo-album__item img { height: 34px !important; max-width: 110px !important; }
+  .gh-logo-album__frame { height: 120px !important; }
+  .gh-logo-album__item { padding: 0 36px !important; }
+  .gh-logo-album__item img { height: 64px !important; max-width: 180px !important; }
+  .gh-logo-album__item--named img { height: 56px !important; max-width: 96px !important; }
+  .gh-logo-album__item::after { height: 40px; }
 }
 
 /* ── Client logo strip، constrained to content width ── */

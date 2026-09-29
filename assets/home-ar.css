@@ -2445,7 +2445,7 @@ img { max-width: 100%; display: block; }
   width: 100%;
   max-width: none;
   margin: 0;
-  height: 92px;
+  height: 176px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.28);
   border-block: 1px solid rgba(201, 168, 76, 0.14);
@@ -2495,11 +2495,12 @@ img { max-width: 100%; display: block; }
 .gh-logo-album__item {
   flex-shrink: 0;
   height: 100%;
-  padding: 0 48px;
+  padding: 0 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  gap: 10px;
 }
 .gh-logo-album__item::after {
   content: '';
@@ -2508,27 +2509,55 @@ img { max-width: 100%; display: block; }
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
-  height: 28px;
+  height: 48px;
   background: rgba(255, 255, 255, 0.1);
 }
 .gh-logo-album__item img {
-  height: 44px;
+  height: 88px;
   width: auto;
-  max-width: 130px;
+  max-width: 260px;
   object-fit: contain;
-  opacity: 0.7;
+  opacity: 0.85;
   filter: brightness(0) invert(1);
   transition: opacity 0.3s ease, transform 0.3s ease;
   display: block;
 }
 .gh-logo-album__item:hover img {
   opacity: 1;
-  transform: scale(1.06);
+  transform: scale(1.04);
+}
+.gh-logo-album__item--named {
+  flex-direction: column;
+  gap: 8px;
+}
+.gh-logo-album__item--named img {
+  height: 72px;
+  max-width: 120px;
+  filter: none;
+  opacity: 0.95;
+}
+.gh-logo-album__name {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.78);
+  text-transform: uppercase;
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1;
+  white-space: nowrap;
+}
+html[dir='rtl'] .gh-logo-album__name {
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-size: 13px;
 }
 @media (max-width: 640px) {
-  .gh-logo-album__frame { height: 78px; }
-  .gh-logo-album__item { padding: 0 28px; }
-  .gh-logo-album__item img { height: 36px; max-width: 110px; }
+  .gh-logo-album__frame { height: 120px; }
+  .gh-logo-album__item { padding: 0 36px; }
+  .gh-logo-album__item img { height: 64px; max-width: 180px; }
+  .gh-logo-album__item--named img { height: 56px; max-width: 96px; }
+  .gh-logo-album__item::after { height: 40px; }
 }
 
 .cli-item { padding:0 50px; flex-shrink:0; display:flex; align-items:center; justify-content:center; height:90px; border-right:1px solid rgba(0,0,0,.1); }
