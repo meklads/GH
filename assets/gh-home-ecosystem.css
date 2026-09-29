@@ -198,24 +198,31 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 68px;
-  height: 68px;
-  margin-bottom: 18px;
-  color: #fafaf8;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  width: 88px;
+  height: 88px;
+  margin-bottom: 22px;
+  color: #e0c06a;
+  background:
+    linear-gradient(145deg, rgba(201, 168, 76, 0.2), rgba(201, 168, 76, 0.05)),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.38);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gh-home-eco-ticket:hover .gh-home-eco-ticket__icon {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.38);
-  transform: translateY(-2px);
+  background:
+    linear-gradient(145deg, rgba(201, 168, 76, 0.3), rgba(201, 168, 76, 0.08)),
+    rgba(255, 255, 255, 0.06);
+  border-color: rgba(224, 192, 106, 0.55);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
 }
 
-.gh-home-eco-ticket__icon svg {
-  width: 40px;
-  height: 40px;
+.gh-home-eco-ticket__icon svg,
+.gh-home-eco-ticket__icon img {
+  width: 48px;
+  height: 48px;
   display: block;
 }
 
