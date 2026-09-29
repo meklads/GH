@@ -93,7 +93,7 @@ gtag('config','G-Y67JVE898Z');
 
 
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=45">
+<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=46">
 <link rel="stylesheet" href="assets/home-ar.css?v=17">
 <link rel="stylesheet" href="assets/gh-home-ecosystem.css?v=15">
 <link rel="stylesheet" href="assets/gh-home-process.css?v=1">
@@ -431,37 +431,42 @@ gtag('config','G-Y67JVE898Z');
  <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">rocket_launch</span>
  <span>استكشف أنظمة الإطلاق</span>
  </a>
- <a href="contact-us.html" class="gh-damac-btn gh-damac-btn-outline" data-cta="hero_contact">
+ <a href="contact-us.html?intent=session" class="gh-damac-btn gh-damac-btn-outline" data-cta="hero_contact">
  <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">calendar_month</span>
- <span>احجز استشارة</span>
+ <span>احجز جلسة إطلاق</span>
  </a>
  </div>
 
- <!-- Capabilities Bar -->
- <div class="hero-caps-bar" style="display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:6px 8px;width:100%;max-width:100%;overflow:visible;box-sizing:border-box">
- <div class="cap-bar-item">
- <img loading="lazy" src="assets/icons/tech.png" alt="الإظهار المعماري">
- <span class="cap-bar-label">ميديا برودكشن</span>
- </div>
- <div class="cap-bar-dot" aria-hidden="true"></div>
- <div class="cap-bar-item">
- <img loading="lazy" src="assets/icons/gallery.png" alt="المعارض والتصميم المكاني">
- <span class="cap-bar-label">جاليريات وديكور</span>
- </div>
- <div class="cap-bar-dot" aria-hidden="true"></div>
- <div class="cap-bar-item">
- <img loading="lazy" src="assets/icons/models.png" alt="المجسمات الذكية">
+ <!-- Capabilities Bar — unified AR/EN specialty set -->
+ <div class="hero-caps-bar" role="list" aria-label="تخصصاتنا">
+ <div class="cap-bar-item" role="listitem">
+ <img loading="lazy" src="assets/icons/models.png" alt="">
  <span class="cap-bar-label">مجسمات ذكية</span>
  </div>
  <div class="cap-bar-dot" aria-hidden="true"></div>
- <div class="cap-bar-item">
- <img loading="lazy" src="assets/icons/interactive.png" alt="التجارب التفاعلية">
+ <div class="cap-bar-item" role="listitem">
+ <img loading="lazy" src="assets/icons/cinematic.png" alt="">
+ <span class="cap-bar-label">CGI سينمائي</span>
+ </div>
+ <div class="cap-bar-dot" aria-hidden="true"></div>
+ <div class="cap-bar-item" role="listitem">
+ <img loading="lazy" src="assets/icons/interactive.png" alt="">
  <span class="cap-bar-label">تجارب تفاعلية</span>
  </div>
  <div class="cap-bar-dot" aria-hidden="true"></div>
- <div class="cap-bar-item">
- <img loading="lazy" src="assets/icons/cinematic.png" alt="أفلام CGI سينمائية">
- <span class="cap-bar-label">سينمائي CGI</span>
+ <div class="cap-bar-item" role="listitem">
+ <img loading="lazy" src="assets/icons/tech.png" alt="">
+ <span class="cap-bar-label">إظهار معماري</span>
+ </div>
+ <div class="cap-bar-dot" aria-hidden="true"></div>
+ <div class="cap-bar-item" role="listitem">
+ <span class="material-symbols-outlined" aria-hidden="true">videocam</span>
+ <span class="cap-bar-label">إنتاج إعلامي</span>
+ </div>
+ <div class="cap-bar-dot" aria-hidden="true"></div>
+ <div class="cap-bar-item" role="listitem">
+ <img loading="lazy" src="assets/icons/gallery.png" alt="">
+ <span class="cap-bar-label">الديكور المكاني</span>
  </div>
  </div>
 
@@ -488,7 +493,7 @@ gtag('config','G-Y67JVE898Z');
 <!-- ===== شريط الثقة ===== -->
 <section id="trust-band" class="gh-logo-album-section" aria-label="موثوق من عملائنا" dir="rtl">
  <div class="gh-logo-album">
- <p class="gh-logo-album__label">موثوق من كبار المطورين في المملكة العربية السعودية وعُمان والبحرين</p>
+ <p class="gh-logo-album__label">موثوق لدى كبار المطورين في السعودية وعُمان والبحرين</p>
  <div class="gh-logo-album__frame" role="region" aria-label="شعارات العملاء" style="overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);height:176px">
  <div class="gh-logo-album__track gh-logo-album__track--rtl" style="display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;width:max-content;height:100%">
  <div class="gh-logo-album__item"><img src="assets/clients-logo/rafal.png" alt="رفال" loading="lazy" decoding="async"></div>
@@ -517,14 +522,20 @@ gtag('config','G-Y67JVE898Z');
 </section>
 
  <!-- Intro Section -->
- <section style="padding:100px 0;background:#FAFAF8;overflow:hidden">
- <div style="max-width:1100px;margin:0 auto;padding:0 24px;text-align:center">
- <h2 style="font-size:clamp(24px,2.4vw,36px);font-weight:300;color:#0A0A0A;margin:0 0 16px 0;line-height:1.5;font-family:'Tajawal','IBM Plex Sans Arabic',sans-serif">
- Graphics House يجهّز الجانب البصري للإطلاق<br>للمطورين في <span style="font-weight:700;color:#C9A84C">الخليج</span> — بجاهزية دولية.
+ <section class="gh-home-intro" aria-labelledby="gh-home-intro-title">
+ <div class="gh-home-intro__wrap">
+ <h2 id="gh-home-intro-title" class="gh-home-intro__title">
+ Graphics House يجهّز الجانب البصري للإطلاق<br>
+ للمطورين في <em>الخليج</em> — بجاهزية دولية.
  </h2>
- <p style="font-size:clamp(15px,1.2vw,18px);color:#555;font-weight:400;line-height:1.7;margin:0;max-width:800px;margin:0 auto;letter-spacing:0.3px">
- مجسمات ذكية &bull; CGI سينمائي &bull; تجارب تفاعلية &bull; إظهار معماري &bull; إنتاج إعلامي
- </p>
+ <ul class="gh-home-intro__caps">
+ <li>مجسمات ذكية</li>
+ <li>CGI سينمائي</li>
+ <li>تجارب تفاعلية</li>
+ <li>إظهار معماري</li>
+ <li>إنتاج إعلامي</li>
+ <li>الديكور المكاني</li>
+ </ul>
  </div>
  </section>
 
@@ -1556,6 +1567,7 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',ini
     </div>
   </div>
 </footer>
+
 
 
 
