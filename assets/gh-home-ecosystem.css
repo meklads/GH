@@ -116,13 +116,13 @@ html[dir='rtl'] .gh-home-eco__eyebrow,
   text-decoration: none;
   color: inherit;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 28%),
+    linear-gradient(180deg, rgba(201, 168, 76, 0.07) 0%, transparent 32%),
     linear-gradient(165deg, #1c1914 0%, #101010 60%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 30px 26px 26px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 28px 26px 26px;
   position: relative;
   transition: border-color 0.3s ease, box-shadow 0.35s ease, transform 0.3s ease;
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.42);
   min-height: 100%;
   overflow: hidden;
 }
@@ -133,8 +133,8 @@ html[dir='rtl'] .gh-home-eco__eyebrow,
   inset-block-start: 0;
   inset-inline: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #f5f5f3, transparent);
-  opacity: 0.7;
+  background: linear-gradient(90deg, transparent, #e0c06a, transparent);
+  opacity: 0.85;
   transition: opacity 0.3s ease;
 }
 
@@ -151,8 +151,8 @@ html[dir='rtl'] .gh-home-eco__eyebrow,
 }
 
 .gh-home-eco-ticket:hover {
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 26px 56px rgba(0, 0, 0, 0.5);
+  border-color: rgba(201, 168, 76, 0.42);
+  box-shadow: 0 26px 56px rgba(0, 0, 0, 0.52);
   transform: translateY(-4px);
 }
 
@@ -162,36 +162,55 @@ html[dir='rtl'] .gh-home-eco__eyebrow,
 
 .gh-home-eco-ticket__top {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  margin-bottom: 22px;
+}
+
+.gh-home-eco-ticket__meta {
+  display: inline-flex;
+  align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
+  padding: 6px 12px 6px 10px;
+  border-radius: 999px;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.28);
 }
 
 .gh-home-eco-ticket__num {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #f5f5f3;
+  letter-spacing: 0.08em;
+  color: #e0c06a;
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   font-variant-numeric: tabular-nums;
   direction: ltr;
   unicode-bidi: isolate;
+  line-height: 1;
+}
+
+.gh-home-eco-ticket__sep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(224, 192, 106, 0.7);
+  flex-shrink: 0;
 }
 
 .gh-home-eco-ticket__phase {
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(245, 245, 243, 0.82);
+  letter-spacing: 0.04em;
+  color: #fafaf8;
+  line-height: 1;
 }
 
 html[dir='rtl'] .gh-home-eco-ticket__phase,
 .gh-home-eco[dir='rtl'] .gh-home-eco-ticket__phase {
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   text-transform: none;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .gh-home-eco-ticket__icon {
