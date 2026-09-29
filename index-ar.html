@@ -979,72 +979,8 @@ gtag('config','G-Y67JVE898Z');
  <div style="max-width:1280px;margin:0 auto;padding:0 24px">
  <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
  <div>
- <div style="position:relative;overflow:visible;border:1px solid rgba(26,26,26,.04);background:#F0EFEA;cursor:pointer" onclick="openMaquetteLightbox()">
- <picture><source srcset="assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img loading="lazy" id="maquetteMainImg" src="assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" fetchpriority="high"></picture>
-
- <!-- Zoom hint -->
- <div style="position:absolute;bottom:16px;left:16px;z-index:5;pointer-events:none;opacity:0.7;transition:opacity 0.3s">
- <span class="material-symbols-outlined" style="font-size:20px;color:rgba(255,255,255,0.7);background:rgba(0,0,0,0.3);backdrop-filter:blur(4px);width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,0.1)">zoom_in</span>
- </div>
-
- <!-- Video play button (bottom-right, away from hotspots) -->
- <div onclick="event.stopPropagation(); openMaquetteVideo()" style="position:absolute;bottom:16px;right:16px;z-index:6;cursor:pointer;pointer-events:auto;width:44px;height:44px;border-radius:50%;background:rgba(201,168,76,0.9);backdrop-filter:blur(4px);border:2px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;box-shadow:0 0 20px rgba(201,168,76,0.3)" onmouseover="this.style.transform='scale(1.15)';this.style.background='#C9A84C'" onmouseout="this.style.transform='scale(1)';this.style.background='rgba(201,168,76,0.9)'">
- <span class="material-symbols-outlined" style="font-size:20px;color:#fff;margin-left:2px">play_arrow</span>
- </div>
-
- <!-- Interactive Hotspots -->
- <div class="hotspot hotspot-1" style="top:63%;left:65%" data-title="المجسم التفاعلي" onclick="event.stopPropagation()">
- <div class="hotspot-pulse"></div>
- <div class="hotspot-dot">
- <span class="material-symbols-outlined">touch_app</span>
- </div>
- <div class="hotspot-tooltip">
- <div class="hotspot-tooltip-arrow"></div>
- <span class="hotspot-badge">مجسم ذكي</span>
- <h4 style="color:#fff;font-size:14px;margin:0 0 6px;font-weight:700">مجسم تفاعلي لمشاريع الرابطة</h4>
- <p style="color:rgba(255,255,255,0.6);font-size:12px;line-height:1.6;margin:0">مجسم معماري تفاعلي ثلاثي الأبعاد يعرض مشاريع رابطة العالم الإسلامي حول العالم مع إضاءة ديناميكية.</p>
- </div>
- </div>
-
- <div class="hotspot hotspot-2 hotspot-below hotspot-right" style="top:38%;left:92%" data-title="برنامج تشغيلي" onclick="event.stopPropagation()">
- <div class="hotspot-pulse"></div>
- <div class="hotspot-dot">
- <span class="material-symbols-outlined">devices</span>
- </div>
- <div class="hotspot-tooltip">
- <div class="hotspot-tooltip-arrow"></div>
- <span class="hotspot-badge">برنامج تفاعلي</span>
- <h4 style="color:#fff;font-size:14px;margin:0 0 6px;font-weight:700">برنامج تشغيلي للتحكم</h4>
- <p style="color:rgba(255,255,255,0.6);font-size:12px;line-height:1.6;margin:0">برنامج يعرض تفاصيل المشاريع ويتحكم في إضاءة المجسم مع عرض المعلومات بشكل ديناميكي.</p>
- </div>
- </div>
-
- <div class="hotspot hotspot-4 hotspot-below" style="top:33%;left:22%" data-title="أخبار الرابطة" onclick="event.stopPropagation()">
- <div class="hotspot-pulse"></div>
- <div class="hotspot-dot">
- <span class="material-symbols-outlined">public</span>
- </div>
- <div class="hotspot-tooltip">
- <div class="hotspot-tooltip-arrow"></div>
- <span class="hotspot-badge">برنامج أخبار</span>
- <h4 style="color:#fff;font-size:14px;margin:0 0 6px;font-weight:700">برنامج أخبار الرابطة</h4>
- <p style="color:rgba(255,255,255,0.6);font-size:12px;line-height:1.6;margin:0">برنامج تفاعلي يعرض آخر أخبار وفعاليات ومبادرات رابطة العالم الإسلامي حول العالم.</p>
- </div>
- </div>
-
- <div class="hotspot hotspot-3 hotspot-below" style="top:31%;left:52%" data-title="تصوير تذكاري" onclick="event.stopPropagation()">
- <div class="hotspot-pulse"></div>
- <div class="hotspot-dot">
- <span class="material-symbols-outlined">photo_camera</span>
- </div>
- <div class="hotspot-tooltip">
- <div class="hotspot-tooltip-arrow"></div>
- <span class="hotspot-badge">تصوير تفاعلي</span>
- <h4 style="color:#fff;font-size:14px;margin:0 0 6px;font-weight:700">برنامج تصوير تذكاري</h4>
- <p style="color:rgba(255,255,255,0.6);font-size:12px;line-height:1.6;margin:0">شاشة تفاعلية للتصوير التذكاري مع إطارات مخصصة تسمح للزوار بالتقاط الصور ومشاركتها فوراً.</p>
- </div>
- </div>
-
+ <div style="position:relative;overflow:hidden;border:1px solid rgba(26,26,26,.04);background:#F0EFEA">
+ <picture><source srcset="assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img loading="lazy" src="assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="المجسمات المعمارية الذكية" fetchpriority="high" style="width:100%;height:auto;min-height:320px;object-fit:cover;display:block"></picture>
  </div>
  </div>
  <div>
