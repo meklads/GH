@@ -1,17 +1,26 @@
-/* Galleries & spatial décor service landing */
+/* Galleries & spatial décor — aligned with homepage GH brand */
 :root {
-  --gal-bg: #f7f5f0;
-  --gal-paper: #ffffff;
-  --gal-ink: #1a1a1a;
-  --gal-muted: #6b6560;
-  --gal-gold: #c9a84c;
-  --gal-gold-dark: #8a6d24;
+  --gal-bg: #FAFAF8;
+  --gal-paper: #FFFFFF;
+  --gal-ink: #0A0A0A;
+  --gal-muted: #666666;
+  --gal-gold: #C9A84C;
+  --gal-gold-dark: #A8883A;
   --gal-line: rgba(26, 26, 26, 0.08);
+  --gal-heading: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  --gal-body: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html[lang="en"] {
+  --gal-heading: 'Playfair Display', Georgia, serif;
+  --gal-body: 'Inter', 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .gal-page {
   background: var(--gal-bg);
   color: var(--gal-ink);
+  font-family: var(--gal-body);
+  -webkit-font-smoothing: antialiased;
 }
 
 .gal-page main {
@@ -30,8 +39,8 @@
   display: grid;
   align-items: end;
   padding: 140px 0 64px;
-  background: #0e0e0e;
-  color: #fafaf8;
+  background: #0A0A0A;
+  color: #FAFAF8;
 }
 
 .gal-hero__media {
@@ -64,21 +73,30 @@
 
 .gal-kicker {
   display: inline-block;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gal-gold);
   margin-bottom: 14px;
+  font-family: monospace, ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 }
 
 .gal-hero h1 {
   margin: 0;
+  font-family: var(--gal-heading);
   font-size: clamp(32px, 5vw, 56px);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  max-width: 16ch;
+  max-width: 18ch;
+  color: #FAFAF8;
+}
+
+html[lang="ar"] .gal-hero h1 {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 .gal-hero h1 span {
@@ -89,9 +107,10 @@
   margin: 18px 0 0;
   max-width: 42rem;
   font-size: clamp(15px, 1.5vw, 18px);
-  line-height: 1.8;
+  line-height: 1.85;
   color: rgba(250, 250, 248, 0.82);
   font-weight: 400;
+  font-family: var(--gal-body);
 }
 
 .gal-cta-row {
@@ -104,30 +123,45 @@
 .gal-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   min-height: 48px;
-  padding: 0 22px;
-  font-size: 15px;
+  padding: 13px 32px;
+  font-size: 13px;
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   text-decoration: none;
-  border: 1px solid transparent;
-  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  font-family: var(--gal-body);
+  transition: background 0.35s, color 0.35s, border-color 0.35s, transform 0.25s;
+}
+
+html[lang="ar"] .gal-btn {
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .gal-btn--gold {
   background: var(--gal-gold);
-  color: #111;
+  color: #0A0A0A;
+  border-color: var(--gal-gold);
 }
 
 .gal-btn--gold:hover {
-  background: #d4b45a;
+  background: var(--gal-gold-dark);
+  border-color: var(--gal-gold-dark);
+  color: #0A0A0A;
   transform: translateY(-1px);
 }
 
 .gal-btn--ghost {
   background: transparent;
-  color: #fafaf8;
-  border-color: rgba(255, 255, 255, 0.35);
+  color: #FAFAF8;
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .gal-btn--ghost:hover {
@@ -136,27 +170,30 @@
 }
 
 .gal-btn--dark {
-  background: var(--gal-ink);
-  color: #fafaf8;
+  background: #1A1A1A;
+  color: #FAFAF8;
+  border-color: #1A1A1A;
 }
 
 .gal-btn--dark:hover {
-  background: #2a2a2a;
+  background: var(--gal-gold);
+  border-color: var(--gal-gold);
+  color: #0A0A0A;
 }
 
 .gal-btn--outline {
   background: transparent;
-  color: var(--gal-ink);
-  border-color: rgba(26, 26, 26, 0.2);
+  color: #1A1A1A;
+  border-color: #1A1A1A;
 }
 
 .gal-btn--outline:hover {
-  border-color: var(--gal-gold);
-  color: var(--gal-gold-dark);
+  background: #1A1A1A;
+  color: #FAFAF8;
 }
 
 .gal-section {
-  padding: 88px 0;
+  padding: 100px 0;
 }
 
 .gal-section--paper {
@@ -165,10 +202,22 @@
 
 .gal-section h2 {
   margin: 0 0 14px;
+  font-family: var(--gal-heading);
   font-size: clamp(26px, 3.4vw, 40px);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  color: var(--gal-ink);
+}
+
+html[lang="ar"] .gal-section h2 {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+html[lang="en"] .gal-section h2 {
+  font-weight: 700;
 }
 
 .gal-section h2 span {
@@ -177,10 +226,11 @@
 
 .gal-section__lead {
   margin: 0;
-  max-width: 40rem;
+  max-width: 42rem;
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.85;
   color: var(--gal-muted);
+  font-weight: 400;
 }
 
 .gal-pillars {
@@ -198,15 +248,23 @@
 
 .gal-pillar strong {
   display: block;
+  font-family: var(--gal-heading);
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 10px;
+  color: var(--gal-ink);
+  line-height: 1.35;
+}
+
+html[lang="ar"] .gal-pillar strong {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 800;
 }
 
 .gal-pillar p {
   margin: 0;
   font-size: 14px;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--gal-muted);
 }
 
@@ -251,6 +309,7 @@
   color: #fff;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
   width: 100%;
+  font-family: var(--gal-body);
 }
 
 .gal-handoff {
@@ -262,8 +321,8 @@
 
 .gal-handoff__card {
   padding: 36px 32px;
-  background: #111;
-  color: #fafaf8;
+  background: #0A0A0A;
+  color: #FAFAF8;
 }
 
 .gal-handoff__card .gal-kicker {
@@ -271,21 +330,21 @@
 }
 
 .gal-handoff__card h2 {
-  color: #fafaf8;
+  color: #FAFAF8;
   margin-bottom: 14px;
 }
 
 .gal-handoff__card p {
   margin: 0 0 22px;
   color: rgba(250, 250, 248, 0.78);
-  line-height: 1.8;
+  line-height: 1.85;
   font-size: 15px;
 }
 
 .gal-handoff__note {
   margin: 0;
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.85;
   color: var(--gal-muted);
 }
 
@@ -328,5 +387,16 @@
   .gal-grid__item--wide {
     grid-column: auto;
     aspect-ratio: 4 / 3;
+  }
+
+  .gal-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gal-grid__item img,
+  .gal-btn {
+    transition: none;
   }
 }

@@ -28,37 +28,40 @@ const COPY = {
     dir: 'rtl',
     title: 'جاليريات وديكور مكاني | Graphics House',
     description:
-      'صالات بيع وجاليريات وديكور مكاني للمشاريع العقارية والملتقيات. Graphics House يضع الرؤية البصرية، وتنفيذ المساحة عبر توريفا.',
+      'تصميم التجربة المكانية لصالات البيع والجاليريات والملتقيات: مسار الزائر، المخططات التنفيذية للديكور، ولغة بصرية واحدة مع المشروع — والتنفيذ عبر توريفا.',
     canonical: 'https://3dgraphicshouse.com/services/galleries.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
-    kicker: 'خدماتنا · الديكور المكاني',
+    kicker: 'خدماتنا · التجربة المكانية',
     h1: 'جاليريات <span>وديكور مكاني</span>',
     lead:
-      'نصمّم تجربة صالة البيع والجناح والمعرض بلغة بصرية واحدة مع المشروع. التنفيذ الميداني والتسليم المكاني يتم عبر توريفا — شريك التسليم المكاني في المجموعة.',
+      'نحوّل صالة البيع والجناح والمعرض إلى تجربة مكانية متماسكة مع هوية المشروع: مسار الزائر، نقاط العرض، والمخططات اللازمة لتنفيذ الديكور. التنفيذ الميداني والتسليم عبر توريفا — شريك التسليم المكاني في المجموعة.',
     ctaPrimary: 'انتقل إلى توريفا للتنفيذ',
     ctaSecondary: 'تواصل مع Graphics House',
     contactHref: '../contact-us.html',
     brandingHref: 'branding.html',
     aboutTitle: 'ما نقدّمه في هذه الخدمة',
     aboutLead:
-      'من فهم المشروع والهوية إلى تصور المساحة ومواد العرض، ثم تسليم التنفيذ لتوريفا حتى تصبح الصالة جاهزة للزائر.',
+      'من قراءة المشروع والهوية إلى تصميم التجربة المكانية ومخططات التنفيذ، ثم تسليم البناء والتركيب لتوريفا حتى تكون المساحة جاهزة للزائر أو الافتتاح.',
     pillars: [
       {
         title: 'تصميم التجربة المكانية',
-        body: 'توزيع المسار، نقاط العرض، اللافتات، والشاشات بما يخدم قرار الشراء أو حضور الملتقى.',
+        body:
+          'مسار الزائر، توزيع نقاط العرض، اللافتات والشاشات — مع تصميم المخططات اللازمة لتنفيذ الديكور: توزيع المساحة، الارتفاعات، وتفاصيل التركيب القابلة للتنفيذ.',
       },
       {
-        title: 'لغة بصرية متصلة',
-        body: 'المواد المكانية تتحدث بنفس هوية المشروع مع الـ CGI والمجسم والمحتوى الرقمي.',
+        title: 'لغة بصرية واحدة مع المشروع',
+        body:
+          'المواد المكانية تتحدث بنفس لغة الـ CGI والمجسم والمحتوى الرقمي، حتى يشعر الزائر أنه داخل المشروع لا أمام عرض منفصل.',
       },
       {
         title: 'تنفيذ عبر توريفا',
-        body: 'التصنيع، التركيب، والجودة الميدانية تحت مسؤولية توريفا حتى التسليم والافتتاح.',
+        body:
+          'التصنيع، التركيب، وضبط الجودة في الموقع تحت مسؤولية توريفا من أول قطعة حتى التسليم والافتتاح.',
       },
     ],
     workTitle: 'لمحات من الأعمال المكانية',
-    workLead: 'نماذج من صالات وقاعات ومعارض نُفّذت بمعايير العرض للمطورين والمؤسسات.',
+    workLead: 'صالات وقاعات ومعارض بُنيت بمعايير العرض للمطورين والمؤسسات في المملكة والخليج.',
     caps: [
       { src: 'makkah-charter-04', label: 'قاعة عرض — ميثاق مكة' },
       { src: 'makkah-charter-01', label: 'بيئة عرض مؤسسية' },
@@ -68,9 +71,9 @@ const COPY = {
       { src: 'turriva-brand', label: 'توريفا — التسليم المكاني' },
     ],
     handoffKicker: 'التنفيذ المكاني',
-    handoffTitle: 'توريفا مسؤولة عن التنفيذ',
+    handoffTitle: 'توريفا تتولى التنفيذ',
     handoffBody:
-      'Graphics House يحدد الرؤية البصرية والمسار. توريفا تتولى التطوير الفني، التصنيع، التركيب، والتسليم حتى تصبح المساحة جاهزة للاستخدام أو الافتتاح.',
+      'Graphics House يضع الرؤية البصرية وتصميم التجربة والمخططات. توريفا تتولى التطوير الفني، التصنيع، التركيب، والتسليم حتى تكون المساحة جاهزة للاستخدام أو الافتتاح.',
     handoffNoteBefore: 'للهوية البصرية والشعار والكتالوج راجع ',
     handoffNoteLink: 'صفحة الهوية البصرية',
     handoffNoteAfter: '. لهذه الخدمة المكانية ابدأ من توريفا.',
@@ -84,37 +87,40 @@ const COPY = {
     dir: 'ltr',
     title: 'Galleries & Spatial Décor | Graphics House',
     description:
-      'Sales galleries, exhibition spaces, and spatial décor for GCC developments. Graphics House sets the visual brief; Turriva delivers the physical space.',
+      'Spatial experience design for sales galleries, exhibitions, and forums: visitor journey, build-ready décor drawings, and one visual language with the project — delivered through Turriva.',
     canonical: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
-    kicker: 'Our services · Spatial décor',
+    kicker: 'Our services · Spatial experience',
     h1: 'Galleries <span>&amp; spatial décor</span>',
     lead:
-      'We design the sales gallery, pavilion, and exhibition experience in one visual language with the project. Physical build and handover run through Turriva — the group’s spatial delivery partner.',
+      'We turn the sales gallery, pavilion, and exhibition into a spatial experience aligned with the project: visitor flow, display points, and the drawings needed to build the décor. Physical delivery runs through Turriva — the group’s spatial partner.',
     ctaPrimary: 'Continue to Turriva for delivery',
     ctaSecondary: 'Contact Graphics House',
     contactHref: '../contact-us-en.html',
     brandingHref: 'branding-en.html',
     aboutTitle: 'What this service covers',
     aboutLead:
-      'From project and brand intent to spatial concept and display materials, then handoff to Turriva for buildable delivery.',
+      'From project and brand reading to spatial experience design and build drawings, then handoff to Turriva for fabrication and install until the space is visitor-ready.',
     pillars: [
       {
         title: 'Spatial experience design',
-        body: 'Visitor flow, display points, signage, and screens that support sales decisions or institutional presence.',
+        body:
+          'Visitor journey, display points, signage, and screens — plus the décor drawings required for build: layouts, elevations, and install-ready details.',
       },
       {
-        title: 'Connected visual language',
-        body: 'Spatial assets stay aligned with CGI, maquettes, and digital content for the same project.',
+        title: 'One visual language with the project',
+        body:
+          'Spatial assets speak the same language as CGI, maquettes, and digital content, so the visitor feels inside the project — not beside a separate display.',
       },
       {
         title: 'Delivery through Turriva',
-        body: 'Fabrication, installation, and site quality sit with Turriva through handover and opening readiness.',
+        body:
+          'Fabrication, installation, and on-site quality sit with Turriva from first piece through handover and opening.',
       },
     ],
     workTitle: 'Selected spatial work',
-    workLead: 'Moments from galleries, halls, and exhibitions built to developer and institutional standards.',
+    workLead: 'Galleries, halls, and exhibitions built to developer and institutional standards across KSA and the GCC.',
     caps: [
       { src: 'makkah-charter-04', label: 'Presentation hall — Makkah Charter' },
       { src: 'makkah-charter-01', label: 'Institutional display environment' },
@@ -126,7 +132,7 @@ const COPY = {
     handoffKicker: 'Physical delivery',
     handoffTitle: 'Turriva owns the build',
     handoffBody:
-      'Graphics House defines the visual intent and journey. Turriva owns technical development, fabrication, installation, and handover until the space is ready to use or open.',
+      'Graphics House defines the visual intent, spatial experience, and drawings. Turriva owns technical development, fabrication, installation, and handover until the space is ready to use or open.',
     handoffNoteBefore: 'For logo, guidelines, and catalogue identity see ',
     handoffNoteLink: 'Visual Identity',
     handoffNoteAfter: '. For this spatial service, start with Turriva.',
@@ -148,8 +154,9 @@ function buildPage(t, isEn, depth) {
   const asset = `${prefix}assets/`;
   const header = renderPartial(isEn ? 'header-en.html' : 'header-ar.html', depth, isEn);
   const footer = renderPartial(isEn ? 'footer-en.html' : 'footer-ar.html', depth, isEn);
-  const font =
-    'family=Tajawal:wght@300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap';
+  const font = isEn
+    ? 'family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700;800&display=swap'
+    : 'family=Tajawal:wght@200;300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap';
 
   const pillars = t.pillars
     .map(
@@ -210,8 +217,9 @@ gtag('config','G-Y67JVE898Z');
 <link href="https://fonts.googleapis.com/css2?${font}" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
+<link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=2">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=3">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
