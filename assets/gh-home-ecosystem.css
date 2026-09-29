@@ -224,7 +224,7 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
 }
 
 .gh-home-eco-ticket__title {
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: 700;
   color: #fafaf8;
   margin: 0 0 6px;
@@ -240,7 +240,7 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
 
 .gh-home-eco-ticket__title-local {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   color: rgba(245, 245, 243, 0.96);
   line-height: 1.35;
@@ -270,9 +270,8 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
   direction: ltr;
 }
 
-/* Unified readable body copy across tickets + disciplines */
+/* Dark-band body copy (tickets + institutional) */
 .gh-home-eco-ticket__body,
-.gh-home-eco-card__desc,
 .gh-home-eco-institutional__sub {
   font-size: 16px;
   font-weight: 500;
@@ -395,7 +394,7 @@ html[dir='rtl'] .gh-home-eco__label,
 }
 
 .gh-home-eco-institutional__title {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #fff;
   line-height: 1.25;
@@ -468,8 +467,8 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
 .gh-home-eco__services-lead {
   margin: 14px auto 0;
   font-size: 16px;
-  font-weight: 400;
-  color: rgba(20, 20, 20, 0.78);
+  font-weight: 500;
+  color: #1a1a1a;
   line-height: 1.7;
   max-width: 36rem;
 }
@@ -543,7 +542,7 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
 }
 
 .gh-home-eco__services .gh-home-eco-card__title {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #141414;
   margin: 0 0 10px;
@@ -555,8 +554,8 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
 
 .gh-home-eco__services .gh-home-eco-card__desc {
   font-size: 15px;
-  font-weight: 400;
-  color: rgba(20, 20, 20, 0.78);
+  font-weight: 500;
+  color: #1a1a1a;
   line-height: 1.7;
   margin: 0;
   flex: 1;

@@ -10,7 +10,7 @@ html[dir="rtl"]:not([lang="en"]) {
   --gh-ar-h1: clamp(32px, 3.6vw, 56px);
   --gh-ar-h2: clamp(28px, 3vw, 42px);          /* عناوين الأقسام فقط */
   --gh-ar-subhead: clamp(20px, 2vw, 26px);     /* عناوين فرعية نادرة */
-  --gh-ar-h3: clamp(13px, 0.9vw, 14.5px);     /* عناوين التذاكر/البطاقات — أصغر من الأقسام */
+  --gh-ar-h3: clamp(15px, 1.05vw, 17px);      /* عناوين التذاكر/البطاقات — أصغر من الأقسام */
   --gh-ar-card-title: var(--gh-ar-h3);
   --gh-ar-h4: 14px;
   --gh-ar-body: clamp(15px, 1.05vw, 17px);
