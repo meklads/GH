@@ -85,6 +85,7 @@ gtag('config','G-Y67JVE898Z');
 
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=48">
+<link rel="stylesheet" href="../assets/gh-production-album.css?v=1">
 <style>
 :root {
  --gold: #C9A84C;
@@ -415,30 +416,11 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  color: var(--ink-soft);
 }
 
-/* GALLERY */
+/* GALLERY — album rail (see gh-production-album.css) */
 .lp-gallery {
  padding: clamp(72px, 9vw, 110px) 0;
  background: var(--bg);
 }
-.lp-gallery-grid {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- gap: 14px;
-}
-.lp-shot {
- position: relative;
- overflow: hidden;
- background: #111;
- aspect-ratio: 4/3;
- border: 1px solid rgba(18,18,18,0.06);
-}
-.lp-shot img {
- width: 100%; height: 100%;
- object-fit: cover;
- transition: transform 0.8s cubic-bezier(0.25,0.1,0.1,1);
-}
-.lp-shot:hover img { transform: scale(1.04); }
-.lp-shot:nth-child(1) { grid-column: span 2; aspect-ratio: 16/9; }
 .lp-gallery-foot {
  text-align: center;
  margin-top: 36px;
@@ -624,12 +606,9 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  .lp-proof { max-width: 480px; margin-inline: auto; text-align: start; }
  .lp-svc-grid, .lp-metrics { grid-template-columns: 1fr 1fr; }
  .lp-steps, .rel-grid { grid-template-columns: 1fr 1fr; }
- .lp-gallery-grid { grid-template-columns: 1fr 1fr; }
- .lp-shot:nth-child(1) { grid-column: span 2; }
 }
 @media (max-width: 560px) {
- .lp-svc-grid, .lp-metrics, .lp-steps, .rel-grid, .lp-gallery-grid { grid-template-columns: 1fr; }
- .lp-shot:nth-child(1) { grid-column: auto; aspect-ratio: 4/3; }
+ .lp-svc-grid, .lp-metrics, .lp-steps, .rel-grid { grid-template-columns: 1fr; }
  .lp-hero-ctas, .lp-close-actions { flex-direction: column; align-items: stretch; }
  .lp-hero-ctas .btn-p, .lp-hero-ctas .btn-o,
  .lp-close-actions .btn-p, .lp-close-actions .btn-o-light { justify-content: center; }
@@ -641,6 +620,7 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
 <script defer src="../assets/gh-cta-track.js?v=1"></script>
 <script defer src="../assets/lang-switch.js?v=2"></script>
 <script defer src="../assets/site-reveal.js?v=2"></script>
+<script defer src="../assets/gh-slider.js?v=1"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"الإنتاج الإعلامي والأفلام","description":"تصوير احترافي، أفلام ترويجية، وتغطية فعاليات للمطورين في الخليج. إنتاج إعلامي يكمل منظومة الإطلاق البصرية من Graphics House.","url":"https://3dgraphicshouse.com/services/production.html","provider":{"@type":"Organization","name":"Graphics House","url":"https://3dgraphicshouse.com","logo":"https://3dgraphicshouse.com/assets/logo-gold.png"},"areaServed":["SA","AE","OM","BH"]}</script>
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="../assets/gh-ar-typography.css?v=7">
@@ -987,13 +967,91 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  <h2 class="lp-section-title">إنتاج بصري يُثبت الجودة</h2>
  <p>نماذج من أعمال التصوير والإنتاج للمطورين والعلامات في العقار والضيافة والتجزئة.</p>
  </header>
- <div class="lp-gallery-grid reveal">
- <figure class="lp-shot"><picture><source srcset="../assets/photography/slide_image_2.webp" type="image/webp"><img src="../assets/photography/slide_image_2.png" alt="مشروع إنتاج بصري" loading="lazy" decoding="async"></picture></figure>
- <figure class="lp-shot"><picture><source srcset="../assets/photography/slide_image_7.webp" type="image/webp"><img src="../assets/photography/slide_image_7.png" alt="مشروع إنتاج بصري" loading="lazy" decoding="async"></picture></figure>
- <figure class="lp-shot"><picture><source srcset="../assets/photography/slide_image_8.webp" type="image/webp"><img src="../assets/photography/slide_image_8.png" alt="مشروع إنتاج بصري" loading="lazy" decoding="async"></picture></figure>
- <figure class="lp-shot"><picture><source srcset="../assets/photography/slide_image_3.webp" type="image/webp"><img src="../assets/photography/slide_image_3.png" alt="مشروع إنتاج بصري" loading="lazy" decoding="async"></picture></figure>
- <figure class="lp-shot"><picture><source srcset="../assets/photography/slide_image_6.webp" type="image/webp"><img src="../assets/photography/slide_image_6.png" alt="مشروع إنتاج بصري" loading="lazy" decoding="async"></picture></figure>
- <figure class="lp-shot"><picture><source srcset="../assets/photography/slide_image_9.webp" type="image/webp"><img src="../assets/photography/slide_image_9.png" alt="مشروع إنتاج بصري" loading="lazy" decoding="async"></picture></figure>
+ <div class="lp-gallery-album reveal" id="lpProductionAlbum">
+ <div class="lp-gallery-album__rail">
+ <div class="ghd-slider ghd-slider--cards ghd-slider--one ghd-slider--autoplay" data-ghd-slider-mode="cards" data-ghd-autoplay="1" aria-roledescription="carousel">
+ <button type="button" class="ghd-slider-arrow ghd-slider-arrow--prev" aria-label="السابق"><span aria-hidden="true">‹</span></button>
+ <div class="ghd-slider-viewport">
+ <div class="ghd-slider-track" data-ghd-slider-index="0">
+
+ <article class="ghd-svc-card ghd-slider-item">
+ <div class="ghd-svc-media">
+ <picture><source srcset="../assets/photography/slide_image_2.webp" type="image/webp"><img src="../assets/photography/slide_image_2.png" alt="" loading="lazy" decoding="async" width="960" height="600"></picture>
+ <span class="ghd-svc-num" aria-hidden="true">01</span>
+ <span class="ghd-svc-chip">إنتاج</span>
+ </div>
+ <div class="ghd-svc-body">
+ <h3>تصوير تجاري وعقاري</h3>
+ <p class="ghd-svc-blurb">جلسات لمنتجات المشاريع والوحدات النموذجية بإضاءة استوديو تحترم هوية العلامة وتُظهر التفاصيل التي يحتاجها فريق المبيعات.</p>
+ </div>
+ </article>
+
+ <article class="ghd-svc-card ghd-slider-item">
+ <div class="ghd-svc-media">
+ <picture><source srcset="../assets/photography/slide_image_7.webp" type="image/webp"><img src="../assets/photography/slide_image_7.png" alt="" loading="lazy" decoding="async" width="960" height="600"></picture>
+ <span class="ghd-svc-num" aria-hidden="true">02</span>
+ <span class="ghd-svc-chip">ضيافة</span>
+ </div>
+ <div class="ghd-svc-body">
+ <h3>تصوير الضيافة والفنادق</h3>
+ <p class="ghd-svc-blurb">فراغات فندقية ومطاعم وصالات استقبال بزوايا تعكس التجربة قبل زيارة الموقع، جاهزة للحملات والكتالوجات.</p>
+ </div>
+ </article>
+
+ <article class="ghd-svc-card ghd-slider-item">
+ <div class="ghd-svc-media">
+ <picture><source srcset="../assets/photography/slide_image_8.webp" type="image/webp"><img src="../assets/photography/slide_image_8.png" alt="" loading="lazy" decoding="async" width="960" height="600"></picture>
+ <span class="ghd-svc-num" aria-hidden="true">03</span>
+ <span class="ghd-svc-chip">فعاليات</span>
+ </div>
+ <div class="ghd-svc-body">
+ <h3>تغطية معارض ومؤتمرات</h3>
+ <p class="ghd-svc-blurb">تصوير وإخراج لافتتاح المشاريع والملتقيات المؤسسية، محتوى جاهز للنشر على المنصات في نفس اليوم.</p>
+ </div>
+ </article>
+
+ <article class="ghd-svc-card ghd-slider-item">
+ <div class="ghd-svc-media">
+ <picture><source srcset="../assets/photography/slide_image_3.webp" type="image/webp"><img src="../assets/photography/slide_image_3.png" alt="" loading="lazy" decoding="async" width="960" height="600"></picture>
+ <span class="ghd-svc-num" aria-hidden="true">04</span>
+ <span class="ghd-svc-chip">فيديو</span>
+ </div>
+ <div class="ghd-svc-body">
+ <h3>أفلام ترويجية للمشاريع</h3>
+ <p class="ghd-svc-blurb">سرد بصري للعلامات والمشاريع العقارية يدعم حملات الإطلاق ويُقنع المستثمر قبل أول زيارة ميدانية.</p>
+ </div>
+ </article>
+
+ <article class="ghd-svc-card ghd-slider-item">
+ <div class="ghd-svc-media">
+ <picture><source srcset="../assets/photography/slide_image_6.webp" type="image/webp"><img src="../assets/photography/slide_image_6.png" alt="" loading="lazy" decoding="async" width="960" height="600"></picture>
+ <span class="ghd-svc-num" aria-hidden="true">05</span>
+ <span class="ghd-svc-chip">داخلي</span>
+ </div>
+ <div class="ghd-svc-body">
+ <h3>تصوير معماري داخلي</h3>
+ <p class="ghd-svc-blurb">إظهار المواد والإضاءة والفراغات القابلة للبيع بدقة، للوحدات النموذجية وصالات العرض.</p>
+ </div>
+ </article>
+
+ <article class="ghd-svc-card ghd-slider-item">
+ <div class="ghd-svc-media">
+ <picture><source srcset="../assets/photography/slide_image_9.webp" type="image/webp"><img src="../assets/photography/slide_image_9.png" alt="" loading="lazy" decoding="async" width="960" height="600"></picture>
+ <span class="ghd-svc-num" aria-hidden="true">06</span>
+ <span class="ghd-svc-chip">حملات</span>
+ </div>
+ <div class="ghd-svc-body">
+ <h3>محتوى حملات رقمية</h3>
+ <p class="ghd-svc-blurb">مواد بصرية للسوشيال وصفحات الهبوط والحملات المدفوعة، بصيغ جاهزة للنشر ضمن منظومة الإطلاق.</p>
+ </div>
+ </article>
+
+ </div>
+ </div>
+ <button type="button" class="ghd-slider-arrow ghd-slider-arrow--next" aria-label="التالي"><span aria-hidden="true">›</span></button>
+ </div>
+ </div>
+ <p class="lp-gallery-album__hint">مرّر الماوس على البطاقة للقراءة — التنقل يتوقف تلقائياً</p>
  </div>
  <div class="lp-gallery-foot reveal">
  <a href="../portfolio.html" class="btn-o">استكشف معرض الأعمال الكامل</a>
@@ -1549,6 +1607,13 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
 </div>
 </div>
 <!-- GH CHAT END -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var gallery = document.getElementById('gallery');
+  if (gallery && window.GHSlider) window.GHSlider.bind(gallery);
+});
+</script>
 
 </body>
 </html>
