@@ -225,7 +225,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
 <link rel="stylesheet" href="${asset}gh-footer-lock.css?v=5" data-gh-footer-lock="1">
 <script defer src="${asset}site-header.js?v=16"></script>
-<script defer src="${asset}gh-performance.js?v=10"></script>
+<script defer src="${asset}gh-performance.js?v=11"></script>
 <script defer src="${asset}site-reveal.js?v=2"></script>
 <script defer src="${asset}gh-cta-track.js?v=1"></script>
 <script defer src="${asset}lang-switch.js?v=3"></script>

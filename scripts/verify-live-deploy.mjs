@@ -31,11 +31,11 @@ for (const r of results) {
 const home = results.find((r) => r.path === '/');
 const pl = results.find((r) => r.path === '/solutions/project-launch.html');
 const requiredAssets = [
-  ['gh-performance.js?v=10', home?.body],
+  ['gh-performance.js?v=11', home?.body],
   ['gh-cta-track.js?v=1', home?.body],
   ['gh-site-enhancements.css?v=', home?.body],
   ['gl-ecosystem', pl?.body],
-  ['gh-performance.js?v=10', pl?.body],
+  ['gh-performance.js?v=11', pl?.body],
 ];
 let assetWarnings = 0;
 for (const [asset, body] of requiredAssets) {

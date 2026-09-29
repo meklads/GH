@@ -1,6 +1,8 @@
 /**
- * GH ambient video — tap-to-play once (poster + play button, no autoplay).
- * v9
+ * GH ambient video
+ * - Hero + data-gh-ambient="1": muted autoplay loop (lazy when near viewport)
+ * - Other videos: tap-to-play once (poster + play button)
+ * v11
  */
 (function () {
   'use strict';
@@ -18,6 +20,14 @@
 
   var PLAY_SVG =
     '<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31" fill="rgba(10,10,10,.55)" stroke="#C9A84C" stroke-width="1.5"/><path d="M26 20l22 12-22 12V20z" fill="#FAFAF8"/></svg>';
+
+  function prefersReducedMotion() {
+    try {
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    } catch (e) {
+      return false;
+    }
+  }
 
   function prefersMobileSrc() {
     if (window.matchMedia('(max-width: 768px)').matches) return true;
@@ -52,11 +62,19 @@
     );
   }
 
+  function isAmbientLoop(v) {
+    if (v.getAttribute('data-gh-ambient') === '1') return true;
+    if (v.classList.contains('gh-ambient-loop')) return true;
+    if (v.classList.contains('cgi-feat-reel__video')) return true;
+    if (v.id === 's2VideoPlayer') return true;
+    return false;
+  }
+
   function isMechAlbum(v) {
     return v.id === 'ghMechVideo' || !!v.closest('.gh-mech-stage');
   }
 
-  function prepHero(v) {
+  function prepMutedLoop(v) {
     if (v.dataset.ghUserUnmuted !== '1') {
       v.muted = true;
       v.defaultMuted = true;
@@ -65,8 +83,13 @@
     v.playsInline = true;
     v.loop = true;
     v.setAttribute('loop', '');
+    v.setAttribute('autoplay', '');
     v.setAttribute('playsinline', '');
     v.setAttribute('webkit-playsinline', '');
+  }
+
+  function prepHero(v) {
+    prepMutedLoop(v);
   }
 
   function prepClickToPlay(v) {
@@ -184,6 +207,49 @@
     } catch (e) {}
   }
 
+  function tryAmbientPlay(v) {
+    if (prefersReducedMotion()) return;
+    prepMutedLoop(v);
+    if (!ensureLoaded(v)) return;
+    hideDualPoster(v);
+
+    function start() {
+      var p = v.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(function () {});
+      }
+    }
+
+    if (v.readyState >= 2) {
+      start();
+      return;
+    }
+
+    v.addEventListener('canplay', start, { once: true });
+  }
+
+  function watchAmbient(v) {
+    prepMutedLoop(v);
+    if (prefersReducedMotion()) return;
+
+    if (!('IntersectionObserver' in window)) {
+      tryAmbientPlay(v);
+      return;
+    }
+
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          tryAmbientPlay(v);
+          io.unobserve(v);
+        });
+      },
+      { rootMargin: '280px 0px', threshold: 0.01 }
+    );
+    io.observe(v);
+  }
+
   function ensureWrap(v) {
     if (!v || v.closest('.pl-video-wrap')) return v ? v.closest('.pl-video-wrap') : null;
 
@@ -258,6 +324,11 @@
     if (isHero(v)) {
       prepHero(v);
       ensureLoaded(v);
+      return;
+    }
+
+    if (isAmbientLoop(v)) {
+      watchAmbient(v);
       return;
     }
 

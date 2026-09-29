@@ -92,10 +92,10 @@ function fixLogoCss(html) {
 }
 
 function ensurePerformanceScript(html, prefix) {
-  const perfTag = `<script defer src="${prefix}gh-performance.js?v=10"></script>`;
+  const perfTag = `<script defer src="${prefix}gh-performance.js?v=11"></script>`;
   const ctaTag = `<script defer src="${prefix}gh-cta-track.js?v=1"></script>`;
   if (html.includes('gh-performance.js')) {
-    html = html.replace(/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=10');
+    html = html.replace(/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=11');
   } else if (html.includes('site-header.js')) {
     html = html.replace(
       /(<script defer src="[^"]*site-header\.js[^"]*"><\/script>)/,

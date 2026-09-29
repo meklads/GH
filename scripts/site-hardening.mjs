@@ -390,7 +390,7 @@ function secureFormSubmits(html) {
 }
 
 function injectPerformanceScript(html, prefix) {
- const tag = `<script defer src="${prefix}assets/gh-performance.js?v=10"></script>`;
+ const tag = `<script defer src="${prefix}assets/gh-performance.js?v=11"></script>`;
  if (html.includes('gh-performance.js')) return html;
  if (html.includes('site-header.js')) {
  return html.replace(

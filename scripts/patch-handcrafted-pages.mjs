@@ -28,7 +28,7 @@ patch('solutions/project-launch.html', [
   [/site-header\.css\?v=\d+/g, 'site-header.css?v=58'],
   [/gh-footer-lock\.css\?v=\d+/g, 'gh-footer-lock.css?v=5'],
   [/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=37'],
-  [/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=10'],
+  [/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=11'],
   [/project-launch-media\.js\?v=\d+/g, 'project-launch-media.js?v=4'],
   [/solution-premium\.css\?v=\d+/g, 'solution-premium.css?v=4'],
   [
@@ -50,7 +50,7 @@ patch('solutions/project-launch-en.html', [
   [/site-header\.css\?v=\d+/g, 'site-header.css?v=58'],
   [/gh-footer-lock\.css\?v=\d+/g, 'gh-footer-lock.css?v=5'],
   [/gh-site-enhancements\.css\?v=\d+/g, 'gh-site-enhancements.css?v=37'],
-  [/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=10'],
+  [/gh-performance\.js\?v=\d+/g, 'gh-performance.js?v=11'],
   [/project-launch-media\.js\?v=\d+/g, 'project-launch-media.js?v=4'],
   [/solution-premium\.css\?v=\d+/g, 'solution-premium.css?v=4'],
   [
