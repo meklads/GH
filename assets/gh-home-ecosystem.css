@@ -509,7 +509,7 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  padding: 28px 24px 22px;
+  padding: 0 0 22px;
   text-decoration: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   position: relative;
@@ -522,16 +522,22 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
 
 .gh-home-eco__services .gh-home-eco-card__num {
   position: absolute;
-  inset-block-start: 16px;
-  inset-inline-end: 16px;
-  font-size: 13px;
+  inset-block-start: 14px;
+  inset-inline-end: 14px;
+  z-index: 2;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: rgba(20, 20, 20, 0.45);
+  color: rgba(255, 255, 255, 0.92);
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   font-variant-numeric: tabular-nums;
   direction: ltr;
   unicode-bidi: isolate;
+  padding: 4px 8px;
+  background: rgba(10, 10, 10, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .gh-home-eco__services .gh-home-eco-card:hover {
@@ -544,13 +550,46 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
   color: #0a0a0a;
 }
 
+.gh-home-eco__services .gh-home-eco-card__media {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #ebe8e1;
+  margin: 0 0 18px;
+}
+
+.gh-home-eco__services .gh-home-eco-card__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.18) 0%, transparent 42%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gh-home-eco__services .gh-home-eco-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.55s ease;
+}
+
+.gh-home-eco__services .gh-home-eco-card:hover .gh-home-eco-card__media img {
+  transform: scale(1.04);
+}
+
+/* Legacy icon wrap — kept for any residual markup */
 .gh-home-eco__services .gh-home-eco-card__icon-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 56px;
   height: 56px;
-  margin-bottom: 16px;
+  margin: 28px 24px 16px;
   color: #141414;
   background: rgba(20, 20, 20, 0.05);
   border: 1px solid rgba(20, 20, 20, 0.14);
@@ -571,10 +610,10 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
   font-size: 1rem;
   font-weight: 600;
   color: #141414;
-  margin: 0 0 10px;
+  margin: 0 24px 10px;
   line-height: 1.3;
   transition: color 0.3s;
-  padding-inline-end: 28px;
+  padding-inline-end: 8px;
   font-family: inherit;
 }
 
@@ -583,7 +622,7 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
   font-weight: 500;
   color: #1a1a1a;
   line-height: 1.7;
-  margin: 0;
+  margin: 0 24px;
   flex: 1;
 }
 
@@ -594,7 +633,7 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
   font-size: 14px;
   font-weight: 700;
   color: #141414;
-  margin-top: 18px;
+  margin: 18px 24px 0;
 }
 
 .gh-home-eco__services .gh-home-eco-card__cta .material-symbols-outlined {
