@@ -387,15 +387,37 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  gap: 18px;
 }
 .lp-svc {
- padding: clamp(28px, 3vw, 36px);
+ padding: 0;
+ overflow: hidden;
  border: 1px solid var(--line);
  background: #FAFAF8;
  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+ display: flex;
+ flex-direction: column;
 }
 .lp-svc:hover {
  border-color: rgba(201,168,76,0.35);
  transform: translateY(-3px);
  box-shadow: 0 16px 40px rgba(18,18,18,0.05);
+}
+.lp-svc__media {
+ position: relative;
+ aspect-ratio: 16 / 10;
+ overflow: hidden;
+ background: #111;
+}
+.lp-svc__media img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+ transition: transform 0.55s ease;
+}
+.lp-svc:hover .lp-svc__media img {
+ transform: scale(1.04);
+}
+.lp-svc__body {
+ padding: clamp(22px, 2.5vw, 30px);
 }
 .lp-svc-num {
  font-family: 'Inter', sans-serif;
@@ -403,7 +425,7 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  font-weight: 700;
  letter-spacing: 0.16em;
  color: var(--gold);
- margin-bottom: 16px;
+ margin-bottom: 14px;
 }
 .lp-svc h3 {
  font-size: 22px;
@@ -414,6 +436,10 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  font-size: 15px;
  line-height: 1.8;
  color: var(--ink-soft);
+ margin: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+ .lp-svc__media img { transition: none; }
 }
 
 /* GALLERY — album rail (see gh-production-album.css) */
@@ -936,24 +962,56 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  </header>
  <div class="lp-svc-grid">
  <article class="lp-svc reveal">
+ <div class="lp-svc__media" aria-hidden="true">
+ <picture>
+  <source srcset="../assets/projects/wahat-al-salam/cam-12.webp" type="image/webp">
+  <img src="../assets/projects/wahat-al-salam/cam-12.jpg" alt="" loading="lazy" decoding="async" width="1200" height="750">
+ </picture>
+ </div>
+ <div class="lp-svc__body">
  <div class="lp-svc-num">01</div>
  <h3>تصوير تجاري وعقاري</h3>
  <p>جلسات للمنتجات والمشاريع السكنية والفنادق والمطاعم. إضاءة واحترافية تعكس قيمة العلامة وتُظهر التفاصيل بدقة.</p>
+ </div>
  </article>
  <article class="lp-svc reveal r1">
+ <div class="lp-svc__media" aria-hidden="true">
+ <picture>
+  <source srcset="../assets/projects/production/camera-monitor.webp" type="image/webp">
+  <img src="../assets/projects/production/camera-monitor.jpg" alt="" loading="lazy" decoding="async" width="1280" height="800">
+ </picture>
+ </div>
+ <div class="lp-svc__body">
  <div class="lp-svc-num">02</div>
  <h3>أفلام ترويجية</h3>
  <p>فيديوهات سينمائية للحملات وإطلاق المشاريع. سرد بصري يشرح المشروع ويدعم قرار الشراء.</p>
+ </div>
  </article>
  <article class="lp-svc reveal">
+ <div class="lp-svc__media" aria-hidden="true">
+ <picture>
+  <source srcset="../assets/projects/galleries/makkah-charter-08.webp" type="image/webp">
+  <img src="../assets/projects/galleries/makkah-charter-08.jpg" alt="" loading="lazy" decoding="async" width="1600" height="1000">
+ </picture>
+ </div>
+ <div class="lp-svc__body">
  <div class="lp-svc-num">03</div>
  <h3>تغطية فعاليات</h3>
  <p>تصوير وإنتاج للمعارض والمؤتمرات وافتتاح المشاريع. محتوى جاهز للنشر على المنصات.</p>
+ </div>
  </article>
  <article class="lp-svc reveal r1">
+ <div class="lp-svc__media" aria-hidden="true">
+ <picture>
+  <source srcset="../assets/projects/galleries/makkah-charter-01.webp" type="image/webp">
+  <img src="../assets/projects/galleries/makkah-charter-01.jpg" alt="" loading="lazy" decoding="async" width="1600" height="900">
+ </picture>
+ </div>
+ <div class="lp-svc__body">
  <div class="lp-svc-num">04</div>
  <h3>عروض تقديمية</h3>
  <p>عروض بصرية لاجتماعات العملاء والمستثمرين. تصميم وتصوير وإخراج متكامل يخدم سرد المشروع.</p>
+ </div>
  </article>
  </div>
  </div>
