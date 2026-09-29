@@ -206,6 +206,7 @@ window.GH_DIRECT = {
       "total": "الإجمالي التقديري",
       "totalNote": "تقدير يبدأ من — يُؤكَّد عند التواصل",
       "trustLine": "دون دفع إلكتروني · تأكيد النطاق خلال يوم عمل · نواة وانطلاق «يبدأ من» · توقيع بعرض سعر",
+      "trustLinePublic": "دون دفع إلكتروني · تأكيد النطاق خلال يوم عمل · التسعير حسب النطاق بعد الاجتماع",
       "unpricedNote": "تواصل عبر واتساب",
       "unpricedLine": "يُضاف — يُؤكَّد السعر عبر واتساب",
       "emptyBuilder": "اختر خدمة واحدة على الأقل لعرض الإجمالي",
@@ -483,6 +484,7 @@ window.GH_DIRECT = {
       "total": "Estimated total",
       "totalNote": "Starting-from estimate — confirmed when we talk",
       "trustLine": "No online checkout · Scope confirmed within one business day · Core & Launch from-prices · Signature by quote",
+      "trustLinePublic": "No online checkout · Scope confirmed within one business day · Pricing to scope after the meeting",
       "unpricedNote": "Contact on WhatsApp",
       "unpricedLine": "Added — price confirmed via WhatsApp",
       "emptyBuilder": "Add at least one service to see the total",
@@ -779,6 +781,30 @@ window.GH_DIRECT = {
   ],
   "services": [
     {
+      "id": "render-concept",
+      "family": "viz",
+      "name": {
+        "ar": "رندر مبدئي (Concept)",
+        "en": "Concept CGI still"
+      },
+      "description": {
+        "ar": "صورة ثري دي ابتدائية لإظهار الفكرة والكتلة — أقل تفصيلاً من الجودة التسويقية النهائية، مناسبة لمرحلة التعريف.",
+        "en": "Preliminary 3D still for massing and idea — less detailed than final marketing grade; suited to the definition stage."
+      },
+      "atelierNote": {
+        "ar": "مستوى Concept: واجهة أو منظور أولي لشرح الفكرة قبل رندرات الإطلاق النهائية. أرخص وأسرع من الرندر التسويقي الكامل.",
+        "en": "Concept level: façade or early view to explain the idea before final launch stills. Lower cost and faster than full marketing CGI."
+      },
+      "price": null,
+      "unit": "image",
+      "priceLabel": "contact",
+      "media": {
+        "type": "image",
+        "src": "assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp"
+      },
+      "priceTo": null
+    },
+    {
       "id": "render-ext",
       "family": "viz",
       "name": {
@@ -873,6 +899,31 @@ window.GH_DIRECT = {
         "src": "assets/projects/jeddah-forum/catalog/page-05.webp"
       },
       "priceTo": null
+    },
+    {
+      "id": "cinematic-teaser",
+      "family": "cgi",
+      "name": {
+        "ar": "فيلم تشويقي قصير (Teaser)",
+        "en": "Short CGI teaser film"
+      },
+      "description": {
+        "ar": "فيلم ثري دي تشويقي قصير (عادة ١٥–٤٥ ثانية) للتعريف أو السوشيال — أقصر وأخف من فيلم الإطلاق السينمائي الكامل.",
+        "en": "Short 3D teaser (typically 15–45 seconds) for definition or social — shorter and lighter than a full cinematic launch film."
+      },
+      "atelierNote": {
+        "ar": "تيزر لإثارة الاهتمام قبل فيلم الإطلاق الكامل. المدة والمعالجة تُحدَّدان بعد الاجتماع حسب الرسالة والمنصة.",
+        "en": "Teaser to build interest before a full launch film. Runtime and treatment set after briefing for message and channel."
+      },
+      "price": null,
+      "priceTo": null,
+      "unit": null,
+      "priceLabel": "contact",
+      "media": {
+        "type": "video",
+        "src": "assets/videos/GH-demo-reel-2025-mobile.mp4",
+        "poster": "assets/projects/rafal-pavilions/film-still.webp"
+      }
     },
     {
       "id": "cinematic",
@@ -1380,7 +1431,8 @@ window.GH_DIRECT = {
       "featured": false,
       "includedServiceIds": [
         "identity-basic",
-        "drone-short"
+        "render-concept",
+        "cinematic-teaser"
       ],
       "includedLines": [
         {
@@ -1512,8 +1564,8 @@ window.GH_DIRECT = {
           "en": "Architectural scale model (size and price set after the meeting)"
         },
         {
-          "ar": "برنامج عرض تفاعلي لشاشة اللمس يعرض الوحدات وحالة التوفر",
-          "en": "Interactive touchscreen presentation app for units and availability"
+          "ar": "برنامج عرض تفاعلي لشاشة اللمس يعرض الوحدات وحالة التوفر — الشاشة/العتاد من العميل أو يُسعَّر منفصلاً",
+          "en": "Interactive touchscreen presentation app for units and availability — screen/hardware client-supplied or quoted separately"
         },
         {
           "ar": "مواد المبيعات: كتالوج طباعي ورقمي + بروشور + أوراق مواصفات الوحدات + عرض للوسطاء",

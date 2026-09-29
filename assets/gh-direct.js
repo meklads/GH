@@ -1587,9 +1587,10 @@
     var host = document.getElementById('ghd-faq');
     var trust = document.getElementById('ghd-trust-line');
     if (title) title.textContent = ui.faqTitle || (lang === 'ar' ? 'أسئلة شائعة' : 'FAQs');
-    if (trust && ui.trustLine) {
+    if (trust && (ui.trustLinePublic || ui.trustLine)) {
       trust.hidden = false;
-      trust.textContent = ui.trustLine;
+      trust.textContent =
+        hidePrices && ui.trustLinePublic ? ui.trustLinePublic : ui.trustLine;
     }
     if (!host || !ui.faq || !ui.faq.length) return;
     var faqItems =
@@ -2149,9 +2150,10 @@
     renderFaq();
     renderMeeting();
     var trust = document.getElementById('ghd-trust-line');
-    if (trust && ui.trustLine) {
+    if (trust && (ui.trustLinePublic || ui.trustLine)) {
       trust.hidden = false;
-      trust.textContent = ui.trustLine;
+      trust.textContent =
+        hidePrices && ui.trustLinePublic ? ui.trustLinePublic : ui.trustLine;
     }
     wireModals();
     document.title = hidePrices
