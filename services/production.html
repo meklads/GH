@@ -442,6 +442,109 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  .lp-svc__media img { transition: none; }
 }
 
+/* Featured YouTube film projects */
+.lp-yt {
+ padding: clamp(72px, 9vw, 110px) 0;
+ background: #0A0A0A;
+ color: #FAFAF8;
+}
+.lp-yt .lp-kicker { color: var(--gold); }
+.lp-yt .lp-section-title { color: #FAFAF8; }
+.lp-yt .lp-head p:last-child {
+ color: rgba(250, 250, 248, 0.65);
+ max-width: 40rem;
+ margin: 0;
+ font-size: 16px;
+ line-height: 1.85;
+}
+.lp-yt-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 18px;
+ margin-top: 40px;
+}
+.lp-yt-card {
+ display: block;
+ width: 100%;
+ padding: 0;
+ border: 1px solid rgba(255, 255, 255, 0.08);
+ background: #111;
+ color: inherit;
+ text-align: start;
+ cursor: pointer;
+ font: inherit;
+ transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.lp-yt-card:hover {
+ border-color: rgba(201, 168, 76, 0.45);
+ transform: translateY(-3px);
+ box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+}
+.lp-yt-card__media {
+ position: relative;
+ display: block;
+ aspect-ratio: 16 / 9;
+ overflow: hidden;
+ background: #000;
+}
+.lp-yt-card__media img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+ transition: transform 0.55s ease;
+}
+.lp-yt-card:hover .lp-yt-card__media img {
+ transform: scale(1.04);
+}
+.lp-yt-card__play {
+ position: absolute;
+ inset: 0;
+ display: grid;
+ place-items: center;
+ color: #FAFAF8;
+ background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent 55%);
+ transition: color 0.25s ease;
+}
+.lp-yt-card__play .material-symbols-outlined {
+ font-size: 64px;
+ font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+ filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.45));
+}
+.lp-yt-card:hover .lp-yt-card__play {
+ color: var(--gold);
+}
+.lp-yt-card__body {
+ display: block;
+ padding: 20px 22px 24px;
+}
+.lp-yt-card__tag {
+ display: block;
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+ color: var(--gold);
+ margin-bottom: 8px;
+ font-family: monospace, ui-monospace, Menlo, Consolas, monospace;
+}
+.lp-yt-card__body strong {
+ display: block;
+ font-size: 20px;
+ font-weight: 700;
+ margin-bottom: 6px;
+ color: #FAFAF8;
+}
+.lp-yt-card__sub {
+ display: block;
+ font-size: 14px;
+ color: rgba(250, 250, 248, 0.6);
+ line-height: 1.6;
+}
+@media (prefers-reduced-motion: reduce) {
+ .lp-yt-card__media img { transition: none; }
+}
+
 /* GALLERY — album rail (see gh-production-album.css) */
 .lp-gallery {
  padding: clamp(72px, 9vw, 110px) 0;
@@ -630,11 +733,11 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  .lp-hero-lead, .lp-hero-sub { margin-inline: auto; }
  .lp-hero-ctas { justify-content: center; }
  .lp-proof { max-width: 480px; margin-inline: auto; text-align: start; }
- .lp-svc-grid, .lp-metrics { grid-template-columns: 1fr 1fr; }
+ .lp-svc-grid, .lp-metrics, .lp-yt-grid { grid-template-columns: 1fr 1fr; }
  .lp-steps, .rel-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
- .lp-svc-grid, .lp-metrics, .lp-steps, .rel-grid { grid-template-columns: 1fr; }
+ .lp-svc-grid, .lp-metrics, .lp-steps, .rel-grid, .lp-yt-grid { grid-template-columns: 1fr; }
  .lp-hero-ctas, .lp-close-actions { flex-direction: column; align-items: stretch; }
  .lp-hero-ctas .btn-p, .lp-hero-ctas .btn-o,
  .lp-close-actions .btn-p, .lp-close-actions .btn-o-light { justify-content: center; }
@@ -876,7 +979,7 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  <p class="lp-hero-sub">تصوير معماري، أفلام ترويجية، وتغطية فعاليات. إنتاج متكامل للمطورين والعلامات في السعودية والخليج، من نفس الفريق الذي يبني مجسماتكم وأفلام CGI.</p>
  <div class="lp-hero-ctas">
  <a href="#booking" class="btn-p">احجز جلسة إنتاج</a>
- <a href="#gallery" class="btn-o">استعرض الأعمال</a>
+ <a href="#films" class="btn-o">استعرض الأعمال</a>
  </div>
  </div>
  <div class="lp-proof reveal r1">
@@ -1013,6 +1116,41 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  <p>عروض بصرية لاجتماعات العملاء والمستثمرين. تصميم وتصوير وإخراج متكامل يخدم سرد المشروع.</p>
  </div>
  </article>
+ </div>
+ </div>
+</section>
+
+<!-- FEATURED FILM PROJECTS -->
+<section class="lp-yt" id="films">
+ <div class="lp-wrap">
+ <header class="lp-head reveal">
+ <p class="lp-kicker">نماذج تصوير ومونتاج</p>
+ <h2 class="lp-section-title">مشاريع إنتاج منفّذة</h2>
+ <p>فيلمان من أعمال التصوير والمونتاج — اضغط للمشاهدة داخل الصفحة.</p>
+ </header>
+ <div class="lp-yt-grid">
+ <button type="button" class="lp-yt-card reveal" onclick="playVideo('NM60mClJNwg')" data-gh-cta="production_yt_alahly" aria-label="تشغيل فيلم النادي الأهلي">
+ <span class="lp-yt-card__media">
+ <img src="https://img.youtube.com/vi/NM60mClJNwg/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360">
+ <span class="lp-yt-card__play" aria-hidden="true"><span class="material-symbols-outlined">play_circle</span></span>
+ </span>
+ <span class="lp-yt-card__body">
+ <span class="lp-yt-card__tag">محتوى رياضي · سلسلة حلقات</span>
+ <strong>النادي الأهلي</strong>
+ <span class="lp-yt-card__sub">تصوير ومونتاج · إنتاج فني</span>
+ </span>
+ </button>
+ <button type="button" class="lp-yt-card reveal r1" onclick="playVideo('AYStF0c4Hgk')" data-gh-cta="production_yt_khayyat" aria-label="تشغيل فيلم مصنع الخياط">
+ <span class="lp-yt-card__media">
+ <img src="https://img.youtube.com/vi/AYStF0c4Hgk/maxresdefault.jpg" alt="" loading="lazy" decoding="async" width="1280" height="720" onerror="this.src='https://img.youtube.com/vi/AYStF0c4Hgk/hqdefault.jpg'">
+ <span class="lp-yt-card__play" aria-hidden="true"><span class="material-symbols-outlined">play_circle</span></span>
+ </span>
+ <span class="lp-yt-card__body">
+ <span class="lp-yt-card__tag">فيلم صناعي · إنتاج فني</span>
+ <strong>مصنع الخياط للطوب الأحمر</strong>
+ <span class="lp-yt-card__sub">تصوير ومونتاج · توثيق صناعي</span>
+ </span>
+ </button>
  </div>
  </div>
 </section>
@@ -1533,6 +1671,40 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
 
 
 <script defer src="../assets/gh-float-widgets.js?v=15"></script>
+<script>
+function playVideo(videoId) {
+  var modal = document.getElementById('videoModal');
+  var container = document.getElementById('vmPlayer');
+  if (!modal || !container || !videoId) return;
+  var src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1';
+  var iframe = document.createElement('iframe');
+  iframe.setAttribute('src', src);
+  iframe.setAttribute('title', 'Graphics House film');
+  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+  container.innerHTML = '';
+  container.appendChild(iframe);
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  if (window.ghTrack) {
+    window.ghTrack('video_play', { video_src: videoId, page_path: location.pathname });
+  }
+}
+function closeVideo() {
+  var modal = document.getElementById('videoModal');
+  var container = document.getElementById('vmPlayer');
+  if (modal) modal.classList.remove('active');
+  if (container) container.innerHTML = '';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeVideo();
+});
+document.getElementById('videoModal')?.addEventListener('click', function (e) {
+  if (e.target === e.currentTarget) closeVideo();
+});
+</script>
 <script src="../assets/quote-form-config.js"></script>
 <script defer src="../assets/quote-form.js?v=4"></script>
 <script src="../assets/gh-chat-knowledge-data.js?v=3"></script>
