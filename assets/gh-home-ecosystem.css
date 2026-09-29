@@ -224,7 +224,7 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
 }
 
 .gh-home-eco-ticket__title {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: #fafaf8;
   margin: 0 0 6px;
@@ -240,7 +240,7 @@ html[dir='rtl'] .gh-home-eco-ticket__phase,
 
 .gh-home-eco-ticket__title-local {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: rgba(245, 245, 243, 0.96);
   line-height: 1.35;
@@ -395,7 +395,7 @@ html[dir='rtl'] .gh-home-eco__label,
 }
 
 .gh-home-eco-institutional__title {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #fff;
   line-height: 1.25;
@@ -543,7 +543,7 @@ html[dir='rtl'] .gh-home-eco__services-eyebrow,
 }
 
 .gh-home-eco__services .gh-home-eco-card__title {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #141414;
   margin: 0 0 10px;

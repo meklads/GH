@@ -1406,3 +1406,64 @@ p[style*="color: #999"] {
   color: #3d3d3d !important;
   font-weight: 500 !important;
 }
+
+
+/* ===== Title hierarchy: section ≠ card/ticket ===== */
+:root {
+  --gh-title-section: clamp(28px, 3vw, 42px);
+  --gh-title-card: clamp(15px, 1.05vw, 17px);
+}
+
+/* Section titles — one size band */
+.gh-home-eco__systems .gh-home-eco__head h2,
+.gh-home-eco__services .gh-home-eco__head h2,
+.gh-home-why__title,
+.portfolio-title,
+.pl-ladder-head h2,
+.pl-proof-early h2 {
+  font-size: var(--gh-title-section) !important;
+  line-height: 1.25 !important;
+}
+
+html[lang="ar"] .gh-home-eco__systems .gh-home-eco__head h2,
+html[lang="ar"] .gh-home-eco__services .gh-home-eco__head h2,
+html[lang="ar"] .gh-home-why__title,
+html[dir="rtl"]:not([lang="en"]) .gh-home-eco__systems .gh-home-eco__head h2,
+html[dir="rtl"]:not([lang="en"]) .gh-home-eco__services .gh-home-eco__head h2,
+html[dir="rtl"]:not([lang="en"]) .gh-home-why__title {
+  font-size: var(--gh-ar-h2, var(--gh-title-section)) !important;
+}
+
+/* Card / ticket titles — clearly smaller than sections */
+.gh-home-eco-ticket__title-local,
+.gh-home-eco-institutional__title,
+.gh-home-eco__services .gh-home-eco-card__title,
+.gh-home-why__card h3,
+.mm-card .mm-title:not(.pl-mark),
+.pl-ladder-card h3,
+.why-card h4,
+.gh-ins-card h3 {
+  font-size: var(--gh-title-card) !important;
+  line-height: 1.35 !important;
+  font-weight: 600 !important;
+}
+
+html[lang="ar"] .gh-home-eco-ticket__title-local,
+html[lang="ar"] .gh-home-eco-institutional__title,
+html[lang="ar"] .gh-home-eco__services .gh-home-eco-card__title,
+html[lang="ar"] .gh-home-why__card h3,
+html[dir="rtl"]:not([lang="en"]) .gh-home-eco-ticket__title-local,
+html[dir="rtl"]:not([lang="en"]) .gh-home-eco-institutional__title,
+html[dir="rtl"]:not([lang="en"]) .gh-home-eco__services .gh-home-eco-card__title,
+html[dir="rtl"]:not([lang="en"]) .gh-home-why__card h3 {
+  font-size: var(--gh-ar-card-title, var(--gh-title-card)) !important;
+  font-weight: 600 !important;
+}
+
+/* Product marks stay compact LTR labels */
+.gh-home-eco-ticket__title,
+.mm-card .mm-title {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+}

@@ -5,12 +5,14 @@
 html[lang="ar"],
 html[dir="rtl"]:not([lang="en"]) {
   --gh-ar-font: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
-  /* Homepage scale */
+  /* Type hierarchy — section ≠ card/ticket */
   --gh-ar-hero: clamp(47px, 5.2vw, 73px);
   --gh-ar-h1: clamp(32px, 3.6vw, 56px);
-  --gh-ar-h2: clamp(28px, 3vw, 44px);
-  --gh-ar-h3: clamp(24px, 2.4vw, 36px);
-  --gh-ar-h4: 20px;
+  --gh-ar-h2: clamp(28px, 3vw, 42px);          /* عناوين الأقسام فقط */
+  --gh-ar-subhead: clamp(20px, 2vw, 26px);     /* عناوين فرعية نادرة */
+  --gh-ar-h3: clamp(15px, 1.05vw, 17px);       /* عناوين التذاكر/البطاقات */
+  --gh-ar-card-title: var(--gh-ar-h3);
+  --gh-ar-h4: 14px;
   --gh-ar-body: clamp(15px, 1.05vw, 17px);
   --gh-ar-lead: 16px;
   --gh-ar-eyebrow: 12px;
@@ -109,9 +111,9 @@ html[dir="rtl"]:not([lang="en"]) h2 {
 
 html[lang="ar"] h3,
 html[dir="rtl"]:not([lang="en"]) h3 {
-  font-size: var(--gh-ar-h3) !important;
-  font-weight: 400 !important;
-  line-height: 1.3 !important;
+  font-size: var(--gh-ar-card-title) !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
 }
 
 html[lang="ar"] h4,
@@ -167,8 +169,8 @@ html[dir="rtl"]:not([lang="en"]) .font-headline-xl {
 
 html[lang="ar"] .font-headline-md,
 html[dir="rtl"]:not([lang="en"]) .font-headline-md {
-  font-size: var(--gh-ar-h3) !important;
-  font-weight: 400 !important;
+  font-size: var(--gh-ar-subhead) !important;
+  font-weight: 500 !important;
   line-height: 1.3 !important;
 }
 
@@ -242,8 +244,8 @@ html[dir="rtl"]:not([lang="en"]) .s2-header-title {
 
 html[lang="ar"] .s3-title,
 html[dir="rtl"]:not([lang="en"]) .s3-title {
-  font-size: var(--gh-ar-h3) !important;
-  font-weight: 400 !important;
+  font-size: var(--gh-ar-subhead) !important;
+  font-weight: 500 !important;
 }
 
 /* ── Hero titles ── */
@@ -315,7 +317,7 @@ html[dir="rtl"]:not([lang="en"]) .gh-article-body h3 {
 
 html[lang="ar"] .gh-ins-card h3,
 html[dir="rtl"]:not([lang="en"]) .gh-ins-card h3 {
-  font-size: clamp(18px, 2vw, 22px) !important;
+  font-size: var(--gh-ar-card-title) !important;
 }
 
 /* GH Direct catalog / packages — clarity over weight */
@@ -405,8 +407,14 @@ html[dir="rtl"]:not([lang="en"]) .ghd-page .ghd-section-head p {
 
 html[lang="ar"] .gh-article-body h2,
 html[dir="rtl"]:not([lang="en"]) .gh-article-body h2 {
-  font-size: var(--gh-ar-h3) !important;
-  font-weight: 400 !important;
+  font-size: var(--gh-ar-subhead) !important;
+  font-weight: 500 !important;
+}
+
+html[lang="ar"] .gh-article-body h3,
+html[dir="rtl"]:not([lang="en"]) .gh-article-body h3 {
+  font-size: var(--gh-ar-card-title) !important;
+  font-weight: 600 !important;
 }
 
 /* ── Location pages ── */
