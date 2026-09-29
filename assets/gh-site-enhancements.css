@@ -1411,7 +1411,7 @@ p[style*="color: #999"] {
 /* ===== Title hierarchy: section ≠ card/ticket ===== */
 :root {
   --gh-title-section: clamp(28px, 3vw, 42px);
-  --gh-title-card: clamp(15px, 1.05vw, 17px);
+  --gh-title-card: clamp(13px, 0.9vw, 14.5px);
 }
 
 /* Section titles — one size band */
@@ -1442,28 +1442,36 @@ html[dir="rtl"]:not([lang="en"]) .gh-home-why__title {
 .mm-card .mm-title:not(.pl-mark),
 .pl-ladder-card h3,
 .why-card h4,
-.gh-ins-card h3 {
+.gh-ins-card h3,
+main h3,
+.ch h3,
+.cc h3 {
   font-size: var(--gh-title-card) !important;
-  line-height: 1.35 !important;
+  line-height: 1.4 !important;
   font-weight: 600 !important;
 }
 
+html[lang="ar"] h3,
+html[dir="rtl"]:not([lang="en"]) h3,
 html[lang="ar"] .gh-home-eco-ticket__title-local,
 html[lang="ar"] .gh-home-eco-institutional__title,
 html[lang="ar"] .gh-home-eco__services .gh-home-eco-card__title,
 html[lang="ar"] .gh-home-why__card h3,
+html[lang="ar"] main h3,
 html[dir="rtl"]:not([lang="en"]) .gh-home-eco-ticket__title-local,
 html[dir="rtl"]:not([lang="en"]) .gh-home-eco-institutional__title,
 html[dir="rtl"]:not([lang="en"]) .gh-home-eco__services .gh-home-eco-card__title,
-html[dir="rtl"]:not([lang="en"]) .gh-home-why__card h3 {
+html[dir="rtl"]:not([lang="en"]) .gh-home-why__card h3,
+html[dir="rtl"]:not([lang="en"]) main h3 {
   font-size: var(--gh-ar-card-title, var(--gh-title-card)) !important;
   font-weight: 600 !important;
+  line-height: 1.4 !important;
 }
 
 /* Product marks stay compact LTR labels */
 .gh-home-eco-ticket__title,
 .mm-card .mm-title {
-  font-size: 0.95rem !important;
+  font-size: 0.8125rem !important; /* 13px */
   font-weight: 700 !important;
   letter-spacing: -0.01em;
 }

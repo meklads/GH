@@ -8,7 +8,7 @@ import { join, relative } from 'node:path';
 const ROOT = join(import.meta.dirname, '..');
 const CANONICAL_FONTS =
   '<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>';
-const TYPO_VERSION = 'v=5';
+const TYPO_VERSION = 'v=6';
 
 function walkHtml(dir, out = []) {
   for (const name of readdirSync(dir)) {
