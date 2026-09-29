@@ -1583,3 +1583,195 @@ html[dir="rtl"]:not([lang="en"]) main h3 {
   font-weight: 700 !important;
   letter-spacing: -0.01em;
 }
+
+/* ===== Selected Developments heading (AR/EN parity) ===== */
+.gh-home-projects-head {
+  text-align: center;
+  margin: 0 0 48px;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: 48px;
+}
+
+.gh-home-projects-head__title {
+  margin: 0 0 14px;
+  font-family: "Playfair Display", "Tajawal", Georgia, serif;
+  font-size: clamp(26px, 2.6vw, 40px);
+  font-weight: 400;
+  line-height: 1.25;
+  color: #0a0a0a;
+  letter-spacing: -0.01em;
+}
+
+.gh-home-projects-head__title em {
+  font-style: normal;
+  font-weight: 700;
+  color: #c9a84c;
+}
+
+html[lang="ar"] .gh-home-projects-head__title,
+html[dir="rtl"]:not([lang="en"]) .gh-home-projects-head__title {
+  font-family: "Tajawal", "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 300;
+}
+
+html[lang="ar"] .gh-home-projects-head__title em,
+html[dir="rtl"]:not([lang="en"]) .gh-home-projects-head__title em {
+  font-weight: 700;
+}
+
+.gh-home-projects-head__lead {
+  margin: 0;
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.7;
+  color: #666;
+  font-weight: 400;
+}
+
+/* ===== MWL project quote — white, under Makkah Charter ===== */
+.gh-project-quote {
+  margin: 40px 0 0;
+  padding: 36px 40px 34px;
+  background: #fff;
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 1px 0 rgba(201, 168, 76, 0.18);
+  position: relative;
+  text-align: center;
+}
+
+.gh-project-quote::before {
+  content: "“";
+  position: absolute;
+  top: 8px;
+  inset-inline-start: 28px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 72px;
+  line-height: 1;
+  color: rgba(201, 168, 76, 0.22);
+  pointer-events: none;
+}
+
+html[lang="ar"] .gh-project-quote::before,
+html[dir="rtl"]:not([lang="en"]) .gh-project-quote::before {
+  content: "«";
+  font-family: "Tajawal", Georgia, serif;
+}
+
+.gh-project-quote blockquote {
+  margin: 0 auto 22px;
+  max-width: 760px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(16px, 1.55vw, 21px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #1a1a1a;
+}
+
+html[lang="ar"] .gh-project-quote blockquote,
+html[dir="rtl"]:not([lang="en"]) .gh-project-quote blockquote {
+  font-family: "Tajawal", "IBM Plex Sans Arabic", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+.gh-project-quote figcaption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(201, 168, 76, 0.35);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.gh-project-quote figcaption strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0a0a0a;
+  letter-spacing: 0.01em;
+}
+
+.gh-project-quote figcaption span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #888;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+html[lang="ar"] .gh-project-quote figcaption span,
+html[dir="rtl"]:not([lang="en"]) .gh-project-quote figcaption span {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media (max-width: 720px) {
+  .gh-project-quote {
+    padding: 28px 22px 26px;
+    margin-top: 28px;
+  }
+
+  .gh-project-quote::before {
+    font-size: 56px;
+    inset-inline-start: 16px;
+  }
+}
+
+/* ===== Footer legal line — CR / VAT prominence ===== */
+.gh-footer__copy {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 8px 10px !important;
+  margin: 10px 0 0 !important;
+  padding: 10px 14px !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(201, 168, 76, 0.28) !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  letter-spacing: 0.01em !important;
+}
+
+.gh-footer__copy-brand {
+  color: #fafaf8 !important;
+  font-weight: 600 !important;
+}
+
+.gh-footer__copy-sep {
+  color: rgba(201, 168, 76, 0.55) !important;
+  font-weight: 400 !important;
+}
+
+.gh-footer__copy-id {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+}
+
+.gh-footer__copy-id b,
+.gh-footer__copy-id strong {
+  color: #f0d78a !important;
+  font-weight: 700 !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+@media (max-width: 640px) {
+  .gh-footer__copy {
+    font-size: 12px !important;
+    padding: 9px 12px !important;
+    gap: 6px 8px !important;
+  }
+
+  .gh-footer__copy-id {
+    white-space: normal !important;
+  }
+}
