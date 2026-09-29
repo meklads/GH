@@ -140,7 +140,7 @@ html[dir="rtl"]:not([lang="en"]) button {
 
 html[lang="ar"] p,
 html[dir="rtl"]:not([lang="en"]) p {
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.8;
 }
 
@@ -175,14 +175,14 @@ html[dir="rtl"]:not([lang="en"]) .font-headline-md {
 html[lang="ar"] .font-body-lg,
 html[dir="rtl"]:not([lang="en"]) .font-body-lg {
   font-size: var(--gh-ar-lead) !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   line-height: 1.75 !important;
 }
 
 html[lang="ar"] .font-body-md,
 html[dir="rtl"]:not([lang="en"]) .font-body-md {
   font-size: var(--gh-ar-body) !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   line-height: 1.8 !important;
 }
 
@@ -286,7 +286,7 @@ html[dir="rtl"]:not([lang="en"]) .gh-ins-hero h1 {
 html[lang="ar"] .gh-ins-hero p,
 html[dir="rtl"]:not([lang="en"]) .gh-ins-hero p {
   font-size: var(--gh-ar-lead) !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   line-height: 1.8 !important;
 }
 
@@ -431,7 +431,7 @@ html[dir="rtl"]:not([lang="en"]) .gh-loc-hero h1 {
 html[lang="ar"] .gh-loc-hero p,
 html[dir="rtl"]:not([lang="en"]) .gh-loc-hero p {
   font-size: var(--gh-ar-lead) !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   line-height: 1.8 !important;
 }
 
@@ -540,7 +540,7 @@ html[dir="rtl"]:not([lang="en"]) .filter-btn {
 
 html[lang="ar"] .pf-hero-copy p,
 html[dir="rtl"]:not([lang="en"]) .pf-hero-copy p {
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   line-height: 1.9 !important;
 }
 
@@ -564,4 +564,27 @@ html[lang="ar"] h2 span[style*="Playfair"],
 html[dir="rtl"]:not([lang="en"]) h1 span[style*="Playfair"],
 html[dir="rtl"]:not([lang="en"]) h2 span[style*="Playfair"] {
   font-family: 'Playfair Display', Georgia, serif !important;
+}
+
+
+/* ===== GH_READABLE_BODY — small/lead copy presence ===== */
+html[lang="ar"] .gh-home-eco-ticket__body,
+html[lang="ar"] .gh-home-eco-card__desc,
+html[lang="ar"] .gh-home-eco-institutional__sub,
+html[lang="ar"] .gh-home-eco__systems .gh-home-eco__head p,
+html[lang="ar"] .mm-panel-desc,
+html[lang="ar"] .mm-desc,
+html[lang="ar"] .mm-svc-desc,
+html[lang="ar"] .gh-footer__tagline,
+html[lang="ar"] .gh-footer__offices-line,
+html[dir="rtl"]:not([lang="en"]) .gh-home-eco-ticket__body,
+html[dir="rtl"]:not([lang="en"]) .gh-home-eco-card__desc,
+html[dir="rtl"]:not([lang="en"]) .gh-home-eco-institutional__sub,
+html[dir="rtl"]:not([lang="en"]) .gh-home-eco__systems .gh-home-eco__head p,
+html[dir="rtl"]:not([lang="en"]) .mm-panel-desc,
+html[dir="rtl"]:not([lang="en"]) .mm-desc,
+html[dir="rtl"]:not([lang="en"]) .mm-svc-desc,
+html[dir="rtl"]:not([lang="en"]) .gh-footer__tagline,
+html[dir="rtl"]:not([lang="en"]) .gh-footer__offices-line {
+  font-weight: 500 !important;
 }

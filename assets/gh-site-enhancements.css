@@ -1246,3 +1246,163 @@ body:has(.header) {
   width: 100%;
   height: 100%;
 }
+
+/* ===== Readable small/body copy (site-wide) =====
+   Thin gray text on dark or light surfaces was hard to read,
+   especially in Arabic. Raise weight + contrast without changing brand. */
+:root {
+  --gh-text-muted-on-dark: rgba(250, 250, 248, 0.9);
+  --gh-text-soft-on-dark: rgba(250, 250, 248, 0.82);
+  --gh-text-muted-on-light: #3d3d3d;
+  --gh-text-soft-on-light: #4a4a4a;
+}
+
+p,
+li,
+.lead,
+.mm-panel-desc,
+.mm-desc,
+.mm-svc-desc,
+.gh-footer__tagline,
+.gh-footer__offices-line,
+.gh-home-eco-ticket__body,
+.gh-home-eco-card__desc,
+.gh-home-eco-institutional__sub,
+.gh-home-eco__systems .gh-home-eco__head p,
+.gh-home-why__lead,
+.gh-home-why__card p,
+.pl-proof-early p,
+.pl-ladder-head p,
+.pl-assess-qtext,
+.revs-hero-sub,
+.revs-product-bridge {
+  font-weight: 400;
+}
+
+html[lang="ar"] p,
+html[dir="rtl"]:not([lang="en"]) p,
+html[lang="ar"] .lead,
+html[dir="rtl"]:not([lang="en"]) .lead,
+html[lang="ar"] .mm-panel-desc,
+html[lang="ar"] .mm-desc,
+html[lang="ar"] .mm-svc-desc,
+html[lang="ar"] .gh-home-eco-ticket__body,
+html[lang="ar"] .gh-home-eco-card__desc,
+html[lang="ar"] .gh-home-eco-institutional__sub,
+html[lang="ar"] .gh-home-why__card p,
+html[lang="ar"] .revs-hero-sub,
+html[dir="rtl"]:not([lang="en"]) .mm-panel-desc,
+html[dir="rtl"]:not([lang="en"]) .mm-desc,
+html[dir="rtl"]:not([lang="en"]) .mm-svc-desc,
+html[dir="rtl"]:not([lang="en"]) .gh-home-eco-ticket__body,
+html[dir="rtl"]:not([lang="en"]) .gh-home-eco-card__desc,
+html[dir="rtl"]:not([lang="en"]) .gh-home-eco-institutional__sub,
+html[dir="rtl"]:not([lang="en"]) .gh-home-why__card p,
+html[dir="rtl"]:not([lang="en"]) .revs-hero-sub {
+  font-weight: 500 !important;
+}
+
+/* Override common inline thin/muted styles (pages with style= attributes) */
+p[style*="font-weight:300"],
+p[style*="font-weight: 300"],
+p[style*="font-weight:200"],
+p[style*="font-weight: 200"],
+li[style*="font-weight:300"],
+li[style*="font-weight: 300"],
+div[style*="font-weight:300"][style*="font-size"],
+span[style*="font-weight:300"][style*="font-size:1"],
+span[style*="font-weight:300"][style*="font-size:13"],
+span[style*="font-weight:300"][style*="font-size:14"],
+span[style*="font-weight:300"][style*="font-size:15"],
+span[style*="font-weight:300"][style*="font-size:16"] {
+  font-weight: 500 !important;
+}
+
+/* Dark surfaces — lift gray → near-white */
+p[style*="rgba(255,255,255,.35)"],
+p[style*="rgba(255,255,255,.4)"],
+p[style*="rgba(255,255,255,.45)"],
+p[style*="rgba(255,255,255,.5)"],
+p[style*="rgba(255,255,255,.55)"],
+p[style*="rgba(255,255,255,.6)"],
+p[style*="rgba(255, 255, 255, .35)"],
+p[style*="rgba(255, 255, 255, .4)"],
+p[style*="rgba(255, 255, 255, .45)"],
+p[style*="rgba(255, 255, 255, .5)"],
+p[style*="rgba(255, 255, 255, .55)"],
+p[style*="rgba(255, 255, 255, .6)"],
+p[style*="rgba(255,255,255,0.35)"],
+p[style*="rgba(255,255,255,0.4)"],
+p[style*="rgba(255,255,255,0.45)"],
+p[style*="rgba(255,255,255,0.5)"],
+p[style*="rgba(255,255,255,0.55)"],
+p[style*="rgba(255,255,255,0.6)"],
+p[style*="rgba(255, 255, 255, 0.35)"],
+p[style*="rgba(255, 255, 255, 0.4)"],
+p[style*="rgba(255, 255, 255, 0.45)"],
+p[style*="rgba(255, 255, 255, 0.5)"],
+p[style*="rgba(255, 255, 255, 0.55)"],
+p[style*="rgba(255, 255, 255, 0.6)"] {
+  color: var(--gh-text-muted-on-dark) !important;
+  font-weight: 500 !important;
+}
+
+/* Light surfaces — deepen soft gray */
+p[style*="color:#555"],
+p[style*="color: #555"],
+p[style*="color:#666"],
+p[style*="color: #666"],
+p[style*="color:#777"],
+p[style*="color: #777"],
+p[style*="color:#888"],
+p[style*="color: #888"],
+p[style*="color:#999"],
+p[style*="color: #999"] {
+  color: var(--gh-text-muted-on-light) !important;
+  font-weight: 500 !important;
+}
+
+/* Mega / footer / eco — ensure contrast even if page CSS is older */
+.mm-panel-desc,
+.mega-menu-solutions .mm-card .mm-desc,
+.mega-menu-services .mm-svc-desc,
+.mega-menu-casestudies .mm-panel-desc {
+  color: rgba(250, 250, 248, 0.88) !important;
+  font-weight: 500 !important;
+  line-height: 1.65 !important;
+}
+
+.mega-menu-services .mm-svc-link:hover .mm-svc-desc {
+  color: rgba(250, 250, 248, 0.95) !important;
+}
+
+.gh-footer__tagline,
+.gh-footer__offices-line {
+  color: rgba(250, 250, 248, 0.82) !important;
+  font-weight: 500 !important;
+}
+
+.gh-home-eco-ticket__body,
+.gh-home-eco-card__desc,
+.gh-home-eco-institutional__sub {
+  color: rgba(250, 250, 248, 0.92) !important;
+  font-weight: 500 !important;
+}
+
+.gh-home-eco__systems .gh-home-eco__head p {
+  color: rgba(250, 250, 248, 0.9) !important;
+  font-weight: 500 !important;
+}
+
+.gh-home-eco__eyebrow,
+.gh-home-eco__label {
+  color: rgba(250, 250, 248, 0.78) !important;
+  font-weight: 600 !important;
+}
+
+/* Why cards + light sections */
+.gh-home-why__card p,
+.gh-home-why__lead {
+  color: #3d3d3d !important;
+  font-weight: 500 !important;
+}
