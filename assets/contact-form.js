@@ -101,7 +101,46 @@
     btn.disabled = !!disabled;
   }
 
+  function applyIntentFromQuery() {
+    try {
+      var params = new URLSearchParams(window.location.search || '');
+      var intent = (params.get('intent') || '').toLowerCase();
+      var product = params.get('product') || '';
+      var interest = document.querySelector('#contactForm [name="interest"]');
+      var service = document.querySelector('#contactForm [name="service"], #contactProduct');
+      if (intent === 'session' && interest && interest.options.length) {
+        for (var i = 0; i < interest.options.length; i++) {
+          var v = interest.options[i].value || interest.options[i].textContent || '';
+          if (/session|جلسة/i.test(v)) {
+            interest.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      if (product && service) {
+        var map = {
+          brand: 'BrandScale',
+          brandscale: 'BrandScale',
+          project: 'ProjectLaunch',
+          projectlaunch: 'ProjectLaunch',
+          growth: 'GrowthLaunch',
+          growthlaunch: 'GrowthLaunch',
+          institutional: 'Institutional',
+          packages: 'Packages'
+        };
+        var key = map[String(product).toLowerCase()] || product;
+        for (var j = 0; j < service.options.length; j++) {
+          if (service.options[j].value === key) {
+            service.selectedIndex = j;
+            break;
+          }
+        }
+      }
+    } catch (e) { /* ignore */ }
+  }
+
   function wireContactForm() {
+    applyIntentFromQuery();
     var form = document.getElementById('contactForm');
     if (!form || form.dataset.ghContactWired === '1') return;
     form.dataset.ghContactWired = '1';

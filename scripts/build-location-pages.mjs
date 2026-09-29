@@ -351,23 +351,33 @@ function buildPage(data, lang) {
 
  const checklistHref = `${p}insights/downloads/visual-launch-checklist${isEn ? '-en' : ''}.html`;
  const contactHref = `${p}contact-us${isEn ? '-en' : ''}.html`;
+ const sessionHref = `${contactHref}?intent=session`;
  const portfolioHref = `${p}portfolio${isEn ? '-en' : ''}.html`;
 
  const cityName = L(data.city, lang);
  const servicesLead = data.servicesLead
  ? L(data.servicesLead, lang)
  : (isEn
- ? 'End-to-end visual production for developers launching residential towers, gated communities, and mixed-use destinations.'
- : 'إنتاج بصري متكامل للمطورين الذين يطلقون أبراجاً سكنية ومجمعات ومشاريع مختلطة.');
+ ? `Launch Systems for developers in ${cityName}: BrandScale™, ProjectLaunch™, and GrowthLaunch™ — with execution specialties under one studio.`
+ : `أنظمة إطلاق لمطوري ${cityName}: BrandScale™ وProjectLaunch™ وGrowthLaunch™ — مع تخصصات التنفيذ تحت استوديو واحد.`);
  const officeHeading = data.office.heading
  ? L(data.office.heading, lang)
- : (isEn ? `${cityName} office` : `مكتب ${cityName}`);
+ : (isEn ? `Serving ${cityName}` : `نخدم ${cityName}`);
 
  const countryCode = data.countryCode || 'SA';
  const kickerDefault = {
- SA: { en: 'Graphics House · Saudi Arabia', ar: 'جرافيكس هاوس · المملكة العربية السعودية' },
- OM: { en: 'Graphics House · Oman', ar: 'جرافيكس هاوس · سلطنة عُمان' },
- BH: { en: 'Graphics House · Bahrain', ar: 'جرافيكس هاوس · مملكة البحرين' },
+ SA: {
+ en: `Serving ${cityName} · Launch Systems ™`,
+ ar: `نخدم ${cityName} عبر أنظمة الإطلاق ™`,
+ },
+ OM: {
+ en: `Serving Oman · Launch Systems ™`,
+ ar: `نخدم عُمان عبر أنظمة الإطلاق ™`,
+ },
+ BH: {
+ en: `Serving Bahrain · Launch Systems ™`,
+ ar: `نخدم البحرين عبر أنظمة الإطلاق ™`,
+ },
  };
  const kicker = data.kicker
  ? L(data.kicker, lang)
@@ -392,7 +402,7 @@ ${header}
  <h1>${esc(L(data.title, lang))}</h1>
  <p>${esc(L(data.subtitle, lang))}</p>
  <div class="gh-loc-hero-cta">
- <a href="${contactHref}" class="gh-loc-btn gh-loc-btn--gold">${isEn ? 'Book Strategy Session' : 'احجز جلسة استراتيجية'}</a>
+ <a href="${sessionHref}" class="gh-loc-btn gh-loc-btn--gold">${isEn ? 'Book a Launch Systems session' : 'احجز جلسة أنظمة الإطلاق'}</a>
  <a href="${checklistHref}" class="gh-loc-btn gh-loc-btn--outline">${isEn ? 'Free Launch Checklist PDF' : 'تحميل قائمة الإطلاق مجاناً'}</a>
  </div>
  </div>
@@ -407,12 +417,12 @@ ${header}
  ${statsSection(data, lang)}
  ${projectTypesSection(data, lang)}
  <section class="gh-loc-section">
- <h2>${isEn ? `What we deliver in ${cityName}` : `ماذا نقدّم في ${cityName}`}</h2>
+ <h2>${isEn ? `Launch Systems for ${cityName}` : `أنظمة الإطلاق في ${cityName}`}</h2>
  <p class="gh-loc-section-lead">${esc(servicesLead)}</p>
- <h3 class="gh-loc-subhead">${isEn ? 'Core Services' : 'الخدمات الرئيسية'}</h3>
- <div class="gh-loc-grid gh-loc-grid--3">${coreServicesHtml}</div>
- <h3 class="gh-loc-subhead">${isEn ? 'Main Products' : 'المنتجات الرئيسية'}</h3>
+ <h3 class="gh-loc-subhead">${isEn ? 'Products' : 'المنتجات'}</h3>
  <div class="gh-loc-grid gh-loc-grid--3">${productsHtml}</div>
+ <h3 class="gh-loc-subhead">${isEn ? 'Capabilities that power the products' : 'التخصصات التي تشغّل المنتجات'}</h3>
+ <div class="gh-loc-grid gh-loc-grid--3">${coreServicesHtml}</div>
  </section>
  ${spotlightSection(data, lang, p)}
  ${gallerySection(data, lang, p)}
@@ -466,7 +476,7 @@ function updateSitemap(locations) {
 console.log('Building location pages…');
 const locations = fs
  .readdirSync(DATA_DIR)
- .filter((f) => f.endsWith('.json'))
+ .filter((f) => f.endsWith('.json') && !f.startsWith('_'))
  .map((f) => JSON.parse(fs.readFileSync(path.join(DATA_DIR, f), 'utf8')));
 
 for (const data of locations) {
