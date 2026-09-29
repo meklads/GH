@@ -52,6 +52,8 @@ const SITEMAP_SKIP = new Set([
  'smart-maquettes-en.html',
  'interactive-experiences.html',
  'interactive-experiences-en.html',
+ 'galleries-advertising.html',
+ 'galleries-advertising-en.html',
  'contact.html',
  'case-study-alrajhi-en.html',
  'case-study-anan-eskan-en.html',
@@ -127,8 +129,10 @@ const EXPLICIT_PAIRS = {
  'collaborators-en.html': 'collaborators.html',
  'partner-network.html': 'partner-network-en.html',
  'partner-network-en.html': 'partner-network.html',
- 'galleries-advertising.html': 'galleries-advertising-en.html',
- 'galleries-advertising-en.html': 'galleries-advertising.html',
+ 'galleries-advertising.html': 'services/galleries-en.html',
+ 'galleries-advertising-en.html': 'services/galleries.html',
+ 'services/galleries.html': 'services/galleries-en.html',
+ 'services/galleries-en.html': 'services/galleries.html',
 };
 
 /** services/foo.html ↔ services/foo-en.html */

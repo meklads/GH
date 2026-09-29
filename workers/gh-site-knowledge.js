@@ -78,7 +78,7 @@ export const SITE = {
  { id: 'scale', name: { ar: 'مجسمات معمارية', en: 'Scale Models' }, url: { ar: '/services/maquettes.html', en: '/services/maquettes-en.html' } },
  { id: 'interactive', name: { ar: 'تجارب تفاعلية', en: 'Interactive Experiences' }, url: { ar: '/services/interactive-experiences.html', en: '/services/interactive-experiences-en.html' } },
  { id: 'vr', name: { ar: 'VR / 360', en: 'VR / 360' }, url: { ar: '/services/vr-360.html', en: '/services/vr-360-en.html' } },
- { id: 'galleries', name: { ar: 'جاليريات وديكور مكاني', en: 'Galleries & Spatial Design' }, url: { ar: '/galleries-advertising.html', en: '/galleries-advertising-en.html' } },
+ { id: 'galleries', name: { ar: 'جاليريات وديكور مكاني', en: 'Galleries & Spatial Design' }, url: { ar: '/services/galleries.html', en: '/services/galleries-en.html' } },
  { id: 'production', name: { ar: 'ميديا برودكشن', en: 'Media Production' }, url: { ar: '/services/production.html', en: '/services/production-en.html' } },
  { id: 'photography', name: { ar: 'التصوير المعماري والإعلامي', en: 'Architectural Photography & Media' }, url: { ar: '/services/photography-media.html', en: '/services/photography-media-en.html' } },
  { id: 'branding', name: { ar: 'الهوية البصرية', en: 'Visual Identity & Branding' }, url: { ar: '/services/branding.html', en: '/services/branding-en.html' } },

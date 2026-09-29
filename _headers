@@ -20,6 +20,22 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
+/galleries-advertising.html
+  Cache-Control: public, max-age=0, must-revalidate
+  CDN-Cache-Control: no-store
+
+/galleries-advertising-en.html
+  Cache-Control: public, max-age=0, must-revalidate
+  CDN-Cache-Control: no-store
+
+/services/galleries.html
+  Cache-Control: public, max-age=0, must-revalidate
+  CDN-Cache-Control: no-store
+
+/services/galleries-en.html
+  Cache-Control: public, max-age=0, must-revalidate
+  CDN-Cache-Control: no-store
+
 /sitemap.xml
   Cache-Control: public, max-age=86400
 

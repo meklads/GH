@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 /**
  * Build galleries / spatial décor service landings (AR + EN).
+ * Canonical URLs live under /services/galleries*.html (avoids stale
+ * browser cache of the old root redirect stub → branding).
  * Soft handoff to Turriva for physical execution.
  */
 import fs from 'fs';
@@ -20,23 +22,24 @@ const TURRIVA = 'https://turriva.com';
 
 const COPY = {
   ar: {
-    file: 'galleries-advertising.html',
+    file: 'services/galleries.html',
+    legacyFile: 'galleries-advertising.html',
     lang: 'ar',
     dir: 'rtl',
     title: 'جاليريات وديكور مكاني | Graphics House',
     description:
       'صالات بيع وجاليريات وديكور مكاني للمشاريع العقارية والملتقيات. Graphics House يضع الرؤية البصرية، وتنفيذ المساحة عبر توريفا.',
-    canonical: 'https://3dgraphicshouse.com/galleries-advertising.html',
-    altEn: 'https://3dgraphicshouse.com/galleries-advertising-en.html',
-    altAr: 'https://3dgraphicshouse.com/galleries-advertising.html',
-    skip: 'تخطي إلى المحتوى الرئيسي',
+    canonical: 'https://3dgraphicshouse.com/services/galleries.html',
+    altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
+    altAr: 'https://3dgraphicshouse.com/services/galleries.html',
     kicker: 'خدماتنا · الديكور المكاني',
     h1: 'جاليريات <span>وديكور مكاني</span>',
     lead:
       'نصمّم تجربة صالة البيع والجناح والمعرض بلغة بصرية واحدة مع المشروع. التنفيذ الميداني والتسليم المكاني يتم عبر توريفا — شريك التسليم المكاني في المجموعة.',
     ctaPrimary: 'انتقل إلى توريفا للتنفيذ',
     ctaSecondary: 'تواصل مع Graphics House',
-    contactHref: 'contact-us.html',
+    contactHref: '../contact-us.html',
+    brandingHref: 'branding.html',
     aboutTitle: 'ما نقدّمه في هذه الخدمة',
     aboutLead:
       'من فهم المشروع والهوية إلى تصور المساحة ومواد العرض، ثم تسليم التنفيذ لتوريفا حتى تصبح الصالة جاهزة للزائر.',
@@ -68,29 +71,31 @@ const COPY = {
     handoffTitle: 'توريفا مسؤولة عن التنفيذ',
     handoffBody:
       'Graphics House يحدد الرؤية البصرية والمسار. توريفا تتولى التطوير الفني، التصنيع، التركيب، والتسليم حتى تصبح المساحة جاهزة للاستخدام أو الافتتاح.',
-    handoffNote:
-      'للهوية البصرية والشعار والكتالوج راجع <a href="services/branding.html">صفحة الهوية البصرية</a>. لهذه الخدمة المكانية ابدأ من توريفا.',
+    handoffNoteBefore: 'للهوية البصرية والشعار والكتالوج راجع ',
+    handoffNoteLink: 'صفحة الهوية البصرية',
+    handoffNoteAfter: '. لهذه الخدمة المكانية ابدأ من توريفا.',
     finalTitle: 'جاهز لمناقشة صالة بيع أو ديكور مكاني؟',
     finalLead: 'أرسل المخطط أو الموعد المستهدف. توريفا ترد بخطوة تالية واضحة خلال يوم عمل.',
   },
   en: {
-    file: 'galleries-advertising-en.html',
+    file: 'services/galleries-en.html',
+    legacyFile: 'galleries-advertising-en.html',
     lang: 'en',
     dir: 'ltr',
     title: 'Galleries & Spatial Décor | Graphics House',
     description:
       'Sales galleries, exhibition spaces, and spatial décor for GCC developments. Graphics House sets the visual brief; Turriva delivers the physical space.',
-    canonical: 'https://3dgraphicshouse.com/galleries-advertising-en.html',
-    altEn: 'https://3dgraphicshouse.com/galleries-advertising-en.html',
-    altAr: 'https://3dgraphicshouse.com/galleries-advertising.html',
-    skip: 'Skip to main content',
+    canonical: 'https://3dgraphicshouse.com/services/galleries-en.html',
+    altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
+    altAr: 'https://3dgraphicshouse.com/services/galleries.html',
     kicker: 'Our services · Spatial décor',
     h1: 'Galleries <span>&amp; spatial décor</span>',
     lead:
       'We design the sales gallery, pavilion, and exhibition experience in one visual language with the project. Physical build and handover run through Turriva — the group’s spatial delivery partner.',
     ctaPrimary: 'Continue to Turriva for delivery',
     ctaSecondary: 'Contact Graphics House',
-    contactHref: 'contact-us-en.html',
+    contactHref: '../contact-us-en.html',
+    brandingHref: 'branding-en.html',
     aboutTitle: 'What this service covers',
     aboutLead:
       'From project and brand intent to spatial concept and display materials, then handoff to Turriva for buildable delivery.',
@@ -122,8 +127,9 @@ const COPY = {
     handoffTitle: 'Turriva owns the build',
     handoffBody:
       'Graphics House defines the visual intent and journey. Turriva owns technical development, fabrication, installation, and handover until the space is ready to use or open.',
-    handoffNote:
-      'For logo, guidelines, and catalogue identity see <a href="services/branding-en.html">Visual Identity</a>. For this spatial service, start with Turriva.',
+    handoffNoteBefore: 'For logo, guidelines, and catalogue identity see ',
+    handoffNoteLink: 'Visual Identity',
+    handoffNoteAfter: '. For this spatial service, start with Turriva.',
     finalTitle: 'Ready to discuss a sales gallery or spatial décor?',
     finalLead: 'Send drawings or the target date. Turriva replies within one business day with a clear next step.',
   },
@@ -137,11 +143,13 @@ function esc(s) {
     .replace(/"/g, '&quot;');
 }
 
-function buildPage(t, isEn) {
-  const header = renderPartial(isEn ? 'header-en.html' : 'header-ar.html', 0, isEn);
-  const footer = renderPartial(isEn ? 'footer-en.html' : 'footer-ar.html', 0, isEn);
+function buildPage(t, isEn, depth) {
+  const prefix = depth > 0 ? '../'.repeat(depth) : '';
+  const asset = `${prefix}assets/`;
+  const header = renderPartial(isEn ? 'header-en.html' : 'header-ar.html', depth, isEn);
+  const footer = renderPartial(isEn ? 'footer-en.html' : 'footer-ar.html', depth, isEn);
   const font =
-    "family=Tajawal:wght@300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap";
+    'family=Tajawal:wght@300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap';
 
   const pillars = t.pillars
     .map(
@@ -157,18 +165,21 @@ function buildPage(t, isEn) {
       const wide = i === 0 ? ' gal-grid__item--wide' : '';
       return `<figure class="gal-grid__item${wide}">
  <picture>
-  <source srcset="assets/projects/galleries/${c.src}.webp" type="image/webp">
-  <img src="assets/projects/galleries/${c.src}.jpg" alt="${esc(c.label)}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async" width="1600" height="900">
+  <source srcset="${asset}projects/galleries/${c.src}.webp" type="image/webp">
+  <img src="${asset}projects/galleries/${c.src}.jpg" alt="${esc(c.label)}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async" width="1600" height="900">
  </picture>
  <figcaption class="gal-grid__cap">${esc(c.label)}</figcaption>
 </figure>`;
     })
     .join('\n');
 
+  const contactHref = depth === 0 ? t.contactHref.replace('../', '') : t.contactHref;
+  const brandingHref = depth === 0 ? `services/${t.brandingHref}` : t.brandingHref;
+
   let html = `<!DOCTYPE html>
 <html class="scroll-smooth" dir="${t.dir}" lang="${t.lang}">
 <head>
-<script src="assets/gh-forms-config.js?v=2"></script>
+<script src="${asset}gh-forms-config.js?v=2"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y67JVE898Z"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -176,7 +187,7 @@ window.gtag=gtag;
 gtag('js',new Date());
 gtag('config','G-Y67JVE898Z');
 </script>
-<script src="assets/gh-analytics.js?v=3"></script>
+<script src="${asset}gh-analytics.js?v=3"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="canonical" href="${t.canonical}">
@@ -185,6 +196,8 @@ gtag('config','G-Y67JVE898Z');
 <link rel="alternate" hreflang="x-default" href="${t.altEn}">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
 <title>${esc(t.title)}</title>
 <meta name="description" content="${esc(t.description)}">
 <meta property="og:type" content="website">
@@ -192,22 +205,22 @@ gtag('config','G-Y67JVE898Z');
 <meta property="og:description" content="${esc(t.description)}">
 <meta property="og:url" content="${t.canonical}">
 <meta property="og:image" content="https://3dgraphicshouse.com/assets/projects/galleries/makkah-charter-04.jpg">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
-<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="${asset}favicon/favicon-32.png">
+<link rel="apple-touch-icon" href="${asset}favicon/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?${font}" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="assets/gh-galleries-service.css?v=1">
-<link rel="stylesheet" href="assets/gh-float-widgets.css?v=15">
-<link rel="stylesheet" href="assets/gh-chat-assistant.css?v=10">
-<link rel="stylesheet" href="assets/site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
-<link rel="stylesheet" href="assets/gh-footer-lock.css?v=5" data-gh-footer-lock="1">
-<script defer src="assets/site-header.js?v=16"></script>
-<script defer src="assets/gh-performance.js?v=10"></script>
-<script defer src="assets/site-reveal.js?v=2"></script>
-<script defer src="assets/gh-cta-track.js?v=1"></script>
-<script defer src="assets/lang-switch.js?v=3"></script>
+<link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
+<link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=2">
+<link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
+<link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
+<link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
+<link rel="stylesheet" href="${asset}gh-footer-lock.css?v=5" data-gh-footer-lock="1">
+<script defer src="${asset}site-header.js?v=16"></script>
+<script defer src="${asset}gh-performance.js?v=10"></script>
+<script defer src="${asset}site-reveal.js?v=2"></script>
+<script defer src="${asset}gh-cta-track.js?v=1"></script>
+<script defer src="${asset}lang-switch.js?v=3"></script>
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -229,8 +242,8 @@ ${header}
  <section class="gal-hero">
   <div class="gal-hero__media" aria-hidden="true">
    <picture>
-    <source srcset="assets/projects/galleries/makkah-charter-04.webp" type="image/webp">
-    <img src="assets/projects/galleries/makkah-charter-04.jpg" alt="" width="1600" height="900" fetchpriority="high">
+    <source srcset="${asset}projects/galleries/makkah-charter-04.webp" type="image/webp">
+    <img src="${asset}projects/galleries/makkah-charter-04.jpg" alt="" width="1600" height="900" fetchpriority="high">
    </picture>
   </div>
   <div class="gal-hero__shade" aria-hidden="true"></div>
@@ -240,7 +253,7 @@ ${header}
    <p class="gal-hero__lead">${esc(t.lead)}</p>
    <div class="gal-cta-row">
     <a class="gal-btn gal-btn--gold" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_to_turriva">${esc(t.ctaPrimary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
-    <a class="gal-btn gal-btn--ghost" href="${t.contactHref}" data-gh-cta="galleries_contact">${esc(t.ctaSecondary)}</a>
+    <a class="gal-btn gal-btn--ghost" href="${contactHref}" data-gh-cta="galleries_contact">${esc(t.ctaSecondary)}</a>
    </div>
   </div>
  </section>
@@ -265,7 +278,7 @@ ${header}
  <section class="gal-section gal-section--paper">
   <div class="gal-wrap gal-handoff">
    <div>
-    <p class="gal-handoff__note">${t.handoffNote}</p>
+    <p class="gal-handoff__note">${esc(t.handoffNoteBefore)}<a href="${brandingHref}">${esc(t.handoffNoteLink)}</a>${esc(t.handoffNoteAfter)}</p>
    </div>
    <div class="gal-handoff__card">
     <span class="gal-kicker">${esc(t.handoffKicker)}</span>
@@ -282,27 +295,48 @@ ${header}
    <p class="gal-section__lead" style="margin:12px auto 0">${esc(t.finalLead)}</p>
    <div class="gal-cta-row" style="justify-content:center;margin-top:28px">
     <a class="gal-btn gal-btn--dark" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_turriva_final">${esc(t.ctaPrimary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
-    <a class="gal-btn gal-btn--outline" href="${t.contactHref}" data-gh-cta="galleries_contact_final">${esc(t.ctaSecondary)}</a>
+    <a class="gal-btn gal-btn--outline" href="${contactHref}" data-gh-cta="galleries_contact_final">${esc(t.ctaSecondary)}</a>
    </div>
   </div>
  </section>
 </main>
 ${footer}
-<script defer src="assets/gh-float-widgets.js?v=18"></script>
-<script defer src="assets/gh-chat-assistant.js?v=18"></script>
+<script defer src="${asset}gh-float-widgets.js?v=18"></script>
+<script defer src="${asset}gh-chat-assistant.js?v=18"></script>
 </body>
 </html>
 `;
 
   html = stripConflictingHeaderStyles(html);
-  html = ensureHeaderCssLast(html, 'assets/');
-  html = ensureFooterLockCssLast(html, 'assets/');
+  html = ensureHeaderCssLast(html, asset);
+  html = ensureFooterLockCssLast(html, asset);
   return html;
+}
+
+function writeLegacyRedirect(fromFile, toPath, isEn) {
+  const title = isEn ? 'Redirecting to Galleries…' : 'جارٍ التحويل إلى الجاليريات…';
+  const html = `<!DOCTYPE html>
+<html lang="${isEn ? 'en' : 'ar'}" dir="${isEn ? 'ltr' : 'rtl'}">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="refresh" content="0;url=${toPath}">
+<link rel="canonical" href="https://3dgraphicshouse.com${toPath}">
+<meta name="robots" content="noindex,follow">
+<title>${title}</title>
+<script>location.replace('${toPath}');</script>
+</head>
+<body><p><a href="${toPath}">${isEn ? 'Continue to Galleries & Spatial Décor' : 'متابعة إلى جاليريات وديكور مكاني'}</a></p></body>
+</html>
+`;
+  fs.writeFileSync(path.join(ROOT, fromFile), html, 'utf8');
 }
 
 for (const [key, t] of Object.entries(COPY)) {
   const isEn = key === 'en';
-  const html = buildPage(t, isEn);
-  fs.writeFileSync(path.join(ROOT, t.file), html, 'utf8');
-  console.log('Wrote', t.file);
+  fs.mkdirSync(path.join(ROOT, 'services'), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, t.file), buildPage(t, isEn, 1), 'utf8');
+  writeLegacyRedirect(t.legacyFile, `/${t.file}`, isEn);
+  console.log('Wrote', t.file, '+ legacy', t.legacyFile);
 }
