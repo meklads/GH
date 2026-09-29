@@ -66,10 +66,10 @@ window.GH_DIRECT = {
       pageBrand: 'GH Direct',
       pageLead:
         'ثلاث لحظات للمشروع: تعريف، بناء، وإطلاق وبيع. اختر الباقة المطابقة — أسعار تبدأ من رقم معلن، دون دفع إلكتروني.',
-      pageEyebrowPublic: 'اختيار مباشر · عرض سعر بعد الاجتماع',
+      pageEyebrowPublic: 'مدخل تنفيذي لأنظمة الإطلاق ™ · عرض سعر بعد الاجتماع',
       pageTitlePublic: 'باقات وخدمات لمشروعك',
       pageLeadPublic:
-        'ثلاث لحظات للمشروع: تعريف، بناء، وإطلاق وبيع. اختر الباقة أو ابنِ مزيجك — التسعير يُؤكَّد بعد الاجتماع، دون دفع إلكتروني.',
+        'ثلاث لحظات للمشروع تحت أنظمة الإطلاق ™: تعريف، بناء، وإطلاق وبيع. اختر الباقة أو ابنِ مزيجك — التسعير يُؤكَّد بعد الاجتماع، دون دفع إلكتروني.',
       postureTitle: 'مراحل مشروعك',
       postureLead: 'ثلاث مراحل لمشروع المطوّر العقاري. حدّد مرحلتك ثم اختر الباقة.',
       catalogTitle: 'كتالوج الخدمات',
@@ -94,7 +94,7 @@ window.GH_DIRECT = {
       },
       packagesTitle: 'الباقات',
       packagesLead: 'نواة وانطلاق بأسعار معلنة · توقيع بعرض سعر بعد الاجتماع.',
-      packagesLeadPublic: 'ثلاث باقات حسب مرحلة المشروع · التسعير بعرض سعر بعد الاجتماع.',
+      packagesLeadPublic: 'ثلاث باقات حسب مرحلة المشروع — مدخل تنفيذي للمنتجات · التسعير بعرض سعر بعد الاجتماع.',
       packagesFoot: 'السعر النهائي يُحدَّد بعد الاجتماع',
       stageLabel: 'اللحظة',
       stagePrefix: '',
@@ -333,10 +333,10 @@ window.GH_DIRECT = {
       pageBrand: 'GH Direct',
       pageLead:
         'Three project moments: Define, Build, and Launch & Sell. Choose the matching package — published starting-from prices, no online checkout.',
-      pageEyebrowPublic: 'Direct selection · Quote after the meeting',
+      pageEyebrowPublic: 'Executive entry to Launch Systems ™ · Quote after the meeting',
       pageTitlePublic: 'Packages and services for your project',
       pageLeadPublic:
-        'Three project moments: Define, Build, and Launch & Sell. Choose a package or build your mix — pricing confirmed after the meeting, no online checkout.',
+        'Three project moments under Launch Systems ™: Define, Build, and Launch & Sell. Choose a package or build your mix — pricing confirmed after the meeting, no online checkout.',
       postureTitle: 'Your project stages',
       postureLead: 'Three stages for a real-estate developer project. Identify your stage, then choose the package.',
       catalogTitle: 'Service catalog',
@@ -361,7 +361,7 @@ window.GH_DIRECT = {
       },
       packagesTitle: 'Packages',
       packagesLead: 'Core and Launch with published from-prices · Signature quoted after the meeting.',
-      packagesLeadPublic: 'Three packages by project stage · Pricing quoted after the meeting.',
+      packagesLeadPublic: 'Three packages by project stage — an executive entry to the products · Pricing quoted after the meeting.',
       packagesFoot: 'Final price is set after the meeting',
       stageLabel: 'Moment',
       stagePrefix: '',
