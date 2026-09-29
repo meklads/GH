@@ -52,7 +52,6 @@ const SITEMAP_SKIP = new Set([
  'smart-maquettes-en.html',
  'interactive-experiences.html',
  'interactive-experiences-en.html',
- 'galleries-advertising.html',
  'contact.html',
  'case-study-alrajhi-en.html',
  'case-study-anan-eskan-en.html',
