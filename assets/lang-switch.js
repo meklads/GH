@@ -40,6 +40,8 @@
     'interactive-experiences.html': 'services/interactive-experiences-en.html',
     'real-estate.html': 'real-estate/',
     'real-estate-en.html': 'real-estate/',
+    'galleries-advertising.html': 'galleries-advertising-en.html',
+    'galleries-advertising-en.html': 'galleries-advertising.html',
   };
 
   var HAS_EN = {

@@ -128,6 +128,8 @@ const EXPLICIT_PAIRS = {
  'collaborators-en.html': 'collaborators.html',
  'partner-network.html': 'partner-network-en.html',
  'partner-network-en.html': 'partner-network.html',
+ 'galleries-advertising.html': 'galleries-advertising-en.html',
+ 'galleries-advertising-en.html': 'galleries-advertising.html',
 };
 
 /** services/foo.html ↔ services/foo-en.html */
@@ -175,7 +177,6 @@ function seoTags(rel) {
  'media-production.html': `${BASE}/services/production.html`,
  'smart-maquettes.html': `${BASE}/services/maquettes.html`,
  'interactive-experiences.html': `${BASE}/services/interactive-experiences.html`,
- 'galleries-advertising.html': `${BASE}/services/branding.html`,
  'contact.html': `${BASE}/contact-us.html`,
  };
  if (legacyServiceCanon[rel]) {
@@ -457,7 +458,7 @@ function wrapPortfolioHeroWebp(html, rel) {
 
 function fixServiceLinks(html, rel) {
  if (!rel.startsWith('services/')) return html;
- let out = html.replace(/href="galleries-advertising-en\.html"/g, 'href="branding-en.html"');
+ let out = html;
  if (rel.endsWith('-en.html')) {
  out = out.replace(/href="\.\.\/contact\.html"/g, 'href="../contact-us-en.html"');
  } else if (rel === 'services/vr-360.html' || rel === 'services/interactive.html') {
@@ -713,7 +714,6 @@ const LEGACY_SERVICE_ROOT = {
  'media-production.html': 'services/production.html',
  'smart-maquettes.html': 'services/maquettes.html',
  'interactive-experiences.html': 'services/interactive-experiences.html',
- 'galleries-advertising.html': 'services/branding.html',
  'contact.html': 'contact-us.html',
  'blog.html': 'insights/index.html',
  'offer-en.html': 'contact-us-en.html',
