@@ -135,16 +135,19 @@ const SHOWCASE = [
 
 const COPY = {
  ar: {
- title: 'الهوية البصرية والأنظمة المكانية | Graphics House',
+ title: 'الهوية البصرية | Graphics House',
  description:
- 'من الشعار إلى اللافتة المضيئة والكتالوج وجناح المعرض: نظام بصري واحد للمشاريع العقارية والملتقيات في السعودية والخليج. جزء من ProjectLaunch™ وBrandScale™.',
+ 'من الشعار إلى الكتالوج واللافتة: نظام بصري واحد للمشاريع العقارية والملتقيات في السعودية والخليج. جزء من ProjectLaunch™ وBrandScale™.',
  kicker: 'خدماتنا · الهوية البصرية',
- h1Line1: 'الهوية البصرية والأنظمة المكانية',
+ h1Line1: 'الهوية البصرية',
  h1Gold: 'من الشعار إلى اللافتة المُضيِّئة',
  subtitle:
- 'نظام بصري متكامل للمشاريع والملتقيات, شعار، كتالوج، وتطبيق مكاني من استوديو واحد.',
+ 'نظام بصري متكامل للمشاريع والملتقيات: شعار، كتالوج، وتطبيق على المواد المطبوعة والرقمية من استوديو واحد.',
  ctaPrimary: 'ابدأ مشروع الهوية',
- ctaCase: 'استكشف الأعمال',
+ ctaCase: 'جاليريات وديكور مكاني',
+ ctaCaseHref: '../galleries-advertising.html',
+ ctaCaseIcon: 'apartment',
+ ctaCaseEvent: 'branding_to_galleries',
  stats: [
  { n: '7+', label: 'علامات وهويات منجزة' },
  { n: '44', label: 'صفحة كتالوج, ملتقى جدة' },
@@ -186,16 +189,19 @@ const COPY = {
  finalBody: 'أرسل الموجز أو احجز جلسة. نرد خلال ٢٤ ساعة بمسار واضح للهوية والمخرجات.',
  },
  en: {
- title: 'Visual Identity & Spatial Brand Systems | Graphics House',
+ title: 'Visual Identity | Graphics House',
  description:
- 'From logo to illuminated signage, catalogue, and exhibition pavilion: one visual system for developments and forums across KSA and the GCC. Part of ProjectLaunch™ and BrandScale™.',
+ 'From logo to catalogue and signage: one visual system for developments and forums across KSA and the GCC. Part of ProjectLaunch™ and BrandScale™.',
  kicker: 'Our Services · Visual Identity',
- h1Line1: 'Visual identity & spatial brand systems',
+ h1Line1: 'Visual identity',
  h1Gold: 'from logo to illuminated signage',
  subtitle:
- 'One integrated system for developments and forums, logo, catalogue, and spatial application from a single studio.',
+ 'One integrated system for developments and forums: logo, catalogue, and application across print and digital from a single studio.',
  ctaPrimary: 'Start your identity project',
- ctaCase: 'Explore the work',
+ ctaCase: 'Galleries & spatial décor',
+ ctaCaseHref: '../galleries-advertising-en.html',
+ ctaCaseIcon: 'apartment',
+ ctaCaseEvent: 'branding_to_galleries',
  stats: [
  { n: '7+', label: 'Brands & identities delivered' },
  { n: '44', label: 'Catalogue pages, Jeddah Forum' },
@@ -363,7 +369,7 @@ function page(lang) {
  const schema = JSON.stringify({
  '@context': 'https://schema.org',
  '@type': 'Service',
- name: isEn ? 'Visual Identity & Spatial Brand Systems' : 'الهوية البصرية والأنظمة المكانية',
+ name: isEn ? 'Visual Identity' : 'الهوية البصرية',
  description: t.description,
  url: canonical,
  provider: { '@type': 'Organization', name: 'Graphics House', url: BASE },
@@ -427,8 +433,8 @@ ${header}
  <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">brush</span>
  <span>${esc(t.ctaPrimary)}</span>
  </a>
- <a href="#bid-gallery" class="gh-damac-btn gh-damac-btn-outline" data-gh-cta="branding_gallery">
- <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">collections</span>
+ <a href="${t.ctaCaseHref || '#bid-gallery'}" class="gh-damac-btn gh-damac-btn-outline" data-gh-cta="${t.ctaCaseEvent || 'branding_gallery'}">
+ <span class="material-symbols-outlined" style="font-size:18px;line-height:1;flex-shrink:0">${t.ctaCaseIcon || 'collections'}</span>
  <span>${esc(t.ctaCase)}</span>
  </a>
  </div>
