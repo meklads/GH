@@ -1043,14 +1043,20 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  </div>
  <div class="lp-film-frame reveal r1">
  <video
- controls
- playsinline
- preload="metadata"
- poster="../assets/photography/slide_image_7.png"
- aria-label="فيلم الإنتاج الإعلامي، Graphics House">
- <source src="../assets/videos/GH-Marketing-Media-Production.mp4" type="video/mp4" media="(min-width: 768px)">
- <source src="../assets/videos/GH-Marketing-Media-Production-mobile.mp4" type="video/mp4">
- </video>
+  class="gh-autoplay gh-ambient-loop"
+  autoplay
+  loop
+  muted
+  playsinline
+  webkit-playsinline
+  controls
+  preload="metadata"
+  poster="../assets/photography/slide_image_7.png"
+  data-gh-ambient="1"
+  data-pl-src="../assets/videos/GH-Marketing-Media-Production.mp4"
+  data-pl-src-mobile="../assets/videos/GH-Marketing-Media-Production-mobile.mp4"
+  aria-label="فيلم الإنتاج الإعلامي، Graphics House"
+ ></video>
  </div>
  </div>
 </section>
