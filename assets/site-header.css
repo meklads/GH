@@ -320,7 +320,7 @@ body:has(.nav-mega-item.is-open) .gh-float {
   /* EN: tighter so About…Insights stay inside the pill */
   html[dir="ltr"] .nav-link,
   html[dir="ltr"] .nav button.nav-link {
-    font-size: 10px;
+    font-size: 10px !important;
     font-weight: 650;
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.88);
@@ -484,7 +484,7 @@ body:has(.nav-mega-item.is-open) .gh-float {
   }
   html[dir="ltr"] .nav-link,
   html[dir="ltr"] .nav button.nav-link {
-    font-size: 9.5px;
+    font-size: 9.5px !important;
     letter-spacing: 0.02em;
     padding: 0 5px !important;
     gap: 2px !important;
@@ -545,7 +545,7 @@ body:has(.nav-mega-item.is-open) .gh-float {
   }
   html[dir="ltr"] .nav-link,
   html[dir="ltr"] .nav button.nav-link {
-    font-size: 10.5px;
+    font-size: 10.5px !important;
     letter-spacing: 0.035em;
     padding: 0 8px !important;
     gap: 3px !important;
