@@ -29,15 +29,15 @@ const COPY = {
     dir: 'rtl',
     title: 'صالات البيع ومعارض المطورين | توريفا عبر Graphics House',
     description:
-      'توريفا تصمّم وتنفّذ صالات البيع ومعارض المطورين — من الفكرة والرسومات إلى التصنيع والتركيب والتسليم. مع إمكانية ديكور القصور والفنادق عند الحاجة.',
+      'توريفا تصمّم وتنفّذ صالات البيع ومعارض المشاريع للمطورين في المملكة والخليج — من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
     canonical: 'https://3dgraphicshouse.com/services/galleries.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
-    kicker: 'توريفا · تخصص بيئات البيع',
+    kicker: 'توريفا · متخصصون في بيئات البيع العقاري',
     h1: 'صالات البيع <span>ومعارض المطورين</span>',
     lead:
-      'التخصص الأساسي: تصميم وتنفيذ صالات البيع ومعارض المشاريع للمطورين في المملكة والخليج. توريفا تملك الفكرة والرسومات والتصنيع والتركيب والتسليم — وفي الحالات المناسبة يمكن تنفيذ ديكور القصور والفنادق بنفس المسار.',
-    ctaPrimary: 'ابدأ مع توريفا',
+      'نصمّم ونُنفّذ صالات البيع ومعارض المشاريع للمطورين في المملكة والخليج. توريفا تتولّى المسار كاملًا: الفكرة، التصميم، التصنيع، التركيب، والتسليم.',
+    ctaPrimary: 'ابدأ مشروعك مع توريفا',
     ctaSecondary: 'تواصل مع Graphics House',
     contactHref: '../contact-us.html',
     brandingHref: 'branding.html',
@@ -128,15 +128,15 @@ const COPY = {
     dir: 'ltr',
     title: 'Sales Galleries & Developer Exhibitions | Turriva via Graphics House',
     description:
-      'Turriva designs and builds developer sales galleries and project exhibitions — from concept and drawings to fabrication, install, and handover. Palace and hotel décor available when the brief fits.',
+      'Turriva designs and builds sales galleries and project exhibitions for developers across KSA and the GCC — from concept and design to fabrication, installation, and handover.',
     canonical: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
-    kicker: 'Turriva · Sales-environment specialty',
+    kicker: 'Turriva · Specialists in real-estate sales environments',
     h1: 'Sales galleries <span>&amp; developer exhibitions</span>',
     lead:
-      'Core specialty: design and build of sales galleries and project exhibitions for developers across KSA and the GCC. Turriva owns concept, drawings, fabrication, install, and handover — with palace and hotel décor available on the same path when the brief fits.',
-    ctaPrimary: 'Start with Turriva',
+      'We design and build sales galleries and project exhibitions for developers across KSA and the GCC. Turriva owns the full path: concept, design, fabrication, installation, and handover.',
+    ctaPrimary: 'Start your project with Turriva',
     ctaSecondary: 'Contact Graphics House',
     contactHref: '../contact-us-en.html',
     brandingHref: 'branding-en.html',
@@ -310,7 +310,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
 <link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=10">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=11">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
