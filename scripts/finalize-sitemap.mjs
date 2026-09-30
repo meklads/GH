@@ -40,6 +40,17 @@ function isRedirectOrNoindex(loc) {
   return false;
 }
 
+const ENSURE_PATHS = [
+  ['services/galleries.html', '0.75'],
+  ['services/galleries-en.html', '0.75'],
+];
+for (const [rel, priority] of ENSURE_PATHS) {
+  const loc = `${BASE}/${rel}`;
+  if (!byLoc.has(loc) && fs.existsSync(path.join(ROOT, rel)) && !isRedirectOrNoindex(loc)) {
+    byLoc.set(loc, { lastmod: new Date().toISOString().slice(0, 10), priority });
+  }
+}
+
 const today = new Date().toISOString().slice(0, 10);
 const urls = [...byLoc.entries()]
   .filter(([loc]) => !isRedirectOrNoindex(loc))

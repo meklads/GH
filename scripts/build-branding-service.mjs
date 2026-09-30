@@ -144,8 +144,8 @@ const COPY = {
  subtitle:
  'نظام بصري متكامل للمشاريع والملتقيات: شعار، كتالوج، وتطبيق على المواد المطبوعة والرقمية من استوديو واحد.',
  ctaPrimary: 'ابدأ مشروع الهوية',
- ctaCase: 'جاليريات وديكور مكاني',
- ctaCaseHref: '../galleries-advertising.html',
+ ctaCase: 'معارض وصالات البيع',
+ ctaCaseHref: '../services/galleries.html',
  ctaCaseIcon: 'apartment',
  ctaCaseEvent: 'branding_to_galleries',
  stats: [
@@ -198,8 +198,8 @@ const COPY = {
  subtitle:
  'One integrated system for developments and forums: logo, catalogue, and application across print and digital from a single studio.',
  ctaPrimary: 'Start your identity project',
- ctaCase: 'Galleries & spatial décor',
- ctaCaseHref: '../galleries-advertising-en.html',
+ ctaCase: 'Exhibitions & sales galleries',
+ ctaCaseHref: '../services/galleries-en.html',
  ctaCaseIcon: 'apartment',
  ctaCaseEvent: 'branding_to_galleries',
  stats: [
