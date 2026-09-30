@@ -37,7 +37,7 @@ const COPY = {
     lead:
       'نصمّم وننفّذ معارض المطورين وصالات البيع في المملكة والخليج، ونتولّى المسار كاملًا: من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
     ctaPrimary: 'ناقش مشروعك معنا',
-    contactHref: '../contact-us.html',
+    contactHref: '../contact-us.html?intent=exhibition',
     brandingHref: 'branding.html',
     scopeKicker: 'مجالات عملنا',
     aboutTitle: 'معارض المطورين تخصصنا، وخبرتنا تمتد إلى ما حولها',
@@ -48,7 +48,7 @@ const COPY = {
         badge: 'التخصص الأساسي',
         title: 'معارض المطورين',
         body:
-          'معارض بمعايير مؤسسية، تُدار من اعتماد الفكرة حتى التسليم، بتخطيط يضمن الجاهزية قبل موعد الافتتاح.',
+          'معارض بمعايير مؤسسية، يُدار فيها كل شيء بتخطيط يضمن الجاهزية قبل موعد الافتتاح.',
         featured: true,
       },
       {
@@ -106,7 +106,7 @@ const COPY = {
     proofKicker: 'إثبات ميداني',
     proofTitle: 'معرض رابطة العالم الإسلامي',
     proofLead:
-      'معرض بأدوات عرض وديكور مكاني بمعايير مؤسسية، نُفّذ من الفكرة البصرية حتى التسليم الميداني. هو المنطق ذاته الذي نطبّقه في صالات المطورين، على نطاق مؤسسي أوسع.',
+      'معرض بأدوات عرض وديكور مكاني، نُفّذ من الفكرة البصرية حتى التسليم الميداني. هو المنطق ذاته الذي نطبّقه في صالات المطورين، على نطاق أوسع وبمتطلبات جهة مؤسسية.',
     proofWatch: 'شاهد بالصوت',
     proofTag: 'تصميم · رسومات · تنفيذ ميداني',
     ytId: 'H66KNP1sQCk',
@@ -116,9 +116,9 @@ const COPY = {
     handoffNoteExtra:
       'لمعارض المطورين وصالات البيع، وديكور القصور والفنادق عند الحاجة، نتولّى التصميم والتنفيذ.',
     contactKicker: 'التواصل',
-    contactTitle: 'جهة واحدة من الفكرة حتى التسليم',
+    contactTitle: 'جهة تواصل واحدة من الفكرة حتى التسليم',
     contactBody:
-      'تتولّى Graphics House التواصل معك وتصميم التجربة حتى التسليم، والتنفيذ الميداني عبر توريفا، الذراع التنفيذية لمجموعة تسامي في المعارض وصالات البيع.',
+      'تتولّى Graphics House التواصل معك وتصميم التجربة، ويُنفَّذ المشروع ميدانيًا عبر توريفا، الذراع التنفيذية لمجموعة تسامي في المعارض وصالات البيع.',
     contactInvite: 'جاهز لمناقشة معرض لمشروعك أو صالة بيع؟',
     contactLead:
       'أرسل الموقع أو الموعد أو مخططًا أوليًا. نبدأ بقراءة المشروع وتصميم تجربة الزائر، ثم ننتقل إلى التنفيذ بخطوة تالية واضحة خلال يوم عمل.',
@@ -139,7 +139,7 @@ const COPY = {
     lead:
       'We design and build developer exhibitions and sales galleries across KSA and the GCC, and we own the full path: from concept and design to fabrication, installation, and handover.',
     ctaPrimary: 'Discuss your project with us',
-    contactHref: '../contact-us-en.html',
+    contactHref: '../contact-us-en.html?intent=exhibition',
     brandingHref: 'branding-en.html',
     scopeKicker: 'What we do',
     aboutTitle: 'Developer exhibitions are our specialty, and our expertise extends around them',
@@ -150,7 +150,7 @@ const COPY = {
         badge: 'Core specialty',
         title: 'Developer exhibitions',
         body:
-          'Exhibitions at institutional standard — managed from concept approval through handover, with planning that protects readiness before opening day.',
+          'Exhibitions at institutional standard — everything planned to protect readiness before opening day.',
         featured: true,
       },
       {
@@ -208,7 +208,7 @@ const COPY = {
     proofKicker: 'Field proof',
     proofTitle: 'Muslim World League exhibition',
     proofLead:
-      'An exhibition with display tools and spatial décor at institutional standard, delivered from visual concept through field handover. The same logic we apply in developer sales galleries — at a wider institutional scale.',
+      'An exhibition with display tools and spatial décor, delivered from visual concept through field handover. The same logic we apply in developer sales galleries — at a wider scale, under institutional-client requirements.',
     proofWatch: 'Watch with sound',
     proofTag: 'Design · drawings · field install',
     ytId: 'H66KNP1sQCk',
@@ -218,9 +218,9 @@ const COPY = {
     handoffNoteExtra:
       'For developer exhibitions and sales galleries, and palace or hotel décor when needed, we own design and build.',
     contactKicker: 'Contact',
-    contactTitle: 'One team from idea to handover',
+    contactTitle: 'One point of contact from idea to handover',
     contactBody:
-      'Graphics House owns your contact path and experience design through handover, with field delivery through Turriva — Tasami Group’s executive arm for exhibitions and sales galleries.',
+      'Graphics House owns your contact path and experience design, and the project is delivered on site through Turriva — Tasami Group’s executive arm for exhibitions and sales galleries.',
     contactInvite: 'Ready to discuss an exhibition for your project or a sales gallery?',
     contactLead:
       'Send the site, target date, or an early plan. We start by reading the project and designing the visitor experience, then move to delivery with a clear next step within one business day.',
@@ -320,7 +320,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
 <link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=16">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=17">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
