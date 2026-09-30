@@ -568,6 +568,11 @@ html[lang="ar"] .gal-step strong {
   text-underline-offset: 3px;
 }
 
+.gal-work-notes {
+  margin-top: 36px;
+  max-width: 42rem;
+}
+
 .gal-final {
   padding: 96px 0;
   background: #0A0A0A;
@@ -578,6 +583,10 @@ html[lang="ar"] .gal-step strong {
   text-align: center;
   max-width: 44rem;
   margin: 0 auto;
+}
+
+.gal-final .gal-kicker {
+  margin-bottom: 12px;
 }
 
 .gal-final h2 {
@@ -594,11 +603,26 @@ html[lang="ar"] .gal-final h2 {
   font-weight: 800;
 }
 
+.gal-final__body,
 .gal-final__lead {
   margin: 16px auto 0;
   font-size: 16px;
   line-height: 1.85;
   color: rgba(250, 250, 248, 0.72);
+}
+
+.gal-final__invite {
+  margin: 28px auto 0;
+  font-family: var(--gal-heading);
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: #FAFAF8;
+}
+
+html[lang="ar"] .gal-final__invite {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 800;
 }
 
 .gal-final__cta {

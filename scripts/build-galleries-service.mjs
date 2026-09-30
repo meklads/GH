@@ -26,9 +26,9 @@ const COPY = {
     legacyFile: 'galleries-advertising.html',
     lang: 'ar',
     dir: 'rtl',
-    title: 'معارض المطورين وصالات البيع | توريفا عبر Graphics House',
+    title: 'معارض المطورين وصالات البيع | Graphics House',
     description:
-      'نصمّم وننفّذ معارض المطورين وصالات البيع في المملكة والخليج، ونتولّى المسار كاملًا: من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
+      'تصمّم Graphics House وتنفّذ معارض المطورين وصالات البيع في المملكة والخليج، من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
     canonical: 'https://3dgraphicshouse.com/services/galleries.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
@@ -36,10 +36,9 @@ const COPY = {
     h1: 'معارض المطورين <span>وصالات البيع</span>',
     lead:
       'نصمّم وننفّذ معارض المطورين وصالات البيع في المملكة والخليج، ونتولّى المسار كاملًا: من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
-    ctaPrimary: 'تواصل مع Graphics House',
+    ctaPrimary: 'ناقش مشروعك معنا',
     contactHref: '../contact-us.html',
     brandingHref: 'branding.html',
-    turrivaAside: 'توريفا هي الذراع التنفيذي لمجموعة تسامي لتنفيذ المعارض وصالات البيع.',
     scopeKicker: 'مجالات عملنا',
     aboutTitle: 'معارض المطورين تخصصنا، وخبرتنا تمتد إلى ما حولها',
     aboutLead:
@@ -49,7 +48,7 @@ const COPY = {
         badge: 'التخصص الأساسي',
         title: 'معارض المطورين',
         body:
-          'معارض احترافية بمعايير مؤسسية، تُدار باعتماد الفكرة ثم التنفيذ، بتخطيط يضمن الجاهزية قبل موعد الافتتاح.',
+          'معارض بمعايير مؤسسية، تُدار من اعتماد الفكرة حتى التسليم، بتخطيط يضمن الجاهزية قبل موعد الافتتاح.',
         featured: true,
       },
       {
@@ -111,17 +110,17 @@ const COPY = {
     proofWatch: 'شاهد بالصوت',
     proofTag: 'تصميم · رسومات · تنفيذ ميداني',
     ytId: 'H66KNP1sQCk',
-    handoffKicker: 'التواصل',
-    handoffTitle: 'معارض المطورين وصالات البيع، بمسار تنفيذ واحد',
-    handoffBody:
-      'جهة التواصل واحدة: Graphics House. نبدأ معك من تصميم التجربة حتى التسليم، والتنفيذ الميداني يتم عبر توريفا ضمن مجموعة تسامي.',
     handoffNoteBefore: 'للهوية البصرية والشعار والكتالوج، راجع ',
     handoffNoteLink: 'صفحة الهوية البصرية',
     handoffNoteAfter: '.',
     handoffNoteExtra:
-      'ولمعارض المطورين وصالات البيع، وديكور القصور والفنادق عند الحاجة، نتولّى التصميم والتنفيذ.',
-    finalTitle: 'جاهز لمناقشة معرض لمشروعك أو صالة بيع؟',
-    finalLead:
+      'لمعارض المطورين وصالات البيع، وديكور القصور والفنادق عند الحاجة، نتولّى التصميم والتنفيذ.',
+    contactKicker: 'التواصل',
+    contactTitle: 'جهة واحدة من الفكرة حتى التسليم',
+    contactBody:
+      'تتولّى Graphics House التواصل معك وتصميم التجربة حتى التسليم، والتنفيذ الميداني عبر توريفا، الذراع التنفيذية لمجموعة تسامي في المعارض وصالات البيع.',
+    contactInvite: 'جاهز لمناقشة معرض لمشروعك أو صالة بيع؟',
+    contactLead:
       'أرسل الموقع أو الموعد أو مخططًا أوليًا. نبدأ بقراءة المشروع وتصميم تجربة الزائر، ثم ننتقل إلى التنفيذ بخطوة تالية واضحة خلال يوم عمل.',
   },
   en: {
@@ -129,9 +128,9 @@ const COPY = {
     legacyFile: 'galleries-advertising-en.html',
     lang: 'en',
     dir: 'ltr',
-    title: 'Developer Exhibitions & Sales Galleries | Turriva via Graphics House',
+    title: 'Developer Exhibitions & Sales Galleries | Graphics House',
     description:
-      'We design and build developer exhibitions and sales galleries across KSA and the GCC, and we own the full path: from concept and design to fabrication, installation, and handover.',
+      'Graphics House designs and builds developer exhibitions and sales galleries across KSA and the GCC, from concept and design to fabrication, installation, and handover.',
     canonical: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
@@ -139,10 +138,9 @@ const COPY = {
     h1: 'Developer exhibitions <span>&amp; sales galleries</span>',
     lead:
       'We design and build developer exhibitions and sales galleries across KSA and the GCC, and we own the full path: from concept and design to fabrication, installation, and handover.',
-    ctaPrimary: 'Contact Graphics House',
+    ctaPrimary: 'Discuss your project with us',
     contactHref: '../contact-us-en.html',
     brandingHref: 'branding-en.html',
-    turrivaAside: 'Turriva is the Tasami Group executive arm for exhibitions and sales galleries.',
     scopeKicker: 'What we do',
     aboutTitle: 'Developer exhibitions are our specialty, and our expertise extends around them',
     aboutLead:
@@ -152,7 +150,7 @@ const COPY = {
         badge: 'Core specialty',
         title: 'Developer exhibitions',
         body:
-          'Professional exhibitions at institutional standard — managed from concept approval into delivery, with planning that protects readiness before opening day.',
+          'Exhibitions at institutional standard — managed from concept approval through handover, with planning that protects readiness before opening day.',
         featured: true,
       },
       {
@@ -214,17 +212,17 @@ const COPY = {
     proofWatch: 'Watch with sound',
     proofTag: 'Design · drawings · field install',
     ytId: 'H66KNP1sQCk',
-    handoffKicker: 'Contact',
-    handoffTitle: 'Developer exhibitions and sales galleries, on one delivery path',
-    handoffBody:
-      'One point of contact: Graphics House. We start with you from experience design through handover, with field delivery through Turriva within Tasami Group.',
     handoffNoteBefore: 'For logo, guidelines, and catalogue identity, see ',
     handoffNoteLink: 'Visual Identity',
     handoffNoteAfter: '.',
     handoffNoteExtra:
       'For developer exhibitions and sales galleries, and palace or hotel décor when needed, we own design and build.',
-    finalTitle: 'Ready to discuss an exhibition for your project or a sales gallery?',
-    finalLead:
+    contactKicker: 'Contact',
+    contactTitle: 'One team from idea to handover',
+    contactBody:
+      'Graphics House owns your contact path and experience design through handover, with field delivery through Turriva — Tasami Group’s executive arm for exhibitions and sales galleries.',
+    contactInvite: 'Ready to discuss an exhibition for your project or a sales gallery?',
+    contactLead:
       'Send the site, target date, or an early plan. We start by reading the project and designing the visitor experience, then move to delivery with a clear next step within one business day.',
   },
 };
@@ -322,7 +320,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
 <link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=15">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=16">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
@@ -365,7 +363,6 @@ ${header}
    <div class="gal-cta-row">
     <a class="gal-btn gal-btn--gold" href="${contactHref}" data-gh-cta="galleries_contact">${esc(t.ctaPrimary)}</a>
    </div>
-   <p class="gal-aside">${esc(t.turrivaAside)}</p>
   </div>
  </section>
 
@@ -416,33 +413,23 @@ ${header}
    <h2>${esc(t.workTitle)}</h2>
    <p class="gal-section__lead">${esc(t.workLead)}</p>
    <div class="gal-grid">${grid}</div>
-  </div>
- </section>
-
- <section class="gal-section">
-  <div class="gal-wrap gal-handoff">
-   <div>
+   <div class="gal-work-notes">
     <p class="gal-handoff__note">${esc(t.handoffNoteBefore)}<a href="${brandingHref}">${esc(t.handoffNoteLink)}</a>${esc(t.handoffNoteAfter)}</p>
     <p class="gal-handoff__note gal-handoff__note--follow">${esc(t.handoffNoteExtra)}</p>
    </div>
-   <div class="gal-handoff__card">
-    <span class="gal-kicker">${esc(t.handoffKicker)}</span>
-    <h2>${esc(t.handoffTitle)}</h2>
-    <p>${esc(t.handoffBody)}</p>
-    <p class="gal-aside gal-aside--on-dark">${esc(t.turrivaAside)}</p>
-    <a class="gal-btn gal-btn--gold" href="${contactHref}" data-gh-cta="galleries_contact_mid">${esc(t.ctaPrimary)}</a>
-   </div>
   </div>
  </section>
 
- <section class="gal-final">
+ <section class="gal-final" id="contact">
   <div class="gal-wrap gal-final__inner">
-   <h2>${esc(t.finalTitle)}</h2>
-   <p class="gal-final__lead">${esc(t.finalLead)}</p>
+   <span class="gal-kicker">${esc(t.contactKicker)}</span>
+   <h2>${esc(t.contactTitle)}</h2>
+   <p class="gal-final__body">${esc(t.contactBody)}</p>
+   <p class="gal-final__invite">${esc(t.contactInvite)}</p>
+   <p class="gal-final__lead">${esc(t.contactLead)}</p>
    <div class="gal-cta-row gal-final__cta">
     <a class="gal-btn gal-btn--gold" href="${contactHref}" data-gh-cta="galleries_contact_final">${esc(t.ctaPrimary)}</a>
    </div>
-   <p class="gal-aside gal-aside--on-dark gal-aside--center">${esc(t.turrivaAside)}</p>
   </div>
  </section>
 </main>
