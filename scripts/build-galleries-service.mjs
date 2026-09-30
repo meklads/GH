@@ -3,8 +3,8 @@
  * Build galleries / spatial décor service landings (AR + EN).
  * Canonical URLs live under /services/galleries*.html (avoids stale
  * browser cache of the old root redirect stub → branding).
- * Positioning: developer sales galleries & exhibitions are the flagship;
- * palace/hotel décor is a secondary capability via Turriva design-and-build.
+ * Positioning: developer exhibitions are the flagship; sales galleries
+ * are complementary; palace/hotel décor is additional via Turriva design-and-build.
  */
 import fs from 'fs';
 import path from 'path';
@@ -29,28 +29,28 @@ const COPY = {
     dir: 'rtl',
     title: 'معارض المطورين وصالات البيع | توريفا عبر Graphics House',
     description:
-      'توريفا تصمّم وتنفّذ معارض المطورين وصلات البيع في المملكة والخليج — من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
+      'نصمّم وننفّذ معارض المشاريع وصالات البيع للمطورين في المملكة والخليج، ونتولّى المسار كاملًا: من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
     canonical: 'https://3dgraphicshouse.com/services/galleries.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
     kicker: 'توريفا · متخصصون في بيئات البيع العقاري',
     h1: 'معارض المطورين <span>وصالات البيع</span>',
     lead:
-      'نصمّم ونُنفّذ معارض المشاريع وصلات البيع للمطورين في المملكة والخليج. توريفا تتولّى المسار كاملًا: الفكرة، التصميم، التصنيع، التركيب، والتسليم.',
-    ctaPrimary: 'ابدأ مشروعك مع توريفا',
-    ctaSecondary: 'تواصل مع Graphics House',
+      'نصمّم وننفّذ معارض المشاريع وصالات البيع للمطورين في المملكة والخليج، ونتولّى المسار كاملًا: من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
+    ctaPrimary: 'تواصل مع Graphics House',
+    ctaSecondary: 'ابدأ مشروعك مع توريفا',
     contactHref: '../contact-us.html',
     brandingHref: 'branding.html',
     scopeKicker: 'مجالات عملنا',
-    aboutTitle: 'معارض المطورين أولًا… ثم نتوسّع عند الحاجة',
+    aboutTitle: 'معارض المطورين تخصصنا، وخبرتنا تمتد إلى ما حولها',
     aboutLead:
-      'يحتاج المطوّر إلى معرض يعرض مشروعه بوضوح ويُقنع الزائر، وهذا جوهر عمل توريفا. ونمتد إلى صالات البيع وديكورات القصور والفنادق بمعايير التصميم والتنفيذ نفسها، دون أن يؤثر ذلك على تخصصنا الأساسي.',
+      'يحتاج المطوّر إلى معرض يعرض مشروعه بوضوح ويُقنع الزائر، وهذا جوهر عملنا. وبمعايير التصميم والتنفيذ نفسها ننفّذ صالات البيع وديكورات القصور والفنادق.',
     pillars: [
       {
         badge: 'التخصص الأساسي',
-        title: 'معارض وقاعات عرض المشاريع',
+        title: 'معارض المشاريع للمطورين',
         body:
-          'معارض مؤسسية بمعايير المطوّر والمؤسسة، تُدار من اعتماد الفكرة إلى التصنيع والتركيب والتسليم، وتكون جاهزة قبل موعد الافتتاح.',
+          'معارض مؤسسية بمعايير المطوّر والمؤسسة، تُدار من اعتماد الفكرة إلى التصنيع والتركيب والتسليم، بتخطيط يضمن الجاهزية قبل موعد الافتتاح.',
         featured: true,
       },
       {
@@ -70,18 +70,18 @@ const COPY = {
     processKicker: 'منهجية العمل',
     processTitle: 'من قرار العرض إلى معرض جاهز للافتتاح',
     processLead:
-      'أربع مراحل متسلسلة يقودها فريق توريفا، بحيث يصل المعرض إلى التصنيع وهو معتمد بالكامل، دون اجتهادات في الموقع ولا مفاجآت قبل الافتتاح.',
+      'أربع مراحل متسلسلة نقودها كفريق واحد، بحيث يصل المعرض إلى التصنيع وهو معتمد بالكامل، دون اجتهادات في الموقع ولا مفاجآت قبل الافتتاح.',
     steps: [
       {
         num: '01',
         title: 'فهم المشروع والجمهور',
-        body: 'نحدد الجمهور المستهدف وهوية المشروع وقصته التسويقية، ليخدم التصميم قرار الشراء ويُبرز المشروع بدل أن يقتصر على الزخرفة.',
+        body: 'نحدد الجمهور المستهدف وهوية المشروع وقصته التسويقية، ليخدم التصميم قرار الشراء ويُبرز المشروع، ولا يقتصر على الزخرفة.',
         featured: true,
       },
       {
         num: '02',
         title: 'تصميم التجربة وعرض الفكرة',
-        body: 'نطوّر مفهوم المعرض ومسار الزائر ونقاط الجذب، ونعرضها بصريًا لتحصل على موافقة أصحاب القرار مبكرًا.',
+        body: 'نطوّر مفهوم المعرض ومسار الزائر ونقاط الجذب، ونعرضها بصريًا لتُعتمد من أصحاب القرار مبكرًا.',
       },
       {
         num: '03',
@@ -91,37 +91,37 @@ const COPY = {
       {
         num: '04',
         title: 'تصنيع وتركيب وتسليم',
-        body: 'يتابع الفريق نفسه التنفيذ حتى التسليم والافتتاح، بالجودة والهوية البصرية المعتمدة.',
+        body: 'نتابع التنفيذ حتى التسليم والافتتاح، بالجودة والهوية البصرية المعتمدة.',
       },
     ],
-    workTitle: 'أعمال من صالات ومعارض منفَّذة',
+    workTitle: 'أعمال من معارض وصالات بيع منفَّذة',
     workLead:
-      'معظم الأعمال هنا من بيئات البيع والعرض للمطورين والمؤسسات — مع لمحات من ديكور داخلي عند اتساع النطاق.',
+      'معظم الأعمال هنا من معارض وصالات بيع للمطورين والمؤسسات، مع لمحات من ديكور داخلي عند اتساع النطاق.',
     caps: [
       { src: 'turriva/mwl-hero', label: 'معرض مؤسسي — رابطة العالم الإسلامي' },
-      { src: 'makkah-charter-04', label: 'قاعة عرض — ميثاق مكة' },
+      { src: 'makkah-charter-04', label: 'معرض — ميثاق مكة' },
       { src: 'turriva/anan-eskan-gallery', label: 'صالة بيع — عنان إسكان' },
-      { src: 'turriva/rafal-pavilions', label: 'بافيليونات عرض — رافال' },
+      { src: 'turriva/rafal-pavilions', label: 'معرض بافيليونات — رافال' },
       { src: 'turriva/project-joinery-b2b', label: 'نجارة وتركيب ميداني' },
       { src: 'turriva/hero-interior', label: 'ديكور داخلي — توسعة النطاق' },
     ],
     proofKicker: 'إثبات ميداني',
     proofTitle: 'معرض رابطة العالم الإسلامي',
     proofLead:
-      'معرض كبير بأدوات عرض وديكور مكاني بمعايير مؤسسية: من الفكرة البصرية إلى التسليم الميداني — نفس منطق صالات المطورين على مقياس مؤسسي.',
+      'معرض بأدوات عرض وديكور مكاني بمعايير مؤسسية، نُفّذ من الفكرة البصرية حتى التسليم الميداني. هو المنطق ذاته الذي نطبّقه في صالات المطورين، على نطاق مؤسسي أوسع.',
     proofWatch: 'شاهد بالصوت',
     proofTag: 'تصميم · رسومات · تنفيذ ميداني',
     ytId: 'H66KNP1sQCk',
     handoffKicker: 'توريفا',
-    handoffTitle: 'تصميم وتنفيذ صالات البيع… في مسار واحد',
+    handoffTitle: 'معارض المطورين وصالات البيع، بمسار تنفيذ واحد',
     handoffBody:
-      'توريفا متخصصة في بيئات البيع والعرض للمطورين: تصميم التجربة، الرسومات، التصنيع، التركيب، والتسليم. Graphics House يوجّهك إلى الفريق — وأنت تبدأ مع من سيصمّم وينفّذ الصالة أو المعرض.',
+      'نحن متخصصون في بيئات البيع والعرض للمطورين: تصميم التجربة، والرسومات، والتصنيع، والتركيب، والتسليم. تعرّفك Graphics House على الفريق، وتبدأ مباشرة مع من سيصمّم المعرض وينفّذه.',
     handoffNoteBefore: 'للهوية البصرية والشعار والكتالوج راجع ',
     handoffNoteLink: 'صفحة الهوية البصرية',
-    handoffNoteAfter: '. لصالات البيع ومعارض المطورين — مع إمكانية ديكور القصور والفنادق: توريفا تصمّم وتنفّذ.',
+    handoffNoteAfter: '. لمعارض المطورين وصالات البيع، وديكور القصور والفنادق عند الحاجة، نتولّى التصميم والتنفيذ.',
     finalTitle: 'جاهز لمناقشة معرض مطور أو صالة بيع؟',
     finalLead:
-      'أرسل الموقع أو الموعد أو مخططاً أولياً. توريفا تبدأ بقراءة المشروع وتصميم تجربة الزائر — ثم تنتقل للتنفيذ بخطوة تالية واضحة خلال يوم عمل.',
+      'أرسل الموقع أو الموعد أو مخططًا أوليًا. نبدأ بقراءة المشروع وتصميم تجربة الزائر، ثم ننتقل إلى التنفيذ بخطوة تالية واضحة خلال يوم عمل.',
   },
   en: {
     file: 'services/galleries-en.html',
@@ -130,28 +130,28 @@ const COPY = {
     dir: 'ltr',
     title: 'Developer Exhibitions & Sales Galleries | Turriva via Graphics House',
     description:
-      'Turriva designs and builds developer exhibitions and sales galleries across KSA and the GCC — from concept and design to fabrication, installation, and handover.',
+      'We design and build project exhibitions and sales galleries for developers across KSA and the GCC, and we own the full path: from concept and design to fabrication, installation, and handover.',
     canonical: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
     kicker: 'Turriva · Specialists in real-estate sales environments',
     h1: 'Developer exhibitions <span>&amp; sales galleries</span>',
     lead:
-      'We design and build project exhibitions and sales galleries for developers across KSA and the GCC. Turriva owns the full path: concept, design, fabrication, installation, and handover.',
-    ctaPrimary: 'Start your project with Turriva',
-    ctaSecondary: 'Contact Graphics House',
+      'We design and build project exhibitions and sales galleries for developers across KSA and the GCC, and we own the full path: from concept and design to fabrication, installation, and handover.',
+    ctaPrimary: 'Contact Graphics House',
+    ctaSecondary: 'Start your project with Turriva',
     contactHref: '../contact-us-en.html',
     brandingHref: 'branding-en.html',
     scopeKicker: 'What we do',
-    aboutTitle: 'Developer exhibitions first… then we expand when needed',
+    aboutTitle: 'Developer exhibitions are our specialty, and our expertise extends around them',
     aboutLead:
-      'Developers need an exhibition that presents the project clearly and persuades the visitor — that is Turriva’s core. We also extend to sales galleries and palace or hotel décor at the same design-and-build standard, without diluting the flagship focus.',
+      'Developers need an exhibition that presents the project clearly and persuades the visitor — that is our core work. At the same design-and-build standard, we also deliver sales galleries and palace or hotel décor.',
     pillars: [
       {
         badge: 'Core specialty',
-        title: 'Project exhibitions & presentation halls',
+        title: 'Developer project exhibitions',
         body:
-          'Institutional exhibitions to developer and institution standards — managed from concept approval through fabrication, install, and handover, ready before opening day.',
+          'Institutional exhibitions to developer and institution standards — managed from concept approval through fabrication, install, and handover, with planning that protects readiness before opening day.',
         featured: true,
       },
       {
@@ -171,18 +171,18 @@ const COPY = {
     processKicker: 'How we work',
     processTitle: 'From the exhibition decision to an opening-ready hall',
     processLead:
-      'Four sequential stages led by the Turriva team — so the exhibition reaches fabrication fully approved, without on-site improvisation or pre-opening surprises.',
+      'Four sequential stages we lead as one team — so the exhibition reaches fabrication fully approved, without on-site improvisation or pre-opening surprises.',
     steps: [
       {
         num: '01',
         title: 'Understand the project and audience',
-        body: 'We define the target audience, project identity, and marketing story — so design serves the purchase decision and elevates the project instead of stopping at decoration.',
+        body: 'We define the target audience, project identity, and marketing story — so design serves the purchase decision and elevates the project, rather than stopping at decoration.',
         featured: true,
       },
       {
         num: '02',
         title: 'Design the experience and present the idea',
-        body: 'We develop the exhibition concept, visitor path, and attraction points — shown visually for early stakeholder approval.',
+        body: 'We develop the exhibition concept, visitor path, and attraction points, and present them visually so stakeholders can approve early.',
       },
       {
         num: '03',
@@ -192,37 +192,37 @@ const COPY = {
       {
         num: '04',
         title: 'Fabricate, install, and hand over',
-        body: 'The same team follows execution through handover and opening — at the approved quality and visual identity.',
+        body: 'We follow execution through handover and opening — at the approved quality and visual identity.',
       },
     ],
-    workTitle: 'Selected sales & exhibition work',
+    workTitle: 'Selected exhibitions and sales galleries',
     workLead:
-      'Most work here is developer and institutional sales or exhibition environments — with a few interior glimpses when scope expands.',
+      'Most work here is developer and institutional exhibitions or sales galleries, with a few interior glimpses when scope expands.',
     caps: [
       { src: 'turriva/mwl-hero', label: 'Institutional exhibition — Muslim World League' },
-      { src: 'makkah-charter-04', label: 'Presentation hall — Makkah Charter' },
+      { src: 'makkah-charter-04', label: 'Exhibition — Makkah Charter' },
       { src: 'turriva/anan-eskan-gallery', label: 'Sales gallery — Anan Eskan' },
-      { src: 'turriva/rafal-pavilions', label: 'Display pavilions — Rafal' },
+      { src: 'turriva/rafal-pavilions', label: 'Pavilion exhibition — Rafal' },
       { src: 'turriva/project-joinery-b2b', label: 'Joinery & field install' },
       { src: 'turriva/hero-interior', label: 'Interior décor — scope extension' },
     ],
     proofKicker: 'Field proof',
     proofTitle: 'Muslim World League exhibition',
     proofLead:
-      'A large exhibition with display tools and spatial décor at institutional standard: from visual concept to field handover — the same logic as developer galleries, at institutional scale.',
+      'An exhibition with display tools and spatial décor at institutional standard, delivered from visual concept through field handover. The same logic we apply in developer sales galleries — at a wider institutional scale.',
     proofWatch: 'Watch with sound',
     proofTag: 'Design · drawings · field install',
     ytId: 'H66KNP1sQCk',
     handoffKicker: 'Turriva',
-    handoffTitle: 'Sales-gallery design and build — on one path',
+    handoffTitle: 'Developer exhibitions and sales galleries, on one delivery path',
     handoffBody:
-      'Turriva specializes in developer sales and exhibition environments: experience design, drawings, fabrication, install, and handover. Graphics House routes you to the team — you start with the people who will design and build the gallery or exhibition.',
+      'We specialize in developer sales and exhibition environments: experience design, drawings, fabrication, installation, and handover. Graphics House introduces you to the team, and you start directly with the people who will design and build the exhibition.',
     handoffNoteBefore: 'For logo, guidelines, and catalogue identity see ',
     handoffNoteLink: 'Visual Identity',
-    handoffNoteAfter: '. For sales galleries and developer exhibitions — with palace and hotel décor when needed: Turriva designs and builds.',
+    handoffNoteAfter: '. For developer exhibitions and sales galleries, and palace or hotel décor when needed, we own design and build.',
     finalTitle: 'Ready to discuss a developer exhibition or sales gallery?',
     finalLead:
-      'Send the site, target date, or an early plan. Turriva starts by reading the project and designing the visitor experience — then moves to delivery with a clear next step within one business day.',
+      'Send the site, target date, or an early plan. We start by reading the project and designing the visitor experience, then move to delivery with a clear next step within one business day.',
   },
 };
 
@@ -364,8 +364,8 @@ ${header}
    <h1>${t.h1}</h1>
    <p class="gal-hero__lead">${esc(t.lead)}</p>
    <div class="gal-cta-row">
-    <a class="gal-btn gal-btn--gold" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_to_turriva">${esc(t.ctaPrimary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
-    <a class="gal-btn gal-btn--ghost" href="${contactHref}" data-gh-cta="galleries_contact">${esc(t.ctaSecondary)}</a>
+    <a class="gal-btn gal-btn--gold" href="${contactHref}" data-gh-cta="galleries_contact">${esc(t.ctaPrimary)}</a>
+    <a class="gal-btn gal-btn--ghost" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_to_turriva">${esc(t.ctaSecondary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
    </div>
   </div>
  </section>
@@ -429,7 +429,8 @@ ${header}
     <span class="gal-kicker">${esc(t.handoffKicker)}</span>
     <h2>${esc(t.handoffTitle)}</h2>
     <p>${esc(t.handoffBody)}</p>
-    <a class="gal-btn gal-btn--gold" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_turriva_mid">${esc(t.ctaPrimary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
+    <a class="gal-btn gal-btn--gold" href="${contactHref}" data-gh-cta="galleries_contact_mid">${esc(t.ctaPrimary)}</a>
+    <a class="gal-btn gal-btn--ghost" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_turriva_mid">${esc(t.ctaSecondary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
    </div>
   </div>
  </section>
@@ -439,8 +440,8 @@ ${header}
    <h2>${esc(t.finalTitle)}</h2>
    <p class="gal-final__lead">${esc(t.finalLead)}</p>
    <div class="gal-cta-row gal-final__cta">
-    <a class="gal-btn gal-btn--gold" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_turriva_final">${esc(t.ctaPrimary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
-    <a class="gal-btn gal-btn--ghost" href="${contactHref}" data-gh-cta="galleries_contact_final">${esc(t.ctaSecondary)}</a>
+    <a class="gal-btn gal-btn--gold" href="${contactHref}" data-gh-cta="galleries_contact_final">${esc(t.ctaPrimary)}</a>
+    <a class="gal-btn gal-btn--ghost" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_turriva_final">${esc(t.ctaSecondary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
    </div>
   </div>
  </section>
