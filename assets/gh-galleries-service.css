@@ -396,14 +396,27 @@ html[lang="ar"] .gal-pillar strong {
   border-bottom: 1px solid var(--gal-line);
 }
 
+.gal-step--featured {
+  background: #FFFFFF;
+  border-top-width: 4px;
+  box-shadow: 0 16px 36px rgba(10, 10, 10, 0.06);
+}
+
 .gal-step__num {
   display: block;
   font-family: monospace, ui-monospace, Menlo, Consolas, monospace;
-  font-size: 12px;
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
+  line-height: 1;
   color: var(--gal-gold);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  opacity: 1;
+}
+
+.gal-step--featured .gal-step__num {
+  font-size: 26px;
+  color: var(--gal-gold-dark);
 }
 
 .gal-step strong {

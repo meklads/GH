@@ -67,30 +67,31 @@ const COPY = {
         secondary: true,
       },
     ],
-    processKicker: 'طريقة العمل',
-    processTitle: 'من قرار البيع إلى مساحة جاهزة للزائر',
+    processKicker: 'منهجية العمل',
+    processTitle: 'من قرار العرض إلى معرض جاهز للافتتاح',
     processLead:
-      'أربع خطوات يغلقها فريق توريفا بالترتيب — حتى تدخل صالة البيع أو المعرض مرحلة التصنيع وهي معتمدة، لا محل اجتهاد في الموقع.',
+      'أربع مراحل متسلسلة يقودها فريق توريفا، بحيث يصل المعرض إلى التصنيع وهو معتمد بالكامل، دون اجتهادات في الموقع ولا مفاجآت قبل الافتتاح.',
     steps: [
       {
         num: '01',
-        title: 'قراءة المشروع وقرار الشراء',
-        body: 'الجمهور المستهدف، قصة المشروع، والهوية — حتى يكون الديكور في خدمة البيع والعرض لا الزخرفة.',
+        title: 'فهم المشروع والجمهور',
+        body: 'نحدد الجمهور المستهدف وهوية المشروع وقصته التسويقية، ليخدم التصميم قرار الشراء ويُبرز المشروع بدل أن يقتصر على الزخرفة.',
+        featured: true,
       },
       {
         num: '02',
         title: 'تصميم التجربة وعرض الفكرة',
-        body: 'مفهوم الصالة أو المعرض ومسار الزائر ونقاط القوة — معروض بصرياً لموافقة أصحاب القرار مبكراً.',
+        body: 'نطوّر مفهوم المعرض ومسار الزائر ونقاط الجذب، ونعرضها بصريًا لتحصل على موافقة أصحاب القرار مبكرًا.',
       },
       {
         num: '03',
-        title: 'رسومات قابلة للتنفيذ',
-        body: 'توزيع، ارتفاعات، مواد، وتسلسل تركيب — حزمة يدخل بها المصنع والموقع دون مفاجآت.',
+        title: 'رسومات تنفيذية معتمدة',
+        body: 'مخططات دقيقة للتوزيع والارتفاعات والمواد وتسلسل التركيب، تُسلَّم للمصنع وفريق الموقع كحزمة واحدة متكاملة.',
       },
       {
         num: '04',
-        title: 'تصنيع · تركيب · تسليم',
-        body: 'نفس الفريق يتابع الجودة حتى التسليم والافتتاح — بنفس اللغة البصرية المعتمدة.',
+        title: 'تصنيع وتركيب وتسليم',
+        body: 'يتابع الفريق نفسه التنفيذ حتى التسليم والافتتاح، بالجودة والهوية البصرية المعتمدة.',
       },
     ],
     workTitle: 'أعمال من صالات ومعارض منفَّذة',
@@ -167,30 +168,31 @@ const COPY = {
         secondary: true,
       },
     ],
-    processKicker: 'How it works',
-    processTitle: 'From the sales decision to a visitor-ready space',
+    processKicker: 'How we work',
+    processTitle: 'From the exhibition decision to an opening-ready hall',
     processLead:
-      'Four steps Turriva closes in order — so the sales gallery or exhibition enters fabrication approved, not improvised on site.',
+      'Four sequential stages led by the Turriva team — so the exhibition reaches fabrication fully approved, without on-site improvisation or pre-opening surprises.',
     steps: [
       {
         num: '01',
-        title: 'Read the project and the purchase goal',
-        body: 'Target audience, project story, and brand — so décor serves selling and presentation, not decoration for its own sake.',
+        title: 'Understand the project and audience',
+        body: 'We define the target audience, project identity, and marketing story — so design serves the purchase decision and elevates the project instead of stopping at decoration.',
+        featured: true,
       },
       {
         num: '02',
         title: 'Design the experience and present the idea',
-        body: 'Gallery or exhibition concept, visitor path, and priorities — shown visually for early stakeholder approval.',
+        body: 'We develop the exhibition concept, visitor path, and attraction points — shown visually for early stakeholder approval.',
       },
       {
         num: '03',
-        title: 'Build-ready drawings',
-        body: 'Layouts, elevations, materials, and install sequence — the package factory and site teams build from.',
+        title: 'Approved execution drawings',
+        body: 'Precise layouts for distribution, elevations, materials, and install sequence — handed to factory and site teams as one complete package.',
       },
       {
         num: '04',
-        title: 'Fabricate · install · hand over',
-        body: 'The same team follows quality through handover and opening — in the approved visual language.',
+        title: 'Fabricate, install, and hand over',
+        body: 'The same team follows execution through handover and opening — at the approved quality and visual identity.',
       },
     ],
     workTitle: 'Selected sales & exhibition work',
@@ -258,7 +260,7 @@ function buildPage(t, isEn, depth) {
 
   const steps = t.steps
     .map(
-      (s) => `<div class="gal-step reveal">
+      (s, i) => `<div class="gal-step${s.featured ? ' gal-step--featured' : ''} reveal${i ? ` r${Math.min(i, 3)}` : ''}">
  <span class="gal-step__num">${esc(s.num)}</span>
  <strong>${esc(s.title)}</strong>
  <p>${esc(s.body)}</p>
@@ -317,7 +319,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
 <link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=12">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=13">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
