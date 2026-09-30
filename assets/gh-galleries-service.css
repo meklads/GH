@@ -251,6 +251,27 @@ html[lang="en"] .gal-section h2 {
   min-height: 100%;
 }
 
+.gal-scope__badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 4px 10px;
+  font-family: monospace, ui-monospace, Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gal-gold-dark);
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.28);
+}
+
+html[lang="ar"] .gal-scope__badge {
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-family: var(--gal-body);
+  font-size: 11px;
+}
+
 .gal-scope__idx {
   display: block;
   font-family: monospace, ui-monospace, Menlo, Consolas, monospace;
@@ -259,6 +280,27 @@ html[lang="en"] .gal-section h2 {
   letter-spacing: 0.14em;
   color: var(--gal-gold);
   margin-bottom: 14px;
+}
+
+.gal-scope--core {
+  background: #FAFAF8;
+  border-top-width: 3px;
+}
+
+.gal-scope--secondary {
+  background: #F3F1EC;
+  border-top-color: rgba(26, 26, 26, 0.22);
+  opacity: 0.96;
+}
+
+.gal-scope--secondary .gal-scope__badge {
+  color: #555;
+  background: rgba(26, 26, 26, 0.05);
+  border-color: rgba(26, 26, 26, 0.12);
+}
+
+.gal-scope--secondary strong {
+  color: #222;
 }
 
 .gal-scope strong {
