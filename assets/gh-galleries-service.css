@@ -264,7 +264,7 @@ html[lang="en"] .gal-section h2 {
 
 .gal-pillars {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-top: 40px;
 }
@@ -291,6 +291,54 @@ html[lang="ar"] .gal-pillar strong {
 }
 
 .gal-pillar p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--gal-muted);
+}
+
+.gal-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.gal-step {
+  padding: 26px 22px;
+  border-top: 2px solid var(--gal-gold);
+  background: var(--gal-paper);
+  border-inline-start: 1px solid var(--gal-line);
+  border-inline-end: 1px solid var(--gal-line);
+  border-bottom: 1px solid var(--gal-line);
+}
+
+.gal-step__num {
+  display: block;
+  font-family: monospace, ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--gal-gold);
+  margin-bottom: 12px;
+}
+
+.gal-step strong {
+  display: block;
+  font-family: var(--gal-heading);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--gal-ink);
+  line-height: 1.35;
+}
+
+html[lang="ar"] .gal-step strong {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 800;
+}
+
+.gal-step p {
   margin: 0;
   font-size: 14px;
   line-height: 1.8;
@@ -541,12 +589,13 @@ html[lang="ar"] .gal-proof__tag {
 }
 
 @media (max-width: 900px) {
-  .gal-pillars,
   .gal-handoff,
   .gal-proof__grid {
     grid-template-columns: 1fr;
   }
 
+  .gal-pillars,
+  .gal-steps,
   .gal-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -562,7 +611,9 @@ html[lang="ar"] .gal-proof__tag {
     padding: 64px 0;
   }
 
-  .gal-grid {
+  .gal-grid,
+  .gal-pillars,
+  .gal-steps {
     grid-template-columns: 1fr;
   }
 
