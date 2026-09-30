@@ -61,15 +61,22 @@ const COPY = {
       },
     ],
     workTitle: 'لمحات من الأعمال المكانية',
-    workLead: 'صالات وقاعات ومعارض بُنيت بمعايير العرض للمطورين والمؤسسات في المملكة والخليج.',
+    workLead: 'صالات وقاعات ومعارض بُنيت بمعايير العرض للمطورين والمؤسسات في المملكة والخليج — منها تنفيذ توريفا الميداني.',
     caps: [
       { src: 'makkah-charter-04', label: 'قاعة عرض — ميثاق مكة' },
-      { src: 'makkah-charter-01', label: 'بيئة عرض مؤسسية' },
-      { src: 'showroom', label: 'صالة تفاعلية' },
-      { src: 'rafal-lobby', label: 'ردهة بافيليونز' },
-      { src: 'makkah-charter-08', label: 'ديكور مكاني للملتقى' },
-      { src: 'turriva-brand', label: 'توريفا — التسليم المكاني' },
+      { src: 'turriva/anan-eskan-gallery', label: 'صالة بيع عنان إسكان — توريفا' },
+      { src: 'turriva/mwl-hero', label: 'معرض رابطة العالم الإسلامي — توريفا' },
+      { src: 'turriva/rafal-pavilions', label: 'بافيليونات رافال — توريفا' },
+      { src: 'turriva/project-joinery-b2b', label: 'تنفيذ نجارة وتركيب — توريفا' },
+      { src: 'turriva/hero-interior', label: 'بيئة داخلية جاهزة للتسليم — توريفا' },
     ],
+    proofKicker: 'إثبات التنفيذ',
+    proofTitle: 'معرض رابطة العالم الإسلامي',
+    proofLead:
+      'ديكور مكاني وأدوات عرض ومعرض كبير نُفّذ بمعايير مؤسسية — من أفضل الشواهد على قدرة التسليم المكاني. شاهد الفيلم ثم تابع التنفيذ عبر توريفا.',
+    proofWatch: 'شاهد فيلم المعرض',
+    proofTag: 'ديكور · أدوات عرض · تنفيذ ميداني',
+    ytId: 'H66KNP1sQCk',
     handoffKicker: 'التنفيذ المكاني',
     handoffTitle: 'توريفا تتولى التنفيذ',
     handoffBody:
@@ -120,15 +127,23 @@ const COPY = {
       },
     ],
     workTitle: 'Selected spatial work',
-    workLead: 'Galleries, halls, and exhibitions built to developer and institutional standards across KSA and the GCC.',
+    workLead:
+      'Galleries, halls, and exhibitions built to developer and institutional standards across KSA and the GCC — including Turriva field delivery.',
     caps: [
       { src: 'makkah-charter-04', label: 'Presentation hall — Makkah Charter' },
-      { src: 'makkah-charter-01', label: 'Institutional display environment' },
-      { src: 'showroom', label: 'Interactive sales gallery' },
-      { src: 'rafal-lobby', label: 'Rafal pavilions lobby' },
-      { src: 'makkah-charter-08', label: 'Forum spatial décor' },
-      { src: 'turriva-brand', label: 'Turriva — spatial delivery' },
+      { src: 'turriva/anan-eskan-gallery', label: 'Anan Eskan sales gallery — Turriva' },
+      { src: 'turriva/mwl-hero', label: 'Muslim World League exhibition — Turriva' },
+      { src: 'turriva/rafal-pavilions', label: 'Rafal pavilions — Turriva' },
+      { src: 'turriva/project-joinery-b2b', label: 'Joinery & install delivery — Turriva' },
+      { src: 'turriva/hero-interior', label: 'Interior ready for handover — Turriva' },
     ],
+    proofKicker: 'Delivery proof',
+    proofTitle: 'Muslim World League exhibition',
+    proofLead:
+      'Large-scale spatial décor, display tools, and exhibition install delivered to institutional standard — one of the strongest proofs of field capability. Watch the film, then continue to Turriva for delivery.',
+    proofWatch: 'Watch the exhibition film',
+    proofTag: 'Décor · display tools · field install',
+    ytId: 'H66KNP1sQCk',
     handoffKicker: 'Physical delivery',
     handoffTitle: 'Turriva owns the build',
     handoffBody:
@@ -219,7 +234,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
 <link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=3">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=4">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
@@ -275,6 +290,24 @@ ${header}
   </div>
  </section>
 
+ <section class="gal-proof" id="proof">
+  <div class="gal-wrap gal-proof__grid">
+   <div class="gal-proof__copy reveal">
+    <span class="gal-kicker">${esc(t.proofKicker)}</span>
+    <h2>${esc(t.proofTitle)}</h2>
+    <p>${esc(t.proofLead)}</p>
+    <p class="gal-proof__tag">${esc(t.proofTag)}</p>
+   </div>
+   <button type="button" class="gal-proof__card reveal r1" onclick="playVideo('${t.ytId}')" data-gh-cta="galleries_yt_mwl" aria-label="${esc(t.proofWatch)}">
+    <span class="gal-proof__media">
+     <img src="https://img.youtube.com/vi/${t.ytId}/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360">
+     <span class="gal-proof__play" aria-hidden="true"><span class="material-symbols-outlined">play_circle</span></span>
+    </span>
+    <span class="gal-proof__cta">${esc(t.proofWatch)}</span>
+   </button>
+  </div>
+ </section>
+
  <section class="gal-section">
   <div class="gal-wrap">
    <h2>${esc(t.workTitle)}</h2>
@@ -308,7 +341,44 @@ ${header}
   </div>
  </section>
 </main>
+<div class="gal-video-modal" id="videoModal" hidden>
+ <button type="button" class="gal-video-modal__close" onclick="closeVideo()" aria-label="${isEn ? 'Close' : 'إغلاق'}">✕</button>
+ <div class="gal-video-modal__inner">
+  <div class="gal-video-modal__frame" id="vmPlayer"></div>
+ </div>
+</div>
 ${footer}
+<script>
+function playVideo(videoId) {
+  var modal = document.getElementById('videoModal');
+  var container = document.getElementById('vmPlayer');
+  if (!modal || !container || !videoId) return;
+  var src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1';
+  var iframe = document.createElement('iframe');
+  iframe.setAttribute('src', src);
+  iframe.setAttribute('title', ${isEn ? "'Exhibition film'" : "'فيلم المعرض'"});
+  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+  container.innerHTML = '';
+  container.appendChild(iframe);
+  modal.hidden = false;
+  modal.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  if (window.ghTrack) window.ghTrack('video_play', { video_src: videoId, page_path: location.pathname });
+}
+function closeVideo() {
+  var modal = document.getElementById('videoModal');
+  var container = document.getElementById('vmPlayer');
+  if (modal) { modal.classList.remove('is-open'); modal.hidden = true; }
+  if (container) container.innerHTML = '';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeVideo(); });
+document.getElementById('videoModal')?.addEventListener('click', function (e) {
+  if (e.target === e.currentTarget) closeVideo();
+});
+</script>
 <script defer src="${asset}gh-float-widgets.js?v=18"></script>
 <script defer src="${asset}gh-chat-assistant.js?v=18"></script>
 </body>
