@@ -320,7 +320,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
 <link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=17">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=18">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
