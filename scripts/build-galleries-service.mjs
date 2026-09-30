@@ -106,7 +106,7 @@ const COPY = {
     proofTitle: 'معرض رابطة العالم الإسلامي',
     proofLead:
       'ديكور مكاني وأدوات عرض ومعرض كبير: من الفكرة البصرية إلى التسليم الميداني بمعايير مؤسسية. شاهد الفيلم — ثم تابع التنفيذ عبر توريفا.',
-    proofWatch: 'شاهد فيلم المعرض',
+    proofWatch: 'شاهد بالصوت',
     proofTag: 'تصميم · رسومات · تنفيذ ميداني',
     ytId: 'H66KNP1sQCk',
     handoffKicker: 'التنفيذ المكاني',
@@ -205,7 +205,7 @@ const COPY = {
     proofTitle: 'Muslim World League exhibition',
     proofLead:
       'Spatial décor, display tools, and a large exhibition: from visual concept to field handover at institutional standard. Watch the film — then continue to Turriva for delivery.',
-    proofWatch: 'Watch the exhibition film',
+    proofWatch: 'Watch with sound',
     proofTag: 'Design · drawings · field install',
     ytId: 'H66KNP1sQCk',
     handoffKicker: 'Physical delivery',
@@ -308,7 +308,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
 <link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=7">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=8">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
@@ -338,14 +338,10 @@ ${header}
 <main id="main-content">
  <section class="gal-hero">
   <div class="gal-hero__media" aria-hidden="true">
-   <iframe
-    class="gal-hero__yt"
-    src="https://www.youtube.com/embed/${t.ytId}?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=${t.ytId}&amp;modestbranding=1&amp;playsinline=1&amp;rel=0&amp;vq=hd1080"
-    title="${esc(isEn ? 'Exhibition hall atmosphere' : 'أجواء قاعة المعرض')}"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    loading="eager"
-   ></iframe>
+   <picture>
+    <source srcset="${asset}projects/galleries/makkah-charter-04.webp" type="image/webp">
+    <img src="${asset}projects/galleries/makkah-charter-04.jpg" alt="" width="1600" height="900" fetchpriority="high">
+   </picture>
   </div>
   <div class="gal-hero__shade" aria-hidden="true"></div>
   <div class="gal-wrap gal-hero__inner">
@@ -384,14 +380,20 @@ ${header}
     <h2>${esc(t.proofTitle)}</h2>
     <p>${esc(t.proofLead)}</p>
     <p class="gal-proof__tag">${esc(t.proofTag)}</p>
+    <button type="button" class="gal-btn gal-btn--gold gal-proof__sound" onclick="playVideo('${t.ytId}')" data-gh-cta="galleries_yt_mwl_sound" aria-label="${esc(t.proofWatch)}">${esc(t.proofWatch)}</button>
    </div>
-   <button type="button" class="gal-proof__card reveal r1" onclick="playVideo('${t.ytId}')" data-gh-cta="galleries_yt_mwl" aria-label="${esc(t.proofWatch)}">
-    <span class="gal-proof__media">
-     <img src="https://img.youtube.com/vi/${t.ytId}/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360">
-     <span class="gal-proof__play" aria-hidden="true"><span class="material-symbols-outlined">play_circle</span></span>
-    </span>
-    <span class="gal-proof__cta">${esc(t.proofWatch)}</span>
-   </button>
+   <div class="gal-proof__card reveal r1" aria-label="${esc(t.proofTitle)}">
+    <div class="gal-proof__media gal-proof__media--live">
+     <iframe
+      class="gal-proof__yt"
+      src="https://www.youtube.com/embed/${t.ytId}?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=${t.ytId}&amp;modestbranding=1&amp;playsinline=1&amp;rel=0&amp;vq=hd1080"
+      title="${esc(t.proofTitle)}"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      loading="lazy"
+     ></iframe>
+    </div>
+   </div>
   </div>
  </section>
 
