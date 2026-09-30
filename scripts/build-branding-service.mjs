@@ -396,7 +396,7 @@ ${analyticsHeadTags(P)}
 <meta property="og:description" content="${esc(t.description)}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${BASE}/${OG_IMG}">
-<link rel="stylesheet" href="${P}assets/site-header.css?v=60">
+<link rel="stylesheet" href="${P}assets/site-header.css?v=67">
 <link rel="stylesheet" href="${P}assets/gh-float-widgets.css?v=8">
 <link rel="stylesheet" href="${P}assets/gh-site-enhancements.css?v=41">
 <link rel="stylesheet" href="${P}assets/gh-branding-service.css?v=${CSS_V}">

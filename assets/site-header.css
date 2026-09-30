@@ -310,28 +310,32 @@ body:has(.nav-mega-item.is-open) .gh-float {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center;
-    gap: 4px !important;
     height: calc(var(--gh-chrome-h) - 6px);
     min-height: calc(var(--gh-chrome-h) - 6px);
     margin: 0 !important;
-    padding: 0 10px !important;
     border-radius: 999px !important;
     line-height: 1 !important;
     box-sizing: border-box;
   }
+  /* EN: tighter so About…Insights stay inside the pill */
   html[dir="ltr"] .nav-link,
   html[dir="ltr"] .nav button.nav-link {
     font-size: 10px;
     font-weight: 650;
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.88);
+    padding: 0 7px !important;
+    gap: 3px !important;
   }
+  /* AR: keep current comfortable spacing */
   html[dir="rtl"] .nav-link,
   html[dir="rtl"] .nav button.nav-link {
     font-size: 12.5px;
     font-weight: 700;
     letter-spacing: 0;
     color: rgba(255, 255, 255, 0.9);
+    padding: 0 10px !important;
+    gap: 4px !important;
   }
   .header .nav > .nav-mega-item {
     display: inline-flex;
@@ -479,20 +483,17 @@ body:has(.nav-mega-item.is-open) .gh-float {
     gap: 1px !important;
   }
   html[dir="ltr"] .nav-link,
-  html[dir="ltr"] .nav button.nav-link,
-  html[dir="rtl"] .nav-link,
-  html[dir="rtl"] .nav button.nav-link {
-    padding: 0 8px !important;
-    gap: 3px !important;
-  }
-  html[dir="ltr"] .nav-link,
   html[dir="ltr"] .nav button.nav-link {
     font-size: 9.5px;
     letter-spacing: 0.02em;
+    padding: 0 5px !important;
+    gap: 2px !important;
   }
   html[dir="rtl"] .nav-link,
   html[dir="rtl"] .nav button.nav-link {
     font-size: 12px;
+    padding: 0 8px !important;
+    gap: 3px !important;
   }
   .header .nav > .nav-mega-item,
   .header .nav > a.nav-link {
@@ -543,20 +544,17 @@ body:has(.nav-mega-item.is-open) .gh-float {
     padding: 4px 8px !important;
   }
   html[dir="ltr"] .nav-link,
-  html[dir="ltr"] .nav button.nav-link,
-  html[dir="rtl"] .nav-link,
-  html[dir="rtl"] .nav button.nav-link {
-    padding: 0 12px !important;
-    gap: 5px !important;
-  }
-  html[dir="ltr"] .nav-link,
   html[dir="ltr"] .nav button.nav-link {
     font-size: 10.5px;
     letter-spacing: 0.035em;
+    padding: 0 8px !important;
+    gap: 3px !important;
   }
   html[dir="rtl"] .nav-link,
   html[dir="rtl"] .nav button.nav-link {
     font-size: 13px;
+    padding: 0 12px !important;
+    gap: 5px !important;
   }
   html[dir="ltr"] .nav-cta {
     padding: 11px 24px !important;
