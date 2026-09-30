@@ -236,11 +236,17 @@ html[dir="rtl"] .lp-kicker {
  position: relative;
  aspect-ratio: 4/3;
  overflow: hidden;
- background: #111;
+ background: #111 center / cover no-repeat;
+ background-image: url(../assets/projects/production/camera-monitor.jpg);
 }
-.lp-proof-visual img {
+.lp-proof-visual img,
+.lp-proof-visual video {
  width: 100%; height: 100%;
  object-fit: cover;
+ display: block;
+}
+@media (prefers-reduced-motion: reduce) {
+ .lp-proof-visual video { display: none !important; }
 }
 .lp-proof-visual::after {
  content: '';
@@ -309,6 +315,7 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  box-shadow: 0 24px 60px rgba(18,18,18,0.12);
  overflow: hidden;
 }
+.lp-film-frame img,
 .lp-film-frame video {
  width: 100%;
  aspect-ratio: 16/9;
@@ -984,7 +991,20 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  </div>
  <div class="lp-proof reveal r1">
  <div class="lp-proof-visual">
- <picture><source srcset="../assets/photography/slide_image_12.webp" type="image/webp"><img loading="lazy" src="../assets/photography/slide_image_12.png" alt="إنتاج بصري، Graphics House" width="1672" height="941" fetchpriority="high" decoding="async"></picture>
+ <video
+  class="gh-autoplay gh-ambient-loop"
+  autoplay
+  loop
+  muted
+  playsinline
+  webkit-playsinline
+  preload="metadata"
+  poster="../assets/projects/production/camera-monitor.jpg"
+  data-gh-ambient="1"
+  data-pl-src="../assets/videos/GH-Marketing-Media-Production.mp4"
+  data-pl-src-mobile="../assets/videos/GH-Marketing-Media-Production-mobile.mp4"
+  aria-label="فيلم الإنتاج الإعلامي، Graphics House"
+ ></video>
  </div>
  <div class="lp-proof-meta">
  <span class="lp-proof-label">الخدمة</span>
@@ -1042,21 +1062,10 @@ html[dir="rtl"] .lp-proof-label { letter-spacing: 0.06em; text-transform: none; 
  </div>
  </div>
  <div class="lp-film-frame reveal r1">
- <video
-  class="gh-autoplay gh-ambient-loop"
-  autoplay
-  loop
-  muted
-  playsinline
-  webkit-playsinline
-  controls
-  preload="metadata"
-  poster="../assets/photography/slide_image_7.png"
-  data-gh-ambient="1"
-  data-pl-src="../assets/videos/GH-Marketing-Media-Production.mp4"
-  data-pl-src-mobile="../assets/videos/GH-Marketing-Media-Production-mobile.mp4"
-  aria-label="فيلم الإنتاج الإعلامي، Graphics House"
- ></video>
+ <picture>
+  <source srcset="../assets/projects/galleries/makkah-charter-08.webp" type="image/webp">
+  <img src="../assets/projects/galleries/makkah-charter-08.jpg" alt="تغطية فعاليات وإنتاج مكاني — ميثاق مكة" loading="lazy" decoding="async" width="1600" height="900">
+ </picture>
  </div>
  </div>
 </section>
