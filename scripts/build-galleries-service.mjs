@@ -27,42 +27,43 @@ const COPY = {
     legacyFile: 'galleries-advertising.html',
     lang: 'ar',
     dir: 'rtl',
-    title: 'صالات البيع ومعارض المطورين | توريفا عبر Graphics House',
+    title: 'معارض المطورين وصالات البيع | توريفا عبر Graphics House',
     description:
-      'توريفا تصمّم وتنفّذ صالات البيع ومعارض المشاريع للمطورين في المملكة والخليج — من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
+      'توريفا تصمّم وتنفّذ معارض المطورين وصلات البيع في المملكة والخليج — من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
     canonical: 'https://3dgraphicshouse.com/services/galleries.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
     kicker: 'توريفا · متخصصون في بيئات البيع العقاري',
-    h1: 'صالات البيع <span>ومعارض المطورين</span>',
+    h1: 'معارض المطورين <span>وصالات البيع</span>',
     lead:
-      'نصمّم ونُنفّذ صالات البيع ومعارض المشاريع للمطورين في المملكة والخليج. توريفا تتولّى المسار كاملًا: الفكرة، التصميم، التصنيع، التركيب، والتسليم.',
+      'نصمّم ونُنفّذ معارض المشاريع وصلات البيع للمطورين في المملكة والخليج. توريفا تتولّى المسار كاملًا: الفكرة، التصميم، التصنيع، التركيب، والتسليم.',
     ctaPrimary: 'ابدأ مشروعك مع توريفا',
     ctaSecondary: 'تواصل مع Graphics House',
     contactHref: '../contact-us.html',
     brandingHref: 'branding.html',
-    scopeKicker: 'التموضع',
-    aboutTitle: 'التخصص أولاً… ثم التوسعة عند الحاجة',
+    scopeKicker: 'مجالات عملنا',
+    aboutTitle: 'معارض المطورين أولًا… ثم نتوسّع عند الحاجة',
     aboutLead:
-      'المطور يحتاج صالة أو معرضاً يبيع المشروع ويُقنع الزائر. هذا هو جوهر توريفا. القصور والفنادق مسار متاح بنفس معايير التصميم والتنفيذ — دون أن يزاحم التخصص الأساسي.',
+      'يحتاج المطوّر إلى معرض يعرض مشروعه بوضوح ويُقنع الزائر، وهذا جوهر عمل توريفا. ونمتد إلى صالات البيع وديكورات القصور والفنادق بمعايير التصميم والتنفيذ نفسها، دون أن يؤثر ذلك على تخصصنا الأساسي.',
     pillars: [
       {
-        badge: 'التخصص',
-        title: 'صالات البيع للمطورين',
-        body:
-          'مسار الزائر، نقاط العرض، المجسمات، الشاشات، واللافتات — مساحة تُظهر المشروع بوضوح وتدعم قرار الشراء، ثم تُسلَّم جاهزة للتشغيل.',
-      },
-      {
-        badge: 'أساسي',
+        badge: 'التخصص الأساسي',
         title: 'معارض وقاعات عرض المشاريع',
         body:
-          'معارض مؤسسية وقاعات عرض بمعايير المطور والمؤسسة: من اعتماد الفكرة إلى التركيب والتسليم قبل الافتتاح.',
+          'معارض مؤسسية بمعايير المطوّر والمؤسسة، تُدار من اعتماد الفكرة إلى التصنيع والتركيب والتسليم، وتكون جاهزة قبل موعد الافتتاح.',
+        featured: true,
       },
       {
-        badge: 'أيضاً',
+        badge: 'تخصص مكمّل',
+        title: 'صالات البيع للمطورين',
+        body:
+          'مسار زائر مدروس ونقاط عرض ومجسمات وشاشات ولافتات، تُبرز المشروع وتدعم قرار الشراء، وتُسلَّم جاهزة للتشغيل.',
+      },
+      {
+        badge: 'خدمة إضافية',
         title: 'ديكور القصور والفنادق',
         body:
-          'إمكانية تنفيذ ديكور استقبال وقاعات خاصة أو لوبيات ضيافة — بنفس مسار التصميم والبناء، عندما يناسب نطاق المشروع.',
+          'تنفيذ ديكورات الاستقبال والقاعات الخاصة ولوبيات الضيافة بالمنهجية نفسها، عندما يناسب ذلك نطاق المشروع.',
         secondary: true,
       },
     ],
@@ -96,9 +97,9 @@ const COPY = {
     workLead:
       'معظم الأعمال هنا من بيئات البيع والعرض للمطورين والمؤسسات — مع لمحات من ديكور داخلي عند اتساع النطاق.',
     caps: [
-      { src: 'turriva/anan-eskan-gallery', label: 'صالة بيع — عنان إسكان' },
       { src: 'turriva/mwl-hero', label: 'معرض مؤسسي — رابطة العالم الإسلامي' },
       { src: 'makkah-charter-04', label: 'قاعة عرض — ميثاق مكة' },
+      { src: 'turriva/anan-eskan-gallery', label: 'صالة بيع — عنان إسكان' },
       { src: 'turriva/rafal-pavilions', label: 'بافيليونات عرض — رافال' },
       { src: 'turriva/project-joinery-b2b', label: 'نجارة وتركيب ميداني' },
       { src: 'turriva/hero-interior', label: 'ديكور داخلي — توسعة النطاق' },
@@ -117,7 +118,7 @@ const COPY = {
     handoffNoteBefore: 'للهوية البصرية والشعار والكتالوج راجع ',
     handoffNoteLink: 'صفحة الهوية البصرية',
     handoffNoteAfter: '. لصالات البيع ومعارض المطورين — مع إمكانية ديكور القصور والفنادق: توريفا تصمّم وتنفّذ.',
-    finalTitle: 'جاهز لمناقشة صالة بيع أو معرض مطور؟',
+    finalTitle: 'جاهز لمناقشة معرض مطور أو صالة بيع؟',
     finalLead:
       'أرسل الموقع أو الموعد أو مخططاً أولياً. توريفا تبدأ بقراءة المشروع وتصميم تجربة الزائر — ثم تنتقل للتنفيذ بخطوة تالية واضحة خلال يوم عمل.',
   },
@@ -126,42 +127,43 @@ const COPY = {
     legacyFile: 'galleries-advertising-en.html',
     lang: 'en',
     dir: 'ltr',
-    title: 'Sales Galleries & Developer Exhibitions | Turriva via Graphics House',
+    title: 'Developer Exhibitions & Sales Galleries | Turriva via Graphics House',
     description:
-      'Turriva designs and builds sales galleries and project exhibitions for developers across KSA and the GCC — from concept and design to fabrication, installation, and handover.',
+      'Turriva designs and builds developer exhibitions and sales galleries across KSA and the GCC — from concept and design to fabrication, installation, and handover.',
     canonical: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
     kicker: 'Turriva · Specialists in real-estate sales environments',
-    h1: 'Sales galleries <span>&amp; developer exhibitions</span>',
+    h1: 'Developer exhibitions <span>&amp; sales galleries</span>',
     lead:
-      'We design and build sales galleries and project exhibitions for developers across KSA and the GCC. Turriva owns the full path: concept, design, fabrication, installation, and handover.',
+      'We design and build project exhibitions and sales galleries for developers across KSA and the GCC. Turriva owns the full path: concept, design, fabrication, installation, and handover.',
     ctaPrimary: 'Start your project with Turriva',
     ctaSecondary: 'Contact Graphics House',
     contactHref: '../contact-us-en.html',
     brandingHref: 'branding-en.html',
-    scopeKicker: 'Positioning',
-    aboutTitle: 'Specialty first… then expansion when needed',
+    scopeKicker: 'What we do',
+    aboutTitle: 'Developer exhibitions first… then we expand when needed',
     aboutLead:
-      'Developers need a gallery or exhibition that sells the project and persuades the visitor. That is Turriva’s core. Palace and hotel décor is available at the same design-and-build standard — without diluting the flagship focus.',
+      'Developers need an exhibition that presents the project clearly and persuades the visitor — that is Turriva’s core. We also extend to sales galleries and palace or hotel décor at the same design-and-build standard, without diluting the flagship focus.',
     pillars: [
       {
-        badge: 'Specialty',
-        title: 'Developer sales galleries',
-        body:
-          'Visitor path, display points, maquettes, screens, and signage — a space that presents the project clearly and supports the purchase decision, then handed over ready to operate.',
-      },
-      {
-        badge: 'Core',
+        badge: 'Core specialty',
         title: 'Project exhibitions & presentation halls',
         body:
-          'Institutional exhibitions and halls to developer and institution standards: from approved concept to install and handover before opening.',
+          'Institutional exhibitions to developer and institution standards — managed from concept approval through fabrication, install, and handover, ready before opening day.',
+        featured: true,
       },
       {
-        badge: 'Also',
+        badge: 'Complementary',
+        title: 'Developer sales galleries',
+        body:
+          'A considered visitor path with display points, maquettes, screens, and signage — presenting the project, supporting the purchase decision, and handed over ready to operate.',
+      },
+      {
+        badge: 'Additional service',
         title: 'Palace & hotel décor',
         body:
-          'Reception and private halls or hospitality lobbies — on the same design-and-build path when the project scope fits.',
+          'Reception décor, private halls, and hospitality lobbies on the same methodology — when that fits the project scope.',
         secondary: true,
       },
     ],
@@ -195,9 +197,9 @@ const COPY = {
     workLead:
       'Most work here is developer and institutional sales or exhibition environments — with a few interior glimpses when scope expands.',
     caps: [
-      { src: 'turriva/anan-eskan-gallery', label: 'Sales gallery — Anan Eskan' },
       { src: 'turriva/mwl-hero', label: 'Institutional exhibition — Muslim World League' },
       { src: 'makkah-charter-04', label: 'Presentation hall — Makkah Charter' },
+      { src: 'turriva/anan-eskan-gallery', label: 'Sales gallery — Anan Eskan' },
       { src: 'turriva/rafal-pavilions', label: 'Display pavilions — Rafal' },
       { src: 'turriva/project-joinery-b2b', label: 'Joinery & field install' },
       { src: 'turriva/hero-interior', label: 'Interior décor — scope extension' },
@@ -216,7 +218,7 @@ const COPY = {
     handoffNoteBefore: 'For logo, guidelines, and catalogue identity see ',
     handoffNoteLink: 'Visual Identity',
     handoffNoteAfter: '. For sales galleries and developer exhibitions — with palace and hotel décor when needed: Turriva designs and builds.',
-    finalTitle: 'Ready to discuss a sales gallery or developer exhibition?',
+    finalTitle: 'Ready to discuss a developer exhibition or sales gallery?',
     finalLead:
       'Send the site, target date, or an early plan. Turriva starts by reading the project and designing the visitor experience — then moves to delivery with a clear next step within one business day.',
   },
@@ -240,13 +242,18 @@ function buildPage(t, isEn, depth) {
     : 'family=Tajawal:wght@200;300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap';
 
   const pillars = t.pillars
-    .map(
-      (p, i) => `<div class="gal-scope${p.secondary ? ' gal-scope--secondary' : ' gal-scope--core'} reveal${i ? ` r${i}` : ''}">
+    .map((p, i) => {
+      const tone = p.featured
+        ? ' gal-scope--featured'
+        : p.secondary
+          ? ' gal-scope--secondary'
+          : ' gal-scope--core';
+      return `<div class="gal-scope${tone} reveal${i ? ` r${i}` : ''}">
  <span class="gal-scope__badge">${esc(p.badge)}</span>
  <strong>${esc(p.title)}</strong>
  <p>${esc(p.body)}</p>
-</div>`
-    )
+</div>`;
+    })
     .join('\n');
 
   const steps = t.steps
@@ -310,7 +317,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
 <link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=11">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=12">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
@@ -323,7 +330,7 @@ gtag('config','G-Y67JVE898Z');
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: isEn ? 'Sales Galleries & Developer Exhibitions' : 'صالات البيع ومعارض المطورين',
+    name: isEn ? 'Developer Exhibitions & Sales Galleries' : 'معارض المطورين وصالات البيع',
     description: t.description,
     url: t.canonical,
     provider: {
@@ -500,7 +507,7 @@ function writeLegacyRedirect(fromFile, toPath, isEn) {
 <title>${title}</title>
 <script>location.replace('${toPath}');</script>
 </head>
-<body><p><a href="${toPath}">${isEn ? 'Continue to Sales Galleries & Developer Exhibitions' : 'متابعة إلى صالات البيع ومعارض المطورين'}</a></p></body>
+<body><p><a href="${toPath}">${isEn ? 'Continue to Developer Exhibitions & Sales Galleries' : 'متابعة إلى معارض المطورين وصالات البيع'}</a></p></body>
 </html>
 `;
   fs.writeFileSync(path.join(ROOT, fromFile), html, 'utf8');

@@ -284,13 +284,32 @@ html[lang="ar"] .gal-scope__badge {
 }
 
 .gal-scope--core {
-  background: #FAFAF8;
-  border-top-width: 3px;
+  background: var(--gal-bg);
+  border-top-width: 2px;
+}
+
+.gal-scope--featured {
+  background: #FFFFFF;
+  border-top-width: 4px;
+  border-top-color: var(--gal-gold);
+  box-shadow: 0 18px 40px rgba(10, 10, 10, 0.06);
+  position: relative;
+}
+
+.gal-scope--featured .gal-scope__badge {
+  color: #0A0A0A;
+  background: rgba(201, 168, 76, 0.22);
+  border-color: rgba(201, 168, 76, 0.45);
+}
+
+.gal-scope--featured strong {
+  font-size: 19px;
 }
 
 .gal-scope--secondary {
   background: #F3F1EC;
-  border-top-color: rgba(26, 26, 26, 0.22);
+  border-top-color: rgba(26, 26, 26, 0.18);
+  border-top-width: 2px;
   opacity: 0.96;
 }
 
