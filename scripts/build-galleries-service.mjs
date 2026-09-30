@@ -3,7 +3,7 @@
  * Build galleries / spatial décor service landings (AR + EN).
  * Canonical URLs live under /services/galleries*.html (avoids stale
  * browser cache of the old root redirect stub → branding).
- * Soft handoff to Turriva for physical execution.
+ * Positions Turriva as design + build for exhibitions, palaces, hotels.
  */
 import fs from 'fs';
 import path from 'path';
@@ -26,198 +26,190 @@ const COPY = {
     legacyFile: 'galleries-advertising.html',
     lang: 'ar',
     dir: 'rtl',
-    title: 'جاليريات وديكور مكاني | Graphics House',
+    title: 'ديكور المعارض والقصور والفنادق | توريفا عبر Graphics House',
     description:
-      'نصمّم التجربة المكانية ونعرض الأفكار ونجهّز الرسومات التنفيذية للديكور قبل التنفيذ — ثم نسلّم البناء والتركيب لتوريفا حتى تصبح الصالة أو المعرض جاهزاً للزائر.',
+      'توريفا تصمّم وتنفّذ ديكور المعارض والقصور والفنادق — من الفكرة والرسومات إلى التصنيع والتركيب والتسليم. مسار تصميم وبناء واحد.',
     canonical: 'https://3dgraphicshouse.com/services/galleries.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
-    kicker: 'خدماتنا · التجربة المكانية',
-    h1: 'جاليريات <span>وديكور مكاني</span>',
+    kicker: 'توريفا · تصميم وتنفيذ',
+    h1: 'ديكور المعارض <span>والقصور والفنادق</span>',
     lead:
-      'لا نبدأ بالتركيب. نصمّم التجربة المكانية، نعرض الأفكار بوضوح، ونجهّز الرسومات التنفيذية للديكور قبل أي تنفيذ ميداني — ثم تتولى توريفا البناء والتركيب والتسليم. مسار واحد من القرار البصري إلى مساحة جاهزة للزائر أو الافتتاح.',
-    ctaPrimary: 'انتقل إلى توريفا للتنفيذ',
+      'توريفا تصمّم التجربة المكانية وتنفّذها ميدانياً: الفكرة، الرسومات، التصنيع، التركيب، والتسليم — حتى تكون المساحة جاهزة للزائر أو الضيف أو الافتتاح.',
+    ctaPrimary: 'ابدأ مع توريفا',
     ctaSecondary: 'تواصل مع Graphics House',
     contactHref: '../contact-us.html',
     brandingHref: 'branding.html',
-    aboutTitle: 'تصميم أولاً… ثم رسومات قابلة للتنفيذ',
+    scopeKicker: 'نطاق العمل',
+    aboutTitle: 'ثلاث بيئات… فريق واحد يصمّم وينفّذ',
     aboutLead:
-      'المطور والمؤسسة يحتاجان قراراً مكانياً واضحاً قبل الميزانية والجدول. نترجم هوية المشروع إلى تجربة يمكن الموافقة عليها، ثم نغلق التفاصيل التنفيذية حتى يدخل الموقع وهو جاهز للتصنيع لا للاجتهاد.',
+      'سواء كان معرضاً مؤسسياً، صالة بيع، قصراً خاصاً، أو لوبي فندق — توريفا تملك القرار البصري والتنفيذ الميداني معاً، بمعايير تليق بالمملكة والخليج.',
     pillars: [
       {
-        title: 'تصميم التجربة وعرض الأفكار',
+        title: 'ديكور المعارض وصالات العرض',
         body:
-          'نقترح مسار الزائر، نقاط العرض، اللافتات، والشاشات — ونقدّم الأفكار بصرياً حتى تتفق الفرق على شكل المساحة قبل أي التزام تصنيعي.',
+          'مسار الزائر، نقاط العرض، الشاشات، واللافتات — تصميم يعرض المشروع بوضوح، ثم تنفيذ ميداني يسلّم المساحة جاهزة للحضور والافتتاح.',
       },
       {
-        title: 'الرسومات التنفيذية للديكور',
+        title: 'ديكور القصور والإقامات الخاصة',
         body:
-          'توزيع المساحة، الارتفاعات، التفاصيل، ومخططات التركيب القابلة للتنفيذ — حزمة تقنية تقلّل المفاجآت في الموقع وتسرّع الموافقة.',
+          'فراغات استقبال وقاعات خاصة بتفاصيل دقيقة: مواد، نجارة، وإضاءة متناسقة — من المفهوم المعتمد إلى تركيب نظيف وتسليم راقٍ.',
       },
       {
-        title: 'لغة بصرية واحدة مع المشروع',
+        title: 'ديكور الفنادق والضيافة',
         body:
-          'المساحة تتحدث بنفس لغة الـ CGI والمجسم والمحتوى الرقمي، فيشعر الزائر أنه داخل المشروع لا أمام ديكور منفصل.',
-      },
-      {
-        title: 'تنفيذ ميداني عبر توريفا',
-        body:
-          'بعد اعتماد التصميم والرسومات، تتولى توريفا التصنيع والتركيب وضبط الجودة حتى التسليم والافتتاح.',
+          'لوبيات، ممرات، ومناطق ضيافة تتحدث بلغة العلامة: تصميم يخدم التشغيل اليومي، وتنفيذ يحافظ على الجودة بعد الافتتاح.',
       },
     ],
     processKicker: 'طريقة العمل',
-    processTitle: 'من الفكرة المعتمدة إلى مساحة جاهزة',
+    processTitle: 'من الفكرة إلى التسليم… دون فصل بين التصميم والتنفيذ',
     processLead:
-      'أربع خطوات واضحة. كل خطوة تُغلق قبل التالية — حتى لا يتحوّل التنفيذ إلى تعديلات مكلفة في الموقع.',
+      'توريفا تغلق كل مرحلة قبل التالية — حتى لا يتحوّل الموقع إلى تعديلات مكلفة بعد اعتماد الفكرة.',
     steps: [
       {
         num: '01',
-        title: 'قراءة المشروع والهدف',
-        body: 'نفهم الجمهور، قرار الشراء أو الحضور، والهوية البصرية — حتى يكون التصميم في خدمة النتيجة لا الزخرفة.',
+        title: 'قراءة المكان والهدف',
+        body: 'نفهم الجمهور، الاستخدام، والهوية — حتى يكون الديكور في خدمة التجربة لا الزخرفة.',
       },
       {
         num: '02',
-        title: 'تصميم التجربة وعرض الأفكار',
-        body: 'نضع مفهوم المساحة ومسار الزائر ونقاط القوة، ونعرض الأفكار بصرياً للموافقة المبكرة من أصحاب القرار.',
+        title: 'تصميم وعرض الفكرة',
+        body: 'مفهوم المساحة ومسار الحركة ونقاط القوة — معروض بصرياً لموافقة أصحاب القرار مبكراً.',
       },
       {
         num: '03',
-        title: 'الرسومات التنفيذية',
-        body: 'نجهّز المخططات والتفاصيل اللازمة للتصنيع والتركيب: توزيع، ارتفاعات، مواد، وتسلسل تركيب واضح.',
+        title: 'رسومات قابلة للتنفيذ',
+        body: 'توزيع، ارتفاعات، مواد، وتسلسل تركيب — حزمة يدخل بها المصنع والموقع دون اجتهاد.',
       },
       {
         num: '04',
-        title: 'التنفيذ والتسليم عبر توريفا',
-        body: 'توريفا تتولى المصنع والموقع والجودة حتى تصبح المساحة جاهزة للاستخدام أو الافتتاح — بنفس اللغة البصرية المعتمدة.',
+        title: 'تصنيع · تركيب · تسليم',
+        body: 'نفس الفريق يتابع الجودة حتى التسليم والافتتاح — بنفس اللغة البصرية المعتمدة.',
       },
     ],
-    workTitle: 'لمحات من الأعمال المكانية',
+    workTitle: 'أعمال مكانية من التنفيذ',
     workLead:
-      'صالات وقاعات ومعارض بُنيت بعد تصميم واضح ورسومات تنفيذية — بمعايير العرض للمطورين والمؤسسات في المملكة والخليج.',
+      'معارض وقاعات وبيئات داخلية بُنيت بعد تصميم واضح ورسومات تنفيذية — عبر توريفا في المملكة والخليج.',
     caps: [
-      { src: 'makkah-charter-04', label: 'قاعة عرض — ميثاق مكة' },
-      { src: 'turriva/anan-eskan-gallery', label: 'صالة بيع عنان إسكان — توريفا' },
-      { src: 'turriva/mwl-hero', label: 'معرض رابطة العالم الإسلامي — توريفا' },
-      { src: 'turriva/rafal-pavilions', label: 'بافيليونات رافال — توريفا' },
-      { src: 'turriva/project-joinery-b2b', label: 'تنفيذ نجارة وتركيب — توريفا' },
-      { src: 'turriva/hero-interior', label: 'بيئة داخلية جاهزة للتسليم — توريفا' },
+      { src: 'turriva/mwl-hero', label: 'معرض رابطة العالم الإسلامي — تصميم وتنفيذ' },
+      { src: 'turriva/anan-eskan-gallery', label: 'صالة بيع عنان إسكان' },
+      { src: 'makkah-charter-04', label: 'قاعة عرض مؤسسية — ميثاق مكة' },
+      { src: 'turriva/rafal-pavilions', label: 'بافيليونات وضيافة — رافال' },
+      { src: 'turriva/living-walnut-interior', label: 'فراغ استقبال وإقامة خاصة' },
+      { src: 'turriva/hero-interior', label: 'بيئة فندقية جاهزة للتسليم' },
     ],
-    proofKicker: 'إثبات التنفيذ',
+    proofKicker: 'إثبات ميداني',
     proofTitle: 'معرض رابطة العالم الإسلامي',
     proofLead:
-      'ديكور مكاني وأدوات عرض ومعرض كبير: من الفكرة البصرية إلى التسليم الميداني بمعايير مؤسسية. شاهد الفيلم — ثم تابع التنفيذ عبر توريفا.',
+      'ديكور مكاني وأدوات عرض بمعايير مؤسسية: من الفكرة البصرية إلى التسليم الميداني. هذا ما تفعله توريفا — تصميم وتنفيذ في مسار واحد.',
     proofWatch: 'شاهد بالصوت',
     proofTag: 'تصميم · رسومات · تنفيذ ميداني',
     ytId: 'H66KNP1sQCk',
-    handoffKicker: 'التنفيذ المكاني',
-    handoffTitle: 'التصميم عندنا… والتنفيذ عند توريفا',
+    handoffKicker: 'توريفا',
+    handoffTitle: 'تصميم الديكور وتنفيذه… في يد واحدة',
     handoffBody:
-      'Graphics House يضع الرؤية وتصميم التجربة وعرض الأفكار والرسومات التنفيذية. توريفا تتولى التطوير الفني، التصنيع، التركيب، والتسليم حتى تكون المساحة جاهزة للاستخدام أو الافتتاح.',
+      'توريفا هي مسار التصميم والبناء للديكور المكاني: المعارض، القصور، والفنادق. Graphics House يوجّهك إلى الفريق الصحيح — وأنت تبدأ مباشرة مع من سيصمّم وينفّذ ويسلّم.',
     handoffNoteBefore: 'للهوية البصرية والشعار والكتالوج راجع ',
     handoffNoteLink: 'صفحة الهوية البصرية',
-    handoffNoteAfter: '. لهذه الخدمة المكانية: نصمّم ونجهّز الرسومات، والتنفيذ عبر توريفا.',
-    finalTitle: 'جاهز لمناقشة صالة بيع أو ديكور مكاني؟',
+    handoffNoteAfter: '. لديكور المعارض والقصور والفنادق: توريفا تصمّم وتنفّذ.',
+    finalTitle: 'جاهز لمناقشة معرض أو قصر أو فندق؟',
     finalLead:
-      'أرسل الموقع أو الموعد أو مخططاً أولياً. نبدأ بتصميم التجربة والرسومات التنفيذية، ثم تنتقل توريفا للتنفيذ بخطوة تالية واضحة خلال يوم عمل.',
+      'أرسل الموقع أو الموعد أو مخططاً أولياً. توريفا تبدأ بقراءة المكان وتصميم الفكرة — ثم تنتقل للتنفيذ بخطوة تالية واضحة خلال يوم عمل.',
   },
   en: {
     file: 'services/galleries-en.html',
     legacyFile: 'galleries-advertising-en.html',
     lang: 'en',
     dir: 'ltr',
-    title: 'Galleries & Spatial Décor | Graphics House',
+    title: 'Exhibition, Palace & Hotel Décor | Turriva via Graphics House',
     description:
-      'We design the spatial experience, present the concepts, and prepare build-ready décor drawings before fabrication — then Turriva delivers install and handover.',
+      'Turriva designs and builds décor for exhibitions, palaces, and hotels — from concept and drawings to fabrication, install, and handover. One design-and-build path.',
     canonical: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
-    kicker: 'Our services · Spatial experience',
-    h1: 'Galleries <span>&amp; spatial décor</span>',
+    kicker: 'Turriva · Design & build',
+    h1: 'Exhibition, palace <span>&amp; hotel décor</span>',
     lead:
-      'We do not start with install. We design the spatial experience, present the ideas clearly, and prepare build-ready décor drawings before any site work — then Turriva owns fabrication, installation, and handover. One path from visual decision to a visitor-ready space.',
-    ctaPrimary: 'Continue to Turriva for delivery',
+      'Turriva designs the spatial experience and delivers it on site: concept, drawings, fabrication, installation, and handover — until the space is ready for visitors, guests, or opening day.',
+    ctaPrimary: 'Start with Turriva',
     ctaSecondary: 'Contact Graphics House',
     contactHref: '../contact-us-en.html',
     brandingHref: 'branding-en.html',
-    aboutTitle: 'Design first… then drawings you can build',
+    scopeKicker: 'What we cover',
+    aboutTitle: 'Three environments. One team that designs and builds.',
     aboutLead:
-      'Developers and institutions need a clear spatial decision before budget and schedule lock. We turn project identity into an experience you can approve — then close the execution package so the site starts with buildable certainty, not field improvisation.',
+      'Institutional exhibition, sales gallery, private palace, or hotel lobby — Turriva owns the visual decision and the field delivery together, to KSA and GCC standards.',
     pillars: [
       {
-        title: 'Experience design & idea presentation',
+        title: 'Exhibition & showroom décor',
         body:
-          'Visitor journey, display points, signage, and screens — presented visually so stakeholders align on the space before any fabrication commitment.',
+          'Visitor path, display points, screens, and signage — designed to present the project clearly, then built and handed over ready for guests and opening.',
       },
       {
-        title: 'Build-ready décor drawings',
+        title: 'Palace & private residence décor',
         body:
-          'Layouts, elevations, details, and install-ready drawings — a technical package that cuts site surprises and speeds approval.',
+          'Reception halls and private rooms with precise detail: materials, joinery, and lighting — from approved concept to clean install and refined handover.',
       },
       {
-        title: 'One visual language with the project',
+        title: 'Hotel & hospitality décor',
         body:
-          'The space speaks the same language as CGI, maquettes, and digital content, so visitors feel inside the project — not beside a separate décor layer.',
-      },
-      {
-        title: 'Field delivery through Turriva',
-        body:
-          'Once design and drawings are approved, Turriva owns fabrication, installation, and quality through handover and opening.',
+          'Lobbies, corridors, and guest zones in the brand’s language — designed for daily operations, built to hold quality after opening.',
       },
     ],
-    processKicker: 'How we work',
-    processTitle: 'From approved idea to a ready space',
+    processKicker: 'How it works',
+    processTitle: 'From idea to handover — without splitting design from build',
     processLead:
-      'Four clear steps. Each step closes before the next — so delivery does not turn into costly on-site revisions.',
+      'Turriva closes each stage before the next — so the site does not become costly revisions after concept approval.',
     steps: [
       {
         num: '01',
-        title: 'Read the project and the goal',
-        body: 'Audience, purchase or presence decision, and brand language — so design serves the outcome, not decoration.',
+        title: 'Read the place and the goal',
+        body: 'Audience, use, and brand language — so décor serves the experience, not decoration for its own sake.',
       },
       {
         num: '02',
-        title: 'Design the experience and present ideas',
-        body: 'Spatial concept, visitor path, and display priorities — shown visually for early stakeholder approval.',
+        title: 'Design and present the idea',
+        body: 'Spatial concept, circulation, and priorities — shown visually for early stakeholder approval.',
       },
       {
         num: '03',
-        title: 'Prepare execution drawings',
-        body: 'Layouts, elevations, materials, and install sequence — the package factories and site teams can build from.',
+        title: 'Build-ready drawings',
+        body: 'Layouts, elevations, materials, and install sequence — the package factory and site teams build from.',
       },
       {
         num: '04',
-        title: 'Build and hand over through Turriva',
-        body: 'Turriva owns factory, site, and quality until the space is ready to use or open — in the approved visual language.',
+        title: 'Fabricate · install · hand over',
+        body: 'The same team follows quality through handover and opening — in the approved visual language.',
       },
     ],
-    workTitle: 'Selected spatial work',
+    workTitle: 'Selected delivered work',
     workLead:
-      'Galleries, halls, and exhibitions built after clear design and execution drawings — to developer and institutional standards across KSA and the GCC.',
+      'Exhibitions, halls, and interiors built after clear design and execution drawings — through Turriva across KSA and the GCC.',
     caps: [
-      { src: 'makkah-charter-04', label: 'Presentation hall — Makkah Charter' },
-      { src: 'turriva/anan-eskan-gallery', label: 'Anan Eskan sales gallery — Turriva' },
-      { src: 'turriva/mwl-hero', label: 'Muslim World League exhibition — Turriva' },
-      { src: 'turriva/rafal-pavilions', label: 'Rafal pavilions — Turriva' },
-      { src: 'turriva/project-joinery-b2b', label: 'Joinery & install delivery — Turriva' },
-      { src: 'turriva/hero-interior', label: 'Interior ready for handover — Turriva' },
+      { src: 'turriva/mwl-hero', label: 'Muslim World League exhibition — design & build' },
+      { src: 'turriva/anan-eskan-gallery', label: 'Anan Eskan sales gallery' },
+      { src: 'makkah-charter-04', label: 'Institutional hall — Makkah Charter' },
+      { src: 'turriva/rafal-pavilions', label: 'Pavilions & hospitality — Rafal' },
+      { src: 'turriva/living-walnut-interior', label: 'Private reception interior' },
+      { src: 'turriva/hero-interior', label: 'Hospitality interior ready for handover' },
     ],
-    proofKicker: 'Delivery proof',
+    proofKicker: 'Field proof',
     proofTitle: 'Muslim World League exhibition',
     proofLead:
-      'Spatial décor, display tools, and a large exhibition: from visual concept to field handover at institutional standard. Watch the film — then continue to Turriva for delivery.',
+      'Spatial décor and display tools at institutional standard: from visual concept to field handover. This is what Turriva does — design and build on one path.',
     proofWatch: 'Watch with sound',
     proofTag: 'Design · drawings · field install',
     ytId: 'H66KNP1sQCk',
-    handoffKicker: 'Physical delivery',
-    handoffTitle: 'We design. Turriva builds.',
+    handoffKicker: 'Turriva',
+    handoffTitle: 'Décor design and build — in one hand',
     handoffBody:
-      'Graphics House owns the vision, experience design, idea presentation, and execution drawings. Turriva owns technical development, fabrication, installation, and handover until the space is ready to use or open.',
+      'Turriva is the design-and-build path for spatial décor: exhibitions, palaces, and hotels. Graphics House routes you to the right team — you start with the people who will design, build, and hand over.',
     handoffNoteBefore: 'For logo, guidelines, and catalogue identity see ',
     handoffNoteLink: 'Visual Identity',
-    handoffNoteAfter: '. For this spatial service: we design and prepare drawings; delivery runs through Turriva.',
-    finalTitle: 'Ready to discuss a sales gallery or spatial décor?',
+    handoffNoteAfter: '. For exhibition, palace, and hotel décor: Turriva designs and builds.',
+    finalTitle: 'Ready to discuss an exhibition, palace, or hotel?',
     finalLead:
-      'Send the site, target date, or an early plan. We start with experience design and execution drawings — then Turriva moves to delivery with a clear next step within one business day.',
+      'Send the site, target date, or an early plan. Turriva starts by reading the place and designing the idea — then moves to delivery with a clear next step within one business day.',
   },
 };
 
@@ -240,7 +232,8 @@ function buildPage(t, isEn, depth) {
 
   const pillars = t.pillars
     .map(
-      (p) => `<div class="gal-pillar">
+      (p, i) => `<div class="gal-scope reveal${i ? ` r${i}` : ''}">
+ <span class="gal-scope__idx">${String(i + 1).padStart(2, '0')}</span>
  <strong>${esc(p.title)}</strong>
  <p>${esc(p.body)}</p>
 </div>`
@@ -308,7 +301,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
 <link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=8">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=9">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
@@ -321,14 +314,18 @@ gtag('config','G-Y67JVE898Z');
 <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: isEn ? 'Galleries & Spatial Décor' : 'جاليريات وديكور مكاني',
+    name: isEn ? 'Exhibition, Palace & Hotel Décor' : 'ديكور المعارض والقصور والفنادق',
     description: t.description,
     url: t.canonical,
     provider: {
       '@type': 'Organization',
-      name: 'Graphics House',
-      url: 'https://3dgraphicshouse.com',
-      logo: 'https://3dgraphicshouse.com/assets/logo-gold.png',
+      name: 'Turriva',
+      url: 'https://turriva.com',
+      parentOrganization: {
+        '@type': 'Organization',
+        name: 'Graphics House',
+        url: 'https://3dgraphicshouse.com',
+      },
     },
     areaServed: ['SA', 'AE', 'OM', 'BH'],
   })}</script>
@@ -355,21 +352,12 @@ ${header}
   </div>
  </section>
 
- <section class="gal-section gal-section--paper">
+ <section class="gal-section gal-section--paper" id="scope">
   <div class="gal-wrap">
-   <span class="gal-kicker">${esc(t.kicker)}</span>
+   <span class="gal-kicker">${esc(t.scopeKicker)}</span>
    <h2>${esc(t.aboutTitle)}</h2>
    <p class="gal-section__lead">${esc(t.aboutLead)}</p>
-   <div class="gal-pillars">${pillars}</div>
-  </div>
- </section>
-
- <section class="gal-section" id="process">
-  <div class="gal-wrap">
-   <span class="gal-kicker">${esc(t.processKicker)}</span>
-   <h2>${esc(t.processTitle)}</h2>
-   <p class="gal-section__lead">${esc(t.processLead)}</p>
-   <div class="gal-steps">${steps}</div>
+   <div class="gal-scopes">${pillars}</div>
   </div>
  </section>
 
@@ -397,7 +385,16 @@ ${header}
   </div>
  </section>
 
- <section class="gal-section">
+ <section class="gal-section" id="process">
+  <div class="gal-wrap">
+   <span class="gal-kicker">${esc(t.processKicker)}</span>
+   <h2>${esc(t.processTitle)}</h2>
+   <p class="gal-section__lead">${esc(t.processLead)}</p>
+   <div class="gal-steps">${steps}</div>
+  </div>
+ </section>
+
+ <section class="gal-section gal-section--paper" id="work">
   <div class="gal-wrap">
    <h2>${esc(t.workTitle)}</h2>
    <p class="gal-section__lead">${esc(t.workLead)}</p>
@@ -405,7 +402,7 @@ ${header}
   </div>
  </section>
 
- <section class="gal-section gal-section--paper">
+ <section class="gal-section">
   <div class="gal-wrap gal-handoff">
    <div>
     <p class="gal-handoff__note">${esc(t.handoffNoteBefore)}<a href="${brandingHref}">${esc(t.handoffNoteLink)}</a>${esc(t.handoffNoteAfter)}</p>
@@ -419,13 +416,13 @@ ${header}
   </div>
  </section>
 
- <section class="gal-section">
-  <div class="gal-wrap" style="text-align:center">
+ <section class="gal-final">
+  <div class="gal-wrap gal-final__inner">
    <h2>${esc(t.finalTitle)}</h2>
-   <p class="gal-section__lead" style="margin:12px auto 0">${esc(t.finalLead)}</p>
-   <div class="gal-cta-row" style="justify-content:center;margin-top:28px">
-    <a class="gal-btn gal-btn--dark" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_turriva_final">${esc(t.ctaPrimary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
-    <a class="gal-btn gal-btn--outline" href="${contactHref}" data-gh-cta="galleries_contact_final">${esc(t.ctaSecondary)}</a>
+   <p class="gal-final__lead">${esc(t.finalLead)}</p>
+   <div class="gal-cta-row gal-final__cta">
+    <a class="gal-btn gal-btn--gold" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_turriva_final">${esc(t.ctaPrimary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
+    <a class="gal-btn gal-btn--ghost" href="${contactHref}" data-gh-cta="galleries_contact_final">${esc(t.ctaSecondary)}</a>
    </div>
   </div>
  </section>
@@ -494,7 +491,7 @@ function writeLegacyRedirect(fromFile, toPath, isEn) {
 <title>${title}</title>
 <script>location.replace('${toPath}');</script>
 </head>
-<body><p><a href="${toPath}">${isEn ? 'Continue to Galleries & Spatial Décor' : 'متابعة إلى جاليريات وديكور مكاني'}</a></p></body>
+<body><p><a href="${toPath}">${isEn ? 'Continue to Exhibition, Palace & Hotel Décor' : 'متابعة إلى ديكور المعارض والقصور والفنادق'}</a></p></body>
 </html>
 `;
   fs.writeFileSync(path.join(ROOT, fromFile), html, 'utf8');

@@ -93,7 +93,7 @@ html[lang="en"] {
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  max-width: 18ch;
+  max-width: 20ch;
   color: #FAFAF8;
 }
 
@@ -235,6 +235,52 @@ html[lang="en"] .gal-section h2 {
   line-height: 1.85;
   color: var(--gal-muted);
   font-weight: 400;
+}
+
+.gal-scopes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.gal-scope {
+  padding: 28px 24px 30px;
+  border-top: 2px solid var(--gal-gold);
+  background: var(--gal-bg);
+  min-height: 100%;
+}
+
+.gal-scope__idx {
+  display: block;
+  font-family: monospace, ui-monospace, Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--gal-gold);
+  margin-bottom: 14px;
+}
+
+.gal-scope strong {
+  display: block;
+  font-family: var(--gal-heading);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--gal-ink);
+  line-height: 1.35;
+}
+
+html[lang="ar"] .gal-scope strong {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 800;
+}
+
+.gal-scope p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--gal-muted);
 }
 
 .gal-pillars {
@@ -418,6 +464,44 @@ html[lang="ar"] .gal-step strong {
   text-underline-offset: 3px;
 }
 
+.gal-final {
+  padding: 96px 0;
+  background: #0A0A0A;
+  color: #FAFAF8;
+}
+
+.gal-final__inner {
+  text-align: center;
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.gal-final h2 {
+  margin: 0;
+  font-family: var(--gal-heading);
+  font-size: clamp(26px, 3.4vw, 40px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #FAFAF8;
+}
+
+html[lang="ar"] .gal-final h2 {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 800;
+}
+
+.gal-final__lead {
+  margin: 16px auto 0;
+  font-size: 16px;
+  line-height: 1.85;
+  color: rgba(250, 250, 248, 0.72);
+}
+
+.gal-final__cta {
+  justify-content: center;
+  margin-top: 28px;
+}
+
 /* Featured delivery proof — YouTube */
 .gal-proof {
   padding: 88px 0;
@@ -549,6 +633,7 @@ html[lang="ar"] .gal-proof__tag {
     grid-template-columns: 1fr;
   }
 
+  .gal-scopes,
   .gal-pillars,
   .gal-steps,
   .gal-grid {
@@ -562,11 +647,13 @@ html[lang="ar"] .gal-proof__tag {
     min-height: auto;
   }
 
-  .gal-section {
+  .gal-section,
+  .gal-final {
     padding: 64px 0;
   }
 
   .gal-grid,
+  .gal-scopes,
   .gal-pillars,
   .gal-steps {
     grid-template-columns: 1fr;
