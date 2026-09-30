@@ -19,7 +19,6 @@ import {
 } from './lib/header-css-guard.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const TURRIVA = 'https://turriva.com';
 
 const COPY = {
   ar: {
@@ -33,14 +32,14 @@ const COPY = {
     canonical: 'https://3dgraphicshouse.com/services/galleries.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
-    kicker: 'توريفا · متخصصون في بيئات البيع العقاري',
+    kicker: 'Graphics House · بيئات البيع العقاري',
     h1: 'معارض المطورين <span>وصالات البيع</span>',
     lead:
       'نصمّم وننفّذ معارض المطورين وصالات البيع في المملكة والخليج، ونتولّى المسار كاملًا: من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
     ctaPrimary: 'تواصل مع Graphics House',
-    ctaSecondary: 'ابدأ مشروعك مع توريفا',
     contactHref: '../contact-us.html',
     brandingHref: 'branding.html',
+    turrivaAside: 'توريفا هي الذراع التنفيذي لمجموعة تسامي لتنفيذ المعارض وصالات البيع.',
     scopeKicker: 'مجالات عملنا',
     aboutTitle: 'معارض المطورين تخصصنا، وخبرتنا تمتد إلى ما حولها',
     aboutLead:
@@ -112,10 +111,10 @@ const COPY = {
     proofWatch: 'شاهد بالصوت',
     proofTag: 'تصميم · رسومات · تنفيذ ميداني',
     ytId: 'H66KNP1sQCk',
-    handoffKicker: 'توريفا',
+    handoffKicker: 'التواصل',
     handoffTitle: 'معارض المطورين وصالات البيع، بمسار تنفيذ واحد',
     handoffBody:
-      'نحن توريفا، الذراع التنفيذي لـ Graphics House في بيئات البيع والعرض للمطورين: تصميم التجربة، والرسومات، والتصنيع، والتركيب، والتسليم. تعرّفك Graphics House على الفريق لتبدأ مباشرة مع من سيصمّم معرضك وينفّذه.',
+      'جهة التواصل واحدة: Graphics House. نبدأ معك من تصميم التجربة حتى التسليم، والتنفيذ الميداني يتم عبر توريفا ضمن مجموعة تسامي.',
     handoffNoteBefore: 'للهوية البصرية والشعار والكتالوج، راجع ',
     handoffNoteLink: 'صفحة الهوية البصرية',
     handoffNoteAfter: '.',
@@ -141,9 +140,9 @@ const COPY = {
     lead:
       'We design and build developer exhibitions and sales galleries across KSA and the GCC, and we own the full path: from concept and design to fabrication, installation, and handover.',
     ctaPrimary: 'Contact Graphics House',
-    ctaSecondary: 'Start your project with Turriva',
     contactHref: '../contact-us-en.html',
     brandingHref: 'branding-en.html',
+    turrivaAside: 'Turriva is the Tasami Group executive arm for exhibitions and sales galleries.',
     scopeKicker: 'What we do',
     aboutTitle: 'Developer exhibitions are our specialty, and our expertise extends around them',
     aboutLead:
@@ -215,10 +214,10 @@ const COPY = {
     proofWatch: 'Watch with sound',
     proofTag: 'Design · drawings · field install',
     ytId: 'H66KNP1sQCk',
-    handoffKicker: 'Turriva',
+    handoffKicker: 'Contact',
     handoffTitle: 'Developer exhibitions and sales galleries, on one delivery path',
     handoffBody:
-      'We are Turriva, the Graphics House delivery arm for developer sales and exhibition environments: experience design, drawings, fabrication, installation, and handover. Graphics House introduces you to the team so you start directly with the people who will design and build your exhibition.',
+      'One point of contact: Graphics House. We start with you from experience design through handover, with field delivery through Turriva within Tasami Group.',
     handoffNoteBefore: 'For logo, guidelines, and catalogue identity, see ',
     handoffNoteLink: 'Visual Identity',
     handoffNoteAfter: '.',
@@ -369,8 +368,8 @@ ${header}
    <p class="gal-hero__lead">${esc(t.lead)}</p>
    <div class="gal-cta-row">
     <a class="gal-btn gal-btn--gold" href="${contactHref}" data-gh-cta="galleries_contact">${esc(t.ctaPrimary)}</a>
-    <a class="gal-btn gal-btn--ghost" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_to_turriva">${esc(t.ctaSecondary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
    </div>
+   <p class="gal-aside">${esc(t.turrivaAside)}</p>
   </div>
  </section>
 
@@ -434,8 +433,8 @@ ${header}
     <span class="gal-kicker">${esc(t.handoffKicker)}</span>
     <h2>${esc(t.handoffTitle)}</h2>
     <p>${esc(t.handoffBody)}</p>
+    <p class="gal-aside gal-aside--on-dark">${esc(t.turrivaAside)}</p>
     <a class="gal-btn gal-btn--gold" href="${contactHref}" data-gh-cta="galleries_contact_mid">${esc(t.ctaPrimary)}</a>
-    <a class="gal-btn gal-btn--ghost" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_turriva_mid">${esc(t.ctaSecondary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
    </div>
   </div>
  </section>
@@ -446,8 +445,8 @@ ${header}
    <p class="gal-final__lead">${esc(t.finalLead)}</p>
    <div class="gal-cta-row gal-final__cta">
     <a class="gal-btn gal-btn--gold" href="${contactHref}" data-gh-cta="galleries_contact_final">${esc(t.ctaPrimary)}</a>
-    <a class="gal-btn gal-btn--ghost" href="${TURRIVA}" target="_blank" rel="noopener noreferrer" data-gh-cta="galleries_turriva_final">${esc(t.ctaSecondary)} <span class="material-symbols-outlined" aria-hidden="true" style="font-size:18px">north_east</span></a>
    </div>
+   <p class="gal-aside gal-aside--on-dark gal-aside--center">${esc(t.turrivaAside)}</p>
   </div>
  </section>
 </main>
