@@ -184,11 +184,10 @@ function buildPage(t, isEn, depth) {
 
   const grid = t.caps
     .map((c, i) => {
-      const wide = i === 0 ? ' gal-grid__item--wide' : '';
-      return `<figure class="gal-grid__item${wide}">
+      return `<figure class="gal-grid__item">
  <picture>
   <source srcset="${asset}projects/galleries/${c.src}.webp" type="image/webp">
-  <img src="${asset}projects/galleries/${c.src}.jpg" alt="${esc(c.label)}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async" width="1600" height="900">
+  <img src="${asset}projects/galleries/${c.src}.jpg" alt="${esc(c.label)}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async" width="1600" height="1200">
  </picture>
  <figcaption class="gal-grid__cap">${esc(c.label)}</figcaption>
 </figure>`;
@@ -234,7 +233,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
 <link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=5">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=6">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
