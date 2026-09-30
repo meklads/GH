@@ -1,7 +1,7 @@
 /**
  * Shared guards so site-header.css owns the chrome on every page.
  */
-export const SITE_HEADER_CSS_VER = 65;
+export const SITE_HEADER_CSS_VER = 66;
 export const SITE_ENHANCEMENTS_CSS_VER = 48;
 export const SITE_FOOTER_LOCK_CSS_VER = 5;
 
