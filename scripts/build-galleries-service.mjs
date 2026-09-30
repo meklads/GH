@@ -29,14 +29,14 @@ const COPY = {
     dir: 'rtl',
     title: 'معارض المطورين وصالات البيع | توريفا عبر Graphics House',
     description:
-      'نصمّم وننفّذ معارض المشاريع وصالات البيع للمطورين في المملكة والخليج، ونتولّى المسار كاملًا: من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
+      'نصمّم وننفّذ معارض المطورين وصالات البيع في المملكة والخليج، ونتولّى المسار كاملًا: من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
     canonical: 'https://3dgraphicshouse.com/services/galleries.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
     kicker: 'توريفا · متخصصون في بيئات البيع العقاري',
     h1: 'معارض المطورين <span>وصالات البيع</span>',
     lead:
-      'نصمّم وننفّذ معارض المشاريع وصالات البيع للمطورين في المملكة والخليج، ونتولّى المسار كاملًا: من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
+      'نصمّم وننفّذ معارض المطورين وصالات البيع في المملكة والخليج، ونتولّى المسار كاملًا: من الفكرة والتصميم إلى التصنيع والتركيب والتسليم.',
     ctaPrimary: 'تواصل مع Graphics House',
     ctaSecondary: 'ابدأ مشروعك مع توريفا',
     contactHref: '../contact-us.html',
@@ -48,9 +48,9 @@ const COPY = {
     pillars: [
       {
         badge: 'التخصص الأساسي',
-        title: 'معارض المشاريع للمطورين',
+        title: 'معارض المطورين',
         body:
-          'معارض مؤسسية بمعايير المطوّر والمؤسسة، تُدار من اعتماد الفكرة إلى التصنيع والتركيب والتسليم، بتخطيط يضمن الجاهزية قبل موعد الافتتاح.',
+          'معارض احترافية بمعايير مؤسسية، تُدار باعتماد الفكرة ثم التنفيذ، بتخطيط يضمن الجاهزية قبل موعد الافتتاح.',
         featured: true,
       },
       {
@@ -115,11 +115,13 @@ const COPY = {
     handoffKicker: 'توريفا',
     handoffTitle: 'معارض المطورين وصالات البيع، بمسار تنفيذ واحد',
     handoffBody:
-      'نحن متخصصون في بيئات البيع والعرض للمطورين: تصميم التجربة، والرسومات، والتصنيع، والتركيب، والتسليم. تعرّفك Graphics House على الفريق، وتبدأ مباشرة مع من سيصمّم المعرض وينفّذه.',
-    handoffNoteBefore: 'للهوية البصرية والشعار والكتالوج راجع ',
+      'نحن توريفا، الذراع التنفيذي لـ Graphics House في بيئات البيع والعرض للمطورين: تصميم التجربة، والرسومات، والتصنيع، والتركيب، والتسليم. تعرّفك Graphics House على الفريق لتبدأ مباشرة مع من سيصمّم معرضك وينفّذه.',
+    handoffNoteBefore: 'للهوية البصرية والشعار والكتالوج، راجع ',
     handoffNoteLink: 'صفحة الهوية البصرية',
-    handoffNoteAfter: '. لمعارض المطورين وصالات البيع، وديكور القصور والفنادق عند الحاجة، نتولّى التصميم والتنفيذ.',
-    finalTitle: 'جاهز لمناقشة معرض مطور أو صالة بيع؟',
+    handoffNoteAfter: '.',
+    handoffNoteExtra:
+      'ولمعارض المطورين وصالات البيع، وديكور القصور والفنادق عند الحاجة، نتولّى التصميم والتنفيذ.',
+    finalTitle: 'جاهز لمناقشة معرض لمشروعك أو صالة بيع؟',
     finalLead:
       'أرسل الموقع أو الموعد أو مخططًا أوليًا. نبدأ بقراءة المشروع وتصميم تجربة الزائر، ثم ننتقل إلى التنفيذ بخطوة تالية واضحة خلال يوم عمل.',
   },
@@ -130,14 +132,14 @@ const COPY = {
     dir: 'ltr',
     title: 'Developer Exhibitions & Sales Galleries | Turriva via Graphics House',
     description:
-      'We design and build project exhibitions and sales galleries for developers across KSA and the GCC, and we own the full path: from concept and design to fabrication, installation, and handover.',
+      'We design and build developer exhibitions and sales galleries across KSA and the GCC, and we own the full path: from concept and design to fabrication, installation, and handover.',
     canonical: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altEn: 'https://3dgraphicshouse.com/services/galleries-en.html',
     altAr: 'https://3dgraphicshouse.com/services/galleries.html',
     kicker: 'Turriva · Specialists in real-estate sales environments',
     h1: 'Developer exhibitions <span>&amp; sales galleries</span>',
     lead:
-      'We design and build project exhibitions and sales galleries for developers across KSA and the GCC, and we own the full path: from concept and design to fabrication, installation, and handover.',
+      'We design and build developer exhibitions and sales galleries across KSA and the GCC, and we own the full path: from concept and design to fabrication, installation, and handover.',
     ctaPrimary: 'Contact Graphics House',
     ctaSecondary: 'Start your project with Turriva',
     contactHref: '../contact-us-en.html',
@@ -149,9 +151,9 @@ const COPY = {
     pillars: [
       {
         badge: 'Core specialty',
-        title: 'Developer project exhibitions',
+        title: 'Developer exhibitions',
         body:
-          'Institutional exhibitions to developer and institution standards — managed from concept approval through fabrication, install, and handover, with planning that protects readiness before opening day.',
+          'Professional exhibitions at institutional standard — managed from concept approval into delivery, with planning that protects readiness before opening day.',
         featured: true,
       },
       {
@@ -216,11 +218,13 @@ const COPY = {
     handoffKicker: 'Turriva',
     handoffTitle: 'Developer exhibitions and sales galleries, on one delivery path',
     handoffBody:
-      'We specialize in developer sales and exhibition environments: experience design, drawings, fabrication, installation, and handover. Graphics House introduces you to the team, and you start directly with the people who will design and build the exhibition.',
-    handoffNoteBefore: 'For logo, guidelines, and catalogue identity see ',
+      'We are Turriva, the Graphics House delivery arm for developer sales and exhibition environments: experience design, drawings, fabrication, installation, and handover. Graphics House introduces you to the team so you start directly with the people who will design and build your exhibition.',
+    handoffNoteBefore: 'For logo, guidelines, and catalogue identity, see ',
     handoffNoteLink: 'Visual Identity',
-    handoffNoteAfter: '. For developer exhibitions and sales galleries, and palace or hotel décor when needed, we own design and build.',
-    finalTitle: 'Ready to discuss a developer exhibition or sales gallery?',
+    handoffNoteAfter: '.',
+    handoffNoteExtra:
+      'For developer exhibitions and sales galleries, and palace or hotel décor when needed, we own design and build.',
+    finalTitle: 'Ready to discuss an exhibition for your project or a sales gallery?',
     finalLead:
       'Send the site, target date, or an early plan. We start by reading the project and designing the visitor experience, then move to delivery with a clear next step within one business day.',
   },
@@ -319,7 +323,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
 <link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=13">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=14">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
@@ -424,6 +428,7 @@ ${header}
   <div class="gal-wrap gal-handoff">
    <div>
     <p class="gal-handoff__note">${esc(t.handoffNoteBefore)}<a href="${brandingHref}">${esc(t.handoffNoteLink)}</a>${esc(t.handoffNoteAfter)}</p>
+    <p class="gal-handoff__note gal-handoff__note--follow">${esc(t.handoffNoteExtra)}</p>
    </div>
    <div class="gal-handoff__card">
     <span class="gal-kicker">${esc(t.handoffKicker)}</span>

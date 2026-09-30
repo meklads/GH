@@ -532,6 +532,10 @@ html[lang="ar"] .gal-step strong {
   color: var(--gal-muted);
 }
 
+.gal-handoff__note--follow {
+  margin-top: 14px;
+}
+
 .gal-handoff__note a {
   color: var(--gal-gold-dark);
   font-weight: 700;
