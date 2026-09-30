@@ -234,7 +234,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="${asset}tailwind.min.css?v=1">
 <link rel="stylesheet" href="${asset}gh-tokens.css?v=1">
 <link rel="stylesheet" href="${asset}gh-site-enhancements.css?v=${SITE_ENHANCEMENTS_CSS_VER}">
-<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=4">
+<link rel="stylesheet" href="${asset}gh-galleries-service.css?v=5">
 <link rel="stylesheet" href="${asset}gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="${asset}gh-chat-assistant.css?v=10">
 <link rel="stylesheet" href="${asset}site-header.css?v=${SITE_HEADER_CSS_VER}" data-gh-header-css="1">
@@ -264,10 +264,14 @@ ${header}
 <main id="main-content">
  <section class="gal-hero">
   <div class="gal-hero__media" aria-hidden="true">
-   <picture>
-    <source srcset="${asset}projects/galleries/makkah-charter-04.webp" type="image/webp">
-    <img src="${asset}projects/galleries/makkah-charter-04.jpg" alt="" width="1600" height="900" fetchpriority="high">
-   </picture>
+   <iframe
+    class="gal-hero__yt"
+    src="https://www.youtube.com/embed/${t.ytId}?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=${t.ytId}&amp;modestbranding=1&amp;playsinline=1&amp;rel=0&amp;vq=hd1080"
+    title="${esc(isEn ? 'Exhibition hall atmosphere' : 'أجواء قاعة المعرض')}"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    loading="eager"
+   ></iframe>
   </div>
   <div class="gal-hero__shade" aria-hidden="true"></div>
   <div class="gal-wrap gal-hero__inner">
