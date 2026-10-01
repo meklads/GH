@@ -19,7 +19,7 @@ const LOGOS = [
  'anan-eskan.png',
  'al-owla.png',
  'toyota.png',
- 'imc-150x150.png',
+ 'imc.png',
  'رابطة العالم الاسلامي.png',
 ].map((f) => `../assets/clients-logo/${f}`);
 

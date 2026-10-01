@@ -19,7 +19,7 @@ const CLIENT_LOGOS = [
   { src: 'assets/clients-logo/bn-zooma.png', altAr: 'بن زومة', altEn: 'Bin Zoma' },
   { src: 'assets/clients-logo/makyon.png', altAr: 'مكيون', altEn: 'Makklyoon' },
   { src: 'assets/clients-logo/oteck.png', altAr: 'أوتيك', altEn: 'Autek' },
-  { src: 'assets/clients-logo/imc-150x150.png', altAr: 'IMC', altEn: 'IMC' },
+  { src: 'assets/clients-logo/imc.png', altAr: 'IMC', altEn: 'IMC' },
 ];
 
 const COPY = {
