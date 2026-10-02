@@ -38,7 +38,7 @@ const COPY = {
     pointsTitle: 'What one accountable studio delivers',
     points: [
       ['Concept ownership', 'Décor, spatial design, and interactive narrative from one brief, not stitched subcontractor files'],
-      ['Production under one roof', '<a href="../services/maquettes-en.html">Maquettes</a>, <a href="../services/cinematic-cgi-en.html">CGI films</a>, screens, and control programs in one handover pack. Campaign films can extend via <a href="https://beesmotion.com" target="_blank" rel="noopener noreferrer">Bees Motion</a> after assets lock'],
+      ['Production under one roof', '<a href="../services/maquettes-en.html">Maquettes</a>, <a href="../services/cinematic-cgi-en.html">CGI films</a>, screens, and control programs in one handover pack. Ongoing market films and content activation via <a href="https://beesmotion.com" target="_blank" rel="noopener noreferrer">Bees Motion</a> after assets lock — not event social management from Graphics House'],
       ['Protocol-ready install', 'Guest path, lighting cues, and fallback scenes tested before the first VIP walkthrough'],
       ['Acceptance that closes the loop', 'A briefing environment leadership can praise, not a screen that merely turns on'],
     ],
@@ -92,7 +92,7 @@ const COPY = {
     pointsTitle: 'ماذا يقدّم استوديو واحد مسؤول؟',
     points: [
       ['ملكية المفهوم', 'ديكور وتصميم مكاني وسرد تفاعلي من موجز واحد، لا ملفات مجمّعة من مقاولين'],
-      ['إنتاج تحت سقف واحد', '<a href="../services/maquettes.html">مجسمات</a> و<a href="../services/cinematic-cgi.html">أفلام CGI</a> وشاشات وبرامج تحكم في حزمة تسليم واحدة. أفلام الحملة يمكن توسيعها عبر <a href="https://beesmotion.com" target="_blank" rel="noopener noreferrer">بيزموشن</a> بعد قفل الأصول'],
+      ['إنتاج تحت سقف واحد', '<a href="../services/maquettes.html">مجسمات</a> و<a href="../services/cinematic-cgi.html">أفلام CGI</a> وشاشات وبرامج تحكم في حزمة تسليم واحدة. أفلام السوق والمحتوى المستمر عبر <a href="https://beesmotion.com" target="_blank" rel="noopener noreferrer">بيزموشن</a> بعد قفل الأصول — لا إدارة سوشيال للفعالية من Graphics House'],
       ['جاهزية بروتوكول', 'مسار الضيف والإضاءة والنسخة الاحتياطية تُختبر قبل جولة VIP'],
       ['قبول يُغلق الحلقة', 'بيئة إحاطة تنال إشادة القيادة، لا شاشة تُشغَّل فقط'],
     ],

@@ -89,8 +89,8 @@ function patchFile(file, solVars, svcVars) {
 
 const arVars = {
   G: '',
-  G_SUB1: 'نظام توليد العملاء والمبيعات',
-  G_DESC: 'توليد عملاء مؤهلين، أتمتة المتابعة، وتحسين معدلات التحويل.',
+  G_SUB1: 'تمكين المبيعات والبيع الرقمي',
+  G_DESC: 'صفحة مشروع، مسار استفسار، واتساب وتتبع — بنية تحويل رقمية، لا إدارة تسويق شهرية.',
   P_SUB: 'نظام إطلاق المشاريع العقارية',
   P_DESC: 'حل متكامل لإطلاق المشاريع العقارية يشمل التصور، العلامة التجارية، التسويق ودعم المبيعات.',
   B_SUB: 'نظام نمو العلامات التجارية',
@@ -107,8 +107,8 @@ const arVars = {
 
 const enVars = {
   G: '',
-  G_SUB1: 'Lead Generation & Sales System',
-  G_DESC: 'Generate qualified leads, automate follow-up and improve sales conversion.',
+  G_SUB1: 'Sales Enablement & Digital Sales',
+  G_DESC: 'Project landing, inquiry path, WhatsApp, and tracking — digital conversion infrastructure, not monthly marketing management.',
   P_SUB: 'Real Estate Project Launch System',
   P_DESC: 'Complete launch solution for real estate projects including visualization, branding, marketing and sales support.',
   B_SUB: 'Brand Growth System',
