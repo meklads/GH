@@ -43,7 +43,7 @@ window.GH_CLIENT_HUB_ITEMS = [
       ar: 'بروفايل جرافيكس هاوس للنسخ الخاصة والمشاركات المحدودة.',
       en: 'Graphics House company folio for private sharing only.',
     },
-    href: 'assets/share/folio-private.pdf',
+    href: 'assets/share/folio-private.pdf?v=2',
     icon: 'picture_as_pdf',
   },
   {
