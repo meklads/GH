@@ -346,6 +346,161 @@ gtag('config','G-Y67JVE898Z');
   .gh-stages__timeline { grid-template-columns: 1fr; }
   .gh-stages__timeline::before { display: none; }
 }
+
+.gh-stage-pkgs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+.gh-stage-pkg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  height: 100%;
+  padding: 26px 22px 22px;
+  border: 1px solid rgba(20,20,20,.12);
+  border-radius: 18px;
+  background: #fff;
+  color: #141414;
+  transition: border-color .2s, background-color .2s;
+}
+.gh-stage-pkg:hover { transform: none; border-color: rgba(20,20,20,.28); }
+.gh-stage-pkg.is-match {
+  border-color: #C9A84C;
+  box-shadow: 0 0 0 1px #C9A84C;
+}
+.gh-stage-pkg--featured {
+  background: #141414;
+  color: #FAFAF8;
+  border-color: rgba(255,255,255,.1);
+}
+.gh-stage-pkg__ribbon {
+  position: absolute;
+  top: -11px;
+  inset-inline-start: 20px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #C9A84C;
+  color: #141414;
+  font-size: 11px;
+  font-weight: 700;
+}
+.gh-stage-pkg__tag {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(201,168,76,.18);
+  color: #8A6F22;
+  font-size: 12px;
+  font-weight: 700;
+}
+.gh-stage-pkg--featured .gh-stage-pkg__tag {
+  background: rgba(201,168,76,.2);
+  color: #E8D59A;
+}
+.gh-stage-pkg__title {
+  margin: 0;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.gh-stage-pkg__aka {
+  margin: 0;
+  font-size: 12.5px;
+  opacity: .65;
+}
+.gh-stage-pkg__desc,
+.gh-stage-pkg__meta {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(20,20,20,.62);
+}
+.gh-stage-pkg--featured .gh-stage-pkg__desc,
+.gh-stage-pkg--featured .gh-stage-pkg__meta,
+.gh-stage-pkg--featured .gh-stage-pkg__aka,
+.gh-stage-pkg--featured .gh-stage-pkg__need p {
+  color: rgba(250,250,248,.72);
+}
+.gh-stage-pkg__list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  flex: 1;
+}
+.gh-stage-pkg__list li {
+  position: relative;
+  padding-inline-start: 16px;
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+.gh-stage-pkg__list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: .55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C9A84C;
+}
+.gh-stage-pkg__need {
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(20,20,20,.1);
+}
+.gh-stage-pkg--featured .gh-stage-pkg__need { border-top-color: rgba(255,255,255,.12); }
+.gh-stage-pkg__need strong { display: block; margin-bottom: 6px; font-size: 13px; }
+.gh-stage-pkg__need p { margin: 0; font-size: 13px; line-height: 1.7; color: rgba(20,20,20,.62); }
+.gh-stage-pkg__price { margin: 0; font-size: 14px; font-weight: 600; }
+.gh-stage-pkg__cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+.gh-stage-pkg__cta:focus-visible {
+  outline: 2px solid #C9A84C;
+  outline-offset: 3px;
+}
+.gh-stage-pkg__cta--outline {
+  border: 1.5px solid #141414;
+  color: #141414;
+  background: transparent;
+}
+.gh-stage-pkg--featured .gh-stage-pkg__cta--outline {
+  border-color: rgba(250,250,248,.7);
+  color: #FAFAF8;
+}
+.gh-stage-pkg__cta--solid {
+  border: 1.5px solid #C9A84C;
+  background: #C9A84C;
+  color: #141414;
+}
+.gh-pkg-rule {
+  text-align: center;
+  margin: 8px 0 28px;
+  font-size: 14px;
+  color: rgba(20,20,20,.58);
+}
+@media (max-width: 900px) {
+  .gh-stage-pkgs { grid-template-columns: 1fr; }
+}
 </style>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=48">
@@ -621,6 +776,79 @@ gtag('config','G-Y67JVE898Z');
  <h2 id="ghd-packages-title"></h2>
  <p id="ghd-packages-lead"></p>
  </div>
+
+ <div class="gh-stage-pkgs" id="gh-stage-pkgs" aria-label="باقات المراحل">
+ <article class="gh-stage-pkg" id="pkg-basic" data-stage="1">
+ <span class="gh-stage-pkg__tag">قبل الطرح</span>
+ <h3 class="gh-stage-pkg__title">باقة التعريف</h3>
+ <p class="gh-stage-pkg__aka">كانت تُعرف بنواة</p>
+ <p class="gh-stage-pkg__desc">لمشروعك قبل أن يُطرح للبيع</p>
+ <p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع في الدراسة أو التصميم أو ينتظر الاعتماد</p>
+ <p class="gh-stage-pkg__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولة واحدة</p>
+ <ul class="gh-stage-pkg__list">
+ <li>هوية بصرية للمشروع: شعار وألوان وملفات تسليم</li>
+ <li>12 صورة معمارية أولية (Concept): واجهات ومناظر خارجية وعدد محدود من الداخليات</li>
+ <li>فيديو تشويقي قصير (Teaser)</li>
+ <li>صفحة هبوط للتعريف بالمشروع مع نموذج تسجيل اهتمام</li>
+ <li>عرض تعريفي للمستثمرين والجهات (Project Deck)</li>
+ </ul>
+ <div class="gh-stage-pkg__need">
+ <strong>ما نحتاجه منك</strong>
+ <p>المخططات المبدئية، والمواد والألوان المقترحة، واسم المشروع وموقعه.</p>
+ </div>
+ <p class="gh-stage-pkg__price">السعر حسب النطاق بعد الاجتماع</p>
+ <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us.html?intent=session&amp;stage=1">احجز جلسة تعريفية</a>
+ </article>
+ <article class="gh-stage-pkg gh-stage-pkg--featured" id="pkg-launch" data-stage="2">
+ <span class="gh-stage-pkg__ribbon">الأكثر طلباً</span>
+ <span class="gh-stage-pkg__tag">أثناء البناء</span>
+ <h3 class="gh-stage-pkg__title">باقة البيع المبكر</h3>
+ <p class="gh-stage-pkg__aka">كانت تُعرف بانطلاق</p>
+ <p class="gh-stage-pkg__desc">لمشروعك قيد البناء ويحتاج إلى بيع مبكر</p>
+ <p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع قيد الإنشاء يبدأ تسويق وحداته الآن</p>
+ <p class="gh-stage-pkg__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولتان</p>
+ <ul class="gh-stage-pkg__list">
+ <li>18 صورة معمارية نهائية: خارجية وداخلية، نهارية وليلية</li>
+ <li>مخططات ثلاثية الأبعاد للوحدات (3D Floor Plans)</li>
+ <li>جولة افتراضية 360°</li>
+ <li>فيلم سينمائي ثلاثي الأبعاد للمشروع (4 إلى 5 دقائق)</li>
+ <li>تصوير درون للموقع (60 ثانية تقريباً)</li>
+ <li>موقع إلكتروني متعدد الصفحات للمشروع</li>
+ <li>مقاطع سوشيال ميديا بمقاسات المنصات</li>
+ <li>مادة تحريرية: وصف المشروع ومزاياه ونصوص المنصات</li>
+ </ul>
+ <div class="gh-stage-pkg__need">
+ <strong>ما نحتاجه منك</strong>
+ <p>المخططات المعتمدة للوحدات، وقائمة المزايا والأسعار المبدئية، وصور الموقع الحالية إن وجدت.</p>
+ </div>
+ <p class="gh-stage-pkg__price">السعر حسب النطاق بعد الاجتماع</p>
+ <a class="gh-stage-pkg__cta gh-stage-pkg__cta--solid" href="contact-us.html?intent=session&amp;stage=2">احجز جلسة تعريفية</a>
+ </article>
+ <article class="gh-stage-pkg" id="pkg-growth" data-stage="3">
+ <span class="gh-stage-pkg__tag">بعد الإنجاز</span>
+ <h3 class="gh-stage-pkg__title">باقة الإطلاق الكامل</h3>
+ <p class="gh-stage-pkg__aka">كانت تُعرف بتوقيع</p>
+ <p class="gh-stage-pkg__desc">لمشروعك بعد الإنجاز لبيع وحداته المتبقية</p>
+ <p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع مكتمل أو قريب من التسليم</p>
+ <p class="gh-stage-pkg__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولتان</p>
+ <ul class="gh-stage-pkg__list">
+ <li>تصميم صالة البيع مع التنفيذ</li>
+ <li>تصميم بوث المعرض مع التنفيذ</li>
+ <li>مواد البيع: كتالوج مطبوع ورقمي، وبروشور، وأوراق مواصفات الوحدات</li>
+ <li>لوحات إعلانية وإشارات (Hoarding &amp; Signage)</li>
+ <li>تصوير فوتوغرافي ميداني ليوم واحد لمراحل الإنجاز</li>
+ <li>محتوى حملة الإطلاق: مقاطع وإعلانات</li>
+ </ul>
+ <div class="gh-stage-pkg__need">
+ <strong>ما نحتاجه منك</strong>
+ <p>قائمة الوحدات المتاحة وأسعارها، وموعد الإطلاق، وتأمين دخول الموقع أو صالة العرض.</p>
+ </div>
+ <p class="gh-stage-pkg__price">السعر حسب النطاق بعد الاجتماع</p>
+ <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us.html?intent=session&amp;stage=3">احجز جلسة تعريفية</a>
+ </article>
+ </div>
+ <p class="gh-pkg-rule" id="gh-pkg-rule">الباقة الأعلى تشمل مخرجات الباقات التي قبلها.</p>
+
  <div class="ghd-packages" id="ghd-packages"></div>
  </div>
  </section>
@@ -953,71 +1181,20 @@ gtag('config','G-Y67JVE898Z');
   var names = { '1': 'باقة التعريف', '2': 'باقة البيع المبكر', '3': 'باقة الإطلاق الكامل' };
   var hashMap = { 'pkg-basic': '1', 'pkg-launch': '2', 'pkg-growth': '3' };
   var idByStage = { '1': 'pkg-basic', '2': 'pkg-launch', '3': 'pkg-growth' };
-  var map = window.__GH_PKG_STAGE_MAP__ || {};
 
   function reduceMotion() {
     return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
-  function enrichPackages() {
+  function dedupeDynamicPackageIds() {
     var host = document.getElementById('ghd-packages');
     if (!host) return;
-    Object.keys(map).forEach(function (id) {
-      var m = map[id];
-      var card = host.querySelector('#pkg-' + id) || host.querySelector('[data-package-id="' + id + '"]');
-      if (!card) return;
-      card.id = 'pkg-' + id;
-      card.setAttribute('data-stage', m.stageNum);
-      var nameEl = card.querySelector('.ghd-pkg-name');
-      if (nameEl && !card.querySelector('.ghd-pkg-aka')) {
-        var aka = document.createElement('p');
-        aka.className = 'ghd-pkg-aka';
-        aka.textContent = 'كانت تُعرف بـ' + m.was;
-        nameEl.insertAdjacentElement('afterend', aka);
-      }
-      if (!card.querySelector('.ghd-pkg-desc')) {
-        var desc = document.createElement('p');
-        desc.className = 'ghd-pkg-desc';
-        desc.textContent = m.desc;
-        var whom = document.createElement('p');
-        whom.className = 'ghd-pkg-whom';
-        whom.innerHTML = '<strong>لمن:</strong> ' + m.forWhom;
-        var meta = document.createElement('p');
-        meta.className = 'ghd-pkg-meta-line';
-        meta.textContent = m.meta;
-        var anchor = card.querySelector('.ghd-pkg-aka') || nameEl;
-        if (anchor) {
-          anchor.insertAdjacentElement('afterend', meta);
-          anchor.insertAdjacentElement('afterend', whom);
-          anchor.insertAdjacentElement('afterend', desc);
-        }
-      }
-      if (!card.querySelector('.ghd-pkg-need')) {
-        var need = document.createElement('div');
-        need.className = 'ghd-pkg-need';
-        need.innerHTML = '<strong>ما نحتاجه منك</strong><p>' + m.need + '</p>';
-        var ctas = card.querySelector('.ghd-pkg-ctas');
-        if (ctas) ctas.insertAdjacentElement('beforebegin', need);
-        else card.appendChild(need);
-      }
-      var ctas = card.querySelector('.ghd-pkg-ctas');
-      if (ctas && !ctas.querySelector('[data-stage-cta]')) {
-        var a = document.createElement('a');
-        a.className = 'ghd-cta' + (card.classList.contains('ghd-pkg--featured') ? ' ghd-cta--on-dark' : ' ghd-cta--primary');
-        a.href = 'contact-us.html?intent=session&stage=' + m.stageNum;
-        a.setAttribute('data-stage-cta', m.stageNum);
-        a.textContent = 'احجز جلسة تعريفية';
-        ctas.insertBefore(a, ctas.firstChild);
-      }
+    ['pkg-basic', 'pkg-launch', 'pkg-growth'].forEach(function (id) {
+      host.querySelectorAll('[id="' + id + '"]').forEach(function (el) {
+        el.removeAttribute('id');
+        el.setAttribute('data-dyn-package', id.replace('pkg-', ''));
+      });
     });
-    var rule = document.getElementById('gh-pkg-rule');
-    if (!rule && host.parentElement) {
-      rule = document.createElement('p');
-      rule.id = 'gh-pkg-rule';
-      rule.style.cssText = 'text-align:center;margin:18px 0 0;font-size:14px;color:rgba(20,20,20,.58)';
-      rule.textContent = 'الباقة الأعلى تشمل مخرجات الباقات التي قبلها.';
-      host.insertAdjacentElement('afterend', rule);
-    }
   }
 
   function selectStage(stage, opts) {
@@ -1027,9 +1204,8 @@ gtag('config','G-Y67JVE898Z');
     document.querySelectorAll('.gh-stage-btn').forEach(function (btn) {
       btn.setAttribute('aria-pressed', btn.getAttribute('data-stage') === id ? 'true' : 'false');
     });
-    document.querySelectorAll('#ghd-packages .ghd-pkg[data-stage], #ghd-packages [id^="pkg-"]').forEach(function (card) {
-      var match = card.getAttribute('data-stage') === id || card.id === idByStage[id];
-      card.classList.toggle('is-match', match);
+    document.querySelectorAll('.gh-stage-pkg').forEach(function (card) {
+      card.classList.toggle('is-match', card.getAttribute('data-stage') === id);
     });
     var statusEl = document.getElementById('gh-stages-status');
     if (statusEl) statusEl.textContent = 'مشروعك يناسب ' + names[id] + '، وتجدها بالأسفل.';
@@ -1052,7 +1228,7 @@ gtag('config','G-Y67JVE898Z');
   }
 
   function boot() {
-    enrichPackages();
+    dedupeDynamicPackageIds();
     document.querySelectorAll('.gh-stage-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
         selectStage(btn.getAttribute('data-stage'), { scroll: true });
@@ -1079,7 +1255,12 @@ gtag('config','G-Y67JVE898Z');
     var tries = 0;
     (function tick() {
       tries += 1;
-      if (document.getElementById('pkg-basic') || tries > 40) {
+      // Static cards exist immediately; also wait briefly for GH Direct to paint so we can dedupe ids
+      if (document.getElementById('pkg-basic') && (document.querySelector('#ghd-packages .ghd-pkg') || tries > 40)) {
+        boot();
+        return;
+      }
+      if (document.getElementById('pkg-basic') && tries > 8) {
         boot();
         return;
       }
