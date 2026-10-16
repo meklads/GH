@@ -723,7 +723,7 @@ services: [
       price: 5500,
       unit: 'image',
       priceLabel: 'from',
-      media: { type: 'image', src: 'assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp' },
+      media: { type: 'image', src: 'assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp' },
     },
     {
       id: 'render-int',
@@ -797,7 +797,7 @@ services: [
       media: {
         type: 'video',
         src: 'assets/videos/GH-demo-reel-2025-mobile.mp4',
-        poster: 'assets/projects/rafal-pavilions/film-still.webp',
+        poster: 'assets/projects/cinematic/video-1.webp',
       },
     },
     {

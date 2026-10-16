@@ -824,7 +824,7 @@ window.GH_DIRECT = {
       "priceLabel": "contact",
       "media": {
         "type": "image",
-        "src": "assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp"
+        "src": "assets/projects/rendering/Al-Khair-Heights-in-Makkah1-e1745148056352.webp"
       },
       "priceTo": null
     },
@@ -922,7 +922,7 @@ window.GH_DIRECT = {
       "media": {
         "type": "video",
         "src": "assets/videos/GH-demo-reel-2025-mobile.mp4",
-        "poster": "assets/projects/rafal-pavilions/film-still.webp"
+        "poster": "assets/projects/cinematic/video-1.webp"
       }
     },
     {
