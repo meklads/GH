@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" dir="rtl" lang="ar">
 <head>
+<!-- GH perf -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
+
+
+
+
+
+
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <script src="assets/gh-forms-config.js?v=2"></script>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y67JVE898Z"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -18,17 +28,328 @@ gtag('config','G-Y67JVE898Z');
 <script src="assets/gh-analytics.js?v=3"></script>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>الباقات | Graphics House</title>
-<meta name="description" content="باقات وخدمات للمطورين العقاريين — باقة التعريف، باقة البيع المبكر، وباقة الإطلاق الكامل. التسعير حسب النطاق بعد الاجتماع."/>
+<title>الباقات | GH Direct | Graphics House</title>
+<meta name="description" content="باقات وخدمات للمطورين العقاريين حسب مرحلة المشروع: قبل الطرح، أثناء البناء، وبعد الإنجاز. التسعير حسب النطاق بعد الاجتماع | Graphics House."/>
 <link rel="canonical" href="https://3dgraphicshouse.com/Packages.html">
 <link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/Packages-en.html">
 <link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/Packages.html">
 <link rel="alternate" hreflang="x-default" href="https://3dgraphicshouse.com/Packages-en.html">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+
+
 <script defer src="assets/gh-performance.js?v=11"></script>
 <script defer src="assets/gh-cta-track.js?v=1"></script>
+<script src="assets/gh-direct-data-public.js?v=82"></script>
+<script>
+/* Unify stage/package names for this page; keep GH Direct catalog/proof/atelier intact. */
+(function () {
+  var D = window.GH_DIRECT;
+  if (!D || !D.packages) return;
+  var map = {
+    basic: {
+      name: 'باقة التعريف',
+      stage: 'قبل الطرح',
+      stageLine: 'المرحلة الأولى: قبل الطرح',
+      was: 'نواة',
+      forWhom: 'مشروع في الدراسة أو التصميم أو ينتظر الاعتماد',
+      meta: 'المدة: تُحدد في عرض السعر | جولات التعديل: جولة واحدة',
+      desc: 'لمشروعك قبل أن يُطرح للبيع',
+      need: 'المخططات المبدئية، والمواد والألوان المقترحة، واسم المشروع وموقعه.',
+      lines: [
+        'هوية بصرية للمشروع: شعار وألوان وملفات تسليم',
+        '12 صورة معمارية أولية (Concept): واجهات ومناظر خارجية وعدد محدود من الداخليات',
+        'فيديو تشويقي قصير (Teaser)',
+        'صفحة هبوط للتعريف بالمشروع مع نموذج تسجيل اهتمام',
+        'عرض تعريفي للمستثمرين والجهات (Project Deck)'
+      ],
+      stageNum: '1'
+    },
+    launch: {
+      name: 'باقة البيع المبكر',
+      stage: 'أثناء البناء',
+      stageLine: 'المرحلة الثانية: أثناء البناء',
+      was: 'انطلاق',
+      forWhom: 'مشروع قيد الإنشاء يبدأ تسويق وحداته الآن',
+      meta: 'المدة: تُحدد في عرض السعر | جولات التعديل: جولتان',
+      desc: 'لمشروعك قيد البناء ويحتاج إلى بيع مبكر',
+      need: 'المخططات المعتمدة للوحدات، وقائمة المزايا والأسعار المبدئية، وصور الموقع الحالية إن وجدت.',
+      lines: [
+        '18 صورة معمارية نهائية: خارجية وداخلية، نهارية وليلية',
+        'مخططات ثلاثية الأبعاد للوحدات (3D Floor Plans)',
+        'جولة افتراضية 360°',
+        'فيلم سينمائي ثلاثي الأبعاد للمشروع (4 إلى 5 دقائق)',
+        'تصوير درون للموقع (60 ثانية تقريباً)',
+        'موقع إلكتروني متعدد الصفحات للمشروع',
+        'مقاطع سوشيال ميديا بمقاسات المنصات',
+        'مادة تحريرية: وصف المشروع ومزاياه ونصوص المنصات'
+      ],
+      stageNum: '2'
+    },
+    growth: {
+      name: 'باقة الإطلاق الكامل',
+      stage: 'بعد الإنجاز',
+      stageLine: 'المرحلة الثالثة: بعد الإنجاز',
+      was: 'توقيع',
+      forWhom: 'مشروع مكتمل أو قريب من التسليم',
+      meta: 'المدة: تُحدد في عرض السعر | جولات التعديل: جولتان',
+      desc: 'لمشروعك بعد الإنجاز لبيع وحداته المتبقية',
+      need: 'قائمة الوحدات المتاحة وأسعارها، وموعد الإطلاق، وتأمين دخول الموقع أو صالة العرض.',
+      lines: [
+        'تصميم صالة البيع مع التنفيذ',
+        'تصميم بوث المعرض مع التنفيذ',
+        'مواد البيع: كتالوج مطبوع ورقمي، وبروشور، وأوراق مواصفات الوحدات',
+        'لوحات إعلانية وإشارات (Hoarding & Signage)',
+        'تصوير فوتوغرافي ميداني ليوم واحد لمراحل الإنجاز',
+        'محتوى حملة الإطلاق: مقاطع وإعلانات'
+      ],
+      stageNum: '3'
+    }
+  };
+  window.__GH_PKG_STAGE_MAP__ = map;
+  D.packages.forEach(function (pkg) {
+    var m = map[pkg.id];
+    if (!m) return;
+    if (pkg.name) pkg.name.ar = m.name;
+    if (pkg.stage) pkg.stage.ar = m.stage;
+    if (pkg.stageLine) pkg.stageLine.ar = m.stageLine;
+    pkg._akaAr = 'كانت تُعرف بـ' + m.was;
+    pkg._stageMeta = m;
+    pkg.includedLines = m.lines.map(function (line) { return { ar: line, en: line }; });
+  });
+  if (D.posture) {
+    D.posture.forEach(function (p) {
+      var m = map[p.packageId];
+      if (m && p.title) p.title.ar = m.stageLine;
+    });
+  }
+  var u = D.ui && D.ui.ar;
+  if (u) {
+    u.pageLeadPublic = 'ثلاث مراحل للمشروع: قبل الطرح، أثناء البناء، وبعد الإنجاز. اختر الباقة أو ابنِ مزيجك — التسعير يُؤكَّد بعد الاجتماع، دون دفع إلكتروني.';
+    u.pageLead = u.pageLeadPublic;
+    u.packagesLeadPublic = 'ثلاث باقات حسب مرحلة المشروع. التسعير بعرض سعر بعد الاجتماع.';
+    u.packagesLead = u.packagesLeadPublic;
+    u.postureLead = 'ثلاث مراحل لمشروع المطوّر العقاري. حدّد مرحلتك ثم اختر الباقة.';
+    u.whyPlan = 'لماذا باقة البيع المبكر؟';
+    u.proofTitle = u.proofTitle || 'مشاريع جعلناها تُرى';
+    if (u.trustLine) {
+      u.trustLine = 'دون دفع إلكتروني. تأكيد النطاق خلال يوم عمل. التسعير حسب النطاق بعد الاجتماع';
+    }
+    function patchFaq(list) {
+      if (!list) return;
+      list.forEach(function (item) {
+        if (!item) return;
+        if (item.q && /التعريف والانطلاق والبيع/.test(item.q)) {
+          item.q = 'كيف أختار بين باقات التعريف والبيع المبكر والإطلاق الكامل؟';
+          item.a = 'قبل الطرح: باقة التعريف (كانت تُعرف بـنواة). أثناء البناء: باقة البيع المبكر (كانت تُعرف بـانطلاق). بعد الإنجاز: باقة الإطلاق الكامل (كانت تُعرف بـتوقيع). أو ابنِ مزيجاً في الأتيليه.';
+        }
+        if (item.a && /نواة وانطلاق/.test(item.a)) {
+          item.a = 'لا. التسعير يُؤكَّد بعرض سعر بعد الاجتماع حسب نطاق الباقة. السعر النهائي يُحدَّد بعد مراجعة النطاق.';
+        }
+        if (item.a && /باقتا الانطلاق والبيع/.test(item.a)) {
+          item.a = 'باقة التعريف: جولة واحدة. باقة البيع المبكر وباقة الإطلاق الكامل: جولتان. ما زاد يُسعَّر عند الحاجة.';
+        }
+        if (item.a && /باقة التعريف أو الانطلاق/.test(item.a)) {
+          item.a = 'نعم. كثيراً ما نبدأ بباقة التعريف أو باقة البيع المبكر ثم نرتقي عند جاهزية البيع.';
+        }
+      });
+    }
+    patchFaq(u.faq);
+    patchFaq(u.faqPublic);
+  }
+})();
+</script>
+<script defer src="assets/gh-direct.js?v=82"></script>
+<style id="gh-pkg-brand-upgrade">
+/* Brand alignment with index-ar + clearer hierarchy; do not remove GH Direct sections */
+.ghd-page {
+  --ghd-gold: #C9A84C;
+  --gh-gold: #C9A84C;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  background: #F6F4EF;
+}
+.ghd-hero {
+  padding-top: clamp(56px, 8vw, 96px);
+  padding-bottom: clamp(40px, 6vw, 72px);
+}
+.ghd-hero-brand,
+.ghd-hero-title,
+.ghd-section-head h2,
+.ghd-proof-title,
+.ghd-faq-title,
+.ghd-pkg-name {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', 'Playfair Display', serif;
+}
+.ghd-section { padding-block: clamp(40px, 6vw, 72px); }
+.ghd-section-head { margin-bottom: 28px; }
+.ghd-packages {
+  gap: 20px;
+  align-items: stretch;
+}
+.ghd-pkg {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  border-radius: 18px;
+  transition: border-color .2s, background-color .2s;
+}
+.ghd-pkg:hover { transform: none; }
+.ghd-pkg.is-match {
+  border-color: #C9A84C;
+  box-shadow: 0 0 0 1px #C9A84C;
+}
+.ghd-pkg-aka {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  opacity: .65;
+  font-weight: 500;
+}
+.ghd-pkg-desc,
+.ghd-pkg-whom,
+.ghd-pkg-meta-line {
+  margin: 8px 0 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(20,20,20,.62);
+}
+.ghd-pkg--featured .ghd-pkg-desc,
+.ghd-pkg--featured .ghd-pkg-whom,
+.ghd-pkg--featured .ghd-pkg-meta-line,
+.ghd-pkg--featured .ghd-pkg-aka { color: rgba(250,250,248,.72); }
+.ghd-pkg-need {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(20,20,20,.1);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.ghd-pkg--featured .ghd-pkg-need { border-top-color: rgba(255,255,255,.12); color: rgba(250,250,248,.78); }
+.ghd-pkg-need strong { display: block; margin-bottom: 6px; }
+.ghd-pkg-ctas { margin-top: auto; }
+.ghd-pkg .ghd-list li::before {
+  background: #C9A84C !important;
+}
+/* Full images — no crop */
+.ghd-proof-slide img,
+.ghd-slider--strip .ghd-proof-slide img,
+.ghd-svc-card img,
+.ghd-modal-media img,
+.ghd-catalog img,
+.ghd-extras img {
+  object-fit: contain !important;
+  background: #111;
+}
+.ghd-proof-slide,
+.ghd-slider--strip .ghd-proof-slide {
+  background: #111;
+}
+.ghd-proof-btn--solid:hover,
+.ghd-cta--primary {
+  background: #C9A84C;
+  border-color: #C9A84C;
+  color: #0A0A0A;
+}
+/* Stages band */
+.gh-stages {
+  padding: 28px 0 8px;
+  background: linear-gradient(180deg, #0E0E0E 0%, #141414 100%);
+  color: #FAFAF8;
+}
+.gh-stages .ghd-wrap { width: min(100% - 32px, 1120px); margin-inline: auto; }
+.gh-stages__head { text-align: center; margin-bottom: 22px; }
+.gh-stages__eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(250,250,248,.45);
+}
+.gh-stages__head h2 {
+  margin: 0 0 10px;
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+}
+.gh-stages__head p {
+  margin: 0 auto;
+  max-width: 40rem;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(250,250,248,.72);
+}
+.gh-stages__timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.gh-stages__timeline::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 12%;
+  left: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.55), transparent);
+}
+.gh-stage-btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  padding: 18px 16px;
+  border: 1px solid rgba(250,250,248,.14);
+  border-radius: 16px;
+  background: rgba(255,255,255,.04);
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+  transition: border-color .2s, background-color .2s;
+}
+.gh-stage-btn:hover { border-color: rgba(201,168,76,.45); }
+.gh-stage-btn[aria-pressed="true"] {
+  border-color: #C9A84C;
+  background: rgba(201,168,76,.14);
+}
+.gh-stage-btn:focus-visible {
+  outline: 2px solid #C9A84C;
+  outline-offset: 3px;
+}
+.gh-stage-btn__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(250,250,248,.4);
+}
+.gh-stage-btn[aria-pressed="true"] .gh-stage-btn__dot {
+  background: #C9A84C;
+  border-color: #C9A84C;
+  box-shadow: 0 0 0 4px rgba(201,168,76,.22);
+}
+.gh-stage-btn__label { font-size: 17px; font-weight: 700; }
+.gh-stage-btn__sub { font-size: 13px; font-weight: 600; color: rgba(250,250,248,.88); }
+.gh-stage-btn__hint { font-size: 12.5px; line-height: 1.65; color: rgba(250,250,248,.62); }
+.gh-stages__status {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(250,250,248,.7);
+  min-height: 1.5em;
+}
+@media (max-width: 900px) {
+  .gh-stages__timeline { grid-template-columns: 1fr; }
+  .gh-stages__timeline::before { display: none; }
+}
+</style>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=48">
+<link rel="stylesheet" href="assets/gh-direct.css?v=82">
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=19">
 <link rel="stylesheet" href="assets/gh-ar-typography.css?v=7">
 <link rel="stylesheet" href="assets/gh-chat-assistant.css?v=10">
@@ -36,462 +357,8 @@ gtag('config','G-Y67JVE898Z');
 <script defer src="assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="assets/site-header.css?v=68" data-gh-header-css="1">
 <link rel="stylesheet" href="assets/gh-footer-lock.css?v=5" data-gh-footer-lock="1">
-<style id="gh-packages-page">
-:root {
-  --pkg-ink: #141414;
-  --pkg-muted: rgba(20, 20, 20, 0.62);
-  --pkg-line: rgba(20, 20, 20, 0.12);
-  --pkg-gold: #C9A84C;
-  --pkg-gold-soft: rgba(201, 168, 76, 0.16);
-  --pkg-bg: #F7F5F1;
-  --pkg-card: #FFFFFF;
-  --pkg-card-dark: #1A1A1A;
-  --pkg-card-dark-text: #FAFAF8;
-  --pkg-radius: 20px;
-  --pkg-max: 1120px;
-  --font-display: "Reem Kufi", "IBM Plex Sans Arabic", sans-serif;
-  --font-body: "IBM Plex Sans Arabic", Tahoma, sans-serif;
-}
-.gh-pkg-page {
-  background: var(--pkg-bg);
-  color: var(--pkg-ink);
-  font-family: var(--font-body);
-  overflow-x: hidden;
-}
-.gh-pkg-page * { box-sizing: border-box; }
-.gh-pkg-wrap {
-  width: min(100% - 32px, var(--pkg-max));
-  margin-inline: auto;
-}
-.gh-pkg-hero {
-  padding: 72px 0 40px;
-  text-align: center;
-}
-.gh-pkg-hero h1 {
-  margin: 0 0 16px;
-  font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 700;
-  line-height: 1.35;
-}
-.gh-pkg-hero > p {
-  margin: 0 auto 36px;
-  max-width: 46rem;
-  font-size: clamp(15px, 1.5vw, 17px);
-  line-height: 1.85;
-  color: var(--pkg-muted);
-}
-.gh-pkg-timeline {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin: 0 auto 20px;
-  max-width: 960px;
-}
-.gh-pkg-timeline::before {
-  content: "";
-  position: absolute;
-  top: 18px;
-  right: 12%;
-  left: 12%;
-  height: 2px;
-  background: var(--pkg-line);
-  z-index: 0;
-}
-.gh-pkg-stage {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  text-align: center;
-  font: inherit;
-  color: inherit;
-}
-.gh-pkg-stage:focus-visible {
-  outline: 2px solid var(--pkg-gold);
-  outline-offset: 4px;
-  border-radius: 12px;
-}
-.gh-pkg-stage__dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 2px solid rgba(20, 20, 20, 0.28);
-  background: #fff;
-  transition: background .2s, border-color .2s, box-shadow .2s;
-}
-.gh-pkg-stage[aria-pressed="true"] .gh-pkg-stage__dot {
-  background: var(--pkg-gold);
-  border-color: var(--pkg-gold);
-  box-shadow: 0 0 0 4px var(--pkg-gold-soft);
-}
-.gh-pkg-stage__label {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 700;
-}
-.gh-pkg-stage__sub {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--pkg-ink);
-}
-.gh-pkg-stage__hint {
-  font-size: 12.5px;
-  line-height: 1.6;
-  color: var(--pkg-muted);
-  max-width: 18rem;
-}
-.gh-pkg-status {
-  min-height: 1.6em;
-  margin: 0 auto 8px;
-  font-size: 14px;
-  color: var(--pkg-muted);
-}
-.gh-pkg-cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-  align-items: stretch;
-  padding: 24px 0 12px;
-}
-.gh-pkg-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  min-width: 0;
-  height: 100%;
-  padding: 28px 22px 22px;
-  border: 1px solid var(--pkg-line);
-  border-radius: var(--pkg-radius);
-  background: var(--pkg-card);
-  transition: border-color .2s, background-color .2s;
-}
-.gh-pkg-card:hover { border-color: rgba(20, 20, 20, 0.28); }
-.gh-pkg-card.is-match {
-  border-color: var(--pkg-gold);
-  box-shadow: 0 0 0 1px var(--pkg-gold);
-}
-.gh-pkg-card--dark {
-  background: var(--pkg-card-dark);
-  color: var(--pkg-card-dark-text);
-  border-color: rgba(255,255,255,0.08);
-}
-.gh-pkg-card--dark:hover { border-color: rgba(255,255,255,0.22); }
-.gh-pkg-card--dark .gh-pkg-card__aka,
-.gh-pkg-card--dark .gh-pkg-card__desc,
-.gh-pkg-card--dark .gh-pkg-card__meta,
-.gh-pkg-card--dark .gh-pkg-card__need p,
-.gh-pkg-card--dark .gh-pkg-card__price {
-  color: rgba(250,250,248,0.72);
-}
-.gh-pkg-card--dark .gh-pkg-card__list li { color: rgba(250,250,248,0.9); }
-.gh-pkg-card--dark .gh-pkg-card__list li::before { background: var(--pkg-gold); }
-.gh-pkg-ribbon {
-  position: absolute;
-  top: -11px;
-  inset-inline-start: 22px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--pkg-gold);
-  color: #141414;
-  font-size: 11px;
-  font-weight: 700;
-}
-.gh-pkg-card__tag {
-  display: inline-flex;
-  align-self: flex-start;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--pkg-gold-soft);
-  color: #8A6F22;
-  font-size: 12px;
-  font-weight: 700;
-}
-.gh-pkg-card--dark .gh-pkg-card__tag {
-  background: rgba(201,168,76,0.2);
-  color: #E8D59A;
-}
-.gh-pkg-card__title {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.3;
-}
-.gh-pkg-card__aka {
-  margin: -4px 0 0;
-  font-size: 12.5px;
-  color: var(--pkg-muted);
-}
-.gh-pkg-card__desc {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--pkg-muted);
-}
-.gh-pkg-card__meta {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--pkg-muted);
-}
-.gh-pkg-card__list {
-  list-style: none;
-  margin: 4px 0 0;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-  flex: 1;
-}
-.gh-pkg-card__list li {
-  position: relative;
-  padding-inline-start: 16px;
-  font-size: 13.5px;
-  line-height: 1.65;
-}
-.gh-pkg-card__list li::before {
-  content: "";
-  position: absolute;
-  inset-inline-start: 0;
-  top: 0.55em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--pkg-gold);
-}
-.gh-pkg-card__need {
-  margin-top: 4px;
-  padding-top: 12px;
-  border-top: 1px solid var(--pkg-line);
-}
-.gh-pkg-card--dark .gh-pkg-card__need { border-top-color: rgba(255,255,255,0.12); }
-.gh-pkg-card__need strong {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 13px;
-}
-.gh-pkg-card__need p {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--pkg-muted);
-}
-.gh-pkg-card__price {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--pkg-ink);
-}
-.gh-pkg-card__cta {
-  margin-top: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 12px 18px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 700;
-  transition: background-color .2s, color .2s, border-color .2s;
-}
-.gh-pkg-card__cta:focus-visible {
-  outline: 2px solid var(--pkg-gold);
-  outline-offset: 3px;
-}
-.gh-pkg-card__cta--outline {
-  border: 1.5px solid var(--pkg-ink);
-  color: var(--pkg-ink);
-  background: transparent;
-}
-.gh-pkg-card__cta--outline:hover {
-  background: rgba(20,20,20,0.04);
-}
-.gh-pkg-card--dark .gh-pkg-card__cta--outline {
-  border-color: rgba(250,250,248,0.7);
-  color: var(--pkg-card-dark-text);
-}
-.gh-pkg-card__cta--solid {
-  border: 1.5px solid var(--pkg-gold);
-  background: var(--pkg-gold);
-  color: #141414;
-}
-.gh-pkg-card__cta--solid:hover { filter: #b8953f; }
-.gh-pkg-rule {
-  margin: 8px auto 48px;
-  text-align: center;
-  font-size: 14px;
-  color: var(--pkg-muted);
-}
-.gh-pkg-section {
-  padding: 8px 0 56px;
-}
-.gh-pkg-section h2 {
-  margin: 0 0 12px;
-  font-family: var(--font-display);
-  font-size: clamp(22px, 2.4vw, 30px);
-  font-weight: 700;
-}
-.gh-pkg-section > .gh-pkg-wrap > p,
-.gh-pkg-lead {
-  margin: 0 0 28px;
-  max-width: 40rem;
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--pkg-muted);
-}
-.gh-pkg-extras {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-.gh-pkg-extra h3 {
-  margin: 0 0 8px;
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 700;
-}
-.gh-pkg-extra p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--pkg-muted);
-}
-.gh-pkg-steps {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-.gh-pkg-step {
-  min-width: 0;
-  padding-top: 4px;
-}
-.gh-pkg-step__num {
-  display: block;
-  margin-bottom: 10px;
-  font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--pkg-gold);
-  line-height: 1;
-}
-.gh-pkg-step h3 {
-  margin: 0 0 8px;
-  font-family: var(--font-display);
-  font-size: 18px;
-}
-.gh-pkg-step p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--pkg-muted);
-}
-.gh-pkg-faq {
-  display: grid;
-  gap: 0;
-  border-top: 1px solid var(--pkg-line);
-}
-.gh-pkg-faq details {
-  border-bottom: 1px solid var(--pkg-line);
-  padding: 16px 0;
-}
-.gh-pkg-faq summary {
-  cursor: pointer;
-  list-style: none;
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.5;
-}
-.gh-pkg-faq summary::-webkit-details-marker { display: none; }
-.gh-pkg-faq summary:focus-visible {
-  outline: 2px solid var(--pkg-gold);
-  outline-offset: 3px;
-}
-.gh-pkg-faq details p {
-  margin: 10px 0 0;
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--pkg-muted);
-}
-.gh-pkg-close {
-  padding: 48px 0 80px;
-  text-align: center;
-}
-.gh-pkg-close h2 {
-  margin: 0 0 12px;
-  font-family: var(--font-display);
-  font-size: clamp(22px, 2.4vw, 30px);
-}
-.gh-pkg-close p {
-  margin: 0 auto 24px;
-  max-width: 36rem;
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--pkg-muted);
-}
-.gh-pkg-close__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-}
-.gh-pkg-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 12px 22px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 700;
-}
-.gh-pkg-btn:focus-visible {
-  outline: 2px solid var(--pkg-gold);
-  outline-offset: 3px;
-}
-.gh-pkg-btn--solid {
-  background: var(--pkg-gold);
-  color: #141414;
-  border: 1.5px solid var(--pkg-gold);
-}
-.gh-pkg-btn--outline {
-  background: transparent;
-  color: var(--pkg-ink);
-  border: 1.5px solid var(--pkg-ink);
-}
-@media (max-width: 960px) {
-  .gh-pkg-cards,
-  .gh-pkg-steps { grid-template-columns: 1fr; }
-  .gh-pkg-timeline { grid-template-columns: 1fr; gap: 20px; }
-  .gh-pkg-timeline::before {
-    top: 12px;
-    bottom: 12px;
-    right: 7px;
-    left: auto;
-    width: 2px;
-    height: auto;
-  }
-  .gh-pkg-stage { align-items: flex-start; text-align: start; padding-inline-start: 28px; }
-  .gh-pkg-stage__dot { position: absolute; inset-inline-start: 0; top: 4px; }
-}
-@media (max-width: 700px) {
-  .gh-pkg-extras { grid-template-columns: 1fr; }
-  .gh-pkg-hero { padding-top: 48px; }
-}
-</style>
 </head>
-<body class="gh-pkg-page">
+<body class="ghd-page ghd-page--hub ghd-page--public" data-ghd-prefix="" data-ghd-hide-prices="1">
 <a class="gh-skip-link" href="#main-content">تخطي إلى المحتوى الرئيسي</a>
 <header class="header" id="header">
   <div class="container header-inner">
@@ -689,295 +556,172 @@ gtag('config','G-Y67JVE898Z');
   </div>
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
+
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
-<main id="gh-pkg-main">
-  <section class="gh-pkg-hero" aria-labelledby="gh-pkg-h1">
-    <div class="gh-pkg-wrap">
-      <h1 id="gh-pkg-h1">باقة لكل مرحلة من مشروعك</h1>
-      <p>لا تدفع مقابل ما لا تحتاجه الآن. كل باقة مصممة لمرحلة محددة من عمر المشروع، وعندما يتقدم مشروعك تنتقل إلى الباقة التي تليها.</p>
-      <div class="gh-pkg-timeline" role="group" aria-label="مراحل المشروع">
-        <button type="button" class="gh-pkg-stage" data-stage="1" aria-pressed="false">
-          <span class="gh-pkg-stage__dot" aria-hidden="true"></span>
-          <span class="gh-pkg-stage__label">قبل الطرح</span>
-          <span class="gh-pkg-stage__sub">الدراسة والتصميم</span>
-          <span class="gh-pkg-stage__hint">المشروع في الدراسة أو التصميم أو ينتظر الاعتماد</span>
-        </button>
-        <button type="button" class="gh-pkg-stage" data-stage="2" aria-pressed="false">
-          <span class="gh-pkg-stage__dot" aria-hidden="true"></span>
-          <span class="gh-pkg-stage__label">أثناء البناء</span>
-          <span class="gh-pkg-stage__sub">البناء والبيع المبكر</span>
-          <span class="gh-pkg-stage__hint">البناء قائم، ويحتاج المشروع إلى تسويق وبيع مبكر</span>
-        </button>
-        <button type="button" class="gh-pkg-stage" data-stage="3" aria-pressed="false">
-          <span class="gh-pkg-stage__dot" aria-hidden="true"></span>
-          <span class="gh-pkg-stage__label">بعد الإنجاز</span>
-          <span class="gh-pkg-stage__sub">الإطلاق والبيع</span>
-          <span class="gh-pkg-stage__hint">المشروع قريب من التسليم أو مكتمل، ويحتاج إلى بيع ما تبقى</span>
-        </button>
-      </div>
-      <p class="gh-pkg-status" id="gh-pkg-status" aria-live="polite">اختر مرحلة مشروعك لنعرض الباقة المناسبة.</p>
-    </div>
-  </section>
+<main id="ghd-main">
+ <aside class="ghd-enterprise" id="ghd-enterprise" aria-label="توجيه مؤسسي"></aside>
+ <section class="ghd-hero">
+ <div class="ghd-wrap ghd-hero-inner">
+ <p class="ghd-hero-eyebrow" id="ghd-eyebrow"></p>
+ <h1 class="ghd-hero-brand" id="ghd-brand"></h1>
+ <p class="ghd-hero-title" id="ghd-title"></p>
+ <p class="ghd-hero-lead" id="ghd-lead"></p>
+ <span class="ghd-hero-rule" aria-hidden="true"></span>
+ </div>
+ </section>
+ <section class="ghd-section ghd-section--posture" id="posture" aria-labelledby="ghd-posture-title">
+ <div class="ghd-wrap">
+ <div class="ghd-section-head ghd-section-head--posture">
+ <h2 id="ghd-posture-title"></h2>
+ <p id="ghd-posture-lead"></p>
+ </div>
+ <div class="ghd-posture" id="ghd-posture"></div>
+ </div>
+ </section>
 
-  <section class="gh-pkg-section" aria-label="الباقات">
-    <div class="gh-pkg-wrap">
-      <div class="gh-pkg-cards">
-        <article class="gh-pkg-card" id="pkg-basic" data-stage="1">
-          <span class="gh-pkg-card__tag">قبل الطرح</span>
-          <h2 class="gh-pkg-card__title">باقة التعريف</h2>
-          <p class="gh-pkg-card__aka">كانت تُعرف بنواة</p>
-          <p class="gh-pkg-card__desc">لمشروعك قبل أن يُطرح للبيع</p>
-          <p class="gh-pkg-card__meta"><strong>لمن:</strong> مشروع في الدراسة أو التصميم أو ينتظر الاعتماد</p>
-          <p class="gh-pkg-card__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولة واحدة</p>
-          <ul class="gh-pkg-card__list">
-            <li>هوية بصرية للمشروع: شعار وألوان وملفات تسليم</li>
-            <li>12 صورة معمارية أولية (Concept): واجهات ومناظر خارجية وعدد محدود من الداخليات</li>
-            <li>فيديو تشويقي قصير (Teaser)</li>
-            <li>صفحة هبوط للتعريف بالمشروع مع نموذج تسجيل اهتمام</li>
-            <li>عرض تعريفي للمستثمرين والجهات (Project Deck)</li>
-          </ul>
-          <div class="gh-pkg-card__need">
-            <strong>ما نحتاجه منك</strong>
-            <p>المخططات المبدئية، والمواد والألوان المقترحة، واسم المشروع وموقعه.</p>
-          </div>
-          <p class="gh-pkg-card__price">السعر حسب النطاق بعد الاجتماع</p>
-          <a class="gh-pkg-card__cta gh-pkg-card__cta--outline" href="contact-us.html?intent=session&amp;stage=1">احجز جلسة تعريفية</a>
-        </article>
+ <section class="ghd-section ghd-section--proof" id="proof" aria-label="من أعمالنا">
+ <div class="ghd-wrap">
+ <div class="ghd-proof" id="ghd-proof" aria-label="من أعمالنا"></div>
+ </div>
+ </section>
 
-        <article class="gh-pkg-card gh-pkg-card--dark" id="pkg-launch" data-stage="2">
-          <span class="gh-pkg-ribbon">الأكثر طلباً</span>
-          <span class="gh-pkg-card__tag">أثناء البناء</span>
-          <h2 class="gh-pkg-card__title">باقة البيع المبكر</h2>
-          <p class="gh-pkg-card__aka">كانت تُعرف بانطلاق</p>
-          <p class="gh-pkg-card__desc">لمشروعك قيد البناء ويحتاج إلى بيع مبكر</p>
-          <p class="gh-pkg-card__meta"><strong>لمن:</strong> مشروع قيد الإنشاء يبدأ تسويق وحداته الآن</p>
-          <p class="gh-pkg-card__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولتان</p>
-          <ul class="gh-pkg-card__list">
-            <li>18 صورة معمارية نهائية: خارجية وداخلية، نهارية وليلية</li>
-            <li>مخططات ثلاثية الأبعاد للوحدات (3D Floor Plans)</li>
-            <li>جولة افتراضية 360°</li>
-            <li>فيلم سينمائي ثلاثي الأبعاد للمشروع (4 إلى 5 دقائق)</li>
-            <li>تصوير درون للموقع (60 ثانية تقريباً)</li>
-            <li>موقع إلكتروني متعدد الصفحات للمشروع</li>
-            <li>مقاطع سوشيال ميديا بمقاسات المنصات</li>
-            <li>مادة تحريرية: وصف المشروع ومزاياه ونصوص المنصات</li>
-          </ul>
-          <div class="gh-pkg-card__need">
-            <strong>ما نحتاجه منك</strong>
-            <p>المخططات المعتمدة للوحدات، وقائمة المزايا والأسعار المبدئية، وصور الموقع الحالية إن وجدت.</p>
-          </div>
-          <p class="gh-pkg-card__price">السعر حسب النطاق بعد الاجتماع</p>
-          <a class="gh-pkg-card__cta gh-pkg-card__cta--solid" href="contact-us.html?intent=session&amp;stage=2">احجز جلسة تعريفية</a>
-        </article>
-
-        <article class="gh-pkg-card" id="pkg-growth" data-stage="3">
-          <span class="gh-pkg-card__tag">بعد الإنجاز</span>
-          <h2 class="gh-pkg-card__title">باقة الإطلاق الكامل</h2>
-          <p class="gh-pkg-card__aka">كانت تُعرف بتوقيع</p>
-          <p class="gh-pkg-card__desc">لمشروعك بعد الإنجاز لبيع وحداته المتبقية</p>
-          <p class="gh-pkg-card__meta"><strong>لمن:</strong> مشروع مكتمل أو قريب من التسليم</p>
-          <p class="gh-pkg-card__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولتان</p>
-          <ul class="gh-pkg-card__list">
-            <li>تصميم صالة البيع مع التنفيذ</li>
-            <li>تصميم بوث المعرض مع التنفيذ</li>
-            <li>مواد البيع: كتالوج مطبوع ورقمي، وبروشور، وأوراق مواصفات الوحدات</li>
-            <li>لوحات إعلانية وإشارات (Hoarding &amp; Signage)</li>
-            <li>تصوير فوتوغرافي ميداني ليوم واحد لمراحل الإنجاز</li>
-            <li>محتوى حملة الإطلاق: مقاطع وإعلانات</li>
-          </ul>
-          <div class="gh-pkg-card__need">
-            <strong>ما نحتاجه منك</strong>
-            <p>قائمة الوحدات المتاحة وأسعارها، وموعد الإطلاق، وتأمين دخول الموقع أو صالة العرض.</p>
-          </div>
-          <p class="gh-pkg-card__price">السعر حسب النطاق بعد الاجتماع</p>
-          <a class="gh-pkg-card__cta gh-pkg-card__cta--outline" href="contact-us.html?intent=session&amp;stage=3">احجز جلسة تعريفية</a>
-        </article>
-      </div>
-      <p class="gh-pkg-rule">الباقة الأعلى تشمل مخرجات الباقات التي قبلها.</p>
-    </div>
-  </section>
-
-  <section class="gh-pkg-section" aria-labelledby="gh-pkg-extras-title">
-    <div class="gh-pkg-wrap">
-      <h2 id="gh-pkg-extras-title">إضافات تُطلب منفصلة</h2>
-      <p class="gh-pkg-lead">تُضاف إلى أي باقة حسب حاجتك، ولا تدخل في سعرها.</p>
-      <div class="gh-pkg-extras">
-        <div class="gh-pkg-extra">
-          <h3>مجسم معماري</h3>
-          <p>مجسم فعلي بمقياس يُحدد حسب المساحة وأماكن العرض.</p>
-        </div>
-        <div class="gh-pkg-extra">
-          <h3>شاشة لمس تفاعلية</h3>
-          <p>برنامج عرض للمشروع والوحدات على شاشة لمس أو كيوسك.</p>
-        </div>
-        <div class="gh-pkg-extra">
-          <h3>ديكور وحدة بيع</h3>
-          <p>تصميم وتنفيذ ديكور شقة أو محل مخصص للبيع.</p>
-        </div>
-        <div class="gh-pkg-extra">
-          <h3>تصوير درون إضافي</h3>
-          <p>لقطات جوية لمراحل أخرى من الإنجاز أو لزوايا إضافية.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="gh-pkg-section" aria-labelledby="gh-pkg-how-title">
-    <div class="gh-pkg-wrap">
-      <h2 id="gh-pkg-how-title">كيف تبدأ</h2>
-      <p class="gh-pkg-lead">ثلاث خطوات، ولا يُطلب منك دفع شيء قبل أن تعرف النطاق كاملاً.</p>
-      <div class="gh-pkg-steps">
-        <div class="gh-pkg-step">
-          <span class="gh-pkg-step__num">1</span>
-          <h3>جلسة تعريفية</h3>
-          <p>30 دقيقة لمعرفة مرحلة مشروعك وما تحتاجه فعلاً.</p>
-        </div>
-        <div class="gh-pkg-step">
-          <span class="gh-pkg-step__num">2</span>
-          <h3>نطاق وسعر مكتوب</h3>
-          <p>عرض واضح بالمخرجات والجدول والسعر، مع ذكر ما هو مستثنى.</p>
-        </div>
-        <div class="gh-pkg-step">
-          <span class="gh-pkg-step__num">3</span>
-          <h3>تنفيذ بجدول معلن</h3>
-          <p>مراجعات في مواعيد محددة، وتسليم موثّق لكل مرحلة.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="gh-pkg-section" aria-labelledby="gh-pkg-faq-title">
-    <div class="gh-pkg-wrap">
-      <h2 id="gh-pkg-faq-title">أسئلة شائعة</h2>
-      <div class="gh-pkg-faq">
-        <details>
-          <summary>هل يمكن الانتقال من باقة إلى أخرى؟</summary>
-          <p>نعم. الباقة الأعلى تشمل مخرجات ما قبلها، فلا تخسر ما دفعته عند الترقية.</p>
-        </details>
-        <details>
-          <summary>ماذا لو كان لدي أكثر من مشروع في مراحل مختلفة؟</summary>
-          <p>كل مشروع يُعامل بمرحلته. قد يحتاج مشروع إلى باقة التعريف، ومشروع آخر إلى باقة الإطلاق الكامل في الوقت نفسه.</p>
-        </details>
-        <details>
-          <summary>هل السعر ثابت؟</summary>
-          <p>السعر يُحدد بعد اجتماع قصير حسب النطاق والمخرجات. كل بند مستثنى يُذكر صراحة في العرض.</p>
-        </details>
-        <details>
-          <summary>من يقدّم المخططات والمواد الأولية؟</summary>
-          <p>العميل يزودنا بالمخططات المعتمدة والمعلومات الأساسية، ونحدد في الجلسة التعريفية ما ينقصه.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="gh-pkg-close" aria-labelledby="gh-pkg-close-title">
-    <div class="gh-pkg-wrap">
-      <h2 id="gh-pkg-close-title">لا تعرف مرحلة مشروعك بدقة؟</h2>
-      <p>تحدث معنا، وسنحدد المرحلة والباقة في محادثة قصيرة.</p>
-      <div class="gh-pkg-close__actions">
-        <a class="gh-pkg-btn gh-pkg-btn--solid" href="https://wa.me/966502786513" target="_blank" rel="noopener noreferrer">تواصل عبر واتساب</a>
-        <a class="gh-pkg-btn gh-pkg-btn--outline" href="contact-us.html?intent=session">احجز جلسة تعريفية</a>
-      </div>
-    </div>
-  </section>
+ <section class="gh-stages" id="stages" aria-labelledby="gh-stages-title">
+ <div class="ghd-wrap">
+ <header class="gh-stages__head">
+ <span class="gh-stages__eyebrow">مسار المشروع</span>
+ <h2 id="gh-stages-title">باقة لكل مرحلة من مشروعك</h2>
+ <p>لا تدفع مقابل ما لا تحتاجه الآن. كل باقة مصممة لمرحلة محددة من عمر المشروع، وعندما يتقدم مشروعك تنتقل إلى الباقة التي تليها.</p>
+ </header>
+ <div class="gh-stages__timeline" role="group" aria-label="مراحل المشروع">
+ <button type="button" class="gh-stage-btn" data-stage="1" aria-pressed="false">
+ <span class="gh-stage-btn__dot" aria-hidden="true"></span>
+ <span class="gh-stage-btn__label">قبل الطرح</span>
+ <span class="gh-stage-btn__sub">الدراسة والتصميم</span>
+ <span class="gh-stage-btn__hint">المشروع في الدراسة أو التصميم أو ينتظر الاعتماد</span>
+ </button>
+ <button type="button" class="gh-stage-btn" data-stage="2" aria-pressed="false">
+ <span class="gh-stage-btn__dot" aria-hidden="true"></span>
+ <span class="gh-stage-btn__label">أثناء البناء</span>
+ <span class="gh-stage-btn__sub">البناء والبيع المبكر</span>
+ <span class="gh-stage-btn__hint">البناء قائم، ويحتاج المشروع إلى تسويق وبيع مبكر</span>
+ </button>
+ <button type="button" class="gh-stage-btn" data-stage="3" aria-pressed="false">
+ <span class="gh-stage-btn__dot" aria-hidden="true"></span>
+ <span class="gh-stage-btn__label">بعد الإنجاز</span>
+ <span class="gh-stage-btn__sub">الإطلاق والبيع</span>
+ <span class="gh-stage-btn__hint">المشروع قريب من التسليم أو مكتمل، ويحتاج إلى بيع ما تبقى</span>
+ </button>
+ </div>
+ <p class="gh-stages__status" id="gh-stages-status" aria-live="polite">اختر مرحلة مشروعك لنعرض الباقة المناسبة.</p>
+ </div>
+ </section>
+ <section class="ghd-section ghd-section--packages" id="packages" aria-labelledby="ghd-packages-title">
+ <div class="ghd-wrap">
+ <div class="ghd-section-head">
+ <h2 id="ghd-packages-title"></h2>
+ <p id="ghd-packages-lead"></p>
+ </div>
+ <div class="ghd-packages" id="ghd-packages"></div>
+ </div>
+ </section>
+ <section class="ghd-section ghd-section--extras" id="extras" aria-labelledby="ghd-extras-title">
+ <div class="ghd-wrap">
+ <div class="ghd-extras" id="ghd-extras"></div>
+ </div>
+ </section>
+ <section class="ghd-section ghd-section--atelier" id="atelier-workshop" aria-labelledby="ghd-atelier-title">
+ <div class="ghd-wrap">
+ <div class="ghd-atelier">
+ <div class="ghd-atelier-inner" id="ghd-atelier-inner" data-package-id="custom"></div>
+ </div>
+ </div>
+ </section>
+ <section class="ghd-section ghd-section--next" id="next-steps" aria-label="ماذا بعد الطلب">
+ <div class="ghd-wrap">
+ <div class="ghd-next" id="ghd-next-steps" aria-label="ماذا بعد الطلب"></div>
+ </div>
+ </section>
+ <section class="ghd-section ghd-section--catalog" id="catalog" aria-labelledby="ghd-catalog-title">
+ <div class="ghd-wrap">
+ <div class="ghd-section-head">
+ <h2 id="ghd-catalog-title"></h2>
+ <p id="ghd-catalog-lead"></p>
+ </div>
+ <div class="ghd-filter-bar" id="ghd-filter-bar">
+ <div class="ghd-filters" id="ghd-catalog-filters" role="tablist" aria-label="عائلات الخدمات"></div>
+ </div>
+ <div class="ghd-catalog" id="ghd-catalog"></div>
+ <p class="ghd-filter-empty" id="ghd-catalog-empty" hidden></p>
+ </div>
+ </section>
+ <section class="ghd-section ghd-section--meeting" id="unsure" aria-labelledby="ghd-meeting-title">
+ <div class="ghd-wrap">
+ <p class="ghd-trust-line" id="ghd-trust-line" hidden></p>
+ <div class="ghd-unsure">
+ <div class="ghd-meeting ghd-meeting--compact" id="ghd-meeting-inner"></div>
+ </div>
+ </div>
+ </section> <section class="ghd-section ghd-section--close" id="close" aria-labelledby="ghd-close-title">
+ <div class="ghd-wrap">
+ <div class="ghd-close" id="ghd-close"></div>
+ </div>
+ </section>
+ <section class="ghd-section ghd-section--faq" aria-labelledby="ghd-faq-title">
+ <div class="ghd-wrap ghd-wrap--narrow">
+ <h2 class="ghd-faq-title" id="ghd-faq-title"></h2>
+ <div class="ghd-faq" id="ghd-faq"></div>
+ </div>
+ </section>
 </main>
 
-<script>
-(function () {
-  var names = {
-    '1': 'باقة التعريف',
-    '2': 'باقة البيع المبكر',
-    '3': 'باقة الإطلاق الكامل'
-  };
-  var hashMap = {
-    'pkg-basic': '1',
-    'pkg-launch': '2',
-    'pkg-growth': '3'
-  };
-  var stages = Array.prototype.slice.call(document.querySelectorAll('.gh-pkg-stage'));
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.gh-pkg-card[data-stage]'));
-  var statusEl = document.getElementById('gh-pkg-status');
-  var defaultStatus = 'اختر مرحلة مشروعك لنعرض الباقة المناسبة.';
+<div class="ghd-modal" id="ghd-service-modal" hidden role="dialog" aria-modal="true" aria-labelledby="ghd-svc-modal-title">
+ <button type="button" class="ghd-modal-backdrop" data-ghd-close="service" aria-label="إغلاق"></button>
+ <div class="ghd-modal-panel">
+ <button type="button" class="ghd-modal-close" data-ghd-close="service" aria-label="إغلاق">
+ <span class="material-symbols-outlined" aria-hidden="true">close</span>
+ </button>
+ <div class="ghd-modal-media">
+ <img loading="lazy" data-ghd-media src="" alt="" width="800" height="500" decoding="async">
+ </div>
+ <div class="ghd-modal-body">
+ <p class="ghd-modal-ph" data-ghd-ph></p>
+ <h3 id="ghd-svc-modal-title" data-ghd-title></h3>
+ <p data-ghd-desc></p>
+ <div class="ghd-price" data-ghd-price></div>
+ <div class="ghd-modal-actions" data-ghd-svc-actions></div>
+ </div>
+ </div>
+</div>
 
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
+<div class="ghd-modal" id="ghd-lead-modal" hidden role="dialog" aria-modal="true" aria-labelledby="ghd-lead-title">
+ <button type="button" class="ghd-modal-backdrop" data-ghd-close="lead" aria-label="إغلاق"></button>
+ <div class="ghd-modal-panel">
+ <button type="button" class="ghd-modal-close" data-ghd-close="lead" aria-label="إغلاق" style="background:rgba(20,20,20,.75)">
+ <span class="material-symbols-outlined" aria-hidden="true">close</span>
+ </button>
+ <div class="ghd-modal-body" style="padding-top:56px">
+ <h3 id="ghd-lead-title">طلب تأكيد الباقة</h3>
+ <p data-ghd-form-lead>نراجع اختيارك ونؤكد النطاق والسعر خلال يوم عمل. لا دفع أونلاين.</p>
+ <div class="ghd-form-summary" data-ghd-summary></div>
+ <ol class="ghd-form-next" data-ghd-form-next></ol>
+ <form class="ghd-form-fields" novalidate>
+ <input type="hidden" name="package" value="">
+ <input type="hidden" name="addons" value="">
+ <input type="hidden" name="estimated_total" value="">
+ <label>الاسم الكامل<input name="name" type="text" autocomplete="name" required></label>
+ <label>الجوال / واتساب<input name="phone" type="tel" autocomplete="tel" required></label>
+ <label>البريد الإلكتروني<input name="email" type="email" autocomplete="email"></label>
+ <label>اسم المشروع<input name="project" type="text" autocomplete="organization"></label>
+ <div class="ghd-form-actions">
+ <button type="submit" class="ghd-cta">إرسال الطلب</button>
+ <a class="ghd-wa-link" data-ghd-wa href="#" target="_blank" rel="noopener noreferrer">واتساب سريع</a>
+ </div>
+ <p class="ghd-form-msg" data-ghd-form-msg role="status"></p>
+ </form>
+ </div>
+ </div>
+</div>
 
-  function reduceMotion() {
-    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  }
-
-  function selectStage(stage, opts) {
-    opts = opts || {};
-    var id = String(stage || '');
-    if (!names[id]) return;
-    stages.forEach(function (btn) {
-      btn.setAttribute('aria-pressed', btn.getAttribute('data-stage') === id ? 'true' : 'false');
-    });
-    cards.forEach(function (card) {
-      var match = card.getAttribute('data-stage') === id;
-      card.classList.toggle('is-match', match);
-    });
-    if (statusEl) {
-      statusEl.textContent = 'مشروعك يناسب ' + names[id] + '، وتجدها بالأسفل.';
-    }
-    if (opts.scroll) {
-      var target = document.getElementById(
-        id === '1' ? 'pkg-basic' : id === '2' ? 'pkg-launch' : 'pkg-growth'
-      );
-      if (target) {
-        target.scrollIntoView({
-          behavior: reduceMotion() ? 'auto' : 'smooth',
-          block: 'start'
-        });
-      }
-    }
-  }
-
-  stages.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      selectStage(btn.getAttribute('data-stage'), { scroll: true });
-    });
-  });
-
-  function stageFromLocation() {
-    try {
-      var params = new URLSearchParams(window.location.search || '');
-      var q = params.get('stage');
-      if (q === '1' || q === '2' || q === '3') return q;
-    } catch (e) {}
-    var hash = (window.location.hash || '').replace(/^#/, '');
-    if (hashMap[hash]) return hashMap[hash];
-    return null;
-  }
-
-  var initialHash = (window.location.hash || '').replace(/^#/, '');
-  var suppressHashJump = !!(initialHash && hashMap[initialHash]);
-  if (suppressHashJump) {
-    history.replaceState(null, '', window.location.pathname + window.location.search);
-  }
-
-  var initial = stageFromLocation();
-  if (!initial && suppressHashJump) initial = hashMap[initialHash];
-
-  if (initial) {
-    selectStage(initial, { scroll: false });
-    window.scrollTo(0, 0);
-    if (suppressHashJump) {
-      history.replaceState(
-        null,
-        '',
-        window.location.pathname + window.location.search + '#' + initialHash
-      );
-    }
-    window.addEventListener('load', function () {
-      window.scrollTo(0, 0);
-    });
-  } else if (statusEl) {
-    statusEl.textContent = defaultStatus;
-  }
-})();
-</script>
 <footer dir="rtl" class="gh-footer">
   <div class="gh-footer__inner">
     <img loading="lazy" src="assets/chatbot-motif.png" aria-hidden="true" class="gh-footer-motif" alt="">
@@ -1203,6 +947,153 @@ gtag('config','G-Y67JVE898Z');
 </div>
 <!-- GH CHAT END -->
 
+
+<script>
+(function () {
+  var names = { '1': 'باقة التعريف', '2': 'باقة البيع المبكر', '3': 'باقة الإطلاق الكامل' };
+  var hashMap = { 'pkg-basic': '1', 'pkg-launch': '2', 'pkg-growth': '3' };
+  var idByStage = { '1': 'pkg-basic', '2': 'pkg-launch', '3': 'pkg-growth' };
+  var map = window.__GH_PKG_STAGE_MAP__ || {};
+
+  function reduceMotion() {
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function enrichPackages() {
+    var host = document.getElementById('ghd-packages');
+    if (!host) return;
+    Object.keys(map).forEach(function (id) {
+      var m = map[id];
+      var card = host.querySelector('#pkg-' + id) || host.querySelector('[data-package-id="' + id + '"]');
+      if (!card) return;
+      card.id = 'pkg-' + id;
+      card.setAttribute('data-stage', m.stageNum);
+      var nameEl = card.querySelector('.ghd-pkg-name');
+      if (nameEl && !card.querySelector('.ghd-pkg-aka')) {
+        var aka = document.createElement('p');
+        aka.className = 'ghd-pkg-aka';
+        aka.textContent = 'كانت تُعرف بـ' + m.was;
+        nameEl.insertAdjacentElement('afterend', aka);
+      }
+      if (!card.querySelector('.ghd-pkg-desc')) {
+        var desc = document.createElement('p');
+        desc.className = 'ghd-pkg-desc';
+        desc.textContent = m.desc;
+        var whom = document.createElement('p');
+        whom.className = 'ghd-pkg-whom';
+        whom.innerHTML = '<strong>لمن:</strong> ' + m.forWhom;
+        var meta = document.createElement('p');
+        meta.className = 'ghd-pkg-meta-line';
+        meta.textContent = m.meta;
+        var anchor = card.querySelector('.ghd-pkg-aka') || nameEl;
+        if (anchor) {
+          anchor.insertAdjacentElement('afterend', meta);
+          anchor.insertAdjacentElement('afterend', whom);
+          anchor.insertAdjacentElement('afterend', desc);
+        }
+      }
+      if (!card.querySelector('.ghd-pkg-need')) {
+        var need = document.createElement('div');
+        need.className = 'ghd-pkg-need';
+        need.innerHTML = '<strong>ما نحتاجه منك</strong><p>' + m.need + '</p>';
+        var ctas = card.querySelector('.ghd-pkg-ctas');
+        if (ctas) ctas.insertAdjacentElement('beforebegin', need);
+        else card.appendChild(need);
+      }
+      var ctas = card.querySelector('.ghd-pkg-ctas');
+      if (ctas && !ctas.querySelector('[data-stage-cta]')) {
+        var a = document.createElement('a');
+        a.className = 'ghd-cta' + (card.classList.contains('ghd-pkg--featured') ? ' ghd-cta--on-dark' : ' ghd-cta--primary');
+        a.href = 'contact-us.html?intent=session&stage=' + m.stageNum;
+        a.setAttribute('data-stage-cta', m.stageNum);
+        a.textContent = 'احجز جلسة تعريفية';
+        ctas.insertBefore(a, ctas.firstChild);
+      }
+    });
+    var rule = document.getElementById('gh-pkg-rule');
+    if (!rule && host.parentElement) {
+      rule = document.createElement('p');
+      rule.id = 'gh-pkg-rule';
+      rule.style.cssText = 'text-align:center;margin:18px 0 0;font-size:14px;color:rgba(20,20,20,.58)';
+      rule.textContent = 'الباقة الأعلى تشمل مخرجات الباقات التي قبلها.';
+      host.insertAdjacentElement('afterend', rule);
+    }
+  }
+
+  function selectStage(stage, opts) {
+    opts = opts || {};
+    var id = String(stage || '');
+    if (!names[id]) return;
+    document.querySelectorAll('.gh-stage-btn').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', btn.getAttribute('data-stage') === id ? 'true' : 'false');
+    });
+    document.querySelectorAll('#ghd-packages .ghd-pkg[data-stage], #ghd-packages [id^="pkg-"]').forEach(function (card) {
+      var match = card.getAttribute('data-stage') === id || card.id === idByStage[id];
+      card.classList.toggle('is-match', match);
+    });
+    var statusEl = document.getElementById('gh-stages-status');
+    if (statusEl) statusEl.textContent = 'مشروعك يناسب ' + names[id] + '، وتجدها بالأسفل.';
+    if (opts.scroll) {
+      var target = document.getElementById(idByStage[id]);
+      if (target) {
+        target.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
+      }
+    }
+  }
+
+  function stageFromLocation() {
+    try {
+      var q = new URLSearchParams(window.location.search || '').get('stage');
+      if (q === '1' || q === '2' || q === '3') return q;
+    } catch (e) {}
+    var hash = (window.location.hash || '').replace(/^#/, '');
+    if (hashMap[hash]) return hashMap[hash];
+    return null;
+  }
+
+  function boot() {
+    enrichPackages();
+    document.querySelectorAll('.gh-stage-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        selectStage(btn.getAttribute('data-stage'), { scroll: true });
+      });
+    });
+
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    var initialHash = (window.location.hash || '').replace(/^#/, '');
+    var suppress = !!(initialHash && hashMap[initialHash]);
+    if (suppress) history.replaceState(null, '', window.location.pathname + window.location.search);
+    var initial = stageFromLocation();
+    if (!initial && suppress) initial = hashMap[initialHash];
+    if (initial) {
+      selectStage(initial, { scroll: false });
+      window.scrollTo(0, 0);
+      if (suppress) {
+        history.replaceState(null, '', window.location.pathname + window.location.search + '#' + initialHash);
+      }
+      window.addEventListener('load', function () { window.scrollTo(0, 0); });
+    }
+  }
+
+  function whenReady() {
+    var tries = 0;
+    (function tick() {
+      tries += 1;
+      if (document.getElementById('pkg-basic') || tries > 40) {
+        boot();
+        return;
+      }
+      setTimeout(tick, 50);
+    })();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { setTimeout(whenReady, 0); });
+  } else {
+    setTimeout(whenReady, 0);
+  }
+})();
+</script>
 
 </body>
 </html>
