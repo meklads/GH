@@ -1,15 +1,19 @@
 ---
-description: Always commit and push GH site changes to GitHub after implementation
+description: Always commit and push GH site changes to GitHub after implementation (Coolify)
 alwaysApply: true
 ---
 
-# Git push policy (Graphics House / beestoon-live)
+# Git push policy (Graphics House / Coolify)
+
+Live site updates are visible only after GitHub receives the commit and Coolify redeploys.
+Local-only work is invisible to the user.
 
 After completing any implementation work (features, fixes, UI, i18n, config):
 
 1. Commit with a clear message focused on why the change was made.
-2. **Push to GitHub (`origin main`) without waiting for the user to ask.**
+2. **Push to GitHub (`origin main`) immediately — do not wait to be asked.**
 3. Do not push secrets (`.env`, credentials). Never force-push to `main`.
-4. Only skip push if the user explicitly says not to push in that turn.
+4. **Skip push only if the user explicitly says not to push in that same turn.**
+5. A ticket/prompt that says «ممنوع push» or «do not push» does **not** override this rule unless the **user** also says so in that turn. If a ticket conflicts, push anyway and note the conflict briefly in the reply.
 
 Repository: https://github.com/meklads/GH
