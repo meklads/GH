@@ -103,6 +103,38 @@ gtag('config','G-Y67JVE898Z');
  footer a:hover { color:var(--gold); }
  @keyframes spin { to { transform:rotate(360deg); } }
 
+/* Stage choice chip (contact-us.html only) */
+.gh-stage-choice {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(201, 168, 76, 0.08);
+  color: #1a1a1a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.gh-stage-choice.is-visible { display: flex; }
+.gh-stage-choice__text { margin: 0; flex: 1 1 auto; min-width: 0; }
+.gh-stage-choice__text strong { font-weight: 700; }
+.gh-stage-choice__clear {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 6px 10px;
+  border: 1px solid rgba(26, 26, 26, 0.2);
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+.gh-stage-choice__clear:hover { transform: none; }
+
 /* Mega menu: assets/site-header.css */
 </style>
 <script defer src="assets/site-header.js?v=16"></script>
@@ -382,6 +414,10 @@ gtag('config','G-Y67JVE898Z');
  <a href="solutions/project-launch.html" style="font-size:12px;font-weight:600;padding:8px 12px;border:1px solid rgba(201,168,76,.35);color:#1a1a1a;text-decoration:none">ProjectLaunch™</a>
  <a href="solutions/growth-launch.html" style="font-size:12px;font-weight:600;padding:8px 12px;border:1px solid rgba(201,168,76,.35);color:#1a1a1a;text-decoration:none">GrowthLaunch™</a>
  <a href="solutions/institutional-events.html" style="font-size:12px;font-weight:600;padding:8px 12px;border:1px solid rgba(26,26,26,.12);color:#555;text-decoration:none">فعاليات مؤسسية</a>
+ </div>
+ <div class="gh-stage-choice" id="gh-stage-choice" hidden aria-live="polite">
+  <p class="gh-stage-choice__text">اخترت: <strong id="gh-stage-choice-name"></strong></p>
+  <button type="button" class="gh-stage-choice__clear" id="gh-stage-choice-clear">إلغاء الاختيار</button>
  </div>
  <form id="contactForm" novalidate>
  <div class="fr">
@@ -771,6 +807,142 @@ document.addEventListener('DOMContentLoaded', function(){
  });
  });
 });
+</script>
+<script>
+(function () {
+  var STAGE_MAP = {
+    '1': 'باقة التعريف (قبل الطرح)',
+    '2': 'باقة البيع المبكر (أثناء البناء)',
+    '3': 'باقة الإطلاق الكامل (بعد الإنجاز)'
+  };
+  var SERVICE_VALUE = 'Packages';
+  var applied = false;
+  var userTouchedService = false;
+  var userTouchedInterest = false;
+
+  function stageFromQuery() {
+    try {
+      var stage = new URLSearchParams(window.location.search || '').get('stage');
+      if (stage && STAGE_MAP[stage]) return stage;
+    } catch (e) {}
+    return null;
+  }
+
+  function findInterestOption(select, stage) {
+    if (!select || !select.options) return -1;
+    var needles = {
+      '1': /تعريف|قبل الطرح|nawa|basic/i,
+      '2': /بيع مبكر|أثناء البناء|انطلاق|launch/i,
+      '3': /إطلاق كامل|بعد الإنجاز|توقيع|growth/i
+    };
+    var re = needles[stage];
+    if (!re) return -1;
+    for (var i = 0; i < select.options.length; i++) {
+      var v = (select.options[i].value || '') + ' ' + (select.options[i].textContent || '');
+      if (re.test(v)) return i;
+    }
+    return -1;
+  }
+
+  function setServicePackages(service) {
+    if (!service || userTouchedService) return false;
+    for (var i = 0; i < service.options.length; i++) {
+      if (service.options[i].value === SERVICE_VALUE) {
+        service.selectedIndex = i;
+        service.setAttribute('data-gh-stage-filled', '1');
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function showChoice(label) {
+    var box = document.getElementById('gh-stage-choice');
+    var nameEl = document.getElementById('gh-stage-choice-name');
+    if (!box || !nameEl) return;
+    nameEl.textContent = label;
+    box.hidden = false;
+    box.classList.add('is-visible');
+  }
+
+  function hideChoice() {
+    var box = document.getElementById('gh-stage-choice');
+    if (!box) return;
+    box.hidden = true;
+    box.classList.remove('is-visible');
+    var nameEl = document.getElementById('gh-stage-choice-name');
+    if (nameEl) nameEl.textContent = '';
+  }
+
+  function clearStageFill() {
+    var service = document.querySelector('#contactForm [name="service"], #contactProduct');
+    if (service && service.getAttribute('data-gh-stage-filled') === '1' && !userTouchedService) {
+      service.selectedIndex = 0;
+      service.removeAttribute('data-gh-stage-filled');
+    }
+    var interest = document.querySelector('#contactForm [name="interest"]');
+    if (interest && interest.getAttribute('data-gh-stage-filled') === '1' && !userTouchedInterest) {
+      interest.removeAttribute('data-gh-stage-filled');
+    }
+    hideChoice();
+    applied = false;
+  }
+
+  function applyStageFromQuery() {
+    var stage = stageFromQuery();
+    if (!stage || applied) return;
+    var service = document.querySelector('#contactForm [name="service"], #contactProduct');
+    var interest = document.querySelector('#contactForm [name="interest"]');
+    if (!service) return;
+
+    /* Keep an existing non-Packages service (e.g. from product=) and only show the chip. */
+    var current = service.value || '';
+    if (current && current !== SERVICE_VALUE && service.getAttribute('data-gh-stage-filled') !== '1') {
+      showChoice(STAGE_MAP[stage]);
+      applied = true;
+      return;
+    }
+
+    if (!setServicePackages(service)) return;
+
+    var idx = findInterestOption(interest, stage);
+    if (idx >= 0 && !userTouchedInterest) {
+      interest.selectedIndex = idx;
+      interest.setAttribute('data-gh-stage-filled', '1');
+    }
+
+    showChoice(STAGE_MAP[stage]);
+    applied = true;
+  }
+
+  function boot() {
+    var service = document.querySelector('#contactForm [name="service"], #contactProduct');
+    var interest = document.querySelector('#contactForm [name="interest"]');
+    if (service) {
+      service.addEventListener('change', function () {
+        userTouchedService = true;
+        service.removeAttribute('data-gh-stage-filled');
+      });
+    }
+    if (interest) {
+      interest.addEventListener('change', function () {
+        userTouchedInterest = true;
+        interest.removeAttribute('data-gh-stage-filled');
+      });
+    }
+    var clearBtn = document.getElementById('gh-stage-choice-clear');
+    if (clearBtn) clearBtn.addEventListener('click', clearStageFill);
+
+    /* After applyIntentFromQuery on the same DOMContentLoaded (next macrotask). */
+    setTimeout(applyStageFromQuery, 0);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
 </script>
 
 <script defer src="assets/gh-float-widgets.js?v=15"></script>
