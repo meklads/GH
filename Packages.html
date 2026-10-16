@@ -515,6 +515,165 @@ gtag('config','G-Y67JVE898Z');
 @media (max-width: 900px) {
   .gh-stage-pkgs { grid-template-columns: 1fr; }
 }
+
+/* Extra-service teaser tickets (Packages.html only) */
+.ghd-section--extras .ghd-extras {
+  max-width: 1100px;
+  text-align: start;
+  padding-inline: 0;
+}
+.gh-tix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 8px 0 22px;
+  list-style: none;
+  padding: 0;
+}
+.gh-tix {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid rgba(20, 20, 20, 0.12);
+  background: #fff;
+  color: #141414;
+}
+.gh-tix:hover { transform: none; }
+.gh-tix__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #111;
+  overflow: hidden;
+}
+.gh-tix__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.gh-tix__fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #1a1a1a 0%, #2a2418 55%, #C9A84C 160%);
+  color: #FAFAF8;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.gh-tix__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+  padding: 16px 16px 18px;
+}
+.gh-tix__name {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.45;
+  color: #141414;
+}
+.gh-tix__promise {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(20, 20, 20, 0.72);
+}
+.gh-tix__label {
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(20, 20, 20, 0.5);
+}
+.gh-tix__gets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+.gh-tix__gets li {
+  position: relative;
+  padding-inline-start: 12px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(20, 20, 20, 0.82);
+}
+.gh-tix__gets li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background: #C9A84C;
+}
+.gh-tix__when {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(20, 20, 20, 0.7);
+}
+.gh-tix__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: auto;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1.5px solid #141414;
+  background: #fff;
+  color: #141414;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.gh-tix__cta:hover { transform: none; }
+.gh-tix-session {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  min-width: 200px;
+  margin: 4px auto 8px;
+  padding: 0 20px;
+  border: 1.5px solid #C9A84C;
+  background: #C9A84C;
+  color: #0A0A0A;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.gh-tix-session-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#atelier-workshop:not(.is-open) {
+  display: none !important;
+}
+.ghd-section--extras .ghd-atelier-entry {
+  margin-top: 8px;
+  max-width: 1100px;
+}
+@media (max-width: 760px) {
+  .gh-tix-grid { grid-template-columns: 1fr; }
+  .gh-tix__promise,
+  .gh-tix__gets li,
+  .gh-tix__when,
+  .gh-tix__cta,
+  .gh-tix-session {
+    font-size: 15px;
+  }
+}
 </style>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=48">
@@ -869,6 +1028,7 @@ gtag('config','G-Y67JVE898Z');
  <section class="ghd-section ghd-section--extras" id="extras" aria-labelledby="ghd-extras-title">
  <div class="ghd-wrap">
  <div class="ghd-extras" id="ghd-extras"></div>
+ <div class="ghd-atelier-entry" id="ghd-atelier-entry"></div>
  </div>
  </section>
  <section class="ghd-section ghd-section--atelier" id="atelier-workshop" aria-labelledby="ghd-atelier-title">
@@ -1280,6 +1440,196 @@ gtag('config','G-Y67JVE898Z');
     document.addEventListener('DOMContentLoaded', function () { setTimeout(whenReady, 0); });
   } else {
     setTimeout(whenReady, 0);
+  }
+})();
+</script>
+<script>
+(function () {
+  var tickets = [
+    {
+      id: 'gh-tix-1',
+      name: 'التصميم المعماري (ابتدائي أو تنفيذي)',
+      promise: 'مخططات ومفاهيم معمارية تبني عليها باقي المراحل.',
+      gets: [
+        'مخططات مبدئية أو تنفيذية حسب مرحلة المشروع',
+        'مراجعة مع الجهة المعنية'
+      ],
+      when: 'قبل الطرح، أو عندما ينقص المشروع مخطط معتمد للتسويق.',
+      image: 'assets/projects/jeddah-forum/catalog/page-01.jpg',
+      num: '01'
+    },
+    {
+      id: 'gh-tix-2',
+      name: 'تنفيذ وحدة نموذجية مفروشة (عبر تريفا)',
+      promise: 'وحدة نموذجية جاهزة للزيارة والعرض.',
+      gets: [
+        'تنفيذ الديكور والتأثيث',
+        'بالتعاون مع تريفا'
+      ],
+      when: 'قبل الإطلاق، لعرض الوحدات على العملاء في الموقع أو صالة البيع.',
+      image: 'assets/projects/rafal-pavilions/lobby.jpg',
+      num: '02'
+    }
+  ];
+
+  function openAtelier(scroll) {
+    var workshop = document.getElementById('atelier-workshop');
+    if (!workshop) return;
+    workshop.classList.add('is-open');
+    if (scroll) {
+      try {
+        workshop.scrollIntoView({
+          behavior: window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+          block: 'start'
+        });
+      } catch (e) {}
+    }
+  }
+
+  function escapeHtml(str) {
+    return String(str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function ticketHtml(item) {
+    var gets = item.gets
+      .map(function (line) {
+        return '<li>' + escapeHtml(line) + '</li>';
+      })
+      .join('');
+    var media = item.image
+      ? '<img src="' + escapeHtml(item.image) + '" alt="" width="800" height="600" loading="lazy" decoding="async">'
+      : '<div class="gh-tix__fallback" aria-hidden="true">' + escapeHtml(item.num) + '</div>';
+    return (
+      '<article class="gh-tix" data-gh-tix="' +
+      escapeHtml(item.id) +
+      '">' +
+      '<div class="gh-tix__media">' +
+      media +
+      '</div>' +
+      '<div class="gh-tix__body">' +
+      '<h3 class="gh-tix__name">' +
+      escapeHtml(item.name) +
+      '</h3>' +
+      '<p class="gh-tix__promise">' +
+      escapeHtml(item.promise) +
+      '</p>' +
+      '<p class="gh-tix__label">ماذا تحصل عليه</p>' +
+      '<ul class="gh-tix__gets">' +
+      gets +
+      '</ul>' +
+      '<p class="gh-tix__label">متى تحتاجها</p>' +
+      '<p class="gh-tix__when">' +
+      escapeHtml(item.when) +
+      '</p>' +
+      '<a class="gh-tix__cta" href="#atelier-workshop" data-gh-tix-open-atelier="1">التفاصيل</a>' +
+      '</div></article>'
+    );
+  }
+
+  function fillAtelierEntry() {
+    var host = document.getElementById('ghd-atelier-entry');
+    if (!host || host.getAttribute('data-gh-tix-ready') === '1') return;
+    var D = window.GH_DIRECT || {};
+    var ui = (D.ui && D.ui.ar) || {};
+    host.innerHTML =
+      '<div class="ghd-atelier-entry-inner">' +
+      '<div><p class="ghd-atelier-entry-title">' +
+      escapeHtml(ui.atelierEntryTitle || 'تحتاج مزيجاً خارج الباقات؟') +
+      '</p><p class="ghd-atelier-entry-lead">' +
+      escapeHtml(ui.atelierEntryLead || 'ابنِ نطاقك في الأتيليه واحصل على تقدير أولي.') +
+      '</p></div>' +
+      '<a class="ghd-cta ghd-cta--primary" href="#atelier-workshop" data-open-atelier="1" id="gh-tix-open-atelier">' +
+      escapeHtml(ui.atelierEntryCta || 'فتح الأتيليه') +
+      '</a></div>';
+    host.setAttribute('data-gh-tix-ready', '1');
+    host.querySelectorAll('[data-open-atelier], [data-gh-tix-open-atelier]').forEach(function (btn) {
+      btn.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        openAtelier(true);
+      });
+    });
+  }
+
+  function enhanceExtras() {
+    var host = document.getElementById('ghd-extras');
+    if (!host) return false;
+    if (host.querySelector('.gh-tix-grid')) {
+      fillAtelierEntry();
+      return true;
+    }
+    var list = host.querySelector('.ghd-extras-list');
+    if (!list) return false;
+
+    var grid = document.createElement('div');
+    grid.className = 'gh-tix-grid';
+    grid.id = 'gh-tix-grid';
+    grid.setAttribute('role', 'list');
+    grid.innerHTML = tickets.map(ticketHtml).join('');
+    grid.querySelectorAll('[data-gh-tix]').forEach(function (el) {
+      el.id = el.getAttribute('data-gh-tix') || '';
+      el.removeAttribute('data-gh-tix');
+    });
+    list.replaceWith(grid);
+
+    var oldCta = host.querySelector('.ghd-extras-cta');
+    var session =
+      '<div class="gh-tix-session-wrap" id="gh-tix-session-wrap">' +
+      '<a class="gh-tix-session" id="gh-tix-session" href="contact-us.html?intent=session">احجز جلسة تعريفية</a>' +
+      '</div>';
+    if (oldCta) oldCta.outerHTML = session;
+    else host.insertAdjacentHTML('beforeend', session);
+
+    grid.querySelectorAll('[data-gh-tix-open-atelier]').forEach(function (btn) {
+      btn.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        openAtelier(true);
+      });
+    });
+
+    fillAtelierEntry();
+    return true;
+  }
+
+  function watchExtras() {
+    var tries = 0;
+    var done = false;
+    function tick() {
+      if (done) return;
+      tries += 1;
+      if (enhanceExtras()) {
+        done = true;
+        return;
+      }
+      if (tries < 40) setTimeout(tick, 50);
+    }
+    tick();
+    var host = document.getElementById('ghd-extras');
+    if (!host || typeof MutationObserver !== 'function') return;
+    var obs = new MutationObserver(function () {
+      if (enhanceExtras()) obs.disconnect();
+    });
+    obs.observe(host, { childList: true, subtree: true });
+    setTimeout(function () {
+      try {
+        obs.disconnect();
+      } catch (e) {}
+    }, 8000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', watchExtras);
+  } else {
+    watchExtras();
+  }
+
+  if (location.hash === '#atelier-workshop') {
+    window.addEventListener('load', function () {
+      openAtelier(false);
+    });
   }
 })();
 </script>
