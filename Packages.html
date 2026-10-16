@@ -732,6 +732,301 @@ gtag('config','G-Y67JVE898Z');
 <script defer src="assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="assets/site-header.css?v=68" data-gh-header-css="1">
 <link rel="stylesheet" href="assets/gh-footer-lock.css?v=5" data-gh-footer-lock="1">
+<style id="gh-pkg-world-class">
+/* World-class design system — Packages.html only; brand tokens from site */
+.ghd-page {
+  --pkg-ink: #141414;
+  --pkg-ink-soft: #2a2a2a;
+  --pkg-muted: #5c5c5c;
+  --pkg-paper: #f7f5f0;
+  --pkg-card: #ffffff;
+  --pkg-line: rgba(20, 20, 20, 0.12);
+  --pkg-gold: #c9a84c;
+  --pkg-gold-bright: #e0c06a;
+  --pkg-dark: #0e0e0e;
+  --pkg-dark-2: #141414;
+  --pkg-cream: #ebe6dc;
+  --pkg-radius: 16px;
+  --pkg-radius-sm: 12px;
+  --pkg-shadow: 0 1px 0 rgba(20, 20, 20, 0.04);
+  --pkg-shadow-2: 0 12px 32px rgba(20, 20, 20, 0.08);
+  --pkg-space-1: 8px;
+  --pkg-space-2: 16px;
+  --pkg-space-3: 24px;
+  --pkg-space-4: 32px;
+  --pkg-space-5: 48px;
+  --pkg-space-6: 64px;
+  --pkg-space-7: 96px;
+  --pkg-wrap: 1200px;
+  --pkg-gutter: 48px;
+  --pkg-ease: 240ms ease;
+  background: var(--pkg-paper);
+  color: var(--pkg-ink);
+  font-weight: 400;
+}
+@media (max-width: 760px) {
+  .ghd-page { --pkg-gutter: 24px; --pkg-space-7: 64px; }
+}
+.ghd-page .ghd-wrap,
+.ghd-page .gh-stages .ghd-wrap,
+.ghd-page .ghd-section .ghd-wrap {
+  width: min(calc(100% - (var(--pkg-gutter) * 2)), var(--pkg-wrap)) !important;
+  max-width: var(--pkg-wrap) !important;
+  margin-inline: auto;
+}
+.ghd-page .ghd-section,
+.ghd-page .gh-stages {
+  padding-block: var(--pkg-space-7);
+}
+.ghd-page .ghd-hero {
+  padding-top: var(--pkg-space-7);
+  padding-bottom: var(--pkg-space-5);
+}
+.ghd-page .ghd-hero-brand,
+.ghd-page .ghd-section-head h2,
+.ghd-page .ghd-proof-title,
+.ghd-page .ghd-faq-title,
+.ghd-page .gh-stages__head h2,
+.ghd-page .gh-stage-pkg__title,
+.ghd-page .gh-tix__name {
+  font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 700;
+  color: var(--pkg-ink);
+  letter-spacing: 0;
+}
+.ghd-page .ghd-hero-brand {
+  font-size: clamp(40px, 5vw, 56px);
+  line-height: 1.15;
+}
+.ghd-page .ghd-section-head h2,
+.ghd-page .ghd-proof-title,
+.ghd-page .ghd-faq-title,
+.ghd-page .gh-stages__head h2,
+.ghd-page h2#ghd-packages-title,
+.ghd-page h2#gh-stages-title {
+  font-size: clamp(28px, 3vw, 40px) !important;
+  line-height: 1.25;
+  margin: 0 0 var(--pkg-space-2);
+}
+.ghd-page .gh-stage-pkg__title,
+.ghd-page .gh-tix__name,
+.ghd-page .ghd-svc-body h3 {
+  font-size: clamp(20px, 2vw, 24px) !important;
+  line-height: 1.35 !important;
+}
+.ghd-page .ghd-hero-lead,
+.ghd-page .ghd-section-head p,
+.ghd-page .ghd-proof-lead,
+.ghd-page .gh-stages__head p,
+.ghd-page .gh-stage-pkg__desc,
+.ghd-page .gh-tix__promise {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--pkg-muted);
+  max-width: 38rem;
+}
+.ghd-page .ghd-section-head {
+  margin-bottom: var(--pkg-space-4);
+}
+.ghd-page .ghd-section-head p,
+.ghd-page .gh-stages__head p {
+  margin-inline: auto;
+}
+/* Stages — contrast */
+.ghd-page .gh-stages {
+  background: linear-gradient(180deg, var(--pkg-dark) 0%, var(--pkg-dark-2) 100%);
+  color: #fafaf8;
+}
+.ghd-page .gh-stages__eyebrow {
+  color: var(--pkg-gold-bright);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  opacity: 1;
+}
+.ghd-page .gh-stages__head h2 { color: #fafaf8; }
+.ghd-page .gh-stages__head p { color: rgba(250, 250, 248, 0.82); }
+.ghd-page .gh-stage-btn__hint { color: rgba(250, 250, 248, 0.72); }
+.ghd-page .gh-stages__status { color: rgba(250, 250, 248, 0.82); font-size: 15px; }
+.ghd-page .gh-stage-btn {
+  border-radius: var(--pkg-radius);
+  transition: border-color var(--pkg-ease), background-color var(--pkg-ease);
+}
+.ghd-page .gh-stage-btn:hover { transform: none; }
+.ghd-page .gh-stage-btn:focus-visible,
+.ghd-page .gh-stage-pkg__cta:focus-visible,
+.ghd-page .gh-tix__toggle:focus-visible,
+.ghd-page .gh-tix__book:focus-visible,
+.ghd-page .ghd-cta:focus-visible,
+.ghd-page .ghd-proof-btn:focus-visible,
+.ghd-page a:focus-visible,
+.ghd-page button:focus-visible {
+  outline: 2px solid var(--pkg-gold);
+  outline-offset: 3px;
+}
+.ghd-page .gh-stage-btn[aria-pressed="true"] {
+  border-color: var(--pkg-gold);
+  background: rgba(201, 168, 76, 0.16);
+  box-shadow: 0 0 0 1px var(--pkg-gold);
+}
+/* Package cards */
+.ghd-page .gh-stage-pkgs {
+  gap: var(--pkg-space-3);
+  align-items: stretch;
+}
+.ghd-page .gh-stage-pkg {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  border-radius: var(--pkg-radius);
+  border: 1px solid var(--pkg-line);
+  box-shadow: var(--pkg-shadow);
+  padding: var(--pkg-space-3);
+  background: var(--pkg-card);
+  transition: border-color var(--pkg-ease), box-shadow var(--pkg-ease);
+}
+.ghd-page .gh-stage-pkg:hover { transform: none; }
+.ghd-page .gh-stage-pkg.is-match {
+  border-color: var(--pkg-gold);
+  box-shadow: 0 0 0 1px var(--pkg-gold), var(--pkg-shadow-2);
+}
+.ghd-page .gh-stage-pkg__cta {
+  margin-top: auto;
+  border-radius: var(--pkg-radius-sm);
+  min-height: 48px;
+  transition: background-color var(--pkg-ease), border-color var(--pkg-ease), color var(--pkg-ease);
+}
+.ghd-page .gh-stage-pkg__cta:hover { transform: none; }
+.ghd-page .gh-stage-pkg__cta--solid {
+  background: var(--pkg-gold);
+  border-color: var(--pkg-gold);
+  color: #0a0a0a;
+}
+.ghd-page .gh-stage-pkg__cta--solid:hover {
+  background: var(--pkg-gold-bright);
+  border-color: var(--pkg-gold-bright);
+  color: #0a0a0a;
+}
+.ghd-page .gh-stage-pkg__cta--outline:hover {
+  border-color: var(--pkg-ink);
+  background: rgba(20, 20, 20, 0.04);
+}
+.ghd-page .gh-pkg-pricing-note {
+  text-align: center;
+  margin: var(--pkg-space-3) 0 var(--pkg-space-1);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--pkg-ink-soft);
+}
+.ghd-page .gh-pkg-rule {
+  text-align: center;
+  margin: 0 0 var(--pkg-space-4);
+  font-size: 14px;
+  color: var(--pkg-muted);
+}
+.ghd-page .gh-stage-pkg__aka,
+.ghd-page .gh-stage-pkg__meta,
+.ghd-page .gh-stage-pkg__need p,
+.ghd-page .gh-stage-pkg__list li {
+  color: var(--pkg-ink-soft);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__aka,
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__meta,
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__need p,
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__list li,
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__desc {
+  color: rgba(250, 250, 248, 0.86);
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__title { color: #fafaf8; }
+/* Tickets / extras */
+.ghd-page .gh-tix {
+  border-radius: var(--pkg-radius);
+  border: 1px solid var(--pkg-line);
+  box-shadow: var(--pkg-shadow);
+  overflow: hidden;
+}
+.ghd-page .gh-tix__media {
+  aspect-ratio: 4 / 3;
+  background: var(--pkg-cream);
+}
+.ghd-page .gh-tix__media img {
+  object-fit: contain !important;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.ghd-page .gh-tix__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--pkg-space-3);
+  gap: var(--pkg-space-2);
+}
+.ghd-page .gh-tix__details { margin-top: auto; }
+.ghd-page .gh-tix__toggle,
+.ghd-page .gh-tix__book {
+  border-radius: var(--pkg-radius-sm);
+  transition: background-color var(--pkg-ease), border-color var(--pkg-ease), color var(--pkg-ease);
+}
+.ghd-page .gh-tix__toggle:hover,
+.ghd-page .gh-tix__book:hover { transform: none; }
+/* Proof + catalog media: fixed frame, full-bleed like EN reference */
+.ghd-page .ghd-proof-slide,
+.ghd-page .ghd-slider--strip .ghd-proof-slide,
+.ghd-page .ghd-svc-media {
+  background: var(--pkg-cream);
+  border-radius: 0;
+}
+.ghd-page .ghd-proof-slide img,
+.ghd-page .ghd-slider--strip .ghd-proof-slide img,
+.ghd-page .ghd-svc-card img,
+.ghd-page .ghd-svc-card video.ghd-media-el,
+.ghd-page .ghd-catalog img,
+.ghd-page .ghd-catalog video.ghd-media-el {
+  object-fit: cover !important;
+}
+.ghd-page .ghd-svc-card,
+.ghd-page .ghd-pkg {
+  border-radius: var(--pkg-radius);
+  box-shadow: var(--pkg-shadow);
+  transition: border-color var(--pkg-ease), box-shadow var(--pkg-ease);
+}
+.ghd-page .ghd-svc-card:hover,
+.ghd-page .ghd-pkg:hover { transform: none; }
+.ghd-page .ghd-cta--primary,
+.ghd-page .ghd-proof-btn--solid {
+  background: var(--pkg-gold);
+  border-color: var(--pkg-gold);
+  color: #0a0a0a;
+  border-radius: var(--pkg-radius-sm);
+  transition: background-color var(--pkg-ease), border-color var(--pkg-ease);
+}
+.ghd-page .ghd-cta--primary:hover,
+.ghd-page .ghd-proof-btn--solid:hover {
+  background: var(--pkg-gold-bright);
+  border-color: var(--pkg-gold-bright);
+  color: #0a0a0a;
+  transform: none;
+}
+.ghd-page .ghd-proof-btn--ghost {
+  border-radius: var(--pkg-radius-sm);
+  transition: border-color var(--pkg-ease), color var(--pkg-ease), background-color var(--pkg-ease);
+}
+.ghd-page .ghd-proof-btn--ghost:hover { transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .ghd-page *,
+  .ghd-page *::before,
+  .ghd-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
 <style id="gh-tix-type-overrides">
 /* After site CSS; beat html[lang=ar] h3 / main h3 card-title !important rules */
 html[lang="ar"] .ghd-section--extras .gh-tix h3.gh-tix__name,
@@ -1045,7 +1340,6 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
  <strong>ما نحتاجه منك</strong>
  <p>المخططات المبدئية، والمواد والألوان المقترحة، واسم المشروع وموقعه.</p>
  </div>
- <p class="gh-stage-pkg__price">السعر حسب النطاق بعد الاجتماع</p>
  <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us.html?intent=session&amp;stage=1">احجز جلسة تعريفية</a>
  </article>
  <article class="gh-stage-pkg gh-stage-pkg--featured" id="pkg-launch" data-stage="2">
@@ -1070,7 +1364,6 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
  <strong>ما نحتاجه منك</strong>
  <p>المخططات المعتمدة للوحدات، وقائمة المزايا والأسعار المبدئية، وصور الموقع الحالية إن وجدت.</p>
  </div>
- <p class="gh-stage-pkg__price">السعر حسب النطاق بعد الاجتماع</p>
  <a class="gh-stage-pkg__cta gh-stage-pkg__cta--solid" href="contact-us.html?intent=session&amp;stage=2">احجز جلسة تعريفية</a>
  </article>
  <article class="gh-stage-pkg" id="pkg-growth" data-stage="3">
@@ -1092,10 +1385,10 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
  <strong>ما نحتاجه منك</strong>
  <p>قائمة الوحدات المتاحة وأسعارها، وموعد الإطلاق، وتأمين دخول الموقع أو صالة العرض.</p>
  </div>
- <p class="gh-stage-pkg__price">السعر حسب النطاق بعد الاجتماع</p>
  <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us.html?intent=session&amp;stage=3">احجز جلسة تعريفية</a>
  </article>
  </div>
+ <p class="gh-pkg-pricing-note" id="gh-pkg-pricing-note">التسعير حسب النطاق بعد الاجتماع — لجميع الباقات.</p>
  <p class="gh-pkg-rule" id="gh-pkg-rule">الباقة الأعلى تشمل مخرجات الباقات التي قبلها.</p>
 
  <div class="ghd-packages" id="ghd-packages" hidden aria-hidden="true"></div>
