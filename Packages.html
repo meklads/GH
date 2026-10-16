@@ -28,7 +28,7 @@ gtag('config','G-Y67JVE898Z');
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>الباقات | GH Direct | Graphics House</title>
-<meta name="description" content="باقات وخدمات للمطورين العقاريين — نواة، انطلاق، وتوقيع. التسعير حسب النطاق بعد الاجتماع | GH Direct."/>
+<meta name="description" content="باقات وخدمات للمطورين العقاريين — باقة التعريف، باقة البيع المبكر، وباقة الإطلاق الكامل. التسعير حسب النطاق بعد الاجتماع | GH Direct."/>
 <link rel="canonical" href="https://3dgraphicshouse.com/Packages.html">
 <link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/Packages-en.html">
 <link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/Packages.html">
@@ -38,8 +38,115 @@ gtag('config','G-Y67JVE898Z');
 
 <script defer src="assets/gh-performance.js?v=11"></script>
 <script defer src="assets/gh-cta-track.js?v=1"></script>
-<script defer src="assets/gh-direct-data-public.js?v=82"></script>
+<script src="assets/gh-direct-data-public.js?v=82"></script>
+<script>
+/* Unify stage/package names on this page only (catalog source is JS; HTML scope constraint). */
+(function () {
+  var D = window.GH_DIRECT;
+  if (!D || !D.packages) return;
+  var map = {
+    basic: {
+      name: 'باقة التعريف',
+      stage: 'قبل الطرح',
+      stageLine: 'المرحلة الأولى: قبل الطرح',
+      was: 'نواة'
+    },
+    launch: {
+      name: 'باقة البيع المبكر',
+      stage: 'أثناء البناء',
+      stageLine: 'المرحلة الثانية: أثناء البناء',
+      was: 'انطلاق'
+    },
+    growth: {
+      name: 'باقة الإطلاق الكامل',
+      stage: 'بعد الإنجاز',
+      stageLine: 'المرحلة الثالثة: بعد الإنجاز',
+      was: 'توقيع'
+    }
+  };
+  D.packages.forEach(function (pkg) {
+    var m = map[pkg.id];
+    if (!m) return;
+    if (pkg.name) pkg.name.ar = m.name;
+    if (pkg.stage) pkg.stage.ar = m.stage;
+    if (pkg.stageLine) pkg.stageLine.ar = m.stageLine;
+    pkg._akaAr = 'كانت تُعرف بـ' + m.was;
+  });
+  if (D.posture) {
+    D.posture.forEach(function (p) {
+      var m = map[p.packageId];
+      if (!m || !p.title) return;
+      p.title.ar = m.stageLine;
+    });
+  }
+  var u = D.ui && D.ui.ar;
+  if (u) {
+    u.pageLeadPublic =
+      'ثلاث مراحل للمشروع: قبل الطرح، أثناء البناء، وبعد الإنجاز. اختر الباقة أو ابنِ مزيجك — التسعير يُؤكَّد بعد الاجتماع، دون دفع إلكتروني.';
+    u.pageLead = u.pageLeadPublic;
+    u.packagesLeadPublic =
+      'ثلاث باقات حسب مرحلة المشروع. التسعير بعرض سعر بعد الاجتماع.';
+    u.packagesLead = u.packagesLeadPublic;
+    u.postureLead =
+      'ثلاث مراحل لمشروع المطوّر العقاري. حدّد مرحلتك ثم اختر الباقة.';
+    u.whyPlan = 'لماذا باقة البيع المبكر؟';
+    u.whyPlanBody =
+      'بين باقتي التعريف والإطلاق الكامل: إظهار أقوى وموقع للحملة — دون منظومة البيع الكاملة.';
+    if (u.trustLine) {
+      u.trustLine =
+        'دون دفع إلكتروني. تأكيد النطاق خلال يوم عمل. التسعير حسب النطاق بعد الاجتماع';
+    }
+    function patchFaqList(list) {
+      if (!list) return;
+      list.forEach(function (item) {
+        if (!item) return;
+        if (item.q && /التعريف والانطلاق والبيع/.test(item.q)) {
+          item.q = 'كيف أختار بين باقات التعريف والبيع المبكر والإطلاق الكامل؟';
+          item.a =
+            'قبل الطرح: باقة التعريف (كانت تُعرف بـنواة). أثناء البناء: باقة البيع المبكر (كانت تُعرف بـانطلاق). بعد الإنجاز: باقة الإطلاق الكامل (كانت تُعرف بـتوقيع). أو ابنِ مزيجاً في الأتيليه.';
+        }
+        if (item.a && /نواة وانطلاق/.test(item.a)) {
+          item.a =
+            'لا. التسعير يُؤكَّد بعرض سعر بعد الاجتماع حسب نطاق الباقة. السعر النهائي يُحدَّد بعد مراجعة النطاق.';
+        }
+        if (item.a && /باقتا الانطلاق والبيع/.test(item.a)) {
+          item.a =
+            'باقة التعريف: جولة واحدة. باقة البيع المبكر وباقة الإطلاق الكامل: جولتان. ما زاد يُسعَّر عند الحاجة.';
+        }
+        if (item.a && /باقة التعريف أو الانطلاق/.test(item.a)) {
+          item.a =
+            'نعم. كثيراً ما نبدأ بباقة التعريف أو باقة البيع المبكر ثم نرتقي عند جاهزية البيع.';
+        }
+      });
+    }
+    patchFaqList(u.faq);
+    patchFaqList(u.faqPublic);
+  }
+})();
+</script>
 <script defer src="assets/gh-direct.js?v=82"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(function () {
+    var host = document.getElementById('ghd-packages');
+    var D = window.GH_DIRECT;
+    if (!host || !D || !D.packages) return;
+    D.packages.forEach(function (pkg) {
+      if (!pkg._akaAr) return;
+      var card = host.querySelector('[data-package-id="' + pkg.id + '"]');
+      if (!card) return;
+      var nameEl = card.querySelector('.ghd-pkg-name');
+      if (!nameEl || card.querySelector('.ghd-pkg-aka')) return;
+      var aka = document.createElement('p');
+      aka.className = 'ghd-pkg-aka';
+      aka.style.cssText =
+        'margin:6px 0 0;font-size:12px;line-height:1.5;opacity:.65;font-weight:500';
+      aka.textContent = pkg._akaAr;
+      nameEl.insertAdjacentElement('afterend', aka);
+    });
+  }, 0);
+});
+</script>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=48">
 <link rel="stylesheet" href="assets/gh-direct.css?v=82">
