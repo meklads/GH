@@ -494,10 +494,6 @@ gtag('config','G-Y67JVE898Z');
 .gh-tix__details {
   margin-top: auto;
   padding-top: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
 }
 .gh-tix__toggle {
   display: inline-flex;
@@ -514,7 +510,17 @@ gtag('config','G-Y67JVE898Z');
   list-style: none;
   text-decoration: none;
 }
+.gh-tix__toggle::-webkit-details-marker { display: none; }
+.gh-tix__toggle::marker { content: ''; }
 .gh-tix__toggle:hover { transform: none; }
+.gh-tix__panel {
+  margin-top: 12px;
+  padding: 14px 14px 16px;
+  border: 1px solid rgba(20, 20, 20, 0.1);
+  background: rgba(20, 20, 20, 0.02);
+  display: grid;
+  gap: 8px;
+}
 .gh-tix__book {
   display: inline-flex;
   align-items: center;
@@ -1359,6 +1365,12 @@ gtag('config','G-Y67JVE898Z');
       need: 'Initial project idea, required areas, and any existing drawings.',
       image: 'assets/projects/wahat-al-salam/cam-03.jpg',
       num: '01',
+      steps: [
+        'Brief intake',
+        'Preliminary plan',
+        'Review',
+        'Approval'
+      ],
       detailHref: 'service-architectural-design-en.html'
     },
     {
@@ -1373,6 +1385,12 @@ gtag('config','G-Y67JVE898Z');
       need: 'Approved unit plans, a rough furnishing budget, and the target display date.',
       image: 'assets/projects/galleries/turriva/living-walnut-interior.jpg',
       num: '02',
+      steps: [
+        'Site visit',
+        'Design',
+        'Execution and furnishing',
+        'Handover'
+      ],
       detailHref: 'service-furnished-unit-en.html'
     }
   ];
@@ -1441,12 +1459,18 @@ gtag('config','G-Y67JVE898Z');
       '<p class="gh-tix__need">' +
       escapeHtml(item.need) +
       '</p>' +
-      '<div class="gh-tix__details">' +
-      '<a class="gh-tix__toggle" href="' +
+      '<details class="gh-tix__details">' +
+      '<summary class="gh-tix__toggle">Details</summary>' +
+      '<div class="gh-tix__panel">' +
+      '<p class="gh-tix__label">Steps</p>' +
+      listHtml(item.steps, 'gh-tix__detail-list') +
+      '<a class="gh-tix__book" href="' +
       escapeHtml(item.detailHref || 'Packages-en.html#ghd-extras') +
-      '">Details</a>' +
+      '">' +
+      escapeHtml(item.name) +
+      '</a>' +
       '<a class="gh-tix__book" href="contact-us-en.html?intent=session">Book an introductory session</a>' +
-      '</div>' +
+      '</div></details>' +
       '</div></article>'
     );
   }
