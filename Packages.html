@@ -727,6 +727,8 @@ gtag('config','G-Y67JVE898Z');
 <script defer src="assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="assets/site-header.css?v=68" data-gh-header-css="1">
 <link rel="stylesheet" href="assets/gh-footer-lock.css?v=5" data-gh-footer-lock="1">
+<link rel="stylesheet" href="assets/gh-tokens.css?v=1">
+<link rel="stylesheet" href="assets/gh-s2-hero.css?v=1">
 <style id="gh-pkg-world-class">
 /* World-class design system — Packages.html only; brand tokens from site */
 .ghd-page {
@@ -1293,172 +1295,49 @@ gtag('config','G-Y67JVE898Z');
   gap: 14px;
 }
 
-/* ProjectLaunch proof band — after catalog */
+/* MWL s2-hero on Packages — styles in gh-s2-hero.css */
 .ghd-page .ghd-section--launch-proof {
   padding: 0;
   background: #0a0a0a;
 }
-.ghd-page .gh-launch-proof {
-  position: relative;
-  min-height: clamp(520px, 72vh, 720px);
-  display: grid;
-  align-items: end;
-  overflow: hidden;
-  color: #fafaf8;
-}
-.ghd-page .gh-launch-proof__media {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-.ghd-page .gh-launch-proof__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 35%;
-  display: block;
-}
-.ghd-page .gh-launch-proof__veil {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(8, 8, 8, 0.22) 0%, rgba(8, 8, 8, 0.55) 42%, rgba(8, 8, 8, 0.88) 100%),
-    linear-gradient(180deg, rgba(8, 8, 8, 0.35) 0%, rgba(8, 8, 8, 0.15) 35%, rgba(8, 8, 8, 0.82) 100%);
-}
-html[dir="ltr"] .ghd-page .gh-launch-proof__veil {
-  background:
-    linear-gradient(270deg, rgba(8, 8, 8, 0.22) 0%, rgba(8, 8, 8, 0.55) 42%, rgba(8, 8, 8, 0.88) 100%),
-    linear-gradient(180deg, rgba(8, 8, 8, 0.35) 0%, rgba(8, 8, 8, 0.15) 35%, rgba(8, 8, 8, 0.82) 100%);
-}
-.ghd-page .gh-launch-proof__inner {
-  position: relative;
-  z-index: 1;
-  padding-block: 56px 48px;
-  max-width: 720px;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-}
-@media (min-width: 900px) {
-  .ghd-page .gh-launch-proof__inner {
-    margin-inline-start: auto;
-    margin-inline-end: max(0px, calc((100% - var(--pkg-wrap, 1200px)) / 2));
-    padding-inline-end: 8px;
-  }
-  html[dir="ltr"] .ghd-page .gh-launch-proof__inner {
-    margin-inline-start: max(0px, calc((100% - var(--pkg-wrap, 1200px)) / 2));
-    margin-inline-end: auto;
-    padding-inline-start: 8px;
-    padding-inline-end: 0;
-  }
-}
-.ghd-page .gh-launch-proof__eyebrow {
-  margin: 0 0 12px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #e8d5a0;
-}
-.ghd-page .gh-launch-proof__inner h2 {
-  margin: 0 0 14px;
-  font-size: clamp(28px, 3.4vw, 40px);
-  line-height: 1.25;
-  font-weight: 700;
-  color: #fafaf8;
-  max-width: 18ch;
-}
-.ghd-page .gh-launch-proof__lead {
-  margin: 0 0 20px;
-  font-size: 16px;
-  line-height: 1.7;
-  color: rgba(250, 250, 248, 0.88);
-  max-width: 38rem;
-}
-.ghd-page .gh-launch-proof__pillars {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  list-style: none;
-  margin: 0 0 22px;
-  padding: 0;
-}
-.ghd-page .gh-launch-proof__pillars li {
-  padding: 7px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(201, 168, 76, 0.35);
-  background: rgba(201, 168, 76, 0.12);
-  color: #e8d5a0;
-  font-size: 13px;
-  font-weight: 600;
-}
-.ghd-page .gh-launch-proof__thumbs {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 8px;
-  margin: 0 0 24px;
-  max-width: 420px;
-}
-.ghd-page .gh-launch-proof__thumbs img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  display: block;
-}
-.ghd-page .gh-launch-proof__actions {
+.ghd-page .gh-mwl-cta {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
+  justify-content: center;
+  padding: 28px 20px 36px;
+  background: #0a0a0a;
 }
-.ghd-page .gh-launch-proof__cta {
+.ghd-page .gh-mwl-cta a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 48px;
-  padding: 0 20px;
+  padding: 0 22px;
   border-radius: 999px;
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
-  transition: background-color 240ms ease, border-color 240ms ease, color 240ms ease;
 }
-.ghd-page .gh-launch-proof__cta:hover { transform: none; }
-.ghd-page .gh-launch-proof__cta:focus-visible {
-  outline: 2px solid #c9a84c;
-  outline-offset: 3px;
-}
-.ghd-page .gh-launch-proof__cta--solid {
+.ghd-page .gh-mwl-cta__solid {
   background: #c9a84c;
   border: 1.5px solid #c9a84c;
   color: #0a0a0a;
 }
-.ghd-page .gh-launch-proof__cta--solid:hover {
+.ghd-page .gh-mwl-cta__solid:hover {
   background: #e0c06a;
   border-color: #e0c06a;
   color: #0a0a0a;
 }
-.ghd-page .gh-launch-proof__cta--ghost {
+.ghd-page .gh-mwl-cta__ghost {
   background: transparent;
   border: 1.5px solid rgba(250, 250, 248, 0.55);
   color: #fafaf8;
 }
-.ghd-page .gh-launch-proof__cta--ghost:hover {
+.ghd-page .gh-mwl-cta__ghost:hover {
   border-color: #e8d5a0;
   color: #e8d5a0;
-}
-@media (max-width: 760px) {
-  .ghd-page .gh-launch-proof {
-    min-height: 0;
-  }
-  .ghd-page .gh-launch-proof__thumbs {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    max-width: none;
-  }
-  .ghd-page .gh-launch-proof__inner h2 {
-    max-width: none;
-  }
 }
 </style>
 <style id="gh-tix-type-overrides">
@@ -1860,37 +1739,136 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
  </div>
  </section>
 
- <section class="ghd-section ghd-section--launch-proof" id="launch-proof" aria-labelledby="gh-launch-proof-title">
- <article class="gh-launch-proof">
- <div class="gh-launch-proof__media" aria-hidden="true">
- <img src="assets/news/makkah-charter-04.jpeg" alt="" width="1600" height="900" loading="lazy" decoding="async">
- <div class="gh-launch-proof__veil"></div>
+ <section class="ghd-section ghd-section--launch-proof" id="launch-proof" aria-label="دراسة حالة ميثاق مكة">
+<section class="s2-hero-wrap">
+
+ <!-- Background Image -->
+ <div class="s2-hero-bg">
+ <img loading="lazy" src="assets/news/makkah-charter-04.jpeg" alt="معرض الإنسانية">
+ <div class="s2-hero-overlay"></div>
  </div>
- <div class="gh-launch-proof__inner ghd-wrap">
- <p class="gh-launch-proof__eyebrow">ProjectLaunch™ · دراسة حالة</p>
- <h2 id="gh-launch-proof-title">نبني تجارب تسبق بناء المدن</h2>
- <p class="gh-launch-proof__lead">من الهوية إلى المجسمات التفاعلية والديكور وأدوات البيع والتسويق — تنفيذ متكامل للمطور في إطلاق واحد. دراسة ميثاق مكة تُظهر كيف نبني تجربة الإطلاق كاملة، لا خدمة منفصلة.</p>
- <ul class="gh-launch-proof__pillars" aria-label="نطاق التنفيذ">
- <li>هوية بصرية</li>
- <li>مجسمات ذكية</li>
- <li>تفاعل وشاشات</li>
- <li>ديكور مكاني</li>
- <li>تسويق وإطلاق</li>
- </ul>
- <div class="gh-launch-proof__thumbs" aria-label="لقطات من التنفيذ">
- <img src="assets/news/makkah-charter-01.jpeg" alt="لقطة من معرض ميثاق مكة" width="160" height="120" loading="lazy" decoding="async">
- <img src="assets/news/makkah-charter-02.jpeg" alt="مجسم تفاعلي في المعرض" width="160" height="120" loading="lazy" decoding="async">
- <img src="assets/news/makkah-charter-05.jpeg" alt="تجربة عرض تفاعلية" width="160" height="120" loading="lazy" decoding="async">
- <img src="assets/news/makkah-charter-07.jpeg" alt="ديكور وتنفيذ مكاني" width="160" height="120" loading="lazy" decoding="async">
- <img src="assets/news/makkah-charter-09.jpeg" alt="شاشات وأدوات عرض" width="160" height="120" loading="lazy" decoding="async">
- <img src="assets/news/makkah-charter-11.jpeg" alt="لحظة الإطلاق أمام الزوار" width="160" height="120" loading="lazy" decoding="async">
+
+ <!-- Centered Text Overlay -->
+ <div class="s2-hero-inner">
+ <h2 class="s2-hero-title" id="gh-launch-proof-title">
+ نبني تجارب <em>تسبق بناء المدن</em>
+ </h2>
+ <p class="s2-hero-desc">
+ تجمع جرافيكس هاوس بين الإظهار السينمائي، الأنظمة التفاعلية، المجسمات الذكية، وتقنيات العرض الحديثة لصناعة تجارب معمارية واستثمارية ترفع قيمة المشروع وتعزز قرارات البيع والاستثمار.
+ </p>
  </div>
- <div class="gh-launch-proof__actions">
- <a class="gh-launch-proof__cta gh-launch-proof__cta--solid" href="casestudy-mwl.html">اقرأ دراسة الحالة ←</a>
- <a class="gh-launch-proof__cta gh-launch-proof__cta--ghost" href="contact-us.html?intent=session">احجز جلسة إطلاق</a>
+
+ <!-- Interactive Hotspots -->
+ <div class="hotspot hotspot-1 hotspot-left" style="top:56%;left:65%" data-title="المجسم التفاعلي">
+ <div class="hotspot-pulse"></div>
+ <div class="hotspot-dot">
+ <span class="material-symbols-outlined">touch_app</span>
+ </div>
+ <div class="hotspot-tooltip">
+ <div class="hotspot-tooltip-arrow"></div>
+ <span class="hotspot-badge">مجسم ذكي</span>
+ <h4>مجسم تفاعلي لمشاريع الرابطة</h4>
+ <p>مجسم معماري تفاعلي ثلاثي الأبعاد لمشاريع رابطة العالم الإسلامي حول العالم، مع إضاءة ديناميكية تبرز تفاصيل كل مشروع.</p>
  </div>
  </div>
- </article>
+
+ <div class="hotspot hotspot-2 hotspot-left" style="top:38%;left:84%" data-title="برنامج تشغيلي">
+ <div class="hotspot-pulse"></div>
+ <div class="hotspot-dot">
+ <span class="material-symbols-outlined">devices</span>
+ </div>
+ <div class="hotspot-tooltip">
+ <div class="hotspot-tooltip-arrow"></div>
+ <span class="hotspot-badge">برنامج تفاعلي</span>
+ <h4>برنامج تشغيلي للتحكم في المجسم</h4>
+ <p>برنامج تفاعلي يعرض تفاصيل المشاريع على شاشة اللمس ويتحكم في إضاءة المجسم وعرض المعلومات بشكل ديناميكي.</p>
+ </div>
+ </div>
+
+ <div class="hotspot hotspot-3 hotspot-below" style="top:32%;left:50%" data-title="أخبار الرابطة">
+ <div class="hotspot-pulse"></div>
+ <div class="hotspot-dot">
+ <span class="material-symbols-outlined">public</span>
+ </div>
+ <div class="hotspot-tooltip">
+ <div class="hotspot-tooltip-arrow"></div>
+ <span class="hotspot-badge">برنامج أخبار</span>
+ <h4>برنامج أخبار الرابطة حول العالم</h4>
+ <p>برنامج تفاعلي يعرض آخر أخبار وفعاليات ومبادرات رابطة العالم الإسلامي في مختلف قارات العالم.</p>
+ </div>
+ </div>
+
+ <div class="hotspot hotspot-4 hotspot-below" style="top:32%;left:28%" data-title="تصوير تذكاري">
+ <div class="hotspot-pulse"></div>
+ <div class="hotspot-dot">
+ <span class="material-symbols-outlined">photo_camera</span>
+ </div>
+ <div class="hotspot-tooltip">
+ <div class="hotspot-tooltip-arrow"></div>
+ <span class="hotspot-badge">تصوير تفاعلي</span>
+ <h4>برنامج تصوير تذكاري</h4>
+ <p>شاشة تفاعلية للتصوير التذكاري مع إطارات مخصصة للفعالية، تسمح للزوار بالتقاط صور تذكارية ومشاركتها فوراً.</p>
+ </div>
+ </div>
+
+ <!-- Play Button -->
+ <button class="s2-play-btn" id="s2PlayBtn1" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="تشغيل الفيديو" style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:5;width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,0.15);border:2px solid rgba(201,168,76,0.3);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease">
+ <span class="material-symbols-outlined" style="font-size:42px;color:#C9A84C">play_arrow</span>
+ </button>
+
+ <!-- Watch Video Button -->
+ <button class="s2-watch-btn" onclick="playVideo('H66KNP1sQCk', 5)" aria-label="شاهد الفيديو">
+ <span class="material-symbols-outlined" style="font-size:20px">play_circle</span>
+ شاهد الفيديو
+ </button>
+
+ <!-- Thumbnail Gallery -->
+ <div class="s2-hero-gallery">
+ <div class="s2-hero-gallery-grid">
+ <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-01.jpeg')">
+ <img loading="lazy" src="assets/news/makkah-charter-01.jpeg" alt="">
+ </div>
+ <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-02.jpeg')">
+ <img loading="lazy" src="assets/news/makkah-charter-02.jpeg" alt="">
+ </div>
+ <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-03.jpeg')">
+ <img loading="lazy" src="assets/news/makkah-charter-03.jpeg" alt="">
+ </div>
+ <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-04.jpeg')">
+ <img loading="lazy" src="assets/news/makkah-charter-04.jpeg" alt="">
+ </div>
+ <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-05.jpeg')">
+ <img loading="lazy" src="assets/news/makkah-charter-05.jpeg" alt="">
+ </div>
+ <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-06.jpeg')">
+ <img loading="lazy" src="assets/news/makkah-charter-06.jpeg" alt="">
+ </div>
+ <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-07.jpeg')">
+ <img loading="lazy" src="assets/news/makkah-charter-07.jpeg" alt="">
+ </div>
+ <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-08.jpeg')">
+ <img loading="lazy" src="assets/news/makkah-charter-08.jpeg" alt="">
+ </div>
+ <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-09.jpeg')">
+ <img loading="lazy" src="assets/news/makkah-charter-09.jpeg" alt="">
+ </div>
+ <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-10.jpeg')">
+ <img loading="lazy" src="assets/news/makkah-charter-10.jpeg" alt="">
+ </div>
+ <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-11.jpeg')">
+ <img loading="lazy" src="assets/news/makkah-charter-11.jpeg" alt="">
+ </div>
+ <div class="s2-hero-thumb" onclick="openHeroImage('assets/news/makkah-charter-12.jpeg')">
+ <img loading="lazy" src="assets/news/makkah-charter-12.jpeg" alt="">
+ </div>
+ </div>
+ </div>
+
+</section>
+ <div class="gh-mwl-cta">
+ <a class="gh-mwl-cta__solid" href="casestudy-mwl.html">اقرأ دراسة الحالة ←</a>
+ <a class="gh-mwl-cta__ghost" href="contact-us.html?intent=session">احجز جلسة إطلاق</a>
+ </div>
  </section>
 
  <section class="ghd-section ghd-section--meeting" id="unsure" aria-labelledby="ghd-meeting-title">
@@ -2063,15 +2041,78 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
   </div>
 </footer>
 
+<!-- Video Modal -->
+<div class="video-modal" id="videoModal">
+ <div class="video-modal-inner">
+ <button class="video-modal-close" onclick="closeVideo()">✕</button>
+ <div id="videoModalPlayer"></div>
+ </div>
+</div>
 
+<!-- Image Lightbox -->
+<div class="image-lightbox" id="imageLightbox" onclick="closeImageLightbox(event)">
+ <div class="image-lightbox-inner" onclick="event.stopPropagation()">
+ <button class="image-lightbox-close" onclick="closeImageLightbox(event)">✕</button>
+ <img loading="lazy" id="imageLightboxImg" src="" alt="">
+ </div>
+</div>
 
-
-
-
-
-
-
-
+<script>
+function playVideo(videoId, startTime) {
+ var modal = document.getElementById('videoModal');
+ var container = document.getElementById('videoModalPlayer');
+ var src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1';
+ if (startTime !== undefined) src += '&start=' + startTime;
+ var iframe = document.createElement('iframe');
+ iframe.setAttribute('src', src);
+ iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+ iframe.setAttribute('allowfullscreen', '');
+ iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+ iframe.style.cssText = 'width:100%;height:100%;border:0;';
+ container.innerHTML = '';
+ container.appendChild(iframe);
+ modal.style.display = 'flex';
+ document.body.style.overflow = 'hidden';
+}
+function closeVideo() {
+ var modal = document.getElementById('videoModal');
+ var container = document.getElementById('videoModalPlayer');
+ modal.style.display = 'none';
+ container.innerHTML = '';
+ document.body.style.overflow = '';
+}
+document.getElementById('videoModal').addEventListener('click', function(e) {
+ if (e.target === this) closeVideo();
+});
+function openHeroImage(src) {
+ var modal = document.getElementById('imageLightbox');
+ var modalImg = document.getElementById('imageLightboxImg');
+ modalImg.src = src;
+ modal.style.display = 'flex';
+ requestAnimationFrame(function() { modal.style.opacity = '1'; });
+ document.body.style.overflow = 'hidden';
+}
+function closeImageLightbox(e) {
+ var modal = document.getElementById('imageLightbox');
+ if (e && e.target !== modal && !e.target.closest('.image-lightbox-close')) return;
+ modal.style.opacity = '0';
+ setTimeout(function() {
+ modal.style.display = 'none';
+ document.getElementById('imageLightboxImg').removeAttribute('src');
+ }, 300);
+ document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+ if (e.key !== 'Escape') return;
+ var lightbox = document.getElementById('imageLightbox');
+ var videoModal = document.getElementById('videoModal');
+ if (lightbox && lightbox.style.display === 'flex') {
+ closeImageLightbox();
+ return;
+ }
+ if (videoModal && videoModal.style.display === 'flex') closeVideo();
+});
+</script>
 
 
 
