@@ -639,7 +639,7 @@ window.GH_DIRECT = {
       }
     },
     {
-      "src": "assets/projects/maquettes/anan-escan3.webp",
+      "src": "assets/projects/maquettes/anan-eskan-maquette-03.webp",
       "caption": {
         "ar": "عنان إسكان مجسم",
         "en": "Anan Eskan maquette"
@@ -921,8 +921,8 @@ window.GH_DIRECT = {
       "priceLabel": "contact",
       "media": {
         "type": "video",
-        "src": "assets/videos/GH-demo-reel-2025-mobile.mp4",
-        "poster": "assets/projects/cinematic/video-1.webp"
+        "src": "assets/videos/3D-Architectural-visualisation-mobile.mp4",
+        "poster": "assets/projects/wahat-al-salam/hero-aerial.webp"
       }
     },
     {
