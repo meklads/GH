@@ -376,6 +376,204 @@ gtag('config','G-Y67JVE898Z');
     font-size: 15px;
   }
 }
+
+.ghd-section--extras .ghd-extras {
+  max-width: 1100px;
+  text-align: start;
+  padding-inline: 0;
+}
+.gh-tix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin: 8px 0 24px;
+  list-style: none;
+  padding: 0;
+  align-items: stretch;
+}
+.gh-tix {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  border: 1px solid rgba(20, 20, 20, 0.12);
+  box-shadow: 0 1px 0 rgba(20, 20, 20, 0.04);
+  background: #fff;
+  color: #141414;
+}
+.gh-tix:hover { transform: none; }
+.gh-tix__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  flex-shrink: 0;
+  background: #111;
+  overflow: hidden;
+}
+.gh-tix__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.gh-tix__fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #1a1a1a 0%, #2a2418 55%, #C9A84C 160%);
+  color: #FAFAF8;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.gh-tix__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 10px;
+  padding: 18px 18px 20px;
+  min-height: 0;
+}
+.gh-tix__name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #141414;
+}
+.gh-tix__promise {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(20, 20, 20, 0.72);
+}
+.gh-tix__label {
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(20, 20, 20, 0.5);
+}
+.gh-tix__gets,
+.gh-tix__detail-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+.gh-tix__gets li,
+.gh-tix__detail-list li {
+  position: relative;
+  padding-inline-start: 12px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(20, 20, 20, 0.82);
+}
+.gh-tix__gets li::before,
+.gh-tix__detail-list li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background: #C9A84C;
+}
+.gh-tix__when,
+.gh-tix__meta,
+.gh-tix__need {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(20, 20, 20, 0.7);
+}
+.gh-tix__details {
+  margin-top: auto;
+  padding-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.gh-tix__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1.5px solid #141414;
+  background: #fff;
+  color: #141414;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  text-decoration: none;
+}
+.gh-tix__toggle:hover { transform: none; }
+.gh-tix__book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1.5px solid rgba(20, 20, 20, 0.55);
+  background: transparent;
+  color: #141414;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.gh-tix__book:hover { transform: none; }
+.gh-tix-session {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  min-width: 200px;
+  margin: 4px auto 8px;
+  padding: 0 20px;
+  border: 1.5px solid #C9A84C;
+  background: #C9A84C;
+  color: #0A0A0A;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.gh-tix-session-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+#atelier-workshop:not(.is-open) {
+  display: none !important;
+}
+.ghd-section--extras .ghd-atelier-entry {
+  margin-top: 24px;
+  max-width: 1100px;
+}
+@media (max-width: 760px) {
+  .gh-tix-grid { grid-template-columns: 1fr; }
+  .gh-tix__name { font-size: 20px; }
+  .gh-tix__promise,
+  .gh-tix__gets li,
+  .gh-tix__detail-list li,
+  .gh-tix__when,
+  .gh-tix__meta,
+  .gh-tix__need,
+  .gh-tix__toggle,
+  .gh-tix__book,
+  .gh-tix-session {
+    font-size: 15px;
+  }
+}
 </style>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=48">
@@ -730,6 +928,7 @@ gtag('config','G-Y67JVE898Z');
  <section class="ghd-section ghd-section--extras" id="extras" aria-labelledby="ghd-extras-title">
  <div class="ghd-wrap">
  <div class="ghd-extras" id="ghd-extras"></div>
+ <div class="ghd-atelier-entry" id="ghd-atelier-entry"></div>
  </div>
  </section>
  <section class="ghd-section ghd-section--atelier" id="atelier-workshop" aria-labelledby="ghd-atelier-title">
@@ -1140,6 +1339,211 @@ gtag('config','G-Y67JVE898Z');
     document.addEventListener('DOMContentLoaded', function () { setTimeout(whenReady, 0); });
   } else {
     setTimeout(whenReady, 0);
+  }
+})();
+</script>
+
+
+<script>
+(function () {
+  var tickets = [
+    {
+      id: 'gh-tix-1',
+      name: 'Architectural design (preliminary or construction documents)',
+      promise: 'Clear architectural drawings your project can build on at every stage.',
+      gets: [
+        'AutoCAD plan drawing, reviewed with the relevant party',
+        'A drawing set ready for review and approval'
+      ],
+      when: 'Before launch, or when the project lacks an approved drawing for marketing.',
+      need: 'Initial project idea, required areas, and any existing drawings.',
+      image: 'assets/projects/wahat-al-salam/cam-03.jpg',
+      num: '01',
+      detailHref: 'service-architectural-design-en.html'
+    },
+    {
+      id: 'gh-tix-2',
+      name: 'Furnished show unit (via Turriva)',
+      promise: 'A show unit ready for visits and viewings.',
+      gets: [
+        'Luxury interior apartment décor via Turriva',
+        'A furnished show unit ready for display and visits'
+      ],
+      when: 'Before launch, to show units to clients on site or in the sales gallery.',
+      need: 'Approved unit plans, a rough furnishing budget, and the target display date.',
+      image: 'assets/projects/galleries/turriva/living-walnut-interior.jpg',
+      num: '02',
+      detailHref: 'service-furnished-unit-en.html'
+    }
+  ];
+
+  function openAtelier(scroll) {
+    var workshop = document.getElementById('atelier-workshop');
+    if (!workshop) return;
+    workshop.classList.add('is-open');
+    if (scroll) {
+      try {
+        workshop.scrollIntoView({
+          behavior: window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+          block: 'start'
+        });
+      } catch (e) {}
+    }
+  }
+
+  function escapeHtml(str) {
+    return String(str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function listHtml(items, className) {
+    return (
+      '<ul class="' +
+      className +
+      '">' +
+      (items || [])
+        .map(function (line) {
+          return '<li>' + escapeHtml(line) + '</li>';
+        })
+        .join('') +
+      '</ul>'
+    );
+  }
+
+  function ticketHtml(item) {
+    var media = item.image
+      ? '<img src="' + escapeHtml(item.image) + '" alt="" width="800" height="600" loading="lazy" decoding="async">'
+      : '<div class="gh-tix__fallback" aria-hidden="true">' + escapeHtml(item.num) + '</div>';
+    return (
+      '<article class="gh-tix" data-gh-tix="' +
+      escapeHtml(item.id) +
+      '">' +
+      '<div class="gh-tix__media">' +
+      media +
+      '</div>' +
+      '<div class="gh-tix__body">' +
+      '<h3 class="gh-tix__name">' +
+      escapeHtml(item.name) +
+      '</h3>' +
+      '<p class="gh-tix__promise">' +
+      escapeHtml(item.promise) +
+      '</p>' +
+      '<p class="gh-tix__label">What you get</p>' +
+      listHtml(item.gets, 'gh-tix__gets') +
+      '<p class="gh-tix__label">When you need it</p>' +
+      '<p class="gh-tix__when">' +
+      escapeHtml(item.when) +
+      '</p>' +
+      '<p class="gh-tix__label">What we need from you</p>' +
+      '<p class="gh-tix__need">' +
+      escapeHtml(item.need) +
+      '</p>' +
+      '<div class="gh-tix__details">' +
+      '<a class="gh-tix__toggle" href="' +
+      escapeHtml(item.detailHref || 'Packages-en.html#ghd-extras') +
+      '">Details</a>' +
+      '<a class="gh-tix__book" href="contact-us-en.html?intent=session">Book an introductory session</a>' +
+      '</div>' +
+      '</div></article>'
+    );
+  }
+
+  function fillAtelierEntry() {
+    var host = document.getElementById('ghd-atelier-entry');
+    if (!host || host.getAttribute('data-gh-tix-ready') === '1') return;
+    var D = window.GH_DIRECT || {};
+    var ui = (D.ui && D.ui.en) || {};
+    host.innerHTML =
+      '<div class="ghd-atelier-entry-inner">' +
+      '<div><p class="ghd-atelier-entry-title">' +
+      escapeHtml(ui.atelierEntryTitle || 'Need a mix beyond the packages?') +
+      '</p><p class="ghd-atelier-entry-lead">' +
+      escapeHtml(ui.atelierEntryLead || 'Build your scope in the atelier and get an initial estimate.') +
+      '</p></div>' +
+      '<a class="ghd-cta ghd-cta--primary" href="#atelier-workshop" data-open-atelier="1" id="gh-tix-open-atelier">' +
+      escapeHtml(ui.atelierEntryCta || 'Open the atelier') +
+      '</a></div>';
+    host.setAttribute('data-gh-tix-ready', '1');
+    host.querySelectorAll('[data-open-atelier]').forEach(function (btn) {
+      btn.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        openAtelier(true);
+      });
+    });
+  }
+
+  function enhanceExtras() {
+    var host = document.getElementById('ghd-extras');
+    if (!host) return false;
+    if (host.querySelector('.gh-tix-grid')) {
+      fillAtelierEntry();
+      return true;
+    }
+    var list = host.querySelector('.ghd-extras-list');
+    if (!list) return false;
+
+    var grid = document.createElement('div');
+    grid.className = 'gh-tix-grid';
+    grid.id = 'gh-tix-grid';
+    grid.setAttribute('role', 'list');
+    grid.innerHTML = tickets.map(ticketHtml).join('');
+    grid.querySelectorAll('[data-gh-tix]').forEach(function (el) {
+      el.id = el.getAttribute('data-gh-tix') || '';
+      el.removeAttribute('data-gh-tix');
+    });
+    list.replaceWith(grid);
+
+    var oldCta = host.querySelector('.ghd-extras-cta');
+    var session =
+      '<div class="gh-tix-session-wrap" id="gh-tix-session-wrap">' +
+      '<a class="gh-tix-session" id="gh-tix-session" href="contact-us-en.html?intent=session">Book an introductory session</a>' +
+      '</div>';
+    if (oldCta) oldCta.outerHTML = session;
+    else host.insertAdjacentHTML('beforeend', session);
+
+    fillAtelierEntry();
+    return true;
+  }
+
+  function watchExtras() {
+    var tries = 0;
+    var done = false;
+    function tick() {
+      if (done) return;
+      tries += 1;
+      if (enhanceExtras()) {
+        done = true;
+        return;
+      }
+      if (tries < 40) setTimeout(tick, 50);
+    }
+    tick();
+    var host = document.getElementById('ghd-extras');
+    if (!host || typeof MutationObserver !== 'function') return;
+    var obs = new MutationObserver(function () {
+      if (enhanceExtras()) obs.disconnect();
+    });
+    obs.observe(host, { childList: true, subtree: true });
+    setTimeout(function () {
+      try {
+        obs.disconnect();
+      } catch (e) {}
+    }, 8000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', watchExtras);
+  } else {
+    watchExtras();
+  }
+
+  if (location.hash === '#atelier-workshop') {
+    window.addEventListener('load', function () {
+      openAtelier(false);
+    });
   }
 })();
 </script>
