@@ -1340,6 +1340,162 @@ gtag('config','G-Y67JVE898Z');
   color: #e8d5a0;
 }
 </style>
+<style id="gh-pkg-card-hierarchy">
+/* Package card hierarchy: title → definition → facts → includes → need */
+.ghd-page .gh-stage-pkg {
+  gap: 0;
+  padding: 28px 24px 24px;
+}
+.ghd-page .gh-stage-pkg__tag {
+  margin-bottom: 14px;
+}
+.ghd-page .gh-stage-pkg__title {
+  font-size: clamp(26px, 2.8vw, 34px) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px !important;
+  color: var(--pkg-ink);
+}
+.ghd-page .gh-stage-pkg__aka {
+  margin: 0 0 14px;
+  font-size: 12px !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(20, 20, 20, 0.48) !important;
+  line-height: 1.4 !important;
+}
+.ghd-page .gh-stage-pkg__desc {
+  margin: 0 0 16px;
+  padding-inline-start: 12px;
+  border-inline-start: 2px solid rgba(201, 168, 76, 0.7);
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  line-height: 1.55 !important;
+  color: var(--pkg-ink-soft) !important;
+  max-width: none;
+}
+.ghd-page .gh-stage-pkg__facts {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(20, 20, 20, 0.035);
+  border: 1px solid rgba(20, 20, 20, 0.06);
+}
+.ghd-page .gh-stage-pkg__meta {
+  margin: 0;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  color: rgba(20, 20, 20, 0.62) !important;
+}
+.ghd-page .gh-stage-pkg__meta strong {
+  color: var(--pkg-ink);
+  font-weight: 700;
+}
+.ghd-page .gh-stage-pkg__includes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 18px;
+  flex: 1;
+}
+.ghd-page .gh-stage-pkg__includes-label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a7a2e;
+}
+.ghd-page .gh-stage-pkg__list {
+  margin: 0;
+  gap: 11px;
+  flex: 0;
+}
+.ghd-page .gh-stage-pkg__list li {
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  color: var(--pkg-ink) !important;
+  font-weight: 500;
+  padding-inline-start: 18px;
+}
+.ghd-page .gh-stage-pkg__list li::before {
+  width: 7px;
+  height: 7px;
+  top: 0.5em;
+  background: #c9a84c;
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.18);
+}
+.ghd-page .gh-stage-pkg__need {
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  border: 1px solid rgba(201, 168, 76, 0.28);
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(201, 168, 76, 0.1) 0%, rgba(201, 168, 76, 0.04) 100%);
+  border-top: 1px solid rgba(201, 168, 76, 0.28);
+}
+.ghd-page .gh-stage-pkg__need strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px !important;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a6f22;
+}
+.ghd-page .gh-stage-pkg__need p {
+  margin: 0;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: var(--pkg-ink-soft) !important;
+  font-weight: 500;
+}
+/* Featured (dark) */
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__title {
+  color: #fafaf8 !important;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__aka {
+  color: rgba(250, 250, 248, 0.5) !important;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__desc {
+  color: rgba(250, 250, 248, 0.92) !important;
+  border-inline-start-color: #c9a84c;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__facts {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__meta {
+  color: rgba(250, 250, 248, 0.72) !important;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__meta strong {
+  color: #e8d5a0;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__includes-label {
+  color: #e8d5a0;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__list li {
+  color: rgba(250, 250, 248, 0.92) !important;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__need {
+  background: rgba(201, 168, 76, 0.12);
+  border-color: rgba(201, 168, 76, 0.35);
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__need strong {
+  color: #e8d5a0;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__need p {
+  color: rgba(250, 250, 248, 0.82) !important;
+}
+@media (max-width: 900px) {
+  .ghd-page .gh-stage-pkg__title {
+    font-size: clamp(24px, 7vw, 30px) !important;
+  }
+}
+</style>
 <style id="gh-tix-type-overrides">
 /* After site CSS; beat html[lang=ar] h3 / main h3 card-title !important rules */
 html[lang="ar"] .ghd-section--extras .gh-tix h3.gh-tix__name,
@@ -1640,16 +1796,21 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
  <h3 class="gh-stage-pkg__title">باقة التعريف</h3>
  <p class="gh-stage-pkg__aka">كانت تُعرف بنواة</p>
  <p class="gh-stage-pkg__desc">لمشروعك قبل أن يُطرح للبيع</p>
- <p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع في الدراسة أو التصميم أو ينتظر الاعتماد</p>
+<div class="gh-stage-pkg__facts">
+<p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع في الدراسة أو التصميم أو ينتظر الاعتماد</p>
  <p class="gh-stage-pkg__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولة واحدة</p>
- <ul class="gh-stage-pkg__list">
+</div>
+<div class="gh-stage-pkg__includes">
+<p class="gh-stage-pkg__includes-label">يشمل</p>
+<ul class="gh-stage-pkg__list">
  <li>هوية بصرية للمشروع: شعار وألوان وملفات تسليم</li>
  <li>12 صورة معمارية أولية (Concept): واجهات ومناظر خارجية وعدد محدود من الداخليات</li>
  <li>فيديو تشويقي قصير (Teaser)</li>
  <li>صفحة هبوط للتعريف بالمشروع مع نموذج تسجيل اهتمام</li>
  <li>عرض تعريفي للمستثمرين والجهات (Project Deck)</li>
  </ul>
- <div class="gh-stage-pkg__need">
+</div>
+<div class="gh-stage-pkg__need">
  <strong>ما نحتاجه منك</strong>
  <p>المخططات المبدئية، والمواد والألوان المقترحة، واسم المشروع وموقعه.</p>
  </div>
@@ -1661,9 +1822,13 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
  <h3 class="gh-stage-pkg__title">باقة البيع المبكر</h3>
  <p class="gh-stage-pkg__aka">كانت تُعرف بانطلاق</p>
  <p class="gh-stage-pkg__desc">لمشروعك قيد البناء ويحتاج إلى بيع مبكر</p>
- <p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع قيد الإنشاء يبدأ تسويق وحداته الآن</p>
+<div class="gh-stage-pkg__facts">
+<p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع قيد الإنشاء يبدأ تسويق وحداته الآن</p>
  <p class="gh-stage-pkg__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولتان</p>
- <ul class="gh-stage-pkg__list">
+</div>
+<div class="gh-stage-pkg__includes">
+<p class="gh-stage-pkg__includes-label">يشمل</p>
+<ul class="gh-stage-pkg__list">
  <li>18 صورة معمارية نهائية: خارجية وداخلية، نهارية وليلية</li>
  <li>مخططات ثلاثية الأبعاد للوحدات (3D Floor Plans)</li>
  <li>جولة افتراضية 360°</li>
@@ -1673,7 +1838,8 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
  <li>مقاطع سوشيال ميديا بمقاسات المنصات</li>
  <li>مادة تحريرية: وصف المشروع ومزاياه ونصوص المنصات</li>
  </ul>
- <div class="gh-stage-pkg__need">
+</div>
+<div class="gh-stage-pkg__need">
  <strong>ما نحتاجه منك</strong>
  <p>المخططات المعتمدة للوحدات، وقائمة المزايا والأسعار المبدئية، وصور الموقع الحالية إن وجدت.</p>
  </div>
@@ -1684,9 +1850,13 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
  <h3 class="gh-stage-pkg__title">باقة الإطلاق الكامل</h3>
  <p class="gh-stage-pkg__aka">كانت تُعرف بتوقيع</p>
  <p class="gh-stage-pkg__desc">لمشروعك بعد الإنجاز لبيع وحداته المتبقية</p>
- <p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع مكتمل أو قريب من التسليم</p>
+<div class="gh-stage-pkg__facts">
+<p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع مكتمل أو قريب من التسليم</p>
  <p class="gh-stage-pkg__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولتان</p>
- <ul class="gh-stage-pkg__list">
+</div>
+<div class="gh-stage-pkg__includes">
+<p class="gh-stage-pkg__includes-label">يشمل</p>
+<ul class="gh-stage-pkg__list">
  <li>تصميم صالة البيع مع التنفيذ</li>
  <li>تصميم بوث المعرض مع التنفيذ</li>
  <li>مواد البيع: كتالوج مطبوع ورقمي، وبروشور، وأوراق مواصفات الوحدات</li>
@@ -1694,7 +1864,8 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
  <li>تصوير فوتوغرافي ميداني ليوم واحد لمراحل الإنجاز</li>
  <li>محتوى حملة الإطلاق: مقاطع وإعلانات</li>
  </ul>
- <div class="gh-stage-pkg__need">
+</div>
+<div class="gh-stage-pkg__need">
  <strong>ما نحتاجه منك</strong>
  <p>قائمة الوحدات المتاحة وأسعارها، وموعد الإطلاق، وتأمين دخول الموقع أو صالة العرض.</p>
  </div>
