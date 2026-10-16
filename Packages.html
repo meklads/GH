@@ -525,16 +525,19 @@ gtag('config','G-Y67JVE898Z');
 .gh-tix-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  margin: 8px 0 22px;
+  gap: 20px;
+  margin: 8px 0 24px;
   list-style: none;
   padding: 0;
+  align-items: stretch;
 }
 .gh-tix {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  height: 100%;
   border: 1px solid rgba(20, 20, 20, 0.12);
+  box-shadow: 0 1px 0 rgba(20, 20, 20, 0.04);
   background: #fff;
   color: #141414;
 }
@@ -542,6 +545,7 @@ gtag('config','G-Y67JVE898Z');
 .gh-tix__media {
   position: relative;
   aspect-ratio: 4 / 3;
+  flex-shrink: 0;
   background: #111;
   overflow: hidden;
 }
@@ -567,15 +571,16 @@ gtag('config','G-Y67JVE898Z');
 .gh-tix__body {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 auto;
   gap: 10px;
-  padding: 16px 16px 18px;
+  padding: 18px 18px 20px;
+  min-height: 0;
 }
 .gh-tix__name {
   margin: 0;
-  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  font-size: 20px;
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.4;
   color: #141414;
 }
 .gh-tix__promise {
@@ -591,21 +596,24 @@ gtag('config','G-Y67JVE898Z');
   letter-spacing: 0.04em;
   color: rgba(20, 20, 20, 0.5);
 }
-.gh-tix__gets {
+.gh-tix__gets,
+.gh-tix__detail-list {
   margin: 0;
   padding: 0;
   list-style: none;
   display: grid;
   gap: 6px;
 }
-.gh-tix__gets li {
+.gh-tix__gets li,
+.gh-tix__detail-list li {
   position: relative;
   padding-inline-start: 12px;
   font-size: 15px;
   line-height: 1.55;
   color: rgba(20, 20, 20, 0.82);
 }
-.gh-tix__gets li::before {
+.gh-tix__gets li::before,
+.gh-tix__detail-list li::before {
   content: '';
   position: absolute;
   inset-inline-start: 0;
@@ -615,18 +623,21 @@ gtag('config','G-Y67JVE898Z');
   border-radius: 1px;
   background: #C9A84C;
 }
-.gh-tix__when {
+.gh-tix__when,
+.gh-tix__meta {
   margin: 0;
   font-size: 15px;
   line-height: 1.6;
   color: rgba(20, 20, 20, 0.7);
 }
-.gh-tix__cta {
+.gh-tix__details {
+  margin-top: auto;
+  padding-top: 8px;
+}
+.gh-tix__toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  align-self: flex-start;
-  margin-top: auto;
   min-height: 42px;
   padding: 0 16px;
   border: 1.5px solid #141414;
@@ -634,9 +645,36 @@ gtag('config','G-Y67JVE898Z');
   color: #141414;
   font-size: 15px;
   font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+.gh-tix__toggle::-webkit-details-marker { display: none; }
+.gh-tix__toggle::marker { content: ''; }
+.gh-tix__toggle:hover { transform: none; }
+.gh-tix__panel {
+  margin-top: 12px;
+  padding: 14px 14px 16px;
+  border: 1px solid rgba(20, 20, 20, 0.1);
+  background: rgba(20, 20, 20, 0.02);
+  display: grid;
+  gap: 8px;
+}
+.gh-tix__book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1.5px solid rgba(20, 20, 20, 0.55);
+  background: transparent;
+  color: #141414;
+  font-size: 15px;
+  font-weight: 600;
   text-decoration: none;
 }
-.gh-tix__cta:hover { transform: none; }
+.gh-tix__book:hover { transform: none; }
 .gh-tix-session {
   display: inline-flex;
   align-items: center;
@@ -656,20 +694,25 @@ gtag('config','G-Y67JVE898Z');
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-bottom: 8px;
 }
 #atelier-workshop:not(.is-open) {
   display: none !important;
 }
 .ghd-section--extras .ghd-atelier-entry {
-  margin-top: 8px;
+  margin-top: 24px;
   max-width: 1100px;
 }
 @media (max-width: 760px) {
   .gh-tix-grid { grid-template-columns: 1fr; }
+  .gh-tix__name { font-size: 20px; }
   .gh-tix__promise,
   .gh-tix__gets li,
+  .gh-tix__detail-list li,
   .gh-tix__when,
-  .gh-tix__cta,
+  .gh-tix__meta,
+  .gh-tix__toggle,
+  .gh-tix__book,
   .gh-tix-session {
     font-size: 15px;
   }
@@ -685,6 +728,35 @@ gtag('config','G-Y67JVE898Z');
 <script defer src="assets/lang-switch.js?v=2"></script>
 <link rel="stylesheet" href="assets/site-header.css?v=68" data-gh-header-css="1">
 <link rel="stylesheet" href="assets/gh-footer-lock.css?v=5" data-gh-footer-lock="1">
+<style id="gh-tix-type-overrides">
+/* After site CSS; beat html[lang=ar] h3 / main h3 card-title !important rules */
+html[lang="ar"] .ghd-section--extras .gh-tix h3.gh-tix__name,
+html[dir="rtl"] .ghd-section--extras .gh-tix h3.gh-tix__name,
+.ghd-page .ghd-section--extras .gh-tix h3.gh-tix__name {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+}
+html[lang="ar"] .ghd-section--extras .gh-tix__promise,
+html[lang="ar"] .ghd-section--extras .gh-tix__when,
+html[lang="ar"] .ghd-section--extras .gh-tix__meta,
+html[lang="ar"] .ghd-section--extras .gh-tix__gets li,
+html[lang="ar"] .ghd-section--extras .gh-tix__detail-list li,
+html[lang="ar"] .ghd-section--extras .gh-tix__toggle,
+html[lang="ar"] .ghd-section--extras .gh-tix__book,
+html[lang="ar"] .ghd-section--extras .gh-tix-session,
+html[dir="rtl"] .ghd-section--extras .gh-tix__promise,
+html[dir="rtl"] .ghd-section--extras .gh-tix__when,
+html[dir="rtl"] .ghd-section--extras .gh-tix__meta,
+html[dir="rtl"] .ghd-section--extras .gh-tix__gets li,
+html[dir="rtl"] .ghd-section--extras .gh-tix__detail-list li,
+html[dir="rtl"] .ghd-section--extras .gh-tix__toggle,
+html[dir="rtl"] .ghd-section--extras .gh-tix__book,
+html[dir="rtl"] .ghd-section--extras .gh-tix-session {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+</style>
 </head>
 <body class="ghd-page ghd-page--hub ghd-page--public" data-ghd-prefix="" data-ghd-hide-prices="1">
 <a class="gh-skip-link" href="#main-content">تخطي إلى المحتوى الرئيسي</a>
@@ -1455,8 +1527,17 @@ gtag('config','G-Y67JVE898Z');
         'مراجعة مع الجهة المعنية'
       ],
       when: 'قبل الطرح، أو عندما ينقص المشروع مخطط معتمد للتسويق.',
-      image: 'assets/projects/jeddah-forum/catalog/page-01.jpg',
-      num: '01'
+      image: 'assets/projects/wahat-al-salam/cam-03.jpg',
+      num: '01',
+      detailPoints: [
+        'قراءة الموقع ومتطلبات الجهة والمخططات المتاحة',
+        'إعداد مخططات أولية أو تنفيذية حسب مرحلة المشروع',
+        'واجهات ومقاطع توضح الفكرة المعمارية',
+        'جولات مراجعة مع الجهة المعنية',
+        'تجهيز ملف تسليم جاهز للاعتماد أو للمرحلة التالية'
+      ],
+      deliverable: 'مجموعة مخططات معمارية رقمية (صيغة التسليم تُحدَّد بعد الاجتماع).',
+      timeline: 'يُحدد بعد الاجتماع'
     },
     {
       id: 'gh-tix-2',
@@ -1467,8 +1548,17 @@ gtag('config','G-Y67JVE898Z');
         'بالتعاون مع تريفا'
       ],
       when: 'قبل الإطلاق، لعرض الوحدات على العملاء في الموقع أو صالة البيع.',
-      image: 'assets/projects/rafal-pavilions/lobby.jpg',
-      num: '02'
+      image: 'assets/projects/al-rajhi-naseem/int-living.jpg',
+      num: '02',
+      detailPoints: [
+        'تحديد نطاق الديكور والتأثيث للوحدة النموذجية',
+        'اختيار المواد والقطع بما يناسب هوية المشروع',
+        'تنفيذ وتركيب في الموقع أو صالة البيع',
+        'تنسيق التنفيذ مع تريفا',
+        'تسليم وحدة جاهزة لزيارات العملاء'
+      ],
+      deliverable: 'وحدة نموذجية مفروشة جاهزة للعرض والزيارة.',
+      timeline: 'يُحدد بعد الاجتماع'
     }
   ];
 
@@ -1494,12 +1584,21 @@ gtag('config','G-Y67JVE898Z');
       .replace(/"/g, '&quot;');
   }
 
+  function listHtml(items, className) {
+    return (
+      '<ul class="' +
+      className +
+      '">' +
+      (items || [])
+        .map(function (line) {
+          return '<li>' + escapeHtml(line) + '</li>';
+        })
+        .join('') +
+      '</ul>'
+    );
+  }
+
   function ticketHtml(item) {
-    var gets = item.gets
-      .map(function (line) {
-        return '<li>' + escapeHtml(line) + '</li>';
-      })
-      .join('');
     var media = item.image
       ? '<img src="' + escapeHtml(item.image) + '" alt="" width="800" height="600" loading="lazy" decoding="async">'
       : '<div class="gh-tix__fallback" aria-hidden="true">' + escapeHtml(item.num) + '</div>';
@@ -1518,14 +1617,26 @@ gtag('config','G-Y67JVE898Z');
       escapeHtml(item.promise) +
       '</p>' +
       '<p class="gh-tix__label">ماذا تحصل عليه</p>' +
-      '<ul class="gh-tix__gets">' +
-      gets +
-      '</ul>' +
+      listHtml(item.gets, 'gh-tix__gets') +
       '<p class="gh-tix__label">متى تحتاجها</p>' +
       '<p class="gh-tix__when">' +
       escapeHtml(item.when) +
       '</p>' +
-      '<a class="gh-tix__cta" href="#atelier-workshop" data-gh-tix-open-atelier="1">التفاصيل</a>' +
+      '<details class="gh-tix__details">' +
+      '<summary class="gh-tix__toggle">التفاصيل</summary>' +
+      '<div class="gh-tix__panel">' +
+      '<p class="gh-tix__label">ماذا تشمل الخدمة بالتفصيل</p>' +
+      listHtml(item.detailPoints, 'gh-tix__detail-list') +
+      '<p class="gh-tix__label">المخرجات النهائية</p>' +
+      '<p class="gh-tix__meta">' +
+      escapeHtml(item.deliverable) +
+      '</p>' +
+      '<p class="gh-tix__label">الجدول الزمني التقريبي</p>' +
+      '<p class="gh-tix__meta">' +
+      escapeHtml(item.timeline) +
+      '</p>' +
+      '<a class="gh-tix__book" href="contact-us.html?intent=session">احجز جلسة تعريفية</a>' +
+      '</div></details>' +
       '</div></article>'
     );
   }
@@ -1546,7 +1657,7 @@ gtag('config','G-Y67JVE898Z');
       escapeHtml(ui.atelierEntryCta || 'فتح الأتيليه') +
       '</a></div>';
     host.setAttribute('data-gh-tix-ready', '1');
-    host.querySelectorAll('[data-open-atelier], [data-gh-tix-open-atelier]').forEach(function (btn) {
+    host.querySelectorAll('[data-open-atelier]').forEach(function (btn) {
       btn.addEventListener('click', function (ev) {
         ev.preventDefault();
         openAtelier(true);
@@ -1582,13 +1693,6 @@ gtag('config','G-Y67JVE898Z');
       '</div>';
     if (oldCta) oldCta.outerHTML = session;
     else host.insertAdjacentHTML('beforeend', session);
-
-    grid.querySelectorAll('[data-gh-tix-open-atelier]').forEach(function (btn) {
-      btn.addEventListener('click', function (ev) {
-        ev.preventDefault();
-        openAtelier(true);
-      });
-    });
 
     fillAtelierEntry();
     return true;
