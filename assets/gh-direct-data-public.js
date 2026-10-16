@@ -77,9 +77,9 @@ window.GH_DIRECT = {
       "pageTitle": "باقات وخدمات بأسعار معلنة",
       "pageBrand": "GH Direct",
       "pageLead": "ثلاث لحظات للمشروع: تعريف، بناء، وإطلاق وبيع. اختر الباقة المطابقة — أسعار تبدأ من رقم معلن، دون دفع إلكتروني.",
-      "pageEyebrowPublic": "اختيار مباشر · عرض سعر بعد الاجتماع",
+      "pageEyebrowPublic": "مدخل تنفيذي لأنظمة الإطلاق ™ · عرض سعر بعد الاجتماع",
       "pageTitlePublic": "باقات وخدمات لمشروعك",
-      "pageLeadPublic": "ثلاث لحظات للمشروع: تعريف، بناء، وإطلاق وبيع. اختر الباقة أو ابنِ مزيجك — التسعير يُؤكَّد بعد الاجتماع، دون دفع إلكتروني.",
+      "pageLeadPublic": "ثلاث لحظات للمشروع تحت أنظمة الإطلاق ™: تعريف، بناء، وإطلاق وبيع. اختر الباقة أو ابنِ مزيجك — التسعير يُؤكَّد بعد الاجتماع، دون دفع إلكتروني.",
       "postureTitle": "مراحل مشروعك",
       "postureLead": "ثلاث مراحل لمشروع المطوّر العقاري. حدّد مرحلتك ثم اختر الباقة.",
       "catalogTitle": "كتالوج الخدمات",
@@ -104,7 +104,7 @@ window.GH_DIRECT = {
       },
       "packagesTitle": "الباقات",
       "packagesLead": "نواة وانطلاق بأسعار معلنة · توقيع بعرض سعر بعد الاجتماع.",
-      "packagesLeadPublic": "ثلاث باقات حسب مرحلة المشروع · التسعير بعرض سعر بعد الاجتماع.",
+      "packagesLeadPublic": "ثلاث باقات حسب مرحلة المشروع — مدخل تنفيذي للمنتجات · التسعير بعرض سعر بعد الاجتماع.",
       "packagesFoot": "السعر النهائي يُحدَّد بعد الاجتماع",
       "stageLabel": "اللحظة",
       "stagePrefix": "",
@@ -356,9 +356,9 @@ window.GH_DIRECT = {
       "pageTitle": "Packages and services with published pricing",
       "pageBrand": "GH Direct",
       "pageLead": "Three project moments: Define, Build, and Launch & Sell. Choose the matching package — published starting-from prices, no online checkout.",
-      "pageEyebrowPublic": "Direct selection · Quote after the meeting",
+      "pageEyebrowPublic": "Executive entry to Launch Systems ™ · Quote after the meeting",
       "pageTitlePublic": "Packages and services for your project",
-      "pageLeadPublic": "Three project moments: Define, Build, and Launch & Sell. Choose a package or build your mix — pricing confirmed after the meeting, no online checkout.",
+      "pageLeadPublic": "Three project moments under Launch Systems ™: Define, Build, and Launch & Sell. Choose a package or build your mix — pricing confirmed after the meeting, no online checkout.",
       "postureTitle": "Your project stages",
       "postureLead": "Three stages for a real-estate developer project. Identify your stage, then choose the package.",
       "catalogTitle": "Service catalog",
@@ -383,7 +383,7 @@ window.GH_DIRECT = {
       },
       "packagesTitle": "Packages",
       "packagesLead": "Core and Launch with published from-prices · Signature quoted after the meeting.",
-      "packagesLeadPublic": "Three packages by project stage · Pricing quoted after the meeting.",
+      "packagesLeadPublic": "Three packages by project stage — an executive entry to the products · Pricing quoted after the meeting.",
       "packagesFoot": "Final price is set after the meeting",
       "stageLabel": "Moment",
       "stagePrefix": "",
@@ -1432,32 +1432,37 @@ window.GH_DIRECT = {
       "includedServiceIds": [
         "identity-basic",
         "render-concept",
-        "cinematic-teaser"
+        "cinematic-teaser",
+        "maquette-single"
       ],
       "includedLines": [
         {
-          "ar": "هوية بصرية للمشروع: شعار + ألوان وخطوط + ملفات تسليم جاهزة",
-          "en": "Project visual identity: logo + colours & type + ready delivery files"
+          "ar": "فيلم تشويقي ثلاثي الأبعاد قصير (Teaser) للمشروع",
+          "en": "Short cinematic 3D teaser film for the project"
         },
         {
-          "ar": "إنتاج 12 صورة ثري دي ابتدائية (Concept Renders): الواجهة الرئيسية، ومناظر خارجية، وعدد محدود من الداخليات",
-          "en": "12 preliminary 3D concept renders: main façade, exterior views, and a limited set of interiors"
+          "ar": "مجسم معماري تعريفي (Concept) لعرض الكتلة والموقع",
+          "en": "Concept architectural maquette to present massing and site"
         },
         {
-          "ar": "جولة تعديل واحدة على الصور",
-          "en": "One revision round on the images"
+          "ar": "هوية بصرية للمشروع: شعار وألوان وملفات تسليم",
+          "en": "Project visual identity: logo, colors, and delivery files"
         },
         {
-          "ar": "فيلم تشويقي ثلاثي الأبعاد قصير (Teaser)",
-          "en": "Short 3D teaser film"
+          "ar": "12 صورة معمارية أولية (CGI Concept): واجهات وخارجيات وداخليات محدودة",
+          "en": "12 preliminary architectural images (CGI Concept): façades, exteriors, limited interiors"
         },
         {
-          "ar": "صفحة هبوط ابتدائية للتعريف بالمشروع مع نموذج تسجيل اهتمام",
-          "en": "Preliminary landing page introducing the project with an interest registration form"
+          "ar": "صفحة هبوط للتعريف بالمشروع مع نموذج تسجيل اهتمام",
+          "en": "Landing page introducing the project with an interest form"
         },
         {
-          "ar": "عرض تعريفي للمستثمرين والجهات الممولة (Project Deck)",
-          "en": "Introductory deck for investors and financing parties (Project Deck)"
+          "ar": "بروشور تعريفي مطبوع ورقمي",
+          "en": "Introductory brochure — print and digital"
+        },
+        {
+          "ar": "عرض تعريفي للمستثمرين والجهات (Project Deck)",
+          "en": "Investor and partner presentation (Project Deck)"
         }
       ],
       "priceLabel": "quote"
@@ -1480,47 +1485,45 @@ window.GH_DIRECT = {
       "price": null,
       "featured": true,
       "includedServiceIds": [
-        "identity-basic",
+        "cinematic",
+        "maquette-single",
+        "touchscreen",
+        "vr360",
         "drone-short",
-        "microsite",
-        "vr360"
+        "microsite"
       ],
       "includedLines": [
         {
-          "ar": "إنتاج 18 صورة ثري دي نهائية: خارجية وداخلية، نهارية وليلية",
-          "en": "18 final 3D images: exterior and interior, day and night"
+          "ar": "فيلم سينمائي ثلاثي الأبعاد للمشروع (4 إلى 5 دقائق)",
+          "en": "Cinematic 3D film for the project (4 to 5 minutes)"
+        },
+        {
+          "ar": "مجسم معماري ذكي للبيع (إضاءة ديناميكية حسب النطاق)",
+          "en": "Smart architectural sales maquette (dynamic lighting by scope)"
+        },
+        {
+          "ar": "عرض تفاعلي: شاشة لمس و/أو جولة 360° لعرض الوحدات وحالة التوفر",
+          "en": "Interactive experience: touchscreen and/or 360° tour for units and availability"
+        },
+        {
+          "ar": "18 صورة معمارية نهائية (CGI): خارجية وداخلية، نهارية وليلية",
+          "en": "18 final architectural images (CGI): exterior and interior, day and night"
         },
         {
           "ar": "مخططات ثلاثية الأبعاد للوحدات (3D Floor Plans)",
-          "en": "3D floor plans for units"
+          "en": "3D floor plans for the units"
         },
         {
-          "ar": "جولتا تعديل على الصور",
-          "en": "Two revision rounds on the images"
+          "ar": "موقع إلكتروني متعدد الصفحات للمشروع",
+          "en": "Multi-page project website"
         },
         {
-          "ar": "فيلم سينمائي نهائي ثلاثي الأبعاد للمشروع (٤–٥ دقائق)",
-          "en": "Final cinematic 3D film for the project (4–5 minutes)"
+          "ar": "كتالوج رقمي للبيع + مقاطع حملات سوشيال بمقاسات المنصات",
+          "en": "Digital sales catalogue + social campaign cuts in platform sizes"
         },
         {
-          "ar": "تصوير درون لموقع المشروع (~60 ثانية)",
-          "en": "Drone footage of the project site (~60 seconds)"
-        },
-        {
-          "ar": "موقع إلكتروني كامل متعدد الصفحات",
-          "en": "Full multi-page website"
-        },
-        {
-          "ar": "مقاطع سوشيال ميديا بمقاسات المنصات",
-          "en": "Social media cuts in platform formats"
-        },
-        {
-          "ar": "مادة تحريرية للمشروع: وصف المشروع والمزايا والموقع ونصوص المنصات",
-          "en": "Project editorial: description, amenities, location, and platform copy"
-        },
-        {
-          "ar": "جولة افتراضية 360°",
-          "en": "360° virtual tour"
+          "ar": "تصوير درون للموقع (~60 ثانية) ومادة تحريرية للمشروع",
+          "en": "Drone footage of the site (~60 seconds) and project editorial copy"
         }
       ],
       "priceLabel": "quote"
@@ -1552,36 +1555,36 @@ window.GH_DIRECT = {
       ],
       "includedLines": [
         {
-          "ar": "تصميم صالة المبيعات مع التنفيذ",
-          "en": "Sales gallery design with build-out"
+          "ar": "تصميم وتنفيذ ديكور صالة البيع",
+          "en": "Sales gallery décor — design and build"
         },
         {
-          "ar": "تصميم بوث المعارض مع التنفيذ",
-          "en": "Exhibition booth design with build-out"
+          "ar": "تصميم وتنفيذ بوث المعرض",
+          "en": "Exhibition booth — design and build"
         },
         {
-          "ar": "المجسم المعماري للمشروع (الحجم والسعر يُحدَّدان بعد الاجتماع)",
-          "en": "Architectural scale model (size and price set after the meeting)"
+          "ar": "دمج المجسم المعماري والعروض التفاعلية داخل صالة البيع والبوث",
+          "en": "Integration of the architectural maquette and interactive displays into the gallery and booth"
         },
         {
-          "ar": "برنامج عرض تفاعلي لشاشة اللمس يعرض الوحدات وحالة التوفر — الشاشة/العتاد من العميل أو يُسعَّر منفصلاً",
-          "en": "Interactive touchscreen presentation app for units and availability — screen/hardware client-supplied or quoted separately"
+          "ar": "كتالوج مطبوع ورقمي، بروشور، وأوراق مواصفات الوحدات",
+          "en": "Printed and digital catalogue, brochure, and unit specification sheets"
         },
         {
-          "ar": "مواد المبيعات: كتالوج طباعي ورقمي + بروشور + أوراق مواصفات الوحدات + عرض للوسطاء",
-          "en": "Sales materials: print and digital catalogue + brochure + unit specs + broker presentation"
+          "ar": "لوحات إعلانية وإشارات الموقع (Hoarding & Signage)",
+          "en": "Site hoarding and signage"
         },
         {
-          "ar": "تصميم اللوحات الإعلانية والإشارات (Hoarding & Signage)",
-          "en": "Hoarding and signage design"
+          "ar": "حملة إطلاق إعلانية: مقاطع وإعلانات للمنصات",
+          "en": "Launch advertising campaign: cuts and ads for platforms"
         },
         {
-          "ar": "تصوير فوتوغرافي ميداني ليوم واحد لمراحل الإنجاز",
-          "en": "One-day on-site photography of construction progress"
+          "ar": "صفحة هبوط / تحديث رقمي لإطلاق الوحدات المتبقية",
+          "en": "Landing page / digital update for remaining-unit launch"
         },
         {
-          "ar": "محتوى حملة الإطلاق: مقاطع وإعلانات",
-          "en": "Launch campaign content: cuts and ads"
+          "ar": "تصوير فوتوغرافي ميداني ليوم واحد لمراحل الإنجاز والتسليم",
+          "en": "One day of on-site photography covering completion and handover"
         }
       ]
     },

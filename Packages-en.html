@@ -30,7 +30,7 @@ gtag('config','G-Y67JVE898Z');
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
 <script defer src="assets/gh-performance.js?v=11"></script>
 <script defer src="assets/gh-cta-track.js?v=1"></script>
-<script src="assets/gh-direct-data-public.js?v=84"></script>
+<script src="assets/gh-direct-data-public.js?v=85"></script>
 <script>
 /* Unify stage/package names for this page; keep GH Direct catalog/proof/atelier intact. */
 (function () {
@@ -42,6 +42,19 @@ gtag('config','G-Y67JVE898Z');
       stage: 'Pre-launch',
       stageLine: 'Stage one: Pre-launch',
       was: 'Nawa',
+      forWhom: 'A project in study, design, or awaiting approval.',
+      meta: 'Duration: Set in the quote | Revision rounds: 1',
+      desc: 'Early marketing tools for the project: teaser film, concept maquette, and identity — before launch',
+      need: 'Preliminary plans, proposed materials and colors, the project name and location.',
+      lines: [
+        'Short cinematic 3D teaser film for the project',
+        'Concept architectural maquette to present massing and site',
+        'Project visual identity: logo, colors, and delivery files',
+        '12 preliminary architectural images (CGI Concept): façades, exteriors, limited interiors',
+        'Landing page introducing the project with an interest form',
+        'Introductory brochure — print and digital',
+        'Investor and partner presentation (Project Deck)'
+      ],
       stageNum: '1'
     },
     launch: {
@@ -49,6 +62,20 @@ gtag('config','G-Y67JVE898Z');
       stage: 'During construction',
       stageLine: 'Stage two: During construction',
       was: 'Launch',
+      forWhom: 'A project under construction that is starting to market its units now.',
+      meta: 'Duration: Set in the quote | Revision rounds: 2',
+      desc: 'Early-sales engine: cinematic 3D film, smart maquette, and interactive experience — during construction',
+      need: 'Approved unit plans, a preliminary list of features and prices, and existing site photos if any.',
+      lines: [
+        'Cinematic 3D film for the project (4 to 5 minutes)',
+        'Smart architectural sales maquette (dynamic lighting by scope)',
+        'Interactive experience: touchscreen and/or 360° tour for units and availability',
+        '18 final architectural images (CGI): exterior and interior, day and night',
+        '3D floor plans for the units',
+        'Multi-page project website',
+        'Digital sales catalogue + social campaign cuts in platform sizes',
+        'Drone footage of the site (~60 seconds) and project editorial copy'
+      ],
       stageNum: '2'
     },
     growth: {
@@ -56,6 +83,20 @@ gtag('config','G-Y67JVE898Z');
       stage: 'After completion',
       stageLine: 'Stage three: After completion',
       was: 'Signature',
+      forWhom: 'A completed project or one close to handover.',
+      meta: 'Duration: Set in the quote | Revision rounds: 2',
+      desc: 'Full spatial launch: sales gallery and booth wrapping film, maquette, and interactive with print and campaigns',
+      need: 'List of available units and prices, the launch date, and access to the site or gallery.',
+      lines: [
+        'Sales gallery décor — design and build',
+        'Exhibition booth — design and build',
+        'Integration of the architectural maquette and interactive displays into the gallery and booth',
+        'Printed and digital catalogue, brochure, and unit specification sheets',
+        'Site hoarding and signage',
+        'Launch advertising campaign: cuts and ads for platforms',
+        'Landing page / digital update for remaining-unit launch',
+        'One day of on-site photography covering completion and handover'
+      ],
       stageNum: '3'
     }
   };
@@ -68,6 +109,7 @@ gtag('config','G-Y67JVE898Z');
     if (pkg.stageLine) pkg.stageLine.en = m.stageLine;
     pkg._akaEn = 'Formerly called ' + m.was;
     pkg._stageMeta = m;
+    if (m.lines) pkg.includedLines = m.lines.map(function (line) { return { ar: line, en: line }; });
   });
   /* Keep bundle data for posture/atelier lookups, but do not render duplicate cards in #ghd-packages */
   window.__GH_PKG_BUNDLES_BACKUP__ = D.packages.filter(function (pkg) {
@@ -1902,7 +1944,7 @@ gtag('config','G-Y67JVE898Z');
  <span class="gh-stage-pkg__tag">Pre-launch</span>
  <h3 class="gh-stage-pkg__title">Basic Package</h3>
  <p class="gh-stage-pkg__aka">Formerly called Nawa</p>
- <p class="gh-stage-pkg__desc">For your project before it goes on sale.</p>
+ <p class="gh-stage-pkg__desc">Early marketing tools for the project: teaser film, concept maquette, and identity — before launch</p>
 <div class="gh-stage-pkg__facts">
 <p class="gh-stage-pkg__meta"><strong>For:</strong> A project in study, design, or awaiting approval.</p>
  <p class="gh-stage-pkg__meta">Duration: Set in the quote | Revision rounds: 1</p>
@@ -1910,10 +1952,12 @@ gtag('config','G-Y67JVE898Z');
 <div class="gh-stage-pkg__includes">
 <p class="gh-stage-pkg__includes-label">Includes</p>
 <ul class="gh-stage-pkg__list">
- <li>Visual identity for the project: logo, colors, and delivery files</li>
- <li>12 initial architectural images (Concept): facades, exterior views, and a limited number of interiors</li>
- <li>Short teaser video</li>
+ <li>Short cinematic 3D teaser film for the project</li>
+ <li>Concept architectural maquette to present massing and site</li>
+ <li>Project visual identity: logo, colors, and delivery files</li>
+ <li>12 preliminary architectural images (CGI Concept): façades, exteriors, limited interiors</li>
  <li>Landing page introducing the project with an interest form</li>
+ <li>Introductory brochure — print and digital</li>
  <li>Investor and partner presentation (Project Deck)</li>
  </ul>
 </div>
@@ -1928,7 +1972,7 @@ gtag('config','G-Y67JVE898Z');
  <span class="gh-stage-pkg__tag">During construction</span>
  <h3 class="gh-stage-pkg__title">Early Sales Package</h3>
  <p class="gh-stage-pkg__aka">Formerly called Launch</p>
- <p class="gh-stage-pkg__desc">For your project under construction that needs early sales.</p>
+ <p class="gh-stage-pkg__desc">Early-sales engine: cinematic 3D film, smart maquette, and interactive experience — during construction</p>
 <div class="gh-stage-pkg__facts">
 <p class="gh-stage-pkg__meta"><strong>For:</strong> A project under construction that is starting to market its units now.</p>
  <p class="gh-stage-pkg__meta">Duration: Set in the quote | Revision rounds: 2</p>
@@ -1936,14 +1980,14 @@ gtag('config','G-Y67JVE898Z');
 <div class="gh-stage-pkg__includes">
 <p class="gh-stage-pkg__includes-label">Includes</p>
 <ul class="gh-stage-pkg__list">
- <li>18 final architectural images: exterior and interior, day and night</li>
- <li>3D floor plans for the units</li>
- <li>360° virtual tour</li>
  <li>Cinematic 3D film for the project (4 to 5 minutes)</li>
- <li>Drone footage of the site (about 60 seconds)</li>
+ <li>Smart architectural sales maquette (dynamic lighting by scope)</li>
+ <li>Interactive experience: touchscreen and/or 360° tour for units and availability</li>
+ <li>18 final architectural images (CGI): exterior and interior, day and night</li>
+ <li>3D floor plans for the units</li>
  <li>Multi-page project website</li>
- <li>Social media clips in platform sizes</li>
- <li>Editorial material: project description, highlights, and platform copy</li>
+ <li>Digital sales catalogue + social campaign cuts in platform sizes</li>
+ <li>Drone footage of the site (~60 seconds) and project editorial copy</li>
  </ul>
 </div>
 <div class="gh-stage-pkg__need">
@@ -1956,7 +2000,7 @@ gtag('config','G-Y67JVE898Z');
  <span class="gh-stage-pkg__tag">After completion</span>
  <h3 class="gh-stage-pkg__title">Full Launch Package</h3>
  <p class="gh-stage-pkg__aka">Formerly called Signature</p>
- <p class="gh-stage-pkg__desc">For your completed project, to sell its remaining units.</p>
+ <p class="gh-stage-pkg__desc">Full spatial launch: sales gallery and booth wrapping film, maquette, and interactive with print and campaigns</p>
 <div class="gh-stage-pkg__facts">
 <p class="gh-stage-pkg__meta"><strong>For:</strong> A completed project or one close to handover.</p>
  <p class="gh-stage-pkg__meta">Duration: Set in the quote | Revision rounds: 2</p>
@@ -1964,12 +2008,14 @@ gtag('config','G-Y67JVE898Z');
 <div class="gh-stage-pkg__includes">
 <p class="gh-stage-pkg__includes-label">Includes</p>
 <ul class="gh-stage-pkg__list">
- <li>Sales gallery design and build</li>
- <li>Exhibition booth design and build</li>
- <li>Sales materials: printed and digital catalog, brochure, and unit spec sheets</li>
- <li>Hoarding and signage</li>
- <li>One day of on-site photography covering construction milestones</li>
- <li>Launch campaign content: videos and ads</li>
+ <li>Sales gallery décor — design and build</li>
+ <li>Exhibition booth — design and build</li>
+ <li>Integration of the architectural maquette and interactive displays into the gallery and booth</li>
+ <li>Printed and digital catalogue, brochure, and unit specification sheets</li>
+ <li>Site hoarding and signage</li>
+ <li>Launch advertising campaign: cuts and ads for platforms</li>
+ <li>Landing page / digital update for remaining-unit launch</li>
+ <li>One day of on-site photography covering completion and handover</li>
  </ul>
 </div>
 <div class="gh-stage-pkg__need">
