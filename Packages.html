@@ -116,10 +116,20 @@ gtag('config','G-Y67JVE898Z');
     pkg._stageMeta = m;
     pkg.includedLines = m.lines.map(function (line) { return { ar: line, en: line }; });
   });
+  /* Keep bundle data for posture/atelier lookups, but do not render duplicate cards in #ghd-packages */
+  window.__GH_PKG_BUNDLES_BACKUP__ = D.packages.filter(function (pkg) {
+    return pkg.id === 'basic' || pkg.id === 'launch' || pkg.id === 'growth';
+  });
+  D.packages = D.packages.filter(function (pkg) {
+    return pkg.id !== 'basic' && pkg.id !== 'launch' && pkg.id !== 'growth';
+  });
   if (D.posture) {
     D.posture.forEach(function (p) {
       var m = map[p.packageId];
-      if (m && p.title) p.title.ar = m.stageLine;
+      if (m && p.title) {
+        /* Posture cards link to #pkg-basic etc.; keep stage names aligned with static cards */
+        p.title.ar = m.stage;
+      }
     });
   }
   var u = D.ui && D.ui.ar;
@@ -184,6 +194,10 @@ gtag('config','G-Y67JVE898Z');
 .ghd-packages {
   gap: 20px;
   align-items: stretch;
+}
+/* Author display:grid (from GH Direct CSS) can override the hidden attribute; force hide when marked. */
+#ghd-packages[hidden] {
+  display: none !important;
 }
 .ghd-pkg {
   display: flex;
@@ -849,7 +863,7 @@ gtag('config','G-Y67JVE898Z');
  </div>
  <p class="gh-pkg-rule" id="gh-pkg-rule">الباقة الأعلى تشمل مخرجات الباقات التي قبلها.</p>
 
- <div class="ghd-packages" id="ghd-packages"></div>
+ <div class="ghd-packages" id="ghd-packages" hidden aria-hidden="true"></div>
  </div>
  </section>
  <section class="ghd-section ghd-section--extras" id="extras" aria-labelledby="ghd-extras-title">
@@ -1186,14 +1200,13 @@ gtag('config','G-Y67JVE898Z');
     return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
-  function dedupeDynamicPackageIds() {
+  function hideDuplicateCatalog() {
     var host = document.getElementById('ghd-packages');
     if (!host) return;
-    ['pkg-basic', 'pkg-launch', 'pkg-growth'].forEach(function (id) {
-      host.querySelectorAll('[id="' + id + '"]').forEach(function (el) {
-        el.removeAttribute('id');
-        el.setAttribute('data-dyn-package', id.replace('pkg-', ''));
-      });
+    host.setAttribute('hidden', '');
+    host.setAttribute('aria-hidden', 'true');
+    host.querySelectorAll('.ghd-pkg').forEach(function (el) {
+      el.removeAttribute('id');
     });
   }
 
@@ -1228,7 +1241,7 @@ gtag('config','G-Y67JVE898Z');
   }
 
   function boot() {
-    dedupeDynamicPackageIds();
+    hideDuplicateCatalog();
     document.querySelectorAll('.gh-stage-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
         selectStage(btn.getAttribute('data-stage'), { scroll: true });
@@ -1255,12 +1268,7 @@ gtag('config','G-Y67JVE898Z');
     var tries = 0;
     (function tick() {
       tries += 1;
-      // Static cards exist immediately; also wait briefly for GH Direct to paint so we can dedupe ids
-      if (document.getElementById('pkg-basic') && (document.querySelector('#ghd-packages .ghd-pkg') || tries > 40)) {
-        boot();
-        return;
-      }
-      if (document.getElementById('pkg-basic') && tries > 8) {
+      if (document.getElementById('pkg-basic') || tries > 40) {
         boot();
         return;
       }
