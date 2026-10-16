@@ -20,7 +20,7 @@ gtag('config','G-Y67JVE898Z');
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Packages | GH Direct | Graphics House</title>
-<meta name="description" content="Packages and services for real-estate developers — Core, Launch, Signature. Priced to scope after the meeting | GH Direct."/>
+<meta name="description" content="Packages and services for real-estate developers by project stage — Basic, Early Sales, Full Launch. Priced to scope after the meeting | GH Direct."/>
 <link rel="canonical" href="https://3dgraphicshouse.com/Packages-en.html">
 <link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/Packages-en.html">
 <link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/Packages.html">
@@ -30,8 +30,353 @@ gtag('config','G-Y67JVE898Z');
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
 <script defer src="assets/gh-performance.js?v=11"></script>
 <script defer src="assets/gh-cta-track.js?v=1"></script>
-<script defer src="assets/gh-direct-data-public.js?v=82"></script>
+<script src="assets/gh-direct-data-public.js?v=82"></script>
+<script>
+/* Unify stage/package names for this page; keep GH Direct catalog/proof/atelier intact. */
+(function () {
+  var D = window.GH_DIRECT;
+  if (!D || !D.packages) return;
+  var map = {
+    basic: {
+      name: 'Basic Package',
+      stage: 'Pre-launch',
+      stageLine: 'Stage one: Pre-launch',
+      was: 'Nawa',
+      stageNum: '1'
+    },
+    launch: {
+      name: 'Early Sales Package',
+      stage: 'During construction',
+      stageLine: 'Stage two: During construction',
+      was: 'Launch',
+      stageNum: '2'
+    },
+    growth: {
+      name: 'Full Launch Package',
+      stage: 'After completion',
+      stageLine: 'Stage three: After completion',
+      was: 'Signature',
+      stageNum: '3'
+    }
+  };
+  window.__GH_PKG_STAGE_MAP__ = map;
+  D.packages.forEach(function (pkg) {
+    var m = map[pkg.id];
+    if (!m) return;
+    if (pkg.name) pkg.name.en = m.name;
+    if (pkg.stage) pkg.stage.en = m.stage;
+    if (pkg.stageLine) pkg.stageLine.en = m.stageLine;
+    pkg._akaEn = 'Formerly called ' + m.was;
+    pkg._stageMeta = m;
+  });
+  /* Keep bundle data for posture/atelier lookups, but do not render duplicate cards in #ghd-packages */
+  window.__GH_PKG_BUNDLES_BACKUP__ = D.packages.filter(function (pkg) {
+    return pkg.id === 'basic' || pkg.id === 'launch' || pkg.id === 'growth';
+  });
+  D.packages = D.packages.filter(function (pkg) {
+    return pkg.id !== 'basic' && pkg.id !== 'launch' && pkg.id !== 'growth';
+  });
+  if (D.posture) {
+    D.posture.forEach(function (p) {
+      var m = map[p.packageId];
+      if (m && p.title) p.title.en = m.stage;
+    });
+  }
+  var u = D.ui && D.ui.en;
+  if (u) {
+    u.pageLeadPublic = 'Three project stages: pre-launch, during construction, and after completion. Choose a package or build your mix — pricing is confirmed after the meeting, with no online checkout.';
+    u.pageLead = u.pageLeadPublic;
+    u.packagesLeadPublic = 'Three packages by project stage. Pricing by quote after the meeting.';
+    u.packagesLead = u.packagesLeadPublic;
+    u.postureLead = 'Three stages for a real-estate developer project. Pick your stage, then choose a package.';
+    u.whyPlan = 'Why the Early Sales Package?';
+    if (u.trustLine) {
+      u.trustLine = 'No online checkout. Scope confirmed within one business day. Priced by scope after the meeting.';
+    }
+    function patchFaq(list) {
+      if (!list) return;
+      list.forEach(function (item) {
+        if (!item) return;
+        if (item.q && /Core|Launch|Signature|Define|Build/i.test(item.q)) {
+          item.q = 'How do I choose between Basic, Early Sales, and Full Launch?';
+          item.a = 'Pre-launch: Basic Package (formerly Nawa). During construction: Early Sales Package (formerly Launch). After completion: Full Launch Package (formerly Signature). Or compose a mix in Atelier.';
+        }
+        if (item.a && /Core and Launch|Signature has no|Define → Core|Build → Launch|Launch & Sell → Signature/i.test(item.a)) {
+          item.a = 'Pre-launch: Basic Package (formerly Nawa). During construction: Early Sales Package (formerly Launch). After completion: Full Launch Package (formerly Signature). Or compose a mix in Atelier.';
+        }
+        if (item.a && /starting-from|from-prices/i.test(item.a)) {
+          item.a = 'No. Pricing is confirmed by quote after the meeting according to package scope. Final price is set after scope review.';
+        }
+      });
+    }
+    patchFaq(u.faq);
+    patchFaq(u.faqPublic);
+  }
+})();
+</script>
 <script defer src="assets/gh-direct.js?v=82"></script>
+<style id="gh-pkg-brand-upgrade">
+#ghd-packages[hidden] {
+  display: none !important;
+}
+.gh-stages {
+  padding: 28px 0 8px;
+  background: linear-gradient(180deg, #0E0E0E 0%, #141414 100%);
+  color: #FAFAF8;
+}
+.gh-stages .ghd-wrap { width: min(100% - 32px, 1120px); margin-inline: auto; }
+.gh-stages__head { text-align: center; margin-bottom: 22px; }
+.gh-stages__eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(250,250,248,.45);
+}
+.gh-stages__head h2 {
+  margin: 0 0 10px;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+}
+.gh-stages__head p {
+  margin: 0 auto;
+  max-width: 40rem;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(250,250,248,.72);
+}
+.gh-stages__timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.gh-stages__timeline::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.55), transparent);
+}
+.gh-stage-btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  padding: 18px 16px;
+  border: 1px solid rgba(250,250,248,.14);
+  border-radius: 16px;
+  background: rgba(255,255,255,.04);
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+  transition: border-color .2s, background-color .2s;
+}
+.gh-stage-btn:hover { transform: none; border-color: rgba(201,168,76,.45); }
+.gh-stage-btn[aria-pressed="true"] {
+  border-color: #C9A84C;
+  background: rgba(201,168,76,.14);
+}
+.gh-stage-btn:focus-visible {
+  outline: 2px solid #C9A84C;
+  outline-offset: 3px;
+}
+.gh-stage-btn__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(250,250,248,.4);
+}
+.gh-stage-btn[aria-pressed="true"] .gh-stage-btn__dot {
+  background: #C9A84C;
+  border-color: #C9A84C;
+  box-shadow: 0 0 0 4px rgba(201,168,76,.22);
+}
+.gh-stage-btn__label { font-size: 17px; font-weight: 700; }
+.gh-stage-btn__sub { font-size: 13px; font-weight: 600; color: rgba(250,250,248,.88); }
+.gh-stage-btn__hint { font-size: 12.5px; line-height: 1.65; color: rgba(250,250,248,.62); }
+.gh-stages__status {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(250,250,248,.7);
+  min-height: 1.5em;
+}
+@media (max-width: 900px) {
+  .gh-stages__timeline { grid-template-columns: 1fr; }
+  .gh-stages__timeline::before { display: none; }
+}
+.gh-stage-pkgs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+.gh-stage-pkg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  height: 100%;
+  padding: 26px 22px 22px;
+  border: 1px solid rgba(20,20,20,.12);
+  border-radius: 18px;
+  background: #fff;
+  color: #141414;
+  transition: border-color .2s, background-color .2s;
+}
+.gh-stage-pkg:hover { transform: none; border-color: rgba(20,20,20,.28); }
+.gh-stage-pkg.is-match {
+  border-color: #C9A84C;
+  box-shadow: 0 0 0 1px #C9A84C;
+}
+.gh-stage-pkg--featured {
+  background: #141414;
+  color: #FAFAF8;
+  border-color: rgba(255,255,255,.1);
+}
+.gh-stage-pkg__ribbon {
+  position: absolute;
+  top: -11px;
+  inset-inline-start: 20px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #C9A84C;
+  color: #141414;
+  font-size: 11px;
+  font-weight: 700;
+}
+.gh-stage-pkg__tag {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(201,168,76,.18);
+  color: #8A6F22;
+  font-size: 12px;
+  font-weight: 700;
+}
+.gh-stage-pkg--featured .gh-stage-pkg__tag {
+  background: rgba(201,168,76,.2);
+  color: #E8D59A;
+}
+.gh-stage-pkg__title {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.gh-stage-pkg__aka {
+  margin: 0;
+  font-size: 12.5px;
+  opacity: .65;
+}
+.gh-stage-pkg__desc,
+.gh-stage-pkg__meta {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(20,20,20,.62);
+}
+.gh-stage-pkg--featured .gh-stage-pkg__desc,
+.gh-stage-pkg--featured .gh-stage-pkg__meta,
+.gh-stage-pkg--featured .gh-stage-pkg__aka,
+.gh-stage-pkg--featured .gh-stage-pkg__need p {
+  color: rgba(250,250,248,.72);
+}
+.gh-stage-pkg__list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  flex: 1;
+}
+.gh-stage-pkg__list li {
+  position: relative;
+  padding-inline-start: 16px;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.gh-stage-pkg__list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: .55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C9A84C;
+}
+.gh-stage-pkg__need {
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(20,20,20,.1);
+}
+.gh-stage-pkg--featured .gh-stage-pkg__need { border-top-color: rgba(255,255,255,.12); }
+.gh-stage-pkg__need strong { display: block; margin-bottom: 6px; font-size: 13px; }
+.gh-stage-pkg__need p { margin: 0; font-size: 15px; line-height: 1.7; color: rgba(20,20,20,.62); }
+.gh-stage-pkg__price { margin: 0; font-size: 14px; font-weight: 600; }
+.gh-stage-pkg__cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+.gh-stage-pkg__cta:hover { transform: none; }
+.gh-stage-pkg__cta:focus-visible {
+  outline: 2px solid #C9A84C;
+  outline-offset: 3px;
+}
+.gh-stage-pkg__cta--outline {
+  border: 1.5px solid #141414;
+  color: #141414;
+  background: transparent;
+}
+.gh-stage-pkg--featured .gh-stage-pkg__cta--outline {
+  border-color: rgba(250,250,248,.7);
+  color: #FAFAF8;
+}
+.gh-stage-pkg__cta--solid {
+  border: 1.5px solid #C9A84C;
+  background: #C9A84C;
+  color: #141414;
+}
+.gh-pkg-rule {
+  text-align: center;
+  margin: 8px 0 28px;
+  font-size: 14px;
+  color: rgba(20,20,20,.58);
+}
+@media (max-width: 900px) {
+  .gh-stage-pkgs { grid-template-columns: 1fr; }
+  .gh-stage-pkg__desc,
+  .gh-stage-pkg__meta,
+  .gh-stage-pkg__list li,
+  .gh-stage-pkg__need p {
+    font-size: 15px;
+  }
+}
+</style>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="assets/gh-site-enhancements.css?v=48">
 <link rel="stylesheet" href="assets/gh-direct.css?v=82">
@@ -269,13 +614,117 @@ gtag('config','G-Y67JVE898Z');
  <div class="ghd-proof" id="ghd-proof" aria-label="From our work"></div>
  </div>
  </section>
+
+ <section class="gh-stages" id="stages" aria-labelledby="gh-stages-title">
+ <div class="ghd-wrap">
+ <header class="gh-stages__head">
+ <span class="gh-stages__eyebrow">Project path</span>
+ <h2 id="gh-stages-title">A package for every stage of your project</h2>
+ <p>Do not pay for what you do not need now. Each package is built for a specific stage of the project life cycle — and when your project advances, you move to the next one.</p>
+ </header>
+ <div class="gh-stages__timeline" role="group" aria-label="Project stages">
+ <button type="button" class="gh-stage-btn" data-stage="1" aria-pressed="false">
+ <span class="gh-stage-btn__dot" aria-hidden="true"></span>
+ <span class="gh-stage-btn__label">Pre-launch</span>
+ <span class="gh-stage-btn__sub">Study &amp; design</span>
+ <span class="gh-stage-btn__hint">The project is in study, design, or awaiting approval.</span>
+ </button>
+ <button type="button" class="gh-stage-btn" data-stage="2" aria-pressed="false">
+ <span class="gh-stage-btn__dot" aria-hidden="true"></span>
+ <span class="gh-stage-btn__label">During construction</span>
+ <span class="gh-stage-btn__sub">Construction &amp; early sales</span>
+ <span class="gh-stage-btn__hint">Construction is underway and the project needs early marketing and sales.</span>
+ </button>
+ <button type="button" class="gh-stage-btn" data-stage="3" aria-pressed="false">
+ <span class="gh-stage-btn__dot" aria-hidden="true"></span>
+ <span class="gh-stage-btn__label">After completion</span>
+ <span class="gh-stage-btn__sub">Launch &amp; sales</span>
+ <span class="gh-stage-btn__hint">The project is near handover or complete and needs to sell its remaining units.</span>
+ </button>
+ </div>
+ <p class="gh-stages__status" id="gh-stages-status" aria-live="polite">Choose your project's stage to see the right package.</p>
+ </div>
+ </section>
  <section class="ghd-section ghd-section--packages" id="packages" aria-labelledby="ghd-packages-title">
  <div class="ghd-wrap">
  <div class="ghd-section-head">
  <h2 id="ghd-packages-title"></h2>
  <p id="ghd-packages-lead"></p>
  </div>
- <div class="ghd-packages" id="ghd-packages"></div>
+
+ <div class="gh-stage-pkgs" id="gh-stage-pkgs" aria-label="Stage packages">
+ <article class="gh-stage-pkg" id="pkg-basic" data-stage="1">
+ <span class="gh-stage-pkg__tag">Pre-launch</span>
+ <h3 class="gh-stage-pkg__title">Basic Package</h3>
+ <p class="gh-stage-pkg__aka">Formerly called Nawa</p>
+ <p class="gh-stage-pkg__desc">For your project before it goes on sale.</p>
+ <p class="gh-stage-pkg__meta"><strong>For:</strong> A project in study, design, or awaiting approval.</p>
+ <p class="gh-stage-pkg__meta">Duration: Set in the quote | Revision rounds: 1</p>
+ <ul class="gh-stage-pkg__list">
+ <li>Visual identity for the project: logo, colors, and delivery files</li>
+ <li>12 initial architectural images (Concept): facades, exterior views, and a limited number of interiors</li>
+ <li>Short teaser video</li>
+ <li>Landing page introducing the project with an interest form</li>
+ <li>Investor and partner presentation (Project Deck)</li>
+ </ul>
+ <div class="gh-stage-pkg__need">
+ <strong>What we need from you</strong>
+ <p>Preliminary plans, proposed materials and colors, the project name and location.</p>
+ </div>
+ <p class="gh-stage-pkg__price">Priced by scope after a meeting.</p>
+ <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us-en.html?intent=session&amp;stage=1">Book an introductory session</a>
+ </article>
+ <article class="gh-stage-pkg gh-stage-pkg--featured" id="pkg-launch" data-stage="2">
+ <span class="gh-stage-pkg__ribbon">Most requested</span>
+ <span class="gh-stage-pkg__tag">During construction</span>
+ <h3 class="gh-stage-pkg__title">Early Sales Package</h3>
+ <p class="gh-stage-pkg__aka">Formerly called Launch</p>
+ <p class="gh-stage-pkg__desc">For your project under construction that needs early sales.</p>
+ <p class="gh-stage-pkg__meta"><strong>For:</strong> A project under construction that is starting to market its units now.</p>
+ <p class="gh-stage-pkg__meta">Duration: Set in the quote | Revision rounds: 2</p>
+ <ul class="gh-stage-pkg__list">
+ <li>18 final architectural images: exterior and interior, day and night</li>
+ <li>3D floor plans for the units</li>
+ <li>360° virtual tour</li>
+ <li>Cinematic 3D film for the project (4 to 5 minutes)</li>
+ <li>Drone footage of the site (about 60 seconds)</li>
+ <li>Multi-page project website</li>
+ <li>Social media clips in platform sizes</li>
+ <li>Editorial material: project description, highlights, and platform copy</li>
+ </ul>
+ <div class="gh-stage-pkg__need">
+ <strong>What we need from you</strong>
+ <p>Approved unit plans, a preliminary list of features and prices, and existing site photos if any.</p>
+ </div>
+ <p class="gh-stage-pkg__price">Priced by scope after a meeting.</p>
+ <a class="gh-stage-pkg__cta gh-stage-pkg__cta--solid" href="contact-us-en.html?intent=session&amp;stage=2">Book an introductory session</a>
+ </article>
+ <article class="gh-stage-pkg" id="pkg-growth" data-stage="3">
+ <span class="gh-stage-pkg__tag">After completion</span>
+ <h3 class="gh-stage-pkg__title">Full Launch Package</h3>
+ <p class="gh-stage-pkg__aka">Formerly called Signature</p>
+ <p class="gh-stage-pkg__desc">For your completed project, to sell its remaining units.</p>
+ <p class="gh-stage-pkg__meta"><strong>For:</strong> A completed project or one close to handover.</p>
+ <p class="gh-stage-pkg__meta">Duration: Set in the quote | Revision rounds: 2</p>
+ <ul class="gh-stage-pkg__list">
+ <li>Sales gallery design and build</li>
+ <li>Exhibition booth design and build</li>
+ <li>Sales materials: printed and digital catalog, brochure, and unit spec sheets</li>
+ <li>Hoarding and signage</li>
+ <li>One day of on-site photography covering construction milestones</li>
+ <li>Launch campaign content: videos and ads</li>
+ </ul>
+ <div class="gh-stage-pkg__need">
+ <strong>What we need from you</strong>
+ <p>List of available units and prices, the launch date, and access to the site or gallery.</p>
+ </div>
+ <p class="gh-stage-pkg__price">Priced by scope after a meeting.</p>
+ <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us-en.html?intent=session&amp;stage=3">Book an introductory session</a>
+ </article>
+ </div>
+ <p class="gh-pkg-rule" id="gh-pkg-rule">The higher package includes the outputs of the packages before it.</p>
+
+ <div class="ghd-packages" id="ghd-packages" hidden aria-hidden="true"></div>
  </div>
  </section>
  <section class="ghd-section ghd-section--extras" id="extras" aria-labelledby="ghd-extras-title">
@@ -600,6 +1049,100 @@ gtag('config','G-Y67JVE898Z');
 </div>
 </div>
 <!-- GH CHAT END -->
+
+<script>
+(function () {
+  var names = { '1': 'Basic Package', '2': 'Early Sales Package', '3': 'Full Launch Package' };
+  var hashMap = { 'pkg-basic': '1', 'pkg-launch': '2', 'pkg-growth': '3' };
+  var idByStage = { '1': 'pkg-basic', '2': 'pkg-launch', '3': 'pkg-growth' };
+
+  function reduceMotion() {
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function hideDuplicateCatalog() {
+    var host = document.getElementById('ghd-packages');
+    if (!host) return;
+    host.setAttribute('hidden', '');
+    host.setAttribute('aria-hidden', 'true');
+    host.querySelectorAll('.ghd-pkg').forEach(function (el) {
+      el.removeAttribute('id');
+    });
+  }
+
+  function selectStage(stage, opts) {
+    opts = opts || {};
+    var id = String(stage || '');
+    if (!names[id]) return;
+    document.querySelectorAll('.gh-stage-btn').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', btn.getAttribute('data-stage') === id ? 'true' : 'false');
+    });
+    document.querySelectorAll('.gh-stage-pkg').forEach(function (card) {
+      card.classList.toggle('is-match', card.getAttribute('data-stage') === id);
+    });
+    var statusEl = document.getElementById('gh-stages-status');
+    if (statusEl) statusEl.textContent = 'Your project fits ' + names[id] + ' — find it below.';
+    if (opts.scroll) {
+      var target = document.getElementById(idByStage[id]);
+      if (target) {
+        target.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
+      }
+    }
+  }
+
+  function stageFromLocation() {
+    try {
+      var q = new URLSearchParams(window.location.search || '').get('stage');
+      if (q === '1' || q === '2' || q === '3') return q;
+    } catch (e) {}
+    var hash = (window.location.hash || '').replace(/^#/, '');
+    if (hashMap[hash]) return hashMap[hash];
+    return null;
+  }
+
+  function boot() {
+    hideDuplicateCatalog();
+    document.querySelectorAll('.gh-stage-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        selectStage(btn.getAttribute('data-stage'), { scroll: true });
+      });
+    });
+
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    var initialHash = (window.location.hash || '').replace(/^#/, '');
+    var suppress = !!(initialHash && hashMap[initialHash]);
+    if (suppress) history.replaceState(null, '', window.location.pathname + window.location.search);
+    var initial = stageFromLocation();
+    if (!initial && suppress) initial = hashMap[initialHash];
+    if (initial) {
+      selectStage(initial, { scroll: false });
+      window.scrollTo(0, 0);
+      if (suppress) {
+        history.replaceState(null, '', window.location.pathname + window.location.search + '#' + initialHash);
+      }
+      window.addEventListener('load', function () { window.scrollTo(0, 0); });
+    }
+  }
+
+  function whenReady() {
+    var tries = 0;
+    (function tick() {
+      tries += 1;
+      if (document.getElementById('pkg-basic') || tries > 40) {
+        boot();
+        return;
+      }
+      setTimeout(tick, 50);
+    })();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { setTimeout(whenReady, 0); });
+  } else {
+    setTimeout(whenReady, 0);
+  }
+})();
+</script>
 
 </body>
 </html>
