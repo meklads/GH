@@ -633,6 +633,10 @@ gtag('config','G-Y67JVE898Z');
 .gh-tix__details {
   margin-top: auto;
   padding-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
 }
 .gh-tix__toggle {
   display: inline-flex;
@@ -647,6 +651,7 @@ gtag('config','G-Y67JVE898Z');
   font-weight: 700;
   cursor: pointer;
   list-style: none;
+  text-decoration: none;
 }
 .gh-tix__toggle::-webkit-details-marker { display: none; }
 .gh-tix__toggle::marker { content: ''; }
@@ -1536,7 +1541,8 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
         'قبل الطرح، أو عندما ينقص المشروع مخطط معتمد للتسويق'
       ],
       deliverable: 'ملف مخططات معمارية (بلان AutoCAD) جاهز للمراجعة والاعتماد.',
-      timeline: 'يُحدد بعد الاجتماع'
+      timeline: 'يُحدد بعد الاجتماع',
+      detailHref: 'service-architectural-design.html'
     },
     {
       id: 'gh-tix-2',
@@ -1554,7 +1560,8 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
         'قبل الإطلاق، لعرض الوحدات على العملاء في الموقع أو صالة البيع'
       ],
       deliverable: 'وحدة نموذجية مفروشة جاهزة للعرض والزيارة.',
-      timeline: 'يُحدد بعد الاجتماع'
+      timeline: 'يُحدد بعد الاجتماع',
+      detailHref: 'service-furnished-unit.html'
     }
   ];
 
@@ -1618,21 +1625,12 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
       '<p class="gh-tix__when">' +
       escapeHtml(item.when) +
       '</p>' +
-      '<details class="gh-tix__details">' +
-      '<summary class="gh-tix__toggle">التفاصيل</summary>' +
-      '<div class="gh-tix__panel">' +
-      '<p class="gh-tix__label">ماذا تشمل الخدمة بالتفصيل</p>' +
-      listHtml(item.detailPoints, 'gh-tix__detail-list') +
-      '<p class="gh-tix__label">المخرجات النهائية</p>' +
-      '<p class="gh-tix__meta">' +
-      escapeHtml(item.deliverable) +
-      '</p>' +
-      '<p class="gh-tix__label">الجدول الزمني التقريبي</p>' +
-      '<p class="gh-tix__meta">' +
-      escapeHtml(item.timeline) +
-      '</p>' +
+      '<div class="gh-tix__details">' +
+      '<a class="gh-tix__toggle" href="' +
+      escapeHtml(item.detailHref || 'Packages.html#ghd-extras') +
+      '">التفاصيل</a>' +
       '<a class="gh-tix__book" href="contact-us.html?intent=session">احجز جلسة تعريفية</a>' +
-      '</div></details>' +
+      '</div>' +
       '</div></article>'
     );
   }
