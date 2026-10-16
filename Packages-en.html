@@ -1114,6 +1114,183 @@ gtag('config','G-Y67JVE898Z');
   min-height: 48px;
   padding-inline: 22px;
 }
+
+.ghd-page .ghd-section {
+  padding-block: clamp(72px, 9vw, 104px);
+}
+.ghd-page .ghd-section-head p {
+  color: #4a4a4a !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  max-width: 38rem;
+}
+.ghd-page .ghd-section--catalog .ghd-section-head {
+  margin-bottom: 28px;
+}
+.ghd-page .gh-stage-pkg {
+  gap: 12px;
+}
+.ghd-page .gh-stage-pkg__list {
+  gap: 12px;
+}
+.ghd-page .gh-tix__body {
+  padding: 28px 24px 24px;
+  gap: 14px;
+}
+
+.ghd-page .ghd-section--launch-proof {
+  padding: 0;
+  background: #0a0a0a;
+}
+.ghd-page .gh-launch-proof {
+  position: relative;
+  min-height: clamp(520px, 72vh, 720px);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  color: #fafaf8;
+}
+.ghd-page .gh-launch-proof__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.ghd-page .gh-launch-proof__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
+.ghd-page .gh-launch-proof__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(270deg, rgba(8, 8, 8, 0.22) 0%, rgba(8, 8, 8, 0.55) 42%, rgba(8, 8, 8, 0.88) 100%),
+    linear-gradient(180deg, rgba(8, 8, 8, 0.35) 0%, rgba(8, 8, 8, 0.15) 35%, rgba(8, 8, 8, 0.82) 100%);
+}
+.ghd-page .gh-launch-proof__inner {
+  position: relative;
+  z-index: 1;
+  padding-block: 56px 48px;
+  max-width: 720px;
+  margin-inline-start: max(0px, calc((100% - var(--pkg-wrap, 1200px)) / 2));
+  margin-inline-end: auto;
+  padding-inline-start: 8px;
+}
+.ghd-page .gh-launch-proof__eyebrow {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e8d5a0;
+}
+.ghd-page .gh-launch-proof__inner h2 {
+  margin: 0 0 14px;
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.25;
+  font-weight: 700;
+  color: #fafaf8;
+  max-width: 18ch;
+}
+.ghd-page .gh-launch-proof__lead {
+  margin: 0 0 20px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(250, 250, 248, 0.88);
+  max-width: 38rem;
+}
+.ghd-page .gh-launch-proof__pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+}
+.ghd-page .gh-launch-proof__pillars li {
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(201, 168, 76, 0.12);
+  color: #e8d5a0;
+  font-size: 13px;
+  font-weight: 600;
+}
+.ghd-page .gh-launch-proof__thumbs {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 24px;
+  max-width: 420px;
+}
+.ghd-page .gh-launch-proof__thumbs img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: block;
+}
+.ghd-page .gh-launch-proof__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.ghd-page .gh-launch-proof__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 240ms ease, border-color 240ms ease, color 240ms ease;
+}
+.ghd-page .gh-launch-proof__cta:hover { transform: none; }
+.ghd-page .gh-launch-proof__cta:focus-visible {
+  outline: 2px solid #c9a84c;
+  outline-offset: 3px;
+}
+.ghd-page .gh-launch-proof__cta--solid {
+  background: #c9a84c;
+  border: 1.5px solid #c9a84c;
+  color: #0a0a0a;
+}
+.ghd-page .gh-launch-proof__cta--solid:hover {
+  background: #e0c06a;
+  border-color: #e0c06a;
+  color: #0a0a0a;
+}
+.ghd-page .gh-launch-proof__cta--ghost {
+  background: transparent;
+  border: 1.5px solid rgba(250, 250, 248, 0.55);
+  color: #fafaf8;
+}
+.ghd-page .gh-launch-proof__cta--ghost:hover {
+  border-color: #e8d5a0;
+  color: #e8d5a0;
+}
+@media (max-width: 760px) {
+  .ghd-page .gh-launch-proof {
+    min-height: 0;
+  }
+  .ghd-page .gh-launch-proof__thumbs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: none;
+  }
+  .ghd-page .gh-launch-proof__inner {
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+  .ghd-page .gh-launch-proof__inner h2 {
+    max-width: none;
+  }
+}
 </style>
 </head>
 <body class="ghd-page ghd-page--hub ghd-page--public" data-ghd-prefix="" data-ghd-hide-prices="1">
@@ -1484,6 +1661,40 @@ gtag('config','G-Y67JVE898Z');
  <p class="ghd-filter-empty" id="ghd-catalog-empty" hidden></p>
  </div>
  </section>
+
+ <section class="ghd-section ghd-section--launch-proof" id="launch-proof" aria-labelledby="gh-launch-proof-title">
+ <article class="gh-launch-proof">
+ <div class="gh-launch-proof__media" aria-hidden="true">
+ <img src="assets/news/makkah-charter-04.jpeg" alt="" width="1600" height="900" loading="lazy" decoding="async">
+ <div class="gh-launch-proof__veil"></div>
+ </div>
+ <div class="gh-launch-proof__inner ghd-wrap">
+ <p class="gh-launch-proof__eyebrow">ProjectLaunch™ · Case study</p>
+ <h2 id="gh-launch-proof-title">We build experiences that precede cities</h2>
+ <p class="gh-launch-proof__lead">From identity to interactive maquettes, spatial décor, sales tools, and launch marketing — one integrated delivery for the developer. The Makkah Charter case study shows a full ProjectLaunch™ build, not a single service.</p>
+ <ul class="gh-launch-proof__pillars" aria-label="Delivery scope">
+ <li>Visual identity</li>
+ <li>Smart maquettes</li>
+ <li>Interactive displays</li>
+ <li>Spatial décor</li>
+ <li>Launch marketing</li>
+ </ul>
+ <div class="gh-launch-proof__thumbs" aria-label="Delivery stills">
+ <img src="assets/news/makkah-charter-01.jpeg" alt="Makkah Charter exhibition still" width="160" height="120" loading="lazy" decoding="async">
+ <img src="assets/news/makkah-charter-02.jpeg" alt="Interactive maquette on the floor" width="160" height="120" loading="lazy" decoding="async">
+ <img src="assets/news/makkah-charter-05.jpeg" alt="Interactive presentation experience" width="160" height="120" loading="lazy" decoding="async">
+ <img src="assets/news/makkah-charter-07.jpeg" alt="Spatial décor and install" width="160" height="120" loading="lazy" decoding="async">
+ <img src="assets/news/makkah-charter-09.jpeg" alt="Screens and presentation tools" width="160" height="120" loading="lazy" decoding="async">
+ <img src="assets/news/makkah-charter-11.jpeg" alt="Launch moment with guests" width="160" height="120" loading="lazy" decoding="async">
+ </div>
+ <div class="gh-launch-proof__actions">
+ <a class="gh-launch-proof__cta gh-launch-proof__cta--solid" href="casestudy-mwl-en.html">Read the case study →</a>
+ <a class="gh-launch-proof__cta gh-launch-proof__cta--ghost" href="contact-us-en.html?intent=session">Book a launch session</a>
+ </div>
+ </div>
+ </article>
+ </section>
+
  <section class="ghd-section ghd-section--meeting" id="unsure" aria-labelledby="ghd-meeting-title">
  <div class="ghd-wrap">
  <p class="ghd-trust-line" id="ghd-trust-line" hidden></p>
