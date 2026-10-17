@@ -107,7 +107,6 @@ gtag('config','G-Y67JVE898Z');
     if (pkg.name) pkg.name.en = m.name;
     if (pkg.stage) pkg.stage.en = m.stage;
     if (pkg.stageLine) pkg.stageLine.en = m.stageLine;
-    pkg._akaEn = 'Formerly called ' + m.was;
     pkg._stageMeta = m;
     if (m.lines) pkg.includedLines = m.lines.map(function (line) { return { ar: line, en: line }; });
   });
@@ -144,10 +143,10 @@ gtag('config','G-Y67JVE898Z');
         if (!item) return;
         if (item.q && /Core|Launch|Signature|Define|Build/i.test(item.q)) {
           item.q = 'How do I choose between Basic, Early Sales, and Full Launch?';
-          item.a = 'Pre-launch: Basic Package (formerly Nawa). During construction: Early Sales Package (formerly Launch). After completion: Full Launch Package (formerly Signature). Or compose a mix in Atelier.';
+          item.a = 'Pre-launch: Basic Package. During construction: Early Sales Package. After completion: Full Launch Package. Or compose a mix in Atelier.';
         }
         if (item.a && /Core and Launch|Signature has no|Define → Core|Build → Launch|Launch & Sell → Signature/i.test(item.a)) {
-          item.a = 'Pre-launch: Basic Package (formerly Nawa). During construction: Early Sales Package (formerly Launch). After completion: Full Launch Package (formerly Signature). Or compose a mix in Atelier.';
+          item.a = 'Pre-launch: Basic Package. During construction: Early Sales Package. After completion: Full Launch Package. Or compose a mix in Atelier.';
         }
         if (item.a && /starting-from|from-prices/i.test(item.a)) {
           item.a = 'No. Pricing is confirmed by quote after the meeting according to package scope. Final price is set after scope review.';
@@ -1674,6 +1673,232 @@ gtag('config','G-Y67JVE898Z');
 }
 </style>
 
+<style id="gh-pkg-sales-cards">
+/* Sales-grade package cards: ad impact, calm luxury */
+.ghd-page .gh-stage-pkg {
+  position: relative;
+  gap: 0;
+  padding: 28px 22px 22px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.ghd-page .gh-stage-pkg::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.55), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+.ghd-page .gh-stage-pkg:not(.gh-stage-pkg--featured) {
+  background:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(201,168,76,0.07), transparent 55%),
+    #ffffff !important;
+}
+.ghd-page .gh-stage-pkg--featured {
+  background:
+    radial-gradient(ellipse 70% 45% at 50% -5%, rgba(201,168,76,0.22), transparent 50%),
+    linear-gradient(165deg, #1c1914 0%, #0c0c0c 55%, #12100c 100%) !important;
+}
+.ghd-page .gh-stage-pkg--featured::before {
+  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+  height: 3px;
+}
+
+/* Stage tag — quiet but clear */
+.ghd-page .gh-stage-pkg__tag {
+  align-self: center;
+  margin: 4px auto 16px;
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+/* Title as centered ticket button */
+.ghd-page .gh-stage-pkg__title {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 18px !important;
+  padding: 14px 20px !important;
+  border-radius: 999px !important;
+  text-align: center !important;
+  font-size: clamp(20px, 2.2vw, 26px) !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em;
+  border: 1.5px solid transparent;
+  box-shadow: 0 8px 22px rgba(20, 20, 20, 0.08);
+}
+.ghd-page .gh-stage-pkg:not(.gh-stage-pkg--featured) .gh-stage-pkg__title {
+  color: #fafaf8 !important;
+  background: #141414 !important;
+  border-color: #141414 !important;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__title {
+  color: #0a0a0a !important;
+  background: linear-gradient(180deg, #e0c06a 0%, #c9a84c 100%) !important;
+  border-color: #c9a84c !important;
+  box-shadow: 0 10px 28px rgba(201, 168, 76, 0.35);
+}
+
+/* Hide legacy aka if any remain */
+.ghd-page .gh-stage-pkg__aka { display: none !important; }
+
+/* Definition — sales line */
+.ghd-page .gh-stage-pkg__desc {
+  margin: 0 0 18px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  text-align: center !important;
+  font-size: 15.5px !important;
+  font-weight: 600 !important;
+  line-height: 1.6 !important;
+  color: #2a2a2a !important;
+  max-width: 28rem;
+  margin-inline: auto 0;
+  margin-inline: auto !important;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__desc {
+  color: rgba(250, 250, 248, 0.9) !important;
+}
+
+/* Facts — compact meta strip */
+.ghd-page .gh-stage-pkg__facts {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(20, 20, 20, 0.04);
+  border: 1px solid rgba(20, 20, 20, 0.06);
+  text-align: center;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__facts {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.ghd-page .gh-stage-pkg__meta {
+  font-size: 12.5px !important;
+  line-height: 1.55 !important;
+  color: rgba(20, 20, 20, 0.62) !important;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__meta {
+  color: rgba(250, 250, 248, 0.7) !important;
+}
+
+/* Includes — deliverable rows that sell */
+.ghd-page .gh-stage-pkg__includes {
+  margin: 0 0 18px;
+  gap: 12px;
+}
+.ghd-page .gh-stage-pkg__includes-label {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9a7a2e;
+  margin: 0 0 2px;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__includes-label {
+  color: #e8d5a0;
+}
+.ghd-page .gh-stage-pkg__list {
+  gap: 8px;
+}
+.ghd-page .gh-stage-pkg__list li {
+  position: relative;
+  margin: 0;
+  padding: 11px 14px 11px 36px !important;
+  border-radius: 12px;
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.16);
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.55 !important;
+  color: #141414 !important;
+  padding-inline-start: 36px !important;
+}
+html[dir="rtl"] .ghd-page .gh-stage-pkg__list li {
+  padding-inline-start: 36px !important;
+  padding-inline-end: 14px !important;
+}
+.ghd-page .gh-stage-pkg__list li::before {
+  content: '' !important;
+  position: absolute !important;
+  inset-inline-start: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background: #c9a84c !important;
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.2) !important;
+  inset-inline-end: auto !important;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__list li {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: rgba(201, 168, 76, 0.22);
+  color: rgba(250, 250, 248, 0.95) !important;
+}
+
+/* Need panel */
+.ghd-page .gh-stage-pkg__need {
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px dashed rgba(201, 168, 76, 0.4);
+  background: rgba(201, 168, 76, 0.07);
+  text-align: center;
+}
+.ghd-page .gh-stage-pkg__need strong {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 11px !important;
+  color: #8a6f22;
+  margin-bottom: 8px;
+}
+.ghd-page .gh-stage-pkg__need p {
+  font-size: 13.5px !important;
+  line-height: 1.65 !important;
+  color: #3a3a3a !important;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__need {
+  background: rgba(201, 168, 76, 0.12);
+  border-color: rgba(201, 168, 76, 0.4);
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__need strong {
+  color: #e8d5a0;
+}
+.ghd-page .gh-stage-pkg--featured .gh-stage-pkg__need p {
+  color: rgba(250, 250, 248, 0.82) !important;
+}
+
+/* CTA — stronger close */
+.ghd-page .gh-stage-pkg__cta {
+  width: 100%;
+  min-height: 50px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+.ghd-page .gh-stage-pkg__cta--outline {
+  border-width: 1.5px;
+}
+.ghd-page .gh-stage-pkg__cta--solid {
+  box-shadow: 0 10px 24px rgba(201, 168, 76, 0.28);
+}
+
+@media (max-width: 900px) {
+  .ghd-page .gh-stage-pkg__title {
+    font-size: clamp(18px, 5.2vw, 22px) !important;
+    padding: 12px 16px !important;
+  }
+}
+</style>
 </head>
 <body class="ghd-page ghd-page--hub ghd-page--public" data-ghd-prefix="" data-ghd-hide-prices="1">
 <a class="gh-skip-link" href="#main-content">Skip to main content</a>
@@ -1943,8 +2168,7 @@ gtag('config','G-Y67JVE898Z');
  <article class="gh-stage-pkg" id="pkg-basic" data-stage="1">
  <span class="gh-stage-pkg__tag">Pre-launch</span>
  <h3 class="gh-stage-pkg__title">Basic Package</h3>
- <p class="gh-stage-pkg__aka">Formerly called Nawa</p>
- <p class="gh-stage-pkg__desc">Early marketing tools for the project: teaser film, concept maquette, and identity — before launch</p>
+<p class="gh-stage-pkg__desc">Early marketing tools for the project: teaser film, concept maquette, and identity — before launch</p>
 <div class="gh-stage-pkg__facts">
 <p class="gh-stage-pkg__meta"><strong>For:</strong> A project in study, design, or awaiting approval.</p>
  <p class="gh-stage-pkg__meta">Duration: Set in the quote | Revision rounds: 1</p>
@@ -1971,8 +2195,7 @@ gtag('config','G-Y67JVE898Z');
  <span class="gh-stage-pkg__ribbon">Most requested</span>
  <span class="gh-stage-pkg__tag">During construction</span>
  <h3 class="gh-stage-pkg__title">Early Sales Package</h3>
- <p class="gh-stage-pkg__aka">Formerly called Launch</p>
- <p class="gh-stage-pkg__desc">Early-sales engine: cinematic 3D film, smart maquette, and interactive experience — during construction</p>
+<p class="gh-stage-pkg__desc">Early-sales engine: cinematic 3D film, smart maquette, and interactive experience — during construction</p>
 <div class="gh-stage-pkg__facts">
 <p class="gh-stage-pkg__meta"><strong>For:</strong> A project under construction that is starting to market its units now.</p>
  <p class="gh-stage-pkg__meta">Duration: Set in the quote | Revision rounds: 2</p>
@@ -1999,8 +2222,7 @@ gtag('config','G-Y67JVE898Z');
  <article class="gh-stage-pkg" id="pkg-growth" data-stage="3">
  <span class="gh-stage-pkg__tag">After completion</span>
  <h3 class="gh-stage-pkg__title">Full Launch Package</h3>
- <p class="gh-stage-pkg__aka">Formerly called Signature</p>
- <p class="gh-stage-pkg__desc">Full spatial launch: sales gallery and booth wrapping film, maquette, and interactive with print and campaigns</p>
+<p class="gh-stage-pkg__desc">Full spatial launch: sales gallery and booth wrapping film, maquette, and interactive with print and campaigns</p>
 <div class="gh-stage-pkg__facts">
 <p class="gh-stage-pkg__meta"><strong>For:</strong> A completed project or one close to handover.</p>
  <p class="gh-stage-pkg__meta">Duration: Set in the quote | Revision rounds: 2</p>
