@@ -625,7 +625,7 @@ gtag('config','G-Y67JVE898Z');
 }
 </style>
 <link rel="stylesheet" href="assets/tailwind.min.css?v=1">
-<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=48">
+<link rel="stylesheet" href="assets/gh-site-enhancements.css?v=49">
 <link rel="stylesheet" href="assets/gh-direct.css?v=82">
 <link rel="stylesheet" href="assets/gh-float-widgets.css?v=19">
 <link rel="stylesheet" href="assets/gh-ar-typography.css?v=7">
@@ -2238,6 +2238,112 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
 }
 </style>
 
+<style id="gh-pkg-finish">
+/* Final Packages polish: catalog fold + locked pill buttons + spacing */
+.ghd-page .gh-pkg-catalog-fold {
+  border: 1px solid rgba(20,20,20,0.1);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(20,20,20,0.04);
+  padding: 8px 8px 12px;
+}
+.ghd-page .gh-pkg-catalog-fold__summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 56px;
+  margin: 0;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: #141414;
+  color: #fafaf8;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+  user-select: none;
+}
+.ghd-page .gh-pkg-catalog-fold__summary::-webkit-details-marker { display: none; }
+.ghd-page .gh-pkg-catalog-fold__summary::after {
+  content: '+';
+  font-weight: 700;
+  color: #c9a84c;
+  font-size: 18px;
+  line-height: 1;
+}
+.ghd-page .gh-pkg-catalog-fold[open] > .gh-pkg-catalog-fold__summary::after {
+  content: '–';
+}
+.ghd-page .gh-pkg-catalog-fold[open] > .gh-pkg-catalog-fold__summary {
+  background: linear-gradient(180deg, #e0c06a 0%, #c9a84c 100%);
+  color: #0a0a0a;
+  margin-bottom: 18px;
+}
+.ghd-page .gh-pkg-catalog-fold[open] > .gh-pkg-catalog-fold__summary::after {
+  color: #0a0a0a;
+}
+.ghd-page .gh-pkg-catalog-fold__body {
+  padding: 4px 12px 8px;
+}
+
+/* Unified pill button system */
+.ghd-page .gh-stage-pkg__cta,
+.ghd-page .gh-tix__book,
+.ghd-page .gh-tix__toggle,
+.ghd-page .gh-mwl-cta a,
+.ghd-page .ghd-meeting-wa,
+.ghd-page .ghd-meeting-form,
+.ghd-page .ghd-proof-btn,
+.ghd-page .ghd-cta,
+.ghd-page .gh-pkg-catalog-fold__summary {
+  border-radius: 999px !important;
+  min-height: 48px;
+  font-weight: 800;
+}
+.ghd-page .gh-stage-pkg__cta--outline {
+  border: 1.5px solid #141414 !important;
+  background: transparent !important;
+  color: #141414 !important;
+}
+.ghd-page .gh-stage-pkg__cta--solid,
+.ghd-page .gh-mwl-cta__solid {
+  background: linear-gradient(180deg, #e0c06a 0%, #c9a84c 100%) !important;
+  border: 1.5px solid #c9a84c !important;
+  color: #0a0a0a !important;
+}
+.ghd-page .gh-tix__book {
+  border: 1.5px solid #141414 !important;
+  background: transparent !important;
+  color: #141414 !important;
+  width: 100%;
+  justify-content: center;
+}
+.ghd-page .gh-mwl-cta {
+  justify-content: center;
+  padding: 24px 20px 32px;
+}
+.ghd-page .gh-mwl-cta a {
+  min-width: min(100%, 320px);
+  justify-content: center;
+}
+.ghd-page .ghd-section--next {
+  padding-block: clamp(40px, 5vw, 64px);
+  background: #fafaf8;
+  border-top: 1px solid rgba(20,20,20,0.06);
+}
+.ghd-page .ghd-section--catalog {
+  padding-block: clamp(32px, 4vw, 48px);
+  background: #f7f5f0;
+}
+.ghd-page .ghd-section--meeting {
+  padding-top: clamp(32px, 4vw, 48px);
+}
+
+/* Hide unused extras session styles if injected elsewhere */
+.ghd-page .gh-tix-session-wrap { display: none !important; }
+</style>
 </head>
 <body class="ghd-page ghd-page--hub ghd-page--public" data-ghd-prefix="" data-ghd-hide-prices="1">
 <a class="gh-skip-link" href="#main-content">Skip to main content</a>
@@ -2421,7 +2527,7 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
       <a class="nav-link" href="Packages-en.html">Packages</a>
       <a class="nav-link" href="contact-us-en.html">Contact</a>
       <a class="nav-link nav-link-accent" href="insights/index-en.html">Insights</a>
-      <a class="nav-link nav-mobile-cta" href="contact-us-en.html?intent=session">Book a Session</a>
+      <a class="nav-link nav-mobile-cta" href="contact-us-en.html?intent=session">Book a session</a>
     </nav>
     <div class="nav-actions">
       <div class="lang-switch" role="group" aria-label="Language">
@@ -2429,7 +2535,7 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
         <span class="lang-switch-sep" aria-hidden="true">|</span>
         <a href="index.html" class="lang-switch-link is-active" hreflang="en">EN</a>
       </div>
-      <a href="contact-us-en.html?intent=session" class="nav-cta btn-pill btn-pill-gold">Book a Session</a>
+      <a href="contact-us-en.html?intent=session" class="nav-cta btn-pill btn-pill-gold">Book a session</a>
     </div>
     <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <span class="material-symbols-outlined">menu</span>
@@ -2528,7 +2634,7 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
  <strong>What we need from you</strong>
  <p>Preliminary plans, proposed materials and colors, the project name and location.</p>
  </div>
- <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us-en.html?intent=session&amp;stage=1">Book an introductory session</a>
+ <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us-en.html?intent=session&amp;stage=1">Book a session</a>
  </article>
  <article class="gh-stage-pkg gh-stage-pkg--featured" id="pkg-launch" data-stage="2">
  <span class="gh-stage-pkg__ribbon">Most requested</span>
@@ -2556,7 +2662,7 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
  <strong>What we need from you</strong>
  <p>Approved unit plans, a preliminary list of features and prices, and existing site photos if any.</p>
  </div>
- <a class="gh-stage-pkg__cta gh-stage-pkg__cta--solid" href="contact-us-en.html?intent=session&amp;stage=2">Book an introductory session</a>
+ <a class="gh-stage-pkg__cta gh-stage-pkg__cta--solid" href="contact-us-en.html?intent=session&amp;stage=2">Book a session</a>
  </article>
  <article class="gh-stage-pkg" id="pkg-growth" data-stage="3">
  <span class="gh-stage-pkg__tag">After completion</span>
@@ -2583,7 +2689,7 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
  <strong>What we need from you</strong>
  <p>List of available units and prices, the launch date, and access to the site or gallery.</p>
  </div>
- <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us-en.html?intent=session&amp;stage=3">Book an introductory session</a>
+ <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us-en.html?intent=session&amp;stage=3">Book a session</a>
  </article>
  </div>
  <div class="gh-pkg-footnotes">
@@ -2600,33 +2706,16 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
  <div class="ghd-atelier-entry" id="ghd-atelier-entry"></div>
  </div>
  </section>
- <section class="ghd-section ghd-section--atelier" id="atelier-workshop" aria-labelledby="ghd-atelier-title">
+
+<section class="ghd-section ghd-section--atelier" id="atelier-workshop" aria-labelledby="ghd-atelier-title">
  <div class="ghd-wrap">
  <div class="ghd-atelier">
  <div class="ghd-atelier-inner" id="ghd-atelier-inner" data-package-id="custom"></div>
  </div>
  </div>
  </section>
- <section class="ghd-section ghd-section--next" id="next-steps" aria-label="What happens next">
- <div class="ghd-wrap">
- <div class="ghd-next" id="ghd-next-steps" aria-label="What happens next"></div>
- </div>
- </section>
- <section class="ghd-section ghd-section--catalog" id="catalog" aria-labelledby="ghd-catalog-title">
- <div class="ghd-wrap">
- <div class="ghd-section-head">
- <h2 id="ghd-catalog-title"></h2>
- <p id="ghd-catalog-lead"></p>
- </div>
- <div class="ghd-filter-bar" id="ghd-filter-bar">
- <div class="ghd-filters" id="ghd-catalog-filters" role="tablist" aria-label="Service families"></div>
- </div>
- <div class="ghd-catalog" id="ghd-catalog"></div>
- <p class="ghd-filter-empty" id="ghd-catalog-empty" hidden></p>
- </div>
- </section>
 
- <section class="ghd-section ghd-section--launch-proof" id="launch-proof" aria-label="Makkah Charter case study">
+<section class="ghd-section ghd-section--launch-proof" id="launch-proof" aria-label="Makkah Charter case study">
 <section class="s2-hero-wrap">
 
  <!-- Background Image -->
@@ -2753,12 +2842,38 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
 
 </section>
  <div class="gh-mwl-cta">
- <a class="gh-mwl-cta__solid" href="casestudy-mwl-en.html">Read the case study →</a>
- <a class="gh-mwl-cta__ghost" href="contact-us-en.html?intent=session">Book a launch session</a>
+ <a class="gh-mwl-cta__solid" href="casestudy-mwl-en.html">Read the full case study →</a>
  </div>
  </section>
 
- <section class="ghd-section ghd-section--meeting" id="unsure" aria-labelledby="ghd-meeting-title">
+<section class="ghd-section ghd-section--next" id="next-steps" aria-label="What happens next">
+ <div class="ghd-wrap">
+ <div class="ghd-next" id="ghd-next-steps" aria-label="What happens next"></div>
+ </div>
+ </section>
+
+<section class="ghd-section ghd-section--catalog" id="catalog" aria-labelledby="ghd-catalog-title">
+ <div class="ghd-wrap">
+ <details class="gh-pkg-catalog-fold">
+ <summary class="gh-pkg-catalog-fold__summary">Browse the detailed service catalog</summary>
+ <div class="gh-pkg-catalog-fold__body" aria-label="Service catalog">
+
+ <div class="ghd-section-head">
+ <h2 id="ghd-catalog-title"></h2>
+ <p id="ghd-catalog-lead"></p>
+ </div>
+ <div class="ghd-filter-bar" id="ghd-filter-bar">
+ <div class="ghd-filters" id="ghd-catalog-filters" role="tablist" aria-label="Service families"></div>
+ </div>
+ <div class="ghd-catalog" id="ghd-catalog"></div>
+ <p class="ghd-filter-empty" id="ghd-catalog-empty" hidden></p>
+ 
+ </div>
+ </details>
+ </div>
+ </section>
+
+<section class="ghd-section ghd-section--meeting" id="unsure" aria-labelledby="ghd-meeting-title">
  <div class="ghd-wrap">
  <p class="ghd-trust-line" id="ghd-trust-line" hidden></p>
  <div class="ghd-unsure">
@@ -2766,6 +2881,7 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
  </div>
  </div>
  </section>
+
  <section class="ghd-section ghd-section--faq" aria-labelledby="ghd-faq-title">
  <div class="ghd-wrap ghd-wrap--narrow">
  <h2 class="ghd-faq-title" id="ghd-faq-title"></h2>
@@ -3334,7 +3450,7 @@ document.addEventListener('keydown', function(e) {
       '">' +
       escapeHtml(item.name) +
       '</a>' +
-      '<a class="gh-tix__book" href="contact-us-en.html?intent=session">Book an introductory session</a>' +
+      '<a class="gh-tix__book" href="contact-us-en.html?intent=session">Book a session</a>' +
       '</div></details>' +
       '</div></article>'
     );
@@ -3384,15 +3500,8 @@ document.addEventListener('keydown', function(e) {
       el.removeAttribute('data-gh-tix');
     });
     list.replaceWith(grid);
-
     var oldCta = host.querySelector('.ghd-extras-cta');
-    var session =
-      '<div class="gh-tix-session-wrap" id="gh-tix-session-wrap">' +
-      '<a class="gh-tix-session" id="gh-tix-session" href="contact-us-en.html?intent=session">Book an introductory session</a>' +
-      '</div>';
-    if (oldCta) oldCta.outerHTML = session;
-    else host.insertAdjacentHTML('beforeend', session);
-
+    if (oldCta) oldCta.remove();
     fillAtelierEntry();
     return true;
   }

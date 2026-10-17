@@ -1775,3 +1775,15 @@ html[dir="rtl"]:not([lang="en"]) .gh-project-quote figcaption span {
     white-space: normal !important;
   }
 }
+
+/* GH_PKG_SITE_BTN_UNIFY */
+.nav-cta.btn-pill,
+.btn-pill.btn-pill-gold,
+a.nav-link.nav-mobile-cta {
+  border-radius: 999px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
