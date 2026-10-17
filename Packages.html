@@ -2358,56 +2358,7 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
 </style>
 
 <style id="gh-pkg-finish">
-/* Final Packages polish: catalog fold + locked pill buttons + spacing */
-.ghd-page .gh-pkg-catalog-fold {
-  border: 1px solid rgba(20,20,20,0.1);
-  border-radius: 18px;
-  background: #fff;
-  box-shadow: 0 12px 32px rgba(20,20,20,0.04);
-  padding: 8px 8px 12px;
-}
-.ghd-page .gh-pkg-catalog-fold__summary {
-  list-style: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 56px;
-  margin: 0;
-  padding: 14px 22px;
-  border-radius: 999px;
-  background: #141414;
-  color: #fafaf8;
-  font-size: 15px;
-  font-weight: 800;
-  text-align: center;
-  user-select: none;
-}
-.ghd-page .gh-pkg-catalog-fold__summary::-webkit-details-marker { display: none; }
-.ghd-page .gh-pkg-catalog-fold__summary::after {
-  content: '+';
-  font-weight: 700;
-  color: #c9a84c;
-  font-size: 18px;
-  line-height: 1;
-}
-.ghd-page .gh-pkg-catalog-fold[open] > .gh-pkg-catalog-fold__summary::after {
-  content: '–';
-}
-.ghd-page .gh-pkg-catalog-fold[open] > .gh-pkg-catalog-fold__summary {
-  background: linear-gradient(180deg, #e0c06a 0%, #c9a84c 100%);
-  color: #0a0a0a;
-  margin-bottom: 18px;
-}
-.ghd-page .gh-pkg-catalog-fold[open] > .gh-pkg-catalog-fold__summary::after {
-  color: #0a0a0a;
-}
-.ghd-page .gh-pkg-catalog-fold__body {
-  padding: 4px 12px 8px;
-}
-
-/* Unified pill button system */
+/* Final Packages polish: locked pill buttons + spacing */
 .ghd-page .gh-stage-pkg__cta,
 .ghd-page .gh-tix__book,
 .ghd-page .gh-tix__toggle,
@@ -2415,8 +2366,7 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
 .ghd-page .ghd-meeting-wa,
 .ghd-page .ghd-meeting-form,
 .ghd-page .ghd-proof-btn,
-.ghd-page .ghd-cta,
-.ghd-page .gh-pkg-catalog-fold__summary {
+.ghd-page .ghd-cta {
   border-radius: 999px !important;
   min-height: 48px;
   font-weight: 800;
@@ -2427,7 +2377,8 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
   color: #141414 !important;
 }
 .ghd-page .gh-stage-pkg__cta--solid,
-.ghd-page .gh-mwl-cta__solid {
+.ghd-page .gh-mwl-cta__solid,
+.ghd-page .ghd-meeting-wa {
   background: linear-gradient(180deg, #e0c06a 0%, #c9a84c 100%) !important;
   border: 1.5px solid #c9a84c !important;
   color: #0a0a0a !important;
@@ -2453,14 +2404,12 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
   border-top: 1px solid rgba(20,20,20,0.06);
 }
 .ghd-page .ghd-section--catalog {
-  padding-block: clamp(32px, 4vw, 48px);
+  padding-block: clamp(40px, 5vw, 72px);
   background: #f7f5f0;
 }
 .ghd-page .ghd-section--meeting {
   padding-top: clamp(32px, 4vw, 48px);
 }
-
-/* Hide unused extras session styles if injected elsewhere */
 .ghd-page .gh-tix-session-wrap { display: none !important; }
 </style>
 <style id="gh-tix-type-overrides">
@@ -3002,11 +2951,7 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
 
 <section class="ghd-section ghd-section--catalog" id="catalog" aria-labelledby="ghd-catalog-title">
  <div class="ghd-wrap">
- <details class="gh-pkg-catalog-fold">
- <summary class="gh-pkg-catalog-fold__summary">تصفح كتالوج الخدمات التفصيلي</summary>
- <div class="gh-pkg-catalog-fold__body" aria-label="كتالوج الخدمات">
-
- <div class="ghd-section-head">
+<div class="ghd-section-head">
  <h2 id="ghd-catalog-title"></h2>
  <p id="ghd-catalog-lead"></p>
  </div>
@@ -3015,10 +2960,7 @@ html[dir="rtl"] .ghd-section--extras .gh-tix-session {
  </div>
  <div class="ghd-catalog" id="ghd-catalog"></div>
  <p class="ghd-filter-empty" id="ghd-catalog-empty" hidden></p>
- 
- </div>
- </details>
- </div>
+</div>
  </section>
 
 <section class="ghd-section ghd-section--meeting" id="unsure" aria-labelledby="ghd-meeting-title">
