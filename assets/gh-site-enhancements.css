@@ -1787,3 +1787,204 @@ a.nav-link.nav-mobile-cta {
   justify-content: center;
   font-weight: 700;
 }
+
+/* ===== Design elevation v50 — type, cards, image motion (sitewide) ===== */
+html[lang='ar'],
+html[dir='rtl'] {
+  --gh-body-font: var(--gh-font-ar, 'Tajawal', 'IBM Plex Sans Arabic', sans-serif);
+}
+html[lang='en'],
+html[dir='ltr'] {
+  --gh-body-font: var(--gh-font-en, 'Inter', 'Helvetica Neue', Arial, sans-serif);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html[lang='ar'] body,
+html[dir='rtl'] body {
+  font-family: var(--gh-body-font);
+}
+
+html[lang='en'] body {
+  font-family: var(--gh-body-font);
+}
+
+/* Section titles on light surfaces */
+.gh-home-eco__services-title,
+.gh-home-process__head h2,
+.ghd-section-head h2,
+.ghd-page h2.ghd-faq-title,
+body.gh-insights .gh-ins-h1,
+body.gh-insights h1.gh-article-title {
+  font-size: var(--gh-type-section, clamp(28px, 3.2vw, 42px));
+  line-height: var(--gh-leading-title, 1.35);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+html[lang='ar'] .gh-home-eco__services-title,
+html[dir='rtl'] .gh-home-eco__services-title,
+html[lang='ar'] .gh-home-process__head h2,
+html[dir='rtl'] .gh-home-process__head h2 {
+  font-weight: 600;
+}
+
+/* Soft editorial body copy */
+.gh-home-eco__services-lead,
+.gh-home-process__head p,
+.ghd-section-head p,
+.gh-home-eco-card__desc {
+  font-size: var(--gh-type-body, 14.5px);
+  line-height: var(--gh-leading-body, 1.75);
+  font-weight: 400;
+}
+
+.gh-home-eco__services-lead,
+.gh-home-process__head p,
+.ghd-section-head p {
+  font-size: var(--gh-type-lead, 16px);
+  color: var(--gh-ink-soft, #3d4f5c);
+}
+
+/* Card titles — bronze editorial weight (light surfaces only) */
+.gh-home-eco__services .gh-home-eco-card__title,
+.gh-home-process__name,
+.ghd-page .gh-tix__name,
+.ghd-svc-title,
+.ghd-catalog .ghd-svc-name {
+  color: var(--gh-bronze, #75613d);
+  font-size: var(--gh-type-card-title, clamp(20px, 2.2vw, 28px));
+  font-weight: 600;
+  line-height: var(--gh-leading-title, 1.35);
+}
+
+.gh-home-process__body {
+  font-size: var(--gh-type-body, 14.5px);
+  line-height: var(--gh-leading-body, 1.75);
+  font-weight: 400;
+  color: var(--gh-ink-soft, #3d4f5c);
+}
+
+/* Soft white cards (skip dark chrome sections) */
+.gh-home-eco__services .gh-home-eco-card,
+.gh-home-process__card,
+.ghd-page .gh-tix,
+.ghd-catalog .ghd-svc,
+.col-group-card,
+.pn-model,
+.pn-principle {
+  border-radius: var(--gh-card-radius, 16px);
+  box-shadow: var(--gh-card-shadow, 0 10px 32px rgba(20, 20, 20, 0.06));
+  transition: box-shadow 0.35s var(--gh-ease, ease), transform 0.35s var(--gh-ease, ease);
+}
+
+.gh-home-eco__services .gh-home-eco-card:hover,
+.gh-home-process__card:hover,
+.ghd-page .gh-tix:hover {
+  box-shadow: var(--gh-card-shadow-hover, 0 18px 44px rgba(20, 20, 20, 0.1));
+}
+
+/* Image zoom — media frames (not logos / icons / hero video) */
+.gh-home-eco-card__media,
+.gh-tix__media,
+.ghd-svc-media,
+.ghd-proof-slide,
+.case-project-item,
+.gl-case-card__media,
+.bs-journey-card__media,
+.col-group-card__media,
+.pn-idea-media,
+.gh-img-zoom {
+  overflow: hidden;
+}
+
+.gh-home-eco-card__media img,
+.gh-tix__media img,
+.ghd-svc-media img,
+.ghd-proof-slide img,
+.case-project-item img,
+.gl-case-card__media img,
+.bs-journey-card__media img,
+.col-group-card__media img,
+.pn-idea-media img,
+.gh-img-zoom img {
+  transform: scale(1);
+  transition: transform 0.55s var(--gh-ease, ease);
+  will-change: transform;
+}
+
+.gh-home-eco-card:hover .gh-home-eco-card__media img,
+.gh-tix:hover .gh-tix__media img,
+.ghd-svc:hover .ghd-svc-media img,
+.ghd-proof-slide:hover img,
+.case-project-item:hover img,
+.gl-case-card:hover .gl-case-card__media img,
+.bs-journey-card:hover .bs-journey-card__media img,
+.col-group-card:hover .col-group-card__media img,
+.pn-idea-media:hover img,
+.gh-img-zoom:hover img {
+  transform: scale(var(--gh-img-zoom, 1.08));
+}
+
+/* Soft scale reveal for elevated cards */
+.gh-home-eco__services .gh-home-eco-card.reveal,
+.ghd-page .gh-tix.reveal,
+.gh-elevate.reveal {
+  opacity: 0.92;
+  transform: scale(var(--gh-reveal-scale, 0.94));
+  transition:
+    opacity 0.9s var(--gh-ease, ease),
+    transform 0.9s var(--gh-ease, ease),
+    box-shadow 0.35s var(--gh-ease, ease);
+}
+
+.gh-home-eco__services .gh-home-eco-card.reveal.visible,
+.gh-home-eco__services .gh-home-eco-card.reveal.is-visible,
+.ghd-page .gh-tix.reveal.visible,
+.ghd-page .gh-tix.reveal.is-visible,
+.ghd-page .gh-tix.is-visible,
+.gh-elevate.reveal.visible,
+.gh-elevate.reveal.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal.r1 { transition-delay: 0.08s; }
+.reveal.r2 { transition-delay: 0.16s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .gh-home-eco-card__media img,
+  .gh-tix__media img,
+  .ghd-svc-media img,
+  .ghd-proof-slide img,
+  .case-project-item img,
+  .gl-case-card__media img,
+  .bs-journey-card__media img,
+  .col-group-card__media img,
+  .pn-idea-media img,
+  .gh-img-zoom img,
+  .gh-home-eco-card:hover .gh-home-eco-card__media img,
+  .gh-tix:hover .gh-tix__media img,
+  .ghd-svc:hover .ghd-svc-media img,
+  .ghd-proof-slide:hover img,
+  .case-project-item:hover img,
+  .gl-case-card:hover .gl-case-card__media img,
+  .bs-journey-card:hover .bs-journey-card__media img,
+  .col-group-card:hover .col-group-card__media img,
+  .pn-idea-media:hover img,
+  .gh-img-zoom:hover img {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .gh-home-eco__services .gh-home-eco-card.reveal,
+  .ghd-page .gh-tix.reveal,
+  .gh-elevate.reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

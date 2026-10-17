@@ -7,6 +7,33 @@
   --gh-gold-light: #D9B860;
   --gh-gold-dark: #A8883A;
 
+  /* Editorial bronze + ink (RSG-inspired elevation) */
+  --gh-bronze: #75613d;
+  --gh-ink: #141414;
+  --gh-ink-soft: #3d4f5c;
+  --gh-ink-muted: #6b7280;
+  --gh-surface: #ffffff;
+  --gh-surface-soft: #f7f5f0;
+  --gh-card-radius: 16px;
+  --gh-card-shadow: 0 10px 32px rgba(20, 20, 20, 0.06);
+  --gh-card-shadow-hover: 0 18px 44px rgba(20, 20, 20, 0.1);
+
+  /* Type scale */
+  --gh-font-ar: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+  --gh-font-en: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --gh-type-section: clamp(28px, 3.2vw, 42px);
+  --gh-type-card-title: clamp(20px, 2.2vw, 28px);
+  --gh-type-lead: 16px;
+  --gh-type-body: 14.5px;
+  --gh-type-caption: 13px;
+  --gh-leading-body: 1.75;
+  --gh-leading-title: 1.35;
+
+  /* Motion */
+  --gh-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --gh-img-zoom: 1.08;
+  --gh-reveal-scale: 0.94;
+
   /* Legacy aliases used across page CSS */
   --gold: var(--gh-gold);
   --gold-light: var(--gh-gold-light);

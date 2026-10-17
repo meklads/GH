@@ -1,12 +1,13 @@
 /**
  * GH reveal + gallery-strip hover video (sitewide).
- * v2 — ensures .reveal becomes .visible; wires .gallery-video hover play.
+ * v3 — .visible + .is-visible; wires .gallery-video hover play.
  */
 (function () {
   'use strict';
 
   function show(el) {
     el.classList.add('visible');
+    el.classList.add('is-visible');
   }
 
   function initReveal() {
