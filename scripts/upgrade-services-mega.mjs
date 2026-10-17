@@ -12,37 +12,43 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SERVICES_AR = [
   {
     href: 'services/animation.html',
-    img: 'assets/projects/animation/rafal-pavilions.jpg',
+    img: 'assets/projects/animation/rafal-pavilions.webp',
+    alt: 'فيلم CGI سينمائي لمشروع معماري',
     name: 'أفلام CGI سينمائية',
     desc: 'أفلام إطلاق وجولات متحركة',
   },
   {
     href: 'services/maquettes.html',
-    img: 'assets/projects/maquettes/anan-eskan-maquette-01.jpeg',
+    img: 'assets/projects/maquettes/anan-eskan-maquette-01.webp',
+    alt: 'مجسم ذكي لمشروع عنان إسكان',
     name: 'مجسمات ذكية',
     desc: 'صالات البيع ولقاءات المستثمرين',
   },
   {
     href: 'services/interactive-experiences.html',
-    img: 'assets/projects/maquettes/interactive-showroom-01.jpeg',
+    img: 'assets/projects/maquettes/interactive-showroom-01.webp',
+    alt: 'تجربة تفاعلية في صالة عرض',
     name: 'تجارب تفاعلية',
     desc: 'شاشات لمس وجولات VR',
   },
   {
     href: 'services/galleries.html',
-    img: 'assets/projects/galleries/makkah-charter-04.jpg',
+    img: 'assets/projects/galleries/makkah-charter-04.webp',
+    alt: 'صالة بيع ومعرض مطورين',
     name: 'معارض وصالات البيع',
     desc: 'معارض مطورين وصالات بيع',
   },
   {
     href: 'services/production.html',
-    img: 'assets/projects/production/camera-monitor.jpg',
+    img: 'assets/projects/production/camera-monitor.webp',
+    alt: 'إنتاج إعلامي وتصوير حملات',
     name: 'إنتاج إعلامي',
     desc: 'تصوير ومونتاج ومحتوى الحملات',
   },
   {
     href: 'services/branding.html',
-    img: 'assets/projects/branding/jeddah-forum-premium.png',
+    img: 'assets/projects/branding/jeddah-forum-premium.webp',
+    alt: 'هوية بصرية لملتقى جدة العقاري',
     name: 'الهوية البصرية',
     desc: 'شعار، كتالوج، نظام بصري واحد',
   },
@@ -51,37 +57,43 @@ const SERVICES_AR = [
 const SERVICES_EN = [
   {
     href: 'services/animation-en.html',
-    img: 'assets/projects/animation/rafal-pavilions.jpg',
+    img: 'assets/projects/animation/rafal-pavilions.webp',
+    alt: 'Cinematic CGI film for an architectural project',
     name: 'Cinematic CGI',
     desc: 'Launch films and walkthrough animations',
   },
   {
     href: 'services/maquettes-en.html',
-    img: 'assets/projects/maquettes/anan-eskan-maquette-01.jpeg',
+    img: 'assets/projects/maquettes/anan-eskan-maquette-01.webp',
+    alt: 'Smart maquette for Anan Eskan project',
     name: 'Smart Maquettes',
     desc: 'Sales centres and investor meetings',
   },
   {
     href: 'services/interactive-experiences-en.html',
-    img: 'assets/projects/maquettes/interactive-showroom-01.jpeg',
+    img: 'assets/projects/maquettes/interactive-showroom-01.webp',
+    alt: 'Interactive showroom experience',
     name: 'Interactive Experiences',
     desc: 'Touchscreens and VR walkthroughs',
   },
   {
     href: 'services/galleries-en.html',
-    img: 'assets/projects/galleries/makkah-charter-04.jpg',
+    img: 'assets/projects/galleries/makkah-charter-04.webp',
+    alt: 'Developer sales gallery exhibition',
     name: 'Exhibitions & sales galleries',
     desc: 'Developer exhibitions and sales galleries',
   },
   {
     href: 'services/production-en.html',
-    img: 'assets/projects/production/camera-monitor.jpg',
+    img: 'assets/projects/production/camera-monitor.webp',
+    alt: 'Media production and campaign filming',
     name: 'Media Production',
     desc: 'Filming, editing, and campaign content',
   },
   {
     href: 'services/branding-en.html',
-    img: 'assets/projects/branding/jeddah-forum-premium.png',
+    img: 'assets/projects/branding/jeddah-forum-premium.webp',
+    alt: 'Visual identity for Jeddah Real Estate Forum',
     name: 'Visual Identity',
     desc: 'Logo, catalogue, one visual system',
   },
@@ -114,9 +126,10 @@ function isEnglishPage(file, html) {
 }
 
 function cardHtml(item, prefix) {
+  const alt = (item.alt || '').replace(/"/g, '&quot;');
   return (
     `<a href="${prefix}${item.href}" class="mm-svc-card">` +
-    `<span class="mm-svc-thumb"><img src="${prefix}${item.img}" alt="" loading="lazy" width="640" height="400" decoding="async"></span>` +
+    `<span class="mm-svc-thumb"><img src="${prefix}${item.img}" alt="${alt}" loading="lazy" width="640" height="400" decoding="async"></span>` +
     `<span class="mm-svc-name">${item.name}</span>` +
     `<span class="mm-svc-caption">${item.desc}</span>` +
     `<span class="material-symbols-outlined mm-svc-arrow" aria-hidden="true">arrow_forward</span>` +
