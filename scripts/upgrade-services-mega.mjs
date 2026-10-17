@@ -87,14 +87,17 @@ const SERVICES_EN = [
   },
 ];
 
-function detectPrefix(html, fromIndex) {
-  const slice = html.slice(Math.max(0, fromIndex - 800), fromIndex + 2400);
-  const m = slice.match(/(?:\.\.\/)+assets\//) || slice.match(/((?:\.\.\/)*)assets\//);
-  if (m) {
-    const full = slice.match(/((?:\.\.\/)+)assets\//);
-    if (full) return full[1];
+function detectPrefix(html, fromIndex, relPath) {
+  if (html.includes('{{PREFIX}}') || /partials\/header-/.test(relPath || '')) {
+    return '{{PREFIX}}';
   }
-  if (slice.includes('{{PREFIX}}')) return '{{PREFIX}}';
+  const dir = path.dirname(relPath || '.').replace(/\\/g, '/');
+  if (dir && dir !== '.') {
+    return '../'.repeat(dir.split('/').filter(Boolean).length);
+  }
+  const slice = html.slice(Math.max(0, fromIndex - 800), fromIndex + 2400);
+  const full = slice.match(/((?:\.\.\/)+)assets\//);
+  if (full) return full[1];
   return '';
 }
 
@@ -153,7 +156,7 @@ function buildPanel(lang, prefix) {
   );
 }
 
-function replaceServicesMega(html, lang) {
+function replaceServicesMega(html, lang, relPath) {
   const marker = 'mega-menu mega-menu-services';
   const startAttr = html.indexOf(marker);
   if (startAttr === -1) return { html, changed: false };
@@ -183,7 +186,7 @@ function replaceServicesMega(html, lang) {
   }
   if (end === -1) return { html, changed: false };
 
-  const prefix = detectPrefix(html, openStart);
+  const prefix = detectPrefix(html, openStart, relPath);
   const next = buildPanel(lang, prefix);
   const updated = html.slice(0, openStart) + next + html.slice(end);
   return { html: updated, changed: updated !== html };
@@ -211,7 +214,7 @@ for (const file of walk(ROOT)) {
     continue;
   }
   const lang = isEnglishPage(rel, html) ? 'en' : 'ar';
-  const result = replaceServicesMega(html, lang);
+  const result = replaceServicesMega(html, lang, rel);
   if (result.changed) {
     fs.writeFileSync(file, result.html, 'utf8');
     changed += 1;
