@@ -246,7 +246,7 @@
       });
     }
 
-    document.querySelectorAll('.nav a:not(.nav-mega-trigger), .nav .mm-card, .nav .mm-svc-link').forEach(function (link) {
+    document.querySelectorAll('.nav a:not(.nav-mega-trigger), .nav .mm-card, .nav .mm-svc-link, .nav .mm-svc-card, .nav .mm-svc-all').forEach(function (link) {
       link.addEventListener('click', function () {
         var nav = getNav();
         if (nav && nav.classList.contains('open')) setMenuOpen(false);
