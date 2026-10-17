@@ -2417,28 +2417,150 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
 html[lang="ar"] .ghd-section--extras .gh-tix h3.gh-tix__name,
 html[dir="rtl"] .ghd-section--extras .gh-tix h3.gh-tix__name,
 .ghd-page .ghd-section--extras .gh-tix h3.gh-tix__name {
-  font-size: 20px !important;
-  font-weight: 700 !important;
-  line-height: 1.4 !important;
+  font-size: clamp(22px, 2.4vw, 28px) !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  color: #75613d !important;
 }
 html[lang="ar"] .ghd-section--extras .gh-tix__promise,
 html[lang="ar"] .ghd-section--extras .gh-tix__when,
 html[lang="ar"] .ghd-section--extras .gh-tix__meta,
 html[lang="ar"] .ghd-section--extras .gh-tix__gets li,
-html[lang="ar"] .ghd-section--extras .gh-tix__detail-list li,
-html[lang="ar"] .ghd-section--extras .gh-tix__toggle,
-html[lang="ar"] .ghd-section--extras .gh-tix__book,
-html[lang="ar"] .ghd-section--extras .gh-tix-session,
 html[dir="rtl"] .ghd-section--extras .gh-tix__promise,
 html[dir="rtl"] .ghd-section--extras .gh-tix__when,
 html[dir="rtl"] .ghd-section--extras .gh-tix__meta,
-html[dir="rtl"] .ghd-section--extras .gh-tix__gets li,
-html[dir="rtl"] .ghd-section--extras .gh-tix__detail-list li,
-html[dir="rtl"] .ghd-section--extras .gh-tix__toggle,
-html[dir="rtl"] .ghd-section--extras .gh-tix__book,
-html[dir="rtl"] .ghd-section--extras .gh-tix-session {
-  font-size: 15px !important;
+html[dir="rtl"] .ghd-section--extras .gh-tix__gets li {
+  font-size: 14.5px !important;
+  line-height: 1.7 !important;
+}
+</style>
+<style id="gh-tix-rsg">
+/* RSG-inspired extras tickets: text top, image bottom, scale-in + image zoom */
+.ghd-page .gh-tix-grid {
+  gap: 24px;
+  align-items: stretch;
+}
+.ghd-page .gh-tix {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  border: 0 !important;
+  border-radius: 16px !important;
+  background: #fff !important;
+  box-shadow: 0 10px 32px rgba(20, 20, 20, 0.06);
+  overflow: hidden;
+  opacity: 0.92;
+  transform: scale(0.94);
+  transition: opacity 0.9s ease, transform 0.9s ease, box-shadow 0.35s ease;
+}
+.ghd-page .gh-tix.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ghd-page .gh-tix {
+    opacity: 1;
+    transform: none;
+    transition: box-shadow 0.2s ease;
+  }
+  .ghd-page .gh-tix__media img { transition: none !important; }
+  .ghd-page .gh-tix:hover .gh-tix__media img { transform: none !important; }
+}
+.ghd-page .gh-tix:hover {
+  box-shadow: 0 18px 44px rgba(20, 20, 20, 0.1);
+}
+.ghd-page .gh-tix__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 28px 26px 20px !important;
+  gap: 12px !important;
+  min-height: 0;
+}
+.ghd-page .gh-tix__name {
+  margin: 0 !important;
+  color: #75613d !important;
+  font-size: clamp(22px, 2.4vw, 28px) !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+}
+.ghd-page .gh-tix__promise {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: #3d4f5c !important;
+  font-size: 14.5px !important;
+  font-weight: 400 !important;
+  line-height: 1.75 !important;
+}
+.ghd-page .gh-tix__label { display: none !important; }
+.ghd-page .gh-tix__gets {
+  margin: 2px 0 0;
+  gap: 6px;
+}
+.ghd-page .gh-tix__gets li {
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  color: #4a5560 !important;
+  font-weight: 400 !important;
+}
+.ghd-page .gh-tix__when {
+  margin: 2px 0 0 !important;
+  font-size: 13px !important;
   line-height: 1.6 !important;
+  color: #6b7280 !important;
+}
+.ghd-page .gh-tix__more {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 700;
+  color: #141414;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.ghd-page .gh-tix__more:hover {
+  color: #75613d;
+  border-bottom-color: #75613d;
+}
+.ghd-page .gh-tix__media {
+  position: relative;
+  flex: 0 0 210px;
+  height: 210px;
+  aspect-ratio: auto !important;
+  overflow: hidden;
+  background: #ebe6dc;
+}
+.ghd-page .gh-tix__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  object-position: center;
+  background: transparent !important;
+  transform: scale(1);
+  transition: transform 0.55s ease;
+}
+.ghd-page .gh-tix:hover .gh-tix__media img {
+  transform: scale(1.08);
+}
+.ghd-page .gh-tix__details,
+.ghd-page .gh-tix__toggle,
+.ghd-page .gh-tix__book,
+.ghd-page .gh-tix__panel {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  .ghd-page .gh-tix { min-height: 0; }
+  .ghd-page .gh-tix__media {
+    flex-basis: 180px;
+    height: 180px;
+  }
 }
 </style>
 </head>
@@ -3499,9 +3621,6 @@ document.addEventListener('keydown', function(e) {
       '<article class="gh-tix" data-gh-tix="' +
       escapeHtml(item.id) +
       '">' +
-      '<div class="gh-tix__media">' +
-      media +
-      '</div>' +
       '<div class="gh-tix__body">' +
       '<h3 class="gh-tix__name">' +
       escapeHtml(item.name) +
@@ -3509,26 +3628,46 @@ document.addEventListener('keydown', function(e) {
       '<p class="gh-tix__promise">' +
       escapeHtml(item.promise) +
       '</p>' +
-      '<p class="gh-tix__label">ماذا تحصل عليه</p>' +
       listHtml(item.gets, 'gh-tix__gets') +
-      '<p class="gh-tix__label">متى تحتاجها</p>' +
       '<p class="gh-tix__when">' +
       escapeHtml(item.when) +
       '</p>' +
-      '<details class="gh-tix__details">' +
-      '<summary class="gh-tix__toggle">التفاصيل</summary>' +
-      '<div class="gh-tix__panel">' +
-      '<p class="gh-tix__label">ماذا تشمل الخدمة بالتفصيل</p>' +
-      listHtml(item.detailPoints, 'gh-tix__detail-list') +
-      '<a class="gh-tix__book" href="' +
+      '<a class="gh-tix__more" href="' +
       escapeHtml(item.detailHref || 'Packages.html#ghd-extras') +
-      '">' +
-      escapeHtml(item.name) +
-      '</a>' +
-      '<a class="gh-tix__book" href="contact-us.html?intent=session">احجز جلسة</a>' +
-      '</div></details>' +
-      '</div></article>'
+      '">التفاصيل</a>' +
+      '</div>' +
+      '<div class="gh-tix__media">' +
+      media +
+      '</div>' +
+      '</article>'
     );
+  }
+
+  function revealTickets(grid) {
+    if (!grid) return;
+    var cards = grid.querySelectorAll('.gh-tix');
+    var reduce =
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || typeof IntersectionObserver !== 'function') {
+      cards.forEach(function (card) {
+        card.classList.add('is-visible');
+      });
+      return;
+    }
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.18, rootMargin: '0px 0px -36px 0px' }
+    );
+    cards.forEach(function (card, i) {
+      card.style.transitionDelay = i * 0.12 + 's';
+      io.observe(card);
+    });
   }
 
   function fillAtelierEntry() {
@@ -3577,6 +3716,7 @@ document.addEventListener('keydown', function(e) {
     list.replaceWith(grid);
     var oldCta = host.querySelector('.ghd-extras-cta');
     if (oldCta) oldCta.remove();
+    revealTickets(grid);
     fillAtelierEntry();
     return true;
   }
