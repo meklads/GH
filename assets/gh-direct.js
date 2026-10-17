@@ -1657,7 +1657,7 @@
     host.innerHTML =
       '<div class="ghd-meeting-copy">' +
       '<p class="ghd-meeting-kicker">' +
-      escapeHtml(lang === 'ar' ? 'مهرب سريع' : 'Quick escape') +
+      escapeHtml(lang === 'ar' ? 'توجيه الباقة' : 'Package guidance') +
       '</p>' +
       '<h2 id="ghd-meeting-title">' +
       escapeHtml(ui.meetingTitle) +
