@@ -6,12 +6,18 @@
 export const WHATSAPP = '966502786513';
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP}`;
 export const PHONE_DISPLAY = '+966 50 278 6513';
+export const PHONES = {
+  sa: { display: '+966 50 278 6513', wa: '966502786513', label: { ar: 'السعودية · جدة', en: 'Saudi · Jeddah' } },
+  om: { display: '+968 9132 6735', wa: '96891326735', label: { ar: 'عُمان', en: 'Oman' } },
+  bh: { display: '+973 3215 0369', wa: '97332150369', label: { ar: 'البحرين', en: 'Bahrain' } },
+};
 export const EMAIL = 'info@3dgraphicshouse.com';
+export const RESPONSE_SLA = { ar: 'نرد خلال يوم عمل واحد', en: 'We reply within one business day' };
 
 export const SITE = {
  company: {
- ar: 'Graphics House (جرافيكs هاوس) — استوديو B2B للإظهار المعماري والمجسمات والتجارب التفاعلية للمطورين العقاريين والمؤسسات في السعودية والخليج.',
- en: 'Graphics House — a GCC B2B studio for architectural visualization, smart maquettes, interactive experiences, and launch systems for real estate developers and institutions.',
+ ar: 'Graphics House (جرافيكس هاوس): استوديو إطلاق بصري B2B للمطورين العقاريين والمؤسسات في السعودية والخليج. مجسمات ذكية، CGI سينمائي، تجارب تفاعلية، وأنظمة إطلاق متكاملة من جدة.',
+ en: 'Graphics House is a B2B visual launch studio for real estate developers and institutions across the Gulf. Smart maquettes, cinematic CGI, interactive experiences, and connected launch systems from Jeddah.',
  },
  contact: {
  phone: PHONE_DISPLAY,
@@ -19,18 +25,53 @@ export const SITE = {
  email: EMAIL,
  hq: { ar: 'جدة، المملكة العربية السعودية', en: 'Jeddah, Saudi Arabia' },
  branches: [
- { ar: 'جدة — المركز الرئيسي', en: 'Jeddah — Head office' },
+ { ar: 'جدة: المركز الرئيسي', en: 'Jeddah: Head office' },
  { ar: 'مسقط، سلطنة عمان', en: 'Muscat, Oman' },
  { ar: 'المنامة، مملكة البحرين', en: 'Manama, Bahrain' },
+ ],
+ responseSla: RESPONSE_SLA,
+ },
+ packages: {
+ name: { ar: 'باقات GH Direct', en: 'GH Direct Packages' },
+ url: { ar: '/Packages.html', en: '/Packages-en.html' },
+ lead: {
+ ar: 'ثلاث باقات حسب مرحلة المشروع. التسعير بعرض سعر بعد الاجتماع، دون دفع إلكتروني.',
+ en: 'Three packages by project stage. Pricing by quote after the meeting. No online checkout.',
+ },
+ tiers: [
+ {
+ id: 'basic',
+ name: { ar: 'باقة التعريف', en: 'Basic Package' },
+ stage: { ar: 'قبل الطرح', en: 'Pre-launch' },
+ },
+ {
+ id: 'launch',
+ name: { ar: 'باقة البيع المبكر', en: 'Early Sales Package' },
+ stage: { ar: 'أثناء البناء', en: 'During construction' },
+ },
+ {
+ id: 'growth',
+ name: { ar: 'باقة الإطلاق الكامل', en: 'Full Launch Package' },
+ stage: { ar: 'بعد الإنجاز', en: 'After completion' },
+ },
  ],
  },
  products: [
  {
+ id: 'brandscale',
+ name: 'BrandScale™',
+ desc: {
+ ar: 'نظام نمو العلامة: يثبت الهوية والحضور البصري قبل الطرح.',
+ en: 'Brand growth system: locks identity and market position before launch.',
+ },
+ url: { ar: '/solutions/brand-scale.html', en: '/solutions/brand-scale-en.html' },
+ },
+ {
  id: 'projectlaunch',
  name: 'ProjectLaunch™',
  desc: {
- ar: 'نظام إطلاق مشروع عقاري off-plan — CGI + مجسم + جاليري + تفاعلي + ميديا في مسار واحد.',
- en: 'Off-plan real estate launch system — CGI + maquette + gallery + interactive + media in one path.',
+ ar: 'نظام إطلاق على الخارطة: رندرات، فيلم، صالة بيع، ومحتوى إطلاق من موجز واحد.',
+ en: 'Off-plan launch system: renders, film, sales gallery, and launch content from one brief.',
  },
  url: { ar: '/solutions/project-launch.html', en: '/solutions/project-launch-en.html' },
  },
@@ -38,26 +79,17 @@ export const SITE = {
  id: 'growthlaunch',
  name: 'GrowthLaunch™',
  desc: {
- ar: 'نمو المبيعات البصرية — أصول متجددة للحملات والمعارض والقنوات الرقمية.',
- en: 'Visual sales growth — renewable assets for campaigns, exhibitions, and digital channels.',
+ ar: 'نظام تمكين البيع: صفحة هبوط، مسار استفسار، واتساب، وتتبع.',
+ en: 'Sales enablement system: landing experience, inquiry path, WhatsApp, and tracking.',
  },
  url: { ar: '/solutions/growth-launch.html', en: '/solutions/growth-launch-en.html' },
- },
- {
- id: 'brandscale',
- name: 'BrandScale™',
- desc: {
- ar: 'هوية بصرية على نطاق واسع — للمطورين والمحافظ العقارية متعددة المشاريع.',
- en: 'Brand at scale — for developers and multi-project real estate portfolios.',
- },
- url: { ar: '/solutions/brand-scale.html', en: '/solutions/brand-scale-en.html' },
  },
  {
  id: 'institutional',
  name: 'Institutional Events',
  desc: {
- ar: 'فعاليات ومعارض مؤسسية — مجسمات، أفلام، بيئات عرض، وتجارب تفاعلية للمنتديات والمؤسسات.',
- en: 'Institutional events & exhibitions — maquettes, films, display environments, and interactive experiences.',
+ ar: 'فعاليات ومعارض مؤسسية: مجسمات، أفلام، بيئات عرض، وتجارب تفاعلية للمنتديات والمؤسسات.',
+ en: 'Institutional events and exhibitions: maquettes, films, display environments, and interactive experiences.',
  },
  url: { ar: '/solutions/institutional-events.html', en: '/solutions/institutional-events-en.html' },
  },
@@ -65,8 +97,8 @@ export const SITE = {
  id: 'partner',
  name: 'Agency Partner Network™',
  desc: {
- ar: 'شراكة B2B للوكالات — CGI ومجسمات وتفاعلي كطبقة إنتاج white-label.',
- en: 'B2B agency partnership — CGI, maquettes, and interactive as a white-label production layer.',
+ ar: 'شراكة B2B للوكالات: CGI ومجسمات وتفاعلي كطبقة إنتاج white-label.',
+ en: 'B2B agency partnership: CGI, maquettes, and interactive as a white-label production layer.',
  },
  url: { ar: '/partner-network.html', en: '/partner-network-en.html' },
  },
@@ -168,12 +200,14 @@ export const KEYWORDS = {
  human: HUMAN_KEYWORDS.ar,
  greeting: ['سلام', 'السلام', 'عليكم', 'مرحب', 'أهلا', 'اهلا', 'هلا', 'صباح', 'مساء', 'hello', 'hi', 'hey', 'good morning', 'good evening'],
  services: ['خدمات', 'خدمة', 'تقدمون', 'cgi', 'سينمائي', 'إظهار', 'تصور', 'ماذا تقدم'],
- quote: ['سعر', 'عرض', 'تكلفة', 'كم', 'ميزانية', 'تسعير', 'quotation'],
+ quote: ['سعر', 'عرض سعر', 'تكلفة', 'بكم', 'ميزانية', 'تسعير', 'quotation', 'كم السعر'],
+ packages: ['باقة', 'باقات', 'packages', 'package', 'gh direct', 'direct'],
+ session: ['جلسة', 'احجز', 'موعد', 'book a session', 'meeting'],
  contact: ['اتصال', 'تواصل', 'رقم', 'جوال', 'ايميل', 'بريد'],
  whatsapp: ['واتس', 'whatsapp', 'واتساب'],
  maquette: ['مجسم', 'مقياس', 'ماكيت', 'maquette', 'model', 'مجسمات'],
  clients: ['عميل', 'عملاء', 'شركات', 'الراجحي', 'رفال', 'عنان', 'portfolio', 'أعمال', 'من عمل'],
- projects: ['مشروع', 'مشاريع', 'case', 'دراسة', 'نجاح', 'سابق', 'نفذتم', 'عملتم'],
+ projects: ['مشاريع', 'case', 'دراسة', 'نجاح', 'سابق', 'نفذتم', 'عملتم'],
  location: ['فرع', 'موقع', 'عنوان', 'مكتب', 'جدة', 'مسقط', 'منامة', 'فروع'],
  launch: ['launch', 'إطلاق', 'projectlaunch', 'growthlaunch', 'brandscale', 'منتج', 'نظام'],
  partner: ['شريك', 'وكالة', 'agency', 'partner', 'white label'],
@@ -185,13 +219,15 @@ export const KEYWORDS = {
  en: {
  human: HUMAN_KEYWORDS.en,
  greeting: ['hello', 'hi', 'hey', 'good morning', 'good evening', 'good afternoon', 'howdy', 'salam', 'assalam', 'سلام', 'مرحب', 'أهلا', 'هلا'],
- services: ['service', 'cgi', 'render', 'visualization', 'visualisation', 'animation', 'what do you offer'],
- quote: ['quote', 'price', 'cost', 'pricing', 'budget', 'estimate', 'how much'],
+ services: ['service', 'cgi', 'render', 'visualization', 'visualisation', 'animation', 'what do you offer', 'capabilities'],
+ quote: ['quote', 'price', 'cost', 'pricing', 'budget', 'estimate', 'how much', 'quotation'],
+ packages: ['package', 'packages', 'gh direct', 'pricing package', 'stage package'],
+ session: ['book a session', 'book session', 'meeting', 'schedule', 'appointment'],
  contact: ['contact', 'email', 'phone', 'call', 'reach'],
  whatsapp: ['whatsapp', 'wa.me'],
  maquette: ['maquette', 'model', 'physical', 'scale model', 'maquettes'],
  clients: ['client', 'clients', 'portfolio', 'al rajhi', 'raffal', 'anan', 'toyota', 'who do you work'],
- projects: ['project', 'case study', 'work', 'delivered', 'past', 'success', 'examples'],
+ projects: ['projects', 'case study', 'past work', 'delivered', 'examples', 'reference'],
  location: ['branch', 'office', 'location', 'address', 'jeddah', 'muscat', 'manama', 'branches'],
  launch: ['launch', 'projectlaunch', 'growthlaunch', 'brandscale', 'off-plan', 'offplan', 'system'],
  partner: ['partner', 'agency', 'white-label', 'whitelabel'],
@@ -203,30 +239,41 @@ export const KEYWORDS = {
 };
 
 export const PAGE_CONTEXT = [
- { match: /project-launch|growth-launch|brand-scale|institutional-events/i, intent: 'launch', quick: ['launch', 'projects', 'quote', 'human'] },
+ { match: /Packages(-en)?\.html/i, intent: 'packages', quick: ['packages', 'quote', 'session', 'human'] },
+ { match: /project-launch|growth-launch|brand-scale|institutional-events/i, intent: 'launch', quick: ['launch', 'packages', 'quote', 'human'] },
  { match: /partner-network/i, intent: 'partner', quick: ['partner', 'quote', 'human'] },
  { match: /portfolio|case-study|casestudy/i, intent: 'projects', quick: ['projects', 'clients', 'quote'] },
  { match: /insights\//i, intent: 'insights', quick: ['insights', 'projects', 'quote'] },
  { match: /services\/maquettes|smart-maquettes|scale-models/i, intent: 'maquette', quick: ['maquette', 'projects', 'quote'] },
- { match: /services\//i, intent: 'services', quick: ['services', 'quote', 'human'] },
+ { match: /contact-us/i, intent: 'session', quick: ['session', 'quote', 'packages', 'human'] },
+ { match: /services\//i, intent: 'services', quick: ['services', 'packages', 'quote', 'human'] },
 ];
 
 export function getSystemContext(lang) {
  const L = lang === 'ar' ? 'ar' : 'en';
+ const pkg = SITE.packages;
  const lines = [
  SITE.company[L],
  '',
  'CONTACT:',
- `WhatsApp: ${WHATSAPP_LINK}`,
- `Phone: ${PHONE_DISPLAY}`,
+ `WhatsApp (primary): ${WHATSAPP_LINK}`,
+ `Saudi: ${PHONES.sa.display}`,
+ `Oman: ${PHONES.om.display}`,
+ `Bahrain: ${PHONES.bh.display}`,
  `Email: ${EMAIL}`,
  `HQ: ${SITE.contact.hq[L]}`,
+ `Response SLA: ${RESPONSE_SLA[L]}`,
+ '',
+ 'GH DIRECT PACKAGES:',
+ pkg.lead[L],
+ ...pkg.tiers.map((t) => `- ${t.name[L]} (${t.stage[L]})`),
+ `Page: ${pkg.url[L]}`,
  '',
  'LAUNCH PRODUCTS:',
- ...SITE.products.map((p) => `- ${p.name}: ${p.desc[L]}`),
+ ...SITE.products.map((p) => `- ${p.name}: ${p.desc[L]} (${p.url[L]})`),
  '',
  'SERVICES:',
- ...SITE.services.map((s) => `- ${s.name[L]}`),
+ ...SITE.services.map((s) => `- ${s.name[L]} (${s.url[L]})`),
  '',
  'KEY CLIENTS:',
  SITE.clients.map((c) => c[L]).join(', '),
@@ -236,8 +283,24 @@ export function getSystemContext(lang) {
  '',
  'RULES:',
  L === 'ar'
- ? 'أجب باختصار (3-6 جمل). لا تختلق أسعاراً. إذا طلب الزائر التحدث مع إنسان/موظف، وجّهه فوراً للواتساب. استخدم HTML بسيط (<strong>, <br>) عند الحاجة.'
- : 'Reply briefly (3-6 sentences). Never invent prices. If the visitor asks for a human/agent, direct them to WhatsApp immediately. Use simple HTML when helpful.',
+ ? [
+     'أجب باختصار (3-6 جمل) بلغة بشرية مباشرة.',
+     'لا تستخدم الشرطة الطويلة (—). استخدم نقطة أو فاصلة.',
+     'لا تختلق أسعاراً أو أرقاماً. التسعير بعد الاجتماع فقط.',
+     'إذا سأل عن الباقات: اشرح المراحل الثلاث ووجّه إلى /Packages.html.',
+     'إذا طلب التحدث مع الفريق: اعرض واتساب + نموذج استفسار + اترك رقمك، ولا تفتح واتساب تلقائياً.',
+     'شجّع حجز جلسة إطلاق عند الجاهزية.',
+     'يمكنك استخدام HTML بسيط: <strong> <br> <a>.',
+   ].join(' ')
+ : [
+     'Reply briefly (3-6 sentences) in clear, natural English.',
+     'Never use em dashes. Prefer periods or commas.',
+     'Never invent prices or metrics. Pricing is confirmed after the meeting only.',
+     'If asked about packages: explain the three stages and link /Packages-en.html.',
+     'If they want a human: offer WhatsApp, the enquiry form, and leave-your-number. Never auto-open WhatsApp.',
+     'Encourage booking a launch session when they are ready.',
+     'Simple HTML is allowed: <strong> <br> <a>.',
+   ].join(' '),
  ];
  return lines.join('\n');
 }

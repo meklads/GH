@@ -47,8 +47,18 @@ export const LEXICON = {
  },
  quote: {
  weight: 1.3,
- ar: ['سعر', 'عرض سعر', 'تكلفة', 'كم', 'بكم', 'ميزانية', 'budget', 'quotation', 'quote', 'تسعير', 'offer'],
+ ar: ['سعر', 'عرض سعر', 'تكلفة', 'بكم', 'ميزانية', 'budget', 'quotation', 'quote', 'تسعير', 'كم السعر', 'كم يكلف'],
  en: ['quote', 'price', 'cost', 'pricing', 'budget', 'estimate', 'how much', 'quotation'],
+ },
+ packages: {
+ weight: 1.45,
+ ar: ['باقة', 'باقات', 'package', 'packages', 'gh direct', 'direct', 'باقه'],
+ en: ['package', 'packages', 'gh direct', 'pricing package', 'stage package', 'basic package', 'early sales'],
+ },
+ session: {
+ weight: 1.25,
+ ar: ['جلسة', 'احجز جلسة', 'موعد', 'اجتماع', 'book', 'session'],
+ en: ['book a session', 'book session', 'launch session', 'meeting', 'schedule a call', 'appointment'],
  },
  contact: {
  weight: 1,
@@ -196,11 +206,11 @@ export function analyzeMessage(message, lang, page) {
  const scores = {};
 
  if (isGreeting(message)) {
- return { intent: 'greeting', scores: { greeting: 10 }, projectSignal: false };
+ return { intent: 'greeting', scores: { greeting: 10 }, bestScore: 10, projectSignal: false };
  }
 
  if (isHumanRequest(text, lang)) {
- return { intent: 'human', scores: { human: 10 }, projectSignal: false };
+ return { intent: 'human', scores: { human: 10 }, bestScore: 10, projectSignal: false };
  }
 
  for (const [intent, entry] of Object.entries(LEXICON)) {
@@ -236,6 +246,12 @@ export function analyzeMessage(message, lang, page) {
  // Boost quote when price words appear
  if (scores.quote) scores.quote += 1;
 
+ // Packages beats generic "offer/services" when package words are present
+ if (scores.packages && scores.packages >= 2) {
+ scores.packages += 2;
+ if (scores.quote) scores.quote *= 0.6;
+ }
+
  let best = null;
  let bestScore = 0;
  for (const [intent, s] of Object.entries(scores)) {
@@ -250,6 +266,7 @@ export function analyzeMessage(message, lang, page) {
  for (const ctx of PAGE_CONTEXT) {
  if (ctx.match.test(page)) {
  best = ctx.intent;
+ bestScore = 1;
  break;
  }
  }
@@ -259,6 +276,7 @@ export function analyzeMessage(message, lang, page) {
  return {
  intent: best || 'fallback',
  scores,
+ bestScore,
  projectSignal,
  };
 }
@@ -271,36 +289,40 @@ export function quickRepliesForIntent(intent, lang, page) {
  const isAr = lang === 'ar';
  const base = isAr
  ? [
+ { id: 'packages', label: 'الباقات' },
  { id: 'services', label: 'خدمات' },
  { id: 'projects', label: 'مشاريع' },
+ { id: 'session', label: 'احجز جلسة' },
  { id: 'quote', label: 'عرض سعر' },
- { id: 'launch', label: 'Launch™' },
  { id: 'human', label: '💬 تحدث مع فريقنا' },
  ]
  : [
+ { id: 'packages', label: 'Packages' },
  { id: 'services', label: 'Services' },
  { id: 'projects', label: 'Projects' },
- { id: 'quote', label: 'Get a Quote' },
- { id: 'launch', label: 'Launch™' },
+ { id: 'session', label: 'Book a session' },
+ { id: 'quote', label: 'Get a quote' },
  { id: 'human', label: '💬 Talk to our team' },
  ];
 
  const byIntent = {
- cgi: ['quote', 'cgi', 'projects', 'human'],
- project_cgi: ['quote', 'cgi', 'human'],
+ cgi: ['quote', 'cgi', 'packages', 'human'],
+ project_cgi: ['quote', 'cgi', 'session', 'human'],
  production: ['quote', 'production', 'cgi', 'human'],
- project_production: ['quote', 'production', 'human'],
- rendering: ['quote', 'rendering', 'projects', 'human'],
- project_rendering: ['quote', 'rendering', 'human'],
- maquette: ['quote', 'maquette', 'projects', 'human'],
- project_maquette: ['quote', 'maquette', 'human'],
- interactive: ['quote', 'interactive', 'projects', 'human'],
- galleries: ['quote', 'galleries', 'human'],
- launch: ['launch', 'quote', 'projects', 'human'],
- quote: ['quote', 'human', 'services'],
- project_inquiry: ['quote', 'services', 'human'],
- human: ['human', 'quote', 'services'],
- fallback: ['services', 'quote', 'projects', 'human'],
+ project_production: ['quote', 'production', 'session', 'human'],
+ rendering: ['quote', 'rendering', 'packages', 'human'],
+ project_rendering: ['quote', 'rendering', 'session', 'human'],
+ maquette: ['quote', 'maquette', 'packages', 'human'],
+ project_maquette: ['quote', 'maquette', 'session', 'human'],
+ interactive: ['quote', 'interactive', 'packages', 'human'],
+ galleries: ['quote', 'galleries', 'session', 'human'],
+ launch: ['launch', 'packages', 'quote', 'session'],
+ packages: ['packages', 'session', 'quote', 'human'],
+ session: ['session', 'packages', 'quote', 'human'],
+ quote: ['quote', 'session', 'packages', 'human'],
+ project_inquiry: ['session', 'packages', 'quote', 'human'],
+ human: ['human', 'session', 'packages', 'quote'],
+ fallback: ['packages', 'services', 'session', 'human'],
  };
 
  const ids = byIntent[intent] || null;
@@ -308,12 +330,14 @@ export function quickRepliesForIntent(intent, lang, page) {
  const labels = {
  ar: {
  services: 'خدمات', projects: 'مشاريع', quote: 'عرض سعر', launch: 'Launch™',
+ packages: 'الباقات', session: 'احجز جلسة',
  human: '💬 تحدث مع فريقنا', cgi: 'فيديو / CGI', production: 'ميديا برودكشن',
  rendering: 'إظهار معماري', maquette: 'مجسمات', interactive: 'تفاعلي',
  galleries: 'جاليريات',
  },
  en: {
- services: 'Services', projects: 'Projects', quote: 'Get a Quote', launch: 'Launch™',
+ services: 'Services', projects: 'Projects', quote: 'Get a quote', launch: 'Launch™',
+ packages: 'Packages', session: 'Book a session',
  human: '💬 Talk to our team', cgi: 'Video / CGI', production: 'Media production',
  rendering: 'Archviz', maquette: 'Maquettes', interactive: 'Interactive',
  galleries: 'Galleries',

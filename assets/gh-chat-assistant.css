@@ -181,6 +181,115 @@ html[dir="rtl"] #ghChatPanel.gh-chat-panel {
   30% { opacity: 1; transform: translateY(-3px); }
 }
 
+.gh-chat-lead {
+  padding: 10px 16px 8px;
+  border-top: 1px solid rgba(201, 168, 76, 0.12);
+  background: rgba(201, 168, 76, 0.05);
+  flex-shrink: 0;
+}
+
+.gh-chat-lead[hidden] {
+  display: none !important;
+}
+
+.gh-chat-lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gh-chat-lead-title {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(250, 250, 248, 0.85);
+}
+
+.gh-chat-lead-form input[type="text"],
+.gh-chat-lead-form input[type="tel"] {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 13px;
+  color: #fafaf8;
+  outline: none;
+  font-family: inherit;
+}
+
+.gh-chat-lead-form input:focus {
+  border-color: rgba(201, 168, 76, 0.45);
+}
+
+.gh-chat-honey {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.gh-chat-turnstile {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.gh-chat-lead-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.gh-chat-lead-submit {
+  flex: 1;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  color: #0e0e0e;
+  background: linear-gradient(135deg, #c9a84c, #b8943f);
+}
+
+.gh-chat-lead-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.gh-chat-lead-cancel {
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  color: rgba(255, 255, 255, 0.65);
+  background: transparent;
+}
+
+.gh-chat-lead-status {
+  margin: 0;
+  font-size: 12px;
+  color: #e8c547;
+}
+
+.gh-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .gh-chat-quick {
   display: flex;
   flex-wrap: wrap;

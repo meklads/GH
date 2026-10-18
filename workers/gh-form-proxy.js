@@ -557,6 +557,7 @@ async function handleForm(body, env, cors, request) {
   const allowPersonalEmail =
     body?.source === 'ads' ||
     body?.source === 'float' ||
+    body?.source === 'chat' ||
     body?.source === 'partner' ||
     body?.source === 'collaborator' ||
     body?.source === 'gh-direct' ||
@@ -641,21 +642,46 @@ async function handleForm(body, env, cors, request) {
   return json(data, ok ? 200 : 502, cors);
 }
 
+function appendConnectCta(reply, lang) {
+  const isAr = lang === 'ar';
+  const cta = isAr
+    ? '<br><br><a href="#" data-gh-chat-action="open-form">📝 نموذج استفسار</a> · <a href="#" data-gh-chat-action="whatsapp">💬 واتساب</a> · <a href="#" data-gh-chat-action="lead-capture">📞 اترك رقمك</a>'
+    : '<br><br><a href="#" data-gh-chat-action="open-form">📝 Enquiry form</a> · <a href="#" data-gh-chat-action="whatsapp">💬 WhatsApp</a> · <a href="#" data-gh-chat-action="lead-capture">📞 Leave your number</a>';
+  if (/data-gh-chat-action/.test(reply || '')) return reply;
+  return String(reply || '') + cta;
+}
+
 async function handleChat(body, env, cors) {
   const result = handleChatMessage(body || {});
 
-  const skipAi = !body.message || body.message === '__init__' || result.intent === 'human' || result.intent === 'whatsapp';
+  const skipAi =
+    !body.message ||
+    body.message === '__init__' ||
+    result.intent === 'human' ||
+    result.intent === 'whatsapp' ||
+    result.intent === 'packages' ||
+    result.intent === 'session' ||
+    result.intent === 'quote' ||
+    result.intent === 'launch' ||
+    result.intent === 'welcome' ||
+    result.intent === 'greeting' ||
+    String(result.intent || '').startsWith('project_') ||
+    (result.bestScore || 0) >= 2.5;
 
-  if (env.OPENROUTER_API_KEY && !skipAi) {
+  // AI only for ambiguous / fallback free-text — keep structured KB answers intact
+  if (env.OPENROUTER_API_KEY && !skipAi && (result.intent === 'fallback' || (result.bestScore || 0) < 2.5)) {
     try {
       const aiReply = await callOpenRouterChat(body, env);
       if (aiReply) {
+        const lang = body.lang === 'ar' ? 'ar' : 'en';
         return json(
           {
             success: true,
-            reply: aiReply,
-            intent: result.intent,
+            reply: appendConnectCta(aiReply.replace(/\u2014/g, ',').replace(/\u2013/g, '-'), lang),
+            intent: result.intent || 'fallback',
             quickReplies: result.quickReplies,
+            askLead: true,
+            openWhatsApp: false,
             source: 'ai',
           },
           200,
@@ -678,7 +704,7 @@ async function callOpenRouterChat(body, env) {
   const system = getSystemContext(lang);
 
   const messages = [{ role: 'system', content: system }];
-  (body.history || []).slice(-4).forEach((m) => {
+  (body.history || []).slice(-6).forEach((m) => {
     messages.push({
       role: m.role === 'user' ? 'user' : 'assistant',
       content: String(m.text || '').replace(/<[^>]+>/g, ' '),
@@ -697,8 +723,8 @@ async function callOpenRouterChat(body, env) {
     body: JSON.stringify({
       model: env.OPENROUTER_CHAT_MODEL || 'deepseek/deepseek-chat',
       messages,
-      max_tokens: 280,
-      temperature: 0.4,
+      max_tokens: 320,
+      temperature: 0.35,
     }),
   });
 

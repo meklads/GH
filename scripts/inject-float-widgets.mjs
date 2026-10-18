@@ -25,9 +25,9 @@ const SKIP = new Set([
 ]);
 
 const FLOAT_VERSION = 15;
-const CHAT_VERSION = 10;
-const KB_VERSION = 3;
-const MATCHER_VERSION = 1;
+const CHAT_VERSION = 11;
+const KB_VERSION = 4;
+const MATCHER_VERSION = 2;
 
 const HOMEPAGE_SKIP_REPLACE = new Set([]);
 

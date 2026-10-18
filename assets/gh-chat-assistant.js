@@ -2,7 +2,7 @@
   'use strict';
 
   var STORAGE_KEY = 'ghChatSession';
-  var CHAT_VERSION = 1;
+  var CHAT_VERSION = 2;
 
   var isAr = (document.documentElement.lang || '').toLowerCase() === 'ar'
     || document.documentElement.dir === 'rtl';
@@ -15,9 +15,23 @@
     return 'assets/chatbot-motif.png';
   })();
 
+  var leadWidgetId = null;
+  var lastIntent = '';
+
   function chatEndpoint() {
     return (window.GH_FORMS && window.GH_FORMS.chatEndpoint)
       || 'https://3dgraphicshouse.com/api/chat';
+  }
+
+  function formEndpoint() {
+    return (window.GH_FORMS && window.GH_FORMS.formEndpoint)
+      || 'https://3dgraphicshouse.com/api/form';
+  }
+
+  function turnstileKey() {
+    return (window.GH_FORMS && window.GH_FORMS.turnstileSiteKey)
+      || (window.GH_QUOTE_FORM && window.GH_QUOTE_FORM.turnstileSiteKey)
+      || '';
   }
 
   function track(event, params) {
@@ -72,6 +86,10 @@
     var panel = getPanel();
     return panel ? panel.querySelector('#ghChatSend') : null;
   }
+  function getLeadSlot() {
+    var panel = getPanel();
+    return panel ? panel.querySelector('#ghChatLead') : null;
+  }
 
   function loadSession() {
     try {
@@ -91,6 +109,50 @@
     } catch (e) { /* ignore */ }
   }
 
+  function conversationPrefill() {
+    var session = loadSession();
+    var bits = [];
+    (session.messages || []).slice(-6).forEach(function (m) {
+      var t = String(m.text || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+      if (t) bits.push((m.role === 'user' ? 'Visitor' : 'Assistant') + ': ' + t.slice(0, 120));
+    });
+    if (lastIntent) bits.push('Intent: ' + lastIntent);
+    bits.push('Page: ' + location.pathname);
+    return bits.join('\n');
+  }
+
+  function openWhatsApp() {
+    var base =
+      isAr
+        ? 'مرحباً، أود التحدث مع أحد ممثلي Graphics House حول مشروعي.'
+        : 'Hello, I would like to speak with a Graphics House representative about my project.';
+    var ctx = conversationPrefill();
+    var msg = encodeURIComponent(base + (ctx ? '\n\n---\n' + ctx.slice(0, 800) : ''));
+    var url = (window.GH_CHAT_KB && window.GH_CHAT_KB.whatsappLink) || 'https://wa.me/966502786513';
+    window.open(url + '?text=' + msg, '_blank', 'noopener,noreferrer');
+    track('assistant_lead_cta', { action: 'whatsapp' });
+  }
+
+  function defaultQuickReplies() {
+    return isAr
+      ? [
+          { id: 'packages', label: 'الباقات' },
+          { id: 'services', label: 'خدمات' },
+          { id: 'session', label: 'احجز جلسة' },
+          { id: 'quote', label: 'عرض سعر' },
+          { id: 'projects', label: 'مشاريع' },
+          { id: 'human', label: '💬 تحدث مع فريقنا' },
+        ]
+      : [
+          { id: 'packages', label: 'Packages' },
+          { id: 'services', label: 'Services' },
+          { id: 'session', label: 'Book a session' },
+          { id: 'quote', label: 'Get a quote' },
+          { id: 'projects', label: 'Projects' },
+          { id: 'human', label: '💬 Talk to our team' },
+        ];
+  }
+
   function renderQuickReplies(items) {
     var quick = getQuick();
     if (!quick) return;
@@ -106,37 +168,6 @@
       });
       quick.appendChild(btn);
     });
-  }
-
-  function openWhatsApp() {
-    var msg = encodeURIComponent(
-      isAr
-        ? 'مرحباً، أود التحدث مع أحد ممثلي Graphics House'
-        : 'Hello, I would like to speak with a Graphics House representative'
-    );
-    var url = (window.GH_CHAT_KB && window.GH_CHAT_KB.whatsappLink) || 'https://wa.me/966502786513';
-    window.open(url + '?text=' + msg, '_blank', 'noopener,noreferrer');
-    track('assistant_lead_cta', { action: 'whatsapp' });
-  }
-
-  function defaultQuickReplies() {
-    return isAr
-      ? [
-          { id: 'services', label: 'خدمات' },
-          { id: 'projects', label: 'مشاريع' },
-          { id: 'clients', label: 'عملاؤنا' },
-          { id: 'quote', label: 'عرض سعر' },
-          { id: 'launch', label: 'Launch™' },
-          { id: 'human', label: '💬 تحدث مع فريقنا' },
-        ]
-      : [
-          { id: 'services', label: 'Services' },
-          { id: 'projects', label: 'Projects' },
-          { id: 'clients', label: 'Our Clients' },
-          { id: 'quote', label: 'Get a Quote' },
-          { id: 'launch', label: 'Launch™' },
-          { id: 'human', label: '💬 Talk to our team' },
-        ];
   }
 
   function appendMessage(text, isUser, skipSave) {
@@ -185,6 +216,233 @@
         openWhatsApp();
       });
     });
+    root.querySelectorAll('[data-gh-chat-action="lead-capture"]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        showLeadForm(true);
+        track('assistant_lead_cta', { action: 'lead-capture' });
+      });
+    });
+  }
+
+  function loadTurnstile(cb) {
+    if (window.turnstile) {
+      cb();
+      return;
+    }
+    var existing = document.querySelector('script[data-gh-turnstile]');
+    if (existing) {
+      existing.addEventListener('load', cb);
+      return;
+    }
+    var s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    s.async = true;
+    s.dataset.ghTurnstile = '1';
+    s.addEventListener('load', cb);
+    document.head.appendChild(s);
+  }
+
+  function ensureLeadSlot() {
+    var panel = getPanel();
+    if (!panel) return null;
+    var slot = getLeadSlot();
+    if (slot) return slot;
+    slot = document.createElement('div');
+    slot.id = 'ghChatLead';
+    slot.className = 'gh-chat-lead';
+    slot.hidden = true;
+    var quick = getQuick();
+    if (quick && quick.parentNode) {
+      quick.parentNode.insertBefore(slot, quick);
+    } else {
+      var input = panel.querySelector('#ghChatInput');
+      if (input) panel.insertBefore(slot, input);
+      else panel.appendChild(slot);
+    }
+    return slot;
+  }
+
+  function hideLeadForm() {
+    var slot = getLeadSlot();
+    if (slot) {
+      slot.hidden = true;
+      slot.innerHTML = '';
+    }
+    leadWidgetId = null;
+  }
+
+  function showLeadForm(force) {
+    var slot = ensureLeadSlot();
+    if (!slot) return;
+    if (!force && !slot.hidden && slot.querySelector('form')) return;
+
+    slot.hidden = false;
+    slot.innerHTML =
+      '<form class="gh-chat-lead-form" novalidate>' +
+      '<p class="gh-chat-lead-title">' +
+      (isAr ? 'اترك رقمك وسنعاود الاتصال خلال يوم عمل' : 'Leave your number — we reply within one business day') +
+      '</p>' +
+      '<label class="gh-sr-only" for="ghChatLeadName">' +
+      (isAr ? 'الاسم' : 'Name') +
+      '</label>' +
+      '<input id="ghChatLeadName" name="name" type="text" autocomplete="name" required placeholder="' +
+      (isAr ? 'الاسم الكامل' : 'Full name') +
+      '">' +
+      '<label class="gh-sr-only" for="ghChatLeadPhone">' +
+      (isAr ? 'الجوال' : 'Phone') +
+      '</label>' +
+      '<input id="ghChatLeadPhone" name="phone" type="tel" autocomplete="tel" required placeholder="' +
+      (isAr ? 'رقم الجوال' : 'Mobile number') +
+      '">' +
+      '<input type="text" name="botcheck" tabindex="-1" autocomplete="off" class="gh-chat-honey" aria-hidden="true">' +
+      '<div class="gh-chat-turnstile" aria-hidden="true"></div>' +
+      '<div class="gh-chat-lead-actions">' +
+      '<button type="submit" class="gh-chat-lead-submit">' +
+      (isAr ? 'أرسل' : 'Send') +
+      '</button>' +
+      '<button type="button" class="gh-chat-lead-cancel">' +
+      (isAr ? 'إلغاء' : 'Cancel') +
+      '</button>' +
+      '</div>' +
+      '<p class="gh-chat-lead-status" hidden></p>' +
+      '</form>';
+
+    var form = slot.querySelector('form');
+    var cancel = slot.querySelector('.gh-chat-lead-cancel');
+    if (cancel) cancel.addEventListener('click', hideLeadForm);
+    if (form) form.addEventListener('submit', submitLeadForm);
+
+    var key = turnstileKey();
+    var box = slot.querySelector('.gh-chat-turnstile');
+    if (key && box) {
+      loadTurnstile(function () {
+        if (!window.turnstile || !box || box.dataset.rendered === '1') return;
+        try {
+          leadWidgetId = window.turnstile.render(box, {
+            sitekey: key,
+            theme: 'dark',
+            size: 'compact',
+            language: isAr ? 'ar' : 'en',
+          });
+          box.dataset.rendered = '1';
+        } catch (e) { /* ignore */ }
+      });
+    }
+
+    var msgs = getMsgs();
+    if (msgs) msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function leadTurnstileToken() {
+    var key = turnstileKey();
+    if (!key || !window.turnstile || leadWidgetId == null) return '';
+    try {
+      return window.turnstile.getResponse(leadWidgetId) || '';
+    } catch (e) {
+      return '';
+    }
+  }
+
+  function submitLeadForm(e) {
+    e.preventDefault();
+    var form = e.target;
+    var status = form.querySelector('.gh-chat-lead-status');
+    var btn = form.querySelector('.gh-chat-lead-submit');
+    var honey = form.querySelector('input[name="botcheck"]');
+    if (honey && honey.value.trim()) return;
+
+    var name = String(form.querySelector('[name="name"]').value || '').trim();
+    var phone = String(form.querySelector('[name="phone"]').value || '').trim();
+    if (!name || phone.replace(/\D/g, '').length < 8) {
+      if (status) {
+        status.hidden = false;
+        status.textContent = isAr
+          ? 'يرجى إدخال الاسم ورقم جوال صحيح.'
+          : 'Please enter your name and a valid mobile number.';
+      }
+      return;
+    }
+
+    var key = turnstileKey();
+    if (key && !leadTurnstileToken()) {
+      if (status) {
+        status.hidden = false;
+        status.textContent = isAr
+          ? 'يرجى إكمال التحقق الأمني.'
+          : 'Please complete the security check.';
+      }
+      return;
+    }
+
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = isAr ? 'جارٍ الإرسال…' : 'Sending…';
+    }
+
+    var ctx = conversationPrefill();
+    var payload = {
+      subject: isAr
+        ? 'طلب اتصال من مساعد الموقع — Graphics House'
+        : 'Callback request from site assistant — Graphics House',
+      from_name: 'Graphics House Chat Assistant',
+      name: name,
+      phone: phone,
+      // Placeholder for Web3Forms (visitor left phone only)
+      email: 'chat-callback@3dgraphicshouse.com',
+      source: 'chat',
+      page: location.href,
+      intent: lastIntent || '',
+      message:
+        (isAr ? 'طلب معاودة اتصال من المساعد الشخصي.\n\n' : 'Callback request from the personal assistant.\n\n') +
+        'Name: ' + name + '\nPhone: ' + phone + '\nIntent: ' + (lastIntent || '—') +
+        '\nNote: visitor left phone for callback (no personal email).\n\n' + ctx.slice(0, 1200),
+      botcheck: '',
+    };
+    if (key) payload['cf-turnstile-response'] = leadTurnstileToken();
+
+    fetch(formEndpoint(), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(payload),
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = isAr ? 'أرسل' : 'Send';
+        }
+        if (res && res.success) {
+          track('form_submit', { form_name: 'chat_lead', page_path: location.pathname });
+          track('generate_lead', { form_name: 'chat_lead' });
+          hideLeadForm();
+          appendMessage(
+            isAr
+              ? 'شكراً لك. استلمنا رقمك وسيتواصل معك الفريق خلال يوم عمل.'
+              : 'Thank you. We received your number and the team will call within one business day.',
+            false
+          );
+          return;
+        }
+        if (status) {
+          status.hidden = false;
+          status.textContent =
+            (res && res.message) ||
+            (isAr ? 'تعذر الإرسال. جرّب واتساب أو النموذج.' : 'Could not send. Try WhatsApp or the form.');
+        }
+      })
+      .catch(function () {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = isAr ? 'أرسل' : 'Send';
+        }
+        if (status) {
+          status.hidden = false;
+          status.textContent = isAr
+            ? 'تعذر الإرسال. جرّب واتساب.'
+            : 'Could not send. Try WhatsApp.';
+        }
+      });
   }
 
   function showTyping() {
@@ -212,7 +470,29 @@
     }).then(function (r) { return r.json(); });
   }
 
-  function respondWith(payload, userLabel) {
+  function handleReplyResult(res) {
+    if (!res || !res.success || !res.reply) return false;
+    lastIntent = res.intent || '';
+    appendMessage(res.reply, false);
+    if (res.quickReplies && res.quickReplies.length) {
+      renderQuickReplies(res.quickReplies);
+    }
+    track('assistant_message_sent', {
+      intent: res.intent || '',
+      source: res.source || 'kb',
+      page_path: location.pathname,
+    });
+    if (res.intent === 'quote' || res.intent === 'session' || res.intent === 'packages') {
+      track('assistant_lead_cta', { intent: res.intent });
+    }
+    // Never auto-open WhatsApp — visitor chooses the CTA
+    if (res.askLead) {
+      showLeadForm(false);
+    }
+    return true;
+  }
+
+  function respondWith(payload) {
     var typing = showTyping();
     var sendBtn = getSendBtn();
     if (sendBtn) sendBtn.disabled = true;
@@ -221,24 +501,7 @@
       .then(function (res) {
         hideTyping(typing);
         if (sendBtn) sendBtn.disabled = false;
-        if (res && res.success && res.reply) {
-          appendMessage(res.reply, false);
-          if (res.quickReplies && res.quickReplies.length) {
-            renderQuickReplies(res.quickReplies);
-          }
-          track('assistant_message_sent', {
-            intent: res.intent || '',
-            source: res.source || 'kb',
-            page_path: location.pathname,
-          });
-          if (res.intent === 'quote') {
-            track('assistant_lead_cta', { intent: 'quote' });
-          }
-          if (res.openWhatsApp || res.intent === 'human') {
-            setTimeout(openWhatsApp, 600);
-          }
-          return;
-        }
+        if (handleReplyResult(res)) return;
         applyLocalResponse(localRespond(payload));
       })
       .catch(function () {
@@ -249,6 +512,7 @@
   }
 
   function applyLocalResponse(res) {
+    lastIntent = res.intent || '';
     appendMessage(res.reply, false);
     if (res.quickReplies && res.quickReplies.length) {
       renderQuickReplies(res.quickReplies);
@@ -258,11 +522,11 @@
       source: 'local',
       page_path: location.pathname,
     });
-    if (res.intent === 'quote') {
-      track('assistant_lead_cta', { intent: 'quote' });
+    if (res.intent === 'quote' || res.intent === 'session' || res.intent === 'packages') {
+      track('assistant_lead_cta', { intent: res.intent });
     }
-    if (res.openWhatsApp || res.intent === 'human') {
-      setTimeout(openWhatsApp, 600);
+    if (res.askLead) {
+      showLeadForm(false);
     }
   }
 
@@ -285,11 +549,17 @@
     var page = payload.page || location.pathname;
     var matcher = window.GH_CHAT_MATCHER;
     var intent = payload.intent;
+    var analysis = null;
 
     if (!intent || intent === 'fallback') {
-      intent = matcher
-        ? matcher.matchIntent(payload.message || '', lang, page)
-        : 'fallback';
+      if (matcher && typeof matcher.analyzeMessage === 'function') {
+        analysis = matcher.analyzeMessage(payload.message || '', lang, page);
+        intent = analysis.intent;
+      } else if (matcher) {
+        intent = matcher.matchIntent(payload.message || '', lang, page);
+      } else {
+        intent = 'fallback';
+      }
     }
 
     var replyLang = lang;
@@ -301,23 +571,24 @@
       ? matcher.quickRepliesForIntent(intent, lang, page)
       : defaultQuickReplies();
 
+    var askLead = ['quote', 'session', 'human', 'project_inquiry', 'packages'].indexOf(intent) !== -1
+      || String(intent).indexOf('project_') === 0;
+
     return {
       reply: buildLocalReply(intent, replyLang),
       intent: intent,
       quickReplies: quickReplies,
-      openWhatsApp: intent === 'human' || intent === 'whatsapp',
+      askLead: askLead,
+      openWhatsApp: false,
+      bestScore: analysis && analysis.bestScore != null ? analysis.bestScore : 0,
     };
-  }
-
-  function localReply(payload) {
-    return localRespond(payload).reply;
   }
 
   function handleQuickReply(intent, label) {
     appendMessage(label, true);
     track('assistant_quick_reply', { intent: intent, page_path: location.pathname });
-    if (intent === 'human') {
-      applyLocalResponse(localRespond({ intent: 'human', page: location.pathname }));
+    if (intent === 'human' || intent === 'whatsapp') {
+      applyLocalResponse(localRespond({ intent: intent, page: location.pathname }));
       return;
     }
     respondWith({
@@ -326,7 +597,7 @@
       lang: isAr ? 'ar' : 'en',
       page: location.pathname,
       history: loadSession().messages.slice(-6),
-    }, label);
+    });
   }
 
   function sendUserMessage() {
@@ -341,7 +612,7 @@
       lang: isAr ? 'ar' : 'en',
       page: location.pathname,
       history: loadSession().messages.slice(-6),
-    }, text);
+    });
   }
 
   function ensureWelcome() {
@@ -355,8 +626,8 @@
       });
     } else {
       var welcome = isAr
-        ? 'مرحباً! 👋 أنا مساعد Graphics House. كيف يمكنني مساعدتك؟'
-        : 'Hello! 👋 I\'m the Graphics House assistant. How can I help?';
+        ? 'مرحباً! 👋 أنا مساعد Graphics House. اسأل عن الباقات، الخدمات، أو احجز جلسة إطلاق.'
+        : 'Hello! 👋 I\'m the Graphics House assistant. Ask about packages, services, or book a launch session.';
       appendMessage(welcome, false, true);
       session.messages.push({ role: 'assistant', text: welcome });
       saveSession(session);
@@ -369,6 +640,9 @@
     }).then(function (res) {
       if (res && res.quickReplies && res.quickReplies.length) {
         renderQuickReplies(res.quickReplies);
+      }
+      if (res && res.reply && !session.messages.length) {
+        /* welcome already shown locally */
       }
     }).catch(function () { /* keep defaults */ });
   }
@@ -384,6 +658,7 @@
       setTimeout(focusChatField, 120);
     } else {
       track('assistant_close', { page_path: location.pathname });
+      hideLeadForm();
     }
     if (typeof window.ghFloatBrandAction === 'undefined' && typeof syncBrandActiveState === 'function') {
       syncBrandActiveState();
