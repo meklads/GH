@@ -1243,7 +1243,39 @@ gtag('config','G-Y67JVE898Z');
 </div>
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 
-<!-- ===== 01. HERO, Full-screen MWL environment image ===== -->
+<nav class="breadcrumb-nav" aria-label="فتات المسار">
+  <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="/">الرئيسية</a>
+      <meta itemprop="position" content="1">
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="../real-estate.html">العقار</a>
+      <meta itemprop="position" content="2">
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="./">الحلول</a>
+      <meta itemprop="position" content="3">
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name">ProjectLaunch™</span>
+      <meta itemprop="position" content="4">
+    </li>
+  </ol>
+</nav>
+<style>
+.breadcrumb-nav { padding: 12px 0; margin-bottom: 0; }
+.breadcrumb-list { list-style: none; margin: 0; padding: 0 clamp(16px,4vw,32px); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px; color: rgba(26,26,26,.7); max-width: 1280px; margin-left: auto; margin-right: auto; }
+.breadcrumb-list li { display: flex; align-items: center; }
+.breadcrumb-list li:not(:last-child)::after { content: '/'; margin-left: 8px; color: rgba(26,26,26,.4); }
+.breadcrumb-list a { color: rgba(26,26,26,.8); text-decoration: none; transition: color .2s; }
+.breadcrumb-list a:hover { color: #0A0A0A; }
+.breadcrumb-list li:last-child { color: rgba(26,26,26,.6); }
+@media (max-width:640px) { .breadcrumb-list { font-size: 12px; gap: 6px; } }
+html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; margin-right: 8px; }
+</style>
+
+, Full-screen MWL environment image ===== -->
 <section class="pl-hero relative overflow-hidden overflow-x-clip">
 
  <a class="pl-ads-brand" href="../index-ar.html" aria-label="Graphics House">
@@ -2310,5 +2342,23 @@ gtag('config','G-Y67JVE898Z');
 </div>
 <!-- GH FLOAT END -->
 
+<!-- Live Chat Widget -->
+<script>
+  window.intercomSettings = {
+    api_base: "https://api-iam.intercom.io",
+    app_id: "YOUR_INTERCOM_APP_ID" // Replace with actual Intercom App ID
+  };
+  
+  (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/YOUR_INTERCOM_APP_ID'; // Replace with actual Intercom App ID
+      var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}l();}})();
+  
+  // Show Live Chat after 5 seconds
+  setTimeout(function() {
+    if (typeof window.Intercom === 'function') {
+      window.Intercom('show');
+      window.ghTrack('live_chat_shown', { delay_seconds: 5 });
+    }
+  }, 5000);
+</script>
 </body>
 </html>
