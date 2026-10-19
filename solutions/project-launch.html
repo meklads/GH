@@ -1430,6 +1430,135 @@ form.submitting button::after {
 a:hover .material-symbols-outlined { transform: translateX(4px); }
 html[dir="rtl"] a:hover .material-symbols-outlined { transform: translateX(-4px); }
 </style>
+<style>
+/* Internal Link Enhancement */
+a[data-internal-link] { color: #C9A84C; text-decoration: underline; transition: opacity 0.2s; }
+a[data-internal-link]:hover { opacity: 0.85; }
+</style>
+<!-- Accessibility Enhancements -->
+<style>
+/* Skip Links */
+.gh-skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #0A0A0A;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 4px 0;
+}
+
+.gh-skip-link:focus {
+  top: 0;
+}
+
+/* Focus states for keyboard navigation */
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #C9A84C;
+  outline-offset: 2px;
+}
+
+/* Improved link underlines */
+a[href] {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: all 0.2s ease;
+}
+
+/* Semantic HTML improvements */
+article, section, nav, main, aside {
+  display: block;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  body { font-weight: 600; }
+  a { text-decoration-thickness: 2px; }
+  button, [role="button"] { border-width: 2px; }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Color contrast checker - ensure 4.5:1 ratio */
+body { color: #1A1A1A; background-color: #fff; }
+a { color: #0A5F8F; }
+a:visited { color: #5B2B7A; }
+a:hover { color: #003D5C; }
+
+/* Icon labels */
+.material-symbols-outlined[aria-label] { display: inline-block; }
+
+/* Better form labels */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1A1A1A;
+}
+
+/* Enhanced focus for form inputs */
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #C9A84C;
+  outline-offset: 0;
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+}
+
+/* Accessibility for interactive elements */
+[role="button"], [role="link"] {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Better list styling */
+ul, ol { margin: 1em 0; padding-left: 2em; }
+li { margin: 0.5em 0; }
+</style>
+
+<script>
+// Accessibility enhancements
+(function() {
+  'use strict';
+  
+  // Ensure all interactive elements are keyboard accessible
+  document.querySelectorAll('[role="button"], [role="link"]').forEach(el => {
+    if (!el.hasAttribute('tabindex')) {
+      el.setAttribute('tabindex', '0');
+    }
+    
+    // Add keyboard support
+    el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+  
+  // Add labels to icon buttons
+  document.querySelectorAll('button .material-symbols-outlined').forEach(icon => {
+    const btn = icon.closest('button');
+    if (btn && !btn.hasAttribute('aria-label') && !btn.textContent.trim()) {
+      // Add aria-label based on icon name if no text
+      const iconName = icon.textContent.trim();
+      if (iconName) {
+        btn.setAttribute('aria-label', iconName.replace(/_/g, ' '));
+      }
+    }
+  });
+})();
+</script>
 </head>
 
 <body class="bg-background gl-premium selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
@@ -2813,6 +2942,153 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
       window.ghTrack('live_chat_shown', { delay_seconds: 5 });
     }
   }, 5000);
+</script>
+<!-- Form Enhancements -->
+<style>
+/* Real-time validation feedback */
+.form-group { margin-bottom: 20px; }
+.form-input { 
+  width: 100%; 
+  padding: 12px 16px; 
+  border: 1px solid rgba(10,10,10,.15);
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.form-input:focus { 
+  border-color: #C9A84C;
+  box-shadow: 0 0 0 3px rgba(201,168,76,.1);
+}
+.form-input.valid { border-color: #4CAF50; }
+.form-input.invalid { border-color: #FF5252; }
+
+.form-error {
+  display: none;
+  color: #FF5252;
+  font-size: 12px;
+  margin-top: 6px;
+}
+.form-input.invalid + .form-error {
+  display: block;
+}
+
+/* Success message */
+.form-success {
+  padding: 16px;
+  background: rgba(76,175,80,.1);
+  border: 1px solid #4CAF50;
+  border-radius: 6px;
+  color: #2E7D32;
+  margin-bottom: 20px;
+  display: none;
+}
+.form-success.show { display: block; animation: slideDown 0.3s ease; }
+
+/* Loading state */
+.submit-btn {
+  position: relative;
+  transition: all 0.2s ease;
+}
+.submit-btn.loading {
+  color: transparent;
+}
+.submit-btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid rgba(255,255,255,.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+</style>
+
+<script>
+(function() {
+  'use strict';
+  
+  const forms = document.querySelectorAll('form');
+  
+  forms.forEach(form => {
+    const inputs = form.querySelectorAll('input, textarea');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    
+    // Real-time validation
+    inputs.forEach(input => {
+      input.addEventListener('blur', function() {
+        validateField(this);
+      });
+      
+      input.addEventListener('input', function() {
+        if (this.classList.contains('invalid')) {
+          validateField(this);
+        }
+      });
+    });
+    
+    // Form submission handling
+    if (submitBtn) {
+      form.addEventListener('submit', function(e) {
+        let isValid = true;
+        inputs.forEach(input => {
+          if (!validateField(input)) {
+            isValid = false;
+          }
+        });
+        
+        if (isValid) {
+          submitBtn.classList.add('loading');
+          // Simulate submission - adjust timeout as needed
+          setTimeout(() => {
+            submitBtn.classList.remove('loading');
+            showSuccessMessage(form);
+          }, 1500);
+        } else {
+          e.preventDefault();
+        }
+      });
+    }
+  });
+  
+  function validateField(field) {
+    let isValid = true;
+    
+    if (field.type === 'email') {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      isValid = emailRegex.test(field.value);
+    } else if (field.required && field.value.trim() === '') {
+      isValid = false;
+    }
+    
+    if (isValid) {
+      field.classList.remove('invalid');
+      field.classList.add('valid');
+    } else {
+      field.classList.remove('valid');
+      field.classList.add('invalid');
+    }
+    
+    return isValid;
+  }
+  
+  function showSuccessMessage(form) {
+    const successMsg = document.createElement('div');
+    successMsg.className = 'form-success show';
+    successMsg.textContent = 'شكراً! تم استقبال طلبك. سنتواصل معك قريباً.';
+    form.insertBefore(successMsg, form.firstChild);
+    
+    setTimeout(() => {
+      successMsg.classList.remove('show');
+      setTimeout(() => successMsg.remove(), 300);
+    }, 4000);
+  }
+})();
 </script>
 </body>
 </html>
