@@ -37,7 +37,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
 
 
-<script defer src="assets/gh-performance.js?v=11"></script>
+<script defer src="assets/gh-performance.js?v=12"></script>
 <script defer src="assets/gh-cta-track.js?v=1"></script>
 <script src="assets/gh-direct-data-public.js?v=85"></script>
 <script>
@@ -2127,6 +2127,84 @@ html[dir="rtl"] .ghd-page .gh-stage-pkg__ribbon {
   }
 }
 </style>
+<style id="gh-pkg-cinematic-hero">
+.ghd-page .ghd-hero.ghd-hero--cinematic {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: min(78vh, 740px);
+  padding-top: clamp(72px, 10vw, 120px);
+  padding-bottom: clamp(56px, 8vw, 96px);
+  background: #070706;
+}
+.ghd-page .ghd-hero--cinematic .ghd-hero-media,
+.ghd-page .ghd-hero--cinematic .ghd-hero-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ghd-page .ghd-hero--cinematic .ghd-hero-media {
+  z-index: 0;
+  background: #070706 url("assets/videos/GH-Epic-cinematic-arch-hero-poster.jpg") center / cover no-repeat;
+}
+.ghd-page .ghd-hero--cinematic .ghd-hero-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+.ghd-page .ghd-hero--cinematic .ghd-hero-vignette {
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.32) 28%, rgba(0, 0, 0, 0.28) 58%, rgba(0, 0, 0, 0.82) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, transparent 24%, transparent 76%, rgba(0, 0, 0, 0.7) 100%);
+}
+.ghd-page .ghd-hero--cinematic .ghd-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 42rem;
+  margin-inline: auto;
+}
+.ghd-page .ghd-hero--cinematic .ghd-hero-eyebrow {
+  color: #e8c547 !important;
+  border-color: rgba(201, 168, 76, 0.45) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+.ghd-page .ghd-hero--cinematic .ghd-hero-brand {
+  color: #fafaf8 !important;
+  text-shadow: 0 8px 40px rgba(0, 0, 0, 0.55);
+}
+.ghd-page .ghd-hero--cinematic .ghd-hero-title {
+  color: rgba(250, 250, 248, 0.94) !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+.ghd-page .ghd-hero--cinematic .ghd-hero-lead {
+  color: rgba(250, 250, 248, 0.78) !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+}
+.ghd-page .ghd-hero--cinematic .ghd-hero-rule {
+  background: #c9a84c;
+  box-shadow: 0 0 18px rgba(201, 168, 76, 0.45);
+}
+@media (max-width: 900px) {
+  .ghd-page .ghd-hero.ghd-hero--cinematic {
+    min-height: min(70vh, 620px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ghd-page .ghd-hero--cinematic .ghd-hero-video {
+    display: none;
+  }
+}
+</style>
 <style id="gh-pkg-cta-bands">
 /* Elevated closing CTA bands — Packages AR/EN */
 .ghd-page .ghd-section--meeting,
@@ -2721,7 +2799,11 @@ html[dir="rtl"] .ghd-section--extras .gh-tix__gets li {
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 <main id="ghd-main">
  <aside class="ghd-enterprise" id="ghd-enterprise" aria-label="توجيه مؤسسي"></aside>
- <section class="ghd-hero">
+ <section class="ghd-hero ghd-hero--cinematic" aria-label="الباقات">
+ <div class="ghd-hero-media" aria-hidden="true">
+ <video id="hero-vid-ar" class="ghd-hero-video gh-autoplay" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/videos/GH-Epic-cinematic-arch-hero-poster.jpg" data-pl-src="assets/videos/GH-Epic-cinematic-arch-hero.mp4" data-pl-src-mobile="assets/videos/GH-Epic-cinematic-arch-hero-mobile.mp4" title="إظهار معماري سينمائي"></video>
+ </div>
+ <div class="ghd-hero-vignette" aria-hidden="true"></div>
  <div class="ghd-wrap ghd-hero-inner">
  <p class="ghd-hero-eyebrow" id="ghd-eyebrow"></p>
  <h1 class="ghd-hero-brand" id="ghd-brand"></h1>
