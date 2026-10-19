@@ -58,7 +58,8 @@
     return (
       v.id === 'hero-vid' ||
       v.id === 'hero-vid-ar' ||
-      !!v.closest('.hero-video-bg')
+      !!v.closest('.hero-video-bg') ||
+      !!v.closest('.ghd-hero--cinematic')
     );
   }
 
