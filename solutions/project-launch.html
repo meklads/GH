@@ -1172,393 +1172,6 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="../assets/gh-footer-lock.css?v=5" data-gh-footer-lock="1">
 <link rel="stylesheet" href="../assets/site-header.css?v=69" data-gh-header-css="1">
 <link rel="stylesheet" href="../assets/gh-chat-assistant.css?v=11">
-
-<style>
-/* Button Enhancement - Improved Contrast and Hover Effects */
-.pl-btn-pill {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-.pl-btn-pill:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
-  transform: translateY(-2px) !important;
-}
-
-.pl-btn-pill-white,
-.pl-btn-pill-gold {
-  background: #fff !important;
-  color: #0A0A0A !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.5px !important;
-  border: 1.5px solid rgba(10, 10, 10, 0.1) !important;
-}
-
-.pl-btn-pill-white:hover,
-.pl-btn-pill-gold:hover {
-  background: #f5f5f5 !important;
-  border-color: #0A0A0A !important;
-}
-
-.pl-btn-pill-ghost {
-  border: 2px solid rgba(255, 255, 255, 0.95) !important;
-  color: #fff !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.5px !important;
-}
-
-.pl-btn-pill-ghost:hover {
-  background: rgba(255, 255, 255, 0.15) !important;
-  border-color: #fff !important;
-  color: #fff !important;
-}
-
-.pl-btn-on-light {
-  background: #fff !important;
-  color: #0A0A0A !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.5px !important;
-  border: 1.5px solid #0A0A0A !important;
-}
-
-.pl-btn-on-light:hover {
-  background: #0A0A0A !important;
-  color: #fff !important;
-}
-
-/* Focus states for accessibility */
-.pl-btn-pill:focus-visible {
-  outline: 2px solid #C9A84C !important;
-  outline-offset: 2px !important;
-}
-
-/* Active state */
-.pl-btn-pill:active {
-  transform: translateY(0) !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
-}
-</style>
-
-
-<!-- Schema Markup -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Graphics House",
-  "image": "https://3dgraphicshouse.com/assets/logo-gold.png",
-  "description": "استوديو تصور معماري وحلول إطلاق عقاري متكاملة - Graphics House",
-  "url": "https://3dgraphicshouse.com",
-  "telephone": "+966-12-280-1145",
-  "email": "info@3dgraphicshouse.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "SA",
-    "addressLocality": "جدة",
-    "addressRegion": "مكة"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/graphics-house/",
-    "https://www.instagram.com/3dgraphicshouse/"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "خدمات إطلاق المشاريع العقارية",
-    "itemListElement": [
-      {
-        "@type": "Product",
-        "name": "ProjectLaunch™",
-        "description": "منظومة إطلاق متكاملة للمشاريع العقارية - تصور معماري، أفلام CGI، مجسمات، صالات بيع تفاعلية",
-        "image": "https://3dgraphicshouse.com/assets/icons/products/projectlaunch.svg",
-        "brand": {
-          "@type": "Brand",
-          "name": "Graphics House"
-        }
-      },
-      {
-        "@type": "Product",
-        "name": "BrandScale™",
-        "description": "نظام العلامة التجارية والهوية البصرية - شعار، إرشادات، محتوى حملات",
-        "image": "https://3dgraphicshouse.com/assets/icons/products/brandscale.svg",
-        "brand": {
-          "@type": "Brand",
-          "name": "Graphics House"
-        }
-      },
-      {
-        "@type": "Product",
-        "name": "GrowthLaunch™",
-        "description": "نظام توليد العملاء والمبيعات - صفحات هبوط، متابعة، محتوى مبيعات",
-        "image": "https://3dgraphicshouse.com/assets/icons/products/growthlaunch.svg",
-        "brand": {
-          "@type": "Brand",
-          "name": "Graphics House"
-        }
-      }
-    ]
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Graphics House",
-  "url": "https://3dgraphicshouse.com",
-  "logo": "https://3dgraphicshouse.com/assets/logo-gold.png",
-  "description": "استوديو تصور معماري وحلول إطلاق عقاري متكاملة",
-  "foundingDate": "2009",
-  "areaServed": ["SA", "AE", "KW", "QA", "OM", "BH"],
-  "contact": {
-    "@type": "ContactPoint",
-    "contactType": "Customer Service",
-    "telephone": "+966-12-280-1145",
-    "email": "info@3dgraphicshouse.com"
-  }
-}
-</script>
-
-<style>
-/* Performance: Defer non-critical animations */
-[data-scroll-reveal] { opacity: 0; transform: translateY(30px); }
-[data-scroll-reveal].visible { opacity: 1; transform: translateY(0); transition: all 0.6s cubic-bezier(0.4,0,0.2,1); }
-</style>
-<script>
-// Intersection Observer for lazy animation
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  document.querySelectorAll('[data-scroll-reveal]').forEach(el => observer.observe(el));
-}
-</script>
-
-<style>
-/* Advanced Animations & Micro-interactions */
-
-/* Fade-in animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInScale {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Smooth scroll behavior */
-html { scroll-behavior: smooth; }
-
-/* Card hover effects */
-.mm-card, [role="button"], a[href*="solution"], a[href*="service"] {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mm-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); }
-
-/* Link hover effects */
-a { transition: color 0.2s ease; }
-a:hover { color: #C9A84C; }
-
-/* Form focus effects */
-input, textarea, select {
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-input:focus, textarea:focus, select:focus {
-  border-color: #C9A84C !important;
-  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1) !important;
-}
-
-/* Button press effect */
-button, a.pl-btn-pill, [role="button"] {
-  position: relative;
-  transition: transform 0.1s, box-shadow 0.1s;
-}
-
-button:active, a.pl-btn-pill:active, [role="button"]:active {
-  transform: scale(0.98);
-}
-
-/* Loading state for forms */
-form.submitting button {
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-form.submitting button::after {
-  content: '';
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border: 2px solid rgba(255,255,255,.3);
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: spin 0.6s linear infinite;
-  margin-left: 8px;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-/* Success message animation */
-.form-success {
-  animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes slideDown {
-  from { opacity: 0; max-height: 0; transform: translateY(-20px); }
-  to { opacity: 1; max-height: 500px; transform: translateY(0); }
-}
-
-/* Icon animations */
-.material-symbols-outlined {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-a:hover .material-symbols-outlined { transform: translateX(4px); }
-html[dir="rtl"] a:hover .material-symbols-outlined { transform: translateX(-4px); }
-</style>
-<style>
-/* Internal Link Enhancement */
-a[data-internal-link] { color: #C9A84C; text-decoration: underline; transition: opacity 0.2s; }
-a[data-internal-link]:hover { opacity: 0.85; }
-</style>
-<!-- Accessibility Enhancements -->
-<style>
-/* Skip Links */
-.gh-skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #0A0A0A;
-  color: #fff;
-  padding: 8px 16px;
-  text-decoration: none;
-  z-index: 100;
-  border-radius: 0 0 4px 0;
-}
-
-.gh-skip-link:focus {
-  top: 0;
-}
-
-/* Focus states for keyboard navigation */
-a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
-input:focus-visible, textarea:focus-visible, select:focus-visible {
-  outline: 2px solid #C9A84C;
-  outline-offset: 2px;
-}
-
-/* Improved link underlines */
-a[href] {
-  text-decoration-line: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  transition: all 0.2s ease;
-}
-
-/* Semantic HTML improvements */
-article, section, nav, main, aside {
-  display: block;
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: more) {
-  body { font-weight: 600; }
-  a { text-decoration-thickness: 2px; }
-  button, [role="button"] { border-width: 2px; }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Color contrast checker - ensure 4.5:1 ratio */
-body { color: #1A1A1A; background-color: #fff; }
-a { color: #0A5F8F; }
-a:visited { color: #5B2B7A; }
-a:hover { color: #003D5C; }
-
-/* Icon labels */
-.material-symbols-outlined[aria-label] { display: inline-block; }
-
-/* Better form labels */
-label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: #1A1A1A;
-}
-
-/* Enhanced focus for form inputs */
-input:focus-visible, textarea:focus-visible, select:focus-visible {
-  outline: 2px solid #C9A84C;
-  outline-offset: 0;
-  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
-}
-
-/* Accessibility for interactive elements */
-[role="button"], [role="link"] {
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Better list styling */
-ul, ol { margin: 1em 0; padding-left: 2em; }
-li { margin: 0.5em 0; }
-</style>
-
-<script>
-// Accessibility enhancements
-(function() {
-  'use strict';
-  
-  // Ensure all interactive elements are keyboard accessible
-  document.querySelectorAll('[role="button"], [role="link"]').forEach(el => {
-    if (!el.hasAttribute('tabindex')) {
-      el.setAttribute('tabindex', '0');
-    }
-    
-    // Add keyboard support
-    el.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.click();
-      }
-    });
-  });
-  
-  // Add labels to icon buttons
-  document.querySelectorAll('button .material-symbols-outlined').forEach(icon => {
-    const btn = icon.closest('button');
-    if (btn && !btn.hasAttribute('aria-label') && !btn.textContent.trim()) {
-      // Add aria-label based on icon name if no text
-      const iconName = icon.textContent.trim();
-      if (iconName) {
-        btn.setAttribute('aria-label', iconName.replace(/_/g, ' '));
-      }
-    }
-  });
-})();
-</script>
 </head>
 
 <body class="bg-background gl-premium selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
@@ -1672,32 +1285,32 @@ li { margin: 0.5em 0; }
  <p class="mm-panel-desc">اختر مشروعاً لاستعراض دراسة الحالة</p>
  </div>
  <div class="mm-cs-list"><a href="../insights/projects/al-rajhi-riyadh.html" class="mm-cs-row">
- <span class="mm-cs-thumb"><picture><source srcset="../assets/projects/al-rajhi-naseem/aerial-bird.webp" type="image/webp"><img src="../assets/projects/al-rajhi-naseem/aerial-bird.jpg" alt="" loading="lazy" width="96" height="72"></picture></span>
+ <span class="mm-cs-thumb"><img src="../assets/projects/al-rajhi-naseem/aerial-bird.jpg" alt="" loading="lazy" width="96" height="72"></span>
  <span class="mm-cs-name">مشروع الراجحي</span>
  <span class="material-symbols-outlined mm-cs-arrow" aria-hidden="true">arrow_forward</span>
  </a>
 <a href="../insights/projects/anan-eskan-riyadh.html" class="mm-cs-row">
- <span class="mm-cs-thumb"><picture><source srcset="../assets/projects/maquettes/anan-eskan-maquette-01.webp" type="image/webp"><img src="../assets/projects/maquettes/anan-eskan-maquette-01.jpeg" alt="" loading="lazy" width="96" height="72"></picture></span>
+ <span class="mm-cs-thumb"><img src="../assets/projects/maquettes/anan-eskan-maquette-01.jpeg" alt="" loading="lazy" width="96" height="72"></span>
  <span class="mm-cs-name">مشروع عنان إسكان</span>
  <span class="material-symbols-outlined mm-cs-arrow" aria-hidden="true">arrow_forward</span>
  </a>
 <a href="../casestudy-mwl.html" class="mm-cs-row">
- <span class="mm-cs-thumb"><picture><source srcset="../assets/news/makkah-charter-01.webp" type="image/webp"><img src="../assets/news/makkah-charter-01.jpeg" alt="" loading="lazy" width="96" height="72"></picture></span>
+ <span class="mm-cs-thumb"><img src="../assets/news/makkah-charter-01.jpeg" alt="" loading="lazy" width="96" height="72"></span>
  <span class="mm-cs-name">مشروع رابطة العالم الإسلامي</span>
  <span class="material-symbols-outlined mm-cs-arrow" aria-hidden="true">arrow_forward</span>
  </a>
 <a href="../insights/projects/wahat-al-salam.html" class="mm-cs-row">
- <span class="mm-cs-thumb"><picture><source srcset="../assets/projects/wahat-al-salam/hero-aerial.webp" type="image/webp"><img src="../assets/projects/wahat-al-salam/hero-aerial.jpg" alt="" loading="lazy" width="96" height="72"></picture></span>
+ <span class="mm-cs-thumb"><img src="../assets/projects/wahat-al-salam/hero-aerial.jpg" alt="" loading="lazy" width="96" height="72"></span>
  <span class="mm-cs-name">مشروع عقارات العيسائي</span>
  <span class="material-symbols-outlined mm-cs-arrow" aria-hidden="true">arrow_forward</span>
  </a>
 <a href="../case-studies/jeddah-real-estate-forum.html" class="mm-cs-row">
- <span class="mm-cs-thumb"><picture><source srcset="../assets/projects/jeddah-forum/catalog/page-01.webp" type="image/webp"><img src="../assets/projects/jeddah-forum/catalog/page-01.jpg" alt="" loading="lazy" width="96" height="72"></picture></span>
+ <span class="mm-cs-thumb"><img src="../assets/projects/jeddah-forum/catalog/page-01.jpg" alt="" loading="lazy" width="96" height="72"></span>
  <span class="mm-cs-name">مشروع ملتقى جدة</span>
  <span class="material-symbols-outlined mm-cs-arrow" aria-hidden="true">arrow_forward</span>
  </a>
 <a href="../insights/projects/rafal-pavilions.html" class="mm-cs-row">
- <span class="mm-cs-thumb"><picture><source srcset="../assets/projects/rafal-pavilions/lobby.webp" type="image/webp"><img src="../assets/projects/rafal-pavilions/lobby.jpg" alt="" loading="lazy" width="96" height="72"></picture></span>
+ <span class="mm-cs-thumb"><img src="../assets/projects/rafal-pavilions/lobby.jpg" alt="" loading="lazy" width="96" height="72"></span>
  <span class="mm-cs-name">مشروع بافيليونز</span>
  <span class="material-symbols-outlined mm-cs-arrow" aria-hidden="true">arrow_forward</span>
  </a></div>
@@ -1706,8 +1319,8 @@ li { margin: 0.5em 0; }
  </div>
  </div>
  <!-- GH_CS_MEGA_END -->
-	<a class="nav-link" href="../Packages.html">الباقات</a>
-	<a class="nav-link" href="../contact-us.html">اتصال</a>
+ <a class="nav-link" href="../Packages.html">الباقات</a>
+ <a class="nav-link" href="../contact-us.html">اتصال</a>
  <a class="nav-link nav-link-accent" href="../insights/index.html">رؤى</a>
  <a class="nav-link nav-mobile-cta" href="#lead-form">احجز جلسة</a>
  </nav>
@@ -1728,42 +1341,10 @@ li { margin: 0.5em 0; }
 
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 
-<nav class="breadcrumb-nav" aria-label="فتات المسار">
-  <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
-    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a itemprop="item" href="/">الرئيسية</a>
-      <meta itemprop="position" content="1">
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a itemprop="item" href="../real-estate.html">العقار</a>
-      <meta itemprop="position" content="2">
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a itemprop="item" href="./">الحلول</a>
-      <meta itemprop="position" content="3">
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <span itemprop="name">ProjectLaunch™</span>
-      <meta itemprop="position" content="4">
-    </li>
-  </ol>
-</nav>
-<style>
-.breadcrumb-nav { padding: 12px 0; margin-bottom: 0; }
-.breadcrumb-list { list-style: none; margin: 0; padding: 0 clamp(16px,4vw,32px); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px; color: rgba(26,26,26,.7); max-width: 1280px; margin-left: auto; margin-right: auto; }
-.breadcrumb-list li { display: flex; align-items: center; }
-.breadcrumb-list li:not(:last-child)::after { content: '/'; margin-left: 8px; color: rgba(26,26,26,.4); }
-.breadcrumb-list a { color: rgba(26,26,26,.8); text-decoration: none; transition: color .2s; }
-.breadcrumb-list a:hover { color: #0A0A0A; }
-.breadcrumb-list li:last-child { color: rgba(26,26,26,.6); }
-@media (max-width:640px) { .breadcrumb-list { font-size: 12px; gap: 6px; } }
-html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; margin-right: 8px; }
-</style>
-
-, Full-screen MWL environment image ===== -->
+<!-- ===== 01. HERO, Full-screen MWL environment image ===== -->
 <section class="pl-hero relative overflow-hidden overflow-x-clip">
  <div class="pl-hero-media">
- <picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="بيئة إطلاق متكاملة، رابطة العالم الإسلامي" loading="eager"></picture></picture>
+ <picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="بيئة إطلاق متكاملة، رابطة العالم الإسلامي" loading="eager"></picture>
  </div>
  <div class="pl-hero-vignette" aria-hidden="true"></div>
 
@@ -1834,7 +1415,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  <div class="ar-img-frame">
  <div class="gh-ambient-dual">
  <video class="gh-autoplay gh-ambient-video" autoplay loop muted playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="../assets/projects/animation/real-estate-services.jpg" title="خدمات العقارات, Graphics House" data-pl-src="../assets/videos/GH-Real-estate-services.mp4" data-pl-src-mobile="../assets/videos/GH-Real-estate-services-mobile.mp4"></video>
- <picture><source srcset="../assets/projects/animation/real-estate-services.webp" type="image/webp"><picture><source srcset="../assets/projects/animation/real-estate-services.webp" type="image/webp"><img class="gh-ambient-poster-mobile" src="../assets/projects/animation/real-estate-services.jpg" alt="خدمات العقارات, Graphics House" loading="eager" decoding="async"></picture></picture>
+ <picture><source srcset="../assets/projects/animation/real-estate-services.webp" type="image/webp"><img class="gh-ambient-poster-mobile" src="../assets/projects/animation/real-estate-services.jpg" alt="خدمات العقارات, Graphics House" loading="eager" decoding="async"></picture>
  </div>
  </div>
  </div>
@@ -1846,7 +1427,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
 <section class="pl-proof-early" id="proof-early" aria-label="إثبات من أعمالنا">
  <div class="pl-proof-early-inner reveal" style="opacity:0;transform:translateY(24px)">
  <div class="pl-proof-early-media">
- <picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="معرض رابطة العالم الإسلامي" loading="lazy"></picture></picture>
+ <picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="معرض رابطة العالم الإسلامي" loading="lazy"></picture>
  </div>
  <div>
  <span class="pl-proof-early-eyebrow">من أعمالنا</span>
@@ -1999,7 +1580,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
  <div class="reveal group relative ar-env-card" style="opacity:0;transform:translateY(24px);transition-delay:0.05s">
  <div class="aspect-[4/3] overflow-hidden">
- <picture><source srcset="../assets/news/makkah-charter-04.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-04.jpeg" alt="بيئة معرض تفاعلية" loading="lazy"/></picture>
+ <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-04.jpeg" alt="بيئة معرض تفاعلية" loading="lazy"/>
  </div>
  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
  <div class="absolute bottom-0 p-6">
@@ -2009,7 +1590,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  </div>
  <div class="reveal group relative ar-env-card" style="opacity:0;transform:translateY(24px);transition-delay:0.12s">
  <div class="aspect-[4/3] overflow-hidden">
- <picture><source srcset="../assets/news/makkah-charter-02.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-02.jpeg" alt="هوية وتجارب لمسية" loading="lazy"/></picture>
+ <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-02.jpeg" alt="هوية وتجارب لمسية" loading="lazy"/>
  </div>
  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
  <div class="absolute bottom-0 p-6">
@@ -2019,7 +1600,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  </div>
  <div class="reveal group relative ar-env-card" style="opacity:0;transform:translateY(24px);transition-delay:0.19s">
  <div class="aspect-[4/3] overflow-hidden">
- <picture><source srcset="../assets/news/makkah-charter-07.webp" type="image/webp"><img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-07.jpeg" alt="صالة بيع وتأهيل مكاني" loading="lazy"/></picture>
+ <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="../assets/news/makkah-charter-07.jpeg" alt="صالة بيع وتأهيل مكاني" loading="lazy"/>
  </div>
  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
  <div class="absolute bottom-0 p-6">
@@ -2042,25 +1623,25 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  <div class="ar-media-frame ar-media-frame--gallery">
  <div class="pl-s3-wrap" data-pl-gallery data-main-id="plGalMaquetteImg">
  <div class="pl-s3-image" data-pl-lightbox>
- <picture><source srcset="../assets/news/makkah-charter-01.webp" type="image/webp"><img loading="lazy" id="plGalMaquetteImg" src="../assets/news/makkah-charter-01.jpeg" alt="مشروع ميثاق مكة، رابطة العالم الإسلامي"></picture>
+ <img loading="lazy" id="plGalMaquetteImg" src="../assets/news/makkah-charter-01.jpeg" alt="مشروع ميثاق مكة، رابطة العالم الإسلامي">
  <div class="pl-s3-corner tl"></div>
  <div class="pl-s3-corner tr"></div>
  <div class="pl-s3-corner bl"></div>
  <div class="pl-s3-corner br"></div>
  </div>
  <div class="pl-s3-thumbs" data-pl-thumbs>
- <div class="pl-s3-thumb active" data-pl-src="../assets/news/makkah-charter-01.jpeg" role="button" tabindex="0"><picture><source srcset="../assets/news/makkah-charter-01.webp" type="image/webp"><img loading="lazy" src="../assets/news/makkah-charter-01.jpeg" alt="معرض ميثاق مكة 1"></picture></div>
- <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-02.jpeg" role="button" tabindex="0"><picture><source srcset="../assets/news/makkah-charter-02.webp" type="image/webp"><img loading="lazy" src="../assets/news/makkah-charter-02.jpeg" alt="معرض ميثاق مكة 2"></picture></div>
- <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-03.jpeg" role="button" tabindex="0"><picture><source srcset="../assets/news/makkah-charter-03.webp" type="image/webp"><img loading="lazy" src="../assets/news/makkah-charter-03.jpeg" alt="معرض ميثاق مكة 3"></picture></div>
- <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-04.jpeg" role="button" tabindex="0"><picture><source srcset="../assets/news/makkah-charter-04.webp" type="image/webp"><img loading="lazy" src="../assets/news/makkah-charter-04.jpeg" alt="معرض ميثاق مكة 4"></picture></div>
- <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-05.jpeg" role="button" tabindex="0"><picture><source srcset="../assets/news/makkah-charter-05.webp" type="image/webp"><img loading="lazy" src="../assets/news/makkah-charter-05.jpeg" alt="معرض ميثاق مكة 5"></picture></div>
- <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-06.jpeg" role="button" tabindex="0"><picture><source srcset="../assets/news/makkah-charter-06.webp" type="image/webp"><img loading="lazy" src="../assets/news/makkah-charter-06.jpeg" alt="معرض ميثاق مكة 6"></picture></div>
- <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-07.jpeg" role="button" tabindex="0"><picture><source srcset="../assets/news/makkah-charter-07.webp" type="image/webp"><img loading="lazy" src="../assets/news/makkah-charter-07.jpeg" alt="معرض ميثاق مكة 7"></picture></div>
- <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-08.jpeg" role="button" tabindex="0"><picture><source srcset="../assets/news/makkah-charter-08.webp" type="image/webp"><img loading="lazy" src="../assets/news/makkah-charter-08.jpeg" alt="معرض ميثاق مكة 8"></picture></div>
- <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-09.jpeg" role="button" tabindex="0"><picture><source srcset="../assets/news/makkah-charter-09.webp" type="image/webp"><img loading="lazy" src="../assets/news/makkah-charter-09.jpeg" alt="معرض ميثاق مكة 9"></picture></div>
- <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-10.jpeg" role="button" tabindex="0"><picture><source srcset="../assets/news/makkah-charter-10.webp" type="image/webp"><img loading="lazy" src="../assets/news/makkah-charter-10.jpeg" alt="معرض ميثاق مكة 10"></picture></div>
- <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-11.jpeg" role="button" tabindex="0"><picture><source srcset="../assets/news/makkah-charter-11.webp" type="image/webp"><img loading="lazy" src="../assets/news/makkah-charter-11.jpeg" alt="معرض ميثاق مكة 11"></picture></div>
- <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-12.jpeg" role="button" tabindex="0"><picture><source srcset="../assets/news/makkah-charter-12.webp" type="image/webp"><img loading="lazy" src="../assets/news/makkah-charter-12.jpeg" alt="معرض ميثاق مكة 12"></picture></div>
+ <div class="pl-s3-thumb active" data-pl-src="../assets/news/makkah-charter-01.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-01.jpeg" alt="معرض ميثاق مكة 1"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-02.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-02.jpeg" alt="معرض ميثاق مكة 2"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-03.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-03.jpeg" alt="معرض ميثاق مكة 3"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-04.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-04.jpeg" alt="معرض ميثاق مكة 4"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-05.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-05.jpeg" alt="معرض ميثاق مكة 5"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-06.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-06.jpeg" alt="معرض ميثاق مكة 6"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-07.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-07.jpeg" alt="معرض ميثاق مكة 7"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-08.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-08.jpeg" alt="معرض ميثاق مكة 8"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-09.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-09.jpeg" alt="معرض ميثاق مكة 9"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-10.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-10.jpeg" alt="معرض ميثاق مكة 10"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-11.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-11.jpeg" alt="معرض ميثاق مكة 11"></div>
+ <div class="pl-s3-thumb" data-pl-src="../assets/news/makkah-charter-12.jpeg" role="button" tabindex="0"><img loading="lazy" src="../assets/news/makkah-charter-12.jpeg" alt="معرض ميثاق مكة 12"></div>
  </div>
  </div>
  </div>
@@ -2101,7 +1682,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  <div class="ar-media-frame ar-media-frame--soft">
  <div class="gh-ambient-dual">
  <video class="gh-autoplay gh-ambient-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" poster="../assets/projects/animation/real-estate-services.jpg" data-pl-src="../assets/videos/GH-Real-estate-services.mp4" data-pl-src-mobile="../assets/videos/GH-Real-estate-services-mobile.mp4"></video>
- <picture><source srcset="../assets/projects/animation/real-estate-services.webp" type="image/webp"><picture><source srcset="../assets/projects/animation/real-estate-services.webp" type="image/webp"><img class="gh-ambient-poster-mobile" src="../assets/projects/animation/real-estate-services.jpg" alt="فيلم إطلاق عقاري" loading="eager" decoding="async"></picture></picture>
+ <picture><source srcset="../assets/projects/animation/real-estate-services.webp" type="image/webp"><img class="gh-ambient-poster-mobile" src="../assets/projects/animation/real-estate-services.jpg" alt="فيلم إطلاق عقاري" loading="eager" decoding="async"></picture>
  </div>
  </div>
  <div class="ar-media-body">
@@ -2133,7 +1714,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  <!-- MWL Exhibition -->
  <div class="ar-story reveal" style="opacity:0;transform:translateY(24px)">
  <div class="ar-story-img">
- <picture><source srcset="../assets/news/makkah-charter-04.webp" type="image/webp"><img src="../assets/news/makkah-charter-04.jpeg" alt="معرض رابطة العالم الإسلامي" loading="lazy"></picture>
+ <img src="../assets/news/makkah-charter-04.jpeg" alt="معرض رابطة العالم الإسلامي" loading="lazy">
  <div class="ar-story-badge">رابطة العالم الإسلامي · معرض الإنسانية</div>
  </div>
  <div class="ar-story-body">
@@ -2159,7 +1740,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  <!-- Anan Eskan -->
  <div class="ar-story reveal" style="opacity:0;transform:translateY(24px)">
  <div class="ar-story-img">
- <picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="عنان إسكان" loading="lazy"></picture></picture>
+ <picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="عنان إسكان" loading="lazy"></picture>
  <div class="ar-story-badge">عنان إسكان للتطوير · الرياض</div>
  </div>
  <div class="ar-story-body">
@@ -2189,11 +1770,11 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
 
  <div class="ar-mini-grid reveal" style="opacity:0;transform:translateY(24px)">
  <div class="ar-mini">
- <picture><source srcset="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp" type="image/webp"><img src="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="الأولى النخيل" loading="lazy"></picture></picture>
+ <picture><source srcset="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.webp" type="image/webp"><img src="../assets/projects/rendering/Aloula-co-alnakheel-view02-scaled.jpg" alt="الأولى النخيل" loading="lazy"></picture>
  <span>الأولى النخيل، إظهار يبيع ما لم يُبنَ</span>
  </div>
  <div class="ar-mini">
- <picture><source srcset="../assets/projects/animation/rafal-pavilions.webp" type="image/webp"><picture><source srcset="../assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img src="../assets/projects/animation/rafal-pavilions.jpg" alt="رفال بافيليونز" loading="lazy"></picture></picture>
+ <picture><source srcset="../assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img src="../assets/projects/animation/rafal-pavilions.jpg" alt="رفال بافيليونز" loading="lazy"></picture>
  <span>رفال بافيليونز، أفلام إطلاق وحضور سوقي</span>
  </div>
  </div>
@@ -2281,7 +1862,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  </div>
  <div class="ar-collab-grid">
  <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.00s">
- <picture><source srcset="../assets/projects/rendering/alrajhi2.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/alrajhi2.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/rendering/alrajhi2.jpeg" alt="مشروع الراجحي بمكة" loading="lazy"></picture></picture>
+ <picture><source srcset="../assets/projects/rendering/alrajhi2.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/rendering/alrajhi2.jpeg" alt="مشروع الراجحي بمكة" loading="lazy"></picture>
  <div class="ar-collab-logo"><span class="ar-collab-brand">مصرف الراجحي</span></div>
  <div class="ar-collab-copy">
  <strong>مشروع الراجحي بمكة</strong>
@@ -2289,7 +1870,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  </div>
  </a>
  <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.05s">
- <picture><source srcset="../assets/projects/rendering/kuday-makkah1.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/kuday-makkah1.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/rendering/kuday-makkah1.jpeg" alt="مشروع مكيون برج التلال" loading="lazy"></picture></picture>
+ <picture><source srcset="../assets/projects/rendering/kuday-makkah1.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/rendering/kuday-makkah1.jpeg" alt="مشروع مكيون برج التلال" loading="lazy"></picture>
  <div class="ar-collab-logo"><img src="../assets/clients-logo/makyon.png" alt="مكيون"></div>
  <div class="ar-collab-copy">
  <strong>مكيون · برج التلال</strong>
@@ -2297,7 +1878,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  </div>
  </a>
  <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.10s">
- <picture><source srcset="../assets/projects/animation/rafal-pavilions.webp" type="image/webp"><picture><source srcset="../assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/animation/rafal-pavilions.jpg" alt="مشروع رفال بافيليونز" loading="lazy"></picture></picture>
+ <picture><source srcset="../assets/projects/animation/rafal-pavilions.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/animation/rafal-pavilions.jpg" alt="مشروع رفال بافيليونز" loading="lazy"></picture>
  <div class="ar-collab-logo"><img src="../assets/clients-logo/rafal.png" alt="رفال"></div>
  <div class="ar-collab-copy">
  <strong>رفال بافيليونز</strong>
@@ -2305,7 +1886,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  </div>
  </a>
  <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.15s">
- <picture><source srcset="../assets/projects/animation/market-center.webp" type="image/webp"><picture><source srcset="../assets/projects/animation/market-center.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/animation/market-center.jpg" alt="مشروع السوق المركزي" loading="lazy"></picture></picture>
+ <picture><source srcset="../assets/projects/animation/market-center.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/animation/market-center.jpg" alt="مشروع السوق المركزي" loading="lazy"></picture>
  <div class="ar-collab-logo"><span class="ar-collab-brand">السوق المركزي</span></div>
  <div class="ar-collab-copy">
  <strong>السوق المركزي</strong>
@@ -2313,7 +1894,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  </div>
  </a>
  <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.20s">
- <picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="مشروع عنان إسكان" loading="lazy"></picture></picture>
+ <picture><source srcset="../assets/projects/rendering/Anan-Escan-Co.01.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/rendering/Anan-Escan-Co.01.jpeg" alt="مشروع عنان إسكان" loading="lazy"></picture>
  <div class="ar-collab-logo"><img src="../assets/clients-logo/anan-eskan.png" alt="عنان إسكان"></div>
  <div class="ar-collab-copy">
  <strong>عنان إسكان</strong>
@@ -2321,7 +1902,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  </div>
  </a>
  <a class="ar-collab-card reveal" href="../portfolio.html" style="opacity:0;transform:translateY(24px);transition-delay:.25s">
- <picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="مشروع رابطة العالم الإسلامي" loading="lazy"></picture></picture>
+ <picture><source srcset="../assets/projects/maquettes/mwl-humanity-exhibition-hero.webp" type="image/webp"><img class="ar-collab-bg" src="../assets/projects/maquettes/mwl-humanity-exhibition-hero.jpeg" alt="مشروع رابطة العالم الإسلامي" loading="lazy"></picture>
  <div class="ar-collab-logo"><img src="../assets/clients-logo/رابطة العالم الاسلامي.png" alt="رابطة العالم الإسلامي"></div>
  <div class="ar-collab-copy">
  <strong>رابطة العالم الإسلامي</strong>
@@ -2445,7 +2026,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
 <!-- ===== FOOTER (Arabic) ===== -->
 <footer dir="rtl" class="gh-footer">
  <div class="gh-footer__inner">
- <picture><source srcset="../assets/chatbot-motif.webp" type="image/webp"><img loading="lazy" src="../assets/chatbot-motif.png" aria-hidden="true" class="gh-footer-motif" alt=""></picture>
+ <img loading="lazy" src="../assets/chatbot-motif.png" aria-hidden="true" class="gh-footer-motif" alt="">
 
  <div class="gh-footer__top">
  <div class="gh-footer__brand">
@@ -2499,38 +2080,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
  <a href="tel:+96891326735" dir="ltr"><span>عُمان</span> +968 9132 6735</a>
  <a href="tel:+97332150369" dir="ltr"><span>البحرين</span> +973 3215 0369</a>
  </p>
- <!-- Trust Elements Section -->
-<section class="trust-elements-section" style="padding: 48px clamp(16px,4vw,48px); background: rgba(201,168,76,.04); margin: 40px 0;">
-  <div style="max-width: 1280px; margin: 0 auto;">
-    <h2 style="text-align: center; margin-bottom: 40px; font-size: clamp(24px,4vw,36px); color: #0A0A0A;">
-      ثقة الشركات الرائدة
-    </h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px; align-items: center; justify-items: center;">
-      <!-- Client Logos Placeholder - Replace with actual logos -->
-      <div class="trust-logo" style="padding: 16px; text-align: center; color: rgba(26,26,26,.5); font-size: 12px;">
-        <span style="display: block; font-weight: 600;">مطورين عقاريين رائدين</span>
-      </div>
-    </div>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-top: 48px;">
-      <!-- Trust Stats -->
-      <div style="text-align: center;">
-        <div style="font-size: 32px; font-weight: 900; color: #C9A84C; margin-bottom: 8px;">15+</div>
-        <p style="color: rgba(26,26,26,.7); font-size: 14px;">سنة خبرة في السوق السعودي</p>
-      </div>
-      <div style="text-align: center;">
-        <div style="font-size: 32px; font-weight: 900; color: #C9A84C; margin-bottom: 8px;">50+</div>
-        <p style="color: rgba(26,26,26,.7); font-size: 14px;">مشروع عقاري مكتمل</p>
-      </div>
-      <div style="text-align: center;">
-        <div style="font-size: 32px; font-weight: 900; color: #C9A84C; margin-bottom: 8px;">100%</div>
-        <p style="color: rgba(26,26,26,.7); font-size: 14px;">رضا العملاء والمتابعة</p>
-      </div>
-    </div>
-  </div>
-</section>
-</section>
+ </section>
 
  <div class="gh-footer__bar">
  <div class="gh-footer__social">
@@ -2883,7 +2433,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
         <span class="gh-motif-ring"></span>
         <span class="gh-motif-ring" style="animation-delay:1.2s"></span>
         <span class="gh-motif-ring" style="animation-delay:2.4s"></span>
-        <picture><source srcset="../assets/chatbot-motif.webp" type="image/webp"><img src="../assets/chatbot-motif.png" alt="" width="52" height="52" class="gh-float-brand-logo"></picture>
+        <img src="../assets/chatbot-motif.png" alt="" width="52" height="52" class="gh-float-brand-logo">
       </span>
     </button>
     <span class="gh-float-tip">مساعد ذكي · تحدّث معنا</span>
@@ -2935,7 +2485,7 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
 <div id="gh-chat-root">
 <div id="ghChatPanel" class="gh-chat-panel" dir="rtl" role="dialog" aria-modal="true" aria-labelledby="ghChatTitle" aria-hidden="true">
   <div id="ghChatHead" class="gh-chat-head">
-    <picture><source srcset="../assets/chatbot-motif.webp" type="image/webp"><img src="../assets/chatbot-motif.png" alt="" width="22" height="22" class="gh-chat-head-icon"></picture>
+    <img src="../assets/chatbot-motif.png" alt="" width="22" height="22" class="gh-chat-head-icon">
     <span id="ghChatTitle">مساعد Graphics House</span>
     <span class="gh-chat-head-spacer" aria-hidden="true"></span>
     <button type="button" class="gh-chat-close" data-gh-chat-close aria-label="إغلاق">
@@ -2956,170 +2506,5 @@ html[dir='rtl'] .breadcrumb-list li:not(:last-child)::after { margin-left: 0; ma
 </div>
 <!-- GH CHAT END -->
 
-<!-- Live Chat Widget -->
-<script>
-  window.intercomSettings = {
-    api_base: "https://api-iam.intercom.io",
-    app_id: "YOUR_INTERCOM_APP_ID" // Replace with actual Intercom App ID
-  };
-  
-  (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/YOUR_INTERCOM_APP_ID'; // Replace with actual Intercom App ID
-      var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}l();}})();
-  
-  // Show Live Chat after 5 seconds
-  setTimeout(function() {
-    if (typeof window.Intercom === 'function') {
-      window.Intercom('show');
-      window.ghTrack('live_chat_shown', { delay_seconds: 5 });
-    }
-  }, 5000);
-</script>
-<!-- Form Enhancements -->
-<style>
-/* Real-time validation feedback */
-.form-group { margin-bottom: 20px; }
-.form-input { 
-  width: 100%; 
-  padding: 12px 16px; 
-  border: 1px solid rgba(10,10,10,.15);
-  border-radius: 6px;
-  font-size: 16px;
-  transition: all 0.2s ease;
-  font-family: inherit;
-}
-.form-input:focus { 
-  border-color: #C9A84C;
-  box-shadow: 0 0 0 3px rgba(201,168,76,.1);
-}
-.form-input.valid { border-color: #4CAF50; }
-.form-input.invalid { border-color: #FF5252; }
-
-.form-error {
-  display: none;
-  color: #FF5252;
-  font-size: 12px;
-  margin-top: 6px;
-}
-.form-input.invalid + .form-error {
-  display: block;
-}
-
-/* Success message */
-.form-success {
-  padding: 16px;
-  background: rgba(76,175,80,.1);
-  border: 1px solid #4CAF50;
-  border-radius: 6px;
-  color: #2E7D32;
-  margin-bottom: 20px;
-  display: none;
-}
-.form-success.show { display: block; animation: slideDown 0.3s ease; }
-
-/* Loading state */
-.submit-btn {
-  position: relative;
-  transition: all 0.2s ease;
-}
-.submit-btn.loading {
-  color: transparent;
-}
-.submit-btn.loading::after {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 50%;
-  left: 50%;
-  margin-left: -8px;
-  margin-top: -8px;
-  border: 2px solid rgba(255,255,255,.3);
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: spin 0.6s linear infinite;
-}
-</style>
-
-<script>
-(function() {
-  'use strict';
-  
-  const forms = document.querySelectorAll('form');
-  
-  forms.forEach(form => {
-    const inputs = form.querySelectorAll('input, textarea');
-    const submitBtn = form.querySelector('button[type="submit"]');
-    
-    // Real-time validation
-    inputs.forEach(input => {
-      input.addEventListener('blur', function() {
-        validateField(this);
-      });
-      
-      input.addEventListener('input', function() {
-        if (this.classList.contains('invalid')) {
-          validateField(this);
-        }
-      });
-    });
-    
-    // Form submission handling
-    if (submitBtn) {
-      form.addEventListener('submit', function(e) {
-        let isValid = true;
-        inputs.forEach(input => {
-          if (!validateField(input)) {
-            isValid = false;
-          }
-        });
-        
-        if (isValid) {
-          submitBtn.classList.add('loading');
-          // Simulate submission - adjust timeout as needed
-          setTimeout(() => {
-            submitBtn.classList.remove('loading');
-            showSuccessMessage(form);
-          }, 1500);
-        } else {
-          e.preventDefault();
-        }
-      });
-    }
-  });
-  
-  function validateField(field) {
-    let isValid = true;
-    
-    if (field.type === 'email') {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      isValid = emailRegex.test(field.value);
-    } else if (field.required && field.value.trim() === '') {
-      isValid = false;
-    }
-    
-    if (isValid) {
-      field.classList.remove('invalid');
-      field.classList.add('valid');
-    } else {
-      field.classList.remove('valid');
-      field.classList.add('invalid');
-    }
-    
-    return isValid;
-  }
-  
-  function showSuccessMessage(form) {
-    const successMsg = document.createElement('div');
-    successMsg.className = 'form-success show';
-    successMsg.textContent = 'شكراً! تم استقبال طلبك. سنتواصل معك قريباً.';
-    form.insertBefore(successMsg, form.firstChild);
-    
-    setTimeout(() => {
-      successMsg.classList.remove('show');
-      setTimeout(() => successMsg.remove(), 300);
-    }, 4000);
-  }
-})();
-</script>
 </body>
 </html>
