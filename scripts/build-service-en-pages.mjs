@@ -2,6 +2,7 @@
 /**
  * Generate services/*-en.html pages and consolidate EN service URLs.
  */
+import './lib/handcrafted-guard.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

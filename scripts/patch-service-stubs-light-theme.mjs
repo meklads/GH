@@ -3,6 +3,7 @@
  * Light-theme the 9 AR service stub pages to match EN (#FAFAF8).
  * Run: node scripts/patch-service-stubs-light-theme.mjs
  */
+import './lib/handcrafted-guard.mjs';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 

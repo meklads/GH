@@ -2,6 +2,7 @@
 /**
  * Convert EN-only service stub pages to bilingual AR-first (RTL) pages.
  */
+import './lib/handcrafted-guard.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

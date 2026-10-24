@@ -5,6 +5,7 @@
  *
  * Idempotent via <!-- GH_SALES_ROOM_START --> markers.
  */
+import './lib/handcrafted-guard.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

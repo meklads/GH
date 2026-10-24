@@ -3,6 +3,7 @@
  * Copy a root landing page into a services/*.html path with depth-aware links.
  * Usage: node scripts/copy-landing-to-service.mjs <source.html> <dest.html>
  */
+import './lib/handcrafted-guard.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

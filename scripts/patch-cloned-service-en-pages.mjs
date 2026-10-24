@@ -5,6 +5,7 @@
  * - wrong assets/ paths in CSS (need ../assets/)
  * - inject site-reveal.js
  */
+import './lib/handcrafted-guard.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

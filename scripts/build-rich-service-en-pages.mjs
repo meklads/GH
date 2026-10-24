@@ -2,6 +2,7 @@
 /**
  * Build full English service pages for the 8 former stub services.
  */
+import './lib/handcrafted-guard.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

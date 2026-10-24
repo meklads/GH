@@ -1,0 +1,331 @@
+/**
+ * Graphics House — Interactive Experiences service page (AR + EN)
+ * Hand-crafted page. Everything is scoped under .ix so it cannot collide with site CSS.
+ * Logical properties are used for text flow; image hotspots use physical left/top
+ * on purpose (a photograph does not mirror in RTL).
+ */
+.ix {
+  --ix-ink: #14120d;
+  --ix-ink-2: #1f1c15;
+  --ix-paper: #f6f4ee;
+  --ix-white: #ffffff;
+  --ix-gold: #c9a84c;
+  --ix-gold-soft: #e3cd8d;
+  --ix-gold-deep: #7a5f1c;
+  --ix-line: rgba(20, 18, 13, 0.14);
+  --ix-line-dark: rgba(227, 205, 141, 0.28);
+  --ix-muted: rgba(20, 18, 13, 0.72);
+  --ix-muted-dark: rgba(250, 248, 242, 0.76);
+  --ix-gutter: clamp(20px, 4vw, 48px);
+  --ix-max: 1240px;
+  background: var(--ix-paper);
+  color: var(--ix-ink);
+  font-size: 17px;
+  line-height: 1.75;
+  overflow-x: clip;
+}
+html[lang="ar"] .ix {
+  --ix-body: "IBM Plex Sans Arabic", "Tajawal", system-ui, sans-serif;
+  --ix-head: "Tajawal", "IBM Plex Sans Arabic", system-ui, sans-serif;
+}
+html[lang="en"] .ix {
+  --ix-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ix-head: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+.ix, .ix button, .ix input, .ix select, .ix textarea { font-family: var(--ix-body); }
+.ix *, .ix *::before, .ix *::after { box-sizing: border-box; }
+:where(.ix) img, :where(.ix) video { display: block; max-width: 100%; height: auto; }
+/* resets use :where() so component classes always win */
+:where(.ix) a { color: inherit; text-decoration: none; }
+.ix :where(h1, h2, h3, h4) {
+  font-family: var(--ix-head);
+  margin: 0;
+  color: inherit;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ix :where(p) { margin: 0; font-size: inherit; color: inherit; font-weight: 400; line-height: inherit; }
+.ix :where(ul) { margin: 0; padding: 0; list-style: none; }
+.ix .material-symbols-outlined { font-size: 24px; line-height: 1; vertical-align: middle; }
+
+.ix :focus-visible {
+  outline: 3px solid var(--ix-gold);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.ix-wrap { max-width: var(--ix-max); margin: 0 auto; padding-inline: var(--ix-gutter); }
+.ix-sec { padding-block: clamp(56px, 8vw, 104px); }
+.ix-sec--white { background: var(--ix-white); }
+.ix-sec--dark { background: var(--ix-ink); color: #faf8f2; }
+.ix-sec--dark .ix-lead { color: var(--ix-muted-dark); }
+
+.ix-h2 { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.25; font-weight: 700; max-width: 26ch; }
+html[lang="en"] .ix-h2 { font-weight: 600; line-height: 1.18; max-width: 22ch; }
+.ix .ix-lead { margin-top: 20px; max-width: 58ch; color: var(--ix-muted); font-size: 18px; }
+
+/* Buttons */
+.ix-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 50px; padding: 0 28px; border-radius: 999px;
+  background: var(--ix-gold); color: var(--ix-ink) !important;
+  border: 1.5px solid var(--ix-gold);
+  font-size: 16px; font-weight: 700; cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.ix-btn:hover { background: var(--ix-gold-soft); border-color: var(--ix-gold-soft); }
+.ix-btn--ghost { background: transparent; color: inherit !important; border-color: currentColor; }
+.ix-btn--ghost:hover { background: rgba(255, 255, 255, 0.1); border-color: currentColor; }
+.ix-btn--ink { background: var(--ix-ink); color: #faf8f2 !important; border-color: var(--ix-ink); }
+.ix-btn--ink:hover { background: var(--ix-ink-2); border-color: var(--ix-ink-2); }
+.ix-btn .material-symbols-outlined { font-size: 20px; }
+html[dir="rtl"] .ix-btn .ix-arrow { transform: scaleX(-1); }
+
+/* ───────── Hero ───────── */
+.ix-hero {
+  background: var(--ix-ink);
+  color: #faf8f2;
+  padding-top: clamp(112px, 12vw, 152px);
+  padding-bottom: clamp(48px, 6vw, 80px);
+}
+.ix-hero-grid {
+  max-width: var(--ix-max); margin: 0 auto; padding-inline: var(--ix-gutter);
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(28px, 4vw, 64px); align-items: center;
+}
+.ix-hero h1 { font-size: clamp(32px, 4vw, 56px); line-height: 1.3; font-weight: 800; }
+html[lang="en"] .ix-hero h1 { font-size: clamp(30px, 3.5vw, 48px); font-weight: 500; line-height: 1.14; }
+.ix-hero .ix-lead { color: var(--ix-muted-dark); }
+.ix-hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.ix-facts {
+  display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 36px; padding-top: 22px;
+  border-top: 1px solid var(--ix-line-dark); font-size: 15px; color: var(--ix-muted-dark);
+}
+.ix-facts li { display: flex; align-items: center; gap: 8px; }
+.ix-facts .material-symbols-outlined { font-size: 20px; color: var(--ix-gold); }
+
+.ix-stage { margin: 0; }
+.ix-frame {
+  position: relative; aspect-ratio: 16 / 9; overflow: hidden;
+  background: #000; border: 1px solid var(--ix-line-dark); border-radius: 14px;
+}
+.ix-frame > img { width: 100%; height: 100%; object-fit: contain; }
+.ix-hot {
+  position: absolute; width: 48px; height: 48px; margin: -24px 0 0 -24px;
+  border: 0; padding: 0; background: transparent; cursor: pointer; border-radius: 50%;
+}
+.ix-hot::before {
+  content: ""; position: absolute; inset: 15px; border-radius: 50%;
+  background: var(--ix-gold); box-shadow: 0 0 0 3px rgba(20, 18, 13, 0.55);
+  transition: transform 0.25s;
+}
+.ix-hot::after {
+  content: ""; position: absolute; inset: 4px; border-radius: 50%;
+  border: 2px solid var(--ix-gold); opacity: 0.9;
+  animation: ix-pulse 2.4s ease-out infinite;
+}
+.ix-hot.is-on::before { transform: scale(1.45); background: #fff; }
+.ix-hot.is-on::after { animation: none; inset: 2px; border-width: 3px; }
+@keyframes ix-pulse {
+  0% { transform: scale(0.55); opacity: 0.95; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+.ix-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.ix-chip {
+  min-height: 44px; padding: 0 18px; border-radius: 999px; cursor: pointer;
+  background: transparent; color: #faf8f2; border: 1.5px solid var(--ix-line-dark);
+  font-size: 15px; font-weight: 600; transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.ix-chip:hover { border-color: var(--ix-gold); }
+.ix-chip.is-on { background: var(--ix-gold); color: var(--ix-ink); border-color: var(--ix-gold); }
+.ix-cap { margin-top: 14px; min-height: 3.6em; font-size: 16px; line-height: 1.7; color: var(--ix-muted-dark); }
+
+/* ───────── Capabilities ───────── */
+.ix-caps-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.ix-caps-head { position: sticky; top: 120px; }
+.ix-cap-row {
+  display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 22px;
+  padding-block: 30px; border-top: 1px solid var(--ix-line);
+}
+.ix-cap-row:last-child { border-bottom: 1px solid var(--ix-line); }
+.ix-cap-ico {
+  width: 56px; height: 56px; display: grid; place-items: center; border-radius: 14px;
+  border: 1.5px solid var(--ix-gold); color: var(--ix-gold-deep);
+}
+.ix-cap-row h3 { font-size: 24px; line-height: 1.3; font-weight: 700; }
+html[lang="en"] .ix-cap-row h3 { font-weight: 600; }
+.ix-cap-row p { margin-top: 8px; color: var(--ix-muted); }
+.ix-cap-row .ix-gain {
+  margin-top: 12px; display: flex; gap: 8px; align-items: flex-start;
+  font-size: 15px; font-weight: 600; color: var(--ix-gold-deep);
+}
+.ix-gain .material-symbols-outlined { font-size: 20px; margin-top: 3px; }
+
+/* ───────── Proof + album ───────── */
+.ix-proof-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.ix-proof-fig { margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--ix-line); background: #000; }
+.ix-proof-fig img { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; }
+.ix-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.ix-meta li {
+  padding: 4px 14px; border-radius: 999px; font-size: 14px; font-weight: 600;
+  border: 1px solid var(--ix-gold); color: var(--ix-gold-deep);
+}
+.ix-proof-grid .ix-btn { margin-top: 28px; }
+.ix-album-head { margin-top: clamp(48px, 6vw, 72px); display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.ix-album-head h3 { font-size: 22px; font-weight: 700; }
+.ix-album-head span { font-size: 14px; color: var(--ix-muted); }
+.ix-album {
+  display: flex; gap: 14px; margin-top: 18px; padding-bottom: 14px;
+  overflow-x: auto; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch;
+}
+.ix-shot {
+  flex: 0 0 auto; padding: 0; border: 0; background: #000; cursor: zoom-in;
+  border-radius: 10px; overflow: hidden; scroll-snap-align: start;
+  outline-offset: 3px;
+}
+.ix-shot img { height: clamp(170px, 20vw, 240px); width: auto; max-width: none; transition: opacity 0.2s; }
+.ix-shot:hover img { opacity: 0.88; }
+
+/* ───────── Video ───────── */
+.ix-video-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.ix-video { margin: 0; border-radius: 14px; overflow: hidden; background: #000; border: 1px solid var(--ix-line); }
+.ix-video video { width: 100%; aspect-ratio: 1010 / 570; object-fit: contain; background: #000; }
+
+/* ───────── Ladder ───────── */
+.ix-ladder { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 44px; border: 1px solid var(--ix-line-dark); border-radius: 18px; overflow: hidden; }
+.ix-lvl { display: flex; flex-direction: column; padding: clamp(24px, 3vw, 40px); }
+.ix-lvl + .ix-lvl { border-inline-start: 1px solid var(--ix-line-dark); }
+.ix-lvl.is-featured { background: rgba(201, 168, 76, 0.1); }
+.ix-bars { display: flex; align-items: flex-end; gap: 4px; height: 26px; margin-bottom: 18px; }
+.ix-bars i { width: 8px; border-radius: 2px; background: rgba(250, 248, 242, 0.22); }
+.ix-bars i:nth-child(1) { height: 9px; }
+.ix-bars i:nth-child(2) { height: 17px; }
+.ix-bars i:nth-child(3) { height: 26px; }
+.ix-bars i.on { background: var(--ix-gold); }
+.ix-lvl h3 { font-size: 26px; line-height: 1.3; font-weight: 700; }
+html[lang="en"] .ix-lvl h3 { font-weight: 600; }
+.ix-lvl .ix-fit { margin-top: 10px; color: var(--ix-muted-dark); }
+.ix-lvl ul { margin-top: 20px; display: grid; gap: 8px; }
+.ix-lvl li { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; }
+.ix-lvl li::before { content: ""; flex: none; width: 6px; height: 6px; margin-top: 11px; border-radius: 50%; background: var(--ix-gold); }
+.ix-lvl .ix-time { margin-top: 20px; font-size: 14px; color: var(--ix-gold-soft); }
+.ix-lvl .ix-btn { margin-top: auto; align-self: flex-start; }
+.ix-lvl .ix-time + .ix-btn { margin-top: 24px; }
+
+/* ───────── Assessment (markup shared with gh-sales-room.js) ───────── */
+.ix .pl-assess-host { padding: 0; border: 0; background: transparent; }
+.ix .pl-assess-host-inner { max-width: 820px; }
+.ix .pl-assess-host .pl-assess-head { text-align: start; margin-bottom: 0; }
+.ix .pl-assess-head h2 { font-family: var(--ix-head); font-size: clamp(28px, 3.4vw, 44px); line-height: 1.25; font-weight: 700; color: var(--ix-ink); margin: 0 0 14px; }
+html[lang="en"] .ix .pl-assess-head h2 { font-weight: 600; }
+.ix .pl-assess-head p { font-size: 18px; font-weight: 400; color: var(--ix-muted); }
+.ix .pl-assess-qtext { font-size: 17px; font-weight: 500; color: var(--ix-ink); }
+.ix .pl-assess-item .q { background: var(--ix-paper); color: var(--ix-gold-deep); }
+.ix .pl-assess-btns button { min-height: 44px; font-family: var(--ix-body); font-size: 15px; }
+.ix .pl-assess-btns button.is-on { background: var(--ix-ink); border-color: var(--ix-ink); color: #fff; }
+.ix .pl-assess-result { background: var(--ix-paper); }
+.ix .pl-assess-result h3 { font-family: var(--ix-head); }
+.ix .pl-btn-pill { min-height: 48px; padding: 0 26px; font-size: 15px; background: var(--ix-gold); color: var(--ix-ink); border-color: var(--ix-gold); }
+.ix .pl-btn-pill:hover { background: var(--ix-gold-soft); }
+
+/* ───────── FAQ ───────── */
+.ix-faq { max-width: 860px; margin-top: 36px; }
+.ix-faq details { border-top: 1px solid var(--ix-line); }
+.ix-faq details:last-child { border-bottom: 1px solid var(--ix-line); }
+.ix-faq summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  padding: 22px 0; cursor: pointer; list-style: none; font-size: 19px; font-weight: 700; min-height: 44px;
+}
+.ix-faq summary::-webkit-details-marker { display: none; }
+.ix-faq summary::after {
+  content: "+"; flex: none; width: 34px; height: 34px; display: grid; place-items: center;
+  border-radius: 50%; border: 1.5px solid var(--ix-gold); color: var(--ix-gold-deep);
+  font-size: 22px; font-weight: 500; line-height: 1; transition: transform 0.25s;
+}
+.ix-faq details[open] summary::after { transform: rotate(45deg); }
+.ix-faq details p { padding: 0 0 24px; max-width: 64ch; color: var(--ix-muted); }
+
+/* ───────── CTA band ───────── */
+.ix-cta { text-align: center; }
+.ix-cta h2 { font-size: clamp(30px, 4vw, 52px); line-height: 1.25; font-weight: 800; max-width: 22ch; margin-inline: auto; }
+html[lang="en"] .ix-cta h2 { font-weight: 600; }
+.ix-cta p { margin: 18px auto 0; max-width: 56ch; color: var(--ix-muted-dark); font-size: 18px; }
+.ix-cta .ix-hero-cta { justify-content: center; }
+
+/* ───────── Related ───────── */
+.ix-rel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-top: 36px; border-top: 1px solid var(--ix-line); }
+.ix-rel a { display: block; padding: 24px 20px 24px 0; border-bottom: 1px solid var(--ix-line); transition: background 0.2s; }
+html[dir="rtl"] .ix-rel a { padding: 24px 0 24px 20px; }
+.ix-rel a:hover h3 { color: var(--ix-gold-deep); }
+.ix-rel .material-symbols-outlined { color: var(--ix-gold-deep); }
+.ix-rel h3 { margin-top: 12px; font-size: 20px; font-weight: 700; transition: color 0.2s; }
+html[lang="en"] .ix-rel h3 { font-weight: 600; }
+.ix-rel p { margin-top: 6px; font-size: 15px; color: var(--ix-muted); line-height: 1.65; }
+
+/* ───────── Booking ───────── */
+.ix-book { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.ix-book-info li { display: flex; gap: 12px; align-items: center; margin-top: 16px; font-size: 17px; }
+.ix-book-info .material-symbols-outlined { color: var(--ix-gold-deep); }
+.ix-book-info a { text-decoration: underline; text-underline-offset: 3px; }
+.ix-form { background: var(--ix-paper); border: 1px solid var(--ix-line); border-radius: 18px; padding: clamp(22px, 3vw, 36px); }
+.ix-form h3 { font-size: 24px; font-weight: 700; margin-bottom: 18px; }
+html[lang="en"] .ix-form h3 { font-weight: 600; }
+.ix-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; }
+.ix-field { display: flex; flex-direction: column; gap: 6px; }
+.ix-field--wide { grid-column: 1 / -1; }
+.ix-field label { font-size: 14px; font-weight: 600; }
+.ix-field input, .ix-field select, .ix-field textarea {
+  width: 100%; min-height: 50px; padding: 12px 14px; border-radius: 10px;
+  border: 1.5px solid rgba(20, 18, 13, 0.28); background: #fff; color: var(--ix-ink);
+  font-size: 16px; line-height: 1.5;
+}
+.ix-field textarea { min-height: 120px; resize: vertical; }
+.ix-field input:focus, .ix-field select:focus, .ix-field textarea:focus { outline: 3px solid var(--ix-gold); outline-offset: 1px; border-color: var(--ix-gold-deep); }
+.ix-form .gh-form-security, .ix-form .form-feedback, .ix-form .ix-field--wide { margin-top: 0; }
+.ix-form .form-submit { margin-top: 18px; width: 100%; }
+.gh-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+
+/* ───────── Lightbox ───────── */
+.ix-lb { position: fixed; inset: 0; z-index: 100000; display: none; align-items: center; justify-content: center; padding: 56px 16px 24px; background: rgba(8, 7, 5, 0.94); }
+.ix-lb.is-open { display: flex; }
+.ix-lb img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.ix-lb button {
+  position: absolute; top: 12px; inset-inline-end: 12px; width: 48px; height: 48px; border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4); background: transparent; color: #fff; font-size: 22px; cursor: pointer;
+}
+
+
+/* The Arabic typography layer forces small card-title sizes with !important; restore this page's scale. */
+html[lang] .ix .ix-cap-row h3 { font-size: 24px !important; font-weight: 700 !important; line-height: 1.3 !important; }
+html[lang] .ix .ix-lvl h3 { font-size: 26px !important; font-weight: 700 !important; line-height: 1.3 !important; }
+html[lang] .ix .ix-rel h3 { font-size: 20px !important; font-weight: 700 !important; line-height: 1.35 !important; }
+html[lang] .ix .ix-form h3 { font-size: 24px !important; font-weight: 700 !important; line-height: 1.3 !important; }
+html[lang] .ix .ix-album-head h3 { font-size: 22px !important; font-weight: 700 !important; }
+html[lang] .ix .pl-assess-result h3 { font-size: 22px !important; font-weight: 700 !important; }
+html[lang="en"] .ix .ix-cap-row h3,
+html[lang="en"] .ix .ix-lvl h3,
+html[lang="en"] .ix .ix-rel h3,
+html[lang="en"] .ix .ix-form h3 { font-weight: 600 !important; }
+
+/* ───────── Responsive ───────── */
+@media (max-width: 960px) {
+  .ix-hero-grid, .ix-caps-grid, .ix-proof-grid, .ix-video-grid, .ix-book { grid-template-columns: minmax(0, 1fr); }
+  .ix-caps-head { position: static; }
+  .ix-ladder { grid-template-columns: minmax(0, 1fr); }
+  .ix-lvl + .ix-lvl { border-inline-start: 0; border-top: 1px solid var(--ix-line-dark); }
+  .ix-rel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ix-h2, .ix-cta h2 { max-width: none; }
+}
+@media (max-width: 560px) {
+  .ix { font-size: 16px; }
+  .ix-form-grid { grid-template-columns: minmax(0, 1fr); }
+  .ix-rel { grid-template-columns: minmax(0, 1fr); }
+  .ix-cap-row { grid-template-columns: 44px minmax(0, 1fr); gap: 16px; }
+  .ix-cap-ico { width: 44px; height: 44px; }
+  .ix-hero-cta .ix-btn { flex: 1 1 100%; }
+  .ix-lead { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ix-hot::after { animation: none; }
+  .ix *, .ix *::before, .ix *::after { transition: none !important; }
+}

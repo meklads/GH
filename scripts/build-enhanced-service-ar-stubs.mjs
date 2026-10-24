@@ -2,6 +2,7 @@
 /**
  * Replace "Coming Soon" AR service stubs with hero + main sections (outcome-led GCC copy).
  */
+import './lib/handcrafted-guard.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

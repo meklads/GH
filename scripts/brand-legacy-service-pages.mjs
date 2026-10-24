@@ -5,6 +5,7 @@
  * - Light theme (#FAFAF8 / gold #C9A84C)
  * - Monolingual pages (no AR/EN span mixing)
  */
+import './lib/handcrafted-guard.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
