@@ -186,32 +186,122 @@
     "index.html": {
       "title": "Graphics House | Architectural Visualization in Saudi Arabia",
       "description": "Visual launch systems for real estate developers: cinematic CGI, smart maquettes and interactive sales tools from one Jeddah studio.",
-      "sameAs": [
-        "https://www.facebook.com/3dghouse",
-        "https://www.instagram.com/3dgraphicshouse",
-        "https://www.linkedin.com/company/graphics-house-gh/",
-        "https://www.youtube.com/user/3dghouse",
-        "https://twitter.com/GraphicsHouse2"
-      ],
       "canonical": "https://3dgraphicshouse.com/",
       "hreflang": {
         "en": "https://3dgraphicshouse.com/",
         "x-default": "https://3dgraphicshouse.com/"
+      },
+      "orgSchema": {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://3dgraphicshouse.com/#organization",
+        "name": "Graphics House",
+        "alternateName": [
+          "3D Graphics House",
+          "جرافيكس هاوس"
+        ],
+        "url": "https://3dgraphicshouse.com/",
+        "logo": "https://3dgraphicshouse.com/assets/logo-gold.png",
+        "image": "https://3dgraphicshouse.com/assets/favicon/og-image.png",
+        "email": "info@3dgraphicshouse.com",
+        "telephone": "+966502786513",
+        "foundingDate": "2010",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Jeddah",
+            "addressCountry": "SA",
+            "postalCode": "136972"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Muscat",
+            "addressCountry": "OM"
+          }
+        ],
+        "areaServed": [
+          "Saudi Arabia",
+          "Oman",
+          "Bahrain",
+          "United Arab Emirates",
+          "GCC"
+        ],
+        "knowsAbout": [
+          "Architectural visualization",
+          "3D rendering",
+          "Architectural scale models",
+          "CGI films",
+          "Interactive sales galleries",
+          "Real estate marketing"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/company/graphics-house-gh/",
+          "https://www.instagram.com/3dgraphicshouse/",
+          "https://www.facebook.com/3dghouse",
+          "https://www.youtube.com/user/3dghouse",
+          "https://twitter.com/GraphicsHouse2"
+        ],
+        "description": "Architectural visualization studio in Saudi Arabia: 3D renders, cinematic CGI films, smart maquettes, interactive sales galleries and media production for real estate developers in the GCC."
       }
     },
     "index-ar.html": {
       "title": "Graphics House | إظهار معماري ومجسمات للمطورين في السعودية",
       "description": "Graphics House يجهّز الإطلاق البصري للمطورين في الخليج: مجسمات، أفلام CGI، وتجارب تفاعلية من فريق واحد في جدة.",
-      "sameAs": [
-        "https://www.facebook.com/3dghouse",
-        "https://www.instagram.com/3dgraphicshouse",
-        "https://www.linkedin.com/company/graphics-house-gh/",
-        "https://www.youtube.com/user/3dghouse",
-        "https://twitter.com/GraphicsHouse2"
-      ],
       "hreflang": {
         "en": "https://3dgraphicshouse.com/",
         "x-default": "https://3dgraphicshouse.com/"
+      },
+      "orgSchema": {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://3dgraphicshouse.com/#organization",
+        "name": "Graphics House",
+        "alternateName": [
+          "3D Graphics House",
+          "جرافيكس هاوس"
+        ],
+        "url": "https://3dgraphicshouse.com/",
+        "logo": "https://3dgraphicshouse.com/assets/logo-gold.png",
+        "image": "https://3dgraphicshouse.com/assets/favicon/og-image.png",
+        "email": "info@3dgraphicshouse.com",
+        "telephone": "+966502786513",
+        "foundingDate": "2010",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Jeddah",
+            "addressCountry": "SA",
+            "postalCode": "136972"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Muscat",
+            "addressCountry": "OM"
+          }
+        ],
+        "areaServed": [
+          "Saudi Arabia",
+          "Oman",
+          "Bahrain",
+          "United Arab Emirates",
+          "GCC"
+        ],
+        "knowsAbout": [
+          "Architectural visualization",
+          "3D rendering",
+          "Architectural scale models",
+          "CGI films",
+          "Interactive sales galleries",
+          "Real estate marketing"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/company/graphics-house-gh/",
+          "https://www.instagram.com/3dgraphicshouse/",
+          "https://www.facebook.com/3dghouse",
+          "https://www.youtube.com/user/3dghouse",
+          "https://twitter.com/GraphicsHouse2"
+        ],
+        "description": "استوديو إظهار معماري في السعودية: رندرات ثلاثية الأبعاد، أفلام CGI، مجسمات ذكية، صالات بيع تفاعلية، وإنتاج إعلامي للمطورين العقاريين في الخليج."
       }
     },
     "contact-us-en.html": {
@@ -301,7 +391,22 @@
       "hiddenH1": "التحريك ثلاثي الأبعاد والأفلام السينمائية"
     },
     "services/cinematic-cgi.html": {
-      "title": "أفلام CGI سينمائية للمشاريع العقارية | Graphics House"
+      "title": "أفلام CGI سينمائية للمشاريع العقارية | Graphics House",
+      "inserts": [
+        {
+          "anchor": "</head>",
+          "position": "before",
+          "unless": "gh-svc-deep.css",
+          "html": "<link rel=\"stylesheet\" href=\"../assets/gh-svc-deep.css?v=1\">\n"
+        },
+        {
+          "anchor": "<section class=\"gh-svc-links\">",
+          "position": "before",
+          "unless": "class=\"gh-svc-deep\"",
+          "file": "scripts/seo-blocks/cinematic-cgi.html",
+          "faqSchema": true
+        }
+      ]
     },
     "services/galleries.html": {
       "title": "تصميم وتنفيذ صالات البيع ومعارض المطورين | Graphics House"
@@ -313,22 +418,97 @@
       "title": "جولات افتراضية VR و360° للمشاريع العقارية | Graphics House"
     },
     "services/photography-media.html": {
-      "title": "التصوير المعماري والجوي للمشاريع العقارية | Graphics House"
+      "title": "التصوير المعماري والجوي للمشاريع العقارية | Graphics House",
+      "inserts": [
+        {
+          "anchor": "</head>",
+          "position": "before",
+          "unless": "gh-svc-deep.css",
+          "html": "<link rel=\"stylesheet\" href=\"../assets/gh-svc-deep.css?v=1\">\n"
+        },
+        {
+          "anchor": "<section class=\"gh-svc-links\">",
+          "position": "before",
+          "unless": "class=\"gh-svc-deep\"",
+          "file": "scripts/seo-blocks/photography-media.html",
+          "faqSchema": true
+        }
+      ]
     },
     "services/branding.html": {
       "title": "الهوية البصرية للمشاريع العقارية | Graphics House"
     },
     "services/digital-marketing.html": {
-      "title": "التسويق الرقمي للمطورين العقاريين | Graphics House"
+      "title": "التسويق الرقمي للمطورين العقاريين | Graphics House",
+      "inserts": [
+        {
+          "anchor": "</head>",
+          "position": "before",
+          "unless": "gh-svc-deep.css",
+          "html": "<link rel=\"stylesheet\" href=\"../assets/gh-svc-deep.css?v=1\">\n"
+        },
+        {
+          "anchor": "<section class=\"gh-svc-links\">",
+          "position": "before",
+          "unless": "class=\"gh-svc-deep\"",
+          "file": "scripts/seo-blocks/digital-marketing.html",
+          "faqSchema": true
+        }
+      ]
     },
     "services/web-solutions.html": {
-      "title": "مواقع ومنصات رقمية للمشاريع العقارية | Graphics House"
+      "title": "مواقع ومنصات رقمية للمشاريع العقارية | Graphics House",
+      "inserts": [
+        {
+          "anchor": "</head>",
+          "position": "before",
+          "unless": "gh-svc-deep.css",
+          "html": "<link rel=\"stylesheet\" href=\"../assets/gh-svc-deep.css?v=1\">\n"
+        },
+        {
+          "anchor": "<section class=\"gh-svc-links\">",
+          "position": "before",
+          "unless": "class=\"gh-svc-deep\"",
+          "file": "scripts/seo-blocks/web-solutions.html",
+          "faqSchema": true
+        }
+      ]
     },
     "services/smart-visualization.html": {
-      "title": "التصور الذكي للمشاريع متعددة المراحل | Graphics House"
+      "title": "التصور الذكي للمشاريع متعددة المراحل | Graphics House",
+      "inserts": [
+        {
+          "anchor": "</head>",
+          "position": "before",
+          "unless": "gh-svc-deep.css",
+          "html": "<link rel=\"stylesheet\" href=\"../assets/gh-svc-deep.css?v=1\">\n"
+        },
+        {
+          "anchor": "<section class=\"gh-svc-links\">",
+          "position": "before",
+          "unless": "class=\"gh-svc-deep\"",
+          "file": "scripts/seo-blocks/smart-visualization.html",
+          "faqSchema": true
+        }
+      ]
     },
     "services/ai-solutions.html": {
-      "title": "حلول الذكاء الاصطناعي للإظهار المعماري | Graphics House"
+      "title": "حلول الذكاء الاصطناعي للإظهار المعماري | Graphics House",
+      "inserts": [
+        {
+          "anchor": "</head>",
+          "position": "before",
+          "unless": "gh-svc-deep.css",
+          "html": "<link rel=\"stylesheet\" href=\"../assets/gh-svc-deep.css?v=1\">\n"
+        },
+        {
+          "anchor": "<section class=\"gh-svc-links\">",
+          "position": "before",
+          "unless": "class=\"gh-svc-deep\"",
+          "file": "scripts/seo-blocks/ai-solutions.html",
+          "faqSchema": true
+        }
+      ]
     },
     "services/maquettes.html": {
       "title": "مجسمات معمارية للمطورين في السعودية | Graphics House"

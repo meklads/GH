@@ -37,7 +37,18 @@ function setTag(html, re, build) {
   return re.test(html) ? html.replace(re, build) : html;
 }
 
-function applyPage(html, o) {
+const strip = (s) => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+
+/** Builds FAQPage JSON-LD from the visible <details><summary>Q</summary><p>A</p></details> items of a block. */
+function faqSchemaFrom(block, rel) {
+  const items = [...block.matchAll(/<details>\s*<summary>([\s\S]*?)<\/summary>\s*<p>([\s\S]*?)<\/p>\s*<\/details>/g)]
+    .map(([, q, a]) => ({ '@type': 'Question', name: strip(q), acceptedAnswer: { '@type': 'Answer', text: strip(a) } }));
+  if (!items.length) return '';
+  const url = `https://3dgraphicshouse.com/${rel}`;
+  return `\n<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', url, mainEntity: items })}</script>\n`;
+}
+
+function applyPage(html, o, rel) {
   if (o.title) html = setTag(html, /<title>[\s\S]*?<\/title>/, () => `<title>${o.title}</title>`);
   if (o.description) {
     html = setTag(html, /(<meta name="description" content=")[^"]*(")/, (_, a, b) => a + attr(o.description) + b);
@@ -62,7 +73,9 @@ function applyPage(html, o) {
     if (ins.unless && html.includes(ins.unless)) continue;
     const re = new RegExp(ins.anchor);
     if (!re.test(html)) continue;
-    html = html.replace(re, (m) => (ins.position === 'before' ? ins.html + m : m + ins.html));
+    let block = ins.file ? fs.readFileSync(path.join(ROOT, ins.file), 'utf8') : ins.html;
+    if (ins.faqSchema && !html.includes('"FAQPage"')) block += faqSchemaFrom(block, rel);
+    html = html.replace(re, (m) => (ins.position === 'before' ? block + m : m + block));
   }
   if (o.canonical) {
     html = setTag(html, /(<link rel="canonical" href=")[^"]*(")/, (_, a, b) => a + o.canonical + b);
@@ -76,6 +89,17 @@ function applyPage(html, o) {
     html = html.replace(new RegExp(`("@type":\\s*)"${from}"`, 'g'), `$1"${to}"`);
   }
   if (o.localBusinessToService) html = localBusinessToService(html);
+  if (o.orgSchema) {
+    let done = false;
+    html = html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (m, json) => {
+      if (done) return m;
+      let d;
+      try { d = JSON.parse(json); } catch { return m; }
+      if (!d || !['ProfessionalService', 'LocalBusiness', 'Organization'].includes(d['@type'])) return m;
+      done = true;
+      return `<script type="application/ld+json">${JSON.stringify(o.orgSchema)}</script>`;
+    });
+  }
   return html;
 }
 
@@ -164,7 +188,7 @@ for (const rel of files) {
     html = applyGlobal(html, rel);
   } else if (!/name=["']robots["'][^>]*noindex/i.test(html) && !/http-equiv=["']refresh["']/i.test(html)) {
     html = applyGlobal(html, rel);
-    if (cfg.pages[rel]) html = applyPage(html, cfg.pages[rel]);
+    if (cfg.pages[rel]) html = applyPage(html, cfg.pages[rel], rel);
   }
   if (html !== before) {
     changed++;
