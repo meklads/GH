@@ -4,6 +4,7 @@
  *
  * Run: node scripts/build-project-launch-en-from-ar.mjs
  */
+import './lib/handcrafted-guard.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

@@ -92,6 +92,13 @@ function buildAdsLp({ srcRel, outRel, pageUrl, lang, homeHref, ghostCtaFrom, gho
   const OUT = path.join(ROOT, outRel);
   let html = fs.readFileSync(SRC, 'utf8');
 
+  /* The permanent page is now hand-crafted (own layout, no pl-* markup): the ads LP is derived from the
+     earlier markup, so keep the committed ads LP as it is instead of regenerating it from the new page. */
+  if (html.includes('data-gh-handcrafted="1"') && fs.existsSync(OUT)) {
+    console.log(`  [hand-crafted source] kept ${outRel}`);
+    return;
+  }
+
   /* Ads meta */
   html = html.replace(
     /<link rel="canonical" href="[^"]*">/,
