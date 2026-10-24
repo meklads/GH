@@ -2,8 +2,8 @@
 /**
  * Unify Arabic typography across all AR pages, matches index-ar.html font stack.
  */
-import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
-import { join, relative } from 'node:path';
+import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'node:fs';
+import { join, relative, dirname } from 'node:path';
 
 const ROOT = join(import.meta.dirname, '..');
 const CANONICAL_FONTS =
@@ -40,7 +40,23 @@ function assetPrefix(rel) {
   return depth ? '../'.repeat(depth) : '';
 }
 
-function normalizeFontLinks(html) {
+/** True when the page or one of its local stylesheets uses Playfair Display. */
+function pageUsesPlayfair(html, file) {
+  if (/Playfair Display/i.test(html)) return true;
+  if (!file) return false;
+  const hrefs = [...html.matchAll(/<link[^>]+href="([^"#?]+\.css)(?:\?[^"]*)?"[^>]*>/gi)].map((m) => m[1]);
+  return hrefs.some((href) => {
+    if (/^(https?:)?\/\//i.test(href)) return false;
+    const cssPath = join(dirname(file), href);
+    try {
+      return existsSync(cssPath) && /Playfair Display/i.test(readFileSync(cssPath, 'utf8'));
+    } catch (e) {
+      return false;
+    }
+  });
+}
+
+function normalizeFontLinks(html, file) {
   const materialLinks = [];
   html = html.replace(
     /<link[^>]*href="https:\/\/fonts\.googleapis\.com\/css2[^"]*"[^>]*>/gi,
@@ -53,7 +69,7 @@ function normalizeFontLinks(html) {
     }
   );
 
-  const needsPlayfair = /Playfair Display/i.test(html);
+  const needsPlayfair = pageUsesPlayfair(html, file);
   const hasCanonical = html.includes('IBM+Plex+Sans+Arabic');
 
   if (!hasCanonical) {
@@ -97,7 +113,7 @@ for (const file of walkHtml(ROOT)) {
   const rel = relative(ROOT, file);
   let html = readFileSync(file, 'utf8');
   if (!isArabicPage(rel, html)) continue;
-  const normalized = normalizeFontLinks(html);
+  const normalized = normalizeFontLinks(html, file);
   const next = injectTypographyCss(normalized, assetPrefix(rel));
   if (next !== html) {
     writeFileSync(file, next);

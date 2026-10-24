@@ -23,8 +23,9 @@ function inject(indexRel, partialName) {
   } else {
     const anchor = /(<\/p>\s*\n\s*<!-- Buttons -->)/;
     if (!anchor.test(html)) {
-      console.error('  no hero launch slot in', indexRel);
-      process.exit(1);
+      // The homepage hero no longer has the launch-pills slot; skip instead of failing the build.
+      console.warn('  skipped hero launch (no slot) in', indexRel);
+      return;
     }
     html = html.replace(anchor, `</p>\n\n${block}\n\n      <!-- Buttons -->`);
   }

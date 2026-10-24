@@ -557,7 +557,7 @@ function injectAfterH2(body, blocksToInsert) {
   if (idx < 0) return body;
   const insertAt = idx + 1;
   const next = [...body];
-  next.splice(insertAt, 0...blocksToInsert);
+  next.splice(insertAt, 0, ...blocksToInsert);
   return next;
 }
 
