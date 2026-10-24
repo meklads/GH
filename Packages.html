@@ -28,8 +28,8 @@ gtag('config','G-Y67JVE898Z');
 <script src="assets/gh-analytics.js?v=3"></script>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>الباقات | GH Direct | Graphics House</title>
-<meta name="description" content="باقات وخدمات للمطورين العقاريين حسب مرحلة المشروع: قبل الطرح، أثناء البناء، وبعد الإنجاز. التسعير حسب النطاق بعد الاجتماع | Graphics House."/>
+<title>الباقات | ProjectLaunch™ | Graphics House</title>
+<meta name="description" content="ProjectLaunch™ من Graphics House: سلّم مشروعك العقاري ونتولى الباقي، من المخطط الأول حتى يوم الافتتاح. باقات حسب مرحلة المشروع، والتسعير بعرض سعر بعد الاجتماع."/>
 <link rel="canonical" href="https://3dgraphicshouse.com/Packages.html">
 <link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/Packages-en.html">
 <link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/Packages.html">
@@ -2641,6 +2641,236 @@ html[dir="rtl"] .ghd-section--extras .gh-tix__gets li {
 }
 </style>
 <link rel="stylesheet" href="assets/gh-chat-assistant.css?v=11">
+<style id="gh-pkg-projectlaunch-merge">
+/* =====================================================================
+   ProjectLaunch™ merge — Packages AR/EN
+   Split hero (video + copy) and three sections: ecosystem / why / services.
+   Brand: gold #C9A84C, ink #141414, paper #F6F4EF; fonts inherited from page
+   (Tajawal / IBM Plex Sans Arabic for AR, Inter for EN, Playfair for marks).
+   ===================================================================== */
+
+/* ---------- Split hero: video on the left, copy on the right (both languages) ---------- */
+.ghd-page .ghd-hero.ghd-hero--split {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+  padding: 0;
+  min-height: 620px;
+  background: #0a0a08;
+}
+html[dir="rtl"] .ghd-page .ghd-hero.ghd-hero--split { flex-direction: row-reverse; }
+.ghd-page .ghd-hero--split .ghd-hero-media-wrapper {
+  position: relative;
+  flex: 1 1 52%;
+  height: auto;
+  align-self: stretch;
+  min-height: 620px;
+  overflow: hidden;
+}
+.ghd-page .ghd-hero--split .ghd-hero-media {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+}
+.ghd-page .ghd-hero--split .ghd-hero-video {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.ghd-page .ghd-hero--split .ghd-hero-inner.pl-hero {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: start;
+  max-width: none;
+  width: auto;
+  margin: 0;
+  padding-inline: clamp(32px, 5vw, 88px);
+  padding-block: clamp(56px, 7vw, 96px);
+  background: #0a0a08;
+}
+
+/* Hero copy */
+.ghd-page .pl-hero__mark {
+  display: inline-flex; align-items: center; gap: 10px; margin: 0;
+  color: #C9A84C; font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 600; letter-spacing: 0;
+}
+.ghd-page .pl-hero__mark img { width: 26px; height: 26px; }
+.ghd-page .pl-hero__mark sup { font-size: .55em; }
+.ghd-page .pl-hero .pl-hero__title {
+  margin: 18px 0 0; color: #fafaf8; font-weight: 700; letter-spacing: -0.01em;
+  font-size: clamp(36px, 4.4vw, 62px); line-height: 1.16; text-shadow: none;
+}
+html[dir="rtl"]:not([lang="en"]) .ghd-page .pl-hero .pl-hero__title {
+  font-size: clamp(36px, 4.4vw, 62px) !important; font-weight: 500 !important; line-height: 1.22 !important;
+}
+.ghd-page .pl-hero .pl-hero__lead {
+  margin: 20px 0 0; max-width: 34em; color: rgba(250,250,248,.78);
+  font-size: clamp(15.5px, 1.25vw, 18px); line-height: 1.8;
+}
+html[lang="en"] .ghd-page .pl-hero .pl-hero__title { font-size: clamp(34px, 3.5vw, 52px); line-height: 1.12; }
+html[lang="en"] .ghd-page .pl-hero .pl-hero__lead { line-height: 1.65; }
+.ghd-page .pl-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.ghd-page .pl-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 50px; padding: 0 28px; border-radius: 999px; border: 1.5px solid transparent;
+  font-size: 16px; font-weight: 700; text-decoration: none; letter-spacing: 0;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.ghd-page .pl-btn--gold { background: #C9A84C; color: #141414; }
+.ghd-page .pl-btn--gold:hover { background: #D9B860; color: #141414; }
+.ghd-page .pl-btn--ghost { border-color: rgba(250,250,248,.38); color: #fafaf8; }
+.ghd-page .pl-btn--ghost:hover { border-color: #C9A84C; color: #C9A84C; }
+.ghd-page .pl-btn:focus-visible, .ghd-page .pl a:focus-visible, .ghd-page .pl-hero__path a:focus-visible {
+  outline: 2px solid #C9A84C; outline-offset: 3px;
+}
+
+/* Hero path: the three phases as a gold line, links to the ecosystem section */
+.ghd-page .pl-hero__path {
+  position: relative; list-style: none; margin: 40px 0 0; padding: 0;
+  width: 100%; max-width: 520px; display: grid; grid-template-columns: repeat(3, 1fr);
+}
+.ghd-page .pl-hero__path::before {
+  content: ""; position: absolute; inset-inline: 0; top: 6px; height: 2px;
+  background: linear-gradient(to var(--pl-path-dir, left), #C9A84C, rgba(201,168,76,.25));
+}
+html[dir="ltr"] .ghd-page .pl-hero__path::before { --pl-path-dir: right; }
+.ghd-page .pl-hero__path li { position: relative; }
+.ghd-page .pl-hero__path a { display: block; padding-top: 24px; color: #fafaf8; text-decoration: none; }
+.ghd-page .pl-hero__path a::before {
+  content: ""; position: absolute; top: 0; inset-inline-start: 0;
+  width: 14px; height: 14px; border-radius: 50%; background: #0a0a08; border: 2px solid #C9A84C;
+}
+.ghd-page .pl-hero__path li:first-child a::before { background: #C9A84C; }
+.ghd-page .pl-hero__path b { display: block; font-size: 16px; font-weight: 700; }
+.ghd-page .pl-hero__path small { display: block; margin-top: 2px; font-size: 13px; color: rgba(250,250,248,.6); }
+.ghd-page .pl-hero__path a:hover b { color: #C9A84C; }
+
+/* ---------- Shared section system ---------- */
+.ghd-page .pl {
+  --pl-ink: #141414; --pl-ink-2: #1d1b17; --pl-paper: #F6F4EF; --pl-stone: #E4DDCD;
+  --pl-muted: #5c574c; --pl-gold: #C9A84C; --pl-gold-dark: #A8883A; --pl-gold-soft: rgba(201,168,76,.14);
+  color: var(--pl-ink);
+  line-height: 1.75;
+}
+html[lang="en"] .ghd-page .pl { line-height: 1.6; }
+.ghd-page .pl *, .ghd-page .pl *::before, .ghd-page .pl *::after { box-sizing: border-box; }
+.ghd-page .pl h2, .ghd-page .pl h3, .ghd-page .pl p, .ghd-page .pl ul, .ghd-page .pl ol, .ghd-page .pl figure { margin: 0; padding: 0; }
+.ghd-page .pl img { display: block; width: 100%; height: auto; }
+.ghd-page .pl-wrap { width: min(100% - 32px, 1200px); margin-inline: auto; }
+.ghd-page .pl-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.ghd-page .pl-head { max-width: 760px; margin: 0 auto clamp(40px, 5vw, 60px); text-align: center; }
+.ghd-page .pl-head--tight { margin-bottom: 28px; }
+.ghd-page .pl-kicker { color: var(--pl-gold-dark); font-family: 'Playfair Display', serif; font-weight: 600; font-size: 17px; margin-bottom: 8px; }
+.ghd-page .pl .pl-h2 { font-size: clamp(30px, 3.6vw, 46px); font-weight: 700; line-height: 1.25; color: var(--pl-ink); letter-spacing: -0.01em; }
+html[dir="rtl"]:not([lang="en"]) .ghd-page .pl .pl-h2 { font-size: clamp(30px, 3.6vw, 46px) !important; font-weight: 500 !important; line-height: 1.3 !important; }
+.ghd-page .pl-head > p:not(.pl-kicker) { margin-top: 14px; font-size: 17px; color: var(--pl-muted); }
+
+.ghd-page .pl-list { list-style: none; display: grid; gap: 9px; }
+.ghd-page .pl-list li { position: relative; padding-inline-start: 22px; font-size: 15.5px; color: var(--pl-ink-2); }
+.ghd-page .pl-list li::before { content: ""; position: absolute; inset-inline-start: 0; top: .8em; width: 10px; height: 2px; background: var(--pl-gold); }
+.ghd-page .pl-list--compact { gap: 6px; }
+.ghd-page .pl-list--compact li { font-size: 15px; }
+
+.ghd-page .pl .pl-link {
+  display: inline-block; font-weight: 700; color: var(--pl-gold-dark);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px;
+}
+.ghd-page .pl .pl-link:hover { color: var(--pl-ink); }
+
+/* ---------- Ecosystem ---------- */
+.ghd-page .pl-eco { padding: clamp(40px, 5vw, 64px) 0 clamp(56px, 7vw, 88px); background: var(--pl-paper); }
+.ghd-page .pl-phases { list-style: none; position: relative; display: grid; gap: clamp(44px, 6vw, 80px); max-width: 1120px; margin-inline: auto; }
+.ghd-page .pl-phases::before {
+  content: ""; position: absolute; inset-inline-start: 23px; top: 24px; bottom: 24px; width: 2px;
+  background: linear-gradient(var(--pl-gold), var(--pl-gold) 72%, var(--pl-stone));
+}
+.ghd-page .pl-phase { position: relative; display: grid; grid-template-columns: 48px 1fr 1.05fr; gap: clamp(20px, 3.5vw, 52px); align-items: center; scroll-margin-top: 110px; }
+.ghd-page .pl-phase__node {
+  position: relative; z-index: 1; align-self: start; width: 48px; height: 48px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--pl-ink); color: var(--pl-gold);
+  font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; box-shadow: 0 0 0 6px var(--pl-paper);
+}
+.ghd-page .pl-phase__when { font-size: 14px; font-weight: 700; color: var(--pl-gold-dark); }
+.ghd-page .pl .pl-phase__name { margin-top: 4px; font-size: clamp(32px, 3.6vw, 46px); font-weight: 700; line-height: 1.2; color: var(--pl-ink); }
+html[dir="rtl"]:not([lang="en"]) .ghd-page .pl .pl-phase__name { font-size: clamp(32px, 3.6vw, 46px) !important; font-weight: 500 !important; line-height: 1.2 !important; }
+.ghd-page .pl-phase__goal { margin: 10px 0 22px !important; font-size: 18px; font-weight: 500; color: var(--pl-ink-2); max-width: 30em; }
+.ghd-page .pl-phase__by { margin-top: 20px !important; padding-top: 14px; border-top: 1px solid var(--pl-stone); font-size: 14px; color: var(--pl-muted); }
+.ghd-page .pl-phase__media { border-radius: 10px; overflow: hidden; background: var(--pl-stone); box-shadow: 0 18px 40px rgba(20,20,20,.08); }
+
+/* ---------- Why one system ---------- */
+.ghd-page .pl-why { padding: 0 0 clamp(72px, 9vw, 120px); background: var(--pl-paper); }
+.ghd-page .pl-why__card { max-width: 1120px; margin-inline: auto; background: #fff; border: 1px solid var(--pl-stone); border-radius: 16px; padding: clamp(24px, 4vw, 52px); }
+.ghd-page .pl-compare { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+.ghd-page .pl-compare th, .ghd-page .pl-compare td { text-align: start; padding: 16px 16px; vertical-align: top; border-bottom: 1px solid var(--pl-stone); }
+.ghd-page .pl-compare thead th { font-size: 14px; font-weight: 700; color: var(--pl-muted); border-bottom: 2px solid var(--pl-ink); }
+.ghd-page .pl-compare thead th:last-child { color: var(--pl-gold-dark); font-family: 'Playfair Display', serif; font-size: 17px; }
+.ghd-page .pl-compare tbody th { width: 20%; font-weight: 700; color: var(--pl-ink); }
+.ghd-page .pl-compare td:nth-child(2) { color: var(--pl-muted); width: 36%; }
+.ghd-page .pl-compare td:last-child { font-weight: 600; color: var(--pl-ink); background: var(--pl-gold-soft); }
+.ghd-page .pl-compare tbody tr:last-child th, .ghd-page .pl-compare tbody tr:last-child td { border-bottom: 0; }
+
+/* ---------- Group services ---------- */
+.ghd-page .pl-svc { padding: clamp(72px, 9vw, 120px) 0; background: #fff; border-top: 1px solid var(--pl-stone); }
+.ghd-page .pl-svc__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.5vw, 32px); }
+.ghd-page .pl-co { display: flex; flex-direction: column; background: var(--pl-paper); border: 1px solid var(--pl-stone); border-radius: 14px; overflow: hidden; }
+.ghd-page .pl-co__media { background: var(--pl-stone); }
+.ghd-page .pl-co__body { padding: 24px 24px 28px; display: flex; flex-direction: column; flex: 1; }
+.ghd-page .pl .pl-co__name { font-family: 'Playfair Display', serif; font-size: 25px; font-weight: 600; line-height: 1.3; color: var(--pl-ink); }
+html[dir="rtl"]:not([lang="en"]) .ghd-page .pl .pl-co__name { font-family: 'Playfair Display', 'Tajawal', serif !important; font-size: 25px !important; font-weight: 600 !important; }
+.ghd-page .pl-co__ar { font-family: 'Tajawal', sans-serif; font-size: 16px; font-weight: 500; color: var(--pl-muted); margin-inline-start: 8px; }
+.ghd-page .pl-co__role { margin: 6px 0 16px !important; font-weight: 700; color: var(--pl-gold-dark); font-size: 15px; }
+.ghd-page .pl-co .pl-link { margin-top: auto; padding-top: 20px; align-self: flex-start; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .ghd-page .pl-svc__grid { grid-template-columns: 1fr 1fr; }
+  .ghd-page .pl-svc__grid .pl-co:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 900px) {
+  .ghd-page .ghd-hero.ghd-hero--split,
+  html[dir="rtl"] .ghd-page .ghd-hero.ghd-hero--split { flex-direction: column; min-height: 0; }
+  .ghd-page .ghd-hero--split .ghd-hero-media-wrapper { flex: 0 0 auto; min-height: 0; aspect-ratio: 16 / 10; order: -1; }
+  .ghd-page .ghd-hero--split .ghd-hero-inner.pl-hero {
+    flex: 1 1 auto; align-items: stretch; text-align: start;
+    padding-inline: clamp(20px, 5vw, 40px); padding-block: 40px 48px;
+  }
+  .ghd-page .pl-hero__path { max-width: none; }
+  .ghd-page .pl-phase { grid-template-columns: 48px 1fr; align-items: start; }
+  .ghd-page .pl-phase__media { grid-column: 2; }
+}
+@media (max-width: 680px) {
+  .ghd-page .pl-svc__grid { grid-template-columns: 1fr; }
+  .ghd-page .pl-svc__grid .pl-co:last-child { grid-column: auto; }
+  .ghd-page .pl-hero__actions .pl-btn { flex: 1 1 100%; }
+  .ghd-page .pl-hero__path b { font-size: 15px; }
+  .ghd-page .pl-hero__path small { font-size: 12px; }
+  .ghd-page .pl-phase { grid-template-columns: 36px 1fr; gap: 16px; }
+  .ghd-page .pl-phases::before { inset-inline-start: 17px; }
+  .ghd-page .pl-phase__node { width: 36px; height: 36px; font-size: 17px; }
+  /* comparison becomes stacked rows */
+  .ghd-page .pl-compare thead { display: none; }
+  .ghd-page .pl-compare, .ghd-page .pl-compare tbody, .ghd-page .pl-compare tr,
+  .ghd-page .pl-compare th, .ghd-page .pl-compare td { display: block; width: auto !important; }
+  .ghd-page .pl-compare tr { padding: 16px 0; border-bottom: 1px solid var(--pl-stone); }
+  .ghd-page .pl-compare tbody tr:last-child { border-bottom: 0; }
+  .ghd-page .pl-compare th, .ghd-page .pl-compare td { border: 0; padding: 4px 0; }
+  .ghd-page .pl-compare tbody th { font-size: 16px; margin-bottom: 4px; }
+  .ghd-page .pl-compare td::before { content: attr(data-label); font-weight: 700; }
+  .ghd-page .pl-compare td:last-child { padding: 10px 12px; border-radius: 8px; margin-top: 6px; }
+  .ghd-page .pl-compare td:last-child::before { color: var(--pl-gold-dark); }
+}
+</style>
 </head>
 <body class="ghd-page ghd-page--hub ghd-page--public" data-ghd-prefix="" data-ghd-hide-prices="1">
 <a class="gh-skip-link" href="#main-content">تخطي إلى المحتوى الرئيسي</a>
@@ -2799,20 +3029,25 @@ html[dir="rtl"] .ghd-section--extras .gh-tix__gets li {
 <div id="main-content" tabindex="-1" class="gh-main-anchor"></div>
 <main id="ghd-main">
  <aside class="ghd-enterprise" id="ghd-enterprise" aria-label="توجيه مؤسسي"></aside>
+
  <section class="ghd-hero ghd-hero--cinematic ghd-hero--split" aria-label="الباقات">
  <div class="ghd-hero-media-wrapper">
  <div class="ghd-hero-media" aria-hidden="true">
  <video id="hero-vid-ar" class="ghd-hero-video gh-autoplay" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/videos/GH-Epic-cinematic-arch-hero-poster.jpg" src="assets/videos/GH-Epic-cinematic-arch-9sec.mp4" title="إظهار معماري سينمائي"></video>
  </div>
  </div>
- <div class="ghd-wrap ghd-hero-inner">
- <p class="ghd-hero-eyebrow" id="ghd-eyebrow"></p>
- <h1 class="ghd-hero-brand" id="ghd-brand"></h1>
- <p class="ghd-hero-title" id="ghd-title"></p>
- <p class="ghd-hero-lead" id="ghd-lead"></p>
- <span class="ghd-hero-rule" aria-hidden="true"></span>
+ <div class="ghd-wrap ghd-hero-inner pl-hero">
+  <p class="pl-hero__mark"><img src="assets/icons/products/projectlaunch.svg" alt="" width="26" height="26"><span dir="ltr">ProjectLaunch<sup>™</sup></span></p>
+  <h1 class="pl-hero__title">سلّم مشروعك،<br>نحن نتولى الباقي</h1>
+  <p class="pl-hero__lead">منظومة واحدة تأخذ مشروعك العقاري من المخطط الأول حتى يوم الافتتاح: هوية وإظهار معماري، مجسمات ذكية وعروض تفاعلية، صالة بيع وحملة إطلاق. فريق واحد، وعقد واحد، وجدول زمني مربوط بموعد افتتاحك.</p>
+  <div class="pl-hero__actions">
+   <a class="pl-btn pl-btn--gold" href="contact-us.html?intent=session&amp;source=packages-hero" data-cta="pl-hero-session">احجز جلسة</a>
+   <a class="pl-btn pl-btn--ghost" href="#packages" data-cta="pl-hero-packages">تصفّح الباقات</a>
+  </div>
+  <ol class="pl-hero__path" aria-label="مراحل المنظومة"><li><a href="#phase-1"><b>التأسيس</b><small>قبل الطرح</small></a></li><li><a href="#phase-2"><b>التفعيل</b><small>أثناء البناء</small></a></li><li><a href="#phase-3"><b>الإطلاق</b><small>بعد الإنجاز</small></a></li></ol>
  </div>
  </section>
+
  <section class="ghd-section ghd-section--posture" id="posture" aria-labelledby="ghd-posture-title">
  <div class="ghd-wrap">
  <div class="ghd-section-head ghd-section-head--posture">
@@ -2823,170 +3058,106 @@ html[dir="rtl"] .ghd-section--extras .gh-tix__gets li {
  </div>
  </section>
 
- <section class="ghd-section ghd-section--proof" id="proof" aria-label="من أعمالنا">
- <div class="ghd-wrap">
- <div class="ghd-proof" id="ghd-proof" aria-label="من أعمالنا"></div>
- </div>
+ <!-- ProjectLaunch merge: ecosystem / why / services -->
+ <section class="pl pl-eco" id="ecosystem" aria-labelledby="pl-eco-title">
+  <div class="pl-wrap">
+   <header class="pl-head">
+    <p class="pl-kicker"><span dir="ltr">ProjectLaunch™</span></p>
+    <h2 id="pl-eco-title" class="pl-h2">منظومة واحدة، ثلاث مراحل</h2>
+    <p>كل مرحلة تبني على ما قبلها. الهوية التي نصممها في التأسيس هي نفسها التي يراها المشتري في الفيلم والمجسم، ثم على جدران صالة البيع. ابدأ من المرحلة التي وصل إليها مشروعك، ونكمل معك حتى الافتتاح.</p>
+   </header>
+   <ol class="pl-phases">
+   <li class="pl-phase" id="phase-1">
+    <div class="pl-phase__node" aria-hidden="true">1</div>
+    <div class="pl-phase__body">
+     <p class="pl-phase__when">المرحلة الأولى: قبل الطرح</p>
+     <h3 class="pl-phase__name">التأسيس</h3>
+     <p class="pl-phase__goal">مشروع له اسم وصورة وقائمة مهتمين قبل أن يبدأ البناء.</p>
+     <ul class="pl-list"><li>هوية بصرية للمشروع: شعار وألوان وملفات تسليم</li><li>صور معمارية أولية (CGI) للواجهات والداخليات</li><li>فيلم تشويقي قصير ثلاثي الأبعاد (Teaser)</li><li>مجسم تعريفي يعرض الكتلة والموقع</li><li>صفحة هبوط لتسجيل الاهتمام</li><li>بروشور وعرض تقديمي للمستثمرين والجهات</li></ul>
+     <p class="pl-phase__by">ينفّذها: جرافيكس هاوس وبيز موشن</p>
+    </div>
+    <figure class="pl-phase__media"><img src="assets/projects/animation/architectural-visualisation.webp" alt="لقطة من فيلم إظهار معماري من إنتاج Graphics House" width="973" height="644" loading="lazy" decoding="async"></figure>
+   </li>
+   <li class="pl-phase" id="phase-2">
+    <div class="pl-phase__node" aria-hidden="true">2</div>
+    <div class="pl-phase__body">
+     <p class="pl-phase__when">المرحلة الثانية: أثناء البناء</p>
+     <h3 class="pl-phase__name">التفعيل</h3>
+     <p class="pl-phase__goal">أدوات بيع تعمل من اليوم الأول، والمشروع ما زال هيكلاً في الموقع.</p>
+     <ul class="pl-list"><li>فيلم سينمائي ثلاثي الأبعاد للمشروع (4 إلى 5 دقائق)</li><li>مجسم معماري ذكي بإضاءة ديناميكية</li><li>عرض تفاعلي بشاشة لمس أو جولة 360° يُظهر الوحدات المتاحة</li><li>صور CGI نهائية ومخططات وحدات ثلاثية الأبعاد</li><li>موقع إلكتروني للمشروع وكتالوج رقمي للبيع</li><li>مقاطع حملات بمقاسات المنصات وتصوير درون للموقع</li></ul>
+     <p class="pl-phase__by">ينفّذها: جرافيكس هاوس وبيز موشن</p>
+    </div>
+    <figure class="pl-phase__media"><img src="assets/projects/maquettes/anan-eskan-maquette-01.webp" alt="مجسم معماري ذكي لمشروع عنان إسكان في معرض عقاري" width="1600" height="900" loading="lazy" decoding="async"></figure>
+   </li>
+   <li class="pl-phase" id="phase-3">
+    <div class="pl-phase__node" aria-hidden="true">3</div>
+    <div class="pl-phase__body">
+     <p class="pl-phase__when">المرحلة الثالثة: بعد الإنجاز</p>
+     <h3 class="pl-phase__name">الإطلاق</h3>
+     <p class="pl-phase__goal">يوم افتتاح جاهز: مكان يستقبل المشتري، وحملة تُحضره إليه.</p>
+     <ul class="pl-list"><li>تصميم وتنفيذ صالة البيع والوحدة النموذجية المفروشة</li><li>بوث المعارض مع دمج المجسم والعروض التفاعلية</li><li>كتالوج مطبوع ورقمي وأوراق مواصفات الوحدات</li><li>لوحات الموقع والإشارات (Hoarding &amp; Signage)</li><li>حملة إطلاق إعلانية على المنصات</li><li>تصوير ميداني لمراحل الإنجاز والتسليم</li></ul>
+     <p class="pl-phase__by">ينفّذها: توريفا وجرافيكس هاوس وبيز موشن</p>
+    </div>
+    <figure class="pl-phase__media"><img src="assets/projects/maquettes/anan-eskan-maquette-02.webp" alt="بوث معرض لعنان إسكان يضم مجسماً معمارياً" width="1600" height="900" loading="lazy" decoding="async"></figure>
+   </li>
+   </ol>
+  </div>
  </section>
 
- <section class="gh-stages" id="stages" aria-labelledby="gh-stages-title">
- <div class="ghd-wrap">
- <header class="gh-stages__head">
- <span class="gh-stages__eyebrow">مسار المشروع</span>
- <h2 id="gh-stages-title">باقة لكل مرحلة من مشروعك</h2>
- <p>لا تدفع مقابل ما لا تحتاجه الآن. كل باقة مصممة لمرحلة محددة من عمر المشروع، وعندما يتقدم مشروعك تنتقل إلى الباقة التي تليها.</p>
- </header>
- <div class="gh-stages__timeline" role="group" aria-label="مراحل المشروع">
- <button type="button" class="gh-stage-btn" data-stage="1" aria-pressed="false">
- <span class="gh-stage-btn__dot" aria-hidden="true"></span>
- <span class="gh-stage-btn__label">قبل الطرح</span>
- <span class="gh-stage-btn__sub">الدراسة والتصميم</span>
- <span class="gh-stage-btn__hint">المشروع في الدراسة أو التصميم أو ينتظر الاعتماد</span>
- </button>
- <button type="button" class="gh-stage-btn" data-stage="2" aria-pressed="false">
- <span class="gh-stage-btn__dot" aria-hidden="true"></span>
- <span class="gh-stage-btn__label">أثناء البناء</span>
- <span class="gh-stage-btn__sub">البناء والبيع المبكر</span>
- <span class="gh-stage-btn__hint">البناء قائم، ويحتاج المشروع إلى تسويق وبيع مبكر</span>
- </button>
- <button type="button" class="gh-stage-btn" data-stage="3" aria-pressed="false">
- <span class="gh-stage-btn__dot" aria-hidden="true"></span>
- <span class="gh-stage-btn__label">بعد الإنجاز</span>
- <span class="gh-stage-btn__sub">الإطلاق والبيع</span>
- <span class="gh-stage-btn__hint">المشروع قريب من التسليم أو مكتمل، ويحتاج إلى بيع ما تبقى</span>
- </button>
- </div>
- <p class="gh-stages__status" id="gh-stages-status" aria-live="polite">اختر مرحلة مشروعك لنعرض الباقة المناسبة.</p>
- </div>
- </section>
- <section class="ghd-section ghd-section--packages" id="packages" aria-labelledby="ghd-packages-title">
- <div class="ghd-wrap">
- <div class="ghd-section-head">
- <h2 id="ghd-packages-title"></h2>
- <p id="ghd-packages-lead"></p>
- </div>
-
- <div class="gh-stage-pkgs" id="gh-stage-pkgs" aria-label="باقات المراحل">
- <article class="gh-stage-pkg" id="pkg-basic" data-stage="1">
- <span class="gh-stage-pkg__tag">قبل الطرح</span>
- <h3 class="gh-stage-pkg__title">باقة التعريف</h3>
-<p class="gh-stage-pkg__desc">تعريف المشروع بأدوات تسويق مبكرة: فيلم تشويقي، مجسم تعريفي، وهوية — قبل الطرح</p>
-<div class="gh-stage-pkg__facts">
-<p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع في الدراسة أو التصميم أو ينتظر الاعتماد</p>
- <p class="gh-stage-pkg__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولة واحدة</p>
-</div>
-<div class="gh-stage-pkg__includes">
-<p class="gh-stage-pkg__includes-label">يشمل</p>
-<ul class="gh-stage-pkg__list">
- <li>فيلم تشويقي ثلاثي الأبعاد قصير (Teaser) للمشروع</li>
- <li>مجسم معماري تعريفي (Concept) لعرض الكتلة والموقع</li>
- <li>هوية بصرية للمشروع: شعار وألوان وملفات تسليم</li>
- <li>12 صورة معمارية أولية (CGI Concept): واجهات وخارجيات وداخليات محدودة</li>
- <li>صفحة هبوط للتعريف بالمشروع مع نموذج تسجيل اهتمام</li>
- <li>بروشور تعريفي مطبوع ورقمي</li>
- <li>عرض تعريفي للمستثمرين والجهات (Project Deck)</li>
- </ul>
-</div>
-<div class="gh-stage-pkg__need">
- <strong>ما نحتاجه منك</strong>
- <p>المخططات المبدئية، والمواد والألوان المقترحة، واسم المشروع وموقعه.</p>
- </div>
- <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us.html?intent=session&amp;stage=1">احجز جلسة</a>
- </article>
- <article class="gh-stage-pkg gh-stage-pkg--featured" id="pkg-launch" data-stage="2">
- <span class="gh-stage-pkg__ribbon">الأكثر طلباً</span>
- <span class="gh-stage-pkg__tag">أثناء البناء</span>
- <h3 class="gh-stage-pkg__title">باقة البيع المبكر</h3>
-<p class="gh-stage-pkg__desc">محرك البيع المبكر: فيلم سينمائي ثلاثي الأبعاد، مجسم ذكي، وعرض تفاعلي — أثناء البناء</p>
-<div class="gh-stage-pkg__facts">
-<p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع قيد الإنشاء يبدأ تسويق وحداته الآن</p>
- <p class="gh-stage-pkg__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولتان</p>
-</div>
-<div class="gh-stage-pkg__includes">
-<p class="gh-stage-pkg__includes-label">يشمل</p>
-<ul class="gh-stage-pkg__list">
- <li>فيلم سينمائي ثلاثي الأبعاد للمشروع (4 إلى 5 دقائق)</li>
- <li>مجسم معماري ذكي للبيع (إضاءة ديناميكية حسب النطاق)</li>
- <li>عرض تفاعلي: شاشة لمس و/أو جولة 360° لعرض الوحدات وحالة التوفر</li>
- <li>18 صورة معمارية نهائية (CGI): خارجية وداخلية، نهارية وليلية</li>
- <li>مخططات ثلاثية الأبعاد للوحدات (3D Floor Plans)</li>
- <li>موقع إلكتروني متعدد الصفحات للمشروع</li>
- <li>كتالوج رقمي للبيع + مقاطع حملات سوشيال بمقاسات المنصات</li>
- <li>تصوير درون للموقع (~60 ثانية) ومادة تحريرية للمشروع</li>
- </ul>
-</div>
-<div class="gh-stage-pkg__need">
- <strong>ما نحتاجه منك</strong>
- <p>المخططات المعتمدة للوحدات، وقائمة المزايا والأسعار المبدئية، وصور الموقع الحالية إن وجدت.</p>
- </div>
- <a class="gh-stage-pkg__cta gh-stage-pkg__cta--solid" href="contact-us.html?intent=session&amp;stage=2">احجز جلسة</a>
- </article>
- <article class="gh-stage-pkg" id="pkg-growth" data-stage="3">
- <span class="gh-stage-pkg__tag">بعد الإنجاز</span>
- <h3 class="gh-stage-pkg__title">باقة الإطلاق الكامل</h3>
-<p class="gh-stage-pkg__desc">إطلاق مكاني كامل: صالة بيع وبوث يغلفان الفيلم والمجسم والتفاعلي بالمطبوعات والحملات</p>
-<div class="gh-stage-pkg__facts">
-<p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع مكتمل أو قريب من التسليم</p>
- <p class="gh-stage-pkg__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولتان</p>
-</div>
-<div class="gh-stage-pkg__includes">
-<p class="gh-stage-pkg__includes-label">يشمل</p>
-<ul class="gh-stage-pkg__list">
- <li>تصميم وتنفيذ ديكور صالة البيع</li>
- <li>تصميم وتنفيذ بوث المعرض</li>
- <li>دمج المجسم المعماري والعروض التفاعلية داخل صالة البيع والبوث</li>
- <li>كتالوج مطبوع ورقمي، بروشور، وأوراق مواصفات الوحدات</li>
- <li>لوحات إعلانية وإشارات الموقع (Hoarding &amp; Signage)</li>
- <li>حملة إطلاق إعلانية: مقاطع وإعلانات للمنصات</li>
- <li>صفحة هبوط / تحديث رقمي لإطلاق الوحدات المتبقية</li>
- <li>تصوير فوتوغرافي ميداني ليوم واحد لمراحل الإنجاز والتسليم</li>
- </ul>
-</div>
-<div class="gh-stage-pkg__need">
- <strong>ما نحتاجه منك</strong>
- <p>قائمة الوحدات المتاحة وأسعارها، وموعد الإطلاق، وتأمين دخول الموقع أو صالة العرض.</p>
- </div>
- <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us.html?intent=session&amp;stage=3">احجز جلسة</a>
- </article>
- </div>
- <div class="gh-pkg-footnotes">
- <p class="gh-pkg-pricing-note" id="gh-pkg-pricing-note">التسعير حسب النطاق بعد الاجتماع — لجميع الباقات.</p>
- <p class="gh-pkg-rule" id="gh-pkg-rule">الباقة الأعلى تشمل مخرجات الباقات التي قبلها.</p>
- </div>
-
- <div class="ghd-packages" id="ghd-packages" hidden aria-hidden="true"></div>
- </div>
- </section>
- <section class="ghd-section ghd-section--extras" id="extras" aria-labelledby="ghd-extras-title">
- <div class="ghd-wrap">
- <div class="ghd-extras" id="ghd-extras"></div>
- <div class="ghd-atelier-entry" id="ghd-atelier-entry"></div>
- </div>
+ <section class="pl pl-why" id="why-system" aria-labelledby="pl-why-title">
+  <div class="pl-wrap">
+   <div class="pl-why__card">
+    <header class="pl-head pl-head--tight">
+     <h2 id="pl-why-title" class="pl-h2">لماذا المنظومة الموحدة؟</h2>
+     <p>جودة كل قطعة مهمة، لكن ما يبيع المشروع هو اتساق القطع معاً. وهذا ما يتولاه فريق واحد مسؤول عن النتيجة.</p>
+    </header>
+    <table class="pl-compare">
+     <thead><tr><th scope="col"><span class="pl-sr">البند</span></th><th scope="col">عدة موردين</th><th scope="col"><bdi dir="ltr">ProjectLaunch™</bdi></th></tr></thead>
+     <tbody><tr><th scope="row">العقود</th><td data-label="عدة موردين: ">عقد لكل مورد، ومسؤولية موزعة</td><td data-label="المنظومة: ">عقد واحد، وفريق واحد مسؤول عن النتيجة</td></tr><tr><th scope="row">الجدول الزمني</th><td data-label="عدة موردين: ">كل مورد يعمل بجدوله</td><td data-label="المنظومة: ">جدول واحد مبني على موعد افتتاحك</td></tr><tr><th scope="row">اللغة البصرية</th><td data-label="عدة موردين: ">الفيلم لا يشبه الصالة، والمطبوعات لا تشبه الإعلان</td><td data-label="المنظومة: ">نظام تصميم واحد من الشعار حتى لوحة الموقع</td></tr><tr><th scope="row">التنسيق</th><td data-label="عدة موردين: ">يقع على فريقك</td><td data-label="المنظومة: ">نتولاه نحن، وتراجع أنت النتائج</td></tr><tr><th scope="row">إعادة الاستخدام</th><td data-label="عدة موردين: ">ملفات تُبنى من الصفر عند كل مورد</td><td data-label="المنظومة: ">نموذج ثلاثي الأبعاد واحد يغذي الصور والفيلم والمجسم والعرض التفاعلي</td></tr></tbody>
+    </table>
+   </div>
+  </div>
  </section>
 
-<section class="ghd-section ghd-section--atelier" id="atelier-workshop" aria-labelledby="ghd-atelier-title">
- <div class="ghd-wrap">
- <div class="ghd-atelier">
- <div class="ghd-atelier-inner" id="ghd-atelier-inner" data-package-id="custom"></div>
- </div>
- </div>
+ <section class="pl pl-svc" id="group-services" aria-labelledby="pl-svc-title">
+  <div class="pl-wrap">
+   <header class="pl-head">
+    <h2 id="pl-svc-title" class="pl-h2">تحتاج جزءاً واحداً فقط؟</h2>
+    <p>تقوم المنظومة على ثلاث شركات متخصصة من مجموعة تسامي. يمكنك التعاقد مع أي منها لخدمة محددة، وتبقى ملفاتك جاهزة للانتقال إلى المنظومة الكاملة متى احتجت.</p>
+   </header>
+   <div class="pl-svc__grid">
+   <article class="pl-co">
+    <figure class="pl-co__media"><img src="assets/projects/maquettes/c1.webp" alt="إظهار معماري لمشروع في مكة المكرمة من إنتاج Graphics House" width="2000" height="1125" loading="lazy" decoding="async"></figure>
+    <div class="pl-co__body">
+     <h3 class="pl-co__name"><span dir="ltr">Graphics House</span></h3>
+     <p class="pl-co__role">الإظهار المعماري والمجسمات والتجارب التفاعلية</p>
+     <ul class="pl-list pl-list--compact"><li>أفلام CGI وصور معمارية</li><li>مجسمات ذكية وشاشات لمس وجولات VR</li><li>الهوية البصرية للمشروع</li></ul>
+     <a class="pl-link" href="portfolio.html" data-cta="pl-svc-graphics">شاهد أعمال Graphics House</a>
+    </div>
+   </article>
+   <article class="pl-co">
+    <figure class="pl-co__media"><img src="assets/projects/galleries/turriva/living-walnut-interior.webp" alt="تصميم داخلي لوحدة نموذجية من تنفيذ توريفا" width="960" height="556" loading="lazy" decoding="async"></figure>
+    <div class="pl-co__body">
+     <h3 class="pl-co__name"><span dir="ltr">Turriva</span> <span class="pl-co__ar">توريفا</span></h3>
+     <p class="pl-co__role">التصميم الداخلي والتنفيذ والديكور</p>
+     <ul class="pl-list pl-list--compact"><li>صالات البيع وبوثات المعارض</li><li>الوحدات النموذجية المفروشة</li><li>التنفيذ في الموقع حتى التسليم</li></ul>
+     <a class="pl-link" href="https://turriva.com" target="_blank" rel="noopener" data-cta="pl-svc-turriva">زيارة موقع توريفا</a>
+    </div>
+   </article>
+   <article class="pl-co">
+    <figure class="pl-co__media"><img src="assets/projects/production/camera-monitor.webp" alt="شاشة كاميرا أثناء تصوير حملة إعلانية" width="640" height="400" loading="lazy" decoding="async"></figure>
+    <div class="pl-co__body">
+     <h3 class="pl-co__name"><span dir="ltr">Bees Motion</span> <span class="pl-co__ar">بيز موشن</span></h3>
+     <p class="pl-co__role">التسويق الإلكتروني وإنتاج المحتوى</p>
+     <ul class="pl-list pl-list--compact"><li>حملات الإطلاق الإعلانية</li><li>محتوى السوشيال وتصوير الحملات</li><li>صفحات الهبوط ومسارات الاستفسار</li></ul>
+     <a class="pl-link" href="https://beesmotion.com" target="_blank" rel="noopener" data-cta="pl-svc-bees">زيارة موقع بيز موشن</a>
+    </div>
+   </article>
+   </div>
+  </div>
  </section>
 
-<section class="ghd-section ghd-section--catalog" id="catalog" aria-labelledby="ghd-catalog-title">
- <div class="ghd-wrap">
-<div class="ghd-section-head">
- <h2 id="ghd-catalog-title"></h2>
- <p id="ghd-catalog-lead"></p>
- </div>
- <div class="ghd-filter-bar" id="ghd-filter-bar">
- <div class="ghd-filters" id="ghd-catalog-filters" role="tablist" aria-label="عائلات الخدمات"></div>
- </div>
- <div class="ghd-catalog" id="ghd-catalog"></div>
- <p class="ghd-filter-empty" id="ghd-catalog-empty" hidden></p>
-</div>
- </section>
-
-<section class="ghd-section ghd-section--launch-proof" id="launch-proof" aria-label="دراسة حالة ميثاق مكة">
+ <section class="ghd-section ghd-section--launch-proof" id="launch-proof" aria-label="دراسة حالة ميثاق مكة">
 <section class="s2-hero-wrap">
 
  <!-- Background Image -->
@@ -3117,13 +3288,178 @@ html[dir="rtl"] .ghd-section--extras .gh-tix__gets li {
  </div>
  </section>
 
-<section class="ghd-section ghd-section--next" id="next-steps" aria-label="ماذا بعد الطلب">
+ <section class="ghd-section ghd-section--proof" id="proof" aria-label="من أعمالنا">
+ <div class="ghd-wrap">
+ <div class="ghd-proof" id="ghd-proof" aria-label="من أعمالنا"></div>
+ </div>
+ </section>
+
+ <section class="gh-stages" id="stages" aria-labelledby="gh-stages-title">
+ <div class="ghd-wrap">
+ <header class="gh-stages__head">
+ <span class="gh-stages__eyebrow">مسار المشروع</span>
+ <h2 id="gh-stages-title">باقة لكل مرحلة من مشروعك</h2>
+ <p>لا تدفع مقابل ما لا تحتاجه الآن. كل باقة مصممة لمرحلة محددة من عمر المشروع، وعندما يتقدم مشروعك تنتقل إلى الباقة التي تليها.</p>
+ </header>
+ <div class="gh-stages__timeline" role="group" aria-label="مراحل المشروع">
+ <button type="button" class="gh-stage-btn" data-stage="1" aria-pressed="false">
+ <span class="gh-stage-btn__dot" aria-hidden="true"></span>
+ <span class="gh-stage-btn__label">قبل الطرح</span>
+ <span class="gh-stage-btn__sub">الدراسة والتصميم</span>
+ <span class="gh-stage-btn__hint">المشروع في الدراسة أو التصميم أو ينتظر الاعتماد</span>
+ </button>
+ <button type="button" class="gh-stage-btn" data-stage="2" aria-pressed="false">
+ <span class="gh-stage-btn__dot" aria-hidden="true"></span>
+ <span class="gh-stage-btn__label">أثناء البناء</span>
+ <span class="gh-stage-btn__sub">البناء والبيع المبكر</span>
+ <span class="gh-stage-btn__hint">البناء قائم، ويحتاج المشروع إلى تسويق وبيع مبكر</span>
+ </button>
+ <button type="button" class="gh-stage-btn" data-stage="3" aria-pressed="false">
+ <span class="gh-stage-btn__dot" aria-hidden="true"></span>
+ <span class="gh-stage-btn__label">بعد الإنجاز</span>
+ <span class="gh-stage-btn__sub">الإطلاق والبيع</span>
+ <span class="gh-stage-btn__hint">المشروع قريب من التسليم أو مكتمل، ويحتاج إلى بيع ما تبقى</span>
+ </button>
+ </div>
+ <p class="gh-stages__status" id="gh-stages-status" aria-live="polite">اختر مرحلة مشروعك لنعرض الباقة المناسبة.</p>
+ </div>
+ </section>
+
+ <section class="ghd-section ghd-section--packages" id="packages" aria-labelledby="ghd-packages-title">
+ <div class="ghd-wrap">
+ <div class="ghd-section-head">
+ <h2 id="ghd-packages-title"></h2>
+ <p id="ghd-packages-lead"></p>
+ </div>
+
+ <div class="gh-stage-pkgs" id="gh-stage-pkgs" aria-label="باقات المراحل">
+ <article class="gh-stage-pkg" id="pkg-basic" data-stage="1">
+ <span class="gh-stage-pkg__tag">قبل الطرح</span>
+ <h3 class="gh-stage-pkg__title">باقة التعريف</h3>
+<p class="gh-stage-pkg__desc">تعريف المشروع بأدوات تسويق مبكرة: فيلم تشويقي، مجسم تعريفي، وهوية — قبل الطرح</p>
+<div class="gh-stage-pkg__facts">
+<p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع في الدراسة أو التصميم أو ينتظر الاعتماد</p>
+ <p class="gh-stage-pkg__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولة واحدة</p>
+</div>
+<div class="gh-stage-pkg__includes">
+<p class="gh-stage-pkg__includes-label">يشمل</p>
+<ul class="gh-stage-pkg__list">
+ <li>فيلم تشويقي ثلاثي الأبعاد قصير (Teaser) للمشروع</li>
+ <li>مجسم معماري تعريفي (Concept) لعرض الكتلة والموقع</li>
+ <li>هوية بصرية للمشروع: شعار وألوان وملفات تسليم</li>
+ <li>12 صورة معمارية أولية (CGI Concept): واجهات وخارجيات وداخليات محدودة</li>
+ <li>صفحة هبوط للتعريف بالمشروع مع نموذج تسجيل اهتمام</li>
+ <li>بروشور تعريفي مطبوع ورقمي</li>
+ <li>عرض تعريفي للمستثمرين والجهات (Project Deck)</li>
+ </ul>
+</div>
+<div class="gh-stage-pkg__need">
+ <strong>ما نحتاجه منك</strong>
+ <p>المخططات المبدئية، والمواد والألوان المقترحة، واسم المشروع وموقعه.</p>
+ </div>
+ <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us.html?intent=session&amp;stage=1">احجز جلسة</a>
+ </article>
+ <article class="gh-stage-pkg gh-stage-pkg--featured" id="pkg-launch" data-stage="2">
+ <span class="gh-stage-pkg__ribbon">الأكثر طلباً</span>
+ <span class="gh-stage-pkg__tag">أثناء البناء</span>
+ <h3 class="gh-stage-pkg__title">باقة البيع المبكر</h3>
+<p class="gh-stage-pkg__desc">محرك البيع المبكر: فيلم سينمائي ثلاثي الأبعاد، مجسم ذكي، وعرض تفاعلي — أثناء البناء</p>
+<div class="gh-stage-pkg__facts">
+<p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع قيد الإنشاء يبدأ تسويق وحداته الآن</p>
+ <p class="gh-stage-pkg__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولتان</p>
+</div>
+<div class="gh-stage-pkg__includes">
+<p class="gh-stage-pkg__includes-label">يشمل</p>
+<ul class="gh-stage-pkg__list">
+ <li>فيلم سينمائي ثلاثي الأبعاد للمشروع (4 إلى 5 دقائق)</li>
+ <li>مجسم معماري ذكي للبيع (إضاءة ديناميكية حسب النطاق)</li>
+ <li>عرض تفاعلي: شاشة لمس و/أو جولة 360° لعرض الوحدات وحالة التوفر</li>
+ <li>18 صورة معمارية نهائية (CGI): خارجية وداخلية، نهارية وليلية</li>
+ <li>مخططات ثلاثية الأبعاد للوحدات (3D Floor Plans)</li>
+ <li>موقع إلكتروني متعدد الصفحات للمشروع</li>
+ <li>كتالوج رقمي للبيع + مقاطع حملات سوشيال بمقاسات المنصات</li>
+ <li>تصوير درون للموقع (~60 ثانية) ومادة تحريرية للمشروع</li>
+ </ul>
+</div>
+<div class="gh-stage-pkg__need">
+ <strong>ما نحتاجه منك</strong>
+ <p>المخططات المعتمدة للوحدات، وقائمة المزايا والأسعار المبدئية، وصور الموقع الحالية إن وجدت.</p>
+ </div>
+ <a class="gh-stage-pkg__cta gh-stage-pkg__cta--solid" href="contact-us.html?intent=session&amp;stage=2">احجز جلسة</a>
+ </article>
+ <article class="gh-stage-pkg" id="pkg-growth" data-stage="3">
+ <span class="gh-stage-pkg__tag">بعد الإنجاز</span>
+ <h3 class="gh-stage-pkg__title">باقة الإطلاق الكامل</h3>
+<p class="gh-stage-pkg__desc">إطلاق مكاني كامل: صالة بيع وبوث يغلفان الفيلم والمجسم والتفاعلي بالمطبوعات والحملات</p>
+<div class="gh-stage-pkg__facts">
+<p class="gh-stage-pkg__meta"><strong>لمن:</strong> مشروع مكتمل أو قريب من التسليم</p>
+ <p class="gh-stage-pkg__meta">المدة: تُحدد في عرض السعر | جولات التعديل: جولتان</p>
+</div>
+<div class="gh-stage-pkg__includes">
+<p class="gh-stage-pkg__includes-label">يشمل</p>
+<ul class="gh-stage-pkg__list">
+ <li>تصميم وتنفيذ ديكور صالة البيع</li>
+ <li>تصميم وتنفيذ بوث المعرض</li>
+ <li>دمج المجسم المعماري والعروض التفاعلية داخل صالة البيع والبوث</li>
+ <li>كتالوج مطبوع ورقمي، بروشور، وأوراق مواصفات الوحدات</li>
+ <li>لوحات إعلانية وإشارات الموقع (Hoarding &amp; Signage)</li>
+ <li>حملة إطلاق إعلانية: مقاطع وإعلانات للمنصات</li>
+ <li>صفحة هبوط / تحديث رقمي لإطلاق الوحدات المتبقية</li>
+ <li>تصوير فوتوغرافي ميداني ليوم واحد لمراحل الإنجاز والتسليم</li>
+ </ul>
+</div>
+<div class="gh-stage-pkg__need">
+ <strong>ما نحتاجه منك</strong>
+ <p>قائمة الوحدات المتاحة وأسعارها، وموعد الإطلاق، وتأمين دخول الموقع أو صالة العرض.</p>
+ </div>
+ <a class="gh-stage-pkg__cta gh-stage-pkg__cta--outline" href="contact-us.html?intent=session&amp;stage=3">احجز جلسة</a>
+ </article>
+ </div>
+ <div class="gh-pkg-footnotes">
+ <p class="gh-pkg-pricing-note" id="gh-pkg-pricing-note">التسعير حسب النطاق بعد الاجتماع — لجميع الباقات.</p>
+ <p class="gh-pkg-rule" id="gh-pkg-rule">الباقة الأعلى تشمل مخرجات الباقات التي قبلها.</p>
+ </div>
+
+ <div class="ghd-packages" id="ghd-packages" hidden aria-hidden="true"></div>
+ </div>
+ </section>
+
+ <section class="ghd-section ghd-section--extras" id="extras" aria-labelledby="ghd-extras-title">
+ <div class="ghd-wrap">
+ <div class="ghd-extras" id="ghd-extras"></div>
+ <div class="ghd-atelier-entry" id="ghd-atelier-entry"></div>
+ </div>
+ </section>
+
+ <section class="ghd-section ghd-section--atelier" id="atelier-workshop" aria-labelledby="ghd-atelier-title">
+ <div class="ghd-wrap">
+ <div class="ghd-atelier">
+ <div class="ghd-atelier-inner" id="ghd-atelier-inner" data-package-id="custom"></div>
+ </div>
+ </div>
+ </section>
+
+ <section class="ghd-section ghd-section--catalog" id="catalog" aria-labelledby="ghd-catalog-title">
+ <div class="ghd-wrap">
+<div class="ghd-section-head">
+ <h2 id="ghd-catalog-title"></h2>
+ <p id="ghd-catalog-lead"></p>
+ </div>
+ <div class="ghd-filter-bar" id="ghd-filter-bar">
+ <div class="ghd-filters" id="ghd-catalog-filters" role="tablist" aria-label="عائلات الخدمات"></div>
+ </div>
+ <div class="ghd-catalog" id="ghd-catalog"></div>
+ <p class="ghd-filter-empty" id="ghd-catalog-empty" hidden></p>
+</div>
+ </section>
+
+ <section class="ghd-section ghd-section--next" id="next-steps" aria-label="ماذا بعد الطلب">
  <div class="ghd-wrap">
  <div class="ghd-next" id="ghd-next-steps" aria-label="ماذا بعد الطلب"></div>
  </div>
  </section>
 
-<section class="ghd-section ghd-section--meeting" id="unsure" aria-labelledby="ghd-meeting-title">
+ <section class="ghd-section ghd-section--meeting" id="unsure" aria-labelledby="ghd-meeting-title">
  <div class="ghd-wrap">
  <p class="ghd-trust-line" id="ghd-trust-line" hidden></p>
  <div class="ghd-unsure">
