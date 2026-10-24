@@ -64,7 +64,64 @@ function applyPage(html, o) {
     if (!re.test(html)) continue;
     html = html.replace(re, (m) => (ins.position === 'before' ? ins.html + m : m + ins.html));
   }
+  if (o.canonical) {
+    html = setTag(html, /(<link rel="canonical" href=")[^"]*(")/, (_, a, b) => a + o.canonical + b);
+  }
+  for (const [lang, href] of Object.entries(o.hreflang || {})) {
+    const re = new RegExp(`(<link rel="alternate" hreflang="${lang}" href=")[^"]*(")`);
+    html = setTag(html, re, (_, a, b) => a + href + b);
+  }
+  if (o.schemaType) {
+    const { from, to } = o.schemaType;
+    html = html.replace(new RegExp(`("@type":\\s*)"${from}"`, 'g'), `$1"${to}"`);
+  }
+  if (o.localBusinessToService) html = localBusinessToService(html);
   return html;
+}
+
+/**
+ * City pages without a physical office must not claim a LocalBusiness there.
+ * Rewrites that block to a Service offered in the city by the Jeddah-based organization.
+ */
+function localBusinessToService(html) {
+  return html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (m, json) => {
+    let d;
+    try { d = JSON.parse(json); } catch { return m; }
+    if (!d || d['@type'] !== 'LocalBusiness') return m;
+    const city = d.address && d.address.addressLocality;
+    const org = d.parentOrganization || { '@type': 'Organization', name: 'Graphics House', url: 'https://3dgraphicshouse.com' };
+    const out = {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: d.name,
+      serviceType: 'Architectural visualization',
+      description: d.description,
+      url: d.url,
+      provider: { ...org, ...(d.telephone ? { telephone: d.telephone } : {}) },
+      ...(city ? { areaServed: { '@type': 'City', name: city } } : {}),
+    };
+    return `<script type="application/ld+json">${JSON.stringify(out)}</script>`;
+  });
+}
+
+function subsetMaterialIcons(html) {
+  const icons = cfg.materialIcons;
+  if (!icons || !icons.length) return html;
+  const list = [...icons].sort().join(',');
+  return html.replace(/href="(https:\/\/fonts\.googleapis\.com\/css2\?[^"]*family=Material\+Symbols\+Outlined[^"]*)"/g, (m, url) => {
+    if (url.includes('icon_names=')) return m;
+    return `href="${url.replace(/(family=Material\+Symbols\+Outlined:[^&"]*)/, `$1&icon_names=${list}`)}"`;
+  });
+}
+
+function addGa4Ids(html) {
+  const { primary, extra } = cfg.ga4 || {};
+  if (!primary || !extra || !extra.length) return html;
+  const re = new RegExp(`gtag\\(\\s*'config'\\s*,\\s*'${primary}'[^;]*\\);`);
+  if (!re.test(html)) return html;
+  const missing = extra.filter((id) => !html.includes(`'config','${id}'`));
+  if (!missing.length) return html;
+  return html.replace(re, (m) => m + missing.map((id) => `gtag('config','${id}');`).join(''));
 }
 
 function applyGlobal(html, rel) {
@@ -81,16 +138,31 @@ function applyGlobal(html, rel) {
   return html;
 }
 
+/** Applies to every HTML page, indexable or not. */
+function applyEverywhere(html) {
+  return addGa4Ids(subsetMaterialIcons(html));
+}
+
+/** Warns when a page uses an icon missing from the subset (it would render as plain text). */
+function checkIcons(html, rel, missingIcons) {
+  if (!cfg.materialIcons) return;
+  const known = new Set(cfg.materialIcons);
+  for (const m of html.matchAll(/material-symbols-outlined[^>]*>\s*([a-z0-9_]+)\s*</g)) {
+    if (!known.has(m[1])) missingIcons.add(`${m[1]} (${rel})`);
+  }
+}
+
 const files = walk(ROOT);
 let changed = 0;
+const missingIcons = new Set();
 for (const rel of files) {
   const full = path.join(ROOT, rel);
   const before = fs.readFileSync(full, 'utf8');
-  let html = before;
+  let html = applyEverywhere(before);
+  checkIcons(html, rel, missingIcons);
   if (/^partials\//.test(rel)) {
     html = applyGlobal(html, rel);
-  } else {
-    if (/name=["']robots["'][^>]*noindex/i.test(html) || /http-equiv=["']refresh["']/i.test(html)) continue;
+  } else if (!/name=["']robots["'][^>]*noindex/i.test(html) && !/http-equiv=["']refresh["']/i.test(html)) {
     html = applyGlobal(html, rel);
     if (cfg.pages[rel]) html = applyPage(html, cfg.pages[rel]);
   }
@@ -102,4 +174,8 @@ for (const rel of files) {
 }
 const missing = Object.keys(cfg.pages).filter((p) => !fs.existsSync(path.join(ROOT, p)));
 if (missing.length) console.warn('apply-seo-overrides: pages not found:', missing.join(', '));
+if (missingIcons.size) {
+  console.warn('apply-seo-overrides: WARN icons not in materialIcons (add them to scripts/seo-overrides.json):');
+  for (const i of [...missingIcons].slice(0, 30)) console.warn('  -', i);
+}
 console.log(`apply-seo-overrides: ${changed} file(s) ${CHECK ? 'would change' : 'updated'}`);

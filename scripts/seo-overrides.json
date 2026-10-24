@@ -5,6 +5,167 @@
     "maxLength": 65,
     "suffix": " | Graphics House"
   },
+  "_materialIcons_note": "Material Symbols are loaded as a subset (about 70 KB instead of 1.5 MB). When a page starts using a new icon, add its name here or it will show as plain text; the build prints a WARN for unknown icons.",
+  "materialIcons": [
+    "360",
+    "account_balance",
+    "account_tree",
+    "add",
+    "ads_click",
+    "analytics",
+    "apartment",
+    "architecture",
+    "arrow_back",
+    "arrow_back_ios",
+    "arrow_forward",
+    "arrow_outward",
+    "arrow_upward",
+    "article",
+    "auto_awesome",
+    "auto_stories",
+    "autorenew",
+    "badge",
+    "beach_access",
+    "bolt",
+    "brand_awareness",
+    "brush",
+    "calendar_month",
+    "call",
+    "campaign",
+    "chat",
+    "check",
+    "check_circle",
+    "checklist",
+    "chevron_left",
+    "chevron_right",
+    "close",
+    "cloud_upload",
+    "collections",
+    "compare",
+    "connected_tv",
+    "conversion_path",
+    "corporate_fare",
+    "dashboard",
+    "description",
+    "design_services",
+    "desktop_windows",
+    "devices",
+    "diamond",
+    "directions_walk",
+    "diversity_3",
+    "domain",
+    "download",
+    "edit_note",
+    "engineering",
+    "error",
+    "event",
+    "expand_more",
+    "extension",
+    "filter_alt",
+    "flight",
+    "format_list_bulleted",
+    "gallery_thumbnail",
+    "groups",
+    "handshake",
+    "handyman",
+    "holiday_village",
+    "home_work",
+    "hotel",
+    "hub",
+    "imagesmode",
+    "insights",
+    "integration_instructions",
+    "landscape",
+    "language",
+    "layers",
+    "lightbulb",
+    "link",
+    "local_shipping",
+    "location_city",
+    "location_on",
+    "mail",
+    "manage_accounts",
+    "map",
+    "mark_email_read",
+    "medical_services",
+    "meeting_room",
+    "menu",
+    "menu_book",
+    "military_tech",
+    "monitoring",
+    "mosque",
+    "movie",
+    "movie_edit",
+    "museum",
+    "night_shelter",
+    "palette",
+    "pause",
+    "person",
+    "person_add",
+    "phone_in_talk",
+    "photo_camera",
+    "photo_library",
+    "picture_as_pdf",
+    "play_arrow",
+    "play_circle",
+    "precision_manufacturing",
+    "present_to_all",
+    "price_check",
+    "print",
+    "progress_activity",
+    "psychology",
+    "public",
+    "query_stats",
+    "request_quote",
+    "rocket_launch",
+    "route",
+    "scale",
+    "schedule",
+    "school",
+    "sell",
+    "send",
+    "share",
+    "slideshow",
+    "slow_motion_video",
+    "smart_display",
+    "smart_toy",
+    "smartphone",
+    "speed",
+    "stars",
+    "storefront",
+    "strategy",
+    "support_agent",
+    "sync",
+    "sync_alt",
+    "tag",
+    "texture",
+    "theaters",
+    "touch_app",
+    "travel_explore",
+    "trending_flat",
+    "trending_up",
+    "tune",
+    "tv_off",
+    "update",
+    "update_disabled",
+    "verified",
+    "videocam",
+    "view_in_ar",
+    "view_module",
+    "villa",
+    "volume_off",
+    "vrpano",
+    "web",
+    "workspace_premium",
+    "zoom_in"
+  ],
+  "ga4": {
+    "_note": "The site tag G-Y67JVE898Z sends to a property this Google account cannot see. Data is also sent to the 'Graphics House' property stream G-NKM4H1FFBL so it appears in Analytics.",
+    "primary": "G-Y67JVE898Z",
+    "extra": [
+      "G-NKM4H1FFBL"
+    ]
+  },
   "footerLinks": [
     {
       "afterHref": "locations/jeddah.html",
@@ -31,7 +192,12 @@
         "https://www.linkedin.com/company/graphics-house-gh/",
         "https://www.youtube.com/user/3dghouse",
         "https://twitter.com/GraphicsHouse2"
-      ]
+      ],
+      "canonical": "https://3dgraphicshouse.com/",
+      "hreflang": {
+        "en": "https://3dgraphicshouse.com/",
+        "x-default": "https://3dgraphicshouse.com/"
+      }
     },
     "index-ar.html": {
       "title": "Graphics House | إظهار معماري ومجسمات للمطورين في السعودية",
@@ -42,7 +208,11 @@
         "https://www.linkedin.com/company/graphics-house-gh/",
         "https://www.youtube.com/user/3dghouse",
         "https://twitter.com/GraphicsHouse2"
-      ]
+      ],
+      "hreflang": {
+        "en": "https://3dgraphicshouse.com/",
+        "x-default": "https://3dgraphicshouse.com/"
+      }
     },
     "contact-us-en.html": {
       "title": "Contact Graphics House | Architectural Visualization Studio"
@@ -61,15 +231,24 @@
     },
     "solutions/brand-scale-en.html": {
       "title": "BrandScale™ | One Brand System for Multi-Project Developers",
-      "description": "BrandScale™ by Graphics House: one positioning and visual identity for developers with several projects, set before each launch. Jeddah studio."
+      "description": "BrandScale™ by Graphics House: one positioning and visual identity for developers with several projects, set before each launch. Jeddah studio.",
+      "schemaType": {
+        "from": "Product",
+        "to": "Service"
+      }
     },
     "solutions/brand-scale.html": {
       "title": "BrandScale™ | نظام هوية موحّد للمطورين متعددي المشاريع",
-      "description": "BrandScale™ من Graphics House: تموضع وهوية بصرية واحدة للمطورين الذين لديهم عدة مشاريع، تُبنى قبل كل إطلاق. استوديو من جدة."
+      "description": "BrandScale™ من Graphics House: تموضع وهوية بصرية واحدة للمطورين الذين لديهم عدة مشاريع، تُبنى قبل كل إطلاق. استوديو من جدة.",
+      "schemaType": {
+        "from": "Product",
+        "to": "Service"
+      }
     },
     "locations/riyadh-en.html": {
       "title": "Architectural Visualization in Riyadh | Graphics House",
-      "description": "Architectural visualization studio for Riyadh developers: 3D renders, smart maquettes, CGI films and sales gallery assets for off-plan launches."
+      "description": "Architectural visualization studio for Riyadh developers: 3D renders, smart maquettes, CGI films and sales gallery assets for off-plan launches.",
+      "localBusinessToService": true
     },
     "locations/jeddah-en.html": {
       "title": "Architectural Visualization Studio in Jeddah | Graphics House",
@@ -77,10 +256,12 @@
     },
     "locations/makkah-en.html": {
       "title": "Architectural Visualization in Makkah | Graphics House",
-      "description": "Place-sensitive architectural visualization for Makkah developers: renders, CGI films, smart maquettes and interactive experiences."
+      "description": "Place-sensitive architectural visualization for Makkah developers: renders, CGI films, smart maquettes and interactive experiences.",
+      "localBusinessToService": true
     },
     "locations/madinah-en.html": {
-      "title": "Architectural Visualization in Madinah | Graphics House"
+      "title": "Architectural Visualization in Madinah | Graphics House",
+      "localBusinessToService": true
     },
     "locations/oman-en.html": {
       "title": "Architectural Visualization in Oman | Graphics House"
@@ -90,16 +271,19 @@
     },
     "locations/riyadh.html": {
       "title": "إظهار معماري في الرياض للمطورين | Graphics House",
-      "description": "استوديو إظهار معماري للمطورين في الرياض: رندرات، مجسمات ذكية، أفلام CGI، ومواد جاهزة لصالات البيع والمبيعات على المخطط."
+      "description": "استوديو إظهار معماري للمطورين في الرياض: رندرات، مجسمات ذكية، أفلام CGI، ومواد جاهزة لصالات البيع والمبيعات على المخطط.",
+      "localBusinessToService": true
     },
     "locations/jeddah.html": {
       "title": "إظهار معماري في جدة للمطورين | Graphics House"
     },
     "locations/makkah.html": {
-      "title": "إظهار معماري في مكة المكرمة للمطورين | Graphics House"
+      "title": "إظهار معماري في مكة المكرمة للمطورين | Graphics House",
+      "localBusinessToService": true
     },
     "locations/madinah.html": {
-      "title": "إظهار معماري في المدينة المنورة للمطورين | Graphics House"
+      "title": "إظهار معماري في المدينة المنورة للمطورين | Graphics House",
+      "localBusinessToService": true
     },
     "locations/oman.html": {
       "title": "إظهار معماري في عُمان للمطورين | Graphics House"
@@ -236,6 +420,42 @@
     },
     "insights/articles/when-to-use-smart-maquette-en.html": {
       "title": "When Do You Need a Smart Maquette Instead of Renders?"
+    },
+    "solutions/growth-launch.html": {
+      "schemaType": {
+        "from": "Product",
+        "to": "Service"
+      }
+    },
+    "solutions/growth-launch-en.html": {
+      "schemaType": {
+        "from": "Product",
+        "to": "Service"
+      }
+    },
+    "solutions/project-launch.html": {
+      "schemaType": {
+        "from": "Product",
+        "to": "Service"
+      }
+    },
+    "solutions/project-launch-en.html": {
+      "schemaType": {
+        "from": "Product",
+        "to": "Service"
+      }
+    },
+    "solutions/project-launch-oman.html": {
+      "schemaType": {
+        "from": "Product",
+        "to": "Service"
+      }
+    },
+    "solutions/project-launch-oman-en.html": {
+      "schemaType": {
+        "from": "Product",
+        "to": "Service"
+      }
     }
   }
 }
