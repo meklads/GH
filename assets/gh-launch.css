@@ -147,9 +147,9 @@ html[lang="en"] .lx .lx-hero h1 { font-weight: 500 !important; line-height: 1.1 
 /* ───────── Proof band: facts + client logos ───────── */
 .lx-band { background: var(--lx-white); border-bottom: 1px solid var(--lx-line); }
 .lx-proof { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.lx-proof li { padding: 34px 24px 30px; }
-.lx-proof li + li { border-inline-start: 1px solid var(--lx-line); }
-.lx-proof li:first-child { padding-inline-start: 0; }
+.lx-proof > li { padding: 34px 24px 30px; }
+.lx-proof > li + li { border-inline-start: 1px solid var(--lx-line); }
+.lx-proof > li:first-child { padding-inline-start: 0; }
 .lx-proof b { display: block; font-family: var(--lx-head); font-size: clamp(24px, 2.4vw, 32px); font-weight: 700; line-height: 1.25; color: var(--lx-ink); }
 html[lang="en"] .lx-proof b { font-weight: 600; }
 .lx-proof span { display: block; margin-top: 6px; font-size: 15px; line-height: 1.6; color: var(--lx-muted); }
@@ -380,10 +380,10 @@ html[lang] .lx .lx-form h3 { font-size: 24px !important; margin-bottom: 18px; }
   .lx-compare, .lx-tri { grid-template-columns: minmax(0, 1fr); }
   .lx-tri > div, .lx-tri > div + div { padding: 22px 0 10px; border-inline-start: 0; border-bottom: 1px solid var(--lx-line); }
   .lx-proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .lx-proof li, .lx-proof li:first-child { padding: 22px 16px; }
-  .lx-proof li + li { border-inline-start: 0; }
-  .lx-proof li:nth-child(even) { border-inline-start: 1px solid var(--lx-line); }
-  .lx-proof li:nth-child(n + 3) { border-top: 1px solid var(--lx-line); }
+  .lx-proof > li, .lx-proof > li:first-child { padding: 22px 16px; }
+  .lx-proof > li + li { border-inline-start: 0; }
+  .lx-proof > li:nth-child(even) { border-inline-start: 1px solid var(--lx-line); }
+  .lx-proof > li:nth-child(n + 3) { border-top: 1px solid var(--lx-line); }
   .lx-ladder { grid-template-columns: minmax(0, 1fr); }
   .lx-lvl + .lx-lvl { border-inline-start: 0; border-top: 1px solid var(--lx-line-dark); }
   .lx-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; }
@@ -446,3 +446,8 @@ html[lang="en"] .lx-tab { font-size: 15px; }
   /* Tablets: keep the headline in the first screen; the photo stays whole and centred */
   .lx-scene { width: min(100%, calc(56vh * 16 / 9)); }
 }
+/* A fact backed by more than one delivery lists each one on its own line */
+.lx-proof-list { margin-top: 6px; display: grid; gap: 4px; }
+.lx-proof-list li { display: flex; gap: 8px; align-items: flex-start; padding: 0; border: 0; font-size: 15px; line-height: 1.55; color: var(--lx-muted); }
+.lx-proof-list li::before { content: ""; flex: none; width: 5px; height: 5px; margin-top: 0.62em; border-radius: 50%; background: var(--lx-gold-deep); }
+@media (max-width: 560px) { .lx-proof-list li { font-size: 14px; } }
