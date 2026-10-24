@@ -26,6 +26,13 @@ function L(obj, lang) {
   return obj[lang] || obj.en || '';
 }
 
+/* The mega menu shows each case study as a small card; use the light thumbnail in assets/menu-thumbs/
+   (made from the same image) so every page header does not download the full-size photographs. */
+function megaThumb(image) {
+  const thumb = 'assets/menu-thumbs/' + image.replace(/^assets\//, '').replace(/\.[a-z0-9]+$/i, '').replace(/\//g, '-') + '.webp';
+  return fs.existsSync(path.join(ROOT, thumb)) ? thumb : image;
+}
+
 function renderMegaMenu(lang) {
   const isEn = lang === 'en';
   const dir = isEn ? 'ltr' : 'rtl';
@@ -39,7 +46,7 @@ function renderMegaMenu(lang) {
     .map((item) => {
       const name = L(item.shortTitle || item.title, lang);
       return `<a href="{{PREFIX}}${item.href[lang]}" class="mm-cs-row">
-      <span class="mm-cs-thumb"><img src="{{PREFIX}}${item.image}" alt="" loading="lazy" width="96" height="72"></span>
+      <span class="mm-cs-thumb"><img src="{{PREFIX}}${megaThumb(item.image)}" alt="" loading="lazy" decoding="async" width="96" height="72"></span>
       <span class="mm-cs-name">${esc(name)}</span>
       <span class="material-symbols-outlined mm-cs-arrow" aria-hidden="true">arrow_forward</span>
     </a>`;

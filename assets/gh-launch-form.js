@@ -92,11 +92,23 @@
     if (bot && bot.value) return;
 
     var name = val('name'), company = val('company'), phone = val('phone'), email = val('email'), type = val('project_type'), city = val('city');
-    if (!name || !phone || !email) return say('error', T.fill);
-    if (!validEmail(email)) { form.querySelector('[name="email"]').focus(); return say('error', T.email); }
-    if (!companyEmail(email)) { form.querySelector('[name="email"]').focus(); return say('error', T.corp); }
-    if (!company || !type || !city) return say('error', T.more);
-    if (phone.replace(/\D/g, '').length < 8) { form.querySelector('[name="phone"]').focus(); return say('error', T.phone); }
+    [].forEach.call(form.querySelectorAll('[aria-invalid]'), function (el) { el.removeAttribute('aria-invalid'); });
+    // Marks the first field that needs attention, moves focus to it and shows the message.
+    function fail(names, msg) {
+      var first = null;
+      names.forEach(function (n) {
+        var el = form.querySelector('[name="' + n + '"]');
+        if (el && !val(n)) { el.setAttribute('aria-invalid', 'true'); if (!first) first = el; }
+      });
+      if (!first && names.length) first = form.querySelector('[name="' + names[0] + '"]');
+      if (first) { first.setAttribute('aria-invalid', 'true'); first.focus(); }
+      say('error', msg);
+    }
+    if (!name || !phone || !email) return fail(['name', 'phone', 'email'], T.fill);
+    if (!validEmail(email)) return fail(['email'], T.email);
+    if (!companyEmail(email)) return fail(['email'], T.corp);
+    if (!company || !type || !city) return fail(['company', 'project_type', 'city'], T.more);
+    if (phone.replace(/\D/g, '').length < 8) return fail(['phone'], T.phone);
 
     var tok = tsId != null && window.turnstile ? window.turnstile.getResponse(tsId) || '' : '';
     if (KEY && !tok) return say('error', T.ts);
