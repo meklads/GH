@@ -1,0 +1,241 @@
+{
+  "_comment": "SEO overrides applied by scripts/apply-seo-overrides.mjs at the end of the build. Titles/descriptions are HTML text (escape & as &amp;). Keep titles under ~60 characters.",
+  "trimLongTitles": {
+    "pathPattern": "^insights/(articles|projects|reports)/",
+    "maxLength": 65,
+    "suffix": " | Graphics House"
+  },
+  "footerLinks": [
+    {
+      "afterHref": "locations/jeddah.html",
+      "afterText": "استوديو جدة",
+      "href": "locations/saudi-arabia.html",
+      "text": "إظهار معماري في السعودية",
+      "unless": "locations/saudi-arabia.html\">إظهار معماري في السعودية</a>"
+    },
+    {
+      "afterHref": "locations/jeddah-en.html",
+      "afterText": "Jeddah studio",
+      "href": "locations/saudi-arabia-en.html",
+      "text": "Architectural visualization in Saudi Arabia",
+      "unless": "locations/saudi-arabia-en.html\">Architectural visualization in Saudi Arabia</a>"
+    }
+  ],
+  "pages": {
+    "index.html": {
+      "title": "Graphics House | Architectural Visualization in Saudi Arabia",
+      "description": "Visual launch systems for real estate developers: cinematic CGI, smart maquettes and interactive sales tools from one Jeddah studio.",
+      "sameAs": [
+        "https://www.facebook.com/3dghouse",
+        "https://www.instagram.com/3dgraphicshouse",
+        "https://www.linkedin.com/company/graphics-house-gh/",
+        "https://www.youtube.com/user/3dghouse",
+        "https://twitter.com/GraphicsHouse2"
+      ]
+    },
+    "index-ar.html": {
+      "title": "Graphics House | إظهار معماري ومجسمات للمطورين في السعودية",
+      "description": "Graphics House يجهّز الإطلاق البصري للمطورين في الخليج: مجسمات، أفلام CGI، وتجارب تفاعلية من فريق واحد في جدة.",
+      "sameAs": [
+        "https://www.facebook.com/3dghouse",
+        "https://www.instagram.com/3dgraphicshouse",
+        "https://www.linkedin.com/company/graphics-house-gh/",
+        "https://www.youtube.com/user/3dghouse",
+        "https://twitter.com/GraphicsHouse2"
+      ]
+    },
+    "contact-us-en.html": {
+      "title": "Contact Graphics House | Architectural Visualization Studio"
+    },
+    "faq-en.html": {
+      "title": "FAQ: Architectural Visualization &amp; Maquettes | Graphics House",
+      "description": "Answers to common questions about architectural visualization, smart maquettes, CGI films, sales galleries, timelines and pricing at Graphics House."
+    },
+    "privacy-policy-en.html": {
+      "title": "Privacy Policy | Graphics House",
+      "description": "How Graphics House collects, uses and protects your personal information when you use our website and services."
+    },
+    "services/production-en.html": {
+      "title": "Media Production for Real Estate Developers | Graphics House",
+      "description": "Video production, editing, motion graphics and launch content for real estate developers in Saudi Arabia and the GCC, by Graphics House."
+    },
+    "solutions/brand-scale-en.html": {
+      "title": "BrandScale™ | One Brand System for Multi-Project Developers",
+      "description": "BrandScale™ by Graphics House: one positioning and visual identity for developers with several projects, set before each launch. Jeddah studio."
+    },
+    "solutions/brand-scale.html": {
+      "title": "BrandScale™ | نظام هوية موحّد للمطورين متعددي المشاريع",
+      "description": "BrandScale™ من Graphics House: تموضع وهوية بصرية واحدة للمطورين الذين لديهم عدة مشاريع، تُبنى قبل كل إطلاق. استوديو من جدة."
+    },
+    "locations/riyadh-en.html": {
+      "title": "Architectural Visualization in Riyadh | Graphics House",
+      "description": "Architectural visualization studio for Riyadh developers: 3D renders, smart maquettes, CGI films and sales gallery assets for off-plan launches."
+    },
+    "locations/jeddah-en.html": {
+      "title": "Architectural Visualization Studio in Jeddah | Graphics House",
+      "description": "Graphics House headquarters in Jeddah: photorealistic 3D renders, smart maquettes, CGI films and interactive sales platforms for developers."
+    },
+    "locations/makkah-en.html": {
+      "title": "Architectural Visualization in Makkah | Graphics House",
+      "description": "Place-sensitive architectural visualization for Makkah developers: renders, CGI films, smart maquettes and interactive experiences."
+    },
+    "locations/madinah-en.html": {
+      "title": "Architectural Visualization in Madinah | Graphics House"
+    },
+    "locations/oman-en.html": {
+      "title": "Architectural Visualization in Oman | Graphics House"
+    },
+    "locations/bahrain-en.html": {
+      "title": "Architectural Visualization in Bahrain | Graphics House"
+    },
+    "locations/riyadh.html": {
+      "title": "إظهار معماري في الرياض للمطورين | Graphics House",
+      "description": "استوديو إظهار معماري للمطورين في الرياض: رندرات، مجسمات ذكية، أفلام CGI، ومواد جاهزة لصالات البيع والمبيعات على المخطط."
+    },
+    "locations/jeddah.html": {
+      "title": "إظهار معماري في جدة للمطورين | Graphics House"
+    },
+    "locations/makkah.html": {
+      "title": "إظهار معماري في مكة المكرمة للمطورين | Graphics House"
+    },
+    "locations/madinah.html": {
+      "title": "إظهار معماري في المدينة المنورة للمطورين | Graphics House"
+    },
+    "locations/oman.html": {
+      "title": "إظهار معماري في عُمان للمطورين | Graphics House"
+    },
+    "locations/bahrain.html": {
+      "title": "إظهار معماري في البحرين للمطورين | Graphics House"
+    },
+    "services/rendering.html": {
+      "title": "إظهار معماري ورندر ثلاثي الأبعاد في السعودية | Graphics House",
+      "description": "إظهار معماري ثلاثي الأبعاد للمطورين في السعودية: رندرات خارجية وداخلية فوتوريالستية، كتالوجات المشاريع، وهوية بصرية من Graphics House.",
+      "hiddenH1": "الإظهار المعماري والهوية البصرية"
+    },
+    "services/animation.html": {
+      "title": "تحريك ثلاثي الأبعاد وأفلام معمارية | Graphics House",
+      "hiddenH1": "التحريك ثلاثي الأبعاد والأفلام السينمائية"
+    },
+    "services/cinematic-cgi.html": {
+      "title": "أفلام CGI سينمائية للمشاريع العقارية | Graphics House"
+    },
+    "services/galleries.html": {
+      "title": "تصميم وتنفيذ صالات البيع ومعارض المطورين | Graphics House"
+    },
+    "services/interactive-experiences.html": {
+      "title": "تجارب تفاعلية لصالات البيع العقارية | Graphics House"
+    },
+    "services/vr-360.html": {
+      "title": "جولات افتراضية VR و360° للمشاريع العقارية | Graphics House"
+    },
+    "services/photography-media.html": {
+      "title": "التصوير المعماري والجوي للمشاريع العقارية | Graphics House"
+    },
+    "services/branding.html": {
+      "title": "الهوية البصرية للمشاريع العقارية | Graphics House"
+    },
+    "services/digital-marketing.html": {
+      "title": "التسويق الرقمي للمطورين العقاريين | Graphics House"
+    },
+    "services/web-solutions.html": {
+      "title": "مواقع ومنصات رقمية للمشاريع العقارية | Graphics House"
+    },
+    "services/smart-visualization.html": {
+      "title": "التصور الذكي للمشاريع متعددة المراحل | Graphics House"
+    },
+    "services/ai-solutions.html": {
+      "title": "حلول الذكاء الاصطناعي للإظهار المعماري | Graphics House"
+    },
+    "services/maquettes.html": {
+      "title": "مجسمات معمارية للمطورين في السعودية | Graphics House"
+    },
+    "services/maquettes-en.html": {
+      "title": "Architectural Maquettes &amp; Scale Models | Graphics House"
+    },
+    "services/animation-en.html": {
+      "title": "3D Architectural Animation &amp; CGI Films | Graphics House",
+      "description": "3D architectural animation and cinematic CGI films for real estate launches, sales galleries and investor presentations in Saudi Arabia and the GCC.",
+      "hiddenH1": "3D Animation and Cinematic Films for Real Estate"
+    },
+    "services/rendering-en.html": {
+      "title": "Architectural Visualization &amp; 3D Rendering | Graphics House",
+      "hiddenH1": "Architectural Visualization and Brand Identity"
+    },
+    "services/vr-360-en.html": {
+      "title": "VR &amp; 360° Virtual Tours for Real Estate | Graphics House",
+      "description": "Immersive VR experiences and 360° virtual tours that let buyers explore units and amenities remotely, for real estate projects in Saudi Arabia and the GCC."
+    },
+    "services/branding-en.html": {
+      "title": "Visual Identity for Real Estate Projects | Graphics House"
+    },
+    "services/ai-solutions-en.html": {
+      "hiddenH1": "AI Solutions for Real Estate Visualization"
+    },
+    "services/smart-visualization-en.html": {
+      "hiddenH1": "Smart Visualization Systems for Real Estate Sales"
+    },
+    "services/cinematic-cgi-en.html": {
+      "hiddenH1": "Cinematic CGI Films for Real Estate"
+    },
+    "services/digital-marketing-en.html": {
+      "hiddenH1": "Digital Marketing for Real Estate Developers"
+    },
+    "services/photography-media-en.html": {
+      "hiddenH1": "Architectural Photography and Media Production"
+    },
+    "services/web-solutions-en.html": {
+      "hiddenH1": "Real Estate Websites and Digital Platforms"
+    },
+    "vr360/index.html": {
+      "hiddenH1": "جولة افتراضية 360° للمشاريع العقارية"
+    },
+    "vr360/index-en.html": {
+      "hiddenH1": "360° Virtual Tours for Real Estate Projects"
+    },
+    "Packages-en.html": {
+      "description": "Real estate launch packages by project stage: pre-launch, construction and completion. CGI, smart maquettes, interactive displays and sales galleries."
+    },
+    "collaborators-en.html": {
+      "description": "Join the Graphics House roster of architects, designers, 3D artists, developers, editors and model makers for project-based work."
+    },
+    "casestudy1-en.html": {
+      "title": "Case Studies: Real Estate Visualization Projects | Graphics House"
+    },
+    "insights/index-en.html": {
+      "title": "Real Estate Visualization Insights &amp; Guides | Graphics House"
+    },
+    "insights/index.html": {
+      "title": "رؤى وأدلة الإظهار المعماري للمطورين | Graphics House",
+      "inserts": [
+        {
+          "anchor": "<article class=\"gh-ins-card\" data-gh-article-cat=\"إرشادات\">\\s*<a href=\"articles/choosing-archviz-studio-gcc\\.html\"",
+          "position": "before",
+          "unless": "articles/archviz-cost-saudi.html",
+          "html": "<article class=\"gh-ins-card\" data-gh-article-cat=\"إرشادات\">\n <a href=\"articles/archviz-cost-saudi.html\" class=\"gh-ins-card-link\">\n <figure class=\"gh-ins-card-media\"><img src=\"../assets/projects/rendering/alrajhi3.jpeg\" alt=\"كم تكلفة الإظهار المعماري في السعودية؟\" loading=\"lazy\"></figure>\n <div class=\"gh-ins-card-body\">\n <div class=\"gh-ins-card-meta\">\n <span class=\"gh-ins-cat\">إرشادات</span>\n <span class=\"gh-ins-read-time\">6 دقائق</span>\n </div>\n <h3>كم تكلفة الإظهار المعماري في السعودية؟ العوامل التي تحدد السعر</h3>\n <p class=\"gh-ins-card-excerpt\">ما الذي يحدد سعر الرندرات والأفلام والمجسمات، وكيف تقارن العروض وتطلب عرضاً دقيقاً.</p>\n <span class=\"gh-ins-read-more\">اقرأ المزيد <span class=\"material-symbols-outlined\" style=\"font-size:14px\">arrow_back</span></span>\n </div>\n </a>\n</article>\n"
+        }
+      ]
+    },
+    "insights/articles/choosing-archviz-studio-gcc.html": {
+      "inserts": [
+        {
+          "anchor": "jeddah-gate-ruwaq\\.jpg[\\s\\S]*?</a>",
+          "position": "after",
+          "unless": "archviz-cost-saudi.html",
+          "html": "<a href=\"../../insights/articles/archviz-cost-saudi.html\" class=\"gh-art-related-card\"><img src=\"../../assets/projects/rendering/jeddah-forum.jpg\" alt=\"\" loading=\"lazy\"><div class=\"gh-art-related-card-body\"><span class=\"gh-ins-cat\">التسعير</span><h3>كم تكلفة الإظهار المعماري في السعودية؟ العوامل التي تحدد السعر</h3></div></a>"
+        }
+      ]
+    },
+    "insights/projects/al-rajhi-riyadh-en.html": {
+      "title": "Naseem Al-Haram, Makkah: Film, Maquette &amp; Archviz for Al Rajhi"
+    },
+    "insights/articles/visual-launch-checklist-guide-en.html": {
+      "title": "Visual Launch Checklist: What to Lock Before Groundbreaking"
+    },
+    "insights/articles/photorealistic-sells-before-construction-en.html": {
+      "title": "Why Photoreal Renders Sell Projects Before Construction"
+    },
+    "insights/articles/when-to-use-smart-maquette-en.html": {
+      "title": "When Do You Need a Smart Maquette Instead of Renders?"
+    }
+  }
+}

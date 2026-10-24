@@ -43,6 +43,9 @@ function isRedirectOrNoindex(loc) {
 const ENSURE_PATHS = [
   ['services/galleries.html', '0.75'],
   ['services/galleries-en.html', '0.75'],
+  ['locations/saudi-arabia.html', '0.8'],
+  ['locations/saudi-arabia-en.html', '0.8'],
+  ['insights/articles/archviz-cost-saudi.html', '0.7'],
 ];
 for (const [rel, priority] of ENSURE_PATHS) {
   const loc = `${BASE}/${rel}`;
