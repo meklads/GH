@@ -146,11 +146,12 @@
     if (m && m.type === 'video' && src) {
       return (
         ph +
-        '<video class="ghd-media-el" src="' +
+        '<video class="ghd-media-el" ' +
+        (opts.lazy ? 'data-ghd-src="' : 'src="') +
         escapeAttr(src) +
         '"' +
         (poster ? ' poster="' + escapeAttr(poster) + '"' : '') +
-        ' muted loop playsinline preload="metadata"' +
+        ' muted loop playsinline preload="' + (opts.lazy ? 'none' : 'metadata') + '"' +
         (opts.autoplay ? ' autoplay' : '') +
         '></video>'
       );
@@ -831,7 +832,7 @@
       escapeAttr(fam) +
       '" aria-haspopup="dialog">' +
       '<div class="ghd-svc-media">' +
-      mediaMarkup(svc, { autoplay: true }) +
+      mediaMarkup(svc, { autoplay: true, lazy: true }) +
       '<span class="ghd-svc-num" aria-hidden="true">' +
       num +
       '</span>' +
@@ -1107,7 +1108,37 @@
     });
   }
 
+  /* The catalog sits low on the page: build it when the visitor gets near it. */
+  var catalogBuilt = false;
+  function buildCatalogNow() {
+    if (catalogBuilt) return;
+    renderCatalogFilters();
+    renderCatalog();
+  }
+  function deferCatalog() {
+    var sec = document.getElementById('catalog') || document.getElementById('ghd-catalog');
+    if (!sec || !('IntersectionObserver' in window) || location.hash) {
+      buildCatalogNow();
+      return;
+    }
+    var io = new IntersectionObserver(
+      function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) {
+            io.disconnect();
+            buildCatalogNow();
+            return;
+          }
+        }
+      },
+      { rootMargin: '1200px 0px' }
+    );
+    io.observe(sec);
+    window.addEventListener('hashchange', buildCatalogNow, { once: true });
+  }
+
   function renderCatalog() {
+    catalogBuilt = true;
     var grid = document.getElementById('ghd-catalog');
     var empty = document.getElementById('ghd-catalog-empty');
     if (!grid) return;
@@ -1160,6 +1191,43 @@
       );
     bindCatalogCards(grid);
     bindSliders(grid);
+    armLazyVideos(grid);
+  }
+
+  /* Catalog card videos load only when the card is about to be seen. */
+  function armLazyVideos(root) {
+    var vids = root ? root.querySelectorAll('video[data-ghd-src]') : [];
+    if (!vids.length) return;
+    function load(v) {
+      var src = v.getAttribute('data-ghd-src');
+      if (!src) return;
+      v.removeAttribute('data-ghd-src');
+      v.setAttribute('preload', 'metadata');
+      v.src = src;
+      if (v.hasAttribute('autoplay')) {
+        try {
+          var p = v.play();
+          if (p && typeof p.catch === 'function') p.catch(function () {});
+        } catch (e) {}
+      }
+    }
+    if (!('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(vids, load);
+      return;
+    }
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          io.unobserve(entry.target);
+          load(entry.target);
+        });
+      },
+      { rootMargin: '200px 0px', threshold: 0.01 }
+    );
+    Array.prototype.forEach.call(vids, function (v) {
+      io.observe(v);
+    });
   }
 
   /* ---------- Packages ---------- */
@@ -2145,8 +2213,7 @@
     renderEnterprise();
     renderHero();
     renderPackages();
-    renderCatalogFilters();
-    renderCatalog();
+    deferCatalog();
     renderFaq();
     renderMeeting();
     var trust = document.getElementById('ghd-trust-line');
@@ -2156,6 +2223,8 @@
         hidePrices && ui.trustLinePublic ? ui.trustLinePublic : ui.trustLine;
     }
     wireModals();
+    // Pages with their own SEO title opt out with <body data-ghd-keep-title="1">.
+    if (document.body && document.body.getAttribute('data-ghd-keep-title') === '1') return;
     document.title = hidePrices
       ? lang === 'ar'
         ? 'الباقات | GH Direct | Graphics House'
