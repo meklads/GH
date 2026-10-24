@@ -88,7 +88,7 @@ html[dir="rtl"] .lx .lx-arrow { transform: scaleX(-1); }
 /* Height follows the photo ratio but never exceeds the screen; any spare width becomes ink, so nothing is cut */
 .lx-hero-media { position: relative; height: min(56.25vw, calc(100svh - 100px)); min-height: 600px; overflow: hidden; background: var(--lx-ink); }
 .lx-hero-media { display: flex; justify-content: center; }
-/* The scene has the photo's exact ratio, so the photo, the film on its screen and the cut-out stay registered */
+/* The scene has the photo's exact ratio, so the photo and the film on its screen stay registered */
 .lx-scene { position: relative; height: 100%; aspect-ratio: 16 / 9; max-width: 100%; }
 .lx-scene picture, .lx-scene > picture img { display: block; width: 100%; height: 100%; }
 .lx-scene > picture img { object-fit: contain; }
@@ -104,7 +104,7 @@ html[dir="rtl"] .lx .lx-arrow { transform: scaleX(-1); }
 /* The film keeps its full frame; the strips above and below it carry a soft, dark blur of the same film so the screen reads as lit */
 .lx-tv::before { content: ""; position: absolute; inset: -60px; background: url("videos/GH-Epic-cinematic-arch-hero-poster.jpg") center / cover no-repeat; filter: blur(36px) brightness(0.5); }
 .lx-tv video { position: relative; width: 100%; height: 100%; object-fit: contain; filter: brightness(1.06) saturate(1.05); }
-.lx-fg { position: absolute; left: 840px; top: 200px; width: 180px; height: 270px; max-width: none; }
+
 /* Darkens the left third of the photo (a dark coat in the shot) so the copy sits on it, and fades the edges into the page */
 .lx-hero-media::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;

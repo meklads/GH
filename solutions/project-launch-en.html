@@ -39,13 +39,13 @@ gtag('config','G-Y67JVE898Z');
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<link rel="preload" as="image" href="../assets/news/makkah-charter-03.webp" imagesrcset="../assets/news/makkah-charter-03-m.webp 960w, ../assets/news/makkah-charter-03.webp 1600w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="../assets/news/makkah-charter-03-hero.webp" imagesrcset="../assets/news/makkah-charter-03-hero-m.webp 960w, ../assets/news/makkah-charter-03-hero.webp 1600w" imagesizes="100vw" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0">
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=50">
 <link rel="stylesheet" href="../assets/gh-en-typography.css?v=1">
-<link rel="stylesheet" href="../assets/gh-launch.css?v=5">
+<link rel="stylesheet" href="../assets/gh-launch.css?v=6">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="../assets/gh-footer-lock.css?v=5" data-gh-footer-lock="1">
 <script defer src="../assets/site-header.js?v=12"></script>
@@ -216,13 +216,12 @@ gtag('config','G-Y67JVE898Z');
   <div class="lx-hero-media">
     <div class="lx-scene">
       <picture>
-        <source media="(max-width:700px)" srcset="../assets/news/makkah-charter-03-m.webp" type="image/webp">
-        <source srcset="../assets/news/makkah-charter-03.webp" type="image/webp">
-        <img src="../assets/news/makkah-charter-03.jpeg" alt="Muslim World League exhibition: an interactive architectural maquette in front of a screen wall, with visitors following the presentation" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async">
+        <source media="(max-width:700px)" srcset="../assets/news/makkah-charter-03-hero-m.webp" type="image/webp">
+        <source srcset="../assets/news/makkah-charter-03-hero.webp" type="image/webp">
+        <img src="../assets/news/makkah-charter-03-hero.jpg" alt="Muslim World League exhibition: an interactive architectural maquette in front of a screen wall, with visitors following the presentation" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async">
       </picture>
       <div class="lx-live" id="lx-live">
         <div class="lx-tv"><video id="lx-hv" muted loop playsinline preload="none" poster="../assets/videos/GH-Epic-cinematic-arch-hero-poster.jpg" data-src="../assets/videos/GH-Epic-cinematic-arch-hero-mobile.mp4" aria-label="Short film: from digital visualization to the physical maquette"></video></div>
-        <img class="lx-fg" src="../assets/news/makkah-charter-03-fg.webp" alt="" width="180" height="270" loading="eager" decoding="async">
       </div>
     </div>
     <div class="lx-hero-cap"><button type="button" class="lx-pp" id="lx-pp" aria-label="Pause video" data-pause="Pause video" data-play="Play video"><span class="material-symbols-outlined" aria-hidden="true">pause</span></button><span>Our work: the Muslim World League exhibition, delivered in full in under 3 weeks</span> <a href="#proof" data-cta="hero-caption">Case study<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></div>
@@ -540,7 +539,7 @@ gtag('config','G-Y67JVE898Z');
   /* Layer explorer (tabs) */
   var tabs = $$('.lx-tab'), panels = $$('.lx-panel');
   /* Hero: the film plays on the exhibition screen in the photo. The live layer is drawn in photo pixels (1600 x 900)
-     and scaled to the rendered photo; the man standing in front of the screen is a cut-out laid over the film. */
+     and scaled to the rendered photo; the film covers the display area exactly. */
   var scene = $('.lx-scene'), live = $('#lx-live'), v = $('#lx-hv'), pp = $('#lx-pp');
   if (scene && live && v) {
     var fit = function () { live.style.setProperty('--lx-s', scene.getBoundingClientRect().width / 1600); live.classList.add('is-ready'); };
