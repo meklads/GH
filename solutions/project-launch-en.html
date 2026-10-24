@@ -45,7 +45,7 @@ gtag('config','G-Y67JVE898Z');
 <link rel="stylesheet" href="../assets/tailwind.min.css?v=1">
 <link rel="stylesheet" href="../assets/gh-site-enhancements.css?v=50">
 <link rel="stylesheet" href="../assets/gh-en-typography.css?v=1">
-<link rel="stylesheet" href="../assets/gh-launch.css?v=4">
+<link rel="stylesheet" href="../assets/gh-launch.css?v=5">
 <link rel="stylesheet" href="../assets/gh-float-widgets.css?v=15">
 <link rel="stylesheet" href="../assets/gh-footer-lock.css?v=5" data-gh-footer-lock="1">
 <script defer src="../assets/site-header.js?v=12"></script>
@@ -214,12 +214,18 @@ gtag('config','G-Y67JVE898Z');
 
 <section class="lx-hero" aria-labelledby="lx-h1">
   <div class="lx-hero-media">
-    <picture>
-      <source media="(max-width:700px)" srcset="../assets/news/makkah-charter-03-m.webp" type="image/webp">
-      <source srcset="../assets/news/makkah-charter-03.webp" type="image/webp">
-      <img src="../assets/news/makkah-charter-03.jpeg" alt="Muslim World League exhibition: an interactive architectural maquette in front of a screen wall, with visitors following the presentation" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async">
-    </picture>
-    <p class="lx-hero-cap"><span>Our work: the Muslim World League exhibition, delivered in full in under 3 weeks</span> <a href="#proof" data-cta="hero-caption">Case study<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></p>
+    <div class="lx-scene">
+      <picture>
+        <source media="(max-width:700px)" srcset="../assets/news/makkah-charter-03-m.webp" type="image/webp">
+        <source srcset="../assets/news/makkah-charter-03.webp" type="image/webp">
+        <img src="../assets/news/makkah-charter-03.jpeg" alt="Muslim World League exhibition: an interactive architectural maquette in front of a screen wall, with visitors following the presentation" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+      <div class="lx-live" id="lx-live">
+        <div class="lx-tv"><video id="lx-hv" muted loop playsinline preload="none" poster="../assets/videos/GH-Epic-cinematic-arch-hero-poster.jpg" data-src="../assets/videos/GH-Epic-cinematic-arch-hero-mobile.mp4" aria-label="Short film: from digital visualization to the physical maquette"></video></div>
+        <img class="lx-fg" src="../assets/news/makkah-charter-03-fg.webp" alt="" width="180" height="270" loading="eager" decoding="async">
+      </div>
+    </div>
+    <div class="lx-hero-cap"><button type="button" class="lx-pp" id="lx-pp" aria-label="Pause video" data-pause="Pause video" data-play="Play video"><span class="material-symbols-outlined" aria-hidden="true">pause</span></button><span>Our work: the Muslim World League exhibition, delivered in full in under 3 weeks</span> <a href="#proof" data-cta="hero-caption">Case study<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></div>
   </div>
   <div class="lx-hero-copy">
     <div class="lx-hero-in"><div class="lx-copy">
@@ -229,7 +235,6 @@ gtag('config','G-Y67JVE898Z');
         <a class="lx-btn" href="#lead-form" data-cta="hero-book">Book a launch session<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a>
         <a class="lx-btn lx-btn--ghost" href="#proof" data-cta="hero-work">View our work</a>
       </div>
-      <a class="lx-film-btn" href="#layers" data-layer="2" data-cta="hero-film"><span class="material-symbols-outlined" aria-hidden="true">play_circle</span>Watch a digital render become a maquette</a>
       <ul class="lx-trust"><li><span class="material-symbols-outlined" aria-hidden="true">verified</span>Free assessment session</li><li><span class="material-symbols-outlined" aria-hidden="true">bolt</span>Reply within 24 hours</li><li><span class="material-symbols-outlined" aria-hidden="true">request_quote</span>Clear proposal within 48 hours</li></ul>
     </div></div>
   </div>
@@ -258,7 +263,7 @@ gtag('config','G-Y67JVE898Z');
     <h2 class="lx-h2" id="lx-lay-h">Five layers, one system</h2>
     <p class="lx-lead">Pick a layer to see what the developer receives. Each layer can run on its own or inside the full system.</p>
     <div class="lx-tabs" role="tablist" aria-label="System layers"><button type="button" class="lx-tab" role="tab" id="lx-t0" aria-controls="lx-p0" aria-selected="true" tabindex="0"><span class="material-symbols-outlined" aria-hidden="true">badge</span>Identity and message architecture</button><button type="button" class="lx-tab" role="tab" id="lx-t1" aria-controls="lx-p1" aria-selected="false" tabindex="-1"><span class="material-symbols-outlined" aria-hidden="true">movie</span>Renders and CGI films</button><button type="button" class="lx-tab" role="tab" id="lx-t2" aria-controls="lx-p2" aria-selected="false" tabindex="-1"><span class="material-symbols-outlined" aria-hidden="true">view_in_ar</span>Architectural maquettes</button><button type="button" class="lx-tab" role="tab" id="lx-t3" aria-controls="lx-p3" aria-selected="false" tabindex="-1"><span class="material-symbols-outlined" aria-hidden="true">touch_app</span>Interactive experiences</button><button type="button" class="lx-tab" role="tab" id="lx-t4" aria-controls="lx-p4" aria-selected="false" tabindex="-1"><span class="material-symbols-outlined" aria-hidden="true">storefront</span>Sales gallery and installation</button></div>
-    <div class="lx-panels"><div class="lx-panel" role="tabpanel" id="lx-p0" aria-labelledby="lx-t0"><div class="lx-pm"><img src="../assets/projects/jeddah-forum/launch-identity-31.webp" alt="Jeddah Forum identity applied to badges, bags and pins" width="1600" height="1141" loading="lazy" decoding="async"></div><div class="lx-pt"><h3>Identity and message architecture</h3><p>A coherent architectural language for the project, from first impression to the sales floor.</p><ul class="lx-gets"><li>Visual identity for the project</li><li>Message and positioning blueprint</li><li>Usage rules for the team and vendors</li></ul><a class="lx-link" href="../services/branding-en.html" data-cta="layer-0">Explore identity<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></div></div><div class="lx-panel" role="tabpanel" id="lx-p1" aria-labelledby="lx-t1" hidden><div class="lx-pm"><img src="../assets/projects/wahat-al-salam/launch-hero-aerial.webp" alt="Architectural visualization of the Wahat Al Salam project" width="1600" height="877" loading="lazy" decoding="async"></div><div class="lx-pt"><h3>Renders and CGI films</h3><p>Cinematic content that explains the masterplan before concrete.</p><ul class="lx-gets"><li>Photoreal renders of facades and interiors</li><li>A launch film and a masterplan film</li><li>Short cuts for marketing and investor days</li></ul><a class="lx-link" href="../services/cinematic-cgi-en.html" data-cta="layer-1">CGI films<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></div></div><div class="lx-panel" role="tabpanel" id="lx-p2" aria-labelledby="lx-t2" hidden><div class="lx-pm"><video class="lx-pv-film" muted loop playsinline preload="none" poster="../assets/videos/GH-Epic-cinematic-arch-hero-poster.jpg" aria-label="Short film: from digital visualization to the physical maquette" data-desktop="../assets/videos/GH-Epic-cinematic-arch-hero-1280.mp4" data-mobile="../assets/videos/GH-Epic-cinematic-arch-hero-mobile.mp4"></video></div><div class="lx-pt"><h3>Architectural maquettes</h3><p>Classic, smart, kinetic or floor-furnish: tangible presence in the showroom.</p><ul class="lx-gets"><li>The right tier: classic, smart, kinetic or floor-furnish</li><li>Fabrication and installation at the display site</li></ul><a class="lx-link" href="../services/maquettes-en.html" data-cta="layer-2">Explore maquettes<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></div></div><div class="lx-panel" role="tabpanel" id="lx-p3" aria-labelledby="lx-t3" hidden><div class="lx-pm"><img src="../assets/news/makkah-charter-07.webp" alt="Tablet control of the maquette and screen at the Makkah Charter exhibition" width="1600" height="900" loading="lazy" decoding="async"></div><div class="lx-pt"><h3>Interactive experiences</h3><p>Touchscreens that let visitors choose units and plans on their own.</p><ul class="lx-gets"><li>Touch interface for units and plans</li><li>Maquette linked to screens (i-Maquette)</li><li>Training for the sales team to run it</li></ul><a class="lx-link" href="../services/interactive-experiences-en.html" data-cta="layer-3">Interactive experiences<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></div></div><div class="lx-panel" role="tabpanel" id="lx-p4" aria-labelledby="lx-t4" hidden><div class="lx-pm"><picture><source srcset="../assets/news/makkah-charter-01.webp" type="image/webp"><img src="../assets/news/makkah-charter-01.jpeg" alt="Institutional exhibition with a maquette and screens" width="1600" height="900" loading="lazy" decoding="async"></picture></div><div class="lx-pt"><h3>Sales gallery and installation</h3><p>Gallery décor that stages every visual asset, with on-site build and installation.</p><ul class="lx-gets"><li>Gallery design and space preparation for brokers and buyers</li><li>Installation of screens and maquettes</li><li>Gallery finishes can align with Turriva once specs lock</li></ul><a class="lx-link" href="../services/galleries-en.html" data-cta="layer-4">Exhibitions and sales galleries<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></div></div></div>
+    <div class="lx-panels"><div class="lx-panel" role="tabpanel" id="lx-p0" aria-labelledby="lx-t0"><div class="lx-pm"><img src="../assets/projects/jeddah-forum/launch-identity-31.webp" alt="Jeddah Forum identity applied to badges, bags and pins" width="1600" height="1141" loading="lazy" decoding="async"></div><div class="lx-pt"><h3>Identity and message architecture</h3><p>A coherent architectural language for the project, from first impression to the sales floor.</p><ul class="lx-gets"><li>Visual identity for the project</li><li>Message and positioning blueprint</li><li>Usage rules for the team and vendors</li></ul><a class="lx-link" href="../services/branding-en.html" data-cta="layer-0">Explore identity<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></div></div><div class="lx-panel" role="tabpanel" id="lx-p1" aria-labelledby="lx-t1" hidden><div class="lx-pm"><img src="../assets/projects/wahat-al-salam/launch-hero-aerial.webp" alt="Architectural visualization of the Wahat Al Salam project" width="1600" height="877" loading="lazy" decoding="async"></div><div class="lx-pt"><h3>Renders and CGI films</h3><p>Cinematic content that explains the masterplan before concrete.</p><ul class="lx-gets"><li>Photoreal renders of facades and interiors</li><li>A launch film and a masterplan film</li><li>Short cuts for marketing and investor days</li></ul><a class="lx-link" href="../services/cinematic-cgi-en.html" data-cta="layer-1">CGI films<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></div></div><div class="lx-panel" role="tabpanel" id="lx-p2" aria-labelledby="lx-t2" hidden><div class="lx-pm"><picture><source srcset="../assets/projects/rendering/kuday-makkah-e1745137682714.webp" type="image/webp"><img src="../assets/projects/rendering/kuday-makkah-e1745137682714.jpeg" alt="Architectural maquette of a project in Makkah" width="1050" height="704" loading="lazy" decoding="async"></picture></div><div class="lx-pt"><h3>Architectural maquettes</h3><p>Classic, smart, kinetic or floor-furnish: tangible presence in the showroom.</p><ul class="lx-gets"><li>The right tier: classic, smart, kinetic or floor-furnish</li><li>Fabrication and installation at the display site</li></ul><a class="lx-link" href="../services/maquettes-en.html" data-cta="layer-2">Explore maquettes<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></div></div><div class="lx-panel" role="tabpanel" id="lx-p3" aria-labelledby="lx-t3" hidden><div class="lx-pm"><img src="../assets/news/makkah-charter-07.webp" alt="Tablet control of the maquette and screen at the Makkah Charter exhibition" width="1600" height="900" loading="lazy" decoding="async"></div><div class="lx-pt"><h3>Interactive experiences</h3><p>Touchscreens that let visitors choose units and plans on their own.</p><ul class="lx-gets"><li>Touch interface for units and plans</li><li>Maquette linked to screens (i-Maquette)</li><li>Training for the sales team to run it</li></ul><a class="lx-link" href="../services/interactive-experiences-en.html" data-cta="layer-3">Interactive experiences<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></div></div><div class="lx-panel" role="tabpanel" id="lx-p4" aria-labelledby="lx-t4" hidden><div class="lx-pm"><img src="../assets/news/makkah-charter-08.webp" alt="Visitors at an institutional exhibition in front of the screen wall and maquettes" width="1600" height="900" loading="lazy" decoding="async"></div><div class="lx-pt"><h3>Sales gallery and installation</h3><p>Gallery décor that stages every visual asset, with on-site build and installation.</p><ul class="lx-gets"><li>Gallery design and space preparation for brokers and buyers</li><li>Installation of screens and maquettes</li><li>Gallery finishes can align with Turriva once specs lock</li></ul><a class="lx-link" href="../services/galleries-en.html" data-cta="layer-4">Exhibitions and sales galleries<span class="material-symbols-outlined lx-arrow" aria-hidden="true">arrow_forward</span></a></div></div></div>
   </div>
 </section>
 
@@ -534,26 +539,36 @@ gtag('config','G-Y67JVE898Z');
 
   /* Layer explorer (tabs) */
   var tabs = $$('.lx-tab'), panels = $$('.lx-panel');
-  /* The maquettes layer shows the short film: it loads on first view and plays only while its panel is open and on screen */
-  var film = $('.lx-pv-film'), filmOnScreen = false;
-  function syncFilm() {
-    if (!film) return;
-    var open = !film.closest('.lx-panel').hidden;
-    if (open && filmOnScreen && !reduce) {
-      if (!film.src) film.src = (window.matchMedia && matchMedia('(max-width:700px)').matches) ? film.getAttribute('data-mobile') : film.getAttribute('data-desktop');
-      var pr = film.play(); if (pr && pr.catch) pr.catch(function () {});
-    } else if (!film.paused) { film.pause(); }
+  /* Hero: the film plays on the exhibition screen in the photo. The live layer is drawn in photo pixels (1600 x 900)
+     and scaled to the rendered photo; the man standing in front of the screen is a cut-out laid over the film. */
+  var scene = $('.lx-scene'), live = $('#lx-live'), v = $('#lx-hv'), pp = $('#lx-pp');
+  if (scene && live && v) {
+    var fit = function () { live.style.setProperty('--lx-s', scene.getBoundingClientRect().width / 1600); live.classList.add('is-ready'); };
+    fit();
+    if ('ResizeObserver' in window) new ResizeObserver(fit).observe(scene); else window.addEventListener('resize', fit);
+    var userPaused = reduce, onScreen = false, icon = pp.querySelector('.material-symbols-outlined');
+    var label = function () {
+      var paused = v.paused;
+      icon.textContent = paused ? 'play_arrow' : 'pause';
+      pp.setAttribute('aria-label', pp.getAttribute(paused ? 'data-play' : 'data-pause'));
+    };
+    var go = function () {
+      if (userPaused || !onScreen) { if (!v.paused) v.pause(); return; }
+      if (!v.src) v.src = v.getAttribute('data-src');
+      var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
+    };
+    v.addEventListener('play', label); v.addEventListener('pause', label);
+    pp.addEventListener('click', function () { userPaused = !v.paused; if (userPaused) v.pause(); else { onScreen = true; go(); } });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) { onScreen = en[0].isIntersecting; go(); }, { threshold: 0.2 }).observe(scene);
+    } else { onScreen = true; go(); }
+    label();
   }
-  if (film && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (en) { filmOnScreen = en[0].isIntersecting; syncFilm(); }, { threshold: 0.3 }).observe(film.closest('.lx-pm'));
-  }
-  if (film && reduce) { film.setAttribute('controls', ''); }
 
   function pick(i, focus) {
     tabs.forEach(function (t, k) { t.setAttribute('aria-selected', k === i ? 'true' : 'false'); t.tabIndex = k === i ? 0 : -1; });
     panels.forEach(function (p, k) { p.hidden = k !== i; });
     if (focus) tabs[i].focus();
-    syncFilm();
   }
   tabs.forEach(function (t, i) {
     t.addEventListener('click', function () { pick(i); });
