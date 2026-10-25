@@ -42,7 +42,7 @@ const COPY = {
     heroCtaPrimary: 'محادثة شراكة',
     heroCtaSecondary: 'القدرات المتخصصة',
     proofStats: [
-      { value: '+20', label: 'عامًا من الخبرة', sub: 'منذ 2004' },
+      { value: '+15', label: 'عامًا من الخبرة', sub: 'في السوق السعودي' },
       { value: '5', label: 'تخصصات إنتاج', sub: 'شريك واحد, قدرات متعددة' },
       { value: '6', label: 'قطاعات رئيسية', sub: 'عقاري · حكومي · ثقافي · وغيرها' },
     ],
@@ -133,7 +133,7 @@ const COPY = {
     caseHref: 'casestudy-mwl.html',
     whyTitle: 'لماذا جرافيكس هاوس؟',
     whyItems: [
-      { title: 'أكثر من 20 عامًا من الخبرة', sub: 'منذ 2004' },
+      { title: 'أكثر من 15 عامًا من الخبرة', sub: 'في السوق السعودي' },
       { title: 'مقرّنا في السعودية', sub: 'معرفة عميقة بالسوق السعودي والمنطقة.' },
       { title: 'تخصصات متعددة', sub: 'قدرات إنتاجية متنوعة تحت مظلة شريك واحد.' },
       { title: 'قابلية للتوسع', sub: 'فريق متخصص وشبكة قدرات تتسع مع حجم المشروع.' },
@@ -230,7 +230,7 @@ const COPY = {
     heroCtaPrimary: 'Partnership conversation',
     heroCtaSecondary: 'Specialist capabilities',
     proofStats: [
-      { value: '20+', label: 'Years of experience', sub: 'Since 2004' },
+      { value: '15+', label: 'Years of experience', sub: 'In the Saudi market' },
       { value: '5', label: 'Production disciplines', sub: 'One partner, multiple capabilities' },
       { value: '6', label: 'Core sectors', sub: 'Real estate · Government · Culture · more' },
     ],
@@ -321,7 +321,7 @@ const COPY = {
     caseHref: 'casestudy-mwl-en.html',
     whyTitle: 'Why Graphics House?',
     whyItems: [
-      { title: 'Over 20 years of experience', sub: 'Since 2004' },
+      { title: 'Over 15 years of experience', sub: 'In the Saudi market' },
       { title: 'Saudi-Based', sub: 'Deep experience in Saudi Arabia and the region.' },
       { title: 'Multi-Disciplinary', sub: 'Multiple production disciplines under one partner.' },
       { title: 'Scalable', sub: 'Specialist team and expandable capability network by project size.' },
