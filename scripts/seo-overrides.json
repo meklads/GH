@@ -235,7 +235,7 @@
           "Real estate marketing"
         ],
         "sameAs": [
-          "https://www.linkedin.com/company/graphics-house-gh/",
+          "https://www.linkedin.com/company/graphics-house-project-launch/",
           "https://www.instagram.com/3dgraphicshouse/",
           "https://www.facebook.com/3dghouse",
           "https://www.youtube.com/user/3dghouse",
@@ -295,7 +295,7 @@
           "Real estate marketing"
         ],
         "sameAs": [
-          "https://www.linkedin.com/company/graphics-house-gh/",
+          "https://www.linkedin.com/company/graphics-house-project-launch/",
           "https://www.instagram.com/3dgraphicshouse/",
           "https://www.facebook.com/3dghouse",
           "https://www.youtube.com/user/3dghouse",
@@ -511,7 +511,21 @@
       ]
     },
     "services/maquettes.html": {
-      "title": "مجسمات معمارية للمطورين في السعودية | Graphics House"
+      "title": "مجسمات معمارية للمطورين في السعودية | Graphics House",
+      "inserts": [
+        {
+          "anchor": "</head>",
+          "position": "before",
+          "unless": "gh-svc-deep.css",
+          "html": "<link rel=\"stylesheet\" href=\"../assets/gh-svc-deep.css\">\n"
+        },
+        {
+          "anchor": "<!-- CTA 1 -->",
+          "position": "before",
+          "unless": "scale-model-cost-saudi.html",
+          "html": "<section class=\"gh-svc-deep\" aria-labelledby=\"gh-mq-cost\">\n <div class=\"gh-svc-deep-inner\">\n <h2 id=\"gh-mq-cost\">كم تكلفة المجسم المعماري؟</h2>\n <p>السعر يتحدد بالمقياس والحجم ومستوى التفاصيل والمواد، ثم بالإضاءة والتفاعل والنقل والتركيب. شرحنا كل عامل وأنواع المجسمات وكيف تقارن العروض في دليل <a href=\"../insights/articles/scale-model-cost-saudi.html\">تكلفة المجسم المعماري في السعودية</a>.</p>\n </div>\n</section>\n\n"
+        }
+      ]
     },
     "services/maquettes-en.html": {
       "title": "Architectural Maquettes &amp; Scale Models | Graphics House"
@@ -576,6 +590,12 @@
           "position": "before",
           "unless": "articles/archviz-cost-saudi.html",
           "html": "<article class=\"gh-ins-card\" data-gh-article-cat=\"إرشادات\">\n <a href=\"articles/archviz-cost-saudi.html\" class=\"gh-ins-card-link\">\n <figure class=\"gh-ins-card-media\"><img src=\"../assets/projects/rendering/alrajhi3.jpeg\" alt=\"كم تكلفة الإظهار المعماري في السعودية؟\" loading=\"lazy\"></figure>\n <div class=\"gh-ins-card-body\">\n <div class=\"gh-ins-card-meta\">\n <span class=\"gh-ins-cat\">إرشادات</span>\n <span class=\"gh-ins-read-time\">6 دقائق</span>\n </div>\n <h3>كم تكلفة الإظهار المعماري في السعودية؟ العوامل التي تحدد السعر</h3>\n <p class=\"gh-ins-card-excerpt\">ما الذي يحدد سعر الرندرات والأفلام والمجسمات، وكيف تقارن العروض وتطلب عرضاً دقيقاً.</p>\n <span class=\"gh-ins-read-more\">اقرأ المزيد <span class=\"material-symbols-outlined\" style=\"font-size:14px\">arrow_back</span></span>\n </div>\n </a>\n</article>\n"
+        },
+        {
+          "anchor": "<article class=\"gh-ins-card\" data-gh-article-cat=\"إرشادات\">\\s*<a href=\"articles/archviz-cost-saudi\\.html\"",
+          "position": "before",
+          "unless": "articles/scale-model-cost-saudi.html",
+          "html": "<article class=\"gh-ins-card\" data-gh-article-cat=\"إرشادات\">\n <a href=\"articles/scale-model-cost-saudi.html\" class=\"gh-ins-card-link\">\n <figure class=\"gh-ins-card-media\"><img src=\"../assets/projects/maquettes/anan-eskan-maquette-01.jpeg\" alt=\"كم تكلفة المجسم المعماري في السعودية؟\" loading=\"lazy\"></figure>\n <div class=\"gh-ins-card-body\">\n <div class=\"gh-ins-card-meta\">\n <span class=\"gh-ins-cat\">إرشادات</span>\n <span class=\"gh-ins-read-time\">7 دقائق</span>\n </div>\n <h3>كم تكلفة المجسم المعماري في السعودية؟ ما الذي يحدد السعر فعلاً</h3>\n <p class=\"gh-ins-card-excerpt\">المقياس والمواد والإضاءة والتفاعل والنقل، وأنواع المجسمات، وكيف تطلب عرض سعر دقيق.</p>\n <span class=\"gh-ins-read-more\">اقرأ المزيد <span class=\"material-symbols-outlined\" style=\"font-size:14px\">arrow_back</span></span>\n </div>\n </a>\n</article>\n"
         }
       ]
     },

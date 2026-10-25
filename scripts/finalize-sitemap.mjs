@@ -46,6 +46,7 @@ const ENSURE_PATHS = [
   ['locations/saudi-arabia.html', '0.8'],
   ['locations/saudi-arabia-en.html', '0.8'],
   ['insights/articles/archviz-cost-saudi.html', '0.7'],
+  ['insights/articles/scale-model-cost-saudi.html', '0.7'],
 ];
 for (const [rel, priority] of ENSURE_PATHS) {
   const loc = `${BASE}/${rel}`;
