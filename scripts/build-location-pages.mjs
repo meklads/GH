@@ -144,6 +144,8 @@ const CLIENT_LOGOS = [
  { file: 'bn-zooma.png', alt: { ar: 'بن زومة', en: 'Bn Zooma' } },
  { file: 'aqarat.png', alt: { ar: 'عقارات', en: 'Aqarat' } },
  { file: 'oteck.png', alt: { ar: 'أوتك', en: 'Oteck' } },
+ { file: 'khatib-alami.png', alt: { ar: 'خطيب وعلمي', en: 'Khatib & Alami' } },
+ { file: 'hilton.png', alt: { ar: 'هيلتون', en: 'Hilton' } },
  { file: 'رابطة العالم الاسلامي.png', alt: { ar: 'رابطة العالم الإسلامي', en: 'Muslim World League' } },
 ];
 
