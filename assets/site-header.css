@@ -1894,7 +1894,7 @@ html[dir="ltr"] .mega-menu-services .mm-svc-link:hover { transform: translateX(2
 }
 .mega-menu-casestudies .mm-cs-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
   padding: 18px 24px 8px;
 }
@@ -1929,7 +1929,7 @@ html[dir="ltr"] .mega-menu-services .mm-svc-link:hover { transform: translateX(2
 .mega-menu-casestudies .mm-cs-thumb {
   flex: none;
   width: 100%;
-  height: 148px;
+  height: 118px;
   border-radius: 0;
   overflow: hidden;
   background: #0e0e0e;
@@ -2017,7 +2017,7 @@ html[dir="rtl"] .mega-menu-casestudies .mm-cs-all .material-symbols-outlined { t
     padding: 14px 18px 6px;
   }
   .mega-menu-casestudies .mm-cs-thumb {
-    height: 120px;
+    height: 92px;
   }
   .mega-menu-casestudies .mm-cs-name {
     font-size: 14px;

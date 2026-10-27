@@ -1,205 +1,257 @@
 {
-  "hub": {
-    "ar": {
-      "title": "مشاريع ناجحة | Graphics House",
-      "description": "دراسات حالة لمشاريع Graphics House: هوية بصرية، أفلام CGI، كتالوجات، مجسمات، وفعاليات مؤسسية في السعودية والخليج.",
-      "eyebrow": "Case Studies",
-      "h1": "مشاريع ناجحة",
-      "lead": "قصص حقيقية لكيف بنينا الهوية والفيلم والكتالوج والتجربة البصرية لمشاريع كبرى في المملكة والخليج.",
-      "megaLead": "اختر مشروعاً لاستعراض دراسة الحالة",
-      "viewAll": "عرض الدراسة",
-      "featured": "دراسة حالة مميزة",
-      "megaViewAll": "عرض كل المشاريع"
-    },
-    "en": {
-      "title": "Case Studies | Graphics House",
-      "description": "Graphics House case studies: brand identity, CGI films, catalogues, maquettes, and institutional events across KSA and the GCC.",
-      "eyebrow": "Case Studies",
-      "h1": "Case Studies",
-      "lead": "Real stories of how we built identity, film, catalogue, and visual experience for major projects across the region.",
-      "megaLead": "Pick a project to open its case study",
-      "viewAll": "View case study",
-      "featured": "Featured case study",
-      "megaViewAll": "View all case studies"
-    }
+ "hub": {
+  "ar": {
+   "title": "مشاريع ناجحة | Graphics House",
+   "description": "دراسات حالة لمشاريع Graphics House: هوية بصرية، أفلام CGI، كتالوجات، مجسمات، وفعاليات مؤسسية في السعودية والخليج.",
+   "eyebrow": "Case Studies",
+   "h1": "مشاريع ناجحة",
+   "lead": "قصص حقيقية لكيف بنينا الهوية والفيلم والكتالوج والتجربة البصرية لمشاريع كبرى في المملكة والخليج.",
+   "megaLead": "اختر مشروعاً لاستعراض دراسة الحالة",
+   "viewAll": "عرض الدراسة",
+   "featured": "دراسة حالة مميزة",
+   "megaViewAll": "عرض كل المشاريع"
   },
-  "items": [
-    {
-      "featured": true,
-      "mega": true,
-      "megaOrder": 5,
-      "href": {
-        "ar": "case-studies/jeddah-real-estate-forum.html",
-        "en": "case-studies/jeddah-real-estate-forum-en.html"
-      },
-      "image": "assets/projects/jeddah-forum/catalog/page-01.jpg",
-      "title": {
-        "ar": "ملتقى جدة للعقار",
-        "en": "Jeddah Real Estate Forum"
-      },
-      "shortTitle": {
-        "ar": "مشروع ملتقى جدة",
-        "en": "Jeddah Forum Project"
-      },
-      "tag": {
-        "ar": "هوية · كتالوج · فيلم CGI · جدة سوبردوم",
-        "en": "Brand · Catalogue · CGI Film · Superdome 3D"
-      },
-      "location": {
-        "ar": "جدة",
-        "en": "Jeddah"
-      }
-    },
-    {
-      "featured": false,
-      "mega": true,
-      "megaOrder": 6,
-      "href": {
-        "ar": "insights/projects/rafal-pavilions.html",
-        "en": "insights/projects/rafal-pavilions-en.html"
-      },
-      "image": "assets/projects/rafal-pavilions/lobby.jpg",
-      "title": {
-        "ar": "بافيليونز، رفال للتطوير",
-        "en": "Pavilions, Rafal Development"
-      },
-      "shortTitle": {
-        "ar": "مشروع بافيليونز",
-        "en": "Pavilions Project"
-      },
-      "tag": {
-        "ar": "فيلم CGI · مجسم · مكاتب VIP · الرياض",
-        "en": "CGI film · Maquette · VIP offices · Riyadh"
-      },
-      "location": {
-        "ar": "الرياض",
-        "en": "Riyadh"
-      }
-    },
-    {
-      "featured": false,
-      "mega": true,
-      "megaOrder": 4,
-      "href": {
-        "ar": "insights/projects/wahat-al-salam.html",
-        "en": "insights/projects/wahat-al-salam-en.html"
-      },
-      "image": "assets/projects/wahat-al-salam/hero-aerial.jpg",
-      "title": {
-        "ar": "واحة السلام، عقارات العيسائي",
-        "en": "Wahat Al Salam, Al-Essai Real Estate"
-      },
-      "shortTitle": {
-        "ar": "مشروع عقارات العيسائي",
-        "en": "Al-Essai Real Estate Project"
-      },
-      "tag": {
-        "ar": "مخطط حي · أفلام CGI · كتالوج · بيع كامل",
-        "en": "Living master plan · CGI films · Catalogue · Full sell-out"
-      },
-      "location": {
-        "ar": "السعودية",
-        "en": "Saudi Arabia"
-      }
-    },
-    {
-      "featured": false,
-      "mega": true,
-      "megaOrder": 3,
-      "href": {
-        "ar": "casestudy-mwl.html",
-        "en": "casestudy-mwl-en.html"
-      },
-      "image": "assets/news/makkah-charter-01.jpeg",
-      "title": {
-        "ar": "ميثاق مكة، رابطة العالم الإسلامي",
-        "en": "Makkah Charter, Muslim World League"
-      },
-      "shortTitle": {
-        "ar": "مشروع رابطة العالم الإسلامي",
-        "en": "Muslim World League Project"
-      },
-      "tag": {
-        "ar": "مجسم ذكي · تجربة تفاعلية · معرض",
-        "en": "Smart maquette · Interactive · Exhibition"
-      },
-      "location": {
-        "ar": "مكة المكرمة",
-        "en": "Makkah"
-      }
-    },
-    {
-      "featured": false,
-      "mega": true,
-      "megaOrder": 2,
-      "href": {
-        "ar": "insights/projects/anan-eskan-riyadh.html",
-        "en": "insights/projects/anan-eskan-riyadh-en.html"
-      },
-      "image": "assets/projects/maquettes/anan-eskan-maquette-01.jpeg",
-      "title": {
-        "ar": "عنان إسكان، الرياض",
-        "en": "Anan Eskan, Riyadh"
-      },
-      "shortTitle": {
-        "ar": "مشروع عنان إسكان",
-        "en": "Anan Eskan Project"
-      },
-      "tag": {
-        "ar": "مجسم معماري · Restatex",
-        "en": "Architectural maquette · Restatex"
-      },
-      "location": {
-        "ar": "الرياض",
-        "en": "Riyadh"
-      }
-    },
-    {
-      "featured": false,
-      "mega": true,
-      "megaOrder": 1,
-      "href": {
-        "ar": "insights/projects/al-rajhi-riyadh.html",
-        "en": "insights/projects/al-rajhi-riyadh-en.html"
-      },
-      "image": "assets/projects/al-rajhi-naseem/aerial-bird.jpg",
-      "title": {
-        "ar": "نسيم الحرم، الراجحي",
-        "en": "Naseem Al-Haram, Al Rajhi"
-      },
-      "shortTitle": {
-        "ar": "مشروع الراجحي",
-        "en": "Al Rajhi Project"
-      },
-      "tag": {
-        "ar": "فيلم CGI · مجسم · رندرات · مكة · نسيم الحرم",
-        "en": "CGI film · Maquette · Renders · Makkah · Naseem Al-Haram"
-      },
-      "location": {
-        "ar": "السعودية",
-        "en": "Saudi Arabia"
-      }
-    },
-    {
-      "featured": false,
-      "mega": false,
-      "href": {
-        "ar": "insights/reports/mwl-ramadan-forum-visual-report.html",
-        "en": "insights/reports/mwl-ramadan-forum-visual-report-en.html"
-      },
-      "image": "assets/insights/reports/mwl-ramadan-forum-maquette-full.jpg",
-      "title": {
-        "ar": "الملتقى الرمضاني، رابطة العالم الإسلامي",
-        "en": "Ramadan Forum, Muslim World League"
-      },
-      "tag": {
-        "ar": "تقرير بصري · مجسم تفاعلي",
-        "en": "Visual report · Interactive maquette"
-      },
-      "location": {
-        "ar": "جدة",
-        "en": "Jeddah"
-      }
-    }
-  ]
+  "en": {
+   "title": "Case Studies | Graphics House",
+   "description": "Graphics House case studies: brand identity, CGI films, catalogues, maquettes, and institutional events across KSA and the GCC.",
+   "eyebrow": "Case Studies",
+   "h1": "Case Studies",
+   "lead": "Real stories of how we built identity, film, catalogue, and visual experience for major projects across the region.",
+   "megaLead": "Pick a project to open its case study",
+   "viewAll": "View case study",
+   "featured": "Featured case study",
+   "megaViewAll": "View all case studies"
+  }
+ },
+ "items": [
+  {
+   "featured": true,
+   "mega": true,
+   "megaOrder": 4,
+   "href": {
+    "ar": "case-studies/jeddah-real-estate-forum.html",
+    "en": "case-studies/jeddah-real-estate-forum-en.html"
+   },
+   "image": "assets/projects/jeddah-forum/catalog/page-01.jpg",
+   "title": {
+    "ar": "ملتقى جدة للعقار",
+    "en": "Jeddah Real Estate Forum"
+   },
+   "shortTitle": {
+    "ar": "مشروع ملتقى جدة",
+    "en": "Jeddah Forum Project"
+   },
+   "tag": {
+    "ar": "هوية · كتالوج · فيلم CGI · جدة سوبردوم",
+    "en": "Brand · Catalogue · CGI Film · Superdome 3D"
+   },
+   "location": {
+    "ar": "جدة",
+    "en": "Jeddah"
+   }
+  },
+  {
+   "featured": false,
+   "mega": true,
+   "megaOrder": 7,
+   "href": {
+    "ar": "insights/projects/rafal-pavilions.html",
+    "en": "insights/projects/rafal-pavilions-en.html"
+   },
+   "image": "assets/projects/rafal-pavilions/lobby.jpg",
+   "title": {
+    "ar": "بافيليونز، رفال للتطوير",
+    "en": "Pavilions, Rafal Development"
+   },
+   "shortTitle": {
+    "ar": "مشروع بافيليونز",
+    "en": "Pavilions Project"
+   },
+   "tag": {
+    "ar": "فيلم CGI · مجسم · مكاتب VIP · الرياض",
+    "en": "CGI film · Maquette · VIP offices · Riyadh"
+   },
+   "location": {
+    "ar": "الرياض",
+    "en": "Riyadh"
+   }
+  },
+  {
+   "featured": false,
+   "mega": true,
+   "megaOrder": 6,
+   "href": {
+    "ar": "insights/projects/wahat-al-salam.html",
+    "en": "insights/projects/wahat-al-salam-en.html"
+   },
+   "image": "assets/projects/wahat-al-salam/hero-aerial.jpg",
+   "title": {
+    "ar": "واحة السلام، عقارات العيسائي",
+    "en": "Wahat Al Salam, Al-Essai Real Estate"
+   },
+   "shortTitle": {
+    "ar": "مشروع عقارات العيسائي",
+    "en": "Al-Essai Real Estate Project"
+   },
+   "tag": {
+    "ar": "مخطط حي · أفلام CGI · كتالوج · بيع كامل",
+    "en": "Living master plan · CGI films · Catalogue · Full sell-out"
+   },
+   "location": {
+    "ar": "السعودية",
+    "en": "Saudi Arabia"
+   }
+  },
+  {
+   "featured": false,
+   "mega": true,
+   "megaOrder": 3,
+   "href": {
+    "ar": "casestudy-mwl.html",
+    "en": "casestudy-mwl-en.html"
+   },
+   "image": "assets/news/makkah-charter-01.jpeg",
+   "title": {
+    "ar": "ميثاق مكة، رابطة العالم الإسلامي",
+    "en": "Makkah Charter, Muslim World League"
+   },
+   "shortTitle": {
+    "ar": "مشروع رابطة العالم الإسلامي",
+    "en": "Muslim World League Project"
+   },
+   "tag": {
+    "ar": "مجسم ذكي · تجربة تفاعلية · معرض",
+    "en": "Smart maquette · Interactive · Exhibition"
+   },
+   "location": {
+    "ar": "مكة المكرمة",
+    "en": "Makkah"
+   }
+  },
+  {
+   "featured": false,
+   "mega": true,
+   "megaOrder": 5,
+   "href": {
+    "ar": "insights/projects/anan-eskan-riyadh.html",
+    "en": "insights/projects/anan-eskan-riyadh-en.html"
+   },
+   "image": "assets/projects/maquettes/anan-eskan-maquette-01.jpeg",
+   "title": {
+    "ar": "عنان إسكان، الرياض",
+    "en": "Anan Eskan, Riyadh"
+   },
+   "shortTitle": {
+    "ar": "مشروع عنان إسكان",
+    "en": "Anan Eskan Project"
+   },
+   "tag": {
+    "ar": "مجسم معماري · Restatex",
+    "en": "Architectural maquette · Restatex"
+   },
+   "location": {
+    "ar": "الرياض",
+    "en": "Riyadh"
+   }
+  },
+  {
+   "featured": false,
+   "mega": true,
+   "megaOrder": 2,
+   "href": {
+    "ar": "insights/projects/al-rajhi-riyadh.html",
+    "en": "insights/projects/al-rajhi-riyadh-en.html"
+   },
+   "image": "assets/projects/al-rajhi-naseem/aerial-bird.jpg",
+   "title": {
+    "ar": "نسيم الحرم، الراجحي",
+    "en": "Naseem Al-Haram, Al Rajhi"
+   },
+   "shortTitle": {
+    "ar": "مشروع الراجحي",
+    "en": "Al Rajhi Project"
+   },
+   "tag": {
+    "ar": "فيلم CGI · مجسم · رندرات · مكة · نسيم الحرم",
+    "en": "CGI film · Maquette · Renders · Makkah · Naseem Al-Haram"
+   },
+   "location": {
+    "ar": "السعودية",
+    "en": "Saudi Arabia"
+   }
+  },
+  {
+   "featured": false,
+   "mega": false,
+   "href": {
+    "ar": "insights/reports/mwl-ramadan-forum-visual-report.html",
+    "en": "insights/reports/mwl-ramadan-forum-visual-report-en.html"
+   },
+   "image": "assets/insights/reports/mwl-ramadan-forum-maquette-full.jpg",
+   "title": {
+    "ar": "الملتقى الرمضاني، رابطة العالم الإسلامي",
+    "en": "Ramadan Forum, Muslim World League"
+   },
+   "tag": {
+    "ar": "تقرير بصري · مجسم تفاعلي",
+    "en": "Visual report · Interactive maquette"
+   },
+   "location": {
+    "ar": "جدة",
+    "en": "Jeddah"
+   }
+  },
+  {
+   "featured": false,
+   "mega": true,
+   "href": {
+    "ar": "insights/projects/hilton-access-bridge.html",
+    "en": "insights/projects/hilton-access-bridge-en.html"
+   },
+   "image": "assets/projects/hilton-access-bridge/hilton-access-bridge-01.jpg",
+   "title": {
+    "ar": "Hilton Access Bridge، خطيب وعلمي",
+    "en": "Hilton Access Bridge, Khatib & Alami"
+   },
+   "shortTitle": {
+    "ar": "مشروع جسر هيلتون مكة",
+    "en": "Hilton Makkah Bridge Project"
+   },
+   "tag": {
+    "ar": "إظهار معماري · بنية تحتية",
+    "en": "Archviz · Infrastructure"
+   },
+   "location": {
+    "ar": "مكة المكرمة",
+    "en": "Makkah"
+   },
+   "megaOrder": 1
+  },
+  {
+   "featured": false,
+   "mega": true,
+   "href": {
+    "ar": "insights/projects/albayan-university.html",
+    "en": "insights/projects/albayan-university-en.html"
+   },
+   "image": "assets/projects/albayan-university/albayan-university-01.jpg",
+   "title": {
+    "ar": "جامعة البيان",
+    "en": "Al-Bayan University"
+   },
+   "shortTitle": {
+    "ar": "مشروع جامعة البيان",
+    "en": "Al-Bayan University Project"
+   },
+   "tag": {
+    "ar": "إظهار معماري · تعليمي",
+    "en": "Archviz · Education"
+   },
+   "location": {
+    "ar": "حرم جامعي",
+    "en": "University campus"
+   },
+   "megaOrder": 8
+  }
+ ]
 }
