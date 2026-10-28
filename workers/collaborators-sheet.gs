@@ -72,10 +72,27 @@ function doPost(e) {
       'جديد',                                                             // الحالة
       '',                                                                 // ملاحظات داخلية
     ]);
+    try {
+      sendThanks(r);
+    } catch (mailErr) {
+      Logger.log('thanks mail failed: ' + mailErr);
+    }
     return out({ success: true });
   } catch (err) {
     return out({ success: false, message: String(err) });
   }
+}
+
+/** رسالة الشكر للمتعاون من Gmail الخاص بالشركة */
+function sendThanks(r) {
+  if (!r.email) return;
+  const first = String(r.name || '').trim().split(/\s+/)[0] || '';
+  const ar = (r.lang || 'ar') !== 'en';
+  const subject = ar ? 'شكراً لتقديم طلبك — جرافيكس هاوس' : 'Thank you — Graphics House';
+  const body = ar
+    ? 'مرحباً ' + first + '،\n\nشكراً لاهتمامك بالانضمام إلى سجل متعاوني جرافيكس هاوس. تم استلام ملفك بنجاح، وسنراجعه ونتواصل معك عند وجود احتياج مناسب.\n\nمع خالص التقدير،\nفريق Graphics House — مجموعة تسامي'
+    : 'Hello ' + first + ',\n\nThank you for joining the Graphics House collaborator roster. Your profile has been received; we will review it and contact you when a suitable opportunity arises.\n\nWith appreciation,\nGraphics House — Tasami Group';
+  MailApp.sendEmail({ to: r.email, subject: subject, body: body, name: 'Graphics House' });
 }
 
 function out(obj) {

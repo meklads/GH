@@ -429,14 +429,6 @@ async function finalizeCollaborator(payload, env, cors) {
     console.error('sheet append failed', String(e).slice(0, 200));
   }
 
-  const thanks = collaboratorThanksEmail(lang, name);
-  await sendBrevoTransactional(env, {
-    to: email,
-    subject: thanks.subject,
-    html: thanks.html,
-    text: thanks.text,
-  });
-
   return json(
     {
       success: true,
@@ -515,40 +507,8 @@ async function handleCollaboratorRequest(body, env, cors, request) {
     note: String(body.note || '').trim().slice(0, 1200),
   };
 
-  let token;
-  try {
-    token = await createCollaboratorToken(env, payload);
-  } catch (e) {
-    console.error('token error', e);
-    return json({ success: false, message: 'Could not start verification.' }, 500, cors);
-  }
-
-  const page = lang === 'ar' ? '/collaborators.html' : '/collaborators-en.html';
-  const confirmUrl = `${origin}${page}?confirm=${encodeURIComponent(token)}`;
-  const mail = collaboratorConfirmEmail(lang, name, confirmUrl);
-  const sent = await sendBrevoTransactional(env, {
-    to: email,
-    subject: mail.subject,
-    html: mail.html,
-    text: mail.text,
-  });
-
-  if (sent) {
-    return json(
-      {
-        success: true,
-        pending: true,
-        message:
-          lang === 'ar'
-            ? 'أرسلنا رابط تأكيد إلى بريدك. افتحه خلال 24 ساعة لإكمال الطلب.'
-            : 'We sent a confirmation link to your email. Open it within 24 hours to complete your submission.',
-      },
-      200,
-      cors
-    );
-  }
-
-  /* Fallback when transactional email is unavailable: accept after match + notify admin, thank on page */
+  /* Brevo confirmation removed: accept verified-format submissions directly.
+     Apps Script (Google Sheet) sends the thank-you email from the owner Gmail. */
   const finalize = await finalizeCollaborator(
     { ...payload, subject: (payload.subject || 'Collaborator profile') + ' (email-matched)' },
     env,
