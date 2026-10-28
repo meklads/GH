@@ -372,6 +372,27 @@ async function readCollaboratorToken(env, token) {
   }
 }
 
+/** Appends a verified collaborator to Google Sheets via the Apps Script web app. */
+async function appendCollaboratorRow(env, payload) {
+  if (!env.SHEET_WEBHOOK_URL || !env.SHEET_WEBHOOK_TOKEN) return false;
+  const res = await fetch(env.SHEET_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({ token: env.SHEET_WEBHOOK_TOKEN, row: payload }),
+    redirect: 'follow',
+  });
+  const text = await res.text();
+  let data = null;
+  try {
+    data = JSON.parse(text);
+  } catch {}
+  if (!res.ok || !data?.success) {
+    console.error('sheet append rejected', res.status, text.slice(0, 200));
+    return false;
+  }
+  return true;
+}
+
 async function finalizeCollaborator(payload, env, cors) {
   const key = env.WEB3FORMS_ACCESS_KEY;
   if (!key) return json({ success: false, message: 'Form proxy not configured' }, 503, cors);
@@ -399,6 +420,13 @@ async function finalizeCollaborator(payload, env, cors) {
   const { ok, data } = await forwardWeb3Forms(w3Body, key, env);
   if (!ok || !data?.success) {
     return json(data || { success: false, message: 'Submit failed' }, 502, cors);
+  }
+
+  /* Keep a verified roster copy in Google Sheets (never blocks the visitor's success) */
+  try {
+    await appendCollaboratorRow(env, payload);
+  } catch (e) {
+    console.error('sheet append failed', String(e).slice(0, 200));
   }
 
   const thanks = collaboratorThanksEmail(lang, name);
@@ -480,6 +508,11 @@ async function handleCollaboratorRequest(body, env, cors, request) {
     message: String(body.message || '').trim(),
     subject: String(body.subject || '').trim(),
     lang,
+    country: String(body.country || '').trim(),
+    years_experience: String(body.years_experience || '').trim(),
+    availability: String(body.availability || '').trim(),
+    linkedin_url: String(body.linkedin_url || '').trim(),
+    note: String(body.note || '').trim().slice(0, 1200),
   };
 
   let token;

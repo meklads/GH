@@ -354,6 +354,11 @@
         discipline: discipline,
         portfolio_url: portfolio,
         cv_url: cv,
+        country: val(form, 'country'),
+        years_experience: val(form, 'years_experience'),
+        availability: val(form, 'availability'),
+        linkedin_url: val(form, 'linkedin_url'),
+        note: val(form, 'note'),
         message: lines.join('\n') + '\nNotify: ' + NOTIFY_EMAIL,
         botcheck: '',
       };
