@@ -72,8 +72,9 @@ async function forwardWeb3Forms(body, key, env) {
   delete payload.access_key;
   /* Web3Forms Turnstile is Pro-only — never forward the token */
   delete payload['cf-turnstile-response'];
-  /* Always CC owner inbox so every site form reaches imeklad@gmail.com */
-  payload.ccemail = NOTIFY_EMAIL;
+  /* Do NOT send ccemail: Web3Forms free plan rejects it ("Pro feature") and every
+     submission fails. Owner receives mail at the recipient set on the access key. */
+  delete payload.ccemail;
   const notice = `\nNotify: ${NOTIFY_EMAIL}\nWhatsApp: ${NOTIFY_WHATSAPP_DISPLAY} (wa.me/${NOTIFY_WHATSAPP})`;
   if (payload.message) {
     if (!String(payload.message).includes(NOTIFY_EMAIL)) {
@@ -92,12 +93,15 @@ async function forwardWeb3Forms(body, key, env) {
   try {
     data = JSON.parse(text);
   } catch {
-    data = { success: res.ok, message: text };
+    data = { success: res.ok };
   }
+  /* Never return the upstream body to the browser: it echoes access_key and internal messages */
   if (res.ok && data?.success) {
     notifyWhatsAppLead(env, payload).catch(() => {});
+    return { ok: true, data: { success: true, message: data.message || 'OK' } };
   }
-  return { ok: res.ok, data };
+  console.error('web3forms failed', res.status, text.slice(0, 300));
+  return { ok: false, data: { success: false } };
 }
 
 /** Optional lead ping to WhatsApp via CallMeBot (secret CALLMEBOT_APIKEY). */
@@ -389,7 +393,6 @@ async function finalizeCollaborator(payload, env, cors) {
     portfolio_url: payload.portfolio_url,
     cv_url: payload.cv_url,
     message: (payload.message || '') + '\nEmail verified: yes',
-    ccemail: NOTIFY_EMAIL,
     botcheck: '',
   };
 

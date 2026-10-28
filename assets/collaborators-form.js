@@ -354,7 +354,6 @@
         discipline: discipline,
         portfolio_url: portfolio,
         cv_url: cv,
-        ccemail: NOTIFY_EMAIL,
         message: lines.join('\n') + '\nNotify: ' + NOTIFY_EMAIL,
         botcheck: '',
       };
