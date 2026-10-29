@@ -228,3 +228,19 @@ html[dir="rtl"] body.gh-home section[style*="padding:100px 0"] .reveal > div > h
 @media (max-width: 767px) {
   html[dir="rtl"] body.gh-home section[style*="padding:100px 0"] .s2-row-text p { font-size: 17px !important; }
 }
+
+/* ---------- 13. Trust band: logos as one quiet white line on the dark band ---------- */
+body.gh-home .gh-logo-album__item img { filter: grayscale(1) brightness(0) invert(1) !important; opacity: 0.62 !important; }
+body.gh-home .gh-logo-album__item:hover img { filter: grayscale(1) brightness(0) invert(1) !important; opacity: 1 !important; }
+body.gh-home .gh-logo-album__name { color: rgba(255, 255, 255, 0.62) !important; font-weight: 500 !important; }
+body.gh-home .gh-logo-album__label { color: rgba(255, 255, 255, 0.5) !important; }
+
+/* ---------- 14. One ornament per title ---------- */
+body.gh-home .portfolio-divider { display: none !important; }
+body.gh-home .portfolio-header .portfolio-title { margin-bottom: 0 !important; }
+
+/* ---------- 15. Mobile: feature caption collided with the video button ---------- */
+@media (max-width: 767px) {
+  body.gh-home .s2-feature-caption { display: none !important; }
+  body.gh-home #hero .hero-ctas a, body.gh-home #hero a[href*="intent=session"] { min-height: 52px; }
+}
