@@ -38,7 +38,7 @@
 
     function tryPlay() {
       atStart();
-      if (window.GHVideo) {
+      if (window.GHVideo && typeof window.GHVideo.tryPlay === 'function') {
         window.GHVideo.tryPlay(v);
         return;
       }

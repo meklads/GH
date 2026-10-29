@@ -1,0 +1,230 @@
+/* Graphics House homepage — refinement layer (2026-10-29)
+   Same content, structure and media. This layer only settles rhythm, type weight,
+   eyebrows, cards, media corners and buttons so every section reads as one system.
+   Loaded last on index.html and index-ar.html. */
+
+body.gh-home {
+  --ghr-pad: clamp(76px, 9vw, 128px);
+  --ghr-gold: #c9a84c;
+  --ghr-gold-soft: rgba(201, 168, 76, 0.45);
+  --ghr-ink: #0a0a0a;
+  --ghr-text: #4f4f53;
+  --ghr-muted: #6b6b70;
+  --ghr-line: rgba(10, 10, 10, 0.08);
+  --ghr-radius: 18px;
+  --ghr-h2: clamp(30px, 3.3vw, 48px);
+  --ghr-h3: clamp(24px, 2.4vw, 34px);
+}
+
+/* Accessibility: the skip link sat at left:-9999px, which in RTL widened the page */
+body.gh-home .skip-to-main:not(:focus) { left: auto !important; right: auto !important; top: -200px !important; }
+
+/* ---------- 1. One vertical rhythm for every content section ---------- */
+body.gh-home section[style*="padding:100px 0"],
+body.gh-home section.s3,
+body.gh-home section.gh-home-process,
+body.gh-home section.gh-home-why,
+body.gh-home section.portfolio,
+body.gh-home section.gh-home-intro {
+  padding-top: var(--ghr-pad) !important;
+  padding-bottom: var(--ghr-pad) !important;
+}
+body.gh-home section.gh-home-intro { padding-top: clamp(64px, 7vw, 104px) !important; padding-bottom: clamp(64px, 7vw, 104px) !important; }
+body.gh-home .gh-svc-more { padding-top: 28px !important; padding-bottom: clamp(56px, 6vw, 88px) !important; }
+body.gh-home .gh-insights-strip { padding-top: clamp(56px, 6vw, 80px) !important; padding-bottom: clamp(56px, 6vw, 80px) !important; }
+
+/* ---------- 2. Section titles: one scale, one light weight ---------- */
+body.gh-home .gh-home-intro__title,
+body.gh-home .gh-home-projects-head__title,
+body.gh-home .s3-title,
+body.gh-home .gh-home-eco__head h2,
+body.gh-home .gh-home-eco__services-title,
+body.gh-home .gh-home-process__title,
+body.gh-home .gh-home-why__title,
+body.gh-home .portfolio-title,
+body.gh-home .csr h2,
+body.gh-home section[style*="padding:100px 0"] .reveal > h2 {
+  font-size: var(--ghr-h2) !important;
+  font-weight: 400 !important;
+  line-height: 1.14 !important;
+  letter-spacing: -0.015em !important;
+}
+body.gh-home .gh-insights-strip__title { font-weight: 400 !important; letter-spacing: -0.01em !important; }
+/* Service rows (Architectural Visualization, CGI, Maquettes) are sub-titles of one list */
+body.gh-home section[style*="padding:100px 0"] .s2-row-text h2,
+body.gh-home section[style*="padding:100px 0"] .s2-row-text > div:first-child {
+  font-size: var(--ghr-h3) !important;
+  font-weight: 400 !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.01em !important;
+}
+/* Gold emphasis keeps its colour but not a heavier weight */
+body.gh-home h1 span, body.gh-home h1 em,
+body.gh-home h2 span, body.gh-home h2 em,
+body.gh-home .s2-row-text > div:first-child span { font-weight: inherit !important; }
+/* Hero title: lighter, calmer */
+body.gh-home #hero h1 { font-weight: 400 !important; letter-spacing: -0.02em !important; }
+html[dir="rtl"] body.gh-home #hero h1,
+html[dir="rtl"] body.gh-home h2,
+html[dir="rtl"] body.gh-home .s2-row-text > div:first-child { letter-spacing: 0 !important; line-height: 1.45 !important; }
+html[dir="rtl"] body.gh-home #hero h1 { line-height: 1.35 !important; }
+
+/* ---------- 3. Eyebrows: one quiet label with a short gold rule ---------- */
+body.gh-home .s3-eyebrow,
+body.gh-home .gh-home-eco__eyebrow,
+body.gh-home .gh-home-eco__services-eyebrow,
+body.gh-home .gh-home-process__eyebrow,
+body.gh-home .gh-home-why__eyebrow,
+body.gh-home .portfolio-eyebrow,
+body.gh-home .gh-insights-strip__eyebrow,
+body.gh-home .gh-svc-more__label,
+body.gh-home section[style*="padding:100px 0"] .reveal > span:first-child {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: none !important;
+  color: #8c7a4a !important;
+}
+body.gh-home .s3-eyebrow::before,
+body.gh-home .gh-home-eco__eyebrow::before,
+body.gh-home .gh-home-eco__services-eyebrow::before,
+body.gh-home .gh-home-process__eyebrow::before,
+body.gh-home .gh-home-why__eyebrow::before,
+body.gh-home .portfolio-eyebrow::before,
+body.gh-home .gh-insights-strip__eyebrow::before,
+body.gh-home section[style*="padding:100px 0"] .reveal > span:first-child::before {
+  content: "";
+  flex: none;
+  width: 28px;
+  height: 1px;
+  background: var(--ghr-gold);
+}
+body.gh-home .gh-home-eco__eyebrow, body.gh-home .gh-home-why__eyebrow { color: rgba(201, 168, 76, 0.9) !important; }
+
+/* ---------- 4. Body copy: readable, not hairline ---------- */
+body.gh-home section[style*="padding:100px 0"] p,
+body.gh-home .gh-home-process__lead,
+body.gh-home .gh-home-eco__services-lead,
+body.gh-home .portfolio p {
+  font-weight: 400 !important;
+  line-height: 1.75 !important;
+}
+body.gh-home section[style*="padding:100px 0"] .s2-row-text p { font-size: 17px !important; color: var(--ghr-text) !important; }
+body.gh-home section[style*="padding:100px 0"] .s2-row-text p + p { color: var(--ghr-muted) !important; }
+
+/* ---------- 5. Media: one corner radius, no competing frames ---------- */
+body.gh-home .s2-row-visual,
+body.gh-home .s2-row-visual video,
+body.gh-home .s2-row-visual img,
+body.gh-home .gh-ambient-dual,
+body.gh-home .s3 .s3-media,
+body.gh-home .s3 img:not([class*="logo"]) {
+  border-radius: var(--ghr-radius);
+}
+body.gh-home .s2-row-visual, body.gh-home .gh-ambient-dual { overflow: hidden; }
+body.gh-home .s2-corner-tl, body.gh-home .s2-corner-br { display: none !important; }
+
+/* ---------- 6. Cards: thin line, no heavy shadow ---------- */
+body.gh-home .gh-home-process__card,
+body.gh-home .gh-home-eco-card,
+body.gh-home .gh-home-eco-ticket,
+body.gh-home .gh-home-eco-institutional {
+  border-radius: var(--ghr-radius) !important;
+  box-shadow: none !important;
+}
+body.gh-home .gh-home-process__card {
+  border: 1px solid var(--ghr-line) !important;
+  border-top: 1px solid var(--ghr-gold) !important;
+  background: #fff !important;
+}
+body.gh-home .gh-home-eco-card { border: 1px solid var(--ghr-line) !important; overflow: hidden; }
+body.gh-home .gh-home-eco-card__title { font-weight: 500 !important; }
+body.gh-home .gh-home-process__card:hover,
+body.gh-home .gh-home-eco-card:hover { box-shadow: 0 18px 40px rgba(10, 10, 10, 0.06) !important; }
+
+/* ---------- 7. Buttons: one height, one weight, sentence case ---------- */
+body.gh-home .gh-damac-btn,
+body.gh-home .gh-insights-strip__btn,
+body.gh-home section[style*="padding:100px 0"] a[href*="intent=session"],
+body.gh-home section[style*="padding:100px 0"] a[href*="Packages"] {
+  min-height: 50px;
+  padding: 0 28px !important;
+  border-radius: 999px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  align-items: center;
+}
+body.gh-home section[style*="padding:100px 0"] a[href*="intent=session"]:hover { background: #b3953f !important; border-color: #b3953f !important; }
+body.gh-home section[style*="padding:100px 0"] a[href*="Packages"]:hover { background: var(--ghr-ink) !important; color: #fafaf8 !important; }
+
+/* ---------- 8. Trust band: calmer logos ---------- */
+body.gh-home .gh-logo-album__label { font-size: 13px !important; letter-spacing: 0.04em !important; text-transform: none !important; }
+body.gh-home .gh-logo-album__item img { filter: grayscale(1) brightness(1.15); opacity: 0.78; transition: filter .3s ease, opacity .3s ease; }
+body.gh-home .gh-logo-album__item:hover img { filter: none; opacity: 1; }
+
+/* ---------- 9. Section edges: hairline instead of hard borders ---------- */
+body.gh-home section[style*="border-top:1px solid"] { border-top-color: var(--ghr-line) !important; }
+
+@media (max-width: 767px) {
+  body.gh-home { --ghr-pad: 64px; }
+  body.gh-home section[style*="padding:100px 0"] .s2-row-text p { font-size: 16px !important; }
+}
+
+/* ---------- 10. Core-system rows (Visualization · CGI · Maquettes) ---------- */
+body.gh-home section[style*="padding:100px 0"] .reveal > div > span[style*="monospace"] {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 12px;
+  font-family: inherit !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  color: #8c7a4a !important;
+  margin-bottom: 16px !important;
+}
+body.gh-home section[style*="padding:100px 0"] .reveal > div > span[style*="monospace"]::before { content: ""; width: 28px; height: 1px; background: var(--ghr-gold); }
+body.gh-home section[style*="padding:100px 0"] .reveal > div > h2 {
+  font-size: var(--ghr-h3) !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 18px !important;
+}
+body.gh-home section[style*="padding:100px 0"] .reveal > div > h2 + p { font-size: 18px !important; font-weight: 400 !important; color: #2a2a2e !important; line-height: 1.55 !important; }
+body.gh-home section[style*="padding:100px 0"] .reveal > div > h2 + p + p { font-size: 15.5px !important; color: var(--ghr-muted) !important; max-width: 34rem; }
+body.gh-home section[style*="padding:100px 0"] .reveal > div > div[style*="overflow:hidden"] { border-radius: var(--ghr-radius) !important; border: 0 !important; }
+body.gh-home section[style*="padding:100px 0"] .reveal > div > div[style*="overflow:hidden"] img { border-radius: var(--ghr-radius); }
+
+/* ---------- 11. All pill buttons share one size and case ---------- */
+body.gh-home section a[style*="border-radius:50px"],
+body.gh-home .gh-home-why__cta {
+  min-height: 50px;
+  padding: 0 28px !important;
+  border-radius: 999px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+}
+body.gh-home section[style*="padding:100px 0"] .reveal a[style*="background:transparent"]:hover,
+body.gh-home section.portfolio a[style*="background:transparent"]:hover { background: var(--ghr-ink) !important; color: #fafaf8 !important; border-color: var(--ghr-ink) !important; }
+body.gh-home section.portfolio a[style*="background:#1A1A1A"]:hover { background: var(--ghr-gold) !important; border-color: var(--ghr-gold) !important; color: var(--ghr-ink) !important; }
+body.gh-home .gh-home-why__cta { display: inline-flex !important; align-items: center; gap: 10px; }
+
+/* ---------- 12. Titles that wrapped too early / coloured whole ---------- */
+body.gh-home .gh-home-intro__title { max-width: 980px; margin-inline: auto; }
+body.gh-home .gh-home-eco__services-title { color: var(--ghr-ink) !important; }
+body.gh-home .portfolio-title + * { opacity: 0.8; }
+
+/* Arabic copy needs a little more size and contrast than Latin */
+html[dir="rtl"] body.gh-home section[style*="padding:100px 0"] .s2-row-text p { font-size: 18px !important; color: #3a3a3e !important; line-height: 1.95 !important; }
+html[dir="rtl"] body.gh-home section[style*="padding:100px 0"] .s2-row-text p + p { color: #55555a !important; }
+html[dir="rtl"] body.gh-home section[style*="padding:100px 0"] .reveal > div > h2 + p + p { font-size: 16.5px !important; line-height: 1.95 !important; color: #55555a !important; }
+@media (max-width: 767px) {
+  html[dir="rtl"] body.gh-home section[style*="padding:100px 0"] .s2-row-text p { font-size: 17px !important; }
+}
