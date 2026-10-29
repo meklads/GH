@@ -124,35 +124,35 @@
 
   var RESULTS = isEn ? {
     growth: {
-      title: 'GrowthLaunch™',
-      desc: 'Best fit for lead generation, sales automation, and improving conversion with a visual sales system.',
-      href: '../solutions/growth-launch-en.html'
+      title: 'PropMotion™ (Bees Motion)',
+      desc: 'Best fit for marketing preparation, campaign activation and lead generation: delivered by Bees Motion, our sister company in Tasami Group.',
+      href: 'https://beesmotion.com/propmotion/?lang=en'
     },
     project: {
       title: 'ProjectLaunch™',
       desc: 'Best fit for a full real estate launch: visualization, branding, marketing, and sales gallery support.',
-      href: '../solutions/project-launch-en.html'
+      href: '../../solutions/project-launch-en.html'
     },
     brand: {
       title: 'BrandScale™',
       desc: 'Best fit for building and scaling your brand through integrated creative and marketing solutions.',
-      href: '../solutions/brand-scale-en.html'
+      href: '../../solutions/brand-scale-en.html'
     }
   } : {
     growth: {
-      title: 'GrowthLaunch™',
-      desc: 'الأنسب لتوليد العملاء وأتمتة المتابعة وتحسين التحويل عبر نظام مبيعات بصري.',
-      href: '../solutions/growth-launch.html'
+      title: 'PropMotion™ (Bees Motion)',
+      desc: 'الأنسب لتجهيز التسويق وتفعيل الحملات وتوليد الاستفسارات: تنفذه Bees Motion، شركتنا الشقيقة في مجموعة تسامي.',
+      href: 'https://beesmotion.com/propmotion/?lang=ar'
     },
     project: {
       title: 'ProjectLaunch™',
       desc: 'الأنسب لإطلاق مشروع عقاري متكامل: تصور، هوية، تسويق، ودعم صالة البيع.',
-      href: '../solutions/project-launch.html'
+      href: '../../solutions/project-launch.html'
     },
     brand: {
       title: 'BrandScale™',
       desc: 'الأنسب لبناء وتعزيز العلامة التجارية عبر حلول إبداعية وتسويقية متكاملة.',
-      href: '../solutions/brand-scale.html'
+      href: '../../solutions/brand-scale.html'
     }
   };
 
