@@ -27,10 +27,17 @@ export function richText(s) {
     last = m.index + m[0].length;
   }
   if (last < str.length) out += esc(str.slice(last));
-  return out;
+  return out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 }
 
-function renderBodyBlock(block) {
+function localHref(href, depthPrefix = '') {
+  const h = String(href || '#');
+  if (/^(https?:|mailto:|tel:|#|\/)/i.test(h)) return h;
+  return `${depthPrefix}${h}`;
+}
+
+function renderBodyBlock(block, ctx = {}) {
+  const depthPrefix = ctx.depthPrefix || '';
   if (typeof block === 'string') return `<p>${richText(block)}</p>`;
   const text = block.text || '';
   switch (block.type) {
@@ -58,14 +65,36 @@ function renderBodyBlock(block) {
         : '';
       return `<div class="gh-art-table-wrap"><table class="gh-art-table">${cap}${head}${body}</table></div>`;
     }
-    case 'cta':
+    case 'cta': {
+      const btn2 =
+        block.btn2 && block.href2
+          ? `<a href="${esc(localHref(block.href2, depthPrefix))}" class="gh-btn-editorial gh-btn-editorial--outline">${richText(block.btn2)}</a>`
+          : '';
       return `<div class="gh-art-mid-cta">
         <h3>${richText(block.title || '')}</h3>
         <p>${richText(block.text || '')}</p>
         <div class="gh-art-mid-cta-actions">
-          <a href="${esc(block.href || '#')}" class="gh-btn-editorial">${richText(block.btn || 'Learn more')}</a>
+          <a href="${esc(localHref(block.href, depthPrefix))}" class="gh-btn-editorial" data-gh-cta="${esc(block.track || 'article-inline')}">${richText(block.btn || 'Learn more')}</a>
+          ${btn2}
         </div>
       </div>`;
+    }
+    case 'video': {
+      const id = String(block.youtubeId || '').replace(/[^a-zA-Z0-9_-]/g, '');
+      if (!id) return '';
+      const cap = block.caption ? `<figcaption class="gh-art-video-cap">${richText(block.caption)}</figcaption>` : '';
+      return `<figure class="gh-art-video">
+        <div class="gh-ins-featured-video-frame gh-ins-media--youtube">
+          <iframe src="https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1" title="${esc(block.title || '')}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        ${cap}
+      </figure>`;
+    }
+    case 'figure': {
+      const src = localHref(block.src, depthPrefix);
+      const cap = block.caption ? `<figcaption class="gh-art-video-cap">${richText(block.caption)}</figcaption>` : '';
+      return `<figure class="gh-art-figure"><img src="${esc(src)}" alt="${esc(block.alt || '')}" loading="lazy" decoding="async">${cap}</figure>`;
+    }
     default:
       return text ? `<p>${richText(text)}</p>` : '';
   }
@@ -93,7 +122,7 @@ export function renderArticleBody(body, { isEn, depthPrefix, midCtaHtml }) {
       }
       continue;
     }
-    parts.push(renderBodyBlock(block));
+    parts.push(renderBodyBlock(block, { depthPrefix }));
   }
 
   if (!hasCtaBlock && !midCtaInserted && midCtaHtml && h2Seen >= 2) {
@@ -389,7 +418,24 @@ export function breadcrumbHtml(article, isEn, depthPrefix) {
   </nav>`;
 }
 
-export function authorBylineHtml(isEn) {
+export function authorBylineHtml(isEn, author, depthPrefix = '') {
+  if (author) {
+    const name = isEn ? author.name.en : author.name.ar;
+    const role = isEn ? author.role.en : author.role.ar;
+    const img = author.image
+      ? `<img class="gh-art-author-photo" src="${esc(localHref(author.image, depthPrefix))}" alt="${esc(name)}" width="44" height="44" loading="eager">`
+      : `<div class="gh-art-author-avatar" aria-hidden="true">GH</div>`;
+    const nameHtml = author.url
+      ? `<a href="${esc(author.url)}" target="_blank" rel="noopener author">${esc(name)}</a>`
+      : esc(name);
+    return `<div class="gh-art-author">
+    ${img}
+    <div class="gh-art-author-meta">
+      <strong>${nameHtml}</strong>
+      <span>${esc(role)}</span>
+    </div>
+  </div>`;
+  }
   const name = isEn ? 'Graphics House Insights' : 'فريق رؤى Graphics House';
   const role = isEn ? 'GCC architectural visualization & launch strategy' : 'إظهار معماري واستراتيجية إطلاق في الخليج';
   return `<div class="gh-art-author">
@@ -399,6 +445,30 @@ export function authorBylineHtml(isEn) {
       <span>${role}</span>
     </div>
   </div>`;
+}
+
+/** Author bio box shown at the end of editorial articles. */
+export function authorBioHtml(author, isEn, depthPrefix = '') {
+  if (!author) return '';
+  const name = isEn ? author.name.en : author.name.ar;
+  const role = isEn ? author.role.en : author.role.ar;
+  const bio = author.bio ? (isEn ? author.bio.en : author.bio.ar) : '';
+  const img = author.image
+    ? `<img class="gh-art-bio-photo" src="${esc(localHref(author.image, depthPrefix))}" alt="${esc(name)}" width="88" height="88" loading="lazy">`
+    : '';
+  const link = author.url
+    ? `<a class="gh-art-bio-link" href="${esc(author.url)}" target="_blank" rel="noopener author">LinkedIn</a>`
+    : '';
+  return `<aside class="gh-art-bio" aria-label="${isEn ? 'About the author' : 'عن الكاتب'}">
+    ${img}
+    <div class="gh-art-bio-body">
+      <p class="gh-art-bio-label">${isEn ? 'About the author' : 'عن الكاتب'}</p>
+      <p class="gh-art-bio-name">${esc(name)}</p>
+      <p class="gh-art-bio-role">${esc(role)}</p>
+      ${bio ? `<p class="gh-art-bio-text">${richText(bio)}</p>` : ''}
+      ${link}
+    </div>
+  </aside>`;
 }
 
 export function socialProofStrip(isEn) {
@@ -464,14 +534,24 @@ export function articleGraphSchema(article, lang, pageUrl, ogImageUrl) {
     headline: L(article.title),
     description: L(article.metaDescription || article.excerpt),
     image: imageUrl,
-    datePublished: `${article.date}-01`,
-    dateModified: `${article.date}-15`,
-    author: {
-      '@type': 'Person',
-      name: isEn ? 'Graphics House Insights Team' : 'فريق رؤى Graphics House',
-      jobTitle: isEn ? 'Architectural Visualization Strategists' : 'استراتيجيون الإظهار المعماري',
-      worksFor: { '@type': 'Organization', name: 'Graphics House', url: 'https://3dgraphicshouse.com' },
-    },
+    datePublished: article.datePublished || `${article.date}-01`,
+    dateModified: article.dateModified || `${article.date}-15`,
+    author: article.author
+      ? {
+          '@type': 'Person',
+          name: L(article.author.name),
+          jobTitle: L(article.author.role),
+          ...(article.author.url ? { url: article.author.url, sameAs: [article.author.url] } : {}),
+          ...(article.author.image ? { image: `https://3dgraphicshouse.com/${article.author.image}` } : {}),
+          worksFor: { '@type': 'Organization', name: 'Graphics House', url: 'https://3dgraphicshouse.com' },
+        }
+      : {
+          '@type': 'Person',
+          name: isEn ? 'Graphics House Insights Team' : 'فريق رؤى Graphics House',
+          jobTitle: isEn ? 'Architectural Visualization Strategists' : 'استراتيجيون الإظهار المعماري',
+          worksFor: { '@type': 'Organization', name: 'Graphics House', url: 'https://3dgraphicshouse.com' },
+        },
+    ...(article.keywords ? { keywords: [...(L(article.keywords).short || []), ...(L(article.keywords).long || [])].join(', ') } : {}),
     publisher: {
       '@type': 'Organization',
       name: 'Graphics House',
@@ -492,7 +572,7 @@ export function articleGraphSchema(article, lang, pageUrl, ogImageUrl) {
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': nodes });
 }
 
-export function faqAccordionHtml(faq, isEn) {
+export function faqAccordionHtml(faq, isEn, { headings = false } = {}) {
   if (!faq || !faq.length) return '';
   const L = (key) => (isEn ? key.en : key.ar);
   const items = faq
@@ -501,7 +581,7 @@ export function faqAccordionHtml(faq, isEn) {
       const a = L(item.a || item.answer || {});
       if (!q || !a) return '';
       return `<details class="gh-ins-faq-item">
-        <summary class="gh-ins-faq-q">${esc(q)}</summary>
+        <summary class="gh-ins-faq-q">${headings ? `<h3 class="gh-ins-faq-h">${esc(q)}</h3>` : esc(q)}</summary>
         <p class="gh-ins-faq-a">${richText(a)}</p>
       </details>`;
     })

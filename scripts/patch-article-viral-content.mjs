@@ -673,6 +673,10 @@ for (const file of fs.readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
   const full = path.join(DIR, file);
   let data = JSON.parse(fs.readFileSync(full, 'utf8'));
   const slug = data.slug || file.replace('.json', '');
+  if (data.editorialLock) {
+    // Hand-edited article (SEO/GEO rewrite): the JSON is the source of truth, do not overwrite.
+    continue;
+  }
   const hook = HOOKS[slug];
   if (!hook) {
     console.warn('  missing hooks:', slug);

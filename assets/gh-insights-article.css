@@ -949,3 +949,103 @@ html[dir="rtl"] .gh-art-takeaways-label {
 .gh-art-newsletter-form button:hover {
   background: #222;
 }
+
+/* ---- Editorial article additions (named author, inline video, figures, FAQ headings) ---- */
+.gh-art-author-photo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+}
+.gh-art-author-meta strong a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.5);
+}
+.gh-byline-updated {
+  color: #7a6528;
+}
+.gh-art-mid-cta-title {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: inherit;
+}
+.gh-art-video,
+.gh-art-figure {
+  margin: 28px 0 32px;
+}
+.gh-art-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #f4f1ea;
+  border-radius: 4px;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+}
+.gh-art-video-cap {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: #6b655c;
+  line-height: 1.6;
+}
+.gh-ins-faq--accordion .gh-ins-faq-h {
+  display: inline;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+.gh-art-bio {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin: 40px 0 32px;
+  padding: 22px;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 6px;
+  background: #faf8f3;
+}
+.gh-art-bio-photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.gh-art-bio-body p {
+  margin: 0;
+}
+.gh-art-bio-label {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #7a6528;
+}
+.gh-art-bio-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1814;
+  margin-top: 4px !important;
+}
+.gh-art-bio-role {
+  font-size: 13px;
+  color: #6b655c;
+}
+.gh-art-bio-text {
+  margin-top: 10px !important;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #3d3a35;
+}
+.gh-art-bio-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #7a6528;
+}
+@media (max-width: 560px) {
+  .gh-art-bio { flex-direction: column; }
+}

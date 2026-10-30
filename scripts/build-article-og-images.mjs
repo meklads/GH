@@ -61,9 +61,9 @@ function overlaySvg({ title, category, isEn }) {
     </linearGradient>
   </defs>
   <rect width="${W}" height="${H}" fill="url(#ogGrad)"/>
-  <rect x="${isEn ? 64 : W - 136}" y="${H - 210}" width="72" height="3" fill="#C9A84C"/>
-  <text x="${x}" y="${H - 178}" fill="#C9A84C" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2.5" text-anchor="${anchor}">${escSvg(String(category).toUpperCase())}</text>
-  <text x="${x}" y="${H - 132}" fill="#FAFAF8" font-family="${titleFont}" font-size="34" font-weight="700" text-anchor="${anchor}" direction="${isEn ? 'ltr' : 'rtl'}">${tspans}</text>
+  <rect x="${isEn ? 64 : W - 136}" y="${H - 210 - (lines.length - 1) * 42}" width="72" height="3" fill="#C9A84C"/>
+  <text x="${x}" y="${H - 178}" fill="#C9A84C" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2.5" text-anchor="${anchor}" transform="translate(0 ${-(lines.length - 1) * 42})">${escSvg(String(category).toUpperCase())}</text>
+  <text x="${x}" y="${H - 132 - (lines.length - 1) * 42}" fill="#FAFAF8" font-family="${titleFont}" font-size="34" font-weight="700" text-anchor="start" direction="${isEn ? 'ltr' : 'rtl'}">${tspans}</text>
   <text x="${x}" y="${H - 40}" fill="rgba(255,255,255,0.5)" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="500" text-anchor="${anchor}">Graphics House · 3dgraphicshouse.com</text>
 </svg>`;
 }
@@ -113,7 +113,9 @@ async function main() {
   let count = 0;
   console.log('Generating article OG images…');
   try {
+    const only = process.env.OG_ONLY ? process.env.OG_ONLY.split(',') : null;
     for (const article of articles) {
+      if (only && !only.includes(article.slug)) continue;
       for (const lang of ['ar', 'en']) {
         if (await generateOne(article, lang)) {
           console.log('  og:', articleOgAssetPath(article, lang));

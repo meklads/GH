@@ -21,6 +21,7 @@ import {
   faqAccordionHtml,
   breadcrumbHtml,
   authorBylineHtml,
+  authorBioHtml,
   socialProofStrip,
   takeawaysBlock,
   articleProgressBar,
@@ -430,8 +431,8 @@ function headBlock(lang, meta) {
   const articleMeta =
     meta.ogType === 'article' && meta.articleDate
       ? `
-<meta property="article:published_time" content="${meta.articleDate}">
-<meta property="article:author" content="Graphics House">
+<meta property="article:published_time" content="${meta.articleDate}">${meta.articleModified ? `\n<meta property="article:modified_time" content="${meta.articleModified}">` : ''}
+<meta property="article:author" content="${esc(meta.articleAuthor || 'Graphics House')}">${meta.articleAuthor ? `\n<meta name="author" content="${esc(meta.articleAuthor)}">` : ''}
 <meta property="article:section" content="${esc(meta.articleSection || 'Insights')}">`
       : '';
 
@@ -1050,7 +1051,9 @@ function buildArticle(article, lang) {
     ogType: 'article',
     ogImage,
     ogImageAlt: L(article.title),
-    articleDate: `${article.date}-01`,
+    articleDate: article.datePublished || `${article.date}-01`,
+    articleModified: article.dateModified || '',
+    articleAuthor: article.author ? L(article.author.name) : '',
     articleSection: L(article.category),
   })}
 <script type="application/ld+json">${schemaJson}</script>
@@ -1069,9 +1072,10 @@ ${articleProgressBar()}
           <span class="gh-ins-cat">${L(article.category)}</span>
           <h1>${L(article.title)}</h1>
           <p class="gh-dek">${L(article.excerpt)}</p>
-          ${authorBylineHtml(isEn)}
+          ${authorBylineHtml(isEn, article.author, p)}
           <div class="gh-ins-card-meta" style="margin:0">
-            <time class="gh-byline" datetime="${article.date}">${L(article.dateLabel)}</time>
+            <time class="gh-byline" datetime="${article.datePublished || article.date}">${article.updatedLabel ? (isEn ? 'Published ' : 'نُشر ') : ''}${L(article.dateLabel)}</time>
+            ${article.updatedLabel ? `<time class="gh-byline gh-byline-updated" datetime="${article.dateModified}">${isEn ? 'Updated' : 'حُدّث'} ${L(article.updatedLabel)}</time>` : ''}
             <span class="gh-ins-read-time">${readingMinutes(article, lang)}</span>
           </div>
           ${shareBarHtml(pageUrl, L(article.title), isEn)}
@@ -1082,10 +1086,11 @@ ${articleProgressBar()}
           ${tldrBlock(article.tldr, isEn)}
           ${directAnswerBlock(article.directAnswer, isEn)}
           ${takeawaysBlock(article.takeaways, isEn)}
-          ${socialProofStrip(isEn)}
+          ${article.editorialLock ? '' : socialProofStrip(isEn)}
           ${tocHtml(toc, isEn, { mobile: true })}
           ${bodyHtml}
-          ${faqAccordionHtml(article.faq, isEn)}
+          ${faqAccordionHtml(article.faq, isEn, { headings: Boolean(article.author) })}
+          ${authorBioHtml(article.author, isEn, p)}
           ${relatedArticlesMainHtml(related, lang, p)}
           ${articleSolutionsFooter(isEn, p)}
         </div>
