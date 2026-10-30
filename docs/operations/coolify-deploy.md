@@ -4,12 +4,15 @@
 
 Coolify serves **pre-built static HTML** already committed to `main`.
 
-The Dockerfile is nginx-only (no `npm run build` in the image). Run builds locally or in CI before push:
+The Dockerfile is nginx-only (no `npm run build` in the image). Commit the finished HTML and push:
 
 ```bash
-CI=true npm run build
+# one insights article
+npm run article -- <slug>
 git add -A && git commit && git push origin main
 ```
+
+The full `npm run build` is blocked locally (it rewrites ~340 committed pages and removes hand-applied fixes). Force it only on purpose with `GH_FULL_BUILD=1` and review `git diff` before committing.
 
 This avoids OOM/timeouts on Coolify hosts running Docker 29 + BuildKit.
 

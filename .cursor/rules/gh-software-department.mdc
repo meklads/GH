@@ -23,7 +23,7 @@ This repo (`beestoon-live`) is **Software** execution for Graphics House.
 
 1. Receive **Cursor ticket** from user/Hermes: goal, files, copy, acceptance criteria, analytics events.
 2. Implement minimal diff; match existing patterns (AR/EN pairs, float widgets inject).
-3. Run `npm run build` when touching build pipeline; `qa:nav` / `qa:analytics` when relevant.
+3. Never run the full `npm run build` locally (blocked; regresses committed pages). For insights articles use `npm run article -- <slug>`. Run `qa:nav` / `qa:analytics` when relevant.
 
 ## Operations docs
 

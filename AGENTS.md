@@ -13,7 +13,9 @@ Read `docs/operations/README.md` first.
 ## Software rules
 
 - Implement HTML/LP/build/Workers in **Cursor**; do not dump long HTML in chat.
-- Match AR/EN patterns, run `npm run build` when touching pipeline.
+- Match AR/EN patterns.
+- **Do not run the full `npm run build` locally.** The committed HTML has hand-applied layers the pipeline does not reproduce; a full build rewrites ~340 pages and regresses the live site. It is blocked unless `GH_FULL_BUILD=1` (CI runs it as a smoke test only).
+- Insights articles: edit `insights/data/articles/<slug>.json`, then `npm run article -- <slug>` (renders one article, splices it into the committed page, updates hub card, sitemap lastmod and OG images). Set `"editorialLock": true` on hand-written articles so `patch-article-viral-content.mjs` never overwrites them.
 - See `.cursor/rules/gh-software-department.mdc`
 
 ## Company focus

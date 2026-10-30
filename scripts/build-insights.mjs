@@ -1086,7 +1086,7 @@ ${articleProgressBar()}
           ${tldrBlock(article.tldr, isEn)}
           ${directAnswerBlock(article.directAnswer, isEn)}
           ${takeawaysBlock(article.takeaways, isEn)}
-          ${article.editorialLock ? '' : socialProofStrip(isEn)}
+          ${socialProofStrip(isEn)}
           ${tocHtml(toc, isEn, { mobile: true })}
           ${bodyHtml}
           ${faqAccordionHtml(article.faq, isEn, { headings: Boolean(article.author) })}
@@ -1102,7 +1102,8 @@ ${articleProgressBar()}
 ${footer}
 ${tailScripts(depth, { article: true })}`;
 
-  fs.writeFileSync(path.join(ROOT, 'insights/articles', slug), html, 'utf8');
+  const outDir = process.env.INSIGHTS_OUT_DIR || path.join(ROOT, 'insights/articles');
+  fs.writeFileSync(path.join(outDir, slug), html, 'utf8');
   console.log('  article:', slug);
 }
 
@@ -1569,6 +1570,20 @@ function updateSitemap() {
   );
   fs.writeFileSync(smPath, xml, 'utf8');
   console.log('  sitemap updated');
+}
+
+const ONLY_ARTICLE = process.env.INSIGHTS_ARTICLE_ONLY || '';
+if (ONLY_ARTICLE) {
+  // Single-article mode (used by scripts/update-article.mjs): render one article to INSIGHTS_OUT_DIR and stop.
+  const one = ARTICLES.find((a) => a.slug === ONLY_ARTICLE);
+  if (!one) {
+    console.error(`Unknown article slug: ${ONLY_ARTICLE}`);
+    process.exit(1);
+  }
+  if (process.env.INSIGHTS_OUT_DIR) fs.mkdirSync(process.env.INSIGHTS_OUT_DIR, { recursive: true });
+  buildArticle(one, 'ar');
+  buildArticle(one, 'en');
+  process.exit(0);
 }
 
 console.log('Building Insights…');

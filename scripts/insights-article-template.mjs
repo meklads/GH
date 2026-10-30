@@ -474,15 +474,15 @@ export function authorBioHtml(author, isEn, depthPrefix = '') {
 export function socialProofStrip(isEn) {
   if (isEn) {
     return `<div class="gh-art-proof" role="note">
-      <span><strong>15+ years</strong> in GCC archviz</span>
-      <span>Projects for developers across the region</span>
-      <span><strong>4</strong> regional studios</span>
+      <span><strong>15+ years</strong> in the Saudi market</span>
+      <span>Headquartered in Jeddah</span>
+      <span><strong>3</strong> regional hubs: Saudi Arabia, Oman, Bahrain</span>
     </div>`;
   }
   return `<div class="gh-art-proof" role="note">
-    <span><strong>+15 سنة</strong> في الإظهار بالخليج</span>
-    <span>مشاريع لمطورين في المنطقة</span>
-    <span><strong>3</strong> مراكز إقليمية</span>
+    <span><strong>+15 سنة</strong> في السوق السعودي</span>
+    <span>المقر الرئيسي في جدة</span>
+    <span><strong>3</strong> مراكز إقليمية: السعودية وعُمان والبحرين</span>
   </div>`;
 }
 
