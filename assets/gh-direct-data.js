@@ -605,7 +605,7 @@ window.GH_DIRECT = {
       caption: { ar: 'عنان إسكان مجسم', en: 'Anan Eskan maquette' },
     },
     {
-      src: 'assets/projects/al-rajhi-naseem/aerial-bird.webp',
+      src: 'assets/projects/al-rajhi-naseem/aerial-ultra-01.webp',
       caption: { ar: 'نسيم الحرم فيلم مجسم', en: 'Naseem Al-Haram film maquette' },
     },
     {
@@ -1143,7 +1143,7 @@ services: [
       media: {
         type: 'video',
         src: 'assets/videos/GH-Marketing-Media-Production-mobile.mp4',
-        poster: 'assets/projects/al-rajhi-naseem/aerial-bird.webp',
+        poster: 'assets/projects/al-rajhi-naseem/aerial-ultra-01.webp',
       },
     },
     {
