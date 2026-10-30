@@ -296,7 +296,7 @@ const STUBS = {
       related: [
         { href: 'maquettes.html', label: 'المجسمات الذكية' },
         { href: 'rendering.html', label: 'الإظهار المعماري' },
-        { href: '../insights/projects/al-rajhi-riyadh.html', label: 'مشروع الراجحي' },
+        { href: '../insights/projects/naseem-al-haram-makkah.html', label: 'مشروع الراجحي' },
       ],
       cta: 'اطلب مجسمك',
     },
@@ -315,7 +315,7 @@ const STUBS = {
       related: [
         { href: 'maquettes-en.html', label: 'Smart maquettes' },
         { href: 'rendering-en.html', label: 'Architectural visualization' },
-        { href: '../insights/projects/al-rajhi-riyadh-en.html', label: 'Al Rajhi project' },
+        { href: '../insights/projects/naseem-al-haram-makkah-en.html', label: 'Al Rajhi project' },
       ],
       cta: 'Commission a scale model',
     },

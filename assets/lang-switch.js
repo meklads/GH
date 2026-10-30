@@ -9,7 +9,7 @@
     'en.html': 'index-ar.html',
     'contact.html': 'contact-us-en.html',
     'contact-us-en.html': 'contact-us.html',
-    'case-study-alrajhi-en.html': 'insights/projects/al-rajhi-riyadh-en.html',
+    'case-study-alrajhi-en.html': 'insights/projects/naseem-al-haram-makkah-en.html',
     'case-study-anan-eskan-en.html': 'insights/projects/anan-eskan-riyadh-en.html',
     'case-study-mwl-en.html': 'casestudy-mwl-en.html',
     'careers-en.html': 'careers.html',

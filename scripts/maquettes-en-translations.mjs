@@ -91,7 +91,7 @@ export const MAQUETTES_EN_PAIRS = [
   ['ثقة <span class="gold">أكبر المطورين</span>', 'Trusted by <span class="gold">Leading Developers</span>'],
   ['نفخر بثقة كبرى الجهات والمطورين في السعودية والخليج.', 'We are proud to be trusted by major developers and institutions across Saudi Arabia and the GCC.'],
   ['مجسم سكني تجاري', 'Residential &amp; Commercial Model'],
-  ['مشروع الراجحي، الرياض', 'Al Rajhi Development, Makkah'],
+  ['مشروع الراجحي، مكة', 'Al Rajhi Development, Makkah'],
   ['مشروع الراجحي، مكة', 'Al Rajhi Development, Makkah'],
   ['مجسم سكني', 'Residential Model'],
   ['عنان إسكان، الرياض', 'Anan Eskan, Riyadh'],

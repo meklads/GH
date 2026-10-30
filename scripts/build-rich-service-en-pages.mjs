@@ -285,7 +285,7 @@ const PAGES = [
  ],
  portfolio: [
  { img: 'assets/projects/rendering/jeddah-forum.jpg', cat: 'Visualization', title: 'Jeddah Forum, Rapid Iteration' },
- { img: 'assets/projects/rendering/alrajhi2.jpeg', cat: 'Visualization', title: 'Al Rajhi Development, Riyadh' },
+ { img: 'assets/projects/rendering/alrajhi2.jpeg', cat: 'Visualization', title: 'Al Rajhi Development, Makkah' },
  { img: 'assets/projects/animation/jeddah-forum.jpg', cat: 'CGI', title: 'Cinematic Launch Film' },
  { img: 'assets/news/makkah-charter-03.jpeg', cat: 'Interactive', title: 'MWL Interactive Environment' },
  { img: 'assets/projects/rendering/uae-e1745147961286.jpeg', cat: 'Visualization', title: 'Commercial Tower, UAE' },

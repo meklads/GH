@@ -140,11 +140,11 @@ for (const file of walk(ROOT)) {
 
   if (ar) {
     html = html.replace(/case-study-anan-eskan-en\.html/g, 'insights/projects/anan-eskan-riyadh.html');
-    html = html.replace(/case-study-alrajhi-en\.html/g, 'insights/projects/al-rajhi-riyadh.html');
+    html = html.replace(/case-study-alrajhi-en\.html/g, 'insights/projects/naseem-al-haram-makkah.html');
     html = html.replace(/case-study-mwl-en\.html/g, 'casestudy-mwl.html');
   } else {
     html = html.replace(/case-study-anan-eskan-en\.html/g, 'insights/projects/anan-eskan-riyadh-en.html');
-    html = html.replace(/case-study-alrajhi-en\.html/g, 'insights/projects/al-rajhi-riyadh-en.html');
+    html = html.replace(/case-study-alrajhi-en\.html/g, 'insights/projects/naseem-al-haram-makkah-en.html');
     html = html.replace(/case-study-mwl-en\.html/g, 'casestudy-mwl-en.html');
   }
 
