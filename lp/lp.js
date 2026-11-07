@@ -35,25 +35,44 @@
     });
   });
 
-  /* lightbox (images are shown complete, never cropped) */
+  /* lightbox: images are shown complete, never cropped; films play from YouTube */
   var lb = document.getElementById('lb');
   if (lb) {
     var lbImg = lb.querySelector('img');
+    var lbVid = lb.querySelector('.lb-v');
     var lbCap = lb.querySelector('p');
+    var open = function (cap) { lbCap.textContent = cap || ''; lb.classList.add('on'); };
     document.querySelectorAll('.gal figure').forEach(function (fig) {
       fig.addEventListener('click', function () {
         var img = fig.querySelector('img');
+        lb.classList.remove('vid');
         lbImg.src = fig.getAttribute('data-full') || img.currentSrc || img.src;
         lbImg.alt = img.alt;
-        lbCap.textContent = (fig.querySelector('figcaption') || {}).textContent || '';
-        lb.classList.add('on');
+        open((fig.querySelector('figcaption') || {}).textContent);
         track('lp_gallery_open', { page: PAGE });
       });
     });
-    var close = function () { lb.classList.remove('on'); lbImg.removeAttribute('src'); };
-    lb.addEventListener('click', function (e) { if (e.target !== lbImg) close(); });
+    document.querySelectorAll('[data-yt]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var id = b.getAttribute('data-yt');
+        lb.classList.add('vid');
+        if (lbVid) lbVid.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1" title="Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+        open((b.querySelector('b') || {}).textContent);
+        track('lp_film_play', { page: PAGE, video: id });
+      });
+    });
+    var close = function () { lb.classList.remove('on', 'vid'); lbImg.removeAttribute('src'); if (lbVid) lbVid.innerHTML = ''; };
+    lb.addEventListener('click', function (e) { if (e.target !== lbImg && !(lbVid && lbVid.contains(e.target))) close(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   }
+
+  /* package buttons preselect the package in the form */
+  document.querySelectorAll('[data-pkg]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var sel = document.getElementById('t');
+      if (sel) { sel.value = a.getAttribute('data-pkg'); }
+    });
+  });
 
   /* lead form -> GH form proxy (same endpoint as the site forms) */
   var form = document.getElementById('lpForm');
@@ -63,9 +82,14 @@
   var ts = document.getElementById('ts');
   var wid = null;
   var label = sb.textContent;
+  var BD = document.body;
   var M = EN
     ? { fill: 'Please fill in all required fields.', sec: 'Please complete the security check before sending.', wait: 'Sending your request…', sending: 'Sending…', ok: 'Sent. We will contact you shortly to schedule your session.', done: 'Sent', fail: 'Could not send. Please try again or message us on WhatsApp.', sub: 'Graphics House: session request (Rendering and CGI)', msg: 'Session request from the Rendering and CGI page', t: 'Project type', w: 'Needed by', c: 'Company', s: 'Source', l: 'EN' }
     : { fill: 'يرجى تعبئة جميع الحقول المطلوبة.', sec: 'يرجى إكمال التحقق الأمني قبل الإرسال.', wait: 'جارٍ إرسال طلبك…', sending: 'جارٍ الإرسال…', ok: 'تم الإرسال. سنتواصل معك قريباً لتحديد موعد الجلسة.', done: 'تم الإرسال', fail: 'تعذّر الإرسال. حاول مرة أخرى أو راسلنا على واتساب.', sub: 'Graphics House: طلب جلسة (الإظهار وCGI)', msg: 'طلب جلسة من صفحة الإظهار وCGI', t: 'نوع المشروع', w: 'موعد الحاجة', c: 'الشركة', s: 'المصدر', l: 'AR' };
+
+  if (BD.getAttribute('data-subject')) M.sub = BD.getAttribute('data-subject');
+  if (BD.getAttribute('data-msg')) M.msg = BD.getAttribute('data-msg');
+  if (BD.getAttribute('data-ptype')) M.t = BD.getAttribute('data-ptype');
 
   function say(t, m) { fb.className = t; fb.textContent = m; }
   function loadTs() {
