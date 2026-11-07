@@ -61,6 +61,14 @@
         track('lp_film_play', { page: PAGE, video: id });
       });
     });
+    document.querySelectorAll('[data-mp4]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        lb.classList.add('vid');
+        if (lbVid) lbVid.innerHTML = '<video src="' + b.getAttribute('data-mp4') + '" controls autoplay playsinline></video>';
+        open((b.querySelector('b') || {}).textContent);
+        track('lp_film_play', { page: PAGE, video: b.getAttribute('data-mp4').split('/').pop() });
+      });
+    });
     var close = function () { lb.classList.remove('on', 'vid'); lbImg.removeAttribute('src'); if (lbVid) lbVid.innerHTML = ''; };
     lb.addEventListener('click', function (e) { if (e.target !== lbImg && !(lbVid && lbVid.contains(e.target))) close(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });

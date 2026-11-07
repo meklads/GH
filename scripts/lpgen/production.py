@@ -126,7 +126,7 @@ T = {
  close='Close', foot='© 2026 Graphics House Co.', priv='Privacy Policy', wa_text='Hello, I would like to ask about a shoot or film for my project'),
 }
 
-P = dict(slug='production', service='Production', v='2', og='projects/galleries/makkah-charter-01.jpg',
+P = dict(slug='production', service='Production', v='3', og='projects/galleries/makkah-charter-01.jpg',
          hero=('projects/galleries/makkah-charter-01', 1600, 900, 'jpg'), gal=GAL, gal_cls='g2c', thumbs={'AYStF0c4Hgk': 'maxresdefault'},
          order=['problems','films','packages','gallery','why','process','form','faq'])
 build(T, P)

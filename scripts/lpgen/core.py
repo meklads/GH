@@ -70,9 +70,17 @@ def page(c, P):
             cards = ''.join('<div class="card"><div class="num">%02d</div><h3>%s</h3><p>%s</p></div>' % (i + 1, a, b) for i, (a, b) in enumerate(c['dels']))
             ap('<section class="alt"><div class="wrap">%s<div class="grid g3">%s</div></div></section>' % (head(c['del_eye'], c['del_h'], c['del_l']), cards))
         elif sec == 'films':
-            cards = ''.join('<button type="button" class="film" data-yt="%s" data-cta="film-%s"><span class="film-th"><img src="https://img.youtube.com/vi/%s/%s.jpg" alt="" loading="lazy" width="480" height="360"><i>%s</i></span><b>%s</b><small>%s</small></button>'
-                            % (y, y, y, P.get('thumbs', {}).get(y, 'hqdefault'), PLAY_SVG, t, d) for y, t, d in c['films'])
-            ap('<section class="dark"><div class="wrap">%s<div class="films">%s</div></div></section>' % (head(c['film_eye'], c['film_h'], c['film_l']), cards))
+            cards = []
+            for i, fm in enumerate(c['films']):
+                if len(fm) == 4:  # local video: (mp4 path under assets, poster path under assets, title, desc)
+                    mp4, poster, t, d = fm
+                    cards.append('<button type="button" class="film" data-mp4="%s%s" data-cta="film-%d"><span class="film-th is-local"><img src="%s%s" alt="" loading="lazy"><i>%s</i></span><b>%s</b><small>%s</small></button>'
+                                 % (A, mp4, i + 1, A, poster, PLAY_SVG, t, d))
+                else:
+                    y, t, d = fm
+                    cards.append('<button type="button" class="film" data-yt="%s" data-cta="film-%s"><span class="film-th"><img src="https://img.youtube.com/vi/%s/%s.jpg" alt="" loading="lazy" width="480" height="360"><i>%s</i></span><b>%s</b><small>%s</small></button>'
+                                 % (y, y, y, P.get('thumbs', {}).get(y, 'hqdefault'), PLAY_SVG, t, d))
+            ap('<section class="dark"><div class="wrap">%s<div class="films">%s</div></div></section>' % (head(c['film_eye'], c['film_h'], c['film_l']), ''.join(cards)))
         elif sec == 'packages':
             cards = []
             for i, pk in enumerate(c['pkgs']):
