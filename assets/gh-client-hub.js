@@ -7,6 +7,16 @@ window.GH_CLIENT_HUB_PASS =
 
 window.GH_CLIENT_HUB_ITEMS = [
   {
+    id: 'landing-pages',
+    title: { ar: 'صفحات الهبوط · Landing Pages', en: 'Landing Pages' },
+    desc: {
+      ar: 'صفحات الحملات الجاهزة للمشاركة: الإظهار المعماري وأفلام CGI، والإنتاج (تصوير وأفلام وفعاليات).',
+      en: 'Campaign pages ready to share: Architectural Visualization and CGI, and Production (photography, films, events).',
+    },
+    href: { ar: 'client-hub-landing-pages.html', en: 'client-hub-landing-pages-en.html' },
+    icon: 'web',
+  },
+  {
     id: 'gh-direct',
     title: { ar: 'الباقات والأسعار · GH Direct', en: 'GH Direct · Packages & Pricing' },
     desc: {
