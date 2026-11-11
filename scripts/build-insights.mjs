@@ -917,8 +917,9 @@ function articleSolutionsFooter(isEn, depthPrefix) {
           </div>
         </div>
         <div class="gh-article-footer-cta">
-          <a href="${p}contact-us${isEn ? '-en' : ''}.html" class="gh-btn-editorial">${isEn ? 'Discuss Your Project' : 'ناقش مشروعك'}</a>
+          <a href="${p}contact-us${isEn ? '-en' : ''}.html?intent=session" class="gh-btn-editorial">${isEn ? 'Book a Launch Session' : 'احجز جلسة إطلاق'}</a>
           <a href="${p}insights/tools/solution-finder${isEn ? '-en' : ''}.html" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'Which solution fits?' : 'أي حل يناسبك؟'}</a>
+          <a href="${p}insights/downloads/visual-launch-checklist${isEn ? '-en' : ''}.html" class="gh-btn-editorial gh-btn-editorial--outline">${isEn ? 'Free Launch Checklist' : 'حمّل قائمة الإطلاق مجاناً'}</a>
         </div>`;
 }
 
