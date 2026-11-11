@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install cwebp
+        run: sudo apt-get update && sudo apt-get install -y webp
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Verify services EN pages exist
+        run: |
+          test -f services/maquettes-en.html
+          test -f services/ai-solutions-en.html
+          lines=$(wc -l < services/maquettes-en.html)
+          test "$lines" -gt 500
+
+      - name: Count WebP project assets
+        run: |
+          count=$(find assets/projects -name '*.webp' | wc -l)
+          echo "WebP files: $count"
+          test "$count" -ge 20

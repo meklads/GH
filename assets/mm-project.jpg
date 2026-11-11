@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1a1a2e"/><stop offset="100%" style="stop-color:#2d1b00"/></linearGradient></defs>
+  <rect width="400" height="600" fill="url(#g)"/>
+  <text x="200" y="280" text-anchor="middle" fill="#C9A84C" font-family="Inter,sans-serif" font-size="14" font-weight="bold" letter-spacing="2">PROJECT LAUNCH</text>
+  <text x="200" y="310" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Inter,sans-serif" font-size="10" letter-spacing="1">Real Estate Project Launch System</text>
+  <rect x="160" y="160" width="80" height="80" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+  <rect x="180" y="180" width="60" height="60" fill="none" stroke="#C9A84C" stroke-width="0.3" opacity="0.3"/>
+  <rect x="200" y="200" width="40" height="40" fill="none" stroke="#C9A84C" stroke-width="0.2" opacity="0.2"/>
+</svg>

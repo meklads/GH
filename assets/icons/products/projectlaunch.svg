@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <!-- ProjectLaunch: tower + sales pavilion + launch beam -->
+  <path d="M10 54H54" stroke="#E0C06A" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M18 54V30L32 16L46 30V54" stroke="#E0C06A" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M24 54V38H40V54" stroke="#C9A84C" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="29" y="44" width="6" height="10" stroke="#E0C06A" stroke-width="1.8"/>
+  <path d="M26 34H30M34 34H38M26 28H30M34 28H38" stroke="#E0C06A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 16V6" stroke="#E0C06A" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M32 6L26 13M32 6L38 13" stroke="#E0C06A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="48" cy="18" r="3.2" fill="#E0C06A"/>
+  <path d="M48 21.5V28" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+</svg>

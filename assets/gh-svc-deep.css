@@ -1,0 +1,29 @@
+/* Deep-content section for service pages (inserted by scripts/apply-seo-overrides.mjs).
+   Matches the gh-svc template: light body, #1A1A1A text, gold #C9A84C accents. */
+.gh-svc-deep{padding:80px 24px;background:#FFF;border-top:1px solid rgba(26,26,26,.06)}
+.gh-svc-deep-inner{max-width:900px;margin:0 auto;color:#1A1A1A}
+.gh-svc-deep h2{font-size:clamp(22px,3vw,30px);font-weight:700;line-height:1.4;margin:0 0 16px;color:#1A1A1A}
+.gh-svc-deep h3{font-size:18px;font-weight:700;line-height:1.5;margin:0 0 12px;color:#1A1A1A}
+.gh-svc-deep p{font-size:16px;line-height:1.95;color:rgba(26,26,26,.75);margin:0 0 16px}
+.gh-svc-deep a{color:#9A7B2C;text-decoration:underline;text-underline-offset:3px}
+.gh-svc-deep a:hover{color:#1A1A1A}
+.gh-svc-deep-lead{font-size:17px!important}
+.gh-svc-deep-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:32px 0 40px}
+.gh-svc-deep-card{background:#FAFAF8;border:1px solid rgba(26,26,26,.08);padding:24px}
+.gh-svc-deep ul{list-style:none;margin:0;padding:0}
+.gh-svc-deep ul li{position:relative;padding-inline-start:18px;font-size:15px;line-height:1.85;color:rgba(26,26,26,.75);margin-bottom:8px}
+.gh-svc-deep ul li::before{content:'';position:absolute;inset-inline-start:0;top:.8em;width:7px;height:7px;background:#C9A84C}
+.gh-svc-deep-steps{list-style:none;margin:0 0 48px;padding:0;counter-reset:deep}
+.gh-svc-deep-steps li{counter-increment:deep;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:16px 0;border-bottom:1px solid rgba(26,26,26,.08)}
+.gh-svc-deep-steps li::before{content:counter(deep);width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid #C9A84C;color:#9A7B2C;font-weight:700;font-size:16px}
+.gh-svc-deep-steps strong{display:block;font-size:16px;color:#1A1A1A;margin-bottom:4px}
+.gh-svc-deep-steps span{display:block;font-size:15px;line-height:1.85;color:rgba(26,26,26,.7)}
+.gh-svc-faq details{border-bottom:1px solid rgba(26,26,26,.1)}
+.gh-svc-faq summary{cursor:pointer;list-style:none;padding:18px 0;font-size:16px;font-weight:700;color:#1A1A1A;display:flex;justify-content:space-between;gap:16px}
+.gh-svc-faq summary::-webkit-details-marker{display:none}
+.gh-svc-faq summary::after{content:'+';color:#C9A84C;font-size:22px;line-height:1;flex-shrink:0}
+.gh-svc-faq details[open] summary::after{content:'−'}
+.gh-svc-faq summary:focus-visible{outline:2px solid #C9A84C;outline-offset:4px}
+.gh-svc-faq details p{padding-bottom:18px;margin:0}
+@media (max-width:600px){.gh-svc-deep{padding:56px 20px}.gh-svc-deep p{font-size:15px}}
+.gh-svc-deep p + h2,.gh-svc-deep ol + h2{margin-top:48px}
