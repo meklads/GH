@@ -19,13 +19,16 @@ jobs:
       - name: Trigger Coolify redeploy
         env:
           COOLIFY_WEBHOOK: ${{ secrets.COOLIFY_DEPLOY_WEBHOOK }}
+          COOLIFY_TOKEN: ${{ secrets.COOLIFY_API_TOKEN }}
         run: |
           if [ -z "$COOLIFY_WEBHOOK" ]; then
             echo "::notice::COOLIFY_DEPLOY_WEBHOOK secret not set — skip auto-deploy."
             echo "Redeploy manually in Coolify after push to main."
             exit 0
           fi
-          curl -fsS -X POST "$COOLIFY_WEBHOOK" \
+          AUTH=()
+          if [ -n "$COOLIFY_TOKEN" ]; then AUTH=(-H "Authorization: Bearer $COOLIFY_TOKEN"); fi
+          curl -fsS -X POST "$COOLIFY_WEBHOOK" "${AUTH[@]}" \
             -H "Content-Type: application/json" \
             -d "{\"ref\":\"${{ github.sha }}\",\"repository\":\"${{ github.repository }}\"}"
           echo "Coolify deploy webhook triggered."
