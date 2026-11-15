@@ -27,3 +27,7 @@ Errors like `network mode "coolify" not supported by buildkit` are a Coolify hos
 ## Redeploy
 
 Trigger a fresh deploy of latest `main`. Prefer **Rebuild without cache** once after the Dockerfile change.
+
+## Auto deploy (2026-11-11)
+
+The Coolify app uses the `meklads` GitHub App as its Git source with **Auto Deploy** enabled, so every push to `main` redeploys the site. The `COOLIFY_DEPLOY_WEBHOOK` / `COOLIFY_API_TOKEN` secrets in `.github/workflows/deploy.yml` are optional and not required for this.
