@@ -96,7 +96,7 @@
   max-width: 15rem !important;
   font-size: 12.5px !important;
   line-height: 1.55 !important;
-  color: rgba(255, 255, 255, 0.58) !important;
+  color: rgba(255, 255, 255, 0.82) !important;
   font-weight: 400 !important;
 }
 
@@ -135,7 +135,7 @@
 }
 
 .gh-footer__links a {
-  color: rgba(255, 255, 255, 0.72) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
   text-decoration: none !important;
   font-size: 13px !important;
   line-height: 1.4 !important;
@@ -173,7 +173,7 @@
 
 .gh-footer__offices-line {
   margin: 0 !important;
-  color: rgba(255, 255, 255, 0.68) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   font-size: 13.5px !important;
   line-height: 1.45 !important;
   font-weight: 400 !important;
@@ -245,16 +245,16 @@
   color: var(--gh-ft-gold) !important;
 }
 .gh-footer__offices-line {
-  color: rgba(255, 255, 255, 0.68) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 .gh-footer__title {
   color: var(--gh-ft-gold) !important;
 }
 .gh-footer__links a {
-  color: rgba(255, 255, 255, 0.72) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
 }
 .gh-footer__tagline {
-  color: rgba(255, 255, 255, 0.58) !important;
+  color: rgba(255, 255, 255, 0.82) !important;
 }
 
 /* Bottom bar: social + legal on one band */
@@ -296,7 +296,7 @@
 }
 
 .gh-footer__social-label {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   font-size: 11px !important;
   font-weight: 700 !important;
   letter-spacing: 0.1em !important;
@@ -381,7 +381,7 @@
 }
 
 .gh-footer__copy-sep {
-  color: rgba(201, 168, 76, 0.55) !important;
+  color: rgba(227, 205, 141, 0.85) !important;
 }
 
 .gh-footer__copy-id {
@@ -403,7 +403,7 @@
 }
 
 .gh-footer__legal-links a {
-  color: rgba(255, 255, 255, 0.58) !important;
+  color: rgba(255, 255, 255, 0.82) !important;
   text-decoration: none !important;
   font-size: 12.5px !important;
 }
@@ -471,3 +471,11 @@ html[dir="rtl"] .gh-footer {
 html[dir="ltr"] .gh-footer {
   font-family: 'Inter', 'Tajawal', sans-serif !important;
 }
+
+/* Readability pass (2026-11-15): footer text was too dim on the near-black ground.
+   Raise link and label contrast, and make the gold titles a lighter gold for small sizes. */
+.gh-footer__title,
+.gh-footer__offices-title { color: #e3cd8d !important; }
+.gh-footer__links a { font-size: 14.5px !important; }
+.gh-footer__links a:hover,
+.gh-footer__links a:focus-visible { color: #ffffff !important; }
