@@ -1,0 +1,66 @@
+/* Graphics House: smart exhibition experience LP (lp/exhibitions*.html). Loaded after lp.css and lp-v2.css. Preview. */
+
+/* hero */
+.exh-hero .wrap{padding-block:120px 64px}
+.exh-hero h1{font-size:clamp(36px,6.4vw,72px)}
+.exh-hero .film-btn{font:inherit;font-weight:700;cursor:pointer}
+.exh-hero .film-btn svg{width:18px;height:18px}
+.exh-hero .micro a{color:var(--gold);text-decoration:none}
+.exh-hero .micro a:hover{text-decoration:underline}
+
+/* proof */
+.exh-logo{display:flex;align-items:center;justify-content:center;gap:16px;color:var(--muted);font-size:14px}
+.exh-logo img{height:56px;width:auto}
+.proof-top .todo{display:block;margin:6px auto 0;width:max-content}
+body.live .proof-top div:has(.todo){display:none}
+
+/* full path (timeline) */
+.path{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:14px;counter-reset:p;position:relative;margin:0;padding:0}
+.path::before{content:"";position:absolute;inset-inline:6%;top:23px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.6),transparent)}
+.path li{position:relative;text-align:center;padding:0 4px}
+.path .pn{display:flex;align-items:center;justify-content:center;width:46px;height:46px;margin:0 auto 14px;border-radius:50%;background:var(--dark2);border:1px solid var(--gold);color:var(--gold);font-weight:700;position:relative;z-index:1}
+.path li:last-child .pn{background:linear-gradient(135deg,#d8b85a,#b8962f);color:#111;border-color:transparent}
+.path b{display:block;color:#fff;font-size:16px;line-height:1.5;margin-bottom:6px}
+.path small{display:block;color:#b9b3a5;font-size:14px;line-height:1.6}
+
+/* units */
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.mod{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.mod-media{aspect-ratio:16/10;background:#0b0b0b;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.mod-media img{width:100%;height:100%;object-fit:cover}
+.mod-icon{background:radial-gradient(circle at 50% 40%,#2a2210 0,#0b0b0b 70%);color:var(--gold)}
+.mod-icon svg{width:84px;height:84px}
+.mod-b{padding:24px 24px 26px}
+.mod-n{display:block;color:var(--gold-d);font-weight:700;font-size:14px;letter-spacing:.08em;margin-bottom:6px}
+.mod-b p{color:var(--muted);font-size:15.5px}
+
+/* case */
+.case-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}
+.case-grid .case{height:100%}
+.case-grid .case ul{margin-top:6px}
+
+/* tiers reuse .pkgs/.pk from lp.css */
+#levels .pk-for{min-height:0}
+
+/* deadline banner */
+.deadline{margin-top:34px;display:flex;align-items:center;justify-content:space-between;gap:24px;background:var(--dark);color:#f2efe8;border:1px solid var(--gold);border-radius:20px;padding:26px 30px}
+.deadline h3{color:#fff;font-size:22px;margin-bottom:6px}
+.deadline p{color:#cfc8b8;font-size:16px}
+
+@media(max-width:980px){
+ .path{grid-template-columns:repeat(3,1fr);row-gap:28px}
+ .path::before{display:none}
+ .mods{grid-template-columns:1fr;max-width:620px;margin:0 auto}
+ .case-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ .exh-hero .wrap{padding-block:96px 44px}
+ .path{grid-template-columns:repeat(2,1fr)}
+ .deadline{flex-direction:column;align-items:stretch;text-align:center;padding:22px}
+ .deadline .btn{width:100%}
+ .exh-logo{flex-direction:column;gap:8px}
+}
+
+/* the hero photo is a night shot: lighter overlay, slightly brighter image */
+.hero.v2.exh-hero::after{background:radial-gradient(ellipse 70% 55% at 50% 50%,rgba(0,0,0,.62),rgba(0,0,0,.35) 70%),linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.2) 40%,rgba(0,0,0,.8) 100%)}
+.exh-hero>picture img{filter:brightness(1.05) saturate(1.05)}
