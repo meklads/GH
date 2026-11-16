@@ -1,4 +1,4 @@
-/* Graphics House: production LP v2. Loaded after lp.js (header, lightbox, CTA tracking stay there).
+/* Graphics House: production LP (rebuilt 2026-11). Loaded after lp.js (header, lightbox, CTA tracking stay there).
    Adds: attribution capture (UTM, gclid, fbclid, ttclid, ScCid), 4-field lead form, WhatsApp qualifier,
    redirect to the thank-you page, empty ad-pixel slots. Preview only until the owner approves. */
 (function () {
@@ -6,7 +6,7 @@
   var EN = document.documentElement.lang === 'en';
   var F = window.GH_FORMS || {};
   var KEY = (window.GH_QUOTE_FORM || {}).turnstileSiteKey || F.turnstileSiteKey || '';
-  var PAGE = document.body.getAttribute('data-page') || 'lp_production_v2';
+  var PAGE = document.body.getAttribute('data-page') || 'lp_production';
   var WA = '966502786513';
 
   /* Ad pixel slots. Left EMPTY on purpose: the owner adds the IDs after approval.
@@ -21,6 +21,20 @@
       if (window.ghTrack) window.ghTrack(n, p);
       else if (window.gtag) window.gtag('event', n, p);
     } catch (e) {}
+  }
+
+  /* hero film: starts after the page has loaded, never on reduced motion or data saver */
+  var hv = document.querySelector('.hero-vid');
+  if (hv) {
+    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var save = navigator.connection && navigator.connection.saveData;
+    if (!calm && !save) {
+      window.addEventListener('load', function () {
+        hv.src = window.innerWidth < 700 ? hv.getAttribute('data-src-m') : hv.getAttribute('data-src');
+        hv.addEventListener('playing', function () { hv.classList.add('on'); }, { once: true });
+        var p = hv.play(); if (p && p.catch) p.catch(function () {});
+      });
+    }
   }
 
   /* attribution: query string wins, otherwise the first-touch values kept for this session */
@@ -106,8 +120,8 @@
     say('wait', M.wait); sb.disabled = true; sb.textContent = M.sending;
     var a = attrString();
     var payload = {
-      subject: BD.getAttribute('data-subject') || 'Graphics House: LP production v2',
-      from_name: 'LP Production v2 ' + M.l,
+      subject: BD.getAttribute('data-subject') || 'Graphics House: LP production',
+      from_name: 'LP Production ' + M.l,
       name: d.name, phone: d.phone, company: d.company,
       service: 'Production', interest: d.type,
       message: (BD.getAttribute('data-msg') || '') + '\n' + M.t + ': ' + d.type +
@@ -125,7 +139,7 @@
       .then(function (r) { return r.json(); })
       .then(function (res) {
         if (!(res && res.success)) throw new Error('x');
-        track('generate_lead', { form_name: 'lp_production_v2', service: 'Production', lang: EN ? 'en' : 'ar', source: attr.utm_source || 'direct' });
+        track('generate_lead', { form_name: 'lp_production', service: 'Production', lang: EN ? 'en' : 'ar', source: attr.utm_source || 'direct' });
         var go = (EN ? 'thanks-en.html' : 'thanks.html') + attrQuery();
         setTimeout(function () { location.href = go; }, 350);
       })
