@@ -87,9 +87,11 @@
   var wid = null;
   var label = sb.textContent;
   var BD = document.body;
+  var SERVICE = BD.getAttribute('data-service') || 'Production';
+  var FORM = BD.getAttribute('data-form') || 'lp_production';
   var M = EN
-    ? { fill: 'Please fill in your name, WhatsApp, company, project type and size.', sec: 'Please complete the security check before sending.', wait: 'Sending your request…', sending: 'Sending…', fail: 'Could not send. Please try again or message us on WhatsApp.', l: 'EN', t: 'Request', w: 'Project size', c: 'Company', s: 'Source' }
-    : { fill: 'يرجى تعبئة الاسم وواتساب والشركة ونوع المشروع وحجمه.', sec: 'يرجى إكمال التحقق الأمني قبل الإرسال.', wait: 'جارٍ إرسال طلبك…', sending: 'جارٍ الإرسال…', fail: 'تعذّر الإرسال. حاول مرة أخرى أو راسلنا على واتساب.', l: 'AR', t: 'الطلب', w: 'حجم المشروع', c: 'الشركة', s: 'المصدر' };
+    ? { fill: 'Please fill in all required fields.', sec: 'Please complete the security check before sending.', wait: 'Sending your request…', sending: 'Sending…', fail: 'Could not send. Please try again or message us on WhatsApp.', l: 'EN', t: 'Request', w: 'Project size', c: 'Company', s: 'Source' }
+    : { fill: 'يرجى تعبئة جميع الحقول المطلوبة.', sec: 'يرجى إكمال التحقق الأمني قبل الإرسال.', wait: 'جارٍ إرسال طلبك…', sending: 'جارٍ الإرسال…', fail: 'تعذّر الإرسال. حاول مرة أخرى أو راسلنا على واتساب.', l: 'AR', t: 'الطلب', w: 'حجم المشروع', c: 'الشركة', s: 'المصدر' };
 
   function say(t, m) { fb.className = t; fb.textContent = m; }
   function loadTs() {
@@ -112,23 +114,34 @@
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     if (form.botcheck.value.trim()) return;
-    var v = function (n) { return (form[n].value || '').trim(); };
+    var v = function (n) { return form[n] ? (form[n].value || '').trim() : ''; };
     var d = { name: v('name'), phone: v('phone'), company: v('company'), type: v('project_type'), size: v('project_size') };
-    if (!d.name || !d.phone || !d.company || !d.type || !d.size) { say('err', M.fill); return; }
+    /* extra page-specific fields: any control with data-label is required if marked, and goes into the message */
+    var extras = [].map.call(form.querySelectorAll('[data-label]'), function (el) {
+      return { k: el.name, l: el.getAttribute('data-label'), v: (el.value || '').trim(), req: el.required };
+    });
+    var missing = !d.name || !d.phone || !d.company ||
+      (form.project_type && !d.type) || (form.project_size && !d.size) ||
+      extras.some(function (x) { return x.req && !x.v; });
+    if (missing) { say('err', M.fill); return; }
     var tok = KEY && wid !== null && window.turnstile ? window.turnstile.getResponse(wid) : '';
     if (KEY && !tok) { say('err', M.sec); return; }
     say('wait', M.wait); sb.disabled = true; sb.textContent = M.sending;
     var a = attrString();
     var payload = {
-      subject: BD.getAttribute('data-subject') || 'Graphics House: LP production',
-      from_name: 'LP Production ' + M.l,
+      subject: BD.getAttribute('data-subject') || 'Graphics House: LP ' + SERVICE,
+      from_name: 'LP ' + SERVICE + ' ' + M.l,
       name: d.name, phone: d.phone, company: d.company,
-      service: 'Production', interest: d.type, project_size: d.size,
-      message: (BD.getAttribute('data-msg') || '') + '\n' + M.t + ': ' + d.type +
-        '\n' + M.w + ': ' + d.size +
+      service: SERVICE, interest: d.type || BD.getAttribute('data-interest') || SERVICE,
+      message: (BD.getAttribute('data-msg') || '') +
+        (d.type ? '\n' + M.t + ': ' + d.type : '') +
+        (d.size ? '\n' + M.w + ': ' + d.size : '') +
+        extras.filter(function (x) { return x.v; }).map(function (x) { return '\n' + x.l + ': ' + x.v; }).join('') +
         '\n' + M.c + ': ' + d.company + (a ? '\n' + M.s + ': ' + a : ''),
       page: location.href, botcheck: ''
     };
+    if (d.size) payload.project_size = d.size;
+    extras.forEach(function (x) { if (x.v && x.k) payload[x.k] = x.v; });
     KEYS.forEach(function (k) { if (attr[k]) payload[k] = attr[k]; });
     if (tok) payload['cf-turnstile-response'] = tok;
     fetch(F.formEndpoint || 'https://3dgraphicshouse.com/api/form', {
@@ -139,8 +152,8 @@
       .then(function (r) { return r.json(); })
       .then(function (res) {
         if (!(res && res.success)) throw new Error('x');
-        track('generate_lead', { form_name: 'lp_production', service: 'Production', lang: EN ? 'en' : 'ar', source: attr.utm_source || 'direct' });
-        var go = (EN ? 'thanks-en.html' : 'thanks.html') + attrQuery();
+        track('generate_lead', { form_name: FORM, service: SERVICE, lang: EN ? 'en' : 'ar', source: attr.utm_source || 'direct' });
+        var go = (BD.getAttribute('data-thanks') || (EN ? 'thanks-en.html' : 'thanks.html')) + attrQuery();
         setTimeout(function () { location.href = go; }, 350);
       })
       .catch(function () {
