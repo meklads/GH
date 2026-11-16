@@ -88,8 +88,8 @@
   var label = sb.textContent;
   var BD = document.body;
   var M = EN
-    ? { fill: 'Please fill in your name, WhatsApp, company and project type.', sec: 'Please complete the security check before sending.', wait: 'Sending your request…', sending: 'Sending…', fail: 'Could not send. Please try again or message us on WhatsApp.', l: 'EN', t: 'Request', w: 'Budget range', c: 'Company', s: 'Source' }
-    : { fill: 'يرجى تعبئة الاسم وواتساب والشركة ونوع المشروع.', sec: 'يرجى إكمال التحقق الأمني قبل الإرسال.', wait: 'جارٍ إرسال طلبك…', sending: 'جارٍ الإرسال…', fail: 'تعذّر الإرسال. حاول مرة أخرى أو راسلنا على واتساب.', l: 'AR', t: 'الطلب', w: 'الميزانية التقريبية', c: 'الشركة', s: 'المصدر' };
+    ? { fill: 'Please fill in your name, WhatsApp, company, project type and size.', sec: 'Please complete the security check before sending.', wait: 'Sending your request…', sending: 'Sending…', fail: 'Could not send. Please try again or message us on WhatsApp.', l: 'EN', t: 'Request', w: 'Project size', c: 'Company', s: 'Source' }
+    : { fill: 'يرجى تعبئة الاسم وواتساب والشركة ونوع المشروع وحجمه.', sec: 'يرجى إكمال التحقق الأمني قبل الإرسال.', wait: 'جارٍ إرسال طلبك…', sending: 'جارٍ الإرسال…', fail: 'تعذّر الإرسال. حاول مرة أخرى أو راسلنا على واتساب.', l: 'AR', t: 'الطلب', w: 'حجم المشروع', c: 'الشركة', s: 'المصدر' };
 
   function say(t, m) { fb.className = t; fb.textContent = m; }
   function loadTs() {
@@ -113,8 +113,8 @@
     ev.preventDefault();
     if (form.botcheck.value.trim()) return;
     var v = function (n) { return (form[n].value || '').trim(); };
-    var d = { name: v('name'), phone: v('phone'), company: v('company'), type: v('project_type'), budget: v('budget') };
-    if (!d.name || !d.phone || !d.company || !d.type) { say('err', M.fill); return; }
+    var d = { name: v('name'), phone: v('phone'), company: v('company'), type: v('project_type'), size: v('project_size') };
+    if (!d.name || !d.phone || !d.company || !d.type || !d.size) { say('err', M.fill); return; }
     var tok = KEY && wid !== null && window.turnstile ? window.turnstile.getResponse(wid) : '';
     if (KEY && !tok) { say('err', M.sec); return; }
     say('wait', M.wait); sb.disabled = true; sb.textContent = M.sending;
@@ -123,9 +123,9 @@
       subject: BD.getAttribute('data-subject') || 'Graphics House: LP production',
       from_name: 'LP Production ' + M.l,
       name: d.name, phone: d.phone, company: d.company,
-      service: 'Production', interest: d.type,
+      service: 'Production', interest: d.type, project_size: d.size,
       message: (BD.getAttribute('data-msg') || '') + '\n' + M.t + ': ' + d.type +
-        (d.budget ? '\n' + M.w + ': ' + d.budget : '') +
+        '\n' + M.w + ': ' + d.size +
         '\n' + M.c + ': ' + d.company + (a ? '\n' + M.s + ': ' + a : ''),
       page: location.href, botcheck: ''
     };
