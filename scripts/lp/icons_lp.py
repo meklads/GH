@@ -1,4 +1,4 @@
-# Graphics House LP icon set: 12 thin gold line icons, 24x24, stroke=currentColor.
+# Graphics House LP icon set (v3): 12 thin black line icons, 24x24, stroke=currentColor, one small gold dot as the only accent.
 ICONS = {
   # outputs
   "film":      '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5v14M17 5v14M3 9h4M3 15h4M17 9h4M17 15h4"/><path d="M10.5 10v4l3-2z"/>',
@@ -16,8 +16,9 @@ ICONS = {
   "reply24":   '<circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/>',
   "approved":  '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.8h6V4M9 13l2 2 4-4"/>',
 }
+DOT = '<circle cx="21" cy="3" r="1.4" fill="#b8962f" stroke="none"/>'
 def sprite():
-    syms = "".join(f'<symbol id="ic-{k}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">{v}</symbol>' for k, v in ICONS.items())
+    syms = "".join(f'<symbol id="ic-{k}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">{v}{DOT}</symbol>' for k, v in ICONS.items())
     return f'<svg width="0" height="0" style="position:absolute" aria-hidden="true">{syms}</svg>\n'
 def ic(name, cls="ic"):
     return f'<svg class="{cls}" aria-hidden="true"><use href="#ic-{name}"/></svg>'
@@ -26,4 +27,4 @@ def write_files(dirpath):
     os.makedirs(dirpath, exist_ok=True)
     for k, v in ICONS.items():
         open(os.path.join(dirpath, f"{k}.svg"), "w").write(
-            f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">{v}</svg>\n')
+            f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#141414" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">{v}{DOT}</svg>\n')

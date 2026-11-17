@@ -1,0 +1,65 @@
+/* Graphics House production LP v3 (owner direction 2026-11-17): white and black, gold only as a thin touch.
+   Loaded after lp.css and lp-v2.css on lp/production*.html and lp/thanks*.html only. */
+:root{--ink:#141414;--muted:#5a5a58;--cream:#ffffff;--cream2:#f5f5f3;--line:#e4e4e0;--card:#fff;--shadow:0 8px 28px rgba(0,0,0,.06);--touch:#b8962f}
+body{background:#fff;color:var(--ink)}
+.alt{background:var(--cream2)}
+.dark{background:#0b0b0b;color:#f2f2f0}
+.dark .lead{color:#b5b5b0}
+
+/* headings, eyebrows and highlights: no gold text, a thin gold line only */
+.eyebrow,.dark .eyebrow,.hero .eyebrow{color:var(--muted)}
+.dark .eyebrow,.hero .eyebrow{color:#cfcfca}
+.eyebrow::before{background:var(--touch);height:1px}
+.gold{color:inherit;background-image:linear-gradient(var(--touch),var(--touch));background-repeat:no-repeat;background-size:100% 2px;background-position:0 92%;padding-bottom:2px}
+
+/* buttons: black with white text; white with black text on dark surfaces */
+.btn-gold{background:#141414;color:#fff;box-shadow:none;border:1px solid #141414}
+.btn-gold:hover{transform:none;box-shadow:0 0 0 1px var(--touch) inset;background:#000}
+.hero .btn-gold,.dark .btn-gold,.formsec .btn-gold,.offer .btn-gold,.mbar .btn-gold,.hdr .btn-gold,.quick .btn-gold{background:#fff;color:#141414;border-color:#fff}
+.hero .btn-gold:hover,.dark .btn-gold:hover,.formsec .btn-gold:hover,.offer .btn-gold:hover,.mbar .btn-gold:hover,.hdr .btn-gold:hover,.quick .btn-gold:hover{background:#f2f2f0;box-shadow:0 0 0 1px var(--touch) inset}
+.formsec form .btn-gold,form .btn-gold{background:#141414;color:#fff;border-color:#141414}
+.formsec form .btn-gold:hover,form .btn-gold:hover{background:#000;box-shadow:0 0 0 1px var(--touch) inset}
+.btn-line{border-color:#141414;color:#141414}
+
+/* numbers, tags, stats */
+.num{background:#141414;color:#fff}
+.dark .num,.formsec .num{background:#fff;color:#141414}
+.pk-tag{background:#fff;color:#141414;border:1px solid var(--touch)}
+.offer{border-color:#2a2a2a;box-shadow:0 20px 50px rgba(0,0,0,.14)}
+.offer .for b,.case .gives,.mod-n{color:#e8e8e4}
+.case .tag{color:#e8e8e4;background:rgba(255,255,255,.08)}
+.case li:before{background:var(--touch)}
+.case a,.proj-links a:hover{color:#fff}
+.card .fix b{color:var(--ink)}
+.card .fix{border-top-color:var(--line)}
+
+/* icons: thin black line (white on dark), the gold dot is inside the sprite */
+.ic,.dark .ic,.offer .ic,.formsec .ic{color:currentColor}
+.card .ic,.alt .ic{color:var(--ink)}
+.offer .ic,.dark .ic,.formsec .ic,.hero .ic{color:#f2f2f0}
+.next-list .num-ic{background:transparent;border:1px solid rgba(255,255,255,.35)}
+.outs div{color:#e8e8e4}
+
+/* trust strip of real works under the hero */
+.proof{padding:26px 0 30px}
+.works-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:6px 0 18px}
+.ws{display:block;text-decoration:none;color:var(--ink)}
+.ws img{width:100%;aspect-ratio:16/10;object-fit:contain;background:#f0f0ee;border-radius:10px;border:1px solid var(--line);transition:border-color .2s}
+.ws:hover img{border-color:var(--touch)}
+.ws span{display:block;font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5;text-align:center}
+
+/* form section: black with a light Islamic geometric pattern instead of a generated ornament */
+.formsec{background:#0b0b0b}
+.pattern{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.06' stroke-width='1'%3E%3Cpath d='M40 6l9.9 24.1L74 40l-24.1 9.9L40 74l-9.9-24.1L6 40l24.1-9.9z'/%3E%3Cpath d='M16 16h48v48H16z' transform='rotate(45 40 40)'/%3E%3Ccircle cx='40' cy='40' r='9'/%3E%3Cpath d='M0 0l12 12M80 0L68 12M0 80l12-12M80 80L68 68'/%3E%3C/g%3E%3C/svg%3E");background-size:80px 80px}
+.qchips input:checked+span{background:#fff;border-color:#fff;color:#141414}
+.next-list p,.quick .qgrp>span{color:#bdbdb8}
+
+/* links, focus, tables */
+.note a,details a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--touch)}
+input:focus,select:focus{outline:2px solid #141414}
+summary::after{color:var(--ink)}
+.illus{border-color:var(--line)}
+.illus-tag{border-color:rgba(255,255,255,.5)}
+
+@media(max-width:980px){.works-strip{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.works-strip{grid-template-columns:repeat(2,1fr)}.works-strip .ws:nth-child(n+5){display:none}}
