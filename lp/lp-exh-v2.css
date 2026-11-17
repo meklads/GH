@@ -1,0 +1,83 @@
+/* Graphics House exhibitions LP v2 (owner direction 2026-11-17): the production v4 standard, one level higher.
+   Loaded after lp.css, lp-v2.css, lp-v3.css and lp-v4.css on lp/exhibitions*.html only.
+   White and black, gold only as a thin line or dot. Real photos shown complete (object-fit: contain). */
+
+/* A: the lit maquette is 4:3, so the card keeps 4:3 and nothing is cut */
+.vframe.r43{aspect-ratio:4/3}
+.pcard .vframe img{object-fit:contain}
+.exh2 .vcard figcaption .vcap{line-height:1.6}
+
+/* proof strip */
+.exh-proof{padding:30px 0 34px;border-bottom:1px solid var(--line)}
+.exh-logo{display:flex;align-items:center;justify-content:center;gap:16px;color:var(--muted);font-size:14px;margin-top:18px}
+.exh-logo img{height:52px;width:auto;opacity:.8}
+
+/* the full path, light */
+.exh2 .path{list-style:none;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;position:relative;margin:0;padding:0}
+.exh2 .path::before{content:"";position:absolute;inset-inline:7%;top:22px;height:1px;background:#d9d9d4}
+.exh2 .path li{position:relative;text-align:center;padding:0 4px}
+.exh2 .path .pn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0 auto 14px;border-radius:50%;background:#fff;border:1px solid #141414;color:#141414;font-weight:700;position:relative;z-index:1}
+.exh2 .path li:last-child .pn{background:#141414;color:#fff;box-shadow:0 0 0 3px #fff,0 0 0 4px var(--touch)}
+.exh2 .path b{display:block;color:var(--ink);font-size:16px;line-height:1.5;margin-bottom:6px}
+.exh2 .path small{display:block;color:var(--muted);font-size:14px;line-height:1.6}
+.mods-head{margin-top:72px}
+
+/* four units, 2 x 2 */
+.exh2 .mods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.exh2 .mod{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.exh2 .mod-media{aspect-ratio:16/9;background:#e9e9e6;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.exh2 .mod-media img{width:100%;height:100%;object-fit:contain;display:block}
+.exh2 .mod-b{padding:22px 24px 26px}
+.exh2 .mod-n{display:inline-block;color:var(--ink);font-weight:700;font-size:13px;letter-spacing:.08em;margin-bottom:8px;border-bottom:1px solid var(--touch);padding-bottom:2px}
+.exh2 .mod-b h3{font-size:20px;margin:0 0 6px}
+.exh2 .mod-b p{color:var(--muted);font-size:15.5px;margin:0}
+
+/* case study: film card + delivered list */
+.exh2 .case-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:30px;align-items:start}
+.exh2 .fcard .vframe{border-color:#262626;box-shadow:none}
+.exh2 .fcard figcaption{color:#b5b5b0}
+.exh2 .dark .vfull{border-color:#f2f2f0;color:#f2f2f0}
+.exh2 .dark .vfull:hover{background:#f2f2f0;color:#141414}
+.exh2 .case-grid .case{height:100%}
+
+/* from the workshop to the exhibition: four real frames in order (the v2 upgrade over production v4) */
+.journey-h{text-align:center;font-size:22px;color:#fff;margin:64px 0 26px;font-weight:500}
+.gal.works.journey{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:none}
+.journey figure{position:relative}
+.journey figure:not(:last-child)::after{content:"";position:absolute;top:calc(28% - 1px);inset-inline-end:-14px;width:10px;height:1px;background:var(--touch)}
+.dark .gal.works.journey .wk{background:#141414;border-color:#262626}
+.dark .gal.works.journey figcaption,.dark .gal.works.journey figure:hover figcaption{color:#f2f2f0;display:flex;align-items:center;gap:10px}
+.jn{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;border:1px solid #f2f2f0;font-size:12.5px;font-weight:700;flex:0 0 auto}
+.journey figure:last-child .jn{background:#f2f2f0;color:#141414}
+
+/* deadline banner: black card, thin gold line */
+.exh2 .deadline{margin-top:34px;display:flex;align-items:center;justify-content:space-between;gap:24px;background:#0b0b0b;color:#f2f2f0;border:1px solid #0b0b0b;border-radius:16px;padding:26px 30px;position:relative;overflow:hidden}
+.exh2 .deadline::after{content:"";position:absolute;inset-inline:26px;bottom:0;height:1px;background:var(--touch)}
+.exh2 .deadline h3{color:#fff;font-size:21px;margin:0 0 6px}
+.exh2 .deadline p{color:#cfcfca;font-size:16px;margin:0}
+.exh2 .deadline .btn-gold{background:#fff;color:#141414;border-color:#fff}
+
+/* levels */
+#levels .pk-for{min-height:0}
+
+/* form: the real forum hall, very faint */
+.formsec.v4-form.exh-form{background:linear-gradient(rgba(10,10,10,.9),rgba(10,10,10,.94)),url("../assets/lp-exh-v2/mwl-hall-1200.webp") center/cover no-repeat}
+@media(min-width:981px){.formsec.v4-form.exh-form{background-image:linear-gradient(rgba(10,10,10,.9),rgba(10,10,10,.94)),url("../assets/lp-exh-v2/mwl-hall-2400.webp")}}
+
+@media(max-width:980px){
+ .exh2 .path{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:28px}
+ .exh2 .path::before{display:none}
+ .exh2 .case-grid{grid-template-columns:1fr}
+ .gal.works.journey{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .journey figure::after{display:none}
+}
+@media(max-width:640px){
+ .exh2 .path{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .mods-head{margin-top:52px}
+ .exh2 .mods{grid-template-columns:1fr;gap:18px}
+ .gal.works.journey{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+ .journey-h{margin-top:48px}
+ .exh2 .deadline{flex-direction:column;align-items:stretch;text-align:center;padding:22px}
+ .exh2 .deadline .btn{width:100%}
+ .exh-logo{flex-direction:column;gap:8px}
+}
