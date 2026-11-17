@@ -1,16 +1,10 @@
 /* Graphics House exhibitions LP v2.
-   Hero: A (split, default) or B (?hero=b, full-width photo). The choice is set on <html> before first paint by an inline
-   script in <head>; here it is only reported to GA4.
+   Hero: split hero A, chosen by the owner 2026-11-17 (B removed); still reported to GA4 for continuity.
    Case film: starts muted when the card scrolls into view, never on reduced motion or data saver. */
 (function () {
   'use strict';
-  var v = document.documentElement.getAttribute('data-hero') === 'b' ? 'b' : 'a';
+  var v = 'a';
   document.body.setAttribute('data-hero', v);
-  if (v === 'b') {
-    // B's photo is the first thing on screen: load it now, not when the lazy loader gets to it
-    var bi = document.querySelector('.hero-b img');
-    if (bi) { bi.decoding = 'sync'; bi.loading = 'eager'; bi.setAttribute('fetchpriority', 'high'); }
-  }
   try {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'lp_hero_variant', hero_variant: v });

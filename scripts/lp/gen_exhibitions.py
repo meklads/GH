@@ -3,7 +3,7 @@
 
 Generates lp/exhibitions.html, exhibitions-en.html, thanks-exhibitions.html, thanks-exhibitions-en.html.
 Run: python3 scripts/lp/gen_exhibitions.py lp
-Hero: A = split hero (default), B = the owner's full-width lit maquette (add ?hero=b). See lp-exh-v2.js.
+Hero: split hero A, chosen by the owner 2026-11-17 (option B, the full-width photo, was removed).
 Materials: real exhibition photos only (assets/lp-exh-v2/, from 3200px sources) and the 21s film made from them.
 Never use mwl-vip*: the upscaler changed the faces of official guests (DESIGN_STANDARD.md).
 """
@@ -189,10 +189,8 @@ GA = ("<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-NKM4H1F
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">\n')
 CSS = ('<link rel="stylesheet" href="lp.css?v=3">\n<link rel="stylesheet" href="lp-v2.css?v=5">\n'
-       '<link rel="stylesheet" href="lp-v3.css?v=3">\n<link rel="stylesheet" href="lp-v4.css?v=1">\n<link rel="stylesheet" href="lp-exh-v2.css?v=1">\n')
+       '<link rel="stylesheet" href="lp-v3.css?v=3">\n<link rel="stylesheet" href="lp-v4.css?v=1">\n<link rel="stylesheet" href="lp-exh-v2.css?v=2">\n')
 SYM = f'<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 24 24"><path d="{WA_PATH}"/></symbol></svg>\n'
-# picks the hero before first paint, so variant B never flashes A
-HERO_PICK = "<script>if(/[?&]hero=b(&|$)/.test(location.search))document.documentElement.setAttribute('data-hero','b');</script>\n"
 
 
 def build(c):
@@ -203,7 +201,7 @@ def build(c):
             f'<link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/lp/exhibitions.html">\n<link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/lp/exhibitions-en.html">\n'
             f'<meta property="og:title" content="{c["title"]}">\n<meta property="og:description" content="{c["desc"]}">\n'
             f'<meta property="og:image" content="https://3dgraphicshouse.com/assets/lp-exh-v2/gh-exhibition-film-poster.jpg">\n<meta property="og:type" content="website">\n'
-            f'<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">\n{HERO_PICK}{FONTS}'
+            f'<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">\n{FONTS}'
             f'<script src="../assets/gh-forms-config.js?v=2"></script>\n{GA}<script defer src="../assets/gh-analytics.js?v=3"></script>\n'
             f'<!-- Ad pixels (Meta, Snap, TikTok): EMPTY slots. IDs are added by the owner after approval; see lp-v2.js (GH_ADS). -->\n'
             f'{CSS}<link rel="preload" as="image" href="{V2}{HERO}-1200.webp" imagesrcset="{V2}{HERO}-1200.webp 1200w, {V2}{HERO}-2400.webp 2400w" imagesizes="(max-width:980px) 100vw, 640px">\n</head>\n')
@@ -225,12 +223,6 @@ def build(c):
               f'<figure class="vcard pcard"><div class="vframe r43">{pic(HERO, c["hero_alt"], "(max-width:980px) 100vw, 640px", lazy=False, high=True)}</div>'
               f'<figcaption><span class="vcap">{c["hero_cap"]}</span>{film_btn("hero-film")}</figcaption></figure>'
               f'</div></section>\n')
-    # 1B) ?hero=b: the current full-width design with the sharper photo and stronger text contrast; loads only when chosen
-    hero_b = (f'<section class="hero v2 hero-b" style="padding:0"><picture>{pic(HERO, c["hero_alt"], "100vw")}</picture>'
-              f'<div class="wrap"><p class="eyebrow">{c["eyebrow"]}</p><h2 class="h1">{c["h1"]}</h2><p class="lead">{c["lead"]}</p>'
-              f'<div class="cta-row"><a class="btn btn-gold" href="#request" data-cta="hero-primary">{c["cta"]}</a>{film_btn("hero-film")}</div>'
-              f'<p class="micro">{c["micro"]} · <a href="{wa(c["wa_msg"])}" target="_blank" rel="noopener" data-cta="hero-whatsapp">{c["wa_label"]}</a></p></div></section>\n')
-
     # 2) proof strip, unchanged numbers
     stats = "".join(f"<div><b>{n}</b>{t}</div>" for n, t in c["proof"])
     proof = (f'<div class="proof exh-proof"><div class="wrap"><div class="proof-top">{stats}</div>'
@@ -316,8 +308,8 @@ def build(c):
             f'<div class="mbar"><a class="btn btn-gold" href="#request" data-cta="mbar-primary">{c["cta"]}</a>'
             f'<a class="btn btn-ghost" href="{wa(c["wa_msg"])}" target="_blank" rel="noopener" data-cta="mbar-whatsapp">{c["wa_label"]}</a></div>\n'
             f'<div class="lb" id="lb" role="dialog" aria-modal="true"><button type="button" aria-label="{c["close"]}">&times;</button><img alt=""><div class="lb-v"></div><p></p></div>\n'
-            f'<script src="lp-exh-v2.js?v=1"></script>\n<script src="lp.js?v=3"></script>\n<script src="lp-v2.js?v=5"></script>\n</body>\n</html>\n')
-    return head + body + header + hero_a + hero_b + proof + whysec + modsec + case + tiersec + stepsec + form + foot
+            f'<script src="lp-exh-v2.js?v=2"></script>\n<script src="lp.js?v=3"></script>\n<script src="lp-v2.js?v=5"></script>\n</body>\n</html>\n')
+    return head + body + header + hero_a + proof + whysec + modsec + case + tiersec + stepsec + form + foot
 
 
 def thanks(c):
