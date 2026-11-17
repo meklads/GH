@@ -3,7 +3,7 @@
 
 Generates lp/production.html, production-en.html, thanks.html, thanks-en.html.
 Run: python3 scripts/lp/gen_production.py lp
-Hero A/B: the page shows variant A (new launch film); add ?hero=b to show variant B (GH demo reel). See lp-v4.js.
+Hero: variant A chosen by the owner (2026-11-17): new launch film in the card, button opens the GH demo reel. See lp-v4.js.
 """
 import sys, os, subprocess
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -225,7 +225,7 @@ def build(c):
     header = (f'<header class="hdr"><div class="wrap"><img src="../assets/lp-v3/logo-on-white.png" alt="Graphics House" width="640" height="297">'
               f'<div class="hdr-r">{lang_sw}<a class="btn btn-gold btn-sm" href="#request" data-cta="header">{c["cta_short"]}</a></div></div></header>\n')
 
-    # 1) split hero: text first (right in RTL), 16:9 video card second. Variant A = new launch film, B = demo reel.
+    # 1) split hero: text first (right in RTL), 16:9 video card second: the new launch film (variant A, owner choice).
     hero = (f'<main>\n<section class="split-hero"><div class="wrap">'
             f'<div class="sh-text"><p class="eyebrow">{c["eyebrow"]}</p><h1>{c["h1"]}</h1><p class="lead">{c["lead"]}</p>'
             f'<div class="sh-cta"><a class="btn btn-gold" href="#request" data-cta="hero-primary">{c["cta"]}</a>'
@@ -233,7 +233,7 @@ def build(c):
             f'<p class="micro">{ic("reply24", "ic ic-sm")} {c["micro"]}</p></div>'
             f'<figure class="vcard" data-variant="a"'
             f' data-a-src="{FILM}" data-a-src-m="{FILM_M}" data-a-poster="{FILM_POSTER}" data-a-alt="{c["vid_a"]}" data-a-btn="{c["btn_a"]}" data-a-cap="{c["cap_a"]}" data-a-full="{REEL}"'
-            f' data-b-src="{REEL}" data-b-src-m="{REEL_M}" data-b-poster="{REEL_POSTER}" data-b-alt="{c["vid_b"]}" data-b-btn="{c["btn_b"]}" data-b-cap="{c["cap_b"]}" data-b-full="{FILM_FULL}">'
+            f'>'
             f'<div class="vframe"><img class="vposter" src="{FILM_POSTER}" alt="{c["vid_a"]}" width="1280" height="720" fetchpriority="high">'
             f'<video class="card-vid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>'
             f'<figcaption><span class="vcap">{c["cap_a"]}</span>'

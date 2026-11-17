@@ -1,28 +1,15 @@
-/* Graphics House production LP v4: split hero video card with an A/B choice.
-   A (default) = new launch film from real projects; B (?hero=b) = GH demo reel 2025.
+/* Graphics House production LP v4: split hero video card.
+   Variant A, chosen by the owner 2026-11-17: the new launch film from real projects; the button opens the GH demo reel.
    The card film starts muted after the page has loaded, never on reduced motion or data saver. */
 (function () {
   'use strict';
   var card = document.querySelector('.vcard');
   if (!card) return;
-  var q = new URLSearchParams(location.search);
-  var v = (q.get('hero') || '').toLowerCase() === 'b' ? 'b' : 'a';
+  var v = 'a';
   var g = function (k) { return card.getAttribute('data-' + v + '-' + k); };
-  var img = card.querySelector('.vposter');
   var vid = card.querySelector('.card-vid');
-  var btn = card.querySelector('.vfull');
-  var cap = card.querySelector('.vcap');
-
-  card.setAttribute('data-variant', v);
-  if (v === 'b') {
-    img.src = g('poster'); img.alt = g('alt');
-    cap.textContent = g('cap');
-    btn.querySelector('b').textContent = g('btn');
-  }
-  btn.setAttribute('data-mp4', g('full'));
+  card.querySelector('.vfull').setAttribute('data-mp4', g('full'));
   document.body.setAttribute('data-hero', v);
-
-  /* the language switch keeps ?hero=b through lp.js (it carries location.search) */
 
   try {
     window.dataLayer = window.dataLayer || [];
