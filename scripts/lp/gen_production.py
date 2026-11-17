@@ -34,7 +34,7 @@ T = {
     title="فيلم إطلاق وتصوير عقاري للمطورين | Graphics House",
     desc="فيلم إطلاق لمشروعك العقاري: نخطط ونصوّر ونُخرج، ونُكمل ما لم يُبنَ بلقطات CGI من فريق واحد. احصل على عرض خلال 24 ساعة.",
     og_alt="فعالية ميثاق مكة لرابطة العالم الإسلامي",
-    hero_alt="لقطة من فيلم معماري سينمائي أنتجته Graphics House",
+    hero_alt="لقطة من ريل أعمال Graphics House: مشاريع عقارية بتقنية CGI",
     reel_t="ريل أعمال Graphics House", reel_d="مقتطفات من أفلامنا المعمارية والعقارية: لقطات CGI ومشاريع وواجهات وداخليات.",
     reel_alt="ريل أعمال Graphics House: لقطة من فيلم معماري",
     cmp_eyebrow="الفرق", cmp_h="ما الذي تحصل عليه ولا يقدمه المورّد المنفرد", cmp_a="مصور أو مونتير منفرد",
@@ -44,7 +44,7 @@ T = {
          ("اللغة", "نسخة واحدة غالبًا", "نصوص على الشاشة بالعربية والإنجليزية"),
          ("الاستخدام", "ملفات عامة", "مقاسات الموقع والسوشيال والمطبوعات وشاشة المعرض")],
     subject="Graphics House: طلب عرض (فيلم إطلاق وإنتاج)",
-    msg="طلب عرض من صفحة الإنتاج (فيلم إطلاق وتصوير وفعاليات)",
+    msg="طلب عرض من صفحة فيلم الإطلاق وCGI",
     cta="احصل على عرض خلال 24 ساعة", cta_short="احصل على عرض خلال 24 ساعة", wa_label="واتساب",
     wa_hero="السلام عليكم، أريد عرضًا لفيلم إطلاق مشروعي",
     wa_quick="السلام عليكم، أريد عرضًا لفيلم إطلاق مشروعي.",
@@ -121,7 +121,7 @@ T = {
     title="Launch Films and Real Estate Photography for Developers | Graphics House",
     desc="A launch film for your real estate project: we plan, shoot and direct it, and complete what is not built yet with CGI, from one team. Get an offer within 24 hours.",
     og_alt="Makkah Charter event for the Muslim World League",
-    hero_alt="Frame from a cinematic architectural film produced by Graphics House",
+    hero_alt="Frame from the Graphics House showreel: real estate projects in CGI",
     reel_t="Graphics House showreel", reel_d="Highlights from our architectural and real estate films: CGI shots, masterplans, facades and interiors.",
     reel_alt="Graphics House showreel: frame from an architectural film",
     cmp_eyebrow="The difference", cmp_h="What you get that a single vendor does not give you", cmp_a="A single photographer or editor",
@@ -131,7 +131,7 @@ T = {
          ("Language", "Usually one version", "On-screen text in Arabic and English"),
          ("Usage", "Generic files", "Sizes for web, social, print and the exhibition screen")],
     subject="Graphics House: offer request (launch film and production)",
-    msg="Offer request from the Production page (launch film, photography, events)",
+    msg="Offer request from the launch film and CGI page",
     cta="Get an offer within 24 hours", cta_short="Get an offer in 24 hours", wa_label="WhatsApp",
     wa_hero="Hello, I would like an offer for a launch film for my project",
     wa_quick="Hello, I would like an offer for a launch film for my project.",
@@ -251,6 +251,7 @@ T["ar"].update(dict(
          ("متى يُدفع؟", "يُكتب جدول الدفعات في العرض قبل البدء.", TODO + " جدول الدفعات"),
          ("كيف يُحدد السعر؟", "حسب نطاق المشروع ومدة الفيلم وعدد لقطات CGI والمخرجات المطلوبة. يصلك العرض بعد المكالمة القصيرة.", "")],
     form_lead="أخبرنا بمشروعك، ونرد خلال 24 ساعة.",
+    strip_h="من أعمالنا لمطورين ومؤسسات",
     outs_h="المخرجات", outs=["فيلم رئيسي", "ريلز عمودية", "منظور ثلاثي الأبعاد", "لقطات جوية", "عربي وإنجليزي"],
     il_tag="تصور توضيحي",
     il_alt=["تصور توضيحي: صالة مبيعات عقارية وشاشة كبيرة تعرض فيلم مشروع، ومستشار مبيعات مع مشترٍ",
@@ -311,6 +312,7 @@ T["en"].update(dict(
          ("When do I pay?", "The payment schedule is written in the offer before we start.", TODO + " payment schedule"),
          ("How is the price set?", "By the project scope, film length, number of CGI shots and the outputs you need. You receive the offer after the short call.", "")],
     form_lead="Tell us about your project and we reply within 24 hours.",
+    strip_h="From our work for developers and institutions",
     outs_h="Outputs", outs=["Main film", "Vertical reels", "3D views", "Aerial shots", "Arabic and English"],
     il_tag="Illustrative",
     il_alt=["Illustrative: a real estate sales gallery with a large screen showing a project film, a sales advisor and a buyer",
@@ -375,12 +377,13 @@ def build(c):
 <!-- Ad pixels (Meta, Snap, TikTok): EMPTY slots. IDs are added by the owner after approval; see lp-v2.js (GH_ADS). -->
 <link rel="stylesheet" href="lp.css?v=3">
 <link rel="stylesheet" href="lp-v2.css?v=5">
-<link rel="preload" as="image" href="../assets/videos/GH-Epic-cinematic-arch-hero-poster.jpg">
+<link rel="stylesheet" href="lp-v3.css?v=3">
+<link rel="preload" as="image" href="../assets/videos/GH-demo-reel-2025-poster.jpg">
 </head>
 '''
 
     body_open = (f'<body class="live" data-page="lp_production_{L}" data-service="Production" data-subject="{c["subject"]}" '
-                 f'data-msg="{c["msg"]}" data-ptype="{c["f_type"].rstrip(" *")}">\n'
+                 f'data-msg="{c["msg"]}" data-interest="{c["offer_h"]}">\n'
                  f'<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 24 24"><path d="{WA_PATH}"/></symbol></svg>\n' + sprite())
 
     lang_sw = (f'<div class="lang"><a href="{c["other"]}">{"EN" if ar else "AR"}</a><span>|</span><a href="{c["self"]}" class="on">{"AR" if ar else "EN"}</a></div>'
@@ -391,9 +394,9 @@ def build(c):
 
     chips = "".join(f"<span>{x}</span>" for x in c["chips"])
     hero = (f'<main>\n<section class="hero v2" style="padding:0"><picture>'
-            f'<img src="../assets/videos/GH-Epic-cinematic-arch-hero-poster.jpg" alt="{c["hero_alt"]}" width="1280" height="720" fetchpriority="high"></picture>'
+            f'<img src="../assets/videos/GH-demo-reel-2025-poster.jpg" alt="{c["hero_alt"]}" width="1280" height="720" fetchpriority="high"></picture>'
             f'<video class="hero-vid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" '
-            f'data-src="../assets/videos/GH-Epic-cinematic-arch-hero-1280.mp4" data-src-m="../assets/videos/GH-Epic-cinematic-arch-hero-mobile.mp4"></video>'
+            f'data-src="../assets/videos/GH-demo-reel-2025.mp4" data-src-m="../assets/videos/GH-demo-reel-2025-mobile.mp4"></video>'
             f'<div class="wrap"><p class="eyebrow">{c["eyebrow"]}</p><h1>{c["h1"]}</h1><p class="lead">{c["lead"]}</p>'
             f'<div class="cta-row"><a class="btn btn-gold" href="#request" data-cta="hero-primary">{c["cta"]}</a>'
             f'<a class="btn btn-ghost" href="{wa(c["wa_hero"])}" target="_blank" rel="noopener" data-cta="hero-whatsapp">{WA_ICON} {c["wa_label"]}</a></div>'
@@ -401,13 +404,15 @@ def build(c):
 
     stats = "".join(f"<div><b>{n}</b>{t}</div>" for n, t in c["stats"])
     oc = "".join(f"<div><b>{n}</b>{t}</div>" for n, t in c["owner_claims"])
-    proof = (f'<div class="proof"><div class="wrap"><div class="proof-top">{stats}</div>'
+    strip = "".join(f'<a class="ws" href="#work" data-cta="trust-{i}"><img src="{src}" alt="{alt}" loading="lazy" decoding="async"><span>{cap}</span></a>'
+                    for i, (src, alt, cap) in enumerate([g for g in c["gal"] if "cam-12" not in g[0] and "cam-0." not in g[0]][:6], 1))
+    proof = (f'<div class="proof"><div class="wrap"><p class="logos-lead">{c["strip_h"]}</p><div class="works-strip">{strip}</div>'
              f'<!-- {c["owner_claims_note"]} -->\n<div class="proof-top owner-claims" hidden>{oc}</div>\n'
              f'<div><p class="logos-lead">{c["logos_lead"]}</p><div class="marquee" aria-label="{c["logos_lead"]}"><div class="track">{logos_html}<span aria-hidden="true" class="dup">{logos_html}</span></div></div></div></div></div>\n')
 
     cards = "".join(f'<div class="card"><h3>{h}</h3><p>{p}</p><p class="fix"><b>{c["fixlbl"]}</b> {f}</p></div>' for h, p, f in c["probs"])
     prob = (f'<section><div class="wrap"><div class="sec-head center"><p class="eyebrow">{c["prob_eyebrow"]}</p><h2>{c["prob_h"]}</h2>'
-            f'<p class="lead">{c["prob_lead"]}</p></div>' + illus("01-sales-gallery", c["il_alt"][0], c["il_tag"], "illus illus-wide") + f'<div class="grid g3">{cards}</div></div></section>\n')
+            f'<p class="lead">{c["prob_lead"]}</p></div>' + illus("01-sales-gallery-v3", c["il_alt"][0], c["il_tag"], "illus illus-wide") + f'<div class="grid g3">{cards}</div></div></section>\n')
 
     items = "".join(f'<li class="has-ic">{ic(k)}<span>{x}</span></li>' for k, x in zip(["script", "film", "view3d", "reels", "bilingual"], c["offer_items"]))
     outs = "".join(f'<div>{ic(k, "ic ic-lg")}<span>{t}</span></div>' for k, t in zip(["film", "reels", "view3d", "aerial", "bilingual"], c["outs"]))
@@ -419,9 +424,9 @@ def build(c):
              f'<div class="offer"><span class="pk-tag">{c["offer_tag"]}</span><div><h3>{c["offer_h"]}</h3><p class="sub">{c["offer_sub"]}</p><ul>{items}</ul>'
              f'<a class="btn btn-gold" href="#request" data-pkg="{c["offer_pkg"]}" data-cta="offer-primary">{c["cta"]}</a>'
              f'<div class="price-strip" hidden data-todo-owner="price">{c["price_note"]}</div></div>'
-             f'<div class="for">' + illus("06-masterplan-night", c["il_alt"][5], c["il_tag"]) + f'<b>{c["for_h"]}</b><p>{c["for_p"]}</p><b>{c["prep_h"]}</b><p>{c["prep_p"]}</p></div>'
+             f'<div class="for"><b>{c["for_h"]}</b><p>{c["for_p"]}</p><b>{c["prep_h"]}</b><p>{c["prep_p"]}</p></div>'
              + f'<div class="outs" aria-label="{c["outs_h"]}">{outs}</div></div>'
-             + illus("02-led-screen", c["il_alt"][1], c["il_tag"], "illus illus-wide")
+
              + (f'<div class="minor">{minor}</div>' if minor else '') + '</div></section>\n')
 
     films = "".join(
@@ -448,11 +453,11 @@ def build(c):
 
     rows = "".join(f'<tr><th scope="row">{a}</th><td data-l="{c["cmp_a"]}">{b}</td><td data-l="Graphics House">{g}</td></tr>' for a, b, g in c["cmp"])
     cmpsec = (f'<section><div class="wrap"><div class="sec-head center"><p class="eyebrow">{c["cmp_eyebrow"]}</p><h2>{c["cmp_h"]}</h2></div>'
-              + illus("04-life-after-build", c["il_alt"][3], c["il_tag"], "illus illus-wide") + f'<div class="cmp-wrap"><table class="cmp"><thead><tr><th scope="col"></th><th scope="col">{c["cmp_a"]}</th><th scope="col" class="gh">Graphics House</th></tr></thead>'
+              + illus("04-life-after-build-v3", c["il_alt"][3], c["il_tag"], "illus illus-wide") + f'<div class="cmp-wrap"><table class="cmp"><thead><tr><th scope="col"></th><th scope="col">{c["cmp_a"]}</th><th scope="col" class="gh">Graphics House</th></tr></thead>'
               f'<tbody>{rows}</tbody></table></div>'
               f'<div class="center" style="margin-top:30px"><a class="btn btn-gold" href="#request" data-cta="compare">{c["cta"]}</a></div></div></section>\n')
     steps = "".join(f'<div class="card"><div class="step-top"><div class="num">{i}</div>{ic(k, "ic ic-lg")}</div><h3>{h}</h3><p>{p}</p></div>' for i, ((h, p), k) in enumerate(zip(c["steps"], ["consult", "script", "produce", "deliver"]), 1))
-    il35 = illus("03-storyboard", c["il_alt"][2], c["il_tag"]) + illus("05-edit-suite", c["il_alt"][4], c["il_tag"])
+    il35 = ""
     stepsec = (f'<section class="alt"><div class="wrap"><div class="sec-head center"><p class="eyebrow">{c["steps_eyebrow"]}</p><h2>{c["steps_h"]}</h2></div>'
                f'<div class="steps">{steps}</div>' + (f'<div class="illus-pair">{il35}</div>' if il35 else '') + '</div></section>\n')
 
@@ -471,15 +476,13 @@ def build(c):
     types = "".join(f"<option>{t}</option>" for t in c["types"])
     sizes = "".join(f"<option>{t}</option>" for t in c["sizes"])
     attrs = "".join(f'<input type="hidden" name="{k}" data-attr="{k}">' for k in ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid", "ttclid", "ScCid"])
-    bg7 = illus_bg("07-ornament")
-    form = (f'<section class="formsec{" has-orn" if bg7 else ""}" id="request"' + (f' style="--orn:url({bg7})"' if bg7 else '') + '>'
+    form = (f'<section class="formsec pattern" id="request">'
             f'<div class="wrap fgrid"><div><p class="eyebrow">{c["form_eyebrow"]}</p><h2>{c["form_h"]}</h2>'
-            f'<p class="lead">{c["form_lead"]}</p><ul class="next-list">{nexts}</ul>{quick}</div>'
+            f'<p class="lead">{c["form_lead"]}</p>' + illus("04-life-after-build-v3", c["il_alt"][3], c["il_tag"]) + f'<ul class="next-list">{nexts}</ul>{quick}</div>'
             f'<form id="lpFormV2" class="v2" novalidate>'
             f'<div class="f"><label for="n">{c["f_name"]}</label><input id="n" name="name" autocomplete="name" required></div>'
             f'<div class="f"><label for="p">{c["f_phone"]}</label><input id="p" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>'
             f'<div class="f"><label for="c">{c["f_company"]}</label><input id="c" name="company" autocomplete="organization" required></div>'
-            f'<div class="f"><label for="t">{c["f_type"]}</label><select id="t" name="project_type" required><option value="" selected disabled>{c["f_sel"]}</option>{types}</select></div>'
             f'<div class="f full"><label for="z">{c["f_size"]}</label>'
             f'<!-- {c["size_todo"]} -->\n<select id="z" name="project_size" required><option value="" selected disabled>{c["f_sel"]}</option>{sizes}</select></div>'
             f'{attrs}'
@@ -496,7 +499,7 @@ def build(c):
             f'<div class="lb" id="lb" role="dialog" aria-modal="true"><button type="button" aria-label="{"إغلاق" if ar else "Close"}">&times;</button><img alt=""><div class="lb-v"></div><p></p></div>\n'
             f'<script src="lp.js?v=3"></script>\n<script src="lp-v2.js?v=5"></script>\n</body>\n</html>\n')
 
-    return head + body_open + header + hero + proof + prob + offer + work + cmpsec + stepsec + faqsec + form + foot
+    return head + body_open + header + hero + proof + prob + offer + work + stepsec + faqsec + form + foot
 
 
 def thanks(c):
@@ -528,6 +531,7 @@ def thanks(c):
 <!-- Ad pixels (Meta, Snap, TikTok): EMPTY slots. Fire the lead/conversion pixel event here once the owner adds the IDs. -->
 <link rel="stylesheet" href="lp.css?v=3">
 <link rel="stylesheet" href="lp-v2.css?v=5">
+<link rel="stylesheet" href="lp-v3.css?v=3">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 24 24"><path d="{WA_PATH}"/></symbol></svg>
