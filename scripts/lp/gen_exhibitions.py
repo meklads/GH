@@ -3,6 +3,7 @@
 
 Generates lp/exhibitions.html, exhibitions-en.html, thanks-exhibitions.html, thanks-exhibitions-en.html.
 Run: python3 scripts/lp/gen_exhibitions.py lp
+Identity phase 1 (2026-11-18): rendered with the group LP system (lp/system.css, scripts/lp/lp_system.py).
 Hero: split hero A, chosen by the owner 2026-11-17 (option B, the full-width photo, was removed).
 Materials: real exhibition photos only (assets/lp-exh-v2/, from 3200px sources) and the 21s film made from them.
 Never use mwl-vip*: the upscaler changed the faces of official guests (DESIGN_STANDARD.md).
@@ -10,6 +11,7 @@ Never use mwl-vip*: the upscaler changed the faces of official guests (DESIGN_ST
 import sys, os, subprocess
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from icons_lp import sprite, ic
+from lp_system import FONTS, CSS, SYS_JS, SYM, CHECK, header, related, footer, thanks_body
 from urllib.parse import quote
 
 OUT = sys.argv[1]  # .../GraphicsHouse/lp
@@ -183,20 +185,20 @@ T = {
 ),
 }
 
+# --- 2026-11-18: identity phase 1. Layout, fonts and sizes follow the group LP system (lp/system.css),
+# reference beesmotion.com/lp/property-content-engine. Copy above is unchanged.
+T["ar"].update(work_k="الوحدات", faq_k="أسئلة شائعة", after_h="ماذا يحدث بعد الإرسال", req="مطلوب", price_note="شريط «يبدأ من»: يظهر بعد قرار المالك فقط.")
+T["en"].update(work_k="The units", faq_k="FAQ", after_h="What happens after you send", req="required", price_note="'Starts from' line: shown only after the owner decides.")
+
 GA = ("<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-NKM4H1FFBL\"></script>\n"
       "<script>if(location.hostname==='localhost'||location.hostname==='127.0.0.1'){window['ga-disable-G-NKM4H1FFBL']=true;window['ga-disable-G-Y67JVE898Z']=true;}"
       "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-NKM4H1FFBL');gtag('config','G-Y67JVE898Z');</script>\n")
-FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-         '<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">\n')
-CSS = ('<link rel="stylesheet" href="lp.css?v=3">\n<link rel="stylesheet" href="lp-v2.css?v=5">\n'
-       '<link rel="stylesheet" href="lp-v3.css?v=3">\n<link rel="stylesheet" href="lp-v4.css?v=1">\n<link rel="stylesheet" href="lp-exh-v2.css?v=2">\n')
-SYM = f'<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 24 24"><path d="{WA_PATH}"/></symbol></svg>\n'
 
 
 def build(c):
     L = c["lang"]; ar = L == "ar"
-    head = (f'<!DOCTYPE html>\n<html lang="{L}" dir="{c["dir"]}">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
-            f'<title>{c["title"]}</title>\n<meta name="description" content="{c["desc"]}">\n<meta name="robots" content="noindex,nofollow">\n'
+    head = (f'<!DOCTYPE html>\n<html lang="{L}" dir="{c["dir"]}">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
+            f'<meta name="theme-color" content="#0a0a0b">\n<title>{c["title"]}</title>\n<meta name="description" content="{c["desc"]}">\n<meta name="robots" content="noindex,nofollow">\n'
             f'<link rel="canonical" href="https://3dgraphicshouse.com/lp/{c["self"]}">\n'
             f'<link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/lp/exhibitions.html">\n<link rel="alternate" hreflang="en" href="https://3dgraphicshouse.com/lp/exhibitions-en.html">\n'
             f'<meta property="og:title" content="{c["title"]}">\n<meta property="og:description" content="{c["desc"]}">\n'
@@ -204,130 +206,114 @@ def build(c):
             f'<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">\n{FONTS}'
             f'<script src="../assets/gh-forms-config.js?v=2"></script>\n{GA}<script defer src="../assets/gh-analytics.js?v=3"></script>\n'
             f'<!-- Ad pixels (Meta, Snap, TikTok): EMPTY slots. IDs are added by the owner after approval; see lp-v2.js (GH_ADS). -->\n'
-            f'{CSS}<link rel="preload" as="image" href="{V2}{HERO}-1200.webp" imagesrcset="{V2}{HERO}-1200.webp 1200w, {V2}{HERO}-2400.webp 2400w" imagesizes="(max-width:980px) 100vw, 640px">\n</head>\n')
-    body = (f'<body class="live v4 exh2" data-page="lp_exhibitions_{L}" data-service="Exhibitions" data-form="lp_exhibitions" data-thanks="{c["thanks"]}" '
+            f'{CSS}{SYS_JS}<link rel="preload" as="image" href="{V2}{HERO}-1200.webp" imagesrcset="{V2}{HERO}-1200.webp 1200w, {V2}{HERO}-2400.webp 2400w" imagesizes="(max-width:992px) 100vw, 640px">\n</head>\n')
+    body = (f'<body data-page="lp_exhibitions_{L}" data-service="Exhibitions" data-form="lp_exhibitions" data-thanks="{c["thanks"]}" '
             f'data-subject="{c["subject"]}" data-msg="{c["msg"]}" data-interest="{c["interest"]}">\n{SYM}{sprite()}')
-    lang_sw = (f'<div class="lang"><a href="{c["other"]}">EN</a><span>|</span><a href="{c["self"]}" class="on">AR</a></div>' if ar else
-               f'<div class="lang"><a href="{c["self"]}" class="on">EN</a><span>|</span><a href="{c["other"]}">AR</a></div>')
-    header = (f'<header class="hdr"><div class="wrap"><img src="../assets/lp-v3/logo-on-white.png" alt="Graphics House" width="640" height="297">'
-              f'<div class="hdr-r">{lang_sw}<a class="btn btn-gold btn-sm" href="#request" data-cta="header">{c["cta"]}</a></div></div></header>\n<main>\n')
+    hdr = header(ar, c["self"], c["other"], c["cta"])
 
-    film_btn = lambda cta: (f'<button type="button" class="vfull" data-mp4="{FILM_FULL}" data-cta="{cta}">{PLAY}<b>{c["watch"]}</b></button>')
-    cta_row = (f'<a class="btn btn-gold" href="#request" data-cta="hero-primary">{c["cta"]}</a>'
-               f'<a class="sh-wa" href="{wa(c["wa_msg"])}" target="_blank" rel="noopener" data-cta="hero-whatsapp">{WA_ICON} {c["wa_small"]}</a>')
+    film_btn = lambda cta: f'<button type="button" class="vfull" data-mp4="{FILM_FULL}" data-cta="{cta}">{PLAY}<b>{c["watch"]}</b></button>'
 
-    # 1A) split hero (default): text first, the owner's lit maquette in a card, the film one click away
-    hero_a = (f'<section class="split-hero hero-a"><div class="wrap">'
-              f'<div class="sh-text"><p class="eyebrow">{c["eyebrow"]}</p><h1>{c["h1"]}</h1><p class="lead">{c["lead"]}</p>'
-              f'<div class="sh-cta">{cta_row}</div><p class="micro">{ic("reply24", "ic ic-sm")} {c["micro"]}</p></div>'
-              f'<figure class="vcard pcard"><div class="vframe r43">{pic(HERO, c["hero_alt"], "(max-width:980px) 100vw, 640px", lazy=False, high=True)}</div>'
-              f'<figcaption><span class="vcap">{c["hero_cap"]}</span>{film_btn("hero-film")}</figcaption></figure>'
-              f'</div></section>\n')
-    # 2) proof strip, unchanged numbers
-    stats = "".join(f"<div><b>{n}</b>{t}</div>" for n, t in c["proof"])
-    proof = (f'<div class="proof exh-proof"><div class="wrap"><div class="proof-top">{stats}</div>'
-             f'<div class="exh-logo"><span>{c["proof_logo_lead"]}</span><img src="../assets/clients-logo/رابطة العالم الاسلامي.png" alt="{c["mwl"]}" loading="lazy"></div></div></div>\n')
+    # 1) split hero A (owner choice): text and one call to action, the lit maquette photo in a card. No video background.
+    hero = (f'<main id="main">\n<section class="hero"><div class="wrap">'
+            f'<div><p class="k">{c["eyebrow"]}</p><h1>{c["h1"]}</h1><p class="sub">{c["lead"]}</p>'
+            f'<div class="ctas"><a class="btn btn-gold" href="#request" data-cta="hero-primary">{c["cta"]}</a>'
+            f'<a class="walink" href="{wa(c["wa_msg"])}" target="_blank" rel="noopener" data-cta="hero-whatsapp">{WA_ICON} {c["wa_small"]}</a></div>'
+            f'<p class="micro">{ic("reply24")} {c["micro"]}</p></div>'
+            f'<figure class="mcard"><div class="vframe nat">{pic(HERO, c["hero_alt"], "(max-width:992px) 100vw, 640px", lazy=False, high=True)}</div>'
+            f'<figcaption><span class="vcap">{c["hero_cap"]}</span>{film_btn("hero-film")}</figcaption></figure>'
+            f'</div></section>\n')
 
-    # 3) problem with a real photo of visitors around the maquette
+    # 2) proof: the approved numbers and the client logo
+    stats = "".join(f'<div class="stat"><b>{n}</b><span>{t}</span></div>' for n, t in c["proof"])
+    proof = (f'<div class="proof"><div class="wrap"><div><p class="proof-l">{c["proof_logo_lead"]}</p><div class="logos">'
+             f'<img src="../assets/clients-logo/{quote("رابطة العالم الاسلامي.png")}" alt="{c["mwl"]}" loading="lazy" decoding="async"></div></div>'
+             f'<div class="stats">{stats}</div></div></div>\n')
+
+    # 3) problem (dark) with a real photo of visitors around the maquette
     nm, alt, cap = c["why_img"]
-    probs = "".join(f'<li><h3>{a}</h3><p>{b}</p></li>' for a, b in c["why"])
-    whysec = (f'<section><div class="wrap"><div class="sec-head center"><p class="eyebrow">{c["why_eyebrow"]}</p><h2>{c["why_h"]}</h2></div>'
-              f'<div class="prob-grid"><figure class="real-shot">{pic(nm, alt, "(max-width:980px) 100vw, 600px")}<figcaption>{cap}</figcaption></figure>'
-              f'<ol class="prob-list">{probs}</ol></div></div></section>\n')
+    probs = "".join(f'<li class="prob rv"><span class="n">0{i}</span><h3>{a}</h3><p>{b}</p></li>' for i, (a, b) in enumerate(c["why"], 1))
+    whysec = (f'<section class="dark"><div class="wrap"><p class="k">{c["why_eyebrow"]}</p><h2>{c["why_h"]}</h2>'
+              f'<div class="pgrid"><figure class="shot rv">{pic(nm, alt, "(max-width:992px) 100vw, 600px")}<figcaption>{cap}</figcaption></figure>'
+              f'<ol class="probs">{probs}</ol></div></div></section>\n')
 
-    # 4) the full path, then four units, one real photo each
-    path = "".join(f'<li><span class="pn">{i}</span><b>{h}</b><small>{p}</small></li>' for i, (h, p) in enumerate(c["path"], 1))
+    # 4) the full path, then four units, one real photo and one sentence each
+    path = "".join(f'<li class="rv"><b>{h}</b><small>{p}</small></li>' for h, p in c["path"])
     mods = ""
     for i, (h, p, (kind, f, a)) in enumerate(c["mods"], 1):
-        media = pic(f, a, "(max-width:980px) 100vw, 560px") if kind == "v2" else old(f, a)
-        mods += f'<article class="mod"><div class="mod-media">{media}</div><div class="mod-b"><span class="mod-n">0{i}</span><h3>{h}</h3><p>{p}</p></div></article>'
-    modsec = (f'<section class="alt" id="units"><div class="wrap">'
-              f'<div class="sec-head center"><p class="eyebrow">{c["path_eyebrow"]}</p><h2>{c["path_h"]}</h2></div><ol class="path">{path}</ol>'
-              f'<div class="sec-head center mods-head"><p class="eyebrow">{c["mods_eyebrow"]}</p><h2>{c["mods_h"]}</h2></div>'
-              f'<div class="mods">{mods}</div></div></section>\n')
+        media = pic(f, a, "(max-width:992px) 100vw, 600px") if kind == "v2" else old(f, a)
+        mods += f'<article class="mod rv"><div class="mod-media">{media}</div><div class="mod-b"><span class="n">0{i}</span><h3>{h}</h3><p>{p}</p></div></article>'
+    modsec = (f'<section id="units"><div class="wrap"><p class="k">{c["path_eyebrow"]}</p><h2>{c["path_h"]}</h2><ol class="path">{path}</ol></div></section>\n'
+              f'<section class="fog"><div class="wrap"><p class="k">{c["mods_eyebrow"]}</p><h2>{c["mods_h"]}</h2><div class="mods">{mods}</div></div></section>\n')
 
-    # 5) case study: the new film muted in a card, delivered list, then "from the workshop to the exhibition" (the v2 upgrade)
+    # 5) case study: the film muted in a card, what we delivered, then "from the workshop to the exhibition"
     items = "".join(f"<li>{x}</li>" for x in c["case_items"])
     jr = ""
     for i, (f, cap, a) in enumerate(c["journey"], 1):
-        jr += (f'<figure tabindex="0" data-full="{V2}{f}-2400.webp"><span class="wk">{pic(f, a, "(max-width:640px) 100vw, (max-width:980px) 50vw, 300px")}</span>'
+        jr += (f'<figure class="rv" tabindex="0" data-full="{V2}{f}-2400.webp"><span class="wk">{pic(f, a, "(max-width:640px) 100vw, (max-width:992px) 50vw, 300px")}</span>'
                f'<figcaption><span class="jn">{i}</span>{cap}</figcaption></figure>')
-    case = (f'<section class="dark" id="case"><div class="wrap"><div class="sec-head center"><p class="eyebrow">{c["case_eyebrow"]}</p><h2>{c["case_h"]}</h2>'
-            f'<p class="lead">{c["case_p"]}</p></div>'
-            f'<div class="case-grid"><figure class="vcard fcard" data-src="{FILM}" data-src-m="{FILM_M}">'
+    case = (f'<section id="case"><div class="wrap"><p class="k">{c["case_eyebrow"]}</p><h2>{c["case_h"]}</h2><p class="lead">{c["case_p"]}</p>'
+            f'<div class="case-grid"><figure class="mcard vcard fcard" data-src="{FILM}" data-src-m="{FILM_M}">'
             f'<div class="vframe"><img class="vposter" src="{POSTER}" alt="{c["film_alt"]}" width="1280" height="720" loading="lazy" decoding="async">'
             f'<video class="card-vid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>'
             f'<figcaption><span class="vcap">{c["film_cap"]}</span>'
             f'<button type="button" class="vfull" data-yt="{YT}" data-cta="case-film">{PLAY}<b>{c["watch_full"]}</b></button></figcaption></figure>'
-            f'<div class="case"><p class="gives">{c["case_gives"]}</p><ul>{items}</ul><a href="../casestudy-mwl.html" target="_blank" rel="noopener">{c["case_link"]}</a></div></div>'
-            f'<h3 class="journey-h">{c["journey_h"]}</h3><div class="gal works journey">{jr}</div>'
-            f'<div class="center" style="margin-top:34px"><a class="btn btn-gold" href="#request" data-cta="case">{c["cta"]}</a></div></div></section>\n')
+            f'<div class="case"><p class="gives">{c["case_gives"]}</p><ul class="ticks">{items}</ul><a class="more" href="../casestudy-mwl.html" target="_blank" rel="noopener">{c["case_link"]}</a></div></div>'
+            f'<h3 class="journey-h">{c["journey_h"]}</h3><div class="gal four">{jr}</div></div></section>\n')
 
-    # 6) levels (no prices)
+    # 6) levels (dark), no prices; the "starts from" line is empty and hidden until the owner decides
     tiers = ""
     for i, (h, sub, lis) in enumerate(c["tiers"]):
         feat = i == 1
-        tag = f'<span class="pk-tag">{c["tier_tag"]}</span>' if feat else ""
-        tiers += (f'<div class="pk{" feat" if feat else ""}">{tag}'
-                  f'<p class="pk-n">0{i+1}</p><h3>{h}</h3><p class="pk-for">{sub}</p><ul>{"".join(f"<li>{x}</li>" for x in lis)}</ul>'
-                  f'<a class="btn {"btn-gold" if feat else "btn-line"}" href="#request" data-cta="tier-{i+1}">{c["cta"]}</a></div>')
-    tiersec = (f'<section id="levels"><div class="wrap"><div class="sec-head center"><p class="eyebrow">{c["tiers_eyebrow"]}</p><h2>{c["tiers_h"]}</h2></div>'
-               f'<div class="pkgs">{tiers}</div></div></section>\n')
+        tag = f'<span class="badge">{c["tier_tag"]}</span>' if feat else ""
+        tiers += (f'<article class="pack rv{" hot" if feat else ""}">{tag}<p class="pn">0{i+1}</p><h3>{h}</h3><p class="for">{sub}</p>'
+                  f'<p class="from" hidden data-todo-owner="price"><!-- {c["price_note"]} --></p>'
+                  f'<ul>{"".join(f"<li>{CHECK}<span>{x}</span></li>" for x in lis)}</ul>'
+                  f'<a class="btn btn-gold" href="#request" data-cta="tier-{i+1}">{c["cta"]}</a></article>')
+    tiersec = (f'<section class="dark" id="packages"><div class="wrap"><p class="k">{c["tiers_eyebrow"]}</p><h2>{c["tiers_h"]}</h2>'
+               f'<div class="packs">{tiers}</div></div></section>\n')
 
-    # 7) steps, deadline and FAQ
-    steps = "".join(f'<div class="card"><div class="step-top"><div class="num">{i}</div>{ic(k, "ic ic-lg")}</div><h3>{h}</h3><p>{p}</p></div>'
-                    for i, ((h, p), k) in enumerate(zip(c["steps"], ["consult", "script", "produce", "maquette"]), 1))
-    faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in c["faq"])
-    stepsec = (f'<section class="alt"><div class="wrap"><div class="sec-head center"><p class="eyebrow">{c["steps_eyebrow"]}</p><h2>{c["steps_h"]}</h2></div>'
-               f'<div class="steps">{steps}</div>'
-               f'<div class="deadline"><div><h3>{c["deadline_h"]}</h3><p>{c["deadline_p"]}</p></div>'
-               f'<a class="btn btn-gold" href="#request" data-cta="deadline">{c["cta"]}</a></div>'
-               f'<div class="faqw v4-faq"><h3 class="faq-h">{c["faq_h"]}</h3>{faq}</div></div></section>\n')
+    # 7) steps and the Cityscape deadline
+    steps = "".join(f'<li class="rv"><h3>{h}</h3><p>{p}</p></li>' for h, p in c["steps"])
+    stepsec = (f'<section><div class="wrap"><p class="k">{c["steps_eyebrow"]}</p><h2>{c["steps_h"]}</h2><ol class="steps">{steps}</ol>'
+               f'<div class="honest rv"><div><h3>{c["deadline_h"]}</h3><p>{c["deadline_p"]}</p></div>'
+               f'<a class="btn btn-gold" href="#request" data-cta="deadline">{c["cta"]}</a></div></div></section>\n')
 
-    # 8) form, the exhibition fields stay
-    nexts = "".join(f'<li><div class="num num-ic">{ic(k)}</div><div><b>{b}</b><p>{p}</p></div></li>' for (b, p), k in zip(c["nexts"], ["reply24", "consult", "approved"]))
+    # 8) form (dark), the exhibition fields stay
+    nexts = "".join(f'<li><span><b>{b}</b>{p}</span></li>' for b, p in c["nexts"])
     areas = "".join(f"<option>{t}</option>" for t in c["areas"])
     attrs = "".join(f'<input type="hidden" name="{k}" data-attr="{k}">' for k in ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid", "ttclid", "ScCid"])
-    form = (f'<section class="formsec v4-form exh-form" id="request"><div class="wrap fgrid"><div><p class="eyebrow">{c["form_eyebrow"]}</p><h2>{c["form_h"]}</h2>'
-            f'<p class="lead">{c["form_lead"]}</p><ul class="next-list">{nexts}</ul>'
-            f'<a class="btn btn-ghost" style="margin-top:22px" href="{wa(c["wa_msg"])}" target="_blank" rel="noopener" data-cta="form-whatsapp">{WA_ICON} {c["wa_label"]}</a></div>'
-            f'<form id="lpFormV2" class="v2" novalidate>'
-            f'<div class="f"><label for="n">{c["f_name"]}</label><input id="n" name="name" autocomplete="name" required></div>'
-            f'<div class="f"><label for="c">{c["f_company"]}</label><input id="c" name="company" autocomplete="organization" required></div>'
-            f'<div class="f full"><label for="p">{c["f_phone"]}</label><input id="p" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>'
-            f'<div class="f full"><label for="x">{c["f_exh"]}</label><input id="x" name="exhibition" data-label="{c["f_exh"].rstrip(" *")}" placeholder="{c["f_exh_ph"]}" required></div>'
-            f'<div class="f full"><label for="a">{c["f_area"]}</label><!-- {c["area_todo"]} -->\n'
-            f'<select id="a" name="booth_size" data-label="{c["f_area"].rstrip(" *")}" required><option value="" selected disabled>{c["f_sel"]}</option>{areas}</select></div>'
-            f'{attrs}<div class="hp" aria-hidden="true"><label>Leave blank</label><input type="text" name="botcheck" tabindex="-1" autocomplete="off"></div>'
-            f'<div class="f full"><div id="ts" style="min-height:65px"></div></div><div id="fb" aria-live="polite"></div>'
-            f'<div class="f full"><button class="btn btn-gold" type="submit" id="sb" data-cta="form-submit">{c["cta"]}</button></div>'
-            f'<p class="note">{c["privacy"]}</p></form></div></section>\n</main>\n')
+    star = f' <i aria-label="{c["req"]}">*</i>'
+    lab = lambda s: s.replace(" *", star)
+    form = (f'<section class="dark" id="request"><div class="wrap"><p class="k">{c["form_eyebrow"]}</p><h2>{c["form_h"]}</h2><p class="lead">{c["form_lead"]}</p>'
+            f'<div class="fgrid"><form id="lpFormV2" novalidate>'
+            f'<div class="two"><label for="n">{lab(c["f_name"])}<input id="n" name="name" autocomplete="name" required></label>'
+            f'<label for="c">{lab(c["f_company"])}<input id="c" name="company" autocomplete="organization" required></label></div>'
+            f'<label for="p">{lab(c["f_phone"])}<input id="p" name="phone" type="tel" inputmode="tel" autocomplete="tel" required dir="ltr"></label>'
+            f'<label for="x">{lab(c["f_exh"])}<input id="x" name="exhibition" data-label="{c["f_exh"].rstrip(" *")}" placeholder="{c["f_exh_ph"]}" required></label>'
+            f'<label for="a">{lab(c["f_area"])}<!-- {c["area_todo"]} -->\n'
+            f'<select id="a" name="booth_size" data-label="{c["f_area"].rstrip(" *")}" required><option value="" selected disabled>{c["f_sel"]}</option>{areas}</select></label>'
+            f'{attrs}<div class="hp" aria-hidden="true"><label>Leave blank<input type="text" name="botcheck" tabindex="-1" autocomplete="off"></label></div>'
+            f'<div id="ts"></div><div id="fb" role="status" aria-live="polite"></div>'
+            f'<button class="btn btn-gold" type="submit" id="sb" data-cta="form-submit">{c["cta"]}</button>'
+            f'<p class="fnote">{c["privacy"]}</p></form>'
+            f'<aside><div class="after"><h3>{c["after_h"]}</h3><ol>{nexts}</ol>'
+            f'<a class="btn btn-ghost" href="{wa(c["wa_msg"])}" target="_blank" rel="noopener" data-cta="form-whatsapp">{WA_ICON} {c["wa_label"]}</a></div></aside></div></div></section>\n')
 
-    foot = (f'<footer><div class="wrap">© 2026 Graphics House Co. · <a href="{c["priv_href"]}" target="_blank" rel="noopener">{c["priv_txt"]}</a></div></footer>\n'
-            f'<a class="wa" href="{wa(c["wa_msg"])}" target="_blank" rel="noopener" aria-label="WhatsApp" data-cta="float-whatsapp">{WA_ICON}</a>\n'
-            f'<div class="mbar"><a class="btn btn-gold" href="#request" data-cta="mbar-primary">{c["cta"]}</a>'
-            f'<a class="btn btn-ghost" href="{wa(c["wa_msg"])}" target="_blank" rel="noopener" data-cta="mbar-whatsapp">{c["wa_label"]}</a></div>\n'
-            f'<div class="lb" id="lb" role="dialog" aria-modal="true"><button type="button" aria-label="{c["close"]}">&times;</button><img alt=""><div class="lb-v"></div><p></p></div>\n'
-            f'<script src="lp-exh-v2.js?v=2"></script>\n<script src="lp.js?v=3"></script>\n<script src="lp-v2.js?v=5"></script>\n</body>\n</html>\n')
-    return head + body + header + hero_a + proof + whysec + modsec + case + tiersec + stepsec + form + foot
+    # 9) FAQ
+    faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in c["faq"])
+    faqsec = f'<section><div class="wrap faqg"><div><p class="k">{c["faq_k"]}</p><h2>{c["faq_h"]}</h2></div><div>{faq}</div></div></section>\n'
+
+    # 10) related services (GH pages only)
+    rel = related(OUT, ar, ["production", "rendering", "maquettes"]) + '</main>\n'
+
+    foot = (footer(ar, c["priv_href"], c["wa_msg"], c["cta"], c["close"])
+            + '<script src="lp-exh-v2.js?v=2"></script>\n<script src="lp.js?v=3"></script>\n<script src="lp-v2.js?v=5"></script>\n</body>\n</html>\n')
+    return head + body + hdr + hero + proof + whysec + modsec + case + tiersec + stepsec + form + faqsec + rel + foot
 
 
 def thanks(c):
-    L = c["lang"]
-    nexts = "".join(f'<li><div class="num">{i}</div><div><b>{b}</b><p>{p}</p></div></li>' for i, (b, p) in enumerate(c["th_steps"], 1))
-    return (f'<!DOCTYPE html>\n<html lang="{L}" dir="{c["dir"]}">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
-            f'<title>{c["th_title"]}</title>\n<meta name="robots" content="noindex,nofollow">\n<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">\n'
-            f'{FONTS}{GA}<!-- Ad pixels (Meta, Snap, TikTok): EMPTY slots. Fire the lead event here once the owner adds the IDs. -->\n{CSS}</head>\n<body>\n{SYM}'
-            f'<main class="thanks"><div class="wrap"><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>'
-            f'<h1>{c["th_h"]}</h1><p class="lead">{c["th_lead"]}</p><ul class="next-list">{nexts}</ul>'
-            f'<a class="btn btn-gold" href="{wa(c["th_wamsg"])}" target="_blank" rel="noopener" data-cta="thanks-whatsapp">{WA_ICON} {c["th_wa"]}</a>'
-            f'<a class="back" href="{c["self"]}">{c["th_back"]}</a></div></main>\n'
-            "<script>\n(function(){\n  var KEYS=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid','ttclid','ScCid'];\n"
-            f"  var q=new URLSearchParams(location.search), p={{page:'lp_exhibitions_{L}',lang:'{L}'}};\n"
-            "  KEYS.forEach(function(k){if(q.get(k))p[k]=q.get(k);});\n"
-            "  try{ if(sessionStorage.getItem('gh_lp_thanks_exh'))return; sessionStorage.setItem('gh_lp_thanks_exh','1'); }catch(e){}\n"
-            "  try{ if(window.gtag)window.gtag('event','lp_thank_you',p); window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'lp_conversion',lp:p}); }catch(e){}\n"
-            "})();\n</script>\n</body>\n</html>\n")
+    return thanks_body(c["dir"], c["lang"], c["th_title"], c["th_h"], c["th_lead"], c["th_steps"], c["th_wa"], c["th_wamsg"], c["th_back"],
+                       c["self"], GA, f'lp_exhibitions_{c["lang"]}', "gh_lp_thanks_exh")
 
 
 for key in ("ar", "en"):
