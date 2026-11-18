@@ -235,7 +235,7 @@ def build(c):
             f'<meta property="og:image" content="https://3dgraphicshouse.com/assets/lp-v3/gh-launch-film-poster.jpg">\n'
             f'<meta property="og:image:alt" content="{c["og_alt"]}">\n<meta property="og:type" content="website">\n'
             f'<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">\n'
-            + FONTS + '<script src="../assets/gh-forms-config.js?v=2"></script>\n' + GA
+            + FONTS + '<script src="../assets/gh-forms-config.js?v=3"></script>\n' + GA
             + '<script defer src="../assets/gh-analytics.js?v=3"></script>\n'
             '<!-- Ad pixels (Meta, Snap, TikTok): EMPTY slots. IDs are added by the owner after approval; see lp-v2.js (GH_ADS). -->\n'
             + CSS + SYS_JS + f'<link rel="preload" as="image" href="{FILM_POSTER}">\n</head>\n')
@@ -342,7 +342,7 @@ def build(c):
     rel = related(OUT, ar, ["exhibitions", "rendering", "maquettes"]) + '</main>\n'
 
     foot = (footer(ar, c["priv"], c["wa_hero"], c["cta_short"], c["close"])
-            + '<script src="lp-v4.js?v=1"></script>\n<script src="lp.js?v=3"></script>\n<script src="lp-v2.js?v=5"></script>\n</body>\n</html>\n')
+            + '<script src="lp-v4.js?v=1"></script>\n<script src="lp.js?v=3"></script>\n<script src="lp-v2.js?v=6"></script>\n</body>\n</html>\n')
 
     return head + body_open + hdr + hero + proof + prob + svc + casesec + pack + stepsec + form + faqsec + rel + foot
 

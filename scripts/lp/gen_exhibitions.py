@@ -204,7 +204,7 @@ def build(c):
             f'<meta property="og:title" content="{c["title"]}">\n<meta property="og:description" content="{c["desc"]}">\n'
             f'<meta property="og:image" content="https://3dgraphicshouse.com/assets/lp-exh-v2/gh-exhibition-film-poster.jpg">\n<meta property="og:type" content="website">\n'
             f'<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">\n{FONTS}'
-            f'<script src="../assets/gh-forms-config.js?v=2"></script>\n{GA}<script defer src="../assets/gh-analytics.js?v=3"></script>\n'
+            f'<script src="../assets/gh-forms-config.js?v=3"></script>\n{GA}<script defer src="../assets/gh-analytics.js?v=3"></script>\n'
             f'<!-- Ad pixels (Meta, Snap, TikTok): EMPTY slots. IDs are added by the owner after approval; see lp-v2.js (GH_ADS). -->\n'
             f'{CSS}{SYS_JS}<link rel="preload" as="image" href="{V2}{HERO}-1200.webp" imagesrcset="{V2}{HERO}-1200.webp 1200w, {V2}{HERO}-2400.webp 2400w" imagesizes="(max-width:992px) 100vw, 640px">\n</head>\n')
     body = (f'<body data-page="lp_exhibitions_{L}" data-service="Exhibitions" data-form="lp_exhibitions" data-thanks="{c["thanks"]}" '
@@ -307,7 +307,7 @@ def build(c):
     rel = related(OUT, ar, ["production", "rendering", "maquettes"]) + '</main>\n'
 
     foot = (footer(ar, c["priv_href"], c["wa_msg"], c["cta"], c["close"])
-            + '<script src="lp-exh-v2.js?v=2"></script>\n<script src="lp.js?v=3"></script>\n<script src="lp-v2.js?v=5"></script>\n</body>\n</html>\n')
+            + '<script src="lp-exh-v2.js?v=2"></script>\n<script src="lp.js?v=3"></script>\n<script src="lp-v2.js?v=6"></script>\n</body>\n</html>\n')
     return head + body + hdr + hero + proof + whysec + modsec + case + tiersec + stepsec + form + faqsec + rel + foot
 
 

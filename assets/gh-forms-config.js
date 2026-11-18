@@ -8,6 +8,9 @@ window.GH_FORMS = {
   subscribeEndpoint: 'https://3dgraphicshouse.com/api/subscribe',
   chatEndpoint: 'https://3dgraphicshouse.com/api/chat',
   turnstileSiteKey: '0x4AAAAAADv7uKaQhHuTHq7h',
+  /* Web3Forms public form key (safe in client code per Web3Forms). Used by lp/lp-v2.js only
+     as a fallback when the Worker fails. Owner pastes it here; recipient: sales@3dgraphicshouse.com */
+  web3formsKey: '',
   quoteFormEmail: 'imeklad@gmail.com',
   notifyEmail: 'imeklad@gmail.com',
   notifyWhatsApp: '966502786513',

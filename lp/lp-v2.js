@@ -144,14 +144,29 @@
     extras.forEach(function (x) { if (x.v && x.k) payload[x.k] = x.v; });
     KEYS.forEach(function (k) { if (attr[k]) payload[k] = attr[k]; });
     if (tok) payload['cf-turnstile-response'] = tok;
-    fetch(F.formEndpoint || 'https://3dgraphicshouse.com/api/form', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(payload)
-    })
-      .then(function (r) { return r.json(); })
-      .then(function (res) {
+    var post = function (url, body) {
+      return fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(body)
+      }).then(function (r) { return r.json(); }).then(function (res) {
         if (!(res && res.success)) throw new Error('x');
+        return res;
+      });
+    };
+    /* Worker first (Turnstile verified server-side). If it fails (e.g. Web3Forms rate-limits the
+       Cloudflare egress IP), send straight from the visitor's browser with the public form key. */
+    var direct = function () {
+      if (!F.web3formsKey) throw new Error('x');
+      var b = {};
+      Object.keys(payload).forEach(function (k) { if (k !== 'cf-turnstile-response') b[k] = payload[k]; });
+      b.access_key = F.web3formsKey;
+      track('lead_fallback_direct', { form_name: FORM });
+      return post('https://api.web3forms.com/submit', b);
+    };
+    post(F.formEndpoint || 'https://3dgraphicshouse.com/api/form', payload)
+      .catch(direct)
+      .then(function () {
         track('generate_lead', { form_name: FORM, service: SERVICE, lang: EN ? 'en' : 'ar', source: attr.utm_source || 'direct' });
         var go = (BD.getAttribute('data-thanks') || (EN ? 'thanks-en.html' : 'thanks.html')) + attrQuery();
         setTimeout(function () { location.href = go; }, 350);
