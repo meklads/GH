@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Production LP v4 (owner direction 2026-11-17): split hero, real upgraded materials, zero generated images.
+Identity phase 1 (2026-11-18): rendered with the group LP system (lp/system.css, scripts/lp/lp_system.py).
 
 Generates lp/production.html, production-en.html, thanks.html, thanks-en.html.
 Run: python3 scripts/lp/gen_production.py lp
@@ -8,6 +9,7 @@ Hero: variant A chosen by the owner (2026-11-17): new launch film in the card, b
 import sys, os, subprocess
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from icons_lp import sprite, ic, write_files
+from lp_system import FONTS, CSS, SYS_JS, SYM, CHECK, header, related, footer, thanks_body
 from urllib.parse import quote
 
 OUT = sys.argv[1]  # .../GraphicsHouse/lp
@@ -190,19 +192,41 @@ T = {
 ),
 }
 
-FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-         '<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">\n')
+# --- 2026-11-18: identity phase 1. Layout, fonts and sizes follow the group LP system (lp/system.css),
+# reference beesmotion.com/lp/property-content-engine. Copy above is unchanged; the keys below only
+# split the approved service lines into a short label and the same sentence.
+T["ar"].update(
+    dels=[("script", "قصة الإطلاق", "سيناريو وقائمة لقطات تعتمدها قبل الإنتاج."),
+          ("film", "الفيلم الرئيسي", "فيلم واحد للإطلاق وصالة المبيعات والموقع."),
+          ("view3d", "لقطات CGI سينمائية", "مشروعك كاملًا قبل اكتماله."),
+          ("reels", "مقاطع قصيرة", "للريلز والستوري والإعلانات."),
+          ("bilingual", "نصوص على الشاشة", "بالعربية والإنجليزية.")],
+    pack_k="الباقة", pack_h="باقة واحدة متكاملة، تُحدد تفاصيلها معك",
+    pack_lead="حسب نطاق المشروع ومدة الفيلم وعدد لقطات CGI والمخرجات المطلوبة. يصلك العرض بعد المكالمة القصيرة.",
+    work_k="أعمال حقيقية", cases_lead="", faq_k="أسئلة شائعة", faq_h2="قبل أن تقرر", after_h="ماذا يحدث بعد الإرسال",
+    req="مطلوب", close="إغلاق", priv="../privacy-policy.html", from_label="يبدأ من",
+)
+T["en"].update(
+    dels=[("script", "The launch story", "A script and shot list you approve before production."),
+          ("film", "The main film", "One film for the launch, the sales gallery and the site."),
+          ("view3d", "Cinematic CGI shots", "Your complete project before it is built."),
+          ("reels", "Short clips", "For reels, stories and ads."),
+          ("bilingual", "On-screen text", "In Arabic and English.")],
+    pack_k="The package", pack_h="One complete package, detailed with you",
+    pack_lead="By the project scope, film length, number of CGI shots and the outputs you need. You receive the offer after the short call.",
+    work_k="Real work", cases_lead="", faq_k="FAQ", faq_h2="Before you decide", after_h="What happens after you send",
+    req="required", close="Close", priv="../privacy-policy-en.html", from_label="Starts from",
+)
+
 GA = ("<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-NKM4H1FFBL\"></script>\n"
       "<script>if(location.hostname==='localhost'||location.hostname==='127.0.0.1'){window['ga-disable-G-NKM4H1FFBL']=true;window['ga-disable-G-Y67JVE898Z']=true;}"
       "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-NKM4H1FFBL');gtag('config','G-Y67JVE898Z');</script>\n")
-CSS = ('<link rel="stylesheet" href="lp.css?v=3">\n<link rel="stylesheet" href="lp-v2.css?v=5">\n'
-       '<link rel="stylesheet" href="lp-v3.css?v=3">\n<link rel="stylesheet" href="lp-v4.css?v=1">\n')
 
 
 def build(c):
     L = c["lang"]; ar = L == "ar"
     head = (f'<!DOCTYPE html>\n<html lang="{L}" dir="{c["dir"]}">\n<head>\n<meta charset="utf-8">\n'
-            f'<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>{c["title"]}</title>\n'
+            f'<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<meta name="theme-color" content="#0a0a0b">\n<title>{c["title"]}</title>\n'
             f'<meta name="description" content="{c["desc"]}">\n<meta name="robots" content="noindex,nofollow">\n'
             f'<link rel="canonical" href="https://3dgraphicshouse.com/lp/{c["self"]}">\n'
             f'<link rel="alternate" hreflang="ar" href="https://3dgraphicshouse.com/lp/production.html">\n'
@@ -214,161 +238,126 @@ def build(c):
             + FONTS + '<script src="../assets/gh-forms-config.js?v=2"></script>\n' + GA
             + '<script defer src="../assets/gh-analytics.js?v=3"></script>\n'
             '<!-- Ad pixels (Meta, Snap, TikTok): EMPTY slots. IDs are added by the owner after approval; see lp-v2.js (GH_ADS). -->\n'
-            + CSS + f'<link rel="preload" as="image" href="{FILM_POSTER}">\n</head>\n')
+            + CSS + SYS_JS + f'<link rel="preload" as="image" href="{FILM_POSTER}">\n</head>\n')
 
-    body_open = (f'<body class="live v4" data-page="lp_production_{L}" data-service="Production" data-subject="{c["subject"]}" '
-                 f'data-msg="{c["msg"]}" data-interest="{c["offer_h"]}">\n'
-                 f'<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 24 24"><path d="{WA_PATH}"/></symbol></svg>\n' + sprite())
+    body_open = (f'<body data-page="lp_production_{L}" data-service="Production" data-subject="{c["subject"]}" '
+                 f'data-msg="{c["msg"]}" data-interest="{c["offer_h"]}">\n' + SYM + sprite())
+    hdr = header(ar, c["self"], c["other"], c["cta_short"])
 
-    lang_sw = (f'<div class="lang"><a href="{c["other"]}">EN</a><span>|</span><a href="{c["self"]}" class="on">AR</a></div>' if ar else
-               f'<div class="lang"><a href="{c["self"]}" class="on">EN</a><span>|</span><a href="{c["other"]}">AR</a></div>')
-    header = (f'<header class="hdr"><div class="wrap"><img src="../assets/lp-v3/logo-on-white.png" alt="Graphics House" width="640" height="297">'
-              f'<div class="hdr-r">{lang_sw}<a class="btn btn-gold btn-sm" href="#request" data-cta="header">{c["cta_short"]}</a></div></div></header>\n')
-
-    # 1) split hero: text first (right in RTL), 16:9 video card second: the new launch film (variant A, owner choice).
-    hero = (f'<main>\n<section class="split-hero"><div class="wrap">'
-            f'<div class="sh-text"><p class="eyebrow">{c["eyebrow"]}</p><h1>{c["h1"]}</h1><p class="lead">{c["lead"]}</p>'
-            f'<div class="sh-cta"><a class="btn btn-gold" href="#request" data-cta="hero-primary">{c["cta"]}</a>'
-            f'<a class="sh-wa" href="{wa(c["wa_hero"])}" target="_blank" rel="noopener" data-cta="hero-whatsapp">{WA_ICON} {c["wa_small"]}</a></div>'
-            f'<p class="micro">{ic("reply24", "ic ic-sm")} {c["micro"]}</p></div>'
-            f'<figure class="vcard" data-variant="a"'
-            f' data-a-src="{FILM}" data-a-src-m="{FILM_M}" data-a-poster="{FILM_POSTER}" data-a-alt="{c["vid_a"]}" data-a-btn="{c["btn_a"]}" data-a-cap="{c["cap_a"]}" data-a-full="{REEL}"'
-            f'>'
+    # 1) split hero (dark): text and one call to action, the launch film in a card (variant A, owner choice). No video background.
+    hero = (f'<main id="main">\n<section class="hero"><div class="wrap">'
+            f'<div><p class="k">{c["eyebrow"]}</p><h1>{c["h1"]}</h1><p class="sub">{c["lead"]}</p>'
+            f'<div class="ctas"><a class="btn btn-gold" href="#request" data-cta="hero-primary">{c["cta"]}</a>'
+            f'<a class="walink" href="{wa(c["wa_hero"])}" target="_blank" rel="noopener" data-cta="hero-whatsapp">{WA_ICON} {c["wa_small"]}</a></div>'
+            f'<p class="micro">{ic("reply24")} {c["micro"]}</p></div>'
+            f'<figure class="mcard vcard" data-variant="a"'
+            f' data-a-src="{FILM}" data-a-src-m="{FILM_M}" data-a-poster="{FILM_POSTER}" data-a-alt="{c["vid_a"]}" data-a-btn="{c["btn_a"]}" data-a-cap="{c["cap_a"]}" data-a-full="{REEL}">'
             f'<div class="vframe"><img class="vposter" src="{FILM_POSTER}" alt="{c["vid_a"]}" width="1280" height="720" fetchpriority="high">'
             f'<video class="card-vid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>'
             f'<figcaption><span class="vcap">{c["cap_a"]}</span>'
             f'<button type="button" class="vfull" data-mp4="{REEL}" data-cta="hero-film">{PLAY}<b>{c["btn_a"]}</b></button></figcaption></figure>'
             f'</div></section>\n')
 
-    # 2) trust: client logos in black and white
-    proof = (f'<div class="proof v4-logos"><div class="wrap"><p class="logos-lead">{c["logos_lead"]}</p>'
-             f'<div class="marquee" aria-label="{c["logos_lead"]}"><div class="track">{logos_html}<span aria-hidden="true" class="dup">{logos_html}</span></div></div>'
+    # 2) proof: client logos, grayscale. The "+15 years" stat stays hidden until the owner confirms it.
+    proof = (f'<div class="proof"><div class="wrap"><div><p class="proof-l">{c["logos_lead"]}</p><div class="logos">{logos_html}</div></div>'
              f'<!-- {c["owner_claims_note"]} --></div></div>\n')
 
-    # 3) problem, with the real Makkah Charter exhibition photo
+    # 3) problem (dark): the real Makkah Charter exhibition photo beside three numbered cards
     src, alt, cap = c["prob_img"]; w, h = dims(src)
-    probs = "".join(f'<li><h3>{a}</h3><p>{b}</p><p class="fix"><b>{c["fixlbl"]}</b> {f}</p></li>' for a, b, f in c["probs"])
-    prob = (f'<section><div class="wrap"><div class="sec-head center"><p class="eyebrow">{c["prob_eyebrow"]}</p><h2>{c["prob_h"]}</h2>'
-            f'<p class="lead">{c["prob_lead"]}</p></div><div class="prob-grid">'
-            f'<figure class="real-shot"><img src="{src}" alt="{alt}" width="{w}" height="{h}" loading="lazy" decoding="async"><figcaption>{cap}</figcaption></figure>'
-            f'<ol class="prob-list">{probs}</ol></div></div></section>\n')
+    probs = "".join(f'<li class="prob rv"><span class="n">0{i}</span><h3>{a}</h3><p>{b}</p><p class="fix"><b>{c["fixlbl"]}</b> {f}</p></li>'
+                    for i, (a, b, f) in enumerate(c["probs"], 1))
+    prob = (f'<section class="dark"><div class="wrap"><p class="k">{c["prob_eyebrow"]}</p><h2>{c["prob_h"]}</h2><p class="lead">{c["prob_lead"]}</p>'
+            f'<div class="pgrid"><figure class="shot rv"><img src="{src}" alt="{alt}" width="{w}" height="{h}" loading="lazy" decoding="async"><figcaption>{cap}</figcaption></figure>'
+            f'<ol class="probs">{probs}</ol></div></div></section>\n')
 
-    # 4) service and six works
-    items = "".join(f'<li class="has-ic">{ic(k)}<span>{x}</span></li>' for k, x in zip(["script", "film", "view3d", "reels", "bilingual"], c["offer_items"]))
+    # 4) the service: one sentence per output, then six real works
+    dels = "".join(f'<div class="del rv">{ic(k)}<h3>{t}</h3><p>{p}</p></div>' for k, t, p in c["dels"])
+    dels += f'<div class="del need rv">{ic("approved")}<h3>{c["prep_h"]}</h3><p>{c["prep_p"]}</p></div>'
     works = ""
     for k in WORKS:
         capw, altw = c["works"][k]
         s12, s24 = f"{V3}{k}-1200.webp", f"{V3}{k}-2400.webp"
         ww, hh = dims(s12)
-        works += (f'<figure tabindex="0" data-full="{s24}"><span class="wk"><img src="{s12}" srcset="{s12} 1200w, {s24} 2400w" sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 400px" '
+        works += (f'<figure class="rv" tabindex="0" data-full="{s24}"><span class="wk"><img src="{s12}" srcset="{s12} 1200w, {s24} 2400w" sizes="(max-width:640px) 100vw, (max-width:992px) 50vw, 400px" '
                   f'alt="{altw}" width="{ww}" height="{hh}" loading="lazy" decoding="async"></span><figcaption>{capw}</figcaption></figure>')
-    svc = (f'<section class="alt" id="offer"><div class="wrap"><div class="sec-head center"><p class="eyebrow">{c["svc_eyebrow"]}</p></div>'
-           f'<div class="offer"><span class="pk-tag">{c["offer_tag"]}</span><div><h3>{c["offer_h"]}</h3><p class="sub">{c["offer_sub"]}</p><ul>{items}</ul>'
-           f'<a class="btn btn-gold" href="#request" data-pkg="{c["offer_h"]}" data-cta="offer-primary">{c["cta"]}</a>'
-           f'<div class="price-strip" hidden data-todo-owner="price">{c["price_note"]}</div></div>'
-           f'<div class="for"><b>{c["for_h"]}</b><p>{c["for_p"]}</p><b>{c["prep_h"]}</b><p>{c["prep_p"]}</p></div></div>'
-           f'<div class="sec-head center works-head" id="work"><h2>{c["work_h"]}</h2><p class="lead">{c["work_lead"]}</p></div>'
-           f'<div class="gal works">{works}</div></div></section>\n')
+    svc = (f'<section id="offer"><div class="wrap"><p class="k">{c["offer_tag"]}</p><h2>{c["offer_h"]}</h2><p class="lead">{c["offer_sub"]}</p>'
+           f'<div class="dels">{dels}</div></div></section>\n'
+           f'<section class="fog" id="work"><div class="wrap"><div class="whead"><div><p class="k">{c["work_k"]}</p><h2>{c["work_h"]}</h2></div>'
+           f'<p class="note">{c["work_lead"]}</p></div><div class="gal">{works}</div></div></section>\n')
 
     # 5) two case studies
     cases = ""
     for hname, p, lis, img, ialt, href in c["cases"]:
         iw, ih = dims(img)
-        cases += (f'<article class="case v4c"><span class="cimg"><img src="{img}" alt="{ialt}" width="{iw}" height="{ih}" loading="lazy" decoding="async"></span>'
-                  f'<div class="cbody"><h3>{hname}</h3><p>{p}</p><p class="gives">{c["gives"]}</p><ul>{"".join(f"<li>{x}</li>" for x in lis)}</ul>'
-                  f'<a href="{href}" target="_blank" rel="noopener">{c["case_link"]}</a></div></article>')
-    casesec = (f'<section class="dark"><div class="wrap"><div class="sec-head center"><p class="eyebrow">{c["cases_eyebrow"]}</p><h2>{c["cases_h"]}</h2></div>'
-               f'<div class="cases">{cases}</div>'
-               f'<div class="center" style="margin-top:34px"><a class="btn btn-gold" href="#request" data-cta="cases">{c["cta"]}</a></div></div></section>\n')
+        cases += (f'<article class="case rv"><span class="cimg"><img src="{img}" alt="{ialt}" width="{iw}" height="{ih}" loading="lazy" decoding="async"></span>'
+                  f'<div class="cbody"><h3>{hname}</h3><p>{p}</p><p class="gives">{c["gives"]}</p><ul class="ticks">{"".join(f"<li>{x}</li>" for x in lis)}</ul>'
+                  f'<a class="more" href="{href}" target="_blank" rel="noopener">{c["case_link"]}</a></div></article>')
+    casesec = (f'<section><div class="wrap"><p class="k">{c["cases_eyebrow"]}</p><h2>{c["cases_h"]}</h2>'
+               f'<div class="cases">{cases}</div></div></section>\n')
 
-    # 6) steps and FAQ
-    steps = "".join(f'<div class="card"><div class="step-top"><div class="num">{i}</div>{ic(k, "ic ic-lg")}</div><h3>{h}</h3><p>{p}</p></div>'
-                    for i, ((h, p), k) in enumerate(zip(c["steps"], ["consult", "script", "produce", "deliver"]), 1))
-    faq = "".join(f"<details><summary>{q}</summary><p>{a} {t}</p></details>" for q, a, t in c["faq"])
-    stepsec = (f'<section><div class="wrap"><div class="sec-head center"><p class="eyebrow">{c["steps_eyebrow"]}</p><h2>{c["steps_h"]}</h2></div>'
-               f'<div class="steps">{steps}</div><div class="faqw v4-faq"><h3 class="faq-h">{c["faq_h"]}</h3>{faq}</div></div></section>\n')
+    # 6) the package (dark): one offer. The "starts from" line is kept empty and hidden until the owner lifts the no-prices rule.
+    pk_items = "".join(f'<li>{CHECK}<span>{t}</span></li>' for _, t, _ in c["dels"])
+    pack = (f'<section class="dark" id="packages"><div class="wrap packs solo">'
+            f'<div><p class="k">{c["pack_k"]}</p><h2>{c["pack_h"]}</h2><p class="lead">{c["pack_lead"]}</p></div>'
+            f'<article class="pack hot rv"><h3>{c["offer_h"]}</h3><p class="for">{c["for_p"]}</p>'
+            f'<p class="from" hidden data-todo-owner="price"><!-- {c["price_note"]} --></p>'
+            f'<ul>{pk_items}</ul><a class="btn btn-gold" href="#request" data-pkg="{c["offer_h"]}" data-cta="offer-primary">{c["cta"]}</a></article>'
+            f'</div></section>\n')
 
-    # 7) short form; a very faint real aerial of Wahat Al Salam behind it
-    nexts = "".join(f'<li><div class="num num-ic">{ic(k)}</div><div><b>{b}</b><p>{p}</p></div></li>' for (b, p), k in zip(c["nexts"], ["reply24", "consult", "approved"]))
+    # 7) steps
+    steps = "".join(f'<li class="rv"><h3>{h}</h3><p>{p}</p></li>' for h, p in c["steps"])
+    stepsec = f'<section><div class="wrap"><p class="k">{c["steps_eyebrow"]}</p><h2>{c["steps_h"]}</h2><ol class="steps">{steps}</ol></div></section>\n'
+
+    # 8) form (dark): 4 fields, WhatsApp qualifier beside it
+    nexts = "".join(f'<li><span><b>{b}</b>{p}</span></li>' for b, p in c["nexts"])
     stg = "".join(f'<label><input type="radio" name="qs" value="{s}"><span>{s}</span></label>' for s in c["stages"])
     whn = "".join(f'<label><input type="radio" name="qw" value="{s}"><span>{s}</span></label>' for s in c["whens"])
     quick = (f'<div class="quick" id="quick" data-msg="{c["wa_quick"]}"><b>{c["quick_h"]}</b>'
              f'<div class="qgrp"><span>{c["quick_stage"]}</span><div class="qchips">{stg}</div></div>'
              f'<div class="qgrp"><span>{c["quick_when"]}</span><div class="qchips">{whn}</div></div>'
-             f'<a class="btn btn-gold" id="quickWa" href="{wa(c["wa_quick"])}" target="_blank" rel="noopener" data-cta="quick-whatsapp">{WA_ICON} {c["quick_btn"]}</a></div>'
-             f'<p class="or">{c["or_txt"]}</p>')
+             f'<a class="btn btn-ghost" id="quickWa" href="{wa(c["wa_quick"])}" target="_blank" rel="noopener" data-cta="quick-whatsapp">{WA_ICON} {c["quick_btn"]}</a></div>')
     sizes = "".join(f"<option>{t}</option>" for t in c["sizes"])
     attrs = "".join(f'<input type="hidden" name="{k}" data-attr="{k}">' for k in ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid", "ttclid", "ScCid"])
-    form = (f'<section class="formsec v4-form" id="request">'
-            f'<div class="wrap fgrid"><div><p class="eyebrow">{c["form_eyebrow"]}</p><h2>{c["form_h"]}</h2>'
-            f'<p class="lead">{c["form_lead"]}</p><ul class="next-list">{nexts}</ul>{quick}</div>'
-            f'<form id="lpFormV2" class="v2" novalidate>'
-            f'<div class="f"><label for="n">{c["f_name"]}</label><input id="n" name="name" autocomplete="name" required></div>'
-            f'<div class="f"><label for="p">{c["f_phone"]}</label><input id="p" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>'
-            f'<div class="f full"><label for="c">{c["f_company"]}</label><input id="c" name="company" autocomplete="organization" required></div>'
-            f'<div class="f full"><label for="z">{c["f_size"]}</label>'
-            f'<!-- {c["size_todo"]} -->\n<select id="z" name="project_size" required><option value="" selected disabled>{c["f_sel"]}</option>{sizes}</select></div>'
+    star = f' <i aria-label="{c["req"]}">*</i>'
+    lab = lambda s: s.replace(" *", star)
+    form = (f'<section class="dark" id="request"><div class="wrap"><p class="k">{c["form_eyebrow"]}</p><h2>{c["form_h"]}</h2><p class="lead">{c["form_lead"]}</p>'
+            f'<div class="fgrid"><form id="lpFormV2" novalidate>'
+            f'<div class="two"><label for="n">{lab(c["f_name"])}<input id="n" name="name" autocomplete="name" required></label>'
+            f'<label for="p">{lab(c["f_phone"])}<input id="p" name="phone" type="tel" inputmode="tel" autocomplete="tel" required dir="ltr"></label></div>'
+            f'<label for="c">{lab(c["f_company"])}<input id="c" name="company" autocomplete="organization" required></label>'
+            f'<label for="z">{lab(c["f_size"])}<!-- {c["size_todo"]} -->\n<select id="z" name="project_size" required><option value="" selected disabled>{c["f_sel"]}</option>{sizes}</select></label>'
             f'{attrs}'
-            f'<div class="hp" aria-hidden="true"><label>Leave blank</label><input type="text" name="botcheck" tabindex="-1" autocomplete="off"></div>'
-            f'<div class="f full"><div id="ts" style="min-height:65px"></div></div><div id="fb" aria-live="polite"></div>'
-            f'<div class="f full"><button class="btn btn-gold" type="submit" id="sb" data-cta="form-submit">{c["cta"]}</button></div>'
-            f'<p class="note">{c["privacy"]}</p></form></div></section>\n</main>\n')
+            f'<div class="hp" aria-hidden="true"><label>Leave blank<input type="text" name="botcheck" tabindex="-1" autocomplete="off"></label></div>'
+            f'<div id="ts"></div><div id="fb" role="status" aria-live="polite"></div>'
+            f'<button class="btn btn-gold" type="submit" id="sb" data-cta="form-submit">{c["cta"]}</button>'
+            f'<p class="fnote">{c["privacy"]}</p></form>'
+            f'<aside><div class="after"><h3>{c["after_h"]}</h3><ol>{nexts}</ol></div>{quick}</aside></div></div></section>\n')
 
-    priv = "../privacy-policy.html" if ar else "../privacy-policy-en.html"
-    foot = (f'<footer><div class="wrap">© 2026 Graphics House Co. · <a href="{priv}" target="_blank" rel="noopener">{"سياسة الخصوصية" if ar else "Privacy Policy"}</a></div></footer>\n'
-            f'<a class="wa" href="{wa(c["wa_hero"])}" target="_blank" rel="noopener" aria-label="WhatsApp" data-cta="float-whatsapp">{WA_ICON}</a>\n'
-            f'<div class="mbar"><a class="btn btn-gold" href="#request" data-cta="mbar-primary">{c["cta_short"]}</a>'
-            f'<a class="btn btn-ghost" href="{wa(c["wa_hero"])}" target="_blank" rel="noopener" data-cta="mbar-whatsapp">{c["wa_label"]}</a></div>\n'
-            f'<div class="lb" id="lb" role="dialog" aria-modal="true"><button type="button" aria-label="{"إغلاق" if ar else "Close"}">&times;</button><img alt=""><div class="lb-v"></div><p></p></div>\n'
-            f'<script src="lp-v4.js?v=1"></script>\n<script src="lp.js?v=3"></script>\n<script src="lp-v2.js?v=5"></script>\n</body>\n</html>\n')
+    # 9) FAQ (the three TODO-OWNER answers stay visible in the preview until the owner provides the wording)
+    faq = "".join(f"<details><summary>{q}</summary><p>{a} {t}</p></details>" for q, a, t in c["faq"])
+    faqsec = (f'<section><div class="wrap faqg"><div><p class="k">{c["faq_k"]}</p><h2>{c["faq_h2"]}</h2></div><div>{faq}</div></div></section>\n')
 
-    return head + body_open + header + hero + proof + prob + svc + casesec + stepsec + form + foot
+    # 10) related services (GH pages only)
+    rel = related(OUT, ar, ["exhibitions", "rendering", "maquettes"]) + '</main>\n'
+
+    foot = (footer(ar, c["priv"], c["wa_hero"], c["cta_short"], c["close"])
+            + '<script src="lp-v4.js?v=1"></script>\n<script src="lp.js?v=3"></script>\n<script src="lp-v2.js?v=5"></script>\n</body>\n</html>\n')
+
+    return head + body_open + hdr + hero + proof + prob + svc + casesec + pack + stepsec + form + faqsec + rel + foot
 
 
 def thanks(c):
-    L = c["lang"]; ar = L == "ar"
-    t = dict(
-        title="تم استلام طلبك | Graphics House" if ar else "Request received | Graphics House",
-        h="تم استلام طلبك" if ar else "Request received",
-        lead="سنتواصل معك خلال 24 ساعة." if ar else "We will contact you within 24 hours.",
-        steps=[("نراجع طلبك", "نقرأ بياناتك ونجهّز أسئلة مكالمة قصيرة."), ("نتواصل معك", "على واتساب أو الهاتف لتحديد موعد المكالمة."), ("خطة اللقطات وعرض السعر", "تصلك بعد المكالمة، قبل أي التزام.")] if ar else
-              [("We review your request", "We read your details and prepare questions for a short call."), ("We contact you", "On WhatsApp or by phone to set the call."), ("Shot plan and quote", "You receive them after the call, before any commitment.")],
-        wa="تواصل معنا الآن على واتساب" if ar else "Message us on WhatsApp now",
-        wamsg="السلام عليكم، أرسلت طلبًا من صفحة الإنتاج وأرغب بالمتابعة" if ar else "Hello, I sent a request from the Production page and would like to follow up",
-        back="العودة إلى الصفحة" if ar else "Back to the page",
-    )
-    nexts = "".join(f'<li><div class="num">{i}</div><div><b>{b}</b><p>{p}</p></div></li>' for i, (b, p) in enumerate(t["steps"], 1))
-    return f'''<!DOCTYPE html>
-<html lang="{L}" dir="{c['dir']}">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{t['title']}</title>
-<meta name="robots" content="noindex,nofollow">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
-{FONTS}{GA}<!-- Ad pixels (Meta, Snap, TikTok): EMPTY slots. Fire the lead/conversion pixel event here once the owner adds the IDs. -->
-{CSS}</head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 24 24"><path d="{WA_PATH}"/></symbol></svg>
-<main class="thanks"><div class="wrap">
-<div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-<h1>{t['h']}</h1><p class="lead">{t['lead']}</p>
-<ul class="next-list">{nexts}</ul>
-<a class="btn btn-gold" href="{wa(t['wamsg'])}" target="_blank" rel="noopener" data-cta="thanks-whatsapp">{WA_ICON} {t['wa']}</a>
-<a class="back" href="{c['self']}">{t['back']}</a>
-</div></main>
-<script>
-(function(){{
-  var KEYS=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid','ttclid','ScCid'];
-  var q=new URLSearchParams(location.search), p={{page:'lp_production_{L}',lang:'{L}'}};
-  KEYS.forEach(function(k){{if(q.get(k))p[k]=q.get(k);}});
-  try{{ if(sessionStorage.getItem('gh_lp_thanks'))return; sessionStorage.setItem('gh_lp_thanks','1'); }}catch(e){{}}
-  try{{ if(window.gtag)window.gtag('event','lp_thank_you',p); window.dataLayer=window.dataLayer||[]; window.dataLayer.push({{event:'lp_conversion',lp:p}}); }}catch(e){{}}
-}})();
-</script>
-</body>
-</html>
-'''
+    ar = c["lang"] == "ar"
+    steps = ([("نراجع طلبك", "نقرأ بياناتك ونجهّز أسئلة مكالمة قصيرة."), ("نتواصل معك", "على واتساب أو الهاتف لتحديد موعد المكالمة."), ("خطة اللقطات وعرض السعر", "تصلك بعد المكالمة، قبل أي التزام.")] if ar else
+             [("We review your request", "We read your details and prepare questions for a short call."), ("We contact you", "On WhatsApp or by phone to set the call."), ("Shot plan and quote", "You receive them after the call, before any commitment.")])
+    return thanks_body(c["dir"], c["lang"],
+                       "تم استلام طلبك | Graphics House" if ar else "Request received | Graphics House",
+                       "تم استلام طلبك" if ar else "Request received",
+                       "سنتواصل معك خلال 24 ساعة." if ar else "We will contact you within 24 hours.",
+                       steps,
+                       "تواصل معنا الآن على واتساب" if ar else "Message us on WhatsApp now",
+                       "السلام عليكم، أرسلت طلبًا من صفحة الإنتاج وأرغب بالمتابعة" if ar else "Hello, I sent a request from the Production page and would like to follow up",
+                       "العودة إلى الصفحة" if ar else "Back to the page", c["self"], GA, f'lp_production_{c["lang"]}', "gh_lp_thanks")
 
 
 os.makedirs(OUT, exist_ok=True)
